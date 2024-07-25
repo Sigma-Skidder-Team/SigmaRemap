@@ -921,7 +921,7 @@ public class ClientPlayNetHandler implements class_392 {
       this.field_6026.playerController.method_42136(var13);
       var13.method_3151(var6.method_3179());
       var13.method_27333(var6.method_27329());
-      if (this.field_6026.field_9623 instanceof class_7696) {
+      if (this.field_6026.screen instanceof class_7696) {
          this.field_6026.method_8609((Screen)null);
       }
 
@@ -973,8 +973,8 @@ public class ClientPlayNetHandler implements class_392 {
       if (var1.method_24952() != -1) {
          if (var1.method_24952() != -2) {
             boolean var7 = false;
-            if (this.field_6026.field_9623 instanceof class_2546) {
-               class_2546 var8 = (class_2546)this.field_6026.field_9623;
+            if (this.field_6026.screen instanceof class_2546) {
+               class_2546 var8 = (class_2546)this.field_6026.screen;
                var7 = var8.method_11595() != class_8230.field_42263.method_37688();
             }
 
@@ -993,7 +993,7 @@ public class ClientPlayNetHandler implements class_392 {
          } else {
             var4.inventory.method_31503(var6, var5);
          }
-      } else if (!(this.field_6026.field_9623 instanceof class_2546)) {
+      } else if (!(this.field_6026.screen instanceof class_2546)) {
          var4.inventory.method_32408(var5);
       }
    }
@@ -1064,8 +1064,8 @@ public class ClientPlayNetHandler implements class_392 {
          var5.method_17394(this.field_6026.theWorld.method_28262(var4), var1.method_23191());
       }
 
-      if (var7 && this.field_6026.field_9623 instanceof class_7808) {
-         ((class_7808)this.field_6026.field_9623).method_35394();
+      if (var7 && this.field_6026.screen instanceof class_7808) {
+         ((class_7808)this.field_6026.screen).method_35394();
       }
    }
 
@@ -1342,8 +1342,8 @@ public class ClientPlayNetHandler implements class_392 {
          this.field_6026.thePlayer.method_27331().method_19275(this.field_6026.thePlayer, var6, var7);
       }
 
-      if (this.field_6026.field_9623 instanceof class_2092) {
-         ((class_2092)this.field_6026.field_9623).method_9793();
+      if (this.field_6026.screen instanceof class_2092) {
+         ((class_2092)this.field_6026.screen).method_9793();
       }
    }
 
@@ -1379,8 +1379,8 @@ public class ClientPlayNetHandler implements class_392 {
       }
 
       var4.method_12232().forEach(var1x -> var1x.method_35015(var4));
-      if (this.field_6026.field_9623 instanceof class_474) {
-         ((class_474)this.field_6026.field_9623).method_2263();
+      if (this.field_6026.screen instanceof class_474) {
+         ((class_474)this.field_6026.screen).method_2263();
       }
    }
 
@@ -2113,8 +2113,8 @@ public class ClientPlayNetHandler implements class_392 {
       class_4088 var4 = this.field_6026.thePlayer.field_3874;
       if (var4.field_19925 == var1.method_35375() && var4.method_18879(this.field_6026.thePlayer)) {
          this.field_6024.method_23139(var1.method_35373()).ifPresent(var2 -> {
-            if (this.field_6026.field_9623 instanceof class_474) {
-               class_8002 var5 = ((class_474)this.field_6026.field_9623).method_2262();
+            if (this.field_6026.screen instanceof class_474) {
+               class_8002 var5 = ((class_474)this.field_6026.screen).method_2262();
                var5.method_36302((class_8932<?>)var2, var4.field_19926);
             }
          });

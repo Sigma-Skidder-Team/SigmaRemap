@@ -27,15 +27,15 @@ public class SigmaMainMenu extends class_7038 {
       this.method_32148(
          this.field_8493 = new class_5228(this, "Exit", this.method_7272(var9++), this.method_7273() + 140 + 10, 114, 140, class_3054.field_14995)
       );
-      this.field_8491.method_32100((var1x, var2x) -> this.method_7274(new class_7899(MinecraftClient.getInstance().field_9623)));
-      this.field_8490.method_32100((var1x, var2x) -> this.method_7274(new class_9888(MinecraftClient.getInstance().field_9623)));
+      this.field_8491.method_32100((var1x, var2x) -> this.method_7274(new class_7899(MinecraftClient.getInstance().screen)));
+      this.field_8490.method_32100((var1x, var2x) -> this.method_7274(new class_9888(MinecraftClient.getInstance().screen)));
       this.field_8492
-         .method_32100((var1x, var2x) -> this.method_7274(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().gameOptions)));
+         .method_32100((var1x, var2x) -> this.method_7274(new OptionsScreen(MinecraftClient.getInstance().screen, MinecraftClient.getInstance().gameOptions)));
       this.field_8496.method_32100((var1x, var2x) -> this.method_7275(new class_2135()));
       this.field_8489
          .method_32100(
             (var1x, var2x) -> this.method_7274(
-                  new class_1709(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().gameOptions, MinecraftClient.getInstance().method_8561())
+                  new class_1709(MinecraftClient.getInstance().screen, MinecraftClient.getInstance().gameOptions, MinecraftClient.getInstance().method_8561())
                )
          );
       this.field_8493.method_32100((var0, var1x) -> MinecraftClient.getInstance().method_8512());

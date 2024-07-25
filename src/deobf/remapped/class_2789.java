@@ -39,7 +39,7 @@ public class class_2789 extends class_7621 {
       int var7 = this.field_13696.getMainWindow().getScaledWidth();
       int var8 = this.field_13696.getMainWindow().getScaledHeight();
       long var9 = Util.getMeasuringTimeMs();
-      if (this.field_13694 && (this.field_13700.method_19968() || this.field_13696.field_9623 != null) && this.field_13702 == -1L) {
+      if (this.field_13694 && (this.field_13700.method_19968() || this.field_13696.screen != null) && this.field_13702 == -1L) {
          this.field_13702 = var9;
       }
 
@@ -48,16 +48,16 @@ public class class_2789 extends class_7621 {
       float var14;
       if (var11 >= 1.0F) {
          this.field_13708 = true;
-         if (this.field_13696.field_9623 != null) {
-            this.field_13696.field_9623.method_6767(var1, 0, 0, var4);
+         if (this.field_13696.screen != null) {
+            this.field_13696.screen.method_6767(var1, 0, 0, var4);
          }
 
          int var13 = MathHelper.ceil((1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
          method_9774(var1, 0, 0, var7, var8, this.field_13704 | var13 << 24);
          var14 = 1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F);
       } else if (this.field_13694) {
-         if (this.field_13696.field_9623 != null && var12 < 1.0F) {
-            this.field_13696.field_9623.method_6767(var1, var2, var3, var4);
+         if (this.field_13696.screen != null && var12 < 1.0F) {
+            this.field_13696.screen.method_6767(var1, var2, var3, var4);
          }
 
          int var27 = MathHelper.ceil(MathHelper.clamp((double)var12, 0.15, 1.0) * 255.0);
@@ -118,9 +118,9 @@ public class class_2789 extends class_7621 {
             this.field_13695.accept(Optional.<Throwable>of(var26));
          }
 
-         if (this.field_13696.field_9623 != null) {
+         if (this.field_13696.screen != null) {
             this.field_13696
-               .field_9623
+               .screen
                .method_1164(this.field_13696, this.field_13696.getMainWindow().getScaledWidth(), this.field_13696.getMainWindow().getScaledHeight());
          }
       }

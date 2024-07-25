@@ -140,8 +140,8 @@ public class ShulkerInfoModule extends Module {
    @EventListen
    private void method_31551(class_2532 var1) {
       if (this.method_42015()) {
-         if (client.field_9623 instanceof class_2208) {
-            class_2208 var4 = (class_2208) client.field_9623;
+         if (client.screen instanceof class_2208) {
+            class_2208 var4 = (class_2208) client.screen;
             class_7934 var5 = var4.field_10954;
             if (var5 != null
                && var5.method_35884()

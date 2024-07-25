@@ -30,7 +30,7 @@ public class InvManagerModule extends PremiumModule {
 
    @Override
    public void onEnable() {
-      this.field_26630 = client.field_9623 instanceof class_3431;
+      this.field_26630 = client.screen instanceof class_3431;
       this.field_26637 = false;
    }
 
@@ -42,9 +42,9 @@ public class InvManagerModule extends PremiumModule {
 
       if (this.method_42015() && !AutoArmorModule.field_9392) {
          String var4 = this.getStringValueByName("Mode");
-         if (!this.getStringValueByName("Mode").equals("OpenInv") || client.field_9623 instanceof class_3431) {
+         if (!this.getStringValueByName("Mode").equals("OpenInv") || client.screen instanceof class_3431) {
             long var5 = (long)(this.getFloatValueByName("Delay") * 20.0F);
-            if (client.field_9623 instanceof class_3431) {
+            if (client.screen instanceof class_3431) {
                this.field_26630 = false;
             }
 
@@ -54,7 +54,7 @@ public class InvManagerModule extends PremiumModule {
                class_2740.method_12356(client.thePlayer.field_3869.field_19925, 45, 0, class_6269.field_32027, client.thePlayer, true);
                this.field_26629.method_14773();
             } else {
-               if (client.field_9623 == null || client.field_9623 instanceof class_3431 || client.field_9623 instanceof class_5766) {
+               if (client.screen == null || client.screen instanceof class_3431 || client.screen instanceof class_5766) {
                   if (this.field_26629.method_14772() > var5 && field_26632 >= 36) {
                      if (client.thePlayer.field_3869.method_18878(field_26632).method_35884()) {
                         if (!method_23720(client.thePlayer.field_3869.method_18878(field_26632).method_35898())) {
@@ -99,7 +99,7 @@ public class InvManagerModule extends PremiumModule {
                   }
                }
 
-               if (!this.field_26630 && !(client.field_9623 instanceof class_3431) && this.field_26629.method_14772() > 0L && !this.field_26637) {
+               if (!this.field_26630 && !(client.screen instanceof class_3431) && this.field_26629.method_14772() > 0L && !this.field_26637) {
                   this.field_26630 = true;
                   client.method_8614().sendPacket(new class_1194(-1));
                }
@@ -477,7 +477,7 @@ public class InvManagerModule extends PremiumModule {
    }
 
    private void method_23712(boolean var1) {
-      if (var1 && this.field_26630 && !(client.field_9623 instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
+      if (var1 && this.field_26630 && !(client.screen instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
          client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
          this.field_26630 = false;
       }

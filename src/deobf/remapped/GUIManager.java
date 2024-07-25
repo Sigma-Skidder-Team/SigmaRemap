@@ -79,15 +79,15 @@ public class GUIManager {
 
    public static boolean method_30997(Screen var0) {
       if (var0 instanceof class_4145 && !(var0 instanceof class_9888)) {
-         MinecraftClient.getInstance().field_9623 = null;
+         MinecraftClient.getInstance().screen = null;
          MinecraftClient.getInstance().method_8609(new class_9888(((class_4145)var0).field_20176));
          return true;
       } else if (var0 instanceof class_2794 && !(var0 instanceof class_9140)) {
-         MinecraftClient.getInstance().field_9623 = null;
+         MinecraftClient.getInstance().screen = null;
          MinecraftClient.getInstance().method_8609(new class_9140());
          return true;
       } else if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30642 && var0 instanceof class_1876 && !(var0 instanceof class_6186)) {
-         MinecraftClient.getInstance().field_9623 = null;
+         MinecraftClient.getInstance().screen = null;
          MinecraftClient.getInstance().method_8609(new class_6186());
          return true;
       } else {
@@ -370,7 +370,7 @@ public class GUIManager {
    }
 
    public void method_30988() {
-      this.method_30990(method_30995(MinecraftClient.getInstance().field_9623));
+      this.method_30990(method_30995(MinecraftClient.getInstance().screen));
    }
 
    public void method_30990(class_2596 var1) {
@@ -392,7 +392,7 @@ public class GUIManager {
 
    public void method_30989(Screen var1) {
       if (var1 != null) {
-         MinecraftClient.getInstance().field_9623 = null;
+         MinecraftClient.getInstance().screen = null;
          MinecraftClient.getInstance().method_8609(var1);
       }
    }

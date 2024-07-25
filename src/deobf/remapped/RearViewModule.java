@@ -68,7 +68,7 @@ public class RearViewModule extends PremiumModule {
             if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                if (!this.getBooleanValueByName("Smart Visibility")) {
                   this.field_48469
-                     .method_11119(client.field_9623 != null && !this.getBooleanValueByName("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);
+                     .method_11119(client.screen != null && !this.getBooleanValueByName("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);
                } else {
                   this.field_48469.method_11119(this.field_48467 <= 0 ? class_4043.field_19618 : class_4043.field_19620);
                }
@@ -175,7 +175,7 @@ public class RearViewModule extends PremiumModule {
    public void method_43928(class_1711 var1) {
       if (this.method_42015()) {
          if (field_48470 != null) {
-            if (client.field_9623 == null || this.getBooleanValueByName("Show in GUI") || this.field_48467 != 0) {
+            if (client.screen == null || this.getBooleanValueByName("Show in GUI") || this.field_48467 != 0) {
                class_73.method_127();
                RenderSystem.method_16438();
                RenderSystem.method_16402(16640, false);

@@ -151,10 +151,10 @@ public class AnotherSigmaMainMenu extends class_7038 {
          }
       });
       this.field_8724.method_32100((var1x, var2x) -> ((ExitScreenMenu)this.method_32167()).method_29472());
-      this.field_8718.method_32100((var1x, var2x) -> this.method_7600(new class_7899(MinecraftClient.getInstance().field_9623)));
-      this.field_8721.method_32100((var1x, var2x) -> this.method_7600(new class_9888(MinecraftClient.getInstance().field_9623)));
+      this.field_8718.method_32100((var1x, var2x) -> this.method_7600(new class_7899(MinecraftClient.getInstance().screen)));
+      this.field_8721.method_32100((var1x, var2x) -> this.method_7600(new class_9888(MinecraftClient.getInstance().screen)));
       this.field_8717
-         .method_32100((var1x, var2x) -> this.method_7600(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().gameOptions)));
+         .method_32100((var1x, var2x) -> this.method_7600(new OptionsScreen(MinecraftClient.getInstance().screen, MinecraftClient.getInstance().gameOptions)));
       this.field_8723.method_32100((var1x, var2x) -> this.method_7601(new AltManagerMenu()));
       this.field_8713.method_32100((var1x, var2x) -> this.method_7597());
       this.field_8716.method_32100((var1x, var2x) -> {
@@ -174,7 +174,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
    public void method_7597() {
       class_3347.field_16509 = class_3347.field_16514;
       class_2488 var3 = new class_2488();
-      var3.method_11390(MinecraftClient.getInstance().field_9623);
+      var3.method_11390(MinecraftClient.getInstance().screen);
       this.method_7598();
    }
 

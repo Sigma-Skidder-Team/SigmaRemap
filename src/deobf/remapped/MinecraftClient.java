@@ -138,7 +138,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    private long field_9661;
    private int field_9617;
    public boolean field_9589;
-   public Screen field_9623;
+   public Screen screen;
    public class_7621 field_9610;
    private boolean field_9654;
    private Thread field_9644;
@@ -617,8 +617,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    public void method_8609(Screen var1) {
-      if (this.field_9623 != null) {
-         this.field_9623.method_1162();
+      if (this.screen != null) {
+         this.screen.method_1162();
       }
 
       if (var1 == null && this.theWorld == null) {
@@ -636,7 +636,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.field_9614.method_13991().method_18690(true);
       }
 
-      this.field_9623 = (Screen)var1;
+      this.screen = (Screen)var1;
       SigmaMainClass.getInstance().getGUIManager().method_30988();
       if (var1 != null) {
          this.field_9625.method_39844();
@@ -674,8 +674,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          } catch (Throwable var6) {
          }
 
-         if (this.field_9623 != null) {
-            this.field_9623.method_1162();
+         if (this.screen != null) {
+            this.screen.method_1162();
          }
 
          this.close();
@@ -791,7 +791,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.window.method_43182("Post render");
       this.field_9617++;
       boolean var11 = this.method_8520()
-         && (this.field_9623 != null && this.field_9623.method_1161() || this.field_9610 != null && this.field_9610.method_34549())
+         && (this.screen != null && this.screen.method_1161() || this.field_9610 != null && this.field_9610.method_34549())
          && !this.field_9646.method_1624();
       if (this.field_9579 != var11) {
          if (this.field_9579) {
@@ -869,8 +869,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    public void updateWindowSize() {
       int var1 = this.window.calcGuiScale(this.gameOptions.field_45484, this.method_8578());
       this.window.setGuiScale((double)var1);
-      if (this.field_9623 != null) {
-         this.field_9623.method_1191(this, this.window.getScaledWidth(), this.window.getScaledHeight());
+      if (this.screen != null) {
+         this.screen.method_1191(this, this.window.getScaledWidth(), this.window.getScaledHeight());
          SigmaMainClass.getInstance().getGUIManager().method_30991();
       }
 
@@ -886,7 +886,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    private int method_8507() {
-      return this.theWorld == null && (this.field_9623 != null || this.field_9610 != null)
+      return this.theWorld == null && (this.screen != null || this.field_9610 != null)
          ? Math.min(120, Math.max(this.window.getLimitFramerate(), 60))
          : this.window.getLimitFramerate();
    }
@@ -1054,7 +1054,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    public void method_8597(boolean var1) {
-      if (this.field_9623 == null) {
+      if (this.screen == null) {
          boolean var2 = this.method_8520() && !this.field_9646.method_1624();
          if (var2) {
             this.method_8609(new class_2794(!var1));
@@ -1243,29 +1243,29 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.textureManager.method_80();
       }
 
-      if (this.field_9623 == null && this.thePlayer != null) {
-         if (this.thePlayer.method_26450() && !(this.field_9623 instanceof class_7696)) {
+      if (this.screen == null && this.thePlayer != null) {
+         if (this.thePlayer.method_26450() && !(this.screen instanceof class_7696)) {
             this.method_8609((Screen)null);
          } else if (this.thePlayer.method_26507() && this.theWorld != null) {
             this.method_8609(new class_1086());
          }
-      } else if (this.field_9623 != null && this.field_9623 instanceof class_1086 && !this.thePlayer.method_26507()) {
+      } else if (this.screen != null && this.screen instanceof class_1086 && !this.thePlayer.method_26507()) {
          this.method_8609((Screen)null);
       }
 
-      if (this.field_9623 != null) {
+      if (this.screen != null) {
          this.field_9582 = 10000;
       }
 
-      if (this.field_9623 != null) {
-         Screen.method_1181(() -> this.field_9623.method_5312(), "Ticking screen", this.field_9623.getClass().getCanonicalName());
+      if (this.screen != null) {
+         Screen.method_1181(() -> this.screen.method_5312(), "Ticking screen", this.screen.getClass().getCanonicalName());
       }
 
       if (!this.gameOptions.field_45470) {
          this.field_9614.method_13978();
       }
 
-      if (this.field_9610 == null && (this.field_9623 == null || this.field_9623.field_951)) {
+      if (this.field_9610 == null && (this.screen == null || this.screen.field_951)) {
          this.field_9592.method_16050("Keybindings");
          this.method_8556();
          if (this.field_9582 > 0) {
@@ -1380,7 +1380,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          if (this.gameOptions.hotbarKeys[var4].isPressed()) {
             if (this.thePlayer.method_37221()) {
                this.field_9614.method_14004().method_38560(var4);
-            } else if (this.thePlayer.method_3186() && this.field_9623 == null && (var3 || var2)) {
+            } else if (this.thePlayer.method_3186() && this.screen == null && (var3 || var2)) {
                class_2546.method_11590(this, var4, var3, var2);
             } else {
                this.thePlayer.inventory.field_36404 = var4;
@@ -1433,7 +1433,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             this.method_8548("");
          }
 
-         if (this.field_9623 == null && this.field_9610 == null && this.gameOptions.keyTypeCommand.isPressed()) {
+         if (this.screen == null && this.field_9610 == null && this.gameOptions.keyTypeCommand.isPressed()) {
             this.method_8548("/");
          }
       }
@@ -1473,7 +1473,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.method_8565();
       }
 
-      this.method_8553(this.field_9623 == null && this.gameOptions.keyAttack.isKeyDown() && this.field_9625.method_39843());
+      this.method_8553(this.screen == null && this.gameOptions.keyAttack.isKeyDown() && this.field_9625.method_39843());
    }
 
    public static class_2805 method_8582(class_3676 var0) {
@@ -2187,7 +2187,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    public class_75 method_8506() {
-      if (this.field_9623 instanceof class_3129) {
+      if (this.screen instanceof class_3129) {
          return class_2623.field_12931;
       } else if (this.thePlayer != null) {
          if (this.thePlayer.world.method_29545() == World.field_33038) {

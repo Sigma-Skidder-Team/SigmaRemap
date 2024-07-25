@@ -36,7 +36,7 @@ public class InvMoveModule extends Module {
    private void method_26178(class_5596 var1) {
       if (this.method_42015()) {
          if (this.getBooleanValueByName("AACP")) {
-            boolean var4 = !(client.field_9623 instanceof class_3431) || !(client.field_9623 instanceof class_2141);
+            boolean var4 = !(client.screen instanceof class_3431) || !(client.screen instanceof class_2141);
             if (this.field_29226 && !var4) {
                this.field_29226 = !this.field_29226;
                if (client.thePlayer.method_37321()) {
@@ -50,21 +50,21 @@ public class InvMoveModule extends Module {
             }
          }
 
-         if (client.field_9623 instanceof class_2208 || SigmaMainClass.getInstance().method_3310().method_25291() <= 1) {
-            if (client.field_9623 instanceof class_5766) {
+         if (client.screen instanceof class_2208 || SigmaMainClass.getInstance().method_3310().method_25291() <= 1) {
+            if (client.screen instanceof class_5766) {
                return;
             }
 
-            if (client.field_9623 instanceof class_2713) {
+            if (client.screen instanceof class_2713) {
                return;
             }
 
-            if (client.field_9623 instanceof KeybindManagerScreen) {
+            if (client.screen instanceof KeybindManagerScreen) {
                return;
             }
 
-            if (client.field_9623 instanceof class_2546) {
-               class_2546 var9 = (class_2546) client.field_9623;
+            if (client.screen instanceof class_2546) {
+               class_2546 var9 = (class_2546) client.screen;
                if (var9.method_11595() == 5) {
                   return;
                }

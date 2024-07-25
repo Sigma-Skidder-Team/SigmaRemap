@@ -25,7 +25,7 @@ public class class_5571 {
          this.field_28308 = 0;
       }
 
-      if (this.field_28312.field_9623 != null) {
+      if (this.field_28312.screen != null) {
          this.field_28315 = 0;
       }
 

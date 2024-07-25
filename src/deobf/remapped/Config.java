@@ -1546,7 +1546,7 @@ public class Config {
    }
 
    public static void method_14428(String var0, String var1) {
-      class_6905 var4 = new class_6905(field_15454.field_9623, var0, var1);
+      class_6905 var4 = new class_6905(field_15454.screen, var0, var1);
       field_15454.method_8609(var4);
    }
 

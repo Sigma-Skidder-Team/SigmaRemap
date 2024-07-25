@@ -34,7 +34,7 @@ public class class_8671 {
       if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null) {
          SigmaMainClass.getInstance().getGUIManager().method_30982(var3, var4);
       } else {
-         if (this.field_44499.field_9623 == null) {
+         if (this.field_44499.screen == null) {
             if (var4 != 1 && var4 != 2) {
                if (var4 == 0) {
                   class_307 var15 = new class_307(var3);
@@ -90,7 +90,7 @@ public class class_8671 {
 
             boolean[] var10 = new boolean[]{false};
             if (this.field_44499.field_9610 == null) {
-               if (this.field_44499.field_9623 != null) {
+               if (this.field_44499.screen != null) {
                   double var11 = this.field_44482
                      * (double)this.field_44499.getMainWindow().getScaledWidth()
                      / (double)this.field_44499.getMainWindow().method_43166();
@@ -99,15 +99,15 @@ public class class_8671 {
                      / (double)this.field_44499.getMainWindow().method_43163();
                   if (!var16) {
                      Screen.method_1181(
-                        () -> var10[0] = this.field_44499.field_9623.method_26941(var11, var13, var9),
+                        () -> var10[0] = this.field_44499.screen.method_26941(var11, var13, var9),
                         "mouseReleased event handler",
-                        this.field_44499.field_9623.getClass().getCanonicalName()
+                        this.field_44499.screen.getClass().getCanonicalName()
                      );
                   } else {
                      Screen.method_1181(
-                        () -> var10[0] = this.field_44499.field_9623.method_26940(var11, var13, var9),
+                        () -> var10[0] = this.field_44499.screen.method_26940(var11, var13, var9),
                         "mouseClicked event handler",
-                        this.field_44499.field_9623.getClass().getCanonicalName()
+                        this.field_44499.screen.getClass().getCanonicalName()
                      );
                   }
                } else if (!this.field_44496 && var16) {
@@ -115,7 +115,7 @@ public class class_8671 {
                }
             }
 
-            if (!var10[0] && (this.field_44499.field_9623 == null || this.field_44499.field_9623.field_951) && this.field_44499.field_9610 == null) {
+            if (!var10[0] && (this.field_44499.screen == null || this.field_44499.screen.field_951) && this.field_44499.field_9610 == null) {
                if (var9 != 0) {
                   if (var9 != 2) {
                      if (var9 == 1) {
@@ -149,7 +149,7 @@ public class class_8671 {
             if (var1 == MinecraftClient.getInstance().getMainWindow().getHandle()) {
                double var10 = (!this.field_44499.gameOptions.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.gameOptions.field_45578;
                if (this.field_44499.field_9610 == null) {
-                  if (this.field_44499.field_9623 == null) {
+                  if (this.field_44499.screen == null) {
                      if (this.field_44499.thePlayer != null) {
                         if (this.field_44494 != 0.0 && Math.signum(var10) != Math.signum(this.field_44494)) {
                            this.field_44494 = 0.0;
@@ -178,7 +178,7 @@ public class class_8671 {
                      double var14 = this.field_44493
                         * (double)this.field_44499.getMainWindow().getScaledHeight()
                         / (double)this.field_44499.getMainWindow().method_43163();
-                     this.field_44499.field_9623.method_26945(var12, var14, var10);
+                     this.field_44499.screen.method_26945(var12, var14, var10);
                   }
                }
             }
@@ -189,8 +189,8 @@ public class class_8671 {
    }
 
    private void method_39831(long var1, List<Path> var3) {
-      if (this.field_44499.field_9623 != null) {
-         this.field_44499.field_9623.method_1189(var3);
+      if (this.field_44499.screen != null) {
+         this.field_44499.screen.method_1189(var3);
       }
    }
 
@@ -220,7 +220,7 @@ public class class_8671 {
             this.field_44489 = false;
          }
 
-         Screen var9 = this.field_44499.field_9623;
+         Screen var9 = this.field_44499.screen;
          if (var9 != null && this.field_44499.field_9610 == null) {
             double var10 = var3 * (double)this.field_44499.getMainWindow().getScaledWidth() / (double)this.field_44499.getMainWindow().method_43166();
             double var12 = var5 * (double)this.field_44499.getMainWindow().getScaledHeight() / (double)this.field_44499.getMainWindow().method_43163();

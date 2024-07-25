@@ -15,7 +15,7 @@ public class class_1322 {
 
    public static Identifier method_6042(Identifier var0) {
       if (field_7281 != null) {
-         Screen var3 = field_7279.field_9623;
+         Screen var3 = field_7279.screen;
          if (var3 instanceof class_2208) {
             if (!var0.method_21461().equals("minecraft") || !var0.method_21456().startsWith("textures/gui/")) {
                return var0;

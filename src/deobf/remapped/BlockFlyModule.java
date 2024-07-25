@@ -129,7 +129,7 @@ public class BlockFlyModule extends SecondModule {
 
    public void method_17215() {
       String var3 = this.getStringValueByName("Picking mode");
-      if ((!var3.equals("OpenInv") || client.field_9623 instanceof class_3431) && this.method_17219() != 0) {
+      if ((!var3.equals("OpenInv") || client.screen instanceof class_3431) && this.method_17219() != 0) {
          int var4 = 43;
          if (!this.getBooleanValueByName("Intelligent Block Picker")) {
             if (!this.method_17217()) {
@@ -153,12 +153,12 @@ public class BlockFlyModule extends SecondModule {
                }
 
                if (var5 >= 0) {
-                  if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
+                  if (!(client.screen instanceof class_3431) && var3.equals("FakeInv")) {
                      client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
                   }
 
                   this.method_17221(var5, var4 - 36);
-                  if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
+                  if (!(client.screen instanceof class_3431) && var3.equals("FakeInv")) {
                      client.method_8614().sendPacket(new class_1194(-1));
                   }
                }
@@ -189,14 +189,14 @@ public class BlockFlyModule extends SecondModule {
             }
 
             if (var4 >= 0 && client.thePlayer.field_3869.method_18878(var4).field_40588 != var8) {
-               if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv") && class_3347.method_15349() <= class_412.field_1752.method_2055()
+               if (!(client.screen instanceof class_3431) && var3.equals("FakeInv") && class_3347.method_15349() <= class_412.field_1752.method_2055()
                   )
                 {
                   client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
                }
 
                this.method_17221(var8, var4 - 36);
-               if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
+               if (!(client.screen instanceof class_3431) && var3.equals("FakeInv")) {
                   client.method_8614().sendPacket(new class_1194(-1));
                }
             }

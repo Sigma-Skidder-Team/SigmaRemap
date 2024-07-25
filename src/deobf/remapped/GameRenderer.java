@@ -301,7 +301,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          }
 
          boolean var8 = false;
-         if (this.field_40612.field_9623 == null) {
+         if (this.field_40612.screen == null) {
             var8 = this.field_40612.gameOptions.field_45548.isKeyDown();
          }
 
@@ -567,7 +567,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
                }
             }
 
-            if (!this.field_40612.gameOptions.hideGUI || this.field_40612.field_9623 != null) {
+            if (!this.field_40612.gameOptions.hideGUI || this.field_40612.screen != null) {
                RenderSystem.method_16433();
                this.method_35921(this.field_40612.getMainWindow().getScaledWidth(), this.field_40612.getMainWindow().getScaledHeight(), var1);
                NotificationIcons.gingerbread.method_38419();
@@ -610,18 +610,18 @@ public class GameRenderer implements class_6491, AutoCloseable {
                var13.method_29851("Overlay name", () -> this.field_40612.field_9610.getClass().getCanonicalName());
                throw new class_3297(var12);
             }
-         } else if (this.field_40612.field_9623 != null && SigmaMainClass.getInstance().getGUIManager().method_31001() == null) {
+         } else if (this.field_40612.screen != null && SigmaMainClass.getInstance().getGUIManager().method_31001() == null) {
             try {
                if (class_7860.field_39933.method_3596()) {
-                  class_7860.method_35547(class_7860.field_39933, this.field_40612.field_9623, var10, var7, var8, this.field_40612.method_8491());
+                  class_7860.method_35547(class_7860.field_39933, this.field_40612.screen, var10, var7, var8, this.field_40612.method_8491());
                } else {
-                  this.field_40612.field_9623.method_6767(var10, var7, var8, this.field_40612.method_8491());
+                  this.field_40612.screen.method_6767(var10, var7, var8, this.field_40612.method_8491());
                   SigmaMainClass.getInstance().getEventManager().call(new class_2532());
                }
             } catch (Throwable var14) {
                class_159 var17 = class_159.method_643(var14, "Rendering screen");
                class_6544 var18 = var17.method_639("Screen render details");
-               var18.method_29851("Screen name", () -> this.field_40612.field_9623.getClass().getCanonicalName());
+               var18.method_29851("Screen name", () -> this.field_40612.screen.getClass().getCanonicalName());
                var18.method_29851(
                   "Mouse location",
                   () -> String.format(
@@ -850,7 +850,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          class_7762 var3 = this.field_40612.method_8515();
          if (var3 != null) {
             boolean var4 = this.field_40612.method_8564();
-            if (!var4 && !(this.field_40612.field_9623 instanceof class_881)) {
+            if (!var4 && !(this.field_40612.screen instanceof class_881)) {
                if (this.field_40611 > 0) {
                   class_5099.field_26293.method_24314();
                   Config.method_14399((long)this.field_40611);
@@ -892,7 +892,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
                   this.field_40625 = 50.0F;
                }
             } else {
-               if (this.field_40612.field_9623 instanceof class_881) {
+               if (this.field_40612.screen instanceof class_881) {
                   Config.method_14399(20L);
                }
 
@@ -933,8 +933,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
          }
       }
 
-      if (this.field_40612.field_9623 instanceof class_1876) {
-         this.method_35944((class_1876)this.field_40612.field_9623);
+      if (this.field_40612.screen instanceof class_1876) {
+         this.method_35944((class_1876)this.field_40612.screen);
       }
 
       if (this.field_40619 != var3) {
@@ -949,8 +949,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
          class_6588.field_33631 = 0;
       }
 
-      if (this.field_40612.field_9623 != null && this.field_40612.field_9623.getClass() == class_5766.class) {
-         this.field_40612.method_8609(new class_3779((class_5766)this.field_40612.field_9623));
+      if (this.field_40612.screen != null && this.field_40612.screen.getClass() == class_5766.class) {
+         this.field_40612.method_8609(new class_3779((class_5766)this.field_40612.screen));
       }
    }
 

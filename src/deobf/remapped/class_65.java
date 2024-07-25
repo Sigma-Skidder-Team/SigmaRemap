@@ -98,8 +98,8 @@ public class class_65 {
    }
 
    public void method_54(class_7966 var1, int var2, int var3) {
-      if (this.field_81.field_9623 != null && this.field_82 != null && !this.field_72.method_42468()) {
-         this.field_81.field_9623.method_1160(var1, this.field_82.method_9665(this.field_81.field_9623), var2, var3);
+      if (this.field_81.screen != null && this.field_82 != null && !this.field_72.method_42468()) {
+         this.field_81.screen.method_1160(var1, this.field_82.method_9665(this.field_81.screen), var2, var3);
       }
    }
 

@@ -40,7 +40,7 @@ public class class_6340 extends class_7621 {
       int var7 = this.field_32368.window.getScaledWidth();
       int var8 = this.field_32368.window.getScaledHeight();
       long var9 = Util.getMeasuringTimeMs();
-      if (this.field_32378 && (this.field_32373.method_19968() || this.field_32368.field_9623 != null) && this.field_32366 == -1L) {
+      if (this.field_32378 && (this.field_32373.method_19968() || this.field_32368.screen != null) && this.field_32366 == -1L) {
          this.field_32366 = var9;
       }
 
@@ -74,9 +74,9 @@ public class class_6340 extends class_7621 {
          }
 
          this.field_32364 = Util.getMeasuringTimeMs();
-         if (this.field_32368.field_9623 != null) {
+         if (this.field_32368.screen != null) {
             this.field_32368
-               .field_9623
+               .screen
                .method_1164(this.field_32368, this.field_32368.getMainWindow().getScaledWidth(), this.field_32368.getMainWindow().getScaledHeight());
          }
       }

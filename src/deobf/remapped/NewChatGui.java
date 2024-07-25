@@ -277,7 +277,7 @@ public class NewChatGui extends AbstractGui {
    }
 
    private boolean method_18695() {
-      return this.field_19686.field_9623 instanceof class_5766;
+      return this.field_19686.screen instanceof class_5766;
    }
 
    public void method_18692(int var1) {

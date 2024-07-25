@@ -137,7 +137,7 @@ public class TestModule extends Module {
    @EventListen
    @class_4249
    public void method_7650(class_8706 var1) {
-      if (!this.method_42015() || client.field_9623 != null) {
+      if (!this.method_42015() || client.screen != null) {
          ;
       }
    }

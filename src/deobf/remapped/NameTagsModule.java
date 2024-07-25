@@ -79,8 +79,8 @@ public class NameTagsModule extends Module {
                return;
             }
 
-            if (client.field_9623 instanceof class_309) {
-               class_309 var6 = (class_309) client.field_9623;
+            if (client.screen instanceof class_309) {
+               class_309 var6 = (class_309) client.screen;
                var5.field_7295 = var6.method_20393().method_18878(0).method_35898();
                var5.field_7288 = new ItemStack(var6.method_20393().method_18878(1).method_35898().method_27960());
                var5.field_7288.field_31206 = var6.method_20393().method_18878(1).method_35898().field_31206;

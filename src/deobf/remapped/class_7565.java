@@ -73,7 +73,7 @@ public class class_7565 extends PremiumModule {
    }
 
    private void method_34397(int var1) {
-      if (client.field_9623 == null || client.field_9623 instanceof class_5766) {
+      if (client.screen == null || client.screen instanceof class_5766) {
          GL11.glPushMatrix();
          class_73.method_150(var1 - 20, this.field_38544 - 20, var1 + 200, this.field_38544 + 120, true);
          EntityRenderDispatcher var4 = MinecraftClient.getInstance().method_8587();

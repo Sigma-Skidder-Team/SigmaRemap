@@ -230,8 +230,8 @@ public class class_8002 extends AbstractGui implements IRenderable, class_5888, 
          this.field_41005.method_54(var1, var4, var5);
          if (this.field_40991.method_32703()) {
             ITextComponent var8 = this.method_36312();
-            if (this.field_41006.field_9623 != null) {
-               this.field_41006.field_9623.method_1176(var1, var8, var4, var5);
+            if (this.field_41006.screen != null) {
+               this.field_41006.screen.method_1176(var1, var8, var4, var5);
             }
          }
 
@@ -259,8 +259,8 @@ public class class_8002 extends AbstractGui implements IRenderable, class_5888, 
          }
       }
 
-      if (var8 != null && this.field_41006.field_9623 != null) {
-         this.field_41006.field_9623.method_1160(var1, this.field_41006.field_9623.method_1179(var8), var4, var5);
+      if (var8 != null && this.field_41006.screen != null) {
+         this.field_41006.screen.method_1160(var1, this.field_41006.screen.method_1179(var8), var4, var5);
       }
    }
 

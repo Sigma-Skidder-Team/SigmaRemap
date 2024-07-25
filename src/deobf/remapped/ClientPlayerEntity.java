@@ -772,8 +772,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             }
          }
       } else {
-         if (this.client.field_9623 != null && !this.client.field_9623.method_1161()) {
-            if (this.client.field_9623 instanceof class_2208) {
+         if (this.client.screen != null && !this.client.screen.method_1161()) {
+            if (this.client.screen instanceof class_2208) {
                this.method_3207();
             }
 

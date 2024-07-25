@@ -21,7 +21,7 @@ public class AutoArmorModule extends Module {
          this.field_9397.method_14776();
       }
 
-      this.field_9393 = client.field_9623 instanceof class_3431;
+      this.field_9393 = client.screen instanceof class_3431;
       field_9392 = false;
    }
 
@@ -38,7 +38,7 @@ public class AutoArmorModule extends Module {
             this.field_9397.method_14776();
          }
 
-         if (!this.getStringValueByName("Mode").equals("OpenInv") || client.field_9623 instanceof class_3431) {
+         if (!this.getStringValueByName("Mode").equals("OpenInv") || client.screen instanceof class_3431) {
             long var4 = (long)(this.getFloatValueByName("Delay") * 1000.0F);
             String var6 = this.getStringValueByName("Elytra");
             switch (var6) {
@@ -57,11 +57,11 @@ public class AutoArmorModule extends Module {
             }
 
             this.field_9395 = client.thePlayer.field_29654;
-            if (client.field_9623 instanceof class_3431) {
+            if (client.screen instanceof class_3431) {
                this.field_9393 = false;
             }
 
-            if ((client.field_9623 == null || client.field_9623 instanceof class_3431 || client.field_9623 instanceof class_5766)
+            if ((client.screen == null || client.screen instanceof class_3431 || client.screen instanceof class_5766)
                && this.field_9397.method_14772() > var4
                && (float) SigmaMainClass.getInstance().method_3310().method_25303() > (float)var4 / 50.0F) {
                field_9392 = false;
@@ -78,7 +78,7 @@ public class AutoArmorModule extends Module {
                }
             }
 
-            if (!this.field_9393 && !(client.field_9623 instanceof class_3431) && this.field_9397.method_14772() > 0L) {
+            if (!this.field_9393 && !(client.screen instanceof class_3431) && this.field_9397.method_14772() > 0L) {
                this.field_9393 = true;
                client.method_8614().sendPacket(new class_1194(-1));
             }
@@ -157,7 +157,7 @@ public class AutoArmorModule extends Module {
    }
 
    private void method_8196(boolean var1) {
-      if (var1 && this.field_9393 && !(client.field_9623 instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
+      if (var1 && this.field_9393 && !(client.screen instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
          client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
          this.field_9393 = false;
       }

@@ -35,7 +35,7 @@ public class AutoSoupModule extends Module {
          String var4 = this.getStringValueByName("Refill mode");
          if (!this.field_29808) {
             if (this.method_26734(class_4897.field_24719) == 0) {
-               if (var4.equals("OpenInv") && !(client.field_9623 instanceof class_3431)) {
+               if (var4.equals("OpenInv") && !(client.screen instanceof class_3431)) {
                   return;
                }
 
@@ -45,7 +45,7 @@ public class AutoSoupModule extends Module {
 
                return;
             }
-         } else if (var4.equals("OpenInv") && !(client.field_9623 instanceof class_3431)) {
+         } else if (var4.equals("OpenInv") && !(client.screen instanceof class_3431)) {
             this.field_29808 = false;
          } else if (this.method_26734(class_4897.field_25302) != 0) {
             this.method_26739();
@@ -73,7 +73,7 @@ public class AutoSoupModule extends Module {
    private void method_26736() {
       this.field_29808 = true;
       if (this.getStringValueByName("Refill mode").equals("FakeInv")
-         && !(client.field_9623 instanceof class_3431)
+         && !(client.screen instanceof class_3431)
          && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
          client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
          this.field_29810 = true;

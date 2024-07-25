@@ -271,8 +271,8 @@ public class class_8455 {
             return;
          }
 
-         if (this.field_43225.field_9623 != null) {
-            if (this.field_43225.field_9623 instanceof class_5766 && var3 == 258) {
+         if (this.field_43225.screen != null) {
+            if (this.field_43225.screen instanceof class_5766 && var3 == 258) {
                class_6435 var14 = new class_6435(var3, var5 == 2, null);
                SigmaMainClass.getInstance().getEventManager().call(var14);
                if (var14.method_29716()) {
@@ -303,11 +303,11 @@ public class class_8455 {
             this.field_43229 = -1L;
          }
 
-         Screen var15 = this.field_43225.field_9623;
-         if (!(this.field_43225.field_9623 instanceof class_8590) || ((class_8590)var15).field_44015 <= Util.getMeasuringTimeMs() - 20L) {
+         Screen var15 = this.field_43225.screen;
+         if (!(this.field_43225.screen instanceof class_8590) || ((class_8590)var15).field_44015 <= Util.getMeasuringTimeMs() - 20L) {
             if (var5 != 1) {
-               if (var5 == 0 && this.field_43225.field_9623 instanceof class_8590) {
-                  ((class_8590)this.field_43225.field_9623).field_44013 = null;
+               if (var5 == 0 && this.field_43225.screen instanceof class_8590) {
+                  ((class_8590)this.field_43225.screen).field_44013 = null;
                }
             } else {
                if (this.field_43225.gameOptions.keyFullScreen.method_27062(var3, var4)) {
@@ -347,7 +347,7 @@ public class class_8455 {
                if (var5 != 1 && (var5 != 2 || !this.field_43223)) {
                   if (var5 == 0) {
                      if (class_7860.field_39946.method_3596()) {
-                        var11[0] = class_7860.method_35566(class_7860.field_39946, this.field_43225.field_9623, var3, var4, var6);
+                        var11[0] = class_7860.method_35566(class_7860.field_39946, this.field_43225.screen, var3, var4, var6);
                         if (var11[0]) {
                            return;
                         }
@@ -355,12 +355,12 @@ public class class_8455 {
 
                      var11[0] = var15.method_26939(var3, var4, var6);
                      if (class_7860.field_39918.method_3596() && !var11[0]) {
-                        var11[0] = class_7860.method_35566(class_7860.field_39918, this.field_43225.field_9623, var3, var4, var6);
+                        var11[0] = class_7860.method_35566(class_7860.field_39918, this.field_43225.screen, var3, var4, var6);
                      }
                   }
                } else {
                   if (class_7860.field_40177.method_3596()) {
-                     var11[0] = class_7860.method_35566(class_7860.field_40177, this.field_43225.field_9623, var3, var4, var6);
+                     var11[0] = class_7860.method_35566(class_7860.field_40177, this.field_43225.screen, var3, var4, var6);
                      if (var11[0]) {
                         return;
                      }
@@ -368,7 +368,7 @@ public class class_8455 {
 
                   var11[0] = var15.method_26946(var3, var4, var6);
                   if (class_7860.field_39845.method_3596() && !var11[0]) {
-                     var11[0] = class_7860.method_35566(class_7860.field_39845, this.field_43225.field_9623, var3, var4, var6);
+                     var11[0] = class_7860.method_35566(class_7860.field_39845, this.field_43225.screen, var3, var4, var6);
                   }
                }
             }, "keyPressed event handler", var15.getClass().getCanonicalName());
@@ -377,7 +377,7 @@ public class class_8455 {
             }
          }
 
-         if (this.field_43225.field_9623 == null || this.field_43225.field_9623.field_951) {
+         if (this.field_43225.screen == null || this.field_43225.screen.field_951) {
             class_3654 var16 = class_9732.method_44940(var3, var4);
             if (var5 != 0) {
                if (var3 == 293 && this.field_43225.gameRenderer != null) {
@@ -385,7 +385,7 @@ public class class_8455 {
                }
 
                boolean var12 = false;
-               if (this.field_43225.field_9623 == null) {
+               if (this.field_43225.screen == null) {
                   if (var3 == 256) {
                      boolean var13 = class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 292);
                      this.field_43225.method_8597(var13);
@@ -442,15 +442,15 @@ public class class_8455 {
             return;
          }
 
-         Screen var7 = this.field_43225.field_9623;
+         Screen var7 = this.field_43225.screen;
          if (var7 != null && this.field_43225.method_8529() == null) {
             if (Character.charCount(var3) != 1) {
                for (char var11 : Character.toChars(var3)) {
                   Screen.method_1181(() -> {
-                     if (!class_7860.field_40145.method_3596() || !class_7860.method_35566(class_7860.field_40145, this.field_43225.field_9623, var11, var4)) {
+                     if (!class_7860.field_40145.method_3596() || !class_7860.method_35566(class_7860.field_40145, this.field_43225.screen, var11, var4)) {
                         boolean var6 = var7.method_26938(var11, var4);
                         if (class_7860.field_39923.method_3596() && !var6) {
-                           class_7860.method_35566(class_7860.field_39923, this.field_43225.field_9623, var11, var4);
+                           class_7860.method_35566(class_7860.field_39923, this.field_43225.screen, var11, var4);
                         }
                      }
                   }, "charTyped event handler", var7.getClass().getCanonicalName());
@@ -459,10 +459,10 @@ public class class_8455 {
                Screen.method_1181(
                   () -> {
                      if (!class_7860.field_40145.method_3596()
-                        || !class_7860.method_35566(class_7860.field_40145, this.field_43225.field_9623, (char)var3, var4)) {
+                        || !class_7860.method_35566(class_7860.field_40145, this.field_43225.screen, (char)var3, var4)) {
                         boolean var6 = var7.method_26938((char)var3, var4);
                         if (class_7860.field_39923.method_3596() && !var6) {
-                           class_7860.method_35566(class_7860.field_39923, this.field_43225.field_9623, (char)var3, var4);
+                           class_7860.method_35566(class_7860.field_39923, this.field_43225.screen, (char)var3, var4);
                         }
                      }
                   },

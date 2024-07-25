@@ -47,7 +47,7 @@ public class class_1857 {
       if (class_3347.method_15349() == class_412.field_1747.method_2055()
          && var1.method_29384() == 258
          && this.field_9421 != null
-         && this.field_9415.field_9623 instanceof class_5766) {
+         && this.field_9415.screen instanceof class_5766) {
          this.field_9415.method_8614().method_9091().method_23481(this.field_9421);
          this.field_9421 = null;
       }

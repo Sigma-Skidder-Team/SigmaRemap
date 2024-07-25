@@ -47,7 +47,7 @@ public class AutoToolsModule extends Module {
                client.thePlayer.inventory.field_36404 = var5 % 9;
             } else if (SigmaMainClass.getInstance().method_3310().method_25303() > 1) {
                String var6 = this.getStringValueByName("Inv Mode");
-               if (var6.equals("OpenInv") && !(client.field_9623 instanceof class_3431)) {
+               if (var6.equals("OpenInv") && !(client.screen instanceof class_3431)) {
                   return;
                }
 

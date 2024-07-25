@@ -44,7 +44,7 @@ public class class_772 extends class_1094 {
    }
 
    private boolean method_3464() {
-      return this.field_943.field_9623 instanceof class_1876;
+      return this.field_943.screen instanceof class_1876;
    }
 
    private void method_3469() {

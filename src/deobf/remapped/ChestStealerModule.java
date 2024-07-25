@@ -47,7 +47,7 @@ public class ChestStealerModule extends Module {
             }
 
             this.method_14638();
-            if (this.field_15892 != null && client.field_9623 == null && this.field_15893.method_14772() > 1000L) {
+            if (this.field_15892 != null && client.screen == null && this.field_15893.method_14772() > 1000L) {
                class_9529 var4 = (class_9529)class_7494.method_34100(this.field_15892.method_17399());
                if (var4.method_43955().getX() == this.field_15892.method_17399().getX()
                   && var4.method_43955().getY() == this.field_15892.method_17399().getY()
@@ -76,7 +76,7 @@ public class ChestStealerModule extends Module {
                   && !var8
                   && Math.sqrt(client.thePlayer.method_37273((double)var9, (double)var10, (double)var11)) < 5.0
                   && this.field_15893.method_14772() > 1000L
-                  && client.field_9623 == null) {
+                  && client.screen == null) {
                   class_9529 var12 = (class_9529)class_7494.method_34100(var7.method_17399());
                   if (var12.method_43955().getX() == var7.method_17399().getX()
                      && var12.method_43955().getY() == var7.method_17399().getY()
@@ -90,7 +90,7 @@ public class ChestStealerModule extends Module {
                }
             }
 
-            if (!var14 && client.field_9623 == null && this.field_15892 != null) {
+            if (!var14 && client.screen == null && this.field_15892 != null) {
                this.field_15896.put(this.field_15892, true);
                this.field_15892 = null;
             }
@@ -108,11 +108,11 @@ public class ChestStealerModule extends Module {
    @EventListen
    public void method_14635(class_3278 var1) {
       if (this.method_42015()) {
-         if (!(client.field_9623 instanceof class_2141)) {
+         if (!(client.screen instanceof class_2141)) {
             this.field_15894 = false;
             this.field_15895.method_14774();
             this.field_15895.method_14773();
-            if (client.field_9623 == null && class_2740.method_12366()) {
+            if (client.screen == null && class_2740.method_12366()) {
                this.field_15893.method_14773();
             }
          } else {
@@ -126,7 +126,7 @@ public class ChestStealerModule extends Module {
                      client.thePlayer.method_3207();
                   }
                } else {
-                  class_2141 var4 = (class_2141) client.field_9623;
+                  class_2141 var4 = (class_2141) client.screen;
                   if (!this.method_14637(var4)) {
                      if (this.field_15892 != null) {
                         this.field_15896.put(this.field_15892, true);
