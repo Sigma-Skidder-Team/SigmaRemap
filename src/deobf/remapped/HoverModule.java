@@ -28,7 +28,7 @@ public class HoverModule extends Module {
       if (this.method_42015() && var1.method_6449()) {
          boolean var4 = mcInstance.field_9587 != null && mcInstance.field_9587.method_33990() == class_1430.field_7717;
          boolean var5 = mcInstance.field_9647.method_42156() || mcInstance.field_9577.field_45530.method_27060() && var4;
-         if (SigmaMainClass.method_3328().method_3310().method_25293() > 0 && !var5) {
+         if (SigmaMainClass.getInstance().method_3310().method_25293() > 0 && !var5) {
             this.field_13568 -= 1.0E-14;
             if (this.field_13568 < 0.0 || class_4181.field_20352 == 0) {
                this.field_13568 = 1.0E-11;

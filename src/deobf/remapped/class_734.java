@@ -27,7 +27,7 @@ public class class_734 extends class_2596 {
       this.method_32148(this.field_4010 = new class_5572(this, "brainFreeze"));
       class_734 var5 = this;
 
-      for (Module var7 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+      for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
          if (!this.field_4003.containsKey(var7.method_42004())) {
             class_3407 var8 = new class_3407(this, var7.method_42004().getCategoryName(), var3, var4, var7.method_42004());
             this.field_4003.put(var7.method_42004(), var8);
@@ -67,29 +67,29 @@ public class class_734 extends class_2596 {
    }
 
    public boolean method_3358() {
-      if (SigmaMainClass.method_3328().method_3300().method_9492() && SigmaMainClass.method_3328().method_3300().method_9499()) {
+      if (SigmaMainClass.getInstance().method_3300().method_9492() && SigmaMainClass.getInstance().method_3300().method_9499()) {
          return false;
       } else if (this.field_4004 == null) {
          this.method_32102(() -> {
             ArrayList var3 = new ArrayList();
             var3.add(new class_8888(class_2880.field_14100, "Music", 40));
             var3.add(new class_8888(class_2880.field_14098, "Jello Music requires:", 20));
-            if (!SigmaMainClass.method_3328().method_3300().method_9492()) {
+            if (!SigmaMainClass.getInstance().method_3300().method_9492()) {
                var3.add(new class_8888(class_2880.field_14098, "- Python 2.7.17", 30));
             }
 
-            if (!SigmaMainClass.method_3328().method_3300().method_9499()) {
+            if (!SigmaMainClass.getInstance().method_3300().method_9499()) {
                var3.add(new class_8888(class_2880.field_14098, "- Visual C++ 2010 x86", 30));
             }
 
             var3.add(new class_8888(class_2880.field_14103, "Download", 55));
             this.method_32150(this.field_4004 = new class_9618(this, "music", true, "Dependencies.", var3.<class_8888>toArray(new class_8888[0])));
             this.field_4004.method_8236(var0 -> {
-               if (!SigmaMainClass.method_3328().method_3300().method_9492()) {
+               if (!SigmaMainClass.getInstance().method_3300().method_9492()) {
                   Util.getOperatingSystem().method_37581("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
                }
 
-               if (!SigmaMainClass.method_3328().method_3300().method_9499()) {
+               if (!SigmaMainClass.getInstance().method_3300().method_9499()) {
                   Util.getOperatingSystem().method_37581("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
                }
             });
@@ -123,7 +123,7 @@ public class class_734 extends class_2596 {
       this.field_4007.method_32104(this.field_4007.method_32109() < this.method_32109() && this.field_4007.method_32137() < this.method_32137());
       super.method_32145(var1, var2);
       class_314.method_1399(Math.min(1.0F, field_4000.method_11123() * 4.0F));
-      this.field_4010.method_32104(SigmaMainClass.method_3328().getModuleManager().method_847(class_7723.class).method_42015());
+      this.field_4010.method_32104(SigmaMainClass.getInstance().getModuleManager().method_847(class_7723.class).method_42015());
       if (this.field_4002 != null) {
          int var5 = var1 - this.field_4002.method_32155();
          int var6 = var2 - this.field_4002.method_32093();
@@ -204,7 +204,7 @@ public class class_734 extends class_2596 {
    @Override
    public void method_29509(int var1) {
       super.method_29509(var1);
-      int var4 = SigmaMainClass.method_3328().getModuleManager().method_835().method_380(class_1046.class);
+      int var4 = SigmaMainClass.getInstance().getModuleManager().method_835().method_380(class_1046.class);
       if (var1 == 256 || var1 == var4 && this.field_3999 == null && !this.method_32121()) {
          if (field_4001) {
             field_4008 = !field_4008;
@@ -245,8 +245,8 @@ public class class_734 extends class_2596 {
          var4 *= 1.0F + var8 * 0.2F;
       }
 
-      if (SigmaMainClass.method_3328().getModuleManager().method_848().method_4301() != null) {
-         String var12 = SigmaMainClass.method_3328().getModuleManager().method_848().method_4301().field_8677;
+      if (SigmaMainClass.getInstance().getModuleManager().method_848().method_4301() != null) {
+         String var12 = SigmaMainClass.getInstance().getModuleManager().method_848().method_4301().field_8677;
          class_73.method_87(
             class_5320.field_27152,
             (float)(this.field_36278 - class_5320.field_27152.method_18547(var12) - 80),

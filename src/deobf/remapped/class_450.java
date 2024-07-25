@@ -148,7 +148,7 @@ public class class_450 {
       float var16 = class_9299.method_42795(var12, var10, var11);
       float var17 = 1.0F;
       class_9081 var18 = new class_9081(0.9F);
-      SigmaMainClass.method_3328().method_3302().method_7914(var18);
+      SigmaMainClass.getInstance().method_3302().method_7914(var18);
 
       for (int var19 = 0; var19 < 2; var19++) {
          var1.method_36063();

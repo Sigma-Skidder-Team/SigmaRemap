@@ -167,7 +167,7 @@ public class class_9154 extends class_367 {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {
             this.field_46839 = true;
-            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Mineplex fly", "Please try again"));
+            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Mineplex fly", "Please try again"));
          }
       }
    }
@@ -204,7 +204,7 @@ public class class_9154 extends class_367 {
 
          class_2740.method_12356(mcInstance.field_9632.field_3869.field_19925, 42, 0, class_6269.field_32019, mcInstance.field_9632, true);
          if (!mcInstance.field_9632.field_3869.method_18878(42).method_35898().method_28022()) {
-            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Mineplex Fly", "Please empty a slot in your inventory"));
+            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Mineplex Fly", "Please empty a slot in your inventory"));
          } else if (mcInstance.field_9632.field_3853.field_36404 != 6 && this.field_46846 != 6) {
             mcInstance.method_8614().method_4813(new class_7371(6));
             this.field_46846 = 6;

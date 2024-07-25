@@ -26,7 +26,7 @@ public class TracersModule extends Module {
                && var5.method_37330()
                && var5.field_41712.method_18906() > 0.8
                && var5.field_41697 > 30
-               && !SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
+               && !SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                this.method_19871(var5);
             }
          }

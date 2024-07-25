@@ -71,7 +71,7 @@ public class class_7401 extends Module {
                         ArrayList var11 = class_6306.method_28770(var10, var9);
                         this.field_37777.add(var11);
                         Collections.reverse(var11);
-                        this.method_33701(var11, SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).method_42015());
+                        this.method_33701(var11, SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class).method_42015());
                         class_314.method_1431(var8, !this.getBooleanValueByName("No Swing"));
                         Collections.reverse(var11);
                         this.method_33701(var11, false);
@@ -172,7 +172,7 @@ public class class_7401 extends Module {
       while (var7.hasNext()) {
          Entity var8 = ((class_3357)var7.next()).method_15377();
          if (var8 != mcInstance.field_9632) {
-            if (!SigmaMainClass.method_3328().method_3307().method_14460(var8)) {
+            if (!SigmaMainClass.getInstance().method_3307().method_14460(var8)) {
                if (var8 instanceof class_5834) {
                   if (((class_5834)var8).method_26551() != 0.0F) {
                      if (!(mcInstance.field_9632.method_37175(var8) > var1)) {
@@ -180,7 +180,7 @@ public class class_7401 extends Module {
                            if (!(var8 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var8 instanceof class_704) {
                                  var7.remove();
-                              } else if (var8 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var8)) {
+                              } else if (var8 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var8)) {
                                  var7.remove();
                               } else if (!this.getBooleanValueByName("Invisible") && var8.method_37109()) {
                                  var7.remove();
@@ -191,7 +191,7 @@ public class class_7401 extends Module {
                               } else if (!var8.method_37367()) {
                                  if (var8 instanceof class_704
                                     && class_5876.method_26760((class_704)var8)
-                                    && SigmaMainClass.method_3328().getModuleManager().method_847(class_3595.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().method_847(class_3595.class).method_42015()) {
                                     var7.remove();
                                  }
                               } else {
@@ -232,6 +232,6 @@ public class class_7401 extends Module {
 
    @Override
    public boolean method_42003() {
-      return this.method_42015() && this.method_33702() && SigmaMainClass.method_3328().method_3310().method_25294();
+      return this.method_42015() && this.method_33702() && SigmaMainClass.getInstance().method_3310().method_25294();
    }
 }

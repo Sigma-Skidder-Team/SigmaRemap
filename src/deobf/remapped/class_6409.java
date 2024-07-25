@@ -49,7 +49,7 @@ public class class_6409 extends class_1859 {
    public void finalize() throws Throwable {
       try {
          if (this.field_32709 != null) {
-            SigmaMainClass.method_3328().method_3329(this.field_32709);
+            SigmaMainClass.getInstance().method_3329(this.field_32709);
          }
       } finally {
          super.finalize();

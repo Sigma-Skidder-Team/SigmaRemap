@@ -29,20 +29,20 @@ public class class_357 {
             try {
                var3 = new JSONObjectImpl(var5);
             } catch (class_7584 var7) {
-               if (SigmaMainClass.method_3328().method_3326() != null) {
-                  SigmaMainClass.method_3328().method_3326().method_12862("Error when reading json from config. Continuing, but no preferences will be loaded.");
+               if (SigmaMainClass.getInstance().method_3326() != null) {
+                  SigmaMainClass.getInstance().method_3326().method_12862("Error when reading json from config. Continuing, but no preferences will be loaded.");
                }
 
                var7.printStackTrace();
             }
-         } else if (SigmaMainClass.method_3328().method_3326() != null) {
-            SigmaMainClass.method_3328().method_3326().method_12862("Empty config file");
+         } else if (SigmaMainClass.getInstance().method_3326() != null) {
+            SigmaMainClass.getInstance().method_3326().method_12862("Empty config file");
          }
 
          var4.close();
       } else {
-         if (SigmaMainClass.method_3328().method_3326() != null) {
-            SigmaMainClass.method_3328().method_3326().method_12863("Config does not exist... creating new config file...");
+         if (SigmaMainClass.getInstance().method_3326() != null) {
+            SigmaMainClass.getInstance().method_3326().method_12863("Config does not exist... creating new config file...");
          }
 
          field_1386 = true;

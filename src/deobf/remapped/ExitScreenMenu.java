@@ -163,7 +163,7 @@ public class ExitScreenMenu extends class_2596 {
          float var13 = 1.0F - this.field_32960.method_11123();
          float var14 = 1.0F - this.field_32968.method_11123();
          float var15 = var14 * var14;
-         if (!SigmaMainClass.method_3328().method_3323()) {
+         if (!SigmaMainClass.getInstance().method_3323()) {
             var15 = 0.0F;
          }
 
@@ -234,9 +234,9 @@ public class ExitScreenMenu extends class_2596 {
             }
          }
 
-         if (var14 > 0.0F && SigmaMainClass.method_3328().method_3323()) {
+         if (var14 > 0.0F && SigmaMainClass.getInstance().method_3323()) {
             class_6340.method_29014(var13, 1.0F);
-            SigmaMainClass.method_3328().method_3320(false);
+            SigmaMainClass.getInstance().method_3320(false);
          }
 
          field_32966 *= 0.7F;
@@ -325,7 +325,7 @@ public class ExitScreenMenu extends class_2596 {
                      var4.printStackTrace();
                   }
                }).start());
-            this.field_32976.method_8236(var0 -> SigmaMainClass.method_3328().method_3332().method_23089());
+            this.field_32976.method_8236(var0 -> SigmaMainClass.getInstance().method_3332().method_23089());
             this.field_32976.method_44406(true);
          });
       }

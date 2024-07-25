@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 public class class_7058 {
    public static class_8343 method_32449(String var0, BufferedImage var1) {
       try {
-         BufferedImage var4 = ImageIO.read(SigmaMainClass.method_3328().getClass().getClassLoader().getResourceAsStream(var0));
+         BufferedImage var4 = ImageIO.read(SigmaMainClass.getInstance().getClass().getClassLoader().getResourceAsStream(var0));
          BufferedImage var5 = new BufferedImage(var1.getWidth(), var1.getHeight(), var4.getType());
 
          for (int var6 = 0; var6 < var4.getHeight(); var6++) {

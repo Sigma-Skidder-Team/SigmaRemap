@@ -15,7 +15,7 @@ public class SecondModule extends Module {
       this.field_17661 = var4;
 
       for (Module var10 : this.field_17661) {
-         SigmaMainClass.method_3328().method_3302().method_7908(var10);
+         SigmaMainClass.getInstance().method_3302().method_7908(var10);
          this.field_17660.add(var10.method_41992());
          var10.method_41995(this);
       }
@@ -53,7 +53,7 @@ public class SecondModule extends Module {
       }
 
       if (!var3) {
-         this.method_42009("Type", this.field_17661[0].field_46702);
+         this.isValueString("Type", this.field_17661[0].field_46702);
       }
    }
 
@@ -79,7 +79,7 @@ public class SecondModule extends Module {
    }
 
    @Override
-   public JSONObjectImpl method_42021(JSONObjectImpl var1) {
+   public JSONObjectImpl saveToJson(JSONObjectImpl var1) {
       JSONObjectImpl var4 = JSONWriter.saveStringValue(var1, "sub-options");
       if (var4 != null) {
          for (Module var8 : this.field_17661) {
@@ -99,7 +99,7 @@ public class SecondModule extends Module {
                         try {
                            var14.saveDataToJson(var11);
                         } catch (class_7584 var16) {
-                           SigmaMainClass.method_3328()
+                           SigmaMainClass.getInstance()
                               .method_3326()
                               .method_12862("Could not initialize settings of " + var8.method_41992() + "." + var14.method_23032() + " from config.");
                         }
@@ -111,7 +111,7 @@ public class SecondModule extends Module {
          }
       }
 
-      JSONObjectImpl var18 = super.method_42021(var1);
+      JSONObjectImpl var18 = super.saveToJson(var1);
       if (this.field_46700) {
          this.method_16866();
       }
@@ -120,7 +120,7 @@ public class SecondModule extends Module {
    }
 
    @Override
-   public JSONObjectImpl method_42014(JSONObjectImpl var1) {
+   public JSONObjectImpl loadFromJson(JSONObjectImpl var1) {
       JSONObjectImpl var4 = new JSONObjectImpl();
 
       for (Module var8 : this.field_17661) {
@@ -134,13 +134,13 @@ public class SecondModule extends Module {
       }
 
       var1.method_5820("sub-options", var4);
-      return super.method_42014(var1);
+      return super.loadFromJson(var1);
    }
 
    @Override
    public void method_42006() {
       this.method_16866();
-      if (this.field_17664 instanceof class_367 && !SigmaMainClass.method_3328().method_3332().method_23084()) {
+      if (this.field_17664 instanceof class_367 && !SigmaMainClass.getInstance().method_3332().method_23084()) {
          this.method_42018(false);
       }
    }

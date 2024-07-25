@@ -21,7 +21,7 @@ public class class_2076 extends class_367 {
       }
 
       if (class_314.method_1392() && class_3347.method_15349() == class_412.field_1747.method_2055()) {
-         SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Cubecraft2 fly", "This fly was made for 1.9+ only"));
+         SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Cubecraft2 fly", "This fly was made for 1.9+ only"));
       }
 
       this.field_10450.method_14774();

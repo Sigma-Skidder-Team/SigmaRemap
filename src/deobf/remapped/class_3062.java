@@ -98,7 +98,7 @@ public class class_3062 extends class_2089 {
          this.method_13996(this.field_15040.method_8516());
       }
 
-      SigmaMainClass.method_3328().method_3333();
+      SigmaMainClass.getInstance().method_3333();
       class_6098 var6 = this.field_15040.field_9632.field_3853.method_32416(3);
       if (this.field_15040.field_9577.method_40867().method_42383() && var6.method_27960() == class_4783.field_23281.method_10803()) {
          this.method_13979();
@@ -265,14 +265,14 @@ public class class_3062 extends class_2089 {
          class_4399 var28 = var21 == null ? var17.method_4833(1) : var21;
          if (var28 != null) {
             class_4459 var31 = new class_4459(true);
-            SigmaMainClass.method_3328().method_3302().method_7914(var31);
+            SigmaMainClass.getInstance().method_3302().method_7914(var31);
             if (var31.method_29716()) {
                return;
             }
 
             this.method_13977(var1, var28);
             class_4459 var13 = new class_4459(false);
-            SigmaMainClass.method_3328().method_3302().method_7914(var13);
+            SigmaMainClass.getInstance().method_3302().method_7914(var13);
          }
 
          class_3542.method_16488();

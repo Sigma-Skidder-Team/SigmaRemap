@@ -75,7 +75,7 @@ public class class_9568 extends class_446 implements class_475 {
       int var5 = class_314.method_1444(class_1255.field_6929.field_6917, 0.2F * var1);
       int var6 = this.field_36270;
       int var7 = this.field_36278;
-      if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30645) {
+      if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30645) {
          var4 = 0;
          var7 -= 8;
          var6 += 8;

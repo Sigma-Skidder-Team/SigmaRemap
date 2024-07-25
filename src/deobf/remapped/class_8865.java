@@ -82,8 +82,8 @@ public class class_8865 {
 
    public static float[] method_40774(float var0, float var1) {
       float var4 = field_45329.field_9632.field_41701 + 90.0F;
-      if (SigmaMainClass.method_3328().method_3301().method_27147() != -999.0F) {
-         var4 = SigmaMainClass.method_3328().method_3301().method_27147() + 90.0F;
+      if (SigmaMainClass.getInstance().method_3301().method_27147() != -999.0F) {
+         var4 = SigmaMainClass.getInstance().method_3301().method_27147() + 90.0F;
       }
 
       if (var0 != 0.0F) {
@@ -106,8 +106,8 @@ public class class_8865 {
          }
       }
 
-      if (SigmaMainClass.method_3328().method_3301().method_27149()
-         && !SigmaMainClass.method_3328().method_3301().method_27151()
+      if (SigmaMainClass.getInstance().method_3301().method_27149()
+         && !SigmaMainClass.getInstance().method_3301().method_27151()
          && (field_45329.field_9632.field_29673 != 0.0F || field_45329.field_9632.field_29676 != 0.0F)) {
          var0 = 1.0F;
       }

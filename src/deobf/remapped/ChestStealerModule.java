@@ -120,7 +120,7 @@ public class ChestStealerModule extends Module {
                this.field_15895.method_14776();
             }
 
-            if (!((float) SigmaMainClass.method_3328().method_3310().method_25303() < this.getFloatValueByName("Delay") * 20.0F)) {
+            if (!((float) SigmaMainClass.getInstance().method_3310().method_25303() < this.getFloatValueByName("Delay") * 20.0F)) {
                if (class_2740.method_12366()) {
                   if (this.method_42007("Close")) {
                      mcInstance.field_9632.method_3207();
@@ -274,8 +274,8 @@ public class ChestStealerModule extends Module {
                if (var4 instanceof class_6201) {
                   return !BlockFlyModule.method_17216(var4);
                } else if (!(var4 instanceof class_603)
-                  && (!(var4 instanceof class_2100) || !SigmaMainClass.method_3328().getModuleManager().method_847(class_5174.class).method_42007("Archery"))) {
-                  if (var4 == class_4897.field_24999 && SigmaMainClass.method_3328().getModuleManager().method_847(class_3588.class).method_42015()) {
+                  && (!(var4 instanceof class_2100) || !SigmaMainClass.getInstance().getModuleManager().method_847(class_5174.class).method_42007("Archery"))) {
+                  if (var4 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().method_847(class_3588.class).method_42015()) {
                      return false;
                   } else {
                      ArrayList var5 = new ArrayList<class_2451>(

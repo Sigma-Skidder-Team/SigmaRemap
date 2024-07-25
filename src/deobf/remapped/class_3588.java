@@ -66,7 +66,7 @@ public class class_3588 extends class_367 {
          }
 
          int var7 = this.method_16778();
-         if (!SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()
+         if (!SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()
             && var7 != -1
             && !mcInstance.field_9632.field_41726
             && mcInstance.field_9632.field_41706 > 3.0F) {
@@ -109,7 +109,7 @@ public class class_3588 extends class_367 {
          }
       }
 
-      if (SigmaMainClass.method_3328().method_3310().method_25303() > 1) {
+      if (SigmaMainClass.getInstance().method_3310().method_25303() > 1) {
          for (int var5 = 9; var5 < 36; var5++) {
             if (mcInstance.field_9632.field_3869.method_18878(var5).method_35884()) {
                class_6098 var6 = mcInstance.field_9632.field_3869.method_18878(var5).method_35898();

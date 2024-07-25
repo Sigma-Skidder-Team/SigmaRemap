@@ -22,7 +22,7 @@ public class class_9093 extends Module {
 
    public class_9093() {
       super(Category.WORLD, "JelloEdit", "Client side world edit");
-      File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/shematics");
+      File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/shematics");
       if (var3.exists()) {
          this.field_46568 = new ArrayList<String>(Arrays.asList(var3.list()));
 
@@ -63,7 +63,7 @@ public class class_9093 extends Module {
 
    @Override
    public void method_42006() {
-      File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/shematics/" + (String)this.getSettingValueByName("Shematics"));
+      File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/shematics/" + (String)this.getSettingValueByName("Shematics"));
       if (var3.exists()) {
          this.field_46580 = new class_6009(var3);
          if (this.field_46580.method_27431() && this.field_46580.method_27432().size() > 0) {

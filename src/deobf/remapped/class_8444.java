@@ -20,7 +20,7 @@ public class class_8444 extends Module {
             if (!this.field_43195.isEmpty()) {
                if (this.field_43197 > 3200) {
                   this.field_43195.clear();
-                  SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Vanished Cleared", "Vanish List has been Cleared.", 5500));
+                  SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Vanished Cleared", "Vanish List has been Cleared.", 5500));
                   this.field_43197 = -3200;
                } else {
                   this.field_43197++;
@@ -34,13 +34,13 @@ public class class_8444 extends Module {
                      ITextComponent var7 = var6 == null ? null : var6.method_3410();
                      if (var6 != null && this.field_43195.contains(var5)) {
                         if (var7 == null) {
-                           SigmaMainClass.method_3328()
+                           SigmaMainClass.getInstance()
                               .method_3335()
                               .method_27841(
                                  new class_8235("Vanished Warning", "A player is vanished !!" + var6.method_3410().getUnformattedComponentText(), 5500)
                               );
                         } else {
-                           SigmaMainClass.method_3328()
+                           SigmaMainClass.getInstance()
                               .method_3335()
                               .method_27841(new class_8235("Vanish Warning", var6.method_3410().getString() + " is no longer Vanished.", 5500));
                         }
@@ -49,7 +49,7 @@ public class class_8444 extends Module {
                      this.field_43195.remove(var5);
                   }
                } catch (Exception var8) {
-                  SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Vanished Error", "Something bad happened.", 5500));
+                  SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Vanished Error", "Something bad happened.", 5500));
                }
             }
          }
@@ -66,7 +66,7 @@ public class class_8444 extends Module {
                   class_753 var7 = mcInstance.method_8614().method_4800(var6.method_27005().getId());
                   if (var7 == null && !this.method_38840(var6.method_27005().getId())) {
                      System.out.println(var6.method_27005().getId());
-                     SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Vanished Warning", "A player is vanished ! ", 5500));
+                     SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Vanished Warning", "A player is vanished ! ", 5500));
                      this.field_43197 = -3200;
                   }
                }

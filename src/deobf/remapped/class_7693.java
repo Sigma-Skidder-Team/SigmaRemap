@@ -43,7 +43,7 @@ public class class_7693 extends Module {
          if (!MinecraftClient.getInstance().field_9577.field_45470) {
             if (!MinecraftClient.getInstance().field_9577.field_45567) {
                this.field_39066 = var1.method_14966();
-               if (SigmaMainClass.method_3328().method_3299().method_30987()) {
+               if (SigmaMainClass.getInstance().method_3299().method_30987()) {
                   for (class_6849 var7 : class_6849.values()) {
                      class_7737 var8 = var7.method_31422();
                      class_7737 var9 = var7.method_31423();
@@ -64,7 +64,7 @@ public class class_7693 extends Module {
                   class_7737 var23 = var19.method_31423();
                   float var10 = 1.0F;
                   float var11 = 1.0F;
-                  if (SigmaMainClass.method_3328().method_3299().method_30987()) {
+                  if (SigmaMainClass.getInstance().method_3299().method_30987()) {
                      var11 = 0.5F;
                      var10 = 0.5F;
                   }
@@ -130,7 +130,7 @@ public class class_7693 extends Module {
 
                   float var27 = var16.field_15112.method_11123();
                   int var29 = class_314.method_1444(-5658199, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
-                  if (SigmaMainClass.method_3328().method_3299().method_30987()) {
+                  if (SigmaMainClass.getInstance().method_3299().method_30987()) {
                      var29 = class_314.method_1444(-1, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
                   }
 

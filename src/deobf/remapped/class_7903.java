@@ -29,7 +29,7 @@ public class class_7903 extends class_1859 {
       super.method_29509(var1);
       if (var1 == 257) {
          ((class_6356)this.method_32167()).method_29128(this.field_40418.method_32165());
-         SigmaMainClass.method_3328().method_3332().field_25933.method_20856("SF4FSERFERF", this.field_40418.method_32165());
+         SigmaMainClass.getInstance().method_3332().field_25933.method_20856("SF4FSERFERF", this.field_40418.method_32165());
          this.field_40418.method_32186("");
          this.field_40418.method_32177(true);
       }

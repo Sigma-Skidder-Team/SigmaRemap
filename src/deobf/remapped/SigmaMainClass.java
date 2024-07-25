@@ -15,7 +15,7 @@ public class SigmaMainClass {
    public static String field_3957 = "5.0.0b15";
    public static String field_3964 = "Sigma Production";
    public static final boolean field_3956 = false;
-   private static SigmaMainClass field_3982;
+   private static SigmaMainClass instance;
    private static MinecraftClient field_3950 = MinecraftClient.getInstance();
    private final File field_3975 = new File("sigma5");
    private JSONObjectImpl field_3974;
@@ -46,12 +46,12 @@ public class SigmaMainClass {
    public static ArrayList<class_8343> field_3959 = new ArrayList<class_8343>();
    public static boolean field_3951 = false;
 
-   public static SigmaMainClass method_3328() {
-      return field_3982 != null ? field_3982 : (field_3982 = new SigmaMainClass());
+   public static SigmaMainClass getInstance() {
+      return instance != null ? instance : (instance = new SigmaMainClass());
    }
 
    public static class_2827 method_3306() {
-      return method_3328().method_3326();
+      return getInstance().method_3326();
    }
 
    private SigmaMainClass() {
@@ -132,7 +132,7 @@ public class SigmaMainClass {
 
             try {
                Thread.sleep(2000L);
-               if (method_3328().method_3332().method_23084() && (var7.smallImageKey == null || var7.smallImageKey.equals("premium"))) {
+               if (getInstance().method_3332().method_23084() && (var7.smallImageKey == null || var7.smallImageKey.equals("premium"))) {
                   var7.smallImageKey = "premium";
                   var7.smallImageText = "Premium";
                   var3.Discord_UpdatePresence(var7);
@@ -198,7 +198,7 @@ public class SigmaMainClass {
       GL11.glDisable(2896);
       class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
       class_2209.field_11030.method_38419();
-      method_3328().method_3302().method_7914(new class_7285());
+      getInstance().method_3302().method_7914(new class_7285());
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       class_3542.method_16361();
       class_3542.method_16491();
@@ -223,7 +223,7 @@ public class SigmaMainClass {
          }
       }
 
-      if (method_3328().method_3312() != class_6015.field_30642) {
+      if (getInstance().method_3312() != class_6015.field_30642) {
          double var5 = field_3950.window.method_43189() / (double)((float)Math.pow(field_3950.window.method_43189(), 2.0));
          GL11.glScaled(var5, var5, 1.0);
          GL11.glScaled((double)class_6763.field_34898, (double)class_6763.field_34898, 1.0);
@@ -365,7 +365,7 @@ public class SigmaMainClass {
          }
       } else {
          class_3054.method_13951();
-         method_3328().method_3299().method_31006();
+         getInstance().method_3299().method_31006();
          GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Classic Sigma 5.0");
       }
 

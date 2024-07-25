@@ -29,7 +29,7 @@ public class class_2315 extends class_2596 {
    private void method_10635(class_556 var1) {
       var1.method_2667((var1x, var2, var3, var4) -> {
          this.field_11588.field_16931.method_27166(var2, var3, var4);
-         SigmaMainClass.method_3328().method_3309().method_21973(new class_4333(var2, var3.method_12173(), var3.method_12185(), var4));
+         SigmaMainClass.getInstance().method_3309().method_21973(new class_4333(var2, var3.method_12173(), var3.method_12185(), var4));
          this.method_10637();
       });
    }

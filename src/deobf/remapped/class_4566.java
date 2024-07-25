@@ -15,7 +15,7 @@ public class class_4566 {
 
    public void method_21206(String var1) {
       if (!field_22256.contains(var1)) {
-         SigmaMainClass.method_3328().method_3326().method_12862("Invalid audio file attempted to be played: " + var1);
+         SigmaMainClass.getInstance().method_3326().method_12862("Invalid audio file attempted to be played: " + var1);
       } else {
          InputStream var4 = class_2209.method_10226("com/mentalfrostbyte/gui/resources/audio/" + var1 + ".mp3");
          if (field_22254.containsKey(var1) && field_22254.get(var1).method_41843()) {

@@ -24,10 +24,10 @@ public class class_1235 implements Runnable {
             if (MinecraftClient.getInstance().field_9601 != null) {
                boolean var3 = false;
                boolean var4 = false;
-               if (SigmaMainClass.method_3328().getModuleManager() != null) {
-                  ArrayList var5 = new ArrayList<Module>(SigmaMainClass.method_3328().getModuleManager().method_843().values());
+               if (SigmaMainClass.getInstance().getModuleManager() != null) {
+                  ArrayList var5 = new ArrayList<Module>(SigmaMainClass.getInstance().getModuleManager().method_843().values());
 
-                  for (Module var7 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+                  for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
                      if (var7 instanceof SecondModule) {
                         var5.addAll(Arrays.asList(((SecondModule)var7).field_17661));
                      }

@@ -50,7 +50,7 @@ public class class_5787 extends Module {
             }
          }
 
-         if (mcInstance.field_9623 instanceof class_2208 || SigmaMainClass.method_3328().method_3310().method_25291() <= 1) {
+         if (mcInstance.field_9623 instanceof class_2208 || SigmaMainClass.getInstance().method_3310().method_25291() <= 1) {
             if (mcInstance.field_9623 instanceof class_5766) {
                return;
             }
@@ -70,7 +70,7 @@ public class class_5787 extends Module {
                }
             }
 
-            if (SigmaMainClass.method_3328().method_3299().method_31001() != null && SigmaMainClass.method_3328().method_3299().method_31001().method_32121()) {
+            if (SigmaMainClass.getInstance().method_3299().method_31001() != null && SigmaMainClass.getInstance().method_3299().method_31001().method_32121()) {
                for (class_5916 var14 : MinecraftClient.getInstance().field_9577.field_45395) {
                   var14.field_30024 = false;
                }

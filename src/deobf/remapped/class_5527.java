@@ -8,7 +8,7 @@ public class class_5527 extends class_2596 {
    public class_4636 field_28174;
    public class_4636 field_28178;
    public class_4636 field_28179;
-   public class_8691 field_28176 = SigmaMainClass.method_3328().method_3303();
+   public class_8691 field_28176 = SigmaMainClass.getInstance().method_3303();
    private String field_28172 = "§7Idle...";
 
    public class_5527() {
@@ -44,7 +44,7 @@ public class class_5527 extends class_2596 {
             }
          }).start();
       });
-      this.field_28178.method_32100((var0, var1) -> SigmaMainClass.method_3328().method_3299().method_30990(new class_2135()));
+      this.field_28178.method_32100((var0, var1) -> SigmaMainClass.getInstance().method_3299().method_30990(new class_2135()));
       this.field_28179.method_32100((var1, var2) -> {
          String var5x = "";
 
@@ -94,7 +94,7 @@ public class class_5527 extends class_2596 {
    public void method_29509(int var1) {
       super.method_29509(var1);
       if (var1 == 256) {
-         SigmaMainClass.method_3328().method_3299().method_30990(new class_2135());
+         SigmaMainClass.getInstance().method_3299().method_30990(new class_2135());
       }
    }
 }

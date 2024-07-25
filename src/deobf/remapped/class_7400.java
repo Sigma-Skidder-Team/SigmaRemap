@@ -23,7 +23,7 @@ public class class_7400 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      this.field_37775 = SigmaMainClass.method_3328().method_3332().method_23081();
+      this.field_37775 = SigmaMainClass.getInstance().method_3332().method_23081();
       String var4 = "Log in";
       class_8343 var5 = class_2209.field_11054;
       if (this.field_37775 != null) {

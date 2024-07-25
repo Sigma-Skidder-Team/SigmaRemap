@@ -6,7 +6,7 @@ public class class_1461 extends class_446 {
    public class_2612 field_7868;
    public class_3004 field_7871;
    private ArrayList<class_7144> field_7869;
-   private class_2026 field_7870 = SigmaMainClass.method_3328().method_3300();
+   private class_2026 field_7870 = SigmaMainClass.getInstance().method_3300();
 
    public class_1461(class_7038 var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, class_590.field_3421, var7, false);

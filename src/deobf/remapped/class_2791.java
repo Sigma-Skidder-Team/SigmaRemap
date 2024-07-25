@@ -16,7 +16,7 @@ public class class_2791 extends Module {
    @EventListen
    public void method_12682(class_717 var1) {
       if (!this.method_42015()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(class_4557.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
@@ -28,7 +28,7 @@ public class class_2791 extends Module {
    @EventListen
    public void method_12683(class_5596 var1) {
       if (!this.method_42015()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(class_4557.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
@@ -69,7 +69,7 @@ public class class_2791 extends Module {
    @EventListen
    public void method_12684(class_139 var1) {
       if (!this.method_42015()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(class_4557.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }

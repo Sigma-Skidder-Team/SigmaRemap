@@ -165,7 +165,7 @@ public class class_2209 {
          return method_10232(var0, var3);
       } catch (Exception var4) {
          var4.printStackTrace();
-         SigmaMainClass.method_3328()
+         SigmaMainClass.getInstance()
             .method_3326()
             .method_12864(
                "Unable to load texture "
@@ -199,10 +199,10 @@ public class class_2209 {
    public static InputStream method_10226(String var0) {
       try {
          String var3 = DigestUtils.sha1Hex(var0) + ".bmp";
-         if (SigmaMainClass.method_3328().getClass().getClassLoader().getResource(var3) != null) {
+         if (SigmaMainClass.getInstance().getClass().getClassLoader().getResource(var3) != null) {
             ByteArrayInputStream var41;
             try (
-                    InputStream var4 = SigmaMainClass.method_3328().getClass().getClassLoader().getResourceAsStream(var3);
+                    InputStream var4 = SigmaMainClass.getInstance().getClass().getClassLoader().getResourceAsStream(var3);
                     ByteArrayOutputStream var6 = new ByteArrayOutputStream();
             ) {
                byte[] var8 = new byte[4096];
@@ -222,7 +222,7 @@ public class class_2209 {
 
             return var41;
          } else {
-            return SigmaMainClass.method_3328().getClass().getClassLoader().getResourceAsStream(var0);
+            return SigmaMainClass.getInstance().getClass().getClassLoader().getResourceAsStream(var0);
          }
       } catch (IOException var40) {
          throw new IllegalStateException(

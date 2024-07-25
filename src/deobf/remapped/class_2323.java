@@ -53,7 +53,7 @@ public class class_2323 extends class_7671 {
             this.field_11622.set(this.field_11624, var2[0]);
          }
       } catch (Exception var6) {
-         SigmaMainClass.method_3328()
+         SigmaMainClass.getInstance()
             .method_3326()
             .method_12864(var2[0] + "is an invalid input for variable " + this.field_11624.getClass().getName() + "::" + this.field_11622.getName());
          var6.printStackTrace();

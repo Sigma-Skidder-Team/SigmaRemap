@@ -64,7 +64,7 @@ public class class_2461 extends Module {
    @EventListen
    public void method_11342(class_7982 var1) {
       if (this.method_42015()) {
-         if (mcInstance.field_9632.field_41726 && SigmaMainClass.method_3328().getModuleManager().method_847(class_1396.class).method_42015()) {
+         if (mcInstance.field_9632.field_41726 && SigmaMainClass.getInstance().getModuleManager().method_847(class_1396.class).method_42015()) {
             var1.method_36186(true);
          }
       }

@@ -12,7 +12,7 @@ public class class_1604 extends class_5989 {
    @Override
    public void method_27305() {
       class_4868 var3 = new class_4868();
-      SigmaMainClass.method_3328().method_3302().method_7914(var3);
+      SigmaMainClass.getInstance().method_3302().method_7914(var3);
       if (!var3.method_29716()) {
          super.method_27305();
       }
@@ -21,7 +21,7 @@ public class class_1604 extends class_5989 {
    @Override
    public void method_37226(class_7412 var1, class_1343 var2) {
       class_7767 var5 = new class_7767(var2);
-      SigmaMainClass.method_3328().method_3302().method_7914(var5);
+      SigmaMainClass.getInstance().method_3302().method_7914(var5);
       if (!var5.method_29716()) {
          super.method_37226(var1, new class_1343(var5.method_35234(), var5.method_35236(), var5.method_35231()));
       }
@@ -30,7 +30,7 @@ public class class_1604 extends class_5989 {
    @Override
    public void method_37160(double var1, double var3, double var5) {
       class_3574 var9 = new class_3574();
-      SigmaMainClass.method_3328().method_3302().method_7914(var9);
+      SigmaMainClass.getInstance().method_3302().method_7914(var9);
       if (!var9.method_29716()) {
          super.method_37160(var1, var3, var5);
       }
@@ -50,7 +50,7 @@ public class class_1604 extends class_5989 {
          }
       }
 
-      SigmaMainClass.method_3328().method_3302().method_7914(var3);
+      SigmaMainClass.getInstance().method_3302().method_7914(var3);
       if (!var3.method_29716()) {
          super.method_37123();
       }
@@ -59,6 +59,6 @@ public class class_1604 extends class_5989 {
    @Override
    public void method_26417() {
       super.method_26417();
-      SigmaMainClass.method_3328().method_3302().method_7914(new class_4218());
+      SigmaMainClass.getInstance().method_3302().method_7914(new class_4218());
    }
 }

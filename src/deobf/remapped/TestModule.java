@@ -32,15 +32,15 @@ public class TestModule extends Module {
       this.addSetting(new SomeWeirdMultiFloatSetting("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
       this.addSetting(
          new BooleanSetting("Test Checkbox", "A test checkbox", true)
-            .method_23029(var0 -> SigmaMainClass.method_3328().method_3326().method_12863("Changed checkbox: " + var0.method_23031()))
+            .method_23029(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed checkbox: " + var0.method_23031()))
       );
       this.addSetting(
          new FloatSetting<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
-            .method_23029(var0 -> SigmaMainClass.method_3328().method_3326().method_12863("Changed slider: " + var0.method_23031()))
+            .method_23029(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed slider: " + var0.method_23031()))
       );
       this.addSetting(
          new SomeWeirdIntegerSetting("Test Type", "A test type button", 0, "hello", "goodbye")
-            .method_23029(var0 -> SigmaMainClass.method_3328().method_3326().method_12863("Changed type: " + var0.method_23031()))
+            .method_23029(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed type: " + var0.method_23031()))
       );
       this.addSetting(
          new class_7131(
@@ -294,13 +294,13 @@ public class TestModule extends Module {
       while (var5.hasNext()) {
          Entity var6 = (Entity)var5.next();
          if (var6 != mcInstance.field_9632) {
-            if (!SigmaMainClass.method_3328().method_3307().method_14460(var6)) {
+            if (!SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
                if (var6 instanceof class_5834) {
                   if (((class_5834)var6).method_26551() != 0.0F) {
                      if (!(mcInstance.field_9632.method_37175(var6) > var1)) {
                         if (mcInstance.field_9632.method_26608((class_5834)var6)) {
                            if (!(var6 instanceof class_9399) && !(var6 instanceof class_704)) {
-                              if (var6 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var6)) {
+                              if (var6 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
                                  var5.remove();
                               } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var6)) {
                                  var5.remove();
@@ -346,13 +346,13 @@ public class TestModule extends Module {
       while (var6.hasNext()) {
          Entity var7 = (Entity)var6.next();
          if (var7 != mcInstance.field_9632) {
-            if (!SigmaMainClass.method_3328().method_3307().method_14460(var7)) {
+            if (!SigmaMainClass.getInstance().method_3307().method_14460(var7)) {
                if (var7 instanceof class_5834) {
                   if (((class_5834)var7).method_26551() != 0.0F) {
                      if (!(mcInstance.field_9632.method_37175(var7) > var1)) {
                         if (mcInstance.field_9632.method_26608((class_5834)var7)) {
                            if (!(var7 instanceof class_9399)) {
-                              if (var7 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var7)) {
+                              if (var7 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var7)) {
                                  var6.remove();
                               } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var7)) {
                                  var6.remove();

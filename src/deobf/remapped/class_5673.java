@@ -26,11 +26,11 @@ public class class_5673 extends class_446 {
    public void finalize() throws Throwable {
       try {
          if (this.field_28756 != null) {
-            SigmaMainClass.method_3328().method_3329(this.field_28756);
+            SigmaMainClass.getInstance().method_3329(this.field_28756);
          }
 
          if (this.field_28753 != null) {
-            SigmaMainClass.method_3328().method_3329(this.field_28753);
+            SigmaMainClass.getInstance().method_3329(this.field_28753);
          }
       } finally {
          super.finalize();
@@ -56,7 +56,7 @@ public class class_5673 extends class_446 {
       boolean var5 = this.method_32183() && this.method_32167().method_32167().method_32120(var1, var2);
       this.field_28754.method_11119(!var5 ? class_4043.field_19618 : class_4043.field_19620);
       if (var5) {
-         SigmaMainClass.method_3328().method_3299().method_30984(class_6763.field_34905);
+         SigmaMainClass.getInstance().method_3299().method_30984(class_6763.field_34905);
       }
 
       super.method_32145(var1, var2);

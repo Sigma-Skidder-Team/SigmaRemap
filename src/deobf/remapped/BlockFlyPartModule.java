@@ -60,7 +60,7 @@ public class BlockFlyPartModule extends Module {
    @EventListen
    public void method_36707(class_7982 var1) {
       if (this.method_42015()) {
-         if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
+         if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
             if (mcInstance.field_9601
                      .method_6680(
                         mcInstance.field_9632,
@@ -71,7 +71,7 @@ public class BlockFlyPartModule extends Module {
                && mcInstance.field_9632.field_41706 < 1.0F) {
                var1.method_36186(true);
             }
-         } else if (mcInstance.field_9632.field_41726 && SigmaMainClass.method_3328().getModuleManager().method_847(class_1396.class).method_42015()) {
+         } else if (mcInstance.field_9632.field_41726 && SigmaMainClass.getInstance().getModuleManager().method_847(class_1396.class).method_42015()) {
             var1.method_36186(true);
          }
       }
@@ -212,7 +212,7 @@ public class BlockFlyPartModule extends Module {
                if (mcInstance.field_9632.field_41726 && class_314.method_1434() && !mcInstance.field_9632.method_37252() && !this.field_41374) {
                   this.field_41377 = false;
                   mcInstance.field_9632.method_26595();
-                  ((class_6908) SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class)).method_31653();
+                  ((class_6908) SigmaMainClass.getInstance().getModuleManager().method_847(class_6908.class)).method_31653();
                   this.field_41377 = true;
                   var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
                   var1.method_35232(mcInstance.field_9632.method_37098().field_7336);

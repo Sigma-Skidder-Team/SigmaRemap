@@ -34,7 +34,7 @@ public class class_4820 extends Module {
    @class_315
    private void method_22207(class_1393 var1) {
       if (this.method_42015()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class);
          if (var4.method_16864() instanceof class_9154) {
             class_9154 var5 = (class_9154)var4.method_16864();
             if (var5.method_42164()) {

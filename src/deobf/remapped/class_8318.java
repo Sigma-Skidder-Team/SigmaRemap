@@ -30,7 +30,7 @@ public class class_8318 extends Module {
    @EventListen
    public void method_38349(class_7767 var1) {
       if (this.method_42015()
-         && !SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class).method_42015()
+         && !SigmaMainClass.getInstance().getModuleManager().method_847(BlockFlyModule.class).method_42015()
          && !class_314.method_1437(mcInstance.field_9632)) {
          String var4 = this.getStringValueByName("Mode");
          switch (var4) {
@@ -100,7 +100,7 @@ public class class_8318 extends Module {
                   }
 
                   this.field_42612 = mcInstance.field_9632.method_37309();
-                  if (!SigmaMainClass.method_3328().getModuleManager().method_847(class_6803.class).method_42015()) {
+                  if (!SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
                      mcInstance.field_9616.field_32603 = 1.0F;
                   }
                } else {

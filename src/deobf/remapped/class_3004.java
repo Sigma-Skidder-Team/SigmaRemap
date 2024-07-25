@@ -62,7 +62,7 @@ public class class_3004 extends class_446 {
       }
 
       if (this.method_32183() && this.field_36276) {
-         SigmaMainClass.method_3328().method_3299().method_30984(class_6763.field_34903);
+         SigmaMainClass.getInstance().method_3299().method_30984(class_6763.field_34903);
       }
 
       this.field_14748 = this.field_14748 + ((!this.field_36276 ? 0.0F : 1.0F) - this.field_14748) / 2.0F;

@@ -261,7 +261,7 @@ public final class class_3370 {
                         class_4190 var32 = var31.method_8325(var1, var14, var4);
                         if (var7) {
                            class_5243 var33 = new class_5243(var14, var32);
-                           SigmaMainClass.method_3328().method_3302().method_7914(var33);
+                           SigmaMainClass.getInstance().method_3302().method_7914(var33);
                            var32 = var33.method_23988();
                         }
 

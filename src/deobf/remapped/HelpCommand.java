@@ -13,11 +13,11 @@ public class HelpCommand extends Command {
 
    @Override
    public void run(String var1, class_5273[] var2, class_860 var3) throws CommandException {
-      List var6 = SigmaMainClass.method_3328().getCommandManager().getCommandList();
+      List var6 = SigmaMainClass.getInstance().getCommandManager().getCommandList();
       int var7 = (int)Math.ceil((double)((float)var6.size() / 7.0F));
       int var8 = var2.length == 1 && var2[0].method_24063() == class_1451.field_7814 ? var2[0].method_24059() - 1 : 0;
       if (var2.length == 1 && var2[0].method_24063() == class_1451.field_7816) {
-         Command var12 = SigmaMainClass.method_3328().getCommandManager().getCommandByName(var2[0].method_24060());
+         Command var12 = SigmaMainClass.getInstance().getCommandManager().getCommandByName(var2[0].method_24060());
          if (var12 == null) {
             throw new class_2900();
          } else {

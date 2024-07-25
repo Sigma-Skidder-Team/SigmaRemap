@@ -148,7 +148,7 @@ public abstract class class_9716 extends class_704 {
 
       float var7 = !class_7860.field_40182.method_3596() ? var3 : class_7860.method_35586(class_7860.field_40182, this, var3);
       class_8128 var9 = new class_8128(var7);
-      SigmaMainClass.method_3328().method_3302().method_7914(var9);
+      SigmaMainClass.getInstance().method_3302().method_7914(var9);
       return var9.field_41637;
    }
 

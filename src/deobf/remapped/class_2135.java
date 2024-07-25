@@ -15,7 +15,7 @@ public class class_2135 extends class_2596 {
    private float field_10705 = 0.65F;
    private float field_10698 = 1.0F - this.field_10705;
    private int field_10703 = 30;
-   public class_8691 field_10709 = SigmaMainClass.method_3328().method_3303();
+   public class_8691 field_10709 = SigmaMainClass.getInstance().method_3303();
    private class_8343 field_10693;
    private float field_10696;
    private class_6440 field_10699 = class_6440.field_32871;

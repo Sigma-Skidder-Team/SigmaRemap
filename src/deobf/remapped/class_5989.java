@@ -138,7 +138,7 @@ public class class_5989 extends class_9716 {
    public void method_27305() {
       class_4092 var3 = this.method_37241();
       class_1393 var4 = new class_1393(this.method_37302(), var3.field_19937, this.method_37156(), this.field_41755, this.field_41701, this.field_41726);
-      SigmaMainClass.method_3328().method_3302().method_7914(var4);
+      SigmaMainClass.getInstance().method_3302().method_7914(var4);
       if (!var4.method_29716()) {
          boolean var5 = this.method_37321();
          if (var5 != this.field_30513) {
@@ -210,7 +210,7 @@ public class class_5989 extends class_9716 {
          }
 
          var4.method_6440();
-         SigmaMainClass.method_3328().method_3302().method_7914(var4);
+         SigmaMainClass.getInstance().method_3302().method_7914(var4);
       }
    }
 
@@ -594,7 +594,7 @@ public class class_5989 extends class_9716 {
       this.field_30523.method_8531().method_40529(this.field_30533);
       if (this.method_26554() && !this.method_37070()) {
          class_3920 var6 = new class_3920(0.2F);
-         SigmaMainClass.method_3328().method_3302().method_7914(var6);
+         SigmaMainClass.getInstance().method_3302().method_7914(var6);
          if (!var6.method_29716()) {
             this.field_30533.field_45282 = this.field_30533.field_45282 * var6.method_18145();
             this.field_30533.field_45287 = this.field_30533.field_45287 * var6.method_18145();
