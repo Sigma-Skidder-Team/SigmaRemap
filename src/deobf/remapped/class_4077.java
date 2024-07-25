@@ -119,7 +119,7 @@ public class class_4077 {
 
    public static void method_18798() {
       class_6737 var2 = new class_6737();
-      Executor var3 = class_9665.method_44661();
+      Executor var3 = Util.getMainWorkerExecutor();
       MinecraftClient var4 = MinecraftClient.getInstance();
       class_950 var5 = (class_950)class_7860.method_35557(var4, class_7860.field_39860);
       if (var5 != null) {

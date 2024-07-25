@@ -785,7 +785,7 @@ public class class_6331 extends class_6486 implements class_700 {
          for (class_8145 var8 : var4[var6]) {
             if (!(var8 instanceof class_9359)) {
                if (this.field_32334) {
-                  throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("Removing entity while ticking!"));
+                  throw (IllegalStateException) Util.method_44658(new IllegalStateException("Removing entity while ticking!"));
                }
 
                this.field_32326.remove(var8.method_37145());
@@ -840,7 +840,7 @@ public class class_6331 extends class_6486 implements class_700 {
          this.field_32326.remove(var1.method_37145());
          this.method_28979(var1);
       } else {
-         throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("Removing entity while ticking!"));
+         throw (IllegalStateException) Util.method_44658(new IllegalStateException("Removing entity while ticking!"));
       }
    }
 

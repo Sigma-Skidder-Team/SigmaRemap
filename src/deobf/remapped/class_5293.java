@@ -42,7 +42,7 @@ public class class_5293 {
    };
 
    public static void method_24140(class_5799 var0, class_1331 var1, class_6631 var2, List<class_7060> var3, Random var4, class_3294 var5) {
-      class_4639 var8 = class_9665.<class_4639>method_44697(!var5.field_16302 ? field_27045 : field_27047, var4);
+      class_4639 var8 = Util.<class_4639>method_44697(!var5.field_16302 ? field_27045 : field_27047, var4);
       var3.add(new class_2576(var0, var8, var1, var2, var5.field_16302));
    }
 }

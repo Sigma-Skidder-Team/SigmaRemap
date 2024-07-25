@@ -117,7 +117,7 @@ public class class_236 {
       var0.field_760.forEach(var1 -> {
          class_236 var4 = field_774.put(var1, var0);
          if (var4 != null) {
-            throw (IllegalStateException)class_9665.method_44658(new IllegalStateException(String.format("%s is defined in too many tags", var1)));
+            throw (IllegalStateException) Util.method_44658(new IllegalStateException(String.format("%s is defined in too many tags", var1)));
          }
       });
       return var0;

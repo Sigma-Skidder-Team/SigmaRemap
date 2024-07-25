@@ -11,14 +11,14 @@ import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
 import org.apache.commons.io.IOUtils;
 
-public enum class_8208 {
-   field_41988,
-   field_41986,
-   field_41987,
-   field_41983,
-   field_41985;
+public enum OperatingSystem {
+   LINUX,
+   SOLARIS,
+   WINDOWS,
+   OSX,
+   UNKNOWN;
 
-   private class_8208() {
+   private OperatingSystem() {
    }
 
    public void method_37577(URL var1) {
@@ -26,15 +26,15 @@ public enum class_8208 {
          Process var4 = AccessController.<Process>doPrivileged((PrivilegedExceptionAction<Process>)(() -> Runtime.getRuntime().exec(this.method_37580(var1))));
 
          for (String var6 : IOUtils.readLines(var4.getErrorStream())) {
-            class_9665.method_44663().error(var6);
+            Util.method_44663().error(var6);
          }
 
          var4.getInputStream().close();
          var4.getErrorStream().close();
          var4.getOutputStream().close();
       } catch (IOException | PrivilegedActionException var7) {
-         class_9665.method_44663().error("Couldn't open url '{}'", var1, var7);
-         class_9665.method_44702(var7);
+         Util.method_44663().error("Couldn't open url '{}'", var1, var7);
+         Util.method_44702(var7);
       }
    }
 
@@ -42,7 +42,7 @@ public enum class_8208 {
       try {
          this.method_37577(var1.toURL());
       } catch (MalformedURLException var5) {
-         class_9665.method_44663().error("Couldn't open uri '{}'", var1, var5);
+         Util.method_44663().error("Couldn't open uri '{}'", var1, var5);
       }
    }
 
@@ -50,7 +50,7 @@ public enum class_8208 {
       try {
          this.method_37577(var1.toURI().toURL());
       } catch (MalformedURLException var5) {
-         class_9665.method_44663().error("Couldn't open file '{}'", var1, var5);
+         Util.method_44663().error("Couldn't open file '{}'", var1, var5);
       }
    }
 
@@ -67,7 +67,7 @@ public enum class_8208 {
       try {
          this.method_37577(new URI(var1).toURL());
       } catch (URISyntaxException | MalformedURLException | IllegalArgumentException var5) {
-         class_9665.method_44663().error("Couldn't open uri '{}'", var1, var5);
+         Util.method_44663().error("Couldn't open uri '{}'", var1, var5);
       }
    }
 }

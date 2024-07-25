@@ -81,23 +81,23 @@ public class class_9663 {
       Dynamic var9 = var1.update(class_4002.field_19441, var5, var2, class_7665.method_34674().getWorldVersion());
       DataResult var10 = class_2904.field_14169.parse(var9);
       return Pair.of(
-         var10.resultOrPartial(class_9665.method_44690("WorldGenSettings: ", field_49220::error))
+         var10.resultOrPartial(Util.method_44690("WorldGenSettings: ", field_49220::error))
             .orElseGet(
                () -> {
                   class_8669 var3 = (class_8669)class_5203.<class_8760>method_23878(class_8669.field_44415)
                      .codec()
                      .parse(var9)
-                     .resultOrPartial(class_9665.method_44690("Dimension type registry: ", field_49220::error))
+                     .resultOrPartial(Util.method_44690("Dimension type registry: ", field_49220::error))
                      .orElseThrow(() -> new IllegalStateException("Failed to get dimension registry"));
                   class_8669 var4 = (class_8669)class_5203.<class_6325>method_23878(class_8669.field_44359)
                      .codec()
                      .parse(var9)
-                     .resultOrPartial(class_9665.method_44690("Biome registry: ", field_49220::error))
+                     .resultOrPartial(Util.method_44690("Biome registry: ", field_49220::error))
                      .orElseThrow(() -> new IllegalStateException("Failed to get biome registry"));
                   class_8669 var5x = (class_8669)class_5203.<class_7902>method_23878(class_8669.field_44360)
                      .codec()
                      .parse(var9)
-                     .resultOrPartial(class_9665.method_44690("Noise settings registry: ", field_49220::error))
+                     .resultOrPartial(Util.method_44690("Noise settings registry: ", field_49220::error))
                      .orElseThrow(() -> new IllegalStateException("Failed to get noise settings registry"));
                   return class_2904.method_13291(var3, var4, var5x);
                }

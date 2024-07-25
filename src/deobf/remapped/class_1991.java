@@ -67,7 +67,7 @@ public class class_1991 extends class_1094 {
    @Override
    public boolean method_26940(double var1, double var3, int var5) {
       if (this.field_10096 && this.field_10089 != null) {
-         class_9665.method_44667().method_37581("https://www.minecraft.net/realms/adventure-maps-in-1-9");
+         Util.getOperatingSystem().method_37581("https://www.minecraft.net/realms/adventure-maps-in-1-9");
          return true;
       } else {
          return super.method_26940(var1, var3, var5);
@@ -169,7 +169,7 @@ public class class_1991 extends class_1094 {
       if (this.method_9192()) {
          class_2496 var3 = this.method_9222();
          if (!"".equals(var3.field_12415)) {
-            class_9665.method_44667().method_37581(var3.field_12415);
+            Util.getOperatingSystem().method_37581(var3.field_12415);
          }
       }
    }
@@ -178,7 +178,7 @@ public class class_1991 extends class_1094 {
       if (this.method_9192()) {
          class_2496 var3 = this.method_9222();
          if (!"".equals(var3.field_12422)) {
-            class_9665.method_44667().method_37581(var3.field_12422);
+            Util.getOperatingSystem().method_37581(var3.field_12422);
          }
       }
    }

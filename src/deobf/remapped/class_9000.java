@@ -12,7 +12,7 @@ public enum class_9000 {
    private final int field_46070;
    private final int field_46075;
    private final int field_46072;
-   private static final class_9000[] field_46078 = class_9665.<class_9000[]>method_44659(new class_9000[6], var0 -> {
+   private static final class_9000[] field_46078 = Util.<class_9000[]>method_44659(new class_9000[6], var0 -> {
       var0[class_240.field_802.method_1050()] = field_46082;
       var0[class_240.field_817.method_1050()] = field_46077;
       var0[class_240.field_818.method_1050()] = field_46071;

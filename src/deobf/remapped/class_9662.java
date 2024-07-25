@@ -29,7 +29,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       this.field_49207 = MinecraftClient.getInstance();
       String var6 = var3.method_2203();
       this.field_49211 = new class_4639(
-         "minecraft", "worlds/" + class_9665.method_44678(var6, class_4639::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var6) + "/icon"
+         "minecraft", "worlds/" + Util.method_44678(var6, class_4639::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var6) + "/icon"
       );
       this.field_49212 = var3.method_2196();
       if (!this.field_49212.isFile()) {
@@ -97,8 +97,8 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
          this.field_49215.method_37648(this);
          this.field_49213.method_35707(this.field_49215.method_37647().isPresent());
          if (!(var1 - (double)this.field_49215.method_36229() <= 32.0)) {
-            if (class_9665.method_44650() - this.field_49214 >= 250L) {
-               this.field_49214 = class_9665.method_44650();
+            if (Util.getMeasuringTimeMs() - this.field_49214 >= 250L) {
+               this.field_49214 = Util.getMeasuringTimeMs();
                return false;
             } else {
                this.method_44610();

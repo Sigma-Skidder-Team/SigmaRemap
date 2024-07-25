@@ -386,7 +386,7 @@ public class class_945 extends class_3757 {
    }
 
    private static Random method_4090(long var0) {
-      return var0 != 0L ? new Random(var0) : new Random(class_9665.method_44650());
+      return var0 != 0L ? new Random(var0) : new Random(Util.getMeasuringTimeMs());
    }
 
    public boolean method_4088(class_6331 var1, boolean var2) {

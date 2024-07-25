@@ -326,7 +326,7 @@ public class class_8359 extends class_8143 implements class_72 {
                }
 
                var6.add(var12);
-            }, class_9665.method_44661()));
+            }, Util.getMainWorkerExecutor()));
          }
       }
 
@@ -344,7 +344,7 @@ public class class_8359 extends class_8143 implements class_72 {
                if (var11 != null) {
                   var6.add(var11);
                }
-            }, class_9665.method_44661()));
+            }, Util.getMainWorkerExecutor()));
          } else {
             class_2008 var12 = new class_2008(this, var5, var3, var6x, var7x, var8, var9);
             var12.method_23638(var1);

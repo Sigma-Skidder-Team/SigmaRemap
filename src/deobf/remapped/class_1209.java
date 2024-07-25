@@ -269,7 +269,7 @@ public class class_1209 implements AutoCloseable {
          this.field_6745.write(var14, (long)(var11 * 4096));
       }
 
-      int var15 = (int)(class_9665.method_44686() / 1000L);
+      int var15 = (int)(Util.getEpochTimeMs() / 1000L);
       this.field_6743.put(var5, this.method_5359(var11, var10));
       this.field_6737.put(var5, var15);
       this.method_5343();

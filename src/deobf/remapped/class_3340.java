@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class class_3340 extends class_5920<class_7666> {
    private static String[] field_16483;
-   private static final Map<class_4466, class_4639> field_16484 = class_9665.<Map<class_4466, class_4639>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_4466, class_4639> field_16484 = Util.<Map<class_4466, class_4639>>method_44659(Maps.newHashMap(), var0 -> {
       var0.put(class_4466.field_21780, class_5931.field_30102);
       var0.put(class_4466.field_21779, class_5931.field_30138);
       var0.put(class_4466.field_21765, class_5931.field_30143);

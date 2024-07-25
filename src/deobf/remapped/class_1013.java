@@ -287,7 +287,7 @@ public abstract class class_1013 {
       if (MinecraftClient.method_8497()) {
          class_4230 var4 = MinecraftClient.getInstance().field_9657.method_20091();
          if (var4 != null) {
-            var4.method_19712(MinecraftClient.field_9574);
+            var4.method_19712(MinecraftClient.IS_SYSTEM_MAC);
          }
       }
    }, (var0, var1) -> var1.method_4492(new TranslationTextComponent(var0.field_45551.method_44550())));

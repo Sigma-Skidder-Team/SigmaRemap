@@ -407,7 +407,7 @@ public class class_6577 extends class_266 {
       class_2805 var6 = new class_2805(var4, var5);
       if (!var4.equals(this.field_33532.method_12755())) {
          this.field_943.method_34457(() -> this.field_943.method_8609(new class_6476(new TranslationTextComponent("dataPack.validation.working"))));
-         class_6298.method_28747(var1.method_29115(), class_9019.field_46137, 2, class_9665.method_44661(), this.field_943)
+         class_6298.method_28747(var1.method_29115(), class_9019.field_46137, 2, Util.getMainWorkerExecutor(), this.field_943)
             .handle(
                (var2, var3) -> {
                   if (var3 == null) {
@@ -469,7 +469,7 @@ public class class_6577 extends class_266 {
 
    private static void method_30069(Path var0, Path var1, Path var2) {
       try {
-         class_9665.method_44696(var0, var1, var2);
+         Util.method_44696(var0, var1, var2);
       } catch (IOException var6) {
          field_33549.warn("Failed to copy datapack file from {} to {}", var2, var1);
          throw new class_6759(var6);

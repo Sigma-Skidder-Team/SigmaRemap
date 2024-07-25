@@ -21,7 +21,7 @@ public class class_8494 {
             var2 -> var2 != null && var1.equals(class_1577.method_7115(var2)) ? var2 : new class_1577(var1, RateLimiter.create((double)this.field_43514))
          );
       if (class_1577.method_7113(var4).tryAcquire(1)) {
-         class_7542.field_38482.method_44914(ChatType.SYSTEM, new StringTextComponent(var1), class_9665.field_49232);
+         class_7542.field_38482.method_44914(ChatType.SYSTEM, new StringTextComponent(var1), Util.NIL_UUID);
       }
    }
 }

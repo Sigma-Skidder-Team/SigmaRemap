@@ -76,7 +76,7 @@ public abstract class class_4382 {
 
    public String method_20424() {
       if (this.field_21498 == null) {
-         this.field_21498 = class_9665.method_44671("enchantment", class_8669.field_44445.method_39797(this));
+         this.field_21498 = Util.createTranslationKey("enchantment", class_8669.field_44445.method_39797(this));
       }
 
       return this.field_21498;

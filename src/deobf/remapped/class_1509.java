@@ -20,7 +20,7 @@ public class class_1509 implements class_7373 {
    public final class_5155 field_7985;
    public final class_7729 field_7993;
    public final class_602 field_7991;
-   private final Map<class_2522, BitSet> field_7986 = new Object2ObjectOpenCustomHashMap(class_9665.method_44698());
+   private final Map<class_2522, BitSet> field_7986 = new Object2ObjectOpenCustomHashMap(Util.method_44698());
 
    public class_1509(List<Pair<Predicate<class_2522>, class_7373>> var1) {
       this.field_7989 = var1;

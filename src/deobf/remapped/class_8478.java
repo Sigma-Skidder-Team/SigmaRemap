@@ -105,7 +105,7 @@ public class class_8478 {
 
    public Random method_39052(class_1331 var1) {
       if (this.field_43448 == null) {
-         return var1 != null ? new Random(class_9299.method_42802(var1)) : new Random(class_9665.method_44650());
+         return var1 != null ? new Random(class_9299.method_42802(var1)) : new Random(Util.getMeasuringTimeMs());
       } else {
          return this.field_43448;
       }

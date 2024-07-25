@@ -297,7 +297,7 @@ public class class_5344 {
       boolean var15 = var9.method_34447(class_7581.field_38627);
       if (!var14 && var15) {
          if (this.field_27261 != field_27254) {
-            throw (IllegalStateException)class_9665.method_44658(new IllegalStateException());
+            throw (IllegalStateException) Util.method_44658(new IllegalStateException());
          }
 
          this.field_27261 = var1.method_3989(this.field_27256);

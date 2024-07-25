@@ -11,14 +11,14 @@ public class class_7539 implements class_2995 {
 
    public void method_34332(int var1, class_3998 var2, float var3) {
       this.field_38472.put(var1, var2);
-      this.field_38475.put(var1, class_9665.method_44650());
+      this.field_38475.put(var1, Util.getMeasuringTimeMs());
       this.field_38474.put(var1, var3);
    }
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
       if (!this.field_38472.isEmpty()) {
-         long var11 = class_9665.method_44650();
+         long var11 = Util.getMeasuringTimeMs();
 
          for (Integer var14 : this.field_38472.keySet()) {
             class_3998 var15 = this.field_38472.get(var14);

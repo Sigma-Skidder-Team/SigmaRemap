@@ -16,7 +16,7 @@ public class class_9787 extends class_6414 implements class_2593 {
       .entrySet()
       .stream()
       .filter(var0 -> var0.getKey().method_1029().method_42629())
-      .collect(class_9665.<class_240, class_6720>method_44681());
+      .collect(Util.<class_240, class_6720>toMap());
    public final class_4190[] field_49672;
    public final class_4190[] field_49666;
    private final Object2IntMap<class_2522> field_49669 = new Object2IntOpenHashMap();

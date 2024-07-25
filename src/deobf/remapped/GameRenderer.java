@@ -32,7 +32,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    public boolean field_40627 = true;
    private boolean field_40606 = true;
    private long field_40646;
-   private long field_40644 = class_9665.method_44650();
+   private long field_40644 = Util.getMeasuringTimeMs();
    public final class_5778 field_40623;
    private final class_5367 field_40633 = new class_5367();
    private boolean field_40630;
@@ -496,11 +496,11 @@ public class GameRenderer implements class_6491, AutoCloseable {
       if (!this.field_40612.method_8558()
          && this.field_40612.field_9577.field_45426
          && (!this.field_40612.field_9577.field_45570 || !this.field_40612.field_9625.method_39842())) {
-         if (class_9665.method_44650() - this.field_40644 > 500L) {
+         if (Util.getMeasuringTimeMs() - this.field_40644 > 500L) {
             this.field_40612.method_8597(false);
          }
       } else {
-         this.field_40644 = class_9665.method_44650();
+         this.field_40644 = Util.getMeasuringTimeMs();
       }
 
       if (!this.field_40612.field_9589) {
@@ -518,8 +518,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
             this.field_40612.method_8562().method_16056("level");
             SigmaMainClass.method_3328().method_3302().method_7914(new class_1711(var1, var2));
             this.method_35950(var1, var2, new class_7966());
-            if (this.field_40612.method_8520() && this.field_40646 < class_9665.method_44650() - 1000L) {
-               this.field_40646 = class_9665.method_44650();
+            if (this.field_40612.method_8520() && this.field_40646 < Util.getMeasuringTimeMs() - 1000L) {
+               this.field_40646 = Util.getMeasuringTimeMs();
                if (!this.field_40612.method_8515().method_1612()) {
                   this.method_35942();
                }
@@ -545,7 +545,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          }
 
          class_9352 var9 = this.field_40612.method_8552();
-         class_3542.method_16402(256, MinecraftClient.field_9574);
+         class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
          class_3542.method_16463(5889);
          class_3542.method_16476();
          class_3542.method_16376(0.0, (double)var9.method_43178() / var9.method_43189(), (double)var9.method_43198() / var9.method_43189(), 0.0, 1000.0, 3000.0);
@@ -580,7 +580,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
                   class_5099.method_23420(var10, (int)this.field_40612.method_8552().method_43189());
                }
 
-               class_3542.method_16402(256, MinecraftClient.field_9574);
+               class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
             }
 
             this.field_40612.method_8562().method_16054();
@@ -666,7 +666,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          class_5797 var3 = class_5523.method_25038(
             this.field_40612.method_8552().method_43178(), this.field_40612.method_8552().method_43198(), this.field_40612.method_8584()
          );
-         class_9665.method_44683().execute(() -> {
+         Util.getIoWorkerExecutor().execute(() -> {
             int var4 = var3.method_26228();
             int var5 = var3.method_26253();
             int var6 = 0;
@@ -816,7 +816,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             class_6588.method_30169();
          }
 
-         class_3542.method_16402(256, MinecraftClient.field_9574);
+         class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
          if (!var7) {
             this.method_35923(var4, var9, var1);
          } else {

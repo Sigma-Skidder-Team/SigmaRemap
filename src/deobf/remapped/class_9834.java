@@ -72,11 +72,11 @@ public class class_9834 {
    };
 
    private static class_4639 method_45325(Random var0) {
-      return class_9665.<class_4639>method_44697(field_49805, var0);
+      return Util.<class_4639>method_44697(field_49805, var0);
    }
 
    private static class_4639 method_45324(Random var0) {
-      return class_9665.<class_4639>method_44697(field_49807, var0);
+      return Util.<class_4639>method_44697(field_49807, var0);
    }
 
    public static void method_45328(class_5799 var0, class_1331 var1, class_6631 var2, List<class_7060> var3, Random var4, class_8401 var5) {

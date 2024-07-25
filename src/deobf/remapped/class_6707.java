@@ -73,7 +73,7 @@ public class class_6707 extends class_266 {
             150,
             20,
             new TranslationTextComponent("pack.openFolder"),
-            var1 -> class_9665.method_44667().method_37578(this.field_34648),
+            var1 -> Util.getOperatingSystem().method_37578(this.field_34648),
             (var1, var2, var3, var4) -> this.method_1176(var2, field_34643, var3, var4)
          )
       );
@@ -138,7 +138,7 @@ public class class_6707 extends class_266 {
          try (Stream var5x = Files.walk(var2x)) {
             var5x.forEach(var3 -> {
                try {
-                  class_9665.method_44696(var2x.getParent(), var2, var3);
+                  Util.method_44696(var2x.getParent(), var2, var3);
                } catch (IOException var7) {
                   field_34642.warn("Failed to copy datapack file  from {} to {}", var3, var2, var7);
                   var5.setTrue();
@@ -174,7 +174,7 @@ public class class_6707 extends class_266 {
       ) {
          String var9 = var2.method_25023();
          class_4639 var10 = new class_4639(
-            "minecraft", "pack/" + class_9665.method_44678(var9, class_4639::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var9) + "/icon"
+            "minecraft", "pack/" + Util.method_44678(var9, class_4639::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var9) + "/icon"
          );
          class_5797 var11 = class_5797.method_26230(var7);
          var1.method_35682(var10, new class_7884(var11));

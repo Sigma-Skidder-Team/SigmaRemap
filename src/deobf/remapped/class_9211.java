@@ -136,7 +136,7 @@ public class class_9211 extends class_1809 {
                      this.method_42545();
                   }
                }
-            }, class_9665.method_44661());
+            }, Util.getMainWorkerExecutor());
          } else {
             this.method_42539(var4);
             this.method_42545();

@@ -192,12 +192,12 @@ public class class_2711 extends class_7481 {
 
    @Override
    public BitSet method_34023(class_6033 var1) {
-      throw (UnsupportedOperationException)class_9665.method_44658(new UnsupportedOperationException("Meaningless in this context"));
+      throw (UnsupportedOperationException) Util.method_44658(new UnsupportedOperationException("Meaningless in this context"));
    }
 
    @Override
    public BitSet method_34019(class_6033 var1) {
-      throw (UnsupportedOperationException)class_9665.method_44658(new UnsupportedOperationException("Meaningless in this context"));
+      throw (UnsupportedOperationException) Util.method_44658(new UnsupportedOperationException("Meaningless in this context"));
    }
 
    public class_2654 method_12212() {

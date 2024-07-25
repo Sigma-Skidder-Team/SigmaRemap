@@ -98,7 +98,7 @@ public class class_6757 extends class_2269 {
             }
          } else {
             var17 = 1;
-            var18 = (int)(class_9665.method_44650() / 100L + (long)(var2 * 2) & 7L);
+            var18 = (int)(Util.getMeasuringTimeMs() / 100L + (long)(var2 * 2) & 7L);
             if (var18 > 4) {
                var18 = 8 - var18;
             }
@@ -262,11 +262,11 @@ public class class_6757 extends class_2269 {
       }
 
       this.field_34870.method_19234(this);
-      if (class_9665.method_44650() - this.field_34862 < 250L) {
+      if (Util.getMeasuringTimeMs() - this.field_34862 < 250L) {
          this.field_34870.method_19235();
       }
 
-      this.field_34862 = class_9665.method_44650();
+      this.field_34862 = Util.getMeasuringTimeMs();
       return false;
    }
 

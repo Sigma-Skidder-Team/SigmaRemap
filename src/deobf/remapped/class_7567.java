@@ -11,7 +11,7 @@ public class class_7567 {
    public static void method_34410(String var0) {
       class_7542 var3 = class_7542.field_38482;
       var3.method_34347();
-      var3.method_44914(ChatType.SYSTEM, new StringTextComponent(method_34406(var0)), class_9665.field_49232);
+      var3.method_44914(ChatType.SYSTEM, new StringTextComponent(method_34406(var0)), Util.NIL_UUID);
    }
 
    private static String method_34406(String var0) {

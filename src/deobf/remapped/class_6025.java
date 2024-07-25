@@ -121,7 +121,7 @@ public class class_6025 implements AutoCloseable, class_4568 {
       this.field_30774.method_40495(new class_9465(3, () -> {
          Stream var5 = var1.method_23351();
          if (var5 != null) {
-            class_9665.method_44680(var5.<CompletableFuture>map(var1xx -> (CompletableFuture)var1xx.map(var2::method_40493, var0x -> {
+            Util.method_44680(var5.<CompletableFuture>map(var1xx -> (CompletableFuture)var1xx.map(var2::method_40493, var0x -> {
                   var0x.run();
                   return CompletableFuture.<class_3256>completedFuture(class_3256.field_16155);
                })).collect(Collectors.toList())).thenAccept(var3 -> this.method_27491(var1, var2));
@@ -136,7 +136,7 @@ public class class_6025 implements AutoCloseable, class_4568 {
       if (var4 != null) {
          return var4;
       } else {
-         throw (IllegalArgumentException)class_9665.method_44658(new IllegalArgumentException("No queue for: " + var1));
+         throw (IllegalArgumentException) Util.method_44658(new IllegalArgumentException("No queue for: " + var1));
       }
    }
 

@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_2681 extends class_266 {
    private final class_6730 field_13149;
    private long field_13150 = -1L;
-   private static final Object2IntMap<class_7335> field_13148 = class_9665.<Object2IntMap<class_7335>>method_44659(new Object2IntOpenHashMap(), var0 -> {
+   private static final Object2IntMap<class_7335> field_13148 = Util.<Object2IntMap<class_7335>>method_44659(new Object2IntOpenHashMap(), var0 -> {
       var0.defaultReturnValue(0);
       var0.put(class_7335.field_37504, 5526612);
       var0.put(class_7335.field_37491, 10066329);
@@ -43,7 +43,7 @@ public class class_2681 extends class_266 {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
       String var7 = class_9299.method_42829(this.field_13149.method_30869(), 0, 100) + "%";
-      long var8 = class_9665.method_44650();
+      long var8 = Util.getMeasuringTimeMs();
       if (var8 - this.field_13150 > 2000L) {
          this.field_13150 = var8;
          class_7542.field_38482.method_34341(new TranslationTextComponent("narrator.loading", var7).getString());

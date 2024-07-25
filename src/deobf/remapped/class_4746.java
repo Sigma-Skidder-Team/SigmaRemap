@@ -61,7 +61,7 @@ public class class_4746 {
          class_3542.method_16448();
          field_22996.method_19712(true);
          field_23002.method_19712(true);
-         class_3542.method_16402(256, MinecraftClient.field_9574);
+         class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
          class_3542.method_16463(5889);
          class_3542.method_16476();
          class_3542.method_16376(
@@ -101,7 +101,7 @@ public class class_4746 {
          field_22996.method_19715();
          field_22996.method_19713(field_22998.field_9596.field_20526, field_22998.field_9596.field_20534);
          GL11.glPopMatrix();
-         class_3542.method_16402(256, MinecraftClient.field_9574);
+         class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
          class_3542.method_16463(5889);
          class_3542.method_16476();
          class_3542.method_16376(

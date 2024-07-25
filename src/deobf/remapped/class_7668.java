@@ -16,7 +16,7 @@ public class class_7668 extends class_2269 {
             16777215
          );
       String var14;
-      switch ((int)(class_9665.method_44650() / 300L % 4L)) {
+      switch ((int)(Util.getMeasuringTimeMs() / 300L % 4L)) {
          case 0:
          default:
             var14 = "O o o";

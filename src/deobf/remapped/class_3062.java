@@ -709,7 +709,7 @@ public class class_3062 extends class_2089 {
       if (var4 != null) {
          int var5 = class_9299.method_42816(var4.method_26551());
          boolean var6 = this.field_15046 > (long)this.field_15042 && (this.field_15046 - (long)this.field_15042) / 3L % 2L == 1L;
-         long var7 = class_9665.method_44650();
+         long var7 = Util.getMeasuringTimeMs();
          if (var5 < this.field_15035 && var4.field_41749 > 0) {
             this.field_15041 = var7;
             this.field_15046 = (long)(this.field_15042 + 20);
@@ -1128,7 +1128,7 @@ public class class_3062 extends class_2089 {
    public UUID method_13986(ITextComponent var1) {
       String var4 = TextProcessing.func_244782_a(var1);
       String var5 = StringUtils.substringBetween(var4, "<", ">");
-      return var5 != null ? this.field_15040.method_8586().method_42342(var5) : class_9665.field_49232;
+      return var5 != null ? this.field_15040.method_8586().method_42342(var5) : Util.NIL_UUID;
    }
 
    public void method_13992(ChatType var1, ITextComponent var2, UUID var3) {

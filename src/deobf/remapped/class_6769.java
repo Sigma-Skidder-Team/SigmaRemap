@@ -464,6 +464,6 @@ public class class_6769 {
    }
 
    private static void method_31058(class_6331 var0, String var1, TextFormatting var2) {
-      var0.method_28990(var0x -> true).forEach(var2x -> var2x.method_26286(new StringTextComponent(var2 + var1), class_9665.field_49232));
+      var0.method_28990(var0x -> true).forEach(var2x -> var2x.method_26286(new StringTextComponent(var2 + var1), Util.NIL_UUID));
    }
 }

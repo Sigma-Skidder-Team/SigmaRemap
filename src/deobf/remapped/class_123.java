@@ -141,7 +141,7 @@ public class class_123 {
    }
 
    public boolean method_374() {
-      return MinecraftClient.field_9574
+      return MinecraftClient.IS_SYSTEM_MAC
          && SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
          && (
             System.getProperty("os.version").startsWith("10.14")

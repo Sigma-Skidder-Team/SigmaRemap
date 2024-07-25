@@ -115,7 +115,7 @@ public class class_2206 extends class_3232 {
             if (!var4) {
                return null;
             } else {
-               throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("Chunk not there when requested: " + var1x));
+               throw (IllegalStateException) Util.method_44658(new IllegalStateException("Chunk not there when requested: " + var1x));
             }
          });
          this.method_10183(var8, var13, var3);
@@ -197,7 +197,7 @@ public class class_2206 extends class_3232 {
             var11 = this.method_10194(var8);
             var12.method_16054();
             if (this.method_10181(var11, var10)) {
-               throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("No chunk holder after ticket has been added"));
+               throw (IllegalStateException) Util.method_44658(new IllegalStateException("No chunk holder after ticket has been added"));
             }
          }
       }

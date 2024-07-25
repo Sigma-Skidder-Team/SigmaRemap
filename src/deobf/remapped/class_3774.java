@@ -29,7 +29,7 @@ public class class_3774 extends class_1809 {
 
    @Override
    public void method_37054(class_7889 var1, class_7832 var2, class_4639 var3, Executor var4) {
-      this.field_18434 = CompletableFuture.<class_4150>supplyAsync(() -> class_4150.method_19265(var2, this.field_9206), class_9665.method_44661());
+      this.field_18434 = CompletableFuture.<class_4150>supplyAsync(() -> class_4150.method_19265(var2, this.field_9206), Util.getMainWorkerExecutor());
       this.field_18434.thenRunAsync(() -> var1.method_35682(this.field_9206, this), method_17468(var4));
    }
 

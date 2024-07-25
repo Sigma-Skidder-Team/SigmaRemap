@@ -27,7 +27,7 @@ public class class_6229 extends class_7346<class_665> {
       if (var5 == 0 && var3 >= (double)this.field_40876 && var3 <= (double)this.field_40877) {
          int var8 = this.field_40891 / 2 - 150;
          if (class_1991.method_9181(this.field_31802) != null) {
-            class_9665.method_44667().method_37581(class_1991.method_9181(this.field_31802));
+            Util.getOperatingSystem().method_37581(class_1991.method_9181(this.field_31802));
          }
 
          int var9 = (int)Math.floor(var3 - (double)this.field_40876) - this.field_40874 + (int)this.method_36228() - 4;

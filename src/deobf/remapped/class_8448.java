@@ -8,7 +8,7 @@ public class class_8448 implements class_2995 {
    private final Map<class_1331, class_7351> field_43203 = Maps.newHashMap();
 
    public void method_38854(class_1331 var1, int var2, String var3, int var4) {
-      this.field_43203.put(var1, new class_7351(var2, var3, class_9665.method_44650() + (long)var4));
+      this.field_43203.put(var1, new class_7351(var2, var3, Util.getMeasuringTimeMs() + (long)var4));
    }
 
    @Override
@@ -18,7 +18,7 @@ public class class_8448 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      long var11 = class_9665.method_44650();
+      long var11 = Util.getMeasuringTimeMs();
       this.field_43203.entrySet().removeIf(var2x -> var11 > var2x.getValue().field_37577);
       this.field_43203.forEach(this::method_38855);
    }

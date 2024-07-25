@@ -17,7 +17,7 @@ public class class_207 extends class_266 {
       this.<class_9521>method_1186(
          new class_9521(this.field_941 / 2 - 116, this.field_940 / 2 + 62 + -16, 114, 20, new TranslationTextComponent("demo.help.buy"), var0 -> {
             var0.field_36675 = false;
-            class_9665.method_44667().method_37581("http://www.minecraft.net/store?source=demo");
+            Util.getOperatingSystem().method_37581("http://www.minecraft.net/store?source=demo");
          })
       );
       this.<class_9521>method_1186(

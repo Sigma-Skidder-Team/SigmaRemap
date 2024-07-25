@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public class class_2127 implements class_8169 {
    private final class_8169 field_10650;
    private final Map<class_4639, class_4639> field_10651;
-   public static final Map<class_4639, class_4639> field_10649 = class_9665.<Map<class_4639, class_4639>>method_44660(() -> {
+   public static final Map<class_4639, class_4639> field_10649 = Util.<Map<class_4639, class_4639>>method_44660(() -> {
       Builder var2 = ImmutableMap.builder();
       BiConsumer var3 = (var1, var2x) -> {
          class_4639 var5 = new class_4639(var1);

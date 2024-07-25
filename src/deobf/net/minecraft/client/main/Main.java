@@ -39,7 +39,7 @@ import remapped.class_6815;
 import remapped.class_704;
 import remapped.class_8761;
 import remapped.class_8881;
-import remapped.class_9665;
+import remapped.Util;
 import remapped.class_9706;
 
 public class Main {
@@ -63,7 +63,7 @@ public class Main {
       ArgumentAcceptingOptionSpec var11 = var3.accepts("proxyPort").withRequiredArg().defaultsTo("8080", new String[0]).ofType(Integer.class);
       ArgumentAcceptingOptionSpec var12 = var3.accepts("proxyUser").withRequiredArg();
       ArgumentAcceptingOptionSpec var13 = var3.accepts("proxyPass").withRequiredArg();
-      ArgumentAcceptingOptionSpec var14 = var3.accepts("username").withRequiredArg().defaultsTo("Player" + class_9665.method_44650() % 1000L, new String[0]);
+      ArgumentAcceptingOptionSpec var14 = var3.accepts("username").withRequiredArg().defaultsTo("Player" + Util.getMeasuringTimeMs() % 1000L, new String[0]);
       ArgumentAcceptingOptionSpec var15 = var3.accepts("uuid").withRequiredArg();
       ArgumentAcceptingOptionSpec var16 = var3.accepts("accessToken").withRequiredArg().required();
       ArgumentAcceptingOptionSpec var17 = var3.accepts("version").withRequiredArg().required();
@@ -121,7 +121,7 @@ public class Main {
       class_159.method_634();
       class_2557.method_11618();
       class_2557.method_11617();
-      class_9665.method_44679();
+      Util.method_44679();
       Session var54 = new Session((String)var14.value(var28), var50, (String)var16.value(var28), (String)var25.value(var28));
       RunArgs var55 = new RunArgs(
          new class_3934(var54, var44, var45, var31),

@@ -6,7 +6,7 @@ import java.util.SortedMap;
 public class class_3017 {
    private static String[] field_14808;
    private final class_2848 field_14813 = new class_2848();
-   public final SortedMap<class_3581, class_9633> field_14810 = class_9665.<SortedMap<class_3581, class_9633>>method_44659(
+   public final SortedMap<class_3581, class_9633> field_14810 = Util.<SortedMap<class_3581, class_9633>>method_44659(
       new Object2ObjectLinkedOpenHashMap(), var1 -> {
          var1.put(class_5276.method_24074(), this.field_14813.method_12956(class_3581.method_16751()));
          var1.put(class_5276.method_24083(), this.field_14813.method_12956(class_3581.method_16771()));

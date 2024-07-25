@@ -33,7 +33,7 @@ public class class_599 implements class_8169 {
    public static Path field_3445;
    private static final Logger field_3446 = LogManager.getLogger();
    public static Class<?> field_3442;
-   private static final Map<class_3168, FileSystem> field_3447 = class_9665.<Map<class_3168, FileSystem>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_3168, FileSystem> field_3447 = Util.<Map<class_3168, FileSystem>>method_44659(Maps.newHashMap(), var0 -> {
       synchronized (class_599.class) {
          for (class_3168 var7 : class_3168.values()) {
             URL var8 = class_599.class.getResource("/" + var7.method_14619() + "/.mcassetsroot");
@@ -57,7 +57,7 @@ public class class_599 implements class_8169 {
       }
    });
    public final Set<String> field_3444;
-   private static final boolean field_3441 = class_9665.method_44667() == class_8208.field_41987;
+   private static final boolean field_3441 = Util.getOperatingSystem() == OperatingSystem.WINDOWS;
    private static final boolean field_3443 = class_7860.field_40161.method_45472();
 
    public class_599(String... var1) {

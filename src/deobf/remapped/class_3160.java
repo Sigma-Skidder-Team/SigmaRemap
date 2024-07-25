@@ -39,7 +39,7 @@ public class class_3160 {
    private volatile int field_15693;
    private volatile int field_15706;
    private final Object2FloatMap<class_5621<class_6486>> field_15698 = Object2FloatMaps.synchronize(
-      new Object2FloatOpenCustomHashMap(class_9665.method_44698())
+      new Object2FloatOpenCustomHashMap(Util.method_44698())
    );
    private volatile ITextComponent field_15704 = new TranslationTextComponent("optimizeWorld.stage.counting");
    private static final Pattern field_15691 = Pattern.compile("^r\\.(-?[0-9]+)\\.(-?[0-9]+)\\.mca$");
@@ -96,7 +96,7 @@ public class class_3160 {
          }
 
          ImmutableMap var32 = var31.build();
-         long var10 = class_9665.method_44650();
+         long var10 = Util.getMeasuringTimeMs();
          this.field_15704 = new TranslationTextComponent("optimizeWorld.stage.upgrading");
 
          while (this.field_15699) {
@@ -181,7 +181,7 @@ public class class_3160 {
          }
 
          this.field_15694.method_18705();
-         var10 = class_9665.method_44650() - var10;
+         var10 = Util.getMeasuringTimeMs() - var10;
          field_15702.info("World optimizaton finished after {} ms", var10);
          this.field_15708 = true;
       }

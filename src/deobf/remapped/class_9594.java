@@ -23,7 +23,7 @@ public enum class_9594 implements Iterable<class_240>, Predicate<class_240> {
    }
 
    public class_240 method_44313(Random var1) {
-      return class_9665.<class_240>method_44697(this.field_48898, var1);
+      return Util.<class_240>method_44697(this.field_48898, var1);
    }
 
    public boolean test(class_240 var1) {

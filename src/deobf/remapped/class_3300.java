@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 public class class_3300 implements class_8169 {
-   private static final Map<String, Pair<class_9264, class_4639>> field_16332 = class_9665.<Map<String, Pair<class_9264, class_4639>>>method_44659(
+   private static final Map<String, Pair<class_9264, class_4639>> field_16332 = Util.<Map<String, Pair<class_9264, class_4639>>>method_44659(
       Maps.newHashMap(), var0 -> {
          var0.put("textures/entity/chest/normal_left.png", new Pair(class_9264.field_47279, new class_4639("textures/entity/chest/normal_double.png")));
          var0.put("textures/entity/chest/normal_right.png", new Pair(class_9264.field_47277, new class_4639("textures/entity/chest/normal_double.png")));

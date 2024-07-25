@@ -3,7 +3,7 @@ package remapped;
 public enum class_4068 implements class_3354 {
    field_19816;
 
-   private static final class_5797 field_19815 = class_9665.<class_5797>method_44659(new class_5797(class_5810.field_29333, 5, 8, false), var0 -> {
+   private static final class_5797 field_19815 = Util.<class_5797>method_44659(new class_5797(class_5810.field_29333, 5, 8, false), var0 -> {
       for (int var3 = 0; var3 < 8; var3++) {
          for (int var4 = 0; var4 < 5; var4++) {
             if (var4 != 0 && var4 + 1 != 5 && var3 != 0 && var3 + 1 != 8) {

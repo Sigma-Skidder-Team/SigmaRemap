@@ -29,7 +29,7 @@ public class class_7510 {
             class_8669.field_44400.method_39801().filter(class_6629::method_30465),
             var1,
             class_6629::method_30472,
-            var0x -> new TranslationTextComponent(class_9665.method_44671("entity", class_6629.method_30472(var0x)))
+            var0x -> new TranslationTextComponent(Util.createTranslationKey("entity", class_6629.method_30472(var0x)))
          )
    );
 

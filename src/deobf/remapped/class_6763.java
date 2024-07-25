@@ -282,7 +282,7 @@ public class class_6763 {
 
    public static void method_30993() {
       MinecraftClient.getInstance();
-      if (MinecraftClient.field_9574) {
+      if (MinecraftClient.IS_SYSTEM_MAC) {
          try {
             class_1293 var2 = class_357.method_1789(new File(SigmaMainClass.method_3328().method_3334() + "/config.json"));
             if (var2.method_5850("hidpicocoa")) {

@@ -21,7 +21,7 @@ public class class_8271 {
                         class_8145 var4 = ((class_9155)var0x.getSource()).method_42200();
                         class_341 var5 = ((class_9155)var0x.getSource()).method_42177();
                         if (var4 == null) {
-                           var5.method_1600().method_39983(method_38130(var0x, var3), ChatType.SYSTEM, class_9665.field_49232);
+                           var5.method_1600().method_39983(method_38130(var0x, var3), ChatType.SYSTEM, Util.NIL_UUID);
                         } else {
                            if (var4 instanceof class_9359) {
                               IChatFilter var6 = ((class_9359)var4).method_43257();

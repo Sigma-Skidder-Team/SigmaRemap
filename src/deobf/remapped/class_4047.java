@@ -446,7 +446,7 @@ public class class_4047 extends class_266 {
          return true;
       } else {
          if (var5 == 0) {
-            long var8 = class_9665.method_44650();
+            long var8 = Util.getMeasuringTimeMs();
             class_4475 var10 = this.method_18670();
             int var11 = var10.method_20761(this.field_948, this.method_18658(new class_511((int)var1, (int)var3)));
             if (var11 >= 0) {

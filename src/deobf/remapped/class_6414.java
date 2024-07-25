@@ -284,7 +284,7 @@ public class class_6414 extends class_2353 implements class_8525 {
 
    public String method_29271() {
       if (this.field_32757 == null) {
-         this.field_32757 = class_9665.method_44671("block", class_8669.field_44462.method_39797(this));
+         this.field_32757 = Util.createTranslationKey("block", class_8669.field_44462.method_39797(this));
       }
 
       return this.field_32757;

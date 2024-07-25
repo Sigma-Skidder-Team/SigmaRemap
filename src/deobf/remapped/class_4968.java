@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_4968 extends class_3736 {
    private static final Logger field_25724 = LogManager.getLogger();
-   private static final boolean field_25723 = class_9665.method_44667() == class_8208.field_41987;
+   private static final boolean field_25723 = Util.getOperatingSystem() == OperatingSystem.WINDOWS;
    private static final CharMatcher field_25726 = CharMatcher.is('\\');
 
    public class_4968(File var1) {

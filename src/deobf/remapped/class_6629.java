@@ -528,7 +528,7 @@ public class class_6629<T extends class_8145> {
 
    public String method_30469() {
       if (this.field_34226 == null) {
-         this.field_34226 = class_9665.method_44671("entity", class_8669.field_44400.method_39797(this));
+         this.field_34226 = Util.createTranslationKey("entity", class_8669.field_44400.method_39797(this));
       }
 
       return this.field_34226;
@@ -575,7 +575,7 @@ public class class_6629<T extends class_8145> {
    }
 
    public static Optional<class_8145> method_30475(class_5734 var0, class_6486 var1) {
-      return class_9665.<class_8145>method_44691(
+      return Util.<class_8145>method_44691(
          method_30474(var0).<class_8145>map(var1x -> var1x.method_30484(var1)),
          var1x -> var1x.method_37393(var0),
          () -> field_34287.warn("Skipping Entity with id {}", var0.method_25965("id"))

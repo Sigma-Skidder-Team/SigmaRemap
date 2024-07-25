@@ -91,7 +91,7 @@ public class class_772 extends class_1094 {
          this.field_943.method_8577().method_35674(field_4180);
          class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
          byte var12 = 0;
-         if ((class_9665.method_44650() / 800L & 1L) == 1L) {
+         if ((Util.getMeasuringTimeMs() / 800L & 1L) == 1L) {
             var12 = 8;
          }
 

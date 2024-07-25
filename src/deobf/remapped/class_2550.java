@@ -17,7 +17,7 @@ public abstract class class_2550 extends class_8388 implements class_3713 {
 
    public void method_11601(class_6098 var1) {
       if (var1.method_27960() != class_4897.field_24352 || var1.method_28002()) {
-         this.method_37372().method_36633(field_12631, class_9665.<class_6098>method_44659(var1.method_27973(), var0 -> var0.method_28017(1)));
+         this.method_37372().method_36633(field_12631, Util.<class_6098>method_44659(var1.method_27973(), var0 -> var0.method_28017(1)));
       }
    }
 

@@ -18,7 +18,7 @@ public class class_950 implements AutoCloseable {
 
    public class_950(class_7889 var1) {
       this.field_4893 = var1;
-      this.field_4895 = class_9665.<class_6988>method_44659(
+      this.field_4895 = Util.<class_6988>method_44659(
          new class_6988(var1, field_4894), var0 -> var0.method_31979(Lists.newArrayList(new class_3293[]{new class_8365()}))
       );
    }

@@ -26,7 +26,7 @@ public class class_9623<T extends class_6406> {
    }
 
    public boolean method_44422(int var1, int var2, class_7966 var3) {
-      long var6 = class_9665.method_44650();
+      long var6 = Util.getMeasuringTimeMs();
       if (this.field_49022 == -1L) {
          this.field_49022 = var6;
          this.field_49023.method_23330(class_9184.method_42330(this.field_49020).method_8590());

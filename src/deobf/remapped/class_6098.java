@@ -47,7 +47,7 @@ public final class class_6098 {
    );
    private static final Logger field_31209 = LogManager.getLogger();
    public static final class_6098 field_31203 = new class_6098((class_2451)null);
-   public static final DecimalFormat field_31202 = class_9665.<DecimalFormat>method_44659(
+   public static final DecimalFormat field_31202 = Util.<DecimalFormat>method_44659(
       new DecimalFormat("#.##"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
    private static final Style field_31216 = Style.EMPTY.setFormatting(TextFormatting.DARK_PURPLE).setItalic(true);

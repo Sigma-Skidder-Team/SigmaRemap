@@ -756,7 +756,7 @@ public class class_3290 {
                            class_1240.method_5531(var13.field_17548, 1.0F);
                            class_1920.method_8757();
                            class_1920.method_8854(var14, var14, var14);
-                           float var15 = var13.field_17539 * (float)(class_9665.method_44650() % 3000L) / 3000.0F / 8.0F;
+                           float var15 = var13.field_17539 * (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F / 8.0F;
                            class_1920.method_8897(var15, 0.0F, 0.0F);
                            class_1920.method_8824(var13.field_17517, 0.0F, 0.0F, 1.0F);
                            class_1920.method_8761();
@@ -833,7 +833,7 @@ public class class_3290 {
                            class_1920.method_8824(var20.field_17517, 0.0F, 0.0F, 1.0F);
                            float var22 = var21 / 8.0F;
                            class_1920.method_8854(var22, var22 / 2.0F, var22);
-                           float var23 = var20.field_17539 * (float)(class_9665.method_44650() % 3000L) / 3000.0F / 8.0F;
+                           float var23 = var20.field_17539 * (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F / 8.0F;
                            class_1920.method_8897(0.0F, var23, 0.0F);
                            class_1920.method_8842(5888);
                         }

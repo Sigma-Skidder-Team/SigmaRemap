@@ -31,11 +31,11 @@ public class class_6343 extends class_2269 {
    @Override
    public boolean method_26940(double var1, double var3, int var5) {
       this.field_32390.method_19234(this);
-      if (class_9665.method_44650() - this.field_32393 < 250L) {
+      if (Util.getMeasuringTimeMs() - this.field_32393 < 250L) {
          this.field_32390.method_19235();
       }
 
-      this.field_32393 = class_9665.method_44650();
+      this.field_32393 = Util.getMeasuringTimeMs();
       return false;
    }
 

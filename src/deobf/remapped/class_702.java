@@ -45,7 +45,7 @@ public class class_702 implements class_700 {
          this.field_3835 = ((class_5990)var2.get(var2.size() - 1)).method_27352();
          this.field_3828 = var1.method_28991().method_9529(this);
       } else {
-         throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("Cache size is not a square."));
+         throw (IllegalStateException) Util.method_44658(new IllegalStateException("Cache size is not a square."));
       }
    }
 
@@ -83,11 +83,11 @@ public class class_702 implements class_700 {
             "Region bounds : {} {} | {} {}", this.field_3824.field_10328, this.field_3824.field_10327, this.field_3835.field_10328, this.field_3835.field_10327
          );
          if (var7 == null) {
-            throw (RuntimeException)class_9665.method_44658(
+            throw (RuntimeException) Util.method_44658(
                new RuntimeException(String.format("We are asking a region for a chunk out of bound | %s %s", var1, var2))
             );
          } else {
-            throw (RuntimeException)class_9665.method_44658(
+            throw (RuntimeException) Util.method_44658(
                new RuntimeException(String.format("Chunk is not of correct status. Expecting %s, got %s | %s %s", var3, var7.method_27364(), var1, var2))
             );
          }

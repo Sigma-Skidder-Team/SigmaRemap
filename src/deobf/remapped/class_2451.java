@@ -129,7 +129,7 @@ public class class_2451 implements class_8525 {
 
    public String method_11212() {
       if (this.field_12169 == null) {
-         this.field_12169 = class_9665.method_44671("item", class_8669.field_44382.method_39797(this));
+         this.field_12169 = Util.createTranslationKey("item", class_8669.field_44382.method_39797(this));
       }
 
       return this.field_12169;

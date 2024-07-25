@@ -18,7 +18,7 @@ public class class_9299 {
    public static final float field_47452 = class_1750.method_7803(Math.PI / 180.0);
    private static final float[] field_47449 = new float[4096];
    public static boolean field_47437 = false;
-   private static final float[] field_47447 = class_9665.<float[]>method_44659(new float[65536], var0 -> {
+   private static final float[] field_47447 = Util.<float[]>method_44659(new float[65536], var0 -> {
       for (int var3 = 0; var3 < var0.length; var3++) {
          var0[var3] = (float)Math.sin((double)var3 * Math.PI * 2.0 / 65536.0);
       }

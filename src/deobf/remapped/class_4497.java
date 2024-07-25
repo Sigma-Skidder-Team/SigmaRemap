@@ -120,14 +120,14 @@ public class class_4497 extends class_341 implements class_8685 {
          return false;
       } else {
          this.method_1616(new class_619(this, this.field_1342, this.field_1337));
-         long var7 = class_9665.method_44657();
+         long var7 = Util.getMeasuringTimeNano();
          this.method_1744(var4.field_50108);
          class_4797.method_22114(this.method_1647());
          class_4797.method_22111(this.method_1639());
          class_5969.method_27263(this.method_1657());
          field_21994.info("Preparing level \"{}\"", this.method_39873());
          this.method_1738();
-         long var9 = class_9665.method_44657() - var7;
+         long var9 = Util.getMeasuringTimeNano() - var7;
          String var11 = String.format(Locale.ROOT, "%.3fs", (double)var9 / 1.0E9);
          field_21994.info("Done ({})! For help, type \"help\"", var11);
          if (var4.field_50107 != null) {
@@ -503,7 +503,7 @@ public class class_4497 extends class_341 implements class_8685 {
    @Override
    public void method_1651() {
       super.method_1651();
-      class_9665.method_44653();
+      Util.shutdownExecutors();
    }
 
    @Override

@@ -71,7 +71,7 @@ public class class_6238<T extends class_8145> {
 
    public class_6629<T> method_28496(String var1) {
       if (this.field_31920) {
-         class_9665.method_44669(class_4002.field_19451, var1);
+         Util.getChoiceType(class_4002.field_19451, var1);
       }
 
       return new class_6629<T>(

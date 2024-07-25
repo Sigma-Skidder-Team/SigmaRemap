@@ -70,7 +70,7 @@ public class class_943 extends class_1859 {
          class_5702 var5x = (class_5702)this.method_32167();
          var5x.method_25788();
       });
-      this.field_4820.method_32100((var0, var1x) -> class_9665.method_44667().method_37581("https://sigmaclient.info/pwdreset.php"));
+      this.field_4820.method_32100((var0, var1x) -> Util.getOperatingSystem().method_37581("https://sigmaclient.info/pwdreset.php"));
    }
 
    @Override

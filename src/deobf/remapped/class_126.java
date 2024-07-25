@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 public final class class_126 implements class_3940 {
    private final Map<class_5621<?>, JsonElement> field_307 = Maps.newIdentityHashMap();
-   private final Object2IntMap<class_5621<?>> field_306 = new Object2IntOpenCustomHashMap(class_9665.method_44698());
+   private final Object2IntMap<class_5621<?>> field_306 = new Object2IntOpenCustomHashMap(Util.method_44698());
    private final Map<class_5621<?>, Lifecycle> field_305 = Maps.newIdentityHashMap();
 
    public <E> void method_392(class_7522 var1, class_5621<E> var2, Encoder<E> var3, int var4, E var5, Lifecycle var6) {

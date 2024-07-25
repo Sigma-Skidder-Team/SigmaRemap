@@ -84,7 +84,7 @@ public class class_7909 extends class_4156 {
 
                   for (String var11 : var9.method_25952()) {
                      if (var9.method_25939(var11, 10)) {
-                        class_9665.<class_9478<?>>method_44691(
+                        Util.<class_9478<?>>method_44691(
                            class_8669.field_44376.method_39794(new class_4639(var11)),
                            var3 -> {
                               class_5734 var6x = var9.method_25937(var11);
@@ -95,7 +95,7 @@ public class class_7909 extends class_4156 {
                                        "Invalid statistic value in {}: Don't know what {} is for key {}", this.field_40432, var6x.method_25929(var8x), var8x
                                     );
                                  } else {
-                                    class_9665.<class_6676<?>>method_44691(
+                                    Util.<class_6676<?>>method_44691(
                                        this.method_35772(var3, var8x),
                                        var3x -> this.field_20206.put(var3x, var6x.method_25947(var8x)),
                                        () -> field_40431.warn("Invalid statistic in {}: Don't know what {} is", this.field_40432, var8x)

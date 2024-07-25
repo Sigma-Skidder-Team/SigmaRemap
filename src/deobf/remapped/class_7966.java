@@ -7,7 +7,7 @@ import java.util.Deque;
 public class class_7966 {
    private static String[] field_40813;
    public Deque<class_6279> field_40811 = new ArrayDeque<class_6279>();
-   private final Deque<class_6279> field_40812 = class_9665.<Deque<class_6279>>method_44659(Queues.newArrayDeque(), var0 -> {
+   private final Deque<class_6279> field_40812 = Util.<Deque<class_6279>>method_44659(Queues.newArrayDeque(), var0 -> {
       class_8107 var3 = new class_8107();
       var3.method_36817();
       class_6555 var4 = new class_6555();

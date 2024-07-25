@@ -22,7 +22,7 @@ public class class_8115 {
                Codec.mapPair(class_2609.field_12888.fieldOf("element"), Codec.INT.fieldOf("weight"))
                   .codec()
                   .listOf()
-                  .promotePartial(class_9665.method_44690("Pool element: ", field_41587::error))
+                  .promotePartial(Util.method_44690("Pool element: ", field_41587::error))
                   .fieldOf("elements")
                   .forGetter(var0x -> var0x.field_41592)
             )

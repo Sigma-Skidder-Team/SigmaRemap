@@ -179,7 +179,7 @@ public class class_465 {
             new TranslationTextComponent("command.failed").modifyStyle(var1x -> var1x.setHoverEvent(new HoverEvent(HoverEvent$class_48.SHOW_TEXT, var7)))
          );
          if (class_7665.field_38958) {
-            var1.method_42175(new StringTextComponent(class_9665.method_44664(var17)));
+            var1.method_42175(new StringTextComponent(Util.method_44664(var17)));
             field_2916.error("'" + var2 + "' threw an exception", var17);
          }
 

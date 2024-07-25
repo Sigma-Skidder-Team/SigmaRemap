@@ -59,7 +59,7 @@ public class class_6535<S> implements class_4302 {
          var10 = var14;
       }
 
-      this.field_33240 = class_9665.<S>method_44680(var9);
+      this.field_33240 = Util.<S>method_44680(var9);
    }
 
    public CompletableFuture<class_3256> 㞈刃붃핇낛佉() {

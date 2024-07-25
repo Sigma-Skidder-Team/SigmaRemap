@@ -9,7 +9,7 @@ public enum class_6139 {
    field_31493("feet", (var0, var1) -> var0),
    field_31490("eyes", (var0, var1) -> new class_1343(var0.field_7336, var0.field_7333 + (double)var1.method_37277(), var0.field_7334));
 
-   private static final Map<String, class_6139> field_31488 = class_9665.<Map<String, class_6139>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<String, class_6139> field_31488 = Util.<Map<String, class_6139>>method_44659(Maps.newHashMap(), var0 -> {
       for (class_6139 var6 : values()) {
          var0.put(var6.field_31492, var6);
       }

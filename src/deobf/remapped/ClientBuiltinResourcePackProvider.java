@@ -97,7 +97,7 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
          this.field_28113 = var8.<Void>thenCompose(
                var3 -> this.method_25051(var6, var7)
                      ? this.method_25054(var7, class_2541.field_12596)
-                     : class_9665.<Void>method_44652(new RuntimeException("Hash check failure for file " + var7 + ", see log"))
+                     : Util.<Void>completeExceptionally(new RuntimeException("Hash check failure for file " + var7 + ", see log"))
             )
             .whenComplete((var1x, var2x) -> {
                if (var2x != null) {
@@ -180,7 +180,7 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
       try (class_2140 var5 = new class_2140(var1)) {
          var7 = var5.<class_975>웨室殢ใ藸褕(class_975.field_4998);
       } catch (IOException var19) {
-         return class_9665.<Void>method_44652(new IOException(String.format("Invalid resourcepack at %s", var1), var19));
+         return Util.<Void>completeExceptionally(new IOException(String.format("Invalid resourcepack at %s", var1), var19));
       }
 
       field_28115.info("Applying server pack {}", var1);

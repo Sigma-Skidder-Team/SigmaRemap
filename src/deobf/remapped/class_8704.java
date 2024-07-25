@@ -135,7 +135,7 @@ public abstract class class_8704 {
          var19 = new TranslationTextComponent("multiplayer.player.joined", var2.method_19839());
       }
 
-      this.method_39983(var19.mergeStyle(TextFormatting.YELLOW), ChatType.SYSTEM, class_9665.field_49232);
+      this.method_39983(var19.mergeStyle(TextFormatting.YELLOW), ChatType.SYSTEM, Util.NIL_UUID);
       var15.method_4170(var2.method_37302(), var2.method_37309(), var2.method_37156(), var2.field_41701, var2.field_41755);
       this.field_44632.add(var2);
       this.field_44619.put(var2.method_37328(), var2);

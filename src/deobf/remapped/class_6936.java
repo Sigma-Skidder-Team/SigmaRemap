@@ -31,7 +31,7 @@ public class class_6936 extends class_8598 {
       if (var3 % 24000L != 500L) {
          if (var5 != 1L) {
             if (var5 == 5L && var3 % 24000L == 22000L) {
-               this.field_44036.method_26286(new TranslationTextComponent("demo.day.warning"), class_9665.field_49232);
+               this.field_44036.method_26286(new TranslationTextComponent("demo.day.warning"), Util.NIL_UUID);
             }
          } else if (var3 != 100L) {
             if (var3 != 175L) {
@@ -46,7 +46,7 @@ public class class_6936 extends class_8598 {
          }
       } else if (var5 <= 6L) {
          if (var5 != 6L) {
-            this.field_44036.method_26286(new TranslationTextComponent("demo.day." + var5), class_9665.field_49232);
+            this.field_44036.method_26286(new TranslationTextComponent("demo.day." + var5), Util.NIL_UUID);
          } else {
             this.field_44036.field_47794.method_4156(new class_2161(class_2161.field_10781, 104.0F));
          }
@@ -55,7 +55,7 @@ public class class_6936 extends class_8598 {
 
    private void method_31733() {
       if (this.field_35657 > 100) {
-         this.field_44036.method_26286(new TranslationTextComponent("demo.reminder"), class_9665.field_49232);
+         this.field_44036.method_26286(new TranslationTextComponent("demo.reminder"), Util.NIL_UUID);
          this.field_35657 = 0;
       }
    }

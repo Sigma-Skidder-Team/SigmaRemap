@@ -56,7 +56,7 @@ public class class_5023 extends class_7648 {
       return this.method_23142(var1)
          .values()
          .stream()
-         .<T>flatMap(var3x -> class_9665.method_44689(var1.method_6914((class_8932<class_6867>)var3x, var3, var2)))
+         .<T>flatMap(var3x -> Util.method_44689(var1.method_6914((class_8932<class_6867>)var3x, var3, var2)))
          .findFirst();
    }
 
@@ -68,7 +68,7 @@ public class class_5023 extends class_7648 {
       return this.method_23142(var1)
          .values()
          .stream()
-         .<class_8932>flatMap(var3x -> class_9665.method_44689(var1.method_6914((class_8932<class_6867>)var3x, var3, var2)))
+         .<class_8932>flatMap(var3x -> Util.method_44689(var1.method_6914((class_8932<class_6867>)var3x, var3, var2)))
          .sorted(Comparator.comparing(var0 -> var0.method_41044().method_27958()))
          .collect(Collectors.<T>toList());
    }

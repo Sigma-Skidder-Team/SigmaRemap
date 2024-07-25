@@ -254,7 +254,7 @@ public class class_4067 implements AutoCloseable {
    }
 
    public void method_18749(String var1, int var2, int var3) {
-      class_4230 var6 = new class_4230(var2, var3, true, MinecraftClient.field_9574);
+      class_4230 var6 = new class_4230(var2, var3, true, MinecraftClient.IS_SYSTEM_MAC);
       var6.method_19709(0.0F, 0.0F, 0.0F, 0.0F);
       this.field_19803.put(var1, var6);
       if (var2 == this.field_19808 && var3 == this.field_19805) {
@@ -295,7 +295,7 @@ public class class_4067 implements AutoCloseable {
       }
 
       for (class_4230 var8 : this.field_19811) {
-         var8.method_19708(var1, var2, MinecraftClient.field_9574);
+         var8.method_19708(var1, var2, MinecraftClient.IS_SYSTEM_MAC);
       }
    }
 

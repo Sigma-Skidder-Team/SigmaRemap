@@ -18,7 +18,7 @@ public class class_2925 implements class_1870 {
 
    @Override
    public void method_8296(class_2034 var1) {
-      this.field_14259 = class_9665.method_44650();
+      this.field_14259 = Util.getMeasuringTimeMs();
       this.field_14254 = this.field_14259;
    }
 
@@ -29,7 +29,7 @@ public class class_2925 implements class_1870 {
       }
 
       int var5 = this.method_13378();
-      if (class_9665.method_44650() > this.field_14259) {
+      if (Util.getMeasuringTimeMs() > this.field_14259) {
          this.field_14259 += 500L;
          field_14255.info(new TranslationTextComponent("menu.preparingSpawn", class_9299.method_42829(var5, 0, 100)).getString());
       }
@@ -37,7 +37,7 @@ public class class_2925 implements class_1870 {
 
    @Override
    public void method_8298() {
-      field_14255.info("Time elapsed: {} ms", class_9665.method_44650() - this.field_14254);
+      field_14255.info("Time elapsed: {} ms", Util.getMeasuringTimeMs() - this.field_14254);
       this.field_14259 = Long.MAX_VALUE;
    }
 

@@ -33,7 +33,7 @@ public class class_9728 extends class_8446 {
             new TranslationTextComponent("options.accessibility.link"),
             var1 -> this.field_943.method_8609(new class_260(var1x -> {
                   if (var1x) {
-                     class_9665.method_44667().method_37581("https://aka.ms/MinecraftJavaAccessibility");
+                     Util.getOperatingSystem().method_37581("https://aka.ms/MinecraftJavaAccessibility");
                   }
 
                   this.field_943.method_8609(this);

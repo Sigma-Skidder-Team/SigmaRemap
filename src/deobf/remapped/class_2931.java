@@ -294,7 +294,7 @@ public class class_2931 {
             var6.add(class_6242.<class_1047>method_28510(var0, var10));
 
             while (var0.nextInt(50) <= var2) {
-               method_13418(var10, class_9665.<class_9693>method_44651(var6));
+               method_13418(var10, Util.<class_9693>method_44651(var6));
                if (var10.isEmpty()) {
                   break;
                }

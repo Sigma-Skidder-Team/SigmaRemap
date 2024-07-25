@@ -56,7 +56,7 @@ public class class_2794 extends class_266 {
             new TranslationTextComponent("menu.sendFeedback"),
             var2 -> this.field_943.method_8609(new class_260(var2x -> {
                   if (var2x) {
-                     class_9665.method_44667().method_37581(var5);
+                     Util.getOperatingSystem().method_37581(var5);
                   }
 
                   this.field_943.method_8609(this);
@@ -72,7 +72,7 @@ public class class_2794 extends class_266 {
             new TranslationTextComponent("menu.reportBugs"),
             var1 -> this.field_943.method_8609(new class_260(var1x -> {
                   if (var1x) {
-                     class_9665.method_44667().method_37581("https://aka.ms/snapshotbugs?ref=game");
+                     Util.getOperatingSystem().method_37581("https://aka.ms/snapshotbugs?ref=game");
                   }
 
                   this.field_943.method_8609(this);

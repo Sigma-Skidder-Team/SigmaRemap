@@ -57,7 +57,7 @@ public class class_4669 {
    }
 
    private static long method_21604() {
-      return class_9665.method_44650();
+      return Util.getMeasuringTimeMs();
    }
 
    public static List<class_7205> method_21603() {

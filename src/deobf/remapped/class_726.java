@@ -91,7 +91,7 @@ public class class_726 {
             var5.append(" ");
          }
 
-         var5.append(class_9665.<String>method_44697(this.field_3943, this.field_3947));
+         var5.append(Util.<String>method_44697(this.field_3943, this.field_3947));
       }
 
       return var1.method_45381().func_238358_a_(new StringTextComponent(var5.toString()).mergeStyle(field_3944), var2, Style.EMPTY);

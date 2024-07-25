@@ -7,7 +7,7 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import java.io.IOException;
 
 public class class_3295<T extends class_5834 & class_3449, M extends class_6521<T> & class_6582> extends class_4171<T, M> implements class_6491 {
-   private static final Int2ObjectMap<class_4639> field_16305 = class_9665.<Int2ObjectMap<class_4639>>method_44659(new Int2ObjectOpenHashMap(), var0 -> {
+   private static final Int2ObjectMap<class_4639> field_16305 = Util.<Int2ObjectMap<class_4639>>method_44659(new Int2ObjectOpenHashMap(), var0 -> {
       var0.put(1, new class_4639("stone"));
       var0.put(2, new class_4639("iron"));
       var0.put(3, new class_4639("gold"));

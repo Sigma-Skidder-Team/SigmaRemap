@@ -238,7 +238,7 @@ public class class_7039 extends class_1094 {
       this.field_36325 = this.<class_9521>method_1186(
          new class_9521(this.field_941 / 2 + 52, this.method_32244() + 137 - 20, 98, 20, new TranslationTextComponent("mco.selectServer.trial"), var1 -> {
             if (this.field_36291 && !this.field_36301) {
-               class_9665.method_44667().method_37581("https://aka.ms/startjavarealmstrial");
+               Util.getOperatingSystem().method_37581("https://aka.ms/startjavarealmstrial");
                this.field_943.method_8609(this.field_36314);
             }
          })
@@ -250,7 +250,7 @@ public class class_7039 extends class_1094 {
             98,
             20,
             new TranslationTextComponent("mco.selectServer.buy"),
-            var0 -> class_9665.method_44667().method_37581("https://aka.ms/BuyJavaRealms")
+            var0 -> Util.getOperatingSystem().method_37581("https://aka.ms/BuyJavaRealms")
          )
       );
       class_7675 var3 = this.method_32331(this.field_36310);
@@ -435,7 +435,7 @@ public class class_7039 extends class_1094 {
             + "&ref="
             + (!var3.field_39005 ? "expiredRealm" : "expiredTrial");
          this.field_943.field_9600.method_38891(var4);
-         class_9665.method_44667().method_37581(var4);
+         Util.getOperatingSystem().method_37581(var4);
       }
    }
 
@@ -596,7 +596,7 @@ public class class_7039 extends class_1094 {
          byte var10 = 8;
          byte var8 = 8;
          byte var9 = 0;
-         if ((class_9665.method_44650() / 800L & 1L) == 1L) {
+         if ((Util.getMeasuringTimeMs() / 800L & 1L) == 1L) {
             var9 = 8;
          }
 

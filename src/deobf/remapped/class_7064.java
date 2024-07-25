@@ -12,7 +12,7 @@ public class class_7064 {
       this.field_36452 = var1;
       this.field_36455 = var2;
       this.field_36453 = var3;
-      this.field_36454 = class_9665.method_44650();
+      this.field_36454 = Util.getMeasuringTimeMs();
    }
 
    public ITextComponent method_32537() {
@@ -29,6 +29,6 @@ public class class_7064 {
 
    public void method_32538(class_1343 var1) {
       this.field_36453 = var1;
-      this.field_36454 = class_9665.method_44650();
+      this.field_36454 = Util.getMeasuringTimeMs();
    }
 }

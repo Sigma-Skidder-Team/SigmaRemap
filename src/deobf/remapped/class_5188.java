@@ -274,7 +274,7 @@ public class class_5188 implements class_2578 {
       };
 
       try {
-         return var2[(int)(class_9665.method_44657() % (long)var2.length)];
+         return var2[(int)(Util.getMeasuringTimeNano() % (long)var2.length)];
       } catch (Throwable var4) {
          return "Witty comment unavailable :(";
       }

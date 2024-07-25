@@ -109,7 +109,7 @@ public class class_9522 extends class_367 {
                   (double)(field_46692.field_9602.method_43198() + var8)
                );
                class_3542.method_16489();
-               class_3542.method_16402(256, MinecraftClient.field_9574);
+               class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
                class_3542.method_16463(5889);
                class_3542.method_16476();
                class_3542.method_16376(
@@ -185,7 +185,7 @@ public class class_9522 extends class_367 {
                int var4 = field_46692.field_9577.field_45439;
                int var5 = Math.min(MinecraftClient.method_8501(), var4);
                var5 = Math.max(var5, 60);
-               long var6 = class_9665.method_44657() - var1.field_8849;
+               long var6 = Util.getMeasuringTimeNano() - var1.field_8849;
                float var8 = field_46692.field_9632.field_41701;
                field_46692.field_9632.field_41701 += 180.0F;
                class_3542.method_16428();
@@ -196,7 +196,7 @@ public class class_9522 extends class_367 {
                SigmaMainClass.field_3951 = true;
                class_4230 var11 = field_46692.field_9657.field_21000;
                field_46692.field_9657.field_21000 = null;
-               field_46692.gameRenderer.method_35950(var1.field_8848, class_9665.method_44657(), new class_7966());
+               field_46692.gameRenderer.method_35950(var1.field_8848, Util.getMeasuringTimeNano(), new class_7966());
                field_46692.field_9657.field_21000 = var11;
                SigmaMainClass.field_3951 = false;
                field_46692.gameRenderer.field_40627 = true;
@@ -214,7 +214,7 @@ public class class_9522 extends class_367 {
    @Override
    public void method_42006() {
       class_73.method_95(field_46692.method_8584());
-      field_48470 = new class_4230(field_46692.field_9602.method_43178(), field_46692.field_9602.method_43198(), true, MinecraftClient.field_9574);
+      field_48470 = new class_4230(field_46692.field_9602.method_43178(), field_46692.field_9602.method_43198(), true, MinecraftClient.IS_SYSTEM_MAC);
       field_48470.method_19709(1.0F, 1.0F, 1.0F, 1.0F);
    }
 

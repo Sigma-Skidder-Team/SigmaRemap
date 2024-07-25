@@ -283,7 +283,7 @@ public class class_8881 {
       }
 
       this.field_45537 = var1.method_8533() ? 12 : 8;
-      this.field_45514 = class_9665.method_44667() == class_8208.field_41987;
+      this.field_45514 = Util.getOperatingSystem() == OperatingSystem.WINDOWS;
       this.field_45457 = new File(var2, "optionsof.txt");
       this.field_45439 = (int)class_1013.field_5277.method_38573();
       this.field_45548 = new class_5916("of.key.zoom", 67, "key.categories.misc");
@@ -2111,7 +2111,7 @@ public class class_8881 {
          if (var1 != null) {
             class_4230 var2 = var1.method_20091();
             if (var2 != null) {
-               var2.method_19712(MinecraftClient.field_9574);
+               var2.method_19712(MinecraftClient.IS_SYSTEM_MAC);
             }
          }
       }

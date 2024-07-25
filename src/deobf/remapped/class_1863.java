@@ -111,7 +111,7 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
          this.field_9450.accept(var1);
       }
 
-      this.field_36676 = class_9665.method_44650() + 500L;
+      this.field_36676 = Util.getMeasuringTimeMs() + 500L;
    }
 
    private void method_8285(int var1) {
@@ -194,7 +194,7 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
    }
 
    private int method_8263(int var1) {
-      return class_9665.method_44662(this.field_9449, this.field_9454, var1);
+      return Util.method_44662(this.field_9449, this.field_9454, var1);
    }
 
    public void method_8284(int var1) {

@@ -17,7 +17,7 @@ public final class class_8621 implements BooleanSupplier {
          Files.move(this.field_44241, this.field_44239);
          return true;
       } catch (IOException var4) {
-         class_9665.method_44663().error("Failed to rename", var4);
+         Util.method_44663().error("Failed to rename", var4);
          return false;
       }
    }

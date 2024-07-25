@@ -39,7 +39,7 @@ public class class_7886 extends class_4117 {
                   ArrayList var10 = Lists.newArrayList();
                   class_8845.method_40701(var8)
                      .forEach(var3 -> var10.add(this.field_40354.field_17225.method_30744(var1.method_12956(var3), this.field_40354.method_16180(var3))));
-                  return class_9665.method_44680(var10).<class_8490>handle((var2, var3) -> {
+                  return Util.method_44680(var10).<class_8490>handle((var2, var3) -> {
                      if (var3 != null && !(var3 instanceof CancellationException) && !(var3 instanceof InterruptedException)) {
                         MinecraftClient.getInstance().method_8555(class_159.method_643(var3, "Rendering chunk"));
                      }

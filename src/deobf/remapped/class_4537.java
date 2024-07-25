@@ -15,7 +15,7 @@ public class class_4537 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      double var11 = (double)class_9665.method_44657();
+      double var11 = (double) Util.getMeasuringTimeNano();
       if (var11 - this.field_22138 > 3.0E9) {
          this.field_22138 = var11;
          class_7762 var13 = this.field_22142.method_8515();

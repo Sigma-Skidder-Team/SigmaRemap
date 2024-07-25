@@ -14,7 +14,7 @@ public class class_8368 extends class_2089 implements class_3796 {
    }
 
    public void method_38560(int var1) {
-      this.field_42842 = class_9665.method_44650();
+      this.field_42842 = Util.getMeasuringTimeMs();
       if (this.field_42844 == null) {
          this.field_42844 = new class_3421(this);
       } else {
@@ -23,7 +23,7 @@ public class class_8368 extends class_2089 implements class_3796 {
    }
 
    private float method_38562() {
-      long var3 = this.field_42842 - class_9665.method_44650() + 5000L;
+      long var3 = this.field_42842 - Util.getMeasuringTimeMs() + 5000L;
       return class_9299.method_42828((float)var3 / 2000.0F, 0.0F, 1.0F);
    }
 
@@ -118,12 +118,12 @@ public class class_8368 extends class_2089 implements class_3796 {
 
       if (var5 >= 0 && var5 <= 8) {
          this.field_42844.method_15806(var5);
-         this.field_42842 = class_9665.method_44650();
+         this.field_42842 = Util.getMeasuringTimeMs();
       }
    }
 
    public void method_38559() {
-      this.field_42842 = class_9665.method_44650();
+      this.field_42842 = Util.getMeasuringTimeMs();
       if (!this.method_38557()) {
          this.field_42844 = new class_3421(this);
       } else {

@@ -209,7 +209,7 @@ public class class_3551 extends class_4109 {
          class_2185 var8;
          if (var7 >= 4) {
             if (var7 >= 8) {
-               var8 = class_9665.<class_2185>method_44697(class_2185.values(), this.field_41717);
+               var8 = Util.<class_2185>method_44697(class_2185.values(), this.field_41717);
             } else {
                var8 = var5.method_16524();
             }
@@ -221,7 +221,7 @@ public class class_3551 extends class_4109 {
          class_180 var10;
          if (var9 >= 2) {
             if (var9 >= 4) {
-               var10 = class_9665.<class_180>method_44697(class_180.values(), this.field_41717);
+               var10 = Util.<class_180>method_44697(class_180.values(), this.field_41717);
             } else {
                var10 = var5.method_16526();
             }
@@ -253,13 +253,13 @@ public class class_3551 extends class_4109 {
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
       class_2185 var8;
       if (!(var4 instanceof class_3075)) {
-         var8 = class_9665.<class_2185>method_44697(class_2185.values(), this.field_41717);
+         var8 = Util.<class_2185>method_44697(class_2185.values(), this.field_41717);
          var4 = new class_3075(var8);
       } else {
          var8 = ((class_3075)var4).field_15116;
       }
 
-      this.method_16528(var8, class_9665.<class_180>method_44697(class_180.values(), this.field_41717));
+      this.method_16528(var8, Util.<class_180>method_44697(class_180.values(), this.field_41717));
       return super.method_26864(var1, var2, var3, (class_8733)var4, var5);
    }
 }

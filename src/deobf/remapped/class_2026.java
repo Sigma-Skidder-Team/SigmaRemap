@@ -667,7 +667,7 @@ public class class_2026 {
 
    public boolean method_9468() {
       File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/music/youtube-dl");
-      if (class_9665.method_44667() == class_8208.field_41987) {
+      if (Util.getOperatingSystem() == OperatingSystem.WINDOWS) {
          var3 = new File(SigmaMainClass.method_3328().method_3334() + "/music/youtube-dl.exe");
       }
 
@@ -684,7 +684,7 @@ public class class_2026 {
          File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/music/");
          var3.mkdirs();
          SigmaMainClass.method_3328().method_3326().method_12865("Updating dependencies");
-         if (class_9665.method_44667() == class_8208.field_41987) {
+         if (Util.getOperatingSystem() == OperatingSystem.WINDOWS) {
             try {
                File var4 = new File(SigmaMainClass.method_3328().method_3334() + "/music/youtube-dl.exe");
                CloseableHttpClient var5 = HttpClients.createDefault();
@@ -759,7 +759,7 @@ public class class_2026 {
 
    public String method_9491() {
       String var3 = SigmaMainClass.method_3328().method_3334().getAbsolutePath() + "/music/youtube-dl";
-      if (class_9665.method_44667() != class_8208.field_41987) {
+      if (Util.getOperatingSystem() != OperatingSystem.WINDOWS) {
          File var4 = new File(var3);
          var4.setExecutable(true);
       } else {
@@ -770,7 +770,7 @@ public class class_2026 {
    }
 
    public boolean method_9492() {
-      if (class_9665.method_44667() == class_8208.field_41987) {
+      if (Util.getOperatingSystem() == OperatingSystem.WINDOWS) {
          return true;
       } else {
          File var3 = new File("/usr/local/bin/python");
@@ -801,7 +801,7 @@ public class class_2026 {
    }
 
    public boolean method_9499() {
-      if (class_9665.method_44667() != class_8208.field_41987) {
+      if (Util.getOperatingSystem() != OperatingSystem.WINDOWS) {
          return true;
       } else {
          boolean var3 = false;

@@ -85,7 +85,7 @@ public class class_9593 {
                   }
                })));
       };
-      class_9665.method_44661().execute(var6);
+      Util.getMainWorkerExecutor().execute(var6);
    }
 
    public Map<Type, MinecraftProfileTexture> method_44310(GameProfile var1) {

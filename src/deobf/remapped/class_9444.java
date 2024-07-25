@@ -76,7 +76,7 @@ public class class_9444 implements class_8171 {
             this.field_48196.run();
          }
 
-         this.field_48197 = class_9665.method_44650();
+         this.field_48197 = Util.getMeasuringTimeMs();
          this.field_48203.method_23485(new class_1369(this.field_48197));
          this.field_48202 = true;
       } else {
@@ -87,7 +87,7 @@ public class class_9444 implements class_8171 {
    @Override
    public void method_37473(class_8334 var1) {
       long var4 = this.field_48197;
-      long var6 = class_9665.method_44650();
+      long var6 = Util.getMeasuringTimeMs();
       this.field_48199.field_12674 = var6 - var4;
       this.field_48203.method_23482(new TranslationTextComponent("multiplayer.status.finished"));
    }

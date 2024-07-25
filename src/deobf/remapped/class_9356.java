@@ -278,7 +278,7 @@ public enum class_9356 {
    private final class_4899[] field_47764;
    private final class_4899[] field_47752;
    private final class_4899[] field_47758;
-   private static final class_9356[] field_47766 = class_9665.<class_9356[]>method_44659(new class_9356[6], var0 -> {
+   private static final class_9356[] field_47766 = Util.<class_9356[]>method_44659(new class_9356[6], var0 -> {
       var0[class_240.field_802.method_1050()] = field_47760;
       var0[class_240.field_817.method_1050()] = field_47756;
       var0[class_240.field_818.method_1050()] = field_47754;

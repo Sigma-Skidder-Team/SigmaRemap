@@ -79,7 +79,7 @@ public class class_6377 {
             field_32580 = -1L;
          }
       } else {
-         long var19 = class_9665.method_44650();
+         long var19 = Util.getMeasuringTimeMs();
          int var25 = var2.method_22561(new class_1331(var0.method_41627())).method_28883();
          if (field_32580 < 0L) {
             field_32582 = var25;

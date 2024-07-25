@@ -168,7 +168,7 @@ public class class_4498 extends class_3289 {
       int var20 = this.field_49466.nextInt(var13.length);
       var19.method_1081(var13[var20]);
       if (var14.length > 0) {
-         var19.method_1082(class_9665.method_44676(var14, this.field_49466));
+         var19.method_1082(Util.method_44676(var14, this.field_49466));
       }
    }
 

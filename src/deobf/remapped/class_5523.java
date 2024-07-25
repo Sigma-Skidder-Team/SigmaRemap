@@ -82,7 +82,7 @@ public class class_5523 {
 
       File var21 = var19;
       Object var22 = var20;
-      class_9665.method_44683()
+      Util.getIoWorkerExecutor()
          .execute(
             () -> {
                try {

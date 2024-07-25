@@ -30,7 +30,7 @@ public class class_866 {
             } catch (IOException var64) {
                throw new CompletionException(var64);
             }
-         }, class_9665.method_44661()));
+         }, Util.getMainWorkerExecutor()));
    }
 
    public CompletableFuture<class_2613> method_3747(class_4639 var1, boolean var2) {
@@ -42,7 +42,7 @@ public class class_866 {
          } catch (IOException var7) {
             throw new CompletionException(var7);
          }
-      }, class_9665.method_44661());
+      }, Util.getMainWorkerExecutor());
    }
 
    public void method_3751() {

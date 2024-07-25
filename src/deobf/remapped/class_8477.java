@@ -194,7 +194,7 @@ public class class_8477 extends class_8574 {
                var10 = this.field_41717.nextInt(15);
                var11 = this.field_41717.nextInt(15);
             } else {
-               int var12 = class_9665.method_44676(field_43434, this.field_41717);
+               int var12 = Util.method_44676(field_43434, this.field_41717);
                var8 = var12 & 0xFF;
                var9 = (var12 & 0xFF00) >> 8;
                var10 = (var12 & 0xFF0000) >> 16;

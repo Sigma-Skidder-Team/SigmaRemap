@@ -283,7 +283,7 @@ public class class_7272 extends class_5467 {
          this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, true));
          this.field_29908.method_3485(2, new class_4138<class_9408>(this, class_9408.class, true));
          if (!this.method_45507()) {
-            this.method_37303(new TranslationTextComponent(class_9665.method_44671("entity", field_37238)));
+            this.method_37303(new TranslationTextComponent(Util.createTranslationKey("entity", field_37238)));
          }
       }
 

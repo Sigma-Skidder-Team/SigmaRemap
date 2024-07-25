@@ -72,7 +72,7 @@ public abstract class class_7114 extends class_2089 implements class_1463, class
    }
 
    public void method_32700() {
-      if (this.field_36675 && this.method_32703() && class_9665.method_44650() > this.field_36676) {
+      if (this.field_36675 && this.method_32703() && Util.getMeasuringTimeMs() > this.field_36676) {
          String var3 = this.method_32701().getString();
          if (!var3.isEmpty()) {
             class_7542.field_38482.method_34341(var3);
@@ -229,7 +229,7 @@ public abstract class class_7114 extends class_2089 implements class_1463, class
    }
 
    public void method_32693(int var1) {
-      this.field_36676 = class_9665.method_44650() + (long)var1;
+      this.field_36676 = Util.getMeasuringTimeMs() + (long)var1;
    }
 
    public ITextComponent method_32685() {

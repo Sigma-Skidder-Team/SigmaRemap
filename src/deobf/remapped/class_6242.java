@@ -23,7 +23,7 @@ public class class_6242 {
          int var5 = var0.nextInt(var2);
          return method_28509(var1, var5);
       } else {
-         throw (IllegalArgumentException)class_9665.method_44658(new IllegalArgumentException());
+         throw (IllegalArgumentException) Util.method_44658(new IllegalArgumentException());
       }
    }
 

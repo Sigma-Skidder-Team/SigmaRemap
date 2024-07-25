@@ -19,7 +19,7 @@ public class class_6515 {
                               for (class_9359 var5 : class_5601.method_25412(var0x, "targets")) {
                                  var5.method_26286(
                                     TextComponentUtils.func_240645_a_((class_9155)var0x.getSource(), class_3352.method_15360(var0x, "message"), var5, 0),
-                                    class_9665.field_49232
+                                    Util.NIL_UUID
                                  );
                                  var3++;
                               }

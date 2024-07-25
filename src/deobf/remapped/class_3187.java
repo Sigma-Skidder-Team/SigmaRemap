@@ -48,7 +48,7 @@ public class class_3187 {
          class_5957.method_27225(var9, var10);
          File var6 = new File(this.field_15915.runDirectory, "servers.dat_old");
          File var7 = new File(this.field_15915.runDirectory, "servers.dat");
-         class_9665.method_44675(var7, var10, var6);
+         Util.method_44675(var7, var10, var6);
       } catch (Exception var8) {
          field_15917.error("Couldn't save server list", var8);
       }

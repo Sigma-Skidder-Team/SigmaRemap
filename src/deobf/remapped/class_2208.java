@@ -118,7 +118,7 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
       }
 
       if (!this.field_10979.method_28022()) {
-         float var21 = (float)(class_9665.method_44650() - this.field_10974) / 100.0F;
+         float var21 = (float)(Util.getMeasuringTimeMs() - this.field_10974) / 100.0F;
          if (var21 >= 1.0F) {
             var21 = 1.0F;
             this.field_10979 = class_6098.field_31203;
@@ -258,7 +258,7 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
       } else {
          boolean var8 = this.field_943.field_9577.field_45541.method_27070(var5);
          class_7934 var9 = this.method_10224(var1, var3);
-         long var10 = class_9665.method_44650();
+         long var10 = Util.getMeasuringTimeMs();
          this.field_10964 = this.field_10970 == var9 && var10 - this.field_10983 < 250L && this.field_10976 == var5;
          this.field_10982 = false;
          if (var5 != 0 && var5 != 1 && !var8) {
@@ -368,7 +368,7 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
          if (var5 == 0 || var5 == 1) {
             if (!this.field_10965.method_28022()) {
                if (this.field_10965.method_27997() > 1 && var12 != null && class_4088.method_18856(var12, this.field_10965, false)) {
-                  long var14 = class_9665.method_44650();
+                  long var14 = Util.getMeasuringTimeMs();
                   if (this.field_10985 != var12) {
                      this.field_10985 = var12;
                      this.field_10963 = var14;
@@ -459,7 +459,7 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
                      this.field_10972 = class_9299.method_42847(var3 - (double)var10);
                      this.field_10955 = this.field_10975;
                      this.field_10979 = this.field_10965;
-                     this.field_10974 = class_9665.method_44650();
+                     this.field_10974 = Util.getMeasuringTimeMs();
                   } else {
                      this.field_10979 = class_6098.field_31203;
                   }
@@ -468,7 +468,7 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
                   this.field_10972 = class_9299.method_42847(var3 - (double)var10);
                   this.field_10955 = this.field_10975;
                   this.field_10979 = this.field_10965;
-                  this.field_10974 = class_9665.method_44650();
+                  this.field_10974 = Util.getMeasuringTimeMs();
                }
 
                this.field_10965 = class_6098.field_31203;

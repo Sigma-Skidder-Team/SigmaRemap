@@ -39,7 +39,7 @@ public class class_6340 extends class_7621 {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       int var7 = this.field_32368.field_9602.method_43165();
       int var8 = this.field_32368.field_9602.method_43177();
-      long var9 = class_9665.method_44650();
+      long var9 = Util.getMeasuringTimeMs();
       if (this.field_32378 && (this.field_32373.method_19968() || this.field_32368.field_9623 != null) && this.field_32366 == -1L) {
          this.field_32366 = var9;
       }
@@ -73,7 +73,7 @@ public class class_6340 extends class_7621 {
             this.field_32375.accept(Optional.<Throwable>of(var20));
          }
 
-         this.field_32364 = class_9665.method_44650();
+         this.field_32364 = Util.getMeasuringTimeMs();
          if (this.field_32368.field_9623 != null) {
             this.field_32368
                .field_9623

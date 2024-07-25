@@ -45,7 +45,7 @@ public class class_3511 {
       this.field_17213 = -1;
       this.field_17210 = true;
       this.field_17223 = new class_2921(-1, -1, -1);
-      this.field_17209 = class_9665.<class_2921[]>method_44659(new class_2921[6], var0 -> {
+      this.field_17209 = Util.<class_2921[]>method_44659(new class_2921[6], var0 -> {
          for (int var3 = 0; var3 < var0.length; var3++) {
             var0[var3] = new class_2921();
          }

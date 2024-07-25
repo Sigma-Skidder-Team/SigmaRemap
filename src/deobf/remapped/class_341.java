@@ -68,9 +68,9 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    );
    public final class_3676 field_1339;
    public final class_5645 field_1337;
-   private final Snooper field_1307 = new Snooper("server", this, class_9665.method_44650());
+   private final Snooper field_1307 = new Snooper("server", this, Util.getMeasuringTimeMs());
    private final List<Runnable> field_1330 = Lists.newArrayList();
-   private final class_2434 field_1293 = new class_2434(class_9665.field_49234, this::method_1682);
+   private final class_2434 field_1293 = new class_2434(Util.nanoTimeSupplier, this::method_1682);
    private class_3492 field_1295 = class_8677.field_44535;
    private final class_6712 field_1334;
    private final class_3897 field_1298;
@@ -108,7 +108,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    private final class_5969 field_1294;
    private long field_1306;
    private final Thread field_1319;
-   private long field_1331 = class_9665.method_44650();
+   private long field_1331 = Util.getMeasuringTimeMs();
    private long field_1332;
    private boolean field_1283;
    private boolean field_1343;
@@ -167,7 +167,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       this.field_1291 = new class_1626(this, var8.method_28751());
       this.field_1338 = new class_5799(var8.method_28743(), var3, var7);
       this.field_1319 = var1;
-      this.field_1308 = class_9665.method_44661();
+      this.field_1308 = Util.getMainWorkerExecutor();
    }
 
    private void method_1672(class_4050 var1) {
@@ -346,15 +346,15 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       var1.method_8296(new class_2034(var5));
       class_2206 var6 = var4.method_28945();
       var6.method_10175().method_9764(500);
-      this.field_1331 = class_9665.method_44650();
+      this.field_1331 = Util.getMeasuringTimeMs();
       var6.method_10177(class_5032.field_26021, new class_2034(var5), 11, class_3256.field_16155);
 
       while (var6.method_10207() != 441) {
-         this.field_1331 = class_9665.method_44650() + 10L;
+         this.field_1331 = Util.getMeasuringTimeMs() + 10L;
          this.method_1737();
       }
 
-      this.field_1331 = class_9665.method_44650() + 10L;
+      this.field_1331 = Util.getMeasuringTimeMs() + 10L;
       this.method_1737();
 
       for (class_6331 var8 : this.field_1318.values()) {
@@ -370,7 +370,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
          }
       }
 
-      this.field_1331 = class_9665.method_44650() + 10L;
+      this.field_1331 = Util.getMeasuringTimeMs() + 10L;
       this.method_1737();
       var1.method_8298();
       var6.method_10175().method_9764(5);
@@ -500,13 +500,13 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    public void method_1698() {
       try {
          if (this.method_1608()) {
-            this.field_1331 = class_9665.method_44650();
+            this.field_1331 = Util.getMeasuringTimeMs();
             this.field_1284.method_26814(new StringTextComponent(this.field_1285));
             this.field_1284.method_26813(new class_7543(class_7665.method_34674().getName(), class_7665.method_34674().getProtocolVersion()));
             this.method_1637(this.field_1284);
 
             while (this.field_1313) {
-               long var3 = class_9665.method_44650() - this.field_1331;
+               long var3 = Util.getMeasuringTimeMs() - this.field_1331;
                if (var3 > 2000L && this.field_1331 - this.field_1326 >= 15000L) {
                   long var5 = var3 / 50L;
                   field_1316.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", var3, var5);
@@ -522,7 +522,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
                this.method_1658(this::method_1609);
                this.field_1295.method_16050("nextTickWait");
                this.field_1283 = true;
-               this.field_1332 = Math.max(class_9665.method_44650() + 50L, this.field_1331);
+               this.field_1332 = Math.max(Util.getMeasuringTimeMs() + 50L, this.field_1331);
                this.method_1737();
                this.field_1295.method_16054();
                this.field_1295.method_16052();
@@ -564,7 +564,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    }
 
    private boolean method_1609() {
-      return this.method_35205() || class_9665.method_44650() < (!this.field_1283 ? this.field_1331 : this.field_1332);
+      return this.method_35205() || Util.getMeasuringTimeMs() < (!this.field_1283 ? this.field_1331 : this.field_1332);
    }
 
    public void method_1737() {
@@ -652,7 +652,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    }
 
    public void method_1658(BooleanSupplier var1) {
-      long var4 = class_9665.method_44657();
+      long var4 = Util.getMeasuringTimeNano();
       this.field_1314++;
       this.method_1630(var1);
       if (var4 - this.field_1306 >= 5000000000L) {
@@ -689,9 +689,9 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
 
       this.field_1295.method_16054();
       this.field_1295.method_16056("tallying");
-      long var6 = this.field_1286[this.field_1314 % 100] = class_9665.method_44657() - var4;
+      long var6 = this.field_1286[this.field_1314 % 100] = Util.getMeasuringTimeNano() - var4;
       this.field_1304 = this.field_1304 * 0.8F + (float)var6 / 1000000.0F * 0.19999999F;
-      long var8 = class_9665.method_44657();
+      long var8 = Util.getMeasuringTimeNano();
       this.field_1335.method_44836(var8 - var4);
       this.field_1295.method_16054();
    }
@@ -935,7 +935,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
 
       var1.method_15252("uses_auth", this.field_1328);
       var1.method_15252("gui_state", !this.method_1695() ? "disabled" : "enabled");
-      var1.method_15252("run_time", (class_9665.method_44650() - var1.method_15251()) / 60L * 1000L);
+      var1.method_15252("run_time", (Util.getMeasuringTimeMs() - var1.method_15251()) / 60L * 1000L);
       var1.method_15252("avg_tick_ms", (int)(class_9299.method_42826(this.field_1286) * 1.0E-6));
       int var4 = 0;
 
@@ -1365,7 +1365,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
          var4.write(String.format("pending_tasks: %d\n", this.method_34451()));
          var4.write(String.format("average_tick_time: %f\n", this.method_1733()));
          var4.write(String.format("tick_times: %s\n", Arrays.toString(this.field_1286)));
-         var4.write(String.format("queue: %s\n", class_9665.method_44661()));
+         var4.write(String.format("queue: %s\n", Util.getMainWorkerExecutor()));
       }
    }
 

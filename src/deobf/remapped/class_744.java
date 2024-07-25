@@ -31,7 +31,7 @@ public class class_744 {
       TranslationTextComponent var5 = new TranslationTextComponent("gameMode." + var2.method_21588());
       if (var0.method_42200() != var1) {
          if (var0.method_42198().method_29537().method_1285(class_291.field_1057)) {
-            var1.method_26286(new TranslationTextComponent("gameMode.changed", var5), class_9665.field_49232);
+            var1.method_26286(new TranslationTextComponent("gameMode.changed", var5), Util.NIL_UUID);
          }
 
          var0.method_42196(new TranslationTextComponent("commands.gamemode.success.other", var1.method_19839(), var5), true);

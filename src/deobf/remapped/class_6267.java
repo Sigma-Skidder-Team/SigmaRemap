@@ -34,7 +34,7 @@ public class class_6267 extends class_5920<class_7666> {
       }
 
       if (var7.nextInt(200) == 0 && class_5212.method_23890(var1, var2, var2.method_37075())) {
-         class_9077 var8 = class_9665.<class_9077>method_44697(class_9077.values(), var7);
+         class_9077 var8 = Util.<class_9077>method_44697(class_9077.values(), var7);
          int var9 = var7.nextInt(3);
          class_6098 var10 = this.method_28581(var8, var9);
          class_8612 var11 = new class_8612(var2.field_41768, var2, var2.method_37302(), var2.method_37388(), var2.method_37156(), var10);

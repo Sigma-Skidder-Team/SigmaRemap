@@ -44,19 +44,19 @@ public class class_3778 extends class_2596 {
       var12.method_32148(var15 = new class_3304(var12, "guilded", 142, 0, 32, 34, class_2209.field_10994));
       var13.method_32100((var0, var1) -> {
          try {
-            class_9665.method_44667().method_37577(new URL("http://jelloconnect.sigmaclient.info/urls/youtube.php"));
+            Util.getOperatingSystem().method_37577(new URL("http://jelloconnect.sigmaclient.info/urls/youtube.php"));
          } catch (MalformedURLException var5x) {
          }
       });
       var14.method_32100((var0, var1) -> {
          try {
-            class_9665.method_44667().method_37577(new URL("http://jelloconnect.sigmaclient.info/urls/reddit.php"));
+            Util.getOperatingSystem().method_37577(new URL("http://jelloconnect.sigmaclient.info/urls/reddit.php"));
          } catch (MalformedURLException var5x) {
          }
       });
       var15.method_32100((var0, var1) -> {
          try {
-            class_9665.method_44667().method_37577(new URL("http://jelloconnect.sigmaclient.info/urls/guilded.php"));
+            Util.getOperatingSystem().method_37577(new URL("http://jelloconnect.sigmaclient.info/urls/guilded.php"));
          } catch (MalformedURLException var5x) {
          }
       });

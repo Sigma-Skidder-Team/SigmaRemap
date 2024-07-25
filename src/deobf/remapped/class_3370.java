@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 public final class class_3370 {
    private static String[] field_16612;
-   private static final class_4190 field_16615 = class_9665.<class_6697>method_44660(() -> {
+   private static final class_4190 field_16615 = Util.<class_6697>method_44660(() -> {
       class_3087 var2 = new class_3087(1, 1, 1);
       var2.method_26202(0, 0, 0, true, true);
       return new class_6697(var2);
@@ -146,13 +146,13 @@ public final class class_3370 {
             }
          }
       } else {
-         throw (IllegalArgumentException)class_9665.method_44658(new IllegalArgumentException());
+         throw (IllegalArgumentException) Util.method_44658(new IllegalArgumentException());
       }
    }
 
    public static boolean method_15537(class_4190 var0, class_4190 var1, class_8529 var2) {
       if (var2.method_39260(false, false)) {
-         throw (IllegalArgumentException)class_9665.method_44658(new IllegalArgumentException());
+         throw (IllegalArgumentException) Util.method_44658(new IllegalArgumentException());
       } else if (var0 == var1) {
          return var2.method_39260(true, true);
       } else if (var0.method_19485()) {

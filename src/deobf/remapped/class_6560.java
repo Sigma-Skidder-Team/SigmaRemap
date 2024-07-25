@@ -54,7 +54,7 @@ public class class_6560 {
       .<class_4639>map(var0 -> new class_4639("textures/" + var0.method_21456() + ".png"))
       .collect(Collectors.<class_4639>toList());
    public static final List<class_3581> field_33452 = field_33451.stream().<class_3581>map(class_3581::method_16719).collect(Collectors.<class_3581>toList());
-   private static final Set<class_2843> field_33456 = class_9665.<Set<class_2843>>method_44659(Sets.newHashSet(), var0 -> {
+   private static final Set<class_2843> field_33456 = Util.<Set<class_2843>>method_44659(Sets.newHashSet(), var0 -> {
       var0.add(field_33450);
       var0.add(field_33438);
       var0.add(field_33464);
@@ -95,10 +95,10 @@ public class class_6560 {
    private static final Map<String, String> field_33442 = Maps.newHashMap(ImmutableMap.of("missing", field_33465));
    private static final Splitter field_33443 = Splitter.on(',');
    private static final Splitter field_33466 = Splitter.on('=').limit(2);
-   public static final class_9403 field_33462 = class_9665.<class_9403>method_44659(
+   public static final class_9403 field_33462 = Util.<class_9403>method_44659(
       class_9403.method_43560("{\"gui_light\": \"front\"}"), var0 -> var0.field_48083 = "generation marker"
    );
-   public static final class_9403 field_33459 = class_9665.<class_9403>method_44659(
+   public static final class_9403 field_33459 = Util.<class_9403>method_44659(
       class_9403.method_43560("{\"gui_light\": \"side\"}"), var0 -> var0.field_48083 = "block entity marker"
    );
    private static final class_8021<class_6414, class_2522> field_33434 = new class_2203<class_6414, class_2522>(class_4783.field_23184)
@@ -117,7 +117,7 @@ public class class_6560 {
    private final Map<class_4639, class_7373> field_33449 = Maps.newHashMap();
    private Map<class_4639, Pair<class_8359, class_3930>> field_33430;
    private int field_33454 = 1;
-   private final Object2IntMap<class_2522> field_33447 = class_9665.<Object2IntMap<class_2522>>method_44659(
+   private final Object2IntMap<class_2522> field_33447 = Util.<Object2IntMap<class_2522>>method_44659(
       new Object2IntOpenHashMap(), var0 -> var0.defaultReturnValue(-1)
    );
    public Map<class_4639, class_2053> field_33467;

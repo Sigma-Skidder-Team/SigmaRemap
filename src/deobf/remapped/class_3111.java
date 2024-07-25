@@ -1643,9 +1643,9 @@ public class class_3111 {
    }
 
    public static boolean method_14359(URI var0) {
-      class_9665.method_44655((Exception)null);
-      class_9665.method_44667().method_37582(var0);
-      Exception var3 = class_9665.method_44701();
+      Util.method_44655((Exception)null);
+      Util.getOperatingSystem().method_37582(var0);
+      Exception var3 = Util.method_44701();
       return var3 == null;
    }
 

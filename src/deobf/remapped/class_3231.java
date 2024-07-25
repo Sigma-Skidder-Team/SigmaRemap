@@ -77,7 +77,7 @@ public class class_3231 extends class_266 implements class_2092 {
          method_9787(
             var1,
             this.field_948,
-            field_10512[(int)(class_9665.method_44650() / 150L % (long)field_10512.length)],
+            field_10512[(int)(Util.getMeasuringTimeMs() / 150L % (long)field_10512.length)],
             this.field_941 / 2,
             this.field_940 / 2 + 18,
             16777215

@@ -123,7 +123,7 @@ public class class_948 implements class_1243 {
       }
 
       this.field_4877.method_1704().method_16056("keepAlive");
-      long var3 = class_9665.method_44650();
+      long var3 = Util.getMeasuringTimeMs();
       if (var3 - this.field_4866 >= 15000L) {
          if (!this.field_4869) {
             this.field_4869 = true;
@@ -146,7 +146,7 @@ public class class_948 implements class_1243 {
 
       if (this.field_4880.method_43250() > 0L
          && this.field_4877.method_1696() > 0
-         && class_9665.method_44650() - this.field_4880.method_43250() > (long)(this.field_4877.method_1696() * 1000 * 60)) {
+         && Util.getMeasuringTimeMs() - this.field_4880.method_43250() > (long)(this.field_4877.method_1696() * 1000 * 60)) {
          this.method_4161(new TranslationTextComponent("multiplayer.disconnect.idling"));
       }
    }
@@ -365,9 +365,9 @@ public class class_948 implements class_1243 {
    public void method_5550(class_6066 var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       if (!this.field_4877.method_1726()) {
-         this.field_4880.method_26286(new TranslationTextComponent("advMode.notEnabled"), class_9665.field_49232);
+         this.field_4880.method_26286(new TranslationTextComponent("advMode.notEnabled"), Util.NIL_UUID);
       } else if (!this.field_4880.method_3184()) {
-         this.field_4880.method_26286(new TranslationTextComponent("advMode.notAllowed"), class_9665.field_49232);
+         this.field_4880.method_26286(new TranslationTextComponent("advMode.notAllowed"), Util.NIL_UUID);
       } else {
          class_8116 var4 = null;
          class_7454 var5 = null;
@@ -425,7 +425,7 @@ public class class_948 implements class_1243 {
 
             var4.method_36932();
             if (!class_6660.method_30576(var8)) {
-               this.field_4880.method_26286(new TranslationTextComponent("advMode.setCommand.success", var8), class_9665.field_49232);
+               this.field_4880.method_26286(new TranslationTextComponent("advMode.setCommand.success", var8), Util.NIL_UUID);
             }
          }
       }
@@ -445,13 +445,13 @@ public class class_948 implements class_1243 {
                }
 
                var4.method_36932();
-               this.field_4880.method_26286(new TranslationTextComponent("advMode.setCommand.success", var1.method_3101()), class_9665.field_49232);
+               this.field_4880.method_26286(new TranslationTextComponent("advMode.setCommand.success", var1.method_3101()), Util.NIL_UUID);
             }
          } else {
-            this.field_4880.method_26286(new TranslationTextComponent("advMode.notAllowed"), class_9665.field_49232);
+            this.field_4880.method_26286(new TranslationTextComponent("advMode.notAllowed"), Util.NIL_UUID);
          }
       } else {
-         this.field_4880.method_26286(new TranslationTextComponent("advMode.notEnabled"), class_9665.field_49232);
+         this.field_4880.method_26286(new TranslationTextComponent("advMode.notEnabled"), Util.NIL_UUID);
       }
    }
 
@@ -899,7 +899,7 @@ public class class_948 implements class_1243 {
       this.field_4880.method_43237();
       if (var8.method_12165() >= this.field_4877.method_1671()) {
          IFormattableTextComponent var10 = new TranslationTextComponent("build.tooHigh", this.field_4877.method_1671()).mergeStyle(TextFormatting.RED);
-         this.field_4880.field_47794.method_4156(new class_5182(var10, ChatType.GAME_INFO, class_9665.field_49232));
+         this.field_4880.field_47794.method_4156(new class_5182(var10, ChatType.GAME_INFO, Util.NIL_UUID));
       } else if (this.field_4874 == null
          && this.field_4880.method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5) < 64.0
          && var4.method_29538(this.field_4880, var8)) {
@@ -909,7 +909,7 @@ public class class_948 implements class_1243 {
             && var8.method_12165() >= this.field_4877.method_1671() - 1
             && method_4162(this.field_4880, var6)) {
             IFormattableTextComponent var11 = new TranslationTextComponent("build.tooHigh", this.field_4877.method_1671()).mergeStyle(TextFormatting.RED);
-            this.field_4880.field_47794.method_4156(new class_5182(var11, ChatType.GAME_INFO, class_9665.field_49232));
+            this.field_4880.field_47794.method_4156(new class_5182(var11, ChatType.GAME_INFO, Util.NIL_UUID));
          } else if (var12.method_31661()) {
             this.field_4880.method_26488(var5, true);
          }
@@ -970,7 +970,7 @@ public class class_948 implements class_1243 {
          .method_39983(
             new TranslationTextComponent("multiplayer.player.left", this.field_4880.method_19839()).mergeStyle(TextFormatting.YELLOW),
             ChatType.SYSTEM,
-            class_9665.field_49232
+            Util.NIL_UUID
          );
       this.field_4880.method_43242();
       this.field_4877.method_1600().method_39973(this.field_4880);
@@ -1062,7 +1062,7 @@ public class class_948 implements class_1243 {
          }
       } else {
          this.method_4156(
-            new class_5182(new TranslationTextComponent("chat.cannotSend").mergeStyle(TextFormatting.RED), ChatType.SYSTEM, class_9665.field_49232)
+            new class_5182(new TranslationTextComponent("chat.cannotSend").mergeStyle(TextFormatting.RED), ChatType.SYSTEM, Util.NIL_UUID)
          );
       }
    }
@@ -1355,7 +1355,7 @@ public class class_948 implements class_1243 {
    @Override
    public void method_5574(class_2669 var1) {
       if (this.field_4869 && var1.method_12028() == this.field_4860) {
-         int var4 = (int)(class_9665.method_44650() - this.field_4866);
+         int var4 = (int)(Util.getMeasuringTimeMs() - this.field_4866);
          this.field_4880.field_47790 = (this.field_4880.field_47790 * 3 + var4) / 4;
          this.field_4869 = false;
       } else if (!this.method_4159()) {

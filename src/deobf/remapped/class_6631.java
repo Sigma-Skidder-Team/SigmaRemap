@@ -93,7 +93,7 @@ public enum class_6631 {
    }
 
    public static class_6631 method_30492(Random var0) {
-      return class_9665.<class_6631>method_44697(values(), var0);
+      return Util.<class_6631>method_44697(values(), var0);
    }
 
    public static List<class_6631> method_30487(Random var0) {

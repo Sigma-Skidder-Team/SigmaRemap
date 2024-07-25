@@ -12,7 +12,7 @@ public class class_6169 extends class_6414 {
    public static final class_6720 field_31566 = class_6023.field_30675;
    public static final class_6720 field_31563 = class_6023.field_30711;
    public static final class_6720 field_31568 = class_6023.field_30740;
-   public static final Map<class_240, class_6720> field_31571 = class_9665.<Map<class_240, class_6720>>method_44659(Maps.newEnumMap(class_240.class), var0 -> {
+   public static final Map<class_240, class_6720> field_31571 = Util.<Map<class_240, class_6720>>method_44659(Maps.newEnumMap(class_240.class), var0 -> {
       var0.put(class_240.field_818, field_31564);
       var0.put(class_240.field_804, field_31567);
       var0.put(class_240.field_800, field_31569);

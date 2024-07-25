@@ -9,7 +9,7 @@ import javax.annotation.concurrent.Immutable;
 public class class_2700 implements Comparable<class_2700> {
    public static final Codec<class_2700> field_13233 = Codec.INT_STREAM
       .comapFlatMap(
-         var0 -> class_9665.method_44654(var0, 3).map(var0x -> new class_2700(var0x[0], var0x[1], var0x[2])),
+         var0 -> Util.method_44654(var0, 3).map(var0x -> new class_2700(var0x[0], var0x[1], var0x[2])),
          var0 -> IntStream.of(var0.method_12173(), var0.method_12165(), var0.method_12185())
       );
    public static final class_2700 field_13228 = new class_2700(0, 0, 0);

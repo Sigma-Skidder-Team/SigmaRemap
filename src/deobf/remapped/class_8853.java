@@ -13,7 +13,7 @@ public final class class_8853 {
    public static final class_8853 field_45264 = method_40720("swamp");
    public static final class_8853 field_45267 = method_40720("taiga");
    private final String field_45266;
-   private static final Map<class_5621<class_6325>, class_8853> field_45261 = class_9665.<Map<class_5621<class_6325>, class_8853>>method_44659(
+   private static final Map<class_5621<class_6325>, class_8853> field_45261 = Util.<Map<class_5621<class_6325>, class_8853>>method_44659(
       Maps.newHashMap(), var0 -> {
          var0.put(class_8606.field_44110, field_45269);
          var0.put(class_8606.field_44124, field_45269);

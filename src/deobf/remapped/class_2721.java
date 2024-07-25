@@ -226,7 +226,7 @@ public class class_2721 {
          this.field_13303 = new long[var7];
       } else {
          if (var3.length != var7) {
-            throw (RuntimeException)class_9665.method_44658(
+            throw (RuntimeException) Util.method_44658(
                new RuntimeException("Invalid length given for storage, got: " + var3.length + " but expected: " + var7)
             );
          }

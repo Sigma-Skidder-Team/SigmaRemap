@@ -231,7 +231,7 @@ public enum class_240 implements class_4530 {
    }
 
    public static class_240 method_1039(Random var0) {
-      return class_9665.<class_240>method_44697(field_803, var0);
+      return Util.<class_240>method_44697(field_803, var0);
    }
 
    public static class_240 method_1044(double var0, double var2, double var4) {

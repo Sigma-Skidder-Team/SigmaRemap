@@ -94,7 +94,7 @@ public class class_1840 extends class_266 {
       this.field_9320 = this.<class_9521>method_1186(
          new class_9521(var8, var7, var6, 20, field_9328, var1 -> this.field_943.method_8609(new class_260(var1x -> {
                if (var1x) {
-                  class_9665.method_44667().method_37581("https://aka.ms/javablocking");
+                  Util.getOperatingSystem().method_37581("https://aka.ms/javablocking");
                }
 
                this.field_943.method_8609(this);

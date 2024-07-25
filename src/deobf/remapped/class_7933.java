@@ -111,7 +111,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       if (!method_35876(var5)) {
          var0.put(var5, var2);
       } else if (class_7665.field_38958) {
-         throw (IllegalStateException)class_9665.method_44658(
+         throw (IllegalStateException) Util.method_44658(
             new IllegalStateException(
                "A developer tried to explicitly make fire resistant item "
                   + var5.method_11249((class_6098)null).getString()

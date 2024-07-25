@@ -32,12 +32,12 @@ public class class_2087 extends class_4663 implements AutoCloseable {
 
    @Override
    public int method_21571(int var1, boolean var2, boolean var3) {
-      throw (UnsupportedOperationException)class_9665.method_44658(new UnsupportedOperationException("Ran authomatically on a different thread!"));
+      throw (UnsupportedOperationException) Util.method_44658(new UnsupportedOperationException("Ran authomatically on a different thread!"));
    }
 
    @Override
    public void method_21569(class_1331 var1, int var2) {
-      throw (UnsupportedOperationException)class_9665.method_44658(new UnsupportedOperationException("Ran authomatically on a different thread!"));
+      throw (UnsupportedOperationException) Util.method_44658(new UnsupportedOperationException("Ran authomatically on a different thread!"));
    }
 
    @Override
@@ -47,12 +47,12 @@ public class class_2087 extends class_4663 implements AutoCloseable {
          var1.method_12173() >> 4,
          var1.method_12185() >> 4,
          class_6380.field_32590,
-         class_9665.method_44687(() -> super.method_21566(var4), () -> "checkBlock " + var4)
+         Util.method_44687(() -> super.method_21566(var4), () -> "checkBlock " + var4)
       );
    }
 
    public void method_9759(class_2034 var1) {
-      this.method_9758(var1.field_10328, var1.field_10327, () -> 0, class_6380.field_32589, class_9665.method_44687(() -> {
+      this.method_9758(var1.field_10328, var1.field_10327, () -> 0, class_6380.field_32589, Util.method_44687(() -> {
          super.method_21561(var1, false);
          super.method_21563(var1, false);
 
@@ -74,7 +74,7 @@ public class class_2087 extends class_4663 implements AutoCloseable {
          var1.method_31900(),
          () -> 0,
          class_6380.field_32589,
-         class_9665.method_44687(() -> super.method_34830(var1, var2), () -> "updateSectionStatus " + var1 + " " + var2)
+         Util.method_44687(() -> super.method_34830(var1, var2), () -> "updateSectionStatus " + var1 + " " + var2)
       );
    }
 
@@ -84,7 +84,7 @@ public class class_2087 extends class_4663 implements AutoCloseable {
          var1.field_10328,
          var1.field_10327,
          class_6380.field_32589,
-         class_9665.method_44687(() -> super.method_21563(var1, var2), () -> "enableLight " + var1 + " " + var2)
+         Util.method_44687(() -> super.method_21563(var1, var2), () -> "enableLight " + var1 + " " + var2)
       );
    }
 
@@ -95,7 +95,7 @@ public class class_2087 extends class_4663 implements AutoCloseable {
          var2.method_31900(),
          () -> 0,
          class_6380.field_32589,
-         class_9665.method_44687(() -> super.method_21568(var1, var2, var3, var4), () -> "queueData " + var2)
+         Util.method_44687(() -> super.method_21568(var1, var2, var3, var4), () -> "queueData " + var2)
       );
    }
 
@@ -119,14 +119,14 @@ public class class_2087 extends class_4663 implements AutoCloseable {
          var1.field_10327,
          () -> 0,
          class_6380.field_32589,
-         class_9665.method_44687(() -> super.method_21561(var1, var2), () -> "retainData " + var1)
+         Util.method_44687(() -> super.method_21561(var1, var2), () -> "retainData " + var1)
       );
    }
 
    public CompletableFuture<class_5990> method_9762(class_5990 var1, boolean var2) {
       class_2034 var5 = var1.method_27352();
       var1.method_27362(false);
-      this.method_9763(var5.field_10328, var5.field_10327, class_6380.field_32589, class_9665.method_44687(() -> {
+      this.method_9763(var5.field_10328, var5.field_10327, class_6380.field_32589, Util.method_44687(() -> {
          class_1315[] var6 = var1.method_27349();
 
          for (int var7 = 0; var7 < 16; var7++) {

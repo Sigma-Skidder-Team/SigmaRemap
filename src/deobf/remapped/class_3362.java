@@ -219,7 +219,7 @@ public class class_3362 {
                         "chat.type.advancement." + var1.method_14511().method_35157().method_15385(), this.field_16567.method_19839(), var1.method_14512()
                      ),
                      ChatType.SYSTEM,
-                     class_9665.field_49232
+                     Util.NIL_UUID
                   );
             }
          }

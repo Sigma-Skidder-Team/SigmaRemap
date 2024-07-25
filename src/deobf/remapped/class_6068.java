@@ -22,7 +22,7 @@ public class class_6068 {
                Codec.FLOAT.optionalFieldOf("creature_spawn_probability", 0.1F).forGetter(var0x -> var0x.field_31037),
                Codec.simpleMap(
                      class_4565.field_22246,
-                     class_3222.field_16054.listOf().promotePartial(class_9665.method_44690("Spawn data: ", field_31035::error)),
+                     class_3222.field_16054.listOf().promotePartial(Util.method_44690("Spawn data: ", field_31035::error)),
                      class_4530.method_21047(class_4565.values())
                   )
                   .fieldOf("spawners")

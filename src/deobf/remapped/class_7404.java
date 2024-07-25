@@ -57,7 +57,7 @@ public class class_7404 extends class_266 {
             200,
             20,
             new TranslationTextComponent("selectWorld.edit.openFolder"),
-            var1 -> class_9665.method_44667().method_37578(this.field_37792.method_17064(class_263.field_932).toFile())
+            var1 -> Util.getOperatingSystem().method_37578(this.field_37792.method_17064(class_263.field_932).toFile())
          )
       );
       this.<class_9521>method_1186(
@@ -78,7 +78,7 @@ public class class_7404 extends class_266 {
                   throw new RuntimeException(var7);
                }
 
-               class_9665.method_44667().method_37578(var5x.toFile());
+               Util.getOperatingSystem().method_37578(var5x.toFile());
             }
          )
       );

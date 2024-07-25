@@ -189,7 +189,7 @@ public abstract class class_8990 extends class_5467 {
    @Override
    public void method_26452(class_6199 var1) {
       if (!this.field_41768.field_33055 && this.field_41768.method_29537().method_1285(class_291.field_1060) && this.method_41207() instanceof class_9359) {
-         this.method_41207().method_26286(this.method_26476().method_15870(), class_9665.field_49232);
+         this.method_41207().method_26286(this.method_26476().method_15870(), Util.NIL_UUID);
       }
 
       super.method_26452(var1);

@@ -256,14 +256,14 @@ public abstract class class_1249 {
             double var5 = var1.method_6195(class_1343.method_6200(this.field_6879));
             this.field_6876 = !(this.field_6877.method_26423() > 0.0F) ? 0.0 : var5 / (double)this.field_6877.method_26423() * 1000.0;
          } else {
-            this.field_6886 = this.field_6886 + (class_9665.method_44650() - this.field_6870);
+            this.field_6886 = this.field_6886 + (Util.getMeasuringTimeMs() - this.field_6870);
          }
 
          if (this.field_6876 > 0.0 && (double)this.field_6886 > this.field_6876 * 3.0) {
             this.method_5624();
          }
 
-         this.field_6870 = class_9665.method_44650();
+         this.field_6870 = Util.getMeasuringTimeMs();
       }
    }
 

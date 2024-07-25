@@ -13,7 +13,7 @@ public final class class_1221 {
    private class_5422 field_6773;
    private class_2426 field_6770;
    private class_5422 field_6766;
-   private static final class_1221 field_6771 = class_9665.<class_1221>method_44660(() -> {
+   private static final class_1221 field_6771 = Util.<class_1221>method_44660(() -> {
       class_8107 var2 = new class_8107();
       var2.method_36817();
       class_1221 var3 = new class_1221(var2);

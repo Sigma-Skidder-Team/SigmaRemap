@@ -32,7 +32,7 @@ import org.apache.logging.log4j.Logger;
 public class class_5383<T> extends class_6433<T> {
    public static final Logger field_27476 = LogManager.getLogger();
    private final ObjectList<T> field_27473 = new ObjectArrayList(256);
-   private final Object2IntMap<T> field_27475 = new Object2IntOpenCustomHashMap(class_9665.method_44698());
+   private final Object2IntMap<T> field_27475 = new Object2IntOpenCustomHashMap(Util.method_44698());
    private final BiMap<class_4639, T> field_27469;
    private final BiMap<class_5621<T>, T> field_27468;
    private final Map<T, Lifecycle> field_27474;
@@ -187,7 +187,7 @@ public class class_5383<T> extends class_6433<T> {
          this.field_27470 = var4.<Object>toArray(new Object[var4.size()]);
       }
 
-      return class_9665.<T>method_44697((T[])this.field_27470, var1);
+      return Util.<T>method_44697((T[])this.field_27470, var1);
    }
 
    @Override
