@@ -10,7 +10,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_1876 extends class_266 {
+public class MainMenuScreen extends Screen {
    private static final Logger field_9517 = LogManager.getLogger();
    public static final class_1973 field_9509 = new class_1973(new class_4639("textures/gui/title/background/panorama"));
    private static final class_4639 field_9511 = new class_4639("textures/gui/title/background/panorama_overlay.png");
@@ -21,19 +21,19 @@ public class class_1876 extends class_266 {
    private static final class_4639 field_9513 = new class_4639("textures/gui/title/minecraft.png");
    private static final class_4639 field_9510 = new class_4639("textures/gui/title/edition.png");
    private boolean field_9507;
-   private class_266 field_9508;
+   private Screen field_9508;
    private int field_9516;
    private int field_9503;
    private final class_130 field_9505 = new class_130(field_9509);
    private final boolean field_9514;
    private long field_9504;
-   private class_266 field_9515;
+   private Screen field_9515;
 
-   public class_1876() {
+   public MainMenuScreen() {
       this(false);
    }
 
-   public class_1876(boolean var1) {
+   public MainMenuScreen(boolean var1) {
       super(new TranslationTextComponent("narrator.screen.title"));
       this.field_9514 = var1;
       this.field_9501 = (double)new Random().nextFloat() < 1.0E-4;
@@ -144,7 +144,7 @@ public class class_1876 extends class_266 {
       }
 
       if (class_7860.field_40098.method_3596()) {
-         this.field_9515 = (class_266)class_7860.method_35556(class_7860.field_40098, this, var5);
+         this.field_9515 = (Screen)class_7860.method_35556(class_7860.field_40098, this, var5);
       }
    }
 
@@ -175,7 +175,7 @@ public class class_1876 extends class_266 {
       this.<class_9521>method_1186(
             new class_9521(this.field_941 / 2 - 100, var1 + var2 * 1, 200, 20, new TranslationTextComponent("menu.multiplayer"), var1x -> {
                Object var4 = !this.field_943.field_9577.field_45481 ? new class_6557(this) : new class_4145(this);
-               this.field_943.method_8609((class_266)var4);
+               this.field_943.method_8609((Screen)var4);
             }, var6)
          )
          .field_36675 = var5;
