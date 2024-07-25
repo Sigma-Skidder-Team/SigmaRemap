@@ -256,7 +256,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
       if (super.method_26940(var1, var3, var5)) {
          return true;
       } else {
-         boolean var8 = this.field_943.field_9577.field_45541.method_27070(var5);
+         boolean var8 = this.field_943.gameOptions.field_45541.method_27070(var5);
          class_7934 var9 = this.method_10224(var1, var3);
          long var10 = Util.getMeasuringTimeMs();
          this.field_10964 = this.field_10970 == var9 && var10 - this.field_10983 < 250L && this.field_10976 == var5;
@@ -276,13 +276,13 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
                var15 = -999;
             }
 
-            if (this.field_943.field_9577.field_45570 && var14 && this.field_943.field_9632.field_3853.method_32424().method_28022()) {
+            if (this.field_943.gameOptions.field_45570 && var14 && this.field_943.field_9632.field_3853.method_32424().method_28022()) {
                this.field_943.method_8609((Screen)null);
                return true;
             }
 
             if (var15 != -1) {
-               if (!this.field_943.field_9577.field_45570) {
+               if (!this.field_943.gameOptions.field_45570) {
                   if (!this.field_10980) {
                      if (!this.field_943.field_9632.field_3853.method_32424().method_28022()) {
                         this.field_10980 = true;
@@ -290,7 +290,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
                         this.field_10961.clear();
                         if (var5 != 0) {
                            if (var5 != 1) {
-                              if (this.field_943.field_9577.field_45541.method_27070(var5)) {
+                              if (this.field_943.gameOptions.field_45541.method_27070(var5)) {
                                  this.field_10977 = 2;
                               }
                            } else {
@@ -300,7 +300,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
                            this.field_10977 = 0;
                         }
                      } else {
-                        if (this.field_943.field_9577.field_45541.method_27070(var5)) {
+                        if (this.field_943.gameOptions.field_45541.method_27070(var5)) {
                            this.method_10217(var9, var15, var5, class_6269.field_32025);
                         } else {
                            boolean var16 = var15 != -999
@@ -343,13 +343,13 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
 
    private void method_10225(int var1) {
       if (this.field_10954 != null && this.field_943.field_9632.field_3853.method_32424().method_28022()) {
-         if (this.field_943.field_9577.field_45415.method_27070(var1)) {
+         if (this.field_943.gameOptions.field_45415.method_27070(var1)) {
             this.method_10217(this.field_10954, this.field_10954.field_40588, 40, class_6269.field_32026);
             return;
          }
 
          for (int var4 = 0; var4 < 9; var4++) {
-            if (this.field_943.field_9577.field_45393[var4].method_27070(var1)) {
+            if (this.field_943.gameOptions.field_45393[var4].method_27070(var1)) {
                this.method_10217(this.field_10954, this.field_10954.field_40588, var4, class_6269.field_32026);
             }
          }
@@ -364,7 +364,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
    public boolean method_26944(double var1, double var3, int var5, double var6, double var8) {
       class_7934 var12 = this.method_10224(var1, var3);
       class_6098 var13 = this.field_943.field_9632.field_3853.method_32424();
-      if (this.field_10975 != null && this.field_943.field_9577.field_45570) {
+      if (this.field_10975 != null && this.field_943.gameOptions.field_45570) {
          if (var5 == 0 || var5 == 1) {
             if (!this.field_10965.method_28022()) {
                if (this.field_10965.method_27997() > 1 && var12 != null && class_4088.method_18856(var12, this.field_10965, false)) {
@@ -443,7 +443,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
             return true;
          }
 
-         if (this.field_10975 != null && this.field_943.field_9577.field_45570) {
+         if (this.field_10975 != null && this.field_943.gameOptions.field_45570) {
             if (var5 == 0 || var5 == 1) {
                if (this.field_10965.method_28022() && var8 != this.field_10975) {
                   this.field_10965 = this.field_10975.method_35898();
@@ -483,7 +483,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
 
             this.method_10217((class_7934)null, -999, class_4088.method_18881(2, this.field_10977), class_6269.field_32022);
          } else if (!this.field_943.field_9632.field_3853.method_32424().method_28022()) {
-            if (!this.field_943.field_9577.field_45541.method_27070(var5)) {
+            if (!this.field_943.gameOptions.field_45541.method_27070(var5)) {
                boolean var13 = var12 != -999
                   && (
                      class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 340)
@@ -531,11 +531,11 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
    @Override
    public boolean method_26946(int var1, int var2, int var3) {
       if (!super.method_26946(var1, var2, var3)) {
-         if (!this.field_943.field_9577.field_45575.method_27062(var1, var2)) {
+         if (!this.field_943.gameOptions.field_45575.method_27062(var1, var2)) {
             this.method_10220(var1, var2);
             if (this.field_10954 != null && this.field_10954.method_35884()) {
-               if (!this.field_943.field_9577.field_45541.method_27062(var1, var2)) {
-                  if (this.field_943.field_9577.field_45451.method_27062(var1, var2)) {
+               if (!this.field_943.gameOptions.field_45541.method_27062(var1, var2)) {
+                  if (this.field_943.gameOptions.field_45451.method_27062(var1, var2)) {
                      this.method_10217(this.field_10954, this.field_10954.field_40588, !method_1185() ? 0 : 1, class_6269.field_32024);
                   }
                } else {
@@ -555,13 +555,13 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
 
    public boolean method_10220(int var1, int var2) {
       if (this.field_943.field_9632.field_3853.method_32424().method_28022() && this.field_10954 != null) {
-         if (this.field_943.field_9577.field_45415.method_27062(var1, var2)) {
+         if (this.field_943.gameOptions.field_45415.method_27062(var1, var2)) {
             this.method_10217(this.field_10954, this.field_10954.field_40588, 40, class_6269.field_32026);
             return true;
          }
 
          for (int var5 = 0; var5 < 9; var5++) {
-            if (this.field_943.field_9577.field_45393[var5].method_27062(var1, var2)) {
+            if (this.field_943.gameOptions.field_45393[var5].method_27062(var1, var2)) {
                this.method_10217(this.field_10954, this.field_10954.field_40588, var5, class_6269.field_32026);
                return true;
             }

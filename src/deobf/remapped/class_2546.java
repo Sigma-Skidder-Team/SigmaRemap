@@ -271,7 +271,7 @@ public class class_2546 extends class_9331<class_7333> {
    public boolean method_26946(int var1, int var2, int var3) {
       this.field_12613 = false;
       if (field_12605 != class_8230.field_42264.method_37688()) {
-         if (!this.field_943.field_9577.field_45420.method_27062(var1, var2)) {
+         if (!this.field_943.gameOptions.field_45420.method_27062(var1, var2)) {
             return super.method_26946(var1, var2, var3);
          } else {
             this.field_12613 = true;
@@ -422,8 +422,8 @@ public class class_2546 extends class_9331<class_7333> {
                   } else {
                      class_6098 var9 = new class_6098(class_4897.field_24622);
                      var9.method_27978("CustomCreativeLock");
-                     ITextComponent var10 = this.field_943.field_9577.field_45393[var6].method_27061();
-                     ITextComponent var11 = this.field_943.field_9577.field_45562.method_27061();
+                     ITextComponent var10 = this.field_943.gameOptions.field_45393[var6].method_27061();
+                     ITextComponent var11 = this.field_943.gameOptions.field_45562.method_27061();
                      var9.method_28032(new TranslationTextComponent("inventory.hotbarInfo", var11, var10));
                      this.field_10956.field_37486.add(var9);
                   }
@@ -573,7 +573,7 @@ public class class_2546 extends class_9331<class_7333> {
       if (field_12605 != class_8230.field_42264.method_37688()) {
          super.method_1177(var1, var2, var3, var4);
       } else {
-         List var7 = var2.method_28012(this.field_943.field_9632, !this.field_943.field_9577.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
+         List var7 = var2.method_28012(this.field_943.field_9632, !this.field_943.gameOptions.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
          ArrayList var8 = Lists.newArrayList(var7);
          class_2451 var9 = var2.method_27960();
          class_8230 var10 = var9.method_11226();
@@ -741,8 +741,8 @@ public class class_2546 extends class_9331<class_7333> {
                var8.set(var9, var6.field_3853.method_31498(var9).method_27973());
             }
 
-            ITextComponent var11 = var0.field_9577.field_45393[var1].method_27061();
-            ITextComponent var10 = var0.field_9577.field_45486.method_27061();
+            ITextComponent var11 = var0.gameOptions.field_45393[var1].method_27061();
+            ITextComponent var10 = var0.gameOptions.field_45486.method_27061();
             var0.field_9614.method_13982(new TranslationTextComponent("inventory.hotbarSaved", var10, var11), false);
             var7.method_15917();
          }

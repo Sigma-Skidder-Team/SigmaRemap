@@ -45,7 +45,7 @@ public class class_7542 implements class_9720 {
    }
 
    private static class_4066 method_34345() {
-      return MinecraftClient.getInstance().field_9577.field_45459;
+      return MinecraftClient.getInstance().gameOptions.field_45459;
    }
 
    private void method_34342(boolean var1, String var2) {

@@ -59,7 +59,7 @@ public class class_1467 extends Module {
                      var1.method_35235(var1.method_35236() - 0.01);
                   }
                }
-            } else if (this.field_7883 > 1 && (this.getBooleanValueByName("Auto Jump") && class_314.method_1434() || mcInstance.field_9577.field_45450.method_27060())) {
+            } else if (this.field_7883 > 1 && (this.getBooleanValueByName("Auto Jump") && class_314.method_1434() || mcInstance.gameOptions.field_45450.method_27060())) {
                this.field_7881 = 0;
                mcInstance.field_9632.method_26595();
                var1.method_35232(mcInstance.field_9632.method_37098().field_7336);
@@ -80,7 +80,7 @@ public class class_1467 extends Module {
             var1.method_29715(true);
          }
 
-         if (!mcInstance.field_9577.field_45450.method_27060() || !SigmaMainClass.getInstance().getModuleManager().method_847(BlockFlyModule.class).method_42015()) {
+         if (!mcInstance.gameOptions.field_45450.method_27060() || !SigmaMainClass.getInstance().getModuleManager().method_847(BlockFlyModule.class).method_42015()) {
             double var4 = 0.56 + (double)class_8865.method_40770() * 0.1;
             var1.method_13313(0.407 + (double)class_8865.method_40769() * 0.1 + Math.random() * 1.0E-5);
             if (class_6908.field_35509 < 2) {

@@ -346,7 +346,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
          return true;
       } else if (this.field_41002.method_32691() && this.field_41002.method_8274() && var1 != 256) {
          return true;
-      } else if (this.field_41006.field_9577.field_45420.method_27062(var1, var2) && !this.field_41002.method_32691()) {
+      } else if (this.field_41006.gameOptions.field_45420.method_27062(var1, var2) && !this.field_41002.method_32691()) {
          this.field_41010 = true;
          this.field_41002.method_8273(true);
          return true;
@@ -400,9 +400,9 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
          }
 
          var4.method_11097(var5);
-         this.field_41006.field_9577.field_45437 = var5.getCode();
+         this.field_41006.gameOptions.field_45437 = var5.getCode();
          this.field_41006.method_8524();
-         this.field_41006.field_9577.method_40873();
+         this.field_41006.gameOptions.method_40873();
       }
    }
 

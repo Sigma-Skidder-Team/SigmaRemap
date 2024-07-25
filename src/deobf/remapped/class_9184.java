@@ -16,7 +16,7 @@ public class class_9184 extends class_2089 {
    }
 
    public void method_42331(class_7966 var1) {
-      if (!this.field_46992.field_9577.field_45567) {
+      if (!this.field_46992.gameOptions.field_45567) {
          for (int var4 = 0; var4 < this.field_46993.length; var4++) {
             class_9623 var5 = this.field_46993[var4];
             if (var5 != null && var5.method_44422(this.field_46992.method_8552().method_43165(), var4, var1)) {

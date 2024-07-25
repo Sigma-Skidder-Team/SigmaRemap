@@ -25,8 +25,8 @@ public class class_6557 extends Screen {
       int var3 = (this.field_33425.method_2072() + 1) * 9 * 2;
       this.<class_9521>method_1186(new class_9521(this.field_941 / 2 - 155, 100 + var3, 150, 20, class_1402.field_7631, var1 -> {
          if (this.field_33420.method_38643()) {
-            this.field_943.field_9577.field_45481 = true;
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.field_45481 = true;
+            this.field_943.gameOptions.method_40873();
          }
 
          this.field_943.method_8609(new class_4145(this.field_33426));

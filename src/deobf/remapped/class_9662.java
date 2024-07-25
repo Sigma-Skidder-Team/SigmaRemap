@@ -56,7 +56,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       class_3542.method_16488();
       class_2089.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       class_3542.method_16448();
-      if (this.field_49207.field_9577.field_45570 || var9) {
+      if (this.field_49207.gameOptions.field_45570 || var9) {
          this.field_49207.method_8577().method_35674(class_8224.method_37654());
          class_2089.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);

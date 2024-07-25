@@ -14,7 +14,7 @@ public class class_5787 extends Module {
    @EventListen
    private void method_26179(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.field_9577.field_45575.field_30027.field_17800 && mcInstance.field_9632.method_37321()) {
+         if (var1.method_29384() == mcInstance.gameOptions.field_45575.field_30027.field_17800 && mcInstance.field_9632.method_37321()) {
             mcInstance.method_8614().method_4813(new class_2317(mcInstance.field_9632, class_4127.field_20100));
          }
       }
@@ -71,16 +71,16 @@ public class class_5787 extends Module {
             }
 
             if (SigmaMainClass.getInstance().method_3299().method_31001() != null && SigmaMainClass.getInstance().method_3299().method_31001().method_32121()) {
-               for (class_5916 var14 : MinecraftClient.getInstance().field_9577.field_45395) {
+               for (class_5916 var14 : MinecraftClient.getInstance().gameOptions.field_45395) {
                   var14.field_30024 = false;
                }
 
                return;
             }
 
-            for (class_5916 var7 : mcInstance.field_9577.field_45395) {
+            for (class_5916 var7 : mcInstance.gameOptions.field_45395) {
                if (var7.field_30027.field_17800 > 0
-                  && mcInstance.field_9577.field_45560.field_30027.field_17800 != var7.field_30027.field_17800
+                  && mcInstance.gameOptions.field_45560.field_30027.field_17800 != var7.field_30027.field_17800
                   && var7.field_30027.field_17800 > 4) {
                   int var8 = GLFW.glfwGetKey(mcInstance.window.method_43181(), var7.field_30027.field_17800);
                   var7.field_30024 = var8 == 1;

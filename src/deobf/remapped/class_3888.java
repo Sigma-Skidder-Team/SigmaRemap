@@ -64,7 +64,7 @@ public class class_3888 extends class_2089 {
       this.method_17993(var1);
       this.method_17989(var1);
       class_3542.method_16489();
-      if (this.field_18930.field_9577.field_45549) {
+      if (this.field_18930.gameOptions.field_45549) {
          int var5 = this.field_18930.method_8552().method_43165();
          this.method_17984(var1, this.field_18930.method_8592(), 0, var5 / 2, true);
          class_7762 var6 = this.field_18930.method_8515();
@@ -84,10 +84,10 @@ public class class_3888 extends class_2089 {
          boolean var5 = this.field_18930.method_8515() != null;
          var4.add(
             "Debug: Pie [shift]: "
-               + (!this.field_18930.field_9577.field_45471 ? "hidden" : "visible")
+               + (!this.field_18930.gameOptions.field_45471 ? "hidden" : "visible")
                + (!var5 ? " FPS" : " FPS + TPS")
                + " [alt]: "
-               + (!this.field_18930.field_9577.field_45549 ? "hidden" : "visible")
+               + (!this.field_18930.gameOptions.field_45549 ? "hidden" : "visible")
          );
          var4.add("For help: press F3 + Q");
          this.field_18925 = var4;
@@ -676,8 +676,8 @@ public class class_3888 extends class_2089 {
          this.method_9789(var1, var3, var3 + var14 - 1, var32 - 1, -1);
          this.method_9790(var1, var3, var32 - 60, var32, -1);
          this.method_9790(var1, var3 + var14 - 1, var32 - 60, var32, -1);
-         if (var5 && this.field_18930.field_9577.field_45439 > 0 && this.field_18930.field_9577.field_45439 <= 250) {
-            this.method_9789(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.field_18930.field_9577.field_45439), -16711681);
+         if (var5 && this.field_18930.gameOptions.field_45439 > 0 && this.field_18930.gameOptions.field_45439 <= 250) {
+            this.method_9789(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.field_18930.gameOptions.field_45439), -16711681);
          }
 
          String var34 = var18 + " ms min";

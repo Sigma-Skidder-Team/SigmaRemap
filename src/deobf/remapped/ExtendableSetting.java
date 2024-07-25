@@ -6,12 +6,12 @@ import java.util.List;
 public abstract class ExtendableSetting extends Setting<Boolean> {
    public List<Setting> children;
 
-   public ExtendableSetting(String var1, String var2, class_5195 var3, boolean expanded, List<Setting> var5) {
+   public ExtendableSetting(String var1, String var2, SettingType var3, boolean expanded, List<Setting> var5) {
       super(var1, var2, var3, expanded);
       this.children = var5;
    }
 
-   public ExtendableSetting(String var1, String var2, class_5195 var3, boolean var4, Setting... var5) {
+   public ExtendableSetting(String var1, String var2, SettingType var3, boolean var4, Setting... var5) {
       this(var1, var2, var3, var4, Arrays.<Setting>asList(var5));
    }
 

@@ -19,7 +19,7 @@ public class class_3259 extends Screen {
 
    @Override
    public void method_1162() {
-      this.field_943.field_9577.method_40873();
+      this.field_943.gameOptions.method_40873();
    }
 
    @Override

@@ -14,12 +14,12 @@ public class class_7693 extends Module {
    }
 
    public class_6849 method_34853(int var1) {
-      if (var1 != mcInstance.field_9577.field_45504.field_30027.field_17800) {
-         if (var1 != mcInstance.field_9577.field_45411.field_30027.field_17800) {
-            if (var1 != mcInstance.field_9577.field_45416.field_30027.field_17800) {
-               if (var1 != mcInstance.field_9577.field_45434.field_30027.field_17800) {
-                  if (var1 != mcInstance.field_9577.field_45530.field_30027.field_17800) {
-                     return var1 != mcInstance.field_9577.field_45559.field_30027.field_17800 ? null : class_6849.field_35322;
+      if (var1 != mcInstance.gameOptions.field_45504.field_30027.field_17800) {
+         if (var1 != mcInstance.gameOptions.field_45411.field_30027.field_17800) {
+            if (var1 != mcInstance.gameOptions.field_45416.field_30027.field_17800) {
+               if (var1 != mcInstance.gameOptions.field_45434.field_30027.field_17800) {
+                  if (var1 != mcInstance.gameOptions.field_45530.field_30027.field_17800) {
+                     return var1 != mcInstance.gameOptions.field_45559.field_30027.field_17800 ? null : class_6849.field_35322;
                   } else {
                      return class_6849.field_35323;
                   }
@@ -40,8 +40,8 @@ public class class_7693 extends Module {
    @EventListen
    private void method_34855(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (!MinecraftClient.getInstance().field_9577.field_45470) {
-            if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45470) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                this.field_39066 = var1.method_14966();
                if (SigmaMainClass.getInstance().method_3299().method_30987()) {
                   for (class_6849 var7 : class_6849.values()) {
@@ -70,8 +70,8 @@ public class class_7693 extends Module {
                   }
 
                   String var12 = class_314.method_1451(var19.field_35319.field_30027.field_17800);
-                  if (var19.field_35319 != mcInstance.field_9577.field_45530) {
-                     if (var19.field_35319 == mcInstance.field_9577.field_45559) {
+                  if (var19.field_35319 != mcInstance.gameOptions.field_45530) {
+                     if (var19.field_35319 == mcInstance.gameOptions.field_45559) {
                         var12 = "R";
                      }
                   } else {

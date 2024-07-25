@@ -13,7 +13,7 @@ public class StaffRepealerModule extends Module {
    private void method_16497(class_5596 var1) {
       if (this.method_42015()) {
          if (class_314.method_1387()) {
-            mcInstance.field_9577.method_40870();
+            mcInstance.gameOptions.method_40870();
          }
       }
    }

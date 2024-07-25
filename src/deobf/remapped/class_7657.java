@@ -16,12 +16,12 @@ public class class_7657 extends Module {
    public void method_42006() {
       this.field_38902 = mcInstance.field_9632.method_37309();
       this.field_38901 = 0;
-      if (!mcInstance.field_9577.field_45560.method_27060()) {
-         if (!mcInstance.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.field_45560.method_27060()) {
+         if (!mcInstance.gameOptions.field_45560.method_27060()) {
             this.field_38904 = false;
          }
       } else {
-         mcInstance.field_9577.field_45560.field_30024 = false;
+         mcInstance.gameOptions.field_45560.field_30024 = false;
          this.field_38904 = true;
       }
    }
@@ -37,7 +37,7 @@ public class class_7657 extends Module {
    @EventListen
    private void method_34659(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_38904 = true;
          }
@@ -47,7 +47,7 @@ public class class_7657 extends Module {
    @EventListen
    private void method_34658(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_38904 = false;
          }
@@ -62,7 +62,7 @@ public class class_7657 extends Module {
          if (this.field_38901 <= 0) {
             if (this.field_38901 != -1) {
                if (this.field_38901 == 0) {
-                  if (!mcInstance.field_9577.field_45450.method_27060() && var1.method_35236() > 0.0) {
+                  if (!mcInstance.gameOptions.field_45450.method_27060() && var1.method_35236() > 0.0) {
                      var1.method_35235(-class_8865.method_40786());
                   }
 
@@ -70,7 +70,7 @@ public class class_7657 extends Module {
                   class_8865.method_40777(var1, class_8865.method_40775());
                }
             } else {
-               if (mcInstance.field_9577.field_45450.method_27060()) {
+               if (mcInstance.gameOptions.field_45450.method_27060()) {
                   var1.method_35235(!this.field_38904 ? var4 / 2.0 : class_8865.method_40786());
                   this.field_38903 = this.field_38902;
                   this.field_38902 = !this.field_38904 ? mcInstance.field_9632.method_37309() + var1.method_35236() : this.field_38902;

@@ -45,12 +45,12 @@ public class Snooper {
       if (SigmaMainClass.getInstance().method_3322() != null && var3 > 992120L) {
          if (SigmaMainClass.getInstance().method_3322().field_4416 == null || SigmaMainClass.getInstance().method_3322().field_4416.method_22227() == null) {
             MinecraftClient.getInstance().field_9596.method_19722();
-            MinecraftClient.getInstance().field_9577.field_45558 = false;
+            MinecraftClient.getInstance().gameOptions.field_45558 = false;
          } else if (SigmaMainClass.getInstance().method_3322().field_4416.method_22227().method_22175() != null) {
             String var5 = SigmaMainClass.getInstance().method_3322().field_4416.method_22227().method_22175().getHostName();
             if (var5.split("\\.").length != 3 || !var5.split("\\.")[1].equals("sigmaclient")) {
                MinecraftClient.getInstance().field_9596.method_19722();
-               MinecraftClient.getInstance().field_9577.field_45558 = false;
+               MinecraftClient.getInstance().gameOptions.field_45558 = false;
             }
          }
       }

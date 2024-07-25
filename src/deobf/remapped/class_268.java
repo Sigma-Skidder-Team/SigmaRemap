@@ -168,8 +168,8 @@ public class class_268 extends Module {
    @class_5355
    private void method_1196(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (!MinecraftClient.getInstance().field_9577.field_45470) {
-            if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45470) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                this.method_1208();
 
                for (class_3622 var5 : field_960) {

@@ -12,7 +12,7 @@ public class class_9604 extends Module {
       if (this.method_42015()) {
          boolean var4 = GLFW.glfwGetWindowAttrib(mcInstance.window.method_43181(), 131073) == 1;
          if (var4) {
-            MinecraftClient.getInstance().window.method_43194(mcInstance.field_9577.field_45439);
+            MinecraftClient.getInstance().window.method_43194(mcInstance.gameOptions.field_45439);
          } else {
             MinecraftClient.getInstance().window.method_43194(5);
          }
@@ -21,6 +21,6 @@ public class class_9604 extends Module {
 
    @Override
    public void method_42020() {
-      MinecraftClient.getInstance().window.method_43194(mcInstance.field_9577.field_45439);
+      MinecraftClient.getInstance().window.method_43194(mcInstance.gameOptions.field_45439);
    }
 }

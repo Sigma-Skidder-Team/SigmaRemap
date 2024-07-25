@@ -21,7 +21,7 @@ public class class_5329 extends class_2612 {
       var1.method_32148(var8);
       var1.method_32148(var9);
       switch (var2.method_23030()) {
-         case field_26724:
+         case BOOLEAN:
             byte var18 = 40;
             byte var22 = 18;
             class_3540 var26 = new class_3540(var1, var2.getName() + "checkbox", var3 + 135, var4 + 4, 40, 18);
@@ -35,7 +35,7 @@ public class class_5329 extends class_2612 {
             var1.method_32148(var26);
             var4 += 18 + var5;
             break;
-         case field_26718:
+         case FLOAT:
             short var17 = 240;
             byte var21 = 4;
             FloatSetting var25 = (FloatSetting)var2;
@@ -67,7 +67,7 @@ public class class_5329 extends class_2612 {
             var1.method_32148(var13);
             var4 += 54;
             break;
-         case field_26723:
+         case MODE_GAY:
             byte var16 = 114;
             byte var20 = 27;
             class_9486 var24;
@@ -94,7 +94,7 @@ public class class_5329 extends class_2612 {
             });
             var4 += var20 + var5;
             break;
-         case field_26722:
+         case MODE_NORMAL:
             byte var15 = 80;
             byte var19 = 20;
             class_2003 var23 = new class_2003(
@@ -132,7 +132,7 @@ public class class_5329 extends class_2612 {
             var1.method_32148(var12);
             var4 += 27 + var5;
          case field_26716:
-         case field_26719:
+         case MULTI:
          case field_26717:
       }
 
@@ -149,7 +149,7 @@ public class class_5329 extends class_2612 {
       int var6 = 35;
 
       for (Setting var8 : this.field_27182.method_41996().values()) {
-         if (var8.method_23030() != class_5195.field_26721 && var8.method_23030() != class_5195.field_26727) {
+         if (var8.method_23030() != SettingType.field_26721 && var8.method_23030() != SettingType.COLOR) {
             var6 = this.method_24303(this, var8, 30, var6, 20);
          }
       }

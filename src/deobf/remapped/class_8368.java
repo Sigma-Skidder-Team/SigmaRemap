@@ -74,7 +74,7 @@ public class class_8368 extends class_2089 implements class_3796 {
          var6.method_35795(var1, var10, var9);
          class_3542.method_16489();
          if (var9 > 3 && var6.method_35793()) {
-            ITextComponent var11 = this.field_42841.field_9577.field_45393[var2].method_27061();
+            ITextComponent var11 = this.field_42841.gameOptions.field_45393[var2].method_27061();
             this.field_42841
                .textRenderer
                .method_45392(var1, var11, (float)(var3 + 19 - 2 - this.field_42841.textRenderer.method_45379(var11)), var4 + 6.0F + 3.0F, 16777215 + (var9 << 24));

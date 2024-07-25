@@ -235,7 +235,7 @@ public class class_9468 extends Module {
 
    private void method_43744(Entity var1) {
       float var4 = 1.0F;
-      float var5 = (float)((double)var4 * (mcInstance.field_9577.field_45543 / mcInstance.field_9577.field_45543));
+      float var5 = (float)((double)var4 * (mcInstance.gameOptions.field_45543 / mcInstance.gameOptions.field_45543));
       if (this.field_48287 == 0.0 || Double.isNaN(this.field_48287)) {
          this.field_48287 = (double)var5;
       }

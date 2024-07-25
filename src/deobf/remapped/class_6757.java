@@ -139,7 +139,7 @@ public class class_6757 extends class_2269 {
          this.field_34870.method_19237(var20);
       }
 
-      if (this.field_34865.field_9577.field_45570 || var9) {
+      if (this.field_34865.gameOptions.field_45570 || var9) {
          this.field_34865.method_8577().method_35674(class_4116.method_19126());
          class_2089.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);

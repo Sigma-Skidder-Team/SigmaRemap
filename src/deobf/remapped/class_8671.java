@@ -73,14 +73,14 @@ public class class_8671 {
             int var9 = var3;
             if (!var16) {
                if (this.field_44490 != -1) {
-                  if (this.field_44499.field_9577.field_45570 && --this.field_44492 > 0) {
+                  if (this.field_44499.gameOptions.field_45570 && --this.field_44492 > 0) {
                      return;
                   }
 
                   this.field_44490 = -1;
                }
             } else {
-               if (this.field_44499.field_9577.field_45570 && this.field_44492++ > 0) {
+               if (this.field_44499.gameOptions.field_45570 && this.field_44492++ > 0) {
                   return;
                }
 
@@ -147,7 +147,7 @@ public class class_8671 {
          SigmaMainClass.getInstance().method_3302().method_7914(var9);
          if (!var9.method_29716()) {
             if (var1 == MinecraftClient.getInstance().method_8552().method_43181()) {
-               double var10 = (!this.field_44499.field_9577.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.field_9577.field_45578;
+               double var10 = (!this.field_44499.gameOptions.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.gameOptions.field_45578;
                if (this.field_44499.field_9610 == null) {
                   if (this.field_44499.field_9623 == null) {
                      if (this.field_44499.field_9632 != null) {
@@ -256,11 +256,11 @@ public class class_8671 {
       double var5 = var3 - this.field_44491;
       this.field_44491 = var3;
       if (this.method_39843() && this.field_44499.method_8558()) {
-         double var7 = this.field_44499.field_9577.field_45561 * 0.6F + 0.2F;
+         double var7 = this.field_44499.gameOptions.field_45561 * 0.6F + 0.2F;
          double var9 = var7 * var7 * var7 * 8.0;
          double var11;
          double var13;
-         if (!this.field_44499.field_9577.field_45499) {
+         if (!this.field_44499.gameOptions.field_45499) {
             this.field_44484.method_10572();
             this.field_44495.method_10572();
             var11 = this.field_44498 * var9;
@@ -275,7 +275,7 @@ public class class_8671 {
          this.field_44498 = 0.0;
          this.field_44487 = 0.0;
          byte var19 = 1;
-         if (this.field_44499.field_9577.field_45535) {
+         if (this.field_44499.gameOptions.field_45535) {
             var19 = -1;
          }
 

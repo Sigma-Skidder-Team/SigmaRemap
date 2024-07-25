@@ -154,7 +154,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       this.field_8718.method_32100((var1x, var2x) -> this.method_7600(new class_7899(MinecraftClient.getInstance().field_9623)));
       this.field_8721.method_32100((var1x, var2x) -> this.method_7600(new class_9888(MinecraftClient.getInstance().field_9623)));
       this.field_8717
-         .method_32100((var1x, var2x) -> this.method_7600(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().field_9577)));
+         .method_32100((var1x, var2x) -> this.method_7600(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().gameOptions)));
       this.field_8723.method_32100((var1x, var2x) -> this.method_7601(new AltManagerMenu()));
       this.field_8713.method_32100((var1x, var2x) -> this.method_7597());
       this.field_8716.method_32100((var1x, var2x) -> {

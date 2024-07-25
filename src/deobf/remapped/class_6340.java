@@ -57,7 +57,7 @@ public class class_6340 extends class_7621 {
          var17 = (float)(this.field_32368.window.method_43178() / this.field_32368.window.method_43166());
       }
 
-      float var18 = (float)this.field_32368.window.method_43164(this.field_32368.field_9577.field_45484, this.field_32368.method_8578()) * var17;
+      float var18 = (float)this.field_32368.window.method_43164(this.field_32368.gameOptions.field_45484, this.field_32368.method_8578()) * var17;
       GL11.glScalef(1.0F / var18, 1.0F / var18, 0.0F);
       method_29014(var13, this.field_32377);
       GL11.glPopMatrix();

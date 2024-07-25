@@ -218,7 +218,7 @@ public class class_1840 extends Screen {
 
    @Override
    public boolean method_26946(int var1, int var2, int var3) {
-      if (!this.field_9324.method_32691() && this.field_943.field_9577.field_45421.method_27062(var1, var2)) {
+      if (!this.field_9324.method_32691() && this.field_943.gameOptions.field_45421.method_27062(var1, var2)) {
          this.field_943.method_8609((Screen)null);
          return true;
       } else {

@@ -30,12 +30,12 @@ public class class_6205 extends Module {
       this.field_31713 = mcInstance.field_9632.field_3853.field_36404;
       this.field_31712 = this.field_31711 = 999.0F;
       ((BlockFlyModule)this.method_42017()).field_18196 = -1;
-      if (mcInstance.field_9577.field_45560.method_27060() && this.getBooleanValueByName("Downwards")) {
-         mcInstance.field_9577.field_45560.field_30024 = false;
+      if (mcInstance.gameOptions.field_45560.method_27060() && this.getBooleanValueByName("Downwards")) {
+         mcInstance.gameOptions.field_45560.field_30024 = false;
          this.field_31719 = true;
       }
 
-      if (!mcInstance.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.field_45560.method_27060()) {
          this.field_31719 = false;
       }
 
@@ -92,7 +92,7 @@ public class class_6205 extends Module {
    @EventListen
    private void method_28408(class_6435 var1) {
       if (this.method_42015() && this.getBooleanValueByName("Downwards")) {
-         if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_31719 = true;
          }
@@ -102,7 +102,7 @@ public class class_6205 extends Module {
    @EventListen
    private void method_28407(class_307 var1) {
       if (this.method_42015() && this.getBooleanValueByName("Downwards")) {
-         if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_31719 = false;
          }
@@ -162,7 +162,7 @@ public class class_6205 extends Module {
                } else if (this.field_31719 && this.getBooleanValueByName("Downwards")) {
                   var9--;
                } else if ((this.getStringValueByName("Speed Mode").equals("Jump") || this.getStringValueByName("Speed Mode").equals("Cubecraft"))
-                  && !mcInstance.field_9577.field_45450.method_27060()) {
+                  && !mcInstance.gameOptions.field_45450.method_27060()) {
                   var9 = this.field_31717;
                }
 
@@ -260,7 +260,7 @@ public class class_6205 extends Module {
             case "Cubecraft":
                double var6 = 0.2;
                float var8 = this.method_28399(class_9299.method_42810(mcInstance.field_9632.field_41701));
-               if (mcInstance.field_9577.field_45450.method_27060()) {
+               if (mcInstance.gameOptions.field_45450.method_27060()) {
                   mcInstance.field_9616.field_32603 = 1.0F;
                } else if (mcInstance.field_9632.field_41726) {
                   if (class_314.method_1434() && !mcInstance.field_9632.method_37252() && !this.field_31719) {

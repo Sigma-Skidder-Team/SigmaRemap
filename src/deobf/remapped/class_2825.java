@@ -12,11 +12,11 @@ public class class_2825 extends class_4855<class_803> {
    }
 
    public int method_12852(class_1013 var1) {
-      return this.method_36202(class_803.method_3548(this.field_40883.field_9577, this.field_40891, var1));
+      return this.method_36202(class_803.method_3548(this.field_40883.gameOptions, this.field_40891, var1));
    }
 
    public void method_12853(class_1013 var1, class_1013 var2) {
-      this.method_36202(class_803.method_3549(this.field_40883.field_9577, this.field_40891, var1, var2));
+      this.method_36202(class_803.method_3549(this.field_40883.gameOptions, this.field_40891, var1, var2));
    }
 
    public void method_12856(class_1013[] var1) {

@@ -6,12 +6,12 @@ public class ColorSetting extends Setting<Integer> {
    public boolean field_5001 = false;
 
    public ColorSetting(String var1, String var2, int var3, boolean var4) {
-      super(var1, var2, class_5195.field_26727, var3);
+      super(var1, var2, SettingType.COLOR, var3);
       this.field_5001 = var4;
    }
 
    public ColorSetting(String var1, String var2, int var3) {
-      super(var1, var2, class_5195.field_26727, var3);
+      super(var1, var2, SettingType.COLOR, var3);
    }
 
    @Override

@@ -63,7 +63,7 @@ public class class_8827 {
          this.method_40542();
       }
 
-      this.field_45149 = this.field_45147.field_9577.field_45410.method_28504(this);
+      this.field_45149 = this.field_45147.gameOptions.field_45410.method_28504(this);
    }
 
    public void method_40540(class_2297 var1, int var2) {
@@ -90,8 +90,8 @@ public class class_8827 {
    }
 
    public void method_40538(class_6240 var1) {
-      this.field_45147.field_9577.field_45410 = var1;
-      this.field_45147.field_9577.method_40873();
+      this.field_45147.gameOptions.field_45410 = var1;
+      this.field_45147.gameOptions.method_40873();
       if (this.field_45149 != null) {
          this.field_45149.method_10481();
          this.field_45149 = var1.method_28504(this);

@@ -32,7 +32,7 @@ public class class_3646 extends class_4232 {
          class_1013 var4 = field_17777[var3];
          int var5 = this.field_941 / 2 - 155 + var3 % 2 * 160;
          int var6 = this.field_940 / 6 + 21 * (var3 / 2) - 12;
-         this.<class_7114>method_1186(var4.method_4482(this.field_943.field_9577, var5, var6, 150));
+         this.<class_7114>method_1186(var4.method_4482(this.field_943.gameOptions, var5, var6, 150));
       }
 
       this.<class_5932>method_1186(new class_5932(200, this.field_941 / 2 - 100, this.field_940 / 6 + 168 + 11, class_6956.method_31803("gui.done")));
@@ -43,7 +43,7 @@ public class class_3646 extends class_4232 {
       if (var1 instanceof class_5932) {
          class_5932 var4 = (class_5932)var1;
          if (var4.field_36675 && var4.field_30159 == 200) {
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.method_40873();
             this.field_943.method_8609(this.field_17781);
          }
       }
@@ -51,7 +51,7 @@ public class class_3646 extends class_4232 {
 
    @Override
    public void method_1162() {
-      this.field_943.field_9577.method_40873();
+      this.field_943.gameOptions.method_40873();
       super.method_1162();
    }
 

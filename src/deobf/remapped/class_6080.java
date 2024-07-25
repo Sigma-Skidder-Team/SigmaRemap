@@ -57,7 +57,7 @@ public class class_6080 {
 
    @EventListen
    private void method_27845(class_3278 var1) {
-      if (!MinecraftClient.getInstance().field_9577.field_45567) {
+      if (!MinecraftClient.getInstance().gameOptions.field_45567) {
          this.field_31115 = Math.max(Math.round((float)(6 - MinecraftClient.method_8501() / 10)), 1);
 
          for (int var4 = 0; var4 < this.field_31118.size(); var4++) {

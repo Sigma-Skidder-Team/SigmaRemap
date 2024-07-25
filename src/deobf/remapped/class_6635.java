@@ -54,7 +54,7 @@ public class class_6635 extends class_4785<class_6635> {
       class_2089.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       class_7107 var14 = this.field_34348;
       class_416 var15 = this.field_34350;
-      if (this.method_30498() && (this.field_34349.field_9577.field_45570 || var9)) {
+      if (this.method_30498() && (this.field_34349.gameOptions.field_45570 || var9)) {
          this.field_34349.method_8577().method_35674(class_895.method_3851());
          class_2089.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);

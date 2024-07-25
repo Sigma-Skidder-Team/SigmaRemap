@@ -822,7 +822,7 @@ public class class_174 extends World {
    }
 
    public int method_759(class_1331 var1, class_6581 var2) {
-      int var5 = MinecraftClient.getInstance().field_9577.field_45526;
+      int var5 = MinecraftClient.getInstance().gameOptions.field_45526;
       if (var5 == 0) {
          return var2.method_30079(this.method_22561(var1), (double)var1.method_12173(), (double)var1.method_12185());
       } else {

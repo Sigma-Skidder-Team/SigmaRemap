@@ -16,12 +16,12 @@ public class VeltPVPFlyModule extends Module {
    public void method_42006() {
       this.field_17460 = mcInstance.field_9632.method_37309();
       this.field_17458 = 0;
-      if (!mcInstance.field_9577.field_45560.method_27060()) {
-         if (!mcInstance.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.field_45560.method_27060()) {
+         if (!mcInstance.gameOptions.field_45560.method_27060()) {
             this.field_17456 = false;
          }
       } else {
-         mcInstance.field_9577.field_45560.field_30024 = false;
+         mcInstance.gameOptions.field_45560.field_30024 = false;
          this.field_17456 = true;
       }
    }
@@ -37,7 +37,7 @@ public class VeltPVPFlyModule extends Module {
    @EventListen
    private void method_16579(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_17456 = true;
          }
@@ -47,7 +47,7 @@ public class VeltPVPFlyModule extends Module {
    @EventListen
    private void method_16578(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_17456 = false;
          }
@@ -62,7 +62,7 @@ public class VeltPVPFlyModule extends Module {
          if (this.field_17458 <= 0) {
             if (this.field_17458 != -1) {
                if (this.field_17458 == 0) {
-                  if (!mcInstance.field_9577.field_45450.method_27060() && var1.method_35236() > 0.0) {
+                  if (!mcInstance.gameOptions.field_45450.method_27060() && var1.method_35236() > 0.0) {
                      var1.method_35235(-class_8865.method_40786());
                   }
 
@@ -70,7 +70,7 @@ public class VeltPVPFlyModule extends Module {
                   class_8865.method_40777(var1, var4 - 0.1);
                }
             } else {
-               if (!mcInstance.field_9577.field_45450.method_27060()) {
+               if (!mcInstance.gameOptions.field_45450.method_27060()) {
                   var1.method_35235(!this.field_17456 ? class_8865.method_40786() : -var4 / 2.0);
                } else {
                   var1.method_35235(!this.field_17456 ? var4 / 2.0 : class_8865.method_40786());

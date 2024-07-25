@@ -97,7 +97,7 @@ public class class_3913 extends class_2255<class_8398> {
 
    public static void method_18117() {
       MinecraftClient var2 = MinecraftClient.getInstance();
-      double var3 = class_3111.method_14261(var2.field_9577.field_45543, 1.0, 120.0);
+      double var3 = class_3111.method_14261(var2.gameOptions.field_45543, 1.0, 120.0);
       double var5 = Math.max(1.5 * (double)var2.method_8552().method_43163() / var3, 16.0);
       field_19010 = var5 * var5;
    }

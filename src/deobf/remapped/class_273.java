@@ -24,7 +24,7 @@ public class class_273 extends class_2612 implements class_1768 {
 
    private int method_1241(class_7038 var1, Setting var2, int var3, int var4, int var5) {
       switch (var2.method_23030()) {
-         case field_26724:
+         case BOOLEAN:
             byte var21 = 24;
             byte var29 = 24;
             class_1552 var37 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.getName());
@@ -42,7 +42,7 @@ public class class_273 extends class_2612 implements class_1768 {
             var1.method_32148(var45);
             var4 += 24 + var5;
             break;
-         case field_26718:
+         case FLOAT:
             byte var20 = 126;
             byte var28 = 24;
             class_1552 var36 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.getName());
@@ -76,7 +76,7 @@ public class class_273 extends class_2612 implements class_1768 {
             var1.method_32148(var47);
             var4 += 24 + var5;
             break;
-         case field_26723:
+         case MODE_GAY:
             byte var19 = 114;
             byte var27 = 27;
             class_1552 var43;
@@ -106,7 +106,7 @@ public class class_273 extends class_2612 implements class_1768 {
             });
             var4 += var27 + var5;
             break;
-         case field_26722:
+         case MODE_NORMAL:
             byte var18 = 123;
             byte var26 = 27;
             class_1552 var34 = new class_1552(var1, var2.getName() + "lbl", var3, var4 + 2, this.field_982, 27, class_1552.field_8208, var2.getName());
@@ -176,7 +176,7 @@ public class class_273 extends class_2612 implements class_1768 {
             var1.method_32148(var40);
             var4 += 27 + var5;
             break;
-         case field_26719:
+         case MULTI:
             short var15 = 175;
             short var23 = 200;
             class_1552 var31 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 200, class_1552.field_8208, var2.getName());
@@ -197,7 +197,7 @@ public class class_273 extends class_2612 implements class_1768 {
             var1.method_32148(var39);
             var4 += 200 + var5;
             break;
-         case field_26727:
+         case COLOR:
             short var14 = 160;
             byte var22 = 114;
             ColorSetting var30 = (ColorSetting)var2;

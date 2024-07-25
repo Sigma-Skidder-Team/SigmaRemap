@@ -2,7 +2,7 @@ package remapped;
 
 public class HippieModeValue extends Setting<String> {
    public HippieModeValue(String var1, String var2, String var3) {
-      super(var1, var2, class_5195.field_26723, var3);
+      super(var1, var2, SettingType.MODE_GAY, var3);
    }
 
    @Override

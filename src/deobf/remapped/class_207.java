@@ -26,7 +26,7 @@ public class class_207 extends Screen {
             this.field_943.field_9625.method_39834();
          })
       );
-      GameOptions var4 = this.field_943.field_9577;
+      GameOptions var4 = this.field_943.gameOptions;
       this.field_692 = class_416.method_2073(
          this.field_948,
          new TranslationTextComponent(

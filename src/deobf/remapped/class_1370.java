@@ -97,12 +97,12 @@ public class class_1370 extends Module {
             double var14 = var11.method_60();
             double var16 = var11.method_62();
             class_7966 var18 = new class_7966();
-            boolean var19 = mcInstance.field_9577.field_45568;
+            boolean var19 = mcInstance.gameOptions.field_45568;
             class_3542.method_16487();
             class_3542.method_16480(0.0F, 0.0F, 1.0F, 0.5F);
             class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
             class_3542.method_16488();
-            mcInstance.field_9577.field_45568 = false;
+            mcInstance.gameOptions.field_45568 = false;
             int var20 = var10.method_37230();
             boolean var21 = var10.method_37385(0);
             var10.method_37178(0);
@@ -110,7 +110,7 @@ public class class_1370 extends Module {
             this.method_6350(var10, var12, var14, var16, mcInstance.field_9616.field_32600, var18, this.field_7447);
             var10.method_37178(var20);
             var10.method_37220(0, var21);
-            mcInstance.field_9577.field_45568 = var19;
+            mcInstance.gameOptions.field_45568 = var19;
             GL11.glPopMatrix();
          }
       }

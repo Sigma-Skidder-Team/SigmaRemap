@@ -109,7 +109,7 @@ public class class_1092 implements class_392 {
       this.field_6026.field_9632.method_37100();
       int var10 = var1.method_9225();
       this.field_6021.method_762(var10, this.field_6026.field_9632);
-      this.field_6026.field_9632.field_30533 = new class_8439(this.field_6026.field_9577);
+      this.field_6026.field_9632.field_30533 = new class_8439(this.field_6026.gameOptions);
       this.field_6026.field_9647.method_42136(this.field_6026.field_9632);
       this.field_6026.field_9669 = this.field_6026.field_9632;
       this.field_6026.method_8609(new class_881());
@@ -118,7 +118,7 @@ public class class_1092 implements class_392 {
       this.field_6026.field_9632.method_27333(var1.method_9230());
       this.field_6026.field_9647.method_42126(var1.method_9226());
       this.field_6026.field_9647.method_42141(var1.method_9238());
-      this.field_6026.field_9577.method_40870();
+      this.field_6026.gameOptions.method_40870();
       this.field_6035.method_23485(new class_5930(class_5930.field_30076, new class_8248(Unpooled.buffer()).method_37760(class_6489.method_29605())));
       this.field_6026.method_8583().method_19174();
    }
@@ -807,7 +807,7 @@ public class class_1092 implements class_392 {
                if (var10 == this.field_6026.field_9632 && !var5) {
                   this.field_6026
                      .field_9614
-                     .method_13982(new TranslationTextComponent("mount.onboard", this.field_6026.field_9577.field_45560.method_27061()), false);
+                     .method_13982(new TranslationTextComponent("mount.onboard", this.field_6026.gameOptions.field_45560.method_27061()), false);
                }
             }
          }
@@ -917,7 +917,7 @@ public class class_1092 implements class_392 {
       var13.method_27315(var12);
       this.field_6021.method_762(var7, var13);
       var13.field_41701 = -180.0F;
-      var13.field_30533 = new class_8439(this.field_6026.field_9577);
+      var13.field_30533 = new class_8439(this.field_6026.gameOptions);
       this.field_6026.field_9647.method_42136(var13);
       var13.method_3151(var6.method_3179());
       var13.method_27333(var6.method_27329());
@@ -1169,7 +1169,7 @@ public class class_1092 implements class_392 {
                               );
                         }
                      } else {
-                        GameOptions var8 = this.field_6026.field_9577;
+                        GameOptions var8 = this.field_6026.gameOptions;
                         if (var6 != 0.0F) {
                            if (var6 != 101.0F) {
                               if (var6 != 102.0F) {

@@ -39,7 +39,7 @@ public class class_1857 {
 
    @EventListen
    public void method_8222(class_6435 var1) {
-      if (var1.method_29384() == this.field_9415.field_9577.field_45575.field_30027.method_16988()
+      if (var1.method_29384() == this.field_9415.gameOptions.field_45575.field_30027.method_16988()
          && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
          this.field_9415.method_8614().method_4813(new class_8559(class_2105.field_10551));
       }
@@ -274,7 +274,7 @@ public class class_1857 {
                var7 += (this.field_9415.field_9632.method_26423() - var7) * var8 / 3.0F;
             }
 
-            if (!this.field_9415.field_9577.field_45444.method_27060()) {
+            if (!this.field_9415.gameOptions.field_45444.method_27060()) {
                if (this.field_9415.field_9632.field_29676 == 0.0F && this.field_9415.field_9632.field_29673 == 0.0F) {
                   this.field_9415.field_9632.method_37140(false);
                }

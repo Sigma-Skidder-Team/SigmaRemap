@@ -9,12 +9,12 @@ public class ModeSetting extends Setting<String> {
    private List<String> field_13859 = new ArrayList<String>();
 
    public ModeSetting(String var1, String var2, int var3, String... var4) {
-      super(var1, var2, class_5195.field_26722, var4[var3]);
+      super(var1, var2, SettingType.MODE_NORMAL, var4[var3]);
       this.field_13860 = Arrays.<String>asList(var4);
    }
 
    public ModeSetting(String var1, String var2, String var3, String... var4) {
-      super(var1, var2, class_5195.field_26722, var3);
+      super(var1, var2, SettingType.MODE_NORMAL, var3);
       this.field_13860 = Arrays.<String>asList(var4);
    }
 

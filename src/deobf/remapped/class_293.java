@@ -365,8 +365,8 @@ public class class_293 {
       var0.method_41643(
          var1.field_9601,
          (Entity)(var1.method_8516() != null ? var1.method_8516() : var1.field_9632),
-         !var1.field_9577.method_40867().method_42383(),
-         var1.field_9577.method_40867().method_42384(),
+         !var1.gameOptions.method_40867().method_42383(),
+         var1.gameOptions.method_40867().method_42384(),
          var2
       );
    }

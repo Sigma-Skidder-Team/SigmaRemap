@@ -4,7 +4,7 @@ public class BooleanSetting extends Setting<Boolean> {
    public boolean field_43797 = false;
 
    public BooleanSetting(String var1, String var2, boolean var3) {
-      super(var1, var2, class_5195.field_26724, var3);
+      super(var1, var2, SettingType.BOOLEAN, var3);
    }
 
    public BooleanSetting method_39397() {

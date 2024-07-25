@@ -36,7 +36,7 @@ public class class_8767 extends class_4232 {
          class_1013 var6 = var4[var5];
          int var7 = this.field_941 / 2 - 155 + var5 % 2 * 160;
          int var8 = this.field_940 / 6 + 21 * (var5 / 2) - 12;
-         class_7114 var9 = this.<class_7114>method_1186(var6.method_4482(this.field_943.field_9577, var7, var8, 150));
+         class_7114 var9 = this.<class_7114>method_1186(var6.method_4482(this.field_943.gameOptions, var7, var8, 150));
          if (var6 == var3) {
             var9.method_32688(310);
             var5++;
@@ -55,13 +55,13 @@ public class class_8767 extends class_4232 {
          class_5932 var4 = (class_5932)var1;
          if (var4.field_36675) {
             if (var4.field_30159 == 200) {
-               this.field_943.field_9577.method_40873();
+               this.field_943.gameOptions.method_40873();
                this.field_943.method_8552().method_43160();
                this.field_943.method_8609(this.field_44887);
             }
 
             if (var4.field_30159 == 210) {
-               this.field_943.field_9577.method_40873();
+               this.field_943.gameOptions.method_40873();
                String var5 = class_6956.method_31803("of.message.other.reset");
                class_9640 var6 = new class_9640(this::method_40286, new StringTextComponent(var5), new StringTextComponent(""));
                this.field_943.method_8609(var6);
@@ -72,14 +72,14 @@ public class class_8767 extends class_4232 {
 
    @Override
    public void method_1162() {
-      this.field_943.field_9577.method_40873();
+      this.field_943.gameOptions.method_40873();
       this.field_943.method_8552().method_43160();
       super.method_1162();
    }
 
    public void method_40286(boolean var1) {
       if (var1) {
-         this.field_943.field_9577.method_40866();
+         this.field_943.gameOptions.method_40866();
       }
 
       this.field_943.method_8609(this);

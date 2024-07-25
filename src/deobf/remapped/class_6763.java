@@ -196,7 +196,7 @@ public class class_6763 {
          byte var4 = 0;
          short var5 = 170;
          byte var6 = 95;
-         if (MinecraftClient.getInstance().field_9577.field_45470) {
+         if (MinecraftClient.getInstance().gameOptions.field_45470) {
             var3 = MinecraftClient.getInstance().window.method_43166() / 2 - var5 / 2;
          }
 

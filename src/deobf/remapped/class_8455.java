@@ -89,23 +89,23 @@ public class class_8455 {
             case 70:
                class_1013.field_5250
                   .method_38567(
-                     this.field_43225.field_9577,
+                     this.field_43225.gameOptions,
                      class_9299.method_42827(
-                        (double)(this.field_43225.field_9577.field_45537 + (Screen.method_1190() ? -1 : 1)),
+                        (double)(this.field_43225.gameOptions.field_45537 + (Screen.method_1190() ? -1 : 1)),
                         class_1013.field_5250.method_38569(),
                         class_1013.field_5250.method_38573()
                      )
                   );
-               this.method_38881("debug.cycle_renderdistance.message", this.field_43225.field_9577.field_45537);
+               this.method_38881("debug.cycle_renderdistance.message", this.field_43225.gameOptions.field_45537);
                return true;
             case 71:
                boolean var5 = this.field_43225.field_9612.method_15557();
                this.method_38881(var5 ? "debug.chunk_boundaries.on" : "debug.chunk_boundaries.off");
                return true;
             case 72:
-               this.field_43225.field_9577.field_45482 = !this.field_43225.field_9577.field_45482;
-               this.method_38881(this.field_43225.field_9577.field_45482 ? "debug.advanced_tooltips.on" : "debug.advanced_tooltips.off");
-               this.field_43225.field_9577.method_40873();
+               this.field_43225.gameOptions.field_45482 = !this.field_43225.gameOptions.field_45482;
+               this.method_38881(this.field_43225.gameOptions.field_45482 ? "debug.advanced_tooltips.on" : "debug.advanced_tooltips.off");
+               this.field_43225.gameOptions.method_40873();
                return true;
             case 73:
                if (!this.field_43225.field_9632.method_3179()) {
@@ -137,9 +137,9 @@ public class class_8455 {
 
                return true;
             case 80:
-               this.field_43225.field_9577.field_45426 = !this.field_43225.field_9577.field_45426;
-               this.field_43225.field_9577.method_40873();
-               this.method_38881(this.field_43225.field_9577.field_45426 ? "debug.pause_focus.on" : "debug.pause_focus.off");
+               this.field_43225.gameOptions.field_45426 = !this.field_43225.gameOptions.field_45426;
+               this.field_43225.gameOptions.method_40873();
+               this.method_38881(this.field_43225.gameOptions.field_45426 ? "debug.pause_focus.on" : "debug.pause_focus.off");
                return true;
             case 81:
                this.method_38881("debug.help.message");
@@ -310,14 +310,14 @@ public class class_8455 {
                   ((class_8590)this.field_43225.field_9623).field_44013 = null;
                }
             } else {
-               if (this.field_43225.field_9577.field_45460.method_27062(var3, var4)) {
+               if (this.field_43225.gameOptions.field_45460.method_27062(var3, var4)) {
                   this.field_43225.method_8552().method_43156();
-                  this.field_43225.field_9577.field_45453 = this.field_43225.method_8552().method_43174();
-                  this.field_43225.field_9577.method_40873();
+                  this.field_43225.gameOptions.field_45453 = this.field_43225.method_8552().method_43174();
+                  this.field_43225.gameOptions.method_40873();
                   return;
                }
 
-               if (this.field_43225.field_9577.field_45496.method_27062(var3, var4)) {
+               if (this.field_43225.gameOptions.field_45496.method_27062(var3, var4)) {
                   if (!Screen.method_1185()) {
                   }
 
@@ -335,7 +335,7 @@ public class class_8455 {
 
          boolean var10 = var15 == null || !(var15.method_41185() instanceof class_1863) || !((class_1863)var15.method_41185()).method_8275();
          if (var5 != 0 && var3 == 66 && Screen.method_1185() && var10) {
-            class_1013.field_5254.method_18455(this.field_43225.field_9577, 1);
+            class_1013.field_5254.method_18455(this.field_43225.gameOptions, 1);
             if (var15 instanceof class_8446) {
                ((class_8446)var15).method_38845();
             }
@@ -394,7 +394,7 @@ public class class_8455 {
                   var12 = class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292) && this.method_38886(var3);
                   this.field_43227 |= var12;
                   if (var3 == 290) {
-                     this.field_43225.field_9577.field_45567 = !this.field_43225.field_9577.field_45567;
+                     this.field_43225.gameOptions.field_45567 = !this.field_43225.gameOptions.field_45567;
                   }
                }
 
@@ -405,23 +405,23 @@ public class class_8455 {
                   class_5916.method_27072(var16, false);
                }
 
-               if (this.field_43225.field_9577.field_45471 && var3 >= 48 && var3 <= 57) {
+               if (this.field_43225.gameOptions.field_45471 && var3 >= 48 && var3 <= 57) {
                   this.field_43225.method_8595(var3 - 48);
                }
             } else {
                class_5916.method_27072(var16, false);
                if (var3 == 292) {
                   if (!this.field_43227) {
-                     this.field_43225.field_9577.field_45470 = !this.field_43225.field_9577.field_45470;
-                     this.field_43225.field_9577.field_45471 = this.field_43225.field_9577.field_45470 && Screen.method_1190();
-                     this.field_43225.field_9577.field_45549 = this.field_43225.field_9577.field_45470 && Screen.method_1169();
-                     if (this.field_43225.field_9577.field_45470) {
-                        if (this.field_43225.field_9577.field_45509) {
-                           this.field_43225.field_9577.field_45549 = true;
+                     this.field_43225.gameOptions.field_45470 = !this.field_43225.gameOptions.field_45470;
+                     this.field_43225.gameOptions.field_45471 = this.field_43225.gameOptions.field_45470 && Screen.method_1190();
+                     this.field_43225.gameOptions.field_45549 = this.field_43225.gameOptions.field_45470 && Screen.method_1169();
+                     if (this.field_43225.gameOptions.field_45470) {
+                        if (this.field_43225.gameOptions.field_45509) {
+                           this.field_43225.gameOptions.field_45549 = true;
                         }
 
-                        if (this.field_43225.field_9577.field_45523) {
-                           this.field_43225.field_9577.field_45471 = true;
+                        if (this.field_43225.gameOptions.field_45523) {
+                           this.field_43225.gameOptions.field_45471 = true;
                         }
                      }
                   } else {

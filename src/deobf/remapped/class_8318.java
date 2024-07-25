@@ -79,7 +79,7 @@ public class class_8318 extends Module {
                   }
 
                   this.field_42614 -= 0.015;
-                  if (mcInstance.field_9577.field_45434.field_30024) {
+                  if (mcInstance.gameOptions.field_45434.field_30024) {
                      this.field_42614 -= 0.07;
                   }
 

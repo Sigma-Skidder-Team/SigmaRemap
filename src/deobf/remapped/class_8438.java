@@ -110,7 +110,7 @@ public class class_8438 extends Module {
             }
          }
 
-         if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45567) {
             byte var20 = 10;
             byte var21 = 1;
             int var6 = MinecraftClient.getInstance().window.method_43166();
@@ -121,7 +121,7 @@ public class class_8438 extends Module {
                var20 -= 3;
             }
 
-            if (MinecraftClient.getInstance().field_9577.field_45470) {
+            if (MinecraftClient.getInstance().gameOptions.field_45470) {
                var7 = (int)((double)(mcInstance.field_9614.field_15026.field_18917.size() * 9) * mcInstance.window.method_43189() + 7.0);
             }
 

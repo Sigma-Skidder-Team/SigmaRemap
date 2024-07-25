@@ -11,10 +11,10 @@ public class class_9134 extends Module {
    @EventListen
    private void method_42042(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45567) {
             byte var4 = 5;
             byte var5 = 60;
-            int var6 = !MinecraftClient.getInstance().field_9577.field_45470 ? 0 : 60;
+            int var6 = !MinecraftClient.getInstance().gameOptions.field_45470 ? 0 : 60;
             ArrayList var7 = this.method_42041((int)this.method_42039(mcInstance.field_9632.field_41701), var4);
             int var8 = (Integer)var7.get(var4);
             if (var8 == 0 && this.method_42039(mcInstance.field_9632.field_41701) > 345.0F) {

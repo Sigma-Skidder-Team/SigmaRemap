@@ -8,7 +8,7 @@ public class class_7612 extends class_2219 {
    private final class_562 field_38744;
 
    public class_7612(MinecraftClient var1, int var2, int var3, class_562 var4, int var5) {
-      super(var1.field_9577, var2, var3, var5, 20, (double)var1.field_9577.method_40885(var4));
+      super(var1.gameOptions, var2, var3, var5, 20, (double)var1.gameOptions.method_40885(var4));
       this.field_38744 = var4;
       this.method_396();
    }

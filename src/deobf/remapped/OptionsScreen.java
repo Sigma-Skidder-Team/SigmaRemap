@@ -25,7 +25,7 @@ public class OptionsScreen extends Screen {
       for (class_1013 var7 : field_43685) {
          int var8 = this.field_941 / 2 - 155 + var3 % 2 * 160;
          int var9 = this.field_940 / 6 - 12 + 24 * (var3 >> 1);
-         this.<class_7114>method_1186(var7.method_4482(this.field_943.field_9577, var8, var9, 150));
+         this.<class_7114>method_1186(var7.method_4482(this.field_943.gameOptions, var8, var9, 150));
          var3++;
       }
 

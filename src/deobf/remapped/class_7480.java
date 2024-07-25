@@ -83,19 +83,19 @@ public class class_7480 extends Module {
          if (this.field_38166 > 1) {
             mcInstance.field_9632
                .method_37256(mcInstance.field_9632.method_37245().field_7336, this.field_38165, mcInstance.field_9632.method_37245().field_7334);
-            double var4 = !mcInstance.field_9577.field_45560.method_27060() ? 0.405 + (double)class_8865.method_40770() * 0.02 : 0.25;
+            double var4 = !mcInstance.gameOptions.field_45560.method_27060() ? 0.405 + (double)class_8865.method_40770() * 0.02 : 0.25;
             class_8865.method_40777(var1, var4);
             this.field_38166 = 0;
          }
       } else {
-         if (mcInstance.field_9577.field_45450.method_27060() && this.field_38168 == 0) {
+         if (mcInstance.gameOptions.field_45450.method_27060() && this.field_38168 == 0) {
             var1.method_35235(0.5);
             this.field_38165 = this.field_38165 + var1.method_35236();
             this.field_38168 = 3;
             this.field_38166 = 0;
          }
 
-         double var6 = !mcInstance.field_9577.field_45560.method_27060() ? 0.6 : 0.25;
+         double var6 = !mcInstance.gameOptions.field_45560.method_27060() ? 0.6 : 0.25;
          class_8865.method_40777(var1, var6);
       }
 

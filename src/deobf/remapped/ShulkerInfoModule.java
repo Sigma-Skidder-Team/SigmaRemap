@@ -68,8 +68,8 @@ public class ShulkerInfoModule extends Module {
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.3F)
                   );
                   GL11.glDisable(3042);
-                  if (mcInstance.field_9577.field_45559.method_27060()) {
-                     mcInstance.field_9577.field_45559.field_30024 = false;
+                  if (mcInstance.gameOptions.field_45559.method_27060()) {
+                     mcInstance.gameOptions.field_45559.field_30024 = false;
                      ShulkerPeekCommand.method_30370(var6.method_264());
                   }
                }
@@ -286,7 +286,7 @@ public class ShulkerInfoModule extends Module {
    }
 
    public List<String> method_31554(class_6098 var1) {
-      List var4 = var1.method_28012(mcInstance.field_9632, !mcInstance.field_9577.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
+      List var4 = var1.method_28012(mcInstance.field_9632, !mcInstance.gameOptions.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
       ArrayList var5 = Lists.newArrayList();
 
       for (ITextComponent var7 : var4) {
