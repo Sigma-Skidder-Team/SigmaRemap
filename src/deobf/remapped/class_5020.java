@@ -8,10 +8,10 @@ public enum class_5020 {
    field_25967(EntityType.field_34318, new int[]{0, 0, 0, 1, 0, 1, 0, 2});
 
    private static final class_5020[] field_25970 = values();
-   private final EntityType<? extends class_4040> field_25968;
+   private final EntityType<? extends AbstractRaiderEntity> field_25968;
    private final int[] field_25972;
 
-   private class_5020(EntityType<? extends class_4040> var3, int[] var4) {
+   private class_5020(EntityType<? extends AbstractRaiderEntity> var3, int[] var4) {
       this.field_25968 = var3;
       this.field_25972 = var4;
    }

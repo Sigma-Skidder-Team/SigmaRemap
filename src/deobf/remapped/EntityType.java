@@ -239,8 +239,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<class_7272> field_34251 = method_30457(
       "rabbit", class_6238.<class_7272>method_28492(class_7272::new, class_4565.field_22239).method_28489(0.4F, 0.5F).method_28499(8)
    );
-   public static final EntityType<class_7885> field_34318 = method_30457(
-      "ravager", class_6238.<class_7885>method_28492(class_7885::new, class_4565.field_22247).method_28489(1.95F, 2.2F).method_28499(10)
+   public static final EntityType<RavagerEntity> field_34318 = method_30457(
+      "ravager", class_6238.<RavagerEntity>method_28492(RavagerEntity::new, class_4565.field_22247).method_28489(1.95F, 2.2F).method_28499(10)
    );
    public static final EntityType<class_1260> field_34236 = method_30457(
       "salmon", class_6238.<class_1260>method_28492(class_1260::new, class_4565.field_22248).method_28489(0.7F, 0.4F).method_28499(4)

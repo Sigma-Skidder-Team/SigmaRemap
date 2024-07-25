@@ -51,7 +51,7 @@ public class class_9030 {
       .put(EntityType.field_34229, class_9668.method_44713().method_5980())
       .put(EntityType.field_34315, class_3578.method_16629().method_5980())
       .put(EntityType.field_34251, class_7272.method_33234().method_5980())
-      .put(EntityType.field_34318, class_7885.method_35660().method_5980())
+      .put(EntityType.field_34318, RavagerEntity.method_35660().method_5980())
       .put(EntityType.field_34236, class_3578.method_16629().method_5980())
       .put(EntityType.field_34321, class_8031.method_36475().method_5980())
       .put(EntityType.field_34231, class_6092.method_27908().method_5980())

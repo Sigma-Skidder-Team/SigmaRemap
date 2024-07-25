@@ -3,8 +3,8 @@ package remapped;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public abstract class class_4040 extends class_4607 {
-   public static final class_7821<Boolean> field_19606 = class_8073.<Boolean>method_36641(class_4040.class, class_2734.field_13347);
+public abstract class AbstractRaiderEntity extends class_4607 {
+   public static final class_7821<Boolean> field_19606 = class_8073.<Boolean>method_36641(AbstractRaiderEntity.class, class_2734.field_13347);
    private static final Predicate<class_91> field_19607 = var0 -> !var0.method_258()
          && var0.method_37330()
          && ItemStack.method_27982(var0.method_264(), class_2452.method_11292());
@@ -13,15 +13,15 @@ public abstract class class_4040 extends class_4607 {
    private boolean field_19608;
    private int field_19609;
 
-   public class_4040(EntityType<? extends class_4040> var1, World var2) {
+   public AbstractRaiderEntity(EntityType<? extends AbstractRaiderEntity> var1, World var2) {
       super(var1, var2);
    }
 
    @Override
    public void method_26851() {
       super.method_26851();
-      this.field_29916.method_3485(1, new class_9110<class_4040>(this, this));
-      this.field_29916.method_3485(3, new class_3230<class_4040>(this));
+      this.field_29916.method_3485(1, new class_9110<AbstractRaiderEntity>(this, this));
+      this.field_29916.method_3485(3, new class_3230<AbstractRaiderEntity>(this));
       this.field_29916.method_3485(4, new class_3882(this, 1.05F, 1));
       this.field_29916.method_3485(5, new class_6082(this, this));
    }

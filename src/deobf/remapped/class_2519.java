@@ -41,7 +41,7 @@ public class class_2519 extends class_1173 {
       this.field_29916.method_3485(8, new class_2940(this));
       this.field_29916.method_3485(9, new class_4407(this, class_704.class, 3.0F, 1.0F));
       this.field_29916.method_3485(10, new class_4407(this, class_5886.class, 8.0F));
-      this.field_29908.method_3485(1, new class_8420(this, class_4040.class).method_38757());
+      this.field_29908.method_3485(1, new class_8420(this, AbstractRaiderEntity.class).method_38757());
       this.field_29908.method_3485(2, new class_5960(this, this));
       this.field_29908.method_3485(3, new class_4138<class_704>(this, class_704.class, true));
    }

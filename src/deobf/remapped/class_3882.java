@@ -8,14 +8,14 @@ import java.util.Optional;
 
 public class class_3882 extends class_3599 {
    private static String[] field_18894;
-   private final class_4040 field_18898;
+   private final AbstractRaiderEntity field_18898;
    private final double field_18893;
    private BlockPos field_18897;
    private final List<BlockPos> field_18892 = Lists.newArrayList();
    private final int field_18896;
    private boolean field_18895;
 
-   public class_3882(class_4040 var1, double var2, int var4) {
+   public class_3882(AbstractRaiderEntity var1, double var2, int var4) {
       this.field_18898 = var1;
       this.field_18893 = var2;
       this.field_18896 = var4;
@@ -36,7 +36,7 @@ public class class_3882 extends class_3599 {
       class_6331 var3 = (class_6331)this.field_18898.world;
       BlockPos var4 = this.field_18898.method_37075();
       Optional var5 = var3.method_28969()
-         .method_6881(var0 -> var0 == class_236.field_778, this::method_17951, class_8122.field_41615, var4, 48, class_4040.method_18603(this.field_18898));
+         .method_6881(var0 -> var0 == class_236.field_778, this::method_17951, class_8122.field_41615, var4, 48, AbstractRaiderEntity.method_18603(this.field_18898));
       if (var5.isPresent()) {
          this.field_18897 = ((BlockPos)var5.get()).method_6072();
          return true;

@@ -3,13 +3,13 @@ package remapped;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public class class_7885 extends class_4040 {
-   private static final Predicate<Entity> field_40350 = var0 -> var0.method_37330() && !(var0 instanceof class_7885);
+public class RavagerEntity extends AbstractRaiderEntity {
+   private static final Predicate<Entity> field_40350 = var0 -> var0.method_37330() && !(var0 instanceof RavagerEntity);
    private int field_40349;
    private int field_40351;
    private int field_40347;
 
-   public class_7885(EntityType<? extends class_7885> var1, World var2) {
+   public RavagerEntity(EntityType<? extends RavagerEntity> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
       this.field_29915 = 20;
@@ -23,7 +23,7 @@ public class class_7885 extends class_4040 {
       this.field_29916.method_3485(5, new class_2889(this, 0.4));
       this.field_29916.method_3485(6, new class_4407(this, class_704.class, 6.0F));
       this.field_29916.method_3485(10, new class_4407(this, class_5886.class, 8.0F));
-      this.field_29908.method_3485(2, new class_8420(this, class_4040.class).method_38757());
+      this.field_29908.method_3485(2, new class_8420(this, AbstractRaiderEntity.class).method_38757());
       this.field_29908.method_3485(3, new class_4138<class_704>(this, class_704.class, true));
       this.field_29908.method_3485(4, new class_4138<class_405>(this, class_405.class, true));
       this.field_29908.method_3485(4, new class_4138<class_8127>(this, class_8127.class, true));

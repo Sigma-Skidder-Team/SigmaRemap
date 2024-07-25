@@ -25,8 +25,8 @@ public class class_2452 {
    private static final ITextComponent field_12199 = new TranslationTextComponent("event.minecraft.raid.defeat");
    private static final ITextComponent field_12194 = field_12203.deepCopy().appendString(field_12192[15]).append(field_12184);
    private static final ITextComponent field_12196 = field_12203.deepCopy().appendString(field_12192[15]).append(field_12199);
-   private final Map<Integer, class_4040> field_12191 = Maps.newHashMap();
-   private final Map<Integer, Set<class_4040>> field_12187 = Maps.newHashMap();
+   private final Map<Integer, AbstractRaiderEntity> field_12191 = Maps.newHashMap();
+   private final Map<Integer, Set<AbstractRaiderEntity>> field_12187 = Maps.newHashMap();
    private final Set<UUID> field_12190 = Sets.newHashSet();
    private long field_12183;
    private BlockPos field_12185;
@@ -365,7 +365,7 @@ public class class_2452 {
       while (var3.hasNext()) {
          Set var5 = (Set)var3.next();
 
-         for (class_4040 var7 : var5) {
+         for (AbstractRaiderEntity var7 : var5) {
             BlockPos var8 = var7.method_37075();
             if (var7.field_41751 || var7.world.method_29545() != this.field_12189.method_29545() || this.field_12185.method_12180(var8) >= 12544.0) {
                var4.add(var7);
@@ -385,7 +385,7 @@ public class class_2452 {
          }
       }
 
-      for (class_4040 var10 : var4) {
+      for (AbstractRaiderEntity var10 : var4) {
          this.method_11289(var10, true);
       }
    }
@@ -422,7 +422,7 @@ public class class_2452 {
          int var13 = 0;
 
          for (int var14 = 0; var14 < var12; var14++) {
-            class_4040 var15 = (class_4040)class_5020.method_23117(var11).method_30484(this.field_12189);
+            AbstractRaiderEntity var15 = (AbstractRaiderEntity)class_5020.method_23117(var11).method_30484(this.field_12189);
             if (!var4 && var15.method_21357()) {
                var15.method_21354(true);
                this.method_11281(var5, var15);
@@ -431,7 +431,7 @@ public class class_2452 {
 
             this.method_11275(var5, var15, var1, false);
             if (class_5020.method_23117(var11) == EntityType.field_34318) {
-               class_4040 var16 = null;
+               AbstractRaiderEntity var16 = null;
                if (var5 != this.method_11302(class_423.field_1789)) {
                   if (var5 >= this.method_11302(class_423.field_1782)) {
                      if (var13 != 0) {
@@ -460,7 +460,7 @@ public class class_2452 {
       this.method_11297();
    }
 
-   public void method_11275(int var1, class_4040 var2, BlockPos var3, boolean var4) {
+   public void method_11275(int var1, AbstractRaiderEntity var2, BlockPos var3, boolean var4) {
       boolean var7 = this.method_11274(var1, var2);
       if (var7) {
          var2.method_18587(this);
@@ -485,7 +485,7 @@ public class class_2452 {
       float var3 = 0.0F;
 
       for (Set var5 : this.field_12187.values()) {
-         for (class_4040 var7 : var5) {
+         for (AbstractRaiderEntity var7 : var5) {
             var3 += var7.method_26551();
          }
       }
@@ -501,7 +501,7 @@ public class class_2452 {
       return this.field_12187.values().stream().mapToInt(Set::size).sum();
    }
 
-   public void method_11289(class_4040 var1, boolean var2) {
+   public void method_11289(AbstractRaiderEntity var1, boolean var2) {
       Set var5 = this.field_12187.get(var1.method_18592());
       if (var5 != null) {
          boolean var6 = var5.remove(var1);
@@ -541,7 +541,7 @@ public class class_2452 {
    }
 
    @Nullable
-   public class_4040 method_11282(int var1) {
+   public AbstractRaiderEntity method_11282(int var1) {
       return this.field_12191.get(var1);
    }
 
@@ -582,16 +582,16 @@ public class class_2452 {
       return null;
    }
 
-   private boolean method_11274(int var1, class_4040 var2) {
+   private boolean method_11274(int var1, AbstractRaiderEntity var2) {
       return this.method_11276(var1, var2, true);
    }
 
-   public boolean method_11276(int var1, class_4040 var2, boolean var3) {
+   public boolean method_11276(int var1, AbstractRaiderEntity var2, boolean var3) {
       this.field_12187.computeIfAbsent(var1, var0 -> Sets.newHashSet());
       Set var6 = this.field_12187.get(var1);
-      class_4040 var7 = null;
+      AbstractRaiderEntity var7 = null;
 
-      for (class_4040 var9 : var6) {
+      for (AbstractRaiderEntity var9 : var6) {
          if (var9.method_37328().equals(var2.method_37328())) {
             var7 = var9;
             break;
@@ -613,7 +613,7 @@ public class class_2452 {
       return true;
    }
 
-   public void method_11281(int var1, class_4040 var2) {
+   public void method_11281(int var1, AbstractRaiderEntity var2) {
       this.field_12191.put(var1, var2);
       var2.method_37349(class_6943.field_35704, method_11292());
       var2.method_26861(class_6943.field_35704, 2.0F);

@@ -3,7 +3,7 @@ package remapped;
 public class class_4121 extends class_8000 {
    private static String[] field_20083;
 
-   public class_4121(class_7637 var1, class_4040 var2) {
+   public class_4121(class_7637 var1, AbstractRaiderEntity var2) {
       super(var2, false);
       this.field_20082 = var1;
    }

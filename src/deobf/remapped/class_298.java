@@ -22,7 +22,7 @@ public class class_298 extends class_7637 {
       this.field_29916.method_3485(2, new class_4121(this, this));
       this.field_29916.method_3485(3, new class_1052(this, this, 10.0F));
       this.field_29916.method_3485(4, new class_2959(this, this));
-      this.field_29908.method_3485(1, new class_8420(this, class_4040.class).method_38757());
+      this.field_29908.method_3485(1, new class_8420(this, AbstractRaiderEntity.class).method_38757());
       this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, true));
       this.field_29908.method_3485(3, new class_4138<class_405>(this, class_405.class, true));
       this.field_29908.method_3485(3, new class_4138<class_8127>(this, class_8127.class, true));

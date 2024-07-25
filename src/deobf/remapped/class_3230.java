@@ -5,7 +5,7 @@ import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.List;
 
-public class class_3230<T extends class_4040> extends class_3599 {
+public class class_3230<T extends AbstractRaiderEntity> extends class_3599 {
    private static String[] field_16075;
    private final T field_16076;
 
@@ -53,12 +53,12 @@ public class class_3230<T extends class_4040> extends class_3599 {
          HashSet var4 = Sets.newHashSet();
          List var5 = this.field_16076
             .world
-            .<class_4040>method_25869(
-               class_4040.class, this.field_16076.method_37241().method_18898(16.0), var1x -> !var1x.method_18600() && class_8996.method_41275(var1x, var1)
+            .<AbstractRaiderEntity>method_25869(
+               AbstractRaiderEntity.class, this.field_16076.method_37241().method_18898(16.0), var1x -> !var1x.method_18600() && class_8996.method_41275(var1x, var1)
             );
          var4.addAll(var5);
 
-         for (class_4040 var7 : var4) {
+         for (AbstractRaiderEntity var7 : var4) {
             var1.method_11275(var1.method_11262(), var7, (BlockPos)null, true);
          }
       }

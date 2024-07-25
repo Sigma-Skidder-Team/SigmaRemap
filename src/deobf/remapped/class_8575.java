@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.ImmutableList;
 
-public class class_8575 extends class_5272<class_7885> {
+public class class_8575 extends class_5272<RavagerEntity> {
    private static String[] field_43949;
    private final class_1549 field_43954;
    private final class_1549 field_43955;
@@ -66,7 +66,7 @@ public class class_8575 extends class_5272<class_7885> {
       return ImmutableList.of(this.field_43948, this.field_43952, this.field_43950, this.field_43956, this.field_43953, this.field_43951);
    }
 
-   public void method_39446(class_7885 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void method_39446(RavagerEntity var1, float var2, float var3, float var4, float var5, float var6) {
       this.field_43954.field_8191 = var6 * (float) (Math.PI / 180.0);
       this.field_43954.field_8190 = var5 * (float) (Math.PI / 180.0);
       this.field_43952.field_8191 = (float) (Math.PI / 2);
@@ -77,7 +77,7 @@ public class class_8575 extends class_5272<class_7885> {
       this.field_43951.field_8191 = class_9299.method_42840(var2 * 0.6662F) * var9;
    }
 
-   public void method_39447(class_7885 var1, float var2, float var3, float var4) {
+   public void method_39447(RavagerEntity var1, float var2, float var3, float var4) {
       super.method_29702(var1, var2, var3, var4);
       int var7 = var1.method_35654();
       int var8 = var1.method_35655();

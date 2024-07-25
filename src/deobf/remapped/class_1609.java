@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class class_1609 extends class_4040 implements class_2354 {
+public class class_1609 extends AbstractRaiderEntity implements class_2354 {
    private static final UUID field_8353 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
    private static final class_9343 field_8347 = new class_9343(field_8353, "Drinking speed penalty", -0.25, class_9342.field_47679);
    private static final class_7821<Boolean> field_8352 = class_8073.<Boolean>method_36641(class_1609.class, class_2734.field_13347);
    private int field_8351;
-   private class_9625<class_4040> field_8348;
+   private class_9625<AbstractRaiderEntity> field_8348;
    private class_2978<class_704> field_8349;
 
    public class_1609(EntityType<? extends class_1609> var1, World var2) {
@@ -19,8 +19,8 @@ public class class_1609 extends class_4040 implements class_2354 {
    @Override
    public void method_26851() {
       super.method_26851();
-      this.field_8348 = new class_9625<class_4040>(
-         this, class_4040.class, true, var1 -> var1 != null && this.method_18600() && var1.method_37387() != EntityType.field_34220
+      this.field_8348 = new class_9625<AbstractRaiderEntity>(
+         this, AbstractRaiderEntity.class, true, var1 -> var1 != null && this.method_18600() && var1.method_37387() != EntityType.field_34220
       );
       this.field_8349 = new class_2978<class_704>(this, class_704.class, 10, true, false, (Predicate<class_5834>)null);
       this.field_29916.method_3485(1, new class_787(this));
@@ -28,7 +28,7 @@ public class class_1609 extends class_4040 implements class_2354 {
       this.field_29916.method_3485(2, new class_2889(this, 1.0));
       this.field_29916.method_3485(3, new class_4407(this, class_704.class, 8.0F));
       this.field_29916.method_3485(3, new class_9691(this));
-      this.field_29908.method_3485(1, new class_8420(this, class_4040.class));
+      this.field_29908.method_3485(1, new class_8420(this, AbstractRaiderEntity.class));
       this.field_29908.method_3485(2, this.field_8348);
       this.field_29908.method_3485(3, this.field_8349);
    }
@@ -187,7 +187,7 @@ public class class_1609 extends class_4040 implements class_2354 {
          double var10 = var1.getPosZ() + var5.field_7334 - this.getPosZ();
          float var12 = class_9299.method_42842(var6 * var6 + var10 * var10);
          class_6004 var13 = class_3697.field_18138;
-         if (!(var1 instanceof class_4040)) {
+         if (!(var1 instanceof AbstractRaiderEntity)) {
             if (var12 >= 8.0F && !var1.isPotionActive(Effects.field_19743)) {
                var13 = class_3697.field_18113;
             } else if (var1.method_26551() >= 8.0F && !var1.isPotionActive(Effects.field_19718)) {
