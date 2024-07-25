@@ -33,7 +33,7 @@ public class class_1199 {
    public static class_2939[] method_5310(String var0) {
       if (var0.startsWith("[")) {
          try {
-            class_1336 var3 = new class_1336(var0);
+            JSONArray var3 = new JSONArray(var0);
             var0 = var3.method_6143(1).method_5848("body").method_5861("content");
          } catch (Exception var9) {
          }
@@ -61,7 +61,7 @@ public class class_1199 {
    public static class_2939[] method_5308(String var0) {
       if (var0.startsWith("[")) {
          try {
-            class_1336 var3 = new class_1336(var0);
+            JSONArray var3 = new JSONArray(var0);
             var0 = var3.method_6143(1).method_5848("body").method_5861("content");
          } catch (Exception var9) {
          }

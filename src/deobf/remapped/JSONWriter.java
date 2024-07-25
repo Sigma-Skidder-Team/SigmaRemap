@@ -67,7 +67,7 @@ public class JSONWriter {
       }
    }
 
-   public static class_1336 saveStringValue2ig(JSONObjectImpl var0, String var1) {
+   public static JSONArray saveStringValue2ig(JSONObjectImpl var0, String var1) {
       try {
          return var0.method_5849(var1);
       } catch (class_7584 var5) {

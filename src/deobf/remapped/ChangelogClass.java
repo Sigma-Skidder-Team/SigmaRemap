@@ -11,7 +11,7 @@ import org.apache.http.impl.client.HttpClients;
 public class ChangelogClass extends class_7038 {
    public class_2440 field_5072 = new class_2440(380, 200, class_4043.field_19618);
    public class_2612 field_5070;
-   private static class_1336 field_5071;
+   private static JSONArray field_5071;
 
    public ChangelogClass(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
@@ -22,7 +22,7 @@ public class ChangelogClass extends class_7038 {
       new Thread(() -> this.method_4332(this.method_4331())).start();
    }
 
-   public void method_4332(class_1336 var1) {
+   public void method_4332(JSONArray var1) {
       if (var1 != null) {
          this.method_32167().method_32102(new class_4910(this, var1));
       }
@@ -70,7 +70,7 @@ public class ChangelogClass extends class_7038 {
       super.method_32178(var1);
    }
 
-   public class_1336 method_4331() {
+   public JSONArray method_4331() {
       if (field_5071 != null) {
          return field_5071;
       } else {
@@ -79,10 +79,10 @@ public class ChangelogClass extends class_7038 {
             CloseableHttpResponse var4 = HttpClients.createDefault().execute(var3);
             HttpEntity var5 = var4.getEntity();
             if (var5 != null) {
-               class_1336 var9;
+               JSONArray var9;
                try (InputStream var6 = var5.getContent()) {
                   String var8 = IOUtils.toString(var6, "UTF-8");
-                  var9 = field_5071 = new class_1336(var8);
+                  var9 = field_5071 = new JSONArray(var8);
                }
 
                return var9;

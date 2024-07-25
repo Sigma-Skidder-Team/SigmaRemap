@@ -129,14 +129,14 @@ public class class_3116 {
 
    private void method_14463() {
       if (SigmaMainClass.method_3328().method_3304().method_5850("friends")) {
-         class_1336 var3 = SigmaMainClass.method_3328().method_3304().method_5849("friends");
+         JSONArray var3 = SigmaMainClass.method_3328().method_3304().method_5849("friends");
          if (var3 != null) {
             var3.forEach(var1 -> this.field_15502.add((String)var1));
          }
       }
 
       if (SigmaMainClass.method_3328().method_3304().method_5850("enemies")) {
-         class_1336 var4 = SigmaMainClass.method_3328().method_3304().method_5849("enemies");
+         JSONArray var4 = SigmaMainClass.method_3328().method_3304().method_5849("enemies");
          if (var4 != null) {
             var4.forEach(var1 -> this.field_15503.add((String)var1));
          }

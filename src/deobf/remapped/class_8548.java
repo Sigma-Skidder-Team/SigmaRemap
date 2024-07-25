@@ -13,7 +13,7 @@ public class class_8548 {
    }
 
    public class_8548(JSONObjectImpl var1) throws JSONException {
-      class_1336 var4 = var1.method_5849("upgrades");
+      JSONArray var4 = var1.method_5849("upgrades");
       int var5 = var4.method_6142();
       String[] var6 = new String[var5];
 

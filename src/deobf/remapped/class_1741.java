@@ -20,8 +20,8 @@ public class class_1741 {
       } else if (var0 instanceof byte[]) {
          return true;
       } else {
-         if (var0 instanceof class_1336) {
-            class_1336 var3 = (class_1336)var0;
+         if (var0 instanceof JSONArray) {
+            JSONArray var3 = (JSONArray)var0;
             int var4 = var3.method_6142();
 
             for (int var5 = 0; var5 < var4; var5++) {

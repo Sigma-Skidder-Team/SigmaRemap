@@ -38,8 +38,8 @@ public class class_882 {
       }
    }
 
-   public static class_1336 method_3793(class_3734 var0) throws JSONException {
-      class_1336 var3 = new class_1336();
+   public static JSONArray method_3793(class_3734 var0) throws JSONException {
+      JSONArray var3 = new JSONArray();
 
       while (true) {
          String var4 = method_3795(var0);
@@ -64,12 +64,12 @@ public class class_882 {
       }
    }
 
-   public static JSONObjectImpl method_3796(class_1336 var0, class_3734 var1) throws JSONException {
-      class_1336 var4 = method_3793(var1);
+   public static JSONObjectImpl method_3796(JSONArray var0, class_3734 var1) throws JSONException {
+      JSONArray var4 = method_3793(var1);
       return var4 == null ? null : var4.method_6132(var0);
    }
 
-   public static String method_3794(class_1336 var0) {
+   public static String method_3794(JSONArray var0) {
       StringBuilder var3 = new StringBuilder();
 
       for (int var4 = 0; var4 < var0.method_6142(); var4++) {
@@ -104,21 +104,21 @@ public class class_882 {
       return var3.toString();
    }
 
-   public static class_1336 method_3788(String var0) throws JSONException {
+   public static JSONArray method_3788(String var0) throws JSONException {
       return method_3791(new class_3734(var0));
    }
 
-   public static class_1336 method_3791(class_3734 var0) throws JSONException {
+   public static JSONArray method_3791(class_3734 var0) throws JSONException {
       return method_3790(method_3793(var0), var0);
    }
 
-   public static class_1336 method_3789(class_1336 var0, String var1) throws JSONException {
+   public static JSONArray method_3789(JSONArray var0, String var1) throws JSONException {
       return method_3790(var0, new class_3734(var1));
    }
 
-   public static class_1336 method_3790(class_1336 var0, class_3734 var1) throws JSONException {
+   public static JSONArray method_3790(JSONArray var0, class_3734 var1) throws JSONException {
       if (var0 != null && var0.method_6142() != 0) {
-         class_1336 var4 = new class_1336();
+         JSONArray var4 = new JSONArray();
 
          while (true) {
             JSONObjectImpl var5 = method_3796(var0, var1);
@@ -133,10 +133,10 @@ public class class_882 {
       }
    }
 
-   public static String toString(class_1336 var0) throws JSONException {
+   public static String toString(JSONArray var0) throws JSONException {
       JSONObjectImpl var3 = var0.method_6164(0);
       if (var3 != null) {
-         class_1336 var4 = var3.method_5815();
+         JSONArray var4 = var3.method_5815();
          if (var4 != null) {
             return method_3794(var4) + toString(var4, var0);
          }
@@ -145,7 +145,7 @@ public class class_882 {
       return null;
    }
 
-   public static String toString(class_1336 var0, class_1336 var1) throws JSONException {
+   public static String toString(JSONArray var0, JSONArray var1) throws JSONException {
       if (var0 != null && var0.method_6142() != 0) {
          StringBuffer var4 = new StringBuffer();
 

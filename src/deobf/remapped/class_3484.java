@@ -36,7 +36,7 @@ public class class_3484 extends class_4167 {
    private Map<Integer, class_9240> field_17090 = new HashMap<Integer, class_9240>();
    private Queue<class_7381> field_17094;
    private final Queue<List<Object>> field_17086 = new LinkedList<List<Object>>();
-   private final Queue<class_3872<class_1336>> field_17102 = new LinkedList<class_3872<class_1336>>();
+   private final Queue<class_3872<JSONArray>> field_17102 = new LinkedList<class_3872<JSONArray>>();
 
    public class_3484(class_1289 var1, String var2, class_9456 var3) {
       this.field_17088 = var1;
@@ -133,8 +133,8 @@ public class class_3484 extends class_4167 {
       }
    }
 
-   private void method_16002(class_3872<class_1336> var1) {
-      ArrayList var4 = new ArrayList<Object>(Arrays.asList(method_15998((class_1336)var1.field_18855)));
+   private void method_16002(class_3872<JSONArray> var1) {
+      ArrayList var4 = new ArrayList<Object>(Arrays.asList(method_15998((JSONArray)var1.field_18855)));
       if (field_17084.isLoggable(Level.FINE)) {
          field_17084.fine(String.format("emitting event %s", var4));
       }
@@ -161,7 +161,7 @@ public class class_3484 extends class_4167 {
       return new class_1644(this, var5, var1, this);
    }
 
-   private void method_15987(class_3872<class_1336> var1) {
+   private void method_15987(class_3872<JSONArray> var1) {
       class_9240 var4 = this.field_17090.remove(var1.field_18861);
       if (var4 == null) {
          if (field_17084.isLoggable(Level.FINE)) {
@@ -172,7 +172,7 @@ public class class_3484 extends class_4167 {
             field_17084.fine(String.format("calling ack %s with %s", var1.field_18861, var1.field_18855));
          }
 
-         var4.method_42606(method_15998((class_1336)var1.field_18855));
+         var4.method_42606(method_15998((JSONArray)var1.field_18855));
       }
    }
 
@@ -241,7 +241,7 @@ public class class_3484 extends class_4167 {
       return this.field_17080;
    }
 
-   private static Object[] method_15998(class_1336 var0) {
+   private static Object[] method_15998(JSONArray var0) {
       int var3 = var0.method_6142();
       Object[] var4 = new Object[var3];
 

@@ -15,13 +15,13 @@ public class MultiSetting extends Setting<List<String>> {
    @Override
    public JSONObjectImpl loadDataFromJson(JSONObjectImpl var1) {
       var1.method_5820("name", this.method_23032());
-      var1.method_5820("value", new class_1336(this.field_25890));
+      var1.method_5820("value", new JSONArray(this.field_25890));
       return var1;
    }
 
    @Override
    public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
-      class_1336 var4 = JSONWriter.saveStringValue2ig(var1, "value");
+      JSONArray var4 = JSONWriter.saveStringValue2ig(var1, "value");
       this.field_25890 = new ArrayList<String>();
       if (var4 != null) {
          for (int var5 = 0; var5 < var4.method_6142(); var5++) {

@@ -230,7 +230,7 @@ public class class_3734 {
             return this.method_17296(var3);
          case '[':
             this.method_17299();
-            return new class_1336(this);
+            return new JSONArray(this);
          case '{':
             this.method_17299();
             return new JSONObjectImpl(this);

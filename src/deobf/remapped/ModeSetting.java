@@ -65,7 +65,7 @@ public class ModeSetting extends Setting<String> {
 
    @Override
    public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
-      this.field_25890 = JSONWriter.saveStringValue(var1, "value", this.method_23039());
+      this.field_25890 = JSONWriter.saveStringValue(var1, "value", this.getSaveValue());
       boolean var4 = false;
 
       for (String var6 : this.field_13860) {
@@ -75,7 +75,7 @@ public class ModeSetting extends Setting<String> {
       }
 
       if (!var4) {
-         this.field_25890 = this.method_23039();
+         this.field_25890 = this.getSaveValue();
       }
 
       return var1;

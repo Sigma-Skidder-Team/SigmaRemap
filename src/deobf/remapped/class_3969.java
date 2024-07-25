@@ -37,7 +37,7 @@ public class class_3969 {
             ArrayList var24;
             try (InputStream var6 = var5.getContent()) {
                String var8 = IOUtils.toString(var6, "UTF-8");
-               class_1336 var9 = new class_1336(var8);
+               JSONArray var9 = new JSONArray(var8);
                ArrayList var10 = new ArrayList();
 
                for (int var11 = 0; var11 < var9.method_6142(); var11++) {

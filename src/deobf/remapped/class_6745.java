@@ -252,11 +252,11 @@ public class class_6745 {
       if (!(var0 instanceof JSONObjectImpl)) {
          if (var0 != null) {
             if (var0.getClass().isArray()) {
-               var0 = new class_1336(var0);
+               var0 = new JSONArray(var0);
             }
 
-            if (var0 instanceof class_1336) {
-               class_1336 var15 = (class_1336)var0;
+            if (var0 instanceof JSONArray) {
+               JSONArray var15 = (JSONArray)var0;
                int var17 = var15.method_6142();
 
                for (int var19 = 0; var19 < var17; var19++) {
@@ -291,13 +291,13 @@ public class class_6745 {
             }
 
             if (!"content".equals(var7)) {
-               if (var8 instanceof class_1336) {
-                  class_1336 var14 = (class_1336)var8;
+               if (var8 instanceof JSONArray) {
+                  JSONArray var14 = (JSONArray)var8;
                   int var16 = var14.method_6142();
 
                   for (int var18 = 0; var18 < var16; var18++) {
                      var8 = var14.method_6130(var18);
-                     if (!(var8 instanceof class_1336)) {
+                     if (!(var8 instanceof JSONArray)) {
                         var4.append(toString(var8, var7));
                      } else {
                         var4.append('<');
@@ -316,10 +316,10 @@ public class class_6745 {
                   var4.append(var7);
                   var4.append("/>");
                }
-            } else if (!(var8 instanceof class_1336)) {
+            } else if (!(var8 instanceof JSONArray)) {
                var4.append(method_30891(var8.toString()));
             } else {
-               class_1336 var10 = (class_1336)var8;
+               JSONArray var10 = (JSONArray)var8;
                int var11 = var10.method_6142();
 
                for (int var12 = 0; var12 < var11; var12++) {

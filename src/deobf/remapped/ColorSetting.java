@@ -16,7 +16,7 @@ public class ColorSetting extends Setting<Integer> {
 
    @Override
    public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
-      this.field_25890 = JSONWriter.saveIntValue(var1, "value", this.method_23039());
+      this.field_25890 = JSONWriter.saveIntValue(var1, "value", this.getSaveValue());
       this.field_5001 = JSONWriter.saveBooleanValue(var1, "rainbow", false);
       return var1;
    }

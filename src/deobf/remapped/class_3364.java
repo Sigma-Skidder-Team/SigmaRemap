@@ -37,9 +37,9 @@ public class class_3364 {
 
          var1.add((byte[])var0);
          return var13;
-      } else if (var0 instanceof class_1336) {
-         class_1336 var12 = new class_1336();
-         class_1336 var14 = (class_1336)var0;
+      } else if (var0 instanceof JSONArray) {
+         JSONArray var12 = new JSONArray();
+         JSONArray var14 = (JSONArray)var0;
          int var15 = var14.method_6142();
 
          for (int var16 = 0; var16 < var15; var16++) {
@@ -81,8 +81,8 @@ public class class_3364 {
    }
 
    private static Object method_15409(Object var0, byte[][] var1) {
-      if (var0 instanceof class_1336) {
-         class_1336 var10 = (class_1336)var0;
+      if (var0 instanceof JSONArray) {
+         JSONArray var10 = (JSONArray)var0;
          int var12 = var10.method_6142();
 
          for (int var13 = 0; var13 < var12; var13++) {

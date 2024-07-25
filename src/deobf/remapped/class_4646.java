@@ -20,7 +20,7 @@ public class class_4646 {
          if (!var6.method_5850("releases")) {
             return var5;
          } else {
-            class_1336 var7 = var6.method_5849("releases");
+            JSONArray var7 = var6.method_5849("releases");
             if (var7.method_6163(0)) {
                return var5;
             } else {

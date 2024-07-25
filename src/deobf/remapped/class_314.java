@@ -355,7 +355,7 @@ public class class_314 {
             var7.close();
          }
 
-         class_1336 var9 = new class_1336(var4);
+         JSONArray var9 = new JSONArray(var4);
 
          for (int var10 = 0; var10 < var9.method_6142(); var10++) {
             JSONObjectImpl var11 = new JSONObjectImpl(var9.method_6130(var10).toString());

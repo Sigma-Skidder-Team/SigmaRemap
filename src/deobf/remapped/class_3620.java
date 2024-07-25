@@ -85,7 +85,7 @@ public class class_3620 extends Module {
       JSONObjectImpl var4 = JSONWriter.saveStringValue(var1, "sub-options");
       if (var4 != null) {
          for (Module var8 : this.field_17661) {
-            class_1336 var9 = JSONWriter.saveStringValue2ig(var4, var8.method_41992());
+            JSONArray var9 = JSONWriter.saveStringValue2ig(var4, var8.method_41992());
             if (var9 != null) {
                for (int var10 = 0; var10 < var9.method_6142(); var10++) {
                   JSONObjectImpl var11 = var9.method_6143(var10);
@@ -126,7 +126,7 @@ public class class_3620 extends Module {
       JSONObjectImpl var4 = new JSONObjectImpl();
 
       for (Module var8 : this.field_17661) {
-         class_1336 var9 = new class_1336();
+         JSONArray var9 = new JSONArray();
 
          for (Setting var11 : var8.settingMap.values()) {
             var9.method_6159(var11.loadDataFromJson(new JSONObjectImpl()));

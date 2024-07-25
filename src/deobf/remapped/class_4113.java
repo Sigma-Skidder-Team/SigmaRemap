@@ -14,7 +14,7 @@ public class class_4113 extends class_7038 {
       }
 
       String var7 = var3.method_5861("title");
-      class_1336 var8 = var3.method_5849("changes");
+      JSONArray var8 = var3.method_5849("changes");
       this.method_32148(new class_1552(this, "title", 0, var6, 0, 0, class_590.field_3421, var7, class_5320.field_27147));
       var6 += 55;
 

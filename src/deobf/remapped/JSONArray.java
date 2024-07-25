@@ -12,13 +12,13 @@ import java.util.Iterator;
 import java.util.Map;
 import org.json.JSONException;
 
-public class class_1336 implements Iterable<Object> {
+public class JSONArray implements Iterable<Object> {
    private final ArrayList<Object> field_7324 = new ArrayList<Object>();
 
-   public class_1336() {
+   public JSONArray() {
    }
 
-   public class_1336(class_3734 var1) throws JSONException {
+   public JSONArray(class_3734 var1) throws JSONException {
       this();
       if (var1.method_17301() != '[') {
          throw var1.method_17292("A JSONArray text must start with '['");
@@ -51,11 +51,11 @@ public class class_1336 implements Iterable<Object> {
       }
    }
 
-   public class_1336(String var1) throws JSONException {
+   public JSONArray(String var1) throws JSONException {
       this(new class_3734(var1));
    }
 
-   public class_1336(Collection<?> var1) {
+   public JSONArray(Collection<?> var1) {
       if (var1 != null) {
          for (Object var5 : var1) {
             this.field_7324.add(JSONObjectImpl.method_5856(var5));
@@ -63,7 +63,7 @@ public class class_1336 implements Iterable<Object> {
       }
    }
 
-   public class_1336(Object var1) throws JSONException {
+   public JSONArray(Object var1) throws JSONException {
       this();
       if (!var1.getClass().isArray()) {
          throw new class_7584("JSONArray initial value should be a string or collection or array.");
@@ -154,12 +154,12 @@ public class class_1336 implements Iterable<Object> {
       }
    }
 
-   public class_1336 method_6129(int var1) throws JSONException {
+   public JSONArray method_6129(int var1) throws JSONException {
       Object var4 = this.method_6130(var1);
-      if (!(var4 instanceof class_1336)) {
+      if (!(var4 instanceof JSONArray)) {
          throw new class_7584("JSONArray[" + var1 + "] is not a JSONArray.");
       } else {
-         return (class_1336)var4;
+         return (JSONArray)var4;
       }
    }
 
@@ -287,9 +287,9 @@ public class class_1336 implements Iterable<Object> {
       }
    }
 
-   public class_1336 method_6134(int var1) {
+   public JSONArray method_6134(int var1) {
       Object var4 = this.method_6135(var1);
-      return !(var4 instanceof class_1336) ? null : (class_1336)var4;
+      return !(var4 instanceof JSONArray) ? null : (JSONArray)var4;
    }
 
    public JSONObjectImpl method_6164(int var1) {
@@ -318,74 +318,74 @@ public class class_1336 implements Iterable<Object> {
       return !JSONObjectImpl.field_7112.equals(var5) ? var5.toString() : var2;
    }
 
-   public class_1336 method_6162(boolean var1) {
+   public JSONArray method_6162(boolean var1) {
       this.method_6159(!var1 ? Boolean.FALSE : Boolean.TRUE);
       return this;
    }
 
-   public class_1336 method_6160(Collection<?> var1) {
-      this.method_6159(new class_1336(var1));
+   public JSONArray method_6160(Collection<?> var1) {
+      this.method_6159(new JSONArray(var1));
       return this;
    }
 
-   public class_1336 method_6149(double var1) throws JSONException {
+   public JSONArray method_6149(double var1) throws JSONException {
       Double var5 = new Double(var1);
       JSONObjectImpl.method_5862(var5);
       this.method_6159(var5);
       return this;
    }
 
-   public class_1336 method_6150(int var1) {
+   public JSONArray method_6150(int var1) {
       this.method_6159(new Integer(var1));
       return this;
    }
 
-   public class_1336 method_6158(long var1) {
+   public JSONArray method_6158(long var1) {
       this.method_6159(new Long(var1));
       return this;
    }
 
-   public class_1336 method_6161(Map<?, ?> var1) {
+   public JSONArray method_6161(Map<?, ?> var1) {
       this.method_6159(new JSONObjectImpl(var1));
       return this;
    }
 
-   public class_1336 method_6159(Object var1) {
+   public JSONArray method_6159(Object var1) {
       this.field_7324.add(var1);
       return this;
    }
 
-   public class_1336 method_6157(int var1, boolean var2) throws JSONException {
+   public JSONArray method_6157(int var1, boolean var2) throws JSONException {
       this.method_6154(var1, !var2 ? Boolean.FALSE : Boolean.TRUE);
       return this;
    }
 
-   public class_1336 method_6155(int var1, Collection<?> var2) throws JSONException {
-      this.method_6154(var1, new class_1336(var2));
+   public JSONArray method_6155(int var1, Collection<?> var2) throws JSONException {
+      this.method_6154(var1, new JSONArray(var2));
       return this;
    }
 
-   public class_1336 method_6151(int var1, double var2) throws JSONException {
+   public JSONArray method_6151(int var1, double var2) throws JSONException {
       this.method_6154(var1, new Double(var2));
       return this;
    }
 
-   public class_1336 method_6152(int var1, int var2) throws JSONException {
+   public JSONArray method_6152(int var1, int var2) throws JSONException {
       this.method_6154(var1, new Integer(var2));
       return this;
    }
 
-   public class_1336 method_6153(int var1, long var2) throws JSONException {
+   public JSONArray method_6153(int var1, long var2) throws JSONException {
       this.method_6154(var1, new Long(var2));
       return this;
    }
 
-   public class_1336 method_6156(int var1, Map<?, ?> var2) throws JSONException {
+   public JSONArray method_6156(int var1, Map<?, ?> var2) throws JSONException {
       this.method_6154(var1, new JSONObjectImpl(var2));
       return this;
    }
 
-   public class_1336 method_6154(int var1, Object var2) throws JSONException {
+   public JSONArray method_6154(int var1, Object var2) throws JSONException {
       JSONObjectImpl.method_5862(var2);
       if (var1 < 0) {
          throw new class_7584("JSONArray[" + var1 + "] not found.");
@@ -409,18 +409,18 @@ public class class_1336 implements Iterable<Object> {
    }
 
    public boolean method_6145(Object var1) {
-      if (var1 instanceof class_1336) {
+      if (var1 instanceof JSONArray) {
          int var4 = this.method_6142();
-         if (var4 == ((class_1336)var1).method_6142()) {
+         if (var4 == ((JSONArray)var1).method_6142()) {
             for (int var5 = 0; var5 < var4; var5++) {
                Object var6 = this.method_6130(var5);
-               Object var7 = ((class_1336)var1).method_6130(var5);
+               Object var7 = ((JSONArray)var1).method_6130(var5);
                if (!(var6 instanceof JSONObjectImpl)) {
-                  if (!(var6 instanceof class_1336)) {
+                  if (!(var6 instanceof JSONArray)) {
                      if (!var6.equals(var7)) {
                         return false;
                      }
-                  } else if (!((class_1336)var6).method_6145(var7)) {
+                  } else if (!((JSONArray)var6).method_6145(var7)) {
                      return false;
                   }
                } else if (!((JSONObjectImpl)var6).method_5833(var7)) {
@@ -437,7 +437,7 @@ public class class_1336 implements Iterable<Object> {
       }
    }
 
-   public JSONObjectImpl method_6132(class_1336 var1) throws JSONException {
+   public JSONObjectImpl method_6132(JSONArray var1) throws JSONException {
       if (var1 != null && var1.method_6142() != 0 && this.method_6142() != 0) {
          JSONObjectImpl var4 = new JSONObjectImpl();
 

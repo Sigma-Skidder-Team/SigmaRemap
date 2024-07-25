@@ -41,7 +41,7 @@ public class class_1675 {
    }
 
    public void method_7503() {
-      class_1336 var3 = null;
+      JSONArray var3 = null;
 
       try {
          var3 = JSONWriter.saveStringValue2ig(this.field_8678, "mods");
@@ -69,7 +69,7 @@ public class class_1675 {
    }
 
    public void method_7502(JSONObjectImpl var1, Module var2) {
-      class_1336 var5 = null;
+      JSONArray var5 = null;
 
       try {
          var5 = JSONWriter.saveStringValue2ig(this.field_8678, "mods");
@@ -104,7 +104,7 @@ public class class_1675 {
    }
 
    public JSONObjectImpl method_7501(Module var1) {
-      class_1336 var4 = null;
+      JSONArray var4 = null;
 
       try {
          var4 = JSONWriter.saveStringValue2ig(this.field_8678, "mods");

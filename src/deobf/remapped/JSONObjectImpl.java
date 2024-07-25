@@ -143,13 +143,13 @@ public class JSONObjectImpl {
       method_5862(var2);
       Object var5 = this.method_5865(var1);
       if (var5 != null) {
-         if (!(var5 instanceof class_1336)) {
-            this.method_5820(var1, new class_1336().method_6159(var5).method_6159(var2));
+         if (!(var5 instanceof JSONArray)) {
+            this.method_5820(var1, new JSONArray().method_6159(var5).method_6159(var2));
          } else {
-            ((class_1336)var5).method_6159(var2);
+            ((JSONArray)var5).method_6159(var2);
          }
       } else {
-         this.method_5820(var1, !(var2 instanceof class_1336) ? var2 : new class_1336().method_6159(var2));
+         this.method_5820(var1, !(var2 instanceof JSONArray) ? var2 : new JSONArray().method_6159(var2));
       }
 
       return this;
@@ -159,13 +159,13 @@ public class JSONObjectImpl {
       method_5862(var2);
       Object var5 = this.method_5865(var1);
       if (var5 != null) {
-         if (!(var5 instanceof class_1336)) {
+         if (!(var5 instanceof JSONArray)) {
             throw new class_7584("JSONObject[" + var1 + "] is not a JSONArray.");
          }
 
-         this.method_5820(var1, ((class_1336)var5).method_6159(var2));
+         this.method_5820(var1, ((JSONArray)var5).method_6159(var2));
       } else {
-         this.method_5820(var1, new class_1336().method_6159(var2));
+         this.method_5820(var1, new JSONArray().method_6159(var2));
       }
 
       return this;
@@ -265,12 +265,12 @@ public class JSONObjectImpl {
       }
    }
 
-   public class_1336 method_5849(String var1) throws JSONException {
+   public JSONArray method_5849(String var1) throws JSONException {
       Object var4 = this.method_5805(var1);
-      if (!(var4 instanceof class_1336)) {
+      if (!(var4 instanceof JSONArray)) {
          throw new class_7584("JSONObject[" + method_5859(var1) + "] is not a JSONArray.");
       } else {
-         return (class_1336)var4;
+         return (JSONArray)var4;
       }
    }
 
@@ -394,8 +394,8 @@ public class JSONObjectImpl {
       return this.field_7113.size();
    }
 
-   public class_1336 method_5815() {
-      class_1336 var3 = new class_1336();
+   public JSONArray method_5815() {
+      JSONArray var3 = new JSONArray();
       Iterator var4 = this.method_5841();
 
       while (var4.hasNext()) {
@@ -498,9 +498,9 @@ public class JSONObjectImpl {
       }
    }
 
-   public class_1336 method_5809(String var1) {
+   public JSONArray method_5809(String var1) {
       Object var4 = this.method_5865(var1);
-      return !(var4 instanceof class_1336) ? null : (class_1336)var4;
+      return !(var4 instanceof JSONArray) ? null : (JSONArray)var4;
    }
 
    public JSONObjectImpl method_5858(String var1) {
@@ -574,7 +574,7 @@ public class JSONObjectImpl {
    }
 
    public JSONObjectImpl method_5821(String var1, Collection<?> var2) throws JSONException {
-      this.method_5820(var1, new class_1336(var2));
+      this.method_5820(var1, new JSONArray(var2));
       return this;
    }
 
@@ -724,8 +724,8 @@ public class JSONObjectImpl {
                      if (!((JSONObjectImpl)var7).method_5833(var8)) {
                         return false;
                      }
-                  } else if (var7 instanceof class_1336) {
-                     if (!((class_1336)var7).method_6145(var8)) {
+                  } else if (var7 instanceof JSONArray) {
+                     if (!((JSONArray)var7).method_6145(var8)) {
                         return false;
                      }
                   } else if (!var7.equals(var8)) {
@@ -789,9 +789,9 @@ public class JSONObjectImpl {
       }
    }
 
-   public class_1336 method_5864(class_1336 var1) throws JSONException {
+   public JSONArray method_5864(JSONArray var1) throws JSONException {
       if (var1 != null && var1.method_6142() != 0) {
-         class_1336 var4 = new class_1336();
+         JSONArray var4 = new JSONArray();
 
          for (int var5 = 0; var5 < var1.method_6142(); var5++) {
             var4.method_6159(this.method_5865(var1.method_6133(var5)));
@@ -837,16 +837,16 @@ public class JSONObjectImpl {
          }
       } else if (var0 instanceof Number) {
          return method_5866((Number)var0);
-      } else if (var0 instanceof Boolean || var0 instanceof JSONObjectImpl || var0 instanceof class_1336) {
+      } else if (var0 instanceof Boolean || var0 instanceof JSONObjectImpl || var0 instanceof JSONArray) {
          return var0.toString();
       } else if (var0 instanceof Map) {
          Map var6 = (Map)var0;
          return new JSONObjectImpl(var6).toString();
       } else if (var0 instanceof Collection) {
          Collection var3 = (Collection)var0;
-         return new class_1336(var3).toString();
+         return new JSONArray(var3).toString();
       } else {
-         return var0.getClass().isArray() ? new class_1336(var0).toString() : method_5859(var0.toString());
+         return var0.getClass().isArray() ? new JSONArray(var0).toString() : method_5859(var0.toString());
       }
    }
 
@@ -855,7 +855,7 @@ public class JSONObjectImpl {
          if (var0 == null) {
             return field_7112;
          } else if (var0 instanceof JSONObjectImpl
-            || var0 instanceof class_1336
+            || var0 instanceof JSONArray
             || field_7112.equals(var0)
             || var0 instanceof class_6981
             || var0 instanceof Byte
@@ -872,9 +872,9 @@ public class JSONObjectImpl {
             return var0;
          } else if (var0 instanceof Collection) {
             Collection var7 = (Collection)var0;
-            return new class_1336(var7);
+            return new JSONArray(var7);
          } else if (var0.getClass().isArray()) {
-            return new class_1336(var0);
+            return new JSONArray(var0);
          } else if (var0 instanceof Map) {
             Map var6 = (Map)var0;
             return new JSONObjectImpl(var6);
@@ -897,16 +897,16 @@ public class JSONObjectImpl {
          var0.write("null");
       } else if (var1 instanceof JSONObjectImpl) {
          ((JSONObjectImpl)var1).method_5829(var0, var2, var3);
-      } else if (var1 instanceof class_1336) {
-         ((class_1336)var1).method_6128(var0, var2, var3);
+      } else if (var1 instanceof JSONArray) {
+         ((JSONArray)var1).method_6128(var0, var2, var3);
       } else if (var1 instanceof Map) {
          Map var6 = (Map)var1;
          new JSONObjectImpl(var6).method_5829(var0, var2, var3);
       } else if (var1 instanceof Collection) {
          Collection var9 = (Collection)var1;
-         new class_1336(var9).method_6128(var0, var2, var3);
+         new JSONArray(var9).method_6128(var0, var2, var3);
       } else if (var1.getClass().isArray()) {
-         new class_1336(var1).method_6128(var0, var2, var3);
+         new JSONArray(var1).method_6128(var0, var2, var3);
       } else if (var1 instanceof Number) {
          var0.write(method_5866((Number)var1));
       } else if (var1 instanceof Boolean) {

@@ -99,7 +99,7 @@ public class class_8691 {
    }
 
    public void method_39909() {
-      class_1336 var3 = new class_1336();
+      JSONArray var3 = new JSONArray();
 
       for (class_7309 var5 : this.field_44583) {
          var3.method_6159(var5.method_33323());
@@ -119,7 +119,7 @@ public class class_8691 {
       try {
          JSONObjectImpl var3 = class_357.method_1789(this.field_44579);
          if (!var3.method_5850("alts")) {
-            var3.method_5820("alts", new class_1336());
+            var3.method_5820("alts", new JSONArray());
          }
 
          for (Object var5 : var3.method_5849("alts")) {

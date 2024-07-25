@@ -493,7 +493,7 @@ public class class_7038 implements class_6482 {
    }
 
    public final JSONObjectImpl method_32125(JSONObjectImpl var1) {
-      class_1336 var4 = new class_1336();
+      JSONArray var4 = new JSONArray();
 
       for (class_7038 var6 : this.field_36274) {
          if (var6.method_32166()) {
@@ -517,7 +517,7 @@ public class class_7038 implements class_6482 {
             this.field_36257 = JSONWriter.saveIntValue(var1, "height", this.field_36257);
          }
 
-         class_1336 var4 = JSONWriter.saveStringValue2ig(var1, "children");
+         JSONArray var4 = JSONWriter.saveStringValue2ig(var1, "children");
          Iterator var5 = var1.method_5831().iterator();
          if (var4 != null) {
             ArrayList var6 = new ArrayList<class_7038>(this.field_36274);

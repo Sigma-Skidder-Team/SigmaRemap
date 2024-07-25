@@ -4,9 +4,9 @@ import java.util.Iterator;
 import org.json.JSONException;
 
 public class class_4510 {
-   private static Object method_20970(class_2021 var0, boolean var1, class_1336 var2) throws JSONException {
+   private static Object method_20970(class_2021 var0, boolean var1, JSONArray var2) throws JSONException {
       Object var5 = null;
-      class_1336 var6 = null;
+      JSONArray var6 = null;
       JSONObjectImpl var7 = null;
       Object var8 = null;
 
@@ -20,7 +20,7 @@ public class class_4510 {
                }
 
                var8 = (String)var9;
-               var6 = new class_1336();
+               var6 = new JSONArray();
                var7 = new JSONObjectImpl();
                if (!var1) {
                   var7.method_5820("tagName", var8);
@@ -177,12 +177,12 @@ public class class_4510 {
       throw var0.method_17292("Bad XML");
    }
 
-   public static class_1336 method_20968(String var0) throws JSONException {
+   public static JSONArray method_20968(String var0) throws JSONException {
       return method_20969(new class_2021(var0));
    }
 
-   public static class_1336 method_20969(class_2021 var0) throws JSONException {
-      return (class_1336)method_20970(var0, true, null);
+   public static JSONArray method_20969(class_2021 var0) throws JSONException {
+      return (JSONArray)method_20970(var0, true, null);
    }
 
    public static JSONObjectImpl method_20967(class_2021 var0) throws JSONException {
@@ -193,7 +193,7 @@ public class class_4510 {
       return method_20967(new class_2021(var0));
    }
 
-   public static String toString(class_1336 var0) throws JSONException {
+   public static String toString(JSONArray var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
       String var4 = var0.method_6133(0);
       class_6745.method_30892(var4);
@@ -234,10 +234,10 @@ public class class_4510 {
             if (var5 != null) {
                if (!(var5 instanceof String)) {
                   if (!(var5 instanceof JSONObjectImpl)) {
-                     if (!(var5 instanceof class_1336)) {
+                     if (!(var5 instanceof JSONArray)) {
                         var3.append(var5.toString());
                      } else {
-                        var3.append(toString((class_1336)var5));
+                        var3.append(toString((JSONArray)var5));
                      }
                   } else {
                      var3.append(toString((JSONObjectImpl)var5));
@@ -288,7 +288,7 @@ public class class_4510 {
             }
          }
 
-         class_1336 var6 = var0.method_5809("childNodes");
+         JSONArray var6 = var0.method_5809("childNodes");
          if (var6 != null) {
             var3.append('>');
             int var7 = var6.method_6142();
@@ -298,10 +298,10 @@ public class class_4510 {
                if (var11 != null) {
                   if (!(var11 instanceof String)) {
                      if (!(var11 instanceof JSONObjectImpl)) {
-                        if (!(var11 instanceof class_1336)) {
+                        if (!(var11 instanceof JSONArray)) {
                            var3.append(var11.toString());
                         } else {
-                           var3.append(toString((class_1336)var11));
+                           var3.append(toString((JSONArray)var11));
                         }
                      } else {
                         var3.append(toString((JSONObjectImpl)var11));

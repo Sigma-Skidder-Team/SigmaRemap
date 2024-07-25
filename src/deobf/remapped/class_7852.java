@@ -3,7 +3,7 @@ package remapped;
 public class class_7852 extends class_7038 {
    public String field_39791 = "";
    public class_2440 field_39793 = new class_2440(380, 200, class_4043.field_19618);
-   private static class_1336 field_39794;
+   private static JSONArray field_39794;
    private class_3004 field_39795;
 
    public class_7852(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {

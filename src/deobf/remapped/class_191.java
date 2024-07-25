@@ -166,7 +166,7 @@ public class class_191 {
    }
 
    public JSONObjectImpl method_838(JSONObjectImpl var1) {
-      class_1336 var4 = null;
+      JSONArray var4 = null;
 
       try {
          var4 = JSONWriter.saveStringValue2ig(var1, "mods");
@@ -232,7 +232,7 @@ public class class_191 {
    }
 
    public JSONObjectImpl method_839(JSONObjectImpl var1) {
-      class_1336 var4 = new class_1336();
+      JSONArray var4 = new JSONArray();
 
       for (Module var6 : this.field_637.values()) {
          var4.method_6159(var6.method_42014(new JSONObjectImpl()));

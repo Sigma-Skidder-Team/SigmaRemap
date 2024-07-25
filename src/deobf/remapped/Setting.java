@@ -69,7 +69,7 @@ public abstract class Setting<T> {
       return false;
    }
 
-   public T method_23039() {
+   public T getSaveValue() {
       return this.field_25891;
    }
 

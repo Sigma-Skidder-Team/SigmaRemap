@@ -10,7 +10,7 @@ public class class_521 implements Runnable {
 
    @Override
    public void run() {
-      class_1336 var3 = new class_1336();
+      JSONArray var3 = new JSONArray();
       var3.method_6159(this.field_3181);
       if (this.field_3179 != null) {
          for (Object var7 : this.field_3179) {
@@ -18,7 +18,7 @@ public class class_521 implements Runnable {
          }
       }
 
-      class_3872 var8 = new class_3872<class_1336>(2, var3);
+      class_3872 var8 = new class_3872<JSONArray>(2, var3);
       if (this.field_3183 != null) {
          class_3484.method_16020().fine(String.format("emitting packet with ack id %d", class_3484.method_16022(this.field_3182)));
          class_3484.method_15991(this.field_3182).put(class_3484.method_16022(this.field_3182), this.field_3183);

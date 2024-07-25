@@ -44,7 +44,7 @@ public class class_5637 extends Module {
             var6.method_5820("duration", "Permanent");
             var6.method_5820("subType", "COMPROMISED_ACCOUNT");
             var6.method_5820("reason", "Account Security Alert");
-            var6.method_5820("tags", new class_1336().method_6159("FI"));
+            var6.method_5820("tags", new JSONArray().method_6159("FI"));
             var6.method_5820("type", "0");
             if (this.method_25531(var6, var4.toLowerCase())) {
                this.method_25533();

@@ -118,7 +118,7 @@ public abstract class Module {
    }
 
    public JSONObjectImpl method_42021(JSONObjectImpl var1) {
-      class_1336 var4 = JSONWriter.saveStringValue2ig(var1, "options");
+      JSONArray var4 = JSONWriter.saveStringValue2ig(var1, "options");
 
       try {
          this.field_46700 = var1.method_5826("enabled");
@@ -166,7 +166,7 @@ public abstract class Module {
       var1.method_5820("name", this.method_41992());
       var1.method_5823("enabled", this.field_46700);
       var1.method_5823("allowed", this.method_41994());
-      class_1336 var4 = new class_1336();
+      JSONArray var4 = new JSONArray();
 
       for (Setting var6 : this.settingMap.values()) {
          var4.method_6159(var6.loadDataFromJson(new JSONObjectImpl()));

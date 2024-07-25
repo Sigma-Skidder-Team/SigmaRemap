@@ -17,7 +17,7 @@ public abstract class ExtendableSetting extends Setting<Boolean> {
 
    @Override
    public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
-      class_1336 var4 = JSONWriter.saveStringValue2ig(var1, this.method_23032());
+      JSONArray var4 = JSONWriter.saveStringValue2ig(var1, this.method_23032());
       if (var4 != null) {
          for (int var5 = 0; var5 < var4.method_6142(); var5++) {
             JSONObjectImpl var6 = var4.method_6143(var5);
@@ -32,13 +32,13 @@ public abstract class ExtendableSetting extends Setting<Boolean> {
          }
       }
 
-      this.field_25890 = JSONWriter.saveBooleanValue(var1, "value", this.method_23039());
+      this.field_25890 = JSONWriter.saveBooleanValue(var1, "value", this.getSaveValue());
       return var1;
    }
 
    @Override
    public JSONObjectImpl loadDataFromJson(JSONObjectImpl var1) {
-      class_1336 var4 = new class_1336();
+      JSONArray var4 = new JSONArray();
 
       for (Setting var6 : this.method_9875()) {
          var4.method_6159(var6.loadDataFromJson(new JSONObjectImpl()));

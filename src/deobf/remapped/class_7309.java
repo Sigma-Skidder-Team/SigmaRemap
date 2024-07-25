@@ -301,8 +301,8 @@ public class class_7309 {
       return var3;
    }
 
-   public class_1336 method_33325() {
-      class_1336 var3 = new class_1336();
+   public JSONArray method_33325() {
+      JSONArray var3 = new JSONArray();
 
       for (class_5933 var5 : this.field_37370) {
          var3.method_6159(var5.method_27124());

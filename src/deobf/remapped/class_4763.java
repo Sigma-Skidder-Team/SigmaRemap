@@ -63,7 +63,7 @@ public class class_4763 {
    public void method_21964() {
       if (this.field_23065 != null) {
          File var3 = new File(this.field_23065 + "/waypoints.json");
-         class_1336 var4 = new class_1336();
+         JSONArray var4 = new JSONArray();
 
          for (class_4333 var6 : this.field_23053) {
             var4.method_6159(var6.method_20159());
@@ -86,7 +86,7 @@ public class class_4763 {
       try {
          JSONObjectImpl var4 = class_357.method_1789(var3);
          if (!var4.method_5850("waypoints")) {
-            var4.method_5820("waypoints", new class_1336());
+            var4.method_5820("waypoints", new JSONArray());
          }
 
          for (Object var6 : var4.method_5849("waypoints")) {
