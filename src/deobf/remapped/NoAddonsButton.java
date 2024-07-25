@@ -2,7 +2,7 @@ package remapped;
 
 import org.lwjgl.opengl.GL11;
 
-public class class_6186 extends class_1876 {
+public class NoAddonsButton extends MainMenuScreen {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       super.method_6767(var1, var2, var3, var4);

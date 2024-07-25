@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7988 extends class_1859 {
+public class RegisterAccountMenu extends class_1859 {
    private class_1552 field_40928;
    private class_3004 field_40936;
    private class_3004 field_40935;
@@ -13,7 +13,7 @@ public class class_7988 extends class_1859 {
    public static int field_40931 = 390;
    public static int field_40927 = 590;
 
-   public class_7988(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
+   public RegisterAccountMenu(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method_32148(
          this.field_40928 = new class_1552(
