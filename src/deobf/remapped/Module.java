@@ -118,7 +118,7 @@ public abstract class Module {
    }
 
    public JSONObjectImpl method_42021(JSONObjectImpl var1) {
-      class_1336 var4 = class_3332.method_15293(var1, "options");
+      class_1336 var4 = JSONWriter.saveStringValue2ig(var1, "options");
 
       try {
          this.field_46700 = var1.method_5826("enabled");
@@ -136,7 +136,7 @@ public abstract class Module {
             String var7 = null;
 
             try {
-               var7 = class_3332.method_15291(var6, "name", null);
+               var7 = JSONWriter.saveStringValue(var6, "name", null);
             } catch (class_7584 var12) {
             }
 

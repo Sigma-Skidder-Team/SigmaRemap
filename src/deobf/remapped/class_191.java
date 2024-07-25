@@ -169,7 +169,7 @@ public class class_191 {
       class_1336 var4 = null;
 
       try {
-         var4 = class_3332.method_15293(var1, "mods");
+         var4 = JSONWriter.saveStringValue2ig(var1, "mods");
       } catch (class_7584 var14) {
       }
 
@@ -183,7 +183,7 @@ public class class_191 {
             String var7 = null;
 
             try {
-               var7 = class_3332.method_15291(var17, "name", null);
+               var7 = JSONWriter.saveStringValue(var17, "name", null);
             } catch (class_7584 var13) {
                SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
             }

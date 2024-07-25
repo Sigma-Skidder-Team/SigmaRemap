@@ -125,7 +125,7 @@ public class class_9568 extends class_446 implements class_475 {
    @Override
    public void method_32159(JSONObjectImpl var1) {
       super.method_32159(var1);
-      this.field_48684 = class_3332.method_15289(var1, "offset", this.field_48684);
+      this.field_48684 = JSONWriter.saveIntValue(var1, "offset", this.field_48684);
    }
 
    @Override

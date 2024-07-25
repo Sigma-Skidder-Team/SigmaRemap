@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.List;
 
-public class class_4978 extends MultiBooleanSetting {
+public class class_4978 extends ExtendableSetting {
    private static String[] field_25766;
 
    public class_4978(String var1, String var2, boolean var3, Setting... var4) {

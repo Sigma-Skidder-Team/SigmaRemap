@@ -10,7 +10,7 @@ public class SomeWeirdIntegerSetting extends Setting<Integer> {
 
    @Override
    public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
-      this.field_25890 = class_3332.method_15289(var1, "value", this.method_23039());
+      this.field_25890 = JSONWriter.saveIntValue(var1, "value", this.method_23039());
       return var1;
    }
 

@@ -510,22 +510,22 @@ public class class_7038 implements class_6482 {
 
    public void method_32159(JSONObjectImpl var1) {
       if (this.method_32166()) {
-         this.field_36270 = class_3332.method_15289(var1, "x", this.field_36270);
-         this.field_36261 = class_3332.method_15289(var1, "y", this.field_36261);
+         this.field_36270 = JSONWriter.saveIntValue(var1, "x", this.field_36270);
+         this.field_36261 = JSONWriter.saveIntValue(var1, "y", this.field_36261);
          if (this.method_32099()) {
-            this.field_36278 = class_3332.method_15289(var1, "width", this.field_36278);
-            this.field_36257 = class_3332.method_15289(var1, "height", this.field_36257);
+            this.field_36278 = JSONWriter.saveIntValue(var1, "width", this.field_36278);
+            this.field_36257 = JSONWriter.saveIntValue(var1, "height", this.field_36257);
          }
 
-         class_1336 var4 = class_3332.method_15293(var1, "children");
+         class_1336 var4 = JSONWriter.saveStringValue2ig(var1, "children");
          Iterator var5 = var1.method_5831().iterator();
          if (var4 != null) {
             ArrayList var6 = new ArrayList<class_7038>(this.field_36274);
 
             for (int var7 = 0; var7 < var4.method_6142(); var7++) {
                JSONObjectImpl var8 = var4.method_6143(var7);
-               String var9 = class_3332.method_15291(var8, "id", null);
-               int var10 = class_3332.method_15289(var8, "index", -1);
+               String var9 = JSONWriter.saveStringValue(var8, "id", null);
+               int var10 = JSONWriter.saveIntValue(var8, "index", -1);
 
                for (class_7038 var12 : var6) {
                   if (var12.method_32176().equals(var9)) {

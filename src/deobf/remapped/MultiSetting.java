@@ -21,7 +21,7 @@ public class MultiSetting extends Setting<List<String>> {
 
    @Override
    public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
-      class_1336 var4 = class_3332.method_15293(var1, "value");
+      class_1336 var4 = JSONWriter.saveStringValue2ig(var1, "value");
       this.field_25890 = new ArrayList<String>();
       if (var4 != null) {
          for (int var5 = 0; var5 < var4.method_6142(); var5++) {

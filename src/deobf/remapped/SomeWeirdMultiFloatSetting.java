@@ -7,7 +7,7 @@ public class SomeWeirdMultiFloatSetting extends Setting<class_7928> {
 
    @Override
    public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
-      this.field_25890 = new class_7928(class_3332.method_15293(var1, "value"));
+      this.field_25890 = new class_7928(JSONWriter.saveStringValue2ig(var1, "value"));
       return var1;
    }
 

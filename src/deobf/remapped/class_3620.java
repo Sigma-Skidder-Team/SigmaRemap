@@ -82,17 +82,17 @@ public class class_3620 extends Module {
 
    @Override
    public JSONObjectImpl method_42021(JSONObjectImpl var1) {
-      JSONObjectImpl var4 = class_3332.method_15287(var1, "sub-options");
+      JSONObjectImpl var4 = JSONWriter.saveStringValue(var1, "sub-options");
       if (var4 != null) {
          for (Module var8 : this.field_17661) {
-            class_1336 var9 = class_3332.method_15293(var4, var8.method_41992());
+            class_1336 var9 = JSONWriter.saveStringValue2ig(var4, var8.method_41992());
             if (var9 != null) {
                for (int var10 = 0; var10 < var9.method_6142(); var10++) {
                   JSONObjectImpl var11 = var9.method_6143(var10);
                   String var12 = null;
 
                   try {
-                     var12 = class_3332.method_15291(var11, "name", null);
+                     var12 = JSONWriter.saveStringValue(var11, "name", null);
                   } catch (class_7584 var17) {
                   }
 

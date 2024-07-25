@@ -36,7 +36,7 @@ public class BooleanSetting extends Setting<Boolean> {
 
    @Override
    public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
-      this.field_25890 = class_3332.method_15294(var1, "value", this.method_23039());
+      this.field_25890 = JSONWriter.saveBooleanValue(var1, "value", this.method_23039());
       return var1;
    }
 }
