@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 public class class_5101 extends class_2451 {
    private static String[] field_26317;
-   private static final Predicate<class_8145> field_26316 = class_3572.field_17483.and(class_8145::method_37167);
+   private static final Predicate<Entity> field_26316 = class_3572.field_17483.and(Entity::method_37167);
    private final class_3837 field_26315;
 
    public class_5101(class_3837 var1, class_317 var2) {
@@ -14,7 +14,7 @@ public class class_5101 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48752);
       if (var7.method_33990() == class_1430.field_7721) {
@@ -26,7 +26,7 @@ public class class_5101 extends class_2451 {
          if (!var11.isEmpty()) {
             class_1343 var12 = var2.method_37335(1.0F);
 
-            for (class_8145 var14 : var11) {
+            for (Entity var14 : var11) {
                class_4092 var15 = var14.method_37241().method_18898((double)var14.method_37355());
                if (var15.method_18903(var12)) {
                   return class_954.<class_6098>method_4207(var6);

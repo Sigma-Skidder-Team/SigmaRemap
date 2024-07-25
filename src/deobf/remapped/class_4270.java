@@ -21,7 +21,7 @@ public class class_4270 extends class_9128 {
          GL11.glDepthMask(false);
          GL11.glShadeModel(7425);
 
-         for (class_8145 var5 : class_314.method_1435()) {
+         for (Entity var5 : class_314.method_1435()) {
             if (var5 != field_46692.field_9632
                && var5.method_37330()
                && var5.field_41712.method_18906() > 0.8
@@ -39,7 +39,7 @@ public class class_4270 extends class_9128 {
       }
    }
 
-   public void method_19871(class_8145 var1) {
+   public void method_19871(Entity var1) {
       double var4 = class_9189.method_42353(var1).field_42648;
       double var6 = class_9189.method_42353(var1).field_42646 + (double)(var1.method_37074() / 2.0F);
       double var8 = class_9189.method_42353(var1).field_42649;

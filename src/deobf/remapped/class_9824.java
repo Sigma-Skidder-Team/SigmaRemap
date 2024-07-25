@@ -18,7 +18,7 @@ public class class_9824 extends class_9128 {
    @class_7664
    public void method_45280(class_7767 var1) {
       if (this.method_42015()) {
-         class_8145 var4 = null;
+         Entity var4 = null;
          if (SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42003() || !this.method_42007("Only speed")) {
             if (class_2534.field_12556 != null) {
                var4 = class_2534.field_12556.method_15377();
@@ -53,7 +53,7 @@ public class class_9824 extends class_9128 {
       }
    }
 
-   public void method_45282(class_8145 var1, double var2, double var4, class_7767 var6) {
+   public void method_45282(Entity var1, double var2, double var4, class_7767 var6) {
       double var9 = var2 / (var4 * Math.PI * 2.0) * 360.0 * (double)this.field_49775;
       double var11 = field_46692.field_9632.method_37302() - var1.method_37302();
       double var13 = field_46692.field_9632.method_37156() - var1.method_37156();

@@ -12,10 +12,10 @@ public class class_9362 extends class_1279 {
    private class_7914 field_47820;
    private final List<class_1279> field_47819 = Lists.newArrayList();
 
-   public class_9362(Random var1, int var2, int var3, class_240 var4) {
+   public class_9362(Random var1, int var2, int var3, Direction var4) {
       super(class_2746.field_13410, 0);
       this.method_32519(var4);
-      class_240 var7 = this.method_32518();
+      Direction var7 = this.method_32518();
       if (var7.method_1029() != class_9249.field_47219) {
          this.field_36435 = new class_9616(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);
       } else {
@@ -112,7 +112,7 @@ public class class_9362 extends class_1279 {
             for (int var27 = 0; var27 < 3; var27++) {
                int var31 = method_5723(var19, var27, var23);
                if (var4[var31] != null) {
-                  for (class_240 var12 : class_240.values()) {
+                  for (Direction var12 : Direction.values()) {
                      int var13 = var19 + var12.method_1041();
                      int var14 = var27 + var12.method_1054();
                      int var15 = var23 + var12.method_1034();
@@ -135,31 +135,31 @@ public class class_9362 extends class_1279 {
       class_7914 var20 = new class_7914(1003);
       class_7914 var24 = new class_7914(1001);
       class_7914 var28 = new class_7914(1002);
-      var4[field_7033].method_35814(class_240.field_817, var20);
-      var4[field_7030].method_35814(class_240.field_800, var24);
-      var4[field_7036].method_35814(class_240.field_800, var28);
+      var4[field_7033].method_35814(Direction.field_817, var20);
+      var4[field_7030].method_35814(Direction.field_800, var24);
+      var4[field_7036].method_35814(Direction.field_800, var28);
       class_7914.method_35804(var20, true);
       class_7914.method_35804(var24, true);
       class_7914.method_35804(var28, true);
       class_7914.method_35805(this.field_47817, true);
       this.field_47820 = var4[method_5723(var1.nextInt(4), 0, 2)];
       class_7914.method_35804(this.field_47820, true);
-      class_7914.method_35804(class_7914.method_35807(this.field_47820)[class_240.field_804.method_1050()], true);
-      class_7914.method_35804(class_7914.method_35807(this.field_47820)[class_240.field_818.method_1050()], true);
+      class_7914.method_35804(class_7914.method_35807(this.field_47820)[Direction.field_804.method_1050()], true);
+      class_7914.method_35804(class_7914.method_35807(this.field_47820)[Direction.field_818.method_1050()], true);
       class_7914.method_35804(
-         class_7914.method_35807(class_7914.method_35807(this.field_47820)[class_240.field_804.method_1050()])[class_240.field_818.method_1050()], true
+         class_7914.method_35807(class_7914.method_35807(this.field_47820)[Direction.field_804.method_1050()])[Direction.field_818.method_1050()], true
       );
-      class_7914.method_35804(class_7914.method_35807(this.field_47820)[class_240.field_817.method_1050()], true);
+      class_7914.method_35804(class_7914.method_35807(this.field_47820)[Direction.field_817.method_1050()], true);
       class_7914.method_35804(
-         class_7914.method_35807(class_7914.method_35807(this.field_47820)[class_240.field_804.method_1050()])[class_240.field_817.method_1050()], true
+         class_7914.method_35807(class_7914.method_35807(this.field_47820)[Direction.field_804.method_1050()])[Direction.field_817.method_1050()], true
       );
       class_7914.method_35804(
-         class_7914.method_35807(class_7914.method_35807(this.field_47820)[class_240.field_818.method_1050()])[class_240.field_817.method_1050()], true
+         class_7914.method_35807(class_7914.method_35807(this.field_47820)[Direction.field_818.method_1050()])[Direction.field_817.method_1050()], true
       );
       class_7914.method_35804(
          class_7914.method_35807(
-            class_7914.method_35807(class_7914.method_35807(this.field_47820)[class_240.field_804.method_1050()])[class_240.field_818.method_1050()]
-         )[class_240.field_817.method_1050()],
+            class_7914.method_35807(class_7914.method_35807(this.field_47820)[Direction.field_804.method_1050()])[Direction.field_818.method_1050()]
+         )[Direction.field_817.method_1050()],
          true
       );
       ArrayList var32 = Lists.newArrayList();
@@ -183,7 +183,7 @@ public class class_9362 extends class_1279 {
             var41++;
             int var42 = var1.nextInt(6);
             if (class_7914.method_35806(var38)[var42]) {
-               int var43 = class_240.method_1033(var42).method_1046().method_1050();
+               int var43 = Direction.method_1033(var42).method_1046().method_1050();
                class_7914.method_35806(var38)[var42] = false;
                class_7914.method_35806(class_7914.method_35807(var38)[var42])[var43] = false;
                if (var38.method_35810(var34++) && class_7914.method_35807(var38)[var42].method_35810(var34++)) {

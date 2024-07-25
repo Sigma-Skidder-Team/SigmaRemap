@@ -30,10 +30,10 @@ public class class_8491 {
       this.field_43506.method_20658(this.field_43505 - 1, this.field_43501 + 2, 1);
       this.field_43506.method_20659(0, 0, 11, 1, 5);
       this.field_43506.method_20659(0, 9, 11, 11, 5);
-      this.method_39137(this.field_43506, this.field_43505, this.field_43501 - 2, class_240.field_809, 6);
-      this.method_39137(this.field_43506, this.field_43505, this.field_43501 + 3, class_240.field_809, 6);
-      this.method_39137(this.field_43506, this.field_43505 - 2, this.field_43501 - 1, class_240.field_809, 3);
-      this.method_39137(this.field_43506, this.field_43505 - 2, this.field_43501 + 2, class_240.field_809, 3);
+      this.method_39137(this.field_43506, this.field_43505, this.field_43501 - 2, Direction.field_809, 6);
+      this.method_39137(this.field_43506, this.field_43505, this.field_43501 + 3, Direction.field_809, 6);
+      this.method_39137(this.field_43506, this.field_43505 - 2, this.field_43501 - 1, Direction.field_809, 3);
+      this.method_39137(this.field_43506, this.field_43505 - 2, this.field_43501 + 2, Direction.field_809, 3);
 
       while (this.method_39141(this.field_43506)) {
       }
@@ -61,8 +61,8 @@ public class class_8491 {
    }
 
    @Nullable
-   public class_240 method_39130(class_4456 var1, int var2, int var3, int var4, int var5) {
-      for (class_240 var9 : class_9594.field_48893) {
+   public Direction method_39130(class_4456 var1, int var2, int var3, int var4, int var5) {
+      for (Direction var9 : class_9594.field_48893) {
          if (this.method_39138(var1, var2 + var9.method_1041(), var3 + var9.method_1034(), var4, var5)) {
             return var9;
          }
@@ -71,14 +71,14 @@ public class class_8491 {
       return null;
    }
 
-   private void method_39137(class_4456 var1, int var2, int var3, class_240 var4, int var5) {
+   private void method_39137(class_4456 var1, int var2, int var3, Direction var4, int var5) {
       if (var5 > 0) {
          var1.method_20658(var2, var3, 1);
          var1.method_20661(var2 + var4.method_1041(), var3 + var4.method_1034(), 0, 1);
 
          for (int var8 = 0; var8 < 8; var8++) {
-            class_240 var9 = class_240.method_1040(this.field_43504.nextInt(4));
-            if (var9 != var4.method_1046() && (var9 != class_240.field_804 || !this.field_43504.nextBoolean())) {
+            Direction var9 = Direction.method_1040(this.field_43504.nextInt(4));
+            if (var9 != var4.method_1046() && (var9 != Direction.field_804 || !this.field_43504.nextBoolean())) {
                int var10 = var2 + var4.method_1041();
                int var11 = var3 + var4.method_1034();
                if (var1.method_20665(var10 + var9.method_1041(), var11 + var9.method_1034()) == 0
@@ -89,8 +89,8 @@ public class class_8491 {
             }
          }
 
-         class_240 var12 = var4.method_1042();
-         class_240 var13 = var4.method_1053();
+         Direction var12 = var4.method_1042();
+         Direction var13 = var4.method_1053();
          var1.method_20661(var2 + var12.method_1041(), var3 + var12.method_1034(), 0, 2);
          var1.method_20661(var2 + var13.method_1041(), var3 + var13.method_1034(), 0, 2);
          var1.method_20661(var2 + var4.method_1041() + var12.method_1041(), var3 + var4.method_1034() + var12.method_1034(), 0, 2);
@@ -155,7 +155,7 @@ public class class_8491 {
          class_947 var13 = (class_947)var3.get(this.field_43504.nextInt(var3.size()));
          int var14 = var4.method_20665((Integer)var13.method_4141(), (Integer)var13.method_4142());
          var4.method_20658((Integer)var13.method_4141(), (Integer)var13.method_4142(), var14 | 4194304);
-         class_240 var15 = this.method_39130(this.field_43506, (Integer)var13.method_4141(), (Integer)var13.method_4142(), 1, var14 & 65535);
+         Direction var15 = this.method_39130(this.field_43506, (Integer)var13.method_4141(), (Integer)var13.method_4142(), 1, var14 & 65535);
          int var16 = (Integer)var13.method_4141() + var15.method_1041();
          int var9 = (Integer)var13.method_4142() + var15.method_1034();
 
@@ -176,14 +176,14 @@ public class class_8491 {
 
          ArrayList var17 = Lists.newArrayList();
 
-         for (class_240 var12 : class_9594.field_48893) {
+         for (Direction var12 : class_9594.field_48893) {
             if (this.field_43502.method_20665(var16 + var12.method_1041(), var9 + var12.method_1034()) == 0) {
                var17.add(var12);
             }
          }
 
          if (!var17.isEmpty()) {
-            class_240 var19 = (class_240)var17.get(this.field_43504.nextInt(var17.size()));
+            Direction var19 = (Direction)var17.get(this.field_43504.nextInt(var17.size()));
             this.method_39137(this.field_43502, var16 + var19.method_1041(), var9 + var19.method_1034(), var19, 4);
 
             while (this.method_39141(this.field_43502)) {

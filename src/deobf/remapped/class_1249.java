@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 public abstract class class_1249 {
    public final class_5886 field_6877;
-   public final class_6486 field_6882;
+   public final World field_6882;
    public class_3998 field_6887;
    public double field_6871;
    public int field_6875;
@@ -28,7 +28,7 @@ public abstract class class_1249 {
    private final class_8976 field_6873;
    private boolean field_6881;
 
-   public class_1249(class_5886 var1, class_6486 var2) {
+   public class_1249(class_5886 var1, World var2) {
       this.field_6877 = var1;
       this.field_6882 = var2;
       int var5 = class_9299.method_42847(var1.method_26575(class_7331.field_37471) * 16.0);
@@ -89,7 +89,7 @@ public abstract class class_1249 {
    }
 
    @Nullable
-   public class_3998 method_5598(class_8145 var1, int var2) {
+   public class_3998 method_5598(Entity var1, int var2) {
       return this.method_5606(ImmutableSet.of(var1.method_37075()), 16, true, var2);
    }
 
@@ -131,7 +131,7 @@ public abstract class class_1249 {
       return this.method_5607(this.method_5614(var1, var3, var5, 1), var7);
    }
 
-   public boolean method_5616(class_8145 var1, double var2) {
+   public boolean method_5616(Entity var1, double var2) {
       class_3998 var6 = this.method_5598(var1, 1);
       return var6 != null && this.method_5607(var6, var2);
    }

@@ -13,7 +13,7 @@ public class class_3787<T extends class_5834, M extends class_3169<T>> extends c
    }
 
    @Override
-   public void method_23424(class_7966 var1, class_2565 var2, int var3, class_8145 var4, float var5, float var6, float var7, float var8) {
+   public void method_23424(class_7966 var1, class_2565 var2, int var3, Entity var4, float var5, float var6, float var7, float var8) {
       float var11 = class_9299.method_42843(var5 * var5 + var7 * var7);
       float var12 = (float)(Math.atan2((double)var5, (double)var7) * 180.0F / (float)Math.PI);
       float var13 = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);
@@ -28,7 +28,7 @@ public class class_3787<T extends class_5834, M extends class_3169<T>> extends c
       var1.method_36060(class_2426.field_12080.method_11074(45.0F));
       var1.method_36062(0.03125F, 0.03125F, 0.03125F);
       var1.method_36065(2.5, 0.0, 0.0);
-      class_7907 var19 = var2.method_11645(class_3581.method_16755(field_18505));
+      class_7907 var19 = var2.method_11645(RenderLayer.method_16755(field_18505));
 
       for (int var20 = 0; var20 < 4; var20++) {
          var1.method_36060(class_2426.field_12080.method_11074(90.0F));

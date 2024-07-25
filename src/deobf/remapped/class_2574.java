@@ -67,7 +67,7 @@ public class class_2574 extends class_5272<class_337> {
       }
 
       if (var11 != null) {
-         class_1343 var12 = ((class_8145)var11).method_37335(0.0F);
+         class_1343 var12 = ((Entity)var11).method_37335(0.0F);
          class_1343 var13 = var1.method_37335(0.0F);
          double var14 = var12.field_7333 - var13.field_7333;
          if (!(var14 > 0.0)) {

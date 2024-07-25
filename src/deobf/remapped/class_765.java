@@ -16,7 +16,9 @@ public class class_765 extends class_4232 {
    private class_2825 field_4130;
    private int field_4142;
    private Screen field_4136;
-   private class_8881 field_4133;
+   private GameOptions field_4133;
+   private GameOptions field_4133;
+
    private static class_1013[] field_4141 = new class_1013[]{
       class_1013.field_5207,
       class_1013.field_5250,
@@ -41,7 +43,7 @@ public class class_765 extends class_4232 {
    private class_6809 field_4144 = new class_6809(this, new class_3403());
    private List<class_7114> field_4146 = this.field_950;
    private class_7114 field_4135;
-   private class_8881 field_4145 = MinecraftClient.getInstance().field_9577;
+   private GameOptions field_4145 = MinecraftClient.getInstance().field_9577;
 
    @Override
    public boolean method_26940(double var1, double var3, int var5) {
@@ -75,7 +77,7 @@ public class class_765 extends class_4232 {
 
             this.field_943.method_8609(new class_8889(field_4139, var9, ImmutableList.of(new class_3337(field_4137, var1x -> {
                this.field_4145.field_45397 = class_4615.field_22433;
-               MinecraftClient.getInstance().field_9657.method_19998();
+               MinecraftClient.getInstance().worldRenderer.method_19998();
                this.field_4138.method_23750();
                this.field_943.method_8609(this);
             }), new class_3337(field_4134, var1x -> {
@@ -93,7 +95,7 @@ public class class_765 extends class_4232 {
       return super.method_26941(var1, var3, var5);
    }
 
-   public class_765(Screen var1, class_8881 var2) {
+   public class_765(Screen var1, GameOptions var2) {
       super(new TranslationTextComponent("options.videoTitle"));
       this.field_4136 = var1;
       this.field_4133 = var2;
@@ -176,7 +178,7 @@ public class class_765 extends class_4232 {
 
          this.field_943.method_8609(new class_8889(field_4139, var3, ImmutableList.of(new class_3337(field_4137, var1 -> {
             this.field_4133.field_45397 = class_4615.field_22433;
-            MinecraftClient.getInstance().field_9657.method_19998();
+            MinecraftClient.getInstance().worldRenderer.method_19998();
             this.field_4138.method_23750();
             this.field_943.method_8609(this);
          }), new class_3337(field_4134, var1 -> {

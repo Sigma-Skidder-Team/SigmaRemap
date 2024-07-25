@@ -67,7 +67,7 @@ public class class_7397 {
       return this.field_37765;
    }
 
-   public boolean method_33684(class_240 var1) {
+   public boolean method_33684(Direction var1) {
       float var4;
       float var5;
       float var6;
@@ -109,7 +109,7 @@ public class class_7397 {
       return var4 == var6 && var5 == var6;
    }
 
-   public boolean method_33688(class_240 var1) {
+   public boolean method_33688(Direction var1) {
       float var4;
       float var5;
       float var6;

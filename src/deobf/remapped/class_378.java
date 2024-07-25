@@ -13,7 +13,7 @@ public class class_378 extends class_5886 implements class_1869 {
    public float field_1533;
    private boolean field_1535;
 
-   public class_378(class_6629<? extends class_378> var1, class_6486 var2) {
+   public class_378(class_6629<? extends class_378> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_8509(this);
    }
@@ -181,7 +181,7 @@ public class class_378 extends class_5886 implements class_1869 {
    }
 
    @Override
-   public void method_37183(class_8145 var1) {
+   public void method_37183(Entity var1) {
       super.method_37183(var1);
       if (var1 instanceof class_8127 && this.method_1857()) {
          this.method_1856((class_5834)var1);

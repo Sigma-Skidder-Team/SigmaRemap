@@ -32,7 +32,7 @@ public class class_8058 extends class_5837 {
 
    public static UnaryOperator<ITextComponent> method_36559(class_2792 var0, class_5848 var1) {
       if (var1 != null) {
-         class_8145 var4 = var0.<class_8145>method_12698(var1.method_26666());
+         Entity var4 = var0.<Entity>method_12698(var1.method_26666());
          if (var4 != null) {
             class_9155 var5 = var4.method_37320().method_42194(2);
             return var2 -> {

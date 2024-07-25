@@ -169,7 +169,7 @@ public class class_5360 extends class_3232 {
 
    @Override
    public void method_23026(class_2957 var1, class_6979 var2) {
-      MinecraftClient.getInstance().field_9657.method_20070(var2.method_31930(), var2.method_31918(), var2.method_31900());
+      MinecraftClient.getInstance().worldRenderer.method_20070(var2.method_31930(), var2.method_31918(), var2.method_31900());
    }
 
    @Override
@@ -183,7 +183,7 @@ public class class_5360 extends class_3232 {
    }
 
    @Override
-   public boolean method_14824(class_8145 var1) {
+   public boolean method_14824(Entity var1) {
       return this.method_14816(class_9299.method_42847(var1.method_37302()) >> 4, class_9299.method_42847(var1.method_37156()) >> 4);
    }
 }

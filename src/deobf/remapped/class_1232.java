@@ -27,7 +27,7 @@ public class class_1232 implements class_7279 {
    }
 
    public boolean test(class_2792 var1) {
-      class_8145 var4 = var1.<class_8145>method_12698(this.field_6801.method_26666());
+      Entity var4 = var1.<Entity>method_12698(this.field_6801.method_26666());
       if (var4 == null) {
          return false;
       } else {
@@ -43,7 +43,7 @@ public class class_1232 implements class_7279 {
       }
    }
 
-   public boolean method_5479(class_8145 var1, class_1097 var2, String var3, class_7986 var4) {
+   public boolean method_5479(Entity var1, class_1097 var2, String var3, class_7986 var4) {
       class_4399 var7 = var2.method_4858(var3);
       if (var7 != null) {
          String var8 = var1.method_37206();

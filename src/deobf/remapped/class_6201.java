@@ -33,7 +33,7 @@ public class class_6201 extends class_2451 {
                return class_6910.field_35517;
             } else if (this.method_28389(var4, var5)) {
                class_1331 var6 = var4.method_21858();
-               class_6486 var7 = var4.method_21862();
+               World var7 = var4.method_21862();
                class_704 var8 = var4.method_21868();
                class_6098 var9 = var4.method_21867();
                class_2522 var10 = var7.method_28262(var6);
@@ -72,7 +72,7 @@ public class class_6201 extends class_2451 {
       return var1;
    }
 
-   public boolean method_28391(class_1331 var1, class_6486 var2, class_704 var3, class_6098 var4, class_2522 var5) {
+   public boolean method_28391(class_1331 var1, World var2, class_704 var3, class_6098 var4, class_2522 var5) {
       return method_28388(var2, var3, var1, var4);
    }
 
@@ -82,7 +82,7 @@ public class class_6201 extends class_2451 {
       return var4 != null && this.method_28384(var1, var4) ? var4 : null;
    }
 
-   private class_2522 method_28386(class_1331 var1, class_6486 var2, class_6098 var3, class_2522 var4) {
+   private class_2522 method_28386(class_1331 var1, World var2, class_6098 var3, class_2522 var4) {
       class_2522 var7 = var4;
       class_5734 var8 = var3.method_27990();
       if (var8 != null) {
@@ -124,7 +124,7 @@ public class class_6201 extends class_2451 {
       return var1.method_21862().method_7513(var1.method_21858(), var2, 11);
    }
 
-   public static boolean method_28388(class_6486 var0, class_704 var1, class_1331 var2, class_6098 var3) {
+   public static boolean method_28388(World var0, class_704 var1, class_1331 var2, class_6098 var3) {
       class_341 var6 = var0.method_29522();
       if (var6 == null) {
          return false;
@@ -168,7 +168,7 @@ public class class_6201 extends class_2451 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, class_6486 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       super.method_11218(var1, var2, var3, var4);
       this.method_28392().method_29272(var1, var2, var3, var4);
    }

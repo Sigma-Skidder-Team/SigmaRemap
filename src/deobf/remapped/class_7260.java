@@ -9,8 +9,8 @@ public class class_7260<T extends class_9795> extends class_2255<T> {
    public static final Identifier field_37199 = new Identifier("textures/environment/end_sky.png");
    public static final Identifier field_37196 = new Identifier("textures/entity/end_portal.png");
    private static final Random field_37198 = new Random(31100L);
-   private static final List<class_3581> field_37197 = IntStream.range(0, 16)
-      .<class_3581>mapToObj(var0 -> class_3581.method_16712(var0 + 1))
+   private static final List<RenderLayer> field_37197 = IntStream.range(0, 16)
+      .<RenderLayer>mapToObj(var0 -> RenderLayer.method_16712(var0 + 1))
       .collect(ImmutableList.toImmutableList());
 
    public class_7260(class_3569 var1) {
@@ -36,12 +36,12 @@ public class class_7260<T extends class_9795> extends class_2255<T> {
       float var8 = (field_37198.nextFloat() * 0.5F + 0.1F) * var3;
       float var9 = (field_37198.nextFloat() * 0.5F + 0.4F) * var3;
       float var10 = (field_37198.nextFloat() * 0.5F + 0.5F) * var3;
-      this.method_33183((T)var1, var4, var5, 0.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, var8, var9, var10, class_240.field_800);
-      this.method_33183((T)var1, var4, var5, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, var8, var9, var10, class_240.field_818);
-      this.method_33183((T)var1, var4, var5, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, var8, var9, var10, class_240.field_804);
-      this.method_33183((T)var1, var4, var5, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, var8, var9, var10, class_240.field_809);
-      this.method_33183((T)var1, var4, var5, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F, var8, var9, var10, class_240.field_802);
-      this.method_33183((T)var1, var4, var5, 0.0F, 1.0F, var2, var2, 1.0F, 1.0F, 0.0F, 0.0F, var8, var9, var10, class_240.field_817);
+      this.method_33183((T)var1, var4, var5, 0.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, var8, var9, var10, Direction.field_800);
+      this.method_33183((T)var1, var4, var5, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, var8, var9, var10, Direction.field_818);
+      this.method_33183((T)var1, var4, var5, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, var8, var9, var10, Direction.field_804);
+      this.method_33183((T)var1, var4, var5, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, var8, var9, var10, Direction.field_809);
+      this.method_33183((T)var1, var4, var5, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F, var8, var9, var10, Direction.field_802);
+      this.method_33183((T)var1, var4, var5, 0.0F, 1.0F, var2, var2, 1.0F, 1.0F, 0.0F, 0.0F, var8, var9, var10, Direction.field_817);
    }
 
    private void method_33183(
@@ -59,7 +59,7 @@ public class class_7260<T extends class_9795> extends class_2255<T> {
       float var12,
       float var13,
       float var14,
-      class_240 var15
+      Direction var15
    ) {
       if (var1.method_45197(var15)) {
          var3.method_35762(var2, var4, var6, var8).method_35742(var12, var13, var14, 1.0F).method_35735();

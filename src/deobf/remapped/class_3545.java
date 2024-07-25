@@ -16,7 +16,7 @@ public class class_3545 implements class_7373 {
    }
 
    @Override
-   public List<class_5024> method_33580(class_2522 var1, class_240 var2, Random var3) {
+   public List<class_5024> method_33580(class_2522 var1, Direction var2, Random var3) {
       return class_6242.<class_876>method_28509(this.field_17349, Math.abs((int)var3.nextLong()) % this.field_17350).field_4522.method_33580(var1, var2, var3);
    }
 

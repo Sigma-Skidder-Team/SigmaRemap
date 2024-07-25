@@ -11,7 +11,7 @@ public class class_8151 extends class_4314 {
 
    public class_8151(class_3073 var1) {
       super(var1);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_41791, class_240.field_818).method_10308(field_41788, Boolean.valueOf(false)));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_41791, Direction.field_818).method_10308(field_41788, Boolean.valueOf(false)));
    }
 
    @Override
@@ -22,7 +22,7 @@ public class class_8151 extends class_4314 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, class_6486 var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
       if (!var2.field_33055) {
          class_3757 var9 = var2.method_28260(var3);
          if (var9 instanceof class_7454) {
@@ -76,18 +76,18 @@ public class class_8151 extends class_4314 {
       }
    }
 
-   private void method_37412(class_2522 var1, class_6486 var2, class_1331 var3, class_8116 var4, boolean var5) {
+   private void method_37412(class_2522 var1, World var2, class_1331 var3, class_8116 var4, boolean var5) {
       if (!var5) {
          var4.method_36925(0);
       } else {
          var4.method_36922(var2);
       }
 
-      method_37413(var2, var3, var1.<class_240>method_10313(field_41791));
+      method_37413(var2, var3, var1.<Direction>method_10313(field_41791));
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       class_3757 var9 = var2.method_28260(var3);
       if (var9 instanceof class_7454 && var4.method_3184()) {
          var4.method_3193((class_7454)var9);
@@ -103,13 +103,13 @@ public class class_8151 extends class_4314 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       class_3757 var6 = var2.method_28260(var3);
       return !(var6 instanceof class_7454) ? 0 : ((class_7454)var6).method_33929().method_36926();
    }
 
    @Override
-   public void method_29257(class_6486 var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
       class_3757 var8 = var1.method_28260(var2);
       if (var8 instanceof class_7454) {
          class_7454 var9 = (class_7454)var8;
@@ -139,12 +139,12 @@ public class class_8151 extends class_4314 {
 
    @Override
    public class_2522 method_10785(class_2522 var1, class_6631 var2) {
-      return var1.method_10308(field_41791, var2.method_30489(var1.<class_240>method_10313(field_41791)));
+      return var1.method_10308(field_41791, var2.method_30489(var1.<Direction>method_10313(field_41791)));
    }
 
    @Override
    public class_2522 method_10773(class_2522 var1, class_9022 var2) {
-      return var1.method_8318(var2.method_41390(var1.<class_240>method_10313(field_41791)));
+      return var1.method_8318(var2.method_41390(var1.<Direction>method_10313(field_41791)));
    }
 
    @Override
@@ -157,7 +157,7 @@ public class class_8151 extends class_4314 {
       return this.method_29260().method_10308(field_41791, var1.method_1782().method_1046());
    }
 
-   private static void method_37413(class_6486 var0, class_1331 var1, class_240 var2) {
+   private static void method_37413(World var0, class_1331 var1, Direction var2) {
       class_2921 var5 = var1.method_6089();
       class_291 var6 = var0.method_29537();
       int var7 = var6.method_1295(class_291.field_1055);
@@ -195,7 +195,7 @@ public class class_8151 extends class_4314 {
             }
          }
 
-         var2 = var8.<class_240>method_10313(field_41791);
+         var2 = var8.<Direction>method_10313(field_41791);
       }
 
       if (var7 <= 0) {

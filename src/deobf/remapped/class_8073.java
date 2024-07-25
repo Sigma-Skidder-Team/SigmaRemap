@@ -18,8 +18,8 @@ import org.apache.logging.log4j.Logger;
 
 public class class_8073 {
    private static final Logger field_41294 = LogManager.getLogger();
-   private static final Map<Class<? extends class_8145>, Integer> field_41302 = Maps.newHashMap();
-   private final class_8145 field_41298;
+   private static final Map<Class<? extends Entity>, Integer> field_41302 = Maps.newHashMap();
+   private final Entity field_41298;
    private final Map<Integer, class_9659<?>> field_41295 = Maps.newHashMap();
    private final ReadWriteLock field_41293 = new ReentrantReadWriteLock();
    private boolean field_41299 = true;
@@ -27,11 +27,11 @@ public class class_8073 {
    public class_6325 field_41296 = class_5630.field_28568;
    public class_1331 field_41301 = class_1331.field_7306;
 
-   public class_8073(class_8145 var1) {
+   public class_8073(Entity var1) {
       this.field_41298 = var1;
    }
 
-   public static <T> class_7821<T> method_36641(Class<? extends class_8145> var0, class_1720<T> var1) {
+   public static <T> class_7821<T> method_36641(Class<? extends Entity> var0, class_1720<T> var1) {
       if (field_41294.isDebugEnabled()) {
          try {
             Class var4 = Class.forName(Thread.currentThread().getStackTrace()[2].getClassName());
@@ -49,7 +49,7 @@ public class class_8073 {
          int var5 = 0;
          Class var6 = var0;
 
-         while (var6 != class_8145.class) {
+         while (var6 != Entity.class) {
             var6 = var6.getSuperclass();
             if (field_41302.containsKey(var6)) {
                var5 = field_41302.get(var6) + 1;

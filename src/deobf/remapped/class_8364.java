@@ -22,7 +22,7 @@ public class class_8364 extends class_5920<class_5834> {
          class_2522 var9 = var1.method_28262(var8);
          if (var9.method_8350(class_4783.field_23870)) {
             class_6722 var10 = (class_6722)var9.method_8360();
-            var10.method_30850(var1, var8, (class_240)null);
+            var10.method_30850(var1, var8, (Direction)null);
          }
       }
    }

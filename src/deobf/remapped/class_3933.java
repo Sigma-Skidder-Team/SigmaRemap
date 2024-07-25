@@ -10,7 +10,7 @@ public class class_3933 extends class_6414 {
    }
 
    @Override
-   public void method_29286(class_6486 var1, class_1331 var2, class_8145 var3) {
+   public void method_29286(World var1, class_1331 var2, Entity var3) {
       if (!var3.method_37087() && var3 instanceof class_5834 && !class_2931.method_13407((class_5834)var3)) {
          var3.method_37181(class_6199.field_31675, 1.0F);
       }
@@ -24,8 +24,8 @@ public class class_3933 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
-      if (var2 == class_240.field_817 && var3.method_8350(class_4783.field_23900)) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+      if (var2 == Direction.field_817 && var3.method_8350(class_4783.field_23900)) {
          var4.method_43367().method_14011(var5, this, 20);
       }
 
@@ -59,7 +59,7 @@ public class class_3933 extends class_6414 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       var2.method_43367().method_14011(var3, this, 20);
    }
 }

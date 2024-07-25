@@ -8,7 +8,7 @@ import org.apache.logging.log4j.util.Supplier;
 public abstract class class_3757 {
    private static final Logger field_18360 = LogManager.getLogger();
    private final class_133<?> field_18362;
-   public class_6486 field_18364;
+   public World field_18364;
    public class_1331 field_18358 = class_1331.field_7306;
    public boolean field_18361;
    private class_2522 field_18363;
@@ -19,11 +19,11 @@ public abstract class class_3757 {
    }
 
    @Nullable
-   public class_6486 method_17402() {
+   public World method_17402() {
       return this.field_18364;
    }
 
-   public void method_17393(class_6486 var1, class_1331 var2) {
+   public void method_17393(World var1, class_1331 var2) {
       this.field_18364 = var1;
       this.field_18358 = var2.method_6072();
    }

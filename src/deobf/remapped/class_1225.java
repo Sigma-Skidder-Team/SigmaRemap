@@ -42,7 +42,7 @@ public class class_1225 {
       method_5445(var1, var0, var2, 2);
    }
 
-   public static void method_5445(class_5834 var0, class_8145 var1, float var2, int var3) {
+   public static void method_5445(class_5834 var0, Entity var1, float var2, int var3) {
       class_6651 var6 = new class_6651(new class_4843(var1, false), var2, var3);
       var0.method_26525().method_5105(class_6044.field_30874, new class_4843(var1, true));
       var0.method_26525().method_5105(class_6044.field_30889, var6);

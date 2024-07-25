@@ -42,7 +42,7 @@ public final class class_9670 {
 
       label174:
       for (class_4099 var17 : var8.method_11829(this.field_49254, var9, var10, this.field_49262)) {
-         class_240 var18 = class_195.method_860(var17.field_19967);
+         Direction var18 = class_195.method_860(var17.field_19967);
          class_1331 var19 = var17.field_19965;
          class_1331 var20 = var19.method_6098(var18);
          int var21 = var19.method_12165() - var15;

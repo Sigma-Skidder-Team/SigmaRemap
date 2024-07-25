@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
 import java.util.Random;
 
-public class class_1898<T extends class_8145> extends class_5272<T> {
+public class class_1898<T extends Entity> extends class_5272<T> {
    private static String[] field_9694;
    private final class_1549[] field_9695 = new class_1549[9];
    private final ImmutableList<class_1549> field_9696;

@@ -10,7 +10,7 @@ public class class_1298 extends class_6788 {
       this.method_29284(this.field_32751.method_36446().method_10308(field_7159, class_3665.field_17829).method_10308(field_7158, Boolean.valueOf(false)));
    }
 
-   public boolean method_5888(class_6486 var1, class_1331 var2, class_2522 var3, boolean var4, int var5) {
+   public boolean method_5888(World var1, class_1331 var2, class_2522 var3, boolean var4, int var5) {
       if (var5 >= 8) {
          return false;
       } else {
@@ -85,7 +85,7 @@ public class class_1298 extends class_6788 {
       }
    }
 
-   public boolean method_5887(class_6486 var1, class_1331 var2, boolean var3, int var4, class_3665 var5) {
+   public boolean method_5887(World var1, class_1331 var2, boolean var3, int var4, class_3665 var5) {
       class_2522 var8 = var1.method_28262(var2);
       if (!var8.method_8350(this)) {
          return false;
@@ -108,7 +108,7 @@ public class class_1298 extends class_6788 {
    }
 
    @Override
-   public void method_31118(class_2522 var1, class_6486 var2, class_1331 var3, class_6414 var4) {
+   public void method_31118(class_2522 var1, World var2, class_1331 var3, class_6414 var4) {
       boolean var7 = var1.<Boolean>method_10313(field_7158);
       boolean var8 = var2.method_29576(var3) || this.method_5888(var2, var3, var1, true, 0) || this.method_5888(var2, var3, var1, false, 0);
       if (var8 != var7) {

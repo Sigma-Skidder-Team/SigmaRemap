@@ -6,7 +6,7 @@ public class class_6174 extends class_1173 {
    private static String[] field_31580;
    private class_128 field_31581;
 
-   public class_6174(class_6629<? extends class_6174> var1, class_6486 var2) {
+   public class_6174(class_6629<? extends class_6174> var1, World var2) {
       super(var1, var2);
    }
 

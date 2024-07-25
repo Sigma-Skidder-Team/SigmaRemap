@@ -114,10 +114,10 @@ public class class_7427 {
       }
    }
 
-   private static int method_33820(class_9155 var0, Collection<? extends class_8145> var1, int var2, class_6098 var3) throws CommandSyntaxException {
+   private static int method_33820(class_9155 var0, Collection<? extends Entity> var1, int var2, class_6098 var3) throws CommandSyntaxException {
       ArrayList var6 = Lists.newArrayListWithCapacity(var1.size());
 
-      for (class_8145 var8 : var1) {
+      for (Entity var8 : var1) {
          if (var8 instanceof class_9359) {
             ((class_9359)var8).field_3869.method_18877();
          }
@@ -136,7 +136,7 @@ public class class_7427 {
          } else {
             var0.method_42196(
                new TranslationTextComponent(
-                  "commands.replaceitem.entity.success.single", ((class_8145)var6.iterator().next()).method_19839(), var3.method_28001()
+                  "commands.replaceitem.entity.success.single", ((Entity)var6.iterator().next()).method_19839(), var3.method_28001()
                ),
                true
             );

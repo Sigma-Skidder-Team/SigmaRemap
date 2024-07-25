@@ -14,7 +14,7 @@ public class class_9892 extends class_4285<class_946> {
       class_4783.field_23471,
       class_4783.field_23617
    );
-   private static final class_240[] field_50158 = class_240.values();
+   private static final Direction[] field_50158 = Direction.values();
 
    public class_9892(Codec<class_946> var1) {
       super(var1);
@@ -59,9 +59,9 @@ public class class_9892 extends class_4285<class_946> {
       } else if (field_50159.contains(var5.method_8360())) {
          return false;
       } else {
-         for (class_240 var9 : field_50158) {
+         for (Direction var9 : field_50158) {
             boolean var10 = var0.method_28262(var1.method_6098(var9)).method_8345();
-            if (var10 && var9 != class_240.field_817 || !var10 && var9 == class_240.field_817) {
+            if (var10 && var9 != Direction.field_817 || !var10 && var9 == Direction.field_817) {
                return false;
             }
          }

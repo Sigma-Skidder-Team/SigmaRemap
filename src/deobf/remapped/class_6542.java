@@ -4,7 +4,7 @@ public class class_6542 extends class_7164<class_4653, class_379<class_4653>> {
    private static final Identifier field_33266 = new Identifier("textures/entity/wither/wither_invulnerable.png");
    private static final Identifier field_33268 = new Identifier("textures/entity/wither/wither.png");
 
-   public class_6542(class_6122 var1) {
+   public class_6542(EntityRenderDispatcher var1) {
       super(var1, new class_379<class_4653>(0.0F), 1.0F);
       this.method_29100(new class_3369(this));
    }

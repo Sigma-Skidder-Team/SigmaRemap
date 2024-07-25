@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import remapped.class_8145;
+import remapped.Entity;
 import remapped.class_9155;
 
 public class TranslationTextComponent extends TextComponent implements ITargetedTextComponent {
@@ -143,7 +143,7 @@ public class TranslationTextComponent extends TextComponent implements ITargeted
    }
 
    @Override
-   public IFormattableTextComponent func_230535_a_(class_9155 p_230535_1_, class_8145 p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
+   public IFormattableTextComponent func_230535_a_(class_9155 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       Object[] i = new Object[this.formatArgs.length];
 
       for (int object = 0; object < i.length; object++) {

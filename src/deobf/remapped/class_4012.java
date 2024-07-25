@@ -25,7 +25,7 @@ public class class_4012 extends class_3599 {
             .field_41768
             .method_25871(this.field_19481, this.field_19482, this.field_19482.method_37241().method_18899(16.0, 64.0, 16.0));
          if (!var3.isEmpty()) {
-            var3.sort(Comparator.<class_8145, Double>comparing(class_8145::method_37309).reversed());
+            var3.sort(Comparator.<Entity, Double>comparing(Entity::method_37309).reversed());
 
             for (class_704 var5 : var3) {
                if (this.field_19482.method_26609(var5, class_4931.field_25526)) {

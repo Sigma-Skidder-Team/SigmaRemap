@@ -4,7 +4,7 @@ public class class_9189 {
    private static String[] field_47006;
    private static MinecraftClient field_47005 = MinecraftClient.getInstance();
 
-   public static double method_42352(class_8145 var0) {
+   public static double method_42352(Entity var0) {
       double var3 = method_42357(field_47005.field_9632).field_42648 - method_42357(var0).field_42648;
       double var5 = method_42357(field_47005.field_9632).field_42646 - method_42357(var0).field_42646;
       double var7 = method_42357(field_47005.field_9632).field_42649 - method_42357(var0).field_42649;
@@ -18,7 +18,7 @@ public class class_9189 {
       return var3 * var3 + var5 * var5 + var7 * var7;
    }
 
-   public static class_8328 method_42357(class_8145 var0) {
+   public static class_8328 method_42357(Entity var0) {
       return new class_8328(
          var0.field_41754 + (var0.method_37302() - var0.field_41754) * (double)field_47005.field_9616.field_32600,
          var0.field_41713 + (var0.method_37309() - var0.field_41713) * (double)field_47005.field_9616.field_32600,
@@ -26,7 +26,7 @@ public class class_9189 {
       );
    }
 
-   public static class_8328 method_42353(class_8145 var0) {
+   public static class_8328 method_42353(Entity var0) {
       class_8328 var3 = method_42357(var0);
       return new class_8328(
          var3.field_42648 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61(),

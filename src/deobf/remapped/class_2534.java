@@ -20,7 +20,7 @@ public class class_2534 extends class_9128 {
    private int field_12555;
    private int field_12552;
    private int field_12559;
-   public static class_8145 field_12558;
+   public static Entity field_12558;
    public static class_3357 field_12556;
    private List<class_3357> field_12560;
    public static class_1988 field_12563 = new class_1988(0.0F, 0.0F);
@@ -33,7 +33,7 @@ public class class_2534 extends class_9128 {
    private float field_12566;
    private boolean field_12564;
    private double[] field_12550;
-   public HashMap<class_8145, class_2440> field_12568 = new HashMap<class_8145, class_2440>();
+   public HashMap<Entity, class_2440> field_12568 = new HashMap<Entity, class_2440>();
 
    public class_2534() {
       super(class_5664.field_28714, "KillAura", "Automatically attacks entities");
@@ -250,7 +250,7 @@ public class class_2534 extends class_9128 {
             Entry var5 = (Entry)var4.next();
 
             for (class_3357 var7 : this.field_12560) {
-               if (!((class_8145)var5.getKey()).equals(var7.method_15377())) {
+               if (!((Entity)var5.getKey()).equals(var7.method_15377())) {
                }
             }
 
@@ -271,7 +271,7 @@ public class class_2534 extends class_9128 {
          }
 
          for (Entry var11 : this.field_12568.entrySet()) {
-            this.method_11553((class_8145)var11.getKey());
+            this.method_11553((Entity)var11.getKey());
          }
       }
    }
@@ -290,7 +290,7 @@ public class class_2534 extends class_9128 {
          class_527 var11 = (class_527)var4;
          if (var11.method_2565() && (var11.field_3209 != 0 || var11.field_3213 != 0 || var11.field_3207 != 0)) {
             for (Entry var7 : this.field_12561.field_44743.entrySet()) {
-               class_8145 var8 = (class_8145)var7.getKey();
+               Entity var8 = (Entity)var7.getKey();
                List var9 = (List)var7.getValue();
                if (var11.method_2564(field_46692.field_9601) == var8) {
                   class_1343 var10 = var8.field_41700.method_6209(2.4414062E-4F);
@@ -301,7 +301,7 @@ public class class_2534 extends class_9128 {
       }
    }
 
-   public void method_11553(class_8145 var1) {
+   public void method_11553(Entity var1) {
       GL11.glPushMatrix();
       GL11.glEnable(2848);
       GL11.glDisable(3553);
@@ -452,7 +452,7 @@ public class class_2534 extends class_9128 {
       }
    }
 
-   private class_8145 method_11557(List<class_3357> var1) {
+   private Entity method_11557(List<class_3357> var1) {
       var1 = this.field_12561.method_40100(var1);
       return !var1.isEmpty() && ((class_3357)var1.get(0)).method_15377().method_37175(field_46692.field_9632) <= this.method_42002("Block Range")
          ? ((class_3357)var1.get(0)).method_15377()
@@ -579,7 +579,7 @@ public class class_2534 extends class_9128 {
    }
 
    private void method_11545() {
-      class_8145 var3 = field_12556.method_15377();
+      Entity var3 = field_12556.method_15377();
       class_1988 var4 = class_7211.method_33010(var3, !this.method_42007("Through walls"));
       float var5 = class_7211.method_33009(this.field_12567.field_10069, var4.field_10069);
       float var6 = var4.field_10067 - this.field_12567.field_10067;
@@ -599,7 +599,7 @@ public class class_2534 extends class_9128 {
                this.field_12567.field_10069 += var31;
                this.field_12566 = var31;
             } else if (Math.abs(var5) > 10.0F) {
-               class_8145 var27 = class_314.method_1458(
+               Entity var27 = class_314.method_1458(
                   this.field_12567.field_10067, this.field_12567.field_10069, this.method_42002("Range"), (double)this.method_42002("Hit box expand")
                );
                double var11 = var27 == null ? 13.4 : 1.4;
@@ -627,7 +627,7 @@ public class class_2534 extends class_9128 {
                this.field_12567.field_10067 = (float)((double)this.field_12567.field_10067 + (double)var6 * 0.81 + this.method_11543(-2.0, 2.0));
             }
 
-            class_8145 var28 = class_314.method_1458(
+            Entity var28 = class_314.method_1458(
                this.field_12569.field_10067, this.field_12569.field_10069, this.method_42002("Range"), (double)this.method_42002("Hit box expand")
             );
             if (var28 != null && (double)this.field_12559 > this.method_11543(2.0, 5.0)) {

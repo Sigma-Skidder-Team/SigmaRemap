@@ -332,7 +332,7 @@ public class class_9209 {
       return var5.size();
    }
 
-   private static void method_42525(class_8145 var0, List<class_6098> var1, int var2, int var3, List<class_6098> var4) {
+   private static void method_42525(Entity var0, List<class_6098> var1, int var2, int var3, List<class_6098> var4) {
       for (int var7 = 0; var7 < var3; var7++) {
          class_6098 var8 = var7 >= var1.size() ? class_6098.field_31203 : (class_6098)var1.get(var7);
          if (var0.method_37166(var2 + var7, var8.method_27973())) {
@@ -341,10 +341,10 @@ public class class_9209 {
       }
    }
 
-   private static int method_42521(Collection<? extends class_8145> var0, int var1, int var2, List<class_6098> var3, class_3119 var4) throws CommandSyntaxException {
+   private static int method_42521(Collection<? extends Entity> var0, int var1, int var2, List<class_6098> var3, class_3119 var4) throws CommandSyntaxException {
       ArrayList var7 = Lists.newArrayListWithCapacity(var3.size());
 
-      for (class_8145 var9 : var0) {
+      for (Entity var9 : var0) {
          if (!(var9 instanceof class_9359)) {
             method_42525(var9, var3, var1, var2, var7);
          } else {
@@ -389,7 +389,7 @@ public class class_9209 {
    }
 
    private static class_6098 method_42527(class_9155 var0, class_6943 var1) throws CommandSyntaxException {
-      class_8145 var4 = var0.method_42178();
+      Entity var4 = var0.method_42178();
       if (!(var4 instanceof class_5834)) {
          throw field_47102.create(var4.method_19839());
       } else {
@@ -412,12 +412,12 @@ public class class_9209 {
       return var3.method_29152(var0, var11, var2x -> method_42512(var6, var2x, var8.method_8360().method_10786()));
    }
 
-   private static int method_42510(CommandContext<class_9155> var0, class_8145 var1, class_6374 var2) throws CommandSyntaxException {
+   private static int method_42510(CommandContext<class_9155> var0, Entity var1, class_6374 var2) throws CommandSyntaxException {
       if (var1 instanceof class_5834) {
          Identifier var5 = ((class_5834)var1).method_26591();
          class_9155 var6 = (class_9155)var0.getSource();
          class_8480 var7 = new class_8480(var6.method_42198());
-         class_8145 var8 = var6.method_42200();
+         Entity var8 = var6.method_42200();
          if (var8 instanceof class_704) {
             var7.method_39065(class_8712.field_44675, (class_704)var8);
          }

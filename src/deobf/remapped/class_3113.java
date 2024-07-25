@@ -10,7 +10,7 @@ public class class_3113 extends class_3259 {
       class_1013.field_5199, class_1013.field_5307, class_1013.field_5271, class_1013.field_5234, class_1013.field_5292
    };
 
-   public class_3113(Screen var1, class_8881 var2) {
+   public class_3113(Screen var1, GameOptions var2) {
       super(var1, var2, new TranslationTextComponent("options.mouse_settings.title"));
    }
 

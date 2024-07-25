@@ -3,11 +3,11 @@ package remapped;
 public class class_5340 extends class_292 {
    private static String[] field_27230;
 
-   public class_5340(class_6629<? extends class_5340> var1, class_6486 var2) {
+   public class_5340(class_6629<? extends class_5340> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_5340(class_6486 var1, double var2, double var4, double var6) {
+   public class_5340(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34221, var2, var4, var6, var1);
    }
 
@@ -31,7 +31,7 @@ public class class_5340 extends class_292 {
 
    @Override
    public class_2522 method_4752() {
-      return class_4783.field_23471.method_29260().method_10308(class_6942.field_35692, class_240.field_818);
+      return class_4783.field_23471.method_29260().method_10308(class_6942.field_35692, Direction.field_818);
    }
 
    @Override

@@ -8,7 +8,7 @@ public class class_5879 extends class_7164<class_9310, class_9166<class_9310>> {
       new Identifier("textures/entity/llama/gray.png")
    };
 
-   public class_5879(class_6122 var1) {
+   public class_5879(EntityRenderDispatcher var1) {
       super(var1, new class_9166<class_9310>(0.0F), 0.7F);
       this.method_29100(new class_6418(this));
    }

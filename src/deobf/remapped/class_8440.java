@@ -15,7 +15,7 @@ public class class_8440 extends class_2451 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, class_6486 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       class_1967.method_9064(var1, var3);
    }
 
@@ -30,7 +30,7 @@ public class class_8440 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       var2.method_26462(var3);
       return class_954.<class_6098>method_4206(var6);

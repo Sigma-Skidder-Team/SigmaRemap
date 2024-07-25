@@ -20,7 +20,7 @@ public class class_9248 extends class_3418 {
          for (int var13 = 0; var13 <= var7; var13++) {
             for (int var14 = 0; var14 <= var9; var14++) {
                var11.method_13362(var12 + var3.method_12173(), var13 + var3.method_12165(), var14 + var3.method_12185());
-               var11.method_13369(class_240.field_802, var10);
+               var11.method_13369(Direction.field_802, var10);
                if ((var12 != 0 && var12 != var8 || var13 != 0 && var13 != var7)
                   && (var14 != 0 && var14 != var9 || var13 != 0 && var13 != var7)
                   && (var12 != 0 && var12 != var8 || var14 != 0 && var14 != var9)

@@ -29,7 +29,7 @@ public class class_3541 extends class_2840<class_5408> {
    private final Map<Identifier, class_7633> field_17318 = Maps.newHashMap();
    private final class_132 field_17314;
 
-   public class_3541(class_7832 var1, class_8881 var2) {
+   public class_3541(class_7832 var1, GameOptions var2) {
       this.field_17314 = new class_132(this, var2, var1);
    }
 
@@ -128,7 +128,7 @@ public class class_3541 extends class_2840<class_5408> {
       this.field_17314.method_429(var1, var2);
    }
 
-   public void method_16348(class_9071 var1) {
+   public void method_16348(Camera var1) {
       this.field_17314.method_437(var1);
    }
 

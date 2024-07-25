@@ -47,7 +47,7 @@ public class class_2672 extends class_4285<class_1941> {
    private static boolean method_12038(class_9379 var0, class_2921 var1) {
       while (true) {
          var1.method_13367(0, -1, 0);
-         if (!class_6486.method_29556(var1)) {
+         if (!World.method_29556(var1)) {
             if (var0.method_28262(var1).method_8345()) {
                continue;
             }
@@ -75,7 +75,7 @@ public class class_2672 extends class_4285<class_1941> {
             var0.method_7513(var2, class_4783.field_23671.method_29260(), 2);
          }
 
-         var2.method_13368(class_240.field_817);
+         var2.method_13368(Direction.field_817);
       }
    }
 

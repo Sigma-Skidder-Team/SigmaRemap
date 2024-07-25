@@ -98,8 +98,8 @@ public class class_9366 extends class_9128 {
             label57:
             for (class_1331 var13 : this.method_43317(var1)) {
                if (field_46692.field_9601.method_28262(var13).method_8360() == class_4783.field_23184) {
-                  for (class_240 var11 : class_240.values()) {
-                     if (var11 != class_240.field_817
+                  for (Direction var11 : Direction.values()) {
+                     if (var11 != Direction.field_817
                         && field_46692.field_9601.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23881
                         && field_46692.field_9601.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23433) {
                         continue label57;

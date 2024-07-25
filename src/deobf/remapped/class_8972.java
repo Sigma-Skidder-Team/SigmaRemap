@@ -17,7 +17,7 @@ public enum class_8972 implements class_1342 {
    field_45961("is_wet");
 
    private String field_45963;
-   private class_6122 field_45960;
+   private EntityRenderDispatcher field_45960;
    private static final class_8972[] field_45975 = values();
 
    private class_8972(String var3) {

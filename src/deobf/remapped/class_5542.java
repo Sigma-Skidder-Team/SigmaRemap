@@ -14,7 +14,7 @@ public class class_5542 extends class_5467 {
    private static final class_7821<Optional<UUID>> field_28235 = class_8073.<Optional<UUID>>method_36641(class_5542.class, class_2734.field_13348);
    private static final class_7821<Optional<UUID>> field_28248 = class_8073.<Optional<UUID>>method_36641(class_5542.class, class_2734.field_13348);
    private static final Predicate<class_91> field_28236 = var0 -> !var0.method_258() && var0.method_37330();
-   private static final Predicate<class_8145> field_28241 = var0 -> {
+   private static final Predicate<Entity> field_28241 = var0 -> {
       if (!(var0 instanceof class_5834)) {
          return false;
       } else {
@@ -22,8 +22,8 @@ public class class_5542 extends class_5467 {
          return var3.method_26455() != null && var3.method_26581() < var3.field_41697 + 600;
       }
    };
-   private static final Predicate<class_8145> field_28239 = var0 -> var0 instanceof class_3024 || var0 instanceof class_7272;
-   private static final Predicate<class_8145> field_28249 = var0 -> !var0.method_37073() && class_3572.field_17479.test(var0);
+   private static final Predicate<Entity> field_28239 = var0 -> var0 instanceof class_3024 || var0 instanceof class_7272;
+   private static final Predicate<Entity> field_28249 = var0 -> !var0.method_37073() && class_3572.field_17479.test(var0);
    private class_3599 field_28246;
    private class_3599 field_28251;
    private class_3599 field_28250;
@@ -33,7 +33,7 @@ public class class_5542 extends class_5467 {
    private float field_28237;
    private int field_28243;
 
-   public class_5542(class_6629<? extends class_5542> var1, class_6486 var2) {
+   public class_5542(class_6629<? extends class_5542> var1, World var2) {
       super(var1, var2);
       this.field_29919 = new class_3582(this);
       this.field_29900 = new class_6989(this);
@@ -557,7 +557,7 @@ public class class_5542 extends class_5467 {
    public class_8461 method_26918() {
       if (!this.method_26507()) {
          if (!this.field_41768.method_29602() && this.field_41717.nextFloat() < 0.1F) {
-            List var3 = this.field_41768.<class_8145>method_25869(class_704.class, this.method_37241().method_18899(16.0, 16.0, 16.0), class_3572.field_17483);
+            List var3 = this.field_41768.<Entity>method_25869(class_704.class, this.method_37241().method_18899(16.0, 16.0, 16.0), class_3572.field_17483);
             if (var3.isEmpty()) {
                return class_463.field_2643;
             }

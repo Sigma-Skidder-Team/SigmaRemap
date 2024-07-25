@@ -25,7 +25,7 @@ public class class_1704 extends class_9128 {
    private float field_8833;
    public class_2440 field_8816;
    public class_1343 field_8820;
-   private class_8145 field_8822;
+   private Entity field_8822;
 
    public class_1704() {
       super(class_5664.field_28711, "Test", "A mod for testing things");
@@ -202,7 +202,7 @@ public class class_1704 extends class_9128 {
             }
          } else {
             class_3398 var18 = (class_3398)var4;
-            class_8145 var6 = var18.method_15695(field_46692.field_9601);
+            Entity var6 = var18.method_15695(field_46692.field_9601);
             if (var6 != null) {
                var6.method_45509().getString();
             } else {
@@ -287,12 +287,12 @@ public class class_1704 extends class_9128 {
       }
    }
 
-   public List<class_8145> method_7664(float var1) {
+   public List<Entity> method_7664(float var1) {
       List var4 = class_314.method_1440();
       Iterator var5 = var4.iterator();
 
       while (var5.hasNext()) {
-         class_8145 var6 = (class_8145)var5.next();
+         Entity var6 = (Entity)var5.next();
          if (var6 != field_46692.field_9632) {
             if (!SigmaMainClass.method_3328().method_3307().method_14460(var6)) {
                if (var6 instanceof class_5834) {
@@ -338,13 +338,13 @@ public class class_1704 extends class_9128 {
       return var4;
    }
 
-   public class_8145 method_7656(float var1) {
+   public Entity method_7656(float var1) {
       List var4 = class_314.method_1440();
-      class_8145 var5 = null;
+      Entity var5 = null;
       Iterator var6 = var4.iterator();
 
       while (var6.hasNext()) {
-         class_8145 var7 = (class_8145)var6.next();
+         Entity var7 = (Entity)var6.next();
          if (var7 != field_46692.field_9632) {
             if (!SigmaMainClass.method_3328().method_3307().method_14460(var7)) {
                if (var7 instanceof class_5834) {
@@ -389,7 +389,7 @@ public class class_1704 extends class_9128 {
       return var5;
    }
 
-   public static float[] method_7647(class_8145 var0) {
+   public static float[] method_7647(Entity var0) {
       double var3 = var0.method_37302() - field_46692.field_9632.method_37302();
       double var5 = var0.method_37156() - field_46692.field_9632.method_37156();
       double var7 = field_46692.field_9632.method_37309() + (double)field_46692.field_9632.method_37277() - (var0.method_37309() + (double)var0.method_37277());
@@ -422,7 +422,7 @@ public class class_1704 extends class_9128 {
       return var1 + Math.random() * (var3 - var1);
    }
 
-   public static float method_7649(float var0, class_8145 var1, double var2) {
+   public static float method_7649(float var0, Entity var1, double var2) {
       double var6 = var1.method_37302() - field_46692.field_9632.method_37302();
       double var8 = var1.method_37156() - field_46692.field_9632.method_37156();
       double var10 = var2 - 2.2 + (double)var1.method_37277() - field_46692.field_9632.method_37309();

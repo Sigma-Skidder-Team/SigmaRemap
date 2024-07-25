@@ -78,10 +78,10 @@ public class class_543 extends class_7896 {
          }
       }
 
-      class_2522 var19 = class_4783.field_23859.method_29260().method_10308(class_3049.field_14946, class_240.field_818);
-      class_2522 var20 = class_4783.field_23859.method_29260().method_10308(class_3049.field_14946, class_240.field_800);
-      class_2522 var21 = class_4783.field_23859.method_29260().method_10308(class_3049.field_14946, class_240.field_804);
-      class_2522 var13 = class_4783.field_23859.method_29260().method_10308(class_3049.field_14946, class_240.field_809);
+      class_2522 var19 = class_4783.field_23859.method_29260().method_10308(class_3049.field_14946, Direction.field_818);
+      class_2522 var20 = class_4783.field_23859.method_29260().method_10308(class_3049.field_14946, Direction.field_800);
+      class_2522 var21 = class_4783.field_23859.method_29260().method_10308(class_3049.field_14946, Direction.field_804);
+      class_2522 var13 = class_4783.field_23859.method_29260().method_10308(class_3049.field_14946, Direction.field_809);
       this.method_32500(var1, var5, 0, 0, 0, 4, 9, 4, class_4783.field_23459.method_29260(), class_4783.field_23184.method_29260(), false);
       this.method_32500(var1, var5, 1, 10, 1, 3, 10, 3, class_4783.field_23459.method_29260(), class_4783.field_23459.method_29260(), false);
       this.method_32529(var1, var19, 2, 10, 0, var5);
@@ -363,7 +363,7 @@ public class class_543 extends class_7896 {
       this.method_32529(var1, class_4783.field_23250.method_29260(), 10, -10, 13, var5);
       this.method_32529(var1, class_4783.field_23863.method_29260(), 10, -11, 13, var5);
 
-      for (class_240 var15 : class_9594.field_48893) {
+      for (Direction var15 : class_9594.field_48893) {
          if (!this.field_3261[var15.method_1031()]) {
             int var16 = var15.method_1041() * 2;
             int var17 = var15.method_1034() * 2;

@@ -42,9 +42,9 @@ public class class_6023 {
    public static final class_6720 field_30730 = class_6720.method_30845("south");
    public static final class_6720 field_30675 = class_6720.method_30845("west");
    public static final class_6162 field_30674 = class_6162.method_28251(
-      "facing", class_240.field_818, class_240.field_804, class_240.field_800, class_240.field_809, class_240.field_817, class_240.field_802
+      "facing", Direction.field_818, Direction.field_804, Direction.field_800, Direction.field_809, Direction.field_817, Direction.field_802
    );
-   public static final class_6162 field_30743 = class_6162.method_28250("facing", var0 -> var0 != class_240.field_817);
+   public static final class_6162 field_30743 = class_6162.method_28250("facing", var0 -> var0 != Direction.field_817);
    public static final class_6162 field_30701 = class_6162.method_28250("facing", class_9594.field_48893);
    public static final class_7360<class_7660> field_30677 = class_7360.<class_7660>method_33522("orientation", class_7660.class);
    public static final class_7360<class_1895> field_30757 = class_7360.<class_1895>method_33522("face", class_1895.class);

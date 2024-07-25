@@ -307,13 +307,13 @@ public class class_3062 extends class_2089 {
    }
 
    private void method_13989(class_7966 var1) {
-      class_8881 var4 = this.field_15040.field_9577;
+      GameOptions var4 = this.field_15040.field_9577;
       if (var4.method_40867().method_42383()
          && (this.field_15040.field_9647.method_42158() != class_4666.field_22756 || this.method_14001(this.field_15040.field_9587))) {
          if (var4.field_45470 && !var4.field_45567 && !this.field_15040.field_9632.method_3179() && !var4.field_45500) {
             class_3542.method_16438();
             class_3542.method_16413((float)(this.field_15028 / 2), (float)(this.field_15049 / 2), (float)this.method_9777());
-            class_9071 var11 = this.field_15040.gameRenderer.method_35949();
+            Camera var11 = this.field_15040.gameRenderer.method_35949();
             class_3542.method_16410(var11.method_41638(), -1.0F, 0.0F, 0.0F);
             class_3542.method_16410(var11.method_41640(), 0.0F, 1.0F, 0.0F);
             class_3542.method_16403(-1.0F, -1.0F, -1.0F);
@@ -673,7 +673,7 @@ public class class_3062 extends class_2089 {
    private class_5834 method_13981() {
       class_704 var3 = this.method_13976();
       if (var3 != null) {
-         class_8145 var4 = var3.method_37243();
+         Entity var4 = var3.method_37243();
          if (var4 == null) {
             return null;
          }
@@ -936,14 +936,14 @@ public class class_3062 extends class_2089 {
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
    }
 
-   private void method_14006(class_8145 var1) {
+   private void method_14006(Entity var1) {
       if (var1 != null) {
          float var4 = class_9299.method_42828(1.0F - var1.method_37193(), 0.0F, 1.0F);
          this.field_15036 = (float)((double)this.field_15036 + (double)(var4 - this.field_15036) * 0.01);
       }
    }
 
-   private void method_13996(class_8145 var1) {
+   private void method_13996(Entity var1) {
       if (class_3111.method_14292()) {
          class_2098 var4 = this.field_15040.field_9601.method_6673();
          float var5 = (float)var4.method_9809(var1);
@@ -1053,7 +1053,7 @@ public class class_3062 extends class_2089 {
       }
 
       this.field_15042++;
-      class_8145 var3 = this.field_15040.method_8516();
+      Entity var3 = this.field_15040.method_8516();
       if (var3 != null) {
          this.method_14006(var3);
       }

@@ -36,7 +36,7 @@ public class class_5540 extends class_4285<class_9253> {
    private boolean method_25154(class_9379 var1, class_1331 var2) {
       class_2921 var5 = new class_2921();
 
-      for (class_240 var9 : class_240.values()) {
+      for (Direction var9 : Direction.values()) {
          var5.method_13371(var2, var9);
          if (var1.method_28262(var5).method_8345()) {
             return true;

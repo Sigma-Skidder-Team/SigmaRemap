@@ -31,7 +31,7 @@ public class class_6879 extends class_9128 {
       if (this.method_42015()) {
          class_3542.method_16420(33986, 240.0F, 240.0F);
 
-         for (class_8145 var5 : class_314.method_1440()) {
+         for (Entity var5 : class_314.method_1440()) {
             if (var5 instanceof class_91) {
                class_91 var6 = (class_91)var5;
                if (!(var6.method_264().method_27960() instanceof class_6201)
@@ -107,7 +107,7 @@ public class class_6879 extends class_9128 {
       return !(var5 > 180.0F) ? var5 : 360.0F - var5;
    }
 
-   public void method_31552(double var1, double var3, double var5, class_8145 var7, float var8) {
+   public void method_31552(double var1, double var3, double var5, Entity var7, float var8) {
       class_3384 var11 = class_5320.field_27141;
       String var12 = var7.method_45509().getUnformattedComponentText();
       float var13 = (float)(var1 - field_46692.gameRenderer.method_35949().method_41627().method_61());

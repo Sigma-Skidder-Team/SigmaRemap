@@ -60,7 +60,7 @@ public class class_8386<T extends class_5834, M extends class_6521<T> & class_86
             }
 
             var1.method_36065(-0.5, 0.0, -0.5);
-            class_903.method_3866((class_240)null, 180.0F, ((class_8550)((class_6201)var14).method_28392()).method_39336(), var22, var5, var1, var2, var3);
+            class_903.method_3866((Direction)null, 180.0F, ((class_8550)((class_6201)var14).method_28392()).method_39336(), var22, var5, var1, var2, var3);
          } else if (!(var14 instanceof class_8228) || ((class_8228)var14).method_37669() != class_6943.field_35704) {
             float var20 = 0.625F;
             var1.method_36065(0.0, -0.25, 0.0);

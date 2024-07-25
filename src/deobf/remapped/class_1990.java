@@ -20,7 +20,7 @@ public class class_1990 extends class_3266 {
 
    public class_1990(boolean var1, class_3073 var2) {
       super(var2);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_16180, class_240.field_818).method_10308(field_10077, Boolean.valueOf(false)));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_16180, Direction.field_818).method_10308(field_10077, Boolean.valueOf(false)));
       this.field_10078 = var1;
    }
 
@@ -29,7 +29,7 @@ public class class_1990 extends class_3266 {
    @Override
    public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
       if (var1.<Boolean>method_10313(field_10077)) {
-         switch ((class_240)var1.method_10313(field_16180)) {
+         switch ((Direction)var1.method_10313(field_16180)) {
             case field_802:
                return field_10084;
             case field_817:
@@ -50,21 +50,21 @@ public class class_1990 extends class_3266 {
    }
 
    @Override
-   public void method_29257(class_6486 var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
       if (!var1.field_33055) {
          this.method_9170(var1, var2, var3);
       }
    }
 
    @Override
-   public void method_10801(class_2522 var1, class_6486 var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
       if (!var2.field_33055) {
          this.method_9170(var2, var3, var1);
       }
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var4.method_8350(var1.method_8360()) && !var2.field_33055 && var2.method_28260(var3) == null) {
          this.method_9170(var2, var3, var1);
       }
@@ -75,8 +75,8 @@ public class class_1990 extends class_3266 {
       return this.method_29260().method_10308(field_16180, var1.method_1782().method_1046()).method_10308(field_10077, Boolean.valueOf(false));
    }
 
-   private void method_9170(class_6486 var1, class_1331 var2, class_2522 var3) {
-      class_240 var6 = var3.<class_240>method_10313(field_16180);
+   private void method_9170(World var1, class_1331 var2, class_2522 var3) {
+      Direction var6 = var3.<Direction>method_10313(field_16180);
       boolean var7 = this.method_9172(var1, var2, var6);
       if (var7 && !var3.<Boolean>method_10313(field_10077)) {
          if (new class_7442(var1, var2, var6, true).method_33869()) {
@@ -86,7 +86,7 @@ public class class_1990 extends class_3266 {
          class_1331 var8 = var2.method_6099(var6, 2);
          class_2522 var9 = var1.method_28262(var8);
          byte var10 = 1;
-         if (var9.method_8350(class_4783.field_23833) && var9.<class_240>method_10313(field_16180) == var6) {
+         if (var9.method_8350(class_4783.field_23833) && var9.<Direction>method_10313(field_16180) == var6) {
             class_3757 var11 = var1.method_28260(var8);
             if (var11 instanceof class_3420) {
                class_3420 var12 = (class_3420)var11;
@@ -101,18 +101,18 @@ public class class_1990 extends class_3266 {
       }
    }
 
-   private boolean method_9172(class_6486 var1, class_1331 var2, class_240 var3) {
-      for (class_240 var9 : class_240.values()) {
+   private boolean method_9172(World var1, class_1331 var2, Direction var3) {
+      for (Direction var9 : Direction.values()) {
          if (var9 != var3 && var1.method_29588(var2.method_6098(var9), var9)) {
             return true;
          }
       }
 
-      if (!var1.method_29588(var2, class_240.field_802)) {
+      if (!var1.method_29588(var2, Direction.field_802)) {
          class_1331 var11 = var2.method_6081();
 
-         for (class_240 var10 : class_240.values()) {
-            if (var10 != class_240.field_802 && var1.method_29588(var11.method_6098(var10), var10)) {
+         for (Direction var10 : Direction.values()) {
+            if (var10 != Direction.field_802 && var1.method_29588(var11.method_6098(var10), var10)) {
                return true;
             }
          }
@@ -124,8 +124,8 @@ public class class_1990 extends class_3266 {
    }
 
    @Override
-   public boolean method_10800(class_2522 var1, class_6486 var2, class_1331 var3, int var4, int var5) {
-      class_240 var8 = var1.<class_240>method_10313(field_16180);
+   public boolean method_10800(class_2522 var1, World var2, class_1331 var3, int var4, int var5) {
+      Direction var8 = var1.<Direction>method_10313(field_16180);
       if (!var2.field_33055) {
          boolean var9 = this.method_9172(var2, var3, var8);
          if (var9 && (var4 == 1 || var4 == 2)) {
@@ -150,7 +150,7 @@ public class class_1990 extends class_3266 {
                .method_10308(class_7804.field_39514, var8)
                .method_10308(class_7804.field_39512, !this.field_10078 ? class_989.field_5039 : class_989.field_5035);
             var2.method_7513(var3, var10, 20);
-            var2.method_29558(var3, class_7804.method_35382(this.method_29260().method_10308(field_16180, class_240.method_1033(var5 & 7)), var8, false, true));
+            var2.method_29558(var3, class_7804.method_35382(this.method_29260().method_10308(field_16180, Direction.method_1033(var5 & 7)), var8, false, true));
             var2.method_43369(var3, var10.method_8360());
             var10.method_8367(var2, var3, 2);
             if (!this.field_10078) {
@@ -200,16 +200,16 @@ public class class_1990 extends class_3266 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public static boolean method_9171(class_2522 var0, class_6486 var1, class_1331 var2, class_240 var3, boolean var4, class_240 var5) {
+   public static boolean method_9171(class_2522 var0, World var1, class_1331 var2, Direction var3, boolean var4, Direction var5) {
       if (var2.method_12165() < 0 || var2.method_12165() > var1.method_28261() - 1 || !var1.method_6673().method_9813(var2)) {
          return false;
       } else if (var0.method_8345()) {
          return true;
       } else if (var0.method_8350(class_4783.field_23881) || var0.method_8350(class_4783.field_23222) || var0.method_8350(class_4783.field_23807)) {
          return false;
-      } else if (var3 == class_240.field_802 && var2.method_12165() == 0) {
+      } else if (var3 == Direction.field_802 && var2.method_12165() == 0) {
          return false;
-      } else if (var3 == class_240.field_817 && var2.method_12165() == var1.method_28261() - 1) {
+      } else if (var3 == Direction.field_817 && var2.method_12165() == var1.method_28261() - 1) {
          return false;
       } else {
          if (!var0.method_8350(class_4783.field_23649) && !var0.method_8350(class_4783.field_23861)) {
@@ -233,7 +233,7 @@ public class class_1990 extends class_3266 {
       }
    }
 
-   private boolean method_9173(class_6486 var1, class_1331 var2, class_240 var3, boolean var4) {
+   private boolean method_9173(World var1, class_1331 var2, Direction var3, boolean var4) {
       class_1331 var7 = var2.method_6098(var3);
       if (!var4 && var1.method_28262(var7).method_8350(class_4783.field_23336)) {
          var1.method_7513(var7, class_4783.field_23184.method_29260(), 20);
@@ -256,7 +256,7 @@ public class class_1990 extends class_3266 {
 
          List var21 = var8.method_33862();
          class_2522[] var22 = new class_2522[var10.size() + var21.size()];
-         class_240 var23 = !var4 ? var3.method_1046() : var3;
+         Direction var23 = !var4 ? var3.method_1046() : var3;
          int var15 = 0;
 
          for (int var16 = var21.size() - 1; var16 >= 0; var16--) {
@@ -327,12 +327,12 @@ public class class_1990 extends class_3266 {
 
    @Override
    public class_2522 method_10785(class_2522 var1, class_6631 var2) {
-      return var1.method_10308(field_16180, var2.method_30489(var1.<class_240>method_10313(field_16180)));
+      return var1.method_10308(field_16180, var2.method_30489(var1.<Direction>method_10313(field_16180)));
    }
 
    @Override
    public class_2522 method_10773(class_2522 var1, class_9022 var2) {
-      return var1.method_8318(var2.method_41390(var1.<class_240>method_10313(field_16180)));
+      return var1.method_8318(var2.method_41390(var1.<Direction>method_10313(field_16180)));
    }
 
    @Override

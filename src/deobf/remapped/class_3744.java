@@ -15,7 +15,7 @@ public class class_3744 extends class_3793 {
    }
 
    @Override
-   public void method_17625(class_6486 var1, class_1331 var2, class_704 var3) {
+   public void method_17625(World var1, class_1331 var2, class_704 var3) {
       class_3757 var6 = var1.method_28260(var2);
       if (var6 instanceof class_7960) {
          var3.method_3152((class_4259)var6);
@@ -24,7 +24,7 @@ public class class_3744 extends class_3793 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       if (var1.<Boolean>method_10313(field_18522)) {
          double var7 = (double)var3.method_12173() + 0.5;
          double var9 = (double)var3.method_12165();
@@ -33,7 +33,7 @@ public class class_3744 extends class_3793 {
             var2.method_29527(var7, var9, var11, class_463.field_2887, class_562.field_3322, 1.0F, 1.0F, false);
          }
 
-         class_240 var13 = var1.<class_240>method_10313(field_18523);
+         Direction var13 = var1.<Direction>method_10313(field_18523);
          class_9249 var14 = var13.method_1029();
          double var15 = 0.52;
          double var17 = var4.nextDouble() * 0.6 - 0.3;

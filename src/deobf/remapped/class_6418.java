@@ -43,7 +43,7 @@ public class class_6418 extends class_4171<class_9310, class_9166<class_9310>> {
 
       this.method_19347().method_29701(this.field_32774);
       this.field_32774.method_42257(var4, var5, var6, var8, var9, var10);
-      class_7907 var15 = var2.method_11645(class_3581.method_16755(var14));
+      class_7907 var15 = var2.method_11645(RenderLayer.method_16755(var14));
       this.field_32774.method_45499(var1, var15, var3, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
    }
 }

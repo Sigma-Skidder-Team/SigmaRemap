@@ -21,7 +21,7 @@ public class class_7762 extends class_341 {
    private class_1262 field_39345;
    private UUID field_39351;
    private long field_39355 = 0L;
-   public class_6486 field_39347 = null;
+   public World field_39347 = null;
    public class_1331 field_39349 = null;
    public class_9589 field_39354 = null;
 
@@ -274,7 +274,7 @@ public class class_7762 extends class_341 {
       }
    }
 
-   public class_9589 method_35211(class_6486 var1, class_1331 var2) {
+   public class_9589 method_35211(World var1, class_1331 var2) {
       this.field_39347 = var1;
       this.field_39349 = var2;
       return this.field_39354;

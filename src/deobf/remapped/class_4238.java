@@ -62,7 +62,7 @@ public class class_4238 {
    }
 
    public static CompletableFuture<Suggestions> method_19773(class_9155 var0, SuggestionsBuilder var1) {
-      class_8145 var4 = var0.method_42200();
+      Entity var4 = var0.method_42200();
       ArrayList var5 = Lists.newArrayList();
       if (var4 != null) {
          class_2917 var6 = var0.method_42177().method_1655();

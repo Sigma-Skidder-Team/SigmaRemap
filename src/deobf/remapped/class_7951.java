@@ -9,7 +9,7 @@ public class class_7951 {
    public static <S extends class_3757> class_7892<S> method_35989(
       class_133<S> var0,
       Function<class_2522, class_1168> var1,
-      Function<class_2522, class_240> var2,
+      Function<class_2522, Direction> var2,
       class_6162 var3,
       class_2522 var4,
       class_9379 var5,
@@ -23,11 +23,11 @@ public class class_7951 {
             boolean var12 = var11 == class_1168.field_6622;
             boolean var13 = var11 == class_1168.field_6621;
             if (!var12) {
-               class_1331 var14 = var6.method_6098((class_240)var2.apply(var4));
+               class_1331 var14 = var6.method_6098((Direction)var2.apply(var4));
                class_2522 var15 = var5.method_28262(var14);
                if (var15.method_8350(var4.method_8360())) {
                   class_1168 var16 = (class_1168)var1.apply(var15);
-                  if (var16 != class_1168.field_6622 && var11 != var16 && var15.<class_240>method_10313(var3) == var4.<class_240>method_10313(var3)) {
+                  if (var16 != class_1168.field_6622 && var11 != var16 && var15.<Direction>method_10313(var3) == var4.<Direction>method_10313(var3)) {
                      if (var7.test(var5, var14)) {
                         return class_3606::method_16828;
                      }

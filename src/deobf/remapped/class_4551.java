@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4551<T extends class_8145 & class_9378, M extends class_6521<T>> extends class_4171<T, M> {
+public class class_4551<T extends Entity & class_9378, M extends class_6521<T>> extends class_4171<T, M> {
    private static String[] field_22187;
    private final Identifier field_22189;
    private final M field_22188;
@@ -17,7 +17,7 @@ public class class_4551<T extends class_8145 & class_9378, M extends class_6521<
          this.method_19347().method_29701(this.field_22188);
          this.field_22188.method_29702((T)var4, var5, var6, var7);
          this.field_22188.method_29700((T)var4, var5, var6, var8, var9, var10);
-         class_7907 var13 = var2.method_11645(class_3581.method_16755(this.field_22189));
+         class_7907 var13 = var2.method_11645(RenderLayer.method_16755(this.field_22189));
          this.field_22188.method_45499(var1, var13, var3, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
       }
    }

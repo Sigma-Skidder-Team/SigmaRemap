@@ -18,7 +18,7 @@ public class class_8993 extends class_3064 implements class_4582 {
 
    @Override
    public boolean method_12870(class_2522 var1, class_6163 var2, class_1331 var3) {
-      return var1.method_8308(var2, var3, class_240.field_817) && !var1.method_8350(class_4783.field_23215);
+      return var1.method_8308(var2, var3, Direction.field_817) && !var1.method_8350(class_4783.field_23215);
    }
 
    @Override

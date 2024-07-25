@@ -8,7 +8,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    private long field_47579;
    public int field_47581;
    public boolean field_47584;
-   public class_240 field_47577;
+   public Direction field_47577;
    private List<class_5834> field_47583;
    private boolean field_47578;
    private int field_47580;
@@ -24,7 +24,7 @@ public class class_9317 extends class_3757 implements class_3745 {
       } else {
          this.method_43015();
          this.field_47580 = 0;
-         this.field_47577 = class_240.method_1033(var2);
+         this.field_47577 = Direction.method_1033(var2);
          this.field_47581 = 0;
          this.field_47584 = true;
          return true;
@@ -62,7 +62,7 @@ public class class_9317 extends class_3757 implements class_3745 {
       this.field_18364.method_43359((class_704)null, this.method_17399(), class_463.field_2099, class_562.field_3322, 1.0F, 1.0F);
    }
 
-   public void method_43016(class_240 var1) {
+   public void method_43016(Direction var1) {
       class_1331 var4 = this.method_17399();
       this.field_47577 = var1;
       if (!this.field_47584) {
@@ -106,13 +106,13 @@ public class class_9317 extends class_3757 implements class_3745 {
       return false;
    }
 
-   private void method_43018(class_6486 var1) {
+   private void method_43018(World var1) {
       if (!var1.field_33055) {
          this.field_47583.stream().filter(this::method_43019).forEach(this::method_43014);
       }
    }
 
-   private void method_43017(class_6486 var1) {
+   private void method_43017(World var1) {
       if (var1.field_33055) {
          class_1331 var4 = this.method_17399();
          MutableInt var5 = new MutableInt(16700985);

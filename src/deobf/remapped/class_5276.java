@@ -17,16 +17,16 @@ public class class_5276 {
    public static final Identifier field_26973 = new Identifier("textures/atlas/shield_patterns.png");
    public static final Identifier field_26955 = new Identifier("textures/atlas/signs.png");
    public static final Identifier field_26980 = new Identifier("textures/atlas/chest.png");
-   private static final class_3581 field_26971 = class_3581.method_16755(field_26958);
-   private static final class_3581 field_26962 = class_3581.method_16734(field_26970);
-   private static final class_3581 field_26966 = class_3581.method_16750(field_26965);
-   private static final class_3581 field_26972 = class_3581.method_16750(field_26973);
-   private static final class_3581 field_26967 = class_3581.method_16755(field_26955);
-   private static final class_3581 field_26963 = class_3581.method_16747(field_26980);
-   private static final class_3581 field_26959 = class_3581.method_16734(class_8359.field_42824);
-   private static final class_3581 field_26977 = class_3581.method_16747(class_8359.field_42824);
-   private static final class_3581 field_26961 = class_3581.method_16766(class_8359.field_42824);
-   private static final class_3581 field_26954 = class_3581.method_16735(class_8359.field_42824);
+   private static final RenderLayer field_26971 = RenderLayer.method_16755(field_26958);
+   private static final RenderLayer field_26962 = RenderLayer.method_16734(field_26970);
+   private static final RenderLayer field_26966 = RenderLayer.method_16750(field_26965);
+   private static final RenderLayer field_26972 = RenderLayer.method_16750(field_26973);
+   private static final RenderLayer field_26967 = RenderLayer.method_16755(field_26955);
+   private static final RenderLayer field_26963 = RenderLayer.method_16747(field_26980);
+   private static final RenderLayer field_26959 = RenderLayer.method_16734(class_8359.field_42824);
+   private static final RenderLayer field_26977 = RenderLayer.method_16747(class_8359.field_42824);
+   private static final RenderLayer field_26961 = RenderLayer.method_16766(class_8359.field_42824);
+   private static final RenderLayer field_26954 = RenderLayer.method_16735(class_8359.field_42824);
    public static final class_2843 field_26968 = new class_2843(field_26958, new Identifier("entity/shulker/shulker"));
    public static final List<class_2843> field_26969 = Stream.<String>of(
          "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"
@@ -50,43 +50,43 @@ public class class_5276 {
    public static final class_2843 field_26951 = method_24077("normal_right");
    public static final class_2843 field_26952 = method_24077("ender");
 
-   public static class_3581 method_24081() {
+   public static RenderLayer method_24081() {
       return field_26966;
    }
 
-   public static class_3581 method_24084() {
+   public static RenderLayer method_24084() {
       return field_26972;
    }
 
-   public static class_3581 method_24070() {
+   public static RenderLayer method_24070() {
       return field_26962;
    }
 
-   public static class_3581 method_24071() {
+   public static RenderLayer method_24071() {
       return field_26971;
    }
 
-   public static class_3581 method_24080() {
+   public static RenderLayer method_24080() {
       return field_26967;
    }
 
-   public static class_3581 method_24082() {
+   public static RenderLayer method_24082() {
       return field_26963;
    }
 
-   public static class_3581 method_24074() {
+   public static RenderLayer method_24074() {
       return field_26959;
    }
 
-   public static class_3581 method_24083() {
+   public static RenderLayer method_24083() {
       return field_26977;
    }
 
-   public static class_3581 method_24076() {
+   public static RenderLayer method_24076() {
       return field_26961;
    }
 
-   public static class_3581 method_24072() {
+   public static RenderLayer method_24072() {
       return field_26954;
    }
 

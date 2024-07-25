@@ -10,7 +10,7 @@ public class class_3997 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, this.field_19414 != class_8532.field_43673 ? class_9583.field_48747 : class_9583.field_48749);
       if (var7.method_33990() != class_1430.field_7721) {
@@ -19,7 +19,7 @@ public class class_3997 extends class_2451 {
          } else {
             class_9529 var8 = var7;
             class_1331 var9 = var8.method_43955();
-            class_240 var10 = var8.method_43956();
+            Direction var10 = var8.method_43956();
             class_1331 var11 = var9.method_6098(var10);
             if (!var1.method_29538(var2, var9) || !var2.method_3208(var11, var10, var6)) {
                return class_954.<class_6098>method_4202(var6);
@@ -65,10 +65,10 @@ public class class_3997 extends class_2451 {
       return var2.field_3876.field_4944 ? var1 : new class_6098(class_4897.field_24548);
    }
 
-   public void method_18422(class_6486 var1, class_6098 var2, class_1331 var3) {
+   public void method_18422(World var1, class_6098 var2, class_1331 var3) {
    }
 
-   public boolean method_18424(class_704 var1, class_6486 var2, class_1331 var3, class_9529 var4) {
+   public boolean method_18424(class_704 var1, World var2, class_1331 var3, class_9529 var4) {
       if (!(this.field_19414 instanceof class_3798)) {
          return false;
       } else {

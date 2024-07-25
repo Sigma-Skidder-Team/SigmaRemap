@@ -53,7 +53,7 @@ public class class_6171 extends class_2103 {
 
    @Nullable
    private class_2522 method_28286(Random var1, class_2522 var2) {
-      class_240 var5 = var2.<class_240>method_10313(class_3049.field_14946);
+      Direction var5 = var2.<Direction>method_10313(class_3049.field_14946);
       class_5122 var6 = var2.<class_5122>method_10313(class_3049.field_14955);
       if (!(var1.nextFloat() >= 0.5F)) {
          class_2522[] var7 = new class_2522[]{class_4783.field_23326.method_29260(), class_4783.field_23449.method_29260()};

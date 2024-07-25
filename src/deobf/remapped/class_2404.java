@@ -13,7 +13,7 @@ public class class_2404 implements class_6310<class_392> {
    public class_2404() {
    }
 
-   public class_2404(class_8461 var1, class_562 var2, class_8145 var3, float var4, float var5) {
+   public class_2404(class_8461 var1, class_562 var2, Entity var3, float var4, float var5) {
       Validate.notNull(var1, "sound", new Object[0]);
       this.field_11981 = var1;
       this.field_11983 = var2;

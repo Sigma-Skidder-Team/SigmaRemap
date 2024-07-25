@@ -25,7 +25,7 @@ public class class_1655 extends class_603 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, class_6486 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       class_9541.method_43988(var1, var3, 0.125F);
    }
 

@@ -5,7 +5,7 @@ import java.util.Random;
 public class class_2352 extends class_1279 {
    private static String[] field_11813;
 
-   public class_2352(class_240 var1, class_9616 var2) {
+   public class_2352(Direction var1, class_9616 var2) {
       super(class_2746.field_13396, var1, var2);
    }
 

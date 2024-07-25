@@ -23,7 +23,7 @@ public class class_1789 extends class_4232 {
    public static final int field_9145 = 3;
    public static final int field_9138 = 4;
 
-   public class_1789(Screen var1, class_8881 var2) {
+   public class_1789(Screen var1, GameOptions var2) {
       super(new StringTextComponent(class_6956.method_31803("of.options.shadersTitle")));
       this.field_9150 = var1;
    }

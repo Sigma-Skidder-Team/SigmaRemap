@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_5641 extends class_9128 {
-   private class_8145 field_28608;
+   private Entity field_28608;
    private double field_28607;
 
    public class_5641() {
@@ -13,7 +13,7 @@ public class class_5641 extends class_9128 {
    private void method_25540(class_3368 var1) {
       if (this.method_42015()) {
          if (!(field_46692.field_9632.field_41755 > 45.0F)) {
-            class_8145 var4 = ((class_2329)this.method_42017()).method_10678(this.method_42002("Range"));
+            Entity var4 = ((class_2329)this.method_42017()).method_10678(this.method_42002("Range"));
             if (var4 != null) {
                double var5 = (double)(field_46692.field_9632.field_41755 - this.method_25542(var4)[1]);
                double var7 = (double)(field_46692.field_9632.field_41701 - this.method_25542(var4)[0]);
@@ -55,7 +55,7 @@ public class class_5641 extends class_9128 {
       }
    }
 
-   public float[] method_25542(class_8145 var1) {
+   public float[] method_25542(Entity var1) {
       if (field_46692.field_9662 == null && this.field_28608 != null) {
          this.field_28607 = Math.random();
       }

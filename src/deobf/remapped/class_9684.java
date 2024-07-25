@@ -42,7 +42,7 @@ public class class_9684 extends class_4285<class_4436> {
             return var1;
          }
 
-         var1.method_13368(class_240.field_802);
+         var1.method_13368(Direction.field_802);
       }
 
       return null;

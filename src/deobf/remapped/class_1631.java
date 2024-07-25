@@ -9,7 +9,7 @@ public class class_1631 extends class_9128 {
    @class_9148
    private void method_7262(class_3368 var1) {
       if (this.method_42015()) {
-         class_8145 var4 = ((class_2329)this.method_42017()).method_10678(this.method_42002("Range"));
+         Entity var4 = ((class_2329)this.method_42017()).method_10678(this.method_42002("Range"));
          if (var4 != null) {
             float[] var5 = class_7211.method_33013(var4);
             field_46692.field_9632.field_41701 = var5[0];

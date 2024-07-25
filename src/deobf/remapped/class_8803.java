@@ -100,7 +100,7 @@ public class class_8803 {
       );
    }
 
-   private static int method_40468(class_9155 var0, Collection<? extends class_8145> var1, class_1425 var2, Integer var3, int var4, boolean var5) throws CommandSyntaxException {
+   private static int method_40468(class_9155 var0, Collection<? extends Entity> var1, class_1425 var2, Integer var3, int var4, boolean var5) throws CommandSyntaxException {
       int var8 = 0;
       int var9;
       if (var3 == null) {
@@ -115,7 +115,7 @@ public class class_8803 {
          var9 = var3;
       }
 
-      for (class_8145 var11 : var1) {
+      for (Entity var11 : var1) {
          if (var11 instanceof class_5834) {
             class_2250 var12 = new class_2250(var2, var9, var4, false, var5);
             if (((class_5834)var11).method_26558(var12)) {
@@ -130,7 +130,7 @@ public class class_8803 {
          } else {
             var0.method_42196(
                new TranslationTextComponent(
-                  "commands.effect.give.success.single", var2.method_6541(), ((class_8145)var1.iterator().next()).method_19839(), var9 / 20
+                  "commands.effect.give.success.single", var2.method_6541(), ((Entity)var1.iterator().next()).method_19839(), var9 / 20
                ),
                true
             );
@@ -142,10 +142,10 @@ public class class_8803 {
       }
    }
 
-   private static int method_40471(class_9155 var0, Collection<? extends class_8145> var1) throws CommandSyntaxException {
+   private static int method_40471(class_9155 var0, Collection<? extends Entity> var1) throws CommandSyntaxException {
       int var4 = 0;
 
-      for (class_8145 var6 : var1) {
+      for (Entity var6 : var1) {
          if (var6 instanceof class_5834 && ((class_5834)var6).method_26523()) {
             var4++;
          }
@@ -156,7 +156,7 @@ public class class_8803 {
             var0.method_42196(new TranslationTextComponent("commands.effect.clear.everything.success.multiple", var1.size()), true);
          } else {
             var0.method_42196(
-               new TranslationTextComponent("commands.effect.clear.everything.success.single", ((class_8145)var1.iterator().next()).method_19839()), true
+               new TranslationTextComponent("commands.effect.clear.everything.success.single", ((Entity)var1.iterator().next()).method_19839()), true
             );
          }
 
@@ -166,10 +166,10 @@ public class class_8803 {
       }
    }
 
-   private static int method_40467(class_9155 var0, Collection<? extends class_8145> var1, class_1425 var2) throws CommandSyntaxException {
+   private static int method_40467(class_9155 var0, Collection<? extends Entity> var1, class_1425 var2) throws CommandSyntaxException {
       int var5 = 0;
 
-      for (class_8145 var7 : var1) {
+      for (Entity var7 : var1) {
          if (var7 instanceof class_5834 && ((class_5834)var7).method_26607(var2)) {
             var5++;
          }
@@ -181,7 +181,7 @@ public class class_8803 {
          } else {
             var0.method_42196(
                new TranslationTextComponent(
-                  "commands.effect.clear.specific.success.single", var2.method_6541(), ((class_8145)var1.iterator().next()).method_19839()
+                  "commands.effect.clear.specific.success.single", var2.method_6541(), ((Entity)var1.iterator().next()).method_19839()
                ),
                true
             );

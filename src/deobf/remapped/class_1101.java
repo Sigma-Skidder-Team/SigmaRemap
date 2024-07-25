@@ -4,7 +4,7 @@ public class class_1101 extends class_7067<class_7548> {
    private static final Identifier field_6330 = new Identifier("textures/entity/llama/spit.png");
    private final class_8716<class_7548> field_6328 = new class_8716<class_7548>();
 
-   public class_1101(class_6122 var1) {
+   public class_1101(EntityRenderDispatcher var1) {
       super(var1);
    }
 

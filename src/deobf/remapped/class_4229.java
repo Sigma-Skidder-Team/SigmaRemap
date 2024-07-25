@@ -8,7 +8,7 @@ public class class_4229 extends class_2255<class_557> {
    }
 
    public void method_19701(class_557 var1, float var2, class_7966 var3, class_2565 var4, int var5, int var6) {
-      class_240 var9 = var1.method_17403().<class_240>method_10313(class_8474.field_43419);
+      Direction var9 = var1.method_17403().<Direction>method_10313(class_8474.field_43419);
       class_2831 var10 = var1.method_2670();
 
       for (int var11 = 0; var11 < var10.size(); var11++) {
@@ -16,7 +16,7 @@ public class class_4229 extends class_2255<class_557> {
          if (var12 != class_6098.field_31203) {
             var3.method_36063();
             var3.method_36065(0.5, 0.44921875, 0.5);
-            class_240 var13 = class_240.method_1040((var11 + var9.method_1031()) % 4);
+            Direction var13 = Direction.method_1040((var11 + var9.method_1031()) % 4);
             float var14 = -var13.method_1028();
             var3.method_36060(class_2426.field_12074.method_11074(var14));
             var3.method_36060(class_2426.field_12080.method_11074(90.0F));

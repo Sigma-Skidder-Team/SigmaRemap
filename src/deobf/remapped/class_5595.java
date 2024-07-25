@@ -7,7 +7,7 @@ public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
       .<Identifier>map(var0 -> new Identifier("textures/" + var0.method_12948().method_21456() + ".png"))
       .<Identifier>toArray(Identifier[]::new);
 
-   public class_5595(class_6122 var1) {
+   public class_5595(EntityRenderDispatcher var1) {
       super(var1, new class_7916<class_6092>(), 0.0F);
       this.method_29100(new class_5994(this));
    }

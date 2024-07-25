@@ -20,7 +20,7 @@ public class class_2380 extends class_6788 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       if (!var2.field_33055 && !var1.<Boolean>method_10313(field_11888)) {
          this.method_10869(var2, var3, var1);
       }
@@ -34,24 +34,24 @@ public class class_2380 extends class_6788 {
    }
 
    @Override
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, class_240 var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
       return !var1.<Boolean>method_10313(field_11888) ? 0 : 15;
    }
 
    @Override
-   public int method_10778(class_2522 var1, class_6163 var2, class_1331 var3, class_240 var4) {
+   public int method_10778(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
       if (var1.<Boolean>method_10313(field_11888)) {
-         return var4 != class_240.field_817 ? 0 : 15;
+         return var4 != Direction.field_817 ? 0 : 15;
       } else {
          return 0;
       }
    }
 
-   private void method_10869(class_6486 var1, class_1331 var2, class_2522 var3) {
+   private void method_10869(World var1, class_1331 var2, class_2522 var3) {
       if (this.method_10787(var3, var1, var2)) {
          boolean var6 = var3.<Boolean>method_10313(field_11888);
          boolean var7 = false;
-         List var8 = this.<class_1080>method_10872(var1, var2, class_1080.class, (Predicate<class_8145>)null);
+         List var8 = this.<class_1080>method_10872(var1, var2, class_1080.class, (Predicate<Entity>)null);
          if (!var8.isEmpty()) {
             var7 = true;
          }
@@ -82,7 +82,7 @@ public class class_2380 extends class_6788 {
       }
    }
 
-   public void method_10870(class_6486 var1, class_1331 var2, class_2522 var3, boolean var4) {
+   public void method_10870(World var1, class_1331 var2, class_2522 var3, boolean var4) {
       class_8360 var7 = new class_8360(var1, var2, var3);
 
       for (class_1331 var9 : var7.method_38542()) {
@@ -92,7 +92,7 @@ public class class_2380 extends class_6788 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var4.method_8350(var1.method_8360())) {
          this.method_10869(var2, var3, this.method_31120(var1, var2, var3, var5));
       }
@@ -109,9 +109,9 @@ public class class_2380 extends class_6788 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       if (var1.<Boolean>method_10313(field_11888)) {
-         List var6 = this.<class_4648>method_10872(var2, var3, class_4648.class, (Predicate<class_8145>)null);
+         List var6 = this.<class_4648>method_10872(var2, var3, class_4648.class, (Predicate<Entity>)null);
          if (!var6.isEmpty()) {
             return ((class_4648)var6.get(0)).method_21499().method_36926();
          }
@@ -125,7 +125,7 @@ public class class_2380 extends class_6788 {
       return 0;
    }
 
-   public <T extends class_1080> List<T> method_10872(class_6486 var1, class_1331 var2, Class<T> var3, Predicate<class_8145> var4) {
+   public <T extends class_1080> List<T> method_10872(World var1, class_1331 var2, Class<T> var3, Predicate<Entity> var4) {
       return var1.<T>method_25869(var3, this.method_10871(var2), var4);
    }
 

@@ -307,7 +307,7 @@ public class class_4092 {
       double var6 = var2.field_7336 - var1.field_7336;
       double var8 = var2.field_7333 - var1.field_7333;
       double var10 = var2.field_7334 - var1.field_7334;
-      class_240 var12 = method_18904(this, var1, var5, (class_240)null, var6, var8, var10);
+      Direction var12 = method_18904(this, var1, var5, (Direction)null, var6, var8, var10);
       if (var12 != null) {
          double var13 = var5[0];
          return Optional.<class_1343>of(var1.method_6214(var13 * var6, var13 * var8, var13 * var10));
@@ -319,7 +319,7 @@ public class class_4092 {
    @Nullable
    public static class_9529 method_18922(Iterable<class_4092> var0, class_1343 var1, class_1343 var2, class_1331 var3) {
       double[] var6 = new double[]{1.0};
-      class_240 var7 = null;
+      Direction var7 = null;
       double var8 = var2.field_7336 - var1.field_7336;
       double var10 = var2.field_7333 - var1.field_7333;
       double var12 = var2.field_7334 - var1.field_7334;
@@ -337,7 +337,7 @@ public class class_4092 {
    }
 
    @Nullable
-   private static class_240 method_18904(class_4092 var0, class_1343 var1, double[] var2, class_240 var3, double var4, double var6, double var8) {
+   private static Direction method_18904(class_4092 var0, class_1343 var1, double[] var2, Direction var3, double var4, double var6, double var8) {
       if (!(var4 > 1.0E-7)) {
          if (var4 < -1.0E-7) {
             var3 = method_18916(
@@ -351,7 +351,7 @@ public class class_4092 {
                var0.field_19939,
                var0.field_19938,
                var0.field_19942,
-               class_240.field_804,
+               Direction.field_804,
                var1.field_7336,
                var1.field_7333,
                var1.field_7334
@@ -369,7 +369,7 @@ public class class_4092 {
             var0.field_19939,
             var0.field_19938,
             var0.field_19942,
-            class_240.field_809,
+            Direction.field_809,
             var1.field_7336,
             var1.field_7333,
             var1.field_7334
@@ -389,7 +389,7 @@ public class class_4092 {
                var0.field_19942,
                var0.field_19941,
                var0.field_19940,
-               class_240.field_817,
+               Direction.field_817,
                var1.field_7333,
                var1.field_7334,
                var1.field_7336
@@ -407,7 +407,7 @@ public class class_4092 {
             var0.field_19942,
             var0.field_19941,
             var0.field_19940,
-            class_240.field_802,
+            Direction.field_802,
             var1.field_7333,
             var1.field_7334,
             var1.field_7336
@@ -427,7 +427,7 @@ public class class_4092 {
                var0.field_19940,
                var0.field_19937,
                var0.field_19939,
-               class_240.field_800,
+               Direction.field_800,
                var1.field_7334,
                var1.field_7336,
                var1.field_7333
@@ -445,7 +445,7 @@ public class class_4092 {
             var0.field_19940,
             var0.field_19937,
             var0.field_19939,
-            class_240.field_818,
+            Direction.field_818,
             var1.field_7334,
             var1.field_7336,
             var1.field_7333
@@ -456,9 +456,9 @@ public class class_4092 {
    }
 
    @Nullable
-   private static class_240 method_18916(
+   private static Direction method_18916(
       double[] var0,
-      class_240 var1,
+      Direction var1,
       double var2,
       double var4,
       double var6,
@@ -467,7 +467,7 @@ public class class_4092 {
       double var12,
       double var14,
       double var16,
-      class_240 var18,
+      Direction var18,
       double var19,
       double var21,
       double var23

@@ -42,12 +42,12 @@ public class class_8551 extends class_691 {
    }
 
    @Override
-   public int method_3122(class_6486 var1, class_1331 var2) {
+   public int method_3122(World var1, class_1331 var2) {
       class_4092 var5 = field_3798.method_18919(var2);
       List var6;
       switch (this.field_43753) {
          case field_32138:
-            var6 = var1.method_25870((class_8145)null, var5);
+            var6 = var1.method_25870((Entity)null, var5);
             break;
          case field_32140:
             var6 = var1.<class_5834>method_25868(class_5834.class, var5);
@@ -57,7 +57,7 @@ public class class_8551 extends class_691 {
       }
 
       if (!var6.isEmpty()) {
-         for (class_8145 var8 : var6) {
+         for (Entity var8 : var6) {
             if (!var8.method_37276()) {
                return 15;
             }

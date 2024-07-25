@@ -49,34 +49,34 @@ public class class_6397 {
          method_29209(var1, var7);
       }
 
-      class_6486 var8 = var1.method_11997();
+      World var8 = var1.method_11997();
       field_32660.forEach(var1x -> var1x.method_43652(var8));
    }
 
    private static void method_29209(class_2654 var0, class_3162 var1) {
-      class_6486 var4 = var0.method_11997();
+      World var4 = var0.method_11997();
       if (var0.method_27343().field_32665.remove(var1)) {
          Set var5 = var1.method_14594();
          boolean var6 = false;
          byte var7 = 15;
-         boolean var8 = var5.contains(class_240.field_804);
-         boolean var9 = var5.contains(class_240.field_809);
-         boolean var10 = var5.contains(class_240.field_800);
-         boolean var11 = var5.contains(class_240.field_818);
+         boolean var8 = var5.contains(Direction.field_804);
+         boolean var9 = var5.contains(Direction.field_809);
+         boolean var10 = var5.contains(Direction.field_800);
+         boolean var11 = var5.contains(Direction.field_818);
          boolean var12 = var5.size() == 1;
          class_2034 var13 = var0.method_27352();
          int var14 = var13.method_9535() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 1);
          int var15 = var13.method_9535() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 14);
          int var16 = var13.method_9545() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 1);
          int var17 = var13.method_9545() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 14);
-         class_240[] var18 = class_240.values();
+         Direction[] var18 = Direction.values();
          class_2921 var19 = new class_2921();
 
          for (class_1331 var21 : class_1331.method_6075(var14, 0, var16, var15, var4.method_28261() - 1, var17)) {
             class_2522 var22 = var4.method_28262(var21);
             class_2522 var23 = var22;
 
-            for (class_240 var27 : var18) {
+            for (Direction var27 : var18) {
                var19.method_13371(var21, var27);
                var23 = method_29204(var23, var27, var4, var21, var19);
             }
@@ -86,7 +86,7 @@ public class class_6397 {
       }
    }
 
-   private static class_2522 method_29204(class_2522 var0, class_240 var1, class_9379 var2, class_1331 var3, class_1331 var4) {
+   private static class_2522 method_29204(class_2522 var0, Direction var1, class_9379 var2, class_1331 var3, class_1331 var4) {
       return field_32664.getOrDefault(var0.method_8360(), class_3823.field_18691).method_43653(var0, var1, var2.method_28262(var4), var2, var3, var4);
    }
 
@@ -94,14 +94,14 @@ public class class_6397 {
       class_2921 var4 = new class_2921();
       class_2921 var5 = new class_2921();
       class_2034 var6 = var1.method_27352();
-      class_6486 var7 = var1.method_11997();
+      World var7 = var1.method_11997();
 
       for (int var8 = 0; var8 < 16; var8++) {
          class_1315 var9 = var1.method_27349()[var8];
          int[] var10 = this.field_32663[var8];
          this.field_32663[var8] = null;
          if (var9 != null && var10 != null && var10.length > 0) {
-            class_240[] var11 = class_240.values();
+            Direction[] var11 = Direction.values();
             class_5427 var12 = var9.method_6006();
 
             for (int var16 : var10) {
@@ -112,7 +112,7 @@ public class class_6397 {
                class_2522 var20 = (class_2522)var12.method_24688(var16);
                class_2522 var21 = var20;
 
-               for (class_240 var25 : var11) {
+               for (Direction var25 : var11) {
                   var5.method_13371(var4, var25);
                   if (var4.method_12173() >> 4 == var6.field_10328 && var4.method_12185() >> 4 == var6.field_10327) {
                      var21 = method_29204(var21, var25, var7, var4, var5);

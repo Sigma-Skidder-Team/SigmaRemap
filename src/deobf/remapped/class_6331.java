@@ -42,12 +42,12 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_6331 extends class_6486 implements class_700 {
+public class class_6331 extends World implements class_700 {
    public static final class_1331 field_32327 = new class_1331(100, 50, 0);
    private static final Logger field_32339 = LogManager.getLogger();
-   private final Int2ObjectMap<class_8145> field_32326 = new Int2ObjectLinkedOpenHashMap();
-   private final Map<UUID, class_8145> field_32341 = Maps.newHashMap();
-   private final Queue<class_8145> field_32336 = Queues.newArrayDeque();
+   private final Int2ObjectMap<Entity> field_32326 = new Int2ObjectLinkedOpenHashMap();
+   private final Map<UUID, Entity> field_32341 = Maps.newHashMap();
+   private final Queue<Entity> field_32336 = Queues.newArrayDeque();
    private final List<class_9359> field_32340 = Lists.newArrayList();
    private final class_2206 field_32342;
    public boolean field_32334;
@@ -77,7 +77,7 @@ public class class_6331 extends class_6486 implements class_700 {
       Executor var2,
       class_3676 var3,
       class_7203 var4,
-      class_5621<class_6486> var5,
+      class_5621<World> var5,
       class_8760 var6,
       class_1870 var7,
       class_6541 var8,
@@ -267,8 +267,8 @@ public class class_6331 extends class_6486 implements class_700 {
 
          while (var15.hasNext()) {
             Entry var18 = (Entry)var15.next();
-            class_8145 var17 = (class_8145)var18.getValue();
-            class_8145 var20 = var17.method_37243();
+            Entity var17 = (Entity)var18.getValue();
+            Entity var20 = var17.method_37243();
             if (!this.field_32343.method_1702() && (var17 instanceof class_5467 || var17 instanceof class_1829)) {
                var17.method_37204();
             }
@@ -309,7 +309,7 @@ public class class_6331 extends class_6486 implements class_700 {
 
          this.field_32334 = false;
 
-         class_8145 var19;
+         Entity var19;
          while ((var19 = this.field_32336.poll()) != null) {
             this.method_28960(var19);
          }
@@ -488,7 +488,7 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   public void method_28997(class_8145 var1) {
+   public void method_28997(Entity var1) {
       if (!(var1 instanceof class_704) && !this.method_28945().method_14824(var1)) {
          this.method_28987(var1);
       } else {
@@ -506,14 +506,14 @@ public class class_6331 extends class_6486 implements class_700 {
 
          this.method_28987(var1);
          if (var1.field_41727) {
-            for (class_8145 var5 : var1.method_37114()) {
+            for (Entity var5 : var1.method_37114()) {
                this.method_28975(var1, var5);
             }
          }
       }
    }
 
-   public void method_28975(class_8145 var1, class_8145 var2) {
+   public void method_28975(Entity var1, Entity var2) {
       if (var2.field_41751 || var2.method_37243() != var1) {
          var2.method_37390();
       } else if (var2 instanceof class_704 || this.method_28945().method_14824(var2)) {
@@ -531,14 +531,14 @@ public class class_6331 extends class_6486 implements class_700 {
 
          this.method_28987(var2);
          if (var2.field_41727) {
-            for (class_8145 var6 : var2.method_37114()) {
+            for (Entity var6 : var2.method_37114()) {
                this.method_28975(var2, var6);
             }
          }
       }
    }
 
-   public void method_28987(class_8145 var1) {
+   public void method_28987(Entity var1) {
       if (var1.method_37251()) {
          this.method_29599().method_16056("chunkCheck");
          int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
@@ -593,13 +593,13 @@ public class class_6331 extends class_6486 implements class_700 {
       this.method_28945().method_10182().method_18705();
    }
 
-   public List<class_8145> method_28926(class_6629<?> var1, Predicate<? super class_8145> var2) {
+   public List<Entity> method_28926(class_6629<?> var1, Predicate<? super Entity> var2) {
       ArrayList var5 = Lists.newArrayList();
       class_2206 var6 = this.method_28945();
       ObjectIterator var7 = this.field_32326.values().iterator();
 
       while (var7.hasNext()) {
-         class_8145 var8 = (class_8145)var7.next();
+         Entity var8 = (Entity)var7.next();
          if ((var1 == null || var8.method_37387() == var1)
             && var6.method_14816(class_9299.method_42847(var8.method_37302()) >> 4, class_9299.method_42847(var8.method_37156()) >> 4)
             && var2.test(var8)) {
@@ -615,7 +615,7 @@ public class class_6331 extends class_6486 implements class_700 {
       ObjectIterator var4 = this.field_32326.values().iterator();
 
       while (var4.hasNext()) {
-         class_8145 var5 = (class_8145)var4.next();
+         Entity var5 = (Entity)var4.next();
          if (var5 instanceof class_2770 && var5.method_37330()) {
             var3.add((class_2770)var5);
          }
@@ -643,15 +643,15 @@ public class class_6331 extends class_6486 implements class_700 {
    }
 
    @Override
-   public boolean method_7509(class_8145 var1) {
+   public boolean method_7509(Entity var1) {
       return this.method_28986(var1);
    }
 
-   public boolean method_28972(class_8145 var1) {
+   public boolean method_28972(Entity var1) {
       return this.method_28986(var1);
    }
 
-   public void method_28954(class_8145 var1) {
+   public void method_28954(Entity var1) {
       boolean var4 = var1.field_41722;
       var1.field_41722 = true;
       this.method_28972(var1);
@@ -678,7 +678,7 @@ public class class_6331 extends class_6486 implements class_700 {
    }
 
    private void method_28973(class_9359 var1) {
-      class_8145 var4 = this.field_32341.get(var1.method_37328());
+      Entity var4 = this.field_32341.get(var1.method_37328());
       if (var4 != null) {
          field_32339.warn("Force-added player with duplicate UUID {}", var1.method_37328().toString());
          var4.method_37269();
@@ -697,7 +697,7 @@ public class class_6331 extends class_6486 implements class_700 {
       this.method_28960(var1);
    }
 
-   private boolean method_28986(class_8145 var1) {
+   private boolean method_28986(Entity var1) {
       if (!var1.field_41751) {
          if (!this.method_28922(var1)) {
             class_5990 var4 = this.method_22555(
@@ -722,7 +722,7 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   public boolean method_28953(class_8145 var1) {
+   public boolean method_28953(Entity var1) {
       if (!this.method_28922(var1)) {
          this.method_28960(var1);
          return true;
@@ -731,9 +731,9 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   private boolean method_28922(class_8145 var1) {
+   private boolean method_28922(Entity var1) {
       UUID var4 = var1.method_37328();
-      class_8145 var5 = this.method_28935(var4);
+      Entity var5 = this.method_28935(var4);
       if (var5 != null) {
          field_32339.warn(
             "Trying to add entity with duplicated UUID {}. Existing {}#{}, new: {}#{}",
@@ -750,13 +750,13 @@ public class class_6331 extends class_6486 implements class_700 {
    }
 
    @Nullable
-   private class_8145 method_28935(UUID var1) {
-      class_8145 var4 = this.field_32341.get(var1);
+   private Entity method_28935(UUID var1) {
+      Entity var4 = this.field_32341.get(var1);
       if (var4 != null) {
          return var4;
       } else {
          if (this.field_32334) {
-            for (class_8145 var6 : this.field_32336) {
+            for (Entity var6 : this.field_32336) {
                if (var6.method_37328().equals(var1)) {
                   return var6;
                }
@@ -767,7 +767,7 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   public boolean method_28933(class_8145 var1) {
+   public boolean method_28933(Entity var1) {
       if (!var1.method_37122().anyMatch(this::method_28922)) {
          this.method_7065(var1);
          return true;
@@ -782,7 +782,7 @@ public class class_6331 extends class_6486 implements class_700 {
       int var5 = var4.length;
 
       for (int var6 = 0; var6 < var5; var6++) {
-         for (class_8145 var8 : var4[var6]) {
+         for (Entity var8 : var4[var6]) {
             if (!(var8 instanceof class_9359)) {
                if (this.field_32334) {
                   throw (IllegalStateException) Util.method_44658(new IllegalStateException("Removing entity while ticking!"));
@@ -795,7 +795,7 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   public void method_28979(class_8145 var1) {
+   public void method_28979(Entity var1) {
       if (var1 instanceof class_2770) {
          for (class_5708 var7 : ((class_2770)var1).method_12615()) {
             var7.method_37204();
@@ -815,7 +815,7 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   private void method_28960(class_8145 var1) {
+   private void method_28960(Entity var1) {
       if (!this.field_32334) {
          this.field_32326.put(var1.method_37145(), var1);
          if (var1 instanceof class_2770) {
@@ -834,7 +834,7 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   public void method_28977(class_8145 var1) {
+   public void method_28977(Entity var1) {
       if (!this.field_32334) {
          this.method_28952(var1);
          this.field_32326.remove(var1.method_37145());
@@ -844,7 +844,7 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   private void method_28952(class_8145 var1) {
+   private void method_28952(Entity var1) {
       class_5990 var4 = this.method_22555(var1.field_41742, var1.field_41714, class_7335.field_37514, false);
       if (var4 instanceof class_2654) {
          ((class_2654)var4).method_11995(var1);
@@ -887,7 +887,7 @@ public class class_6331 extends class_6486 implements class_700 {
    }
 
    @Override
-   public void method_29540(class_704 var1, class_8145 var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_29540(class_704 var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6) {
       this.field_32343
          .method_1600()
          .method_39996(
@@ -936,7 +936,7 @@ public class class_6331 extends class_6486 implements class_700 {
    }
 
    @Override
-   public void method_29587(class_8145 var1, byte var2) {
+   public void method_29587(Entity var1, byte var2) {
       this.method_28945().method_10209(var1, new class_295(var1, var2));
    }
 
@@ -946,7 +946,7 @@ public class class_6331 extends class_6486 implements class_700 {
 
    @Override
    public class_2730 method_29575(
-      class_8145 var1, class_6199 var2, class_7571 var3, double var4, double var6, double var8, float var10, boolean var11, class_7298 var12
+           Entity var1, class_6199 var2, class_7571 var3, double var4, double var6, double var8, float var10, boolean var11, class_7298 var12
    ) {
       class_2730 var15 = new class_2730(this, var1, var2, var3, var4, var6, var8, var10, var11, var12);
       var15.method_12266();
@@ -1054,12 +1054,12 @@ public class class_6331 extends class_6486 implements class_700 {
 
    @Nullable
    @Override
-   public class_8145 method_29534(int var1) {
-      return (class_8145)this.field_32326.get(var1);
+   public Entity method_29534(int var1) {
+      return (Entity)this.field_32326.get(var1);
    }
 
    @Nullable
-   public class_8145 method_28925(UUID var1) {
+   public Entity method_28925(UUID var1) {
       return this.field_32341.get(var1);
    }
 
@@ -1221,7 +1221,7 @@ public class class_6331 extends class_6486 implements class_700 {
       return this.method_28984(var1) != null;
    }
 
-   public void method_28955(class_3894 var1, class_8145 var2, class_5545 var3) {
+   public void method_28955(class_3894 var1, Entity var2, class_5545 var3) {
       var3.method_25223(var1, var2);
    }
 
@@ -1274,7 +1274,7 @@ public class class_6331 extends class_6486 implements class_700 {
       }
    }
 
-   private static void method_28950(Writer var0, Iterable<class_8145> var1) throws IOException {
+   private static void method_28950(Writer var0, Iterable<Entity> var1) throws IOException {
       class_7012 var4 = class_7012.method_32026()
          .method_40500("x")
          .method_40500("y")
@@ -1286,7 +1286,7 @@ public class class_6331 extends class_6486 implements class_700 {
          .method_40500("custom_name")
          .method_40499(var0);
 
-      for (class_8145 var6 : var1) {
+      for (Entity var6 : var1) {
          ITextComponent var7 = var6.method_45508();
          ITextComponent var8 = var6.method_19839();
          var4.method_32024(
@@ -1324,11 +1324,11 @@ public class class_6331 extends class_6486 implements class_700 {
    }
 
    @Override
-   public float method_25265(class_240 var1, boolean var2) {
+   public float method_25265(Direction var1, boolean var2) {
       return 1.0F;
    }
 
-   public Iterable<class_8145> method_28938() {
+   public Iterable<Entity> method_28938() {
       return Iterables.unmodifiableIterable(this.field_32326.values());
    }
 

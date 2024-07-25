@@ -10,7 +10,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    public final class_9811 field_21388;
    public final class_8985 field_21389;
 
-   public class_4359(class_6629<? extends class_4359> var1, class_6486 var2) {
+   public class_4359(class_6629<? extends class_4359> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
       this.field_29900 = new class_2101(this);

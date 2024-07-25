@@ -9,7 +9,7 @@ public class class_1677 extends class_7164<class_107, class_151> {
       new Identifier("textures/entity/parrot/parrot_grey.png")
    };
 
-   public class_1677(class_6122 var1) {
+   public class_1677(EntityRenderDispatcher var1) {
       super(var1, new class_151(), 0.3F);
    }
 

@@ -18,7 +18,7 @@ public class class_1048 implements class_214 {
    }
 
    @Deprecated
-   public class_1048(class_8145 var1) {
+   public class_1048(Entity var1) {
       this(
          var1.method_37283(),
          var1.method_37309(),

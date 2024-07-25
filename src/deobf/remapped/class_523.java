@@ -56,10 +56,10 @@ public class class_523 extends class_1331 {
    }
 
    @Override
-   public class_1331 method_6098(class_240 var1) {
+   public class_1331 method_6098(Direction var1) {
       if (this.field_3193 > 0) {
          if (this.field_3192 == null) {
-            this.field_3192 = new class_523[class_240.field_803.length];
+            this.field_3192 = new class_523[Direction.field_803.length];
          }
 
          if (this.field_3190) {
@@ -83,17 +83,17 @@ public class class_523 extends class_1331 {
    }
 
    @Override
-   public class_1331 method_6099(class_240 var1, int var2) {
+   public class_1331 method_6099(Direction var1, int var2) {
       return var2 != 1 ? super.method_6099(var1, var2).method_6072() : this.method_6098(var1);
    }
 
-   public void method_2549(class_1331 var1, class_240 var2) {
+   public void method_2549(class_1331 var1, Direction var2) {
       this.field_3189 = var1.method_12173() + var2.method_1041();
       this.field_3191 = var1.method_12165() + var2.method_1054();
       this.field_3194 = var1.method_12185() + var2.method_1034();
    }
 
-   public void method_2550(class_1331 var1, class_240 var2, class_240 var3) {
+   public void method_2550(class_1331 var1, Direction var2, Direction var3) {
       this.field_3189 = var1.method_12173() + var2.method_1041() + var3.method_1041();
       this.field_3191 = var1.method_12165() + var2.method_1054() + var3.method_1054();
       this.field_3194 = var1.method_12185() + var2.method_1034() + var3.method_1034();
@@ -103,7 +103,7 @@ public class class_523 extends class_1331 {
       for (int var3 = 0; var3 < 6; var3++) {
          class_523 var4 = this.field_3192[var3];
          if (var4 != null) {
-            class_240 var5 = class_240.field_803[var3];
+            Direction var5 = Direction.field_803[var3];
             int var6 = this.field_3189 + var5.method_1041();
             int var7 = this.field_3191 + var5.method_1054();
             int var8 = this.field_3194 + var5.method_1034();

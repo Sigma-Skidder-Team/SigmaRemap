@@ -143,10 +143,10 @@ public final class class_2426 {
       this.field_12079 = var1.field_33415 * var4 + var1.field_33404 * var5 + var1.field_33410 * var6;
    }
 
-   public void method_11058(class_5422 var1) {
-      class_5422 var4 = new class_5422(var1);
-      var4.method_24658(new class_5422(this.method_11057(), this.method_11061(), this.method_11055(), 0.0F));
-      class_5422 var5 = new class_5422(var1);
+   public void method_11058(Quaternion var1) {
+      Quaternion var4 = new Quaternion(var1);
+      var4.method_24658(new Quaternion(this.method_11057(), this.method_11061(), this.method_11055(), 0.0F));
+      Quaternion var5 = new Quaternion(var1);
       var5.method_24652();
       var4.method_24658(var5);
       this.method_11065(var4.method_24653(), var4.method_24647(), var4.method_24648());
@@ -159,12 +159,12 @@ public final class class_2426 {
       this.field_12079 = this.field_12079 * var5 + var1.field_12079 * var2;
    }
 
-   public class_5422 method_11062(float var1) {
-      return new class_5422(this, var1, false);
+   public Quaternion method_11062(float var1) {
+      return new Quaternion(this, var1, false);
    }
 
-   public class_5422 method_11074(float var1) {
-      return new class_5422(this, var1, true);
+   public Quaternion method_11074(float var1) {
+      return new Quaternion(this, var1, true);
    }
 
    public class_2426 method_11060() {

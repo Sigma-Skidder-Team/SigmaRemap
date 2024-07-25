@@ -47,8 +47,8 @@ public class class_6344 extends class_6414 implements class_2593 {
          class_2522 var7 = this.method_29260()
             .method_10308(field_32395, class_6666.field_34465)
             .method_10308(field_32398, Boolean.valueOf(var6.method_22005() == class_8532.field_43674));
-         class_240 var8 = var1.method_21857();
-         return var8 != class_240.field_802 && (var8 == class_240.field_817 || !(var1.method_21865().field_7333 - (double)var4.method_12165() > 0.5))
+         Direction var8 = var1.method_21857();
+         return var8 != Direction.field_802 && (var8 == Direction.field_817 || !(var1.method_21865().field_7333 - (double)var4.method_12165() > 0.5))
             ? var7
             : var7.method_10308(field_32395, class_6666.field_34466);
       } else {
@@ -66,10 +66,10 @@ public class class_6344 extends class_6414 implements class_2593 {
          return true;
       } else {
          boolean var7 = var2.method_21865().field_7333 - (double)var2.method_21858().method_12165() > 0.5;
-         class_240 var8 = var2.method_21857();
+         Direction var8 = var2.method_21857();
          return var6 != class_6666.field_34465
-            ? var8 == class_240.field_802 || !var7 && var8.method_1029().method_42629()
-            : var8 == class_240.field_817 || var7 && var8.method_1029().method_42629();
+            ? var8 == Direction.field_802 || !var7 && var8.method_1029().method_42629()
+            : var8 == Direction.field_817 || var7 && var8.method_1029().method_42629();
       }
    }
 
@@ -89,7 +89,7 @@ public class class_6344 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var1.<Boolean>method_10313(field_32398)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }

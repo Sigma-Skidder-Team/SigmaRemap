@@ -15,7 +15,7 @@ public class class_8197 extends class_9873 {
    private final List<class_1549> field_41948;
 
    public class_8197() {
-      super(class_3581::method_16734);
+      super(RenderLayer::method_16734);
       this.field_41952 = new class_1549(64, 32, 0, 10).method_7048(0.0F, -4.0F, -0.99F, 5.0F, 8.0F, 1.0F);
       this.field_41949 = new class_1549(64, 32, 12, 10).method_7048(0.0F, -4.0F, -0.01F, 5.0F, 8.0F, 1.0F);
       this.field_41955 = new class_1549(64, 32, 24, 10).method_7048(0.0F, -4.0F, 0.0F, 5.0F, 8.0F, 0.005F);

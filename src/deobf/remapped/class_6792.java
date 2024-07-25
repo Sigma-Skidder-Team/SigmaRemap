@@ -2,10 +2,10 @@ package remapped;
 
 public class class_6792 extends class_7067<class_9552> {
    private static final Identifier field_35020 = new Identifier("textures/entity/shulker/spark.png");
-   private static final class_3581 field_35019 = class_3581.method_16705(field_35020);
+   private static final RenderLayer field_35019 = RenderLayer.method_16705(field_35020);
    private final class_7834<class_9552> field_35021 = new class_7834<class_9552>();
 
-   public class_6792(class_6122 var1) {
+   public class_6792(EntityRenderDispatcher var1) {
       super(var1);
    }
 

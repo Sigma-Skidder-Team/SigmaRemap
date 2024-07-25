@@ -148,7 +148,7 @@ public class class_6524 {
       }
    }
 
-   private static void method_29709(class_3676 var0, DataFixer var1, boolean var2, BooleanSupplier var3, ImmutableSet<class_5621<class_6486>> var4) {
+   private static void method_29709(class_3676 var0, DataFixer var1, boolean var2, BooleanSupplier var3, ImmutableSet<class_5621<World>> var4) {
       field_33208.info("Forcing world upgrade!");
       class_3160 var7 = new class_3160(var0, var1, var4, var2);
       ITextComponent var8 = null;

@@ -20,7 +20,7 @@ public enum class_4169 implements class_6839 {
    field_20282("swing_progress");
 
    private String field_20294;
-   private class_6122 field_20284;
+   private EntityRenderDispatcher field_20284;
    private static final class_4169[] field_20279 = values();
 
    private class_4169(String var3) {

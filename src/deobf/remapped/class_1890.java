@@ -3,15 +3,15 @@ package remapped;
 public class class_1890 extends class_3429 {
    private static String[] field_9559;
 
-   public class_1890(class_6629<? extends class_1890> var1, class_6486 var2) {
+   public class_1890(class_6629<? extends class_1890> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_1890(class_6486 var1, class_5834 var2) {
+   public class_1890(World var1, class_5834 var2) {
       super(class_6629.field_34274, var2, var1);
    }
 
-   public class_1890(class_6486 var1, double var2, double var4, double var6) {
+   public class_1890(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34274, var2, var4, var6, var1);
    }
 

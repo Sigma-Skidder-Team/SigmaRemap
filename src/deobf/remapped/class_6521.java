@@ -2,16 +2,16 @@ package remapped;
 
 import java.util.function.Function;
 
-public abstract class class_6521<T extends class_8145> extends class_9873 {
+public abstract class class_6521<T extends Entity> extends class_9873 {
    public float field_33202;
    public boolean field_33203;
    public boolean field_33204 = true;
 
    public class_6521() {
-      this(class_3581::method_16755);
+      this(RenderLayer::method_16755);
    }
 
-   public class_6521(Function<Identifier, class_3581> var1) {
+   public class_6521(Function<Identifier, RenderLayer> var1) {
       super(var1);
    }
 

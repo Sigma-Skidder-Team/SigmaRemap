@@ -33,7 +33,7 @@ public class class_5007<E extends class_5834> extends class_5920<E> {
       return this.method_23051((E)var1).method_37124(var1, 1.0);
    }
 
-   private class_8145 method_23051(E var1) {
-      return var1.method_26525().<class_8145>method_5138(class_6044.field_30903).get();
+   private Entity method_23051(E var1) {
+      return var1.method_26525().<Entity>method_5138(class_6044.field_30903).get();
    }
 }

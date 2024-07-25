@@ -38,7 +38,7 @@ import remapped.class_6539;
 import remapped.class_6815;
 import remapped.class_704;
 import remapped.class_8761;
-import remapped.class_8881;
+import remapped.GameOptions;
 import remapped.Util;
 import remapped.class_9706;
 
@@ -148,7 +148,7 @@ public class Main {
       } catch (Throwable var71) {
          class_159 var59 = class_159.method_643(var71, "Initializing game");
          var59.method_639("Initialization");
-         MinecraftClient.method_8489((class_2435)null, var55.field_17025.field_12806, (class_8881)null, var59);
+         MinecraftClient.method_8489((class_2435)null, var55.field_17025.field_12806, (GameOptions)null, var59);
          MinecraftClient.method_8608(var59);
          return;
       }

@@ -6,7 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import remapped.class_4550;
 import remapped.class_4964;
-import remapped.class_8145;
+import remapped.Entity;
 import remapped.class_9155;
 
 public class SelectorTextComponent extends TextComponent implements ITargetedTextComponent {
@@ -33,7 +33,7 @@ public class SelectorTextComponent extends TextComponent implements ITargetedTex
    }
 
    @Override
-   public IFormattableTextComponent func_230535_a_(class_9155 p_230535_1_, class_8145 p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
+   public IFormattableTextComponent func_230535_a_(class_9155 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       return (IFormattableTextComponent)(p_230535_1_ != null && this.field_197670_d != null
          ? class_4550.method_21101(this.field_197670_d.method_21106(p_230535_1_))
          : new StringTextComponent(""));

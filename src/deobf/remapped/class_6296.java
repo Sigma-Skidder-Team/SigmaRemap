@@ -2,9 +2,9 @@ package remapped;
 
 public class class_6296 extends class_7067<class_3942> {
    private static final Identifier field_32174 = new Identifier("textures/entity/fishing_hook.png");
-   private static final class_3581 field_32173 = class_3581.method_16747(field_32174);
+   private static final RenderLayer field_32173 = RenderLayer.method_16747(field_32174);
 
-   public class_6296(class_6122 var1) {
+   public class_6296(EntityRenderDispatcher var1) {
       super(var1);
    }
 
@@ -42,9 +42,9 @@ public class class_6296 extends class_7067<class_3942> {
          double var29;
          double var31;
          float var36;
-         if ((this.field_36493.field_31304 == null || this.field_36493.field_31304.method_40867().method_42383())
+         if ((this.field_36493.gameOptions == null || this.field_36493.gameOptions.method_40867().method_42383())
             && var9 == MinecraftClient.getInstance().field_9632) {
-            double var33 = this.field_36493.field_31304.field_45543;
+            double var33 = this.field_36493.gameOptions.field_45543;
             var33 /= 100.0;
             class_1343 var35 = new class_1343((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
             var35 = var35.method_6212(-class_9299.method_42795(var3, var9.field_41762, var9.field_41755) * (float) (Math.PI / 180.0));
@@ -68,7 +68,7 @@ public class class_6296 extends class_7067<class_3942> {
          float var41 = (float)(var27 - var49);
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);
-         class_7907 var44 = var5.method_11645(class_3581.method_16744());
+         class_7907 var44 = var5.method_11645(RenderLayer.method_16744());
          class_8107 var45 = var4.method_36058().method_28620();
          byte var46 = 16;
 

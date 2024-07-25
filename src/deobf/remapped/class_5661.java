@@ -54,13 +54,13 @@ public class class_5661 extends class_6967 {
    public void method_25623(class_9379 var1, class_1331 var2) {
    }
 
-   public void method_25622(class_6486 var1, class_1331 var2) {
+   public void method_25622(World var1, class_1331 var2) {
    }
 
    @Override
    public void method_16794() {
       super.method_16794();
-      class_6486 var3 = this.field_28700.field_41768;
+      World var3 = this.field_28700.field_41768;
       class_1331 var4 = this.field_28700.method_37075();
       class_1331 var5 = this.method_25624(var4, var3);
       Random var6 = this.field_28700.method_26594();

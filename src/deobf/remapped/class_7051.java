@@ -279,7 +279,7 @@ public class class_7051 implements class_6867, class_9875 {
       }
    }
 
-   public void method_32395(class_6486 var1, class_6098 var2) {
+   public void method_32395(World var1, class_6098 var2) {
       if (!var1.field_33055) {
          while (!var2.method_28022()) {
             int var5 = this.method_32402(var2);

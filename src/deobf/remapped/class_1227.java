@@ -51,7 +51,7 @@ public class class_1227 extends class_2255<class_1100> {
       float var30 = (float)var8 * var4 * (0.5F / var10) + var29;
       method_5464(
          var0,
-         var1.method_11645(class_3581.method_16731(var2, false)),
+         var1.method_11645(RenderLayer.method_16731(var2, false)),
          var18,
          var19,
          var20,
@@ -82,7 +82,7 @@ public class class_1227 extends class_2255<class_1100> {
       var30 = (float)var8 * var4 + var29;
       method_5464(
          var0,
-         var1.method_11645(class_3581.method_16731(var2, true)),
+         var1.method_11645(RenderLayer.method_16731(var2, true)),
          var18,
          var19,
          var20,

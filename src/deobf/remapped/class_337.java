@@ -18,7 +18,7 @@ public class class_337 extends class_1173 {
    private boolean field_1251;
    public class_8285 field_1260;
 
-   public class_337(class_6629<? extends class_337> var1, class_6486 var2) {
+   public class_337(class_6629<? extends class_337> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 10;
       this.method_26895(class_1108.field_6359, 0.0F);
@@ -51,7 +51,7 @@ public class class_337 extends class_1173 {
    }
 
    @Override
-   public class_1249 method_26933(class_6486 var1) {
+   public class_1249 method_26933(World var1) {
       return new class_9811(this, var1);
    }
 
@@ -98,7 +98,7 @@ public class class_337 extends class_1173 {
          if (!this.field_41768.field_33055) {
             return this.method_17809();
          } else if (this.field_1258 == null) {
-            class_8145 var3 = this.field_41768.method_29534(this.field_41735.<Integer>method_36640(field_1254));
+            Entity var3 = this.field_41768.method_29534(this.field_41735.<Integer>method_36640(field_1254));
             if (!(var3 instanceof class_5834)) {
                return null;
             } else {

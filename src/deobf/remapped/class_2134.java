@@ -15,7 +15,7 @@ public class class_2134 extends class_7186 {
    private static final Logger field_10679 = LogManager.getLogger();
    public int field_10689;
    public int field_10677;
-   public class_5621<class_6486> field_10685;
+   public class_5621<World> field_10685;
    public boolean field_10681;
    public boolean field_10688;
    public byte field_10678;
@@ -31,7 +31,7 @@ public class class_2134 extends class_7186 {
       super(var1);
    }
 
-   public void method_9965(int var1, int var2, int var3, boolean var4, boolean var5, class_5621<class_6486> var6) {
+   public void method_9965(int var1, int var2, int var3, boolean var4, boolean var5, class_5621<World> var6) {
       this.field_10678 = (byte)var3;
       this.method_9967((double)var1, (double)var2, this.field_10678);
       this.field_10685 = var6;
@@ -50,7 +50,7 @@ public class class_2134 extends class_7186 {
 
    @Override
    public void method_32924(class_5734 var1) {
-      this.field_10685 = (class_5621<class_6486>)class_8760.method_40243(new Dynamic(class_3504.field_17178, var1.method_25929("dimension")))
+      this.field_10685 = (class_5621<World>)class_8760.method_40243(new Dynamic(class_3504.field_17178, var1.method_25929("dimension")))
          .resultOrPartial(field_10679::error)
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method_25929("dimension")));
       this.field_10689 = var1.method_25947("xCenter");
@@ -245,7 +245,7 @@ public class class_2134 extends class_7186 {
       if (var14 >= -63.0F && var15 >= -63.0F && var14 <= 63.0F && var15 <= 63.0F) {
          var8 += !(var8 < 0.0) ? 8.0 : -8.0;
          var20 = (byte)((int)(var8 * 16.0 / 360.0));
-         if (this.field_10685 == class_6486.field_33029 && var2 != null) {
+         if (this.field_10685 == World.field_33029 && var2 != null) {
             int var22 = (int)(var2.method_43366().method_8666() / 10L);
             var20 = (byte)(var22 * var22 * 34187121 + var22 * 121 >> 15 & 15);
          }

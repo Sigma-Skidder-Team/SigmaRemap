@@ -7,7 +7,7 @@ public class class_6352 {
    private class_6115 field_32470 = class_6115.field_31261;
    private class_5621<class_6325> field_32469;
    private class_5390<?> field_32471;
-   private class_5621<class_6486> field_32474;
+   private class_5621<World> field_32474;
    private Boolean field_32476;
    private class_1562 field_32473 = class_1562.field_8232;
    private class_8431 field_32475 = class_8431.field_43143;

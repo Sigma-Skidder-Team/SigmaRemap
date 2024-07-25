@@ -37,8 +37,8 @@ public class class_685 implements class_6310<class_1243> {
    }
 
    @Nullable
-   public class_8116 method_3102(class_6486 var1) {
-      class_8145 var4 = var1.method_29534(this.field_3770);
+   public class_8116 method_3102(World var1) {
+      Entity var4 = var1.method_29534(this.field_3770);
       return !(var4 instanceof class_4648) ? null : ((class_4648)var4).method_21499();
    }
 

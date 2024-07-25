@@ -3,7 +3,7 @@ package remapped;
 public class class_9104 extends class_9733 {
    private static String[] field_46617;
    private final class_9873 field_46616 = new class_2574();
-   private final class_3581 field_46618 = class_3581.method_16705(class_643.field_3601);
+   private final RenderLayer field_46618 = RenderLayer.method_16705(class_643.field_3601);
 
    private class_9104(class_174 var1, double var2, double var4, double var6) {
       super(var1, var2, var4, var6);
@@ -17,7 +17,7 @@ public class class_9104 extends class_9733 {
    }
 
    @Override
-   public void method_44951(class_7907 var1, class_9071 var2, float var3) {
+   public void method_44951(class_7907 var1, Camera var2, float var3) {
       float var6 = ((float)this.field_49475 + var3) / (float)this.field_49476;
       float var7 = 0.05F + 0.5F * class_9299.method_42818(var6 * (float) Math.PI);
       class_7966 var8 = new class_7966();

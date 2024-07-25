@@ -105,7 +105,7 @@ public class class_916 extends class_4037 implements class_6510 {
       this.method_3977(var11);
    }
 
-   private static double method_3984(class_2034 var0, class_8145 var1) {
+   private static double method_3984(class_2034 var0, Entity var1) {
       double var4 = (double)(var0.field_10328 * 16 + 8);
       double var6 = (double)(var0.field_10327 * 16 + 8);
       double var8 = var4 - var1.method_37302();
@@ -523,12 +523,12 @@ public class class_916 extends class_4037 implements class_6510 {
                int var9 = var8.length;
 
                for (int var10 = 0; var10 < var9; var10++) {
-                  for (class_8145 var12 : var8[var10]) {
+                  for (Entity var12 : var8[var10]) {
                      if (!(var12 instanceof class_704) && !this.field_4703.method_28953(var12)) {
                         if (var7 != null) {
                            var7.add(var12);
                         } else {
-                           var7 = Lists.newArrayList(new class_8145[]{var12});
+                           var7 = Lists.newArrayList(new Entity[]{var12});
                         }
                      }
                   }
@@ -601,7 +601,7 @@ public class class_916 extends class_4037 implements class_6510 {
             this.field_4703.method_29599().method_16055("chunkSave");
             class_5734 var6 = class_9477.method_43779(this.field_4703, var1);
             if (class_7860.field_39941.method_22501()) {
-               class_6486 var7 = (class_6486)class_7860.method_35555(var1, class_7860.field_40175);
+               World var7 = (World)class_7860.method_35555(var1, class_7860.field_40175);
                class_7860.method_35568(class_7860.field_39941, var1, var7 != null ? var7 : this.field_4703, var6);
             }
 
@@ -732,7 +732,7 @@ public class class_916 extends class_4037 implements class_6510 {
             method_3983(var8.method_24353()),
             this.field_4714.method_42701(var6.getLongKey()),
             !this.method_4018(var7),
-            var10.<Integer>map(var0 -> Stream.<class_4722<class_8145>>of(var0.method_11979()).mapToInt(class_4722::size).sum()).orElse(0),
+            var10.<Integer>map(var0 -> Stream.<class_4722<Entity>>of(var0.method_11979()).mapToInt(class_4722::size).sum()).orElse(0),
             var10.<Integer>map(var0 -> var0.method_12004().size()).orElse(0)
          );
       }
@@ -888,7 +888,7 @@ public class class_916 extends class_4037 implements class_6510 {
       });
    }
 
-   public void method_4021(class_8145 var1) {
+   public void method_4021(Entity var1) {
       if (!(var1 instanceof class_5708)) {
          class_6629 var4 = var1.method_37387();
          int var5 = var4.method_30462() * 16;
@@ -915,7 +915,7 @@ public class class_916 extends class_4037 implements class_6510 {
       }
    }
 
-   public void method_3990(class_8145 var1) {
+   public void method_3990(Entity var1) {
       if (var1 instanceof class_9359) {
          class_9359 var4 = (class_9359)var1;
          this.method_4012(var4, false);
@@ -944,7 +944,7 @@ public class class_916 extends class_4037 implements class_6510 {
          class_6979 var8 = class_6979.method_31923(class_6650.method_30547(var6));
          if (!Objects.equals(var7, var8)) {
             var6.method_30549(var4);
-            class_8145 var9 = class_6650.method_30547(var6);
+            Entity var9 = class_6650.method_30547(var6);
             if (var9 instanceof class_9359) {
                var3.add((class_9359)var9);
             }
@@ -965,14 +965,14 @@ public class class_916 extends class_4037 implements class_6510 {
       }
    }
 
-   public void method_3973(class_8145 var1, class_6310<?> var2) {
+   public void method_3973(Entity var1, class_6310<?> var2) {
       class_6650 var5 = (class_6650)this.field_4716.get(var1.method_37145());
       if (var5 != null) {
          var5.method_30548(var2);
       }
    }
 
-   public void method_3974(class_8145 var1, class_6310<?> var2) {
+   public void method_3974(Entity var1, class_6310<?> var2) {
       class_6650 var5 = (class_6650)this.field_4716.get(var1.method_37145());
       if (var5 != null) {
          var5.method_30551(var2);
@@ -993,7 +993,7 @@ public class class_916 extends class_4037 implements class_6510 {
 
       while (var8.hasNext()) {
          class_6650 var9 = (class_6650)var8.next();
-         class_8145 var10 = class_6650.method_30547(var9);
+         Entity var10 = class_6650.method_30547(var9);
          if (var10 != var1 && var10.field_41742 == var3.method_27352().field_10328 && var10.field_41714 == var3.method_27352().field_10327) {
             var9.method_30550(var1);
             if (var10 instanceof class_5886 && ((class_5886)var10).method_26922() != null) {
@@ -1007,13 +1007,13 @@ public class class_916 extends class_4037 implements class_6510 {
       }
 
       if (!var6.isEmpty()) {
-         for (class_8145 var13 : var6) {
+         for (Entity var13 : var6) {
             var1.field_47794.method_4156(new class_2708(var13, ((class_5886)var13).method_26922()));
          }
       }
 
       if (!var7.isEmpty()) {
-         for (class_8145 var14 : var7) {
+         for (Entity var14 : var7) {
             var1.field_47794.method_4156(new class_4597(var14));
          }
       }

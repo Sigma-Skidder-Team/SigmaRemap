@@ -29,7 +29,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       if (!method_20408(var6)) {
          if (var2.method_26475(var6).method_28022()) {
@@ -51,7 +51,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    @Override
-   public void method_11206(class_6098 var1, class_6486 var2, class_5834 var3, int var4) {
+   public void method_11206(class_6098 var1, World var2, class_5834 var3, int var4) {
       int var7 = this.method_11230(var1) - var4;
       float var8 = method_20406(var7, var1);
       if (var8 >= 1.0F && !method_20408(var1) && method_20410(var3, var1)) {
@@ -170,7 +170,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    private static void method_20400(
-      class_6486 var0, class_5834 var1, class_2584 var2, class_6098 var3, class_6098 var4, float var5, boolean var6, float var7, float var8, float var9
+           World var0, class_5834 var1, class_2584 var2, class_6098 var3, class_6098 var4, float var5, boolean var6, float var7, float var8, float var9
    ) {
       if (!var0.field_33055) {
          boolean var12 = var4.method_27960() == class_4897.field_24479;
@@ -186,7 +186,7 @@ public class class_4380 extends class_551 implements class_1538 {
 
          if (!(var1 instanceof class_3832)) {
             class_1343 var14 = var1.method_37371(1.0F);
-            class_5422 var15 = new class_5422(new class_2426(var14), var9, true);
+            Quaternion var15 = new Quaternion(new class_2426(var14), var9, true);
             class_1343 var16 = var1.method_37307(1.0F);
             class_2426 var17 = new class_2426(var16);
             var17.method_11058(var15);
@@ -197,14 +197,14 @@ public class class_4380 extends class_551 implements class_1538 {
          }
 
          var3.method_28003(!var12 ? 1 : 3, var1, var1x -> var1x.method_26447(var2));
-         var0.method_7509((class_8145)var13);
+         var0.method_7509((Entity)var13);
          var0.method_29528(
             (class_704)null, var1.method_37302(), var1.method_37309(), var1.method_37156(), class_463.field_2025, class_562.field_3335, 1.0F, var5
          );
       }
    }
 
-   private static class_6749 method_20415(class_6486 var0, class_5834 var1, class_6098 var2, class_6098 var3) {
+   private static class_6749 method_20415(World var0, class_5834 var1, class_6098 var2, class_6098 var3) {
       class_603 var6 = (class_603)(!(var3.method_27960() instanceof class_603) ? class_4897.field_25024 : var3.method_27960());
       class_6749 var7 = var6.method_2819(var0, var3, var1);
       if (var1 instanceof class_704) {
@@ -221,7 +221,7 @@ public class class_4380 extends class_551 implements class_1538 {
       return var7;
    }
 
-   public static void method_20402(class_6486 var0, class_5834 var1, class_2584 var2, class_6098 var3, float var4, float var5) {
+   public static void method_20402(World var0, class_5834 var1, class_2584 var2, class_6098 var3, float var4, float var5) {
       List var8 = method_20411(var3);
       float[] var9 = method_20398(var1.method_26594());
 
@@ -256,7 +256,7 @@ public class class_4380 extends class_551 implements class_1538 {
       return 1.0F / (field_12172.nextFloat() * 0.5F + 1.8F) + var3;
    }
 
-   private static void method_20407(class_6486 var0, class_5834 var1, class_6098 var2) {
+   private static void method_20407(World var0, class_5834 var1, class_6098 var2) {
       if (var1 instanceof class_9359) {
          class_9359 var5 = (class_9359)var1;
          if (!var0.field_33055) {
@@ -270,7 +270,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    @Override
-   public void method_11228(class_6486 var1, class_5834 var2, class_6098 var3, int var4) {
+   public void method_11228(World var1, class_5834 var2, class_6098 var3, int var4) {
       if (!var1.field_33055) {
          int var7 = class_2931.method_13423(class_3668.field_17846, var3);
          class_8461 var8 = this.method_20405(var7);
@@ -331,7 +331,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, class_6486 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       List var7 = method_20411(var1);
       if (method_20408(var1) && !var7.isEmpty()) {
          class_6098 var8 = (class_6098)var7.get(0);

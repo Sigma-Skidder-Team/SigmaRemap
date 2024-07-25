@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class class_7908 implements class_1979 {
    private static String[] field_40429;
-   private class_8145 field_40430;
+   private Entity field_40430;
 
    @Override
    public int method_9095() {
@@ -48,11 +48,11 @@ public class class_7908 implements class_1979 {
       }
    }
 
-   public class_8145 method_35765() {
+   public Entity method_35765() {
       return this.field_40430;
    }
 
-   public void method_35766(class_8145 var1) {
+   public void method_35766(Entity var1) {
       this.field_40430 = var1;
    }
 }

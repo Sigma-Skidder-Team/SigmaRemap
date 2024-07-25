@@ -6,8 +6,8 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public abstract class class_2353 {
-   public static final class_240[] field_11817 = new class_240[]{
-      class_240.field_809, class_240.field_804, class_240.field_818, class_240.field_800, class_240.field_802, class_240.field_817
+   public static final Direction[] field_11817 = new Direction[]{
+      Direction.field_809, Direction.field_804, Direction.field_818, Direction.field_800, Direction.field_802, Direction.field_817
    };
    public final class_5371 field_11820;
    public final boolean field_11822;
@@ -56,38 +56,38 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       return var1;
    }
 
    @Deprecated
-   public boolean method_10764(class_2522 var1, class_2522 var2, class_240 var3) {
+   public boolean method_10764(class_2522 var1, class_2522 var2, Direction var3) {
       return false;
    }
 
    @Deprecated
-   public void method_10801(class_2522 var1, class_6486 var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
       class_1892.method_8430(var2, var3);
    }
 
    @Deprecated
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
    }
 
    @Deprecated
-   public void method_10761(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (this.method_10802() && !var1.method_8350(var4.method_8360())) {
          var2.method_29597(var3);
       }
    }
 
    @Deprecated
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       return class_6910.field_35521;
    }
 
    @Deprecated
-   public boolean method_10800(class_2522 var1, class_6486 var2, class_1331 var3, int var4, int var5) {
+   public boolean method_10800(class_2522 var1, World var2, class_1331 var3, int var4, int var5) {
       return false;
    }
 
@@ -189,7 +189,7 @@ public abstract class class_2353 {
 
    @Nullable
    @Deprecated
-   public class_4259 method_10767(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public class_4259 method_10767(class_2522 var1, World var2, class_1331 var3) {
       return null;
    }
 
@@ -204,7 +204,7 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       return 0;
    }
 
@@ -248,20 +248,20 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public void method_10791(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4) {
+   public void method_10791(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
    }
 
    @Deprecated
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, class_240 var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
       return 0;
    }
 
    @Deprecated
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
    }
 
    @Deprecated
-   public int method_10778(class_2522 var1, class_6163 var2, class_1331 var3, class_240 var4) {
+   public int method_10778(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
       return 0;
    }
 
@@ -279,7 +279,7 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public void method_10758(class_6486 var1, class_2522 var2, class_9529 var3, class_5783 var4) {
+   public void method_10758(World var1, class_2522 var2, class_9529 var3, class_5783 var4) {
    }
 
    public abstract class_2451 method_10803();

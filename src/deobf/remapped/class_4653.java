@@ -22,7 +22,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
    private static final Predicate<class_5834> field_22697 = var0 -> var0.method_26550() != class_2780.field_13579 && var0.method_26556();
    private static final class_4931 field_22696 = new class_4931().method_22607(20.0).method_22606(field_22697);
 
-   public class_4653(class_6629<? extends class_4653> var1, class_6486 var2) {
+   public class_4653(class_6629<? extends class_4653> var1, World var2) {
       super(var1, var2);
       this.method_26456(this.method_26465());
       this.method_26927().method_5611(true);
@@ -89,7 +89,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
    public void method_26606() {
       class_1343 var3 = this.method_37098().method_6210(1.0, 0.6, 1.0);
       if (!this.field_41768.field_33055 && this.method_21508(0) > 0) {
-         class_8145 var4 = this.field_41768.method_29534(this.method_21508(0));
+         Entity var4 = this.field_41768.method_29534(this.method_21508(0));
          if (var4 != null) {
             double var5 = var3.field_7333;
             if (this.method_37309() < var4.method_37309() || !this.method_32928() && this.method_37309() < var4.method_37309() + 5.0) {
@@ -120,7 +120,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
 
       for (int var34 = 0; var34 < 2; var34++) {
          int var9 = this.method_21508(var34 + 1);
-         class_8145 var10 = null;
+         Entity var10 = null;
          if (var9 > 0) {
             var10 = this.field_41768.method_29534(var9);
          }
@@ -230,7 +230,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
                      var27.remove(var31);
                   }
                } else {
-                  class_8145 var26 = this.field_41768.method_29534(var23);
+                  Entity var26 = this.field_41768.method_29534(var23);
                   if (var26 == null || !var26.method_37330() || this.method_37275(var26) > 900.0 || !this.method_26420(var26)) {
                      this.method_21512(var3, 0);
                   } else if (var26 instanceof class_704 && ((class_704)var26).field_3876.field_4940) {
@@ -409,13 +409,13 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
          return false;
       } else {
          if (this.method_32928()) {
-            class_8145 var5 = var1.method_28353();
+            Entity var5 = var1.method_28353();
             if (var5 instanceof class_6749) {
                return false;
             }
          }
 
-         class_8145 var7 = var1.method_28372();
+         Entity var7 = var1.method_28372();
          if (var7 != null && !(var7 instanceof class_704) && var7 instanceof class_5834 && ((class_5834)var7).method_26550() == this.method_26550()) {
             return false;
          } else {
@@ -503,7 +503,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
    }
 
    @Override
-   public boolean method_37158(class_8145 var1) {
+   public boolean method_37158(Entity var1) {
       return false;
    }
 

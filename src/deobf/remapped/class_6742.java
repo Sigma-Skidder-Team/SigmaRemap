@@ -24,7 +24,7 @@ public class class_6742 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      class_9071 var11 = this.field_34796.gameRenderer.method_35949();
+      Camera var11 = this.field_34796.gameRenderer.method_35949();
       class_3542.method_16438();
       class_3542.method_16488();
       class_3542.method_16437();

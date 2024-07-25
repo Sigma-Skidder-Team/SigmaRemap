@@ -16,7 +16,7 @@ public interface class_7907 extends class_275 {
       return var5;
    }
 
-   default class_3581 method_35760() {
+   default RenderLayer method_35760() {
       return null;
    }
 
@@ -186,7 +186,7 @@ public interface class_7907 extends class_275 {
    default void method_35752(class_5155 var1) {
    }
 
-   default void method_35736(class_3581 var1) {
+   default void method_35736(RenderLayer var1) {
    }
 
    default class_2426 method_35754(class_2426 var1) {

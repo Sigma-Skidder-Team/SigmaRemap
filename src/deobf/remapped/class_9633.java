@@ -32,7 +32,7 @@ public class class_9633 extends class_7690 implements class_5359 {
    private boolean field_49072;
    private boolean field_49066;
    private boolean field_49068;
-   private class_3581 field_49079 = null;
+   private RenderLayer field_49079 = null;
    private boolean[] field_49081 = new boolean[256];
    private class_5155[] field_49075 = null;
    private class_5155[] field_49089 = null;
@@ -590,7 +590,7 @@ public class class_9633 extends class_7690 implements class_5359 {
    }
 
    @Override
-   public void method_35736(class_3581 var1) {
+   public void method_35736(RenderLayer var1) {
       this.field_49079 = var1;
       if (var1 == null) {
          if (this.field_49075 != null) {
@@ -618,7 +618,7 @@ public class class_9633 extends class_7690 implements class_5359 {
    }
 
    @Override
-   public class_3581 method_35760() {
+   public RenderLayer method_35760() {
       return this.field_49079;
    }
 

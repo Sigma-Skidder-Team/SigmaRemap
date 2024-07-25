@@ -55,7 +55,7 @@ public class class_4309 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (!var1.method_8309(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 1);
       }
@@ -65,7 +65,7 @@ public class class_4309 extends class_6414 {
 
    @Override
    public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
-      for (class_240 var7 : class_9594.field_48893) {
+      for (Direction var7 : class_9594.field_48893) {
          class_2522 var8 = var2.method_28262(var3.method_6098(var7));
          class_5371 var9 = var8.method_8362();
          if (var9.method_24499() || var2.method_28258(var3.method_6098(var7)).method_22007(class_6503.field_33095)) {
@@ -79,7 +79,7 @@ public class class_4309 extends class_6414 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       var4.method_37181(class_6199.field_31677, 1.0F);
    }
 

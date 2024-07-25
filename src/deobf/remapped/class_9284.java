@@ -56,7 +56,7 @@ public class class_9284 extends class_4171<class_9716, class_3169<class_9716>> {
             var1.method_36060(class_2426.field_12080.method_11074(var4.field_49393));
             var1.method_36060(class_2426.field_12076.method_11074(var4.field_49386));
             var1.method_36060(class_2426.field_12074.method_11074(var4.field_49381));
-            class_7907 var30 = var2.method_11645(class_3581.method_16734(var4.method_44891()));
+            class_7907 var30 = var2.method_11645(RenderLayer.method_16734(var4.method_44891()));
             this.method_19347().method_14622(var1, var30, var3, class_5367.field_27381);
             var1.method_36064();
          }

@@ -16,7 +16,7 @@ public class class_3607 extends class_5661 {
    }
 
    @Override
-   public void method_25622(class_6486 var1, class_1331 var2) {
+   public void method_25622(World var1, class_1331 var2) {
       var1.method_43359((class_704)null, var2, class_463.field_2455, class_562.field_3322, 0.7F, 0.9F + var1.field_33033.nextFloat() * 0.2F);
    }
 

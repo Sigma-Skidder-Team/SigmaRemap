@@ -5,7 +5,7 @@ public class class_9358 extends class_7157 {
       super(var1);
    }
 
-   public boolean method_43222(class_6946 var1, class_6486 var2) {
+   public boolean method_43222(class_6946 var1, World var2) {
       class_6098 var5 = class_6098.field_31203;
       class_6098 var6 = class_6098.field_31203;
 

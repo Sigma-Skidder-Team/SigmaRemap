@@ -3,8 +3,8 @@ package remapped;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class class_6818 extends class_2309<class_8759, class_5936> {
-   private static final class_240[] field_35161 = class_240.values();
-   private static final class_240[] field_35160 = new class_240[]{class_240.field_818, class_240.field_800, class_240.field_809, class_240.field_804};
+   private static final Direction[] field_35161 = Direction.values();
+   private static final Direction[] field_35160 = new Direction[]{Direction.field_818, Direction.field_800, Direction.field_809, Direction.field_804};
 
    public class_6818(class_5002 var1) {
       super(var1, class_2957.field_14437, new class_5936(var1));
@@ -37,22 +37,22 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
                int var17 = Integer.signum(var13 - var10);
                int var18 = Integer.signum(var14 - var11);
                int var19 = Integer.signum(var15 - var12);
-               class_240 var20;
+               Direction var20;
                if (var1 != Long.MAX_VALUE) {
-                  var20 = class_240.method_1032(var17, var18, var19);
+                  var20 = Direction.method_1032(var17, var18, var19);
                } else {
-                  var20 = class_240.field_802;
+                  var20 = Direction.field_802;
                }
 
                class_2522 var21 = this.method_10615(var1, (MutableInt)null);
                if (var20 == null) {
-                  class_4190 var22 = this.method_10614(var21, var1, class_240.field_802);
+                  class_4190 var22 = this.method_10614(var21, var1, Direction.field_802);
                   if (class_3370.method_15540(var22, class_3370.method_15536())) {
                      return 15;
                   }
 
                   int var23 = !var16 ? 0 : -1;
-                  class_240 var24 = class_240.method_1032(var17, var23, var19);
+                  Direction var24 = Direction.method_1032(var17, var23, var19);
                   if (var24 == null) {
                      return 15;
                   }
@@ -105,13 +105,13 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
          this.method_27687(var1, var14, var3, var4);
       }
 
-      long var18 = class_1331.method_6097(var1, class_240.field_817);
+      long var18 = class_1331.method_6097(var1, Direction.field_817);
       long var20 = class_6979.method_31903(var18);
       if (var7 == var20 || this.field_11554.method_17749(var20)) {
          this.method_27687(var1, var18, var3, var4);
       }
 
-      for (class_240 var25 : field_35160) {
+      for (Direction var25 : field_35160) {
          int var26 = 0;
 
          do {
@@ -146,7 +146,7 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
       long var9 = class_6979.method_31903(var1);
       class_1201 var11 = this.field_11554.method_17744(var9, true);
 
-      for (class_240 var16 : field_35161) {
+      for (Direction var16 : field_35161) {
          long var17 = class_1331.method_6097(var1, var16);
          long var19 = class_6979.method_31903(var17);
          class_1201 var21;
@@ -167,12 +167,12 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
                   return var8;
                }
             }
-         } else if (var16 != class_240.field_802) {
+         } else if (var16 != Direction.field_802) {
             for (var17 = class_1331.method_6087(var17);
                !this.field_11554.method_17749(var19) && !this.field_11554.method_27137(var19);
                var17 = class_1331.method_6096(var17, 0, 16, 0)
             ) {
-               var19 = class_6979.method_31928(var19, class_240.field_817);
+               var19 = class_6979.method_31928(var19, Direction.field_817);
             }
 
             class_1201 var22 = this.field_11554.method_17744(var19, true);
@@ -207,7 +207,7 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
             !this.field_11554.method_17749(var5) && !this.field_11554.method_27137(var5);
             var1 = class_1331.method_6096(var1, 0, 16, 0)
          ) {
-            var5 = class_6979.method_31928(var5, class_240.field_817);
+            var5 = class_6979.method_31928(var5, Direction.field_817);
          }
 
          if (this.field_11554.method_17749(var5)) {

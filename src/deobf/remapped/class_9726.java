@@ -49,10 +49,10 @@ public class class_9726 extends class_7896 {
          this.method_32529(var1, class_4783.field_23673.method_29260(), 4, 2, 6, var5);
          this.method_32529(var1, class_4783.field_23778.method_29260(), 1, 2, 1, var5);
          this.method_32529(var1, class_4783.field_23778.method_29260(), 5, 2, 1, var5);
-         class_2522 var10 = class_4783.field_23759.method_29260().method_10308(class_3049.field_14946, class_240.field_818);
-         class_2522 var11 = class_4783.field_23759.method_29260().method_10308(class_3049.field_14946, class_240.field_804);
-         class_2522 var12 = class_4783.field_23759.method_29260().method_10308(class_3049.field_14946, class_240.field_809);
-         class_2522 var13 = class_4783.field_23759.method_29260().method_10308(class_3049.field_14946, class_240.field_800);
+         class_2522 var10 = class_4783.field_23759.method_29260().method_10308(class_3049.field_14946, Direction.field_818);
+         class_2522 var11 = class_4783.field_23759.method_29260().method_10308(class_3049.field_14946, Direction.field_804);
+         class_2522 var12 = class_4783.field_23759.method_29260().method_10308(class_3049.field_14946, Direction.field_809);
+         class_2522 var13 = class_4783.field_23759.method_29260().method_10308(class_3049.field_14946, Direction.field_800);
          this.method_32500(var1, var5, 0, 4, 1, 6, 4, 1, var10, var10, false);
          this.method_32500(var1, var5, 0, 4, 2, 0, 4, 7, var11, var11, false);
          this.method_32500(var1, var5, 6, 4, 2, 6, 4, 7, var12, var12, false);

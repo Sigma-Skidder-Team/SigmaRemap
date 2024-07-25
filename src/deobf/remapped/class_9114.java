@@ -9,7 +9,7 @@ public class class_9114 extends class_2830 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       super.method_10784(var1, var2, var3, var4);
       if (var2 instanceof class_6331 && var4 instanceof class_9149) {
          var2.method_7511(new class_1331(var3), true, var4);

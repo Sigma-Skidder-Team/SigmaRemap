@@ -21,7 +21,7 @@ public class class_5431 extends class_4138<class_5834> {
       } else {
          for (UUID var4 : class_5542.method_25179(this.field_27660)) {
             if (var4 != null && this.field_27660.field_41768 instanceof class_6331) {
-               class_8145 var5 = ((class_6331)this.field_27660.field_41768).method_28925(var4);
+               Entity var5 = ((class_6331)this.field_27660.field_41768).method_28925(var4);
                if (var5 instanceof class_5834) {
                   class_5834 var6 = (class_5834)var5;
                   this.field_27661 = var6;

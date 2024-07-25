@@ -25,7 +25,7 @@ public class class_2524 {
    private float field_12507;
    private class_6117 field_12497;
    public int field_12508;
-   private class_6486 field_12500;
+   private World field_12500;
    public static final float[] field_12512 = new float[]{1.0F, 0.0F, 0.0F};
    private static final String field_12499 = "clear";
    private static final String field_12501 = "rain";
@@ -223,7 +223,7 @@ public class class_2524 {
       return var1;
    }
 
-   public void method_11484(class_6486 var1, class_7966 var2, int var3, float var4, float var5, float var6) {
+   public void method_11484(World var1, class_7966 var2, int var3, float var4, float var5, float var6) {
       float var9 = this.method_11495(var1);
       float var10 = this.method_11481(var5, var6);
       float var11 = this.method_11491(var3);
@@ -268,7 +268,7 @@ public class class_2524 {
       }
    }
 
-   private float method_11495(class_6486 var1) {
+   private float method_11495(World var1) {
       if (this.field_12521 == null && this.field_12503 == null) {
          return 1.0F;
       } else {
@@ -281,8 +281,8 @@ public class class_2524 {
       }
    }
 
-   private float method_11485(class_6486 var1) {
-      class_8145 var4 = MinecraftClient.getInstance().method_8516();
+   private float method_11485(World var1) {
+      Entity var4 = MinecraftClient.getInstance().method_8516();
       if (var4 != null) {
          class_1331 var5 = var4.method_37075();
          if (this.field_12521 != null) {
@@ -353,7 +353,7 @@ public class class_2524 {
       var1.method_36500();
    }
 
-   public boolean method_11490(class_6486 var1, int var2) {
+   public boolean method_11490(World var1, int var2) {
       if (var1 != this.field_12500) {
          this.field_12500 = var1;
          this.field_12497 = null;

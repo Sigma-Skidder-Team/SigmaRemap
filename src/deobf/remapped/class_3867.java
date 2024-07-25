@@ -7,14 +7,14 @@ public class class_3867 extends class_7067<class_2770> {
    private static final Identifier field_18838 = new Identifier("textures/entity/enderdragon/dragon_exploding.png");
    private static final Identifier field_18841 = new Identifier("textures/entity/enderdragon/dragon.png");
    private static final Identifier field_18837 = new Identifier("textures/entity/enderdragon/dragon_eyes.png");
-   private static final class_3581 field_18842 = class_3581.method_16755(field_18841);
-   private static final class_3581 field_18836 = class_3581.method_16727(field_18841);
-   private static final class_3581 field_18843 = class_3581.method_16769(field_18837);
-   private static final class_3581 field_18840 = class_3581.method_16730(field_18844);
+   private static final RenderLayer field_18842 = RenderLayer.method_16755(field_18841);
+   private static final RenderLayer field_18836 = RenderLayer.method_16727(field_18841);
+   private static final RenderLayer field_18843 = RenderLayer.method_16769(field_18837);
+   private static final RenderLayer field_18840 = RenderLayer.method_16730(field_18844);
    private static final float field_18845 = (float)(Math.sqrt(3.0) / 2.0);
    private final class_170 field_18839 = new class_170();
 
-   public class_3867(class_6122 var1) {
+   public class_3867(EntityRenderDispatcher var1) {
       super(var1);
       this.field_36492 = 0.5F;
    }
@@ -35,7 +35,7 @@ public class class_3867 extends class_7067<class_2770> {
          this.field_18839.method_45499(var4, var12, var6, class_5367.method_24486(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       } else {
          float var22 = (float)var1.field_13537 / 200.0F;
-         class_7907 var13 = var5.method_11645(class_3581.method_16703(field_18838, var22));
+         class_7907 var13 = var5.method_11645(RenderLayer.method_16703(field_18838, var22));
          this.field_18839.method_45499(var4, var13, var6, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
          class_7907 var14 = var5.method_11645(field_18836);
          this.field_18839.method_45499(var4, var14, var6, class_5367.method_24486(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
@@ -57,7 +57,7 @@ public class class_3867 extends class_7067<class_2770> {
          float var24 = ((float)var1.field_13537 + var3) / 200.0F;
          float var26 = Math.min(!(var24 > 0.8F) ? 0.0F : (var24 - 0.8F) / 0.2F, 1.0F);
          Random var15 = new Random(432L);
-         class_7907 var16 = var5.method_11645(class_3581.method_16714());
+         class_7907 var16 = var5.method_11645(RenderLayer.method_16714());
          var4.method_36063();
          var4.method_36065(0.0, -1.0, -2.0);
 

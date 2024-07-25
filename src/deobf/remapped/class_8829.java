@@ -23,7 +23,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    private class_3494 field_45163;
    private int field_45153;
 
-   public class_8829(class_6629<? extends class_8829> var1, class_6486 var2) {
+   public class_8829(class_6629<? extends class_8829> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_2112(this, 20, true);
       this.field_29919 = new class_7778(this, this);
@@ -109,7 +109,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       boolean var4 = var1.method_37181(class_6199.method_28370(this), (float)((int)this.method_26575(class_7331.field_37462)));
       if (var4) {
          this.method_37096(this, var1);
@@ -157,7 +157,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
       this.method_40548();
    }
 
-   private void method_40585(class_6486 var1, double var2, double var4, double var6, double var8, double var10, class_5079 var12) {
+   private void method_40585(World var1, double var2, double var4, double var6, double var8, double var10, class_5079 var12) {
       var1.method_43361(
          var12,
          class_9299.method_42794(var1.field_33033.nextDouble(), var2, var4),
@@ -426,7 +426,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public class_1249 method_26933(class_6486 var1) {
+   public class_1249 method_26933(World var1) {
       class_5967 var4 = new class_5967(this, this, var1);
       var4.method_23534(false);
       var4.method_5611(false);
@@ -498,7 +498,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    @Override
    public boolean method_37181(class_6199 var1, float var2) {
       if (!this.method_37180(var1)) {
-         class_8145 var5 = var1.method_28372();
+         Entity var5 = var1.method_28372();
          if (!this.field_41768.field_33055) {
             class_6694.method_30689(this.field_45171);
          }

@@ -11,7 +11,7 @@ public class class_2829 extends class_3599 {
    private double field_13866;
    private double field_13869;
    private final double field_13865;
-   private final class_6486 field_13864;
+   private final World field_13864;
 
    public class_2829(class_4612 var1, double var2) {
       this.field_13867 = var1;

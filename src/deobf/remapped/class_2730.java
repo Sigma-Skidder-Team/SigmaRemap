@@ -19,34 +19,34 @@ public class class_2730 {
    private final boolean field_13332;
    private final class_7298 field_13334;
    private final Random field_13327 = new Random();
-   private final class_6486 field_13330;
+   private final World field_13330;
    private final double field_13322;
    private final double field_13336;
    private final double field_13326;
-   private final class_8145 field_13323;
+   private final Entity field_13323;
    private final float field_13325;
    private final class_6199 field_13324;
    private final class_7571 field_13333;
    private final List<class_1331> field_13335 = Lists.newArrayList();
    private final Map<class_704, class_1343> field_13331 = Maps.newHashMap();
 
-   public class_2730(class_6486 var1, class_8145 var2, double var3, double var5, double var7, float var9, List<class_1331> var10) {
+   public class_2730(World var1, Entity var2, double var3, double var5, double var7, float var9, List<class_1331> var10) {
       this(var1, var2, var3, var5, var7, var9, false, class_7298.field_37311, var10);
    }
 
    public class_2730(
-      class_6486 var1, class_8145 var2, double var3, double var5, double var7, float var9, boolean var10, class_7298 var11, List<class_1331> var12
+           World var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, class_7298 var11, List<class_1331> var12
    ) {
       this(var1, var2, var3, var5, var7, var9, var10, var11);
       this.field_13335.addAll(var12);
    }
 
-   public class_2730(class_6486 var1, class_8145 var2, double var3, double var5, double var7, float var9, boolean var10, class_7298 var11) {
+   public class_2730(World var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, class_7298 var11) {
       this(var1, var2, (class_6199)null, (class_7571)null, var3, var5, var7, var9, var10, var11);
    }
 
    public class_2730(
-      class_6486 var1, class_8145 var2, class_6199 var3, class_7571 var4, double var5, double var7, double var9, float var11, boolean var12, class_7298 var13
+           World var1, Entity var2, class_6199 var3, class_7571 var4, double var5, double var7, double var9, float var11, boolean var12, class_7298 var13
    ) {
       this.field_13330 = var1;
       this.field_13323 = var2;
@@ -60,11 +60,11 @@ public class class_2730 {
       this.field_13333 = var4 != null ? var4 : this.method_12268(var2);
    }
 
-   private class_7571 method_12268(class_8145 var1) {
+   private class_7571 method_12268(Entity var1) {
       return (class_7571)(var1 != null ? new class_362(var1) : field_13328);
    }
 
-   public static float method_12265(class_1343 var0, class_8145 var1) {
+   public static float method_12265(class_1343 var0, Entity var1) {
       class_4092 var4 = var1.method_37241();
       double var5 = 1.0 / ((var4.field_19940 - var4.field_19941) * 2.0 + 1.0);
       double var7 = 1.0 / ((var4.field_19939 - var4.field_19937) * 2.0 + 1.0);
@@ -153,7 +153,7 @@ public class class_2730 {
       class_1343 var13 = new class_1343(this.field_13322, this.field_13336, this.field_13326);
 
       for (int var14 = 0; var14 < var12.size(); var14++) {
-         class_8145 var35 = (class_8145)var12.get(var14);
+         Entity var35 = (Entity)var12.get(var14);
          if (!var35.method_37085()) {
             double var36 = (double)(class_9299.method_42842(var35.method_37274(var13)) / var53);
             if (var36 <= 1.0) {
@@ -292,7 +292,7 @@ public class class_2730 {
          if (!(this.field_13323 instanceof class_1356)) {
             if (!(this.field_13323 instanceof class_5834)) {
                if (this.field_13323 instanceof class_5783) {
-                  class_8145 var3 = ((class_5783)this.field_13323).method_26166();
+                  Entity var3 = ((class_5783)this.field_13323).method_26166();
                   if (var3 instanceof class_5834) {
                      return (class_5834)var3;
                   }

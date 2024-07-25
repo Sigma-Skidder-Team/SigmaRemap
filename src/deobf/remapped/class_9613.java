@@ -11,7 +11,7 @@ public class class_9613 extends class_2255<class_3420> {
    }
 
    public void method_44379(class_3420 var1, float var2, class_7966 var3, class_2565 var4, int var5, int var6) {
-      class_6486 var9 = var1.method_17402();
+      World var9 = var1.method_17402();
       if (var9 != null) {
          class_1331 var10 = var1.method_17399().method_6098(var1.method_15800().method_1046());
          class_2522 var11 = var1.method_15792();
@@ -27,7 +27,7 @@ public class class_9613 extends class_2255<class_3420> {
                class_2522 var13 = class_4783.field_23336
                   .method_29260()
                   .method_10308(class_1166.field_6616, var12)
-                  .method_10308(class_1166.field_16180, var11.<class_240>method_10313(class_1990.field_16180));
+                  .method_10308(class_1166.field_16180, var11.<Direction>method_10313(class_1990.field_16180));
                var13 = var13.method_10308(class_1166.field_6610, Boolean.valueOf(var1.method_15785(var2) >= 0.5F));
                this.method_44380(var10, var13, var3, var4, var9, false, var6);
                class_1331 var14 = var10.method_6098(var1.method_15800());
@@ -45,8 +45,8 @@ public class class_9613 extends class_2255<class_3420> {
       }
    }
 
-   private void method_44380(class_1331 var1, class_2522 var2, class_7966 var3, class_2565 var4, class_6486 var5, boolean var6, int var7) {
-      class_3581 var10 = class_6416.method_29331(var2);
+   private void method_44380(class_1331 var1, class_2522 var2, class_7966 var3, class_2565 var4, World var5, boolean var6, int var7) {
+      RenderLayer var10 = class_6416.method_29331(var2);
       class_7907 var11 = var4.method_11645(var10);
       this.field_48981
          .method_3717()

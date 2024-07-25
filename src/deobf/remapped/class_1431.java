@@ -12,7 +12,7 @@ public class class_1431 extends class_7164<class_7272, class_4490<class_7272>> {
    private static final Identifier field_7723 = new Identifier("textures/entity/rabbit/toast.png");
    private static final Identifier field_7729 = new Identifier("textures/entity/rabbit/caerbannog.png");
 
-   public class_1431(class_6122 var1) {
+   public class_1431(EntityRenderDispatcher var1) {
       super(var1, new class_4490<class_7272>(), 0.3F);
    }
 

@@ -46,7 +46,7 @@ public class class_9359 extends class_704 implements class_117 {
    private class_1803 field_47809;
    private boolean field_47784 = true;
    private long field_47785 = Util.getMeasuringTimeMs();
-   private class_8145 field_47802;
+   private Entity field_47802;
    private boolean field_47789;
    private boolean field_47783;
    private final class_3071 field_47805 = new class_3071();
@@ -55,7 +55,7 @@ public class class_9359 extends class_704 implements class_117 {
    private boolean field_47774;
    private class_1343 field_47793;
    private class_6979 field_47803 = class_6979.method_31893(0, 0, 0);
-   private class_5621<class_6486> field_47782 = class_6486.field_33048;
+   private class_5621<World> field_47782 = World.field_33048;
    private class_1331 field_47779;
    private boolean field_47787;
    private float field_47808;
@@ -157,10 +157,10 @@ public class class_9359 extends class_704 implements class_117 {
          this.field_47787 = var1.method_25933("SpawnForced");
          this.field_47808 = var1.method_25955("SpawnAngle");
          if (var1.method_25938("SpawnDimension")) {
-            this.field_47782 = class_6486.field_33043
+            this.field_47782 = World.field_33043
                .parse(class_3504.field_17178, var1.method_25929("SpawnDimension"))
                .resultOrPartial(field_47780::error)
-               .orElse(class_6486.field_33048);
+               .orElse(World.field_33048);
          }
       }
    }
@@ -179,8 +179,8 @@ public class class_9359 extends class_704 implements class_117 {
          var1.method_25946("enteredNetherPosition", var4);
       }
 
-      class_8145 var8 = this.method_37240();
-      class_8145 var5 = this.method_37243();
+      Entity var8 = this.method_37240();
+      Entity var5 = this.method_37243();
       if (var5 != null && var8 != this && var8.method_37172()) {
          class_5734 var6 = new class_5734();
          class_5734 var7 = new class_5734();
@@ -283,7 +283,7 @@ public class class_9359 extends class_704 implements class_117 {
          this.field_47794.method_4156(new class_3985(var4));
       }
 
-      class_8145 var7 = this.method_43276();
+      Entity var7 = this.method_43276();
       if (var7 != this) {
          if (!var7.method_37330()) {
             this.method_43284(this);
@@ -450,7 +450,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_37392(class_8145 var1, int var2, class_6199 var3) {
+   public void method_37392(Entity var1, int var2, class_6199 var3) {
       if (var1 != this) {
          super.method_37392(var1, var2, var3);
          this.method_3176(var2);
@@ -490,14 +490,14 @@ public class class_9359 extends class_704 implements class_117 {
             return false;
          } else {
             if (var1 instanceof class_5405) {
-               class_8145 var6 = var1.method_28372();
+               Entity var6 = var1.method_28372();
                if (var6 instanceof class_704 && !this.method_3213((class_704)var6)) {
                   return false;
                }
 
                if (var6 instanceof class_6749) {
                   class_6749 var7 = (class_6749)var6;
-                  class_8145 var8 = var7.method_26166();
+                  Entity var8 = var7.method_26166();
                   if (var8 instanceof class_704 && !this.method_3213((class_704)var8)) {
                      return false;
                   }
@@ -522,7 +522,7 @@ public class class_9359 extends class_704 implements class_117 {
    @Override
    public class_9606 method_37081(class_6331 var1) {
       class_9606 var4 = super.method_37081(var1);
-      if (var4 != null && this.field_41768.method_29545() == class_6486.field_33048 && var1.method_29545() == class_6486.field_33038) {
+      if (var4 != null && this.field_41768.method_29545() == World.field_33048 && var1.method_29545() == World.field_33038) {
          class_1343 var5 = var4.field_48952.method_6214(0.0, -1.0, 0.0);
          return new class_9606(var5, class_1343.field_7335, 90.0F, 0.0F);
       } else {
@@ -532,11 +532,11 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Nullable
    @Override
-   public class_8145 method_37326(class_6331 var1) {
+   public Entity method_37326(class_6331 var1) {
       this.field_47789 = true;
       class_6331 var4 = this.method_43235();
       class_5621 var5 = var4.method_29545();
-      if (var5 == class_6486.field_33038 && var1.method_29545() == class_6486.field_33048) {
+      if (var5 == World.field_33038 && var1.method_29545() == World.field_33048) {
          this.method_37269();
          this.method_43235().method_28964(this);
          if (!this.field_47777) {
@@ -569,9 +569,9 @@ public class class_9359 extends class_704 implements class_117 {
          class_9606 var8 = this.method_37081(var1);
          if (var8 != null) {
             var4.method_29599().method_16056("moving");
-            if (var5 == class_6486.field_33048 && var1.method_29545() == class_6486.field_33029) {
+            if (var5 == World.field_33048 && var1.method_29545() == World.field_33029) {
                this.field_47793 = this.method_37245();
-            } else if (var1.method_29545() == class_6486.field_33038) {
+            } else if (var1.method_29545() == World.field_33038) {
                this.method_43239(var1, new class_1331(var8.field_48952));
             }
 
@@ -635,11 +635,11 @@ public class class_9359 extends class_704 implements class_117 {
       class_5621 var4 = var1.method_29545();
       class_5621 var5 = this.field_41768.method_29545();
       class_8807.field_45058.method_38905(this, var4, var5);
-      if (var4 == class_6486.field_33029 && var5 == class_6486.field_33048 && this.field_47793 != null) {
+      if (var4 == World.field_33029 && var5 == World.field_33048 && this.field_47793 != null) {
          class_8807.field_45049.method_13945(this, this.field_47793);
       }
 
-      if (var5 != class_6486.field_33029) {
+      if (var5 != World.field_33029) {
          this.field_47793 = null;
       }
    }
@@ -663,14 +663,14 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_26467(class_8145 var1, int var2) {
+   public void method_26467(Entity var1, int var2) {
       super.method_26467(var1, var2);
       this.field_3874.method_18877();
    }
 
    @Override
    public Either<class_8614, Unit> method_3200(class_1331 var1) {
-      class_240 var4 = this.field_41768.method_28262(var1).<class_240>method_10313(class_380.field_1543);
+      Direction var4 = this.field_41768.method_28262(var1).<Direction>method_10313(class_380.field_1543);
       if (this.method_26507() || !this.method_37330()) {
          return Either.left(class_8614.field_44186);
       } else if (!this.field_41768.method_22572().method_40233()) {
@@ -722,7 +722,7 @@ public class class_9359 extends class_704 implements class_117 {
       super.method_26470(var1);
    }
 
-   private boolean method_43287(class_1331 var1, class_240 var2) {
+   private boolean method_43287(class_1331 var1, Direction var2) {
       return this.method_43258(var1) || this.method_43258(var1.method_6098(var2.method_1046()));
    }
 
@@ -733,7 +733,7 @@ public class class_9359 extends class_704 implements class_117 {
          && Math.abs(this.method_37156() - var4.method_62()) <= 3.0;
    }
 
-   private boolean method_43245(class_1331 var1, class_240 var2) {
+   private boolean method_43245(class_1331 var1, Direction var2) {
       class_1331 var5 = var1.method_6081();
       return !this.method_3240(var5) || !this.method_3240(var5.method_6098(var2.method_1046()));
    }
@@ -751,10 +751,10 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public boolean method_37354(class_8145 var1, boolean var2) {
-      class_8145 var5 = this.method_37243();
+   public boolean method_37354(Entity var1, boolean var2) {
+      Entity var5 = this.method_37243();
       if (super.method_37354(var1, var2)) {
-         class_8145 var6 = this.method_37243();
+         Entity var6 = this.method_37243();
          if (var6 != var5 && this.field_47794 != null) {
             this.field_47794.method_4170(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, this.field_41755);
          }
@@ -767,9 +767,9 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Override
    public void method_37390() {
-      class_8145 var3 = this.method_37243();
+      Entity var3 = this.method_37243();
       super.method_37390();
-      class_8145 var4 = this.method_37243();
+      Entity var4 = this.method_37243();
       if (var4 != var3 && this.field_47794 != null) {
          this.field_47794.method_4170(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, this.field_41755);
       }
@@ -1003,7 +1003,7 @@ public class class_9359 extends class_704 implements class_117 {
       this.field_47794.method_4156(new class_2436(var1, var2.field_7336, var2.field_7333, var2.field_7334));
    }
 
-   public void method_43282(class_6139 var1, class_8145 var2, class_6139 var3) {
+   public void method_43282(class_6139 var1, Entity var2, class_6139 var3) {
       class_1343 var6 = var3.method_28187(var2);
       super.method_37332(var1, var6);
       this.field_47794.method_4156(new class_2436(var1, var2, var3));
@@ -1085,12 +1085,12 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_3233(class_8145 var1) {
+   public void method_3233(Entity var1) {
       this.method_43235().method_28945().method_10209(this, new class_8329(var1, 4));
    }
 
    @Override
-   public void method_3226(class_8145 var1) {
+   public void method_3226(Entity var1) {
       this.method_43235().method_28945().method_10209(this, new class_8329(var1, 5));
    }
 
@@ -1194,7 +1194,7 @@ public class class_9359 extends class_704 implements class_117 {
       return this.field_47805;
    }
 
-   public void method_43275(class_8145 var1) {
+   public void method_43275(Entity var1) {
       if (!(var1 instanceof class_704)) {
          this.field_47791.add(var1.method_37145());
       } else {
@@ -1202,7 +1202,7 @@ public class class_9359 extends class_704 implements class_117 {
       }
    }
 
-   public void method_43288(class_8145 var1) {
+   public void method_43288(Entity var1) {
       this.field_47791.remove(Integer.valueOf(var1.method_37145()));
    }
 
@@ -1216,13 +1216,13 @@ public class class_9359 extends class_704 implements class_117 {
       }
    }
 
-   public class_8145 method_43276() {
-      return (class_8145)(this.field_47802 != null ? this.field_47802 : this);
+   public Entity method_43276() {
+      return (Entity)(this.field_47802 != null ? this.field_47802 : this);
    }
 
-   public void method_43284(class_8145 var1) {
-      class_8145 var4 = this.method_43276();
-      this.field_47802 = (class_8145)(var1 != null ? var1 : this);
+   public void method_43284(Entity var1) {
+      Entity var4 = this.method_43276();
+      this.field_47802 = (Entity)(var1 != null ? var1 : this);
       if (var4 != this.field_47802) {
          this.field_47794.method_4156(new class_8101(this.field_47802));
          this.method_37254(this.field_47802.method_37302(), this.field_47802.method_37309(), this.field_47802.method_37156());
@@ -1237,7 +1237,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_3158(class_8145 var1) {
+   public void method_3158(Entity var1) {
       if (this.field_47807.method_39517() != class_4666.field_22756) {
          super.method_3158(var1);
       } else {
@@ -1317,7 +1317,7 @@ public class class_9359 extends class_704 implements class_117 {
       return this.field_47808;
    }
 
-   public class_5621<class_6486> method_43259() {
+   public class_5621<World> method_43259() {
       return this.field_47782;
    }
 
@@ -1325,10 +1325,10 @@ public class class_9359 extends class_704 implements class_117 {
       return this.field_47787;
    }
 
-   public void method_43248(class_5621<class_6486> var1, class_1331 var2, float var3, boolean var4, boolean var5) {
+   public void method_43248(class_5621<World> var1, class_1331 var2, float var3, boolean var4, boolean var5) {
       if (var2 == null) {
          this.field_47779 = null;
-         this.field_47782 = class_6486.field_33048;
+         this.field_47782 = World.field_33048;
          this.field_47808 = 0.0F;
          this.field_47787 = false;
       } else {

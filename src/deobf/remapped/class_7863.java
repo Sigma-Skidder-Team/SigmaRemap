@@ -12,7 +12,7 @@ public class class_7863 extends class_6414 {
 
    public class_7863(class_3073 var1) {
       super(var1);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_40261, class_240.field_818).method_10308(field_40260, Boolean.valueOf(false)));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_40261, Direction.field_818).method_10308(field_40260, Boolean.valueOf(false)));
    }
 
    @Override
@@ -36,18 +36,18 @@ public class class_7863 extends class_6414 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       return !var1.<Boolean>method_10313(field_40260) ? 0 : 15;
    }
 
    @Override
    public class_2522 method_10785(class_2522 var1, class_6631 var2) {
-      return var1.method_10308(field_40261, var2.method_30489(var1.<class_240>method_10313(field_40261)));
+      return var1.method_10308(field_40261, var2.method_30489(var1.<Direction>method_10313(field_40261)));
    }
 
    @Override
    public class_2522 method_10773(class_2522 var1, class_9022 var2) {
-      return var1.method_8318(var2.method_41390(var1.<class_240>method_10313(field_40261)));
+      return var1.method_8318(var2.method_41390(var1.<Direction>method_10313(field_40261)));
    }
 
    @Override
@@ -65,7 +65,7 @@ public class class_7863 extends class_6414 {
                class_9115.method_41965(
                   class_2263.method_10400(class_4783.field_23491)
                      .method_10402(field_40260, Predicates.equalTo(true))
-                     .method_10402(field_40261, Predicates.equalTo(class_240.field_800))
+                     .method_10402(field_40261, Predicates.equalTo(Direction.field_800))
                )
             )
             .method_42576(
@@ -73,7 +73,7 @@ public class class_7863 extends class_6414 {
                class_9115.method_41965(
                   class_2263.method_10400(class_4783.field_23491)
                      .method_10402(field_40260, Predicates.equalTo(true))
-                     .method_10402(field_40261, Predicates.equalTo(class_240.field_809))
+                     .method_10402(field_40261, Predicates.equalTo(Direction.field_809))
                )
             )
             .method_42576(
@@ -81,7 +81,7 @@ public class class_7863 extends class_6414 {
                class_9115.method_41965(
                   class_2263.method_10400(class_4783.field_23491)
                      .method_10402(field_40260, Predicates.equalTo(true))
-                     .method_10402(field_40261, Predicates.equalTo(class_240.field_818))
+                     .method_10402(field_40261, Predicates.equalTo(Direction.field_818))
                )
             )
             .method_42576(
@@ -89,7 +89,7 @@ public class class_7863 extends class_6414 {
                class_9115.method_41965(
                   class_2263.method_10400(class_4783.field_23491)
                      .method_10402(field_40260, Predicates.equalTo(true))
-                     .method_10402(field_40261, Predicates.equalTo(class_240.field_804))
+                     .method_10402(field_40261, Predicates.equalTo(Direction.field_804))
                )
             )
             .method_42571();

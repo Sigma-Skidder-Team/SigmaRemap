@@ -8,7 +8,7 @@ public class class_5638 extends class_5822 {
    }
 
    @Override
-   public boolean method_41052(class_6867 var1, class_6486 var2) {
+   public boolean method_41052(class_6867 var1, World var2) {
       return this.field_29533.test(var1.method_31498(0));
    }
 

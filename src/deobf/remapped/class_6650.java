@@ -8,12 +8,12 @@ import java.util.Set;
 public class class_6650 {
    private static String[] field_34412;
    private final class_7772 field_34414;
-   private final class_8145 field_34409;
+   private final Entity field_34409;
    private final int field_34413;
    private class_6979 field_34411;
    private final Set<class_9359> field_34410;
 
-   public class_6650(class_916 var1, class_8145 var2, int var3, int var4, boolean var5) {
+   public class_6650(class_916 var1, Entity var2, int var3, int var4, boolean var5) {
       this.field_34408 = var1;
       this.field_34410 = Sets.newHashSet();
       this.field_34414 = new class_7772(class_916.method_4025(var1), var2, var4, var5, this::method_30548);
@@ -95,7 +95,7 @@ public class class_6650 {
       Collection var3 = this.field_34409.method_37379();
       int var4 = this.field_34413;
 
-      for (class_8145 var6 : var3) {
+      for (Entity var6 : var3) {
          int var7 = var6.method_37387().method_30462() * 16;
          if (var7 > var4) {
             var4 = var7;

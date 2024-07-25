@@ -14,20 +14,20 @@ public class class_3398 implements class_6310<class_1243> {
    public class_3398() {
    }
 
-   public class_3398(class_8145 var1, boolean var2) {
+   public class_3398(Entity var1, boolean var2) {
       this.field_16735 = var1.method_37145();
       this.field_16738 = class_92.field_183;
       this.field_16736 = var2;
    }
 
-   public class_3398(class_8145 var1, class_2584 var2, boolean var3) {
+   public class_3398(Entity var1, class_2584 var2, boolean var3) {
       this.field_16735 = var1.method_37145();
       this.field_16738 = class_92.field_185;
       this.field_16733 = var2;
       this.field_16736 = var3;
    }
 
-   public class_3398(class_8145 var1, class_2584 var2, class_1343 var3, boolean var4) {
+   public class_3398(Entity var1, class_2584 var2, class_1343 var3, boolean var4) {
       this.field_16735 = var1.method_37145();
       this.field_16738 = class_92.field_184;
       this.field_16733 = var2;
@@ -72,7 +72,7 @@ public class class_3398 implements class_6310<class_1243> {
    }
 
    @Nullable
-   public class_8145 method_15695(class_6486 var1) {
+   public Entity method_15695(World var1) {
       return var1.method_29534(this.field_16735);
    }
 

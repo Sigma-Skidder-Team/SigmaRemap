@@ -41,7 +41,7 @@ public class class_4454 {
             }
          }
 
-         int var5 = class_3111.method_14327().field_9657.method_20022();
+         int var5 = class_3111.method_14327().worldRenderer.method_20022();
          if (var5 != field_21702) {
             field_21703 = var2;
             field_21702 = var5;
@@ -174,7 +174,7 @@ public class class_4454 {
    }
 
    private static byte[] method_20650(String var0, int var1) {
-      class_8881 var4 = class_3111.method_14310();
+      GameOptions var4 = class_3111.method_14310();
 
       try {
          Identifier var5 = new Identifier(var0);

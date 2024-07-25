@@ -29,7 +29,7 @@ public class class_9719 extends class_4285<class_1941> {
                class_2358.method_10817(var1, var3, var16, class_5931.field_30085);
                class_2522 var17 = class_4783.field_23521.method_29260();
 
-               for (class_240 var19 : class_9594.field_48893) {
+               for (Direction var19 : class_9594.field_48893) {
                   class_1331 var20 = var16.method_6098(var19);
                   if (var17.method_8309(var1, var20)) {
                      var1.method_7513(var20, var17, 2);

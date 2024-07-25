@@ -12,7 +12,7 @@ public class class_6218 extends class_5877 {
       this.method_29284(
          this.field_32751
             .method_36446()
-            .method_10308(field_1543, class_240.field_818)
+            .method_10308(field_1543, Direction.field_818)
             .method_10308(field_31756, Integer.valueOf(1))
             .method_10308(field_31755, Boolean.valueOf(false))
             .method_10308(field_29833, Boolean.valueOf(false))
@@ -20,7 +20,7 @@ public class class_6218 extends class_5877 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (var4.field_3876.field_4938) {
          var2.method_7513(var3, var1.method_10317(field_31756), 3);
          return class_6910.method_31659(var2.field_33055);
@@ -41,8 +41,8 @@ public class class_6218 extends class_5877 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
-      return !var4.method_22567() && var2.method_1029() != var1.<class_240>method_10313(field_1543).method_1029()
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+      return !var4.method_22567() && var2.method_1029() != var1.<Direction>method_10313(field_1543).method_1029()
          ? var1.method_10308(field_31755, Boolean.valueOf(this.method_26767(var4, var5, var1)))
          : super.method_10763(var1, var2, var3, var4, var5, var6);
    }
@@ -58,9 +58,9 @@ public class class_6218 extends class_5877 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       if (var1.<Boolean>method_10313(field_29833)) {
-         class_240 var7 = var1.<class_240>method_10313(field_1543);
+         Direction var7 = var1.<Direction>method_10313(field_1543);
          double var8 = (double)var3.method_12173() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var10 = (double)var3.method_12165() + 0.4 + (var4.nextDouble() - 0.5) * 0.2;
          double var12 = (double)var3.method_12185() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;

@@ -49,7 +49,7 @@ public class class_8870 extends class_4285<class_1941> {
 
       class_1331 var12 = var4.method_6082(2);
 
-      for (class_240 var14 : class_9594.field_48893) {
+      for (Direction var14 : class_9594.field_48893) {
          this.method_19906(var1, var12.method_6098(var14), class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, var14));
       }
 

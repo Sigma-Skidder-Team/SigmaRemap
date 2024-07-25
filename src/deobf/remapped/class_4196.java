@@ -14,11 +14,11 @@ public class class_4196 extends class_6414 {
    public static final class_6720 field_20415 = class_6169.field_31567;
    public static final class_6720 field_20408 = class_6169.field_31569;
    public static final class_6720 field_20409 = class_6169.field_31566;
-   public static final Map<class_240, class_6720> field_20410 = class_6169.field_31571
+   public static final Map<Direction, class_6720> field_20410 = class_6169.field_31571
       .entrySet()
       .stream()
-      .filter(var0 -> var0.getKey() != class_240.field_802)
-      .collect(Util.<class_240, class_6720>toMap());
+      .filter(var0 -> var0.getKey() != Direction.field_802)
+      .collect(Util.<Direction, class_6720>toMap());
    private static final class_4190 field_20414 = class_6414.method_29292(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
    private static final class_4190 field_20406 = class_6414.method_29292(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
    private static final class_4190 field_20413 = class_6414.method_29292(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
@@ -91,8 +91,8 @@ public class class_4196 extends class_6414 {
       return var4;
    }
 
-   private boolean method_19526(class_6163 var1, class_1331 var2, class_240 var3) {
-      if (var3 == class_240.field_802) {
+   private boolean method_19526(class_6163 var1, class_1331 var2, Direction var3) {
+      if (var3 == Direction.field_802) {
          return false;
       } else {
          class_1331 var6 = var2.method_6098(var3);
@@ -110,7 +110,7 @@ public class class_4196 extends class_6414 {
       }
    }
 
-   public static boolean method_19528(class_6163 var0, class_1331 var1, class_240 var2) {
+   public static boolean method_19528(class_6163 var0, class_1331 var1, Direction var2) {
       class_2522 var5 = var0.method_28262(var1);
       return class_6414.method_29303(var5.method_8324(var0, var1), var2.method_1046());
    }
@@ -118,12 +118,12 @@ public class class_4196 extends class_6414 {
    private class_2522 method_19522(class_2522 var1, class_6163 var2, class_1331 var3) {
       class_1331 var6 = var3.method_6081();
       if (var1.<Boolean>method_10313(field_20407)) {
-         var1 = var1.method_10308(field_20407, Boolean.valueOf(method_19528(var2, var6, class_240.field_802)));
+         var1 = var1.method_10308(field_20407, Boolean.valueOf(method_19528(var2, var6, Direction.field_802)));
       }
 
       class_2522 var7 = null;
 
-      for (class_240 var9 : class_9594.field_48893) {
+      for (Direction var9 : class_9594.field_48893) {
          class_6720 var10 = method_19521(var9);
          if (var1.<Boolean>method_10313(var10)) {
             boolean var11 = this.method_19526(var2, var3, var9);
@@ -143,8 +143,8 @@ public class class_4196 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
-      if (var2 != class_240.field_802) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+      if (var2 != Direction.field_802) {
          class_2522 var9 = this.method_19522(var1, var4, var5);
          return this.method_19525(var9) ? var9 : class_4783.field_23184.method_29260();
       } else {
@@ -155,7 +155,7 @@ public class class_4196 extends class_6414 {
    @Override
    public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
       if (var2.field_33033.nextInt(4) == 0) {
-         class_240 var7 = class_240.method_1039(var4);
+         Direction var7 = Direction.method_1039(var4);
          class_1331 var8 = var3.method_6081();
          if (var7.method_1029().method_42629() && !var1.<Boolean>method_10313(method_19521(var7))) {
             if (this.method_19523(var2, var3)) {
@@ -166,8 +166,8 @@ public class class_4196 extends class_6414 {
                      var2.method_7513(var3, var1.method_10308(method_19521(var7), Boolean.valueOf(true)), 2);
                   }
                } else {
-                  class_240 var23 = var7.method_1042();
-                  class_240 var24 = var7.method_1053();
+                  Direction var23 = var7.method_1042();
+                  Direction var24 = var7.method_1053();
                   boolean var13 = var1.<Boolean>method_10313(method_19521(var23));
                   boolean var14 = var1.<Boolean>method_10313(method_19521(var24));
                   class_1331 var15 = var19.method_6098(var23);
@@ -177,19 +177,19 @@ public class class_4196 extends class_6414 {
                   } else if (var14 && method_19528(var2, var16, var24)) {
                      var2.method_7513(var19, this.method_29260().method_10308(method_19521(var24), Boolean.valueOf(true)), 2);
                   } else {
-                     class_240 var17 = var7.method_1046();
+                     Direction var17 = var7.method_1046();
                      if (var13 && var2.method_22548(var15) && method_19528(var2, var3.method_6098(var23), var17)) {
                         var2.method_7513(var15, this.method_29260().method_10308(method_19521(var17), Boolean.valueOf(true)), 2);
                      } else if (var14 && var2.method_22548(var16) && method_19528(var2, var3.method_6098(var24), var17)) {
                         var2.method_7513(var16, this.method_29260().method_10308(method_19521(var17), Boolean.valueOf(true)), 2);
-                     } else if ((double)var2.field_33033.nextFloat() < 0.05 && method_19528(var2, var19.method_6081(), class_240.field_817)) {
+                     } else if ((double)var2.field_33033.nextFloat() < 0.05 && method_19528(var2, var19.method_6081(), Direction.field_817)) {
                         var2.method_7513(var19, this.method_29260().method_10308(field_20407, Boolean.valueOf(true)), 2);
                      }
                   }
                }
             }
          } else {
-            if (var7 == class_240.field_817 && var3.method_12165() < 255) {
+            if (var7 == Direction.field_817 && var3.method_12165() < 255) {
                if (this.method_19526(var2, var3, var7)) {
                   var2.method_7513(var3, var1.method_10308(field_20407, Boolean.valueOf(true)), 2);
                   return;
@@ -202,8 +202,8 @@ public class class_4196 extends class_6414 {
 
                   class_2522 var18 = var1;
 
-                  for (class_240 var22 : class_9594.field_48893) {
-                     if (var4.nextBoolean() || !method_19528(var2, var8.method_6098(var22), class_240.field_817)) {
+                  for (Direction var22 : class_9594.field_48893) {
+                     if (var4.nextBoolean() || !method_19528(var2, var8.method_6098(var22), Direction.field_817)) {
                         var18 = var18.method_10308(method_19521(var22), Boolean.valueOf(false));
                      }
                   }
@@ -232,7 +232,7 @@ public class class_4196 extends class_6414 {
    }
 
    private class_2522 method_19524(class_2522 var1, class_2522 var2, Random var3) {
-      for (class_240 var7 : class_9594.field_48893) {
+      for (Direction var7 : class_9594.field_48893) {
          if (var3.nextBoolean()) {
             class_6720 var8 = method_19521(var7);
             if (var1.<Boolean>method_10313(var8)) {
@@ -282,8 +282,8 @@ public class class_4196 extends class_6414 {
       boolean var5 = var4.method_8350(this);
       class_2522 var6 = !var5 ? this.method_29260() : var4;
 
-      for (class_240 var10 : var1.method_1786()) {
-         if (var10 != class_240.field_802) {
+      for (Direction var10 : var1.method_1786()) {
+         if (var10 != Direction.field_802) {
             class_6720 var11 = method_19521(var10);
             boolean var12 = var5 && var4.<Boolean>method_10313(var11);
             if (!var12 && this.method_19526(var1.method_21862(), var1.method_21858(), var10)) {
@@ -339,7 +339,7 @@ public class class_4196 extends class_6414 {
       }
    }
 
-   public static class_6720 method_19521(class_240 var0) {
+   public static class_6720 method_19521(Direction var0) {
       return field_20410.get(var0);
    }
 }

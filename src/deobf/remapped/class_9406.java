@@ -56,10 +56,10 @@ public class class_9406 extends class_3077 {
 
    @Override
    public class_6910 method_11237(class_4734 var1) {
-      class_6486 var4 = var1.method_21862();
+      World var4 = var1.method_21862();
       class_1331 var5 = var1.method_21858();
       class_2522 var6 = var4.method_28262(var5);
-      if (var1.method_21857() == class_240.field_802) {
+      if (var1.method_21857() == Direction.field_802) {
          return class_6910.field_35521;
       } else {
          class_704 var7 = var1.method_21868();

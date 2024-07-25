@@ -13,7 +13,7 @@ public class class_7524 extends class_7157 {
       super(var1);
    }
 
-   public boolean method_34280(class_6946 var1, class_6486 var2) {
+   public boolean method_34280(class_6946 var1, World var2) {
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < var1.method_31505(); var6++) {

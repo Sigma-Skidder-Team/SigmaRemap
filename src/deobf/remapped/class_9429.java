@@ -34,7 +34,7 @@ public class class_9429 extends class_2255<class_8837> {
             class_2522 var14 = var1.method_17403();
             if (!(var14.method_8360() instanceof class_9815)) {
                var3.method_36065(0.5, -0.16666667F, 0.5);
-               float var15 = -var14.<class_240>method_10313(class_6832.field_35227).method_1028();
+               float var15 = -var14.<Direction>method_10313(class_6832.field_35227).method_1028();
                var3.method_36060(class_2426.field_12074.method_11074(var15));
                var3.method_36065(0.0, -0.3125, -0.4375);
                this.field_48166.field_8200 = false;
@@ -52,7 +52,7 @@ public class class_9429 extends class_2255<class_8837> {
 
          var3.method_36063();
          var3.method_36062(0.6666667F, -0.6666667F, -0.6666667F);
-         class_7907 var17 = class_6560.field_33431.method_12943(var4, class_3581::method_16734);
+         class_7907 var17 = class_6560.field_33431.method_12943(var4, RenderLayer::method_16734);
          this.field_48166.method_7060(var3, var17, var5, var6);
          this.field_48168.method_7060(var3, var17, var5, var6);
          class_1331 var19 = var1.method_17399();
@@ -83,13 +83,13 @@ public class class_9429 extends class_2255<class_8837> {
       List<Pair<class_8427, class_9077>> var7,
       boolean var8
    ) {
-      var4.method_7060(var0, var5.method_12944(var1, class_3581::method_16734, var8), var2, var3);
+      var4.method_7060(var0, var5.method_12944(var1, RenderLayer::method_16734, var8), var2, var3);
 
       for (int var11 = 0; var11 < 17 && var11 < var7.size(); var11++) {
          Pair var12 = (Pair)var7.get(var11);
          float[] var13 = ((class_9077)var12.getSecond()).method_41792();
          class_2843 var14 = new class_2843(!var6 ? class_5276.field_26973 : class_5276.field_26965, ((class_8427)var12.getFirst()).method_38784(var6));
-         var4.method_7061(var0, var14.method_12943(var1, class_3581::method_16750), var2, var3, var13[0], var13[1], var13[2], 1.0F);
+         var4.method_7061(var0, var14.method_12943(var1, RenderLayer::method_16750), var2, var3, var13[0], var13[1], var13[2], 1.0F);
       }
    }
 }

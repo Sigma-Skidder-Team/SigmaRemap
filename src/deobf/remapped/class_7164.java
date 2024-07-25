@@ -1,17 +1,17 @@
 package remapped;
 
 public abstract class class_7164<T extends class_5886, M extends class_6521<T>> extends class_6353<T, M> {
-   public class_7164(class_6122 var1, M var2, float var3) {
+   public class_7164(EntityRenderDispatcher var1, M var2, float var3) {
       super(var1, (M)var2, var3);
    }
 
    public boolean method_32864(T var1) {
-      return super.method_29103((T)var1) && (var1.method_37141() || var1.method_45507() && var1 == this.field_36493.field_31313);
+      return super.method_29103((T)var1) && (var1.method_37141() || var1.method_45507() && var1 == this.field_36493.targetEntity);
    }
 
    public boolean method_32863(T var1, class_2359 var2, double var3, double var5, double var7) {
       if (!super.method_32548((T)var1, var2, var3, var5, var7)) {
-         class_8145 var11 = var1.method_26922();
+         Entity var11 = var1.method_26922();
          return var11 == null ? false : var2.method_10824(var11.method_37210());
       } else {
          return true;
@@ -20,13 +20,13 @@ public abstract class class_7164<T extends class_5886, M extends class_6521<T>> 
 
    public void method_32866(T var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       super.method_29107((T)var1, var2, var3, var4, var5, var6);
-      class_8145 var9 = var1.method_26922();
+      Entity var9 = var1.method_26922();
       if (var9 != null) {
          this.method_32862((T)var1, var3, var4, var5, var9);
       }
    }
 
-   private <E extends class_8145> void method_32862(T var1, float var2, class_7966 var3, class_2565 var4, E var5) {
+   private <E extends Entity> void method_32862(T var1, float var2, class_7966 var3, class_2565 var4, E var5) {
       if (!class_3111.method_14424() || !class_6588.field_33945) {
          var3.method_36063();
          class_1343 var8 = var5.method_37202(var2);
@@ -42,7 +42,7 @@ public abstract class class_7164<T extends class_5886, M extends class_6521<T>> 
          float var23 = (float)(var8.field_7333 - var18);
          float var24 = (float)(var8.field_7334 - var20);
          float var25 = 0.025F;
-         class_7907 var26 = var4.method_11645(class_3581.method_16743());
+         class_7907 var26 = var4.method_11645(RenderLayer.method_16743());
          class_8107 var27 = var3.method_36058().method_28620();
          float var28 = class_9299.method_42836(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
          float var29 = var24 * var28;
@@ -50,7 +50,7 @@ public abstract class class_7164<T extends class_5886, M extends class_6521<T>> 
          class_1331 var31 = new class_1331(var1.method_37335(var2));
          class_1331 var32 = new class_1331(var5.method_37335(var2));
          int var33 = this.method_32546((T)var1, var31);
-         int var34 = this.field_36493.<class_8145>method_28131(var5).method_32546(var5, var32);
+         int var34 = this.field_36493.<Entity>method_28131(var5).method_32546(var5, var32);
          int var35 = var1.field_41768.method_25266(class_2957.field_14437, var31);
          int var36 = var1.field_41768.method_25266(class_2957.field_14437, var32);
          if (class_3111.method_14424()) {

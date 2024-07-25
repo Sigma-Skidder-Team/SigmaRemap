@@ -16,11 +16,11 @@ public class class_1878 extends class_9476 {
    public static final class_6720 field_9532 = class_6169.field_31569;
    public static final class_6720 field_9526 = class_6169.field_31566;
    public static final class_6720 field_9525 = class_6169.field_31563;
-   private static final Map<class_240, class_6720> field_9530 = class_6169.field_31571
+   private static final Map<Direction, class_6720> field_9530 = class_6169.field_31571
       .entrySet()
       .stream()
-      .filter(var0 -> var0.getKey() != class_240.field_802)
-      .collect(Util.<class_240, class_6720>toMap());
+      .filter(var0 -> var0.getKey() != Direction.field_802)
+      .collect(Util.<Direction, class_6720>toMap());
    private static final class_4190 field_9522 = class_6414.method_29292(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
    private static final class_4190 field_9528 = class_6414.method_29292(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
    private static final class_4190 field_9529 = class_6414.method_29292(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
@@ -77,7 +77,7 @@ public class class_1878 extends class_9476 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       return !this.method_10787(var1, var4, var5)
          ? class_4783.field_23184.method_29260()
          : this.method_8408(var4, var5, var1.<Integer>method_10313(field_9533));
@@ -96,10 +96,10 @@ public class class_1878 extends class_9476 {
    public class_2522 method_8413(class_6163 var1, class_1331 var2) {
       class_1331 var5 = var2.method_6100();
       class_2522 var6 = var1.method_28262(var5);
-      if (!this.method_43770(var6) && !var6.method_8308(var1, var5, class_240.field_817)) {
+      if (!this.method_43770(var6) && !var6.method_8308(var1, var5, Direction.field_817)) {
          class_2522 var7 = this.method_29260();
 
-         for (class_240 var11 : class_240.values()) {
+         for (Direction var11 : Direction.values()) {
             class_6720 var12 = field_9530.get(var11);
             if (var12 != null) {
                var7 = var7.method_10308(var12, Boolean.valueOf(this.method_43770(var1.method_28262(var2.method_6098(var11)))));
@@ -115,7 +115,7 @@ public class class_1878 extends class_9476 {
    @Override
    public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
       class_1331 var6 = var3.method_6100();
-      return var2.method_28262(var6).method_8308(var2, var6, class_240.field_817) || this.method_8404(var2, var3);
+      return var2.method_28262(var6).method_8308(var2, var6, Direction.field_817) || this.method_8404(var2, var3);
    }
 
    @Override
@@ -141,7 +141,7 @@ public class class_1878 extends class_9476 {
             if (!var8) {
                if (!this.method_8404(var2, var3)) {
                   class_1331 var22 = var3.method_6100();
-                  if (!var2.method_28262(var22).method_8308(var2, var22, class_240.field_817) || var9 > 3) {
+                  if (!var2.method_28262(var22).method_8308(var2, var22, Direction.field_817) || var9 > 3) {
                      var2.method_7508(var3, false);
                   }
 
@@ -194,7 +194,7 @@ public class class_1878 extends class_9476 {
       }
    }
 
-   public boolean method_8411(class_6486 var1, class_1331 var2) {
+   public boolean method_8411(World var1, class_1331 var2) {
       return var1.method_29569(var2)
          || var1.method_29569(var2.method_6108())
          || var1.method_29569(var2.method_6090())
@@ -210,7 +210,7 @@ public class class_1878 extends class_9476 {
       return var1.method_10307(class_6023.field_30719) && var1.<Boolean>method_10313(class_6023.field_30719) ? 0 : this.field_9535.getInt(var1.method_8360());
    }
 
-   private void method_8409(class_6486 var1, class_1331 var2, int var3, Random var4, int var5) {
+   private void method_8409(World var1, class_1331 var2, int var3, Random var4, int var5) {
       int var8 = this.method_8406(var1.method_28262(var2));
       if (var4.nextInt(var3) < var8) {
          class_2522 var9 = var1.method_28262(var2);
@@ -235,7 +235,7 @@ public class class_1878 extends class_9476 {
    }
 
    private boolean method_8404(class_6163 var1, class_1331 var2) {
-      for (class_240 var8 : class_240.values()) {
+      for (Direction var8 : Direction.values()) {
          if (this.method_43770(var1.method_28262(var2.method_6098(var8)))) {
             return true;
          }
@@ -250,7 +250,7 @@ public class class_1878 extends class_9476 {
       } else {
          int var5 = 0;
 
-         for (class_240 var9 : class_240.values()) {
+         for (Direction var9 : Direction.values()) {
             class_2522 var10 = var1.method_28262(var2.method_6098(var9));
             var5 = Math.max(this.method_8414(var10), var5);
          }
@@ -265,7 +265,7 @@ public class class_1878 extends class_9476 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       super.method_10760(var1, var2, var3, var4, var5);
       var2.method_43367().method_14011(var3, this, method_8415(var2.field_33033));
    }

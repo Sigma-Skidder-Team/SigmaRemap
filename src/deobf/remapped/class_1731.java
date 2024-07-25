@@ -108,7 +108,7 @@ public class class_1731 extends class_9128 {
                      field_46692.method_8614().method_4813(new class_1022(class_2584.field_12791));
                   }
                } else {
-                  field_46692.method_8614().method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, class_240.field_802));
+                  field_46692.method_8614().method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, Direction.field_802));
                   this.field_8926 = 0;
                }
             }

@@ -6,13 +6,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class class_4400 {
    private static String[] field_21537;
    public class_5676 field_21538;
-   public List<class_8145> field_21536 = new CopyOnWriteArrayList<class_8145>();
+   public List<Entity> field_21536 = new CopyOnWriteArrayList<Entity>();
 
    public void method_20492() {
       SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
-   public boolean method_20495(class_8145 var1) {
+   public boolean method_20495(Entity var1) {
       return this.field_21536.contains(var1);
    }
 

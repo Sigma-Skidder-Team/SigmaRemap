@@ -40,7 +40,7 @@ public class class_8267 extends class_7934 {
       return var2;
    }
 
-   private int method_38116(class_6486 var1) {
+   private int method_38116(World var1) {
       int var4 = 0;
       var4 += this.method_38117(class_1039.method_4598(this.field_42415).method_31498(0));
       var4 += this.method_38117(class_1039.method_4598(this.field_42415).method_31498(1));

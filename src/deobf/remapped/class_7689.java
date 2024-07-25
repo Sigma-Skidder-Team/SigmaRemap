@@ -119,7 +119,7 @@ public class class_7689 extends class_6414 implements class_8660 {
       this.method_29284(this.field_32751.method_36446().method_10308(field_39050, Integer.valueOf(0)));
    }
 
-   public static void method_34836(class_6486 var0, class_1331 var1, boolean var2) {
+   public static void method_34836(World var0, class_1331 var1, boolean var2) {
       class_2522 var5 = var0.method_28262(var1);
       var0.method_29527(
          (double)var1.method_12173(),
@@ -168,14 +168,14 @@ public class class_7689 extends class_6414 implements class_8660 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (var1.<Integer>method_10313(field_39050) == 7) {
          var2.method_43367().method_14011(var3, var1.method_8360(), 20);
       }
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       int var9 = var1.<Integer>method_10313(field_39050);
       class_6098 var10 = var4.method_26617(var5);
       if (var9 < 8 && field_39051.containsKey(var10.method_27960())) {
@@ -207,7 +207,7 @@ public class class_7689 extends class_6414 implements class_8660 {
       }
    }
 
-   public static class_2522 method_34839(class_2522 var0, class_6486 var1, class_1331 var2) {
+   public static class_2522 method_34839(class_2522 var0, World var1, class_1331 var2) {
       if (!var1.field_33055) {
          float var5 = 0.7F;
          double var6 = (double)(var1.field_33033.nextFloat() * 0.7F) + 0.15F;
@@ -266,7 +266,7 @@ public class class_7689 extends class_6414 implements class_8660 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       return var1.<Integer>method_10313(field_39050);
    }
 

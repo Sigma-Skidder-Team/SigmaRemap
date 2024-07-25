@@ -64,7 +64,7 @@ public class class_8533 implements JsonDeserializer<class_9487> {
       }
    }
 
-   private Map<class_240, class_7300> method_39286(JsonDeserializationContext var1, JsonObject var2) {
+   private Map<Direction, class_7300> method_39286(JsonDeserializationContext var1, JsonObject var2) {
       Map var5 = this.method_39290(var1, var2);
       if (!var5.isEmpty()) {
          return var5;
@@ -73,20 +73,20 @@ public class class_8533 implements JsonDeserializer<class_9487> {
       }
    }
 
-   private Map<class_240, class_7300> method_39290(JsonDeserializationContext var1, JsonObject var2) {
-      EnumMap var5 = Maps.newEnumMap(class_240.class);
+   private Map<Direction, class_7300> method_39290(JsonDeserializationContext var1, JsonObject var2) {
+      EnumMap var5 = Maps.newEnumMap(Direction.class);
       JsonObject var6 = class_6539.method_29783(var2, "faces");
 
       for (Entry var8 : var6.entrySet()) {
-         class_240 var9 = this.method_39283((String)var8.getKey());
+         Direction var9 = this.method_39283((String)var8.getKey());
          var5.put(var9, var1.deserialize((JsonElement)var8.getValue(), class_7300.class));
       }
 
       return var5;
    }
 
-   private class_240 method_39283(String var1) {
-      class_240 var4 = class_240.method_1035(var1);
+   private Direction method_39283(String var1) {
+      Direction var4 = Direction.method_1035(var1);
       if (var4 != null) {
          return var4;
       } else {

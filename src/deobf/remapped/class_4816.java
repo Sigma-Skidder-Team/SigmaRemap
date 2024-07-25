@@ -69,10 +69,10 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    public class_4092 method_22195(class_2522 var1) {
-      return this.method_22194(var1.<class_240>method_10313(class_3153.field_15681));
+      return this.method_22194(var1.<Direction>method_10313(class_3153.field_15681));
    }
 
-   public class_4092 method_22194(class_240 var1) {
+   public class_4092 method_22194(Direction var1) {
       float var4 = this.method_22199(1.0F);
       return class_3370.method_15524()
          .method_19483()
@@ -83,8 +83,8 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
          );
    }
 
-   private class_4092 method_22193(class_240 var1) {
-      class_240 var4 = var1.method_1046();
+   private class_4092 method_22193(Direction var1) {
+      Direction var4 = var1.method_1046();
       return this.method_22194(var1).method_18900((double)var4.method_1041(), (double)var4.method_1054(), (double)var4.method_1034());
    }
 
@@ -93,12 +93,12 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    private void method_22201() {
       class_2522 var3 = this.field_18364.method_28262(this.method_17399());
       if (var3.method_8360() instanceof class_3153) {
-         class_240 var4 = var3.<class_240>method_10313(class_3153.field_15681);
+         Direction var4 = var3.<Direction>method_10313(class_3153.field_15681);
          class_4092 var5 = this.method_22193(var4).method_18919(this.field_18358);
-         List var6 = this.field_18364.method_25870((class_8145)null, var5);
+         List var6 = this.field_18364.method_25870((Entity)null, var5);
          if (!var6.isEmpty()) {
             for (int var7 = 0; var7 < var6.size(); var7++) {
-               class_8145 var8 = (class_8145)var6.get(var7);
+               Entity var8 = (Entity)var6.get(var7);
                if (var8.method_37132() != class_718.field_3914) {
                   double var9 = 0.0;
                   double var11 = 0.0;
@@ -247,17 +247,17 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    @Override
-   public int[] method_1832(class_240 var1) {
+   public int[] method_1832(Direction var1) {
       return field_24077;
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, class_240 var3) {
+   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
       return !(class_6414.method_29269(var2.method_27960()) instanceof class_3153);
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, class_240 var3) {
+   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
       return true;
    }
 

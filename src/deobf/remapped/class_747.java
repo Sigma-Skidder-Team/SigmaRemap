@@ -113,12 +113,12 @@ public class class_747 extends class_6414 implements class_3978 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (!var1.method_8309(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 1);
       }
 
-      if (var2 == class_240.field_817
+      if (var2 == Direction.field_817
          && var3.method_8350(class_4783.field_23886)
          && var3.<Integer>method_10313(field_4063) > var1.<Integer>method_10313(field_4063)) {
          var4.method_7513(var5, var1.method_10317(field_4063), 2);
@@ -135,7 +135,7 @@ public class class_747 extends class_6414 implements class_3978 {
    }
 
    @Override
-   public boolean method_18357(class_6486 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
       return true;
    }
 
@@ -164,7 +164,7 @@ public class class_747 extends class_6414 implements class_3978 {
       return !(var2.method_26446().method_27960() instanceof class_2235) ? super.method_10799(var1, var2, var3, var4) : 1.0F;
    }
 
-   public void method_3384(class_2522 var1, class_6486 var2, class_1331 var3, Random var4, int var5) {
+   public void method_3384(class_2522 var1, World var2, class_1331 var3, Random var4, int var5) {
       class_2522 var8 = var2.method_28262(var3.method_6100());
       class_1331 var9 = var3.method_6101(2);
       class_2522 var10 = var2.method_28262(var9);

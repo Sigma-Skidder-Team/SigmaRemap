@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_8032 extends class_7937 {
    private static String[] field_41111;
 
-   public class_8032(class_6629<? extends class_8032> var1, class_6486 var2) {
+   public class_8032(class_6629<? extends class_8032> var1, World var2) {
       super(var1, var2);
    }
 
@@ -14,7 +14,7 @@ public class class_8032 extends class_7937 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       if (!super.method_26442(var1)) {
          return false;
       } else {

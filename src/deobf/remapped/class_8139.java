@@ -1,6 +1,6 @@
 package remapped;
 
-public abstract class class_8139<T extends class_8145, M extends class_6521<T>> extends class_4171<T, M> {
+public abstract class class_8139<T extends Entity, M extends class_6521<T>> extends class_4171<T, M> {
    public class_8139(class_2514<T, M> var1) {
       super(var1);
    }
@@ -20,5 +20,5 @@ public abstract class class_8139<T extends class_8145, M extends class_6521<T>> 
       }
    }
 
-   public abstract class_3581 method_37036();
+   public abstract RenderLayer method_37036();
 }

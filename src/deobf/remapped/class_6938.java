@@ -2,8 +2,8 @@ package remapped;
 
 public class class_6938 {
    private static String[] field_35665;
-   private final class_3581 field_35664;
-   private final class_3581 field_35670;
+   private final RenderLayer field_35664;
+   private final RenderLayer field_35670;
    private final float field_35669;
    private final float field_35672;
    private final float field_35671;
@@ -14,7 +14,7 @@ public class class_6938 {
    private final float field_35663;
    public static final class_8107 field_35666 = class_1750.method_7800();
 
-   public class_6938(class_3581 var1, class_3581 var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public class_6938(RenderLayer var1, RenderLayer var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.field_35664 = var1;
       this.field_35670 = var2;
       this.field_35669 = var3;
@@ -96,7 +96,7 @@ public class class_6938 {
          .method_35735();
    }
 
-   public class_3581 method_31740(boolean var1) {
+   public RenderLayer method_31740(boolean var1) {
       return !var1 ? this.field_35664 : this.field_35670;
    }
 }

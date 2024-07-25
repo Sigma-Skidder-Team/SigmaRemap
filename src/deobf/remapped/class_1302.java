@@ -16,7 +16,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public boolean method_11203(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
       return !var4.method_3186();
    }
 
@@ -31,7 +31,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public void method_11206(class_6098 var1, class_6486 var2, class_5834 var3, int var4) {
+   public void method_11206(class_6098 var1, World var2, class_5834 var3, int var4) {
       if (var3 instanceof class_704) {
          class_704 var7 = (class_704)var3;
          int var8 = this.method_11230(var1) - var4;
@@ -93,7 +93,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       if (var6.method_28026() < var6.method_27957() - 1) {
          if (class_2931.method_13415(var6) > 0 && !var2.method_37363()) {
@@ -114,7 +114,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public boolean method_11209(class_6098 var1, class_6486 var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(class_6098 var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
       if ((double)var3.method_8341(var2, var4) != 0.0) {
          var1.method_28003(2, var5, var0 -> var0.method_26448(class_6943.field_35707));
       }

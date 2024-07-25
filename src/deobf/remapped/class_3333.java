@@ -8,7 +8,7 @@ public class class_3333 extends class_6414 {
    }
 
    @Override
-   public boolean method_10764(class_2522 var1, class_2522 var2, class_240 var3) {
+   public boolean method_10764(class_2522 var1, class_2522 var2, Direction var3) {
       return !var2.method_8350(this) ? super.method_10764(var1, var2, var3) : true;
    }
 }

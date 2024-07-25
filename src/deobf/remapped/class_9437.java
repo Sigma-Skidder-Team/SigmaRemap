@@ -105,8 +105,8 @@ public class class_9437 extends class_9128 {
    }
 
    public static void method_43657(class_1331 var0) {
-      field_46692.method_8614().method_4813(new class_1586(class_7500.field_38263, var0, class_240.field_817));
-      field_46692.method_8614().method_4813(new class_1586(class_7500.field_38258, var0, class_240.field_817));
+      field_46692.method_8614().method_4813(new class_1586(class_7500.field_38263, var0, Direction.field_817));
+      field_46692.method_8614().method_4813(new class_1586(class_7500.field_38258, var0, Direction.field_817));
       field_46692.field_9601.method_29594(var0, class_4783.field_23184.method_29260());
    }
 

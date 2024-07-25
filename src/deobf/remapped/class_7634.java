@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public final class class_7634 extends class_3581 {
+public final class class_7634 extends RenderLayer {
    private static final ObjectOpenCustomHashSet<class_7634> field_38842 = new ObjectOpenCustomHashSet(class_3093.field_15396);
    private final class_8570 field_38839;
    private final int field_38838;
-   private final Optional<class_3581> field_38837;
+   private final Optional<RenderLayer> field_38837;
    private final boolean field_38841;
    private Map<Identifier, class_7634> field_38840 = new HashMap<Identifier, class_7634>();
 
@@ -26,8 +26,8 @@ public final class class_7634 extends class_3581 {
       );
       this.field_38839 = var7;
       this.field_38837 = class_8570.method_39414(var7) != class_3409.field_16787
-         ? Optional.<class_3581>empty()
-         : class_8570.method_39409(var7).method_17452().<class_3581>map(var1x -> method_16741(var1x, class_8570.method_39410(var7)));
+         ? Optional.<RenderLayer>empty()
+         : class_8570.method_39409(var7).method_17452().<RenderLayer>map(var1x -> method_16741(var1x, class_8570.method_39410(var7)));
       this.field_38841 = class_8570.method_39414(var7) == class_3409.field_16786;
       this.field_38838 = class_5129.method_23522(super.hashCode(), var7);
    }
@@ -37,7 +37,7 @@ public final class class_7634 extends class_3581 {
    }
 
    @Override
-   public Optional<class_3581> method_16772() {
+   public Optional<RenderLayer> method_16772() {
       return this.field_38837;
    }
 

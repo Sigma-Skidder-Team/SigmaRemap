@@ -3,7 +3,7 @@ package remapped;
 public class class_3277 extends class_7164<class_105, class_6094<class_105>> {
    private static final Identifier field_16220 = new Identifier("textures/entity/fish/cod.png");
 
-   public class_3277(class_6122 var1) {
+   public class_3277(EntityRenderDispatcher var1) {
       super(var1, new class_6094<class_105>(), 0.3F);
    }
 

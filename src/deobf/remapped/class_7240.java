@@ -26,8 +26,8 @@ public class class_7240 extends class_4117 {
                float var6 = (float)var4.field_7333;
                float var7 = (float)var4.field_7334;
                class_7649 var8 = class_8845.method_40694(this.field_37139);
-               if (var8 != null && class_8845.method_40687(this.field_37139).contains(class_3581.method_16762())) {
-                  class_9633 var9 = var1.method_12956(class_3581.method_16762());
+               if (var8 != null && class_8845.method_40687(this.field_37139).contains(RenderLayer.method_16762())) {
+                  class_9633 var9 = var1.method_12956(RenderLayer.method_16762());
                   class_3511.method_16148(this.field_37141, var9);
                   var9.method_44477(var8);
                   var9.method_44482(
@@ -40,7 +40,7 @@ public class class_7240 extends class_4117 {
                   if (!this.field_20070.get()) {
                      CompletableFuture var10 = this.field_37141
                         .field_17225
-                        .method_30744(var1.method_12956(class_3581.method_16762()), this.field_37141.method_16180(class_3581.method_16762()))
+                        .method_30744(var1.method_12956(RenderLayer.method_16762()), this.field_37141.method_16180(RenderLayer.method_16762()))
                         .<class_8490>thenApply(var0 -> class_8490.field_43499);
                      return var10.<class_8490>handle((var1x, var2) -> {
                         if (var2 != null && !(var2 instanceof CancellationException) && !(var2 instanceof InterruptedException)) {

@@ -41,16 +41,16 @@ public class class_1892 {
    private static void method_8437(class_6331 var0, class_1331 var1) {
    }
 
-   public static void method_8443(class_6486 var0, class_5886 var1, class_3998 var2, float var3) {
+   public static void method_8443(World var0, class_5886 var1, class_3998 var2, float var3) {
    }
 
-   public static void method_8430(class_6486 var0, class_1331 var1) {
+   public static void method_8430(World var0, class_1331 var1) {
    }
 
    public static void method_8444(class_700 var0, class_3200<?> var1) {
    }
 
-   public static void method_8439(class_6486 var0, class_5886 var1, class_782 var2) {
+   public static void method_8439(World var0, class_5886 var1, class_782 var2) {
       if (!(var0 instanceof class_6331)) {
       }
    }

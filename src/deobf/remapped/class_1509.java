@@ -34,7 +34,7 @@ public class class_1509 implements class_7373 {
    }
 
    @Override
-   public List<class_5024> method_33580(class_2522 var1, class_240 var2, Random var3) {
+   public List<class_5024> method_33580(class_2522 var1, Direction var2, Random var3) {
       if (var1 == null) {
          return Collections.<class_5024>emptyList();
       } else {

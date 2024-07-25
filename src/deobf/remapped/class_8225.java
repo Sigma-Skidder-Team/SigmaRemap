@@ -6,11 +6,11 @@ import java.util.Random;
 public class class_8225 extends class_8549 {
    private final int field_42225;
 
-   public class_8225(int var1, class_9616 var2, class_240 var3) {
+   public class_8225(int var1, class_9616 var2, Direction var3) {
       super(class_2746.field_13435, var1);
       this.method_32519(var3);
       this.field_36435 = var2;
-      this.field_42225 = var3 != class_240.field_818 && var3 != class_240.field_800 ? var2.method_44393() : var2.method_44387();
+      this.field_42225 = var3 != Direction.field_818 && var3 != Direction.field_800 ? var2.method_44393() : var2.method_44387();
    }
 
    public class_8225(class_5799 var1, class_5734 var2) {
@@ -24,7 +24,7 @@ public class class_8225 extends class_8549 {
       var1.method_25931("Steps", this.field_42225);
    }
 
-   public static class_9616 method_37659(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5) {
+   public static class_9616 method_37659(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5) {
       byte var8 = 3;
       class_9616 var9 = class_9616.method_44386(var2, var3, var4, -1, -1, 0, 5, 5, 4, var5);
       class_7060 var10 = class_7060.method_32502(var0, var9);

@@ -7,14 +7,14 @@ public enum class_5848 {
    field_29713("killer_player", class_8712.field_44675);
 
    private final String field_29708;
-   private final class_9791<? extends class_8145> field_29712;
+   private final class_9791<? extends Entity> field_29712;
 
-   private class_5848(String var3, class_9791<? extends class_8145> var4) {
+   private class_5848(String var3, class_9791<? extends Entity> var4) {
       this.field_29708 = var3;
       this.field_29712 = var4;
    }
 
-   public class_9791<? extends class_8145> method_26666() {
+   public class_9791<? extends Entity> method_26666() {
       return this.field_29712;
    }
 

@@ -33,7 +33,7 @@ public class class_7334 {
    }
 
    private static int method_33425(class_9155 var0, ITextComponent var1) throws CommandSyntaxException {
-      class_8145 var4 = var0.method_42178();
+      Entity var4 = var0.method_42178();
       class_3903 var5 = (class_3903)var4.method_37095();
       if (var5 != null) {
          IFormattableTextComponent var6 = var5.method_18069().mergeStyle(field_37488);

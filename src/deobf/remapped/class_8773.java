@@ -40,7 +40,7 @@ public interface class_8773 {
       return Collections.<class_7461>singleton(class_7461.field_38013);
    }
 
-   Set<class_5621<class_6486>> method_40317();
+   Set<class_5621<World>> method_40317();
 
    class_6322 method_40327();
 

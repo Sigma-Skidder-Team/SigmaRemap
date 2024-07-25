@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 public interface class_7373 extends class_3644 {
-   List<class_5024> method_33580(class_2522 var1, class_240 var2, Random var3);
+   List<class_5024> method_33580(class_2522 var1, Direction var2, Random var3);
 
    boolean method_33581();
 

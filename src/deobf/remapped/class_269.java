@@ -22,7 +22,7 @@ public class class_269 implements class_4904 {
 
    @Nullable
    @Override
-   public class_8014 method_22451(class_8145 var1, Random var2) {
+   public class_8014 method_22451(Entity var1, Random var2) {
       if (!(var1 instanceof class_3449)) {
          return null;
       } else {

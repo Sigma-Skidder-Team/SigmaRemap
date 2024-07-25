@@ -13,7 +13,7 @@ public abstract class class_4314 extends class_6414 implements class_724 {
    }
 
    @Override
-   public boolean method_10800(class_2522 var1, class_6486 var2, class_1331 var3, int var4, int var5) {
+   public boolean method_10800(class_2522 var1, World var2, class_1331 var3, int var4, int var5) {
       super.method_10800(var1, var2, var3, var4, var5);
       class_3757 var8 = var2.method_28260(var3);
       return var8 != null ? var8.method_17408(var4, var5) : false;
@@ -21,7 +21,7 @@ public abstract class class_4314 extends class_6414 implements class_724 {
 
    @Nullable
    @Override
-   public class_4259 method_10767(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public class_4259 method_10767(class_2522 var1, World var2, class_1331 var3) {
       class_3757 var6 = var2.method_28260(var3);
       return !(var6 instanceof class_4259) ? null : (class_4259)var6;
    }

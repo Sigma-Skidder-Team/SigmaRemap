@@ -7,7 +7,7 @@ public class class_3551 extends class_4109 {
    private static final UUID field_17373 = UUID.fromString("556E1665-8B10-40C8-8F9D-CF9B1667F295");
    private static final class_7821<Integer> field_17374 = class_8073.<Integer>method_36641(class_3551.class, class_2734.field_13366);
 
-   public class_3551(class_6629<? extends class_3551> var1, class_6486 var2) {
+   public class_3551(class_6629<? extends class_3551> var1, World var2) {
       super(var1, var2);
    }
 

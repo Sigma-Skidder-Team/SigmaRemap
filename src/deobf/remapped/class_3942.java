@@ -18,12 +18,12 @@ public class class_3942 extends class_5783 {
    private int field_19137;
    private float field_19136;
    private boolean field_19141 = true;
-   private class_8145 field_19144;
+   private Entity field_19144;
    private class_2753 field_19135 = class_2753.field_13471;
    private final int field_19143;
    private final int field_19138;
 
-   private class_3942(class_6486 var1, class_704 var2, int var3, int var4) {
+   private class_3942(World var1, class_704 var2, int var3, int var4) {
       super(class_6629.field_34215, var1);
       this.field_41750 = true;
       this.method_26159(var2);
@@ -32,7 +32,7 @@ public class class_3942 extends class_5783 {
       this.field_19138 = Math.max(0, var4);
    }
 
-   public class_3942(class_6486 var1, class_704 var2, double var3, double var5, double var7) {
+   public class_3942(World var1, class_704 var2, double var3, double var5, double var7) {
       this(var1, var2, 0, 0);
       this.method_37256(var3, var5, var7);
       this.field_41767 = this.method_37302();
@@ -40,7 +40,7 @@ public class class_3942 extends class_5783 {
       this.field_41725 = this.method_37156();
    }
 
-   public class_3942(class_704 var1, class_6486 var2, int var3, int var4) {
+   public class_3942(class_704 var1, World var2, int var3, int var4) {
       this(var2, var1, var3, var4);
       float var7 = var1.field_41755;
       float var8 = var1.field_41701;
@@ -223,7 +223,7 @@ public class class_3942 extends class_5783 {
    }
 
    @Override
-   public boolean method_26164(class_8145 var1) {
+   public boolean method_26164(Entity var1) {
       return super.method_26164(var1) || var1.method_37330() && var1 instanceof class_91;
    }
 
@@ -476,7 +476,7 @@ public class class_3942 extends class_5783 {
    }
 
    public void method_18224() {
-      class_8145 var3 = this.method_26166();
+      Entity var3 = this.method_26166();
       if (var3 != null) {
          class_1343 var4 = new class_1343(
                var3.method_37302() - this.method_37302(), var3.method_37309() - this.method_37309(), var3.method_37156() - this.method_37156()
@@ -502,12 +502,12 @@ public class class_3942 extends class_5783 {
 
    @Nullable
    public class_704 method_18219() {
-      class_8145 var3 = this.method_26166();
+      Entity var3 = this.method_26166();
       return !(var3 instanceof class_704) ? null : (class_704)var3;
    }
 
    @Nullable
-   public class_8145 method_18226() {
+   public Entity method_18226() {
       return this.field_19144;
    }
 
@@ -518,7 +518,7 @@ public class class_3942 extends class_5783 {
 
    @Override
    public class_6310<?> method_37142() {
-      class_8145 var3 = this.method_26166();
+      Entity var3 = this.method_26166();
       return new class_6589(this, var3 != null ? var3.method_37145() : this.method_37145());
    }
 }

@@ -80,7 +80,7 @@ public class class_3035<T extends class_5834, M extends class_2344<T>, A extends
    }
 
    private void method_13868(class_7966 var1, class_2565 var2, int var3, boolean var4, A var5, float var6, float var7, float var8, Identifier var9) {
-      class_7907 var12 = class_8765.method_40282(var2, class_3581.method_16749(var9), false, var4);
+      class_7907 var12 = class_8765.method_40282(var2, RenderLayer.method_16749(var9), false, var4);
       var5.method_45499(var1, var12, var3, class_5367.field_27381, var6, var7, var8, 1.0F);
    }
 
@@ -101,7 +101,7 @@ public class class_3035<T extends class_5834, M extends class_2344<T>, A extends
       return (A)(!class_7860.field_40132.method_3596() ? var4 : class_7860.field_40132.method_3582(var1, var2, var3, var4));
    }
 
-   public Identifier method_13874(class_8145 var1, class_6098 var2, class_6943 var3, String var4) {
+   public Identifier method_13874(Entity var1, class_6098 var2, class_6943 var3, String var4) {
       class_8228 var7 = (class_8228)var2.method_27960();
       String var8 = var7.method_37667().method_22186();
       String var9 = "minecraft";

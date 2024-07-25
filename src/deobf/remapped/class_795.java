@@ -11,7 +11,7 @@ import java.util.function.Function;
 public class class_795 extends class_5837 {
    private final class_9397 field_4274;
    private final List<class_8995> field_4270;
-   private static final Function<class_8145, class_8406> field_4273 = class_6000::method_27394;
+   private static final Function<Entity, class_8406> field_4273 = class_6000::method_27394;
    private static final Function<class_3757, class_8406> field_4271 = var0 -> var0.method_17396(new class_5734());
 
    private class_795(class_7279[] var1, class_9397 var2, List<class_8995> var3) {

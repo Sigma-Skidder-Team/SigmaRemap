@@ -20,17 +20,17 @@ public class class_2129 extends class_4657 implements class_372 {
    }
 
    @Override
-   public int[] method_1832(class_240 var1) {
-      return var1 != class_240.field_817 ? new int[0] : new int[]{0};
+   public int[] method_1832(Direction var1) {
+      return var1 != Direction.field_817 ? new int[0] : new int[]{0};
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, class_240 var3) {
-      return !this.field_10657 && var3 == class_240.field_817 && class_7689.field_39051.containsKey(var2.method_27960());
+   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
+      return !this.field_10657 && var3 == Direction.field_817 && class_7689.field_39051.containsKey(var2.method_27960());
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, class_240 var3) {
+   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
       return false;
    }
 

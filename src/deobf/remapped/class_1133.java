@@ -11,7 +11,7 @@ public class class_1133 extends class_7067<class_9149> {
    };
    public final class_4803 field_6452 = new class_4803();
 
-   public class_1133(class_6122 var1) {
+   public class_1133(EntityRenderDispatcher var1) {
       super(var1);
       this.field_36492 = 0.8F;
    }
@@ -32,7 +32,7 @@ public class class_1133 extends class_7067<class_9149> {
 
       float var11 = var1.method_42086(var3);
       if (!class_9299.method_42856(var11, 0.0F)) {
-         var4.method_36060(new class_5422(new class_2426(1.0F, 0.0F, 1.0F), var1.method_42086(var3), true));
+         var4.method_36060(new Quaternion(new class_2426(1.0F, 0.0F, 1.0F), var1.method_42086(var3), true));
       }
 
       var4.method_36062(-1.0F, -1.0F, 1.0F);
@@ -41,7 +41,7 @@ public class class_1133 extends class_7067<class_9149> {
       class_7907 var12 = var5.method_11645(this.field_6452.method_45498(this.method_4977(var1)));
       this.field_6452.method_45499(var4, var12, var6, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
       if (!var1.method_37179()) {
-         class_7907 var13 = var5.method_11645(class_3581.method_16728());
+         class_7907 var13 = var5.method_11645(RenderLayer.method_16728());
          this.field_6452.method_22130().method_7060(var4, var13, var6, class_5367.field_27381);
       }
 

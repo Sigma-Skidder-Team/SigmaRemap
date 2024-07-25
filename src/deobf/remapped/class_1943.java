@@ -123,7 +123,7 @@ public class class_1943 extends class_4107 {
             } else {
                boolean var17 = false;
 
-               for (class_240 var19 : class_9594.field_48893) {
+               for (Direction var19 : class_9594.field_48893) {
                   int var20 = var8 + var19.method_1041();
                   int var21 = var9 + var19.method_1034();
                   if (var20 >> 4 != var6 || var21 >> 4 != var7 || var1.method_28262(var4.method_13362(var20, var11, var21)).method_8345()) {

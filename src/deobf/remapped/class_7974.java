@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Arrays;
 
-public class class_7974<T extends class_8145> extends class_5272<T> {
+public class class_7974<T extends Entity> extends class_5272<T> {
    private static String[] field_40834;
    private static final int[][] field_40832 = new int[][]{{4, 3, 2}, {6, 4, 5}, {3, 3, 1}, {1, 2, 1}};
    private static final int[][] field_40835 = new int[][]{{0, 0}, {0, 5}, {0, 14}, {0, 18}};

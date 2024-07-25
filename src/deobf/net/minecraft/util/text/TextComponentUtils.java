@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.function.Function;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$class_48;
-import remapped.class_8145;
+import remapped.Entity;
 import remapped.class_9155;
 
 public class TextComponentUtils {
@@ -26,7 +26,7 @@ public class TextComponentUtils {
       }
    }
 
-   public static IFormattableTextComponent func_240645_a_(class_9155 p_240645_0_, ITextComponent p_240645_1_, class_8145 p_240645_2_, int p_240645_3_) throws CommandSyntaxException {
+   public static IFormattableTextComponent func_240645_a_(class_9155 p_240645_0_, ITextComponent p_240645_1_, Entity p_240645_2_, int p_240645_3_) throws CommandSyntaxException {
       if (p_240645_3_ > 100) {
          return p_240645_1_.deepCopy();
       } else {
@@ -42,7 +42,7 @@ public class TextComponentUtils {
       }
    }
 
-   private static Style func_240646_a_(class_9155 p_240646_0_, Style p_240646_1_, class_8145 p_240646_2_, int p_240646_3_) throws CommandSyntaxException {
+   private static Style func_240646_a_(class_9155 p_240646_0_, Style p_240646_1_, Entity p_240646_2_, int p_240646_3_) throws CommandSyntaxException {
       HoverEvent itextcomponent = p_240646_1_.getHoverEvent();
       if (itextcomponent != null) {
          ITextComponent hoverevent1 = itextcomponent.<ITextComponent>getParameter(HoverEvent$class_48.SHOW_TEXT);

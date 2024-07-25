@@ -36,7 +36,7 @@ public class class_5601 implements ArgumentType<class_4550> {
       return new class_5601(true, false);
    }
 
-   public static class_8145 method_25413(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+   public static Entity method_25413(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
       return ((class_4550)var0.getArgument(var1, class_4550.class)).method_21100((class_9155)var0.getSource());
    }
 
@@ -44,7 +44,7 @@ public class class_5601 implements ArgumentType<class_4550> {
       return new class_5601(false, false);
    }
 
-   public static Collection<? extends class_8145> method_25410(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+   public static Collection<? extends Entity> method_25410(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
       Collection var4 = method_25417(var0, var1);
       if (!var4.isEmpty()) {
          return var4;
@@ -53,7 +53,7 @@ public class class_5601 implements ArgumentType<class_4550> {
       }
    }
 
-   public static Collection<? extends class_8145> method_25417(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+   public static Collection<? extends Entity> method_25417(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
       return ((class_4550)var0.getArgument(var1, class_4550.class)).method_21106((class_9155)var0.getSource());
    }
 

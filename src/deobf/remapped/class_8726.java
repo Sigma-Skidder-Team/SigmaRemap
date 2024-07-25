@@ -200,14 +200,14 @@ public class class_8726 extends class_9128 {
                if (this.field_44720 != null) {
                   if (this.field_44724 != 0) {
                      if (this.field_44724 == 1) {
-                        float var4 = class_7494.method_34097(this.field_44720.method_6081(), class_240.field_817)[0];
-                        float var5 = class_7494.method_34097(this.field_44720.method_6081(), class_240.field_817)[1];
+                        float var4 = class_7494.method_34097(this.field_44720.method_6081(), Direction.field_817)[0];
+                        float var5 = class_7494.method_34097(this.field_44720.method_6081(), Direction.field_817)[1];
                         var1.method_6441(var4);
                         var1.method_6448(var5);
                         int var6 = field_46692.field_9632.field_3853.field_36404;
                         field_46692.field_9632.field_3853.field_36404 = this.field_44718;
-                        class_1343 var7 = class_7494.method_34098(class_240.field_817, this.field_44720);
-                        class_9529 var8 = new class_9529(var7, class_240.field_817, this.field_44720, false);
+                        class_1343 var7 = class_7494.method_34098(Direction.field_817, this.field_44720);
+                        class_9529 var8 = new class_9529(var7, Direction.field_817, this.field_44720, false);
                         class_6910 var9 = field_46692.field_9647.method_42147(field_46692.field_9632, field_46692.field_9601, class_2584.field_12791, var8);
                         field_46692.field_9632.method_26597(class_2584.field_12791);
                         if (var9 == class_6910.field_35520) {
@@ -215,8 +215,8 @@ public class class_8726 extends class_9128 {
                            field_46692.method_8614().method_4813(new class_2317(field_46692.field_9632, class_4127.field_20098));
                            field_46692.field_9632.field_30533.field_45289 = true;
                            field_46692.field_9632.field_3853.field_36404 = this.field_44721;
-                           class_1343 var10 = class_7494.method_34098(class_240.field_817, this.field_44720.method_6081());
-                           class_9529 var11 = new class_9529(var10, class_240.field_817, this.field_44720.method_6081(), false);
+                           class_1343 var10 = class_7494.method_34098(Direction.field_817, this.field_44720.method_6081());
+                           class_9529 var11 = new class_9529(var10, Direction.field_817, this.field_44720.method_6081(), false);
                            field_46692.field_9647.method_42147(field_46692.field_9632, field_46692.field_9601, class_2584.field_12791, var11);
                            field_46692.field_9632.method_26597(class_2584.field_12791);
                            field_46692.field_9632.field_30533.field_45289 = false;
@@ -225,8 +225,8 @@ public class class_8726 extends class_9128 {
                         }
                      }
                   } else {
-                     float var12 = class_7494.method_34097(this.field_44720, class_240.field_817)[0];
-                     float var13 = class_7494.method_34097(this.field_44720, class_240.field_817)[1];
+                     float var12 = class_7494.method_34097(this.field_44720, Direction.field_817)[0];
+                     float var13 = class_7494.method_34097(this.field_44720, Direction.field_817)[1];
                      var1.method_6441(var12);
                      var1.method_6448(var13);
                      this.field_44724++;
@@ -293,8 +293,8 @@ public class class_8726 extends class_9128 {
          }
 
          if (var1.method_10047() instanceof class_3398) {
-            float var4 = class_7494.method_34097(this.field_44720.method_6081(), class_240.field_817)[0];
-            float var5 = class_7494.method_34097(this.field_44720.method_6081(), class_240.field_817)[1];
+            float var4 = class_7494.method_34097(this.field_44720.method_6081(), Direction.field_817)[0];
+            float var5 = class_7494.method_34097(this.field_44720.method_6081(), Direction.field_817)[1];
          }
 
          if (var1.method_10047() instanceof class_4609) {

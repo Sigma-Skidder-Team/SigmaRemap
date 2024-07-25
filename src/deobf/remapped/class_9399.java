@@ -20,7 +20,7 @@ public class class_9399 extends class_5834 {
    public static final class_7821<class_1366> field_48049 = class_8073.<class_1366>method_36641(class_9399.class, class_2734.field_13363);
    public static final class_7821<class_1366> field_48046 = class_8073.<class_1366>method_36641(class_9399.class, class_2734.field_13363);
    public static final class_7821<class_1366> field_48045 = class_8073.<class_1366>method_36641(class_9399.class, class_2734.field_13363);
-   private static final Predicate<class_8145> field_48052 = var0 -> var0 instanceof class_1080 && ((class_1080)var0).method_4737() == class_3481.field_17066;
+   private static final Predicate<Entity> field_48052 = var0 -> var0 instanceof class_1080 && ((class_1080)var0).method_4737() == class_3481.field_17066;
    private final class_2831<class_6098> field_48058 = class_2831.<class_6098>method_12872(2, class_6098.field_31203);
    private final class_2831<class_6098> field_48054 = class_2831.<class_6098>method_12872(4, class_6098.field_31203);
    private boolean field_48048;
@@ -33,12 +33,12 @@ public class class_9399 extends class_5834 {
    private class_1366 field_48055 = field_48061;
    private class_1366 field_48037 = field_48043;
 
-   public class_9399(class_6629<? extends class_9399> var1, class_6486 var2) {
+   public class_9399(class_6629<? extends class_9399> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 0.0F;
    }
 
-   public class_9399(class_6486 var1, double var2, double var4, double var6) {
+   public class_9399(World var1, double var2, double var4, double var6) {
       this(class_6629.field_34289, var1);
       this.method_37256(var2, var4, var6);
    }
@@ -274,7 +274,7 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public void method_26596(class_8145 var1) {
+   public void method_26596(Entity var1) {
    }
 
    @Override
@@ -282,7 +282,7 @@ public class class_9399 extends class_5834 {
       List var3 = this.field_41768.method_25867(this, this.method_37241(), field_48052);
 
       for (int var4 = 0; var4 < var3.size(); var4++) {
-         class_8145 var5 = (class_8145)var3.get(var4);
+         Entity var5 = (Entity)var3.get(var4);
          if (this.method_37275(var5) <= 0.2) {
             var5.method_37183(this);
          }
@@ -713,7 +713,7 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public boolean method_37296(class_8145 var1) {
+   public boolean method_37296(Entity var1) {
       return var1 instanceof class_704 && !this.field_41768.method_29538((class_704)var1, this.method_37075());
    }
 

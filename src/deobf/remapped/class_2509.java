@@ -12,14 +12,14 @@ public class class_2509 extends class_2451 {
    @Override
    public class_6910 method_11237(class_4734 var1) {
       class_1331 var4 = var1.method_21858();
-      class_240 var5 = var1.method_21857();
+      Direction var5 = var1.method_21857();
       class_1331 var6 = var4.method_6098(var5);
       class_704 var7 = var1.method_21868();
       class_6098 var8 = var1.method_21867();
       if (var7 != null && !this.method_11437(var7, var5, var8, var6)) {
          return class_6910.field_35517;
       } else {
-         class_6486 var9 = var1.method_21862();
+         World var9 = var1.method_21862();
          Object var10;
          if (this.field_12457 != class_6629.field_34313) {
             if (this.field_12457 != class_6629.field_34319) {
@@ -33,7 +33,7 @@ public class class_2509 extends class_2451 {
 
          class_5734 var11 = var8.method_27990();
          if (var11 != null) {
-            class_6629.method_30458(var9, var7, (class_8145)var10, var11);
+            class_6629.method_30458(var9, var7, (Entity)var10, var11);
          }
 
          if (!((class_4641)var10).method_21472()) {
@@ -41,7 +41,7 @@ public class class_2509 extends class_2451 {
          } else {
             if (!var9.field_33055) {
                ((class_4641)var10).method_21471();
-               var9.method_7509((class_8145)var10);
+               var9.method_7509((Entity)var10);
             }
 
             var8.method_27970(1);
@@ -50,7 +50,7 @@ public class class_2509 extends class_2451 {
       }
    }
 
-   public boolean method_11437(class_704 var1, class_240 var2, class_6098 var3, class_1331 var4) {
+   public boolean method_11437(class_704 var1, Direction var2, class_6098 var3, class_1331 var4) {
       return !var2.method_1029().method_42626() && var1.method_3208(var4, var2, var3);
    }
 }

@@ -736,8 +736,8 @@ public class class_6588 {
    public static void method_30295() {
       boolean var0 = field_33724;
       boolean var1 = method_30109();
-      if (field_33837.field_9657 != null) {
-         field_33837.field_9657.method_20028();
+      if (field_33837.worldRenderer != null) {
+         field_33837.worldRenderer.method_20028();
       }
 
       field_33724 = false;
@@ -812,8 +812,8 @@ public class class_6588 {
          class_1303.method_5951();
       }
 
-      if (field_33837.field_9657 != null) {
-         field_33837.field_9657.method_20047();
+      if (field_33837.worldRenderer != null) {
+         field_33837.worldRenderer.method_20047();
       }
 
       if ((var4 || var5) && field_33837.method_8498() != null) {
@@ -1734,7 +1734,7 @@ public class class_6588 {
       return !field_33781.method_15354();
    }
 
-   public static boolean method_30222(class_3581 var0) {
+   public static boolean method_30222(RenderLayer var0) {
       if (var0 == class_6727.field_34745) {
          return field_33929.method_15355();
       } else if (var0 == class_6727.field_34743) {
@@ -2028,7 +2028,7 @@ public class class_6588 {
       class_1910.method_8671("Reset model renderers");
       field_33662++;
       class_1910.method_8671("Reset world renderers");
-      field_33837.field_9657.method_19998();
+      field_33837.worldRenderer.method_19998();
    }
 
    private static void method_30161(class_3009 var0, String var1, String var2, String var3) {
@@ -3190,7 +3190,7 @@ public class class_6588 {
       }
    }
 
-   public static void method_30311(MinecraftClient var0, class_9071 var1, float var2, long var3) {
+   public static void method_30311(MinecraftClient var0, Camera var1, float var2, long var3) {
       method_30273("pre beginRender");
       method_30223(field_33837.field_9601);
       field_33837 = var0;
@@ -3249,7 +3249,7 @@ public class class_6588 {
          float var6 = (float)field_33903 * 0.01F;
          float var7 = (float)Math.exp(Math.log(0.5) * (double)var6 / (double)(field_33829 < field_33961 ? field_33649 : field_33636));
          field_33829 = field_33829 * var7 + field_33961 * (1.0F - var7);
-         class_8145 var8 = var1.method_41633();
+         Entity var8 = var1.method_41633();
          if (var8 != null) {
             field_33874 = var8 instanceof class_5834 && ((class_5834)var8).method_26507();
             field_33816 = (float)var1.method_41627().method_60();
@@ -3514,8 +3514,8 @@ public class class_6588 {
       }
    }
 
-   public static void method_30194(class_7966 var0, class_9071 var1, float var2) {
-      class_8145 var3 = var1.method_41633();
+   public static void method_30194(class_7966 var0, Camera var1, float var2) {
+      Entity var3 = var1.method_41633();
       class_1343 var4 = var1.method_41627();
       double var5 = var4.field_7336;
       double var7 = var4.field_7333;
@@ -3540,7 +3540,7 @@ public class class_6588 {
       method_30273("setCamera");
    }
 
-   private static void method_30294(class_8145 var0) {
+   private static void method_30294(Entity var0) {
       double var1 = Math.abs(field_33915 - field_33633);
       double var3 = Math.abs(field_33641 - field_33913);
       double var5 = Math.abs(field_33915);
@@ -3550,7 +3550,7 @@ public class class_6588 {
       }
    }
 
-   private static void method_30130(class_8145 var0) {
+   private static void method_30130(Entity var0) {
       if (var0 == null) {
          field_33593 = 0;
          field_33701 = 0;
@@ -3560,8 +3560,8 @@ public class class_6588 {
       }
    }
 
-   public static void method_30214(class_7966 var0, class_9071 var1, float var2) {
-      class_8145 var3 = var1.method_41633();
+   public static void method_30214(class_7966 var0, Camera var1, float var2) {
+      Entity var3 = var1.method_41633();
       class_1343 var4 = var1.method_41627();
       double var5 = var4.field_7336;
       double var7 = var4.field_7333;
@@ -4058,7 +4058,7 @@ public class class_6588 {
       method_30142("endUpdateChunks2");
    }
 
-   public static boolean method_30136(class_8881 var0) {
+   public static boolean method_30136(GameOptions var0) {
       if (!field_33724) {
          return true;
       } else {
@@ -4085,7 +4085,7 @@ public class class_6588 {
       }
    }
 
-   public static void method_30181(class_8145 var0) {
+   public static void method_30181(Entity var0) {
       if (field_33804) {
          if (var0.method_37116()) {
             method_30236(field_33802);
@@ -4097,7 +4097,7 @@ public class class_6588 {
       }
    }
 
-   public static void method_30261(class_8145 var0) {
+   public static void method_30261(Entity var0) {
       if (field_33848.method_27601()) {
          int var1 = class_7070.method_32561(var0);
          int var2 = class_9713.method_44861(var1);
@@ -4123,7 +4123,7 @@ public class class_6588 {
 
    public static void method_30260() {
       if (field_33804) {
-         method_30261((class_8145)null);
+         method_30261((Entity)null);
          method_30236(field_33735 ? field_33784 : field_33587);
       }
    }
@@ -4637,7 +4637,7 @@ public class class_6588 {
             if (var3 == null) {
                return false;
             } else {
-               class_3581 var4 = class_6416.method_29330(var3.method_29260());
+               RenderLayer var4 = class_6416.method_29330(var3.method_29260());
                return var4 == class_6727.field_34740;
             }
          }

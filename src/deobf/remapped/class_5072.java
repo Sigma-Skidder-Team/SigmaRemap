@@ -31,7 +31,7 @@ public class class_5072 extends class_502 {
 
       for (int var9 = 0; var9 < var8; var9++) {
          var1.method_7513(var7, var3, 2);
-         var7.method_13368(class_240.field_817);
+         var7.method_13368(Direction.field_817);
       }
    }
 }

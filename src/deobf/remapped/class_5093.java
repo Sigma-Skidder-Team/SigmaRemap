@@ -16,7 +16,7 @@ public class class_5093 {
       class_6115.field_31261,
       (class_5621<class_6325>)null,
       (class_5390<?>)null,
-      (class_5621<class_6486>)null,
+      (class_5621<World>)null,
       (Boolean)null,
       class_1562.field_8232,
       class_8431.field_43143,
@@ -27,7 +27,7 @@ public class class_5093 {
    private final class_6115 field_26277;
    private final class_5621<class_6325> field_26275;
    private final class_5390<?> field_26279;
-   private final class_5621<class_6486> field_26273;
+   private final class_5621<World> field_26273;
    private final Boolean field_26282;
    private final class_1562 field_26276;
    private final class_8431 field_26278;
@@ -39,7 +39,7 @@ public class class_5093 {
       class_6115 var3,
       class_5621<class_6325> var4,
       class_5390<?> var5,
-      class_5621<class_6486> var6,
+      class_5621<World> var6,
       Boolean var7,
       class_1562 var8,
       class_8431 var9,
@@ -64,7 +64,7 @@ public class class_5093 {
          class_6115.field_31261,
          var0,
          (class_5390<?>)null,
-         (class_5621<class_6486>)null,
+         (class_5621<World>)null,
          (Boolean)null,
          class_1562.field_8232,
          class_8431.field_43143,
@@ -72,7 +72,7 @@ public class class_5093 {
       );
    }
 
-   public static class_5093 method_23399(class_5621<class_6486> var0) {
+   public static class_5093 method_23399(class_5621<World> var0) {
       return new class_5093(
          class_6115.field_31261,
          class_6115.field_31261,
@@ -94,7 +94,7 @@ public class class_5093 {
          class_6115.field_31261,
          (class_5621<class_6325>)null,
          var0,
-         (class_5621<class_6486>)null,
+         (class_5621<World>)null,
          (Boolean)null,
          class_1562.field_8232,
          class_8431.field_43143,
@@ -157,7 +157,7 @@ public class class_5093 {
          }
 
          if (this.field_26273 != null) {
-            class_6486.field_33043
+            World.field_33043
                .encodeStart(JsonOps.INSTANCE, this.field_26273)
                .resultOrPartial(field_26280::error)
                .ifPresent(var1 -> var3.add("dimension", var1));
@@ -194,7 +194,7 @@ public class class_5093 {
             : Identifier.field_22655
                .parse(JsonOps.INSTANCE, var3.get("dimension"))
                .resultOrPartial(field_26280::error)
-               .<class_5621>map(var0x -> class_5621.<class_6486>method_25497(class_8669.field_44372, var0x))
+               .<class_5621>map(var0x -> class_5621.<World>method_25497(class_8669.field_44372, var0x))
                .orElse((class_5621)null);
          class_5390 var9 = !var3.has("feature") ? null : (class_5390)class_5390.field_27500.get(class_6539.method_29796(var3, "feature"));
          class_5621 var10 = null;

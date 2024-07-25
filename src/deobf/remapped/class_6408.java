@@ -6,7 +6,7 @@ public abstract class class_6408 extends class_8844 implements class_3978 {
    public static final class_7044 field_32703 = class_6023.field_30703;
    private final double field_32704;
 
-   public class_6408(class_3073 var1, class_240 var2, class_4190 var3, boolean var4, double var5) {
+   public class_6408(class_3073 var1, Direction var2, class_4190 var3, boolean var4, double var5) {
       super(var1, var2, var3, var4);
       this.field_32704 = var5;
       this.method_29284(this.field_32751.method_36446().method_10308(field_32703, Integer.valueOf(0)));
@@ -33,7 +33,7 @@ public abstract class class_6408 extends class_8844 implements class_3978 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var2 == this.field_45228.method_1046() && !var1.method_8309(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 1);
       }
@@ -60,7 +60,7 @@ public abstract class class_6408 extends class_8844 implements class_3978 {
    }
 
    @Override
-   public boolean method_18357(class_6486 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
       return true;
    }
 

@@ -62,7 +62,7 @@ public enum class_6631 {
       return this.field_34339;
    }
 
-   public class_240 method_30489(class_240 var1) {
+   public Direction method_30489(Direction var1) {
       if (var1.method_1029() == class_9249.field_47216) {
          return var1;
       } else {

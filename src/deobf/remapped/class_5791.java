@@ -244,8 +244,8 @@ public abstract class class_5791 {
       int var7 = this.method_26199(var5.method_25382(class_9249.field_47215));
       int var8 = this.method_26199(var5.method_25382(class_9249.field_47216));
       int var9 = this.method_26199(var6);
-      class_240 var10 = class_240.method_1055(var6, class_137.field_403);
-      class_240 var11 = class_240.method_1055(var6, class_137.field_405);
+      Direction var10 = Direction.method_1055(var6, class_137.field_403);
+      Direction var11 = Direction.method_1055(var6, class_137.field_405);
 
       for (int var12 = 0; var12 < var7; var12++) {
          for (int var13 = 0; var13 < var8; var13++) {

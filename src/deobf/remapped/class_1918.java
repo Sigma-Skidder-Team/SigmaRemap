@@ -14,7 +14,7 @@ public class class_1918 extends class_2811 implements class_6250 {
    private static final class_4376 field_9790 = class_5804.method_26295(4, 6);
    private int field_9783;
 
-   public class_1918(class_6629<? extends class_1918> var1, class_6486 var2) {
+   public class_1918(class_6629<? extends class_1918> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6360, 8.0F);
    }

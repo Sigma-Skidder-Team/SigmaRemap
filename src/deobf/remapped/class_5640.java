@@ -37,7 +37,7 @@ public class class_5640 {
       }
    }
 
-   public boolean method_25539(class_8145 var1) {
+   public boolean method_25539(Entity var1) {
       if (this != field_28605) {
          if (var1 instanceof class_3942) {
             class_3942 var4 = (class_3942)var1;

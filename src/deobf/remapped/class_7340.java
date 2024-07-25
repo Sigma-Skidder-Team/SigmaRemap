@@ -17,7 +17,7 @@ public enum class_7340 implements class_1342 {
    field_37543("is_wet");
 
    private String field_37531;
-   private class_6122 field_37545;
+   private EntityRenderDispatcher field_37545;
    private static final class_7340[] field_37540 = values();
 
    private class_7340(String var3) {
@@ -31,7 +31,7 @@ public enum class_7340 implements class_1342 {
 
    @Override
    public boolean method_6191() {
-      class_8145 var3 = MinecraftClient.getInstance().method_8516();
+      Entity var3 = MinecraftClient.getInstance().method_8516();
       if (var3 instanceof class_5834) {
          class_5834 var4 = (class_5834)var3;
          switch (this) {

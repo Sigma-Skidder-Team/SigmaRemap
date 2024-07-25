@@ -114,7 +114,7 @@ public class class_2931 {
       return var3 <= 0 ? 0.0F : class_6317.method_28789(var3);
    }
 
-   public static void method_13429(class_5834 var0, class_8145 var1) {
+   public static void method_13429(class_5834 var0, Entity var1) {
       class_4800 var4 = (var2, var3) -> var2.method_20427(var0, var1, var3);
       if (var0 != null) {
          method_13416(var4, var0.method_37342());
@@ -125,7 +125,7 @@ public class class_2931 {
       }
    }
 
-   public static void method_13406(class_5834 var0, class_8145 var1) {
+   public static void method_13406(class_5834 var0, Entity var1) {
       class_4800 var4 = (var2, var3) -> var2.method_20421(var0, var1, var3);
       if (var0 != null) {
          method_13416(var4, var0.method_37342());

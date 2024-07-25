@@ -13,8 +13,8 @@ public class class_1653 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
-      if (var2 == class_240.field_817 && !var1.method_8309(var4, var5)) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+      if (var2 == Direction.field_817 && !var1.method_8309(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 1);
       }
 
@@ -66,7 +66,7 @@ public class class_1653 extends class_6414 {
    }
 
    @Override
-   public void method_29263(class_6486 var1, class_1331 var2, class_8145 var3, float var4) {
+   public void method_29263(World var1, class_1331 var2, Entity var3, float var4) {
       if (!var1.field_33055
          && var1.field_33033.nextFloat() < var4 - 0.5F
          && var3 instanceof class_5834
@@ -78,7 +78,7 @@ public class class_1653 extends class_6414 {
       super.method_29263(var1, var2, var3, var4);
    }
 
-   public static void method_7376(class_2522 var0, class_6486 var1, class_1331 var2) {
+   public static void method_7376(class_2522 var0, World var1, class_1331 var2) {
       var1.method_29594(var2, method_29277(var0, class_4783.field_23592.method_29260(), var1, var2));
    }
 

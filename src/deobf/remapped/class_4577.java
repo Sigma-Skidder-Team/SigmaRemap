@@ -21,11 +21,11 @@ public class class_4577 extends class_8273<class_9370> {
       return new class_9370(var2, var6, var7);
    }
 
-   public void method_21226(class_9359 var1, Collection<class_8145> var2) {
+   public void method_21226(class_9359 var1, Collection<Entity> var2) {
       ArrayList var5 = Lists.newArrayList();
       HashSet var6 = Sets.newHashSet();
 
-      for (class_8145 var8 : var2) {
+      for (Entity var8 : var2) {
          var6.add(var8.method_37387());
          var5.add(class_865.method_3739(var1, var8));
       }

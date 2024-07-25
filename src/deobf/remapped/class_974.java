@@ -208,7 +208,7 @@ public class class_974 {
 
          if (this.field_4977 != null && var1 instanceof class_7908) {
             class_7908 var12 = (class_7908)var1;
-            class_8145 var18 = var12.method_35765();
+            Entity var18 = var12.method_35765();
             if (var18 instanceof class_7666) {
                class_7666 var6 = (class_7666)var18;
                class_3047 var7 = var6.method_15891();
@@ -222,7 +222,7 @@ public class class_974 {
 
          if (this.field_4990 != null && var1 instanceof class_7908) {
             class_7908 var13 = (class_7908)var1;
-            class_8145 var19 = var13.method_35765();
+            Entity var19 = var13.method_35765();
             if (var19 instanceof class_9408) {
                class_9408 var24 = (class_9408)var19;
                if (!var24.method_41215()) {
@@ -250,7 +250,7 @@ public class class_974 {
 
          if (this.field_4981 != null && var1 instanceof class_7908) {
             class_7908 var14 = (class_7908)var1;
-            class_8145 var20 = var14.method_35765();
+            Entity var20 = var14.method_35765();
             if (var20 instanceof class_5834) {
                class_5834 var26 = (class_5834)var20;
                if (var26.method_26449() != this.field_4981) {

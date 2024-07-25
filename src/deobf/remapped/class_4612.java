@@ -1,7 +1,7 @@
 package remapped;
 
 public abstract class class_4612 extends class_5886 {
-   public class_4612(class_6629<? extends class_4612> var1, class_6486 var2) {
+   public class_4612(class_6629<? extends class_4612> var1, World var2) {
       super(var1, var2);
    }
 
@@ -25,7 +25,7 @@ public abstract class class_4612 extends class_5886 {
    @Override
    public void method_26921() {
       super.method_26921();
-      class_8145 var3 = this.method_26922();
+      Entity var3 = this.method_26922();
       if (var3 != null && var3.field_41768 == this.field_41768) {
          this.method_26843(var3.method_37075(), 5);
          float var4 = this.method_37175(var3);

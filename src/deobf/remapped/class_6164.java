@@ -89,10 +89,10 @@ public class class_6164 extends class_7896 {
          this.method_32511(var1, var5, 4, 9, 10, 4, 9, 10, false, var4, field_31547);
          this.method_32511(var1, var5, 7, 9, 10, 7, 9, 10, false, var4, field_31547);
          this.method_32511(var1, var5, 5, 9, 7, 6, 9, 7, false, var4, field_31547);
-         class_2522 var17 = class_4783.field_23364.method_29260().method_10308(class_3049.field_14946, class_240.field_804);
-         class_2522 var18 = class_4783.field_23364.method_29260().method_10308(class_3049.field_14946, class_240.field_809);
-         class_2522 var12 = class_4783.field_23364.method_29260().method_10308(class_3049.field_14946, class_240.field_800);
-         class_2522 var13 = class_4783.field_23364.method_29260().method_10308(class_3049.field_14946, class_240.field_818);
+         class_2522 var17 = class_4783.field_23364.method_29260().method_10308(class_3049.field_14946, Direction.field_804);
+         class_2522 var18 = class_4783.field_23364.method_29260().method_10308(class_3049.field_14946, Direction.field_809);
+         class_2522 var12 = class_4783.field_23364.method_29260().method_10308(class_3049.field_14946, Direction.field_800);
+         class_2522 var13 = class_4783.field_23364.method_29260().method_10308(class_3049.field_14946, Direction.field_818);
          this.method_32529(var1, var13, 5, 9, 6, var5);
          this.method_32529(var1, var13, 6, 9, 6, var5);
          this.method_32529(var1, var12, 5, 9, 8, var5);
@@ -140,7 +140,7 @@ public class class_6164 extends class_7896 {
             var1,
             class_4783.field_23812
                .method_29260()
-               .method_10308(class_3760.field_18377, class_240.field_804)
+               .method_10308(class_3760.field_18377, Direction.field_804)
                .method_10308(class_3760.field_18379, Boolean.valueOf(true)),
             1,
             -3,
@@ -151,7 +151,7 @@ public class class_6164 extends class_7896 {
             var1,
             class_4783.field_23812
                .method_29260()
-               .method_10308(class_3760.field_18377, class_240.field_809)
+               .method_10308(class_3760.field_18377, Direction.field_809)
                .method_10308(class_3760.field_18379, Boolean.valueOf(true)),
             4,
             -3,
@@ -216,7 +216,7 @@ public class class_6164 extends class_7896 {
          );
          this.method_32529(var1, class_4783.field_23774.method_29260(), 3, -3, 1, var5);
          if (!this.field_31550) {
-            this.field_31550 = this.method_32504(var1, var5, var4, 3, -2, 1, class_240.field_818, class_5931.field_30158);
+            this.field_31550 = this.method_32504(var1, var5, var4, 3, -2, 1, Direction.field_818, class_5931.field_30158);
          }
 
          this.method_32529(var1, class_4783.field_23323.method_29260().method_10308(class_4196.field_20408, Boolean.valueOf(true)), 3, -2, 2, var5);
@@ -224,7 +224,7 @@ public class class_6164 extends class_7896 {
             var1,
             class_4783.field_23812
                .method_29260()
-               .method_10308(class_3760.field_18377, class_240.field_818)
+               .method_10308(class_3760.field_18377, Direction.field_818)
                .method_10308(class_3760.field_18379, Boolean.valueOf(true)),
             7,
             -3,
@@ -235,7 +235,7 @@ public class class_6164 extends class_7896 {
             var1,
             class_4783.field_23812
                .method_29260()
-               .method_10308(class_3760.field_18377, class_240.field_800)
+               .method_10308(class_3760.field_18377, Direction.field_800)
                .method_10308(class_3760.field_18379, Boolean.valueOf(true)),
             7,
             -3,
@@ -314,7 +314,7 @@ public class class_6164 extends class_7896 {
          this.method_32529(var1, class_4783.field_23774.method_29260(), 9, -3, 4, var5);
          this.method_32529(var1, var21, 9, -2, 4, var5);
          if (!this.field_31549) {
-            this.field_31549 = this.method_32504(var1, var5, var4, 9, -2, 3, class_240.field_809, class_5931.field_30158);
+            this.field_31549 = this.method_32504(var1, var5, var4, 9, -2, 3, Direction.field_809, class_5931.field_30158);
          }
 
          this.method_32529(var1, class_4783.field_23323.method_29260().method_10308(class_4196.field_20415, Boolean.valueOf(true)), 8, -1, 3, var5);
@@ -339,7 +339,7 @@ public class class_6164 extends class_7896 {
          this.method_32529(var1, class_4783.field_23543.method_29260(), 10, -2, 11, var5);
          class_2522 var15 = class_4783.field_23806
             .method_29260()
-            .method_10308(class_1475.field_1543, class_240.field_818)
+            .method_10308(class_1475.field_1543, Direction.field_818)
             .method_10308(class_1475.field_12920, class_1895.field_9680);
          this.method_32529(var1, var15, 8, -2, 12, var5);
          this.method_32529(var1, var15, 9, -2, 12, var5);
@@ -362,10 +362,10 @@ public class class_6164 extends class_7896 {
             9,
             var5
          );
-         this.method_32529(var1, class_4783.field_23861.method_29260().method_10308(class_1990.field_16180, class_240.field_817), 9, -2, 8, var5);
-         this.method_32529(var1, class_4783.field_23861.method_29260().method_10308(class_1990.field_16180, class_240.field_809), 10, -2, 8, var5);
-         this.method_32529(var1, class_4783.field_23861.method_29260().method_10308(class_1990.field_16180, class_240.field_809), 10, -1, 8, var5);
-         this.method_32529(var1, class_4783.field_23350.method_29260().method_10308(class_6218.field_1543, class_240.field_818), 10, -2, 10, var5);
+         this.method_32529(var1, class_4783.field_23861.method_29260().method_10308(class_1990.field_16180, Direction.field_817), 9, -2, 8, var5);
+         this.method_32529(var1, class_4783.field_23861.method_29260().method_10308(class_1990.field_16180, Direction.field_809), 10, -2, 8, var5);
+         this.method_32529(var1, class_4783.field_23861.method_29260().method_10308(class_1990.field_16180, Direction.field_809), 10, -1, 8, var5);
+         this.method_32529(var1, class_4783.field_23350.method_29260().method_10308(class_6218.field_1543, Direction.field_818), 10, -2, 10, var5);
          if (!this.field_31551) {
             this.field_31551 = this.method_32525(var1, var5, var4, 9, -3, 10, class_5931.field_30130);
          }

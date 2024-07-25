@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_3927 extends class_6353<class_9399, class_8108> {
    public static final Identifier field_19079 = new Identifier("textures/entity/armorstand/wood.png");
 
-   public class_3927(class_6122 var1) {
+   public class_3927(EntityRenderDispatcher var1) {
       super(var1, new class_3851(), 0.0F);
       this.method_29100(new class_3035<class_9399, class_8108, class_8108>(this, new class_8108(0.5F), new class_8108(1.0F)));
       this.method_29100(new class_6329<class_9399, class_8108>(this));
@@ -32,13 +32,13 @@ public class class_3927 extends class_6353<class_9399, class_8108> {
    }
 
    @Nullable
-   public class_3581 method_18160(class_9399 var1, boolean var2, boolean var3, boolean var4) {
+   public RenderLayer method_18160(class_9399 var1, boolean var2, boolean var3, boolean var4) {
       if (var1.method_43493()) {
          Identifier var7 = this.method_18159(var1);
          if (!var3) {
-            return !var2 ? null : class_3581.method_16737(var7, false);
+            return !var2 ? null : RenderLayer.method_16737(var7, false);
          } else {
-            return class_3581.method_16754(var7, false);
+            return RenderLayer.method_16754(var7, false);
          }
       } else {
          return super.method_29108(var1, var2, var3, var4);

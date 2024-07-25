@@ -17,7 +17,7 @@ public class class_165 {
    public static void method_661(CommandDispatcher<class_9155> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)class_465.method_2231("spectate").requires(var0x -> var0x.method_40314(2)))
-               .executes(var0x -> method_662((class_9155)var0x.getSource(), (class_8145)null, ((class_9155)var0x.getSource()).method_42179())))
+               .executes(var0x -> method_662((class_9155)var0x.getSource(), (Entity)null, ((class_9155)var0x.getSource()).method_42179())))
             .then(
                ((RequiredArgumentBuilder)class_465.method_2236("target", class_5601.method_25411())
                      .executes(
@@ -37,7 +37,7 @@ public class class_165 {
       );
    }
 
-   private static int method_662(class_9155 var0, class_8145 var1, class_9359 var2) throws CommandSyntaxException {
+   private static int method_662(class_9155 var0, Entity var1, class_9359 var2) throws CommandSyntaxException {
       if (var2 != var1) {
          if (var2.field_47807.method_39517() == class_4666.field_22756) {
             var2.method_43284(var1);

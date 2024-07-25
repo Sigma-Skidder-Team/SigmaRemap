@@ -10,11 +10,11 @@ public class class_8612 extends class_5783 implements class_3713 {
    private int field_44172;
    public class_5834 field_44173;
 
-   public class_8612(class_6629<? extends class_8612> var1, class_6486 var2) {
+   public class_8612(class_6629<? extends class_8612> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_8612(class_6486 var1, double var2, double var4, double var6, class_6098 var8) {
+   public class_8612(World var1, double var2, double var4, double var6, class_6098 var8) {
       super(class_6629.field_34280, var1);
       this.field_44170 = 0;
       this.method_37256(var2, var4, var6);
@@ -28,23 +28,23 @@ public class class_8612 extends class_5783 implements class_3713 {
       this.field_44172 = 10 * var11 + this.field_41717.nextInt(6) + this.field_41717.nextInt(7);
    }
 
-   public class_8612(class_6486 var1, class_8145 var2, double var3, double var5, double var7, class_6098 var9) {
+   public class_8612(World var1, Entity var2, double var3, double var5, double var7, class_6098 var9) {
       this(var1, var3, var5, var7, var9);
       this.method_26159(var2);
    }
 
-   public class_8612(class_6486 var1, class_6098 var2, class_5834 var3) {
+   public class_8612(World var1, class_6098 var2, class_5834 var3) {
       this(var1, var3, var3.method_37302(), var3.method_37309(), var3.method_37156(), var2);
       this.field_41735.method_36633(field_44171, OptionalInt.of(var3.method_37145()));
       this.field_44173 = var3;
    }
 
-   public class_8612(class_6486 var1, class_6098 var2, double var3, double var5, double var7, boolean var9) {
+   public class_8612(World var1, class_6098 var2, double var3, double var5, double var7, boolean var9) {
       this(var1, var3, var5, var7, var2);
       this.field_41735.method_36633(field_44176, var9);
    }
 
-   public class_8612(class_6486 var1, class_6098 var2, class_8145 var3, double var4, double var6, double var8, boolean var10) {
+   public class_8612(World var1, class_6098 var2, Entity var3, double var4, double var6, double var8, boolean var10) {
       this(var1, var2, var4, var6, var8, var10);
       this.method_26159(var3);
    }
@@ -81,7 +81,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       } else {
          if (this.field_44173 == null) {
             this.field_41735.<OptionalInt>method_36640(field_44171).ifPresent(var1 -> {
-               class_8145 var4x = this.field_41768.method_29534(var1);
+               Entity var4x = this.field_41768.method_29534(var1);
                if (var4x instanceof class_5834) {
                   this.field_44173 = (class_5834)var4x;
                }

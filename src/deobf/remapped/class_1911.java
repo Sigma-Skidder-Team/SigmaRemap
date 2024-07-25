@@ -3,14 +3,14 @@ package remapped;
 import java.util.HashMap;
 
 public class class_1911 extends class_5676 {
-   public HashMap<class_8145, Boolean> field_9734 = new HashMap<class_8145, Boolean>();
+   public HashMap<Entity, Boolean> field_9734 = new HashMap<Entity, Boolean>();
 
    public class_1911() {
       super("Hypixel", "Detects bots on Hypixel based on entity names", class_2608.field_12887);
    }
 
    @Override
-   public boolean method_7183(class_8145 var1) {
+   public boolean method_7183(Entity var1) {
       if (var1 != null) {
          String var4 = var1.method_19839().getString();
          String var5 = var1.method_45508() != null ? var1.method_45508().getString() : null;
@@ -40,7 +40,7 @@ public class class_1911 extends class_5676 {
    }
 
    @Override
-   public boolean method_7182(class_8145 var1) {
+   public boolean method_7182(Entity var1) {
       return true;
    }
 }

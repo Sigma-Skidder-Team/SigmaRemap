@@ -114,7 +114,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
    private boolean method_26094() {
       class_6867 var3 = this.method_26104();
       if (var3 != null) {
-         class_240 var4 = this.method_17403().<class_240>method_10313(class_9279.field_47337).method_1046();
+         Direction var4 = this.method_17403().<Direction>method_10313(class_9279.field_47337).method_1046();
          if (!this.method_26099(var3, var4)) {
             for (int var5 = 0; var5 < this.method_31505(); var5++) {
                if (!this.method_31498(var5).method_28022()) {
@@ -138,25 +138,25 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
       }
    }
 
-   private static IntStream method_26091(class_6867 var0, class_240 var1) {
+   private static IntStream method_26091(class_6867 var0, Direction var1) {
       return !(var0 instanceof class_372) ? IntStream.range(0, var0.method_31505()) : IntStream.of(((class_372)var0).method_1832(var1));
    }
 
-   private boolean method_26099(class_6867 var1, class_240 var2) {
+   private boolean method_26099(class_6867 var1, Direction var2) {
       return method_26091(var1, var2).allMatch(var1x -> {
          class_6098 var4 = var1.method_31498(var1x);
          return var4.method_27997() >= var4.method_28016();
       });
    }
 
-   private static boolean method_26098(class_6867 var0, class_240 var1) {
+   private static boolean method_26098(class_6867 var0, Direction var1) {
       return method_26091(var0, var1).allMatch(var1x -> var0.method_31498(var1x).method_28022());
    }
 
    public static boolean method_26101(class_4511 var0) {
       class_6867 var3 = method_26100(var0);
       if (var3 != null) {
-         class_240 var6 = class_240.field_802;
+         Direction var6 = Direction.field_802;
          return !method_26098(var3, var6) ? method_26091(var3, var6).anyMatch(var3x -> method_26096(var0, var3, var3x, var6)) : false;
       } else {
          for (class_91 var5 : method_26102(var0)) {
@@ -169,11 +169,11 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
       }
    }
 
-   private static boolean method_26096(class_4511 var0, class_6867 var1, int var2, class_240 var3) {
+   private static boolean method_26096(class_4511 var0, class_6867 var1, int var2, Direction var3) {
       class_6098 var6 = var1.method_31498(var2);
       if (!var6.method_28022() && method_26090(var1, var6, var2, var3)) {
          class_6098 var7 = var6.method_27973();
-         class_6098 var8 = method_26103(var1, var0, var1.method_31497(var2, 1), (class_240)null);
+         class_6098 var8 = method_26103(var1, var0, var1.method_31497(var2, 1), (Direction)null);
          if (var8.method_28022()) {
             var1.method_17407();
             return true;
@@ -188,7 +188,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
    public static boolean method_26105(class_6867 var0, class_91 var1) {
       boolean var4 = false;
       class_6098 var5 = var1.method_264().method_27973();
-      class_6098 var6 = method_26103((class_6867)null, var0, var5, (class_240)null);
+      class_6098 var6 = method_26103((class_6867)null, var0, var5, (Direction)null);
       if (!var6.method_28022()) {
          var1.method_248(var6);
       } else {
@@ -199,7 +199,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
       return var4;
    }
 
-   public static class_6098 method_26103(class_6867 var0, class_6867 var1, class_6098 var2, class_240 var3) {
+   public static class_6098 method_26103(class_6867 var0, class_6867 var1, class_6098 var2, Direction var3) {
       if (var1 instanceof class_372 && var3 != null) {
          class_372 var9 = (class_372)var1;
          int[] var10 = var9.method_1832(var3);
@@ -218,15 +218,15 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
       return var2;
    }
 
-   private static boolean method_26095(class_6867 var0, class_6098 var1, int var2, class_240 var3) {
+   private static boolean method_26095(class_6867 var0, class_6098 var1, int var2, Direction var3) {
       return !var0.method_31500(var2, var1) ? false : !(var0 instanceof class_372) || ((class_372)var0).method_1834(var2, var1, var3);
    }
 
-   private static boolean method_26090(class_6867 var0, class_6098 var1, int var2, class_240 var3) {
+   private static boolean method_26090(class_6867 var0, class_6098 var1, int var2, Direction var3) {
       return !(var0 instanceof class_372) || ((class_372)var0).method_1833(var2, var1, var3);
    }
 
-   private static class_6098 method_26092(class_6867 var0, class_6867 var1, class_6098 var2, int var3, class_240 var4) {
+   private static class_6098 method_26092(class_6867 var0, class_6867 var1, class_6098 var2, int var3, Direction var4) {
       class_6098 var7 = var1.method_31498(var3);
       if (method_26095(var1, var2, var3, var4)) {
          boolean var8 = false;
@@ -270,7 +270,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
 
    @Nullable
    private class_6867 method_26104() {
-      class_240 var3 = this.method_17403().<class_240>method_10313(class_9279.field_47337);
+      Direction var3 = this.method_17403().<Direction>method_10313(class_9279.field_47337);
       return method_26108(this.method_17402(), this.field_18358.method_6098(var3));
    }
 
@@ -285,7 +285,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
          .stream()
          .<class_91>flatMap(
             var1 -> var0.method_17402()
-                  .<class_8145>method_25869(
+                  .<Entity>method_25869(
                      class_91.class, var1.method_18918(var0.method_20973() - 0.5, var0.method_20974() - 0.5, var0.method_20975() - 0.5), class_3572.field_17481
                   )
                   .stream()
@@ -294,12 +294,12 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
    }
 
    @Nullable
-   public static class_6867 method_26108(class_6486 var0, class_1331 var1) {
+   public static class_6867 method_26108(World var0, class_1331 var1) {
       return method_26107(var0, (double)var1.method_12173() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5);
    }
 
    @Nullable
-   public static class_6867 method_26107(class_6486 var0, double var1, double var3, double var5) {
+   public static class_6867 method_26107(World var0, double var1, double var3, double var5) {
       Object var9 = null;
       class_1331 var10 = new class_1331(var1, var3, var5);
       class_2522 var11 = var0.method_28262(var10);
@@ -320,7 +320,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
 
       if (var9 == null) {
          List var14 = var0.method_25867(
-            (class_8145)null, new class_4092(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), class_3572.field_17485
+            (Entity)null, new class_4092(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), class_3572.field_17485
          );
          if (!var14.isEmpty()) {
             var9 = (class_6867)var14.get(var0.field_33033.nextInt(var14.size()));
@@ -379,7 +379,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
       this.field_29157 = var1;
    }
 
-   public void method_26088(class_8145 var1) {
+   public void method_26088(Entity var1) {
       if (var1 instanceof class_91) {
          class_1331 var4 = this.method_17399();
          if (class_3370.method_15537(

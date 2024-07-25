@@ -24,7 +24,7 @@ public class class_1136 {
       return var3 != null ? class_8092.method_36739(var3) : class_3801.field_18590;
    }
 
-   public static <T extends class_8145> boolean method_4983(class_6629<T> var0, class_1556 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static <T extends Entity> boolean method_4983(class_6629<T> var0, class_1556 var1, class_2417 var2, class_1331 var3, Random var4) {
       class_8092 var7 = field_6455.get(var0);
       return var7 == null || class_8092.method_36741(var7).method_28198(var0, var1, var2, var3, var4);
    }

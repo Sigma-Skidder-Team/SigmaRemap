@@ -278,22 +278,22 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    @Override
-   public int[] method_1832(class_240 var1) {
-      if (var1 != class_240.field_802) {
-         return var1 != class_240.field_817 ? field_40578 : field_40585;
+   public int[] method_1832(Direction var1) {
+      if (var1 != Direction.field_802) {
+         return var1 != Direction.field_817 ? field_40578 : field_40585;
       } else {
          return field_40583;
       }
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, class_240 var3) {
+   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
       return this.method_31500(var1, var2);
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, class_240 var3) {
-      if (var3 == class_240.field_802 && var1 == 1) {
+   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
+      if (var3 == Direction.field_802 && var1 == 1) {
          class_2451 var6 = var2.method_27960();
          if (var6 != class_4897.field_24999 && var6 != class_4897.field_24548) {
             return false;
@@ -403,7 +403,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       this.field_40586.clear();
    }
 
-   public List<class_8932<?>> method_35879(class_6486 var1, class_1343 var2) {
+   public List<class_8932<?>> method_35879(World var1, class_1343 var2) {
       ArrayList var5 = Lists.newArrayList();
       ObjectIterator var6 = this.field_40586.object2IntEntrySet().iterator();
 
@@ -418,7 +418,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       return var5;
    }
 
-   private static void method_35868(class_6486 var0, class_1343 var1, int var2, float var3) {
+   private static void method_35868(World var0, class_1343 var1, int var2, float var3) {
       int var6 = class_9299.method_42848((float)var2 * var3);
       float var7 = class_9299.method_42823((float)var2 * var3);
       if (var7 != 0.0F && Math.random() < (double)var7) {

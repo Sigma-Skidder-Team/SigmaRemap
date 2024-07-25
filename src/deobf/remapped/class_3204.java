@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_3204 extends class_1595 {
    private static String[] field_16001;
 
-   public class_3204(class_6629<? extends class_3204> var1, class_6486 var2) {
+   public class_3204(class_6629<? extends class_3204> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6360, 8.0F);
    }
@@ -39,7 +39,7 @@ public class class_3204 extends class_1595 {
    @Override
    public void method_26614(class_6199 var1, int var2, boolean var3) {
       super.method_26614(var1, var2, var3);
-      class_8145 var6 = var1.method_28372();
+      Entity var6 = var1.method_28372();
       if (var6 instanceof class_9490) {
          class_9490 var7 = (class_9490)var6;
          if (var7.method_43837()) {
@@ -73,7 +73,7 @@ public class class_3204 extends class_1595 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       if (super.method_26442(var1)) {
          if (var1 instanceof class_5834) {
             ((class_5834)var1).method_26558(new class_2250(class_4054.field_19725, 200));

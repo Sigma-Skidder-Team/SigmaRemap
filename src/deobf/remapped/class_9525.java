@@ -10,9 +10,9 @@ public class class_9525 implements class_6163, class_1449 {
    public final int field_48478;
    public final class_5990[][] field_48481;
    public boolean field_48482;
-   public final class_6486 field_48479;
+   public final World field_48479;
 
-   public class_9525(class_6486 var1, class_1331 var2, class_1331 var3) {
+   public class_9525(World var1, class_1331 var2, class_1331 var3) {
       this.field_48479 = var1;
       this.field_48480 = var2.method_12173() >> 4;
       this.field_48478 = var2.method_12185() >> 4;
@@ -73,7 +73,7 @@ public class class_9525 implements class_6163, class_1449 {
 
    @Override
    public class_2522 method_28262(class_1331 var1) {
-      if (!class_6486.method_29556(var1)) {
+      if (!World.method_29556(var1)) {
          class_5990 var4 = this.method_43949(var1);
          return var4.method_28262(var1);
       } else {
@@ -82,18 +82,18 @@ public class class_9525 implements class_6163, class_1449 {
    }
 
    @Override
-   public Stream<class_4190> method_6679(class_8145 var1, class_4092 var2, Predicate<class_8145> var3) {
+   public Stream<class_4190> method_6679(Entity var1, class_4092 var2, Predicate<Entity> var3) {
       return Stream.<class_4190>empty();
    }
 
    @Override
-   public Stream<class_4190> method_6676(class_8145 var1, class_4092 var2, Predicate<class_8145> var3) {
+   public Stream<class_4190> method_6676(Entity var1, class_4092 var2, Predicate<Entity> var3) {
       return this.method_6680(var1, var2);
    }
 
    @Override
    public class_4774 method_28258(class_1331 var1) {
-      if (!class_6486.method_29556(var1)) {
+      if (!World.method_29556(var1)) {
          class_5990 var4 = this.method_43949(var1);
          return var4.method_28258(var1);
       } else {

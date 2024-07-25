@@ -763,7 +763,7 @@ public class class_3580 {
       class_6911 var8 = new class_6911(var1, class_602.field_3453, false).method_31664(var7);
 
       for (class_9487 var10 : var1.method_43566()) {
-         for (class_240 var12 : var10.field_48353.keySet()) {
+         for (Direction var12 : var10.field_48353.keySet()) {
             class_7300 var13 = var10.field_48353.get(var12);
             if (!var2) {
                var13 = new class_7300(var13.field_37318, -1, var13.field_37317, var13.field_37314);
@@ -773,7 +773,7 @@ public class class_3580 {
             class_5155 var15 = var14.method_12947();
             class_5024 var16 = method_16654(var10, var13, var15, var12, var5);
             if (var13.field_37318 != null) {
-               var8.method_31667(class_240.method_1048(var5.method_25403().method_5410(), var13.field_37318), var16);
+               var8.method_31667(Direction.method_1048(var5.method_25403().method_5410(), var13.field_37318), var16);
             } else {
                var8.method_31666(var16);
             }
@@ -783,7 +783,7 @@ public class class_3580 {
       return var8.method_31665();
    }
 
-   private static class_5024 method_16654(class_9487 var0, class_7300 var1, class_5155 var2, class_240 var3, class_7507 var4) {
+   private static class_5024 method_16654(class_9487 var0, class_7300 var1, class_5155 var2, Direction var3, class_7507 var4) {
       class_7265 var7 = new class_7265();
       return var7.method_33202(var0.field_48352, var0.field_48350, var1, var2, var3, var4, var0.field_48351, var0.field_48348, var2.method_23644());
    }

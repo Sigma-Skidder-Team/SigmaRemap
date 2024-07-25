@@ -27,7 +27,7 @@ public abstract class class_6043 extends class_6165 {
          this.field_5761 = (double)((float)this.field_30852.method_37302());
          this.field_5765 = (double)((float)this.field_30852.method_37309());
          this.field_5762 = (double)((float)this.field_30852.method_37156());
-         float var4 = class_9299.method_42842(class_8145.method_37266(this.field_30852.method_37098()));
+         float var4 = class_9299.method_42842(Entity.method_37266(this.field_30852.method_37098()));
          if (!((double)var4 >= 0.01)) {
             this.field_5773 = 0.0F;
             this.field_5766 = 0.0F;

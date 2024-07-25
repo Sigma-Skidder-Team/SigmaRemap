@@ -17,9 +17,9 @@ public class class_3827 extends class_8394<class_1941> {
 
       for (class_2921 var16 = new class_2921(var11, var14, var12); var14 > var13; var14--) {
          class_2522 var17 = var15.method_28262(var16);
-         var16.method_13368(class_240.field_802);
+         var16.method_13368(Direction.field_802);
          class_2522 var18 = var15.method_28262(var16);
-         if (var17.method_8345() && (var18.method_8350(class_4783.field_23784) || var18.method_8308(var15, var16, class_240.field_817))) {
+         if (var17.method_8345() && (var18.method_8350(class_4783.field_23784) || var18.method_8308(var15, var16, Direction.field_817))) {
             break;
          }
       }

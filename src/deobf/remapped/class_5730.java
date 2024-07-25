@@ -14,17 +14,17 @@ public class class_5730 extends class_305 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       this.method_25914(var1, var2, var3);
       return class_6910.method_31659(var2.field_33055);
    }
 
    @Override
-   public void method_10791(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4) {
+   public void method_10791(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
       this.method_25914(var1, var2, var3);
    }
 
-   private void method_25914(class_2522 var1, class_6486 var2, class_1331 var3) {
+   private void method_25914(class_2522 var1, World var2, class_1331 var3) {
       for (int var6 = 0; var6 < 1000; var6++) {
          class_1331 var7 = var3.method_6104(
             var2.field_33033.nextInt(16) - var2.field_33033.nextInt(16),

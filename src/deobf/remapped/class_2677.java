@@ -10,22 +10,22 @@ public class class_2677 extends class_3266 {
 
    public class_2677(class_3073 var1) {
       super(var1);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_16180, class_240.field_817));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_16180, Direction.field_817));
    }
 
    @Override
    public class_2522 method_10785(class_2522 var1, class_6631 var2) {
-      return var1.method_10308(field_16180, var2.method_30489(var1.<class_240>method_10313(field_16180)));
+      return var1.method_10308(field_16180, var2.method_30489(var1.<Direction>method_10313(field_16180)));
    }
 
    @Override
    public class_2522 method_10773(class_2522 var1, class_9022 var2) {
-      return var1.method_10308(field_16180, var2.method_41392(var1.<class_240>method_10313(field_16180)));
+      return var1.method_10308(field_16180, var2.method_41392(var1.<Direction>method_10313(field_16180)));
    }
 
    @Override
    public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
-      switch (var1.<class_240>method_10313(field_16180).method_1029()) {
+      switch (var1.<Direction>method_10313(field_16180).method_1029()) {
          case field_47215:
          default:
             return field_13143;
@@ -38,7 +38,7 @@ public class class_2677 extends class_3266 {
 
    @Override
    public class_2522 method_29302(class_353 var1) {
-      class_240 var4 = var1.method_21857();
+      Direction var4 = var1.method_21857();
       class_2522 var5 = var1.method_21862().method_28262(var1.method_21858().method_6098(var4.method_1046()));
       return var5.method_8350(this) && var5.method_10313(field_16180) == var4
          ? this.method_29260().method_10308(field_16180, var4.method_1046())
@@ -46,8 +46,8 @@ public class class_2677 extends class_3266 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
-      class_240 var7 = var1.<class_240>method_10313(field_16180);
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+      Direction var7 = var1.<Direction>method_10313(field_16180);
       double var8 = (double)var3.method_12173() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var10 = (double)var3.method_12165() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var12 = (double)var3.method_12185() + 0.55 - (double)(var4.nextFloat() * 0.1F);

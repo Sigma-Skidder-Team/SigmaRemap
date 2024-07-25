@@ -4,7 +4,7 @@ public class class_1312 extends class_7067<class_1511> {
    private static final Identifier field_7249 = new Identifier("textures/entity/illager/evoker_fangs.png");
    private final class_8883<class_1511> field_7248 = new class_8883<class_1511>();
 
-   public class_1312(class_6122 var1) {
+   public class_1312(EntityRenderDispatcher var1) {
       super(var1);
    }
 

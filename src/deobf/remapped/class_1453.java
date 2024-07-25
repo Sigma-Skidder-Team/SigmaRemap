@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.Lists;
 import java.util.ArrayList;
 
-public class class_1453 extends class_8145 {
+public class class_1453 extends Entity {
    private class_2522 field_7822 = class_4783.field_23216.method_29260();
    public int field_7827;
    public boolean field_7818 = true;
@@ -14,11 +14,11 @@ public class class_1453 extends class_8145 {
    public class_5734 field_7819;
    public static final class_7821<class_1331> field_7821 = class_8073.<class_1331>method_36641(class_1453.class, class_2734.field_13353);
 
-   public class_1453(class_6629<? extends class_1453> var1, class_6486 var2) {
+   public class_1453(class_6629<? extends class_1453> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_1453(class_6486 var1, double var2, double var4, double var6, class_2522 var8) {
+   public class_1453(World var1, double var2, double var4, double var6, class_2522 var8) {
       this(class_6629.field_34245, var1);
       this.field_7822 = var8;
       this.field_41759 = true;
@@ -121,7 +121,7 @@ public class class_1453 extends class_8145 {
                      }
                   } else {
                      boolean var10 = var19.method_8374(
-                        new class_9519(this.field_41768, var18, class_240.field_802, class_6098.field_31203, class_240.field_817)
+                        new class_9519(this.field_41768, var18, Direction.field_802, class_6098.field_31203, Direction.field_817)
                      );
                      boolean var11 = class_305.method_1361(this.field_41768.method_28262(var18.method_6100())) && (!var5 || !var6);
                      boolean var12 = this.field_7822.method_8309(this.field_41768, var18) && !var11;
@@ -180,7 +180,7 @@ public class class_1453 extends class_8145 {
             boolean var7 = this.field_7822.method_8349(class_2351.field_11799);
             class_6199 var8 = !var7 ? class_6199.field_31681 : class_6199.field_31666;
 
-            for (class_8145 var10 : var6) {
+            for (Entity var10 : var6) {
                var10.method_37181(var8, (float)Math.min(class_9299.method_42848((float)var5 * this.field_7826), this.field_7823));
             }
 
@@ -238,7 +238,7 @@ public class class_1453 extends class_8145 {
       }
    }
 
-   public class_6486 method_6689() {
+   public World method_6689() {
       return this.field_41768;
    }
 

@@ -35,13 +35,13 @@ public class class_5473 extends class_7060 {
             || var13 == class_4783.field_23440.method_29260()) {
             class_2522 var14 = !var12.method_8345() && !this.method_24885(var12) ? var12 : class_4783.field_23216.method_29260();
 
-            for (class_240 var18 : class_240.values()) {
+            for (Direction var18 : Direction.values()) {
                class_1331 var19 = var11.method_6098(var18);
                class_2522 var20 = var1.method_28262(var19);
                if (var20.method_8345() || this.method_24885(var20)) {
                   class_1331 var21 = var19.method_6100();
                   class_2522 var22 = var1.method_28262(var21);
-                  if ((var22.method_8345() || this.method_24885(var22)) && var18 != class_240.field_817) {
+                  if ((var22.method_8345() || this.method_24885(var22)) && var18 != Direction.field_817) {
                      var1.method_7513(var19, var13, 3);
                   } else {
                      var1.method_7513(var19, var14, 3);

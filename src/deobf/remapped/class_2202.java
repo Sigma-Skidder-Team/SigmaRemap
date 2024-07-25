@@ -44,7 +44,7 @@ public class class_2202 implements class_233 {
    }
 
    @Override
-   public class_6486 method_972() {
+   public World method_972() {
       return this.field_10920.field_41768;
    }
 

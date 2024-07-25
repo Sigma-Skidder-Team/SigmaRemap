@@ -8,7 +8,7 @@ public class class_2597 extends class_3333 {
    }
 
    @Override
-   public void method_29263(class_6486 var1, class_1331 var2, class_8145 var3, float var4) {
+   public void method_29263(World var1, class_1331 var2, Entity var3, float var4) {
       if (!var3.method_37154()) {
          var3.method_37270(var4, 0.0F);
       } else {
@@ -17,7 +17,7 @@ public class class_2597 extends class_3333 {
    }
 
    @Override
-   public void method_29297(class_6163 var1, class_8145 var2) {
+   public void method_29297(class_6163 var1, Entity var2) {
       if (!var2.method_37154()) {
          this.method_11774(var2);
       } else {
@@ -25,7 +25,7 @@ public class class_2597 extends class_3333 {
       }
    }
 
-   private void method_11774(class_8145 var1) {
+   private void method_11774(Entity var1) {
       class_1343 var4 = var1.method_37098();
       if (var4.field_7333 < 0.0) {
          double var5 = !(var1 instanceof class_5834) ? 0.8 : 1.0;
@@ -34,7 +34,7 @@ public class class_2597 extends class_3333 {
    }
 
    @Override
-   public void method_29286(class_6486 var1, class_1331 var2, class_8145 var3) {
+   public void method_29286(World var1, class_1331 var2, Entity var3) {
       double var6 = Math.abs(var3.method_37098().field_7333);
       if (var6 < 0.1 && !var3.method_37117()) {
          double var8 = 0.4 + var6 * 0.2;

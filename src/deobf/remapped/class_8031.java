@@ -49,7 +49,7 @@ public class class_8031 extends class_5467 implements class_9897 {
       return field_41109.get(var0);
    }
 
-   public class_8031(class_6629<? extends class_8031> var1, class_6486 var2) {
+   public class_8031(class_6629<? extends class_8031> var1, World var2) {
       super(var1, var2);
    }
 

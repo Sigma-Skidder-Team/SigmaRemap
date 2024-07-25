@@ -11,11 +11,11 @@ public class class_2317 implements class_6310<class_1243> {
    public class_2317() {
    }
 
-   public class_2317(class_8145 var1, class_4127 var2) {
+   public class_2317(Entity var1, class_4127 var2) {
       this(var1, var2, 0);
    }
 
-   public class_2317(class_8145 var1, class_4127 var2, int var3) {
+   public class_2317(Entity var1, class_4127 var2, int var3) {
       this.field_11607 = var1.method_37145();
       this.field_11608 = var2;
       this.field_11609 = var3;

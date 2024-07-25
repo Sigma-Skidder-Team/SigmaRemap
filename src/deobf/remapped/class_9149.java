@@ -4,7 +4,7 @@ import com.google.common.collect.UnmodifiableIterator;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public class class_9149 extends class_8145 {
+public class class_9149 extends Entity {
    private static final class_7821<Integer> field_46797 = class_8073.<Integer>method_36641(class_9149.class, class_2734.field_13366);
    private static final class_7821<Integer> field_46814 = class_8073.<Integer>method_36641(class_9149.class, class_2734.field_13366);
    private static final class_7821<Float> field_46803 = class_8073.<Float>method_36641(class_9149.class, class_2734.field_13350);
@@ -37,12 +37,12 @@ public class class_9149 extends class_8145 {
    private float field_46792;
    private float field_46815;
 
-   public class_9149(class_6629<? extends class_9149> var1, class_6486 var2) {
+   public class_9149(class_6629<? extends class_9149> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
    }
 
-   public class_9149(class_6486 var1, double var2, double var4, double var6) {
+   public class_9149(World var1, double var2, double var4, double var6) {
       this(class_6629.field_34330, var1);
       this.method_37256(var2, var4, var6);
       this.method_37215(class_1343.field_7335);
@@ -73,11 +73,11 @@ public class class_9149 extends class_8145 {
    }
 
    @Override
-   public boolean method_37325(class_8145 var1) {
+   public boolean method_37325(Entity var1) {
       return method_42092(this, var1);
    }
 
-   public static boolean method_42092(class_8145 var0, class_8145 var1) {
+   public static boolean method_42092(Entity var0, Entity var1) {
       return (var1.method_37173() || var1.method_37177()) && !var0.method_37308(var1);
    }
 
@@ -161,7 +161,7 @@ public class class_9149 extends class_8145 {
    }
 
    @Override
-   public void method_37183(class_8145 var1) {
+   public void method_37183(Entity var1) {
       if (!(var1 instanceof class_9149)) {
          if (var1.method_37241().field_19937 <= this.method_37241().field_19937) {
             super.method_37183(var1);
@@ -214,7 +214,7 @@ public class class_9149 extends class_8145 {
    }
 
    @Override
-   public class_240 method_37235() {
+   public Direction method_37235() {
       return this.method_37365().method_1042();
    }
 
@@ -296,7 +296,7 @@ public class class_9149 extends class_8145 {
          boolean var12 = !this.field_41768.field_33055 && !(this.method_37259() instanceof class_704);
 
          for (int var13 = 0; var13 < var11.size(); var13++) {
-            class_8145 var10 = (class_8145)var11.get(var13);
+            Entity var10 = (Entity)var11.get(var13);
             if (!var10.method_37072(this)) {
                if (var12
                   && this.method_37114().size() < 2
@@ -638,7 +638,7 @@ public class class_9149 extends class_8145 {
    }
 
    @Override
-   public void method_37340(class_8145 var1) {
+   public void method_37340(Entity var1) {
       if (this.method_37072(var1)) {
          float var4 = 0.0F;
          float var5 = (float)((!this.field_41751 ? this.method_37149() : 0.01F) + var1.method_37106());
@@ -699,7 +699,7 @@ public class class_9149 extends class_8145 {
       return super.method_37282(var1);
    }
 
-   public void method_42105(class_8145 var1) {
+   public void method_42105(Entity var1) {
       var1.method_37090(this.field_41701);
       float var4 = class_9299.method_42810(var1.field_41701 - this.field_41701);
       float var5 = class_9299.method_42828(var4, -105.0F, 105.0F);
@@ -709,7 +709,7 @@ public class class_9149 extends class_8145 {
    }
 
    @Override
-   public void method_37224(class_8145 var1) {
+   public void method_37224(Entity var1) {
       this.method_42105(var1);
    }
 
@@ -824,15 +824,15 @@ public class class_9149 extends class_8145 {
    }
 
    @Override
-   public boolean method_37286(class_8145 var1) {
+   public boolean method_37286(Entity var1) {
       return this.method_37114().size() < 2 && !this.method_37261(class_6503.field_33094);
    }
 
    @Nullable
    @Override
-   public class_8145 method_37259() {
+   public Entity method_37259() {
       List var3 = this.method_37114();
-      return !var3.isEmpty() ? (class_8145)var3.get(0) : null;
+      return !var3.isEmpty() ? (Entity)var3.get(0) : null;
    }
 
    public void method_42093(boolean var1, boolean var2, boolean var3, boolean var4) {

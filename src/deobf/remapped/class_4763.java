@@ -165,7 +165,7 @@ public class class_4763 {
                      if ((!var18 || var19)
                         && !var17.method_12003()
                         && this.field_23056.field_9601.method_745().method_14823(var17.method_27352())
-                        && this.field_23056.field_9601.method_29545() == class_6486.field_33048) {
+                        && this.field_23056.field_9601.method_29545() == World.field_33048) {
                         if (!var18) {
                            this.field_23063.add(var17.method_27352());
                         }

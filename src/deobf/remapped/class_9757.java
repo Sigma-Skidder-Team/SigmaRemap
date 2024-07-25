@@ -13,16 +13,16 @@ public final class class_9757 implements class_3825 {
       if (var6 == null) {
          return 0.0F;
       } else {
-         if (var2 == null && ((class_8145)var6).field_41768 instanceof class_174) {
-            var2 = (class_174)((class_8145)var6).field_41768;
+         if (var2 == null && ((Entity)var6).field_41768 instanceof class_174) {
+            var2 = (class_174)((Entity)var6).field_41768;
          }
 
          class_1331 var7 = !class_8036.method_36487(var1) ? this.method_45037(var2) : this.method_45036(var2, var1.method_27994());
          long var8 = var2.method_29546();
          if (var7 != null
             && !(
-               ((class_8145)var6).method_37245()
-                     .method_6203((double)var7.method_12173() + 0.5, ((class_8145)var6).method_37245().method_60(), (double)var7.method_12185() + 0.5)
+               ((Entity)var6).method_37245()
+                     .method_6203((double)var7.method_12173() + 0.5, ((Entity)var6).method_37245().method_60(), (double)var7.method_12185() + 0.5)
                   < 1.0E-5F
             )) {
             boolean var12 = var3 instanceof class_704 && ((class_704)var3).method_3183();
@@ -44,7 +44,7 @@ public final class class_9757 implements class_3825 {
             }
 
             var13 = class_9299.method_42799(var13 / 360.0, 1.0);
-            double var15 = this.method_45034(class_1343.method_6216(var7), (class_8145)var6) / (float) (Math.PI * 2);
+            double var15 = this.method_45034(class_1343.method_6216(var7), (Entity)var6) / (float) (Math.PI * 2);
             double var17;
             if (!var12) {
                var17 = 0.5 - (var13 - 0.25 - var15);
@@ -74,7 +74,7 @@ public final class class_9757 implements class_3825 {
    }
 
    @Nullable
-   private class_1331 method_45036(class_6486 var1, class_5734 var2) {
+   private class_1331 method_45036(World var1, class_5734 var2) {
       boolean var5 = var2.method_25938("LodestonePos");
       boolean var6 = var2.method_25938("LodestoneDimension");
       if (var5 && var6) {
@@ -88,12 +88,12 @@ public final class class_9757 implements class_3825 {
    }
 
    private double method_45033(class_7451 var1) {
-      class_240 var4 = var1.method_37365();
+      Direction var4 = var1.method_37365();
       int var5 = !var4.method_1029().method_42626() ? 0 : 90 * var4.method_1049().method_549();
       return (double)class_9299.method_42811(180 + var4.method_1031() * 90 + var1.method_33907() * 45 + var5);
    }
 
-   private double method_45034(class_1343 var1, class_8145 var2) {
+   private double method_45034(class_1343 var1, Entity var2) {
       return Math.atan2(var1.method_62() - var2.method_37156(), var1.method_61() - var2.method_37302());
    }
 }

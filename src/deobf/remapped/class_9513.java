@@ -9,7 +9,7 @@ public class class_9513 extends class_3599 {
    private static final class_4931 field_48436 = new class_4931().method_22607(8.0).method_22603().method_22601().method_22602();
    public final class_5467 field_48435;
    private final Class<? extends class_5467> field_48434;
-   public final class_6486 field_48439;
+   public final World field_48439;
    public class_5467 field_48441;
    private int field_48437;
    private final double field_48438;

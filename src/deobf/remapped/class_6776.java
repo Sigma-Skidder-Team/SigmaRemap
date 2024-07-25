@@ -57,7 +57,7 @@ public class class_6776 implements class_3753 {
       this.field_34962
          .ifPresent(
             var1 -> {
-               class_6486 var4 = this.field_34963.field_41768;
+               World var4 = this.field_34963.field_41768;
                int var5 = var1.method_14589() * 2 + 1;
                class_1331 var6 = new class_1331(
                   this.field_34963.method_37302() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589(),

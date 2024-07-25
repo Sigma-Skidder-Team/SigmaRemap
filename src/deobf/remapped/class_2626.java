@@ -11,7 +11,7 @@ public class class_2626 extends class_380 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (!var2.field_33055) {
          var4.method_3152(var1.method_8317(var2, var3));
          var4.method_3209(class_6234.field_31903);
@@ -22,7 +22,7 @@ public class class_2626 extends class_380 {
    }
 
    @Override
-   public class_4259 method_10767(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public class_4259 method_10767(class_2522 var1, World var2, class_1331 var3) {
       return new class_6872((var2x, var3x, var4) -> new class_3682(var2x, var3x, class_9210.method_42530(var2, var3)), field_12955);
    }
 

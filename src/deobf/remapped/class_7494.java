@@ -79,7 +79,7 @@ public class class_7494 {
       };
    }
 
-   public static float[] method_34077(class_1331 var0, class_240 var1) {
+   public static float[] method_34077(class_1331 var0, Direction var1) {
       float var4 = 0.0F;
       float var5 = 0.0F;
       float var6 = 0.0F;
@@ -117,7 +117,7 @@ public class class_7494 {
       };
    }
 
-   public static float[] method_34097(class_1331 var0, class_240 var1) {
+   public static float[] method_34097(class_1331 var0, Direction var1) {
       float var4 = 0.0F;
       float var5 = 0.0F;
       float var6 = (float)(0.4F + Math.random() * 0.1F);
@@ -171,7 +171,7 @@ public class class_7494 {
       };
    }
 
-   public static float method_34095(class_1331 var0, class_240 var1) {
+   public static float method_34095(class_1331 var0, Direction var1) {
       float var4 = 0.0F;
       float var5 = 0.0F;
       switch (var1) {
@@ -239,7 +239,7 @@ public class class_7494 {
       return var0;
    }
 
-   public static List<class_8145> method_34096(List<class_8145> var0) {
+   public static List<Entity> method_34096(List<Entity> var0) {
       Collections.sort(var0, new class_4242());
       return var0;
    }
@@ -249,7 +249,7 @@ public class class_7494 {
       return var0;
    }
 
-   public static float method_34108(class_8145 var0, class_1331 var1) {
+   public static float method_34108(Entity var0, class_1331 var1) {
       return method_34107(var0, (double)var1.method_12173(), (double)var1.method_12165(), (double)var1.method_12185());
    }
 
@@ -261,7 +261,7 @@ public class class_7494 {
       return method_34104(var0, (double)var1.method_12173(), (double)var1.method_12185());
    }
 
-   public static float method_34107(class_8145 var0, double var1, double var3, double var5) {
+   public static float method_34107(Entity var0, double var1, double var3, double var5) {
       float var9 = (float)(var0.method_37302() - var1);
       float var10 = (float)(var0.method_37309() - var3);
       float var11 = (float)(var0.method_37156() - var5);
@@ -401,7 +401,7 @@ public class class_7494 {
          field_38239.field_9632.field_30502 - 0.8F - (double)(!field_38239.field_9632.field_29654 ? 0.0F : 0.6F),
          field_38239.field_9632.field_30507 + (double)(var6 * var7)
       );
-      class_8145 var9 = field_38239.method_8516();
+      Entity var9 = field_38239.method_8516();
       return field_38239.field_9601.method_28265(new class_972(var3, var8, class_3132.field_15549, class_9583.field_48747, var9));
    }
 
@@ -425,7 +425,7 @@ public class class_7494 {
          field_38239.field_9632.field_30502 + (double)(var7 * var2) + (double)field_38239.field_9632.method_37277(),
          field_38239.field_9632.field_30507 + (double)(var8 * var2)
       );
-      class_8145 var10 = field_38239.method_8516();
+      Entity var10 = field_38239.method_8516();
       return field_38239.field_9601.method_28265(new class_972(var5, var9, class_3132.field_15549, class_9583.field_48747, var10));
    }
 
@@ -445,7 +445,7 @@ public class class_7494 {
          field_38239.field_9632.field_30502 + (double)(var8 * var2) + (double)field_38239.field_9632.method_37277(),
          field_38239.field_9632.field_30507 + (double)(var9 * var2)
       );
-      class_8145 var11 = field_38239.method_8516();
+      Entity var11 = field_38239.method_8516();
       return field_38239.field_9601.method_28265(new class_972(var6, var10, class_3132.field_15549, class_9583.field_48747, var11));
    }
 
@@ -471,7 +471,7 @@ public class class_7494 {
          field_38239.field_9632.field_30502 + (double)(var12 * var2) + (double)field_38239.field_9632.method_37277(),
          field_38239.field_9632.field_30507 + (double)(var13 * var2)
       );
-      class_8145 var15 = field_38239.method_8516();
+      Entity var15 = field_38239.method_8516();
       return field_38239.field_9601.method_28265(new class_972(var10, var14, class_3132.field_15549, class_9583.field_48747, var15));
    }
 
@@ -506,12 +506,12 @@ public class class_7494 {
          field_38239.field_9632.method_37309() + (double)(var8 * var10) + (double)field_38239.field_9632.method_37277(),
          field_38239.field_9632.method_37156() + (double)(var9 * var10)
       );
-      class_8145 var12 = field_38239.method_8516();
+      Entity var12 = field_38239.method_8516();
       class_9529 var13 = field_38239.field_9601.method_28265(new class_972(var6, var11, class_3132.field_15549, class_9583.field_48752, var12));
       return var13 == null ? false : var13.method_43955().equals(var1.field_38725) && var13.method_43956() == var1.field_38724;
    }
 
-   public static class_1343 method_34098(class_240 var0, class_1331 var1) {
+   public static class_1343 method_34098(Direction var0, class_1331 var1) {
       float var4 = (float)Math.max(0, var0.method_1041());
       float var5 = (float)Math.max(0, var0.method_1034());
       float var6 = (float)var1.method_12173() + var4 + (var0.method_1041() != 0 ? 0.0F : (float)Math.random());
@@ -549,8 +549,8 @@ public class class_7494 {
                ? new class_2700(var13.method_12173() * var9.field_8900, var13.method_12165() * var9.field_8901, var13.method_12185() * var9.field_8902)
                : new class_2700(var13.method_12173() + var9.field_8900, var13.method_12165() + var9.field_8901, var13.method_12185() + var9.field_8902);
 
-            for (class_240 var18 : class_240.values()) {
-               if ((var18 != class_240.field_802 || !var1) && method_34090(var0.method_6105(var14).method_6099(var18, -1))) {
+            for (Direction var18 : Direction.values()) {
+               if ((var18 != Direction.field_802 || !var1) && method_34090(var0.method_6105(var14).method_6099(var18, -1))) {
                   return new class_2899(var0.method_6105(var14).method_6099(var18, -1), var18);
                }
             }
@@ -586,8 +586,8 @@ public class class_7494 {
          new class_1343(field_38239.field_9632.method_37302(), field_38239.field_9632.method_37309(), field_38239.field_9632.method_37156()),
          var2
       )) {
-         for (class_240 var12 : class_240.values()) {
-            if ((var12 != class_240.field_802 || !var1) && !method_34090(var8) && method_34090(var8.method_6099(var12, -1))) {
+         for (Direction var12 : Direction.values()) {
+            if ((var12 != Direction.field_802 || !var1) && !method_34090(var8) && method_34090(var8.method_6099(var12, -1))) {
                return new class_2899(var8.method_6099(var12, -1), var12);
             }
          }
@@ -639,30 +639,30 @@ public class class_7494 {
       }
    }
 
-   public static class_240 method_34113(class_1331 var0) {
-      class_240 var3 = class_240.field_817;
-      float var4 = class_9299.method_42810(method_34121(var0, class_240.field_817)[0]);
+   public static Direction method_34113(class_1331 var0) {
+      Direction var3 = Direction.field_817;
+      float var4 = class_9299.method_42810(method_34121(var0, Direction.field_817)[0]);
       if (var4 >= 45.0F && var4 <= 135.0F) {
-         var3 = class_240.field_804;
+         var3 = Direction.field_804;
       } else if ((!(var4 >= 135.0F) || !(var4 <= 180.0F)) && (!(var4 <= -135.0F) || !(var4 >= -180.0F))) {
          if (var4 <= -45.0F && var4 >= -135.0F) {
-            var3 = class_240.field_809;
+            var3 = Direction.field_809;
          } else if (var4 >= -45.0F && var4 <= 0.0F || var4 <= 45.0F && var4 >= 0.0F) {
-            var3 = class_240.field_818;
+            var3 = Direction.field_818;
          }
       } else {
-         var3 = class_240.field_800;
+         var3 = Direction.field_800;
       }
 
-      if (class_9299.method_42810(method_34121(var0, class_240.field_817)[1]) > 75.0F
-         || class_9299.method_42810(method_34121(var0, class_240.field_817)[1]) < -75.0F) {
-         var3 = class_240.field_817;
+      if (class_9299.method_42810(method_34121(var0, Direction.field_817)[1]) > 75.0F
+         || class_9299.method_42810(method_34121(var0, Direction.field_817)[1]) < -75.0F) {
+         var3 = Direction.field_817;
       }
 
       return var3;
    }
 
-   public static float[] method_34121(class_1331 var0, class_240 var1) {
+   public static float[] method_34121(class_1331 var0, Direction var1) {
       double var4 = (double)var0.method_12173() + 0.5 - field_38239.field_9632.method_37302() + (double)var1.method_1041() / 2.0;
       double var6 = (double)var0.method_12185() + 0.5 - field_38239.field_9632.method_37156() + (double)var1.method_1034() / 2.0;
       double var8 = field_38239.field_9632.method_37309() + (double)field_38239.field_9632.method_37277() - ((double)var0.method_12165() + 0.5);
@@ -676,7 +676,7 @@ public class class_7494 {
       return new float[]{var12, var13};
    }
 
-   private float method_34073(class_8145 var1, class_1331 var2) {
+   private float method_34073(Entity var1, class_1331 var2) {
       float var5 = 6.0F;
       float var6 = (float)var2.method_12173() + 0.5F;
       float var7 = (float)var2.method_12165() + 1.0F;

@@ -289,7 +289,7 @@ public final class class_3370 {
       return !(var0 > 0.0) ? class_9299.method_42847(var2 + var0) - 1 : class_9299.method_42847(var4 + var0) + 1;
    }
 
-   public static boolean method_15534(class_4190 var0, class_4190 var1, class_240 var2) {
+   public static boolean method_15534(class_4190 var0, class_4190 var1, Direction var2) {
       if (var0 == method_15524() && var1 == method_15524()) {
          return true;
       } else if (!var1.method_19485()) {
@@ -306,7 +306,7 @@ public final class class_3370 {
       }
    }
 
-   public static class_4190 method_15526(class_4190 var0, class_240 var1) {
+   public static class_4190 method_15526(class_4190 var0, Direction var1) {
       if (var0 != method_15524()) {
          class_9249 var4 = var1.method_1029();
          boolean var5;
@@ -325,7 +325,7 @@ public final class class_3370 {
       }
    }
 
-   public static boolean method_15525(class_4190 var0, class_4190 var1, class_240 var2) {
+   public static boolean method_15525(class_4190 var0, class_4190 var1, Direction var2) {
       if (var0 != method_15524() && var1 != method_15524()) {
          class_9249 var5 = var2.method_1029();
          class_137 var6 = var2.method_1049();

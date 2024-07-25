@@ -3,7 +3,7 @@ package remapped;
 public abstract class class_8383 extends class_3954<class_6867> {
    private final class_6867 field_42898;
    private final class_6844 field_42896;
-   public final class_6486 field_42895;
+   public final World field_42895;
    private final class_1510<? extends class_3151> field_42897;
    private final class_4269 field_42894;
 

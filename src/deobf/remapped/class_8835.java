@@ -52,7 +52,7 @@ public class class_8835 {
       return !class_7860.field_40163.method_3596() ? var0.method_8339() : class_7860.method_35569(var0, class_7860.field_40163, var1, var2);
    }
 
-   public static class_2134 method_40647(class_6098 var0, class_6486 var1) {
+   public static class_2134 method_40647(class_6098 var0, World var1) {
       if (!class_7860.field_40161.method_45472()) {
          return class_2143.method_10005(var0, var1);
       } else {
@@ -150,7 +150,7 @@ public class class_8835 {
       }
    }
 
-   public static boolean method_40648(class_8145 var0) {
+   public static boolean method_40648(Entity var0) {
       return !field_45187 ? true : class_7860.method_35565(var0, class_7860.field_39966);
    }
 

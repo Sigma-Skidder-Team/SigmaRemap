@@ -72,7 +72,7 @@ public class class_532 extends class_3558 {
       while (true) {
          class_1331 var17 = var13.method_6100();
          class_2522 var18 = this.field_3238.field_41768.method_28262(var17);
-         if (!var18.method_8308(this.field_3238.field_41768, var17, class_240.field_817)) {
+         if (!var18.method_8308(this.field_3238.field_41768, var17, Direction.field_817)) {
             var13 = var13.method_6100();
             if (var13.method_12165() >= class_9299.method_42847(var5) - 1) {
                continue;

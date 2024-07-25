@@ -18,7 +18,7 @@ public class class_3286 extends class_2451 implements class_9866 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       class_6943 var7 = class_5886.method_26896(var6);
       class_6098 var8 = var2.method_26520(var7);

@@ -39,7 +39,7 @@ public class class_1541 {
          }
       }
 
-      int var9 = class_4316.method_20052(var2, var1, var3);
+      int var9 = WorldRenderer.method_20052(var2, var1, var3);
       if (this.field_8146) {
          if (this.field_8147.size() == 100) {
             this.field_8147.removeFirstInt();

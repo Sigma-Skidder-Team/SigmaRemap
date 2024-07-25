@@ -3,7 +3,7 @@ package remapped;
 public class class_9122 extends class_7164<class_7666, class_5103<class_7666>> {
    private static final Identifier field_46680 = new Identifier("textures/entity/villager/villager.png");
 
-   public class_9122(class_6122 var1, class_550 var2) {
+   public class_9122(EntityRenderDispatcher var1, class_550 var2) {
       super(var1, new class_5103<class_7666>(0.0F), 0.5F);
       this.method_29100(new class_8386<class_7666, class_5103<class_7666>>(this));
       this.method_29100(new class_3295<class_7666, class_5103<class_7666>>(this, var2, "villager"));

@@ -89,7 +89,7 @@ public class class_6167 {
       }
    }
 
-   public static void method_28272(class_6486 var0, TextureManager var1, class_7966 var2, float var3) {
+   public static void method_28272(World var0, TextureManager var1, class_7966 var2, float var3) {
       if (field_31554 != null) {
          int var6 = class_4869.method_22375(var0);
          if (var6 >= 0 && var6 < field_31554.length) {
@@ -118,7 +118,7 @@ public class class_6167 {
       }
    }
 
-   public static boolean method_28273(class_6486 var0) {
+   public static boolean method_28273(World var0) {
       if (field_31554 != null) {
          int var3 = class_4869.method_22375(var0);
          if (var3 >= 0 && var3 < field_31554.length) {

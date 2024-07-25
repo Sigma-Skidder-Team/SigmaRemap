@@ -9,7 +9,7 @@ public class class_8187 extends class_2451 {
 
    @Override
    public class_6910 method_11237(class_4734 var1) {
-      class_6486 var4 = var1.method_21862();
+      World var4 = var1.method_21862();
       class_1331 var5 = var1.method_21858();
       class_6414 var6 = var4.method_28262(var5).method_8360();
       if (!var6.method_29299(class_2351.field_11728)) {
@@ -24,7 +24,7 @@ public class class_8187 extends class_2451 {
       }
    }
 
-   public static class_6910 method_37511(class_704 var0, class_6486 var1, class_1331 var2) {
+   public static class_6910 method_37511(class_704 var0, World var1, class_1331 var2) {
       class_8008 var5 = null;
       boolean var6 = false;
       double var7 = 7.0;

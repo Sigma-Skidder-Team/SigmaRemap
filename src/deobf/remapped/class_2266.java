@@ -109,42 +109,42 @@ public class class_2266 extends class_1546 {
       }
 
       double var9 = method_10464(this.field_8165, new class_1331(var2.field_29731, var2.field_29735, var2.field_29736));
-      class_5851 var11 = this.method_10450(var2.field_29731, var2.field_29735, var2.field_29736 + 1, var6, var9, class_240.field_800, var8);
+      class_5851 var11 = this.method_10450(var2.field_29731, var2.field_29735, var2.field_29736 + 1, var6, var9, Direction.field_800, var8);
       if (this.method_10462(var11, var2)) {
          var1[var5++] = var11;
       }
 
-      class_5851 var12 = this.method_10450(var2.field_29731 - 1, var2.field_29735, var2.field_29736, var6, var9, class_240.field_809, var8);
+      class_5851 var12 = this.method_10450(var2.field_29731 - 1, var2.field_29735, var2.field_29736, var6, var9, Direction.field_809, var8);
       if (this.method_10462(var12, var2)) {
          var1[var5++] = var12;
       }
 
-      class_5851 var13 = this.method_10450(var2.field_29731 + 1, var2.field_29735, var2.field_29736, var6, var9, class_240.field_804, var8);
+      class_5851 var13 = this.method_10450(var2.field_29731 + 1, var2.field_29735, var2.field_29736, var6, var9, Direction.field_804, var8);
       if (this.method_10462(var13, var2)) {
          var1[var5++] = var13;
       }
 
-      class_5851 var14 = this.method_10450(var2.field_29731, var2.field_29735, var2.field_29736 - 1, var6, var9, class_240.field_818, var8);
+      class_5851 var14 = this.method_10450(var2.field_29731, var2.field_29735, var2.field_29736 - 1, var6, var9, Direction.field_818, var8);
       if (this.method_10462(var14, var2)) {
          var1[var5++] = var14;
       }
 
-      class_5851 var15 = this.method_10450(var2.field_29731 - 1, var2.field_29735, var2.field_29736 - 1, var6, var9, class_240.field_818, var8);
+      class_5851 var15 = this.method_10450(var2.field_29731 - 1, var2.field_29735, var2.field_29736 - 1, var6, var9, Direction.field_818, var8);
       if (this.method_10460(var2, var12, var14, var15)) {
          var1[var5++] = var15;
       }
 
-      class_5851 var16 = this.method_10450(var2.field_29731 + 1, var2.field_29735, var2.field_29736 - 1, var6, var9, class_240.field_818, var8);
+      class_5851 var16 = this.method_10450(var2.field_29731 + 1, var2.field_29735, var2.field_29736 - 1, var6, var9, Direction.field_818, var8);
       if (this.method_10460(var2, var13, var14, var16)) {
          var1[var5++] = var16;
       }
 
-      class_5851 var17 = this.method_10450(var2.field_29731 - 1, var2.field_29735, var2.field_29736 + 1, var6, var9, class_240.field_800, var8);
+      class_5851 var17 = this.method_10450(var2.field_29731 - 1, var2.field_29735, var2.field_29736 + 1, var6, var9, Direction.field_800, var8);
       if (this.method_10460(var2, var12, var11, var17)) {
          var1[var5++] = var17;
       }
 
-      class_5851 var18 = this.method_10450(var2.field_29731 + 1, var2.field_29735, var2.field_29736 + 1, var6, var9, class_240.field_800, var8);
+      class_5851 var18 = this.method_10450(var2.field_29731 + 1, var2.field_29735, var2.field_29736 + 1, var6, var9, Direction.field_800, var8);
       if (this.method_10460(var2, var13, var11, var18)) {
          var1[var5++] = var18;
       }
@@ -200,7 +200,7 @@ public class class_2266 extends class_1546 {
    }
 
    @Nullable
-   private class_5851 method_10450(int var1, int var2, int var3, int var4, double var5, class_240 var7, class_1108 var8) {
+   private class_5851 method_10450(int var1, int var2, int var3, int var4, double var5, Direction var7, class_1108 var8) {
       class_5851 var11 = null;
       class_2921 var12 = new class_2921();
       double var13 = method_10464(this.field_8165, var12.method_13362(var1, var2, var3));

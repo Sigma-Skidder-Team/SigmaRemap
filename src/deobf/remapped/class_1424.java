@@ -29,9 +29,9 @@ public class class_1424 extends class_6291 {
             .filter(var1x -> var1x.method_12165() - var9 <= 2)
             .forEach(
                var5x -> {
-                  for (class_240 var9x : class_9594.field_48893) {
+                  for (Direction var9x : class_9594.field_48893) {
                      if (var2.nextFloat() <= 0.25F) {
-                        class_240 var10 = var9x.method_1046();
+                        Direction var10 = var9x.method_1046();
                         class_1331 var11 = var5x.method_6104(var10.method_1041(), 0, var10.method_1034());
                         if (class_4285.method_19908(var1, var11)) {
                            class_2522 var12 = class_4783.field_23666

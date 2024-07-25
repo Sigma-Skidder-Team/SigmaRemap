@@ -15,7 +15,7 @@ public class class_6178 extends class_4314 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       class_3757 var7 = var2.method_28260(var3);
       if (var7 instanceof class_5555) {
          int var8 = ((class_5555)var7).method_25240();

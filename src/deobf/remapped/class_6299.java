@@ -25,7 +25,7 @@ public class class_6299 extends class_8446 {
    };
    private class_6809 field_32190 = new class_6809(this, new class_3403());
 
-   public class_6299(Screen var1, class_8881 var2) {
+   public class_6299(Screen var1, GameOptions var2) {
       super(var1, var2, new TranslationTextComponent("options.chat.title"), field_32189);
    }
 }

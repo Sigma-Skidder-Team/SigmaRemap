@@ -3,16 +3,16 @@ package remapped;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
-public abstract class class_5783 extends class_8145 {
+public abstract class class_5783 extends Entity {
    private UUID field_29207;
    private int field_29205;
    private boolean field_29206;
 
-   public class_5783(class_6629<? extends class_5783> var1, class_6486 var2) {
+   public class_5783(class_6629<? extends class_5783> var1, World var2) {
       super(var1, var2);
    }
 
-   public void method_26159(class_8145 var1) {
+   public void method_26159(Entity var1) {
       if (var1 != null) {
          this.field_29207 = var1.method_37328();
          this.field_29205 = var1.method_37145();
@@ -20,7 +20,7 @@ public abstract class class_5783 extends class_8145 {
    }
 
    @Nullable
-   public class_8145 method_26166() {
+   public Entity method_26166() {
       if (this.field_29207 != null && this.field_41768 instanceof class_6331) {
          return ((class_6331)this.field_41768).method_28925(this.field_29207);
       } else {
@@ -58,9 +58,9 @@ public abstract class class_5783 extends class_8145 {
    }
 
    private boolean method_26162() {
-      class_8145 var3 = this.method_26166();
+      Entity var3 = this.method_26166();
       if (var3 != null) {
-         for (class_8145 var5 : this.field_41768
+         for (Entity var5 : this.field_41768
             .method_25867(this, this.method_37241().method_18929(this.method_37098()).method_18898(1.0), var0 -> !var0.method_37221() && var0.method_37167())) {
             if (var5.method_37240() == var3.method_37240()) {
                return false;
@@ -88,7 +88,7 @@ public abstract class class_5783 extends class_8145 {
       this.field_41762 = this.field_41755;
    }
 
-   public void method_26158(class_8145 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void method_26158(Entity var1, float var2, float var3, float var4, float var5, float var6) {
       float var9 = -class_9299.method_42818(var3 * (float) (Math.PI / 180.0)) * class_9299.method_42840(var2 * (float) (Math.PI / 180.0));
       float var10 = -class_9299.method_42818((var2 + var4) * (float) (Math.PI / 180.0));
       float var11 = class_9299.method_42840(var3 * (float) (Math.PI / 180.0)) * class_9299.method_42840(var2 * (float) (Math.PI / 180.0));
@@ -129,9 +129,9 @@ public abstract class class_5783 extends class_8145 {
       }
    }
 
-   public boolean method_26164(class_8145 var1) {
+   public boolean method_26164(Entity var1) {
       if (!var1.method_37221() && var1.method_37330() && var1.method_37167()) {
-         class_8145 var4 = this.method_26166();
+         Entity var4 = this.method_26166();
          return var4 == null || this.field_29206 || !var4.method_37308(var1);
       } else {
          return false;

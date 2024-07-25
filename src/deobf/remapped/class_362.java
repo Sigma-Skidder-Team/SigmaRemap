@@ -4,9 +4,9 @@ import java.util.Optional;
 
 public class class_362 extends class_7571 {
    private static String[] field_1401;
-   private final class_8145 field_1402;
+   private final Entity field_1402;
 
-   public class_362(class_8145 var1) {
+   public class_362(Entity var1) {
       this.field_1402 = var1;
    }
 

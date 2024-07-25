@@ -63,13 +63,13 @@ public class class_8057 extends class_367 {
                                  && class_1269.method_5703(var8.field_3677) == (float)(var6.method_18715() - 33)
                                  && Math.sqrt(field_46692.field_9632.method_37075().method_12180(var8.field_3674))
                                     < (double)field_46692.field_9647.method_42146()) {
-                                 float[] var9 = class_7494.method_34077(var8.field_3674, class_240.field_817);
+                                 float[] var9 = class_7494.method_34077(var8.field_3674, Direction.field_817);
                                  if ((double)var8.field_3674.method_12165() > field_46692.field_9632.method_37309() + 1.0) {
-                                    var9 = class_7494.method_34077(var8.field_3674, class_240.field_802);
+                                    var9 = class_7494.method_34077(var8.field_3674, Direction.field_802);
                                  }
 
                                  field_46692.method_8614().method_4813(new class_3616(var9[0], var9[1], field_46692.field_9632.field_41726));
-                                 field_46692.method_8614().method_4813(new class_1586(class_7500.field_38263, var8.field_3674, class_240.field_817));
+                                 field_46692.method_8614().method_4813(new class_1586(class_7500.field_38263, var8.field_3674, Direction.field_817));
                                  field_46692.method_8614().method_4813(new class_3195(class_2584.field_12791));
                                  this.field_41246.add(var8.field_3674);
                               }
@@ -100,9 +100,9 @@ public class class_8057 extends class_367 {
       for (class_663 var5 : var1) {
          if (var5.field_3677 == -1.0F
             && Math.sqrt(field_46692.field_9632.method_37075().method_12180(var5.field_3674)) < (double)field_46692.field_9647.method_42146()) {
-            float[] var6 = class_7494.method_34077(var5.field_3674, class_240.field_817);
+            float[] var6 = class_7494.method_34077(var5.field_3674, Direction.field_817);
             field_46692.method_8614().method_4813(new class_3616(var6[0], var6[1], field_46692.field_9632.field_41726));
-            field_46692.method_8614().method_4813(new class_1586(class_7500.field_38263, var5.field_3674, class_240.field_817));
+            field_46692.method_8614().method_4813(new class_1586(class_7500.field_38263, var5.field_3674, Direction.field_817));
             this.field_41246.clear();
             this.field_41246.add(var5.field_3674);
             return true;
@@ -117,7 +117,7 @@ public class class_8057 extends class_367 {
          if (this.method_36550(var5.field_3677, var5.field_3676)
             && Math.sqrt(field_46692.field_9632.method_37075().method_12180(var5.field_3674)) < (double)field_46692.field_9647.method_42146()) {
             if (field_46692.field_9632.field_41697 % 1 == 0) {
-               float[] var6 = class_7494.method_34077(var5.field_3674, class_240.field_817);
+               float[] var6 = class_7494.method_34077(var5.field_3674, Direction.field_817);
                field_46692.field_9632.method_26597(class_2584.field_12791);
                field_46692.method_8614().method_4813(new class_3616(var6[0], var6[1], field_46692.field_9632.field_41726));
                field_46692.method_8614()

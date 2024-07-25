@@ -15,7 +15,7 @@ public class class_4761 extends class_9790 {
       }
    }
 
-   public class_2654 method_21955(class_6486 var1, int var2, int var3) {
+   public class_2654 method_21955(World var1, int var2, int var3) {
       return this.field_23047 != null && this.field_23047.method_27352().field_10328 == var2 && this.field_23047.method_27352().field_10327 == var3
          ? this.field_23047
          : (this.field_23047 = var1.method_29554(var2, var3));

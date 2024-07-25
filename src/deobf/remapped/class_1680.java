@@ -182,7 +182,7 @@ public class class_1680 implements class_5561 {
    }
 
    @Override
-   public float method_25265(class_240 var1, boolean var2) {
+   public float method_25265(Direction var1, boolean var2) {
       return this.field_8703.method_25265(var1, var2);
    }
 }

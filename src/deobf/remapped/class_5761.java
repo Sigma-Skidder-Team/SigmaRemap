@@ -82,7 +82,7 @@ public class class_5761 extends class_9128 {
 
             class_1343 var7 = new class_1343(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
             class_1331 var8 = new class_1331(field_46692.field_9632.method_37075()).method_6104(0, -1, 0);
-            class_9529 var9 = new class_9529(var7, class_240.field_817, var8, false);
+            class_9529 var9 = new class_9529(var7, Direction.field_817, var8, false);
             class_8585 var10 = new class_8585(class_2584.field_12791, var9);
             field_46692.method_8614().method_4813(var10);
             this.field_29130 += var4 / 4.0;

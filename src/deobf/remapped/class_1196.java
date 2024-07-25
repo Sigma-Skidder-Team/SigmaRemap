@@ -15,7 +15,7 @@ public class class_1196 extends class_9128 {
    private static class_5023 field_6699 = new class_5023();
    private static HashMap<String, class_8343> field_6698 = new HashMap<String, class_8343>();
    public static class_1196 field_6701;
-   private List<class_8145> field_6696 = new ArrayList<class_8145>();
+   private List<Entity> field_6696 = new ArrayList<Entity>();
    private boolean field_6697 = false;
    private HashMap<UUID, String> field_6695 = new HashMap<UUID, String>();
    public int field_6702 = class_314.method_1444(class_314.method_1442(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917, 75.0F), 0.5F);
@@ -50,7 +50,7 @@ public class class_1196 extends class_9128 {
 
          this.field_6696.clear();
 
-         for (class_8145 var7 : class_7494.method_34088(class_314.method_1435())) {
+         for (Entity var7 : class_7494.method_34088(class_314.method_1435())) {
             if (var7 != field_46692.field_9632
                && var7 != class_9598.field_48917
                && var7 != class_5477.field_27898
@@ -161,7 +161,7 @@ public class class_1196 extends class_9128 {
          class_3542.method_16420(33986, 240.0F, 240.0F);
          boolean var4 = this.method_42007("Magnify");
 
-         for (class_8145 var6 : this.field_6696) {
+         for (Entity var6 : this.field_6696) {
             float var7 = 1.0F;
             if (var4) {
                var7 = (float)Math.max(1.0, Math.sqrt(class_9189.method_42352(var6) / 30.0));
@@ -175,7 +175,7 @@ public class class_1196 extends class_9128 {
                var7,
                null
             );
-            var6.method_37372().method_36633(class_8145.field_41699, false);
+            var6.method_37372().method_36633(Entity.field_41699, false);
          }
 
          for (Entry var11 : this.field_6693.entrySet()) {
@@ -188,7 +188,7 @@ public class class_1196 extends class_9128 {
          }
 
          if (this.method_42007("Mob Owners")) {
-            for (class_8145 var12 : field_46692.field_9601.method_736()) {
+            for (Entity var12 : field_46692.field_9601.method_736()) {
                if (var12 == field_46692.field_9632 && (var12 instanceof class_8990 || var12 instanceof class_3551)) {
                   UUID var14 = !(var12 instanceof class_8990) ? ((class_3551)var12).method_19081() : ((class_8990)var12).method_41211();
                   if (var14 != null) {
@@ -222,7 +222,7 @@ public class class_1196 extends class_9128 {
                            var8,
                            this.field_6695.get(var14)
                         );
-                        var12.method_37372().method_36633(class_8145.field_41699, false);
+                        var12.method_37372().method_36633(Entity.field_41699, false);
                      }
                   }
                }
@@ -321,7 +321,7 @@ public class class_1196 extends class_9128 {
       GL11.glDisable(3042);
    }
 
-   public void method_5289(double var1, double var3, double var5, class_8145 var7, float var8, String var9) {
+   public void method_5289(double var1, double var3, double var5, Entity var7, float var8, String var9) {
       class_3384 var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
       if (SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42015() && var13.equals(field_46692.method_8502().method_5366())) {

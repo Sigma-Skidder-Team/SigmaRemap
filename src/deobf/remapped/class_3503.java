@@ -8,7 +8,7 @@ public class class_3503 extends class_2451 {
    }
 
    @Override
-   public class_6098 method_11242(class_6098 var1, class_6486 var2, class_5834 var3) {
+   public class_6098 method_11242(class_6098 var1, World var2, class_5834 var3) {
       if (var3 instanceof class_9359) {
          class_9359 var6 = (class_9359)var3;
          class_8807.field_45081.method_43401(var6, var1);
@@ -37,7 +37,7 @@ public class class_3503 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       return class_4754.method_21939(var1, var2, var3);
    }
 }

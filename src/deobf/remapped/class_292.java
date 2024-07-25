@@ -8,11 +8,11 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    private Identifier field_1063;
    private long field_1064;
 
-   public class_292(class_6629<?> var1, class_6486 var2) {
+   public class_292(class_6629<?> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_292(class_6629<?> var1, double var2, double var4, double var6, class_6486 var8) {
+   public class_292(class_6629<?> var1, double var2, double var4, double var6, World var8) {
       super(var1, var8, var2, var4, var6);
    }
 
@@ -22,7 +22,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
       if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
          class_1573.method_7105(this.field_41768, this, this);
          if (!this.field_41768.field_33055) {
-            class_8145 var4 = var1.method_28353();
+            Entity var4 = var1.method_28353();
             if (var4 != null && var4.method_37387() == class_6629.field_34300) {
                class_134.method_474((class_704)var4, true);
             }
@@ -95,7 +95,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
 
    @Nullable
    @Override
-   public class_8145 method_37326(class_6331 var1) {
+   public Entity method_37326(class_6331 var1) {
       this.field_1061 = false;
       return super.method_37326(var1);
    }

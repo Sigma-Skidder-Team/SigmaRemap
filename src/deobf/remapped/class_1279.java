@@ -30,13 +30,13 @@ public abstract class class_1279 extends class_7060 {
       super(var1, var2);
    }
 
-   public class_1279(class_2746 var1, class_240 var2, class_9616 var3) {
+   public class_1279(class_2746 var1, Direction var2, class_9616 var3) {
       super(var1, 1);
       this.method_32519(var2);
       this.field_36435 = var3;
    }
 
-   public class_1279(class_2746 var1, int var2, class_240 var3, class_7914 var4, int var5, int var6, int var7) {
+   public class_1279(class_2746 var1, int var2, Direction var3, class_7914 var4, int var5, int var6, int var7) {
       super(var1, var2);
       this.method_32519(var3);
       this.field_7031 = var4;
@@ -44,7 +44,7 @@ public abstract class class_1279 extends class_7060 {
       int var11 = var10 % 5;
       int var12 = var10 / 5 % 5;
       int var13 = var10 / 25;
-      if (var3 != class_240.field_818 && var3 != class_240.field_800) {
+      if (var3 != Direction.field_818 && var3 != Direction.field_800) {
          this.field_36435 = new class_9616(0, 0, 0, var7 * 8 - 1, var6 * 4 - 1, var5 * 8 - 1);
       } else {
          this.field_36435 = new class_9616(0, 0, 0, var5 * 8 - 1, var6 * 4 - 1, var7 * 8 - 1);

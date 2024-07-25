@@ -8,7 +8,7 @@ public abstract class class_4607 extends class_1173 {
    private boolean field_22414;
    private boolean field_22415;
 
-   public class_4607(class_6629<? extends class_4607> var1, class_6486 var2) {
+   public class_4607(class_6629<? extends class_4607> var1, World var2) {
       super(var1, var2);
    }
 

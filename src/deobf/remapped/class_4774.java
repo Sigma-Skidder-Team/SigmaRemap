@@ -52,11 +52,11 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       return false;
    }
 
-   public void method_22004(class_6486 var1, class_1331 var2) {
+   public void method_22004(World var1, class_1331 var2) {
       this.method_22005().method_10718(var1, var2, this);
    }
 
-   public void method_22002(class_6486 var1, class_1331 var2, Random var3) {
+   public void method_22002(World var1, class_1331 var2, Random var3) {
       this.method_22005().method_10722(var1, var2, this, var3);
    }
 
@@ -64,7 +64,7 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       return this.method_22005().method_10715();
    }
 
-   public void method_21999(class_6486 var1, class_1331 var2, Random var3) {
+   public void method_21999(World var1, class_1331 var2, Random var3) {
       this.method_22005().method_10706(var1, var2, this, var3);
    }
 
@@ -89,7 +89,7 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       return this.method_22005().method_10716();
    }
 
-   public boolean method_22009(class_6163 var1, class_1331 var2, class_2340 var3, class_240 var4) {
+   public boolean method_22009(class_6163 var1, class_1331 var2, class_2340 var3, Direction var4) {
       return this.method_22005().method_10709(this, var1, var2, var3, var4);
    }
 

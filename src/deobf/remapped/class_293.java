@@ -51,7 +51,7 @@ public class class_293 {
       }
    }
 
-   public static void method_1318(GameRenderer var0, class_7966 var1, class_9071 var2, float var3) {
+   public static void method_1318(GameRenderer var0, class_7966 var1, Camera var2, float var3) {
       if (!class_6588.field_33945) {
          boolean var6 = class_6588.method_30123();
          boolean var7 = class_6588.method_30246();
@@ -68,7 +68,7 @@ public class class_293 {
       }
    }
 
-   public static void method_1310(GameRenderer var0, class_7966 var1, class_9071 var2, float var3) {
+   public static void method_1310(GameRenderer var0, class_7966 var1, Camera var2, float var3) {
       if (!class_6588.field_33945 && !class_6588.method_30321()) {
          class_6588.method_30141();
          class_1920.method_8829();
@@ -101,7 +101,7 @@ public class class_293 {
       var0.method_42243(var1, var2, var3, var4, var5);
    }
 
-   public static void method_1314(GameRenderer var0, class_7966 var1, class_9071 var2, float var3) {
+   public static void method_1314(GameRenderer var0, class_7966 var1, Camera var2, float var3) {
       if (!class_6588.field_33945) {
          class_6588.method_30239();
          var0.method_35924(var1, var2, var3, false, true, false);
@@ -126,11 +126,11 @@ public class class_293 {
       }
    }
 
-   public static void method_1322(GameRenderer var0, class_9071 var1, int var2, float var3, long var4) {
+   public static void method_1322(GameRenderer var0, Camera var1, int var2, float var3, long var4) {
       if (class_6588.field_33846 > 0 && --class_6588.field_33861 <= 0) {
          MinecraftClient var8 = MinecraftClient.getInstance();
          var8.method_8562().method_16050("shadow pass");
-         class_4316 var9 = var8.field_9657;
+         WorldRenderer var9 = var8.worldRenderer;
          class_6588.field_33945 = true;
          class_6588.field_33861 = class_6588.field_33897;
          class_6588.method_30273("pre shadow");
@@ -175,7 +175,7 @@ public class class_293 {
          var8.method_8562().method_16050("shadow prepareterrain");
          var8.method_8577().method_35674(class_8359.field_42824);
          var8.method_8562().method_16050("shadow setupterrain");
-         int var13 = var8.field_9657.method_20049();
+         int var13 = var8.worldRenderer.method_20049();
          var9.method_20016(var1, var11, false, var13, var8.field_9632.method_37221());
          var8.method_8562().method_16050("shadow updatechunks");
          var8.method_8562().method_16050("shadow terrain");
@@ -200,8 +200,8 @@ public class class_293 {
          class_1920.method_8761();
          class_1920.method_8757();
          var8.method_8562().method_16050("shadow entities");
-         class_4316 var20 = var8.field_9657;
-         class_6122 var21 = var8.method_8587();
+         WorldRenderer var20 = var8.worldRenderer;
+         EntityRenderDispatcher var21 = var8.method_8587();
          class_3758 var22 = var20.method_20017().method_13796();
          boolean var23 = class_6588.field_33945 && !var8.field_9632.method_37221();
 
@@ -209,7 +209,7 @@ public class class_293 {
             class_3511 var26 = var25.field_6947;
             class_2654 var27 = var26.method_16174();
 
-            for (class_8145 var29 : var27.method_11979()[var26.method_16189().method_12165() / 16]) {
+            for (Entity var29 : var27.method_11979()[var26.method_16189().method_12165() / 16]) {
                if ((var21.method_28135(var29, var11, var14, var16, var18) || var29.method_37315(var8.field_9632))
                   && (
                      var29 != var1.method_41633()
@@ -227,10 +227,10 @@ public class class_293 {
          }
 
          var20.method_20032(var10);
-         var22.method_17416(class_3581.method_16734(class_8359.field_42824));
-         var22.method_17416(class_3581.method_16747(class_8359.field_42824));
-         var22.method_17416(class_3581.method_16755(class_8359.field_42824));
-         var22.method_17416(class_3581.method_16730(class_8359.field_42824));
+         var22.method_17416(RenderLayer.method_16734(class_8359.field_42824));
+         var22.method_17416(RenderLayer.method_16747(class_8359.field_42824));
+         var22.method_17416(RenderLayer.method_16755(class_8359.field_42824));
+         var22.method_17416(RenderLayer.method_16730(class_8359.field_42824));
          class_6588.method_30260();
          class_6588.method_30189();
          class_3913.method_18117();
@@ -259,7 +259,7 @@ public class class_293 {
          }
 
          var20.method_20032(var10);
-         var22.method_17416(class_3581.method_16751());
+         var22.method_17416(RenderLayer.method_16751());
          var22.method_17416(class_5276.method_24074());
          var22.method_17416(class_5276.method_24083());
          var22.method_17416(class_5276.method_24070());
@@ -361,17 +361,17 @@ public class class_293 {
       }
    }
 
-   public static void method_1309(class_9071 var0, MinecraftClient var1, float var2) {
+   public static void method_1309(Camera var0, MinecraftClient var1, float var2) {
       var0.method_41643(
          var1.field_9601,
-         (class_8145)(var1.method_8516() != null ? var1.method_8516() : var1.field_9632),
+         (Entity)(var1.method_8516() != null ? var1.method_8516() : var1.field_9632),
          !var1.field_9577.method_40867().method_42383(),
          var1.field_9577.method_40867().method_42384(),
          var2
       );
    }
 
-   public static void method_1326(class_3581 var0) {
+   public static void method_1326(RenderLayer var0) {
       if (var0 == class_6727.field_34745) {
          method_1320();
       }
@@ -399,7 +399,7 @@ public class class_293 {
       }
    }
 
-   public static void method_1323(class_3581 var0) {
+   public static void method_1323(RenderLayer var0) {
       if (class_3776.method_17486()) {
          GL20.glDisableVertexAttribArray(class_6588.field_33801);
          GL20.glDisableVertexAttribArray(class_6588.field_33817);
@@ -411,12 +411,12 @@ public class class_293 {
       }
    }
 
-   public static void method_1316(class_3581 var0, class_9633 var1) {
+   public static void method_1316(RenderLayer var0, class_9633 var1) {
       if (class_6588.field_33804 && !class_6588.field_33945) {
          if (!var0.method_16733()) {
             if (!var0.method_24421().equals("eyes")) {
                if (!var0.method_24421().equals("crumbling")) {
-                  if (var0 == class_3581.field_17558) {
+                  if (var0 == RenderLayer.field_17558) {
                      class_6588.method_30195();
                   }
                } else {
@@ -431,12 +431,12 @@ public class class_293 {
       }
    }
 
-   public static void method_1303(class_3581 var0, class_9633 var1) {
+   public static void method_1303(RenderLayer var0, class_9633 var1) {
       if (class_6588.field_33804 && !class_6588.field_33945) {
          if (!var0.method_16733()) {
             if (!var0.method_24421().equals("eyes")) {
                if (!var0.method_24421().equals("crumbling")) {
-                  if (var0 == class_3581.field_17558) {
+                  if (var0 == RenderLayer.field_17558) {
                      class_6588.method_30104();
                   }
                } else {
@@ -497,7 +497,7 @@ public class class_293 {
          class_6279 var9 = var3.method_36058();
          class_8107 var10 = var9.method_28620();
          class_6555 var11 = var9.method_28618();
-         class_7907 var12 = var4.method_11645(class_3581.method_16734(field_1066));
+         class_7907 var12 = var4.method_11645(RenderLayer.method_16734(field_1066));
          float var13 = 0.5F;
          float var14 = var13 * 0.15F;
          float var15 = var13 * 0.3F;
@@ -508,8 +508,8 @@ public class class_293 {
          float var20 = 0.0F;
          float var21 = 0.0F;
          float var22 = 0.0F;
-         if (var0.method_45197(class_240.field_800)) {
-            class_2700 var23 = class_240.field_800.method_1037();
+         if (var0.method_45197(Direction.field_800)) {
+            class_2700 var23 = Direction.field_800.method_1037();
             float var24 = (float)var23.method_12173();
             float var25 = (float)var23.method_12165();
             float var26 = (float)var23.method_12185();
@@ -546,8 +546,8 @@ public class class_293 {
                .method_35735();
          }
 
-         if (var0.method_45197(class_240.field_818)) {
-            class_2700 var30 = class_240.field_818.method_1037();
+         if (var0.method_45197(Direction.field_818)) {
+            class_2700 var30 = Direction.field_818.method_1037();
             float var35 = (float)var30.method_12173();
             float var40 = (float)var30.method_12165();
             float var45 = (float)var30.method_12185();
@@ -584,8 +584,8 @@ public class class_293 {
                .method_35735();
          }
 
-         if (var0.method_45197(class_240.field_804)) {
-            class_2700 var31 = class_240.field_804.method_1037();
+         if (var0.method_45197(Direction.field_804)) {
+            class_2700 var31 = Direction.field_804.method_1037();
             float var36 = (float)var31.method_12173();
             float var41 = (float)var31.method_12165();
             float var46 = (float)var31.method_12185();
@@ -622,8 +622,8 @@ public class class_293 {
                .method_35735();
          }
 
-         if (var0.method_45197(class_240.field_809)) {
-            class_2700 var32 = class_240.field_809.method_1037();
+         if (var0.method_45197(Direction.field_809)) {
+            class_2700 var32 = Direction.field_809.method_1037();
             float var37 = (float)var32.method_12173();
             float var42 = (float)var32.method_12165();
             float var47 = (float)var32.method_12185();
@@ -660,8 +660,8 @@ public class class_293 {
                .method_35735();
          }
 
-         if (var0.method_45197(class_240.field_802)) {
-            class_2700 var33 = class_240.field_802.method_1037();
+         if (var0.method_45197(Direction.field_802)) {
+            class_2700 var33 = Direction.field_802.method_1037();
             float var38 = (float)var33.method_12173();
             float var43 = (float)var33.method_12165();
             float var48 = (float)var33.method_12185();
@@ -698,8 +698,8 @@ public class class_293 {
                .method_35735();
          }
 
-         if (var0.method_45197(class_240.field_817)) {
-            class_2700 var34 = class_240.field_817.method_1037();
+         if (var0.method_45197(Direction.field_817)) {
+            class_2700 var34 = Direction.field_817.method_1037();
             float var39 = (float)var34.method_12173();
             float var44 = (float)var34.method_12165();
             float var49 = (float)var34.method_12185();

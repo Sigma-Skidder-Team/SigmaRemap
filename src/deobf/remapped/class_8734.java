@@ -12,7 +12,7 @@ public class class_8734 {
    private class_9128 field_44747;
    public MinecraftClient field_44744 = MinecraftClient.getInstance();
    public boolean field_44749;
-   public HashMap<class_8145, List<class_9097<class_1343, Long>>> field_44743 = new HashMap<class_8145, List<class_9097<class_1343, Long>>>();
+   public HashMap<Entity, List<class_9097<class_1343, Long>>> field_44743 = new HashMap<Entity, List<class_9097<class_1343, Long>>>();
 
    public class_8734(class_9128 var1) {
       this.field_44747 = var1;
@@ -27,7 +27,7 @@ public class class_8734 {
       this.field_44749 = var1;
    }
 
-   public void method_40101(class_8145 var1, float var2, float var3) {
+   public void method_40101(Entity var1, float var2, float var3) {
       if (this.field_44747.method_42007("Interact autoblock")) {
          class_5631 var6 = class_314.method_1410(
             !this.field_44747.method_42007("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.field_44747.method_42002("Range")
@@ -133,7 +133,7 @@ public class class_8734 {
    public List<class_3357> method_40091(float var1) {
       ArrayList var4 = new ArrayList();
 
-      for (class_8145 var6 : class_314.method_1440()) {
+      for (Entity var6 : class_314.method_1440()) {
          var4.add(new class_3357(var6));
       }
 
@@ -146,7 +146,7 @@ public class class_8734 {
 
       while (var24.hasNext()) {
          class_3357 var8 = (class_3357)var24.next();
-         class_8145 var9 = var8.method_15377();
+         Entity var9 = var8.method_15377();
          if (var9 == this.field_44744.field_9632 || var9 == class_5477.field_27898) {
             var24.remove();
          } else if (SigmaMainClass.method_3328().method_3307().method_14460(var9)) {

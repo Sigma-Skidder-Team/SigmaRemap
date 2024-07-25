@@ -6,15 +6,15 @@ import javax.annotation.Nullable;
 
 public class class_7626 {
    private static String[] field_38809;
-   public final class_4316 field_38811;
-   public final class_6486 field_38808;
+   public final WorldRenderer field_38811;
+   public final World field_38808;
    public int field_38812;
    public int field_38810;
    public int field_38813;
    public class_3511[] field_38807;
    private Map<class_2034, class_6076[]> field_38806 = new HashMap<class_2034, class_6076[]>();
 
-   public class_7626(class_6705 var1, class_6486 var2, int var3, class_4316 var4) {
+   public class_7626(class_6705 var1, World var2, int var3, WorldRenderer var4) {
       this.field_38811 = var4;
       this.field_38808 = var2;
       this.method_34570(var3);
@@ -43,8 +43,8 @@ public class class_7626 {
       for (int var11 = 0; var11 < this.field_38807.length; var11++) {
          class_3511 var12 = this.field_38807[var11];
 
-         for (int var13 = 0; var13 < class_240.field_803.length; var13++) {
-            class_240 var14 = class_240.field_803[var13];
+         for (int var13 = 0; var13 < Direction.field_803.length; var13++) {
+            Direction var14 = Direction.field_803[var13];
             class_1331 var9 = var12.method_16143(var14);
             class_3511 var10 = this.method_34563(var9);
             var12.method_16139(var14, var10);
@@ -121,7 +121,7 @@ public class class_7626 {
       int var5 = var4.method_12173() >> 8 << 8;
       int var6 = var4.method_12185() >> 8 << 8;
       class_2034 var7 = new class_2034(var5, var6);
-      class_3581[] var8 = class_3581.field_17580;
+      RenderLayer[] var8 = RenderLayer.field_17580;
       class_6076[] var9 = this.field_38806.get(var7);
       if (var9 == null) {
          var9 = new class_6076[var8.length];
@@ -134,7 +134,7 @@ public class class_7626 {
       }
 
       for (int var13 = 0; var13 < var8.length; var13++) {
-         class_3581 var11 = var8[var13];
+         RenderLayer var11 = var8[var13];
          class_6076 var12 = var9[var13];
          if (var12 != null) {
             var1.method_16180(var11).method_36287(var12);

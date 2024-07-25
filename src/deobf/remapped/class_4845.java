@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4845<T extends class_8145> extends class_5103<T> {
+public class class_4845<T extends Entity> extends class_5103<T> {
    private static String[] field_24173;
    private boolean field_24172;
    private final class_1549 field_24174 = new class_1549(this).method_7033(64, 128);

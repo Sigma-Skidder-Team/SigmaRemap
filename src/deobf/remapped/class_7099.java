@@ -83,7 +83,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
       }
    }
 
-   public static int method_32631(class_6486 var0, class_8346 var1, int var2, int var3, int var4, int var5, int var6) {
+   public static int method_32631(World var0, class_8346 var1, int var2, int var3, int var4, int var5, int var6) {
       if (!var0.field_33055 && var6 != 0 && (var2 + var3 + var4 + var5) % 200 == 0) {
          var6 = method_32633(var0, var1, var3, var4, var5);
       }
@@ -91,7 +91,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
       return var6;
    }
 
-   public static int method_32633(class_6486 var0, class_8346 var1, int var2, int var3, int var4) {
+   public static int method_32633(World var0, class_8346 var1, int var2, int var3, int var4) {
       int var7 = 0;
       float var8 = 5.0F;
 
@@ -124,7 +124,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
          double var7 = (double)this.field_18358.method_12165() + 0.5;
          double var9 = (double)this.field_18358.method_12185() + 0.5;
          if (var4 == class_9264.field_47277) {
-            class_240 var11 = class_6942.method_31758(this.method_17403());
+            Direction var11 = class_6942.method_31758(this.method_17403());
             var5 += (double)var11.method_1041() * 0.5;
             var9 += (double)var11.method_1034() * 0.5;
          }

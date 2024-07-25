@@ -10,8 +10,8 @@ public class class_3569 {
    private final class_9633 field_17465 = new class_9633(256);
    private TextRenderer field_17464;
    public TextureManager field_17470;
-   public class_6486 field_17466;
-   public class_9071 field_17463;
+   public World field_17466;
+   public Camera field_17463;
    public class_7474 field_17467;
    public class_3757 field_17469;
 
@@ -46,7 +46,7 @@ public class class_3569 {
       return (class_2255<E>)this.field_17471.get(var1.method_17405());
    }
 
-   public void method_16590(class_6486 var1, TextureManager var2, TextRenderer var3, class_9071 var4, class_7474 var5) {
+   public void method_16590(World var1, TextureManager var2, TextRenderer var3, Camera var4, class_7474 var5) {
       if (this.field_17466 != var1) {
          this.method_16588(var1);
       }
@@ -67,12 +67,12 @@ public class class_3569 {
    }
 
    private static <T extends class_3757> void method_16585(class_2255<T> var0, T var1, float var2, class_7966 var3, class_2565 var4) {
-      class_6486 var7 = var1.method_17402();
+      World var7 = var1.method_17402();
       int var8;
       if (var7 == null) {
          var8 = 15728880;
       } else {
-         var8 = class_4316.method_20002(var7, var1.method_17399());
+         var8 = WorldRenderer.method_20002(var7, var1.method_17399());
       }
 
       if (class_5052.method_23281()) {
@@ -130,7 +130,7 @@ public class class_3569 {
       }
    }
 
-   public void method_16588(class_6486 var1) {
+   public void method_16588(World var1) {
       this.field_17466 = var1;
       if (var1 == null) {
          this.field_17463 = null;

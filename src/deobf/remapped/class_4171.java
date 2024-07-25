@@ -1,6 +1,6 @@
 package remapped;
 
-public abstract class class_4171<T extends class_8145, M extends class_6521<T>> {
+public abstract class class_4171<T extends Entity, M extends class_6521<T>> {
    private final class_2514<T, M> field_20302;
 
    public class_4171(class_2514<T, M> var1) {
@@ -36,7 +36,7 @@ public abstract class class_4171<T extends class_8145, M extends class_6521<T>> 
    public static <T extends class_5834> void method_19348(
            class_6521<T> var0, Identifier var1, class_7966 var2, class_2565 var3, int var4, T var5, float var6, float var7, float var8
    ) {
-      class_7907 var11 = var3.method_11645(class_3581.method_16755(var1));
+      class_7907 var11 = var3.method_11645(RenderLayer.method_16755(var1));
       var0.method_45499(var2, var11, var4, class_6353.method_29110(var5, 0.0F), var6, var7, var8, 1.0F);
    }
 

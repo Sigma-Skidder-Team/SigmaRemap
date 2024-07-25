@@ -8,7 +8,7 @@ public abstract class class_1899 extends class_4612 {
    public int field_9697;
    public int field_9700;
 
-   public class_1899(class_6629<? extends class_1899> var1, class_6486 var2) {
+   public class_1899(class_6629<? extends class_1899> var1, World var2) {
       super(var1, var2);
    }
 

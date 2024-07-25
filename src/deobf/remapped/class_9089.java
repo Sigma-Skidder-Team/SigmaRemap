@@ -41,7 +41,7 @@ public class class_9089 extends class_2609 {
       var7.add(
          new class_4099(
             var2,
-            class_4783.field_23319.method_29260().method_10308(class_195.field_655, class_7660.method_34669(class_240.field_802, class_240.field_800)),
+            class_4783.field_23319.method_29260().method_10308(class_195.field_655, class_7660.method_34669(Direction.field_802, Direction.field_800)),
             this.field_46544
          )
       );

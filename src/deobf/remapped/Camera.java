@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_9071 {
+public class Camera {
    private static String[] field_46422;
    private boolean field_46421;
    private class_6163 field_46410;
-   private class_8145 field_46419;
+   private Entity field_46419;
    private class_1343 field_46411 = class_1343.field_7335;
    private final class_2921 field_46414 = new class_2921();
    private final class_2426 field_46408 = new class_2426(0.0F, 0.0F, 1.0F);
@@ -12,13 +12,13 @@ public class class_9071 {
    private final class_2426 field_46418 = new class_2426(1.0F, 0.0F, 0.0F);
    private float field_46415;
    private float field_46412;
-   private final class_5422 field_46416 = new class_5422(0.0F, 0.0F, 0.0F, 1.0F);
+   private final Quaternion field_46416 = new Quaternion(0.0F, 0.0F, 0.0F, 1.0F);
    private boolean field_46417;
    private boolean field_46409;
    private float field_46413;
    private float field_46420;
 
-   public void method_41643(class_6163 var1, class_8145 var2, boolean var3, boolean var4, float var5) {
+   public void method_41643(class_6163 var1, Entity var2, boolean var3, boolean var4, float var5) {
       this.field_46421 = true;
       this.field_46410 = var1;
       this.field_46419 = var2;
@@ -33,7 +33,7 @@ public class class_9071 {
       );
       if (!var3) {
          if (var2 instanceof class_5834 && ((class_5834)var2).method_26507()) {
-            class_240 var8 = ((class_5834)var2).method_26408();
+            Direction var8 = ((class_5834)var2).method_26408();
             this.method_41637(var8 == null ? 0.0F : var8.method_1028() - 180.0F, 0.0F);
             this.method_41635(0.0, 0.3, 0.0);
          }
@@ -131,11 +131,11 @@ public class class_9071 {
       return this.field_46412;
    }
 
-   public class_5422 method_41644() {
+   public Quaternion method_41644() {
       return this.field_46416;
    }
 
-   public class_8145 method_41633() {
+   public Entity method_41633() {
       return this.field_46419;
    }
 

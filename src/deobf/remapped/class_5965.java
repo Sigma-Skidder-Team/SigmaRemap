@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_5965 {
    private static final Logger field_30384 = LogManager.getLogger();
-   public static class_5621<class_6486> field_30386 = null;
+   public static class_5621<World> field_30386 = null;
 
    public static <T extends class_1977> void method_27245(class_6310<T> var0, T var1, class_6331 var2) throws ThreadQuickExitException {
       method_27246(var0, var1, var2.method_29522());
@@ -30,7 +30,7 @@ public class class_5965 {
 
    public static void method_27243(class_6310 var0) {
       if (var0 instanceof class_509) {
-         MinecraftClient.getInstance().field_9657.method_20000();
+         MinecraftClient.getInstance().worldRenderer.method_20000();
       }
 
       if (!(var0 instanceof class_7786)) {

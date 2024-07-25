@@ -23,7 +23,7 @@ public class class_8947 implements class_6605 {
       } else {
          ArrayList var6 = Lists.newArrayList();
 
-         for (class_8145 var8 : var5) {
+         for (Entity var8 : var5) {
             var6.add(var8.method_37206());
          }
 

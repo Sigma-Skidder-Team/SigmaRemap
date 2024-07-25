@@ -29,7 +29,7 @@ public class class_9125 extends class_1131 {
       method_4969(var1, var11.method_6090());
       method_4969(var1, var11.method_6073());
       method_4969(var1, var11.method_6073().method_6090());
-      class_240 var12 = class_9594.field_48893.method_44313(var2);
+      Direction var12 = class_9594.field_48893.method_44313(var2);
       int var13 = var3 - var2.nextInt(4);
       int var14 = 2 - var2.nextInt(3);
       int var15 = var4.method_12173();

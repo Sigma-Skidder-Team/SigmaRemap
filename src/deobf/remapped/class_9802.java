@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_9802 extends class_3259 {
-   public class_9802(Screen var1, class_8881 var2) {
+   public class_9802(Screen var1, GameOptions var2) {
       super(var1, var2, new TranslationTextComponent("options.skinCustomisation.title"));
    }
 

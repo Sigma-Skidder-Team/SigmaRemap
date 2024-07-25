@@ -16,7 +16,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    private int field_49239;
    private UUID field_49245;
 
-   public class_9668(class_6629<? extends class_9668> var1, class_6486 var2) {
+   public class_9668(class_6629<? extends class_9668> var1, World var2) {
       super(var1, var2);
    }
 
@@ -170,7 +170,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       boolean var4 = var1.method_37181(class_6199.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
       if (var4) {
          this.method_37096(this, var1);

@@ -30,7 +30,7 @@ public abstract class class_3418 extends class_4285<class_1941> {
             var1.method_7513(var7, class_2351.field_11809.method_10606(var2).method_29260(), 2);
          }
 
-         for (class_240 var10 : class_9594.field_48893) {
+         for (Direction var10 : class_9594.field_48893) {
             if (var2.nextFloat() < 0.2F) {
                class_1331 var11 = var3.method_6098(var10);
                if (var1.method_28262(var11).method_8350(class_4783.field_23900)) {

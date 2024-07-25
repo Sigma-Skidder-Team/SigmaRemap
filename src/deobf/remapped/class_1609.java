@@ -12,7 +12,7 @@ public class class_1609 extends class_4040 implements class_2354 {
    private class_9625<class_4040> field_8348;
    private class_2978<class_704> field_8349;
 
-   public class_1609(class_6629<? extends class_1609> var1, class_6486 var2) {
+   public class_1609(class_6629<? extends class_1609> var1, World var2) {
       super(var1, var2);
    }
 

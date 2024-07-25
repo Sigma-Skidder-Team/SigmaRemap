@@ -22,7 +22,7 @@ public class class_6979 extends class_2700 {
       return new class_6979(var0.field_10328, var1, var0.field_10327);
    }
 
-   public static class_6979 method_31923(class_8145 var0) {
+   public static class_6979 method_31923(Entity var0) {
       return new class_6979(
          method_31915(class_9299.method_42847(var0.method_37302())),
          method_31915(class_9299.method_42847(var0.method_37309())),
@@ -34,7 +34,7 @@ public class class_6979 extends class_2700 {
       return new class_6979(method_31895(var0), method_31929(var0), method_31916(var0));
    }
 
-   public static long method_31928(long var0, class_240 var2) {
+   public static long method_31928(long var0, Direction var2) {
       return method_31927(var0, var2.method_1041(), var2.method_1054(), var2.method_1034());
    }
 

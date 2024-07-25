@@ -15,9 +15,9 @@ public enum class_6139 {
       }
    });
    private final String field_31492;
-   private final BiFunction<class_1343, class_8145, class_1343> field_31489;
+   private final BiFunction<class_1343, Entity, class_1343> field_31489;
 
-   private class_6139(String var3, BiFunction<class_1343, class_8145, class_1343> var4) {
+   private class_6139(String var3, BiFunction<class_1343, Entity, class_1343> var4) {
       this.field_31492 = var3;
       this.field_31489 = var4;
    }
@@ -27,12 +27,12 @@ public enum class_6139 {
       return field_31488.get(var0);
    }
 
-   public class_1343 method_28187(class_8145 var1) {
+   public class_1343 method_28187(Entity var1) {
       return this.field_31489.apply(var1.method_37245(), var1);
    }
 
    public class_1343 method_28188(class_9155 var1) {
-      class_8145 var4 = var1.method_42200();
+      Entity var4 = var1.method_42200();
       return var4 != null ? this.field_31489.apply(var1.method_42192(), var4) : var1.method_42192();
    }
 }

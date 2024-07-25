@@ -3,7 +3,7 @@ package remapped;
 public class class_875 extends class_7164<class_1609, class_4845<class_1609>> {
    private static final Identifier field_4520 = new Identifier("textures/entity/witch.png");
 
-   public class_875(class_6122 var1) {
+   public class_875(EntityRenderDispatcher var1) {
       super(var1, new class_4845<class_1609>(0.0F), 0.5F);
       this.method_29100(new class_5865<class_1609>(this));
    }

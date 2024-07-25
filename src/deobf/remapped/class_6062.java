@@ -164,7 +164,7 @@ public abstract class class_6062<C extends class_9472> {
          var3.set(var19);
          var5.method_13362(var11, var14, var12);
          class_2522 var20 = var1.method_28262(var5);
-         class_2522 var21 = var1.method_28262(var6.method_13371(var5, class_240.field_817));
+         class_2522 var21 = var1.method_28262(var6.method_13371(var5, Direction.field_817));
          if (var20.method_8350(class_4783.field_23259) || var20.method_8350(class_4783.field_23162)) {
             var16.setTrue();
          }
@@ -173,7 +173,7 @@ public abstract class class_6062<C extends class_9472> {
             if (var14 >= 11) {
                var1.method_27348(var5, field_31009, false);
                if (var16.isTrue()) {
-                  var7.method_13371(var5, class_240.field_802);
+                  var7.method_13371(var5, Direction.field_802);
                   if (var1.method_28262(var7).method_8350(class_4783.field_23592)) {
                      var1.method_27348(var7, ((class_6325)var2.apply(var5)).method_28875().method_9460().method_19215(), false);
                   }

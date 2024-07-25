@@ -5,7 +5,7 @@ public class class_1900 {
    public final class_3802[] field_9701;
    public final class_2426 field_9703;
 
-   public class_1900(class_3802[] var1, float var2, float var3, float var4, float var5, float var6, float var7, boolean var8, class_240 var9) {
+   public class_1900(class_3802[] var1, float var2, float var3, float var4, float var5, float var6, float var7, boolean var8, Direction var9) {
       this.field_9701 = var1;
       float var12 = 0.0F / var6;
       float var13 = 0.0F / var7;

@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_91 extends class_8145 {
+public class class_91 extends Entity {
    private static final class_7821<class_6098> field_180 = class_8073.<class_6098>method_36641(class_91.class, class_2734.field_13357);
    private int field_178;
    private int field_174;
@@ -15,19 +15,19 @@ public class class_91 extends class_8145 {
    private UUID field_179;
    public final float field_173;
 
-   public class_91(class_6629<? extends class_91> var1, class_6486 var2) {
+   public class_91(class_6629<? extends class_91> var1, World var2) {
       super(var1, var2);
       this.field_173 = (float)(Math.random() * Math.PI * 2.0);
    }
 
-   public class_91(class_6486 var1, double var2, double var4, double var6) {
+   public class_91(World var1, double var2, double var4, double var6) {
       this(class_6629.field_34208, var1);
       this.method_37256(var2, var4, var6);
       this.field_41701 = this.field_41717.nextFloat() * 360.0F;
       this.method_37214(this.field_41717.nextDouble() * 0.2 - 0.1, 0.2, this.field_41717.nextDouble() * 0.2 - 0.1);
    }
 
-   public class_91(class_6486 var1, double var2, double var4, double var6, class_6098 var8) {
+   public class_91(World var1, double var2, double var4, double var6, class_6098 var8) {
       this(var1, var2, var4, var6);
       this.method_248(var8);
    }
@@ -306,8 +306,8 @@ public class class_91 extends class_8145 {
 
    @Nullable
    @Override
-   public class_8145 method_37326(class_6331 var1) {
-      class_8145 var4 = super.method_37326(var1);
+   public Entity method_37326(class_6331 var1) {
+      Entity var4 = super.method_37326(var1);
       if (!this.field_41768.field_33055 && var4 instanceof class_91) {
          ((class_91)var4).method_255();
       }

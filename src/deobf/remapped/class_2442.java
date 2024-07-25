@@ -22,11 +22,11 @@ public class class_2442 extends class_4314 {
    }
 
    @Override
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, class_240 var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
       return var1.<Integer>method_10313(field_12134);
    }
 
-   public static void method_11129(class_2522 var0, class_6486 var1, class_1331 var2) {
+   public static void method_11129(class_2522 var0, World var1, class_1331 var2) {
       if (var1.method_22572().method_40229()) {
          int var5 = var1.method_25266(class_2957.field_14437, var2) - var1.method_22557();
          float var6 = var1.method_29553(1.0F);
@@ -49,7 +49,7 @@ public class class_2442 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (!var4.method_3181()) {
          return super.method_10777(var1, var2, var3, var4, var5, var6);
       } else if (!var2.field_33055) {

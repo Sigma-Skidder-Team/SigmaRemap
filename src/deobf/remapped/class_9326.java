@@ -202,11 +202,11 @@ public class class_9326 implements class_2231 {
       }
    }
 
-   public void method_43051(class_8145 var1, class_5079 var2) {
+   public void method_43051(Entity var1, class_5079 var2) {
       this.field_47621.add(new class_3705(this.field_47617, var1, var2));
    }
 
-   public void method_43042(class_8145 var1, class_5079 var2, int var3) {
+   public void method_43042(Entity var1, class_5079 var2, int var3) {
       this.field_47621.add(new class_3705(this.field_47617, var1, var2, var3));
    }
 
@@ -306,11 +306,11 @@ public class class_9326 implements class_2231 {
       }
    }
 
-   public void method_43045(class_7966 var1, class_3758 var2, class_5778 var3, class_9071 var4, float var5) {
+   public void method_43045(class_7966 var1, class_3758 var2, class_5778 var3, Camera var4, float var5) {
       this.method_43046(var1, var2, var3, var4, var5, (class_2359)null);
    }
 
-   public void method_43046(class_7966 var1, class_3758 var2, class_5778 var3, class_9071 var4, float var5, class_2359 var6) {
+   public void method_43046(class_7966 var1, class_3758 var2, class_5778 var3, Camera var4, float var5, class_2359 var6) {
       var3.method_26126();
       Runnable var9 = () -> {
          class_3542.method_16374();
@@ -431,7 +431,7 @@ public class class_9326 implements class_2231 {
       }
    }
 
-   public void method_43058(class_1331 var1, class_240 var2) {
+   public void method_43058(class_1331 var1, Direction var2) {
       class_2522 var5 = this.field_47617.method_28262(var1);
       if (var5.method_8352() != class_7537.field_38470) {
          int var6 = var1.method_12173();
@@ -442,27 +442,27 @@ public class class_9326 implements class_2231 {
          double var11 = (double)var6 + this.field_47620.nextDouble() * (var10.field_19940 - var10.field_19941 - 0.2F) + 0.1F + var10.field_19941;
          double var13 = (double)var7 + this.field_47620.nextDouble() * (var10.field_19939 - var10.field_19937 - 0.2F) + 0.1F + var10.field_19937;
          double var15 = (double)var8 + this.field_47620.nextDouble() * (var10.field_19942 - var10.field_19938 - 0.2F) + 0.1F + var10.field_19938;
-         if (var2 == class_240.field_802) {
+         if (var2 == Direction.field_802) {
             var13 = (double)var7 + var10.field_19937 - 0.1F;
          }
 
-         if (var2 == class_240.field_817) {
+         if (var2 == Direction.field_817) {
             var13 = (double)var7 + var10.field_19939 + 0.1F;
          }
 
-         if (var2 == class_240.field_818) {
+         if (var2 == Direction.field_818) {
             var15 = (double)var8 + var10.field_19938 - 0.1F;
          }
 
-         if (var2 == class_240.field_800) {
+         if (var2 == Direction.field_800) {
             var15 = (double)var8 + var10.field_19942 + 0.1F;
          }
 
-         if (var2 == class_240.field_809) {
+         if (var2 == Direction.field_809) {
             var11 = (double)var6 + var10.field_19941 - 0.1F;
          }
 
-         if (var2 == class_240.field_804) {
+         if (var2 == Direction.field_804) {
             var11 = (double)var6 + var10.field_19940 + 0.1F;
          }
 
@@ -492,7 +492,7 @@ public class class_9326 implements class_2231 {
       if (var5 != null) {
          boolean var6 = class_7860.method_35565(var5, class_7860.field_39850, this.field_47617, var2, this);
          if (!var6) {
-            class_240 var7 = var2.method_43956();
+            Direction var7 = var2.method_43956();
             this.method_43058(var1, var7);
          }
       }

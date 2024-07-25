@@ -15,7 +15,7 @@ public class class_667 implements class_8932<class_6867> {
    }
 
    @Override
-   public boolean method_41052(class_6867 var1, class_6486 var2) {
+   public boolean method_41052(class_6867 var1, World var2) {
       return this.field_3695.test(var1.method_31498(0)) && this.field_3697.test(var1.method_31498(1));
    }
 

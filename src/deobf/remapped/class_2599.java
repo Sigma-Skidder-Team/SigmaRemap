@@ -61,7 +61,7 @@ public class class_2599 extends class_6993 implements class_3832 {
       }
    );
 
-   public class_2599(class_6629<? extends class_6993> var1, class_6486 var2) {
+   public class_2599(class_6629<? extends class_6993> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }
@@ -383,7 +383,7 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public boolean method_37354(class_8145 var1, boolean var2) {
+   public boolean method_37354(Entity var1, boolean var2) {
       if (this.method_26449() && var1.method_37387() == class_6629.field_34306) {
          var1 = this.method_11792(var1, 3);
       }
@@ -391,9 +391,9 @@ public class class_2599 extends class_6993 implements class_3832 {
       return super.method_37354(var1, var2);
    }
 
-   private class_8145 method_11792(class_8145 var1, int var2) {
+   private Entity method_11792(Entity var1, int var2) {
       List var5 = var1.method_37114();
-      return var2 != 1 && !var5.isEmpty() ? this.method_11792((class_8145)var5.get(0), var2 - 1) : var1;
+      return var2 != 1 && !var5.isEmpty() ? this.method_11792((Entity)var5.get(0), var2 - 1) : var1;
    }
 
    @Override

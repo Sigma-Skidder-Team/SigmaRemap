@@ -37,7 +37,7 @@ public class class_3116 {
       }
    }
 
-   public boolean method_14460(class_8145 var1) {
+   public boolean method_14460(Entity var1) {
       return this.field_15502.contains(var1.method_45509().getUnformattedComponentText().toLowerCase());
    }
 
@@ -45,7 +45,7 @@ public class class_3116 {
       return this.field_15502.contains(var1.toLowerCase());
    }
 
-   public boolean method_14469(class_8145 var1) {
+   public boolean method_14469(Entity var1) {
       return this.field_15503.contains(var1.method_45509().getUnformattedComponentText().toLowerCase());
    }
 

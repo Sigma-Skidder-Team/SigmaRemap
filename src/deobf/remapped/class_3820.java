@@ -84,7 +84,7 @@ public class class_3820 extends class_4285<class_1941> {
                if (var1.method_22548(var38)) {
                   int var24 = 0;
 
-                  for (class_240 var26 : class_9594.field_48893) {
+                  for (Direction var26 : class_9594.field_48893) {
                      if (var1.method_28262(var38.method_6098(var26)).method_8362().method_24499()) {
                         var24++;
                      }

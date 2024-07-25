@@ -18,7 +18,7 @@ public class class_912 extends class_1173 implements class_6250 {
    private int field_4682;
    private UUID field_4687;
 
-   public class_912(class_6629<? extends class_912> var1, class_6486 var2) {
+   public class_912(class_6629<? extends class_912> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
       this.method_26895(class_1108.field_6359, -1.0F);
@@ -219,7 +219,7 @@ public class class_912 extends class_1173 implements class_6250 {
       }
    }
 
-   private boolean method_3911(class_8145 var1) {
+   private boolean method_3911(Entity var1) {
       class_1343 var4 = new class_1343(
          this.method_37302() - var1.method_37302(), this.method_37080(0.5) - var1.method_37388(), this.method_37156() - var1.method_37156()
       );
@@ -235,7 +235,7 @@ public class class_912 extends class_1173 implements class_6250 {
       class_2921 var9 = new class_2921(var1, var3, var5);
 
       while (var9.method_12165() > 0 && !this.field_41768.method_28262(var9).method_8362().method_24502()) {
-         var9.method_13368(class_240.field_802);
+         var9.method_13368(Direction.field_802);
       }
 
       class_2522 var10 = this.field_41768.method_28262(var9);

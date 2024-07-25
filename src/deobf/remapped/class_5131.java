@@ -17,7 +17,7 @@ public class class_5131 extends class_9335 {
       if (this.field_26468.method_26594().nextInt(this.field_26466) != 0) {
          return false;
       } else {
-         class_240 var3 = this.field_26468.method_37235();
+         Direction var3 = this.field_26468.method_37235();
          int var4 = var3.method_1041();
          int var5 = var3.method_1034();
          class_1331 var6 = this.field_26468.method_37075();
@@ -62,7 +62,7 @@ public class class_5131 extends class_9335 {
 
    @Override
    public void method_16796() {
-      class_240 var3 = this.field_26468.method_37235();
+      Direction var3 = this.field_26468.method_37235();
       this.field_26468.method_37215(this.field_26468.method_37098().method_6214((double)var3.method_1041() * 0.6, 0.7, (double)var3.method_1034() * 0.6));
       this.field_26468.method_26927().method_5620();
    }
@@ -88,7 +88,7 @@ public class class_5131 extends class_9335 {
       if (var9.field_7333 * var9.field_7333 < 0.03F && this.field_26468.field_41755 != 0.0F) {
          this.field_26468.field_41755 = class_9299.method_42833(this.field_26468.field_41755, 0.0F, 0.2F);
       } else {
-         double var5 = Math.sqrt(class_8145.method_37266(var9));
+         double var5 = Math.sqrt(Entity.method_37266(var9));
          double var7 = Math.signum(-var9.field_7333) * Math.acos(var5 / var9.method_6217()) * 180.0F / (float)Math.PI;
          this.field_26468.field_41755 = (float)var7;
       }

@@ -5,18 +5,18 @@ import java.util.Set;
 
 public class class_6807 {
    private BitSet field_35114;
-   private static final int field_35116 = class_240.values().length;
+   private static final int field_35116 = Direction.values().length;
    private long field_35115;
 
-   public void method_31245(Set<class_240> var1) {
-      for (class_240 var5 : var1) {
-         for (class_240 var7 : var1) {
+   public void method_31245(Set<Direction> var1) {
+      for (Direction var5 : var1) {
+         for (Direction var7 : var1) {
             this.method_31247(var5, var7, true);
          }
       }
    }
 
-   public void method_31247(class_240 var1, class_240 var2, boolean var3) {
+   public void method_31247(Direction var1, Direction var2, boolean var3) {
       this.method_31252(var1.ordinal() + var2.ordinal() * field_35116, var3);
       this.method_31252(var2.ordinal() + var1.ordinal() * field_35116, var3);
    }
@@ -29,7 +29,7 @@ public class class_6807 {
       }
    }
 
-   public boolean method_31246(class_240 var1, class_240 var2) {
+   public boolean method_31246(Direction var1, Direction var2) {
       return this.method_31244(var1.ordinal() + var2.ordinal() * field_35116);
    }
 
@@ -38,16 +38,16 @@ public class class_6807 {
       StringBuilder var3 = new StringBuilder();
       var3.append(' ');
 
-      for (class_240 var7 : class_240.values()) {
+      for (Direction var7 : Direction.values()) {
          var3.append(' ').append(var7.toString().toUpperCase().charAt(0));
       }
 
       var3.append('\n');
 
-      for (class_240 var16 : class_240.values()) {
+      for (Direction var16 : Direction.values()) {
          var3.append(var16.toString().toUpperCase().charAt(0));
 
-         for (class_240 var11 : class_240.values()) {
+         for (Direction var11 : Direction.values()) {
             if (var16 != var11) {
                boolean var12 = this.method_31246(var16, var11);
                var3.append(' ').append((char)(!var12 ? 'n' : 'Y'));

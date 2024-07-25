@@ -29,7 +29,7 @@ public abstract class class_9476 extends class_6414 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       if (var4.nextInt(24) == 0) {
          var2.method_29527(
             (double)var3.method_12173() + 0.5,
@@ -45,7 +45,7 @@ public abstract class class_9476 extends class_6414 {
 
       class_1331 var7 = var3.method_6100();
       class_2522 var8 = var2.method_28262(var7);
-      if (!this.method_43770(var8) && !var8.method_8308(var2, var7, class_240.field_817)) {
+      if (!this.method_43770(var8) && !var8.method_8308(var2, var7, Direction.field_817)) {
          if (this.method_43770(var2.method_28262(var3.method_6108()))) {
             for (int var16 = 0; var16 < 2; var16++) {
                double var21 = (double)var3.method_12173() + var4.nextDouble() * 0.1F;
@@ -103,7 +103,7 @@ public abstract class class_9476 extends class_6414 {
    public abstract boolean method_43770(class_2522 var1);
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       if (!var4.method_37087()) {
          var4.method_37164(var4.method_37230() + 1);
          if (var4.method_37230() == 0) {
@@ -117,7 +117,7 @@ public abstract class class_9476 extends class_6414 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var4.method_8350(var1.method_8360())) {
          if (method_43767(var2)) {
             Optional var8 = class_2018.method_9378(var2, var3, class_9249.field_47215);
@@ -133,30 +133,30 @@ public abstract class class_9476 extends class_6414 {
       }
    }
 
-   private static boolean method_43767(class_6486 var0) {
-      return var0.method_29545() == class_6486.field_33048 || var0.method_29545() == class_6486.field_33029;
+   private static boolean method_43767(World var0) {
+      return var0.method_29545() == World.field_33048 || var0.method_29545() == World.field_33029;
    }
 
    @Override
-   public void method_29265(class_6486 var1, class_1331 var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, class_1331 var2, class_2522 var3, class_704 var4) {
       if (!var1.method_22567()) {
          var1.method_43365((class_704)null, 1009, var2, 0);
       }
    }
 
-   public static boolean method_43769(class_6486 var0, class_1331 var1, class_240 var2) {
+   public static boolean method_43769(World var0, class_1331 var1, Direction var2) {
       class_2522 var5 = var0.method_28262(var1);
       return !var5.method_8345() ? false : method_43768(var0, var1).method_8309(var0, var1) || method_43771(var0, var1, var2);
    }
 
-   private static boolean method_43771(class_6486 var0, class_1331 var1, class_240 var2) {
+   private static boolean method_43771(World var0, class_1331 var1, Direction var2) {
       if (!method_43767(var0)) {
          return false;
       } else {
          class_2921 var5 = var1.method_6089();
          boolean var6 = false;
 
-         for (class_240 var10 : class_240.values()) {
+         for (Direction var10 : Direction.values()) {
             if (var0.method_28262(var5.method_13364(var1).method_13368(var10)).method_8350(class_4783.field_23881)) {
                var6 = true;
                break;

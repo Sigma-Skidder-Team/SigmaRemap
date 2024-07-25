@@ -118,7 +118,7 @@ public class class_1598 extends class_8131 {
    private void method_7165(Random var1, class_9379 var2, class_1331 var3) {
       class_2522 var6 = var2.method_28262(var3);
       if (!var6.method_8345() && !var6.method_8350(class_4783.field_23323)) {
-         class_240 var7 = class_9594.field_48893.method_44313(var1);
+         Direction var7 = class_9594.field_48893.method_44313(var1);
          class_1331 var8 = var3.method_6098(var7);
          class_2522 var9 = var2.method_28262(var8);
          if (var9.method_8345() && class_6414.method_29303(var6.method_8324(var2, var3), var7)) {
@@ -151,7 +151,7 @@ public class class_1598 extends class_8131 {
       int var7 = 8;
 
       while (var7 > 0 && var1.nextFloat() < 0.5F) {
-         var6.method_13368(class_240.field_802);
+         var6.method_13368(Direction.field_802);
          var7--;
          this.method_7164(var1, var2, var6);
       }

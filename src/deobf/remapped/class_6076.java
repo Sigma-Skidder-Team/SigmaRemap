@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
 public class class_6076 {
-   private class_3581 field_31104 = null;
+   private RenderLayer field_31104 = null;
    private int field_31093 = class_1920.method_8817();
    private int field_31094 = 4096;
    private int field_31100 = 0;
@@ -18,7 +18,7 @@ public class class_6076 {
    private int field_31103 = 7;
    private boolean field_31097 = class_3111.method_14424();
 
-   public class_6076(class_3581 var1) {
+   public class_6076(RenderLayer var1) {
       this.field_31104 = var1;
       this.method_27823();
       long var4 = this.method_27827(this.field_31094);

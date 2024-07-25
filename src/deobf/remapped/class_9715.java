@@ -7,11 +7,11 @@ public class class_9715 extends class_292 implements class_4511 {
    private int field_49379 = -1;
    private final class_1331 field_49378 = class_1331.field_7306;
 
-   public class_9715(class_6629<? extends class_9715> var1, class_6486 var2) {
+   public class_9715(class_6629<? extends class_9715> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_9715(class_6486 var1, double var2, double var4, double var6) {
+   public class_9715(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34213, var2, var4, var6, var1);
    }
 
@@ -52,7 +52,7 @@ public class class_9715 extends class_292 implements class_4511 {
    }
 
    @Override
-   public class_6486 method_17402() {
+   public World method_17402() {
       return this.field_41768;
    }
 
@@ -94,7 +94,7 @@ public class class_9715 extends class_292 implements class_4511 {
 
    public boolean method_44871() {
       if (!class_5772.method_26101(this)) {
-         List var3 = this.field_41768.<class_8145>method_25869(class_91.class, this.method_37241().method_18899(0.25, 0.0, 0.25), class_3572.field_17481);
+         List var3 = this.field_41768.<Entity>method_25869(class_91.class, this.method_37241().method_18899(0.25, 0.0, 0.25), class_3572.field_17481);
          if (!var3.isEmpty()) {
             class_5772.method_26105(this, (class_91)var3.get(0));
          }

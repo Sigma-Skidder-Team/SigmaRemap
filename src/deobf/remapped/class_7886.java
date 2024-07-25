@@ -80,7 +80,7 @@ public class class_7886 extends class_4117 {
          class_6705.field_34625++;
          class_1680 var14 = class_3511.method_16140(this.field_40354, var9);
          var14.method_7525();
-         class_3581[] var15 = new class_3581[1];
+         RenderLayer[] var15 = new RenderLayer[1];
          class_2174.method_10113();
          Random var16 = new Random();
          class_856 var17 = MinecraftClient.getInstance().method_8505();
@@ -103,10 +103,10 @@ public class class_7886 extends class_4117 {
                class_4774 var37 = var20.method_8364();
                class_1488 var23 = !class_6705.method_30745() ? null : this.method_19132(var19);
                if (!var37.method_22001()) {
-                  class_3581[] var24 = class_3511.method_16188(this.field_40354, var37, var15);
+                  RenderLayer[] var24 = class_3511.method_16188(this.field_40354, var37, var15);
 
                   for (int var25 = 0; var25 < var24.length; var25++) {
-                     class_3581 var26 = var24[var25];
+                     RenderLayer var26 = var24[var25];
                      if (!class_6705.method_30746() || class_7860.method_35566(class_7860.field_39908, var37, var26)) {
                         if (class_6705.method_30725()) {
                            class_7860.method_35547(class_7860.field_40031, var26);
@@ -130,10 +130,10 @@ public class class_7886 extends class_4117 {
                }
 
                if (var20.method_8352() != class_7537.field_38470) {
-                  class_3581[] var38 = class_3511.method_16149(this.field_40354, var20, var15);
+                  RenderLayer[] var38 = class_3511.method_16149(this.field_40354, var20, var15);
 
                   for (int var39 = 0; var39 < var38.length; var39++) {
-                     class_3581 var40 = var38[var39];
+                     RenderLayer var40 = var38[var39];
                      if (!class_6705.method_30734() || class_7860.method_35566(class_7860.field_40075, var20, var40)) {
                         if (class_6705.method_30725()) {
                            class_7860.method_35547(class_7860.field_40031, var40);
@@ -175,8 +175,8 @@ public class class_7886 extends class_4117 {
             }
          }
 
-         if (class_8845.method_40687(var4).contains(class_3581.method_16762())) {
-            class_9633 var29 = var5.method_12956(class_3581.method_16762());
+         if (class_8845.method_40687(var4).contains(RenderLayer.method_16762())) {
+            class_9633 var29 = var5.method_12956(RenderLayer.method_16762());
             var29.method_44482(
                (float)class_3511.method_16145(this.field_40354) + var1 - (float)var9.method_12173(),
                (float)class_3511.method_16144(this.field_40354) + var2 - (float)var9.method_12165(),
@@ -187,11 +187,11 @@ public class class_7886 extends class_4117 {
 
          class_8845.method_40701(var4).stream().<class_9633>map(var5::method_12956).forEach(class_9633::method_44487);
 
-         for (class_3581 var36 : class_6705.field_34622) {
+         for (RenderLayer var36 : class_6705.field_34622) {
             var4.method_40700(var36, (BitSet)null);
          }
 
-         for (class_3581 var33 : class_8845.method_40701(var4)) {
+         for (RenderLayer var33 : class_8845.method_40701(var4)) {
             if (class_3111.method_14424()) {
                class_2448.method_11186(var5.method_12956(var33));
             }

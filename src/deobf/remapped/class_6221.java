@@ -7,7 +7,7 @@ import java.util.Random;
 public class class_6221 implements class_7373 {
    private static String[] field_31785;
    public final List<class_5024> field_31782;
-   public final Map<class_240, List<class_5024>> field_31786;
+   public final Map<Direction, List<class_5024>> field_31786;
    public final boolean field_31779;
    public final boolean field_31778;
    public final boolean field_31781;
@@ -16,7 +16,7 @@ public class class_6221 implements class_7373 {
    public final class_602 field_31784;
 
    public class_6221(
-      List<class_5024> var1, Map<class_240, List<class_5024>> var2, boolean var3, boolean var4, boolean var5, class_5155 var6, class_7729 var7, class_602 var8
+           List<class_5024> var1, Map<Direction, List<class_5024>> var2, boolean var3, boolean var4, boolean var5, class_5155 var6, class_7729 var7, class_602 var8
    ) {
       this.field_31782 = var1;
       this.field_31786 = var2;
@@ -29,7 +29,7 @@ public class class_6221 implements class_7373 {
    }
 
    @Override
-   public List<class_5024> method_33580(class_2522 var1, class_240 var2, Random var3) {
+   public List<class_5024> method_33580(class_2522 var1, Direction var2, Random var3) {
       return var2 != null ? this.field_31786.get(var2) : this.field_31782;
    }
 

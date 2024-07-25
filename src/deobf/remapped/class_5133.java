@@ -3,7 +3,7 @@ package remapped;
 public class class_5133 extends class_1249 {
    private static String[] field_26473;
 
-   public class_5133(class_5886 var1, class_6486 var2) {
+   public class_5133(class_5886 var1, World var2) {
       super(var1, var2);
    }
 
@@ -25,7 +25,7 @@ public class class_5133 extends class_1249 {
    }
 
    @Override
-   public class_3998 method_5598(class_8145 var1, int var2) {
+   public class_3998 method_5598(Entity var1, int var2) {
       return this.method_5615(var1.method_37075(), var2);
    }
 

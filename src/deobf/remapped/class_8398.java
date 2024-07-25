@@ -49,7 +49,7 @@ public class class_8398 extends class_3757 {
          IFormattableTextComponent var7 = ITextComponent$class_40.func_240643_a_(var6.isEmpty() ? "\"\"" : var6);
          if (this.field_18364 instanceof class_6331) {
             try {
-               this.field_42972[var5] = TextComponentUtils.func_240645_a_(this.method_38672((class_9359)null), var7, (class_8145)null, 0);
+               this.field_42972[var5] = TextComponentUtils.func_240645_a_(this.method_38672((class_9359)null), var7, (Entity)null, 0);
             } catch (CommandSyntaxException var9) {
                this.field_42972[var5] = var7;
             }

@@ -82,7 +82,7 @@ public interface class_6191 {
       class_6451.method_29408(class_4897.field_24853.method_10803(), new class_8006());
    }
 
-   static void method_28322(class_8743 var0, class_8145 var1, class_240 var2) {
+   static void method_28322(class_8743 var0, Entity var1, Direction var2) {
       var1.method_37256(
          var0.method_61() + (double)var2.method_1041() * (0.5000099999997474 - (double)var1.method_37086() / 2.0),
          var0.method_60() + (double)var2.method_1054() * (0.5000099999997474 - (double)var1.method_37074() / 2.0) - (double)var1.method_37074() / 2.0,

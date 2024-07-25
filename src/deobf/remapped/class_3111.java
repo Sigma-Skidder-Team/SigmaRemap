@@ -49,7 +49,7 @@ public class class_3111 {
    public static int field_15487 = -1;
    public static boolean field_15485 = false;
    public static boolean field_15486 = false;
-   private static class_8881 field_15483 = null;
+   private static GameOptions field_15483 = null;
    private static MinecraftClient field_15454 = MinecraftClient.getInstance();
    private static boolean field_15471 = false;
    private static Thread field_15482 = null;
@@ -95,7 +95,7 @@ public class class_3111 {
       return var2.toString();
    }
 
-   public static void method_14436(class_8881 var0) {
+   public static void method_14436(GameOptions var0) {
       if (field_15483 == null) {
          field_15483 = var0;
          method_14344();
@@ -906,8 +906,8 @@ public class class_3111 {
       return null;
    }
 
-   public static class_4316 method_14387() {
-      return field_15454.field_9657;
+   public static WorldRenderer method_14387() {
+      return field_15454.worldRenderer;
    }
 
    public static GameRenderer method_14400() {
@@ -1223,7 +1223,7 @@ public class class_3111 {
       }
    }
 
-   public static class_8881 method_14310() {
+   public static GameOptions method_14310() {
       return field_15483;
    }
 
@@ -1462,9 +1462,9 @@ public class class_3111 {
       int var3 = class_7860.method_35553(class_7860.field_40105, -1);
       int var4 = method_14304();
       int var5 = method_14273();
-      int var6 = field_15454.field_9657.method_20054();
-      int var7 = field_15454.field_9657.method_20031();
-      int var8 = field_15454.field_9657.method_20001();
+      int var6 = field_15454.worldRenderer.method_20054();
+      int var7 = field_15454.worldRenderer.method_20031();
+      int var8 = field_15454.worldRenderer.method_20001();
       String var9 = "" + var3 + "/" + var4 + " fps, C: " + var6 + ", E: " + var7 + "+" + var8 + ", U: " + var5;
       field_15454.textRenderer.method_45385(var0, var9, 2.0F, 2.0F, -2039584);
    }

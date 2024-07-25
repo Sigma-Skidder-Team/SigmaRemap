@@ -28,7 +28,7 @@ public class class_4017 extends class_3720 {
          List var6 = class_314.method_1440();
          Collections.sort(var6, new class_4394(this));
 
-         for (class_8145 var8 : var6) {
+         for (Entity var8 : var6) {
             if (var8.method_45509().getString().equalsIgnoreCase(var2[0].method_24060())) {
                this.field_19500.field_49648 = var8;
                break;

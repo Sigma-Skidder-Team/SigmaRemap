@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class class_6911 {
    private final List<class_5024> field_35523 = Lists.newArrayList();
-   private final Map<class_240, List<class_5024>> field_35524 = Maps.newEnumMap(class_240.class);
+   private final Map<Direction, List<class_5024>> field_35524 = Maps.newEnumMap(Direction.class);
    private final class_602 field_35528;
    private final boolean field_35526;
    private class_5155 field_35530;
@@ -20,7 +20,7 @@ public class class_6911 {
    }
 
    private class_6911(boolean var1, boolean var2, boolean var3, class_7729 var4, class_602 var5) {
-      for (class_240 var11 : class_240.values()) {
+      for (Direction var11 : Direction.values()) {
          this.field_35524.put(var11, Lists.newArrayList());
       }
 
@@ -31,7 +31,7 @@ public class class_6911 {
       this.field_35529 = var4;
    }
 
-   public class_6911 method_31667(class_240 var1, class_5024 var2) {
+   public class_6911 method_31667(Direction var1, class_5024 var2) {
       this.field_35524.get(var1).add(var2);
       return this;
    }

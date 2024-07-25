@@ -30,7 +30,7 @@ public class class_5820 extends class_246 {
    }
 
    @Override
-   public void method_44951(class_7907 var1, class_9071 var2, float var3) {
+   public void method_44951(class_7907 var1, Camera var2, float var3) {
       if (!this.field_29522 || this.field_49475 < this.field_49476 / 3 || (this.field_49475 + this.field_49476) / 3 % 2 == 0) {
          super.method_44951(var1, var2, var3);
       }

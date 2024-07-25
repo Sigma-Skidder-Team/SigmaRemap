@@ -7,11 +7,11 @@ public class class_7851 extends class_1080 {
    public double field_39786;
    private static final class_8137 field_39785 = class_8137.method_37019(class_4897.field_24917, class_4897.field_24862);
 
-   public class_7851(class_6629<? extends class_7851> var1, class_6486 var2) {
+   public class_7851(class_6629<? extends class_7851> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_7851(class_6486 var1, double var2, double var4, double var6) {
+   public class_7851(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34311, var1, var2, var4, var6);
    }
 
@@ -138,7 +138,7 @@ public class class_7851 extends class_1080 {
    public class_2522 method_4752() {
       return class_4783.field_23883
          .method_29260()
-         .method_10308(class_3744.field_18523, class_240.field_818)
+         .method_10308(class_3744.field_18523, Direction.field_818)
          .method_10308(class_3744.field_18522, Boolean.valueOf(this.method_35522()));
    }
 }

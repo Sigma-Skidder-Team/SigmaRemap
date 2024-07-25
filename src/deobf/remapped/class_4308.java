@@ -35,7 +35,7 @@ public class class_4308 implements Runnable {
       String var8 = this.field_20900.method_42016("Mode");
       if (var3 && (var5 != null || !this.field_20900.method_42007("Raytrace") || var8.equals("Multi"))) {
          for (class_3357 var10 : class_2534.method_11556(this.field_20900)) {
-            class_8145 var11 = var10.method_15377();
+            Entity var11 = var10.method_15377();
             if (var5 != null && this.field_20900.method_42007("Raytrace") && !var8.equals("Multi")) {
                var11 = var5.method_25524();
             }

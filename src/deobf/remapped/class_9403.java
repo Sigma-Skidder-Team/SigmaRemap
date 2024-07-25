@@ -182,12 +182,12 @@ public class class_9403 implements class_2053 {
          class_6911 var10 = new class_6911(this, this.method_43556(var1, var2), var6).method_31664(var9);
 
          for (class_9487 var12 : this.method_43566()) {
-            for (class_240 var14 : var12.field_48353.keySet()) {
+            for (Direction var14 : var12.field_48353.keySet()) {
                class_7300 var15 = var12.field_48353.get(var14);
                class_5155 var16 = (class_5155)var3.apply(this.method_43564(var15.field_37317));
                if (var15.field_37318 != null) {
                   var10.method_31667(
-                     class_240.method_1048(var4.method_25403().method_5410(), var15.field_37318), method_43565(var12, var15, var16, var14, var4, var5)
+                     Direction.method_1048(var4.method_25403().method_5410(), var15.field_37318), method_43565(var12, var15, var16, var14, var4, var5)
                   );
                } else {
                   var10.method_31666(method_43565(var12, var15, var16, var14, var4, var5));
@@ -199,7 +199,7 @@ public class class_9403 implements class_2053 {
       }
    }
 
-   private static class_5024 method_43565(class_9487 var0, class_7300 var1, class_5155 var2, class_240 var3, class_5598 var4, Identifier var5) {
+   private static class_5024 method_43565(class_9487 var0, class_7300 var1, class_5155 var2, Direction var3, class_5598 var4, Identifier var5) {
       return field_48079.method_33202(var0.field_48352, var0.field_48350, var1, var2, var3, var4, var0.field_48351, var0.field_48348, var5);
    }
 

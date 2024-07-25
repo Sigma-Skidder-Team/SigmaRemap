@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_971 extends class_3259 {
-   public class_971(Screen var1, class_8881 var2) {
+   public class_971(Screen var1, GameOptions var2) {
       super(var1, var2, new TranslationTextComponent("options.sounds.title"));
    }
 

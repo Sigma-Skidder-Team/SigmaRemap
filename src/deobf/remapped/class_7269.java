@@ -21,7 +21,7 @@ public class class_7269 {
       this.field_37223 = var5;
    }
 
-   public boolean method_33214(class_8145 var1) {
+   public boolean method_33214(Entity var1) {
       if (this.field_37224 != null && var1.method_37264() != this.field_37224) {
          return false;
       } else if (this.field_37225 != null && var1.method_37382() != this.field_37225) {

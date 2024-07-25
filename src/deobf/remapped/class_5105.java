@@ -9,7 +9,7 @@ public abstract class class_5105<T extends class_5834, M extends class_3169<T>> 
 
    public abstract int method_23423(T var1);
 
-   public abstract void method_23424(class_7966 var1, class_2565 var2, int var3, class_8145 var4, float var5, float var6, float var7, float var8);
+   public abstract void method_23424(class_7966 var1, class_2565 var2, int var3, Entity var4, float var5, float var6, float var7, float var8);
 
    public void method_23422(class_7966 var1, class_2565 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       int var13 = this.method_23423((T)var4);

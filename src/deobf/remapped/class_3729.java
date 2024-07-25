@@ -5,7 +5,7 @@ import java.util.Random;
 public class class_3729 extends class_7067<class_900> {
    private static String[] field_18242;
 
-   public class_3729(class_6122 var1) {
+   public class_3729(EntityRenderDispatcher var1) {
       super(var1);
    }
 
@@ -23,7 +23,7 @@ public class class_3729 extends class_7067<class_900> {
          var12 += (float)(var13.nextInt(11) - 5);
       }
 
-      class_7907 var32 = var5.method_11645(class_3581.method_16714());
+      class_7907 var32 = var5.method_11645(RenderLayer.method_16714());
       class_8107 var15 = var4.method_36058().method_28620();
 
       for (int var16 = 0; var16 < 4; var16++) {

@@ -34,7 +34,7 @@ public abstract class class_3798 extends class_2340 {
       double var8 = 0.0;
       class_2921 var10 = new class_2921();
 
-      for (class_240 var12 : class_9594.field_48893) {
+      for (Direction var12 : class_9594.field_48893) {
          var10.method_13371(var2, var12);
          class_4774 var13 = var1.method_28258(var10);
          if (this.method_17668(var13)) {
@@ -64,7 +64,7 @@ public abstract class class_3798 extends class_2340 {
 
       class_1343 var18 = new class_1343(var6, 0.0, var8);
       if (var3.<Boolean>method_10313(field_18532)) {
-         for (class_240 var20 : class_9594.field_48893) {
+         for (Direction var20 : class_9594.field_48893) {
             var10.method_13371(var2, var20);
             if (this.method_17666(var1, var10, var20) || this.method_17666(var1, var10.method_6081(), var20)) {
                var18 = var18.method_6213().method_6214(0.0, -6.0, 0.0);
@@ -80,11 +80,11 @@ public abstract class class_3798 extends class_2340 {
       return var1.method_22001() || var1.method_22005().method_10723(this);
    }
 
-   public boolean method_17666(class_6163 var1, class_1331 var2, class_240 var3) {
+   public boolean method_17666(class_6163 var1, class_1331 var2, Direction var3) {
       class_2522 var6 = var1.method_28262(var2);
       class_4774 var7 = var1.method_28258(var2);
       if (!var7.method_22005().method_10723(this)) {
-         if (var3 != class_240.field_817) {
+         if (var3 != Direction.field_817) {
             return var6.method_8362() != class_5371.field_27392 ? var6.method_8308(var1, var2, var3) : false;
          } else {
             return true;
@@ -100,12 +100,12 @@ public abstract class class_3798 extends class_2340 {
          class_1331 var7 = var2.method_6100();
          class_2522 var8 = var1.method_28262(var7);
          class_4774 var9 = this.method_17651(var1, var7, var8);
-         if (!this.method_17642(var1, var2, var6, class_240.field_802, var7, var8, var1.method_28258(var7), var9.method_22005())) {
+         if (!this.method_17642(var1, var2, var6, Direction.field_802, var7, var8, var1.method_28258(var7), var9.method_22005())) {
             if (var3.method_21993() || !this.method_17665(var1, var9.method_22005(), var2, var6, var7, var8)) {
                this.method_17655(var1, var2, var3, var6);
             }
          } else {
-            this.method_17658(var1, var7, var8, class_240.field_802, var9);
+            this.method_17658(var1, var7, var8, Direction.field_802, var9);
             if (this.method_17667(var1, var2) >= 3) {
                this.method_17655(var1, var2, var3, var6);
             }
@@ -123,7 +123,7 @@ public abstract class class_3798 extends class_2340 {
          Map var8 = this.method_17648(var1, var2, var4);
 
          for (Entry var10 : var8.entrySet()) {
-            class_240 var11 = (class_240)var10.getKey();
+            Direction var11 = (Direction)var10.getKey();
             class_4774 var12 = (class_4774)var10.getValue();
             class_1331 var13 = var2.method_6098(var11);
             class_2522 var14 = var1.method_28262(var13);
@@ -138,7 +138,7 @@ public abstract class class_3798 extends class_2340 {
       int var6 = 0;
       int var7 = 0;
 
-      for (class_240 var9 : class_9594.field_48893) {
+      for (Direction var9 : class_9594.field_48893) {
          class_1331 var10 = var2.method_6098(var9);
          class_2522 var11 = var1.method_28262(var10);
          class_4774 var12 = var11.method_8364();
@@ -162,7 +162,7 @@ public abstract class class_3798 extends class_2340 {
       class_1331 var14 = var2.method_6081();
       class_2522 var16 = var1.method_28262(var14);
       class_4774 var17 = var16.method_8364();
-      if (!var17.method_22001() && var17.method_22005().method_10723(this) && this.method_17656(class_240.field_817, var1, var2, var3, var14, var16)) {
+      if (!var17.method_22001() && var17.method_22005().method_10723(this) && this.method_17656(Direction.field_817, var1, var2, var3, var14, var16)) {
          return this.method_17659(8, true);
       } else {
          int var18 = var6 - this.method_17653(var1);
@@ -170,7 +170,7 @@ public abstract class class_3798 extends class_2340 {
       }
    }
 
-   private boolean method_17656(class_240 var1, class_6163 var2, class_1331 var3, class_2522 var4, class_1331 var5, class_2522 var6) {
+   private boolean method_17656(Direction var1, class_6163 var2, class_1331 var3, class_2522 var4, class_1331 var5, class_2522 var6) {
       Object2ByteLinkedOpenHashMap var9;
       if (!var4.method_8360().method_29281() && !var6.method_8360().method_29281()) {
          var9 = field_18534.get();
@@ -217,7 +217,7 @@ public abstract class class_3798 extends class_2340 {
 
    public abstract boolean method_17647();
 
-   public void method_17658(class_9379 var1, class_1331 var2, class_2522 var3, class_240 var4, class_4774 var5) {
+   public void method_17658(class_9379 var1, class_1331 var2, class_2522 var3, Direction var4, class_4774 var5) {
       if (!(var3.method_8360() instanceof class_4582)) {
          if (!var3.method_8345()) {
             this.method_17664(var1, var2, var3);
@@ -241,7 +241,7 @@ public abstract class class_3798 extends class_2340 {
       class_4924 var1,
       class_1331 var2,
       int var3,
-      class_240 var4,
+      Direction var4,
       class_2522 var5,
       class_1331 var6,
       Short2ObjectMap<Pair<class_2522, class_4774>> var7,
@@ -249,7 +249,7 @@ public abstract class class_3798 extends class_2340 {
    ) {
       int var11 = 1000;
 
-      for (class_240 var13 : class_9594.field_48893) {
+      for (Direction var13 : class_9594.field_48893) {
          if (var13 != var4) {
             class_1331 var14 = var2.method_6098(var13);
             short var15 = method_17650(var6, var14);
@@ -283,7 +283,7 @@ public abstract class class_3798 extends class_2340 {
    }
 
    private boolean method_17665(class_6163 var1, class_2340 var2, class_1331 var3, class_2522 var4, class_1331 var5, class_2522 var6) {
-      if (this.method_17656(class_240.field_802, var1, var3, var4, var5, var6)) {
+      if (this.method_17656(Direction.field_802, var1, var3, var4, var5, var6)) {
          return !var6.method_8364().method_22005().method_10723(this) ? this.method_17652(var1, var5, var6, var2) : true;
       } else {
          return false;
@@ -291,7 +291,7 @@ public abstract class class_3798 extends class_2340 {
    }
 
    private boolean method_17663(
-      class_6163 var1, class_2340 var2, class_1331 var3, class_2522 var4, class_240 var5, class_1331 var6, class_2522 var7, class_4774 var8
+           class_6163 var1, class_2340 var2, class_1331 var3, class_2522 var4, Direction var5, class_1331 var6, class_2522 var7, class_4774 var8
    ) {
       return !this.method_17660(var8) && this.method_17656(var5, var1, var3, var4, var6, var7) && this.method_17652(var1, var6, var7, var2);
    }
@@ -305,7 +305,7 @@ public abstract class class_3798 extends class_2340 {
    private int method_17667(class_4924 var1, class_1331 var2) {
       int var5 = 0;
 
-      for (class_240 var7 : class_9594.field_48893) {
+      for (Direction var7 : class_9594.field_48893) {
          class_1331 var8 = var2.method_6098(var7);
          class_4774 var9 = var1.method_28258(var8);
          if (this.method_17660(var9)) {
@@ -316,13 +316,13 @@ public abstract class class_3798 extends class_2340 {
       return var5;
    }
 
-   public Map<class_240, class_4774> method_17648(class_4924 var1, class_1331 var2, class_2522 var3) {
+   public Map<Direction, class_4774> method_17648(class_4924 var1, class_1331 var2, class_2522 var3) {
       int var6 = 1000;
-      EnumMap var7 = Maps.newEnumMap(class_240.class);
+      EnumMap var7 = Maps.newEnumMap(Direction.class);
       Short2ObjectOpenHashMap var8 = new Short2ObjectOpenHashMap();
       Short2BooleanOpenHashMap var9 = new Short2BooleanOpenHashMap();
 
-      for (class_240 var11 : class_9594.field_48893) {
+      for (Direction var11 : class_9594.field_48893) {
          class_1331 var12 = var2.method_6098(var11);
          short var13 = method_17650(var2, var12);
          Pair var14 = (Pair)var8.computeIfAbsent(var13, var2x -> {
@@ -380,19 +380,19 @@ public abstract class class_3798 extends class_2340 {
    }
 
    public boolean method_17642(
-      class_6163 var1, class_1331 var2, class_2522 var3, class_240 var4, class_1331 var5, class_2522 var6, class_4774 var7, class_2340 var8
+           class_6163 var1, class_1331 var2, class_2522 var3, Direction var4, class_1331 var5, class_2522 var6, class_4774 var7, class_2340 var8
    ) {
       return var7.method_22009(var1, var5, var8, var4) && this.method_17656(var4, var1, var2, var3, var5, var6) && this.method_17652(var1, var5, var6, var8);
    }
 
    public abstract int method_17653(class_4924 var1);
 
-   public int method_17645(class_6486 var1, class_1331 var2, class_4774 var3, class_4774 var4) {
+   public int method_17645(World var1, class_1331 var2, class_4774 var3, class_4774 var4) {
       return this.method_10711(var1);
    }
 
    @Override
-   public void method_10718(class_6486 var1, class_1331 var2, class_4774 var3) {
+   public void method_10718(World var1, class_1331 var2, class_4774 var3) {
       if (!var3.method_21993()) {
          class_4774 var6 = this.method_17651(var1, var2, var1.method_28262(var2));
          int var7 = this.method_17645(var1, var2, var3, var6);

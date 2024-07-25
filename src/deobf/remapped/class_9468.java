@@ -30,7 +30,7 @@ public class class_9468 extends class_9128 {
          boolean var5 = this.method_42007("Show Health");
          class_3542.method_16438();
 
-         for (class_8145 var7 : field_48289.keySet()) {
+         for (Entity var7 : field_48289.keySet()) {
             double[] var8 = field_48289.get(var7);
             double[] var9 = field_48288.get(var7);
             if (var8[3] > 0.0 || var8[3] <= 1.0) {
@@ -233,7 +233,7 @@ public class class_9468 extends class_9128 {
       }
    }
 
-   private void method_43744(class_8145 var1) {
+   private void method_43744(Entity var1) {
       float var4 = 1.0F;
       float var5 = (float)((double)var4 * (field_46692.field_9577.field_45543 / field_46692.field_9577.field_45543));
       if (this.field_48287 == 0.0 || Double.isNaN(this.field_48287)) {

@@ -10,7 +10,7 @@ public class class_2708 implements class_6310<class_392> {
    public class_2708() {
    }
 
-   public class_2708(class_8145 var1, class_8145 var2) {
+   public class_2708(Entity var1, Entity var2) {
       this.field_13254 = var1.method_37145();
       this.field_13255 = var2 == null ? 0 : var2.method_37145();
    }

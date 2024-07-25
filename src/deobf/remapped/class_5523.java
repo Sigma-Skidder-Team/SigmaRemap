@@ -34,7 +34,7 @@ public class class_5523 {
    private static void method_25040(File var0, String var1, int var2, int var3, class_4230 var4, Consumer<ITextComponent> var5) {
       MinecraftClient var8 = class_3111.method_14327();
       Window var9 = var8.method_8552();
-      class_8881 var10 = class_3111.method_14310();
+      GameOptions var10 = class_3111.method_14310();
       int var11 = var9.method_43178();
       int var12 = var9.method_43198();
       int var13 = var10.field_45484;

@@ -27,7 +27,7 @@ public class class_9582 {
 
    public static class_7373 method_44261(class_7373 var0, class_2522 var1) {
       if (class_3111.method_14410()) {
-         List var4 = var0.method_33580(var1, (class_240)null, field_48743);
+         List var4 = var0.method_33580(var1, (Direction)null, field_48743);
          if (var4 != field_48740) {
             if (var4 != field_48745) {
                if (var4 != field_48727) {
@@ -90,7 +90,7 @@ public class class_9582 {
    }
 
    private static List method_44265(class_7373 var0) {
-      return var0 != null ? var0.method_33580((class_2522)null, (class_240)null, field_48743) : null;
+      return var0 != null ? var0.method_33580((class_2522)null, (Direction)null, field_48743) : null;
    }
 
    public static class_7373 method_44264(String var0, List var1) {
@@ -107,7 +107,7 @@ public class class_9582 {
                class_454 var7 = new class_454(var0 + "_leaves", "normal");
                class_7373 var8 = var4.method_33943(var7);
                if (var8 != null && var8 != var4.method_33942()) {
-                  List var9 = var8.method_33580((class_2522)null, (class_240)null, field_48743);
+                  List var9 = var8.method_33580((class_2522)null, (Direction)null, field_48743);
                   if (var9.size() == 0) {
                      return var8;
                   } else if (var9.size() != 6) {
@@ -139,16 +139,16 @@ public class class_9582 {
    private static class_7373 method_44263(class_7373 var0) {
       if (var0 == null) {
          return null;
-      } else if (var0.method_33580((class_2522)null, (class_240)null, field_48743).size() > 0) {
+      } else if (var0.method_33580((class_2522)null, (Direction)null, field_48743).size() > 0) {
          class_3111.method_14317(
-            "SmartLeaves: Model is not cube, general quads: " + var0.method_33580((class_2522)null, (class_240)null, field_48743).size() + ", model: " + var0
+            "SmartLeaves: Model is not cube, general quads: " + var0.method_33580((class_2522)null, (Direction)null, field_48743).size() + ", model: " + var0
          );
          return var0;
       } else {
-         class_240[] var3 = class_240.field_803;
+         Direction[] var3 = Direction.field_803;
 
          for (int var4 = 0; var4 < var3.length; var4++) {
-            class_240 var5 = var3[var4];
+            Direction var5 = var3[var4];
             List var6 = var0.method_33580((class_2522)null, var5, field_48743);
             if (var6.size() != 1) {
                class_3111.method_14317("SmartLeaves: Model is not cube, side: " + var5 + ", quads: " + var6.size() + ", model: " + var0);
@@ -160,7 +160,7 @@ public class class_9582 {
          List[] var15 = new List[var3.length];
 
          for (int var16 = 0; var16 < var3.length; var16++) {
-            class_240 var7 = var3[var16];
+            Direction var7 = var3[var16];
             List var8 = var14.method_33580((class_2522)null, var7, field_48743);
             class_5024 var9 = (class_5024)var8.get(0);
             class_5024 var10 = new class_5024(

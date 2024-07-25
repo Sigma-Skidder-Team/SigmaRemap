@@ -10,7 +10,7 @@ public class class_3213 extends class_8601 {
 
    public class_3213(class_3073 var1) {
       super(var1);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_16028, class_240.field_818).method_10308(field_16027, Boolean.valueOf(true)));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_16028, Direction.field_818).method_10308(field_16027, Boolean.valueOf(true)));
    }
 
    @Override
@@ -29,7 +29,7 @@ public class class_3213 extends class_8601 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       return class_4783.field_23740.method_10763(var1, var2, var3, var4, var5, var6);
    }
 
@@ -37,13 +37,13 @@ public class class_3213 extends class_8601 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       class_2522 var4 = class_4783.field_23740.method_29302(var1);
-      return var4 != null ? this.method_29260().method_10308(field_16028, var4.<class_240>method_10313(field_16028)) : null;
+      return var4 != null ? this.method_29260().method_10308(field_16028, var4.<Direction>method_10313(field_16028)) : null;
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       if (var1.<Boolean>method_10313(field_16027)) {
-         class_240 var7 = var1.<class_240>method_10313(field_16028).method_1046();
+         Direction var7 = var1.<Direction>method_10313(field_16028).method_1046();
          double var8 = 0.27;
          double var10 = (double)var3.method_12173() + 0.5 + (var4.nextDouble() - 0.5) * 0.2 + 0.27 * (double)var7.method_1041();
          double var12 = (double)var3.method_12165() + 0.7 + (var4.nextDouble() - 0.5) * 0.2 + 0.22;
@@ -53,13 +53,13 @@ public class class_3213 extends class_8601 {
    }
 
    @Override
-   public boolean method_39536(class_6486 var1, class_1331 var2, class_2522 var3) {
-      class_240 var6 = var3.<class_240>method_10313(field_16028).method_1046();
+   public boolean method_39536(World var1, class_1331 var2, class_2522 var3) {
+      Direction var6 = var3.<Direction>method_10313(field_16028).method_1046();
       return var1.method_29588(var2.method_6098(var6), var6);
    }
 
    @Override
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, class_240 var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
       return var1.<Boolean>method_10313(field_16027) && var1.method_10313(field_16028) != var4 ? 15 : 0;
    }
 

@@ -3,7 +3,7 @@ package remapped;
 public class class_6339 extends class_6499<class_2547> {
    private static final Identifier field_32363 = new Identifier("textures/entity/illager/illusioner.png");
 
-   public class_6339(class_6122 var1) {
+   public class_6339(EntityRenderDispatcher var1) {
       super(var1, new class_5723<class_2547>(0.0F, 0.0F, 64, 64), 0.5F);
       this.method_29100(new class_822(this, this));
       this.field_32487.method_25894().field_8200 = true;

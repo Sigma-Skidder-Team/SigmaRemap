@@ -12,7 +12,7 @@ import java.util.UUID;
 public class class_8192 {
    private static Map<String, class_3207> field_41923 = new HashMap<String, class_3207>();
    private static boolean field_41919 = false;
-   private static class_4316 field_41922;
+   private static WorldRenderer field_41922;
    private static class_7908 field_41911 = new class_7908();
    private static class_3569 field_41918;
    private static class_4790 field_41916 = new class_4790();
@@ -31,7 +31,7 @@ public class class_8192 {
    private static final String[] field_41914 = (String[])class_9367.method_43328(null, class_3551.class, String[].class, 0);
    private static final String[] field_41921 = (String[])class_9367.method_43328(null, class_3551.class, String[].class, 1);
 
-   public static void method_37536(class_8145 var0, class_6486 var1) {
+   public static void method_37536(Entity var0, World var1) {
       if (var1 != null) {
          class_8073 var4 = var0.method_37372();
          var4.field_41301 = var0.method_37075();
@@ -43,7 +43,7 @@ public class class_8192 {
       }
    }
 
-   public static void method_37534(class_8145 var0, class_6486 var1) {
+   public static void method_37534(Entity var0, World var1) {
       if (var0 instanceof class_7819) {
          class_7819 var4 = (class_7819)var0;
          method_37531(var4, true);
@@ -88,16 +88,16 @@ public class class_8192 {
       }
    }
 
-   public static void method_37524(class_6486 var0, class_6486 var1) {
+   public static void method_37524(World var0, World var1) {
       if (var1 instanceof class_174) {
          class_174 var4 = (class_174)var1;
 
-         for (class_8145 var6 : var4.method_736()) {
+         for (Entity var6 : var4.method_736()) {
             method_37536(var6, var1);
          }
       }
 
-      field_41911.method_35766((class_8145)null);
+      field_41911.method_35766((Entity)null);
       field_41916.method_22088((class_3757)null);
    }
 

@@ -6,7 +6,7 @@ import java.util.Random;
 public class class_235 extends class_6315 {
    private static String[] field_758;
 
-   public class_235(int var1, class_9616 var2, class_240 var3) {
+   public class_235(int var1, class_9616 var2, Direction var3) {
       super(class_2746.field_13445, var1);
       this.method_32519(var3);
       this.field_36435 = var2;
@@ -22,7 +22,7 @@ public class class_235 extends class_6315 {
       this.method_28784((class_1695)var1, var2, var3, 5, 11, true);
    }
 
-   public static class_235 method_992(List<class_7060> var0, int var1, int var2, int var3, class_240 var4, int var5) {
+   public static class_235 method_992(List<class_7060> var0, int var1, int var2, int var3, Direction var4, int var5) {
       class_9616 var8 = class_9616.method_44386(var1, var2, var3, -5, -3, 0, 13, 14, 13, var4);
       return method_28781(var8) && class_7060.method_32502(var0, var8) == null ? new class_235(var5, var8, var4) : null;
    }
@@ -118,7 +118,7 @@ public class class_235 extends class_6315 {
          this.method_32500(var1, var5, 11, 7, var19, 11, 8, var19, var13, var13, false);
       }
 
-      class_2522 var20 = class_4783.field_23204.method_29260().method_10308(class_3049.field_14946, class_240.field_818);
+      class_2522 var20 = class_4783.field_23204.method_29260().method_10308(class_3049.field_14946, Direction.field_818);
 
       for (int var15 = 0; var15 <= 6; var15++) {
          int var16 = var15 + 4;
@@ -153,8 +153,8 @@ public class class_235 extends class_6315 {
       this.method_32500(var1, var5, 9, 5, 2, 10, 5, 3, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);
       this.method_32500(var1, var5, 9, 5, 9, 10, 5, 10, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);
       this.method_32500(var1, var5, 10, 5, 4, 10, 5, 8, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);
-      class_2522 var22 = var20.method_10308(class_3049.field_14946, class_240.field_804);
-      class_2522 var23 = var20.method_10308(class_3049.field_14946, class_240.field_809);
+      class_2522 var22 = var20.method_10308(class_3049.field_14946, Direction.field_804);
+      class_2522 var23 = var20.method_10308(class_3049.field_14946, Direction.field_809);
       this.method_32529(var1, var23, 4, 5, 2, var5);
       this.method_32529(var1, var23, 4, 5, 3, var5);
       this.method_32529(var1, var23, 4, 5, 9, var5);

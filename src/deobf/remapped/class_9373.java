@@ -9,7 +9,7 @@ public class class_9373 extends class_3725 {
    }
 
    @Override
-   public void method_29257(class_6486 var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
       super.method_29257(var1, var2, var3, var4, var5);
       class_3757 var8 = var1.method_28260(var2);
       if (var8 instanceof class_4797) {
@@ -17,7 +17,7 @@ public class class_9373 extends class_3725 {
       }
    }
 
-   public static void method_43348(class_6486 var0, class_1331 var1, class_4797 var2) {
+   public static void method_43348(World var0, class_1331 var1, class_4797 var2) {
       if (!var0.field_33055) {
          class_2522 var5 = var2.method_17403();
          boolean var6 = var5.method_8350(class_4783.field_23444) || var5.method_8350(class_4783.field_23279);
@@ -61,7 +61,7 @@ public class class_9373 extends class_3725 {
       }
    }
 
-   public static boolean method_43349(class_6486 var0, class_1331 var1, class_6098 var2) {
+   public static boolean method_43349(World var0, class_1331 var1, class_6098 var2) {
       return var2.method_27960() == class_4897.field_24563 && var1.method_12165() >= 2 && var0.method_43370() != class_423.field_1790 && !var0.field_33055
          ? method_43350().method_44981(var0, var1) != null
          : false;

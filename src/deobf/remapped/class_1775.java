@@ -17,7 +17,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    private class_7228 field_9093;
    private class_518 field_9087;
 
-   public class_1775(class_6629<? extends class_1775> var1, class_6486 var2) {
+   public class_1775(class_6629<? extends class_1775> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
       this.method_26895(class_1108.field_6359, -1.0F);
@@ -30,7 +30,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       class_2921 var7 = var3.method_6089();
 
       do {
-         var7.method_13368(class_240.field_817);
+         var7.method_13368(Direction.field_817);
       } while (var1.method_28258(var7).method_22007(class_6503.field_33095));
 
       return var1.method_28262(var7).method_8345();
@@ -122,7 +122,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    @Override
    public boolean method_26863() {
-      class_8145 var3 = this.method_37259();
+      Entity var3 = this.method_37259();
       if (!(var3 instanceof class_704)) {
          return false;
       } else {
@@ -138,7 +138,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    @Nullable
    @Override
-   public class_8145 method_37259() {
+   public Entity method_37259() {
       return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
    }
 
@@ -161,7 +161,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
          for (double var15 = var6; var15 > var8; var15--) {
             var5.add(var10.method_6072());
-            var10.method_13368(class_240.field_802);
+            var10.method_13368(Direction.field_802);
          }
       }
 
@@ -294,7 +294,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public boolean method_37286(class_8145 var1) {
+   public boolean method_37286(Entity var1) {
       return this.method_37114().isEmpty() && !this.method_37261(class_6503.field_33095);
    }
 
@@ -309,7 +309,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_1249 method_26933(class_6486 var1) {
+   public class_1249 method_26933(World var1) {
       return new class_7632(this, var1);
    }
 

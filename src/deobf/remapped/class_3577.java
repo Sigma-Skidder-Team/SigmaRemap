@@ -3,18 +3,18 @@ package remapped;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-public class class_3577 extends class_8145 {
+public class class_3577 extends Entity {
    private static final class_7821<Optional<class_1331>> field_17509 = class_8073.<Optional<class_1331>>method_36641(class_3577.class, class_2734.field_13352);
    private static final class_7821<Boolean> field_17507 = class_8073.<Boolean>method_36641(class_3577.class, class_2734.field_13347);
    public int field_17510;
 
-   public class_3577(class_6629<? extends class_3577> var1, class_6486 var2) {
+   public class_3577(class_6629<? extends class_3577> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
       this.field_17510 = this.field_41717.nextInt(100000);
    }
 
-   public class_3577(class_6486 var1, double var2, double var4, double var6) {
+   public class_3577(World var1, double var2, double var4, double var6) {
       this(class_6629.field_34273, var1);
       this.method_37256(var2, var4, var6);
    }
@@ -73,7 +73,7 @@ public class class_3577 extends class_8145 {
             if (!this.field_41751 && !this.field_41768.field_33055) {
                this.method_37204();
                if (!var1.method_28367()) {
-                  this.field_41768.method_29573((class_8145)null, this.method_37302(), this.method_37309(), this.method_37156(), 6.0F, class_7298.field_37311);
+                  this.field_41768.method_29573((Entity)null, this.method_37302(), this.method_37309(), this.method_37156(), 6.0F, class_7298.field_37311);
                }
 
                this.method_16628(var1);

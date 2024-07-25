@@ -69,7 +69,7 @@ public class class_8229 implements class_2231 {
                   "",
                   StringTextComponent.EMPTY,
                   (class_341)null,
-                  (class_8145)null
+                  (Entity)null
                );
 
                for (Identifier var9x : var3x) {

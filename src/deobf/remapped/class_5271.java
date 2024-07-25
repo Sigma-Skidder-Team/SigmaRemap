@@ -6,7 +6,7 @@ import java.util.Random;
 public class class_5271 extends class_8549 {
    public final int field_26945;
 
-   public class_5271(int var1, Random var2, class_9616 var3, class_240 var4) {
+   public class_5271(int var1, Random var2, class_9616 var3, Direction var4) {
       super(class_2746.field_13432, var1);
       this.method_32519(var4);
       this.field_43750 = this.method_39333(var2);
@@ -32,7 +32,7 @@ public class class_5271 extends class_8549 {
       this.method_39335((class_4960)var1, var2, var3, 1, 4);
    }
 
-   public static class_5271 method_24056(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5, int var6) {
+   public static class_5271 method_24056(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
       class_9616 var9 = class_9616.method_44386(var2, var3, var4, -4, -1, 0, 11, 7, 11, var5);
       return method_39332(var9) && class_7060.method_32502(var0, var9) == null ? new class_5271(var6, var1, var9, var5) : null;
    }
@@ -49,10 +49,10 @@ public class class_5271 extends class_8549 {
             this.method_32529(var1, class_4783.field_23355.method_29260(), 5, 1, 5, var5);
             this.method_32529(var1, class_4783.field_23355.method_29260(), 5, 2, 5, var5);
             this.method_32529(var1, class_4783.field_23355.method_29260(), 5, 3, 5, var5);
-            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_809), 4, 3, 5, var5);
-            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_804), 6, 3, 5, var5);
-            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_800), 5, 3, 4, var5);
-            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_818), 5, 3, 6, var5);
+            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_809), 4, 3, 5, var5);
+            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_804), 6, 3, 5, var5);
+            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_800), 5, 3, 4, var5);
+            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_818), 5, 3, 6, var5);
             this.method_32529(var1, class_4783.field_23547.method_29260(), 4, 1, 4, var5);
             this.method_32529(var1, class_4783.field_23547.method_29260(), 4, 1, 5, var5);
             this.method_32529(var1, class_4783.field_23547.method_29260(), 4, 1, 6, var5);
@@ -117,7 +117,7 @@ public class class_5271 extends class_8549 {
                this.method_32529(var1, class_4783.field_23893.method_29260(), 8, 3, var13, var5);
             }
 
-            class_2522 var14 = class_4783.field_23748.method_29260().method_10308(class_5613.field_28506, class_240.field_809);
+            class_2522 var14 = class_4783.field_23748.method_29260().method_10308(class_5613.field_28506, Direction.field_809);
             this.method_32529(var1, var14, 9, 1, 3, var5);
             this.method_32529(var1, var14, 9, 2, 3, var5);
             this.method_32529(var1, var14, 9, 3, 3, var5);

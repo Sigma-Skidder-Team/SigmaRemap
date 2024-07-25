@@ -11,7 +11,7 @@ public class class_3748 implements class_2995 {
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
       class_1331 var11 = this.field_18324.field_9632.method_37075();
-      class_6486 var12 = this.field_18324.field_9632.field_41768;
+      World var12 = this.field_18324.field_9632.field_41768;
       class_3542.method_16488();
       class_3542.method_16437();
       class_3542.method_16480(0.0F, 1.0F, 0.0F, 0.75F);

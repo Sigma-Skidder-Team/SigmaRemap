@@ -18,7 +18,7 @@ public class class_7565 extends class_367 {
    private class_2440 field_38546;
    private class_2440 field_38552;
    private class_2440 field_38547;
-   private class_8145 field_38555;
+   private Entity field_38555;
    public int field_38550 = class_314.method_1444(class_1255.field_6929.field_6917, 0.05F);
 
    public class_7565() {
@@ -76,7 +76,7 @@ public class class_7565 extends class_367 {
       if (field_46692.field_9623 == null || field_46692.field_9623 instanceof class_5766) {
          GL11.glPushMatrix();
          class_73.method_150(var1 - 20, this.field_38544 - 20, var1 + 200, this.field_38544 + 120, true);
-         class_6122 var4 = MinecraftClient.getInstance().method_8587();
+         EntityRenderDispatcher var4 = MinecraftClient.getInstance().method_8587();
          class_5869 var5 = new class_5869(var4);
          short var6 = 150;
          UUID var7 = this.field_38555.method_37328();
@@ -144,7 +144,7 @@ public class class_7565 extends class_367 {
          class_7966 var10 = new class_7966();
          var10.method_36065(0.0, 0.0, 1500.0);
          var10.method_36062((float)var6, (float)var6, (float)var6);
-         class_5422 var11 = class_2426.field_12076.method_11074(180.0F);
+         Quaternion var11 = class_2426.field_12076.method_11074(180.0F);
          var10.method_36060(var11);
          var4.method_28136(false);
          class_3758 var12 = MinecraftClient.getInstance().method_8589().method_13796();
@@ -170,7 +170,7 @@ public class class_7565 extends class_367 {
       return var6;
    }
 
-   private Color method_34398(class_8145 var1) {
+   private Color method_34398(Entity var1) {
       if (var1 instanceof class_5834) {
          class_5834 var4 = (class_5834)var1;
          float var5 = var4.method_26551() / var4.method_26465() * 20.0F;

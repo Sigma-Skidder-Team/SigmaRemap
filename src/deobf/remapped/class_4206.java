@@ -6,7 +6,7 @@ public class class_4206 extends class_516 implements class_1869 {
    private static final class_7821<Boolean> field_20448 = class_8073.<Boolean>method_36641(class_4206.class, class_2734.field_13347);
    private int field_20450 = 1;
 
-   public class_4206(class_6629<? extends class_4206> var1, class_6486 var2) {
+   public class_4206(class_6629<? extends class_4206> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
       this.field_29900 = new class_9851(this);

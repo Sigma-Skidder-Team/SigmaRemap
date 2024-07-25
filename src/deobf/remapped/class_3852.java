@@ -18,24 +18,24 @@ public class class_3852 extends class_4285<class_1941> {
          boolean var13 = true;
 
          while (var1.method_22548(var8)) {
-            if (class_6486.method_29556(var8)) {
+            if (World.method_29556(var8)) {
                return true;
             }
 
             var1.method_7513(var8, class_4783.field_23788.method_29260(), 2);
-            var10 = var10 && this.method_17879(var1, var3, var9.method_13371(var8, class_240.field_818));
-            var11 = var11 && this.method_17879(var1, var3, var9.method_13371(var8, class_240.field_800));
-            var12 = var12 && this.method_17879(var1, var3, var9.method_13371(var8, class_240.field_809));
-            var13 = var13 && this.method_17879(var1, var3, var9.method_13371(var8, class_240.field_804));
-            var8.method_13368(class_240.field_802);
+            var10 = var10 && this.method_17879(var1, var3, var9.method_13371(var8, Direction.field_818));
+            var11 = var11 && this.method_17879(var1, var3, var9.method_13371(var8, Direction.field_800));
+            var12 = var12 && this.method_17879(var1, var3, var9.method_13371(var8, Direction.field_809));
+            var13 = var13 && this.method_17879(var1, var3, var9.method_13371(var8, Direction.field_804));
+            var8.method_13368(Direction.field_802);
          }
 
-         var8.method_13368(class_240.field_817);
-         this.method_17877(var1, var3, var9.method_13371(var8, class_240.field_818));
-         this.method_17877(var1, var3, var9.method_13371(var8, class_240.field_800));
-         this.method_17877(var1, var3, var9.method_13371(var8, class_240.field_809));
-         this.method_17877(var1, var3, var9.method_13371(var8, class_240.field_804));
-         var8.method_13368(class_240.field_802);
+         var8.method_13368(Direction.field_817);
+         this.method_17877(var1, var3, var9.method_13371(var8, Direction.field_818));
+         this.method_17877(var1, var3, var9.method_13371(var8, Direction.field_800));
+         this.method_17877(var1, var3, var9.method_13371(var8, Direction.field_809));
+         this.method_17877(var1, var3, var9.method_13371(var8, Direction.field_804));
+         var8.method_13368(Direction.field_802);
          class_2921 var14 = new class_2921();
 
          for (int var15 = -3; var15 < 4; var15++) {
@@ -45,14 +45,14 @@ public class class_3852 extends class_4285<class_1941> {
                   var14.method_13364(var8.method_6104(var15, 0, var16));
                   int var18 = 3;
 
-                  while (var1.method_22548(var9.method_13371(var14, class_240.field_802))) {
-                     var14.method_13368(class_240.field_802);
+                  while (var1.method_22548(var9.method_13371(var14, Direction.field_802))) {
+                     var14.method_13368(Direction.field_802);
                      if (--var18 <= 0) {
                         break;
                      }
                   }
 
-                  if (!var1.method_22548(var9.method_13371(var14, class_240.field_802))) {
+                  if (!var1.method_22548(var9.method_13371(var14, Direction.field_802))) {
                      var1.method_7513(var14, class_4783.field_23788.method_29260(), 2);
                   }
                }

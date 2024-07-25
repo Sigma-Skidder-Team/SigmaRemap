@@ -77,7 +77,7 @@ public class class_4919 extends class_8715 {
       int var4 = super.method_44952(var1);
       int var5 = 0;
       if (this.field_49469.method_22559(this.field_25456)) {
-         var5 = class_4316.method_20002(this.field_49469, this.field_25456);
+         var5 = WorldRenderer.method_20002(this.field_49469, this.field_25456);
       }
 
       return var4 != 0 ? var4 : var5;

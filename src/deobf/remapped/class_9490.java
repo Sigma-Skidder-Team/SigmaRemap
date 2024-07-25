@@ -12,7 +12,7 @@ public class class_9490 extends class_1173 implements class_7187 {
    private int field_48357 = 3;
    private int field_48359;
 
-   public class_9490(class_6629<? extends class_9490> var1, class_6486 var2) {
+   public class_9490(class_6629<? extends class_9490> var1, World var2) {
       super(var1, var2);
    }
 
@@ -127,7 +127,7 @@ public class class_9490 extends class_1173 implements class_7187 {
    @Override
    public void method_26614(class_6199 var1, int var2, boolean var3) {
       super.method_26614(var1, var2, var3);
-      class_8145 var6 = var1.method_28372();
+      Entity var6 = var1.method_28372();
       if (var6 != this && var6 instanceof class_9490) {
          class_9490 var7 = (class_9490)var6;
          if (var7.method_43837()) {
@@ -138,7 +138,7 @@ public class class_9490 extends class_1173 implements class_7187 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       return true;
    }
 

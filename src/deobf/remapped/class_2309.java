@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public abstract class class_2309<M extends class_8666<M>, S extends class_3808<M>> extends class_6057 implements class_9840 {
-   private static final class_240[] field_11558 = class_240.values();
+   private static final Direction[] field_11558 = Direction.values();
    public final class_5002 field_11553;
    public final class_2957 field_11556;
    public final S field_11554;
@@ -87,11 +87,11 @@ public abstract class class_2309<M extends class_8666<M>, S extends class_3808<M
       }
    }
 
-   public class_4190 method_10614(class_2522 var1, long var2, class_240 var4) {
+   public class_4190 method_10614(class_2522 var1, long var2, Direction var4) {
       return !var1.method_8302() ? class_3370.method_15536() : var1.method_8346(this.field_11553.method_23027(), this.field_11557.method_13363(var2), var4);
    }
 
-   public static int method_10626(class_6163 var0, class_2522 var1, class_1331 var2, class_2522 var3, class_1331 var4, class_240 var5, int var6) {
+   public static int method_10626(class_6163 var0, class_2522 var1, class_1331 var2, class_2522 var3, class_1331 var4, Direction var5, int var6) {
       boolean var9 = var1.method_8302() && var1.method_8358();
       boolean var10 = var3.method_8302() && var3.method_8358();
       if (!var9 && !var10) {
@@ -190,7 +190,7 @@ public abstract class class_2309<M extends class_8666<M>, S extends class_3808<M
       long var4 = var1.method_6077();
       this.method_27702(var4);
 
-      for (class_240 var9 : field_11558) {
+      for (Direction var9 : field_11558) {
          this.method_27702(class_1331.method_6097(var4, var9));
       }
    }

@@ -23,7 +23,7 @@ public class class_5995 implements class_4904 {
    }
 
    @Override
-   public class_8014 method_22451(class_8145 var1, Random var2) {
+   public class_8014 method_22451(Entity var1, Random var2) {
       class_6098 var5 = new class_6098(class_4897.field_24997, this.field_30550);
       class_6098 var6 = new class_6098(this.field_30547);
       if (this.field_30547 instanceof class_3385) {

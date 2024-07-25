@@ -60,7 +60,7 @@ public class class_644 implements class_1504 {
       return var1 >= this.field_3604 && var2 >= this.field_3607;
    }
 
-   public boolean method_2959(class_6946 var1, class_6486 var2) {
+   public boolean method_2959(class_6946 var1, World var2) {
       for (int var5 = 0; var5 <= var1.method_31781() - this.field_3604; var5++) {
          for (int var6 = 0; var6 <= var1.method_31782() - this.field_3607; var6++) {
             if (this.method_2958(var1, var5, var6, true)) {

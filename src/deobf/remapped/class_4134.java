@@ -9,7 +9,7 @@ public class class_4134 extends class_7637 implements class_3832 {
    private static final class_7821<Boolean> field_20121 = class_8073.<Boolean>method_36641(class_4134.class, class_2734.field_13347);
    private final class_4657 field_20123 = new class_4657(5);
 
-   public class_4134(class_6629<? extends class_4134> var1, class_6486 var2) {
+   public class_4134(class_6629<? extends class_4134> var1, World var2) {
       super(var1, var2);
    }
 
@@ -143,7 +143,7 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public boolean method_37344(class_8145 var1) {
+   public boolean method_37344(Entity var1) {
       if (super.method_37344(var1)) {
          return true;
       } else {

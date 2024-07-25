@@ -61,7 +61,7 @@ public class class_107 extends class_7819 implements class_674 {
    private boolean field_268;
    private class_1331 field_266;
 
-   public class_107(class_6629<? extends class_107> var1, class_6486 var2) {
+   public class_107(class_6629<? extends class_107> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_2112(this, 10, false);
       this.method_26895(class_1108.field_6357, -1.0F);
@@ -105,7 +105,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public class_1249 method_26933(class_6486 var1) {
+   public class_1249 method_26933(World var1) {
       class_5133 var4 = new class_5133(this, var1);
       var4.method_23534(false);
       var4.method_5611(true);
@@ -163,7 +163,7 @@ public class class_107 extends class_7819 implements class_674 {
       this.field_262 = this.field_262 + this.field_272 * 2.0F;
    }
 
-   public static boolean method_325(class_6486 var0, class_8145 var1) {
+   public static boolean method_325(World var0, Entity var1) {
       if (var1.method_37330() && !var1.method_37378() && var0.field_33033.nextInt(2) == 0) {
          List var4 = var0.<class_5886>method_25869(class_5886.class, var1.method_37241().method_18898(20.0), field_271);
          if (!var4.isEmpty()) {
@@ -276,7 +276,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       return var1.method_37181(class_6199.method_28345(this), 3.0F);
    }
 
@@ -286,7 +286,7 @@ public class class_107 extends class_7819 implements class_674 {
       return method_322(this.field_41768, this.field_41768.field_33033);
    }
 
-   public static class_8461 method_322(class_6486 var0, Random var1) {
+   public static class_8461 method_322(World var0, Random var1) {
       if (var0.method_43370() != class_423.field_1790 && var1.nextInt(1000) == 0) {
          ArrayList var4 = Lists.newArrayList(field_265.keySet());
          return method_326((class_6629<?>)var4.get(var1.nextInt(var4.size())));
@@ -345,7 +345,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public void method_26596(class_8145 var1) {
+   public void method_26596(Entity var1) {
       if (!(var1 instanceof class_704)) {
          super.method_26596(var1);
       }

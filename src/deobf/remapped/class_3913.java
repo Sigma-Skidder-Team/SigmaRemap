@@ -17,7 +17,7 @@ public class class_3913 extends class_2255<class_8398> {
       float var10 = 0.6666667F;
       if (!(var9.method_8360() instanceof class_8973)) {
          var3.method_36065(0.5, 0.5, 0.5);
-         float var11 = -var9.<class_240>method_10313(class_4853.field_24194).method_1028();
+         float var11 = -var9.<Direction>method_10313(class_4853.field_24194).method_1028();
          var3.method_36060(class_2426.field_12074.method_11074(var11));
          var3.method_36065(0.0, -0.3125, -0.4375);
          this.field_19008.field_34523.field_8200 = false;
@@ -82,7 +82,7 @@ public class class_3913 extends class_2255<class_8398> {
       if (!class_6588.field_33945) {
          if (!class_3111.field_15481) {
             class_1331 var3 = var0.method_17399();
-            class_8145 var4 = MinecraftClient.getInstance().method_8516();
+            Entity var4 = MinecraftClient.getInstance().method_8516();
             double var5 = var4.method_37273((double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
             if (var5 > field_19010) {
                return false;

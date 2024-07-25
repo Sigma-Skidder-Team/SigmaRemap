@@ -3,11 +3,11 @@ package remapped;
 public class class_2048 extends class_1080 {
    private int field_10361 = -1;
 
-   public class_2048(class_6629<? extends class_2048> var1, class_6486 var2) {
+   public class_2048(class_6629<? extends class_2048> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_2048(class_6486 var1, double var2, double var4, double var6) {
+   public class_2048(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34282, var1, var2, var4, var6);
    }
 
@@ -43,7 +43,7 @@ public class class_2048 extends class_1080 {
 
    @Override
    public boolean method_37181(class_6199 var1, float var2) {
-      class_8145 var5 = var1.method_28353();
+      Entity var5 = var1.method_28353();
       if (var5 instanceof class_6749) {
          class_6749 var6 = (class_6749)var5;
          if (var6.method_37264()) {

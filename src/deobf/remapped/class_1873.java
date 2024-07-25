@@ -67,7 +67,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.field_9491 == null ? this.method_8360().method_10794(this.method_8336(), var1, var2) : class_679.method_3094(this.field_9491);
    }
 
-   public class_4190 method_8346(class_6163 var1, class_1331 var2, class_240 var3) {
+   public class_4190 method_8346(class_6163 var1, class_1331 var2, Direction var3) {
       return this.field_9491 != null && class_679.method_3093(this.field_9491) != null
          ? class_679.method_3093(this.field_9491)[var3.ordinal()]
          : class_3370.method_15526(this.method_8377(var1, var2), var3);
@@ -127,7 +127,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.method_8360().method_10771(this.method_8336());
    }
 
-   public int method_8327(class_6163 var1, class_1331 var2, class_240 var3) {
+   public int method_8327(class_6163 var1, class_1331 var2, Direction var3) {
       return this.method_8360().method_10766(this.method_8336(), var1, var2, var3);
    }
 
@@ -135,7 +135,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.method_8360().method_10770(this.method_8336());
    }
 
-   public int method_8328(class_6486 var1, class_1331 var2) {
+   public int method_8328(World var1, class_1331 var2) {
       return this.method_8360().method_10795(this.method_8336(), var1, var2);
    }
 
@@ -147,7 +147,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.method_8360().method_10799(this.method_8336(), var1, var2, var3);
    }
 
-   public int method_8370(class_6163 var1, class_1331 var2, class_240 var3) {
+   public int method_8370(class_6163 var1, class_1331 var2, Direction var3) {
       return this.method_8360().method_10778(this.method_8336(), var1, var2, var3);
    }
 
@@ -168,7 +168,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.field_9484;
    }
 
-   public boolean method_8347(class_2522 var1, class_240 var2) {
+   public boolean method_8347(class_2522 var1, Direction var2) {
       return this.method_8360().method_10764(this.method_8336(), var1, var2);
    }
 
@@ -200,11 +200,11 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.method_8360().method_10776(this.method_8336(), var1, var2);
    }
 
-   public final boolean method_8337(class_6163 var1, class_1331 var2, class_8145 var3) {
-      return this.method_8338(var1, var2, var3, class_240.field_817);
+   public final boolean method_8337(class_6163 var1, class_1331 var2, Entity var3) {
+      return this.method_8338(var1, var2, var3, Direction.field_817);
    }
 
-   public final boolean method_8338(class_6163 var1, class_1331 var2, class_8145 var3, class_240 var4) {
+   public final boolean method_8338(class_6163 var1, class_1331 var2, Entity var3, Direction var4) {
       return class_6414.method_29303(this.method_8325(var1, var2, class_214.method_926(var3)), var4);
    }
 
@@ -222,11 +222,11 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       }
    }
 
-   public boolean method_8354(class_6486 var1, class_1331 var2, int var3, int var4) {
+   public boolean method_8354(World var1, class_1331 var2, int var3, int var4) {
       return this.method_8360().method_10800(this.method_8336(), var1, var2, var3, var4);
    }
 
-   public void method_8343(class_6486 var1, class_1331 var2, class_6414 var3, class_1331 var4, boolean var5) {
+   public void method_8343(World var1, class_1331 var2, class_6414 var3, class_1331 var4, boolean var5) {
       this.method_8360().method_10801(this.method_8336(), var1, var2, var3, var4, var5);
    }
 
@@ -238,7 +238,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       this.method_8360();
       class_2921 var7 = new class_2921();
 
-      for (class_240 var11 : class_2353.field_11817) {
+      for (Direction var11 : class_2353.field_11817) {
          var7.method_13371(var2, var11);
          class_2522 var12 = var1.method_28262(var7);
          class_2522 var13 = var12.method_8359(var11.method_1046(), this.method_8336(), var1, var7, var2);
@@ -254,11 +254,11 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       this.method_8360().method_10804(this.method_8336(), var1, var2, var3, var4);
    }
 
-   public void method_8363(class_6486 var1, class_1331 var2, class_2522 var3, boolean var4) {
+   public void method_8363(World var1, class_1331 var2, class_2522 var3, boolean var4) {
       this.method_8360().method_10760(this.method_8336(), var1, var2, var3, var4);
    }
 
-   public void method_8301(class_6486 var1, class_1331 var2, class_2522 var3, boolean var4) {
+   public void method_8301(World var1, class_1331 var2, class_2522 var3, boolean var4) {
       this.method_8360().method_10761(this.method_8336(), var1, var2, var3, var4);
    }
 
@@ -270,7 +270,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       this.method_8360().method_10783(this.method_8336(), var1, var2, var3);
    }
 
-   public void method_8326(class_6486 var1, class_1331 var2, class_8145 var3) {
+   public void method_8326(World var1, class_1331 var2, Entity var3) {
       this.method_8360().method_10784(this.method_8336(), var1, var2, var3);
    }
 
@@ -282,11 +282,11 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.method_8360().method_10796(this.method_8336(), var1);
    }
 
-   public class_6910 method_8322(class_6486 var1, class_704 var2, class_2584 var3, class_9529 var4) {
+   public class_6910 method_8322(World var1, class_704 var2, class_2584 var3, class_9529 var4) {
       return this.method_8360().method_10777(this.method_8336(), var1, var4.method_43955(), var2, var3, var4);
    }
 
-   public void method_8307(class_6486 var1, class_1331 var2, class_704 var3) {
+   public void method_8307(World var1, class_1331 var2, class_704 var3) {
       this.method_8360().method_10791(this.method_8336(), var1, var2, var3);
    }
 
@@ -298,7 +298,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.field_9486.method_23862(this.method_8336(), var1, var2);
    }
 
-   public class_2522 method_8359(class_240 var1, class_2522 var2, class_9379 var3, class_1331 var4, class_1331 var5) {
+   public class_2522 method_8359(Direction var1, class_2522 var2, class_9379 var3, class_1331 var4, class_1331 var5) {
       return this.method_8360().method_10763(this.method_8336(), var1, var2, var3, var4, var5);
    }
 
@@ -323,7 +323,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
    }
 
    @Nullable
-   public class_4259 method_8317(class_6486 var1, class_1331 var2) {
+   public class_4259 method_8317(World var1, class_1331 var2) {
       return this.method_8360().method_10767(this.method_8336(), var1, var2);
    }
 
@@ -355,15 +355,15 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.method_8360().method_29261(this.method_8336());
    }
 
-   public void method_8361(class_6486 var1, class_2522 var2, class_9529 var3, class_5783 var4) {
+   public void method_8361(World var1, class_2522 var2, class_9529 var3, class_5783 var4) {
       this.method_8360().method_10758(var1, var2, var3, var4);
    }
 
-   public boolean method_8308(class_6163 var1, class_1331 var2, class_240 var3) {
+   public boolean method_8308(class_6163 var1, class_1331 var2, Direction var3) {
       return this.method_8312(var1, var2, var3, class_3397.field_16732);
    }
 
-   public boolean method_8312(class_6163 var1, class_1331 var2, class_240 var3, class_3397 var4) {
+   public boolean method_8312(class_6163 var1, class_1331 var2, Direction var3, class_3397 var4) {
       return this.field_9491 == null ? var4.method_15689(this.method_8336(), var1, var2, var3) : this.field_9491.method_3090(var3, var4);
    }
 

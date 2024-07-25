@@ -21,12 +21,12 @@ public class class_8036 extends class_2451 implements class_1538 {
       return method_36487(var1) || super.method_11252(var1);
    }
 
-   public static Optional<class_5621<class_6486>> method_36488(class_5734 var0) {
-      return class_6486.field_33043.parse(class_3504.field_17178, var0.method_25929("LodestoneDimension")).result();
+   public static Optional<class_5621<World>> method_36488(class_5734 var0) {
+      return World.field_33043.parse(class_3504.field_17178, var0.method_25929("LodestoneDimension")).result();
    }
 
    @Override
-   public void method_11214(class_6098 var1, class_6486 var2, class_8145 var3, int var4, boolean var5) {
+   public void method_11214(class_6098 var1, World var2, Entity var3, int var4, boolean var5) {
       if (!var2.field_33055 && method_36487(var1)) {
          class_5734 var8 = var1.method_27994();
          if (var8.method_25938("LodestoneTracked") && !var8.method_25933("LodestoneTracked")) {
@@ -46,7 +46,7 @@ public class class_8036 extends class_2451 implements class_1538 {
    @Override
    public class_6910 method_11237(class_4734 var1) {
       class_1331 var4 = var1.method_21858();
-      class_6486 var5 = var1.method_21862();
+      World var5 = var1.method_21862();
       if (!var5.method_28262(var4).method_8350(class_4783.field_23852)) {
          return super.method_11237(var1);
       } else {
@@ -74,9 +74,9 @@ public class class_8036 extends class_2451 implements class_1538 {
       }
    }
 
-   private void method_36486(class_5621<class_6486> var1, class_1331 var2, class_5734 var3) {
+   private void method_36486(class_5621<World> var1, class_1331 var2, class_5734 var3) {
       var3.method_25946("LodestonePos", class_4338.method_20190(var2));
-      class_6486.field_33043
+      World.field_33043
          .encodeStart(class_3504.field_17178, var1)
          .resultOrPartial(field_41123::error)
          .ifPresent(var1x -> var3.method_25946("LodestoneDimension", var1x));

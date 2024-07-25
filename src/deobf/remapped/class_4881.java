@@ -2,9 +2,9 @@ package remapped;
 
 public class class_4881 extends class_7067<class_2844> {
    private static final Identifier field_24277 = new Identifier("textures/entity/enderdragon/dragon_fireball.png");
-   private static final class_3581 field_24278 = class_3581.method_16755(field_24277);
+   private static final RenderLayer field_24278 = RenderLayer.method_16755(field_24277);
 
-   public class_4881(class_6122 var1) {
+   public class_4881(EntityRenderDispatcher var1) {
       super(var1);
    }
 

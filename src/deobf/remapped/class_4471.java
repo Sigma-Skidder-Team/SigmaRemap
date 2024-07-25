@@ -7,7 +7,7 @@ import java.util.List;
 
 public class class_4471 extends class_367 {
    public ArrayList<Thread> field_21797 = new ArrayList<Thread>();
-   public class_8145 field_21799;
+   public Entity field_21799;
    public class_1343 field_21798;
 
    public class_4471(String var1, String var2, class_5664 var3) {
@@ -21,13 +21,13 @@ public class class_4471 extends class_367 {
       }
    }
 
-   public List<class_8145> method_20752() {
+   public List<Entity> method_20752() {
       ArrayList var3 = Lists.newArrayList(field_46692.field_9601.method_736());
       var3.remove(field_46692.field_9632);
       Iterator var4 = var3.iterator();
 
       while (var4.hasNext()) {
-         class_8145 var5 = (class_8145)var4.next();
+         Entity var5 = (Entity)var4.next();
          if (!(var5 instanceof class_704) || SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
             var4.remove();
          }

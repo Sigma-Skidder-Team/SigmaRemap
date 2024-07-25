@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import remapped.class_4235;
 import remapped.class_5734;
-import remapped.class_8145;
+import remapped.Entity;
 import remapped.class_8406;
 import remapped.class_9155;
 import remapped.class_9257;
@@ -50,7 +50,7 @@ public abstract class NBTTextComponent extends TextComponent implements ITargete
    }
 
    @Override
-   public IFormattableTextComponent func_230535_a_(class_9155 p_230535_1_, class_8145 p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
+   public IFormattableTextComponent func_230535_a_(class_9155 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       if (p_230535_1_ != null && this.field_218680_d != null) {
          Stream var6 = this.func_218673_a(p_230535_1_).<class_8406>flatMap(p_218675_1_ -> {
             try {

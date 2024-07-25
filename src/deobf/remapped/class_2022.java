@@ -10,7 +10,7 @@ public class class_2022 extends class_1944 {
    private static final class_4931 field_10249 = new class_4931().method_22607(4.0).method_22601();
    private class_1331 field_10246;
 
-   public class_2022(class_6629<? extends class_2022> var1, class_6486 var2) {
+   public class_2022(class_6629<? extends class_2022> var1, World var2) {
       super(var1, var2);
       this.method_9395(true);
    }
@@ -53,7 +53,7 @@ public class class_2022 extends class_1944 {
    }
 
    @Override
-   public void method_26596(class_8145 var1) {
+   public void method_26596(Entity var1) {
    }
 
    @Override

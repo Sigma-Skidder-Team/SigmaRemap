@@ -22,7 +22,7 @@ public final class class_6555 {
    public class_6555() {
    }
 
-   public class_6555(class_5422 var1) {
+   public class_6555(Quaternion var1) {
       float var4 = var1.method_24653();
       float var5 = var1.method_24647();
       float var6 = var1.method_24648();
@@ -105,14 +105,14 @@ public final class class_6555 {
       return Pair.of(var5, var6);
    }
 
-   private static class_5422 method_29900(class_6555 var0) {
+   private static Quaternion method_29900(class_6555 var0) {
       class_6555 var3 = new class_6555();
-      class_5422 var4 = class_5422.field_27621.method_24651();
+      Quaternion var4 = Quaternion.IDENTITY.method_24651();
       if (var0.field_33403 * var0.field_33403 + var0.field_33411 * var0.field_33411 > 1.0E-6F) {
          Pair var5 = method_29883(var0.field_33414, 0.5F * (var0.field_33403 + var0.field_33411), var0.field_33409);
          Float var6 = (Float)var5.getFirst();
          Float var7 = (Float)var5.getSecond();
-         class_5422 var8 = new class_5422(0.0F, 0.0F, var6, var7);
+         Quaternion var8 = new Quaternion(0.0F, 0.0F, var6, var7);
          float var9 = var7 * var7 - var6 * var6;
          float var10 = -2.0F * var6 * var7;
          float var11 = var7 * var7 + var6 * var6;
@@ -133,7 +133,7 @@ public final class class_6555 {
          Pair var12 = method_29883(var0.field_33414, 0.5F * (var0.field_33413 + var0.field_33415), var0.field_33410);
          float var14 = -(Float)var12.getFirst();
          Float var16 = (Float)var12.getSecond();
-         class_5422 var18 = new class_5422(0.0F, var14, 0.0F, var16);
+         Quaternion var18 = new Quaternion(0.0F, var14, 0.0F, var16);
          float var20 = var16 * var16 - var14 * var14;
          float var22 = -2.0F * var14 * var16;
          float var24 = var16 * var16 + var14 * var14;
@@ -154,7 +154,7 @@ public final class class_6555 {
          Pair var13 = method_29883(var0.field_33409, 0.5F * (var0.field_33408 + var0.field_33404), var0.field_33410);
          Float var15 = (Float)var13.getFirst();
          Float var17 = (Float)var13.getSecond();
-         class_5422 var19 = new class_5422(var15, 0.0F, 0.0F, var17);
+         Quaternion var19 = new Quaternion(var15, 0.0F, 0.0F, var17);
          float var21 = var17 * var17 - var15 * var15;
          float var23 = -2.0F * var15 * var17;
          float var25 = var17 * var17 + var15 * var15;
@@ -186,9 +186,9 @@ public final class class_6555 {
       this.field_33404 = var3;
    }
 
-   public Triple<class_5422, class_2426, class_5422> method_29894() {
-      class_5422 var3 = class_5422.field_27621.method_24651();
-      class_5422 var4 = class_5422.field_27621.method_24651();
+   public Triple<Quaternion, class_2426, Quaternion> method_29894() {
+      Quaternion var3 = Quaternion.IDENTITY.method_24651();
+      Quaternion var4 = Quaternion.IDENTITY.method_24651();
       class_6555 var5 = this.method_29882();
       var5.method_29899();
       var5.method_29891(this);
@@ -207,7 +207,7 @@ public final class class_6555 {
       float var11 = var10 * var10 - var9 * var9;
       float var12 = -2.0F * var9 * var10;
       float var13 = var10 * var10 + var9 * var9;
-      class_5422 var14 = new class_5422(0.0F, 0.0F, var9, var10);
+      Quaternion var14 = new Quaternion(0.0F, 0.0F, var9, var10);
       var3.method_24658(var14);
       class_6555 var15 = new class_6555();
       var15.method_29888();
@@ -224,7 +224,7 @@ public final class class_6555 {
       float var18 = var17 * var17 - var16 * var16;
       float var19 = -2.0F * var16 * var17;
       float var20 = var17 * var17 + var16 * var16;
-      class_5422 var21 = new class_5422(0.0F, var16, 0.0F, var17);
+      Quaternion var21 = new Quaternion(0.0F, var16, 0.0F, var17);
       var3.method_24658(var21);
       class_6555 var22 = new class_6555();
       var22.method_29888();
@@ -241,7 +241,7 @@ public final class class_6555 {
       float var25 = var24 * var24 - var23 * var23;
       float var26 = -2.0F * var23 * var24;
       float var27 = var24 * var24 + var23 * var23;
-      class_5422 var28 = new class_5422(var23, 0.0F, 0.0F, var24);
+      Quaternion var28 = new Quaternion(var23, 0.0F, 0.0F, var24);
       var3.method_24658(var28);
       class_6555 var29 = new class_6555();
       var29.method_29888();
@@ -426,7 +426,7 @@ public final class class_6555 {
       this.field_33410 = var12;
    }
 
-   public void method_29890(class_5422 var1) {
+   public void method_29890(Quaternion var1) {
       float var4 = var1.method_24653();
       float var5 = var1.method_24647();
       float var6 = var1.method_24648();

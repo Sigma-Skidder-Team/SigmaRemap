@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Map.Entry;
 
-public class class_5614 extends class_8145 {
+public class class_5614 extends Entity {
    public int field_28508;
    public int field_28514;
    public int field_28509;
@@ -11,7 +11,7 @@ public class class_5614 extends class_8145 {
    private class_704 field_28507;
    private int field_28512;
 
-   public class_5614(class_6486 var1, double var2, double var4, double var6, int var8) {
+   public class_5614(World var1, double var2, double var4, double var6, int var8) {
       this(class_6629.field_34299, var1);
       this.method_37256(var2, var4, var6);
       this.field_41701 = (float)(this.field_41717.nextDouble() * 360.0);
@@ -21,7 +21,7 @@ public class class_5614 extends class_8145 {
       this.field_28513 = var8;
    }
 
-   public class_5614(class_6629<? extends class_5614> var1, class_6486 var2) {
+   public class_5614(class_6629<? extends class_5614> var1, World var2) {
       super(var1, var2);
    }
 

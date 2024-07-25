@@ -13,7 +13,7 @@ public class class_8683 extends class_9128 {
    @class_9148
    private void method_39870(class_3645 var1) {
       if (this.method_42015() && var1.method_16973() != null && var1.method_16971()) {
-         class_8145 var4 = var1.method_16973();
+         Entity var4 = var1.method_16973();
          if (var4 instanceof class_5834
             && var4.field_41749 <= (int)this.method_42002("HurtTime")
             && class_4181.field_20352 > 1

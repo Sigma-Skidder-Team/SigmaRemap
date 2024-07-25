@@ -60,7 +60,7 @@ public enum class_8336 implements class_4530 {
 
    private final class_6555 field_42689;
    private final String field_42686;
-   private Map<class_240, class_240> field_42707;
+   private Map<Direction, Direction> field_42707;
    private final boolean field_42679;
    private final boolean field_42698;
    private final boolean field_42697;
@@ -122,16 +122,16 @@ public enum class_8336 implements class_4530 {
       return this.field_42686;
    }
 
-   public class_240 method_38393(class_240 var1) {
+   public Direction method_38393(Direction var1) {
       if (this.field_42707 == null) {
-         this.field_42707 = Maps.newEnumMap(class_240.class);
+         this.field_42707 = Maps.newEnumMap(Direction.class);
 
-         for (class_240 var7 : class_240.values()) {
+         for (Direction var7 : Direction.values()) {
             class_9249 var8 = var7.method_1029();
             class_137 var9 = var7.method_1049();
             class_9249 var10 = class_9249.values()[this.field_42713.method_41038(var8.ordinal())];
             class_137 var11 = !this.method_38392(var10) ? var9 : var9.method_550();
-            class_240 var12 = class_240.method_1055(var10, var11);
+            Direction var12 = Direction.method_1055(var10, var11);
             this.field_42707.put(var7, var12);
          }
       }

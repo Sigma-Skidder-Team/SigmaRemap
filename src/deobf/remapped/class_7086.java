@@ -41,7 +41,7 @@ public class class_7086 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       if (var4 instanceof class_5834 && var4.method_37387() != class_6629.field_34250 && var4.method_37387() != class_6629.field_34238) {
          var4.method_37130(var1, new class_1343(0.8F, 0.75, 0.8F));
          if (!var2.field_33055
@@ -57,7 +57,7 @@ public class class_7086 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       int var9 = var1.<Integer>method_10313(field_36577);
       boolean var10 = var9 == 3;
       if (!var10 && var4.method_26617(var5).method_27960() == class_4897.field_24640) {
@@ -84,7 +84,7 @@ public class class_7086 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public boolean method_18357(class_6486 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
       return true;
    }
 

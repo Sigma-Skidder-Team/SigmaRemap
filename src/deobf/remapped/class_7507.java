@@ -34,8 +34,8 @@ public enum class_7507 implements class_5598 {
 
    private class_7507(int var3, int var4) {
       this.field_38325 = method_34223(var3, var4);
-      class_5422 var7 = new class_5422(new class_2426(0.0F, 1.0F, 0.0F), (float)(-var4), true);
-      var7.method_24658(new class_5422(new class_2426(1.0F, 0.0F, 0.0F), (float)(-var3), true));
+      Quaternion var7 = new Quaternion(new class_2426(0.0F, 1.0F, 0.0F), (float)(-var4), true);
+      var7.method_24658(new Quaternion(new class_2426(1.0F, 0.0F, 0.0F), (float)(-var3), true));
       class_8336 var8 = class_8336.field_42691;
 
       for (byte var9 = 0; var9 < var4; var9 += 90) {
@@ -46,7 +46,7 @@ public enum class_7507 implements class_5598 {
          var8 = var8.method_38395(class_8336.field_42693);
       }
 
-      this.field_38326 = new class_1221((class_2426)null, var7, (class_2426)null, (class_5422)null);
+      this.field_38326 = new class_1221((class_2426)null, var7, (class_2426)null, (Quaternion)null);
       this.field_38331 = var8;
    }
 

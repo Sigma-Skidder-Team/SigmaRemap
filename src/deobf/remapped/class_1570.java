@@ -9,7 +9,7 @@ public class class_1570 extends class_9873 {
    }
 
    public class_1570(int var1, int var2, int var3, int var4) {
-      super(class_3581::method_16705);
+      super(RenderLayer::method_16705);
       this.field_49928 = var3;
       this.field_49927 = var4;
       this.field_8248 = new class_1549(this, var1, var2);

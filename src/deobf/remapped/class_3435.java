@@ -70,14 +70,14 @@ public class class_3435 {
          class_8869 var3 = this.method_15873();
          class_8869 var4 = this.field_16881.get(this.field_16881.size() - 1);
          ITextComponent var5 = var4.method_40803();
-         class_8145 var6 = var4.method_40799().method_28372();
+         Entity var6 = var4.method_40799().method_28372();
          Object var7;
          if (var3 != null && var4.method_40799() == class_6199.field_31684) {
             ITextComponent var8 = var3.method_40803();
             if (var3.method_40799() == class_6199.field_31684 || var3.method_40799() == class_6199.field_31685) {
                var7 = new TranslationTextComponent("death.fell.accident." + this.method_15869(var3), this.field_16886.method_19839());
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
-               class_8145 var11 = var3.method_40799().method_28372();
+               Entity var11 = var3.method_40799().method_28372();
                class_6098 var10 = !(var11 instanceof class_5834) ? class_6098.field_31203 : ((class_5834)var11).method_26446();
                if (!var10.method_28022() && var10.method_28018()) {
                   var7 = new TranslationTextComponent("death.fell.assist.item", this.field_16886.method_19839(), var8, var10.method_28001());

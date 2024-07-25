@@ -126,7 +126,7 @@ public class class_9762 {
                }
             }
 
-            class_903.method_3866((class_240)null, 180.0F, ((class_8550)var14).method_39336(), var18, 0.0F, var2, var3, var4);
+            class_903.method_3866((Direction)null, 180.0F, ((class_8550)var14).method_39336(), var18, 0.0F, var2, var3, var4);
          }
       }
    }

@@ -2,20 +2,20 @@ package remapped;
 
 public class class_3357 {
    private static String[] field_16542;
-   private class_8145 field_16543;
+   private Entity field_16543;
    private class_8594 field_16541;
 
-   public class_3357(class_8145 var1) {
+   public class_3357(Entity var1) {
       this.field_16543 = var1;
       this.field_16541 = null;
    }
 
-   public class_3357(class_8145 var1, class_8594 var2) {
+   public class_3357(Entity var1, class_8594 var2) {
       this.field_16543 = var1;
       this.field_16541 = var2;
    }
 
-   public class_8145 method_15377() {
+   public Entity method_15377() {
       return this.field_16543;
    }
 

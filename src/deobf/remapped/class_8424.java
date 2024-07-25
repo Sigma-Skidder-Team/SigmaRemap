@@ -13,7 +13,7 @@ public class class_8424 extends class_6414 {
    }
 
    @Override
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, class_240 var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
       return 15;
    }
 }

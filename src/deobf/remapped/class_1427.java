@@ -152,7 +152,7 @@ public class class_1427 extends class_4285<class_8541> {
    }
 
    private static void method_6555(class_1331 var0, class_9379 var1, Random var2) {
-      class_2921 var5 = var0.method_6089().method_13368(class_240.field_802);
+      class_2921 var5 = var0.method_6089().method_13368(Direction.field_802);
       if (var1.method_22548(var5)) {
          int var6 = class_9299.method_42824(var2, 1, 5);
          if (var2.nextInt(7) == 0) {

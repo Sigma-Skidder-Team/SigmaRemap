@@ -47,7 +47,7 @@ public class class_7415 extends class_2733 {
 
    @Override
    public class_8599 method_12293(class_9873 var1, float var2) {
-      class_6122 var5 = MinecraftClient.getInstance().method_8587();
+      EntityRenderDispatcher var5 = MinecraftClient.getInstance().method_8587();
       class_743 var6 = new class_743(var5);
       var6.field_32487 = (class_7946<class_8127>)var1;
       var6.field_36492 = var2;

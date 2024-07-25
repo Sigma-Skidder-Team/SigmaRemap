@@ -12,8 +12,8 @@ public class class_2553 extends class_691 {
    }
 
    @Override
-   public int method_3122(class_6486 var1, class_1331 var2) {
-      int var5 = Math.min(var1.<class_8145>method_25868(class_8145.class, field_3798.method_18919(var2)).size(), this.field_12635);
+   public int method_3122(World var1, class_1331 var2) {
+      int var5 = Math.min(var1.<Entity>method_25868(Entity.class, field_3798.method_18919(var2)).size(), this.field_12635);
       if (var5 <= 0) {
          return 0;
       } else {

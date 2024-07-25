@@ -74,7 +74,7 @@ public class class_9153 {
       }
    }
 
-   public boolean method_42142(class_1331 var1, class_240 var2) {
+   public boolean method_42142(class_1331 var1, Direction var2) {
       if (!this.field_46835.field_9632.method_3228(this.field_46835.field_9601, var1, this.field_46833)) {
          if (!this.field_46835.field_9601.method_6673().method_9813(var1)) {
             return false;
@@ -125,7 +125,7 @@ public class class_9153 {
       if (this.field_46829) {
          class_2522 var3 = this.field_46835.field_9601.method_28262(this.field_46836);
          this.field_46835.method_8531().method_40533(this.field_46835.field_9601, this.field_46836, var3, -1.0F);
-         this.method_42127(class_7500.field_38264, this.field_46836, class_240.field_802);
+         this.method_42127(class_7500.field_38264, this.field_46836, Direction.field_802);
          this.field_46829 = false;
          this.field_46832 = 0.0F;
          this.field_46835.field_9601.method_29568(this.field_46835.field_9632.method_37145(), this.field_46836, -1);
@@ -133,7 +133,7 @@ public class class_9153 {
       }
    }
 
-   public boolean method_42163(class_1331 var1, class_240 var2) {
+   public boolean method_42163(class_1331 var1, Direction var2) {
       this.method_42129();
       if (this.field_46831 <= 0) {
          if (this.field_46833.method_21587() && this.field_46835.field_9601.method_6673().method_9813(var1)) {
@@ -256,7 +256,7 @@ public class class_9153 {
       }
    }
 
-   public class_6910 method_42155(class_704 var1, class_6486 var2, class_2584 var3) {
+   public class_6910 method_42155(class_704 var1, World var2, class_2584 var3) {
       if (this.field_46833 != class_4666.field_22756) {
          this.method_42129();
          this.field_46837.method_4813(new class_1022(var3));
@@ -286,7 +286,7 @@ public class class_9153 {
       return new class_5989(this.field_46835, var1, this.field_46837, var2, var3, var4, var5);
    }
 
-   public void method_42138(class_704 var1, class_8145 var2) {
+   public void method_42138(class_704 var1, Entity var2) {
       this.method_42129();
       this.field_46837.method_4813(new class_3398(var2, var1.method_37252()));
       if (this.field_46833 != class_4666.field_22756) {
@@ -295,13 +295,13 @@ public class class_9153 {
       }
    }
 
-   public class_6910 method_42144(class_704 var1, class_8145 var2, class_2584 var3) {
+   public class_6910 method_42144(class_704 var1, Entity var2, class_2584 var3) {
       this.method_42129();
       this.field_46837.method_4813(new class_3398(var2, var3, var1.method_37252()));
       return this.field_46833 != class_4666.field_22756 ? var1.method_3204(var2, var3) : class_6910.field_35521;
    }
 
-   public class_6910 method_42145(class_704 var1, class_8145 var2, class_5631 var3, class_2584 var4) {
+   public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, class_2584 var4) {
       this.method_42129();
       class_1343 var7 = var3.method_33993().method_6193(var2.method_37302(), var2.method_37309(), var2.method_37156());
       this.field_46837.method_4813(new class_3398(var2, var4, var7, var1.method_37252()));
@@ -334,7 +334,7 @@ public class class_9153 {
 
    public void method_42139(class_704 var1) {
       this.method_42129();
-      this.field_46837.method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, class_240.field_802));
+      this.field_46837.method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, Direction.field_802));
       var1.method_26474();
    }
 
@@ -378,7 +378,7 @@ public class class_9153 {
       this.field_46837.method_4813(new class_4006(var1));
    }
 
-   private void method_42127(class_7500 var1, class_1331 var2, class_240 var3) {
+   private void method_42127(class_7500 var1, class_1331 var2, Direction var3) {
       class_5989 var6 = this.field_46835.field_9632;
       this.field_46830.put(Pair.of(var2, var1), var6.method_37245());
       this.field_46837.method_4813(new class_1586(var1, var2, var3));

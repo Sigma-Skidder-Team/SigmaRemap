@@ -20,11 +20,11 @@ public class class_2811 extends class_1173 {
    private int field_13809;
    private int field_13808;
 
-   public class_2811(class_6629<? extends class_2811> var1, class_6486 var2) {
+   public class_2811(class_6629<? extends class_2811> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_2811(class_6486 var1) {
+   public class_2811(World var1) {
       this(class_6629.field_34297, var1);
    }
 
@@ -262,7 +262,7 @@ public class class_2811 extends class_1173 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       boolean var4 = super.method_26442(var1);
       if (var4) {
          float var5 = this.field_41768.method_43368(this.method_37075()).method_44283();
@@ -392,7 +392,7 @@ public class class_2811 extends class_1173 {
                      var1.method_7509(var10);
                   }
                } else {
-                  List var14 = var1.<class_8145>method_25869(class_3024.class, this.method_37241().method_18899(5.0, 3.0, 5.0), class_3572.field_17484);
+                  List var14 = var1.<Entity>method_25869(class_3024.class, this.method_37241().method_18899(5.0, 3.0, 5.0), class_3572.field_17484);
                   if (!var14.isEmpty()) {
                      class_3024 var11 = (class_3024)var14.get(0);
                      var11.method_13808(true);
@@ -455,7 +455,7 @@ public class class_2811 extends class_1173 {
    @Override
    public void method_26614(class_6199 var1, int var2, boolean var3) {
       super.method_26614(var1, var2, var3);
-      class_8145 var6 = var1.method_28372();
+      Entity var6 = var1.method_28372();
       if (var6 instanceof class_9490) {
          class_9490 var7 = (class_9490)var6;
          if (var7.method_43837()) {

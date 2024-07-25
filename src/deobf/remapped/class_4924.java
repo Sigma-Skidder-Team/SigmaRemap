@@ -83,7 +83,7 @@ public interface class_4924 extends class_5561, class_1449, class_6142 {
       return this.method_22572().method_40221(this.method_22573(var1));
    }
 
-   default int method_22551(class_1331 var1, class_240 var2) {
+   default int method_22551(class_1331 var1, Direction var2) {
       return this.method_28262(var1).method_8370(this, var1, var2);
    }
 

@@ -13,14 +13,14 @@ public class class_7850 implements class_5561 {
    public final class_2654[][] field_39774;
    public final class_2522[] field_39778;
    public final class_4774[] field_39777;
-   public final class_6486 field_39779;
+   public final World field_39779;
 
    @Nullable
-   public static class_7850 method_35515(class_6486 var0, class_1331 var1, class_1331 var2, int var3) {
+   public static class_7850 method_35515(World var0, class_1331 var1, class_1331 var2, int var3) {
       return method_35516(var0, var1, var2, var3, true);
    }
 
-   public static class_7850 method_35516(class_6486 var0, class_1331 var1, class_1331 var2, int var3, boolean var4) {
+   public static class_7850 method_35516(World var0, class_1331 var1, class_1331 var2, int var3, boolean var4) {
       int var7 = var1.method_12173() - var3 >> 4;
       int var8 = var1.method_12185() - var3 >> 4;
       int var9 = var2.method_12173() + var3 >> 4;
@@ -56,7 +56,7 @@ public class class_7850 implements class_5561 {
       return true;
    }
 
-   public class_7850(class_6486 var1, int var2, int var3, class_2654[][] var4, class_1331 var5, class_1331 var6) {
+   public class_7850(World var1, int var2, int var3, class_2654[][] var4, class_1331 var5, class_1331 var6) {
       this.field_39779 = var1;
       this.field_39775 = var2;
       this.field_39783 = var3;
@@ -95,7 +95,7 @@ public class class_7850 implements class_5561 {
    }
 
    @Override
-   public float method_25265(class_240 var1, boolean var2) {
+   public float method_25265(Direction var1, boolean var2) {
       return this.field_39779.method_25265(var1, var2);
    }
 

@@ -19,7 +19,7 @@ public class class_5302 extends class_3599 {
       boolean var4 = false;
 
       for (class_9149 var6 : var3) {
-         class_8145 var7 = var6.method_37259();
+         Entity var7 = var6.method_37259();
          if (var7 instanceof class_704
             && (class_9299.method_42804(((class_704)var7).field_29676) > 0.0F || class_9299.method_42804(((class_704)var7).field_29673) > 0.0F)) {
             var4 = true;
@@ -73,7 +73,7 @@ public class class_5302 extends class_3599 {
          this.field_27096 = 10;
          if (this.field_27100 != class_9414.field_48135) {
             if (this.field_27100 == class_9414.field_48137) {
-               class_240 var5 = this.field_27099.method_37235();
+               Direction var5 = this.field_27099.method_37235();
                class_1331 var6 = this.field_27099.method_37075().method_6099(var5, 10);
                this.field_27098.method_26927().method_5595((double)var6.method_12173(), (double)(var6.method_12165() - 1), (double)var6.method_12185(), 1.0);
                if (this.field_27098.method_37175(this.field_27099) > 12.0F) {

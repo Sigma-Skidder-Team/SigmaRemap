@@ -12,7 +12,7 @@ public class class_4548 implements class_6310<class_392> {
    public class_4548() {
    }
 
-   public class_4548(class_8145 var1) {
+   public class_4548(Entity var1) {
       this(var1.method_37145(), var1.method_37098());
    }
 

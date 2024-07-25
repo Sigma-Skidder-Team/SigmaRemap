@@ -31,7 +31,7 @@ public class class_4921 implements class_2995 {
       double var14 = 0.0025;
       HashSet var16 = Sets.newHashSet();
       HashMap var17 = Maps.newHashMap();
-      class_7907 var18 = var2.method_11645(class_3581.method_16744());
+      class_7907 var18 = var2.method_11645(RenderLayer.method_16744());
       Iterator var19 = this.field_25471.entrySet().iterator();
 
       while (var19.hasNext()) {
@@ -49,7 +49,7 @@ public class class_4921 implements class_2995 {
                      .method_18924(0.0025 * (double)var23)
                      .method_18918((double)var27.method_12173(), (double)var27.method_12165(), (double)var27.method_12185())
                      .method_18918(-var3, -var5, -var7);
-                  class_4316.method_20012(
+                  WorldRenderer.method_20012(
                      var1,
                      var18,
                      var29.field_19941,

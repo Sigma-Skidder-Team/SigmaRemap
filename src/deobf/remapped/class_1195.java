@@ -39,7 +39,7 @@ public class class_1195 extends class_8557 {
    }
 
    @Override
-   public int method_39378(class_6486 var1) {
+   public int method_39378(World var1) {
       return super.method_39378(var1) / 3;
    }
 

@@ -21,7 +21,7 @@ public class class_3721 extends class_367 {
                var8 = 0.0;
             }
 
-            class_8145 var10 = field_46692.field_9632.method_37243();
+            Entity var10 = field_46692.field_9632.method_37243();
             var10.field_41701 = field_46692.field_9632.field_41701;
             var10.method_37214(var6, !field_46692.field_9632.field_29654 ? (!this.field_18223 ? 0.0 : (double)(-var5)) : (double)var5, var8);
          }

@@ -104,15 +104,15 @@ public class class_314 {
       }
    }
 
-   public static class_8145 method_1436(class_8145 var0, List<class_8145> var1) {
+   public static Entity method_1436(Entity var0, List<Entity> var1) {
       if (var1.size() <= 0) {
          return null;
       } else {
-         class_8145 var4 = null;
+         Entity var4 = null;
 
          for (int var5 = 0; var5 < var1.size(); var5++) {
-            if (var4 == null || var0.method_37175((class_8145)var1.get(var5)) < var0.method_37175(var4)) {
-               var4 = (class_8145)var1.get(var5);
+            if (var4 == null || var0.method_37175((Entity)var1.get(var5)) < var0.method_37175(var4)) {
+               var4 = (Entity)var1.get(var5);
             }
          }
 
@@ -120,13 +120,13 @@ public class class_314 {
       }
    }
 
-   public static final boolean method_1437(class_8145 var0) {
+   public static final boolean method_1437(Entity var0) {
       class_174 var3 = field_1158.field_9601;
       class_4092 var4 = var0.field_41712;
       return var3.method_22550(var4);
    }
 
-   public static final boolean method_1385(class_8145 var0) {
+   public static final boolean method_1385(Entity var0) {
       double var3 = var0.method_37302() - var0.field_41754;
       double var5 = var0.method_37309() - var0.field_41713;
       double var7 = var0.method_37156() - var0.field_41724;
@@ -437,7 +437,7 @@ public class class_314 {
       return new Color((float)var5.getRed() / 255.0F, (float)var5.getGreen() / 255.0F, (float)var5.getBlue() / 255.0F, (float)var5.getAlpha() / 255.0F);
    }
 
-   public static List<class_8145> method_1440() {
+   public static List<Entity> method_1440() {
       ArrayList var2 = new ArrayList();
       field_1158.field_9601.field_568.forEach((var1, var2x) -> var2.add(var2x));
       return var2;
@@ -455,7 +455,7 @@ public class class_314 {
       return (float)(var0 >> 24 & 0xFF) / 255.0F;
    }
 
-   public static class_8145 method_1458(float var0, float var1, float var2, double var3) {
+   public static Entity method_1458(float var0, float var1, float var2, double var3) {
       class_5631 var7 = method_1461(var0, var1, var2, var3);
       return var7 == null ? null : var7.method_25524();
    }
@@ -466,7 +466,7 @@ public class class_314 {
          field_1158.field_9632.method_37309() + (double)field_1158.field_9632.method_37277(),
          field_1158.field_9632.method_37156()
       );
-      class_8145 var8 = field_1158.method_8516();
+      Entity var8 = field_1158.method_8516();
       if (var8 != null && field_1158.field_9601 != null) {
          double var9 = (double)field_1158.field_9647.method_42146();
          if (var2 != 0.0F) {
@@ -486,12 +486,12 @@ public class class_314 {
    }
 
    public static class_5631 method_1433(
-      class_6486 var0, class_8145 var1, class_1343 var2, class_1343 var3, class_4092 var4, Predicate<class_8145> var5, double var6, double var8
+           World var0, Entity var1, class_1343 var2, class_1343 var3, class_4092 var4, Predicate<Entity> var5, double var6, double var8
    ) {
       double var12 = var6;
-      class_8145 var14 = null;
+      Entity var14 = null;
 
-      for (class_8145 var16 : var0.method_25867(var1, var4, var5)) {
+      for (Entity var16 : var0.method_25867(var1, var4, var5)) {
          class_4092 var17 = var16.method_37241().method_18898(var8);
          Optional var18 = var17.method_18923(var2, var3);
          if (!var18.isPresent()) {
@@ -511,9 +511,9 @@ public class class_314 {
       return var14 != null ? new class_5631(var14) : null;
    }
 
-   public static class_5631 method_1410(class_8145 var0, float var1, float var2, Predicate<class_8145> var3, double var4) {
+   public static class_5631 method_1410(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
       double var8 = var4 * var4;
-      class_8145 var10 = null;
+      Entity var10 = null;
       class_1343 var11 = null;
       class_1343 var12 = new class_1343(
          field_1158.field_9632.method_37302(),
@@ -523,7 +523,7 @@ public class class_314 {
       class_1343 var13 = method_1449(var2, var1);
       class_1343 var14 = var12.method_6214(var13.field_7336 * var8, var13.field_7333 * var8, var13.field_7334 * var8);
 
-      for (class_8145 var16 : field_1158.field_9601
+      for (Entity var16 : field_1158.field_9601
          .method_25867(field_1158.field_9632, field_1158.field_9632.method_37241().method_18929(var13.method_6209(var8)).method_18899(1.0, 1.0, 1.0), var3)) {
          class_4092 var17 = var16.method_37241();
          Optional var18 = var17.method_18923(var12, var14);
@@ -641,7 +641,7 @@ public class class_314 {
       return var3.count() != 0L;
    }
 
-   public static boolean method_1413(class_8145 var0, float var1) {
+   public static boolean method_1413(Entity var0, float var1) {
       class_4092 var4 = new class_4092(
          var0.field_41712.field_19941,
          var0.field_41712.field_19937 - (double)var1,
@@ -654,7 +654,7 @@ public class class_314 {
       return var5.count() != 0L;
    }
 
-   public static List<class_1331> method_1447(class_8145 var0) {
+   public static List<class_1331> method_1447(Entity var0) {
       ArrayList var3 = new ArrayList();
       byte var4 = 1;
 
@@ -689,10 +689,10 @@ public class class_314 {
    }
 
    public static void method_1459() {
-      field_1158.method_8614().method_4813(new class_1586(class_7500.field_38259, new class_1331(0, 0, 0), class_240.field_802));
+      field_1158.method_8614().method_4813(new class_1586(class_7500.field_38259, new class_1331(0, 0, 0), Direction.field_802));
    }
 
-   public static void method_1431(class_8145 var0, boolean var1) {
+   public static void method_1431(Entity var0, boolean var1) {
       boolean var4 = class_3347.method_15348().equals(class_412.field_1747);
       class_3645 var5 = new class_3645(var0, true);
       SigmaMainClass.method_3328().method_3302().method_7914(var5);
@@ -898,7 +898,7 @@ public class class_314 {
       }
    }
 
-   public static class_9374 method_1426(class_8145 var0) {
+   public static class_9374 method_1426(Entity var0) {
       if (var0 instanceof class_5834) {
          if (!(var0 instanceof class_704)) {
             return !(var0 instanceof class_5886) && !(var0 instanceof class_1173) && !(var0 instanceof class_378) && !(var0 instanceof class_516)
@@ -1023,7 +1023,7 @@ public class class_314 {
       return new double[]{0.0, 0.0625, 0.125, 0.25, 0.3125, 0.5, 0.625, 0.75, 0.8125, 0.875, 0.9375, 1.0, 1.0625, 1.125, 1.25, 1.3125, 1.375};
    }
 
-   public static boolean method_1402(class_8145 var0, boolean var1, boolean var2, boolean var3) {
+   public static boolean method_1402(Entity var0, boolean var1, boolean var2, boolean var3) {
       if (var0 != field_1158.field_9632 && var0 != class_5477.field_27898) {
          if (SigmaMainClass.method_3328().method_3307().method_14460(var0)) {
             return false;
@@ -1082,7 +1082,7 @@ public class class_314 {
       return Math.random() * 1.0E-8;
    }
 
-   public static class_1343 method_1429(class_8145 var0) {
+   public static class_1343 method_1429(Entity var0) {
       return method_1428(var0.field_41712);
    }
 
@@ -1197,11 +1197,11 @@ public class class_314 {
       };
    }
 
-   public static class_240 method_1409(double var0) {
+   public static Direction method_1409(double var0) {
       class_4092 var4 = field_1158.field_9632.field_41712;
-      class_240[] var5 = new class_240[]{class_240.field_804, class_240.field_809, class_240.field_800, class_240.field_818};
+      Direction[] var5 = new Direction[]{Direction.field_804, Direction.field_809, Direction.field_800, Direction.field_818};
 
-      for (class_240 var9 : var5) {
+      for (Direction var9 : var5) {
          if (field_1158.field_9601
                .method_6680(field_1158.field_9632, var4.method_18928(var0 * (double)var9.method_1041(), 0.0, var0 * (double)var9.method_1034()))
                .count()
@@ -1213,11 +1213,11 @@ public class class_314 {
       return null;
    }
 
-   public static class_9097<class_240, class_1343> method_1462(double var0) {
+   public static class_9097<Direction, class_1343> method_1462(double var0) {
       class_4092 var4 = field_1158.field_9632.field_41712;
-      class_240[] var5 = new class_240[]{class_240.field_804, class_240.field_809, class_240.field_800, class_240.field_818};
+      Direction[] var5 = new Direction[]{Direction.field_804, Direction.field_809, Direction.field_800, Direction.field_818};
 
-      for (class_240 var9 : var5) {
+      for (Direction var9 : var5) {
          Iterator var10 = field_1158.field_9601
             .method_6680(field_1158.field_9632, var4.method_18928(var0 * (double)var9.method_1041(), 0.0, var0 * (double)var9.method_1034()))
             .iterator();
@@ -1225,7 +1225,7 @@ public class class_314 {
             class_1343 var11 = field_1158.field_9632
                .method_37245()
                .method_6215(field_1158.field_9632.method_37287(new class_1343((double)var9.method_1041(), 0.0, (double)var9.method_1034())));
-            return new class_9097<class_240, class_1343>(var9, var11);
+            return new class_9097<Direction, class_1343>(var9, var11);
          }
       }
 
@@ -1247,7 +1247,7 @@ public class class_314 {
       return var2 % 3L != 0L ? var2 * 2L : var2 / 2L;
    }
 
-   public static boolean method_1432(class_8145 var0) {
+   public static boolean method_1432(Entity var0) {
       if (!(var0.method_37309() < 1.0)) {
          if (!var0.field_41726) {
             class_4092 var3 = var0.method_37241();

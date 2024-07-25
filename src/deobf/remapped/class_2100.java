@@ -10,7 +10,7 @@ public class class_2100 extends class_551 implements class_1538 {
    }
 
    @Override
-   public void method_11206(class_6098 var1, class_6486 var2, class_5834 var3, int var4) {
+   public void method_11206(class_6098 var1, World var2, class_5834 var3, int var4) {
       if (var3 instanceof class_704) {
          class_704 var7 = (class_704)var3;
          boolean var8 = var7.field_3876.field_4944 || class_2931.method_13423(class_3668.field_17874, var1) > 0;
@@ -98,7 +98,7 @@ public class class_2100 extends class_551 implements class_1538 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       boolean var7 = !var2.method_26475(var6).method_28022();
       if (!var2.field_3876.field_4944 && !var7) {

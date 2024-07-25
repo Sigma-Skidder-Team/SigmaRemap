@@ -3,7 +3,7 @@ package remapped;
 public class class_8263 extends class_1171 {
    private static final Identifier field_42389 = new Identifier("textures/entity/zombie/husk.png");
 
-   public class_8263(class_6122 var1) {
+   public class_8263(EntityRenderDispatcher var1) {
       super(var1);
    }
 

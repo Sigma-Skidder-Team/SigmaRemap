@@ -5,7 +5,7 @@ public class class_9133 extends class_7067<class_1044> {
    private static final Identifier field_46722 = new Identifier("textures/entity/wither/wither.png");
    private final class_1570 field_46721 = new class_1570();
 
-   public class_9133(class_6122 var1) {
+   public class_9133(EntityRenderDispatcher var1) {
       super(var1);
    }
 

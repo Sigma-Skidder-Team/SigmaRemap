@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.Random;
 
 public class class_6138 extends class_462 {
-   private final class_240 field_31486;
+   private final Direction field_31486;
    private final boolean field_31485;
 
    public class_6138(class_5799 var1, class_5734 var2) {
       super(class_2746.field_13397, var2);
       this.field_31485 = var2.method_25933("tf");
-      this.field_31486 = class_240.method_1040(var2.method_25947("D"));
+      this.field_31486 = Direction.method_1040(var2.method_25947("D"));
    }
 
    @Override
@@ -20,14 +20,14 @@ public class class_6138 extends class_462 {
       var1.method_25931("D", this.field_31486.method_1031());
    }
 
-   public class_6138(int var1, class_9616 var2, class_240 var3, class_1143 var4) {
+   public class_6138(int var1, class_9616 var2, Direction var3, class_1143 var4) {
       super(class_2746.field_13397, var1, var4);
       this.field_31486 = var3;
       this.field_36435 = var2;
       this.field_31485 = var2.method_44398() > 3;
    }
 
-   public static class_9616 method_28182(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5) {
+   public static class_9616 method_28182(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5) {
       class_9616 var8 = new class_9616(var2, var3, var4, var2, var3 + 3 - 1, var4);
       if (var1.nextInt(4) == 0) {
          var8.field_48993 += 4;
@@ -66,46 +66,46 @@ public class class_6138 extends class_462 {
          case field_818:
          default:
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48992 - 1, class_240.field_818, var6
+               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48992 - 1, Direction.field_818, var6
             );
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, class_240.field_809, var6
+               var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, Direction.field_809, var6
             );
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, class_240.field_804, var6
+               var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, Direction.field_804, var6
             );
             break;
          case field_800:
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48994 + 1, class_240.field_800, var6
+               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48994 + 1, Direction.field_800, var6
             );
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, class_240.field_809, var6
+               var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, Direction.field_809, var6
             );
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, class_240.field_804, var6
+               var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, Direction.field_804, var6
             );
             break;
          case field_809:
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48992 - 1, class_240.field_818, var6
+               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48992 - 1, Direction.field_818, var6
             );
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48994 + 1, class_240.field_800, var6
+               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48994 + 1, Direction.field_800, var6
             );
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, class_240.field_809, var6
+               var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, Direction.field_809, var6
             );
             break;
          case field_804:
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48992 - 1, class_240.field_818, var6
+               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48992 - 1, Direction.field_818, var6
             );
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48994 + 1, class_240.field_800, var6
+               var1, var2, var3, this.field_36435.field_48996 + 1, this.field_36435.field_48995, this.field_36435.field_48994 + 1, Direction.field_800, var6
             );
             class_1087.method_4766(
-               var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, class_240.field_804, var6
+               var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, this.field_36435.field_48992 + 1, Direction.field_804, var6
             );
       }
 
@@ -118,7 +118,7 @@ public class class_6138 extends class_462 {
                this.field_36435.field_48996 + 1,
                this.field_36435.field_48995 + 3 + 1,
                this.field_36435.field_48992 - 1,
-               class_240.field_818,
+               Direction.field_818,
                var6
             );
          }
@@ -131,7 +131,7 @@ public class class_6138 extends class_462 {
                this.field_36435.field_48996 - 1,
                this.field_36435.field_48995 + 3 + 1,
                this.field_36435.field_48992 + 1,
-               class_240.field_809,
+               Direction.field_809,
                var6
             );
          }
@@ -144,7 +144,7 @@ public class class_6138 extends class_462 {
                this.field_36435.field_48991 + 1,
                this.field_36435.field_48995 + 3 + 1,
                this.field_36435.field_48992 + 1,
-               class_240.field_804,
+               Direction.field_804,
                var6
             );
          }
@@ -157,7 +157,7 @@ public class class_6138 extends class_462 {
                this.field_36435.field_48996 + 1,
                this.field_36435.field_48995 + 3 + 1,
                this.field_36435.field_48994 + 1,
-               class_240.field_800,
+               Direction.field_800,
                var6
             );
          }

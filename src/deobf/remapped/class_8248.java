@@ -379,7 +379,7 @@ public class class_8248 extends ByteBuf {
 
    public class_9529 method_37782() {
       class_1331 var3 = this.method_37748();
-      class_240 var4 = this.<class_240>method_37787(class_240.class);
+      Direction var4 = this.<Direction>method_37787(Direction.class);
       float var5 = this.readFloat();
       float var6 = this.readFloat();
       float var7 = this.readFloat();

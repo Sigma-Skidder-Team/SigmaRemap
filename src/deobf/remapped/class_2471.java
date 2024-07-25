@@ -10,7 +10,7 @@ public class class_2471 extends class_7157 {
       super(var1);
    }
 
-   public boolean method_11366(class_6946 var1, class_6486 var2) {
+   public boolean method_11366(class_6946 var1, World var2) {
       class_6098 var5 = class_6098.field_31203;
       ArrayList var6 = Lists.newArrayList();
 

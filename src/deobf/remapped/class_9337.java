@@ -23,9 +23,9 @@ public class class_9337 extends class_6414 implements class_2593 {
    public class_2522 method_29302(class_353 var1) {
       class_4774 var4 = var1.method_21862().method_28258(var1.method_21858());
 
-      for (class_240 var8 : var1.method_1786()) {
+      for (Direction var8 : var1.method_1786()) {
          if (var8.method_1029() == class_9249.field_47216) {
-            class_2522 var9 = this.method_29260().method_10308(field_47664, Boolean.valueOf(var8 == class_240.field_817));
+            class_2522 var9 = this.method_29260().method_10308(field_47664, Boolean.valueOf(var8 == Direction.field_817));
             if (var9.method_8309(var1.method_21862(), var1.method_21858())) {
                return var9.method_10308(field_47661, Boolean.valueOf(var4.method_22005() == class_8532.field_43674));
             }
@@ -47,12 +47,12 @@ public class class_9337 extends class_6414 implements class_2593 {
 
    @Override
    public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
-      class_240 var6 = method_43109(var1).method_1046();
+      Direction var6 = method_43109(var1).method_1046();
       return class_6414.method_29266(var2, var3.method_6098(var6), var6.method_1046());
    }
 
-   public static class_240 method_43109(class_2522 var0) {
-      return !var0.<Boolean>method_10313(field_47664) ? class_240.field_817 : class_240.field_802;
+   public static Direction method_43109(class_2522 var0) {
+      return !var0.<Boolean>method_10313(field_47664) ? Direction.field_817 : Direction.field_802;
    }
 
    @Override
@@ -61,7 +61,7 @@ public class class_9337 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var1.<Boolean>method_10313(field_47661)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }

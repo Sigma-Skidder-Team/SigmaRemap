@@ -47,7 +47,7 @@ public class class_5354 extends class_3757 implements class_3745 {
    public void method_24447(class_704 var1, class_2522 var2, class_8771 var3) {
       List var6 = this.method_24445(var2, var3);
       if (var1 != null) {
-         for (class_8145 var8 : var6) {
+         for (Entity var8 : var6) {
             if (var8 instanceof class_8829) {
                class_8829 var9 = (class_8829)var8;
                if (var1.method_37245().method_6204(var8.method_37245()) <= 16.0) {
@@ -62,13 +62,13 @@ public class class_5354 extends class_3757 implements class_3745 {
       }
    }
 
-   private List<class_8145> method_24445(class_2522 var1, class_8771 var2) {
+   private List<Entity> method_24445(class_2522 var1, class_8771 var2) {
       ArrayList var5 = Lists.newArrayList();
       this.field_27341.removeIf(var4 -> this.method_24441(var1, var4, var5, var2));
       return var5;
    }
 
-   public void method_24442(class_8145 var1, boolean var2) {
+   public void method_24442(Entity var1, boolean var2) {
       this.method_24443(var1, var2, 0);
    }
 
@@ -88,7 +88,7 @@ public class class_5354 extends class_3757 implements class_3745 {
       class_1892.method_8441(this);
    }
 
-   public void method_24443(class_8145 var1, boolean var2, int var3) {
+   public void method_24443(Entity var1, boolean var2, int var3) {
       if (this.field_27341.size() < 3) {
          var1.method_37390();
          var1.method_37305();
@@ -121,7 +121,7 @@ public class class_5354 extends class_3757 implements class_3745 {
       }
    }
 
-   private boolean method_24441(class_2522 var1, class_7955 var2, List<class_8145> var3, class_8771 var4) {
+   private boolean method_24441(class_2522 var1, class_7955 var2, List<Entity> var3, class_8771 var4) {
       if ((this.field_18364.method_29544() || this.field_18364.method_29561()) && var4 != class_8771.field_44900) {
          return false;
       } else {
@@ -130,13 +130,13 @@ public class class_5354 extends class_3757 implements class_3745 {
          var8.method_25959("Passengers");
          var8.method_25959("Leash");
          var8.method_25959("UUID");
-         class_240 var9 = var1.<class_240>method_10313(class_4745.field_22991);
+         Direction var9 = var1.<Direction>method_10313(class_4745.field_22991);
          class_1331 var10 = var7.method_6098(var9);
          boolean var11 = !this.field_18364.method_28262(var10).method_8324(this.field_18364, var10).method_19485();
          if (var11 && var4 != class_8771.field_44900) {
             return false;
          } else {
-            class_8145 var12 = class_6629.method_30455(var8, this.field_18364, var0 -> var0);
+            Entity var12 = class_6629.method_30455(var8, this.field_18364, var0 -> var0);
             if (var12 == null) {
                return false;
             } else if (var12.method_37387().method_30453(class_5218.field_26789)) {
@@ -209,7 +209,7 @@ public class class_5354 extends class_3757 implements class_3745 {
          class_7955 var5 = (class_7955)var3.next();
          if (class_7955.method_35996(var5) > class_7955.method_35993(var5)) {
             class_8771 var6 = !class_7955.method_35994(var5).method_25933("HasNectar") ? class_8771.field_44898 : class_8771.field_44897;
-            if (this.method_24441(var4, var5, (List<class_8145>)null, var6)) {
+            if (this.method_24441(var4, var5, (List<Entity>)null, var6)) {
                var3.remove();
             }
          }

@@ -4,7 +4,7 @@ public class class_8696 extends class_8985 {
    private static String[] field_44592;
    private class_1331 field_44593;
 
-   public class_8696(class_5886 var1, class_6486 var2) {
+   public class_8696(class_5886 var1, World var2) {
       super(var1, var2);
    }
 
@@ -15,13 +15,13 @@ public class class_8696 extends class_8985 {
    }
 
    @Override
-   public class_3998 method_5598(class_8145 var1, int var2) {
+   public class_3998 method_5598(Entity var1, int var2) {
       this.field_44593 = var1.method_37075();
       return super.method_5598(var1, var2);
    }
 
    @Override
-   public boolean method_5616(class_8145 var1, double var2) {
+   public boolean method_5616(Entity var1, double var2) {
       class_3998 var6 = this.method_5598(var1, 0);
       if (var6 == null) {
          this.field_44593 = var1.method_37075();

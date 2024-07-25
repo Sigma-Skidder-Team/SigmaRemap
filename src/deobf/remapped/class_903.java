@@ -35,12 +35,12 @@ public class class_903 extends class_2255<class_4797> {
       float var9 = var1.method_22110(var2);
       class_2522 var10 = var1.method_17403();
       boolean var11 = var10.method_8360() instanceof class_7011;
-      class_240 var12 = !var11 ? null : var10.<class_240>method_10313(class_7011.field_35952);
+      Direction var12 = !var11 ? null : var10.<Direction>method_10313(class_7011.field_35952);
       float var13 = 22.5F * (float)(!var11 ? var10.<Integer>method_10313(class_3725.field_18230) : (2 + var12.method_1031()) * 4);
       method_3866(var12, var13, ((class_8550)var10.method_8360()).method_39336(), var1.method_22113(), var9, var3, var4, var5);
    }
 
-   public static void method_3866(class_240 var0, float var1, class_558 var2, GameProfile var3, float var4, class_7966 var5, class_2565 var6, int var7) {
+   public static void method_3866(Direction var0, float var1, class_558 var2, GameProfile var3, float var4, class_7966 var5, class_2565 var6, int var7) {
       class_1570 var10 = field_4633.get(var2);
       var5.method_36063();
       if (var0 != null) {
@@ -57,16 +57,16 @@ public class class_903 extends class_2255<class_4797> {
       var5.method_36064();
    }
 
-   private static class_3581 method_3868(class_558 var0, GameProfile var1) {
+   private static RenderLayer method_3868(class_558 var0, GameProfile var1) {
       Identifier var4 = field_4632.get(var0);
       if (var0 == class_8469.field_43283 && var1 != null) {
          MinecraftClient var5 = MinecraftClient.getInstance();
          Map var6 = var5.method_8557().method_44310(var1);
          return !var6.containsKey(Type.SKIN)
-            ? class_3581.method_16755(class_1512.method_6921(class_704.method_3242(var1)))
-            : class_3581.method_16705(var5.method_8557().method_44311((MinecraftProfileTexture)var6.get(Type.SKIN), Type.SKIN));
+            ? RenderLayer.method_16755(class_1512.method_6921(class_704.method_3242(var1)))
+            : RenderLayer.method_16705(var5.method_8557().method_44311((MinecraftProfileTexture)var6.get(Type.SKIN), Type.SKIN));
       } else {
-         return class_3581.method_16753(var4);
+         return RenderLayer.method_16753(var4);
       }
    }
 }

@@ -7,7 +7,7 @@ public class class_2180 extends class_2219 implements class_938 {
    private static String[] field_10850;
    private final class_8369 field_10849;
 
-   public class_2180(class_8881 var1, int var2, int var3, int var4, int var5, class_8369 var6) {
+   public class_2180(GameOptions var1, int var2, int var3, int var4, int var5, class_8369 var6) {
       super(var1, var2, var3, var4, var5, (double)((float)var6.method_38566(var6.method_38570(var1))));
       this.field_10849 = var6;
       this.method_396();

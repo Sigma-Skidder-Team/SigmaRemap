@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 public class class_4843 implements class_7835 {
-   private final class_8145 field_24168;
+   private final Entity field_24168;
    private final boolean field_24169;
 
-   public class_4843(class_8145 var1, boolean var2) {
+   public class_4843(Entity var1, boolean var2) {
       this.field_24168 = var1;
       this.field_24169 = var2;
    }

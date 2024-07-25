@@ -12,7 +12,7 @@ public interface class_4511 extends class_6867 {
    }
 
    @Nullable
-   class_6486 method_17402();
+   World method_17402();
 
    double method_20973();
 

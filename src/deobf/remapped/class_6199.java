@@ -45,7 +45,7 @@ public class class_6199 {
       return new class_5405("mob", var0);
    }
 
-   public static class_6199 method_28358(class_8145 var0, class_5834 var1) {
+   public static class_6199 method_28358(Entity var0, class_5834 var1) {
       return new class_8758("mob", var0, var1);
    }
 
@@ -53,37 +53,37 @@ public class class_6199 {
       return new class_5405("player", var0);
    }
 
-   public static class_6199 method_28379(class_6749 var0, class_8145 var1) {
+   public static class_6199 method_28379(class_6749 var0, Entity var1) {
       return new class_8758("arrow", var0, var1).method_28359();
    }
 
-   public static class_6199 method_28368(class_8145 var0, class_8145 var1) {
+   public static class_6199 method_28368(Entity var0, Entity var1) {
       return new class_8758("trident", var0, var1).method_28359();
    }
 
-   public static class_6199 method_28363(class_8612 var0, class_8145 var1) {
+   public static class_6199 method_28363(class_8612 var0, Entity var1) {
       return new class_8758("fireworks", var0, var1).method_28377();
    }
 
-   public static class_6199 method_28375(class_2550 var0, class_8145 var1) {
+   public static class_6199 method_28375(class_2550 var0, Entity var1) {
       return var1 != null
          ? new class_8758("fireball", var0, var1).method_28343().method_28359()
          : new class_8758("onFire", var0, var0).method_28343().method_28359();
    }
 
-   public static class_6199 method_28376(class_1044 var0, class_8145 var1) {
+   public static class_6199 method_28376(class_1044 var0, Entity var1) {
       return new class_8758("witherSkull", var0, var1).method_28359();
    }
 
-   public static class_6199 method_28355(class_8145 var0, class_8145 var1) {
+   public static class_6199 method_28355(Entity var0, Entity var1) {
       return new class_8758("thrown", var0, var1).method_28359();
    }
 
-   public static class_6199 method_28369(class_8145 var0, class_8145 var1) {
+   public static class_6199 method_28369(Entity var0, Entity var1) {
       return new class_8758("indirectMagic", var0, var1).method_28371().method_28361();
    }
 
-   public static class_6199 method_28364(class_8145 var0) {
+   public static class_6199 method_28364(Entity var0) {
       return new class_5405("thorns", var0).method_24599().method_28361();
    }
 
@@ -143,12 +143,12 @@ public class class_6199 {
    }
 
    @Nullable
-   public class_8145 method_28353() {
+   public Entity method_28353() {
       return this.method_28372();
    }
 
    @Nullable
-   public class_8145 method_28372() {
+   public Entity method_28372() {
       return null;
    }
 
@@ -210,7 +210,7 @@ public class class_6199 {
    }
 
    public boolean method_28349() {
-      class_8145 var3 = this.method_28372();
+      Entity var3 = this.method_28372();
       return var3 instanceof class_704 && ((class_704)var3).field_3876.field_4944;
    }
 

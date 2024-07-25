@@ -11,7 +11,7 @@ public class class_6247<T extends class_5521> extends class_1762<T, class_4094<T
       )
    );
 
-   public class_6247(class_6122 var1, float var2) {
+   public class_6247(EntityRenderDispatcher var1, float var2) {
       super(var1, new class_4094<T>(0.0F), var2);
    }
 

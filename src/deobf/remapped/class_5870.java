@@ -141,7 +141,7 @@ public class class_5870 extends class_9128 {
       if (!this.method_42016("Soup mode").equals("Instant")) {
          if (this.field_29806 >= 0) {
             if (var5) {
-               field_46692.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, class_240.field_802));
+               field_46692.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
             }
 
             field_46692.field_9632.field_3853.field_36404 = this.field_29806;
@@ -168,7 +168,7 @@ public class class_5870 extends class_9128 {
          field_46692.method_8614().method_4813(new class_1022(class_2584.field_12794));
          field_46692.method_8614().method_4813(new class_1022(class_2584.field_12791));
          if (var5) {
-            field_46692.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, class_240.field_802));
+            field_46692.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
          }
 
          field_46692.method_8614().method_4813(new class_7371(field_46692.field_9632.field_3853.field_36404));

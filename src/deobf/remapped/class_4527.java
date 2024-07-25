@@ -198,10 +198,10 @@ public class class_4527 {
       }
    }
 
-   public static class_4527 method_21032(class_5621<class_6486> var0, class_4050 var1) {
-      if (var0 != class_6486.field_33048) {
-         if (var0 != class_6486.field_33029) {
-            if (var0 != class_6486.field_33038) {
+   public static class_4527 method_21032(class_5621<World> var0, class_4050 var1) {
+      if (var0 != World.field_33048) {
+         if (var0 != World.field_33029) {
+            if (var0 != World.field_33038) {
                throw new RuntimeException(String.format("Unknown dimension type : %s", var0));
             } else {
                ImmutableList var5 = ImmutableList.of("EndCity");

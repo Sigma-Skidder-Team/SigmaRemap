@@ -5,7 +5,7 @@ import java.util.Random;
 public abstract class class_3578 extends class_1829 {
    private static final class_7821<Boolean> field_17511 = class_8073.<Boolean>method_36641(class_3578.class, class_2734.field_13347);
 
-   public class_3578(class_6629<? extends class_3578> var1, class_6486 var2) {
+   public class_3578(class_6629<? extends class_3578> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_9239(this);
    }
@@ -73,7 +73,7 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public class_1249 method_26933(class_6486 var1) {
+   public class_1249 method_26933(World var1) {
       return new class_9811(this, var1);
    }
 

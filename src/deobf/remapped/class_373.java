@@ -70,9 +70,9 @@ public class class_373 extends class_2255<class_945> {
             float var31 = 1.0F;
             float var32 = 0.9F;
             float var33 = 0.5F;
-            class_7907 var34 = var4.method_11645(class_3581.method_16744());
+            class_7907 var34 = var4.method_11645(RenderLayer.method_16744());
             if (var1.method_4085() == class_589.field_3417 || var1.method_4091()) {
-               class_4316.method_20013(var3, var34, var23, var15, var25, var27, var17, var29, 0.9F, 0.9F, 0.9F, 1.0F, 0.5F, 0.5F, 0.5F);
+               WorldRenderer.method_20013(var3, var34, var23, var15, var25, var27, var17, var29, 0.9F, 0.9F, 0.9F, 1.0F, 0.5F, 0.5F, 0.5F);
             }
 
             if (var1.method_4085() == class_589.field_3417 && var1.method_4111()) {
@@ -84,7 +84,7 @@ public class class_373 extends class_2255<class_945> {
    }
 
    private void method_1836(class_945 var1, class_7907 var2, class_1331 var3, boolean var4, class_7966 var5) {
-      class_6486 var8 = var1.method_17402();
+      World var8 = var1.method_17402();
       class_1331 var9 = var1.method_17399();
       class_1331 var10 = var9.method_6105(var3);
 
@@ -102,12 +102,12 @@ public class class_373 extends class_2255<class_945> {
             double var27 = (double)((float)(var12.method_12185() - var9.method_12185()) + 0.55F + var16);
             if (!var4) {
                if (!var14) {
-                  class_4316.method_20013(var5, var2, var17, var19, var21, var23, var25, var27, 1.0F, 0.25F, 0.25F, 1.0F, 1.0F, 0.25F, 0.25F);
+                  WorldRenderer.method_20013(var5, var2, var17, var19, var21, var23, var25, var27, 1.0F, 0.25F, 0.25F, 1.0F, 1.0F, 0.25F, 0.25F);
                } else {
-                  class_4316.method_20013(var5, var2, var17, var19, var21, var23, var25, var27, 0.5F, 0.5F, 1.0F, 1.0F, 0.5F, 0.5F, 1.0F);
+                  WorldRenderer.method_20013(var5, var2, var17, var19, var21, var23, var25, var27, 0.5F, 0.5F, 1.0F, 1.0F, 0.5F, 0.5F, 1.0F);
                }
             } else {
-               class_4316.method_20013(var5, var2, var17, var19, var21, var23, var25, var27, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F);
+               WorldRenderer.method_20013(var5, var2, var17, var19, var21, var23, var25, var27, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F);
             }
          }
       }

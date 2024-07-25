@@ -9,14 +9,14 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_3153 extends class_4314 {
-   public static final class_7360<class_240> field_15681 = class_3266.field_16180;
+   public static final class_7360<Direction> field_15681 = class_3266.field_16180;
    public static final Identifier field_15682 = new Identifier("contents");
    private final class_9077 field_15680;
 
    public class_3153(class_9077 var1, class_3073 var2) {
       super(var2);
       this.field_15680 = var1;
-      this.method_29284(this.field_32751.method_36446().method_10308(field_15681, class_240.field_817));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_15681, Direction.field_817));
    }
 
    @Override
@@ -30,7 +30,7 @@ public class class_3153 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (!var2.field_33055) {
          if (!var4.method_37221()) {
             class_3757 var9 = var2.method_28260(var3);
@@ -42,7 +42,7 @@ public class class_3153 extends class_4314 {
                if (var10.method_22203() != class_3639.field_17758) {
                   var11 = true;
                } else {
-                  class_240 var12 = var1.<class_240>method_10313(field_15681);
+                  Direction var12 = var1.<Direction>method_10313(field_15681);
                   var11 = var2.method_6681(class_6392.method_29191(var3, var12));
                }
 
@@ -73,7 +73,7 @@ public class class_3153 extends class_4314 {
    }
 
    @Override
-   public void method_29265(class_6486 var1, class_1331 var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, class_1331 var2, class_2522 var3, class_704 var4) {
       class_3757 var7 = var1.method_28260(var2);
       if (var7 instanceof class_4816) {
          class_4816 var8 = (class_4816)var7;
@@ -115,7 +115,7 @@ public class class_3153 extends class_4314 {
    }
 
    @Override
-   public void method_29257(class_6486 var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
       if (var5.method_28018()) {
          class_3757 var8 = var1.method_28260(var2);
          if (var8 instanceof class_4816) {
@@ -125,7 +125,7 @@ public class class_3153 extends class_4314 {
    }
 
    @Override
-   public void method_10761(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var1.method_8350(var4.method_8360())) {
          class_3757 var8 = var2.method_28260(var3);
          if (var8 instanceof class_4816) {
@@ -187,7 +187,7 @@ public class class_3153 extends class_4314 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       return class_4088.method_18870((class_6867)var2.method_28260(var3));
    }
 
@@ -268,11 +268,11 @@ public class class_3153 extends class_4314 {
 
    @Override
    public class_2522 method_10785(class_2522 var1, class_6631 var2) {
-      return var1.method_10308(field_15681, var2.method_30489(var1.<class_240>method_10313(field_15681)));
+      return var1.method_10308(field_15681, var2.method_30489(var1.<Direction>method_10313(field_15681)));
    }
 
    @Override
    public class_2522 method_10773(class_2522 var1, class_9022 var2) {
-      return var1.method_8318(var2.method_41390(var1.<class_240>method_10313(field_15681)));
+      return var1.method_8318(var2.method_41390(var1.<Direction>method_10313(field_15681)));
    }
 }

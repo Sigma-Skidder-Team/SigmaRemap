@@ -30,7 +30,7 @@ public class class_6404 implements class_6310<class_1243> {
    }
 
    @Nullable
-   public class_8145 method_29233(class_6331 var1) {
+   public Entity method_29233(class_6331 var1) {
       return var1.method_28925(this.field_32689);
    }
 }

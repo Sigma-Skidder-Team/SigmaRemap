@@ -16,7 +16,7 @@ public class class_8892 extends class_8273<class_6716> {
       return new class_6716(var2, var6, var7);
    }
 
-   public void method_40927(class_9359 var1, class_8145 var2, class_1343 var3, int var4) {
+   public void method_40927(class_9359 var1, Entity var2, class_1343 var3, int var4) {
       class_2792 var7 = class_865.method_3739(var1, var2);
       this.method_38137(var1, var3x -> var3x.method_30837(var7, var3, var4));
    }

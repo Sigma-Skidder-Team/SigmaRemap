@@ -26,7 +26,7 @@ public class class_3224 extends class_6451 {
       if (var7 >= 0) {
          class_6098 var8 = var6.method_31498(var7);
          if (!var8.method_28022()) {
-            class_240 var9 = var1.method_28262(var2).<class_240>method_10313(field_32900);
+            Direction var9 = var1.method_28262(var2).<Direction>method_10313(field_32900);
             class_6867 var10 = class_5772.method_26108(var1, var2.method_6098(var9));
             class_6098 var12;
             if (var10 != null) {

@@ -16,8 +16,8 @@ public class class_7243 extends class_4285<class_1941> {
       } else {
          boolean var8 = false;
 
-         for (class_240 var12 : class_240.values()) {
-            if (var12 != class_240.field_802 && var1.method_28262(var4.method_6098(var12)).method_8350(class_4783.field_23829)) {
+         for (Direction var12 : Direction.values()) {
+            if (var12 != Direction.field_802 && var1.method_28262(var4.method_6098(var12)).method_8350(class_4783.field_23829)) {
                var8 = true;
                break;
             }
@@ -42,7 +42,7 @@ public class class_7243 extends class_4285<class_1941> {
                      || var13.method_8350(class_4783.field_23900)
                      || var13.method_8350(class_4783.field_23829)
                      || var13.method_8350(class_4783.field_23496)) {
-                     for (class_240 var17 : class_240.values()) {
+                     for (Direction var17 : Direction.values()) {
                         class_2522 var18 = var1.method_28262(var22.method_6098(var17));
                         if (var18.method_8350(class_4783.field_23437)) {
                            var1.method_7513(var22, class_4783.field_23437.method_29260(), 2);

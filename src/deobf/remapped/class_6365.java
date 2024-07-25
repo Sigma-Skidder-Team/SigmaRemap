@@ -40,7 +40,7 @@ public class class_6365 extends class_8116 {
          this.method_36931().getString(),
          this.method_36931(),
          this.method_36934().method_29522(),
-         (class_8145)null
+         (Entity)null
       );
    }
 }

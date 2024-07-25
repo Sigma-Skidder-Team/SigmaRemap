@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.ImmutableList;
 
-public class class_6484<T extends class_8145> extends class_1498<T> {
+public class class_6484<T extends Entity> extends class_1498<T> {
    private static String[] field_33025;
    public class_1549 field_33024 = new class_1549(this, 0, 0);
    public class_1549 field_33021;

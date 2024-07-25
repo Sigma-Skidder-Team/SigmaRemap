@@ -336,7 +336,7 @@ public class class_1367 {
    }
 
    private static int method_6318(class_9155 var0, class_87 var1, ITextComponent var2) throws CommandSyntaxException {
-      IFormattableTextComponent var5 = TextComponentUtils.func_240645_a_(var0, var2, (class_8145)null, 0);
+      IFormattableTextComponent var5 = TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0);
       if (!var1.method_43453().equals(var5)) {
          var1.method_43451(var5);
          var0.method_42196(new TranslationTextComponent("commands.bossbar.set.name.success", var1.method_217()), true);
@@ -382,7 +382,7 @@ public class class_1367 {
    private static int method_6327(class_9155 var0, Identifier var1, ITextComponent var2) throws CommandSyntaxException {
       class_4543 var5 = var0.method_42177().method_1699();
       if (var5.method_21079(var1) == null) {
-         class_87 var6 = var5.method_21081(var1, TextComponentUtils.func_240645_a_(var0, var2, (class_8145)null, 0));
+         class_87 var6 = var5.method_21081(var1, TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0));
          var0.method_42196(new TranslationTextComponent("commands.bossbar.create.success", var6.method_217()), true);
          return var5.method_21074().size();
       } else {

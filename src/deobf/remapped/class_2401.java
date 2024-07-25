@@ -11,7 +11,7 @@ public class class_2401<T extends class_5834> extends class_4171<T, class_3169<T
 
    public void method_10929(class_7966 var1, class_2565 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (var4.method_26600()) {
-         class_7907 var13 = var2.method_11645(class_3581.method_16755(field_11975));
+         class_7907 var13 = var2.method_11645(RenderLayer.method_16755(field_11975));
 
          for (int var14 = 0; var14 < 3; var14++) {
             var1.method_36063();

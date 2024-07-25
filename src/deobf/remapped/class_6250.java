@@ -28,7 +28,7 @@ public interface class_6250 {
       if (var2.method_25954("AngryAt")) {
          UUID var5 = var2.method_25926("AngryAt");
          this.method_28531(var5);
-         class_8145 var6 = var1.method_28925(var5);
+         Entity var6 = var1.method_28925(var5);
          if (var6 != null) {
             if (var6 instanceof class_5886) {
                this.method_26511((class_5886)var6);
@@ -71,7 +71,7 @@ public interface class_6250 {
       }
    }
 
-   default boolean method_28527(class_6486 var1) {
+   default boolean method_28527(World var1) {
       return var1.method_29537().method_1285(class_291.field_1039) && this.method_28537() && this.method_28535() == null;
    }
 

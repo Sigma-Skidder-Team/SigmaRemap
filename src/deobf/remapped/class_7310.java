@@ -6,7 +6,7 @@ public class class_7310 extends class_7164<class_912, class_5415<class_912>> {
    private static final Identifier field_37385 = new Identifier("textures/entity/enderman/enderman.png");
    private final Random field_37383 = new Random();
 
-   public class_7310(class_6122 var1) {
+   public class_7310(EntityRenderDispatcher var1) {
       super(var1, new class_5415<class_912>(0.0F), 0.5F);
       this.method_29100(new class_8279<class_912>(this));
       this.method_29100(new class_508(this));

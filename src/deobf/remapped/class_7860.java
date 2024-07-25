@@ -47,20 +47,20 @@ public class class_7860 {
    public static class_1790 field_40082 = new class_1790(field_40227, "INSTANCE");
    public static class_817 field_40035 = new class_817(field_40227, "handOffWindow");
    public static class_9859 field_39974 = new class_9859("net.minecraftforge.event.entity.EntityLeaveWorldEvent");
-   public static class_4911 field_40099 = new class_4911(field_39974, new Class[]{class_8145.class, class_6486.class});
+   public static class_4911 field_40099 = new class_4911(field_39974, new Class[]{Entity.class, World.class});
    public static class_9859 field_40116 = new class_9859("net.minecraftforge.client.event.EntityViewRenderEvent$CameraSetup");
    public static class_817 field_40063 = new class_817(field_40116, "getYaw");
    public static class_817 field_39841 = new class_817(field_40116, "getPitch");
    public static class_817 field_40004 = new class_817(field_40116, "getRoll");
    public static class_9859 field_39972 = new class_9859("net.minecraftforge.client.event.EntityViewRenderEvent$FogColors");
-   public static class_4911 field_40155 = new class_4911(field_39972, new Class[]{class_9071.class, float.class, float.class, float.class, float.class});
+   public static class_4911 field_40155 = new class_4911(field_39972, new Class[]{Camera.class, float.class, float.class, float.class, float.class});
    public static class_817 field_39977 = new class_817(field_39972, "getRed");
    public static class_817 field_40020 = new class_817(field_39972, "getGreen");
    public static class_817 field_40226 = new class_817(field_39972, "getBlue");
    public static class_9859 field_40034 = new class_9859("net.minecraftforge.client.event.EntityViewRenderEvent$RenderFogEvent");
-   public static class_4911 field_39848 = new class_4911(field_40034, new Class[]{class_1026.class, class_9071.class, float.class, float.class});
+   public static class_4911 field_39848 = new class_4911(field_40034, new Class[]{class_1026.class, Camera.class, float.class, float.class});
    public static class_9859 field_39981 = new class_9859("net.minecraftforge.event.entity.EntityJoinWorldEvent");
-   public static class_4911 field_40165 = new class_4911(field_39981, new Class[]{class_8145.class, class_6486.class});
+   public static class_4911 field_40165 = new class_4911(field_39981, new Class[]{Entity.class, World.class});
    public static class_9859 field_40079 = new class_9859("net.minecraftforge.eventbus.api.Event");
    public static class_817 field_40233 = new class_817(field_40079, "isCanceled");
    public static class_817 field_40148 = new class_817(field_40079, "getResult");
@@ -75,12 +75,12 @@ public class class_7860 {
    public static class_9859 field_40136 = new class_9859("net.minecraftforge.client.model.pipeline.ForgeBlockModelRenderer");
    public static class_4911 field_39870 = new class_4911(field_40136, new Class[]{class_4468.class});
    public static class_9859 field_39997 = new class_9859(class_9524.class);
-   public static class_817 field_40137 = new class_817(field_39997, "getTexture", new Class[]{class_2522.class, class_6486.class, class_1331.class});
+   public static class_817 field_40137 = new class_817(field_39997, "getTexture", new Class[]{class_2522.class, World.class, class_1331.class});
    public static class_9859 field_40078 = new class_9859("net.minecraftforge.common.extensions.IForgeBlockState");
    public static class_817 field_40197 = new class_817(field_40078, "addDestroyEffects");
    public static class_817 field_39850 = new class_817(field_40078, "addHitEffects");
    public static class_817 field_40163 = new class_817(field_40078, "getLightValue", new Class[]{class_6163.class, class_1331.class});
-   public static class_817 field_40208 = new class_817(field_40078, "getSoundType", new Class[]{class_4924.class, class_1331.class, class_8145.class});
+   public static class_817 field_40208 = new class_817(field_40078, "getSoundType", new Class[]{class_4924.class, class_1331.class, Entity.class});
    public static class_817 field_40199 = new class_817(field_40078, "getStateAtViewpoint");
    public static class_817 field_40213 = new class_817(field_40078, "hasTileEntity");
    public static class_817 field_39999 = new class_817(field_40078, "isAir", new Class[]{class_6163.class, class_1331.class});
@@ -121,7 +121,7 @@ public class class_7860 {
    public static class_817 field_40232 = new class_817(field_39926, "onLivingUpdate");
    public static class_9859 field_40161 = new class_9859("net.minecraftforge.client.ForgeHooksClient");
    public static class_817 field_40045 = new class_817(
-      field_40161, "dispatchRenderLast", new Class[]{class_4316.class, class_7966.class, float.class, class_8107.class, long.class}
+      field_40161, "dispatchRenderLast", new Class[]{WorldRenderer.class, class_7966.class, float.class, class_8107.class, long.class}
    );
    public static class_817 field_39839 = new class_817(field_40161, "drawItemLayered");
    public static class_817 field_39933 = new class_817(field_40161, "drawScreen");
@@ -197,12 +197,12 @@ public class class_7860 {
    public static class_9859 field_39985 = new class_9859("net.minecraftforge.registries.ForgeRegistryEntry");
    public static class_817 field_40006 = new class_817(field_39985, "getRegistryName");
    public static class_9859 field_39890 = new class_9859(class_6416.class);
-   public static class_817 field_40075 = new class_817(field_39890, "canRenderInLayer", new Class[]{class_2522.class, class_3581.class});
-   public static class_817 field_39908 = new class_817(field_39890, "canRenderInLayer", new Class[]{class_4774.class, class_3581.class});
+   public static class_817 field_40075 = new class_817(field_39890, "canRenderInLayer", new Class[]{class_2522.class, RenderLayer.class});
+   public static class_817 field_39908 = new class_817(field_39890, "canRenderInLayer", new Class[]{class_4774.class, RenderLayer.class});
    public static class_9859 field_40050 = new class_9859("net.minecraftforge.common.extensions.IForgeTileEntity");
    public static class_817 field_40135 = new class_817(field_40050, "getRenderBoundingBox");
    public static class_1790 field_39887 = new class_1790(
-      new class_7880(class_6486.class, new Class[]{List.class}, Set.class, new Class[]{Thread.class}, "World.tileEntitiesToBeRemoved")
+      new class_7880(World.class, new Class[]{List.class}, Set.class, new Class[]{Thread.class}, "World.tileEntitiesToBeRemoved")
    );
    public static class_9859 field_40070 = new class_9859(class_7513.class);
    public static class_817 field_39862 = field_40070.method_45473("getCloudRenderHandler");
@@ -245,7 +245,7 @@ public class class_7860 {
    public static class_9859 field_39964 = new class_9859("net.minecraftforge.client.event.RenderBlockOverlayEvent$OverlayType");
    public static class_1790 field_40055 = new class_1790(field_39964, "BLOCK");
    public static class_9859 field_40204 = new class_9859("net.minecraftforge.fml.client.registry.RenderingRegistry");
-   public static class_817 field_40100 = new class_817(field_40204, "loadEntityRenderers", new Class[]{class_6122.class});
+   public static class_817 field_40100 = new class_817(field_40204, "loadEntityRenderers", new Class[]{EntityRenderDispatcher.class});
    public static class_9859 field_40229 = new class_9859("net.minecraftforge.client.event.RenderItemInFrameEvent");
    public static class_4911 field_39846 = new class_4911(
       field_40229, new Class[]{class_7451.class, class_6823.class, class_7966.class, class_2565.class, int.class}
@@ -260,7 +260,7 @@ public class class_7860 {
    );
    public static class_9859 field_39958 = new class_9859("net.minecraftforge.client.event.RenderNameplateEvent");
    public static class_4911 field_40248 = new class_4911(
-      field_39958, new Class[]{class_8145.class, ITextComponent.class, class_7067.class, class_7966.class, class_2565.class, int.class, float.class}
+      field_39958, new Class[]{Entity.class, ITextComponent.class, class_7067.class, class_7966.class, class_2565.class, int.class, float.class}
    );
    public static class_817 field_40074 = new class_817(field_39958, "getContent");
    public static class_9859 field_40141 = new class_9859("net.minecraftforge.client.event.ScreenshotEvent");

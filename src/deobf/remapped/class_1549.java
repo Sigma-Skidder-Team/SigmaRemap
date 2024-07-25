@@ -29,7 +29,7 @@ public class class_1549 {
    private Identifier field_8203 = null;
    private String field_8199 = null;
    private class_4776 field_8194;
-   private class_4316 field_8196 = class_3111.method_14387();
+   private WorldRenderer field_8196 = class_3111.method_14387();
 
    public class_1549(class_9873 var1) {
       var1.accept(this);
@@ -132,7 +132,7 @@ public class class_1549 {
 
    public void method_7061(class_7966 var1, class_7907 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (this.field_8200 && (!this.field_8184.isEmpty() || !this.field_8189.isEmpty() || !this.field_8188.isEmpty())) {
-         class_3581 var11 = null;
+         RenderLayer var11 = null;
          class_3758 var12 = null;
          if (this.field_8203 != null) {
             if (this.field_8196.field_20923) {

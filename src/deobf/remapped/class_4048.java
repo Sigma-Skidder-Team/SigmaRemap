@@ -6,7 +6,7 @@ public final class class_4048 extends class_9446 {
 
    @Override
    public class_6098 method_43688(class_8743 var1, class_6098 var2) {
-      class_240 var5 = var1.method_40141().<class_240>method_10313(class_6451.field_32900);
+      Direction var5 = var1.method_40141().<Direction>method_10313(class_6451.field_32900);
       class_6331 var6 = var1.method_40140();
       double var7 = var1.method_61() + (double)var5.method_1041() * 1.125;
       double var9 = Math.floor(var1.method_60()) + (double)var5.method_1054();
@@ -26,7 +26,7 @@ public final class class_4048 extends class_9446 {
          class_3665 var19 = !(var18.method_8360() instanceof class_6788)
             ? class_3665.field_17829
             : var18.<class_3665>method_10313(((class_6788)var18.method_8360()).method_31121());
-         if (var5 != class_240.field_802 && var19.method_17011()) {
+         if (var5 != Direction.field_802 && var19.method_17011()) {
             var16 = -0.4;
          } else {
             var16 = -0.9;

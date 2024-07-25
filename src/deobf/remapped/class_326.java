@@ -6,7 +6,7 @@ public class class_326 extends class_7164<class_5542, class_6980<class_5542>> {
    private static final Identifier field_1214 = new Identifier("textures/entity/fox/snow_fox.png");
    private static final Identifier field_1213 = new Identifier("textures/entity/fox/snow_fox_sleep.png");
 
-   public class_326(class_6122 var1) {
+   public class_326(EntityRenderDispatcher var1) {
       super(var1, new class_6980<class_5542>(), 0.4F);
       this.method_29100(new class_9634(this));
    }

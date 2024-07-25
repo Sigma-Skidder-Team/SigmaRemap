@@ -26,7 +26,7 @@ public class class_1691 extends class_4569 {
          } else {
             if (this.field_8750 != class_5319.field_27132) {
                boolean var6 = false;
-               class_8145 var7 = var2.<class_8145>method_12698(class_8712.field_44676);
+               Entity var7 = var2.<Entity>method_12698(class_8712.field_44676);
                if (var7 instanceof class_91) {
                   class_91 var8 = (class_91)var7;
                   if (this.field_8750.method_24266(var8.method_264())) {

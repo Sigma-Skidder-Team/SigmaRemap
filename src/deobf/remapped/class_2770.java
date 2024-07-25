@@ -36,7 +36,7 @@ public class class_2770 extends class_5886 implements class_1869 {
    private final int[] field_13540 = new int[24];
    private final class_5424 field_13547 = new class_5424();
 
-   public class_2770(class_6629<? extends class_2770> var1, class_6486 var2) {
+   public class_2770(class_6629<? extends class_2770> var1, World var2) {
       super(class_6629.field_34310, var2);
       this.field_13542 = new class_5708(this, "head", 1.0F, 1.0F);
       this.field_13543 = new class_5708(this, "neck", 3.0F, 3.0F);
@@ -369,11 +369,11 @@ public class class_2770 extends class_5886 implements class_1869 {
       }
    }
 
-   private void method_12619(List<class_8145> var1) {
+   private void method_12619(List<Entity> var1) {
       double var4 = (this.field_13532.method_37241().field_19941 + this.field_13532.method_37241().field_19940) / 2.0;
       double var6 = (this.field_13532.method_37241().field_19938 + this.field_13532.method_37241().field_19942) / 2.0;
 
-      for (class_8145 var9 : var1) {
+      for (Entity var9 : var1) {
          if (var9 instanceof class_5834) {
             double var10 = var9.method_37302() - var4;
             double var12 = var9.method_37156() - var6;
@@ -387,8 +387,8 @@ public class class_2770 extends class_5886 implements class_1869 {
       }
    }
 
-   private void method_12624(List<class_8145> var1) {
-      for (class_8145 var5 : var1) {
+   private void method_12624(List<Entity> var1) {
+      for (Entity var5 : var1) {
          if (var5 instanceof class_5834) {
             var5.method_37181(class_6199.method_28345(this), 10.0F);
             this.method_37096(this, var5);
@@ -867,7 +867,7 @@ public class class_2770 extends class_5886 implements class_1869 {
    }
 
    @Override
-   public boolean method_37158(class_8145 var1) {
+   public boolean method_37158(Entity var1) {
       return false;
    }
 

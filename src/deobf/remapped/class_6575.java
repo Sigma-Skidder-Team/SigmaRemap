@@ -2,7 +2,7 @@ package remapped;
 
 public class class_6575 extends class_6938 {
    public class_6575() {
-      super(class_3581.method_16732(new Identifier("")), class_3581.method_16752(new Identifier("")), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+      super(RenderLayer.method_16732(new Identifier("")), RenderLayer.method_16752(new Identifier("")), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
    }
 
    @Override

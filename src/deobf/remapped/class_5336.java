@@ -10,7 +10,7 @@ public class class_5336 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       List var6 = var1.<class_4478>method_25869(
          class_4478.class, var2.method_37241().method_18898(2.0), var0 -> var0 != null && var0.method_37330() && var0.method_20795() instanceof class_2770
       );

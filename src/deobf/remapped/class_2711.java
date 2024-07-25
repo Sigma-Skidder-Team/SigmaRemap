@@ -47,7 +47,7 @@ public class class_2711 extends class_7481 {
    }
 
    @Override
-   public void method_27342(class_8145 var1) {
+   public void method_27342(Entity var1) {
    }
 
    @Override

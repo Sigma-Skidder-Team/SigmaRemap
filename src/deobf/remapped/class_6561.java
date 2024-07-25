@@ -28,7 +28,7 @@ public class class_6561 {
       return this.field_33471;
    }
 
-   public void method_29976(class_6486 var1, class_1331 var2, class_1331 var3, boolean var4, class_6414 var5) {
+   public void method_29976(World var1, class_1331 var2, class_1331 var3, boolean var4, class_6414 var5) {
       if (var3.method_12173() >= 1 && var3.method_12165() >= 1 && var3.method_12185() >= 1) {
          class_1331 var8 = var2.method_6105(var3).method_6104(-1, -1, -1);
          ArrayList var9 = Lists.newArrayList();
@@ -103,11 +103,11 @@ public class class_6561 {
       return var6;
    }
 
-   private void method_29964(class_6486 var1, class_1331 var2, class_1331 var3) {
-      List var6 = var1.<class_8145>method_25869(class_8145.class, new class_4092(var2, var3), var0 -> !(var0 instanceof class_704));
+   private void method_29964(World var1, class_1331 var2, class_1331 var3) {
+      List var6 = var1.<Entity>method_25869(Entity.class, new class_4092(var2, var3), var0 -> !(var0 instanceof class_704));
       this.field_33470.clear();
 
-      for (class_8145 var8 : var6) {
+      for (Entity var8 : var6) {
          class_1343 var9 = new class_1343(
             var8.method_37302() - (double)var2.method_12173(),
             var8.method_37309() - (double)var2.method_12165(),
@@ -231,7 +231,7 @@ public class class_6561 {
             }
 
             boolean var28 = true;
-            class_240[] var29 = new class_240[]{class_240.field_817, class_240.field_818, class_240.field_804, class_240.field_800, class_240.field_809};
+            Direction[] var29 = new Direction[]{Direction.field_817, Direction.field_818, Direction.field_804, Direction.field_800, Direction.field_809};
 
             while (var28 && !var11.isEmpty()) {
                var28 = false;
@@ -375,11 +375,11 @@ public class class_6561 {
       }
    }
 
-   private static Optional<class_8145> method_29991(class_1556 var0, class_5734 var1) {
+   private static Optional<Entity> method_29991(class_1556 var0, class_5734 var1) {
       try {
          return class_6629.method_30475(var1, var0.method_7066());
       } catch (Exception var5) {
-         return Optional.<class_8145>empty();
+         return Optional.<Entity>empty();
       }
    }
 
@@ -508,10 +508,10 @@ public class class_6561 {
 
       switch (var4) {
          case field_46148:
-            this.method_29989(var2, var12, var10, var13, class_240.field_818, class_240.field_800);
+            this.method_29989(var2, var12, var10, var13, Direction.field_818, Direction.field_800);
             break;
          case field_46144:
-            this.method_29989(var2, var10, var12, var13, class_240.field_809, class_240.field_804);
+            this.method_29989(var2, var10, var12, var13, Direction.field_809, Direction.field_804);
          case field_46145:
       }
 
@@ -519,7 +519,7 @@ public class class_6561 {
       return var13;
    }
 
-   private void method_29989(class_6631 var1, int var2, int var3, class_9616 var4, class_240 var5, class_240 var6) {
+   private void method_29989(class_6631 var1, int var2, int var3, class_9616 var4, Direction var5, Direction var6) {
       class_1331 var9 = class_1331.field_7306;
       if (var1 == class_6631.field_34334 || var1 == class_6631.field_34335) {
          var9 = var9.method_6099(var1.method_30489(var5), var3);

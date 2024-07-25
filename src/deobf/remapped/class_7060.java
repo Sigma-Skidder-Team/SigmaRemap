@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 public abstract class class_7060 {
    public static final class_2522 field_36439 = class_4783.field_23765.method_29260();
    public class_9616 field_36435;
-   private class_240 field_36437;
+   private Direction field_36437;
    private class_9022 field_36440;
    private class_6631 field_36436;
    public int field_36441;
@@ -40,14 +40,14 @@ public abstract class class_7060 {
       }
 
       int var5 = var2.method_25947("O");
-      this.method_32519(var5 != -1 ? class_240.method_1040(var5) : null);
+      this.method_32519(var5 != -1 ? Direction.method_1040(var5) : null);
    }
 
    public final class_5734 method_32520() {
       class_5734 var3 = new class_5734();
       var3.method_25941("id", class_8669.field_44364.method_39797(this.method_32521()).toString());
       var3.method_25946("BB", this.field_36435.method_44388());
-      class_240 var4 = this.method_32518();
+      Direction var4 = this.method_32518();
       var3.method_25931("O", var4 != null ? var4.method_1031() : -1);
       var3.method_25931("GD", this.field_36441);
       this.method_32517(var3);
@@ -136,7 +136,7 @@ public abstract class class_7060 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public int method_32530(int var1, int var2) {
-      class_240 var5 = this.method_32518();
+      Direction var5 = this.method_32518();
       if (var5 == null) {
          return var1;
       } else {
@@ -161,7 +161,7 @@ public abstract class class_7060 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public int method_32523(int var1, int var2) {
-      class_240 var5 = this.method_32518();
+      Direction var5 = this.method_32518();
       if (var5 == null) {
          return var2;
       } else {
@@ -349,9 +349,9 @@ public abstract class class_7060 {
    }
 
    public static class_2522 method_32509(class_6163 var0, class_1331 var1, class_2522 var2) {
-      class_240 var5 = null;
+      Direction var5 = null;
 
-      for (class_240 var7 : class_9594.field_48893) {
+      for (Direction var7 : class_9594.field_48893) {
          class_1331 var8 = var1.method_6098(var7);
          class_2522 var9 = var0.method_28262(var8);
          if (var9.method_8350(class_4783.field_23471)) {
@@ -369,7 +369,7 @@ public abstract class class_7060 {
       }
 
       if (var5 == null) {
-         class_240 var10 = var2.<class_240>method_10313(class_380.field_1543);
+         Direction var10 = var2.<Direction>method_10313(class_380.field_1543);
          class_1331 var11 = var1.method_6098(var10);
          if (var0.method_28262(var11).method_8321(var0, var11)) {
             var10 = var10.method_1046();
@@ -410,7 +410,7 @@ public abstract class class_7060 {
       }
    }
 
-   public boolean method_32504(class_700 var1, class_9616 var2, Random var3, int var4, int var5, int var6, class_240 var7, Identifier var8) {
+   public boolean method_32504(class_700 var1, class_9616 var2, Random var3, int var4, int var5, int var6, Direction var7, Identifier var8) {
       class_1331 var11 = new class_1331(this.method_32530(var4, var6), this.method_32507(var5), this.method_32523(var4, var6));
       if (var2.method_44395(var11) && !var1.method_28262(var11).method_8350(class_4783.field_23304)) {
          this.method_32529(var1, class_4783.field_23304.method_29260().method_10308(class_6451.field_32900, var7), var4, var5, var6, var2);
@@ -430,13 +430,13 @@ public abstract class class_7060 {
    }
 
    @Nullable
-   public class_240 method_32518() {
+   public Direction method_32518() {
       return this.field_36437;
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public void method_32519(class_240 var1) {
+   public void method_32519(Direction var1) {
       this.field_36437 = var1;
       if (var1 == null) {
          this.field_36436 = class_6631.field_34340;

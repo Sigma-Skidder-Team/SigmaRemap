@@ -7,9 +7,9 @@ import javax.annotation.Nullable;
 public final class class_8462 {
    private static String[] field_43262;
 
-   public static class_7474 method_38935(class_8145 var0, Predicate<class_8145> var1) {
+   public static class_7474 method_38935(Entity var0, Predicate<Entity> var1) {
       class_1343 var4 = var0.method_37098();
-      class_6486 var5 = var0.field_41768;
+      World var5 = var0.field_41768;
       class_1343 var6 = var0.method_37245();
       class_1343 var7 = var6.method_6215(var4);
       Object var8 = var5.method_28265(new class_972(var6, var7, class_3132.field_15553, class_9583.field_48747, var0));
@@ -26,13 +26,13 @@ public final class class_8462 {
    }
 
    @Nullable
-   public static class_5631 method_38932(class_8145 var0, class_1343 var1, class_1343 var2, class_4092 var3, Predicate<class_8145> var4, double var5) {
-      class_6486 var9 = var0.field_41768;
+   public static class_5631 method_38932(Entity var0, class_1343 var1, class_1343 var2, class_4092 var3, Predicate<Entity> var4, double var5) {
+      World var9 = var0.field_41768;
       double var10 = var5;
-      class_8145 var12 = null;
+      Entity var12 = null;
       class_1343 var13 = null;
 
-      for (class_8145 var15 : var9.method_25867(var0, var3, var4)) {
+      for (Entity var15 : var9.method_25867(var0, var3, var4)) {
          class_4092 var16 = var15.method_37241().method_18898((double)var15.method_37355());
          Optional var17 = var16.method_18923(var1, var2);
          if (!var16.method_18903(var1)) {
@@ -61,11 +61,11 @@ public final class class_8462 {
    }
 
    @Nullable
-   public static class_5631 method_38931(class_6486 var0, class_8145 var1, class_1343 var2, class_1343 var3, class_4092 var4, Predicate<class_8145> var5) {
+   public static class_5631 method_38931(World var0, Entity var1, class_1343 var2, class_1343 var3, class_4092 var4, Predicate<Entity> var5) {
       double var8 = Double.MAX_VALUE;
-      class_8145 var10 = null;
+      Entity var10 = null;
 
-      for (class_8145 var12 : var0.method_25867(var1, var4, var5)) {
+      for (Entity var12 : var0.method_25867(var1, var4, var5)) {
          class_4092 var13 = var12.method_37241().method_18898(0.3F);
          Optional var14 = var13.method_18923(var2, var3);
          if (var14.isPresent()) {
@@ -80,10 +80,10 @@ public final class class_8462 {
       return var10 != null ? new class_5631(var10) : null;
    }
 
-   public static final void method_38933(class_8145 var0, float var1) {
+   public static final void method_38933(Entity var0, float var1) {
       class_1343 var4 = var0.method_37098();
       if (var4.method_6221() != 0.0) {
-         float var5 = class_9299.method_42842(class_8145.method_37266(var4));
+         float var5 = class_9299.method_42842(Entity.method_37266(var4));
          var0.field_41701 = (float)(class_9299.method_42821(var4.field_7334, var4.field_7336) * 180.0F / (float)Math.PI) + 90.0F;
          var0.field_41755 = (float)(class_9299.method_42821((double)var5, var4.field_7333) * 180.0F / (float)Math.PI) - 90.0F;
 

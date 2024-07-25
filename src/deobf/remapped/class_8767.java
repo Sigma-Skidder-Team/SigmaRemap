@@ -4,10 +4,10 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class class_8767 extends class_4232 {
    private Screen field_44887;
-   private class_8881 field_44888;
    private class_6809 field_44886 = new class_6809(this, new class_3403());
+   private GameOptions field_44888;
 
-   public class_8767(Screen var1, class_8881 var2) {
+   public class_8767(Screen var1, GameOptions var2) {
       super(new StringTextComponent(class_6956.method_31803("of.options.otherTitle")));
       this.field_44887 = var1;
       this.field_44888 = var2;

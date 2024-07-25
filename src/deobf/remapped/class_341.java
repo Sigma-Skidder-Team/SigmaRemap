@@ -80,7 +80,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    private String field_1310;
    private int field_1309 = -1;
    public final class_7522 field_1342;
-   private final Map<class_5621<class_6486>, class_6331> field_1318 = Maps.newLinkedHashMap();
+   private final Map<class_5621<World>, class_6331> field_1318 = Maps.newLinkedHashMap();
    private class_8704 field_1322;
    private volatile boolean field_1313 = true;
    private boolean field_1320;
@@ -221,9 +221,9 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       }
 
       class_6331 var16 = new class_6331(
-         this, this.field_1308, this.field_1339, var4, class_6486.field_33048, var14, var1, (class_6541)var15, var6, var9, var11, true
+         this, this.field_1308, this.field_1339, var4, World.field_33048, var14, var1, (class_6541)var15, var6, var9, var11, true
       );
-      this.field_1318.put(class_6486.field_33048, var16);
+      this.field_1318.put(World.field_33048, var16);
       class_4050 var17 = var16.method_28980();
       this.method_1672(var17);
       this.field_1297 = new class_6532(var17);
@@ -258,7 +258,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       for (Entry var29 : var12.method_39808()) {
          class_5621 var21 = (class_5621)var29.getKey();
          if (var21 != class_8472.field_43412) {
-            class_5621 var22 = class_5621.<class_6486>method_25497(class_8669.field_44372, var21.method_25499());
+            class_5621 var22 = class_5621.<World>method_25497(class_8669.field_44372, var21.method_25499());
             class_8760 var23 = ((class_8472)var29.getValue()).method_38995();
             class_6541 var24 = ((class_8472)var29.getValue()).method_38996();
             class_1420 var25 = new class_1420(this.field_1300, var4);
@@ -764,15 +764,15 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    }
 
    public final class_6331 method_1736() {
-      return this.field_1318.get(class_6486.field_33048);
+      return this.field_1318.get(World.field_33048);
    }
 
    @Nullable
-   public class_6331 method_1697(class_5621<class_6486> var1) {
+   public class_6331 method_1697(class_5621<World> var1) {
       return this.field_1318.get(var1);
    }
 
-   public Set<class_5621<class_6486>> method_1659() {
+   public Set<class_5621<World>> method_1659() {
       return this.field_1318.keySet();
    }
 
@@ -1250,7 +1250,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
          "Server",
          new StringTextComponent("Server"),
          this,
-         (class_8145)null
+         (Entity)null
       );
    }
 

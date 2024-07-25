@@ -8,17 +8,17 @@ public class class_4831 extends class_4657 implements class_372 {
    }
 
    @Override
-   public int[] method_1832(class_240 var1) {
+   public int[] method_1832(Direction var1) {
       return new int[0];
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, class_240 var3) {
+   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
       return false;
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, class_240 var3) {
+   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
       return false;
    }
 }

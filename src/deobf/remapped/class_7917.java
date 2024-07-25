@@ -72,7 +72,7 @@ public class class_7917 extends class_2620 {
 
    public class_7917(class_3073 var1) {
       super(var1);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_1543, class_240.field_818).method_10308(field_12920, class_1895.field_9680));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_1543, Direction.field_818).method_10308(field_12920, class_1895.field_9680));
    }
 
    @Override
@@ -83,28 +83,28 @@ public class class_7917 extends class_2620 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private class_4190 method_35822(class_2522 var1) {
-      class_240 var4 = var1.<class_240>method_10313(field_1543);
+      Direction var4 = var1.<Direction>method_10313(field_1543);
       switch ((class_1895)var1.method_10313(field_12920)) {
          case field_9677:
-            if (var4 != class_240.field_818 && var4 != class_240.field_800) {
+            if (var4 != Direction.field_818 && var4 != Direction.field_800) {
                return field_40469;
             }
 
             return field_40518;
          case field_9680:
-            if (var4 == class_240.field_818) {
+            if (var4 == Direction.field_818) {
                return field_40488;
-            } else if (var4 == class_240.field_800) {
+            } else if (var4 == Direction.field_800) {
                return field_40508;
             } else {
-               if (var4 == class_240.field_804) {
+               if (var4 == Direction.field_804) {
                   return field_40527;
                }
 
                return field_40501;
             }
          case field_9679:
-            if (var4 != class_240.field_818 && var4 != class_240.field_800) {
+            if (var4 != Direction.field_818 && var4 != Direction.field_800) {
                return field_40481;
             }
 
@@ -130,7 +130,7 @@ public class class_7917 extends class_2620 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (!var2.field_33055) {
          var4.method_3152(var1.method_8317(var2, var3));
          var4.method_3209(class_6234.field_31896);
@@ -141,18 +141,18 @@ public class class_7917 extends class_2620 {
    }
 
    @Override
-   public class_4259 method_10767(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public class_4259 method_10767(class_2522 var1, World var2, class_1331 var3) {
       return new class_6872((var2x, var3x, var4) -> new class_1039(var2x, var3x, class_9210.method_42530(var2, var3)), field_40467);
    }
 
    @Override
    public class_2522 method_10785(class_2522 var1, class_6631 var2) {
-      return var1.method_10308(field_1543, var2.method_30489(var1.<class_240>method_10313(field_1543)));
+      return var1.method_10308(field_1543, var2.method_30489(var1.<Direction>method_10313(field_1543)));
    }
 
    @Override
    public class_2522 method_10773(class_2522 var1, class_9022 var2) {
-      return var1.method_8318(var2.method_41390(var1.<class_240>method_10313(field_1543)));
+      return var1.method_8318(var2.method_41390(var1.<Direction>method_10313(field_1543)));
    }
 
    @Override

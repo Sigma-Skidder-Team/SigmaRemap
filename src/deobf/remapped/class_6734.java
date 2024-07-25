@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_6734 extends class_4109 {
    private static String[] field_34772;
 
-   public class_6734(class_6629<? extends class_6734> var1, class_6486 var2) {
+   public class_6734(class_6629<? extends class_6734> var1, World var2) {
       super(var1, var2);
    }
 

@@ -55,9 +55,9 @@ public class class_5555 extends class_9795 implements class_3745 {
       this.field_28273++;
       if (!var4) {
          if (!this.field_18364.field_33055) {
-            List var5 = this.field_18364.<class_8145>method_25869(class_8145.class, new class_4092(this.method_17399()), class_5555::method_25250);
+            List var5 = this.field_18364.<Entity>method_25869(Entity.class, new class_4092(this.method_17399()), class_5555::method_25250);
             if (!var5.isEmpty()) {
-               this.method_25252((class_8145)var5.get(this.field_18364.field_33033.nextInt(var5.size())));
+               this.method_25252((Entity)var5.get(this.field_18364.field_33033.nextInt(var5.size())));
             }
 
             if (this.field_28273 % 2400L == 0L) {
@@ -73,7 +73,7 @@ public class class_5555 extends class_9795 implements class_3745 {
       }
    }
 
-   public static boolean method_25250(class_8145 var0) {
+   public static boolean method_25250(Entity var0) {
       return class_3572.field_17483.test(var0) && !var0.method_37240().method_37121();
    }
 
@@ -122,20 +122,20 @@ public class class_5555 extends class_9795 implements class_3745 {
       }
    }
 
-   public void method_25252(class_8145 var1) {
+   public void method_25252(Entity var1) {
       if (this.field_18364 instanceof class_6331 && !this.method_25249()) {
          this.field_28271 = 100;
-         if (this.field_28268 == null && this.field_18364.method_29545() == class_6486.field_33038) {
+         if (this.field_28268 == null && this.field_18364.method_29545() == World.field_33038) {
             this.method_25251((class_6331)this.field_18364);
          }
 
          if (this.field_28268 != null) {
             class_1331 var4 = !this.field_28269 ? this.method_25254() : this.field_28268;
-            class_8145 var5;
+            Entity var5;
             if (!(var1 instanceof class_1537)) {
                var5 = var1.method_37240();
             } else {
-               class_8145 var6 = ((class_1537)var1).method_26166();
+               Entity var6 = ((class_1537)var1).method_26166();
                if (var6 instanceof class_9359) {
                   class_8807.field_45077.method_8117((class_9359)var6, this.field_18364.method_28262(this.method_17399()));
                }
@@ -213,7 +213,7 @@ public class class_5555 extends class_9795 implements class_3745 {
       return var6 != null ? var6 : var1;
    }
 
-   private static class_2654 method_25243(class_6486 var0, class_1343 var1) {
+   private static class_2654 method_25243(World var0, class_1343 var1) {
       return var0.method_29554(class_9299.method_42847(var1.field_7336 / 16.0), class_9299.method_42847(var1.field_7334 / 16.0));
    }
 
@@ -251,14 +251,14 @@ public class class_5555 extends class_9795 implements class_3745 {
    }
 
    @Override
-   public boolean method_45197(class_240 var1) {
+   public boolean method_45197(Direction var1) {
       return class_6414.method_29283(this.method_17403(), this.field_18364, this.method_17399(), var1);
    }
 
    public int method_25240() {
       int var3 = 0;
 
-      for (class_240 var7 : class_240.values()) {
+      for (Direction var7 : Direction.values()) {
          var3 += !this.method_45197(var7) ? 0 : 1;
       }
 

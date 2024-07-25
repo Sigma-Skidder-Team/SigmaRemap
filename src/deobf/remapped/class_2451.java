@@ -48,14 +48,14 @@ public class class_2451 implements class_8525 {
       this.field_12175 = class_317.method_1484(var1);
    }
 
-   public void method_11228(class_6486 var1, class_5834 var2, class_6098 var3, int var4) {
+   public void method_11228(World var1, class_5834 var2, class_6098 var3, int var4) {
    }
 
    public boolean method_11215(class_5734 var1) {
       return false;
    }
 
-   public boolean method_11203(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
       return true;
    }
 
@@ -72,7 +72,7 @@ public class class_2451 implements class_8525 {
       return 1.0F;
    }
 
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       if (!this.method_11247()) {
          return class_954.<class_6098>method_4207(var2.method_26617(var3));
       } else {
@@ -86,7 +86,7 @@ public class class_2451 implements class_8525 {
       }
    }
 
-   public class_6098 method_11242(class_6098 var1, class_6486 var2, class_5834 var3) {
+   public class_6098 method_11242(class_6098 var1, World var2, class_5834 var3) {
       return !this.method_11247() ? var1 : var3.method_26426(var2, var1);
    }
 
@@ -106,7 +106,7 @@ public class class_2451 implements class_8525 {
       return false;
    }
 
-   public boolean method_11209(class_6098 var1, class_6486 var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(class_6098 var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
       return false;
    }
 
@@ -156,10 +156,10 @@ public class class_2451 implements class_8525 {
       return this.field_12165 != null;
    }
 
-   public void method_11214(class_6098 var1, class_6486 var2, class_8145 var3, int var4, boolean var5) {
+   public void method_11214(class_6098 var1, World var2, Entity var3, int var4, boolean var5) {
    }
 
-   public void method_11236(class_6098 var1, class_6486 var2, class_704 var3) {
+   public void method_11236(class_6098 var1, World var2, class_704 var3) {
    }
 
    public boolean method_11221() {
@@ -178,10 +178,10 @@ public class class_2451 implements class_8525 {
       }
    }
 
-   public void method_11206(class_6098 var1, class_6486 var2, class_5834 var3, int var4) {
+   public void method_11206(class_6098 var1, World var2, class_5834 var3, int var4) {
    }
 
-   public void method_11218(class_6098 var1, class_6486 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
    }
 
    public ITextComponent method_11249(class_6098 var1) {
@@ -215,7 +215,7 @@ public class class_2451 implements class_8525 {
       return this.method_11245() == 1 && this.method_11210();
    }
 
-   public static class_9529 method_11238(class_6486 var0, class_704 var1, class_9583 var2) {
+   public static class_9529 method_11238(World var0, class_704 var1, class_9583 var2) {
       float var5 = var1.field_41755;
       float var6 = var1.field_41701;
       class_1343 var7 = var1.method_37335(1.0F);

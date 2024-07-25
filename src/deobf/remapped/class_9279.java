@@ -21,12 +21,12 @@ public class class_9279 extends class_4314 {
 
    public class_9279(class_3073 var1) {
       super(var1);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_47337, class_240.field_802).method_10308(field_47330, Boolean.valueOf(true)));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_47337, Direction.field_802).method_10308(field_47330, Boolean.valueOf(true)));
    }
 
    @Override
    public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
-      switch ((class_240)var1.method_10313(field_47337)) {
+      switch ((Direction)var1.method_10313(field_47337)) {
          case field_802:
             return field_47321;
          case field_818:
@@ -44,7 +44,7 @@ public class class_9279 extends class_4314 {
 
    @Override
    public class_4190 method_10776(class_2522 var1, class_6163 var2, class_1331 var3) {
-      switch ((class_240)var1.method_10313(field_47337)) {
+      switch ((Direction)var1.method_10313(field_47337)) {
          case field_802:
             return field_47324;
          case field_818:
@@ -62,9 +62,9 @@ public class class_9279 extends class_4314 {
 
    @Override
    public class_2522 method_29302(class_353 var1) {
-      class_240 var4 = var1.method_21857().method_1046();
+      Direction var4 = var1.method_21857().method_1046();
       return this.method_29260()
-         .method_10308(field_47337, var4.method_1029() != class_9249.field_47216 ? var4 : class_240.field_802)
+         .method_10308(field_47337, var4.method_1029() != class_9249.field_47216 ? var4 : Direction.field_802)
          .method_10308(field_47330, Boolean.valueOf(true));
    }
 
@@ -74,7 +74,7 @@ public class class_9279 extends class_4314 {
    }
 
    @Override
-   public void method_29257(class_6486 var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
       if (var5.method_28018()) {
          class_3757 var8 = var1.method_28260(var2);
          if (var8 instanceof class_5772) {
@@ -84,14 +84,14 @@ public class class_9279 extends class_4314 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var4.method_8350(var1.method_8360())) {
          this.method_42743(var2, var3, var1);
       }
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (!var2.field_33055) {
          class_3757 var9 = var2.method_28260(var3);
          if (var9 instanceof class_5772) {
@@ -106,11 +106,11 @@ public class class_9279 extends class_4314 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, class_6486 var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
       this.method_42743(var2, var3, var1);
    }
 
-   private void method_42743(class_6486 var1, class_1331 var2, class_2522 var3) {
+   private void method_42743(World var1, class_1331 var2, class_2522 var3) {
       boolean var6 = !var1.method_29576(var2);
       if (var6 != var3.<Boolean>method_10313(field_47330)) {
          var1.method_7513(var2, var3.method_10308(field_47330, Boolean.valueOf(var6)), 4);
@@ -118,7 +118,7 @@ public class class_9279 extends class_4314 {
    }
 
    @Override
-   public void method_10761(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var1.method_8350(var4.method_8360())) {
          class_3757 var8 = var2.method_28260(var3);
          if (var8 instanceof class_5772) {
@@ -141,18 +141,18 @@ public class class_9279 extends class_4314 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       return class_4088.method_18863(var2.method_28260(var3));
    }
 
    @Override
    public class_2522 method_10785(class_2522 var1, class_6631 var2) {
-      return var1.method_10308(field_47337, var2.method_30489(var1.<class_240>method_10313(field_47337)));
+      return var1.method_10308(field_47337, var2.method_30489(var1.<Direction>method_10313(field_47337)));
    }
 
    @Override
    public class_2522 method_10773(class_2522 var1, class_9022 var2) {
-      return var1.method_8318(var2.method_41390(var1.<class_240>method_10313(field_47337)));
+      return var1.method_8318(var2.method_41390(var1.<Direction>method_10313(field_47337)));
    }
 
    @Override
@@ -161,7 +161,7 @@ public class class_9279 extends class_4314 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       class_3757 var7 = var2.method_28260(var3);
       if (var7 instanceof class_5772) {
          ((class_5772)var7).method_26088(var4);

@@ -18,7 +18,7 @@ public class class_6000 {
       return this != field_30559 ? this.method_27393(var1.method_27990()) : true;
    }
 
-   public boolean method_27392(class_8145 var1) {
+   public boolean method_27392(Entity var1) {
       return this != field_30559 ? this.method_27393(method_27394(var1)) : true;
    }
 
@@ -45,7 +45,7 @@ public class class_6000 {
       }
    }
 
-   public static class_5734 method_27394(class_8145 var0) {
+   public static class_5734 method_27394(Entity var0) {
       class_5734 var3 = var0.method_37258(new class_5734());
       if (var0 instanceof class_704) {
          class_6098 var4 = ((class_704)var0).field_3853.method_32403();

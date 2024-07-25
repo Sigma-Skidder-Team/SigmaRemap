@@ -26,7 +26,7 @@ public class class_6262 extends class_462 {
       var1.method_25931("Num", this.field_32001);
    }
 
-   public class_6262(int var1, Random var2, class_9616 var3, class_240 var4, class_1143 var5) {
+   public class_6262(int var1, Random var2, class_9616 var3, Direction var4, class_1143 var5) {
       super(class_2746.field_13447, var1, var5);
       this.method_32519(var4);
       this.field_36435 = var3;
@@ -39,7 +39,7 @@ public class class_6262 extends class_462 {
       }
    }
 
-   public static class_9616 method_28564(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5) {
+   public static class_9616 method_28564(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5) {
       class_9616 var8 = new class_9616(var2, var3, var4, var2, var3 + 3 - 1, var4);
 
       int var9;
@@ -76,7 +76,7 @@ public class class_6262 extends class_462 {
    public void method_32527(class_7060 var1, List<class_7060> var2, Random var3) {
       int var6 = this.method_32515();
       int var7 = var3.nextInt(4);
-      class_240 var8 = this.method_32518();
+      Direction var8 = this.method_32518();
       if (var8 != null) {
          switch (var8) {
             case field_818:
@@ -100,7 +100,7 @@ public class class_6262 extends class_462 {
                      this.field_36435.field_48996 - 1,
                      this.field_36435.field_48995 - 1 + var3.nextInt(3),
                      this.field_36435.field_48992,
-                     class_240.field_809,
+                     Direction.field_809,
                      var6
                   );
                } else {
@@ -111,7 +111,7 @@ public class class_6262 extends class_462 {
                      this.field_36435.field_48991 + 1,
                      this.field_36435.field_48995 - 1 + var3.nextInt(3),
                      this.field_36435.field_48992,
-                     class_240.field_804,
+                     Direction.field_804,
                      var6
                   );
                }
@@ -136,7 +136,7 @@ public class class_6262 extends class_462 {
                      this.field_36435.field_48996 - 1,
                      this.field_36435.field_48995 - 1 + var3.nextInt(3),
                      this.field_36435.field_48994 - 3,
-                     class_240.field_809,
+                     Direction.field_809,
                      var6
                   );
                } else {
@@ -147,7 +147,7 @@ public class class_6262 extends class_462 {
                      this.field_36435.field_48991 + 1,
                      this.field_36435.field_48995 - 1 + var3.nextInt(3),
                      this.field_36435.field_48994 - 3,
-                     class_240.field_804,
+                     Direction.field_804,
                      var6
                   );
                }
@@ -172,7 +172,7 @@ public class class_6262 extends class_462 {
                      this.field_36435.field_48996,
                      this.field_36435.field_48995 - 1 + var3.nextInt(3),
                      this.field_36435.field_48992 - 1,
-                     class_240.field_818,
+                     Direction.field_818,
                      var6
                   );
                } else {
@@ -183,7 +183,7 @@ public class class_6262 extends class_462 {
                      this.field_36435.field_48996,
                      this.field_36435.field_48995 - 1 + var3.nextInt(3),
                      this.field_36435.field_48994 + 1,
-                     class_240.field_800,
+                     Direction.field_800,
                      var6
                   );
                }
@@ -208,7 +208,7 @@ public class class_6262 extends class_462 {
                      this.field_36435.field_48991 - 3,
                      this.field_36435.field_48995 - 1 + var3.nextInt(3),
                      this.field_36435.field_48992 - 1,
-                     class_240.field_818,
+                     Direction.field_818,
                      var6
                   );
                } else {
@@ -219,7 +219,7 @@ public class class_6262 extends class_462 {
                      this.field_36435.field_48991 - 3,
                      this.field_36435.field_48995 - 1 + var3.nextInt(3),
                      this.field_36435.field_48994 + 1,
-                     class_240.field_800,
+                     Direction.field_800,
                      var6
                   );
                }
@@ -227,22 +227,22 @@ public class class_6262 extends class_462 {
       }
 
       if (var6 < 8) {
-         if (var8 != class_240.field_818 && var8 != class_240.field_800) {
+         if (var8 != Direction.field_818 && var8 != Direction.field_800) {
             for (int var11 = this.field_36435.field_48996 + 3; var11 + 3 <= this.field_36435.field_48991; var11 += 5) {
                int var12 = var3.nextInt(5);
                if (var12 == 0) {
-                  class_1087.method_4766(var1, var2, var3, var11, this.field_36435.field_48995, this.field_36435.field_48992 - 1, class_240.field_818, var6 + 1);
+                  class_1087.method_4766(var1, var2, var3, var11, this.field_36435.field_48995, this.field_36435.field_48992 - 1, Direction.field_818, var6 + 1);
                } else if (var12 == 1) {
-                  class_1087.method_4766(var1, var2, var3, var11, this.field_36435.field_48995, this.field_36435.field_48994 + 1, class_240.field_800, var6 + 1);
+                  class_1087.method_4766(var1, var2, var3, var11, this.field_36435.field_48995, this.field_36435.field_48994 + 1, Direction.field_800, var6 + 1);
                }
             }
          } else {
             for (int var9 = this.field_36435.field_48992 + 3; var9 + 3 <= this.field_36435.field_48994; var9 += 5) {
                int var10 = var3.nextInt(5);
                if (var10 == 0) {
-                  class_1087.method_4766(var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, var9, class_240.field_809, var6 + 1);
+                  class_1087.method_4766(var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, var9, Direction.field_809, var6 + 1);
                } else if (var10 == 1) {
-                  class_1087.method_4766(var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, var9, class_240.field_804, var6 + 1);
+                  class_1087.method_4766(var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, var9, Direction.field_804, var6 + 1);
                }
             }
          }
@@ -369,7 +369,7 @@ public class class_6262 extends class_462 {
                var3 + 1,
                var6,
                var5 - 1,
-               class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_818)
+               class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_818)
             );
             this.method_32524(
                var1,
@@ -379,7 +379,7 @@ public class class_6262 extends class_462 {
                var3 + 1,
                var6,
                var5 + 1,
-               class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_800)
+               class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_800)
             );
          } else {
             this.method_32500(var1, var2, var3, var6, var5, var3, var6, var5, var11, field_36439, false);

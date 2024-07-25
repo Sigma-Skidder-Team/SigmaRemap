@@ -10,7 +10,7 @@ public class class_2174 {
    private static float field_10836 = 0.2F;
    private static boolean field_10834 = false;
    private static final class_109 field_10833 = new class_109();
-   private static final class_3581[] field_10835 = new class_3581[]{class_6727.field_34743, class_6727.field_34746, class_6727.field_34740};
+   private static final RenderLayer[] field_10835 = new RenderLayer[]{class_6727.field_34743, class_6727.field_34746, class_6727.field_34740};
    private boolean field_10837 = class_7860.field_40161.method_45472();
 
    private void method_10107(
@@ -98,7 +98,7 @@ public class class_2174 {
          if (var6) {
             this.method_10109(var1, var2, var3, var14.method_23155(), var14.method_23150(), (float[])null, var10);
             class_1331 var15 = !var10.get(0) ? var3 : var3.method_6098(var14.method_23150());
-            var4 = class_4316.method_20052(var1, var2, var15);
+            var4 = WorldRenderer.method_20052(var1, var2, var15);
          }
 
          float var16 = var1.method_25265(var14.method_23150(), var14.method_23168());
@@ -190,9 +190,9 @@ public class class_2174 {
    ) {
       boolean var15 = false;
       class_4460 var16 = var6.method_35749(var3, var4);
-      class_3581 var17 = var6.method_35760();
+      RenderLayer var17 = var6.method_35760();
 
-      for (class_240 var21 : class_240.field_803) {
+      for (Direction var21 : Direction.field_803) {
          if (!var7 || class_9451.method_43714(var3, var1, var4, var21, var16)) {
             var8.setSeed(var9);
             List var22 = !this.field_10837 ? var2.method_33580(var3, var21, var8) : var2.method_16965(var3, var21, var8, var12);
@@ -203,9 +203,9 @@ public class class_2174 {
       }
 
       var8.setSeed(var9);
-      List var23 = !this.field_10837 ? var2.method_33580(var3, (class_240)null, var8) : var2.method_16965(var3, (class_240)null, var8, var12);
+      List var23 = !this.field_10837 ? var2.method_33580(var3, (Direction)null, var8) : var2.method_16965(var3, (Direction)null, var8, var12);
       if (!var23.isEmpty()) {
-         var23 = class_4690.method_21658(var23, var1, var3, var4, (class_240)null, var17, var9, var16);
+         var23 = class_4690.method_21658(var23, var1, var3, var4, (Direction)null, var17, var9, var16);
          this.method_10106(var1, var3, var4, var5, var6, var23, var11, var16);
          var15 = true;
       }
@@ -234,13 +234,13 @@ public class class_2174 {
    ) {
       boolean var15 = false;
       class_4460 var16 = var6.method_35749(var3, var4);
-      class_3581 var17 = var6.method_35760();
+      RenderLayer var17 = var6.method_35760();
 
-      for (class_240 var21 : class_240.field_803) {
+      for (Direction var21 : Direction.field_803) {
          if (!var7 || class_9451.method_43714(var3, var1, var4, var21, var16)) {
             var8.setSeed(var9);
             List var22 = !this.field_10837 ? var2.method_33580(var3, var21, var8) : var2.method_16965(var3, var21, var8, var12);
-            int var23 = class_4316.method_20052(var1, var3, var4.method_6098(var21));
+            int var23 = WorldRenderer.method_20052(var1, var3, var4.method_6098(var21));
             var22 = class_4690.method_21658(var22, var1, var3, var4, var21, var17, var9, var16);
             this.method_10111(var1, var3, var4, var23, var11, false, var5, var6, var22, var16);
             var15 = true;
@@ -248,9 +248,9 @@ public class class_2174 {
       }
 
       var8.setSeed(var9);
-      List var24 = !this.field_10837 ? var2.method_33580(var3, (class_240)null, var8) : var2.method_16965(var3, (class_240)null, var8, var12);
+      List var24 = !this.field_10837 ? var2.method_33580(var3, (Direction)null, var8) : var2.method_16965(var3, (Direction)null, var8, var12);
       if (!var24.isEmpty()) {
-         var24 = class_4690.method_21658(var24, var1, var3, var4, (class_240)null, var17, var9, var16);
+         var24 = class_4690.method_21658(var24, var1, var3, var4, (Direction)null, var17, var9, var16);
          this.method_10111(var1, var3, var4, -1, var11, true, var5, var6, var24, var16);
          var15 = true;
       }
@@ -333,7 +333,7 @@ public class class_2174 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   private void method_10109(class_5561 var1, class_2522 var2, class_1331 var3, int[] var4, class_240 var5, float[] var6, BitSet var7) {
+   private void method_10109(class_5561 var1, class_2522 var2, class_1331 var3, int[] var4, Direction var5, float[] var6, BitSet var7) {
       float var10 = 32.0F;
       float var11 = 32.0F;
       float var12 = 32.0F;
@@ -355,19 +355,19 @@ public class class_2174 {
       }
 
       if (var6 != null) {
-         var6[class_240.field_809.method_1050()] = var10;
-         var6[class_240.field_804.method_1050()] = var13;
-         var6[class_240.field_802.method_1050()] = var11;
-         var6[class_240.field_817.method_1050()] = var14;
-         var6[class_240.field_818.method_1050()] = var12;
-         var6[class_240.field_800.method_1050()] = var15;
-         int var21 = class_240.field_803.length;
-         var6[class_240.field_809.method_1050() + var21] = 1.0F - var10;
-         var6[class_240.field_804.method_1050() + var21] = 1.0F - var13;
-         var6[class_240.field_802.method_1050() + var21] = 1.0F - var11;
-         var6[class_240.field_817.method_1050() + var21] = 1.0F - var14;
-         var6[class_240.field_818.method_1050() + var21] = 1.0F - var12;
-         var6[class_240.field_800.method_1050() + var21] = 1.0F - var15;
+         var6[Direction.field_809.method_1050()] = var10;
+         var6[Direction.field_804.method_1050()] = var13;
+         var6[Direction.field_802.method_1050()] = var11;
+         var6[Direction.field_817.method_1050()] = var14;
+         var6[Direction.field_818.method_1050()] = var12;
+         var6[Direction.field_800.method_1050()] = var15;
+         int var21 = Direction.field_803.length;
+         var6[Direction.field_809.method_1050() + var21] = 1.0F - var10;
+         var6[Direction.field_804.method_1050() + var21] = 1.0F - var13;
+         var6[Direction.field_802.method_1050() + var21] = 1.0F - var11;
+         var6[Direction.field_817.method_1050() + var21] = 1.0F - var14;
+         var6[Direction.field_818.method_1050() + var21] = 1.0F - var12;
+         var6[Direction.field_800.method_1050() + var21] = 1.0F - var15;
       }
 
       float var22 = 1.0E-4F;
@@ -419,7 +419,7 @@ public class class_2174 {
          if (var6) {
             this.method_10109(var1, var2, var3, var16.method_23155(), var16.method_23150(), (float[])null, var13);
             class_1331 var17 = !var13.get(0) ? var3 : var3.method_6098(var16.method_23150());
-            var4 = class_4316.method_20052(var1, var2, var17);
+            var4 = WorldRenderer.method_20052(var1, var2, var17);
          }
 
          if (var16.method_23148().field_26528) {
@@ -441,7 +441,7 @@ public class class_2174 {
       Random var13 = new Random();
       long var14 = 42L;
 
-      for (class_240 var19 : class_240.field_803) {
+      for (Direction var19 : Direction.field_803) {
          var13.setSeed(42L);
          if (!this.field_10837) {
             method_10096(var1, var2, var5, var6, var7, var4.method_33580(var3, var19, var13), var8, var9);
@@ -452,9 +452,9 @@ public class class_2174 {
 
       var13.setSeed(42L);
       if (!this.field_10837) {
-         method_10096(var1, var2, var5, var6, var7, var4.method_33580(var3, (class_240)null, var13), var8, var9);
+         method_10096(var1, var2, var5, var6, var7, var4.method_33580(var3, (Direction)null, var13), var8, var9);
       } else {
-         method_10096(var1, var2, var5, var6, var7, var4.method_16965(var3, (class_240)null, var13, var10), var8, var9);
+         method_10096(var1, var2, var5, var6, var7, var4.method_16965(var3, (Direction)null, var13, var10), var8, var9);
       }
    }
 
@@ -524,7 +524,7 @@ public class class_2174 {
    ) {
       if (var12.method_20671()) {
          for (int var17 = 0; var17 < field_10835.length; var17++) {
-            class_3581 var18 = field_10835[var17];
+            RenderLayer var18 = field_10835[var17];
             class_8910 var19 = var12.method_20695(var18);
             if (var19.method_40987() > 0) {
                class_2848 var20 = var12.method_20670();
@@ -544,7 +544,7 @@ public class class_2174 {
 
                      var12.method_20678(var25, var4);
                      if (!var13) {
-                        int var26 = class_4316.method_20052(var1, var25, var4.method_6098(var23.method_23150()));
+                        int var26 = WorldRenderer.method_20052(var1, var25, var4.method_6098(var23.method_23150()));
                         this.method_10111(var1, var25, var4, var26, var7, false, var5, var21, var24, var12);
                      } else {
                         this.method_10106(var1, var25, var4, var5, var21, var24, var7, var12);

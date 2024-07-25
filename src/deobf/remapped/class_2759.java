@@ -3,7 +3,7 @@ package remapped;
 public class class_2759 extends class_7164<class_2022, class_5301> {
    private static final Identifier field_13490 = new Identifier("textures/entity/bat.png");
 
-   public class_2759(class_6122 var1) {
+   public class_2759(EntityRenderDispatcher var1) {
       super(var1, new class_5301(), 0.25F);
    }
 

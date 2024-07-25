@@ -32,7 +32,7 @@ public class class_545 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       class_6098 var9 = var4.method_26617(var5);
       if (var5 == class_2584.field_12791 && !method_2639(var9) && method_2639(var4.method_26617(class_2584.field_12794))) {
          return class_6910.field_35521;
@@ -84,7 +84,7 @@ public class class_545 extends class_6414 {
       return var0.<Integer>method_10313(field_3268) < 4;
    }
 
-   private static boolean method_2638(class_1331 var0, class_6486 var1) {
+   private static boolean method_2638(class_1331 var0, World var1) {
       class_4774 var4 = var1.method_28258(var0);
       if (var4.method_22007(class_6503.field_33094)) {
          if (!var4.method_21993()) {
@@ -103,13 +103,13 @@ public class class_545 extends class_6414 {
       }
    }
 
-   private void method_2641(class_2522 var1, class_6486 var2, class_1331 var3) {
+   private void method_2641(class_2522 var1, World var2, class_1331 var3) {
       var2.method_7508(var3, false);
       boolean var6 = class_9594.field_48893.method_44315().<class_1331>map(var3::method_6098).anyMatch(var1x -> method_2638(var1x, var2));
       boolean var7 = var6 || var2.method_28258(var3.method_6081()).method_22007(class_6503.field_33094);
       class_4294 var8 = new class_4294(this, var7);
       var2.method_29575(
-         (class_8145)null,
+         (Entity)null,
          class_6199.method_28378(),
          var8,
          (double)var3.method_12173() + 0.5,
@@ -121,11 +121,11 @@ public class class_545 extends class_6414 {
       );
    }
 
-   public static boolean method_2640(class_6486 var0) {
+   public static boolean method_2640(World var0) {
       return var0.method_22572().method_40219();
    }
 
-   public static void method_2634(class_6486 var0, class_1331 var1, class_2522 var2) {
+   public static void method_2634(World var0, class_1331 var1, class_2522 var2) {
       var0.method_7513(var1, var2.method_10308(field_3268, Integer.valueOf(var2.<Integer>method_10313(field_3268) + 1)), 3);
       var0.method_29528(
          (class_704)null,
@@ -140,7 +140,7 @@ public class class_545 extends class_6414 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       if (var1.<Integer>method_10313(field_3268) != 0) {
          if (var4.nextInt(100) == 0) {
             var2.method_29528(
@@ -178,7 +178,7 @@ public class class_545 extends class_6414 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       return method_2637(var1, 15);
    }
 

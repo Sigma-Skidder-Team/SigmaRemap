@@ -19,7 +19,7 @@ public class class_7174 extends class_2451 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, class_6486 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       var3.add(this.method_32878().mergeStyle(TextFormatting.GRAY));
    }
 

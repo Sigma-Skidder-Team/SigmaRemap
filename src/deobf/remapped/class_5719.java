@@ -9,25 +9,25 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public interface class_5719 {
-   List<class_8145> method_25867(class_8145 var1, class_4092 var2, Predicate<? super class_8145> var3);
+   List<Entity> method_25867(Entity var1, class_4092 var2, Predicate<? super Entity> var3);
 
-   <T extends class_8145> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3);
+   <T extends Entity> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3);
 
-   default <T extends class_8145> List<T> method_25875(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
+   default <T extends Entity> List<T> method_25875(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
       return this.<T>method_25869(var1, var2, var3);
    }
 
    List<? extends class_704> method_25873();
 
-   default List<class_8145> method_25870(class_8145 var1, class_4092 var2) {
+   default List<Entity> method_25870(Entity var1, class_4092 var2) {
       return this.method_25867(var1, var2, class_3572.field_17483);
    }
 
-   default boolean method_6678(class_8145 var1, class_4190 var2) {
+   default boolean method_6678(Entity var1, class_4190 var2) {
       if (var2.method_19485()) {
          return true;
       } else {
-         for (class_8145 var6 : this.method_25870(var1, var2.method_19483())) {
+         for (Entity var6 : this.method_25870(var1, var2.method_19483())) {
             if (!var6.field_41751
                && var6.field_41759
                && (var1 == null || !var6.method_37308(var1))
@@ -40,15 +40,15 @@ public interface class_5719 {
       }
    }
 
-   default <T extends class_8145> List<T> method_25868(Class<? extends T> var1, class_4092 var2) {
+   default <T extends Entity> List<T> method_25868(Class<? extends T> var1, class_4092 var2) {
       return this.<T>method_25869(var1, var2, class_3572.field_17483);
    }
 
-   default <T extends class_8145> List<T> method_25874(Class<? extends T> var1, class_4092 var2) {
+   default <T extends Entity> List<T> method_25874(Class<? extends T> var1, class_4092 var2) {
       return this.<T>method_25875(var1, var2, class_3572.field_17483);
    }
 
-   default Stream<class_4190> method_6679(class_8145 var1, class_4092 var2, Predicate<class_8145> var3) {
+   default Stream<class_4190> method_6679(Entity var1, class_4092 var2, Predicate<Entity> var3) {
       if (!(var2.method_18906() < 1.0E-7)) {
          class_4092 var6 = var2.method_18898(1.0E-7);
          return this.method_25867(var1, var6, var3.and(var2x -> {
@@ -63,14 +63,14 @@ public interface class_5719 {
             }
 
             return false;
-         })).stream().<class_4092>map(class_8145::method_37241).<class_4190>map(class_3370::method_15523);
+         })).stream().<class_4092>map(Entity::method_37241).<class_4190>map(class_3370::method_15523);
       } else {
          return Stream.<class_4190>empty();
       }
    }
 
    @Nullable
-   default class_704 method_25856(double var1, double var3, double var5, double var7, Predicate<class_8145> var9) {
+   default class_704 method_25856(double var1, double var3, double var5, double var7, Predicate<Entity> var9) {
       double var12 = -1.0;
       class_704 var14 = null;
 
@@ -88,7 +88,7 @@ public interface class_5719 {
    }
 
    @Nullable
-   default class_704 method_25861(class_8145 var1, double var2) {
+   default class_704 method_25861(Entity var1, double var2) {
       return this.method_25857(var1.method_37302(), var1.method_37309(), var1.method_37156(), var2, false);
    }
 

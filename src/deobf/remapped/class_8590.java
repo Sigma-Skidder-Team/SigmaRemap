@@ -8,7 +8,7 @@ public class class_8590 extends class_3259 {
    private class_4892 field_44017;
    private class_9521 field_44014;
 
-   public class_8590(Screen var1, class_8881 var2) {
+   public class_8590(Screen var1, GameOptions var2) {
       super(var1, var2, new TranslationTextComponent("controls.title"));
    }
 

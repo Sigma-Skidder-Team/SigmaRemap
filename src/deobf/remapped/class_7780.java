@@ -46,7 +46,7 @@ public class class_7780 {
       this.field_39434 = var5;
    }
 
-   public boolean method_35301(class_8145 var1) {
+   public boolean method_35301(Entity var1) {
       if (this == field_39437) {
          return true;
       } else if (!(var1 instanceof class_9359)) {

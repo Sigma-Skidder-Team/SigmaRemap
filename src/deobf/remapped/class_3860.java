@@ -13,7 +13,7 @@ public class class_3860<T extends class_5834> extends class_4171<T, class_1290<T
          this.method_19347().method_29701(this.field_18814);
          this.field_18814.method_29702((T)var4, var5, var6, var7);
          this.field_18814.method_29700((T)var4, var5, var6, var8, var9, var10);
-         class_7907 var13 = var2.method_11645(class_3581.method_16705(this.method_19346((T)var4)));
+         class_7907 var13 = var2.method_11645(RenderLayer.method_16705(this.method_19346((T)var4)));
          this.field_18814.method_45499(var1, var13, var3, class_6353.method_29110(var4, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
       }
    }

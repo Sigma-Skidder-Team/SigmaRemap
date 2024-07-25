@@ -3,7 +3,7 @@ package remapped;
 public class class_8317 extends class_7164<class_9490, class_7236<class_9490>> {
    private static final Identifier field_42610 = new Identifier("textures/entity/creeper/creeper.png");
 
-   public class_8317(class_6122 var1) {
+   public class_8317(EntityRenderDispatcher var1) {
       super(var1, new class_7236<class_9490>(), 0.5F);
       this.method_29100(new class_8417(this));
    }

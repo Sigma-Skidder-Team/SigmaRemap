@@ -3,7 +3,7 @@ package remapped;
 public class class_643 extends class_763 {
    public static final Identifier field_3601 = new Identifier("textures/entity/guardian_elder.png");
 
-   public class_643(class_6122 var1) {
+   public class_643(EntityRenderDispatcher var1) {
       super(var1, 1.2F);
    }
 

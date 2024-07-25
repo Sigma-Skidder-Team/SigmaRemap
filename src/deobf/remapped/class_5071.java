@@ -4,9 +4,9 @@ public final class class_5071 {
    private static String[] field_26204;
    private final class_2522 field_26202;
    private final class_2522 field_26203;
-   private final class_240 field_26205;
+   private final Direction field_26205;
 
-   public class_5071(class_2522 var1, class_2522 var2, class_240 var3) {
+   public class_5071(class_2522 var1, class_2522 var2, Direction var3) {
       this.field_26202 = var1;
       this.field_26203 = var2;
       this.field_26205 = var3;

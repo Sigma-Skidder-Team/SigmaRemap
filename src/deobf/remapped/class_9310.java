@@ -11,7 +11,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    private class_9310 field_47541;
    private class_9310 field_47540;
 
-   public class_9310(class_6629<? extends class_9310> var1, class_6486 var2) {
+   public class_9310(class_6629<? extends class_9310> var1, World var2) {
       super(var1, var2);
    }
 
@@ -96,7 +96,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public void method_37340(class_8145 var1) {
+   public void method_37340(Entity var1) {
       if (this.method_37072(var1)) {
          float var4 = class_9299.method_42840(this.field_29605 * (float) (Math.PI / 180.0));
          float var5 = class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0));
@@ -379,7 +379,7 @@ public class class_9310 extends class_5521 implements class_2354 {
          if (var1 >= 6.0F) {
             this.method_37181(class_6199.field_31684, (float)var5);
             if (this.method_37151()) {
-               for (class_8145 var7 : this.method_37379()) {
+               for (Entity var7 : this.method_37379()) {
                   var7.method_37181(class_6199.field_31684, (float)var5);
                }
             }

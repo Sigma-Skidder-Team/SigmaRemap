@@ -3,7 +3,7 @@ package remapped;
 public class class_1824 extends class_7164<class_6704, class_7019<class_6704>> {
    private static final Identifier field_9258 = new Identifier("textures/entity/hoglin/hoglin.png");
 
-   public class_1824(class_6122 var1) {
+   public class_1824(EntityRenderDispatcher var1) {
       super(var1, new class_7019<class_6704>(), 0.7F);
    }
 

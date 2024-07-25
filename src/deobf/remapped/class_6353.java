@@ -21,7 +21,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
    public static final boolean field_32483 = Boolean.getBoolean("animate.model.living");
    public float field_32479 = 1.0F;
 
-   public class_6353(class_6122 var1, M var2, float var3) {
+   public class_6353(EntityRenderDispatcher var1, M var2, float var3) {
       super(var1);
       this.field_32487 = (M)var2;
       this.field_36492 = var3;
@@ -89,7 +89,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          var11 = var33.method_24093();
          var31 = var33.method_24087();
          if (var1.method_37102() == class_7653.field_38886) {
-            class_240 var14 = var1.method_26408();
+            Direction var14 = var1.method_26408();
             if (var14 != null) {
                float var15 = var1.method_37278(class_7653.field_38885) - 0.1F;
                var4.method_36065((double)((float)(-var14.method_1041()) * var15), 0.0, (double)((float)(-var14.method_1034()) * var15));
@@ -134,7 +134,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          boolean var19 = this.method_29105((T)var1);
          boolean var20 = !var19 && !var1.method_37077(var18.field_9632);
          boolean var21 = var18.method_8563(var1);
-         class_3581 var22 = this.method_29108((T)var1, var19, var20, var21);
+         RenderLayer var22 = this.method_29108((T)var1, var19, var20, var21);
          if (var22 != null) {
             class_7907 var23 = var5.method_11645(var22);
             float var24 = this.method_29106((T)var1, var3);
@@ -177,7 +177,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
    }
 
    @Nullable
-   public class_3581 method_29108(T var1, boolean var2, boolean var3, boolean var4) {
+   public RenderLayer method_29108(T var1, boolean var2, boolean var3, boolean var4) {
       Identifier var7 = this.method_11446((T)var1);
       if (this.method_32556() != null) {
          var7 = this.method_32556();
@@ -185,16 +185,16 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
 
       if (!var3) {
          if (!var2) {
-            if (var1.method_37116() && !class_3111.method_14327().field_9657.method_20036()) {
+            if (var1.method_37116() && !class_3111.method_14327().worldRenderer.method_20036()) {
                return this.field_32487.method_45498(var7);
             } else {
-               return !var4 ? null : class_3581.method_16773(var7);
+               return !var4 ? null : RenderLayer.method_16773(var7);
             }
          } else {
             return this.field_32487.method_45498(var7);
          }
       } else {
-         return class_3581.method_16766(var7);
+         return RenderLayer.method_16766(var7);
       }
    }
 
@@ -208,7 +208,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   private static float method_29111(class_240 var0) {
+   private static float method_29111(Direction var0) {
       switch (var0) {
          case field_800:
             return 90.0F;
@@ -249,7 +249,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
                   }
                }
             } else {
-               class_240 var11 = var1.method_26408();
+               Direction var11 = var1.method_26408();
                float var10 = var11 == null ? var4 : method_29111(var11);
                var2.method_36060(class_2426.field_12074.method_11074(var10));
                var2.method_36060(class_2426.field_12076.method_11074(this.method_29098((T)var1)));

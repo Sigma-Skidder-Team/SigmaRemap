@@ -48,13 +48,13 @@ public class class_8600 extends class_8131 {
          class_6631 var8 = this.field_41650.method_39056();
          class_2522 var9 = class_4783.field_23471.method_29260();
          if ("ChestWest".equals(var1)) {
-            var9 = var9.method_10308(class_6942.field_35692, var8.method_30489(class_240.field_809));
+            var9 = var9.method_10308(class_6942.field_35692, var8.method_30489(Direction.field_809));
          } else if ("ChestEast".equals(var1)) {
-            var9 = var9.method_10308(class_6942.field_35692, var8.method_30489(class_240.field_804));
+            var9 = var9.method_10308(class_6942.field_35692, var8.method_30489(Direction.field_804));
          } else if ("ChestSouth".equals(var1)) {
-            var9 = var9.method_10308(class_6942.field_35692, var8.method_30489(class_240.field_800));
+            var9 = var9.method_10308(class_6942.field_35692, var8.method_30489(Direction.field_800));
          } else if ("ChestNorth".equals(var1)) {
-            var9 = var9.method_10308(class_6942.field_35692, var8.method_30489(class_240.field_818));
+            var9 = var9.method_10308(class_6942.field_35692, var8.method_30489(Direction.field_818));
          }
 
          this.method_32526(var3, var5, var4, var2, class_5931.field_30118, var9);

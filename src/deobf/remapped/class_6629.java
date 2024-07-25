@@ -11,7 +11,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_6629<T extends class_8145> {
+public class class_6629<T extends Entity> {
    private static final Logger field_34287 = LogManager.getLogger();
    public static final class_6629<class_4478> field_34279 = method_30457(
       "area_effect_cloud",
@@ -392,7 +392,7 @@ public class class_6629<T extends class_8145> {
    private Identifier field_34285;
    private final class_6097 field_34235;
 
-   private static <T extends class_8145> class_6629<T> method_30457(String var0, class_6238<T> var1) {
+   private static <T extends Entity> class_6629<T> method_30457(String var0, class_6238<T> var1) {
       return class_8669.<class_6629<T>>method_39791(class_8669.field_44400, var0, var1.method_28496(var0));
    }
 
@@ -429,7 +429,7 @@ public class class_6629<T extends class_8145> {
    }
 
    @Nullable
-   public class_8145 method_30479(class_6331 var1, class_6098 var2, class_704 var3, class_1331 var4, class_2417 var5, boolean var6, boolean var7) {
+   public Entity method_30479(class_6331 var1, class_6098 var2, class_704 var3, class_1331 var4, class_2417 var5, boolean var6, boolean var7) {
       return this.method_30478(
          var1, var2 != null ? var2.method_27990() : null, var2 != null && var2.method_28018() ? var2.method_28008() : null, var3, var4, var5, var6, var7
       );
@@ -437,7 +437,7 @@ public class class_6629<T extends class_8145> {
 
    @Nullable
    public T method_30478(class_6331 var1, class_5734 var2, ITextComponent var3, class_704 var4, class_1331 var5, class_2417 var6, boolean var7, boolean var8) {
-      class_8145 var11 = this.method_30483(var1, var2, var3, var4, var5, var6, var7, var8);
+      Entity var11 = this.method_30483(var1, var2, var3, var4, var5, var6, var7, var8);
       if (var11 != null) {
          var1.method_7065(var11);
       }
@@ -447,7 +447,7 @@ public class class_6629<T extends class_8145> {
 
    @Nullable
    public T method_30483(class_6331 var1, class_5734 var2, ITextComponent var3, class_704 var4, class_1331 var5, class_2417 var6, boolean var7, boolean var8) {
-      class_8145 var11 = this.method_30484(var1);
+      Entity var11 = this.method_30484(var1);
       if (var11 != null) {
          double var12;
          if (!var7) {
@@ -489,11 +489,11 @@ public class class_6629<T extends class_8145> {
          var6 = var6.method_18928(0.0, -1.0, 0.0);
       }
 
-      Stream var7 = var0.method_6676((class_8145)null, var6, var0x -> true);
+      Stream var7 = var0.method_6676((Entity)null, var6, var0x -> true);
       return 1.0 + class_3370.method_15520(class_9249.field_47216, var3, var7, !var2 ? -1.0 : -2.0);
    }
 
-   public static void method_30458(class_6486 var0, class_704 var1, class_8145 var2, class_5734 var3) {
+   public static void method_30458(World var0, class_704 var1, Entity var2, class_5734 var3) {
       if (var3 != null && var3.method_25939("EntityTag", 10)) {
          class_341 var6 = var0.method_29522();
          if (var6 != null && var2 != null && (var0.field_33055 || !var2.method_37131() || var1 != null && var6.method_1600().method_39962(var1.method_3247()))) {
@@ -565,25 +565,25 @@ public class class_6629<T extends class_8145> {
    }
 
    @Nullable
-   public T method_30484(class_6486 var1) {
+   public T method_30484(World var1) {
       return this.field_34258.method_35350(this, var1);
    }
 
    @Nullable
-   public static class_8145 method_30482(int var0, class_6486 var1) {
+   public static Entity method_30482(int var0, World var1) {
       return method_30485(var1, class_8669.field_44400.method_14040(var0));
    }
 
-   public static Optional<class_8145> method_30475(class_5734 var0, class_6486 var1) {
-      return Util.<class_8145>method_44691(
-         method_30474(var0).<class_8145>map(var1x -> var1x.method_30484(var1)),
+   public static Optional<Entity> method_30475(class_5734 var0, World var1) {
+      return Util.<Entity>method_44691(
+         method_30474(var0).<Entity>map(var1x -> var1x.method_30484(var1)),
          var1x -> var1x.method_37393(var0),
          () -> field_34287.warn("Skipping Entity with id {}", var0.method_25965("id"))
       );
    }
 
    @Nullable
-   private static class_8145 method_30485(class_6486 var0, class_6629<?> var1) {
+   private static Entity method_30485(World var0, class_6629<?> var1) {
       return var1 != null ? var1.method_30484(var0) : null;
    }
 
@@ -615,29 +615,29 @@ public class class_6629<T extends class_8145> {
    }
 
    @Nullable
-   public static class_8145 method_30455(class_5734 var0, class_6486 var1, Function<class_8145, class_8145> var2) {
-      return method_30454(var0, var1).<class_8145>map(var2).<class_8145>map(var3 -> {
+   public static Entity method_30455(class_5734 var0, World var1, Function<Entity, Entity> var2) {
+      return method_30454(var0, var1).<Entity>map(var2).<Entity>map(var3 -> {
          if (var0.method_25939("Passengers", 9)) {
             class_3416 var6 = var0.method_25927("Passengers", 10);
 
             for (int var7 = 0; var7 < var6.size(); var7++) {
-               class_8145 var8 = method_30455(var6.method_15764(var7), var1, var2);
+               Entity var8 = method_30455(var6.method_15764(var7), var1, var2);
                if (var8 != null) {
                   var8.method_37354(var3, true);
                }
             }
          }
 
-         return (class_8145)var3;
-      }).orElse((class_8145)null);
+         return (Entity)var3;
+      }).orElse((Entity)null);
    }
 
-   private static Optional<class_8145> method_30454(class_5734 var0, class_6486 var1) {
+   private static Optional<Entity> method_30454(class_5734 var0, World var1) {
       try {
          return method_30475(var0, var1);
       } catch (RuntimeException var5) {
          field_34287.warn("Exception loading entity: ", var5);
-         return Optional.<class_8145>empty();
+         return Optional.<Entity>empty();
       }
    }
 

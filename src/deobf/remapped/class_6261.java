@@ -22,7 +22,7 @@ public class class_6261 extends class_6414 implements class_2593 {
       if (var0.<Boolean>method_10313(field_31998)) {
          return true;
       } else {
-         for (class_240 var8 : class_240.values()) {
+         for (Direction var8 : Direction.values()) {
             if (var1.method_28258(var2.method_6098(var8)).method_22007(class_6503.field_33094)) {
                return true;
             }
@@ -45,12 +45,12 @@ public class class_6261 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var1.<Boolean>method_10313(field_31998)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }
 
-      return var2 == class_240.field_802 && !this.method_10787(var1, var4, var5)
+      return var2 == Direction.field_802 && !this.method_10787(var1, var4, var5)
          ? class_4783.field_23184.method_29260()
          : super.method_10763(var1, var2, var3, var4, var5, var6);
    }
@@ -58,7 +58,7 @@ public class class_6261 extends class_6414 implements class_2593 {
    @Override
    public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
       class_1331 var6 = var3.method_6100();
-      return var2.method_28262(var6).method_8308(var2, var6, class_240.field_817);
+      return var2.method_28262(var6).method_8308(var2, var6, Direction.field_817);
    }
 
    @Override
