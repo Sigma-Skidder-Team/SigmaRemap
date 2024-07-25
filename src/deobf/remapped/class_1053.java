@@ -3,7 +3,7 @@ package remapped;
 import java.io.IOException;
 import java.util.Collection;
 
-public class class_1053 implements class_6310<class_392> {
+public class class_1053 implements Packet<class_392> {
    private int field_5783;
    private byte field_5790;
    private boolean field_5786;

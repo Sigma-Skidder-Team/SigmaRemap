@@ -639,7 +639,7 @@ public class class_1092 implements class_392 {
       }
    }
 
-   public void method_4813(class_6310<?> var1) {
+   public void method_4813(Packet<?> var1) {
       this.field_6035.method_23485(var1);
    }
 

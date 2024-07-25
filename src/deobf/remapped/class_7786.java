@@ -3,7 +3,7 @@ package remapped;
 import java.io.IOException;
 import java.util.function.Supplier;
 
-public class class_7786 implements class_6310<class_392> {
+public class class_7786 implements Packet<class_392> {
    private static String[] field_39453;
    private class_8760 field_39457;
    private class_5621<World> field_39456;

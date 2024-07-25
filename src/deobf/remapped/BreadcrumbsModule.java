@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
-public class class_2689 extends Module {
+public class BreadcrumbsModule extends Module {
    private List<class_1343> field_13172 = new ArrayList<class_1343>();
 
-   public class_2689() {
+   public BreadcrumbsModule() {
       super(Category.RENDER, "Breadcrumbs", "Shows your taken path");
       this.addSetting(new BooleanSetting("Fade Out", "Makes distant breadcrumbs fade out", true));
       this.addSetting(new ColorSetting("Color", "The crumbs color", class_1255.field_6918.field_6917));

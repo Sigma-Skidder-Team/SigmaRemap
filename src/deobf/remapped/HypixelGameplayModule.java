@@ -27,7 +27,7 @@ public class HypixelGameplayModule extends Module {
    @EventListen
    private void method_14880(class_139 var1) {
       if (mcInstance.field_9632 != null) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (var4 instanceof class_5182) {
             class_5182 var5 = (class_5182)var4;
             String var6 = var5.method_23768().getString().replaceAll("§.", "");
@@ -36,7 +36,7 @@ public class HypixelGameplayModule extends Module {
             }
 
             String var7 = mcInstance.field_9632.method_45509().getString().toLowerCase();
-            if (SigmaMainClass.getInstance().getModuleManager().method_847(class_9495.class).method_42015()) {
+            if (SigmaMainClass.getInstance().getModuleManager().method_847(NameProtectModule.class).method_42015()) {
             }
 
             if (this.field_16172.method_42007("AutoL")) {

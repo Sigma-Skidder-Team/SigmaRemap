@@ -171,7 +171,7 @@ public class GameOptions {
    public double field_45543 = 70.0;
    public float field_45469 = 1.0F;
    public float field_45386 = 1.0F;
-   public double field_45391;
+   public double brightnessGamma;
    public int field_45484;
    public class_9761 field_45505 = class_9761.field_49571;
    public class_4066 field_45459 = class_4066.field_19800;
@@ -442,7 +442,7 @@ public class GameOptions {
                }
 
                if ("gamma".equals(var4)) {
-                  this.field_45391 = (double)method_40894(var5);
+                  this.brightnessGamma = (double)method_40894(var5);
                }
 
                if ("renderDistance".equals(var4)) {
@@ -739,7 +739,7 @@ public class GameOptions {
             var1.println("fov:" + (this.field_45543 - 70.0) / 40.0);
             var1.println("screenEffectScale:" + this.field_45469);
             var1.println("fovEffectScale:" + this.field_45386);
-            var1.println("gamma:" + this.field_45391);
+            var1.println("gamma:" + this.brightnessGamma);
             var1.println("renderDistance:" + this.field_45537);
             var1.println("entityDistanceScaling:" + this.field_45475);
             var1.println("guiScale:" + this.field_45484);
@@ -2129,7 +2129,7 @@ public class GameOptions {
       this.field_45533 = class_6168.field_31562;
       this.field_45551 = class_9655.field_49167;
       this.field_45543 = 70.0;
-      this.field_45391 = 0.0;
+      this.brightnessGamma = 0.0;
       this.field_45484 = 0;
       this.field_45505 = class_9761.field_49571;
       this.field_45477 = true;

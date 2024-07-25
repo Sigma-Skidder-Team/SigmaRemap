@@ -519,7 +519,7 @@ public class class_174 extends World {
    }
 
    @Override
-   public void method_29535(class_6310<?> var1) {
+   public void method_29535(Packet<?> var1) {
       this.field_576.method_4813(var1);
    }
 

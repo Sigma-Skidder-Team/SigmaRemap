@@ -1024,7 +1024,7 @@ public class class_314 {
    }
 
    public static boolean method_1402(Entity var0, boolean var1, boolean var2, boolean var3) {
-      if (var0 != field_1158.field_9632 && var0 != class_5477.field_27898) {
+      if (var0 != field_1158.field_9632 && var0 != BlinkModule.field_27898) {
          if (SigmaMainClass.getInstance().method_3307().method_14460(var0)) {
             return false;
          } else if (var0 instanceof class_5834) {

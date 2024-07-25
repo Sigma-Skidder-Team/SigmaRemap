@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HypixelDisablerModule extends Module {
-   private List<class_6310<?>> field_36206 = new ArrayList<class_6310<?>>();
+   private List<Packet<?>> field_36206 = new ArrayList<Packet<?>>();
    private boolean field_36207;
    private Timer field_36204 = new Timer();
 

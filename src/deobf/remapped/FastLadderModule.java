@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_5377 extends Module {
-   public class_5377() {
+public class FastLadderModule extends Module {
+   public FastLadderModule() {
       super(Category.MOVEMENT, "FastLadder", "Allows you to climp ladders faster");
       this.addSetting(new FloatSetting<Float>("Motion", "Climbing motion", 0.35F, Float.class, 0.2F, 1.0F, 0.05F));
       this.addSetting(new ModeSetting("Down mode", "The way you will go down on ladders", 0, "None", "OnSneak", "Always"));

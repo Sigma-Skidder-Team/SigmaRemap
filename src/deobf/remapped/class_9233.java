@@ -100,7 +100,7 @@ public class class_9233 extends Module {
    @EventListen
    public void method_42592(class_139 var1) {
       if (this.method_42015()) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             this.method_42017().method_41999();
          }

@@ -278,7 +278,7 @@ public class KillauraModule extends Module {
 
    @EventListen
    public void method_11537(class_139 var1) {
-      class_6310 var4 = var1.method_557();
+      Packet var4 = var1.method_557();
       if (!(var4 instanceof class_527)) {
          if (var4 instanceof class_295) {
             class_295 var5 = (class_295)var4;

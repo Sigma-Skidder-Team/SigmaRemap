@@ -1038,7 +1038,7 @@ public class class_6331 extends World implements class_700 {
       return this.method_28976(var1, var3, var4, var6, var8, var21);
    }
 
-   private boolean method_28976(class_9359 var1, boolean var2, double var3, double var5, double var7, class_6310<?> var9) {
+   private boolean method_28976(class_9359 var1, boolean var2, double var3, double var5, double var7, Packet<?> var9) {
       if (var1.method_43235() == this) {
          class_1331 var12 = var1.method_37075();
          if (!var12.method_12170(new class_1343(var3, var5, var7), !var2 ? 32.0 : 512.0)) {

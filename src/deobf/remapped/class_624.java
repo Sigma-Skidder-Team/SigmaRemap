@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
-public class class_624 implements class_6310<class_392> {
+public class class_624 implements Packet<class_392> {
    private int field_3539;
    private String field_3540;
 

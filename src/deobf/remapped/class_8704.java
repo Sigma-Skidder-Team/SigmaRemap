@@ -202,7 +202,7 @@ public abstract class class_8704 {
       for (int var10 = 0; var10 < 19; var10++) {
          class_4399 var11 = var1.method_4833(var10);
          if (var11 != null && !var5.contains(var11)) {
-            for (class_6310 var9 : var1.method_13354(var11)) {
+            for (Packet var9 : var1.method_13354(var11)) {
                var2.field_47794.method_4156(var9);
             }
 
@@ -449,13 +449,13 @@ public abstract class class_8704 {
       }
    }
 
-   public void method_39972(class_6310<?> var1) {
+   public void method_39972(Packet<?> var1) {
       for (int var4 = 0; var4 < this.field_44632.size(); var4++) {
          this.field_44632.get(var4).field_47794.method_4156(var1);
       }
    }
 
-   public void method_39958(class_6310<?> var1, class_5621<World> var2) {
+   public void method_39958(Packet<?> var1, class_5621<World> var2) {
       for (int var5 = 0; var5 < this.field_44632.size(); var5++) {
          class_9359 var6 = this.field_44632.get(var5);
          if (var6.field_41768.method_29545() == var2) {
@@ -562,7 +562,7 @@ public abstract class class_8704 {
       return null;
    }
 
-   public void method_39996(class_704 var1, double var2, double var4, double var6, double var8, class_5621<World> var10, class_6310<?> var11) {
+   public void method_39996(class_704 var1, double var2, double var4, double var6, double var8, class_5621<World> var10, Packet<?> var11) {
       for (int var14 = 0; var14 < this.field_44632.size(); var14++) {
          class_9359 var15 = this.field_44632.get(var14);
          if (var15 != var1 && var15.field_41768.method_29545() == var10) {

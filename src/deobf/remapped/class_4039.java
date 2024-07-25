@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-public class class_4039 implements class_6310<class_392> {
+public class class_4039 implements Packet<class_392> {
    private int field_19603;
    private final List<class_3032> field_19604 = Lists.newArrayList();
 

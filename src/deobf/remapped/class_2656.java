@@ -3,7 +3,7 @@ package remapped;
 import java.util.ArrayList;
 
 public class class_2656 extends Module {
-   private ArrayList<class_6310<?>> field_13091 = new ArrayList<class_6310<?>>();
+   private ArrayList<Packet<?>> field_13091 = new ArrayList<Packet<?>>();
    private Timer field_13090 = new Timer();
    private boolean field_13092;
 
@@ -26,7 +26,7 @@ public class class_2656 extends Module {
 
    @Override
    public void onDisable() {
-      for (class_6310 var4 : this.field_13091) {
+      for (Packet var4 : this.field_13091) {
          mcInstance.method_8614().method_9091().method_23481(var4);
       }
    }
@@ -75,7 +75,7 @@ public class class_2656 extends Module {
             this.field_13092 = false;
             this.field_13090.method_14773();
 
-            for (class_6310 var5 : this.field_13091) {
+            for (Packet var5 : this.field_13091) {
                mcInstance.method_8614().method_9091().method_23481(var5);
             }
 

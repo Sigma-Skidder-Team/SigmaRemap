@@ -431,11 +431,11 @@ public class class_2206 extends class_3232 {
       this.field_10934.method_4021(var1);
    }
 
-   public void method_10209(Entity var1, class_6310<?> var2) {
+   public void method_10209(Entity var1, Packet<?> var2) {
       this.field_10934.method_3974(var1, var2);
    }
 
-   public void method_10200(Entity var1, class_6310<?> var2) {
+   public void method_10200(Entity var1, Packet<?> var2) {
       this.field_10934.method_3973(var1, var2);
    }
 

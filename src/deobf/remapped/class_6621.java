@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
-public class class_6621 implements class_6310<class_392> {
+public class class_6621 implements Packet<class_392> {
    private List<class_8932<?>> field_34190;
 
    public class_6621() {

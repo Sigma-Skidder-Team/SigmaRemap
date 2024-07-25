@@ -107,7 +107,7 @@ public class class_5490 extends class_4641 {
    }
 
    @Override
-   public class_6310<?> method_37142() {
+   public Packet<?> method_37142() {
       return new class_4448(this);
    }
 }

@@ -309,7 +309,7 @@ public class class_2143 extends class_6249 {
 
    @Nullable
    @Override
-   public class_6310<?> method_28525(class_6098 var1, World var2, class_704 var3) {
+   public Packet<?> method_28525(class_6098 var1, World var2, class_704 var3) {
       return method_10005(var1, var2).method_9973(var1, var2, var3);
    }
 

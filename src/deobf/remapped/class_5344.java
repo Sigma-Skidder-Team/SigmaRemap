@@ -195,7 +195,7 @@ public class class_5344 {
       }
    }
 
-   private void method_24348(class_6310<?> var1, boolean var2) {
+   private void method_24348(Packet<?> var1, boolean var2) {
       this.field_27253.method_29664(this.field_27256, var2).forEach(var1x -> var1x.field_47794.method_4156(var1));
    }
 

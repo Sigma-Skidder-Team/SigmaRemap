@@ -568,7 +568,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    @Override
-   public class_6310<?> method_37142() {
+   public Packet<?> method_37142() {
       Entity var3 = this.method_26166();
       return new class_6589(this, var3 != null ? var3.method_37145() : 0);
    }

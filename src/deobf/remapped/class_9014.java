@@ -5,7 +5,7 @@ import com.mojang.datafixers.util.Pair;
 import java.io.IOException;
 import java.util.List;
 
-public class class_9014 implements class_6310<class_392> {
+public class class_9014 implements Packet<class_392> {
    private static String[] field_46114;
    private int field_46115;
    private final List<Pair<class_6943, class_6098>> field_46116;

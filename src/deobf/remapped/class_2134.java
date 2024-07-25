@@ -289,7 +289,7 @@ public class class_2134 extends class_7186 {
    }
 
    @Nullable
-   public class_6310<?> method_9973(class_6098 var1, class_6163 var2, class_704 var3) {
+   public Packet<?> method_9973(class_6098 var1, class_6163 var2, class_704 var3) {
       class_4986 var6 = this.field_10690.get(var3);
       return var6 != null ? var6.method_22949(var1) : null;
    }

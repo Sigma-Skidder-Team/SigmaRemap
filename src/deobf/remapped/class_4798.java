@@ -3,7 +3,7 @@ package remapped;
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class class_4798 implements class_6310<class_392> {
+public class class_4798 implements Packet<class_392> {
    private static String[] field_23984;
    private int field_23985;
    private class_5734 field_23986;

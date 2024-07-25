@@ -3,8 +3,8 @@ package remapped;
 import java.util.List;
 import net.minecraft.util.text.StringTextComponent;
 
-public class class_9495 extends Module {
-   public class_9495() {
+public class NameProtectModule extends Module {
+   public NameProtectModule() {
       super(Category.RENDER, "NameProtect", "Useful for recording/streaming");
       this.addSetting(new HippieModeValue("Username", "The name which your username is replaced with", "Me"));
    }
@@ -19,7 +19,7 @@ public class class_9495 extends Module {
    @EventListen
    public void method_43854(class_139 var1) {
       if (this.method_42015()) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (var4 instanceof class_1625) {
             class_1625 var5 = (class_1625)var4;
             if (var5.method_7241() == class_9120.field_46678) {

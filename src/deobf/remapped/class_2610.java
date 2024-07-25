@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentUtils;
 
-public class class_2610 implements class_6310<class_392> {
+public class class_2610 implements Packet<class_392> {
    private static String[] field_12890;
    private int field_12892;
    private Suggestions field_12891;

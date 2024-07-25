@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
-public class class_6404 implements class_6310<class_1243> {
+public class class_6404 implements Packet<class_1243> {
    private static String[] field_32688;
    private UUID field_32689;
 

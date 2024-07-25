@@ -22,7 +22,7 @@ public class class_4986 {
    }
 
    @Nullable
-   public class_6310<?> method_22949(class_6098 var1) {
+   public Packet<?> method_22949(class_6098 var1) {
       if (!this.field_25821) {
          return this.field_25817++ % 5 != 0
             ? null

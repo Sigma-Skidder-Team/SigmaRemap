@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
 
-public class class_4234 implements class_6310<class_392> {
+public class class_4234 implements Packet<class_392> {
    private static String[] field_20551;
    private int field_20548;
    private int field_20552;

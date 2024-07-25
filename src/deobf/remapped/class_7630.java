@@ -7,7 +7,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import java.io.IOException;
 import java.util.Map;
 
-public class class_7630 implements class_6310<class_392> {
+public class class_7630 implements Packet<class_392> {
    private static String[] field_38827;
    private Object2IntMap<class_6676<?>> field_38828;
 

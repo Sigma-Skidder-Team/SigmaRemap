@@ -168,7 +168,7 @@ public class class_8193 extends Module {
    @EventListen
    public void method_37541(class_139 var1) {
       if (mcInstance.field_9601 != null && mcInstance.method_8614() != null && class_314.method_1392()) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (!(var4 instanceof class_509)) {
             if (var4 instanceof class_4548) {
                class_4548 var5 = (class_4548)var4;

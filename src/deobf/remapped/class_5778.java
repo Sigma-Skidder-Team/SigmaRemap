@@ -149,7 +149,7 @@ public class class_5778 implements AutoCloseable {
                      }
                   }
 
-                  float var26 = (float)this.field_29184.gameOptions.field_45391;
+                  float var26 = (float)this.field_29184.gameOptions.brightnessGamma;
                   class_2426 var28 = this.method_26124(var11);
                   var28.method_11056(this::method_26129);
                   var11.method_11063(var28, var26);

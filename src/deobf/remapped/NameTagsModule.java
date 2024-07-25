@@ -52,8 +52,8 @@ public class NameTagsModule extends Module {
 
          for (Entity var7 : class_7494.method_34088(class_314.method_1435())) {
             if (var7 != mcInstance.field_9632
-               && var7 != class_9598.field_48917
-               && var7 != class_5477.field_27898
+               && var7 != FreeCamModule.field_48917
+               && var7 != BlinkModule.field_27898
                && !var7.method_37109()
                && !SigmaMainClass.getInstance().method_3331().method_20495(var7)) {
                this.field_6696.add(var7);
@@ -324,8 +324,8 @@ public class NameTagsModule extends Module {
    public void method_5289(double var1, double var3, double var5, Entity var7, float var8, String var9) {
       class_3384 var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
-      if (SigmaMainClass.getInstance().getModuleManager().method_847(class_9495.class).method_42015() && var13.equals(mcInstance.method_8502().method_5366())) {
-         var13 = SigmaMainClass.getInstance().getModuleManager().method_847(class_9495.class).getStringValueByName("Username");
+      if (SigmaMainClass.getInstance().getModuleManager().method_847(NameProtectModule.class).method_42015() && var13.equals(mcInstance.method_8502().method_5366())) {
+         var13 = SigmaMainClass.getInstance().getModuleManager().method_847(NameProtectModule.class).getStringValueByName("Username");
       }
 
       if (var13.length() != 0) {

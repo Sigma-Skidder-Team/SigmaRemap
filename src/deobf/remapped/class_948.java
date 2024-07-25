@@ -985,11 +985,11 @@ public class class_948 implements class_1243 {
       }
    }
 
-   public void method_4156(class_6310<?> var1) {
+   public void method_4156(Packet<?> var1) {
       this.method_4157(var1, (GenericFutureListener<? extends Future<? super Void>>)null);
    }
 
-   public void method_4157(class_6310<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
+   public void method_4157(Packet<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
       if (var1 instanceof class_5182) {
          class_5182 var5 = (class_5182)var1;
          class_1803 var6 = this.field_4880.method_43286();

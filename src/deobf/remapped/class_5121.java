@@ -34,7 +34,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
 
-public class class_5121 extends SimpleChannelInboundHandler<class_6310<?>> {
+public class class_5121 extends SimpleChannelInboundHandler<Packet<?>> {
    private static final Logger field_26418 = LogManager.getLogger();
    public static final Marker field_26416 = MarkerManager.getMarker("NETWORK");
    public static final Marker field_26430 = MarkerManager.getMarker("NETWORK_PACKETS", field_26416);
@@ -116,7 +116,7 @@ public class class_5121 extends SimpleChannelInboundHandler<class_6310<?>> {
       }
    }
 
-   public void channelRead0(ChannelHandlerContext var1, class_6310<?> var2) throws Exception {
+   public void channelRead0(ChannelHandlerContext var1, Packet<?> var2) throws Exception {
       if (this.field_26419.isOpen()) {
          class_139 var5 = new class_139(var2);
          SigmaMainClass.getInstance().getEventManager().method_7914(var5);
@@ -133,7 +133,7 @@ public class class_5121 extends SimpleChannelInboundHandler<class_6310<?>> {
       }
    }
 
-   public static <T extends class_1977> void method_23491(class_6310<T> var0, class_1977 var1) {
+   public static <T extends class_1977> void method_23491(Packet<T> var0, class_1977 var1) {
       var0.method_28777(var1);
    }
 
@@ -142,11 +142,11 @@ public class class_5121 extends SimpleChannelInboundHandler<class_6310<?>> {
       this.field_26435 = var1;
    }
 
-   public void method_23485(class_6310<?> var1) {
+   public void method_23485(Packet<?> var1) {
       this.method_23486(var1, (GenericFutureListener<? extends Future<? super Void>>)null);
    }
 
-   public void method_23486(class_6310<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
+   public void method_23486(Packet<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
       class_2157 var5 = new class_2157(var1);
       SigmaMainClass.getInstance().getEventManager().method_7914(var5);
       var1 = var5.method_10047();
@@ -160,7 +160,7 @@ public class class_5121 extends SimpleChannelInboundHandler<class_6310<?>> {
       }
    }
 
-   public void method_23481(class_6310<?> var1) {
+   public void method_23481(Packet<?> var1) {
       GenericFutureListener var4 = (GenericFutureListener)null;
       if (!this.method_23493()) {
          this.field_26432.add(new class_9542(var1, var4));
@@ -170,7 +170,7 @@ public class class_5121 extends SimpleChannelInboundHandler<class_6310<?>> {
       }
    }
 
-   private void method_23502(class_6310<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
+   private void method_23502(Packet<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
       class_5776 var5 = class_5776.method_26116(var1);
       class_5776 var6 = (class_5776)this.field_26419.attr(field_26414).get();
       this.field_26426++;

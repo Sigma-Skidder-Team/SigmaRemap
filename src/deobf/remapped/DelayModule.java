@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DelayModule extends Module {
-   private List<class_6310<?>> field_32171 = new ArrayList<class_6310<?>>();
+   private List<Packet<?>> field_32171 = new ArrayList<Packet<?>>();
    public int field_32172 = 0;
 
    public DelayModule() {
@@ -60,7 +60,7 @@ public class DelayModule extends Module {
    }
 
    private void method_28729() {
-      for (class_6310 var4 : this.field_32171) {
+      for (Packet var4 : this.field_32171) {
          if (!(var4 instanceof class_4548)) {
             if (var4 instanceof class_1897) {
                class_1897 var5 = (class_1897)var4;

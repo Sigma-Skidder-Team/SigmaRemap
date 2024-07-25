@@ -289,7 +289,7 @@ public class class_8612 extends class_5783 implements class_3713 {
    }
 
    @Override
-   public class_6310<?> method_37142() {
+   public Packet<?> method_37142() {
       return new class_6589(this);
    }
 }

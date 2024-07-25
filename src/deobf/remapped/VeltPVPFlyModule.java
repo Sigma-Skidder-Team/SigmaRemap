@@ -117,7 +117,7 @@ public class VeltPVPFlyModule extends Module {
    @EventListen
    public void method_16580(class_139 var1) {
       if (this.method_42015()) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (!(var4 instanceof class_509)) {
             if (var4 instanceof class_5182) {
                class_5182 var5 = (class_5182)var4;
@@ -142,7 +142,7 @@ public class VeltPVPFlyModule extends Module {
    @EventListen
    public void method_16581(class_2157 var1) {
       if (this.method_42015()) {
-         class_6310 var4 = var1.method_10047();
+         Packet var4 = var1.method_10047();
          if (var4 instanceof class_4609) {
             class_4609 var5 = (class_4609)var4;
             if (this.field_17458 == -1) {

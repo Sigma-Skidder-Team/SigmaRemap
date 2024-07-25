@@ -2,7 +2,7 @@ package remapped;
 
 import java.io.IOException;
 
-public class class_5930 implements class_6310<class_1243> {
+public class class_5930 implements Packet<class_1243> {
    public static final Identifier field_30076 = new Identifier("brand");
    private Identifier field_30078;
    private class_8248 field_30077;

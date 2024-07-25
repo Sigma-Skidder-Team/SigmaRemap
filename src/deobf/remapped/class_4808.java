@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
-public class class_4808 implements class_6310<class_392> {
+public class class_4808 implements Packet<class_392> {
    private int field_24062;
    private int field_24058;
    private int field_24057;

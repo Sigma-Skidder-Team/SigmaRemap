@@ -5,7 +5,7 @@ import java.util.UUID;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_5182 implements class_6310<class_392> {
+public class class_5182 implements Packet<class_392> {
    private static String[] field_26672;
    private ITextComponent field_26671;
    private ChatType field_26670;

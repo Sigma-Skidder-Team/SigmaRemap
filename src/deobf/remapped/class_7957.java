@@ -3,7 +3,7 @@ package remapped;
 import java.io.IOException;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_7957 implements class_6310<class_392> {
+public class class_7957 implements Packet<class_392> {
    private static String[] field_40771;
    private ITextComponent field_40770;
 

@@ -2721,7 +2721,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return this.field_41758.field_31200;
    }
 
-   public abstract class_6310<?> method_37142();
+   public abstract Packet<?> method_37142();
 
    public class_6097 method_37190(class_7653 var1) {
       return this.field_41719.method_30473();

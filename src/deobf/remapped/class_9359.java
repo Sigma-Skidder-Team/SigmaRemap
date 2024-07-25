@@ -313,7 +313,7 @@ public class class_9359 extends class_704 implements class_117 {
          for (int var3 = 0; var3 < this.field_3853.method_31505(); var3++) {
             class_6098 var7 = this.field_3853.method_31498(var3);
             if (var7.method_27960().method_11221()) {
-               class_6310 var8 = ((class_6249)var7.method_27960()).method_28525(var7, this.field_41768, this);
+               Packet var8 = ((class_6249)var7.method_27960()).method_28525(var7, this.field_41768, this);
                if (var8 != null) {
                   this.field_47794.method_4156(var8);
                }
@@ -1344,7 +1344,7 @@ public class class_9359 extends class_704 implements class_117 {
       }
    }
 
-   public void method_43285(class_2034 var1, class_6310<?> var2, class_6310<?> var3) {
+   public void method_43285(class_2034 var1, Packet<?> var2, Packet<?> var3) {
       this.field_47794.method_4156(var3);
       this.field_47794.method_4156(var2);
    }
@@ -1369,7 +1369,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public class_6310<?> method_37142() {
+   public Packet<?> method_37142() {
       return new class_5000(this);
    }
 

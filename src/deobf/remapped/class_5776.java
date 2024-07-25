@@ -192,7 +192,7 @@ public enum class_5776 {
    );
 
    private static final class_5776[] field_29179 = new class_5776[4];
-   private static final Map<Class<? extends class_6310<?>>, class_5776> field_29170 = Maps.newHashMap();
+   private static final Map<Class<? extends Packet<?>>, class_5776> field_29170 = Maps.newHashMap();
    private final int field_29178;
    private final Map<class_4739, ? extends class_1929<?>> field_29172;
 
@@ -206,12 +206,12 @@ public enum class_5776 {
    }
 
    @Nullable
-   public Integer method_26120(class_4739 var1, class_6310<?> var2) {
+   public Integer method_26120(class_4739 var1, Packet<?> var2) {
       return this.field_29172.get(var1).method_8958(var2.getClass());
    }
 
    @Nullable
-   public class_6310<?> method_26114(class_4739 var1, int var2) {
+   public Packet<?> method_26114(class_4739 var1, int var2) {
       return this.field_29172.get(var1).method_8960(var2);
    }
 
@@ -224,7 +224,7 @@ public enum class_5776 {
       return var0 >= -1 && var0 <= 2 ? field_29179[var0 - -1] : null;
    }
 
-   public static class_5776 method_26116(class_6310<?> var0) {
+   public static class_5776 method_26116(Packet<?> var0) {
       return field_29170.get(var0.getClass());
    }
 
@@ -246,7 +246,7 @@ public enum class_5776 {
                                  "Packet " + var1x + " is already assigned to protocol " + field_29170.get(var1x) + " - can't reassign to " + var9
                               );
                            } else {
-                              field_29170.put((Class<? extends class_6310<?>>)var1x, var9);
+                              field_29170.put((Class<? extends Packet<?>>)var1x, var9);
                            }
                         }
                      )

@@ -2785,7 +2785,7 @@ public class class_6588 {
             method_30211(field_33914, field_33725);
             method_30207(field_33925, field_33933);
             method_30207(field_33693, field_33718);
-            method_30207(field_33789, (float)field_33837.gameOptions.field_45391);
+            method_30207(field_33789, (float)field_33837.gameOptions.brightnessGamma);
             method_30211(field_33836, field_33837.gameOptions.field_45567 ? 1 : 0);
             method_30207(field_33632, field_33973);
             method_30111(field_33740, field_33946, field_33639);

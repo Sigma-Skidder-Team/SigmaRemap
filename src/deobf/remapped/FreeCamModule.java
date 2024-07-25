@@ -2,7 +2,7 @@ package remapped;
 
 import com.mojang.authlib.GameProfile;
 
-public class class_9598 extends Module {
+public class FreeCamModule extends Module {
    public static class_704 field_48917;
    private double field_48921;
    private double field_48927;
@@ -22,7 +22,7 @@ public class class_9598 extends Module {
    public boolean field_48919;
    public boolean field_48911;
 
-   public class_9598() {
+   public FreeCamModule() {
       super(Category.RENDER, "Freecam", "Move client side but not server side");
       this.addSetting(new FloatSetting<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
    }

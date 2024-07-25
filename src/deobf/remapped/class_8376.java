@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public class class_8376 implements class_6310<class_392> {
+public class class_8376 implements Packet<class_392> {
    private RootCommandNode<class_8773> field_42875;
 
    public class_8376() {

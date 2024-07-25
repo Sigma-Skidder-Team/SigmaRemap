@@ -17,7 +17,7 @@ public class class_7772 {
    private final Entity field_39387;
    private final int field_39395;
    private final boolean field_39384;
-   private final Consumer<class_6310<?>> field_39396;
+   private final Consumer<Packet<?>> field_39396;
    private long field_39386;
    private long field_39392;
    private long field_39400;
@@ -31,7 +31,7 @@ public class class_7772 {
    private boolean field_39394;
    private boolean field_39390;
 
-   public class_7772(class_6331 var1, Entity var2, int var3, boolean var4, Consumer<class_6310<?>> var5) {
+   public class_7772(class_6331 var1, Entity var2, int var3, boolean var4, Consumer<Packet<?>> var5) {
       this.field_39389 = var1;
       this.field_39396 = var5;
       this.field_39387 = var2;
@@ -59,7 +59,7 @@ public class class_7772 {
 
             for (class_9359 var8 : this.field_39389.method_25873()) {
                var6.method_9970(var8, var5);
-               class_6310 var9 = ((class_2143)var5.method_27960()).method_28525(var5, this.field_39389, var8);
+               Packet var9 = ((class_2143)var5.method_27960()).method_28525(var5, this.field_39389, var8);
                if (var9 != null) {
                   var8.field_47794.method_4156(var9);
                }
@@ -122,7 +122,7 @@ public class class_7772 {
             }
 
             if (var29 != null) {
-               this.field_39396.accept((class_6310<?>)var29);
+               this.field_39396.accept((Packet<?>)var29);
             }
 
             this.method_35263();
@@ -178,12 +178,12 @@ public class class_7772 {
       var1.method_43288(this.field_39387);
    }
 
-   public void method_35260(Consumer<class_6310<?>> var1) {
+   public void method_35260(Consumer<Packet<?>> var1) {
       if (this.field_39387.field_41751) {
          field_39399.warn("Fetching packet for removed entity " + this.field_39387);
       }
 
-      class_6310 var4 = this.field_39387.method_37142();
+      Packet var4 = this.field_39387.method_37142();
       this.field_39398 = class_9299.method_42848(this.field_39387.method_37267() * 256.0F / 360.0F);
       var1.accept(var4);
       if (!this.field_39387.method_37372().method_36637()) {
@@ -272,7 +272,7 @@ public class class_7772 {
       return class_527.method_2556(this.field_39386, this.field_39392, this.field_39400);
    }
 
-   private void method_35257(class_6310<?> var1) {
+   private void method_35257(Packet<?> var1) {
       this.field_39396.accept(var1);
       if (this.field_39387 instanceof class_9359) {
          ((class_9359)this.field_39387).field_47794.method_4156(var1);

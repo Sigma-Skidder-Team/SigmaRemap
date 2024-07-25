@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent$class_40;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.Style$class_46;
 
-public class class_1184 implements class_6310<class_8171> {
+public class class_1184 implements Packet<class_8171> {
    private static String[] field_6648;
    private static final Gson field_6649 = new GsonBuilder()
       .registerTypeAdapter(class_7543.class, new class_3104())

@@ -149,7 +149,7 @@ public class TestModule extends Module {
    @EventListen
    @class_4249
    public void method_7655(class_2157 var1) {
-      class_6310 var4 = var1.method_10047();
+      Packet var4 = var1.method_10047();
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!(var4 instanceof class_3398)) {
             if (!(var4 instanceof class_4609)) {
@@ -220,7 +220,7 @@ public class TestModule extends Module {
 
    @EventListen
    public void method_7659(class_139 var1) {
-      class_6310 var4 = var1.method_557();
+      Packet var4 = var1.method_557();
       if (this.method_42015()) {
          if (!(var4 instanceof class_527)) {
          }

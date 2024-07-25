@@ -946,7 +946,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return this.field_33032;
    }
 
-   public void method_29535(class_6310<?> var1) {
+   public void method_29535(Packet<?> var1) {
       throw new UnsupportedOperationException("Can't send packets to server unless you're on the client.");
    }
 

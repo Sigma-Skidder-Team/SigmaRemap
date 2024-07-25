@@ -558,7 +558,7 @@ public class class_916 extends class_4037 implements class_6510 {
          }), var2 -> this.field_4707.method_40495(class_6025.method_27493(var1, var2)));
       var6.thenAcceptAsync(var2 -> var2.mapLeft(var2x -> {
             this.field_4697.getAndIncrement();
-            class_6310[] var5x = new class_6310[2];
+            Packet[] var5x = new Packet[2];
             this.埙眓郝䕦騜霥(var4, false).forEach(var3 -> this.method_3982(var3, var5x, var2x));
             return Either.left(var2x);
          }), var2 -> this.field_4707.method_40495(class_6025.method_27493(var1, var2)));
@@ -649,7 +649,7 @@ public class class_916 extends class_4037 implements class_6510 {
          while (var6.hasNext()) {
             class_5344 var7 = (class_5344)var6.next();
             class_2034 var8 = var7.method_24368();
-            class_6310[] var9 = new class_6310[2];
+            Packet[] var9 = new Packet[2];
             this.埙眓郝䕦騜霥(var8, false).forEach(var4x -> {
                int var7x = method_3979(var8, var4x, true);
                boolean var8x = var7x <= var5;
@@ -660,7 +660,7 @@ public class class_916 extends class_4037 implements class_6510 {
       }
    }
 
-   public void method_3975(class_9359 var1, class_2034 var2, class_6310<?>[] var3, boolean var4, boolean var5) {
+   public void method_3975(class_9359 var1, class_2034 var2, Packet<?>[] var3, boolean var4, boolean var5) {
       if (var1.field_41768 == this.field_4703) {
          if (class_7860.field_39857.method_3596()) {
             class_7860.field_39857.method_3582(var4, var5, var1, var2, this.field_4703);
@@ -788,7 +788,7 @@ public class class_916 extends class_4037 implements class_6510 {
       for (int var12 = var7 - this.field_4715; var12 <= var7 + this.field_4715; var12++) {
          for (int var10 = var8 - this.field_4715; var10 <= var8 + this.field_4715; var10++) {
             class_2034 var11 = new class_2034(var12, var10);
-            this.method_3975(var1, var11, new class_6310[2], !var2, var2);
+            this.method_3975(var1, var11, new Packet[2], !var2, var2);
          }
       }
    }
@@ -857,7 +857,7 @@ public class class_916 extends class_4037 implements class_6510 {
                class_2034 var23 = new class_2034(var37, var22);
                boolean var24 = method_4022(var23, var15, var16) <= this.field_4715;
                boolean var25 = method_4022(var23, var26, var27) <= this.field_4715;
-               this.method_3975(var1, var23, new class_6310[2], var24, var25);
+               this.method_3975(var1, var23, new Packet[2], var24, var25);
             }
          }
       } else {
@@ -866,7 +866,7 @@ public class class_916 extends class_4037 implements class_6510 {
                class_2034 var19 = new class_2034(var17, var18);
                boolean var20 = true;
                boolean var21 = false;
-               this.method_3975(var1, var19, new class_6310[2], true, false);
+               this.method_3975(var1, var19, new Packet[2], true, false);
             }
          }
 
@@ -875,7 +875,7 @@ public class class_916 extends class_4037 implements class_6510 {
                class_2034 var32 = new class_2034(var28, var30);
                boolean var34 = false;
                boolean var36 = true;
-               this.method_3975(var1, var32, new class_6310[2], false, true);
+               this.method_3975(var1, var32, new Packet[2], false, true);
             }
          }
       }
@@ -965,21 +965,21 @@ public class class_916 extends class_4037 implements class_6510 {
       }
    }
 
-   public void method_3973(Entity var1, class_6310<?> var2) {
+   public void method_3973(Entity var1, Packet<?> var2) {
       class_6650 var5 = (class_6650)this.field_4716.get(var1.method_37145());
       if (var5 != null) {
          var5.method_30548(var2);
       }
    }
 
-   public void method_3974(Entity var1, class_6310<?> var2) {
+   public void method_3974(Entity var1, Packet<?> var2) {
       class_6650 var5 = (class_6650)this.field_4716.get(var1.method_37145());
       if (var5 != null) {
          var5.method_30551(var2);
       }
    }
 
-   private void method_3982(class_9359 var1, class_6310<?>[] var2, class_2654 var3) {
+   private void method_3982(class_9359 var1, Packet<?>[] var2, class_2654 var3) {
       if (var2[0] == null) {
          var2[0] = new class_4808(var3, 65535);
          var2[1] = new class_4234(var3.method_27352(), this.field_4713, true);

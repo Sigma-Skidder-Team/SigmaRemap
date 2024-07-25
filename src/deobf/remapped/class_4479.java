@@ -23,7 +23,7 @@ public class class_4479 extends ByteToMessageDecoder {
       if (var2.readableBytes() != 0) {
          class_8248 var6 = new class_8248(var2);
          int var7 = var6.method_37778();
-         class_6310 var8 = ((class_5776)var1.channel().attr(class_5121.field_26414).get()).method_26114(this.field_21839, var7);
+         Packet var8 = ((class_5776)var1.channel().attr(class_5121.field_26414).get()).method_26114(this.field_21839, var7);
          if (var8 == null) {
             throw new IOException("Bad packet id " + var7);
          }

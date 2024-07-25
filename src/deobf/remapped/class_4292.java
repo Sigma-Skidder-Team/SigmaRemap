@@ -33,7 +33,7 @@ public class class_4292 {
    @class_3932
    public void method_19936(class_2157 var1) {
       if (!class_314.method_1445() && class_314.method_1392()) {
-         class_6310 var4 = var1.method_10047();
+         Packet var4 = var1.method_10047();
          if (!(var4 instanceof class_5955)) {
             if (var4 instanceof class_3835) {
                class_3835 var5 = (class_3835)var4;
@@ -54,7 +54,7 @@ public class class_4292 {
    @class_3932
    public void method_19935(class_139 var1) {
       if (!class_314.method_1445() && class_314.method_1392()) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (!(var4 instanceof class_7573) && var4 instanceof class_8913) {
             class_8913 var5 = (class_8913)var4;
          }

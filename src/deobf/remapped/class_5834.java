@@ -2935,7 +2935,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public class_6310<?> method_37142() {
+   public Packet<?> method_37142() {
       return new class_4228(this);
    }
 

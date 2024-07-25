@@ -6,7 +6,7 @@ import java.security.PublicKey;
 import javax.crypto.SecretKey;
 import net.minecraft.util.CryptException;
 
-public class class_2717 implements class_6310<class_7515> {
+public class class_2717 implements Packet<class_7515> {
    private static String[] field_13284;
    private byte[] field_13282 = new byte[0];
    private byte[] field_13283 = new byte[0];

@@ -5,7 +5,7 @@ import it.unimi.dsi.fastutil.shorts.ShortSet;
 import java.io.IOException;
 import java.util.function.BiConsumer;
 
-public class class_4467 implements class_6310<class_392> {
+public class class_4467 implements Packet<class_392> {
    private static String[] field_21784;
    public class_6979 field_21788;
    public short[] field_21787;

@@ -76,7 +76,7 @@ public class class_3854 extends Module {
    @class_3932
    public void method_17886(class_2157 var1) {
       if (class_314.method_1387()) {
-         class_6310 var4 = var1.method_10047();
+         Packet var4 = var1.method_10047();
          if (var4 instanceof class_5955) {
             class_5955 var5 = (class_5955)var4;
             this.field_18796 = var5.method_27203();
@@ -89,7 +89,7 @@ public class class_3854 extends Module {
    @class_5355
    public void method_17884(class_139 var1) {
       if (mcInstance.method_8614() != null && class_314.method_1387()) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (this.method_42015()) {
             if (var4 instanceof class_509) {
                this.method_42017().method_41999();

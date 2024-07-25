@@ -61,7 +61,7 @@ public class PacketDumperModule extends Module {
       }
    }
 
-   private void method_44432(class_6310 var1, boolean var2) {
+   private void method_44432(Packet var1, boolean var2) {
       try {
          this.field_49040.write((var2 ? "-->" : "<--") + "\t" + var1.getClass().getSimpleName() + "\n");
 

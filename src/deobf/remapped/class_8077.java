@@ -7,7 +7,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-public class class_8077 implements class_6310<class_392> {
+public class class_8077 implements Packet<class_392> {
    private String field_41349 = "";
    private ITextComponent field_41340 = StringTextComponent.EMPTY;
    private ITextComponent field_41341 = StringTextComponent.EMPTY;

@@ -59,7 +59,7 @@ public class class_7722 extends Module {
    @EventListen
    private void method_34926(class_139 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (var4 instanceof class_4548) {
             if (this.method_34925()) {
                field_39147 = 0;

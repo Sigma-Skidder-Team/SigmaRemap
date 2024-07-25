@@ -3,7 +3,7 @@ package remapped;
 import java.io.IOException;
 import java.util.UUID;
 
-public class class_4448 implements class_6310<class_392> {
+public class class_4448 implements Packet<class_392> {
    private static String[] field_21686;
    private int field_21683;
    private UUID field_21681;

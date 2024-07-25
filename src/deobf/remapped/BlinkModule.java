@@ -3,14 +3,14 @@ package remapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class class_5477 extends Module {
+public class BlinkModule extends Module {
    public static class_9745 field_27898;
-   private List<class_6310<?>> field_27896 = new ArrayList<class_6310<?>>();
+   private List<Packet<?>> field_27896 = new ArrayList<Packet<?>>();
    private class_1343 field_27899;
    public float field_27900;
    public float field_27901;
 
-   public class_5477() {
+   public BlinkModule() {
       super(Category.PLAYER, "Blink", "Stops your packets to blink");
    }
 

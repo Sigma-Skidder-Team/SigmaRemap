@@ -4,7 +4,7 @@ import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_7881 implements class_6310<class_392> {
+public class class_7881 implements Packet<class_392> {
    private static String[] field_40333;
    private static final Logger field_40331 = LogManager.getLogger();
    private class_1331 field_40330;

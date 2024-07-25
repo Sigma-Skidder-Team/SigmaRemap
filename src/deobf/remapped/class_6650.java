@@ -32,13 +32,13 @@ public class class_6650 {
       return this.field_34409.method_37145();
    }
 
-   public void method_30548(class_6310<?> var1) {
+   public void method_30548(Packet<?> var1) {
       for (class_9359 var5 : this.field_34410) {
          var5.field_47794.method_4156(var1);
       }
    }
 
-   public void method_30551(class_6310<?> var1) {
+   public void method_30551(Packet<?> var1) {
       this.method_30548(var1);
       if (this.field_34409 instanceof class_9359) {
          ((class_9359)this.field_34409).field_47794.method_4156(var1);

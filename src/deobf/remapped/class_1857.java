@@ -348,7 +348,7 @@ public class class_1857 {
    @EventListen
    @class_5355
    public void method_8233(class_5278 var1) {
-      if (var1.method_24098() == this.field_9415.field_9632 || var1.method_24098() == class_9598.field_48917 || var1.method_24098() == class_5477.field_27898) {
+      if (var1.method_24098() == this.field_9415.field_9632 || var1.method_24098() == FreeCamModule.field_48917 || var1.method_24098() == BlinkModule.field_27898) {
          if (var1.method_24094() != 1.0F) {
             if (class_1393.field_7595 - this.field_9415.field_9632.field_29618 == 0.0F) {
                if (this.field_9422) {

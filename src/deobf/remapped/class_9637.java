@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class class_9637 extends Module {
    private float field_49101;
-   private ArrayList<class_6310<?>> field_49102 = new ArrayList<class_6310<?>>();
+   private ArrayList<Packet<?>> field_49102 = new ArrayList<Packet<?>>();
    private int field_49103;
 
    public class_9637() {
@@ -109,7 +109,7 @@ public class class_9637 extends Module {
          this.field_49102.add(var1.method_10047());
          var1.method_29715(true);
          if (this.field_49103 == 0) {
-            for (class_6310 var5 : this.field_49102) {
+            for (Packet var5 : this.field_49102) {
                mcInstance.method_8614().method_9091().method_23481(var5);
             }
 

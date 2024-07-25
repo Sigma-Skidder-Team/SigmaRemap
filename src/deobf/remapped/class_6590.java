@@ -97,7 +97,7 @@ public class class_6590 {
       return null;
    }
 
-   public class_6310 method_30345(class_6310 var1) {
+   public Packet method_30345(Packet var1) {
       HashMap var4 = new HashMap();
       HashMap var5 = new HashMap();
       if (!(var1 instanceof class_4467)) {

@@ -4,7 +4,7 @@ import java.io.IOException;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$class_40;
 
-public class class_2261 implements class_6310<class_8886> {
+public class class_2261 implements Packet<class_8886> {
    private static String[] field_11244;
    private ITextComponent field_11245;
 

@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_4342 extends Module {
-   public class_4342() {
+public class FastEatModule extends Module {
+   public FastEatModule() {
       super(Category.PLAYER, "FastEat", "Allows you to eat faster");
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel").method_12861("Hypixel"));
       this.addSetting(new FloatSetting<Float>("Speed", "Eating speed.", 0.55F, Float.class, 0.0F, 1.0F, 0.01F));

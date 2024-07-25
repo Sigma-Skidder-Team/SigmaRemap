@@ -341,7 +341,7 @@ public class class_7451 extends class_4641 {
    }
 
    @Override
-   public class_6310<?> method_37142() {
+   public Packet<?> method_37142() {
       return new class_6589(this, this.method_37387(), this.field_22663.method_1050(), this.method_21469());
    }
 }

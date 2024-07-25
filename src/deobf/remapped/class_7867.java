@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_7867 implements class_6310<class_392> {
+public class class_7867 implements Packet<class_392> {
    private class_2236 field_40275;
    public List<class_5902> field_40274 = Lists.newArrayList();
 

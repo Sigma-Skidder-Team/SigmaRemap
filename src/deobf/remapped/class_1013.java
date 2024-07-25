@@ -136,7 +136,7 @@ public abstract class class_1013 {
       }
    );
    public static final class_8369 field_5192 = new class_8369(
-      "options.gamma", 0.0, 1.0, 0.0F, var0 -> var0.field_45391, (var0, var1) -> var0.field_45391 = var1, (var0, var1) -> {
+      "options.gamma", 0.0, 1.0, 0.0F, var0 -> var0.brightnessGamma, (var0, var1) -> var0.brightnessGamma = var1, (var0, var1) -> {
          double var4 = var1.method_38566(var1.method_38570(var0));
          if (var4 != 0.0) {
             return var4 != 1.0 ? var1.method_4484((int)(var4 * 100.0)) : var1.method_4492(new TranslationTextComponent("options.gamma.max"));

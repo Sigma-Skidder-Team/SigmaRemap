@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
-public class class_6642 implements class_6310<class_392> {
+public class class_6642 implements Packet<class_392> {
    private static String[] field_34377;
    private boolean field_34375;
    private Map<Identifier, class_3321> field_34376;

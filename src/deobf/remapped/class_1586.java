@@ -2,7 +2,7 @@ package remapped;
 
 import java.io.IOException;
 
-public class class_1586 implements class_6310<class_1243> {
+public class class_1586 implements Packet<class_1243> {
    private static String[] field_8291;
    private class_1331 field_8294;
    private Direction field_8292;

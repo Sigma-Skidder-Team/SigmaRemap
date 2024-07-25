@@ -3,7 +3,7 @@ package remapped;
 import java.io.IOException;
 import org.apache.commons.lang3.Validate;
 
-public class class_3740 implements class_6310<class_392> {
+public class class_3740 implements Packet<class_392> {
    private class_8461 field_18306;
    private class_562 field_18309;
    private int field_18313;

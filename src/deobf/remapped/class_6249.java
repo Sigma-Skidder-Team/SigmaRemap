@@ -15,7 +15,7 @@ public class class_6249 extends class_2451 {
    }
 
    @Nullable
-   public class_6310<?> method_28525(class_6098 var1, World var2, class_704 var3) {
+   public Packet<?> method_28525(class_6098 var1, World var2, class_704 var3) {
       return null;
    }
 }

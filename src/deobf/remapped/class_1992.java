@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public class class_1992 implements class_6310<class_392> {
+public class class_1992 implements Packet<class_392> {
    private static String[] field_10116;
    private int field_10122;
    private long field_10120;

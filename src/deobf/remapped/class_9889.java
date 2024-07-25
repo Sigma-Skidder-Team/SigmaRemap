@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.UUID;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_9889 implements class_6310<class_392> {
+public class class_9889 implements Packet<class_392> {
    private static String[] field_50148;
    private UUID field_50145;
    private class_8891 field_50154;

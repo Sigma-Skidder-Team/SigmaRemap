@@ -69,7 +69,7 @@ public class class_2894 extends Module {
    @EventListen
    public void method_13253(class_139 var1) {
       if (this.method_42015()) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;
             if (this.field_14150 >= 1) {
@@ -86,7 +86,7 @@ public class class_2894 extends Module {
    @EventListen
    public void method_13254(class_2157 var1) {
       if (this.method_42015()) {
-         class_6310 var4 = var1.method_10047();
+         Packet var4 = var1.method_10047();
          if (var4 instanceof class_4609) {
             class_4609 var5 = (class_4609)var4;
             if (this.field_14150 == -1) {

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.security.PublicKey;
 import net.minecraft.util.CryptException;
 
-public class class_5992 implements class_6310<class_8886> {
+public class class_5992 implements Packet<class_8886> {
    private static String[] field_30541;
    private String field_30543;
    private byte[] field_30542;

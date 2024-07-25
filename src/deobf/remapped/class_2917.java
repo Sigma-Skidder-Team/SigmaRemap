@@ -145,7 +145,7 @@ public class class_2917 extends class_1097 {
       }
    }
 
-   public List<class_6310<?>> method_13354(class_4399 var1) {
+   public List<Packet<?>> method_13354(class_4399 var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.add(new class_3263(var1, 0));
 
@@ -166,7 +166,7 @@ public class class_2917 extends class_1097 {
       List var4 = this.method_13354(var1);
 
       for (class_9359 var6 : this.field_14238.method_1600().method_39951()) {
-         for (class_6310 var8 : var4) {
+         for (Packet var8 : var4) {
             var6.field_47794.method_4156(var8);
          }
       }
@@ -174,7 +174,7 @@ public class class_2917 extends class_1097 {
       this.field_14241.add(var1);
    }
 
-   public List<class_6310<?>> method_13350(class_4399 var1) {
+   public List<Packet<?>> method_13350(class_4399 var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.add(new class_3263(var1, 1));
 
@@ -191,7 +191,7 @@ public class class_2917 extends class_1097 {
       List var4 = this.method_13350(var1);
 
       for (class_9359 var6 : this.field_14238.method_1600().method_39951()) {
-         for (class_6310 var8 : var4) {
+         for (Packet var8 : var4) {
             var6.field_47794.method_4156(var8);
          }
       }

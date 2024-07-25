@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
-public class class_6791 implements class_6310<class_392> {
+public class class_6791 implements Packet<class_392> {
    private static String[] field_35016;
    private class_6265 field_35017;
    private List<Identifier> field_35018;

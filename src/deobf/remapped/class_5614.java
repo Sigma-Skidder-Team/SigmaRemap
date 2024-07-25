@@ -272,7 +272,7 @@ public class class_5614 extends Entity {
    }
 
    @Override
-   public class_6310<?> method_37142() {
+   public Packet<?> method_37142() {
       return new class_3491(this);
    }
 }

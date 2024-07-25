@@ -4,7 +4,7 @@ import com.mojang.authlib.GameProfile;
 import java.io.IOException;
 import java.util.UUID;
 
-public class class_4014 implements class_6310<class_7515> {
+public class class_4014 implements Packet<class_7515> {
    private static String[] field_19489;
    private GameProfile field_19490;
 

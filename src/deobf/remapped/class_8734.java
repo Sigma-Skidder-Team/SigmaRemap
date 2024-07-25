@@ -147,7 +147,7 @@ public class class_8734 {
       while (var24.hasNext()) {
          class_3357 var8 = (class_3357)var24.next();
          Entity var9 = var8.method_15377();
-         if (var9 == this.field_44744.field_9632 || var9 == class_5477.field_27898) {
+         if (var9 == this.field_44744.field_9632 || var9 == BlinkModule.field_27898) {
             var24.remove();
          } else if (SigmaMainClass.getInstance().method_3307().method_14460(var9)) {
             var24.remove();

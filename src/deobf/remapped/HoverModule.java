@@ -15,7 +15,7 @@ public class HoverModule extends Module {
    @EventListen
    public void method_12646(class_139 var1) {
       if (this.method_42015()) {
-         class_6310 var4 = var1.method_557();
+         Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             this.field_13568 = 1.0E-11;
          }

@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
 
-public class class_302 extends MessageToByteEncoder<class_6310<?>> {
+public class class_302 extends MessageToByteEncoder<Packet<?>> {
    private static final Logger field_1109 = LogManager.getLogger();
    private static final Marker field_1106 = MarkerManager.getMarker("PACKET_SENT", class_5121.field_26430);
    private final class_4739 field_1107;
@@ -18,7 +18,7 @@ public class class_302 extends MessageToByteEncoder<class_6310<?>> {
       this.field_1107 = var1;
    }
 
-   public void encode(ChannelHandlerContext var1, class_6310<?> var2, ByteBuf var3) throws Exception {
+   public void encode(ChannelHandlerContext var1, Packet<?> var2, ByteBuf var3) throws Exception {
       class_5776 var6 = (class_5776)var1.channel().attr(class_5121.field_26414).get();
       if (var6 == null) {
          throw new RuntimeException("ConnectionProtocol unknown: " + var2);

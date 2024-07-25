@@ -40,7 +40,7 @@ public class class_5170 {
                var10 = class_3111.method_14237(var10);
                float var11 = var10 * (float)(var8 - 1);
                float var12 = class_3111.method_14237(var2 + 0.5F) * (float)(var8 - 1);
-               float var13 = class_3111.method_14237((float)class_3111.method_14310().field_45391);
+               float var13 = class_3111.method_14237((float)class_3111.method_14310().brightnessGamma);
                boolean var14 = var13 > 1.0E-4F;
                float[][] var15 = this.field_26615.method_44165();
                this.method_23693(var15, var11, var9, var8, this.field_26616);

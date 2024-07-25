@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_3967 extends Module {
-   public class_3967() {
+public class LowFireModule extends Module {
+   public LowFireModule() {
       super(Category.RENDER, "LowFire", "Makes the fire transparent when you're burning");
    }
 
