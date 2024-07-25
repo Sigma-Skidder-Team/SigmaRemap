@@ -19,14 +19,14 @@ public class class_4604 extends class_2089 {
    private final class_7107 field_22408;
    private final int field_22403;
    private final List<class_7107> field_22397;
-   private final class_1893 field_22406;
+   private final MinecraftClient field_22406;
    private class_4604 field_22401;
    private final List<class_4604> field_22396 = Lists.newArrayList();
    private class_3604 field_22399;
    private final int field_22402;
    private final int field_22409;
 
-   public class_4604(class_7797 var1, class_1893 var2, class_3139 var3, class_7750 var4) {
+   public class_4604(class_7797 var1, MinecraftClient var2, class_3139 var3, class_7750 var4) {
       this.field_22404 = var1;
       this.field_22400 = var3;
       this.field_22398 = var4;

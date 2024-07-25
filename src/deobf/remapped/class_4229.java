@@ -22,7 +22,7 @@ public class class_4229 extends class_2255<class_557> {
             var3.method_36060(class_2426.field_12080.method_11074(90.0F));
             var3.method_36065(-0.3125, -0.3125, 0.0);
             var3.method_36062(0.375F, 0.375F, 0.375F);
-            class_1893.method_8510().method_8511().method_40269(var12, class_5612.field_28495, var5, var6, var3, var4);
+            MinecraftClient.method_8510().method_8511().method_40269(var12, class_5612.field_28495, var5, var6, var3, var4);
             var3.method_36064();
          }
       }

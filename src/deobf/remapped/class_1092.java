@@ -36,7 +36,7 @@ public class class_1092 implements class_392 {
    private final class_5121 field_6035;
    private final GameProfile field_6022;
    private final class_266 field_6041;
-   private class_1893 field_6026;
+   private MinecraftClient field_6026;
    private class_174 field_6021;
    private class_784 field_6025;
    private boolean field_6030;
@@ -53,7 +53,7 @@ public class class_1092 implements class_392 {
    private Set<class_5621<class_6486>> field_6029;
    public class_6322 field_6037 = class_6322.method_28810();
 
-   public class_1092(class_1893 var1, class_266 var2, class_5121 var3, GameProfile var4) {
+   public class_1092(MinecraftClient var1, class_266 var2, class_5121 var3, GameProfile var4) {
       this.field_6026 = var1;
       this.field_6041 = var2;
       this.field_6035 = var3;
@@ -1606,7 +1606,7 @@ public class class_1092 implements class_392 {
          if (var4.startsWith("level://")) {
             try {
                String var6 = URLDecoder.decode(var4.substring("level://".length()), StandardCharsets.UTF_8.toString());
-               File var7 = new File(this.field_6026.field_9575, "saves");
+               File var7 = new File(this.field_6026.runDirectory, "saves");
                File var8 = new File(var7, var6);
                if (var8.isFile()) {
                   this.method_4801(class_6538.field_33250);
@@ -1627,7 +1627,7 @@ public class class_1092 implements class_392 {
                this.method_4801(class_6538.field_33248);
             } else {
                this.field_6026.execute(() -> this.field_6026.method_8609(new class_9640(var3 -> {
-                     this.field_6026 = class_1893.method_8510();
+                     this.field_6026 = MinecraftClient.method_8510();
                      class_2560 var6x = this.field_6026.method_8530();
                      if (!var3) {
                         if (var6x != null) {

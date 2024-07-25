@@ -3,7 +3,7 @@ package remapped;
 import org.lwjgl.opengl.GL11;
 
 public class class_5099 {
-   private static class_1893 field_26314;
+   private static MinecraftClient field_26314;
    private static class_8881 field_26299;
    private static class_3492 field_26295;
    public static boolean field_26310 = false;
@@ -29,7 +29,7 @@ public class class_5099 {
 
    public static void method_23416() {
       if (field_26314 == null) {
-         field_26314 = class_1893.method_8510();
+         field_26314 = MinecraftClient.method_8510();
          field_26299 = field_26314.field_9577;
          field_26295 = field_26314.method_8562();
       }

@@ -14,11 +14,11 @@ public class class_176 {
    private static final Logger field_584 = LogManager.getLogger();
    private final String field_587;
    private final String field_589;
-   private final class_1893 field_582;
+   private final MinecraftClient field_582;
    private static final class_5380 field_586 = new class_5380();
 
    public static class_176 method_777() {
-      class_1893 var2 = class_1893.method_8510();
+      MinecraftClient var2 = MinecraftClient.method_8510();
       String var3 = var2.method_8502().method_5366();
       String var4 = var2.method_8502().method_5369();
       if (!field_585) {
@@ -54,7 +54,7 @@ public class class_176 {
       field_588 = class_4494.field_21974;
    }
 
-   public class_176(String var1, String var2, class_1893 var3) {
+   public class_176(String var1, String var2, MinecraftClient var3) {
       this.field_587 = var1;
       this.field_589 = var2;
       this.field_582 = var3;

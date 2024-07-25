@@ -50,7 +50,7 @@ public class class_3111 {
    public static boolean field_15485 = false;
    public static boolean field_15486 = false;
    private static class_8881 field_15483 = null;
-   private static class_1893 field_15454 = class_1893.method_8510();
+   private static MinecraftClient field_15454 = MinecraftClient.method_8510();
    private static boolean field_15471 = false;
    private static Thread field_15482 = null;
    private static int field_15480 = 0;
@@ -108,11 +108,11 @@ public class class_3111 {
       method_14249();
       field_15482 = Thread.currentThread();
       method_14430();
-      class_6588.method_30297(class_1893.method_8510());
+      class_6588.method_30297(MinecraftClient.method_8510());
    }
 
    public static void method_14249() {
-      if (!field_15471 && class_1893.method_8510().method_8552() != null) {
+      if (!field_15471 && MinecraftClient.method_8510().method_8552() != null) {
          field_15471 = true;
          method_14398();
          method_14386();
@@ -801,7 +801,7 @@ public class class_3111 {
       }
    }
 
-   public static class_1893 method_14327() {
+   public static MinecraftClient method_14327() {
       return field_15454;
    }
 

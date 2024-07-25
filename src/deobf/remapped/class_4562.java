@@ -13,12 +13,12 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class class_4562 implements class_2995 {
-   private final class_1893 field_22226;
+   private final MinecraftClient field_22226;
    private final Map<class_1331, class_6569> field_22223 = Maps.newHashMap();
    private final Map<UUID, class_1236> field_22222 = Maps.newHashMap();
    private UUID field_22224;
 
-   public class_4562(class_1893 var1) {
+   public class_4562(MinecraftClient var1) {
       this.field_22226 = var1;
    }
 

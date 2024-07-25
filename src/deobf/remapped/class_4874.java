@@ -4,9 +4,9 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 
 public class class_4874 implements class_2995 {
    private static String[] field_24261;
-   private final class_1893 field_24262;
+   private final MinecraftClient field_24262;
 
-   public class_4874(class_1893 var1) {
+   public class_4874(MinecraftClient var1) {
       this.field_24262 = var1;
    }
 

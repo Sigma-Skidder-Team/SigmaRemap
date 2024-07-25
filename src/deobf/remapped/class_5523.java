@@ -32,7 +32,7 @@ public class class_5523 {
    }
 
    private static void method_25040(File var0, String var1, int var2, int var3, class_4230 var4, Consumer<ITextComponent> var5) {
-      class_1893 var8 = class_3111.method_14327();
+      MinecraftClient var8 = class_3111.method_14327();
       class_9352 var9 = var8.method_8552();
       class_8881 var10 = class_3111.method_14310();
       int var11 = var9.method_43178();

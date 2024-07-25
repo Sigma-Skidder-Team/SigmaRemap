@@ -43,7 +43,7 @@ public class class_6296 extends class_7067<class_3942> {
          double var31;
          float var36;
          if ((this.field_36493.field_31304 == null || this.field_36493.field_31304.method_40867().method_42383())
-            && var9 == class_1893.method_8510().field_9632) {
+            && var9 == MinecraftClient.method_8510().field_9632) {
             double var33 = this.field_36493.field_31304.field_45543;
             var33 /= 100.0;
             class_1343 var35 = new class_1343((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);

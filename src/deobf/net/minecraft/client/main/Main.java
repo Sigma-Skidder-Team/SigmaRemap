@@ -23,12 +23,12 @@ import remapped.class_1210;
 import remapped.class_1274;
 import remapped.class_1505;
 import remapped.class_159;
-import remapped.class_1893;
+import remapped.MinecraftClient;
 import remapped.class_2435;
 import remapped.class_2557;
 import remapped.class_2586;
 import remapped.class_2945;
-import remapped.class_3472;
+import remapped.RunArgs;
 import remapped.class_3542;
 import remapped.class_3934;
 import remapped.class_4141;
@@ -123,7 +123,7 @@ public class Main {
       class_2557.method_11617();
       class_9665.method_44679();
       class_1210 var54 = new class_1210((String)var14.value(var28), var50, (String)var16.value(var28), (String)var25.value(var28));
-      class_3472 var55 = new class_3472(
+      RunArgs var55 = new RunArgs(
          new class_3934(var54, var44, var45, var31),
          new class_9706(var34, var35, var36, var37, var38),
          new class_4141(var47, var49, var48, var51),
@@ -135,12 +135,12 @@ public class Main {
       Runtime.getRuntime().addShutdownHook(var56);
       new class_8761();
 
-      class_1893 var57;
+      MinecraftClient var57;
       try {
          Thread.currentThread().setName("Render thread");
          class_3542.method_16370();
          class_3542.method_16456();
-         var57 = new class_1893(var55);
+         var57 = new MinecraftClient(var55);
          class_3542.method_16421();
       } catch (class_6815 var70) {
          field_1.warn("Failed to create window: ", var70);
@@ -148,8 +148,8 @@ public class Main {
       } catch (Throwable var71) {
          class_159 var59 = class_159.method_643(var71, "Initializing game");
          var59.method_639("Initialization");
-         class_1893.method_8489((class_2435)null, var55.field_17025.field_12806, (class_8881)null, var59);
-         class_1893.method_8608(var59);
+         MinecraftClient.method_8489((class_2435)null, var55.field_17025.field_12806, (class_8881)null, var59);
+         MinecraftClient.method_8608(var59);
          return;
       }
 

@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 public class class_4232 extends class_266 {
    private static String[] field_20541;
    public List<class_7114> field_20540 = this.field_950;
-   public class_9854 field_20538 = class_1893.method_8510().field_9668;
+   public class_9854 field_20538 = MinecraftClient.method_8510().field_9668;
    public boolean field_20539 = false;
 
    public class_4232(ITextComponent var1) {

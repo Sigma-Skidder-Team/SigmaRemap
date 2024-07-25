@@ -4,12 +4,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class class_4537 implements class_2995 {
-   private final class_1893 field_22142;
+   private final MinecraftClient field_22142;
    private double field_22138 = Double.MIN_VALUE;
    private final int field_22141 = 12;
    private class_4812 field_22140;
 
-   public class_4537(class_1893 var1) {
+   public class_4537(MinecraftClient var1) {
       this.field_22142 = var1;
    }
 

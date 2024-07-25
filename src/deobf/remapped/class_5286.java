@@ -2,7 +2,7 @@ package remapped;
 
 public class class_5286 {
    private static String[] field_27030;
-   private static class_1893 field_27031 = class_1893.method_8510();
+   private static MinecraftClient field_27031 = MinecraftClient.method_8510();
 
    public static boolean method_24123(class_8670 var0) {
       boolean var3 = true;

@@ -61,7 +61,7 @@ public class class_5702 extends class_2596 {
          this.field_28864 = true;
          this.field_28860.method_32104(true);
       });
-      this.field_28860.method_32100((var0, var1) -> class_1893.method_8510().method_8609(new class_1876()));
+      this.field_28860.method_32100((var0, var1) -> MinecraftClient.method_8510().method_8609(new class_1876()));
    }
 
    public void method_25788() {
@@ -211,7 +211,7 @@ public class class_5702 extends class_2596 {
    public void method_29509(int var1) {
       super.method_29509(var1);
       if (var1 == 256) {
-         class_1893.method_8510().method_8609(new class_1876());
+         MinecraftClient.method_8510().method_8609(new class_1876());
       }
    }
 }

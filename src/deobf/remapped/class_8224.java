@@ -28,7 +28,7 @@ public class class_8224 extends class_8374<class_9662> {
    private final class_7899 field_42220;
    private List<class_460> field_42217;
 
-   public class_8224(class_7899 var1, class_1893 var2, int var3, int var4, int var5, int var6, int var7, Supplier<String> var8, class_8224 var9) {
+   public class_8224(class_7899 var1, MinecraftClient var2, int var3, int var4, int var5, int var6, int var7, Supplier<String> var8, class_8224 var9) {
       super(var2, var3, var4, var5, var6, var7);
       this.field_42220 = var1;
       if (var9 != null) {

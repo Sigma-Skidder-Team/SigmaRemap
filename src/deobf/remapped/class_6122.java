@@ -246,7 +246,7 @@ public class class_6122 {
                   }
                }
 
-               if (this.field_31305 && !var1.method_37109() && !class_1893.method_8510().method_8503()) {
+               if (this.field_31305 && !var1.method_37109() && !MinecraftClient.method_8510().method_8503()) {
                   this.method_28114(var10, var11.method_11645(class_3581.method_16744()), var1, var9);
                }
 

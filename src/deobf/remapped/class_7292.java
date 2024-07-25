@@ -22,7 +22,7 @@ public class class_7292 extends class_8715 {
 
    public class_7292(class_174 var1, double var2, double var4, double var6, class_6098 var8) {
       super(var1, var2, var4, var6, 0.0, 0.0, 0.0);
-      this.method_40055(class_1893.method_8510().method_8511().method_40278(var8, var1, (class_5834)null).method_33587());
+      this.method_40055(MinecraftClient.method_8510().method_8511().method_40278(var8, var1, (class_5834)null).method_33587());
       this.field_49477 = 1.0F;
       this.field_10503 /= 2.0F;
       this.field_37295 = this.field_49466.nextFloat() * 3.0F;

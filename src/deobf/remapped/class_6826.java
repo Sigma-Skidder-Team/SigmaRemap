@@ -5,11 +5,11 @@ import java.util.Random;
 public class class_6826 {
    private static String[] field_35187;
    private final Random field_35188 = new Random();
-   private final class_1893 field_35186;
+   private final MinecraftClient field_35186;
    private class_3560 field_35185;
    private int field_35184 = 100;
 
-   public class_6826(class_1893 var1) {
+   public class_6826(MinecraftClient var1) {
       this.field_35186 = var1;
    }
 

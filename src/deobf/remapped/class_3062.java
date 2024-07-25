@@ -28,7 +28,7 @@ public class class_3062 extends class_2089 {
    private static final class_4639 field_15038 = new class_4639("textures/misc/pumpkinblur.png");
    private static final ITextComponent field_15033 = new TranslationTextComponent("demo.demoExpired");
    private final Random field_15058 = new Random();
-   private final class_1893 field_15040;
+   private final MinecraftClient field_15040;
    private final class_8765 field_15030;
    private final class_4049 field_15054;
    private int field_15042;
@@ -57,7 +57,7 @@ public class class_3062 extends class_2089 {
    private int field_15049;
    private final Map<ChatType, List<class_9720>> field_15048 = Maps.newHashMap();
 
-   public class_3062(class_1893 var1) {
+   public class_3062(MinecraftClient var1) {
       this.field_15040 = var1;
       this.field_15030 = var1.method_8511();
       this.field_15026 = new class_3888(var1);

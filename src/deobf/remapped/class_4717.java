@@ -6,7 +6,7 @@ public class class_4717 extends class_9153 {
    private class_1331 field_22889 = null;
    private class_8145 field_22888 = null;
 
-   public class_4717(class_1893 var1, class_1092 var2) {
+   public class_4717(MinecraftClient var1, class_1092 var2) {
       super(var1, var2);
    }
 

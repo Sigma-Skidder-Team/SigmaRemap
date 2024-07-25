@@ -15,7 +15,7 @@ public class class_6324 {
    }
 
    public static void method_28832(String var0) {
-      class_1893.method_8510().field_9614.method_13991().method_18676(new StringTextComponent(var0));
+      MinecraftClient.method_8510().field_9614.method_13991().method_18676(new StringTextComponent(var0));
    }
 
    public static boolean method_28829(String var0) {

@@ -24,19 +24,19 @@ public class class_6935 {
       this.method_31721();
    }
 
-   public static Supplier<String> method_31712(class_1893 var0) {
+   public static Supplier<String> method_31712(MinecraftClient var0) {
       return () -> method_31717(var0);
    }
 
-   public static String method_31717(class_1893 var0) {
+   public static String method_31717(MinecraftClient var0) {
       return TextFormatting.getTextWithoutFormattingCodes(var0.field_9600.method_38883().replaceAll("\\r", ""));
    }
 
-   public static Consumer<String> method_31713(class_1893 var0) {
+   public static Consumer<String> method_31713(MinecraftClient var0) {
       return var1 -> method_31728(var0, var1);
    }
 
-   public static void method_31728(class_1893 var0, String var1) {
+   public static void method_31728(MinecraftClient var0, String var1) {
       var0.field_9600.method_38891(var1);
    }
 

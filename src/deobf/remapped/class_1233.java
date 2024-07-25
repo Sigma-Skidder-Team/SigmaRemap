@@ -24,7 +24,7 @@ public class class_1233 extends class_2255<class_1896> {
          var3.method_36065(0.0, -0.2F, 0.0);
          var3.method_36060(class_2426.field_12080.method_11074(-30.0F));
          var3.method_36062(var11, var11, var11);
-         class_1893.method_8510().method_8587().method_28115(var10, 0.0, 0.0, 0.0, 0.0F, var2, var3, var4, var5);
+         MinecraftClient.method_8510().method_8587().method_28115(var10, 0.0, 0.0, 0.0, 0.0F, var2, var3, var4, var5);
       }
 
       var3.method_36064();

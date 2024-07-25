@@ -8,13 +8,13 @@ import org.apache.logging.log4j.Logger;
 
 public class class_5692 {
    private static final Logger field_28835 = LogManager.getLogger();
-   private final class_1893 field_28832;
+   private final MinecraftClient field_28832;
    private final class_3904 field_28833 = new class_3904();
    private final Map<class_3139, class_3604> field_28829 = Maps.newHashMap();
    private class_4361 field_28830;
    private class_3139 field_28834;
 
-   public class_5692(class_1893 var1) {
+   public class_5692(MinecraftClient var1) {
       this.field_28832 = var1;
    }
 

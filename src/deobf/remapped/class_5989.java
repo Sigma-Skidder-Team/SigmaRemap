@@ -27,7 +27,7 @@ public class class_5989 extends class_9716 {
    private boolean field_30506;
    private String field_30528;
    public class_8859 field_30533;
-   public final class_1893 field_30523;
+   public final MinecraftClient field_30523;
    public int field_30526;
    public int field_30522;
    public float field_30531;
@@ -47,7 +47,7 @@ public class class_5989 extends class_9716 {
    private int field_30534;
    private boolean field_30512 = true;
 
-   public class_5989(class_1893 var1, class_174 var2, class_1092 var3, class_4156 var4, class_2716 var5, boolean var6, boolean var7) {
+   public class_5989(MinecraftClient var1, class_174 var2, class_1092 var3, class_4156 var4, class_2716 var5, boolean var6, boolean var7) {
       super(var2, var3.method_4810());
       this.field_30523 = var1;
       this.field_30532 = var3;

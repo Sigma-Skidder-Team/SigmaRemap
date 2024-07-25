@@ -68,7 +68,7 @@ public class class_8691 {
    public boolean method_39906(class_7309 var1) {
       try {
          class_7039.field_36337 = null;
-         class_1210 var4 = class_1893.method_8510().field_9603;
+         class_1210 var4 = MinecraftClient.method_8510().field_9603;
          class_1210 var5 = var1.method_33346();
          var4.field_6749 = var5.method_5366();
          var4.field_6748 = var5.method_5367();
@@ -137,6 +137,6 @@ public class class_8691 {
    public boolean method_39907(class_7309 var1) {
       return this.method_39903() != null
          ? var1.method_33344().equals(this.method_39903())
-         : var1.method_33321().equals(class_1893.method_8510().method_8502().method_5366());
+         : var1.method_33321().equals(MinecraftClient.method_8510().method_8502().method_5366());
    }
 }

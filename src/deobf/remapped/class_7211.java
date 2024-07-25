@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class class_7211 {
    private static String[] field_37038;
-   private static final class_1893 field_37040 = class_1893.method_8510();
+   private static final MinecraftClient field_37040 = MinecraftClient.method_8510();
    public static float field_37037;
    public static float field_37039;
    public static long field_37036;

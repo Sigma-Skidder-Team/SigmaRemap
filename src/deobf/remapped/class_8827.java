@@ -7,11 +7,11 @@ import net.minecraft.util.text.KeybindTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
 public class class_8827 {
-   private final class_1893 field_45147;
+   private final MinecraftClient field_45147;
    private class_2274 field_45149;
    private List<class_8426> field_45150 = Lists.newArrayList();
 
-   public class_8827(class_1893 var1) {
+   public class_8827(MinecraftClient var1) {
       this.field_45147 = var1;
    }
 
@@ -98,7 +98,7 @@ public class class_8827 {
       }
    }
 
-   public class_1893 method_40530() {
+   public MinecraftClient method_40530() {
       return this.field_45147;
    }
 

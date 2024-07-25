@@ -62,7 +62,7 @@ public class class_6590 {
 
    public void method_30349() {
       for (class_3841 var4 : this.field_34003) {
-         class_1893.method_8510().field_9601.method_29594(var4.field_18753, var4.field_18752);
+         MinecraftClient.method_8510().field_9601.method_29594(var4.field_18753, var4.field_18752);
       }
 
       this.field_34003.clear();
@@ -150,7 +150,7 @@ public class class_6590 {
 
    public class_2522 method_30352(class_1331 var1) {
       if (!this.field_34001.containsKey(var1)) {
-         return !this.field_33996.containsKey(var1) ? class_1893.method_8510().field_9601.method_28262(var1) : this.field_33996.get(var1);
+         return !this.field_33996.containsKey(var1) ? MinecraftClient.method_8510().field_9601.method_28262(var1) : this.field_33996.get(var1);
       } else {
          return this.field_34001.get(var1);
       }

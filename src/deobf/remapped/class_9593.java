@@ -66,8 +66,8 @@ public class class_9593 {
 
          if (var6x.isEmpty()) {
             var1.getProperties().clear();
-            if (var1.getId().equals(class_1893.method_8510().method_8502().method_5370().getId())) {
-               var1.getProperties().putAll(class_1893.method_8510().method_8579());
+            if (var1.getId().equals(MinecraftClient.method_8510().method_8502().method_5370().getId())) {
+               var1.getProperties().putAll(MinecraftClient.method_8510().method_8579());
                var6x.putAll(this.field_48889.getTextures(var1, false));
             } else {
                this.field_48889.fillProfileProperties(var1, var3);
@@ -79,7 +79,7 @@ public class class_9593 {
             }
          }
 
-         class_1893.method_8510().execute(() -> class_3542.method_16474(() -> ImmutableList.of(Type.SKIN, Type.CAPE).forEach(var3xx -> {
+         MinecraftClient.method_8510().execute(() -> class_3542.method_16474(() -> ImmutableList.of(Type.SKIN, Type.CAPE).forEach(var3xx -> {
                   if (var6x.containsKey(var3xx)) {
                      this.method_44312((MinecraftProfileTexture)var6x.get(var3xx), var3xx, var2);
                   }

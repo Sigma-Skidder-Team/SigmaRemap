@@ -9,7 +9,7 @@ public final class class_5681 extends Thread {
 
    @Override
    public void run() {
-      class_1893 var3 = class_1893.method_8510();
+      MinecraftClient var3 = MinecraftClient.method_8510();
       if (var3 != null) {
          class_7762 var4 = var3.method_8515();
          if (var4 != null) {

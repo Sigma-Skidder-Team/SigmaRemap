@@ -11,10 +11,10 @@ public class class_9134 extends class_9128 {
    @class_9148
    private void method_42042(class_3278 var1) {
       if (this.method_42015() && field_46692.field_9632 != null) {
-         if (!class_1893.method_8510().field_9577.field_45567) {
+         if (!MinecraftClient.method_8510().field_9577.field_45567) {
             byte var4 = 5;
             byte var5 = 60;
-            int var6 = !class_1893.method_8510().field_9577.field_45470 ? 0 : 60;
+            int var6 = !MinecraftClient.method_8510().field_9577.field_45470 ? 0 : 60;
             ArrayList var7 = this.method_42041((int)this.method_42039(field_46692.field_9632.field_41701), var4);
             int var8 = (Integer)var7.get(var4);
             if (var8 == 0 && this.method_42039(field_46692.field_9632.field_41701) > 345.0F) {

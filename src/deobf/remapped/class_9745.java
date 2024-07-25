@@ -78,7 +78,7 @@ public class class_9745 extends class_9716 {
 
    @Override
    public void method_26286(ITextComponent var1, UUID var2) {
-      class_1893 var5 = class_1893.method_8510();
+      MinecraftClient var5 = MinecraftClient.method_8510();
       if (!var5.method_8526(var2)) {
          var5.field_9614.method_13991().method_18676(var1);
       }

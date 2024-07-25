@@ -6,7 +6,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class class_4233 {
    private static String[] field_20542;
-   private static final class_1893 field_20543 = class_1893.method_8510();
+   private static final MinecraftClient field_20543 = MinecraftClient.method_8510();
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)

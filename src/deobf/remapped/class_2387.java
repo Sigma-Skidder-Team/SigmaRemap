@@ -25,10 +25,10 @@ public class class_2387 extends class_266 {
    private final class_3160 field_11905;
 
    @Nullable
-   public static class_2387 method_10892(class_1893 var0, BooleanConsumer var1, DataFixer var2, class_3676 var3, boolean var4) {
+   public static class_2387 method_10892(MinecraftClient var0, BooleanConsumer var1, DataFixer var2, class_3676 var3, boolean var4) {
       class_7522 var7 = class_6322.method_28810();
 
-      try (class_4266 var8 = var0.method_8572(var7, class_1893::method_8582, class_1893::method_8527, false, var3)) {
+      try (class_4266 var8 = var0.method_8572(var7, MinecraftClient::method_8582, MinecraftClient::method_8527, false, var3)) {
          class_5684 var10 = var8.method_19864();
          var3.method_17065(var7, var10);
          ImmutableSet var11 = var10.method_25703().method_13297();

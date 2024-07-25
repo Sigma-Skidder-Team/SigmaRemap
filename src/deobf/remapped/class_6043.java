@@ -19,7 +19,7 @@ public abstract class class_6043 extends class_6165 {
    public void method_29511() {
       boolean var3 = this.method_27593();
       if (var3 && !this.method_29512()) {
-         class_1893.method_8510().method_8590().method_16351(this.method_27592());
+         MinecraftClient.method_8510().method_8590().method_16351(this.method_27592());
          this.field_30853 = true;
       }
 

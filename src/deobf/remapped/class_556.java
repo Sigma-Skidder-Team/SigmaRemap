@@ -19,7 +19,7 @@ public class class_556 extends class_1859 {
    public class_556(class_7038 var1, String var2, int var3, int var4, class_2700 var5) {
       super(var1, var2, var3 - 107, var4 + 10, 214, 170, class_590.field_3421, "", false);
       this.field_3301 = var5;
-      if (this.field_36261 + this.field_36257 <= class_1893.method_8510().field_9602.method_43163()) {
+      if (this.field_36261 + this.field_36257 <= MinecraftClient.method_8510().field_9602.method_43163()) {
          this.field_36261 += 10;
       } else {
          this.field_36261 = this.field_36261 - (this.field_36257 + 27);

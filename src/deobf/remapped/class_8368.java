@@ -5,11 +5,11 @@ import net.minecraft.util.text.ITextComponent;
 public class class_8368 extends class_2089 implements class_3796 {
    private static final class_4639 field_42843 = new class_4639("textures/gui/widgets.png");
    public static final class_4639 field_42845 = new class_4639("textures/gui/spectator_widgets.png");
-   private final class_1893 field_42841;
+   private final MinecraftClient field_42841;
    private long field_42842;
    private class_3421 field_42844;
 
-   public class_8368(class_1893 var1) {
+   public class_8368(MinecraftClient var1) {
       this.field_42841 = var1;
    }
 

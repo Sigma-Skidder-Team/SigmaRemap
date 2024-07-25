@@ -3,7 +3,7 @@ package remapped;
 public class class_1749 extends class_9153 {
    private static String[] field_9006;
 
-   public class_1749(class_1893 var1, class_1092 var2) {
+   public class_1749(MinecraftClient var1, class_1092 var2) {
       super(var1, var2);
    }
 

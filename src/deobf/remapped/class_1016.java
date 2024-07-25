@@ -4,9 +4,9 @@ import java.util.Map.Entry;
 
 public class class_1016 implements class_2995 {
    private static String[] field_5331;
-   private final class_1893 field_5330;
+   private final MinecraftClient field_5330;
 
-   public class_1016(class_1893 var1) {
+   public class_1016(MinecraftClient var1) {
       this.field_5330 = var1;
    }
 

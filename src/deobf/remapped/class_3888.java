@@ -32,7 +32,7 @@ public class class_3888 extends class_2089 {
          var0.put(class_3801.field_18590, "ML");
       }
    );
-   private final class_1893 field_18930;
+   private final MinecraftClient field_18930;
    private final class_9854 field_18918;
    private class_7474 field_18928;
    private class_7474 field_18929;
@@ -45,7 +45,7 @@ public class class_3888 extends class_2089 {
    private long field_18924 = 0L;
    private long field_18919 = 0L;
 
-   public class_3888(class_1893 var1) {
+   public class_3888(MinecraftClient var1) {
       this.field_18930 = var1;
       this.field_18918 = var1.field_9668;
    }
@@ -502,8 +502,8 @@ public class class_3888 extends class_2089 {
             "",
             String.format(
                "Display: %dx%d (%s)",
-               class_1893.method_8510().method_8552().method_43178(),
-               class_1893.method_8510().method_8552().method_43198(),
+               MinecraftClient.method_8510().method_8552().method_43178(),
+               MinecraftClient.method_8510().method_8552().method_43198(),
                class_6765.method_31017()
             ),
             class_6765.method_31016(),

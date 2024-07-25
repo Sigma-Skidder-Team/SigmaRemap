@@ -104,6 +104,6 @@ public class class_9142 extends class_122 implements class_6375 {
    }
 
    public float Ꮀ붛疂䕦堧樽() {
-      return 0.07F * (30.0F / (float)class_1893.method_8501());
+      return 0.07F * (30.0F / (float) MinecraftClient.method_8501());
    }
 }

@@ -718,7 +718,7 @@ public class class_7977 {
    }
 
    public static void method_36151() {
-      class_7889 var2 = class_1893.method_8510().method_8577();
+      class_7889 var2 = MinecraftClient.method_8510().method_8577();
       class_8143 var3 = var2.method_35679(class_8359.field_42824);
       if (var3 != null) {
          class_9510 var4 = var3.method_37050();

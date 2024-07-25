@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_9047 extends class_2596 {
-   public class_1893 field_46319 = class_1893.method_8510();
+   public MinecraftClient field_46319 = MinecraftClient.method_8510();
    public class_3223 field_46314 = new class_3223();
    public class_2040 field_46317;
    public class_2440 field_46318;
@@ -72,7 +72,7 @@ public class class_9047 extends class_2596 {
       super.method_29509(var1);
       if (var1 == 256) {
          class_314.method_1430();
-         class_1893.method_8510().method_8609(null);
+         MinecraftClient.method_8510().method_8609(null);
       }
    }
 }

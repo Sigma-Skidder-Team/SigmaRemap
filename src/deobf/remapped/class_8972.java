@@ -22,7 +22,7 @@ public enum class_8972 implements class_1342 {
 
    private class_8972(String var3) {
       this.field_45963 = var3;
-      this.field_45960 = class_1893.method_8510().method_8587();
+      this.field_45960 = MinecraftClient.method_8510().method_8587();
    }
 
    public String method_41146() {

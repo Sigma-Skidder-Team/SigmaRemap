@@ -12,7 +12,7 @@ public class class_6741<T extends class_5834, M extends class_6521<T>> extends c
       var1.method_36065(0.0, 0.4F, -0.4F);
       var1.method_36060(class_2426.field_12080.method_11074(180.0F));
       class_6098 var13 = var4.method_26520(class_6943.field_35707);
-      class_1893.method_8510().method_8574().method_42248(var4, var13, class_5612.field_28496, false, var1, var2, var3);
+      MinecraftClient.method_8510().method_8574().method_42248(var4, var13, class_5612.field_28496, false, var1, var2, var3);
       var1.method_36064();
    }
 }

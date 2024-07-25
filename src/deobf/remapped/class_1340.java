@@ -11,7 +11,7 @@ public abstract class class_1340 extends class_7430 {
 
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
-      class_1893.method_8510().method_8577().method_35674(class_340.method_1573());
+      MinecraftClient.method_8510().method_8577().method_35674(class_340.method_1573());
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       short var7 = 219;
       int var8 = 0;

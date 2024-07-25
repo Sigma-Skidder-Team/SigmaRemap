@@ -6,7 +6,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_8624 extends class_3384 {
    public final int field_44252;
-   public class_1893 field_44253 = class_1893.method_8510();
+   public MinecraftClient field_44253 = MinecraftClient.method_8510();
 
    public class_8624(int var1) {
       super(new Font("Arial", 0, var1), false);

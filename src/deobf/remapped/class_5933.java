@@ -46,7 +46,7 @@ public class class_5933 {
    }
 
    public class_2560 method_27123() {
-      class_3187 var3 = new class_3187(class_1893.method_8510());
+      class_3187 var3 = new class_3187(MinecraftClient.method_8510());
       var3.method_14670();
       int var4 = var3.method_14671();
 

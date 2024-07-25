@@ -41,7 +41,7 @@ public class class_7886 extends class_4117 {
                      .forEach(var3 -> var10.add(this.field_40354.field_17225.method_30744(var1.method_12956(var3), this.field_40354.method_16180(var3))));
                   return class_9665.method_44680(var10).<class_8490>handle((var2, var3) -> {
                      if (var3 != null && !(var3 instanceof CancellationException) && !(var3 instanceof InterruptedException)) {
-                        class_1893.method_8510().method_8555(class_159.method_643(var3, "Rendering chunk"));
+                        MinecraftClient.method_8510().method_8555(class_159.method_643(var3, "Rendering chunk"));
                      }
 
                      if (!this.field_20070.get()) {
@@ -83,7 +83,7 @@ public class class_7886 extends class_4117 {
          class_3581[] var15 = new class_3581[1];
          class_2174.method_10113();
          Random var16 = new Random();
-         class_856 var17 = class_1893.method_8510().method_8505();
+         class_856 var17 = MinecraftClient.method_8510().method_8505();
 
          for (class_523 var19 : class_523.method_2546(var9, var10)) {
             class_2522 var20 = var14.method_28262(var19);

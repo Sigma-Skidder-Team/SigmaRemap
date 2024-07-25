@@ -7,7 +7,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class class_7797 extends class_2089 {
    private static String[] field_39496;
-   private final class_1893 field_39488;
+   private final MinecraftClient field_39488;
    private final class_9044 field_39492;
    private final class_483 field_39483;
    private final int field_39486;
@@ -26,7 +26,7 @@ public class class_7797 extends class_2089 {
    private float field_39491;
    private boolean field_39494;
 
-   public class_7797(class_1893 var1, class_9044 var2, class_483 var3, int var4, class_3139 var5, class_7750 var6) {
+   public class_7797(MinecraftClient var1, class_9044 var2, class_483 var3, int var4, class_3139 var5, class_7750 var6) {
       this.field_39488 = var1;
       this.field_39492 = var2;
       this.field_39483 = var3;
@@ -133,7 +133,7 @@ public class class_7797 extends class_2089 {
    }
 
    @Nullable
-   public static class_7797 method_35367(class_1893 var0, class_9044 var1, int var2, class_3139 var3) {
+   public static class_7797 method_35367(MinecraftClient var0, class_9044 var1, int var2, class_3139 var3) {
       if (var3.method_14511() == null) {
          return null;
       } else {

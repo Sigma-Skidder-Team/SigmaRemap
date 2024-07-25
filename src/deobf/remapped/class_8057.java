@@ -149,9 +149,9 @@ public class class_8057 extends class_367 {
    }
 
    public static void method_36547(class_1331 var0) {
-      double var3 = (double)((float)var0.method_12173() + 0.5F) - class_1893.method_8510().field_9590.method_35949().method_41627().method_61();
-      double var5 = (double)((float)var0.method_12165() + 1.0F) - class_1893.method_8510().field_9590.method_35949().method_41627().method_60();
-      double var7 = (double)((float)var0.method_12185() + 0.5F) - class_1893.method_8510().field_9590.method_35949().method_41627().method_62();
+      double var3 = (double)((float)var0.method_12173() + 0.5F) - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_61();
+      double var5 = (double)((float)var0.method_12165() + 1.0F) - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_60();
+      double var7 = (double)((float)var0.method_12185() + 0.5F) - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_62();
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);
@@ -161,8 +161,8 @@ public class class_8057 extends class_367 {
       GL11.glDepthMask(false);
       GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
       class_1343 var9 = new class_1343(0.0, 0.0, 1.0)
-         .method_6212(-((float)Math.toRadians((double)class_1893.method_8510().field_9632.field_41755)))
-         .method_6192(-((float)Math.toRadians((double)class_1893.method_8510().field_9632.field_41701)));
+         .method_6212(-((float)Math.toRadians((double) MinecraftClient.method_8510().field_9632.field_41755)))
+         .method_6192(-((float)Math.toRadians((double) MinecraftClient.method_8510().field_9632.field_41701)));
       GL11.glBegin(1);
       GL11.glVertex3d(var9.field_7336, var9.field_7333, var9.field_7334);
       GL11.glVertex3d(var3, var5, var7);

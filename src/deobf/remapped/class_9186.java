@@ -10,12 +10,12 @@ import java.util.UUID;
 
 public class class_9186 {
    private static String[] field_47000;
-   private final class_1893 field_47003;
+   private final MinecraftClient field_47003;
    private final Set<UUID> field_47001 = Sets.newHashSet();
    private final SocialInteractionsService field_46999;
    private final Map<String, UUID> field_47002 = Maps.newHashMap();
 
-   public class_9186(class_1893 var1, SocialInteractionsService var2) {
+   public class_9186(MinecraftClient var1, SocialInteractionsService var2) {
       this.field_47003 = var1;
       this.field_46999 = var2;
    }

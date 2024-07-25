@@ -5,7 +5,7 @@ import java.util.UUID;
 public class class_1604 extends class_5989 {
    private static UUID field_8335 = UUID.fromString("8667ba71-b85a-4004-af54-457a9734eed7");
 
-   public class_1604(class_1893 var1, class_174 var2, class_1092 var3, class_4156 var4, class_2716 var5, boolean var6, boolean var7) {
+   public class_1604(MinecraftClient var1, class_174 var2, class_1092 var3, class_4156 var4, class_2716 var5, boolean var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6, var7);
    }
 

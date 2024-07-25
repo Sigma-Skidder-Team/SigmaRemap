@@ -30,11 +30,11 @@ public class class_6394 {
          var0.method_29715(true);
       }
 
-      if (var0.method_557() instanceof class_4808 && class_1893.method_8510().field_9601 != null) {
+      if (var0.method_557() instanceof class_4808 && MinecraftClient.method_8510().field_9601 != null) {
          class_4808 var18 = (class_4808)var0.method_557();
 
          try {
-            while (class_1893.method_8510().method_8614() == null) {
+            while (MinecraftClient.method_8510().method_8614() == null) {
                Thread.sleep(100L);
             }
          } catch (InterruptedException var16) {
@@ -42,8 +42,8 @@ public class class_6394 {
 
          class_546 var19 = var18.method_22144() == null
             ? null
-            : new class_546(class_1893.method_8510().method_8614().field_6037.<class_6325>method_28813(class_8669.field_44359), var18.method_22144());
-         class_2654 var20 = new class_2654(class_1893.method_8510().field_9601, new class_2034(var18.method_22149(), var18.method_22151()), null);
+            : new class_546(MinecraftClient.method_8510().method_8614().field_6037.<class_6325>method_28813(class_8669.field_44359), var18.method_22144());
+         class_2654 var20 = new class_2654(MinecraftClient.method_8510().field_9601, new class_2034(var18.method_22149(), var18.method_22151()), null);
          var20.method_11984(var19, new class_8248(var18.method_22147().copy()), var18.method_22146(), var18.method_22152());
          if (var20 != null) {
             int var7 = 0;

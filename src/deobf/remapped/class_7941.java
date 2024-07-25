@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 public class class_7941 implements class_6491, AutoCloseable {
    private static final class_4639 field_40614 = new class_4639("textures/misc/nausea.png");
    private static final Logger field_40642 = LogManager.getLogger();
-   private final class_1893 field_40612;
+   private final MinecraftClient field_40612;
    private final class_7832 field_40604;
    private final Random field_40617 = new Random();
    private float field_40640;
@@ -86,7 +86,7 @@ public class class_7941 implements class_6491, AutoCloseable {
    private class_4067[] field_40609 = new class_4067[10];
    private boolean field_40616 = false;
 
-   public class_7941(class_1893 var1, class_7832 var2, class_3017 var3) {
+   public class_7941(MinecraftClient var1, class_7832 var2, class_3017 var3) {
       this.field_40612 = var1;
       this.field_40604 = var2;
       this.field_40622 = var1.method_8574();
@@ -545,7 +545,7 @@ public class class_7941 implements class_6491, AutoCloseable {
          }
 
          class_9352 var9 = this.field_40612.method_8552();
-         class_3542.method_16402(256, class_1893.field_9574);
+         class_3542.method_16402(256, MinecraftClient.field_9574);
          class_3542.method_16463(5889);
          class_3542.method_16476();
          class_3542.method_16376(0.0, (double)var9.method_43178() / var9.method_43189(), (double)var9.method_43198() / var9.method_43189(), 0.0, 1000.0, 3000.0);
@@ -580,7 +580,7 @@ public class class_7941 implements class_6491, AutoCloseable {
                   class_5099.method_23420(var10, (int)this.field_40612.method_8552().method_43189());
                }
 
-               class_3542.method_16402(256, class_1893.field_9574);
+               class_3542.method_16402(256, MinecraftClient.field_9574);
             }
 
             this.field_40612.method_8562().method_16054();
@@ -816,7 +816,7 @@ public class class_7941 implements class_6491, AutoCloseable {
             class_6588.method_30169();
          }
 
-         class_3542.method_16402(256, class_1893.field_9574);
+         class_3542.method_16402(256, MinecraftClient.field_9574);
          if (!var7) {
             this.method_35923(var4, var9, var1);
          } else {

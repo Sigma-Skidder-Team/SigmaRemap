@@ -169,7 +169,7 @@ public class class_5360 extends class_3232 {
 
    @Override
    public void method_23026(class_2957 var1, class_6979 var2) {
-      class_1893.method_8510().field_9657.method_20070(var2.method_31930(), var2.method_31918(), var2.method_31900());
+      MinecraftClient.method_8510().field_9657.method_20070(var2.method_31930(), var2.method_31918(), var2.method_31900());
    }
 
    @Override

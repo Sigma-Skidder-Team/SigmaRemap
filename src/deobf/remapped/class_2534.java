@@ -308,7 +308,7 @@ public class class_2534 extends class_9128 {
       GL11.glEnable(32925);
       GL11.glEnable(2929);
       GL11.glLineWidth(1.4F);
-      double var4 = (double)class_1893.method_8510().field_9616.field_32600;
+      double var4 = (double) MinecraftClient.method_8510().field_9616.field_32600;
       if (!var1.method_37330()) {
          var4 = 0.0;
       }

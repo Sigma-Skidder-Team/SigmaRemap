@@ -6,7 +6,7 @@ import net.minecraft.util.text.LanguageMap;
 
 public class class_6635 extends class_4785<class_6635> {
    private class_895 field_34353;
-   public final class_1893 field_34349;
+   public final MinecraftClient field_34349;
    public final class_266 field_34351;
    private final class_3178 field_34352;
    private final class_7107 field_34348;
@@ -14,7 +14,7 @@ public class class_6635 extends class_4785<class_6635> {
    private final class_7107 field_34347;
    private final class_416 field_34345;
 
-   public class_6635(class_1893 var1, class_895 var2, class_266 var3, class_3178 var4) {
+   public class_6635(MinecraftClient var1, class_895 var2, class_266 var3, class_3178 var4) {
       this.field_34349 = var1;
       this.field_34351 = var3;
       this.field_34352 = var4;
@@ -25,7 +25,7 @@ public class class_6635 extends class_4785<class_6635> {
       this.field_34345 = method_30499(var1, var4.method_14657().method_9603());
    }
 
-   private static class_7107 method_30497(class_1893 var0, ITextComponent var1) {
+   private static class_7107 method_30497(MinecraftClient var0, ITextComponent var1) {
       int var4 = var0.field_9668.method_45379(var1);
       if (var4 <= 157) {
          return var1.func_241878_f();
@@ -37,7 +37,7 @@ public class class_6635 extends class_4785<class_6635> {
       }
    }
 
-   private static class_416 method_30499(class_1893 var0, ITextComponent var1) {
+   private static class_416 method_30499(MinecraftClient var0, ITextComponent var1) {
       return class_416.method_2069(var0.field_9668, var1, 157, 2);
    }
 

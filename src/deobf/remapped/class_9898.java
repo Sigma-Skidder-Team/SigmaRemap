@@ -47,7 +47,7 @@ public class class_9898 extends class_4098 {
       this.method_32148(this.field_50179 = new class_629(this, "other", 201, 358, 170, 130, "Others", field_50197, field_50187));
       class_4980 var7;
       this.method_32148(var7 = new class_4980(this, "exit", this.method_32109() - 41, 9));
-      var7.method_32100((var0, var1x) -> class_1893.method_8510().method_8609(null));
+      var7.method_32100((var0, var1x) -> MinecraftClient.method_8510().method_8609(null));
       class_4647 var8 = (class_4647)this.method_32167();
       this.field_50202.method_32100((var1x, var2x) -> var8.method_21497("Combat", class_5664.field_28714));
       this.field_50178.method_32100((var1x, var2x) -> var8.method_21497("Movement", class_5664.field_28716));

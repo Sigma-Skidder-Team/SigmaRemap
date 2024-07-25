@@ -27,7 +27,7 @@ public class class_9713 {
    public static void method_44866(class_8591 var0) {
       method_44863();
       if (var0 != null) {
-         if (class_7860.field_39861.method_3596() && class_1893.method_8510().method_8498() == null) {
+         if (class_7860.field_39861.method_3596() && MinecraftClient.method_8510().method_8498() == null) {
             class_3111.method_14277("[Shaders] Delayed loading of entity mappings after resources are loaded");
             field_49374 = true;
          } else {

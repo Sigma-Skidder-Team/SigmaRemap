@@ -6,11 +6,11 @@ import java.util.stream.Collectors;
 
 public class class_934 implements class_2995 {
    private static String[] field_4778;
-   private final class_1893 field_4779;
+   private final MinecraftClient field_4779;
    private double field_4776 = Double.MIN_VALUE;
    private List<class_4190> field_4777 = Collections.<class_4190>emptyList();
 
-   public class_934(class_1893 var1) {
+   public class_934(MinecraftClient var1) {
       this.field_4779 = var1;
    }
 

@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class class_2577 extends class_2198 implements class_1463 {
    public static final int field_12759 = -1;
    public static final int field_12766 = -2;
-   public final class_1893 field_12768;
+   public final MinecraftClient field_12768;
    public int field_12760;
    public int field_12757;
    public int field_12765;
@@ -23,7 +23,7 @@ public abstract class class_2577 extends class_2198 implements class_1463 {
    public int field_12763;
    private boolean field_12758;
 
-   public class_2577(class_1893 var1, int var2, int var3, int var4, int var5, int var6) {
+   public class_2577(MinecraftClient var1, int var2, int var3, int var4, int var5, int var6) {
       this.field_12768 = var1;
       this.field_12760 = var2;
       this.field_12757 = var3;

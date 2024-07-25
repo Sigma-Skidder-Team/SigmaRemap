@@ -37,7 +37,7 @@ public class class_7590 {
       this.field_38659 = var1;
    }
 
-   public void method_34485(class_7966 var1, class_1893 var2, int var3, int var4, boolean var5, float var6) {
+   public void method_34485(class_7966 var1, MinecraftClient var2, int var3, int var4, boolean var5, float var6) {
       if (!class_266.method_1185()) {
          this.field_38656 += var6;
       }

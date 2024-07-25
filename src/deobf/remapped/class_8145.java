@@ -409,9 +409,9 @@ public abstract class class_8145 implements class_9875, class_5801 {
    }
 
    public void method_37226(class_7412 var1, class_1343 var2) {
-      if (class_1893.method_8510().field_9632 != null
-         && class_1893.method_8510().field_9632.method_37243() != null
-         && class_1893.method_8510().field_9632.method_37243().method_37145() == this.method_37145()) {
+      if (MinecraftClient.method_8510().field_9632 != null
+         && MinecraftClient.method_8510().field_9632.method_37243() != null
+         && MinecraftClient.method_8510().field_9632.method_37243().method_37145() == this.method_37145()) {
          class_5088 var5 = new class_5088(var2.field_7336, var2.field_7333, var2.field_7334);
          SigmaMainClass.method_3328().method_3302().method_7914(var5);
          if (var5.method_29716()) {

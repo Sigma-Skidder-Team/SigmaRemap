@@ -22,7 +22,7 @@ public class class_2843 {
    }
 
    public class_5155 method_12947() {
-      class_5155 var3 = class_1893.method_8510().method_8490(this.method_12946()).apply(this.method_12948());
+      class_5155 var3 = MinecraftClient.method_8510().method_8490(this.method_12946()).apply(this.method_12948());
       if (class_5052.method_23281()) {
          var3 = class_5052.method_23271(var3);
       }

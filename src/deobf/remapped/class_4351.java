@@ -13,7 +13,7 @@ public class class_4351 extends Thread {
    @Override
    public void run() {
       try {
-         byte[] var3 = class_2316.method_10645(this.field_21319, class_1893.method_8510().method_8607());
+         byte[] var3 = class_2316.method_10645(this.field_21319, MinecraftClient.method_8510().method_8607());
          this.field_21320.method_23421(this.field_21319, var3, (Throwable)null);
       } catch (Exception var4) {
          this.field_21320.method_23421(this.field_21319, (byte[])null, var4);

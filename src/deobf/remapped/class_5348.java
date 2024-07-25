@@ -113,52 +113,52 @@ public abstract class class_5348 {
    });
    public static final class_6160 field_27287 = new class_6160(
       "outline_target",
-      () -> class_1893.method_8510().field_9657.method_20029().method_19717(false),
-      () -> class_1893.method_8510().method_8584().method_19717(false)
+      () -> MinecraftClient.method_8510().field_9657.method_20029().method_19717(false),
+      () -> MinecraftClient.method_8510().method_8584().method_19717(false)
    );
    public static final class_6160 field_27323 = new class_6160("translucent_target", () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().field_9657.method_20010().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().field_9657.method_20010().method_19717(false);
       }
    }, () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().method_8584().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().method_8584().method_19717(false);
       }
    });
    public static final class_6160 field_27312 = new class_6160("particles_target", () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().field_9657.method_20096().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().field_9657.method_20096().method_19717(false);
       }
    }, () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().method_8584().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().method_8584().method_19717(false);
       }
    });
    public static final class_6160 field_27313 = new class_6160("weather_target", () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().field_9657.method_20095().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().field_9657.method_20095().method_19717(false);
       }
    }, () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().method_8584().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().method_8584().method_19717(false);
       }
    });
    public static final class_6160 field_27300 = new class_6160("clouds_target", () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().field_9657.method_20091().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().field_9657.method_20091().method_19717(false);
       }
    }, () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().method_8584().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().method_8584().method_19717(false);
       }
    });
    public static final class_6160 field_27317 = new class_6160("item_entity_target", () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().field_9657.method_20076().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().field_9657.method_20076().method_19717(false);
       }
    }, () -> {
-      if (class_1893.method_8497()) {
-         class_1893.method_8510().method_8584().method_19717(false);
+      if (MinecraftClient.method_8497()) {
+         MinecraftClient.method_8510().method_8584().method_19717(false);
       }
    });
    public static final class_8315 field_27279 = new class_8315(OptionalDouble.of(1.0));

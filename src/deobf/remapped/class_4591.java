@@ -64,7 +64,7 @@ public abstract class class_4591 extends class_266 {
    }
 
    @Override
-   public void method_1191(class_1893 var1, int var2, int var3) {
+   public void method_1191(MinecraftClient var1, int var2, int var3) {
       String var6 = this.field_22318.method_8246();
       this.method_1164(var1, var2, var3);
       this.field_22318.method_8281(var6);

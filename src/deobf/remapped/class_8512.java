@@ -7,7 +7,7 @@ import java.util.Comparator;
 public class class_8512 extends class_8374<class_5463> {
    private static String[] field_43572;
 
-   public class_8512(class_3231 var1, class_1893 var2) {
+   public class_8512(class_3231 var1, MinecraftClient var2) {
       super(var2, var1.field_941, var1.field_940, 32, var1.field_940 - 64, 10);
       this.field_43571 = var1;
       ObjectArrayList var5 = new ObjectArrayList(class_6234.field_31829.iterator());

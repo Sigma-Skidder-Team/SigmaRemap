@@ -3,7 +3,7 @@ package remapped;
 public abstract class class_8374<E extends class_4686<E>> extends class_7983<E> {
    private boolean field_42873;
 
-   public class_8374(class_1893 var1, int var2, int var3, int var4, int var5, int var6) {
+   public class_8374(MinecraftClient var1, int var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
    }
 

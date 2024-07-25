@@ -44,13 +44,13 @@ public class class_3320 {
       long var3 = System.currentTimeMillis() - field_16402;
       if (SigmaMainClass.method_3328().method_3322() != null && var3 > 992120L) {
          if (SigmaMainClass.method_3328().method_3322().field_4416 == null || SigmaMainClass.method_3328().method_3322().field_4416.method_22227() == null) {
-            class_1893.method_8510().field_9596.method_19722();
-            class_1893.method_8510().field_9577.field_45558 = false;
+            MinecraftClient.method_8510().field_9596.method_19722();
+            MinecraftClient.method_8510().field_9577.field_45558 = false;
          } else if (SigmaMainClass.method_3328().method_3322().field_4416.method_22227().method_22175() != null) {
             String var5 = SigmaMainClass.method_3328().method_3322().field_4416.method_22227().method_22175().getHostName();
             if (var5.split("\\.").length != 3 || !var5.split("\\.")[1].equals("sigmaclient")) {
-               class_1893.method_8510().field_9596.method_19722();
-               class_1893.method_8510().field_9577.field_45558 = false;
+               MinecraftClient.method_8510().field_9596.method_19722();
+               MinecraftClient.method_8510().field_9577.field_45558 = false;
             }
          }
       }

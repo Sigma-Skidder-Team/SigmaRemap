@@ -91,7 +91,7 @@ public class class_6086 extends class_1859 {
             ((class_9128)var4.get(0)).method_41999();
          }
 
-         class_1893.method_8510().method_8609(null);
+         MinecraftClient.method_8510().method_8609(null);
       }
    }
 

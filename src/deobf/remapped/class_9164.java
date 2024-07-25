@@ -6,7 +6,7 @@ import java.util.Objects;
 public class class_9164 {
    private static final class_3581 field_46903 = class_3581.method_16732(new class_4639("textures/map/map_background.png"));
    private static final class_3581 field_46896 = class_3581.method_16732(new class_4639("textures/map/map_background_checkerboard.png"));
-   private final class_1893 field_46897;
+   private final MinecraftClient field_46897;
    private class_6098 field_46899 = class_6098.field_31203;
    private class_6098 field_46898 = class_6098.field_31203;
    private float field_46907;
@@ -16,7 +16,7 @@ public class class_9164 {
    private final class_6122 field_46904;
    private final class_8765 field_46901;
 
-   public class_9164(class_1893 var1) {
+   public class_9164(MinecraftClient var1) {
       this.field_46897 = var1;
       this.field_46904 = var1.method_8587();
       this.field_46901 = var1.method_8511();

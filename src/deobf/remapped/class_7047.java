@@ -5,7 +5,7 @@ public class class_7047 {
    private double field_36390;
    private double field_36391;
    private double field_36389;
-   public static class_1893 field_36392 = class_1893.method_8510();
+   public static MinecraftClient field_36392 = MinecraftClient.method_8510();
    public class_8670 field_36387;
    private static class_8571[] field_36388 = new class_8571[]{
       new class_8571(1.0, 0.0, 0.0),
@@ -182,7 +182,7 @@ public class class_7047 {
 
    public boolean method_32371(class_1331 var1) {
       return !this.field_36387.field_44466.contains(var1.method_6077())
-         ? class_1893.method_8510().field_9601.method_28262(var1).method_8324(field_36392.field_9601, var1).method_19485()
+         ? MinecraftClient.method_8510().field_9601.method_28262(var1).method_8324(field_36392.field_9601, var1).method_19485()
          : true;
    }
 
@@ -192,7 +192,7 @@ public class class_7047 {
 
    public boolean method_32365(class_1331 var1) {
       if (!this.field_36387.field_44466.contains(this.method_32355().method_6077())) {
-         class_4190 var4 = class_1893.method_8510().field_9601.method_28262(var1).method_8324(field_36392.field_9601, var1);
+         class_4190 var4 = MinecraftClient.method_8510().field_9601.method_28262(var1).method_8324(field_36392.field_9601, var1);
          if (var4.method_19485()) {
             return false;
          } else {

@@ -6,7 +6,7 @@ public class class_9782 {
    public class_3223 field_49649;
    public int field_49646;
    public class_8145 field_49648;
-   public class_1893 field_49645 = class_1893.method_8510();
+   public MinecraftClient field_49645 = MinecraftClient.method_8510();
 
    public class_9782() {
       this.field_49649 = new class_3223();

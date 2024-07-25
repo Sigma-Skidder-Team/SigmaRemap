@@ -284,7 +284,7 @@ public class class_6416 {
       class_3581 var4 = method_29330(var0);
       if (var4 != class_3581.method_16762()) {
          return class_5276.method_24083();
-      } else if (class_1893.method_8497()) {
+      } else if (MinecraftClient.method_8497()) {
          return !var1 ? class_5276.method_24076() : class_5276.method_24072();
       } else {
          return class_5276.method_24072();

@@ -44,7 +44,7 @@ public class class_7240 extends class_4117 {
                         .<class_8490>thenApply(var0 -> class_8490.field_43499);
                      return var10.<class_8490>handle((var1x, var2) -> {
                         if (var2 != null && !(var2 instanceof CancellationException) && !(var2 instanceof InterruptedException)) {
-                           class_1893.method_8510().method_8555(class_159.method_643(var2, "Rendering chunk"));
+                           MinecraftClient.method_8510().method_8555(class_159.method_643(var2, "Rendering chunk"));
                         }
 
                         return !this.field_20070.get() ? class_8490.field_43498 : class_8490.field_43499;

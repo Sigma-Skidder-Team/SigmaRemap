@@ -12,7 +12,7 @@ public class class_895 extends class_8374<class_6635> {
    private static final ITextComponent field_4603 = new TranslationTextComponent("pack.incompatible.confirm.title");
    private final ITextComponent field_4600;
 
-   public class_895(class_1893 var1, int var2, int var3, ITextComponent var4) {
+   public class_895(MinecraftClient var1, int var2, int var3, ITextComponent var4) {
       super(var1, var2, var3, 32, var3 - 55 + 4, 36);
       this.field_4600 = var4;
       this.field_40880 = false;

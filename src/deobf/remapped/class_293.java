@@ -128,7 +128,7 @@ public class class_293 {
 
    public static void method_1322(class_7941 var0, class_9071 var1, int var2, float var3, long var4) {
       if (class_6588.field_33846 > 0 && --class_6588.field_33861 <= 0) {
-         class_1893 var8 = class_1893.method_8510();
+         MinecraftClient var8 = MinecraftClient.method_8510();
          var8.method_8562().method_16050("shadow pass");
          class_4316 var9 = var8.field_9657;
          class_6588.field_33945 = true;
@@ -361,7 +361,7 @@ public class class_293 {
       }
    }
 
-   public static void method_1309(class_9071 var0, class_1893 var1, float var2) {
+   public static void method_1309(class_9071 var0, MinecraftClient var1, float var2) {
       var0.method_41643(
          var1.field_9601,
          (class_8145)(var1.method_8516() != null ? var1.method_8516() : var1.field_9632),

@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_7668 extends class_2269 {
-   private final class_1893 field_38987 = class_1893.method_8510();
+   private final MinecraftClient field_38987 = MinecraftClient.method_8510();
 
    @Override
    public void method_21644(class_7966 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {

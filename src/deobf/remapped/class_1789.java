@@ -114,7 +114,7 @@ public class class_1789 extends class_4232 {
                      boolean var14 = false;
 
                      try {
-                        URI var15 = new File(this.field_943.field_9575, "shaderpacks").toURI();
+                        URI var15 = new File(this.field_943.runDirectory, "shaderpacks").toURI();
                         class_9665.method_44667().method_37582(var15);
                      } catch (Throwable var10) {
                         var10.printStackTrace();
@@ -283,7 +283,7 @@ public class class_1789 extends class_4232 {
       this.field_9152--;
    }
 
-   public class_1893 method_7969() {
+   public MinecraftClient method_7969() {
       return this.field_943;
    }
 

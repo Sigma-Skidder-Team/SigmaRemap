@@ -226,8 +226,8 @@ public class class_7401 extends class_9128 {
 
    public boolean method_33702() {
       return this.field_37780
-         && class_1893.method_8510().field_9632.method_26446() != null
-         && class_1893.method_8510().field_9632.method_26446().method_27960() instanceof class_2235;
+         && MinecraftClient.method_8510().field_9632.method_26446() != null
+         && MinecraftClient.method_8510().field_9632.method_26446().method_27960() instanceof class_2235;
    }
 
    @Override

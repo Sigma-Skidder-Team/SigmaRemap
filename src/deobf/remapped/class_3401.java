@@ -13,7 +13,7 @@ public class class_3401 extends class_7114 {
 
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
-      class_1893 var7 = class_1893.method_8510();
+      MinecraftClient var7 = MinecraftClient.method_8510();
       this.method_15715(var1, var7.method_8577());
       class_531.method_2587(this.field_16749, this.field_16747.field_945, this.field_36670 + 5, this.field_36674 + 5);
       if (this.field_16748) {

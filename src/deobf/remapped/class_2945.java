@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.client.main.Main;
 
 public final class class_2945 extends Thread {
-   public class_2945(String var1, class_1893 var2) {
+   public class_2945(String var1, MinecraftClient var2) {
       super(var1);
       this.field_14368 = var2;
    }

@@ -132,7 +132,7 @@ public class class_6707 extends class_266 {
       super.method_6767(var1, var2, var3, var4);
    }
 
-   public static void method_30761(class_1893 var0, List<Path> var1, Path var2) {
+   public static void method_30761(MinecraftClient var0, List<Path> var1, Path var2) {
       MutableBoolean var5 = new MutableBoolean();
       var1.forEach(var2x -> {
          try (Stream var5x = Files.walk(var2x)) {

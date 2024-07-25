@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 public abstract class class_5676 implements class_1602 {
-   public static final class_1893 field_28769 = class_1893.method_8510();
+   public static final MinecraftClient field_28769 = MinecraftClient.method_8510();
    private boolean field_28766 = true;
    public String field_28768;
    public String field_28767;

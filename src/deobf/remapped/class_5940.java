@@ -113,7 +113,7 @@ public class class_5940 extends class_2612 {
 
    @Override
    public void method_32178(float var1) {
-      float var4 = Math.min(1.0F, 0.21F * (60.0F / (float)class_1893.method_8501()));
+      float var4 = Math.min(1.0F, 0.21F * (60.0F / (float) MinecraftClient.method_8501()));
 
       for (class_8046 var6 : this.field_30296) {
          if (!var6.method_1535()) {

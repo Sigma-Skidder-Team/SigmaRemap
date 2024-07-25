@@ -20,7 +20,7 @@ public abstract class class_4117 implements Comparable<class_4117> {
       this.field_20070 = new AtomicBoolean(false);
       this.field_20072 = var3;
       if (var2 != null) {
-         this.field_20071 = class_4093.method_18931(class_1893.method_8510().field_9601, var2);
+         this.field_20071 = class_4093.method_18931(MinecraftClient.method_8510().field_9601, var2);
       } else {
          this.field_20071 = Collections.<class_1331, class_1488>emptyMap();
       }

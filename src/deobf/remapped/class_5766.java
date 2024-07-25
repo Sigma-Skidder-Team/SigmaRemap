@@ -31,7 +31,7 @@ public class class_5766 extends class_266 {
    }
 
    @Override
-   public void method_1191(class_1893 var1, int var2, int var3) {
+   public void method_1191(MinecraftClient var1, int var2, int var3) {
       String var6 = this.field_29142.method_8246();
       this.method_1164(var1, var2, var3);
       this.method_26070(var6);

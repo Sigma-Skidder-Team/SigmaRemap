@@ -10,13 +10,13 @@ public class class_9205 extends class_2089 implements class_1463, class_5888 {
    private boolean field_47098;
    private int field_47090;
    private int field_47094;
-   private class_1893 field_47100;
+   private MinecraftClient field_47100;
    private class_7735 field_47093;
    private class_8932<?> field_47097;
    private float field_47092;
    private boolean field_47091;
 
-   public void method_42465(class_1893 var1, class_7735 var2, int var3, int var4, int var5, int var6, float var7) {
+   public void method_42465(MinecraftClient var1, class_7735 var2, int var3, int var4, int var5, int var6, float var7) {
       this.field_47100 = var1;
       this.field_47093 = var2;
       if (var1.field_9632.field_3874 instanceof class_8383) {

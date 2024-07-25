@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class class_9448 {
    private static String[] field_48222;
-   public class_1893 field_48220 = class_1893.method_8510();
+   public MinecraftClient field_48220 = MinecraftClient.method_8510();
    public final Class<? extends class_6414> field_48221;
 
    public class_9448(Class<? extends class_6414> var1) {

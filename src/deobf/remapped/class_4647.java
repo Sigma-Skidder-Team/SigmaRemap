@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_4647 extends class_2596 {
-   private static class_1893 field_22680 = class_1893.method_8510();
+   private static MinecraftClient field_22680 = MinecraftClient.method_8510();
    private static class_2440 field_22681;
    private static boolean field_22678 = true;
    private class_4098 field_22679;
@@ -42,7 +42,7 @@ public class class_4647 extends class_2596 {
 
    @Override
    public int method_11773() {
-      return class_1893.method_8501();
+      return MinecraftClient.method_8501();
    }
 
    @Override

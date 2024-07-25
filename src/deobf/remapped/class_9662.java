@@ -14,7 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
 public final class class_9662 extends class_4785<class_9662> implements AutoCloseable {
-   private final class_1893 field_49207;
+   private final MinecraftClient field_49207;
    private final class_7899 field_49213;
    private final class_460 field_49209;
    private final class_4639 field_49211;
@@ -26,7 +26,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       this.field_49215 = var1;
       this.field_49213 = var2.method_37656();
       this.field_49209 = var3;
-      this.field_49207 = class_1893.method_8510();
+      this.field_49207 = MinecraftClient.method_8510();
       String var6 = var3.method_2203();
       this.field_49211 = new class_4639(
          "minecraft", "worlds/" + class_9665.method_44678(var6, class_4639::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var6) + "/icon"
@@ -234,8 +234,8 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       class_7522 var3 = class_6322.method_28810();
 
       try (
-         class_3676 var4 = this.field_49207.method_8591().method_44633(this.field_49209.method_2203());
-         class_4266 var6 = this.field_49207.method_8572(var3, class_1893::method_8582, class_1893::method_8527, false, var4);
+              class_3676 var4 = this.field_49207.method_8591().method_44633(this.field_49209.method_2203());
+              class_4266 var6 = this.field_49207.method_8572(var3, MinecraftClient::method_8582, MinecraftClient::method_8527, false, var4);
       ) {
          class_6292 var8 = var6.method_19864().method_25699();
          class_2805 var9 = var8.method_28713();

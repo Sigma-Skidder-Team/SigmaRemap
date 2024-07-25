@@ -16,7 +16,7 @@ public class class_4141 {
       this.field_20152 = var4;
    }
 
-   public class_5217 method_19218() {
+   public class_5217 getResourceIndex() {
       return (class_5217)(this.field_20152 != null ? new class_5217(this.field_20151, this.field_20152) : new class_3125(this.field_20151));
    }
 }

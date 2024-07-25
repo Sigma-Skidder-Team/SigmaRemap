@@ -71,7 +71,7 @@ public class class_5787 extends class_9128 {
             }
 
             if (SigmaMainClass.method_3328().method_3299().method_31001() != null && SigmaMainClass.method_3328().method_3299().method_31001().method_32121()) {
-               for (class_5916 var14 : class_1893.method_8510().field_9577.field_45395) {
+               for (class_5916 var14 : MinecraftClient.method_8510().field_9577.field_45395) {
                   var14.field_30024 = false;
                }
 

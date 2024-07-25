@@ -497,7 +497,7 @@ public class class_6577 extends class_266 {
    }
 
    @Nullable
-   public static Path method_30063(Path var0, class_1893 var1) {
+   public static Path method_30063(Path var0, MinecraftClient var1) {
       MutableObject var4 = new MutableObject();
 
       try (Stream var5 = Files.walk(var0)) {

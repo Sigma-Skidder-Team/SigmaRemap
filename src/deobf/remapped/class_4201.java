@@ -18,7 +18,7 @@ public class class_4201 implements class_6406 {
       this(var1, var2, method_19554(var3), 160);
    }
 
-   public static class_4201 method_19556(class_1893 var0, class_200 var1, ITextComponent var2, ITextComponent var3) {
+   public static class_4201 method_19556(MinecraftClient var0, class_200 var1, ITextComponent var2, ITextComponent var3) {
       class_9854 var6 = var0.field_9668;
       List var7 = var6.method_45391(var3, 200);
       int var8 = Math.max(200, var7.stream().mapToInt(var6::method_45400).max().orElse(200));
@@ -115,15 +115,15 @@ public class class_4201 implements class_6406 {
       }
    }
 
-   public static void method_19563(class_1893 var0, String var1) {
+   public static void method_19563(MinecraftClient var0, String var1) {
       method_19559(var0.method_8519(), class_200.field_670, new TranslationTextComponent("selectWorld.access_failure"), new StringTextComponent(var1));
    }
 
-   public static void method_19560(class_1893 var0, String var1) {
+   public static void method_19560(MinecraftClient var0, String var1) {
       method_19559(var0.method_8519(), class_200.field_670, new TranslationTextComponent("selectWorld.delete_failure"), new StringTextComponent(var1));
    }
 
-   public static void method_19555(class_1893 var0, String var1) {
+   public static void method_19555(MinecraftClient var0, String var1) {
       method_19559(var0.method_8519(), class_200.field_668, new TranslationTextComponent("pack.copyFailure"), new StringTextComponent(var1));
    }
 }

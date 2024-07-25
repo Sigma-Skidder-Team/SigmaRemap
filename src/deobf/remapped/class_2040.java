@@ -4,7 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_2040 extends class_446 {
    private static String[] field_10342;
-   public class_1893 field_10344 = class_1893.method_8510();
+   public MinecraftClient field_10344 = MinecraftClient.method_8510();
    public class_4655 field_10343;
    public class_3223 field_10345 = new class_3223();
    public int field_10341;

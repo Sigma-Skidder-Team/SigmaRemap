@@ -45,7 +45,7 @@ public class class_7542 implements class_9720 {
    }
 
    private static class_4066 method_34345() {
-      return class_1893.method_8510().field_9577.field_45459;
+      return MinecraftClient.method_8510().field_9577.field_45459;
    }
 
    private void method_34342(boolean var1, String var2) {
@@ -59,7 +59,7 @@ public class class_7542 implements class_9720 {
    public void method_34348(class_4066 var1) {
       this.method_34347();
       this.field_38484.say(new TranslationTextComponent("options.narrator").appendString(" : ").append(var1.method_18746()).getString(), true);
-      class_9184 var4 = class_1893.method_8510().method_8519();
+      class_9184 var4 = MinecraftClient.method_8510().method_8519();
       if (!this.field_38484.active()) {
          class_4201.method_19562(
             var4, class_200.field_666, new TranslationTextComponent("narrator.toast.disabled"), new TranslationTextComponent("options.narrator.notavailable")

@@ -16,12 +16,12 @@ import org.apache.logging.log4j.Logger;
 
 public class class_2973 implements class_2995 {
    private static final Logger field_14616 = LogManager.getLogger();
-   private final class_1893 field_14620;
+   private final MinecraftClient field_14620;
    private final Map<class_1331, class_7942> field_14615 = Maps.newHashMap();
    private final Map<UUID, class_6388> field_14617 = Maps.newHashMap();
    private UUID field_14619;
 
-   public class_2973(class_1893 var1) {
+   public class_2973(MinecraftClient var1) {
       this.field_14620 = var1;
    }
 

@@ -81,6 +81,6 @@ public class class_6906<T extends class_1080> extends class_7067<T> {
    }
 
    public void method_31646(T var1, float var2, class_2522 var3, class_7966 var4, class_2565 var5, int var6) {
-      class_1893.method_8510().method_8505().method_3713(var3, var4, var5, var6, class_5367.field_27381);
+      MinecraftClient.method_8510().method_8505().method_3713(var3, var4, var5, var6, class_5367.field_27381);
    }
 }

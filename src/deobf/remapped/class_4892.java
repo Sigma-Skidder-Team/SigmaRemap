@@ -9,7 +9,7 @@ public class class_4892 extends class_4855<class_1942> {
    private final class_8590 field_24312;
    private int field_24310;
 
-   public class_4892(class_8590 var1, class_1893 var2) {
+   public class_4892(class_8590 var1, MinecraftClient var2) {
       super(var2, var1.field_941 + 45, var1.field_940, 43, var1.field_940 - 32, 20);
       this.field_24312 = var1;
       class_5916[] var5 = (class_5916[])ArrayUtils.clone(var2.field_9577.field_45395);

@@ -26,8 +26,8 @@ public class class_5603 extends class_266 {
    }
 
    private class_4666 method_25423() {
-      class_4666 var3 = class_1893.method_8510().field_9647.method_42158();
-      class_4666 var4 = class_1893.method_8510().field_9647.method_42132();
+      class_4666 var3 = MinecraftClient.method_8510().field_9647.method_42158();
+      class_4666 var4 = MinecraftClient.method_8510().field_9647.method_42132();
       if (var4 == class_4666.field_22762) {
          if (var3 != class_4666.field_22761) {
             var4 = class_4666.field_22761;
@@ -86,7 +86,7 @@ public class class_5603 extends class_266 {
       method_25424(this.field_943, this.field_28415);
    }
 
-   private static void method_25424(class_1893 var0, Optional<class_531> var1) {
+   private static void method_25424(MinecraftClient var0, Optional<class_531> var1) {
       if (var0.field_9647 != null && var0.field_9632 != null && var1.isPresent()) {
          Optional var4 = class_531.method_2581(var0.field_9647.method_42158());
          class_531 var5 = (class_531)var1.get();

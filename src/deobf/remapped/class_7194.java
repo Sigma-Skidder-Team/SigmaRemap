@@ -2,7 +2,7 @@ package remapped;
 
 public class class_7194 {
    private static String[] field_36987;
-   public static class_1893 field_36996 = class_1893.method_8510();
+   public static MinecraftClient field_36996 = MinecraftClient.method_8510();
    private static final int field_36990 = 1 + class_9299.method_42798(class_9299.method_42801(30000000));
    private static final int field_36988 = field_36990;
    private static final int field_36991 = 64 - field_36990 - field_36988;

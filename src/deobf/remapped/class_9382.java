@@ -33,7 +33,7 @@ public class class_9382 extends class_6906<class_2048> {
          class_6588.method_30135(1.0F, 1.0F, 1.0F, 0.5F);
       }
 
-      class_1893.method_8510().method_8505().method_3713(var0, var1, var2, var3, var7);
+      MinecraftClient.method_8510().method_8505().method_3713(var0, var1, var2, var3, var7);
       if (class_3111.method_14424()) {
          class_6588.method_30135(0.0F, 0.0F, 0.0F, 0.0F);
       }

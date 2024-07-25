@@ -53,7 +53,7 @@ public class class_6196 extends class_2596 {
    public void method_29509(int var1) {
       super.method_29509(var1);
       if (var1 == 256) {
-         class_1893.method_8510().method_8609(new class_4710());
+         MinecraftClient.method_8510().method_8609(new class_4710());
       }
    }
 }

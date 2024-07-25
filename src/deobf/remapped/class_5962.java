@@ -80,7 +80,7 @@ public class class_5962 implements AutoCloseable {
                .method_35735();
             var1.method_36064();
             if (var14.method_14847() != null) {
-               class_9854 var23 = class_1893.method_8510().field_9668;
+               class_9854 var23 = MinecraftClient.method_8510().field_9668;
                ITextComponent var24 = var14.method_14847();
                float var25 = (float)var23.method_45379(var24);
                float var26 = class_9299.method_42828(25.0F / var25, 0.0F, 0.6666667F);

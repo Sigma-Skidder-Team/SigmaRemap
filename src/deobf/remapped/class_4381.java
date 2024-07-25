@@ -6,11 +6,11 @@ import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_4381 extends class_2089 implements class_4440 {
-   private final class_1893 field_21493;
+   private final MinecraftClient field_21493;
    private final List<class_7064> field_21494 = Lists.newArrayList();
    private boolean field_21492;
 
-   public class_4381(class_1893 var1) {
+   public class_4381(MinecraftClient var1) {
       this.field_21493 = var1;
    }
 

@@ -25,7 +25,7 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_5524 implements class_3026 {
+public class ClientBuiltinResourcePackProvider implements class_3026 {
    private static final Logger field_28115 = LogManager.getLogger();
    private static final Pattern field_28112 = Pattern.compile("^[a-fA-F0-9]{40}$");
    private final class_599 field_28120;
@@ -35,7 +35,7 @@ public class class_5524 implements class_3026 {
    private CompletableFuture<?> field_28113;
    private class_5522 field_28118;
 
-   public class_5524(File var1, class_5217 var2) {
+   public ClientBuiltinResourcePackProvider(File var1, class_5217 var2) {
       this.field_28117 = var1;
       this.field_28114 = var2;
       this.field_28120 = new class_2229(var2);
@@ -64,8 +64,8 @@ public class class_5524 implements class_3026 {
 
    private static Map<String, String> method_25053() {
       HashMap var2 = Maps.newHashMap();
-      var2.put("X-Minecraft-Username", class_1893.method_8510().method_8502().method_5366());
-      var2.put("X-Minecraft-UUID", class_1893.method_8510().method_8502().method_5367());
+      var2.put("X-Minecraft-Username", MinecraftClient.method_8510().method_8502().method_5366());
+      var2.put("X-Minecraft-UUID", MinecraftClient.method_8510().method_8502().method_5367());
       var2.put("X-Minecraft-Version", class_7665.method_34674().getName());
       var2.put("X-Minecraft-Version-ID", class_7665.method_34674().getId());
       var2.put("X-Minecraft-Pack-Format", String.valueOf(class_7665.method_34674().getPackVersion()));
@@ -89,7 +89,7 @@ public class class_5524 implements class_3026 {
          } else {
             class_7152 var9 = new class_7152();
             Map var10 = method_25053();
-            class_1893 var11 = class_1893.method_8510();
+            MinecraftClient var11 = MinecraftClient.method_8510();
             var11.method_34465(() -> var11.method_8609(var9));
             var8 = class_828.method_3612(var7, var1, var10, 104857600, var9, var11.method_8607());
          }
@@ -132,7 +132,7 @@ public class class_5524 implements class_3026 {
          this.field_28113 = null;
          if (this.field_28118 != null) {
             this.field_28118 = null;
-            class_1893.method_8510().method_8488();
+            MinecraftClient.method_8510().method_8488();
          }
       } finally {
          this.field_28119.unlock();
@@ -195,7 +195,7 @@ public class class_5524 implements class_3026 {
          true,
          var2
       );
-      return class_1893.method_8510().method_8488();
+      return MinecraftClient.method_8510().method_8488();
    }
 
    @Nullable

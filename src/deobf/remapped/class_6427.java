@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class class_6427 {
    private static String[] field_32836;
-   private class_1893 field_32834 = class_1893.method_8510();
+   private MinecraftClient field_32834 = MinecraftClient.method_8510();
    private class_4489 field_32835;
    private HashMap<String, class_4828> field_32837 = new HashMap<String, class_4828>();
 

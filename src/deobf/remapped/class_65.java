@@ -8,7 +8,7 @@ public class class_65 {
    private final List<class_2069> field_79 = Lists.newArrayListWithCapacity(20);
    private class_2069 field_82;
    private final class_9205 field_72 = new class_9205();
-   private class_1893 field_81;
+   private MinecraftClient field_81;
    private final List<class_5140> field_76 = Lists.newArrayList();
    private List<class_7735> field_78;
    private class_5986 field_73;
@@ -25,7 +25,7 @@ public class class_65 {
       }
    }
 
-   public void method_49(class_1893 var1, int var2, int var3) {
+   public void method_49(MinecraftClient var1, int var2, int var3) {
       this.field_81 = var1;
       this.field_77 = var1.field_9632.method_27334();
 
@@ -172,7 +172,7 @@ public class class_65 {
       }
    }
 
-   public class_1893 method_48() {
+   public MinecraftClient method_48() {
       return this.field_81;
    }
 

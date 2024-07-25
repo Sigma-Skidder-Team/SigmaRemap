@@ -36,7 +36,7 @@ public class class_4972 extends class_9128 {
             this.method_22854(new class_2034(var5.field_21788.field_13231, var5.field_21788.field_13229));
          }
 
-         if (var1.method_557() instanceof class_4808 && class_1893.method_8510().field_9601 != null) {
+         if (var1.method_557() instanceof class_4808 && MinecraftClient.method_8510().field_9601 != null) {
             class_4808 var6 = (class_4808)var1.method_557();
             this.method_22854(new class_2034(var6.method_22149(), var6.method_22151()));
          }

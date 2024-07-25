@@ -282,7 +282,7 @@ public class class_2524 {
    }
 
    private float method_11485(class_6486 var1) {
-      class_8145 var4 = class_1893.method_8510().method_8516();
+      class_8145 var4 = MinecraftClient.method_8510().method_8516();
       if (var4 != null) {
          class_1331 var5 = var4.method_37075();
          if (this.field_12521 != null) {

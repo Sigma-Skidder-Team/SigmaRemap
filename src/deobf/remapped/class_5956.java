@@ -38,7 +38,7 @@ public class class_5956 extends class_7038 {
                var10.method_9987(var5);
             }
          );
-      this.field_30363.method_32100((var0, var1x) -> class_1893.method_8510().method_8609(new class_1876()));
+      this.field_30363.method_32100((var0, var1x) -> MinecraftClient.method_8510().method_8609(new class_1876()));
       this.field_30366.method_32100((var1x, var2x) -> var10.method_9985());
       this.field_30359.method_32100((var1x, var2x) -> var10.method_9980());
       this.field_30367.method_32100((var1x, var2x) -> {

@@ -16,7 +16,7 @@ public class SigmaMainClass {
    public static String field_3964 = "Sigma Production";
    public static final boolean field_3956 = false;
    private static SigmaMainClass field_3982;
-   private static class_1893 field_3950 = class_1893.method_8510();
+   private static MinecraftClient field_3950 = MinecraftClient.method_8510();
    private final File field_3975 = new File("sigma5");
    private class_1293 field_3974;
    private boolean field_3962 = true;

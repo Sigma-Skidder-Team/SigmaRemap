@@ -44,7 +44,7 @@ public class class_6809 {
                         var13 = 16719904;
                      }
 
-                     class_9854 var14 = class_1893.method_8510().field_9668;
+                     class_9854 var14 = MinecraftClient.method_8510().field_9668;
                      var14.method_45390(var1, var12, (float)(var9.x + 5), (float)(var9.y + 5 + var15 * 11), var13);
                   }
                }

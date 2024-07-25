@@ -18,7 +18,7 @@ public class class_4934 extends class_7067<class_1453> {
             var4.method_36063();
             class_1331 var11 = new class_1331(var1.method_37302(), var1.method_37241().field_19939, var1.method_37156());
             var4.method_36065(-0.5, 0.0, -0.5);
-            class_856 var12 = class_1893.method_8510().method_8505();
+            class_856 var12 = MinecraftClient.method_8510().method_8505();
             var12.method_3717()
                .method_10103(
                   var10,

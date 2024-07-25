@@ -7,14 +7,14 @@ public class class_6343 extends class_2269 {
    private static final ITextComponent field_32388 = new TranslationTextComponent("lanServer.title");
    private static final ITextComponent field_32387 = new TranslationTextComponent("selectServer.hiddenAddress");
    private final class_4145 field_32390;
-   public final class_1893 field_32392;
+   public final MinecraftClient field_32392;
    public final class_7295 field_32391;
    private long field_32393;
 
    public class_6343(class_4145 var1, class_7295 var2) {
       this.field_32390 = var1;
       this.field_32391 = var2;
-      this.field_32392 = class_1893.method_8510();
+      this.field_32392 = MinecraftClient.method_8510();
    }
 
    @Override

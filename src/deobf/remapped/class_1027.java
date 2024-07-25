@@ -40,7 +40,7 @@ public class class_1027 {
       )
       .<Style>map(Style.EMPTY::setFormatting)
       .collect(ImmutableList.toImmutableList());
-   private final class_1893 field_5692;
+   private final MinecraftClient field_5692;
    private final class_266 field_5699;
    private final class_1863 field_5698;
    private final class_9854 field_5697;
@@ -59,7 +59,7 @@ public class class_1027 {
    private boolean field_5691;
    private boolean field_5696;
 
-   public class_1027(class_1893 var1, class_266 var2, class_1863 var3, class_9854 var4, boolean var5, boolean var6, int var7, int var8, boolean var9, int var10) {
+   public class_1027(MinecraftClient var1, class_266 var2, class_1863 var3, class_9854 var4, boolean var5, boolean var6, int var7, int var8, boolean var9, int var10) {
       this.field_5692 = var1;
       this.field_5699 = var2;
       this.field_5698 = var3;

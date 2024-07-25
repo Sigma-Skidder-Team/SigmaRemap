@@ -256,7 +256,7 @@ public class class_8531 {
       }
 
       TarArchiveInputStream var136 = null;
-      File var138 = new File(class_1893.method_8510().field_9575.getAbsolutePath(), "saves");
+      File var138 = new File(MinecraftClient.method_8510().runDirectory.getAbsolutePath(), "saves");
 
       try {
          var138.mkdir();

@@ -52,7 +52,7 @@ public class class_668 implements class_1200, class_1463 {
       this.field_3711 = var4;
    }
 
-   public void method_3068(class_6577 var1, class_1893 var2, class_9854 var3) {
+   public void method_3068(class_6577 var1, MinecraftClient var2, class_9854 var3) {
       this.field_3709 = var3;
       this.field_3707 = var1.field_941;
       this.field_3704 = new class_1863(this.field_3709, this.field_3707 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterSeed"));

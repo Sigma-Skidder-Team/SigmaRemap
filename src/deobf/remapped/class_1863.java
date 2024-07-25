@@ -229,16 +229,16 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
             this.method_8248(0);
             return true;
          } else if (class_266.method_1182(var1)) {
-            class_1893.method_8510().field_9600.method_38891(this.method_8280());
+            MinecraftClient.method_8510().field_9600.method_38891(this.method_8280());
             return true;
          } else if (class_266.method_1173(var1)) {
             if (this.field_9458) {
-               this.method_8268(class_1893.method_8510().field_9600.method_38883());
+               this.method_8268(MinecraftClient.method_8510().field_9600.method_38883());
             }
 
             return true;
          } else if (class_266.method_1166(var1)) {
-            class_1893.method_8510().field_9600.method_38891(this.method_8280());
+            MinecraftClient.method_8510().field_9600.method_38891(this.method_8280());
             if (this.field_9458) {
                this.method_8268("");
             }

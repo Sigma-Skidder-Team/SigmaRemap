@@ -129,7 +129,7 @@ public class class_2174 {
       int var11,
       class_1488 var12
    ) {
-      boolean var15 = class_1893.method_8541() && class_8835.method_40643(var3, var1, var4) == 0 && var2.method_33581();
+      boolean var15 = MinecraftClient.method_8541() && class_8835.method_40643(var3, var1, var4) == 0 && var2.method_33581();
       if (this.field_10837) {
          var12 = var2.method_16964(var1, var4, var3, var12);
       }

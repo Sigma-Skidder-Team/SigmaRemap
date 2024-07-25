@@ -11,10 +11,10 @@ import java.util.Map.Entry;
 
 public class class_4921 implements class_2995 {
    private static String[] field_25470;
-   private final class_1893 field_25469;
+   private final MinecraftClient field_25469;
    private final Map<Long, Map<class_1331, Integer>> field_25471 = Maps.newTreeMap(Ordering.natural().reverse());
 
-   public class_4921(class_1893 var1) {
+   public class_4921(MinecraftClient var1) {
       this.field_25469 = var1;
    }
 

@@ -14,11 +14,11 @@ public class class_7072 extends class_9128 {
          for (class_8145 var5 : class_7494.method_34088(class_314.method_1435())) {
             if (var5 != field_46692.field_9632 && !SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
                method_32571(
-                  var5.field_41754 + (var5.method_37302() - var5.field_41754) * (double)class_1893.method_8510().field_9616.field_32600,
+                  var5.field_41754 + (var5.method_37302() - var5.field_41754) * (double) MinecraftClient.method_8510().field_9616.field_32600,
                   var5.field_41713
                      + (double)var5.method_37074()
-                     + (var5.method_37309() - var5.field_41713) * (double)class_1893.method_8510().field_9616.field_32600,
-                  var5.field_41724 + (var5.method_37156() - var5.field_41724) * (double)class_1893.method_8510().field_9616.field_32600,
+                     + (var5.method_37309() - var5.field_41713) * (double) MinecraftClient.method_8510().field_9616.field_32600,
+                  var5.field_41724 + (var5.method_37156() - var5.field_41724) * (double) MinecraftClient.method_8510().field_9616.field_32600,
                   var5
                );
             }

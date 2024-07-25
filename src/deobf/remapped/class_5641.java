@@ -32,7 +32,7 @@ public class class_5641 extends class_9128 {
                   var13 *= -1.0;
                }
 
-               double var15 = 0.05 * (double)class_1893.method_8501() * (var13 + 1.0);
+               double var15 = 0.05 * (double) MinecraftClient.method_8501() * (var13 + 1.0);
                if (field_46692.field_9632.field_41755 > this.method_25542(var4)[1]) {
                   field_46692.field_9632.field_41755 = (float)((double)field_46692.field_9632.field_41755 - (var15 * var5 / 90.0 + Math.min(0.5, var7)));
                }

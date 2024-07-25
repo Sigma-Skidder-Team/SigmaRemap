@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 
 public class class_2740 {
    private static String[] field_13374;
-   private static final class_1893 field_13375 = class_1893.method_8510();
+   private static final MinecraftClient field_13375 = MinecraftClient.method_8510();
 
    public static boolean method_12342(int var0) {
       class_6098 var3 = field_13375.field_9632.field_3869.method_18878(var0).method_35898();

@@ -15,7 +15,7 @@ public class class_501 extends class_266 {
    private ITextComponent field_3118 = new TranslationTextComponent("connect.connecting");
    private long field_3122 = -1L;
 
-   public class_501(class_266 var1, class_1893 var2, class_2560 var3) {
+   public class_501(class_266 var1, MinecraftClient var2, class_2560 var3) {
       super(class_7542.field_38486);
       this.field_943 = var2;
       this.field_3116 = var1;
@@ -25,7 +25,7 @@ public class class_501 extends class_266 {
       this.method_2493(var6.method_37039(), var6.method_37038());
    }
 
-   public class_501(class_266 var1, class_1893 var2, String var3, int var4) {
+   public class_501(class_266 var1, MinecraftClient var2, String var3, int var4) {
       super(class_7542.field_38486);
       this.field_943 = var2;
       this.field_3116 = var1;

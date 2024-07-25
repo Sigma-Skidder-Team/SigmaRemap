@@ -7,10 +7,10 @@ import net.minecraft.util.text.ITextComponent;
 
 public class class_4736 extends class_2089 {
    private static final class_4639 field_22950 = new class_4639("textures/gui/bars.png");
-   private final class_1893 field_22948;
+   private final MinecraftClient field_22948;
    private final Map<UUID, class_5607> field_22947 = Maps.newLinkedHashMap();
 
-   public class_4736(class_1893 var1) {
+   public class_4736(MinecraftClient var1) {
       this.field_22948 = var1;
    }
 

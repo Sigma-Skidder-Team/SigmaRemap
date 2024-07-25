@@ -12,11 +12,11 @@ import javax.annotation.Nullable;
 
 public class class_4128 implements RunningGame {
    private static String[] field_20107;
-   private final class_1893 field_20105;
+   private final MinecraftClient field_20105;
    private final Launcher field_20104;
    private SessionEventListener field_20106 = SessionEventListener.NONE;
 
-   public class_4128(class_1893 var1) {
+   public class_4128(MinecraftClient var1) {
       this.field_20105 = var1;
       this.field_20104 = Bridge.getLauncher();
       if (this.field_20104 != null) {

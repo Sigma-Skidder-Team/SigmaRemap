@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class class_1322 {
-   private static class_1893 field_7279 = class_3111.method_14327();
+   private static MinecraftClient field_7279 = class_3111.method_14327();
    private static class_4717 field_7283 = null;
    private static class_3739[][] field_7281 = (class_3739[][])null;
    public static boolean field_7282 = method_6036();

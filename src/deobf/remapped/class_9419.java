@@ -2,10 +2,10 @@ package remapped;
 
 public final class class_9419 implements AutoCloseable {
    private static String[] field_48144;
-   private final class_1893 field_48143;
+   private final MinecraftClient field_48143;
    private final class_7962 field_48145;
 
-   public class_9419(class_1893 var1) {
+   public class_9419(MinecraftClient var1) {
       this.field_48143 = var1;
       this.field_48145 = new class_7962(class_2078::new);
    }

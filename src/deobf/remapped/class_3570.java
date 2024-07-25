@@ -29,7 +29,7 @@ public class class_3570 {
          int var4 = method_16599(var0, var1);
          class_3542.method_16446(var4);
       } else {
-         class_1893.method_8510().method_8577().method_35674(field_17475);
+         MinecraftClient.method_8510().method_8577().method_35674(field_17475);
       }
    }
 
@@ -45,7 +45,7 @@ public class class_3570 {
    }
 
    private static void method_16598(UUID var0) {
-      class_1893.method_8510().method_8577().method_35674(class_1512.method_6921(var0));
+      MinecraftClient.method_8510().method_8577().method_35674(class_1512.method_6921(var0));
    }
 
    private static void method_16597(String var0) {

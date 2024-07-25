@@ -804,9 +804,9 @@ public class class_3542 {
 
    @Deprecated
    public static void method_16430(Runnable var0) {
-      boolean var3 = class_1893.method_8497();
+      boolean var3 = MinecraftClient.method_8497();
       if (var3) {
-         class_8881 var4 = class_1893.method_8510().field_9577;
+         class_8881 var4 = MinecraftClient.method_8510().field_9577;
          class_4615 var5 = var4.field_45397;
          var4.field_45397 = class_4615.field_22437;
          var0.run();

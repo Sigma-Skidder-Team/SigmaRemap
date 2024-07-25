@@ -7,7 +7,7 @@ import java.util.List;
 import org.lwjgl.glfw.GLFWDropCallback;
 
 public class class_8671 {
-   private final class_1893 field_44499;
+   private final MinecraftClient field_44499;
    private boolean field_44481;
    private boolean field_44497;
    private boolean field_44488;
@@ -26,7 +26,7 @@ public class class_8671 {
    private double field_44491 = Double.MIN_VALUE;
    private boolean field_44496;
 
-   public class_8671(class_1893 var1) {
+   public class_8671(MinecraftClient var1) {
       this.field_44499 = var1;
    }
 
@@ -58,7 +58,7 @@ public class class_8671 {
 
          if (var1 == this.field_44499.method_8552().method_43181()) {
             boolean var16 = var4 == 1;
-            if (class_1893.field_9574 && var3 == 0) {
+            if (MinecraftClient.field_9574 && var3 == 0) {
                if (!var16) {
                   if (this.field_44486 > 0) {
                      var3 = 1;
@@ -146,7 +146,7 @@ public class class_8671 {
          class_1523 var9 = new class_1523(var5);
          SigmaMainClass.method_3328().method_3302().method_7914(var9);
          if (!var9.method_29716()) {
-            if (var1 == class_1893.method_8510().method_8552().method_43181()) {
+            if (var1 == MinecraftClient.method_8510().method_8552().method_43181()) {
                double var10 = (!this.field_44499.field_9577.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.field_9577.field_45578;
                if (this.field_44499.field_9610 == null) {
                   if (this.field_44499.field_9623 == null) {
@@ -213,7 +213,7 @@ public class class_8671 {
    }
 
    private void method_39839(long var1, double var3, double var5) {
-      if (var1 == class_1893.method_8510().method_8552().method_43181()) {
+      if (var1 == MinecraftClient.method_8510().method_8552().method_43181()) {
          if (this.field_44489) {
             this.field_44482 = var3;
             this.field_44493 = var5;
@@ -315,7 +315,7 @@ public class class_8671 {
 
    public void method_39834() {
       if (this.field_44499.method_8558() && !this.field_44496) {
-         if (!class_1893.field_9574) {
+         if (!MinecraftClient.field_9574) {
             class_5916.method_27065();
          }
 

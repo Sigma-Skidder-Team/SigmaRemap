@@ -17,7 +17,7 @@ public class class_2345 implements class_8147 {
 
    public class_8143 method_10748() {
       if (this.field_11712 == null) {
-         class_7889 var3 = class_1893.method_8510().method_8577();
+         class_7889 var3 = MinecraftClient.method_8510().method_8577();
          this.field_11712 = var3.method_35679(this.field_11714);
          if (this.field_11712 == null) {
             this.field_11712 = new class_1809(this.field_11714);

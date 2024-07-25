@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class class_1857 {
    private static String[] field_9423;
-   public class_1893 field_9415 = class_1893.method_8510();
+   public MinecraftClient field_9415 = MinecraftClient.method_8510();
    public List<class_1331> field_9420 = new ArrayList<class_1331>();
    public static List<class_8145> field_9416 = new ArrayList<class_8145>();
    public static int field_9414 = 0;

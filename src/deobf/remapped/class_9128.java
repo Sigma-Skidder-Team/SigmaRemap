@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 public abstract class class_9128 {
-   public static class_1893 field_46692 = class_1893.method_8510();
+   public static MinecraftClient field_46692 = MinecraftClient.method_8510();
    public String field_46702;
    public String field_46701;
    public class_5664 field_46696;
@@ -267,7 +267,7 @@ public abstract class class_9128 {
 
                if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
                   && SigmaMainClass.method_3328().method_3298().method_847(class_4221.class).method_42007("Sound")) {
-                  class_1893.method_8510().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.6F));
+                  MinecraftClient.method_8510().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.6F));
                }
             }
 
@@ -281,7 +281,7 @@ public abstract class class_9128 {
 
             if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
                && SigmaMainClass.method_3328().method_3298().method_847(class_4221.class).method_42007("Sound")) {
-               class_1893.method_8510().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
+               MinecraftClient.method_8510().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
             }
 
             this.method_42006();

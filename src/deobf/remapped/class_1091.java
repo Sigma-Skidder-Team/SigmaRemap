@@ -15,7 +15,7 @@ public class class_1091 {
    private static final class_7107 field_6020 = class_7107.method_32666(32, Style.EMPTY);
 
    private static String method_4785(String var0) {
-      return !class_1893.method_8510().field_9577.field_45554 ? TextFormatting.getTextWithoutFormattingCodes(var0) : var0;
+      return !MinecraftClient.method_8510().field_9577.field_45554 ? TextFormatting.getTextWithoutFormattingCodes(var0) : var0;
    }
 
    public static List<class_7107> method_4783(ITextProperties var0, int var1, class_9854 var2) {

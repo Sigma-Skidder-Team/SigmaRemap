@@ -17,7 +17,7 @@ public class class_7817 implements class_4439, class_7912 {
    private final List<class_7912> field_39660 = Lists.newArrayList();
 
    public class_7817() {
-      this(field_39661.sortedCopy(class_1893.method_8510().method_8614().method_4798()));
+      this(field_39661.sortedCopy(MinecraftClient.method_8510().method_8614().method_4798()));
    }
 
    public class_7817(Collection<class_753> var1) {
@@ -50,7 +50,7 @@ public class class_7817 implements class_4439, class_7912 {
 
    @Override
    public void method_35795(class_7966 var1, float var2, int var3) {
-      class_1893.method_8510().method_8577().method_35674(class_8368.field_42845);
+      MinecraftClient.method_8510().method_8577().method_35674(class_8368.field_42845);
       class_2089.method_9778(var1, 0, 0, 0.0F, 0.0F, 16, 16, 256, 256);
    }
 

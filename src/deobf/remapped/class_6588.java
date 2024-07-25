@@ -42,7 +42,7 @@ import org.lwjgl.opengl.GL32;
 import org.lwjgl.opengl.GLCapabilities;
 
 public class class_6588 {
-   public static class_1893 field_33837;
+   public static MinecraftClient field_33837;
    public static class_7941 field_33681;
    public static boolean field_33664 = false;
    public static boolean field_33648 = false;
@@ -343,8 +343,8 @@ public class class_6588 {
    public static final String field_33943 = "(internal)";
    public static final String field_33952 = "shaderpacks";
    public static final String field_33982 = "optionsshaders.txt";
-   public static final File field_33909 = new File(class_1893.method_8510().field_9575, "shaderpacks");
-   public static File field_33911 = new File(class_1893.method_8510().field_9575, "optionsshaders.txt");
+   public static final File field_33909 = new File(MinecraftClient.method_8510().runDirectory, "shaderpacks");
+   public static File field_33911 = new File(MinecraftClient.method_8510().runDirectory, "optionsshaders.txt");
    private static class_6843[] field_33658 = null;
    private static Set<String> field_33760 = null;
    public static class_8471[] field_33730 = null;
@@ -1427,7 +1427,7 @@ public class class_6588 {
 
    private static void method_30145(class_8591 var0, Properties var1) throws IOException {
       String var2 = "shaderpacks/" + var0.method_39507() + ".txt";
-      File var3 = new File(class_1893.method_8510().field_9575, var2);
+      File var3 = new File(MinecraftClient.method_8510().runDirectory, var2);
       if (var1.isEmpty()) {
          var3.delete();
       } else {
@@ -1466,7 +1466,7 @@ public class class_6588 {
    private static Properties method_30188(class_8591 var0) throws IOException {
       class_8407 var1 = new class_8407();
       String var2 = "shaderpacks/" + var0.method_39507() + ".txt";
-      File var3 = new File(class_1893.method_8510().field_9575, var2);
+      File var3 = new File(MinecraftClient.method_8510().runDirectory, var2);
       if (var3.exists() && var3.isFile() && var3.canRead()) {
          FileInputStream var4 = new FileInputStream(var3);
          var1.load(var4);
@@ -1656,10 +1656,10 @@ public class class_6588 {
       class_1910.method_8671(var2.toString());
    }
 
-   public static void method_30297(class_1893 var0) {
+   public static void method_30297(MinecraftClient var0) {
       method_30166();
       field_33837 = var0;
-      var0 = class_1893.method_8510();
+      var0 = MinecraftClient.method_8510();
       field_33895 = GL.getCapabilities();
       field_33589 = GL11.glGetString(7938);
       field_33717 = GL11.glGetString(7936);
@@ -3190,7 +3190,7 @@ public class class_6588 {
       }
    }
 
-   public static void method_30311(class_1893 var0, class_9071 var1, float var2, long var3) {
+   public static void method_30311(MinecraftClient var0, class_9071 var1, float var2, long var3) {
       method_30273("pre beginRender");
       method_30223(field_33837.field_9601);
       field_33837 = var0;

@@ -5,7 +5,7 @@ import java.net.UnknownHostException;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_4029 extends Thread {
-   public class_4029(class_7736 var1, String var2, String var3, int var4, class_1893 var5, class_7675 var6) {
+   public class_4029(class_7736 var1, String var2, String var3, int var4, MinecraftClient var5, class_7675 var6) {
       super(var2);
       this.field_19574 = var1;
       this.field_19573 = var3;

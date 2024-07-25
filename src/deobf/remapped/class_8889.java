@@ -25,7 +25,7 @@ public class class_8889 extends class_266 {
    }
 
    @Override
-   public void method_1164(class_1893 var1, int var2, int var3) {
+   public void method_1164(MinecraftClient var1, int var2, int var3) {
       super.method_1164(var1, var2, var3);
       UnmodifiableIterator var6 = this.field_45603.iterator();
 

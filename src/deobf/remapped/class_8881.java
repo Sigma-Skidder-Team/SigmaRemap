@@ -158,7 +158,7 @@ public class class_8881 {
       },
       this.field_45393
    );
-   public class_1893 field_45495;
+   public MinecraftClient field_45495;
    private final File field_45579;
    public class_423 field_45494 = class_423.field_1789;
    public boolean field_45567;
@@ -264,7 +264,7 @@ public class class_8881 {
    public class_5916 field_45548;
    private File field_45457;
 
-   public class_8881(class_1893 var1, File var2) {
+   public class_8881(MinecraftClient var1, File var2) {
       this.method_40876();
       this.field_45495 = var1;
       this.field_45579 = new File(var2, "options.txt");
@@ -2107,11 +2107,11 @@ public class class_8881 {
       }
 
       if (this.field_45397 == class_4615.field_22433) {
-         class_4316 var1 = class_1893.method_8510().field_9657;
+         class_4316 var1 = MinecraftClient.method_8510().field_9657;
          if (var1 != null) {
             class_4230 var2 = var1.method_20091();
             if (var2 != null) {
-               var2.method_19712(class_1893.field_9574);
+               var2.method_19712(MinecraftClient.field_9574);
             }
          }
       }

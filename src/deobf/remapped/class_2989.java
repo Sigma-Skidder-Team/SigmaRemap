@@ -10,11 +10,11 @@ import java.util.UUID;
 public class class_2989 extends class_4855<class_5530> {
    private static String[] field_14693;
    private final class_1840 field_14696;
-   private final class_1893 field_14695;
+   private final MinecraftClient field_14695;
    private final List<class_5530> field_14694 = Lists.newArrayList();
    private String field_14697;
 
-   public class_2989(class_1840 var1, class_1893 var2, int var3, int var4, int var5, int var6, int var7) {
+   public class_2989(class_1840 var1, MinecraftClient var2, int var3, int var4, int var5, int var6, int var7) {
       super(var2, var3, var4, var5, var6, var7);
       this.field_14696 = var1;
       this.field_14695 = var2;

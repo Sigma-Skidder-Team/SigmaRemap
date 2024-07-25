@@ -133,7 +133,7 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
    }
 
    private static void method_35681(Runnable var0) {
-      class_1893.method_8510().execute(() -> class_3542.method_16474(var0::run));
+      MinecraftClient.method_8510().execute(() -> class_3542.method_16474(var0::run));
    }
 
    @Override

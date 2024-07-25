@@ -138,7 +138,7 @@ public class class_1686 extends class_7038 {
             } catch (InterruptedException var3x) {
             }
 
-            class_1893.method_8510().method_8512();
+            MinecraftClient.method_8510().method_8512();
          }).start();
       });
       this.method_32148(this.field_8716 = new class_7400(this, "Account", 0, var19, 0, var18, "Log in"));
@@ -151,10 +151,10 @@ public class class_1686 extends class_7038 {
          }
       });
       this.field_8724.method_32100((var1x, var2x) -> ((class_6470)this.method_32167()).method_29472());
-      this.field_8718.method_32100((var1x, var2x) -> this.method_7600(new class_7899(class_1893.method_8510().field_9623)));
-      this.field_8721.method_32100((var1x, var2x) -> this.method_7600(new class_9888(class_1893.method_8510().field_9623)));
+      this.field_8718.method_32100((var1x, var2x) -> this.method_7600(new class_7899(MinecraftClient.method_8510().field_9623)));
+      this.field_8721.method_32100((var1x, var2x) -> this.method_7600(new class_9888(MinecraftClient.method_8510().field_9623)));
       this.field_8717
-         .method_32100((var1x, var2x) -> this.method_7600(new class_8534(class_1893.method_8510().field_9623, class_1893.method_8510().field_9577)));
+         .method_32100((var1x, var2x) -> this.method_7600(new class_8534(MinecraftClient.method_8510().field_9623, MinecraftClient.method_8510().field_9577)));
       this.field_8723.method_32100((var1x, var2x) -> this.method_7601(new class_2113()));
       this.field_8713.method_32100((var1x, var2x) -> this.method_7597());
       this.field_8716.method_32100((var1x, var2x) -> {
@@ -174,7 +174,7 @@ public class class_1686 extends class_7038 {
    public void method_7597() {
       class_3347.field_16509 = class_3347.field_16514;
       class_2488 var3 = new class_2488();
-      var3.method_11390(class_1893.method_8510().field_9623);
+      var3.method_11390(MinecraftClient.method_8510().field_9623);
       this.method_7598();
    }
 
@@ -214,7 +214,7 @@ public class class_1686 extends class_7038 {
    }
 
    public void method_7600(class_266 var1) {
-      class_1893.method_8510().method_8609(var1);
+      MinecraftClient.method_8510().method_8609(var1);
       this.method_7598();
    }
 

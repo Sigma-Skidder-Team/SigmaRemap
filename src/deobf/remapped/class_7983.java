@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
 public abstract class class_7983<E extends class_4686<E>> extends class_2198 implements class_1463 {
-   public final class_1893 field_40883;
+   public final MinecraftClient field_40883;
    public final int field_40878;
    private final List<E> field_40888 = new class_631(this, null);
    public int field_40891;
@@ -26,7 +26,7 @@ public abstract class class_7983<E extends class_4686<E>> extends class_2198 imp
    private boolean field_40879 = true;
    private boolean field_40881 = true;
 
-   public class_7983(class_1893 var1, int var2, int var3, int var4, int var5, int var6) {
+   public class_7983(MinecraftClient var1, int var2, int var3, int var4, int var5, int var6) {
       this.field_40883 = var1;
       this.field_40891 = var2;
       this.field_40886 = var3;

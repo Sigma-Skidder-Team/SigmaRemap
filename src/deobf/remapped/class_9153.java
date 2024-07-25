@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_9153 {
    private static final Logger field_46824 = LogManager.getLogger();
-   public final class_1893 field_46835;
+   public final MinecraftClient field_46835;
    public final class_1092 field_46837;
    private class_1331 field_46836 = new class_1331(-1, -1, -1);
    private class_6098 field_46827 = class_6098.field_31203;
@@ -20,7 +20,7 @@ public class class_9153 {
    private final Object2ObjectLinkedOpenHashMap<Pair<class_1331, class_7500>, class_1343> field_46830 = new Object2ObjectLinkedOpenHashMap();
    private int field_46834;
 
-   public class_9153(class_1893 var1, class_1092 var2) {
+   public class_9153(MinecraftClient var1, class_1092 var2) {
       this.field_46835 = var1;
       this.field_46837 = var2;
    }

@@ -250,7 +250,7 @@ public class class_7182 extends class_1094 {
                            } else if (this.field_36928) {
                               this.method_32906();
                            } else {
-                              File var29 = new File(this.field_943.field_9575.getAbsolutePath(), "saves");
+                              File var29 = new File(this.field_943.runDirectory.getAbsolutePath(), "saves");
                               var3 = this.method_32910(new File(var29, this.field_36929.method_2203()));
                               if (this.field_36928) {
                                  this.method_32906();

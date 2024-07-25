@@ -13,7 +13,7 @@ public class class_5206 extends class_5986 {
       this.method_27297(153, 2, 35, 0, class_8002.field_40990);
    }
 
-   public void method_23881(class_1893 var1) {
+   public void method_23881(MinecraftClient var1) {
       class_2716 var4 = var1.field_9632.method_27334();
       List var5 = var4.method_12233(this.field_26753);
       if (var1.field_9632.field_3874 instanceof class_3954) {
@@ -38,7 +38,7 @@ public class class_5206 extends class_5986 {
          class_3542.method_16413((float)(-(this.field_36670 + 8)), (float)(-(this.field_36674 + 12)), 0.0F);
       }
 
-      class_1893 var11 = class_1893.method_8510();
+      MinecraftClient var11 = MinecraftClient.method_8510();
       var11.method_8577().method_35674(this.field_30492);
       class_3542.method_16491();
       int var8 = this.field_30493;

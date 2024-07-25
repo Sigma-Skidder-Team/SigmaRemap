@@ -25,7 +25,7 @@ public class class_3372 {
    public final class_8448 field_16635;
    private boolean field_16636;
 
-   public class_3372(class_1893 var1) {
+   public class_3372(MinecraftClient var1) {
       this.field_16625 = new class_3748(var1);
       this.field_16632 = new class_8957(var1);
       this.field_16620 = new class_1016(var1);
@@ -72,7 +72,7 @@ public class class_3372 {
    }
 
    public void method_15550(class_7966 var1, class_3758 var2, double var3, double var5, double var7) {
-      if (this.field_16636 && !class_1893.method_8510().method_8503()) {
+      if (this.field_16636 && !MinecraftClient.method_8510().method_8503()) {
          this.field_16632.method_13698(var1, var2, var3, var5, var7);
       }
 
@@ -99,7 +99,7 @@ public class class_3372 {
    }
 
    public static void method_15561(class_1331 var0, class_1331 var1, float var2, float var3, float var4, float var5) {
-      class_9071 var8 = class_1893.method_8510().field_9590.method_35949();
+      class_9071 var8 = MinecraftClient.method_8510().field_9590.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
          class_4092 var10 = new class_4092(var0, var1).method_18920(var9);
@@ -108,7 +108,7 @@ public class class_3372 {
    }
 
    public static void method_15560(class_1331 var0, float var1, float var2, float var3, float var4, float var5) {
-      class_9071 var8 = class_1893.method_8510().field_9590.method_35949();
+      class_9071 var8 = MinecraftClient.method_8510().field_9590.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
          class_4092 var10 = new class_4092(var0).method_18920(var9).method_18898((double)var1);
@@ -143,7 +143,7 @@ public class class_3372 {
    }
 
    public static void method_15555(String var0, double var1, double var3, double var5, int var7, float var8, boolean var9, float var10, boolean var11) {
-      class_1893 var14 = class_1893.method_8510();
+      MinecraftClient var14 = MinecraftClient.method_8510();
       class_9071 var15 = var14.field_9590.method_35949();
       if (var15.method_41642() && var14.method_8587().field_31304 != null) {
          class_9854 var16 = var14.field_9668;

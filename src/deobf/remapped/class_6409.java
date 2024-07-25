@@ -119,7 +119,7 @@ public class class_6409 extends class_1859 {
                   class_314.method_1444(class_1255.field_6918.field_6917, (1.0F - var11.field_7415 * (0.5F + var11.field_7415 * 0.5F)) * 0.4F)
                );
                class_73.method_141();
-               var11.field_7415 = Math.min(var11.field_7415 + 3.0F / (float)class_1893.method_8501(), 1.0F);
+               var11.field_7415 = Math.min(var11.field_7415 + 3.0F / (float) MinecraftClient.method_8501(), 1.0F);
                if (var11.field_7415 == 1.0F) {
                   var4.remove();
                }

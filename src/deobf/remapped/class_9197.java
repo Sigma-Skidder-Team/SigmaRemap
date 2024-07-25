@@ -19,7 +19,7 @@ public class class_9197 extends class_4171<class_496, class_1253<class_496>> {
 
          var1.method_36063();
          var1.method_36065(0.1F, (double)var15, (double)var14);
-         class_1893.method_8510().method_8574().method_42248(var4, var13, class_5612.field_28496, false, var1, var2, var3);
+         MinecraftClient.method_8510().method_8574().method_42248(var4, var13, class_5612.field_28496, false, var1, var2, var3);
          var1.method_36064();
       }
    }

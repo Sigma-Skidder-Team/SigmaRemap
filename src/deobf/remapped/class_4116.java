@@ -29,7 +29,7 @@ public class class_4116 extends class_8374<class_2269> {
    private final class_2269 field_20066 = new class_7668();
    private final List<class_6343> field_20062 = Lists.newArrayList();
 
-   public class_4116(class_4145 var1, class_1893 var2, int var3, int var4, int var5, int var6, int var7) {
+   public class_4116(class_4145 var1, MinecraftClient var2, int var3, int var4, int var5, int var6, int var7) {
       super(var2, var3, var4, var5, var6, var7);
       this.field_20060 = var1;
    }

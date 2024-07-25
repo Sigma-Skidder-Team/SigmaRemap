@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Map.Entry;
 
 public class class_6356 extends class_2596 {
-   private static class_1893 field_32510 = class_1893.method_8510();
+   private static MinecraftClient field_32510 = MinecraftClient.method_8510();
    private static float field_32506;
    private float field_32514;
    private class_7903 field_32509;

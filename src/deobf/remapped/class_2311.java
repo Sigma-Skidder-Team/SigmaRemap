@@ -127,7 +127,7 @@ public class class_2311 extends class_7346<class_7651> {
                class_7039.method_32285(this.field_11569, var10.field_39016);
             } else {
                class_7039.method_32285(this.field_11569, -1L);
-               class_1893.method_8510().method_8609(new class_2341(var10, this.field_11569));
+               MinecraftClient.method_8510().method_8609(new class_2341(var10, this.field_11569));
             }
 
             if (class_7039.method_32270(this.field_11569) != class_270.field_970) {

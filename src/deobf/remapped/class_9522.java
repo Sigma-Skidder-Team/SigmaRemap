@@ -65,7 +65,7 @@ public class class_9522 extends class_367 {
    public void method_43926(class_3278 var1) {
       if (field_48470 != null) {
          if (this.method_42015()) {
-            if (!class_1893.method_8510().field_9577.field_45567) {
+            if (!MinecraftClient.method_8510().field_9577.field_45567) {
                if (!this.method_42007("Smart Visibility")) {
                   this.field_48469
                      .method_11119(field_46692.field_9623 != null && !this.method_42007("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);
@@ -109,7 +109,7 @@ public class class_9522 extends class_367 {
                   (double)(field_46692.field_9602.method_43198() + var8)
                );
                class_3542.method_16489();
-               class_3542.method_16402(256, class_1893.field_9574);
+               class_3542.method_16402(256, MinecraftClient.field_9574);
                class_3542.method_16463(5889);
                class_3542.method_16476();
                class_3542.method_16376(
@@ -183,7 +183,7 @@ public class class_9522 extends class_367 {
                class_3542.method_16432();
                class_3542.method_16481();
                int var4 = field_46692.field_9577.field_45439;
-               int var5 = Math.min(class_1893.method_8501(), var4);
+               int var5 = Math.min(MinecraftClient.method_8501(), var4);
                var5 = Math.max(var5, 60);
                long var6 = class_9665.method_44657() - var1.field_8849;
                float var8 = field_46692.field_9632.field_41701;
@@ -214,7 +214,7 @@ public class class_9522 extends class_367 {
    @Override
    public void method_42006() {
       class_73.method_95(field_46692.method_8584());
-      field_48470 = new class_4230(field_46692.field_9602.method_43178(), field_46692.field_9602.method_43198(), true, class_1893.field_9574);
+      field_48470 = new class_4230(field_46692.field_9602.method_43178(), field_46692.field_9602.method_43198(), true, MinecraftClient.field_9574);
       field_48470.method_19709(1.0F, 1.0F, 1.0F, 1.0F);
    }
 

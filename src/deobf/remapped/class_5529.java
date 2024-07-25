@@ -3,7 +3,7 @@ package remapped;
 public class class_5529 extends class_8374<class_514> {
    private static String[] field_28183;
 
-   public class_5529(class_6420 var1, class_1893 var2) {
+   public class_5529(class_6420 var1, MinecraftClient var2) {
       super(var2, var1.field_941, var1.field_940, 32, var1.field_940 - 64, 36);
       this.field_28182 = var1;
       this.method_36188(false);

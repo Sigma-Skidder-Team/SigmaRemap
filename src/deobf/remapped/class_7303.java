@@ -2,7 +2,7 @@ package remapped;
 
 public class class_7303 {
    private static String[] field_37328;
-   private class_1893 field_37329 = class_1893.method_8510();
+   private MinecraftClient field_37329 = MinecraftClient.method_8510();
 
    public void method_33304() {
       SigmaMainClass.method_3328().method_3302().method_7908(this);

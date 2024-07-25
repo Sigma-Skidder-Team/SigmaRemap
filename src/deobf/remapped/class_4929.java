@@ -35,7 +35,7 @@ public class class_4929 implements class_3025 {
    private static final int field_25503 = field_25500[5].hashCode();
    private static final int field_25516 = field_25500[6].hashCode();
    private static final int field_25510 = field_25500[11].hashCode();
-   private static final class_9859 field_25504 = new class_9859(class_1893.class);
+   private static final class_9859 field_25504 = new class_9859(MinecraftClient.class);
    private static final class_1790 field_25505 = new class_1790(field_25504, class_2434.class);
 
    public class_4929(LongSupplier var1, IntSupplier var2, boolean var3) {
@@ -48,7 +48,7 @@ public class class_4929 implements class_3025 {
 
    @Override
    public void method_16059() {
-      class_2434 var3 = (class_2434)class_7860.method_35557(class_1893.method_8510(), field_25505);
+      class_2434 var3 = (class_2434)class_7860.method_35557(MinecraftClient.method_8510(), field_25505);
       this.field_25515 = var3 != null && var3.method_11091() == this;
       this.field_25514 = this.field_25515 && class_5099.method_23418();
       if (!this.field_25507) {

@@ -285,9 +285,9 @@ public class class_7860 {
    public static class_1790 field_39842 = new class_1790(field_39994, class_8169.class);
    public static class_9859 field_40152 = new class_9859(class_3300.class);
    public static class_1790 field_40046 = new class_1790(field_40152, class_8169.class);
-   public static class_9859 field_40230 = new class_9859(class_1893.class);
+   public static class_9859 field_40230 = new class_9859(MinecraftClient.class);
    public static class_1790 field_40105 = new class_1790(
-      new class_7880(class_1893.class, new Class[]{class_159.class}, int.class, new Class[]{String.class}, "debugFPS")
+      new class_7880(MinecraftClient.class, new Class[]{class_159.class}, int.class, new Class[]{String.class}, "debugFPS")
    );
    public static class_1790 field_39860 = new class_1790(field_40230, class_950.class);
    public static class_9859 field_40186 = new class_9859(class_600.class);

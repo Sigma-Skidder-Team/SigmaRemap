@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Map.Entry;
 
 public class class_8441 extends class_2596 {
-   private static class_1893 field_43177 = class_1893.method_8510();
+   private static MinecraftClient field_43177 = MinecraftClient.method_8510();
    private class_8343 field_43185;
    public Date field_43186;
    public class_7868 field_43187;

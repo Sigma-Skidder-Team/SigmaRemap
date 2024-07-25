@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 public class class_2825 extends class_4855<class_803> {
    private static String[] field_13857;
 
-   public class_2825(class_1893 var1, int var2, int var3, int var4, int var5, int var6) {
+   public class_2825(MinecraftClient var1, int var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.field_40880 = false;
    }

@@ -20,7 +20,7 @@ public class class_5280 implements class_3592 {
    @Nullable
    @Override
    public class_3293 method_16786(class_7832 var1) {
-      try (class_4038 var4 = class_1893.method_8510().method_8498().method_35458(this.field_27005)) {
+      try (class_4038 var4 = MinecraftClient.method_8510().method_8498().method_35458(this.field_27005)) {
          byte[] var6 = new byte[65536];
          var4.method_18576().read(var6);
          return new class_5350(var1, var6, this.field_27007);

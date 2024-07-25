@@ -12,7 +12,7 @@ public class class_9806 {
    public float field_49714 = 0.1F;
    public int field_49712 = 150;
    public class_2932 field_49715;
-   private static class_1893 field_49724 = class_1893.method_8510();
+   private static MinecraftClient field_49724 = MinecraftClient.method_8510();
    public class_2700 field_49717;
    public class_7047 field_49713;
    public class_8670 field_49716;

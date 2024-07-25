@@ -10,7 +10,7 @@ public class class_1664 extends class_3720 {
    @Override
    public void run(String var1, class_5273[] var2, class_860 var3) throws CommandException {
       if (var2.length <= 0) {
-         if (class_1893.field_9574) {
+         if (MinecraftClient.field_9574) {
             if (!SigmaMainClass.method_3328().method_3299().method_31004()) {
                var3.method_3731("HighDPI was enabled!");
             } else {

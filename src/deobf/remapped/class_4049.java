@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_4049 extends class_2089 {
    private static final Logger field_19693 = LogManager.getLogger();
-   private final class_1893 field_19686;
+   private final MinecraftClient field_19686;
    private final List<String> field_19684 = Lists.newArrayList();
    private final List<class_8618<ITextComponent>> field_19691 = Lists.newArrayList();
    private final List<class_8618<class_7107>> field_19694 = Lists.newArrayList();
@@ -23,7 +23,7 @@ public class class_4049 extends class_2089 {
    private long field_19688 = 0L;
    private int field_19690 = 0;
 
-   public class_4049(class_1893 var1) {
+   public class_4049(MinecraftClient var1) {
       this.field_19686 = var1;
    }
 
@@ -287,7 +287,7 @@ public class class_4049 extends class_2089 {
 
    public int method_18700() {
       int var3 = method_18686(this.field_19686.field_9577.field_45388);
-      class_9352 var4 = class_1893.method_8510().method_8552();
+      class_9352 var4 = MinecraftClient.method_8510().method_8552();
       int var5 = (int)((double)(var4.method_43178() - 3) / var4.method_43189());
       return class_9299.method_42829(var3, 0, var5);
    }

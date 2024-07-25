@@ -25,7 +25,7 @@ public class class_8002 extends class_2089 implements class_1463, class_5888, cl
    private class_5206 field_40999;
    public class_5986 field_40991;
    public class_3954<?> field_41004;
-   public class_1893 field_41006;
+   public MinecraftClient field_41006;
    private class_1863 field_41002;
    private String field_41001 = "";
    private class_2716 field_40992;
@@ -34,7 +34,7 @@ public class class_8002 extends class_2089 implements class_1463, class_5888, cl
    private int field_40994;
    private boolean field_41010;
 
-   public void method_36308(int var1, int var2, class_1893 var3, boolean var4, class_3954<?> var5) {
+   public void method_36308(int var1, int var2, MinecraftClient var3, boolean var4, class_3954<?> var5) {
       this.field_41006 = var3;
       this.field_41007 = var1;
       this.field_41009 = var2;

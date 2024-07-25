@@ -9,7 +9,7 @@ public class class_5571 {
    private boolean field_28314 = false;
    private long field_28313 = System.currentTimeMillis();
    private float field_28307 = 1.0F;
-   private class_1893 field_28312 = class_1893.method_8510();
+   private MinecraftClient field_28312 = MinecraftClient.method_8510();
 
    public void method_25292() {
       SigmaMainClass.method_3328().method_3302().method_7908(this);

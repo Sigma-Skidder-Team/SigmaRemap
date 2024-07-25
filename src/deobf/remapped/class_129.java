@@ -23,7 +23,7 @@ public abstract class class_129 extends class_7114 {
    }
 
    @Override
-   public void method_32706(class_7966 var1, class_1893 var2, int var3, int var4) {
+   public void method_32706(class_7966 var1, MinecraftClient var2, int var3, int var4) {
       var2.method_8577().method_35674(field_36678);
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       int var7 = (!this.method_32703() ? 1 : 2) * 20;
@@ -73,7 +73,7 @@ public abstract class class_129 extends class_7114 {
 
    @Override
    public void method_32704(double var1, double var3) {
-      super.method_32692(class_1893.method_8510().method_8590());
+      super.method_32692(MinecraftClient.method_8510().method_8590());
    }
 
    public abstract void method_396();

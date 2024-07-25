@@ -4,7 +4,7 @@ import java.util.Collection;
 
 public abstract class class_7346<E extends class_4785<E>> extends class_8374<E> {
    public class_7346(int var1, int var2, int var3, int var4, int var5) {
-      super(class_1893.method_8510(), var1, var2, var3, var4, var5);
+      super(MinecraftClient.method_8510(), var1, var2, var3, var4, var5);
    }
 
    public void method_33485(int var1) {

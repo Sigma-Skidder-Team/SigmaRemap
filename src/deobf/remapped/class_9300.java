@@ -699,7 +699,7 @@ public class class_9300 {
    }
 
    public static class_4468 method_42886() {
-      return class_1893.method_8510().method_8569();
+      return MinecraftClient.method_8510().method_8569();
    }
 
    public static void method_42877(class_9733 var0) {
@@ -942,7 +942,7 @@ public class class_9300 {
    }
 
    public static class_1343 method_42860(class_1343 var0, class_6486 var1, class_8145 var2, float var3) {
-      class_1893 var6 = class_1893.method_8510();
+      MinecraftClient var6 = MinecraftClient.method_8510();
       if (!class_4869.method_22377(var1)) {
          if (!class_4869.method_22376(var1)) {
             return !class_4869.method_22378(var1) ? var0 : method_42899(var0);
@@ -955,7 +955,7 @@ public class class_9300 {
    }
 
    public static class_1343 method_42927(class_1343 var0, class_6486 var1, class_8145 var2, float var3) {
-      class_1893 var6 = class_1893.method_8510();
+      MinecraftClient var6 = MinecraftClient.method_8510();
       if (!class_4869.method_22376(var1)) {
          return !class_4869.method_22378(var1) ? var0 : method_42884(var0);
       } else {

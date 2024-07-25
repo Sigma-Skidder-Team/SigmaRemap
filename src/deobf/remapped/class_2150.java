@@ -11,7 +11,7 @@ public class class_2150 {
    private static final Logger field_10755 = LogManager.getLogger();
    private static final Map<class_4165<?>, class_4668<?, ?>> field_10756 = Maps.newHashMap();
 
-   public static <T extends class_4088> void method_10038(class_4165<T> var0, class_1893 var1, int var2, ITextComponent var3) {
+   public static <T extends class_4088> void method_10038(class_4165<T> var0, MinecraftClient var1, int var2, ITextComponent var3) {
       if (var0 != null) {
          class_4668 var6 = method_10035(var0);
          if (var6 != null) {

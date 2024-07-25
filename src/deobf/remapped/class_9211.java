@@ -50,7 +50,7 @@ public class class_9211 extends class_1809 {
          this.field_47117.run();
       }
 
-      class_1893.method_8510().execute(() -> {
+      MinecraftClient.method_8510().execute(() -> {
          this.field_47112 = true;
          if (class_3542.method_16366()) {
             this.method_42543(var1);
@@ -68,7 +68,7 @@ public class class_9211 extends class_1809 {
 
    @Override
    public void method_37053(class_7832 var1) throws IOException {
-      class_1893.method_8510().execute(() -> {
+      MinecraftClient.method_8510().execute(() -> {
          if (!this.field_47112) {
             try {
                super.method_37053(var1);
@@ -97,7 +97,7 @@ public class class_9211 extends class_1809 {
                   this.method_42541();
                } else {
                   try {
-                     var3 = (HttpURLConnection)new URL(this.field_47110).openConnection(class_1893.method_8510().method_8607());
+                     var3 = (HttpURLConnection)new URL(this.field_47110).openConnection(MinecraftClient.method_8510().method_8607());
                      var3.setDoInput(true);
                      var3.setDoOutput(false);
                      var3.connect();
@@ -110,7 +110,7 @@ public class class_9211 extends class_1809 {
                            var4x = var3.getInputStream();
                         }
 
-                        class_1893.method_8510().execute(() -> {
+                        MinecraftClient.method_8510().execute(() -> {
                            class_5797 var4xx = this.method_42547(var4x);
                            if (var4xx != null) {
                               this.method_42539(var4xx);
@@ -162,7 +162,7 @@ public class class_9211 extends class_1809 {
 
    private boolean method_42548() {
       if (this.field_47109) {
-         Proxy var3 = class_1893.method_8510().method_8607();
+         Proxy var3 = MinecraftClient.method_8510().method_8607();
          return var3.type() != Type.DIRECT && var3.type() != Type.SOCKS ? false : this.field_47110.startsWith("http://");
       } else {
          return false;
@@ -171,7 +171,7 @@ public class class_9211 extends class_1809 {
 
    private void method_42541() {
       try {
-         class_1951 var3 = class_2316.method_10646(this.field_47110, class_1893.method_8510().method_8607());
+         class_1951 var3 = class_2316.method_10646(this.field_47110, MinecraftClient.method_8510().method_8607());
          class_3548 var4 = class_2316.method_10649(var3);
          if (var4.method_16508() / 100 == 2) {
             byte[] var5 = var4.method_16512();

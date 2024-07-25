@@ -26,7 +26,7 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
    private static final Set<String> field_946 = Sets.newHashSet(new String[]{"http", "https"});
    public final ITextComponent field_947;
    public final List<class_5888> field_942 = Lists.newArrayList();
-   public class_1893 field_943;
+   public MinecraftClient field_943;
    public class_8765 field_945;
    public int field_941;
    public int field_940;
@@ -267,7 +267,7 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
       this.field_943.field_9632.method_27307(var1);
    }
 
-   public void method_1164(class_1893 var1, int var2, int var3) {
+   public void method_1164(MinecraftClient var1, int var2, int var3) {
       this.field_943 = var1;
       this.field_945 = var1.method_8511();
       this.field_948 = var1.field_9668;
@@ -344,21 +344,21 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
    }
 
    public static boolean method_1185() {
-      return !class_1893.field_9574
-         ? class_9732.method_44934(class_1893.method_8510().method_8552().method_43181(), 341)
-            || class_9732.method_44934(class_1893.method_8510().method_8552().method_43181(), 345)
-         : class_9732.method_44934(class_1893.method_8510().method_8552().method_43181(), 343)
-            || class_9732.method_44934(class_1893.method_8510().method_8552().method_43181(), 347);
+      return !MinecraftClient.field_9574
+         ? class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 341)
+            || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 345)
+         : class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 343)
+            || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 347);
    }
 
    public static boolean method_1190() {
-      return class_9732.method_44934(class_1893.method_8510().method_8552().method_43181(), 340)
-         || class_9732.method_44934(class_1893.method_8510().method_8552().method_43181(), 344);
+      return class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 340)
+         || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 344);
    }
 
    public static boolean method_1169() {
-      return class_9732.method_44934(class_1893.method_8510().method_8552().method_43181(), 342)
-         || class_9732.method_44934(class_1893.method_8510().method_8552().method_43181(), 346);
+      return class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 342)
+         || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 346);
    }
 
    public static boolean method_1166(int var0) {
@@ -377,7 +377,7 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
       return var0 == 65 && method_1185() && !method_1190() && !method_1169();
    }
 
-   public void method_1191(class_1893 var1, int var2, int var3) {
+   public void method_1191(MinecraftClient var1, int var2, int var3) {
       this.method_1164(var1, var2, var3);
    }
 

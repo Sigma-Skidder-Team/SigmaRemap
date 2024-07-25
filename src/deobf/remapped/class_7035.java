@@ -11,7 +11,7 @@ public class class_7035 extends class_1694 {
 
    @Override
    public class_9530 method_7622(class_1455 var1) {
-      class_1893 var4 = class_1893.method_8510();
+      MinecraftClient var4 = MinecraftClient.method_8510();
       class_6098 var5 = !class_7051.method_32417(class_1857.field_9414)
          ? class_6098.field_31203
          : var4.field_9632.field_3853.field_36401.get(class_1857.field_9414);

@@ -109,7 +109,7 @@ public class class_7404 extends class_266 {
                class_7522 var4x = class_6322.method_28810();
 
                DataResult var9;
-               try (class_4266 var5x = this.field_943.method_8572(var4x, class_1893::method_8582, class_1893::method_8527, false, this.field_37792)) {
+               try (class_4266 var5x = this.field_943.method_8572(var4x, MinecraftClient::method_8582, MinecraftClient::method_8527, false, this.field_37792)) {
                   class_8876 var7 = class_8876.method_40843(JsonOps.INSTANCE, var4x);
                   DataResult var8 = class_2904.field_14169.encodeStart(var7, var5x.method_19864().method_25703());
                   var9 = var8.flatMap(var1x -> {
@@ -175,7 +175,7 @@ public class class_7404 extends class_266 {
    }
 
    @Override
-   public void method_1191(class_1893 var1, int var2, int var3) {
+   public void method_1191(MinecraftClient var1, int var2, int var3) {
       String var6 = this.field_37785.method_8246();
       this.method_1164(var1, var2, var3);
       this.field_37785.method_8281(var6);
@@ -210,7 +210,7 @@ public class class_7404 extends class_266 {
          method_33721(var5);
       } catch (IOException var18) {
          if (!var4) {
-            class_4201.method_19563(class_1893.method_8510(), var1);
+            class_4201.method_19563(MinecraftClient.method_8510(), var1);
          }
 
          field_37786.warn("Failed to create backup of level {}", var1, var18);
@@ -230,12 +230,12 @@ public class class_7404 extends class_266 {
       if (var5 != null) {
          TranslationTextComponent var9 = new TranslationTextComponent("selectWorld.edit.backupFailed");
          StringTextComponent var10 = new StringTextComponent(var5.getMessage());
-         class_1893.method_8510().method_8519().method_42329(new class_4201(class_200.field_669, var9, var10));
+         MinecraftClient.method_8510().method_8519().method_42329(new class_4201(class_200.field_669, var9, var10));
          return false;
       } else {
          TranslationTextComponent var6 = new TranslationTextComponent("selectWorld.edit.backupCreated", var0.method_17070());
          TranslationTextComponent var7 = new TranslationTextComponent("selectWorld.edit.backupSize", class_9299.method_42815((double)var3 / 1048576.0));
-         class_1893.method_8510().method_8519().method_42329(new class_4201(class_200.field_669, var6, var7));
+         MinecraftClient.method_8510().method_8519().method_42329(new class_4201(class_200.field_669, var6, var7));
          return true;
       }
    }

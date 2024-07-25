@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_7762 extends class_341 {
    private static final Logger field_39350 = LogManager.getLogger();
-   private final class_1893 field_39353;
+   private final MinecraftClient field_39353;
    private boolean field_39352;
    private int field_39348 = -1;
    private class_1262 field_39345;
@@ -27,7 +27,7 @@ public class class_7762 extends class_341 {
 
    public class_7762(
       Thread var1,
-      class_1893 var2,
+      MinecraftClient var2,
       class_7522 var3,
       class_3676 var4,
       class_6354 var5,
@@ -66,7 +66,7 @@ public class class_7762 extends class_341 {
    public void method_1658(BooleanSupplier var1) {
       this.method_35209();
       boolean var4 = this.field_39352;
-      this.field_39352 = class_1893.method_8510().method_8614() != null && class_1893.method_8510().method_8564();
+      this.field_39352 = MinecraftClient.method_8510().method_8614() != null && MinecraftClient.method_8510().method_8564();
       class_3492 var5 = this.method_1704();
       if (!var4 && this.field_39352) {
          var5.method_16056("autoSave");
@@ -98,7 +98,7 @@ public class class_7762 extends class_341 {
 
    @Override
    public File method_1652() {
-      return this.field_39353.field_9575;
+      return this.field_39353.runDirectory;
    }
 
    @Override
@@ -136,7 +136,7 @@ public class class_7762 extends class_341 {
       if (var3.equals("vanilla")) {
          var3 = this.method_1728();
          if ("vanilla".equals(var3)) {
-            return class_1893.class.getSigners() != null ? Optional.<String>empty() : Optional.<String>of("Very likely; Jar signature invalidated");
+            return MinecraftClient.class.getSigners() != null ? Optional.<String>empty() : Optional.<String>of("Very likely; Jar signature invalidated");
          } else {
             return Optional.<String>of("Definitely; Server brand changed to '" + var3 + "'");
          }

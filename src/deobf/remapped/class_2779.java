@@ -7,12 +7,12 @@ import java.util.Map.Entry;
 
 public class class_2779 implements class_2995 {
    private static String[] field_13573;
-   private final class_1893 field_13571;
+   private final MinecraftClient field_13571;
    private final Map<class_8760, Map<String, class_9616>> field_13570 = Maps.newIdentityHashMap();
    private final Map<class_8760, Map<String, class_9616>> field_13569 = Maps.newIdentityHashMap();
    private final Map<class_8760, Map<String, Boolean>> field_13572 = Maps.newIdentityHashMap();
 
-   public class_2779(class_1893 var1) {
+   public class_2779(MinecraftClient var1) {
       this.field_13571 = var1;
    }
 

@@ -38,9 +38,9 @@ public class class_2689 extends class_9128 {
    public class_1343 method_12072(class_1343 var1) {
       return var1.method_6215(
          new class_1343(
-            -class_1893.method_8510().field_9590.method_35949().method_41627().method_61(),
-            -class_1893.method_8510().field_9590.method_35949().method_41627().method_60(),
-            -class_1893.method_8510().field_9590.method_35949().method_41627().method_62()
+            -MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_61(),
+            -MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_60(),
+            -MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_62()
          )
       );
    }

@@ -4,10 +4,10 @@ import com.google.common.collect.Lists;
 import java.util.Collection;
 
 public class class_6323 implements class_2995 {
-   private final class_1893 field_32283;
+   private final MinecraftClient field_32283;
    private Collection<class_1331> field_32285 = Lists.newArrayList();
 
-   public class_6323(class_1893 var1) {
+   public class_6323(MinecraftClient var1) {
       this.field_32283 = var1;
    }
 

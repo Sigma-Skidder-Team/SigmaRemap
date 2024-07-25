@@ -18,7 +18,7 @@ public class class_2605 extends class_8374<class_1439> {
    public class_9478<?> field_12878;
    public int field_12872;
 
-   public class_2605(class_3231 var1, class_1893 var2) {
+   public class_2605(class_3231 var1, MinecraftClient var2) {
       super(var2, var1.field_941, var1.field_940, 32, var1.field_940 - 64, 20);
       this.field_12881 = var1;
       this.field_12876 = new int[]{3, 4, 1, 2, 5, 6};

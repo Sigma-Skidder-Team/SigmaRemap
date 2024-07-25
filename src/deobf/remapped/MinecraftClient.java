@@ -51,8 +51,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_1893 extends class_7760<Runnable> implements class_4252, class_7138 {
-   private static class_1893 field_9658;
+public class MinecraftClient extends class_7760<Runnable> implements class_4252, class_7138 {
+   private static MinecraftClient field_9658;
    private static final Logger field_9595 = LogManager.getLogger();
    public static final boolean field_9574 = class_9665.method_44667() == class_8208.field_41983;
    public static final class_4639 field_9620 = new class_4639("default");
@@ -85,7 +85,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    private final class_3459 field_9593;
    public final class_8671 field_9625;
    public final class_8455 field_9600;
-   public final File field_9575;
+   public final File runDirectory;
    private final String field_9597;
    private final String field_9622;
    private final Proxy field_9660;
@@ -96,7 +96,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    private final boolean field_9583;
    private final boolean field_9664;
    private final class_550 field_9656;
-   private final class_5524 field_9652;
+   private final ClientBuiltinResourcePackProvider builtinPackProvider;
    public final class_6354 field_9653;
    private final class_2435 field_9585;
    private final class_4468 field_9624;
@@ -159,17 +159,17 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    private class_2578 field_9581;
    private String field_9659 = "root";
 
-   public class_1893(class_3472 var1) {
+   public MinecraftClient(RunArgs var1) {
       super("Client");
       field_9658 = this;
-      this.field_9575 = var1.field_17026.field_20153;
-      File var2 = var1.field_17026.field_20151;
-      this.field_9607 = var1.field_17026.field_20150;
+      this.runDirectory = var1.directories.field_20153;
+      File var2 = var1.directories.field_20151;
+      this.field_9607 = var1.directories.field_20150;
       this.field_9597 = var1.field_17025.field_12806;
       this.field_9622 = var1.field_17025.field_12807;
       this.field_9635 = var1.field_17027.field_19113;
-      this.field_9652 = new class_5524(new File(this.field_9575, "server-resource-packs"), var1.field_17026.method_19218());
-      this.field_9653 = new class_6354(class_1893::method_8560, this.field_9652, new class_8936(this.field_9607, class_2541.field_12597));
+      this.builtinPackProvider = new ClientBuiltinResourcePackProvider(new File(this.runDirectory, "server-resource-packs"), var1.directories.getResourceIndex());
+      this.field_9653 = new class_6354(MinecraftClient::method_8560, this.builtinPackProvider, new class_8936(this.field_9607, class_2541.field_12597));
       this.field_9660 = var1.field_17027.field_19111;
       YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.field_9660);
       this.field_9641 = var3.createMinecraftSessionService();
@@ -202,8 +202,8 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       this.field_9627 = new class_9184(this);
       this.field_9578 = new class_8827(this);
       this.field_9644 = Thread.currentThread();
-      this.field_9577 = new class_8881(this, this.field_9575);
-      this.field_9593 = new class_3459(this.field_9575, this.field_9573);
+      this.field_9577 = new class_8881(this, this.runDirectory);
+      this.field_9593 = new class_3459(this.runDirectory, this.field_9573);
       field_9595.info("Backend library: {}", class_3542.method_16385());
       class_9706 var6;
       if (this.field_9577.field_45424 > 0 && this.field_9577.field_45491 > 0) {
@@ -243,7 +243,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       this.field_9634 = new class_7889(this.field_9656);
       this.field_9656.method_2649(this.field_9634);
       this.field_9651 = new class_9593(this.field_9634, new File(var2, "skins"), this.field_9641);
-      this.field_9609 = new class_9663(this.field_9575.toPath().resolve("saves"), this.field_9575.toPath().resolve("backups"), this.field_9573);
+      this.field_9609 = new class_9663(this.runDirectory.toPath().resolve("saves"), this.runDirectory.toPath().resolve("backups"), this.field_9573);
       this.field_9611 = new class_3541(this.field_9656, this.field_9577);
       this.field_9656.method_2649(this.field_9611);
       this.field_9649 = new class_9545(this.field_9603);
@@ -344,7 +344,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       return var1.toString();
    }
 
-   private SocialInteractionsService method_8613(YggdrasilAuthenticationService var1, class_3472 var2) {
+   private SocialInteractionsService method_8613(YggdrasilAuthenticationService var1, RunArgs var2) {
       try {
          return var1.createSocialInteractionsService(var2.field_17027.field_19110.method_5365());
       } catch (AuthenticationException var4) {
@@ -501,7 +501,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    }
 
    public static void method_8608(class_159 var0) {
-      File var1 = new File(method_8510().field_9575, "crash-reports");
+      File var1 = new File(method_8510().runDirectory, "crash-reports");
       File var2 = new File(var1, "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
       class_2557.method_11619(var0.method_632());
       if (var0.method_636() != null) {
@@ -1496,7 +1496,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    }
 
    public void method_8599(String var1) {
-      this.method_8513(var1, class_6322.method_28810(), class_1893::method_8582, class_1893::method_8527, false, class_8272.field_42427);
+      this.method_8513(var1, class_6322.method_28810(), MinecraftClient::method_8582, MinecraftClient::method_8527, false, class_8272.field_42427);
    }
 
    public void method_8518(String var1, class_6292 var2, class_7522 var3, class_2904 var4) {
@@ -1567,7 +1567,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
             YggdrasilAuthenticationService var12 = new YggdrasilAuthenticationService(this.field_9660);
             MinecraftSessionService var23 = var12.createMinecraftSessionService();
             GameProfileRepository var25 = var12.createProfileRepository();
-            class_5969 var15 = new class_5969(var25, new File(this.field_9575, class_341.field_1312.getName()));
+            class_5969 var15 = new class_5969(var25, new File(this.runDirectory, class_341.field_1312.getName()));
             class_4797.method_22114(var15);
             class_4797.method_22111(var23);
             class_5969.method_27263(false);
@@ -1710,7 +1710,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
          YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.field_9660);
          MinecraftSessionService var4 = var3.createMinecraftSessionService();
          GameProfileRepository var5 = var3.createProfileRepository();
-         class_5969 var6 = new class_5969(var5, new File(this.field_9575, class_341.field_1312.getName()));
+         class_5969 var6 = new class_5969(var5, new File(this.runDirectory, class_341.field_1312.getName()));
          class_4797.method_22114(var6);
          class_4797.method_22111(var4);
          class_5969.method_27263(false);
@@ -1745,7 +1745,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
             this.field_9592.method_16054();
          }
 
-         this.field_9652.method_25058();
+         this.builtinPackProvider.method_25058();
          this.field_9614.method_13988();
          this.field_9598 = null;
          this.field_9672 = false;
@@ -1978,7 +1978,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
             if (!"vanilla".equals(var0x)) {
                return "Definitely; Client brand changed to '" + var0x + "'";
             } else {
-               return class_1893.class.getSigners() == null
+               return MinecraftClient.class.getSigners() == null
                   ? "Very likely; Jar signature invalidated"
                   : "Probably not. Jar signature remains and client brand is untouched.";
             }
@@ -2019,7 +2019,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       var4.method_29851("CPU", class_6765::method_31015);
    }
 
-   public static class_1893 method_8510() {
+   public static MinecraftClient method_8510() {
       return field_9658;
    }
 
@@ -2153,8 +2153,8 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       return this.field_9653;
    }
 
-   public class_5524 method_8606() {
-      return this.field_9652;
+   public ClientBuiltinResourcePackProvider method_8606() {
+      return this.builtinPackProvider;
    }
 
    public File method_8536() {

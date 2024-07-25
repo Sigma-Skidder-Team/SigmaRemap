@@ -10,7 +10,7 @@ public class class_8315 extends class_5348 {
       super("line_width", () -> {
          if (!Objects.equals(var1, OptionalDouble.of(1.0))) {
             if (!var1.isPresent()) {
-               class_3542.method_16484(Math.max(2.5F, (float)class_1893.method_8510().method_8552().method_43178() / 1920.0F * 2.5F));
+               class_3542.method_16484(Math.max(2.5F, (float) MinecraftClient.method_8510().method_8552().method_43178() / 1920.0F * 2.5F));
             } else {
                class_3542.method_16484((float)var1.getAsDouble());
             }

@@ -2,9 +2,9 @@ package remapped;
 
 public class class_8957 implements class_2995 {
    private static String[] field_45892;
-   private final class_1893 field_45893;
+   private final MinecraftClient field_45893;
 
-   public class_8957(class_1893 var1) {
+   public class_8957(MinecraftClient var1) {
       this.field_45893 = var1;
    }
 

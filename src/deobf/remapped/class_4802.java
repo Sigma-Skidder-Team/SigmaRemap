@@ -40,7 +40,7 @@ public class class_4802 extends class_1013 {
    @Override
    public class_7114 method_4482(class_8881 var1, int var2, int var3, int var4) {
       if (this.field_23994 != null) {
-         this.method_4487(class_1893.method_8510().field_9668.method_45391(this.field_23994, 200));
+         this.method_4487(MinecraftClient.method_8510().field_9668.method_45391(this.field_23994, 200));
       }
 
       return new class_2116(var2, var3, var4, 20, this, this.method_22128(var1), var2x -> {

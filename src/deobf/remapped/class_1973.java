@@ -12,7 +12,7 @@ public class class_1973 {
       }
    }
 
-   public void method_9074(class_1893 var1, float var2, float var3, float var4) {
+   public void method_9074(MinecraftClient var1, float var2, float var3, float var4) {
       class_8042 var7 = class_8042.method_36499();
       class_9633 var8 = var7.method_36501();
       class_3542.method_16463(5889);

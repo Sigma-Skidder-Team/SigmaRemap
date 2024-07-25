@@ -7,11 +7,11 @@ import javax.annotation.Nullable;
 
 public class class_9184 extends class_2089 {
    private static String[] field_46994;
-   private final class_1893 field_46992;
+   private final MinecraftClient field_46992;
    private final class_9623<?>[] field_46993 = new class_9623[5];
    private final Deque<class_6406> field_46991 = Queues.newArrayDeque();
 
-   public class_9184(class_1893 var1) {
+   public class_9184(MinecraftClient var1) {
       this.field_46992 = var1;
    }
 
@@ -56,7 +56,7 @@ public class class_9184 extends class_2089 {
       this.field_46991.add(var1);
    }
 
-   public class_1893 method_42327() {
+   public MinecraftClient method_42327() {
       return this.field_46992;
    }
 }

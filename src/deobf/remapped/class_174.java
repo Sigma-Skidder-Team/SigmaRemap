@@ -22,7 +22,7 @@ public class class_174 extends class_6486 {
    private final class_4316 field_567;
    private final class_784 field_572;
    private class_7513 field_579;
-   private final class_1893 field_578 = class_1893.method_8510();
+   private final MinecraftClient field_578 = MinecraftClient.method_8510();
    private final List<class_9716> field_566 = Lists.newArrayList();
    private class_1097 field_570 = new class_1097();
    private final Map<String, class_2134> field_571 = Maps.newHashMap();
@@ -822,7 +822,7 @@ public class class_174 extends class_6486 {
    }
 
    public int method_759(class_1331 var1, class_6581 var2) {
-      int var5 = class_1893.method_8510().field_9577.field_45526;
+      int var5 = MinecraftClient.method_8510().field_9577.field_45526;
       if (var5 == 0) {
          return var2.method_30079(this.method_22561(var1), (double)var1.method_12173(), (double)var1.method_12185());
       } else {

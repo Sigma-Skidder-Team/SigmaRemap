@@ -65,7 +65,7 @@ public class class_7170 extends class_446 {
          class_73.method_96((float)(this.field_36270 + 288 * var4), (float)this.field_36261, 288.0F, 512.0F, this.field_36888);
       }
 
-      float var16 = 60.0F / (float)class_1893.method_8501();
+      float var16 = 60.0F / (float) MinecraftClient.method_8501();
       float var5 = 0.026F * var16;
       this.field_36887 = Math.max(Math.min(1.0F, this.field_36887 + this.field_36894 - var5), 0.0F);
       this.field_36894 = Math.max(-var5, this.field_36894 * 0.965F);

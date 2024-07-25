@@ -77,14 +77,14 @@ public class class_753 {
 
    @Nullable
    public class_3903 method_3403() {
-      return class_1893.method_8510().field_9601.method_29562().method_4848(this.method_3392().getName());
+      return MinecraftClient.method_8510().field_9601.method_29562().method_4848(this.method_3392().getName());
    }
 
    public void method_3412() {
       synchronized (this) {
          if (!this.field_4091) {
             this.field_4091 = true;
-            class_1893.method_8510().method_8557().method_44309(this.field_4088, (var1, var2, var3) -> {
+            MinecraftClient.method_8510().method_8557().method_44309(this.field_4088, (var1, var2, var3) -> {
                this.field_4087.put(var1, var2);
                if (var1 == Type.SKIN) {
                   this.field_4095 = var3.getMetadata("model");

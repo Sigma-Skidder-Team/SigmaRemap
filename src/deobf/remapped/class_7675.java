@@ -65,7 +65,7 @@ public class class_7675 extends class_8958 {
       int var5 = 0;
 
       for (String var7 : var1.field_43159) {
-         if (!var7.equals(class_1893.method_8510().method_8502().method_5367())) {
+         if (!var7.equals(MinecraftClient.method_8510().method_8502().method_5367())) {
             String var8 = "";
 
             try {

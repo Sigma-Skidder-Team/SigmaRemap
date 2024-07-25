@@ -37,8 +37,8 @@ public class class_1964 extends class_9128 {
    private void method_9062(class_3278 var1) {
       if (this.method_42015()) {
          if (field_46692.field_9632 != null) {
-            if (!class_1893.method_8510().field_9577.field_45470) {
-               if (!class_1893.method_8510().field_9577.field_45567) {
+            if (!MinecraftClient.method_8510().field_9577.field_45470) {
+               if (!MinecraftClient.method_8510().field_9577.field_45567) {
                   float var4 = Math.min(1.0F, 0.6F + this.field_9983.method_11123() * 4.0F);
                   String var5 = field_46692.field_9632.method_37075().method_12173()
                      + " "

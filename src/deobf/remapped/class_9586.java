@@ -11,7 +11,7 @@ public class class_9586 implements class_4439, class_7912 {
    private final List<class_7912> field_48756 = Lists.newArrayList();
 
    public class_9586() {
-      class_1893 var3 = class_1893.method_8510();
+      MinecraftClient var3 = MinecraftClient.method_8510();
 
       for (class_3903 var5 : var3.field_9601.method_29562().method_4841()) {
          this.field_48756.add(new class_7100(this, var5));
@@ -40,7 +40,7 @@ public class class_9586 implements class_4439, class_7912 {
 
    @Override
    public void method_35795(class_7966 var1, float var2, int var3) {
-      class_1893.method_8510().method_8577().method_35674(class_8368.field_42845);
+      MinecraftClient.method_8510().method_8577().method_35674(class_8368.field_42845);
       class_2089.method_9778(var1, 0, 0, 16.0F, 0.0F, 16, 16, 256, 256);
    }
 

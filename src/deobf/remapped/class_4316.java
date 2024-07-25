@@ -49,7 +49,7 @@ public class class_4316 implements class_6491, AutoCloseable {
    private static final class_4639 field_20990 = new class_4639("textures/environment/rain.png");
    private static final class_4639 field_21008 = new class_4639("textures/environment/snow.png");
    public static final class_240[] field_20942 = class_240.values();
-   private final class_1893 field_20994;
+   private final MinecraftClient field_20994;
    private final class_7889 field_20951;
    public final class_6122 field_20988;
    private final class_3017 field_20973;
@@ -151,7 +151,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
    }
 
-   public class_4316(class_1893 var1, class_3017 var2) {
+   public class_4316(MinecraftClient var1, class_3017 var2) {
       this.field_20994 = var1;
       this.field_20988 = var1.method_8587();
       this.field_20973 = var2;
@@ -206,7 +206,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             var16 = 10;
          }
 
-         class_3542.method_16387(class_1893.method_8497());
+         class_3542.method_16387(MinecraftClient.method_8497());
          byte var17 = -1;
          float var18 = (float)this.field_20997 + var2;
          class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
@@ -342,7 +342,7 @@ public class class_4316 implements class_6491, AutoCloseable {
    }
 
    public void method_20011(class_9071 var1) {
-      float var2 = this.field_20994.field_9601.method_29578(1.0F) / (class_1893.method_8528() ? 1.0F : 2.0F);
+      float var2 = this.field_20994.field_9601.method_29578(1.0F) / (MinecraftClient.method_8528() ? 1.0F : 2.0F);
       if (!class_3111.method_14283()) {
          var2 /= 2.0F;
       }
@@ -418,7 +418,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_3542.method_16490(3553, 10243, 10497);
       class_3542.method_16446(0);
       this.method_20026();
-      if (class_1893.method_8497()) {
+      if (MinecraftClient.method_8497()) {
          this.method_20048();
       }
    }
@@ -483,7 +483,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             this.field_20994.field_9577.method_40873();
             field_21017.fatal(var4, var5);
             this.field_20994.method_8593();
-            class_1893.method_8608(var13);
+            MinecraftClient.method_8608(var13);
          }
       }
    }
@@ -666,7 +666,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
    public void method_19998() {
       if (this.field_20970 != null) {
-         if (class_1893.method_8497()) {
+         if (MinecraftClient.method_8497()) {
             this.method_20048();
          } else {
             this.method_20021();
@@ -690,7 +690,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          }
 
          class_153.method_613();
-         field_21005 = class_1893.method_8541();
+         field_21005 = MinecraftClient.method_8541();
          this.field_20922 = this.field_20994.field_9577.field_45537;
          this.field_20927 = this.field_20922 * 16;
          this.field_20981 = this.field_20927 * this.field_20927;
@@ -1115,7 +1115,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
 
       class_6377.method_29157(var6, var2, this.field_20994.field_9601, this.field_20994.field_9577.field_45537, var7.method_35956(var2));
-      class_3542.method_16402(16640, class_1893.field_9574);
+      class_3542.method_16402(16640, MinecraftClient.field_9574);
       boolean var21 = class_3111.method_14424();
       if (var21) {
          class_6588.method_30182();
@@ -1206,17 +1206,17 @@ public class class_4316 implements class_6491, AutoCloseable {
       this.field_20979 = 0;
       this.field_20920 = 0;
       if (this.field_20929 != null) {
-         this.field_20929.method_19712(class_1893.field_9574);
+         this.field_20929.method_19712(MinecraftClient.field_9574);
          this.field_20929.method_19710(this.field_20994.method_8584());
          this.field_20994.method_8584().method_19717(false);
       }
 
       if (this.field_20958 != null) {
-         this.field_20958.method_19712(class_1893.field_9574);
+         this.field_20958.method_19712(MinecraftClient.field_9574);
       }
 
       if (this.method_20036()) {
-         this.field_21000.method_19712(class_1893.field_9574);
+         this.field_21000.method_19712(MinecraftClient.field_9574);
          this.field_20994.method_8584().method_19717(false);
       }
 
@@ -1319,7 +1319,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                class_1331 var88 = var82.method_17399();
                Object var89 = var39;
                var1.method_36063();
-               if (class_1893.method_8510().field_9591) {
+               if (MinecraftClient.method_8510().field_9591) {
                   var1.method_36065((double)var88.method_12173() - var12, (double)var88.method_12165() - var14, (double)var88.method_12185() - var16);
                }
 
@@ -1474,13 +1474,13 @@ public class class_4316 implements class_6491, AutoCloseable {
       if (this.field_20930 != null) {
          var39.method_17416(class_3581.method_16744());
          var39.method_17415();
-         this.field_21001.method_19712(class_1893.field_9574);
+         this.field_21001.method_19712(MinecraftClient.field_9574);
          this.field_21001.method_19710(this.field_20994.method_8584());
          var10.method_16050("translucent");
          this.method_20045(class_3581.method_16762(), var1, var12, var14, var16);
          var10.method_16050("string");
          this.method_20045(class_3581.method_16765(), var1, var12, var14, var16);
-         this.field_20996.method_19712(class_1893.field_9574);
+         this.field_20996.method_19712(MinecraftClient.field_9574);
          this.field_20996.method_19710(this.field_20994.method_8584());
          class_5348.field_27312.method_24420();
          var10.method_16050("particles");
@@ -1517,7 +1517,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_3542.method_16358(var1.method_36058().method_28620());
       if (this.field_20994.field_9577.method_40860() != class_9655.field_49168) {
          if (this.field_20930 != null) {
-            this.field_21006.method_19712(class_1893.field_9574);
+            this.field_21006.method_19712(MinecraftClient.field_9574);
             class_5348.field_27300.method_24420();
             var10.method_16050("clouds");
             this.method_20023(var1, var2, var12, var14, var16);
@@ -2594,7 +2594,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          class_3542.method_16428();
          class_3542.method_16425(class_5033.field_26042, class_8535.field_43691, class_5033.field_26047, class_8535.field_43699);
          this.field_20951.method_35674(field_20936);
-         class_3542.method_16387(class_1893.method_8497());
+         class_3542.method_16387(MinecraftClient.method_8497());
          class_3542.method_16438();
          int var14 = var3.method_9839().method_18609();
          float var15 = (float)(var14 >> 16 & 0xFF) / 255.0F;

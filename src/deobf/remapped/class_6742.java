@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class class_6742 implements class_2995 {
    private static String[] field_34797;
-   private final class_1893 field_34796;
+   private final MinecraftClient field_34796;
    private final Map<Integer, List<class_118>> field_34795 = Maps.newHashMap();
 
    @Override
@@ -18,7 +18,7 @@ public class class_6742 implements class_2995 {
       this.field_34795.put(var1, var2);
    }
 
-   public class_6742(class_1893 var1) {
+   public class_6742(MinecraftClient var1) {
       this.field_34796 = var1;
    }
 

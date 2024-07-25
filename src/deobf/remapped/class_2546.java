@@ -226,7 +226,7 @@ public class class_2546 extends class_9331<class_7333> {
    }
 
    @Override
-   public void method_1191(class_1893 var1, int var2, int var3) {
+   public void method_1191(MinecraftClient var1, int var2, int var3) {
       String var6 = this.field_12608.method_8246();
       this.method_1164(var1, var2, var3);
       this.field_12608.method_8281(var6);
@@ -731,7 +731,7 @@ public class class_2546 extends class_9331<class_7333> {
       return field_12605;
    }
 
-   public static void method_11590(class_1893 var0, int var1, boolean var2, boolean var3) {
+   public static void method_11590(MinecraftClient var0, int var1, boolean var2, boolean var3) {
       class_5989 var6 = var0.field_9632;
       class_3459 var7 = var0.method_8598();
       class_2024 var8 = var7.method_15915(var1);

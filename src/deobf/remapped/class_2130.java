@@ -10,14 +10,14 @@ import net.minecraft.util.text.TextFormatting;
 
 public class class_2130 extends class_2089 {
    private static final Ordering<class_753> field_10660 = Ordering.from(new class_1684(null));
-   private final class_1893 field_10666;
+   private final MinecraftClient field_10666;
    private final class_3062 field_10663;
    private ITextComponent field_10665;
    private ITextComponent field_10662;
    private long field_10661;
    private boolean field_10664;
 
-   public class_2130(class_1893 var1, class_3062 var2) {
+   public class_2130(MinecraftClient var1, class_3062 var2) {
       this.field_10666 = var1;
       this.field_10663 = var2;
    }

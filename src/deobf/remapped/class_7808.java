@@ -72,7 +72,7 @@ public class class_7808 extends class_4591 {
    }
 
    @Override
-   public void method_1191(class_1893 var1, int var2, int var3) {
+   public void method_1191(MinecraftClient var1, int var2, int var3) {
       super.method_1191(var1, var2, var3);
       this.method_21260();
       this.method_35396();

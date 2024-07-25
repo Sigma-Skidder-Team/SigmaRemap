@@ -240,7 +240,7 @@ public class class_9468 extends class_9128 {
          this.field_48287 = (double)var5;
       }
 
-      this.field_48287 = this.field_48287 + ((double)var5 - this.field_48287) / ((double)class_1893.method_8501() * 0.7);
+      this.field_48287 = this.field_48287 + ((double)var5 - this.field_48287) / ((double) MinecraftClient.method_8501() * 0.7);
       var4 = (float)((double)var4 * this.field_48287);
       class_3542.method_16403(var4, var4, var4);
    }

@@ -110,7 +110,7 @@ public class class_2990 extends class_3622 {
       float var3 = (float)(this.field_14700 * 25);
       float var4 = Math.abs(var3 - (float)this.field_14701);
       boolean var5 = var3 - (float)this.field_14701 != var4;
-      float var6 = 60.0F / (float)class_1893.method_8501();
+      float var6 = 60.0F / (float) MinecraftClient.method_8501();
       float var7 = Math.min(var4 * 0.8F, var4 * 0.3F * var6);
       if (var5) {
          var7 *= -1.0F;

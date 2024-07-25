@@ -9,7 +9,7 @@ public class class_2789 extends class_7621 {
    private static final class_4639 field_13703 = new class_4639("textures/gui/title/mojangstudios.png");
    private static final int field_13709 = class_8496.method_39154(255, 239, 50, 61);
    private static final int field_13698 = field_13709 & 16777215;
-   private final class_1893 field_13696;
+   private final MinecraftClient field_13696;
    private final class_4302 field_13700;
    private final Consumer<Optional<Throwable>> field_13695;
    private final boolean field_13694;
@@ -23,14 +23,14 @@ public class class_2789 extends class_7621 {
    private class_3525 field_13706 = null;
    private boolean field_13708 = false;
 
-   public class_2789(class_1893 var1, class_4302 var2, Consumer<Optional<Throwable>> var3, boolean var4) {
+   public class_2789(MinecraftClient var1, class_4302 var2, Consumer<Optional<Throwable>> var3, boolean var4) {
       this.field_13696 = var1;
       this.field_13700 = var2;
       this.field_13695 = var3;
       this.field_13694 = false;
    }
 
-   public static void method_12674(class_1893 var0) {
+   public static void method_12674(MinecraftClient var0) {
       var0.method_8577().method_35682(field_13703, new class_7289());
    }
 

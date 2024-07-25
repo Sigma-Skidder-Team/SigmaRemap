@@ -19,7 +19,7 @@ import java.util.Map.Entry;
 import org.lwjgl.BufferUtils;
 
 public class class_4763 {
-   private class_1893 field_23056 = class_1893.method_8510();
+   private MinecraftClient field_23056 = MinecraftClient.method_8510();
    private List<class_2034> field_23063 = new ArrayList<class_2034>();
    private List<class_2034> field_23062 = new ArrayList<class_2034>();
    private List<class_4333> field_23053 = new ArrayList<class_4333>();

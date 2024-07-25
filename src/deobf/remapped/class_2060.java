@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_2060 extends class_8374<class_1127> {
-   public class_2060(class_1709 var1, class_1893 var2) {
+   public class_2060(class_1709 var1, MinecraftClient var2) {
       super(var2, var1.field_941, var1.field_940, 32, var1.field_940 - 65 + 4, 18);
       this.field_10413 = var1;
 

@@ -18,8 +18,8 @@ public class class_3829 extends class_2596 {
       super.method_32178(var1);
       int var4 = class_2209.field_11023.method_38415();
       int var5 = class_2209.field_11023.method_38421();
-      var4 = Math.min(var4, (int)((float)class_1893.method_8510().field_9602.method_43163() / 1.65F));
-      var5 = Math.min(var5, (int)((float)class_1893.method_8510().field_9602.method_43163() / 1.65F));
+      var4 = Math.min(var4, (int)((float) MinecraftClient.method_8510().field_9602.method_43163() / 1.65F));
+      var5 = Math.min(var5, (int)((float) MinecraftClient.method_8510().field_9602.method_43163() / 1.65F));
       this.method_17806();
       class_73.method_94(
          0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6918.field_6917, 0.9F * this.field_18710)
@@ -57,8 +57,8 @@ public class class_3829 extends class_2596 {
             Math.min(
                1.0,
                (double)this.field_18710
-                  + 0.05 * (double)(30.0F / (float)class_1893.method_8501())
-                  - (double)(this.field_18710 * 0.04F * (30.0F / (float)class_1893.method_8501()))
+                  + 0.05 * (double)(30.0F / (float) MinecraftClient.method_8501())
+                  - (double)(this.field_18710 * 0.04F * (30.0F / (float) MinecraftClient.method_8501()))
             )
          );
       }
@@ -92,7 +92,7 @@ public class class_3829 extends class_2596 {
    public void method_29509(int var1) {
       super.method_29509(var1);
       if (var1 == 256) {
-         class_1893.method_8510().method_8609(new class_1876());
+         MinecraftClient.method_8510().method_8609(new class_1876());
       }
    }
 }

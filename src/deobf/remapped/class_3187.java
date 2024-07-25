@@ -8,10 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 public class class_3187 {
    private static final Logger field_15917 = LogManager.getLogger();
-   private final class_1893 field_15915;
+   private final MinecraftClient field_15915;
    private final List<class_2560> field_15916 = Lists.newArrayList();
 
-   public class_3187(class_1893 var1) {
+   public class_3187(MinecraftClient var1) {
       this.field_15915 = var1;
       this.method_14670();
    }
@@ -19,7 +19,7 @@ public class class_3187 {
    public void method_14670() {
       try {
          this.field_15916.clear();
-         class_5734 var3 = class_5957.method_27223(new File(this.field_15915.field_9575, "servers.dat"));
+         class_5734 var3 = class_5957.method_27223(new File(this.field_15915.runDirectory, "servers.dat"));
          if (var3 == null) {
             return;
          }
@@ -44,10 +44,10 @@ public class class_3187 {
 
          class_5734 var9 = new class_5734();
          var9.method_25946("servers", var3);
-         File var10 = File.createTempFile("servers", ".dat", this.field_15915.field_9575);
+         File var10 = File.createTempFile("servers", ".dat", this.field_15915.runDirectory);
          class_5957.method_27225(var9, var10);
-         File var6 = new File(this.field_15915.field_9575, "servers.dat_old");
-         File var7 = new File(this.field_15915.field_9575, "servers.dat");
+         File var6 = new File(this.field_15915.runDirectory, "servers.dat_old");
+         File var7 = new File(this.field_15915.runDirectory, "servers.dat");
          class_9665.method_44675(var7, var10, var6);
       } catch (Exception var8) {
          field_15917.error("Couldn't save server list", var8);
@@ -82,7 +82,7 @@ public class class_3187 {
    }
 
    public static void method_14669(class_2560 var0) {
-      class_3187 var3 = new class_3187(class_1893.method_8510());
+      class_3187 var3 = new class_3187(MinecraftClient.method_8510());
       var3.method_14670();
 
       for (int var4 = 0; var4 < var3.method_14671(); var4++) {

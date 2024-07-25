@@ -14,11 +14,11 @@ import java.util.stream.Stream;
 
 public class class_793 implements class_8773 {
    private final class_1092 field_4260;
-   private final class_1893 field_4259;
+   private final MinecraftClient field_4259;
    private int field_4262 = -1;
    private CompletableFuture<Suggestions> field_4261;
 
-   public class_793(class_1092 var1, class_1893 var2) {
+   public class_793(class_1092 var1, MinecraftClient var2) {
       this.field_4260 = var1;
       this.field_4259 = var2;
    }

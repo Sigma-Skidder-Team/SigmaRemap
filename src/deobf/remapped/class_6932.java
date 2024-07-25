@@ -6,9 +6,9 @@ import net.minecraft.util.text.ITextComponent;
 
 public class class_6932 implements class_9720 {
    private static String[] field_35611;
-   private final class_1893 field_35610;
+   private final MinecraftClient field_35610;
 
-   public class_6932(class_1893 var1) {
+   public class_6932(MinecraftClient var1) {
       this.field_35610 = var1;
    }
 

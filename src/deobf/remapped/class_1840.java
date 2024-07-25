@@ -39,7 +39,7 @@ public class class_1840 extends class_266 {
 
    public class_1840() {
       super(new TranslationTextComponent("gui.socialInteractions.title"));
-      this.method_8132(class_1893.method_8510());
+      this.method_8132(MinecraftClient.method_8510());
    }
 
    private int method_8136() {
@@ -240,7 +240,7 @@ public class class_1840 extends class_266 {
       }
    }
 
-   private void method_8132(class_1893 var1) {
+   private void method_8132(MinecraftClient var1) {
       int var4 = var1.method_8614().method_4798().size();
       if (this.field_9334 != var4) {
          String var5 = "";

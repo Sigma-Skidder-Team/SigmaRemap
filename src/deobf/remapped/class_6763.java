@@ -41,8 +41,8 @@ public class class_6763 {
       field_34907 = GLFW.glfwCreateStandardCursor(221185);
       field_34905 = GLFW.glfwCreateStandardCursor(221188);
       field_34903 = GLFW.glfwCreateStandardCursor(221186);
-      GLFW.glfwSetCursor(class_1893.method_8510().field_9602.method_43181(), field_34907);
-      field_34898 = (float)(class_1893.method_8510().field_9602.method_43198() / class_1893.method_8510().field_9602.method_43163());
+      GLFW.glfwSetCursor(MinecraftClient.method_8510().field_9602.method_43181(), field_34907);
+      field_34898 = (float)(MinecraftClient.method_8510().field_9602.method_43198() / MinecraftClient.method_8510().field_9602.method_43163());
    }
 
    public void method_31006() {
@@ -79,16 +79,16 @@ public class class_6763 {
 
    public static boolean method_30997(class_266 var0) {
       if (var0 instanceof class_4145 && !(var0 instanceof class_9888)) {
-         class_1893.method_8510().field_9623 = null;
-         class_1893.method_8510().method_8609(new class_9888(((class_4145)var0).field_20176));
+         MinecraftClient.method_8510().field_9623 = null;
+         MinecraftClient.method_8510().method_8609(new class_9888(((class_4145)var0).field_20176));
          return true;
       } else if (var0 instanceof class_2794 && !(var0 instanceof class_9140)) {
-         class_1893.method_8510().field_9623 = null;
-         class_1893.method_8510().method_8609(new class_9140());
+         MinecraftClient.method_8510().field_9623 = null;
+         MinecraftClient.method_8510().method_8609(new class_9140());
          return true;
       } else if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30642 && var0 instanceof class_1876 && !(var0 instanceof class_6186)) {
-         class_1893.method_8510().field_9623 = null;
-         class_1893.method_8510().method_8609(new class_6186());
+         MinecraftClient.method_8510().field_9623 = null;
+         MinecraftClient.method_8510().method_8609(new class_6186());
          return true;
       } else {
          return false;
@@ -124,10 +124,10 @@ public class class_6763 {
    public void method_31009() {
       if (this.field_34904 != null) {
          this.field_34894[0] = Math.max(
-            0, Math.min(class_1893.method_8510().field_9602.method_43166(), (int)class_1893.method_8510().field_9625.method_39835())
+            0, Math.min(MinecraftClient.method_8510().field_9602.method_43166(), (int) MinecraftClient.method_8510().field_9625.method_39835())
          );
          this.field_34894[1] = Math.max(
-            0, Math.min(class_1893.method_8510().field_9602.method_43163(), (int)class_1893.method_8510().field_9625.method_39832())
+            0, Math.min(MinecraftClient.method_8510().field_9602.method_43163(), (int) MinecraftClient.method_8510().field_9625.method_39832())
          );
 
          for (Integer var4 : this.field_34909) {
@@ -190,14 +190,14 @@ public class class_6763 {
 
    public void method_30983() {
       class_2209.field_11030.method_38419();
-      if (class_1893.method_8510().field_9601 != null) {
+      if (MinecraftClient.method_8510().field_9601 != null) {
          GL11.glDisable(2896);
          int var3 = 0;
          byte var4 = 0;
          short var5 = 170;
          byte var6 = 95;
-         if (class_1893.method_8510().field_9577.field_45470) {
-            var3 = class_1893.method_8510().field_9602.method_43166() / 2 - var5 / 2;
+         if (MinecraftClient.method_8510().field_9577.field_45470) {
+            var3 = MinecraftClient.method_8510().field_9602.method_43166() / 2 - var5 / 2;
          }
 
          if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30645) {
@@ -219,25 +219,25 @@ public class class_6763 {
          SigmaMainClass.method_3328().method_3302().method_7914(new class_3278());
       }
 
-      if (this.field_34904 != null && class_1893.method_8510().field_9610 == null) {
+      if (this.field_34904 != null && MinecraftClient.method_8510().field_9610 == null) {
          this.field_34904.method_32178(1.0F);
       }
    }
 
    public void method_30998(float var1) {
-      if (this.field_34904 != null && class_1893.method_8510().field_9610 == null) {
+      if (this.field_34904 != null && MinecraftClient.method_8510().field_9610 == null) {
          this.field_34904.method_29510(var1);
       }
    }
 
    public void method_31002(int var1, int var2, int var3) {
-      if (this.field_34904 != null && class_1893.method_8510().field_9610 == null) {
+      if (this.field_34904 != null && MinecraftClient.method_8510().field_9610 == null) {
          this.field_34904.method_29508(var1, var2, var3);
       }
    }
 
    public void method_31005(int var1, int var2, int var3) {
-      if (this.field_34904 != null && class_1893.method_8510().field_9610 == null) {
+      if (this.field_34904 != null && MinecraftClient.method_8510().field_9610 == null) {
          this.field_34904.method_29505(var1, var2, var3);
       }
    }
@@ -281,8 +281,8 @@ public class class_6763 {
    }
 
    public static void method_30993() {
-      class_1893.method_8510();
-      if (class_1893.field_9574) {
+      MinecraftClient.method_8510();
+      if (MinecraftClient.field_9574) {
          try {
             class_1293 var2 = class_357.method_1789(new File(SigmaMainClass.method_3328().method_3334() + "/config.json"));
             if (var2.method_5850("hidpicocoa")) {
@@ -355,14 +355,14 @@ public class class_6763 {
          this.method_30994(SigmaMainClass.method_3328().method_3304());
       }
 
-      if (class_1893.method_8510().field_9602.method_43166() != 0 && class_1893.method_8510().field_9602.method_43163() != 0) {
+      if (MinecraftClient.method_8510().field_9602.method_43166() != 0 && MinecraftClient.method_8510().field_9602.method_43163() != 0) {
          field_34898 = (float)Math.max(
-            class_1893.method_8510().field_9602.method_43178() / class_1893.method_8510().field_9602.method_43166(),
-            class_1893.method_8510().field_9602.method_43198() / class_1893.method_8510().field_9602.method_43163()
+            MinecraftClient.method_8510().field_9602.method_43178() / MinecraftClient.method_8510().field_9602.method_43166(),
+            MinecraftClient.method_8510().field_9602.method_43198() / MinecraftClient.method_8510().field_9602.method_43163()
          );
       }
 
-      class_73.method_104(class_1893.method_8510().field_9602.method_43166(), class_1893.method_8510().field_9602.method_43163());
+      class_73.method_104(MinecraftClient.method_8510().field_9602.method_43166(), MinecraftClient.method_8510().field_9602.method_43163());
    }
 
    public class_2596 method_31001() {
@@ -370,7 +370,7 @@ public class class_6763 {
    }
 
    public void method_30988() {
-      this.method_30990(method_30995(class_1893.method_8510().field_9623));
+      this.method_30990(method_30995(MinecraftClient.method_8510().field_9623));
    }
 
    public void method_30990(class_2596 var1) {
@@ -392,8 +392,8 @@ public class class_6763 {
 
    public void method_30989(class_266 var1) {
       if (var1 != null) {
-         class_1893.method_8510().field_9623 = null;
-         class_1893.method_8510().method_8609(var1);
+         MinecraftClient.method_8510().field_9623 = null;
+         MinecraftClient.method_8510().method_8609(var1);
       }
    }
 

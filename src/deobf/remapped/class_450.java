@@ -6,7 +6,7 @@ import org.apache.commons.lang3.tuple.Pair;
 public class class_450 {
    private static final class_4639 field_1875 = new class_4639("textures/misc/underwater.png");
 
-   public static void method_2171(class_1893 var0, class_7966 var1) {
+   public static void method_2171(MinecraftClient var0, class_7966 var1) {
       class_3542.method_16458();
       class_5989 var4 = var0.field_9632;
       if (!var4.field_41731) {
@@ -65,7 +65,7 @@ public class class_450 {
       return null;
    }
 
-   private static void method_2168(class_1893 var0, class_5155 var1, class_7966 var2) {
+   private static void method_2168(MinecraftClient var0, class_5155 var1, class_7966 var2) {
       if (class_153.method_611()) {
          class_153.method_609(var1);
       }
@@ -92,7 +92,7 @@ public class class_450 {
       class_138.method_554(var5);
    }
 
-   private static void method_2167(class_1893 var0, class_7966 var1) {
+   private static void method_2167(MinecraftClient var0, class_7966 var1) {
       class_3542.method_16432();
       var0.method_8577().method_35674(field_1875);
       if (class_153.method_611()) {
@@ -122,7 +122,7 @@ public class class_450 {
       class_3542.method_16448();
    }
 
-   private static void method_2169(class_1893 var0, class_7966 var1) {
+   private static void method_2169(MinecraftClient var0, class_7966 var1) {
       class_9633 var4 = class_8042.method_36499().method_36501();
       class_3542.method_16457(519);
       class_3542.method_16387(false);

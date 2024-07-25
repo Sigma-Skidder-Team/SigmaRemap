@@ -188,7 +188,7 @@ public enum class_2966 {
             float var7 = method_13561(var1, 1);
             return var6 - var7 * (float)class_9299.method_42848(var6 / var7);
          case field_14541:
-            class_1893 var8 = class_1893.method_8510();
+            MinecraftClient var8 = MinecraftClient.method_8510();
             class_174 var9 = var8.field_9601;
             if (var9 == null) {
                return 0.0F;

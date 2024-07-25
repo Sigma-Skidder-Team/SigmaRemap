@@ -30,7 +30,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.lwjgl.opengl.GL11;
 
 public class class_2026 {
-   private static class_1893 field_10270 = class_1893.method_8510();
+   private static MinecraftClient field_10270 = MinecraftClient.method_8510();
    private boolean field_10295 = false;
    private class_8896 field_10298;
    private int field_10285 = 50;
@@ -109,7 +109,7 @@ public class class_2026 {
                }
             }
 
-            float var10 = 60.0F / (float)class_1893.method_8501();
+            float var10 = 60.0F / (float) MinecraftClient.method_8501();
 
             for (int var6 = 0; var6 < var4.length; var6++) {
                double var7 = this.field_10293.get(var6) - var4[var6];

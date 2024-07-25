@@ -5,7 +5,7 @@ import net.minecraft.util.text.ITextComponent;
 public class class_6823 extends class_7067<class_7451> {
    private static final class_454 field_35174 = new class_454("item_frame", "map=false");
    private static final class_454 field_35170 = new class_454("item_frame", "map=true");
-   private final class_1893 field_35169 = class_1893.method_8510();
+   private final MinecraftClient field_35169 = MinecraftClient.method_8510();
    private final class_8765 field_35172;
    private static double field_35171 = 4096.0;
 
@@ -89,7 +89,7 @@ public class class_6823 extends class_7067<class_7451> {
    }
 
    public boolean method_31300(class_7451 var1) {
-      if (class_1893.method_8616() && !var1.method_33905().method_28022() && var1.method_33905().method_28018() && this.field_36493.field_31313 == var1) {
+      if (MinecraftClient.method_8616() && !var1.method_33905().method_28022() && var1.method_33905().method_28018() && this.field_36493.field_31313 == var1) {
          double var4 = this.field_36493.method_28129(var1);
          float var6 = !var1.method_37073() ? 64.0F : 32.0F;
          return var4 < (double)(var6 * var6);
@@ -119,7 +119,7 @@ public class class_6823 extends class_7067<class_7451> {
    }
 
    public static void method_31303() {
-      class_1893 var2 = class_1893.method_8510();
+      MinecraftClient var2 = MinecraftClient.method_8510();
       double var3 = class_3111.method_14261(var2.field_9577.field_45543, 1.0, 120.0);
       double var5 = Math.max(6.0 * (double)var2.method_8552().method_43163() / var3, 16.0);
       field_35171 = var5 * var5;

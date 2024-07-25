@@ -1229,7 +1229,7 @@ public class class_9049 {
    }
 
    private static class_5155 method_41571(class_6163 var0, class_2522 var1, class_1331 var2, class_2522 var3, int var4) {
-      class_7373 var5 = class_1893.method_8510().method_8505().method_3716().method_43946(var3);
+      class_7373 var5 = MinecraftClient.method_8510().method_8505().method_3716().method_43946(var3);
       if (var5 == null) {
          return null;
       } else {
