@@ -18,7 +18,7 @@ public class class_2374 implements class_7912 {
       MinecraftClient var4 = MinecraftClient.getInstance();
       Map var5 = var4.method_8557().method_44310(var1);
       if (!var5.containsKey(Type.SKIN)) {
-         this.field_11876 = class_1512.method_6921(class_704.method_3242(var1));
+         this.field_11876 = class_1512.method_6921(PlayerEntity.method_3242(var1));
       } else {
          this.field_11876 = var4.method_8557().method_44311((MinecraftProfileTexture)var5.get(Type.SKIN), Type.SKIN);
       }

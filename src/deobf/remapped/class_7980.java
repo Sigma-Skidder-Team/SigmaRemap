@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_7980 extends class_4138<class_704> {
+public class class_7980 extends NearestAttackableTargetGoal<PlayerEntity> {
    private static String[] field_40870;
 
    public class_7980(class_6092 var1, class_6092 var2) {
-      super(var2, class_704.class, true);
+      super(var2, PlayerEntity.class, true);
       this.field_40869 = var1;
    }
 

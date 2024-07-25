@@ -80,12 +80,12 @@ public abstract class class_8383 extends class_3954<class_6867> {
    }
 
    @Override
-   public boolean method_18861(class_704 var1) {
+   public boolean method_18861(PlayerEntity var1) {
       return this.field_42898.method_31502(var1);
    }
 
    @Override
-   public ItemStack method_18874(class_704 var1, int var2) {
+   public ItemStack method_18874(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {

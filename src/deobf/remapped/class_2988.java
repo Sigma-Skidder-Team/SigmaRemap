@@ -21,12 +21,12 @@ public class class_2988 extends class_3997 {
    }
 
    @Override
-   public void method_18425(class_704 var1, class_9379 var2, BlockPos var3) {
+   public void method_18425(PlayerEntity var1, class_9379 var2, BlockPos var3) {
       var2.method_43359(var1, var3, class_463.field_2489, class_562.field_3328, 1.0F, 1.0F);
    }
 
    private void method_13674(class_6331 var1, ItemStack var2, BlockPos var3) {
-      Entity var6 = this.field_14691.method_30479(var1, var2, (class_704)null, var3, class_2417.field_12026, true, false);
+      Entity var6 = this.field_14691.method_30479(var1, var2, (PlayerEntity)null, var3, class_2417.field_12026, true, false);
       if (var6 != null) {
          ((class_3578)var6).method_16631(true);
       }

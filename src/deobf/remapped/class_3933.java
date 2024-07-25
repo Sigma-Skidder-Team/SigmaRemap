@@ -37,7 +37,7 @@ public class class_3933 extends class_6414 {
       BlockPos var7 = var3.method_6081();
       if (var2.method_28258(var3).method_22007(class_6503.field_33094)) {
          var2.method_43359(
-            (class_704)null,
+            (PlayerEntity)null,
             var3,
             class_463.field_2472,
             class_562.field_3322,

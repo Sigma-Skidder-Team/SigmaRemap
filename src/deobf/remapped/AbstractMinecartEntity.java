@@ -192,7 +192,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          this.method_4749(10);
          this.method_37138();
          this.method_4742(this.method_4736() + var2 * 10.0F);
-         boolean var5 = var1.method_28372() instanceof class_704 && ((class_704)var1.method_28372()).playerAbilities.isCreativeMode;
+         boolean var5 = var1.method_28372() instanceof PlayerEntity && ((PlayerEntity)var1.method_28372()).playerAbilities.isCreativeMode;
          if (var5 || this.method_4736() > 40.0F) {
             this.method_37305();
             if (var5 && !this.method_45507()) {
@@ -306,7 +306,7 @@ public abstract class AbstractMinecartEntity extends Entity {
             if (!var25.isEmpty()) {
                for (int var26 = 0; var26 < var25.size(); var26++) {
                   Entity var24 = (Entity)var25.get(var26);
-                  if (!(var24 instanceof class_704)
+                  if (!(var24 instanceof PlayerEntity)
                      && !(var24 instanceof class_8127)
                      && !(var24 instanceof AbstractMinecartEntity)
                      && !this.method_37151()
@@ -424,7 +424,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       var17 = new class_1343(var30 * var22 / var26, var17.field_7333, var30 * var24 / var26);
       this.method_37215(var17);
       Entity var32 = this.method_37114().isEmpty() ? null : this.method_37114().get(0);
-      if (var32 instanceof class_704) {
+      if (var32 instanceof PlayerEntity) {
          class_1343 var33 = var32.method_37098();
          double var34 = method_37266(var33);
          double var36 = method_37266(this.method_37098());

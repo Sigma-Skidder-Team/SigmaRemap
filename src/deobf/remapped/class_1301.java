@@ -12,7 +12,7 @@ public class class_1301 extends class_6414 {
    }
 
    @Override
-   public void method_10791(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
+   public void method_10791(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4) {
       method_5942(var1, var2, var3);
       super.method_10791(var1, var2, var3, var4);
    }
@@ -24,7 +24,7 @@ public class class_1301 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var2.field_33055) {
          method_5942(var1, var2, var3);
       } else {

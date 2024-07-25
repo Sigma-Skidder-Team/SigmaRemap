@@ -32,11 +32,11 @@ public class class_1425 {
       if (this != Effects.field_19742) {
          if (this != Effects.field_19718) {
             if (this != Effects.field_19725) {
-               if (this == Effects.field_19747 && var1 instanceof class_704) {
-                  ((class_704)var1).method_3170(0.005F * (float)(var2 + 1));
-               } else if (this == Effects.field_19734 && var1 instanceof class_704) {
+               if (this == Effects.field_19747 && var1 instanceof PlayerEntity) {
+                  ((PlayerEntity)var1).method_3170(0.005F * (float)(var2 + 1));
+               } else if (this == Effects.field_19734 && var1 instanceof PlayerEntity) {
                   if (!var1.world.field_33055) {
-                     ((class_704)var1).method_3161().method_42236(var2 + 1, 1.0F);
+                     ((PlayerEntity)var1).method_3161().method_42236(var2 + 1, 1.0F);
                   }
                } else if ((this != Effects.field_19749 || var1.method_26563()) && (this != Effects.field_19723 || !var1.method_26563())) {
                   if (this == Effects.field_19723 && !var1.method_26563() || this == Effects.field_19749 && var1.method_26563()) {

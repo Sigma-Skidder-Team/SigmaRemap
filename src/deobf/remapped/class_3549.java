@@ -81,7 +81,7 @@ public class class_3549 implements class_1517 {
                }
 
                class_6862 var11 = EntityType.field_34303
-                  .method_30478(var1, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var10, class_2417.field_12040, false, false);
+                  .method_30478(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, class_2417.field_12040, false, false);
                if (var11 != null) {
                   for (int var12 = 0; var12 < 2; var12++) {
                      this.method_16515(var1, var11, 4);
@@ -106,7 +106,7 @@ public class class_3549 implements class_1517 {
       BlockPos var6 = this.method_16516(var1, var2.method_37075(), var3);
       if (var6 != null) {
          class_9629 var7 = EntityType.field_34230
-            .method_30478(var1, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var6, class_2417.field_12040, false, false);
+            .method_30478(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var6, class_2417.field_12040, false, false);
          if (var7 != null) {
             var7.method_26901(var2, true);
          }

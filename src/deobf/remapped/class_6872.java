@@ -18,7 +18,7 @@ public final class class_6872 implements class_4259 {
    }
 
    @Override
-   public class_4088 method_11419(int var1, class_7051 var2, class_704 var3) {
+   public class_4088 method_11419(int var1, class_7051 var2, PlayerEntity var3) {
       return this.field_35395.method_11419(var1, var2, var3);
    }
 }

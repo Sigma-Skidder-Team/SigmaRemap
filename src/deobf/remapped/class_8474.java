@@ -30,7 +30,7 @@ public class class_8474 extends class_4314 implements class_2593 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       class_3757 var9 = var2.method_28260(var3);
       if (var9 instanceof class_557) {
          class_557 var10 = (class_557)var9;
@@ -159,7 +159,7 @@ public class class_8474 extends class_4314 implements class_2593 {
          boolean var7 = var3.<Boolean>method_10313(field_43423);
          if (var7) {
             if (!var1.method_22567()) {
-               var1.method_43359((class_704)null, var2, class_463.field_2557, class_562.field_3322, 1.0F, 1.0F);
+               var1.method_43359((PlayerEntity)null, var2, class_463.field_2557, class_562.field_3322, 1.0F, 1.0F);
             }
 
             method_39006(var1, var2, var3);
@@ -177,7 +177,7 @@ public class class_8474 extends class_4314 implements class_2593 {
    public void method_10758(World var1, class_2522 var2, class_9529 var3, class_5783 var4) {
       if (!var1.field_33055 && var4.method_37264()) {
          Entity var7 = var4.method_26166();
-         boolean var8 = var7 == null || var7 instanceof class_704 || var1.method_29537().method_1285(class_291.field_1047);
+         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.method_29537().method_1285(class_291.field_1047);
          if (var8 && !var2.<Boolean>method_10313(field_43423) && !var2.<Boolean>method_10313(field_43421)) {
             BlockPos var9 = var3.method_43955();
             var1.method_7513(var9, var2.method_10308(class_6023.field_30732, Boolean.valueOf(true)), 11);

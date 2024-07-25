@@ -63,7 +63,7 @@ public class class_903 extends class_2255<class_4797> {
          MinecraftClient var5 = MinecraftClient.getInstance();
          Map var6 = var5.method_8557().method_44310(var1);
          return !var6.containsKey(Type.SKIN)
-            ? RenderLayer.method_16755(class_1512.method_6921(class_704.method_3242(var1)))
+            ? RenderLayer.method_16755(class_1512.method_6921(PlayerEntity.method_3242(var1)))
             : RenderLayer.method_16705(var5.method_8557().method_44311((MinecraftProfileTexture)var6.get(Type.SKIN), Type.SKIN));
       } else {
          return RenderLayer.method_16753(var4);

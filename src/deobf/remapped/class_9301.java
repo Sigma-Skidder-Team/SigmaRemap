@@ -485,7 +485,7 @@ public class class_9301 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var4.playerAbilities.allowEdit) {
          return class_6910.field_35521;
       } else {

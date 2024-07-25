@@ -10,7 +10,7 @@ public class class_7494 {
    private static String[] field_38238;
    private static final MinecraftClient field_38239 = MinecraftClient.getInstance();
 
-   public static boolean method_34116(class_704 var0, BlockPos var1) {
+   public static boolean method_34116(PlayerEntity var0, BlockPos var1) {
       return method_34108(var0, var1) < method_34074();
    }
 
@@ -244,7 +244,7 @@ public class class_7494 {
       return var0;
    }
 
-   public static List<class_704> method_34088(List<class_704> var0) {
+   public static List<PlayerEntity> method_34088(List<PlayerEntity> var0) {
       Collections.sort(var0, new class_469());
       return var0;
    }
@@ -296,7 +296,7 @@ public class class_7494 {
       return class_9299.method_42843((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F) + (var2 - 0.5F) * (var2 - 0.5F));
    }
 
-   public static class_6414 method_34092(class_704 var0) {
+   public static class_6414 method_34092(PlayerEntity var0) {
       return method_34120(var0.method_37075().method_6100());
    }
 

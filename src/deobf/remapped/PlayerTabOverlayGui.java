@@ -125,7 +125,7 @@ public class PlayerTabOverlayGui extends AbstractGui {
             class_753 var28 = (class_753)var8.get(var47);
             GameProfile var29 = var28.method_3392();
             if (var14) {
-               class_704 var30 = this.field_10666.theWorld.method_25862(var29.getId());
+               PlayerEntity var30 = this.field_10666.theWorld.method_25862(var29.getId());
                boolean var31 = var30 != null
                   && var30.method_3168(class_7742.field_39260)
                   && ("Dinnerbone".equals(var29.getName()) || "Grumm".equals(var29.getName()));

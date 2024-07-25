@@ -5,10 +5,10 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 
 public interface class_233 {
-   void method_975(class_704 var1);
+   void method_975(PlayerEntity var1);
 
    @Nullable
-   class_704 method_978();
+   PlayerEntity method_978();
 
    class_2795 method_974();
 
@@ -32,7 +32,7 @@ public interface class_233 {
       return false;
    }
 
-   default void method_977(class_704 var1, ITextComponent var2, int var3) {
+   default void method_977(PlayerEntity var1, ITextComponent var2, int var3) {
       OptionalInt var6 = var1.method_3152(new class_6872((var1x, var2x, var3x) -> new class_6415(var1x, var2x, this), var2));
       if (var6.isPresent()) {
          class_2795 var7 = this.method_974();

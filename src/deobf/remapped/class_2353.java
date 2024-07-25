@@ -82,7 +82,7 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       return class_6910.field_35521;
    }
 
@@ -233,7 +233,7 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public float method_10799(class_2522 var1, class_704 var2, class_6163 var3, BlockPos var4) {
+   public float method_10799(class_2522 var1, PlayerEntity var2, class_6163 var3, BlockPos var4) {
       float var7 = var1.method_8341(var3, var4);
       if (var7 != -1.0F) {
          int var8 = !var2.method_3232(var1) ? 100 : 30;
@@ -248,7 +248,7 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public void method_10791(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
+   public void method_10791(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4) {
    }
 
    @Deprecated

@@ -56,7 +56,7 @@ public abstract class class_8990 extends class_5467 {
    }
 
    @Override
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return !this.method_26920();
    }
 
@@ -127,7 +127,7 @@ public abstract class class_8990 extends class_5467 {
       this.field_41735.method_36633(field_46033, Optional.<UUID>ofNullable(var1));
    }
 
-   public void method_41212(class_704 var1) {
+   public void method_41212(PlayerEntity var1) {
       this.method_41217(true);
       this.method_41218(var1.method_37328());
       if (var1 instanceof class_9359) {

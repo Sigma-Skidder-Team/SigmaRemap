@@ -10,7 +10,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
    private static final class_7821<Boolean> field_8352 = class_8073.<Boolean>method_36641(class_1609.class, class_2734.field_13347);
    private int field_8351;
    private class_9625<AbstractRaiderEntity> field_8348;
-   private class_2978<class_704> field_8349;
+   private class_2978<PlayerEntity> field_8349;
 
    public class_1609(EntityType<? extends class_1609> var1, World var2) {
       super(var1, var2);
@@ -22,15 +22,15 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
       this.field_8348 = new class_9625<AbstractRaiderEntity>(
          this, AbstractRaiderEntity.class, true, var1 -> var1 != null && this.method_18600() && var1.method_37387() != EntityType.field_34220
       );
-      this.field_8349 = new class_2978<class_704>(this, class_704.class, 10, true, false, (Predicate<class_5834>)null);
-      this.field_29916.method_3485(1, new class_787(this));
-      this.field_29916.method_3485(2, new class_1837(this, 1.0, 60, 10.0F));
-      this.field_29916.method_3485(2, new class_2889(this, 1.0));
-      this.field_29916.method_3485(3, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(3, new class_9691(this));
-      this.field_29908.method_3485(1, new class_8420(this, AbstractRaiderEntity.class));
-      this.field_29908.method_3485(2, this.field_8348);
-      this.field_29908.method_3485(3, this.field_8349);
+      this.field_8349 = new class_2978<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<class_5834>)null);
+      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(2, new class_1837(this, 1.0, 60, 10.0F));
+      this.goalSelector.addGoal(2, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(3, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(3, new class_9691(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class));
+      this.targetSelector.addGoal(2, this.field_8348);
+      this.targetSelector.addGoal(3, this.field_8349);
    }
 
    @Override
@@ -100,7 +100,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
                if (!this.method_37378()) {
                   this.world
                      .method_29528(
-                        (class_704)null,
+                        (PlayerEntity)null,
                         this.getPosX(),
                         this.method_37309(),
                         this.getPosZ(),
@@ -212,7 +212,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
          if (!this.method_37378()) {
             this.world
                .method_29528(
-                  (class_704)null,
+                  (PlayerEntity)null,
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),

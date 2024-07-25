@@ -112,7 +112,7 @@ public class class_1645 extends class_380 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var1.<Boolean>method_10313(field_8559)) {
          Direction var9 = var4.method_37365();
          if (var1.<Direction>method_10313(field_1543) == var9.method_1046()) {
@@ -137,7 +137,7 @@ public class class_1645 extends class_380 {
          if (var1.<Boolean>method_10313(field_8553) != var9) {
             var2.method_7513(var3, var1.method_10308(field_8553, Boolean.valueOf(var9)).method_10308(field_8559, Boolean.valueOf(var9)), 2);
             if (var1.<Boolean>method_10313(field_8559) != var9) {
-               var2.method_43365((class_704)null, !var9 ? 1014 : 1008, var3, 0);
+               var2.method_43365((PlayerEntity)null, !var9 ? 1014 : 1008, var3, 0);
             }
          }
       }

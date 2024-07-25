@@ -436,7 +436,7 @@ public class IngameGUI extends AbstractGui {
    }
 
    public void renderHotbar(float var1, class_7966 var2) {
-      class_704 var5 = this.method_13976();
+      PlayerEntity var5 = this.method_13976();
       if (var5 != null) {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.mc.getTextureManager().bindTexture(WIDGETS_TEX_PATH);
@@ -667,12 +667,12 @@ public class IngameGUI extends AbstractGui {
       }
    }
 
-   private class_704 method_13976() {
-      return this.mc.getRenderViewEntity() instanceof class_704 ? (class_704)this.mc.getRenderViewEntity() : null;
+   private PlayerEntity method_13976() {
+      return this.mc.getRenderViewEntity() instanceof PlayerEntity ? (PlayerEntity)this.mc.getRenderViewEntity() : null;
    }
 
    private class_5834 method_13981() {
-      class_704 var3 = this.method_13976();
+      PlayerEntity var3 = this.method_13976();
       if (var3 != null) {
          Entity var4 = var3.method_37243();
          if (var4 == null) {
@@ -706,7 +706,7 @@ public class IngameGUI extends AbstractGui {
    }
 
    private void func_238457_e_(class_7966 var1) {
-      class_704 var4 = this.method_13976();
+      PlayerEntity var4 = this.method_13976();
       if (var4 != null) {
          int var5 = class_9299.method_42816(var4.method_26551());
          boolean var6 = this.healthUpdateCounter > (long)this.ticks && (this.healthUpdateCounter - (long)this.ticks) / 3L % 2L == 1L;
@@ -1016,7 +1016,7 @@ public class IngameGUI extends AbstractGui {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
    }
 
-   private void method_13984(int var1, int var2, float var3, class_704 var4, ItemStack var5) {
+   private void method_13984(int var1, int var2, float var3, PlayerEntity var4, ItemStack var5) {
       if (!var5.method_28022()) {
          float var8 = (float)var5.method_27975() - var3;
          if (var8 > 0.0F) {

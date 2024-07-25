@@ -15,9 +15,9 @@ public class class_990 extends class_3599 {
    @Override
    public boolean method_16795() {
       this.field_5042 = this.field_5040.method_17809();
-      if (this.field_5042 instanceof class_704) {
+      if (this.field_5042 instanceof PlayerEntity) {
          double var3 = this.field_5042.method_37275(this.field_5040);
-         return !(var3 > 256.0) ? class_912.method_3906(this.field_5040, (class_704)this.field_5042) : false;
+         return !(var3 > 256.0) ? class_912.method_3906(this.field_5040, (PlayerEntity)this.field_5042) : false;
       } else {
          return false;
       }

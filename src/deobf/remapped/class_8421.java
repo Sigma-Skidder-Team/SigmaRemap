@@ -256,8 +256,8 @@ public class class_8421 {
       if (var0 == Config.method_14327().getRenderViewEntity() && !Config.method_14451()) {
          return 0;
       } else {
-         if (var0 instanceof class_704) {
-            class_704 var3 = (class_704)var0;
+         if (var0 instanceof PlayerEntity) {
+            PlayerEntity var3 = (PlayerEntity)var0;
             if (var3.method_37221()) {
                return 0;
             }

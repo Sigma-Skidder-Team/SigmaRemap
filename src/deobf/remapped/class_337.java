@@ -31,15 +31,15 @@ public class class_337 extends class_1173 {
    public void registerGoals() {
       class_3537 var3 = new class_3537(this, 1.0);
       this.field_1260 = new class_8285(this, 1.0, 80);
-      this.field_29916.method_3485(4, new class_9868(this));
-      this.field_29916.method_3485(5, var3);
-      this.field_29916.method_3485(7, this.field_1260);
-      this.field_29916.method_3485(8, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(8, new class_4407(this, class_337.class, 12.0F, 0.01F));
-      this.field_29916.method_3485(9, new class_9691(this));
+      this.goalSelector.addGoal(4, new class_9868(this));
+      this.goalSelector.addGoal(5, var3);
+      this.goalSelector.addGoal(7, this.field_1260);
+      this.goalSelector.addGoal(8, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new class_4407(this, class_337.class, 12.0F, 0.01F));
+      this.goalSelector.addGoal(9, new class_9691(this));
       this.field_1260.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
       var3.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
-      this.field_29908.method_3485(1, new class_4138<class_5834>(this, class_5834.class, 10, true, false, new class_853(this)));
+      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<class_5834>(this, class_5834.class, 10, true, false, new class_853(this)));
    }
 
    public static class_1313 method_1544() {

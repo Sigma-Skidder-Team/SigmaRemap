@@ -73,19 +73,19 @@ public class BowAimbotModule extends Module {
             var5.remove();
          } else if (var6 instanceof class_9399) {
             var5.remove();
-         } else if (!this.getBooleanValueByName("Players") && var6 instanceof class_704) {
+         } else if (!this.getBooleanValueByName("Players") && var6 instanceof PlayerEntity) {
             var5.remove();
-         } else if (this.getBooleanValueByName("Anti-Bot") && var6 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
+         } else if (this.getBooleanValueByName("Anti-Bot") && var6 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
             var5.remove();
          } else if (!this.getBooleanValueByName("Invisible") && var6.method_37109()) {
             var5.remove();
-         } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof class_704)) {
+         } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
             var5.remove();
          } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var6)) {
             var5.remove();
          } else if (var6.method_37367()) {
             var5.remove();
-         } else if (var6 instanceof class_704 && class_5876.method_26760((class_704)var6) && !this.getBooleanValueByName("Teams")) {
+         } else if (var6 instanceof PlayerEntity && class_5876.method_26760((PlayerEntity)var6) && !this.getBooleanValueByName("Teams")) {
             var5.remove();
          }
       }

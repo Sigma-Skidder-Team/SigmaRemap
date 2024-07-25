@@ -64,7 +64,7 @@ public class class_3003 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48749);
       if (var7.method_33990() == class_1430.field_7717) {
@@ -127,7 +127,7 @@ public class class_3003 extends class_2451 {
    }
 
    public Optional<class_5886> method_13714(
-           class_704 var1, class_5886 var2, EntityType<? extends class_5886> var3, class_6331 var4, class_1343 var5, ItemStack var6
+           PlayerEntity var1, class_5886 var2, EntityType<? extends class_5886> var3, class_6331 var4, class_1343 var5, ItemStack var6
    ) {
       if (this.method_13717(var6.method_27990(), var3)) {
          Object var9;

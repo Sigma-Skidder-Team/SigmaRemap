@@ -16,7 +16,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4) {
       return !var4.method_3186();
    }
 
@@ -32,8 +32,8 @@ public class class_1302 extends class_2451 implements class_1538 {
 
    @Override
    public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
-      if (var3 instanceof class_704) {
-         class_704 var7 = (class_704)var3;
+      if (var3 instanceof PlayerEntity) {
+         PlayerEntity var7 = (PlayerEntity)var3;
          int var8 = this.method_11230(var1) - var4;
          if (var8 >= 10) {
             int var9 = class_2931.method_13415(var1);
@@ -48,7 +48,7 @@ public class class_1302 extends class_2451 implements class_1538 {
                      }
 
                      var2.method_7509(var10);
-                     var2.method_29540((class_704)null, var10, class_463.field_2050, class_562.field_3335, 1.0F, 1.0F);
+                     var2.method_29540((PlayerEntity)null, var10, class_463.field_2050, class_562.field_3335, 1.0F, 1.0F);
                      if (!var7.playerAbilities.isCreativeMode) {
                         var7.inventory.method_32419(var1);
                      }
@@ -85,7 +85,7 @@ public class class_1302 extends class_2451 implements class_1538 {
                      var22 = class_463.field_2408;
                   }
 
-                  var2.method_29540((class_704)null, var7, var22, class_562.field_3335, 1.0F, 1.0F);
+                  var2.method_29540((PlayerEntity)null, var7, var22, class_562.field_3335, 1.0F, 1.0F);
                }
             }
          }
@@ -93,7 +93,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       if (var6.method_28026() < var6.method_27957() - 1) {
          if (class_2931.method_13415(var6) > 0 && !var2.method_37363()) {

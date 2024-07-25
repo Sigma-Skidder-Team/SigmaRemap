@@ -30,9 +30,9 @@ public class class_7738 extends class_2451 {
          ItemStack var7 = var1.method_21867();
          if (!var4.field_33055) {
             ((class_3995)class_4783.field_23312).method_18419(var4, var5, var6, var7);
-            var4.method_43365((class_704)null, 1010, var5, class_2451.method_11244(this));
+            var4.method_43365((PlayerEntity)null, 1010, var5, class_2451.method_11244(this));
             var7.method_27970(1);
-            class_704 var8 = var1.method_21868();
+            PlayerEntity var8 = var1.method_21868();
             if (var8 != null) {
                var8.method_3209(class_6234.field_31864);
             }

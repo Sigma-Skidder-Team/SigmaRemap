@@ -11,8 +11,8 @@ public class class_2100 extends class_551 implements class_1538 {
 
    @Override
    public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
-      if (var3 instanceof class_704) {
-         class_704 var7 = (class_704)var3;
+      if (var3 instanceof PlayerEntity) {
+         PlayerEntity var7 = (PlayerEntity)var3;
          boolean var8 = var7.playerAbilities.isCreativeMode || class_2931.method_13423(class_3668.field_17874, var1) > 0;
          ItemStack var9 = var7.method_26475(var1);
          if (!var9.method_28022() || var8) {
@@ -55,7 +55,7 @@ public class class_2100 extends class_551 implements class_1538 {
                }
 
                var2.method_29528(
-                  (class_704)null,
+                  (PlayerEntity)null,
                   var7.getPosX(),
                   var7.method_37309(),
                   var7.getPosZ(),
@@ -98,7 +98,7 @@ public class class_2100 extends class_551 implements class_1538 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       boolean var7 = !var2.method_26475(var6).method_28022();
       if (!var2.playerAbilities.isCreativeMode && !var7) {

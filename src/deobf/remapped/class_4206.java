@@ -14,11 +14,11 @@ public class class_4206 extends class_516 implements class_1869 {
 
    @Override
    public void registerGoals() {
-      this.field_29916.method_3485(5, new class_9287(this));
-      this.field_29916.method_3485(7, new class_3156(this));
-      this.field_29916.method_3485(7, new class_2221(this));
-      this.field_29908
-         .method_3485(1, new class_4138<class_704>(this, class_704.class, 10, true, false, var1 -> Math.abs(var1.method_37309() - this.method_37309()) <= 4.0));
+      this.goalSelector.addGoal(5, new class_9287(this));
+      this.goalSelector.addGoal(7, new class_3156(this));
+      this.goalSelector.addGoal(7, new class_2221(this));
+      this.targetSelector
+         .addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.method_37309() - this.method_37309()) <= 4.0));
    }
 
    public boolean method_19572() {
@@ -41,7 +41,7 @@ public class class_4206 extends class_516 implements class_1869 {
    @Override
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
-         if (var1.method_28353() instanceof class_9053 && var1.method_28372() instanceof class_704) {
+         if (var1.method_28353() instanceof class_9053 && var1.method_28372() instanceof PlayerEntity) {
             super.attackEntityFrom(var1, 1000.0F);
             return true;
          } else {

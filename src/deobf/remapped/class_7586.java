@@ -18,7 +18,7 @@ public class class_7586 {
    }
 
    private static int method_34474(class_9155 var0) {
-      return method_34475(var0, class_704::method_19839);
+      return method_34475(var0, PlayerEntity::method_19839);
    }
 
    private static int method_34472(class_9155 var0) {

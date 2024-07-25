@@ -26,7 +26,7 @@ public class class_731 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
       class_2451 var10 = var9.method_27960();
       class_6414 var11 = !(var10 instanceof class_6201)

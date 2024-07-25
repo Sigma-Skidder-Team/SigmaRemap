@@ -10,6 +10,6 @@ public class class_3523 extends class_2451 {
    @Override
    public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
       ItemStack var6 = super.method_11242(var1, var2, var3);
-      return var3 instanceof class_704 && ((class_704)var3).playerAbilities.isCreativeMode ? var6 : new ItemStack(class_4897.field_24454);
+      return var3 instanceof PlayerEntity && ((PlayerEntity)var3).playerAbilities.isCreativeMode ? var6 : new ItemStack(class_4897.field_24454);
    }
 }

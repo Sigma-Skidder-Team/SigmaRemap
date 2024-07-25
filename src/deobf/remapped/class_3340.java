@@ -60,7 +60,7 @@ public class class_3340 extends class_5920<class_7666> {
    public void method_15329(class_6331 var1, class_7666 var2, long var3) {
       this.field_16485 = false;
       this.field_16482 = var3;
-      class_704 var7 = this.method_15326(var2).get();
+      PlayerEntity var7 = this.method_15326(var2).get();
       var2.method_26525().method_5105(class_6044.field_30861, var7);
       class_1225.method_5444(var2, var7);
    }
@@ -70,7 +70,7 @@ public class class_3340 extends class_5920<class_7666> {
    }
 
    public void method_15328(class_6331 var1, class_7666 var2, long var3) {
-      class_704 var7 = this.method_15326(var2).get();
+      PlayerEntity var7 = this.method_15326(var2).get();
       class_1225.method_5444(var2, var7);
       if (!this.method_15336(var2, var7)) {
          class_1225.method_5445(var2, var7, 0.5F, 5);
@@ -115,15 +115,15 @@ public class class_3340 extends class_5920<class_7666> {
       return this.method_15326(var1).isPresent();
    }
 
-   private Optional<class_704> method_15326(class_7666 var1) {
-      return var1.method_26525().<class_704>method_5138(class_6044.field_30870).filter(this::method_15334);
+   private Optional<PlayerEntity> method_15326(class_7666 var1) {
+      return var1.method_26525().<PlayerEntity>method_5138(class_6044.field_30870).filter(this::method_15334);
    }
 
-   private boolean method_15334(class_704 var1) {
+   private boolean method_15334(PlayerEntity var1) {
       return var1.isPotionActive(Effects.field_19741);
    }
 
-   private boolean method_15336(class_7666 var1, class_704 var2) {
+   private boolean method_15336(class_7666 var1, PlayerEntity var2) {
       BlockPos var5 = var2.method_37075();
       BlockPos var6 = var1.method_37075();
       return var6.method_12171(var5, 5.0);

@@ -290,7 +290,7 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public class_6910 method_37227(class_704 var1, class_1343 var2, Hand var3) {
+   public class_6910 method_37227(PlayerEntity var1, class_1343 var2, Hand var3) {
       ItemStack var6 = var1.method_26617(var3);
       if (this.method_43493() || var6.method_27960() == class_4897.field_24948) {
          return class_6910.field_35521;
@@ -348,7 +348,7 @@ public class class_9399 extends class_5834 {
       return (this.field_48051 & 1 << var1.method_31773()) != 0 || var1.method_31772() == class_7268.field_37218 && !this.method_43499();
    }
 
-   private boolean method_43492(class_704 var1, class_6943 var2, ItemStack var3, Hand var4) {
+   private boolean method_43492(PlayerEntity var1, class_6943 var2, ItemStack var3, Hand var4) {
       ItemStack var7 = this.method_26520(var2);
       if (!var7.method_28022() && (this.field_48051 & 1 << var2.method_31773() + 8) != 0) {
          return false;
@@ -397,7 +397,7 @@ public class class_9399 extends class_5834 {
             boolean var7 = "player".equals(var1.method_28347());
             if (!var7 && !var5) {
                return false;
-            } else if (var1.method_28372() instanceof class_704 && !((class_704)var1.method_28372()).playerAbilities.allowEdit) {
+            } else if (var1.method_28372() instanceof PlayerEntity && !((PlayerEntity)var1.method_28372()).playerAbilities.allowEdit) {
                return false;
             } else if (var1.method_28349()) {
                this.method_43496();
@@ -507,7 +507,7 @@ public class class_9399 extends class_5834 {
 
    private void method_43496() {
       this.world
-         .method_29528((class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2298, this.method_37197(), 1.0F, 1.0F);
+         .method_29528((PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2298, this.method_37197(), 1.0F, 1.0F);
    }
 
    @Override
@@ -714,7 +714,7 @@ public class class_9399 extends class_5834 {
 
    @Override
    public boolean method_37296(Entity var1) {
-      return var1 instanceof class_704 && !this.world.method_29538((class_704)var1, this.method_37075());
+      return var1 instanceof PlayerEntity && !this.world.method_29538((PlayerEntity)var1, this.method_37075());
    }
 
    @Override

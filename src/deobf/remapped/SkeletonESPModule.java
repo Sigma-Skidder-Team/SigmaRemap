@@ -6,7 +6,7 @@ import java.util.Map;
 import org.lwjgl.opengl.GL11;
 
 public class SkeletonESPModule extends Module {
-   private static Map<class_704, float[][]> field_20882 = new HashMap<class_704, float[][]>();
+   private static Map<PlayerEntity, float[][]> field_20882 = new HashMap<PlayerEntity, float[][]>();
 
    public SkeletonESPModule() {
       super(Category.RENDER, "Skeleton", "Skeleton ESP.");
@@ -21,7 +21,7 @@ public class SkeletonESPModule extends Module {
       }
    }
 
-   private void method_19977(class_3368 var1, class_704 var2) {
+   private void method_19977(class_3368 var1, PlayerEntity var2) {
       Color var5 = new Color(
          !SigmaMainClass.getInstance().method_3307().method_14459(var2.method_45509().getString())
             ? (!var2.method_45509().getString().equalsIgnoreCase(client.thePlayer.method_45509().getString()) ? new Color(16775672).getRGB() : -6684775)
@@ -169,7 +169,7 @@ public class SkeletonESPModule extends Module {
       }
    }
 
-   private class_4714 method_19975(class_3368 var1, class_704 var2) {
+   private class_4714 method_19975(class_3368 var1, PlayerEntity var2) {
       float var5 = client.method_8554();
       double var6 = var2.field_41754 + (var2.getPosX() - var2.field_41754) * (double)var5;
       double var8 = var2.field_41713 + (var2.method_37309() - var2.field_41713) * (double)var5;
@@ -177,7 +177,7 @@ public class SkeletonESPModule extends Module {
       return new class_4714(var6, var8, var10);
    }
 
-   public static void method_19978(class_704 var0, class_3169<class_704> var1) {
+   public static void method_19978(PlayerEntity var0, class_3169<PlayerEntity> var1) {
       field_20882.put(
          var0,
          new float[][]{
@@ -190,7 +190,7 @@ public class SkeletonESPModule extends Module {
       );
    }
 
-   private boolean method_19979(class_704 var1) {
+   private boolean method_19979(PlayerEntity var1) {
       return !client.theWorld.method_25873().contains(var1);
    }
 

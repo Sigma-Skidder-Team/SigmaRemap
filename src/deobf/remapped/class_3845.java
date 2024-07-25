@@ -120,16 +120,16 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(0, new class_2897(this, 1.2));
-      this.field_29916.method_3485(1, new class_675(this, 1.0));
-      this.field_29916.method_3485(1, new class_1117(this, 1.0));
-      this.field_29916.method_3485(2, new class_6316(this, 1.1, class_4783.field_23563.method_10803()));
-      this.field_29916.method_3485(3, new class_6549(this, 1.0, null));
-      this.field_29916.method_3485(4, new class_7698(this, 1.0));
-      this.field_29916.method_3485(7, new class_59(this, 1.0));
-      this.field_29916.method_3485(8, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(9, new class_8373(this, 1.0, 100, null));
+   public void registerGoals() {
+      this.goalSelector.addGoal(0, new class_2897(this, 1.2));
+      this.goalSelector.addGoal(1, new class_675(this, 1.0));
+      this.goalSelector.addGoal(1, new class_1117(this, 1.0));
+      this.goalSelector.addGoal(2, new class_6316(this, 1.1, class_4783.field_23563.method_10803()));
+      this.goalSelector.addGoal(3, new class_6549(this, 1.0, null));
+      this.goalSelector.addGoal(4, new class_7698(this, 1.0));
+      this.goalSelector.addGoal(7, new class_59(this, 1.0));
+      this.goalSelector.addGoal(8, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(9, new class_8373(this, 1.0, 100, null));
    }
 
    public static class_1313 method_17860() {
@@ -264,7 +264,7 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return false;
    }
 

@@ -814,7 +814,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public void method_37155(class_8461 var1, float var2, float var3) {
       if (!this.method_37378()) {
-         this.world.method_29528((class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), var1, this.method_37197(), var2, var3);
+         this.world.method_29528((PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), var1, this.method_37197(), var2, var3);
       }
    }
 
@@ -1149,7 +1149,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return var4 * var4 + var6 * var6 + var8 * var8;
    }
 
-   public void method_37347(class_704 var1) {
+   public void method_37347(PlayerEntity var1) {
    }
 
    public void method_37183(Entity var1) {
@@ -1534,7 +1534,7 @@ public abstract class Entity implements class_9875, class_5801 {
       }
    }
 
-   public class_6910 method_37128(class_704 var1, Hand var2) {
+   public class_6910 method_37128(PlayerEntity var1, Hand var2) {
       return class_6910.field_35521;
    }
 
@@ -1635,7 +1635,7 @@ public abstract class Entity implements class_9875, class_5801 {
       if (var1.method_37243() != this) {
          throw new IllegalStateException("Use x.startRiding(y), not y.addPassenger(x)");
       } else {
-         if (!this.world.field_33055 && var1 instanceof class_704 && !(this.method_37259() instanceof class_704)) {
+         if (!this.world.field_33055 && var1 instanceof PlayerEntity && !(this.method_37259() instanceof PlayerEntity)) {
             this.field_41707.add(0, var1);
          } else {
             this.field_41707.add(var1);
@@ -1841,7 +1841,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return this.method_37385(5);
    }
 
-   public boolean method_37077(class_704 var1) {
+   public boolean method_37077(PlayerEntity var1) {
       if (var1.method_37221()) {
          return false;
       } else {
@@ -2398,7 +2398,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return this.world.method_29522();
    }
 
-   public class_6910 method_37227(class_704 var1, class_1343 var2, Hand var3) {
+   public class_6910 method_37227(PlayerEntity var1, class_1343 var2, Hand var3) {
       return class_6910.field_35521;
    }
 
@@ -2556,7 +2556,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public boolean canPassengerSteer() {
       Entity var3 = this.method_37259();
-      return !(var3 instanceof class_704) ? !this.world.field_33055 : ((class_704)var3).method_3183();
+      return !(var3 instanceof PlayerEntity) ? !this.world.field_33055 : ((PlayerEntity)var3).method_3183();
    }
 
    public static class_1343 method_37373(double var0, double var2, float var4) {
@@ -2686,7 +2686,7 @@ public abstract class Entity implements class_9875, class_5801 {
                var17 = var17.method_6209(1.0 / (double)var18);
             }
 
-            if (!(this instanceof class_704)) {
+            if (!(this instanceof PlayerEntity)) {
                var17 = var17.method_6213();
             }
 

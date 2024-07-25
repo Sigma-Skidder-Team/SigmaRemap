@@ -116,10 +116,10 @@ public abstract class class_4641 extends Entity {
 
    @Override
    public boolean method_37296(Entity var1) {
-      if (!(var1 instanceof class_704)) {
+      if (!(var1 instanceof PlayerEntity)) {
          return false;
       } else {
-         class_704 var4 = (class_704)var1;
+         PlayerEntity var4 = (PlayerEntity)var1;
          return this.world.method_29538(var4, this.field_22661) ? this.attackEntityFrom(DamageSource.method_28344(var4), 0.0F) : true;
       }
    }

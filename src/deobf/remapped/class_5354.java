@@ -16,7 +16,7 @@ public class class_5354 extends class_3757 implements class_3745 {
    @Override
    public void method_17407() {
       if (this.method_24446()) {
-         this.method_24447((class_704)null, this.field_18364.method_28262(this.method_17399()), class_8771.field_44900);
+         this.method_24447((PlayerEntity)null, this.field_18364.method_28262(this.method_17399()), class_8771.field_44900);
       }
 
       super.method_17407();
@@ -44,7 +44,7 @@ public class class_5354 extends class_3757 implements class_3745 {
       return this.field_27341.size() == 3;
    }
 
-   public void method_24447(class_704 var1, class_2522 var2, class_8771 var3) {
+   public void method_24447(PlayerEntity var1, class_2522 var2, class_8771 var3) {
       List var6 = this.method_24445(var2, var3);
       if (var1 != null) {
          for (Entity var8 : var6) {
@@ -106,7 +106,7 @@ public class class_5354 extends class_3757 implements class_3745 {
             BlockPos var8 = this.method_17399();
             this.field_18364
                .method_29528(
-                  (class_704)null,
+                  (PlayerEntity)null,
                   (double)var8.method_12173(),
                   (double)var8.method_12165(),
                   (double)var8.method_12185(),
@@ -174,7 +174,7 @@ public class class_5354 extends class_3757 implements class_3745 {
                   var12.method_37144(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
                }
 
-               this.field_18364.method_43359((class_704)null, var7, class_463.field_2672, class_562.field_3322, 1.0F, 1.0F);
+               this.field_18364.method_43359((PlayerEntity)null, var7, class_463.field_2672, class_562.field_3322, 1.0F, 1.0F);
                return this.field_18364.method_7509(var12);
             } else {
                return false;
@@ -227,7 +227,7 @@ public class class_5354 extends class_3757 implements class_3745 {
             double var4 = (double)var3.method_12173() + 0.5;
             double var6 = (double)var3.method_12165();
             double var8 = (double)var3.method_12185() + 0.5;
-            this.field_18364.method_29528((class_704)null, var4, var6, var8, class_463.field_2340, class_562.field_3322, 1.0F, 1.0F);
+            this.field_18364.method_29528((PlayerEntity)null, var4, var6, var8, class_463.field_2340, class_562.field_3322, 1.0F, 1.0F);
          }
 
          this.method_24438();

@@ -41,7 +41,7 @@ public class class_5123 {
             } else {
                var1.world
                   .method_29528(
-                     (class_704)null,
+                     (PlayerEntity)null,
                      var1.getPosX(),
                      var1.method_37309(),
                      var1.getPosZ(),

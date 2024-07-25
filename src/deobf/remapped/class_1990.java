@@ -184,7 +184,7 @@ public class class_1990 extends class_3266 {
                }
             }
 
-            var2.method_43359((class_704)null, var3, class_463.field_2862, class_562.field_3322, 0.5F, var2.field_33033.nextFloat() * 0.15F + 0.6F);
+            var2.method_43359((PlayerEntity)null, var3, class_463.field_2862, class_562.field_3322, 0.5F, var2.field_33033.nextFloat() * 0.15F + 0.6F);
          }
       } else {
          if (!this.method_9173(var2, var3, var8, true)) {
@@ -192,7 +192,7 @@ public class class_1990 extends class_3266 {
          }
 
          var2.method_7513(var3, var1.method_10308(field_10077, Boolean.valueOf(true)), 67);
-         var2.method_43359((class_704)null, var3, class_463.field_2143, class_562.field_3322, 0.5F, var2.field_33033.nextFloat() * 0.25F + 0.6F);
+         var2.method_43359((PlayerEntity)null, var3, class_463.field_2143, class_562.field_3322, 0.5F, var2.field_33033.nextFloat() * 0.25F + 0.6F);
       }
 
       return true;

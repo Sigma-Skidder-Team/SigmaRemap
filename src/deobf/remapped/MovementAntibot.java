@@ -26,7 +26,7 @@ public class MovementAntibot extends class_5676 {
          this.field_8305.clear();
       }
 
-      for (class_704 var5 : class_314.method_1435()) {
+      for (PlayerEntity var5 : class_314.method_1435()) {
          if (var5 != field_28769.thePlayer) {
             if (var5 == null
                || !class_314.method_1413(var5, 0.01F)
@@ -52,7 +52,7 @@ public class MovementAntibot extends class_5676 {
 
          if (var1.method_557() instanceof class_8650) {
             class_8650 var4 = (class_8650)var1.method_557();
-            if (!(var4.method_2564(field_28769.theWorld) instanceof class_704)) {
+            if (!(var4.method_2564(field_28769.theWorld) instanceof PlayerEntity)) {
                return;
             }
 

@@ -12,11 +12,11 @@ public class class_7051 implements class_6867, class_9875 {
    public final class_2831<ItemStack> field_36406 = class_2831.<ItemStack>method_12872(1, ItemStack.EMPTY);
    private final List<class_2831<ItemStack>> field_36407 = ImmutableList.of(this.field_36401, this.field_36405, this.field_36406);
    public int field_36404;
-   public final class_704 field_36409;
+   public final PlayerEntity field_36409;
    private ItemStack field_36408 = ItemStack.EMPTY;
    private int field_36403;
 
-   public class_7051(class_704 var1) {
+   public class_7051(PlayerEntity var1) {
       this.field_36409 = var1;
    }
 
@@ -523,7 +523,7 @@ public class class_7051 implements class_6867, class_9875 {
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       return !this.field_36409.field_41751 ? !(var1.method_37275(this.field_36409) > 64.0) : false;
    }
 

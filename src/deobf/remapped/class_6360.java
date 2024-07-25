@@ -20,7 +20,7 @@ public class class_6360 extends class_4088 {
    }
 
    @Override
-   public boolean method_18886(class_704 var1, int var2) {
+   public boolean method_18886(PlayerEntity var1, int var2) {
       if (var2 >= 100) {
          int var8 = var2 - 100;
          this.method_18869(0, var8);
@@ -60,7 +60,7 @@ public class class_6360 extends class_4088 {
    }
 
    @Override
-   public boolean method_18861(class_704 var1) {
+   public boolean method_18861(PlayerEntity var1) {
       return this.field_32524.method_31502(var1);
    }
 

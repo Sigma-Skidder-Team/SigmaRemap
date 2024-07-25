@@ -21,7 +21,7 @@ public class class_3995 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var1.<Boolean>method_10313(field_19411)) {
          return class_6910.field_35521;
       } else {

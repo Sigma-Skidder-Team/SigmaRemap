@@ -35,7 +35,7 @@ public class class_1330 extends class_2451 {
                this.method_6059(var12, var5.field_33033);
                var5.method_7509(var12);
                var5.method_29528(
-                  (class_704)null, var12.getPosX(), var12.method_37309(), var12.getPosZ(), class_463.field_2444, class_562.field_3322, 0.75F, 0.8F
+                  (PlayerEntity)null, var12.getPosX(), var12.method_37309(), var12.getPosZ(), class_463.field_2444, class_562.field_3322, 0.75F, 0.8F
                );
             }
 

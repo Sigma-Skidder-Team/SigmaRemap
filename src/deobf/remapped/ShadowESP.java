@@ -149,14 +149,14 @@ public class ShadowESP extends Module {
 
    @EventListen
    public void method_6349(class_2563 var1) {
-      if (this.method_42015() && field_7448 != class_4719.field_22895 && var1.method_11643() instanceof class_704) {
+      if (this.method_42015() && field_7448 != class_4719.field_22895 && var1.method_11643() instanceof PlayerEntity) {
          var1.method_29715(true);
       }
    }
 
    private boolean method_6344(Entity var1) {
       if (var1 instanceof class_5834) {
-         if (var1 instanceof class_704) {
+         if (var1 instanceof PlayerEntity) {
             if (!(var1 instanceof ClientPlayerEntity)) {
                return !var1.method_37109() ? !SigmaMainClass.getInstance().method_3331().method_20495(var1) : false;
             } else {

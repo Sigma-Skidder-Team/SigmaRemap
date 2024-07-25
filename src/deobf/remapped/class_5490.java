@@ -79,8 +79,8 @@ public class class_5490 extends class_4641 {
    public void method_21475(Entity var1) {
       if (this.world.method_29537().method_1285(class_291.field_1024)) {
          this.method_37155(class_463.field_2198, 1.0F, 1.0F);
-         if (var1 instanceof class_704) {
-            class_704 var4 = (class_704)var1;
+         if (var1 instanceof PlayerEntity) {
+            PlayerEntity var4 = (PlayerEntity)var1;
             if (var4.playerAbilities.isCreativeMode) {
                return;
             }

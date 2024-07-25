@@ -61,11 +61,11 @@ public class class_1475 extends class_2620 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var2.field_33055) {
          class_2522 var11 = this.method_6805(var1, var2, var3);
          float var10 = !var11.<Boolean>method_10313(field_7907) ? 0.5F : 0.6F;
-         var2.method_43359((class_704)null, var3, class_463.field_2125, class_562.field_3322, 0.3F, var10);
+         var2.method_43359((PlayerEntity)null, var3, class_463.field_2125, class_562.field_3322, 0.3F, var10);
          return class_6910.field_35518;
       } else {
          class_2522 var9 = var1.method_10317(field_7907);

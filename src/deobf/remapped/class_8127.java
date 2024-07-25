@@ -16,22 +16,22 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(1, new class_9037(this, 1.0, true));
-      this.field_29916.method_3485(2, new class_5331(this, 0.9, 32.0F));
-      this.field_29916.method_3485(2, new class_7000(this, 0.6, false));
-      this.field_29916.method_3485(4, new class_7253(this, 0.6));
-      this.field_29916.method_3485(5, new class_6405(this));
-      this.field_29916.method_3485(7, new class_4407(this, class_704.class, 6.0F));
-      this.field_29916.method_3485(8, new class_9691(this));
-      this.field_29908.method_3485(1, new class_4337(this));
-      this.field_29908.method_3485(2, new class_8420(this));
-      this.field_29908.method_3485(3, new class_4138<class_704>(this, class_704.class, 10, true, false, this::method_28534));
-      this.field_29908
-         .method_3485(
-            3, new class_4138<class_5886>(this, class_5886.class, 5, false, false, var0 -> var0 instanceof class_1869 && !(var0 instanceof class_9490))
+   public void registerGoals() {
+      this.goalSelector.addGoal(1, new class_9037(this, 1.0, true));
+      this.goalSelector.addGoal(2, new class_5331(this, 0.9, 32.0F));
+      this.goalSelector.addGoal(2, new class_7000(this, 0.6, false));
+      this.goalSelector.addGoal(4, new class_7253(this, 0.6));
+      this.goalSelector.addGoal(5, new class_6405(this));
+      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(8, new class_9691(this));
+      this.targetSelector.addGoal(1, new class_4337(this));
+      this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method_28534));
+      this.targetSelector
+         .addGoal(
+            3, new NearestAttackableTargetGoal<class_5886>(this, class_5886.class, 5, false, false, var0 -> var0 instanceof class_1869 && !(var0 instanceof class_9490))
          );
-      this.field_29908.method_3485(4, new class_6474<class_8127>(this, false));
+      this.targetSelector.addGoal(4, new class_6474<class_8127>(this, false));
    }
 
    @Override
@@ -223,7 +223,7 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       class_2451 var6 = var5.method_27960();
       if (var6 == class_4897.field_25021) {

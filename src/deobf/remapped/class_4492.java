@@ -111,7 +111,7 @@ public class class_4492 extends class_5920<class_7666> {
 
                   if (var13) {
                      var1.method_29528(
-                        (class_704)null,
+                        (PlayerEntity)null,
                         (double)this.field_21963.method_12173(),
                         (double)this.field_21963.method_12165(),
                         (double)this.field_21963.method_12185(),

@@ -90,13 +90,13 @@ public class class_8835 {
       return !class_7860.field_39999.method_3596() ? var0.method_8345() : class_7860.method_35565(var0, class_7860.field_39999, var1, var2);
    }
 
-   public static boolean method_40642(ItemStack var0, ItemStack var1, class_704 var2, class_5886 var3) {
+   public static boolean method_40642(ItemStack var0, ItemStack var1, PlayerEntity var2, class_5886 var3) {
       return !class_7860.field_40018.method_3596()
          ? var0.method_27960() instanceof class_7938
          : class_7860.method_35565(var0, class_7860.field_40018, var1, var2, var3);
    }
 
-   public static boolean method_40651(ItemStack var0, class_704 var1) {
+   public static boolean method_40651(ItemStack var0, PlayerEntity var1) {
       return !class_7860.field_40025.method_3596()
          ? var0.method_27960() == class_4897.field_24840
          : class_7860.method_35565(var0, class_7860.field_40025, var1);

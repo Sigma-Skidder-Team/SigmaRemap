@@ -43,12 +43,12 @@ public class class_450 {
    }
 
    @Nullable
-   private static class_2522 method_2170(class_704 var0) {
+   private static class_2522 method_2170(PlayerEntity var0) {
       Pair var3 = method_2172(var0);
       return var3 != null ? (class_2522)var3.getLeft() : null;
    }
 
-   private static Pair<class_2522, BlockPos> method_2172(class_704 var0) {
+   private static Pair<class_2522, BlockPos> method_2172(PlayerEntity var0) {
       class_2921 var3 = new class_2921();
 
       for (int var4 = 0; var4 < 8; var4++) {

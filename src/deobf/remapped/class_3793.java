@@ -10,7 +10,7 @@ public abstract class class_3793 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var2.field_33055) {
          this.method_17625(var2, var3, var4);
          return class_6910.field_35518;
@@ -19,7 +19,7 @@ public abstract class class_3793 extends class_4314 {
       }
    }
 
-   public abstract void method_17625(World var1, BlockPos var2, class_704 var3);
+   public abstract void method_17625(World var1, BlockPos var2, PlayerEntity var3);
 
    @Override
    public class_2522 method_29302(class_353 var1) {

@@ -27,7 +27,7 @@ public class class_4012 extends class_3599 {
          if (!var3.isEmpty()) {
             var3.sort(Comparator.<Entity, Double>comparing(Entity::method_37309).reversed());
 
-            for (class_704 var5 : var3) {
+            for (PlayerEntity var5 : var3) {
                if (this.field_19482.method_26609(var5, class_4931.field_25526)) {
                   this.field_19482.method_26860(var5);
                   return true;

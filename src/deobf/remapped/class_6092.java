@@ -23,14 +23,14 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(1, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(4, new class_2478(this));
-      this.field_29916.method_3485(7, new class_864(this, null));
-      this.field_29916.method_3485(8, new class_9691(this));
-      this.field_29908.method_3485(1, new class_8420(this).method_38757());
-      this.field_29908.method_3485(2, new class_7980(this, this));
-      this.field_29908.method_3485(3, new class_1049(this));
+   public void registerGoals() {
+      this.goalSelector.addGoal(1, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(4, new class_2478(this));
+      this.goalSelector.addGoal(7, new class_864(this, null));
+      this.goalSelector.addGoal(8, new class_9691(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
+      this.targetSelector.addGoal(2, new class_7980(this, this));
+      this.targetSelector.addGoal(3, new class_1049(this));
    }
 
    @Override

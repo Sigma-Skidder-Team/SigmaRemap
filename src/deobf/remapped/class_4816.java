@@ -173,7 +173,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    @Override
-   public void method_31501(class_704 var1) {
+   public void method_31501(PlayerEntity var1) {
       if (!var1.method_37221()) {
          if (this.field_24080 < 0) {
             this.field_24080 = 0;
@@ -184,21 +184,21 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
          if (this.field_24080 == 1) {
             this.field_18364
                .method_43359(
-                  (class_704)null, this.field_18358, class_463.field_2347, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
+                  (PlayerEntity)null, this.field_18358, class_463.field_2347, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
                );
          }
       }
    }
 
    @Override
-   public void method_31499(class_704 var1) {
+   public void method_31499(PlayerEntity var1) {
       if (!var1.method_37221()) {
          this.field_24080--;
          this.field_18364.method_29521(this.field_18358, this.method_17403().method_8360(), 1, this.field_24080);
          if (this.field_24080 <= 0) {
             this.field_18364
                .method_43359(
-                  (class_704)null, this.field_18358, class_463.field_2287, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
+                  (PlayerEntity)null, this.field_18358, class_463.field_2287, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
                );
          }
       }

@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 import org.lwjgl.opengl.GL11;
 
 public class OtherNameTagsModule extends Module {
-   private HashMap<class_704, class_4895> field_15013 = new HashMap<class_704, class_4895>();
+   private HashMap<PlayerEntity, class_4895> field_15013 = new HashMap<PlayerEntity, class_4895>();
    public static OtherNameTagsModule field_15012;
 
    public OtherNameTagsModule() {
@@ -21,7 +21,7 @@ public class OtherNameTagsModule extends Module {
          byte var5 = 32;
 
          for (Entry var7 : this.field_15013.entrySet()) {
-            class_704 var8 = (class_704)var7.getKey();
+            PlayerEntity var8 = (PlayerEntity)var7.getKey();
             if (!var8.method_37109()) {
                class_4895 var9 = (class_4895)var7.getValue();
                String var10 = var8.method_45509().getUnformattedComponentText();
@@ -97,8 +97,8 @@ public class OtherNameTagsModule extends Module {
          this.field_15013.clear();
 
          for (Entity var5 : client.theWorld.method_736()) {
-            if (var5 instanceof class_704 && !(var5 instanceof ClientPlayerEntity)) {
-               class_704 var6 = (class_704)var5;
+            if (var5 instanceof PlayerEntity && !(var5 instanceof ClientPlayerEntity)) {
+               PlayerEntity var6 = (PlayerEntity)var5;
                class_8328 var7 = class_9189.method_42353(var6);
                double[] var8 = class_73.method_143(var7.field_42648, var7.field_42646 + (double)var6.method_37074() + 0.3F, var7.field_42649);
                if (var8 != null && var8[2] >= 0.0 && var8[2] < 1.0) {
@@ -111,7 +111,7 @@ public class OtherNameTagsModule extends Module {
 
    @EventListen
    public void method_13954(class_2563 var1) {
-      if (this.method_42015() && var1.method_11643() instanceof class_704) {
+      if (this.method_42015() && var1.method_11643() instanceof PlayerEntity) {
          var1.method_29715(true);
       }
    }

@@ -36,7 +36,7 @@ public class class_1557 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       if (!var2.method_26618()) {
          return class_954.<ItemStack>method_4207(var2.method_26617(var3));
       } else {

@@ -92,7 +92,7 @@ public abstract class class_5467 extends class_1899 {
    }
 
    @Override
-   public int method_26427(class_704 var1) {
+   public int method_26427(PlayerEntity var1) {
       return 1 + this.world.field_33033.nextInt(3);
    }
 
@@ -101,7 +101,7 @@ public abstract class class_5467 extends class_1899 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (this.method_24866(var5)) {
          int var6 = this.method_8634();
@@ -125,7 +125,7 @@ public abstract class class_5467 extends class_1899 {
       return super.method_26857(var1, var2);
    }
 
-   public void method_24867(class_704 var1, ItemStack var2) {
+   public void method_24867(PlayerEntity var1, ItemStack var2) {
       if (!var1.playerAbilities.isCreativeMode) {
          var2.method_27970(1);
       }
@@ -135,7 +135,7 @@ public abstract class class_5467 extends class_1899 {
       return this.field_27875 <= 0;
    }
 
-   public void method_24869(class_704 var1) {
+   public void method_24869(PlayerEntity var1) {
       this.field_27875 = 600;
       if (var1 != null) {
          this.field_27876 = var1.method_37328();
@@ -155,7 +155,7 @@ public abstract class class_5467 extends class_1899 {
    @Nullable
    public class_9359 method_24877() {
       if (this.field_27876 != null) {
-         class_704 var3 = this.world.method_25862(this.field_27876);
+         PlayerEntity var3 = this.world.method_25862(this.field_27876);
          return !(var3 instanceof class_9359) ? null : (class_9359)var3;
       } else {
          return null;

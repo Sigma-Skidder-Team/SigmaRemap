@@ -418,8 +418,8 @@ public class class_9209 {
          class_9155 var6 = (class_9155)var0.getSource();
          class_8480 var7 = new class_8480(var6.method_42198());
          Entity var8 = var6.method_42200();
-         if (var8 instanceof class_704) {
-            var7.method_39065(class_8712.field_44675, (class_704)var8);
+         if (var8 instanceof PlayerEntity) {
+            var7.method_39065(class_8712.field_44675, (PlayerEntity)var8);
          }
 
          var7.method_39065(class_8712.field_44674, DamageSource.field_31686);

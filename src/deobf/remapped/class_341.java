@@ -1063,7 +1063,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       return 16;
    }
 
-   public boolean method_1618(class_6331 var1, BlockPos var2, class_704 var3) {
+   public boolean method_1618(class_6331 var1, BlockPos var2, PlayerEntity var3) {
       return false;
    }
 

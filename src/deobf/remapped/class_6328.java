@@ -55,7 +55,7 @@ public class class_6328 {
 
                var7.world
                   .method_29528(
-                     (class_704)null,
+                     (PlayerEntity)null,
                      var7.getPosX(),
                      var7.method_37309(),
                      var7.getPosZ(),

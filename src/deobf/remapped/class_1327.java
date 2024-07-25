@@ -22,7 +22,7 @@ public class class_1327 extends class_7934 {
    }
 
    @Override
-   public boolean method_35895(class_704 var1) {
+   public boolean method_35895(PlayerEntity var1) {
       ItemStack var4 = this.method_35898();
       return !var4.method_28022() && !var1.method_3186() && class_2931.method_13421(var4) ? false : super.method_35895(var1);
    }

@@ -25,7 +25,7 @@ public class class_4745 extends class_4314 {
    }
 
    @Override
-   public void method_29298(World var1, class_704 var2, BlockPos var3, class_2522 var4, class_3757 var5, ItemStack var6) {
+   public void method_29298(World var1, PlayerEntity var2, BlockPos var3, class_2522 var4, class_3757 var5, ItemStack var6) {
       super.method_29298(var1, var2, var3, var4, var5, var6);
       if (!var1.field_33055 && var5 instanceof class_5354) {
          class_5354 var9 = (class_5354)var5;
@@ -42,7 +42,7 @@ public class class_4745 extends class_4314 {
    private void method_21917(World var1, BlockPos var2) {
       List var5 = var1.<class_8829>method_25868(class_8829.class, new Box(var2).method_18899(8.0, 6.0, 8.0));
       if (!var5.isEmpty()) {
-         List var6 = var1.<class_704>method_25868(class_704.class, new Box(var2).method_18899(8.0, 6.0, 8.0));
+         List var6 = var1.<PlayerEntity>method_25868(PlayerEntity.class, new Box(var2).method_18899(8.0, 6.0, 8.0));
          int var7 = var6.size();
 
          for (class_8829 var9 : var5) {
@@ -58,7 +58,7 @@ public class class_4745 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
       int var10 = var1.<Integer>method_10313(field_22992);
       boolean var11 = false;
@@ -112,7 +112,7 @@ public class class_4745 extends class_4314 {
       }
    }
 
-   public void method_21920(World var1, class_2522 var2, BlockPos var3, class_704 var4, class_8771 var5) {
+   public void method_21920(World var1, class_2522 var2, BlockPos var3, PlayerEntity var4, class_8771 var5) {
       this.method_21919(var1, var2, var3);
       class_3757 var8 = var1.method_28260(var3);
       if (var8 instanceof class_5354) {
@@ -200,7 +200,7 @@ public class class_4745 extends class_4314 {
    }
 
    @Override
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       if (!var1.field_33055 && var4.method_3186() && var1.method_29537().method_1285(class_291.field_1058)) {
          class_3757 var7 = var1.method_28260(var2);
          if (var7 instanceof class_5354) {
@@ -237,7 +237,7 @@ public class class_4745 extends class_4314 {
          class_3757 var6 = var2.<class_3757>method_39071(class_8712.field_44673);
          if (var6 instanceof class_5354) {
             class_5354 var7 = (class_5354)var6;
-            var7.method_24447((class_704)null, var1, class_8771.field_44900);
+            var7.method_24447((PlayerEntity)null, var1, class_8771.field_44900);
          }
       }
 
@@ -250,7 +250,7 @@ public class class_4745 extends class_4314 {
          class_3757 var9 = var4.method_28260(var5);
          if (var9 instanceof class_5354) {
             class_5354 var10 = (class_5354)var9;
-            var10.method_24447((class_704)null, var1, class_8771.field_44900);
+            var10.method_24447((PlayerEntity)null, var1, class_8771.field_44900);
          }
       }
 

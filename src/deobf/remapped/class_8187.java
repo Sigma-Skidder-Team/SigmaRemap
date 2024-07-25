@@ -15,7 +15,7 @@ public class class_8187 extends class_2451 {
       if (!var6.method_29299(class_2351.field_11728)) {
          return class_6910.field_35521;
       } else {
-         class_704 var7 = var1.method_21868();
+         PlayerEntity var7 = var1.method_21868();
          if (!var4.field_33055 && var7 != null) {
             method_37511(var7, var4, var5);
          }
@@ -24,7 +24,7 @@ public class class_8187 extends class_2451 {
       }
    }
 
-   public static class_6910 method_37511(class_704 var0, World var1, BlockPos var2) {
+   public static class_6910 method_37511(PlayerEntity var0, World var1, BlockPos var2) {
       class_8008 var5 = null;
       boolean var6 = false;
       double var7 = 7.0;

@@ -16,9 +16,9 @@ public class class_6044<U> {
    public static final class_6044<List<class_5834>> field_30907 = method_27596("mobs");
    public static final class_6044<List<class_5834>> field_30901 = method_27596("visible_mobs");
    public static final class_6044<List<class_5834>> field_30875 = method_27596("visible_villager_babies");
-   public static final class_6044<List<class_704>> field_30886 = method_27596("nearest_players");
-   public static final class_6044<class_704> field_30870 = method_27596("nearest_visible_player");
-   public static final class_6044<class_704> field_30912 = method_27596("nearest_visible_targetable_player");
+   public static final class_6044<List<PlayerEntity>> field_30886 = method_27596("nearest_players");
+   public static final class_6044<PlayerEntity> field_30870 = method_27596("nearest_visible_player");
+   public static final class_6044<PlayerEntity> field_30912 = method_27596("nearest_visible_targetable_player");
    public static final class_6044<class_6651> field_30889 = method_27596("walk_target");
    public static final class_6044<class_7835> field_30874 = method_27596("look_target");
    public static final class_6044<class_5834> field_30884 = method_27596("attack_target");
@@ -55,7 +55,7 @@ public class class_6044<U> {
    public static final class_6044<Boolean> field_30862 = method_27596("dancing");
    public static final class_6044<class_6704> field_30873 = method_27596("nearest_visible_huntable_hoglin");
    public static final class_6044<class_6704> field_30914 = method_27596("nearest_visible_baby_hoglin");
-   public static final class_6044<class_704> field_30904 = method_27596("nearest_targetable_player_not_wearing_gold");
+   public static final class_6044<PlayerEntity> field_30904 = method_27596("nearest_targetable_player_not_wearing_gold");
    public static final class_6044<List<class_6993>> field_30876 = method_27596("nearby_adult_piglins");
    public static final class_6044<List<class_6993>> field_30902 = method_27596("nearest_visible_adult_piglins");
    public static final class_6044<List<class_6704>> field_30915 = method_27596("nearest_visible_adult_hoglins");
@@ -63,7 +63,7 @@ public class class_6044<U> {
    public static final class_6044<class_5834> field_30908 = method_27596("nearest_visible_zombified");
    public static final class_6044<Integer> field_30878 = method_27596("visible_adult_piglin_count");
    public static final class_6044<Integer> field_30906 = method_27596("visible_adult_hoglin_count");
-   public static final class_6044<class_704> field_30911 = method_27596("nearest_player_holding_wanted_item");
+   public static final class_6044<PlayerEntity> field_30911 = method_27596("nearest_player_holding_wanted_item");
    public static final class_6044<Boolean> field_30857 = method_27596("ate_recently");
    public static final class_6044<BlockPos> field_30905 = method_27596("nearest_repellent");
    public static final class_6044<Boolean> field_30860 = method_27596("pacified");

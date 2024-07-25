@@ -106,7 +106,7 @@ public class class_7744 {
       HashSet var3 = Sets.newHashSet();
 
       for (Entity var5 : var0) {
-         if (!(var5 instanceof class_704)) {
+         if (!(var5 instanceof PlayerEntity)) {
             var3.add((class_5086)null);
          } else {
             var3.add(var5.method_37095());
@@ -207,7 +207,7 @@ public class class_7744 {
          if (!var4) {
             var13 = var2[var9++];
          } else {
-            class_5086 var14 = !(var12 instanceof class_704) ? null : var12.method_37095();
+            class_5086 var14 = !(var12 instanceof PlayerEntity) ? null : var12.method_37095();
             if (!var10.containsKey(var14)) {
                var10.put(var14, var2[var9++]);
             }

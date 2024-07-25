@@ -9,7 +9,7 @@ public interface class_9031 {
    @Nullable
    class_8932<?> method_41426();
 
-   default void method_41424(class_704 var1) {
+   default void method_41424(PlayerEntity var1) {
       class_8932 var4 = this.method_41426();
       if (var4 != null && !var4.method_41053()) {
          var1.method_3223(Collections.<class_8932<?>>singleton(var4));

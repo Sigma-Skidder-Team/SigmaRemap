@@ -30,7 +30,7 @@ public class class_4400 {
    @class_5355
    private void method_20496(class_5596 var1) {
       if (this.field_21538 != null) {
-         for (class_704 var5 : class_314.method_1435()) {
+         for (PlayerEntity var5 : class_314.method_1435()) {
             if (!this.field_21538.method_7183(var5)) {
                if (this.field_21538.method_7182(var5) && this.field_21536.contains(var5)) {
                   this.field_21536.remove(var5);

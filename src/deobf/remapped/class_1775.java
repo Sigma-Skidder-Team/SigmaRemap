@@ -79,23 +79,23 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    public void method_43358(class_562 var1) {
       this.field_9086.method_3112(true);
       if (var1 != null) {
-         this.world.method_29540((class_704)null, this, class_463.field_2057, var1, 0.5F, 1.0F);
+         this.world.method_29540((PlayerEntity)null, this, class_463.field_2057, var1, 0.5F, 1.0F);
       }
    }
 
    @Override
    public void registerGoals() {
       this.field_9087 = new class_518(this, 1.65);
-      this.field_29916.method_3485(1, this.field_9087);
-      this.field_29916.method_3485(2, new class_9513(this, 1.0));
+      this.goalSelector.addGoal(1, this.field_9087);
+      this.goalSelector.addGoal(2, new class_9513(this, 1.0));
       this.field_9093 = new class_7228(this, 1.4, false, field_9089);
-      this.field_29916.method_3485(3, this.field_9093);
-      this.field_29916.method_3485(4, new class_1476(this, 1.5, null));
-      this.field_29916.method_3485(5, new class_8676(this, 1.1));
-      this.field_29916.method_3485(7, new class_8285(this, 1.0, 60));
-      this.field_29916.method_3485(8, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(8, new class_9691(this));
-      this.field_29916.method_3485(9, new class_4407(this, class_1775.class, 8.0F));
+      this.goalSelector.addGoal(3, this.field_9093);
+      this.goalSelector.addGoal(4, new class_1476(this, 1.5, null));
+      this.goalSelector.addGoal(5, new class_8676(this, 1.1));
+      this.goalSelector.addGoal(7, new class_8285(this, 1.0, 60));
+      this.goalSelector.addGoal(8, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new class_9691(this));
+      this.goalSelector.addGoal(9, new class_4407(this, class_1775.class, 8.0F));
    }
 
    public void method_7921(boolean var1) {
@@ -123,10 +123,10 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    @Override
    public boolean method_26863() {
       Entity var3 = this.method_37259();
-      if (!(var3 instanceof class_704)) {
+      if (!(var3 instanceof PlayerEntity)) {
          return false;
       } else {
-         class_704 var4 = (class_704)var3;
+         PlayerEntity var4 = (PlayerEntity)var3;
          return var4.method_26446().method_27960() == class_4897.field_24651 || var4.method_26568().method_27960() == class_4897.field_24651;
       }
    }
@@ -340,7 +340,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       boolean var5 = this.method_24866(var1.method_26617(var2));
       if (!var5 && this.method_43357() && !this.method_37151() && !var1.method_3236()) {
          if (!this.world.field_33055) {
@@ -354,7 +354,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
             if (var5 && !this.method_37378()) {
                this.world
                   .method_29528(
-                     (class_704)null,
+                     (PlayerEntity)null,
                      this.getPosX(),
                      this.method_37309(),
                      this.getPosZ(),

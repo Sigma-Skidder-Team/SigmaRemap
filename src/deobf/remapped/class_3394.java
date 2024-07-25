@@ -70,7 +70,7 @@ public class class_3394 extends class_1871 {
                double var28 = this.field_16723.method_37080(0.5) - var22;
                double var30 = this.field_16723.getPosZ() - var24;
                if (!this.field_9479.method_37378()) {
-                  this.field_9479.world.method_43365((class_704)null, 1017, this.field_9479.method_37075(), 0);
+                  this.field_9479.world.method_43365((PlayerEntity)null, 1017, this.field_9479.method_37075(), 0);
                }
 
                class_2844 var32 = new class_2844(this.field_9479.world, this.field_9479, var26, var28, var30);

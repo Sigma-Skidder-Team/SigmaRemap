@@ -99,7 +99,7 @@ public final class class_3815 {
                var12.method_13362(var15, var10, var16);
                double var23 = (double)var15 + 0.5;
                double var25 = (double)var16 + 0.5;
-               class_704 var27 = var1.method_25857(var23, (double)var10, var25, -1.0, false);
+               PlayerEntity var27 = var1.method_25857(var23, (double)var10, var25, -1.0, false);
                if (var27 != null) {
                   double var28 = var27.method_37273(var23, (double)var10, var25);
                   if (method_17776(var1, var2, var12, var28)) {

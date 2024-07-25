@@ -14,18 +14,18 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(2, new class_1052(this, this, 10.0F));
-      this.field_29916.method_3485(3, new class_1801<class_4134>(this, 1.0, 8.0F));
-      this.field_29916.method_3485(8, new class_8285(this, 0.6));
-      this.field_29916.method_3485(9, new class_4407(this, class_704.class, 15.0F, 1.0F));
-      this.field_29916.method_3485(10, new class_4407(this, class_5886.class, 15.0F));
-      this.field_29908.method_3485(1, new class_8420(this, AbstractRaiderEntity.class).method_38757());
-      this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, true));
-      this.field_29908.method_3485(3, new class_4138<class_405>(this, class_405.class, false));
-      this.field_29908.method_3485(3, new class_4138<class_8127>(this, class_8127.class, true));
+   public void registerGoals() {
+      super.registerGoals();
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(2, new class_1052(this, this, 10.0F));
+      this.goalSelector.addGoal(3, new class_1801<class_4134>(this, 1.0, 8.0F));
+      this.goalSelector.addGoal(8, new class_8285(this, 0.6));
+      this.goalSelector.addGoal(9, new class_4407(this, PlayerEntity.class, 15.0F, 1.0F));
+      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 15.0F));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_405>(this, class_405.class, false));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
    }
 
    public static class_1313 method_19206() {

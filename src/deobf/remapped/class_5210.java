@@ -35,7 +35,7 @@ public abstract class class_5210 extends class_4314 implements class_2593 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
       boolean var10 = var9.method_27960() instanceof class_239 && var4.playerAbilities.allowEdit;
       if (!var2.field_33055) {

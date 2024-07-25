@@ -22,7 +22,7 @@ public class class_5670 extends class_4407 {
    public boolean method_16795() {
       if (!(this.field_21568.method_26594().nextFloat() >= this.field_21565)) {
          if (this.field_21563 == null) {
-            if (this.field_21567 != class_704.class) {
+            if (this.field_21567 != PlayerEntity.class) {
                this.field_21563 = this.field_21568
                   .world
                   .<class_5834>method_25872(

@@ -55,7 +55,7 @@ public class class_2451 implements class_8525 {
       return false;
    }
 
-   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4) {
       return true;
    }
 
@@ -72,7 +72,7 @@ public class class_2451 implements class_8525 {
       return 1.0F;
    }
 
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       if (!this.method_11247()) {
          return class_954.<ItemStack>method_4207(var2.method_26617(var3));
       } else {
@@ -114,7 +114,7 @@ public class class_2451 implements class_8525 {
       return false;
    }
 
-   public class_6910 method_11202(ItemStack var1, class_704 var2, class_5834 var3, Hand var4) {
+   public class_6910 method_11202(ItemStack var1, PlayerEntity var2, class_5834 var3, Hand var4) {
       return class_6910.field_35521;
    }
 
@@ -159,7 +159,7 @@ public class class_2451 implements class_8525 {
    public void method_11214(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
    }
 
-   public void method_11236(ItemStack var1, World var2, class_704 var3) {
+   public void method_11236(ItemStack var1, World var2, PlayerEntity var3) {
    }
 
    public boolean method_11221() {
@@ -215,7 +215,7 @@ public class class_2451 implements class_8525 {
       return this.method_11245() == 1 && this.method_11210();
    }
 
-   public static class_9529 method_11238(World var0, class_704 var1, class_9583 var2) {
+   public static class_9529 method_11238(World var0, PlayerEntity var1, class_9583 var2) {
       float var5 = var1.rotationPitch;
       float var6 = var1.rotationYaw;
       class_1343 var7 = var1.method_37335(1.0F);

@@ -30,14 +30,14 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(0, new class_2552(this));
-      this.field_29916.method_3485(2, new class_1837(this, 1.0, 40, 20.0F));
-      this.field_29916.method_3485(5, new class_2889(this, 1.0));
-      this.field_29916.method_3485(6, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(7, new class_9691(this));
-      this.field_29908.method_3485(1, new class_8420(this));
-      this.field_29908.method_3485(2, new class_4138<class_5886>(this, class_5886.class, 0, false, false, field_22697));
+   public void registerGoals() {
+      this.goalSelector.addGoal(0, new class_2552(this));
+      this.goalSelector.addGoal(2, new class_1837(this, 1.0, 40, 20.0F));
+      this.goalSelector.addGoal(5, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(7, new class_9691(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<class_5886>(this, class_5886.class, 0, false, false, field_22697));
    }
 
    @Override
@@ -219,9 +219,9 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
                   for (int var29 = 0; var29 < 10 && !var27.isEmpty(); var29++) {
                      class_5834 var31 = (class_5834)var27.get(this.field_41717.nextInt(var27.size()));
                      if (var31 != this && var31.isAlive() && this.method_26420(var31)) {
-                        if (!(var31 instanceof class_704)) {
+                        if (!(var31 instanceof PlayerEntity)) {
                            this.method_21512(var3, var31.method_37145());
-                        } else if (!((class_704)var31).playerAbilities.disableDamage) {
+                        } else if (!((PlayerEntity)var31).playerAbilities.disableDamage) {
                            this.method_21512(var3, var31.method_37145());
                         }
                         break;
@@ -233,7 +233,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
                   Entity var26 = this.world.method_29534(var23);
                   if (var26 == null || !var26.isAlive() || this.method_37275(var26) > 900.0 || !this.method_26420(var26)) {
                      this.method_21512(var3, 0);
-                  } else if (var26 instanceof class_704 && ((class_704)var26).playerAbilities.disableDamage) {
+                  } else if (var26 instanceof PlayerEntity && ((PlayerEntity)var26).playerAbilities.disableDamage) {
                      this.method_21512(var3, 0);
                   } else {
                      this.method_21519(var3 + 1, (class_5834)var26);
@@ -274,7 +274,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
                }
 
                if (var30) {
-                  this.world.method_43365((class_704)null, 1022, this.method_37075(), 0);
+                  this.world.method_43365((PlayerEntity)null, 1022, this.method_37075(), 0);
                }
             }
          }
@@ -375,7 +375,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
 
    private void method_21515(int var1, double var2, double var4, double var6, boolean var8) {
       if (!this.method_37378()) {
-         this.world.method_43365((class_704)null, 1024, this.method_37075(), 0);
+         this.world.method_43365((PlayerEntity)null, 1024, this.method_37075(), 0);
       }
 
       double var11 = this.method_21520(var1);
@@ -416,7 +416,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
          }
 
          Entity var7 = var1.method_28372();
-         if (var7 != null && !(var7 instanceof class_704) && var7 instanceof class_5834 && ((class_5834)var7).method_26550() == this.method_26550()) {
+         if (var7 != null && !(var7 instanceof PlayerEntity) && var7 instanceof class_5834 && ((class_5834)var7).method_26550() == this.method_26550()) {
             return false;
          } else {
             if (this.field_22699 <= 0) {

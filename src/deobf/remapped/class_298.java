@@ -17,19 +17,19 @@ public class class_298 extends class_7637 {
    @Override
    public void registerGoals() {
       super.registerGoals();
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(1, new class_5472(this));
-      this.field_29916.method_3485(2, new class_4121(this, this));
-      this.field_29916.method_3485(3, new class_1052(this, this, 10.0F));
-      this.field_29916.method_3485(4, new class_2959(this, this));
-      this.field_29908.method_3485(1, new class_8420(this, AbstractRaiderEntity.class).method_38757());
-      this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, true));
-      this.field_29908.method_3485(3, new class_4138<class_405>(this, class_405.class, true));
-      this.field_29908.method_3485(3, new class_4138<class_8127>(this, class_8127.class, true));
-      this.field_29908.method_3485(4, new class_8642(this));
-      this.field_29916.method_3485(8, new class_8285(this, 0.6));
-      this.field_29916.method_3485(9, new class_4407(this, class_704.class, 3.0F, 1.0F));
-      this.field_29916.method_3485(10, new class_4407(this, class_5886.class, 8.0F));
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(1, new class_5472(this));
+      this.goalSelector.addGoal(2, new class_4121(this, this));
+      this.goalSelector.addGoal(3, new class_1052(this, this, 10.0F));
+      this.goalSelector.addGoal(4, new class_2959(this, this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_405>(this, class_405.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
+      this.targetSelector.addGoal(4, new class_8642(this));
+      this.goalSelector.addGoal(8, new class_8285(this, 0.6));
+      this.goalSelector.addGoal(9, new class_4407(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 8.0F));
    }
 
    @Override

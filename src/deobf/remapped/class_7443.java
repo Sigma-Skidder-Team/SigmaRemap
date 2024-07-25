@@ -12,7 +12,7 @@ public class class_7443 extends class_5920<class_7666> {
    }
 
    public boolean method_33874(class_6331 var1, class_7666 var2) {
-      class_704 var5 = var2.method_978();
+      PlayerEntity var5 = var2.method_978();
       return var2.isAlive() && var5 != null && !var2.method_37285() && !var2.field_41743 && var2.method_37275(var5) <= 16.0 && var5.field_3874 != null;
    }
 

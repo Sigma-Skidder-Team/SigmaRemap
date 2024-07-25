@@ -62,7 +62,7 @@ public class class_9406 extends class_3077 {
       if (var1.method_21857() == Direction.field_802) {
          return class_6910.field_35521;
       } else {
-         class_704 var7 = var1.method_21868();
+         PlayerEntity var7 = var1.method_21868();
          class_2522 var8 = field_48091.get(var6.method_8360());
          class_2522 var9 = null;
          if (var8 != null && var4.method_28262(var5.method_6081()).method_8345()) {
@@ -70,7 +70,7 @@ public class class_9406 extends class_3077 {
             var9 = var8;
          } else if (var6.method_8360() instanceof class_8474 && var6.<Boolean>method_10313(class_8474.field_43423)) {
             if (!var4.method_22567()) {
-               var4.method_43365((class_704)null, 1009, var5, 0);
+               var4.method_43365((PlayerEntity)null, 1009, var5, 0);
             }
 
             class_8474.method_39006(var4, var5, var6);

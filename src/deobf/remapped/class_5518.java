@@ -15,7 +15,7 @@ public class class_5518 extends class_2451 {
 
    @Override
    public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
-      class_704 var6 = !(var3 instanceof class_704) ? null : (class_704)var3;
+      PlayerEntity var6 = !(var3 instanceof PlayerEntity) ? null : (PlayerEntity)var3;
       if (var6 instanceof class_9359) {
          class_8807.field_45081.method_43401((class_9359)var6, var1);
       }
@@ -61,7 +61,7 @@ public class class_5518 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       return class_4754.method_21939(var1, var2, var3);
    }
 

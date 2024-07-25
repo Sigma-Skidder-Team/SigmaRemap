@@ -35,7 +35,7 @@ public interface class_6250 {
             }
 
             if (var6.method_37387() == EntityType.field_34300) {
-               this.method_26580((class_704)var6);
+               this.method_26580((PlayerEntity)var6);
             }
          }
       } else {
@@ -79,7 +79,7 @@ public interface class_6250 {
       return this.method_28539() > 0;
    }
 
-   default void method_28526(class_704 var1) {
+   default void method_28526(PlayerEntity var1) {
       if (var1.world.method_29537().method_1285(class_291.field_1042) && var1.method_37328().equals(this.method_28535())) {
          this.method_28538();
       }
@@ -99,7 +99,7 @@ public interface class_6250 {
 
    void method_26511(class_5834 var1);
 
-   void method_26580(class_704 var1);
+   void method_26580(PlayerEntity var1);
 
    void method_26860(class_5834 var1);
 

@@ -15,7 +15,7 @@ public abstract class class_8574 extends class_3578 {
    @Override
    public void registerGoals() {
       super.registerGoals();
-      this.field_29916.method_3485(5, new class_8188(this));
+      this.goalSelector.addGoal(5, new class_8188(this));
    }
 
    @Override

@@ -4,17 +4,17 @@ import javax.annotation.Nullable;
 
 public class class_4734 {
    private static String[] field_22942;
-   private final class_704 field_22940;
+   private final PlayerEntity field_22940;
    private final Hand field_22941;
    private final class_9529 field_22944;
    private final World field_22939;
    private final ItemStack field_22943;
 
-   public class_4734(class_704 var1, Hand var2, class_9529 var3) {
+   public class_4734(PlayerEntity var1, Hand var2, class_9529 var3) {
       this(var1.world, var1, var2, var1.method_26617(var2), var3);
    }
 
-   public class_4734(World var1, class_704 var2, Hand var3, ItemStack var4, class_9529 var5) {
+   public class_4734(World var1, PlayerEntity var2, Hand var3, ItemStack var4, class_9529 var5) {
       this.field_22940 = var2;
       this.field_22941 = var3;
       this.field_22944 = var5;
@@ -47,7 +47,7 @@ public class class_4734 {
    }
 
    @Nullable
-   public class_704 method_21868() {
+   public PlayerEntity method_21868() {
       return this.field_22940;
    }
 

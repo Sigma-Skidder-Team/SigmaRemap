@@ -119,7 +119,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       if (this.field_44170 == 0 && !this.method_37378()) {
          this.world
             .method_29528(
-               (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2316, class_562.field_3325, 3.0F, 1.0F
+               (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2316, class_562.field_3325, 3.0F, 1.0F
             );
       }
 

@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.function.Predicate;
 
-public class class_9625<T extends class_5834> extends class_4138<T> {
+public class class_9625<T extends class_5834> extends NearestAttackableTargetGoal<T> {
    private static String[] field_49024;
    private int field_49025 = 0;
 

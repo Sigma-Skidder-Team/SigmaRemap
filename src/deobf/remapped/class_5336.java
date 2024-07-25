@@ -10,7 +10,7 @@ public class class_5336 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       List var6 = var1.<class_4478>method_25869(
          class_4478.class, var2.method_37241().method_18898(2.0), var0 -> var0 != null && var0.isAlive() && var0.method_20795() instanceof class_2770
       );
@@ -41,13 +41,13 @@ public class class_5336 extends class_2451 {
          class_4478 var8 = (class_4478)var6.get(0);
          var8.method_20781(var8.method_20783() - 0.5F);
          var1.method_29528(
-            (class_704)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), class_463.field_2366, class_562.field_3328, 1.0F, 1.0F
+            (PlayerEntity)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), class_463.field_2366, class_562.field_3328, 1.0F, 1.0F
          );
          return class_954.<ItemStack>method_4208(this.method_24320(var7, var2, new ItemStack(class_4897.field_25220)), var1.method_22567());
       }
    }
 
-   public ItemStack method_24320(ItemStack var1, class_704 var2, ItemStack var3) {
+   public ItemStack method_24320(ItemStack var1, PlayerEntity var2, ItemStack var3) {
       var2.method_3211(class_6234.field_31907.method_43790(this));
       return class_4754.method_21940(var1, var2, var3);
    }

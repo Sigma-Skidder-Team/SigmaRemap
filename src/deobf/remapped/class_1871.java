@@ -23,7 +23,7 @@ public abstract class class_1871 implements class_5120 {
    }
 
    @Override
-   public void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, class_704 var4) {
+   public void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, PlayerEntity var4) {
    }
 
    @Override

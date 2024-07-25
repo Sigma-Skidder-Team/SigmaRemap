@@ -6,7 +6,7 @@ public abstract class class_1944 extends class_5886 {
    }
 
    @Override
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return false;
    }
 }

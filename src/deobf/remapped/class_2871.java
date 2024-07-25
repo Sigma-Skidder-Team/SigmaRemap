@@ -21,7 +21,7 @@ public class class_2871 extends class_9883 {
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
-         } else if (!(var3 instanceof class_704) || !((class_704)var3).method_37221() && !((class_704)var3).method_3186()) {
+         } else if (!(var3 instanceof PlayerEntity) || !((PlayerEntity)var3).method_37221() && !((PlayerEntity)var3).method_3186()) {
             if (!this.method_16795()) {
                return false;
             } else {

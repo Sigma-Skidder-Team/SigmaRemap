@@ -44,12 +44,12 @@ public class class_1031 extends class_4657 {
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       return this.field_5711 != null && !this.field_5711.method_42317(var1) ? false : super.method_31502(var1);
    }
 
    @Override
-   public void method_31501(class_704 var1) {
+   public void method_31501(PlayerEntity var1) {
       if (this.field_5711 != null) {
          this.field_5711.method_42315();
       }
@@ -58,7 +58,7 @@ public class class_1031 extends class_4657 {
    }
 
    @Override
-   public void method_31499(class_704 var1) {
+   public void method_31499(PlayerEntity var1) {
       if (this.field_5711 != null) {
          this.field_5711.method_42316();
       }

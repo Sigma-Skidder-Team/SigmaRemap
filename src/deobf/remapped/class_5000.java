@@ -16,7 +16,7 @@ public class class_5000 implements Packet<class_392> {
    public class_5000() {
    }
 
-   public class_5000(class_704 var1) {
+   public class_5000(PlayerEntity var1) {
       this.field_25871 = var1.method_37145();
       this.field_25869 = var1.method_3247().getId();
       this.field_25868 = var1.getPosX();

@@ -138,9 +138,9 @@ public abstract class class_9476 extends class_6414 {
    }
 
    @Override
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       if (!var1.method_22567()) {
-         var1.method_43365((class_704)null, 1009, var2, 0);
+         var1.method_43365((PlayerEntity)null, 1009, var2, 0);
       }
    }
 

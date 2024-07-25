@@ -34,16 +34,16 @@ public class class_2519 extends class_1173 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(4, new class_768(this));
-      this.field_29916.method_3485(8, new class_2940(this));
-      this.field_29916.method_3485(9, new class_4407(this, class_704.class, 3.0F, 1.0F));
-      this.field_29916.method_3485(10, new class_4407(this, class_5886.class, 8.0F));
-      this.field_29908.method_3485(1, new class_8420(this, AbstractRaiderEntity.class).method_38757());
-      this.field_29908.method_3485(2, new class_5960(this, this));
-      this.field_29908.method_3485(3, new class_4138<class_704>(this, class_704.class, true));
+   public void registerGoals() {
+      super.registerGoals();
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(4, new class_768(this));
+      this.goalSelector.addGoal(8, new class_2940(this));
+      this.goalSelector.addGoal(9, new class_4407(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 8.0F));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
+      this.targetSelector.addGoal(2, new class_5960(this, this));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
    public static class_1313 method_11453() {

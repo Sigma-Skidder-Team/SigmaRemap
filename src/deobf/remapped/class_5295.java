@@ -36,7 +36,7 @@ public class class_5295 extends class_2451 {
 
    private void method_24144(World var1, BlockPos var2) {
       var1.method_43359(
-         (class_704)null, var2, class_463.field_2446, class_562.field_3322, 1.0F, (field_12172.nextFloat() - field_12172.nextFloat()) * 0.2F + 1.0F
+         (PlayerEntity)null, var2, class_463.field_2446, class_562.field_3322, 1.0F, (field_12172.nextFloat() - field_12172.nextFloat()) * 0.2F + 1.0F
       );
    }
 }

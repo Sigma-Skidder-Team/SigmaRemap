@@ -87,14 +87,14 @@ public class class_107 extends class_7819 implements class_674 {
 
    @Override
    public void registerGoals() {
-      this.field_29916.method_3485(0, new class_518(this, 1.25));
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(1, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(2, new class_8453(this));
-      this.field_29916.method_3485(2, new class_5591(this, 1.0, 5.0F, 1.0F, true));
-      this.field_29916.method_3485(2, new class_3539(this, 1.0));
-      this.field_29916.method_3485(3, new class_2331(this));
-      this.field_29916.method_3485(3, new class_2652(this, 1.0, 3.0F, 7.0F));
+      this.goalSelector.addGoal(0, new class_518(this, 1.25));
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(1, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(2, new class_8453(this));
+      this.goalSelector.addGoal(2, new class_5591(this, 1.0, 5.0F, 1.0F, true));
+      this.goalSelector.addGoal(2, new class_3539(this, 1.0));
+      this.goalSelector.addGoal(3, new class_2331(this));
+      this.goalSelector.addGoal(3, new class_2652(this, 1.0, 3.0F, 7.0F));
    }
 
    public static class_1313 method_331() {
@@ -171,7 +171,7 @@ public class class_107 extends class_7819 implements class_674 {
             if (!var5.method_37378()) {
                class_8461 var6 = method_326(var5.method_37387());
                var0.method_29528(
-                  (class_704)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), var6, var1.method_37197(), 0.7F, method_324(var0.field_33033)
+                  (PlayerEntity)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), var6, var1.method_37197(), 0.7F, method_324(var0.field_33033)
                );
                return true;
             }
@@ -184,7 +184,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (!this.method_41215() && field_273.contains(var5.method_27960())) {
          if (!var1.playerAbilities.isCreativeMode) {
@@ -194,7 +194,7 @@ public class class_107 extends class_7819 implements class_674 {
          if (!this.method_37378()) {
             this.world
                .method_29528(
-                  (class_704)null,
+                  (PlayerEntity)null,
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),
@@ -346,7 +346,7 @@ public class class_107 extends class_7819 implements class_674 {
 
    @Override
    public void method_26596(Entity var1) {
-      if (!(var1 instanceof class_704)) {
+      if (!(var1 instanceof PlayerEntity)) {
          super.method_26596(var1);
       }
    }

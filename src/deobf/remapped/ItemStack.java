@@ -132,7 +132,7 @@ public final class ItemStack {
    }
 
    public class_6910 method_27972(class_4734 var1) {
-      class_704 var4 = var1.method_21868();
+      PlayerEntity var4 = var1.method_21868();
       BlockPos var5 = var1.method_21858();
       class_9115 var6 = new class_9115(var1.method_21862(), var5, false);
       if (var4 != null && !var4.playerAbilities.allowEdit && !this.method_28027(var1.method_21862().method_29600(), var6)) {
@@ -152,7 +152,7 @@ public final class ItemStack {
       return this.method_27960().method_11235(this, var1);
    }
 
-   public class_954<ItemStack> method_28006(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_28006(World var1, PlayerEntity var2, Hand var3) {
       return this.method_27960().method_11231(var1, var2, var3);
    }
 
@@ -236,28 +236,28 @@ public final class ItemStack {
 
    public <T extends class_5834> void method_28003(int var1, T var2, Consumer<T> var3) {
       if (!var2.world.field_33055
-         && (!(var2 instanceof class_704) || !((class_704)var2).playerAbilities.isCreativeMode)
+         && (!(var2 instanceof PlayerEntity) || !((PlayerEntity)var2).playerAbilities.isCreativeMode)
          && this.method_27959()
          && this.method_27996(var1, var2.method_26594(), !(var2 instanceof class_9359) ? null : (class_9359)var2)) {
          var3.accept(var2);
          class_2451 var6 = this.method_27960();
          this.method_27970(1);
-         if (var2 instanceof class_704) {
-            ((class_704)var2).method_3211(class_6234.field_31879.method_43790(var6));
+         if (var2 instanceof PlayerEntity) {
+            ((PlayerEntity)var2).method_3211(class_6234.field_31879.method_43790(var6));
          }
 
          this.method_27999(0);
       }
    }
 
-   public void method_27974(class_5834 var1, class_704 var2) {
+   public void method_27974(class_5834 var1, PlayerEntity var2) {
       class_2451 var5 = this.method_27960();
       if (var5.method_11246(this, var1, var2)) {
          var2.method_3211(class_6234.field_31907.method_43790(var5));
       }
    }
 
-   public void method_27987(World var1, class_2522 var2, BlockPos var3, class_704 var4) {
+   public void method_27987(World var1, class_2522 var2, BlockPos var3, PlayerEntity var4) {
       class_2451 var7 = this.method_27960();
       if (var7.method_11209(this, var1, var2, var3, var4)) {
          var4.method_3211(class_6234.field_31907.method_43790(var7));
@@ -268,7 +268,7 @@ public final class ItemStack {
       return this.method_27960().method_11222(var1);
    }
 
-   public class_6910 method_28000(class_704 var1, class_5834 var2, Hand var3) {
+   public class_6910 method_28000(PlayerEntity var1, class_5834 var2, Hand var3) {
       return this.method_27960().method_11202(this, var1, var2, var3);
    }
 
@@ -357,7 +357,7 @@ public final class ItemStack {
       }
    }
 
-   public void method_27964(World var1, class_704 var2, int var3) {
+   public void method_27964(World var1, PlayerEntity var2, int var3) {
       var2.method_3212(class_6234.field_31839.method_43790(this.method_27960()), var3);
       this.method_27960().method_11236(this, var1, var2);
    }
@@ -478,7 +478,7 @@ public final class ItemStack {
       return var3 != null && var3.contains("Name", 8);
    }
 
-   public List<ITextComponent> method_28012(class_704 var1, class_4605 var2) {
+   public List<ITextComponent> method_28012(PlayerEntity var1, class_4605 var2) {
       ArrayList var5 = Lists.newArrayList();
       IFormattableTextComponent var6 = new StringTextComponent("").append(this.method_28008()).mergeStyle(this.method_28010().field_26118);
       if (this.method_28018()) {

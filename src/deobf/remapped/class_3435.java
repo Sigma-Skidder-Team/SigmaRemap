@@ -105,14 +105,14 @@ public class class_3435 {
    @Nullable
    public class_5834 method_15876() {
       class_5834 var3 = null;
-      class_704 var4 = null;
+      PlayerEntity var4 = null;
       float var5 = 0.0F;
       float var6 = 0.0F;
 
       for (class_8869 var8 : this.field_16881) {
-         if (var8.method_40799().method_28372() instanceof class_704 && (var4 == null || var8.method_40800() > var6)) {
+         if (var8.method_40799().method_28372() instanceof PlayerEntity && (var4 == null || var8.method_40800() > var6)) {
             var6 = var8.method_40800();
-            var4 = (class_704)var8.method_40799().method_28372();
+            var4 = (PlayerEntity)var8.method_40799().method_28372();
          }
 
          if (var8.method_40799().method_28372() instanceof class_5834 && (var3 == null || var8.method_40800() > var5)) {

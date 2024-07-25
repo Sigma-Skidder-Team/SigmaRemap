@@ -310,7 +310,7 @@ public abstract class class_8704 {
    }
 
    public class_9359 method_40000(GameProfile var1) {
-      UUID var4 = class_704.method_3242(var1);
+      UUID var4 = PlayerEntity.method_3242(var1);
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < this.field_44632.size(); var6++) {
@@ -349,7 +349,7 @@ public abstract class class_8704 {
       class_6331 var8 = this.field_44631.method_1697(var1.method_43259());
       Optional var9;
       if (var8 != null && var5 != null) {
-         var9 = class_704.method_3167(var8, var5, var6, var7, var2);
+         var9 = PlayerEntity.method_3167(var8, var5, var6, var7, var2);
       } else {
          var9 = Optional.empty();
       }
@@ -464,7 +464,7 @@ public abstract class class_8704 {
       }
    }
 
-   public void method_39990(class_704 var1, ITextComponent var2) {
+   public void method_39990(PlayerEntity var1, ITextComponent var2) {
       class_5086 var5 = var1.method_37095();
       if (var5 != null) {
          for (String var7 : var5.method_23378()) {
@@ -476,7 +476,7 @@ public abstract class class_8704 {
       }
    }
 
-   public void method_39965(class_704 var1, ITextComponent var2) {
+   public void method_39965(PlayerEntity var1, ITextComponent var2) {
       class_5086 var5 = var1.method_37095();
       if (var5 != null) {
          for (int var6 = 0; var6 < this.field_44632.size(); var6++) {
@@ -562,7 +562,7 @@ public abstract class class_8704 {
       return null;
    }
 
-   public void method_39996(class_704 var1, double var2, double var4, double var6, double var8, class_5621<World> var10, Packet<?> var11) {
+   public void method_39996(PlayerEntity var1, double var2, double var4, double var6, double var8, class_5621<World> var10, Packet<?> var11) {
       for (int var14 = 0; var14 < this.field_44632.size(); var14++) {
          class_9359 var15 = this.field_44632.get(var14);
          if (var15 != var1 && var15.world.method_29545() == var10) {
@@ -690,7 +690,7 @@ public abstract class class_8704 {
       this.method_39972(new class_5182(var1, var2, var3));
    }
 
-   public class_7909 method_39957(class_704 var1) {
+   public class_7909 method_39957(PlayerEntity var1) {
       UUID var4 = var1.method_37328();
       class_7909 var5 = var4 != null ? this.field_44622.get(var4) : null;
       if (var5 == null) {

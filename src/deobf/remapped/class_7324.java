@@ -24,7 +24,7 @@ public class class_7324 implements class_1517 {
             } else {
                int var7 = 0;
 
-               for (class_704 var9 : var1.method_25873()) {
+               for (PlayerEntity var9 : var1.method_25873()) {
                   if (!var9.method_37221()) {
                      BlockPos var10 = var9.method_37075();
                      if (!var1.method_22572().method_40229() || var10.method_12165() >= var1.method_22552() && var1.method_25263(var10)) {

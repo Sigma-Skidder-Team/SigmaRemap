@@ -99,7 +99,7 @@ public abstract class class_1173 extends class_4612 implements class_1869 {
       return true;
    }
 
-   public boolean method_5202(class_704 var1) {
+   public boolean method_5202(PlayerEntity var1) {
       return true;
    }
 

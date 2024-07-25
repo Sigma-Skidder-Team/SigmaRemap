@@ -23,7 +23,7 @@ public class class_3942 extends class_5783 {
    private final int field_19143;
    private final int field_19138;
 
-   private class_3942(World var1, class_704 var2, int var3, int var4) {
+   private class_3942(World var1, PlayerEntity var2, int var3, int var4) {
       super(EntityType.field_34215, var1);
       this.field_41750 = true;
       this.method_26159(var2);
@@ -32,7 +32,7 @@ public class class_3942 extends class_5783 {
       this.field_19138 = Math.max(0, var4);
    }
 
-   public class_3942(World var1, class_704 var2, double var3, double var5, double var7) {
+   public class_3942(World var1, PlayerEntity var2, double var3, double var5, double var7) {
       this(var1, var2, 0, 0);
       this.method_37256(var3, var5, var7);
       this.field_41767 = this.getPosX();
@@ -40,7 +40,7 @@ public class class_3942 extends class_5783 {
       this.field_41725 = this.getPosZ();
    }
 
-   public class_3942(class_704 var1, World var2, int var3, int var4) {
+   public class_3942(PlayerEntity var1, World var2, int var3, int var4) {
       this(var2, var1, var3, var4);
       float var7 = var1.rotationPitch;
       float var8 = var1.rotationYaw;
@@ -105,7 +105,7 @@ public class class_3942 extends class_5783 {
    public void method_37123() {
       this.field_19140.setSeed(this.method_37328().getLeastSignificantBits() ^ this.world.method_29546());
       super.method_37123();
-      class_704 var3 = this.method_18219();
+      PlayerEntity var3 = this.method_18219();
       if (var3 != null) {
          if (this.world.field_33055 || !this.method_18225(var3)) {
             if (!this.onGround) {
@@ -204,7 +204,7 @@ public class class_3942 extends class_5783 {
       }
    }
 
-   private boolean method_18225(class_704 var1) {
+   private boolean method_18225(PlayerEntity var1) {
       ItemStack var4 = var1.method_26446();
       ItemStack var5 = var1.method_26568();
       boolean var6 = var4.method_27960() == class_4897.field_24505;
@@ -412,7 +412,7 @@ public class class_3942 extends class_5783 {
    }
 
    public int method_18216(ItemStack var1) {
-      class_704 var4 = this.method_18219();
+      PlayerEntity var4 = this.method_18219();
       if (!this.world.field_33055 && var4 != null) {
          int var5 = 0;
          if (this.field_19144 == null) {
@@ -468,7 +468,7 @@ public class class_3942 extends class_5783 {
 
    @Override
    public void method_37336(byte var1) {
-      if (var1 == 31 && this.world.field_33055 && this.field_19144 instanceof class_704 && ((class_704)this.field_19144).method_3183()) {
+      if (var1 == 31 && this.world.field_33055 && this.field_19144 instanceof PlayerEntity && ((PlayerEntity)this.field_19144).method_3183()) {
          this.method_18224();
       }
 
@@ -494,16 +494,16 @@ public class class_3942 extends class_5783 {
    @Override
    public void method_37204() {
       super.method_37204();
-      class_704 var3 = this.method_18219();
+      PlayerEntity var3 = this.method_18219();
       if (var3 != null) {
          var3.field_3841 = null;
       }
    }
 
    @Nullable
-   public class_704 method_18219() {
+   public PlayerEntity method_18219() {
       Entity var3 = this.method_26166();
-      return !(var3 instanceof class_704) ? null : (class_704)var3;
+      return !(var3 instanceof PlayerEntity) ? null : (PlayerEntity)var3;
    }
 
    @Nullable

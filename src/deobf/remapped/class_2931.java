@@ -120,7 +120,7 @@ public class class_2931 {
          method_13416(var4, var0.method_37342());
       }
 
-      if (var1 instanceof class_704) {
+      if (var1 instanceof PlayerEntity) {
          method_13422(var4, var0.method_26446());
       }
    }
@@ -131,7 +131,7 @@ public class class_2931 {
          method_13416(var4, var0.method_37342());
       }
 
-      if (var0 instanceof class_704) {
+      if (var0 instanceof PlayerEntity) {
          method_13422(var4, var0.method_26446());
       }
    }

@@ -77,7 +77,7 @@ public class class_6467 extends Module {
 
    @EventListen
    public void method_29454(class_2563 var1) {
-      if (this.method_42015() && this.field_32957 && var1.method_11643() instanceof class_704) {
+      if (this.method_42015() && this.field_32957 && var1.method_11643() instanceof PlayerEntity) {
          var1.method_29715(true);
       }
    }
@@ -101,7 +101,7 @@ public class class_6467 extends Module {
 
    private boolean method_29451(Entity var1) {
       if (var1 instanceof class_5834) {
-         if (var1 instanceof class_704) {
+         if (var1 instanceof PlayerEntity) {
             return !(var1 instanceof ClientPlayerEntity) ? !SigmaMainClass.getInstance().method_3331().method_20495(var1) : false;
          } else {
             return false;

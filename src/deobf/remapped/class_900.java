@@ -42,7 +42,7 @@ public class class_900 extends Entity {
 
          this.world
             .method_29528(
-               (class_704)null,
+               (PlayerEntity)null,
                this.getPosX(),
                this.method_37309(),
                this.getPosZ(),
@@ -53,7 +53,7 @@ public class class_900 extends Entity {
             );
          this.world
             .method_29528(
-               (class_704)null,
+               (PlayerEntity)null,
                this.getPosX(),
                this.method_37309(),
                this.getPosZ(),

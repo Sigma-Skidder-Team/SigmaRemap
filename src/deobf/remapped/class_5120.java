@@ -9,7 +9,7 @@ public interface class_5120 {
 
    void method_23473();
 
-   void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, class_704 var4);
+   void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, PlayerEntity var4);
 
    void method_23469();
 

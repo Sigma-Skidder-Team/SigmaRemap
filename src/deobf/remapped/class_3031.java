@@ -22,7 +22,7 @@ public class class_3031 extends class_9513 {
             this.field_14849.method_2439(32);
             this.field_14848 = this.field_14849.field_41697 + 600;
             if (this.field_14849.method_26530()) {
-               class_704 var3 = this.field_48439.method_25859(class_496.method_2443(), this.field_14849);
+               PlayerEntity var3 = this.field_48439.method_25859(class_496.method_2443(), this.field_14849);
                class_496.method_2458(this.field_14849).method_25654(var3);
             }
          }

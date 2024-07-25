@@ -175,7 +175,7 @@ public class class_7689 extends class_6414 implements class_8660 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       int var9 = var1.<Integer>method_10313(field_39050);
       ItemStack var10 = var4.method_26617(var5);
       if (var9 < 8 && field_39051.containsKey(var10.method_27960())) {
@@ -225,7 +225,7 @@ public class class_7689 extends class_6414 implements class_8660 {
       }
 
       class_2522 var13 = method_34838(var0, var1, var2);
-      var1.method_43359((class_704)null, var2, class_463.field_2852, class_562.field_3322, 1.0F, 1.0F);
+      var1.method_43359((PlayerEntity)null, var2, class_463.field_2852, class_562.field_3322, 1.0F, 1.0F);
       return var13;
    }
 
@@ -256,7 +256,7 @@ public class class_7689 extends class_6414 implements class_8660 {
    public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method_10313(field_39050) == 7) {
          var2.method_7513(var3, var1.method_10317(field_39050), 3);
-         var2.method_43359((class_704)null, var3, class_463.field_2157, class_562.field_3322, 1.0F, 1.0F);
+         var2.method_43359((PlayerEntity)null, var3, class_463.field_2157, class_562.field_3322, 1.0F, 1.0F);
       }
    }
 

@@ -14,7 +14,7 @@ public class class_2509 extends class_2451 {
       BlockPos var4 = var1.method_21858();
       Direction var5 = var1.method_21857();
       BlockPos var6 = var4.method_6098(var5);
-      class_704 var7 = var1.method_21868();
+      PlayerEntity var7 = var1.method_21868();
       ItemStack var8 = var1.method_21867();
       if (var7 != null && !this.method_11437(var7, var5, var8, var6)) {
          return class_6910.field_35517;
@@ -50,7 +50,7 @@ public class class_2509 extends class_2451 {
       }
    }
 
-   public boolean method_11437(class_704 var1, Direction var2, ItemStack var3, BlockPos var4) {
+   public boolean method_11437(PlayerEntity var1, Direction var2, ItemStack var3, BlockPos var4) {
       return !var2.method_1029().method_42626() && var1.method_3208(var4, var2, var3);
    }
 }

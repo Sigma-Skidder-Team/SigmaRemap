@@ -14,7 +14,7 @@ public class class_3948 extends class_6017 {
    @Override
    public void method_23473() {
       this.field_19164++;
-      class_704 var3 = this.field_9479
+      PlayerEntity var3 = this.field_9479
          .world
          .method_25860(this.field_19162, this.field_9479, this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ());
       if (var3 == null) {

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_2712 extends class_4138<class_9408> {
+public class class_2712 extends NearestAttackableTargetGoal<class_9408> {
    private static String[] field_13260;
 
    public class_2712(class_9310 var1) {

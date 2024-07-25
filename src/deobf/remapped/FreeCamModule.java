@@ -3,7 +3,7 @@ package remapped;
 import com.mojang.authlib.GameProfile;
 
 public class FreeCamModule extends Module {
-   public static class_704 field_48917;
+   public static PlayerEntity field_48917;
    private double field_48921;
    private double field_48927;
    private double field_48914;
@@ -259,8 +259,8 @@ public class FreeCamModule extends Module {
                double var5 = var4.field_3139;
                double var7 = var4.field_3144;
                double var9 = var4.field_3141;
-               float var11 = class_704.field_3865.field_31199;
-               float var12 = class_704.field_3865.field_31200;
+               float var11 = PlayerEntity.field_3865.field_31199;
+               float var12 = PlayerEntity.field_3865.field_31200;
                client.thePlayer
                   .method_37094(
                      new Box(var5 - (double)var11, var7, var9 - (double)var11, var5 + (double)var11, var7 + (double)var12, var9 + (double)var11)

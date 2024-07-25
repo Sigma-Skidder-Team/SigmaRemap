@@ -184,23 +184,23 @@ public class class_496 extends class_5467 {
 
    @Override
    public void registerGoals() {
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(2, new class_4520(this, 2.0));
-      this.field_29916.method_3485(2, new class_3031(this, this, 1.0));
-      this.field_29916.method_3485(3, new class_5685(this, 1.2F, true));
-      this.field_29916.method_3485(4, new class_7228(this, 1.0, class_8137.method_37019(class_4783.field_23886.method_10803()), false));
-      this.field_29916.method_3485(6, new class_368<class_704>(this, class_704.class, 8.0F, 2.0, 2.0));
-      this.field_29916.method_3485(6, new class_368<class_1173>(this, class_1173.class, 4.0F, 2.0, 2.0));
-      this.field_29916.method_3485(7, new class_2256(this));
-      this.field_29916.method_3485(8, new class_6630(this));
-      this.field_29916.method_3485(8, new class_8399(this));
-      this.field_3084 = new class_5670(this, class_704.class, 6.0F);
-      this.field_29916.method_3485(9, this.field_3084);
-      this.field_29916.method_3485(10, new class_9691(this));
-      this.field_29916.method_3485(12, new class_4205(this));
-      this.field_29916.method_3485(13, new class_8676(this, 1.25));
-      this.field_29916.method_3485(14, new class_2889(this, 1.0));
-      this.field_29908.method_3485(1, new class_2199(this).method_38757(new Class[0]));
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(2, new class_4520(this, 2.0));
+      this.goalSelector.addGoal(2, new class_3031(this, this, 1.0));
+      this.goalSelector.addGoal(3, new class_5685(this, 1.2F, true));
+      this.goalSelector.addGoal(4, new class_7228(this, 1.0, class_8137.method_37019(class_4783.field_23886.method_10803()), false));
+      this.goalSelector.addGoal(6, new class_368<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
+      this.goalSelector.addGoal(6, new class_368<class_1173>(this, class_1173.class, 4.0F, 2.0, 2.0));
+      this.goalSelector.addGoal(7, new class_2256(this));
+      this.goalSelector.addGoal(8, new class_6630(this));
+      this.goalSelector.addGoal(8, new class_8399(this));
+      this.field_3084 = new class_5670(this, PlayerEntity.class, 6.0F);
+      this.goalSelector.addGoal(9, this.field_3084);
+      this.goalSelector.addGoal(10, new class_9691(this));
+      this.goalSelector.addGoal(12, new class_4205(this));
+      this.goalSelector.addGoal(13, new class_8676(this, 1.25));
+      this.goalSelector.addGoal(14, new class_2889(this, 1.0));
+      this.targetSelector.addGoal(1, new class_2199(this).setCallsForHelp(new Class[0]));
    }
 
    public static class_1313 method_2413() {
@@ -233,7 +233,7 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return false;
    }
 
@@ -537,7 +537,7 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (!this.method_2421()) {
          if (this.method_2450()) {

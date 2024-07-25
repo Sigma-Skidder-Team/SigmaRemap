@@ -8,7 +8,7 @@ public class class_5614 extends Entity {
    public int field_28509;
    private int field_28510 = 5;
    private int field_28513;
-   private class_704 field_28507;
+   private PlayerEntity field_28507;
    private int field_28512;
 
    public class_5614(World var1, double var2, double var4, double var6, int var8) {
@@ -152,7 +152,7 @@ public class class_5614 extends Entity {
    }
 
    @Override
-   public void method_37347(class_704 var1) {
+   public void method_37347(PlayerEntity var1) {
       if (!this.world.field_33055 && this.field_28509 == 0 && var1.field_3851 == 0) {
          var1.field_3851 = 2;
          var1.method_26467(this, 1);

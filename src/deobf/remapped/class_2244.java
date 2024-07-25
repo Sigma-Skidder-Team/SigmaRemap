@@ -29,7 +29,7 @@ public class class_2244 extends Module {
 
       while (var4.hasNext()) {
          Entity var5 = (Entity)var4.next();
-         if (!(var5 instanceof class_704) || SigmaMainClass.getInstance().method_3331().method_20495(var5) || !class_314.method_1413(var5, 2.0F)) {
+         if (!(var5 instanceof PlayerEntity) || SigmaMainClass.getInstance().method_3331().method_20495(var5) || !class_314.method_1413(var5, 2.0F)) {
             var4.remove();
          }
       }

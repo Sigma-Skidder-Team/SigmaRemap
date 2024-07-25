@@ -320,10 +320,10 @@ public class ClientPlayNetHandler implements class_392 {
                               }
                            } else {
                               Entity var15 = this.field_6021.method_29534(var1.method_30335());
-                              if (!(var15 instanceof class_704)) {
+                              if (!(var15 instanceof PlayerEntity)) {
                                  var11 = null;
                               } else {
-                                 var11 = new class_3942(this.field_6021, (class_704)var15, var4, var6, var8);
+                                 var11 = new class_3942(this.field_6021, (PlayerEntity)var15, var4, var6, var8);
                               }
                            }
                         } else {
@@ -718,7 +718,7 @@ public class ClientPlayNetHandler implements class_392 {
                         this.field_6026.field_9572.method_43051(var4, class_3090.field_15322);
                      }
                   } else {
-                     class_704 var5 = (class_704)var4;
+                     PlayerEntity var5 = (PlayerEntity)var4;
                      var5.method_3162(false, false);
                   }
                } else {
@@ -825,7 +825,7 @@ public class ClientPlayNetHandler implements class_392 {
       }
    }
 
-   private static ItemStack method_4816(class_704 var0) {
+   private static ItemStack method_4816(PlayerEntity var0) {
       for (Hand var6 : Hand.values()) {
          ItemStack var7 = var0.method_26617(var6);
          if (var7.method_27960() == class_4897.field_24472) {

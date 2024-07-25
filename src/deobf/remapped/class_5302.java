@@ -6,7 +6,7 @@ public class class_5302 extends class_3599 {
    private static String[] field_27097;
    private int field_27096;
    private final class_4612 field_27098;
-   private class_704 field_27099;
+   private PlayerEntity field_27099;
    private class_9414 field_27100;
 
    public class_5302(class_4612 var1) {
@@ -20,8 +20,8 @@ public class class_5302 extends class_3599 {
 
       for (BoatEntity var6 : var3) {
          Entity var7 = var6.method_37259();
-         if (var7 instanceof class_704
-            && (class_9299.method_42804(((class_704)var7).field_29676) > 0.0F || class_9299.method_42804(((class_704)var7).field_29673) > 0.0F)) {
+         if (var7 instanceof PlayerEntity
+            && (class_9299.method_42804(((PlayerEntity)var7).field_29676) > 0.0F || class_9299.method_42804(((PlayerEntity)var7).field_29673) > 0.0F)) {
             var4 = true;
             break;
          }
@@ -47,8 +47,8 @@ public class class_5302 extends class_3599 {
    @Override
    public void method_16796() {
       for (BoatEntity var4 : this.field_27098.world.<BoatEntity>method_25868(BoatEntity.class, this.field_27098.method_37241().method_18898(5.0))) {
-         if (var4.method_37259() != null && var4.method_37259() instanceof class_704) {
-            this.field_27099 = (class_704)var4.method_37259();
+         if (var4.method_37259() != null && var4.method_37259() instanceof PlayerEntity) {
+            this.field_27099 = (PlayerEntity)var4.method_37259();
             break;
          }
       }

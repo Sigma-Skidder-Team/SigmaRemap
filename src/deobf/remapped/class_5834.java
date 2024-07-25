@@ -61,7 +61,7 @@ public abstract class class_5834 extends Entity {
    public float field_29618;
    public float field_29657;
    public float field_29674 = 0.02F;
-   public class_704 field_29634;
+   public PlayerEntity field_29634;
    public int field_29665;
    public boolean field_29659;
    public int field_29658;
@@ -207,7 +207,7 @@ public abstract class class_5834 extends Entity {
 
       super.method_37219();
       this.world.method_29599().startSection("livingEntityBaseTick");
-      boolean var3 = this instanceof class_704;
+      boolean var3 = this instanceof PlayerEntity;
       if (this.isAlive()) {
          if (!this.method_37153()) {
             if (var3 && !this.world.method_6673().method_9815(this.method_37241())) {
@@ -228,7 +228,7 @@ public abstract class class_5834 extends Entity {
          this.method_37136();
       }
 
-      boolean var8 = var3 && ((class_704)this).playerAbilities.disableDamage;
+      boolean var8 = var3 && ((PlayerEntity)this).playerAbilities.disableDamage;
       if (this.isAlive()) {
          if (this.method_37261(class_6503.field_33094)
             && !this.world
@@ -445,7 +445,7 @@ public abstract class class_5834 extends Entity {
       return Math.min(var1 + 4, this.method_37099());
    }
 
-   public int method_26427(class_704 var1) {
+   public int method_26427(PlayerEntity var1) {
       return 0;
    }
 
@@ -466,7 +466,7 @@ public abstract class class_5834 extends Entity {
       return this.field_29636;
    }
 
-   public void method_26580(class_704 var1) {
+   public void method_26580(PlayerEntity var1) {
       this.field_29634 = var1;
       this.field_29665 = this.field_41697;
    }
@@ -922,14 +922,14 @@ public abstract class class_5834 extends Entity {
                   this.method_26511((class_5834)var9);
                }
 
-               if (!(var9 instanceof class_704)) {
+               if (!(var9 instanceof PlayerEntity)) {
                   if (var9 instanceof class_9408) {
                      class_9408 var10 = (class_9408)var9;
                      if (var10.method_41215()) {
                         this.field_29665 = 100;
                         class_5834 var11 = var10.method_41207();
                         if (var11 != null && var11.method_37387() == EntityType.field_34300) {
-                           this.field_29634 = (class_704)var11;
+                           this.field_29634 = (PlayerEntity)var11;
                         } else {
                            this.field_29634 = null;
                         }
@@ -937,7 +937,7 @@ public abstract class class_5834 extends Entity {
                   }
                } else {
                   this.field_29665 = 100;
-                  this.field_29634 = (class_704)var9;
+                  this.field_29634 = (PlayerEntity)var9;
                }
             }
 
@@ -1183,7 +1183,7 @@ public abstract class class_5834 extends Entity {
    public void method_26513(DamageSource var1) {
       Entity var4 = var1.method_28372();
       int var5;
-      if (!(var4 instanceof class_704)) {
+      if (!(var4 instanceof PlayerEntity)) {
          var5 = 0;
       } else {
          var5 = class_2931.method_13397((class_5834)var4);
@@ -1559,7 +1559,7 @@ public abstract class class_5834 extends Entity {
                this.method_37155(var10, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
             }
 
-            if (!(this instanceof class_704)) {
+            if (!(this instanceof PlayerEntity)) {
                this.method_26456(0.0F);
                this.method_26452(DamageSource.field_31664);
             }
@@ -2049,7 +2049,7 @@ public abstract class class_5834 extends Entity {
          double var5 = class_9299.method_42827(var1.field_7336, -0.15F, 0.15F);
          double var7 = class_9299.method_42827(var1.field_7334, -0.15F, 0.15F);
          double var9 = Math.max(var1.field_7333, -0.15F);
-         if (var9 < 0.0 && !this.method_26603().method_8350(class_4783.field_23348) && this.method_26492() && this instanceof class_704) {
+         if (var9 < 0.0 && !this.method_26603().method_8350(class_4783.field_23348) && this.method_26492() && this instanceof PlayerEntity) {
             var9 = 0.0;
          }
 
@@ -2564,7 +2564,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26562(class_91 var1) {
-      class_704 var4 = var1.method_253() == null ? null : this.world.method_25862(var1.method_253());
+      PlayerEntity var4 = var1.method_253() == null ? null : this.world.method_25862(var1.method_253());
       if (var4 instanceof class_9359) {
          class_8807.field_45055.method_14612((class_9359)var4, var1.method_264(), this);
       }
@@ -3050,7 +3050,7 @@ public abstract class class_5834 extends Entity {
    public ItemStack method_26426(World var1, ItemStack var2) {
       if (var2.method_28013()) {
          var1.method_29528(
-            (class_704)null,
+            (PlayerEntity)null,
             this.getPosX(),
             this.method_37309(),
             this.getPosZ(),
@@ -3060,7 +3060,7 @@ public abstract class class_5834 extends Entity {
             1.0F + (var1.field_33033.nextFloat() - var1.field_33033.nextFloat()) * 0.4F
          );
          this.method_26497(var2, var1, this);
-         if (!(this instanceof class_704) || !((class_704)this).playerAbilities.isCreativeMode) {
+         if (!(this instanceof PlayerEntity) || !((PlayerEntity)this).playerAbilities.isCreativeMode) {
             var2.method_27970(1);
          }
       }

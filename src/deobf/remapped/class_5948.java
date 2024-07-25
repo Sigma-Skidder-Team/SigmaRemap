@@ -130,9 +130,9 @@ public class class_5948 extends class_4109 {
       if (var1 != this.field_30330) {
          this.field_30330 = var1;
          if (!var1) {
-            this.field_29916.method_3488(this.field_30333);
+            this.goalSelector.method_3488(this.field_30333);
          } else {
-            this.field_29916.method_3485(1, this.field_30333);
+            this.goalSelector.addGoal(1, this.field_30333);
          }
       }
    }
@@ -144,7 +144,7 @@ public class class_5948 extends class_4109 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (this.method_19043()) {
          if (!this.method_26449()) {

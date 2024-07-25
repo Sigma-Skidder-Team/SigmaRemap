@@ -16,14 +16,14 @@ public abstract class class_4088 {
    private int field_19927;
    private final Set<class_7934> field_19934 = Sets.newHashSet();
    private final List<class_117> field_19928 = Lists.newArrayList();
-   private final Set<class_704> field_19930 = Sets.newHashSet();
+   private final Set<PlayerEntity> field_19930 = Sets.newHashSet();
 
    public class_4088(class_4165<?> var1, int var2) {
       this.field_19933 = var1;
       this.field_19925 = var2;
    }
 
-   public static boolean method_18872(class_9210 var0, class_704 var1, class_6414 var2) {
+   public static boolean method_18872(class_9210 var0, PlayerEntity var1, class_6414 var2) {
       return var0.<Boolean>method_42532(
          (var2x, var3) -> var2x.method_28262(var3).method_8350(var2)
                ? var1.method_37273((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5) <= 64.0
@@ -118,7 +118,7 @@ public abstract class class_4088 {
       }
    }
 
-   public boolean method_18886(class_704 var1, int var2) {
+   public boolean method_18886(PlayerEntity var1, int var2) {
       return false;
    }
 
@@ -126,12 +126,12 @@ public abstract class class_4088 {
       return this.field_19926.get(var1);
    }
 
-   public ItemStack method_18874(class_704 var1, int var2) {
+   public ItemStack method_18874(PlayerEntity var1, int var2) {
       class_7934 var5 = this.field_19926.get(var2);
       return var5 == null ? ItemStack.EMPTY : var5.method_35898();
    }
 
-   public ItemStack method_18865(int var1, int var2, class_6269 var3, class_704 var4) {
+   public ItemStack method_18865(int var1, int var2, class_6269 var3, PlayerEntity var4) {
       try {
          return this.method_18862(var1, var2, var3, var4);
       } catch (Exception var10) {
@@ -147,7 +147,7 @@ public abstract class class_4088 {
       }
    }
 
-   private ItemStack method_18862(int var1, int var2, class_6269 var3, class_704 var4) {
+   private ItemStack method_18862(int var1, int var2, class_6269 var3, PlayerEntity var4) {
       ItemStack var7 = ItemStack.EMPTY;
       class_7051 var8 = var4.inventory;
       if (var3 != class_6269.field_32022) {
@@ -412,7 +412,7 @@ public abstract class class_4088 {
       return true;
    }
 
-   public void method_18876(class_704 var1) {
+   public void method_18876(PlayerEntity var1) {
       class_7051 var4 = var1.inventory;
       if (!var4.method_32424().method_28022()) {
          var1.method_3153(var4.method_32424(), false);
@@ -420,7 +420,7 @@ public abstract class class_4088 {
       }
    }
 
-   public void method_18887(class_704 var1, World var2, class_6867 var3) {
+   public void method_18887(PlayerEntity var1, World var2, class_6867 var3) {
       if (!var1.isAlive() || var1 instanceof class_9359 && ((class_9359)var1).method_43252()) {
          for (int var7 = 0; var7 < var3.method_31505(); var7++) {
             var1.method_3153(var3.method_31507(var7), false);
@@ -455,11 +455,11 @@ public abstract class class_4088 {
       return this.field_19924;
    }
 
-   public boolean method_18879(class_704 var1) {
+   public boolean method_18879(PlayerEntity var1) {
       return !this.field_19930.contains(var1);
    }
 
-   public void method_18883(class_704 var1, boolean var2) {
+   public void method_18883(PlayerEntity var1, boolean var2) {
       if (!var2) {
          this.field_19930.add(var1);
       } else {
@@ -467,7 +467,7 @@ public abstract class class_4088 {
       }
    }
 
-   public abstract boolean method_18861(class_704 var1);
+   public abstract boolean method_18861(PlayerEntity var1);
 
    public boolean method_18892(ItemStack var1, int var2, int var3, boolean var4) {
       boolean var7 = false;
@@ -550,7 +550,7 @@ public abstract class class_4088 {
       return var0 & 3 | (var1 & 3) << 2;
    }
 
-   public static boolean method_18864(int var0, class_704 var1) {
+   public static boolean method_18864(int var0, PlayerEntity var1) {
       if (var0 != 0) {
          return var0 == 1 ? true : var0 == 2 && var1.playerAbilities.isCreativeMode;
       } else {

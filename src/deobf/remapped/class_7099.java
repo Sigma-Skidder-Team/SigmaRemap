@@ -95,8 +95,8 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
       int var7 = 0;
       float var8 = 5.0F;
 
-      for (class_704 var10 : var0.<class_704>method_25868(
-         class_704.class,
+      for (PlayerEntity var10 : var0.<PlayerEntity>method_25868(
+         PlayerEntity.class,
          new Box(
             (double)((float)var2 - 5.0F),
             (double)((float)var3 - 5.0F),
@@ -130,7 +130,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
          }
 
          this.field_18364
-            .method_29528((class_704)null, var5, var7, var9, var1, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F);
+            .method_29528((PlayerEntity)null, var5, var7, var9, var1, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F);
       }
    }
 
@@ -145,7 +145,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
    }
 
    @Override
-   public void method_31501(class_704 var1) {
+   public void method_31501(PlayerEntity var1) {
       if (!var1.method_37221()) {
          if (this.field_36620 < 0) {
             this.field_36620 = 0;
@@ -157,7 +157,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
    }
 
    @Override
-   public void method_31499(class_704 var1) {
+   public void method_31499(PlayerEntity var1) {
       if (!var1.method_37221()) {
          this.field_36620--;
          this.method_32636();

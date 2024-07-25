@@ -3,7 +3,7 @@ package remapped;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class class_5431 extends class_4138<class_5834> {
+public class class_5431 extends NearestAttackableTargetGoal<class_5834> {
    private static String[] field_27664;
    private class_5834 field_27662;
    private class_5834 field_27661;

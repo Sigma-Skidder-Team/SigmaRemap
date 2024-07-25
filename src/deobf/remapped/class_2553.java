@@ -24,12 +24,12 @@ public class class_2553 extends class_691 {
 
    @Override
    public void method_3117(class_9379 var1, BlockPos var2) {
-      var1.method_43359((class_704)null, var2, class_463.field_2016, class_562.field_3322, 0.3F, 0.90000004F);
+      var1.method_43359((PlayerEntity)null, var2, class_463.field_2016, class_562.field_3322, 0.3F, 0.90000004F);
    }
 
    @Override
    public void method_3120(class_9379 var1, BlockPos var2) {
-      var1.method_43359((class_704)null, var2, class_463.field_2878, class_562.field_3322, 0.3F, 0.75F);
+      var1.method_43359((PlayerEntity)null, var2, class_463.field_2878, class_562.field_3322, 0.3F, 0.75F);
    }
 
    @Override

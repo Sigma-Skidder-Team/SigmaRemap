@@ -46,7 +46,7 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
    public void method_17353() {
       this.field_40573 = this.field_40572;
       this.field_40567 = this.field_40570;
-      class_704 var3 = this.field_18364
+      PlayerEntity var3 = this.field_18364
          .method_25857(
             (double)this.field_18358.method_12173() + 0.5,
             (double)this.field_18358.method_12165() + 0.5,

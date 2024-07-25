@@ -18,8 +18,8 @@ public abstract class class_5886 extends class_5834 {
    public class_4072 field_29914;
    private final class_1902 field_29921;
    public class_1249 field_29904;
-   public final class_782 field_29916;
-   public final class_782 field_29908;
+   public final class_782 goalSelector;
+   public final class_782 targetSelector;
    private class_5834 field_29905;
    private final class_8091 field_29898;
    private final class_2831<ItemStack> field_29903 = class_2831.<ItemStack>method_12872(2, ItemStack.EMPTY);
@@ -39,8 +39,8 @@ public abstract class class_5886 extends class_5834 {
 
    public class_5886(EntityType<? extends class_5886> var1, World var2) {
       super(var1, var2);
-      this.field_29916 = new class_782(var2.method_29559());
-      this.field_29908 = new class_782(var2.method_29559());
+      this.goalSelector = new class_782(var2.method_29559());
+      this.targetSelector = new class_782(var2.method_29559());
       this.field_29919 = new class_3711(this);
       this.field_29900 = new class_2833(this);
       this.field_29914 = new class_4072(this);
@@ -50,11 +50,11 @@ public abstract class class_5886 extends class_5834 {
       Arrays.fill(this.field_29918, 0.085F);
       Arrays.fill(this.field_29923, 0.085F);
       if (var2 != null && !var2.field_33055) {
-         this.method_26851();
+         this.registerGoals();
       }
    }
 
-   public void method_26851() {
+   public void registerGoals() {
    }
 
    public static class_1313 method_26846() {
@@ -185,7 +185,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public int method_26427(class_704 var1) {
+   public int method_26427(PlayerEntity var1) {
       if (this.field_29915 <= 0) {
          return this.field_29915;
       } else {
@@ -257,9 +257,9 @@ public abstract class class_5886 extends class_5834 {
    public void method_26872() {
       boolean var3 = !(this.method_37259() instanceof class_5886);
       boolean var4 = !(this.method_37243() instanceof BoatEntity);
-      this.field_29916.method_3493(class_1891.field_9564, var3);
-      this.field_29916.method_3493(class_1891.field_9561, var3 && var4);
-      this.field_29916.method_3493(class_1891.field_9560, var3);
+      this.goalSelector.method_3493(class_1891.field_9564, var3);
+      this.goalSelector.method_3493(class_1891.field_9561, var3 && var4);
+      this.goalSelector.method_3493(class_1891.field_9560, var3);
    }
 
    @Override
@@ -594,7 +594,7 @@ public abstract class class_5886 extends class_5834 {
       if (this.world.method_43370() == class_423.field_1790 && this.method_26869()) {
          this.method_37204();
       } else if (!this.method_26925() && !this.method_26915()) {
-         class_704 var3 = this.world.method_25861(this, -1.0);
+         PlayerEntity var3 = this.world.method_25861(this, -1.0);
          if (class_7860.field_39867.method_3596()) {
             Object var4 = class_7860.field_39867.method_3581(this);
             if (var4 != class_8835.field_45188) {
@@ -636,10 +636,10 @@ public abstract class class_5886 extends class_5834 {
       this.field_29898.method_36737();
       this.world.method_29599().endSection();
       this.world.method_29599().startSection("targetSelector");
-      this.field_29908.method_3489();
+      this.targetSelector.method_3489();
       this.world.method_29599().endSection();
       this.world.method_29599().startSection("goalSelector");
-      this.field_29916.method_3489();
+      this.goalSelector.method_3489();
       this.world.method_29599().endSection();
       this.world.method_29599().startSection("navigation");
       this.field_29904.method_5612();
@@ -660,7 +660,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    public void method_26929() {
-      class_1892.method_8439(this.world, this, this.field_29916);
+      class_1892.method_8439(this.world, this, this.goalSelector);
    }
 
    public void method_26919() {
@@ -872,7 +872,7 @@ public abstract class class_5886 extends class_5834 {
          if (var4 instanceof class_8228) {
             return ((class_8228)var4).method_37669();
          } else if (var4 != class_4897.field_24503) {
-            return !class_8835.method_40651(var0, (class_704)null) ? class_6943.field_35707 : class_6943.field_35701;
+            return !class_8835.method_40651(var0, (PlayerEntity)null) ? class_6943.field_35707 : class_6943.field_35701;
          } else {
             return class_6943.field_35708;
          }
@@ -1018,7 +1018,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public final class_6910 method_37128(class_704 var1, Hand var2) {
+   public final class_6910 method_37128(PlayerEntity var1, Hand var2) {
       if (this.isAlive()) {
          if (this.method_26922() != var1) {
             class_6910 var5 = this.method_26842(var1, var2);
@@ -1037,7 +1037,7 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   private class_6910 method_26842(class_704 var1, Hand var2) {
+   private class_6910 method_26842(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_25274 && this.method_26887(var1)) {
          this.method_26901(var1, true);
@@ -1066,10 +1066,10 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public void method_26874(class_704 var1, class_5886 var2) {
+   public void method_26874(PlayerEntity var1, class_5886 var2) {
    }
 
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       return class_6910.field_35521;
    }
 
@@ -1155,7 +1155,7 @@ public abstract class class_5886 extends class_5834 {
    public void method_26916(boolean var1, boolean var2) {
       if (this.field_29911 != null) {
          this.field_41722 = false;
-         if (!(this.field_29911 instanceof class_704)) {
+         if (!(this.field_29911 instanceof PlayerEntity)) {
             this.field_29911.field_41722 = false;
          }
 
@@ -1171,7 +1171,7 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return !this.method_26920() && !(this instanceof class_1869);
    }
 
@@ -1192,7 +1192,7 @@ public abstract class class_5886 extends class_5834 {
       this.field_29911 = var1;
       this.field_29899 = null;
       this.field_41722 = true;
-      if (!(this.field_29911 instanceof class_704)) {
+      if (!(this.field_29911 instanceof PlayerEntity)) {
          this.field_29911.field_41722 = true;
       }
 
@@ -1335,7 +1335,7 @@ public abstract class class_5886 extends class_5834 {
 
    @Override
    public boolean method_26608(class_5834 var1) {
-      return var1.method_37387() == EntityType.field_34300 && ((class_704)var1).playerAbilities.disableDamage ? false : super.method_26608(var1);
+      return var1.method_37387() == EntityType.field_34300 && ((PlayerEntity)var1).playerAbilities.disableDamage ? false : super.method_26608(var1);
    }
 
    @Override
@@ -1364,8 +1364,8 @@ public abstract class class_5886 extends class_5834 {
             this.method_37215(this.method_37098().method_6210(0.6, 1.0, 0.6));
          }
 
-         if (var1 instanceof class_704) {
-            class_704 var8 = (class_704)var1;
+         if (var1 instanceof PlayerEntity) {
+            PlayerEntity var8 = (PlayerEntity)var1;
             this.method_26882(var8, this.method_26446(), !var8.method_26554() ? ItemStack.EMPTY : var8.method_26576());
          }
 
@@ -1376,7 +1376,7 @@ public abstract class class_5886 extends class_5834 {
       return var7;
    }
 
-   private void method_26882(class_704 var1, ItemStack var2, ItemStack var3) {
+   private void method_26882(PlayerEntity var1, ItemStack var2, ItemStack var3) {
       if (!var2.method_28022() && !var3.method_28022() && var2.method_27960() instanceof class_7938 && var3.method_27960() == class_4897.field_24840) {
          float var6 = 0.25F + (float)class_2931.method_13414(this) * 0.05F;
          if (this.field_41717.nextFloat() < var6) {

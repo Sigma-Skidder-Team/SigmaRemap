@@ -8,15 +8,15 @@ public class class_2803 extends class_5467 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(1, new class_518(this, 2.0));
-      this.field_29916.method_3485(2, new class_9513(this, 1.0));
-      this.field_29916.method_3485(3, new class_7228(this, 1.25, class_8137.method_37019(class_4897.field_24813), false));
-      this.field_29916.method_3485(4, new class_8676(this, 1.25));
-      this.field_29916.method_3485(5, new class_2889(this, 1.0));
-      this.field_29916.method_3485(6, new class_4407(this, class_704.class, 6.0F));
-      this.field_29916.method_3485(7, new class_9691(this));
+   public void registerGoals() {
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(1, new class_518(this, 2.0));
+      this.goalSelector.addGoal(2, new class_9513(this, 1.0));
+      this.goalSelector.addGoal(3, new class_7228(this, 1.25, class_8137.method_37019(class_4897.field_24813), false));
+      this.goalSelector.addGoal(4, new class_8676(this, 1.25));
+      this.goalSelector.addGoal(5, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new class_9691(this));
    }
 
    public static class_1313 method_12747() {
@@ -49,7 +49,7 @@ public class class_2803 extends class_5467 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24548 && !this.method_26449()) {
          var1.method_37155(class_463.field_2828, 1.0F, 1.0F);

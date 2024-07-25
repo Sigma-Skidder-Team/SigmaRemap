@@ -14,7 +14,7 @@ public class class_3373 extends class_6414 {
       if (var2.method_22572().method_40242()) {
          var2.method_7513(var3, class_4783.field_23626.method_29260(), 3);
          var2.method_43364(2009, var3, 0);
-         var2.method_43359((class_704)null, var3, class_463.field_2472, class_562.field_3322, 1.0F, (1.0F + var2.method_43360().nextFloat() * 0.2F) * 0.7F);
+         var2.method_43359((PlayerEntity)null, var3, class_463.field_2472, class_562.field_3322, 1.0F, (1.0F + var2.method_43360().nextFloat() * 0.2F) * 0.7F);
       }
    }
 

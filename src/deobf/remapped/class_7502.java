@@ -60,7 +60,7 @@ public class class_7502 extends class_380 implements class_2593 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (this.field_11820 != class_5371.field_27408) {
          var1 = var1.method_10317(field_38300);
          var2.method_7513(var3, var1, 2);
@@ -75,7 +75,7 @@ public class class_7502 extends class_380 implements class_2593 {
       }
    }
 
-   public void method_34210(class_704 var1, World var2, BlockPos var3, boolean var4) {
+   public void method_34210(PlayerEntity var1, World var2, BlockPos var3, boolean var4) {
       if (!var4) {
          int var7 = this.field_11820 != class_5371.field_27408 ? 1013 : 1036;
          var2.method_43365(var1, var7, var3, 0);
@@ -92,7 +92,7 @@ public class class_7502 extends class_380 implements class_2593 {
          if (var9 != var1.<Boolean>method_10313(field_38297)) {
             if (var1.<Boolean>method_10313(field_38300) != var9) {
                var1 = var1.method_10308(field_38300, Boolean.valueOf(var9));
-               this.method_34210((class_704)null, var2, var3, var9);
+               this.method_34210((PlayerEntity)null, var2, var3, var9);
             }
 
             var2.method_7513(var3, var1.method_10308(field_38297, Boolean.valueOf(var9)), 2);

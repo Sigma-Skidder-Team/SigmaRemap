@@ -10,7 +10,7 @@ public class class_2960 extends class_3578 {
       if (var0 == null) {
          return false;
       } else {
-         return !(var0 instanceof class_704) || !var0.method_37221() && !((class_704)var0).method_3186()
+         return !(var0 instanceof PlayerEntity) || !var0.method_37221() && !((PlayerEntity)var0).method_3186()
             ? var0.method_26550() != class_2780.field_13578
             : false;
       }
@@ -61,9 +61,9 @@ public class class_2960 extends class_3578 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
-      this.field_29916.method_3485(1, new class_3865(this));
+   public void registerGoals() {
+      super.registerGoals();
+      this.goalSelector.addGoal(1, new class_3865(this));
    }
 
    @Override
@@ -120,7 +120,7 @@ public class class_2960 extends class_3578 {
    }
 
    @Override
-   public void method_37347(class_704 var1) {
+   public void method_37347(PlayerEntity var1) {
       int var4 = this.method_13537();
       if (var1 instanceof class_9359 && var4 > 0 && var1.attackEntityFrom(DamageSource.method_28345(this), (float)(1 + var4))) {
          if (!this.method_37378()) {

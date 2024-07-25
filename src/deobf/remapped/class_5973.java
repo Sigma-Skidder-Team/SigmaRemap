@@ -5,7 +5,7 @@ import java.util.Random;
 public class class_5973 extends class_3599 {
    private static String[] field_30425;
    private final class_5583 field_30422;
-   private class_704 field_30424;
+   private PlayerEntity field_30424;
    private BlockPos field_30423;
    private int field_30426;
 
@@ -18,8 +18,8 @@ public class class_5973 extends class_3599 {
       if (this.field_30422.method_41215()) {
          if (!this.field_30422.method_41216()) {
             class_5834 var3 = this.field_30422.method_41207();
-            if (var3 instanceof class_704) {
-               this.field_30424 = (class_704)var3;
+            if (var3 instanceof PlayerEntity) {
+               this.field_30424 = (PlayerEntity)var3;
                if (!var3.method_26507()) {
                   return false;
                }

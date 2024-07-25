@@ -46,7 +46,7 @@ public class class_6415 extends class_4088 {
    }
 
    @Override
-   public boolean method_18861(class_704 var1) {
+   public boolean method_18861(PlayerEntity var1) {
       return this.field_32763.method_978() == var1;
    }
 
@@ -84,7 +84,7 @@ public class class_6415 extends class_4088 {
    }
 
    @Override
-   public ItemStack method_18874(class_704 var1, int var2) {
+   public ItemStack method_18874(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {
@@ -137,9 +137,9 @@ public class class_6415 extends class_4088 {
    }
 
    @Override
-   public void method_18876(class_704 var1) {
+   public void method_18876(PlayerEntity var1) {
       super.method_18876(var1);
-      this.field_32763.method_975((class_704)null);
+      this.field_32763.method_975((PlayerEntity)null);
       if (!this.field_32763.method_972().field_33055) {
          if (!var1.isAlive() || var1 instanceof class_9359 && ((class_9359)var1).method_43252()) {
             ItemStack var4 = this.field_32764.method_31507(0);

@@ -53,7 +53,7 @@ public class class_3064 extends class_2830 {
    }
 
    @Override
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       if (!var1.field_33055) {
          if (!var4.method_3186()) {
             method_29295(var3, var1, var2, (class_3757)null, var4, var4.method_26446());
@@ -66,11 +66,11 @@ public class class_3064 extends class_2830 {
    }
 
    @Override
-   public void method_29298(World var1, class_704 var2, BlockPos var3, class_2522 var4, class_3757 var5, ItemStack var6) {
+   public void method_29298(World var1, PlayerEntity var2, BlockPos var3, class_2522 var4, class_3757 var5, ItemStack var6) {
       super.method_29298(var1, var2, var3, class_4783.field_23184.method_29260(), var5, var6);
    }
 
-   public static void method_14008(World var0, BlockPos var1, class_2522 var2, class_704 var3) {
+   public static void method_14008(World var0, BlockPos var1, class_2522 var2, PlayerEntity var3) {
       class_7422 var6 = var2.<class_7422>method_10313(field_15063);
       if (var6 == class_7422.field_37874) {
          BlockPos var7 = var1.method_6100();

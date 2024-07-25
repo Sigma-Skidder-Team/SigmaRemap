@@ -26,7 +26,7 @@ public class class_8252 extends class_6127<class_5834> {
       class_1150 var6 = var2.method_26525();
       var6.method_5105(class_6044.field_30886, var5);
       List var7 = var5.stream().filter(var1x -> method_28150(var2, var1x)).collect(Collectors.toList());
-      var6.method_5105(class_6044.field_30870, !var7.isEmpty() ? (class_704)var7.get(0) : null);
+      var6.method_5105(class_6044.field_30870, !var7.isEmpty() ? (PlayerEntity)var7.get(0) : null);
       Optional var8 = var7.stream().filter(class_3572.field_17480).findFirst();
       var6.method_5106(class_6044.field_30912, var8);
    }

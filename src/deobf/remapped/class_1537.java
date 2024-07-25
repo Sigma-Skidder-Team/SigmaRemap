@@ -79,7 +79,7 @@ public class class_1537 extends class_3429 {
    @Override
    public void method_37123() {
       Entity var3 = this.method_26166();
-      if (var3 instanceof class_704 && !var3.isAlive()) {
+      if (var3 instanceof PlayerEntity && !var3.isAlive()) {
          this.method_37204();
       } else {
          super.method_37123();

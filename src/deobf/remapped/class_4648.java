@@ -61,7 +61,7 @@ public class class_4648 extends AbstractMinecartEntity {
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, Hand var2) {
+   public class_6910 method_37128(PlayerEntity var1, Hand var2) {
       return this.field_22683.method_36933(var1);
    }
 

@@ -20,10 +20,10 @@ public class class_9825 extends class_516 implements class_1869 {
 
    @Override
    public void registerGoals() {
-      this.field_29916.method_3485(1, new class_2094(this, null));
-      this.field_29916.method_3485(2, new class_2871(this, null));
-      this.field_29916.method_3485(3, new class_9653(this, null));
-      this.field_29908.method_3485(1, new class_4012(this, null));
+      this.goalSelector.addGoal(1, new class_2094(this, null));
+      this.goalSelector.addGoal(2, new class_2871(this, null));
+      this.goalSelector.addGoal(3, new class_9653(this, null));
+      this.targetSelector.addGoal(1, new class_4012(this, null));
    }
 
    @Override

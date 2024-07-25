@@ -15,7 +15,7 @@ public class class_3744 extends class_3793 {
    }
 
    @Override
-   public void method_17625(World var1, BlockPos var2, class_704 var3) {
+   public void method_17625(World var1, BlockPos var2, PlayerEntity var3) {
       class_3757 var6 = var1.method_28260(var2);
       if (var6 instanceof class_7960) {
          var3.method_3152((class_4259)var6);

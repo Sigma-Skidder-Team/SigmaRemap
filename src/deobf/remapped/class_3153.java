@@ -30,7 +30,7 @@ public class class_3153 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var2.field_33055) {
          if (!var4.method_37221()) {
             class_3757 var9 = var2.method_28260(var3);
@@ -73,7 +73,7 @@ public class class_3153 extends class_4314 {
    }
 
    @Override
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       class_3757 var7 = var1.method_28260(var2);
       if (var7 instanceof class_4816) {
          class_4816 var8 = (class_4816)var7;

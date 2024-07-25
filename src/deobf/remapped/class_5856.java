@@ -14,7 +14,7 @@ public class class_5856 implements class_4259 {
 
    @Nullable
    @Override
-   public class_4088 method_11419(int var1, class_7051 var2, class_704 var3) {
+   public class_4088 method_11419(int var1, class_7051 var2, PlayerEntity var3) {
       if (this.field_29758.method_38430(var3) && this.field_29762.method_38430(var3)) {
          this.field_29758.method_10812(var2.field_36409);
          this.field_29762.method_10812(var2.field_36409);

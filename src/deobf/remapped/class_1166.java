@@ -78,7 +78,7 @@ public class class_1166 extends class_3266 {
    }
 
    @Override
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       if (!var1.field_33055 && var4.playerAbilities.isCreativeMode) {
          BlockPos var7 = var2.method_6098(var3.<Direction>method_10313(field_16180).method_1046());
          if (this.method_5184(var3, var1.method_28262(var7))) {

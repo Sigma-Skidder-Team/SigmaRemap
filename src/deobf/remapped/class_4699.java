@@ -36,6 +36,6 @@ public class class_4699 extends class_2451 {
          }
       }
 
-      return var3 instanceof class_704 && ((class_704)var3).playerAbilities.isCreativeMode ? var6 : new ItemStack(class_4897.field_24454);
+      return var3 instanceof PlayerEntity && ((PlayerEntity)var3).playerAbilities.isCreativeMode ? var6 : new ItemStack(class_4897.field_24454);
    }
 }

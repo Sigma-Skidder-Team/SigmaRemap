@@ -63,7 +63,7 @@ public class class_2951 implements class_6867 {
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       if (this.field_14422.field_18364.method_28260(this.field_14422.field_18358) == this.field_14422) {
          return !(
                var1.method_37273(

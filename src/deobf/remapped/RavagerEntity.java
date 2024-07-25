@@ -5,9 +5,9 @@ import javax.annotation.Nullable;
 
 public class RavagerEntity extends AbstractRaiderEntity {
    private static final Predicate<Entity> field_40350 = var0 -> var0.isAlive() && !(var0 instanceof RavagerEntity);
-   private int field_40349;
-   private int field_40351;
-   private int field_40347;
+   private int attackTick;
+   private int stunTick;
+   private int roarTick;
 
    public RavagerEntity(EntityType<? extends RavagerEntity> var1, World var2) {
       super(var1, var2);
@@ -16,27 +16,27 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(4, new class_829(this));
-      this.field_29916.method_3485(5, new class_2889(this, 0.4));
-      this.field_29916.method_3485(6, new class_4407(this, class_704.class, 6.0F));
-      this.field_29916.method_3485(10, new class_4407(this, class_5886.class, 8.0F));
-      this.field_29908.method_3485(2, new class_8420(this, AbstractRaiderEntity.class).method_38757());
-      this.field_29908.method_3485(3, new class_4138<class_704>(this, class_704.class, true));
-      this.field_29908.method_3485(4, new class_4138<class_405>(this, class_405.class, true));
-      this.field_29908.method_3485(4, new class_4138<class_8127>(this, class_8127.class, true));
+   public void registerGoals() {
+      super.registerGoals();
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(4, new class_829(this));
+      this.goalSelector.addGoal(5, new class_2889(this, 0.4));
+      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 8.0F));
+      this.targetSelector.addGoal(2, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<class_405>(this, class_405.class, true));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
    }
 
    @Override
    public void method_26872() {
       boolean var3 = !(this.method_37259() instanceof class_5886) || this.method_37259().method_37387().method_30453(class_5218.field_26788);
       boolean var4 = !(this.method_37243() instanceof BoatEntity);
-      this.field_29916.method_3493(class_1891.field_9564, var3);
-      this.field_29916.method_3493(class_1891.field_9561, var3 && var4);
-      this.field_29916.method_3493(class_1891.field_9560, var3);
-      this.field_29916.method_3493(class_1891.field_9563, var3);
+      this.goalSelector.method_3493(class_1891.field_9564, var3);
+      this.goalSelector.method_3493(class_1891.field_9561, var3 && var4);
+      this.goalSelector.method_3493(class_1891.field_9560, var3);
+      this.goalSelector.method_3493(class_1891.field_9563, var3);
    }
 
    public static class_1313 method_35660() {
@@ -52,17 +52,17 @@ public class RavagerEntity extends AbstractRaiderEntity {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25931("AttackTick", this.field_40349);
-      var1.method_25931("StunTick", this.field_40351);
-      var1.method_25931("RoarTick", this.field_40347);
+      var1.method_25931("AttackTick", this.attackTick);
+      var1.method_25931("StunTick", this.stunTick);
+      var1.method_25931("RoarTick", this.roarTick);
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.field_40349 = var1.method_25947("AttackTick");
-      this.field_40351 = var1.method_25947("StunTick");
-      this.field_40347 = var1.method_25947("RoarTick");
+      this.attackTick = var1.method_25947("AttackTick");
+      this.stunTick = var1.method_25947("StunTick");
+      this.roarTick = var1.method_25947("RoarTick");
    }
 
    @Override
@@ -132,23 +132,23 @@ public class RavagerEntity extends AbstractRaiderEntity {
             }
          }
 
-         if (this.field_40347 > 0) {
-            this.field_40347--;
-            if (this.field_40347 == 10) {
+         if (this.roarTick > 0) {
+            this.roarTick--;
+            if (this.roarTick == 10) {
                this.method_35657();
             }
          }
 
-         if (this.field_40349 > 0) {
-            this.field_40349--;
+         if (this.attackTick > 0) {
+            this.attackTick--;
          }
 
-         if (this.field_40351 > 0) {
-            this.field_40351--;
+         if (this.stunTick > 0) {
+            this.stunTick--;
             this.method_35659();
-            if (this.field_40351 == 0) {
+            if (this.stunTick == 0) {
                this.method_37155(class_463.field_2440, 1.0F, 1.0F);
-               this.field_40347 = 20;
+               this.roarTick = 20;
             }
          }
       }
@@ -169,21 +169,21 @@ public class RavagerEntity extends AbstractRaiderEntity {
 
    @Override
    public boolean method_26468() {
-      return super.method_26468() || this.field_40349 > 0 || this.field_40351 > 0 || this.field_40347 > 0;
+      return super.method_26468() || this.attackTick > 0 || this.stunTick > 0 || this.roarTick > 0;
    }
 
    @Override
    public boolean method_26420(Entity var1) {
-      return this.field_40351 <= 0 && this.field_40347 <= 0 ? super.method_26420(var1) : false;
+      return this.stunTick <= 0 && this.roarTick <= 0 ? super.method_26420(var1) : false;
    }
 
    @Override
    public void method_26469(class_5834 var1) {
-      if (this.field_40347 == 0) {
+      if (this.roarTick == 0) {
          if (!(this.field_41717.nextDouble() < 0.5)) {
             this.method_35658(var1);
          } else {
-            this.field_40351 = 40;
+            this.stunTick = 40;
             this.method_37155(class_463.field_2615, 1.0F, 1.0F);
             this.world.method_29587(this, (byte)39);
             var1.method_37183(this);
@@ -225,10 +225,10 @@ public class RavagerEntity extends AbstractRaiderEntity {
    public void method_37336(byte var1) {
       if (var1 != 4) {
          if (var1 == 39) {
-            this.field_40351 = 40;
+            this.stunTick = 40;
          }
       } else {
-         this.field_40349 = 10;
+         this.attackTick = 10;
          this.method_37155(class_463.field_2738, 1.0F, 1.0F);
       }
 
@@ -236,20 +236,20 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    public int method_35656() {
-      return this.field_40349;
+      return this.attackTick;
    }
 
    public int method_35654() {
-      return this.field_40351;
+      return this.stunTick;
    }
 
    public int method_35655() {
-      return this.field_40347;
+      return this.roarTick;
    }
 
    @Override
    public boolean method_26442(Entity var1) {
-      this.field_40349 = 10;
+      this.attackTick = 10;
       this.world.method_29587(this, (byte)4);
       this.method_37155(class_463.field_2738, 1.0F, 1.0F);
       return super.method_26442(var1);

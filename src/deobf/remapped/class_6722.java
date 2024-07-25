@@ -46,16 +46,16 @@ public class class_6722 extends class_4314 {
    @Override
    public void method_10758(World var1, class_2522 var2, class_9529 var3, class_5783 var4) {
       Entity var7 = var4.method_26166();
-      class_704 var8 = !(var7 instanceof class_704) ? null : (class_704)var7;
+      PlayerEntity var8 = !(var7 instanceof PlayerEntity) ? null : (PlayerEntity)var7;
       this.method_30852(var1, var2, var3, var8, true);
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       return !this.method_30852(var2, var1, var6, var4, true) ? class_6910.field_35521 : class_6910.method_31659(var2.field_33055);
    }
 
-   public boolean method_30852(World var1, class_2522 var2, class_9529 var3, class_704 var4, boolean var5) {
+   public boolean method_30852(World var1, class_2522 var2, class_9529 var3, PlayerEntity var4, boolean var5) {
       Direction var8 = var3.method_43956();
       BlockPos var9 = var3.method_43955();
       boolean var10 = !var5 || this.method_30853(var2, var8, var3.method_33993().field_7333 - (double)var9.method_12165());
@@ -101,7 +101,7 @@ public class class_6722 extends class_4314 {
          }
 
          ((class_9317)var6).method_43016(var3);
-         var1.method_43359((class_704)null, var2, class_463.field_2276, class_562.field_3322, 2.0F, 1.0F);
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2276, class_562.field_3322, 2.0F, 1.0F);
          return true;
       } else {
          return false;

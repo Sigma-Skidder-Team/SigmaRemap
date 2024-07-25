@@ -5,7 +5,7 @@ import java.util.function.BiPredicate;
 import java.util.function.ToIntFunction;
 
 public enum class_4772 {
-   field_23130("points", class_704::method_3159, (var0, var1) -> {
+   field_23130("points", PlayerEntity::method_3159, (var0, var1) -> {
       if (var1 < var0.method_3194()) {
          var0.method_43247(var1);
          return true;

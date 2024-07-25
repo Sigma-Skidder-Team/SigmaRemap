@@ -45,7 +45,7 @@ public class class_2987 extends class_6127<class_5834> {
          if (!(var17 instanceof class_6704)) {
             if (!(var17 instanceof class_7263)) {
                if (!(var17 instanceof class_2599)) {
-                  if (!(var17 instanceof class_704)) {
+                  if (!(var17 instanceof PlayerEntity)) {
                      if (var6.isPresent() || !(var17 instanceof class_3204) && !(var17 instanceof class_4653)) {
                         if (!var10.isPresent() && class_134.method_466(var17.method_37387())) {
                            var10 = Optional.<class_5834>of(var17);
@@ -54,13 +54,13 @@ public class class_2987 extends class_6127<class_5834> {
                         var6 = Optional.<class_5834>of((class_5886)var17);
                      }
                   } else {
-                     class_704 var22 = (class_704)var17;
+                     PlayerEntity var22 = (PlayerEntity)var17;
                      if (!var11.isPresent() && class_3572.field_17480.test(var17) && !class_134.method_500(var22)) {
-                        var11 = Optional.<class_704>of(var22);
+                        var11 = Optional.<PlayerEntity>of(var22);
                      }
 
                      if (!var12.isPresent() && !var22.method_37221() && class_134.method_512(var22)) {
-                        var12 = Optional.<class_704>of(var22);
+                        var12 = Optional.<PlayerEntity>of(var22);
                      }
                   }
                } else {

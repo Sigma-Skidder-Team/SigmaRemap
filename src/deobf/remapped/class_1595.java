@@ -14,17 +14,17 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(2, new class_5311(this));
-      this.field_29916.method_3485(3, new class_2829(this, 1.0));
-      this.field_29916.method_3485(3, new class_6837<class_9408>(this, class_9408.class, 6.0F, 1.0, 1.2));
-      this.field_29916.method_3485(5, new class_2889(this, 1.0));
-      this.field_29916.method_3485(6, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(6, new class_9691(this));
-      this.field_29908.method_3485(1, new class_8420(this));
-      this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, true));
-      this.field_29908.method_3485(3, new class_4138<class_8127>(this, class_8127.class, true));
-      this.field_29908.method_3485(3, new class_4138<class_3845>(this, class_3845.class, 10, true, false, class_3845.field_18768));
+   public void registerGoals() {
+      this.goalSelector.addGoal(2, new class_5311(this));
+      this.goalSelector.addGoal(3, new class_2829(this, 1.0));
+      this.goalSelector.addGoal(3, new class_6837<class_9408>(this, class_9408.class, 6.0F, 1.0, 1.2));
+      this.goalSelector.addGoal(5, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(6, new class_9691(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_3845>(this, class_3845.class, 10, true, false, class_3845.field_18768));
    }
 
    public static class_1313 method_7151() {
@@ -106,11 +106,11 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
 
    public void method_7153() {
       if (this.world != null && !this.world.field_33055) {
-         this.field_29916.method_3488(this.field_8311);
-         this.field_29916.method_3488(this.field_8312);
+         this.goalSelector.method_3488(this.field_8311);
+         this.goalSelector.method_3488(this.field_8312);
          ItemStack var3 = this.method_26617(class_8462.method_38934(this, class_4897.field_25206));
          if (var3.method_27960() != class_4897.field_25206) {
-            this.field_29916.method_3485(4, this.field_8311);
+            this.goalSelector.addGoal(4, this.field_8311);
          } else {
             byte var4 = 20;
             if (this.world.method_43370() != class_423.field_1782) {
@@ -118,7 +118,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
             }
 
             this.field_8312.method_24899(var4);
-            this.field_29916.method_3485(4, this.field_8312);
+            this.goalSelector.addGoal(4, this.field_8312);
          }
       }
    }

@@ -46,7 +46,7 @@ public class class_818 extends class_8715 {
          this.field_49481 *= 0.96F;
          this.field_49486 *= 0.96F;
          this.field_49471 *= 0.96F;
-         class_704 var3 = this.field_49469.method_25857(this.field_49462, this.field_49473, this.field_49465, 2.0, false);
+         PlayerEntity var3 = this.field_49469.method_25857(this.field_49462, this.field_49473, this.field_49465, 2.0, false);
          if (var3 != null) {
             double var4 = var3.method_37309();
             if (this.field_49473 > var4) {

@@ -34,7 +34,7 @@ public class class_7934 {
    public void method_35893(ItemStack var1) {
    }
 
-   public ItemStack method_35892(class_704 var1, ItemStack var2) {
+   public ItemStack method_35892(PlayerEntity var1, ItemStack var2) {
       this.method_35887();
       return var2;
    }
@@ -77,7 +77,7 @@ public class class_7934 {
       return this.field_40591.method_31497(this.field_40593, var1);
    }
 
-   public boolean method_35895(class_704 var1) {
+   public boolean method_35895(PlayerEntity var1) {
       return true;
    }
 

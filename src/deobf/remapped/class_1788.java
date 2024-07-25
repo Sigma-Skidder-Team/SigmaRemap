@@ -25,7 +25,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
    }
 
    public void method_7956(ItemStack var1) {
-      this.method_7957(var1, (class_704)null);
+      this.method_7957(var1, (PlayerEntity)null);
    }
 
    private void method_7951() {
@@ -34,7 +34,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
       class_2013.method_9339(this.method_17402(), this.method_17399(), this.method_17403(), false);
    }
 
-   public void method_7957(ItemStack var1, class_704 var2) {
+   public void method_7957(ItemStack var1, PlayerEntity var2) {
       this.field_9134 = this.method_7953(var1, var2);
       this.field_9135 = 0;
       this.field_9136 = class_1138.method_4991(this.field_9134);
@@ -59,7 +59,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
       return class_9299.method_42848(var3 * 14.0F) + (!this.method_7960() ? 0 : 1);
    }
 
-   private ItemStack method_7953(ItemStack var1, class_704 var2) {
+   private ItemStack method_7953(ItemStack var1, PlayerEntity var2) {
       if (this.field_18364 instanceof class_6331 && var1.method_27960() == class_4897.field_24698) {
          class_1138.method_4993(var1, this.method_7959(var2), var2);
       }
@@ -67,7 +67,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
       return var1;
    }
 
-   private class_9155 method_7959(class_704 var1) {
+   private class_9155 method_7959(PlayerEntity var1) {
       String var4;
       Object var5;
       if (var1 != null) {
@@ -103,7 +103,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
       if (!var2.contains("Book", 10)) {
          this.field_9134 = ItemStack.EMPTY;
       } else {
-         this.field_9134 = this.method_7953(ItemStack.method_28015(var2.getCompound("Book")), (class_704)null);
+         this.field_9134 = this.method_7953(ItemStack.method_28015(var2.getCompound("Book")), (PlayerEntity)null);
       }
 
       this.field_9136 = class_1138.method_4991(this.field_9134);
@@ -127,7 +127,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
    }
 
    @Override
-   public class_4088 method_11419(int var1, class_7051 var2, class_704 var3) {
+   public class_4088 method_11419(int var1, class_7051 var2, PlayerEntity var3) {
       return new class_6360(var1, this.field_9133, this.field_9132);
    }
 

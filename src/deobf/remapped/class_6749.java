@@ -33,7 +33,7 @@ public abstract class class_6749 extends class_5783 {
    public class_6749(EntityType<? extends class_6749> var1, class_5834 var2, World var3) {
       this(var1, var2.getPosX(), var2.method_37388() - 0.1F, var2.getPosZ(), var3);
       this.method_26159(var2);
-      if (var2 instanceof class_704) {
+      if (var2 instanceof PlayerEntity) {
          this.field_34835 = class_4237.field_20563;
       }
    }
@@ -140,7 +140,7 @@ public abstract class class_6749 extends class_5783 {
             if (var35 != null && ((class_7474)var35).method_33990() == class_1430.field_7718) {
                Entity var24 = ((class_5631)var35).method_25524();
                Entity var25 = this.method_26166();
-               if (var24 instanceof class_704 && var25 instanceof class_704 && !((class_704)var25).method_3213((class_704)var24)) {
+               if (var24 instanceof PlayerEntity && var25 instanceof PlayerEntity && !((PlayerEntity)var25).method_3213((PlayerEntity)var24)) {
                   var35 = null;
                   var36 = null;
                }
@@ -333,7 +333,7 @@ public abstract class class_6749 extends class_5783 {
             }
 
             this.method_30935(var13);
-            if (var7 != null && var13 != var7 && var13 instanceof class_704 && var7 instanceof class_9359 && !this.method_37378()) {
+            if (var7 != null && var13 != var7 && var13 instanceof PlayerEntity && var7 instanceof class_9359 && !this.method_37378()) {
                ((class_9359)var7).field_47794.method_4156(new class_2161(class_2161.field_10780, 0.0F));
             }
 
@@ -451,13 +451,13 @@ public abstract class class_6749 extends class_5783 {
    @Override
    public void method_26159(Entity var1) {
       super.method_26159(var1);
-      if (var1 instanceof class_704) {
-         this.field_34835 = !((class_704)var1).playerAbilities.isCreativeMode ? class_4237.field_20563 : class_4237.field_20565;
+      if (var1 instanceof PlayerEntity) {
+         this.field_34835 = !((PlayerEntity)var1).playerAbilities.isCreativeMode ? class_4237.field_20563 : class_4237.field_20565;
       }
    }
 
    @Override
-   public void method_37347(class_704 var1) {
+   public void method_37347(PlayerEntity var1) {
       if (!this.world.field_33055 && (this.field_34834 || this.method_30926()) && this.field_34831 <= 0) {
          boolean var4 = this.field_34835 == class_4237.field_20563
             || this.field_34835 == class_4237.field_20565 && var1.playerAbilities.isCreativeMode

@@ -8,7 +8,7 @@ public class class_6612 extends class_6249 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = class_2143.method_10014(
          var1, class_9299.method_42847(var2.getPosX()), class_9299.method_42847(var2.getPosZ()), (byte)0, true, false
       );

@@ -22,7 +22,7 @@ public class class_2235 extends class_9742 implements class_1538 {
    }
 
    @Override
-   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4) {
       return !var4.method_3186();
    }
 

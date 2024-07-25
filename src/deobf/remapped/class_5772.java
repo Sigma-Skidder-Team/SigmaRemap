@@ -46,13 +46,13 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
 
    @Override
    public ItemStack method_31497(int var1, int var2) {
-      this.method_10812((class_704)null);
+      this.method_10812((PlayerEntity)null);
       return class_3037.method_13881(this.method_10814(), var1, var2);
    }
 
    @Override
    public void method_31503(int var1, ItemStack var2) {
-      this.method_10812((class_704)null);
+      this.method_10812((PlayerEntity)null);
       this.method_10814().set(var1, var2);
       if (var2.method_27997() > this.method_31506()) {
          var2.method_28017(this.method_31506());

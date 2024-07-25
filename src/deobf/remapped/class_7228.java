@@ -11,7 +11,7 @@ public class class_7228 extends class_3599 {
    private double field_37094;
    private double field_37097;
    private double field_37096;
-   public class_704 field_37102;
+   public PlayerEntity field_37102;
    private int field_37095;
    private boolean field_37101;
    private final class_8137 field_37100;

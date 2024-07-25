@@ -306,11 +306,11 @@ public class class_134 {
    }
 
    private static void method_498(class_2599 var0, List<ItemStack> var1) {
-      Optional var4 = var0.method_26525().<class_704>method_5138(class_6044.field_30870);
+      Optional var4 = var0.method_26525().<PlayerEntity>method_5138(class_6044.field_30870);
       if (!var4.isPresent()) {
          method_495(var0, var1);
       } else {
-         method_486(var0, (class_704)var4.get(), var1);
+         method_486(var0, (PlayerEntity)var4.get(), var1);
       }
    }
 
@@ -318,7 +318,7 @@ public class class_134 {
       method_497(var0, var1, method_464(var0));
    }
 
-   private static void method_486(class_2599 var0, class_704 var1, List<ItemStack> var2) {
+   private static void method_486(class_2599 var0, PlayerEntity var1, List<ItemStack> var2) {
       method_497(var0, var2, var1.method_37245());
    }
 
@@ -407,7 +407,7 @@ public class class_134 {
             return var4;
          } else {
             if (var3.method_5117(class_6044.field_30880)) {
-               Optional var5 = var3.<class_704>method_5138(class_6044.field_30912);
+               Optional var5 = var3.<PlayerEntity>method_5138(class_6044.field_30912);
                if (var5.isPresent()) {
                   return var5;
                }
@@ -417,7 +417,7 @@ public class class_134 {
             if (var7.isPresent()) {
                return var7;
             } else {
-               Optional var6 = var3.<class_704>method_5138(class_6044.field_30904);
+               Optional var6 = var3.<PlayerEntity>method_5138(class_6044.field_30904);
                return var6.isPresent() && method_504((class_5834)var6.get()) ? var6 : Optional.empty();
             }
          }
@@ -426,7 +426,7 @@ public class class_134 {
       }
    }
 
-   public static void method_474(class_704 var0, boolean var1) {
+   public static void method_474(PlayerEntity var0, boolean var1) {
       List var4 = var0.world.<class_2599>method_25868(class_2599.class, var0.method_37241().method_18898(16.0));
       var4.stream().filter(class_134::method_531).filter(var2 -> !var1 || class_1225.method_5449(var2, var0)).forEach(var1x -> {
          if (!var1x.field_41768.method_29537().method_1285(class_291.field_1039)) {
@@ -437,7 +437,7 @@ public class class_134 {
       });
    }
 
-   public static class_6910 method_518(class_2599 var0, class_704 var1, Hand var2) {
+   public static class_6910 method_518(class_2599 var0, PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (!method_515(var0, var5)) {
          return class_6910.field_35521;
@@ -464,7 +464,7 @@ public class class_134 {
          var4.method_5127(class_6044.field_30895);
          var4.method_5127(class_6044.field_30862);
          var4.method_5127(class_6044.field_30897);
-         if (var1 instanceof class_704) {
+         if (var1 instanceof PlayerEntity) {
             var4.method_5107(class_6044.field_30879, true, 400L);
          }
 
@@ -626,10 +626,10 @@ public class class_134 {
          : var0.method_26525().<class_5834>method_5138(class_6044.field_30913);
    }
 
-   public static Optional<class_704> method_476(class_6993 var0) {
+   public static Optional<PlayerEntity> method_476(class_6993 var0) {
       return !var0.method_26525().method_5117(class_6044.field_30912)
-         ? Optional.<class_704>empty()
-         : var0.method_26525().<class_704>method_5138(class_6044.field_30912);
+         ? Optional.<PlayerEntity>empty()
+         : var0.method_26525().<PlayerEntity>method_5138(class_6044.field_30912);
    }
 
    private static void method_487(class_2599 var0, class_5834 var1) {

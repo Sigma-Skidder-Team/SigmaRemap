@@ -17,7 +17,7 @@ public class class_5645 {
       this.field_28617.mkdirs();
    }
 
-   public void method_25559(class_704 var1) {
+   public void method_25559(PlayerEntity var1) {
       try {
          CompoundNBT var4 = var1.method_37258(new CompoundNBT());
          File var5 = File.createTempFile(var1.method_37225() + "-", ".dat", this.field_28617);
@@ -31,7 +31,7 @@ public class class_5645 {
    }
 
    @Nullable
-   public CompoundNBT method_25558(class_704 var1) {
+   public CompoundNBT method_25558(PlayerEntity var1) {
       CompoundNBT var4 = null;
 
       try {

@@ -51,11 +51,11 @@ public class class_9169 extends class_3599 {
             return;
          }
 
-         if (var3 instanceof class_704) {
+         if (var3 instanceof PlayerEntity) {
             int var4 = this.field_46926.method_19062();
             int var5 = this.field_46926.method_19075();
             if (var5 > 0 && this.field_46926.method_26594().nextInt(var5) < var4) {
-               this.field_46926.method_19038((class_704)var3);
+               this.field_46926.method_19038((PlayerEntity)var3);
                return;
             }
 

@@ -451,7 +451,7 @@ public class class_2770 extends class_5886 implements class_1869 {
          if (var3 < 0.01F) {
             return false;
          } else {
-            if (var2.method_28372() instanceof class_704 || var2.method_28367()) {
+            if (var2.method_28372() instanceof PlayerEntity || var2.method_28367()) {
                float var6 = this.method_26551();
                this.method_12623(var2, var3);
                if (this.method_26450() && !this.field_13534.method_29421().method_23472()) {
@@ -829,11 +829,11 @@ public class class_2770 extends class_5886 implements class_1869 {
    }
 
    public void method_12617(class_3577 var1, BlockPos var2, DamageSource var3) {
-      class_704 var6;
-      if (!(var3.method_28372() instanceof class_704)) {
+      PlayerEntity var6;
+      if (!(var3.method_28372() instanceof PlayerEntity)) {
          var6 = this.world.method_25858(field_13522, (double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185());
       } else {
-         var6 = (class_704)var3.method_28372();
+         var6 = (PlayerEntity)var3.method_28372();
       }
 
       if (var1 == this.field_13548) {

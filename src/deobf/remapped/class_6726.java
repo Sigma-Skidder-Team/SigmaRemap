@@ -24,7 +24,7 @@ public class class_6726 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (var2.field_33055) {
          ItemStack var9 = var4.method_26617(var5);
          if (this.method_30861(var2, var3, var1, var4).method_31662()) {
@@ -39,7 +39,7 @@ public class class_6726 extends class_6414 {
       return this.method_30861(var2, var3, var1, var4);
    }
 
-   private class_6910 method_30861(class_9379 var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   private class_6910 method_30861(class_9379 var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       if (var4.method_3231(false)) {
          var4.method_3209(class_6234.field_31859);
          var4.method_3161().method_42236(2, 0.1F);

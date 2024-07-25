@@ -50,7 +50,7 @@ public class WaypointsModule extends Module {
 
             for (int var8 : var12.method_18381()) {
                Entity var9 = client.theWorld.method_29534(var8);
-               if (var9 != null && var9 instanceof class_704) {
+               if (var9 != null && var9 instanceof PlayerEntity) {
                   if (this.field_46733.containsKey(var9.method_37328())) {
                      this.field_46733.remove(var9.method_37328());
                   }

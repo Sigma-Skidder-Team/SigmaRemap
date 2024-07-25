@@ -159,9 +159,9 @@ public class class_8734 {
             var24.remove();
          } else if (var9 instanceof class_9399) {
             var24.remove();
-         } else if (!this.field_44747.getBooleanValueByName("Players") && var9 instanceof class_704) {
+         } else if (!this.field_44747.getBooleanValueByName("Players") && var9 instanceof PlayerEntity) {
             var24.remove();
-         } else if (var9 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var9)) {
+         } else if (var9 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var9)) {
             var24.remove();
          } else if (!this.field_44747.getBooleanValueByName("Invisible") && var9.method_37109()) {
             var24.remove();
@@ -173,8 +173,8 @@ public class class_8734 {
             var24.remove();
          } else if (var9.method_37367()) {
             var24.remove();
-         } else if (!(var9 instanceof class_704)
-            || !class_5876.method_26760((class_704)var9)
+         } else if (!(var9 instanceof PlayerEntity)
+            || !class_5876.method_26760((PlayerEntity)var9)
             || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
             class_1343 var10 = class_314.method_1429(var9);
             if (!(this.field_44744.thePlayer.method_37175(var9) < 40.0F)) {

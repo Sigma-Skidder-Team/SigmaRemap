@@ -20,7 +20,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$class_47;
 
-public abstract class class_704 extends class_5834 {
+public abstract class PlayerEntity extends class_5834 {
    public static final class_6097 field_3865 = class_6097.method_27938(0.6F, 1.8F);
    private static final Map<class_7653, class_6097> field_3875 = ImmutableMap.builder()
       .put(class_7653.field_38885, field_3865)
@@ -31,12 +31,12 @@ public abstract class class_704 extends class_5834 {
       .put(class_7653.field_38881, class_6097.method_27938(0.6F, 1.5F))
       .put(class_7653.field_38887, class_6097.method_27941(0.2F, 0.2F))
       .build();
-   private static final class_7821<Float> field_3845 = class_8073.<Float>method_36641(class_704.class, class_2734.field_13350);
-   private static final class_7821<Integer> field_3863 = class_8073.<Integer>method_36641(class_704.class, class_2734.field_13366);
-   public static final class_7821<Byte> field_3873 = class_8073.<Byte>method_36641(class_704.class, class_2734.field_13361);
-   public static final class_7821<Byte> field_3852 = class_8073.<Byte>method_36641(class_704.class, class_2734.field_13361);
-   public static final class_7821<CompoundNBT> field_3871 = class_8073.<CompoundNBT>method_36641(class_704.class, class_2734.field_13346);
-   public static final class_7821<CompoundNBT> field_3870 = class_8073.<CompoundNBT>method_36641(class_704.class, class_2734.field_13346);
+   private static final class_7821<Float> field_3845 = class_8073.<Float>method_36641(PlayerEntity.class, class_2734.field_13350);
+   private static final class_7821<Integer> field_3863 = class_8073.<Integer>method_36641(PlayerEntity.class, class_2734.field_13366);
+   public static final class_7821<Byte> field_3873 = class_8073.<Byte>method_36641(PlayerEntity.class, class_2734.field_13361);
+   public static final class_7821<Byte> field_3852 = class_8073.<Byte>method_36641(PlayerEntity.class, class_2734.field_13361);
+   public static final class_7821<CompoundNBT> field_3871 = class_8073.<CompoundNBT>method_36641(PlayerEntity.class, class_2734.field_13346);
+   public static final class_7821<CompoundNBT> field_3870 = class_8073.<CompoundNBT>method_36641(PlayerEntity.class, class_2734.field_13346);
    private long field_3861;
    public class_7051 inventory = new class_7051(this);
    public class_1031 field_3860 = new class_1031();
@@ -68,7 +68,7 @@ public abstract class class_704 extends class_5834 {
    private final class_7200 field_3866 = this.method_3229();
    public class_3942 field_3841;
 
-   public class_704(World var1, BlockPos var2, float var3, GameProfile var4) {
+   public PlayerEntity(World var1, BlockPos var2, float var3, GameProfile var4) {
       super(EntityType.field_34300, var1);
       this.method_37377(method_3242(var4));
       this.field_3872 = var4;
@@ -471,7 +471,7 @@ public abstract class class_704 extends class_5834 {
                   if (!class_107.method_325(this.world, this)) {
                      this.world
                         .method_29528(
-                           (class_704)null,
+                           (PlayerEntity)null,
                            this.getPosX(),
                            this.method_37309(),
                            this.getPosZ(),
@@ -784,7 +784,7 @@ public abstract class class_704 extends class_5834 {
       }
    }
 
-   public boolean method_3213(class_704 var1) {
+   public boolean method_3213(PlayerEntity var1) {
       class_5086 var4 = this.method_37095();
       class_5086 var5 = var1.method_37095();
       if (var4 != null) {
@@ -1024,7 +1024,7 @@ public abstract class class_704 extends class_5834 {
             if (this.method_37321() && var7) {
                this.world
                   .method_29528(
-                     (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2608, this.method_37197(), 1.0F, 1.0F
+                     (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2608, this.method_37197(), 1.0F, 1.0F
                   );
                var9++;
                var8 = true;
@@ -1069,7 +1069,7 @@ public abstract class class_704 extends class_5834 {
             if (!var18) {
                this.world
                   .method_29528(
-                     (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2415, this.method_37197(), 1.0F, 1.0F
+                     (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2415, this.method_37197(), 1.0F, 1.0F
                   );
                if (var15) {
                   var1.method_37136();
@@ -1115,7 +1115,7 @@ public abstract class class_704 extends class_5834 {
 
                   this.world
                      .method_29528(
-                        (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2422, this.method_37197(), 1.0F, 1.0F
+                        (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2422, this.method_37197(), 1.0F, 1.0F
                      );
                   this.method_3188();
                }
@@ -1129,7 +1129,7 @@ public abstract class class_704 extends class_5834 {
                if (var10) {
                   this.world
                      .method_29528(
-                        (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2527, this.method_37197(), 1.0F, 1.0F
+                        (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2527, this.method_37197(), 1.0F, 1.0F
                      );
                   this.method_3233(var1);
                }
@@ -1138,7 +1138,7 @@ public abstract class class_704 extends class_5834 {
                   if (!var7) {
                      this.world
                         .method_29528(
-                           (class_704)null,
+                           (PlayerEntity)null,
                            this.getPosX(),
                            this.method_37309(),
                            this.getPosZ(),
@@ -1150,7 +1150,7 @@ public abstract class class_704 extends class_5834 {
                   } else {
                      this.world
                         .method_29528(
-                           (class_704)null,
+                           (PlayerEntity)null,
                            this.getPosX(),
                            this.method_37309(),
                            this.getPosZ(),
@@ -1602,7 +1602,7 @@ public abstract class class_704 extends class_5834 {
          float var4 = this.field_3840 <= 30 ? (float)this.field_3840 / 30.0F : 1.0F;
          this.world
             .method_29528(
-               (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_1982, this.method_37197(), var4 * 0.75F, 1.0F
+               (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_1982, this.method_37197(), var4 * 0.75F, 1.0F
             );
          this.field_3846 = this.field_41697;
       }
@@ -1649,7 +1649,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    @Override
-   public int method_26427(class_704 var1) {
+   public int method_26427(PlayerEntity var1) {
       if (!this.world.method_29537().method_1285(class_291.field_1051) && !this.method_37221()) {
          int var4 = this.field_3840 * 7;
          return var4 <= 100 ? var4 : 100;
@@ -2026,7 +2026,7 @@ public abstract class class_704 extends class_5834 {
       this.method_3161().method_42234(var2.method_27960(), var2);
       this.method_3211(class_6234.field_31907.method_43790(var2.method_27960()));
       var1.method_29528(
-         (class_704)null,
+         (PlayerEntity)null,
          this.getPosX(),
          this.method_37309(),
          this.getPosZ(),

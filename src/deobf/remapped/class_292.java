@@ -24,7 +24,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
          if (!this.world.field_33055) {
             Entity var4 = var1.method_28353();
             if (var4 != null && var4.method_37387() == EntityType.field_34300) {
-               class_134.method_474((class_704)var4, true);
+               class_134.method_474((PlayerEntity)var4, true);
             }
          }
       }
@@ -43,19 +43,19 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
 
    @Override
    public ItemStack method_31498(int var1) {
-      this.method_1298((class_704)null);
+      this.method_1298((PlayerEntity)null);
       return this.field_1062.get(var1);
    }
 
    @Override
    public ItemStack method_31497(int var1, int var2) {
-      this.method_1298((class_704)null);
+      this.method_1298((PlayerEntity)null);
       return class_3037.method_13881(this.field_1062, var1, var2);
    }
 
    @Override
    public ItemStack method_31507(int var1) {
-      this.method_1298((class_704)null);
+      this.method_1298((PlayerEntity)null);
       ItemStack var4 = this.field_1062.get(var1);
       if (!var4.method_28022()) {
          this.field_1062.set(var1, ItemStack.EMPTY);
@@ -67,7 +67,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
 
    @Override
    public void method_31503(int var1, ItemStack var2) {
-      this.method_1298((class_704)null);
+      this.method_1298((PlayerEntity)null);
       this.field_1062.set(var1, var2);
       if (!var2.method_28022() && var2.method_27997() > this.method_31506()) {
          var2.method_28017(this.method_31506());
@@ -89,7 +89,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       return !this.field_41751 ? !(var1.method_37275(this) > 64.0) : false;
    }
 
@@ -135,7 +135,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, Hand var2) {
+   public class_6910 method_37128(PlayerEntity var1, Hand var2) {
       var1.method_3152(this);
       if (var1.world.field_33055) {
          return class_6910.field_35520;
@@ -156,7 +156,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
       this.method_37215(this.method_37098().method_6210((double)var3, 0.0, (double)var3));
    }
 
-   public void method_1298(class_704 var1) {
+   public void method_1298(PlayerEntity var1) {
       if (this.field_1063 != null && this.world.method_29522() != null) {
          class_1758 var4 = this.world.method_29522().method_1722().method_4604(this.field_1063);
          if (var1 instanceof class_9359) {
@@ -175,7 +175,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
 
    @Override
    public void method_24975() {
-      this.method_1298((class_704)null);
+      this.method_1298((PlayerEntity)null);
       this.field_1062.clear();
    }
 
@@ -186,7 +186,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
 
    @Nullable
    @Override
-   public class_4088 method_11419(int var1, class_7051 var2, class_704 var3) {
+   public class_4088 method_11419(int var1, class_7051 var2, PlayerEntity var3) {
       if (this.field_1063 != null && var3.method_37221()) {
          return null;
       } else {

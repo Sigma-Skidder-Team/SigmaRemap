@@ -34,7 +34,7 @@ public class class_6201 extends class_2451 {
             } else if (this.method_28389(var4, var5)) {
                BlockPos var6 = var4.method_21858();
                World var7 = var4.method_21862();
-               class_704 var8 = var4.method_21868();
+               PlayerEntity var8 = var4.method_21868();
                ItemStack var9 = var4.method_21867();
                class_2522 var10 = var7.method_28262(var6);
                class_6414 var11 = var10.method_8360();
@@ -72,7 +72,7 @@ public class class_6201 extends class_2451 {
       return var1;
    }
 
-   public boolean method_28391(BlockPos var1, World var2, class_704 var3, ItemStack var4, class_2522 var5) {
+   public boolean method_28391(BlockPos var1, World var2, PlayerEntity var3, ItemStack var4, class_2522 var5) {
       return method_28388(var2, var3, var1, var4);
    }
 
@@ -110,7 +110,7 @@ public class class_6201 extends class_2451 {
    }
 
    public boolean method_28384(class_353 var1, class_2522 var2) {
-      class_704 var5 = var1.method_21868();
+      PlayerEntity var5 = var1.method_21868();
       class_214 var6 = var5 != null ? class_214.method_926(var5) : class_214.method_928();
       return (!this.method_28390() || var2.method_8309(var1.method_21862(), var1.method_21858()))
          && var1.method_21862().method_6671(var2, var1.method_21858(), var6);
@@ -124,7 +124,7 @@ public class class_6201 extends class_2451 {
       return var1.method_21862().method_7513(var1.method_21858(), var2, 11);
    }
 
-   public static boolean method_28388(World var0, class_704 var1, BlockPos var2, ItemStack var3) {
+   public static boolean method_28388(World var0, PlayerEntity var1, BlockPos var2, ItemStack var3) {
       class_341 var6 = var0.method_29522();
       if (var6 == null) {
          return false;

@@ -2,7 +2,7 @@ package remapped;
 
 public class class_8712 {
    public static final class_9791<Entity> field_44676 = method_40046("this_entity");
-   public static final class_9791<class_704> field_44675 = method_40046("last_damage_player");
+   public static final class_9791<PlayerEntity> field_44675 = method_40046("last_damage_player");
    public static final class_9791<DamageSource> field_44674 = method_40046("damage_source");
    public static final class_9791<Entity> field_44678 = method_40046("killer_entity");
    public static final class_9791<Entity> field_44669 = method_40046("direct_killer_entity");

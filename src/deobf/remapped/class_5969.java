@@ -74,7 +74,7 @@ public class class_5969 {
       var0.findProfilesByNames(new String[]{var1}, Agent.MINECRAFT, var5);
       GameProfile var6 = (GameProfile)var4.get();
       if (!method_27257() && var6 == null) {
-         UUID var7 = class_704.method_3242(new GameProfile((UUID)null, var1));
+         UUID var7 = PlayerEntity.method_3242(new GameProfile((UUID)null, var1));
          var6 = new GameProfile(var7, var1);
       }
 

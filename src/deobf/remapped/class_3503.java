@@ -15,7 +15,7 @@ public class class_3503 extends class_2451 {
          var6.method_3211(class_6234.field_31907.method_43790(this));
       }
 
-      if (var3 instanceof class_704 && !((class_704)var3).playerAbilities.isCreativeMode) {
+      if (var3 instanceof PlayerEntity && !((PlayerEntity)var3).playerAbilities.isCreativeMode) {
          var1.method_27970(1);
       }
 
@@ -37,7 +37,7 @@ public class class_3503 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       return class_4754.method_21939(var1, var2, var3);
    }
 }

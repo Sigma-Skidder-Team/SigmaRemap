@@ -12,14 +12,14 @@ public class class_2667 extends class_1173 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(1, new class_787(this));
-      this.field_29916.method_3485(2, new class_9037(this, 1.0, false));
-      this.field_29916.method_3485(3, new class_2889(this, 1.0));
-      this.field_29916.method_3485(7, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(8, new class_9691(this));
-      this.field_29908.method_3485(1, new class_8420(this).method_38757());
-      this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, true));
+   public void registerGoals() {
+      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(2, new class_9037(this, 1.0, false));
+      this.goalSelector.addGoal(3, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new class_9691(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
    @Override
@@ -129,7 +129,7 @@ public class class_2667 extends class_1173 {
       if (!method_5198(var0, var1, var2, var3, var4)) {
          return false;
       } else {
-         class_704 var7 = var1.method_25857((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5, 5.0, true);
+         PlayerEntity var7 = var1.method_25857((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5, 5.0, true);
          return var7 == null;
       }
    }

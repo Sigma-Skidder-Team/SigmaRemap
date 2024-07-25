@@ -47,7 +47,7 @@ public class class_6860 {
       String[] var5 = var1.stream().filter(var0x -> !class_6660.method_30576(var0x)).<String>toArray(String[]::new);
       if (!var0.method_1657()) {
          for (String var9 : var5) {
-            UUID var10 = class_704.method_3242(new GameProfile((UUID)null, var9));
+            UUID var10 = PlayerEntity.method_3242(new GameProfile((UUID)null, var9));
             GameProfile var11 = new GameProfile(var10, var9);
             var2.onProfileLookupSucceeded(var11);
          }
@@ -195,7 +195,7 @@ public class class_6860 {
             method_31464(var0, Lists.newArrayList(new String[]{var1}), var6);
             return !var5.isEmpty() && ((GameProfile)var5.get(0)).getId() != null ? ((GameProfile)var5.get(0)).getId() : null;
          } else {
-            return class_704.method_3242(new GameProfile((UUID)null, var1));
+            return PlayerEntity.method_3242(new GameProfile((UUID)null, var1));
          }
       } else {
          try {

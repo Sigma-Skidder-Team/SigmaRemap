@@ -18,7 +18,7 @@ public class class_8120 extends class_7934 {
    }
 
    @Override
-   public ItemStack method_35892(class_704 var1, ItemStack var2) {
+   public ItemStack method_35892(PlayerEntity var1, ItemStack var2) {
       class_6004 var5 = class_9541.method_43990(var2);
       if (var1 instanceof class_9359) {
          class_8807.field_45068.method_12763((class_9359)var1, var5);

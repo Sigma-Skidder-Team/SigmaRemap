@@ -203,10 +203,10 @@ public class AutoCrystalModule extends PremiumModule {
    }
 
    public static float method_44023(class_5834 var0, float var1, class_2730 var2) {
-      if (!(var0 instanceof class_704)) {
+      if (!(var0 instanceof PlayerEntity)) {
          return class_6357.method_29129(var1, (float)var0.method_26565(), (float)var0.method_26575(class_7331.field_37472));
       } else {
-         class_704 var5 = (class_704)var0;
+         PlayerEntity var5 = (PlayerEntity)var0;
          DamageSource var6 = DamageSource.method_28350(var2);
          var1 = class_6357.method_29129(var1, (float)var5.method_26565(), (float)var5.method_26575(class_7331.field_37472));
          int var7 = class_2931.method_13427(var5.method_37262(), var6);
@@ -248,19 +248,19 @@ public class AutoCrystalModule extends PremiumModule {
                      if (!(client.thePlayer.method_37175(var6) > var1)) {
                         if (client.thePlayer.method_26608((class_5834)var6)) {
                            if (!(var6 instanceof class_9399)) {
-                              if (!this.getBooleanValueByName("Players") && var6 instanceof class_704) {
+                              if (!this.getBooleanValueByName("Players") && var6 instanceof PlayerEntity) {
                                  var5.remove();
-                              } else if (var6 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
+                              } else if (var6 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
                                  var5.remove();
                               } else if (!this.getBooleanValueByName("Invisible") && var6.method_37109()) {
                                  var5.remove();
-                              } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof class_704)) {
+                              } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                                  var5.remove();
                               } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var6)) {
                                  var5.remove();
                               } else if (!var6.method_37367()) {
-                                 if (var6 instanceof class_704
-                                    && class_5876.method_26760((class_704)var6)
+                                 if (var6 instanceof PlayerEntity
+                                    && class_5876.method_26760((PlayerEntity)var6)
                                     && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
                                     var5.remove();
                                  }

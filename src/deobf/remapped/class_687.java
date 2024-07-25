@@ -12,7 +12,7 @@ public class class_687 extends class_6201 {
    @Nullable
    @Override
    public class_2522 method_28385(class_353 var1) {
-      class_704 var4 = var1.method_21868();
+      PlayerEntity var4 = var1.method_21868();
       return var4 != null && !var4.method_3184() ? null : super.method_28385(var1);
    }
 }

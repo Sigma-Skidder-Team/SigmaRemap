@@ -132,7 +132,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    @Override
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return !this.method_26920();
    }
 

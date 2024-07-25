@@ -3101,7 +3101,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20038(class_704 var1, int var2, BlockPos var3, int var4) {
+   public void method_20038(PlayerEntity var1, int var2, BlockPos var3, int var4) {
       Random var5 = this.field_20970.field_33033;
       switch (var2) {
          case 1000:

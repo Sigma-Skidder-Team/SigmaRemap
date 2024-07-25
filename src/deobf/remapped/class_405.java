@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 public abstract class class_405 extends class_1899 implements class_5908, class_233 {
    private static final class_7821<Integer> field_1686 = class_8073.<Integer>method_36641(class_405.class, class_2734.field_13366);
-   private class_704 field_1684;
+   private PlayerEntity field_1684;
    public class_2795 field_1687;
    private final class_4657 field_1685 = new class_4657(8);
 
@@ -50,13 +50,13 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public void method_975(class_704 var1) {
+   public void method_975(PlayerEntity var1) {
       this.field_1684 = var1;
    }
 
    @Nullable
    @Override
-   public class_704 method_978() {
+   public PlayerEntity method_978() {
       return this.field_1684;
    }
 
@@ -149,7 +149,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    public void method_2025() {
-      this.method_975((class_704)null);
+      this.method_975((PlayerEntity)null);
    }
 
    @Override
@@ -168,7 +168,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return false;
    }
 

@@ -55,7 +55,7 @@ public class class_9037 extends class_3599 {
          } else if (this.field_46246) {
             return !this.field_46244.method_26880(var3.method_37075())
                ? false
-               : !(var3 instanceof class_704) || !var3.method_37221() && !((class_704)var3).method_3186();
+               : !(var3 instanceof PlayerEntity) || !var3.method_37221() && !((PlayerEntity)var3).method_3186();
          } else {
             return !this.field_46244.method_26927().method_5591();
          }

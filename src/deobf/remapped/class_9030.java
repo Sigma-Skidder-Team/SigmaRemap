@@ -47,7 +47,7 @@ public class class_9030 {
       .put(EntityType.field_34240, class_2599.method_11801().method_5980())
       .put(EntityType.field_34257, class_7263.method_33190().method_5980())
       .put(EntityType.field_34265, class_4134.method_19206().method_5980())
-      .put(EntityType.field_34300, class_704.method_3230().method_5980())
+      .put(EntityType.field_34300, PlayerEntity.method_3230().method_5980())
       .put(EntityType.field_34229, class_9668.method_44713().method_5980())
       .put(EntityType.field_34315, class_3578.method_16629().method_5980())
       .put(EntityType.field_34251, class_7272.method_33234().method_5980())

@@ -61,7 +61,7 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
                   && (var7 != 1 || var9.method_8357())
                   && (var7 != 2 || var9.method_8350(class_4783.field_23833))) {
                   class_4190 var10 = var9.method_8325(this.field_21952, this.field_21957, this.field_21955);
-                  if (this.field_21953 instanceof class_704) {
+                  if (this.field_21953 instanceof PlayerEntity) {
                      class_5243 var11 = new class_5243(this.field_21957, var10);
                      SigmaMainClass.getInstance().getEventManager().call(var11);
                      var10 = var11.method_23988();

@@ -524,7 +524,7 @@ public class class_916 extends class_4037 implements class_6510 {
 
                for (int var10 = 0; var10 < var9; var10++) {
                   for (Entity var12 : var8[var10]) {
-                     if (!(var12 instanceof class_704) && !this.field_4703.method_28953(var12)) {
+                     if (!(var12 instanceof PlayerEntity) && !this.field_4703.method_28953(var12)) {
                         if (var7 != null) {
                            var7.add(var12);
                         } else {

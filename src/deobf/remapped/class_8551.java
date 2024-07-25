@@ -26,18 +26,18 @@ public class class_8551 extends class_691 {
    @Override
    public void method_3117(class_9379 var1, BlockPos var2) {
       if (this.field_11820 != class_5371.field_27441 && this.field_11820 != class_5371.field_27389) {
-         var1.method_43359((class_704)null, var2, class_463.field_2900, class_562.field_3322, 0.3F, 0.6F);
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2900, class_562.field_3322, 0.3F, 0.6F);
       } else {
-         var1.method_43359((class_704)null, var2, class_463.field_2506, class_562.field_3322, 0.3F, 0.8F);
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2506, class_562.field_3322, 0.3F, 0.8F);
       }
    }
 
    @Override
    public void method_3120(class_9379 var1, BlockPos var2) {
       if (this.field_11820 != class_5371.field_27441 && this.field_11820 != class_5371.field_27389) {
-         var1.method_43359((class_704)null, var2, class_463.field_2855, class_562.field_3322, 0.3F, 0.5F);
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2855, class_562.field_3322, 0.3F, 0.5F);
       } else {
-         var1.method_43359((class_704)null, var2, class_463.field_2411, class_562.field_3322, 0.3F, 0.7F);
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2411, class_562.field_3322, 0.3F, 0.7F);
       }
    }
 

@@ -10,7 +10,7 @@ public interface class_8190 {
    default boolean method_37517(class_5886 var1, class_686 var2, class_1343 var3) {
       if (var1.isAlive()) {
          Entity var6 = !var1.method_37114().isEmpty() ? var1.method_37114().get(0) : null;
-         if (var1.method_37151() && var1.method_26863() && var6 instanceof class_704) {
+         if (var1.method_37151() && var1.method_26863() && var6 instanceof PlayerEntity) {
             var1.rotationYaw = var6.rotationYaw;
             var1.prevRotationYaw = var1.rotationYaw;
             var1.rotationPitch = var6.rotationPitch * 0.5F;

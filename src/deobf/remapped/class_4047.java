@@ -21,7 +21,7 @@ public class class_4047 extends Screen {
    private static final ITextComponent field_19663 = new TranslationTextComponent("book.finalizeWarning");
    private static final class_7107 field_19667 = class_7107.method_32662(field_19658[8], Style.EMPTY.setFormatting(TextFormatting.BLACK));
    private static final class_7107 field_19679 = class_7107.method_32662(field_19658[8], Style.EMPTY.setFormatting(TextFormatting.GRAY));
-   private final class_704 field_19681;
+   private final PlayerEntity field_19681;
    private final ItemStack field_19670;
    private boolean field_19673;
    private boolean field_19676;
@@ -52,7 +52,7 @@ public class class_4047 extends Screen {
    private ITextComponent field_19665 = StringTextComponent.EMPTY;
    private final ITextComponent field_19672;
 
-   public class_4047(class_704 var1, ItemStack var2, Hand var3) {
+   public class_4047(PlayerEntity var1, ItemStack var2, Hand var3) {
       super(NarratorChatListener.field_38486);
       this.field_19681 = var1;
       this.field_19670 = var2;

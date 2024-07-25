@@ -146,7 +146,7 @@ public class class_4657 implements class_6867, class_3957 {
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       return true;
    }
 

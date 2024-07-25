@@ -52,8 +52,8 @@ public abstract class class_5676 implements class_1602 {
       return field_28769.theWorld.method_25873();
    }
 
-   public class_704 method_25662(String var1) {
-      for (class_704 var5 : this.method_25661()) {
+   public PlayerEntity method_25662(String var1) {
+      for (PlayerEntity var5 : this.method_25661()) {
          if (var5.method_45509().equals(var1)) {
             return var5;
          }
@@ -62,8 +62,8 @@ public abstract class class_5676 implements class_1602 {
       return null;
    }
 
-   public class_704 method_25663(UUID var1) {
-      for (class_704 var5 : this.method_25661()) {
+   public PlayerEntity method_25663(UUID var1) {
+      for (PlayerEntity var5 : this.method_25661()) {
          if (var5.method_37328().equals(var1)) {
             return var5;
          }

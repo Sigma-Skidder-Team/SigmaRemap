@@ -44,7 +44,7 @@ public class class_7804 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var2.field_33055 && var2.method_28260(var3) == null) {
          var2.method_7508(var3, false);
          return class_6910.field_35518;

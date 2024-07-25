@@ -152,7 +152,7 @@ public class class_8011 extends class_3429 implements class_3713 {
       class_2522 var5 = this.world.method_28262(var1);
       if (!var5.method_8349(class_2351.field_11771)) {
          if (class_8474.method_39004(var5)) {
-            this.world.method_43365((class_704)null, 1009, var1, 0);
+            this.world.method_43365((PlayerEntity)null, 1009, var1, 0);
             class_8474.method_39006(this.world, var1, var5);
             this.world.method_29594(var1, var5.method_10308(class_8474.field_43423, Boolean.valueOf(false)));
          }

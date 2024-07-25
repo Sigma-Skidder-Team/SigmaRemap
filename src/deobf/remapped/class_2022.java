@@ -128,7 +128,7 @@ public class class_2022 extends class_1944 {
          if (!this.world.method_28262(var4).method_8356(this.world, var3)) {
             this.method_9395(false);
             if (!var5) {
-               this.world.method_43365((class_704)null, 1025, var3, 0);
+               this.world.method_43365((PlayerEntity)null, 1025, var3, 0);
             }
          } else {
             if (this.field_41717.nextInt(200) == 0) {
@@ -138,7 +138,7 @@ public class class_2022 extends class_1944 {
             if (this.world.method_25859(field_10249, this) != null) {
                this.method_9395(false);
                if (!var5) {
-                  this.world.method_43365((class_704)null, 1025, var3, 0);
+                  this.world.method_43365((PlayerEntity)null, 1025, var3, 0);
                }
             }
          }

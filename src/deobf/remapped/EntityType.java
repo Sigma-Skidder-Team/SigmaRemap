@@ -370,9 +370,9 @@ public class EntityType<T extends Entity> {
    public static final EntityType<class_1918> field_34234 = method_30457(
       "zombified_piglin", class_6238.<class_1918>method_28492(class_1918::new, class_4565.field_22247).method_28490().method_28489(0.6F, 1.95F).method_28499(8)
    );
-   public static final EntityType<class_704> field_34300 = method_30457(
+   public static final EntityType<PlayerEntity> field_34300 = method_30457(
       "player",
-      class_6238.<class_704>method_28491(class_4565.field_22251).method_28495().method_28494().method_28489(0.6F, 1.8F).method_28499(32).method_28500(2)
+      class_6238.<PlayerEntity>method_28491(class_4565.field_22251).method_28495().method_28494().method_28489(0.6F, 1.8F).method_28499(32).method_28500(2)
    );
    public static final EntityType<class_3942> field_34215 = method_30457(
       "fishing_bobber",
@@ -429,14 +429,14 @@ public class EntityType<T extends Entity> {
    }
 
    @Nullable
-   public Entity method_30479(class_6331 var1, ItemStack var2, class_704 var3, BlockPos var4, class_2417 var5, boolean var6, boolean var7) {
+   public Entity method_30479(class_6331 var1, ItemStack var2, PlayerEntity var3, BlockPos var4, class_2417 var5, boolean var6, boolean var7) {
       return this.method_30478(
          var1, var2 != null ? var2.method_27990() : null, var2 != null && var2.method_28018() ? var2.method_28008() : null, var3, var4, var5, var6, var7
       );
    }
 
    @Nullable
-   public T method_30478(class_6331 var1, CompoundNBT var2, ITextComponent var3, class_704 var4, BlockPos var5, class_2417 var6, boolean var7, boolean var8) {
+   public T method_30478(class_6331 var1, CompoundNBT var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, class_2417 var6, boolean var7, boolean var8) {
       Entity var11 = this.method_30483(var1, var2, var3, var4, var5, var6, var7, var8);
       if (var11 != null) {
          var1.method_7065(var11);
@@ -446,7 +446,7 @@ public class EntityType<T extends Entity> {
    }
 
    @Nullable
-   public T method_30483(class_6331 var1, CompoundNBT var2, ITextComponent var3, class_704 var4, BlockPos var5, class_2417 var6, boolean var7, boolean var8) {
+   public T method_30483(class_6331 var1, CompoundNBT var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, class_2417 var6, boolean var7, boolean var8) {
       Entity var11 = this.method_30484(var1);
       if (var11 != null) {
          double var12;
@@ -493,7 +493,7 @@ public class EntityType<T extends Entity> {
       return 1.0 + class_3370.method_15520(class_9249.field_47216, var3, var7, !var2 ? -1.0 : -2.0);
    }
 
-   public static void method_30458(World var0, class_704 var1, Entity var2, CompoundNBT var3) {
+   public static void method_30458(World var0, PlayerEntity var1, Entity var2, CompoundNBT var3) {
       if (var3 != null && var3.contains("EntityTag", 10)) {
          class_341 var6 = var0.method_29522();
          if (var6 != null && var2 != null && (var0.field_33055 || !var2.method_37131() || var1 != null && var6.method_1600().method_39962(var1.method_3247()))) {

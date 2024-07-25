@@ -9,7 +9,7 @@ public class class_6296 extends class_7067<class_3942> {
    }
 
    public void method_28734(class_3942 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
-      class_704 var9 = var1.method_18219();
+      PlayerEntity var9 = var1.method_18219();
       if (var9 != null) {
          var4.method_36063();
          var4.method_36063();

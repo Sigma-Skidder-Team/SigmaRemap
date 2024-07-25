@@ -26,7 +26,7 @@ public class class_9782 {
                   Entity var6 = null;
 
                   for (Entity var8 : class_314.method_1440()) {
-                     if (var8 instanceof class_704
+                     if (var8 instanceof PlayerEntity
                         && var8 != this.field_49645.thePlayer
                         && (var6 == null || var6.method_37175(this.field_49645.thePlayer) > var8.method_37175(this.field_49645.thePlayer))) {
                         var6 = var8;

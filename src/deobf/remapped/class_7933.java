@@ -351,7 +351,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       return this.field_18364.method_28260(this.field_18358) == this
          ? var1.method_37273(
                (double)this.field_18358.method_12173() + 0.5, (double)this.field_18358.method_12165() + 0.5, (double)this.field_18358.method_12185() + 0.5
@@ -394,10 +394,10 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    @Override
-   public void method_41424(class_704 var1) {
+   public void method_41424(PlayerEntity var1) {
    }
 
-   public void method_35869(class_704 var1) {
+   public void method_35869(PlayerEntity var1) {
       List var4 = this.method_35879(var1.world, var1.method_37245());
       var1.method_3223(var4);
       this.field_40586.clear();

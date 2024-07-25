@@ -60,7 +60,7 @@ public class class_3423 extends class_2358 {
    }
 
    @Override
-   public void method_31501(class_704 var1) {
+   public void method_31501(PlayerEntity var1) {
       if (!var1.method_37221()) {
          if (this.field_16854 < 0) {
             this.field_16854 = 0;
@@ -105,7 +105,7 @@ public class class_3423 extends class_2358 {
    }
 
    @Override
-   public void method_31499(class_704 var1) {
+   public void method_31499(PlayerEntity var1) {
       if (!var1.method_37221()) {
          this.field_16854--;
       }
@@ -121,6 +121,6 @@ public class class_3423 extends class_2358 {
       double var8 = (double)this.field_18358.method_12165() + 0.5 + (double)var5.method_12165() / 2.0;
       double var10 = (double)this.field_18358.method_12185() + 0.5 + (double)var5.method_12185() / 2.0;
       this.field_18364
-         .method_29528((class_704)null, var6, var8, var10, var2, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F);
+         .method_29528((PlayerEntity)null, var6, var8, var10, var2, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F);
    }
 }

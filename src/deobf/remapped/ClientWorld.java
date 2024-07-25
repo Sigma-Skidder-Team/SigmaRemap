@@ -139,7 +139,7 @@ public class ClientWorld extends World {
    }
 
    public void method_755(Entity var1) {
-      if (!(var1 instanceof class_704) && !this.method_745().method_14824(var1)) {
+      if (!(var1 instanceof PlayerEntity) && !this.method_745().method_14824(var1)) {
          this.method_728(var1);
       } else {
          var1.method_37306(var1.getPosX(), var1.method_37309(), var1.getPosZ());
@@ -167,7 +167,7 @@ public class ClientWorld extends World {
    public void method_730(Entity var1, Entity var2) {
       if (var2.field_41751 || var2.method_37243() != var1) {
          var2.method_37390();
-      } else if (var2 instanceof class_704 || this.method_745().method_14824(var2)) {
+      } else if (var2 instanceof PlayerEntity || this.method_745().method_14824(var2)) {
          var2.method_37306(var2.getPosX(), var2.method_37309(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.field_41762 = var2.rotationPitch;
@@ -462,7 +462,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method_29528(class_704 var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11) {
+   public void method_29528(PlayerEntity var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11) {
       if (class_7860.field_39943.method_3596()) {
          Object var14 = class_7860.field_39943.method_3582(var1, var8, var9, var10, var11);
          if (class_7860.method_35565(var14, class_7860.field_40233) || class_7860.method_35555(var14, class_7860.field_39895) == null) {
@@ -480,7 +480,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method_29540(class_704 var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_29540(PlayerEntity var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6) {
       if (class_7860.field_39943.method_3596()) {
          Object var9 = class_7860.field_39943.method_3582(var1, var3, var4, var5, var6);
          if (class_7860.method_35565(var9, class_7860.field_40233) || class_7860.method_35555(var9, class_7860.field_39895) == null) {
@@ -637,7 +637,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method_43365(class_704 var1, int var2, BlockPos var3, int var4) {
+   public void method_43365(PlayerEntity var1, int var2, BlockPos var3, int var4) {
       try {
          this.field_567.method_20038(var1, var2, var3, var4);
       } catch (Throwable var10) {

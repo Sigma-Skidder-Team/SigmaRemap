@@ -90,7 +90,7 @@ public class class_3049 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public void method_10791(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
+   public void method_10791(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4) {
       this.field_14953.method_8307(var2, var3, var4);
    }
 
@@ -140,7 +140,7 @@ public class class_3049 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       return this.field_14953.method_8322(var2, var4, var5, var6);
    }
 

@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_486 extends class_4138<class_704> {
+public class class_486 extends NearestAttackableTargetGoal<PlayerEntity> {
    private static String[] field_3012;
 
    public class_486(class_8829 var1) {
-      super(var1, class_704.class, 10, true, false, var1::method_28534);
+      super(var1, PlayerEntity.class, 10, true, false, var1::method_28534);
    }
 
    @Override

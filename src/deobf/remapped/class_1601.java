@@ -12,7 +12,7 @@ public class class_1601 extends AbstractMinecartEntity {
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, Hand var2) {
+   public class_6910 method_37128(PlayerEntity var1, Hand var2) {
       if (!var1.method_3236()) {
          if (!this.method_37151()) {
             if (this.world.field_33055) {

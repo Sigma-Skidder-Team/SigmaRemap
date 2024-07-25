@@ -24,7 +24,7 @@ import net.minecraft.util.text.filter.IChatFilter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_9359 extends class_704 implements class_117 {
+public class class_9359 extends PlayerEntity implements class_117 {
    private static final Logger field_47780 = LogManager.getLogger();
    public class_948 field_47794;
    public final class_341 field_47801;
@@ -457,7 +457,7 @@ public class class_9359 extends class_704 implements class_117 {
          String var6 = this.method_37206();
          String var7 = var1.method_37206();
          this.method_3219().method_4851(class_6810.field_35140, var6, class_8274::method_38145);
-         if (!(var1 instanceof class_704)) {
+         if (!(var1 instanceof PlayerEntity)) {
             this.method_3209(class_6234.field_31909);
          } else {
             this.method_3209(class_6234.field_31867);
@@ -491,14 +491,14 @@ public class class_9359 extends class_704 implements class_117 {
          } else {
             if (var1 instanceof class_5405) {
                Entity var6 = var1.method_28372();
-               if (var6 instanceof class_704 && !this.method_3213((class_704)var6)) {
+               if (var6 instanceof PlayerEntity && !this.method_3213((PlayerEntity)var6)) {
                   return false;
                }
 
                if (var6 instanceof class_6749) {
                   class_6749 var7 = (class_6749)var6;
                   Entity var8 = var7.method_26166();
-                  if (var8 instanceof class_704 && !this.method_3213((class_704)var8)) {
+                  if (var8 instanceof PlayerEntity && !this.method_3213((PlayerEntity)var8)) {
                      return false;
                   }
                }
@@ -510,7 +510,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public boolean method_3213(class_704 var1) {
+   public boolean method_3213(PlayerEntity var1) {
       return this.method_43241() ? super.method_3213(var1) : false;
    }
 
@@ -1195,7 +1195,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    public void method_43275(Entity var1) {
-      if (!(var1 instanceof class_704)) {
+      if (!(var1 instanceof PlayerEntity)) {
          this.field_47791.add(var1.method_37145());
       } else {
          this.field_47794.method_4156(new class_3985(var1.method_37145()));

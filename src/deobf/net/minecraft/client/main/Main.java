@@ -36,7 +36,7 @@ import remapped.class_447;
 import remapped.class_5681;
 import remapped.class_6539;
 import remapped.class_6815;
-import remapped.class_704;
+import remapped.PlayerEntity;
 import remapped.class_8761;
 import remapped.GameOptions;
 import remapped.Util;
@@ -114,7 +114,7 @@ public class Main {
       File var47 = (File) method_2(var28, var6);
       File var48 = var28.has(var7) ? (File) method_2(var28, var7) : new File(var47, "assets/");
       File var49 = var28.has(var8) ? (File) method_2(var28, var8) : new File(var47, "resourcepacks/");
-      String var50 = var28.has(var15) ? (String)var15.value(var28) : class_704.method_3249((String)var14.value(var28)).toString();
+      String var50 = var28.has(var15) ? (String)var15.value(var28) : PlayerEntity.method_3249((String)var14.value(var28)).toString();
       String var51 = var28.has(var24) ? (String)var24.value(var28) : null;
       String var52 = method_2(var28, var4).toString();
       Integer var53 = (Integer) method_2(var28, var5);

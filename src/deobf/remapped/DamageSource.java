@@ -49,7 +49,7 @@ public class DamageSource {
       return new class_8758("mob", var0, var1);
    }
 
-   public static DamageSource method_28344(class_704 var0) {
+   public static DamageSource method_28344(PlayerEntity var0) {
       return new class_5405("player", var0);
    }
 
@@ -211,7 +211,7 @@ public class DamageSource {
 
    public boolean method_28349() {
       Entity var3 = this.method_28372();
-      return var3 instanceof class_704 && ((class_704)var3).playerAbilities.isCreativeMode;
+      return var3 instanceof PlayerEntity && ((PlayerEntity)var3).playerAbilities.isCreativeMode;
    }
 
    @Nullable

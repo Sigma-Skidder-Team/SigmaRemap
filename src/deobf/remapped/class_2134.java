@@ -22,7 +22,7 @@ public class class_2134 extends class_7186 {
    public byte[] field_10691 = new byte[16384];
    public boolean field_10686;
    public final List<class_4986> field_10684 = Lists.newArrayList();
-   private final Map<class_704, class_4986> field_10690 = Maps.newHashMap();
+   private final Map<PlayerEntity, class_4986> field_10690 = Maps.newHashMap();
    private final Map<String, class_2001> field_10682 = Maps.newHashMap();
    public final Map<String, class_3245> field_10683 = Maps.newLinkedHashMap();
    private final Map<String, class_869> field_10687 = Maps.newHashMap();
@@ -137,7 +137,7 @@ public class class_2134 extends class_7186 {
       this.method_32923();
    }
 
-   public void method_9970(class_704 var1, ItemStack var2) {
+   public void method_9970(PlayerEntity var1, ItemStack var2) {
       if (!this.field_10690.containsKey(var1)) {
          class_4986 var5 = new class_4986(this, var1);
          this.field_10690.put(var1, var5);
@@ -289,7 +289,7 @@ public class class_2134 extends class_7186 {
    }
 
    @Nullable
-   public Packet<?> method_9973(ItemStack var1, class_6163 var2, class_704 var3) {
+   public Packet<?> method_9973(ItemStack var1, class_6163 var2, PlayerEntity var3) {
       class_4986 var6 = this.field_10690.get(var3);
       return var6 != null ? var6.method_22949(var1) : null;
    }
@@ -302,7 +302,7 @@ public class class_2134 extends class_7186 {
       }
    }
 
-   public class_4986 method_9968(class_704 var1) {
+   public class_4986 method_9968(PlayerEntity var1) {
       class_4986 var4 = this.field_10690.get(var1);
       if (var4 == null) {
          var4 = new class_4986(this, var1);

@@ -17,7 +17,7 @@ public interface class_5719 {
       return this.<T>method_25869(var1, var2, var3);
    }
 
-   List<? extends class_704> method_25873();
+   List<? extends PlayerEntity> method_25873();
 
    default List<Entity> method_25870(Entity var1, Box var2) {
       return this.method_25867(var1, var2, class_3572.field_17483);
@@ -70,11 +70,11 @@ public interface class_5719 {
    }
 
    @Nullable
-   default class_704 method_25856(double var1, double var3, double var5, double var7, Predicate<Entity> var9) {
+   default PlayerEntity method_25856(double var1, double var3, double var5, double var7, Predicate<Entity> var9) {
       double var12 = -1.0;
-      class_704 var14 = null;
+      PlayerEntity var14 = null;
 
-      for (class_704 var16 : this.method_25873()) {
+      for (PlayerEntity var16 : this.method_25873()) {
          if (var9 == null || var9.test(var16)) {
             double var17 = var16.method_37273(var1, var3, var5);
             if ((var7 < 0.0 || var17 < var7 * var7) && (var12 == -1.0 || var17 < var12)) {
@@ -88,18 +88,18 @@ public interface class_5719 {
    }
 
    @Nullable
-   default class_704 method_25861(Entity var1, double var2) {
+   default PlayerEntity method_25861(Entity var1, double var2) {
       return this.method_25857(var1.getPosX(), var1.method_37309(), var1.getPosZ(), var2, false);
    }
 
    @Nullable
-   default class_704 method_25857(double var1, double var3, double var5, double var7, boolean var9) {
+   default PlayerEntity method_25857(double var1, double var3, double var5, double var7, boolean var9) {
       Predicate var12 = !var9 ? class_3572.field_17483 : class_3572.field_17479;
       return this.method_25856(var1, var3, var5, var7, var12);
    }
 
    default boolean method_25866(double var1, double var3, double var5, double var7) {
-      for (class_704 var12 : this.method_25873()) {
+      for (PlayerEntity var12 : this.method_25873()) {
          if (class_3572.field_17483.test(var12) && class_3572.field_17482.test(var12)) {
             double var13 = var12.method_37273(var1, var3, var5);
             if (var7 < 0.0 || var13 < var7 * var7) {
@@ -112,18 +112,18 @@ public interface class_5719 {
    }
 
    @Nullable
-   default class_704 method_25859(class_4931 var1, class_5834 var2) {
-      return this.<class_704>method_25864(this.method_25873(), var1, var2, var2.getPosX(), var2.method_37309(), var2.getPosZ());
+   default PlayerEntity method_25859(class_4931 var1, class_5834 var2) {
+      return this.<PlayerEntity>method_25864(this.method_25873(), var1, var2, var2.getPosX(), var2.method_37309(), var2.getPosZ());
    }
 
    @Nullable
-   default class_704 method_25860(class_4931 var1, class_5834 var2, double var3, double var5, double var7) {
-      return this.<class_704>method_25864(this.method_25873(), var1, var2, var3, var5, var7);
+   default PlayerEntity method_25860(class_4931 var1, class_5834 var2, double var3, double var5, double var7) {
+      return this.<PlayerEntity>method_25864(this.method_25873(), var1, var2, var3, var5, var7);
    }
 
    @Nullable
-   default class_704 method_25858(class_4931 var1, double var2, double var4, double var6) {
-      return this.<class_704>method_25864(this.method_25873(), var1, (class_5834)null, var2, var4, var6);
+   default PlayerEntity method_25858(class_4931 var1, double var2, double var4, double var6) {
+      return this.<PlayerEntity>method_25864(this.method_25873(), var1, (class_5834)null, var2, var4, var6);
    }
 
    @Nullable
@@ -158,10 +158,10 @@ public interface class_5719 {
       return (T)var14;
    }
 
-   default List<class_704> method_25871(class_4931 var1, class_5834 var2, Box var3) {
+   default List<PlayerEntity> method_25871(class_4931 var1, class_5834 var2, Box var3) {
       ArrayList var6 = Lists.newArrayList();
 
-      for (class_704 var8 : this.method_25873()) {
+      for (PlayerEntity var8 : this.method_25873()) {
          if (var3.method_18902(var8.getPosX(), var8.method_37309(), var8.getPosZ()) && var1.method_22604(var2, var8)) {
             var6.add(var8);
          }
@@ -184,9 +184,9 @@ public interface class_5719 {
    }
 
    @Nullable
-   default class_704 method_25862(UUID var1) {
+   default PlayerEntity method_25862(UUID var1) {
       for (int var4 = 0; var4 < this.method_25873().size(); var4++) {
-         class_704 var5 = this.method_25873().get(var4);
+         PlayerEntity var5 = this.method_25873().get(var4);
          if (var1.equals(var5.method_37328())) {
             return var5;
          }

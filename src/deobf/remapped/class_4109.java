@@ -46,19 +46,19 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(1, new class_518(this, 1.2));
-      this.field_29916.method_3485(1, new class_9169(this, 1.2));
-      this.field_29916.method_3485(2, new class_9513(this, 1.0, class_4109.class));
-      this.field_29916.method_3485(4, new class_8676(this, 1.0));
-      this.field_29916.method_3485(6, new class_2889(this, 0.7));
-      this.field_29916.method_3485(7, new class_4407(this, class_704.class, 6.0F));
-      this.field_29916.method_3485(8, new class_9691(this));
+   public void registerGoals() {
+      this.goalSelector.addGoal(1, new class_518(this, 1.2));
+      this.goalSelector.addGoal(1, new class_9169(this, 1.2));
+      this.goalSelector.addGoal(2, new class_9513(this, 1.0, class_4109.class));
+      this.goalSelector.addGoal(4, new class_8676(this, 1.0));
+      this.goalSelector.addGoal(6, new class_2889(this, 0.7));
+      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(8, new class_9691(this));
       this.method_19063();
    }
 
    public void method_19063() {
-      this.field_29916.method_3485(0, new class_787(this));
+      this.goalSelector.addGoal(0, new class_787(this));
    }
 
    @Override
@@ -138,7 +138,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    public void method_43358(class_562 var1) {
       this.field_20021.method_31503(0, new ItemStack(class_4897.field_24836));
       if (var1 != null) {
-         this.world.method_29540((class_704)null, this, class_463.field_2063, var1, 0.5F, 1.0F);
+         this.world.method_29540((PlayerEntity)null, this, class_463.field_2063, var1, 0.5F, 1.0F);
       }
    }
 
@@ -173,7 +173,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
          if (var3 != null) {
             this.world
                .method_29528(
-                  (class_704)null,
+                  (PlayerEntity)null,
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),
@@ -346,13 +346,13 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       return 400;
    }
 
-   public void method_19076(class_704 var1) {
+   public void method_19076(PlayerEntity var1) {
       if (!this.world.field_33055 && (!this.method_37151() || this.method_37072(var1)) && this.method_19043()) {
          var1.method_3191(this, this.field_20021);
       }
    }
 
-   public class_6910 method_19079(class_704 var1, ItemStack var2) {
+   public class_6910 method_19079(PlayerEntity var1, ItemStack var2) {
       boolean var5 = this.method_19060(var1, var2);
       if (!var1.playerAbilities.isCreativeMode) {
          var2.method_27970(1);
@@ -365,7 +365,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       }
    }
 
-   public boolean method_19060(class_704 var1, ItemStack var2) {
+   public boolean method_19060(PlayerEntity var1, ItemStack var2) {
       boolean var5 = false;
       float var6 = 0.0F;
       short var7 = 0;
@@ -442,7 +442,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       return var5;
    }
 
-   public void method_19039(class_704 var1) {
+   public void method_19039(PlayerEntity var1) {
       this.method_19054(false);
       this.method_19068(false);
       if (!this.world.field_33055) {
@@ -628,7 +628,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       }
    }
 
-   public boolean method_19038(class_704 var1) {
+   public boolean method_19038(PlayerEntity var1) {
       this.method_19051(var1.method_37328());
       this.method_19041(true);
       if (var1 instanceof class_9359) {
@@ -686,7 +686,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
             this.field_29674 = this.method_26423() * 0.1F;
             if (!this.canPassengerSteer()) {
-               if (var4 instanceof class_704) {
+               if (var4 instanceof PlayerEntity) {
                   this.method_37215(class_1343.field_7335);
                }
             } else {

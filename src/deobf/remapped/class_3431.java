@@ -11,7 +11,7 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
    private boolean field_16863;
    private boolean field_16869;
 
-   public class_3431(class_704 var1) {
+   public class_3431(PlayerEntity var1) {
       super(var1.field_3869, var1.inventory, new TranslationTextComponent("container.crafting"));
       this.field_951 = true;
       this.field_10959 = 97;

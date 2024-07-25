@@ -41,7 +41,7 @@ public class class_4393 extends class_2803 implements class_9897 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24454 && !this.method_26449()) {
          boolean var11 = false;
@@ -125,7 +125,7 @@ public class class_4393 extends class_2803 implements class_9897 {
 
    @Override
    public void method_45583(class_562 var1) {
-      this.world.method_29540((class_704)null, this, class_463.field_2892, var1, 1.0F, 1.0F);
+      this.world.method_29540((PlayerEntity)null, this, class_463.field_2892, var1, 1.0F, 1.0F);
       if (!this.world.method_22567()) {
          ((class_6331)this.world)
             .method_28957(class_3090.field_15339, this.getPosX(), this.method_37080(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);

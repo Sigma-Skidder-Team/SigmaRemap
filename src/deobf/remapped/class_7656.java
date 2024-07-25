@@ -27,7 +27,7 @@ public class class_7656 implements class_1517 {
                if (var9 < 1) {
                   return 0;
                } else {
-                  class_704 var10 = var1.method_25873().get(var6.nextInt(var9));
+                  PlayerEntity var10 = var1.method_25873().get(var6.nextInt(var9));
                   if (var10.method_37221()) {
                      return 0;
                   } else if (var1.method_28981(var10.method_37075(), 2)) {

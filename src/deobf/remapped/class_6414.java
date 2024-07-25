@@ -265,7 +265,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       return this.method_29260();
    }
 
-   public void method_29298(World var1, class_704 var2, BlockPos var3, class_2522 var4, class_3757 var5, ItemStack var6) {
+   public void method_29298(World var1, PlayerEntity var2, BlockPos var3, class_2522 var4, class_3757 var5, ItemStack var6) {
       var2.method_3211(class_6234.field_31905.method_43790(this));
       var2.method_3170(0.005F);
       method_29295(var4, var1, var3, var5, var2, var6);
@@ -318,7 +318,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       return this.field_11825;
    }
 
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       var1.method_43365(var4, 2001, var2, method_29285(var3));
       if (this.method_29299(class_2351.field_11792)) {
          class_134.method_474(var4, false);

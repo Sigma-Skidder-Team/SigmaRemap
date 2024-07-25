@@ -27,7 +27,7 @@ public abstract class class_1829 extends class_4612 {
    }
 
    @Override
-   public int method_26427(class_704 var1) {
+   public int method_26427(PlayerEntity var1) {
       return 1 + this.world.field_33033.nextInt(3);
    }
 
@@ -56,7 +56,7 @@ public abstract class class_1829 extends class_4612 {
    }
 
    @Override
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return false;
    }
 }

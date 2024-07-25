@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 public class class_7617 extends class_5467 {
    private static final class_8137 field_38768 = class_8137.method_37019(class_4897.field_24814, class_4897.field_25201);
    private static final class_7821<Boolean> field_38770 = class_8073.<Boolean>method_36641(class_7617.class, class_2734.field_13347);
-   private class_8836<class_704> field_38767;
+   private class_8836<PlayerEntity> field_38767;
    private class_9327 field_38766;
 
    public class_7617(EntityType<? extends class_7617> var1, World var2) {
@@ -42,17 +42,17 @@ public class class_7617 extends class_5467 {
    }
 
    @Override
-   public void method_26851() {
+   public void registerGoals() {
       this.field_38766 = new class_9327(this, 0.6, field_38768, true);
-      this.field_29916.method_3485(1, new class_787(this));
-      this.field_29916.method_3485(3, this.field_38766);
-      this.field_29916.method_3485(7, new class_1937(this, 0.3F));
-      this.field_29916.method_3485(8, new class_7037(this));
-      this.field_29916.method_3485(9, new class_9513(this, 0.8));
-      this.field_29916.method_3485(10, new class_2889(this, 0.8, 1.0000001E-5F));
-      this.field_29916.method_3485(11, new class_4407(this, class_704.class, 10.0F));
-      this.field_29908.method_3485(1, new class_4138<class_3024>(this, class_3024.class, false));
-      this.field_29908.method_3485(1, new class_4138<class_3845>(this, class_3845.class, 10, false, false, class_3845.field_18768));
+      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(3, this.field_38766);
+      this.goalSelector.addGoal(7, new class_1937(this, 0.3F));
+      this.goalSelector.addGoal(8, new class_7037(this));
+      this.goalSelector.addGoal(9, new class_9513(this, 0.8));
+      this.goalSelector.addGoal(10, new class_2889(this, 0.8, 1.0000001E-5F));
+      this.goalSelector.addGoal(11, new class_4407(this, PlayerEntity.class, 10.0F));
+      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<class_3024>(this, class_3024.class, false));
+      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<class_3845>(this, class_3845.class, 10, false, false, class_3845.field_18768));
    }
 
    @Override
@@ -130,7 +130,7 @@ public class class_7617 extends class_5467 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if ((this.field_38766 == null || this.field_38766.method_33089()) && !this.method_34544() && this.method_24866(var5) && var1.method_37275(this) < 9.0) {
          this.method_24867(var1, var5);
@@ -180,12 +180,12 @@ public class class_7617 extends class_5467 {
 
    public void method_34543() {
       if (this.field_38767 == null) {
-         this.field_38767 = new class_8836<class_704>(this, class_704.class, 16.0F, 0.8, 1.33);
+         this.field_38767 = new class_8836<PlayerEntity>(this, PlayerEntity.class, 16.0F, 0.8, 1.33);
       }
 
-      this.field_29916.method_3488(this.field_38767);
+      this.goalSelector.method_3488(this.field_38767);
       if (!this.method_34544()) {
-         this.field_29916.method_3485(4, this.field_38767);
+         this.goalSelector.addGoal(4, this.field_38767);
       }
    }
 

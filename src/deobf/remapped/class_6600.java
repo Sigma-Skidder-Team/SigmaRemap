@@ -28,12 +28,12 @@ public class class_6600 extends class_2875 {
    }
 
    @Override
-   public boolean method_13210(class_704 var1, boolean var2) {
+   public boolean method_13210(PlayerEntity var1, boolean var2) {
       return (var1.playerAbilities.isCreativeMode || var1.field_3840 >= this.field_34038.method_43085()) && this.field_34038.method_43085() > 0;
    }
 
    @Override
-   public ItemStack method_13209(class_704 var1, ItemStack var2) {
+   public ItemStack method_13209(PlayerEntity var1, ItemStack var2) {
       if (!var1.playerAbilities.isCreativeMode) {
          var1.method_3220(-this.field_34038.method_43085());
       }

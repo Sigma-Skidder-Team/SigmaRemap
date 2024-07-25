@@ -149,7 +149,7 @@ public class class_2452 {
       return this.field_12202;
    }
 
-   public void method_11258(class_704 var1) {
+   public void method_11258(PlayerEntity var1) {
       if (var1.isPotionActive(Effects.field_19721)) {
          this.field_12202 = this.field_12202 + var1.method_26553(Effects.field_19721).method_10333() + 1;
          this.field_12202 = class_9299.method_42829(this.field_12202, 0, this.method_11294());

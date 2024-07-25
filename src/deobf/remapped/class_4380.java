@@ -29,7 +29,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       if (!method_20408(var6)) {
          if (var2.method_26475(var6).method_28022()) {
@@ -56,9 +56,9 @@ public class class_4380 extends class_551 implements class_1538 {
       float var8 = method_20406(var7, var1);
       if (var8 >= 1.0F && !method_20408(var1) && method_20410(var3, var1)) {
          method_20412(var1, true);
-         class_562 var9 = !(var3 instanceof class_704) ? class_562.field_3332 : class_562.field_3335;
+         class_562 var9 = !(var3 instanceof PlayerEntity) ? class_562.field_3332 : class_562.field_3335;
          var2.method_29528(
-            (class_704)null,
+            (PlayerEntity)null,
             var3.getPosX(),
             var3.method_37309(),
             var3.getPosZ(),
@@ -73,7 +73,7 @@ public class class_4380 extends class_551 implements class_1538 {
    private static boolean method_20410(class_5834 var0, ItemStack var1) {
       int var4 = class_2931.method_13423(class_3668.field_17875, var1);
       int var5 = var4 != 0 ? 3 : 1;
-      boolean var6 = var0 instanceof class_704 && ((class_704)var0).playerAbilities.isCreativeMode;
+      boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).playerAbilities.isCreativeMode;
       ItemStack var7 = var0.method_26475(var1);
       ItemStack var8 = var7.method_27973();
 
@@ -103,8 +103,8 @@ public class class_4380 extends class_551 implements class_1538 {
          ItemStack var8;
          if (!var7 && !var4 && !var3) {
             var8 = var2.method_27953(1);
-            if (var2.method_28022() && var0 instanceof class_704) {
-               ((class_704)var0).inventory.method_32419(var2);
+            if (var2.method_28022() && var0 instanceof PlayerEntity) {
+               ((PlayerEntity)var0).inventory.method_32419(var2);
             }
          } else {
             var8 = var2.method_27973();
@@ -199,7 +199,7 @@ public class class_4380 extends class_551 implements class_1538 {
          var3.method_28003(!var12 ? 1 : 3, var1, var1x -> var1x.method_26447(var2));
          var0.method_7509((Entity)var13);
          var0.method_29528(
-            (class_704)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), class_463.field_2025, class_562.field_3335, 1.0F, var5
+            (PlayerEntity)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), class_463.field_2025, class_562.field_3335, 1.0F, var5
          );
       }
    }
@@ -207,7 +207,7 @@ public class class_4380 extends class_551 implements class_1538 {
    private static class_6749 method_20415(World var0, class_5834 var1, ItemStack var2, ItemStack var3) {
       class_603 var6 = (class_603)(!(var3.method_27960() instanceof class_603) ? class_4897.field_25024 : var3.method_27960());
       class_6749 var7 = var6.method_2819(var0, var3, var1);
-      if (var1 instanceof class_704) {
+      if (var1 instanceof PlayerEntity) {
          var7.method_30918(true);
       }
 
@@ -227,7 +227,7 @@ public class class_4380 extends class_551 implements class_1538 {
 
       for (int var10 = 0; var10 < var8.size(); var10++) {
          ItemStack var11 = (ItemStack)var8.get(var10);
-         boolean var12 = var1 instanceof class_704 && ((class_704)var1).playerAbilities.isCreativeMode;
+         boolean var12 = var1 instanceof PlayerEntity && ((PlayerEntity)var1).playerAbilities.isCreativeMode;
          if (!var11.method_28022()) {
             if (var10 != 0) {
                if (var10 != 1) {
@@ -283,12 +283,12 @@ public class class_4380 extends class_551 implements class_1538 {
 
          if (var10 >= 0.2F && !this.field_21489) {
             this.field_21489 = true;
-            var1.method_29528((class_704)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), var8, class_562.field_3335, 0.5F, 1.0F);
+            var1.method_29528((PlayerEntity)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), var8, class_562.field_3335, 0.5F, 1.0F);
          }
 
          if (var10 >= 0.5F && var9 != null && !this.field_21488) {
             this.field_21488 = true;
-            var1.method_29528((class_704)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), var9, class_562.field_3335, 0.5F, 1.0F);
+            var1.method_29528((PlayerEntity)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), var9, class_562.field_3335, 0.5F, 1.0F);
          }
       }
    }

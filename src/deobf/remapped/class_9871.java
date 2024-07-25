@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_9871<T extends class_704> extends class_4171<T, class_3169<T>> {
+public class class_9871<T extends PlayerEntity> extends class_4171<T, class_3169<T>> {
    private final class_151 field_49923 = new class_151();
 
    public class_9871(class_2514<T, class_3169<T>> var1) {

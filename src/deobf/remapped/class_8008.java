@@ -78,7 +78,7 @@ public class class_8008 extends class_4641 {
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, Hand var2) {
+   public class_6910 method_37128(PlayerEntity var1, Hand var2) {
       if (this.world.field_33055) {
          return class_6910.field_35520;
       } else {

@@ -29,7 +29,7 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public class_6910 method_42155(class_704 var1, World var2, Hand var3) {
+   public class_6910 method_42155(PlayerEntity var1, World var2, Hand var3) {
       this.field_22886 = true;
       class_6910 var6 = super.method_42155(var1, var2, var3);
       this.field_22886 = false;
@@ -46,13 +46,13 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public class_6910 method_42144(class_704 var1, Entity var2, Hand var3) {
+   public class_6910 method_42144(PlayerEntity var1, Entity var2, Hand var3) {
       this.field_22888 = var2;
       return super.method_42144(var1, var2, var3);
    }
 
    @Override
-   public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, Hand var4) {
+   public class_6910 method_42145(PlayerEntity var1, Entity var2, class_5631 var3, Hand var4) {
       this.field_22888 = var2;
       return super.method_42145(var1, var2, var3, var4);
    }

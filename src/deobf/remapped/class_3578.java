@@ -67,9 +67,9 @@ public abstract class class_3578 extends class_1829 {
    @Override
    public void registerGoals() {
       super.registerGoals();
-      this.field_29916.method_3485(0, new class_518(this, 1.25));
-      this.field_29916.method_3485(2, new class_6837<class_704>(this, class_704.class, 8.0F, 1.6, 1.4, class_3572.field_17483::test));
-      this.field_29916.method_3485(4, new class_7239(this));
+      this.goalSelector.addGoal(0, new class_518(this, 1.25));
+      this.goalSelector.addGoal(2, new class_6837<PlayerEntity>(this, PlayerEntity.class, 8.0F, 1.6, 1.4, class_3572.field_17483::test));
+      this.goalSelector.addGoal(4, new class_7239(this));
    }
 
    @Override
@@ -109,7 +109,7 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24999 && this.isAlive()) {
          this.method_37155(class_463.field_2597, 1.0F, 1.0F);

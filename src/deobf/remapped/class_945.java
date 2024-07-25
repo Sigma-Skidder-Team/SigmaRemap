@@ -126,7 +126,7 @@ public class class_945 extends class_3757 {
       return this.method_17396(new CompoundNBT());
    }
 
-   public boolean method_4125(class_704 var1) {
+   public boolean method_4125(PlayerEntity var1) {
       if (var1.method_3184()) {
          if (var1.method_37084().field_33055) {
             var1.method_3218(this);

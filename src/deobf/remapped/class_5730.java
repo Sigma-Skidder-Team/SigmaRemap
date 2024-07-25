@@ -14,13 +14,13 @@ public class class_5730 extends class_305 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       this.method_25914(var1, var2, var3);
       return class_6910.method_31659(var2.field_33055);
    }
 
    @Override
-   public void method_10791(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
+   public void method_10791(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4) {
       this.method_25914(var1, var2, var3);
    }
 

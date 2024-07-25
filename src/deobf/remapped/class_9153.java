@@ -25,7 +25,7 @@ public class class_9153 {
       this.field_46837 = var2;
    }
 
-   public void method_42136(class_704 var1) {
+   public void method_42136(PlayerEntity var1) {
       this.field_46833.configurePlayerCapabilities(var1.playerAbilities);
    }
 
@@ -256,7 +256,7 @@ public class class_9153 {
       }
    }
 
-   public class_6910 method_42155(class_704 var1, World var2, Hand var3) {
+   public class_6910 method_42155(PlayerEntity var1, World var2, Hand var3) {
       if (this.field_46833 != GameType.SPECTATOR) {
          this.method_42129();
          this.field_46837.sendPacket(new class_1022(var3));
@@ -286,7 +286,7 @@ public class class_9153 {
       return new ClientPlayerEntity(this.field_46835, var1, this.field_46837, var2, var3, var4, var5);
    }
 
-   public void method_42138(class_704 var1, Entity var2) {
+   public void method_42138(PlayerEntity var1, Entity var2) {
       this.method_42129();
       this.field_46837.sendPacket(new class_3398(var2, var1.isSneaking()));
       if (this.field_46833 != GameType.SPECTATOR) {
@@ -295,20 +295,20 @@ public class class_9153 {
       }
    }
 
-   public class_6910 method_42144(class_704 var1, Entity var2, Hand var3) {
+   public class_6910 method_42144(PlayerEntity var1, Entity var2, Hand var3) {
       this.method_42129();
       this.field_46837.sendPacket(new class_3398(var2, var3, var1.isSneaking()));
       return this.field_46833 != GameType.SPECTATOR ? var1.method_3204(var2, var3) : class_6910.field_35521;
    }
 
-   public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, Hand var4) {
+   public class_6910 method_42145(PlayerEntity var1, Entity var2, class_5631 var3, Hand var4) {
       this.method_42129();
       class_1343 var7 = var3.method_33993().method_6193(var2.getPosX(), var2.method_37309(), var2.getPosZ());
       this.field_46837.sendPacket(new class_3398(var2, var4, var7, var1.isSneaking()));
       return this.field_46833 != GameType.SPECTATOR ? var2.method_37227(var1, var7, var4) : class_6910.field_35521;
    }
 
-   public ItemStack method_42134(int var1, int var2, int var3, class_6269 var4, class_704 var5) {
+   public ItemStack method_42134(int var1, int var2, int var3, class_6269 var4, PlayerEntity var5) {
       return class_2740.method_12355(var1, var2, var3, var4, var5);
    }
 
@@ -332,7 +332,7 @@ public class class_9153 {
       }
    }
 
-   public void method_42139(class_704 var1) {
+   public void method_42139(PlayerEntity var1) {
       this.method_42129();
       this.field_46837.sendPacket(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
       var1.method_26474();

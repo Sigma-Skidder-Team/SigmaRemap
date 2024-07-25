@@ -50,7 +50,7 @@ public class class_9040 extends class_1871 {
          }
 
          double var5 = 64.0;
-         class_704 var7 = this.field_9479
+         PlayerEntity var7 = this.field_9479
             .world
             .method_25858(field_46257, (double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
          if (var7 != null) {
@@ -99,7 +99,7 @@ public class class_9040 extends class_1871 {
       this.method_41499();
    }
 
-   private void method_41500(class_704 var1) {
+   private void method_41500(PlayerEntity var1) {
       this.field_9479.method_12611().method_29422(class_8978.field_46007);
       this.field_9479.method_12611().<class_3394>method_29420(class_8978.field_46007).method_15684(var1);
    }
@@ -121,7 +121,7 @@ public class class_9040 extends class_1871 {
    }
 
    @Override
-   public void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, class_704 var4) {
+   public void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, PlayerEntity var4) {
       if (var4 != null && !var4.playerAbilities.disableDamage) {
          this.method_41500(var4);
       }

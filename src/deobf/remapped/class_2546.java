@@ -29,7 +29,7 @@ public class class_2546 extends class_9331<class_7333> {
    private boolean field_12604;
    private final Map<Identifier, class_2307<class_2451>> field_12616 = Maps.newTreeMap();
 
-   public class_2546(class_704 var1) {
+   public class_2546(PlayerEntity var1) {
       super(new class_7333(var1), var1.inventory, StringTextComponent.EMPTY);
       var1.field_3874 = this.field_10956;
       this.field_951 = true;

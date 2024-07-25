@@ -63,7 +63,7 @@ public class class_4115 extends class_6414 {
    }
 
    @Override
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       if (!var1.field_33055 && var4.method_3186()) {
          class_3064.method_14008(var1, var2, var3, var4);
       }
@@ -156,7 +156,7 @@ public class class_4115 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (this.field_11820 != class_5371.field_27408) {
          var1 = var1.method_10317(field_20051);
          var2.method_7513(var3, var1, 10);
@@ -199,7 +199,7 @@ public class class_4115 extends class_6414 {
    }
 
    private void method_19109(World var1, BlockPos var2, boolean var3) {
-      var1.method_43365((class_704)null, !var3 ? this.method_19105() : this.method_19111(), var2, 0);
+      var1.method_43365((PlayerEntity)null, !var3 ? this.method_19105() : this.method_19111(), var2, 0);
    }
 
    @Override

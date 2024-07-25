@@ -21,12 +21,12 @@ public interface class_6867 extends class_5507 {
 
    void method_17407();
 
-   boolean method_31502(class_704 var1);
+   boolean method_31502(PlayerEntity var1);
 
-   default void method_31501(class_704 var1) {
+   default void method_31501(PlayerEntity var1) {
    }
 
-   default void method_31499(class_704 var1) {
+   default void method_31499(PlayerEntity var1) {
    }
 
    default boolean method_31500(int var1, ItemStack var2) {

@@ -121,7 +121,7 @@ public class class_2048 extends AbstractMinecartEntity {
          if (!this.method_37378()) {
             this.world
                .method_29528(
-                  (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
+                  (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
                );
          }
       }

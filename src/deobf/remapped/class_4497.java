@@ -349,7 +349,7 @@ public class class_4497 extends class_341 implements class_8685 {
    }
 
    @Override
-   public boolean method_1618(class_6331 var1, BlockPos var2, class_704 var3) {
+   public boolean method_1618(class_6331 var1, BlockPos var2, PlayerEntity var3) {
       if (var1.method_29545() == World.field_33048) {
          if (!this.method_20890().method_39947().method_19931()) {
             if (!this.method_20890().method_39962(var3.method_3247())) {

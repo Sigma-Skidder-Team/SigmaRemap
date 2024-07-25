@@ -356,7 +356,7 @@ public class NameTagsModule extends Module {
          }
 
          int var20 = class_314.method_1444(
-            !(var7 instanceof class_704) ? class_1255.field_6918.field_6917 : new Color(class_5876.method_26762((class_704)var7)).getRGB(), 0.5F
+            !(var7 instanceof PlayerEntity) ? class_1255.field_6918.field_6917 : new Color(class_5876.method_26762((PlayerEntity)var7)).getRGB(), 0.5F
          );
          int var21 = var12.method_18547(var13) / 2;
          if (!field_6698.containsKey(var13)) {
@@ -419,7 +419,7 @@ public class NameTagsModule extends Module {
 
    @EventListen
    public void method_5294(class_2563 var1) {
-      if (this.method_42015() && var1.method_11643() instanceof class_704) {
+      if (this.method_42015() && var1.method_11643() instanceof PlayerEntity) {
          var1.method_29715(true);
       }
    }

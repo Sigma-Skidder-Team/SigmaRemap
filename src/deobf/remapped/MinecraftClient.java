@@ -437,7 +437,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
    private void method_8495() {
       class_7622 var1 = new class_7622<ItemStack>(
-         var0 -> var0.method_28012((class_704)null, class_2575.field_12746)
+         var0 -> var0.method_28012((PlayerEntity)null, class_2575.field_12746)
                .stream()
                .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
                .filter(var0x -> !var0x.isEmpty()),
@@ -457,7 +457,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       class_7622 var6 = new class_7622<class_7735>(
          var0 -> var0.method_35016()
                .stream()
-               .<ITextComponent>flatMap(var0x -> var0x.method_41044().method_28012((class_704)null, class_2575.field_12746).stream())
+               .<ITextComponent>flatMap(var0x -> var0x.method_41044().method_28012((PlayerEntity)null, class_2575.field_12746).stream())
                .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
                .filter(var0x -> !var0x.isEmpty()),
          var0 -> var0.method_35016().stream().<Identifier>map(var0x -> class_8669.field_44382.method_39797(var0x.method_41044().method_27960()))

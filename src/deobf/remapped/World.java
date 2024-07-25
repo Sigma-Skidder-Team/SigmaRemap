@@ -325,13 +325,13 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public void method_43359(class_704 var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_43359(PlayerEntity var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6) {
       this.method_29528(var1, (double)var2.method_12173() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5, var3, var4, var5, var6);
    }
 
-   public abstract void method_29528(class_704 var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11);
+   public abstract void method_29528(PlayerEntity var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11);
 
-   public abstract void method_29540(class_704 var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6);
+   public abstract void method_29540(PlayerEntity var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6);
 
    public void method_29527(double var1, double var3, double var5, class_8461 var7, class_562 var8, float var9, float var10, boolean var11) {
    }
@@ -803,7 +803,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return this.field_33035.method_8666();
    }
 
-   public boolean method_29538(class_704 var1, BlockPos var2) {
+   public boolean method_29538(PlayerEntity var1, BlockPos var2) {
       return true;
    }
 

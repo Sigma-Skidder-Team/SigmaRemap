@@ -240,10 +240,10 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
       if (var1.field_29677 <= 0) {
          if (!var1.method_26600()) {
             if (var8 != class_7653.field_38886) {
-               if (var1.method_45507() || var1 instanceof class_704) {
+               if (var1.method_45507() || var1 instanceof PlayerEntity) {
                   String var9 = TextFormatting.getTextWithoutFormattingCodes(var1.method_45509().getString());
                   if (("Dinnerbone".equals(var9) || "Grumm".equals(var9))
-                     && (!(var1 instanceof class_704) || ((class_704)var1).method_3168(class_7742.field_39260))) {
+                     && (!(var1 instanceof PlayerEntity) || ((PlayerEntity)var1).method_3168(class_7742.field_39260))) {
                      var2.method_36065(0.0, (double)(var1.method_37074() + 0.1F), 0.0);
                      var2.method_36060(class_2426.field_12076.method_11074(180.0F));
                   }

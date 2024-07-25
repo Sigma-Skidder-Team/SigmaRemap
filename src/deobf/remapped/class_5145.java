@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5145 extends class_8420 {
+public class class_5145 extends HurtByTargetGoal {
    private static String[] field_26497;
 
    public class_5145(class_9310 var1) {

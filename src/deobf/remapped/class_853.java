@@ -11,6 +11,6 @@ public class class_853 implements Predicate<class_5834> {
    }
 
    public boolean test(class_5834 var1) {
-      return (var1 instanceof class_704 || var1 instanceof class_6011) && var1.method_37275(this.field_4445) > 9.0;
+      return (var1 instanceof PlayerEntity || var1 instanceof class_6011) && var1.method_37275(this.field_4445) > 9.0;
    }
 }

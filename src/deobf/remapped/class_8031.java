@@ -54,17 +54,17 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    @Override
-   public void method_26851() {
+   public void registerGoals() {
       this.field_41105 = new class_5296(this);
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(1, new class_518(this, 1.25));
-      this.field_29916.method_3485(2, new class_9513(this, 1.0));
-      this.field_29916.method_3485(3, new class_7228(this, 1.1, class_8137.method_37019(class_4897.field_24813), false));
-      this.field_29916.method_3485(4, new class_8676(this, 1.1));
-      this.field_29916.method_3485(5, this.field_41105);
-      this.field_29916.method_3485(6, new class_2889(this, 1.0));
-      this.field_29916.method_3485(7, new class_4407(this, class_704.class, 6.0F));
-      this.field_29916.method_3485(8, new class_9691(this));
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(1, new class_518(this, 1.25));
+      this.goalSelector.addGoal(2, new class_9513(this, 1.0));
+      this.goalSelector.addGoal(3, new class_7228(this, 1.1, class_8137.method_37019(class_4897.field_24813), false));
+      this.goalSelector.addGoal(4, new class_8676(this, 1.1));
+      this.goalSelector.addGoal(5, this.field_41105);
+      this.goalSelector.addGoal(6, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(8, new class_9691(this));
    }
 
    @Override
@@ -168,7 +168,7 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_24853) {
          return super.method_26857(var1, var2);
@@ -183,7 +183,7 @@ public class class_8031 extends class_5467 implements class_9897 {
 
    @Override
    public void method_45583(class_562 var1) {
-      this.world.method_29540((class_704)null, this, class_463.field_2398, var1, 1.0F, 1.0F);
+      this.world.method_29540((PlayerEntity)null, this, class_463.field_2398, var1, 1.0F, 1.0F);
       this.method_36469(true);
       int var4 = 1 + this.field_41717.nextInt(3);
 

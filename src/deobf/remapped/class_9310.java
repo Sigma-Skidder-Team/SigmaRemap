@@ -55,19 +55,19 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(1, new class_9169(this, 1.2));
-      this.field_29916.method_3485(2, new class_3078(this, 2.1F));
-      this.field_29916.method_3485(3, new class_1837(this, 1.25, 40, 20.0F));
-      this.field_29916.method_3485(3, new class_518(this, 1.2));
-      this.field_29916.method_3485(4, new class_9513(this, 1.0));
-      this.field_29916.method_3485(5, new class_8676(this, 1.0));
-      this.field_29916.method_3485(6, new class_2889(this, 0.7));
-      this.field_29916.method_3485(7, new class_4407(this, class_704.class, 6.0F));
-      this.field_29916.method_3485(8, new class_9691(this));
-      this.field_29908.method_3485(1, new class_5145(this));
-      this.field_29908.method_3485(2, new class_2712(this));
+   public void registerGoals() {
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(1, new class_9169(this, 1.2));
+      this.goalSelector.addGoal(2, new class_3078(this, 2.1F));
+      this.goalSelector.addGoal(3, new class_1837(this, 1.25, 40, 20.0F));
+      this.goalSelector.addGoal(3, new class_518(this, 1.2));
+      this.goalSelector.addGoal(4, new class_9513(this, 1.0));
+      this.goalSelector.addGoal(5, new class_8676(this, 1.0));
+      this.goalSelector.addGoal(6, new class_2889(this, 0.7));
+      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(8, new class_9691(this));
+      this.targetSelector.addGoal(1, new class_5145(this));
+      this.targetSelector.addGoal(2, new class_2712(this));
    }
 
    public static class_1313 method_42979() {
@@ -125,7 +125,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public boolean method_19060(class_704 var1, ItemStack var2) {
+   public boolean method_19060(PlayerEntity var1, ItemStack var2) {
       byte var5 = 0;
       byte var6 = 0;
       float var7 = 0.0F;
@@ -173,7 +173,7 @@ public class class_9310 extends class_5521 implements class_2354 {
          if (var10 != null) {
             this.world
                .method_29528(
-                  (class_704)null,
+                  (PlayerEntity)null,
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),
@@ -351,7 +351,7 @@ public class class_9310 extends class_5521 implements class_2354 {
       if (!this.method_37378()) {
          this.world
             .method_29528(
-               (class_704)null,
+               (PlayerEntity)null,
                this.getPosX(),
                this.method_37309(),
                this.getPosZ(),

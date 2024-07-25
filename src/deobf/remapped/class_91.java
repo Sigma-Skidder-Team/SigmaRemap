@@ -275,7 +275,7 @@ public class class_91 extends Entity {
    }
 
    @Override
-   public void method_37347(class_704 var1) {
+   public void method_37347(PlayerEntity var1) {
       if (!this.world.field_33055) {
          ItemStack var4 = this.method_264();
          class_2451 var5 = var4.method_27960();

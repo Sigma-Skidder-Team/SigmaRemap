@@ -21,9 +21,9 @@ public class class_6318 extends class_2451 {
       }
 
       if (!var1.method_28022()) {
-         if (var3 instanceof class_704 && !((class_704)var3).playerAbilities.isCreativeMode) {
+         if (var3 instanceof PlayerEntity && !((PlayerEntity)var3).playerAbilities.isCreativeMode) {
             ItemStack var8 = new ItemStack(class_4897.field_24812);
-            class_704 var7 = (class_704)var3;
+            PlayerEntity var7 = (PlayerEntity)var3;
             if (!var7.inventory.method_32414(var8)) {
                var7.method_3153(var8, false);
             }
@@ -56,7 +56,7 @@ public class class_6318 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       return class_4754.method_21939(var1, var2, var3);
    }
 }

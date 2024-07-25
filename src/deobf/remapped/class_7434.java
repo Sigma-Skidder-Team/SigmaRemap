@@ -22,7 +22,7 @@ public class class_7434 extends class_2358 {
    }
 
    public int method_33831() {
-      this.method_10812((class_704)null);
+      this.method_10812((PlayerEntity)null);
       int var3 = -1;
       int var4 = 1;
 

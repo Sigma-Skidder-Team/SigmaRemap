@@ -23,7 +23,7 @@ public class class_9163 {
       }
    }
 
-   public void method_42228(class_704 var1) {
+   public void method_42228(PlayerEntity var1) {
       class_423 var4 = var1.world.method_43370();
       this.field_46895 = this.field_46890;
       if (this.field_46892 > 4.0F) {

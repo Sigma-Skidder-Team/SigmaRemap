@@ -5,7 +5,7 @@ import java.util.EnumSet;
 public class class_5809 extends class_3599 {
    private static String[] field_29321;
    private final class_9408 field_29320;
-   private class_704 field_29325;
+   private PlayerEntity field_29325;
    private final World field_29324;
    private final float field_29323;
    private int field_29322;
@@ -58,7 +58,7 @@ public class class_5809 extends class_3599 {
       this.field_29322--;
    }
 
-   private boolean method_26302(class_704 var1) {
+   private boolean method_26302(PlayerEntity var1) {
       for (Hand var7 : Hand.values()) {
          ItemStack var8 = var1.method_26617(var7);
          if (this.field_29320.method_41215() && var8.method_27960() == class_4897.field_24384) {

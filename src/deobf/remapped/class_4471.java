@@ -28,7 +28,7 @@ public class class_4471 extends PremiumModule {
 
       while (var4.hasNext()) {
          Entity var5 = (Entity)var4.next();
-         if (!(var5 instanceof class_704) || SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
+         if (!(var5 instanceof PlayerEntity) || SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
             var4.remove();
          }
       }

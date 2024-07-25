@@ -41,7 +41,7 @@ public abstract class class_2358 extends class_8346 {
       }
    }
 
-   public void method_10812(class_704 var1) {
+   public void method_10812(PlayerEntity var1) {
       if (this.field_11837 != null && this.field_18364.method_29522() != null) {
          class_1758 var4 = this.field_18364.method_29522().method_1722().method_4604(this.field_11837);
          if (var1 instanceof class_9359) {
@@ -67,19 +67,19 @@ public abstract class class_2358 extends class_8346 {
 
    @Override
    public boolean method_31495() {
-      this.method_10812((class_704)null);
+      this.method_10812((PlayerEntity)null);
       return this.method_10814().stream().allMatch(ItemStack::method_28022);
    }
 
    @Override
    public ItemStack method_31498(int var1) {
-      this.method_10812((class_704)null);
+      this.method_10812((PlayerEntity)null);
       return this.method_10814().get(var1);
    }
 
    @Override
    public ItemStack method_31497(int var1, int var2) {
-      this.method_10812((class_704)null);
+      this.method_10812((PlayerEntity)null);
       ItemStack var5 = class_3037.method_13881(this.method_10814(), var1, var2);
       if (!var5.method_28022()) {
          this.method_17407();
@@ -90,13 +90,13 @@ public abstract class class_2358 extends class_8346 {
 
    @Override
    public ItemStack method_31507(int var1) {
-      this.method_10812((class_704)null);
+      this.method_10812((PlayerEntity)null);
       return class_3037.method_13880(this.method_10814(), var1);
    }
 
    @Override
    public void method_31503(int var1, ItemStack var2) {
-      this.method_10812((class_704)null);
+      this.method_10812((PlayerEntity)null);
       this.method_10814().set(var1, var2);
       if (var2.method_27997() > this.method_31506()) {
          var2.method_28017(this.method_31506());
@@ -106,7 +106,7 @@ public abstract class class_2358 extends class_8346 {
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       return this.field_18364.method_28260(this.field_18358) == this
          ? !(
             var1.method_37273(
@@ -127,13 +127,13 @@ public abstract class class_2358 extends class_8346 {
    public abstract void method_10813(class_2831<ItemStack> var1);
 
    @Override
-   public boolean method_38430(class_704 var1) {
+   public boolean method_38430(PlayerEntity var1) {
       return super.method_38430(var1) && (this.field_11837 == null || !var1.method_37221());
    }
 
    @Nullable
    @Override
-   public class_4088 method_11419(int var1, class_7051 var2, class_704 var3) {
+   public class_4088 method_11419(int var1, class_7051 var2, PlayerEntity var3) {
       if (!this.method_38430(var3)) {
          return null;
       } else {

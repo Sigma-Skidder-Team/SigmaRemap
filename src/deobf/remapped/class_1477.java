@@ -40,7 +40,7 @@ public class class_1477 extends class_6414 {
    }
 
    private void method_6809(World var1, BlockPos var2, class_2522 var3) {
-      var1.method_43359((class_704)null, var2, class_463.field_2455, class_562.field_3322, 0.7F, 0.9F + var1.field_33033.nextFloat() * 0.2F);
+      var1.method_43359((PlayerEntity)null, var2, class_463.field_2455, class_562.field_3322, 0.7F, 0.9F + var1.field_33033.nextFloat() * 0.2F);
       int var6 = var3.<Integer>method_10313(field_7918);
       if (var6 > 1) {
          var1.method_7513(var2, var3.method_10308(field_7918, Integer.valueOf(var6 - 1)), 2);
@@ -55,7 +55,7 @@ public class class_1477 extends class_6414 {
       if (this.method_6813(var2) && method_6812(var2, var3)) {
          int var7 = var1.<Integer>method_10313(field_7916);
          if (var7 >= 2) {
-            var2.method_43359((class_704)null, var3, class_463.field_2790, class_562.field_3322, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
+            var2.method_43359((PlayerEntity)null, var3, class_463.field_2790, class_562.field_3322, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
             var2.method_7508(var3, false);
 
             for (int var8 = 0; var8 < var1.<Integer>method_10313(field_7918); var8++) {
@@ -69,7 +69,7 @@ public class class_1477 extends class_6414 {
                var2.method_7509(var9);
             }
          } else {
-            var2.method_43359((class_704)null, var3, class_463.field_2694, class_562.field_3322, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
+            var2.method_43359((PlayerEntity)null, var3, class_463.field_2694, class_562.field_3322, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
             var2.method_7513(var3, var1.method_10308(field_7916, Integer.valueOf(var7 + 1)), 2);
          }
       }
@@ -96,7 +96,7 @@ public class class_1477 extends class_6414 {
    }
 
    @Override
-   public void method_29298(World var1, class_704 var2, BlockPos var3, class_2522 var4, class_3757 var5, ItemStack var6) {
+   public void method_29298(World var1, PlayerEntity var2, BlockPos var3, class_2522 var4, class_3757 var5, ItemStack var6) {
       super.method_29298(var1, var2, var3, var4, var5, var6);
       this.method_6809(var1, var3, var4);
    }
@@ -129,7 +129,7 @@ public class class_1477 extends class_6414 {
       if (var2 instanceof class_3845 || var2 instanceof class_2022) {
          return false;
       } else {
-         return !(var2 instanceof class_5834) ? false : var2 instanceof class_704 || var1.method_29537().method_1285(class_291.field_1047);
+         return !(var2 instanceof class_5834) ? false : var2 instanceof PlayerEntity || var1.method_29537().method_1285(class_291.field_1047);
       }
    }
 }

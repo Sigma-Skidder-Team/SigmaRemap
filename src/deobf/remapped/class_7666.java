@@ -33,7 +33,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    );
    private int field_38964;
    private boolean field_38967;
-   private class_704 field_38973;
+   private PlayerEntity field_38973;
    private byte field_38969;
    private final class_2525 field_38977 = new class_2525();
    private long field_38974;
@@ -226,7 +226,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_25034 || !this.isAlive() || this.method_2024() || this.method_26507()) {
          return super.method_26857(var1, var2);
@@ -262,14 +262,14 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       }
    }
 
-   private void method_34732(class_704 var1) {
+   private void method_34732(PlayerEntity var1) {
       this.method_34721(var1);
       this.method_975(var1);
       this.method_977(var1, this.method_19839(), this.method_15891().method_13906());
    }
 
    @Override
-   public void method_975(class_704 var1) {
+   public void method_975(PlayerEntity var1) {
       boolean var4 = this.method_978() != null && var1 == null;
       super.method_975(var1);
       if (var4) {
@@ -358,7 +358,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       }
    }
 
-   private void method_34721(class_704 var1) {
+   private void method_34721(PlayerEntity var1) {
       int var4 = this.method_34691(var1);
       if (var4 != 0) {
          for (class_8014 var6 : this.method_974()) {
@@ -503,7 +503,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    public void method_26511(class_5834 var1) {
       if (var1 != null && this.world instanceof class_6331) {
          ((class_6331)this.world).method_28955(class_3894.field_18943, var1, this);
-         if (this.isAlive() && var1 instanceof class_704) {
+         if (this.isAlive() && var1 instanceof PlayerEntity) {
             this.world.method_29587(this, (byte)13);
          }
       }
@@ -592,7 +592,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       }
    }
 
-   public int method_34691(class_704 var1) {
+   public int method_34691(PlayerEntity var1) {
       return this.field_38977.method_11512(var1.method_37328(), var0 -> true);
    }
 
@@ -811,7 +811,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          BlockPos var10 = this.method_34701(var4, var6, var8);
          if (var10 != null) {
             class_8127 var11 = EntityType.field_34298
-               .method_30483(var1, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var10, class_2417.field_12027, false, false);
+               .method_30483(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, class_2417.field_12027, false, false);
             if (var11 != null) {
                if (var11.method_26889(var1, class_2417.field_12027) && var11.method_26855(var1)) {
                   var1.method_7065(var11);

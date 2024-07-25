@@ -141,7 +141,7 @@ public class class_3348 extends class_6749 {
    }
 
    @Override
-   public void method_37347(class_704 var1) {
+   public void method_37347(PlayerEntity var1) {
       Entity var4 = this.method_26166();
       if (var4 == null || var4.method_37328() == var1.method_37328()) {
          super.method_37347(var1);

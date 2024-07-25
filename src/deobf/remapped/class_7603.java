@@ -3,11 +3,11 @@ package remapped;
 public class class_7603 extends class_7934 {
    private static String[] field_38715;
    private final class_1459 field_38714;
-   private final class_704 field_38716;
+   private final PlayerEntity field_38716;
    private int field_38717;
    private final class_233 field_38713;
 
-   public class_7603(class_704 var1, class_233 var2, class_1459 var3, int var4, int var5, int var6) {
+   public class_7603(PlayerEntity var1, class_233 var2, class_1459 var3, int var4, int var5, int var6) {
       super(var3, var4, var5, var6);
       this.field_38716 = var1;
       this.field_38713 = var2;
@@ -41,7 +41,7 @@ public class class_7603 extends class_7934 {
    }
 
    @Override
-   public ItemStack method_35892(class_704 var1, ItemStack var2) {
+   public ItemStack method_35892(PlayerEntity var1, ItemStack var2) {
       this.method_35893(var2);
       class_8014 var5 = this.field_38714.method_6755();
       if (var5 != null) {

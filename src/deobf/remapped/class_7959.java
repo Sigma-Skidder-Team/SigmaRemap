@@ -72,7 +72,7 @@ public class class_7959 extends class_6414 {
    }
 
    @Override
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       if (!var1.field_33055 && !var4.method_26446().method_28022() && var4.method_26446().method_27960() == class_4897.field_24853) {
          var1.method_7513(var2, var3.method_10308(field_40783, Boolean.valueOf(true)), 4);
       }

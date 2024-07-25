@@ -6,7 +6,7 @@ public class class_8214 extends class_3599 {
    private static String[] field_42023;
    private final class_449 field_42022;
    private final double field_42024;
-   private class_704 field_42021;
+   private PlayerEntity field_42021;
 
    public class_8214(class_449 var1, double var2) {
       this.field_42022 = var1;

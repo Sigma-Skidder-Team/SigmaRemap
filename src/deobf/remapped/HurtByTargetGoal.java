@@ -4,7 +4,7 @@ import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
 
-public class class_8420 extends class_956 {
+public class HurtByTargetGoal extends class_956 {
    private static String[] field_43056;
    private static final class_4931 field_43054 = new class_4931().method_22602().method_22608();
    private boolean field_43053;
@@ -12,7 +12,7 @@ public class class_8420 extends class_956 {
    private final Class<?>[] field_43057;
    private Class<?>[] field_43055;
 
-   public class_8420(class_4612 var1, Class<?>... var2) {
+   public HurtByTargetGoal(class_4612 var1, Class<?>... var2) {
       super(var1, true);
       this.field_43057 = var2;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9563));
@@ -39,7 +39,7 @@ public class class_8420 extends class_956 {
       }
    }
 
-   public class_8420 method_38757(Class<?>... var1) {
+   public HurtByTargetGoal setCallsForHelp(Class<?>... var1) {
       this.field_43053 = true;
       this.field_43055 = var1;
       return this;

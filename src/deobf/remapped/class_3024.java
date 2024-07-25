@@ -19,14 +19,14 @@ public class class_3024 extends class_5467 {
 
    @Override
    public void registerGoals() {
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(1, new class_518(this, 1.4));
-      this.field_29916.method_3485(2, new class_9513(this, 1.0));
-      this.field_29916.method_3485(3, new class_7228(this, 1.0, false, field_14826));
-      this.field_29916.method_3485(4, new class_8676(this, 1.1));
-      this.field_29916.method_3485(5, new class_2889(this, 1.0));
-      this.field_29916.method_3485(6, new class_4407(this, class_704.class, 6.0F));
-      this.field_29916.method_3485(7, new class_9691(this));
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(1, new class_518(this, 1.4));
+      this.goalSelector.addGoal(2, new class_9513(this, 1.0));
+      this.goalSelector.addGoal(3, new class_7228(this, 1.0, false, field_14826));
+      this.goalSelector.addGoal(4, new class_8676(this, 1.1));
+      this.goalSelector.addGoal(5, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new class_9691(this));
    }
 
    @Override
@@ -98,7 +98,7 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public int method_26427(class_704 var1) {
+   public int method_26427(PlayerEntity var1) {
       return !this.method_13809() ? super.method_26427(var1) : 10;
    }
 

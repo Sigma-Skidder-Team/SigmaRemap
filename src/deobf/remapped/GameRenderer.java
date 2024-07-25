@@ -363,8 +363,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_35935(class_7966 var1, float var2) {
-      if (this.field_40612.getRenderViewEntity() instanceof class_704) {
-         class_704 var5 = (class_704)this.field_40612.getRenderViewEntity();
+      if (this.field_40612.getRenderViewEntity() instanceof PlayerEntity) {
+         PlayerEntity var5 = (PlayerEntity)this.field_40612.getRenderViewEntity();
          float var6 = var5.field_41695 - var5.field_41705;
          float var7 = -(var5.field_41695 + var6 * var2);
          float var8 = class_9299.method_42795(var2, var5.field_3857, var5.field_3859);
@@ -696,8 +696,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
          return false;
       } else {
          Entity var3 = this.field_40612.getRenderViewEntity();
-         boolean var4 = var3 instanceof class_704 && !this.field_40612.gameOptions.hideGUI;
-         if (var4 && !((class_704)var3).playerAbilities.allowEdit) {
+         boolean var4 = var3 instanceof PlayerEntity && !this.field_40612.gameOptions.hideGUI;
+         if (var4 && !((PlayerEntity)var3).playerAbilities.allowEdit) {
             ItemStack var5 = ((class_5834)var3).method_26446();
             class_7474 var6 = this.field_40612.field_9587;
             if (var6 != null && var6.method_33990() == class_1430.field_7717) {

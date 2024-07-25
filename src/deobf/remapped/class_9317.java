@@ -59,7 +59,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    }
 
    private void method_43012() {
-      this.field_18364.method_43359((class_704)null, this.method_17399(), class_463.field_2099, class_562.field_3322, 1.0F, 1.0F);
+      this.field_18364.method_43359((PlayerEntity)null, this.method_17399(), class_463.field_2099, class_562.field_3322, 1.0F, 1.0F);
    }
 
    public void method_43016(Direction var1) {

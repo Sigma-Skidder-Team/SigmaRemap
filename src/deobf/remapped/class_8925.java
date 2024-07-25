@@ -25,7 +25,7 @@ public final class class_8925 extends class_8085 {
       class_2522 var7 = var5.method_28262(var6);
       if (var7.method_8329(class_2351.field_11727, var0 -> var0.method_10307(class_4745.field_22992))
          && var7.<Integer>method_10313(class_4745.field_22992) >= 5) {
-         ((class_4745)var7.method_8360()).method_21920(var5, var7, var6, (class_704)null, class_8771.field_44898);
+         ((class_4745)var7.method_8360()).method_21920(var5, var7, var6, (PlayerEntity)null, class_8771.field_44898);
          this.method_36717(true);
          return this.method_41030(var1, var2, new ItemStack(class_4897.field_24773));
       } else if (!var5.method_28258(var6).method_22007(class_6503.field_33094)) {

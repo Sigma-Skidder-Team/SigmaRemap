@@ -17,7 +17,7 @@ public class class_7713 extends class_3599 {
          if (!this.field_39121.method_37285()) {
             if (this.field_39121.method_37360()) {
                if (!this.field_39121.field_41743) {
-                  class_704 var3 = this.field_39121.method_978();
+                  PlayerEntity var3 = this.field_39121.method_978();
                   if (var3 != null) {
                      return !(this.field_39121.method_37275(var3) > 16.0) ? var3.field_3874 != null : false;
                   } else {
@@ -44,6 +44,6 @@ public class class_7713 extends class_3599 {
 
    @Override
    public void method_16793() {
-      this.field_39121.method_975((class_704)null);
+      this.field_39121.method_975((PlayerEntity)null);
    }
 }

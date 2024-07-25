@@ -68,7 +68,7 @@ public class class_2013 extends class_4314 {
       World var4 = var1.method_21862();
       ItemStack var5 = var1.method_21867();
       CompoundNBT var6 = var5.method_27990();
-      class_704 var7 = var1.method_21868();
+      PlayerEntity var7 = var1.method_21868();
       boolean var8 = false;
       if (!var4.field_33055 && var7 != null && var6 != null && var7.method_3184() && var6.method_25938("BlockEntityTag")) {
          CompoundNBT var9 = var6.getCompound("BlockEntityTag");
@@ -142,7 +142,7 @@ public class class_2013 extends class_4314 {
          class_1788 var7 = (class_1788)var6;
          var7.method_7956(var3.method_27953(1));
          method_9339(var0, var1, var2, true);
-         var0.method_43359((class_704)null, var1, class_463.field_2482, class_562.field_3322, 1.0F, 1.0F);
+         var0.method_43359((PlayerEntity)null, var1, class_463.field_2482, class_562.field_3322, 1.0F, 1.0F);
       }
    }
 
@@ -236,7 +236,7 @@ public class class_2013 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (var1.<Boolean>method_10313(field_10203)) {
          if (!var2.field_33055) {
             this.method_9341(var2, var3, var4);
@@ -255,7 +255,7 @@ public class class_2013 extends class_4314 {
       return var1.<Boolean>method_10313(field_10203) ? super.method_10767(var1, var2, var3) : null;
    }
 
-   private void method_9341(World var1, BlockPos var2, class_704 var3) {
+   private void method_9341(World var1, BlockPos var2, PlayerEntity var3) {
       class_3757 var6 = var1.method_28260(var2);
       if (var6 instanceof class_1788) {
          var3.method_3152((class_1788)var6);

@@ -5,7 +5,7 @@ import com.mojang.authlib.GameProfile;
 import java.io.File;
 import javax.annotation.Nullable;
 
-public abstract class AbstractClientPlayerEntity extends class_704 {
+public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    public class_753 field_49385;
    public float field_49391;
    public float field_49394;

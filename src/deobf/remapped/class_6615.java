@@ -32,7 +32,7 @@ public class class_6615 extends class_6201 {
 
          while (var9 < 7) {
             if (!var5.field_33055 && !World.method_29586(var10)) {
-               class_704 var11 = var1.method_21868();
+               PlayerEntity var11 = var1.method_21868();
                int var12 = var5.method_28261();
                if (var11 instanceof class_9359 && var10.method_12165() >= var12) {
                   class_5182 var13 = new class_5182(

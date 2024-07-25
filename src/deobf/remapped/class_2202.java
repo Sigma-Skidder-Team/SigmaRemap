@@ -5,23 +5,23 @@ import javax.annotation.Nullable;
 public class class_2202 implements class_233 {
    private static String[] field_10923;
    private final class_1459 field_10924;
-   private final class_704 field_10920;
+   private final PlayerEntity field_10920;
    private class_2795 field_10921 = new class_2795();
    private int field_10922;
 
-   public class_2202(class_704 var1) {
+   public class_2202(PlayerEntity var1) {
       this.field_10920 = var1;
       this.field_10924 = new class_1459(this);
    }
 
    @Nullable
    @Override
-   public class_704 method_978() {
+   public PlayerEntity method_978() {
       return this.field_10920;
    }
 
    @Override
-   public void method_975(class_704 var1) {
+   public void method_975(PlayerEntity var1) {
    }
 
    @Override

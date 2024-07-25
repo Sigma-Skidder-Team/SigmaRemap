@@ -22,9 +22,9 @@ public class class_8006 extends class_8085 {
       if (var4.method_8349(class_2351.field_11727)) {
          int var5 = var4.<Integer>method_10313(class_4745.field_22992);
          if (var5 >= 5) {
-            var0.method_43359((class_704)null, var1, class_463.field_2271, class_562.field_3322, 1.0F, 1.0F);
+            var0.method_43359((PlayerEntity)null, var1, class_463.field_2271, class_562.field_3322, 1.0F, 1.0F);
             class_4745.method_21913(var0, var1);
-            ((class_4745)var4.method_8360()).method_21920(var0, var4, var1, (class_704)null, class_8771.field_44898);
+            ((class_4745)var4.method_8360()).method_21920(var0, var4, var1, (PlayerEntity)null, class_8771.field_44898);
             return true;
          }
       }

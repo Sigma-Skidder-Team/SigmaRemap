@@ -49,7 +49,7 @@ public class class_2442 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var4.method_3181()) {
          return super.method_10777(var1, var2, var3, var4, var5, var6);
       } else if (!var2.field_33055) {

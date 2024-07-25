@@ -178,19 +178,19 @@ public class InfiniteAuraModule extends Module {
                      if (!(client.thePlayer.method_37175(var8) > var1)) {
                         if (client.thePlayer.method_26608((class_5834)var8)) {
                            if (!(var8 instanceof class_9399)) {
-                              if (!this.getBooleanValueByName("Players") && var8 instanceof class_704) {
+                              if (!this.getBooleanValueByName("Players") && var8 instanceof PlayerEntity) {
                                  var7.remove();
-                              } else if (var8 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var8)) {
+                              } else if (var8 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var8)) {
                                  var7.remove();
                               } else if (!this.getBooleanValueByName("Invisible") && var8.method_37109()) {
                                  var7.remove();
-                              } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var8 instanceof class_704)) {
+                              } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
                                  var7.remove();
                               } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var8)) {
                                  var7.remove();
                               } else if (!var8.method_37367()) {
-                                 if (var8 instanceof class_704
-                                    && class_5876.method_26760((class_704)var8)
+                                 if (var8 instanceof PlayerEntity
+                                    && class_5876.method_26760((PlayerEntity)var8)
                                     && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
                                     var7.remove();
                                  }

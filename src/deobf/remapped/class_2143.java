@@ -56,7 +56,7 @@ public class class_2143 extends class_6249 {
    }
 
    public void method_10016(World var1, Entity var2, class_2134 var3) {
-      if (var1.method_29545() == var3.field_10685 && var2 instanceof class_704) {
+      if (var1.method_29545() == var3.field_10685 && var2 instanceof PlayerEntity) {
          int var6 = 1 << var3.field_10678;
          int var7 = var3.field_10689;
          int var8 = var3.field_10677;
@@ -67,7 +67,7 @@ public class class_2143 extends class_6249 {
             var11 /= 2;
          }
 
-         class_4986 var12 = var3.method_9968((class_704)var2);
+         class_4986 var12 = var3.method_9968((PlayerEntity)var2);
          var12.field_25819++;
          boolean var13 = false;
 
@@ -295,12 +295,12 @@ public class class_2143 extends class_6249 {
       if (!var2.field_33055) {
          class_2134 var8 = method_10005(var1, var2);
          if (var8 != null) {
-            if (var3 instanceof class_704) {
-               class_704 var9 = (class_704)var3;
+            if (var3 instanceof PlayerEntity) {
+               PlayerEntity var9 = (PlayerEntity)var3;
                var8.method_9970(var9, var1);
             }
 
-            if (!var8.field_10686 && (var5 || var3 instanceof class_704 && ((class_704)var3).method_26568() == var1)) {
+            if (!var8.field_10686 && (var5 || var3 instanceof PlayerEntity && ((PlayerEntity)var3).method_26568() == var1)) {
                this.method_10016(var2, var3, var8);
             }
          }
@@ -309,12 +309,12 @@ public class class_2143 extends class_6249 {
 
    @Nullable
    @Override
-   public Packet<?> method_28525(ItemStack var1, World var2, class_704 var3) {
+   public Packet<?> method_28525(ItemStack var1, World var2, PlayerEntity var3) {
       return method_10005(var1, var2).method_9973(var1, var2, var3);
    }
 
    @Override
-   public void method_11236(ItemStack var1, World var2, class_704 var3) {
+   public void method_11236(ItemStack var1, World var2, PlayerEntity var3) {
       CompoundNBT var6 = var1.method_27990();
       if (var6 != null && var6.contains("map_scale_direction", 99)) {
          method_10008(var1, var2, var6.method_25947("map_scale_direction"));

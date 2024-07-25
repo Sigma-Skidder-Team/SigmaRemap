@@ -22,7 +22,7 @@ public class class_4407 extends class_3599 {
       this.field_21566 = var3;
       this.field_21565 = var4;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9560));
-      if (var2 != class_704.class) {
+      if (var2 != PlayerEntity.class) {
          this.field_21569 = new class_4931().method_22607((double)var3).method_22601().method_22603().method_22609();
       } else {
          this.field_21569 = new class_4931()
@@ -41,7 +41,7 @@ public class class_4407 extends class_3599 {
             this.field_21563 = this.field_21568.method_17809();
          }
 
-         if (this.field_21567 != class_704.class) {
+         if (this.field_21567 != PlayerEntity.class) {
             this.field_21563 = this.field_21568
                .world
                .<class_5834>method_25872(

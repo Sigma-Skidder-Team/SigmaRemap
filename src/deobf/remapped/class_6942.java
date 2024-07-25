@@ -156,7 +156,7 @@ public class class_6942 extends class_8218<class_7099> implements class_2593 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var2.field_33055) {
          class_4259 var9 = this.method_10767(var1, var2, var3);
          if (var9 != null) {

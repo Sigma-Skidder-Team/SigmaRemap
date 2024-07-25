@@ -190,7 +190,7 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       class_6910 var5 = super.method_26857(var1, var2);
       if (!var5.method_31662()) {
          if (!this.world.field_33055) {
@@ -250,7 +250,7 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public int method_26427(class_704 var1) {
+   public int method_26427(PlayerEntity var1) {
       return this.field_29915;
    }
 

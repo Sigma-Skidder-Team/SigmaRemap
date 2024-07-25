@@ -8,7 +8,7 @@ public class class_2853 extends class_8497 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
       if (var9.method_27960() != class_4897.field_24853) {
          return super.method_10777(var1, var2, var3, var4, var5, var6);
@@ -16,7 +16,7 @@ public class class_2853 extends class_8497 {
          if (!var2.field_33055) {
             Direction var10 = var6.method_43956();
             Direction var11 = var10.method_1029() != class_9249.field_47216 ? var10 : var4.method_37365().method_1046();
-            var2.method_43359((class_704)null, var3, class_463.field_2282, class_562.field_3322, 1.0F, 1.0F);
+            var2.method_43359((PlayerEntity)null, var3, class_463.field_2282, class_562.field_3322, 1.0F, 1.0F);
             var2.method_7513(var3, class_4783.field_23281.method_29260().method_10308(class_4888.field_24302, var11), 11);
             class_91 var12 = new class_91(
                var2,

@@ -74,18 +74,18 @@ public class class_8236 implements class_6867 {
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       return this.field_42302.method_31502(var1) && this.field_42303.method_31502(var1);
    }
 
    @Override
-   public void method_31501(class_704 var1) {
+   public void method_31501(PlayerEntity var1) {
       this.field_42302.method_31501(var1);
       this.field_42303.method_31501(var1);
    }
 
    @Override
-   public void method_31499(class_704 var1) {
+   public void method_31499(PlayerEntity var1) {
       this.field_42302.method_31499(var1);
       this.field_42303.method_31499(var1);
    }

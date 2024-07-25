@@ -32,7 +32,7 @@ public class class_2221 extends class_3599 {
          World var6 = this.field_11104.world;
          this.field_11103++;
          if (this.field_11103 == 10 && !this.field_11104.method_37378()) {
-            var6.method_43365((class_704)null, 1015, this.field_11104.method_37075(), 0);
+            var6.method_43365((PlayerEntity)null, 1015, this.field_11104.method_37075(), 0);
          }
 
          if (this.field_11103 == 20) {
@@ -42,7 +42,7 @@ public class class_2221 extends class_3599 {
             double var12 = var3.method_37080(0.5) - (0.5 + this.field_11104.method_37080(0.5));
             double var14 = var3.getPosZ() - (this.field_11104.getPosZ() + var9.field_7334 * 4.0);
             if (!this.field_11104.method_37378()) {
-               var6.method_43365((class_704)null, 1016, this.field_11104.method_37075(), 0);
+               var6.method_43365((PlayerEntity)null, 1016, this.field_11104.method_37075(), 0);
             }
 
             class_9053 var16 = new class_9053(var6, this.field_11104, var10, var12, var14);

@@ -26,7 +26,7 @@ public class class_2727 extends class_6414 {
    }
 
    @Override
-   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
       if (!var1.method_22567() && !var4.method_3186() && var3.<Boolean>method_10313(field_13316)) {
          method_12256(var1, var2);
       }
@@ -54,13 +54,13 @@ public class class_2727 extends class_6414 {
          class_1356 var5 = new class_1356(var0, (double)var1.method_12173() + 0.5, (double)var1.method_12165(), (double)var1.method_12185() + 0.5, var2);
          var0.method_7509(var5);
          var0.method_29528(
-            (class_704)null, var5.getPosX(), var5.method_37309(), var5.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
+            (PlayerEntity)null, var5.getPosX(), var5.method_37309(), var5.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
          );
       }
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
       class_2451 var10 = var9.method_27960();
       if (var10 != class_4897.field_25188 && var10 != class_4897.field_24352) {

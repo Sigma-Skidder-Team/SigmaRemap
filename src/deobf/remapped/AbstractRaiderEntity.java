@@ -20,10 +20,10 @@ public abstract class AbstractRaiderEntity extends class_4607 {
    @Override
    public void registerGoals() {
       super.registerGoals();
-      this.field_29916.method_3485(1, new class_9110<AbstractRaiderEntity>(this, this));
-      this.field_29916.method_3485(3, new class_3230<AbstractRaiderEntity>(this));
-      this.field_29916.method_3485(4, new class_3882(this, 1.05F, 1));
-      this.field_29916.method_3485(5, new class_6082(this, this));
+      this.goalSelector.addGoal(1, new class_9110<AbstractRaiderEntity>(this, this));
+      this.goalSelector.addGoal(3, new class_3230<AbstractRaiderEntity>(this));
+      this.goalSelector.addGoal(4, new class_3882(this, 1.05F, 1));
+      this.goalSelector.addGoal(5, new class_6082(this, this));
    }
 
    @Override
@@ -88,17 +88,17 @@ public abstract class AbstractRaiderEntity extends class_4607 {
 
          if (this.method_21359() && var5 == null && ((class_6331)this.world).method_28984(this.method_37075()) == null) {
             ItemStack var6 = this.method_26520(class_6943.field_35704);
-            class_704 var7 = null;
-            if (!(var4 instanceof class_704)) {
+            PlayerEntity var7 = null;
+            if (!(var4 instanceof PlayerEntity)) {
                if (var4 instanceof class_9408) {
                   class_9408 var8 = (class_9408)var4;
                   class_5834 var9 = var8.method_41207();
-                  if (var8.method_41215() && var9 instanceof class_704) {
-                     var7 = (class_704)var9;
+                  if (var8.method_41215() && var9 instanceof PlayerEntity) {
+                     var7 = (PlayerEntity)var9;
                   }
                }
             } else {
-               var7 = (class_704)var4;
+               var7 = (PlayerEntity)var4;
             }
 
             if (!var6.method_28022() && ItemStack.method_27982(var6, class_2452.method_11292()) && var7 != null) {

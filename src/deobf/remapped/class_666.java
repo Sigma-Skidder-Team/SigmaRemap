@@ -77,7 +77,7 @@ public class class_666 extends class_3599 {
                if (this.field_3690 > 1) {
                   float var13 = class_9299.method_42843(class_9299.method_42842(var5)) * 0.5F;
                   if (!this.field_3691.method_37378()) {
-                     this.field_3691.world.method_43365((class_704)null, 1018, this.field_3691.method_37075(), 0);
+                     this.field_3691.world.method_43365((PlayerEntity)null, 1018, this.field_3691.method_37075(), 0);
                   }
 
                   for (int var14 = 0; var14 < 1; var14++) {

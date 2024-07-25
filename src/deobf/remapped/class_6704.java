@@ -43,7 +43,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public boolean method_26887(class_704 var1) {
+   public boolean method_26887(PlayerEntity var1) {
       return !this.method_26920();
    }
 
@@ -176,7 +176,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       class_6910 var5 = super.method_26857(var1, var2);
       if (var5.method_31662()) {
          this.method_26883();
@@ -206,7 +206,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public int method_26427(class_704 var1) {
+   public int method_26427(PlayerEntity var1) {
       return this.field_29915;
    }
 

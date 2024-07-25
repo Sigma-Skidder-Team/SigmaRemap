@@ -47,8 +47,8 @@ public class class_6000 {
 
    public static CompoundNBT method_27394(Entity var0) {
       CompoundNBT var3 = var0.method_37258(new CompoundNBT());
-      if (var0 instanceof class_704) {
-         ItemStack var4 = ((class_704)var0).inventory.method_32403();
+      if (var0 instanceof PlayerEntity) {
+         ItemStack var4 = ((PlayerEntity)var0).inventory.method_32403();
          if (!var4.method_28022()) {
             var3.put("SelectedItem", var4.method_27998(new CompoundNBT()));
          }

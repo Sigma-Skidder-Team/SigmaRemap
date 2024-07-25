@@ -9,7 +9,7 @@ public final class class_5939 extends class_9446 {
       BlockPos var6 = var1.method_40142().method_6098(var5);
       class_6331 var7 = var1.method_40140();
       class_9399 var8 = new class_9399(var7, (double)var6.method_12173() + 0.5, (double)var6.method_12165(), (double)var6.method_12185() + 0.5);
-      EntityType.method_30458(var7, (class_704)null, var8, var2.method_27990());
+      EntityType.method_30458(var7, (PlayerEntity)null, var8, var2.method_27990());
       var8.rotationYaw = var5.method_1028();
       var7.method_7509(var8);
       var2.method_27970(1);

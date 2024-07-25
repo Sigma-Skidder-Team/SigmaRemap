@@ -17,17 +17,17 @@ public class class_9490 extends class_1173 implements class_7187 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(1, new class_787(this));
-      this.field_29916.method_3485(2, new class_216(this));
-      this.field_29916.method_3485(3, new class_6837<class_7617>(this, class_7617.class, 6.0F, 1.0, 1.2));
-      this.field_29916.method_3485(3, new class_6837<class_5583>(this, class_5583.class, 6.0F, 1.0, 1.2));
-      this.field_29916.method_3485(4, new class_9037(this, 1.0, false));
-      this.field_29916.method_3485(5, new class_2889(this, 0.8));
-      this.field_29916.method_3485(6, new class_4407(this, class_704.class, 8.0F));
-      this.field_29916.method_3485(6, new class_9691(this));
-      this.field_29908.method_3485(1, new class_4138<class_704>(this, class_704.class, true));
-      this.field_29908.method_3485(2, new class_8420(this));
+   public void registerGoals() {
+      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(2, new class_216(this));
+      this.goalSelector.addGoal(3, new class_6837<class_7617>(this, class_7617.class, 6.0F, 1.0, 1.2));
+      this.goalSelector.addGoal(3, new class_6837<class_5583>(this, class_5583.class, 6.0F, 1.0, 1.2));
+      this.goalSelector.addGoal(4, new class_9037(this, 1.0, false));
+      this.goalSelector.addGoal(5, new class_2889(this, 0.8));
+      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(6, new class_9691(this));
+      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
    }
 
    public static class_1313 method_43834() {
@@ -166,7 +166,7 @@ public class class_9490 extends class_1173 implements class_7187 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_25188) {
          return super.method_26857(var1, var2);

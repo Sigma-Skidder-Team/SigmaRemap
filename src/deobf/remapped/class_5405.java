@@ -39,7 +39,7 @@ public class class_5405 extends DamageSource {
 
    @Override
    public boolean method_28374() {
-      return this.field_27576 != null && this.field_27576 instanceof class_5834 && !(this.field_27576 instanceof class_704);
+      return this.field_27576 != null && this.field_27576 instanceof class_5834 && !(this.field_27576 instanceof PlayerEntity);
    }
 
    @Nullable

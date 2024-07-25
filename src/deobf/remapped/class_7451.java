@@ -174,8 +174,8 @@ public class class_7451 extends class_4641 {
          ItemStack var5 = this.method_33905();
          this.method_33912(ItemStack.EMPTY);
          if (this.world.method_29537().method_1285(class_291.field_1024)) {
-            if (var1 instanceof class_704) {
-               class_704 var6 = (class_704)var1;
+            if (var1 instanceof PlayerEntity) {
+               PlayerEntity var6 = (PlayerEntity)var1;
                if (var6.playerAbilities.isCreativeMode) {
                   this.method_33911(var5);
                   return;
@@ -311,7 +311,7 @@ public class class_7451 extends class_4641 {
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, Hand var2) {
+   public class_6910 method_37128(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       boolean var6 = !this.method_33905().method_28022();
       boolean var7 = !var5.method_28022();

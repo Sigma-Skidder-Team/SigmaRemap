@@ -75,7 +75,7 @@ public abstract class class_7812 extends class_2620 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (!var1.<Boolean>method_10313(field_39638)) {
          this.method_35400(var1, var2, var3);
          this.method_35403(var4, var2, var3, true);
@@ -91,7 +91,7 @@ public abstract class class_7812 extends class_2620 {
       var2.method_43367().method_14011(var3, this, this.method_35402());
    }
 
-   public void method_35403(class_704 var1, class_9379 var2, BlockPos var3, boolean var4) {
+   public void method_35403(PlayerEntity var1, class_9379 var2, BlockPos var3, boolean var4) {
       var2.method_43359(!var4 ? null : var1, var3, this.method_35399(var4), class_562.field_3322, 0.3F, !var4 ? 0.5F : 0.6F);
    }
 
@@ -129,7 +129,7 @@ public abstract class class_7812 extends class_2620 {
          if (!this.field_39629) {
             var2.method_7513(var3, var1.method_10308(field_39638, Boolean.valueOf(false)), 3);
             this.method_35404(var1, var2, var3);
-            this.method_35403((class_704)null, var2, var3, false);
+            this.method_35403((PlayerEntity)null, var2, var3, false);
          } else {
             this.method_35401(var1, var2, var3);
          }
@@ -150,7 +150,7 @@ public abstract class class_7812 extends class_2620 {
       if (var7 != var8) {
          var2.method_7513(var3, var1.method_10308(field_39638, Boolean.valueOf(var7)), 3);
          this.method_35404(var1, var2, var3);
-         this.method_35403((class_704)null, var2, var3, var7);
+         this.method_35403((PlayerEntity)null, var2, var3, var7);
       }
 
       if (var7) {

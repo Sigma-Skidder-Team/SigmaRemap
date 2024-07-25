@@ -28,7 +28,7 @@ public class class_2730 {
    private final DamageSource field_13324;
    private final class_7571 field_13333;
    private final List<BlockPos> field_13335 = Lists.newArrayList();
-   private final Map<class_704, class_1343> field_13331 = Maps.newHashMap();
+   private final Map<PlayerEntity, class_1343> field_13331 = Maps.newHashMap();
 
    public class_2730(World var1, Entity var2, double var3, double var5, double var7, float var9, List<BlockPos> var10) {
       this(var1, var2, var3, var5, var7, var9, false, class_7298.field_37311, var10);
@@ -174,8 +174,8 @@ public class class_2730 {
                   }
 
                   var35.method_37215(var35.method_37098().method_6214(var38 * var50, var40 * var50, var42 * var50));
-                  if (var35 instanceof class_704) {
-                     class_704 var52 = (class_704)var35;
+                  if (var35 instanceof PlayerEntity) {
+                     PlayerEntity var52 = (PlayerEntity)var35;
                      if (!var52.method_37221() && (!var52.method_3186() || !var52.playerAbilities.isFlying)) {
                         this.field_13331.put(var52, new class_1343(var38 * var48, var40 * var48, var42 * var48));
                      }
@@ -282,7 +282,7 @@ public class class_2730 {
       return this.field_13324;
    }
 
-   public Map<class_704, class_1343> method_12267() {
+   public Map<PlayerEntity, class_1343> method_12267() {
       return this.field_13331;
    }
 

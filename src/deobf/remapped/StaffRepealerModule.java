@@ -37,7 +37,7 @@ public class StaffRepealerModule extends Module {
                int var3 = 0;
 
                for (class_5902 var5x : var5.method_35609()) {
-                  class_704 var6 = client.theWorld.method_25862(var5x.method_27005().getId());
+                  PlayerEntity var6 = client.theWorld.method_25862(var5x.method_27005().getId());
                   if (var6 == null && var5x.method_27003() != null) {
                      class_314.method_1443("Detected an anomaly " + var5x + var5x.method_27005());
                   } else {

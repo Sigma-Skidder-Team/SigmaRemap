@@ -9,7 +9,7 @@ public class class_6316 extends class_3599 {
    private static final class_4931 field_32259 = new class_4931().method_22607(10.0).method_22601().method_22603();
    private final class_3845 field_32260;
    private final double field_32265;
-   private class_704 field_32263;
+   private PlayerEntity field_32263;
    private int field_32264;
    private final Set<class_2451> field_32261;
 

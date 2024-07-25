@@ -14,9 +14,9 @@ public class class_3683 extends class_3954<class_6946> {
    private final class_6946 field_18049 = new class_6946(this, 2, 2);
    private final class_7143 field_18056 = new class_7143();
    public final boolean field_18052;
-   private final class_704 field_18051;
+   private final PlayerEntity field_18051;
 
-   public class_3683(class_7051 var1, boolean var2, class_704 var3) {
+   public class_3683(class_7051 var1, boolean var2, PlayerEntity var3) {
       super((class_4165<?>)null, 0);
       this.field_18052 = var2;
       this.field_18051 = var3;
@@ -68,7 +68,7 @@ public class class_3683 extends class_3954<class_6946> {
    }
 
    @Override
-   public void method_18876(class_704 var1) {
+   public void method_18876(PlayerEntity var1) {
       super.method_18876(var1);
       this.field_18056.method_24975();
       if (!var1.world.field_33055) {
@@ -77,12 +77,12 @@ public class class_3683 extends class_3954<class_6946> {
    }
 
    @Override
-   public boolean method_18861(class_704 var1) {
+   public boolean method_18861(PlayerEntity var1) {
       return true;
    }
 
    @Override
-   public ItemStack method_18874(class_704 var1, int var2) {
+   public ItemStack method_18874(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {

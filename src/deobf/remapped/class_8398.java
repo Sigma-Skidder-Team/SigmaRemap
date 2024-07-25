@@ -17,7 +17,7 @@ public class class_8398 extends class_3757 {
       StringTextComponent.EMPTY, StringTextComponent.EMPTY, StringTextComponent.EMPTY, StringTextComponent.EMPTY
    };
    private boolean field_42973 = true;
-   private class_704 field_42971;
+   private PlayerEntity field_42971;
    private final class_7107[] field_42974 = new class_7107[4];
    private class_9077 field_42970 = class_9077.field_46496;
 
@@ -106,15 +106,15 @@ public class class_8398 extends class_3757 {
       }
    }
 
-   public void method_38675(class_704 var1) {
+   public void method_38675(PlayerEntity var1) {
       this.field_42971 = var1;
    }
 
-   public class_704 method_38679() {
+   public PlayerEntity method_38679() {
       return this.field_42971;
    }
 
-   public boolean method_38674(class_704 var1) {
+   public boolean method_38674(PlayerEntity var1) {
       for (ITextComponent var7 : this.field_42972) {
          Style var8 = var7 != null ? var7.getStyle() : null;
          if (var8 != null && var8.getClickEvent() != null) {

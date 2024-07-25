@@ -110,7 +110,7 @@ public class BoatEntity extends Entity {
          this.method_42098(10);
          this.method_42099(this.method_42109() + var2 * 10.0F);
          this.method_37138();
-         boolean var5 = var1.method_28372() instanceof class_704 && ((class_704)var1.method_28372()).playerAbilities.isCreativeMode;
+         boolean var5 = var1.method_28372() instanceof PlayerEntity && ((PlayerEntity)var1.method_28372()).playerAbilities.isCreativeMode;
          if (var5 || this.method_42109() > 40.0F) {
             if (!var5 && this.world.method_29537().method_1285(class_291.field_1024)) {
                this.method_37312(this.method_42090());
@@ -245,7 +245,7 @@ public class BoatEntity extends Entity {
       if (!this.canPassengerSteer()) {
          this.method_37215(class_1343.field_7335);
       } else {
-         if (this.method_37114().isEmpty() || !(this.method_37114().get(0) instanceof class_704)) {
+         if (this.method_37114().isEmpty() || !(this.method_37114().get(0) instanceof PlayerEntity)) {
             this.method_42087(false, false);
          }
 
@@ -274,7 +274,7 @@ public class BoatEntity extends Entity {
                   double var8 = var3 != 1 ? -var5.field_7336 : var5.field_7336;
                   this.world
                      .method_29528(
-                        (class_704)null,
+                        (PlayerEntity)null,
                         this.getPosX() + var6,
                         this.method_37309(),
                         this.getPosZ() + var8,
@@ -293,7 +293,7 @@ public class BoatEntity extends Entity {
       this.method_37097();
       List var11 = this.world.method_25867(this, this.method_37241().method_18899(0.2F, -0.01F, 0.2F), class_3572.method_16616(this));
       if (!var11.isEmpty()) {
-         boolean var12 = !this.world.field_33055 && !(this.method_37259() instanceof class_704);
+         boolean var12 = !this.world.field_33055 && !(this.method_37259() instanceof PlayerEntity);
 
          for (int var13 = 0; var13 < var11.size(); var13++) {
             Entity var10 = (Entity)var11.get(var13);
@@ -304,7 +304,7 @@ public class BoatEntity extends Entity {
                   && var10.method_37086() < this.method_37086()
                   && var10 instanceof class_5834
                   && !(var10 instanceof class_1829)
-                  && !(var10 instanceof class_704)) {
+                  && !(var10 instanceof PlayerEntity)) {
                   var10.method_37353(this);
                } else {
                   this.method_37183(var10);
@@ -328,7 +328,7 @@ public class BoatEntity extends Entity {
                this.method_42102(0);
                class_1343 var5 = this.method_37098();
                if (!this.field_46818) {
-                  this.method_37214(var5.field_7336, !this.method_37071(class_704.class) ? 0.6 : 2.7, var5.field_7334);
+                  this.method_37214(var5.field_7336, !this.method_37071(PlayerEntity.class) ? 0.6 : 2.7, var5.field_7334);
                } else {
                   this.method_37215(var5.method_6214(0.0, -0.7, 0.0));
                   this.method_37305();
@@ -571,7 +571,7 @@ public class BoatEntity extends Entity {
                   if (this.field_46802 != class_1038.field_5730) {
                      if (this.field_46802 == class_1038.field_5729) {
                         this.field_46801 = this.field_46799;
-                        if (this.method_37259() instanceof class_704) {
+                        if (this.method_37259() instanceof PlayerEntity) {
                            this.field_46799 /= 2.0F;
                         }
                      }
@@ -726,7 +726,7 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, Hand var2) {
+   public class_6910 method_37128(PlayerEntity var1, Hand var2) {
       if (!var1.method_3236()) {
          if (!(this.field_46794 < 60.0F)) {
             return class_6910.field_35521;

@@ -20,13 +20,13 @@ public class class_378 extends class_5886 implements class_1869 {
 
    @Override
    public void registerGoals() {
-      this.field_29916.method_3485(1, new class_9612(this));
-      this.field_29916.method_3485(2, new class_3282(this));
-      this.field_29916.method_3485(3, new class_4574(this));
-      this.field_29916.method_3485(5, new class_9836(this));
-      this.field_29908
-         .method_3485(1, new class_4138<class_704>(this, class_704.class, 10, true, false, var1 -> Math.abs(var1.method_37309() - this.method_37309()) <= 4.0));
-      this.field_29908.method_3485(3, new class_4138<class_8127>(this, class_8127.class, true));
+      this.goalSelector.addGoal(1, new class_9612(this));
+      this.goalSelector.addGoal(2, new class_3282(this));
+      this.goalSelector.addGoal(3, new class_4574(this));
+      this.goalSelector.addGoal(5, new class_9836(this));
+      this.targetSelector
+         .addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.method_37309() - this.method_37309()) <= 4.0));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
    }
 
    @Override
@@ -189,7 +189,7 @@ public class class_378 extends class_5886 implements class_1869 {
    }
 
    @Override
-   public void method_37347(class_704 var1) {
+   public void method_37347(PlayerEntity var1) {
       if (this.method_1857()) {
          this.method_1856(var1);
       }

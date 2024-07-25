@@ -24,7 +24,7 @@ public class MurdererModule extends Module {
             for (Pair var6 : var4.method_41363()) {
                if (var6.getSecond() != null
                   && ((ItemStack)var6.getSecond()).method_27960() instanceof class_2235
-                  && client.theWorld.method_29534(var4.method_41364()) instanceof class_704) {
+                  && client.theWorld.method_29534(var4.method_41364()) instanceof PlayerEntity) {
                   Entity var7 = client.theWorld.method_29534(var4.method_41364());
                   if (!this.field_9548.toString().equalsIgnoreCase(var7.method_45509().getString())) {
                      if (this.method_42007("Chat Message")) {

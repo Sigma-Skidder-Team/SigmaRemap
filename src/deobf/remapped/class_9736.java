@@ -6,7 +6,7 @@ public class class_9736 extends class_7934 {
    }
 
    @Override
-   public boolean method_35895(class_704 var1) {
+   public boolean method_35895(PlayerEntity var1) {
       return super.method_35895(var1) && this.method_35884() ? this.method_35898().method_28021("CustomCreativeLock") == null : !this.method_35884();
    }
 }

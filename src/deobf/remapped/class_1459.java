@@ -72,7 +72,7 @@ public class class_1459 implements class_6867 {
    }
 
    @Override
-   public boolean method_31502(class_704 var1) {
+   public boolean method_31502(PlayerEntity var1) {
       return this.field_7862.method_978() == var1;
    }
 

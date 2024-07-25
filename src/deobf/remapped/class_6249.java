@@ -15,7 +15,7 @@ public class class_6249 extends class_2451 {
    }
 
    @Nullable
-   public Packet<?> method_28525(ItemStack var1, World var2, class_704 var3) {
+   public Packet<?> method_28525(ItemStack var1, World var2, PlayerEntity var3) {
       return null;
    }
 }

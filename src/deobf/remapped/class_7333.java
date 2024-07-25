@@ -4,7 +4,7 @@ public class class_7333 extends class_4088 {
    private static String[] field_37485;
    public final class_2831<ItemStack> field_37486 = class_2831.<ItemStack>method_12874();
 
-   public class_7333(class_704 var1) {
+   public class_7333(PlayerEntity var1) {
       super((class_4165<?>)null, 0);
       class_7051 var4 = var1.inventory;
 
@@ -22,7 +22,7 @@ public class class_7333 extends class_4088 {
    }
 
    @Override
-   public boolean method_18861(class_704 var1) {
+   public boolean method_18861(PlayerEntity var1) {
       return true;
    }
 
@@ -50,7 +50,7 @@ public class class_7333 extends class_4088 {
    }
 
    @Override
-   public ItemStack method_18874(class_704 var1, int var2) {
+   public ItemStack method_18874(PlayerEntity var1, int var2) {
       if (var2 >= this.field_19926.size() - 9 && var2 < this.field_19926.size()) {
          class_7934 var5 = this.field_19926.get(var2);
          if (var5 != null && var5.method_35884()) {

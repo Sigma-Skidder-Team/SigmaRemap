@@ -8,7 +8,7 @@ public final class class_3783 extends class_4088 {
    }
 
    @Override
-   public boolean method_18861(class_704 var1) {
+   public boolean method_18861(PlayerEntity var1) {
       return false;
    }
 }

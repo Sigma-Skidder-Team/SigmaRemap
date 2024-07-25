@@ -2,7 +2,7 @@ package remapped;
 
 public class class_6099 extends class_7228 {
    private static String[] field_31217;
-   private class_704 field_31219;
+   private PlayerEntity field_31219;
    private final class_5583 field_31218;
 
    public class_6099(class_5583 var1, double var2, class_8137 var4, boolean var5) {

@@ -36,7 +36,7 @@ public class class_4034 extends class_4088 {
    }
 
    @Override
-   public void method_18876(class_704 var1) {
+   public void method_18876(PlayerEntity var1) {
       super.method_18876(var1);
       if (!var1.world.field_33055) {
          ItemStack var4 = this.field_19587.method_35899(this.field_19587.method_35897());
@@ -47,7 +47,7 @@ public class class_4034 extends class_4088 {
    }
 
    @Override
-   public boolean method_18861(class_704 var1) {
+   public boolean method_18861(PlayerEntity var1) {
       return method_18872(this.field_19591, var1, class_4783.field_23862);
    }
 
@@ -58,7 +58,7 @@ public class class_4034 extends class_4088 {
    }
 
    @Override
-   public ItemStack method_18874(class_704 var1, int var2) {
+   public ItemStack method_18874(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {

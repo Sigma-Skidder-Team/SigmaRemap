@@ -47,25 +47,25 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(0, new class_4581(this, this, 1.4F, true));
-      this.field_29916.method_3485(1, new class_7968(this, null));
-      this.field_29916.method_3485(2, new class_9513(this, 1.0));
-      this.field_29916.method_3485(3, new class_7228(this, 1.25, class_8137.method_37022(class_391.field_1607), false));
+   public void registerGoals() {
+      this.goalSelector.addGoal(0, new class_4581(this, this, 1.4F, true));
+      this.goalSelector.addGoal(1, new class_7968(this, null));
+      this.goalSelector.addGoal(2, new class_9513(this, 1.0));
+      this.goalSelector.addGoal(3, new class_7228(this, 1.25, class_8137.method_37022(class_391.field_1607), false));
       this.field_45171 = new class_6694(this);
-      this.field_29916.method_3485(4, this.field_45171);
-      this.field_29916.method_3485(5, new class_8676(this, 1.25));
-      this.field_29916.method_3485(5, new class_2898(this, null));
+      this.goalSelector.addGoal(4, this.field_45171);
+      this.goalSelector.addGoal(5, new class_8676(this, 1.25));
+      this.goalSelector.addGoal(5, new class_2898(this, null));
       this.field_45155 = new class_949(this);
-      this.field_29916.method_3485(5, this.field_45155);
+      this.goalSelector.addGoal(5, this.field_45155);
       this.field_45163 = new class_3494(this);
-      this.field_29916.method_3485(6, this.field_45163);
-      this.field_29916.method_3485(7, new class_4901(this, null));
-      this.field_29916.method_3485(8, new class_5650(this));
-      this.field_29916.method_3485(9, new class_787(this));
-      this.field_29908.method_3485(1, new class_2591(this, this).method_38757(new Class[0]));
-      this.field_29908.method_3485(2, new class_486(this));
-      this.field_29908.method_3485(3, new class_6474<class_8829>(this, true));
+      this.goalSelector.addGoal(6, this.field_45163);
+      this.goalSelector.addGoal(7, new class_4901(this, null));
+      this.goalSelector.addGoal(8, new class_5650(this));
+      this.goalSelector.addGoal(9, new class_787(this));
+      this.targetSelector.addGoal(1, new class_2591(this, this).setCallsForHelp(new Class[0]));
+      this.targetSelector.addGoal(2, new class_486(this));
+      this.targetSelector.addGoal(3, new class_6474<class_8829>(this, true));
    }
 
    @Override

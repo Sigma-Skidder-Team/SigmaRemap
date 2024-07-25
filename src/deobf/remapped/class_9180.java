@@ -27,7 +27,7 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
          double var9 = (double)var5 + 0.5;
          this.field_18364
             .method_29528(
-               (class_704)null,
+               (PlayerEntity)null,
                var7,
                (double)var4 + 0.5,
                var9,
@@ -56,7 +56,7 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
             double var13 = (double)var5 + 0.5;
             this.field_18364
                .method_29528(
-                  (class_704)null,
+                  (PlayerEntity)null,
                   var15,
                   (double)var4 + 0.5,
                   var13,
@@ -99,7 +99,7 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
       this.field_18364.method_29521(this.field_18358, class_4783.field_23492, 1, this.field_46974);
    }
 
-   public boolean method_42317(class_704 var1) {
+   public boolean method_42317(PlayerEntity var1) {
       return this.field_18364.method_28260(this.field_18358) == this
          ? !(
             var1.method_37273(

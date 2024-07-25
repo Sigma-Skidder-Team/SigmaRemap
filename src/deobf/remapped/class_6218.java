@@ -20,7 +20,7 @@ public class class_6218 extends class_5877 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       if (var4.playerAbilities.allowEdit) {
          var2.method_7513(var3, var1.method_10317(field_31756), 3);
          return class_6910.method_31659(var2.field_33055);

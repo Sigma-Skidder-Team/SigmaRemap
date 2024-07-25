@@ -32,17 +32,17 @@ public interface class_9379 extends class_582, class_2970 {
    default void method_43369(BlockPos var1, class_6414 var2) {
    }
 
-   void method_43359(class_704 var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6);
+   void method_43359(PlayerEntity var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6);
 
    void method_43361(class_5079 var1, double var2, double var4, double var6, double var8, double var10, double var12);
 
-   void method_43365(class_704 var1, int var2, BlockPos var3, int var4);
+   void method_43365(PlayerEntity var1, int var2, BlockPos var3, int var4);
 
    default int method_43371() {
       return this.method_22572().method_40236();
    }
 
    default void method_43364(int var1, BlockPos var2, int var3) {
-      this.method_43365((class_704)null, var1, var2, var3);
+      this.method_43365((PlayerEntity)null, var1, var2, var3);
    }
 }

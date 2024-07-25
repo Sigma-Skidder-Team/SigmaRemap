@@ -2,10 +2,10 @@ package remapped;
 
 public class RidingMinecartTickableSound extends class_6165 {
    private static String[] field_45865;
-   private final class_704 field_45864;
+   private final PlayerEntity field_45864;
    private final AbstractMinecartEntity field_45863;
 
-   public RidingMinecartTickableSound(class_704 var1, AbstractMinecartEntity var2) {
+   public RidingMinecartTickableSound(PlayerEntity var1, AbstractMinecartEntity var2) {
       super(class_463.field_2715, class_562.field_3328);
       this.field_45864 = var1;
       this.field_45863 = var2;

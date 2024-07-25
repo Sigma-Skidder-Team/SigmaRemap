@@ -57,11 +57,11 @@ public class class_314 {
       field_1158.method_8614().sendPacket(new class_3211(var0));
    }
 
-   public static List<class_704> method_1435() {
+   public static List<PlayerEntity> method_1435() {
       ArrayList var2 = new ArrayList();
       field_1158.theWorld.field_568.forEach((var1, var2x) -> {
-         if (var2x instanceof class_704) {
-            var2.add((class_704)var2x);
+         if (var2x instanceof PlayerEntity) {
+            var2.add((PlayerEntity)var2x);
          }
       });
       return var2;
@@ -787,7 +787,7 @@ public class class_314 {
    }
 
    public static void method_1403() {
-      if (field_1158.getRenderViewEntity() instanceof class_704 && SigmaMainClass.getInstance().getGUIManager().method_31000()) {
+      if (field_1158.getRenderViewEntity() instanceof PlayerEntity && SigmaMainClass.getInstance().getGUIManager().method_31000()) {
          if (field_1158.gameRenderer.field_40620 != null) {
             field_1158.gameRenderer.field_40620.close();
          }
@@ -900,7 +900,7 @@ public class class_314 {
 
    public static class_9374 method_1426(Entity var0) {
       if (var0 instanceof class_5834) {
-         if (!(var0 instanceof class_704)) {
+         if (!(var0 instanceof PlayerEntity)) {
             return !(var0 instanceof class_5886) && !(var0 instanceof class_1173) && !(var0 instanceof class_378) && !(var0 instanceof class_516)
                ? class_9374.field_47923
                : class_9374.field_47924;
@@ -1034,20 +1034,20 @@ public class class_314 {
                return false;
             } else if (var0 instanceof class_9399) {
                return false;
-            } else if (!var1 && var0 instanceof class_704) {
+            } else if (!var1 && var0 instanceof PlayerEntity) {
                return false;
-            } else if (var0 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var0)) {
+            } else if (var0 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var0)) {
                return false;
             } else if (!var3 && var0.method_37109()) {
                return false;
-            } else if (!var2 && !(var0 instanceof class_704)) {
+            } else if (!var2 && !(var0 instanceof PlayerEntity)) {
                return false;
             } else if (field_1158.thePlayer.method_37243() != null && field_1158.thePlayer.method_37243().equals(var0)) {
                return false;
             } else {
                return !var0.method_37367()
-                  ? !(var0 instanceof class_704)
-                     || !class_5876.method_26760((class_704)var0)
+                  ? !(var0 instanceof PlayerEntity)
+                     || !class_5876.method_26760((PlayerEntity)var0)
                      || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()
                   : false;
             }

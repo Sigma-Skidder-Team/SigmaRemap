@@ -36,12 +36,12 @@ public class class_9629 extends class_9310 {
    @Override
    public void registerGoals() {
       super.registerGoals();
-      this.field_29916.method_3485(1, new class_518(this, 2.0));
-      this.field_29908.method_3485(1, new class_3949(this, this));
+      this.goalSelector.addGoal(1, new class_518(this, 2.0));
+      this.targetSelector.addGoal(1, new class_3949(this, this));
    }
 
    @Override
-   public void method_19039(class_704 var1) {
+   public void method_19039(PlayerEntity var1) {
       Entity var4 = this.method_26922();
       if (!(var4 instanceof class_6862)) {
          super.method_19039(var1);

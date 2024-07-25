@@ -143,7 +143,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.field_9487;
    }
 
-   public float method_8311(class_704 var1, class_6163 var2, BlockPos var3) {
+   public float method_8311(PlayerEntity var1, class_6163 var2, BlockPos var3) {
       return this.method_8360().method_10799(this.method_8336(), var1, var2, var3);
    }
 
@@ -282,11 +282,11 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.method_8360().method_10796(this.method_8336(), var1);
    }
 
-   public class_6910 method_8322(World var1, class_704 var2, Hand var3, class_9529 var4) {
+   public class_6910 method_8322(World var1, PlayerEntity var2, Hand var3, class_9529 var4) {
       return this.method_8360().method_10777(this.method_8336(), var1, var4.method_43955(), var2, var3, var4);
    }
 
-   public void method_8307(World var1, BlockPos var2, class_704 var3) {
+   public void method_8307(World var1, BlockPos var2, PlayerEntity var3) {
       this.method_8360().method_10791(this.method_8336(), var1, var2, var3);
    }
 

@@ -24,7 +24,7 @@ public class class_4337 extends class_956 {
       for (class_5834 var7 : var4) {
          class_7666 var8 = (class_7666)var7;
 
-         for (class_704 var10 : var5) {
+         for (PlayerEntity var10 : var5) {
             int var11 = var8.method_34691(var10);
             if (var11 <= -100) {
                this.field_21083 = var10;
@@ -34,7 +34,7 @@ public class class_4337 extends class_956 {
 
       return this.field_21083 == null
          ? false
-         : !(this.field_21083 instanceof class_704) || !this.field_21083.method_37221() && !((class_704)this.field_21083).method_3186();
+         : !(this.field_21083 instanceof PlayerEntity) || !this.field_21083.method_37221() && !((PlayerEntity)this.field_21083).method_3186();
    }
 
    @Override

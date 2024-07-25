@@ -31,20 +31,20 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
-      this.field_29916.method_3485(0, new class_787(this));
-      this.field_29916.method_3485(1, new class_6677(this));
-      this.field_29916.method_3485(1, new class_9493(this));
-      this.field_29916.method_3485(4, new class_8676(this, 1.25));
-      this.field_29916.method_3485(5, new class_8285(this, 1.0));
-      this.field_29916.method_3485(6, new class_4407(this, class_704.class, 6.0F));
-      this.field_29916.method_3485(7, new class_9691(this));
-      this.field_29908.method_3485(1, new class_9867(this));
-      this.field_29908.method_3485(2, new class_9724(this));
-      this.field_29908.method_3485(3, new class_4138<class_704>(this, class_704.class, 10, true, false, this::method_28534));
-      this.field_29908.method_3485(4, new class_4138<class_5542>(this, class_5542.class, 10, true, true, (Predicate<class_5834>)null));
-      this.field_29908.method_3485(5, new class_6474<class_9668>(this, false));
+   public void registerGoals() {
+      super.registerGoals();
+      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(1, new class_6677(this));
+      this.goalSelector.addGoal(1, new class_9493(this));
+      this.goalSelector.addGoal(4, new class_8676(this, 1.25));
+      this.goalSelector.addGoal(5, new class_8285(this, 1.0));
+      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new class_9691(this));
+      this.targetSelector.addGoal(1, new class_9867(this));
+      this.targetSelector.addGoal(2, new class_9724(this));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method_28534));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<class_5542>(this, class_5542.class, 10, true, true, (Predicate<class_5834>)null));
+      this.targetSelector.addGoal(5, new class_6474<class_9668>(this, false));
    }
 
    public static class_1313 method_44713() {

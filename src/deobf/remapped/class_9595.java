@@ -5,7 +5,7 @@ public class class_9595 extends class_4407 {
    private final class_405 field_48899;
 
    public class_9595(class_405 var1) {
-      super(var1, class_704.class, 8.0F);
+      super(var1, PlayerEntity.class, 8.0F);
       this.field_48899 = var1;
    }
 

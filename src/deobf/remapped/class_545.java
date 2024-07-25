@@ -32,7 +32,7 @@ public class class_545 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
       if (var5 == Hand.MAIN_HAND && !method_2639(var9) && method_2639(var4.method_26617(Hand.OFF_HAND))) {
          return class_6910.field_35521;
@@ -56,7 +56,7 @@ public class class_545 extends class_6414 {
                if (var10.method_43259() != var2.method_29545() || !var10.method_43279().equals(var3)) {
                   var10.method_43248(var2.method_29545(), var3, 0.0F, false, true);
                   var2.method_29528(
-                     (class_704)null,
+                     (PlayerEntity)null,
                      (double)var3.method_12173() + 0.5,
                      (double)var3.method_12165() + 0.5,
                      (double)var3.method_12185() + 0.5,
@@ -128,7 +128,7 @@ public class class_545 extends class_6414 {
    public static void method_2634(World var0, BlockPos var1, class_2522 var2) {
       var0.method_7513(var1, var2.method_10308(field_3268, Integer.valueOf(var2.<Integer>method_10313(field_3268) + 1)), 3);
       var0.method_29528(
-         (class_704)null,
+         (PlayerEntity)null,
          (double)var1.method_12173() + 0.5,
          (double)var1.method_12165() + 0.5,
          (double)var1.method_12185() + 0.5,
@@ -144,7 +144,7 @@ public class class_545 extends class_6414 {
       if (var1.<Integer>method_10313(field_3268) != 0) {
          if (var4.nextInt(100) == 0) {
             var2.method_29528(
-               (class_704)null,
+               (PlayerEntity)null,
                (double)var3.method_12173() + 0.5,
                (double)var3.method_12165() + 0.5,
                (double)var3.method_12185() + 0.5,

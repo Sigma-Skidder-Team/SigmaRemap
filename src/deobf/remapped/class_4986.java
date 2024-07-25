@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 public class class_4986 {
    private static String[] field_25822;
-   public final class_704 field_25824;
+   public final PlayerEntity field_25824;
    private boolean field_25821;
    private int field_25825;
    private int field_25818;
@@ -13,7 +13,7 @@ public class class_4986 {
    private int field_25817;
    public int field_25819;
 
-   public class_4986(class_2134 var1, class_704 var2) {
+   public class_4986(class_2134 var1, PlayerEntity var2) {
       this.field_25820 = var1;
       this.field_25821 = true;
       this.field_25816 = 127;

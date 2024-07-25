@@ -22,17 +22,17 @@ public class class_7272 extends class_5467 {
 
    @Override
    public void registerGoals() {
-      this.field_29916.method_3485(1, new class_787(this));
-      this.field_29916.method_3485(1, new class_229(this, 2.2));
-      this.field_29916.method_3485(2, new class_9513(this, 0.8));
-      this.field_29916
-         .method_3485(3, new class_7228(this, 1.0, class_8137.method_37019(class_4897.field_25136, class_4897.field_25070, class_4783.field_23410), false));
-      this.field_29916.method_3485(4, new class_8695<class_704>(this, class_704.class, 8.0F, 2.2, 2.2));
-      this.field_29916.method_3485(4, new class_8695<class_9408>(this, class_9408.class, 10.0F, 2.2, 2.2));
-      this.field_29916.method_3485(4, new class_8695<class_1173>(this, class_1173.class, 4.0F, 2.2, 2.2));
-      this.field_29916.method_3485(5, new class_805(this));
-      this.field_29916.method_3485(6, new class_2889(this, 0.6));
-      this.field_29916.method_3485(11, new class_4407(this, class_704.class, 10.0F));
+      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(1, new class_229(this, 2.2));
+      this.goalSelector.addGoal(2, new class_9513(this, 0.8));
+      this.goalSelector
+         .addGoal(3, new class_7228(this, 1.0, class_8137.method_37019(class_4897.field_25136, class_4897.field_25070, class_4783.field_23410), false));
+      this.goalSelector.addGoal(4, new class_8695<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
+      this.goalSelector.addGoal(4, new class_8695<class_9408>(this, class_9408.class, 10.0F, 2.2, 2.2));
+      this.goalSelector.addGoal(4, new class_8695<class_1173>(this, class_1173.class, 4.0F, 2.2, 2.2));
+      this.goalSelector.addGoal(5, new class_805(this));
+      this.goalSelector.addGoal(6, new class_2889(this, 0.6));
+      this.goalSelector.addGoal(11, new class_4407(this, PlayerEntity.class, 10.0F));
    }
 
    @Override
@@ -278,10 +278,10 @@ public class class_7272 extends class_5467 {
    public void method_33231(int var1) {
       if (var1 == 99) {
          this.method_26561(class_7331.field_37473).method_45006(8.0);
-         this.field_29916.method_3485(4, new class_4810(this));
-         this.field_29908.method_3485(1, new class_8420(this).method_38757());
-         this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, true));
-         this.field_29908.method_3485(2, new class_4138<class_9408>(this, class_9408.class, true));
+         this.goalSelector.addGoal(4, new class_4810(this));
+         this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
+         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<class_9408>(this, class_9408.class, true));
          if (!this.method_45507()) {
             this.method_37303(new TranslationTextComponent(Util.createTranslationKey("entity", field_37238)));
          }

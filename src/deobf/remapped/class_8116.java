@@ -162,7 +162,7 @@ public abstract class class_8116 implements class_5801 {
       return this.field_41601;
    }
 
-   public class_6910 method_36933(class_704 var1) {
+   public class_6910 method_36933(PlayerEntity var1) {
       if (var1.method_3184()) {
          if (var1.method_37084().field_33055) {
             var1.method_3243(this);

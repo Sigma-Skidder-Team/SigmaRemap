@@ -14,7 +14,7 @@ public class class_5101 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48752);
       if (var7.method_33990() == class_1430.field_7721) {

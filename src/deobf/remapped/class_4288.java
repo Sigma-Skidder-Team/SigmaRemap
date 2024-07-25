@@ -19,7 +19,7 @@ public class class_4288 implements class_1429 {
 
    @Override
    public void method_6572(CompoundNBT var1) throws CommandSyntaxException {
-      if (!(this.field_20811 instanceof class_704)) {
+      if (!(this.field_20811 instanceof PlayerEntity)) {
          UUID var4 = this.field_20811.method_37328();
          this.field_20811.method_37393(var1);
          this.field_20811.method_37377(var4);

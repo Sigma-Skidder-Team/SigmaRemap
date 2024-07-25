@@ -48,7 +48,7 @@ public class class_6734 extends class_4109 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (this.method_19043()) {
          if (!this.method_26449()) {

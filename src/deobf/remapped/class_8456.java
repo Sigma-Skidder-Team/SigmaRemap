@@ -26,8 +26,8 @@ public class class_8456 extends class_5837 {
    public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       if (var1.method_27960() == class_4897.field_24749) {
          Entity var5 = var2.<Entity>method_12698(this.field_43232.method_26666());
-         if (var5 instanceof class_704) {
-            GameProfile var6 = ((class_704)var5).method_3247();
+         if (var5 instanceof PlayerEntity) {
+            GameProfile var6 = ((PlayerEntity)var5).method_3247();
             var1.method_27994().put("SkullOwner", class_4338.method_20177(new CompoundNBT(), var6));
          }
       }

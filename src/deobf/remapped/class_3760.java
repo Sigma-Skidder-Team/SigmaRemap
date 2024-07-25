@@ -158,13 +158,13 @@ public class class_3760 extends class_6414 {
 
    private void method_17423(World var1, BlockPos var2, boolean var3, boolean var4, boolean var5, boolean var6) {
       if (var4 && !var6) {
-         var1.method_43359((class_704)null, var2, class_463.field_2588, class_562.field_3322, 0.4F, 0.6F);
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2588, class_562.field_3322, 0.4F, 0.6F);
       } else if (!var4 && var6) {
-         var1.method_43359((class_704)null, var2, class_463.field_2873, class_562.field_3322, 0.4F, 0.5F);
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2873, class_562.field_3322, 0.4F, 0.5F);
       } else if (var3 && !var5) {
-         var1.method_43359((class_704)null, var2, class_463.field_2480, class_562.field_3322, 0.4F, 0.7F);
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2480, class_562.field_3322, 0.4F, 0.7F);
       } else if (!var3 && var5) {
-         var1.method_43359((class_704)null, var2, class_463.field_2628, class_562.field_3322, 0.4F, 1.2F / (var1.field_33033.nextFloat() * 0.2F + 0.9F));
+         var1.method_43359((PlayerEntity)null, var2, class_463.field_2628, class_562.field_3322, 0.4F, 1.2F / (var1.field_33033.nextFloat() * 0.2F + 0.9F));
       }
    }
 

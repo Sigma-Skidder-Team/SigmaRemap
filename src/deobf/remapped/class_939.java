@@ -38,7 +38,7 @@ public class class_939 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
       if (!var9.method_28022()) {
          int var10 = var1.<Integer>method_10313(field_4787);
@@ -57,7 +57,7 @@ public class class_939 extends class_6414 {
                            }
                         }
 
-                        var2.method_43359((class_704)null, var3, class_463.field_2720, class_562.field_3322, 1.0F, 1.0F);
+                        var2.method_43359((PlayerEntity)null, var3, class_463.field_2720, class_562.field_3322, 1.0F, 1.0F);
                         this.method_4060(var2, var3, var1, var10 + 1);
                      }
 
@@ -136,7 +136,7 @@ public class class_939 extends class_6414 {
                         }
                      }
 
-                     var2.method_43359((class_704)null, var3, class_463.field_2054, class_562.field_3322, 1.0F, 1.0F);
+                     var2.method_43359((PlayerEntity)null, var3, class_463.field_2054, class_562.field_3322, 1.0F, 1.0F);
                      this.method_4060(var2, var3, var1, var10 - 1);
                   }
 
@@ -157,7 +157,7 @@ public class class_939 extends class_6414 {
 
                   var4.method_3209(class_6234.field_31841);
                   this.method_4060(var2, var3, var1, 0);
-                  var2.method_43359((class_704)null, var3, class_463.field_2142, class_562.field_3322, 1.0F, 1.0F);
+                  var2.method_43359((PlayerEntity)null, var3, class_463.field_2142, class_562.field_3322, 1.0F, 1.0F);
                }
 
                return class_6910.method_31659(var2.field_33055);
@@ -170,7 +170,7 @@ public class class_939 extends class_6414 {
 
                var4.method_3209(class_6234.field_31900);
                this.method_4060(var2, var3, var1, 3);
-               var2.method_43359((class_704)null, var3, class_463.field_2168, class_562.field_3322, 1.0F, 1.0F);
+               var2.method_43359((PlayerEntity)null, var3, class_463.field_2168, class_562.field_3322, 1.0F, 1.0F);
             }
 
             return class_6910.method_31659(var2.field_33055);

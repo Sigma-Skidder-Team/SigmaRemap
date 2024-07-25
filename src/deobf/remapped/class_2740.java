@@ -419,7 +419,7 @@ public class class_2740 {
       }
    }
 
-   public static int method_12329(class_704 var0) {
+   public static int method_12329(PlayerEntity var0) {
       int var3 = 0;
 
       for (byte var4 = 5; var4 <= 8; var4++) {
@@ -429,7 +429,7 @@ public class class_2740 {
       return var3;
    }
 
-   public static float method_12338(class_704 var0) {
+   public static float method_12338(PlayerEntity var0) {
       float var3 = (float)method_12329(var0);
       float var4 = 0.0F;
       float var5 = method_12343(var0.method_26446());
@@ -667,11 +667,11 @@ public class class_2740 {
       }
    }
 
-   public static ItemStack method_12355(int var0, int var1, int var2, class_6269 var3, class_704 var4) {
+   public static ItemStack method_12355(int var0, int var1, int var2, class_6269 var3, PlayerEntity var4) {
       return method_12356(var0, var1, var2, var3, var4, false);
    }
 
-   public static ItemStack method_12356(int var0, int var1, int var2, class_6269 var3, class_704 var4, boolean var5) {
+   public static ItemStack method_12356(int var0, int var1, int var2, class_6269 var3, PlayerEntity var4, boolean var5) {
       ItemStack var8 = null;
       if (var1 >= 0) {
          var8 = var4.field_3874.method_18878(var1).method_35898().method_27973();
@@ -747,7 +747,7 @@ public class class_2740 {
       return var0 != null && !var0.method_27960().equals(class_4897.field_25302);
    }
 
-   public static List<ItemStack> method_12340(class_704 var0) {
+   public static List<ItemStack> method_12340(PlayerEntity var0) {
       ArrayList var3 = new ArrayList();
 
       for (class_7934 var5 : var0.field_3869.field_19926) {

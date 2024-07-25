@@ -116,7 +116,7 @@ public class class_702 implements class_700 {
 
    @Nullable
    @Override
-   public class_704 method_25856(double var1, double var3, double var5, double var7, Predicate<Entity> var9) {
+   public PlayerEntity method_25856(double var1, double var3, double var5, double var7, Predicate<Entity> var9) {
       return null;
    }
 
@@ -315,7 +315,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public void method_43359(class_704 var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_43359(PlayerEntity var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6) {
    }
 
    @Override
@@ -323,7 +323,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public void method_43365(class_704 var1, int var2, BlockPos var3, int var4) {
+   public void method_43365(PlayerEntity var1, int var2, BlockPos var3, int var4) {
    }
 
    @Override
@@ -347,8 +347,8 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public List<class_704> method_25873() {
-      return Collections.<class_704>emptyList();
+   public List<PlayerEntity> method_25873() {
+      return Collections.<PlayerEntity>emptyList();
    }
 
    @Override

@@ -24,12 +24,12 @@ public class class_9574 extends class_2875 {
    }
 
    @Override
-   public boolean method_13210(class_704 var1, boolean var2) {
+   public boolean method_13210(PlayerEntity var1, boolean var2) {
       return this.field_48705 != null && this.field_48705.method_41052(this.field_14085, this.field_48707);
    }
 
    @Override
-   public ItemStack method_13209(class_704 var1, ItemStack var2) {
+   public ItemStack method_13209(PlayerEntity var1, ItemStack var2) {
       var2.method_27964(var1.world, var1, var2.method_27997());
       this.field_14087.method_41424(var1);
       this.method_44242(0);

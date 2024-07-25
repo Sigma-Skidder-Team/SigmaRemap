@@ -12,7 +12,7 @@ public class class_7615<T extends Entity & class_8190> extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
+   public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       if (!var1.field_33055) {
          Entity var7 = var2.method_37243();

@@ -148,7 +148,7 @@ public class class_3194 implements class_7515 {
    }
 
    public GameProfile method_14694(GameProfile var1) {
-      UUID var4 = class_704.method_3249(var1.getName());
+      UUID var4 = PlayerEntity.method_3249(var1.getName());
       return new GameProfile(var4, var1.getName());
    }
 }

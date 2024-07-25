@@ -56,7 +56,7 @@ public class class_1275 implements class_1517 {
    }
 
    private boolean method_5715(class_6331 var1) {
-      for (class_704 var5 : var1.method_25873()) {
+      for (PlayerEntity var5 : var1.method_25873()) {
          if (!var5.method_37221()) {
             BlockPos var6 = var5.method_37075();
             if (var1.method_28994(var6) && var1.method_22561(var6).method_28887() != class_8862.field_45296) {

@@ -13,7 +13,7 @@ public class class_6239 extends class_7934 {
    }
 
    @Override
-   public ItemStack method_35892(class_704 var1, ItemStack var2) {
+   public ItemStack method_35892(PlayerEntity var1, ItemStack var2) {
       return this.field_31927.method_35892(var1, var2);
    }
 
@@ -69,7 +69,7 @@ public class class_6239 extends class_7934 {
    }
 
    @Override
-   public boolean method_35895(class_704 var1) {
+   public boolean method_35895(PlayerEntity var1) {
       return this.field_31927.method_35895(var1);
    }
 }

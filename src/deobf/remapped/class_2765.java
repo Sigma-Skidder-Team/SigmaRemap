@@ -126,7 +126,7 @@ public class class_2765 {
          (double)var5.field_48993,
          (double)var5.field_48994
       );
-      List var7 = var2.<Entity>method_25869(Entity.class, var6, var0x -> !(var0x instanceof class_704));
+      List var7 = var2.<Entity>method_25869(Entity.class, var6, var0x -> !(var0x instanceof PlayerEntity));
       var7.forEach(Entity::method_37204);
    }
 

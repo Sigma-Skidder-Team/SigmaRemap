@@ -136,9 +136,9 @@ public class class_3756 extends class_3757 implements class_3745 {
       Box var8 = new Box((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
          .method_18898((double)var4)
          .method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
-      List var9 = this.field_18364.<class_704>method_25868(class_704.class, var8);
+      List var9 = this.field_18364.<PlayerEntity>method_25868(PlayerEntity.class, var8);
       if (!var9.isEmpty()) {
-         for (class_704 var11 : var9) {
+         for (PlayerEntity var11 : var9) {
             if (this.field_18358.method_12171(var11.method_37075(), (double)var4) && var11.method_37363()) {
                var11.method_26558(new class_2250(Effects.field_19744, 260, 0, true, true));
             }
@@ -171,7 +171,7 @@ public class class_3756 extends class_3757 implements class_3745 {
       if (this.field_18356 != null) {
          this.field_18364
             .method_29528(
-               (class_704)null,
+               (PlayerEntity)null,
                this.field_18356.getPosX(),
                this.field_18356.method_37309(),
                this.field_18356.getPosZ(),
@@ -272,6 +272,6 @@ public class class_3756 extends class_3757 implements class_3745 {
    }
 
    public void method_17382(class_8461 var1) {
-      this.field_18364.method_43359((class_704)null, this.field_18358, var1, class_562.field_3322, 1.0F, 1.0F);
+      this.field_18364.method_43359((PlayerEntity)null, this.field_18358, var1, class_562.field_3322, 1.0F, 1.0F);
    }
 }

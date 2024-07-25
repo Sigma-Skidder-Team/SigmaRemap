@@ -88,7 +88,7 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, Hand var2) {
+   public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_25037) {
          return super.method_26857(var1, var2);
@@ -178,7 +178,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       var4.method_34713(this.field_47751);
       var4.method_26864(var1, var1.method_43368(var4.method_37075()), class_2417.field_12041, (class_8733)null, (CompoundNBT)null);
       if (this.field_47750 != null) {
-         class_704 var12 = var1.method_25862(this.field_47750);
+         PlayerEntity var12 = var1.method_25862(this.field_47750);
          if (var12 instanceof class_9359) {
             class_8807.field_45048.method_39403((class_9359)var12, this, var4);
             var1.method_28955(class_3894.field_18945, var12, var4);
@@ -187,7 +187,7 @@ public class class_9355 extends class_2811 implements class_3449 {
 
       var4.method_26558(new class_2250(Effects.NAUSEA, 200, 0));
       if (!this.method_37378()) {
-         var1.method_43365((class_704)null, 1027, this.method_37075(), 0);
+         var1.method_43365((PlayerEntity)null, 1027, this.method_37075(), 0);
       }
    }
 

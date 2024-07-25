@@ -31,11 +31,11 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    @Override
    public void method_12800() {
-      this.field_29916.method_3485(2, new class_1277(this, 1.0, false));
-      this.field_29916.method_3485(7, new class_2889(this, 1.0));
-      this.field_29908.method_3485(1, new class_8420(this).method_38757());
-      this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, 10, true, false, this::method_28534));
-      this.field_29908.method_3485(3, new class_6474<class_1918>(this, true));
+      this.goalSelector.addGoal(2, new class_1277(this, 1.0, false));
+      this.goalSelector.addGoal(7, new class_2889(this, 1.0));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method_28534));
+      this.targetSelector.addGoal(3, new class_6474<class_1918>(this, true));
    }
 
    public static class_1313 method_8729() {
@@ -121,8 +121,8 @@ public class class_1918 extends class_2811 implements class_6250 {
          this.field_9783 = field_9790.method_20387(this.field_41717);
       }
 
-      if (var1 instanceof class_704) {
-         this.method_26580((class_704)var1);
+      if (var1 instanceof PlayerEntity) {
+         this.method_26580((PlayerEntity)var1);
       }
 
       super.method_26860(var1);
@@ -205,7 +205,7 @@ public class class_1918 extends class_2811 implements class_6250 {
    }
 
    @Override
-   public boolean method_5202(class_704 var1) {
+   public boolean method_5202(PlayerEntity var1) {
       return this.method_28534(var1);
    }
 }

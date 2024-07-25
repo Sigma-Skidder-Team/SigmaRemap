@@ -58,7 +58,7 @@ public class class_8170 extends class_2811 {
    public void method_12798() {
       this.method_12791(EntityType.field_34297);
       if (!this.method_37378()) {
-         this.world.method_43365((class_704)null, 1041, this.method_37075(), 0);
+         this.world.method_43365((PlayerEntity)null, 1041, this.method_37075(), 0);
       }
    }
 

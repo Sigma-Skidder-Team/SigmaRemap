@@ -164,14 +164,14 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
 
          int var6 = (9 + this.field_6318 * 2) * 20;
          Box var7 = new Box(this.field_18358).method_18898(var3).method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
-         List var8 = this.field_18364.<class_704>method_25868(class_704.class, var7);
+         List var8 = this.field_18364.<PlayerEntity>method_25868(PlayerEntity.class, var7);
 
-         for (class_704 var10 : var8) {
+         for (PlayerEntity var10 : var8) {
             var10.method_26558(new class_2250(this.field_6322, var6, var5, true, true));
          }
 
          if (this.field_6318 >= 4 && this.field_6322 != this.field_6323 && this.field_6323 != null) {
-            for (class_704 var12 : var8) {
+            for (PlayerEntity var12 : var8) {
                var12.method_26558(new class_2250(this.field_6323, var6, 0, true, true));
             }
          }
@@ -179,7 +179,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
    }
 
    public void method_4883(class_8461 var1) {
-      this.field_18364.method_43359((class_704)null, this.field_18358, var1, class_562.field_3322, 1.0F, 1.0F);
+      this.field_18364.method_43359((PlayerEntity)null, this.field_18358, var1, class_562.field_3322, 1.0F, 1.0F);
    }
 
    public List<class_3080> method_4891() {
@@ -244,7 +244,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
 
    @Nullable
    @Override
-   public class_4088 method_11419(int var1, class_7051 var2, class_704 var3) {
+   public class_4088 method_11419(int var1, class_7051 var2, PlayerEntity var3) {
       return !class_8346.method_38434(var3, this.field_6321, this.method_19839())
          ? null
          : new class_4034(var1, var2, this.field_6327, class_9210.method_42530(this.field_18364, this.method_17399()));

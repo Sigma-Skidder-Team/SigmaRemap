@@ -160,7 +160,7 @@ public class class_747 extends class_6414 implements class_3978 {
    }
 
    @Override
-   public float method_10799(class_2522 var1, class_704 var2, class_6163 var3, BlockPos var4) {
+   public float method_10799(class_2522 var1, PlayerEntity var2, class_6163 var3, BlockPos var4) {
       return !(var2.method_26446().method_27960() instanceof class_2235) ? super.method_10799(var1, var2, var3, var4) : 1.0F;
    }
 

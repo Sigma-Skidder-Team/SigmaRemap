@@ -48,7 +48,7 @@ public class class_6878 {
       method_31545(new Identifier("lefthanded"), (var0, var1, var2) -> var2 != null && var2.method_26432() != class_1736.field_8943 ? 1.0F : 0.0F);
       method_31545(
          new Identifier("cooldown"),
-         (var0, var1, var2) -> !(var2 instanceof class_704) ? 0.0F : ((class_704)var2).method_3173().method_32960(var0.method_27960(), 0.0F)
+         (var0, var1, var2) -> !(var2 instanceof PlayerEntity) ? 0.0F : ((PlayerEntity)var2).method_3173().method_32960(var0.method_27960(), 0.0F)
       );
       method_31545(
          new Identifier("custom_model_data"), (var0, var1, var2) -> !var0.method_28002() ? 0.0F : (float)var0.method_27990().method_25947("CustomModelData")
@@ -94,7 +94,7 @@ public class class_6878 {
                var6 = false;
             }
 
-            return (var5 || var6) && var2 instanceof class_704 && ((class_704)var2).field_3841 != null ? 1.0F : 0.0F;
+            return (var5 || var6) && var2 instanceof PlayerEntity && ((PlayerEntity)var2).field_3841 != null ? 1.0F : 0.0F;
          } else {
             return 0.0F;
          }

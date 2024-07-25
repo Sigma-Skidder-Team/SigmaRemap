@@ -489,7 +489,7 @@ public class class_6331 extends World implements class_700 {
    }
 
    public void method_28997(Entity var1) {
-      if (!(var1 instanceof class_704) && !this.method_28945().method_14824(var1)) {
+      if (!(var1 instanceof PlayerEntity) && !this.method_28945().method_14824(var1)) {
          this.method_28987(var1);
       } else {
          var1.method_37306(var1.getPosX(), var1.method_37309(), var1.getPosZ());
@@ -516,7 +516,7 @@ public class class_6331 extends World implements class_700 {
    public void method_28975(Entity var1, Entity var2) {
       if (var2.field_41751 || var2.method_37243() != var1) {
          var2.method_37390();
-      } else if (var2 instanceof class_704 || this.method_28945().method_14824(var2)) {
+      } else if (var2 instanceof PlayerEntity || this.method_28945().method_14824(var2)) {
          var2.method_37306(var2.getPosX(), var2.method_37309(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.field_41762 = var2.rotationPitch;
@@ -565,7 +565,7 @@ public class class_6331 extends World implements class_700 {
    }
 
    @Override
-   public boolean method_29538(class_704 var1, BlockPos var2) {
+   public boolean method_29538(PlayerEntity var1, BlockPos var2) {
       return !this.field_32343.method_1618(this, var2, var1) && this.method_6673().method_9813(var2);
    }
 
@@ -872,7 +872,7 @@ public class class_6331 extends World implements class_700 {
    }
 
    @Override
-   public void method_29528(class_704 var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11) {
+   public void method_29528(PlayerEntity var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11) {
       this.field_32343
          .method_1600()
          .method_39996(
@@ -887,7 +887,7 @@ public class class_6331 extends World implements class_700 {
    }
 
    @Override
-   public void method_29540(class_704 var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_29540(PlayerEntity var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6) {
       this.field_32343
          .method_1600()
          .method_39996(
@@ -907,7 +907,7 @@ public class class_6331 extends World implements class_700 {
    }
 
    @Override
-   public void method_43365(class_704 var1, int var2, BlockPos var3, int var4) {
+   public void method_43365(PlayerEntity var1, int var2, BlockPos var3, int var4) {
       this.field_32343
          .method_1600()
          .method_39996(
@@ -976,7 +976,7 @@ public class class_6331 extends World implements class_700 {
             this.field_32343
                .method_1600()
                .method_39996(
-                  (class_704)null,
+                  (PlayerEntity)null,
                   (double)var3.method_4248().method_12173(),
                   (double)var3.method_4248().method_12165(),
                   (double)var3.method_4248().method_12185(),

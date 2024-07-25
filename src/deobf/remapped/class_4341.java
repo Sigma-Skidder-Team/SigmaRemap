@@ -43,7 +43,7 @@ public class class_4341 extends class_1871 {
       if (this.field_21093 == null || this.field_21093.method_18436()) {
          int var3 = this.field_9479.method_12606();
          BlockPos var4 = this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348);
-         class_704 var5 = this.field_9479
+         PlayerEntity var5 = this.field_9479
             .world
             .method_25858(field_21092, (double)var4.method_12173(), (double)var4.method_12165(), (double)var4.method_12185());
          int var6;

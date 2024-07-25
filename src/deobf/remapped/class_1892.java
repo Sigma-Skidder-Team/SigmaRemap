@@ -70,7 +70,7 @@ public class class_1892 {
    private static void method_8442(class_6331 var0, class_8248 var1, Identifier var2) {
       class_6197 var5 = new class_6197(var2, var1);
 
-      for (class_704 var7 : var0.method_7066().method_25873()) {
+      for (PlayerEntity var7 : var0.method_7066().method_25873()) {
          ((class_9359)var7).field_47794.method_4156(var5);
       }
    }

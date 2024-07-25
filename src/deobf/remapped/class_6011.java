@@ -26,9 +26,9 @@ public class class_6011 extends class_1829 {
    }
 
    @Override
-   public void method_26851() {
-      this.field_29916.method_3485(0, new class_9228(this, this));
-      this.field_29916.method_3485(1, new class_1607(this, null));
+   public void registerGoals() {
+      this.goalSelector.addGoal(0, new class_9228(this, this));
+      this.goalSelector.addGoal(1, new class_1607(this, null));
    }
 
    public static class_1313 method_27440() {
