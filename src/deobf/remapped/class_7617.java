@@ -44,12 +44,12 @@ public class class_7617 extends class_5467 {
    @Override
    public void registerGoals() {
       this.field_38766 = new class_9327(this, 0.6, field_38768, true);
-      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
       this.goalSelector.addGoal(3, this.field_38766);
       this.goalSelector.addGoal(7, new class_1937(this, 0.3F));
       this.goalSelector.addGoal(8, new class_7037(this));
       this.goalSelector.addGoal(9, new class_9513(this, 0.8));
-      this.goalSelector.addGoal(10, new class_2889(this, 0.8, 1.0000001E-5F));
+      this.goalSelector.addGoal(10, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
       this.goalSelector.addGoal(11, new LookAtGoal(this, PlayerEntity.class, 10.0F));
       this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<class_3024>(this, class_3024.class, false));
       this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<class_3845>(this, class_3845.class, 10, false, false, class_3845.field_18768));

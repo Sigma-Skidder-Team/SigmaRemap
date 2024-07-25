@@ -23,7 +23,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
          class_1573.method_7105(this.world, this, this);
          if (!this.world.field_33055) {
             Entity var4 = var1.method_28353();
-            if (var4 != null && var4.method_37387() == EntityType.field_34300) {
+            if (var4 != null && var4.getType() == EntityType.field_34300) {
                class_134.method_474((PlayerEntity)var4, true);
             }
          }

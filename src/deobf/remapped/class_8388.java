@@ -173,7 +173,7 @@ public abstract class class_8388 extends class_5783 {
          this.getPosZ(),
          this.rotationPitch,
          this.rotationYaw,
-         this.method_37387(),
+         this.getType(),
          var4,
          new class_1343(this.field_42909, this.field_42910, this.field_42911)
       );

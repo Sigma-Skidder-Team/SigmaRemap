@@ -151,7 +151,7 @@ public class class_8008 extends class_4641 {
 
    @Override
    public Packet<?> method_37142() {
-      return new class_6589(this, this.method_37387(), 0, this.method_21469());
+      return new class_6589(this, this.getType(), 0, this.method_21469());
    }
 
    @Override

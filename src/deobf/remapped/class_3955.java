@@ -51,11 +51,11 @@ public class class_3955 extends class_6127<class_5834> {
    }
 
    private boolean method_18275(class_5834 var1, class_5834 var2) {
-      float var5 = (Float)field_19177.get(var2.method_37387());
+      float var5 = (Float)field_19177.get(var2.getType());
       return var2.method_37275(var1) <= (double)(var5 * var5);
    }
 
    private boolean method_18277(class_5834 var1) {
-      return field_19177.containsKey(var1.method_37387());
+      return field_19177.containsKey(var1.getType());
    }
 }

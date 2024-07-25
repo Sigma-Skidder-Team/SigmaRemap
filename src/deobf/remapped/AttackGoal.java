@@ -1,9 +1,9 @@
 package remapped;
 
-public class class_829 extends class_9037 {
+public class AttackGoal extends class_9037 {
    private static String[] field_4366;
 
-   public class_829(RavagerEntity var1) {
+   public AttackGoal(RavagerEntity var1) {
       super(var1, 1.0, true);
       this.field_4367 = var1;
    }

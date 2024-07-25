@@ -79,7 +79,7 @@ public class class_5542 extends class_5467 {
       this.goalSelector.addGoal(9, new class_4925(this, 32, 200));
       this.goalSelector.addGoal(10, new class_5906(this, 1.2F, 12, 2));
       this.goalSelector.addGoal(10, new class_1937(this, 0.4F));
-      this.goalSelector.addGoal(11, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.goalSelector.addGoal(11, new class_7410(this));
       this.goalSelector.addGoal(12, new class_3389(this, this, (float) PlayerEntity.class, 24.0F));
       this.goalSelector.addGoal(13, new class_2650(this));

@@ -71,8 +71,8 @@ public abstract class MobEntity extends class_5834 {
 
    public float method_26931(class_1108 var1) {
       MobEntity var4;
-      if (this.method_37243() instanceof MobEntity && ((MobEntity)this.method_37243()).method_26924()) {
-         var4 = (MobEntity)this.method_37243();
+      if (this.getRidingEntity() instanceof MobEntity && ((MobEntity)this.getRidingEntity()).method_26924()) {
+         var4 = (MobEntity)this.getRidingEntity();
       } else {
          var4 = this;
       }
@@ -98,8 +98,8 @@ public abstract class MobEntity extends class_5834 {
    }
 
    public class_2833 method_26905() {
-      if (this.isPassenger() && this.method_37243() instanceof MobEntity) {
-         MobEntity var3 = (MobEntity)this.method_37243();
+      if (this.isPassenger() && this.getRidingEntity() instanceof MobEntity) {
+         MobEntity var3 = (MobEntity)this.getRidingEntity();
          return var3.method_26905();
       } else {
          return this.field_29900;
@@ -111,8 +111,8 @@ public abstract class MobEntity extends class_5834 {
    }
 
    public class_1249 method_26927() {
-      if (this.isPassenger() && this.method_37243() instanceof MobEntity) {
-         MobEntity var3 = (MobEntity)this.method_37243();
+      if (this.isPassenger() && this.getRidingEntity() instanceof MobEntity) {
+         MobEntity var3 = (MobEntity)this.getRidingEntity();
          return var3.method_26927();
       } else {
          return this.field_29904;
@@ -248,15 +248,15 @@ public abstract class MobEntity extends class_5834 {
          if (!this.world.field_33055) {
             this.method_26921();
             if (this.field_41697 % 5 == 0) {
-               this.method_26872();
+               this.updateMovementGoalFlags();
             }
          }
       }
    }
 
-   public void method_26872() {
-      boolean var3 = !(this.method_37259() instanceof MobEntity);
-      boolean var4 = !(this.method_37243() instanceof BoatEntity);
+   public void updateMovementGoalFlags() {
+      boolean var3 = !(this.getControllingPassenger() instanceof MobEntity);
+      boolean var4 = !(this.getRidingEntity() instanceof BoatEntity);
       this.goalSelector.method_3493(class_1891.field_9564, var3);
       this.goalSelector.method_3493(class_1891.field_9561, var3 && var4);
       this.goalSelector.method_3493(class_1891.field_9560, var3);
@@ -610,13 +610,13 @@ public abstract class MobEntity extends class_5834 {
 
          if (var3 != null) {
             double var5 = var3.method_37275(this);
-            int var7 = this.method_37387().method_30476().method_21200();
+            int var7 = this.getType().method_30476().method_21200();
             int var8 = var7 * var7;
             if (var5 > (double)var8 && this.method_26911(var5)) {
                this.method_37204();
             }
 
-            int var9 = this.method_37387().method_30476().method_21196();
+            int var9 = this.getType().method_30476().method_21196();
             int var10 = var9 * var9;
             if (this.field_29658 > 600 && this.field_41717.nextInt(800) == 0 && var5 > (double)var10 && this.method_26911(var5)) {
                this.method_37204();
@@ -1058,7 +1058,7 @@ public abstract class MobEntity extends class_5834 {
          } else {
             class_3003 var8 = (class_3003)var5.method_27960();
             Optional var7 = var8.method_13714(
-               var1, this, (EntityType<? extends MobEntity>)this.method_37387(), (class_6331)this.world, this.method_37245(), var5
+               var1, this, (EntityType<? extends MobEntity>)this.getType(), (class_6331)this.world, this.method_37245(), var5
             );
             var7.ifPresent(var2x -> this.method_26874(var1, var2x));
             return !var7.isPresent() ? class_6910.field_35521 : class_6910.field_35520;
@@ -1132,7 +1132,7 @@ public abstract class MobEntity extends class_5834 {
 
          this.world.method_7509(var5);
          if (this.isPassenger()) {
-            Entity var11 = this.method_37243();
+            Entity var11 = this.getRidingEntity();
             this.method_37390();
             var5.startRiding(var11, true);
          }
@@ -1335,7 +1335,7 @@ public abstract class MobEntity extends class_5834 {
 
    @Override
    public boolean method_26608(class_5834 var1) {
-      return var1.method_37387() == EntityType.field_34300 && ((PlayerEntity)var1).playerAbilities.disableDamage ? false : super.method_26608(var1);
+      return var1.getType() == EntityType.field_34300 && ((PlayerEntity)var1).playerAbilities.disableDamage ? false : super.method_26608(var1);
    }
 
    @Override
@@ -1389,7 +1389,7 @@ public abstract class MobEntity extends class_5834 {
    public boolean method_26884() {
       if (this.world.method_29602() && !this.world.field_33055) {
          float var3 = this.method_37193();
-         BlockPos var4 = !(this.method_37243() instanceof BoatEntity)
+         BlockPos var4 = !(this.getRidingEntity() instanceof BoatEntity)
             ? new BlockPos(this.getPosX(), (double)Math.round(this.method_37309()), this.getPosZ())
             : new BlockPos(this.getPosX(), (double)Math.round(this.method_37309()), this.getPosZ()).method_6081();
          if (var3 > 0.5F && this.field_41717.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F && this.world.method_25263(var4)) {

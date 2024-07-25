@@ -19,7 +19,7 @@ public class class_5302 extends class_3599 {
       boolean var4 = false;
 
       for (BoatEntity var6 : var3) {
-         Entity var7 = var6.method_37259();
+         Entity var7 = var6.getControllingPassenger();
          if (var7 instanceof PlayerEntity
             && (class_9299.method_42804(((PlayerEntity)var7).field_29676) > 0.0F || class_9299.method_42804(((PlayerEntity)var7).field_29673) > 0.0F)) {
             var4 = true;
@@ -47,8 +47,8 @@ public class class_5302 extends class_3599 {
    @Override
    public void method_16796() {
       for (BoatEntity var4 : this.field_27098.world.<BoatEntity>method_25868(BoatEntity.class, this.field_27098.method_37241().method_18898(5.0))) {
-         if (var4.method_37259() != null && var4.method_37259() instanceof PlayerEntity) {
-            this.field_27099 = (PlayerEntity)var4.method_37259();
+         if (var4.getControllingPassenger() != null && var4.getControllingPassenger() instanceof PlayerEntity) {
+            this.field_27099 = (PlayerEntity)var4.getControllingPassenger();
             break;
          }
       }

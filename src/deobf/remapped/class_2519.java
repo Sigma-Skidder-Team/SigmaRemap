@@ -36,7 +36,7 @@ public class class_2519 extends class_1173 {
    @Override
    public void registerGoals() {
       super.registerGoals();
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
       this.goalSelector.addGoal(4, new class_768(this));
       this.goalSelector.addGoal(8, new class_2940(this));
       this.goalSelector.addGoal(9, new LookAtGoal(this, PlayerEntity.class, 3.0F, 1.0F));

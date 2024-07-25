@@ -18,9 +18,9 @@ public class RavagerEntity extends AbstractRaiderEntity {
    @Override
    public void registerGoals() {
       super.registerGoals();
-      this.goalSelector.addGoal(0, new class_787(this));
-      this.goalSelector.addGoal(4, new class_829(this));
-      this.goalSelector.addGoal(5, new class_2889(this, 0.4));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(4, new AttackGoal(this));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.4));
       this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
       this.targetSelector.addGoal(2, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
@@ -30,13 +30,13 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    @Override
-   public void method_26872() {
-      boolean var3 = !(this.method_37259() instanceof MobEntity) || this.method_37259().method_37387().method_30453(class_5218.field_26788);
-      boolean var4 = !(this.method_37243() instanceof BoatEntity);
-      this.goalSelector.method_3493(class_1891.field_9564, var3);
-      this.goalSelector.method_3493(class_1891.field_9561, var3 && var4);
-      this.goalSelector.method_3493(class_1891.field_9560, var3);
-      this.goalSelector.method_3493(class_1891.field_9563, var3);
+   public void updateMovementGoalFlags() {
+      boolean flag = !(this.getControllingPassenger() instanceof MobEntity) || this.getControllingPassenger().getType().isContained(EntityTypeTags.RAIDERS);
+      boolean flag1 = !(this.getRidingEntity() instanceof BoatEntity);
+      this.goalSelector.method_3493(class_1891.field_9564, flag);
+      this.goalSelector.method_3493(class_1891.field_9561, flag && flag1);
+      this.goalSelector.method_3493(class_1891.field_9560, flag);
+      this.goalSelector.method_3493(class_1891.field_9563, flag);
    }
 
    public static class_1313 method_35660() {
@@ -87,12 +87,12 @@ public class RavagerEntity extends AbstractRaiderEntity {
 
    @Override
    public boolean method_26863() {
-      return !this.method_26859() && this.method_37259() instanceof class_5834;
+      return !this.method_26859() && this.getControllingPassenger() instanceof class_5834;
    }
 
    @Nullable
    @Override
-   public Entity method_37259() {
+   public Entity getControllingPassenger() {
       return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
    }
 

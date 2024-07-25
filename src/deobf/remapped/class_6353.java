@@ -47,16 +47,16 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          this.field_32487.field_33203 = var1.isPassenger();
          if (class_7860.field_40084.method_3596()) {
             this.field_32487.field_33203 = var1.isPassenger()
-               && var1.method_37243() != null
-               && class_7860.method_35565(var1.method_37243(), class_7860.field_40084);
+               && var1.getRidingEntity() != null
+               && class_7860.method_35565(var1.getRidingEntity(), class_7860.field_40084);
          }
 
          this.field_32487.field_33204 = var1.method_26449();
          float var9 = class_9299.method_42837(var3, var1.field_29611, var1.field_29605);
          float var10 = class_9299.method_42837(var3, var1.field_29657, var1.field_29618);
          float var11 = var10 - var9;
-         if (this.field_32487.field_33203 && var1.method_37243() instanceof class_5834) {
-            class_5834 var12 = (class_5834)var1.method_37243();
+         if (this.field_32487.field_33203 && var1.getRidingEntity() instanceof class_5834) {
+            class_5834 var12 = (class_5834)var1.getRidingEntity();
             var9 = class_9299.method_42837(var3, var12.field_29611, var12.field_29605);
             var11 = var10 - var9;
             float var13 = class_9299.method_42810(var11);

@@ -98,7 +98,7 @@ public class class_9317 extends class_3757 implements class_3745 {
          if (var5.isAlive()
             && !var5.field_41751
             && var3.method_12170(var5.method_37245(), 32.0)
-            && var5.method_37387().method_30453(class_5218.field_26788)) {
+            && var5.getType().isContained(EntityTypeTags.RAIDERS)) {
             return true;
          }
       }
@@ -147,7 +147,7 @@ public class class_9317 extends class_3757 implements class_3745 {
       return var1.isAlive()
          && !var1.field_41751
          && this.method_17399().method_12170(var1.method_37245(), 48.0)
-         && var1.method_37387().method_30453(class_5218.field_26788);
+         && var1.getType().isContained(EntityTypeTags.RAIDERS);
    }
 
    private void method_43014(class_5834 var1) {

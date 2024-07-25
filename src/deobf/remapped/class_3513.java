@@ -19,6 +19,6 @@ public class class_3513 extends class_1762<class_4109, class_3192<class_4109>> {
    }
 
    public Identifier method_16190(class_4109 var1) {
-      return field_17229.get(var1.method_37387());
+      return field_17229.get(var1.getType());
    }
 }

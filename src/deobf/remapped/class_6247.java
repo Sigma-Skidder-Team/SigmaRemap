@@ -16,6 +16,6 @@ public class class_6247<T extends class_5521> extends class_1762<T, class_4094<T
    }
 
    public Identifier method_28520(T var1) {
-      return field_31962.get(var1.method_37387());
+      return field_31962.get(var1.getType());
    }
 }

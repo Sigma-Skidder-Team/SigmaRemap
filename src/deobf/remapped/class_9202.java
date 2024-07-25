@@ -239,7 +239,7 @@ public class class_9202 {
             if (var2 != var1.world) {
                var1.method_37269();
                Entity var18 = var1;
-               var1 = var1.method_37387().method_30484(var2);
+               var1 = var1.getType().method_30484(var2);
                if (var1 == null) {
                   return;
                }

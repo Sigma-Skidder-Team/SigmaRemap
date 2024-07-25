@@ -268,7 +268,7 @@ public class class_6331 extends World implements class_700 {
          while (var15.hasNext()) {
             Entry var18 = (Entry)var15.next();
             Entity var17 = (Entity)var18.getValue();
-            Entity var20 = var17.method_37243();
+            Entity var20 = var17.getRidingEntity();
             if (!this.field_32343.method_1702() && (var17 instanceof class_5467 || var17 instanceof class_1829)) {
                var17.method_37204();
             }
@@ -498,7 +498,7 @@ public class class_6331 extends World implements class_700 {
          if (var1.field_41727) {
             var1.field_41697++;
             class_3492 var4 = this.method_29599();
-            var4.method_16057(() -> class_8669.field_44400.method_39797(var1.method_37387()).toString());
+            var4.method_16057(() -> class_8669.field_44400.method_39797(var1.getType()).toString());
             var4.method_16055("tickNonPassenger");
             var1.method_37123();
             var4.endSection();
@@ -514,7 +514,7 @@ public class class_6331 extends World implements class_700 {
    }
 
    public void method_28975(Entity var1, Entity var2) {
-      if (var2.field_41751 || var2.method_37243() != var1) {
+      if (var2.field_41751 || var2.getRidingEntity() != var1) {
          var2.method_37390();
       } else if (var2 instanceof PlayerEntity || this.method_28945().method_14824(var2)) {
          var2.method_37306(var2.getPosX(), var2.method_37309(), var2.getPosZ());
@@ -523,7 +523,7 @@ public class class_6331 extends World implements class_700 {
          if (var2.field_41727) {
             var2.field_41697++;
             class_3492 var5 = this.method_29599();
-            var5.method_16057(() -> class_8669.field_44400.method_39797(var2.method_37387()).toString());
+            var5.method_16057(() -> class_8669.field_44400.method_39797(var2.getType()).toString());
             var5.method_16055("tickPassenger");
             var2.method_37189();
             var5.endSection();
@@ -600,7 +600,7 @@ public class class_6331 extends World implements class_700 {
 
       while (var7.hasNext()) {
          Entity var8 = (Entity)var7.next();
-         if ((var1 == null || var8.method_37387() == var1)
+         if ((var1 == null || var8.getType() == var1)
             && var6.method_14816(class_9299.method_42847(var8.getPosX()) >> 4, class_9299.method_42847(var8.getPosZ()) >> 4)
             && var2.test(var8)) {
             var5.add(var8);
@@ -717,7 +717,7 @@ public class class_6331 extends World implements class_700 {
             return false;
          }
       } else {
-         field_32339.warn("Tried to add entity {} but it was marked as removed already", EntityType.method_30472(var1.method_37387()));
+         field_32339.warn("Tried to add entity {} but it was marked as removed already", EntityType.method_30472(var1.getType()));
          return false;
       }
    }
@@ -738,9 +738,9 @@ public class class_6331 extends World implements class_700 {
          field_32339.warn(
             "Trying to add entity with duplicated UUID {}. Existing {}#{}, new: {}#{}",
             var4,
-            EntityType.method_30472(var5.method_37387()),
+            EntityType.method_30472(var5.getType()),
             var5.method_37145(),
-            EntityType.method_30472(var1.method_37387()),
+            EntityType.method_30472(var1.getType()),
             var1.method_37145()
          );
          return true;
@@ -1084,7 +1084,7 @@ public class class_6331 extends World implements class_700 {
    }
 
    @Override
-   public class_6437 method_29600() {
+   public ITagCollectionSupplier method_29600() {
       return this.field_32343.method_1754();
    }
 
@@ -1294,7 +1294,7 @@ public class class_6331 extends World implements class_700 {
             var6.method_37309(),
             var6.getPosZ(),
             var6.method_37328(),
-            class_8669.field_44400.method_39797(var6.method_37387()),
+            class_8669.field_44400.method_39797(var6.getType()),
             var6.isAlive(),
             var8.getString(),
             var7 == null ? null : var7.getString()
@@ -1367,7 +1367,7 @@ public class class_6331 extends World implements class_700 {
          "players: %s, entities: %d [%s], block_entities: %d [%s], block_ticks: %d, fluid_ticks: %d, chunk_source: %s",
          this.field_32340.size(),
          this.field_32326.size(),
-         method_28930(this.field_32326.values(), var0 -> class_8669.field_44400.method_39797(var0.method_37387())),
+         method_28930(this.field_32326.values(), var0 -> class_8669.field_44400.method_39797(var0.getType())),
          this.field_33031.size(),
          method_28930(this.field_33031, var0 -> class_8669.field_44426.method_39797(var0.method_17405())),
          this.method_28968().method_13097(),

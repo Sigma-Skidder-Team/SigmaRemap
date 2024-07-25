@@ -583,9 +583,9 @@ public class DebugOverlayGui extends AbstractGui {
          if (var26 != null) {
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Entity");
-            var11.add(String.valueOf(class_8669.field_44400.method_39797(var26.method_37387())));
+            var11.add(String.valueOf(class_8669.field_44400.method_39797(var26.getType())));
             if (class_7860.field_39843.method_3596()) {
-               Collection var29 = (Collection)class_7860.method_35555(var26.method_37387(), class_7860.field_39843);
+               Collection var29 = (Collection)class_7860.method_35555(var26.getType(), class_7860.field_39843);
                var29.forEach(var1 -> var11.add("#" + var1));
             }
          }

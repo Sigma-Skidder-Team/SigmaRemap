@@ -43,7 +43,7 @@ public class ClientPlayNetHandler implements class_392 {
    private final Map<UUID, class_753> field_6034 = Maps.newHashMap();
    private final class_5692 field_6027;
    private final class_793 field_6032;
-   private class_6437 field_6039 = class_6437.field_32865;
+   private ITagCollectionSupplier field_6039 = ITagCollectionSupplier.field_32865;
    private final class_147 field_6042 = new class_147(this);
    private int field_6023 = 3;
    private final Random field_6033 = new Random();
@@ -79,7 +79,7 @@ public class ClientPlayNetHandler implements class_392 {
       class_5965.method_27246(var1, this, this.field_6026);
       this.field_6026.playerController = new class_1749(this.field_6026, this);
       if (!this.field_6035.method_23500()) {
-         class_4438.method_20596();
+         TagRegistryManager.method_20596();
       }
 
       ArrayList var4 = Lists.newArrayList(var1.method_9233());
@@ -536,7 +536,7 @@ public class ClientPlayNetHandler implements class_392 {
          var4.field_41724 = var4.field_41724 + var1.method_2519();
       }
 
-      if (var4.field_41697 > 0 && var4.method_37243() != null) {
+      if (var4.field_41697 > 0 && var4.getRidingEntity() != null) {
          var4.dismount();
       }
 
@@ -1401,8 +1401,8 @@ public class ClientPlayNetHandler implements class_392 {
    @Override
    public void method_1973(class_5042 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_6437 var4 = var1.method_23216();
-      Multimap var5 = class_4438.method_20601(var4);
+      ITagCollectionSupplier var4 = var1.method_23216();
+      Multimap var5 = TagRegistryManager.method_20601(var4);
       if (var5.isEmpty()) {
          this.field_6039 = var4;
          if (!this.field_6035.method_23500()) {
@@ -2228,7 +2228,7 @@ public class ClientPlayNetHandler implements class_392 {
       return this.field_6021;
    }
 
-   public class_6437 method_4804() {
+   public ITagCollectionSupplier method_4804() {
       return this.field_6039;
    }
 

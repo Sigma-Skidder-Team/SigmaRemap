@@ -30,7 +30,7 @@ public class class_2557 {
          class_9558.method_44158();
          class_6191.method_28323();
          class_5398.method_24580();
-         class_4438.method_20599();
+         TagRegistryManager.method_20599();
          method_11615();
       }
    }

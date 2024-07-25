@@ -293,7 +293,7 @@ public class BoatEntity extends Entity {
       this.method_37097();
       List var11 = this.world.method_25867(this, this.method_37241().method_18899(0.2F, -0.01F, 0.2F), class_3572.method_16616(this));
       if (!var11.isEmpty()) {
-         boolean var12 = !this.world.field_33055 && !(this.method_37259() instanceof PlayerEntity);
+         boolean var12 = !this.world.field_33055 && !(this.getControllingPassenger() instanceof PlayerEntity);
 
          for (int var13 = 0; var13 < var11.size(); var13++) {
             Entity var10 = (Entity)var11.get(var13);
@@ -571,7 +571,7 @@ public class BoatEntity extends Entity {
                   if (this.field_46802 != class_1038.field_5730) {
                      if (this.field_46802 == class_1038.field_5729) {
                         this.field_46801 = this.field_46799;
-                        if (this.method_37259() instanceof PlayerEntity) {
+                        if (this.getControllingPassenger() instanceof PlayerEntity) {
                            this.field_46799 /= 2.0F;
                         }
                      }
@@ -776,7 +776,7 @@ public class BoatEntity extends Entity {
    }
 
    public boolean method_42104(int var1) {
-      return this.field_41735.<Boolean>method_36640(var1 != 0 ? field_46798 : field_46809) && this.method_37259() != null;
+      return this.field_41735.<Boolean>method_36640(var1 != 0 ? field_46798 : field_46809) && this.getControllingPassenger() != null;
    }
 
    public void method_42099(float var1) {
@@ -830,7 +830,7 @@ public class BoatEntity extends Entity {
 
    @Nullable
    @Override
-   public Entity method_37259() {
+   public Entity getControllingPassenger() {
       List var3 = this.method_37114();
       return !var3.isEmpty() ? (Entity)var3.get(0) : null;
    }

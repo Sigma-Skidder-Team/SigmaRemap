@@ -103,7 +103,7 @@ public class class_3348 extends class_6749 {
       this.field_16518 = true;
       class_8461 var8 = class_463.field_2442;
       if (var4.attackEntityFrom(var7, var5)) {
-         if (var4.method_37387() == EntityType.field_34308) {
+         if (var4.getType() == EntityType.field_34308) {
             return;
          }
 

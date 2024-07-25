@@ -291,7 +291,7 @@ public abstract class class_6749 extends class_5783 {
          var8 = DamageSource.method_28379(this, this);
       }
 
-      boolean var11 = var4.method_37387() == EntityType.field_34308;
+      boolean var11 = var4.getType() == EntityType.field_34308;
       int var12 = var4.method_37230();
       if (this.method_37264() && !var11) {
          var4.method_37178(5);

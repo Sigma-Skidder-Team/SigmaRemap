@@ -22,7 +22,7 @@ public class class_7272 extends class_5467 {
 
    @Override
    public void registerGoals() {
-      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
       this.goalSelector.addGoal(1, new class_229(this, 2.2));
       this.goalSelector.addGoal(2, new class_9513(this, 0.8));
       this.goalSelector
@@ -31,7 +31,7 @@ public class class_7272 extends class_5467 {
       this.goalSelector.addGoal(4, new class_8695<class_9408>(this, class_9408.class, 10.0F, 2.2, 2.2));
       this.goalSelector.addGoal(4, new class_8695<class_1173>(this, class_1173.class, 4.0F, 2.2, 2.2));
       this.goalSelector.addGoal(5, new class_805(this));
-      this.goalSelector.addGoal(6, new class_2889(this, 0.6));
+      this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.6));
       this.goalSelector.addGoal(11, new LookAtGoal(this, PlayerEntity.class, 10.0F));
    }
 

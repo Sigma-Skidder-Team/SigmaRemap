@@ -19,7 +19,7 @@ public class class_5748<T> {
       return this;
    }
 
-   public class_5748<T> method_26024(class_8813<T> var1) {
+   public class_5748<T> method_26024(INamedTag<T> var1) {
       this.field_29103.method_4723(var1.method_40487(), this.field_29106);
       return this;
    }

@@ -161,7 +161,7 @@ public class class_6092 extends class_608 implements class_1869 {
          }
       } else {
          var3 = null;
-         float var17 = this.method_37243().rotationYaw;
+         float var17 = this.getRidingEntity().rotationYaw;
          this.rotationYaw = var17;
          this.field_29605 = var17;
          this.field_29611 = var17;

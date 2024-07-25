@@ -105,7 +105,7 @@ public class class_3371 extends class_5920<class_5834> {
          ? var5.<List<class_5834>>method_5138(class_6044.field_30907)
             .get()
             .stream()
-            .filter(var1x -> var1x.method_37387() == var1.method_37387())
+            .filter(var1x -> var1x.method_37387() == var1.getType())
             .filter(var1x -> var2.method_12170(var1x.method_37245(), 2.0))
             .anyMatch(var2x -> method_15544(var0, var2x, var2))
          : false;

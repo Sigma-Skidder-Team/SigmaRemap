@@ -384,7 +384,7 @@ public class class_2599 extends class_6993 implements class_3832 {
 
    @Override
    public boolean startRiding(Entity var1, boolean var2) {
-      if (this.method_26449() && var1.method_37387() == EntityType.field_34306) {
+      if (this.method_26449() && var1.getType() == EntityType.field_34306) {
          var1 = this.method_11792(var1, 3);
       }
 

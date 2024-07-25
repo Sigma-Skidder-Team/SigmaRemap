@@ -240,10 +240,10 @@ public class class_9558 {
          method_44159("type", var0 -> {
             var0.method_22776((var1, var2) -> {
                class_8773.method_40325(class_8669.field_44400.method_39805(), var1, String.valueOf('!'));
-               class_8773.method_40325(class_5218.method_23904().method_43141(), var1, "!#");
+               class_8773.method_40325(EntityTypeTags.getCollection().method_43141(), var1, "!#");
                if (!var0.method_22807()) {
                   class_8773.method_40324(class_8669.field_44400.method_39805(), var1);
-                  class_8773.method_40325(class_5218.method_23904().method_43141(), var1, String.valueOf('#'));
+                  class_8773.method_40325(EntityTypeTags.getCollection().method_43141(), var1, String.valueOf('#'));
                }
 
                return var1.buildFuture();
@@ -268,13 +268,13 @@ public class class_9558 {
                      var0.method_22768(false);
                   }
 
-                  var0.method_22758(var2 -> Objects.equals(var6, var2.method_37387()) != var4);
+                  var0.method_22758(var2 -> Objects.equals(var6, var2.getType()) != var4);
                   if (!var4) {
                      var0.method_22751(var6);
                   }
                } else {
                   Identifier var7 = Identifier.method_21464(var0.method_22749());
-                  var0.method_22758(var2 -> var2.method_37268().method_1754().method_29389().method_43145(var7).method_10609(var2.method_37387()) != var4);
+                  var0.method_22758(var2 -> var2.method_37268().method_1754().getEntityTypeTags().method_43145(var7).method_10609(var2.getType()) != var4);
                }
             }
          }, var0 -> !var0.method_22756(), new TranslationTextComponent("argument.entity.options.type.description"));

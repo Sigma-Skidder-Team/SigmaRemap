@@ -20,7 +20,7 @@ public class class_6474<T extends MobEntity & class_6250> extends class_3599 {
 
    private boolean method_29486() {
       return this.field_32994.method_26531() != null
-         && this.field_32994.method_26531().method_37387() == EntityType.field_34300
+         && this.field_32994.method_26531().getType() == EntityType.field_34300
          && this.field_32994.method_26577() > this.field_32997;
    }
 

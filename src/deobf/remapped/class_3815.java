@@ -28,12 +28,12 @@ public final class class_3815 {
             }
          }
 
-         class_4565 var11 = var8.method_37387().method_30476();
+         class_4565 var11 = var8.getType().method_30476();
          if (var11 != class_4565.field_22251) {
             BlockPos var12 = var8.method_37075();
             long var13 = class_2034.method_9540(var12.method_12173() >> 4, var12.method_12185() >> 4);
             var2.method_24143(var13, var5x -> {
-               class_2658 var8x = method_17781(var12, var5x).method_28886().method_27798(var8.method_37387());
+               class_2658 var8x = method_17781(var12, var5x).method_28886().method_27798(var8.getType());
                if (var8x != null) {
                   var5.method_10920(var8.method_37075(), var8x.method_12012());
                }
@@ -193,7 +193,7 @@ public final class class_3815 {
    }
 
    private static boolean method_17771(class_6331 var0, MobEntity var1, double var2) {
-      return var2 > (double)(var1.method_37387().method_30476().method_21200() * var1.method_37387().method_30476().method_21200()) && var1.method_26911(var2)
+      return var2 > (double)(var1.getType().method_30476().method_21200() * var1.getType().method_30476().method_21200()) && var1.method_26911(var2)
          ? false
          : var1.method_26889(var0, class_2417.field_12031) && var1.method_26855(var0);
    }

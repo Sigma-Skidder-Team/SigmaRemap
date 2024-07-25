@@ -38,7 +38,7 @@ public class class_9273 extends class_5920<class_5834> {
       }
 
       var2.method_26525().method_5107(class_6044.field_30895, var7.method_37075(), (long)this.field_47306);
-      if (var7.method_37387() != EntityType.field_34300 || var1.method_29537().method_1285(class_291.field_1042)) {
+      if (var7.getType() != EntityType.field_34300 || var1.method_29537().method_1285(class_291.field_1042)) {
          var2.method_26525().method_5127(class_6044.field_30884);
          var2.method_26525().method_5127(class_6044.field_30866);
       }

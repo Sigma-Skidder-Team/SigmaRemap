@@ -39,7 +39,7 @@ public class class_2811 extends class_1173 {
    public void method_12800() {
       this.goalSelector.addGoal(2, new class_1277(this, 1.0, false));
       this.goalSelector.addGoal(6, new class_7302(this, 1.0, true, 4, this::method_12793));
-      this.goalSelector.addGoal(7, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp(class_1918.class));
       this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<AbstractVillagerEntity>(this, AbstractVillagerEntity.class, false));
@@ -233,7 +233,7 @@ public class class_2811 extends class_1173 {
                int var13 = var8 + class_9299.method_42824(this.field_41717, 7, 40) * class_9299.method_42824(this.field_41717, -1, 1);
                int var14 = var9 + class_9299.method_42824(this.field_41717, 7, 40) * class_9299.method_42824(this.field_41717, -1, 1);
                BlockPos var15 = new BlockPos(var12, var13, var14);
-               EntityType var16 = var10.method_37387();
+               EntityType var16 = var10.getType();
                class_1257 var17 = class_1136.method_4980(var16);
                if (class_3815.method_17767(var17, this.world, var15, var16)
                   && class_1136.method_4983(var16, var5, class_2417.field_12039, var15, this.world.field_33033)) {

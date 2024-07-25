@@ -9,6 +9,6 @@ public class class_4260 implements class_9434<String> {
    }
 
    public static String method_19842(Entity var0) {
-      return var0.method_37387().method_30469();
+      return var0.getType().method_30469();
    }
 }

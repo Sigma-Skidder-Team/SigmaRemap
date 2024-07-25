@@ -1897,7 +1897,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                } else if (var9 instanceof class_3577) {
                   var5 = new ItemStack(class_4897.field_24665);
                } else {
-                  class_3003 var14 = class_3003.method_13715(var9.method_37387());
+                  class_3003 var14 = class_3003.method_13715(var9.getType());
                   if (var14 == null) {
                      return;
                   }
@@ -1913,7 +1913,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                      .method_39797(this.theWorld.method_28262(((class_9529)this.field_9587).method_43955()).method_8360())
                      .toString();
                } else if (var4 == class_1430.field_7718) {
-                  var10 = class_8669.field_44400.method_39797(((class_5631)this.field_9587).method_25524().method_37387()).toString();
+                  var10 = class_8669.field_44400.method_39797(((class_5631)this.field_9587).method_25524().getType()).toString();
                }
 
                LOGGER.warn("Picking on: [{}] {} gave null item", var4, var10);
@@ -2233,7 +2233,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          || this.thePlayer != null
             && this.thePlayer.method_37221()
             && this.gameOptions.keySpectatorOutlines.isKeyDown()
-            && var1.method_37387() == EntityType.field_34300;
+            && var1.getType() == EntityType.field_34300;
    }
 
    @Override

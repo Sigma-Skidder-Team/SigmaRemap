@@ -26,10 +26,10 @@ public class class_912 extends class_1173 implements class_6250 {
 
    @Override
    public void registerGoals() {
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
       this.goalSelector.addGoal(1, new class_990(this));
       this.goalSelector.addGoal(2, new class_9037(this, 1.0, false));
-      this.goalSelector.addGoal(7, new class_2889(this, 1.0, 0.0F));
+      this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0, 0.0F));
       this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
       this.goalSelector.addGoal(10, new class_6766(this));

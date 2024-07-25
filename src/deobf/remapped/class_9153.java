@@ -355,7 +355,7 @@ public class class_9153 {
    }
 
    public boolean method_42161() {
-      return this.field_46835.thePlayer.isPassenger() && this.field_46835.thePlayer.method_37243() instanceof class_4109;
+      return this.field_46835.thePlayer.isPassenger() && this.field_46835.thePlayer.getRidingEntity() instanceof class_4109;
    }
 
    public boolean method_42153() {

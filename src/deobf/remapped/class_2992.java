@@ -9,15 +9,15 @@ public class class_2992 extends class_4485<EntityType<?>> {
 
    @Override
    public void method_20835() {
-      this.method_20834(class_5218.field_26790).method_26026(EntityType.field_34241, EntityType.field_34322, EntityType.field_34317);
-      this.method_20834(class_5218.field_26788)
+      this.method_20834(EntityTypeTags.SKELETONS).method_26026(EntityType.field_34241, EntityType.field_34322, EntityType.field_34317);
+      this.method_20834(EntityTypeTags.RAIDERS)
          .method_26026(
             EntityType.field_34296, EntityType.field_34265, EntityType.field_34318, EntityType.field_34255, EntityType.field_34270, EntityType.field_34220
          );
-      this.method_20834(class_5218.field_26789).method_26025(EntityType.field_34238);
-      this.method_20834(class_5218.field_26794).method_26026(EntityType.field_34290, EntityType.field_34260);
-      this.method_20834(class_5218.field_26793)
-         .method_26024(class_5218.field_26794)
+      this.method_20834(EntityTypeTags.BEEHIVE_INHABITORS).method_26025(EntityType.field_34238);
+      this.method_20834(EntityTypeTags.ARROWS).method_26026(EntityType.field_34290, EntityType.field_34260);
+      this.method_20834(EntityTypeTags.IMPACT_PROJECTILES)
+         .method_26024(EntityTypeTags.ARROWS)
          .method_26026(
             EntityType.field_34247,
             EntityType.field_34216,

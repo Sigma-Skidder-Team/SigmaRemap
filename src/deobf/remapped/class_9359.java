@@ -180,7 +180,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
       }
 
       Entity var8 = this.getLowestRidingEntity();
-      Entity var5 = this.method_37243();
+      Entity var5 = this.getRidingEntity();
       if (var5 != null && var8 != this && var8.method_37172()) {
          CompoundNBT var6 = new CompoundNBT();
          CompoundNBT var7 = new CompoundNBT();
@@ -426,7 +426,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
       this.method_3219().method_4851(class_6810.field_35131, this.method_37206(), class_8274::method_38145);
       class_5834 var7 = this.method_26560();
       if (var7 != null) {
-         this.method_3211(class_6234.field_31834.method_43790(var7.method_37387()));
+         this.method_3211(class_6234.field_31834.method_43790(var7.getType()));
          var7.method_37392(this, this.field_29644, var1);
          this.method_26487(var7);
       }
@@ -752,9 +752,9 @@ public class class_9359 extends PlayerEntity implements class_117 {
 
    @Override
    public boolean startRiding(Entity var1, boolean var2) {
-      Entity var5 = this.method_37243();
+      Entity var5 = this.getRidingEntity();
       if (super.startRiding(var1, var2)) {
-         Entity var6 = this.method_37243();
+         Entity var6 = this.getRidingEntity();
          if (var6 != var5 && this.field_47794 != null) {
             this.field_47794.method_4170(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          }
@@ -767,9 +767,9 @@ public class class_9359 extends PlayerEntity implements class_117 {
 
    @Override
    public void method_37390() {
-      Entity var3 = this.method_37243();
+      Entity var3 = this.getRidingEntity();
       super.method_37390();
-      Entity var4 = this.method_37243();
+      Entity var4 = this.getRidingEntity();
       if (var4 != var3 && this.field_47794 != null) {
          this.field_47794.method_4170(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }

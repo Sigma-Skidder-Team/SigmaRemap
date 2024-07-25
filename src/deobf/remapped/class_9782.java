@@ -51,7 +51,7 @@ public class class_9782 {
                         );
                         ArrayList var6x = class_6306.method_28770(var5x, var4x);
                         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Teleport", "Successfully teleported !"));
-                        Entity var7 = this.field_49645.thePlayer.method_37243();
+                        Entity var7 = this.field_49645.thePlayer.getRidingEntity();
 
                         for (class_4714 var9x : var6x) {
                            if (var7 != null) {

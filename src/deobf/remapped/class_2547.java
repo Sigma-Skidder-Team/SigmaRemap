@@ -19,7 +19,7 @@ public class class_2547 extends class_7429 implements class_2354 {
    @Override
    public void registerGoals() {
       super.registerGoals();
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
       this.goalSelector.addGoal(1, new class_9577(this));
       this.goalSelector.addGoal(4, new class_1314(this, null));
       this.goalSelector.addGoal(5, new class_1042(this, null));

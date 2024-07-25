@@ -210,7 +210,7 @@ public class class_9176 extends class_6414 {
 
    @Override
    public void method_10758(World var1, class_2522 var2, class_9529 var3, class_5783 var4) {
-      if (var4.method_37387().method_30453(class_5218.field_26793)) {
+      if (var4.getType().isContained(EntityTypeTags.IMPACT_PROJECTILES)) {
          BlockPos var7 = var3.method_43955();
          var1.method_7511(var7, true, var4);
       }

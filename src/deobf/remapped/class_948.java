@@ -99,14 +99,14 @@ public class class_948 implements class_1243 {
       }
 
       this.field_4854 = this.field_4880.getLowestRidingEntity();
-      if (this.field_4854 != this.field_4880 && this.field_4854.method_37259() == this.field_4880) {
+      if (this.field_4854 != this.field_4880 && this.field_4854.getControllingPassenger() == this.field_4880) {
          this.field_4865 = this.field_4854.getPosX();
          this.field_4875 = this.field_4854.method_37309();
          this.field_4871 = this.field_4854.getPosZ();
          this.field_4873 = this.field_4854.getPosX();
          this.field_4882 = this.field_4854.method_37309();
          this.field_4883 = this.field_4854.getPosZ();
-         if (this.field_4851 && this.field_4880.getLowestRidingEntity().method_37259() == this.field_4880) {
+         if (this.field_4851 && this.field_4880.getLowestRidingEntity().getControllingPassenger() == this.field_4880) {
             if (++this.field_4878 > 80) {
                field_4870.warn("{} was kicked for floating a vehicle too long!", this.field_4880.method_45509().getString());
                this.method_4161(new TranslationTextComponent("multiplayer.disconnect.flying"));
@@ -229,7 +229,7 @@ public class class_948 implements class_1243 {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       if (!method_4173(var1)) {
          Entity var4 = this.field_4880.getLowestRidingEntity();
-         if (var4 != this.field_4880 && var4.method_37259() == this.field_4880 && var4 == this.field_4854) {
+         if (var4 != this.field_4880 && var4.getControllingPassenger() == this.field_4880 && var4 == this.field_4854) {
             class_6331 var5 = this.field_4880.method_43235();
             double var6 = var4.getPosX();
             double var8 = var4.method_37309();
@@ -955,7 +955,7 @@ public class class_948 implements class_1243 {
    @Override
    public void method_5553(class_8125 var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
-      Entity var4 = this.field_4880.method_37243();
+      Entity var4 = this.field_4880.getRidingEntity();
       if (var4 instanceof BoatEntity) {
          ((BoatEntity)var4).method_42087(var1.method_36966(), var1.method_36965());
       }
@@ -1102,8 +1102,8 @@ public class class_948 implements class_1243 {
             }
             break;
          case field_20103:
-            if (this.field_4880.method_37243() instanceof class_9766) {
-               class_9766 var6 = (class_9766)this.field_4880.method_37243();
+            if (this.field_4880.getRidingEntity() instanceof class_9766) {
+               class_9766 var6 = (class_9766)this.field_4880.getRidingEntity();
                int var5 = var1.method_10652();
                if (var6.method_45066() && var5 > 0) {
                   var6.method_45067(var5);
@@ -1111,14 +1111,14 @@ public class class_948 implements class_1243 {
             }
             break;
          case field_20096:
-            if (this.field_4880.method_37243() instanceof class_9766) {
-               class_9766 var4 = (class_9766)this.field_4880.method_37243();
+            if (this.field_4880.getRidingEntity() instanceof class_9766) {
+               class_9766 var4 = (class_9766)this.field_4880.getRidingEntity();
                var4.method_45068();
             }
             break;
          case field_20101:
-            if (this.field_4880.method_37243() instanceof class_4109) {
-               ((class_4109)this.field_4880.method_37243()).method_19076(this.field_4880);
+            if (this.field_4880.getRidingEntity() instanceof class_4109) {
+               ((class_4109)this.field_4880.getRidingEntity()).method_19076(this.field_4880);
             }
             break;
          case field_20093:

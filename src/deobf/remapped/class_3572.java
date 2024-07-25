@@ -49,7 +49,7 @@ public final class class_3572 {
    public static Predicate<Entity> method_16614(Entity var0) {
       return var1 -> {
          while (var1.isPassenger()) {
-            var1 = var1.method_37243();
+            var1 = var1.getRidingEntity();
             if (var1 == var0) {
                return false;
             }

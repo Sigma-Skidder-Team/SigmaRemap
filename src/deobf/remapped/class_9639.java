@@ -76,7 +76,7 @@ public class class_9639<T> {
       );
    }
 
-   public class_9349<T> method_44503(Map<Identifier, class_1079> var1) {
+   public ITagCollection<T> method_44503(Map<Identifier, class_1079> var1) {
       HashMap var4 = Maps.newHashMap();
       Function var5 = var4::get;
       Function var6 = var1x -> this.field_49109.apply(var1x).orElse(null);
@@ -108,6 +108,6 @@ public class class_9639<T> {
                var4x.method_4727(var5, var6).<CharSequence>map(Objects::toString).collect(Collectors.joining(","))
             )
       );
-      return class_9349.<T>method_43138(var4);
+      return ITagCollection.<T>method_43138(var4);
    }
 }

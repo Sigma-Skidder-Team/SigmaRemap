@@ -50,7 +50,7 @@ public class class_6198 extends class_5920<class_5834> {
    }
 
    private boolean method_28342(class_5834 var1) {
-      return this.field_31658.equals(var1.method_37387()) && this.field_31659.test(var1);
+      return this.field_31658.equals(var1.getType()) && this.field_31659.test(var1);
    }
 
    private List<class_5834> method_28341(class_5834 var1) {

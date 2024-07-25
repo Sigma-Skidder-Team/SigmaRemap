@@ -37,7 +37,7 @@ public class class_1728 {
    }
 
    private void method_7731(MobEntity var1, class_5990 var2) {
-      EntityType var5 = var1.method_37387();
+      EntityType var5 = var1.getType();
       BlockPos var6 = var1.method_37075();
       double var8;
       if (var6.equals(this.field_8909) && var5 == this.field_8913) {

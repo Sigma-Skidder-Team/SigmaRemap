@@ -12,7 +12,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    @Override
    public void registerGoals() {
       this.goalSelector.addGoal(1, new class_1837(this, 1.25, 20, 10.0F));
-      this.goalSelector.addGoal(2, new class_2889(this, 1.0, 1.0000001E-5F));
+      this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0, 1.0000001E-5F));
       this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(4, new class_9691(this));
       this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 10, true, false, var0 -> var0 instanceof class_1869));

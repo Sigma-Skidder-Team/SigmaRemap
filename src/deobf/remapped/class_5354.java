@@ -139,7 +139,7 @@ public class class_5354 extends class_3757 implements class_3745 {
             Entity var12 = EntityType.method_30455(var8, this.field_18364, var0 -> var0);
             if (var12 == null) {
                return false;
-            } else if (var12.method_37387().method_30453(class_5218.field_26789)) {
+            } else if (var12.getType().isContained(EntityTypeTags.BEEHIVE_INHABITORS)) {
                if (var12 instanceof class_8829) {
                   class_8829 var13 = (class_8829)var12;
                   if (this.method_24440() && !var13.method_40603() && this.field_18364.field_33033.nextFloat() < 0.9F) {

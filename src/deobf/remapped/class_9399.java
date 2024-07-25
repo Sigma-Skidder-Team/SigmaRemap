@@ -770,7 +770,7 @@ public class class_9399 extends class_5834 {
 
    private class_6097 method_43508(boolean var1) {
       if (!var1) {
-         return !this.method_26449() ? this.method_37387().method_30473() : field_48038;
+         return !this.method_26449() ? this.getType().method_30473() : field_48038;
       } else {
          return field_48060;
       }

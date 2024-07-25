@@ -1268,7 +1268,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       return this.field_1341.method_28746();
    }
 
-   public class_6437 method_1754() {
+   public ITagCollectionSupplier method_1754() {
       return this.field_1341.method_28753();
    }
 

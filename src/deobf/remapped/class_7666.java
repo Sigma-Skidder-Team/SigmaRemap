@@ -622,7 +622,7 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
    @Override
    public ITextComponent method_37391() {
       return new TranslationTextComponent(
-         this.method_37387().method_30469() + '.' + class_8669.field_44425.method_39797(this.method_15891().method_13910()).method_21456()
+         this.getType().method_30469() + '.' + class_8669.field_44425.method_39797(this.method_15891().method_13910()).method_21456()
       );
    }
 

@@ -9,7 +9,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    private static final class_7821<Integer> field_48111 = class_8073.<Integer>method_36641(class_9408.class, class_2734.field_13366);
    private static final class_7821<Integer> field_48105 = class_8073.<Integer>method_36641(class_9408.class, class_2734.field_13366);
    public static final Predicate<class_5834> field_48108 = var0 -> {
-      EntityType var3 = var0.method_37387();
+      EntityType var3 = var0.getType();
       return var3 == EntityType.field_34321 || var3 == EntityType.field_34251 || var3 == EntityType.field_34250;
    };
    private float field_48102;
@@ -28,14 +28,14 @@ public class class_9408 extends class_8990 implements class_6250 {
 
    @Override
    public void registerGoals() {
-      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
       this.goalSelector.addGoal(2, new class_8453(this));
       this.goalSelector.addGoal(3, new class_5160(this, this, (float)class_9310.class, (double)24.0F, 1.5, 1.5));
       this.goalSelector.addGoal(4, new class_1937(this, 0.4F));
       this.goalSelector.addGoal(5, new class_9037(this, 1.0, true));
       this.goalSelector.addGoal(6, new class_5591(this, 1.0, 10.0F, 2.0F, false));
       this.goalSelector.addGoal(7, new class_9513(this, 1.0));
-      this.goalSelector.addGoal(8, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(8, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.goalSelector.addGoal(9, new class_5809(this, 8.0F));
       this.goalSelector.addGoal(10, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(10, new class_9691(this));

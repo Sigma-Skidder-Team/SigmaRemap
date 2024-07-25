@@ -10,7 +10,7 @@ public class class_7070 {
    private static final Map<String, Integer> field_36501 = new HashMap<String, Integer>();
 
    public static int method_32561(Entity var0) {
-      return var0 != null ? method_32562(var0.method_37387()) : -1;
+      return var0 != null ? method_32562(var0.getType()) : -1;
    }
 
    public static int method_32562(EntityType var0) {

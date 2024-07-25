@@ -18,7 +18,7 @@ public class class_9599 {
    public static final DynamicCommandExceptionType field_48939 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("argument.item.id.invalid", var0)
    );
-   private static final BiFunction<SuggestionsBuilder, class_9349<class_2451>, CompletableFuture<Suggestions>> field_48941 = (var0, var1) -> var0.buildFuture();
+   private static final BiFunction<SuggestionsBuilder, ITagCollection<class_2451>, CompletableFuture<Suggestions>> field_48941 = (var0, var1) -> var0.buildFuture();
    private final StringReader field_48936;
    private final boolean field_48933;
    private final Map<class_5019<?>, Comparable<?>> field_48932 = Maps.newHashMap();
@@ -26,7 +26,7 @@ public class class_9599 {
    private CompoundNBT field_48938;
    private Identifier field_48930 = new Identifier("");
    private int field_48940;
-   private BiFunction<SuggestionsBuilder, class_9349<class_2451>, CompletableFuture<Suggestions>> field_48937 = field_48941;
+   private BiFunction<SuggestionsBuilder, ITagCollection<class_2451>, CompletableFuture<Suggestions>> field_48937 = field_48941;
 
    public class_9599(StringReader var1, boolean var2) {
       this.field_48936 = var1;
@@ -87,7 +87,7 @@ public class class_9599 {
       return this;
    }
 
-   private CompletableFuture<Suggestions> method_44341(SuggestionsBuilder var1, class_9349<class_2451> var2) {
+   private CompletableFuture<Suggestions> method_44341(SuggestionsBuilder var1, ITagCollection<class_2451> var2) {
       if (var1.getRemaining().isEmpty()) {
          var1.suggest(String.valueOf('{'));
       }
@@ -95,11 +95,11 @@ public class class_9599 {
       return var1.buildFuture();
    }
 
-   private CompletableFuture<Suggestions> method_44340(SuggestionsBuilder var1, class_9349<class_2451> var2) {
+   private CompletableFuture<Suggestions> method_44340(SuggestionsBuilder var1, ITagCollection<class_2451> var2) {
       return class_8773.method_40324(var2.method_43141(), var1.createOffset(this.field_48940));
    }
 
-   private CompletableFuture<Suggestions> method_44344(SuggestionsBuilder var1, class_9349<class_2451> var2) {
+   private CompletableFuture<Suggestions> method_44344(SuggestionsBuilder var1, ITagCollection<class_2451> var2) {
       if (this.field_48933) {
          class_8773.method_40325(var2.method_43141(), var1, String.valueOf('#'));
       }
@@ -107,7 +107,7 @@ public class class_9599 {
       return class_8773.method_40324(class_8669.field_44382.method_39805(), var1);
    }
 
-   public CompletableFuture<Suggestions> method_44336(SuggestionsBuilder var1, class_9349<class_2451> var2) {
+   public CompletableFuture<Suggestions> method_44336(SuggestionsBuilder var1, ITagCollection<class_2451> var2) {
       return this.field_48937.apply(var1.createOffset(this.field_48936.getCursor()), var2);
    }
 }

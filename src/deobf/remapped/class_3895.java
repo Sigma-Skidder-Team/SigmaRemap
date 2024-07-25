@@ -88,7 +88,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    private static boolean method_18035(class_5834 var0) {
-      EntityType var3 = var0.method_37387();
+      EntityType var3 = var0.getType();
       return var3 != EntityType.field_34244 && var3 != EntityType.field_34210 && class_3572.field_17480.test(var0);
    }
 

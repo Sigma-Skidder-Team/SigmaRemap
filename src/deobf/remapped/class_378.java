@@ -144,8 +144,8 @@ public class class_378 extends MobEntity implements class_1869 {
    }
 
    @Override
-   public EntityType<? extends class_378> method_37387() {
-      return (EntityType<? extends class_378>)super.method_37387();
+   public EntityType<? extends class_378> getType() {
+      return (EntityType<? extends class_378>)super.getType();
    }
 
    @Override
@@ -161,7 +161,7 @@ public class class_378 extends MobEntity implements class_1869 {
          for (int var9 = 0; var9 < var8; var9++) {
             float var10 = ((float)(var9 % 2) - 0.5F) * var6;
             float var11 = ((float)(var9 / 2) - 0.5F) * var6;
-            class_378 var12 = this.method_37387().method_30484(this.world);
+            class_378 var12 = this.getType().method_30484(this.world);
             if (this.method_26925()) {
                var12.method_26883();
             }
@@ -236,7 +236,7 @@ public class class_378 extends MobEntity implements class_1869 {
 
    @Override
    public Identifier method_26934() {
-      return this.method_1860() != 1 ? class_5931.field_30157 : this.method_37387().method_30480();
+      return this.method_1860() != 1 ? class_5931.field_30157 : this.getType().method_30480();
    }
 
    public static boolean method_1853(EntityType<class_378> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {

@@ -488,7 +488,7 @@ public class class_2654 implements class_5990 {
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field_13083[var9].<Entity>method_21835(Entity.class)) {
-            if ((var1 == null || var11.method_37387() == var1) && var11.method_37241().method_18909(var2) && var4.test(var11)) {
+            if ((var1 == null || var11.getType() == var1) && var11.method_37241().method_18909(var2) && var4.test(var11)) {
                var3.add(var11);
             }
          }

@@ -63,7 +63,7 @@ public class class_4931 {
                            return false;
                         }
 
-                        if (!var1.method_26610(var2.method_37387())) {
+                        if (!var1.method_26610(var2.getType())) {
                            return false;
                         }
                      }

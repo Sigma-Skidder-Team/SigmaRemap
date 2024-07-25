@@ -44,7 +44,7 @@ public class class_5583 extends class_8990 {
    @Override
    public void registerGoals() {
       this.field_28350 = new class_6099(this, 0.6, field_28348, true);
-      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
       this.goalSelector.addGoal(1, new class_8453(this));
       this.goalSelector.addGoal(2, new class_5973(this));
       this.goalSelector.addGoal(3, this.field_28350);
@@ -54,7 +54,7 @@ public class class_5583 extends class_8990 {
       this.goalSelector.addGoal(8, new class_1937(this, 0.3F));
       this.goalSelector.addGoal(9, new class_7037(this));
       this.goalSelector.addGoal(10, new class_9513(this, 0.8));
-      this.goalSelector.addGoal(11, new class_2889(this, 0.8, 1.0000001E-5F));
+      this.goalSelector.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
       this.goalSelector.addGoal(12, new LookAtGoal(this, PlayerEntity.class, 10.0F));
       this.targetSelector.addGoal(1, new class_5327<class_7272>(this, class_7272.class, false, (Predicate<class_5834>)null));
       this.targetSelector.addGoal(1, new class_5327<class_3845>(this, class_3845.class, false, class_3845.field_18768));

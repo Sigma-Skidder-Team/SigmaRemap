@@ -631,10 +631,10 @@ public class class_314 {
 
    public static boolean method_1452() {
       Box var2 = field_1158.thePlayer.field_41712.method_18918(0.0, -1.0, 0.0);
-      if (field_1158.thePlayer.method_37243() != null) {
-         double var4 = field_1158.thePlayer.method_37243().field_41767 - field_1158.thePlayer.method_37243().getPosX();
-         double var6 = field_1158.thePlayer.method_37243().field_41725 - field_1158.thePlayer.method_37243().getPosZ();
-         var2 = field_1158.thePlayer.method_37243().field_41712.method_18928(Math.abs(var4), 1.0, Math.abs(var6));
+      if (field_1158.thePlayer.getRidingEntity() != null) {
+         double var4 = field_1158.thePlayer.getRidingEntity().field_41767 - field_1158.thePlayer.getRidingEntity().getPosX();
+         double var6 = field_1158.thePlayer.getRidingEntity().field_41725 - field_1158.thePlayer.getRidingEntity().getPosZ();
+         var2 = field_1158.thePlayer.getRidingEntity().field_41712.method_18928(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
       Stream var3 = field_1158.theWorld.method_6680(field_1158.thePlayer, var2);
@@ -1042,7 +1042,7 @@ public class class_314 {
                return false;
             } else if (!var2 && !(var0 instanceof PlayerEntity)) {
                return false;
-            } else if (field_1158.thePlayer.method_37243() != null && field_1158.thePlayer.method_37243().equals(var0)) {
+            } else if (field_1158.thePlayer.getRidingEntity() != null && field_1158.thePlayer.getRidingEntity().equals(var0)) {
                return false;
             } else {
                return !var0.method_37367()

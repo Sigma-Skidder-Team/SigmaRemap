@@ -260,7 +260,7 @@ public abstract class class_5834 extends Entity {
                }
             }
 
-            if (!this.world.field_33055 && this.isPassenger() && this.method_37243() != null && !this.method_37243().method_37168()) {
+            if (!this.world.field_33055 && this.isPassenger() && this.getRidingEntity() != null && !this.getRidingEntity().method_37168()) {
                this.method_37390();
             }
          } else if (this.method_37229() < this.method_37099()) {
@@ -689,7 +689,7 @@ public abstract class class_5834 extends Entity {
       if (var1 != null) {
          ItemStack var9 = this.method_26520(class_6943.field_35704);
          class_2451 var7 = var9.method_27960();
-         EntityType var8 = var1.method_37387();
+         EntityType var8 = var1.getType();
          if (var8 == EntityType.field_34241 && var7 == class_4897.field_24880
             || var8 == EntityType.field_34297 && var7 == class_4897.field_24349
             || var8 == EntityType.field_34210 && var7 == class_4897.field_25069) {
@@ -928,7 +928,7 @@ public abstract class class_5834 extends Entity {
                      if (var10.method_41215()) {
                         this.field_29665 = 100;
                         class_5834 var11 = var10.method_41207();
-                        if (var11 != null && var11.method_37387() == EntityType.field_34300) {
+                        if (var11 != null && var11.getType() == EntityType.field_34300) {
                            this.field_29634 = (PlayerEntity)var11;
                         } else {
                            this.field_29634 = null;
@@ -1219,7 +1219,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public Identifier method_26591() {
-      return this.method_37387().method_30480();
+      return this.getType().method_30480();
    }
 
    public void method_26483(DamageSource var1, boolean var2) {
@@ -2528,9 +2528,9 @@ public abstract class class_5834 extends Entity {
 
    @Override
    public void method_37390() {
-      Entity var3 = this.method_37243();
+      Entity var3 = this.getRidingEntity();
       super.method_37390();
-      if (var3 != null && var3 != this.method_37243() && !this.world.field_33055) {
+      if (var3 != null && var3 != this.getRidingEntity() && !this.world.field_33055) {
          this.method_26433(var3);
       }
    }
@@ -3006,7 +3006,7 @@ public abstract class class_5834 extends Entity {
          class_2522 var4 = this.world.method_28262(var1);
          if (var4.method_8360() instanceof class_3633) {
             this.world.method_7513(var1, var4.method_10308(class_3633.field_17728, Boolean.valueOf(false)), 3);
-            class_1343 var5 = class_3633.method_16932(this.method_37387(), this.world, var1, this.rotationYaw).orElseGet(() -> {
+            class_1343 var5 = class_3633.method_16932(this.getType(), this.world, var1, this.rotationYaw).orElseGet(() -> {
                BlockPos var3x = var1.method_6081();
                return new class_1343((double)var3x.method_12173() + 0.5, (double)var3x.method_12165() + 0.1, (double)var3x.method_12185() + 0.5);
             });

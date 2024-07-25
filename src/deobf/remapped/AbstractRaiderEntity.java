@@ -49,7 +49,7 @@ public abstract class AbstractRaiderEntity extends class_4607 {
          if (this.method_18593()) {
             if (var3 != null) {
                class_5834 var4 = this.method_17809();
-               if (var4 != null && (var4.method_37387() == EntityType.field_34300 || var4.method_37387() == EntityType.field_34298)) {
+               if (var4 != null && (var4.getType() == EntityType.field_34300 || var4.getType() == EntityType.field_34298)) {
                   this.field_29658 = 0;
                }
             } else if (this.world.method_29546() % 20L == 0L) {
@@ -79,7 +79,7 @@ public abstract class AbstractRaiderEntity extends class_4607 {
                var5.method_11287(this.method_18592());
             }
 
-            if (var4 != null && var4.method_37387() == EntityType.field_34300) {
+            if (var4 != null && var4.getType() == EntityType.field_34300) {
                var5.method_11304(var4);
             }
 
@@ -239,7 +239,7 @@ public abstract class AbstractRaiderEntity extends class_4607 {
    @Nullable
    @Override
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
-      this.method_18585(this.method_37387() != EntityType.field_34220 || var3 != class_2417.field_12031);
+      this.method_18585(this.getType() != EntityType.field_34220 || var3 != class_2417.field_12031);
       return super.method_26864(var1, var2, var3, var4, var5);
    }
 

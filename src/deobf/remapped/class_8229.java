@@ -26,7 +26,7 @@ public class class_8229 implements class_2231 {
    private static final int field_42253 = field_42254[5].length();
    private volatile Map<Identifier, class_2581> field_42250 = ImmutableMap.of();
    private final class_9639<class_2581> field_42249 = new class_9639<class_2581>(this::method_37679, "tags/functions", "function");
-   private volatile class_9349<class_2581> field_42255 = class_9349.<class_2581>method_43146();
+   private volatile ITagCollection<class_2581> field_42255 = ITagCollection.<class_2581>method_43146();
    private final int field_42257;
    private final CommandDispatcher<class_9155> field_42256;
 
@@ -38,7 +38,7 @@ public class class_8229 implements class_2231 {
       return this.field_42250;
    }
 
-   public class_9349<class_2581> method_37682() {
+   public ITagCollection<class_2581> method_37682() {
       return this.field_42255;
    }
 

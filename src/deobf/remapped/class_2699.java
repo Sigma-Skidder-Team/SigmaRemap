@@ -191,7 +191,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
             "shot_arrow",
             class_3324.method_15278(
                class_6724.method_30857()
-                  .method_30855(class_9447.method_43695().method_43694(true).method_43696(class_2184.method_10127().method_10132(class_5218.field_26794)))
+                  .method_30855(class_9447.method_43695().method_43694(true).method_43696(class_2184.method_10127().method_10132(EntityTypeTags.ARROWS)))
             )
          )
          .method_15270(var1, "adventure/shoot_arrow");
@@ -354,7 +354,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
             true
          )
          .method_15272(
-            "voluntary_exile", class_3780.method_17504(class_2184.method_10127().method_10132(class_5218.field_26788).method_10137(class_766.field_4152))
+            "voluntary_exile", class_3780.method_17504(class_2184.method_10127().method_10132(EntityTypeTags.RAIDERS).method_10137(class_766.field_4152))
          )
          .method_15270(var1, "adventure/voluntary_exile");
       class_3321.method_15269()

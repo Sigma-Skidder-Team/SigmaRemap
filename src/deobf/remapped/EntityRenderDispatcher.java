@@ -164,7 +164,7 @@ public class EntityRenderDispatcher {
 
    public <T extends Entity> class_7067<? super T> method_28131(T var1) {
       if (!(var1 instanceof AbstractClientPlayerEntity)) {
-         return (class_7067<? super T>)this.renderers.get(var1.method_37387());
+         return (class_7067<? super T>)this.renderers.get(var1.getType());
       } else {
          String var4 = ((AbstractClientPlayerEntity)var1).method_44874();
          class_6670 var5 = this.modelRenderers.get(var4);

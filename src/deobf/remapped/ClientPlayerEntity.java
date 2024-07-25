@@ -494,7 +494,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public boolean isRidingHorse() {
-      Entity var3 = this.method_37243();
+      Entity var3 = this.getRidingEntity();
       return this.isPassenger() && var3 instanceof class_9766 && ((class_9766)var3).method_45066();
    }
 
@@ -722,7 +722,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.isRidingHorse()) {
          this.horseJumpPower = 0.0F;
       } else {
-         class_9766 var15 = (class_9766)this.method_37243();
+         class_9766 var15 = (class_9766)this.getRidingEntity();
          if (this.horseJumpPowerCounter < 0) {
             this.horseJumpPowerCounter++;
             if (this.horseJumpPowerCounter == 0) {
@@ -799,8 +799,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public void method_37189() {
       super.method_37189();
       this.rowingBoat = false;
-      if (this.method_37243() instanceof BoatEntity) {
-         BoatEntity var3 = (BoatEntity)this.method_37243();
+      if (this.getRidingEntity() instanceof BoatEntity) {
+         BoatEntity var3 = (BoatEntity)this.getRidingEntity();
          var3.method_42093(this.movementInput.field_45283, this.movementInput.field_45286, this.movementInput.field_45288, this.movementInput.field_45290);
          this.rowingBoat = this.rowingBoat
             | (this.movementInput.field_45283 || this.movementInput.field_45286 || this.movementInput.field_45288 || this.movementInput.field_45290);

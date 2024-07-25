@@ -49,7 +49,7 @@ public class class_6589 implements Packet<class_392> {
          var1.getPosZ(),
          var1.rotationPitch,
          var1.rotationYaw,
-         var1.method_37387(),
+         var1.getType(),
          var2,
          var1.method_37098()
       );

@@ -96,7 +96,7 @@ public class class_6902 {
 
    public static void method_31606(class_6704 var0, class_5834 var1) {
       if (!var0.method_26449()) {
-         if (var1.method_37387() == EntityType.field_34240 && method_31620(var0)) {
+         if (var1.getType() == EntityType.field_34240 && method_31620(var0)) {
             method_31629(var0, var1);
             method_31613(var0, var1);
          } else {
@@ -157,9 +157,9 @@ public class class_6902 {
    }
 
    private static void method_31612(class_6704 var0, class_5834 var1) {
-      if ((!var0.method_26525().method_5134(class_6275.field_32068) || var1.method_37387() != EntityType.field_34240)
+      if ((!var0.method_26525().method_5134(class_6275.field_32068) || var1.getType() != EntityType.field_34240)
          && class_3572.field_17480.test(var1)
-         && var1.method_37387() != EntityType.field_34306
+         && var1.getType() != EntityType.field_34306
          && !class_1225.method_5452(var0, var1, 4.0)) {
          method_31617(var0, var1);
          method_31608(var0, var1);

@@ -55,7 +55,7 @@ public class InfiniteAuraModule extends Module {
                this.field_37778 = 0;
                this.field_37777.clear();
                this.field_37779 = this.field_37779 - (float)((int)this.field_37779);
-               Object var5 = client.thePlayer.method_37243() == null ? client.thePlayer : client.thePlayer.method_37243();
+               Object var5 = client.thePlayer.getRidingEntity() == null ? client.thePlayer : client.thePlayer.getRidingEntity();
                this.field_37781 = new Thread(() -> {
                   try {
                      int var5x = 0;
@@ -92,7 +92,7 @@ public class InfiniteAuraModule extends Module {
    }
 
    public void method_33701(List<class_4714> var1, boolean var2) {
-      Entity var5 = client.thePlayer.method_37243();
+      Entity var5 = client.thePlayer.getRidingEntity();
       class_4714 var6 = null;
 
       for (class_4714 var8 : var1) {
@@ -186,7 +186,7 @@ public class InfiniteAuraModule extends Module {
                                  var7.remove();
                               } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
                                  var7.remove();
-                              } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var8)) {
+                              } else if (client.thePlayer.getRidingEntity() != null && client.thePlayer.getRidingEntity().equals(var8)) {
                                  var7.remove();
                               } else if (!var8.method_37367()) {
                                  if (var8 instanceof PlayerEntity

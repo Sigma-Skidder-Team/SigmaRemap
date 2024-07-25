@@ -20,12 +20,12 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
    public void registerGoals() {
       super.registerGoals();
       this.field_8348 = new class_9625<AbstractRaiderEntity>(
-         this, AbstractRaiderEntity.class, true, var1 -> var1 != null && this.method_18600() && var1.method_37387() != EntityType.field_34220
+         this, AbstractRaiderEntity.class, true, var1 -> var1 != null && this.method_18600() && var1.getType() != EntityType.field_34220
       );
       this.field_8349 = new class_2978<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<class_5834>)null);
-      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
       this.goalSelector.addGoal(2, new class_1837(this, 1.0, 60, 10.0F));
-      this.goalSelector.addGoal(2, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(3, new class_9691(this));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class));

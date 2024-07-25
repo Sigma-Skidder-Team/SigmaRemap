@@ -7,7 +7,7 @@ public class class_5708 extends Entity {
    private final class_6097 field_28883;
 
    public class_5708(class_2770 var1, String var2, float var3, float var4) {
-      super(var1.method_37387(), var1.world);
+      super(var1.getType(), var1.world);
       this.field_28883 = class_6097.method_27938(var3, var4);
       this.method_37187();
       this.field_28882 = var1;

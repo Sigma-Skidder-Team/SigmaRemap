@@ -18,7 +18,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
       this.goalSelector.addGoal(2, new class_5311(this));
       this.goalSelector.addGoal(3, new class_2829(this, 1.0));
       this.goalSelector.addGoal(3, new class_6837<class_9408>(this, class_9408.class, 6.0F, 1.0, 1.2));
-      this.goalSelector.addGoal(5, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(6, new class_9691(this));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
@@ -71,8 +71,8 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    @Override
    public void method_37189() {
       super.method_37189();
-      if (this.method_37243() instanceof class_4612) {
-         class_4612 var3 = (class_4612)this.method_37243();
+      if (this.getRidingEntity() instanceof class_4612) {
+         class_4612 var3 = (class_4612)this.getRidingEntity();
          this.field_29605 = var3.field_29605;
       }
    }

@@ -2,11 +2,11 @@ package remapped;
 
 import java.util.EnumSet;
 
-public class class_787 extends class_3599 {
+public class SwimGoal extends class_3599 {
    private static String[] field_4227;
    private final MobEntity field_4226;
 
-   public class_787(MobEntity var1) {
+   public SwimGoal(MobEntity var1) {
       this.field_4226 = var1;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9561));
       var1.method_26927().method_5611(true);

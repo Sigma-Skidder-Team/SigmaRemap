@@ -661,7 +661,7 @@ public class EntityType<T extends Entity> {
          && this != field_34309;
    }
 
-   public boolean method_30453(class_2307<EntityType<?>> var1) {
+   public boolean isContained(class_2307<EntityType<?>> var1) {
       return var1.method_10609(this);
    }
 }

@@ -98,7 +98,7 @@ public class class_865 {
       if (this != field_4485) {
          if (var3 == null) {
             return false;
-         } else if (this.field_4487.method_29249(var3.method_37387())) {
+         } else if (this.field_4487.method_29249(var3.getType())) {
             if (var2 != null) {
                if (!this.field_4489
                   .method_28548(var2.field_7336, var2.field_7333, var2.field_7334, var3.getPosX(), var3.method_37309(), var3.getPosZ())) {
@@ -119,7 +119,7 @@ public class class_865 {
                   } else if (this.field_4479.method_35301(var3)) {
                      if (!this.field_4477.method_25539(var3)) {
                         return false;
-                     } else if (this.field_4478.method_3736(var1, var2, var3.method_37243())) {
+                     } else if (this.field_4478.method_3736(var1, var2, var3.getRidingEntity())) {
                         if (!this.field_4490.method_3736(var1, var2, !(var3 instanceof MobEntity) ? null : ((MobEntity)var3).method_17809())) {
                            return false;
                         } else {

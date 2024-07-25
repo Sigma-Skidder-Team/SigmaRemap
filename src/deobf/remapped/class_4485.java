@@ -75,12 +75,12 @@ public abstract class class_4485<T> implements class_5998 {
 
    public abstract Path method_20832(Identifier var1);
 
-   public class_5748<T> method_20834(class_8813<T> var1) {
+   public class_5748<T> method_20834(INamedTag<T> var1) {
       class_1079 var4 = this.method_20833(var1);
       return new class_5748<T>(var4, this.field_21860, "vanilla", null);
    }
 
-   public class_1079 method_20833(class_8813<T> var1) {
+   public class_1079 method_20833(INamedTag<T> var1) {
       return this.field_21863.computeIfAbsent(var1.method_40487(), var0 -> new class_1079());
    }
 }

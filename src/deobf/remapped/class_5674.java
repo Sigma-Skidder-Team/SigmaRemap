@@ -16,7 +16,7 @@ public class class_5674<E extends class_5834, T extends Entity> extends class_59
 
    @Override
    public boolean method_27088(class_6331 var1, E var2) {
-      Entity var5 = var2.method_37243();
+      Entity var5 = var2.getRidingEntity();
       Entity var6 = var2.method_26525().<Entity>method_5138(class_6044.field_30903).orElse((Entity)null);
       if (var5 == null && var6 == null) {
          return false;

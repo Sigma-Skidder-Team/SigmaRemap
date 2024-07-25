@@ -23,7 +23,7 @@ public class HurtByTargetGoal extends class_956 {
       int var3 = this.field_4915.method_26577();
       class_5834 var4 = this.field_4915.method_26531();
       if (var3 != this.field_43058 && var4 != null) {
-         if (var4.method_37387() == EntityType.field_34300 && this.field_4915.world.method_29537().method_1285(class_291.field_1039)) {
+         if (var4.getType() == EntityType.field_34300 && this.field_4915.world.method_29537().method_1285(class_291.field_1039)) {
             return false;
          } else {
             for (Class var8 : this.field_43057) {

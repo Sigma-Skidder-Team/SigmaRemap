@@ -971,7 +971,7 @@ public abstract class World implements class_9379, AutoCloseable {
 
    public abstract class_5023 method_29549();
 
-   public abstract class_6437 method_29600();
+   public abstract ITagCollectionSupplier method_29600();
 
    public BlockPos method_29596(int var1, int var2, int var3, int var4) {
       this.field_33051 = this.field_33051 * 3 + 1013904223;

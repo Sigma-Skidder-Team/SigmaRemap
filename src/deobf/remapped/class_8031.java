@@ -56,13 +56,13 @@ public class class_8031 extends class_5467 implements class_9897 {
    @Override
    public void registerGoals() {
       this.field_41105 = new class_5296(this);
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
       this.goalSelector.addGoal(1, new class_518(this, 1.25));
       this.goalSelector.addGoal(2, new class_9513(this, 1.0));
       this.goalSelector.addGoal(3, new class_7228(this, 1.1, class_8137.method_37019(class_4897.field_24813), false));
       this.goalSelector.addGoal(4, new class_8676(this, 1.1));
       this.goalSelector.addGoal(5, this.field_41105);
-      this.goalSelector.addGoal(6, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
    }
@@ -97,7 +97,7 @@ public class class_8031 extends class_5467 implements class_9897 {
    @Override
    public Identifier method_26934() {
       if (this.method_36478()) {
-         return this.method_37387().method_30480();
+         return this.getType().method_30480();
       } else {
          switch (this.method_36474()) {
             case field_46493:

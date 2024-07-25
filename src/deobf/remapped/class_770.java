@@ -152,7 +152,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             .method_40676(
                class_6282.method_28631()
                   .method_1773(class_203.method_871(class_391.field_1615))
-                  .method_1774(class_2338.method_10701(class_5848.field_29709, class_2184.method_10127().method_10132(class_5218.field_26790)))
+                  .method_1774(class_2338.method_10701(class_5848.field_29709, class_2184.method_10127().method_10132(EntityTypeTags.SKELETONS)))
             )
       );
       this.method_3462(

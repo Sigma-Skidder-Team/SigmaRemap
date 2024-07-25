@@ -13,7 +13,7 @@ public class class_6174 extends class_1173 {
    @Override
    public void registerGoals() {
       this.field_31581 = new class_128(this);
-      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
       this.goalSelector.addGoal(3, this.field_31581);
       this.goalSelector.addGoal(4, new class_9037(this, 1.0, false));
       this.goalSelector.addGoal(5, new class_7905(this));

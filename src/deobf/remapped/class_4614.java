@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import java.util.function.Function;
 
 public class class_4614 extends class_4485<class_2451> {
-   private final Function<class_8813<class_6414>, class_1079> field_22430;
+   private final Function<INamedTag<class_6414>, class_1079> field_22430;
 
    public class_4614(class_6901 var1, class_8805 var2) {
       super(var1, class_8669.field_44382);
@@ -161,7 +161,7 @@ public class class_4614 extends class_4485<class_2451> {
       this.method_20834(class_391.field_1620).method_26026(class_4897.field_24403, class_4897.field_24455);
    }
 
-   public void method_21381(class_8813<class_6414> var1, class_8813<class_2451> var2) {
+   public void method_21381(INamedTag<class_6414> var1, INamedTag<class_2451> var2) {
       class_1079 var5 = this.method_20833(var2);
       class_1079 var6 = this.field_22430.apply(var1);
       var6.method_4720().forEach(var5::method_4722);

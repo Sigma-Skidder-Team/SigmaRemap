@@ -20,7 +20,7 @@ public class class_1225 {
    }
 
    public static boolean method_5450(class_1150<?> var0, class_6044<? extends class_5834> var1, EntityType<?> var2) {
-      return method_5441(var0, var1, var1x -> var1x.method_37387() == var2);
+      return method_5441(var0, var1, var1x -> var1x.getType() == var2);
    }
 
    private static boolean method_5441(class_1150<?> var0, class_6044<? extends class_5834> var1, Predicate<class_5834> var2) {

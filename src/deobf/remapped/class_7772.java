@@ -235,7 +235,7 @@ public class class_7772 {
       }
 
       if (this.field_39387.isPassenger()) {
-         var1.accept(new class_4597(this.field_39387.method_37243()));
+         var1.accept(new class_4597(this.field_39387.getRidingEntity()));
       }
 
       if (this.field_39387 instanceof MobEntity) {

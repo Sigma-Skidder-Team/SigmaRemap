@@ -12,10 +12,10 @@ public class class_7937 extends class_1173 {
 
    @Override
    public void registerGoals() {
-      this.goalSelector.addGoal(1, new class_787(this));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
       this.goalSelector.addGoal(3, new class_1937(this, 0.4F));
       this.goalSelector.addGoal(4, new class_5215(this));
-      this.goalSelector.addGoal(5, new class_2889(this, 0.8));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.8));
       this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(6, new class_9691(this));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this));

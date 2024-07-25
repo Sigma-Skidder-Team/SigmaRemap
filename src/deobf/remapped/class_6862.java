@@ -13,7 +13,7 @@ public class class_6862 extends AbstractVillagerEntity {
 
    @Override
    public void registerGoals() {
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
       this.goalSelector
          .addGoal(
             0,
@@ -43,7 +43,7 @@ public class class_6862 extends AbstractVillagerEntity {
       this.goalSelector.addGoal(1, new class_9595(this));
       this.goalSelector.addGoal(2, new class_8180(this, this, 2.0, 0.35));
       this.goalSelector.addGoal(4, new class_3537(this, 0.35));
-      this.goalSelector.addGoal(8, new class_2889(this, 0.35));
+      this.goalSelector.addGoal(8, new WaterAvoidingRandomWalkingGoal(this, 0.35));
       this.goalSelector.addGoal(9, new class_7699(this, PlayerEntity.class, 3.0F, 1.0F));
       this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
    }

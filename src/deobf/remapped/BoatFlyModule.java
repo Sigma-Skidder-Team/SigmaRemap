@@ -11,7 +11,7 @@ public class BoatFlyModule extends PremiumModule {
    @EventListen
    public void method_17260(class_5596 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.method_37243() != null) {
+         if (client.thePlayer.getRidingEntity() != null) {
             float var4 = class_8865.method_40785();
             float var5 = this.getFloatValueByName("Speed");
             double var6 = Math.cos(Math.toRadians((double)var4)) * (double)var5;
@@ -21,7 +21,7 @@ public class BoatFlyModule extends PremiumModule {
                var8 = 0.0;
             }
 
-            Entity var10 = client.thePlayer.method_37243();
+            Entity var10 = client.thePlayer.getRidingEntity();
             var10.rotationYaw = client.thePlayer.rotationYaw;
             var10.method_37214(var6, !client.thePlayer.field_29654 ? (!this.field_18223 ? 0.0 : (double)(-var5)) : (double)var5, var8);
          }
@@ -31,8 +31,8 @@ public class BoatFlyModule extends PremiumModule {
    @EventListen
    private void method_17262(class_6435 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.method_37243() != null) {
-            if (!client.thePlayer.method_37243().onGround) {
+         if (client.thePlayer.getRidingEntity() != null) {
+            if (!client.thePlayer.getRidingEntity().onGround) {
                if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = true;
@@ -49,8 +49,8 @@ public class BoatFlyModule extends PremiumModule {
             this.field_18223 = false;
          }
 
-         if (client.thePlayer.method_37243() != null) {
-            if (!client.thePlayer.method_37243().onGround) {
+         if (client.thePlayer.getRidingEntity() != null) {
+            if (!client.thePlayer.getRidingEntity().onGround) {
                if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = false;

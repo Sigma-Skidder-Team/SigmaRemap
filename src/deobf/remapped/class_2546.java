@@ -341,7 +341,7 @@ public class class_2546 extends class_9331<class_7333> {
          var7 = var1x -> var1x.method_21456().contains(var1);
       }
 
-      class_9349 var8 = class_391.method_1891();
+      ITagCollection var8 = class_391.method_1891();
       var8.method_43141().stream().filter(var7).forEach(var2 -> {
          class_2307 var5x = this.field_12616.put(var2, var8.method_43140(var2));
       });

@@ -34,7 +34,7 @@ public interface class_6250 {
                this.method_26511((MobEntity)var6);
             }
 
-            if (var6.method_37387() == EntityType.field_34300) {
+            if (var6.getType() == EntityType.field_34300) {
                this.method_26580((PlayerEntity)var6);
             }
          }
@@ -54,7 +54,7 @@ public interface class_6250 {
             this.method_28529();
          }
 
-         if (this.method_28539() > 0 && (var5 == null || var5.method_37387() != EntityType.field_34300 || !var2)) {
+         if (this.method_28539() > 0 && (var5 == null || var5.getType() != EntityType.field_34300 || !var2)) {
             this.method_28532(this.method_28539() - 1);
             if (this.method_28539() == 0) {
                this.method_28538();
@@ -67,7 +67,7 @@ public interface class_6250 {
       if (!class_3572.field_17480.test(var1)) {
          return false;
       } else {
-         return var1.method_37387() == EntityType.field_34300 && this.method_28527(var1.world) ? true : var1.method_37328().equals(this.method_28535());
+         return var1.getType() == EntityType.field_34300 && this.method_28527(var1.world) ? true : var1.method_37328().equals(this.method_28535());
       }
    }
 

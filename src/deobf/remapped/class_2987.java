@@ -47,7 +47,7 @@ public class class_2987 extends class_6127<class_5834> {
                if (!(var17 instanceof class_2599)) {
                   if (!(var17 instanceof PlayerEntity)) {
                      if (var6.isPresent() || !(var17 instanceof class_3204) && !(var17 instanceof class_4653)) {
-                        if (!var10.isPresent() && class_134.method_466(var17.method_37387())) {
+                        if (!var10.isPresent() && class_134.method_466(var17.getType())) {
                            var10 = Optional.<class_5834>of(var17);
                         }
                      } else {

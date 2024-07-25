@@ -674,7 +674,7 @@ public class IngameGUI extends AbstractGui {
    private class_5834 method_13981() {
       PlayerEntity var3 = this.method_13976();
       if (var3 != null) {
-         Entity var4 = var3.method_37243();
+         Entity var4 = var3.getRidingEntity();
          if (var4 == null) {
             return null;
          }

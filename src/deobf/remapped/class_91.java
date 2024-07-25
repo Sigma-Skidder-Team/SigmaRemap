@@ -33,7 +33,7 @@ public class class_91 extends Entity {
    }
 
    private class_91(class_91 var1) {
-      super(var1.method_37387(), var1.world);
+      super(var1.getType(), var1.world);
       this.method_248(var1.method_264().method_27973());
       this.method_37299(var1);
       this.field_178 = var1.field_178;

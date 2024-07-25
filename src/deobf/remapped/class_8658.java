@@ -3,7 +3,7 @@ package remapped;
 import java.util.List;
 import java.util.function.Function;
 
-public class class_8658<T> implements class_8813<T> {
+public class class_8658<T> implements INamedTag<T> {
    private class_2307<T> field_44331;
    public final Identifier field_44332;
 

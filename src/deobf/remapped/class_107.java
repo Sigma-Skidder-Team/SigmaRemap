@@ -88,7 +88,7 @@ public class class_107 extends class_7819 implements class_674 {
    @Override
    public void registerGoals() {
       this.goalSelector.addGoal(0, new class_518(this, 1.25));
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
       this.goalSelector.addGoal(1, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(2, new class_8453(this));
       this.goalSelector.addGoal(2, new class_5591(this, 1.0, 5.0F, 1.0F, true));
@@ -169,7 +169,7 @@ public class class_107 extends class_7819 implements class_674 {
          if (!var4.isEmpty()) {
             MobEntity var5 = (MobEntity)var4.get(var0.field_33033.nextInt(var4.size()));
             if (!var5.method_37378()) {
-               class_8461 var6 = method_326(var5.method_37387());
+               class_8461 var6 = method_326(var5.getType());
                var0.method_29528(
                   (PlayerEntity)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), var6, var1.method_37197(), 0.7F, method_324(var0.field_33033)
                );

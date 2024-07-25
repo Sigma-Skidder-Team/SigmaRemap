@@ -62,7 +62,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
       this.goalSelector.addGoal(6, this.field_45163);
       this.goalSelector.addGoal(7, new class_4901(this, null));
       this.goalSelector.addGoal(8, new class_5650(this));
-      this.goalSelector.addGoal(9, new class_787(this));
+      this.goalSelector.addGoal(9, new SwimGoal(this));
       this.targetSelector.addGoal(1, new class_2591(this, this).setCallsForHelp(new Class[0]));
       this.targetSelector.addGoal(2, new class_486(this));
       this.targetSelector.addGoal(3, new class_6474<class_8829>(this, true));

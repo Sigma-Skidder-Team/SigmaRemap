@@ -23,7 +23,7 @@ public class class_1052 extends class_3599 {
          && this.field_5778.method_21352()
          && this.field_5778.method_17809() != null
          && !this.field_5778.method_26892()
-         && (var3 == null || var3.method_37387() != EntityType.field_34300);
+         && (var3 == null || var3.getType() != EntityType.field_34300);
    }
 
    @Override

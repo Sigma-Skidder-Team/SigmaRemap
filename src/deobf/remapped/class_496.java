@@ -184,7 +184,7 @@ public class class_496 extends class_5467 {
 
    @Override
    public void registerGoals() {
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
       this.goalSelector.addGoal(2, new class_4520(this, 2.0));
       this.goalSelector.addGoal(2, new class_3031(this, this, 1.0));
       this.goalSelector.addGoal(3, new class_5685(this, 1.2F, true));
@@ -199,7 +199,7 @@ public class class_496 extends class_5467 {
       this.goalSelector.addGoal(10, new class_9691(this));
       this.goalSelector.addGoal(12, new class_4205(this));
       this.goalSelector.addGoal(13, new class_8676(this, 1.25));
-      this.goalSelector.addGoal(14, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(14, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.targetSelector.addGoal(1, new class_2199(this).setCallsForHelp(new Class[0]));
    }
 

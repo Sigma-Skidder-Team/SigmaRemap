@@ -17,6 +17,6 @@ public class class_8118 extends class_6411 {
 
    @Override
    public JsonElement method_29250() {
-      return new JsonPrimitive("#" + class_8410.method_38721().method_29389().method_43147(this.field_41610));
+      return new JsonPrimitive("#" + class_8410.method_38721().getEntityTypeTags().method_43147(this.field_41610));
    }
 }

@@ -170,7 +170,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return this.field_41700;
    }
 
-   public EntityType<?> method_37387() {
+   public EntityType<?> getType() {
       return this.field_41719;
    }
 
@@ -285,7 +285,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public void method_37219() {
       this.world.method_29599().startSection("entityBaseTick");
-      if (this.isPassenger() && this.method_37243().field_41751) {
+      if (this.isPassenger() && this.getRidingEntity().field_41751) {
          this.method_37390();
       }
 
@@ -410,8 +410,8 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public void method_37226(class_7412 var1, class_1343 var2) {
       if (MinecraftClient.getInstance().thePlayer != null
-         && MinecraftClient.getInstance().thePlayer.method_37243() != null
-         && MinecraftClient.getInstance().thePlayer.method_37243().method_37145() == this.method_37145()) {
+         && MinecraftClient.getInstance().thePlayer.getRidingEntity() != null
+         && MinecraftClient.getInstance().thePlayer.getRidingEntity().method_37145() == this.method_37145()) {
          class_5088 var5 = new class_5088(var2.field_7336, var2.field_7333, var2.field_7334);
          SigmaMainClass.getInstance().getEventManager().call(var5);
          if (var5.method_29716()) {
@@ -487,7 +487,7 @@ public abstract class Entity implements class_9875, class_5801 {
                if (!this.method_37285()) {
                   this.method_37207(var6, var7);
                } else {
-                  Entity var16 = this.method_37151() && this.method_37259() != null ? this.method_37259() : this;
+                  Entity var16 = this.method_37151() && this.getControllingPassenger() != null ? this.getControllingPassenger() : this;
                   float var17 = var16 == this ? 0.35F : 0.4F;
                   class_1343 var18 = var16.method_37098();
                   float var19 = class_9299.method_42842(
@@ -853,7 +853,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean method_37087() {
-      return this.method_37387().method_30470();
+      return this.getType().method_30470();
    }
 
    public boolean method_37270(float var1, float var2) {
@@ -913,7 +913,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37362() {
-      if (!(this.method_37243() instanceof BoatEntity)) {
+      if (!(this.getRidingEntity() instanceof BoatEntity)) {
          if (!this.method_37143(class_6503.field_33094, 0.014)) {
             this.field_41737 = false;
          } else {
@@ -934,7 +934,7 @@ public abstract class Entity implements class_9875, class_5801 {
       this.field_41715 = this.method_37261(class_6503.field_33094);
       this.field_41720 = null;
       double var3 = this.method_37388() - 0.11111111F;
-      Entity var5 = this.method_37243();
+      Entity var5 = this.getRidingEntity();
       if (var5 instanceof BoatEntity) {
          BoatEntity var6 = (BoatEntity)var5;
          if (!var6.method_37179() && var6.method_37241().field_19939 >= var3 && var6.method_37241().field_19937 <= var3) {
@@ -958,7 +958,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37101() {
-      Entity var3 = this.method_37151() && this.method_37259() != null ? this.method_37259() : this;
+      Entity var3 = this.method_37151() && this.getControllingPassenger() != null ? this.getControllingPassenger() : this;
       float var4 = var3 != this ? 0.9F : 0.2F;
       class_1343 var5 = var3.method_37098();
       float var6 = class_9299.method_42842(
@@ -1458,7 +1458,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    @Nullable
    public final String method_37271() {
-      EntityType var3 = this.method_37387();
+      EntityType var3 = this.getType();
       Identifier var4 = EntityType.method_30472(var3);
       return var3.method_30471() && var4 != null ? var4.toString() : null;
    }
@@ -1550,7 +1550,7 @@ public abstract class Entity implements class_9875, class_5801 {
       this.method_37215(class_1343.field_7335);
       this.method_37123();
       if (this.isPassenger()) {
-         this.method_37243().method_37340(this);
+         this.getRidingEntity().method_37340(this);
       }
    }
 
@@ -1632,10 +1632,10 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37211(Entity var1) {
-      if (var1.method_37243() != this) {
+      if (var1.getRidingEntity() != this) {
          throw new IllegalStateException("Use x.startRiding(y), not y.addPassenger(x)");
       } else {
-         if (!this.world.field_33055 && var1 instanceof PlayerEntity && !(this.method_37259() instanceof PlayerEntity)) {
+         if (!this.world.field_33055 && var1 instanceof PlayerEntity && !(this.getControllingPassenger() instanceof PlayerEntity)) {
             this.field_41707.add(0, var1);
          } else {
             this.field_41707.add(var1);
@@ -1644,7 +1644,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37198(Entity var1) {
-      if (var1.method_37243() != this) {
+      if (var1.getRidingEntity() != this) {
          this.field_41707.remove(var1);
          var1.field_41773 = 60;
       } else {
@@ -1763,7 +1763,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean isPassenger() {
-      return this.method_37243() != null;
+      return this.getRidingEntity() != null;
    }
 
    public boolean method_37151() {
@@ -2059,7 +2059,7 @@ public abstract class Entity implements class_9875, class_5801 {
          class_9606 var4 = this.method_37081(var1);
          if (var4 != null) {
             this.world.method_29599().method_16050("reloading");
-            Entity var5 = this.method_37387().method_30484(var1);
+            Entity var5 = this.getType().method_30484(var1);
             if (var5 != null) {
                var5.method_37199(this);
                var5.method_37144(var4.field_48952.field_7336, var4.field_48952.field_7333, var4.field_48952.field_7334, var4.field_48956, var5.rotationPitch);
@@ -2178,7 +2178,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37331(class_6544 var1) {
-      var1.method_29851("Entity Type", () -> EntityType.method_30472(this.method_37387()) + " (" + this.getClass().getCanonicalName() + ")");
+      var1.method_29851("Entity Type", () -> EntityType.method_30472(this.getType()) + " (" + this.getClass().getCanonicalName() + ")");
       var1.method_29850("Entity ID", this.field_41740);
       var1.method_29851("Entity Name", () -> this.method_45509().getString());
       var1.method_29850(
@@ -2193,7 +2193,7 @@ public abstract class Entity implements class_9875, class_5801 {
       class_1343 var4 = this.method_37098();
       var1.method_29850("Entity's Momentum", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", var4.field_7336, var4.field_7333, var4.field_7334));
       var1.method_29851("Entity's Passengers", () -> this.method_37114().toString());
-      var1.method_29851("Entity's Vehicle", () -> this.method_37243().toString());
+      var1.method_29851("Entity's Vehicle", () -> this.getRidingEntity().toString());
    }
 
    public boolean method_37174() {
@@ -2338,7 +2338,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public HoverEvent method_37248() {
-      return new HoverEvent(HoverEvent$class_48.SHOW_ENTITY, new HoverEvent$class_49(this.method_37387(), this.method_37328(), this.method_45509()));
+      return new HoverEvent(HoverEvent$class_48.SHOW_ENTITY, new HoverEvent$class_49(this.getType(), this.method_37328(), this.method_45509()));
    }
 
    public boolean method_37209(class_9359 var1) {
@@ -2467,7 +2467,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    @Nullable
-   public Entity method_37259() {
+   public Entity getControllingPassenger() {
       return null;
    }
 
@@ -2530,7 +2530,7 @@ public abstract class Entity implements class_9875, class_5801 {
       Entity var3 = this;
 
       while (var3.isPassenger()) {
-         var3 = var3.method_37243();
+         var3 = var3.getRidingEntity();
       }
 
       return var3;
@@ -2555,7 +2555,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean canPassengerSteer() {
-      Entity var3 = this.method_37259();
+      Entity var3 = this.getControllingPassenger();
       return !(var3 instanceof PlayerEntity) ? !this.world.field_33055 : ((PlayerEntity)var3).method_3183();
    }
 
@@ -2572,7 +2572,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    @Nullable
-   public Entity method_37243() {
+   public Entity getRidingEntity() {
       return this.field_41739;
    }
 

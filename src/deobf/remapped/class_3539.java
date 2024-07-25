@@ -2,7 +2,7 @@ package remapped;
 
 import javax.annotation.Nullable;
 
-public class class_3539 extends class_2889 {
+public class class_3539 extends WaterAvoidingRandomWalkingGoal {
    private static String[] field_17309;
 
    public class_3539(class_4612 var1, double var2) {

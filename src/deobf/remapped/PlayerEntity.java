@@ -438,8 +438,8 @@ public abstract class PlayerEntity extends class_5834 {
       this.field_3859 = this.field_3859 + (var3 - this.field_3859) * 0.4F;
       if (this.method_26551() > 0.0F && !this.method_37221()) {
          Box var4;
-         if (this.isPassenger() && !this.method_37243().field_41751) {
-            var4 = this.method_37241().method_18905(this.method_37243().method_37241()).method_18899(1.0, 0.0, 1.0);
+         if (this.isPassenger() && !this.getRidingEntity().field_41751) {
+            var4 = this.method_37241().method_18905(this.getRidingEntity().method_37241()).method_18899(1.0, 0.0, 1.0);
          } else {
             var4 = this.method_37241().method_18899(1.0, 0.5, 1.0);
          }
@@ -1470,7 +1470,7 @@ public abstract class PlayerEntity extends class_5834 {
       if (this.isPassenger()) {
          int var9 = Math.round(class_9299.method_42842(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
          if (var9 > 0) {
-            Entity var10 = this.method_37243();
+            Entity var10 = this.getRidingEntity();
             if (!(var10 instanceof AbstractMinecartEntity)) {
                if (!(var10 instanceof BoatEntity)) {
                   if (!(var10 instanceof class_9405)) {
@@ -1542,7 +1542,7 @@ public abstract class PlayerEntity extends class_5834 {
 
    @Override
    public void method_37231(class_6331 var1, class_5834 var2) {
-      this.method_3211(class_6234.field_31832.method_43790(var2.method_37387()));
+      this.method_3211(class_6234.field_31832.method_43790(var2.getType()));
    }
 
    @Override

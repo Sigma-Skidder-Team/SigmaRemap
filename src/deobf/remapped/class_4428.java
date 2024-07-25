@@ -11,9 +11,9 @@ public class class_4428 implements class_2231 {
    private final class_9639<class_2451> field_21630 = new class_9639<class_2451>(class_8669.field_44382::method_39794, "tags/items", "item");
    private final class_9639<class_2340> field_21634 = new class_9639<class_2340>(class_8669.field_44447::method_39794, "tags/fluids", "fluid");
    private final class_9639<EntityType<?>> field_21632 = new class_9639<EntityType<?>>(class_8669.field_44400::method_39794, "tags/entity_types", "entity_type");
-   private class_6437 field_21631 = class_6437.field_32865;
+   private ITagCollectionSupplier field_21631 = ITagCollectionSupplier.field_32865;
 
-   public class_6437 method_20577() {
+   public ITagCollectionSupplier method_20577() {
       return this.field_21631;
    }
 
@@ -27,12 +27,12 @@ public class class_4428 implements class_2231 {
          .<Void>thenCompose(var1::method_31587)
          .thenAcceptAsync(
             var5x -> {
-               class_9349 var8 = this.field_21633.method_44503((Map<Identifier, class_1079>)var9.join());
-               class_9349 var9x = this.field_21630.method_44503((Map<Identifier, class_1079>)var10.join());
-               class_9349 var10x = this.field_21634.method_44503((Map<Identifier, class_1079>)var11.join());
-               class_9349 var11x = this.field_21632.method_44503((Map<Identifier, class_1079>)var12.join());
-               class_6437 var12x = class_6437.method_29388(var8, var9x, var10x, var11x);
-               Multimap var13 = class_4438.method_20601(var12x);
+               ITagCollection var8 = this.field_21633.method_44503((Map<Identifier, class_1079>)var9.join());
+               ITagCollection var9x = this.field_21630.method_44503((Map<Identifier, class_1079>)var10.join());
+               ITagCollection var10x = this.field_21634.method_44503((Map<Identifier, class_1079>)var11.join());
+               ITagCollection var11x = this.field_21632.method_44503((Map<Identifier, class_1079>)var12.join());
+               ITagCollectionSupplier var12x = ITagCollectionSupplier.method_29388(var8, var9x, var10x, var11x);
+               Multimap var13 = TagRegistryManager.method_20601(var12x);
                if (var13.isEmpty()) {
                   class_8410.method_38722(var12x);
                   this.field_21631 = var12x;

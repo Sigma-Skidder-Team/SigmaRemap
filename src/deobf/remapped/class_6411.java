@@ -27,7 +27,7 @@ public abstract class class_6411 {
             return new class_7009(var5);
          } else {
             Identifier var4 = new Identifier(var3.substring(1));
-            return new class_8118(class_8410.method_38721().method_29389().method_43145(var4));
+            return new class_8118(class_8410.method_38721().getEntityTypeTags().method_43145(var4));
          }
       } else {
          return field_32747;

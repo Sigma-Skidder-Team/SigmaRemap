@@ -32,7 +32,7 @@ public class class_1918 extends class_2811 implements class_6250 {
    @Override
    public void method_12800() {
       this.goalSelector.addGoal(2, new class_1277(this, 1.0, false));
-      this.goalSelector.addGoal(7, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
       this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method_28534));
       this.targetSelector.addGoal(3, new class_6474<class_1918>(this, true));

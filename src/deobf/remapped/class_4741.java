@@ -44,7 +44,7 @@ public class class_4741<E extends class_5834, T extends class_5834> extends clas
    }
 
    private boolean method_21906(class_5834 var1) {
-      return this.field_22973.equals(var1.method_37387()) && this.field_22967.test((T)var1);
+      return this.field_22973.equals(var1.getType()) && this.field_22967.test((T)var1);
    }
 
    @Override

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_6456 extends class_787 {
+public class class_6456 extends SwimGoal {
    private static String[] field_32915;
 
    public class_6456(class_5542 var1) {

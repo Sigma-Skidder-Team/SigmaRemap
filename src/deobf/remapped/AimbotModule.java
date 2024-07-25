@@ -33,7 +33,7 @@ public class AimbotModule extends SecondModule {
                                  var6.remove();
                               } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var7 instanceof PlayerEntity)) {
                                  var6.remove();
-                              } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var7)) {
+                              } else if (client.thePlayer.getRidingEntity() != null && client.thePlayer.getRidingEntity().equals(var7)) {
                                  var6.remove();
                               } else if (!var7.method_37367()) {
                                  if (var7 instanceof PlayerEntity

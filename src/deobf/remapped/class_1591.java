@@ -29,11 +29,11 @@ public class class_1591 extends class_2160<MobEntity, class_672<MobEntity>> {
 
    @Override
    public Identifier method_10053(MobEntity var1) {
-      Identifier var4 = field_8307.get(var1.method_37387());
+      Identifier var4 = field_8307.get(var1.getType());
       if (var4 != null) {
          return var4;
       } else {
-         throw new IllegalArgumentException("I don't know what texture to use for " + var1.method_37387());
+         throw new IllegalArgumentException("I don't know what texture to use for " + var1.getType());
       }
    }
 

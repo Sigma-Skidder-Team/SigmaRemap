@@ -302,7 +302,7 @@ public class TestModule extends Module {
                            if (!(var6 instanceof class_9399) && !(var6 instanceof PlayerEntity)) {
                               if (var6 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
                                  var5.remove();
-                              } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var6)) {
+                              } else if (client.thePlayer.getRidingEntity() != null && client.thePlayer.getRidingEntity().equals(var6)) {
                                  var5.remove();
                               } else if (!var6.method_37367()) {
                                  if (var6 instanceof PlayerEntity && class_5876.method_26760((PlayerEntity)var6)) {
@@ -354,7 +354,7 @@ public class TestModule extends Module {
                            if (!(var7 instanceof class_9399)) {
                               if (var7 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var7)) {
                                  var6.remove();
-                              } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var7)) {
+                              } else if (client.thePlayer.getRidingEntity() != null && client.thePlayer.getRidingEntity().equals(var7)) {
                                  var6.remove();
                               } else if (!var7.method_37367()) {
                                  if (var5 == null || client.thePlayer.method_37175(var7) < client.thePlayer.method_37175(var5)) {

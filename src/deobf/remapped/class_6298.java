@@ -39,7 +39,7 @@ public class class_6298 implements AutoCloseable {
       return this.field_32187;
    }
 
-   public class_6437 method_28753() {
+   public ITagCollectionSupplier method_28753() {
       return this.field_32180.method_20577();
    }
 

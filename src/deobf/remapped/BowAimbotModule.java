@@ -81,7 +81,7 @@ public class BowAimbotModule extends Module {
             var5.remove();
          } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
             var5.remove();
-         } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var6)) {
+         } else if (client.thePlayer.getRidingEntity() != null && client.thePlayer.getRidingEntity().equals(var6)) {
             var5.remove();
          } else if (var6.method_37367()) {
             var5.remove();

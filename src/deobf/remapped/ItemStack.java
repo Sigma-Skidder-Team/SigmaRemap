@@ -821,7 +821,7 @@ public final class ItemStack {
       }
    }
 
-   public boolean method_28009(class_6437 var1, class_9115 var2) {
+   public boolean method_28009(ITagCollectionSupplier var1, class_9115 var2) {
       if (method_28024(var2, this.field_31211)) {
          return this.field_31213;
       } else {
@@ -848,7 +848,7 @@ public final class ItemStack {
       }
    }
 
-   public boolean method_28027(class_6437 var1, class_9115 var2) {
+   public boolean method_28027(ITagCollectionSupplier var1, class_9115 var2) {
       if (method_28024(var2, this.field_31212)) {
          return this.field_31205;
       } else {

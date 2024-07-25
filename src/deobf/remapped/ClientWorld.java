@@ -147,7 +147,7 @@ public class ClientWorld extends World {
          var1.field_41762 = var1.rotationPitch;
          if (var1.field_41727 || var1.method_37221()) {
             var1.field_41697++;
-            this.method_29599().method_16057(() -> class_8669.field_44400.method_39797(var1.method_37387()).toString());
+            this.method_29599().method_16057(() -> class_8669.field_44400.method_39797(var1.getType()).toString());
             if (class_8835.method_40648(var1)) {
                var1.method_37123();
             }
@@ -165,7 +165,7 @@ public class ClientWorld extends World {
    }
 
    public void method_730(Entity var1, Entity var2) {
-      if (var2.field_41751 || var2.method_37243() != var1) {
+      if (var2.field_41751 || var2.getRidingEntity() != var1) {
          var2.method_37390();
       } else if (var2 instanceof PlayerEntity || this.method_745().method_14824(var2)) {
          var2.method_37306(var2.getPosX(), var2.method_37309(), var2.getPosZ());
@@ -603,7 +603,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public class_6437 method_29600() {
+   public ITagCollectionSupplier method_29600() {
       return this.field_576.method_4804();
    }
 

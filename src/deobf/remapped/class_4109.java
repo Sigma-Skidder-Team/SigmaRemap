@@ -51,14 +51,14 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       this.goalSelector.addGoal(1, new class_9169(this, 1.2));
       this.goalSelector.addGoal(2, new class_9513(this, 1.0, class_4109.class));
       this.goalSelector.addGoal(4, new class_8676(this, 1.0));
-      this.goalSelector.addGoal(6, new class_2889(this, 0.7));
+      this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.7));
       this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
       this.method_19063();
    }
 
    public void method_19063() {
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
    }
 
    @Override
@@ -643,7 +643,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    public void method_26431(class_1343 var1) {
       if (this.isAlive()) {
          if (this.method_37151() && this.method_26863() && this.method_43357()) {
-            class_5834 var4 = (class_5834)this.method_37259();
+            class_5834 var4 = (class_5834)this.getControllingPassenger();
             this.rotationYaw = var4.rotationYaw;
             this.prevRotationYaw = this.rotationYaw;
             this.rotationPitch = var4.rotationPitch * 0.5F;
@@ -787,7 +787,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Override
    public boolean method_26863() {
-      return this.method_37259() instanceof class_5834;
+      return this.getControllingPassenger() instanceof class_5834;
    }
 
    public float method_19045(float var1) {
@@ -944,7 +944,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Nullable
    @Override
-   public Entity method_37259() {
+   public Entity getControllingPassenger() {
       return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
    }
 

@@ -103,9 +103,9 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    public boolean method_7924() {
-      return !(this.method_37243() instanceof class_1775)
+      return !(this.getRidingEntity() instanceof class_1775)
          ? this.field_41735.<Boolean>method_36640(field_9094)
-         : ((class_1775)this.method_37243()).method_7924();
+         : ((class_1775)this.getRidingEntity()).method_7924();
    }
 
    @Override
@@ -122,7 +122,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    @Override
    public boolean method_26863() {
-      Entity var3 = this.method_37259();
+      Entity var3 = this.getControllingPassenger();
       if (!(var3 instanceof PlayerEntity)) {
          return false;
       } else {
@@ -138,7 +138,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    @Nullable
    @Override
-   public Entity method_37259() {
+   public Entity getControllingPassenger() {
       return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
    }
 

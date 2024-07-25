@@ -81,7 +81,7 @@ public class class_3669 extends class_5920<class_5467> {
          .<List<class_5834>>method_5138(class_6044.field_30901)
          .get()
          .stream()
-         .filter(var1x -> var1x.method_37387() == this.field_17883)
+         .filter(var1x -> var1x.getType() == this.field_17883)
          .<class_5467>map(var0 -> (class_5467)var0)
          .filter(var1::method_24873)
          .findFirst();

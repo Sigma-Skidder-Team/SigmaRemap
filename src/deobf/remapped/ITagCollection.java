@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
-public interface class_9349<T> {
+public interface ITagCollection<T> {
    Map<Identifier, class_2307<T>> method_43137();
 
    @Nullable
@@ -64,7 +64,7 @@ public interface class_9349<T> {
       }
    }
 
-   static <T> class_9349<T> method_43142(class_8248 var0, class_8669<T> var1) {
+   static <T> ITagCollection<T> method_43142(class_8248 var0, class_8669<T> var1) {
       HashMap var4 = Maps.newHashMap();
       int var5 = var0.method_37778();
 
@@ -83,11 +83,11 @@ public interface class_9349<T> {
       return method_43138(var4);
    }
 
-   static <T> class_9349<T> method_43146() {
+   static <T> ITagCollection<T> method_43146() {
       return method_43138(ImmutableBiMap.of());
    }
 
-   static <T> class_9349<T> method_43138(Map<Identifier, class_2307<T>> var0) {
+   static <T> ITagCollection<T> method_43138(Map<Identifier, class_2307<T>> var0) {
       ImmutableBiMap var3 = ImmutableBiMap.copyOf(var0);
       return new class_3247(var3);
    }

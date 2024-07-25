@@ -16,13 +16,13 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
 
    @Override
    public void registerGoals() {
-      this.goalSelector.addGoal(0, new class_787(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
       this.goalSelector.addGoal(1, new class_518(this, 1.25));
       this.goalSelector.addGoal(3, new class_9513(this, 1.0));
       this.goalSelector.addGoal(4, new class_7228(this, 1.2, class_8137.method_37019(class_4897.field_25186), false));
       this.goalSelector.addGoal(4, new class_7228(this, 1.2, false, field_48085));
       this.goalSelector.addGoal(5, new class_8676(this, 1.1));
-      this.goalSelector.addGoal(6, new class_2889(this, 1.0));
+      this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
    }
@@ -33,13 +33,13 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
 
    @Nullable
    @Override
-   public Entity method_37259() {
+   public Entity getControllingPassenger() {
       return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
    }
 
    @Override
    public boolean method_26863() {
-      Entity var3 = this.method_37259();
+      Entity var3 = this.getControllingPassenger();
       if (!(var3 instanceof PlayerEntity)) {
          return false;
       } else {

@@ -169,7 +169,7 @@ public class class_8734 {
             var24.remove();
          } else if (!this.field_44747.getBooleanValueByName("Monsters") && var9 instanceof class_1173) {
             var24.remove();
-         } else if (this.field_44744.thePlayer.method_37243() != null && this.field_44744.thePlayer.method_37243().equals(var9)) {
+         } else if (this.field_44744.thePlayer.getRidingEntity() != null && this.field_44744.thePlayer.getRidingEntity().equals(var9)) {
             var24.remove();
          } else if (var9.method_37367()) {
             var24.remove();

@@ -212,7 +212,7 @@ public class class_8455 {
                break;
             case field_7718:
                Entity var8 = ((class_5631)var5).method_25524();
-               Identifier var9 = class_8669.field_44400.method_39797(var8.method_37387());
+               Identifier var9 = class_8669.field_44400.method_39797(var8.getType());
                if (var1) {
                   if (var2) {
                      this.field_43225.thePlayer.connection.method_4809().method_572(var8.method_37145(), var3 -> {
