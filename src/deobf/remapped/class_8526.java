@@ -7,7 +7,7 @@ import javax.annotation.Nullable;
 
 public class class_8526 extends class_2654 {
    private static String[] field_43627;
-   private static final class_6325[] field_43628 = Util.<class_6325[]>method_44659(
+   private static final class_6325[] field_43628 = Util.<class_6325[]>make(
       new class_6325[class_546.field_3277], var0 -> Arrays.fill(var0, class_6297.field_32176)
    );
 

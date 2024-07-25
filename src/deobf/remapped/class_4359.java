@@ -66,28 +66,28 @@ public class class_4359 extends class_2811 implements class_2354 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.method_37285() ? class_463.field_2566 : class_463.field_2745;
+   public SoundEvent method_26918() {
+      return !this.method_37285() ? SoundEvents.field_2566 : SoundEvents.field_2745;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return !this.method_37285() ? class_463.field_2226 : class_463.field_2088;
+   public SoundEvent method_26541(DamageSource var1) {
+      return !this.method_37285() ? SoundEvents.field_2226 : SoundEvents.field_2088;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return !this.method_37285() ? class_463.field_2813 : class_463.field_1932;
+   public SoundEvent method_26599() {
+      return !this.method_37285() ? SoundEvents.field_2813 : SoundEvents.field_1932;
    }
 
    @Override
-   public class_8461 method_12805() {
-      return class_463.field_2824;
+   public SoundEvent method_12805() {
+      return SoundEvents.field_2824;
    }
 
    @Override
-   public class_8461 method_37239() {
-      return class_463.field_2901;
+   public SoundEvent method_37239() {
+      return SoundEvents.field_2901;
    }
 
    @Override
@@ -143,7 +143,7 @@ public class class_4359 extends class_2811 implements class_2354 {
       if (this.field_21387) {
          return true;
       } else {
-         LivingEntity var3 = this.method_17809();
+         LivingEntity var3 = this.getAttackTarget();
          return var3 != null && var3.method_37285();
       }
    }
@@ -177,7 +177,7 @@ public class class_4359 extends class_2811 implements class_2354 {
       if (var3 != null) {
          BlockPos var4 = var3.method_18426();
          if (var4 != null) {
-            double var5 = this.method_37273((double)var4.method_12173(), (double)var4.method_12165(), (double)var4.method_12185());
+            double var5 = this.method_37273((double)var4.getX(), (double)var4.method_12165(), (double)var4.method_12185());
             if (var5 < 4.0) {
                return true;
             }
@@ -193,9 +193,9 @@ public class class_4359 extends class_2811 implements class_2354 {
       double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.method_37080(0.3333333333333333) - var5.method_37309();
       double var10 = var1.getPosZ() - this.getPosZ();
-      double var12 = (double)class_9299.method_42842(var6 * var6 + var10 * var10);
+      double var12 = (double) MathHelper.sqrt(var6 * var6 + var10 * var10);
       var5.method_26161(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method_43370().method_2097() * 4));
-      this.method_37155(class_463.field_2187, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
+      this.method_37155(SoundEvents.field_2187, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
       this.world.method_7509(var5);
    }
 

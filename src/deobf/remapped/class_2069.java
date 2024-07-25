@@ -75,7 +75,7 @@ public class class_2069 extends class_7114 {
 
       this.method_9781(var1, this.field_36670, this.field_36674, var8, var9, this.field_36671, this.field_36681);
       List var14 = this.method_9664();
-      this.field_10436 = class_9299.method_42848(this.field_10440 / 30.0F) % var14.size();
+      this.field_10436 = MathHelper.floor(this.field_10440 / 30.0F) % var14.size();
       ItemStack var12 = ((class_8932)var14.get(this.field_10436)).method_41044();
       int var13 = 4;
       if (this.field_10433.method_35006() && this.method_9664().size() > 1) {

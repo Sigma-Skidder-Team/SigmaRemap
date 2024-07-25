@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
-public abstract class class_1249 {
+public abstract class PathNavigator {
    public final MobEntity field_6877;
    public final World field_6882;
    public class_3998 field_6887;
@@ -14,7 +14,7 @@ public abstract class class_1249 {
    public int field_6875;
    public int field_6884;
    public class_1343 field_6885 = class_1343.field_7335;
-   public class_2700 field_6879 = class_2700.field_13228;
+   public Vector3i field_6879 = Vector3i.field_13228;
    public long field_6886;
    public long field_6870;
    public double field_6876;
@@ -28,10 +28,10 @@ public abstract class class_1249 {
    private final class_8976 field_6873;
    private boolean field_6881;
 
-   public class_1249(MobEntity var1, World var2) {
+   public PathNavigator(MobEntity var1, World var2) {
       this.field_6877 = var1;
       this.field_6882 = var2;
-      int var5 = class_9299.method_42847(var1.method_26575(Attributes.FOLLOW_RANGE) * 16.0);
+      int var5 = MathHelper.floor(var1.method_26575(Attributes.FOLLOW_RANGE) * 16.0);
       this.field_6873 = this.method_5605(var5);
    }
 
@@ -180,8 +180,8 @@ public abstract class class_1249 {
                class_1343 var4 = this.field_6887.method_18439(this.field_6877);
                if (var3.field_7333 > var4.field_7333
                   && !this.field_6877.method_37360()
-                  && class_9299.method_42847(var3.field_7336) == class_9299.method_42847(var4.field_7336)
-                  && class_9299.method_42847(var3.field_7334) == class_9299.method_42847(var4.field_7334)) {
+                  && MathHelper.floor(var3.field_7336) == MathHelper.floor(var4.field_7336)
+                  && MathHelper.floor(var3.field_7334) == MathHelper.floor(var4.field_7334)) {
                   this.field_6887.method_18434();
                }
             }
@@ -209,7 +209,7 @@ public abstract class class_1249 {
       class_1343 var3 = this.method_5596();
       this.field_6889 = !(this.field_6877.method_37086() > 0.75F) ? 0.75F - this.field_6877.method_37086() / 2.0F : this.field_6877.method_37086() / 2.0F;
       BlockPos var4 = this.field_6887.method_18449();
-      double var5 = Math.abs(this.field_6877.getPosX() - ((double)var4.method_12173() + 0.5));
+      double var5 = Math.abs(this.field_6877.getPosX() - ((double)var4.getX() + 0.5));
       double var7 = Math.abs(this.field_6877.method_37309() - (double)var4.method_12165());
       double var9 = Math.abs(this.field_6877.getPosZ() - ((double)var4.method_12185() + 0.5));
       boolean var11 = var5 < (double)this.field_6889 && var9 < (double)this.field_6889 && var7 < 1.0;
@@ -273,7 +273,7 @@ public abstract class class_1249 {
    }
 
    private void method_5590() {
-      this.field_6879 = class_2700.field_13228;
+      this.field_6879 = Vector3i.field_13228;
       this.field_6886 = 0L;
       this.field_6876 = 0.0;
       this.field_6881 = false;

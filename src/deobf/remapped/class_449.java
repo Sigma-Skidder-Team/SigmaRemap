@@ -72,7 +72,7 @@ public class class_449 extends class_1829 {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.putInt("TreasurePosX", this.method_2163().method_12173());
+      var1.putInt("TreasurePosX", this.method_2163().getX());
       var1.putInt("TreasurePosY", this.method_2163().method_12165());
       var1.putInt("TreasurePosZ", this.method_2163().method_12185());
       var1.putBoolean("GotFish", this.method_2161());
@@ -115,7 +115,7 @@ public class class_449 extends class_1829 {
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       return new class_9811(this, var1);
    }
 
@@ -124,7 +124,7 @@ public class class_449 extends class_1829 {
       boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.method_37096(this, var1);
-         this.method_37155(class_463.field_2613, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2613, 1.0F, 1.0F);
       }
 
       return var4;
@@ -207,8 +207,8 @@ public class class_449 extends class_1829 {
 
          if (this.world.field_33055 && this.method_37285() && this.method_37098().method_6221() > 0.03) {
             class_1343 var3 = this.method_37307(0.0F);
-            float var4 = class_9299.method_42840(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
-            float var5 = class_9299.method_42818(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
+            float var4 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
+            float var5 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
             float var6 = 1.2F - this.field_41717.nextFloat() * 0.7F;
 
             for (int var7 = 0; var7 < 2; var7++) {
@@ -262,7 +262,7 @@ public class class_449 extends class_1829 {
       ItemStack var5 = var1.method_26617(var2);
       if (!var5.method_28022() && var5.method_27960().method_11250(class_391.field_1613)) {
          if (!this.world.field_33055) {
-            this.method_37155(class_463.field_2435, 1.0F, 1.0F);
+            this.method_37155(SoundEvents.field_2435, 1.0F, 1.0F);
          }
 
          this.method_2153(true);
@@ -290,30 +290,30 @@ public class class_449 extends class_1829 {
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2253;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2253;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2723;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2723;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
-      return !this.method_37285() ? class_463.field_2394 : class_463.field_2617;
+   public SoundEvent method_26918() {
+      return !this.method_37285() ? SoundEvents.field_2394 : SoundEvents.field_2617;
    }
 
    @Override
-   public class_8461 method_37133() {
-      return class_463.field_2154;
+   public SoundEvent method_37133() {
+      return SoundEvents.field_2154;
    }
 
    @Override
-   public class_8461 method_37239() {
-      return class_463.field_2399;
+   public SoundEvent method_37239() {
+      return SoundEvents.field_2399;
    }
 
    public boolean method_2162() {
@@ -327,7 +327,7 @@ public class class_449 extends class_1829 {
          this.method_37092(this.method_26423(), var1);
          this.method_37226(class_7412.field_37839, this.method_37098());
          this.method_37215(this.method_37098().method_6209(0.9));
-         if (this.method_17809() == null) {
+         if (this.getAttackTarget() == null) {
             this.method_37215(this.method_37098().method_6214(0.0, -0.005, 0.0));
          }
       } else {

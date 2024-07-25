@@ -13,7 +13,7 @@ public class class_9806 {
    public int field_49712 = 150;
    public class_2932 field_49715;
    private static MinecraftClient field_49724 = MinecraftClient.getInstance();
-   public class_2700 field_49717;
+   public Vector3i field_49717;
    public class_7047 field_49713;
    public class_8670 field_49716;
    public class_1623 field_49720;
@@ -206,13 +206,13 @@ public class class_9806 {
    }
 
    private class_7047 method_45223(float var1, int var2) {
-      return this.field_49713.method_32377((float)this.field_49717.method_12173() * var1, (float)var2, (float)this.field_49717.method_12185() * var1);
+      return this.field_49713.method_32377((float)this.field_49717.getX() * var1, (float)var2, (float)this.field_49717.method_12185() * var1);
    }
 
    private class_7047 method_45222(float var1, float var2, int var3) {
       class_7047 var6 = this.field_49713
-         .method_32377((float)this.field_49717.method_12173() * var1, (float)var3, (float)this.field_49717.method_12185() * var1);
-      if (this.field_49717.method_12173() > 0) {
+         .method_32377((float)this.field_49717.getX() * var1, (float)var3, (float)this.field_49717.method_12185() * var1);
+      if (this.field_49717.getX() > 0) {
          var6 = var6.method_32377(0.0F, 0.0F, -var2);
       }
 
@@ -220,7 +220,7 @@ public class class_9806 {
          var6 = var6.method_32377(var2, 0.0F, 0.0F);
       }
 
-      if (this.field_49717.method_12173() < 0) {
+      if (this.field_49717.getX() < 0) {
          var6 = var6.method_32377(0.0F, 0.0F, var2);
       }
 
@@ -439,7 +439,7 @@ public class class_9806 {
    }
 
    public static double method_45228(BlockPos var0, BlockPos var1) {
-      double var4 = (double)var0.method_12173() - (double)var1.method_12173();
+      double var4 = (double)var0.getX() - (double)var1.getX();
       double var6 = (double)var0.method_12185() - (double)var1.method_12185();
       return Math.sqrt(var4 * var6);
    }

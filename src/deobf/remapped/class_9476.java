@@ -32,10 +32,10 @@ public abstract class class_9476 extends class_6414 {
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(24) == 0) {
          var2.method_29527(
-            (double)var3.method_12173() + 0.5,
+            (double)var3.getX() + 0.5,
             (double)var3.method_12165() + 0.5,
             (double)var3.method_12185() + 0.5,
-            class_463.field_2810,
+            SoundEvents.field_2810,
             class_562.field_3322,
             1.0F + var4.nextFloat(),
             var4.nextFloat() * 0.7F + 0.3F,
@@ -48,7 +48,7 @@ public abstract class class_9476 extends class_6414 {
       if (!this.method_43770(var8) && !var8.method_8308(var2, var7, Direction.field_817)) {
          if (this.method_43770(var2.method_28262(var3.method_6108()))) {
             for (int var16 = 0; var16 < 2; var16++) {
-               double var21 = (double)var3.method_12173() + var4.nextDouble() * 0.1F;
+               double var21 = (double)var3.getX() + var4.nextDouble() * 0.1F;
                double var26 = (double)var3.method_12165() + var4.nextDouble();
                double var31 = (double)var3.method_12185() + var4.nextDouble();
                var2.method_43361(class_3090.field_15319, var21, var26, var31, 0.0, 0.0, 0.0);
@@ -57,7 +57,7 @@ public abstract class class_9476 extends class_6414 {
 
          if (this.method_43770(var2.method_28262(var3.method_6090()))) {
             for (int var17 = 0; var17 < 2; var17++) {
-               double var22 = (double)(var3.method_12173() + 1) - var4.nextDouble() * 0.1F;
+               double var22 = (double)(var3.getX() + 1) - var4.nextDouble() * 0.1F;
                double var27 = (double)var3.method_12165() + var4.nextDouble();
                double var32 = (double)var3.method_12185() + var4.nextDouble();
                var2.method_43361(class_3090.field_15319, var22, var27, var32, 0.0, 0.0, 0.0);
@@ -66,7 +66,7 @@ public abstract class class_9476 extends class_6414 {
 
          if (this.method_43770(var2.method_28262(var3.method_6094()))) {
             for (int var18 = 0; var18 < 2; var18++) {
-               double var23 = (double)var3.method_12173() + var4.nextDouble();
+               double var23 = (double)var3.getX() + var4.nextDouble();
                double var28 = (double)var3.method_12165() + var4.nextDouble();
                double var33 = (double)var3.method_12185() + var4.nextDouble() * 0.1F;
                var2.method_43361(class_3090.field_15319, var23, var28, var33, 0.0, 0.0, 0.0);
@@ -75,7 +75,7 @@ public abstract class class_9476 extends class_6414 {
 
          if (this.method_43770(var2.method_28262(var3.method_6073()))) {
             for (int var19 = 0; var19 < 2; var19++) {
-               double var24 = (double)var3.method_12173() + var4.nextDouble();
+               double var24 = (double)var3.getX() + var4.nextDouble();
                double var29 = (double)var3.method_12165() + var4.nextDouble();
                double var34 = (double)(var3.method_12185() + 1) - var4.nextDouble() * 0.1F;
                var2.method_43361(class_3090.field_15319, var24, var29, var34, 0.0, 0.0, 0.0);
@@ -84,7 +84,7 @@ public abstract class class_9476 extends class_6414 {
 
          if (this.method_43770(var2.method_28262(var3.method_6081()))) {
             for (int var20 = 0; var20 < 2; var20++) {
-               double var25 = (double)var3.method_12173() + var4.nextDouble();
+               double var25 = (double)var3.getX() + var4.nextDouble();
                double var30 = (double)(var3.method_12165() + 1) - var4.nextDouble() * 0.1F;
                double var35 = (double)var3.method_12185() + var4.nextDouble();
                var2.method_43361(class_3090.field_15319, var25, var30, var35, 0.0, 0.0, 0.0);
@@ -92,7 +92,7 @@ public abstract class class_9476 extends class_6414 {
          }
       } else {
          for (int var9 = 0; var9 < 3; var9++) {
-            double var10 = (double)var3.method_12173() + var4.nextDouble();
+            double var10 = (double)var3.getX() + var4.nextDouble();
             double var12 = (double)var3.method_12165() + var4.nextDouble() * 0.5 + 0.5;
             double var14 = (double)var3.method_12185() + var4.nextDouble();
             var2.method_43361(class_3090.field_15319, var10, var12, var14, 0.0, 0.0, 0.0);

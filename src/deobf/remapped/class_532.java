@@ -23,14 +23,14 @@ public class class_532 extends class_3558 {
       LivingEntity var3 = this.field_3238.method_17809();
       double var4 = Math.min(var3.method_37309(), this.field_3238.method_37309());
       double var6 = Math.max(var3.method_37309(), this.field_3238.method_37309()) + 1.0;
-      float var8 = (float)class_9299.method_42821(var3.getPosZ() - this.field_3238.method_37156(), var3.getPosX() - this.field_3238.method_37302());
+      float var8 = (float) MathHelper.method_42821(var3.getPosZ() - this.field_3238.method_37156(), var3.getPosX() - this.field_3238.method_37302());
       if (!(this.field_3238.method_37275(var3) < 9.0)) {
          for (int var9 = 0; var9 < 16; var9++) {
             double var11 = 1.25 * (double)(var9 + 1);
             int var13 = 1 * var9;
             this.method_2589(
-               this.field_3238.method_37302() + (double)class_9299.method_42840(var8) * var11,
-               this.field_3238.method_37156() + (double)class_9299.method_42818(var8) * var11,
+               this.field_3238.method_37302() + (double) MathHelper.cos(var8) * var11,
+               this.field_3238.method_37156() + (double) MathHelper.sin(var8) * var11,
                var4,
                var6,
                var8,
@@ -41,8 +41,8 @@ public class class_532 extends class_3558 {
          for (int var14 = 0; var14 < 5; var14++) {
             float var10 = var8 + (float)var14 * (float) Math.PI * 0.4F;
             this.method_2589(
-               this.field_3238.method_37302() + (double)class_9299.method_42840(var10) * 1.5,
-               this.field_3238.method_37156() + (double)class_9299.method_42818(var10) * 1.5,
+               this.field_3238.method_37302() + (double) MathHelper.cos(var10) * 1.5,
+               this.field_3238.method_37156() + (double) MathHelper.sin(var10) * 1.5,
                var4,
                var6,
                var10,
@@ -53,8 +53,8 @@ public class class_532 extends class_3558 {
          for (int var15 = 0; var15 < 8; var15++) {
             float var16 = var8 + (float)var15 * (float) Math.PI * 2.0F / 8.0F + (float) (Math.PI * 2.0 / 5.0);
             this.method_2589(
-               this.field_3238.method_37302() + (double)class_9299.method_42840(var16) * 2.5,
-               this.field_3238.method_37156() + (double)class_9299.method_42818(var16) * 2.5,
+               this.field_3238.method_37302() + (double) MathHelper.cos(var16) * 2.5,
+               this.field_3238.method_37156() + (double) MathHelper.sin(var16) * 2.5,
                var4,
                var6,
                var16,
@@ -74,7 +74,7 @@ public class class_532 extends class_3558 {
          class_2522 var18 = this.field_3238.field_41768.method_28262(var17);
          if (!var18.method_8308(this.field_3238.field_41768, var17, Direction.field_817)) {
             var13 = var13.method_6100();
-            if (var13.method_12165() >= class_9299.method_42847(var5) - 1) {
+            if (var13.method_12165() >= MathHelper.floor(var5) - 1) {
                continue;
             }
             break;
@@ -100,8 +100,8 @@ public class class_532 extends class_3558 {
    }
 
    @Override
-   public class_8461 method_16540() {
-      return class_463.field_2074;
+   public SoundEvent method_16540() {
+      return SoundEvents.field_2074;
    }
 
    @Override

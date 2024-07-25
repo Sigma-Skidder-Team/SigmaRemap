@@ -71,12 +71,12 @@ public class class_3756 extends class_3757 implements class_3745 {
       }
 
       if (var3 % 80L == 0L && this.method_17380()) {
-         this.method_17382(class_463.field_2766);
+         this.method_17382(SoundEvents.field_2766);
       }
 
       if (var3 > this.field_18348 && this.method_17380()) {
          this.field_18348 = var3 + 60L + (long)this.field_18364.method_43360().nextInt(40);
-         this.method_17382(class_463.field_2356);
+         this.method_17382(SoundEvents.field_2356);
       }
 
       if (this.field_18364.field_33055) {
@@ -130,11 +130,11 @@ public class class_3756 extends class_3757 implements class_3745 {
    private void method_17378() {
       int var3 = this.field_18352.size();
       int var4 = var3 / 7 * 16;
-      int var5 = this.field_18358.method_12173();
+      int var5 = this.field_18358.getX();
       int var6 = this.field_18358.method_12165();
       int var7 = this.field_18358.method_12185();
       Box var8 = new Box((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
-         .method_18898((double)var4)
+         .grow((double)var4)
          .method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
       List var9 = this.field_18364.<PlayerEntity>method_25868(PlayerEntity.class, var8);
       if (!var9.isEmpty()) {
@@ -175,7 +175,7 @@ public class class_3756 extends class_3757 implements class_3745 {
                this.field_18356.getPosX(),
                this.field_18356.method_37309(),
                this.field_18356.getPosZ(),
-               class_463.field_2692,
+               SoundEvents.field_2692,
                class_562.field_3322,
                1.0F,
                1.0F
@@ -203,10 +203,10 @@ public class class_3756 extends class_3757 implements class_3745 {
    }
 
    private Box method_17371() {
-      int var3 = this.field_18358.method_12173();
+      int var3 = this.field_18358.getX();
       int var4 = this.field_18358.method_12165();
       int var5 = this.field_18358.method_12185();
-      return new Box((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).method_18898(8.0);
+      return new Box((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).grow(8.0);
    }
 
    @Nullable
@@ -217,10 +217,10 @@ public class class_3756 extends class_3757 implements class_3745 {
 
    private void method_17372() {
       Random var3 = this.field_18364.field_33033;
-      double var4 = (double)(class_9299.method_42818((float)(this.field_18349 + 35) * 0.1F) / 2.0F + 0.5F);
+      double var4 = (double)(MathHelper.sin((float)(this.field_18349 + 35) * 0.1F) / 2.0F + 0.5F);
       var4 = (var4 * var4 + var4) * 0.3F;
       class_1343 var6 = new class_1343(
-         (double)this.field_18358.method_12173() + 0.5, (double)this.field_18358.method_12165() + 1.5 + var4, (double)this.field_18358.method_12185() + 0.5
+         (double)this.field_18358.getX() + 0.5, (double)this.field_18358.method_12165() + 1.5 + var4, (double)this.field_18358.method_12185() + 0.5
       );
 
       for (BlockPos var8 : this.field_18352) {
@@ -230,7 +230,7 @@ public class class_3756 extends class_3757 implements class_3745 {
             float var11 = -0.5F + var3.nextFloat();
             BlockPos var12 = var8.method_6093(this.field_18358);
             class_1343 var13 = new class_1343((double)var9, (double)var10, (double)var11)
-               .method_6214((double)var12.method_12173(), (double)var12.method_12165(), (double)var12.method_12185());
+               .method_6214((double)var12.getX(), (double)var12.method_12165(), (double)var12.method_12185());
             this.field_18364
                .method_43361(class_3090.field_15357, var6.field_7336, var6.field_7333, var6.field_7334, var13.field_7336, var13.field_7333, var13.field_7334);
          }
@@ -257,7 +257,7 @@ public class class_3756 extends class_3757 implements class_3745 {
 
    private void method_17374(boolean var1) {
       if (var1 != this.field_18357) {
-         this.method_17382(!var1 ? class_463.field_2772 : class_463.field_2404);
+         this.method_17382(!var1 ? SoundEvents.field_2772 : SoundEvents.field_2404);
       }
 
       this.field_18357 = var1;
@@ -271,7 +271,7 @@ public class class_3756 extends class_3757 implements class_3745 {
       return (this.field_18350 + var1) * -0.0375F;
    }
 
-   public void method_17382(class_8461 var1) {
+   public void method_17382(SoundEvent var1) {
       this.field_18364.method_43359((PlayerEntity)null, this.field_18358, var1, class_562.field_3322, 1.0F, 1.0F);
    }
 }

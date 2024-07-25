@@ -10,7 +10,7 @@ public class class_7656 implements class_1517 {
    public int method_6937(class_6331 var1, boolean var2, boolean var3) {
       if (!var2) {
          return 0;
-      } else if (var1.method_29537().method_1285(class_291.field_1036)) {
+      } else if (var1.getGameRules().getBoolean(GameRules.field_1036)) {
          Random var6 = var1.field_33033;
          this.field_38898--;
          if (this.field_38898 > 0) {
@@ -37,10 +37,10 @@ public class class_7656 implements class_1517 {
                      int var12 = (24 + var6.nextInt(24)) * (!var6.nextBoolean() ? 1 : -1);
                      class_2921 var13 = var10.method_37075().method_6089().method_13367(var11, 0, var12);
                      if (!var1.method_22569(
-                        var13.method_12173() - 10,
+                        var13.getX() - 10,
                         var13.method_12165() - 10,
                         var13.method_12185() - 10,
-                        var13.method_12173() + 10,
+                        var13.getX() + 10,
                         var13.method_12165() + 10,
                         var13.method_12185() + 10
                      )) {
@@ -63,7 +63,7 @@ public class class_7656 implements class_1517 {
                                  break;
                               }
 
-                              var13.method_12167(var13.method_12173() + var6.nextInt(5) - var6.nextInt(5));
+                              var13.method_12167(var13.getX() + var6.nextInt(5) - var6.nextInt(5));
                               var13.method_12172(var13.method_12185() + var6.nextInt(5) - var6.nextInt(5));
                            }
 
@@ -92,7 +92,7 @@ public class class_7656 implements class_1517 {
                   var8.method_21356();
                }
 
-               var8.method_37256((double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185());
+               var8.method_37256((double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185());
                var8.method_26864(var1, var1.method_43368(var2), class_2417.field_12025, (class_8733)null, (CompoundNBT)null);
                var1.method_7065(var8);
                return true;

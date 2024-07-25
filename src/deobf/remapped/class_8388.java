@@ -13,7 +13,7 @@ public abstract class class_8388 extends class_5783 {
       this(var1, var14);
       this.method_37144(var2, var4, var6, this.rotationYaw, this.rotationPitch);
       this.method_37351();
-      double var17 = (double)class_9299.method_42842(var8 * var8 + var10 * var10 + var12 * var12);
+      double var17 = (double) MathHelper.sqrt(var8 * var8 + var10 * var10 + var12 * var12);
       if (var17 != 0.0) {
          this.field_42909 = var8 / var17 * 0.1;
          this.field_42910 = var10 / var17 * 0.1;
@@ -33,7 +33,7 @@ public abstract class class_8388 extends class_5783 {
 
    @Override
    public boolean method_37176(double var1) {
-      double var5 = this.method_37241().method_18906() * 4.0;
+      double var5 = this.getBoundingBox().method_18906() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }

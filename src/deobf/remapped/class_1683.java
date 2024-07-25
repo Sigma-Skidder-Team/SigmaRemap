@@ -17,7 +17,7 @@ public class class_1683 extends class_5502 {
                this.field_49462 + 0.5,
                this.field_49473,
                this.field_49465 + 0.5,
-               class_463.field_2646,
+               SoundEvents.field_2646,
                class_562.field_3322,
                0.3F + this.field_49469.field_33033.nextFloat() * 2.0F / 3.0F,
                1.0F,

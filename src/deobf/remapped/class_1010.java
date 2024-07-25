@@ -17,7 +17,7 @@ public class class_1010 implements class_8743 {
 
    @Override
    public double method_61() {
-      return (double)this.field_5185.method_12173() + 0.5;
+      return (double)this.field_5185.getX() + 0.5;
    }
 
    @Override

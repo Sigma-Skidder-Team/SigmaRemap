@@ -37,15 +37,15 @@ public class TargetStrafeModule extends Module {
                   break;
                case "Ninja":
                   float var15 = (float)Math.toRadians((double)(var4.method_37267() - 180.0F));
-                  double var16 = var4.method_37245().field_7336 - (double)(class_9299.method_42818(var15) * var7);
-                  double var17 = var4.method_37245().field_7334 + (double)(class_9299.method_42840(var15) * var7);
+                  double var16 = var4.method_37245().field_7336 - (double)(MathHelper.sin(var15) * var7);
+                  double var17 = var4.method_37245().field_7334 + (double)(MathHelper.cos(var15) * var7);
                   var1.method_35232(var16 - client.thePlayer.method_37245().field_7336);
                   var1.method_35229(var17 - client.thePlayer.method_37245().field_7334);
                   break;
                case "Random":
                   float var10 = (float)(Math.random() * 2.0 * Math.PI);
-                  double var11 = var4.method_37245().field_7336 - (double)(class_9299.method_42818(var10) * var7);
-                  double var13 = var4.method_37245().field_7334 + (double)(class_9299.method_42840(var10) * var7);
+                  double var11 = var4.method_37245().field_7336 - (double)(MathHelper.sin(var10) * var7);
+                  double var13 = var4.method_37245().field_7334 + (double)(MathHelper.cos(var10) * var7);
                   var1.method_35232(var11 - client.thePlayer.method_37245().field_7336);
                   var1.method_35229(var13 - client.thePlayer.method_37245().field_7334);
             }

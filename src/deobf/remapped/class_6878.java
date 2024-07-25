@@ -9,7 +9,7 @@ public class class_6878 {
    private static final Identifier field_35420 = new Identifier("damaged");
    private static final Identifier field_35419 = new Identifier("damage");
    private static final class_3825 field_35422 = (var0, var1, var2) -> !var0.method_27995() ? 0.0F : 1.0F;
-   private static final class_3825 field_35417 = (var0, var1, var2) -> class_9299.method_42828(
+   private static final class_3825 field_35417 = (var0, var1, var2) -> MathHelper.clamp(
          (float)var0.method_28026() / (float)var0.method_27957(), 0.0F, 1.0F
       );
    private static final Map<class_2451, Map<Identifier, class_3825>> field_35416 = Maps.newHashMap();

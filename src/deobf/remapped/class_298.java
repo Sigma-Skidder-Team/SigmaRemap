@@ -76,8 +76,8 @@ public class class_298 extends class_7637 {
    }
 
    @Override
-   public class_8461 method_18591() {
-      return class_463.field_2243;
+   public SoundEvent getRaidLossSound() {
+      return SoundEvents.field_2243;
    }
 
    @Nullable
@@ -117,18 +117,18 @@ public class class_298 extends class_7637 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2609;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2609;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2533;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2533;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2486;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2486;
    }
 
    @Override

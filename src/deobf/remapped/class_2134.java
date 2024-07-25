@@ -42,8 +42,8 @@ public class class_2134 extends class_7186 {
 
    public void method_9967(double var1, double var3, int var5) {
       int var8 = 128 * (1 << var5);
-      int var9 = class_9299.method_42847((var1 + 64.0) / (double)var8);
-      int var10 = class_9299.method_42847((var3 + 64.0) / (double)var8);
+      int var9 = MathHelper.floor((var1 + 64.0) / (double)var8);
+      int var10 = MathHelper.floor((var3 + 64.0) / (double)var8);
       this.field_10689 = var9 * var8 + var8 / 2 - 64;
       this.field_10677 = var10 * var8 + var8 / 2 - 64;
    }
@@ -55,7 +55,7 @@ public class class_2134 extends class_7186 {
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method_25929("dimension")));
       this.field_10689 = var1.method_25947("xCenter");
       this.field_10677 = var1.method_25947("zCenter");
-      this.field_10678 = (byte)class_9299.method_42829(var1.method_25950("scale"), 0, 4);
+      this.field_10678 = (byte) MathHelper.clamp(var1.method_25950("scale"), 0, 4);
       this.field_10681 = !var1.contains("trackingPosition", 1) || var1.getBoolean("trackingPosition");
       this.field_10688 = var1.getBoolean("unlimitedTracking");
       this.field_10686 = var1.getBoolean("locked");
@@ -73,7 +73,7 @@ public class class_2134 extends class_7186 {
             var6.method_9292(),
             (class_9379)null,
             var6.method_9294(),
-            (double)var6.method_9287().method_12173(),
+            (double)var6.method_9287().getX(),
             (double)var6.method_9287().method_12185(),
             180.0,
             var6.method_9291()
@@ -89,7 +89,7 @@ public class class_2134 extends class_7186 {
             class_8086.field_41416,
             (class_9379)null,
             "frame-" + var7.method_3764(),
-            (double)var7.method_3765().method_12173(),
+            (double)var7.method_3765().getX(),
             (double)var7.method_3765().method_12185(),
             (double)var7.method_3763(),
             (ITextComponent)null
@@ -183,7 +183,7 @@ public class class_2134 extends class_7186 {
             class_8086.field_41416,
             var1.world,
             "frame-" + var10.method_37145(),
-            (double)var12.method_12173(),
+            (double)var12.getX(),
             (double)var12.method_12185(),
             (double)(var10.method_37365().method_1031() * 90),
             (ITextComponent)null
@@ -224,7 +224,7 @@ public class class_2134 extends class_7186 {
       CompoundNBT var7 = new CompoundNBT();
       var7.method_25921("type", var3.method_36723());
       var7.method_25941("id", var2);
-      var7.method_25923("x", (double)var1.method_12173());
+      var7.method_25923("x", (double)var1.getX());
       var7.method_25923("z", (double)var1.method_12185());
       var7.method_25923("rot", 180.0);
       var6.add(var7);
@@ -314,7 +314,7 @@ public class class_2134 extends class_7186 {
    }
 
    public void method_9971(class_9379 var1, BlockPos var2) {
-      double var5 = (double)var2.method_12173() + 0.5;
+      double var5 = (double)var2.getX() + 0.5;
       double var7 = (double)var2.method_12185() + 0.5;
       int var9 = 1 << this.field_10678;
       double var10 = (var5 - (double)this.field_10689) / (double)var9;
@@ -352,7 +352,7 @@ public class class_2134 extends class_7186 {
 
       while (var6.hasNext()) {
          class_2001 var7 = (class_2001)var6.next();
-         if (var7.method_9287().method_12173() == var2 && var7.method_9287().method_12185() == var3) {
+         if (var7.method_9287().getX() == var2 && var7.method_9287().method_12185() == var3) {
             class_2001 var8 = class_2001.method_9293(var1, var7.method_9287());
             if (!var7.equals(var8)) {
                var6.remove();

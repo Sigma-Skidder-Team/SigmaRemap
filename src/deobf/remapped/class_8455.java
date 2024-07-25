@@ -90,7 +90,7 @@ public class class_8455 {
                class_1013.field_5250
                   .method_38567(
                      this.field_43225.gameOptions,
-                     class_9299.method_42827(
+                     MathHelper.clamp(
                         (double)(this.field_43225.gameOptions.field_45537 + (Screen.method_1190() ? -1 : 1)),
                         class_1013.field_5250.method_38569(),
                         class_1013.field_5250.method_38573()
@@ -245,7 +245,7 @@ public class class_8455 {
          var6.append(var3);
       }
 
-      String var7 = String.format(Locale.ROOT, "/setblock %d %d %d %s", var2.method_12173(), var2.method_12165(), var2.method_12185(), var6);
+      String var7 = String.format(Locale.ROOT, "/setblock %d %d %d %s", var2.getX(), var2.method_12165(), var2.method_12185(), var6);
       this.method_38891(var7);
    }
 
@@ -513,7 +513,7 @@ public class class_8455 {
 
          if (var7 >= 1000L) {
             if (this.field_43230 != 0L) {
-               this.method_38882("debug.crash.warning", class_9299.method_42816((float)var5 / 1000.0F));
+               this.method_38882("debug.crash.warning", MathHelper.ceil((float)var5 / 1000.0F));
             } else {
                this.method_38881("debug.crash.message");
             }

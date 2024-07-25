@@ -30,7 +30,7 @@ public class class_8883<T extends Entity> extends class_5272<T> {
       this.field_45583.field_8185 = (float) Math.PI - var9 * 0.35F * (float) Math.PI;
       this.field_45585.field_8185 = (float) Math.PI + var9 * 0.35F * (float) Math.PI;
       this.field_45585.field_8190 = (float) Math.PI;
-      float var10 = (var2 + class_9299.method_42818(var2 * 2.7F)) * 0.6F * 12.0F;
+      float var10 = (var2 + MathHelper.sin(var2 * 2.7F)) * 0.6F * 12.0F;
       this.field_45583.field_8181 = 24.0F - var10;
       this.field_45585.field_8181 = this.field_45583.field_8181;
       this.field_45582.field_8181 = this.field_45583.field_8181;

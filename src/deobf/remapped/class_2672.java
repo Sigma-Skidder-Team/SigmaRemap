@@ -26,9 +26,9 @@ public class class_2672 extends class_4285<class_1941> {
 
       for (int var9 = 0; var9 < var3 * var3; var9++) {
          var8.method_13364(var2)
-            .method_13367(class_9299.method_42824(var1, -var3, var3), class_9299.method_42824(var1, -var4, var4), class_9299.method_42824(var1, -var3, var3));
+            .method_13367(MathHelper.nextInt(var1, -var3, var3), MathHelper.nextInt(var1, -var4, var4), MathHelper.nextInt(var1, -var3, var3));
          if (method_12038(var0, var8) && !method_12039(var0, var8)) {
-            int var10 = class_9299.method_42824(var1, 1, var5);
+            int var10 = MathHelper.nextInt(var1, 1, var5);
             if (var1.nextInt(6) == 0) {
                var10 *= 2;
             }
@@ -66,7 +66,7 @@ public class class_2672 extends class_4285<class_1941> {
             if (var8 == var3 || !var0.method_22548(var2.method_6081())) {
                var0.method_7513(
                   var2,
-                  class_4783.field_23175.method_29260().method_10308(class_6408.field_32703, Integer.valueOf(class_9299.method_42824(var1, var4, var5))),
+                  class_4783.field_23175.method_29260().method_10308(class_6408.field_32703, Integer.valueOf(MathHelper.nextInt(var1, var4, var5))),
                   2
                );
                break;

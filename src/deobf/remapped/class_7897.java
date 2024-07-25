@@ -37,10 +37,10 @@ public class class_7897 implements class_2995 {
          float var16 = var15 / 2.0F;
          WorldRenderer.method_20064(
             var12,
-            (double)((float)var14.method_12173() + 0.5F - var16) - var3,
+            (double)((float)var14.getX() + 0.5F - var16) - var3,
             (double)((float)var14.method_12165() + 0.5F - var16) - var5,
             (double)((float)var14.method_12185() + 0.5F - var16) - var7,
-            (double)((float)var14.method_12173() + 0.5F + var16) - var3,
+            (double)((float)var14.getX() + 0.5F + var16) - var3,
             (double)((float)var14.method_12165() + 0.5F + var16) - var5,
             (double)((float)var14.method_12185() + 0.5F + var16) - var7,
             this.field_40384.get(var13),

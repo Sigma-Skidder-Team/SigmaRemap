@@ -27,7 +27,7 @@ public class class_6405 extends class_3599 {
                   this.field_32694.getPosX(),
                   this.field_32694.method_37309(),
                   this.field_32694.getPosZ(),
-                  this.field_32694.method_37241().method_18899(6.0, 2.0, 6.0)
+                  this.field_32694.getBoundingBox().method_18899(6.0, 2.0, 6.0)
                );
             return this.field_32691 != null;
          } else {

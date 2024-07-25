@@ -31,7 +31,7 @@ public class class_7269 {
       } else {
          return this.field_37228 != null && var1.method_37113() != this.field_37228
             ? false
-            : this.field_37223 == null || !(var1 instanceof class_5834) || ((class_5834)var1).method_26449() == this.field_37223;
+            : this.field_37223 == null || !(var1 instanceof LivingEntity) || ((LivingEntity)var1).method_26449() == this.field_37223;
       }
    }
 

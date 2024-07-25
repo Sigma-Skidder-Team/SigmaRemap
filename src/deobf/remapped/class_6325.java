@@ -92,7 +92,7 @@ public final class class_6325 {
       if (var1.method_12165() <= 64) {
          return var4;
       } else {
-         float var5 = (float)(field_32300.method_31321((double)((float)var1.method_12173() / 8.0F), (double)((float)var1.method_12185() / 8.0F), false) * 4.0);
+         float var5 = (float)(field_32300.method_31321((double)((float)var1.getX() / 8.0F), (double)((float)var1.method_12185() / 8.0F), false) * 4.0);
          return var4 - (var5 + (float)var1.method_12165() - 64.0F) * 0.05F / 30.0F;
       }
    }
@@ -172,7 +172,7 @@ public final class class_6325 {
          if (var1.method_9532()) {
             for (class_5390 var15 : this.field_32305.getOrDefault(var12, Collections.<class_5390<?>>emptyList())) {
                var6.method_39866(var4, var13, var12);
-               int var16 = var7.method_12173() >> 4;
+               int var16 = var7.getX() >> 4;
                int var17 = var7.method_12185() >> 4;
                int var18 = var16 << 4;
                int var19 = var17 << 4;
@@ -226,8 +226,8 @@ public final class class_6325 {
    }
 
    private int method_28871() {
-      double var3 = (double)class_9299.method_42828(class_1310.method_5972(this.field_32295), 0.0F, 1.0F);
-      double var5 = (double)class_9299.method_42828(class_1310.method_5969(this.field_32295), 0.0F, 1.0F);
+      double var3 = (double) MathHelper.clamp(class_1310.method_5972(this.field_32295), 0.0F, 1.0F);
+      double var5 = (double) MathHelper.clamp(class_1310.method_5969(this.field_32295), 0.0F, 1.0F);
       return class_640.method_2941(var3, var5);
    }
 
@@ -236,8 +236,8 @@ public final class class_6325 {
    }
 
    private int method_28857() {
-      double var3 = (double)class_9299.method_42828(class_1310.method_5972(this.field_32295), 0.0F, 1.0F);
-      double var5 = (double)class_9299.method_42828(class_1310.method_5969(this.field_32295), 0.0F, 1.0F);
+      double var3 = (double) MathHelper.clamp(class_1310.method_5972(this.field_32295), 0.0F, 1.0F);
+      double var5 = (double) MathHelper.clamp(class_1310.method_5969(this.field_32295), 0.0F, 1.0F);
       return class_8400.method_38683(var3, var5);
    }
 
@@ -279,7 +279,7 @@ public final class class_6325 {
       return this.field_32301.method_11891();
    }
 
-   public Optional<class_8461> method_28876() {
+   public Optional<SoundEvent> method_28876() {
       return this.field_32301.method_11894();
    }
 

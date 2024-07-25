@@ -17,23 +17,23 @@ public class class_3204 extends class_1595 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2657;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2657;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2508;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2508;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2274;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2274;
    }
 
    @Override
-   public class_8461 method_7150() {
-      return class_463.field_2863;
+   public SoundEvent method_7150() {
+      return SoundEvents.field_2863;
    }
 
    @Override
@@ -62,7 +62,7 @@ public class class_3204 extends class_1595 {
    @Override
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       class_8733 var8 = super.method_26864(var1, var2, var3, var4, var5);
-      this.method_26561(Attributes.ATTACK_DAMAGE).method_45006(4.0);
+      this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4.0);
       this.method_7153();
       return var8;
    }
@@ -75,8 +75,8 @@ public class class_3204 extends class_1595 {
    @Override
    public boolean method_26442(Entity var1) {
       if (super.method_26442(var1)) {
-         if (var1 instanceof class_5834) {
-            ((class_5834)var1).method_26558(new class_2250(Effects.field_19725, 200));
+         if (var1 instanceof LivingEntity) {
+            ((LivingEntity)var1).method_26558(new class_2250(Effects.field_19725, 200));
          }
 
          return true;

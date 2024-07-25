@@ -24,7 +24,7 @@ public class class_3394 extends class_1871 {
             double var5 = this.field_16723.getPosZ();
             double var7 = var3 - this.field_9479.getPosX();
             double var9 = var5 - this.field_9479.getPosZ();
-            double var11 = (double)class_9299.method_42842(var7 * var7 + var9 * var9);
+            double var11 = (double) MathHelper.sqrt(var7 * var7 + var9 * var9);
             double var13 = Math.min(0.4F + var11 / 80.0 - 1.0, 10.0);
             this.field_16718 = new class_1343(var3, this.field_16723.method_37309() + var13, var5);
          }
@@ -52,9 +52,9 @@ public class class_3394 extends class_1871 {
                )
                .method_6213();
             class_1343 var16 = new class_1343(
-                  (double)class_9299.method_42818(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)),
+                  (double) MathHelper.sin(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)),
                   0.0,
-                  (double)(-class_9299.method_42840(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)))
+                  (double)(-MathHelper.cos(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)))
                )
                .method_6213();
             float var17 = (float)var16.method_6206(var15);
@@ -131,7 +131,7 @@ public class class_3394 extends class_1871 {
       if (this.field_16719 != null && !this.field_16719.method_18436()) {
          BlockPos var3 = this.field_16719.method_18449();
          this.field_16719.method_18434();
-         double var4 = (double)var3.method_12173();
+         double var4 = (double)var3.getX();
          double var6 = (double)var3.method_12185();
 
          double var8;
@@ -155,13 +155,13 @@ public class class_3394 extends class_1871 {
       this.field_16723 = var1;
       int var4 = this.field_9479.method_12606();
       int var5 = this.field_9479.method_12614(this.field_16723.getPosX(), this.field_16723.method_37309(), this.field_16723.getPosZ());
-      int var6 = class_9299.method_42847(this.field_16723.getPosX());
-      int var7 = class_9299.method_42847(this.field_16723.getPosZ());
+      int var6 = MathHelper.floor(this.field_16723.getPosX());
+      int var7 = MathHelper.floor(this.field_16723.getPosZ());
       double var8 = (double)var6 - this.field_9479.getPosX();
       double var10 = (double)var7 - this.field_9479.getPosZ();
-      double var12 = (double)class_9299.method_42842(var8 * var8 + var10 * var10);
+      double var12 = (double) MathHelper.sqrt(var8 * var8 + var10 * var10);
       double var14 = Math.min(0.4F + var12 / 80.0 - 1.0, 10.0);
-      int var16 = class_9299.method_42847(this.field_16723.method_37309() + var14);
+      int var16 = MathHelper.floor(this.field_16723.method_37309() + var14);
       class_5851 var17 = new class_5851(var6, var16, var7);
       this.field_16719 = this.field_9479.method_12612(var4, var5, var17);
       if (this.field_16719 != null) {

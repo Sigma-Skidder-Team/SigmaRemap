@@ -33,7 +33,7 @@ public class class_2048 extends AbstractMinecartEntity {
          this.world.method_43361(class_3090.field_15376, this.getPosX(), this.method_37309() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
       }
 
-      if (this.field_41744) {
+      if (this.collidedHorizontally) {
          double var3 = method_37266(this.method_37098());
          if (var3 >= 0.01F) {
             this.method_9573(var3);
@@ -59,7 +59,7 @@ public class class_2048 extends AbstractMinecartEntity {
       double var4 = method_37266(this.method_37098());
       if (!var1.method_28360() && !var1.method_28367() && !(var4 >= 0.01F)) {
          super.method_4743(var1);
-         if (!var1.method_28367() && this.world.method_29537().method_1285(class_291.field_1024)) {
+         if (!var1.method_28367() && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
             this.method_37312(class_4783.field_23252);
          }
       } else if (this.field_10361 < 0) {
@@ -121,7 +121,7 @@ public class class_2048 extends AbstractMinecartEntity {
          if (!this.method_37378()) {
             this.world
                .method_29528(
-                  (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
+                  (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), SoundEvents.field_2660, class_562.field_3322, 1.0F, 1.0F
                );
          }
       }

@@ -103,6 +103,6 @@ public interface class_5359 extends class_7907 {
    }
 
    static byte method_24459(float var0) {
-      return (byte)((int)(class_9299.method_42828(var0, -1.0F, 1.0F) * 127.0F) & 0xFF);
+      return (byte)((int)(MathHelper.clamp(var0, -1.0F, 1.0F) * 127.0F) & 0xFF);
    }
 }

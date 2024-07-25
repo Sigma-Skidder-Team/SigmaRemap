@@ -110,7 +110,7 @@ public class WaypointsModule extends Module {
             double var7 = Math.sqrt(class_9189.method_42355(var6));
             if (!(var7 > 300.0)) {
                if (client.theWorld.method_22556(var6) != null && var5.field_21076) {
-                  int var9 = var6.method_12173() % 16;
+                  int var9 = var6.getX() % 16;
                   int var10 = var6.method_12185() % 16;
                   if (var10 < 0) {
                      var10 += 16;

@@ -35,27 +35,27 @@ public class class_5107<T extends Entity> extends class_5272<T> {
       float var9 = var4 * (float) Math.PI * -0.1F;
 
       for (int var10 = 0; var10 < 4; var10++) {
-         this.field_26336[var10].field_8181 = -2.0F + class_9299.method_42840(((float)(var10 * 2) + var4) * 0.25F);
-         this.field_26336[var10].field_8183 = class_9299.method_42840(var9) * 9.0F;
-         this.field_26336[var10].field_8187 = class_9299.method_42818(var9) * 9.0F;
+         this.field_26336[var10].field_8181 = -2.0F + MathHelper.cos(((float)(var10 * 2) + var4) * 0.25F);
+         this.field_26336[var10].field_8183 = MathHelper.cos(var9) * 9.0F;
+         this.field_26336[var10].field_8187 = MathHelper.sin(var9) * 9.0F;
          var9++;
       }
 
       var9 = (float) (Math.PI / 4) + var4 * (float) Math.PI * 0.03F;
 
       for (int var13 = 4; var13 < 8; var13++) {
-         this.field_26336[var13].field_8181 = 2.0F + class_9299.method_42840(((float)(var13 * 2) + var4) * 0.25F);
-         this.field_26336[var13].field_8183 = class_9299.method_42840(var9) * 7.0F;
-         this.field_26336[var13].field_8187 = class_9299.method_42818(var9) * 7.0F;
+         this.field_26336[var13].field_8181 = 2.0F + MathHelper.cos(((float)(var13 * 2) + var4) * 0.25F);
+         this.field_26336[var13].field_8183 = MathHelper.cos(var9) * 7.0F;
+         this.field_26336[var13].field_8187 = MathHelper.sin(var9) * 7.0F;
          var9++;
       }
 
       var9 = 0.47123894F + var4 * (float) Math.PI * -0.05F;
 
       for (int var14 = 8; var14 < 12; var14++) {
-         this.field_26336[var14].field_8181 = 11.0F + class_9299.method_42840(((float)var14 * 1.5F + var4) * 0.5F);
-         this.field_26336[var14].field_8183 = class_9299.method_42840(var9) * 5.0F;
-         this.field_26336[var14].field_8187 = class_9299.method_42818(var9) * 5.0F;
+         this.field_26336[var14].field_8181 = 11.0F + MathHelper.cos(((float)var14 * 1.5F + var4) * 0.5F);
+         this.field_26336[var14].field_8183 = MathHelper.cos(var9) * 5.0F;
+         this.field_26336[var14].field_8187 = MathHelper.sin(var9) * 5.0F;
          var9++;
       }
 

@@ -10,7 +10,7 @@ public enum class_2397 {
    field_11960("ttf", class_2165::method_10068),
    field_11961("legacy_unicode", class_5280::method_24105);
 
-   private static final Map<String, class_2397> field_11964 = Util.<Map<String, class_2397>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<String, class_2397> field_11964 = Util.<Map<String, class_2397>>make(Maps.newHashMap(), var0 -> {
       for (class_2397 var6 : values()) {
          var0.put(var6.field_11965, var6);
       }

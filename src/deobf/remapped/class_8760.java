@@ -197,7 +197,7 @@ public class class_8760 {
       for (int var4 = 0; var4 <= 15; var4++) {
          float var5 = (float)var4 / 15.0F;
          float var6 = var5 / (4.0F - 3.0F * var5);
-         var3[var4] = class_9299.method_42795(var0, var6, 1.0F);
+         var3[var4] = MathHelper.method_42795(var0, var6, 1.0F);
       }
 
       return var3;
@@ -330,7 +330,7 @@ public class class_8760 {
    }
 
    public float method_40230(long var1) {
-      double var5 = class_9299.method_42822((double)this.field_44844.orElse(var1) / 24000.0 - 0.25);
+      double var5 = MathHelper.frac((double)this.field_44844.orElse(var1) / 24000.0 - 0.25);
       double var7 = 0.5 - Math.cos(var5 * Math.PI) / 2.0;
       return (float)(var5 * 2.0 + var7) / 3.0F;
    }

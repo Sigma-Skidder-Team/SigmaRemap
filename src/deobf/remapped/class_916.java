@@ -117,8 +117,8 @@ public class class_916 extends class_4037 implements class_6510 {
       int var5;
       int var6;
       if (!var2) {
-         var5 = class_9299.method_42847(var1.getPosX() / 16.0);
-         var6 = class_9299.method_42847(var1.getPosZ() / 16.0);
+         var5 = MathHelper.floor(var1.getPosX() / 16.0);
+         var6 = MathHelper.floor(var1.getPosZ() / 16.0);
       } else {
          class_6979 var7 = var1.method_43238();
          var5 = var7.method_31930();
@@ -639,7 +639,7 @@ public class class_916 extends class_4037 implements class_6510 {
    }
 
    public void method_3977(int var1) {
-      int var4 = class_9299.method_42829(var1 + 1, 3, 64);
+      int var4 = MathHelper.clamp(var1 + 1, 3, 64);
       if (var4 != this.field_4715) {
          int var5 = this.field_4715;
          this.field_4715 = var4;
@@ -763,14 +763,14 @@ public class class_916 extends class_4037 implements class_6510 {
    }
 
    private boolean method_4015(class_9359 var1) {
-      return var1.method_37221() && !this.field_4703.method_29537().method_1285(class_291.field_1059);
+      return var1.method_37221() && !this.field_4703.getGameRules().getBoolean(GameRules.field_1059);
    }
 
    public void method_4012(class_9359 var1, boolean var2) {
       boolean var5 = this.method_4015(var1);
       boolean var6 = this.field_4705.method_4612(var1);
-      int var7 = class_9299.method_42847(var1.getPosX()) >> 4;
-      int var8 = class_9299.method_42847(var1.getPosZ()) >> 4;
+      int var7 = MathHelper.floor(var1.getPosX()) >> 4;
+      int var8 = MathHelper.floor(var1.getPosZ()) >> 4;
       if (!var2) {
          class_6979 var9 = var1.method_43238();
          this.field_4705.method_4617(var9.method_31917().method_9539(), var1);
@@ -812,8 +812,8 @@ public class class_916 extends class_4037 implements class_6510 {
          }
       }
 
-      int var26 = class_9299.method_42847(var1.getPosX()) >> 4;
-      int var27 = class_9299.method_42847(var1.getPosZ()) >> 4;
+      int var26 = MathHelper.floor(var1.getPosX()) >> 4;
+      int var27 = MathHelper.floor(var1.getPosZ()) >> 4;
       class_6979 var6 = var1.method_43238();
       class_6979 var7 = class_6979.method_31923(var1);
       long var8 = var6.method_31917().method_9539();
@@ -1000,7 +1000,7 @@ public class class_916 extends class_4037 implements class_6510 {
                var6.add(var10);
             }
 
-            if (!var10.method_37114().isEmpty()) {
+            if (!var10.getPassengers().isEmpty()) {
                var7.add(var10);
             }
          }

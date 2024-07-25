@@ -35,13 +35,13 @@ public class class_2442 extends class_4314 {
             if (var5 > 0) {
                float var8 = !(var6 < (float) Math.PI) ? (float) (Math.PI * 2) : 0.0F;
                var6 += (var8 - var6) * 0.2F;
-               var5 = Math.round((float)var5 * class_9299.method_42840(var6));
+               var5 = Math.round((float)var5 * MathHelper.cos(var6));
             }
          } else {
             var5 = 15 - var5;
          }
 
-         var5 = class_9299.method_42829(var5, 0, 15);
+         var5 = MathHelper.clamp(var5, 0, 15);
          if (var0.<Integer>method_10313(field_12134) != var5) {
             var1.method_7513(var2, var0.method_10308(field_12134, Integer.valueOf(var5)), 3);
          }

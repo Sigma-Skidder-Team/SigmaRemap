@@ -30,7 +30,7 @@ public class class_4393 extends class_2803 implements class_9897 {
       if (!var5.equals(this.field_21517)) {
          this.method_20464(this.method_20463() != class_2066.field_10427 ? class_2066.field_10427 : class_2066.field_10428);
          this.field_21517 = var5;
-         this.method_37155(class_463.field_2904, 2.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2904, 2.0F, 1.0F);
       }
    }
 
@@ -58,11 +58,11 @@ public class class_4393 extends class_2803 implements class_9897 {
 
          ItemStack var13 = class_4754.method_21942(var5, var1, var12, false);
          var1.method_26615(var2, var13);
-         class_8461 var9;
+         SoundEvent var9;
          if (!var11) {
-            var9 = class_463.field_2342;
+            var9 = SoundEvents.field_2342;
          } else {
-            var9 = class_463.field_2663;
+            var9 = SoundEvents.field_2663;
          }
 
          this.method_37155(var9, 1.0F, 1.0F);
@@ -101,7 +101,7 @@ public class class_4393 extends class_2803 implements class_9897 {
 
             this.field_21516 = (class_1425)var7.getLeft();
             this.field_21515 = (Integer)var7.getRight();
-            this.method_37155(class_463.field_2248, 2.0F, 1.0F);
+            this.method_37155(SoundEvents.field_2248, 2.0F, 1.0F);
          } else {
             for (int var10 = 0; var10 < 2; var10++) {
                this.world
@@ -125,7 +125,7 @@ public class class_4393 extends class_2803 implements class_9897 {
 
    @Override
    public void method_45583(class_562 var1) {
-      this.world.method_29540((PlayerEntity)null, this, class_463.field_2892, var1, 1.0F, 1.0F);
+      this.world.method_29540((PlayerEntity)null, this, SoundEvents.field_2892, var1, 1.0F, 1.0F);
       if (!this.world.method_22567()) {
          ((class_6331)this.world)
             .method_28957(class_3090.field_15339, this.getPosX(), this.method_37080(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);

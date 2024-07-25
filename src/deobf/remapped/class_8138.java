@@ -90,7 +90,7 @@ public class class_8138 extends class_2830 implements class_3978 {
 
    @Override
    public void method_18359(class_6331 var1, Random var2, BlockPos var3, class_2522 var4) {
-      int var7 = Math.min(7, var4.<Integer>method_10313(field_41679) + class_9299.method_42824(var1.field_33033, 2, 5));
+      int var7 = Math.min(7, var4.<Integer>method_10313(field_41679) + MathHelper.nextInt(var1.field_33033, 2, 5));
       class_2522 var8 = var4.method_10308(field_41679, Integer.valueOf(var7));
       var1.method_7513(var3, var8, 2);
       if (var7 == 7) {

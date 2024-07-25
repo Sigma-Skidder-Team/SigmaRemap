@@ -29,7 +29,7 @@ public class class_3997 extends class_2451 {
                   class_2340 var16 = ((class_5978)var15.method_8360()).method_27280(var1, var9, var15);
                   if (var16 != class_8532.field_43673) {
                      var2.method_3211(class_6234.field_31907.method_43790(this));
-                     var2.method_37155(!var16.method_10724(class_6503.field_33095) ? class_463.field_2142 : class_463.field_2434, 1.0F, 1.0F);
+                     var2.method_37155(!var16.method_10724(class_6503.field_33095) ? SoundEvents.field_2142 : SoundEvents.field_2434, 1.0F, 1.0F);
                      ItemStack var14 = class_4754.method_21940(var6, var2, new ItemStack(var16.method_10721()));
                      if (!var1.field_33055) {
                         class_8807.field_45082.method_44414((class_9359)var2, new ItemStack(var16.method_10721()));
@@ -79,11 +79,11 @@ public class class_3997 extends class_2451 {
          boolean var11 = var7.method_8345() || var10 || var8 instanceof class_4582 && ((class_4582)var8).method_21238(var2, var3, var7, this.field_19414);
          if (var11) {
             if (var2.method_22572().method_40242() && this.field_19414.method_10724(class_6503.field_33094)) {
-               int var12 = var3.method_12173();
+               int var12 = var3.getX();
                int var13 = var3.method_12165();
                int var14 = var3.method_12185();
                var2.method_43359(
-                  var1, var3, class_463.field_2472, class_562.field_3322, 0.5F, 2.6F + (var2.field_33033.nextFloat() - var2.field_33033.nextFloat()) * 0.8F
+                  var1, var3, SoundEvents.field_2472, class_562.field_3322, 0.5F, 2.6F + (var2.field_33033.nextFloat() - var2.field_33033.nextFloat()) * 0.8F
                );
 
                for (int var15 = 0; var15 < 8; var15++) {
@@ -116,7 +116,7 @@ public class class_3997 extends class_2451 {
    }
 
    public void method_18425(PlayerEntity var1, class_9379 var2, BlockPos var3) {
-      class_8461 var6 = !this.field_19414.method_10724(class_6503.field_33095) ? class_463.field_2168 : class_463.field_2089;
+      SoundEvent var6 = !this.field_19414.method_10724(class_6503.field_33095) ? SoundEvents.field_2168 : SoundEvents.field_2089;
       var2.method_43359(var1, var3, var6, class_562.field_3322, 1.0F, 1.0F);
    }
 }

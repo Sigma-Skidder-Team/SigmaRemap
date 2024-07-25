@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5133 extends class_1249 {
+public class class_5133 extends PathNavigator {
    private static String[] field_26473;
 
    public class_5133(MobEntity var1, World var2) {
@@ -40,9 +40,9 @@ public class class_5133 extends class_1249 {
          if (!this.method_5601()) {
             if (this.field_6887 != null && !this.field_6887.method_18436()) {
                class_1343 var3 = this.field_6887.method_18439(this.field_6877);
-               if (class_9299.method_42847(this.field_6877.getPosX()) == class_9299.method_42847(var3.field_7336)
-                  && class_9299.method_42847(this.field_6877.method_37309()) == class_9299.method_42847(var3.field_7333)
-                  && class_9299.method_42847(this.field_6877.getPosZ()) == class_9299.method_42847(var3.field_7334)) {
+               if (MathHelper.floor(this.field_6877.getPosX()) == MathHelper.floor(var3.field_7336)
+                  && MathHelper.floor(this.field_6877.method_37309()) == MathHelper.floor(var3.field_7333)
+                  && MathHelper.floor(this.field_6877.getPosZ()) == MathHelper.floor(var3.field_7334)) {
                   this.field_6887.method_18434();
                }
             }
@@ -60,9 +60,9 @@ public class class_5133 extends class_1249 {
 
    @Override
    public boolean method_5599(class_1343 var1, class_1343 var2, int var3, int var4, int var5) {
-      int var8 = class_9299.method_42847(var1.field_7336);
-      int var9 = class_9299.method_42847(var1.field_7333);
-      int var10 = class_9299.method_42847(var1.field_7334);
+      int var8 = MathHelper.floor(var1.field_7336);
+      int var9 = MathHelper.floor(var1.field_7333);
+      int var10 = MathHelper.floor(var1.field_7334);
       double var11 = var2.field_7336 - var1.field_7336;
       double var13 = var2.field_7333 - var1.field_7333;
       double var15 = var2.field_7334 - var1.field_7334;
@@ -98,9 +98,9 @@ public class class_5133 extends class_1249 {
          int var33 = !(var11 < 0.0) ? 1 : -1;
          int var34 = !(var13 < 0.0) ? 1 : -1;
          int var35 = !(var15 < 0.0) ? 1 : -1;
-         int var36 = class_9299.method_42847(var2.field_7336);
-         int var37 = class_9299.method_42847(var2.field_7333);
-         int var38 = class_9299.method_42847(var2.field_7334);
+         int var36 = MathHelper.floor(var2.field_7336);
+         int var37 = MathHelper.floor(var2.field_7333);
+         int var38 = MathHelper.floor(var2.field_7334);
          int var39 = var36 - var8;
          int var40 = var37 - var9;
          int var41 = var38 - var10;

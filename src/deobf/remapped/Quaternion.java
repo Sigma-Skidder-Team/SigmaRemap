@@ -160,7 +160,7 @@ public final class Quaternion {
          this.w = 0.0F;
          this.h = 0.0F;
       } else {
-         float var4 = class_9299.method_42836(var3);
+         float var4 = MathHelper.method_42836(var3);
          this.x *= var4;
          this.y *= var4;
          this.w *= var4;

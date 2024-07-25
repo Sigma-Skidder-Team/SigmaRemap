@@ -105,7 +105,7 @@ public class class_6001 extends class_2830 implements class_3978, class_2593 {
          byte var8 = 1;
          byte var9 = 2;
          int var10 = 0;
-         int var11 = var3.method_12173() - 2;
+         int var11 = var3.getX() - 2;
          int var12 = 0;
 
          for (int var13 = 0; var13 < 5; var13++) {

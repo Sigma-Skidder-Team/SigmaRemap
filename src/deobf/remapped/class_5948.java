@@ -17,7 +17,7 @@ public class class_5948 extends class_4109 {
 
    @Override
    public void method_19084() {
-      this.method_26561(Attributes.field_37464).method_45006(this.method_19046());
+      this.getAttribute(Attributes.field_37464).setBaseValue(this.method_19046());
    }
 
    @Override
@@ -25,41 +25,41 @@ public class class_5948 extends class_4109 {
    }
 
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       super.method_26918();
-      return !this.method_37261(class_6503.field_33094) ? class_463.field_2783 : class_463.field_2768;
+      return !this.method_37261(class_6503.field_33094) ? SoundEvents.field_2783 : SoundEvents.field_2768;
    }
 
    @Override
-   public class_8461 method_26599() {
+   public SoundEvent method_26599() {
       super.method_26599();
-      return class_463.field_2713;
+      return SoundEvents.field_2713;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
+   public SoundEvent method_26541(DamageSource var1) {
       super.method_26541(var1);
-      return class_463.field_2000;
+      return SoundEvents.field_2000;
    }
 
    @Override
-   public class_8461 method_37239() {
+   public SoundEvent method_37239() {
       if (this.onGround) {
          if (!this.method_37151()) {
-            return class_463.field_2087;
+            return SoundEvents.field_2087;
          }
 
          this.field_20023++;
          if (this.field_20023 > 5 && this.field_20023 % 3 == 0) {
-            return class_463.field_2172;
+            return SoundEvents.field_2172;
          }
 
          if (this.field_20023 <= 5) {
-            return class_463.field_2087;
+            return SoundEvents.field_2087;
          }
       }
 
-      return class_463.field_2292;
+      return SoundEvents.field_2292;
    }
 
    @Override
@@ -76,7 +76,7 @@ public class class_5948 extends class_4109 {
       if (!this.method_37285()) {
          super.method_19048();
       } else {
-         this.method_37155(class_463.field_2012, 0.4F, 1.0F);
+         this.method_37155(SoundEvents.field_2012, 0.4F, 1.0F);
       }
    }
 
@@ -91,8 +91,8 @@ public class class_5948 extends class_4109 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (this.method_27191() && this.field_30331++ >= 18000) {
          this.method_37204();
       }

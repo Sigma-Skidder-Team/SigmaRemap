@@ -18,7 +18,7 @@ public class class_3451 extends class_1859 {
       this.method_32148(this.field_16931 = new class_5940(this, "waypointList", 0, 65, this.field_16930, this.field_36257 - 65));
 
       for (class_4333 var10 : SigmaMainClass.getInstance().method_3309().method_21960()) {
-         this.field_16931.method_27166(var10.field_21072, new class_2700(var10.field_21071, 64, var10.field_21073), var10.field_21075);
+         this.field_16931.method_27166(var10.field_21072, new Vector3i(var10.field_21071, 64, var10.field_21073), var10.field_21075);
       }
 
       this.method_32148(this.field_16933 = new class_993(this, "mapFrame", this.field_16930, 0, this.field_36278 - this.field_16930, this.field_36257));

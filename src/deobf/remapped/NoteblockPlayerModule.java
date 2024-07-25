@@ -149,7 +149,7 @@ public class NoteblockPlayerModule extends PremiumModule {
    }
 
    public static void method_36547(BlockPos var0) {
-      double var3 = (double)((float)var0.method_12173() + 0.5F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61();
+      double var3 = (double)((float)var0.getX() + 0.5F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61();
       double var5 = (double)((float)var0.method_12165() + 1.0F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60();
       double var7 = (double)((float)var0.method_12185() + 0.5F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62();
       GL11.glBlendFunc(770, 771);

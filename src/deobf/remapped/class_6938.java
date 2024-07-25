@@ -12,7 +12,7 @@ public class class_6938 {
    private final float field_35662;
    private final float field_35661;
    private final float field_35663;
-   public static final class_8107 field_35666 = class_1750.method_7800();
+   public static final class_8107 field_35666 = MathUtils.method_7800();
 
    public class_6938(RenderLayer var1, RenderLayer var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.field_35664 = var1;

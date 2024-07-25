@@ -138,7 +138,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    public void method_43358(class_562 var1) {
       this.field_20021.method_31503(0, new ItemStack(class_4897.field_24836));
       if (var1 != null) {
-         this.world.method_29540((PlayerEntity)null, this, class_463.field_2063, var1, 0.5F, 1.0F);
+         this.world.method_29540((PlayerEntity)null, this, SoundEvents.field_2063, var1, 0.5F, 1.0F);
       }
    }
 
@@ -156,7 +156,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    public int method_19074(int var1) {
-      int var4 = class_9299.method_42829(this.method_19062() + var1, 0, this.method_19075());
+      int var4 = MathHelper.clamp(this.method_19062() + var1, 0, this.method_19075());
       this.method_19071(var4);
       return var4;
    }
@@ -169,7 +169,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    private void method_19049() {
       this.method_19050();
       if (!this.method_37378()) {
-         class_8461 var3 = this.method_19083();
+         SoundEvent var3 = this.method_19083();
          if (var3 != null) {
             this.world
                .method_29528(
@@ -189,7 +189,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    @Override
    public boolean method_37270(float var1, float var2) {
       if (var1 > 1.0F) {
-         this.method_37155(class_463.field_2121, 0.4F, 1.0F);
+         this.method_37155(SoundEvents.field_2121, 0.4F, 1.0F);
       }
 
       int var5 = this.method_26490(var1, var2);
@@ -210,7 +210,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Override
    public int method_26490(float var1, float var2) {
-      return class_9299.method_42816((var1 * 0.5F - 3.0F) * var2);
+      return MathHelper.ceil((var1 * 0.5F - 3.0F) * var2);
    }
 
    public int method_19085() {
@@ -247,7 +247,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       boolean var4 = this.method_43357();
       this.method_19070();
       if (this.field_41697 > 20 && !var4 && this.method_43357()) {
-         this.method_37155(class_463.field_2063, 0.5F, 1.0F);
+         this.method_37155(SoundEvents.field_2063, 0.5F, 1.0F);
       }
    }
 
@@ -256,19 +256,19 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Nullable
-   public class_8461 method_19083() {
+   public SoundEvent method_19083() {
       return null;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26599() {
+   public SoundEvent method_26599() {
       return null;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26541(DamageSource var1) {
+   public SoundEvent method_26541(DamageSource var1) {
       if (this.field_41717.nextInt(3) == 0) {
          this.method_19065();
       }
@@ -278,8 +278,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
-      if (this.field_41717.nextInt(10) == 0 && !this.method_26468()) {
+   public SoundEvent method_26918() {
+      if (this.field_41717.nextInt(10) == 0 && !this.isMovementBlocked()) {
          this.method_19065();
       }
 
@@ -287,7 +287,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Nullable
-   public class_8461 method_19056() {
+   public SoundEvent method_19056() {
       this.method_19065();
       return null;
    }
@@ -306,18 +306,18 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             if (this.field_20023 > 5 && this.field_20023 % 3 == 0) {
                this.method_19053(var6);
             } else if (this.field_20023 <= 5) {
-               this.method_37155(class_463.field_2285, var6.method_21395() * 0.15F, var6.method_21393());
+               this.method_37155(SoundEvents.field_2285, var6.method_21395() * 0.15F, var6.method_21393());
             }
          } else if (var6 != class_4618.field_22468) {
-            this.method_37155(class_463.field_2453, var6.method_21395() * 0.15F, var6.method_21393());
+            this.method_37155(SoundEvents.field_2453, var6.method_21395() * 0.15F, var6.method_21393());
          } else {
-            this.method_37155(class_463.field_2285, var6.method_21395() * 0.15F, var6.method_21393());
+            this.method_37155(SoundEvents.field_2285, var6.method_21395() * 0.15F, var6.method_21393());
          }
       }
    }
 
    public void method_19053(class_4618 var1) {
-      this.method_37155(class_463.field_2335, var1.method_21395() * 0.15F, var1.method_21393());
+      this.method_37155(SoundEvents.field_2335, var1.method_21395() * 0.15F, var1.method_21393());
    }
 
    public static MutableAttribute method_19064() {
@@ -453,8 +453,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public boolean method_26468() {
-      return super.method_26468() && this.method_37151() && this.method_43357() || this.method_19086() || this.method_19057();
+   public boolean isMovementBlocked() {
+      return super.isMovementBlocked() && this.method_37151() && this.method_43357() || this.method_19086() || this.method_19057();
    }
 
    @Override
@@ -480,12 +480,12 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.field_41717.nextInt(200) == 0) {
          this.method_19061();
       }
 
-      super.method_26606();
+      super.livingTick();
       if (!this.world.field_33055 && this.isAlive()) {
          if (this.field_41717.nextInt(900) == 0 && this.field_29677 == 0) {
             this.heal(1.0F);
@@ -513,7 +513,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       if (this.method_19044() && this.method_26449() && !this.method_19086()) {
          LivingEntity var3 = this.world
             .<class_4109>method_25865(
-               class_4109.class, field_20015, this, this.getPosX(), this.method_37309(), this.getPosZ(), this.method_37241().method_18898(16.0)
+               class_4109.class, field_20015, this, this.getPosX(), this.method_37309(), this.getPosZ(), this.getBoundingBox().grow(16.0)
             );
          if (var3 != null && this.method_37275(var3) > 4.0) {
             this.field_29904.method_5598(var3, 0);
@@ -621,7 +621,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    public void method_19037() {
       if (!this.method_19057()) {
          this.method_19065();
-         class_8461 var3 = this.method_19056();
+         SoundEvent var3 = this.method_19056();
          if (var3 != null) {
             this.method_37155(var3, this.method_26439(), this.method_26547());
          }
@@ -676,8 +676,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
                this.method_19080(true);
                this.field_41763 = true;
                if (var6 > 0.0F) {
-                  float var12 = class_9299.method_42818(this.rotationYaw * (float) (Math.PI / 180.0));
-                  float var13 = class_9299.method_42840(this.rotationYaw * (float) (Math.PI / 180.0));
+                  float var12 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0));
+                  float var13 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
                   this.method_37215(this.method_37098().method_6214((double)(-0.4F * var12 * this.field_20019), 0.0, (double)(0.4F * var13 * this.field_20019)));
                }
 
@@ -708,7 +708,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    public void method_19048() {
-      this.method_37155(class_463.field_2911, 0.4F, 1.0F);
+      this.method_37155(SoundEvents.field_2911, 0.4F, 1.0F);
    }
 
    @Override
@@ -778,11 +778,11 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    public void method_19055(class_1899 var1, class_4109 var2) {
       double var5 = this.method_26419(Attributes.MAX_HEALTH) + var1.method_26419(Attributes.MAX_HEALTH) + (double)this.method_19082();
-      var2.method_26561(Attributes.MAX_HEALTH).method_45006(var5 / 3.0);
+      var2.getAttribute(Attributes.MAX_HEALTH).setBaseValue(var5 / 3.0);
       double var7 = this.method_26419(Attributes.field_37464) + var1.method_26419(Attributes.field_37464) + this.method_19046();
-      var2.method_26561(Attributes.field_37464).method_45006(var7 / 3.0);
+      var2.getAttribute(Attributes.field_37464).setBaseValue(var7 / 3.0);
       double var9 = this.method_26419(Attributes.MOVEMENT_SPEED) + var1.method_26419(Attributes.MOVEMENT_SPEED) + this.method_19087();
-      var2.method_26561(Attributes.MOVEMENT_SPEED).method_45006(var9 / 3.0);
+      var2.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(var9 / 3.0);
    }
 
    @Override
@@ -791,15 +791,15 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    public float method_19045(float var1) {
-      return class_9299.method_42795(var1, this.field_20017, this.field_20008);
+      return MathHelper.method_42795(var1, this.field_20017, this.field_20008);
    }
 
    public float method_19040(float var1) {
-      return class_9299.method_42795(var1, this.field_20010, this.field_20018);
+      return MathHelper.method_42795(var1, this.field_20010, this.field_20018);
    }
 
    public float method_19073(float var1) {
-      return class_9299.method_42795(var1, this.field_20022, this.field_20027);
+      return MathHelper.method_42795(var1, this.field_20022, this.field_20027);
    }
 
    @Override
@@ -869,8 +869,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       }
 
       if (this.field_20010 > 0.0F) {
-         float var8 = class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0));
-         float var5 = class_9299.method_42840(this.field_29605 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.sin(this.field_29605 * (float) (Math.PI / 180.0));
+         float var5 = MathHelper.cos(this.field_29605 * (float) (Math.PI / 180.0));
          float var6 = 0.7F * this.field_20010;
          float var7 = 0.15F * this.field_20010;
          var1.method_37256(
@@ -945,13 +945,13 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    @Nullable
    @Override
    public Entity getControllingPassenger() {
-      return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
+      return !this.getPassengers().isEmpty() ? this.getPassengers().get(0) : null;
    }
 
    @Nullable
    private class_1343 method_19059(class_1343 var1, LivingEntity var2) {
       double var5 = this.getPosX() + var1.field_7336;
-      double var7 = this.method_37241().field_19937;
+      double var7 = this.getBoundingBox().field_19937;
       double var9 = this.getPosZ() + var1.field_7334;
       class_2921 var11 = new class_2921();
       UnmodifiableIterator var12 = var2.method_26454().iterator();
@@ -959,7 +959,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       while (var12.hasNext()) {
          class_7653 var13 = (class_7653)var12.next();
          var11.method_13361(var5, var7, var9);
-         double var14 = this.method_37241().field_19939 + 0.75;
+         double var14 = this.getBoundingBox().field_19939 + 0.75;
 
          do {
             double var16 = this.world.method_28259(var11);

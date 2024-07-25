@@ -43,10 +43,10 @@ public class class_7677<T extends class_3845> extends class_6484<T> {
 
    public void method_34790(T var1, float var2, float var3, float var4, float var5, float var6) {
       super.method_29700((T)var1, var2, var3, var4, var5, var6);
-      this.field_33022.field_8191 = class_9299.method_42840(var2 * 0.6662F * 0.6F) * 0.5F * var3;
-      this.field_33027.field_8191 = class_9299.method_42840(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
-      this.field_33023.field_8185 = class_9299.method_42840(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
-      this.field_33026.field_8185 = class_9299.method_42840(var2 * 0.6662F * 0.6F) * 0.5F * var3;
+      this.field_33022.field_8191 = MathHelper.cos(var2 * 0.6662F * 0.6F) * 0.5F * var3;
+      this.field_33027.field_8191 = MathHelper.cos(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
+      this.field_33023.field_8185 = MathHelper.cos(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
+      this.field_33026.field_8185 = MathHelper.cos(var2 * 0.6662F * 0.6F) * 0.5F * var3;
       this.field_33023.field_8191 = 0.0F;
       this.field_33026.field_8191 = 0.0F;
       this.field_33023.field_8190 = 0.0F;
@@ -58,13 +58,13 @@ public class class_7677<T extends class_3845> extends class_6484<T> {
          float var9 = !var1.method_17862() ? 1.0F : 4.0F;
          float var10 = !var1.method_17862() ? 1.0F : 2.0F;
          float var11 = 5.0F;
-         this.field_33023.field_8190 = class_9299.method_42840(var9 * var2 * 5.0F + (float) Math.PI) * 8.0F * var3 * var10;
+         this.field_33023.field_8190 = MathHelper.cos(var9 * var2 * 5.0F + (float) Math.PI) * 8.0F * var3 * var10;
          this.field_33023.field_8185 = 0.0F;
-         this.field_33026.field_8190 = class_9299.method_42840(var9 * var2 * 5.0F) * 8.0F * var3 * var10;
+         this.field_33026.field_8190 = MathHelper.cos(var9 * var2 * 5.0F) * 8.0F * var3 * var10;
          this.field_33026.field_8185 = 0.0F;
-         this.field_33022.field_8190 = class_9299.method_42840(var2 * 5.0F + (float) Math.PI) * 3.0F * var3;
+         this.field_33022.field_8190 = MathHelper.cos(var2 * 5.0F + (float) Math.PI) * 3.0F * var3;
          this.field_33022.field_8191 = 0.0F;
-         this.field_33027.field_8190 = class_9299.method_42840(var2 * 5.0F) * 3.0F * var3;
+         this.field_33027.field_8190 = MathHelper.cos(var2 * 5.0F) * 3.0F * var3;
          this.field_33027.field_8191 = 0.0F;
       }
 

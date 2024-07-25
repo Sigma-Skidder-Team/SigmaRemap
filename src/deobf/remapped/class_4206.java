@@ -68,18 +68,18 @@ public class class_4206 extends class_516 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2364;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2364;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2209;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2209;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2841;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2841;
    }
 
    @Override

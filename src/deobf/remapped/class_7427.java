@@ -101,7 +101,7 @@ public class class_7427 {
             var7.method_31503(var2, var3);
             var0.method_42196(
                new TranslationTextComponent(
-                  "commands.replaceitem.block.success", var1.method_12173(), var1.method_12165(), var1.method_12185(), var3.method_28001()
+                  "commands.replaceitem.block.success", var1.getX(), var1.method_12165(), var1.method_12185(), var3.method_28001()
                ),
                true
             );

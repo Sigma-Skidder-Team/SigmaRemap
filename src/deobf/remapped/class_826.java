@@ -6,7 +6,7 @@ public class class_826 extends class_6165 {
    private float field_4358 = 0.0F;
 
    public class_826(AbstractMinecartEntity var1) {
-      super(class_463.field_2311, class_562.field_3328);
+      super(SoundEvents.field_2311, class_562.field_3328);
       this.field_4360 = var1;
       this.field_5768 = true;
       this.field_5764 = 0;
@@ -32,13 +32,13 @@ public class class_826 extends class_6165 {
          this.field_5761 = (double)((float)this.field_4360.getPosX());
          this.field_5765 = (double)((float)this.field_4360.method_37309());
          this.field_5762 = (double)((float)this.field_4360.getPosZ());
-         float var3 = class_9299.method_42842(Entity.method_37266(this.field_4360.method_37098()));
+         float var3 = MathHelper.sqrt(Entity.method_37266(this.field_4360.method_37098()));
          if (!((double)var3 >= 0.01)) {
             this.field_4358 = 0.0F;
             this.field_5766 = 0.0F;
          } else {
-            this.field_4358 = class_9299.method_42828(this.field_4358 + 0.0025F, 0.0F, 1.0F);
-            this.field_5766 = class_9299.method_42795(class_9299.method_42828(var3, 0.0F, 0.5F), 0.0F, 0.7F);
+            this.field_4358 = MathHelper.clamp(this.field_4358 + 0.0025F, 0.0F, 1.0F);
+            this.field_5766 = MathHelper.method_42795(MathHelper.clamp(var3, 0.0F, 0.5F), 0.0F, 0.7F);
          }
       } else {
          this.method_28267();

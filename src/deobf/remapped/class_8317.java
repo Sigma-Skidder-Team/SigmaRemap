@@ -10,8 +10,8 @@ public class class_8317 extends class_7164<class_9490, class_7236<class_9490>> {
 
    public void method_38348(class_9490 var1, class_7966 var2, float var3) {
       float var6 = var1.method_43830(var3);
-      float var7 = 1.0F + class_9299.method_42818(var6 * 100.0F) * var6 * 0.01F;
-      var6 = class_9299.method_42828(var6, 0.0F, 1.0F);
+      float var7 = 1.0F + MathHelper.sin(var6 * 100.0F) * var6 * 0.01F;
+      var6 = MathHelper.clamp(var6, 0.0F, 1.0F);
       var6 *= var6;
       var6 *= var6;
       float var8 = (1.0F + var6 * 0.4F) * var7;
@@ -21,7 +21,7 @@ public class class_8317 extends class_7164<class_9490, class_7236<class_9490>> {
 
    public float method_38346(class_9490 var1, float var2) {
       float var5 = var1.method_43830(var2);
-      return (int)(var5 * 10.0F) % 2 != 0 ? class_9299.method_42828(var5, 0.5F, 1.0F) : 0.0F;
+      return (int)(var5 * 10.0F) % 2 != 0 ? MathHelper.clamp(var5, 0.5F, 1.0F) : 0.0F;
    }
 
    public Identifier method_38347(class_9490 var1) {

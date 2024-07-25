@@ -10,11 +10,11 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7738 extends class_2451 {
-   private static final Map<class_8461, class_7738> field_39237 = Maps.newHashMap();
+   private static final Map<SoundEvent, class_7738> field_39237 = Maps.newHashMap();
    private final int field_39238;
-   private final class_8461 field_39239;
+   private final SoundEvent field_39239;
 
-   public class_7738(int var1, class_8461 var2, class_317 var3) {
+   public class_7738(int var1, SoundEvent var2, class_317 var3) {
       super(var3);
       this.field_39238 = var1;
       this.field_39239 = var2;
@@ -58,11 +58,11 @@ public class class_7738 extends class_2451 {
    }
 
    @Nullable
-   public static class_7738 method_35031(class_8461 var0) {
+   public static class_7738 method_35031(SoundEvent var0) {
       return field_39237.get(var0);
    }
 
-   public class_8461 method_35032() {
+   public SoundEvent method_35032() {
       return this.field_39239;
    }
 }

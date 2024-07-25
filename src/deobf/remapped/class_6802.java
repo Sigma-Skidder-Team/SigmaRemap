@@ -42,7 +42,7 @@ public class class_6802<T extends Entity> extends class_5272<T> {
 
    @Override
    public void method_29700(T var1, float var2, float var3, float var4, float var5, float var6) {
-      this.field_35059.field_8185 = -0.2F + 0.4F * class_9299.method_42818(var4 * 0.2F);
-      this.field_35054.field_8185 = 0.2F - 0.4F * class_9299.method_42818(var4 * 0.2F);
+      this.field_35059.field_8185 = -0.2F + 0.4F * MathHelper.sin(var4 * 0.2F);
+      this.field_35054.field_8185 = 0.2F - 0.4F * MathHelper.sin(var4 * 0.2F);
    }
 }

@@ -157,7 +157,7 @@ public class class_6694 extends class_958 {
                this.field_34586++;
                if (class_8829.method_40546(this.field_34583).nextFloat() < 0.05F && this.field_34586 > this.field_34584 + 60) {
                   this.field_34584 = this.field_34586;
-                  this.field_34583.method_37155(class_463.field_2250, 1.0F, 1.0F);
+                  this.field_34583.method_37155(SoundEvents.field_2250, 1.0F, 1.0F);
                }
             }
          } else {

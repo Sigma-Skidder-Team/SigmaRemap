@@ -33,7 +33,7 @@ public class class_3064 extends class_2830 {
    }
 
    @Override
-   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, LivingEntity var4, ItemStack var5) {
       var1.method_7513(var2.method_6081(), this.method_29260().method_10308(field_15063, class_7422.field_37874), 3);
    }
 
@@ -94,8 +94,8 @@ public class class_3064 extends class_2830 {
 
    @Override
    public long method_10759(class_2522 var1, BlockPos var2) {
-      return class_9299.method_42839(
-         var2.method_12173(), var2.method_6101(var1.method_10313(field_15063) != class_7422.field_37876 ? 1 : 0).method_12165(), var2.method_12185()
+      return MathHelper.getCoordinateRandom(
+         var2.getX(), var2.method_6101(var1.method_10313(field_15063) != class_7422.field_37876 ? 1 : 0).method_12165(), var2.method_12185()
       );
    }
 }

@@ -26,7 +26,7 @@ public class class_7047 {
    }
 
    public class_7047(BlockPos var1) {
-      this.method_32358((double)var1.method_12173(), (double)var1.method_12165(), (double)var1.method_12185());
+      this.method_32358((double)var1.getX(), (double)var1.method_12165(), (double)var1.method_12185());
    }
 
    public void method_32358(double var1, double var3, double var5) {
@@ -70,21 +70,21 @@ public class class_7047 {
    public double method_32367(class_1343 var1) {
       double var4 = var1.field_7336 - this.method_32381() - 0.5;
       double var6 = var1.field_7334 - this.method_32382() - 0.5;
-      return (double)class_9299.method_42842(var4 * var4 + var6 * var6);
+      return (double) MathHelper.sqrt(var4 * var4 + var6 * var6);
    }
 
    public float method_32373(Entity var1) {
       double var4 = var1.getPosX() - this.method_32381();
       double var6 = var1.method_37309() - this.method_32375();
       double var8 = var1.getPosZ() - this.method_32382();
-      return class_9299.method_42842(var4 * var4 + var6 * var6 + var8 * var8);
+      return MathHelper.sqrt(var4 * var4 + var6 * var6 + var8 * var8);
    }
 
    public float method_32372(class_7047 var1) {
       double var4 = var1.method_32381() - this.method_32381();
       double var6 = var1.method_32375() - this.method_32375();
       double var8 = var1.method_32382() - this.method_32382();
-      return class_9299.method_42842(var4 * var4 + var6 * var6 + var8 * var8);
+      return MathHelper.sqrt(var4 * var4 + var6 * var6 + var8 * var8);
    }
 
    public double method_32376(class_7047 var1) {

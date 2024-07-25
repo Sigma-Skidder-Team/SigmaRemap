@@ -174,12 +174,12 @@ public class JesusModule extends Module {
    }
 
    public boolean method_32083(Box var1, class_5371 var2) {
-      int var5 = class_9299.method_42847(var1.field_19941);
-      int var6 = class_9299.method_42815(var1.field_19940);
-      int var7 = class_9299.method_42847(var1.field_19937);
-      int var8 = class_9299.method_42815(var1.field_19939);
-      int var9 = class_9299.method_42847(var1.field_19938);
-      int var10 = class_9299.method_42815(var1.field_19942);
+      int var5 = MathHelper.floor(var1.field_19941);
+      int var6 = MathHelper.ceil(var1.field_19940);
+      int var7 = MathHelper.floor(var1.field_19937);
+      int var8 = MathHelper.ceil(var1.field_19939);
+      int var9 = MathHelper.floor(var1.field_19938);
+      int var10 = MathHelper.ceil(var1.field_19942);
       class_2927 var11 = class_2927.method_13381(var2);
       return BlockPos.method_6083(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(client.theWorld.method_28262(var1x)));
    }

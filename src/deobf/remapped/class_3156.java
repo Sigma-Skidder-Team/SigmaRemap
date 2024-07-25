@@ -18,18 +18,18 @@ public class class_3156 extends class_3599 {
 
    @Override
    public void method_16794() {
-      if (this.field_15684.method_17809() != null) {
-         LivingEntity var3 = this.field_15684.method_17809();
+      if (this.field_15684.getAttackTarget() != null) {
+         LivingEntity var3 = this.field_15684.getAttackTarget();
          double var4 = 64.0;
          if (var3.method_37275(this.field_15684) < 4096.0) {
             double var6 = var3.getPosX() - this.field_15684.getPosX();
             double var8 = var3.getPosZ() - this.field_15684.getPosZ();
-            this.field_15684.rotationYaw = -((float)class_9299.method_42821(var6, var8)) * (180.0F / (float)Math.PI);
+            this.field_15684.rotationYaw = -((float) MathHelper.method_42821(var6, var8)) * (180.0F / (float)Math.PI);
             this.field_15684.field_29605 = this.field_15684.rotationYaw;
          }
       } else {
          class_1343 var10 = this.field_15684.method_37098();
-         this.field_15684.rotationYaw = -((float)class_9299.method_42821(var10.field_7336, var10.field_7334)) * (180.0F / (float)Math.PI);
+         this.field_15684.rotationYaw = -((float) MathHelper.method_42821(var10.field_7336, var10.field_7334)) * (180.0F / (float)Math.PI);
          this.field_15684.field_29605 = this.field_15684.rotationYaw;
       }
    }

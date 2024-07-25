@@ -21,7 +21,7 @@ public class class_1600 implements class_7279 {
          && this.field_8329
             .method_23401(
                var1.method_12694(),
-               var4.method_61() + (double)this.field_8331.method_12173(),
+               var4.method_61() + (double)this.field_8331.getX(),
                var4.method_60() + (double)this.field_8331.method_12165(),
                var4.method_62() + (double)this.field_8331.method_12185()
             );

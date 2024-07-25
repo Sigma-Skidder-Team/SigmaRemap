@@ -60,8 +60,8 @@ public class class_472<T extends Entity> extends class_1498<T> {
       this.field_2945.field_8191 = this.field_2947.field_8191;
       this.field_2945.field_8190 = this.field_2947.field_8190;
       this.field_2952.field_8191 = (float) (Math.PI / 2);
-      this.field_2944.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
-      this.field_2950.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field_2944.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+      this.field_2950.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
       this.field_2948.field_8185 = var4;
       this.field_2946.field_8185 = -var4;
    }

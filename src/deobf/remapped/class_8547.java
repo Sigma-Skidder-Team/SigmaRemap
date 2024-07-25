@@ -31,7 +31,7 @@ public class class_8547 extends class_2208<class_9449> {
       int var8 = (this.field_940 - this.field_10973) / 2;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10973);
       int var9 = this.field_10956.method_43700();
-      int var10 = class_9299.method_42829((18 * var9 + 20 - 1) / 20, 0, 18);
+      int var10 = MathHelper.clamp((18 * var9 + 20 - 1) / 20, 0, 18);
       if (var10 > 0) {
          this.method_9781(var1, var7 + 60, var8 + 44, 176, 29, var10, 4);
       }

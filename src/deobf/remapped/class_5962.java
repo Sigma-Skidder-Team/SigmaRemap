@@ -83,7 +83,7 @@ public class class_5962 implements AutoCloseable {
                TextRenderer var23 = MinecraftClient.getInstance().textRenderer;
                ITextComponent var24 = var14.method_14847();
                float var25 = (float)var23.method_45379(var24);
-               float var26 = class_9299.method_42828(25.0F / var25, 0.0F, 0.6666667F);
+               float var26 = MathHelper.clamp(25.0F / var25, 0.0F, 0.6666667F);
                var1.method_36063();
                var1.method_36065(
                   (double)(0.0F + (float)var14.method_14846() / 2.0F + 64.0F - var25 * var26 / 2.0F),

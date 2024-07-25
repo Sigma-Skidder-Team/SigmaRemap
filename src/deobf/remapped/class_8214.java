@@ -17,7 +17,7 @@ public class class_8214 extends class_3599 {
    @Override
    public boolean method_16795() {
       this.field_42021 = this.field_42022.world.method_25859(class_449.method_2166(), this.field_42022);
-      return this.field_42021 == null ? false : this.field_42021.method_37113() && this.field_42022.method_17809() != this.field_42021;
+      return this.field_42021 == null ? false : this.field_42021.method_37113() && this.field_42022.getAttackTarget() != this.field_42021;
    }
 
    @Override

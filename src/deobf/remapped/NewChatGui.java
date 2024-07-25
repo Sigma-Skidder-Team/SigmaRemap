@@ -45,7 +45,7 @@ public class NewChatGui extends AbstractGui {
             }
 
             double var9 = this.method_18689();
-            int var11 = class_9299.method_42815((double)this.method_18700() / var9);
+            int var11 = MathHelper.ceil((double)this.method_18700() / var9);
             RenderSystem.method_16438();
             RenderSystem.method_16413(2.0F, 8.0F, 0.0F);
             RenderSystem.method_16356(var9, var9, 1.0);
@@ -141,7 +141,7 @@ public class NewChatGui extends AbstractGui {
       double var3 = (double)var0 / 200.0;
       var3 = 1.0 - var3;
       var3 *= 10.0;
-      var3 = class_9299.method_42827(var3, 0.0, 1.0);
+      var3 = MathHelper.clamp(var3, 0.0, 1.0);
       return var3 * var3;
    }
 
@@ -168,7 +168,7 @@ public class NewChatGui extends AbstractGui {
          this.method_18692(var2);
       }
 
-      int var7 = class_9299.method_42847((double)this.method_18700() / this.method_18689());
+      int var7 = MathHelper.floor((double)this.method_18700() / this.method_18689());
       List var8 = class_1091.method_4783(var1, var7, this.field_19686.textRenderer);
       boolean var9 = this.method_18695();
 
@@ -236,9 +236,9 @@ public class NewChatGui extends AbstractGui {
       if (this.method_18695() && !this.field_19686.gameOptions.hideGUI && !this.method_18698() && !this.field_19692.isEmpty()) {
          double var7 = var1 - 2.0;
          double var9 = (double)this.field_19686.getMainWindow().getScaledHeight() - var3 - 40.0;
-         if (var7 <= (double)class_9299.method_42847((double)this.method_18700() / this.method_18689())
+         if (var7 <= (double) MathHelper.floor((double)this.method_18700() / this.method_18689())
             && var9 < 0.0
-            && var9 > (double)class_9299.method_42847(-9.0 * this.method_18689())) {
+            && var9 > (double) MathHelper.floor(-9.0 * this.method_18689())) {
             this.method_18676(this.field_19692.remove());
             this.field_19688 = System.currentTimeMillis();
             return true;
@@ -255,11 +255,11 @@ public class NewChatGui extends AbstractGui {
       if (this.method_18695() && !this.field_19686.gameOptions.hideGUI && !this.method_18698()) {
          double var7 = var1 - 2.0;
          double var9 = (double)this.field_19686.getMainWindow().getScaledHeight() - var3 - 40.0;
-         var7 = (double)class_9299.method_42847(var7 / this.method_18689());
-         var9 = (double)class_9299.method_42847(var9 / (this.method_18689() * (this.field_19686.gameOptions.field_45465 + 1.0)));
+         var7 = (double) MathHelper.floor(var7 / this.method_18689());
+         var9 = (double) MathHelper.floor(var9 / (this.method_18689() * (this.field_19686.gameOptions.field_45465 + 1.0)));
          if (!(var7 < 0.0) && !(var9 < 0.0)) {
             int var11 = Math.min(this.method_18681(), this.field_19694.size());
-            if (var7 <= (double)class_9299.method_42847((double)this.method_18700() / this.method_18689()) && var9 < (double)(9 * var11 + var11)) {
+            if (var7 <= (double) MathHelper.floor((double)this.method_18700() / this.method_18689()) && var9 < (double)(9 * var11 + var11)) {
                int var12 = (int)(var9 / 9.0 + (double)this.field_19689);
                if (var12 >= 0 && var12 < this.field_19694.size()) {
                   class_8618 var13 = this.field_19694.get(var12);
@@ -289,7 +289,7 @@ public class NewChatGui extends AbstractGui {
       int var3 = method_18686(this.field_19686.gameOptions.field_45388);
       Window var4 = MinecraftClient.getInstance().getMainWindow();
       int var5 = (int)((double)(var4.method_43178() - 3) / var4.method_43189());
-      return class_9299.method_42829(var3, 0, var5);
+      return MathHelper.clamp(var3, 0, var5);
    }
 
    public int method_18677() {
@@ -306,13 +306,13 @@ public class NewChatGui extends AbstractGui {
    public static int method_18686(double var0) {
       short var4 = 320;
       byte var5 = 40;
-      return class_9299.method_42847(var0 * 280.0 + 40.0);
+      return MathHelper.floor(var0 * 280.0 + 40.0);
    }
 
    public static int method_18688(double var0) {
       short var4 = 180;
       byte var5 = 20;
-      return class_9299.method_42847(var0 * 160.0 + 20.0);
+      return MathHelper.floor(var0 * 160.0 + 20.0);
    }
 
    public int method_18681() {

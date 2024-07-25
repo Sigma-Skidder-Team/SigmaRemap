@@ -76,9 +76,9 @@ public final class class_2426 {
    }
 
    public void method_11073(float var1, float var2) {
-      this.field_12075 = class_9299.method_42828(this.field_12075, var1, var2);
-      this.field_12078 = class_9299.method_42828(this.field_12078, var1, var2);
-      this.field_12079 = class_9299.method_42828(this.field_12079, var1, var2);
+      this.field_12075 = MathHelper.clamp(this.field_12075, var1, var2);
+      this.field_12078 = MathHelper.clamp(this.field_12078, var1, var2);
+      this.field_12079 = MathHelper.clamp(this.field_12079, var1, var2);
    }
 
    public void method_11065(float var1, float var2, float var3) {
@@ -112,7 +112,7 @@ public final class class_2426 {
    public boolean method_11066() {
       float var3 = this.field_12075 * this.field_12075 + this.field_12078 * this.field_12078 + this.field_12079 * this.field_12079;
       if (!((double)var3 < 1.0E-5)) {
-         float var4 = class_9299.method_42836(var3);
+         float var4 = MathHelper.method_42836(var3);
          this.field_12075 *= var4;
          this.field_12078 *= var4;
          this.field_12079 *= var4;

@@ -21,7 +21,7 @@ public class class_4228 implements Packet<class_392> {
    public class_4228() {
    }
 
-   public class_4228(class_5834 var1) {
+   public class_4228(LivingEntity var1) {
       this.field_20522 = var1.method_37145();
       this.field_20515 = var1.method_37328();
       this.field_20516 = class_8669.field_44400.method_14041(var1.getType());
@@ -33,9 +33,9 @@ public class class_4228 implements Packet<class_392> {
       this.field_20523 = (byte)((int)(var1.field_29618 * 256.0F / 360.0F));
       double var4 = 3.9;
       class_1343 var6 = var1.method_37098();
-      double var7 = class_9299.method_42827(var6.field_7336, -3.9, 3.9);
-      double var9 = class_9299.method_42827(var6.field_7333, -3.9, 3.9);
-      double var11 = class_9299.method_42827(var6.field_7334, -3.9, 3.9);
+      double var7 = MathHelper.clamp(var6.field_7336, -3.9, 3.9);
+      double var9 = MathHelper.clamp(var6.field_7333, -3.9, 3.9);
+      double var11 = MathHelper.clamp(var6.field_7334, -3.9, 3.9);
       this.field_20517 = (int)(var7 * 8000.0);
       this.field_20518 = (int)(var9 * 8000.0);
       this.field_20520 = (int)(var11 * 8000.0);

@@ -3,7 +3,7 @@ package remapped;
 public class class_7194 {
    private static String[] field_36987;
    public static MinecraftClient field_36996 = MinecraftClient.getInstance();
-   private static final int field_36990 = 1 + class_9299.method_42798(class_9299.method_42801(30000000));
+   private static final int field_36990 = 1 + MathHelper.log2(MathHelper.smallestEncompassingPowerOfTwo(30000000));
    private static final int field_36988 = field_36990;
    private static final int field_36991 = 64 - field_36990 - field_36988;
    private static final int field_36983 = 0 + field_36988;
@@ -17,7 +17,7 @@ public class class_7194 {
    public static float field_36989;
 
    public static long method_32944(BlockPos var0) {
-      return ((long)var0.method_12173() & field_36995) << field_36986
+      return ((long)var0.getX() & field_36995) << field_36986
          | ((long)var0.method_12165() & field_36993) << field_36983
          | ((long)var0.method_12185() & field_36994) << 0;
    }
@@ -25,7 +25,7 @@ public class class_7194 {
    public static void method_32939(float var0, float var1, float var2, float var3) {
       float var6 = var0 * var0 + var1 * var1 + var2 * var2;
       if (var6 >= 1.0E-4F) {
-         var6 = class_9299.method_42843(var6);
+         var6 = MathHelper.sqrt(var6);
          if (var6 < 1.0F) {
             var6 = 1.0F;
          }
@@ -34,8 +34,8 @@ public class class_7194 {
          var0 *= var6;
          var1 *= var6;
          var2 *= var6;
-         float var7 = class_9299.method_42818(field_36996.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
-         float var8 = class_9299.method_42840(field_36996.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
+         float var7 = MathHelper.sin(field_36996.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.cos(field_36996.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
          field_36984 += (double)(var0 * var8 - var2 * var7);
          field_36992 += (double)var1;
          field_36985 += (double)(var2 * var8 + var0 * var7);
@@ -70,7 +70,7 @@ public class class_7194 {
             field_36992 -= 0.02;
          }
 
-         if (field_36996.thePlayer.field_41744
+         if (field_36996.thePlayer.collidedHorizontally
             && field_36996.thePlayer.method_37159(field_36984, field_36992 + 0.6F - field_36996.thePlayer.method_37309() + var5, field_36985)) {
             field_36992 = 0.3F;
          }
@@ -78,12 +78,12 @@ public class class_7194 {
    }
 
    public static boolean method_32945(Box var0, class_5371 var1) {
-      int var4 = class_9299.method_42847(var0.field_19941);
-      int var5 = class_9299.method_42815(var0.field_19940);
-      int var6 = class_9299.method_42847(var0.field_19937);
-      int var7 = class_9299.method_42815(var0.field_19939);
-      int var8 = class_9299.method_42847(var0.field_19938);
-      int var9 = class_9299.method_42815(var0.field_19942);
+      int var4 = MathHelper.floor(var0.field_19941);
+      int var5 = MathHelper.ceil(var0.field_19940);
+      int var6 = MathHelper.floor(var0.field_19937);
+      int var7 = MathHelper.ceil(var0.field_19939);
+      int var8 = MathHelper.floor(var0.field_19938);
+      int var9 = MathHelper.ceil(var0.field_19942);
       if (!field_36996.theWorld.method_22569(var4, var6, var8, var5, var7, var9)) {
          return false;
       } else {
@@ -115,6 +115,6 @@ public class class_7194 {
    }
 
    public static boolean method_32943() {
-      return method_32945(field_36996.thePlayer.method_37241().method_18928(0.0, -0.4F, 0.0).method_18900(0.001, 0.001, 0.001), class_5371.field_27439);
+      return method_32945(field_36996.thePlayer.getBoundingBox().method_18928(0.0, -0.4F, 0.0).method_18900(0.001, 0.001, 0.001), class_5371.field_27439);
    }
 }

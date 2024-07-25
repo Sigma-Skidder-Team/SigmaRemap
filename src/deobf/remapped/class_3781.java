@@ -258,7 +258,7 @@ public class class_3781 {
             var6 = ((class_6850)var5).size();
          }
       } else {
-         var6 = class_9299.method_42847(((class_5841)var5).method_26642());
+         var6 = MathHelper.floor(((class_5841)var5).method_26642());
       }
 
       var0.method_42196(var1.method_6574(var5), false);
@@ -268,7 +268,7 @@ public class class_3781 {
    private static int method_17545(class_9155 var0, class_1429 var1, class_9257 var2, double var3) throws CommandSyntaxException {
       class_8406 var7 = method_17541(var2, var1);
       if (var7 instanceof class_5841) {
-         int var8 = class_9299.method_42847(((class_5841)var7).method_26642() * var3);
+         int var8 = MathHelper.floor(((class_5841)var7).method_26642() * var3);
          var0.method_42196(var1.method_6571(var2, var3, var8), false);
          return var8;
       } else {

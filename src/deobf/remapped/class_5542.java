@@ -90,12 +90,12 @@ public class class_5542 extends class_5467 {
    }
 
    @Override
-   public class_8461 method_26484(ItemStack var1) {
-      return class_463.field_2637;
+   public SoundEvent method_26484(ItemStack var1) {
+      return SoundEvents.field_2637;
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (!this.world.field_33055 && this.isAlive() && this.method_26530()) {
          this.field_28243++;
          ItemStack var3 = this.method_26520(class_6943.field_35707);
@@ -115,32 +115,32 @@ public class class_5542 extends class_5467 {
             }
          }
 
-         LivingEntity var5 = this.method_17809();
+         LivingEntity var5 = this.getAttackTarget();
          if (var5 == null || !var5.isAlive()) {
             this.method_25168(false);
             this.method_25181(false);
          }
       }
 
-      if (this.method_26507() || this.method_26468()) {
+      if (this.method_26507() || this.isMovementBlocked()) {
          this.field_29654 = false;
          this.field_29676 = 0.0F;
          this.field_29673 = 0.0F;
       }
 
-      super.method_26606();
+      super.livingTick();
       if (this.method_25172() && this.field_41717.nextFloat() < 0.05F) {
-         this.method_37155(class_463.field_2796, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2796, 1.0F, 1.0F);
       }
    }
 
    @Override
-   public boolean method_26468() {
+   public boolean isMovementBlocked() {
       return this.method_26450();
    }
 
    private boolean method_25176(ItemStack var1) {
-      return var1.method_27960().method_11247() && this.method_17809() == null && this.onGround && !this.method_26507();
+      return var1.method_27960().method_11247() && this.getAttackTarget() == null && this.onGround && !this.method_26507();
    }
 
    @Override
@@ -397,7 +397,7 @@ public class class_5542 extends class_5467 {
          );
          var4.method_254(40);
          var4.method_265(this.method_37328());
-         this.method_37155(class_463.field_2466, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2466, 1.0F, 1.0F);
          this.world.method_7509(var4);
       }
    }
@@ -431,7 +431,7 @@ public class class_5542 extends class_5467 {
       super.method_37123();
       if (this.method_26530()) {
          boolean var3 = this.method_37285();
-         if (var3 || this.method_17809() != null || this.world.method_29570()) {
+         if (var3 || this.getAttackTarget() != null || this.world.method_29570()) {
             this.method_25185();
          }
 
@@ -504,11 +504,11 @@ public class class_5542 extends class_5467 {
    }
 
    public float method_25190(float var1) {
-      return class_9299.method_42795(var1, this.field_28242, this.field_28244) * 0.11F * (float) Math.PI;
+      return MathHelper.method_42795(var1, this.field_28242, this.field_28244) * 0.11F * (float) Math.PI;
    }
 
    public float method_25191(float var1) {
-      return class_9299.method_42795(var1, this.field_28237, this.field_28247);
+      return MathHelper.method_42795(var1, this.field_28237, this.field_28247);
    }
 
    @Override
@@ -522,7 +522,7 @@ public class class_5542 extends class_5467 {
 
    @Override
    public int method_26490(float var1, float var2) {
-      return class_9299.method_42816((var1 - 5.0F) * var2);
+      return MathHelper.ceil((var1 - 5.0F) * var2);
    }
 
    private void method_25185() {
@@ -544,8 +544,8 @@ public class class_5542 extends class_5467 {
 
    @Override
    public void method_26853() {
-      class_8461 var3 = this.method_26918();
-      if (var3 != class_463.field_2643) {
+      SoundEvent var3 = this.method_26918();
+      if (var3 != SoundEvents.field_2643) {
          super.method_26853();
       } else {
          this.method_37155(var3, 2.0F, this.method_26547());
@@ -554,31 +554,31 @@ public class class_5542 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       if (!this.method_26507()) {
          if (!this.world.method_29602() && this.field_41717.nextFloat() < 0.1F) {
-            List var3 = this.world.<Entity>method_25869(PlayerEntity.class, this.method_37241().method_18899(16.0, 16.0, 16.0), class_3572.field_17483);
+            List var3 = this.world.<Entity>method_25869(PlayerEntity.class, this.getBoundingBox().method_18899(16.0, 16.0, 16.0), class_3572.field_17483);
             if (var3.isEmpty()) {
-               return class_463.field_2643;
+               return SoundEvents.field_2643;
             }
          }
 
-         return class_463.field_2101;
+         return SoundEvents.field_2101;
       } else {
-         return class_463.field_2632;
+         return SoundEvents.field_2632;
       }
    }
 
    @Nullable
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2898;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2898;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_1940;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_1940;
    }
 
    private boolean method_25180(UUID var1) {

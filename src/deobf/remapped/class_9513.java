@@ -59,7 +59,7 @@ public class class_9513 extends class_3599 {
 
    @Nullable
    private class_5467 method_43907() {
-      List var3 = this.field_48439.<class_5467>method_25863(this.field_48434, field_48436, this.field_48435, this.field_48435.method_37241().method_18898(8.0));
+      List var3 = this.field_48439.<class_5467>method_25863(this.field_48434, field_48436, this.field_48435, this.field_48435.getBoundingBox().grow(8.0));
       double var4 = Double.MAX_VALUE;
       class_5467 var6 = null;
 

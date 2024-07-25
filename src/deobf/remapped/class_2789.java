@@ -52,17 +52,17 @@ public class class_2789 extends class_7621 {
             this.field_13696.field_9623.method_6767(var1, 0, 0, var4);
          }
 
-         int var13 = class_9299.method_42816((1.0F - class_9299.method_42828(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
+         int var13 = MathHelper.ceil((1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
          method_9774(var1, 0, 0, var7, var8, this.field_13704 | var13 << 24);
-         var14 = 1.0F - class_9299.method_42828(var11 - 1.0F, 0.0F, 1.0F);
+         var14 = 1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F);
       } else if (this.field_13694) {
          if (this.field_13696.field_9623 != null && var12 < 1.0F) {
             this.field_13696.field_9623.method_6767(var1, var2, var3, var4);
          }
 
-         int var27 = class_9299.method_42815(class_9299.method_42827((double)var12, 0.15, 1.0) * 255.0);
+         int var27 = MathHelper.ceil(MathHelper.clamp((double)var12, 0.15, 1.0) * 255.0);
          method_9774(var1, 0, 0, var7, var8, this.field_13704 | var27 << 24);
-         var14 = class_9299.method_42828(var12, 0.0F, 1.0F);
+         var14 = MathHelper.clamp(var12, 0.0F, 1.0F);
       } else {
          method_9774(var1, 0, 0, var7, var8, this.field_13704 | 0xFF000000);
          var14 = 1.0F;
@@ -98,10 +98,10 @@ public class class_2789 extends class_7621 {
       RenderSystem.disableBlend();
       int var23 = (int)((double)this.field_13696.getMainWindow().getScaledHeight() * 0.8325);
       float var24 = this.field_13700.method_19969();
-      this.field_13697 = class_9299.method_42828(this.field_13697 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
+      this.field_13697 = MathHelper.clamp(this.field_13697 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
       class_7860.field_40010.method_3582();
       if (var11 < 1.0F) {
-         this.method_12677(var1, var7 / 2 - var21, var23 - 5, var7 / 2 + var21, var23 + 5, 1.0F - class_9299.method_42828(var11, 0.0F, 1.0F));
+         this.method_12677(var1, var7 / 2 - var21, var23 - 5, var7 / 2 + var21, var23 + 5, 1.0F - MathHelper.clamp(var11, 0.0F, 1.0F));
       }
 
       if (var11 >= 2.0F) {
@@ -127,7 +127,7 @@ public class class_2789 extends class_7621 {
    }
 
    private void method_12677(class_7966 var1, int var2, int var3, int var4, int var5, float var6) {
-      int var9 = class_9299.method_42816((float)(var4 - var2 - 2) * this.field_13697);
+      int var9 = MathHelper.ceil((float)(var4 - var2 - 2) * this.field_13697);
       int var10 = Math.round(var6 * 255.0F);
       if (this.field_13699 != this.field_13704) {
          int var11 = this.field_13699 >> 16 & 0xFF;

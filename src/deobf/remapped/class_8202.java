@@ -10,7 +10,7 @@ public class class_8202 extends class_4285<class_3043> {
 
    public boolean method_37565(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_3043 var5) {
       for (BlockPos var9 : BlockPos.method_6076(var4.method_6104(-1, -2, -1), var4.method_6104(1, 2, 1))) {
-         boolean var10 = var9.method_12173() == var4.method_12173();
+         boolean var10 = var9.getX() == var4.getX();
          boolean var11 = var9.method_12165() == var4.method_12165();
          boolean var12 = var9.method_12185() == var4.method_12185();
          boolean var13 = Math.abs(var9.method_12165() - var4.method_12165()) == 2;

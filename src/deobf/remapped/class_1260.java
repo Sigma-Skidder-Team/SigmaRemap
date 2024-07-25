@@ -18,22 +18,22 @@ public class class_1260 extends class_8574 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2071;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2071;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2119;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2119;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2875;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2875;
    }
 
    @Override
-   public class_8461 method_16632() {
-      return class_463.field_2909;
+   public SoundEvent method_16632() {
+      return SoundEvents.field_2909;
    }
 }

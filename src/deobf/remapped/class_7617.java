@@ -96,8 +96,8 @@ public class class_7617 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2777;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2777;
    }
 
    @Override
@@ -106,13 +106,13 @@ public class class_7617 extends class_5467 {
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2638;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2638;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2122;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2122;
    }
 
    private float method_34545() {
@@ -204,7 +204,7 @@ public class class_7617 extends class_5467 {
 
    @Override
    public boolean method_26855(class_4924 var1) {
-      if (var1.method_6677(this) && !var1.method_22550(this.method_37241())) {
+      if (var1.method_6677(this) && !var1.method_22550(this.getBoundingBox())) {
          BlockPos var4 = this.method_37075();
          if (var4.method_12165() < var1.method_22552()) {
             return false;

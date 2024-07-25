@@ -25,13 +25,13 @@ public class class_6464 extends class_4285<class_1941> {
 
          for (int var10 = 0; var10 < var8; var10++) {
             float var11 = (1.0F - (float)var10 / (float)var8) * (float)var9;
-            int var12 = class_9299.method_42816(var11);
+            int var12 = MathHelper.ceil(var11);
 
             for (int var13 = -var12; var13 <= var12; var13++) {
-               float var14 = (float)class_9299.method_42805(var13) - 0.25F;
+               float var14 = (float) MathHelper.abs(var13) - 0.25F;
 
                for (int var15 = -var12; var15 <= var12; var15++) {
-                  float var16 = (float)class_9299.method_42805(var15) - 0.25F;
+                  float var16 = (float) MathHelper.abs(var15) - 0.25F;
                   if ((var13 == 0 && var15 == 0 || !(var14 * var14 + var16 * var16 > var11 * var11))
                      && (var13 != -var12 && var13 != var12 && var15 != -var12 && var15 != var12 || !(var3.nextFloat() > 0.75F))) {
                      class_2522 var17 = var1.method_28262(var4.method_6104(var13, var10, var15));

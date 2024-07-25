@@ -35,10 +35,10 @@ public class class_424 extends class_4285<class_9431> {
          for (BlockPos var15 : BlockPos.method_6079(
             var3,
             var12,
-            var4.method_12173() - var11,
+            var4.getX() - var11,
             var4.method_12165(),
             var4.method_12185() - var11,
-            var4.method_12173() + var11,
+            var4.getX() + var11,
             var4.method_12165(),
             var4.method_12185() + var11
          )) {
@@ -58,10 +58,10 @@ public class class_424 extends class_4285<class_9431> {
       boolean var8 = false;
 
       for (BlockPos var10 : BlockPos.method_6075(
-         var3.method_12173() - var5,
+         var3.getX() - var5,
          var3.method_12165(),
          var3.method_12185() - var5,
-         var3.method_12173() + var5,
+         var3.getX() + var5,
          var3.method_12165(),
          var3.method_12185() + var5
       )) {

@@ -117,6 +117,6 @@ public class class_2001 {
    }
 
    public String method_9294() {
-      return "banner-" + this.field_10165.method_12173() + "," + this.field_10165.method_12165() + "," + this.field_10165.method_12185();
+      return "banner-" + this.field_10165.getX() + "," + this.field_10165.method_12165() + "," + this.field_10165.method_12185();
    }
 }

@@ -27,11 +27,11 @@ public class class_1133 extends class_7067<BoatEntity> {
       }
 
       if (var9 > 0.0F) {
-         var4.method_36060(class_2426.field_12080.method_11074(class_9299.method_42818(var9) * var9 * var10 / 10.0F * (float)var1.method_42094()));
+         var4.method_36060(class_2426.field_12080.method_11074(MathHelper.sin(var9) * var9 * var10 / 10.0F * (float)var1.method_42094()));
       }
 
       float var11 = var1.method_42086(var3);
-      if (!class_9299.method_42856(var11, 0.0F)) {
+      if (!MathHelper.epsilonEquals(var11, 0.0F)) {
          var4.method_36060(new Quaternion(new class_2426(1.0F, 0.0F, 1.0F), var1.method_42086(var3), true));
       }
 

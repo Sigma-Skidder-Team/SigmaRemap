@@ -61,7 +61,7 @@ public class class_5836 extends class_4285<class_1941> {
          if (var1.method_22548(var6)) {
             class_2522 var8 = var1.method_28262(var6.method_6081());
             if (var8.method_8350(class_4783.field_23700) || var8.method_8350(class_4783.field_23273)) {
-               int var9 = class_9299.method_42824(var2, 1, 8);
+               int var9 = MathHelper.nextInt(var2, 1, 8);
                if (var2.nextInt(6) == 0) {
                   var9 *= 2;
                }
@@ -84,7 +84,7 @@ public class class_5836 extends class_4285<class_1941> {
             if (var8 == var3 || !var0.method_22548(var2.method_6100())) {
                var0.method_7513(
                   var2,
-                  class_4783.field_23405.method_29260().method_10308(class_6408.field_32703, Integer.valueOf(class_9299.method_42824(var1, var4, var5))),
+                  class_4783.field_23405.method_29260().method_10308(class_6408.field_32703, Integer.valueOf(MathHelper.nextInt(var1, var4, var5))),
                   2
                );
                break;

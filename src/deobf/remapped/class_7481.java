@@ -74,7 +74,7 @@ public class class_7481 implements class_5990 {
       if (!World.method_29571(var4)) {
          class_1315 var5 = this.method_27349()[var4 >> 4];
          return !class_1315.method_6003(var5)
-            ? var5.method_5999(var1.method_12173() & 15, var4 & 15, var1.method_12185() & 15)
+            ? var5.method_5999(var1.getX() & 15, var4 & 15, var1.method_12185() & 15)
             : class_4783.field_23184.method_29260();
       } else {
          return class_4783.field_23424.method_29260();
@@ -87,7 +87,7 @@ public class class_7481 implements class_5990 {
       if (!World.method_29571(var4)) {
          class_1315 var5 = this.method_27349()[var4 >> 4];
          return !class_1315.method_6003(var5)
-            ? var5.method_5986(var1.method_12173() & 15, var4 & 15, var1.method_12185() & 15)
+            ? var5.method_5986(var1.getX() & 15, var4 & 15, var1.method_12185() & 15)
             : class_8532.field_43673.method_10710();
       } else {
          return class_8532.field_43673.method_10710();
@@ -120,7 +120,7 @@ public class class_7481 implements class_5990 {
    @Nullable
    @Override
    public class_2522 method_27348(BlockPos var1, class_2522 var2, boolean var3) {
-      int var6 = var1.method_12173();
+      int var6 = var1.getX();
       int var7 = var1.method_12165();
       int var8 = var1.method_12185();
       if (var7 >= 0 && var7 < 256) {
@@ -345,7 +345,7 @@ public class class_7481 implements class_5990 {
    }
 
    public static short method_34024(BlockPos var0) {
-      int var3 = var0.method_12173();
+      int var3 = var0.getX();
       int var4 = var0.method_12165();
       int var5 = var0.method_12185();
       int var6 = var3 & 15;

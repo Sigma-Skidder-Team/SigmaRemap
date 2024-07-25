@@ -21,7 +21,7 @@ public class class_9851 extends class_2833 {
          );
          double var4 = var3.method_6217();
          var3 = var3.method_6213();
-         if (!this.method_45361(var3, class_9299.method_42815(var4))) {
+         if (!this.method_45361(var3, MathHelper.ceil(var4))) {
             this.field_13878 = class_1737.field_8945;
          } else {
             this.field_49858.method_37215(this.field_49858.method_37098().method_6215(var3.method_6209(0.1)));
@@ -30,7 +30,7 @@ public class class_9851 extends class_2833 {
    }
 
    private boolean method_45361(class_1343 var1, int var2) {
-      Box var5 = this.field_49858.method_37241();
+      Box var5 = this.field_49858.getBoundingBox();
 
       for (int var6 = 1; var6 < var2; var6++) {
          var5 = var5.method_18920(var1);

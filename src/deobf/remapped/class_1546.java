@@ -18,9 +18,9 @@ public abstract class class_1546 {
       this.field_8165 = var1;
       this.field_8166 = var2;
       this.field_8161.clear();
-      this.field_8164 = class_9299.method_42848(var2.method_37086() + 1.0F);
-      this.field_8163 = class_9299.method_42848(var2.method_37074() + 1.0F);
-      this.field_8167 = class_9299.method_42848(var2.method_37086() + 1.0F);
+      this.field_8164 = MathHelper.floor(var2.method_37086() + 1.0F);
+      this.field_8163 = MathHelper.floor(var2.method_37074() + 1.0F);
+      this.field_8167 = MathHelper.floor(var2.method_37086() + 1.0F);
    }
 
    public void method_7005() {
@@ -29,7 +29,7 @@ public abstract class class_1546 {
    }
 
    public class_5851 method_7017(BlockPos var1) {
-      return this.method_7016(var1.method_12173(), var1.method_12165(), var1.method_12185());
+      return this.method_7016(var1.getX(), var1.method_12165(), var1.method_12185());
    }
 
    public class_5851 method_7016(int var1, int var2, int var3) {

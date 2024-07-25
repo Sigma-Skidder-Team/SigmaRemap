@@ -1292,7 +1292,7 @@ public class Config {
 
    public static int method_14242(BlockPos var0, int var1) {
       int var4 = method_14419(var1 + 37);
-      var4 = method_14419(var4 + var0.method_12173());
+      var4 = method_14419(var4 + var0.getX());
       var4 = method_14419(var4 + var0.method_12185());
       return method_14419(var4 + var0.method_12165());
    }
@@ -1492,9 +1492,9 @@ public class Config {
          long var9 = var7;
          long var11 = 0L;
 
-         for (int var13 = class_9299.method_42788(var4 - 1, var3.length);
-            var13 != var5 && (double)var11 < 1.0E9;
-            var13 = class_9299.method_42788(var13 - 1, var3.length)
+         for (int var13 = MathHelper.normalizeAngle(var4 - 1, var3.length);
+              var13 != var5 && (double)var11 < 1.0E9;
+              var13 = MathHelper.normalizeAngle(var13 - 1, var3.length)
          ) {
             long var16 = var3[var13];
             if (var16 > var9) {

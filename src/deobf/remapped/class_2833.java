@@ -62,7 +62,7 @@ public class class_2833 {
                return;
             }
 
-            float var11 = (float)(class_9299.method_42821(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
+            float var11 = (float)(MathHelper.method_42821(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
             this.field_13879.rotationYaw = this.method_12882(this.field_13879.rotationYaw, var11, 90.0F);
             this.field_13879.method_26461((float)(this.field_13885 * this.field_13879.method_26575(Attributes.MOVEMENT_SPEED)));
             BlockPos var20 = this.field_13879.method_37075();
@@ -83,7 +83,7 @@ public class class_2833 {
          float var4 = (float)this.field_13885 * var3;
          float var5 = this.field_13881;
          float var6 = this.field_13882;
-         float var7 = class_9299.method_42843(var5 * var5 + var6 * var6);
+         float var7 = MathHelper.sqrt(var5 * var5 + var6 * var6);
          if (var7 < 1.0F) {
             var7 = 1.0F;
          }
@@ -91,8 +91,8 @@ public class class_2833 {
          var7 = var4 / var7;
          var5 *= var7;
          var6 *= var7;
-         float var8 = class_9299.method_42818(this.field_13879.rotationYaw * (float) (Math.PI / 180.0));
-         float var9 = class_9299.method_42840(this.field_13879.rotationYaw * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.sin(this.field_13879.rotationYaw * (float) (Math.PI / 180.0));
+         float var9 = MathHelper.cos(this.field_13879.rotationYaw * (float) (Math.PI / 180.0));
          float var10 = var5 * var9 - var6 * var8;
          float var27 = var6 * var9 + var5 * var8;
          if (!this.method_12878(var10, var27)) {
@@ -108,15 +108,15 @@ public class class_2833 {
    }
 
    private boolean method_12878(float var1, float var2) {
-      class_1249 var5 = this.field_13879.method_26927();
+      PathNavigator var5 = this.field_13879.method_26927();
       if (var5 != null) {
          class_1546 var6 = var5.method_5627();
          if (var6 != null
             && var6.method_7010(
                   this.field_13879.world,
-                  class_9299.method_42847(this.field_13879.getPosX() + (double)var1),
-                  class_9299.method_42847(this.field_13879.method_37309()),
-                  class_9299.method_42847(this.field_13879.getPosZ() + (double)var2)
+                  MathHelper.floor(this.field_13879.getPosX() + (double)var1),
+                  MathHelper.floor(this.field_13879.method_37309()),
+                  MathHelper.floor(this.field_13879.getPosZ() + (double)var2)
                )
                != class_1108.field_6343) {
             return false;
@@ -127,7 +127,7 @@ public class class_2833 {
    }
 
    public float method_12882(float var1, float var2, float var3) {
-      float var6 = class_9299.method_42810(var2 - var1);
+      float var6 = MathHelper.wrapDegrees(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }

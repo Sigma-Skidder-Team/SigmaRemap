@@ -66,15 +66,15 @@ public class class_9686 extends class_6062<class_4080> {
       float var27 = 0.0F;
 
       for (int var28 = var17; var28 < var18; var28++) {
-         double var29 = 1.5 + (double)(class_9299.method_42818((float)var28 * (float) Math.PI / (float)var18) * var14);
+         double var29 = 1.5 + (double)(MathHelper.sin((float)var28 * (float) Math.PI / (float)var18) * var14);
          double var31 = var29 * var19;
          var29 *= (double)var24.nextFloat() * 0.25 + 0.75;
          var31 *= (double)var24.nextFloat() * 0.25 + 0.75;
-         float var33 = class_9299.method_42840(var16);
-         float var34 = class_9299.method_42818(var16);
-         var8 += (double)(class_9299.method_42840(var15) * var33);
+         float var33 = MathHelper.cos(var16);
+         float var34 = MathHelper.sin(var16);
+         var8 += (double)(MathHelper.cos(var15) * var33);
          var10 += (double)var34;
-         var12 += (double)(class_9299.method_42818(var15) * var33);
+         var12 += (double)(MathHelper.sin(var15) * var33);
          var16 *= 0.7F;
          var16 += var27 * 0.05F;
          var15 += var36 * 0.05F;

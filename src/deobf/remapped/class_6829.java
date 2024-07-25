@@ -17,7 +17,7 @@ public class class_6829<T extends LivingEntity, M extends class_3169<T>> extends
 
    @Override
    public void method_23424(class_7966 var1, class_2565 var2, int var3, Entity var4, float var5, float var6, float var7, float var8) {
-      float var11 = class_9299.method_42843(var5 * var5 + var7 * var7);
+      float var11 = MathHelper.sqrt(var5 * var5 + var7 * var7);
       this.field_35221 = new class_581(var4.world, var4.getPosX(), var4.method_37309(), var4.getPosZ());
       this.field_35221.rotationYaw = (float)(Math.atan2((double)var5, (double)var7) * 180.0F / (float)Math.PI);
       this.field_35221.rotationPitch = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);

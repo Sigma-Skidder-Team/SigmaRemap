@@ -16,11 +16,11 @@ public class class_2853 extends class_8497 {
          if (!var2.field_33055) {
             Direction var10 = var6.method_43956();
             Direction var11 = var10.method_1029() != class_9249.field_47216 ? var10 : var4.method_37365().method_1046();
-            var2.method_43359((PlayerEntity)null, var3, class_463.field_2282, class_562.field_3322, 1.0F, 1.0F);
+            var2.method_43359((PlayerEntity)null, var3, SoundEvents.field_2282, class_562.field_3322, 1.0F, 1.0F);
             var2.method_7513(var3, class_4783.field_23281.method_29260().method_10308(class_4888.field_24302, var11), 11);
             class_91 var12 = new class_91(
                var2,
-               (double)var3.method_12173() + 0.5 + (double)var11.method_1041() * 0.65,
+               (double)var3.getX() + 0.5 + (double)var11.method_1041() * 0.65,
                (double)var3.method_12165() + 0.1,
                (double)var3.method_12185() + 0.5 + (double)var11.method_1034() * 0.65,
                new ItemStack(class_4897.field_24480, 4)

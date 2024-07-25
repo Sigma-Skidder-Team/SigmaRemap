@@ -239,7 +239,7 @@ public class class_496 extends class_5467 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      this.method_37155(class_463.field_1937, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_1937, 1.0F, 1.0F);
       if (!this.method_26892()) {
          this.field_3093 = true;
       }
@@ -259,18 +259,18 @@ public class class_496 extends class_5467 {
          }
       }
 
-      if (this.method_17809() == null) {
+      if (this.getAttackTarget() == null) {
          this.field_3095 = false;
          this.field_3093 = false;
       }
 
       if (this.method_2430() > 0) {
-         if (this.method_17809() != null) {
-            this.method_26914(this.method_17809(), 90.0F, 90.0F);
+         if (this.getAttackTarget() != null) {
+            this.method_26914(this.getAttackTarget(), 90.0F, 90.0F);
          }
 
          if (this.method_2430() == 29 || this.method_2430() == 14) {
-            this.method_37155(class_463.field_1968, 1.0F, 1.0F);
+            this.method_37155(SoundEvents.field_1968, 1.0F, 1.0F);
          }
 
          this.method_2439(this.method_2430() - 1);
@@ -280,7 +280,7 @@ public class class_496 extends class_5467 {
          this.method_2428(this.method_2460() + 1);
          if (this.method_2460() <= 20) {
             if (this.method_2460() == 1) {
-               this.method_37155(class_463.field_2556, 1.0F, 1.0F);
+               this.method_37155(SoundEvents.field_2556, 1.0F, 1.0F);
             }
          } else {
             this.method_2418(false);
@@ -341,7 +341,7 @@ public class class_496 extends class_5467 {
    private void method_2472() {
       if (this.method_2461() % 5 == 0) {
          this.method_37155(
-            class_463.field_2757, 0.5F + 0.5F * (float)this.field_41717.nextInt(2), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F
+            SoundEvents.field_2757, 0.5F + 0.5F * (float)this.field_41717.nextInt(2), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F
          );
 
          for (int var3 = 0; var3 < 6; var3++) {
@@ -396,15 +396,15 @@ public class class_496 extends class_5467 {
    }
 
    public float method_2411(float var1) {
-      return class_9299.method_42795(var1, this.field_3094, this.field_3089);
+      return MathHelper.method_42795(var1, this.field_3094, this.field_3089);
    }
 
    public float method_2420(float var1) {
-      return class_9299.method_42795(var1, this.field_3085, this.field_3090);
+      return MathHelper.method_42795(var1, this.field_3085, this.field_3090);
    }
 
    public float method_2425(float var1) {
-      return class_9299.method_42795(var1, this.field_3083, this.field_3088);
+      return MathHelper.method_42795(var1, this.field_3083, this.field_3088);
    }
 
    private void method_2466() {
@@ -422,7 +422,7 @@ public class class_496 extends class_5467 {
                float var4 = this.rotationYaw * (float) (Math.PI / 180.0);
                float var5 = !this.method_26449() ? 0.2F : 0.1F;
                this.field_3080 = new class_1343(
-                  var3.field_7336 + (double)(-class_9299.method_42818(var4) * var5), 0.0, var3.field_7334 + (double)(class_9299.method_42840(var4) * var5)
+                  var3.field_7336 + (double)(-MathHelper.sin(var4) * var5), 0.0, var3.field_7334 + (double)(MathHelper.cos(var4) * var5)
                );
                this.method_37215(this.field_3080.method_6214(0.0, 0.27, 0.0));
             }
@@ -437,22 +437,22 @@ public class class_496 extends class_5467 {
       this.world
          .method_43361(
             class_3090.field_15326,
-            this.getPosX() - (double)(this.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0)),
+            this.getPosX() - (double)(this.method_37086() + 1.0F) * 0.5 * (double) MathHelper.sin(this.field_29605 * (float) (Math.PI / 180.0)),
             this.method_37388() - 0.1F,
-            this.getPosZ() + (double)(this.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42840(this.field_29605 * (float) (Math.PI / 180.0)),
+            this.getPosZ() + (double)(this.method_37086() + 1.0F) * 0.5 * (double) MathHelper.cos(this.field_29605 * (float) (Math.PI / 180.0)),
             var3.field_7336,
             0.0,
             var3.field_7334
          );
-      this.method_37155(class_463.field_2410, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2410, 1.0F, 1.0F);
 
-      for (class_496 var5 : this.world.<class_496>method_25868(class_496.class, this.method_37241().method_18898(10.0))) {
+      for (class_496 var5 : this.world.<class_496>method_25868(class_496.class, this.getBoundingBox().grow(10.0))) {
          if (!var5.method_26449() && var5.onGround && !var5.method_37285() && var5.method_2451()) {
             var5.method_26595();
          }
       }
 
-      if (!this.world.method_22567() && this.field_41717.nextInt(700) == 0 && this.world.method_29537().method_1285(class_291.field_1033)) {
+      if (!this.world.method_22567() && this.field_41717.nextInt(700) == 0 && this.world.getGameRules().getBoolean(GameRules.field_1033)) {
          this.method_37312(class_4897.field_24592);
       }
    }
@@ -520,11 +520,11 @@ public class class_496 extends class_5467 {
 
    public void method_2455() {
       if (this.method_2416()) {
-         this.method_26561(Attributes.MAX_HEALTH).method_45006(10.0);
+         this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(10.0);
       }
 
       if (this.method_2468()) {
-         this.method_26561(Attributes.MOVEMENT_SPEED).method_45006(0.07F);
+         this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.07F);
       }
    }
 
@@ -546,7 +546,7 @@ public class class_496 extends class_5467 {
          } else if (!this.method_24866(var5)) {
             return class_6910.field_35521;
          } else {
-            if (this.method_17809() != null) {
+            if (this.getAttackTarget() != null) {
                this.field_3095 = true;
             }
 
@@ -583,17 +583,17 @@ public class class_496 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       if (!this.method_26892()) {
-         return !this.method_2462() ? class_463.field_2724 : class_463.field_2593;
+         return !this.method_2462() ? SoundEvents.field_2724 : SoundEvents.field_2593;
       } else {
-         return class_463.field_2781;
+         return SoundEvents.field_2781;
       }
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2675, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2675, 0.15F, 1.0F);
    }
 
    @Override
@@ -607,14 +607,14 @@ public class class_496 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2877;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2877;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2595;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2595;
    }
 
    public boolean method_2451() {

@@ -23,7 +23,7 @@ public class HurtByTargetGoal extends class_956 {
       int var3 = this.field_4915.method_26577();
       LivingEntity var4 = this.field_4915.method_26531();
       if (var3 != this.field_43058 && var4 != null) {
-         if (var4.getType() == EntityType.field_34300 && this.field_4915.world.method_29537().method_1285(class_291.field_1039)) {
+         if (var4.getType() == EntityType.field_34300 && this.field_4915.world.getGameRules().getBoolean(GameRules.field_1039)) {
             return false;
          } else {
             for (Class var8 : this.field_43057) {
@@ -48,7 +48,7 @@ public class HurtByTargetGoal extends class_956 {
    @Override
    public void method_16796() {
       this.field_4915.method_26860(this.field_4915.method_26531());
-      this.field_4918 = this.field_4915.method_17809();
+      this.field_4918 = this.field_4915.getAttackTarget();
       this.field_43058 = this.field_4915.method_26577();
       this.field_4922 = 300;
       if (this.field_43053) {
@@ -73,7 +73,7 @@ public class HurtByTargetGoal extends class_956 {
 
             var8 = (MobEntity)var7.next();
             if (this.field_4915 != var8
-               && var8.method_17809() == null
+               && var8.getAttackTarget() == null
                && (!(this.field_4915 instanceof class_8990) || ((class_8990)this.field_4915).method_41207() == ((class_8990)var8).method_41207())
                && !var8.method_37344(this.field_4915.method_26531())) {
                if (this.field_43055 == null) {

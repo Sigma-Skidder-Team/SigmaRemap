@@ -32,8 +32,8 @@ public class class_4604 extends AbstractGui {
       this.field_22398 = var4;
       this.field_22406 = var2;
       this.field_22408 = LanguageMap.getInstance().func_241870_a(var2.textRenderer.method_45399(var4.method_35160(), 163));
-      this.field_22402 = class_9299.method_42848(var4.method_35153() * 28.0F);
-      this.field_22409 = class_9299.method_42848(var4.method_35162() * 27.0F);
+      this.field_22402 = MathHelper.floor(var4.method_35153() * 28.0F);
+      this.field_22409 = MathHelper.floor(var4.method_35162() * 27.0F);
       int var7 = var3.method_14513();
       int var8 = String.valueOf(var7).length();
       int var9 = var7 <= 1 ? 0 : var2.textRenderer.method_45395("  ") + var2.textRenderer.method_45395("0") * var8 * 2 + var2.textRenderer.method_45395("/");
@@ -151,7 +151,7 @@ public class class_4604 extends AbstractGui {
       int var11 = var10 != null ? this.field_22406.textRenderer.method_45395(var10) : 0;
       boolean var12 = 113 - var3 - this.field_22409 - 26 <= 6 + this.field_22397.size() * 9;
       float var13 = this.field_22399 != null ? this.field_22399.method_16805() : 0.0F;
-      int var14 = class_9299.method_42848(var13 * (float)this.field_22403);
+      int var14 = MathHelper.floor(var13 * (float)this.field_22403);
       class_2139 var15;
       class_2139 var16;
       class_2139 var17;

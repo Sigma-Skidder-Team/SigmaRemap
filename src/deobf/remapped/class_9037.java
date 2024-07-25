@@ -28,7 +28,7 @@ public class class_9037 extends class_3599 {
       long var3 = this.field_46244.world.method_29546();
       if (var3 - this.field_46243 >= 20L) {
          this.field_46243 = var3;
-         class_5834 var5 = this.field_46244.method_17809();
+         LivingEntity var5 = this.field_46244.getAttackTarget();
          if (var5 != null) {
             if (var5.isAlive()) {
                this.field_46242 = this.field_46244.method_26927().method_5598(var5, 0);
@@ -48,7 +48,7 @@ public class class_9037 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      class_5834 var3 = this.field_46244.method_17809();
+      LivingEntity var3 = this.field_46244.getAttackTarget();
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
@@ -74,9 +74,9 @@ public class class_9037 extends class_3599 {
 
    @Override
    public void method_16793() {
-      class_5834 var3 = this.field_46244.method_17809();
+      LivingEntity var3 = this.field_46244.getAttackTarget();
       if (!class_3572.field_17479.test(var3)) {
-         this.field_46244.method_26860((class_5834)null);
+         this.field_46244.method_26860((LivingEntity)null);
       }
 
       this.field_46244.method_26891(false);
@@ -85,7 +85,7 @@ public class class_9037 extends class_3599 {
 
    @Override
    public void method_16794() {
-      class_5834 var3 = this.field_46244.method_17809();
+      LivingEntity var3 = this.field_46244.getAttackTarget();
       this.field_46244.method_26865().method_17240(var3, 30.0F, 30.0F);
       double var4 = this.field_46244.method_37273(var3.getPosX(), var3.method_37309(), var3.getPosZ());
       this.field_46237 = Math.max(this.field_46237 - 1, 0);
@@ -117,7 +117,7 @@ public class class_9037 extends class_3599 {
       this.method_41489(var3, var4);
    }
 
-   public void method_41489(class_5834 var1, double var2) {
+   public void method_41489(LivingEntity var1, double var2) {
       double var6 = this.method_41492(var1);
       if (var2 <= var6 && this.field_46238 <= 0) {
          this.method_41491();
@@ -142,7 +142,7 @@ public class class_9037 extends class_3599 {
       return 20;
    }
 
-   public double method_41492(class_5834 var1) {
+   public double method_41492(LivingEntity var1) {
       return (double)(this.field_46244.method_37086() * 2.0F * this.field_46244.method_37086() * 2.0F + var1.method_37086());
    }
 }

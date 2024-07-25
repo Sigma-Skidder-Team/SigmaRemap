@@ -180,7 +180,7 @@ public abstract class class_8116 implements class_5801 {
 
    @Override
    public boolean method_26287() {
-      return this.method_36934().method_29537().method_1285(class_291.field_1057) && this.field_41601;
+      return this.method_36934().getGameRules().getBoolean(GameRules.field_1057) && this.field_41601;
    }
 
    @Override
@@ -190,6 +190,6 @@ public abstract class class_8116 implements class_5801 {
 
    @Override
    public boolean method_26284() {
-      return this.method_36934().method_29537().method_1285(class_291.field_1038);
+      return this.method_36934().getGameRules().getBoolean(GameRules.field_1038);
    }
 }

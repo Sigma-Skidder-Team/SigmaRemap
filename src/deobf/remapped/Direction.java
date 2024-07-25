@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 public enum Direction implements class_4530 {
-   field_802(0, 1, -1, "down", class_137.field_403, class_9249.field_47216, new class_2700(0, -1, 0)),
-   field_817(1, 0, -1, "up", class_137.field_405, class_9249.field_47216, new class_2700(0, 1, 0)),
-   field_818(2, 3, 2, "north", class_137.field_403, class_9249.field_47219, new class_2700(0, 0, -1)),
-   field_800(3, 2, 0, "south", class_137.field_405, class_9249.field_47219, new class_2700(0, 0, 1)),
-   field_809(4, 5, 1, "west", class_137.field_403, class_9249.field_47215, new class_2700(-1, 0, 0)),
-   field_804(5, 4, 3, "east", class_137.field_405, class_9249.field_47215, new class_2700(1, 0, 0));
+   field_802(0, 1, -1, "down", class_137.field_403, class_9249.field_47216, new Vector3i(0, -1, 0)),
+   field_817(1, 0, -1, "up", class_137.field_405, class_9249.field_47216, new Vector3i(0, 1, 0)),
+   field_818(2, 3, 2, "north", class_137.field_403, class_9249.field_47219, new Vector3i(0, 0, -1)),
+   field_800(3, 2, 0, "south", class_137.field_405, class_9249.field_47219, new Vector3i(0, 0, 1)),
+   field_809(4, 5, 1, "west", class_137.field_403, class_9249.field_47215, new Vector3i(-1, 0, 0)),
+   field_804(5, 4, 3, "east", class_137.field_405, class_9249.field_47215, new Vector3i(1, 0, 0));
 
    private final int field_811;
    private final int field_808;
@@ -24,7 +24,7 @@ public enum Direction implements class_4530 {
    private final String field_815;
    private final class_9249 field_812;
    private final class_137 field_806;
-   private final class_2700 field_814;
+   private final Vector3i field_814;
    public static final Direction[] field_803 = values();
    private static final Map<String, Direction> field_810 = Arrays.<Direction>stream(field_803)
       .collect(Collectors.toMap(Direction::method_1047, var0 -> (Direction)var0));
@@ -40,7 +40,7 @@ public enum Direction implements class_4530 {
          throw new IllegalArgumentException("Duplicate keys");
       }, Long2ObjectOpenHashMap::new));
 
-   private Direction(int var3, int var4, int var5, String var6, class_137 var7, class_9249 var8, class_2700 var9) {
+   private Direction(int var3, int var4, int var5, String var6, class_137 var7, class_9249 var8, Vector3i var9) {
       this.field_811 = var3;
       this.field_813 = var5;
       this.field_808 = var4;
@@ -53,10 +53,10 @@ public enum Direction implements class_4530 {
    public static Direction[] method_1051(Entity var0) {
       float var3 = var0.getPitch(1.0F) * (float) (Math.PI / 180.0);
       float var4 = -var0.getYaw(1.0F) * (float) (Math.PI / 180.0);
-      float var5 = class_9299.method_42818(var3);
-      float var6 = class_9299.method_42840(var3);
-      float var7 = class_9299.method_42818(var4);
-      float var8 = class_9299.method_42840(var4);
+      float var5 = MathHelper.sin(var3);
+      float var6 = MathHelper.cos(var3);
+      float var7 = MathHelper.sin(var4);
+      float var8 = MathHelper.cos(var4);
       boolean var9 = var7 > 0.0F;
       boolean var10 = var5 < 0.0F;
       boolean var11 = var8 > 0.0F;
@@ -86,8 +86,8 @@ public enum Direction implements class_4530 {
    }
 
    public static Direction method_1048(class_8107 var0, Direction var1) {
-      class_2700 var4 = var1.method_1037();
-      class_2637 var5 = new class_2637((float)var4.method_12173(), (float)var4.method_12165(), (float)var4.method_12185(), 0.0F);
+      Vector3i var4 = var1.method_1037();
+      class_2637 var5 = new class_2637((float)var4.getX(), (float)var4.method_12165(), (float)var4.method_12185(), 0.0F);
       var5.method_11929(var0);
       return method_1045(var5.method_11923(), var5.method_11922(), var5.method_11927());
    }
@@ -167,7 +167,7 @@ public enum Direction implements class_4530 {
    }
 
    public int method_1041() {
-      return this.field_814.method_12173();
+      return this.field_814.getX();
    }
 
    public int method_1054() {
@@ -196,11 +196,11 @@ public enum Direction implements class_4530 {
    }
 
    public static Direction method_1033(int var0) {
-      return field_816[class_9299.method_42805(var0 % field_816.length)];
+      return field_816[MathHelper.abs(var0 % field_816.length)];
    }
 
    public static Direction method_1040(int var0) {
-      return field_807[class_9299.method_42805(var0 % field_807.length)];
+      return field_807[MathHelper.abs(var0 % field_807.length)];
    }
 
    @Nullable
@@ -209,7 +209,7 @@ public enum Direction implements class_4530 {
    }
 
    public static Direction method_1036(double var0) {
-      return method_1040(class_9299.method_42847(var0 / 90.0 + 0.5) & 3);
+      return method_1040(MathHelper.floor(var0 / 90.0 + 0.5) & 3);
    }
 
    // $VF: Unable to simplify switch on enum
@@ -243,7 +243,7 @@ public enum Direction implements class_4530 {
       float var6 = Float.MIN_VALUE;
 
       for (Direction var10 : field_803) {
-         float var11 = var0 * (float)var10.field_814.method_12173()
+         float var11 = var0 * (float)var10.field_814.getX()
             + var1 * (float)var10.field_814.method_12165()
             + var2 * (float)var10.field_814.method_12185();
          if (var11 > var6) {
@@ -275,14 +275,14 @@ public enum Direction implements class_4530 {
       throw new IllegalArgumentException("No such direction: " + var0 + " " + var1);
    }
 
-   public class_2700 method_1037() {
+   public Vector3i method_1037() {
       return this.field_814;
    }
 
    public boolean method_1052(float var1) {
       float var4 = var1 * (float) (Math.PI / 180.0);
-      float var5 = -class_9299.method_42818(var4);
-      float var6 = class_9299.method_42840(var4);
-      return (float)this.field_814.method_12173() * var5 + (float)this.field_814.method_12185() * var6 > 0.0F;
+      float var5 = -MathHelper.sin(var4);
+      float var6 = MathHelper.cos(var4);
+      return (float)this.field_814.getX() * var5 + (float)this.field_814.method_12185() * var6 > 0.0F;
    }
 }

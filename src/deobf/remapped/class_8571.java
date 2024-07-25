@@ -12,7 +12,7 @@ public class class_8571 {
    }
 
    public class_8571(BlockPos var1) {
-      this.field_43941 = (double)var1.method_12173();
+      this.field_43941 = (double)var1.getX();
       this.field_43940 = (double)var1.method_12165();
       this.field_43942 = (double)var1.method_12185();
    }
@@ -51,8 +51,8 @@ public class class_8571 {
       return this.method_39422(var1.method_39427(), var1.method_39425(), var1.method_39423());
    }
 
-   public class_2700 method_39420() {
-      return new class_2700(this.field_43941, this.field_43940, this.field_43942);
+   public Vector3i method_39420() {
+      return new Vector3i(this.field_43941, this.field_43940, this.field_43942);
    }
 
    @Override

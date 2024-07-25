@@ -62,9 +62,9 @@ public class class_1275 implements class_1517 {
             if (var1.method_28994(var6) && var1.method_22561(var6).method_28887() != class_8862.field_45296) {
                for (int var7 = 0; var7 < 10; var7++) {
                   float var8 = var1.field_33033.nextFloat() * (float) (Math.PI * 2);
-                  this.field_7017 = var6.method_12173() + class_9299.method_42848(class_9299.method_42840(var8) * 32.0F);
+                  this.field_7017 = var6.getX() + MathHelper.floor(MathHelper.cos(var8) * 32.0F);
                   this.field_7015 = var6.method_12165();
-                  this.field_7012 = var6.method_12185() + class_9299.method_42848(class_9299.method_42818(var8) * 32.0F);
+                  this.field_7012 = var6.method_12185() + MathHelper.floor(MathHelper.sin(var8) * 32.0F);
                   if (this.method_5713(var1, new BlockPos(this.field_7017, this.field_7015, this.field_7012)) != null) {
                      this.field_7013 = 0;
                      this.field_7016 = 20;
@@ -100,7 +100,7 @@ public class class_1275 implements class_1517 {
    @Nullable
    private class_1343 method_5713(class_6331 var1, BlockPos var2) {
       for (int var5 = 0; var5 < 10; var5++) {
-         int var6 = var2.method_12173() + var1.field_33033.nextInt(16) - 8;
+         int var6 = var2.getX() + var1.field_33033.nextInt(16) - 8;
          int var7 = var2.method_12185() + var1.field_33033.nextInt(16) - 8;
          int var8 = var1.method_22562(class_3801.field_18592, var6, var7);
          BlockPos var9 = new BlockPos(var6, var8, var7);

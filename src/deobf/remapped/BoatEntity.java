@@ -93,7 +93,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public class_1343 method_37375(class_9249 var1, class_8623 var2) {
-      return class_5834.method_26437(super.method_37375(var1, var2));
+      return LivingEntity.method_26437(super.method_37375(var1, var2));
    }
 
    @Override
@@ -112,7 +112,7 @@ public class BoatEntity extends Entity {
          this.method_37138();
          boolean var5 = var1.method_28372() instanceof PlayerEntity && ((PlayerEntity)var1.method_28372()).playerAbilities.isCreativeMode;
          if (var5 || this.method_42109() > 40.0F) {
-            if (!var5 && this.world.method_29537().method_1285(class_291.field_1024)) {
+            if (!var5 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
                this.method_37312(this.method_42090());
             }
 
@@ -163,10 +163,10 @@ public class BoatEntity extends Entity {
    @Override
    public void method_37183(Entity var1) {
       if (!(var1 instanceof BoatEntity)) {
-         if (var1.method_37241().field_19937 <= this.method_37241().field_19937) {
+         if (var1.getBoundingBox().field_19937 <= this.getBoundingBox().field_19937) {
             super.method_37183(var1);
          }
-      } else if (var1.method_37241().field_19937 < this.method_37241().field_19939) {
+      } else if (var1.getBoundingBox().field_19937 < this.getBoundingBox().field_19939) {
          super.method_37183(var1);
       }
    }
@@ -245,7 +245,7 @@ public class BoatEntity extends Entity {
       if (!this.canPassengerSteer()) {
          this.method_37215(class_1343.field_7335);
       } else {
-         if (this.method_37114().isEmpty() || !(this.method_37114().get(0) instanceof PlayerEntity)) {
+         if (this.getPassengers().isEmpty() || !(this.getPassengers().get(0) instanceof PlayerEntity)) {
             this.method_42087(false, false);
          }
 
@@ -267,7 +267,7 @@ public class BoatEntity extends Entity {
             if (!this.method_37378()
                && (double)(this.field_46807[var3] % (float) (Math.PI * 2)) <= (float) (Math.PI / 4)
                && ((double)this.field_46807[var3] + (float) (Math.PI / 8)) % (float) (Math.PI * 2) >= (float) (Math.PI / 4)) {
-               class_8461 var4 = this.method_42097();
+               SoundEvent var4 = this.method_42097();
                if (var4 != null) {
                   class_1343 var5 = this.method_37307(1.0F);
                   double var6 = var3 != 1 ? var5.field_7334 : -var5.field_7334;
@@ -291,7 +291,7 @@ public class BoatEntity extends Entity {
       }
 
       this.method_37097();
-      List var11 = this.world.method_25867(this, this.method_37241().method_18899(0.2F, -0.01F, 0.2F), class_3572.method_16616(this));
+      List var11 = this.world.method_25867(this, this.getBoundingBox().method_18899(0.2F, -0.01F, 0.2F), class_3572.method_16616(this));
       if (!var11.isEmpty()) {
          boolean var12 = !this.world.field_33055 && !(this.getControllingPassenger() instanceof PlayerEntity);
 
@@ -299,10 +299,10 @@ public class BoatEntity extends Entity {
             Entity var10 = (Entity)var11.get(var13);
             if (!var10.method_37072(this)) {
                if (var12
-                  && this.method_37114().size() < 2
+                  && this.getPassengers().size() < 2
                   && !var10.isPassenger()
                   && var10.method_37086() < this.method_37086()
-                  && var10 instanceof class_5834
+                  && var10 instanceof LivingEntity
                   && !(var10 instanceof class_1829)
                   && !(var10 instanceof PlayerEntity)) {
                   var10.method_37353(this);
@@ -345,7 +345,7 @@ public class BoatEntity extends Entity {
             this.field_46805 += 0.05F;
          }
 
-         this.field_46805 = class_9299.method_42828(this.field_46805, 0.0F, 1.0F);
+         this.field_46805 = MathHelper.clamp(this.field_46805, 0.0F, 1.0F);
          this.field_46815 = this.field_46792;
          this.field_46792 = 10.0F * (float)Math.sin((double)(0.5F * (float)this.world.method_29546())) * this.field_46805;
       }
@@ -354,14 +354,14 @@ public class BoatEntity extends Entity {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Nullable
-   public class_8461 method_42097() {
+   public SoundEvent method_42097() {
       switch (this.method_42095()) {
          case field_5732:
          case field_5728:
          case field_5733:
-            return class_463.field_2133;
+            return SoundEvents.field_2133;
          case field_5729:
-            return class_463.field_2515;
+            return SoundEvents.field_2515;
          case field_5730:
          default:
             return null;
@@ -378,7 +378,7 @@ public class BoatEntity extends Entity {
          double var3 = this.getPosX() + (this.field_46806 - this.getPosX()) / (double)this.field_46790;
          double var5 = this.method_37309() + (this.field_46817 - this.method_37309()) / (double)this.field_46790;
          double var7 = this.getPosZ() + (this.field_46800 - this.getPosZ()) / (double)this.field_46790;
-         double var9 = class_9299.method_42809(this.field_46795 - (double)this.rotationYaw);
+         double var9 = MathHelper.wrapDegrees(this.field_46795 - (double)this.rotationYaw);
          this.rotationYaw = (float)((double)this.rotationYaw + var9 / (double)this.field_46790);
          this.rotationPitch = (float)((double)this.rotationPitch + (this.field_46816 - (double)this.rotationPitch) / (double)this.field_46790);
          this.field_46790--;
@@ -395,7 +395,7 @@ public class BoatEntity extends Entity {
    public float method_42108(int var1, float var2) {
       return !this.method_42104(var1)
          ? 0.0F
-         : (float)class_9299.method_42841((double)this.field_46807[var1] - (float) (Math.PI / 8), (double)this.field_46807[var1], (double)var2);
+         : (float) MathHelper.clampedLerp((double)this.field_46807[var1] - (float) (Math.PI / 8), (double)this.field_46807[var1], (double)var2);
    }
 
    private class_1038 method_42095() {
@@ -413,19 +413,19 @@ public class BoatEntity extends Entity {
             return class_1038.field_5732;
          }
       } else {
-         this.field_46791 = this.method_37241().field_19939;
+         this.field_46791 = this.getBoundingBox().field_19939;
          return var3;
       }
    }
 
    public float method_42103() {
-      Box var3 = this.method_37241();
-      int var4 = class_9299.method_42847(var3.field_19941);
-      int var5 = class_9299.method_42815(var3.field_19940);
-      int var6 = class_9299.method_42847(var3.field_19939);
-      int var7 = class_9299.method_42815(var3.field_19939 - this.field_46788);
-      int var8 = class_9299.method_42847(var3.field_19938);
-      int var9 = class_9299.method_42815(var3.field_19942);
+      Box var3 = this.getBoundingBox();
+      int var4 = MathHelper.floor(var3.field_19941);
+      int var5 = MathHelper.ceil(var3.field_19940);
+      int var6 = MathHelper.floor(var3.field_19939);
+      int var7 = MathHelper.ceil(var3.field_19939 - this.field_46788);
+      int var8 = MathHelper.floor(var3.field_19938);
+      int var9 = MathHelper.ceil(var3.field_19942);
       class_2921 var10 = new class_2921();
 
       label45:
@@ -455,14 +455,14 @@ public class BoatEntity extends Entity {
    }
 
    public float method_42111() {
-      Box var3 = this.method_37241();
+      Box var3 = this.getBoundingBox();
       Box var4 = new Box(var3.field_19941, var3.field_19937 - 0.001, var3.field_19938, var3.field_19940, var3.field_19937, var3.field_19942);
-      int var5 = class_9299.method_42847(var4.field_19941) - 1;
-      int var6 = class_9299.method_42815(var4.field_19940) + 1;
-      int var7 = class_9299.method_42847(var4.field_19937) - 1;
-      int var8 = class_9299.method_42815(var4.field_19939) + 1;
-      int var9 = class_9299.method_42847(var4.field_19938) - 1;
-      int var10 = class_9299.method_42815(var4.field_19942) + 1;
+      int var5 = MathHelper.floor(var4.field_19941) - 1;
+      int var6 = MathHelper.ceil(var4.field_19940) + 1;
+      int var7 = MathHelper.floor(var4.field_19937) - 1;
+      int var8 = MathHelper.ceil(var4.field_19939) + 1;
+      int var9 = MathHelper.floor(var4.field_19938) - 1;
+      int var10 = MathHelper.ceil(var4.field_19942) + 1;
       class_4190 var11 = class_3370.method_15523(var4);
       float var12 = 0.0F;
       int var13 = 0;
@@ -493,13 +493,13 @@ public class BoatEntity extends Entity {
    }
 
    private boolean method_42096() {
-      Box var3 = this.method_37241();
-      int var4 = class_9299.method_42847(var3.field_19941);
-      int var5 = class_9299.method_42815(var3.field_19940);
-      int var6 = class_9299.method_42847(var3.field_19937);
-      int var7 = class_9299.method_42815(var3.field_19937 + 0.001);
-      int var8 = class_9299.method_42847(var3.field_19938);
-      int var9 = class_9299.method_42815(var3.field_19942);
+      Box var3 = this.getBoundingBox();
+      int var4 = MathHelper.floor(var3.field_19941);
+      int var5 = MathHelper.ceil(var3.field_19940);
+      int var6 = MathHelper.floor(var3.field_19937);
+      int var7 = MathHelper.ceil(var3.field_19937 + 0.001);
+      int var8 = MathHelper.floor(var3.field_19938);
+      int var9 = MathHelper.ceil(var3.field_19942);
       boolean var10 = false;
       this.field_46791 = Double.MIN_VALUE;
       class_2921 var11 = new class_2921();
@@ -523,14 +523,14 @@ public class BoatEntity extends Entity {
 
    @Nullable
    private class_1038 method_42089() {
-      Box var3 = this.method_37241();
+      Box var3 = this.getBoundingBox();
       double var4 = var3.field_19939 + 0.001;
-      int var6 = class_9299.method_42847(var3.field_19941);
-      int var7 = class_9299.method_42815(var3.field_19940);
-      int var8 = class_9299.method_42847(var3.field_19939);
-      int var9 = class_9299.method_42815(var4);
-      int var10 = class_9299.method_42847(var3.field_19938);
-      int var11 = class_9299.method_42815(var3.field_19942);
+      int var6 = MathHelper.floor(var3.field_19941);
+      int var7 = MathHelper.ceil(var3.field_19940);
+      int var8 = MathHelper.floor(var3.field_19939);
+      int var9 = MathHelper.ceil(var4);
+      int var10 = MathHelper.floor(var3.field_19938);
+      int var11 = MathHelper.ceil(var3.field_19942);
       boolean var12 = false;
       class_2921 var13 = new class_2921();
 
@@ -628,9 +628,9 @@ public class BoatEntity extends Entity {
          this.method_37215(
             this.method_37098()
                .method_6214(
-                  (double)(class_9299.method_42818(-this.rotationYaw * (float) (Math.PI / 180.0)) * var3),
+                  (double)(MathHelper.sin(-this.rotationYaw * (float) (Math.PI / 180.0)) * var3),
                   0.0,
-                  (double)(class_9299.method_42840(this.rotationYaw * (float) (Math.PI / 180.0)) * var3)
+                  (double)(MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * var3)
                )
          );
          this.method_42087(this.field_46812 && !this.field_46796 || this.field_46813, this.field_46796 && !this.field_46812 || this.field_46813);
@@ -642,8 +642,8 @@ public class BoatEntity extends Entity {
       if (this.method_37072(var1)) {
          float var4 = 0.0F;
          float var5 = (float)((!this.field_41751 ? this.getMountedYOffset() : 0.01F) + var1.method_37106());
-         if (this.method_37114().size() > 1) {
-            int var6 = this.method_37114().indexOf(var1);
+         if (this.getPassengers().size() > 1) {
+            int var6 = this.getPassengers().indexOf(var1);
             if (var6 != 0) {
                var4 = -0.6F;
             } else {
@@ -660,7 +660,7 @@ public class BoatEntity extends Entity {
          var1.rotationYaw = var1.rotationYaw + this.field_46789;
          var1.setRotationYawHead(var1.method_37267() + this.field_46789);
          this.method_42105(var1);
-         if (var1 instanceof class_5467 && this.method_37114().size() > 1) {
+         if (var1 instanceof class_5467 && this.getPassengers().size() > 1) {
             int var7 = var1.method_37145() % 2 != 0 ? 270 : 90;
             var1.method_37090(((class_5467)var1).field_29605 + (float)var7);
             var1.setRotationYawHead(var1.method_37267() + (float)var7);
@@ -669,11 +669,11 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public class_1343 method_37282(class_5834 var1) {
-      class_1343 var4 = method_37373((double)(this.method_37086() * class_9299.field_47448), (double)var1.method_37086(), this.rotationYaw);
+   public class_1343 method_37282(LivingEntity var1) {
+      class_1343 var4 = method_37373((double)(this.method_37086() * MathHelper.SQRT_2), (double)var1.method_37086(), this.rotationYaw);
       double var5 = this.getPosX() + var4.field_7336;
       double var7 = this.getPosZ() + var4.field_7334;
-      BlockPos var9 = new BlockPos(var5, this.method_37241().field_19939, var7);
+      BlockPos var9 = new BlockPos(var5, this.getBoundingBox().field_19939, var7);
       BlockPos var10 = var9.method_6100();
       if (!this.world.method_22565(var10)) {
          double var11 = (double)var9.method_12165() + this.world.method_28259(var9);
@@ -701,8 +701,8 @@ public class BoatEntity extends Entity {
 
    public void method_42105(Entity var1) {
       var1.method_37090(this.rotationYaw);
-      float var4 = class_9299.method_42810(var1.rotationYaw - this.rotationYaw);
-      float var5 = class_9299.method_42828(var4, -105.0F, 105.0F);
+      float var4 = MathHelper.wrapDegrees(var1.rotationYaw - this.rotationYaw);
+      float var5 = MathHelper.clamp(var4, -105.0F, 105.0F);
       var1.prevRotationYaw += var5 - var4;
       var1.rotationYaw += var5 - var4;
       var1.setRotationYawHead(var1.rotationYaw);
@@ -758,7 +758,7 @@ public class BoatEntity extends Entity {
                this.method_37270(this.field_41706, 1.0F);
                if (!this.world.field_33055 && !this.field_41751) {
                   this.method_37204();
-                  if (this.world.method_29537().method_1285(class_291.field_1024)) {
+                  if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
                      for (int var8 = 0; var8 < 3; var8++) {
                         this.method_37312(this.method_42112().method_17827());
                      }
@@ -804,7 +804,7 @@ public class BoatEntity extends Entity {
    }
 
    public float method_42086(float var1) {
-      return class_9299.method_42795(var1, this.field_46815, this.field_46792);
+      return MathHelper.method_42795(var1, this.field_46815, this.field_46792);
    }
 
    public void method_42106(int var1) {
@@ -825,13 +825,13 @@ public class BoatEntity extends Entity {
 
    @Override
    public boolean method_37286(Entity var1) {
-      return this.method_37114().size() < 2 && !this.method_37261(class_6503.field_33094);
+      return this.getPassengers().size() < 2 && !this.method_37261(class_6503.field_33094);
    }
 
    @Nullable
    @Override
    public Entity getControllingPassenger() {
-      List var3 = this.method_37114();
+      List var3 = this.getPassengers();
       return !var3.isEmpty() ? (Entity)var3.get(0) : null;
    }
 

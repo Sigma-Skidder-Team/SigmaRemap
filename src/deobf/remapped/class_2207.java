@@ -36,7 +36,7 @@ public class class_2207 extends class_7164<class_2960, class_6521<class_2960>> {
    }
 
    public void method_10210(class_2960 var1, class_7966 var2, float var3, float var4, float var5) {
-      var2.method_36065(0.0, (double)(class_9299.method_42840(var3 * 0.05F) * 0.08F), 0.0);
+      var2.method_36065(0.0, (double)(MathHelper.cos(var3 * 0.05F) * 0.08F), 0.0);
       super.method_29099(var1, var2, var3, var4, var5);
    }
 }

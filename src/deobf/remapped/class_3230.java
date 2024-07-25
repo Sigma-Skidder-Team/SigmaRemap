@@ -16,7 +16,7 @@ public class class_3230<T extends AbstractRaiderEntity> extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      return this.field_16076.method_17809() == null
+      return this.field_16076.getAttackTarget() == null
          && !this.field_16076.method_37151()
          && this.field_16076.method_18600()
          && !this.field_16076.method_18589().method_11259()
@@ -54,7 +54,7 @@ public class class_3230<T extends AbstractRaiderEntity> extends class_3599 {
          List var5 = this.field_16076
             .world
             .<AbstractRaiderEntity>method_25869(
-               AbstractRaiderEntity.class, this.field_16076.method_37241().method_18898(16.0), var1x -> !var1x.method_18600() && class_8996.method_41275(var1x, var1)
+               AbstractRaiderEntity.class, this.field_16076.getBoundingBox().grow(16.0), var1x -> !var1x.method_18600() && class_8996.method_41275(var1x, var1)
             );
          var4.addAll(var5);
 

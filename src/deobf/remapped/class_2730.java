@@ -65,7 +65,7 @@ public class class_2730 {
    }
 
    public static float method_12265(class_1343 var0, Entity var1) {
-      Box var4 = var1.method_37241();
+      Box var4 = var1.getBoundingBox();
       double var5 = 1.0 / ((var4.field_19940 - var4.field_19941) * 2.0 + 1.0);
       double var7 = 1.0 / ((var4.field_19939 - var4.field_19937) * 2.0 + 1.0);
       double var9 = 1.0 / ((var4.field_19942 - var4.field_19938) * 2.0 + 1.0);
@@ -78,9 +78,9 @@ public class class_2730 {
          for (float var17 = 0.0F; var17 <= 1.0F; var17 = (float)((double)var17 + var5)) {
             for (float var18 = 0.0F; var18 <= 1.0F; var18 = (float)((double)var18 + var7)) {
                for (float var19 = 0.0F; var19 <= 1.0F; var19 = (float)((double)var19 + var9)) {
-                  double var20 = class_9299.method_42794((double)var17, var4.field_19941, var4.field_19940);
-                  double var22 = class_9299.method_42794((double)var18, var4.field_19937, var4.field_19939);
-                  double var24 = class_9299.method_42794((double)var19, var4.field_19938, var4.field_19942);
+                  double var20 = MathHelper.lerp((double)var17, var4.field_19941, var4.field_19940);
+                  double var22 = MathHelper.lerp((double)var18, var4.field_19937, var4.field_19939);
+                  double var24 = MathHelper.lerp((double)var19, var4.field_19938, var4.field_19942);
                   class_1343 var26 = new class_1343(var20 + var11, var22, var24 + var13);
                   if (var1.world.method_28265(new class_972(var26, var0, class_3132.field_15553, class_9583.field_48747, var1)).method_33990()
                      == class_1430.field_7721) {
@@ -142,12 +142,12 @@ public class class_2730 {
 
       this.field_13335.addAll(var3);
       float var53 = this.field_13325 * 2.0F;
-      int var54 = class_9299.method_42847(this.field_13322 - (double)var53 - 1.0);
-      int var55 = class_9299.method_42847(this.field_13322 + (double)var53 + 1.0);
-      int var8 = class_9299.method_42847(this.field_13336 - (double)var53 - 1.0);
-      int var9 = class_9299.method_42847(this.field_13336 + (double)var53 + 1.0);
-      int var10 = class_9299.method_42847(this.field_13326 - (double)var53 - 1.0);
-      int var11 = class_9299.method_42847(this.field_13326 + (double)var53 + 1.0);
+      int var54 = MathHelper.floor(this.field_13322 - (double)var53 - 1.0);
+      int var55 = MathHelper.floor(this.field_13322 + (double)var53 + 1.0);
+      int var8 = MathHelper.floor(this.field_13336 - (double)var53 - 1.0);
+      int var9 = MathHelper.floor(this.field_13336 + (double)var53 + 1.0);
+      int var10 = MathHelper.floor(this.field_13326 - (double)var53 - 1.0);
+      int var11 = MathHelper.floor(this.field_13326 + (double)var53 + 1.0);
       List var12 = this.field_13330
          .method_25870(this.field_13323, new Box((double)var54, (double)var8, (double)var10, (double)var55, (double)var9, (double)var11));
       class_1343 var13 = new class_1343(this.field_13322, this.field_13336, this.field_13326);
@@ -155,12 +155,12 @@ public class class_2730 {
       for (int var14 = 0; var14 < var12.size(); var14++) {
          Entity var35 = (Entity)var12.get(var14);
          if (!var35.method_37085()) {
-            double var36 = (double)(class_9299.method_42842(var35.method_37274(var13)) / var53);
+            double var36 = (double)(MathHelper.sqrt(var35.method_37274(var13)) / var53);
             if (var36 <= 1.0) {
                double var38 = var35.getPosX() - this.field_13322;
                double var40 = (!(var35 instanceof class_1356) ? var35.method_37388() : var35.method_37309()) - this.field_13336;
                double var42 = var35.getPosZ() - this.field_13326;
-               double var44 = (double)class_9299.method_42842(var38 * var38 + var40 * var40 + var42 * var42);
+               double var44 = (double) MathHelper.sqrt(var38 * var38 + var40 * var40 + var42 * var42);
                if (var44 != 0.0) {
                   var38 /= var44;
                   var40 /= var44;
@@ -193,7 +193,7 @@ public class class_2730 {
                this.field_13322,
                this.field_13336,
                this.field_13326,
-               class_463.field_2445,
+               SoundEvents.field_2445,
                class_562.field_3322,
                4.0F,
                (1.0F + (this.field_13330.field_33033.nextFloat() - this.field_13330.field_33033.nextFloat()) * 0.2F) * 0.7F,

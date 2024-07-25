@@ -104,7 +104,7 @@ public class class_1453 extends Entity {
             if (!this.onGround && !var6) {
                if (!this.world.field_33055
                   && (this.field_7827 > 100 && (var18.method_12165() < 1 || var18.method_12165() > 256) || this.field_7827 > 600)) {
-                  if (this.field_7818 && this.world.method_29537().method_1285(class_291.field_1024)) {
+                  if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
                      this.method_37312(var3);
                   }
 
@@ -132,7 +132,7 @@ public class class_1453 extends Entity {
                         }
 
                         if (!this.world.method_7513(var18, this.field_7822, 3)) {
-                           if (this.field_7818 && this.world.method_29537().method_1285(class_291.field_1024)) {
+                           if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
                               this.method_37312(var3);
                            }
                         } else {
@@ -157,7 +157,7 @@ public class class_1453 extends Entity {
                               }
                            }
                         }
-                     } else if (this.field_7818 && this.world.method_29537().method_1285(class_291.field_1024)) {
+                     } else if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
                         this.method_37312(var3);
                      }
                   }
@@ -174,14 +174,14 @@ public class class_1453 extends Entity {
    @Override
    public boolean method_37270(float var1, float var2) {
       if (this.field_7825) {
-         int var5 = class_9299.method_42816(var1 - 1.0F);
+         int var5 = MathHelper.ceil(var1 - 1.0F);
          if (var5 > 0) {
-            ArrayList var6 = Lists.newArrayList(this.world.method_25870(this, this.method_37241()));
+            ArrayList var6 = Lists.newArrayList(this.world.method_25870(this, this.getBoundingBox()));
             boolean var7 = this.field_7822.method_8349(class_2351.field_11799);
             DamageSource var8 = !var7 ? DamageSource.field_31681 : DamageSource.field_31666;
 
             for (Entity var10 : var6) {
-               var10.attackEntityFrom(var8, (float)Math.min(class_9299.method_42848((float)var5 * this.field_7826), this.field_7823));
+               var10.attackEntityFrom(var8, (float)Math.min(MathHelper.floor((float)var5 * this.field_7826), this.field_7823));
             }
 
             if (var7 && (double)this.field_41717.nextFloat() < 0.05F + (double)var5 * 0.05) {

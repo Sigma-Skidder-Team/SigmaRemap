@@ -13,7 +13,7 @@ public final class class_7530 extends class_1425 {
    }
 
    @Override
-   public void method_6537(class_5834 var1, int var2) {
+   public void method_6537(LivingEntity var1, int var2) {
       if (var1 instanceof class_9359 && !var1.method_37221()) {
          class_9359 var5 = (class_9359)var1;
          class_6331 var6 = var5.method_43235();

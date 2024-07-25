@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_291 {
+public class GameRules {
    private static final Logger field_1031 = LogManager.getLogger();
    private static final Map<class_7505<?>, class_3275<?>> field_1043 = Maps.newTreeMap(
       Comparator.<class_7505, String>comparing(var0 -> class_7505.method_34216(var0))
@@ -73,18 +73,18 @@ public class class_291 {
       }
    }
 
-   public class_291(DynamicLike<?> var1) {
+   public GameRules(DynamicLike<?> var1) {
       this();
       this.method_1293(var1);
    }
 
-   public class_291() {
+   public GameRules() {
       this.field_1050 = field_1043.entrySet()
          .stream()
          .collect(ImmutableMap.toImmutableMap(Entry::getKey, var0 -> ((class_3275)var0.getValue()).method_14954()));
    }
 
-   private class_291(Map<class_7505<?>, class_9152<?>> var1) {
+   private GameRules(Map<class_7505<?>, class_9152<?>> var1) {
       this.field_1050 = var1;
    }
 
@@ -102,8 +102,8 @@ public class class_291 {
       this.field_1050.forEach((var1x, var2) -> var1.get(class_7505.method_34216(var1x)).asString().result().ifPresent(var2::method_42118));
    }
 
-   public class_291 clone() {
-      return new class_291(
+   public GameRules clone() {
+      return new GameRules(
          this.field_1050.entrySet().stream().collect(ImmutableMap.toImmutableMap(Entry::getKey, var0 -> ((class_9152)var0.getValue()).method_42119()))
       );
    }
@@ -117,16 +117,16 @@ public class class_291 {
       var2.method_14955(var0, var1);
    }
 
-   public void method_1292(class_291 var1, class_341 var2) {
+   public void method_1292(GameRules var1, class_341 var2) {
       var1.field_1050.keySet().forEach(var3 -> this.method_1286((class_7505<?>)var3, var1, var2));
    }
 
-   private <T extends class_9152<T>> void method_1286(class_7505<T> var1, class_291 var2, class_341 var3) {
+   private <T extends class_9152<T>> void method_1286(class_7505<T> var1, GameRules var2, class_341 var3) {
       class_9152 var6 = var2.<class_9152>method_1287(var1);
       this.method_1287(var1).method_42123((T)var6, var3);
    }
 
-   public boolean method_1285(class_7505<class_5850> var1) {
+   public boolean getBoolean(class_7505<class_5850> var1) {
       return this.<class_5850>method_1287(var1).method_26681();
    }
 

@@ -30,13 +30,13 @@ public abstract class class_7164<T extends MobEntity, M extends class_6521<T>> e
       if (!Config.method_14424() || !class_6588.field_33945) {
          var3.method_36063();
          class_1343 var8 = var5.method_37202(var2);
-         double var9 = (double)(class_9299.method_42795(var2, var1.field_29605, var1.field_29611) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
+         double var9 = (double)(MathHelper.method_42795(var2, var1.field_29605, var1.field_29611) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
          class_1343 var11 = var1.method_37323();
          double var12 = Math.cos(var9) * var11.field_7334 + Math.sin(var9) * var11.field_7336;
          double var14 = Math.sin(var9) * var11.field_7334 - Math.cos(var9) * var11.field_7336;
-         double var16 = class_9299.method_42794((double)var2, var1.field_41767, var1.getPosX()) + var12;
-         double var18 = class_9299.method_42794((double)var2, var1.field_41698, var1.method_37309()) + var11.field_7333;
-         double var20 = class_9299.method_42794((double)var2, var1.field_41725, var1.getPosZ()) + var14;
+         double var16 = MathHelper.lerp((double)var2, var1.field_41767, var1.getPosX()) + var12;
+         double var18 = MathHelper.lerp((double)var2, var1.field_41698, var1.method_37309()) + var11.field_7333;
+         double var20 = MathHelper.lerp((double)var2, var1.field_41725, var1.getPosZ()) + var14;
          var3.method_36065(var12, var11.field_7333, var14);
          float var22 = (float)(var8.field_7336 - var16);
          float var23 = (float)(var8.field_7333 - var18);
@@ -44,7 +44,7 @@ public abstract class class_7164<T extends MobEntity, M extends class_6521<T>> e
          float var25 = 0.025F;
          class_7907 var26 = var4.method_11645(RenderLayer.method_16743());
          class_8107 var27 = var3.method_36058().method_28620();
-         float var28 = class_9299.method_42836(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
+         float var28 = MathHelper.method_42836(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
          float var29 = var24 * var28;
          float var30 = var22 * var28;
          BlockPos var31 = new BlockPos(var1.method_37335(var2));
@@ -86,8 +86,8 @@ public abstract class class_7164<T extends MobEntity, M extends class_6521<T>> e
 
       for (int var16 = 0; var16 < 24; var16++) {
          float var17 = (float)var16 / 23.0F;
-         int var18 = (int)class_9299.method_42795(var17, (float)var5, (float)var6);
-         int var19 = (int)class_9299.method_42795(var17, (float)var7, (float)var8);
+         int var18 = (int) MathHelper.method_42795(var17, (float)var5, (float)var6);
+         int var19 = (int) MathHelper.method_42795(var17, (float)var7, (float)var8);
          int var20 = class_5778.method_26127(var18, var19);
          method_32865(var0, var1, var20, var2, var3, var4, var9, var10, 24, var16, false, var11, var12);
          method_32865(var0, var1, var20, var2, var3, var4, var9, var10, 24, var16 + 1, true, var11, var12);

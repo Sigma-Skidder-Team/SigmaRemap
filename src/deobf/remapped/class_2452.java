@@ -152,7 +152,7 @@ public class class_2452 {
    public void method_11258(PlayerEntity var1) {
       if (var1.isPotionActive(Effects.field_19721)) {
          this.field_12202 = this.field_12202 + var1.method_26553(Effects.field_19721).method_10333() + 1;
-         this.field_12202 = class_9299.method_42829(this.field_12202, 0, this.method_11294());
+         this.field_12202 = MathHelper.clamp(this.field_12202, 0, this.method_11294());
       }
 
       var1.removeEffect(Effects.field_19721);
@@ -252,7 +252,7 @@ public class class_2452 {
                   }
 
                   this.field_12197--;
-                  this.field_12186.method_43459(class_9299.method_42828((float)(300 - this.field_12197) / 300.0F, 0.0F, 1.0F));
+                  this.field_12186.method_43459(MathHelper.clamp((float)(300 - this.field_12197) / 300.0F, 0.0F, 1.0F));
                }
             }
 
@@ -299,8 +299,8 @@ public class class_2452 {
 
                   for (UUID var8 : this.field_12190) {
                      Entity var9 = this.field_12189.method_28925(var8);
-                     if (var9 instanceof class_5834 && !var9.method_37221()) {
-                        class_5834 var10 = (class_5834)var9;
+                     if (var9 instanceof LivingEntity && !var9.method_37221()) {
+                        LivingEntity var10 = (LivingEntity)var9;
                         var10.method_26558(new class_2250(Effects.field_19741, 48000, this.field_12202 - 1, false, false, true));
                         if (var10 instanceof class_9359) {
                            class_9359 var11 = (class_9359)var10;
@@ -398,14 +398,14 @@ public class class_2452 {
       for (class_9359 var8 : this.field_12189.method_25873()) {
          class_1343 var9 = var8.method_37245();
          class_1343 var10 = class_1343.method_6216(var1);
-         float var11 = class_9299.method_42842(
+         float var11 = MathHelper.sqrt(
             (var10.field_7336 - var9.field_7336) * (var10.field_7336 - var9.field_7336)
                + (var10.field_7334 - var9.field_7334) * (var10.field_7334 - var9.field_7334)
          );
          double var12 = var9.field_7336 + (double)(13.0F / var11) * (var10.field_7336 - var9.field_7336);
          double var14 = var9.field_7334 + (double)(13.0F / var11) * (var10.field_7334 - var9.field_7334);
          if (var11 <= 64.0F || var6.contains(var8)) {
-            var8.field_47794.method_4156(new class_3740(class_463.field_2127, class_562.field_3328, var12, var8.method_37309(), var14, 64.0F, 1.0F));
+            var8.field_47794.method_4156(new class_3740(SoundEvents.field_2127, class_562.field_3328, var12, var8.method_37309(), var14, 64.0F, 1.0F));
          }
       }
    }
@@ -468,7 +468,7 @@ public class class_2452 {
          var2.method_18585(true);
          var2.method_18588(0);
          if (!var4 && var3 != null) {
-            var2.method_37256((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 1.0, (double)var3.method_12185() + 0.5);
+            var2.method_37256((double)var3.getX() + 0.5, (double)var3.method_12165() + 1.0, (double)var3.method_12185() + 0.5);
             var2.method_26864(this.field_12189, this.field_12189.method_43368(var3), class_2417.field_12040, (class_8733)null, (CompoundNBT)null);
             var2.method_18602(var1, false);
             var2.method_37386(true);
@@ -478,7 +478,7 @@ public class class_2452 {
    }
 
    public void method_11290() {
-      this.field_12186.method_43459(class_9299.method_42828(this.method_11265() / this.field_12201, 0.0F, 1.0F));
+      this.field_12186.method_43459(MathHelper.clamp(this.method_11265() / this.field_12201, 0.0F, 1.0F));
    }
 
    public float method_11265() {
@@ -552,21 +552,21 @@ public class class_2452 {
 
       for (int var7 = 0; var7 < var2; var7++) {
          float var8 = this.field_12189.field_33033.nextFloat() * (float) (Math.PI * 2);
-         int var9 = this.field_12185.method_12173()
-            + class_9299.method_42848(class_9299.method_42840(var8) * 32.0F * (float)var5)
+         int var9 = this.field_12185.getX()
+            + MathHelper.floor(MathHelper.cos(var8) * 32.0F * (float)var5)
             + this.field_12189.field_33033.nextInt(5);
          int var10 = this.field_12185.method_12185()
-            + class_9299.method_42848(class_9299.method_42818(var8) * 32.0F * (float)var5)
+            + MathHelper.floor(MathHelper.sin(var8) * 32.0F * (float)var5)
             + this.field_12189.field_33033.nextInt(5);
          int var11 = this.field_12189.method_22562(class_3801.field_18592, var9, var10);
          var6.method_13362(var9, var11, var10);
          if ((!this.field_12189.method_28994(var6) || var1 >= 2)
             && this.field_12189
                .method_22569(
-                  var6.method_12173() - 10,
+                  var6.getX() - 10,
                   var6.method_12165() - 10,
                   var6.method_12185() - 10,
-                  var6.method_12173() + 10,
+                  var6.getX() + 10,
                   var6.method_12165() + 10,
                   var6.method_12185() + 10
                )
@@ -688,7 +688,7 @@ public class class_2452 {
       var1.putFloat("TotalHealth", this.field_12201);
       var1.putInt("NumGroups", this.field_12195);
       var1.method_25941("Status", this.field_12198.method_19860());
-      var1.putInt("CX", this.field_12185.method_12173());
+      var1.putInt("CX", this.field_12185.getX());
       var1.putInt("CY", this.field_12185.method_12165());
       var1.putInt("CZ", this.field_12185.method_12185());
       class_3416 var4 = new class_3416();

@@ -33,8 +33,8 @@ public class class_9164 {
 
    private float method_42251(float var1) {
       float var4 = 1.0F - var1 / 45.0F + 0.1F;
-      var4 = class_9299.method_42828(var4, 0.0F, 1.0F);
-      return -class_9299.method_42840(var4 * (float) Math.PI) * 0.5F + 0.5F;
+      var4 = MathHelper.clamp(var4, 0.0F, 1.0F);
+      return -MathHelper.cos(var4 * (float) Math.PI) * 0.5F + 0.5F;
    }
 
    private void method_42247(class_7966 var1, class_2565 var2, int var3, class_1736 var4) {
@@ -67,11 +67,11 @@ public class class_9164 {
 
       var1.method_36063();
       var1.method_36065((double)(var10 * 0.51F), (double)(-0.08F + var4 * -1.2F), -0.75);
-      float var11 = class_9299.method_42843(var6);
-      float var12 = class_9299.method_42818(var11 * (float) Math.PI);
+      float var11 = MathHelper.sqrt(var6);
+      float var12 = MathHelper.sin(var11 * (float) Math.PI);
       float var13 = -0.5F * var12;
-      float var14 = 0.4F * class_9299.method_42818(var11 * (float) (Math.PI * 2));
-      float var15 = -0.3F * class_9299.method_42818(var6 * (float) Math.PI);
+      float var14 = 0.4F * MathHelper.sin(var11 * (float) (Math.PI * 2));
+      float var15 = -0.3F * MathHelper.sin(var6 * (float) Math.PI);
       var1.method_36065((double)(var10 * var13), (double)(var14 - 0.3F * var12), (double)var15);
       var1.method_36060(class_2426.field_12080.method_11074(var12 * -45.0F));
       var1.method_36060(class_2426.field_12074.method_11074(var10 * var12 * -30.0F));
@@ -80,9 +80,9 @@ public class class_9164 {
    }
 
    private void method_42239(class_7966 var1, class_2565 var2, int var3, float var4, float var5, float var6) {
-      float var9 = class_9299.method_42843(var6);
-      float var10 = -0.2F * class_9299.method_42818(var6 * (float) Math.PI);
-      float var11 = -0.4F * class_9299.method_42818(var9 * (float) Math.PI);
+      float var9 = MathHelper.sqrt(var6);
+      float var10 = -0.2F * MathHelper.sin(var6 * (float) Math.PI);
+      float var11 = -0.4F * MathHelper.sin(var9 * (float) Math.PI);
       var1.method_36065(0.0, (double)(-var10 / 2.0F), (double)var11);
       float var12 = this.method_42251(var4);
       var1.method_36065(0.0, (double)(0.04F + var5 * -1.2F + var12 * -0.5F), -0.72F);
@@ -95,7 +95,7 @@ public class class_9164 {
          var1.method_36064();
       }
 
-      float var13 = class_9299.method_42818(var9 * (float) Math.PI);
+      float var13 = MathHelper.sin(var9 * (float) Math.PI);
       var1.method_36060(class_2426.field_12080.method_11074(var13 * 20.0F));
       var1.method_36062(2.0F, 2.0F, 2.0F);
       this.method_42240(var1, var2, var3, this.field_46899);
@@ -122,14 +122,14 @@ public class class_9164 {
    private void method_42245(class_7966 var1, class_2565 var2, int var3, float var4, float var5, class_1736 var6) {
       boolean var9 = var6 != class_1736.field_8940;
       float var10 = !var9 ? -1.0F : 1.0F;
-      float var11 = class_9299.method_42843(var5);
-      float var12 = -0.3F * class_9299.method_42818(var11 * (float) Math.PI);
-      float var13 = 0.4F * class_9299.method_42818(var11 * (float) (Math.PI * 2));
-      float var14 = -0.4F * class_9299.method_42818(var5 * (float) Math.PI);
+      float var11 = MathHelper.sqrt(var5);
+      float var12 = -0.3F * MathHelper.sin(var11 * (float) Math.PI);
+      float var13 = 0.4F * MathHelper.sin(var11 * (float) (Math.PI * 2));
+      float var14 = -0.4F * MathHelper.sin(var5 * (float) Math.PI);
       var1.method_36065((double)(var10 * (var12 + 0.64000005F)), (double)(var13 + -0.6F + var4 * -0.6F), (double)(var14 + -0.71999997F));
       var1.method_36060(class_2426.field_12074.method_11074(var10 * 45.0F));
-      float var15 = class_9299.method_42818(var5 * var5 * (float) Math.PI);
-      float var16 = class_9299.method_42818(var11 * (float) Math.PI);
+      float var15 = MathHelper.sin(var5 * var5 * (float) Math.PI);
+      float var16 = MathHelper.sin(var11 * (float) Math.PI);
       var1.method_36060(class_2426.field_12074.method_11074(var10 * var16 * 70.0F));
       var1.method_36060(class_2426.field_12076.method_11074(var10 * var15 * -20.0F));
       ClientPlayerEntity var17 = this.field_46897.thePlayer;
@@ -151,7 +151,7 @@ public class class_9164 {
       float var7 = (float)this.field_46897.thePlayer.method_26466() - var2 + 1.0F;
       float var8 = var7 / (float)var4.method_28004();
       if (var8 < 0.8F) {
-         float var9 = class_9299.method_42804(class_9299.method_42840(var7 / 4.0F * (float) Math.PI) * 0.1F);
+         float var9 = MathHelper.abs(MathHelper.cos(var7 / 4.0F * (float) Math.PI) * 0.1F);
          var1.method_36065(0.0, (double)var9, 0.0);
       }
 
@@ -165,9 +165,9 @@ public class class_9164 {
 
    private void method_42253(class_7966 var1, class_1736 var2, float var3) {
       int var6 = var2 != class_1736.field_8943 ? -1 : 1;
-      float var7 = class_9299.method_42818(var3 * var3 * (float) Math.PI);
+      float var7 = MathHelper.sin(var3 * var3 * (float) Math.PI);
       var1.method_36060(class_2426.field_12074.method_11074((float)var6 * (45.0F + var7 * -20.0F)));
-      float var8 = class_9299.method_42818(class_9299.method_42843(var3) * (float) Math.PI);
+      float var8 = MathHelper.sin(MathHelper.sqrt(var3) * (float) Math.PI);
       var1.method_36060(class_2426.field_12076.method_11074((float)var6 * var8 * -20.0F));
       var1.method_36060(class_2426.field_12080.method_11074(var8 * -80.0F));
       var1.method_36060(class_2426.field_12074.method_11074((float)var6 * -45.0F));
@@ -181,7 +181,7 @@ public class class_9164 {
    public void method_42243(float var1, class_7966 var2, class_3758 var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.method_26533(var1);
       Hand var9 = (Hand)MoreObjects.firstNonNull(var4.field_29616, Hand.MAIN_HAND);
-      float var10 = class_9299.method_42795(var1, var4.field_41762, var4.rotationPitch);
+      float var10 = MathHelper.method_42795(var1, var4.field_41762, var4.rotationPitch);
       boolean var11 = true;
       boolean var12 = true;
       if (!var4.method_26554()) {
@@ -211,13 +211,13 @@ public class class_9164 {
          }
       }
 
-      float var18 = class_9299.method_42795(var1, var4.prevRenderArmPitch, var4.renderArmPitch);
-      float var20 = class_9299.method_42795(var1, var4.prevRenderArmYaw, var4.renderArmYaw);
+      float var18 = MathHelper.method_42795(var1, var4.prevRenderArmPitch, var4.renderArmPitch);
+      float var20 = MathHelper.method_42795(var1, var4.prevRenderArmYaw, var4.renderArmYaw);
       var2.method_36060(class_2426.field_12080.method_11074((var4.getPitch(var1) - var18) * 0.1F));
       var2.method_36060(class_2426.field_12074.method_11074((var4.getYaw(var1) - var20) * 0.1F));
       if (var11) {
          float var21 = var9 != Hand.MAIN_HAND ? 0.0F : var8;
-         float var16 = 1.0F - class_9299.method_42795(var1, this.field_46902, this.field_46907);
+         float var16 = 1.0F - MathHelper.method_42795(var1, this.field_46902, this.field_46907);
          if (!class_7860.field_40073.method_3596()
             || !class_7860.method_35566(class_7860.field_40073, Hand.MAIN_HAND, var2, var3, var5, var1, var10, var21, var16, this.field_46899)) {
             this.method_42244(var4, var1, var10, Hand.MAIN_HAND, var21, this.field_46899, var16, var2, var3, var5);
@@ -226,7 +226,7 @@ public class class_9164 {
 
       if (var12) {
          float var22 = var9 != Hand.OFF_HAND ? 0.0F : var8;
-         float var23 = 1.0F - class_9299.method_42795(var1, this.field_46906, this.field_46900);
+         float var23 = 1.0F - MathHelper.method_42795(var1, this.field_46906, this.field_46900);
          if (!class_7860.field_40073.method_3596()
             || !class_7860.method_35566(class_7860.field_40073, Hand.OFF_HAND, var2, var3, var5, var1, var10, var22, var23, this.field_46898)) {
             this.method_42244(var4, var1, var10, Hand.OFF_HAND, var22, this.field_46898, var23, var2, var3, var5);
@@ -272,7 +272,7 @@ public class class_9164 {
                }
 
                if (var37 > 0.1F) {
-                  float var41 = class_9299.method_42818((var33 - 0.1F) * 1.3F);
+                  float var41 = MathHelper.sin((var33 - 0.1F) * 1.3F);
                   float var43 = var37 - 0.1F;
                   float var45 = var41 * var43;
                   var8.method_36065((double)(var45 * 0.0F), (double)(var45 * 0.004F), (double)(var45 * 0.0F));
@@ -282,9 +282,9 @@ public class class_9164 {
                var8.method_36062(1.0F, 1.0F, 1.0F + var37 * 0.2F);
                var8.method_36060(class_2426.field_12081.method_11074((float)var30 * 45.0F));
             } else {
-               float var32 = -0.4F * class_9299.method_42818(class_9299.method_42843(var5) * (float) Math.PI);
-               float var36 = 0.2F * class_9299.method_42818(class_9299.method_42843(var5) * (float) (Math.PI * 2));
-               float var40 = -0.2F * class_9299.method_42818(var5 * (float) Math.PI);
+               float var32 = -0.4F * MathHelper.sin(MathHelper.sqrt(var5) * (float) Math.PI);
+               float var36 = 0.2F * MathHelper.sin(MathHelper.sqrt(var5) * (float) (Math.PI * 2));
+               float var40 = -0.2F * MathHelper.sin(var5 * (float) Math.PI);
                var8.method_36065((double)((float)var30 * var32), (double)var36, (double)var40);
                this.method_42242(var8, var14, var7);
                this.method_42253(var8, var14, var5);
@@ -327,7 +327,7 @@ public class class_9164 {
                      }
 
                      if (var34 > 0.1F) {
-                        float var39 = class_9299.method_42818((var31 - 0.1F) * 1.3F);
+                        float var39 = MathHelper.sin((var31 - 0.1F) * 1.3F);
                         float var42 = var34 - 0.1F;
                         float var44 = var39 * var42;
                         var8.method_36065((double)(var44 * 0.0F), (double)(var44 * 0.004F), (double)(var44 * 0.0F));
@@ -350,7 +350,7 @@ public class class_9164 {
                      }
 
                      if (var21 > 0.1F) {
-                        float var22 = class_9299.method_42818((var38 - 0.1F) * 1.3F);
+                        float var22 = MathHelper.sin((var38 - 0.1F) * 1.3F);
                         float var23 = var21 - 0.1F;
                         float var24 = var22 * var23;
                         var8.method_36065((double)(var24 * 0.0F), (double)(var24 * 0.004F), (double)(var24 * 0.0F));
@@ -367,9 +367,9 @@ public class class_9164 {
                var8.method_36060(class_2426.field_12074.method_11074((float)var17 * 65.0F));
                var8.method_36060(class_2426.field_12076.method_11074((float)var17 * -85.0F));
             } else if (!var16.method_29716()) {
-               float var28 = -0.4F * class_9299.method_42818(class_9299.method_42843(var5) * (float) Math.PI);
-               float var18 = 0.2F * class_9299.method_42818(class_9299.method_42843(var5) * (float) (Math.PI * 2));
-               float var19 = -0.2F * class_9299.method_42818(var5 * (float) Math.PI);
+               float var28 = -0.4F * MathHelper.sin(MathHelper.sqrt(var5) * (float) Math.PI);
+               float var18 = 0.2F * MathHelper.sin(MathHelper.sqrt(var5) * (float) (Math.PI * 2));
+               float var19 = -0.2F * MathHelper.sin(var5 * (float) Math.PI);
                int var20 = var15 ? 1 : -1;
                var8.method_36065((double)((float)var20 * var28), (double)var18, (double)var19);
                this.method_42242(var8, var14, var7);
@@ -416,11 +416,11 @@ public class class_9164 {
             }
          }
 
-         this.field_46907 = this.field_46907 + class_9299.method_42828((this.field_46899 != var4 ? 0.0F : var6 * var6 * var6) - this.field_46907, -0.4F, 0.4F);
-         this.field_46900 = this.field_46900 + class_9299.method_42828((float)(this.field_46898 != var5 ? 0 : 1) - this.field_46900, -0.4F, 0.4F);
+         this.field_46907 = this.field_46907 + MathHelper.clamp((this.field_46899 != var4 ? 0.0F : var6 * var6 * var6) - this.field_46907, -0.4F, 0.4F);
+         this.field_46900 = this.field_46900 + MathHelper.clamp((float)(this.field_46898 != var5 ? 0 : 1) - this.field_46900, -0.4F, 0.4F);
       } else {
-         this.field_46907 = class_9299.method_42828(this.field_46907 - 0.4F, 0.0F, 1.0F);
-         this.field_46900 = class_9299.method_42828(this.field_46900 - 0.4F, 0.0F, 1.0F);
+         this.field_46907 = MathHelper.clamp(this.field_46907 - 0.4F, 0.0F, 1.0F);
+         this.field_46900 = MathHelper.clamp(this.field_46900 - 0.4F, 0.0F, 1.0F);
       }
 
       if (this.field_46907 < 0.1F) {

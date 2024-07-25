@@ -74,15 +74,15 @@ public class class_5103<T extends Entity> extends class_5272<T> implements class
       if (!var9) {
          this.field_26323.field_8185 = 0.0F;
       } else {
-         this.field_26323.field_8185 = 0.3F * class_9299.method_42818(0.45F * var4);
+         this.field_26323.field_8185 = 0.3F * MathHelper.sin(0.45F * var4);
          this.field_26323.field_8191 = 0.4F;
       }
 
       this.field_26331.field_8181 = 3.0F;
       this.field_26331.field_8187 = -1.0F;
       this.field_26331.field_8191 = -0.75F;
-      this.field_26322.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
-      this.field_26325.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
+      this.field_26322.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
+      this.field_26325.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
       this.field_26322.field_8190 = 0.0F;
       this.field_26325.field_8190 = 0.0F;
    }

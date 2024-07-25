@@ -28,7 +28,7 @@ public class class_5479<T extends MonsterEntity & class_2354> extends class_3599
 
    @Override
    public boolean method_16795() {
-      return this.field_27913.method_17809() != null ? this.method_24898() : false;
+      return this.field_27913.getAttackTarget() != null ? this.method_24898() : false;
    }
 
    public boolean method_24898() {
@@ -57,7 +57,7 @@ public class class_5479<T extends MonsterEntity & class_2354> extends class_3599
 
    @Override
    public void method_16794() {
-      class_5834 var3 = this.field_27913.method_17809();
+      LivingEntity var3 = this.field_27913.getAttackTarget();
       if (var3 != null) {
          double var4 = this.field_27913.method_37273(var3.getPosX(), var3.method_37309(), var3.getPosZ());
          boolean var6 = this.field_27913.method_26928().method_36736(var3);

@@ -81,9 +81,9 @@ public enum class_3336 {
       this.field_16457 = var8 + (double) ProjectilesModule.method_18300().field_9632.method_37277() - 0.1F;
       this.field_16443 = var10;
       float var12 = Math.min(20.0F, (float)(72000 - ProjectilesModule.method_18290().field_9632.method_26466()) + ProjectilesModule.method_18304().method_8554()) / 20.0F;
-      this.field_16451 = -class_9299.method_42818(var4) * class_9299.method_42840(var5) * this.field_16448 * var12;
-      this.field_16445 = -class_9299.method_42818(var5) * this.field_16448 * var12;
-      this.field_16456 = class_9299.method_42840(var4) * class_9299.method_42840(var5) * this.field_16448 * var12;
+      this.field_16451 = -MathHelper.sin(var4) * MathHelper.cos(var5) * this.field_16448 * var12;
+      this.field_16445 = -MathHelper.sin(var5) * this.field_16448 * var12;
+      this.field_16456 = MathHelper.cos(var4) * MathHelper.cos(var5) * this.field_16448 * var12;
       this.field_16463 = null;
       this.field_16449 = null;
       var3.add(new class_7047(this.field_16461, this.field_16457, this.field_16443));

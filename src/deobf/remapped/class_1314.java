@@ -32,8 +32,8 @@ public class class_1314 extends class_3558 {
 
    @Nullable
    @Override
-   public class_8461 method_16540() {
-      return class_463.field_2791;
+   public SoundEvent method_16540() {
+      return SoundEvents.field_2791;
    }
 
    @Override

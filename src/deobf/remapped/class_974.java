@@ -132,7 +132,7 @@ public class class_974 {
                   Config.method_14317("Less weights defined than skins, expanding weights: " + var1);
                   int[] var10 = new int[this.field_4994.length];
                   System.arraycopy(this.field_4976, 0, var10, 0, this.field_4976.length);
-                  int var12 = class_1750.method_7797(this.field_4976);
+                  int var12 = MathUtils.method_7797(this.field_4976);
 
                   for (int var14 = this.field_4976.length; var14 < var10.length; var14++) {
                      var10[var14] = var12;
@@ -251,8 +251,8 @@ public class class_974 {
          if (this.field_4981 != null && var1 instanceof class_7908) {
             class_7908 var14 = (class_7908)var1;
             Entity var20 = var14.method_35765();
-            if (var20 instanceof class_5834) {
-               class_5834 var26 = (class_5834)var20;
+            if (var20 instanceof LivingEntity) {
+               LivingEntity var26 = (LivingEntity)var20;
                if (var26.method_26449() != this.field_4981) {
                   return false;
                }

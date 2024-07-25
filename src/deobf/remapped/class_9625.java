@@ -2,11 +2,11 @@ package remapped;
 
 import java.util.function.Predicate;
 
-public class class_9625<T extends class_5834> extends NearestAttackableTargetGoal<T> {
+public class class_9625<T extends LivingEntity> extends NearestAttackableTargetGoal<T> {
    private static String[] field_49024;
    private int field_49025 = 0;
 
-   public class_9625(AbstractRaiderEntity var1, Class<T> var2, boolean var3, Predicate<class_5834> var4) {
+   public class_9625(AbstractRaiderEntity var1, Class<T> var2, boolean var3, Predicate<LivingEntity> var4) {
       super(var1, var2, 500, var3, false, var4);
    }
 

@@ -11,11 +11,11 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_5414 extends class_4855<class_3268> {
    private static String[] field_27600;
 
-   public class_5414(class_3547 var1, class_291 var2) {
+   public class_5414(class_3547 var1, GameRules var2) {
       super(var1.field_943, var1.field_941, var1.field_940, 43, var1.field_940 - 32, 24);
       this.field_27601 = var1;
       HashMap var5 = Maps.newHashMap();
-      class_291.method_1289(new class_7714(this, var1, var2, var5));
+      GameRules.method_1289(new class_7714(this, var1, var2, var5));
       var5.entrySet()
          .stream()
          .sorted(Entry.comparingByKey())

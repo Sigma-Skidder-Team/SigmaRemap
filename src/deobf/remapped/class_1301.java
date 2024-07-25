@@ -83,7 +83,7 @@ public class class_1301 extends class_6414 {
             double var17 = var12 != class_9249.field_47219 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method_1034();
             var0.method_43361(
                class_5727.field_28937,
-               (double)var1.method_12173() + var13,
+               (double)var1.getX() + var13,
                (double)var1.method_12165() + var15,
                (double)var1.method_12185() + var17,
                0.0,

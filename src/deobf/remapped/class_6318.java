@@ -46,13 +46,13 @@ public class class_6318 extends class_2451 {
    }
 
    @Override
-   public class_8461 method_11253() {
-      return class_463.field_2175;
+   public SoundEvent method_11253() {
+      return SoundEvents.field_2175;
    }
 
    @Override
-   public class_8461 method_11243() {
-      return class_463.field_2175;
+   public SoundEvent method_11243() {
+      return SoundEvents.field_2175;
    }
 
    @Override

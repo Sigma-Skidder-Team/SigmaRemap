@@ -106,7 +106,7 @@ public final class class_9670 {
                         if (class_195.method_862(var17, var39)) {
                            BlockPos var40 = var39.field_19965;
                            BlockPos var41 = new BlockPos(
-                              var20.method_12173() - var40.method_12173(),
+                              var20.getX() - var40.getX(),
                               var20.method_12165() - var40.method_12165(),
                               var20.method_12185() - var40.method_12185()
                            );
@@ -121,7 +121,7 @@ public final class class_9670 {
                               var48 = var15 + var47;
                            } else {
                               if (var22 == -1) {
-                                 var22 = this.field_49259.method_29831(var19.method_12173(), var19.method_12185(), class_3801.field_18598);
+                                 var22 = this.field_49259.method_29831(var19.getX(), var19.method_12185(), class_3801.field_18598);
                               }
 
                               var48 = var22 - var46;
@@ -156,7 +156,7 @@ public final class class_9670 {
                               if (!var12) {
                                  if (!var45) {
                                     if (var22 == -1) {
-                                       var22 = this.field_49259.method_29831(var19.method_12173(), var19.method_12185(), class_3801.field_18598);
+                                       var22 = this.field_49259.method_29831(var19.getX(), var19.method_12185(), class_3801.field_18598);
                                     }
 
                                     var55 = var22 + var47 / 2;
@@ -167,8 +167,8 @@ public final class class_9670 {
                                  var55 = var15 + var21;
                               }
 
-                              var1.method_34556(new class_98(var20.method_12173(), var55 - var21 + var56, var20.method_12185(), var47, var44));
-                              var54.method_34556(new class_98(var19.method_12173(), var55 - var46 + var53, var19.method_12185(), -var47, var11));
+                              var1.method_34556(new class_98(var20.getX(), var55 - var21 + var56, var20.method_12185(), var47, var44));
+                              var54.method_34556(new class_98(var19.getX(), var55 - var46 + var53, var19.method_12185(), -var47, var11));
                               this.field_49261.add(var54);
                               if (var4 + 1 <= this.field_49260) {
                                  this.field_49257.addLast(new class_1522(var54, var28, var29, var4 + 1, null));

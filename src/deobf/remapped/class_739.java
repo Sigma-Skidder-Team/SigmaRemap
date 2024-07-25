@@ -21,8 +21,8 @@ public class class_739 implements Iterator<BlockPos> {
    public class_739(BlockPos var1, BlockPos var2, double var3, double var5) {
       this.field_4037 = var3;
       this.field_4036 = var5;
-      this.field_4025 = var1.method_12173();
-      this.field_4035 = var2.method_12173();
+      this.field_4025 = var1.getX();
+      this.field_4035 = var2.getX();
       this.field_4030 = (double)var1.method_12165();
       this.field_4027 = (double)var2.method_12165() - 0.5;
       this.field_4033 = (double)var1.method_12185();

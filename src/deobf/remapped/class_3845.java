@@ -84,11 +84,11 @@ public class class_3845 extends class_5467 {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.putInt("HomePosX", this.method_17868().method_12173());
+      var1.putInt("HomePosX", this.method_17868().getX());
       var1.putInt("HomePosY", this.method_17868().method_12165());
       var1.putInt("HomePosZ", this.method_17868().method_12185());
       var1.putBoolean("HasEgg", this.method_17856());
-      var1.putInt("TravelPosX", this.method_17852().method_12173());
+      var1.putInt("TravelPosX", this.method_17852().getX());
       var1.putInt("TravelPosY", this.method_17852().method_12165());
       var1.putInt("TravelPosZ", this.method_17852().method_12185());
    }
@@ -158,8 +158,8 @@ public class class_3845 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
-      return !this.method_37285() && this.onGround && !this.method_26449() ? class_463.field_2278 : super.method_26918();
+   public SoundEvent method_26918() {
+      return !this.method_37285() && this.onGround && !this.method_26449() ? SoundEvents.field_2278 : super.method_26918();
    }
 
    @Override
@@ -168,25 +168,25 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public class_8461 method_37239() {
-      return class_463.field_2003;
+   public SoundEvent method_37239() {
+      return SoundEvents.field_2003;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return !this.method_26449() ? class_463.field_1988 : class_463.field_2223;
+   public SoundEvent method_26541(DamageSource var1) {
+      return !this.method_26449() ? SoundEvents.field_1988 : SoundEvents.field_2223;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26599() {
-      return !this.method_26449() ? class_463.field_2634 : class_463.field_2642;
+   public SoundEvent method_26599() {
+      return !this.method_26449() ? SoundEvents.field_2634 : SoundEvents.field_2642;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      class_8461 var5 = !this.method_26449() ? class_463.field_2174 : class_463.field_1977;
+      SoundEvent var5 = !this.method_26449() ? SoundEvents.field_2174 : SoundEvents.field_1977;
       this.method_37155(var5, 0.15F, 1.0F);
    }
 
@@ -206,7 +206,7 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       return new class_4704(this, var1);
    }
 
@@ -231,8 +231,8 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (this.isAlive() && this.method_17862() && this.field_18767 >= 1 && this.field_18767 % 5 == 0) {
          BlockPos var3 = this.method_37075();
          if (class_1477.method_6812(this.world, var3)) {
@@ -244,7 +244,7 @@ public class class_3845 extends class_5467 {
    @Override
    public void method_8637() {
       super.method_8637();
-      if (!this.method_26449() && this.world.method_29537().method_1285(class_291.field_1033)) {
+      if (!this.method_26449() && this.world.getGameRules().getBoolean(GameRules.field_1033)) {
          this.method_37313(class_4897.field_24631, 1);
       }
    }
@@ -255,7 +255,7 @@ public class class_3845 extends class_5467 {
          this.method_37092(0.1F, var1);
          this.method_37226(class_7412.field_37839, this.method_37098());
          this.method_37215(this.method_37098().method_6209(0.9));
-         if (this.method_17809() == null && (!this.method_17864() || !this.method_17868().method_12170(this.method_37245(), 20.0))) {
+         if (this.getAttackTarget() == null && (!this.method_17864() || !this.method_17868().method_12170(this.method_37245(), 20.0))) {
             this.method_37215(this.method_37098().method_6214(0.0, -0.005, 0.0));
          }
       } else {

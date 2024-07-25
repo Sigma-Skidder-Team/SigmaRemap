@@ -35,7 +35,7 @@ public class class_2297 implements class_6406 {
 
       if (this.field_11476) {
          AbstractGui.method_9774(var1, 3, 28, 157, 29, -1);
-         float var7 = (float)class_9299.method_42841((double)this.field_11470, (double)this.field_11475, (double)((float)(var3 - this.field_11477) / 100.0F));
+         float var7 = (float) MathHelper.clampedLerp((double)this.field_11470, (double)this.field_11475, (double)((float)(var3 - this.field_11477) / 100.0F));
          int var8;
          if (!(this.field_11475 >= this.field_11470)) {
             var8 = -11206656;

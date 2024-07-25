@@ -52,7 +52,7 @@ public class class_7451 extends class_4641 {
    public void method_21474() {
       if (this.field_22663 != null) {
          double var3 = 0.46875;
-         double var5 = (double)this.field_22661.method_12173() + 0.5 - (double)this.field_22663.method_1041() * 0.46875;
+         double var5 = (double)this.field_22661.getX() + 0.5 - (double)this.field_22663.method_1041() * 0.46875;
          double var7 = (double)this.field_22661.method_12165() + 0.5 - (double)this.field_22663.method_1054() * 0.46875;
          double var9 = (double)this.field_22661.method_12185() + 0.5 - (double)this.field_22663.method_1034() * 0.46875;
          this.method_37222(var5, var7, var9);
@@ -87,7 +87,7 @@ public class class_7451 extends class_4641 {
             class_2522 var3 = this.world.method_28262(this.field_22661.method_6098(this.field_22663.method_1046()));
             return !var3.method_8362().method_24499() && (!this.field_22663.method_1029().method_42629() || !class_5877.method_26769(var3))
                ? false
-               : this.world.method_25867(this, this.method_37241(), field_22662).isEmpty();
+               : this.world.method_25867(this, this.getBoundingBox(), field_22662).isEmpty();
          }
       } else {
          return true;
@@ -126,7 +126,7 @@ public class class_7451 extends class_4641 {
             if (!var1.method_28367() && !this.method_33905().method_28022()) {
                if (!this.world.field_33055) {
                   this.method_33908(var1.method_28372(), false);
-                  this.method_37155(class_463.field_2110, 1.0F, 1.0F);
+                  this.method_37155(SoundEvents.field_2110, 1.0F, 1.0F);
                }
 
                return true;
@@ -160,20 +160,20 @@ public class class_7451 extends class_4641 {
 
    @Override
    public void method_21475(Entity var1) {
-      this.method_37155(class_463.field_2425, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2425, 1.0F, 1.0F);
       this.method_33908(var1, true);
    }
 
    @Override
    public void method_21471() {
-      this.method_37155(class_463.field_2052, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2052, 1.0F, 1.0F);
    }
 
    private void method_33908(Entity var1, boolean var2) {
       if (!this.field_37976) {
          ItemStack var5 = this.method_33905();
          this.method_33912(ItemStack.EMPTY);
-         if (this.world.method_29537().method_1285(class_291.field_1024)) {
+         if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
             if (var1 instanceof PlayerEntity) {
                PlayerEntity var6 = (PlayerEntity)var1;
                if (var6.playerAbilities.isCreativeMode) {
@@ -226,7 +226,7 @@ public class class_7451 extends class_4641 {
 
       this.method_37372().method_36633(field_37975, var1);
       if (!var1.method_28022()) {
-         this.method_37155(class_463.field_2498, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2498, 1.0F, 1.0F);
       }
 
       if (var2 && this.field_22661 != null) {
@@ -318,7 +318,7 @@ public class class_7451 extends class_4641 {
       if (!this.field_37976) {
          if (!this.world.field_33055) {
             if (var6) {
-               this.method_37155(class_463.field_2457, 1.0F, 1.0F);
+               this.method_37155(SoundEvents.field_2457, 1.0F, 1.0F);
                this.method_33910(this.method_33907() + 1);
             } else if (var7 && !this.field_41751) {
                this.method_33912(var5);

@@ -52,14 +52,14 @@ public abstract class class_6353<T extends LivingEntity, M extends class_6521<T>
          }
 
          this.field_32487.field_33204 = var1.method_26449();
-         float var9 = class_9299.method_42837(var3, var1.field_29611, var1.field_29605);
-         float var10 = class_9299.method_42837(var3, var1.field_29657, var1.field_29618);
+         float var9 = MathHelper.method_42837(var3, var1.field_29611, var1.field_29605);
+         float var10 = MathHelper.method_42837(var3, var1.field_29657, var1.field_29618);
          float var11 = var10 - var9;
          if (this.field_32487.field_33203 && var1.getRidingEntity() instanceof LivingEntity) {
             LivingEntity var12 = (LivingEntity)var1.getRidingEntity();
-            var9 = class_9299.method_42837(var3, var12.field_29611, var12.field_29605);
+            var9 = MathHelper.method_42837(var3, var12.field_29611, var12.field_29605);
             var11 = var10 - var9;
-            float var13 = class_9299.method_42810(var11);
+            float var13 = MathHelper.wrapDegrees(var11);
             if (var13 < -85.0F) {
                var13 = -85.0F;
             }
@@ -76,7 +76,7 @@ public abstract class class_6353<T extends LivingEntity, M extends class_6521<T>
             var11 = var10 - var9;
          }
 
-         float var31 = class_9299.method_42795(var3, var1.field_41762, var1.rotationPitch);
+         float var31 = MathHelper.method_42795(var3, var1.field_41762, var1.rotationPitch);
          class_5278 var33 = new class_5278(var9, var10, var11, var31, var3, var1);
          SigmaMainClass.getInstance().getEventManager().call(var33);
          if (var33.method_29716()) {
@@ -104,7 +104,7 @@ public abstract class class_6353<T extends LivingEntity, M extends class_6521<T>
          float var35 = 0.0F;
          float var16 = 0.0F;
          if (!var1.isPassenger() && var1.isAlive()) {
-            var35 = class_9299.method_42795(var3, var1.field_29598, var1.field_29643);
+            var35 = MathHelper.method_42795(var3, var1.field_29598, var1.field_29643);
             var16 = var1.field_29671 - var1.field_29643 * (1.0F - var3);
             if (var1.method_26449()) {
                var16 *= 3.0F;
@@ -261,7 +261,7 @@ public abstract class class_6353<T extends LivingEntity, M extends class_6521<T>
          }
       } else {
          float var12 = ((float)var1.field_29677 + var5 - 1.0F) / 20.0F * 1.6F;
-         var12 = class_9299.method_42843(var12);
+         var12 = MathHelper.sqrt(var12);
          if (var12 > 1.0F) {
             var12 = 1.0F;
          }

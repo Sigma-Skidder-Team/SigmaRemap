@@ -22,7 +22,7 @@ public class class_9652 extends class_7164<class_5583, class_6399<class_5583>> {
       float var8 = var1.method_25362(var5);
       if (var8 > 0.0F) {
          var2.method_36065((double)(0.4F * var8), (double)(0.15F * var8), (double)(0.1F * var8));
-         var2.method_36060(class_2426.field_12076.method_11074(class_9299.method_42837(var8, 0.0F, 90.0F)));
+         var2.method_36060(class_2426.field_12076.method_11074(MathHelper.method_42837(var8, 0.0F, 90.0F)));
          BlockPos var9 = var1.method_37075();
 
          for (PlayerEntity var11 : var1.world.<PlayerEntity>method_25868(PlayerEntity.class, new Box(var9).method_18899(2.0, 2.0, 2.0))) {

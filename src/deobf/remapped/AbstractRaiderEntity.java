@@ -43,12 +43,12 @@ public abstract class AbstractRaiderEntity extends class_4607 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.world instanceof class_6331 && this.isAlive()) {
          class_2452 var3 = this.method_18589();
          if (this.method_18593()) {
             if (var3 != null) {
-               LivingEntity var4 = this.method_17809();
+               LivingEntity var4 = this.getAttackTarget();
                if (var4 != null && (var4.getType() == EntityType.field_34300 || var4.getType() == EntityType.field_34298)) {
                   this.field_29658 = 0;
                }
@@ -61,7 +61,7 @@ public abstract class AbstractRaiderEntity extends class_4607 {
          }
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    @Override
@@ -111,9 +111,9 @@ public abstract class AbstractRaiderEntity extends class_4607 {
                   var7.method_26421(Effects.field_19721);
                }
 
-               var12 = class_9299.method_42829(var12, 0, 4);
+               var12 = MathHelper.clamp(var12, 0, 4);
                class_2250 var10 = new class_2250(Effects.field_19721, 120000, var12, false, false, true);
-               if (!this.world.method_29537().method_1285(class_291.field_1045)) {
+               if (!this.world.getGameRules().getBoolean(GameRules.field_1045)) {
                   var7.method_26558(var10);
                }
             }
@@ -243,5 +243,5 @@ public abstract class AbstractRaiderEntity extends class_4607 {
       return super.method_26864(var1, var2, var3, var4, var5);
    }
 
-   public abstract class_8461 method_18591();
+   public abstract SoundEvent getRaidLossSound();
 }

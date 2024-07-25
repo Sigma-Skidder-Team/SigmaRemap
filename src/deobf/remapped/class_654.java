@@ -292,7 +292,7 @@ public class class_654 {
                for (class_519 var42 : var14) {
                   class_3757 var44 = var12.method_28260(var42.field_3175);
                   if (var42.field_3174 != null && var44 != null) {
-                     var42.field_3174.putInt("x", var42.field_3175.method_12173());
+                     var42.field_3174.putInt("x", var42.field_3175.getX());
                      var42.field_3174.putInt("y", var42.field_3175.method_12165());
                      var42.field_3174.putInt("z", var42.field_3175.method_12185());
                      var44.method_17394(var42.field_3176, var42.field_3174);

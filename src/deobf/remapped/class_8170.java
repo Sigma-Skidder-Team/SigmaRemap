@@ -19,31 +19,31 @@ public class class_8170 extends class_2811 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2825;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2825;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2107;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2107;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2213;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2213;
    }
 
    @Override
-   public class_8461 method_12805() {
-      return class_463.field_2647;
+   public SoundEvent method_12805() {
+      return SoundEvents.field_2647;
    }
 
    @Override
    public boolean method_26442(Entity var1) {
       boolean var4 = super.method_26442(var1);
-      if (var4 && this.method_26446().method_28022() && var1 instanceof class_5834) {
+      if (var4 && this.method_26446().method_28022() && var1 instanceof LivingEntity) {
          float var5 = this.world.method_43368(this.method_37075()).method_44283();
-         ((class_5834)var1).method_26558(new class_2250(Effects.field_19747, 140 * (int)var5));
+         ((LivingEntity)var1).method_26558(new class_2250(Effects.field_19747, 140 * (int)var5));
       }
 
       return var4;

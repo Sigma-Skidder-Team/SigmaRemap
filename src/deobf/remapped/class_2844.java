@@ -22,7 +22,7 @@ public class class_2844 extends class_8388 {
       super.method_26160(var1);
       Entity var4 = this.method_26166();
       if ((var1.method_33990() != class_1430.field_7718 || !((class_5631)var1).method_25524().method_37171(var4)) && !this.world.field_33055) {
-         List var5 = this.world.<LivingEntity>method_25868(LivingEntity.class, this.method_37241().method_18899(4.0, 2.0, 4.0));
+         List var5 = this.world.<LivingEntity>method_25868(LivingEntity.class, this.getBoundingBox().method_18899(4.0, 2.0, 4.0));
          class_4478 var6 = new class_4478(this.world, this.getPosX(), this.method_37309(), this.getPosZ());
          if (var4 instanceof LivingEntity) {
             var6.method_20782((LivingEntity)var4);

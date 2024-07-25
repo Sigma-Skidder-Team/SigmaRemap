@@ -10,7 +10,7 @@ public class class_7324 implements class_1517 {
    public int method_6937(class_6331 var1, boolean var2, boolean var3) {
       if (!var2) {
          return 0;
-      } else if (!var1.method_29537().method_1285(class_291.field_1052)) {
+      } else if (!var1.getGameRules().getBoolean(GameRules.field_1052)) {
          return 0;
       } else {
          Random var6 = var1.field_33033;
@@ -31,7 +31,7 @@ public class class_7324 implements class_1517 {
                         class_9589 var11 = var1.method_43368(var10);
                         if (var11.method_44286(var6.nextFloat() * 3.0F)) {
                            class_7909 var12 = ((class_9359)var9).method_43271();
-                           int var13 = class_9299.method_42829(
+                           int var13 = MathHelper.clamp(
                               var12.method_19276(class_6234.field_31829.method_43790(class_6234.field_31894)), 1, Integer.MAX_VALUE
                            );
                            short var14 = 24000;

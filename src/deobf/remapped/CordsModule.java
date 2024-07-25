@@ -40,7 +40,7 @@ public class CordsModule extends Module {
             if (!MinecraftClient.getInstance().gameOptions.field_45470) {
                if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                   float var4 = Math.min(1.0F, 0.6F + this.field_9983.method_11123() * 4.0F);
-                  String var5 = client.thePlayer.method_37075().method_12173()
+                  String var5 = client.thePlayer.method_37075().getX()
                      + " "
                      + client.thePlayer.method_37075().method_12165()
                      + " "

@@ -22,10 +22,10 @@ public class Box {
 
    public Box(BlockPos var1) {
       this(
-         (double)var1.method_12173(),
+         (double)var1.getX(),
          (double)var1.method_12165(),
          (double)var1.method_12185(),
-         (double)(var1.method_12173() + 1),
+         (double)(var1.getX() + 1),
          (double)(var1.method_12165() + 1),
          (double)(var1.method_12185() + 1)
       );
@@ -33,10 +33,10 @@ public class Box {
 
    public Box(BlockPos var1, BlockPos var2) {
       this(
-         (double)var1.method_12173(),
+         (double)var1.getX(),
          (double)var1.method_12165(),
          (double)var1.method_12185(),
-         (double)var2.method_12173(),
+         (double)var2.getX(),
          (double)var2.method_12165(),
          (double)var2.method_12185()
       );
@@ -197,7 +197,7 @@ public class Box {
       return new Box(var9, var11, var13, var15, var17, var19);
    }
 
-   public Box method_18898(double var1) {
+   public Box grow(double var1) {
       return this.method_18899(var1, var1, var1);
    }
 
@@ -229,10 +229,10 @@ public class Box {
 
    public Box method_18919(BlockPos var1) {
       return new Box(
-         this.field_19941 + (double)var1.method_12173(),
+         this.field_19941 + (double)var1.getX(),
          this.field_19937 + (double)var1.method_12165(),
          this.field_19938 + (double)var1.method_12185(),
-         this.field_19940 + (double)var1.method_12173(),
+         this.field_19940 + (double)var1.getX(),
          this.field_19939 + (double)var1.method_12165(),
          this.field_19942 + (double)var1.method_12185()
       );
@@ -299,7 +299,7 @@ public class Box {
    }
 
    public Box method_18924(double var1) {
-      return this.method_18898(-var1);
+      return this.grow(-var1);
    }
 
    public Optional<class_1343> method_18923(class_1343 var1, class_1343 var2) {
@@ -511,9 +511,9 @@ public class Box {
 
    public class_1343 method_18926() {
       return new class_1343(
-         class_9299.method_42794(0.5, this.field_19941, this.field_19940),
-         class_9299.method_42794(0.5, this.field_19937, this.field_19939),
-         class_9299.method_42794(0.5, this.field_19938, this.field_19942)
+         MathHelper.lerp(0.5, this.field_19941, this.field_19940),
+         MathHelper.lerp(0.5, this.field_19937, this.field_19939),
+         MathHelper.lerp(0.5, this.field_19938, this.field_19942)
       );
    }
 

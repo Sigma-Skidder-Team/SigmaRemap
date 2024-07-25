@@ -38,7 +38,7 @@ public class class_708 extends class_4232 {
       int var9 = class_6588.method_30147(this.field_3887, 2);
       class_6843[] var10 = class_6588.method_30314(this.field_3887);
       if (var10 != null) {
-         int var11 = class_9299.method_42815((double)var10.length / 9.0);
+         int var11 = MathHelper.ceil((double)var10.length / 9.0);
          if (var9 < var11) {
             var9 = var11;
          }

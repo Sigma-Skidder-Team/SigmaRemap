@@ -47,9 +47,9 @@ public class class_6484<T extends Entity> extends class_1498<T> {
       this.field_33024.field_8191 = var6 * (float) (Math.PI / 180.0);
       this.field_33024.field_8190 = var5 * (float) (Math.PI / 180.0);
       this.field_33021.field_8191 = (float) (Math.PI / 2);
-      this.field_33022.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
-      this.field_33027.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field_33023.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field_33026.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
+      this.field_33022.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+      this.field_33027.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field_33023.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field_33026.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
    }
 }

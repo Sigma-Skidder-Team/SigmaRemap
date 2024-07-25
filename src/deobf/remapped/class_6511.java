@@ -28,9 +28,9 @@ public class class_6511 extends class_4285<class_4080> {
             if (var3.nextFloat() < var5.field_19859) {
                int var12 = var3.nextInt(4) + 1;
 
-               for (int var13 = var4.method_12173() - var12; var13 <= var4.method_12173() + var12; var13++) {
+               for (int var13 = var4.getX() - var12; var13 <= var4.getX() + var12; var13++) {
                   for (int var14 = var4.method_12185() - var12; var14 <= var4.method_12185() + var12; var14++) {
-                     int var15 = var13 - var4.method_12173();
+                     int var15 = var13 - var4.getX();
                      int var16 = var14 - var4.method_12185();
                      if (var15 * var15 + var16 * var16 <= var12 * var12) {
                         var10.method_13362(var13, var1.method_22562(class_3801.field_18592, var13, var14) - 1, var14);

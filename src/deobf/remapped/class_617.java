@@ -1,27 +1,27 @@
 package remapped;
 
 public enum class_617 implements class_4530 {
-   field_3517("harp", class_463.field_2889),
-   field_3513("basedrum", class_463.field_2582),
-   field_3500("snare", class_463.field_2365),
-   field_3511("hat", class_463.field_2837),
-   field_3508("bass", class_463.field_2015),
-   field_3509("flute", class_463.field_2549),
-   field_3501("bell", class_463.field_1985),
-   field_3519("guitar", class_463.field_1930),
-   field_3503("chime", class_463.field_2728),
-   field_3518("xylophone", class_463.field_1934),
-   field_3502("iron_xylophone", class_463.field_2476),
-   field_3505("cow_bell", class_463.field_2826),
-   field_3504("didgeridoo", class_463.field_2320),
-   field_3516("bit", class_463.field_2820),
-   field_3515("banjo", class_463.field_2495),
-   field_3512("pling", class_463.field_2279);
+   field_3517("harp", SoundEvents.field_2889),
+   field_3513("basedrum", SoundEvents.field_2582),
+   field_3500("snare", SoundEvents.field_2365),
+   field_3511("hat", SoundEvents.field_2837),
+   field_3508("bass", SoundEvents.field_2015),
+   field_3509("flute", SoundEvents.field_2549),
+   field_3501("bell", SoundEvents.field_1985),
+   field_3519("guitar", SoundEvents.field_1930),
+   field_3503("chime", SoundEvents.field_2728),
+   field_3518("xylophone", SoundEvents.field_1934),
+   field_3502("iron_xylophone", SoundEvents.field_2476),
+   field_3505("cow_bell", SoundEvents.field_2826),
+   field_3504("didgeridoo", SoundEvents.field_2320),
+   field_3516("bit", SoundEvents.field_2820),
+   field_3515("banjo", SoundEvents.field_2495),
+   field_3512("pling", SoundEvents.field_2279);
 
    private final String field_3506;
-   private final class_8461 field_3507;
+   private final SoundEvent field_3507;
 
-   private class_617(String var3, class_8461 var4) {
+   private class_617(String var3, SoundEvent var4) {
       this.field_3506 = var3;
       this.field_3507 = var4;
    }
@@ -31,7 +31,7 @@ public enum class_617 implements class_4530 {
       return this.field_3506;
    }
 
-   public class_8461 method_2881() {
+   public SoundEvent method_2881() {
       return this.field_3507;
    }
 

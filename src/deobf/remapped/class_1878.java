@@ -121,7 +121,7 @@ public class class_1878 extends class_9476 {
    @Override
    public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       var2.method_28968().method_14011(var3, this, method_8415(var2.field_33033));
-      if (var2.method_29537().method_1285(class_291.field_1035)) {
+      if (var2.getGameRules().getBoolean(GameRules.field_1035)) {
          if (!var1.method_8309(var2, var3)) {
             var2.method_7508(var3, false);
          }

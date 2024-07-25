@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.Optional;
 
-public class class_6934 extends class_5920<class_5834> {
+public class class_6934 extends class_5920<LivingEntity> {
    private static String[] field_35642;
    private final int field_35643;
    private final int field_35641;
@@ -17,7 +17,7 @@ public class class_6934 extends class_5920<class_5834> {
    }
 
    @Override
-   public void method_27080(class_6331 var1, class_5834 var2, long var3) {
+   public void method_27080(class_6331 var1, LivingEntity var2, long var3) {
       class_1150 var7 = var2.method_26525();
       Optional var8 = var7.<Long>method_5138(class_6044.field_30894);
       boolean var9 = (Long)var8.get() + 300L <= var3;

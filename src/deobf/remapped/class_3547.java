@@ -8,14 +8,14 @@ import java.util.function.Consumer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_3547 extends Screen {
-   private final Consumer<Optional<class_291>> field_17355;
+   private final Consumer<Optional<GameRules>> field_17355;
    private class_5414 field_17358;
    private final Set<class_3268> field_17357 = Sets.newHashSet();
    private class_9521 field_17359;
    private List<class_7107> field_17354;
-   private final class_291 field_17356;
+   private final GameRules field_17356;
 
-   public class_3547(class_291 var1, Consumer<Optional<class_291>> var2) {
+   public class_3547(GameRules var1, Consumer<Optional<GameRules>> var2) {
       super(new TranslationTextComponent("editGamerule.title"));
       this.field_17356 = var1;
       this.field_17355 = var2;
@@ -29,7 +29,7 @@ public class class_3547 extends Screen {
       this.field_942.add(this.field_17358);
       this.<class_9521>method_1186(
          new class_9521(
-            this.field_941 / 2 - 155 + 160, this.field_940 - 29, 150, 20, class_1402.field_7633, var1 -> this.field_17355.accept(Optional.<class_291>empty())
+            this.field_941 / 2 - 155 + 160, this.field_940 - 29, 150, 20, class_1402.field_7633, var1 -> this.field_17355.accept(Optional.<GameRules>empty())
          )
       );
       this.field_17359 = this.<class_9521>method_1186(
@@ -39,7 +39,7 @@ public class class_3547 extends Screen {
             150,
             20,
             class_1402.field_7625,
-            var1 -> this.field_17355.accept(Optional.<class_291>of(this.field_17356))
+            var1 -> this.field_17355.accept(Optional.<GameRules>of(this.field_17356))
          )
       );
    }
@@ -51,7 +51,7 @@ public class class_3547 extends Screen {
 
    @Override
    public void method_1156() {
-      this.field_17355.accept(Optional.<class_291>empty());
+      this.field_17355.accept(Optional.<GameRules>empty());
    }
 
    @Override

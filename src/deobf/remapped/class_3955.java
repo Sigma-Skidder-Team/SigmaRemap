@@ -47,7 +47,7 @@ public class class_3955 extends class_6127<LivingEntity> {
    }
 
    private int method_18274(LivingEntity var1, LivingEntity var2, LivingEntity var3) {
-      return class_9299.method_42847(var2.method_37275(var1) - var3.method_37275(var1));
+      return MathHelper.floor(var2.method_37275(var1) - var3.method_37275(var1));
    }
 
    private boolean method_18275(LivingEntity var1, LivingEntity var2) {

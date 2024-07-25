@@ -62,9 +62,9 @@ public class class_4995<T extends Entity> extends class_5272<T> {
       this.field_25850.field_8191 = var6 * (float) (Math.PI / 180.0);
       this.field_25850.field_8190 = var5 * (float) (Math.PI / 180.0);
       if (Entity.method_37266(var1.method_37098()) > 1.0E-7) {
-         this.field_25850.field_8191 = this.field_25850.field_8191 + -0.05F + -0.05F * class_9299.method_42840(var4 * 0.3F);
-         this.field_25853.field_8191 = -0.1F * class_9299.method_42840(var4 * 0.3F);
-         this.field_25852.field_8191 = -0.2F * class_9299.method_42840(var4 * 0.3F);
+         this.field_25850.field_8191 = this.field_25850.field_8191 + -0.05F + -0.05F * MathHelper.cos(var4 * 0.3F);
+         this.field_25853.field_8191 = -0.1F * MathHelper.cos(var4 * 0.3F);
+         this.field_25852.field_8191 = -0.2F * MathHelper.cos(var4 * 0.3F);
       }
    }
 }

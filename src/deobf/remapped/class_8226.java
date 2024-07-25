@@ -75,15 +75,15 @@ public class class_8226 extends class_2208<class_8372> {
       var1.method_36062(5.0F, 5.0F, 5.0F);
       var1.method_36060(class_2426.field_12076.method_11074(180.0F));
       var1.method_36060(class_2426.field_12080.method_11074(20.0F));
-      float var12 = class_9299.method_42795(var2, this.field_42228, this.field_42229);
+      float var12 = MathHelper.method_42795(var2, this.field_42228, this.field_42229);
       var1.method_36065((double)((1.0F - var12) * 0.2F), (double)((1.0F - var12) * 0.1F), (double)((1.0F - var12) * 0.25F));
       float var13 = -(1.0F - var12) * 90.0F - 90.0F;
       var1.method_36060(class_2426.field_12074.method_11074(var13));
       var1.method_36060(class_2426.field_12080.method_11074(180.0F));
-      float var14 = class_9299.method_42795(var2, this.field_42235, this.field_42226) + 0.25F;
-      float var15 = class_9299.method_42795(var2, this.field_42235, this.field_42226) + 0.75F;
-      var14 = (var14 - (float)class_9299.method_42808((double)var14)) * 1.6F - 0.3F;
-      var15 = (var15 - (float)class_9299.method_42808((double)var15)) * 1.6F - 0.3F;
+      float var14 = MathHelper.method_42795(var2, this.field_42235, this.field_42226) + 0.25F;
+      float var15 = MathHelper.method_42795(var2, this.field_42235, this.field_42226) + 0.75F;
+      var14 = (var14 - (float) MathHelper.fastFloor((double)var14)) * 1.6F - 0.3F;
+      var15 = (var15 - (float) MathHelper.fastFloor((double)var15)) * 1.6F - 0.3F;
       if (var14 < 0.0F) {
          var14 = 0.0F;
       }
@@ -231,10 +231,10 @@ public class class_8226 extends class_2208<class_8372> {
          this.field_42229 += 0.2F;
       }
 
-      this.field_42229 = class_9299.method_42828(this.field_42229, 0.0F, 1.0F);
+      this.field_42229 = MathHelper.clamp(this.field_42229, 0.0F, 1.0F);
       float var7 = (this.field_42230 - this.field_42226) * 0.4F;
       float var6 = 0.2F;
-      var7 = class_9299.method_42828(var7, -0.2F, 0.2F);
+      var7 = MathHelper.clamp(var7, -0.2F, 0.2F);
       this.field_42232 = this.field_42232 + (var7 - this.field_42232) * 0.9F;
       this.field_42226 = this.field_42226 + this.field_42232;
    }

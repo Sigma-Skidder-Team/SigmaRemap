@@ -154,7 +154,7 @@ public class class_4374 {
       if (!this.field_21470.method_39929(var5, var6)) {
          return false;
       } else {
-         this.field_21468 = class_9299.method_42829(
+         this.field_21468 = MathHelper.clamp(
             (int)((double)this.field_21468 - var1), 0, Math.max(this.field_21466.size() - class_1027.method_4550(this.field_21467), 0)
          );
          return true;
@@ -197,14 +197,14 @@ public class class_4374 {
       int var5 = this.field_21468 + class_1027.method_4550(this.field_21467) - 1;
       if (this.field_21469 >= var4) {
          if (this.field_21469 > var5) {
-            this.field_21468 = class_9299.method_42829(
+            this.field_21468 = MathHelper.clamp(
                this.field_21469 + class_1027.method_4544(this.field_21467) - class_1027.method_4550(this.field_21467),
                0,
                Math.max(this.field_21466.size() - class_1027.method_4550(this.field_21467), 0)
             );
          }
       } else {
-         this.field_21468 = class_9299.method_42829(this.field_21469, 0, Math.max(this.field_21466.size() - class_1027.method_4550(this.field_21467), 0));
+         this.field_21468 = MathHelper.clamp(this.field_21469, 0, Math.max(this.field_21466.size() - class_1027.method_4550(this.field_21467), 0));
       }
    }
 

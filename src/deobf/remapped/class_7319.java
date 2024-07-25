@@ -180,7 +180,7 @@ public class class_7319 extends class_9521 implements IScreen {
       if (!var6) {
          RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       } else {
-         float var21 = 0.85F + 0.15F * class_9299.method_42840((float)this.field_37426 * 0.2F);
+         float var21 = 0.85F + 0.15F * MathHelper.cos((float)this.field_37426 * 0.2F);
          RenderSystem.color4f(var21, var21, var21, 1.0F);
       }
 

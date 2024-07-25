@@ -218,7 +218,7 @@ public class class_2599 extends class_6993 implements class_3832 {
    public void method_26910(boolean var1) {
       this.method_37372().method_36633(field_12843, var1);
       if (!this.world.field_33055) {
-         class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
+         class_9747 var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
          var4.method_45004(field_12839);
          if (var1) {
             var4.method_45011(field_12839);
@@ -308,8 +308,8 @@ public class class_2599 extends class_6993 implements class_3832 {
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       boolean var5 = super.attackEntityFrom(var1, var2);
       if (!this.world.field_33055) {
-         if (var5 && var1.method_28372() instanceof class_5834) {
-            class_134.method_483(this, (class_5834)var1.method_28372());
+         if (var5 && var1.method_28372() instanceof LivingEntity) {
+            class_134.method_483(this, (LivingEntity)var1.method_28372());
          }
 
          return var5;
@@ -319,12 +319,12 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       this.method_17815(this, 1.6F);
    }
 
    @Override
-   public void method_17812(class_5834 var1, ItemStack var2, class_5783 var3, float var4) {
+   public void method_17812(LivingEntity var1, ItemStack var2, class_5783 var3, float var4) {
       this.method_17811(this, var1, var3, var4, 1.6F);
    }
 
@@ -348,7 +348,7 @@ public class class_2599 extends class_6993 implements class_3832 {
 
    @Override
    public boolean method_26873(ItemStack var1) {
-      return this.world.method_29537().method_1285(class_291.field_1047) && this.method_26930() && class_134.method_511(this, var1);
+      return this.world.getGameRules().getBoolean(GameRules.field_1047) && this.method_26930() && class_134.method_511(this, var1);
    }
 
    public boolean method_11787(ItemStack var1) {
@@ -392,36 +392,36 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    private Entity method_11792(Entity var1, int var2) {
-      List var5 = var1.method_37114();
+      List var5 = var1.getPassengers();
       return var2 != 1 && !var5.isEmpty() ? this.method_11792((Entity)var5.get(0), var2 - 1) : var1;
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.world.field_33055 ? class_134.method_499(this).orElse((class_8461)null) : null;
+   public SoundEvent method_26918() {
+      return !this.world.field_33055 ? class_134.method_499(this).orElse((SoundEvent)null) : null;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_1945;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_1945;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2652;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2652;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2684, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2684, 0.15F, 1.0F);
    }
 
-   public void method_11796(class_8461 var1) {
+   public void method_11796(SoundEvent var1) {
       this.method_37155(var1, this.method_26439(), this.method_26547());
    }
 
    @Override
    public void method_31986() {
-      this.method_11796(class_463.field_2656);
+      this.method_11796(SoundEvents.field_2656);
    }
 }

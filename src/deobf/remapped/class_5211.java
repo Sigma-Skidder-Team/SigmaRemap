@@ -6,7 +6,7 @@ public class class_5211 extends class_6165 {
    private int field_26771;
 
    public class_5211(ClientPlayerEntity var1) {
-      super(class_463.field_1967, class_562.field_3325);
+      super(SoundEvents.field_1967, class_562.field_3325);
       this.field_26772 = var1;
       this.field_5768 = true;
       this.field_5764 = 0;

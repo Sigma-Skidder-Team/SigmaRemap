@@ -25,7 +25,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final Identifier field_44448 = new Identifier("root");
    public static final class_6433<class_6433<?>> field_44444 = new class_5383<class_6433<?>>(method_39804("root"), Lifecycle.experimental());
    public static final class_8669<? extends class_8669<?>> field_44446 = field_44444;
-   public static final class_5621<class_8669<class_8461>> field_44362 = method_39804("sound_event");
+   public static final class_5621<class_8669<SoundEvent>> field_44362 = method_39804("sound_event");
    public static final class_5621<class_8669<class_2340>> field_44458 = method_39804("fluid");
    public static final class_5621<class_8669<class_1425>> field_44439 = method_39804("mob_effect");
    public static final class_5621<class_8669<class_6414>> field_44377 = method_39804("block");
@@ -58,7 +58,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final class_5621<class_8669<class_8760>> field_44415 = method_39804("dimension_type");
    public static final class_5621<class_8669<World>> field_44372 = method_39804("dimension");
    public static final class_5621<class_8669<class_8472>> field_44420 = method_39804("dimension");
-   public static final class_8669<class_8461> field_44369 = method_39812(field_44362, () -> class_463.field_2732);
+   public static final class_8669<SoundEvent> field_44369 = method_39812(field_44362, () -> SoundEvents.field_2732);
    public static final class_3991<class_2340> field_44447 = method_39796(field_44458, "empty", () -> class_8532.field_43673);
    public static final class_8669<class_1425> field_44436 = method_39812(field_44439, () -> Effects.field_19719);
    public static final class_3991<class_6414> field_44462 = method_39796(field_44377, "air", () -> class_4783.field_23184);

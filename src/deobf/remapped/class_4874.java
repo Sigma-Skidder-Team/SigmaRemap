@@ -23,7 +23,7 @@ public class class_4874 implements class_2995 {
       for (BlockPos var15 : BlockPos.method_6076(var12.method_6104(-10, -10, -10), var12.method_6104(10, 10, 10))) {
          int var16 = var11.method_25266(class_2957.field_14437, var15);
          float var17 = (float)(15 - var16) / 15.0F * 0.5F + 0.16F;
-         int var18 = class_9299.method_42792(var17, 0.9F, 0.9F);
+         int var18 = MathHelper.method_42792(var17, 0.9F, 0.9F);
          long var19 = class_6979.method_31903(var15.method_6077());
          if (var13.add(var19)) {
             class_3372.method_15554(
@@ -38,7 +38,7 @@ public class class_4874 implements class_2995 {
 
          if (var16 != 15) {
             class_3372.method_15553(
-               String.valueOf(var16), (double)var15.method_12173() + 0.5, (double)var15.method_12165() + 0.25, (double)var15.method_12185() + 0.5, var18
+               String.valueOf(var16), (double)var15.getX() + 0.5, (double)var15.method_12165() + 0.25, (double)var15.method_12185() + 0.5, var18
             );
          }
       }

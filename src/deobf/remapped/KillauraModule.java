@@ -230,10 +230,10 @@ public class KillauraModule extends Module {
    @EventListen
    public void method_11551(class_3278 var1) {
       if (field_12556 != null && !this.getBooleanValueByName("Silent") && !this.getStringValueByName("Rotation Mode").equals("None")) {
-         float var4 = class_9299.method_42810(
+         float var4 = MathHelper.wrapDegrees(
             this.field_12569.field_10069 + (this.field_12567.field_10069 - this.field_12569.field_10069) * client.method_8554()
          );
-         float var5 = class_9299.method_42810(
+         float var5 = MathHelper.wrapDegrees(
             this.field_12569.field_10067 + (this.field_12567.field_10067 - this.field_12569.field_10067) * client.method_8554()
          );
          client.thePlayer.rotationYaw = var4;

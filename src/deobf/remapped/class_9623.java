@@ -20,7 +20,7 @@ public class class_9623<T extends class_6406> {
    }
 
    private float method_44420(long var1) {
-      float var5 = class_9299.method_42828((float)(var1 - this.field_49022) / 600.0F, 0.0F, 1.0F);
+      float var5 = MathHelper.clamp((float)(var1 - this.field_49022) / 600.0F, 0.0F, 1.0F);
       var5 *= var5;
       return this.field_49023 != class_5068.field_26190 ? var5 : 1.0F - var5;
    }

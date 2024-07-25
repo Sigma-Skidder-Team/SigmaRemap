@@ -59,7 +59,7 @@ public class class_3348 extends class_6749 {
             double var6 = 0.05 * (double)var4;
             this.method_37215(this.method_37098().method_6209(0.95).method_6215(var5.method_6213().method_6209(var6)));
             if (this.field_16517 == 0) {
-               this.method_37155(class_463.field_2181, 10.0F, 1.0F);
+               this.method_37155(SoundEvents.field_2181, 10.0F, 1.0F);
             }
 
             this.field_16517++;
@@ -101,7 +101,7 @@ public class class_3348 extends class_6749 {
       Entity var12 = this.method_26166();
       DamageSource var7 = DamageSource.method_28368(this, (Entity)(var12 != null ? var12 : this));
       this.field_16518 = true;
-      class_8461 var8 = class_463.field_2442;
+      SoundEvent var8 = SoundEvents.field_2442;
       if (var4.attackEntityFrom(var7, var5)) {
          if (var4.getType() == EntityType.field_34308) {
             return;
@@ -127,7 +127,7 @@ public class class_3348 extends class_6749 {
             var11.method_37196(class_1343.method_6200(var10));
             var11.method_3857(!(var12 instanceof class_9359) ? null : (class_9359)var12);
             this.world.method_7509(var11);
-            var8 = class_463.field_2225;
+            var8 = SoundEvents.field_2225;
             var13 = 5.0F;
          }
       }
@@ -136,8 +136,8 @@ public class class_3348 extends class_6749 {
    }
 
    @Override
-   public class_8461 method_30933() {
-      return class_463.field_2570;
+   public SoundEvent method_30933() {
+      return SoundEvents.field_2570;
    }
 
    @Override

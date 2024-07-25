@@ -24,8 +24,8 @@ public abstract class class_5467 extends class_1899 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (this.method_8634() != 0) {
          this.field_27875 = 0;
       }
@@ -199,7 +199,7 @@ public abstract class class_5467 extends class_1899 {
          var5.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), 0.0F, 0.0F);
          var1.method_7065(var5);
          var1.method_29587(this, (byte)18);
-         if (var1.method_29537().method_1285(class_291.field_1033)) {
+         if (var1.getGameRules().getBoolean(GameRules.field_1033)) {
             var1.method_7509(new class_5614(var1, this.getPosX(), this.method_37309(), this.getPosZ(), this.method_26594().nextInt(7) + 1));
          }
       }

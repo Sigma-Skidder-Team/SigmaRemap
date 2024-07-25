@@ -7,7 +7,7 @@ public class class_4636 extends class_446 {
    public class_4636(class_7038 var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method_32186(var7);
-      this.method_32100((var0, var1x) -> MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(class_463.field_1995, 1.0F)));
+      this.method_32100((var0, var1x) -> MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(SoundEvents.field_1995, 1.0F)));
       this.field_22650 = var8;
    }
 

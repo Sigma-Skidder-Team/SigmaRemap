@@ -24,8 +24,8 @@ public class ProjectilesModule extends Module {
                float var6 = (float)Math.toRadians((double) client.thePlayer.rotationPitch);
                double var7 = 0.2F;
                double var9 = client.thePlayer.field_41712.method_18906() / 2.0;
-               double var11 = (double)class_9299.method_42840(var5) * var9;
-               double var13 = (double)class_9299.method_42818(var5) * var9;
+               double var11 = (double) MathHelper.cos(var5) * var9;
+               double var13 = (double) MathHelper.sin(var5) * var9;
                double var15 = client.thePlayer.field_41754
                   + (client.thePlayer.getPosX() - client.thePlayer.field_41754) * (double) client.theTimer.field_32600;
                double var17 = client.thePlayer.field_41713
@@ -109,7 +109,7 @@ public class ProjectilesModule extends Module {
                   BlockPos var33 = new BlockPos(0, 0, 0).method_6098(((class_9529)var4.field_16463).method_43956());
                   GL11.glRotatef(
                      45.0F,
-                     this.field_19188.method_8982((float)var33.method_12173()),
+                     this.field_19188.method_8982((float)var33.getX()),
                      this.field_19188.method_8981((float)(-var33.method_12165())),
                      this.field_19188.method_8983((float)var33.method_12185())
                   );
@@ -117,7 +117,7 @@ public class ProjectilesModule extends Module {
                      90.0F,
                      this.field_19186.method_8982((float)var33.method_12185()),
                      this.field_19186.method_8981((float)var33.method_12165()),
-                     this.field_19186.method_8983((float)(-var33.method_12173()))
+                     this.field_19186.method_8983((float)(-var33.getX()))
                   );
                   GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
                   class_8194 var34 = new class_8194(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);

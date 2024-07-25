@@ -254,7 +254,7 @@ public class class_4196 extends class_6414 {
    private boolean method_19523(class_6163 var1, BlockPos var2) {
       byte var5 = 4;
       Iterable var6 = BlockPos.method_6075(
-         var2.method_12173() - 4, var2.method_12165() - 1, var2.method_12185() - 4, var2.method_12173() + 4, var2.method_12165() + 1, var2.method_12185() + 4
+         var2.getX() - 4, var2.method_12165() - 1, var2.method_12185() - 4, var2.getX() + 4, var2.method_12165() + 1, var2.method_12185() + 4
       );
       int var7 = 5;
 

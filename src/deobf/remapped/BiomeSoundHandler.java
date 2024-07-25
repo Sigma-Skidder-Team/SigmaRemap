@@ -74,13 +74,13 @@ public class BiomeSoundHandler implements IAmbientSoundHandler {
                if (!(this.field_34959 >= 1.0F)) {
                   this.field_34959 = Math.max(this.field_34959, 0.0F);
                } else {
-                  double var8 = (double)var6.method_12173() + 0.5;
+                  double var8 = (double)var6.getX() + 0.5;
                   double var10 = (double)var6.method_12165() + 0.5;
                   double var12 = (double)var6.method_12185() + 0.5;
                   double var14 = var8 - this.field_34963.getPosX();
                   double var16 = var10 - this.field_34963.method_37388();
                   double var18 = var12 - this.field_34963.getPosZ();
-                  double var20 = (double)class_9299.method_42842(var14 * var14 + var16 * var16 + var18 * var18);
+                  double var20 = (double) MathHelper.sqrt(var14 * var14 + var16 * var16 + var18 * var18);
                   double var22 = var20 + var1.method_14591();
                   class_4949 var24 = class_4949.method_22677(
                      var1.method_14592(),

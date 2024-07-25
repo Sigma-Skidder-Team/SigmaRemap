@@ -18,7 +18,7 @@ public class class_6188 extends DamageSource {
    }
 
    @Override
-   public ITextComponent method_28362(class_5834 var1) {
+   public ITextComponent method_28362(LivingEntity var1) {
       IFormattableTextComponent var4 = TextComponentUtils.wrapWithSquareBrackets(new TranslationTextComponent("death.attack.badRespawnPoint.link"))
          .modifyStyle(
             var0 -> var0.setClickEvent(new ClickEvent(ClickEvent$class_47.OPEN_URL, "https://bugs.mojang.com/browse/MCPE-28723"))

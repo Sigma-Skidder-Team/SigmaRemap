@@ -5,7 +5,7 @@ import java.util.EnumSet;
 public class class_1937 extends class_3599 {
    private static String[] field_9898;
    private final MobEntity field_9897;
-   private class_5834 field_9899;
+   private LivingEntity field_9899;
    private final float field_9900;
 
    public class_1937(MobEntity var1, float var2) {
@@ -17,7 +17,7 @@ public class class_1937 extends class_3599 {
    @Override
    public boolean method_16795() {
       if (!this.field_9897.method_37151()) {
-         this.field_9899 = this.field_9897.method_17809();
+         this.field_9899 = this.field_9897.getAttackTarget();
          if (this.field_9899 != null) {
             double var3 = this.field_9897.method_37275(this.field_9899);
             if (var3 < 4.0 || var3 > 16.0) {

@@ -95,11 +95,11 @@ public class class_57 extends class_2208<class_6415> {
          if (var8 >= var9 && class_3047.method_13907(var7)) {
             byte var10 = 100;
             float var11 = 100.0F / (float)(class_3047.method_13905(var7) - var9);
-            int var12 = Math.min(class_9299.method_42848(var11 * (float)(var8 - var9)), 100);
+            int var12 = Math.min(MathHelper.floor(var11 * (float)(var8 - var9)), 100);
             method_9779(var1, var2 + 136, var3 + 16, this.method_9777(), 0.0F, 191.0F, var12 + 1, 5, 256, 512);
             int var13 = this.field_10956.method_29320();
             if (var13 > 0) {
-               int var14 = Math.min(class_9299.method_42848((float)var13 * var11), 100 - var12);
+               int var14 = Math.min(MathHelper.floor((float)var13 * var11), 100 - var12);
                method_9779(var1, var2 + 136 + var12 + 1, var3 + 16 + 1, this.method_9777(), 2.0F, 182.0F, var14, 3, 256, 512);
             }
          }
@@ -223,7 +223,7 @@ public class class_57 extends class_2208<class_6415> {
       if (this.method_24(var9)) {
          int var10 = var9 - 7;
          this.field_50 = (int)((double)this.field_50 - var5);
-         this.field_50 = class_9299.method_42829(this.field_50, 0, var10);
+         this.field_50 = MathHelper.clamp(this.field_50, 0, var10);
       }
 
       return true;
@@ -240,7 +240,7 @@ public class class_57 extends class_2208<class_6415> {
          int var15 = var12 - 7;
          float var16 = ((float)var3 - (float)var13 - 13.5F) / ((float)(var14 - var13) - 27.0F);
          var16 = var16 * (float)var15 + 0.5F;
-         this.field_50 = class_9299.method_42829((int)var16, 0, var15);
+         this.field_50 = MathHelper.clamp((int)var16, 0, var15);
          return true;
       }
    }

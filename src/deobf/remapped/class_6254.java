@@ -34,9 +34,9 @@ public class class_6254 {
       float var15 = (float)(var1 - var7);
       float var16 = (float)(var3 - var9);
       float var17 = (float)(var5 - var11);
-      if (!this.field_31980.method_28088(class_9299.method_42804(var15))
-         || !this.field_31977.method_28088(class_9299.method_42804(var16))
-         || !this.field_31982.method_28088(class_9299.method_42804(var17))) {
+      if (!this.field_31980.method_28088(MathHelper.abs(var15))
+         || !this.field_31977.method_28088(MathHelper.abs(var16))
+         || !this.field_31982.method_28088(MathHelper.abs(var17))) {
          return false;
       } else {
          return this.field_31979.method_28087((double)(var15 * var15 + var17 * var17))

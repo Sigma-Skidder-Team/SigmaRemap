@@ -29,7 +29,7 @@ public class NukerModule extends Module {
                   || Math.sqrt(
                         client.thePlayer
                            .method_37273(
-                              (double)this.field_48181.method_12173() + 0.5,
+                              (double)this.field_48181.getX() + 0.5,
                               (double)this.field_48181.method_12165() + 0.5,
                               (double)this.field_48181.method_12185() + 0.5
                            )
@@ -39,7 +39,7 @@ public class NukerModule extends Module {
                }
 
                float[] var4 = class_7211.method_33006(
-                  (double)this.field_48181.method_12173(), (double)this.field_48181.method_12185(), (double)this.field_48181.method_12165()
+                  (double)this.field_48181.getX(), (double)this.field_48181.method_12185(), (double)this.field_48181.method_12165()
                );
                var1.method_6441(var4[0]);
                var1.method_6448(var4[1]);
@@ -54,7 +54,7 @@ public class NukerModule extends Module {
             } else {
                this.field_48181 = this.field_48180.get(0);
                float[] var6 = class_7211.method_33006(
-                  (double)this.field_48181.method_12173() + 0.5, (double)this.field_48181.method_12185(), (double)this.field_48181.method_12165() + 0.5
+                  (double)this.field_48181.getX() + 0.5, (double)this.field_48181.method_12185(), (double)this.field_48181.method_12165() + 0.5
                );
                var1.method_6441(var6[0]);
                var1.method_6448(var6[1]);
@@ -86,7 +86,7 @@ public class NukerModule extends Module {
          int var4 = class_314.method_1444(this.getIntValueByName("Color"), 0.4F);
          GL11.glPushMatrix();
          GL11.glDisable(2929);
-         double var5 = (double)this.field_48181.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+         double var5 = (double)this.field_48181.getX() - client.gameRenderer.method_35949().method_41627().method_61();
          double var7 = (double)this.field_48181.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
          double var9 = (double)this.field_48181.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
          Box var11 = client.theWorld.method_28262(this.field_48181).method_8324(client.theWorld, this.field_48181).method_19483();
@@ -130,7 +130,7 @@ public class NukerModule extends Module {
                   && client.theWorld.method_28262(var8).method_8364().method_22001()
                   && Math.sqrt(
                         client.thePlayer
-                           .method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
+                           .method_37273((double)var8.getX() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
                      )
                      < (double)var1) {
                   String var9 = this.getStringValueByName("Mode");

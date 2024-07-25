@@ -44,15 +44,15 @@ public class class_3942 extends class_5783 {
       this(var2, var1, var3, var4);
       float var7 = var1.rotationPitch;
       float var8 = var1.rotationYaw;
-      float var9 = class_9299.method_42840(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var10 = class_9299.method_42818(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var11 = -class_9299.method_42840(-var7 * (float) (Math.PI / 180.0));
-      float var12 = class_9299.method_42818(-var7 * (float) (Math.PI / 180.0));
+      float var9 = MathHelper.cos(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var10 = MathHelper.sin(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var11 = -MathHelper.cos(-var7 * (float) (Math.PI / 180.0));
+      float var12 = MathHelper.sin(-var7 * (float) (Math.PI / 180.0));
       double var13 = var1.getPosX() - (double)var10 * 0.3;
       double var15 = var1.method_37388();
       double var17 = var1.getPosZ() - (double)var9 * 0.3;
       this.method_37144(var13, var15, var17, var8, var7);
-      class_1343 var19 = new class_1343((double)(-var10), (double)class_9299.method_42828(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
+      class_1343 var19 = new class_1343((double)(-var10), (double) MathHelper.clamp(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
       double var20 = var19.method_6217();
       var19 = var19.method_6210(
          0.6 / var20 + 0.5 + this.field_41717.nextGaussian() * 0.0045,
@@ -60,8 +60,8 @@ public class class_3942 extends class_5783 {
          0.6 / var20 + 0.5 + this.field_41717.nextGaussian() * 0.0045
       );
       this.method_37215(var19);
-      this.rotationYaw = (float)(class_9299.method_42821(var19.field_7336, var19.field_7334) * 180.0F / (float)Math.PI);
-      this.rotationPitch = (float)(class_9299.method_42821(var19.field_7333, (double)class_9299.method_42842(method_37266(var19))) * 180.0F / (float)Math.PI);
+      this.rotationYaw = (float)(MathHelper.method_42821(var19.field_7336, var19.field_7334) * 180.0F / (float)Math.PI);
+      this.rotationPitch = (float)(MathHelper.method_42821(var19.field_7333, (double) MathHelper.sqrt(method_37266(var19))) * 180.0F / (float)Math.PI);
       this.prevRotationYaw = this.rotationYaw;
       this.field_41762 = this.rotationPitch;
    }
@@ -83,7 +83,7 @@ public class class_3942 extends class_5783 {
          this.field_19145 = this.method_37372().<Boolean>method_36640(field_19150);
          if (this.field_19145) {
             this.method_37214(
-               this.method_37098().field_7336, (double)(-0.4F * class_9299.method_42819(this.field_19140, 0.6F, 1.0F)), this.method_37098().field_7334
+               this.method_37098().field_7336, (double)(-0.4F * MathHelper.nextFloat(this.field_19140, 0.6F, 1.0F)), this.method_37098().field_7334
             );
          }
       }
@@ -191,7 +191,7 @@ public class class_3942 extends class_5783 {
 
             this.method_37226(class_7412.field_37839, this.method_37098());
             this.method_26167();
-            if (this.field_19135 == class_2753.field_13471 && (this.onGround || this.field_41744)) {
+            if (this.field_19135 == class_2753.field_13471 && (this.onGround || this.collidedHorizontally)) {
                this.method_37215(class_1343.field_7335);
             }
 
@@ -261,7 +261,7 @@ public class class_3942 extends class_5783 {
       if (this.field_19142 <= 0) {
          if (this.field_19137 <= 0) {
             if (this.field_19147 <= 0) {
-               this.field_19147 = class_9299.method_42824(this.field_41717, 100, 600);
+               this.field_19147 = MathHelper.nextInt(this.field_41717, 100, 600);
                this.field_19147 = this.field_19147 - this.field_19138 * 20 * 5;
             } else {
                this.field_19147 -= var5;
@@ -279,11 +279,11 @@ public class class_3942 extends class_5783 {
                }
 
                if (this.field_41717.nextFloat() < var9) {
-                  float var10 = class_9299.method_42819(this.field_41717, 0.0F, 360.0F) * (float) (Math.PI / 180.0);
-                  float var11 = class_9299.method_42819(this.field_41717, 25.0F, 60.0F);
-                  double var12 = this.getPosX() + (double)(class_9299.method_42818(var10) * var11 * 0.1F);
-                  double var14 = (double)((float)class_9299.method_42847(this.method_37309()) + 1.0F);
-                  double var16 = this.getPosZ() + (double)(class_9299.method_42840(var10) * var11 * 0.1F);
+                  float var10 = MathHelper.nextFloat(this.field_41717, 0.0F, 360.0F) * (float) (Math.PI / 180.0);
+                  float var11 = MathHelper.nextFloat(this.field_41717, 25.0F, 60.0F);
+                  double var12 = this.getPosX() + (double)(MathHelper.sin(var10) * var11 * 0.1F);
+                  double var14 = (double)((float) MathHelper.floor(this.method_37309()) + 1.0F);
+                  double var16 = this.getPosZ() + (double)(MathHelper.cos(var10) * var11 * 0.1F);
                   class_2522 var18 = var4.method_28262(new BlockPos(var12, var14 - 1.0, var16));
                   if (var18.method_8350(class_4783.field_23900)) {
                      var4.method_28957(class_3090.field_15346, var12, var14, var16, 2 + this.field_41717.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
@@ -291,14 +291,14 @@ public class class_3942 extends class_5783 {
                }
 
                if (this.field_19147 <= 0) {
-                  this.field_19136 = class_9299.method_42819(this.field_41717, 0.0F, 360.0F);
-                  this.field_19137 = class_9299.method_42824(this.field_41717, 20, 80);
+                  this.field_19136 = MathHelper.nextFloat(this.field_41717, 0.0F, 360.0F);
+                  this.field_19137 = MathHelper.nextInt(this.field_41717, 20, 80);
                }
             }
          } else {
             this.field_19137 -= var5;
             if (this.field_19137 <= 0) {
-               this.method_37155(class_463.field_2403, 0.25F, 1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.4F);
+               this.method_37155(SoundEvents.field_2403, 0.25F, 1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.4F);
                double var7 = this.method_37309() + 0.5;
                var4.method_28957(
                   class_3090.field_15340,
@@ -322,15 +322,15 @@ public class class_3942 extends class_5783 {
                   (double)this.method_37086(),
                   0.2F
                );
-               this.field_19142 = class_9299.method_42824(this.field_41717, 20, 40);
+               this.field_19142 = MathHelper.nextInt(this.field_41717, 20, 40);
                this.method_37372().method_36633(field_19150, true);
             } else {
                this.field_19136 = (float)((double)this.field_19136 + this.field_41717.nextGaussian() * 4.0);
                float var21 = this.field_19136 * (float) (Math.PI / 180.0);
-               float var22 = class_9299.method_42818(var21);
-               float var23 = class_9299.method_42840(var21);
+               float var22 = MathHelper.sin(var21);
+               float var23 = MathHelper.cos(var21);
                double var24 = this.getPosX() + (double)(var22 * (float)this.field_19137 * 0.1F);
-               double var25 = (double)((float)class_9299.method_42847(this.method_37309()) + 1.0F);
+               double var25 = (double)((float) MathHelper.floor(this.method_37309()) + 1.0F);
                double var26 = this.getPosZ() + (double)(var23 * (float)this.field_19137 * 0.1F);
                class_2522 var27 = var4.method_28262(new BlockPos(var24, var25 - 1.0, var26));
                if (var27.method_8350(class_4783.field_23900)) {

@@ -49,7 +49,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
 
    @Override
    public void method_17353() {
-      int var3 = this.field_18358.method_12173();
+      int var3 = this.field_18358.getX();
       int var4 = this.field_18358.method_12165();
       int var5 = this.field_18358.method_12185();
       this.field_36615++;
@@ -57,7 +57,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
       this.field_36618 = this.field_36616;
       float var6 = 0.1F;
       if (this.field_36620 > 0 && this.field_36616 == 0.0F) {
-         this.method_32634(class_463.field_2528);
+         this.method_32634(SoundEvents.field_2528);
       }
 
       if (this.field_36620 == 0 && this.field_36616 > 0.0F || this.field_36620 > 0 && this.field_36616 < 1.0F) {
@@ -74,7 +74,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
 
          float var8 = 0.5F;
          if (this.field_36616 < 0.5F && var7 >= 0.5F) {
-            this.method_32634(class_463.field_2254);
+            this.method_32634(SoundEvents.field_2254);
          }
 
          if (this.field_36616 < 0.0F) {
@@ -117,10 +117,10 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
       return var7;
    }
 
-   private void method_32634(class_8461 var1) {
+   private void method_32634(SoundEvent var1) {
       class_9264 var4 = this.method_17403().<class_9264>method_10313(class_6942.field_35695);
       if (var4 != class_9264.field_47279) {
-         double var5 = (double)this.field_18358.method_12173() + 0.5;
+         double var5 = (double)this.field_18358.getX() + 0.5;
          double var7 = (double)this.field_18358.method_12165() + 0.5;
          double var9 = (double)this.field_18358.method_12185() + 0.5;
          if (var4 == class_9264.field_47277) {
@@ -184,7 +184,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
 
    @Override
    public float method_17874(float var1) {
-      return class_9299.method_42795(var1, this.field_36618, this.field_36616);
+      return MathHelper.method_42795(var1, this.field_36618, this.field_36616);
    }
 
    public static int method_32635(class_6163 var0, BlockPos var1) {

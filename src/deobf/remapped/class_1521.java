@@ -12,7 +12,7 @@ public class class_1521 {
    private static final int field_8092 = (int)Math.pow(16.0, 2.0);
    private static final Direction[] field_8091 = Direction.values();
    private final BitSet field_8090 = new BitSet(4096);
-   private static final int[] field_8093 = Util.<int[]>method_44659(new int[1352], var0 -> {
+   private static final int[] field_8093 = Util.<int[]>make(new int[1352], var0 -> {
       boolean var3 = false;
       byte var4 = 15;
       int var5 = 0;
@@ -35,7 +35,7 @@ public class class_1521 {
    }
 
    private static int method_6948(BlockPos var0) {
-      return method_6947(var0.method_12173() & 15, var0.method_12165() & 15, var0.method_12185() & 15);
+      return method_6947(var0.getX() & 15, var0.method_12165() & 15, var0.method_12185() & 15);
    }
 
    private static int method_6947(int var0, int var1, int var2) {

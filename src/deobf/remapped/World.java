@@ -82,7 +82,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    private static boolean method_29592(BlockPos var0) {
-      return var0.method_12173() >= -30000000 && var0.method_12185() >= -30000000 && var0.method_12173() < 30000000 && var0.method_12185() < 30000000;
+      return var0.getX() >= -30000000 && var0.method_12185() >= -30000000 && var0.getX() < 30000000 && var0.method_12185() < 30000000;
    }
 
    private static boolean method_29595(int var0) {
@@ -98,7 +98,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    public class_2654 method_29542(BlockPos var1) {
-      return this.method_29554(var1.method_12173() >> 4, var1.method_12185() >> 4);
+      return this.method_29554(var1.getX() >> 4, var1.method_12185() >> 4);
    }
 
    public class_2654 method_29554(int var1, int var2) {
@@ -299,7 +299,7 @@ public abstract class World implements class_9379, AutoCloseable {
    @Override
    public class_2522 method_28262(BlockPos var1) {
       if (!method_29556(var1)) {
-         class_2654 var4 = this.method_29554(var1.method_12173() >> 4, var1.method_12185() >> 4);
+         class_2654 var4 = this.method_29554(var1.getX() >> 4, var1.method_12185() >> 4);
          return var4.method_28262(var1);
       } else {
          return class_4783.field_23424.method_29260();
@@ -325,15 +325,15 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public void method_43359(PlayerEntity var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6) {
-      this.method_29528(var1, (double)var2.method_12173() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5, var3, var4, var5, var6);
+   public void method_43359(PlayerEntity var1, BlockPos var2, SoundEvent var3, class_562 var4, float var5, float var6) {
+      this.method_29528(var1, (double)var2.getX() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5, var3, var4, var5, var6);
    }
 
-   public abstract void method_29528(PlayerEntity var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11);
+   public abstract void method_29528(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, class_562 var9, float var10, float var11);
 
-   public abstract void method_29540(PlayerEntity var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6);
+   public abstract void method_29540(PlayerEntity var1, Entity var2, SoundEvent var3, class_562 var4, float var5, float var6);
 
-   public void method_29527(double var1, double var3, double var5, class_8461 var7, class_562 var8, float var9, float var10, boolean var11) {
+   public void method_29527(double var1, double var3, double var5, SoundEvent var7, class_562 var8, float var9, float var10, boolean var11) {
    }
 
    @Override
@@ -565,12 +565,12 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    public boolean method_29585(BlockPos var1) {
-      return !method_29556(var1) ? this.method_43363().method_14816(var1.method_12173() >> 4, var1.method_12185() >> 4) : false;
+      return !method_29556(var1) ? this.method_43363().method_14816(var1.getX() >> 4, var1.method_12185() >> 4) : false;
    }
 
    public boolean method_29566(BlockPos var1, Entity var2, Direction var3) {
       if (!method_29556(var1)) {
-         class_5990 var6 = this.method_22555(var1.method_12173() >> 4, var1.method_12185() >> 4, class_7335.field_37514, false);
+         class_5990 var6 = this.method_22555(var1.getX() >> 4, var1.method_12185() >> 4, class_7335.field_37514, false);
          return var6 != null ? var6.method_28262(var1).method_8338(this, var1, var2, var3) : false;
       } else {
          return false;
@@ -584,7 +584,7 @@ public abstract class World implements class_9379, AutoCloseable {
    public void method_29541() {
       double var3 = 1.0 - (double)(this.method_29578(1.0F) * 5.0F) / 16.0;
       double var5 = 1.0 - (double)(this.method_29601(1.0F) * 5.0F) / 16.0;
-      double var7 = 0.5 + 2.0 * class_9299.method_42827((double)class_9299.method_42840(this.method_13578(1.0F) * (float) (Math.PI * 2)), -0.25, 0.25);
+      double var7 = 0.5 + 2.0 * MathHelper.clamp((double) MathHelper.cos(this.method_13578(1.0F) * (float) (Math.PI * 2)), -0.25, 0.25);
       this.field_33034 = (int)((1.0 - var7 * var3 * var5) * 11.0);
    }
 
@@ -616,10 +616,10 @@ public abstract class World implements class_9379, AutoCloseable {
    public List<Entity> method_25867(Entity var1, Box var2, Predicate<? super Entity> var3) {
       this.method_29599().method_16055("getEntities");
       ArrayList var6 = Lists.newArrayList();
-      int var7 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
-      int var8 = class_9299.method_42847((var2.field_19940 + 2.0) / 16.0);
-      int var9 = class_9299.method_42847((var2.field_19938 - 2.0) / 16.0);
-      int var10 = class_9299.method_42847((var2.field_19942 + 2.0) / 16.0);
+      int var7 = MathHelper.floor((var2.field_19941 - 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.field_19940 + 2.0) / 16.0);
+      int var9 = MathHelper.floor((var2.field_19938 - 2.0) / 16.0);
+      int var10 = MathHelper.floor((var2.field_19942 + 2.0) / 16.0);
       class_3232 var11 = this.method_43363();
 
       for (int var12 = var7; var12 <= var8; var12++) {
@@ -636,10 +636,10 @@ public abstract class World implements class_9379, AutoCloseable {
 
    public <T extends Entity> List<T> method_29583(EntityType<T> var1, Box var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getEntities");
-      int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
-      int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);
-      int var8 = class_9299.method_42847((var2.field_19938 - 2.0) / 16.0);
-      int var9 = class_9299.method_42815((var2.field_19942 + 2.0) / 16.0);
+      int var6 = MathHelper.floor((var2.field_19941 - 2.0) / 16.0);
+      int var7 = MathHelper.ceil((var2.field_19940 + 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.field_19938 - 2.0) / 16.0);
+      int var9 = MathHelper.ceil((var2.field_19942 + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
 
       for (int var11 = var6; var11 < var7; var11++) {
@@ -657,10 +657,10 @@ public abstract class World implements class_9379, AutoCloseable {
    @Override
    public <T extends Entity> List<T> method_25869(Class<? extends T> var1, Box var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getEntities");
-      int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
-      int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);
-      int var8 = class_9299.method_42847((var2.field_19938 - 2.0) / 16.0);
-      int var9 = class_9299.method_42815((var2.field_19942 + 2.0) / 16.0);
+      int var6 = MathHelper.floor((var2.field_19941 - 2.0) / 16.0);
+      int var7 = MathHelper.ceil((var2.field_19940 + 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.field_19938 - 2.0) / 16.0);
+      int var9 = MathHelper.ceil((var2.field_19942 + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       class_3232 var11 = this.method_43363();
 
@@ -679,10 +679,10 @@ public abstract class World implements class_9379, AutoCloseable {
    @Override
    public <T extends Entity> List<T> method_25875(Class<? extends T> var1, Box var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getLoadedEntities");
-      int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
-      int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);
-      int var8 = class_9299.method_42847((var2.field_19938 - 2.0) / 16.0);
-      int var9 = class_9299.method_42815((var2.field_19942 + 2.0) / 16.0);
+      int var6 = MathHelper.floor((var2.field_19941 - 2.0) / 16.0);
+      int var7 = MathHelper.ceil((var2.field_19940 + 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.field_19938 - 2.0) / 16.0);
+      int var9 = MathHelper.ceil((var2.field_19942 + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       class_3232 var11 = this.method_43363();
 
@@ -819,12 +819,12 @@ public abstract class World implements class_9379, AutoCloseable {
       return this.field_33035;
    }
 
-   public class_291 method_29537() {
+   public GameRules getGameRules() {
       return this.field_33035.method_8653();
    }
 
    public float method_29601(float var1) {
-      return class_9299.method_42795(var1, this.field_33040, this.field_33045) * this.method_29578(var1);
+      return MathHelper.method_42795(var1, this.field_33040, this.field_33045) * this.method_29578(var1);
    }
 
    public void method_29560(float var1) {
@@ -833,7 +833,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    public float method_29578(float var1) {
-      return class_9299.method_42795(var1, this.field_33049, this.field_33050);
+      return MathHelper.method_42795(var1, this.field_33049, this.field_33050);
    }
 
    public void method_29582(float var1) {

@@ -7,7 +7,7 @@ public abstract class class_4171<T extends Entity, M extends class_6521<T>> {
       this.field_20302 = var1;
    }
 
-   public static <T extends class_5834> void method_19349(
+   public static <T extends LivingEntity> void method_19349(
       class_6521<T> var0,
       class_6521<T> var1,
       Identifier var2,
@@ -33,7 +33,7 @@ public abstract class class_4171<T extends Entity, M extends class_6521<T>> {
       }
    }
 
-   public static <T extends class_5834> void method_19348(
+   public static <T extends LivingEntity> void method_19348(
            class_6521<T> var0, Identifier var1, class_7966 var2, class_2565 var3, int var4, T var5, float var6, float var7, float var8
    ) {
       class_7907 var11 = var3.method_11645(RenderLayer.method_16755(var1));

@@ -11,7 +11,7 @@ public class class_8008 extends class_4641 {
 
    public class_8008(World var1, BlockPos var2) {
       super(EntityType.field_34275, var1, var2);
-      this.method_37256((double)var2.method_12173() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5);
+      this.method_37256((double)var2.getX() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5);
       float var5 = 0.125F;
       float var6 = 0.1875F;
       float var7 = 0.25F;
@@ -30,13 +30,13 @@ public class class_8008 extends class_4641 {
 
    @Override
    public void method_37256(double var1, double var3, double var5) {
-      super.method_37256((double)class_9299.method_42847(var1) + 0.5, (double)class_9299.method_42847(var3) + 0.5, (double)class_9299.method_42847(var5) + 0.5);
+      super.method_37256((double) MathHelper.floor(var1) + 0.5, (double) MathHelper.floor(var3) + 0.5, (double) MathHelper.floor(var5) + 0.5);
    }
 
    @Override
    public void method_21474() {
       this.method_37222(
-         (double)this.field_22661.method_12173() + 0.5, (double)this.field_22661.method_12165() + 0.5, (double)this.field_22661.method_12185() + 0.5
+         (double)this.field_22661.getX() + 0.5, (double)this.field_22661.method_12165() + 0.5, (double)this.field_22661.method_12185() + 0.5
       );
    }
 
@@ -66,7 +66,7 @@ public class class_8008 extends class_4641 {
 
    @Override
    public void method_21475(Entity var1) {
-      this.method_37155(class_463.field_2211, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2211, 1.0F, 1.0F);
    }
 
    @Override
@@ -125,7 +125,7 @@ public class class_8008 extends class_4641 {
    }
 
    public static class_8008 method_36331(World var0, BlockPos var1) {
-      int var4 = var1.method_12173();
+      int var4 = var1.getX();
       int var5 = var1.method_12165();
       int var6 = var1.method_12185();
 
@@ -146,7 +146,7 @@ public class class_8008 extends class_4641 {
 
    @Override
    public void method_21471() {
-      this.method_37155(class_463.field_2543, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2543, 1.0F, 1.0F);
    }
 
    @Override

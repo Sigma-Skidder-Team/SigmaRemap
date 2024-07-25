@@ -28,7 +28,7 @@ public class class_9552 extends class_5783 {
       this(EntityType.field_34271, var1);
       this.method_26159(var2);
       BlockPos var7 = var2.method_37075();
-      double var8 = (double)var7.method_12173() + 0.5;
+      double var8 = (double)var7.getX() + 0.5;
       double var10 = (double)var7.method_12165() + 0.5;
       double var12 = (double)var7.method_12185() + 0.5;
       this.method_37144(var8, var10, var12, this.rotationYaw, this.rotationPitch);
@@ -93,7 +93,7 @@ public class class_9552 extends class_5783 {
          var6 = this.method_37075().method_6100();
       }
 
-      double var7 = (double)var6.method_12173() + 0.5;
+      double var7 = (double)var6.getX() + 0.5;
       double var9 = (double)var6.method_12165() + var4;
       double var11 = (double)var6.method_12185() + 0.5;
       Direction var13 = null;
@@ -101,9 +101,9 @@ public class class_9552 extends class_5783 {
          BlockPos var22 = this.method_37075();
          ArrayList var23 = Lists.newArrayList();
          if (var1 != class_9249.field_47215) {
-            if (var22.method_12173() < var6.method_12173() && this.world.method_22548(var22.method_6090())) {
+            if (var22.getX() < var6.getX() && this.world.method_22548(var22.method_6090())) {
                var23.add(Direction.field_804);
-            } else if (var22.method_12173() > var6.method_12173() && this.world.method_22548(var22.method_6108())) {
+            } else if (var22.getX() > var6.getX() && this.world.method_22548(var22.method_6108())) {
                var23.add(Direction.field_809);
             }
          }
@@ -142,7 +142,7 @@ public class class_9552 extends class_5783 {
       double var14 = var7 - this.getPosX();
       double var16 = var9 - this.method_37309();
       double var18 = var11 - this.getPosZ();
-      double var20 = (double)class_9299.method_42842(var14 * var14 + var16 * var16 + var18 * var18);
+      double var20 = (double) MathHelper.sqrt(var14 * var14 + var16 * var16 + var18 * var18);
       if (var20 != 0.0) {
          this.field_48604 = var14 / var20 * 0.15;
          this.field_48598 = var16 / var20 * 0.15;
@@ -182,9 +182,9 @@ public class class_9552 extends class_5783 {
                this.method_37215(this.method_37098().method_6214(0.0, -0.04, 0.0));
             }
          } else {
-            this.field_48604 = class_9299.method_42827(this.field_48604 * 1.025, -1.0, 1.0);
-            this.field_48598 = class_9299.method_42827(this.field_48598 * 1.025, -1.0, 1.0);
-            this.field_48597 = class_9299.method_42827(this.field_48597 * 1.025, -1.0, 1.0);
+            this.field_48604 = MathHelper.clamp(this.field_48604 * 1.025, -1.0, 1.0);
+            this.field_48598 = MathHelper.clamp(this.field_48598 * 1.025, -1.0, 1.0);
+            this.field_48597 = MathHelper.clamp(this.field_48597 * 1.025, -1.0, 1.0);
             class_1343 var3 = this.method_37098();
             this.method_37215(
                var3.method_6214(
@@ -217,7 +217,7 @@ public class class_9552 extends class_5783 {
                class_9249 var5 = this.field_48599.method_1029();
                if (!this.world.method_29518(var4.method_6098(this.field_48599), this)) {
                   BlockPos var6 = this.field_48601.method_37075();
-                  if (var5 == class_9249.field_47215 && var4.method_12173() == var6.method_12173()
+                  if (var5 == class_9249.field_47215 && var4.getX() == var6.getX()
                      || var5 == class_9249.field_47219 && var4.method_12185() == var6.method_12185()
                      || var5 == class_9249.field_47216 && var4.method_12165() == var6.method_12165()) {
                      this.method_44070(var5);
@@ -280,7 +280,7 @@ public class class_9552 extends class_5783 {
    public void method_26165(class_9529 var1) {
       super.method_26165(var1);
       ((class_6331)this.world).method_28957(class_3090.field_15339, this.getPosX(), this.method_37309(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
-      this.method_37155(class_463.field_2709, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2709, 1.0F, 1.0F);
    }
 
    @Override
@@ -297,7 +297,7 @@ public class class_9552 extends class_5783 {
    @Override
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.world.field_33055) {
-         this.method_37155(class_463.field_2348, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2348, 1.0F, 1.0F);
          ((class_6331)this.world)
             .method_28957(class_3090.field_15322, this.getPosX(), this.method_37309(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
          this.method_37204();

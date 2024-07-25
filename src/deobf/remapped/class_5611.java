@@ -27,7 +27,7 @@ public class class_5611 extends class_2255<class_3756> {
       float var9 = (float)var1.field_18349 + var2;
       if (var1.method_17380()) {
          float var10 = var1.method_17376(var2) * (180.0F / (float)Math.PI);
-         float var11 = class_9299.method_42818(var9 * 0.1F) / 2.0F + 0.5F;
+         float var11 = MathHelper.sin(var9 * 0.1F) / 2.0F + 0.5F;
          var11 = var11 * var11 + var11;
          var3.method_36063();
          var3.method_36065(0.5, (double)(0.3F + var11 * 0.2F), 0.5);

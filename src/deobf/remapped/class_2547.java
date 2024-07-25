@@ -53,12 +53,12 @@ public class class_2547 extends class_7429 implements class_2354 {
 
    @Override
    public Box method_37210() {
-      return this.method_37241().method_18899(3.0, 0.0, 3.0);
+      return this.getBoundingBox().method_18899(3.0, 0.0, 3.0);
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (this.world.field_33055 && this.method_37109()) {
          this.field_12620--;
          if (this.field_12620 < 0) {
@@ -84,7 +84,7 @@ public class class_2547 extends class_7429 implements class_2354 {
             }
 
             this.world
-               .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_1956, this.method_37197(), 1.0F, 1.0F, false);
+               .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), SoundEvents.field_1956, this.method_37197(), 1.0F, 1.0F, false);
          } else if (this.field_29645 == this.field_29662 - 1) {
             this.field_12620 = 3;
 
@@ -97,8 +97,8 @@ public class class_2547 extends class_7429 implements class_2354 {
    }
 
    @Override
-   public class_8461 method_18591() {
-      return class_463.field_2727;
+   public SoundEvent getRaidLossSound() {
+      return SoundEvents.field_2727;
    }
 
    public class_1343[] method_11597(float var1) {
@@ -122,30 +122,30 @@ public class class_2547 extends class_7429 implements class_2354 {
       if (super.method_37344(var1)) {
          return true;
       } else {
-         return var1 instanceof class_5834 && ((class_5834)var1).method_26550() == class_2780.field_13576
+         return var1 instanceof LivingEntity && ((LivingEntity)var1).method_26550() == class_2780.field_13576
             ? this.method_37095() == null && var1.method_37095() == null
             : false;
       }
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2727;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2727;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2386;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2386;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2888;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2888;
    }
 
    @Override
-   public class_8461 method_33826() {
-      return class_463.field_2521;
+   public SoundEvent method_33826() {
+      return SoundEvents.field_2521;
    }
 
    @Override
@@ -153,15 +153,15 @@ public class class_2547 extends class_7429 implements class_2354 {
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       ItemStack var5 = this.method_26475(this.method_26617(class_8462.method_38934(this, class_4897.field_25206)));
       class_6749 var6 = class_8462.method_38930(this, var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method_37080(0.3333333333333333) - var6.method_37309();
       double var11 = var1.getPosZ() - this.getPosZ();
-      double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
+      double var13 = (double) MathHelper.sqrt(var7 * var7 + var11 * var11);
       var6.method_26161(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method_43370().method_2097() * 4));
-      this.method_37155(class_463.field_2526, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
+      this.method_37155(SoundEvents.field_2526, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
       this.world.method_7509(var6);
    }
 

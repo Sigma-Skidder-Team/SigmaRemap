@@ -9,7 +9,7 @@ public enum class_6814 implements class_3743, class_179 {
    field_35151;
 
    private static final Logger field_35148 = LogManager.getLogger();
-   private static final Int2IntMap field_35149 = Util.<Int2IntMap>method_44659(new Int2IntOpenHashMap(), var0 -> {
+   private static final Int2IntMap field_35149 = Util.<Int2IntMap>make(new Int2IntOpenHashMap(), var0 -> {
       var0.put(1, 129);
       var0.put(2, 130);
       var0.put(3, 131);

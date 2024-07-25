@@ -341,7 +341,7 @@ public class class_5056 implements class_7203, class_5684 {
 
    @Override
    public void method_4988(BlockPos var1, float var2) {
-      this.field_26152 = var1.method_12173();
+      this.field_26152 = var1.getX();
       this.field_26135 = var1.method_12165();
       this.field_26138 = var1.method_12185();
       this.field_26137 = var2;
@@ -438,7 +438,7 @@ public class class_5056 implements class_7203, class_5684 {
    }
 
    @Override
-   public class_291 method_8653() {
+   public GameRules method_8653() {
       return this.field_26154.method_28709();
    }
 

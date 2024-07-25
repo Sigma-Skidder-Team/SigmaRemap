@@ -21,11 +21,11 @@ public class class_1008 extends class_2833 {
          double var6 = var3.field_7336 / var4;
          double var8 = var3.field_7333 / var4;
          double var10 = var3.field_7334 / var4;
-         float var12 = (float)(class_9299.method_42821(var3.field_7334, var3.field_7336) * 180.0F / (float)Math.PI) - 90.0F;
+         float var12 = (float)(MathHelper.method_42821(var3.field_7334, var3.field_7336) * 180.0F / (float)Math.PI) - 90.0F;
          this.field_5182.rotationYaw = this.method_12882(this.field_5182.rotationYaw, var12, 90.0F);
          this.field_5182.field_29605 = this.field_5182.rotationYaw;
          float var13 = (float)(this.field_13885 * this.field_5182.method_26575(Attributes.MOVEMENT_SPEED));
-         float var14 = class_9299.method_42795(0.125F, this.field_5182.method_26423(), var13);
+         float var14 = MathHelper.method_42795(0.125F, this.field_5182.method_26423(), var13);
          this.field_5182.method_26461(var14);
          double var15 = Math.sin((double)(this.field_5182.field_41697 + this.field_5182.method_37145()) * 0.5) * 0.05;
          double var17 = Math.cos((double)(this.field_5182.rotationYaw * (float) (Math.PI / 180.0)));
@@ -49,9 +49,9 @@ public class class_1008 extends class_2833 {
          this.field_5182
             .method_26865()
             .method_17231(
-               class_9299.method_42794(0.125, var30, var24),
-               class_9299.method_42794(0.125, var32, var26),
-               class_9299.method_42794(0.125, var34, var28),
+               MathHelper.lerp(0.125, var30, var24),
+               MathHelper.lerp(0.125, var32, var26),
+               MathHelper.lerp(0.125, var34, var28),
                10.0F,
                40.0F
             );

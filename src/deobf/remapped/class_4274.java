@@ -14,7 +14,7 @@ public class class_4274 implements Iterator<BlockPos> {
    private static final int field_20695 = 2;
 
    public class_4274(BlockPos var1, BlockPos var2, int var3, int var4) {
-      boolean var7 = var1.method_12173() > var2.method_12173();
+      boolean var7 = var1.getX() > var2.getX();
       boolean var8 = var1.method_12165() > var2.method_12165();
       boolean var9 = var1.method_12185() > var2.method_12185();
       var1 = this.method_19875(var1, var7, var8, var9);
@@ -23,7 +23,7 @@ public class class_4274 implements Iterator<BlockPos> {
       this.field_20696 = !var8 ? 1 : -1;
       this.field_20698 = !var9 ? 1 : -1;
       class_1343 var10 = new class_1343(
-         (double)(var2.method_12173() - var1.method_12173()),
+         (double)(var2.getX() - var1.getX()),
          (double)(var2.method_12165() - var1.method_12165()),
          (double)(var2.method_12185() - var1.method_12185())
       );
@@ -39,25 +39,25 @@ public class class_4274 implements Iterator<BlockPos> {
       double var25 = Math.abs(var23);
       if (var25 >= var20 && var25 >= var15) {
          this.field_20697 = 2;
-         BlockPos var37 = new BlockPos(var1.method_12185(), var1.method_12165() - var3, var1.method_12173() - var4);
-         BlockPos var39 = new BlockPos(var2.method_12185(), var1.method_12165() + var3 + 1, var1.method_12173() + var4 + 1);
+         BlockPos var37 = new BlockPos(var1.method_12185(), var1.method_12165() - var3, var1.getX() - var4);
+         BlockPos var39 = new BlockPos(var2.method_12185(), var1.method_12165() + var3 + 1, var1.getX() + var4 + 1);
          int var41 = var2.method_12185() - var1.method_12185();
          double var43 = (double)(var2.method_12165() - var1.method_12165()) / (1.0 * (double)var41);
-         double var45 = (double)(var2.method_12173() - var1.method_12173()) / (1.0 * (double)var41);
+         double var45 = (double)(var2.getX() - var1.getX()) / (1.0 * (double)var41);
          this.field_20694 = new class_739(var37, var39, var43, var45);
       } else if (var20 >= var15 && var20 >= var25) {
          this.field_20697 = 1;
-         BlockPos var36 = new BlockPos(var1.method_12165(), var1.method_12173() - var3, var1.method_12185() - var4);
-         BlockPos var38 = new BlockPos(var2.method_12165(), var1.method_12173() + var3 + 1, var1.method_12185() + var4 + 1);
+         BlockPos var36 = new BlockPos(var1.method_12165(), var1.getX() - var3, var1.method_12185() - var4);
+         BlockPos var38 = new BlockPos(var2.method_12165(), var1.getX() + var3 + 1, var1.method_12185() + var4 + 1);
          int var40 = var2.method_12165() - var1.method_12165();
-         double var42 = (double)(var2.method_12173() - var1.method_12173()) / (1.0 * (double)var40);
+         double var42 = (double)(var2.getX() - var1.getX()) / (1.0 * (double)var40);
          double var44 = (double)(var2.method_12185() - var1.method_12185()) / (1.0 * (double)var40);
          this.field_20694 = new class_739(var36, var38, var42, var44);
       } else {
          this.field_20697 = 0;
-         BlockPos var27 = new BlockPos(var1.method_12173(), var1.method_12165() - var3, var1.method_12185() - var4);
-         BlockPos var28 = new BlockPos(var2.method_12173(), var1.method_12165() + var3 + 1, var1.method_12185() + var4 + 1);
-         int var29 = var2.method_12173() - var1.method_12173();
+         BlockPos var27 = new BlockPos(var1.getX(), var1.method_12165() - var3, var1.method_12185() - var4);
+         BlockPos var28 = new BlockPos(var2.getX(), var1.method_12165() + var3 + 1, var1.method_12185() + var4 + 1);
+         int var29 = var2.getX() - var1.getX();
          double var30 = (double)(var2.method_12165() - var1.method_12165()) / (1.0 * (double)var29);
          double var32 = (double)(var2.method_12185() - var1.method_12185()) / (1.0 * (double)var29);
          this.field_20694 = new class_739(var27, var28, var30, var32);
@@ -66,15 +66,15 @@ public class class_4274 implements Iterator<BlockPos> {
 
    private BlockPos method_19875(BlockPos var1, boolean var2, boolean var3, boolean var4) {
       if (var2) {
-         var1 = new BlockPos(-var1.method_12173(), var1.method_12165(), var1.method_12185());
+         var1 = new BlockPos(-var1.getX(), var1.method_12165(), var1.method_12185());
       }
 
       if (var3) {
-         var1 = new BlockPos(var1.method_12173(), -var1.method_12165(), var1.method_12185());
+         var1 = new BlockPos(var1.getX(), -var1.method_12165(), var1.method_12185());
       }
 
       if (var4) {
-         var1 = new BlockPos(var1.method_12173(), var1.method_12165(), -var1.method_12185());
+         var1 = new BlockPos(var1.getX(), var1.method_12165(), -var1.method_12185());
       }
 
       return var1;
@@ -90,19 +90,19 @@ public class class_4274 implements Iterator<BlockPos> {
       switch (this.field_20697) {
          case 0:
             this.field_20700
-               .method_2548(var3.method_12173() * this.field_20691, var3.method_12165() * this.field_20696, var3.method_12185() * this.field_20698);
+               .method_2548(var3.getX() * this.field_20691, var3.method_12165() * this.field_20696, var3.method_12185() * this.field_20698);
             return this.field_20700;
          case 1:
             this.field_20700
-               .method_2548(var3.method_12165() * this.field_20691, var3.method_12173() * this.field_20696, var3.method_12185() * this.field_20698);
+               .method_2548(var3.method_12165() * this.field_20691, var3.getX() * this.field_20696, var3.method_12185() * this.field_20698);
             return this.field_20700;
          case 2:
             this.field_20700
-               .method_2548(var3.method_12185() * this.field_20691, var3.method_12165() * this.field_20696, var3.method_12173() * this.field_20698);
+               .method_2548(var3.method_12185() * this.field_20691, var3.method_12165() * this.field_20696, var3.getX() * this.field_20698);
             return this.field_20700;
          default:
             this.field_20700
-               .method_2548(var3.method_12173() * this.field_20691, var3.method_12165() * this.field_20696, var3.method_12185() * this.field_20698);
+               .method_2548(var3.getX() * this.field_20691, var3.method_12165() * this.field_20696, var3.method_12185() * this.field_20698);
             return this.field_20700;
       }
    }

@@ -23,7 +23,7 @@ public class MineMenSpiderModule extends Module {
             .count()
          > 0L;
       if (var6) {
-         if (!client.thePlayer.field_41744) {
+         if (!client.thePlayer.collidedHorizontally) {
             if (!client.thePlayer.onGround) {
                var1.method_35235(!client.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
             }

@@ -25,7 +25,7 @@ public class class_1626 {
    }
 
    public int method_7250() {
-      return this.field_8466.method_1683().method_1295(class_291.field_1055);
+      return this.field_8466.method_1683().method_1295(GameRules.field_1055);
    }
 
    public CommandDispatcher<class_9155> method_7254() {

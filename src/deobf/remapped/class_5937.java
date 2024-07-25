@@ -148,7 +148,7 @@ public class class_5937 {
             boolean var25 = class_5286.method_24123(var8);
             this.field_30282.thePlayer.method_37140(var8.field_44472.isEmpty());
             double var26 = Math.min(1.0 / Math.abs(var21), 1.0 / Math.abs(var23));
-            boolean var28 = !this.field_30282.thePlayer.onGround && this.field_30282.thePlayer.field_41744 && var9 == class_4748.field_23004;
+            boolean var28 = !this.field_30282.thePlayer.onGround && this.field_30282.thePlayer.collidedHorizontally && var9 == class_4748.field_23004;
             if (!var28) {
                this.field_30282.thePlayer.field_29673 = (float)(var21 * var26);
                this.field_30282.thePlayer.field_29676 = (float)(var23 * var26);
@@ -167,7 +167,7 @@ public class class_5937 {
             boolean var33 = class_5286.method_24125();
             boolean var34 = this.field_30282
                   .theWorld
-                  .method_6680(this.field_30282.thePlayer, this.field_30282.thePlayer.method_37241().method_18918(var29, -1.0, var31))
+                  .method_6680(this.field_30282.thePlayer, this.field_30282.thePlayer.getBoundingBox().method_18918(var29, -1.0, var31))
                   .count()
                == 0L;
             boolean var35 = false;
@@ -233,7 +233,7 @@ public class class_5937 {
    }
 
    public boolean method_27148(BlockPos var1) {
-      float var4 = (float)var1.method_12173() + 0.5F;
+      float var4 = (float)var1.getX() + 0.5F;
       float var5 = (float)var1.method_12185() + 0.5F;
       double var6 = this.field_30282.thePlayer.method_37098().field_7336;
       double var8 = this.field_30282.thePlayer.method_37098().field_7334;
@@ -271,7 +271,7 @@ public class class_5937 {
                if (this.field_30282
                         .thePlayer
                         .method_37245()
-                        .method_6203((double)var10.method_12173(), (double)var10.method_12165(), (double)var10.method_12185())
+                        .method_6203((double)var10.getX(), (double)var10.method_12165(), (double)var10.method_12185())
                      < 9.0
                   && !class_7047.method_32366(var10)
                   && !this.field_30282.theWorld.method_28262(var10).method_8345()) {
@@ -288,7 +288,7 @@ public class class_5937 {
                         this.field_30282
                            .thePlayer
                            .method_37273(
-                              (double)this.field_30285.method_12173() + 0.5,
+                              (double)this.field_30285.getX() + 0.5,
                               (double)this.field_30285.method_12165() + 0.5,
                               (double)this.field_30285.method_12185() + 0.5
                            )
@@ -375,7 +375,7 @@ public class class_5937 {
                for (Long var8 : this.field_30284.get(0).field_44466) {
                   BlockPos var9 = BlockPos.method_6088(var8);
                   if (!this.field_30282.theWorld.method_28262(var9).method_8345()) {
-                     double var10 = (double)var9.method_12173() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
+                     double var10 = (double)var9.getX() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
                      double var12 = (double)var9.method_12165() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
                      double var14 = (double)var9.method_12185() - this.field_30282.gameRenderer.method_35949().method_41627().method_62();
                      class_8194 var16 = new class_8194(var10, var12, var14, var10 + 1.0, var12 + 1.0, var14 + 1.0);
@@ -386,7 +386,7 @@ public class class_5937 {
                for (Long var20 : this.field_30284.get(0).field_44470) {
                   BlockPos var21 = BlockPos.method_6088(var20);
                   if (this.field_30282.theWorld.method_28262(var21).method_8345()) {
-                     double var22 = (double)var21.method_12173() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
+                     double var22 = (double)var21.getX() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
                      double var23 = (double)var21.method_12165() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
                      double var24 = (double)var21.method_12185() - this.field_30282.gameRenderer.method_35949().method_41627().method_62();
                      class_8194 var25 = new class_8194(var22, var23, var24, var22 + 1.0, var23 + 1.0, var24 + 1.0);

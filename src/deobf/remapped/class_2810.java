@@ -236,7 +236,7 @@ public class class_2810 {
                   class_6953 var8 = this.field_13794.method_44981(this.field_13790, var7.method_17399());
                   if (var8 != null) {
                      BlockPos var9 = var8.method_31795(3, 3, 3).method_41966();
-                     if (this.field_13797 == null && var9.method_12173() == 0 && var9.method_12185() == 0) {
+                     if (this.field_13797 == null && var9.getX() == 0 && var9.method_12185() == 0) {
                         this.field_13797 = var9;
                      }
 
@@ -251,7 +251,7 @@ public class class_2810 {
 
       for (int var11 = var10; var11 >= 0; var11--) {
          class_6953 var12 = this.field_13794
-            .method_44981(this.field_13790, new BlockPos(class_8870.field_45348.method_12173(), var11, class_8870.field_45348.method_12185()));
+            .method_44981(this.field_13790, new BlockPos(class_8870.field_45348.getX(), var11, class_8870.field_45348.method_12185()));
          if (var12 != null) {
             if (this.field_13797 == null) {
                this.field_13797 = var12.method_31795(3, 3, 3).method_41966();
@@ -327,8 +327,8 @@ public class class_2810 {
    private void method_12765() {
       if (!this.field_13787.isEmpty()) {
          int var3 = this.field_13787.remove(this.field_13787.size() - 1);
-         int var4 = class_9299.method_42847(96.0 * Math.cos(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
-         int var5 = class_9299.method_42847(96.0 * Math.sin(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
+         int var4 = MathHelper.floor(96.0 * Math.cos(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
+         int var5 = MathHelper.floor(96.0 * Math.sin(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
          this.method_12787(new BlockPos(var4, 75, var5));
       }
    }

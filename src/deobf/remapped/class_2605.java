@@ -123,7 +123,7 @@ public class class_2605 extends class_8374<class_1439> {
 
       if (this.field_12879 >= 0) {
          this.method_11805(this.method_11807(this.field_12879));
-         this.field_40883.getSoundHandler().play(class_4949.method_22675(class_463.field_1995, 1.0F));
+         this.field_40883.getSoundHandler().play(class_4949.method_22675(SoundEvents.field_1995, 1.0F));
       }
    }
 

@@ -264,7 +264,7 @@ public abstract class Module {
 
                if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644
                   && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OtherActiveModsModule.class).getBooleanValueByName("Sound")) {
-                  MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(class_463.field_2870, 0.6F));
+                  MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(SoundEvents.field_2870, 0.6F));
                }
             }
 
@@ -278,7 +278,7 @@ public abstract class Module {
 
             if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644
                && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OtherActiveModsModule.class).getBooleanValueByName("Sound")) {
-               MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(class_463.field_2870, 0.7F));
+               MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(SoundEvents.field_2870, 0.7F));
             }
 
             this.onEnable();

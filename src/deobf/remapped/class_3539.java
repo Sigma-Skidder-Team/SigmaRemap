@@ -31,12 +31,12 @@ public class class_3539 extends WaterAvoidingRandomWalkingGoal {
       class_2921 var5 = new class_2921();
 
       for (BlockPos var7 : BlockPos.method_6075(
-         class_9299.method_42847(this.field_42465.getPosX() - 3.0),
-         class_9299.method_42847(this.field_42465.method_37309() - 6.0),
-         class_9299.method_42847(this.field_42465.getPosZ() - 3.0),
-         class_9299.method_42847(this.field_42465.getPosX() + 3.0),
-         class_9299.method_42847(this.field_42465.method_37309() + 6.0),
-         class_9299.method_42847(this.field_42465.getPosZ() + 3.0)
+         MathHelper.floor(this.field_42465.getPosX() - 3.0),
+         MathHelper.floor(this.field_42465.method_37309() - 6.0),
+         MathHelper.floor(this.field_42465.getPosZ() - 3.0),
+         MathHelper.floor(this.field_42465.getPosX() + 3.0),
+         MathHelper.floor(this.field_42465.method_37309() + 6.0),
+         MathHelper.floor(this.field_42465.getPosZ() + 3.0)
       )) {
          if (!var3.equals(var7)) {
             class_6414 var8 = this.field_42465.world.method_28262(var5.method_13371(var7, Direction.field_802)).method_8360();

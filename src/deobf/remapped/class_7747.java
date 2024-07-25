@@ -14,7 +14,7 @@ public class class_7747 extends class_4285<class_8342> {
          int var9 = 2 + var3.nextInt(2);
 
          for (BlockPos var11 : BlockPos.method_6076(var4.method_6104(-var8, 0, -var9), var4.method_6104(var8, 1, var9))) {
-            int var12 = var4.method_12173() - var11.method_12173();
+            int var12 = var4.getX() - var11.getX();
             int var13 = var4.method_12185() - var11.method_12185();
             if (!((float)(var12 * var12 + var13 * var13) <= var3.nextFloat() * 10.0F - var3.nextFloat() * 6.0F)) {
                if ((double)var3.nextFloat() < 0.031) {

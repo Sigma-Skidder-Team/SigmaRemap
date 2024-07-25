@@ -164,7 +164,7 @@ public class class_2654 implements class_5990 {
 
    @Override
    public class_2522 method_28262(BlockPos var1) {
-      int var4 = var1.method_12173();
+      int var4 = var1.getX();
       int var5 = var1.method_12165();
       int var6 = var1.method_12185();
       if (this.field_13074.method_29581()) {
@@ -199,7 +199,7 @@ public class class_2654 implements class_5990 {
 
    @Override
    public class_4774 method_28258(BlockPos var1) {
-      return this.method_11985(var1.method_12173(), var1.method_12165(), var1.method_12185());
+      return this.method_11985(var1.getX(), var1.method_12165(), var1.method_12185());
    }
 
    public class_4774 method_11985(int var1, int var2, int var3) {
@@ -223,7 +223,7 @@ public class class_2654 implements class_5990 {
    @Nullable
    @Override
    public class_2522 method_27348(BlockPos var1, class_2522 var2, boolean var3) {
-      int var6 = var1.method_12173() & 15;
+      int var6 = var1.getX() & 15;
       int var7 = var1.method_12165();
       int var8 = var1.method_12185() & 15;
       class_1315 var9 = this.field_13068[var7 >> 4];
@@ -298,14 +298,14 @@ public class class_2654 implements class_5990 {
    @Override
    public void method_27342(Entity var1) {
       this.field_13087 = true;
-      int var4 = class_9299.method_42847(var1.getPosX() / 16.0);
-      int var5 = class_9299.method_42847(var1.getPosZ() / 16.0);
+      int var4 = MathHelper.floor(var1.getPosX() / 16.0);
+      int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
       if (var4 != this.field_13067.field_10328 || var5 != this.field_13067.field_10327) {
          field_13080.warn("Wrong location! ({}, {}) should be ({}, {}), {}", var4, var5, this.field_13067.field_10328, this.field_13067.field_10327, var1);
          var1.field_41751 = true;
       }
 
-      int var6 = class_9299.method_42847(var1.method_37309() / 16.0);
+      int var6 = MathHelper.floor(var1.method_37309() / 16.0);
       if (var6 < 0) {
          var6 = 0;
       }
@@ -451,10 +451,10 @@ public class class_2654 implements class_5990 {
    }
 
    public void method_11990(Entity var1, Box var2, List<Entity> var3, Predicate<? super Entity> var4) {
-      int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
-      int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
-      var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);
-      var8 = class_9299.method_42829(var8, 0, this.field_13083.length - 1);
+      int var7 = MathHelper.floor((var2.field_19937 - 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.field_19939 + 2.0) / 16.0);
+      var7 = MathHelper.clamp(var7, 0, this.field_13083.length - 1);
+      var8 = MathHelper.clamp(var8, 0, this.field_13083.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          class_4722 var10 = this.field_13083[var9];
@@ -463,14 +463,14 @@ public class class_2654 implements class_5990 {
 
          for (int var13 = 0; var13 < var12; var13++) {
             Entity var14 = (Entity)var11.get(var13);
-            if (var14.method_37241().method_18909(var2) && var14 != var1) {
+            if (var14.getBoundingBox().method_18909(var2) && var14 != var1) {
                if (var4 == null || var4.test(var14)) {
                   var3.add(var14);
                }
 
                if (var14 instanceof class_2770) {
                   for (class_5708 var18 : ((class_2770)var14).method_12615()) {
-                     if (var18 != var1 && var18.method_37241().method_18909(var2) && (var4 == null || var4.test(var18))) {
+                     if (var18 != var1 && var18.getBoundingBox().method_18909(var2) && (var4 == null || var4.test(var18))) {
                         var3.add(var18);
                      }
                   }
@@ -481,14 +481,14 @@ public class class_2654 implements class_5990 {
    }
 
    public <T extends Entity> void method_11998(EntityType<?> var1, Box var2, List<? super T> var3, Predicate<? super T> var4) {
-      int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
-      int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
-      var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);
-      var8 = class_9299.method_42829(var8, 0, this.field_13083.length - 1);
+      int var7 = MathHelper.floor((var2.field_19937 - 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.field_19939 + 2.0) / 16.0);
+      var7 = MathHelper.clamp(var7, 0, this.field_13083.length - 1);
+      var8 = MathHelper.clamp(var8, 0, this.field_13083.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field_13083[var9].<Entity>method_21835(Entity.class)) {
-            if ((var1 == null || var11.getType() == var1) && var11.method_37241().method_18909(var2) && var4.test(var11)) {
+            if ((var1 == null || var11.getType() == var1) && var11.getBoundingBox().method_18909(var2) && var4.test(var11)) {
                var3.add(var11);
             }
          }
@@ -496,14 +496,14 @@ public class class_2654 implements class_5990 {
    }
 
    public <T extends Entity> void method_11994(Class<? extends T> var1, Box var2, List<T> var3, Predicate<? super T> var4) {
-      int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
-      int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
-      var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);
-      var8 = class_9299.method_42829(var8, 0, this.field_13083.length - 1);
+      int var7 = MathHelper.floor((var2.field_19937 - 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.field_19939 + 2.0) / 16.0);
+      var7 = MathHelper.clamp(var7, 0, this.field_13083.length - 1);
+      var8 = MathHelper.clamp(var8, 0, this.field_13083.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field_13083[var9].method_21835(var1)) {
-            if (var11.method_37241().method_18909(var2) && (var4 == null || var4.test(var11))) {
+            if (var11.getBoundingBox().method_18909(var2) && (var4 == null || var4.test(var11))) {
                var3.add(var11);
             }
          }

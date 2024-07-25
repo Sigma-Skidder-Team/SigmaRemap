@@ -148,7 +148,7 @@ public class class_1420 implements class_7203 {
    }
 
    @Override
-   public class_291 method_8653() {
+   public GameRules method_8653() {
       return this.field_7692.method_8653();
    }
 

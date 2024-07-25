@@ -295,9 +295,9 @@ public class class_9561 implements class_9538 {
       if (this.field_48669 == 2) {
          return this.field_48653;
       } else {
-         int var11 = class_9299.method_42847(var2);
-         int var12 = class_9299.method_42847(var4);
-         int var13 = class_9299.method_42847(var6);
+         int var11 = MathHelper.floor(var2);
+         int var12 = MathHelper.floor(var4);
+         int var13 = MathHelper.floor(var6);
          int var14 = 0;
          int var15 = 0;
          int var16 = 0;
@@ -323,8 +323,8 @@ public class class_9561 implements class_9538 {
    }
 
    private int method_44176(class_6325 var1, BlockPos var2) {
-      double var5 = (double)class_9299.method_42828(var1.method_28865(var2), 0.0F, 1.0F);
-      double var7 = (double)class_9299.method_42828(var1.method_28870(), 0.0F, 1.0F);
+      double var5 = (double) MathHelper.clamp(var1.method_28865(var2), 0.0F, 1.0F);
+      double var7 = (double) MathHelper.clamp(var1.method_28870(), 0.0F, 1.0F);
       var7 *= var5;
       int var9 = (int)((1.0 - var5) * (double)(this.field_48664 - 1));
       int var10 = (int)((1.0 - var7) * (double)(this.field_48661 - 1));
@@ -335,7 +335,7 @@ public class class_9561 implements class_9538 {
       int var5 = class_5630.method_25522(var1);
       int var6 = var2.method_12165() - this.field_48651;
       if (this.field_48665 > 0) {
-         int var7 = var2.method_12173() << 16 + var2.method_12185();
+         int var7 = var2.getX() << 16 + var2.method_12185();
          int var8 = Config.method_14419(var7);
          int var9 = this.field_48665 * 2 + 1;
          int var10 = (var8 & 0xFF) % var9 - this.field_48665;

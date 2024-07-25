@@ -10,7 +10,7 @@ public abstract class class_5521 extends class_4109 {
 
    @Override
    public void method_19084() {
-      this.method_26561(Attributes.MAX_HEALTH).method_45006((double)this.method_19082());
+      this.getAttribute(Attributes.MAX_HEALTH).setBaseValue((double)this.method_19082());
    }
 
    @Override
@@ -163,7 +163,7 @@ public abstract class class_5521 extends class_4109 {
    }
 
    public void method_25020() {
-      this.method_37155(class_463.field_2031, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
+      this.method_37155(SoundEvents.field_2031, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
    }
 
    public int method_25019() {

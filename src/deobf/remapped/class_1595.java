@@ -36,7 +36,7 @@ public abstract class class_1595 extends MonsterEntity implements class_2354 {
       this.method_37155(this.method_7150(), 0.15F, 1.0F);
    }
 
-   public abstract class_8461 method_7150();
+   public abstract SoundEvent method_7150();
 
    @Override
    public class_2780 method_26550() {
@@ -44,7 +44,7 @@ public abstract class class_1595 extends MonsterEntity implements class_2354 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       boolean var3 = this.method_26884();
       if (var3) {
          ItemStack var4 = this.method_26520(class_6943.field_35704);
@@ -65,7 +65,7 @@ public abstract class class_1595 extends MonsterEntity implements class_2354 {
          }
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    @Override
@@ -130,9 +130,9 @@ public abstract class class_1595 extends MonsterEntity implements class_2354 {
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method_37080(0.3333333333333333) - var6.method_37309();
       double var11 = var1.getPosZ() - this.getPosZ();
-      double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
+      double var13 = (double) MathHelper.sqrt(var7 * var7 + var11 * var11);
       var6.method_26161(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method_43370().method_2097() * 4));
-      this.method_37155(class_463.field_2526, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
+      this.method_37155(SoundEvents.field_2526, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
       this.world.method_7509(var6);
    }
 

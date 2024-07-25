@@ -11,13 +11,13 @@ public abstract class class_3429 extends class_9506 implements class_3713 {
       super(var1, var2, var4, var6, var8);
    }
 
-   public class_3429(EntityType<? extends class_3429> var1, class_5834 var2, World var3) {
+   public class_3429(EntityType<? extends class_3429> var1, LivingEntity var2, World var3) {
       super(var1, var2, var3);
    }
 
    public void method_15852(ItemStack var1) {
       if (var1.method_27960() != this.method_15854() || var1.method_28002()) {
-         this.method_37372().method_36633(field_16861, Util.<ItemStack>method_44659(var1.method_27973(), var0 -> var0.method_28017(1)));
+         this.method_37372().method_36633(field_16861, Util.<ItemStack>make(var1.method_27973(), var0 -> var0.method_28017(1)));
       }
    }
 

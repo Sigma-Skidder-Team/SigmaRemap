@@ -11,7 +11,7 @@ public class class_6995 extends class_6127<LivingEntity> {
 
    @Override
    public void method_28154(class_6331 var1, LivingEntity var2) {
-      Box var5 = var2.method_37241().method_18899(16.0, 16.0, 16.0);
+      Box var5 = var2.getBoundingBox().method_18899(16.0, 16.0, 16.0);
       List var6 = var1.<LivingEntity>method_25869(LivingEntity.class, var5, var1x -> var1x != var2 && var1x.isAlive());
       var6.sort(Comparator.comparingDouble(var2::method_37275));
       class_1150 var7 = var2.method_26525();

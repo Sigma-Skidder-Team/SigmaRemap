@@ -29,18 +29,18 @@ public class class_6561 {
    }
 
    public void method_29976(World var1, BlockPos var2, BlockPos var3, boolean var4, class_6414 var5) {
-      if (var3.method_12173() >= 1 && var3.method_12165() >= 1 && var3.method_12185() >= 1) {
+      if (var3.getX() >= 1 && var3.method_12165() >= 1 && var3.method_12185() >= 1) {
          BlockPos var8 = var2.method_6105(var3).method_6104(-1, -1, -1);
          ArrayList var9 = Lists.newArrayList();
          ArrayList var10 = Lists.newArrayList();
          ArrayList var11 = Lists.newArrayList();
          BlockPos var12 = new BlockPos(
-            Math.min(var2.method_12173(), var8.method_12173()),
+            Math.min(var2.getX(), var8.getX()),
             Math.min(var2.method_12165(), var8.method_12165()),
             Math.min(var2.method_12185(), var8.method_12185())
          );
          BlockPos var13 = new BlockPos(
-            Math.max(var2.method_12173(), var8.method_12173()),
+            Math.max(var2.getX(), var8.getX()),
             Math.max(var2.method_12165(), var8.method_12165()),
             Math.max(var2.method_12185(), var8.method_12185())
          );
@@ -91,7 +91,7 @@ public class class_6561 {
 
    private static List<class_4099> method_29979(List<class_4099> var0, List<class_4099> var1, List<class_4099> var2) {
       Comparator var5 = Comparator.<class_4099>comparingInt(var0x -> var0x.field_19965.method_12165())
-         .thenComparingInt(var0x -> var0x.field_19965.method_12173())
+         .thenComparingInt(var0x -> var0x.field_19965.getX())
          .thenComparingInt(var0x -> var0x.field_19965.method_12185());
       var0.sort(var5);
       var2.sort(var5);
@@ -109,7 +109,7 @@ public class class_6561 {
 
       for (Entity var8 : var6) {
          class_1343 var9 = new class_1343(
-            var8.getPosX() - (double)var2.method_12173(),
+            var8.getPosX() - (double)var2.getX(),
             var8.method_37309() - (double)var2.method_12165(),
             var8.getPosZ() - (double)var2.method_12185()
          );
@@ -172,7 +172,7 @@ public class class_6561 {
       } else {
          List var9 = var4.method_39057(this.field_33468, var2).method_7496();
          if ((!var9.isEmpty() || !var4.method_39032() && !this.field_33470.isEmpty())
-            && this.field_33472.method_12173() >= 1
+            && this.field_33472.getX() >= 1
             && this.field_33472.method_12165() >= 1
             && this.field_33472.method_12185() >= 1) {
             class_9616 var10 = var4.method_39050();
@@ -197,17 +197,17 @@ public class class_6561 {
                   }
 
                   if (var1.method_7513(var21, var23, var6)) {
-                     var13 = Math.min(var13, var21.method_12173());
+                     var13 = Math.min(var13, var21.getX());
                      var14 = Math.min(var14, var21.method_12165());
                      var15 = Math.min(var15, var21.method_12185());
-                     var16 = Math.max(var16, var21.method_12173());
+                     var16 = Math.max(var16, var21.getX());
                      var17 = Math.max(var17, var21.method_12165());
                      var18 = Math.max(var18, var21.method_12185());
                      var12.add(Pair.of(var21, var20.field_19968));
                      if (var20.field_19968 != null) {
                         class_3757 var39 = var1.method_28260(var21);
                         if (var39 != null) {
-                           var20.field_19968.putInt("x", var21.method_12173());
+                           var20.field_19968.putInt("x", var21.getX());
                            var20.field_19968.putInt("y", var21.method_12165());
                            var20.field_19968.putInt("z", var21.method_12185());
                            if (var39 instanceof class_2358) {
@@ -272,7 +272,7 @@ public class class_6561 {
 
                   for (Pair var48 : var12) {
                      BlockPos var49 = (BlockPos)var48.getFirst();
-                     var31.method_26202(var49.method_12173() - var34, var49.method_12165() - var37, var49.method_12185() - var41, true, true);
+                     var31.method_26202(var49.getX() - var34, var49.method_12165() - var37, var49.method_12185() - var41, true, true);
                   }
 
                   method_29985(var1, var6, var31, var34, var37, var41);
@@ -354,7 +354,7 @@ public class class_6561 {
          if (var6 == null || var6.method_44395(var12)) {
             CompoundNBT var13 = var11.field_45182.method_25944();
             class_1343 var14 = method_29967(var11.field_45180, var3, var4, var5);
-            class_1343 var15 = var14.method_6214((double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185());
+            class_1343 var15 = var14.method_6214((double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185());
             class_3416 var16 = new class_3416();
             var16.add(class_9708.method_44846(var15.field_7336));
             var16.add(class_9708.method_44846(var15.field_7333));
@@ -387,14 +387,14 @@ public class class_6561 {
       switch (var1) {
          case field_34335:
          case field_34334:
-            return new BlockPos(this.field_33472.method_12185(), this.field_33472.method_12165(), this.field_33472.method_12173());
+            return new BlockPos(this.field_33472.method_12185(), this.field_33472.method_12165(), this.field_33472.getX());
          default:
             return this.field_33472;
       }
    }
 
    public static BlockPos method_29966(BlockPos var0, class_9022 var1, class_6631 var2, BlockPos var3) {
-      int var6 = var0.method_12173();
+      int var6 = var0.getX();
       int var7 = var0.method_12165();
       int var8 = var0.method_12185();
       boolean var9 = true;
@@ -409,7 +409,7 @@ public class class_6561 {
             var9 = false;
       }
 
-      int var10 = var3.method_12173();
+      int var10 = var3.getX();
       int var11 = var3.method_12185();
       switch (var2) {
          case field_34335:
@@ -439,7 +439,7 @@ public class class_6561 {
             var12 = false;
       }
 
-      int var13 = var3.method_12173();
+      int var13 = var3.getX();
       int var14 = var3.method_12185();
       switch (var2) {
          case field_34335:
@@ -454,7 +454,7 @@ public class class_6561 {
    }
 
    public BlockPos method_29977(BlockPos var1, class_9022 var2, class_6631 var3) {
-      return method_29978(var1, var2, var3, this.method_29975().method_12173(), this.method_29975().method_12185());
+      return method_29978(var1, var2, var3, this.method_29975().getX(), this.method_29975().method_12185());
    }
 
    public static BlockPos method_29978(BlockPos var0, class_9022 var1, class_6631 var2, int var3, int var4) {
@@ -486,9 +486,9 @@ public class class_6561 {
 
    public class_9616 method_29973(BlockPos var1, class_6631 var2, BlockPos var3, class_9022 var4) {
       BlockPos var7 = this.method_29970(var2);
-      int var8 = var3.method_12173();
+      int var8 = var3.getX();
       int var9 = var3.method_12185();
-      int var10 = var7.method_12173() - 1;
+      int var10 = var7.getX() - 1;
       int var11 = var7.method_12165() - 1;
       int var12 = var7.method_12185() - 1;
       class_9616 var13 = new class_9616(0, 0, 0, 0, 0, 0);
@@ -515,7 +515,7 @@ public class class_6561 {
          case field_46145:
       }
 
-      var13.method_44391(var1.method_12173(), var1.method_12165(), var1.method_12185());
+      var13.method_44391(var1.getX(), var1.method_12165(), var1.method_12185());
       return var13;
    }
 
@@ -529,7 +529,7 @@ public class class_6561 {
          var9 = var9.method_6099(var6, var2);
       }
 
-      var4.method_44391(var9.method_12173(), 0, var9.method_12185());
+      var4.method_44391(var9.getX(), 0, var9.method_12185());
    }
 
    public CompoundNBT method_29993(CompoundNBT var1) {
@@ -548,7 +548,7 @@ public class class_6561 {
          for (int var8 = 0; var8 < var7.size(); var8++) {
             class_4099 var9 = (class_4099)var7.get(var8);
             CompoundNBT var10 = new CompoundNBT();
-            var10.put("pos", this.method_29983(var9.field_19965.method_12173(), var9.field_19965.method_12165(), var9.field_19965.method_12185()));
+            var10.put("pos", this.method_29983(var9.field_19965.getX(), var9.field_19965.method_12165(), var9.field_19965.method_12185()));
             int var11 = var5.method_13475(var9.field_19967);
             var10.putInt("state", var11);
             if (var9.field_19968 != null) {
@@ -597,7 +597,7 @@ public class class_6561 {
       for (class_8833 var17 : this.field_33470) {
          CompoundNBT var18 = new CompoundNBT();
          var18.put("pos", this.method_29972(var17.field_45180.field_7336, var17.field_45180.field_7333, var17.field_45180.field_7334));
-         var18.put("blockPos", this.method_29983(var17.field_45183.method_12173(), var17.field_45183.method_12165(), var17.field_45183.method_12185()));
+         var18.put("blockPos", this.method_29983(var17.field_45183.getX(), var17.field_45183.method_12165(), var17.field_45183.method_12185()));
          if (var17.field_45182 != null) {
             var18.put("nbt", var17.field_45182);
          }
@@ -606,7 +606,7 @@ public class class_6561 {
       }
 
       var1.put("entities", var14);
-      var1.put("size", this.method_29983(this.field_33472.method_12173(), this.field_33472.method_12165(), this.field_33472.method_12185()));
+      var1.put("size", this.method_29983(this.field_33472.getX(), this.field_33472.method_12165(), this.field_33472.method_12185()));
       var1.putInt("DataVersion", class_7665.method_34674().getWorldVersion());
       return var1;
    }

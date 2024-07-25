@@ -51,7 +51,7 @@ public class class_6577 extends Screen {
    private ITextComponent field_33531;
    private ITextComponent field_33545;
    private String field_33522;
-   private class_291 field_33550 = new class_291();
+   private GameRules field_33550 = new GameRules();
    public final class_668 field_33523;
 
    public class_6577(Screen var1, class_6292 var2, class_2904 var3, Path var4, class_2805 var5, class_7522 var6) {
@@ -215,8 +215,8 @@ public class class_6577 extends Screen {
          class_2904 var3 = this.field_33523.method_3070(this.field_33539);
          class_6292 var5;
          if (var3.method_13290()) {
-            class_291 var4 = new class_291();
-            var4.<class_5850>method_1287(class_291.field_1037).method_26684(false, (class_341)null);
+            GameRules var4 = new GameRules();
+            var4.<class_5850>method_1287(GameRules.field_1037).method_26684(false, (class_341)null);
             var5 = new class_6292(
                this.field_33552.method_8246().trim(), GameType.SPECTATOR, false, class_423.field_1790, true, var4, class_2805.field_13766
             );

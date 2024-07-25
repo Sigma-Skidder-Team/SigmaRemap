@@ -36,7 +36,7 @@ public class class_9490 extends MonsterEntity implements class_7187 {
 
    @Override
    public int method_37232() {
-      return this.method_17809() != null ? 3 + (int)(this.method_26551() - 1.0F) : 3;
+      return this.getAttackTarget() != null ? 3 + (int)(this.method_26551() - 1.0F) : 3;
    }
 
    @Override
@@ -97,7 +97,7 @@ public class class_9490 extends MonsterEntity implements class_7187 {
 
          int var3 = this.method_43833();
          if (var3 > 0 && this.field_48356 == 0) {
-            this.method_37155(class_463.field_2838, 1.0F, 0.5F);
+            this.method_37155(SoundEvents.field_2838, 1.0F, 0.5F);
          }
 
          this.field_48356 += var3;
@@ -115,13 +115,13 @@ public class class_9490 extends MonsterEntity implements class_7187 {
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2664;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2664;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2302;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2302;
    }
 
    @Override
@@ -148,7 +148,7 @@ public class class_9490 extends MonsterEntity implements class_7187 {
    }
 
    public float method_43830(float var1) {
-      return class_9299.method_42795(var1, (float)this.field_48360, (float)this.field_48356) / (float)(this.field_48361 - 2);
+      return MathHelper.method_42795(var1, (float)this.field_48360, (float)this.field_48356) / (float)(this.field_48361 - 2);
    }
 
    public int method_43833() {
@@ -177,7 +177,7 @@ public class class_9490 extends MonsterEntity implements class_7187 {
                this.getPosX(),
                this.method_37309(),
                this.getPosZ(),
-               class_463.field_2235,
+               SoundEvents.field_2235,
                this.method_37197(),
                1.0F,
                this.field_41717.nextFloat() * 0.4F + 0.8F
@@ -193,7 +193,7 @@ public class class_9490 extends MonsterEntity implements class_7187 {
 
    private void method_43831() {
       if (!this.world.field_33055) {
-         class_7298 var3 = !this.world.method_29537().method_1285(class_291.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
+         class_7298 var3 = !this.world.getGameRules().getBoolean(GameRules.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
          float var4 = !this.method_32928() ? 1.0F : 2.0F;
          this.field_29659 = true;
          this.world.method_29573(this, this.getPosX(), this.method_37309(), this.getPosZ(), (float)this.field_48357 * var4, var3);

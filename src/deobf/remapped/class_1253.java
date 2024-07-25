@@ -52,10 +52,10 @@ public class class_1253<T extends class_496> extends class_6484<T> {
       if (!var9) {
          this.field_33024.field_8185 = 0.0F;
       } else {
-         this.field_33024.field_8190 = 0.35F * class_9299.method_42818(0.6F * var4);
-         this.field_33024.field_8185 = 0.35F * class_9299.method_42818(0.6F * var4);
-         this.field_33023.field_8191 = -0.75F * class_9299.method_42818(0.3F * var4);
-         this.field_33026.field_8191 = 0.75F * class_9299.method_42818(0.3F * var4);
+         this.field_33024.field_8190 = 0.35F * MathHelper.sin(0.6F * var4);
+         this.field_33024.field_8185 = 0.35F * MathHelper.sin(0.6F * var4);
+         this.field_33023.field_8191 = -0.75F * MathHelper.sin(0.3F * var4);
+         this.field_33026.field_8191 = 0.75F * MathHelper.sin(0.3F * var4);
       }
 
       if (var10) {
@@ -82,9 +82,9 @@ public class class_1253<T extends class_496> extends class_6484<T> {
          this.field_33022.field_8185 = 0.5707964F;
          this.field_33027.field_8185 = -0.5707964F;
          if (var12) {
-            this.field_33024.field_8191 = (float) (Math.PI / 2) + 0.2F * class_9299.method_42818(var4 * 0.6F);
-            this.field_33023.field_8191 = -0.4F - 0.2F * class_9299.method_42818(var4 * 0.6F);
-            this.field_33026.field_8191 = -0.4F - 0.2F * class_9299.method_42818(var4 * 0.6F);
+            this.field_33024.field_8191 = (float) (Math.PI / 2) + 0.2F * MathHelper.sin(var4 * 0.6F);
+            this.field_33023.field_8191 = -0.4F - 0.2F * MathHelper.sin(var4 * 0.6F);
+            this.field_33026.field_8191 = -0.4F - 0.2F * MathHelper.sin(var4 * 0.6F);
          }
 
          if (var13) {
@@ -95,19 +95,19 @@ public class class_1253<T extends class_496> extends class_6484<T> {
       }
 
       if (this.field_6902 > 0.0F) {
-         this.field_33022.field_8191 = -0.6F * class_9299.method_42818(var4 * 0.15F);
-         this.field_33027.field_8191 = 0.6F * class_9299.method_42818(var4 * 0.15F);
-         this.field_33023.field_8191 = 0.3F * class_9299.method_42818(var4 * 0.25F);
-         this.field_33026.field_8191 = -0.3F * class_9299.method_42818(var4 * 0.25F);
+         this.field_33022.field_8191 = -0.6F * MathHelper.sin(var4 * 0.15F);
+         this.field_33027.field_8191 = 0.6F * MathHelper.sin(var4 * 0.15F);
+         this.field_33023.field_8191 = 0.3F * MathHelper.sin(var4 * 0.25F);
+         this.field_33026.field_8191 = -0.3F * MathHelper.sin(var4 * 0.25F);
          this.field_33024.field_8191 = class_8746.method_40145(this.field_33024.field_8191, (float) (Math.PI / 2), this.field_6902);
       }
 
       if (this.field_6903 > 0.0F) {
          this.field_33024.field_8191 = class_8746.method_40145(this.field_33024.field_8191, 2.0561945F, this.field_6903);
-         this.field_33022.field_8191 = -0.5F * class_9299.method_42818(var4 * 0.5F);
-         this.field_33027.field_8191 = 0.5F * class_9299.method_42818(var4 * 0.5F);
-         this.field_33023.field_8191 = 0.5F * class_9299.method_42818(var4 * 0.5F);
-         this.field_33026.field_8191 = -0.5F * class_9299.method_42818(var4 * 0.5F);
+         this.field_33022.field_8191 = -0.5F * MathHelper.sin(var4 * 0.5F);
+         this.field_33027.field_8191 = 0.5F * MathHelper.sin(var4 * 0.5F);
+         this.field_33023.field_8191 = 0.5F * MathHelper.sin(var4 * 0.5F);
+         this.field_33026.field_8191 = -0.5F * MathHelper.sin(var4 * 0.5F);
       }
    }
 }

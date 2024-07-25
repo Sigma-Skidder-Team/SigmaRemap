@@ -56,6 +56,6 @@ public enum class_7507 implements class_5598 {
    }
 
    public static class_7507 method_34222(int var0, int var1) {
-      return field_38327.get(method_34223(class_9299.method_42788(var0, 360), class_9299.method_42788(var1, 360)));
+      return field_38327.get(method_34223(MathHelper.normalizeAngle(var0, 360), MathHelper.normalizeAngle(var1, 360)));
    }
 }

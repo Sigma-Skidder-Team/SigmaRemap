@@ -46,7 +46,7 @@ public class class_7054 extends class_2359 {
    }
 
    private void method_32437(float[] var1) {
-      float var4 = class_9299.method_42843(var1[0] * var1[0] + var1[1] * var1[1] + var1[2] * var1[2]);
+      float var4 = MathHelper.sqrt(var1[0] * var1[0] + var1[1] * var1[1] + var1[2] * var1[2]);
       var1[0] /= var4;
       var1[1] /= var4;
       var1[2] /= var4;
@@ -54,7 +54,7 @@ public class class_7054 extends class_2359 {
    }
 
    private void method_32441(float[] var1) {
-      float var4 = class_9299.method_42843(var1[0] * var1[0] + var1[1] * var1[1] + var1[2] * var1[2]);
+      float var4 = MathHelper.sqrt(var1[0] * var1[0] + var1[1] * var1[1] + var1[2] * var1[2]);
       if (var4 == 0.0F) {
          var4 = 1.0F;
       }

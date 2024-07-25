@@ -37,7 +37,7 @@ public class class_5050 extends class_4382 {
             var2.method_6103((double)(-var7), -1.0, (double)(-var7)), var2.method_6103((double)var7, -1.0, (double)var7)
          )) {
             if (var10.method_12170(var0.method_37245(), (double)var7)) {
-               var8.method_13362(var10.method_12173(), var10.method_12165() + 1, var10.method_12185());
+               var8.method_13362(var10.getX(), var10.method_12165() + 1, var10.method_12185());
                class_2522 var11 = var1.method_28262(var8);
                if (var11.method_8345()) {
                   class_2522 var12 = var1.method_28262(var10);
@@ -46,7 +46,7 @@ public class class_5050 extends class_4382 {
                      && var6.method_8309(var1, var10)
                      && var1.method_6671(var6, var10, class_214.method_928())) {
                      var1.method_29594(var10, var6);
-                     var1.method_43367().method_14011(var10, class_4783.field_23320, class_9299.method_42824(var0.method_26594(), 60, 120));
+                     var1.method_43367().method_14011(var10, class_4783.field_23320, MathHelper.nextInt(var0.method_26594(), 60, 120));
                   }
                }
             }

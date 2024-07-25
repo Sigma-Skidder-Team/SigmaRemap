@@ -58,11 +58,11 @@ public class class_5614 extends Entity {
             0.2F,
             (double)((this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F)
          );
-         this.method_37155(class_463.field_2912, 0.4F, 2.0F + this.field_41717.nextFloat() * 0.4F);
+         this.method_37155(SoundEvents.field_2912, 0.4F, 2.0F + this.field_41717.nextFloat() * 0.4F);
       }
 
-      if (!this.world.method_6681(this.method_37241())) {
-         this.method_37160(this.getPosX(), (this.method_37241().field_19937 + this.method_37241().field_19939) / 2.0, this.getPosZ());
+      if (!this.world.method_6681(this.getBoundingBox())) {
+         this.method_37160(this.getPosX(), (this.getBoundingBox().field_19937 + this.getBoundingBox().field_19939) / 2.0, this.getPosZ());
       }
 
       double var3 = 8.0;

@@ -64,7 +64,7 @@ public class class_2202 implements class_233 {
    }
 
    @Override
-   public class_8461 method_976() {
-      return class_463.field_2635;
+   public SoundEvent method_976() {
+      return SoundEvents.field_2635;
    }
 }

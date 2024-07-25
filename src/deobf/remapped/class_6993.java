@@ -74,7 +74,7 @@ public abstract class class_6993 extends MonsterEntity {
    }
 
    public boolean method_31990() {
-      return !this.world.method_22572().method_40227() && !this.method_31991() && !this.method_26859();
+      return !this.world.method_22572().method_40227() && !this.method_31991() && !this.isAIDisabled();
    }
 
    public void method_31992(class_6331 var1) {
@@ -92,8 +92,8 @@ public abstract class class_6993 extends MonsterEntity {
 
    @Nullable
    @Override
-   public class_5834 method_17809() {
-      return this.field_29675.<class_5834>method_5138(class_6044.field_30884).orElse((class_5834)null);
+   public LivingEntity getAttackTarget() {
+      return this.field_29675.<LivingEntity>method_5138(class_6044.field_30884).orElse((LivingEntity)null);
    }
 
    public boolean method_31987() {

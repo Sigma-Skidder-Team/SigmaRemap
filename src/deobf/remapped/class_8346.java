@@ -62,7 +62,7 @@ public abstract class class_8346 extends class_3757 implements class_6867, class
    public static boolean method_38434(PlayerEntity var0, class_3186 var1, ITextComponent var2) {
       if (!var0.method_37221() && !var1.method_14663(var0.method_26446())) {
          var0.method_3251(new TranslationTextComponent("container.isLocked", var2), true);
-         var0.method_3172(class_463.field_2206, class_562.field_3322, 1.0F, 1.0F);
+         var0.method_3172(SoundEvents.field_2206, class_562.field_3322, 1.0F, 1.0F);
          return false;
       } else {
          return true;

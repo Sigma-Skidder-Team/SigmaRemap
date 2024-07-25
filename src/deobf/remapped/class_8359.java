@@ -243,8 +243,8 @@ public class class_8359 extends class_8143 implements class_72 {
                   var16.method_38459(),
                   var16.method_38453(),
                   var16.method_38456(),
-                  class_9299.method_42798(var14),
-                  class_9299.method_42798(var27)
+                  MathHelper.log2(var14),
+                  MathHelper.log2(var27)
                );
                var14 = var27;
             }
@@ -256,7 +256,7 @@ public class class_8359 extends class_8143 implements class_72 {
       }
 
       int var23 = Math.min(var12, var14);
-      int var24 = class_9299.method_42798(var23);
+      int var24 = MathHelper.log2(var23);
       if (var24 < 0) {
          var24 = 0;
       }
@@ -564,12 +564,12 @@ public class class_8359 extends class_8143 implements class_72 {
          var5 = 16;
       }
 
-      var5 = class_9299.method_42801(var5);
+      var5 = MathHelper.smallestEncompassingPowerOfTwo(var5);
       if (var5 > 16) {
          Config.method_14280("Sprite size: " + var5);
       }
 
-      int var6 = class_9299.method_42798(var5);
+      int var6 = MathHelper.log2(var5);
       if (var6 < 4) {
          var6 = 4;
       }
@@ -592,7 +592,7 @@ public class class_8359 extends class_8143 implements class_72 {
                   var11.close();
                   if (var12 != null) {
                      int var13 = var12.width;
-                     int var14 = class_9299.method_42801(var13);
+                     int var14 = MathHelper.smallestEncompassingPowerOfTwo(var13);
                      if (!var6.containsKey(var14)) {
                         var6.put(var14, 1);
                      } else {

@@ -112,31 +112,31 @@ public class class_7263 extends class_6993 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2165;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2165;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2711;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2711;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2102;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2102;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2066, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2066, 0.15F, 1.0F);
    }
 
    public void method_33189() {
-      this.method_37155(class_463.field_1924, 1.0F, this.method_26547());
+      this.method_37155(SoundEvents.field_1924, 1.0F, this.method_26547());
    }
 
    @Override
    public void method_31986() {
-      this.method_37155(class_463.field_2401, 1.0F, this.method_26547());
+      this.method_37155(SoundEvents.field_2401, 1.0F, this.method_26547());
    }
 }

@@ -14,7 +14,7 @@ public class class_3373 extends class_6414 {
       if (var2.method_22572().method_40242()) {
          var2.method_7513(var3, class_4783.field_23626.method_29260(), 3);
          var2.method_43364(2009, var3, 0);
-         var2.method_43359((PlayerEntity)null, var3, class_463.field_2472, class_562.field_3322, 1.0F, (1.0F + var2.method_43360().nextFloat() * 0.2F) * 0.7F);
+         var2.method_43359((PlayerEntity)null, var3, SoundEvents.field_2472, class_562.field_3322, 1.0F, (1.0F + var2.method_43360().nextFloat() * 0.2F) * 0.7F);
       }
    }
 
@@ -25,7 +25,7 @@ public class class_3373 extends class_6414 {
          BlockPos var8 = var3.method_6098(var7);
          class_2522 var9 = var2.method_28262(var8);
          if (!var1.method_8302() || !var9.method_8308(var2, var8, var7.method_1046())) {
-            double var10 = (double)var3.method_12173();
+            double var10 = (double)var3.getX();
             double var12 = (double)var3.method_12165();
             double var14 = (double)var3.method_12185();
             if (var7 != Direction.field_802) {

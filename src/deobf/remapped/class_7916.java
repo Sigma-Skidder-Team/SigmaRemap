@@ -23,13 +23,13 @@ public class class_7916<T extends class_6092> extends class_5272<T> {
    public void method_35817(T var1, float var2, float var3, float var4, float var5, float var6) {
       float var9 = var4 - (float)var1.field_41697;
       float var10 = (0.5F + var1.method_27923(var9)) * (float) Math.PI;
-      float var11 = -1.0F + class_9299.method_42818(var10);
+      float var11 = -1.0F + MathHelper.sin(var10);
       float var12 = 0.0F;
       if (var10 > (float) Math.PI) {
-         var12 = class_9299.method_42818(var4 * 0.1F) * 0.7F;
+         var12 = MathHelper.sin(var4 * 0.1F) * 0.7F;
       }
 
-      this.field_40466.method_7046(0.0F, 16.0F + class_9299.method_42818(var10) * 8.0F + var12, 0.0F);
+      this.field_40466.method_7046(0.0F, 16.0F + MathHelper.sin(var10) * 8.0F + var12, 0.0F);
       if (!(var1.method_27923(var9) > 0.3F)) {
          this.field_40466.field_8190 = 0.0F;
       } else {

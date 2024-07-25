@@ -23,9 +23,9 @@ public class class_6339 extends class_6499<class_2547> {
          for (int var11 = 0; var11 < var9.length; var11++) {
             var4.method_36063();
             var4.method_36065(
-               var9[var11].field_7336 + (double)class_9299.method_42840((float)var11 + var10 * 0.5F) * 0.025,
-               var9[var11].field_7333 + (double)class_9299.method_42840((float)var11 + var10 * 0.75F) * 0.0125,
-               var9[var11].field_7334 + (double)class_9299.method_42840((float)var11 + var10 * 0.7F) * 0.025
+               var9[var11].field_7336 + (double) MathHelper.cos((float)var11 + var10 * 0.5F) * 0.025,
+               var9[var11].field_7333 + (double) MathHelper.cos((float)var11 + var10 * 0.75F) * 0.0125,
+               var9[var11].field_7334 + (double) MathHelper.cos((float)var11 + var10 * 0.7F) * 0.025
             );
             super.method_32866(var1, var2, var3, var4, var5, var6);
             var4.method_36064();

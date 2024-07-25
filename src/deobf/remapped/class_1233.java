@@ -20,7 +20,7 @@ public class class_1233 extends class_2255<class_1896> {
          }
 
          var3.method_36065(0.0, 0.4F, 0.0);
-         var3.method_36060(class_2426.field_12074.method_11074((float)class_9299.method_42794((double)var2, var9.method_16263(), var9.method_16264()) * 10.0F));
+         var3.method_36060(class_2426.field_12074.method_11074((float) MathHelper.lerp((double)var2, var9.method_16263(), var9.method_16264()) * 10.0F));
          var3.method_36065(0.0, -0.2F, 0.0);
          var3.method_36060(class_2426.field_12080.method_11074(-30.0F));
          var3.method_36062(var11, var11, var11);

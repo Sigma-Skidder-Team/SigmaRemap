@@ -21,7 +21,7 @@ public class class_6178 extends class_4314 {
          int var8 = ((class_5555)var7).method_25240();
 
          for (int var9 = 0; var9 < var8; var9++) {
-            double var10 = (double)var3.method_12173() + var4.nextDouble();
+            double var10 = (double)var3.getX() + var4.nextDouble();
             double var12 = (double)var3.method_12165() + var4.nextDouble();
             double var14 = (double)var3.method_12185() + var4.nextDouble();
             double var16 = (var4.nextDouble() - 0.5) * 0.5;
@@ -29,7 +29,7 @@ public class class_6178 extends class_4314 {
             double var20 = (var4.nextDouble() - 0.5) * 0.5;
             int var22 = var4.nextInt(2) * 2 - 1;
             if (!var4.nextBoolean()) {
-               var10 = (double)var3.method_12173() + 0.5 + 0.25 * (double)var22;
+               var10 = (double)var3.getX() + 0.5 + 0.25 * (double)var22;
                var16 = (double)(var4.nextFloat() * 2.0F * (float)var22);
             } else {
                var14 = (double)var3.method_12185() + 0.5 + 0.25 * (double)var22;

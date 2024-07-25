@@ -19,7 +19,7 @@ public final class class_322 extends class_6541 {
             )
             .apply(var0, var0.stable(class_322::new))
    );
-   private static final float[] field_1188 = Util.<float[]>method_44659(new float[13824], var0 -> {
+   private static final float[] field_1188 = Util.<float[]>make(new float[13824], var0 -> {
       for (int var3 = 0; var3 < 24; var3++) {
          for (int var4 = 0; var4 < 24; var4++) {
             for (int var5 = 0; var5 < 24; var5++) {
@@ -28,10 +28,10 @@ public final class class_322 extends class_6541 {
          }
       }
    });
-   private static final float[] field_1203 = Util.<float[]>method_44659(new float[25], var0 -> {
+   private static final float[] field_1203 = Util.<float[]>make(new float[25], var0 -> {
       for (int var3 = -2; var3 <= 2; var3++) {
          for (int var4 = -2; var4 <= 2; var4++) {
-            float var5 = 10.0F / class_9299.method_42843((float)(var3 * var3 + var4 * var4) + 0.2F);
+            float var5 = 10.0F / MathHelper.sqrt((float)(var3 * var3 + var4 * var4) + 0.2F);
             var0[var3 + 2 + (var4 + 2) * 5] = var5;
          }
       }
@@ -144,7 +144,7 @@ public final class class_322 extends class_6541 {
          var21 /= 2.0;
       }
 
-      return class_9299.method_42841(var14 / 512.0, var16 / 512.0, (var18 / 10.0 + 1.0) / 2.0);
+      return MathHelper.clampedLerp(var14 / 512.0, var16 / 512.0, (var18 / 10.0 + 1.0) / 2.0);
    }
 
    private double[] method_1501(int var1, int var2) {
@@ -230,12 +230,12 @@ public final class class_322 extends class_6541 {
 
          if (var66 > 0.0) {
             double var61 = ((double)(this.field_1201 - var52) - var38) / var66;
-            var53 = class_9299.method_42841(var65, var53, var61);
+            var53 = MathHelper.clampedLerp(var65, var53, var61);
          }
 
          if (var42 > 0.0) {
             double var68 = ((double)var52 - var44) / var42;
-            var53 = class_9299.method_42841(var40, var53, var68);
+            var53 = MathHelper.clampedLerp(var40, var53, var68);
          }
 
          var1[var52] = var53;
@@ -290,7 +290,7 @@ public final class class_322 extends class_6541 {
 
          for (int var33 = this.field_1196 - 1; var33 >= 0; var33--) {
             double var34 = (double)var33 / (double)this.field_1196;
-            double var36 = class_9299.method_42807(var34, var11, var13, var17, var25, var21, var29, var19, var27, var23, var31);
+            double var36 = MathHelper.method_42807(var34, var11, var13, var17, var25, var21, var29, var19, var27, var23, var31);
             int var38 = var16 * this.field_1196 + var33;
             class_2522 var39 = this.method_1509(var36, var38);
             if (var3 != null) {
@@ -364,7 +364,7 @@ public final class class_322 extends class_6541 {
                for (int var16 = 0; var16 < 5; var16++) {
                   if (var16 <= var2.nextInt(5)) {
                      var1.method_27348(
-                        var5.method_13362(var15.method_12173(), var10 - var16, var15.method_12185()), class_4783.field_23433.method_29260(), false
+                        var5.method_13362(var15.getX(), var10 - var16, var15.method_12185()), class_4783.field_23433.method_29260(), false
                      );
                   }
                }
@@ -374,7 +374,7 @@ public final class class_322 extends class_6541 {
                for (int var17 = 4; var17 >= 0; var17--) {
                   if (var17 <= var2.nextInt(5)) {
                      var1.method_27348(
-                        var5.method_13362(var15.method_12173(), var9 + var17, var15.method_12185()), class_4783.field_23433.method_29260(), false
+                        var5.method_13362(var15.getX(), var9 + var17, var15.method_12185()), class_4783.field_23433.method_29260(), false
                      );
                   }
                }
@@ -464,24 +464,24 @@ public final class class_322 extends class_6541 {
                   }
 
                   double var44 = (double)var40 / (double)this.field_1196;
-                  double var46 = class_9299.method_42794(var44, var24, var32);
-                  double var48 = class_9299.method_42794(var44, var28, var36);
-                  double var50 = class_9299.method_42794(var44, var26, var34);
-                  double var52 = class_9299.method_42794(var44, var30, var38);
+                  double var46 = MathHelper.lerp(var44, var24, var32);
+                  double var48 = MathHelper.lerp(var44, var28, var36);
+                  double var50 = MathHelper.lerp(var44, var26, var34);
+                  double var52 = MathHelper.lerp(var44, var30, var38);
 
                   for (int var54 = 0; var54 < this.field_1202; var54++) {
                      int var55 = var11 + var20 * this.field_1202 + var54;
                      int var56 = var55 & 15;
                      double var57 = (double)var54 / (double)this.field_1202;
-                     double var59 = class_9299.method_42794(var57, var46, var48);
-                     double var61 = class_9299.method_42794(var57, var50, var52);
+                     double var59 = MathHelper.lerp(var57, var46, var48);
+                     double var61 = MathHelper.lerp(var57, var50, var52);
 
                      for (int var63 = 0; var63 < this.field_1202; var63++) {
                         int var64 = var12 + var80 * this.field_1202 + var63;
                         int var65 = var64 & 15;
                         double var66 = (double)var63 / (double)this.field_1202;
-                        double var68 = class_9299.method_42794(var66, var59, var61);
-                        double var70 = class_9299.method_42827(var68 / 200.0, -1.0, 1.0);
+                        double var68 = MathHelper.lerp(var66, var59, var61);
+                        double var70 = MathHelper.clamp(var68 / 200.0, -1.0, 1.0);
                         var70 = var70 / 2.0 - var70 * var70 * var70 / 24.0;
 
                         while (var18.hasNext()) {
@@ -547,7 +547,7 @@ public final class class_322 extends class_6541 {
       double var7 = (double)var1 + 0.5;
       double var9 = var7 * var7;
       double var11 = Math.pow(Math.E, -(var9 / 16.0 + var5 / 16.0));
-      double var13 = -var7 * class_9299.method_42835(var9 / 2.0 + var5 / 2.0) / 2.0;
+      double var13 = -var7 * MathHelper.method_42835(var9 / 2.0 + var5 / 2.0) / 2.0;
       return var13 * var11;
    }
 

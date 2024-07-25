@@ -44,8 +44,8 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2662;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2662;
    }
 
    @Override
@@ -56,13 +56,13 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2447;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2447;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return !this.method_27924() ? class_463.field_2257 : class_463.field_1976;
+   public SoundEvent method_26541(DamageSource var1) {
+      return !this.method_27924() ? SoundEvents.field_2257 : SoundEvents.field_1976;
    }
 
    @Override
@@ -107,7 +107,7 @@ public class class_6092 extends class_608 implements class_1869 {
       var1.method_25921("Color", this.field_41735.<Byte>method_36640(field_31177));
       BlockPos var4 = this.method_27906();
       if (var4 != null) {
-         var1.putInt("APX", var4.method_12173());
+         var1.putInt("APX", var4.getX());
          var1.putInt("APY", var4.method_12165());
          var1.putInt("APZ", var4.method_12185());
       }
@@ -172,10 +172,10 @@ public class class_6092 extends class_608 implements class_1869 {
       this.field_31173 = this.field_31178;
       if (!(this.field_31178 > var18)) {
          if (this.field_31178 < var18) {
-            this.field_31178 = class_9299.method_42828(this.field_31178 + 0.05F, 0.0F, var18);
+            this.field_31178 = MathHelper.clamp(this.field_31178 + 0.05F, 0.0F, var18);
          }
       } else {
-         this.field_31178 = class_9299.method_42828(this.field_31178 - 0.05F, var18, 1.0F);
+         this.field_31178 = MathHelper.clamp(this.field_31178 - 0.05F, var18, 1.0F);
       }
 
       if (var3 != null) {
@@ -187,9 +187,9 @@ public class class_6092 extends class_608 implements class_1869 {
             }
          }
 
-         this.method_37306((double)var3.method_12173() + 0.5, (double)var3.method_12165(), (double)var3.method_12185() + 0.5);
-         double var7 = 0.5 - (double)class_9299.method_42818((0.5F + this.field_31178) * (float) Math.PI) * 0.5;
-         double var9 = 0.5 - (double)class_9299.method_42818((0.5F + this.field_31173) * (float) Math.PI) * 0.5;
+         this.method_37306((double)var3.getX() + 0.5, (double)var3.method_12165(), (double)var3.method_12185() + 0.5);
+         double var7 = 0.5 - (double) MathHelper.sin((0.5F + this.field_31178) * (float) Math.PI) * 0.5;
+         double var9 = 0.5 - (double) MathHelper.sin((0.5F + this.field_31173) * (float) Math.PI) * 0.5;
          Direction var11 = this.method_27914().method_1046();
          this.method_37094(
             new Box(
@@ -204,7 +204,7 @@ public class class_6092 extends class_608 implements class_1869 {
          );
          double var12 = var7 - var9;
          if (var12 > 0.0) {
-            List var14 = this.world.method_25870(this, this.method_37241());
+            List var14 = this.world.method_25870(this, this.getBoundingBox());
             if (!var14.isEmpty()) {
                for (Entity var16 : var14) {
                   if (!(var16 instanceof class_6092) && !var16.field_41731) {
@@ -259,7 +259,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    public boolean method_27920() {
-      if (!this.method_26859() && this.isAlive()) {
+      if (!this.isAIDisabled() && this.isAlive()) {
          BlockPos var3 = this.method_37075();
 
          for (int var4 = 0; var4 < 5; var4++) {
@@ -271,10 +271,10 @@ public class class_6092 extends class_608 implements class_1869 {
                Direction var6 = this.method_27907(var5);
                if (var6 != null) {
                   this.field_41735.method_36633(field_31172, var6);
-                  this.method_37155(class_463.field_2780, 1.0F, 1.0F);
+                  this.method_37155(SoundEvents.field_2780, 1.0F, 1.0F);
                   this.field_41735.method_36633(field_31171, Optional.<BlockPos>of(var5));
                   this.field_41735.method_36633(field_31170, (byte)0);
-                  this.method_26860((class_5834)null);
+                  this.method_26860((LivingEntity)null);
                   return true;
                }
             }
@@ -287,10 +287,10 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       this.method_37215(class_1343.field_7335);
-      if (!this.method_26859()) {
+      if (!this.isAIDisabled()) {
          this.field_29611 = 0.0F;
          this.field_29605 = 0.0F;
       }
@@ -307,7 +307,7 @@ public class class_6092 extends class_608 implements class_1869 {
                this.field_31176 = var4;
             }
 
-            this.method_37306((double)var4.method_12173() + 0.5, (double)var4.method_12165(), (double)var4.method_12185() + 0.5);
+            this.method_37306((double)var4.getX() + 0.5, (double)var4.method_12165(), (double)var4.method_12185() + 0.5);
          }
       }
 
@@ -367,12 +367,12 @@ public class class_6092 extends class_608 implements class_1869 {
 
    public void method_27913(int var1) {
       if (!this.world.field_33055) {
-         this.method_26561(Attributes.field_37473).method_45004(field_31180);
+         this.getAttribute(Attributes.field_37473).method_45004(field_31180);
          if (var1 != 0) {
-            this.method_37155(class_463.field_2073, 1.0F, 1.0F);
+            this.method_37155(SoundEvents.field_2073, 1.0F, 1.0F);
          } else {
-            this.method_26561(Attributes.field_37473).method_45005(field_31180);
-            this.method_37155(class_463.field_2341, 1.0F, 1.0F);
+            this.getAttribute(Attributes.field_37473).method_45005(field_31180);
+            this.method_37155(SoundEvents.field_2341, 1.0F, 1.0F);
          }
       }
 
@@ -380,7 +380,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    public float method_27923(float var1) {
-      return class_9299.method_42795(var1, this.field_31173, this.field_31178);
+      return MathHelper.method_42795(var1, this.field_31173, this.field_31178);
    }
 
    public int method_27925() {

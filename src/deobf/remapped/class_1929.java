@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 import org.apache.logging.log4j.LogManager;
 
 public class class_1929<T extends class_1977> {
-   private final Object2IntMap<Class<? extends Packet<T>>> field_9865 = Util.<Object2IntMap<Class<? extends Packet<T>>>>method_44659(
+   private final Object2IntMap<Class<? extends Packet<T>>> field_9865 = Util.<Object2IntMap<Class<? extends Packet<T>>>>make(
       new Object2IntOpenHashMap(), var0 -> var0.defaultReturnValue(-1)
    );
    private final List<Supplier<? extends Packet<T>>> field_9866 = Lists.newArrayList();

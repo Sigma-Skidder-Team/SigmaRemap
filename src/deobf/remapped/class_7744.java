@@ -216,9 +216,9 @@ public class class_7744 {
          }
 
          var12.method_37079(
-            (double)class_9299.method_42847(class_7321.method_33381(var13)) + 0.5,
+            (double) MathHelper.floor(class_7321.method_33381(var13)) + 0.5,
             (double)var13.method_33384(var1, var3),
-            (double)class_9299.method_42847(class_7321.method_33380(var13)) + 0.5
+            (double) MathHelper.floor(class_7321.method_33380(var13)) + 0.5
          );
          double var15 = Double.MAX_VALUE;
 

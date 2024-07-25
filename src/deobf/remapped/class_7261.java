@@ -33,12 +33,12 @@ public class class_7261 extends class_3599 {
 
    private void method_33184() {
       Iterable var3 = BlockPos.method_6075(
-         class_9299.method_42847(this.field_37201.getPosX() - 1.0),
-         class_9299.method_42847(this.field_37201.method_37309()),
-         class_9299.method_42847(this.field_37201.getPosZ() - 1.0),
-         class_9299.method_42847(this.field_37201.getPosX() + 1.0),
-         class_9299.method_42847(this.field_37201.method_37309() + 8.0),
-         class_9299.method_42847(this.field_37201.getPosZ() + 1.0)
+         MathHelper.floor(this.field_37201.getPosX() - 1.0),
+         MathHelper.floor(this.field_37201.method_37309()),
+         MathHelper.floor(this.field_37201.getPosZ() - 1.0),
+         MathHelper.floor(this.field_37201.getPosX() + 1.0),
+         MathHelper.floor(this.field_37201.method_37309() + 8.0),
+         MathHelper.floor(this.field_37201.getPosZ() + 1.0)
       );
       BlockPos var4 = null;
 
@@ -53,7 +53,7 @@ public class class_7261 extends class_3599 {
          var4 = new BlockPos(this.field_37201.getPosX(), this.field_37201.method_37309() + 8.0, this.field_37201.getPosZ());
       }
 
-      this.field_37201.method_26927().method_5595((double)var4.method_12173(), (double)(var4.method_12165() + 1), (double)var4.method_12185(), 1.0);
+      this.field_37201.method_26927().method_5595((double)var4.getX(), (double)(var4.method_12165() + 1), (double)var4.method_12185(), 1.0);
    }
 
    @Override

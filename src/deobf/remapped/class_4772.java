@@ -12,7 +12,7 @@ public enum class_4772 {
       } else {
          return false;
       }
-   }, var0 -> class_9299.method_42848(var0.field_3842 * (float)var0.method_3194())),
+   }, var0 -> MathHelper.floor(var0.field_3842 * (float)var0.method_3194())),
    field_23132("levels", class_9359::method_3220, (var0, var1) -> {
       var0.method_43277(var1);
       return true;

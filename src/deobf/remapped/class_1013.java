@@ -9,7 +9,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public abstract class class_1013 {
    public static final class_8369 field_5305 = new class_8369("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.field_45526, (var0, var1) -> {
-      var0.field_45526 = class_9299.method_42829((int)var1.doubleValue(), 0, 7);
+      var0.field_45526 = MathHelper.clamp((int)var1.doubleValue(), 0, 7);
       MinecraftClient.getInstance().worldRenderer.method_19998();
    }, (var0, var1) -> {
       double var4 = var1.method_38570(var0);
@@ -92,7 +92,7 @@ public abstract class class_1013 {
       1.0,
       0.0F,
       var0 -> Math.pow((double)var0.field_45386, 2.0),
-      (var0, var1) -> var0.field_45386 = class_9299.method_42842(var1),
+      (var0, var1) -> var0.field_45386 = MathHelper.sqrt(var1),
       (var0, var1) -> {
          var1.method_4487(MinecraftClient.getInstance().textRenderer.method_45391(field_5262, 200));
          double var4 = var1.method_38566(var1.method_38570(var0));
@@ -254,7 +254,7 @@ public abstract class class_1013 {
    });
    public static final class_4001 field_5251 = new class_4001(
       "options.guiScale",
-      (var0, var1) -> var0.field_45484 = class_9299.method_42788(
+      (var0, var1) -> var0.field_45484 = MathHelper.normalizeAngle(
             var0.field_45484 + var1, MinecraftClient.getInstance().getMainWindow().method_43164(0, MinecraftClient.getInstance().method_8578()) + 1
          ),
       (var0, var1) -> var0.field_45484 != 0 ? var1.method_4485(var0.field_45484) : var1.method_4492(new TranslationTextComponent("options.guiScale.auto"))

@@ -15,21 +15,21 @@ public class class_285 extends class_6414 {
             if (this != class_4783.field_23463) {
                if (this != class_4783.field_23584) {
                   if (this != class_4783.field_23196) {
-                     return this != class_4783.field_23249 ? 0 : class_9299.method_42824(var1, 0, 1);
+                     return this != class_4783.field_23249 ? 0 : MathHelper.nextInt(var1, 0, 1);
                   } else {
-                     return class_9299.method_42824(var1, 2, 5);
+                     return MathHelper.nextInt(var1, 2, 5);
                   }
                } else {
-                  return class_9299.method_42824(var1, 2, 5);
+                  return MathHelper.nextInt(var1, 2, 5);
                }
             } else {
-               return class_9299.method_42824(var1, 3, 7);
+               return MathHelper.nextInt(var1, 3, 7);
             }
          } else {
-            return class_9299.method_42824(var1, 3, 7);
+            return MathHelper.nextInt(var1, 3, 7);
          }
       } else {
-         return class_9299.method_42824(var1, 0, 2);
+         return MathHelper.nextInt(var1, 0, 2);
       }
    }
 

@@ -258,7 +258,7 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
    private void method_34719() {
       this.method_2019(40);
       if (!this.world.method_22567()) {
-         this.method_37155(class_463.field_2883, this.method_26439(), this.method_26547());
+         this.method_37155(SoundEvents.field_2883, this.method_26439(), this.method_26547());
       }
    }
 
@@ -362,7 +362,7 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
       int var4 = this.method_34691(var1);
       if (var4 != 0) {
          for (class_8014 var6 : this.method_974()) {
-            var6.method_36370(-class_9299.method_42848((float)var4 * var6.method_36376()));
+            var6.method_36370(-MathHelper.floor((float)var4 * var6.method_36376()));
          }
       }
 
@@ -444,26 +444,26 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       if (!this.method_26507()) {
-         return !this.method_2024() ? class_463.field_2793 : class_463.field_2809;
+         return !this.method_2024() ? SoundEvents.field_2793 : SoundEvents.field_2809;
       } else {
          return null;
       }
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2300;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2300;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2283;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2283;
    }
 
    public void method_34724() {
-      class_8461 var3 = this.method_15891().method_13910().method_20727();
+      SoundEvent var3 = this.method_15891().method_13910().method_20727();
       if (var3 != null) {
          this.method_37155(var3, this.method_26439(), this.method_26547());
       }
@@ -785,7 +785,7 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
 
    public void method_34712(class_6331 var1, long var2, int var4) {
       if (this.method_34697(var2)) {
-         Box var7 = this.method_37241().method_18899(10.0, 10.0, 10.0);
+         Box var7 = this.getBoundingBox().method_18899(10.0, 10.0, 10.0);
          List var8 = var1.<class_7666>method_25868(class_7666.class, var7);
          List var9 = var8.stream().filter(var2x -> var2x.method_34697(var2)).limit(5L).collect(Collectors.toList());
          if (var9.size() >= var4) {

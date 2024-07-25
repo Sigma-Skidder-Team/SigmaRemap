@@ -13,7 +13,7 @@ public class class_606 extends class_129 {
       this.field_3475 = var1;
       this.field_3477 = (double)var6;
       this.field_3474 = (double)var7;
-      this.field_319 = (double)((class_9299.method_42828((float)var5, var6, var7) - var6) / (var7 - var6));
+      this.field_319 = (double)((MathHelper.clamp((float)var5, var6, var7) - var6) / (var7 - var6));
       this.method_396();
    }
 
@@ -21,7 +21,7 @@ public class class_606 extends class_129 {
    public void method_399() {
       if (class_2977.method_13638(this.field_3475).field_36675) {
          class_2977.method_13633(
-            this.field_3475, (int)class_9299.method_42794(class_9299.method_42827(this.field_319, 0.0, 1.0), this.field_3477, this.field_3474)
+            this.field_3475, (int) MathHelper.lerp(MathHelper.clamp(this.field_319, 0.0, 1.0), this.field_3477, this.field_3474)
          );
       }
    }

@@ -89,9 +89,9 @@ public class class_3867 extends class_7067<class_2770> {
       var4.method_36064();
       if (var1.field_13548 != null) {
          var4.method_36063();
-         float var25 = (float)(var1.field_13548.getPosX() - class_9299.method_42794((double)var3, var1.field_41767, var1.getPosX()));
-         float var27 = (float)(var1.field_13548.method_37309() - class_9299.method_42794((double)var3, var1.field_41698, var1.method_37309()));
-         float var28 = (float)(var1.field_13548.getPosZ() - class_9299.method_42794((double)var3, var1.field_41725, var1.getPosZ()));
+         float var25 = (float)(var1.field_13548.getPosX() - MathHelper.lerp((double)var3, var1.field_41767, var1.getPosX()));
+         float var27 = (float)(var1.field_13548.method_37309() - MathHelper.lerp((double)var3, var1.field_41698, var1.method_37309()));
+         float var28 = (float)(var1.field_13548.getPosZ() - MathHelper.lerp((double)var3, var1.field_41725, var1.getPosZ()));
          method_17915(var25, var27 + class_8205.method_37574(var1.field_13548, var3), var28, var3, var1.field_41697, var4, var5, var6);
          var4.method_36064();
       }
@@ -117,15 +117,15 @@ public class class_3867 extends class_7067<class_2770> {
    }
 
    public static void method_17915(float var0, float var1, float var2, float var3, int var4, class_7966 var5, class_2565 var6, int var7) {
-      float var10 = class_9299.method_42843(var0 * var0 + var2 * var2);
-      float var11 = class_9299.method_42843(var0 * var0 + var1 * var1 + var2 * var2);
+      float var10 = MathHelper.sqrt(var0 * var0 + var2 * var2);
+      float var11 = MathHelper.sqrt(var0 * var0 + var1 * var1 + var2 * var2);
       var5.method_36063();
       var5.method_36065(0.0, 2.0, 0.0);
       var5.method_36060(class_2426.field_12074.method_11062((float)(-Math.atan2((double)var2, (double)var0)) - (float) (Math.PI / 2)));
       var5.method_36060(class_2426.field_12080.method_11062((float)(-Math.atan2((double)var10, (double)var1)) - (float) (Math.PI / 2)));
       class_7907 var12 = var6.method_11645(field_18840);
       float var13 = 0.0F - ((float)var4 + var3) * 0.01F;
-      float var14 = class_9299.method_42843(var0 * var0 + var1 * var1 + var2 * var2) / 32.0F - ((float)var4 + var3) * 0.01F;
+      float var14 = MathHelper.sqrt(var0 * var0 + var1 * var1 + var2 * var2) / 32.0F - ((float)var4 + var3) * 0.01F;
       byte var15 = 8;
       float var16 = 0.0F;
       float var17 = 0.75F;
@@ -135,8 +135,8 @@ public class class_3867 extends class_7067<class_2770> {
       class_6555 var21 = var19.method_28618();
 
       for (int var22 = 1; var22 <= 8; var22++) {
-         float var23 = class_9299.method_42818((float)var22 * (float) (Math.PI * 2) / 8.0F) * 0.75F;
-         float var24 = class_9299.method_42840((float)var22 * (float) (Math.PI * 2) / 8.0F) * 0.75F;
+         float var23 = MathHelper.sin((float)var22 * (float) (Math.PI * 2) / 8.0F) * 0.75F;
+         float var24 = MathHelper.cos((float)var22 * (float) (Math.PI * 2) / 8.0F) * 0.75F;
          float var25 = (float)var22 / 8.0F;
          var12.method_35762(var20, var16 * 0.2F, var17 * 0.2F, 0.0F)
             .method_35743(0, 0, 0, 255)

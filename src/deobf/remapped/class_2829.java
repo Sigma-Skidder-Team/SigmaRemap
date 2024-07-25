@@ -22,7 +22,7 @@ public class class_2829 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      if (this.field_13867.method_17809() == null) {
+      if (this.field_13867.getAttackTarget() == null) {
          if (this.field_13864.method_29602()) {
             if (this.field_13867.method_37264()) {
                if (this.field_13864.method_25263(this.field_13867.method_37075())) {

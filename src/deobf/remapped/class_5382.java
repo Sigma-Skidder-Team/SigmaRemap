@@ -10,9 +10,9 @@ public class class_5382 extends class_8715 {
       this.field_49481 = var8;
       this.field_49486 = var10;
       this.field_49471 = var12;
-      this.field_49485 = class_9299.method_42819(this.field_49466, 0.7176471F, 0.8745098F);
-      this.field_49468 = class_9299.method_42819(this.field_49466, 0.0F, 0.0F);
-      this.field_49487 = class_9299.method_42819(this.field_49466, 0.8235294F, 0.9764706F);
+      this.field_49485 = MathHelper.nextFloat(this.field_49466, 0.7176471F, 0.8745098F);
+      this.field_49468 = MathHelper.nextFloat(this.field_49466, 0.0F, 0.0F);
+      this.field_49487 = MathHelper.nextFloat(this.field_49466, 0.8235294F, 0.9764706F);
       this.field_10503 *= 0.75F;
       this.field_49476 = (int)(20.0 / ((double)this.field_49466.nextFloat() * 0.8 + 0.2));
       this.field_27466 = false;
@@ -60,6 +60,6 @@ public class class_5382 extends class_8715 {
 
    @Override
    public float method_9766(float var1) {
-      return this.field_10503 * class_9299.method_42828(((float)this.field_49475 + var1) / (float)this.field_49476 * 32.0F, 0.0F, 1.0F);
+      return this.field_10503 * MathHelper.clamp(((float)this.field_49475 + var1) / (float)this.field_49476 * 32.0F, 0.0F, 1.0F);
    }
 }

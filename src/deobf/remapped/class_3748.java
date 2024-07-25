@@ -24,10 +24,10 @@ public class class_3748 implements class_2995 {
             double var16 = (double)((float)var14.method_12165() + var15.method_22008(var12, var14));
             class_3372.method_15562(
                new Box(
-                     (double)((float)var14.method_12173() + 0.01F),
+                     (double)((float)var14.getX() + 0.01F),
                      (double)((float)var14.method_12165() + 0.01F),
                      (double)((float)var14.method_12185() + 0.01F),
-                     (double)((float)var14.method_12173() + 0.99F),
+                     (double)((float)var14.getX() + 0.99F),
                      var16,
                      (double)((float)var14.method_12185() + 0.99F)
                   )
@@ -45,7 +45,7 @@ public class class_3748 implements class_2995 {
          if (var20.method_22007(class_6503.field_33094)) {
             class_3372.method_15553(
                String.valueOf(var20.method_21996()),
-               (double)var19.method_12173() + 0.5,
+               (double)var19.getX() + 0.5,
                (double)((float)var19.method_12165() + var20.method_22008(var12, var19)),
                (double)var19.method_12185() + 0.5,
                -16777216

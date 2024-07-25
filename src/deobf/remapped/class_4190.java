@@ -115,7 +115,7 @@ public abstract class class_4190 {
    }
 
    public int method_19487(class_9249 var1, double var2) {
-      return class_9299.method_42803(0, this.field_20395.method_26199(var1) + 1, var4 -> {
+      return MathHelper.method_42803(0, this.field_20395.method_26199(var1) + 1, var4 -> {
          if (var4 >= 0) {
             return var4 <= this.field_20395.method_26199(var1) ? var2 < this.method_19490(var1, var4) : true;
          } else {
@@ -138,7 +138,7 @@ public abstract class class_4190 {
          if (!(var6.method_6221() < 1.0E-7)) {
             class_1343 var7 = var1.method_6215(var6.method_6209(0.001));
             return !this.method_19484(
-                  var7.field_7336 - (double)var3.method_12173(), var7.field_7333 - (double)var3.method_12165(), var7.field_7334 - (double)var3.method_12185()
+                  var7.field_7336 - (double)var3.getX(), var7.field_7333 - (double)var3.method_12165(), var7.field_7334 - (double)var3.method_12185()
                )
                ? Box.method_18922(this.method_19492(), var1, var2, var3)
                : new class_9529(var7, Direction.method_1044(var6.field_7336, var6.field_7333, var6.field_7334).method_1046(), var3, true);

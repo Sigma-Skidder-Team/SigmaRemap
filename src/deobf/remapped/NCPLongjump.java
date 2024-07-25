@@ -82,7 +82,7 @@ public class NCPLongjump extends Module {
                   }
                }
 
-               if (client.thePlayer.field_41744 || !class_314.method_1434()) {
+               if (client.thePlayer.collidedHorizontally || !class_314.method_1434()) {
                   this.field_3398 = var5;
                }
 

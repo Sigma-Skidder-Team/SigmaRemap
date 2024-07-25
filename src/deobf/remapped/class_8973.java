@@ -18,7 +18,7 @@ public class class_8973 extends class_5210 {
    public class_2522 method_29302(class_353 var1) {
       class_4774 var4 = var1.method_21862().method_28258(var1.method_21858());
       return this.method_29260()
-         .method_10308(field_45980, Integer.valueOf(class_9299.method_42847((double)((180.0F + var1.method_21861()) * 16.0F / 360.0F) + 0.5) & 15))
+         .method_10308(field_45980, Integer.valueOf(MathHelper.floor((double)((180.0F + var1.method_21861()) * 16.0F / 360.0F) + 0.5) & 15))
          .method_10308(field_26767, Boolean.valueOf(var4.method_22005() == class_8532.field_43674));
    }
 

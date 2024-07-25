@@ -279,7 +279,7 @@ public class class_9399 extends LivingEntity {
 
    @Override
    public void method_26428() {
-      List var3 = this.world.method_25867(this, this.method_37241(), field_48052);
+      List var3 = this.world.method_25867(this, this.getBoundingBox(), field_48052);
 
       for (int var4 = 0; var4 < var3.size(); var4++) {
          Entity var5 = (Entity)var3.get(var4);
@@ -435,14 +435,14 @@ public class class_9399 extends LivingEntity {
          super.method_37336(var1);
       } else if (this.world.field_33055) {
          this.world
-            .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2551, this.method_37197(), 0.3F, 1.0F, false);
+            .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), SoundEvents.field_2551, this.method_37197(), 0.3F, 1.0F, false);
          this.field_48050 = this.world.method_29546();
       }
    }
 
    @Override
    public boolean method_37176(double var1) {
-      double var5 = this.method_37241().method_18906() * 4.0;
+      double var5 = this.getBoundingBox().method_18906() * 4.0;
       if (Double.isNaN(var5) || var5 == 0.0) {
          var5 = 4.0;
       }
@@ -507,7 +507,7 @@ public class class_9399 extends LivingEntity {
 
    private void method_43496() {
       this.world
-         .method_29528((PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2298, this.method_37197(), 1.0F, 1.0F);
+         .method_29528((PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), SoundEvents.field_2298, this.method_37197(), 1.0F, 1.0F);
    }
 
    @Override
@@ -723,20 +723,20 @@ public class class_9399 extends LivingEntity {
    }
 
    @Override
-   public class_8461 method_26587(int var1) {
-      return class_463.field_2697;
+   public SoundEvent method_26587(int var1) {
+      return SoundEvents.field_2697;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2551;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2551;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2298;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2298;
    }
 
    @Override

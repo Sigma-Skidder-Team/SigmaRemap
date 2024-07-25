@@ -169,7 +169,7 @@ public class class_8372 extends class_4088 {
                this.field_42869.method_17407();
                this.field_42863.method_43087(var1.method_3221());
                this.method_18853(this.field_42869);
-               var6x.method_43359((PlayerEntity)null, var7x, class_463.field_2423, class_562.field_3322, 1.0F, var6x.field_33033.nextFloat() * 0.1F + 0.9F);
+               var6x.method_43359((PlayerEntity)null, var7x, SoundEvents.field_2423, class_562.field_3322, 1.0F, var6x.field_33033.nextFloat() * 0.1F + 0.9F);
             }
          });
          return true;

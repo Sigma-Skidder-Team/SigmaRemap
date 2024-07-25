@@ -18,10 +18,10 @@ public class class_1665 extends class_5920<class_7666> {
 
    public boolean method_7418(class_6331 var1, class_7666 var2) {
       class_1150 var5 = var2.method_26525();
-      if (!var5.<class_5834>method_5138(class_6044.field_30861).isPresent()) {
+      if (!var5.<LivingEntity>method_5138(class_6044.field_30861).isPresent()) {
          return false;
       } else {
-         class_5834 var6 = var5.<class_5834>method_5138(class_6044.field_30861).get();
+         LivingEntity var6 = var5.<LivingEntity>method_5138(class_6044.field_30861).get();
          return var6.getType() == EntityType.field_34300
             && var2.isAlive()
             && var6.isAlive()
@@ -31,7 +31,7 @@ public class class_1665 extends class_5920<class_7666> {
    }
 
    public boolean method_7416(class_6331 var1, class_7666 var2, long var3) {
-      return this.method_7418(var1, var2) && this.field_8626 > 0 && var2.method_26525().<class_5834>method_5138(class_6044.field_30861).isPresent();
+      return this.method_7418(var1, var2) && this.field_8626 > 0 && var2.method_26525().<LivingEntity>method_5138(class_6044.field_30861).isPresent();
    }
 
    public void method_7413(class_6331 var1, class_7666 var2, long var3) {
@@ -43,7 +43,7 @@ public class class_1665 extends class_5920<class_7666> {
    }
 
    public void method_7412(class_6331 var1, class_7666 var2, long var3) {
-      class_5834 var7 = this.method_7419(var2);
+      LivingEntity var7 = this.method_7419(var2);
       this.method_7415(var7, var2);
       if (this.field_8624.isEmpty()) {
          var2.method_37349(class_6943.field_35707, ItemStack.EMPTY);
@@ -62,7 +62,7 @@ public class class_1665 extends class_5920<class_7666> {
       this.field_8625 = null;
    }
 
-   private void method_7415(class_5834 var1, class_7666 var2) {
+   private void method_7415(LivingEntity var1, class_7666 var2) {
       boolean var5 = false;
       ItemStack var6 = var1.method_26446();
       if (this.field_8625 == null || !ItemStack.method_28019(this.field_8625, var6)) {
@@ -96,9 +96,9 @@ public class class_1665 extends class_5920<class_7666> {
       return ItemStack.method_28019(this.field_8625, var1.method_36372()) || ItemStack.method_28019(this.field_8625, var1.method_36377());
    }
 
-   private class_5834 method_7419(class_7666 var1) {
+   private LivingEntity method_7419(class_7666 var1) {
       class_1150 var4 = var1.method_26525();
-      class_5834 var5 = var4.<class_5834>method_5138(class_6044.field_30861).get();
+      LivingEntity var5 = var4.<LivingEntity>method_5138(class_6044.field_30861).get();
       var4.method_5105(class_6044.field_30874, new class_4843(var5, true));
       return var5;
    }

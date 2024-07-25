@@ -49,7 +49,7 @@ public class class_7100 implements class_7912 {
          float var7 = (float)(var6 >> 16 & 0xFF) / 255.0F;
          float var8 = (float)(var6 >> 8 & 0xFF) / 255.0F;
          float var9 = (float)(var6 & 0xFF) / 255.0F;
-         AbstractGui.method_9774(var1, 1, 1, 15, 15, class_9299.method_42796(var7 * var2, var8 * var2, var9 * var2) | var3 << 24);
+         AbstractGui.method_9774(var1, 1, 1, 15, 15, MathHelper.rgb(var7 * var2, var8 * var2, var9 * var2) | var3 << 24);
       }
 
       MinecraftClient.getInstance().getTextureManager().bindTexture(this.field_36623);

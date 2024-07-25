@@ -71,7 +71,7 @@ public class class_7659 extends class_6017 {
                var13.method_13361(var5, var11, var7);
             }
 
-            var11 = (double)(class_9299.method_42847(var11) + 1);
+            var11 = (double)(MathHelper.floor(var11) + 1);
             this.field_38905 = new class_4478(this.field_9479.world, var5, var11, var7);
             this.field_38905.method_20782(this.field_9479);
             this.field_38905.method_20781(5.0F);

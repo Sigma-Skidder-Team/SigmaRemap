@@ -39,9 +39,9 @@ public class class_378 extends MobEntity implements class_1869 {
       this.field_41735.method_36633(field_1534, var1);
       this.method_37351();
       this.method_37187();
-      this.method_26561(Attributes.MAX_HEALTH).method_45006((double)(var1 * var1));
-      this.method_26561(Attributes.MOVEMENT_SPEED).method_45006((double)(0.2F + 0.1F * (float)var1));
-      this.method_26561(Attributes.ATTACK_DAMAGE).method_45006((double)var1);
+      this.getAttribute(Attributes.MAX_HEALTH).setBaseValue((double)(var1 * var1));
+      this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)(0.2F + 0.1F * (float)var1));
+      this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue((double)var1);
       if (var2) {
          this.method_26456(this.method_26465());
       }
@@ -96,8 +96,8 @@ public class class_378 extends MobEntity implements class_1869 {
          for (int var4 = 0; var4 < var3 * 8; var4++) {
             float var5 = this.field_41717.nextFloat() * (float) (Math.PI * 2);
             float var6 = this.field_41717.nextFloat() * 0.5F + 0.5F;
-            float var7 = class_9299.method_42818(var5) * (float)var3 * 0.5F * var6;
-            float var8 = class_9299.method_42840(var5) * (float)var3 * 0.5F * var6;
+            float var7 = MathHelper.sin(var5) * (float)var3 * 0.5F * var6;
+            float var8 = MathHelper.cos(var5) * (float)var3 * 0.5F * var6;
             this.world
                .method_43361(this.method_1854(), this.getPosX() + (double)var7, this.method_37309(), this.getPosZ() + (double)var8, 0.0, 0.0, 0.0);
          }
@@ -201,7 +201,7 @@ public class class_378 extends MobEntity implements class_1869 {
          if (this.method_37275(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
             && this.method_26420(var1)
             && var1.attackEntityFrom(DamageSource.method_28345(this), this.method_1858())) {
-            this.method_37155(class_463.field_2129, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
+            this.method_37155(SoundEvents.field_2129, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
             this.method_37096(this, var1);
          }
       }
@@ -221,17 +221,17 @@ public class class_378 extends MobEntity implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return !this.method_1859() ? class_463.field_2078 : class_463.field_1949;
+   public SoundEvent method_26541(DamageSource var1) {
+      return !this.method_1859() ? SoundEvents.field_2078 : SoundEvents.field_1949;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return !this.method_1859() ? class_463.field_2126 : class_463.field_2086;
+   public SoundEvent method_26599() {
+      return !this.method_1859() ? SoundEvents.field_2126 : SoundEvents.field_2086;
    }
 
-   public class_8461 method_1850() {
-      return !this.method_1859() ? class_463.field_1981 : class_463.field_1990;
+   public SoundEvent method_1850() {
+      return !this.method_1859() ? SoundEvents.field_1981 : SoundEvents.field_1990;
    }
 
    @Override
@@ -303,8 +303,8 @@ public class class_378 extends MobEntity implements class_1869 {
       return ((this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F) * var3;
    }
 
-   public class_8461 method_1849() {
-      return !this.method_1859() ? class_463.field_2865 : class_463.field_2626;
+   public SoundEvent method_1849() {
+      return !this.method_1859() ? SoundEvents.field_2865 : SoundEvents.field_2626;
    }
 
    @Override

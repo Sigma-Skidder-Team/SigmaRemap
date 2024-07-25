@@ -11,7 +11,7 @@ public class class_4931 {
    private boolean field_25527;
    private boolean field_25529;
    private boolean field_25530 = true;
-   private Predicate<class_5834> field_25523;
+   private Predicate<LivingEntity> field_25523;
 
    public class_4931 method_22607(double var1) {
       this.field_25525 = var1;
@@ -43,12 +43,12 @@ public class class_4931 {
       return this;
    }
 
-   public class_4931 method_22606(Predicate<class_5834> var1) {
+   public class_4931 method_22606(Predicate<LivingEntity> var1) {
       this.field_25523 = var1;
       return this;
    }
 
-   public boolean method_22604(class_5834 var1, class_5834 var2) {
+   public boolean method_22604(LivingEntity var1, LivingEntity var2) {
       if (var1 != var2) {
          if (!var2.method_37221()) {
             if (var2.isAlive()) {

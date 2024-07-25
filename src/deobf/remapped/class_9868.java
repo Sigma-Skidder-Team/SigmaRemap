@@ -16,20 +16,20 @@ public class class_9868 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      LivingEntity var3 = this.field_49920.method_17809();
+      LivingEntity var3 = this.field_49920.getAttackTarget();
       return var3 != null && var3.isAlive();
    }
 
    @Override
    public boolean method_16799() {
-      return super.method_16799() && (this.field_49918 || this.field_49920.method_37275(this.field_49920.method_17809()) > 9.0);
+      return super.method_16799() && (this.field_49918 || this.field_49920.method_37275(this.field_49920.getAttackTarget()) > 9.0);
    }
 
    @Override
    public void method_16796() {
       this.field_49919 = -10;
       this.field_49920.method_26927().method_5620();
-      this.field_49920.method_26865().method_17240(this.field_49920.method_17809(), 90.0F, 90.0F);
+      this.field_49920.method_26865().method_17240(this.field_49920.getAttackTarget(), 90.0F, 90.0F);
       this.field_49920.field_41763 = true;
    }
 
@@ -42,7 +42,7 @@ public class class_9868 extends class_3599 {
 
    @Override
    public void method_16794() {
-      LivingEntity var3 = this.field_49920.method_17809();
+      LivingEntity var3 = this.field_49920.getAttackTarget();
       this.field_49920.method_26927().method_5620();
       this.field_49920.method_26865().method_17240(var3, 90.0F, 90.0F);
       if (this.field_49920.method_26420(var3)) {
@@ -63,7 +63,7 @@ public class class_9868 extends class_3599 {
                this.field_49920.method_26860((LivingEntity)null);
             }
          } else {
-            class_337.method_1550(this.field_49920, this.field_49920.method_17809().method_37145());
+            class_337.method_1550(this.field_49920, this.field_49920.getAttackTarget().method_37145());
             if (!this.field_49920.method_37378()) {
                this.field_49920.world.method_29587(this.field_49920, (byte)21);
             }

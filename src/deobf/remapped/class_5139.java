@@ -56,7 +56,7 @@ public class class_5139 extends class_4382 {
    public static int method_23552(LivingEntity var0, int var1) {
       int var4 = class_2931.method_13399(class_3668.field_17878, var0);
       if (var4 > 0) {
-         var1 -= class_9299.method_42848((float)var1 * (float)var4 * 0.15F);
+         var1 -= MathHelper.floor((float)var1 * (float)var4 * 0.15F);
       }
 
       return var1;
@@ -65,7 +65,7 @@ public class class_5139 extends class_4382 {
    public static double method_23553(LivingEntity var0, double var1) {
       int var5 = class_2931.method_13399(class_3668.field_17880, var0);
       if (var5 > 0) {
-         var1 -= (double)class_9299.method_42847(var1 * (double)((float)var5 * 0.15F));
+         var1 -= (double) MathHelper.floor(var1 * (double)((float)var5 * 0.15F));
       }
 
       return var1;

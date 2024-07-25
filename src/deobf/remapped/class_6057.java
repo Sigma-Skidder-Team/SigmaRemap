@@ -104,8 +104,8 @@ public abstract class class_6057 {
 
    private void method_27686(long var1, long var3, int var5, int var6, int var7, boolean var8) {
       if (!this.method_27692(var3)) {
-         var5 = class_9299.method_42829(var5, 0, this.field_30986 - 1);
-         var6 = class_9299.method_42829(var6, 0, this.field_30986 - 1);
+         var5 = MathHelper.clamp(var5, 0, this.field_30986 - 1);
+         var6 = MathHelper.clamp(var6, 0, this.field_30986 - 1);
          boolean var11;
          if (var7 != 255) {
             var11 = false;
@@ -116,7 +116,7 @@ public abstract class class_6057 {
 
          int var12;
          if (!var8) {
-            var12 = class_9299.method_42829(this.method_27695(var3, var1, var5), 0, this.field_30986 - 1);
+            var12 = MathHelper.clamp(this.method_27695(var3, var1, var5), 0, this.field_30986 - 1);
          } else {
             var12 = Math.min(var7, var5);
          }
@@ -139,7 +139,7 @@ public abstract class class_6057 {
 
    public final void method_27687(long var1, long var3, int var5, boolean var6) {
       int var9 = this.field_30985.get(var3) & 255;
-      int var10 = class_9299.method_42829(this.method_27700(var1, var3, var5), 0, this.field_30986 - 1);
+      int var10 = MathHelper.clamp(this.method_27700(var1, var3, var5), 0, this.field_30986 - 1);
       if (!var6) {
          int var11;
          boolean var12;
@@ -148,7 +148,7 @@ public abstract class class_6057 {
             var12 = false;
          } else {
             var12 = true;
-            var11 = class_9299.method_42829(this.method_27698(var3), 0, this.field_30986 - 1);
+            var11 = MathHelper.clamp(this.method_27698(var3), 0, this.field_30986 - 1);
          }
 
          if (var10 == var11) {
@@ -171,7 +171,7 @@ public abstract class class_6057 {
             var1--;
             LongLinkedOpenHashSet var4 = this.field_30988[this.field_30987];
             long var5 = var4.removeFirstLong();
-            int var7 = class_9299.method_42829(this.method_27698(var5), 0, this.field_30986 - 1);
+            int var7 = MathHelper.clamp(this.method_27698(var5), 0, this.field_30986 - 1);
             if (var4.isEmpty()) {
                this.method_27696(this.field_30986);
             }

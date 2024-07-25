@@ -13,7 +13,7 @@ public class class_4597 implements Packet<class_392> {
 
    public class_4597(Entity var1) {
       this.field_22349 = var1.method_37145();
-      List var4 = var1.method_37114();
+      List var4 = var1.getPassengers();
       this.field_22347 = new int[var4.size()];
 
       for (int var5 = 0; var5 < var4.size(); var5++) {

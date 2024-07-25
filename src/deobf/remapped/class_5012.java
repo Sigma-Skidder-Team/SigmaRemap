@@ -9,7 +9,7 @@ public class class_5012 extends class_4285<class_2045> {
    }
 
    public boolean method_23067(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_2045 var5) {
-      var4 = new BlockPos(var4.method_12173(), var2.method_29816(), var4.method_12185());
+      var4 = new BlockPos(var4.getX(), var2.method_29816(), var4.method_12185());
       boolean var8 = var3.nextDouble() > 0.7;
       class_2522 var9 = var5.field_10356;
       double var10 = var3.nextDouble() * 2.0 * Math.PI;
@@ -42,7 +42,7 @@ public class class_5012 extends class_4285<class_2045> {
       for (int var26 = -var19; var26 < var19; var26++) {
          for (int var28 = -var19; var28 < var19; var28++) {
             for (int var29 = -1; var29 > -var17; var29--) {
-               int var30 = !var14 ? var19 : class_9299.method_42816((float)var19 * (1.0F - (float)Math.pow((double)var29, 2.0) / ((float)var17 * 8.0F)));
+               int var30 = !var14 ? var19 : MathHelper.ceil((float)var19 * (1.0F - (float)Math.pow((double)var29, 2.0) / ((float)var17 * 8.0F)));
                int var24 = this.method_23061(var3, -var29, var17, var18);
                if (var26 < var24) {
                   this.method_23072(var1, var3, var4, var17, var26, var29, var28, var24, var30, var14, var13, var10, var8, var9);
@@ -178,16 +178,16 @@ public class class_5012 extends class_4285<class_2045> {
    }
 
    private double method_23068(int var1, int var2, BlockPos var3, int var4, Random var5) {
-      float var8 = 10.0F * class_9299.method_42828(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
+      float var8 = 10.0F * MathHelper.clamp(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
       return (double)var8
-         + Math.pow((double)(var1 - var3.method_12173()), 2.0)
+         + Math.pow((double)(var1 - var3.getX()), 2.0)
          + Math.pow((double)(var2 - var3.method_12185()), 2.0)
          - Math.pow((double)var4, 2.0);
    }
 
    private double method_23071(int var1, int var2, BlockPos var3, int var4, int var5, double var6) {
-      return Math.pow(((double)(var1 - var3.method_12173()) * Math.cos(var6) - (double)(var2 - var3.method_12185()) * Math.sin(var6)) / (double)var4, 2.0)
-         + Math.pow(((double)(var1 - var3.method_12173()) * Math.sin(var6) + (double)(var2 - var3.method_12185()) * Math.cos(var6)) / (double)var5, 2.0)
+      return Math.pow(((double)(var1 - var3.getX()) * Math.cos(var6) - (double)(var2 - var3.method_12185()) * Math.sin(var6)) / (double)var4, 2.0)
+         + Math.pow(((double)(var1 - var3.getX()) * Math.sin(var6) + (double)(var2 - var3.method_12185()) * Math.cos(var6)) / (double)var5, 2.0)
          - 1.0;
    }
 
@@ -199,19 +199,19 @@ public class class_5012 extends class_4285<class_2045> {
          var8 = (1.0F - (float)var9 / ((float)var3 * var7 * 0.4F)) * (float)var4;
       }
 
-      return class_9299.method_42816(var8 / 2.0F);
+      return MathHelper.ceil(var8 / 2.0F);
    }
 
    private int method_23070(int var1, int var2, int var3) {
       float var6 = 1.0F;
       float var7 = (1.0F - (float)Math.pow((double)var1, 2.0) / ((float)var2 * 1.0F)) * (float)var3;
-      return class_9299.method_42816(var7 / 2.0F);
+      return MathHelper.ceil(var7 / 2.0F);
    }
 
    private int method_23061(Random var1, int var2, int var3, int var4) {
       float var7 = 1.0F + var1.nextFloat() / 2.0F;
       float var8 = (1.0F - (float)var2 / ((float)var3 * var7)) * (float)var4;
-      return class_9299.method_42816(var8 / 2.0F);
+      return MathHelper.ceil(var8 / 2.0F);
    }
 
    private boolean method_23073(class_6414 var1) {

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class class_9469 {
    private static String[] field_48292;
-   public static final Map<class_4466, Int2ObjectMap<class_4904[]>> field_48293 = Util.<Map<class_4466, Int2ObjectMap<class_4904[]>>>method_44659(
+   public static final Map<class_4466, Int2ObjectMap<class_4904[]>> field_48293 = Util.<Map<class_4466, Int2ObjectMap<class_4904[]>>>make(
       Maps.newHashMap(),
       var0 -> {
          var0.put(

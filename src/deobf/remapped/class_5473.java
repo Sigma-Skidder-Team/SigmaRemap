@@ -8,7 +8,7 @@ public class class_5473 extends class_7060 {
    public class_5473(BlockPos var1) {
       super(class_2746.field_13416, 0);
       this.field_36435 = new class_9616(
-         var1.method_12173(), var1.method_12165(), var1.method_12185(), var1.method_12173(), var1.method_12165(), var1.method_12185()
+         var1.getX(), var1.method_12165(), var1.method_12185(), var1.getX(), var1.method_12165(), var1.method_12185()
       );
    }
 
@@ -50,7 +50,7 @@ public class class_5473 extends class_7060 {
             }
 
             this.field_36435 = new class_9616(
-               var11.method_12173(), var11.method_12165(), var11.method_12185(), var11.method_12173(), var11.method_12165(), var11.method_12185()
+               var11.getX(), var11.method_12165(), var11.method_12185(), var11.getX(), var11.method_12165(), var11.method_12185()
             );
             return this.method_32526(var1, var5, var4, var11, class_5931.field_30082, (class_2522)null);
          }

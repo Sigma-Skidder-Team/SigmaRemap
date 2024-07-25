@@ -6,7 +6,7 @@ import java.util.function.LongFunction;
 
 public class class_7930 {
    private static String[] field_40561;
-   private static final Int2IntMap field_40560 = Util.<Int2IntMap>method_44659(new Int2IntOpenHashMap(), var0 -> {
+   private static final Int2IntMap field_40560 = Util.<Int2IntMap>make(new Int2IntOpenHashMap(), var0 -> {
       method_35857(var0, class_9748.field_49534, 16);
       method_35857(var0, class_9748.field_49534, 26);
       method_35857(var0, class_9748.field_49529, 2);

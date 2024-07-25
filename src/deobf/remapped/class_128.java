@@ -37,7 +37,7 @@ public class class_128 extends class_3599 {
                   class_2522 var10 = var3.method_28262(var9);
                   class_6414 var11 = var10.method_8360();
                   if (var11 instanceof class_6598) {
-                     if (!var3.method_29537().method_1285(class_291.field_1047)) {
+                     if (!var3.getGameRules().getBoolean(GameRules.field_1047)) {
                         var3.method_7513(var9, ((class_6598)var11).method_30381().method_29260(), 3);
                      } else {
                         var3.method_7511(var9, true, this.field_318);

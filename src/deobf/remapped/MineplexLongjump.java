@@ -57,7 +57,7 @@ public class MineplexLongjump extends Module {
                   this.field_21694 -= 0.05;
                }
 
-               if (client.thePlayer.field_41744) {
+               if (client.thePlayer.collidedHorizontally) {
                   this.field_21693 = 0.35;
                   this.field_21691 = 1;
                }

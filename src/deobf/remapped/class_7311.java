@@ -5,7 +5,7 @@ public class class_7311 extends class_6165 {
    private int field_37387;
    private int field_37386;
 
-   public class_7311(class_8461 var1) {
+   public class_7311(SoundEvent var1) {
       super(var1, class_562.field_3325);
       this.field_5768 = true;
       this.field_5764 = 0;
@@ -20,7 +20,7 @@ public class class_7311 extends class_6165 {
       }
 
       this.field_37386 = this.field_37386 + this.field_37387;
-      this.field_5766 = class_9299.method_42828((float)this.field_37386 / 40.0F, 0.0F, 1.0F);
+      this.field_5766 = MathHelper.clamp((float)this.field_37386 / 40.0F, 0.0F, 1.0F);
    }
 
    public void method_33354() {

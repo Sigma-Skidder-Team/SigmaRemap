@@ -8,7 +8,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_9173 {
    public static void method_42280(CommandDispatcher<class_9155> var0) {
       LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)class_465.method_2231("gamerule").requires(var0x -> var0x.method_40314(2));
-      class_291.method_1289(new class_9360(var3));
+      GameRules.method_1289(new class_9360(var3));
       var0.register(var3);
    }
 

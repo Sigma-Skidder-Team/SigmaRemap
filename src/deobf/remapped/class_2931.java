@@ -25,7 +25,7 @@ public class class_2931 {
             CompoundNBT var7 = var5.method_15764(var6);
             Identifier var8 = Identifier.method_21455(var7.method_25965("id"));
             if (var8 != null && var8.equals(var4)) {
-               return class_9299.method_42829(var7.method_25947("lvl"), 0, 255);
+               return MathHelper.clamp(var7.method_25947("lvl"), 0, 255);
             }
          }
 
@@ -288,7 +288,7 @@ public class class_2931 {
       } else {
          var2 = var2 + 1 + var0.nextInt(var8 / 4 + 1) + var0.nextInt(var8 / 4 + 1);
          float var9 = (var0.nextFloat() + var0.nextFloat() - 1.0F) * 0.15F;
-         var2 = class_9299.method_42829(Math.round((float)var2 + (float)var2 * var9), 1, Integer.MAX_VALUE);
+         var2 = MathHelper.clamp(Math.round((float)var2 + (float)var2 * var9), 1, Integer.MAX_VALUE);
          List var10 = method_13404(var2, var1, var3);
          if (!var10.isEmpty()) {
             var6.add(class_6242.<class_1047>method_28510(var0, var10));

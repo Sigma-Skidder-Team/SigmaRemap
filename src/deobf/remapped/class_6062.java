@@ -98,12 +98,12 @@ public abstract class class_6062<C extends class_9472> {
          && !(var12 < var24 - 16.0 - var14 * 2.0)
          && !(var8 > var22 + 16.0 + var14 * 2.0)
          && !(var12 > var24 + 16.0 + var14 * 2.0)) {
-         int var26 = Math.max(class_9299.method_42847(var8 - var14) - var6 * 16 - 1, 0);
-         int var27 = Math.min(class_9299.method_42847(var8 + var14) - var6 * 16 + 1, 16);
-         int var28 = Math.max(class_9299.method_42847(var10 - var16) - 1, 1);
-         int var29 = Math.min(class_9299.method_42847(var10 + var16) + 1, this.field_31011 - 8);
-         int var30 = Math.max(class_9299.method_42847(var12 - var14) - var7 * 16 - 1, 0);
-         int var31 = Math.min(class_9299.method_42847(var12 + var14) - var7 * 16 + 1, 16);
+         int var26 = Math.max(MathHelper.floor(var8 - var14) - var6 * 16 - 1, 0);
+         int var27 = Math.min(MathHelper.floor(var8 + var14) - var6 * 16 + 1, 16);
+         int var28 = Math.max(MathHelper.floor(var10 - var16) - 1, 1);
+         int var29 = Math.min(MathHelper.floor(var10 + var16) + 1, this.field_31011 - 8);
+         int var30 = Math.max(MathHelper.floor(var12 - var14) - var7 * 16 - 1, 0);
+         int var31 = Math.min(MathHelper.floor(var12 + var14) - var7 * 16 + 1, 16);
          if (this.method_27723(var1, var6, var7, var26, var27, var28, var29, var30, var31)) {
             return false;
          } else {

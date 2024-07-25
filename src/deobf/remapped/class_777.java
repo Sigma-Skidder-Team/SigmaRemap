@@ -40,8 +40,8 @@ public class class_777 extends Module {
          }
 
          float var8 = (float)Math.toRadians((double)(client.thePlayer.rotationYaw + 90.0F));
-         double var9 = (double)(class_9299.method_42840(var8) * (float)var7);
-         double var11 = (double)(class_9299.method_42818(var8) * (float)var7);
+         double var9 = (double)(MathHelper.cos(var8) * (float)var7);
+         double var11 = (double)(MathHelper.sin(var8) * (float)var7);
          client.thePlayer
             .method_37256(client.thePlayer.getPosX() + var9, client.thePlayer.method_37309(), client.thePlayer.getPosZ() + var11);
       }

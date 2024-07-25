@@ -46,8 +46,8 @@ public class class_4745 extends class_4314 {
          int var7 = var6.size();
 
          for (class_8829 var9 : var5) {
-            if (var9.method_17809() == null) {
-               var9.method_26860((class_5834)var6.get(var1.field_33033.nextInt(var7)));
+            if (var9.getAttackTarget() == null) {
+               var9.method_26860((LivingEntity)var6.get(var1.field_33033.nextInt(var7)));
             }
          }
       }
@@ -66,7 +66,7 @@ public class class_4745 extends class_4314 {
          if (var9.method_27960() != class_4897.field_24853) {
             if (var9.method_27960() == class_4897.field_24812) {
                var9.method_27970(1);
-               var2.method_29528(var4, var4.getPosX(), var4.method_37309(), var4.getPosZ(), class_463.field_2054, class_562.field_3328, 1.0F, 1.0F);
+               var2.method_29528(var4, var4.getPosX(), var4.method_37309(), var4.getPosZ(), SoundEvents.field_2054, class_562.field_3328, 1.0F, 1.0F);
                if (!var9.method_28022()) {
                   if (!var4.inventory.method_32414(new ItemStack(class_4897.field_24773))) {
                      var4.method_3153(new ItemStack(class_4897.field_24773), false);
@@ -78,7 +78,7 @@ public class class_4745 extends class_4314 {
                var11 = true;
             }
          } else {
-            var2.method_29528(var4, var4.getPosX(), var4.method_37309(), var4.getPosZ(), class_463.field_2271, class_562.field_3328, 1.0F, 1.0F);
+            var2.method_29528(var4, var4.getPosX(), var4.method_37309(), var4.getPosZ(), SoundEvents.field_2271, class_562.field_3328, 1.0F, 1.0F);
             method_21913(var2, var3);
             var9.method_28003(1, var4, var1x -> var1x.method_26447(var5));
             var11 = true;
@@ -158,8 +158,8 @@ public class class_4745 extends class_4314 {
    private void method_21916(World var1, BlockPos var2, class_4190 var3, double var4) {
       this.method_21914(
          var1,
-         (double)var2.method_12173() + var3.method_19491(class_9249.field_47215),
-         (double)var2.method_12173() + var3.method_19495(class_9249.field_47215),
+         (double)var2.getX() + var3.method_19491(class_9249.field_47215),
+         (double)var2.getX() + var3.method_19495(class_9249.field_47215),
          (double)var2.method_12185() + var3.method_19491(class_9249.field_47219),
          (double)var2.method_12185() + var3.method_19495(class_9249.field_47219),
          var4
@@ -169,9 +169,9 @@ public class class_4745 extends class_4314 {
    private void method_21914(World var1, double var2, double var4, double var6, double var8, double var10) {
       var1.method_43361(
          class_3090.field_15316,
-         class_9299.method_42794(var1.field_33033.nextDouble(), var2, var4),
+         MathHelper.lerp(var1.field_33033.nextDouble(), var2, var4),
          var10,
-         class_9299.method_42794(var1.field_33033.nextDouble(), var6, var8),
+         MathHelper.lerp(var1.field_33033.nextDouble(), var6, var8),
          0.0,
          0.0,
          0.0
@@ -201,7 +201,7 @@ public class class_4745 extends class_4314 {
 
    @Override
    public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
-      if (!var1.field_33055 && var4.method_3186() && var1.method_29537().method_1285(class_291.field_1058)) {
+      if (!var1.field_33055 && var4.method_3186() && var1.getGameRules().getBoolean(GameRules.field_1058)) {
          class_3757 var7 = var1.method_28260(var2);
          if (var7 instanceof class_5354) {
             class_5354 var8 = (class_5354)var7;
@@ -221,7 +221,7 @@ public class class_4745 extends class_4314 {
             CompoundNBT var14 = new CompoundNBT();
             var14.putInt("honey_level", var10);
             var9.method_27954("BlockStateTag", var14);
-            class_91 var13 = new class_91(var1, (double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185(), var9);
+            class_91 var13 = new class_91(var1, (double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185(), var9);
             var13.method_257();
             var1.method_7509(var13);
          }

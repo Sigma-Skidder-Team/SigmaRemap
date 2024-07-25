@@ -33,7 +33,7 @@ public abstract class class_4641 extends Entity {
 
    public void method_21474() {
       if (this.field_22663 != null) {
-         double var3 = (double)this.field_22661.method_12173() + 0.5;
+         double var3 = (double)this.field_22661.getX() + 0.5;
          double var5 = (double)this.field_22661.method_12165() + 0.5;
          double var7 = (double)this.field_22661.method_12185() + 0.5;
          double var9 = 0.46875;
@@ -105,7 +105,7 @@ public abstract class class_4641 extends Entity {
             }
          }
 
-         return this.world.method_25867(this, this.method_37241(), field_22662).isEmpty();
+         return this.world.method_25867(this, this.getBoundingBox(), field_22662).isEmpty();
       }
    }
 
@@ -163,7 +163,7 @@ public abstract class class_4641 extends Entity {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       BlockPos var4 = this.method_21469();
-      var1.putInt("TileX", var4.method_12173());
+      var1.putInt("TileX", var4.getX());
       var1.putInt("TileY", var4.method_12165());
       var1.putInt("TileZ", var4.method_12185());
    }
@@ -226,7 +226,7 @@ public abstract class class_4641 extends Entity {
          }
       }
 
-      float var4 = class_9299.method_42810(this.rotationYaw);
+      float var4 = MathHelper.wrapDegrees(this.rotationYaw);
       switch (var1) {
          case field_34338:
             return var4 + 180.0F;

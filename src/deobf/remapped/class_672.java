@@ -44,8 +44,8 @@ public class class_672<T extends MobEntity> extends class_3169<T> {
       float var9 = (float) (Math.PI / 6);
       float var10 = var4 * 0.1F + var2 * 0.5F;
       float var11 = 0.08F + var3 * 0.4F;
-      this.field_3734.field_8185 = (float) (-Math.PI / 6) - class_9299.method_42840(var10 * 1.2F) * var11;
-      this.field_3733.field_8185 = (float) (Math.PI / 6) + class_9299.method_42840(var10) * var11;
+      this.field_3734.field_8185 = (float) (-Math.PI / 6) - MathHelper.cos(var10 * 1.2F) * var11;
+      this.field_3733.field_8185 = (float) (Math.PI / 6) + MathHelper.cos(var10) * var11;
       if (!(var1 instanceof class_6993)) {
          if (var1.getType() == EntityType.field_34234) {
             class_3191.method_14688(this.field_11701, this.field_11705, var1.method_26892(), this.field_33202, var4);
@@ -77,15 +77,15 @@ public class class_672<T extends MobEntity> extends class_3169<T> {
             }
          } else {
             float var14 = var4 / 60.0F;
-            this.field_3733.field_8185 = (float) (Math.PI / 6) + (float) (Math.PI / 180.0) * class_9299.method_42818(var14 * 30.0F) * 10.0F;
-            this.field_3734.field_8185 = (float) (-Math.PI / 6) - (float) (Math.PI / 180.0) * class_9299.method_42840(var14 * 30.0F) * 10.0F;
-            this.field_11696.field_8183 = class_9299.method_42818(var14 * 10.0F);
-            this.field_11696.field_8181 = class_9299.method_42818(var14 * 40.0F) + 0.4F;
-            this.field_11705.field_8185 = (float) (Math.PI / 180.0) * (70.0F + class_9299.method_42840(var14 * 40.0F) * 10.0F);
+            this.field_3733.field_8185 = (float) (Math.PI / 6) + (float) (Math.PI / 180.0) * MathHelper.sin(var14 * 30.0F) * 10.0F;
+            this.field_3734.field_8185 = (float) (-Math.PI / 6) - (float) (Math.PI / 180.0) * MathHelper.cos(var14 * 30.0F) * 10.0F;
+            this.field_11696.field_8183 = MathHelper.sin(var14 * 10.0F);
+            this.field_11696.field_8181 = MathHelper.sin(var14 * 40.0F) + 0.4F;
+            this.field_11705.field_8185 = (float) (Math.PI / 180.0) * (70.0F + MathHelper.cos(var14 * 40.0F) * 10.0F);
             this.field_11701.field_8185 = this.field_11705.field_8185 * -1.0F;
-            this.field_11705.field_8181 = class_9299.method_42818(var14 * 40.0F) * 0.5F + 1.5F;
-            this.field_11701.field_8181 = class_9299.method_42818(var14 * 40.0F) * 0.5F + 1.5F;
-            this.field_11704.field_8181 = class_9299.method_42818(var14 * 40.0F) * 0.35F;
+            this.field_11705.field_8181 = MathHelper.sin(var14 * 40.0F) * 0.5F + 1.5F;
+            this.field_11701.field_8181 = MathHelper.sin(var14 * 40.0F) * 0.5F + 1.5F;
+            this.field_11704.field_8181 = MathHelper.sin(var14 * 40.0F) * 0.35F;
          }
       }
 

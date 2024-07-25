@@ -65,7 +65,7 @@ public class class_1475 extends class_2620 {
       if (!var2.field_33055) {
          class_2522 var11 = this.method_6805(var1, var2, var3);
          float var10 = !var11.<Boolean>method_10313(field_7907) ? 0.5F : 0.6F;
-         var2.method_43359((PlayerEntity)null, var3, class_463.field_2125, class_562.field_3322, 0.3F, var10);
+         var2.method_43359((PlayerEntity)null, var3, SoundEvents.field_2125, class_562.field_3322, 0.3F, var10);
          return class_6910.field_35518;
       } else {
          class_2522 var9 = var1.method_10317(field_7907);
@@ -87,7 +87,7 @@ public class class_1475 extends class_2620 {
    private static void method_6807(class_2522 var0, class_9379 var1, BlockPos var2, float var3) {
       Direction var6 = var0.<Direction>method_10313(field_1543).method_1046();
       Direction var7 = method_11868(var0).method_1046();
-      double var8 = (double)var2.method_12173() + 0.5 + 0.1 * (double)var6.method_1041() + 0.2 * (double)var7.method_1041();
+      double var8 = (double)var2.getX() + 0.5 + 0.1 * (double)var6.method_1041() + 0.2 * (double)var7.method_1041();
       double var10 = (double)var2.method_12165() + 0.5 + 0.1 * (double)var6.method_1054() + 0.2 * (double)var7.method_1054();
       double var12 = (double)var2.method_12185() + 0.5 + 0.1 * (double)var6.method_1034() + 0.2 * (double)var7.method_1034();
       var1.method_43361(new class_5727(1.0F, 0.0F, 0.0F, var3), var8, var10, var12, 0.0, 0.0, 0.0);

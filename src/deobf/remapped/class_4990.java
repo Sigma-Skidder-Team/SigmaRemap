@@ -20,7 +20,7 @@ public class class_4990 extends class_7164<class_1260, class_3363<class_1260>> {
          var9 = 1.7F;
       }
 
-      float var10 = var8 * 4.3F * class_9299.method_42818(var9 * 0.6F * var3);
+      float var10 = var8 * 4.3F * MathHelper.sin(var9 * 0.6F * var3);
       var2.method_36060(class_2426.field_12074.method_11074(var10));
       var2.method_36065(0.0, 0.0, -0.4F);
       if (!var1.method_37285()) {

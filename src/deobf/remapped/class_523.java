@@ -18,7 +18,7 @@ public class class_523 extends BlockPos {
    }
 
    public class_523(double var1, double var3, double var5) {
-      this(class_9299.method_42847(var1), class_9299.method_42847(var3), class_9299.method_42847(var5));
+      this(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
    }
 
    public class_523(int var1, int var2, int var3, int var4) {
@@ -30,7 +30,7 @@ public class class_523 extends BlockPos {
    }
 
    @Override
-   public int method_12173() {
+   public int getX() {
       return this.field_3189;
    }
 
@@ -52,7 +52,7 @@ public class class_523 extends BlockPos {
    }
 
    public void method_2547(double var1, double var3, double var5) {
-      this.method_2548(class_9299.method_42847(var1), class_9299.method_42847(var3), class_9299.method_42847(var5));
+      this.method_2548(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
    }
 
    @Override
@@ -88,13 +88,13 @@ public class class_523 extends BlockPos {
    }
 
    public void method_2549(BlockPos var1, Direction var2) {
-      this.field_3189 = var1.method_12173() + var2.method_1041();
+      this.field_3189 = var1.getX() + var2.method_1041();
       this.field_3191 = var1.method_12165() + var2.method_1054();
       this.field_3194 = var1.method_12185() + var2.method_1034();
    }
 
    public void method_2550(BlockPos var1, Direction var2, Direction var3) {
-      this.field_3189 = var1.method_12173() + var2.method_1041() + var3.method_1041();
+      this.field_3189 = var1.getX() + var2.method_1041() + var3.method_1041();
       this.field_3191 = var1.method_12165() + var2.method_1054() + var3.method_1054();
       this.field_3194 = var1.method_12185() + var2.method_1034() + var3.method_1034();
    }
@@ -121,12 +121,12 @@ public class class_523 extends BlockPos {
 
    public static Iterable method_2546(BlockPos var0, BlockPos var1) {
       BlockPos var4 = new BlockPos(
-         Math.min(var0.method_12173(), var1.method_12173()),
+         Math.min(var0.getX(), var1.getX()),
          Math.min(var0.method_12165(), var1.method_12165()),
          Math.min(var0.method_12185(), var1.method_12185())
       );
       BlockPos var5 = new BlockPos(
-         Math.max(var0.method_12173(), var1.method_12173()),
+         Math.max(var0.getX(), var1.getX()),
          Math.max(var0.method_12165(), var1.method_12165()),
          Math.max(var0.method_12185(), var1.method_12185())
       );

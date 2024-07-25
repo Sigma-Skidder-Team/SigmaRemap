@@ -59,6 +59,6 @@ public enum class_8086 {
    }
 
    public static class_8086 method_36718(byte var0) {
-      return values()[class_9299.method_42829(var0, 0, values().length - 1)];
+      return values()[MathHelper.clamp(var0, 0, values().length - 1)];
    }
 }

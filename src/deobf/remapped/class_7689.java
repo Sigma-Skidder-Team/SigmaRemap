@@ -9,7 +9,7 @@ public class class_7689 extends class_6414 implements class_8660 {
    public static final class_7044 field_39050 = class_6023.field_30755;
    public static final Object2FloatMap<class_8525> field_39051 = new Object2FloatOpenHashMap();
    private static final class_4190 field_39053 = class_3370.method_15524();
-   private static final class_4190[] field_39054 = Util.<class_4190[]>method_44659(
+   private static final class_4190[] field_39054 = Util.<class_4190[]>make(
       new class_4190[9],
       var0 -> {
          for (int var3 = 0; var3 < 8; var3++) {
@@ -122,10 +122,10 @@ public class class_7689 extends class_6414 implements class_8660 {
    public static void method_34836(World var0, BlockPos var1, boolean var2) {
       class_2522 var5 = var0.method_28262(var1);
       var0.method_29527(
-         (double)var1.method_12173(),
+         (double)var1.getX(),
          (double)var1.method_12165(),
          (double)var1.method_12185(),
-         !var2 ? class_463.field_2700 : class_463.field_2286,
+         !var2 ? SoundEvents.field_2700 : SoundEvents.field_2286,
          class_562.field_3322,
          1.0F,
          1.0F,
@@ -142,7 +142,7 @@ public class class_7689 extends class_6414 implements class_8660 {
          double var18 = var12.nextGaussian() * 0.02;
          var0.method_43361(
             class_3090.field_15384,
-            (double)var1.method_12173() + 0.13125F + 0.7375F * (double)var12.nextFloat(),
+            (double)var1.getX() + 0.13125F + 0.7375F * (double)var12.nextFloat(),
             (double)var1.method_12165() + var6 + (double)var12.nextFloat() * (1.0 - var6),
             (double)var1.method_12185() + 0.13125F + 0.7375F * (double)var12.nextFloat(),
             var14,
@@ -215,7 +215,7 @@ public class class_7689 extends class_6414 implements class_8660 {
          double var10 = (double)(var1.field_33033.nextFloat() * 0.7F) + 0.15F;
          class_91 var12 = new class_91(
             var1,
-            (double)var2.method_12173() + var6,
+            (double)var2.getX() + var6,
             (double)var2.method_12165() + var8,
             (double)var2.method_12185() + var10,
             new ItemStack(class_4897.field_24640)
@@ -225,7 +225,7 @@ public class class_7689 extends class_6414 implements class_8660 {
       }
 
       class_2522 var13 = method_34838(var0, var1, var2);
-      var1.method_43359((PlayerEntity)null, var2, class_463.field_2852, class_562.field_3322, 1.0F, 1.0F);
+      var1.method_43359((PlayerEntity)null, var2, SoundEvents.field_2852, class_562.field_3322, 1.0F, 1.0F);
       return var13;
    }
 
@@ -256,7 +256,7 @@ public class class_7689 extends class_6414 implements class_8660 {
    public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method_10313(field_39050) == 7) {
          var2.method_7513(var3, var1.method_10317(field_39050), 3);
-         var2.method_43359((PlayerEntity)null, var3, class_463.field_2157, class_562.field_3322, 1.0F, 1.0F);
+         var2.method_43359((PlayerEntity)null, var3, SoundEvents.field_2157, class_562.field_3322, 1.0F, 1.0F);
       }
    }
 

@@ -80,9 +80,9 @@ public class class_2765 {
                   throw new IllegalArgumentException("Invalid rotation: " + var2);
                }
 
-               var10 = var1.method_6104(0, 0, var8.method_12173() - 1);
+               var10 = var1.method_6104(0, 0, var8.getX() - 1);
             } else {
-               var10 = var1.method_6104(var8.method_12173() - 1, 0, var8.method_12185() - 1);
+               var10 = var1.method_6104(var8.getX() - 1, 0, var8.method_12185() - 1);
             }
          } else {
             var10 = var1.method_6104(var8.method_12185() - 1, 0, 0);
@@ -134,11 +134,11 @@ public class class_2765 {
       BlockPos var5 = var0.method_6105(var1).method_6104(-1, -1, -1);
       BlockPos var6 = class_6561.method_29966(var5, class_9022.field_46145, var2, var0);
       class_9616 var7 = class_9616.method_44400(
-         var0.method_12173(), var0.method_12165(), var0.method_12185(), var6.method_12173(), var6.method_12165(), var6.method_12185()
+         var0.getX(), var0.method_12165(), var0.method_12185(), var6.getX(), var6.method_12165(), var6.method_12185()
       );
       int var8 = Math.min(var7.field_48996, var7.field_48991);
       int var9 = Math.min(var7.field_48992, var7.field_48994);
-      BlockPos var10 = new BlockPos(var0.method_12173() - var8, 0, var0.method_12185() - var9);
+      BlockPos var10 = new BlockPos(var0.getX() - var8, 0, var0.method_12185() - var9);
       var7.method_44385(var10);
       return var7;
    }
@@ -158,7 +158,7 @@ public class class_2765 {
    public static Collection<BlockPos> method_12585(BlockPos var0, int var1, class_6331 var2) {
       ArrayList var5 = Lists.newArrayList();
       Box var6 = new Box(var0);
-      var6 = var6.method_18898((double)var1);
+      var6 = var6.grow((double)var1);
 
       for (int var7 = (int)var6.field_19941; var7 <= (int)var6.field_19940; var7++) {
          for (int var8 = (int)var6.field_19937; var8 <= (int)var6.field_19939; var8++) {
@@ -255,7 +255,7 @@ public class class_2765 {
 
    private static boolean method_12593(BlockPos var0, BlockPos var1, class_6331 var2) {
       class_945 var5 = (class_945)var2.method_28260(var0);
-      Box var6 = method_12596(var5).method_18898(1.0);
+      Box var6 = method_12596(var5).grow(1.0);
       return var6.method_18903(class_1343.method_6216(var1));
    }
 }

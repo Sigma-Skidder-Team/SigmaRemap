@@ -60,7 +60,7 @@ public class AACSpeed extends Module {
          }
 
          if (client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F
-            || client.thePlayer.field_41744
+            || client.thePlayer.collidedHorizontally
             || client.thePlayer.field_29673 <= 0.0F) {
             this.field_30963 = 0;
          }
@@ -86,7 +86,7 @@ public class AACSpeed extends Module {
             this.field_30959 = 0.0;
          }
 
-         if (client.thePlayer.field_41744) {
+         if (client.thePlayer.collidedHorizontally) {
             this.field_30959 = this.field_30959 * 0.9 < 0.27 ? 0.27 : this.field_30959 * 0.9;
          }
 
@@ -102,7 +102,7 @@ public class AACSpeed extends Module {
    public void method_27639(class_1711 var1) {
       if (this.method_42015()) {
          if (this.getBooleanValueByName("Fluid Fix")) {
-            if (!client.thePlayer.field_41744 && !client.thePlayer.field_41774) {
+            if (!client.thePlayer.collidedHorizontally && !client.thePlayer.field_41774) {
                String var4 = this.getStringValueByName("Mode");
                float var5 = 13.0F;
                if (!var4.equals("Fast1")) {
@@ -119,7 +119,7 @@ public class AACSpeed extends Module {
                   client.thePlayer.field_3859 = 0.0F;
                }
             } else {
-               client.thePlayer.field_41736.field_7333 = client.thePlayer.method_37241().field_19937;
+               client.thePlayer.field_41736.field_7333 = client.thePlayer.getBoundingBox().field_19937;
                this.field_30961 = client.thePlayer.method_37309();
                this.field_30964 = -1;
             }
@@ -297,7 +297,7 @@ public class AACSpeed extends Module {
             var5 -= 0.06;
          }
 
-         if (client.thePlayer.field_41744) {
+         if (client.thePlayer.collidedHorizontally) {
             var5 -= 0.1;
             var2.run();
          }

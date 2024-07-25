@@ -15,7 +15,7 @@ public class class_2034 {
    }
 
    public class_2034(BlockPos var1) {
-      this.field_10328 = var1.method_12173() >> 4;
+      this.field_10328 = var1.getX() >> 4;
       this.field_10327 = var1.method_12185() >> 4;
    }
 

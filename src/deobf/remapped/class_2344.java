@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableList;
 import java.util.function.Function;
 
-public class class_2344<T extends class_5834> extends class_1498<T> implements class_1787, class_8667 {
+public class class_2344<T extends LivingEntity> extends class_1498<T> implements class_1787, class_8667 {
    private static String[] field_11700;
    public class_1549 field_11696;
    public class_1549 field_11695;
@@ -101,12 +101,12 @@ public class class_2344<T extends class_5834> extends class_1498<T> implements c
          var11 = 1.0F;
       }
 
-      this.field_11705.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 2.0F * var3 * 0.5F / var11;
-      this.field_11701.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 2.0F * var3 * 0.5F / var11;
+      this.field_11705.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 2.0F * var3 * 0.5F / var11;
+      this.field_11701.field_8191 = MathHelper.cos(var2 * 0.6662F) * 2.0F * var3 * 0.5F / var11;
       this.field_11705.field_8185 = 0.0F;
       this.field_11701.field_8185 = 0.0F;
-      this.field_11706.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3 / var11;
-      this.field_11703.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 / var11;
+      this.field_11706.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3 / var11;
+      this.field_11703.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 / var11;
       this.field_11706.field_8190 = 0.0F;
       this.field_11703.field_8190 = 0.0F;
       this.field_11706.field_8185 = 0.0F;
@@ -169,40 +169,40 @@ public class class_2344<T extends class_5834> extends class_1498<T> implements c
             if (var14 >= 14.0F && var14 < 22.0F) {
                float var22 = (var14 - 14.0F) / 8.0F;
                this.field_11701.field_8191 = this.method_10745(var17, this.field_11701.field_8191, (float) (Math.PI / 2) * var22);
-               this.field_11705.field_8191 = class_9299.method_42795(var16, this.field_11705.field_8191, (float) (Math.PI / 2) * var22);
+               this.field_11705.field_8191 = MathHelper.method_42795(var16, this.field_11705.field_8191, (float) (Math.PI / 2) * var22);
                this.field_11701.field_8190 = this.method_10745(var17, this.field_11701.field_8190, (float) Math.PI);
-               this.field_11705.field_8190 = class_9299.method_42795(var16, this.field_11705.field_8190, (float) Math.PI);
+               this.field_11705.field_8190 = MathHelper.method_42795(var16, this.field_11705.field_8190, (float) Math.PI);
                this.field_11701.field_8185 = this.method_10745(var17, this.field_11701.field_8185, 5.012389F - 1.8707964F * var22);
-               this.field_11705.field_8185 = class_9299.method_42795(var16, this.field_11705.field_8185, 1.2707963F + 1.8707964F * var22);
+               this.field_11705.field_8185 = MathHelper.method_42795(var16, this.field_11705.field_8185, 1.2707963F + 1.8707964F * var22);
             } else if (var14 >= 22.0F && var14 < 26.0F) {
                float var18 = (var14 - 22.0F) / 4.0F;
                this.field_11701.field_8191 = this.method_10745(var17, this.field_11701.field_8191, (float) (Math.PI / 2) - (float) (Math.PI / 2) * var18);
-               this.field_11705.field_8191 = class_9299.method_42795(var16, this.field_11705.field_8191, (float) (Math.PI / 2) - (float) (Math.PI / 2) * var18);
+               this.field_11705.field_8191 = MathHelper.method_42795(var16, this.field_11705.field_8191, (float) (Math.PI / 2) - (float) (Math.PI / 2) * var18);
                this.field_11701.field_8190 = this.method_10745(var17, this.field_11701.field_8190, (float) Math.PI);
-               this.field_11705.field_8190 = class_9299.method_42795(var16, this.field_11705.field_8190, (float) Math.PI);
+               this.field_11705.field_8190 = MathHelper.method_42795(var16, this.field_11705.field_8190, (float) Math.PI);
                this.field_11701.field_8185 = this.method_10745(var17, this.field_11701.field_8185, (float) Math.PI);
-               this.field_11705.field_8185 = class_9299.method_42795(var16, this.field_11705.field_8185, (float) Math.PI);
+               this.field_11705.field_8185 = MathHelper.method_42795(var16, this.field_11705.field_8185, (float) Math.PI);
             }
          } else {
             this.field_11701.field_8191 = this.method_10745(var17, this.field_11701.field_8191, 0.0F);
-            this.field_11705.field_8191 = class_9299.method_42795(var16, this.field_11705.field_8191, 0.0F);
+            this.field_11705.field_8191 = MathHelper.method_42795(var16, this.field_11705.field_8191, 0.0F);
             this.field_11701.field_8190 = this.method_10745(var17, this.field_11701.field_8190, (float) Math.PI);
-            this.field_11705.field_8190 = class_9299.method_42795(var16, this.field_11705.field_8190, (float) Math.PI);
+            this.field_11705.field_8190 = MathHelper.method_42795(var16, this.field_11705.field_8190, (float) Math.PI);
             this.field_11701.field_8185 = this.method_10745(
                var17, this.field_11701.field_8185, (float) Math.PI + 1.8707964F * this.method_10740(var14) / this.method_10740(14.0F)
             );
-            this.field_11705.field_8185 = class_9299.method_42795(
+            this.field_11705.field_8185 = MathHelper.method_42795(
                var16, this.field_11705.field_8185, (float) Math.PI - 1.8707964F * this.method_10740(var14) / this.method_10740(14.0F)
             );
          }
 
          float var23 = 0.3F;
          float var19 = 0.33333334F;
-         this.field_11703.field_8191 = class_9299.method_42795(
-            this.field_11699, this.field_11703.field_8191, 0.3F * class_9299.method_42840(var2 * 0.33333334F + (float) Math.PI)
+         this.field_11703.field_8191 = MathHelper.method_42795(
+            this.field_11699, this.field_11703.field_8191, 0.3F * MathHelper.cos(var2 * 0.33333334F + (float) Math.PI)
          );
-         this.field_11706.field_8191 = class_9299.method_42795(
-            this.field_11699, this.field_11706.field_8191, 0.3F * class_9299.method_42840(var2 * 0.33333334F)
+         this.field_11706.field_8191 = MathHelper.method_42795(
+            this.field_11699, this.field_11706.field_8191, 0.3F * MathHelper.cos(var2 * 0.33333334F)
          );
       }
 
@@ -285,15 +285,15 @@ public class class_2344<T extends class_5834> extends class_1498<T> implements c
          class_1736 var5 = this.method_10743((T)var1);
          class_1549 var6 = this.method_10746(var5);
          float var7 = this.field_33202;
-         this.field_11704.field_8190 = class_9299.method_42818(class_9299.method_42843(var7) * (float) (Math.PI * 2)) * 0.2F;
+         this.field_11704.field_8190 = MathHelper.sin(MathHelper.sqrt(var7) * (float) (Math.PI * 2)) * 0.2F;
          if (var5 == class_1736.field_8940) {
             this.field_11704.field_8190 *= -1.0F;
          }
 
-         this.field_11705.field_8187 = class_9299.method_42818(this.field_11704.field_8190) * 5.0F;
-         this.field_11705.field_8183 = -class_9299.method_42840(this.field_11704.field_8190) * 5.0F;
-         this.field_11701.field_8187 = -class_9299.method_42818(this.field_11704.field_8190) * 5.0F;
-         this.field_11701.field_8183 = class_9299.method_42840(this.field_11704.field_8190) * 5.0F;
+         this.field_11705.field_8187 = MathHelper.sin(this.field_11704.field_8190) * 5.0F;
+         this.field_11705.field_8183 = -MathHelper.cos(this.field_11704.field_8190) * 5.0F;
+         this.field_11701.field_8187 = -MathHelper.sin(this.field_11704.field_8190) * 5.0F;
+         this.field_11701.field_8183 = MathHelper.cos(this.field_11704.field_8190) * 5.0F;
          this.field_11705.field_8190 = this.field_11705.field_8190 + this.field_11704.field_8190;
          this.field_11701.field_8190 = this.field_11701.field_8190 + this.field_11704.field_8190;
          this.field_11701.field_8191 = this.field_11701.field_8191 + this.field_11704.field_8190;
@@ -301,11 +301,11 @@ public class class_2344<T extends class_5834> extends class_1498<T> implements c
          var7 *= var7;
          var7 *= var7;
          var7 = 1.0F - var7;
-         float var8 = class_9299.method_42818(var7 * (float) Math.PI);
-         float var9 = class_9299.method_42818(this.field_33202 * (float) Math.PI) * -(this.field_11696.field_8191 - 0.7F) * 0.75F;
+         float var8 = MathHelper.sin(var7 * (float) Math.PI);
+         float var9 = MathHelper.sin(this.field_33202 * (float) Math.PI) * -(this.field_11696.field_8191 - 0.7F) * 0.75F;
          var6.field_8191 = (float)((double)var6.field_8191 - ((double)var8 * 1.2 + (double)var9));
          var6.field_8190 = var6.field_8190 + this.field_11704.field_8190 * 2.0F;
-         var6.field_8185 = var6.field_8185 + class_9299.method_42818(this.field_33202 * (float) Math.PI) * -0.4F;
+         var6.field_8185 = var6.field_8185 + MathHelper.sin(this.field_33202 * (float) Math.PI) * -0.4F;
       }
    }
 

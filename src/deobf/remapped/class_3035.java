@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.Maps;
 import java.util.Map;
 
-public class class_3035<T extends class_5834, M extends class_2344<T>, A extends class_2344<T>> extends class_4171<T, M> {
+public class class_3035<T extends LivingEntity, M extends class_2344<T>, A extends class_2344<T>> extends class_4171<T, M> {
    private static final Map<String, Identifier> field_14900 = Maps.newHashMap();
    private final A field_14901;
    private final A field_14898;

@@ -38,7 +38,7 @@ public class OldAACSpeed extends Module {
                   }
                }
 
-               if (client.thePlayer.field_41744) {
+               if (client.thePlayer.collidedHorizontally) {
                   this.field_37949 = class_8865.method_40775();
                }
 

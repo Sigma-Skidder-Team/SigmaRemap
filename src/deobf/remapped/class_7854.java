@@ -6,7 +6,7 @@ public class class_7854 extends class_6165 {
    private int field_39800;
 
    public class_7854(ClientPlayerEntity var1) {
-      super(class_463.field_2680, class_562.field_3335);
+      super(SoundEvents.field_2680, class_562.field_3335);
       this.field_39802 = var1;
       this.field_5768 = true;
       this.field_5764 = 0;
@@ -24,7 +24,7 @@ public class class_7854 extends class_6165 {
          if (!((double)var3 >= 1.0E-7)) {
             this.field_5766 = 0.0F;
          } else {
-            this.field_5766 = class_9299.method_42828(var3 / 4.0F, 0.0F, 1.0F);
+            this.field_5766 = MathHelper.clamp(var3 / 4.0F, 0.0F, 1.0F);
          }
 
          if (this.field_39800 >= 20) {

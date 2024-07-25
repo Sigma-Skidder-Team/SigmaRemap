@@ -250,7 +250,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          class_1343 var12 = var4.method_37307(1.0F);
          class_1343 var13 = var7.method_6214(var12.field_7336 * var5, var12.field_7333 * var5, var12.field_7334 * var5);
          float var14 = 1.0F;
-         Box var15 = var4.method_37241().method_18929(var12.method_6209(var5)).method_18899(1.0, 1.0, 1.0);
+         Box var15 = var4.getBoundingBox().method_18929(var12.method_6209(var5)).method_18899(1.0, 1.0, 1.0);
          class_5631 var16 = class_8462.method_38932(var4, var7, var13, var15, var0 -> !var0.method_37221() && var0.method_37167(), var10);
          if (var16 != null) {
             Entity var17 = var16.method_25524();
@@ -296,7 +296,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          if (var3) {
             var6 = this.field_40612.gameOptions.field_45543;
             if (Config.method_14313()) {
-               var6 *= (double)class_9299.method_42795(var2, this.field_40641, this.field_40607);
+               var6 *= (double) MathHelper.method_42795(var2, this.field_40641, this.field_40607);
             }
          }
 
@@ -354,7 +354,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          }
 
          var6 /= (float)var5.field_29662;
-         var6 = class_9299.method_42818(var6 * var6 * var6 * var6 * (float) Math.PI);
+         var6 = MathHelper.sin(var6 * var6 * var6 * var6 * (float) Math.PI);
          float var10 = var5.field_29608;
          var1.method_36060(class_2426.field_12074.method_11074(-var10));
          var1.method_36060(class_2426.field_12076.method_11074(-var6 * 14.0F));
@@ -367,14 +367,14 @@ public class GameRenderer implements class_6491, AutoCloseable {
          PlayerEntity var5 = (PlayerEntity)this.field_40612.getRenderViewEntity();
          float var6 = var5.field_41695 - var5.field_41705;
          float var7 = -(var5.field_41695 + var6 * var2);
-         float var8 = class_9299.method_42795(var2, var5.field_3857, var5.field_3859);
+         float var8 = MathHelper.method_42795(var2, var5.field_3857, var5.field_3859);
          var1.method_36065(
-            (double)(class_9299.method_42818(var7 * (float) Math.PI) * var8 * 0.5F),
-            (double)(-Math.abs(class_9299.method_42840(var7 * (float) Math.PI) * var8)),
+            (double)(MathHelper.sin(var7 * (float) Math.PI) * var8 * 0.5F),
+            (double)(-Math.abs(MathHelper.cos(var7 * (float) Math.PI) * var8)),
             0.0
          );
-         var1.method_36060(class_2426.field_12076.method_11074(class_9299.method_42818(var7 * (float) Math.PI) * var8 * 3.0F));
-         var1.method_36060(class_2426.field_12080.method_11074(Math.abs(class_9299.method_42840(var7 * (float) Math.PI - 0.2F) * var8) * 5.0F));
+         var1.method_36060(class_2426.field_12076.method_11074(MathHelper.sin(var7 * (float) Math.PI) * var8 * 3.0F));
+         var1.method_36060(class_2426.field_12080.method_11074(Math.abs(MathHelper.cos(var7 * (float) Math.PI - 0.2F) * var8) * 5.0F));
       }
    }
 
@@ -488,7 +488,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
    public static float method_35954(LivingEntity var0, float var1) {
       int var4 = var0.method_26553(Effects.field_19746).method_10347();
-      return var4 <= 200 ? 0.7F + class_9299.method_42818(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
+      return var4 <= 200 ? 0.7F + MathHelper.sin(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
    }
 
    public void method_35945(float var1, long var2, boolean var4) {
@@ -561,7 +561,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          if (var4 && this.field_40612.theWorld != null) {
             this.field_40612.getProfiler().method_16050("gui");
             if (this.field_40612.thePlayer != null) {
-               float var11 = class_9299.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal);
+               float var11 = MathHelper.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal);
                if (var11 > 0.0F && this.field_40612.thePlayer.isPotionActive(Effects.NAUSEA) && this.field_40612.gameOptions.field_45469 < 1.0F) {
                   this.method_35941(var11 * (1.0F - this.field_40612.gameOptions.field_45469));
                }
@@ -761,14 +761,14 @@ public class GameRenderer implements class_6491, AutoCloseable {
          this.method_35935(var10, var1);
       }
 
-      float var12 = class_9299.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal)
+      float var12 = MathHelper.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal)
          * this.field_40612.gameOptions.field_45469
          * this.field_40612.gameOptions.field_45469;
       if (var12 > 0.0F) {
          int var13 = !this.field_40612.thePlayer.isPotionActive(Effects.NAUSEA) ? 20 : 7;
          float var14 = 5.0F / (var12 * var12 + 5.0F) - var12 * 0.04F;
          var14 *= var14;
-         class_2426 var15 = new class_2426(0.0F, class_9299.field_47448 / 2.0F, class_9299.field_47448 / 2.0F);
+         class_2426 var15 = new class_2426(0.0F, MathHelper.SQRT_2 / 2.0F, MathHelper.SQRT_2 / 2.0F);
          var10.method_36060(var15.method_11074(((float)this.field_40615 + var1) * (float)var13));
          var10.method_36062(1.0F / var14, 1.0F, 1.0F);
          float var16 = -((float)this.field_40615 + var1) * (float)var13;
@@ -1044,15 +1044,15 @@ public class GameRenderer implements class_6491, AutoCloseable {
          class_7966 var14 = new class_7966();
          var14.method_36063();
          var14.method_36065(
-            (double)((float)(var1 / 2) + var12 * class_9299.method_42804(class_9299.method_42818(var11 * 2.0F))),
-            (double)((float)(var2 / 2) + var13 * class_9299.method_42804(class_9299.method_42818(var11 * 2.0F))),
+            (double)((float)(var1 / 2) + var12 * MathHelper.abs(MathHelper.sin(var11 * 2.0F))),
+            (double)((float)(var2 / 2) + var13 * MathHelper.abs(MathHelper.sin(var11 * 2.0F))),
             -50.0
          );
-         float var15 = 50.0F + 175.0F * class_9299.method_42818(var11);
+         float var15 = 50.0F + 175.0F * MathHelper.sin(var11);
          var14.method_36062(var15, -var15, var15);
-         var14.method_36060(class_2426.field_12074.method_11074(900.0F * class_9299.method_42804(class_9299.method_42818(var11))));
-         var14.method_36060(class_2426.field_12080.method_11074(6.0F * class_9299.method_42840(var7 * 8.0F)));
-         var14.method_36060(class_2426.field_12076.method_11074(6.0F * class_9299.method_42840(var7 * 8.0F)));
+         var14.method_36060(class_2426.field_12074.method_11074(900.0F * MathHelper.abs(MathHelper.sin(var11))));
+         var14.method_36060(class_2426.field_12080.method_11074(6.0F * MathHelper.cos(var7 * 8.0F)));
+         var14.method_36060(class_2426.field_12076.method_11074(6.0F * MathHelper.cos(var7 * 8.0F)));
          class_3758 var16 = this.field_40624.method_13796();
          this.field_40612.method_8511().method_40269(this.field_40636, class_5612.field_28495, 15728880, class_5367.field_27381, var14, var16);
          var14.method_36064();
@@ -1067,7 +1067,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    private void method_35941(float var1) {
       int var4 = this.field_40612.getMainWindow().getScaledWidth();
       int var5 = this.field_40612.getMainWindow().getScaledHeight();
-      double var6 = class_9299.method_42794((double)var1, 2.0, 1.0);
+      double var6 = MathHelper.lerp((double)var1, 2.0, 1.0);
       float var8 = 0.2F * var1;
       float var9 = 0.4F * var1;
       float var10 = 0.2F * var1;
@@ -1097,7 +1097,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    public float method_35956(float var1) {
-      return class_9299.method_42795(var1, this.field_40632, this.field_40621);
+      return MathHelper.method_42795(var1, this.field_40632, this.field_40621);
    }
 
    public float method_35955() {

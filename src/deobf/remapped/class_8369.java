@@ -37,11 +37,11 @@ public class class_8369 extends class_1013 {
    }
 
    public double method_38566(double var1) {
-      return class_9299.method_42827((this.method_38568(var1) - this.field_42850) / (this.field_42849 - this.field_42850), 0.0, 1.0);
+      return MathHelper.clamp((this.method_38568(var1) - this.field_42850) / (this.field_42849 - this.field_42850), 0.0, 1.0);
    }
 
    public double method_38571(double var1) {
-      return this.method_38568(class_9299.method_42794(class_9299.method_42827(var1, 0.0, 1.0), this.field_42850, this.field_42849));
+      return this.method_38568(MathHelper.lerp(MathHelper.clamp(var1, 0.0, 1.0), this.field_42850, this.field_42849));
    }
 
    private double method_38568(double var1) {
@@ -49,7 +49,7 @@ public class class_8369 extends class_1013 {
          var1 = (double)(this.field_42847 * (float)Math.round(var1 / (double)this.field_42847));
       }
 
-      return class_9299.method_42827(var1, this.field_42850, this.field_42849);
+      return MathHelper.clamp(var1, this.field_42850, this.field_42849);
    }
 
    public double method_38569() {

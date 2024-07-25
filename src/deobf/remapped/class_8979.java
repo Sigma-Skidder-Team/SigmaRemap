@@ -22,11 +22,11 @@ public class class_8979 extends class_2833 {
             if (this.field_46010.method_17809() != null) {
                double var6 = this.field_46010.method_17809().method_37302() - this.field_46010.method_37302();
                double var8 = this.field_46010.method_17809().method_37156() - this.field_46010.method_37156();
-               this.field_46010.field_41701 = -((float)class_9299.method_42821(var6, var8)) * (180.0F / (float)Math.PI);
+               this.field_46010.field_41701 = -((float) MathHelper.method_42821(var6, var8)) * (180.0F / (float)Math.PI);
                this.field_46010.field_29605 = this.field_46010.field_41701;
             } else {
                class_1343 var10 = this.field_46010.method_37098();
-               this.field_46010.field_41701 = -((float)class_9299.method_42821(var10.field_7336, var10.field_7334)) * (180.0F / (float)Math.PI);
+               this.field_46010.field_41701 = -((float) MathHelper.method_42821(var10.field_7336, var10.field_7334)) * (180.0F / (float)Math.PI);
                this.field_46010.field_29605 = this.field_46010.field_41701;
             }
          } else {

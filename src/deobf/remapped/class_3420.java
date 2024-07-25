@@ -48,7 +48,7 @@ public class class_3420 extends class_3757 implements class_3745 {
          var1 = 1.0F;
       }
 
-      return class_9299.method_42795(var1, this.field_16833, this.field_16835);
+      return MathHelper.method_42795(var1, this.field_16833, this.field_16835);
    }
 
    public float method_15784(float var1) {
@@ -130,7 +130,7 @@ public class class_3420 extends class_3757 implements class_3745 {
 
                for (Box var24 : var10) {
                   Box var25 = class_2686.method_12066(this.method_15797(var24), var4, var5);
-                  Box var26 = var13.method_37241();
+                  Box var26 = var13.getBoundingBox();
                   if (var25.method_18909(var26)) {
                      var21 = Math.max(var21, method_15781(var25, var4, var26));
                      if (var21 >= var5) {
@@ -214,14 +214,14 @@ public class class_3420 extends class_3757 implements class_3745 {
    private Box method_15797(Box var1) {
       double var4 = (double)this.method_15799(this.field_16835);
       return var1.method_18918(
-         (double)this.field_18358.method_12173() + var4 * (double)this.field_16834.method_1041(),
+         (double)this.field_18358.getX() + var4 * (double)this.field_16834.method_1041(),
          (double)this.field_18358.method_12165() + var4 * (double)this.field_16834.method_1054(),
          (double)this.field_18358.method_12185() + var4 * (double)this.field_16834.method_1034()
       );
    }
 
    private void method_15788(Entity var1, Direction var2, double var3) {
-      Box var7 = var1.method_37241();
+      Box var7 = var1.getBoundingBox();
       Box var8 = class_3370.method_15524().method_19483().method_18919(this.field_18358);
       if (var7.method_18909(var8)) {
          Direction var9 = var2.method_1046();

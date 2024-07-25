@@ -57,7 +57,7 @@ public class class_6711 {
 
    public double method_30805(class_225 var1) {
       class_9747 var4 = this.field_34674.get(var1);
-      return var4 == null ? this.field_34676.method_44449(var1) : var4.method_44996();
+      return var4 == null ? this.field_34676.method_44449(var1) : var4.getBaseValue();
    }
 
    public double method_30806(class_225 var1, UUID var2) {

@@ -92,7 +92,7 @@ public class class_1027 {
    }
 
    public boolean method_4532(double var1) {
-      return this.field_5686 != null && this.field_5686.method_20377(class_9299.method_42827(var1, -1.0, 1.0));
+      return this.field_5686 != null && this.field_5686.method_20377(MathHelper.clamp(var1, -1.0, 1.0));
    }
 
    public boolean method_4549(double var1, double var3, int var5) {
@@ -109,7 +109,7 @@ public class class_1027 {
                var5 = Math.max(var5, this.field_5697.method_45395(var7.getText()));
             }
 
-            int var8 = class_9299.method_42829(
+            int var8 = MathHelper.clamp(
                this.field_5698.method_8276(var4.getRange().getStart()), 0, this.field_5698.method_8276(0) + this.field_5698.method_8267() - var5
             );
             int var9 = !this.field_5680 ? 72 : this.field_5699.field_940 - 12;
@@ -252,7 +252,7 @@ public class class_1027 {
 
       if (!var7.isEmpty()) {
          this.field_5694.addAll(var7);
-         this.field_5682 = class_9299.method_42829(
+         this.field_5682 = MathHelper.clamp(
             this.field_5698.method_8276(var5.startPos), 0, this.field_5698.method_8276(0) + this.field_5698.method_8267() - var8
          );
          this.field_5683 = var8;

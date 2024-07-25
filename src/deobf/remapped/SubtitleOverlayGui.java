@@ -68,8 +68,8 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
             int var23 = var22 / 2;
             float var24 = 1.0F;
             int var25 = this.field_21493.textRenderer.method_45379(var14);
-            int var26 = class_9299.method_42847(
-               class_9299.method_42841(255.0, 75.0, (double)((float)(Util.getMeasuringTimeMs() - var12.method_32539()) / 3000.0F))
+            int var26 = MathHelper.floor(
+               MathHelper.clampedLerp(255.0, 75.0, (double)((float)(Util.getMeasuringTimeMs() - var12.method_32539()) / 3000.0F))
             );
             int var27 = var26 << 16 | var26 << 8 | var26;
             RenderSystem.method_16438();

@@ -17,8 +17,8 @@ public class HClipCommand extends Command {
                throw new class_2900("Invalid distance \"" + var2[0].method_24060() + "\"");
             } else {
                float var6 = (float)Math.toRadians((double)(field_18219.thePlayer.rotationYaw + 90.0F));
-               double var7 = (double)class_9299.method_42840(var6) * var2[0].method_24062();
-               double var9 = (double)class_9299.method_42818(var6) * var2[0].method_24062();
+               double var7 = (double) MathHelper.cos(var6) * var2[0].method_24062();
+               double var9 = (double) MathHelper.sin(var6) * var2[0].method_24062();
                field_18219.method_8614()
                   .method_1894(
                      new class_509(

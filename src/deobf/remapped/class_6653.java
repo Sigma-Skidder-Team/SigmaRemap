@@ -36,14 +36,14 @@ public class class_6653 extends class_5892 {
    @Override
    public boolean method_26953(BlockPos var1, BlockPos var2, BlockPos var3, Random var4) {
       Direction var7 = Direction.method_1043(class_137.field_405, this.field_34422);
-      float var8 = (float)Math.abs((var2.method_12173() - var3.method_12173()) * var7.method_1041());
+      float var8 = (float)Math.abs((var2.getX() - var3.getX()) * var7.method_1041());
       float var9 = (float)Math.abs((var2.method_12165() - var3.method_12165()) * var7.method_1054());
       float var10 = (float)Math.abs((var2.method_12185() - var3.method_12185()) * var7.method_1034());
       int var11 = (int)(var8 + var9 + var10);
       float var12 = var4.nextFloat();
       return (double)var12
-         <= class_9299.method_42841(
-            (double)this.field_34421, (double)this.field_34425, class_9299.method_42851((double)var11, (double)this.field_34423, (double)this.field_34427)
+         <= MathHelper.clampedLerp(
+            (double)this.field_34421, (double)this.field_34425, MathHelper.method_42851((double)var11, (double)this.field_34423, (double)this.field_34427)
          );
    }
 

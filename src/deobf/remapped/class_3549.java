@@ -28,16 +28,16 @@ public class class_3549 implements class_1517 {
 
    @Override
    public int method_6937(class_6331 var1, boolean var2, boolean var3) {
-      if (var1.method_29537().method_1285(class_291.field_1041)) {
+      if (var1.getGameRules().getBoolean(GameRules.field_1041)) {
          if (--this.field_17370 <= 0) {
             this.field_17370 = 1200;
             this.field_17367 -= 1200;
             this.field_17365.method_32976(this.field_17367);
             if (this.field_17367 <= 0) {
                this.field_17367 = 24000;
-               if (var1.method_29537().method_1285(class_291.field_1028)) {
+               if (var1.getGameRules().getBoolean(GameRules.field_1028)) {
                   int var6 = this.field_17368;
-                  this.field_17368 = class_9299.method_42829(this.field_17368 + 25, 25, 75);
+                  this.field_17368 = MathHelper.clamp(this.field_17368 + 25, 25, 75);
                   this.field_17365.method_32970(this.field_17368);
                   if (this.field_17366.nextInt(100) <= var6) {
                      if (!this.method_16519(var1)) {
@@ -118,7 +118,7 @@ public class class_3549 implements class_1517 {
       BlockPos var6 = null;
 
       for (int var7 = 0; var7 < 10; var7++) {
-         int var8 = var2.method_12173() + this.field_17366.nextInt(var3 * 2) - var3;
+         int var8 = var2.getX() + this.field_17366.nextInt(var3 * 2) - var3;
          int var9 = var2.method_12185() + this.field_17366.nextInt(var3 * 2) - var3;
          int var10 = var1.method_22562(class_3801.field_18592, var8, var9);
          BlockPos var11 = new BlockPos(var8, var10, var9);

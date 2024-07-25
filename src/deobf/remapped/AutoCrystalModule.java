@@ -87,7 +87,7 @@ public class AutoCrystalModule extends PremiumModule {
                .stream()
                .max(
                   Comparator.comparing(
-                     var1x -> method_44033((double)var1x.method_12173(), (double)var1x.method_12165(), (double)var1x.method_12185(), this.field_48550)
+                     var1x -> method_44033((double)var1x.getX(), (double)var1x.method_12165(), (double)var1x.method_12185(), this.field_48550)
                   )
                )
                .orElse(null);
@@ -110,7 +110,7 @@ public class AutoCrystalModule extends PremiumModule {
       GL11.glDisable(2929);
 
       for (BlockPos var6 : this.field_48551) {
-         double var7 = (double)var6.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+         double var7 = (double)var6.getX() - client.gameRenderer.method_35949().method_41627().method_61();
          double var9 = (double)var6.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
          double var11 = (double)var6.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
          class_8194 var13 = new class_8194(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
@@ -159,7 +159,7 @@ public class AutoCrystalModule extends PremiumModule {
 
    public List<BlockPos> method_44015(BlockPos var1, float var2, int var3, boolean var4, boolean var5, int var6) {
       ArrayList var9 = new ArrayList();
-      int var10 = var1.method_12173();
+      int var10 = var1.getX();
       int var11 = var1.method_12165();
       int var12 = var1.method_12185();
 
@@ -210,7 +210,7 @@ public class AutoCrystalModule extends PremiumModule {
          DamageSource var6 = DamageSource.method_28350(var2);
          var1 = class_6357.method_29129(var1, (float)var5.method_26565(), (float)var5.method_26575(Attributes.field_37472));
          int var7 = class_2931.method_13427(var5.method_37262(), var6);
-         float var8 = class_9299.method_42828((float)var7, 0.0F, 20.0F);
+         float var8 = MathHelper.clamp((float)var7, 0.0F, 20.0F);
          var1 *= 1.0F - var8 / 25.0F;
          if (var0.isPotionActive(class_1425.method_6538(11))) {
             var1 -= var1 / 4.0F;

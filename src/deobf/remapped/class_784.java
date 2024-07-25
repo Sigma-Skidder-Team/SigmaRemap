@@ -3,7 +3,7 @@ package remapped;
 public class class_784 implements class_1137 {
    private static String[] field_4217;
    private final boolean field_4221;
-   private final class_291 field_4212;
+   private final GameRules field_4212;
    private final boolean field_4213;
    private int field_4216;
    private int field_4214;
@@ -19,7 +19,7 @@ public class class_784 implements class_1137 {
       this.field_4210 = var1;
       this.field_4221 = var2;
       this.field_4213 = var3;
-      this.field_4212 = new class_291();
+      this.field_4212 = new GameRules();
    }
 
    @Override
@@ -82,7 +82,7 @@ public class class_784 implements class_1137 {
 
    @Override
    public void method_4988(BlockPos var1, float var2) {
-      this.field_4216 = var1.method_12173();
+      this.field_4216 = var1.getX();
       this.field_4214 = var1.method_12165();
       this.field_4220 = var1.method_12185();
       this.field_4222 = var2;
@@ -109,7 +109,7 @@ public class class_784 implements class_1137 {
    }
 
    @Override
-   public class_291 method_8653() {
+   public GameRules method_8653() {
       return this.field_4212;
    }
 

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5865<T extends class_5834> extends class_6741<T, class_4845<T>> {
+public class class_5865<T extends LivingEntity> extends class_6741<T, class_4845<T>> {
    private static String[] field_29797;
 
    public class_5865(class_2514<T, class_4845<T>> var1) {

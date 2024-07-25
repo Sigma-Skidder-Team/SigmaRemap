@@ -79,16 +79,16 @@ public class class_4664 extends class_8131 {
    @Override
    public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       this.field_41650.method_39035().method_39048(new class_9098(this.field_22749)).method_39048(class_2010.field_10193);
-      int var10 = var1.method_22562(class_3801.field_18591, this.field_41648.method_12173(), this.field_41648.method_12185());
-      this.field_41648 = new BlockPos(this.field_41648.method_12173(), var10, this.field_41648.method_12185());
+      int var10 = var1.method_22562(class_3801.field_18591, this.field_41648.getX(), this.field_41648.method_12185());
+      this.field_41648 = new BlockPos(this.field_41648.getX(), var10, this.field_41648.method_12185());
       BlockPos var11 = class_6561.method_29966(
-            new BlockPos(this.field_41647.method_29975().method_12173() - 1, 0, this.field_41647.method_29975().method_12185() - 1),
+            new BlockPos(this.field_41647.method_29975().getX() - 1, 0, this.field_41647.method_29975().method_12185() - 1),
             class_9022.field_46145,
             this.field_22745,
             BlockPos.field_7306
          )
          .method_6105(this.field_41648);
-      this.field_41648 = new BlockPos(this.field_41648.method_12173(), this.method_21573(this.field_41648, var1, var11), this.field_41648.method_12185());
+      this.field_41648 = new BlockPos(this.field_41648.getX(), this.method_21573(this.field_41648, var1, var11), this.field_41648.method_12185());
       return super.method_32501(var1, var2, var3, var4, var5, var6, var7);
    }
 
@@ -99,7 +99,7 @@ public class class_4664 extends class_8131 {
       int var9 = 0;
 
       for (BlockPos var11 : BlockPos.method_6076(var1, var3)) {
-         int var12 = var11.method_12173();
+         int var12 = var11.getX();
          int var13 = var11.method_12185();
          int var14 = var1.method_12165() - 1;
          class_2921 var15 = new class_2921(var12, var14, var13);
@@ -119,7 +119,7 @@ public class class_4664 extends class_8131 {
          }
       }
 
-      int var18 = Math.abs(var1.method_12173() - var3.method_12173());
+      int var18 = Math.abs(var1.getX() - var3.getX());
       if (var8 - var7 > 2 && var9 > var18 - 2) {
          var6 = var7 + 1;
       }

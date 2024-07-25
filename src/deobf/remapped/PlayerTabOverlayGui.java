@@ -229,14 +229,14 @@ public class PlayerTabOverlayGui extends AbstractGui {
 
          var6.method_3400(this.field_10661);
          var6.method_3406(var10);
-         int var14 = class_9299.method_42816((float)Math.max(var10, var6.method_3396()) / 2.0F);
-         int var15 = Math.max(class_9299.method_42816((float)(var10 / 2)), Math.max(class_9299.method_42816((float)(var6.method_3396() / 2)), 10));
+         int var14 = MathHelper.ceil((float)Math.max(var10, var6.method_3396()) / 2.0F);
+         int var15 = Math.max(MathHelper.ceil((float)(var10 / 2)), Math.max(MathHelper.ceil((float)(var6.method_3396() / 2)), 10));
          boolean var16 = var6.method_3411() > (long)this.field_10663.method_13995()
             && (var6.method_3411() - (long)this.field_10663.method_13995()) / 3L % 2L == 1L;
          if (var14 > 0) {
-            int var17 = class_9299.method_42848(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));
+            int var17 = MathHelper.floor(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));
             if (var17 <= 3) {
-               float var18 = class_9299.method_42828((float)var10 / 20.0F, 0.0F, 1.0F);
+               float var18 = MathHelper.clamp((float)var10 / 20.0F, 0.0F, 1.0F);
                int var19 = (int)((1.0F - var18) * 255.0F) << 16 | (int)(var18 * 255.0F) << 8;
                String var20 = "" + (float)var10 / 2.0F;
                if (var5 - this.field_10666.textRenderer.method_45395(var20 + "hp") >= var4) {

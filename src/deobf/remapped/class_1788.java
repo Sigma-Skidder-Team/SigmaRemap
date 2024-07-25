@@ -42,7 +42,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
    }
 
    private void method_7952(int var1) {
-      int var4 = class_9299.method_42829(var1, 0, this.field_9136 - 1);
+      int var4 = MathHelper.clamp(var1, 0, this.field_9136 - 1);
       if (var4 != this.field_9135) {
          this.field_9135 = var4;
          this.method_17407();
@@ -56,7 +56,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
 
    public int method_7963() {
       float var3 = this.field_9136 <= 1 ? 1.0F : (float)this.method_7955() / ((float)this.field_9136 - 1.0F);
-      return class_9299.method_42848(var3 * 14.0F) + (!this.method_7960() ? 0 : 1);
+      return MathHelper.floor(var3 * 14.0F) + (!this.method_7960() ? 0 : 1);
    }
 
    private ItemStack method_7953(ItemStack var1, PlayerEntity var2) {
@@ -107,7 +107,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
       }
 
       this.field_9136 = class_1138.method_4991(this.field_9134);
-      this.field_9135 = class_9299.method_42829(var2.method_25947("Page"), 0, this.field_9136 - 1);
+      this.field_9135 = MathHelper.clamp(var2.method_25947("Page"), 0, this.field_9136 - 1);
    }
 
    @Override

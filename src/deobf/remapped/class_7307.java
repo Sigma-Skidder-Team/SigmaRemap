@@ -40,7 +40,7 @@ public class class_7307<T extends class_378> extends class_5272<T> {
    }
 
    public void method_33317(T var1, float var2, float var3, float var4) {
-      float var7 = class_9299.method_42795(var4, var1.field_1533, var1.field_1538);
+      float var7 = MathHelper.method_42795(var4, var1.field_1533, var1.field_1538);
       if (var7 < 0.0F) {
          var7 = 0.0F;
       }

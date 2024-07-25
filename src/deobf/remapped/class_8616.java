@@ -214,7 +214,7 @@ public class class_8616 {
       float[] var16 = class_9235.method_42598(var0.get("rotate"), 3, new float[3]);
 
       for (int var17 = 0; var17 < var16.length; var17++) {
-         var16[var17] = var16[var17] / 180.0F * class_9299.field_47442;
+         var16[var17] = var16[var17] / 180.0F * MathHelper.PI;
       }
 
       if (var12) {

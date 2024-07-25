@@ -142,7 +142,7 @@ public class class_4115 extends class_6414 {
             int var21 = var6.method_1041();
             int var22 = var6.method_1034();
             class_1343 var23 = var1.method_21865();
-            double var24 = var23.field_7336 - (double)var5.method_12173();
+            double var24 = var23.field_7336 - (double)var5.getX();
             double var26 = var23.field_7334 - (double)var5.method_12185();
             return var21 < 0 && var26 < 0.5 || var21 > 0 && var26 > 0.5 || var22 < 0 && var24 > 0.5 || var22 > 0 && var24 < 0.5
                ? class_4340.field_21091
@@ -219,8 +219,8 @@ public class class_4115 extends class_6414 {
 
    @Override
    public long method_10759(class_2522 var1, BlockPos var2) {
-      return class_9299.method_42839(
-         var2.method_12173(), var2.method_6101(var1.method_10313(field_20045) != class_7422.field_37876 ? 1 : 0).method_12165(), var2.method_12185()
+      return MathHelper.getCoordinateRandom(
+         var2.getX(), var2.method_6101(var1.method_10313(field_20045) != class_7422.field_37876 ? 1 : 0).method_12165(), var2.method_12185()
       );
    }
 

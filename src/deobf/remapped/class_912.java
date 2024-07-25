@@ -11,7 +11,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
    private static final class_7821<Optional<class_2522>> field_4686 = class_8073.<Optional<class_2522>>method_36641(class_912.class, class_2734.field_13354);
    private static final class_7821<Boolean> field_4678 = class_8073.<Boolean>method_36641(class_912.class, class_2734.field_13347);
    private static final class_7821<Boolean> field_4685 = class_8073.<Boolean>method_36641(class_912.class, class_2734.field_13347);
-   private static final Predicate<class_5834> field_4681 = var0 -> var0 instanceof class_2667 && ((class_2667)var0).method_12022();
+   private static final Predicate<LivingEntity> field_4681 = var0 -> var0 instanceof class_2667 && ((class_2667)var0).method_12022();
    private int field_4679 = Integer.MIN_VALUE;
    private int field_4677;
    private static final class_4376 field_4684 = class_5804.method_26295(20, 39);
@@ -49,9 +49,9 @@ public class class_912 extends MonsterEntity implements class_6250 {
    }
 
    @Override
-   public void method_26860(class_5834 var1) {
+   public void method_26860(LivingEntity var1) {
       super.method_26860(var1);
-      class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
+      class_9747 var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (var1 != null) {
          this.field_4677 = this.field_41697;
          this.field_41735.method_36633(field_4678, true);
@@ -104,7 +104,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
          this.field_4679 = this.field_41697;
          if (!this.method_37378()) {
             this.world
-               .method_29527(this.getPosX(), this.method_37388(), this.getPosZ(), class_463.field_2369, this.method_37197(), 2.5F, 1.0F, false);
+               .method_29527(this.getPosX(), this.method_37388(), this.getPosZ(), SoundEvents.field_2369, this.method_37197(), 2.5F, 1.0F, false);
          }
       }
    }
@@ -166,7 +166,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.world.field_33055) {
          for (int var3 = 0; var3 < 2; var3++) {
             this.world
@@ -187,7 +187,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
          this.method_28530((class_6331)this.world, true);
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    @Override
@@ -200,7 +200,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
       if (this.world.method_29602() && this.field_41697 >= this.field_4677 + 600) {
          float var3 = this.method_37193();
          if (var3 > 0.5F && this.world.method_25263(this.method_37075()) && this.field_41717.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
-            this.method_26860((class_5834)null);
+            this.method_26860((LivingEntity)null);
             this.method_3914();
          }
       }
@@ -245,8 +245,8 @@ public class class_912 extends MonsterEntity implements class_6250 {
          boolean var13 = this.method_26499(var1, var3, var5, true);
          if (var13 && !this.method_37378()) {
             this.world
-               .method_29528((PlayerEntity)null, this.field_41767, this.field_41698, this.field_41725, class_463.field_2563, this.method_37197(), 1.0F, 1.0F);
-            this.method_37155(class_463.field_2563, 1.0F, 1.0F);
+               .method_29528((PlayerEntity)null, this.field_41767, this.field_41698, this.field_41725, SoundEvents.field_2563, this.method_37197(), 1.0F, 1.0F);
+            this.method_37155(SoundEvents.field_2563, 1.0F, 1.0F);
          }
 
          return var13;
@@ -256,18 +256,18 @@ public class class_912 extends MonsterEntity implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.method_3910() ? class_463.field_1996 : class_463.field_2231;
+   public SoundEvent method_26918() {
+      return !this.method_3910() ? SoundEvents.field_1996 : SoundEvents.field_2231;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2641;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2641;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2436;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2436;
    }
 
    @Override
@@ -294,7 +294,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
          return false;
       } else if (!(var1 instanceof class_8758)) {
          boolean var6 = super.attackEntityFrom(var1, var2);
-         if (!this.world.method_22567() && !(var1.method_28372() instanceof class_5834) && this.field_41717.nextInt(10) != 0) {
+         if (!this.world.method_22567() && !(var1.method_28372() instanceof LivingEntity) && this.field_41717.nextInt(10) != 0) {
             this.method_3914();
          }
 

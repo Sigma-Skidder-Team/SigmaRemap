@@ -105,7 +105,7 @@ public class class_8478 {
 
    public Random method_39052(BlockPos var1) {
       if (this.field_43448 == null) {
-         return var1 != null ? new Random(class_9299.method_42802(var1)) : new Random(Util.getMeasuringTimeMs());
+         return var1 != null ? new Random(MathHelper.getPositionRandom(var1)) : new Random(Util.getMeasuringTimeMs());
       } else {
          return this.field_43448;
       }

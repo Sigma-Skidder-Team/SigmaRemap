@@ -33,9 +33,9 @@ public class class_763 extends class_7164<class_337, class_2574> {
    }
 
    private class_1343 method_3438(LivingEntity var1, double var2, float var4) {
-      double var7 = class_9299.method_42794((double)var4, var1.field_41754, var1.getPosX());
-      double var9 = class_9299.method_42794((double)var4, var1.field_41713, var1.method_37309()) + var2;
-      double var11 = class_9299.method_42794((double)var4, var1.field_41724, var1.getPosZ());
+      double var7 = MathHelper.lerp((double)var4, var1.field_41754, var1.getPosX());
+      double var9 = MathHelper.lerp((double)var4, var1.field_41713, var1.method_37309()) + var2;
+      double var11 = MathHelper.lerp((double)var4, var1.field_41724, var1.getPosZ());
       return new class_1343(var7, var9, var11);
    }
 
@@ -66,22 +66,22 @@ public class class_763 extends class_7164<class_337, class_2574> {
          int var25 = 128 - (int)(var22 * 64.0F);
          float var26 = 0.2F;
          float var27 = 0.282F;
-         float var28 = class_9299.method_42840(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
-         float var29 = class_9299.method_42818(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
-         float var30 = class_9299.method_42840(var21 + (float) (Math.PI / 4)) * 0.282F;
-         float var31 = class_9299.method_42818(var21 + (float) (Math.PI / 4)) * 0.282F;
-         float var32 = class_9299.method_42840(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
-         float var33 = class_9299.method_42818(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
-         float var34 = class_9299.method_42840(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
-         float var35 = class_9299.method_42818(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
-         float var36 = class_9299.method_42840(var21 + (float) Math.PI) * 0.2F;
-         float var37 = class_9299.method_42818(var21 + (float) Math.PI) * 0.2F;
-         float var38 = class_9299.method_42840(var21 + 0.0F) * 0.2F;
-         float var39 = class_9299.method_42818(var21 + 0.0F) * 0.2F;
-         float var40 = class_9299.method_42840(var21 + (float) (Math.PI / 2)) * 0.2F;
-         float var41 = class_9299.method_42818(var21 + (float) (Math.PI / 2)) * 0.2F;
-         float var42 = class_9299.method_42840(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
-         float var43 = class_9299.method_42818(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
+         float var28 = MathHelper.cos(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
+         float var29 = MathHelper.sin(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
+         float var30 = MathHelper.cos(var21 + (float) (Math.PI / 4)) * 0.282F;
+         float var31 = MathHelper.sin(var21 + (float) (Math.PI / 4)) * 0.282F;
+         float var32 = MathHelper.cos(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
+         float var33 = MathHelper.sin(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
+         float var34 = MathHelper.cos(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
+         float var35 = MathHelper.sin(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
+         float var36 = MathHelper.cos(var21 + (float) Math.PI) * 0.2F;
+         float var37 = MathHelper.sin(var21 + (float) Math.PI) * 0.2F;
+         float var38 = MathHelper.cos(var21 + 0.0F) * 0.2F;
+         float var39 = MathHelper.sin(var21 + 0.0F) * 0.2F;
+         float var40 = MathHelper.cos(var21 + (float) (Math.PI / 2)) * 0.2F;
+         float var41 = MathHelper.sin(var21 + (float) (Math.PI / 2)) * 0.2F;
+         float var42 = MathHelper.cos(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
+         float var43 = MathHelper.sin(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
          float var44 = 0.0F;
          float var45 = 0.4999F;
          float var46 = -1.0F + var12;

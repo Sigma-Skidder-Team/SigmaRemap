@@ -57,7 +57,7 @@ public class TestModule extends Module {
    public void onEnable() {
       this.field_8821 = 0.0;
       this.field_8816 = new class_2440(1000, 100000, class_4043.field_19620);
-      this.field_8832 = class_9299.method_42810(client.thePlayer.rotationYaw);
+      this.field_8832 = MathHelper.wrapDegrees(client.thePlayer.rotationYaw);
       this.field_8832 = 39.0F;
       this.field_8826 = client.thePlayer.rotationPitch;
       double var3 = client.thePlayer.getPosX();
@@ -394,7 +394,7 @@ public class TestModule extends Module {
       double var5 = var0.getPosZ() - client.thePlayer.getPosZ();
       double var7 = client.thePlayer.method_37309() + (double) client.thePlayer.method_37277() - (var0.method_37309() + (double)var0.method_37277());
       float var9 = (float)Math.toDegrees(Math.atan2(var5, var3)) - 90.0F;
-      double var10 = (double)class_9299.method_42842(var3 * var3 + var5 * var5);
+      double var10 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5);
       float var12 = (float)(-(Math.atan2(var7, var10) * 180.0 / Math.PI));
       return new float[]{var9, -var12};
    }
@@ -415,7 +415,7 @@ public class TestModule extends Module {
          var11 = Math.toDegrees(-Math.atan(var7 / var9));
       }
 
-      return class_9299.method_42810(-(var0 - (float)var11));
+      return MathHelper.wrapDegrees(-(var0 - (float)var11));
    }
 
    private double method_7661(double var1, double var3) {
@@ -426,8 +426,8 @@ public class TestModule extends Module {
       double var6 = var1.getPosX() - client.thePlayer.getPosX();
       double var8 = var1.getPosZ() - client.thePlayer.getPosZ();
       double var10 = var2 - 2.2 + (double)var1.method_37277() - client.thePlayer.method_37309();
-      double var12 = (double)class_9299.method_42842(var6 * var6 + var8 * var8);
+      double var12 = (double) MathHelper.sqrt(var6 * var6 + var8 * var8);
       double var14 = -Math.toDegrees(Math.atan(var10 / var12));
-      return -class_9299.method_42810(var0 - (float)var14) - 2.5F;
+      return -MathHelper.wrapDegrees(var0 - (float)var14) - 2.5F;
    }
 }

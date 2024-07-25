@@ -38,7 +38,7 @@ public class MineplexSpeed extends Module {
          && !class_314.method_1437(client.thePlayer)) {
          double var4 = (double)this.getFloatValueByName("OnGround Speed");
          if (!client.thePlayer.onGround) {
-            if (client.thePlayer.field_41744) {
+            if (client.thePlayer.collidedHorizontally) {
                this.field_29130 = 0.35;
                this.field_29132 = 1;
             }
@@ -86,7 +86,7 @@ public class MineplexSpeed extends Module {
             class_8585 var10 = new class_8585(Hand.MAIN_HAND, var9);
             client.method_8614().sendPacket(var10);
             this.field_29130 += var4 / 4.0;
-            if (client.thePlayer.field_41744) {
+            if (client.thePlayer.collidedHorizontally) {
                this.field_29130 /= 2.0;
             }
 

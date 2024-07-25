@@ -40,13 +40,13 @@ public class class_8295 {
    }
 
    public static int method_38267(class_9155 var0, String var1, BlockPos var2, BlockPos var3, String var4) {
-      int var7 = class_9299.method_42848(method_38270(var2.method_12173(), var2.method_12185(), var3.method_12173(), var3.method_12185()));
+      int var7 = MathHelper.floor(method_38270(var2.getX(), var2.method_12185(), var3.getX(), var3.method_12185()));
       IFormattableTextComponent var8 = TextComponentUtils.wrapWithSquareBrackets(
-            new TranslationTextComponent("chat.coordinates", var3.method_12173(), "~", var3.method_12185())
+            new TranslationTextComponent("chat.coordinates", var3.getX(), "~", var3.method_12185())
          )
          .modifyStyle(
             var1x -> var1x.setFormatting(TextFormatting.GREEN)
-                  .setClickEvent(new ClickEvent(ClickEvent$class_47.SUGGEST_COMMAND, "/tp @s " + var3.method_12173() + " ~ " + var3.method_12185()))
+                  .setClickEvent(new ClickEvent(ClickEvent$class_47.SUGGEST_COMMAND, "/tp @s " + var3.getX() + " ~ " + var3.method_12185()))
                   .setHoverEvent(new HoverEvent(HoverEvent$class_48.SHOW_TEXT, new TranslationTextComponent("chat.coordinates.tooltip")))
          );
       var0.method_42196(new TranslationTextComponent(var4, var1, var8, var7), false);
@@ -56,6 +56,6 @@ public class class_8295 {
    private static float method_38270(int var0, int var1, int var2, int var3) {
       int var6 = var2 - var0;
       int var7 = var3 - var1;
-      return class_9299.method_42843((float)(var6 * var6 + var7 * var7));
+      return MathHelper.sqrt((float)(var6 * var6 + var7 * var7));
    }
 }

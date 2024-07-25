@@ -47,7 +47,7 @@ public class class_2557 {
 
    private static void method_11612(Set<String> var0) {
       LanguageMap var3 = LanguageMap.getInstance();
-      class_291.method_1289(new class_5186(var3, var0));
+      GameRules.method_1289(new class_5186(var3, var0));
    }
 
    public static Set<String> method_11614() {

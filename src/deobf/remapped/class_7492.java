@@ -429,7 +429,7 @@ public class class_7492 {
       BlockPos var10 = class_6561.method_29978(new BlockPos(1, 0, 0), class_9022.field_46145, var8, 7, 7);
       var8 = var8.method_30486(var3);
       var10 = var10.method_6078(var3);
-      BlockPos var11 = var2.method_6104(var10.method_12173(), 0, var10.method_12185());
+      BlockPos var11 = var2.method_6104(var10.getX(), 0, var10.method_12185());
       var1.add(new class_8600(this.field_38230, var9, var11, var8));
    }
 

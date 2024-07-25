@@ -24,7 +24,7 @@ public class MutableAttribute {
 
    public MutableAttribute createMutableAttribute(class_225 var1, double var2) {
       class_9747 var6 = this.method_5982(var1);
-      var6.method_45006(var2);
+      var6.setBaseValue(var2);
       return this;
    }
 

@@ -70,7 +70,7 @@ public class class_3423 extends class_2358 {
          class_2522 var4 = this.method_17403();
          boolean var5 = var4.<Boolean>method_10313(class_7574.field_38592);
          if (!var5) {
-            this.method_15824(var4, class_463.field_2115);
+            this.method_15824(var4, SoundEvents.field_2115);
             this.method_15823(var4, true);
          }
 
@@ -83,7 +83,7 @@ public class class_3423 extends class_2358 {
    }
 
    public void method_15821() {
-      int var3 = this.field_18358.method_12173();
+      int var3 = this.field_18358.getX();
       int var4 = this.field_18358.method_12165();
       int var5 = this.field_18358.method_12185();
       this.field_16854 = class_7099.method_32633(this.field_18364, this, var3, var4, var5);
@@ -96,7 +96,7 @@ public class class_3423 extends class_2358 {
 
          boolean var7 = var6.<Boolean>method_10313(class_7574.field_38592);
          if (var7) {
-            this.method_15824(var6, class_463.field_2491);
+            this.method_15824(var6, SoundEvents.field_2491);
             this.method_15823(var6, false);
          }
       } else {
@@ -115,9 +115,9 @@ public class class_3423 extends class_2358 {
       this.field_18364.method_7513(this.method_17399(), var1.method_10308(class_7574.field_38592, Boolean.valueOf(var2)), 3);
    }
 
-   private void method_15824(class_2522 var1, class_8461 var2) {
-      class_2700 var5 = var1.<Direction>method_10313(class_7574.field_38593).method_1037();
-      double var6 = (double)this.field_18358.method_12173() + 0.5 + (double)var5.method_12173() / 2.0;
+   private void method_15824(class_2522 var1, SoundEvent var2) {
+      Vector3i var5 = var1.<Direction>method_10313(class_7574.field_38593).method_1037();
+      double var6 = (double)this.field_18358.getX() + 0.5 + (double)var5.getX() / 2.0;
       double var8 = (double)this.field_18358.method_12165() + 0.5 + (double)var5.method_12165() / 2.0;
       double var10 = (double)this.field_18358.method_12185() + 0.5 + (double)var5.method_12185() / 2.0;
       this.field_18364

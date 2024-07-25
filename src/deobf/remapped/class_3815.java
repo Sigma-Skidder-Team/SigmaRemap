@@ -31,7 +31,7 @@ public final class class_3815 {
          class_4565 var11 = var8.getType().method_30476();
          if (var11 != class_4565.field_22251) {
             BlockPos var12 = var8.method_37075();
-            long var13 = class_2034.method_9540(var12.method_12173() >> 4, var12.method_12185() >> 4);
+            long var13 = class_2034.method_9540(var12.getX() >> 4, var12.method_12185() >> 4);
             var2.method_24143(var13, var5x -> {
                class_2658 var8x = method_17781(var12, var5x).method_28886().method_27798(var8.getType());
                if (var8x != null) {
@@ -47,7 +47,7 @@ public final class class_3815 {
    }
 
    private static class_6325 method_17781(BlockPos var0, class_5990 var1) {
-      return class_8354.field_42777.method_28268(0L, var0.method_12173(), var0.method_12165(), var0.method_12185(), var1.method_27356());
+      return class_8354.field_42777.method_28268(0L, var0.getX(), var0.method_12165(), var0.method_12185(), var1.method_27356());
    }
 
    public static void method_17763(class_6331 var0, class_2654 var1, class_1728 var2, boolean var3, boolean var4, boolean var5) {
@@ -85,12 +85,12 @@ public final class class_3815 {
          int var13 = 0;
 
          for (int var14 = 0; var14 < 3; var14++) {
-            int var15 = var3.method_12173();
+            int var15 = var3.getX();
             int var16 = var3.method_12185();
             byte var17 = 6;
             class_3222 var18 = null;
             class_8733 var19 = null;
-            int var20 = class_9299.method_42816(var1.field_33033.nextFloat() * 4.0F);
+            int var20 = MathHelper.ceil(var1.field_33033.nextFloat() * 4.0F);
             int var21 = 0;
 
             for (int var22 = 0; var22 < var20; var22++) {
@@ -144,7 +144,7 @@ public final class class_3815 {
    private static boolean method_17776(class_6331 var0, class_5990 var1, class_2921 var2, double var3) {
       if (!(var3 <= 576.0)) {
          if (var0.method_28998()
-            .method_12170(new class_1343((double)var2.method_12173() + 0.5, (double)var2.method_12165(), (double)var2.method_12185() + 0.5), 24.0)) {
+            .method_12170(new class_1343((double)var2.getX() + 0.5, (double)var2.method_12165(), (double)var2.method_12185() + 0.5), 24.0)) {
             return false;
          } else {
             class_2034 var7 = new class_2034(var2);
@@ -166,7 +166,7 @@ public final class class_3815 {
                return false;
             } else {
                return class_1136.method_4983(var10, var0, class_2417.field_12031, var5, var0.field_33033)
-                  ? var0.method_6681(var10.method_30456((double)var5.method_12173() + 0.5, (double)var5.method_12165(), (double)var5.method_12185() + 0.5))
+                  ? var0.method_6681(var10.method_30456((double)var5.getX() + 0.5, (double)var5.method_12165(), (double)var5.method_12185() + 0.5))
                   : false;
             }
          } else {
@@ -296,8 +296,8 @@ public final class class_3815 {
                   BlockPos var21 = method_17778(var0, var11.field_16053, var14, var15);
                   if (var11.field_16053.method_30465() && method_17767(class_1136.method_4980(var11.field_16053), var0, var21, var11.field_16053)) {
                      float var22 = var11.field_16053.method_30459();
-                     double var23 = class_9299.method_42827((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
-                     double var25 = class_9299.method_42827((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
+                     double var23 = MathHelper.clamp((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
+                     double var25 = MathHelper.clamp((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
                      if (!var0.method_6681(var11.field_16053.method_30456(var23, (double)var21.method_12165(), var25))
                         || !class_1136.method_4983(
                            var11.field_16053, var0, class_2417.field_12034, new BlockPos(var23, (double)var21.method_12165(), var25), var0.method_43360()

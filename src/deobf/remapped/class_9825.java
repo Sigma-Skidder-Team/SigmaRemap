@@ -33,12 +33,12 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    public void method_45299(int var1) {
-      this.field_41735.method_36633(field_49780, class_9299.method_42829(var1, 0, 64));
+      this.field_41735.method_36633(field_49780, MathHelper.clamp(var1, 0, 64));
    }
 
    private void method_45293() {
       this.method_37187();
-      this.method_26561(Attributes.ATTACK_DAMAGE).method_45006((double)(6 + this.method_45296()));
+      this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue((double)(6 + this.method_45296()));
    }
 
    public int method_45296() {
@@ -68,15 +68,15 @@ public class class_9825 extends class_516 implements class_1869 {
    public void method_37123() {
       super.method_37123();
       if (this.world.field_33055) {
-         float var3 = class_9299.method_42840((float)(this.method_37145() * 3 + this.field_41697) * 0.13F + (float) Math.PI);
-         float var4 = class_9299.method_42840((float)(this.method_37145() * 3 + this.field_41697 + 1) * 0.13F + (float) Math.PI);
+         float var3 = MathHelper.cos((float)(this.method_37145() * 3 + this.field_41697) * 0.13F + (float) Math.PI);
+         float var4 = MathHelper.cos((float)(this.method_37145() * 3 + this.field_41697 + 1) * 0.13F + (float) Math.PI);
          if (var3 > 0.0F && var4 <= 0.0F) {
             this.world
                .method_29527(
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),
-                  class_463.field_2067,
+                  SoundEvents.field_2067,
                   this.method_37197(),
                   0.95F + this.field_41717.nextFloat() * 0.05F,
                   0.95F + this.field_41717.nextFloat() * 0.05F,
@@ -85,8 +85,8 @@ public class class_9825 extends class_516 implements class_1869 {
          }
 
          int var5 = this.method_45296();
-         float var6 = class_9299.method_42840(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
-         float var7 = class_9299.method_42818(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
+         float var6 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
+         float var7 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
          float var8 = (0.3F + var3 * 0.45F) * ((float)var5 * 0.2F + 1.0F);
          this.world
             .method_43361(
@@ -112,12 +112,12 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.isAlive() && this.method_26884()) {
          this.method_37178(8);
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    @Override
@@ -145,7 +145,7 @@ public class class_9825 extends class_516 implements class_1869 {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.putInt("AX", this.field_49779.method_12173());
+      var1.putInt("AX", this.field_49779.getX());
       var1.putInt("AY", this.field_49779.method_12165());
       var1.putInt("AZ", this.field_49779.method_12185());
       var1.putInt("Size", this.method_45296());
@@ -162,18 +162,18 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2024;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2024;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2191;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2191;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2308;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2308;
    }
 
    @Override

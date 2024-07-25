@@ -137,7 +137,7 @@ public class class_2439 implements class_5580 {
    }
 
    public static double method_11113(double var0) {
-      return var0 - (double)class_9299.method_42854(var0 / 3.3554432E7 + 0.5) * 3.3554432E7;
+      return var0 - (double) MathHelper.lfloor(var0 / 3.3554432E7 + 0.5) * 3.3554432E7;
    }
 
    @Override

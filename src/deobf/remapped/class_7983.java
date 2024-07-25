@@ -112,7 +112,7 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
       int var8 = this.field_40887 + this.field_40891 / 2;
       int var9 = var8 - var7;
       int var10 = var8 + var7;
-      int var11 = class_9299.method_42847(var3 - (double)this.field_40876) - this.field_40874 + (int)this.method_36228() - 4;
+      int var11 = MathHelper.floor(var3 - (double)this.field_40876) - this.field_40874 + (int)this.method_36228() - 4;
       int var12 = var11 / this.field_40878;
       return var1 < (double)this.method_36191() && var1 >= (double)var9 && var1 <= (double)var10 && var12 >= 0 && var11 >= 0 && var12 < this.method_36218()
          ? this.method_41183().get(var12)
@@ -248,7 +248,7 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
       if (var17 > 0) {
          RenderSystem.method_16354();
          int var18 = (int)((float)((this.field_40877 - this.field_40876) * (this.field_40877 - this.field_40876)) / (float)this.method_36205());
-         var18 = class_9299.method_42829(var18, 32, this.field_40877 - this.field_40876 - 8);
+         var18 = MathHelper.clamp(var18, 32, this.field_40877 - this.field_40876 - 8);
          int var20 = (int)this.method_36228() * (this.field_40877 - this.field_40876 - var18) / var17 + this.field_40876;
          if (var20 < this.field_40876) {
             var20 = this.field_40876;
@@ -303,7 +303,7 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
    }
 
    public void method_36222(double var1) {
-      this.field_40875 = class_9299.method_42827(var1, 0.0, (double)this.method_36209());
+      this.field_40875 = MathHelper.clamp(var1, 0.0, (double)this.method_36209());
    }
 
    public int method_36209() {
@@ -360,7 +360,7 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
                if (!(var3 > (double)this.field_40877)) {
                   double var12 = (double)Math.max(1, this.method_36209());
                   int var14 = this.field_40877 - this.field_40876;
-                  int var15 = class_9299.method_42829((int)((float)(var14 * var14) / (float)this.method_36205()), 32, var14 - 8);
+                  int var15 = MathHelper.clamp((int)((float)(var14 * var14) / (float)this.method_36205()), 32, var14 - 8);
                   double var16 = Math.max(1.0, var12 / (double)(var14 - var15));
                   this.method_36222(this.method_36228() + var8 * var16);
                } else {
@@ -422,7 +422,7 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
          int var6 = this.method_41183().indexOf(this.method_36226());
 
          while (true) {
-            int var7 = class_9299.method_42829(var6 + var5, 0, this.method_36218() - 1);
+            int var7 = MathHelper.clamp(var6 + var5, 0, this.method_36218() - 1);
             if (var6 == var7) {
                break;
             }

@@ -95,7 +95,7 @@ public abstract class class_7812 extends class_2620 {
       var2.method_43359(!var4 ? null : var1, var3, this.method_35399(var4), class_562.field_3322, 0.3F, !var4 ? 0.5F : 0.6F);
    }
 
-   public abstract class_8461 method_35399(boolean var1);
+   public abstract SoundEvent method_35399(boolean var1);
 
    @Override
    public void method_10761(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {

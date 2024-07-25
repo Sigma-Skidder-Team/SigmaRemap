@@ -15,7 +15,7 @@ public class class_595 implements IntUnaryOperator {
          int var5 = var1;
          if (var2 != null) {
             int var6 = var2;
-            this.field_3437 = var2x -> class_9299.method_42829(var2x, var5, var6);
+            this.field_3437 = var2x -> MathHelper.clamp(var2x, var5, var6);
          } else {
             this.field_3437 = var1x -> Math.max(var5, var1x);
          }

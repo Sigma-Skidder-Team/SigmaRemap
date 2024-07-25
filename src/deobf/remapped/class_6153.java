@@ -26,13 +26,13 @@ public class class_6153 extends class_1131 {
    public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7) {
       byte var10 = 5;
       int var11 = var3 + 2;
-      int var12 = class_9299.method_42847((double)var11 * 0.618);
+      int var12 = MathHelper.floor((double)var11 * 0.618);
       if (!var7.field_7153) {
          method_4969(var1, var4.method_6100());
       }
 
       double var13 = 1.0;
-      int var15 = Math.min(1, class_9299.method_42847(1.382 + Math.pow(1.0 * (double)var11 / 13.0, 2.0)));
+      int var15 = Math.min(1, MathHelper.floor(1.382 + Math.pow(1.0 * (double)var11 / 13.0, 2.0)));
       int var16 = var4.method_12165() + var12;
       int var17 = var11 - 5;
       ArrayList var18 = Lists.newArrayList();
@@ -50,11 +50,11 @@ public class class_6153 extends class_1131 {
                BlockPos var31 = var4.method_6103(var27, (double)(var17 - 1), var29);
                BlockPos var32 = var31.method_6082(5);
                if (this.method_28231(var1, var2, var31, var32, false, var5, var6, var7)) {
-                  int var33 = var4.method_12173() - var31.method_12173();
+                  int var33 = var4.getX() - var31.getX();
                   int var34 = var4.method_12185() - var31.method_12185();
                   double var35 = (double)var31.method_12165() - Math.sqrt((double)(var33 * var33 + var34 * var34)) * 0.381;
                   int var37 = !(var35 > (double)var16) ? (int)var35 : var16;
-                  BlockPos var38 = new BlockPos(var4.method_12173(), var37, var4.method_12185());
+                  BlockPos var38 = new BlockPos(var4.getX(), var37, var4.method_12185());
                   if (this.method_28231(var1, var2, var38, var31, false, var5, var6, var7)) {
                      var18.add(new class_5811(var31, var38.method_12165()));
                   }
@@ -82,9 +82,9 @@ public class class_6153 extends class_1131 {
       if (!var5 && Objects.equals(var3, var4)) {
          return true;
       } else {
-         BlockPos var11 = var4.method_6104(-var3.method_12173(), -var3.method_12165(), -var3.method_12185());
+         BlockPos var11 = var4.method_6104(-var3.getX(), -var3.method_12165(), -var3.method_12185());
          int var12 = this.method_28233(var11);
-         float var13 = (float)var11.method_12173() / (float)var12;
+         float var13 = (float)var11.getX() / (float)var12;
          float var14 = (float)var11.method_12165() / (float)var12;
          float var15 = (float)var11.method_12185() / (float)var12;
 
@@ -107,15 +107,15 @@ public class class_6153 extends class_1131 {
    }
 
    private int method_28233(BlockPos var1) {
-      int var4 = class_9299.method_42805(var1.method_12173());
-      int var5 = class_9299.method_42805(var1.method_12165());
-      int var6 = class_9299.method_42805(var1.method_12185());
+      int var4 = MathHelper.abs(var1.getX());
+      int var5 = MathHelper.abs(var1.method_12165());
+      int var6 = MathHelper.abs(var1.method_12185());
       return Math.max(var4, Math.max(var5, var6));
    }
 
    private class_9249 method_28232(BlockPos var1, BlockPos var2) {
       class_9249 var5 = class_9249.field_47216;
-      int var6 = Math.abs(var2.method_12173() - var1.method_12173());
+      int var6 = Math.abs(var2.getX() - var1.getX());
       int var7 = Math.abs(var2.method_12185() - var1.method_12185());
       int var8 = Math.max(var6, var7);
       if (var8 > 0) {
@@ -138,7 +138,7 @@ public class class_6153 extends class_1131 {
    ) {
       for (class_5811 var12 : var5) {
          int var13 = var12.method_26317();
-         BlockPos var14 = new BlockPos(var4.method_12173(), var13, var4.method_12185());
+         BlockPos var14 = new BlockPos(var4.getX(), var13, var4.method_12185());
          if (!var14.equals(class_5811.method_26316(var12).method_36623()) && this.method_28234(var3, var13 - var4.method_12165())) {
             this.method_28231(var1, var2, var14, class_5811.method_26316(var12).method_36623(), true, var6, var7, var8);
          }
@@ -149,7 +149,7 @@ public class class_6153 extends class_1131 {
       if (!((float)var2 < (float)var1 * 0.3F)) {
          float var5 = (float)var1 / 2.0F;
          float var6 = var5 - (float)var2;
-         float var7 = class_9299.method_42843(var5 * var5 - var6 * var6);
+         float var7 = MathHelper.sqrt(var5 * var5 - var6 * var6);
          if (var6 != 0.0F) {
             if (Math.abs(var6) >= var5) {
                return 0.0F;

@@ -29,7 +29,7 @@ public class class_4422 extends class_1131 {
       int var12 = var3 - var2.nextInt(4) - 1;
       int var13 = 3 - var2.nextInt(3);
       class_2921 var14 = new class_2921();
-      int var15 = var4.method_12173();
+      int var15 = var4.getX();
       int var16 = var4.method_12185();
       int var17 = 0;
 
@@ -47,7 +47,7 @@ public class class_4422 extends class_1131 {
       }
 
       var10.add(new class_8070(new BlockPos(var15, var17, var16), 1, false));
-      var15 = var4.method_12173();
+      var15 = var4.getX();
       var16 = var4.method_12185();
       Direction var26 = class_9594.field_48893.method_44313(var2);
       if (var26 != var11) {

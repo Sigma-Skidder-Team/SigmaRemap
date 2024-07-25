@@ -27,23 +27,23 @@ public class class_4965 extends class_337 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.method_37134() ? class_463.field_2542 : class_463.field_2275;
+   public SoundEvent method_26918() {
+      return !this.method_37134() ? SoundEvents.field_2542 : SoundEvents.field_2275;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return !this.method_37134() ? class_463.field_2473 : class_463.field_2910;
+   public SoundEvent method_26541(DamageSource var1) {
+      return !this.method_37134() ? SoundEvents.field_2473 : SoundEvents.field_2910;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return !this.method_37134() ? class_463.field_2150 : class_463.field_2872;
+   public SoundEvent method_26599() {
+      return !this.method_37134() ? SoundEvents.field_2150 : SoundEvents.field_2872;
    }
 
    @Override
-   public class_8461 method_1554() {
-      return class_463.field_2354;
+   public SoundEvent method_1554() {
+      return SoundEvents.field_2354;
    }
 
    @Override

@@ -69,8 +69,8 @@ public class class_8014 {
    public ItemStack method_36372() {
       int var3 = this.field_41051.method_27997();
       ItemStack var4 = this.field_41051.method_27973();
-      int var5 = Math.max(0, class_9299.method_42848((float)(var3 * this.field_41046) * this.field_41044));
-      var4.method_28017(class_9299.method_42829(var3 + var5 + this.field_41045, 1, this.field_41051.method_27960().method_11245()));
+      int var5 = Math.max(0, MathHelper.floor((float)(var3 * this.field_41046) * this.field_41044));
+      var4.method_28017(MathHelper.clamp(var3 + var5 + this.field_41045, 1, this.field_41051.method_27960().method_11245()));
       return var4;
    }
 

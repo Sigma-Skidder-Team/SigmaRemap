@@ -79,7 +79,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    public void method_43358(class_562 var1) {
       this.field_9086.method_3112(true);
       if (var1 != null) {
-         this.world.method_29540((PlayerEntity)null, this, class_463.field_2057, var1, 0.5F, 1.0F);
+         this.world.method_29540((PlayerEntity)null, this, SoundEvents.field_2057, var1, 0.5F, 1.0F);
       }
    }
 
@@ -117,7 +117,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    public double getMountedYOffset() {
       float var3 = Math.min(0.25F, this.field_29643);
       float var4 = this.field_29671;
-      return (double)this.method_37074() - 0.19 + (double)(0.12F * class_9299.method_42840(var4 * 1.5F) * 2.0F * var3);
+      return (double)this.method_37074() - 0.19 + (double)(0.12F * MathHelper.cos(var4 * 1.5F) * 2.0F * var3);
    }
 
    @Override
@@ -139,7 +139,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    @Nullable
    @Override
    public Entity getControllingPassenger() {
-      return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
+      return !this.getPassengers().isEmpty() ? this.getPassengers().get(0) : null;
    }
 
    @Override
@@ -152,8 +152,8 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw + 45.0F)
       };
       LinkedHashSet var5 = Sets.newLinkedHashSet();
-      double var6 = this.method_37241().field_19939;
-      double var8 = this.method_37241().field_19937 - 0.5;
+      double var6 = this.getBoundingBox().field_19939;
+      double var8 = this.getBoundingBox().field_19937 - 0.5;
       class_2921 var10 = new class_2921();
 
       for (class_1343 var14 : var4) {
@@ -184,7 +184,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          }
       }
 
-      return new class_1343(this.getPosX(), this.method_37241().field_19939, this.getPosZ());
+      return new class_1343(this.getPosX(), this.getBoundingBox().field_19939, this.getPosZ());
    }
 
    @Override
@@ -214,7 +214,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(!this.method_37370() ? class_463.field_2173 : class_463.field_1925, 1.0F, 1.0F);
+      this.method_37155(!this.method_37370() ? SoundEvents.field_2173 : SoundEvents.field_1925, 1.0F, 1.0F);
    }
 
    @Override
@@ -235,9 +235,9 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    @Override
    public void method_37123() {
       if (this.method_7922() && this.field_41717.nextInt(140) == 0) {
-         this.method_37155(class_463.field_2400, 1.0F, this.method_26547());
+         this.method_37155(SoundEvents.field_2400, 1.0F, this.method_26547());
       } else if (this.method_7929() && this.field_41717.nextInt(60) == 0) {
-         this.method_37155(class_463.field_2706, 1.0F, this.method_26547());
+         this.method_37155(SoundEvents.field_2706, 1.0F, this.method_26547());
       }
 
       class_2522 var3 = this.world.method_28262(this.method_37075());
@@ -279,23 +279,23 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.method_7929() && !this.method_7922() ? class_463.field_2754 : null;
+   public SoundEvent method_26918() {
+      return !this.method_7929() && !this.method_7922() ? SoundEvents.field_2754 : null;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2599;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2599;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2327;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2327;
    }
 
    @Override
    public boolean method_37286(Entity var1) {
-      return this.method_37114().isEmpty() && !this.method_37261(class_6503.field_33095);
+      return this.getPassengers().isEmpty() && !this.method_37261(class_6503.field_33095);
    }
 
    @Override
@@ -309,7 +309,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       return new class_7632(this, var1);
    }
 
@@ -358,7 +358,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
                      this.getPosX(),
                      this.method_37309(),
                      this.getPosZ(),
-                     class_463.field_2762,
+                     SoundEvents.field_2762,
                      this.method_37197(),
                      1.0F,
                      1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F

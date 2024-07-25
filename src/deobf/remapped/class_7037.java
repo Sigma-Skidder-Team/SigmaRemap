@@ -17,7 +17,7 @@ public class class_7037 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      LivingEntity var3 = this.field_36247.method_17809();
+      LivingEntity var3 = this.field_36247.getAttackTarget();
       if (var3 != null) {
          this.field_36249 = var3;
          return true;

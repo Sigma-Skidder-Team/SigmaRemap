@@ -24,7 +24,7 @@ public class class_305 extends class_6414 {
    public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (method_1361(var2.method_28262(var3.method_6100())) && var3.method_12165() >= 0) {
          class_1453 var7 = new class_1453(
-            var2, (double)var3.method_12173() + 0.5, (double)var3.method_12165(), (double)var3.method_12185() + 0.5, var2.method_28262(var3)
+            var2, (double)var3.getX() + 0.5, (double)var3.method_12165(), (double)var3.method_12185() + 0.5, var2.method_28262(var3)
          );
          this.method_1359(var7);
          var2.method_7509(var7);
@@ -54,7 +54,7 @@ public class class_305 extends class_6414 {
       if (var4.nextInt(16) == 0) {
          BlockPos var7 = var3.method_6100();
          if (method_1361(var2.method_28262(var7))) {
-            double var8 = (double)var3.method_12173() + var4.nextDouble();
+            double var8 = (double)var3.getX() + var4.nextDouble();
             double var10 = (double)var3.method_12165() - 0.05;
             double var12 = (double)var3.method_12185() + var4.nextDouble();
             var2.method_43361(new class_7110(class_3090.field_15371, var1), var8, var10, var12, 0.0, 0.0, 0.0);

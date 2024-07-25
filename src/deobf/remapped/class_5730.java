@@ -41,11 +41,11 @@ public class class_5730 extends class_305 {
                   float var11 = (var2.field_33033.nextFloat() - 0.5F) * 0.2F;
                   float var12 = (var2.field_33033.nextFloat() - 0.5F) * 0.2F;
                   float var13 = (var2.field_33033.nextFloat() - 0.5F) * 0.2F;
-                  double var14 = class_9299.method_42794(var9, (double)var7.method_12173(), (double)var3.method_12173())
+                  double var14 = MathHelper.lerp(var9, (double)var7.getX(), (double)var3.getX())
                      + (var2.field_33033.nextDouble() - 0.5)
                      + 0.5;
-                  double var16 = class_9299.method_42794(var9, (double)var7.method_12165(), (double)var3.method_12165()) + var2.field_33033.nextDouble() - 0.5;
-                  double var18 = class_9299.method_42794(var9, (double)var7.method_12185(), (double)var3.method_12185())
+                  double var16 = MathHelper.lerp(var9, (double)var7.method_12165(), (double)var3.method_12165()) + var2.field_33033.nextDouble() - 0.5;
+                  double var18 = MathHelper.lerp(var9, (double)var7.method_12185(), (double)var3.method_12185())
                      + (var2.field_33033.nextDouble() - 0.5)
                      + 0.5;
                   var2.method_43361(class_3090.field_15356, var14, var16, var18, (double)var11, (double)var12, (double)var13);

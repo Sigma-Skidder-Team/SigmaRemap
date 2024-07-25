@@ -14,7 +14,7 @@ public class class_805 extends class_6967 {
    @Override
    public boolean method_16795() {
       if (this.field_35805 <= 0) {
-         if (!this.field_4300.world.method_29537().method_1285(class_291.field_1047)) {
+         if (!this.field_4300.world.getGameRules().getBoolean(GameRules.field_1047)) {
             return false;
          }
 
@@ -37,7 +37,7 @@ public class class_805 extends class_6967 {
       this.field_4300
          .method_26865()
          .method_17231(
-            (double)this.field_35802.method_12173() + 0.5,
+            (double)this.field_35802.getX() + 0.5,
             (double)(this.field_35802.method_12165() + 1),
             (double)this.field_35802.method_12185() + 0.5,
             10.0F,

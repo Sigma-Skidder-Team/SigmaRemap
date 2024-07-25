@@ -118,7 +118,7 @@ public class class_7335 {
    private static final List<class_7335> field_37516 = ImmutableList.of(
       field_37514, field_37499, field_37492, field_37491, field_37491, field_37491, field_37491, field_37491, field_37491, field_37491, field_37491
    );
-   private static final IntList field_37506 = Util.<IntList>method_44659(new IntArrayList(method_33456().size()), var0 -> {
+   private static final IntList field_37506 = Util.<IntList>make(new IntArrayList(method_33456().size()), var0 -> {
       int var3 = 0;
 
       for (int var4 = method_33456().size() - 1; var4 >= 0; var4--) {

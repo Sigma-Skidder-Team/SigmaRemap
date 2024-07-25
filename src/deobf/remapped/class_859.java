@@ -23,18 +23,18 @@ public class class_859 {
    }
 
    public class_6325 method_3726(BlockPos var1) {
-      return this.field_4463.method_28268(this.field_4461, var1.method_12173(), var1.method_12165(), var1.method_12185(), this.field_4462);
+      return this.field_4463.method_28268(this.field_4461, var1.getX(), var1.method_12165(), var1.method_12185(), this.field_4462);
    }
 
    public class_6325 method_3724(double var1, double var3, double var5) {
-      int var9 = class_9299.method_42847(var1) >> 2;
-      int var10 = class_9299.method_42847(var3) >> 2;
-      int var11 = class_9299.method_42847(var5) >> 2;
+      int var9 = MathHelper.floor(var1) >> 2;
+      int var10 = MathHelper.floor(var3) >> 2;
+      int var11 = MathHelper.floor(var5) >> 2;
       return this.method_3727(var9, var10, var11);
    }
 
    public class_6325 method_3725(BlockPos var1) {
-      int var4 = var1.method_12173() >> 2;
+      int var4 = var1.getX() >> 2;
       int var5 = var1.method_12165() >> 2;
       int var6 = var1.method_12185() >> 2;
       return this.method_3727(var4, var5, var6);

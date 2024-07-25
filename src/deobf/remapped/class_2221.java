@@ -11,7 +11,7 @@ public class class_2221 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      return this.field_11104.method_17809() != null;
+      return this.field_11104.getAttackTarget() != null;
    }
 
    @Override
@@ -26,7 +26,7 @@ public class class_2221 extends class_3599 {
 
    @Override
    public void method_16794() {
-      LivingEntity var3 = this.field_11104.method_17809();
+      LivingEntity var3 = this.field_11104.getAttackTarget();
       double var4 = 64.0;
       if (var3.method_37275(this.field_11104) < 4096.0 && this.field_11104.method_26420(var3)) {
          World var6 = this.field_11104.world;

@@ -39,12 +39,12 @@ public class class_7314 extends class_9733 {
 
       float var7 = ((float)this.field_37399 + var3) / 3.0F;
       var7 *= var7;
-      double var8 = class_9299.method_42794((double)var3, this.field_37395.field_41754, this.field_37395.getPosX());
-      double var10 = class_9299.method_42794((double)var3, this.field_37395.field_41713, this.field_37395.method_37309()) + 0.5;
-      double var12 = class_9299.method_42794((double)var3, this.field_37395.field_41724, this.field_37395.getPosZ());
-      double var14 = class_9299.method_42794((double)var7, this.field_37398.getPosX(), var8);
-      double var16 = class_9299.method_42794((double)var7, this.field_37398.method_37309(), var10);
-      double var18 = class_9299.method_42794((double)var7, this.field_37398.getPosZ(), var12);
+      double var8 = MathHelper.lerp((double)var3, this.field_37395.field_41754, this.field_37395.getPosX());
+      double var10 = MathHelper.lerp((double)var3, this.field_37395.field_41713, this.field_37395.method_37309()) + 0.5;
+      double var12 = MathHelper.lerp((double)var3, this.field_37395.field_41724, this.field_37395.getPosZ());
+      double var14 = MathHelper.lerp((double)var7, this.field_37398.getPosX(), var8);
+      double var16 = MathHelper.lerp((double)var7, this.field_37398.method_37309(), var10);
+      double var18 = MathHelper.lerp((double)var7, this.field_37398.getPosZ(), var12);
       class_3758 var20 = this.field_37396.method_13796();
       class_1343 var21 = var2.method_41627();
       this.field_37400

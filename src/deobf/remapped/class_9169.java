@@ -46,7 +46,7 @@ public class class_9169 extends class_3599 {
    @Override
    public void method_16794() {
       if (!this.field_46926.method_19043() && this.field_46926.method_26594().nextInt(50) == 0) {
-         Entity var3 = this.field_46926.method_37114().get(0);
+         Entity var3 = this.field_46926.getPassengers().get(0);
          if (var3 == null) {
             return;
          }

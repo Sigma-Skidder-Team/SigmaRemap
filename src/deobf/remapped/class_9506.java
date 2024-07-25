@@ -17,7 +17,7 @@ public abstract class class_9506 extends class_5783 {
 
    @Override
    public boolean method_37176(double var1) {
-      double var5 = this.method_37241().method_18906() * 4.0;
+      double var5 = this.getBoundingBox().method_18906() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }

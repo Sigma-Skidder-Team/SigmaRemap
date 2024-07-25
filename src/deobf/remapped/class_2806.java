@@ -40,18 +40,18 @@ public class class_2806 extends MonsterEntity {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2105;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2105;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2725;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2725;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2572;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2572;
    }
 
    @Override
@@ -60,7 +60,7 @@ public class class_2806 extends MonsterEntity {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (!this.onGround && this.method_37098().field_7333 < 0.0) {
          this.method_37215(this.method_37098().method_6210(1.0, 0.6, 1.0));
       }
@@ -72,7 +72,7 @@ public class class_2806 extends MonsterEntity {
                   this.getPosX() + 0.5,
                   this.method_37309() + 0.5,
                   this.getPosZ() + 0.5,
-                  class_463.field_2019,
+                  SoundEvents.field_2019,
                   this.method_37197(),
                   1.0F + this.field_41717.nextFloat(),
                   this.field_41717.nextFloat() * 0.7F + 0.3F,
@@ -85,7 +85,7 @@ public class class_2806 extends MonsterEntity {
          }
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    @Override
@@ -101,7 +101,7 @@ public class class_2806 extends MonsterEntity {
          this.field_13774 = 0.5F + (float)this.field_41717.nextGaussian() * 3.0F;
       }
 
-      LivingEntity var3 = this.method_17809();
+      LivingEntity var3 = this.getAttackTarget();
       if (var3 != null && var3.method_37388() > this.method_37388() + (double)this.field_13774 && this.method_26608(var3)) {
          class_1343 var4 = this.method_37098();
          this.method_37215(this.method_37098().method_6214(0.0, (0.3F - var4.field_7333) * 0.3F, 0.0));

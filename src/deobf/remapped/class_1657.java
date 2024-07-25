@@ -49,7 +49,7 @@ public class class_1657 extends class_5920<MobEntity> {
    public boolean method_7388(class_6331 var1, MobEntity var2, long var3) {
       if (this.field_8601 != null && this.field_8597 != null) {
          Optional var7 = var2.method_26525().<class_6651>method_5138(class_6044.field_30889);
-         class_1249 var8 = var2.method_26927();
+         PathNavigator var8 = var2.method_26927();
          return !var8.method_5591() && var7.isPresent() && !this.method_7387(var2, (class_6651)var7.get());
       } else {
          return false;

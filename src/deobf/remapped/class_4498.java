@@ -51,11 +51,11 @@ public class class_4498 extends class_3289 {
             }
          }
 
-         class_8461 var19;
+         SoundEvent var19;
          if (var4) {
-            var19 = var3 ? class_463.field_2596 : class_463.field_2303;
+            var19 = var3 ? SoundEvents.field_2596 : SoundEvents.field_2303;
          } else {
-            var19 = var3 ? class_463.field_2695 : class_463.field_2655;
+            var19 = var3 ? SoundEvents.field_2695 : SoundEvents.field_2655;
          }
 
          this.field_49469
@@ -142,7 +142,7 @@ public class class_4498 extends class_3289 {
       if (this.field_21999 > this.field_49476) {
          if (this.field_21997) {
             boolean var16 = this.method_20904();
-            class_8461 var18 = var16 ? class_463.field_2265 : class_463.field_2507;
+            SoundEvent var18 = var16 ? SoundEvents.field_2265 : SoundEvents.field_2507;
             this.field_49469
                .method_29527(
                   this.field_49462, this.field_49473, this.field_49465, var18, class_562.field_3325, 20.0F, 0.9F + this.field_49466.nextFloat() * 0.15F, true
@@ -183,7 +183,7 @@ public class class_4498 extends class_3289 {
                double var19 = (double)var17 + (this.field_49466.nextDouble() - this.field_49466.nextDouble()) * 0.5;
                double var21 = (double)var16 + (this.field_49466.nextDouble() - this.field_49466.nextDouble()) * 0.5;
                double var23 = (double)var18 + (this.field_49466.nextDouble() - this.field_49466.nextDouble()) * 0.5;
-               double var25 = (double)class_9299.method_42842(var19 * var19 + var21 * var21 + var23 * var23) / var1 + this.field_49466.nextGaussian() * 0.05;
+               double var25 = (double) MathHelper.sqrt(var19 * var19 + var21 * var21 + var23 * var23) / var1 + this.field_49466.nextGaussian() * 0.05;
                this.method_20902(var10, var12, var14, var19 / var25, var21 / var25, var23 / var25, var4, var5, var6, var7);
                if (var16 != -var3 && var16 != var3 && var17 != -var3 && var17 != var3) {
                   var18 += var3 * 2 - 1;
@@ -210,8 +210,8 @@ public class class_4498 extends class_3289 {
             double var28 = var3[var25][1];
 
             for (double var30 = 0.25; var30 <= 1.0; var30 += 0.25) {
-               double var32 = class_9299.method_42794(var30, var21, var26) * var1;
-               double var34 = class_9299.method_42794(var30, var23, var28) * var1;
+               double var32 = MathHelper.lerp(var30, var21, var26) * var1;
+               double var34 = MathHelper.lerp(var30, var23, var28) * var1;
                double var36 = var32 * Math.sin(var19);
                var32 *= Math.cos(var19);
 

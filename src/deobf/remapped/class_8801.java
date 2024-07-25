@@ -52,8 +52,8 @@ public class class_8801 extends class_3558 {
    }
 
    @Override
-   public class_8461 method_16540() {
-      return class_463.field_2120;
+   public SoundEvent method_16540() {
+      return SoundEvents.field_2120;
    }
 
    @Override

@@ -31,7 +31,7 @@ public abstract class class_8131 extends class_7060 {
 
    @Override
    public void method_32517(CompoundNBT var1) {
-      var1.putInt("TPX", this.field_41648.method_12173());
+      var1.putInt("TPX", this.field_41648.getX());
       var1.putInt("TPY", this.field_41648.method_12165());
       var1.putInt("TPZ", this.field_41648.method_12185());
    }

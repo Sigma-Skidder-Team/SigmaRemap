@@ -21,7 +21,7 @@ public class ClickTPModule extends SecondModule {
 
          this.method_41141(
             this.method_41136(),
-            (double)var5.method_12173() + 0.5 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61(),
+            (double)var5.getX() + 0.5 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61(),
             (double)(var5.method_12165() + 1) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60(),
             (double)var5.method_12185() + 0.5 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62()
          );
@@ -29,7 +29,7 @@ public class ClickTPModule extends SecondModule {
    }
 
    private double method_41136() {
-      return (double)(class_9299.method_42818((float)Math.toRadians((double)(90.0F - client.thePlayer.rotationPitch))) * 10.0F);
+      return (double)(MathHelper.sin((float)Math.toRadians((double)(90.0F - client.thePlayer.rotationPitch))) * 10.0F);
    }
 
    private void method_41141(double var1, double var3, double var5, double var7) {

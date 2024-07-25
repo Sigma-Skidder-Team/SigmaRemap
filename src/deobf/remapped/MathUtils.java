@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1750 {
+public class MathUtils {
    private static String[] field_9007;
    public static final float field_9009 = (float) Math.PI;
    public static final float field_9008 = (float) (Math.PI * 2);
@@ -40,7 +40,7 @@ public class class_1750 {
    }
 
    public static int method_7802(int var0) {
-      int var3 = class_9299.method_42801(var0);
+      int var3 = MathHelper.smallestEncompassingPowerOfTwo(var0);
       return var0 != var3 ? var3 / 2 : var3;
    }
 
@@ -49,23 +49,23 @@ public class class_1750 {
    }
 
    public static float method_7801(float var0) {
-      return var0 * 180.0F / class_9299.field_47442;
+      return var0 * 180.0F / MathHelper.PI;
    }
 
    public static float method_7798(float var0) {
-      return var0 / 180.0F * class_9299.field_47442;
+      return var0 / 180.0F * MathHelper.PI;
    }
 
-   public static float method_7803(double var0) {
+   public static float roundToFloat(double var0) {
       return (float)((double)Math.round(var0 * 1.0E8) / 1.0E8);
    }
 
    public static double method_7806(BlockPos var0, double var1, double var3, double var5) {
-      return method_7804((double)var0.method_12173(), (double)var0.method_12165(), (double)var0.method_12185(), var1, var3, var5);
+      return method_7804((double)var0.getX(), (double)var0.method_12165(), (double)var0.method_12185(), var1, var3, var5);
    }
 
    public static float method_7807(BlockPos var0, float var1, float var2, float var3) {
-      return method_7805((float)var0.method_12173(), (float)var0.method_12165(), (float)var0.method_12185(), var1, var2, var3);
+      return method_7805((float)var0.getX(), (float)var0.method_12165(), (float)var0.method_12185(), var1, var2, var3);
    }
 
    public static double method_7804(double var0, double var2, double var4, double var6, double var8, double var10) {

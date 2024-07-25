@@ -7,7 +7,7 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import java.io.IOException;
 
 public class class_3295<T extends LivingEntity & class_3449, M extends class_6521<T> & class_6582> extends class_4171<T, M> implements class_6491 {
-   private static final Int2ObjectMap<Identifier> field_16305 = Util.<Int2ObjectMap<Identifier>>method_44659(new Int2ObjectOpenHashMap(), var0 -> {
+   private static final Int2ObjectMap<Identifier> field_16305 = Util.<Int2ObjectMap<Identifier>>make(new Int2ObjectOpenHashMap(), var0 -> {
       var0.put(1, new Identifier("stone"));
       var0.put(2, new Identifier("iron"));
       var0.put(3, new Identifier("gold"));
@@ -43,7 +43,7 @@ public class class_3295<T extends LivingEntity & class_3449, M extends class_652
             method_19348(var18, var20, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             if (var15 != class_4466.field_21771) {
                Identifier var21 = this.method_15116(
-                  "profession_level", (Identifier)field_16305.get(class_9299.method_42829(var13.method_13906(), 1, field_16305.size()))
+                  "profession_level", (Identifier)field_16305.get(MathHelper.clamp(var13.method_13906(), 1, field_16305.size()))
                );
                method_19348(var18, var21, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             }

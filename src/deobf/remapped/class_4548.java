@@ -19,9 +19,9 @@ public class class_4548 implements Packet<class_392> {
    public class_4548(int var1, class_1343 var2) {
       this.field_22169 = var1;
       double var5 = 3.9;
-      double var7 = class_9299.method_42827(var2.field_7336, -3.9, 3.9);
-      double var9 = class_9299.method_42827(var2.field_7333, -3.9, 3.9);
-      double var11 = class_9299.method_42827(var2.field_7334, -3.9, 3.9);
+      double var7 = MathHelper.clamp(var2.field_7336, -3.9, 3.9);
+      double var9 = MathHelper.clamp(var2.field_7333, -3.9, 3.9);
+      double var11 = MathHelper.clamp(var2.field_7334, -3.9, 3.9);
       this.field_22171 = (int)(var7 * 8000.0);
       this.field_22168 = (int)(var9 * 8000.0);
       this.field_22167 = (int)(var11 * 8000.0);

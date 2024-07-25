@@ -12,7 +12,7 @@ public class class_5916 implements Comparable<class_5916> {
    private static final Map<String, class_5916> field_30026 = Maps.newHashMap();
    private static final Map<class_3654, class_5916> field_30019 = Maps.newHashMap();
    private static final Set<String> field_30023 = Sets.newHashSet();
-   private static final Map<String, Integer> field_30022 = Util.<Map<String, Integer>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<String, Integer> field_30022 = Util.<Map<String, Integer>>make(Maps.newHashMap(), var0 -> {
       var0.put("key.categories.movement", 1);
       var0.put("key.categories.gameplay", 2);
       var0.put("key.categories.inventory", 3);

@@ -13,7 +13,7 @@ public class class_5493 extends class_4285<class_3878> {
 
       for (int var9 = 0; var9 < 16; var9++) {
          for (int var10 = 0; var10 < 16; var10++) {
-            int var11 = var4.method_12173() + var9;
+            int var11 = var4.getX() + var9;
             int var12 = var4.method_12185() + var10;
             int var13 = var5.field_18876;
             var8.method_13362(var11, var13, var12);

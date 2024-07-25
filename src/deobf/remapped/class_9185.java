@@ -49,7 +49,7 @@ public class class_9185 extends class_8131 {
             }
          } else {
             class_6092 var9 = EntityType.field_34231.method_30484(var3.method_7066());
-            var9.method_37256((double)var2.method_12173() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5);
+            var9.method_37256((double)var2.getX() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5);
             var9.method_27917(var2);
             var3.method_7509(var9);
          }

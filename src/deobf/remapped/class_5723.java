@@ -65,16 +65,16 @@ public class class_5723<T extends class_7637> extends class_5272<T> implements c
       this.field_28923.field_8187 = -1.0F;
       this.field_28923.field_8191 = -0.75F;
       if (!this.field_33203) {
-         this.field_28920.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 2.0F * var3 * 0.5F;
+         this.field_28920.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 2.0F * var3 * 0.5F;
          this.field_28920.field_8190 = 0.0F;
          this.field_28920.field_8185 = 0.0F;
-         this.field_28924.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 2.0F * var3 * 0.5F;
+         this.field_28924.field_8191 = MathHelper.cos(var2 * 0.6662F) * 2.0F * var3 * 0.5F;
          this.field_28924.field_8190 = 0.0F;
          this.field_28924.field_8185 = 0.0F;
-         this.field_28917.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
+         this.field_28917.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
          this.field_28917.field_8190 = 0.0F;
          this.field_28917.field_8185 = 0.0F;
-         this.field_28916.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
+         this.field_28916.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
          this.field_28916.field_8190 = 0.0F;
          this.field_28916.field_8185 = 0.0F;
       } else {
@@ -101,12 +101,12 @@ public class class_5723<T extends class_7637> extends class_5272<T> implements c
                      if (var9 == class_5871.field_29819) {
                         this.field_28920.field_8187 = 0.0F;
                         this.field_28920.field_8183 = -5.0F;
-                        this.field_28920.field_8191 = class_9299.method_42840(var4 * 0.6662F) * 0.05F;
+                        this.field_28920.field_8191 = MathHelper.cos(var4 * 0.6662F) * 0.05F;
                         this.field_28920.field_8185 = 2.670354F;
                         this.field_28920.field_8190 = 0.0F;
                         this.field_28924.field_8187 = 0.0F;
                         this.field_28924.field_8183 = 5.0F;
-                        this.field_28924.field_8191 = class_9299.method_42840(var4 * 0.6662F) * 0.05F;
+                        this.field_28924.field_8191 = MathHelper.cos(var4 * 0.6662F) * 0.05F;
                         this.field_28924.field_8185 = (float) (-Math.PI * 3.0 / 4.0);
                         this.field_28924.field_8190 = 0.0F;
                      }
@@ -128,8 +128,8 @@ public class class_5723<T extends class_7637> extends class_5272<T> implements c
             this.field_28920.field_8183 = -5.0F;
             this.field_28924.field_8187 = 0.0F;
             this.field_28924.field_8183 = 5.0F;
-            this.field_28920.field_8191 = class_9299.method_42840(var4 * 0.6662F) * 0.25F;
-            this.field_28924.field_8191 = class_9299.method_42840(var4 * 0.6662F) * 0.25F;
+            this.field_28920.field_8191 = MathHelper.cos(var4 * 0.6662F) * 0.25F;
+            this.field_28924.field_8191 = MathHelper.cos(var4 * 0.6662F) * 0.25F;
             this.field_28920.field_8185 = (float) (Math.PI * 3.0 / 4.0);
             this.field_28924.field_8185 = (float) (-Math.PI * 3.0 / 4.0);
             this.field_28920.field_8190 = 0.0F;

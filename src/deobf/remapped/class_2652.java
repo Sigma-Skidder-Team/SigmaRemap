@@ -9,7 +9,7 @@ public class class_2652 extends class_3599 {
    private final Predicate<MobEntity> field_13062;
    private MobEntity field_13055;
    private final double field_13058;
-   private final class_1249 field_13063;
+   private final PathNavigator field_13063;
    private int field_13059;
    private final float field_13060;
    private float field_13056;
@@ -32,7 +32,7 @@ public class class_2652 extends class_3599 {
    public boolean method_16795() {
       List var3 = this.field_13054
          .world
-         .<MobEntity>method_25869(MobEntity.class, this.field_13054.method_37241().method_18898((double)this.field_13057), this.field_13062);
+         .<MobEntity>method_25869(MobEntity.class, this.field_13054.getBoundingBox().grow((double)this.field_13057), this.field_13062);
       if (!var3.isEmpty()) {
          for (MobEntity var5 : var3) {
             if (!var5.method_37109()) {

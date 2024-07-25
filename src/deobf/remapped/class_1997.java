@@ -54,7 +54,7 @@ public class class_1997 extends class_9152<class_1997> {
          try {
             return Integer.parseInt(var0);
          } catch (NumberFormatException var4) {
-            class_291.method_1290().warn("Failed to parse integer {}", var0);
+            GameRules.method_1290().warn("Failed to parse integer {}", var0);
          }
       }
 

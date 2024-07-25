@@ -9,7 +9,7 @@ public class class_5864 extends class_3333 {
    }
 
    private static boolean method_26718(Entity var0) {
-      return var0 instanceof class_5834 || var0 instanceof AbstractMinecartEntity || var0 instanceof class_1356 || var0 instanceof BoatEntity;
+      return var0 instanceof LivingEntity || var0 instanceof AbstractMinecartEntity || var0 instanceof class_1356 || var0 instanceof BoatEntity;
    }
 
    @Override
@@ -19,7 +19,7 @@ public class class_5864 extends class_3333 {
 
    @Override
    public void method_29263(World var1, BlockPos var2, Entity var3, float var4) {
-      var3.method_37155(class_463.field_2469, 1.0F, 1.0F);
+      var3.method_37155(SoundEvents.field_2469, 1.0F, 1.0F);
       if (!var1.field_33055) {
          var1.method_29587(var3, (byte)54);
       }
@@ -47,7 +47,7 @@ public class class_5864 extends class_3333 {
          if (var2.method_37098().field_7333 >= -0.08) {
             return false;
          } else {
-            double var5 = Math.abs((double)var1.method_12173() + 0.5 - var2.getPosX());
+            double var5 = Math.abs((double)var1.getX() + 0.5 - var2.getPosX());
             double var7 = Math.abs((double)var1.method_12185() + 0.5 - var2.getPosZ());
             double var9 = 0.4375 + (double)(var2.method_37086() / 2.0F);
             return var5 + 1.0E-7 > var9 || var7 + 1.0E-7 > var9;
@@ -78,7 +78,7 @@ public class class_5864 extends class_3333 {
    private void method_26716(World var1, Entity var2) {
       if (method_26718(var2)) {
          if (var1.field_33033.nextInt(5) == 0) {
-            var2.method_37155(class_463.field_2469, 1.0F, 1.0F);
+            var2.method_37155(SoundEvents.field_2469, 1.0F, 1.0F);
          }
 
          if (!var1.field_33055 && var1.field_33033.nextInt(5) == 0) {

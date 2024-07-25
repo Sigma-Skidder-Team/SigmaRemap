@@ -12,7 +12,7 @@ public class class_5336 extends class_2451 {
    @Override
    public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       List var6 = var1.<class_4478>method_25869(
-         class_4478.class, var2.method_37241().method_18898(2.0), var0 -> var0 != null && var0.isAlive() && var0.method_20795() instanceof class_2770
+         class_4478.class, var2.getBoundingBox().grow(2.0), var0 -> var0 != null && var0.isAlive() && var0.method_20795() instanceof class_2770
       );
       ItemStack var7 = var2.method_26617(var3);
       if (var6.isEmpty()) {
@@ -25,7 +25,7 @@ public class class_5336 extends class_2451 {
                }
 
                if (var1.method_28258(var9).method_22007(class_6503.field_33094)) {
-                  var1.method_29528(var2, var2.getPosX(), var2.method_37309(), var2.getPosZ(), class_463.field_2054, class_562.field_3328, 1.0F, 1.0F);
+                  var1.method_29528(var2, var2.getPosX(), var2.method_37309(), var2.getPosZ(), SoundEvents.field_2054, class_562.field_3328, 1.0F, 1.0F);
                   return class_954.<ItemStack>method_4208(
                      this.method_24320(var7, var2, class_9541.method_43999(new ItemStack(class_4897.field_25157), class_3697.field_18108)),
                      var1.method_22567()
@@ -41,7 +41,7 @@ public class class_5336 extends class_2451 {
          class_4478 var8 = (class_4478)var6.get(0);
          var8.method_20781(var8.method_20783() - 0.5F);
          var1.method_29528(
-            (PlayerEntity)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), class_463.field_2366, class_562.field_3328, 1.0F, 1.0F
+            (PlayerEntity)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), SoundEvents.field_2366, class_562.field_3328, 1.0F, 1.0F
          );
          return class_954.<ItemStack>method_4208(this.method_24320(var7, var2, new ItemStack(class_4897.field_25220)), var1.method_22567());
       }

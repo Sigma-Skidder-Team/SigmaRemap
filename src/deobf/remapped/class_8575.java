@@ -71,10 +71,10 @@ public class class_8575 extends class_5272<RavagerEntity> {
       this.field_43954.field_8190 = var5 * (float) (Math.PI / 180.0);
       this.field_43952.field_8191 = (float) (Math.PI / 2);
       float var9 = 0.4F * var3;
-      this.field_43950.field_8191 = class_9299.method_42840(var2 * 0.6662F) * var9;
-      this.field_43956.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * var9;
-      this.field_43953.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * var9;
-      this.field_43951.field_8191 = class_9299.method_42840(var2 * 0.6662F) * var9;
+      this.field_43950.field_8191 = MathHelper.cos(var2 * 0.6662F) * var9;
+      this.field_43956.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * var9;
+      this.field_43953.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * var9;
+      this.field_43951.field_8191 = MathHelper.cos(var2 * 0.6662F) * var9;
    }
 
    public void method_39447(RavagerEntity var1, float var2, float var3, float var4) {
@@ -86,7 +86,7 @@ public class class_8575 extends class_5272<RavagerEntity> {
       byte var11 = 10;
       if (var10 <= 0) {
          float var12 = -1.0F;
-         float var13 = -1.0F * class_9299.method_42818(this.field_43948.field_8191);
+         float var13 = -1.0F * MathHelper.sin(this.field_43948.field_8191);
          this.field_43948.field_8183 = 0.0F;
          this.field_43948.field_8181 = -7.0F - var13;
          this.field_43948.field_8187 = 5.5F;
@@ -95,7 +95,7 @@ public class class_8575 extends class_5272<RavagerEntity> {
          this.field_43955.field_8191 = (float) Math.PI * (!var14 ? 0.01F : 0.05F);
          if (!var14) {
             if (var8 > 0) {
-               float var15 = class_9299.method_42818(((float)(20 - var8) - var4) / 20.0F * (float) Math.PI * 0.25F);
+               float var15 = MathHelper.sin(((float)(20 - var8) - var4) / 20.0F * (float) Math.PI * 0.25F);
                this.field_43955.field_8191 = (float) (Math.PI / 2) * var15;
             }
          } else {
@@ -103,18 +103,18 @@ public class class_8575 extends class_5272<RavagerEntity> {
             this.field_43948.field_8183 = (float)Math.sin(var17 * 10.0) * 3.0F;
          }
       } else {
-         float var19 = class_9299.method_42852((float)var10 - var4, 10.0F);
+         float var19 = MathHelper.method_42852((float)var10 - var4, 10.0F);
          float var20 = (1.0F + var19) * 0.5F;
          float var21 = var20 * var20 * var20 * 12.0F;
-         float var22 = var21 * class_9299.method_42818(this.field_43948.field_8191);
+         float var22 = var21 * MathHelper.sin(this.field_43948.field_8191);
          this.field_43948.field_8187 = -6.5F + var21;
          this.field_43948.field_8181 = -7.0F - var22;
-         float var16 = class_9299.method_42818(((float)var10 - var4) / 10.0F * (float) Math.PI * 0.25F);
+         float var16 = MathHelper.sin(((float)var10 - var4) / 10.0F * (float) Math.PI * 0.25F);
          this.field_43955.field_8191 = (float) (Math.PI / 2) * var16;
          if (var10 <= 5) {
-            this.field_43955.field_8191 = (float) (Math.PI / 20) * class_9299.method_42818((float) Math.PI * ((float)var10 - var4) / 10.0F);
+            this.field_43955.field_8191 = (float) (Math.PI / 20) * MathHelper.sin((float) Math.PI * ((float)var10 - var4) / 10.0F);
          } else {
-            this.field_43955.field_8191 = class_9299.method_42818(((float)(-4 + var10) - var4) / 4.0F) * (float) Math.PI * 0.4F;
+            this.field_43955.field_8191 = MathHelper.sin(((float)(-4 + var10) - var4) / 4.0F) * (float) Math.PI * 0.4F;
          }
       }
    }

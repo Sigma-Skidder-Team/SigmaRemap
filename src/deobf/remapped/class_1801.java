@@ -35,7 +35,7 @@ public class class_1801<T extends MonsterEntity & class_2354 & class_3832> exten
    }
 
    private boolean method_8010() {
-      return this.field_9179.method_17809() != null && this.field_9179.method_17809().isAlive();
+      return this.field_9179.getAttackTarget() != null && this.field_9179.getAttackTarget().isAlive();
    }
 
    @Override
@@ -53,7 +53,7 @@ public class class_1801<T extends MonsterEntity & class_2354 & class_3832> exten
 
    @Override
    public void method_16794() {
-      LivingEntity var3 = this.field_9179.method_17809();
+      LivingEntity var3 = this.field_9179.getAttackTarget();
       if (var3 != null) {
          boolean var4 = this.field_9179.method_26928().method_36736(var3);
          boolean var5 = this.field_9178 > 0;

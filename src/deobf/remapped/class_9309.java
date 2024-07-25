@@ -4,7 +4,7 @@ public class class_9309 extends class_6043 {
    private static String[] field_47537;
 
    public class_9309(class_8829 var1) {
-      super(var1, class_463.field_2786, class_562.field_3328);
+      super(var1, SoundEvents.field_2786, class_562.field_3328);
    }
 
    @Override

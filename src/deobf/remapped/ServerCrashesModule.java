@@ -97,7 +97,7 @@ public class ServerCrashesModule extends PremiumModule {
                      .sendPacket(
                         new class_9515(
                            client.thePlayer.getPosX(),
-                           client.thePlayer.method_37241().field_19937,
+                           client.thePlayer.getBoundingBox().field_19937,
                            client.thePlayer.getPosZ() + 9999.0,
                            client.thePlayer.onGround
                         )

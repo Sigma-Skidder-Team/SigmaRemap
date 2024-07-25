@@ -92,13 +92,13 @@ public class class_151 extends class_5272<class_107> {
          case field_39377:
             break;
          case field_39378:
-            float var10 = class_9299.method_42840((float)var2);
-            float var11 = class_9299.method_42818((float)var2);
+            float var10 = MathHelper.cos((float)var2);
+            float var11 = MathHelper.sin((float)var2);
             this.field_456.field_8183 = var10;
             this.field_456.field_8181 = 15.69F + var11;
             this.field_456.field_8191 = 0.0F;
             this.field_456.field_8190 = 0.0F;
-            this.field_456.field_8185 = class_9299.method_42818((float)var2) * 0.4F;
+            this.field_456.field_8185 = MathHelper.sin((float)var2) * 0.4F;
             this.field_447.field_8183 = var10;
             this.field_447.field_8181 = 16.5F + var11;
             this.field_446.field_8185 = -0.0873F - var5;
@@ -111,14 +111,14 @@ public class class_151 extends class_5272<class_107> {
             this.field_451.field_8181 = 21.07F + var11;
             break;
          case field_39381:
-            this.field_445.field_8191 = this.field_445.field_8191 + class_9299.method_42840(var3 * 0.6662F) * 1.4F * var4;
-            this.field_454.field_8191 = this.field_454.field_8191 + class_9299.method_42840(var3 * 0.6662F + (float) Math.PI) * 1.4F * var4;
+            this.field_445.field_8191 = this.field_445.field_8191 + MathHelper.cos(var3 * 0.6662F) * 1.4F * var4;
+            this.field_454.field_8191 = this.field_454.field_8191 + MathHelper.cos(var3 * 0.6662F + (float) Math.PI) * 1.4F * var4;
          case field_39375:
          case field_39376:
          default:
             float var12 = var5 * 0.3F;
             this.field_456.field_8181 = 15.69F + var12;
-            this.field_451.field_8191 = 1.015F + class_9299.method_42840(var3 * 0.6662F) * 0.3F * var4;
+            this.field_451.field_8191 = 1.015F + MathHelper.cos(var3 * 0.6662F) * 0.3F * var4;
             this.field_451.field_8181 = 21.07F + var12;
             this.field_447.field_8181 = 16.5F + var12;
             this.field_446.field_8185 = -0.0873F - var5;

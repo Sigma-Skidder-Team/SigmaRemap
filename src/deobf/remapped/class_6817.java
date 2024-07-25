@@ -32,8 +32,8 @@ public class class_6817 extends class_3239 {
          int var14 = 0;
 
          for (int var15 = 0; var15 < 5; var15++) {
-            var13 = (int)(1.5F + class_9299.method_42840(var12) * (float)var15);
-            var14 = (int)(1.5F + class_9299.method_42818(var12) * (float)var15);
+            var13 = (int)(1.5F + MathHelper.cos(var12) * (float)var15);
+            var14 = (int)(1.5F + MathHelper.sin(var12) * (float)var15);
             BlockPos var16 = var4.method_6104(var13, var11 - 3 + var15 / 2, var14);
             method_4974(var1, var2, var16, var5, var6, var7);
          }

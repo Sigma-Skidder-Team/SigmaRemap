@@ -64,7 +64,7 @@ public class class_6282 {
       if (this.field_32114.test(var2)) {
          Consumer var5 = class_2913.method_13320(this.field_32110, var1, var2);
          Random var6 = var2.method_12693();
-         int var7 = this.field_32111.method_14868(var6) + class_9299.method_42848(this.field_32108.method_36244(var6) * var2.method_12691());
+         int var7 = this.field_32111.method_14868(var6) + MathHelper.floor(this.field_32108.method_36244(var6) * var2.method_12691());
 
          for (int var8 = 0; var8 < var7; var8++) {
             this.method_28632(var5, var2);

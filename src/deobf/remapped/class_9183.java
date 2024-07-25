@@ -138,7 +138,7 @@ public class class_9183 extends class_7651 {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.enableAlphaTest();
          AbstractGui.method_9778(var2, var3 + 10, var4 + 6, 0.0F, 0.0F, 40, 20, 40, 20);
-         float var21 = 0.5F + (1.0F + class_9299.method_42818((float)class_7039.method_32235(this.field_46988) * 0.25F)) * 0.25F;
+         float var21 = 0.5F + (1.0F + MathHelper.sin((float)class_7039.method_32235(this.field_46988) * 0.25F)) * 0.25F;
          int var22 = 0xFF000000 | (int)(127.0F * var21) << 16 | (int)(255.0F * var21) << 8 | (int)(127.0F * var21);
          AbstractGui.method_9788(var2, class_7039.method_32228(this.field_46988), class_7039.method_32341(), var3 + 10 + 40 + 75, var4 + 12, var22);
       }

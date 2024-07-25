@@ -44,7 +44,7 @@ public interface class_6250 {
    }
 
    default void method_28530(class_6331 var1, boolean var2) {
-      class_5834 var5 = this.method_17809();
+      LivingEntity var5 = this.method_17809();
       UUID var6 = this.method_28535();
       if ((var5 == null || var5.method_26450()) && var6 != null && var1.method_28925(var6) instanceof MobEntity) {
          this.method_28538();
@@ -63,7 +63,7 @@ public interface class_6250 {
       }
    }
 
-   default boolean method_28534(class_5834 var1) {
+   default boolean method_28534(LivingEntity var1) {
       if (!class_3572.field_17480.test(var1)) {
          return false;
       } else {
@@ -72,7 +72,7 @@ public interface class_6250 {
    }
 
    default boolean method_28527(World var1) {
-      return var1.method_29537().method_1285(class_291.field_1039) && this.method_28537() && this.method_28535() == null;
+      return var1.getGameRules().getBoolean(GameRules.field_1039) && this.method_28537() && this.method_28535() == null;
    }
 
    default boolean method_28537() {
@@ -80,7 +80,7 @@ public interface class_6250 {
    }
 
    default void method_28526(PlayerEntity var1) {
-      if (var1.world.method_29537().method_1285(class_291.field_1042) && var1.method_37328().equals(this.method_28535())) {
+      if (var1.world.getGameRules().getBoolean(GameRules.field_1042) && var1.method_37328().equals(this.method_28535())) {
          this.method_28538();
       }
    }
@@ -91,18 +91,18 @@ public interface class_6250 {
    }
 
    default void method_28538() {
-      this.method_26511((class_5834)null);
+      this.method_26511((LivingEntity)null);
       this.method_28531((UUID)null);
-      this.method_26860((class_5834)null);
+      this.method_26860((LivingEntity)null);
       this.method_28532(0);
    }
 
-   void method_26511(class_5834 var1);
+   void method_26511(LivingEntity var1);
 
    void method_26580(PlayerEntity var1);
 
-   void method_26860(class_5834 var1);
+   void method_26860(LivingEntity var1);
 
    @Nullable
-   class_5834 method_17809();
+   LivingEntity method_17809();
 }

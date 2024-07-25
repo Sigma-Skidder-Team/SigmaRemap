@@ -24,7 +24,7 @@ public class class_6754 extends class_4285<class_1941> {
 
          for (int var10 = var8.method_9545(); var10 <= var8.method_9538(); var10++) {
             for (int var11 = var8.method_9535(); var11 <= var8.method_9536(); var11++) {
-               if (method_30959(field_34859.method_12173(), field_34859.method_12185(), var11, var10) <= 16) {
+               if (method_30959(field_34859.getX(), field_34859.method_12185(), var11, var10) <= 16) {
                   var9.method_13362(var11, field_34859.method_12165(), var10);
                   if (!var9.equals(field_34859)) {
                      var1.method_7513(var9, class_4783.field_23644.method_29260(), 2);

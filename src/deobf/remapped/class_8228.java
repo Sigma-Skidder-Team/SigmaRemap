@@ -23,9 +23,9 @@ public class class_8228 extends class_2451 implements class_9866 {
 
    public static boolean method_37666(class_8743 var0, ItemStack var1) {
       BlockPos var4 = var0.method_40142().method_6098(var0.method_40141().<Direction>method_10313(class_6451.field_32900));
-      List var5 = var0.method_40140().<Entity>method_25869(class_5834.class, new Box(var4), class_3572.field_17483.and(new class_8389(var1)));
+      List var5 = var0.method_40140().<Entity>method_25869(LivingEntity.class, new Box(var4), class_3572.field_17483.and(new class_8389(var1)));
       if (!var5.isEmpty()) {
-         class_5834 var6 = (class_5834)var5.get(0);
+         LivingEntity var6 = (LivingEntity)var5.get(0);
          class_6943 var7 = MobEntity.method_26896(var1);
          ItemStack var8 = var1.method_27953(1);
          var6.method_37349(var7, var8);

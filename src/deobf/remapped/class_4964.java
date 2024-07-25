@@ -163,10 +163,10 @@ public class class_4964 {
    }
 
    private Predicate<Entity> method_22738(class_9721 var1, ToDoubleFunction<Entity> var2) {
-      double var5 = (double)class_9299.method_42810(var1.method_44916() != null ? var1.method_44916() : 0.0F);
-      double var7 = (double)class_9299.method_42810(var1.method_44921() != null ? var1.method_44921() : 359.0F);
+      double var5 = (double) MathHelper.wrapDegrees(var1.method_44916() != null ? var1.method_44916() : 0.0F);
+      double var7 = (double) MathHelper.wrapDegrees(var1.method_44921() != null ? var1.method_44921() : 359.0F);
       return var5x -> {
-         double var8 = class_9299.method_42809(var2.applyAsDouble(var5x));
+         double var8 = MathHelper.wrapDegrees(var2.applyAsDouble(var5x));
          return !(var5 > var7) ? var8 >= var5 && var8 <= var7 : var8 >= var5 || var8 <= var7;
       };
    }

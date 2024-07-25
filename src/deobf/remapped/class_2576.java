@@ -63,23 +63,23 @@ public class class_2576 extends class_8131 {
       int var11 = 0;
       BlockPos var12 = this.field_41647.method_29975();
       class_3801 var13 = !this.field_12753 ? class_3801.field_18591 : class_3801.field_18598;
-      int var14 = var12.method_12173() * var12.method_12185();
+      int var14 = var12.getX() * var12.method_12185();
       if (var14 != 0) {
-         BlockPos var15 = this.field_41648.method_6104(var12.method_12173() - 1, 0, var12.method_12185() - 1);
+         BlockPos var15 = this.field_41648.method_6104(var12.getX() - 1, 0, var12.method_12185() - 1);
 
          for (BlockPos var17 : BlockPos.method_6076(this.field_41648, var15)) {
-            int var18 = var1.method_22562(var13, var17.method_12173(), var17.method_12185());
+            int var18 = var1.method_22562(var13, var17.getX(), var17.method_12185());
             var11 += var18;
             var10 = Math.min(var10, var18);
          }
 
          var11 /= var14;
       } else {
-         var11 = var1.method_22562(var13, this.field_41648.method_12173(), this.field_41648.method_12185());
+         var11 = var1.method_22562(var13, this.field_41648.getX(), this.field_41648.method_12185());
       }
 
       int var20 = !this.field_12753 ? var11 : var10 - var12.method_12165() / 2 - var4.nextInt(3);
-      this.field_41648 = new BlockPos(this.field_41648.method_12173(), var20, this.field_41648.method_12185());
+      this.field_41648 = new BlockPos(this.field_41648.getX(), var20, this.field_41648.method_12185());
       return super.method_32501(var1, var2, var3, var4, var5, var6, var7);
    }
 }

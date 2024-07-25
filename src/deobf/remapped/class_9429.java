@@ -56,9 +56,9 @@ public class class_9429 extends class_2255<class_8837> {
          this.field_48166.method_7060(var3, var17, var5, var6);
          this.field_48168.method_7060(var3, var17, var5, var6);
          BlockPos var19 = var1.method_17399();
-         float var16 = ((float)Math.floorMod((long)(var19.method_12173() * 7 + var19.method_12165() * 9 + var19.method_12185() * 13) + var12, 100L) + var2)
+         float var16 = ((float)Math.floorMod((long)(var19.getX() * 7 + var19.method_12165() * 9 + var19.method_12185() * 13) + var12, 100L) + var2)
             / 100.0F;
-         this.field_48167.field_8191 = (-0.0125F + 0.01F * class_9299.method_42840((float) (Math.PI * 2) * var16)) * (float) Math.PI;
+         this.field_48167.field_8191 = (-0.0125F + 0.01F * MathHelper.cos((float) (Math.PI * 2) * var16)) * (float) Math.PI;
          this.field_48167.field_8181 = -32.0F;
          method_43643(var3, var4, var5, var6, this.field_48167, class_6560.field_33431, true, var9);
          var3.method_36064();

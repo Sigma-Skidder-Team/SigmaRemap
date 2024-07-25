@@ -20,7 +20,7 @@ public class class_7321 {
    }
 
    public float method_33379() {
-      return class_9299.method_42842(this.field_37430 * this.field_37430 + this.field_37432 * this.field_37432);
+      return MathHelper.sqrt(this.field_37430 * this.field_37430 + this.field_37432 * this.field_37432);
    }
 
    public void method_33378(class_7321 var1) {
@@ -81,7 +81,7 @@ public class class_7321 {
    }
 
    public void method_33383(Random var1, double var2, double var4, double var6, double var8) {
-      this.field_37430 = class_9299.method_42832(var1, var2, var6);
-      this.field_37432 = class_9299.method_42832(var1, var4, var8);
+      this.field_37430 = MathHelper.nextDouble(var1, var2, var6);
+      this.field_37432 = MathHelper.nextDouble(var1, var4, var8);
    }
 }

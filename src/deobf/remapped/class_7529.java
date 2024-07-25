@@ -24,7 +24,7 @@ public final class class_7529 {
    }
 
    public class_7529() {
-      this(Util.<Map<class_4269, class_7670>>method_44659(Maps.newEnumMap(class_4269.class), var0 -> {
+      this(Util.<Map<class_4269, class_7670>>make(Maps.newEnumMap(class_4269.class), var0 -> {
          for (class_4269 var6 : class_4269.values()) {
             var0.put(var6, new class_7670(false, false));
          }

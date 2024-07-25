@@ -58,7 +58,7 @@ public class class_7565 extends PremiumModule {
          }
 
          this.field_38545 -= 100;
-         float var6 = ((class_5834)this.field_38555).method_26551();
+         float var6 = ((LivingEntity)this.field_38555).method_26551();
          if (var6 != this.field_38548) {
             this.field_38549 = this.field_38548;
             this.field_38548 = var6;
@@ -171,8 +171,8 @@ public class class_7565 extends PremiumModule {
    }
 
    private Color method_34398(Entity var1) {
-      if (var1 instanceof class_5834) {
-         class_5834 var4 = (class_5834)var1;
+      if (var1 instanceof LivingEntity) {
+         LivingEntity var4 = (LivingEntity)var1;
          float var5 = var4.method_26551() / var4.method_26465() * 20.0F;
          if (var5 > 20.0F) {
             var5 = 20.0F;

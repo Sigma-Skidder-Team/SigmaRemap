@@ -32,7 +32,7 @@ public class class_6323 implements class_2995 {
    }
 
    private static void method_28818(String var0, BlockPos var1, int var2) {
-      double var5 = (double)var1.method_12173() + 0.5;
+      double var5 = (double)var1.getX() + 0.5;
       double var7 = (double)var1.method_12165() + 1.3;
       double var9 = (double)var1.method_12185() + 0.5;
       class_3372.method_15555(var0, var5, var7, var9, var2, 0.04F, true, 0.0F, true);

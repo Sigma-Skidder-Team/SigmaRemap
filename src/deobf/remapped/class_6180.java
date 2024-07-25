@@ -7,7 +7,7 @@ public final class class_6180 implements class_3825 {
    private long field_31592;
 
    @Override
-   public float method_17802(ItemStack var1, ClientWorld var2, class_5834 var3) {
+   public float method_17802(ItemStack var1, ClientWorld var2, LivingEntity var3) {
       Object var6 = var3 == null ? var1.method_27993() : var3;
       if (var6 != null) {
          if (var2 == null && ((Entity)var6).world instanceof ClientWorld) {
@@ -36,10 +36,10 @@ public final class class_6180 implements class_3825 {
       if (var1.method_29546() != this.field_31592) {
          this.field_31592 = var1.method_29546();
          double var6 = var2 - this.field_31594;
-         var6 = class_9299.method_42799(var6 + 0.5, 1.0) - 0.5;
+         var6 = MathHelper.positiveModulo(var6 + 0.5, 1.0) - 0.5;
          this.field_31595 += var6 * 0.1;
          this.field_31595 *= 0.9;
-         this.field_31594 = class_9299.method_42799(this.field_31594 + this.field_31595, 1.0);
+         this.field_31594 = MathHelper.positiveModulo(this.field_31594 + this.field_31595, 1.0);
       }
 
       return this.field_31594;

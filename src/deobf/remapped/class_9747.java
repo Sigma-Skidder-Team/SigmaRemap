@@ -33,11 +33,11 @@ public class class_9747 {
       return this.field_49516;
    }
 
-   public double method_44996() {
+   public double getBaseValue() {
       return this.field_49514;
    }
 
-   public void method_45006(double var1) {
+   public void setBaseValue(double var1) {
       if (var1 != this.field_49514) {
          this.field_49514 = var1;
          this.method_44999();
@@ -125,7 +125,7 @@ public class class_9747 {
    }
 
    private double method_45013() {
-      double var3 = this.method_44996();
+      double var3 = this.getBaseValue();
 
       for (class_9343 var9 : this.method_45009(class_9342.field_47679)) {
          var3 += var9.method_43123();

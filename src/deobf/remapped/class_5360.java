@@ -174,7 +174,7 @@ public class class_5360 extends class_3232 {
 
    @Override
    public boolean method_14815(BlockPos var1) {
-      return this.method_14816(var1.method_12173() >> 4, var1.method_12185() >> 4);
+      return this.method_14816(var1.getX() >> 4, var1.method_12185() >> 4);
    }
 
    @Override
@@ -184,6 +184,6 @@ public class class_5360 extends class_3232 {
 
    @Override
    public boolean method_14824(Entity var1) {
-      return this.method_14816(class_9299.method_42847(var1.getPosX()) >> 4, class_9299.method_42847(var1.getPosZ()) >> 4);
+      return this.method_14816(MathHelper.floor(var1.getPosX()) >> 4, MathHelper.floor(var1.getPosZ()) >> 4);
    }
 }

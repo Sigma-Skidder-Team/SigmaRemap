@@ -25,7 +25,7 @@ public class class_3882 extends class_3599 {
    @Override
    public boolean method_16795() {
       this.method_17952();
-      return this.method_17950() && this.method_17949() && this.field_18898.method_17809() == null;
+      return this.method_17950() && this.method_17949() && this.field_18898.getAttackTarget() == null;
    }
 
    private boolean method_17950() {
@@ -49,7 +49,7 @@ public class class_3882 extends class_3599 {
    public boolean method_16799() {
       return this.field_18898.method_26927().method_5591()
          ? false
-         : this.field_18898.method_17809() == null
+         : this.field_18898.getAttackTarget() == null
             && !this.field_18897.method_12170(this.field_18898.method_37245(), (double)(this.field_18898.method_37086() + (float)this.field_18896))
             && !this.field_18895;
    }
@@ -68,7 +68,7 @@ public class class_3882 extends class_3599 {
       this.field_18898
          .method_26927()
          .method_5595(
-            (double)this.field_18897.method_12173(), (double)this.field_18897.method_12165(), (double)this.field_18897.method_12185(), this.field_18893
+            (double)this.field_18897.getX(), (double)this.field_18897.method_12165(), (double)this.field_18897.method_12185(), this.field_18893
          );
       this.field_18895 = false;
    }

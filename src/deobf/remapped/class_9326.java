@@ -397,9 +397,9 @@ public class class_9326 implements class_2231 {
                double var17 = Math.min(1.0, var9x - var3);
                double var19 = Math.min(1.0, var11 - var5x);
                double var21 = Math.min(1.0, var13 - var7x);
-               int var23 = Math.max(2, class_9299.method_42815(var17 / 0.25));
-               int var24 = Math.max(2, class_9299.method_42815(var19 / 0.25));
-               int var25 = Math.max(2, class_9299.method_42815(var21 / 0.25));
+               int var23 = Math.max(2, MathHelper.ceil(var17 / 0.25));
+               int var24 = Math.max(2, MathHelper.ceil(var19 / 0.25));
+               int var25 = Math.max(2, MathHelper.ceil(var21 / 0.25));
 
                for (int var26 = 0; var26 < var23; var26++) {
                   for (int var27 = 0; var27 < var24; var27++) {
@@ -413,7 +413,7 @@ public class class_9326 implements class_2231 {
                         this.method_43044(
                            new class_4919(
                                  this.field_47617,
-                                 (double)var1.method_12173() + var35,
+                                 (double)var1.getX() + var35,
                                  (double)var1.method_12165() + var37,
                                  (double)var1.method_12185() + var39,
                                  var29 - 0.5,
@@ -434,7 +434,7 @@ public class class_9326 implements class_2231 {
    public void method_43058(BlockPos var1, Direction var2) {
       class_2522 var5 = this.field_47617.method_28262(var1);
       if (var5.method_8352() != class_7537.field_38470) {
-         int var6 = var1.method_12173();
+         int var6 = var1.getX();
          int var7 = var1.method_12165();
          int var8 = var1.method_12185();
          float var9 = 0.1F;

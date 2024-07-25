@@ -10,13 +10,13 @@ public class class_556 extends class_1859 {
    private final Date field_3300;
    private boolean field_3305 = false;
    private Date field_3302;
-   public class_2700 field_3301;
+   public Vector3i field_3301;
    public class_3004 field_3304;
    public class_3004 field_3307;
    public class_9350 field_3306;
    private final List<class_6915> field_3303 = new ArrayList<class_6915>();
 
-   public class_556(class_7038 var1, String var2, int var3, int var4, class_2700 var5) {
+   public class_556(class_7038 var1, String var2, int var3, int var4, Vector3i var5) {
       super(var1, var2, var3 - 107, var4 + 10, 214, 170, class_590.field_3421, "", false);
       this.field_3301 = var5;
       if (this.field_36261 + this.field_36257 <= MinecraftClient.getInstance().window.method_43163()) {
@@ -57,21 +57,21 @@ public class class_556 extends class_1859 {
             this.field_36278 - 100,
             20,
             class_3004.field_14738,
-            var5.method_12173() + " " + var5.method_12185(),
-            var5.method_12173() + " " + var5.method_12185()
+            var5.getX() + " " + var5.method_12185(),
+            var5.getX() + " " + var5.method_12185()
          )
       );
       this.field_3304.method_13724(false);
       this.field_3304.method_32144(class_5320.field_27139);
    }
 
-   public class_2700 method_2665() {
+   public Vector3i method_2665() {
       if (this.field_3304.method_32165() != null && this.field_3304.method_32165().contains(" ")) {
          String[] var3 = this.field_3304.method_32165().split(" ");
          if (var3.length == 2 && var3[0].matches("-?\\d+") && var3[1].matches("-?\\d+")) {
             int var4 = Integer.valueOf(var3[0]);
             int var5 = Integer.valueOf(var3[1]);
-            return new class_2700(var4, 0, var5);
+            return new Vector3i(var4, 0, var5);
          }
       }
 
@@ -130,7 +130,7 @@ public class class_556 extends class_1859 {
       this.field_3303.add(var1);
    }
 
-   public final void method_2666(String var1, class_2700 var2, int var3) {
+   public final void method_2666(String var1, Vector3i var2, int var3) {
       for (class_6915 var7 : this.field_3303) {
          var7.method_31670(this, var1, var2, var3);
       }

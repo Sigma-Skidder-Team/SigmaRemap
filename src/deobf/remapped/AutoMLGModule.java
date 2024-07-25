@@ -45,7 +45,7 @@ public class AutoMLGModule extends PremiumModule {
          if (var1.method_6449() && field_17597 >= 0) {
             field_17597++;
             float[] var4 = class_7211.method_33006(
-               (double)this.field_17596.method_12173() + 0.5, (double)this.field_17596.method_12185() + 0.5, (double)this.field_17596.method_12165() + 0.5
+               (double)this.field_17596.getX() + 0.5, (double)this.field_17596.method_12185() + 0.5, (double)this.field_17596.method_12165() + 0.5
             );
             var1.method_6441(var4[0]);
             var1.method_6448(var4[1]);
@@ -74,7 +74,7 @@ public class AutoMLGModule extends PremiumModule {
             if (var5 != null) {
                if (var1.method_6449() && field_17597 == -1) {
                   float[] var6 = class_7211.method_33006(
-                     (double)var5.method_12173() + 0.5, (double)var5.method_12185() + 0.5, (double)var5.method_12165() + 0.5
+                     (double)var5.getX() + 0.5, (double)var5.method_12185() + 0.5, (double)var5.method_12165() + 0.5
                   );
                   var1.method_6441(var6[0]);
                   var1.method_6448(var6[1]);
@@ -149,9 +149,9 @@ public class AutoMLGModule extends PremiumModule {
             && (
                var12 == null
                   || client.thePlayer
-                        .method_37273((double)var12.method_12173() + 0.5 - var3, (double)(var12.method_12165() + 1), (double)var12.method_12185() + 0.5 - var7)
+                        .method_37273((double)var12.getX() + 0.5 - var3, (double)(var12.method_12165() + 1), (double)var12.method_12185() + 0.5 - var7)
                      > client.thePlayer
-                        .method_37273((double)var15.method_12173() + 0.5 - var3, (double)(var15.method_12165() + 1), (double)var15.method_12185() + 0.5 - var7)
+                        .method_37273((double)var15.getX() + 0.5 - var3, (double)(var15.method_12165() + 1), (double)var15.method_12185() + 0.5 - var7)
             )) {
             var12 = var15;
          }
@@ -175,11 +175,11 @@ public class AutoMLGModule extends PremiumModule {
                   var12 == null
                      || client.thePlayer
                            .method_37273(
-                              (double)var12.method_12173() + 0.5 - var3, (double)(var12.method_12165() + 1), (double)var12.method_12185() + 0.5 - var7
+                              (double)var12.getX() + 0.5 - var3, (double)(var12.method_12165() + 1), (double)var12.method_12185() + 0.5 - var7
                            )
                         > client.thePlayer
                            .method_37273(
-                              (double)var22.method_12173() + 0.5 - var3, (double)(var22.method_12165() + 1), (double)var22.method_12185() + 0.5 - var7
+                              (double)var22.getX() + 0.5 - var3, (double)(var22.method_12165() + 1), (double)var22.method_12185() + 0.5 - var7
                            )
                )) {
                var12 = var22;

@@ -39,12 +39,12 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       this.field_14829 = this.field_14831;
       this.field_14830 = this.field_14827;
       this.field_14827 = (float)((double)this.field_14827 + (double)(!this.onGround ? 4 : -1) * 0.3);
-      this.field_14827 = class_9299.method_42828(this.field_14827, 0.0F, 1.0F);
+      this.field_14827 = MathHelper.clamp(this.field_14827, 0.0F, 1.0F);
       if (!this.onGround && this.field_14825 < 1.0F) {
          this.field_14825 = 1.0F;
       }
@@ -57,7 +57,7 @@ public class class_3024 extends class_5467 {
 
       this.field_14831 = this.field_14831 + this.field_14825 * 2.0F;
       if (!this.world.field_33055 && this.isAlive() && !this.method_26449() && !this.method_13809() && --this.field_14824 <= 0) {
-         this.method_37155(class_463.field_2876, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
+         this.method_37155(SoundEvents.field_2876, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
          this.method_37312(class_4897.field_24962);
          this.field_14824 = this.field_41717.nextInt(6000) + 6000;
       }
@@ -69,23 +69,23 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_1957;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_1957;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2424;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2424;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2698;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2698;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2840, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2840, 0.15F, 1.0F);
    }
 
    public class_3024 method_13810(class_6331 var1, class_1899 var2) {
@@ -126,15 +126,15 @@ public class class_3024 extends class_5467 {
    @Override
    public void method_37340(Entity var1) {
       super.method_37340(var1);
-      float var4 = class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0));
-      float var5 = class_9299.method_42840(this.field_29605 * (float) (Math.PI / 180.0));
+      float var4 = MathHelper.sin(this.field_29605 * (float) (Math.PI / 180.0));
+      float var5 = MathHelper.cos(this.field_29605 * (float) (Math.PI / 180.0));
       float var6 = 0.1F;
       float var7 = 0.0F;
       var1.method_37256(
          this.getPosX() + (double)(0.1F * var4), this.method_37080(0.5) + var1.method_37106() + 0.0, this.getPosZ() - (double)(0.1F * var5)
       );
-      if (var1 instanceof class_5834) {
-         ((class_5834)var1).field_29605 = this.field_29605;
+      if (var1 instanceof LivingEntity) {
+         ((LivingEntity)var1).field_29605 = this.field_29605;
       }
    }
 

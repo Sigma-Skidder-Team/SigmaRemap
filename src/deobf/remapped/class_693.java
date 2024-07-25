@@ -12,8 +12,8 @@ public class class_693 extends class_4285<class_1941> {
       float var8 = (float)(var3.nextInt(3) + 4);
 
       for (int var9 = 0; var8 > 0.5F; var9--) {
-         for (int var10 = class_9299.method_42848(-var8); var10 <= class_9299.method_42816(var8); var10++) {
-            for (int var11 = class_9299.method_42848(-var8); var11 <= class_9299.method_42816(var8); var11++) {
+         for (int var10 = MathHelper.floor(-var8); var10 <= MathHelper.ceil(var8); var10++) {
+            for (int var11 = MathHelper.floor(-var8); var11 <= MathHelper.ceil(var8); var11++) {
                if ((float)(var10 * var10 + var11 * var11) <= (var8 + 1.0F) * (var8 + 1.0F)) {
                   this.method_19906(var1, var4.method_6104(var10, var9, var11), class_4783.field_23894.method_29260());
                }

@@ -3,7 +3,7 @@ package remapped;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public abstract class class_5920<E extends class_5834> {
+public abstract class class_5920<E extends LivingEntity> {
    public final Map<class_6044<?>, class_561> field_30040;
    private class_1494 field_30039 = class_1494.field_7949;
    private long field_30037;

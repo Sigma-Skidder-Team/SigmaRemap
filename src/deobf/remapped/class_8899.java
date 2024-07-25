@@ -19,7 +19,7 @@ public class class_8899 extends class_2451 {
       } else {
          BlockPos var7 = var5.method_6081();
          if (var4.method_22548(var7)) {
-            double var8 = (double)var7.method_12173();
+            double var8 = (double)var7.getX();
             double var10 = (double)var7.method_12165();
             double var12 = (double)var7.method_12185();
             List var14 = var4.method_25870((Entity)null, new Box(var8, var10, var12, var8 + 1.0, var10 + 2.0, var12 + 1.0));

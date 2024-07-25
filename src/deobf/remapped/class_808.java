@@ -24,7 +24,7 @@ public class class_808 extends class_1188 {
       if (this.field_36677) {
          if (this.field_4312 && !Screen.method_1190()) {
             this.field_4311 = (float)(var3 - (this.field_36670 + 4)) / (float)(this.field_36671 - 8);
-            this.field_4311 = class_9299.method_42828(this.field_4311, 0.0F, 1.0F);
+            this.field_4311 = MathHelper.clamp(this.field_4311, 0.0F, 1.0F);
             this.field_4310.method_31393(this.field_4311);
             this.field_4311 = this.field_4310.method_31404();
             this.method_27121(class_708.method_3265(this.field_4310, this.field_36671));
@@ -44,7 +44,7 @@ public class class_808 extends class_1188 {
          return false;
       } else {
          this.field_4311 = (float)(var1 - (double)(this.field_36670 + 4)) / (float)(this.field_36671 - 8);
-         this.field_4311 = class_9299.method_42828(this.field_4311, 0.0F, 1.0F);
+         this.field_4311 = MathHelper.clamp(this.field_4311, 0.0F, 1.0F);
          this.field_4310.method_31393(this.field_4311);
          this.method_27121(class_708.method_3265(this.field_4310, this.field_36671));
          this.field_4312 = true;

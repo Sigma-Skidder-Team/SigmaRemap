@@ -6,7 +6,7 @@ public class class_9724 extends NearestAttackableTargetGoal<PlayerEntity> {
    private static String[] field_49435;
 
    public class_9724(class_9668 var1) {
-      super(var1, PlayerEntity.class, 20, true, true, (Predicate<class_5834>)null);
+      super(var1, PlayerEntity.class, 20, true, true, (Predicate<LivingEntity>)null);
       this.field_49434 = var1;
    }
 

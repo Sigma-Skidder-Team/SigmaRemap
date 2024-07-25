@@ -219,10 +219,10 @@ public class class_2451 implements class_8525 {
       float var5 = var1.rotationPitch;
       float var6 = var1.rotationYaw;
       class_1343 var7 = var1.method_37335(1.0F);
-      float var8 = class_9299.method_42840(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var9 = class_9299.method_42818(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var10 = -class_9299.method_42840(-var5 * (float) (Math.PI / 180.0));
-      float var11 = class_9299.method_42818(-var5 * (float) (Math.PI / 180.0));
+      float var8 = MathHelper.cos(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var9 = MathHelper.sin(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var10 = -MathHelper.cos(-var5 * (float) (Math.PI / 180.0));
+      float var11 = MathHelper.sin(-var5 * (float) (Math.PI / 180.0));
       float var12 = var9 * var10;
       float var13 = var8 * var10;
       double var14 = 5.0;
@@ -279,12 +279,12 @@ public class class_2451 implements class_8525 {
       return this.field_12166;
    }
 
-   public class_8461 method_11253() {
-      return class_463.field_2202;
+   public SoundEvent method_11253() {
+      return SoundEvents.field_2202;
    }
 
-   public class_8461 method_11243() {
-      return class_463.field_2831;
+   public SoundEvent method_11243() {
+      return SoundEvents.field_2831;
    }
 
    public boolean method_11208() {

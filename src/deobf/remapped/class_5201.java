@@ -22,7 +22,7 @@ public class class_5201 extends class_7934 {
       this.field_26742.method_42533((var1x, var2x) -> {
          long var5 = var1x.method_29546();
          if (class_3973.method_18343(this.field_26740) != var5) {
-            var1x.method_43359((PlayerEntity)null, var2x, class_463.field_2627, class_562.field_3322, 1.0F, 1.0F);
+            var1x.method_43359((PlayerEntity)null, var2x, SoundEvents.field_2627, class_562.field_3322, 1.0F, 1.0F);
             class_3973.method_18345(this.field_26740, var5);
          }
       });

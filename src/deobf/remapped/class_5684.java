@@ -66,7 +66,7 @@ public interface class_5684 {
 
    void method_25707(boolean var1);
 
-   class_291 method_8653();
+   GameRules method_8653();
 
    CompoundNBT method_25712();
 

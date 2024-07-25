@@ -17,7 +17,7 @@ public final class class_3952 extends class_9446 {
       double var15 = var14.nextGaussian() * 0.05 + (double)var5.method_1041();
       double var17 = var14.nextGaussian() * 0.05 + (double)var5.method_1054();
       double var19 = var14.nextGaussian() * 0.05 + (double)var5.method_1034();
-      var13.method_7509(Util.<Entity>method_44659(new class_1593(var13, var7, var9, var11, var15, var17, var19), var1x -> var1x.method_11601(var2)));
+      var13.method_7509(Util.<Entity>make(new class_1593(var13, var7, var9, var11, var15, var17, var19), var1x -> var1x.method_11601(var2)));
       var2.method_27970(1);
       return var2;
    }

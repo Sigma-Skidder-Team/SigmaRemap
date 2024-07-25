@@ -114,7 +114,7 @@ public class class_6397 {
 
                for (Direction var25 : var11) {
                   var5.method_13371(var4, var25);
-                  if (var4.method_12173() >> 4 == var6.field_10328 && var4.method_12185() >> 4 == var6.field_10327) {
+                  if (var4.getX() >> 4 == var6.field_10328 && var4.method_12185() >> 4 == var6.field_10327) {
                      var21 = method_29204(var21, var25, var7, var4, var5);
                   }
                }

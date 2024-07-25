@@ -33,18 +33,18 @@ public class class_2022 extends class_1944 {
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
-      return this.method_9392() && this.field_41717.nextInt(4) != 0 ? null : class_463.field_2747;
+   public SoundEvent method_26918() {
+      return this.method_9392() && this.field_41717.nextInt(4) != 0 ? null : SoundEvents.field_2747;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2789;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2789;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2733;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2733;
    }
 
    @Override
@@ -84,7 +84,7 @@ public class class_2022 extends class_1944 {
          this.method_37215(this.method_37098().method_6210(1.0, 0.6, 1.0));
       } else {
          this.method_37215(class_1343.field_7335);
-         this.method_37222(this.getPosX(), (double)class_9299.method_42847(this.method_37309()) + 1.0 - (double)this.method_37074(), this.getPosZ());
+         this.method_37222(this.getPosX(), (double) MathHelper.floor(this.method_37309()) + 1.0 - (double)this.method_37074(), this.getPosZ());
       }
    }
 
@@ -106,7 +106,7 @@ public class class_2022 extends class_1944 {
             );
          }
 
-         double var6 = (double)this.field_10246.method_12173() + 0.5 - this.getPosX();
+         double var6 = (double)this.field_10246.getX() + 0.5 - this.getPosX();
          double var8 = (double)this.field_10246.method_12165() + 0.1 - this.method_37309();
          double var10 = (double)this.field_10246.method_12185() + 0.5 - this.getPosZ();
          class_1343 var12 = this.method_37098();
@@ -116,8 +116,8 @@ public class class_2022 extends class_1944 {
             (Math.signum(var10) * 0.5 - var12.field_7334) * 0.1F
          );
          this.method_37215(var13);
-         float var14 = (float)(class_9299.method_42821(var13.field_7334, var13.field_7336) * 180.0F / (float)Math.PI) - 90.0F;
-         float var15 = class_9299.method_42810(var14 - this.rotationYaw);
+         float var14 = (float)(MathHelper.method_42821(var13.field_7334, var13.field_7336) * 180.0F / (float)Math.PI) - 90.0F;
+         float var15 = MathHelper.wrapDegrees(var14 - this.rotationYaw);
          this.field_29673 = 0.5F;
          this.rotationYaw += var15;
          if (this.field_41717.nextInt(100) == 0 && this.world.method_28262(var4).method_8356(this.world, var4)) {

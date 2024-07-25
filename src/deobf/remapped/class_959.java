@@ -61,12 +61,12 @@ public class class_959 {
          int var6 = 0;
 
          for (Entity var8 : var1) {
-            if (!(var8 instanceof class_5834)) {
+            if (!(var8 instanceof LivingEntity)) {
                if (var1.size() == 1) {
                   throw field_4928.create(var8.method_45509().getString());
                }
             } else {
-               class_5834 var9 = (class_5834)var8;
+               LivingEntity var9 = (LivingEntity)var8;
                ItemStack var10 = var9.method_26446();
                if (var10.method_28022()) {
                   if (var1.size() == 1) {

@@ -173,10 +173,10 @@ public class InfiniteAuraModule extends Module {
          Entity var8 = ((class_3357)var7.next()).method_15377();
          if (var8 != client.thePlayer) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var8)) {
-               if (var8 instanceof class_5834) {
-                  if (((class_5834)var8).method_26551() != 0.0F) {
+               if (var8 instanceof LivingEntity) {
+                  if (((LivingEntity)var8).method_26551() != 0.0F) {
                      if (!(client.thePlayer.method_37175(var8) > var1)) {
-                        if (client.thePlayer.method_26608((class_5834)var8)) {
+                        if (client.thePlayer.method_26608((LivingEntity)var8)) {
                            if (!(var8 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var8 instanceof PlayerEntity) {
                                  var7.remove();

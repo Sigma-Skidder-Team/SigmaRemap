@@ -17,6 +17,6 @@ public class class_9313 extends class_129 {
 
    @Override
    public void method_399() {
-      class_3391.method_15673(this.field_47555, class_9299.method_42847(class_9299.method_42841(0.0, 7.0, this.field_319)));
+      class_3391.method_15673(this.field_47555, MathHelper.floor(MathHelper.clampedLerp(0.0, 7.0, this.field_319)));
    }
 }

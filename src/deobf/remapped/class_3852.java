@@ -40,7 +40,7 @@ public class class_3852 extends class_4285<class_1941> {
 
          for (int var15 = -3; var15 < 4; var15++) {
             for (int var16 = -3; var16 < 4; var16++) {
-               int var17 = class_9299.method_42805(var15) * class_9299.method_42805(var16);
+               int var17 = MathHelper.abs(var15) * MathHelper.abs(var16);
                if (var3.nextInt(10) < 10 - var17) {
                   var14.method_13364(var8.method_6104(var15, 0, var16));
                   int var18 = 3;

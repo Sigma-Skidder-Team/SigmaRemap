@@ -14,7 +14,7 @@ public class class_7416<T extends class_4393> extends class_4171<T, class_2611<T
       this.field_37850.method_7033(16, 16);
       this.field_37850.field_8183 = 8.0F;
       this.field_37850.field_8187 = 8.0F;
-      this.field_37850.field_8190 = class_9299.field_47442 / 4.0F;
+      this.field_37850.field_8190 = MathHelper.PI / 4.0F;
       int[][] var5 = new int[][]{null, null, {16, 16, 0, 0}, {16, 16, 0, 0}, null, null};
       this.field_37850.method_7055(var5, -10.0F, 0.0F, 0.0F, 20.0F, 16.0F, 0.0F, 0.0F);
       int[][] var6 = new int[][]{null, null, null, null, {16, 16, 0, 0}, {16, 16, 0, 0}};

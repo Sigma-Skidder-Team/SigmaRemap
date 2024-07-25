@@ -42,7 +42,7 @@ public class class_5900 extends class_4314 {
 
                      var2.method_43361(
                         class_3090.field_15354,
-                        (double)var3.method_12173() + 0.5,
+                        (double)var3.getX() + 0.5,
                         (double)var3.method_12165() + 2.0,
                         (double)var3.method_12185() + 0.5,
                         (double)((float)var7 + var4.nextFloat()) - 0.5,

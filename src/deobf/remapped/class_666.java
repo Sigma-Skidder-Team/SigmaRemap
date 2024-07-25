@@ -16,7 +16,7 @@ public class class_666 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      LivingEntity var3 = this.field_3691.method_17809();
+      LivingEntity var3 = this.field_3691.getAttackTarget();
       return var3 != null && var3.isAlive() && this.field_3691.method_26608(var3);
    }
 
@@ -34,7 +34,7 @@ public class class_666 extends class_3599 {
    @Override
    public void method_16794() {
       this.field_3693--;
-      LivingEntity var3 = this.field_3691.method_17809();
+      LivingEntity var3 = this.field_3691.getAttackTarget();
       if (var3 != null) {
          boolean var4 = this.field_3691.method_26928().method_36736(var3);
          if (!var4) {
@@ -75,7 +75,7 @@ public class class_666 extends class_3599 {
                }
 
                if (this.field_3690 > 1) {
-                  float var13 = class_9299.method_42843(class_9299.method_42842(var5)) * 0.5F;
+                  float var13 = MathHelper.sqrt(MathHelper.sqrt(var5)) * 0.5F;
                   if (!this.field_3691.method_37378()) {
                      this.field_3691.world.method_43365((PlayerEntity)null, 1018, this.field_3691.method_37075(), 0);
                   }

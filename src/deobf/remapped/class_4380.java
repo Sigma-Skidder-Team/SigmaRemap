@@ -51,7 +51,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    @Override
-   public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
+   public void method_11206(ItemStack var1, World var2, LivingEntity var3, int var4) {
       int var7 = this.method_11230(var1) - var4;
       float var8 = method_20406(var7, var1);
       if (var8 >= 1.0F && !method_20408(var1) && method_20410(var3, var1)) {
@@ -62,7 +62,7 @@ public class class_4380 extends class_551 implements class_1538 {
             var3.getPosX(),
             var3.method_37309(),
             var3.getPosZ(),
-            class_463.field_2703,
+            SoundEvents.field_2703,
             var9,
             1.0F,
             1.0F / (field_12172.nextFloat() * 0.5F + 1.0F) + 0.2F
@@ -70,7 +70,7 @@ public class class_4380 extends class_551 implements class_1538 {
       }
    }
 
-   private static boolean method_20410(class_5834 var0, ItemStack var1) {
+   private static boolean method_20410(LivingEntity var0, ItemStack var1) {
       int var4 = class_2931.method_13423(class_3668.field_17875, var1);
       int var5 = var4 != 0 ? 3 : 1;
       boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).playerAbilities.isCreativeMode;
@@ -95,7 +95,7 @@ public class class_4380 extends class_551 implements class_1538 {
       return true;
    }
 
-   private static boolean method_20414(class_5834 var0, ItemStack var1, ItemStack var2, boolean var3, boolean var4) {
+   private static boolean method_20414(LivingEntity var0, ItemStack var1, ItemStack var2, boolean var3, boolean var4) {
       if (var2.method_28022()) {
          return false;
       } else {
@@ -170,7 +170,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    private static void method_20400(
-           World var0, class_5834 var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
+           World var0, LivingEntity var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
    ) {
       if (!var0.field_33055) {
          boolean var12 = var4.method_27960() == class_4897.field_24479;
@@ -199,19 +199,19 @@ public class class_4380 extends class_551 implements class_1538 {
          var3.method_28003(!var12 ? 1 : 3, var1, var1x -> var1x.method_26447(var2));
          var0.method_7509((Entity)var13);
          var0.method_29528(
-            (PlayerEntity)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), class_463.field_2025, class_562.field_3335, 1.0F, var5
+            (PlayerEntity)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), SoundEvents.field_2025, class_562.field_3335, 1.0F, var5
          );
       }
    }
 
-   private static class_6749 method_20415(World var0, class_5834 var1, ItemStack var2, ItemStack var3) {
+   private static class_6749 method_20415(World var0, LivingEntity var1, ItemStack var2, ItemStack var3) {
       class_603 var6 = (class_603)(!(var3.method_27960() instanceof class_603) ? class_4897.field_25024 : var3.method_27960());
       class_6749 var7 = var6.method_2819(var0, var3, var1);
       if (var1 instanceof PlayerEntity) {
          var7.method_30918(true);
       }
 
-      var7.method_30941(class_463.field_2328);
+      var7.method_30941(SoundEvents.field_2328);
       var7.method_30934(true);
       int var8 = class_2931.method_13423(class_3668.field_17843, var2);
       if (var8 > 0) {
@@ -221,7 +221,7 @@ public class class_4380 extends class_551 implements class_1538 {
       return var7;
    }
 
-   public static void method_20402(World var0, class_5834 var1, Hand var2, ItemStack var3, float var4, float var5) {
+   public static void method_20402(World var0, LivingEntity var1, Hand var2, ItemStack var3, float var4, float var5) {
       List var8 = method_20411(var3);
       float[] var9 = method_20398(var1.method_26594());
 
@@ -256,7 +256,7 @@ public class class_4380 extends class_551 implements class_1538 {
       return 1.0F / (field_12172.nextFloat() * 0.5F + 1.8F) + var3;
    }
 
-   private static void method_20407(World var0, class_5834 var1, ItemStack var2) {
+   private static void method_20407(World var0, LivingEntity var1, ItemStack var2) {
       if (var1 instanceof class_9359) {
          class_9359 var5 = (class_9359)var1;
          if (!var0.field_33055) {
@@ -270,11 +270,11 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    @Override
-   public void method_11228(World var1, class_5834 var2, ItemStack var3, int var4) {
+   public void method_11228(World var1, LivingEntity var2, ItemStack var3, int var4) {
       if (!var1.field_33055) {
          int var7 = class_2931.method_13423(class_3668.field_17846, var3);
-         class_8461 var8 = this.method_20405(var7);
-         class_8461 var9 = var7 != 0 ? null : class_463.field_1943;
+         SoundEvent var8 = this.method_20405(var7);
+         SoundEvent var9 = var7 != 0 ? null : SoundEvents.field_1943;
          float var10 = (float)(var3.method_28004() - var4) / (float)method_20403(var3);
          if (var10 < 0.2F) {
             this.field_21489 = false;
@@ -308,16 +308,16 @@ public class class_4380 extends class_551 implements class_1538 {
       return class_6209.field_31735;
    }
 
-   private class_8461 method_20405(int var1) {
+   private SoundEvent method_20405(int var1) {
       switch (var1) {
          case 1:
-            return class_463.field_1951;
+            return SoundEvents.field_1951;
          case 2:
-            return class_463.field_2598;
+            return SoundEvents.field_2598;
          case 3:
-            return class_463.field_2259;
+            return SoundEvents.field_2259;
          default:
-            return class_463.field_2429;
+            return SoundEvents.field_2429;
       }
    }
 

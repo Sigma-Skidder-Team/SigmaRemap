@@ -71,9 +71,9 @@ public class class_9653 extends class_9883 {
          this.field_49164,
          class_1343.method_6205(class_9825.method_45298(this.field_49164))
             .method_6214(
-               (double)(this.field_49163 * class_9299.method_42840(this.field_49159)),
+               (double)(this.field_49163 * MathHelper.cos(this.field_49159)),
                (double)(-4.0F + this.field_49161),
-               (double)(this.field_49163 * class_9299.method_42818(this.field_49159))
+               (double)(this.field_49163 * MathHelper.sin(this.field_49159))
             )
       );
    }

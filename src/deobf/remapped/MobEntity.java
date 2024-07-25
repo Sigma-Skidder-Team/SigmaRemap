@@ -17,7 +17,7 @@ public abstract class MobEntity extends LivingEntity {
    public class_2833 field_29900;
    public class_4072 field_29914;
    private final class_1902 field_29921;
-   public class_1249 field_29904;
+   public PathNavigator field_29904;
    public final class_782 goalSelector;
    public final class_782 targetSelector;
    private LivingEntity field_29905;
@@ -61,7 +61,7 @@ public abstract class MobEntity extends LivingEntity {
       return LivingEntity.method_26409().createMutableAttribute(Attributes.FOLLOW_RANGE, 16.0).method_5983(Attributes.ATTACK_KNOCKBACK);
    }
 
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       return new class_8985(this, var1);
    }
 
@@ -110,7 +110,7 @@ public abstract class MobEntity extends LivingEntity {
       return this.field_29914;
    }
 
-   public class_1249 method_26927() {
+   public PathNavigator method_26927() {
       if (this.isPassenger() && this.getRidingEntity() instanceof MobEntity) {
          MobEntity var3 = (MobEntity)this.getRidingEntity();
          return var3.method_26927();
@@ -124,7 +124,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Nullable
-   public LivingEntity method_17809() {
+   public LivingEntity getAttackTarget() {
       return this.field_29905;
    }
 
@@ -156,7 +156,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public void method_26853() {
-      class_8461 var3 = this.method_26918();
+      SoundEvent var3 = this.method_26918();
       if (var3 != null) {
          this.method_37155(var3, this.method_26439(), this.method_26547());
       }
@@ -269,7 +269,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Nullable
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       return null;
    }
 
@@ -325,7 +325,7 @@ public abstract class MobEntity extends LivingEntity {
          if (!(this.field_29911 instanceof LivingEntity)) {
             if (this.field_29911 instanceof class_4641) {
                BlockPos var22 = ((class_4641)this.field_29911).method_21469();
-               var20.putInt("X", var22.method_12173());
+               var20.putInt("X", var22.getX());
                var20.putInt("Y", var22.method_12165());
                var20.putInt("Z", var22.method_12185());
             }
@@ -442,16 +442,16 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       this.world.method_29599().startSection("looting");
-      boolean var3 = this.world.method_29537().method_1285(class_291.field_1047);
+      boolean var3 = this.world.getGameRules().getBoolean(GameRules.field_1047);
       if (class_7860.field_40243.method_3596()) {
          var3 = class_7860.method_35566(class_7860.field_40243, this.world, this);
       }
 
       if (!this.world.field_33055 && this.method_26930() && this.isAlive() && !this.field_29659 && var3) {
-         for (class_91 var5 : this.world.<class_91>method_25868(class_91.class, this.method_37241().method_18899(1.0, 0.0, 1.0))) {
+         for (class_91 var5 : this.world.<class_91>method_25868(class_91.class, this.getBoundingBox().method_18899(1.0, 0.0, 1.0))) {
             if (!var5.field_41751 && !var5.method_264().method_28022() && !var5.method_258() && this.method_26873(var5.method_264())) {
                this.method_26902(var5);
             }
@@ -683,21 +683,21 @@ public abstract class MobEntity extends LivingEntity {
       double var8 = var1.getPosZ() - this.getPosZ();
       double var10;
       if (!(var1 instanceof LivingEntity)) {
-         var10 = (var1.method_37241().field_19937 + var1.method_37241().field_19939) / 2.0 - this.method_37388();
+         var10 = (var1.getBoundingBox().field_19937 + var1.getBoundingBox().field_19939) / 2.0 - this.method_37388();
       } else {
          LivingEntity var12 = (LivingEntity)var1;
          var10 = var12.method_37388() - this.method_37388();
       }
 
-      double var13 = (double)class_9299.method_42842(var6 * var6 + var8 * var8);
-      float var15 = (float)(class_9299.method_42821(var8, var6) * 180.0F / (float)Math.PI) - 90.0F;
-      float var16 = (float)(-(class_9299.method_42821(var10, var13) * 180.0F / (float)Math.PI));
+      double var13 = (double) MathHelper.sqrt(var6 * var6 + var8 * var8);
+      float var15 = (float)(MathHelper.method_42821(var8, var6) * 180.0F / (float)Math.PI) - 90.0F;
+      float var16 = (float)(-(MathHelper.method_42821(var10, var13) * 180.0F / (float)Math.PI));
       this.rotationPitch = this.method_26906(this.rotationPitch, var16, var3);
       this.rotationYaw = this.method_26906(this.rotationYaw, var15, var2);
    }
 
    private float method_26906(float var1, float var2, float var3) {
-      float var6 = class_9299.method_42810(var2 - var1);
+      float var6 = MathHelper.wrapDegrees(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }
@@ -719,7 +719,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public boolean method_26855(class_4924 var1) {
-      return !var1.method_22550(this.method_37241()) && var1.method_6677(this);
+      return !var1.method_22550(this.getBoundingBox()) && var1.method_6677(this);
    }
 
    public int method_26856() {
@@ -732,7 +732,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public int method_37232() {
-      if (this.method_17809() != null) {
+      if (this.getAttackTarget() != null) {
          int var3 = (int)(this.method_26551() - this.method_26465() * 0.33F);
          var3 -= (3 - this.world.method_43370().method_2097()) * 4;
          if (var3 < 0) {
@@ -968,7 +968,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Nullable
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
-      this.method_26561(Attributes.FOLLOW_RANGE)
+      this.getAttribute(Attributes.FOLLOW_RANGE)
          .method_45005(new class_9343("Random spawn bonus", this.field_41717.nextGaussian() * 0.05, class_9342.field_47678));
       if (!(this.field_41717.nextFloat() < 0.05F)) {
          this.method_26932(false);
@@ -1358,8 +1358,8 @@ public abstract class MobEntity extends LivingEntity {
             ((LivingEntity)var1)
                .method_26567(
                   var5 * 0.5F,
-                  (double)class_9299.method_42818(this.rotationYaw * (float) (Math.PI / 180.0)),
-                  (double)(-class_9299.method_42840(this.rotationYaw * (float) (Math.PI / 180.0)))
+                  (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
+                  (double)(-MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)))
                );
             this.method_37215(this.method_37098().method_6210(0.6, 1.0, 0.6));
          }

@@ -227,14 +227,14 @@ public final class class_3370 {
          class_9249 var12 = var10.method_25382(class_9249.field_47216);
          class_9249 var13 = var10.method_25382(class_9249.field_47219);
          class_2921 var14 = new class_2921();
-         int var15 = class_9299.method_42847(var0.method_18915(var11) - 1.0E-7) - 1;
-         int var16 = class_9299.method_42847(var0.method_18917(var11) + 1.0E-7) + 1;
-         int var17 = class_9299.method_42847(var0.method_18915(var12) - 1.0E-7) - 1;
-         int var18 = class_9299.method_42847(var0.method_18917(var12) + 1.0E-7) + 1;
+         int var15 = MathHelper.floor(var0.method_18915(var11) - 1.0E-7) - 1;
+         int var16 = MathHelper.floor(var0.method_18917(var11) + 1.0E-7) + 1;
+         int var17 = MathHelper.floor(var0.method_18915(var12) - 1.0E-7) - 1;
+         int var18 = MathHelper.floor(var0.method_18917(var12) + 1.0E-7) + 1;
          double var19 = var0.method_18915(var13) - 1.0E-7;
          double var21 = var0.method_18917(var13) + 1.0E-7;
          boolean var23 = var2 > 0.0;
-         int var24 = !var23 ? class_9299.method_42847(var0.method_18915(var13) + 1.0E-7) + 1 : class_9299.method_42847(var0.method_18917(var13) - 1.0E-7) - 1;
+         int var24 = !var23 ? MathHelper.floor(var0.method_18915(var13) + 1.0E-7) + 1 : MathHelper.floor(var0.method_18917(var13) - 1.0E-7) - 1;
          int var25 = method_15528(var2, var19, var21);
          int var26 = !var23 ? -1 : 1;
 
@@ -266,7 +266,7 @@ public final class class_3370 {
                         }
 
                         var2 = var32.method_19482(
-                           var13, var0.method_18918((double)(-var14.method_12173()), (double)(-var14.method_12165()), (double)(-var14.method_12185())), var2
+                           var13, var0.method_18918((double)(-var14.getX()), (double)(-var14.method_12165()), (double)(-var14.method_12185())), var2
                         );
                         if (Math.abs(var2) < 1.0E-7) {
                            return 0.0;
@@ -286,7 +286,7 @@ public final class class_3370 {
    }
 
    private static int method_15528(double var0, double var2, double var4) {
-      return !(var0 > 0.0) ? class_9299.method_42847(var2 + var0) - 1 : class_9299.method_42847(var4 + var0) + 1;
+      return !(var0 > 0.0) ? MathHelper.floor(var2 + var0) - 1 : MathHelper.floor(var4 + var0) + 1;
    }
 
    public static boolean method_15534(class_4190 var0, class_4190 var1, Direction var2) {

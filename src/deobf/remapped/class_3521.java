@@ -35,7 +35,7 @@ public abstract class class_3521 {
             "Invalid entity id '{}' at spawner {}:[{},{},{}]",
             var3,
             this.method_16252().method_29545().method_25499(),
-            var5.method_12173(),
+            var5.getX(),
             var5.method_12165(),
             var5.method_12185()
          );
@@ -50,7 +50,7 @@ public abstract class class_3521 {
    private boolean method_16259() {
       BlockPos var3 = this.method_16261();
       return this.method_16252()
-         .method_25866((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5, (double)this.field_17256);
+         .method_25866((double)var3.getX() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5, (double)this.field_17256);
    }
 
    public void method_16267() {
@@ -80,7 +80,7 @@ public abstract class class_3521 {
                class_3416 var15 = var13.method_25927("Pos", 6);
                int var16 = var15.size();
                double var17 = var16 < 1
-                  ? (double)var4.method_12173() + (var3.field_33033.nextDouble() - var3.field_33033.nextDouble()) * (double)this.field_17263 + 0.5
+                  ? (double)var4.getX() + (var3.field_33033.nextDouble() - var3.field_33033.nextDouble()) * (double)this.field_17263 + 0.5
                   : var15.method_15763(0);
                double var19 = var16 < 2 ? (double)(var4.method_12165() + var3.field_33033.nextInt(3) - 1) : var15.method_15763(1);
                double var21 = var16 < 3
@@ -101,14 +101,14 @@ public abstract class class_3521 {
                      int var25 = var3.method_25868(
                            var24.getClass(),
                            new Box(
-                                 (double)var4.method_12173(),
+                                 (double)var4.getX(),
                                  (double)var4.method_12165(),
                                  (double)var4.method_12185(),
-                                 (double)(var4.method_12173() + 1),
+                                 (double)(var4.getX() + 1),
                                  (double)(var4.method_12165() + 1),
                                  (double)(var4.method_12185() + 1)
                               )
-                              .method_18898((double)this.field_17263)
+                              .grow((double)this.field_17263)
                         )
                         .size();
                      if (var25 >= this.field_17253) {
@@ -148,7 +148,7 @@ public abstract class class_3521 {
                this.method_16265();
             }
          } else {
-            double var7 = (double)var4.method_12173() + var3.field_33033.nextDouble();
+            double var7 = (double)var4.getX() + var3.field_33033.nextDouble();
             double var9 = (double)var4.method_12165() + var3.field_33033.nextDouble();
             double var11 = (double)var4.method_12185() + var3.field_33033.nextDouble();
             var3.method_43361(class_3090.field_15376, var7, var9, var11, 0.0, 0.0, 0.0);

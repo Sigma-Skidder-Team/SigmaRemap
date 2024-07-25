@@ -43,7 +43,7 @@ public class class_9668 extends class_5467 implements class_6250 {
       this.targetSelector.addGoal(1, new class_9867(this));
       this.targetSelector.addGoal(2, new class_9724(this));
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method_28534));
-      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<class_5542>(this, class_5542.class, 10, true, true, (Predicate<class_5834>)null));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<class_5542>(this, class_5542.class, 10, true, true, (Predicate<LivingEntity>)null));
       this.targetSelector.addGoal(5, new class_6474<class_9668>(this, false));
    }
 
@@ -101,28 +101,28 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.method_26449() ? class_463.field_2604 : class_463.field_2717;
+   public SoundEvent method_26918() {
+      return !this.method_26449() ? SoundEvents.field_2604 : SoundEvents.field_2717;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2238;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2238;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2022;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2022;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2867, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2867, 0.15F, 1.0F);
    }
 
    public void method_44708() {
       if (this.field_49246 <= 0) {
-         this.method_37155(class_463.field_2880, 1.0F, this.method_26547());
+         this.method_37155(SoundEvents.field_2880, 1.0F, this.method_26547());
          this.field_49246 = 40;
       }
    }
@@ -143,9 +143,9 @@ public class class_9668 extends class_5467 implements class_6250 {
 
          this.field_49241 = this.field_49243;
          if (!this.method_44709()) {
-            this.field_49243 = class_9299.method_42828(this.field_49243 - 1.0F, 0.0F, 6.0F);
+            this.field_49243 = MathHelper.clamp(this.field_49243 - 1.0F, 0.0F, 6.0F);
          } else {
-            this.field_49243 = class_9299.method_42828(this.field_49243 + 1.0F, 0.0F, 6.0F);
+            this.field_49243 = MathHelper.clamp(this.field_49243 + 1.0F, 0.0F, 6.0F);
          }
       }
 
@@ -188,7 +188,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    public float method_44710(float var1) {
-      return class_9299.method_42795(var1, this.field_49241, this.field_49243) / 6.0F;
+      return MathHelper.method_42795(var1, this.field_49241, this.field_49243) / 6.0F;
    }
 
    @Override

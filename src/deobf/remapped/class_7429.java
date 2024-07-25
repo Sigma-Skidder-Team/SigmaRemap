@@ -65,9 +65,9 @@ public abstract class class_7429 extends class_7637 {
          double var4 = class_248.method_1086(var3)[0];
          double var6 = class_248.method_1086(var3)[1];
          double var8 = class_248.method_1086(var3)[2];
-         float var10 = this.field_29605 * (float) (Math.PI / 180.0) + class_9299.method_42840((float)this.field_41697 * 0.6662F) * 0.25F;
-         float var11 = class_9299.method_42840(var10);
-         float var12 = class_9299.method_42818(var10);
+         float var10 = this.field_29605 * (float) (Math.PI / 180.0) + MathHelper.cos((float)this.field_41697 * 0.6662F) * 0.25F;
+         float var11 = MathHelper.cos(var10);
+         float var12 = MathHelper.sin(var10);
          this.world
             .method_43361(
                class_3090.field_15353,
@@ -95,5 +95,5 @@ public abstract class class_7429 extends class_7637 {
       return this.field_37904;
    }
 
-   public abstract class_8461 method_33826();
+   public abstract SoundEvent method_33826();
 }

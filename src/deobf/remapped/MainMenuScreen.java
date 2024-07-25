@@ -258,17 +258,17 @@ public class MainMenuScreen extends Screen {
       float var7 = !this.field_9514 ? 1.0F : (float)(Util.getMeasuringTimeMs() - this.field_9504) / 1000.0F;
       GlStateManager.method_8786();
       method_9774(var1, 0, 0, this.field_941, this.field_940, -1);
-      this.field_9505.method_401(var4, class_9299.method_42828(var7, 0.0F, 1.0F));
+      this.field_9505.method_401(var4, MathHelper.clamp(var7, 0.0F, 1.0F));
       short var8 = 274;
       int var9 = this.field_941 / 2 - 137;
       byte var10 = 30;
       this.field_943.getTextureManager().bindTexture(field_9511);
       RenderSystem.enableBlend();
       RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43697);
-      RenderSystem.color4f(1.0F, 1.0F, 1.0F, !this.field_9514 ? 1.0F : (float)class_9299.method_42816(class_9299.method_42828(var7, 0.0F, 1.0F)));
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, !this.field_9514 ? 1.0F : (float) MathHelper.ceil(MathHelper.clamp(var7, 0.0F, 1.0F)));
       method_9780(var1, 0, 0, this.field_941, this.field_940, 0.0F, 0.0F, 16, 128, 16, 128);
-      float var11 = !this.field_9514 ? 1.0F : class_9299.method_42828(var7 - 1.0F, 0.0F, 1.0F);
-      int var12 = class_9299.method_42816(var11 * 255.0F) << 24;
+      float var11 = !this.field_9514 ? 1.0F : MathHelper.clamp(var7 - 1.0F, 0.0F, 1.0F);
+      int var12 = MathHelper.ceil(var11 * 255.0F) << 24;
       if ((var12 & -67108864) != 0) {
          this.field_943.getTextureManager().bindTexture(field_9513);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, var11);
@@ -298,7 +298,7 @@ public class MainMenuScreen extends Screen {
             RenderSystem.method_16413((float)(this.field_941 / 2 + 90), 70.0F, 0.0F);
             RenderSystem.method_16410(-20.0F, 0.0F, 0.0F, 1.0F);
             float var13 = 1.8F
-               - class_9299.method_42804(class_9299.method_42818((float)(Util.getMeasuringTimeMs() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
+               - MathHelper.abs(MathHelper.sin((float)(Util.getMeasuringTimeMs() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
             var13 = var13 * 100.0F / (float)(this.field_948.method_45395(this.field_9506) + 32);
             RenderSystem.method_16403(var13, var13, var13);
             method_9787(var1, this.field_948, this.field_9506, 0, -8, 16776960 | var12);

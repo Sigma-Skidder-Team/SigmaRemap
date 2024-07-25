@@ -87,7 +87,7 @@ public class class_546 implements class_6142 {
    @Override
    public class_6325 method_28192(int var1, int var2, int var3) {
       int var6 = var1 & field_3275;
-      int var7 = class_9299.method_42829(var2, 0, field_3273);
+      int var7 = MathHelper.clamp(var2, 0, field_3273);
       int var8 = var3 & field_3275;
       return this.field_3279[var7 << field_3280 + field_3280 | var8 << field_3280 | var6];
    }

@@ -9,7 +9,7 @@ public class class_3995 extends class_4314 {
    }
 
    @Override
-   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, LivingEntity var4, ItemStack var5) {
       super.method_29257(var1, var2, var3, var4, var5);
       CompoundNBT var8 = var5.method_27994();
       if (var8.method_25938("BlockEntityTag")) {
@@ -55,7 +55,7 @@ public class class_3995 extends class_4314 {
                double var13 = (double)(var1.field_33033.nextFloat() * 0.7F) + 0.15F;
                ItemStack var15 = var7.method_27973();
                class_91 var16 = new class_91(
-                  var1, (double)var2.method_12173() + var9, (double)var2.method_12165() + var11, (double)var2.method_12185() + var13, var15
+                  var1, (double)var2.getX() + var9, (double)var2.method_12165() + var11, (double)var2.method_12185() + var13, var15
                );
                var16.method_257();
                var1.method_7509(var16);

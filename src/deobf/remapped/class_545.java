@@ -9,21 +9,21 @@ import java.util.Random;
 public class class_545 extends class_6414 {
    private static String[] field_3271;
    public static final class_7044 field_3268 = class_6023.field_30724;
-   private static final ImmutableList<class_2700> field_3269 = ImmutableList.of(
-      new class_2700(0, 0, -1),
-      new class_2700(-1, 0, 0),
-      new class_2700(0, 0, 1),
-      new class_2700(1, 0, 0),
-      new class_2700(-1, 0, -1),
-      new class_2700(1, 0, -1),
-      new class_2700(-1, 0, 1),
-      new class_2700(1, 0, 1)
+   private static final ImmutableList<Vector3i> field_3269 = ImmutableList.of(
+      new Vector3i(0, 0, -1),
+      new Vector3i(-1, 0, 0),
+      new Vector3i(0, 0, 1),
+      new Vector3i(1, 0, 0),
+      new Vector3i(-1, 0, -1),
+      new Vector3i(1, 0, -1),
+      new Vector3i(-1, 0, 1),
+      new Vector3i(1, 0, 1)
    );
-   private static final ImmutableList<class_2700> field_3270 = new Builder()
+   private static final ImmutableList<Vector3i> field_3270 = new Builder()
       .addAll(field_3269)
-      .addAll(field_3269.stream().<class_2700>map(class_2700::method_12181).iterator())
-      .addAll(field_3269.stream().<class_2700>map(class_2700::method_12168).iterator())
-      .add(new class_2700(0, 1, 0))
+      .addAll(field_3269.stream().<Vector3i>map(Vector3i::method_12181).iterator())
+      .addAll(field_3269.stream().<Vector3i>map(Vector3i::method_12168).iterator())
+      .add(new Vector3i(0, 1, 0))
       .build();
 
    public class_545(class_3073 var1) {
@@ -57,10 +57,10 @@ public class class_545 extends class_6414 {
                   var10.method_43248(var2.method_29545(), var3, 0.0F, false, true);
                   var2.method_29528(
                      (PlayerEntity)null,
-                     (double)var3.method_12173() + 0.5,
+                     (double)var3.getX() + 0.5,
                      (double)var3.method_12165() + 0.5,
                      (double)var3.method_12185() + 0.5,
-                     class_463.field_2541,
+                     SoundEvents.field_2541,
                      class_562.field_3322,
                      1.0F,
                      1.0F
@@ -112,7 +112,7 @@ public class class_545 extends class_6414 {
          (Entity)null,
          DamageSource.method_28378(),
          var8,
-         (double)var3.method_12173() + 0.5,
+         (double)var3.getX() + 0.5,
          (double)var3.method_12165() + 0.5,
          (double)var3.method_12185() + 0.5,
          5.0F,
@@ -129,10 +129,10 @@ public class class_545 extends class_6414 {
       var0.method_7513(var1, var2.method_10308(field_3268, Integer.valueOf(var2.<Integer>method_10313(field_3268) + 1)), 3);
       var0.method_29528(
          (PlayerEntity)null,
-         (double)var1.method_12173() + 0.5,
+         (double)var1.getX() + 0.5,
          (double)var1.method_12165() + 0.5,
          (double)var1.method_12185() + 0.5,
-         class_463.field_2008,
+         SoundEvents.field_2008,
          class_562.field_3322,
          1.0F,
          1.0F
@@ -145,17 +145,17 @@ public class class_545 extends class_6414 {
          if (var4.nextInt(100) == 0) {
             var2.method_29528(
                (PlayerEntity)null,
-               (double)var3.method_12173() + 0.5,
+               (double)var3.getX() + 0.5,
                (double)var3.method_12165() + 0.5,
                (double)var3.method_12185() + 0.5,
-               class_463.field_2893,
+               SoundEvents.field_2893,
                class_562.field_3322,
                1.0F,
                1.0F
             );
          }
 
-         double var7 = (double)var3.method_12173() + 0.5 + (0.5 - var4.nextDouble());
+         double var7 = (double)var3.getX() + 0.5 + (0.5 - var4.nextDouble());
          double var9 = (double)var3.method_12165() + 1.0;
          double var11 = (double)var3.method_12185() + 0.5 + (0.5 - var4.nextDouble());
          double var13 = (double)var4.nextFloat() * 0.04;
@@ -174,7 +174,7 @@ public class class_545 extends class_6414 {
    }
 
    public static int method_2637(class_2522 var0, int var1) {
-      return class_9299.method_42848((float)(var0.<Integer>method_10313(field_3268) - 0) / 4.0F * (float)var1);
+      return MathHelper.floor((float)(var0.<Integer>method_10313(field_3268) - 0) / 4.0F * (float)var1);
    }
 
    @Override
@@ -192,7 +192,7 @@ public class class_545 extends class_6414 {
       UnmodifiableIterator var7 = field_3270.iterator();
 
       while (var7.hasNext()) {
-         class_2700 var8 = (class_2700)var7.next();
+         Vector3i var8 = (Vector3i)var7.next();
          var6.method_13364(var2).method_13366(var8);
          class_1343 var9 = class_160.method_650(var0, var1, var6, var3);
          if (var9 != null) {

@@ -37,7 +37,7 @@ public class class_7272 extends class_5467 {
 
    @Override
    public float method_26538() {
-      if (!this.field_41744 && (!this.field_29900.method_12877() || !(this.field_29900.method_12881() > this.method_37309() + 0.5))) {
+      if (!this.collidedHorizontally && (!this.field_29900.method_12877() || !(this.field_29900.method_12881() > this.method_37309() + 0.5))) {
          class_3998 var3 = this.field_29904.method_5594();
          if (var3 != null && !var3.method_18436()) {
             class_1343 var4 = var3.method_18439(this);
@@ -117,7 +117,7 @@ public class class_7272 extends class_5467 {
          }
 
          if (this.method_33239() == 99 && this.field_37233 == 0) {
-            LivingEntity var3 = this.method_17809();
+            LivingEntity var3 = this.getAttackTarget();
             if (var3 != null && this.method_37275(var3) < 16.0) {
                this.method_33243(var3.getPosX(), var3.getPosZ());
                this.field_29900.method_12879(var3.getPosX(), var3.method_37309(), var3.getPosZ(), this.field_29900.method_12880());
@@ -152,7 +152,7 @@ public class class_7272 extends class_5467 {
    }
 
    private void method_33243(double var1, double var3) {
-      this.rotationYaw = (float)(class_9299.method_42821(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
+      this.rotationYaw = (float)(MathHelper.method_42821(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    private void method_33228() {
@@ -177,8 +177,8 @@ public class class_7272 extends class_5467 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (this.field_37237 == this.field_37236) {
          if (this.field_37236 != 0) {
             this.field_37237 = 0;
@@ -208,23 +208,23 @@ public class class_7272 extends class_5467 {
       this.field_37234 = var1.method_25947("MoreCarrotTicks");
    }
 
-   public class_8461 method_33238() {
-      return class_463.field_2567;
+   public SoundEvent method_33238() {
+      return SoundEvents.field_2567;
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2590;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2590;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2576;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2576;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2163;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2163;
    }
 
    @Override
@@ -232,7 +232,7 @@ public class class_7272 extends class_5467 {
       if (this.method_33239() != 99) {
          return var1.attackEntityFrom(DamageSource.method_28345(this), 3.0F);
       } else {
-         this.method_37155(class_463.field_2065, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
+         this.method_37155(SoundEvents.field_2065, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
          return var1.attackEntityFrom(DamageSource.method_28345(this), 8.0F);
       }
    }
@@ -277,7 +277,7 @@ public class class_7272 extends class_5467 {
 
    public void method_33231(int var1) {
       if (var1 == 99) {
-         this.method_26561(Attributes.field_37473).method_45006(8.0);
+         this.getAttribute(Attributes.field_37473).setBaseValue(8.0);
          this.goalSelector.addGoal(4, new class_4810(this));
          this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
          this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));

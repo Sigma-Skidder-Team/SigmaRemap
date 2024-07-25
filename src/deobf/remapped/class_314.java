@@ -141,12 +141,12 @@ public class class_314 {
       double var8 = var0 - field_1158.thePlayer.getPosX();
       double var10 = var2 - (field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277());
       double var12 = var4 - field_1158.thePlayer.getPosZ();
-      double var14 = (double)class_9299.method_42842(var8 * var8 + var12 * var12);
+      double var14 = (double) MathHelper.sqrt(var8 * var8 + var12 * var12);
       float var16 = (float)(Math.atan2(var12, var8) * 180.0 / Math.PI) - 90.0F;
       float var17 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
       return new float[]{
-         field_1158.thePlayer.rotationYaw + class_9299.method_42810(var16 - field_1158.thePlayer.rotationYaw),
-         field_1158.thePlayer.rotationPitch + class_9299.method_42810(var17 - field_1158.thePlayer.rotationPitch)
+         field_1158.thePlayer.rotationYaw + MathHelper.wrapDegrees(var16 - field_1158.thePlayer.rotationYaw),
+         field_1158.thePlayer.rotationPitch + MathHelper.wrapDegrees(var17 - field_1158.thePlayer.rotationPitch)
       };
    }
 
@@ -385,7 +385,7 @@ public class class_314 {
    }
 
    public static float method_1427(float var0, float var1, float var2) {
-      float var5 = class_9299.method_42810(var1 - var0);
+      float var5 = MathHelper.wrapDegrees(var1 - var0);
       if (var5 > var2) {
          var5 = var2;
       }
@@ -476,9 +476,9 @@ public class class_314 {
          class_1343 var11 = method_1449(var1, var0);
          class_1343 var12 = var7.method_6214(var11.field_7336 * var9, var11.field_7333 * var9, var11.field_7334 * var9);
          float var13 = 1.0F;
-         Box var14 = var8.method_37241().method_18929(var11.method_6209(var9)).method_18899(1.0, 1.0, 1.0);
+         Box var14 = var8.getBoundingBox().method_18929(var11.method_6209(var9)).method_18899(1.0, 1.0, 1.0);
          return method_1433(
-            field_1158.theWorld, var8, var7, var12, var14, var0x -> var0x instanceof class_5834 || var0x instanceof class_1453, (double)(var2 * var2), var3
+            field_1158.theWorld, var8, var7, var12, var14, var0x -> var0x instanceof LivingEntity || var0x instanceof class_1453, (double)(var2 * var2), var3
          );
       } else {
          return null;
@@ -492,7 +492,7 @@ public class class_314 {
       Entity var14 = null;
 
       for (Entity var16 : var0.method_25867(var1, var4, var5)) {
-         Box var17 = var16.method_37241().method_18898(var8);
+         Box var17 = var16.getBoundingBox().grow(var8);
          Optional var18 = var17.method_18923(var2, var3);
          if (!var18.isPresent()) {
             if (method_1386(var1.method_37245(), var17)) {
@@ -524,8 +524,8 @@ public class class_314 {
       class_1343 var14 = var12.method_6214(var13.field_7336 * var8, var13.field_7333 * var8, var13.field_7334 * var8);
 
       for (Entity var16 : field_1158.theWorld
-         .method_25867(field_1158.thePlayer, field_1158.thePlayer.method_37241().method_18929(var13.method_6209(var8)).method_18899(1.0, 1.0, 1.0), var3)) {
-         Box var17 = var16.method_37241();
+         .method_25867(field_1158.thePlayer, field_1158.thePlayer.getBoundingBox().method_18929(var13.method_6209(var8)).method_18899(1.0, 1.0, 1.0), var3)) {
+         Box var17 = var16.getBoundingBox();
          Optional var18 = var17.method_18923(var12, var14);
          if (var18.isPresent()) {
             double var19 = var12.method_6204((class_1343)var18.get());
@@ -581,10 +581,10 @@ public class class_314 {
    public static class_1343 method_1449(float var0, float var1) {
       float var4 = var0 * (float) (Math.PI / 180.0);
       float var5 = -var1 * (float) (Math.PI / 180.0);
-      float var6 = class_9299.method_42840(var5);
-      float var7 = class_9299.method_42818(var5);
-      float var8 = class_9299.method_42840(var4);
-      float var9 = class_9299.method_42818(var4);
+      float var6 = MathHelper.cos(var5);
+      float var7 = MathHelper.sin(var5);
+      float var8 = MathHelper.cos(var4);
+      float var9 = MathHelper.sin(var4);
       return new class_1343((double)(var7 * var8), (double)(-var9), (double)(var6 * var8));
    }
 
@@ -899,7 +899,7 @@ public class class_314 {
    }
 
    public static class_9374 method_1426(Entity var0) {
-      if (var0 instanceof class_5834) {
+      if (var0 instanceof LivingEntity) {
          if (!(var0 instanceof PlayerEntity)) {
             return !(var0 instanceof MobEntity) && !(var0 instanceof MonsterEntity) && !(var0 instanceof class_378) && !(var0 instanceof class_516)
                ? class_9374.field_47923
@@ -1027,10 +1027,10 @@ public class class_314 {
       if (var0 != field_1158.thePlayer && var0 != BlinkModule.field_27898) {
          if (SigmaMainClass.getInstance().method_3307().method_14460(var0)) {
             return false;
-         } else if (var0 instanceof class_5834) {
-            if (((class_5834)var0).method_26551() == 0.0F) {
+         } else if (var0 instanceof LivingEntity) {
+            if (((LivingEntity)var0).method_26551() == 0.0F) {
                return false;
-            } else if (!field_1158.thePlayer.method_26608((class_5834)var0)) {
+            } else if (!field_1158.thePlayer.method_26608((LivingEntity)var0)) {
                return false;
             } else if (var0 instanceof class_9399) {
                return false;
@@ -1100,7 +1100,7 @@ public class class_314 {
    }
 
    public static float method_1438(float var0) {
-      float var3 = class_9299.method_42810(field_1158.thePlayer.rotationYaw);
+      float var3 = MathHelper.wrapDegrees(field_1158.thePlayer.rotationYaw);
       float var4 = 180.0F;
       float var5 = 0.0F;
       MovementInput var6 = field_1158.thePlayer.movementInput;
@@ -1133,10 +1133,10 @@ public class class_314 {
       }
 
       for (float var9 = 0.0F; var9 < 360.0F; var9 += 45.0F) {
-         float var10 = class_9299.method_42834(var0 + var9, var3);
+         float var10 = MathHelper.wrapSubtractDegrees(var0 + var9, var3);
          if (Math.abs(var10) < Math.abs(var4)) {
             var4 = var10;
-            var5 = class_9299.method_42810(var0 + var9);
+            var5 = MathHelper.wrapDegrees(var0 + var9);
          }
       }
 
@@ -1191,9 +1191,9 @@ public class class_314 {
       double var4 = var1.field_7336 - var0.field_7336;
       double var6 = (var1.field_7333 - var0.field_7333) * -1.0;
       double var8 = var1.field_7334 - var0.field_7334;
-      double var10 = (double)class_9299.method_42842(var4 * var4 + var8 * var8);
+      double var10 = (double) MathHelper.sqrt(var4 * var4 + var8 * var8);
       return new float[]{
-         (float)class_9299.method_42809(Math.toDegrees(Math.atan2(var8, var4)) - 90.0), (float)class_9299.method_42809(Math.toDegrees(Math.atan2(var6, var10)))
+         (float) MathHelper.wrapDegrees(Math.toDegrees(Math.atan2(var8, var4)) - 90.0), (float) MathHelper.wrapDegrees(Math.toDegrees(Math.atan2(var6, var10)))
       };
    }
 
@@ -1250,7 +1250,7 @@ public class class_314 {
    public static boolean method_1432(Entity var0) {
       if (!(var0.method_37309() < 1.0)) {
          if (!var0.onGround) {
-            Box var3 = var0.method_37241();
+            Box var3 = var0.getBoundingBox();
             var3 = var3.method_18928(0.0, -var0.method_37309(), 0.0);
             return field_1158.theWorld.method_6680(field_1158.thePlayer, var3).count() == 0L;
          } else {

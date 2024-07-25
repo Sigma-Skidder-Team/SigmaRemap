@@ -8,23 +8,23 @@ public class class_6778 extends class_1595 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2036;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2036;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2136;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2136;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2816;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2816;
    }
 
    @Override
-   public class_8461 method_7150() {
-      return class_463.field_2443;
+   public SoundEvent method_7150() {
+      return SoundEvents.field_2443;
    }
 
    @Override

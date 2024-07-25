@@ -30,7 +30,7 @@ public class class_8996 extends class_7186 {
 
       while (var3.hasNext()) {
          class_2452 var4 = (class_2452)var3.next();
-         if (this.field_46054.method_29537().method_1285(class_291.field_1045)) {
+         if (this.field_46054.getGameRules().getBoolean(GameRules.field_1045)) {
             var4.method_11271();
          }
 
@@ -59,7 +59,7 @@ public class class_8996 extends class_7186 {
    public class_2452 method_41271(class_9359 var1) {
       if (var1.method_37221()) {
          return null;
-      } else if (this.field_46054.method_29537().method_1285(class_291.field_1045)) {
+      } else if (this.field_46054.getGameRules().getBoolean(GameRules.field_1045)) {
          return null;
       } else {
          class_8760 var4 = var1.world.method_22572();
@@ -73,7 +73,7 @@ public class class_8996 extends class_7186 {
 
             for (class_8009 var10 : var6) {
                BlockPos var11 = var10.method_36337();
-               var8 = var8.method_6214((double)var11.method_12173(), (double)var11.method_12165(), (double)var11.method_12185());
+               var8 = var8.method_6214((double)var11.getX(), (double)var11.method_12165(), (double)var11.method_12185());
                var7++;
             }
 

@@ -1,12 +1,12 @@
 package remapped;
 
 public enum class_5068 {
-   field_26192(class_463.field_2216),
-   field_26190(class_463.field_2155);
+   field_26192(SoundEvents.field_2216),
+   field_26190(SoundEvents.field_2155);
 
-   private final class_8461 field_26189;
+   private final SoundEvent field_26189;
 
-   private class_5068(class_8461 var3) {
+   private class_5068(SoundEvent var3) {
       this.field_26189 = var3;
    }
 

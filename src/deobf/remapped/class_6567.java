@@ -71,8 +71,8 @@ public class class_6567 {
 
    public double method_30013(double var1, double var3) {
       double var7 = (var1 + var3) * field_33493;
-      int var9 = class_9299.method_42847(var1 + var7);
-      int var10 = class_9299.method_42847(var3 + var7);
+      int var9 = MathHelper.floor(var1 + var7);
+      int var10 = MathHelper.floor(var3 + var7);
       double var11 = (double)(var9 + var10) * field_33500;
       double var13 = (double)var9 - var11;
       double var15 = (double)var10 - var11;
@@ -106,9 +106,9 @@ public class class_6567 {
    public double method_30011(double var1, double var3, double var5) {
       double var9 = 0.3333333333333333;
       double var11 = (var1 + var3 + var5) * 0.3333333333333333;
-      int var13 = class_9299.method_42847(var1 + var11);
-      int var14 = class_9299.method_42847(var3 + var11);
-      int var15 = class_9299.method_42847(var5 + var11);
+      int var13 = MathHelper.floor(var1 + var11);
+      int var14 = MathHelper.floor(var3 + var11);
+      int var15 = MathHelper.floor(var5 + var11);
       double var16 = 0.16666666666666666;
       double var18 = (double)(var13 + var14 + var15) * 0.16666666666666666;
       double var20 = (double)var13 - var18;

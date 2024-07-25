@@ -66,7 +66,7 @@ public class class_9406 extends class_3077 {
          class_2522 var8 = field_48091.get(var6.method_8360());
          class_2522 var9 = null;
          if (var8 != null && var4.method_28262(var5.method_6081()).method_8345()) {
-            var4.method_43359(var7, var5, class_463.field_2221, class_562.field_3322, 1.0F, 1.0F);
+            var4.method_43359(var7, var5, SoundEvents.field_2221, class_562.field_3322, 1.0F, 1.0F);
             var9 = var8;
          } else if (var6.method_8360() instanceof class_8474 && var6.<Boolean>method_10313(class_8474.field_43423)) {
             if (!var4.method_22567()) {

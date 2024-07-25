@@ -47,7 +47,7 @@ public class class_8071 extends class_2344<class_2519> {
       this.field_41292.field_8187 = 2.0F;
       this.field_41290.field_8181 = 1.0F;
       this.field_41292.field_8181 = 1.0F;
-      this.field_41290.field_8190 = 0.47123894F + class_9299.method_42840(var4 * 0.8F) * (float) Math.PI * 0.05F;
+      this.field_41290.field_8190 = 0.47123894F + MathHelper.cos(var4 * 0.8F) * (float) Math.PI * 0.05F;
       this.field_41292.field_8190 = -this.field_41290.field_8190;
       this.field_41292.field_8185 = -0.47123894F;
       this.field_41292.field_8191 = 0.47123894F;

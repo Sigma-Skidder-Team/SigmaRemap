@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 
 public class class_8031 extends class_5467 implements class_9897 {
    private static final class_7821<Byte> field_41107 = class_8073.<Byte>method_36641(class_8031.class, class_2734.field_13361);
-   private static final Map<class_9077, class_8525> field_41110 = Util.<Map<class_9077, class_8525>>method_44659(
+   private static final Map<class_9077, class_8525> field_41110 = Util.<Map<class_9077, class_8525>>make(
       Maps.newEnumMap(class_9077.class), var0 -> {
          var0.put(class_9077.field_46493, class_4783.field_23300);
          var0.put(class_9077.field_46486, class_4783.field_23619);
@@ -74,12 +74,12 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.world.field_33055) {
          this.field_41106 = Math.max(0, this.field_41106 - 1);
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    public static MutableAttribute method_36475() {
@@ -161,7 +161,7 @@ public class class_8031 extends class_5467 implements class_9897 {
    public float method_36479(float var1) {
       if (this.field_41106 > 4 && this.field_41106 <= 36) {
          float var4 = ((float)(this.field_41106 - 4) - var1) / 32.0F;
-         return (float) (Math.PI / 5) + 0.21991149F * class_9299.method_42818(var4 * 28.7F);
+         return (float) (Math.PI / 5) + 0.21991149F * MathHelper.sin(var4 * 28.7F);
       } else {
          return this.field_41106 <= 0 ? this.rotationPitch * (float) (Math.PI / 180.0) : (float) (Math.PI / 5);
       }
@@ -183,7 +183,7 @@ public class class_8031 extends class_5467 implements class_9897 {
 
    @Override
    public void method_45583(class_562 var1) {
-      this.world.method_29540((PlayerEntity)null, this, class_463.field_2398, var1, 1.0F, 1.0F);
+      this.world.method_29540((PlayerEntity)null, this, SoundEvents.field_2398, var1, 1.0F, 1.0F);
       this.method_36469(true);
       int var4 = 1 + this.field_41717.nextInt(3);
 
@@ -222,23 +222,23 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2232;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2232;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2204;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2204;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2288;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2288;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2167, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2167, 0.15F, 1.0F);
    }
 
    public class_9077 method_36474() {

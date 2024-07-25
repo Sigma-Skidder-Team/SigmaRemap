@@ -105,7 +105,7 @@ public class IngameGUI extends AbstractGui {
          this.renderPumpkinOverlay();
       }
 
-      float var7 = class_9299.method_42795(partialTicks, this.mc.thePlayer.prevTimeInPortal, this.mc.thePlayer.timeInPortal);
+      float var7 = MathHelper.method_42795(partialTicks, this.mc.thePlayer.prevTimeInPortal, this.mc.thePlayer.timeInPortal);
       if (var7 > 0.0F && !this.mc.thePlayer.isPotionActive(Effects.NAUSEA)) {
          this.renderPortal(var7);
       }
@@ -196,7 +196,7 @@ public class IngameGUI extends AbstractGui {
                RenderSystem.defaultBlendFunc();
                int var22 = 16777215;
                if (this.animateOverlayMessageColor) {
-                  var22 = class_9299.method_42792(var15 / 50.0F, 0.7F, 0.6F) & 16777215;
+                  var22 = MathHelper.method_42792(var15 / 50.0F, 0.7F, 0.6F) & 16777215;
                }
 
                int var11 = var18 << 24 & 0xFF000000;
@@ -223,7 +223,7 @@ public class IngameGUI extends AbstractGui {
                var19 = (int)(var16 * 255.0F / (float)this.titleFadeOut);
             }
 
-            var19 = class_9299.method_42829(var19, 0, 255);
+            var19 = MathHelper.clamp(var19, 0, 255);
             if (var19 > 8) {
                RenderSystem.method_16438();
                RenderSystem.method_16413((float)(this.scaledWidth / 2), (float)(this.scaledHeight / 2), 0.0F);
@@ -408,9 +408,9 @@ public class IngameGUI extends AbstractGui {
                   this.method_9781(var1, var12, var13, 141, 166, 24, 24);
                   if (var10.method_10347() <= 200) {
                      int var15 = 10 - var10.method_10347() / 20;
-                     var14 = class_9299.method_42828((float)var10.method_10347() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
-                        + class_9299.method_42840((float)var10.method_10347() * (float) Math.PI / 5.0F)
-                           * class_9299.method_42828((float)var15 / 10.0F * 0.25F, 0.0F, 0.25F);
+                     var14 = MathHelper.clamp((float)var10.method_10347() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
+                        + MathHelper.cos((float)var10.method_10347() * (float) Math.PI / 5.0F)
+                           * MathHelper.clamp((float)var15 / 10.0F * 0.25F, 0.0F, 0.25F);
                   }
                } else {
                   this.method_9781(var1, var12, var13, 165, 166, 24, 24);
@@ -708,7 +708,7 @@ public class IngameGUI extends AbstractGui {
    private void func_238457_e_(class_7966 var1) {
       PlayerEntity var4 = this.method_13976();
       if (var4 != null) {
-         int var5 = class_9299.method_42816(var4.method_26551());
+         int var5 = MathHelper.ceil(var4.method_26551());
          boolean var6 = this.healthUpdateCounter > (long)this.ticks && (this.healthUpdateCounter - (long)this.ticks) / 3L % 2L == 1L;
          long var7 = Util.getMeasuringTimeMs();
          if (var5 < this.playerHealth && var4.field_41749 > 0) {
@@ -734,8 +734,8 @@ public class IngameGUI extends AbstractGui {
          int var13 = this.scaledWidth / 2 + 91;
          int var14 = this.scaledHeight - 39;
          float var15 = (float)var4.method_26575(Attributes.MAX_HEALTH);
-         int var16 = class_9299.method_42816(var4.method_26493());
-         int var17 = class_9299.method_42816((var15 + (float)var16) / 2.0F / 10.0F);
+         int var16 = MathHelper.ceil(var4.method_26493());
+         int var17 = MathHelper.ceil((var15 + (float)var16) / 2.0F / 10.0F);
          int var18 = Math.max(10 - (var17 - 2), 3);
          int var19 = var14 - (var17 - 1) * var18 - 10;
          int var20 = var14 - 10;
@@ -743,7 +743,7 @@ public class IngameGUI extends AbstractGui {
          int var22 = var4.method_26565();
          int var23 = -1;
          if (var4.isPotionActive(Effects.field_19742)) {
-            var23 = this.ticks % class_9299.method_42816(var15 + 5.0F);
+            var23 = this.ticks % MathHelper.ceil(var15 + 5.0F);
          }
 
          this.mc.getProfiler().startSection("armor");
@@ -767,7 +767,7 @@ public class IngameGUI extends AbstractGui {
 
          this.mc.getProfiler().method_16050("health");
 
-         for (int var33 = class_9299.method_42816((var15 + (float)var16) / 2.0F) - 1; var33 >= 0; var33--) {
+         for (int var33 = MathHelper.ceil((var15 + (float)var16) / 2.0F) - 1; var33 >= 0; var33--) {
             byte var35 = 16;
             if (!var4.isPotionActive(Effects.field_19718)) {
                if (var4.isPotionActive(Effects.field_19725)) {
@@ -782,7 +782,7 @@ public class IngameGUI extends AbstractGui {
                var26 = 1;
             }
 
-            int var27 = class_9299.method_42816((float)(var33 + 1) / 10.0F) - 1;
+            int var27 = MathHelper.ceil((float)(var33 + 1) / 10.0F) - 1;
             int var28 = var12 + var33 % 10 * 8;
             int var29 = var14 - var27 * var18;
             if (var5 <= 4) {
@@ -864,8 +864,8 @@ public class IngameGUI extends AbstractGui {
          if (var4.method_37261(class_6503.field_33094) || var40 < var38) {
             int var42 = this.method_13970(var36) - 1;
             var20 -= var42 * 10;
-            int var44 = class_9299.method_42815((double)(var40 - 2) * 10.0 / (double)var38);
-            int var46 = class_9299.method_42815((double)var40 * 10.0 / (double)var38) - var44;
+            int var44 = MathHelper.ceil((double)(var40 - 2) * 10.0 / (double)var38);
+            int var46 = MathHelper.ceil((double)var40 * 10.0 / (double)var38) - var44;
 
             for (int var31 = 0; var31 < var44 + var46; var31++) {
                if (var31 >= var44) {
@@ -939,7 +939,7 @@ public class IngameGUI extends AbstractGui {
 
    private void method_14006(Entity var1) {
       if (var1 != null) {
-         float var4 = class_9299.method_42828(1.0F - var1.method_37193(), 0.0F, 1.0F);
+         float var4 = MathHelper.clamp(1.0F - var1.method_37193(), 0.0F, 1.0F);
          this.prevVignetteBrightness = (float)((double)this.prevVignetteBrightness + (double)(var4 - this.prevVignetteBrightness) * 0.01);
       }
    }

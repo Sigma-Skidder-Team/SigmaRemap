@@ -17,14 +17,14 @@ public class class_8307 extends class_2451 {
 
          for (int var13 = 0; var13 < 16; var13++) {
             double var14 = var3.getPosX() + (var3.method_26594().nextDouble() - 0.5) * 16.0;
-            double var16 = class_9299.method_42827(var3.method_37309() + (double)(var3.method_26594().nextInt(16) - 8), 0.0, (double)(var2.method_43371() - 1));
+            double var16 = MathHelper.clamp(var3.method_37309() + (double)(var3.method_26594().nextInt(16) - 8), 0.0, (double)(var2.method_43371() - 1));
             double var18 = var3.getPosZ() + (var3.method_26594().nextDouble() - 0.5) * 16.0;
             if (var3.isPassenger()) {
                var3.method_37390();
             }
 
             if (var3.method_26499(var14, var16, var18, true)) {
-               class_8461 var20 = !(var3 instanceof class_5542) ? class_463.field_2460 : class_463.field_2465;
+               SoundEvent var20 = !(var3 instanceof class_5542) ? SoundEvents.field_2460 : SoundEvents.field_2465;
                var2.method_29528((PlayerEntity)null, var7, var9, var11, var20, class_562.field_3335, 1.0F, 1.0F);
                var3.method_37155(var20, 1.0F, 1.0F);
                break;

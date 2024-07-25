@@ -29,7 +29,7 @@ public class class_5906 extends class_6967 {
    public void method_16794() {
       if (!this.method_31860()) {
          if (!this.method_31860() && class_5542.method_25184(this.field_29977).nextFloat() < 0.05F) {
-            this.field_29977.method_37155(class_463.field_2594, 1.0F, 1.0F);
+            this.field_29977.method_37155(SoundEvents.field_2594, 1.0F, 1.0F);
          }
       } else if (this.field_29975 < 40) {
          this.field_29975++;
@@ -41,7 +41,7 @@ public class class_5906 extends class_6967 {
    }
 
    public void method_27013() {
-      if (this.field_29977.field_41768.method_29537().method_1285(class_291.field_1047)) {
+      if (this.field_29977.field_41768.method_29537().method_1285(GameRules.field_1047)) {
          class_2522 var3 = this.field_29977.field_41768.method_28262(this.field_35802);
          if (var3.method_8350(class_4783.field_23637)) {
             int var4 = var3.<Integer>method_10313(class_7086.field_36577);
@@ -57,7 +57,7 @@ public class class_5906 extends class_6967 {
                class_6414.method_29267(this.field_29977.field_41768, this.field_35802, new ItemStack(class_4897.field_25205, var5));
             }
 
-            this.field_29977.method_37155(class_463.field_2156, 1.0F, 1.0F);
+            this.field_29977.method_37155(SoundEvents.field_2156, 1.0F, 1.0F);
             this.field_29977.field_41768.method_7513(this.field_35802, var3.method_10308(class_7086.field_36577, Integer.valueOf(1)), 2);
          }
       }

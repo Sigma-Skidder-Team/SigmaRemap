@@ -21,7 +21,7 @@ public class class_4492 extends class_5920<class_7666> {
    }
 
    public boolean method_20880(class_6331 var1, class_7666 var2) {
-      if (!var1.method_29537().method_1285(class_291.field_1047)) {
+      if (!var1.getGameRules().getBoolean(GameRules.field_1047)) {
          return false;
       } else if (var2.method_15891().method_13910() != class_4466.field_21783) {
          return false;
@@ -112,10 +112,10 @@ public class class_4492 extends class_5920<class_7666> {
                   if (var13) {
                      var1.method_29528(
                         (PlayerEntity)null,
-                        (double)this.field_21963.method_12173(),
+                        (double)this.field_21963.getX(),
                         (double)this.field_21963.method_12165(),
                         (double)this.field_21963.method_12185(),
-                        class_463.field_2518,
+                        SoundEvents.field_2518,
                         class_562.field_3322,
                         1.0F,
                         1.0F

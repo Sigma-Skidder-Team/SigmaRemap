@@ -179,7 +179,7 @@ public class class_4022 {
    private static int method_18534(class_9155 var0) {
       double var3 = var0.method_42198().method_6673().method_9824();
       var0.method_42196(new TranslationTextComponent("commands.worldborder.get", String.format(Locale.ROOT, "%.0f", var3)), false);
-      return class_9299.method_42847(var3 + 0.5);
+      return MathHelper.floor(var3 + 0.5);
    }
 
    private static int method_18531(class_9155 var0, class_4895 var1) throws CommandSyntaxException {

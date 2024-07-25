@@ -19,13 +19,13 @@ public class class_3252 extends class_378 {
 
    @Override
    public boolean method_26855(class_4924 var1) {
-      return var1.method_6677(this) && !var1.method_22550(this.method_37241());
+      return var1.method_6677(this) && !var1.method_22550(this.getBoundingBox());
    }
 
    @Override
    public void method_1861(int var1, boolean var2) {
       super.method_1861(var1, var2);
-      this.method_26561(Attributes.field_37473).method_45006((double)(var1 * 3));
+      this.getAttribute(Attributes.field_37473).setBaseValue((double)(var1 * 3));
    }
 
    @Override
@@ -92,22 +92,22 @@ public class class_3252 extends class_378 {
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return !this.method_1859() ? class_463.field_2044 : class_463.field_2413;
+   public SoundEvent method_26541(DamageSource var1) {
+      return !this.method_1859() ? SoundEvents.field_2044 : SoundEvents.field_2413;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return !this.method_1859() ? class_463.field_1927 : class_463.field_1983;
+   public SoundEvent method_26599() {
+      return !this.method_1859() ? SoundEvents.field_1927 : SoundEvents.field_1983;
    }
 
    @Override
-   public class_8461 method_1850() {
-      return !this.method_1859() ? class_463.field_2639 : class_463.field_2461;
+   public SoundEvent method_1850() {
+      return !this.method_1859() ? SoundEvents.field_2639 : SoundEvents.field_2461;
    }
 
    @Override
-   public class_8461 method_1849() {
-      return class_463.field_2606;
+   public SoundEvent method_1849() {
+      return SoundEvents.field_2606;
    }
 }

@@ -784,7 +784,7 @@ public class class_3290 {
    }
 
    public static boolean method_15098(
-           class_5834 var0, ItemStack var1, class_6521 var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9
+           LivingEntity var0, ItemStack var1, class_6521 var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9
    ) {
       if (field_16287 == null) {
          return false;

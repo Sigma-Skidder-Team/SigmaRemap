@@ -102,7 +102,7 @@ public class class_877 {
    }
 
    private static int method_3777(int[] var0) {
-      int var3 = class_1750.method_7795(var0);
+      int var3 = MathUtils.method_7795(var0);
       int var4 = field_4524.nextInt(var3);
       int var5 = 0;
 

@@ -140,7 +140,7 @@ public class class_9355 extends class_2811 implements class_3449 {
                this.getPosX(),
                this.method_37388(),
                this.getPosZ(),
-               class_463.field_2499,
+               SoundEvents.field_2499,
                this.method_37197(),
                1.0F + this.field_41717.nextFloat(),
                this.field_41717.nextFloat() * 0.7F + 0.3F,
@@ -224,23 +224,23 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2159;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2159;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2379;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2379;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_1950;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_1950;
    }
 
    @Override
-   public class_8461 method_12805() {
-      return class_463.field_1933;
+   public SoundEvent method_12805() {
+      return SoundEvents.field_1933;
    }
 
    @Override

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_8985 extends class_1249 {
+public class class_8985 extends PathNavigator {
    private static String[] field_46022;
    private boolean field_46023;
 
@@ -65,7 +65,7 @@ public class class_8985 extends class_1249 {
 
    private int method_41196() {
       if (this.field_6877.method_37285() && this.method_5602()) {
-         int var3 = class_9299.method_42847(this.field_6877.method_37309());
+         int var3 = MathHelper.floor(this.field_6877.method_37309());
          class_6414 var4 = this.field_6882
             .method_28262(new BlockPos(this.field_6877.getPosX(), (double)var3, this.field_6877.getPosZ()))
             .method_8360();
@@ -74,13 +74,13 @@ public class class_8985 extends class_1249 {
          while (var4 == class_4783.field_23900) {
             var4 = this.field_6882.method_28262(new BlockPos(this.field_6877.getPosX(), (double)(++var3), this.field_6877.getPosZ())).method_8360();
             if (++var5 > 16) {
-               return class_9299.method_42847(this.field_6877.method_37309());
+               return MathHelper.floor(this.field_6877.method_37309());
             }
          }
 
          return var3;
       } else {
-         return class_9299.method_42847(this.field_6877.method_37309() + 0.5);
+         return MathHelper.floor(this.field_6877.method_37309() + 0.5);
       }
    }
 
@@ -106,8 +106,8 @@ public class class_8985 extends class_1249 {
 
    @Override
    public boolean method_5599(class_1343 var1, class_1343 var2, int var3, int var4, int var5) {
-      int var8 = class_9299.method_42847(var1.field_7336);
-      int var9 = class_9299.method_42847(var1.field_7334);
+      int var8 = MathHelper.floor(var1.field_7336);
+      int var9 = MathHelper.floor(var1.field_7334);
       double var10 = var2.field_7336 - var1.field_7336;
       double var12 = var2.field_7334 - var1.field_7334;
       double var14 = var10 * var10 + var12 * var12;
@@ -119,7 +119,7 @@ public class class_8985 extends class_1249 {
          var12 *= var16;
          var3 += 2;
          var5 += 2;
-         if (!this.method_41198(var8, class_9299.method_42847(var1.field_7333), var9, var3, var4, var5, var1, var10, var12)) {
+         if (!this.method_41198(var8, MathHelper.floor(var1.field_7333), var9, var3, var4, var5, var1, var10, var12)) {
             return false;
          } else {
             var3 -= 2;
@@ -140,8 +140,8 @@ public class class_8985 extends class_1249 {
             var24 /= var12;
             int var26 = !(var10 < 0.0) ? 1 : -1;
             int var27 = !(var12 < 0.0) ? 1 : -1;
-            int var28 = class_9299.method_42847(var2.field_7336);
-            int var29 = class_9299.method_42847(var2.field_7334);
+            int var28 = MathHelper.floor(var2.field_7336);
+            int var29 = MathHelper.floor(var2.field_7334);
             int var30 = var28 - var8;
             int var31 = var29 - var9;
 
@@ -156,7 +156,7 @@ public class class_8985 extends class_1249 {
                   var30 = var28 - var8;
                }
 
-               if (!this.method_41198(var8, class_9299.method_42847(var1.field_7333), var9, var3, var4, var5, var1, var10, var12)) {
+               if (!this.method_41198(var8, MathHelper.floor(var1.field_7333), var9, var3, var4, var5, var1, var10, var12)) {
                   return false;
                }
             }
@@ -211,7 +211,7 @@ public class class_8985 extends class_1249 {
 
    private boolean method_41195(int var1, int var2, int var3, int var4, int var5, int var6, class_1343 var7, double var8, double var10) {
       for (BlockPos var15 : BlockPos.method_6076(new BlockPos(var1, var2, var3), new BlockPos(var1 + var4 - 1, var2 + var5 - 1, var3 + var6 - 1))) {
-         double var16 = (double)var15.method_12173() + 0.5 - var7.field_7336;
+         double var16 = (double)var15.getX() + 0.5 - var7.field_7336;
          double var18 = (double)var15.method_12185() + 0.5 - var7.field_7334;
          if (!(var16 * var8 + var18 * var10 < 0.0) && !this.field_6882.method_28262(var15).method_8319(this.field_6882, var15, class_2929.field_14271)) {
             return false;

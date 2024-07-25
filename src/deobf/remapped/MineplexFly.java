@@ -103,7 +103,7 @@ public class MineplexFly extends PremiumModule {
                   }
 
                   var1.method_35235(this.field_46842);
-                  if (client.thePlayer.field_41744 || !class_314.method_1434()) {
+                  if (client.thePlayer.collidedHorizontally || !class_314.method_1434()) {
                      this.field_46845 = 0.35;
                   }
 

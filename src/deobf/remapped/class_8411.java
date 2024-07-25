@@ -16,7 +16,7 @@ public class class_8411 extends class_2451 implements class_1538 {
             var2.getPosX(),
             var2.method_37309(),
             var2.getPosZ(),
-            class_463.field_2140,
+            SoundEvents.field_2140,
             class_562.field_3328,
             0.5F,
             0.4F / (field_12172.nextFloat() * 0.4F + 0.8F)
@@ -39,7 +39,7 @@ public class class_8411 extends class_2451 implements class_1538 {
             var2.getPosX(),
             var2.method_37309(),
             var2.getPosZ(),
-            class_463.field_2388,
+            SoundEvents.field_2388,
             class_562.field_3328,
             1.0F,
             0.4F / (field_12172.nextFloat() * 0.4F + 0.8F)

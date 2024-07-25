@@ -115,13 +115,13 @@ public class class_9558 {
          }, var0 -> var0.method_22752() == null, new TranslationTextComponent("argument.entity.options.dz.description"));
          method_44159(
             "x_rotation",
-            var0 -> var0.method_22763(class_9721.method_44918(var0.method_22749(), true, class_9299::method_42810)),
+            var0 -> var0.method_22763(class_9721.method_44918(var0.method_22749(), true, MathHelper::wrapDegrees)),
             var0 -> var0.method_22746() == class_9721.field_49421,
             new TranslationTextComponent("argument.entity.options.x_rotation.description")
          );
          method_44159(
             "y_rotation",
-            var0 -> var0.method_22775(class_9721.method_44918(var0.method_22749(), true, class_9299::method_42810)),
+            var0 -> var0.method_22775(class_9721.method_44918(var0.method_22749(), true, MathHelper::wrapDegrees)),
             var0 -> var0.method_22765() == class_9721.field_49421,
             new TranslationTextComponent("argument.entity.options.y_rotation.description")
          );

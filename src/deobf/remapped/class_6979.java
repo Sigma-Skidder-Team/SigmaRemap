@@ -3,7 +3,7 @@ package remapped;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public class class_6979 extends class_2700 {
+public class class_6979 extends Vector3i {
    private static String[] field_35842;
 
    private class_6979(int var1, int var2, int var3) {
@@ -15,7 +15,7 @@ public class class_6979 extends class_2700 {
    }
 
    public static class_6979 method_31921(BlockPos var0) {
-      return new class_6979(method_31915(var0.method_12173()), method_31915(var0.method_12165()), method_31915(var0.method_12185()));
+      return new class_6979(method_31915(var0.getX()), method_31915(var0.method_12165()), method_31915(var0.method_12185()));
    }
 
    public static class_6979 method_31922(class_2034 var0, int var1) {
@@ -24,9 +24,9 @@ public class class_6979 extends class_2700 {
 
    public static class_6979 method_31923(Entity var0) {
       return new class_6979(
-         method_31915(class_9299.method_42847(var0.getPosX())),
-         method_31915(class_9299.method_42847(var0.method_37309())),
-         method_31915(class_9299.method_42847(var0.getPosZ()))
+         method_31915(MathHelper.floor(var0.getPosX())),
+         method_31915(MathHelper.floor(var0.method_37309())),
+         method_31915(MathHelper.floor(var0.getPosZ()))
       );
    }
 
@@ -51,7 +51,7 @@ public class class_6979 extends class_2700 {
    }
 
    public static short method_31909(BlockPos var0) {
-      int var3 = method_31913(var0.method_12173());
+      int var3 = method_31913(var0.getX());
       int var4 = method_31913(var0.method_12165());
       int var5 = method_31913(var0.method_12185());
       return (short)(var3 << 8 | var5 << 4 | var4 << 0);
@@ -102,7 +102,7 @@ public class class_6979 extends class_2700 {
    }
 
    public int method_31930() {
-      return this.method_12173();
+      return this.getX();
    }
 
    public int method_31918() {

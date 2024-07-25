@@ -29,7 +29,7 @@ public class class_7937 extends MonsterEntity {
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       return new class_8696(this, var1);
    }
 
@@ -43,7 +43,7 @@ public class class_7937 extends MonsterEntity {
    public void method_37123() {
       super.method_37123();
       if (!this.world.field_33055) {
-         this.method_35904(this.field_41744);
+         this.method_35904(this.collidedHorizontally);
       }
    }
 
@@ -52,23 +52,23 @@ public class class_7937 extends MonsterEntity {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2371;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2371;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2519;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2519;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2833;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2833;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_1974, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_1974, 0.15F, 1.0F);
    }
 
    @Override

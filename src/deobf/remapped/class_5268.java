@@ -119,7 +119,7 @@ public class class_5268 {
                continue;
             }
 
-            double var25 = (double)class_9299.method_42842(var21);
+            double var25 = (double) MathHelper.sqrt(var21);
             var23 = new class_1343(
                var14.getPosX() + var15 / var25 * 2.0, var14.method_37309() + var17 / var25 * 2.0, var14.getPosZ() + var19 / var25 * 2.0
             );

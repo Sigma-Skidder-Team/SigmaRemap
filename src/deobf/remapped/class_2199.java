@@ -14,13 +14,13 @@ public class class_2199 extends HurtByTargetGoal {
       if (!class_496.method_2465(this.field_10914) && !class_496.method_2429(this.field_10914)) {
          return super.method_16799();
       } else {
-         this.field_10914.method_26860((class_5834)null);
+         this.field_10914.method_26860((LivingEntity)null);
          return false;
       }
    }
 
    @Override
-   public void method_38756(MobEntity var1, class_5834 var2) {
+   public void method_38756(MobEntity var1, LivingEntity var2) {
       if (var1 instanceof class_496 && ((class_496)var1).method_26892()) {
          var1.method_26860(var2);
       }

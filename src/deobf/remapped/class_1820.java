@@ -41,7 +41,7 @@ public abstract class class_1820 extends class_3599 {
    @Override
    public boolean method_16795() {
       if (class_3613.method_16840(this.field_9241)) {
-         if (this.field_9241.field_41744) {
+         if (this.field_9241.collidedHorizontally) {
             class_8985 var3 = (class_8985)this.field_9241.method_26927();
             class_3998 var4 = var3.method_5594();
             if (var4 != null && !var4.method_18436() && var3.method_41200()) {
@@ -50,7 +50,7 @@ public abstract class class_1820 extends class_3599 {
                   this.field_9240 = new BlockPos(var6.field_29731, var6.field_29735 + 1, var6.field_29736);
                   if (!(
                      this.field_9241
-                           .method_37273((double)this.field_9240.method_12173(), this.field_9241.method_37309(), (double)this.field_9240.method_12185())
+                           .method_37273((double)this.field_9240.getX(), this.field_9241.method_37309(), (double)this.field_9240.method_12185())
                         > 2.25
                   )) {
                      this.field_9242 = class_4115.method_19107(this.field_9241.world, this.field_9240);
@@ -82,13 +82,13 @@ public abstract class class_1820 extends class_3599 {
    @Override
    public void method_16796() {
       this.field_9239 = false;
-      this.field_9238 = (float)((double)this.field_9240.method_12173() + 0.5 - this.field_9241.getPosX());
+      this.field_9238 = (float)((double)this.field_9240.getX() + 0.5 - this.field_9241.getPosX());
       this.field_9237 = (float)((double)this.field_9240.method_12185() + 0.5 - this.field_9241.getPosZ());
    }
 
    @Override
    public void method_16794() {
-      float var3 = (float)((double)this.field_9240.method_12173() + 0.5 - this.field_9241.getPosX());
+      float var3 = (float)((double)this.field_9240.getX() + 0.5 - this.field_9241.getPosX());
       float var4 = (float)((double)this.field_9240.method_12185() + 0.5 - this.field_9241.getPosZ());
       float var5 = this.field_9238 * var3 + this.field_9237 * var4;
       if (var5 < 0.0F) {

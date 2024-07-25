@@ -28,7 +28,7 @@ public class class_702 implements class_700 {
    private final class_2033 field_3828;
 
    public class_702(class_6331 var1, List<class_5990> var2) {
-      int var5 = class_9299.method_42847(Math.sqrt((double)var2.size()));
+      int var5 = MathHelper.floor(Math.sqrt((double)var2.size()));
       if (var5 * var5 == var2.size()) {
          class_2034 var6 = ((class_5990)var2.get(var2.size() / 2)).method_27352();
          this.field_3823 = var2;
@@ -106,7 +106,7 @@ public class class_702 implements class_700 {
 
    @Override
    public class_2522 method_28262(BlockPos var1) {
-      return this.method_22553(var1.method_12173() >> 4, var1.method_12185() >> 4).method_28262(var1);
+      return this.method_22553(var1.getX() >> 4, var1.method_12185() >> 4).method_28262(var1);
    }
 
    @Override
@@ -211,7 +211,7 @@ public class class_702 implements class_700 {
          }
       } else if (var7.method_27364().method_33446() != class_5592.field_28385) {
          CompoundNBT var10 = new CompoundNBT();
-         var10.putInt("x", var1.method_12173());
+         var10.putInt("x", var1.getX());
          var10.putInt("y", var1.method_12165());
          var10.putInt("z", var1.method_12185());
          var10.method_25941("id", "DUMMY");
@@ -233,8 +233,8 @@ public class class_702 implements class_700 {
 
    @Override
    public boolean method_7509(Entity var1) {
-      int var4 = class_9299.method_42847(var1.getPosX() / 16.0);
-      int var5 = class_9299.method_42847(var1.getPosZ() / 16.0);
+      int var4 = MathHelper.floor(var1.getPosX() / 16.0);
+      int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
       this.method_22553(var4, var5).method_27342(var1);
       return true;
    }
@@ -272,7 +272,7 @@ public class class_702 implements class_700 {
 
    @Override
    public class_9589 method_43368(BlockPos var1) {
-      if (this.method_22560(var1.method_12173() >> 4, var1.method_12185() >> 4)) {
+      if (this.method_22560(var1.getX() >> 4, var1.method_12185() >> 4)) {
          return new class_9589(this.field_3827.method_43370(), this.field_3827.method_29584(), 0L, this.field_3827.method_13576());
       } else {
          throw new RuntimeException("We are asking a region for a chunk out of bound");
@@ -315,7 +315,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public void method_43359(PlayerEntity var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_43359(PlayerEntity var1, BlockPos var2, SoundEvent var3, class_562 var4, float var5, float var6) {
    }
 
    @Override

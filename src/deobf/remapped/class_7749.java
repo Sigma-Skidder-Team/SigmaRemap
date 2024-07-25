@@ -35,8 +35,8 @@ public class class_7749<T extends Entity> extends class_5272<T> {
       this.field_39284.field_8190 = var5 * (float) (Math.PI / 180.0);
       this.field_39284.field_8191 = var6 * (float) (Math.PI / 180.0);
       this.field_39287.field_8190 = var5 * (float) (Math.PI / 180.0) * 0.25F;
-      float var9 = class_9299.method_42818(this.field_39287.field_8190);
-      float var10 = class_9299.method_42840(this.field_39287.field_8190);
+      float var9 = MathHelper.sin(this.field_39287.field_8190);
+      float var10 = MathHelper.cos(this.field_39287.field_8190);
       this.field_39289.field_8185 = 1.0F;
       this.field_39288.field_8185 = -1.0F;
       this.field_39289.field_8190 = 0.0F + this.field_39287.field_8190;

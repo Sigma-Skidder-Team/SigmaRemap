@@ -132,10 +132,10 @@ public class class_2380 extends class_6788 {
    private Box method_10871(BlockPos var1) {
       double var4 = 0.2;
       return new Box(
-         (double)var1.method_12173() + 0.2,
+         (double)var1.getX() + 0.2,
          (double)var1.method_12165(),
          (double)var1.method_12185() + 0.2,
-         (double)(var1.method_12173() + 1) - 0.2,
+         (double)(var1.getX() + 1) - 0.2,
          (double)(var1.method_12165() + 1) - 0.2,
          (double)(var1.method_12185() + 1) - 0.2
       );

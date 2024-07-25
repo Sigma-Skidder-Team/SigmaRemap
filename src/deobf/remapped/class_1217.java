@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1217 {
    private static String[] field_6759;
-   private static final float[] field_6760 = Util.<float[]>method_44659(new float[256], var0 -> {
+   private static final float[] field_6760 = Util.<float[]>make(new float[256], var0 -> {
       for (int var3 = 0; var3 < var0.length; var3++) {
          var0[var3] = (float)Math.pow((double)((float)var3 / 255.0F), 2.2);
       }

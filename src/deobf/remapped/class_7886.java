@@ -151,7 +151,7 @@ public class class_7886 extends class_4117 {
 
                         var13.method_36063();
                         var13.method_36065(
-                           (double)class_3511.method_16145(this.field_40354) + (double)(var19.method_12173() & 15),
+                           (double)class_3511.method_16145(this.field_40354) + (double)(var19.getX() & 15),
                            (double)class_3511.method_16144(this.field_40354) + (double)(var19.method_12165() & 15),
                            (double)class_3511.method_16153(this.field_40354) + (double)(var19.method_12185() & 15)
                         );
@@ -178,7 +178,7 @@ public class class_7886 extends class_4117 {
          if (class_8845.method_40687(var4).contains(RenderLayer.method_16762())) {
             class_9633 var29 = var5.method_12956(RenderLayer.method_16762());
             var29.method_44482(
-               (float)class_3511.method_16145(this.field_40354) + var1 - (float)var9.method_12173(),
+               (float)class_3511.method_16145(this.field_40354) + var1 - (float)var9.getX(),
                (float)class_3511.method_16144(this.field_40354) + var2 - (float)var9.method_12165(),
                (float)class_3511.method_16153(this.field_40354) + var3 - (float)var9.method_12185()
             );

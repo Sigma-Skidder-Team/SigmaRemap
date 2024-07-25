@@ -61,7 +61,7 @@ public class class_6218 extends class_5877 {
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method_10313(field_29833)) {
          Direction var7 = var1.<Direction>method_10313(field_1543);
-         double var8 = (double)var3.method_12173() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
+         double var8 = (double)var3.getX() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var10 = (double)var3.method_12165() + 0.4 + (var4.nextDouble() - 0.5) * 0.2;
          double var12 = (double)var3.method_12185() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          float var14 = -5.0F;

@@ -15,13 +15,13 @@ public class class_6792 extends class_7067<class_9552> {
 
    public void method_31135(class_9552 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       var4.method_36063();
-      float var9 = class_9299.method_42833(var1.prevRotationYaw, var1.rotationYaw, var3);
-      float var10 = class_9299.method_42795(var3, var1.field_41762, var1.rotationPitch);
+      float var9 = MathHelper.method_42833(var1.prevRotationYaw, var1.rotationYaw, var3);
+      float var10 = MathHelper.method_42795(var3, var1.field_41762, var1.rotationPitch);
       float var11 = (float)var1.field_41697 + var3;
       var4.method_36065(0.0, 0.15F, 0.0);
-      var4.method_36060(class_2426.field_12074.method_11074(class_9299.method_42818(var11 * 0.1F) * 180.0F));
-      var4.method_36060(class_2426.field_12080.method_11074(class_9299.method_42840(var11 * 0.1F) * 180.0F));
-      var4.method_36060(class_2426.field_12076.method_11074(class_9299.method_42818(var11 * 0.15F) * 360.0F));
+      var4.method_36060(class_2426.field_12074.method_11074(MathHelper.sin(var11 * 0.1F) * 180.0F));
+      var4.method_36060(class_2426.field_12080.method_11074(MathHelper.cos(var11 * 0.1F) * 180.0F));
+      var4.method_36060(class_2426.field_12076.method_11074(MathHelper.sin(var11 * 0.15F) * 360.0F));
       var4.method_36062(-0.5F, -0.5F, 0.5F);
       this.field_35021.method_29700(var1, 0.0F, 0.0F, 0.0F, var9, var10);
       class_7907 var12 = var5.method_11645(this.field_35021.method_45498(field_35020));

@@ -14,13 +14,13 @@ public abstract class class_2088 extends class_9733 {
    @Override
    public void method_44951(class_7907 var1, Camera var2, float var3) {
       class_1343 var6 = var2.method_41627();
-      float var7 = (float)(class_9299.method_42794((double)var3, this.field_49459, this.field_49462) - var6.method_61());
-      float var8 = (float)(class_9299.method_42794((double)var3, this.field_49480, this.field_49473) - var6.method_60());
-      float var9 = (float)(class_9299.method_42794((double)var3, this.field_49479, this.field_49465) - var6.method_62());
+      float var7 = (float)(MathHelper.lerp((double)var3, this.field_49459, this.field_49462) - var6.method_61());
+      float var8 = (float)(MathHelper.lerp((double)var3, this.field_49480, this.field_49473) - var6.method_60());
+      float var9 = (float)(MathHelper.lerp((double)var3, this.field_49479, this.field_49465) - var6.method_62());
       Quaternion var10;
       if (this.field_49478 != 0.0F) {
          var10 = new Quaternion(var2.method_41644());
-         float var11 = class_9299.method_42795(var3, this.field_49467, this.field_49478);
+         float var11 = MathHelper.method_42795(var3, this.field_49467, this.field_49478);
          var10.method_24658(class_2426.field_12076.method_11062(var11));
       } else {
          var10 = var2.method_41644();

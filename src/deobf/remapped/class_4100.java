@@ -9,9 +9,9 @@ public class class_4100 extends class_8715 {
       this.field_49486 *= 0.01F;
       this.field_49471 *= 0.01F;
       this.field_49486 += 0.2;
-      this.field_49485 = Math.max(0.0F, class_9299.method_42818(((float)var8 + 0.0F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
-      this.field_49468 = Math.max(0.0F, class_9299.method_42818(((float)var8 + 0.33333334F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
-      this.field_49487 = Math.max(0.0F, class_9299.method_42818(((float)var8 + 0.6666667F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field_49485 = Math.max(0.0F, MathHelper.sin(((float)var8 + 0.0F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field_49468 = Math.max(0.0F, MathHelper.sin(((float)var8 + 0.33333334F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field_49487 = Math.max(0.0F, MathHelper.sin(((float)var8 + 0.6666667F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
       this.field_10503 *= 1.5F;
       this.field_49476 = 6;
    }
@@ -23,7 +23,7 @@ public class class_4100 extends class_8715 {
 
    @Override
    public float method_9766(float var1) {
-      return this.field_10503 * class_9299.method_42828(((float)this.field_49475 + var1) / (float)this.field_49476 * 32.0F, 0.0F, 1.0F);
+      return this.field_10503 * MathHelper.clamp(((float)this.field_49475 + var1) / (float)this.field_49476 * 32.0F, 0.0F, 1.0F);
    }
 
    @Override

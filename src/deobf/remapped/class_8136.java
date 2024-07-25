@@ -16,7 +16,7 @@ public class class_8136 extends Module {
 
    @EventListen
    private void method_37009(class_7767 var1) {
-      if (!client.thePlayer.field_41744) {
+      if (!client.thePlayer.collidedHorizontally) {
          this.field_41672 = false;
       } else if (!client.thePlayer.onGround) {
          if (client.thePlayer.method_37245().field_7333 != (double)((int) client.thePlayer.method_37245().field_7333)) {

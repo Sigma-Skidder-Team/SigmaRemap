@@ -106,8 +106,8 @@ public abstract class class_1899 extends class_4612 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.field_33055) {
          if (this.isAlive()) {
             int var3 = this.method_8634();

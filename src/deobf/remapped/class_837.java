@@ -3,8 +3,8 @@ package remapped;
 public enum class_837 {
    field_4399((var0, var1, var2, var3) -> var2),
    field_4400(
-      (var0, var1, var2, var3) -> var1.method_12173() != var0.field_48996
-               && var1.method_12173() != var0.field_48991
+      (var0, var1, var2, var3) -> var1.getX() != var0.field_48996
+               && var1.getX() != var0.field_48991
                && var1.method_12165() != var0.field_48995
                && var1.method_12165() != var0.field_48993
                && var1.method_12185() != var0.field_48992
@@ -13,8 +13,8 @@ public enum class_837 {
             : var2
    ),
    field_4396(
-      (var0, var1, var2, var3) -> var1.method_12173() != var0.field_48996
-               && var1.method_12173() != var0.field_48991
+      (var0, var1, var2, var3) -> var1.getX() != var0.field_48996
+               && var1.getX() != var0.field_48991
                && var1.method_12165() != var0.field_48995
                && var1.method_12165() != var0.field_48993
                && var1.method_12185() != var0.field_48992

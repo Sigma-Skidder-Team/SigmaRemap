@@ -13,7 +13,7 @@ public class class_337 extends MonsterEntity {
    private float field_1255;
    private float field_1250;
    private float field_1259;
-   private class_5834 field_1258;
+   private LivingEntity field_1258;
    private int field_1261;
    private boolean field_1251;
    public class_8285 field_1260;
@@ -39,7 +39,7 @@ public class class_337 extends MonsterEntity {
       this.goalSelector.addGoal(9, new class_9691(this));
       this.field_1260.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
       var3.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
-      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<class_5834>(this, class_5834.class, 10, true, false, new class_853(this)));
+      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<LivingEntity>(this, LivingEntity.class, 10, true, false, new class_853(this)));
    }
 
    public static MutableAttribute method_1544() {
@@ -51,7 +51,7 @@ public class class_337 extends MonsterEntity {
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       return new class_9811(this, var1);
    }
 
@@ -93,16 +93,16 @@ public class class_337 extends MonsterEntity {
    }
 
    @Nullable
-   public class_5834 method_1552() {
+   public LivingEntity method_1552() {
       if (this.method_1555()) {
          if (!this.world.field_33055) {
-            return this.method_17809();
+            return this.getAttackTarget();
          } else if (this.field_1258 == null) {
             Entity var3 = this.world.method_29534(this.field_41735.<Integer>method_36640(field_1254));
-            if (!(var3 instanceof class_5834)) {
+            if (!(var3 instanceof LivingEntity)) {
                return null;
             } else {
-               this.field_1258 = (class_5834)var3;
+               this.field_1258 = (LivingEntity)var3;
                return this.field_1258;
             }
          } else {
@@ -128,18 +128,18 @@ public class class_337 extends MonsterEntity {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.method_37134() ? class_463.field_2269 : class_463.field_2203;
+   public SoundEvent method_26918() {
+      return !this.method_37134() ? SoundEvents.field_2269 : SoundEvents.field_2203;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return !this.method_37134() ? class_463.field_2370 : class_463.field_2899;
+   public SoundEvent method_26541(DamageSource var1) {
+      return !this.method_37134() ? SoundEvents.field_2370 : SoundEvents.field_2899;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return !this.method_37134() ? class_463.field_2558 : class_463.field_1941;
+   public SoundEvent method_26599() {
+      return !this.method_37134() ? SoundEvents.field_2558 : SoundEvents.field_1941;
    }
 
    @Override
@@ -158,7 +158,7 @@ public class class_337 extends MonsterEntity {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.isAlive()) {
          if (this.world.field_33055) {
             this.field_1256 = this.field_1253;
@@ -215,7 +215,7 @@ public class class_337 extends MonsterEntity {
                   this.field_1261++;
                }
 
-               class_5834 var18 = this.method_1552();
+               LivingEntity var18 = this.method_1552();
                if (var18 != null) {
                   this.method_26865().method_17240(var18, 90.0F, 90.0F);
                   this.method_26865().method_17234();
@@ -267,19 +267,19 @@ public class class_337 extends MonsterEntity {
          }
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
-   public class_8461 method_1554() {
-      return class_463.field_2546;
+   public SoundEvent method_1554() {
+      return SoundEvents.field_2546;
    }
 
    public float method_1547(float var1) {
-      return class_9299.method_42795(var1, this.field_1256, this.field_1253);
+      return MathHelper.method_42795(var1, this.field_1256, this.field_1253);
    }
 
    public float method_1549(float var1) {
-      return class_9299.method_42795(var1, this.field_1259, this.field_1250);
+      return MathHelper.method_42795(var1, this.field_1259, this.field_1250);
    }
 
    public float method_1546(float var1) {
@@ -299,8 +299,8 @@ public class class_337 extends MonsterEntity {
 
    @Override
    public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.method_1553() && !var1.method_28352() && var1.method_28353() instanceof class_5834) {
-         class_5834 var5 = (class_5834)var1.method_28353();
+      if (!this.method_1553() && !var1.method_28352() && var1.method_28353() instanceof LivingEntity) {
+         LivingEntity var5 = (LivingEntity)var1.method_28353();
          if (!var1.method_28367()) {
             var5.attackEntityFrom(DamageSource.method_28364(this), 2.0F);
          }
@@ -324,7 +324,7 @@ public class class_337 extends MonsterEntity {
          this.method_37092(0.1F, var1);
          this.method_37226(class_7412.field_37839, this.method_37098());
          this.method_37215(this.method_37098().method_6209(0.9));
-         if (!this.method_1553() && this.method_17809() == null) {
+         if (!this.method_1553() && this.getAttackTarget() == null) {
             this.method_37215(this.method_37098().method_6214(0.0, -0.005, 0.0));
          }
       } else {

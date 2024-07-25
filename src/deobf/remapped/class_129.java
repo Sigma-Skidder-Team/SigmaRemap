@@ -53,7 +53,7 @@ public abstract class class_129 extends class_7114 {
 
    private void method_397(double var1) {
       double var5 = this.field_319;
-      this.field_319 = class_9299.method_42827(var1, 0.0, 1.0);
+      this.field_319 = MathHelper.clamp(var1, 0.0, 1.0);
       if (var5 != this.field_319) {
          this.method_399();
       }

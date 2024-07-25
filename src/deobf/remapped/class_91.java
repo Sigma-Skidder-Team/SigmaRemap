@@ -74,7 +74,7 @@ public class class_91 extends Entity {
          if (!this.world.field_33055) {
             this.field_41731 = !this.world.method_6682(this);
             if (this.field_41731) {
-               this.method_37160(this.getPosX(), (this.method_37241().field_19937 + this.method_37241().field_19939) / 2.0, this.getPosZ());
+               this.method_37160(this.getPosX(), (this.getBoundingBox().field_19937 + this.getBoundingBox().field_19939) / 2.0, this.getPosZ());
             }
          } else {
             this.field_41731 = false;
@@ -100,13 +100,13 @@ public class class_91 extends Entity {
             }
          }
 
-         boolean var9 = class_9299.method_42847(this.field_41767) != class_9299.method_42847(this.getPosX())
-            || class_9299.method_42847(this.field_41698) != class_9299.method_42847(this.method_37309())
-            || class_9299.method_42847(this.field_41725) != class_9299.method_42847(this.getPosZ());
+         boolean var9 = MathHelper.floor(this.field_41767) != MathHelper.floor(this.getPosX())
+            || MathHelper.floor(this.field_41698) != MathHelper.floor(this.method_37309())
+            || MathHelper.floor(this.field_41725) != MathHelper.floor(this.getPosZ());
          int var10 = !var9 ? 40 : 2;
          if (this.field_41697 % var10 == 0) {
             if (this.world.method_28258(this.method_37075()).method_22007(class_6503.field_33095) && !this.method_37087()) {
-               this.method_37155(class_463.field_2912, 0.4F, 2.0F + this.field_41717.nextFloat() * 0.4F);
+               this.method_37155(SoundEvents.field_2912, 0.4F, 2.0F + this.field_41717.nextFloat() * 0.4F);
             }
 
             if (!this.world.field_33055 && this.method_261()) {
@@ -147,7 +147,7 @@ public class class_91 extends Entity {
    private void method_255() {
       if (this.method_261()) {
          for (class_91 var4 : this.world
-            .<class_91>method_25869(class_91.class, this.method_37241().method_18899(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method_261())) {
+            .<class_91>method_25869(class_91.class, this.getBoundingBox().method_18899(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method_261())) {
             if (var4.method_261()) {
                this.method_263(var4);
                if (this.field_41751) {

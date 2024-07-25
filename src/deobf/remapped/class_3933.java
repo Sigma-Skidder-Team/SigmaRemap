@@ -39,14 +39,14 @@ public class class_3933 extends class_6414 {
          var2.method_43359(
             (PlayerEntity)null,
             var3,
-            class_463.field_2472,
+            SoundEvents.field_2472,
             class_562.field_3322,
             0.5F,
             2.6F + (var2.field_33033.nextFloat() - var2.field_33033.nextFloat()) * 0.8F
          );
          var2.method_28957(
             class_3090.field_15319,
-            (double)var7.method_12173() + 0.5,
+            (double)var7.getX() + 0.5,
             (double)var7.method_12165() + 0.25,
             (double)var7.method_12185() + 0.5,
             8,

@@ -15,7 +15,7 @@ public class class_8323 extends class_1710<class_611> {
       ArrayList var6 = Lists.newArrayList();
 
       for (int var7 = 0; var7 < var1.nextInt(var1.nextInt(var2.method_2873().method_15936(var1)) + 1) + 1; var7++) {
-         int var8 = var1.nextInt(16) + var3.method_12173();
+         int var8 = var1.nextInt(16) + var3.getX();
          int var9 = var1.nextInt(16) + var3.method_12185();
          int var10 = var1.nextInt(120) + 4;
          var6.add(new BlockPos(var8, var10, var9));

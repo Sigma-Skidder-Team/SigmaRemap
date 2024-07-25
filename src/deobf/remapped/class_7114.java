@@ -106,7 +106,7 @@ public abstract class class_7114 extends AbstractGui implements IRenderable, cla
          this.method_32685(),
          this.field_36670 + this.field_36671 / 2,
          this.field_36674 + (this.field_36681 - 8) / 2,
-         var10 | class_9299.method_42816(this.field_36680 * 255.0F) << 24
+         var10 | MathHelper.ceil(this.field_36680 * 255.0F) << 24
       );
    }
 
@@ -205,7 +205,7 @@ public abstract class class_7114 extends AbstractGui implements IRenderable, cla
    }
 
    public void method_32692(class_3541 var1) {
-      var1.play(class_4949.method_22675(class_463.field_1995, 1.0F));
+      var1.play(class_4949.method_22675(SoundEvents.field_1995, 1.0F));
    }
 
    public int method_32699() {

@@ -46,7 +46,7 @@ public class class_900 extends Entity {
                this.getPosX(),
                this.method_37309(),
                this.getPosZ(),
-               class_463.field_1955,
+               SoundEvents.field_1955,
                class_562.field_3330,
                10000.0F,
                0.8F + this.field_41717.nextFloat() * 0.2F
@@ -57,7 +57,7 @@ public class class_900 extends Entity {
                this.getPosX(),
                this.method_37309(),
                this.getPosZ(),
-               class_463.field_2042,
+               SoundEvents.field_2042,
                class_562.field_3330,
                2.0F,
                0.5F + this.field_41717.nextFloat() * 0.2F
@@ -111,7 +111,7 @@ public class class_900 extends Entity {
    }
 
    private void method_3859(int var1) {
-      if (!this.field_4620 && !this.world.field_33055 && this.world.method_29537().method_1285(class_291.field_1035)) {
+      if (!this.field_4620 && !this.world.field_33055 && this.world.getGameRules().getBoolean(GameRules.field_1035)) {
          BlockPos var4 = this.method_37075();
          class_2522 var5 = class_9476.method_43768(this.world, var4);
          if (this.world.method_28262(var4).method_8345() && var5.method_8309(this.world, var4)) {

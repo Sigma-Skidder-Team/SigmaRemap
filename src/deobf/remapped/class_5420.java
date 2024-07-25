@@ -19,7 +19,7 @@ public class class_5420 extends class_2255<class_9317> {
       float var10 = 0.0F;
       float var11 = 0.0F;
       if (var1.field_47584) {
-         float var12 = class_9299.method_42818(var9 / (float) Math.PI) / (4.0F + var9 / 3.0F);
+         float var12 = MathHelper.sin(var9 / (float) Math.PI) / (4.0F + var9 / 3.0F);
          if (var1.field_47577 != Direction.field_818) {
             if (var1.field_47577 != Direction.field_800) {
                if (var1.field_47577 != Direction.field_804) {

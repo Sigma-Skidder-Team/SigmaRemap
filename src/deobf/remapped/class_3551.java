@@ -13,9 +13,9 @@ public class class_3551 extends class_4109 {
 
    @Override
    public void method_19084() {
-      this.method_26561(Attributes.MAX_HEALTH).method_45006((double)this.method_19082());
-      this.method_26561(Attributes.MOVEMENT_SPEED).method_45006(this.method_19087());
-      this.method_26561(Attributes.field_37464).method_45006(this.method_19046());
+      this.getAttribute(Attributes.MAX_HEALTH).setBaseValue((double)this.method_19082());
+      this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(this.method_19087());
+      this.getAttribute(Attributes.field_37464).setBaseValue(this.method_19046());
    }
 
    @Override
@@ -88,11 +88,11 @@ public class class_3551 extends class_4109 {
    private void method_16522(ItemStack var1) {
       this.method_16527(var1);
       if (!this.world.field_33055) {
-         this.method_26561(Attributes.field_37473).method_45003(field_17373);
+         this.getAttribute(Attributes.field_37473).method_45003(field_17373);
          if (this.method_19069(var1)) {
             int var4 = ((class_2706)var1.method_27960()).method_12198();
             if (var4 != 0) {
-               this.method_26561(Attributes.field_37473).method_45011(new class_9343(field_17373, "Horse armor bonus", (double)var4, class_9342.field_47679));
+               this.getAttribute(Attributes.field_37473).method_45011(new class_9343(field_17373, "Horse armor bonus", (double)var4, class_9342.field_47679));
             }
          }
       }
@@ -104,7 +104,7 @@ public class class_3551 extends class_4109 {
       super.method_36982(var1);
       ItemStack var5 = this.method_16523();
       if (this.field_41697 > 20 && this.method_19069(var5) && var4 != var5) {
-         this.method_37155(class_463.field_2183, 0.5F, 1.0F);
+         this.method_37155(SoundEvents.field_2183, 0.5F, 1.0F);
       }
    }
 
@@ -112,38 +112,38 @@ public class class_3551 extends class_4109 {
    public void method_19053(class_4618 var1) {
       super.method_19053(var1);
       if (this.field_41717.nextInt(10) == 0) {
-         this.method_37155(class_463.field_2148, var1.method_21395() * 0.6F, var1.method_21393());
+         this.method_37155(SoundEvents.field_2148, var1.method_21395() * 0.6F, var1.method_21393());
       }
    }
 
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       super.method_26918();
-      return class_463.field_2496;
+      return SoundEvents.field_2496;
    }
 
    @Override
-   public class_8461 method_26599() {
+   public SoundEvent method_26599() {
       super.method_26599();
-      return class_463.field_2149;
+      return SoundEvents.field_2149;
    }
 
    @Nullable
    @Override
-   public class_8461 method_19083() {
-      return class_463.field_2153;
+   public SoundEvent method_19083() {
+      return SoundEvents.field_2153;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
+   public SoundEvent method_26541(DamageSource var1) {
       super.method_26541(var1);
-      return class_463.field_2451;
+      return SoundEvents.field_2451;
    }
 
    @Override
-   public class_8461 method_19056() {
+   public SoundEvent method_19056() {
       super.method_19056();
-      return class_463.field_2113;
+      return SoundEvents.field_2113;
    }
 
    @Override

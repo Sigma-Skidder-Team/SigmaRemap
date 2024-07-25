@@ -4,7 +4,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 public final class class_2511 extends class_1762<class_3551, class_3192<class_3551>> {
-   private static final Map<class_2185, Identifier> field_12460 = Util.<Map<class_2185, Identifier>>method_44659(
+   private static final Map<class_2185, Identifier> field_12460 = Util.<Map<class_2185, Identifier>>make(
       Maps.newEnumMap(class_2185.class), var0 -> {
          var0.put(class_2185.field_10876, new Identifier("textures/entity/horse/horse_white.png"));
          var0.put(class_2185.field_10868, new Identifier("textures/entity/horse/horse_creamy.png"));

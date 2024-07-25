@@ -14,8 +14,8 @@ public class class_8510 extends class_6541 {
    private static final List<class_2522> field_43559 = StreamSupport.<class_6414>stream(class_8669.field_44462.spliterator(), false)
       .<class_2522>flatMap(var0 -> var0.method_29306().method_36441().stream())
       .collect(Collectors.<class_2522>toList());
-   private static final int field_43565 = class_9299.method_42816(class_9299.method_42843((float)field_43559.size()));
-   private static final int field_43563 = class_9299.method_42816((float)field_43559.size() / (float)field_43565);
+   private static final int field_43565 = MathHelper.ceil(MathHelper.sqrt((float)field_43559.size()));
+   private static final int field_43563 = MathHelper.ceil((float)field_43559.size() / (float)field_43565);
    public static final class_2522 field_43564 = class_4783.field_23184.method_29260();
    public static final class_2522 field_43562 = class_4783.field_23207.method_29260();
    private final class_8669<class_6325> field_43561;
@@ -86,7 +86,7 @@ public class class_8510 extends class_6541 {
          var0 /= 2;
          var1 /= 2;
          if (var0 <= field_43565 && var1 <= field_43563) {
-            int var5 = class_9299.method_42805(var0 * field_43565 + var1);
+            int var5 = MathHelper.abs(var0 * field_43565 + var1);
             if (var5 < field_43559.size()) {
                var4 = field_43559.get(var5);
             }

@@ -16,7 +16,7 @@ public class class_8568 extends class_6017 {
             this.field_9479.getPosX(),
             this.field_9479.method_37309(),
             this.field_9479.getPosZ(),
-            class_463.field_1942,
+            SoundEvents.field_1942,
             this.field_9479.method_37197(),
             2.5F,
             0.8F + this.field_9479.method_26594().nextFloat() * 0.3F,

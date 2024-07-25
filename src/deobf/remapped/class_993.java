@@ -75,7 +75,7 @@ public class class_993 extends class_1859 {
          float var14 = var12 + var9 / var11 * 16.0F;
          float var15 = var13 - var10 / var11 * 16.0F;
          System.out.println(var10 / var11 + " : " + var9 / var11);
-         this.method_4321(var1, var2, new class_2700(Math.round(var14), 0, Math.round(var15)));
+         this.method_4321(var1, var2, new Vector3i(Math.round(var14), 0, Math.round(var15)));
          return false;
       } else {
          this.method_4325();
@@ -181,7 +181,7 @@ public class class_993 extends class_1859 {
       this.field_5062.add(var1);
    }
 
-   public final void method_4321(int var1, int var2, class_2700 var3) {
+   public final void method_4321(int var1, int var2, Vector3i var3) {
       for (class_3442 var7 : this.field_5062) {
          var7.method_15880(this, var1, var2, var3);
       }

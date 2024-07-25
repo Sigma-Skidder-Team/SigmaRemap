@@ -47,7 +47,7 @@ public class class_2104 extends class_5837 {
    }
 
    private static ItemStack method_9864(ItemStack var0, class_4382 var1, Random var2) {
-      int var5 = class_9299.method_42824(var2, var1.method_20425(), var1.method_20417());
+      int var5 = MathHelper.nextInt(var2, var1.method_20425(), var1.method_20417());
       if (var0.method_27960() != class_4897.field_24551) {
          var0.method_28031(var1, var5);
       } else {

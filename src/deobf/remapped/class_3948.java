@@ -35,9 +35,9 @@ public class class_3948 extends class_6017 {
          class_1343 var4 = new class_1343(var3.getPosX() - this.field_9479.getPosX(), 0.0, var3.getPosZ() - this.field_9479.getPosZ())
             .method_6213();
          class_1343 var5 = new class_1343(
-               (double)class_9299.method_42818(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)),
+               (double) MathHelper.sin(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)),
                0.0,
-               (double)(-class_9299.method_42840(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)))
+               (double)(-MathHelper.cos(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)))
             )
             .method_6213();
          float var6 = (float)var5.method_6206(var4);
@@ -45,13 +45,13 @@ public class class_3948 extends class_6017 {
          if (var7 < 0.0F || var7 > 10.0F) {
             double var8 = var3.getPosX() - this.field_9479.field_13542.getPosX();
             double var10 = var3.getPosZ() - this.field_9479.field_13542.getPosZ();
-            double var12 = class_9299.method_42827(
-               class_9299.method_42809(180.0 - class_9299.method_42821(var8, var10) * 180.0F / (float)Math.PI - (double)this.field_9479.rotationYaw),
+            double var12 = MathHelper.clamp(
+               MathHelper.wrapDegrees(180.0 - MathHelper.method_42821(var8, var10) * 180.0F / (float)Math.PI - (double)this.field_9479.rotationYaw),
                -100.0,
                100.0
             );
             this.field_9479.field_13546 *= 0.8F;
-            float var14 = class_9299.method_42842(var8 * var8 + var10 * var10) + 1.0F;
+            float var14 = MathHelper.sqrt(var8 * var8 + var10 * var10) + 1.0F;
             float var15 = var14;
             if (var14 > 40.0F) {
                var14 = 40.0F;

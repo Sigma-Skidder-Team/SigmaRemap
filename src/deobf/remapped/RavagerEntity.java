@@ -66,12 +66,12 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    @Override
-   public class_8461 method_18591() {
-      return class_463.field_2326;
+   public SoundEvent getRaidLossSound() {
+      return SoundEvents.ENTITY_RAVAGER_CELEBRATE;
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       return new Navigator(this, var1);
    }
 
@@ -93,41 +93,41 @@ public class RavagerEntity extends AbstractRaiderEntity {
    @Nullable
    @Override
    public Entity getControllingPassenger() {
-      return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
+      return !this.getPassengers().isEmpty() ? this.getPassengers().get(0) : null;
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (this.isAlive()) {
-         if (!this.method_26468()) {
-            double var3 = this.method_17809() == null ? 0.3 : 0.35;
-            double var5 = this.method_26561(Attributes.MOVEMENT_SPEED).method_44996();
-            this.method_26561(Attributes.MOVEMENT_SPEED).method_45006(class_9299.method_42794(0.1, var5, var3));
+         if (!this.isMovementBlocked()) {
+            double var3 = this.getAttackTarget() == null ? 0.3 : 0.35;
+            double var5 = this.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
+            this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(MathHelper.lerp(0.1, var5, var3));
          } else {
-            this.method_26561(Attributes.MOVEMENT_SPEED).method_45006(0.0);
+            this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.0);
          }
 
-         if (this.field_41744 && this.world.method_29537().method_1285(class_291.field_1047)) {
-            boolean var7 = false;
-            Box var8 = this.method_37241().method_18898(0.2);
+         if (this.collidedHorizontally && this.world.getGameRules().getBoolean(GameRules.field_1047)) {
+            boolean flag = false;
+            Box var8 = this.getBoundingBox().grow(0.2);
 
             for (BlockPos var10 : BlockPos.method_6075(
-               class_9299.method_42847(var8.field_19941),
-               class_9299.method_42847(var8.field_19937),
-               class_9299.method_42847(var8.field_19938),
-               class_9299.method_42847(var8.field_19940),
-               class_9299.method_42847(var8.field_19939),
-               class_9299.method_42847(var8.field_19942)
+               MathHelper.floor(var8.field_19941),
+               MathHelper.floor(var8.field_19937),
+               MathHelper.floor(var8.field_19938),
+               MathHelper.floor(var8.field_19940),
+               MathHelper.floor(var8.field_19939),
+               MathHelper.floor(var8.field_19942)
             )) {
                class_2522 var11 = this.world.method_28262(var10);
                class_6414 var12 = var11.method_8360();
                if (var12 instanceof class_4423) {
-                  var7 = this.world.method_7511(var10, true, this) || var7;
+                  flag = this.world.method_7511(var10, true, this) || flag;
                }
             }
 
-            if (!var7 && this.onGround) {
+            if (!flag && this.onGround) {
                this.method_26595();
             }
          }
@@ -147,7 +147,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
             this.stunTick--;
             this.method_35659();
             if (this.stunTick == 0) {
-               this.method_37155(class_463.field_2440, 1.0F, 1.0F);
+               this.method_37155(SoundEvents.field_2440, 1.0F, 1.0F);
                this.roarTick = 20;
             }
          }
@@ -168,8 +168,8 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    @Override
-   public boolean method_26468() {
-      return super.method_26468() || this.attackTick > 0 || this.stunTick > 0 || this.roarTick > 0;
+   public boolean isMovementBlocked() {
+      return super.isMovementBlocked() || this.attackTick > 0 || this.stunTick > 0 || this.roarTick > 0;
    }
 
    @Override
@@ -184,7 +184,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
             this.method_35658(var1);
          } else {
             this.stunTick = 40;
-            this.method_37155(class_463.field_2615, 1.0F, 1.0F);
+            this.method_37155(SoundEvents.field_2615, 1.0F, 1.0F);
             this.world.method_29587(this, (byte)39);
             var1.method_37183(this);
          }
@@ -195,7 +195,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
 
    private void method_35657() {
       if (this.isAlive()) {
-         for (Entity var4 : this.world.<Entity>method_25869(LivingEntity.class, this.method_37241().method_18898(4.0), field_40350)) {
+         for (Entity var4 : this.world.<Entity>method_25869(LivingEntity.class, this.getBoundingBox().grow(4.0), field_40350)) {
             if (!(var4 instanceof class_7637)) {
                var4.attackEntityFrom(DamageSource.method_28345(this), 6.0F);
             }
@@ -203,7 +203,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
             this.method_35658(var4);
          }
 
-         class_1343 var11 = this.method_37241().method_18926();
+         class_1343 var11 = this.getBoundingBox().method_18926();
 
          for (int var12 = 0; var12 < 40; var12++) {
             double var5 = this.field_41717.nextGaussian() * 0.2;
@@ -229,7 +229,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
          }
       } else {
          this.attackTick = 10;
-         this.method_37155(class_463.field_2738, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2738, 1.0F, 1.0F);
       }
 
       super.method_37336(var1);
@@ -251,34 +251,34 @@ public class RavagerEntity extends AbstractRaiderEntity {
    public boolean method_26442(Entity var1) {
       this.attackTick = 10;
       this.world.method_29587(this, (byte)4);
-      this.method_37155(class_463.field_2738, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2738, 1.0F, 1.0F);
       return super.method_26442(var1);
    }
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2412;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2412;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2520;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2520;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2504;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2504;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2392, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2392, 0.15F, 1.0F);
    }
 
    @Override
    public boolean method_26855(class_4924 var1) {
-      return !var1.method_22550(this.method_37241());
+      return !var1.method_22550(this.getBoundingBox());
    }
 
    @Override

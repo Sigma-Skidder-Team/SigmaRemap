@@ -23,6 +23,6 @@ public class class_806 extends class_225 {
 
    @Override
    public double method_954(double var1) {
-      return class_9299.method_42827(var1, this.field_4303, this.field_4304);
+      return MathHelper.clamp(var1, this.field_4303, this.field_4304);
    }
 }

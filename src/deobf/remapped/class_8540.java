@@ -35,17 +35,17 @@ public class class_8540 implements class_2995 {
       for (Entry var15 : this.field_43712.entrySet()) {
          BlockPos var16 = (BlockPos)var15.getKey();
          BlockPos var17 = (BlockPos)var15.getValue();
-         float var18 = (float)(var17.method_12173() * 128 % 256) / 256.0F;
+         float var18 = (float)(var17.getX() * 128 % 256) / 256.0F;
          float var19 = (float)(var17.method_12165() * 128 % 256) / 256.0F;
          float var20 = (float)(var17.method_12185() * 128 % 256) / 256.0F;
          float var21 = this.field_43711.get(var16);
          if (var11.method_12171(var16, 160.0)) {
             WorldRenderer.method_20064(
                var13,
-               (double)((float)var16.method_12173() + 0.5F) - var3 - (double)var21,
+               (double)((float)var16.getX() + 0.5F) - var3 - (double)var21,
                (double)((float)var16.method_12165() + 0.5F) - var5 - (double)var21,
                (double)((float)var16.method_12185() + 0.5F) - var7 - (double)var21,
-               (double)((float)var16.method_12173() + 0.5F) - var3 + (double)var21,
+               (double)((float)var16.getX() + 0.5F) - var3 + (double)var21,
                (double)((float)var16.method_12165() + 0.5F) - var5 + (double)var21,
                (double)((float)var16.method_12185() + 0.5F) - var7 + (double)var21,
                var18,
@@ -60,10 +60,10 @@ public class class_8540 implements class_2995 {
          if (var11.method_12171(var23, 160.0)) {
             WorldRenderer.method_20064(
                var13,
-               (double)var23.method_12173() - var3,
+               (double)var23.getX() - var3,
                (double)var23.method_12165() - var5,
                (double)var23.method_12185() - var7,
-               (double)((float)var23.method_12173() + 1.0F) - var3,
+               (double)((float)var23.getX() + 1.0F) - var3,
                (double)((float)var23.method_12165() + 1.0F) - var5,
                (double)((float)var23.method_12185() + 1.0F) - var7,
                1.0F,

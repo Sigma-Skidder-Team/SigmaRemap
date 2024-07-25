@@ -21,7 +21,7 @@ public class class_1052 extends class_3599 {
       LivingEntity var3 = this.field_5778.method_26531();
       return this.field_5778.method_18589() == null
          && this.field_5778.method_21352()
-         && this.field_5778.method_17809() != null
+         && this.field_5778.getAttackTarget() != null
          && !this.field_5778.method_26892()
          && (var3 == null || var3.getType() != EntityType.field_34300);
    }
@@ -33,19 +33,19 @@ public class class_1052 extends class_3599 {
 
       for (AbstractRaiderEntity var4 : this.field_5778
          .world
-         .<AbstractRaiderEntity>method_25863(AbstractRaiderEntity.class, this.field_5779, this.field_5778, this.field_5778.method_37241().method_18899(8.0, 8.0, 8.0))) {
-         var4.method_26860(this.field_5778.method_17809());
+         .<AbstractRaiderEntity>method_25863(AbstractRaiderEntity.class, this.field_5779, this.field_5778, this.field_5778.getBoundingBox().method_18899(8.0, 8.0, 8.0))) {
+         var4.method_26860(this.field_5778.getAttackTarget());
       }
    }
 
    @Override
    public void method_16793() {
       super.method_16793();
-      LivingEntity var3 = this.field_5778.method_17809();
+      LivingEntity var3 = this.field_5778.getAttackTarget();
       if (var3 != null) {
          for (AbstractRaiderEntity var5 : this.field_5778
             .world
-            .<AbstractRaiderEntity>method_25863(AbstractRaiderEntity.class, this.field_5779, this.field_5778, this.field_5778.method_37241().method_18899(8.0, 8.0, 8.0))) {
+            .<AbstractRaiderEntity>method_25863(AbstractRaiderEntity.class, this.field_5779, this.field_5778, this.field_5778.getBoundingBox().method_18899(8.0, 8.0, 8.0))) {
             var5.method_26860(var3);
             var5.method_26891(true);
          }
@@ -56,7 +56,7 @@ public class class_1052 extends class_3599 {
 
    @Override
    public void method_16794() {
-      LivingEntity var3 = this.field_5778.method_17809();
+      LivingEntity var3 = this.field_5778.getAttackTarget();
       if (var3 != null) {
          if (!(this.field_5778.method_37275(var3) > (double)this.field_5775)) {
             this.field_5778.method_26891(true);

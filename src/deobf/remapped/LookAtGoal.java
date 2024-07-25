@@ -9,14 +9,14 @@ public class LookAtGoal extends class_3599 {
    public final float field_21566;
    private int field_21564;
    public final float field_21565;
-   public final Class<? extends class_5834> field_21567;
+   public final Class<? extends LivingEntity> field_21567;
    public final class_4931 field_21569;
 
-   public LookAtGoal(MobEntity var1, Class<? extends class_5834> var2, float var3) {
+   public LookAtGoal(MobEntity var1, Class<? extends LivingEntity> var2, float var3) {
       this(var1, var2, var3, 0.02F);
    }
 
-   public LookAtGoal(MobEntity var1, Class<? extends class_5834> var2, float var3, float var4) {
+   public LookAtGoal(MobEntity var1, Class<? extends LivingEntity> var2, float var3, float var4) {
       this.field_21568 = var1;
       this.field_21567 = var2;
       this.field_21566 = var3;
@@ -37,21 +37,21 @@ public class LookAtGoal extends class_3599 {
    @Override
    public boolean method_16795() {
       if (!(this.field_21568.method_26594().nextFloat() >= this.field_21565)) {
-         if (this.field_21568.method_17809() != null) {
-            this.field_21563 = this.field_21568.method_17809();
+         if (this.field_21568.getAttackTarget() != null) {
+            this.field_21563 = this.field_21568.getAttackTarget();
          }
 
          if (this.field_21567 != PlayerEntity.class) {
             this.field_21563 = this.field_21568
                .world
-               .<class_5834>method_25872(
+               .<LivingEntity>method_25872(
                   this.field_21567,
                   this.field_21569,
                   this.field_21568,
                   this.field_21568.getPosX(),
                   this.field_21568.method_37388(),
                   this.field_21568.getPosZ(),
-                  this.field_21568.method_37241().method_18899((double)this.field_21566, 3.0, (double)this.field_21566)
+                  this.field_21568.getBoundingBox().method_18899((double)this.field_21566, 3.0, (double)this.field_21566)
                );
          } else {
             this.field_21563 = this.field_21568

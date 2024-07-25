@@ -3,7 +3,7 @@ package remapped;
 public abstract class class_6165 extends class_1050 implements class_6483 {
    private boolean field_31552;
 
-   public class_6165(class_8461 var1, class_562 var2) {
+   public class_6165(SoundEvent var1, class_562 var2) {
       super(var1, var2);
    }
 

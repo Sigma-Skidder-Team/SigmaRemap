@@ -15,7 +15,7 @@ public class LongJumpModule extends SecondModule {
       if (var1 < 0 || var1 >= var4.length) {
          return client.thePlayer.method_37098().field_7333;
       } else {
-         return class_314.method_1434() && !client.thePlayer.field_41744 ? var4[var1] : var5[var1];
+         return class_314.method_1434() && !client.thePlayer.collidedHorizontally ? var4[var1] : var5[var1];
       }
    }
 

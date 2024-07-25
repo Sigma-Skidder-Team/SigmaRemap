@@ -8,7 +8,7 @@ public class class_6451 extends class_4314 {
    private static String[] field_32902;
    public static final class_6162 field_32900 = class_3266.field_16180;
    public static final class_6720 field_32899 = class_6023.field_30746;
-   private static final Map<class_2451, class_6191> field_32901 = Util.<Map<class_2451, class_6191>>method_44659(
+   private static final Map<class_2451, class_6191> field_32901 = Util.<Map<class_2451, class_6191>>make(
       new Object2ObjectOpenHashMap(), var0 -> var0.defaultReturnValue(new class_9446())
    );
 

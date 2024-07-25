@@ -31,7 +31,7 @@ public class class_9512 {
                .apply(var0, class_9512::new)
       )
       .stable();
-   private static final Map<class_5390<?>, class_7865<?, ?>> field_48430 = Util.<Map<class_5390<?>, class_7865<?, ?>>>method_44659(
+   private static final Map<class_5390<?>, class_7865<?, ?>> field_48430 = Util.<Map<class_5390<?>, class_7865<?, ?>>>make(
       Maps.newHashMap(), var0 -> {
          var0.put(class_5390.field_27498, class_8390.field_42923);
          var0.put(class_5390.field_27516, class_8390.field_42937);

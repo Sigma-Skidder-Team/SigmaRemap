@@ -10,7 +10,7 @@ public class class_6612 extends class_6249 {
    @Override
    public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = class_2143.method_10014(
-         var1, class_9299.method_42847(var2.getPosX()), class_9299.method_42847(var2.getPosZ()), (byte)0, true, false
+         var1, MathHelper.floor(var2.getPosX()), MathHelper.floor(var2.getPosZ()), (byte)0, true, false
       );
       ItemStack var7 = var2.method_26617(var3);
       if (!var2.playerAbilities.isCreativeMode) {
@@ -18,7 +18,7 @@ public class class_6612 extends class_6249 {
       }
 
       var2.method_3211(class_6234.field_31907.method_43790(this));
-      var2.method_37155(class_463.field_2627, 1.0F, 1.0F);
+      var2.method_37155(SoundEvents.field_2627, 1.0F, 1.0F);
       if (!var7.method_28022()) {
          if (!var2.inventory.method_32414(var6.method_27973())) {
             var2.method_3153(var6, false);

@@ -43,7 +43,7 @@ public class class_7253 extends class_8285 {
    @Nullable
    private class_1343 method_33154() {
       class_6331 var3 = (class_6331)this.field_42465.world;
-      List var4 = var3.<class_7666>method_29583(EntityType.field_34276, this.field_42465.method_37241().method_18898(32.0), this::method_33153);
+      List var4 = var3.<class_7666>method_29583(EntityType.field_34276, this.field_42465.getBoundingBox().grow(32.0), this::method_33153);
       if (!var4.isEmpty()) {
          class_7666 var5 = (class_7666)var4.get(this.field_42465.world.field_33033.nextInt(var4.size()));
          class_1343 var6 = var5.method_37245();

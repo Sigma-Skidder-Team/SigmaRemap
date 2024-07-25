@@ -7,7 +7,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import java.util.Map;
 
 public class class_903 extends class_2255<class_4797> {
-   private static final Map<class_558, class_1570> field_4633 = Util.<Map<class_558, class_1570>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_558, class_1570> field_4633 = Util.<Map<class_558, class_1570>>make(Maps.newHashMap(), var0 -> {
       class_1570 var3 = new class_1570(0, 0, 64, 32);
       class_600 var4 = new class_600();
       class_7840 var5 = new class_7840(0.0F);
@@ -18,7 +18,7 @@ public class class_903 extends class_2255<class_4797> {
       var0.put(class_8469.field_43282, var3);
       var0.put(class_8469.field_43286, var5);
    });
-   private static final Map<class_558, Identifier> field_4632 = Util.<Map<class_558, Identifier>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_558, Identifier> field_4632 = Util.<Map<class_558, Identifier>>make(Maps.newHashMap(), var0 -> {
       var0.put(class_8469.field_43284, new Identifier("textures/entity/skeleton/skeleton.png"));
       var0.put(class_8469.field_43285, new Identifier("textures/entity/skeleton/wither_skeleton.png"));
       var0.put(class_8469.field_43281, new Identifier("textures/entity/zombie/zombie.png"));

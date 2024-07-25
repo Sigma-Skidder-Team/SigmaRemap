@@ -45,7 +45,7 @@ public class class_3213 extends class_8601 {
       if (var1.<Boolean>method_10313(field_16027)) {
          Direction var7 = var1.<Direction>method_10313(field_16028).method_1046();
          double var8 = 0.27;
-         double var10 = (double)var3.method_12173() + 0.5 + (var4.nextDouble() - 0.5) * 0.2 + 0.27 * (double)var7.method_1041();
+         double var10 = (double)var3.getX() + 0.5 + (var4.nextDouble() - 0.5) * 0.2 + 0.27 * (double)var7.method_1041();
          double var12 = (double)var3.method_12165() + 0.7 + (var4.nextDouble() - 0.5) * 0.2 + 0.22;
          double var14 = (double)var3.method_12185() + 0.5 + (var4.nextDouble() - 0.5) * 0.2 + 0.27 * (double)var7.method_1034();
          var2.method_43361(this.field_19181, var10, var12, var14, 0.0, 0.0, 0.0);

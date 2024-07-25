@@ -32,10 +32,10 @@ public class class_6296 extends class_7067<class_3942> {
          }
 
          float var16 = var9.method_26533(var3);
-         float var17 = class_9299.method_42818(class_9299.method_42843(var16) * (float) Math.PI);
-         float var18 = class_9299.method_42795(var3, var9.field_29611, var9.field_29605) * (float) (Math.PI / 180.0);
-         double var19 = (double)class_9299.method_42818(var18);
-         double var21 = (double)class_9299.method_42840(var18);
+         float var17 = MathHelper.sin(MathHelper.sqrt(var16) * (float) Math.PI);
+         float var18 = MathHelper.method_42795(var3, var9.field_29611, var9.field_29605) * (float) (Math.PI / 180.0);
+         double var19 = (double) MathHelper.sin(var18);
+         double var21 = (double) MathHelper.cos(var18);
          double var23 = (double)var14 * 0.35;
          double var25 = 0.8;
          double var27;
@@ -47,24 +47,24 @@ public class class_6296 extends class_7067<class_3942> {
             double var33 = this.field_36493.gameOptions.field_45543;
             var33 /= 100.0;
             class_1343 var35 = new class_1343((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
-            var35 = var35.method_6212(-class_9299.method_42795(var3, var9.field_41762, var9.rotationPitch) * (float) (Math.PI / 180.0));
-            var35 = var35.method_6192(-class_9299.method_42795(var3, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
+            var35 = var35.method_6212(-MathHelper.method_42795(var3, var9.field_41762, var9.rotationPitch) * (float) (Math.PI / 180.0));
+            var35 = var35.method_6192(-MathHelper.method_42795(var3, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
             var35 = var35.method_6192(var17 * 0.5F);
             var35 = var35.method_6212(-var17 * 0.7F);
-            var27 = class_9299.method_42794((double)var3, var9.field_41767, var9.getPosX()) + var35.field_7336;
-            var29 = class_9299.method_42794((double)var3, var9.field_41698, var9.method_37309()) + var35.field_7333;
-            var31 = class_9299.method_42794((double)var3, var9.field_41725, var9.getPosZ()) + var35.field_7334;
+            var27 = MathHelper.lerp((double)var3, var9.field_41767, var9.getPosX()) + var35.field_7336;
+            var29 = MathHelper.lerp((double)var3, var9.field_41698, var9.method_37309()) + var35.field_7333;
+            var31 = MathHelper.lerp((double)var3, var9.field_41725, var9.getPosZ()) + var35.field_7334;
             var36 = var9.method_37277();
          } else {
-            var27 = class_9299.method_42794((double)var3, var9.field_41767, var9.getPosX()) - var21 * var23 - var19 * 0.8;
+            var27 = MathHelper.lerp((double)var3, var9.field_41767, var9.getPosX()) - var21 * var23 - var19 * 0.8;
             var29 = var9.field_41698 + (double)var9.method_37277() + (var9.method_37309() - var9.field_41698) * (double)var3 - 0.45;
-            var31 = class_9299.method_42794((double)var3, var9.field_41725, var9.getPosZ()) - var19 * var23 + var21 * 0.8;
+            var31 = MathHelper.lerp((double)var3, var9.field_41725, var9.getPosZ()) - var19 * var23 + var21 * 0.8;
             var36 = !var9.method_37382() ? 0.0F : -0.1875F;
          }
 
-         double var49 = class_9299.method_42794((double)var3, var1.field_41767, var1.getPosX());
-         double var37 = class_9299.method_42794((double)var3, var1.field_41698, var1.method_37309()) + 0.25;
-         double var39 = class_9299.method_42794((double)var3, var1.field_41725, var1.getPosZ());
+         double var49 = MathHelper.lerp((double)var3, var1.field_41767, var1.getPosX());
+         double var37 = MathHelper.lerp((double)var3, var1.field_41698, var1.method_37309()) + 0.25;
+         double var39 = MathHelper.lerp((double)var3, var1.field_41725, var1.getPosZ());
          float var41 = (float)(var27 - var49);
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);

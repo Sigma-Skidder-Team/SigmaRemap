@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_3787<T extends class_5834, M extends class_3169<T>> extends class_5105<T, M> {
+public class class_3787<T extends LivingEntity, M extends class_3169<T>> extends class_5105<T, M> {
    private static final Identifier field_18505 = new Identifier("textures/entity/bee/bee_stinger.png");
 
    public class_3787(class_6353<T, M> var1) {
@@ -14,7 +14,7 @@ public class class_3787<T extends class_5834, M extends class_3169<T>> extends c
 
    @Override
    public void method_23424(class_7966 var1, class_2565 var2, int var3, Entity var4, float var5, float var6, float var7, float var8) {
-      float var11 = class_9299.method_42843(var5 * var5 + var7 * var7);
+      float var11 = MathHelper.sqrt(var5 * var5 + var7 * var7);
       float var12 = (float)(Math.atan2((double)var5, (double)var7) * 180.0F / (float)Math.PI);
       float var13 = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);
       var1.method_36065(0.0, 0.0, 0.0);

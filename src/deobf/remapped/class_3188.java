@@ -20,12 +20,12 @@ public class class_3188 implements class_1808 {
    public class_1343 method_8027(class_9155 var1) {
       class_4895 var4 = var1.method_42174();
       class_1343 var5 = var1.method_42181().method_28188(var1);
-      float var6 = class_9299.method_42840((var4.field_24329 + 90.0F) * (float) (Math.PI / 180.0));
-      float var7 = class_9299.method_42818((var4.field_24329 + 90.0F) * (float) (Math.PI / 180.0));
-      float var8 = class_9299.method_42840(-var4.field_24326 * (float) (Math.PI / 180.0));
-      float var9 = class_9299.method_42818(-var4.field_24326 * (float) (Math.PI / 180.0));
-      float var10 = class_9299.method_42840((-var4.field_24326 + 90.0F) * (float) (Math.PI / 180.0));
-      float var11 = class_9299.method_42818((-var4.field_24326 + 90.0F) * (float) (Math.PI / 180.0));
+      float var6 = MathHelper.cos((var4.field_24329 + 90.0F) * (float) (Math.PI / 180.0));
+      float var7 = MathHelper.sin((var4.field_24329 + 90.0F) * (float) (Math.PI / 180.0));
+      float var8 = MathHelper.cos(-var4.field_24326 * (float) (Math.PI / 180.0));
+      float var9 = MathHelper.sin(-var4.field_24326 * (float) (Math.PI / 180.0));
+      float var10 = MathHelper.cos((-var4.field_24326 + 90.0F) * (float) (Math.PI / 180.0));
+      float var11 = MathHelper.sin((-var4.field_24326 + 90.0F) * (float) (Math.PI / 180.0));
       class_1343 var12 = new class_1343((double)(var6 * var8), (double)var9, (double)(var7 * var8));
       class_1343 var13 = new class_1343((double)(var6 * var10), (double)var11, (double)(var7 * var10));
       class_1343 var14 = var12.method_6196(var13).method_6209(-1.0);

@@ -18,7 +18,7 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
       }
 
       this.field_46970 = this.field_46971;
-      int var3 = this.field_18358.method_12173();
+      int var3 = this.field_18358.getX();
       int var4 = this.field_18358.method_12165();
       int var5 = this.field_18358.method_12185();
       float var6 = 0.1F;
@@ -31,7 +31,7 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
                var7,
                (double)var4 + 0.5,
                var9,
-               class_463.field_2730,
+               SoundEvents.field_2730,
                class_562.field_3322,
                0.5F,
                this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
@@ -60,7 +60,7 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
                   var15,
                   (double)var4 + 0.5,
                   var13,
-                  class_463.field_2185,
+                  SoundEvents.field_2185,
                   class_562.field_3322,
                   0.5F,
                   this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
@@ -103,7 +103,7 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
       return this.field_18364.method_28260(this.field_18358) == this
          ? !(
             var1.method_37273(
-                  (double)this.field_18358.method_12173() + 0.5, (double)this.field_18358.method_12165() + 0.5, (double)this.field_18358.method_12185() + 0.5
+                  (double)this.field_18358.getX() + 0.5, (double)this.field_18358.method_12165() + 0.5, (double)this.field_18358.method_12185() + 0.5
                )
                > 64.0
          )
@@ -112,6 +112,6 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
 
    @Override
    public float method_17874(float var1) {
-      return class_9299.method_42795(var1, this.field_46970, this.field_46971);
+      return MathHelper.method_42795(var1, this.field_46970, this.field_46971);
    }
 }

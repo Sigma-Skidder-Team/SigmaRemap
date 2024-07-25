@@ -11,6 +11,6 @@ public final class class_8901 {
    }
 
    public float method_40960(class_9155 var1) {
-      return class_9299.method_42810(!this.field_45644 ? this.field_45643 : this.field_45643 + var1.method_42174().field_24329);
+      return MathHelper.wrapDegrees(!this.field_45644 ? this.field_45643 : this.field_45643 + var1.method_42174().field_24329);
    }
 }

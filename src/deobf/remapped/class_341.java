@@ -64,7 +64,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    private static final Logger field_1316 = LogManager.getLogger();
    public static final File field_1312 = new File("usercache.json");
    public static final class_6292 field_1290 = new class_6292(
-      "Demo World", GameType.SURVIVAL, false, class_423.field_1789, false, new class_291(), class_2805.field_13766
+      "Demo World", GameType.SURVIVAL, false, class_423.field_1789, false, new GameRules(), class_2805.field_13766
    );
    public final class_3676 field_1339;
    public final class_5645 field_1337;
@@ -659,7 +659,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
          this.field_1306 = var4;
          this.field_1284.method_26819(new class_9608(this.method_1732(), this.method_1656()));
          GameProfile[] var10 = new GameProfile[Math.min(this.method_1656(), 12)];
-         int var11 = class_9299.method_42824(this.field_1324, 0, this.method_1656() - var10.length);
+         int var11 = MathHelper.nextInt(this.field_1324, 0, this.method_1656() - var10.length);
 
          for (int var12 = 0; var12 < var10.length; var12++) {
             var10[var12] = this.field_1322.method_39951().get(var11 + var12).method_3247();
@@ -707,7 +707,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
             this.field_1295.startSection("timeSync");
             this.field_1322
                .method_39958(
-                  new class_8508(var5.method_29546(), var5.method_29584(), var5.method_29537().method_1285(class_291.field_1037)), var5.method_29545()
+                  new class_8508(var5.method_29546(), var5.method_29584(), var5.getGameRules().getBoolean(GameRules.field_1037)), var5.method_29545()
                );
             this.field_1295.endSection();
          }
@@ -936,7 +936,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       var1.method_15252("uses_auth", this.field_1328);
       var1.method_15252("gui_state", !this.method_1695() ? "disabled" : "enabled");
       var1.method_15252("run_time", (Util.getMeasuringTimeMs() - var1.method_15251()) / 60L * 1000L);
-      var1.method_15252("avg_tick_ms", (int)(class_9299.method_42826(this.field_1286) * 1.0E-6));
+      var1.method_15252("avg_tick_ms", (int)(MathHelper.average(this.field_1286) * 1.0E-6));
       int var4 = 0;
 
       for (class_6331 var6 : this.method_1719()) {
@@ -1134,7 +1134,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    }
 
    public int method_1720(class_6331 var1) {
-      return var1 == null ? 10 : var1.method_29537().method_1295(class_291.field_1054);
+      return var1 == null ? 10 : var1.getGameRules().method_1295(GameRules.field_1054);
    }
 
    public class_8873 method_1703() {
@@ -1292,8 +1292,8 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       return this.field_1341.method_28749();
    }
 
-   public class_291 method_1683() {
-      return this.method_1736().method_29537();
+   public GameRules method_1683() {
+      return this.method_1736().getGameRules();
    }
 
    public class_4543 method_1699() {
@@ -1381,8 +1381,8 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    private void method_1669(Path var1) throws IOException {
       try (BufferedWriter var4 = Files.newBufferedWriter(var1)) {
          ArrayList var6 = Lists.newArrayList();
-         class_291 var7 = this.method_1683();
-         class_291.method_1289(new class_7845(this, var6, var7));
+         GameRules var7 = this.method_1683();
+         GameRules.method_1289(new class_7845(this, var6, var7));
 
          for (String var9 : var6) {
             var4.write(var9);

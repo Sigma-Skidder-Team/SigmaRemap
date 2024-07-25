@@ -15,7 +15,7 @@ public class class_2625 {
                Codec.INT.optionalFieldOf("grass_color").forGetter(var0x -> var0x.field_12947),
                class_4184.field_20369.optionalFieldOf("grass_color_modifier", class_4184.field_20366).forGetter(var0x -> var0x.field_12951),
                class_2569.field_12722.optionalFieldOf("particle").forGetter(var0x -> var0x.field_12944),
-               class_8461.field_43261.optionalFieldOf("ambient_sound").forGetter(var0x -> var0x.field_12942),
+               SoundEvent.field_43261.optionalFieldOf("ambient_sound").forGetter(var0x -> var0x.field_12942),
                class_3161.field_15713.optionalFieldOf("mood_sound").forGetter(var0x -> var0x.field_12940),
                class_3902.field_18965.optionalFieldOf("additions_sound").forGetter(var0x -> var0x.field_12948),
                class_75.field_117.optionalFieldOf("music").forGetter(var0x -> var0x.field_12949)
@@ -30,7 +30,7 @@ public class class_2625 {
    private final Optional<Integer> field_12947;
    private final class_4184 field_12951;
    private final Optional<class_2569> field_12944;
-   private final Optional<class_8461> field_12942;
+   private final Optional<SoundEvent> field_12942;
    private final Optional<class_3161> field_12940;
    private final Optional<class_3902> field_12948;
    private final Optional<class_75> field_12949;
@@ -44,7 +44,7 @@ public class class_2625 {
       Optional<Integer> var6,
       class_4184 var7,
       Optional<class_2569> var8,
-      Optional<class_8461> var9,
+      Optional<SoundEvent> var9,
       Optional<class_3161> var10,
       Optional<class_3902> var11,
       Optional<class_75> var12
@@ -95,7 +95,7 @@ public class class_2625 {
       return this.field_12944;
    }
 
-   public Optional<class_8461> method_11894() {
+   public Optional<SoundEvent> method_11894() {
       return this.field_12942;
    }
 

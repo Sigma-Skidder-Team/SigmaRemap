@@ -44,23 +44,23 @@ public class class_6174 extends MonsterEntity {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2437;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2437;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2559;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2559;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2009;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2009;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2908, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2908, 0.15F, 1.0F);
    }
 
    @Override
@@ -97,7 +97,7 @@ public class class_6174 extends MonsterEntity {
       if (!method_5198(var0, var1, var2, var3, var4)) {
          return false;
       } else {
-         PlayerEntity var7 = var1.method_25857((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5, 5.0, true);
+         PlayerEntity var7 = var1.method_25857((double)var3.getX() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5, 5.0, true);
          return var7 == null;
       }
    }

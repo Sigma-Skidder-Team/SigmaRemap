@@ -32,12 +32,12 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
       this.field_21953 = var2;
       this.field_21958 = var3;
       this.field_21956 = var4;
-      int var7 = class_9299.method_42847(var3.field_19941 - 1.0E-7) - 1;
-      int var8 = class_9299.method_42847(var3.field_19940 + 1.0E-7) + 1;
-      int var9 = class_9299.method_42847(var3.field_19937 - 1.0E-7) - 1;
-      int var10 = class_9299.method_42847(var3.field_19939 + 1.0E-7) + 1;
-      int var11 = class_9299.method_42847(var3.field_19938 - 1.0E-7) - 1;
-      int var12 = class_9299.method_42847(var3.field_19942 + 1.0E-7) + 1;
+      int var7 = MathHelper.floor(var3.field_19941 - 1.0E-7) - 1;
+      int var8 = MathHelper.floor(var3.field_19940 + 1.0E-7) + 1;
+      int var9 = MathHelper.floor(var3.field_19937 - 1.0E-7) - 1;
+      int var10 = MathHelper.floor(var3.field_19939 + 1.0E-7) + 1;
+      int var11 = MathHelper.floor(var3.field_19938 - 1.0E-7) - 1;
+      int var12 = MathHelper.floor(var3.field_19942 + 1.0E-7) + 1;
       this.field_21959 = new class_6281(var7, var9, var11, var8, var10, var12);
    }
 
@@ -100,7 +100,7 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
       Objects.<Entity>requireNonNull(this.field_21953);
       this.field_21951 = false;
       class_2098 var4 = this.field_21952.method_6673();
-      Box var5 = this.field_21953.method_37241();
+      Box var5 = this.field_21953.getBoundingBox();
       if (!method_20868(var4, var5)) {
          class_4190 var6 = var4.method_9820();
          if (!method_20871(var6, var5) && method_20870(var6, var5)) {
@@ -113,7 +113,7 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
    }
 
    private static boolean method_20870(class_4190 var0, Box var1) {
-      return class_3370.method_15537(var0, class_3370.method_15523(var1.method_18898(1.0E-7)), class_8529.field_43655);
+      return class_3370.method_15537(var0, class_3370.method_15523(var1.grow(1.0E-7)), class_8529.field_43655);
    }
 
    private static boolean method_20871(class_4190 var0, Box var1) {
@@ -121,10 +121,10 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
    }
 
    public static boolean method_20868(class_2098 var0, Box var1) {
-      double var4 = (double)class_9299.method_42847(var0.method_9821());
-      double var6 = (double)class_9299.method_42847(var0.method_9825());
-      double var8 = (double)class_9299.method_42815(var0.method_9828());
-      double var10 = (double)class_9299.method_42815(var0.method_9816());
+      double var4 = (double) MathHelper.floor(var0.method_9821());
+      double var6 = (double) MathHelper.floor(var0.method_9825());
+      double var8 = (double) MathHelper.ceil(var0.method_9828());
+      double var10 = (double) MathHelper.ceil(var0.method_9816());
       return var1.field_19941 > var4
          && var1.field_19941 < var8
          && var1.field_19938 > var6

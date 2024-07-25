@@ -111,7 +111,7 @@ public class Auto32KModule extends Module {
          if (this.field_44720 != null) {
             GL11.glAlphaFunc(516, 0.0F);
             BlockPos var4 = this.field_44720;
-            double var5 = (double)var4.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+            double var5 = (double)var4.getX() - client.gameRenderer.method_35949().method_41627().method_61();
             double var7 = (double)var4.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
             double var9 = (double)var4.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
             class_73.method_83(

@@ -80,7 +80,7 @@ public class class_8557 extends class_2830 implements class_3978 {
    }
 
    public int method_39378(World var1) {
-      return class_9299.method_42824(var1.field_33033, 2, 5);
+      return MathHelper.nextInt(var1.field_33033, 2, 5);
    }
 
    public static float method_39377(class_6414 var0, class_6163 var1, BlockPos var2) {
@@ -134,7 +134,7 @@ public class class_8557 extends class_2830 implements class_3978 {
 
    @Override
    public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
-      if (var4 instanceof RavagerEntity && var2.method_29537().method_1285(class_291.field_1047)) {
+      if (var4 instanceof RavagerEntity && var2.getGameRules().getBoolean(GameRules.field_1047)) {
          var2.method_7511(var3, true, var4);
       }
 

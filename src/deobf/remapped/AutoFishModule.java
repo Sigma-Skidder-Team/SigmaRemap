@@ -15,7 +15,7 @@ public class AutoFishModule extends Module {
                      if (var1.method_557() instanceof class_8283 && !((class_8283)var1.method_557()).field_42460.equals("entity.bobber.splash")) {
                         return;
                      }
-                  } else if (!((class_3740)var1.method_557()).method_17341().equals(class_463.field_2403)) {
+                  } else if (!((class_3740)var1.method_557()).method_17341().equals(SoundEvents.field_2403)) {
                      return;
                   }
 

@@ -78,8 +78,8 @@ public class SpiderStep extends Module {
             var1.method_35235(this.field_49206 + this.field_49205 - client.thePlayer.method_37309());
             double var10 = this.getStringValueByName("Mode").equals("AAC") ? 0.301 : class_8865.method_40775();
             float var6 = this.field_49204 * (float) (Math.PI / 180.0);
-            var1.method_35232((double)(-class_9299.method_42818(var6)) * var10);
-            var1.method_35229((double)class_9299.method_42840(var6) * var10);
+            var1.method_35232((double)(-MathHelper.sin(var6)) * var10);
+            var1.method_35229((double) MathHelper.cos(var6) * var10);
             this.field_49203++;
          } else if (this.field_49203 == 3) {
             if (class_314.method_1413(client.thePlayer, 0.001F)) {

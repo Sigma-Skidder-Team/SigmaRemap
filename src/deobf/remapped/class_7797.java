@@ -79,8 +79,8 @@ public class class_7797 extends AbstractGui {
          this.field_39488.getTextureManager().bindTexture(var4);
       }
 
-      int var5 = class_9299.method_42847(this.field_39481);
-      int var6 = class_9299.method_42847(this.field_39480);
+      int var5 = MathHelper.floor(this.field_39481);
+      int var6 = MathHelper.floor(this.field_39480);
       int var7 = var5 % 16;
       int var8 = var6 % 16;
 
@@ -106,10 +106,10 @@ public class class_7797 extends AbstractGui {
    public void method_35363(class_7966 var1, int var2, int var3, int var4, int var5) {
       RenderSystem.method_16438();
       RenderSystem.method_16413(0.0F, 0.0F, 200.0F);
-      method_9774(var1, 0, 0, 234, 113, class_9299.method_42848(this.field_39491 * 255.0F) << 24);
+      method_9774(var1, 0, 0, 234, 113, MathHelper.floor(this.field_39491 * 255.0F) << 24);
       boolean var8 = false;
-      int var9 = class_9299.method_42847(this.field_39481);
-      int var10 = class_9299.method_42847(this.field_39480);
+      int var9 = MathHelper.floor(this.field_39481);
+      int var10 = MathHelper.floor(this.field_39480);
       if (var2 > 0 && var2 < 234 && var3 > 0 && var3 < 113) {
          for (class_4604 var12 : this.field_39498.values()) {
             if (var12.method_21336(var9, var10, var2, var3)) {
@@ -122,9 +122,9 @@ public class class_7797 extends AbstractGui {
 
       RenderSystem.method_16489();
       if (!var8) {
-         this.field_39491 = class_9299.method_42828(this.field_39491 - 0.04F, 0.0F, 1.0F);
+         this.field_39491 = MathHelper.clamp(this.field_39491 - 0.04F, 0.0F, 1.0F);
       } else {
-         this.field_39491 = class_9299.method_42828(this.field_39491 + 0.02F, 0.0F, 0.3F);
+         this.field_39491 = MathHelper.clamp(this.field_39491 + 0.02F, 0.0F, 0.3F);
       }
    }
 
@@ -151,11 +151,11 @@ public class class_7797 extends AbstractGui {
 
    public void method_35370(double var1, double var3) {
       if (this.field_39489 - this.field_39497 > 234) {
-         this.field_39481 = class_9299.method_42827(this.field_39481 + var1, (double)(-(this.field_39489 - 234)), 0.0);
+         this.field_39481 = MathHelper.clamp(this.field_39481 + var1, (double)(-(this.field_39489 - 234)), 0.0);
       }
 
       if (this.field_39485 - this.field_39482 > 113) {
-         this.field_39480 = class_9299.method_42827(this.field_39480 + var3, (double)(-(this.field_39485 - 113)), 0.0);
+         this.field_39480 = MathHelper.clamp(this.field_39480 + var3, (double)(-(this.field_39485 - 113)), 0.0);
       }
    }
 

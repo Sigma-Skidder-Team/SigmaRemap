@@ -25,7 +25,7 @@ public class class_5727 implements class_5079 {
       this.field_28936 = var1;
       this.field_28942 = var2;
       this.field_28938 = var3;
-      this.field_28943 = class_9299.method_42828(var4, 0.01F, 4.0F);
+      this.field_28943 = MathHelper.clamp(var4, 0.01F, 4.0F);
    }
 
    @Override

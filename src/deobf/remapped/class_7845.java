@@ -3,7 +3,7 @@ package remapped;
 import java.util.List;
 
 public class class_7845 implements class_2237 {
-   public class_7845(class_341 var1, List var2, class_291 var3) {
+   public class_7845(class_341 var1, List var2, GameRules var3) {
       this.field_39764 = var1;
       this.field_39761 = var2;
       this.field_39763 = var3;

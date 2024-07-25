@@ -25,7 +25,7 @@ public class class_8333 extends class_3599 {
    @Override
    public boolean method_16799() {
       BlockPos var3 = this.field_42658.method_2163();
-      return !new BlockPos((double)var3.method_12173(), this.field_42658.method_37309(), (double)var3.method_12185())
+      return !new BlockPos((double)var3.getX(), this.field_42658.method_37309(), (double)var3.method_12185())
             .method_12170(this.field_42658.method_37245(), 4.0)
          && !this.field_42660
          && this.field_42658.method_37229() >= 100;
@@ -60,7 +60,7 @@ public class class_8333 extends class_3599 {
    @Override
    public void method_16793() {
       BlockPos var3 = this.field_42658.method_2163();
-      if (new BlockPos((double)var3.method_12173(), this.field_42658.method_37309(), (double)var3.method_12185())
+      if (new BlockPos((double)var3.getX(), this.field_42658.method_37309(), (double)var3.method_12185())
             .method_12170(this.field_42658.method_37245(), 4.0)
          || this.field_42660) {
          this.field_42658.method_2153(false);

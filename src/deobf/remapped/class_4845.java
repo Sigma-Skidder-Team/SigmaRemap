@@ -43,9 +43,9 @@ public class class_4845<T extends Entity> extends class_5103<T> {
       super.method_29700((T)var1, var2, var3, var4, var5, var6);
       this.field_26330.method_7046(0.0F, -2.0F, 0.0F);
       float var9 = 0.01F * (float)(var1.method_37145() % 10);
-      this.field_26330.field_8191 = class_9299.method_42818((float)var1.field_41697 * var9) * 4.5F * (float) (Math.PI / 180.0);
+      this.field_26330.field_8191 = MathHelper.sin((float)var1.field_41697 * var9) * 4.5F * (float) (Math.PI / 180.0);
       this.field_26330.field_8190 = 0.0F;
-      this.field_26330.field_8185 = class_9299.method_42840((float)var1.field_41697 * var9) * 2.5F * (float) (Math.PI / 180.0);
+      this.field_26330.field_8185 = MathHelper.cos((float)var1.field_41697 * var9) * 2.5F * (float) (Math.PI / 180.0);
       if (this.field_24172) {
          this.field_26330.method_7046(0.0F, 1.0F, -1.5F);
          this.field_26330.field_8191 = -0.9F;

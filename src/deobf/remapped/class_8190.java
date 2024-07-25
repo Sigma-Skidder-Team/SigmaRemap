@@ -9,8 +9,8 @@ public interface class_8190 {
 
    default boolean method_37517(MobEntity var1, class_686 var2, class_1343 var3) {
       if (var1.isAlive()) {
-         Entity var6 = !var1.method_37114().isEmpty() ? var1.method_37114().get(0) : null;
-         if (var1.method_37151() && var1.method_26863() && var6 instanceof PlayerEntity) {
+         Entity var6 = !var1.getPassengers().isEmpty() ? var1.getPassengers().get(0) : null;
+         if (var1.method_37151() && var1.canBeSteered() && var6 instanceof PlayerEntity) {
             var1.rotationYaw = var6.rotationYaw;
             var1.prevRotationYaw = var1.rotationYaw;
             var1.rotationPitch = var6.rotationPitch * 0.5F;
@@ -29,7 +29,7 @@ public interface class_8190 {
             } else {
                float var7 = this.method_37516();
                if (var2.field_3773) {
-                  var7 += var7 * 1.15F * class_9299.method_42818((float)var2.field_3774 / (float)var2.field_3776 * (float) Math.PI);
+                  var7 += var7 * 1.15F * MathHelper.sin((float)var2.field_3774 / (float)var2.field_3776 * (float) Math.PI);
                }
 
                var1.method_26461(var7);

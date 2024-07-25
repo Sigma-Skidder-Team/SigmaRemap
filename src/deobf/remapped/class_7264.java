@@ -11,11 +11,11 @@ public class class_7264 extends class_1277 {
 
    @Override
    public boolean method_16795() {
-      return super.method_16795() && this.field_37212.method_20226(this.field_37212.method_17809());
+      return super.method_16795() && this.field_37212.method_20226(this.field_37212.getAttackTarget());
    }
 
    @Override
    public boolean method_16799() {
-      return super.method_16799() && this.field_37212.method_20226(this.field_37212.method_17809());
+      return super.method_16799() && this.field_37212.method_20226(this.field_37212.getAttackTarget());
    }
 }

@@ -24,7 +24,7 @@ public class class_2982 extends class_6942 {
 
    @Override
    public int method_10766(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
-      return class_9299.method_42829(class_7099.method_32635(var2, var3), 0, 15);
+      return MathHelper.clamp(class_7099.method_32635(var2, var3), 0, 15);
    }
 
    @Override

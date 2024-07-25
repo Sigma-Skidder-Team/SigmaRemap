@@ -64,7 +64,7 @@ public class class_5427<T> implements class_5021<T> {
          if (this.field_27640 > 4) {
             if (this.field_27640 >= 9) {
                this.field_27647 = this.field_27646;
-               this.field_27640 = class_9299.method_42820(this.field_27645.method_280());
+               this.field_27640 = MathHelper.log2DeBruijn(this.field_27645.method_280());
             } else {
                this.field_27647 = new class_4371<T>(this.field_27645, this.field_27640, this, this.field_27641, this.field_27642);
             }
@@ -150,7 +150,7 @@ public class class_5427<T> implements class_5021<T> {
 
    public void method_24692(class_3416 var1, long[] var2) {
       this.method_24691();
-      int var5 = Math.max(4, class_9299.method_42820(var1.size()));
+      int var5 = Math.max(4, MathHelper.log2DeBruijn(var1.size()));
       if (var5 != this.field_27640) {
          this.method_24680(var5);
       }
@@ -200,7 +200,7 @@ public class class_5427<T> implements class_5021<T> {
       class_3416 var14 = new class_3416();
       var6.method_20371(var14);
       var1.put(var2, var14);
-      int var15 = Math.max(4, class_9299.method_42820(var14.size()));
+      int var15 = Math.max(4, MathHelper.log2DeBruijn(var14.size()));
       class_2721 var12 = new class_2721(var15, 4096);
 
       for (int var13 = 0; var13 < var9.length; var13++) {

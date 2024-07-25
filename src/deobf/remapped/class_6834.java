@@ -89,7 +89,7 @@ public class class_6834<K> implements class_3072<K> {
    }
 
    private int method_31345(K var1) {
-      return (class_9299.method_42849(System.identityHashCode(var1)) & 2147483647) % this.field_35235.length;
+      return (MathHelper.method_42849(System.identityHashCode(var1)) & 2147483647) % this.field_35235.length;
    }
 
    private int method_31337(K var1, int var2) {

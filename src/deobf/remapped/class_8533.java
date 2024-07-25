@@ -47,7 +47,7 @@ public class class_8533 implements JsonDeserializer<class_9487> {
 
    private float method_39289(JsonObject var1) {
       float var4 = class_6539.method_29774(var1, "angle");
-      if (var4 != 0.0F && class_9299.method_42804(var4) != 22.5F && class_9299.method_42804(var4) != 45.0F) {
+      if (var4 != 0.0F && MathHelper.abs(var4) != 22.5F && MathHelper.abs(var4) != 45.0F) {
          throw new JsonParseException("Invalid rotation " + var4 + " found, only -45/-22.5/0/22.5/45 allowed");
       } else {
          return var4;

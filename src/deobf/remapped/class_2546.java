@@ -508,7 +508,7 @@ public class class_2546 extends class_9331<class_7333> {
       if (this.method_11584()) {
          int var9 = (this.field_10956.field_37486.size() + 9 - 1) / 9 - 5;
          this.field_12609 = (float)((double)this.field_12609 - var5 / (double)var9);
-         this.field_12609 = class_9299.method_42828(this.field_12609, 0.0F, 1.0F);
+         this.field_12609 = MathHelper.clamp(this.field_12609, 0.0F, 1.0F);
          this.field_10956.method_33420(this.field_12609);
          return true;
       } else {
@@ -541,7 +541,7 @@ public class class_2546 extends class_9331<class_7333> {
          int var12 = this.field_10962 + 18;
          int var13 = var12 + 112;
          this.field_12609 = ((float)var3 - (float)var12 - 7.5F) / ((float)(var13 - var12) - 15.0F);
-         this.field_12609 = class_9299.method_42828(this.field_12609, 0.0F, 1.0F);
+         this.field_12609 = MathHelper.clamp(this.field_12609, 0.0F, 1.0F);
          this.field_10956.method_33420(this.field_12609);
          return true;
       }

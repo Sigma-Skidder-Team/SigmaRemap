@@ -136,7 +136,7 @@ public abstract class class_8990 extends class_5467 {
    }
 
    @Nullable
-   public class_5834 method_41207() {
+   public LivingEntity method_41207() {
       try {
          UUID var3 = this.method_41211();
          return var3 == null ? null : this.world.method_25862(var3);
@@ -146,22 +146,22 @@ public abstract class class_8990 extends class_5467 {
    }
 
    @Override
-   public boolean method_26608(class_5834 var1) {
+   public boolean method_26608(LivingEntity var1) {
       return !this.method_41206(var1) ? super.method_26608(var1) : false;
    }
 
-   public boolean method_41206(class_5834 var1) {
+   public boolean method_41206(LivingEntity var1) {
       return var1 == this.method_41207();
    }
 
-   public boolean method_41219(class_5834 var1, class_5834 var2) {
+   public boolean method_41219(LivingEntity var1, LivingEntity var2) {
       return true;
    }
 
    @Override
    public class_5086 method_37095() {
       if (this.method_41215()) {
-         class_5834 var3 = this.method_41207();
+         LivingEntity var3 = this.method_41207();
          if (var3 != null) {
             return var3.method_37095();
          }
@@ -173,7 +173,7 @@ public abstract class class_8990 extends class_5467 {
    @Override
    public boolean method_37344(Entity var1) {
       if (this.method_41215()) {
-         class_5834 var4 = this.method_41207();
+         LivingEntity var4 = this.method_41207();
          if (var1 == var4) {
             return true;
          }
@@ -188,7 +188,7 @@ public abstract class class_8990 extends class_5467 {
 
    @Override
    public void method_26452(DamageSource var1) {
-      if (!this.world.field_33055 && this.world.method_29537().method_1285(class_291.field_1060) && this.method_41207() instanceof class_9359) {
+      if (!this.world.field_33055 && this.world.getGameRules().getBoolean(GameRules.field_1060) && this.method_41207() instanceof class_9359) {
          this.method_41207().method_26286(this.method_26476().method_15870(), Util.NIL_UUID);
       }
 

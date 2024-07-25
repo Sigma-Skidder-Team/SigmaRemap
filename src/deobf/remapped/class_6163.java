@@ -88,30 +88,30 @@ public interface class_6163 {
       class_1343 var5 = var0.method_4255();
       class_1343 var6 = var0.method_4256();
       if (!var5.equals(var6)) {
-         double var7 = class_9299.method_42794(-1.0E-7, var6.field_7336, var5.field_7336);
-         double var9 = class_9299.method_42794(-1.0E-7, var6.field_7333, var5.field_7333);
-         double var11 = class_9299.method_42794(-1.0E-7, var6.field_7334, var5.field_7334);
-         double var13 = class_9299.method_42794(-1.0E-7, var5.field_7336, var6.field_7336);
-         double var15 = class_9299.method_42794(-1.0E-7, var5.field_7333, var6.field_7333);
-         double var17 = class_9299.method_42794(-1.0E-7, var5.field_7334, var6.field_7334);
-         int var19 = class_9299.method_42847(var13);
-         int var20 = class_9299.method_42847(var15);
-         int var21 = class_9299.method_42847(var17);
+         double var7 = MathHelper.lerp(-1.0E-7, var6.field_7336, var5.field_7336);
+         double var9 = MathHelper.lerp(-1.0E-7, var6.field_7333, var5.field_7333);
+         double var11 = MathHelper.lerp(-1.0E-7, var6.field_7334, var5.field_7334);
+         double var13 = MathHelper.lerp(-1.0E-7, var5.field_7336, var6.field_7336);
+         double var15 = MathHelper.lerp(-1.0E-7, var5.field_7333, var6.field_7333);
+         double var17 = MathHelper.lerp(-1.0E-7, var5.field_7334, var6.field_7334);
+         int var19 = MathHelper.floor(var13);
+         int var20 = MathHelper.floor(var15);
+         int var21 = MathHelper.floor(var17);
          class_2921 var22 = new class_2921(var19, var20, var21);
          Object var23 = var1.apply(var0, var22);
          if (var23 == null) {
             double var24 = var7 - var13;
             double var26 = var9 - var15;
             double var28 = var11 - var17;
-            int var30 = class_9299.method_42793(var24);
-            int var31 = class_9299.method_42793(var26);
-            int var32 = class_9299.method_42793(var28);
+            int var30 = MathHelper.method_42793(var24);
+            int var31 = MathHelper.method_42793(var26);
+            int var32 = MathHelper.method_42793(var28);
             double var33 = var30 != 0 ? (double)var30 / var24 : Double.MAX_VALUE;
             double var35 = var31 != 0 ? (double)var31 / var26 : Double.MAX_VALUE;
             double var37 = var32 != 0 ? (double)var32 / var28 : Double.MAX_VALUE;
-            double var39 = var33 * (var30 <= 0 ? class_9299.method_42822(var13) : 1.0 - class_9299.method_42822(var13));
-            double var41 = var35 * (var31 <= 0 ? class_9299.method_42822(var15) : 1.0 - class_9299.method_42822(var15));
-            double var43 = var37 * (var32 <= 0 ? class_9299.method_42822(var17) : 1.0 - class_9299.method_42822(var17));
+            double var39 = var33 * (var30 <= 0 ? MathHelper.frac(var13) : 1.0 - MathHelper.frac(var13));
+            double var41 = var35 * (var31 <= 0 ? MathHelper.frac(var15) : 1.0 - MathHelper.frac(var15));
+            double var43 = var37 * (var32 <= 0 ? MathHelper.frac(var17) : 1.0 - MathHelper.frac(var17));
 
             while (var39 <= 1.0 || var41 <= 1.0 || var43 <= 1.0) {
                if (!(var39 < var41)) {

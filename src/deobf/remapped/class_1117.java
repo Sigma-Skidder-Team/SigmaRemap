@@ -31,7 +31,7 @@ public class class_1117 extends class_6967 {
          if (class_3845.method_17854(this.field_6393) >= 1) {
             if (class_3845.method_17854(this.field_6393) > 200) {
                World var4 = this.field_6393.world;
-               var4.method_43359((PlayerEntity)null, var3, class_463.field_2325, class_562.field_3322, 0.3F, 0.9F + var4.field_33033.nextFloat() * 0.2F);
+               var4.method_43359((PlayerEntity)null, var3, SoundEvents.field_2325, class_562.field_3322, 0.3F, 0.9F + var4.field_33033.nextFloat() * 0.2F);
                var4.method_7513(
                   this.field_35802.method_6081(),
                   class_4783.field_23741

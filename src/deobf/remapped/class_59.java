@@ -48,8 +48,8 @@ public class class_59 extends class_3599 {
          }
 
          if (var4 != null) {
-            int var5 = class_9299.method_42847(var4.field_7336);
-            int var6 = class_9299.method_42847(var4.field_7334);
+            int var5 = MathHelper.floor(var4.field_7336);
+            int var6 = MathHelper.floor(var4.field_7334);
             byte var7 = 34;
             if (!this.field_53.world.method_22569(var5 - 34, 0, var6 - 34, var5 + 34, 0, var6 + 34)) {
                var4 = null;

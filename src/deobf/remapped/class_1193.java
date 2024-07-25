@@ -5,7 +5,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.Dynamic;
 import java.util.Collection;
 
-public final class class_1193<E extends class_5834> {
+public final class class_1193<E extends LivingEntity> {
    private static String[] field_6686;
    private final Collection<? extends class_6044<?>> field_6687;
    private final Collection<? extends class_3172<? extends class_6127<? super E>>> field_6684;

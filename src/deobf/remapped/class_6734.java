@@ -15,7 +15,7 @@ public class class_6734 extends class_4109 {
 
    @Override
    public void method_19084() {
-      this.method_26561(Attributes.field_37464).method_45006(this.method_19046());
+      this.getAttribute(Attributes.field_37464).setBaseValue(this.method_19046());
    }
 
    @Override
@@ -24,21 +24,21 @@ public class class_6734 extends class_4109 {
    }
 
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       super.method_26918();
-      return class_463.field_2450;
+      return SoundEvents.field_2450;
    }
 
    @Override
-   public class_8461 method_26599() {
+   public SoundEvent method_26599() {
       super.method_26599();
-      return class_463.field_2471;
+      return SoundEvents.field_2471;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
+   public SoundEvent method_26541(DamageSource var1) {
       super.method_26541(var1);
-      return class_463.field_2510;
+      return SoundEvents.field_2510;
    }
 
    @Nullable

@@ -80,7 +80,7 @@ public class Util {
    }
 
    private static ExecutorService createWorker(String var0) {
-      int var3 = class_9299.method_42829(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
+      int var3 = MathHelper.clamp(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
       Object var4;
       if (var3 > 0) {
          var4 = new ForkJoinPool(var3, var1 -> {
@@ -258,7 +258,7 @@ public class Util {
       return (T)var0.get();
    }
 
-   public static <T> T method_44659(T var0, Consumer<T> var1) {
+   public static <T> T make(T var0, Consumer<T> var1) {
       var1.accept(var0);
       return (T)var0;
    }

@@ -50,7 +50,7 @@ public class class_8036 extends class_2451 implements class_1538 {
       if (!var5.method_28262(var4).method_8350(class_4783.field_23852)) {
          return super.method_11237(var1);
       } else {
-         var5.method_43359((PlayerEntity)null, var4, class_463.field_2193, class_562.field_3335, 1.0F, 1.0F);
+         var5.method_43359((PlayerEntity)null, var4, SoundEvents.field_2193, class_562.field_3335, 1.0F, 1.0F);
          PlayerEntity var6 = var1.method_21868();
          ItemStack var7 = var1.method_21867();
          boolean var8 = !var6.playerAbilities.isCreativeMode && var7.method_27997() == 1;

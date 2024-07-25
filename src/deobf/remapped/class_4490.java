@@ -138,7 +138,7 @@ public class class_4490<T extends class_7272> extends class_6521<T> {
       this.field_21941.field_8190 = var5 * (float) (Math.PI / 180.0);
       this.field_21939.field_8190 = this.field_21938.field_8190 - (float) (Math.PI / 12);
       this.field_21947.field_8190 = this.field_21938.field_8190 + (float) (Math.PI / 12);
-      this.field_21937 = class_9299.method_42818(var1.method_33235(var9) * (float) Math.PI);
+      this.field_21937 = MathHelper.sin(var1.method_33235(var9) * (float) Math.PI);
       this.field_21950.field_8191 = (this.field_21937 * 50.0F - 21.0F) * (float) (Math.PI / 180.0);
       this.field_21943.field_8191 = (this.field_21937 * 50.0F - 21.0F) * (float) (Math.PI / 180.0);
       this.field_21949.field_8191 = this.field_21937 * 50.0F * (float) (Math.PI / 180.0);
@@ -149,6 +149,6 @@ public class class_4490<T extends class_7272> extends class_6521<T> {
 
    public void method_20865(T var1, float var2, float var3, float var4) {
       super.method_29702((T)var1, var2, var3, var4);
-      this.field_21937 = class_9299.method_42818(var1.method_33235(var4) * (float) Math.PI);
+      this.field_21937 = MathHelper.sin(var1.method_33235(var4) * (float) Math.PI);
    }
 }

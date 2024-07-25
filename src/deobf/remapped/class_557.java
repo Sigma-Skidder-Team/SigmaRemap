@@ -21,7 +21,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
          if (!var3) {
             for (int var5 = 0; var5 < this.field_3312.size(); var5++) {
                if (this.field_3311[var5] > 0) {
-                  this.field_3311[var5] = class_9299.method_42829(this.field_3311[var5] - 2, 0, this.field_3310[var5]);
+                  this.field_3311[var5] = MathHelper.clamp(this.field_3311[var5] - 2, 0, this.field_3310[var5]);
                }
             }
          } else {
@@ -45,7 +45,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
                   .<ItemStack>map(var1 -> var1.method_41042(var6))
                   .orElse(var4);
                BlockPos var8 = this.method_17399();
-               class_1573.method_7100(this.field_18364, (double)var8.method_12173(), (double)var8.method_12165(), (double)var8.method_12185(), var7);
+               class_1573.method_7100(this.field_18364, (double)var8.getX(), (double)var8.method_12165(), (double)var8.method_12185(), var7);
                this.field_3312.set(var3, ItemStack.EMPTY);
                this.method_2669();
             }
@@ -70,7 +70,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
             if (!this.field_3312.get(var7).method_28022() && var5.nextFloat() < 0.2F) {
                Direction var8 = Direction.method_1040(Math.floorMod(var7 + var17, 4));
                float var9 = 0.3125F;
-               double var10 = (double)var4.method_12173()
+               double var10 = (double)var4.getX()
                   + 0.5
                   - (double)((float)var8.method_1041() * 0.3125F)
                   + (double)((float)var8.method_1042().method_1041() * 0.3125F);

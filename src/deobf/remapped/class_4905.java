@@ -98,8 +98,8 @@ public class class_4905 {
 
       float var19 = var4 - var2;
       float var20 = var5 - var3;
-      float var21 = class_9299.method_42804(var19) * (var9 / 16.0F);
-      float var22 = class_9299.method_42804(var20) * (var10 / 16.0F);
+      float var21 = MathHelper.abs(var19) * (var9 / 16.0F);
+      float var22 = MathHelper.abs(var20) * (var10 / 16.0F);
       float var23 = 0.0F;
       float var24 = 0.0F;
       float var25 = -1.0F;

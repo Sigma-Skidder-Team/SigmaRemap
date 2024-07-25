@@ -14,8 +14,8 @@ public class class_8870 extends class_4285<class_1941> {
 
    public boolean method_40805(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       for (BlockPos var9 : BlockPos.method_6076(
-         new BlockPos(var4.method_12173() - 4, var4.method_12165() - 1, var4.method_12185() - 4),
-         new BlockPos(var4.method_12173() + 4, var4.method_12165() + 32, var4.method_12185() + 4)
+         new BlockPos(var4.getX() - 4, var4.method_12165() - 1, var4.method_12185() - 4),
+         new BlockPos(var4.getX() + 4, var4.method_12165() + 32, var4.method_12185() + 4)
       )) {
          boolean var10 = var9.method_12171(var4, 2.5);
          if (var10 || var9.method_12171(var4, 3.5)) {

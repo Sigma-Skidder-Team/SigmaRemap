@@ -159,7 +159,7 @@ public class class_9153 {
                }
 
                this.field_46825++;
-               this.field_46835.method_8531().method_40533(this.field_46835.theWorld, var1, var5, class_9299.method_42828(this.field_46832, 0.0F, 1.0F));
+               this.field_46835.method_8531().method_40533(this.field_46835.theWorld, var1, var5, MathHelper.clamp(this.field_46832, 0.0F, 1.0F));
                if (this.field_46832 >= 1.0F) {
                   this.field_46829 = false;
                   this.method_42127(class_7500.field_38258, var1, var2);

@@ -65,7 +65,7 @@ public class class_7938 extends class_3077 {
          return class_6910.field_35521;
       } else {
          PlayerEntity var8 = var1.method_21868();
-         var4.method_43359(var8, var5, class_463.field_2534, class_562.field_3322, 1.0F, 1.0F);
+         var4.method_43359(var8, var5, SoundEvents.field_2534, class_562.field_3322, 1.0F, 1.0F);
          if (!var4.field_33055) {
             var4.method_7513(var5, var7.method_29260().method_10308(class_7947.field_40671, var6.<class_9249>method_10313(class_7947.field_40671)), 11);
             if (var8 != null) {

@@ -24,7 +24,7 @@ public class class_262 implements class_2995 {
             class_4190 var16 = var15.method_8334(var11, var14);
 
             for (Box var18 : var16.method_19492()) {
-               Box var19 = var18.method_18919(var14).method_18898(0.002).method_18918(-var3, -var5, -var7);
+               Box var19 = var18.method_18919(var14).grow(0.002).method_18918(-var3, -var5, -var7);
                double var20 = var19.field_19941;
                double var22 = var19.field_19937;
                double var24 = var19.field_19938;

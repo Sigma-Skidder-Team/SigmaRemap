@@ -30,7 +30,7 @@ public class class_2266 extends class_1546 {
    @Override
    public class_5851 method_7003() {
       class_2921 var3 = new class_2921();
-      int var4 = class_9299.method_42847(this.field_8166.method_37309());
+      int var4 = MathHelper.floor(this.field_8166.method_37309());
       class_2522 var5 = this.field_8165.method_28262(var3.method_13361(this.field_8166.getPosX(), (double)var4, this.field_8166.getPosZ()));
       if (!this.field_8166.method_26496(var5.method_8364().method_22005())) {
          if (this.method_7015() && this.field_8166.method_37285()) {
@@ -57,7 +57,7 @@ public class class_2266 extends class_1546 {
 
             var4 = var6.method_6081().method_12165();
          } else {
-            var4 = class_9299.method_42847(this.field_8166.method_37309() + 0.5);
+            var4 = MathHelper.floor(this.field_8166.method_37309() + 0.5);
          }
       } else {
          while (this.field_8166.method_26496(var5.method_8364().method_22005())) {
@@ -68,9 +68,9 @@ public class class_2266 extends class_1546 {
       }
 
       BlockPos var11 = this.field_8166.method_37075();
-      class_1108 var7 = this.method_10454(this.field_8166, var11.method_12173(), var4, var11.method_12185());
+      class_1108 var7 = this.method_10454(this.field_8166, var11.getX(), var4, var11.method_12185());
       if (this.field_8166.method_26931(var7) < 0.0F) {
-         Box var8 = this.field_8166.method_37241();
+         Box var8 = this.field_8166.getBoundingBox();
          if (this.method_10453(var3.method_13361(var8.field_19941, (double)var4, var8.field_19938))
             || this.method_10453(var3.method_13361(var8.field_19941, (double)var4, var8.field_19942))
             || this.method_10453(var3.method_13361(var8.field_19940, (double)var4, var8.field_19938))
@@ -82,7 +82,7 @@ public class class_2266 extends class_1546 {
          }
       }
 
-      class_5851 var12 = this.method_7016(var11.method_12173(), var4, var11.method_12185());
+      class_5851 var12 = this.method_7016(var11.getX(), var4, var11.method_12185());
       var12.field_29730 = this.method_10456(this.field_8166, var12.method_26686());
       var12.field_29729 = this.field_8166.method_26931(var12.field_29730);
       return var12;
@@ -95,7 +95,7 @@ public class class_2266 extends class_1546 {
 
    @Override
    public class_1478 method_7013(double var1, double var3, double var5) {
-      return new class_1478(this.method_7016(class_9299.method_42847(var1), class_9299.method_42847(var3), class_9299.method_42847(var5)));
+      return new class_1478(this.method_7016(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5)));
    }
 
    @Override
@@ -105,7 +105,7 @@ public class class_2266 extends class_1546 {
       class_1108 var7 = this.method_10454(this.field_8166, var2.field_29731, var2.field_29735 + 1, var2.field_29736);
       class_1108 var8 = this.method_10454(this.field_8166, var2.field_29731, var2.field_29735, var2.field_29736);
       if (this.field_8166.method_26931(var7) >= 0.0F && var8 != class_1108.field_6364) {
-         var6 = class_9299.method_42848(Math.max(1.0F, this.field_8166.field_41733));
+         var6 = MathHelper.floor(Math.max(1.0F, this.field_8166.field_41733));
       }
 
       double var9 = method_10464(this.field_8165, new BlockPos(var2.field_29731, var2.field_29735, var2.field_29736));
@@ -179,8 +179,8 @@ public class class_2266 extends class_1546 {
          (double)var1.field_29735 - this.field_8166.method_37309(),
          (double)var1.field_29736 - this.field_8166.getPosZ()
       );
-      Box var5 = this.field_8166.method_37241();
-      int var6 = class_9299.method_42815(var4.method_6217() / var5.method_18906());
+      Box var5 = this.field_8166.getBoundingBox();
+      int var6 = MathHelper.ceil(var4.method_6217() / var5.method_18906());
       var4 = var4.method_6209((double)(1.0F / (float)var6));
 
       for (int var7 = 1; var7 <= var6; var7++) {
@@ -404,7 +404,7 @@ public class class_2266 extends class_1546 {
    }
 
    private class_1108 method_10456(MobEntity var1, BlockPos var2) {
-      return this.method_10454(var1, var2.method_12173(), var2.method_12165(), var2.method_12185());
+      return this.method_10454(var1, var2.getX(), var2.method_12165(), var2.method_12185());
    }
 
    private class_1108 method_10454(MobEntity var1, int var2, int var3, int var4) {
@@ -423,7 +423,7 @@ public class class_2266 extends class_1546 {
    }
 
    public static class_1108 method_10452(class_6163 var0, class_2921 var1) {
-      int var4 = var1.method_12173();
+      int var4 = var1.getX();
       int var5 = var1.method_12165();
       int var6 = var1.method_12185();
       class_1108 var7 = method_10461(var0, var1);
@@ -457,7 +457,7 @@ public class class_2266 extends class_1546 {
    }
 
    public static class_1108 method_10458(class_6163 var0, class_2921 var1, class_1108 var2) {
-      int var5 = var1.method_12173();
+      int var5 = var1.getX();
       int var6 = var1.method_12165();
       int var7 = var1.method_12185();
 

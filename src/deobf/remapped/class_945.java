@@ -40,10 +40,10 @@ public class class_945 extends class_3757 {
       var1.method_25941("name", this.method_4113());
       var1.method_25941("author", this.field_4827);
       var1.method_25941("metadata", this.field_4838);
-      var1.putInt("posX", this.field_4836.method_12173());
+      var1.putInt("posX", this.field_4836.getX());
       var1.putInt("posY", this.field_4836.method_12165());
       var1.putInt("posZ", this.field_4836.method_12185());
-      var1.putInt("sizeX", this.field_4833.method_12173());
+      var1.putInt("sizeX", this.field_4833.getX());
       var1.putInt("sizeY", this.field_4833.method_12165());
       var1.putInt("sizeZ", this.field_4833.method_12185());
       var1.method_25941("rotation", this.field_4831.toString());
@@ -64,13 +64,13 @@ public class class_945 extends class_3757 {
       this.method_4098(var2.method_25965("name"));
       this.field_4827 = var2.method_25965("author");
       this.field_4838 = var2.method_25965("metadata");
-      int var5 = class_9299.method_42829(var2.method_25947("posX"), -48, 48);
-      int var6 = class_9299.method_42829(var2.method_25947("posY"), -48, 48);
-      int var7 = class_9299.method_42829(var2.method_25947("posZ"), -48, 48);
+      int var5 = MathHelper.clamp(var2.method_25947("posX"), -48, 48);
+      int var6 = MathHelper.clamp(var2.method_25947("posY"), -48, 48);
+      int var7 = MathHelper.clamp(var2.method_25947("posZ"), -48, 48);
       this.field_4836 = new BlockPos(var5, var6, var7);
-      int var8 = class_9299.method_42829(var2.method_25947("sizeX"), 0, 48);
-      int var9 = class_9299.method_42829(var2.method_25947("sizeY"), 0, 48);
-      int var10 = class_9299.method_42829(var2.method_25947("sizeZ"), 0, 48);
+      int var8 = MathHelper.clamp(var2.method_25947("sizeX"), 0, 48);
+      int var9 = MathHelper.clamp(var2.method_25947("sizeY"), 0, 48);
+      int var10 = MathHelper.clamp(var2.method_25947("sizeZ"), 0, 48);
       this.field_4833 = new BlockPos(var8, var9, var10);
 
       try {
@@ -260,15 +260,15 @@ public class class_945 extends class_3757 {
       if (this.field_4830 == class_589.field_3417) {
          BlockPos var3 = this.method_17399();
          byte var4 = 80;
-         BlockPos var5 = new BlockPos(var3.method_12173() - 80, 0, var3.method_12185() - 80);
-         BlockPos var6 = new BlockPos(var3.method_12173() + 80, 255, var3.method_12185() + 80);
+         BlockPos var5 = new BlockPos(var3.getX() - 80, 0, var3.method_12185() - 80);
+         BlockPos var6 = new BlockPos(var3.getX() + 80, 255, var3.method_12185() + 80);
          List var7 = this.method_4093(var5, var6);
          List var8 = this.method_4105(var7);
          if (var8.size() >= 1) {
             class_9616 var9 = this.method_4104(var3, var8);
             if (var9.field_48991 - var9.field_48996 > 1 && var9.field_48993 - var9.field_48995 > 1 && var9.field_48994 - var9.field_48992 > 1) {
                this.field_4836 = new BlockPos(
-                  var9.field_48996 - var3.method_12173() + 1, var9.field_48995 - var3.method_12165() + 1, var9.field_48992 - var3.method_12185() + 1
+                  var9.field_48996 - var3.getX() + 1, var9.field_48995 - var3.method_12165() + 1, var9.field_48992 - var3.method_12185() + 1
                );
                this.field_4833 = new BlockPos(
                   var9.field_48991 - var9.field_48996 - 1, var9.field_48993 - var9.field_48995 - 1, var9.field_48994 - var9.field_48992 - 1
@@ -320,12 +320,12 @@ public class class_945 extends class_3757 {
 
       for (class_945 var7 : var2) {
          BlockPos var8 = var7.method_17399();
-         if (var8.method_12173() >= var5.field_48996) {
-            if (var8.method_12173() > var5.field_48991) {
-               var5.field_48991 = var8.method_12173();
+         if (var8.getX() >= var5.field_48996) {
+            if (var8.getX() > var5.field_48991) {
+               var5.field_48991 = var8.getX();
             }
          } else {
-            var5.field_48996 = var8.method_12173();
+            var5.field_48996 = var8.getX();
          }
 
          if (var8.method_12165() >= var5.field_48995) {
@@ -430,7 +430,7 @@ public class class_945 extends class_3757 {
             .method_39045(this.field_4839)
             .method_39049((class_2034)null);
          if (this.field_4826 < 1.0F) {
-            var11.method_39035().method_39048(new class_9098(class_9299.method_42828(this.field_4826, 0.0F, 1.0F))).method_39041(method_4090(this.field_4829));
+            var11.method_39035().method_39048(new class_9098(MathHelper.clamp(this.field_4826, 0.0F, 1.0F))).method_39041(method_4090(this.field_4829));
          }
 
          BlockPos var10 = var6.method_6105(this.field_4836);

@@ -65,7 +65,7 @@ public enum class_8336 implements class_4530 {
    private final boolean field_42698;
    private final boolean field_42697;
    private final class_8929 field_42713;
-   private static final class_8336[][] field_42716 = Util.<class_8336[][]>method_44659(
+   private static final class_8336[][] field_42716 = Util.<class_8336[][]>make(
       new class_8336[values().length][values().length],
       var0 -> {
          Map var3 = Arrays.<class_8336>stream(values())

@@ -28,7 +28,7 @@ public class class_1425 {
       this.field_7706 = var2;
    }
 
-   public void method_6537(class_5834 var1, int var2) {
+   public void method_6537(LivingEntity var1, int var2) {
       if (this != Effects.field_19742) {
          if (this != Effects.field_19718) {
             if (this != Effects.field_19725) {
@@ -56,7 +56,7 @@ public class class_1425 {
       }
    }
 
-   public void method_6539(Entity var1, Entity var2, class_5834 var3, int var4, double var5) {
+   public void method_6539(Entity var1, Entity var2, LivingEntity var3, int var4, double var5) {
       if ((this != Effects.field_19749 || var3.method_26563()) && (this != Effects.field_19723 || !var3.method_26563())) {
          if (this == Effects.field_19723 && !var3.method_26563() || this == Effects.field_19749 && var3.method_26563()) {
             int var10 = (int)(var5 * (double)(6 << var4) + 0.5);
@@ -131,7 +131,7 @@ public class class_1425 {
       return this.field_7705;
    }
 
-   public void method_6551(class_5834 var1, class_6711 var2, int var3) {
+   public void method_6551(LivingEntity var1, class_6711 var2, int var3) {
       for (Entry var7 : this.field_7705.entrySet()) {
          class_9747 var8 = var2.method_30808((class_225)var7.getKey());
          if (var8 != null) {
@@ -140,7 +140,7 @@ public class class_1425 {
       }
    }
 
-   public void method_6543(class_5834 var1, class_6711 var2, int var3) {
+   public void method_6543(LivingEntity var1, class_6711 var2, int var3) {
       for (Entry var7 : this.field_7705.entrySet()) {
          class_9747 var8 = var2.method_30808((class_225)var7.getKey());
          if (var8 != null) {

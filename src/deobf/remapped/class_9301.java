@@ -393,7 +393,7 @@ public class class_9301 extends class_6414 {
 
    public static int method_42946(int var0) {
       class_2426 var3 = field_47511[var0];
-      return class_9299.method_42796(var3.method_11057(), var3.method_11061(), var3.method_11055());
+      return MathHelper.rgb(var3.method_11057(), var3.method_11061(), var3.method_11055());
    }
 
    private void method_42940(World var1, Random var2, BlockPos var3, class_2426 var4, Direction var5, Direction var6, float var7, float var8) {
@@ -406,7 +406,7 @@ public class class_9301 extends class_6414 {
          double var18 = 0.5 + (double)(0.4375F * (float)var5.method_1034()) + (double)(var13 * (float)var6.method_1034());
          var1.method_43361(
             new class_5727(var4.method_11057(), var4.method_11061(), var4.method_11055(), 1.0F),
-            (double)var3.method_12173() + var14,
+            (double)var3.getX() + var14,
             (double)var3.method_12165() + var16,
             (double)var3.method_12185() + var18,
             0.0,
@@ -518,8 +518,8 @@ public class class_9301 extends class_6414 {
       for (int var2 = 0; var2 <= 15; var2++) {
          float var3 = (float)var2 / 15.0F;
          float var4 = var3 * 0.6F + (!(var3 > 0.0F) ? 0.3F : 0.4F);
-         float var5 = class_9299.method_42828(var3 * var3 * 0.7F - 0.5F, 0.0F, 1.0F);
-         float var6 = class_9299.method_42828(var3 * var3 * 0.6F - 0.7F, 0.0F, 1.0F);
+         float var5 = MathHelper.clamp(var3 * var3 * 0.7F - 0.5F, 0.0F, 1.0F);
+         float var6 = MathHelper.clamp(var3 * var3 * 0.6F - 0.7F, 0.0F, 1.0F);
          field_47511[var2] = new class_2426(var4, var5, var6);
       }
    }

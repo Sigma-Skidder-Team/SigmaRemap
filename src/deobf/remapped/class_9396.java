@@ -44,9 +44,9 @@ public class class_9396 {
          this.field_48011 = var10;
          HashSet var19 = new HashSet();
          if (var10 > 0) {
-            Direction var20 = (class_9299.method_42847(var39) & 15) < 8 ? Direction.field_809 : Direction.field_804;
-            Direction var21 = (class_9299.method_42847(var6) & 15) < 8 ? Direction.field_802 : Direction.field_817;
-            Direction var22 = (class_9299.method_42847(var8) & 15) < 8 ? Direction.field_818 : Direction.field_800;
+            Direction var20 = (MathHelper.floor(var39) & 15) < 8 ? Direction.field_809 : Direction.field_804;
+            Direction var21 = (MathHelper.floor(var6) & 15) < 8 ? Direction.field_802 : Direction.field_817;
+            Direction var22 = (MathHelper.floor(var8) & 15) < 8 ? Direction.field_818 : Direction.field_800;
             BlockPos var23 = new BlockPos(var39, var6, var8);
             class_3511 var24 = var1.method_20068(var23);
             BlockPos var25 = this.method_43477(var24, var23, var20);

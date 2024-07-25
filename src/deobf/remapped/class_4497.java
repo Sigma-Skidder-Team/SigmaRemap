@@ -131,7 +131,7 @@ public class class_4497 extends class_341 implements class_8685 {
          String var11 = String.format(Locale.ROOT, "%.3fs", (double)var9 / 1.0E9);
          field_21994.info("Done ({})! For help, type \"help\"", var11);
          if (var4.field_50107 != null) {
-            this.method_1683().<class_5850>method_1287(class_291.field_1053).method_26684(var4.field_50107, this);
+            this.method_1683().<class_5850>method_1287(GameRules.field_1053).method_26684(var4.field_50107, this);
          }
 
          if (var4.field_50090) {
@@ -355,8 +355,8 @@ public class class_4497 extends class_341 implements class_8685 {
             if (!this.method_20890().method_39962(var3.method_3247())) {
                if (this.method_1680() > 0) {
                   BlockPos var6 = var1.method_28998();
-                  int var7 = class_9299.method_42805(var2.method_12173() - var6.method_12173());
-                  int var8 = class_9299.method_42805(var2.method_12185() - var6.method_12185());
+                  int var7 = MathHelper.abs(var2.getX() - var6.getX());
+                  int var8 = MathHelper.abs(var2.method_12185() - var6.method_12185());
                   int var9 = Math.max(var7, var8);
                   return var9 <= this.method_1680();
                } else {

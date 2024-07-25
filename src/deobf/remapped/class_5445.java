@@ -176,7 +176,7 @@ public class class_5445 extends Screen {
       BlockPos var3 = this.field_27753.method_4116();
       this.field_27731 = new class_1863(this.field_948, this.field_941 / 2 - 152, 80, 80, 20, new TranslationTextComponent("structure_block.position.x"));
       this.field_27731.method_8255(15);
-      this.field_27731.method_8281(Integer.toString(var3.method_12173()));
+      this.field_27731.method_8281(Integer.toString(var3.getX()));
       this.field_942.add(this.field_27731);
       this.field_27762 = new class_1863(this.field_948, this.field_941 / 2 - 72, 80, 80, 20, new TranslationTextComponent("structure_block.position.y"));
       this.field_27762.method_8255(15);
@@ -189,7 +189,7 @@ public class class_5445 extends Screen {
       BlockPos var4 = this.field_27753.method_4096();
       this.field_27741 = new class_1863(this.field_948, this.field_941 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.size.x"));
       this.field_27741.method_8255(15);
-      this.field_27741.method_8281(Integer.toString(var4.method_12173()));
+      this.field_27741.method_8281(Integer.toString(var4.getX()));
       this.field_942.add(this.field_27741);
       this.field_27754 = new class_1863(this.field_948, this.field_941 / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.size.y"));
       this.field_27754.method_8255(15);

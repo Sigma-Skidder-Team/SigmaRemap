@@ -15,7 +15,7 @@ public abstract class class_1050 implements class_3560 {
    public boolean field_5767;
    public boolean field_5769;
 
-   public class_1050(class_8461 var1, class_562 var2) {
+   public class_1050(SoundEvent var1, class_562 var2) {
       this(var1.method_38928(), var2);
    }
 

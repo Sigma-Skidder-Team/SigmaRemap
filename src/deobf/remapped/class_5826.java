@@ -12,7 +12,7 @@ public class class_5826 extends class_4171<class_449, class_4995<class_449>> {
       var1.method_36063();
       float var14 = 1.0F;
       float var15 = -1.0F;
-      float var16 = class_9299.method_42804(var4.rotationPitch) / 60.0F;
+      float var16 = MathHelper.abs(var4.rotationPitch) / 60.0F;
       if (!(var4.rotationPitch < 0.0F)) {
          var1.method_36065(0.0, (double)(1.0F + var16 * 0.8F), (double)(-1.0F + var16 * 0.2F));
       } else {

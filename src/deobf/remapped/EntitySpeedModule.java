@@ -21,7 +21,7 @@ public class EntitySpeedModule extends Module {
          MovementInput var4 = client.thePlayer.movementInput;
          float var5 = var4.field_45287;
          float var6 = var4.field_45282;
-         if (!client.thePlayer.getRidingEntity().field_41744
+         if (!client.thePlayer.getRidingEntity().collidedHorizontally
             && !client.thePlayer.getRidingEntity().onGround
             && class_314.method_1413(client.thePlayer.getRidingEntity(), 5.0F)
             && !client.thePlayer.getRidingEntity().method_37285()
@@ -30,7 +30,7 @@ public class EntitySpeedModule extends Module {
          }
 
          if (client.thePlayer.getRidingEntity().method_37285()) {
-            if (client.thePlayer.getRidingEntity().field_41744) {
+            if (client.thePlayer.getRidingEntity().collidedHorizontally) {
                var1.method_23388(-1.0);
             } else {
                double var13 = Math.floor(client.thePlayer.getRidingEntity().method_37309())

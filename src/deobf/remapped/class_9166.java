@@ -61,10 +61,10 @@ public class class_9166<T extends class_5521> extends class_6521<T> {
       this.field_46917.field_8191 = var6 * (float) (Math.PI / 180.0);
       this.field_46917.field_8190 = var5 * (float) (Math.PI / 180.0);
       this.field_46919.field_8191 = (float) (Math.PI / 2);
-      this.field_46913.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
-      this.field_46916.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field_46915.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field_46920.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
+      this.field_46913.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+      this.field_46916.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field_46915.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field_46920.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
       boolean var9 = !var1.method_26449() && var1.method_25017();
       this.field_46912.field_8200 = var9;
       this.field_46914.field_8200 = var9;

@@ -19,7 +19,7 @@ public class class_8347 extends class_7157 {
    );
    private static final class_8137 field_42753 = class_8137.method_37019(class_4897.field_24481);
    private static final class_8137 field_42752 = class_8137.method_37019(class_4897.field_24777);
-   private static final Map<class_2451, class_3917> field_42755 = Util.<Map<class_2451, class_3917>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_2451, class_3917> field_42755 = Util.<Map<class_2451, class_3917>>make(Maps.newHashMap(), var0 -> {
       var0.put(class_4897.field_24352, class_3917.field_19031);
       var0.put(class_4897.field_24922, class_3917.field_19027);
       var0.put(class_4897.field_24659, class_3917.field_19029);

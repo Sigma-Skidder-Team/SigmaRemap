@@ -165,7 +165,7 @@ public class HypixelFly extends Module {
 
          double var6 = 0.99375 - (double)this.field_18800 * 1.0E-13;
          this.field_18795 *= var6;
-         if (client.thePlayer.field_41744 || client.thePlayer.field_41774) {
+         if (client.thePlayer.collidedHorizontally || client.thePlayer.field_41774) {
             this.field_18795 = 0.0;
          }
 
@@ -194,7 +194,7 @@ public class HypixelFly extends Module {
          boolean var21 = var19 < 1.0E-4;
          if (this.getBooleanValueByName("No Collision") && this.field_18795 > var10) {
             ArrayList var22 = new ArrayList();
-            float var23 = class_9299.method_42810(class_8865.method_40785());
+            float var23 = MathHelper.wrapDegrees(class_8865.method_40785());
             if (var23 > 0.0F && var23 < 90.0F) {
                var22.add(new class_1343(1.0, 0.0, 0.0));
                var22.add(new class_1343(0.0, 0.0, 1.0));

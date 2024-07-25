@@ -43,10 +43,10 @@ public class class_4888 extends class_380 implements class_9866 {
             BlockPos var12 = var5.method_31795(1, 2, 0).method_41966();
             IronGolemEntity var15 = EntityType.field_34298.method_30484(var1);
             var15.method_36979(true);
-            var15.method_37144((double)var12.method_12173() + 0.5, (double)var12.method_12165() + 0.05, (double)var12.method_12185() + 0.5, 0.0F, 0.0F);
+            var15.method_37144((double)var12.getX() + 0.5, (double)var12.method_12165() + 0.05, (double)var12.method_12185() + 0.5, 0.0F, 0.0F);
             var1.method_7509(var15);
 
-            for (class_9359 var9 : var1.<class_9359>method_25868(class_9359.class, var15.method_37241().method_18898(5.0))) {
+            for (class_9359 var9 : var1.<class_9359>method_25868(class_9359.class, var15.getBoundingBox().grow(5.0))) {
                class_8807.field_45046.method_22685(var9, var15);
             }
 
@@ -66,10 +66,10 @@ public class class_4888 extends class_380 implements class_9866 {
 
          class_223 var14 = EntityType.field_34253.method_30484(var1);
          BlockPos var17 = var5.method_31795(0, 2, 0).method_41966();
-         var14.method_37144((double)var17.method_12173() + 0.5, (double)var17.method_12165() + 0.05, (double)var17.method_12185() + 0.5, 0.0F, 0.0F);
+         var14.method_37144((double)var17.getX() + 0.5, (double)var17.method_12165() + 0.05, (double)var17.method_12185() + 0.5, 0.0F, 0.0F);
          var1.method_7509(var14);
 
-         for (class_9359 var23 : var1.<class_9359>method_25868(class_9359.class, var14.method_37241().method_18898(5.0))) {
+         for (class_9359 var23 : var1.<class_9359>method_25868(class_9359.class, var14.getBoundingBox().grow(5.0))) {
             class_8807.field_45046.method_22685(var23, var14);
          }
 

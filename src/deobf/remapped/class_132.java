@@ -47,7 +47,7 @@ public class class_132 {
    public void method_418() {
       field_342.clear();
 
-      for (class_8461 var4 : class_8669.field_44369) {
+      for (SoundEvent var4 : class_8669.field_44369) {
          Identifier var5 = var4.method_38928();
          if (this.field_341.method_16334(var5) == null) {
             field_330.warn("Missing sound for event: {}", class_8669.field_44369.method_39797(var4));
@@ -334,11 +334,11 @@ public class class_132 {
    }
 
    private float method_439(class_3560 var1) {
-      return class_9299.method_42828(var1.method_16560(), 0.5F, 2.0F);
+      return MathHelper.clamp(var1.method_16560(), 0.5F, 2.0F);
    }
 
    private float method_417(class_3560 var1) {
-      return class_9299.method_42828(var1.method_16562() * this.method_428(var1.method_16549()), 0.0F, 1.0F);
+      return MathHelper.clamp(var1.method_16562() * this.method_428(var1.method_16549()), 0.0F, 1.0F);
    }
 
    public void method_433() {

@@ -54,7 +54,7 @@ public enum class_4169 implements class_6839 {
                case field_20291:
                   return var4.field_32489;
                default:
-                  class_5834 var5 = var4.field_32481;
+                  LivingEntity var5 = var4.field_32481;
                   if (var5 == null) {
                      return 0.0F;
                   }

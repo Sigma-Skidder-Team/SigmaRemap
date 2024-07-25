@@ -43,6 +43,6 @@ public class class_869 {
    }
 
    public static String method_3762(BlockPos var0) {
-      return "frame-" + var0.method_12173() + "," + var0.method_12165() + "," + var0.method_12185();
+      return "frame-" + var0.getX() + "," + var0.method_12165() + "," + var0.method_12185();
    }
 }

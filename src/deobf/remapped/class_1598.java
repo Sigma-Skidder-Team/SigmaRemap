@@ -36,7 +36,7 @@ public class class_1598 extends class_8131 {
          .parse(new Dynamic(class_3504.field_17178, var2.method_25929("Properties")))
          .getOrThrow(true, field_8320::error);
       class_6561 var5 = var1.method_26279(this.field_8322);
-      this.method_7168(var5, new BlockPos(var5.method_29975().method_12173() / 2, 0, var5.method_29975().method_12185() / 2));
+      this.method_7168(var5, new BlockPos(var5.method_29975().getX() / 2, 0, var5.method_29975().method_12185() / 2));
    }
 
    @Override
@@ -159,8 +159,8 @@ public class class_1598 extends class_8131 {
 
    private void method_7158(Random var1, class_9379 var2) {
       boolean var5 = this.field_8319 == class_3487.field_17125 || this.field_8319 == class_3487.field_17119;
-      class_2700 var6 = this.field_36435.method_44396();
-      int var7 = var6.method_12173();
+      Vector3i var6 = this.field_36435.method_44396();
+      int var7 = var6.getX();
       int var8 = var6.method_12185();
       float[] var9 = new float[]{1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.9F, 0.9F, 0.8F, 0.7F, 0.6F, 0.4F, 0.2F};
       int var10 = var9.length;

@@ -116,7 +116,7 @@ public class class_8360 {
    private boolean method_38539(BlockPos var1) {
       for (int var4 = 0; var4 < this.field_42832.size(); var4++) {
          BlockPos var5 = this.field_42832.get(var4);
-         if (var5.method_12173() == var1.method_12173() && var5.method_12185() == var1.method_12185()) {
+         if (var5.getX() == var1.getX() && var5.method_12185() == var1.method_12185()) {
             return true;
          }
       }

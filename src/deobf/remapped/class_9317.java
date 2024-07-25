@@ -59,7 +59,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    }
 
    private void method_43012() {
-      this.field_18364.method_43359((PlayerEntity)null, this.method_17399(), class_463.field_2099, class_562.field_3322, 1.0F, 1.0F);
+      this.field_18364.method_43359((PlayerEntity)null, this.method_17399(), SoundEvents.field_2099, class_562.field_3322, 1.0F, 1.0F);
    }
 
    public void method_43016(Direction var1) {
@@ -78,7 +78,7 @@ public class class_9317 extends class_3757 implements class_3745 {
       BlockPos var3 = this.method_17399();
       if (this.field_18364.method_29546() > this.field_47579 + 60L || this.field_47583 == null) {
          this.field_47579 = this.field_18364.method_29546();
-         Box var4 = new Box(var3).method_18898(48.0);
+         Box var4 = new Box(var3).grow(48.0);
          this.field_47583 = this.field_18364.<LivingEntity>method_25868(LivingEntity.class, var4);
       }
 
@@ -123,13 +123,13 @@ public class class_9317 extends class_3757 implements class_3745 {
             .forEach(
                var4x -> {
                   float var7 = 1.0F;
-                  float var8 = class_9299.method_42842(
-                     (var4x.getPosX() - (double)var4.method_12173()) * (var4x.getPosX() - (double)var4.method_12173())
+                  float var8 = MathHelper.sqrt(
+                     (var4x.getPosX() - (double)var4.getX()) * (var4x.getPosX() - (double)var4.getX())
                         + (var4x.getPosZ() - (double)var4.method_12185()) * (var4x.getPosZ() - (double)var4.method_12185())
                   );
-                  double var9 = (double)((float)var4.method_12173() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosX() - (double)var4.method_12173());
+                  double var9 = (double)((float)var4.getX() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosX() - (double)var4.getX());
                   double var11 = (double)((float)var4.method_12185() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosZ() - (double)var4.method_12185());
-                  int var13 = class_9299.method_42829((var6 - 21) / -2, 3, 15);
+                  int var13 = MathHelper.clamp((var6 - 21) / -2, 3, 15);
 
                   for (int var14 = 0; var14 < var13; var14++) {
                      int var15 = var5.addAndGet(5);

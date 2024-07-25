@@ -103,7 +103,7 @@ public class class_1599 extends class_2208<class_338> {
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field_10956.method_18886(this.field_943.thePlayer, var11)) {
-               MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(class_463.field_2242, 1.0F));
+               MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(SoundEvents.field_2242, 1.0F));
                this.field_943.playerController.method_42154(this.field_10956.field_19925, var11);
                return true;
             }
@@ -125,7 +125,7 @@ public class class_1599 extends class_2208<class_338> {
          int var12 = this.field_10962 + 14;
          int var13 = var12 + 54;
          this.field_8328 = ((float)var3 - (float)var12 - 7.5F) / ((float)(var13 - var12) - 15.0F);
-         this.field_8328 = class_9299.method_42828(this.field_8328, 0.0F, 1.0F);
+         this.field_8328 = MathHelper.clamp(this.field_8328, 0.0F, 1.0F);
          this.field_8326 = (int)((double)(this.field_8328 * (float)this.method_7172()) + 0.5) * 4;
          return true;
       } else {
@@ -138,7 +138,7 @@ public class class_1599 extends class_2208<class_338> {
       if (this.method_7170()) {
          int var9 = this.method_7172();
          this.field_8328 = (float)((double)this.field_8328 - var5 / (double)var9);
-         this.field_8328 = class_9299.method_42828(this.field_8328, 0.0F, 1.0F);
+         this.field_8328 = MathHelper.clamp(this.field_8328, 0.0F, 1.0F);
          this.field_8326 = (int)((double)(this.field_8328 * (float)var9) + 0.5) * 4;
       }
 

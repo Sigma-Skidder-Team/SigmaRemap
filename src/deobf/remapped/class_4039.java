@@ -18,7 +18,7 @@ public class class_4039 implements Packet<class_392> {
       this.field_19603 = var1;
 
       for (class_9747 var6 : var2) {
-         this.field_19604.add(new class_3032(this, (double)var6.method_44993(), var6.method_44996(), var6.method_45001()));
+         this.field_19604.add(new class_3032(this, (double)var6.method_44993(), var6.getBaseValue(), var6.method_45001()));
       }
    }
 

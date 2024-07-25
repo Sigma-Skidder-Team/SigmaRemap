@@ -11,8 +11,8 @@ public class class_8674 extends class_7260<class_5555> {
       if (var1.method_25241() || var1.method_25249()) {
          float var9 = !var1.method_25241() ? var1.method_25244(var2) : var1.method_25245(var2);
          double var10 = !var1.method_25241() ? 50.0 : 256.0;
-         var9 = class_9299.method_42818(var9 * (float) Math.PI);
-         int var12 = class_9299.method_42847((double)var9 * var10);
+         var9 = MathHelper.sin(var9 * (float) Math.PI);
+         int var12 = MathHelper.floor((double)var9 * var10);
          float[] var13 = !var1.method_25241() ? class_9077.field_46499.method_41792() : class_9077.field_46480.method_41792();
          long var14 = var1.method_17402().method_29546();
          class_1227.method_5466(var3, var4, field_44528, var2, var9, var14, 0, var12, var13, 0.15F, 0.175F);

@@ -69,7 +69,7 @@ public class class_3633 extends class_380 implements class_724 {
                (Entity)null,
                DamageSource.method_28378(),
                (class_7571)null,
-               (double)var3.method_12173() + 0.5,
+               (double)var3.getX() + 0.5,
                (double)var3.method_12165() + 0.5,
                (double)var3.method_12185() + 0.5,
                5.0F,
@@ -236,7 +236,7 @@ public class class_3633 extends class_380 implements class_724 {
       class_2921 var7 = new class_2921();
 
       for (int[] var11 : var3) {
-         var7.method_13362(var2.method_12173() + var11[0], var2.method_12165(), var2.method_12185() + var11[1]);
+         var7.method_13362(var2.getX() + var11[0], var2.method_12165(), var2.method_12185() + var11[1]);
          class_1343 var12 = class_160.method_650(var0, var1, var7, var4);
          if (var12 != null) {
             return Optional.<class_1343>of(var12);
@@ -284,7 +284,7 @@ public class class_3633 extends class_380 implements class_724 {
    @Override
    public long method_10759(class_2522 var1, BlockPos var2) {
       BlockPos var5 = var2.method_6099(var1.<Direction>method_10313(field_1543), var1.method_10313(field_17729) != class_7095.field_36603 ? 1 : 0);
-      return class_9299.method_42839(var5.method_12173(), var2.method_12165(), var5.method_12185());
+      return MathHelper.getCoordinateRandom(var5.getX(), var2.method_12165(), var5.method_12185());
    }
 
    @Override

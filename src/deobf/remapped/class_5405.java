@@ -29,8 +29,8 @@ public class class_5405 extends DamageSource {
    }
 
    @Override
-   public ITextComponent method_28362(class_5834 var1) {
-      ItemStack var4 = !(this.field_27576 instanceof class_5834) ? ItemStack.EMPTY : ((class_5834)this.field_27576).method_26446();
+   public ITextComponent method_28362(LivingEntity var1) {
+      ItemStack var4 = !(this.field_27576 instanceof LivingEntity) ? ItemStack.EMPTY : ((LivingEntity)this.field_27576).method_26446();
       String var5 = "death.attack." + this.field_31693;
       return !var4.method_28022() && var4.method_28018()
          ? new TranslationTextComponent(var5 + ".item", var1.method_19839(), this.field_27576.method_19839(), var4.method_28001())
@@ -39,7 +39,7 @@ public class class_5405 extends DamageSource {
 
    @Override
    public boolean method_28374() {
-      return this.field_27576 != null && this.field_27576 instanceof class_5834 && !(this.field_27576 instanceof PlayerEntity);
+      return this.field_27576 != null && this.field_27576 instanceof LivingEntity && !(this.field_27576 instanceof PlayerEntity);
    }
 
    @Nullable

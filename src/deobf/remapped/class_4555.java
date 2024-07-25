@@ -8,9 +8,9 @@ public class class_4555 {
 
    @Nonnull
    public static class_1343 method_21121(class_1343 var0, class_7141 var1) {
-      int var4 = class_9299.method_42847(var0.method_61());
-      int var5 = class_9299.method_42847(var0.method_60());
-      int var6 = class_9299.method_42847(var0.method_62());
+      int var4 = MathHelper.floor(var0.method_61());
+      int var5 = MathHelper.floor(var0.method_60());
+      int var6 = MathHelper.floor(var0.method_62());
       double var7 = var0.method_61() - (double)var4;
       double var9 = var0.method_60() - (double)var5;
       double var11 = var0.method_62() - (double)var6;
@@ -18,15 +18,15 @@ public class class_4555 {
       class_1343 var15 = class_1343.field_7335;
 
       for (int var16 = 0; var16 < 6; var16++) {
-         double var17 = class_9299.method_42794(var7, field_22201[var16 + 1], field_22201[var16]);
+         double var17 = MathHelper.lerp(var7, field_22201[var16 + 1], field_22201[var16]);
          int var19 = var4 - 2 + var16;
 
          for (int var20 = 0; var20 < 6; var20++) {
-            double var21 = class_9299.method_42794(var9, field_22201[var20 + 1], field_22201[var20]);
+            double var21 = MathHelper.lerp(var9, field_22201[var20 + 1], field_22201[var20]);
             int var23 = var5 - 2 + var20;
 
             for (int var24 = 0; var24 < 6; var24++) {
-               double var25 = class_9299.method_42794(var11, field_22201[var24 + 1], field_22201[var24]);
+               double var25 = MathHelper.lerp(var11, field_22201[var24 + 1], field_22201[var24]);
                int var27 = var6 - 2 + var24;
                double var28 = var17 * var21 * var25;
                var13 += var28;

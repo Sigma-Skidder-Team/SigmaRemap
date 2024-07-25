@@ -45,7 +45,7 @@ public class class_8387 extends class_7430 {
             this.method_32685(),
             this.field_36670 + 24,
             this.field_36674 + (this.field_36681 - 8) / 2,
-            14737632 | class_9299.method_42816(this.field_36680 * 255.0F) << 24
+            14737632 | MathHelper.ceil(this.field_36680 * 255.0F) << 24
          );
       }
    }

@@ -24,21 +24,21 @@ public abstract class class_8722 extends class_3798 {
       BlockPos var7 = var2.method_6081();
       if (var1.method_28262(var7).method_8345() && !var1.method_28262(var7).method_8321(var1, var7)) {
          if (var4.nextInt(100) == 0) {
-            double var8 = (double)var2.method_12173() + var4.nextDouble();
+            double var8 = (double)var2.getX() + var4.nextDouble();
             double var10 = (double)var2.method_12165() + 1.0;
             double var12 = (double)var2.method_12185() + var4.nextDouble();
             var1.method_43361(class_3090.field_15372, var8, var10, var12, 0.0, 0.0, 0.0);
             var1.method_29527(
-               var8, var10, var12, class_463.field_2511, class_562.field_3322, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
+               var8, var10, var12, SoundEvents.field_2511, class_562.field_3322, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
          }
 
          if (var4.nextInt(200) == 0) {
             var1.method_29527(
-               (double)var2.method_12173(),
+               (double)var2.getX(),
                (double)var2.method_12165(),
                (double)var2.method_12185(),
-               class_463.field_2339,
+               SoundEvents.field_2339,
                class_562.field_3322,
                0.2F + var4.nextFloat() * 0.2F,
                0.9F + var4.nextFloat() * 0.15F,
@@ -50,7 +50,7 @@ public abstract class class_8722 extends class_3798 {
 
    @Override
    public void method_10706(World var1, BlockPos var2, class_4774 var3, Random var4) {
-      if (var1.method_29537().method_1285(class_291.field_1035)) {
+      if (var1.getGameRules().getBoolean(GameRules.field_1035)) {
          int var7 = var4.nextInt(3);
          if (var7 <= 0) {
             for (int var8 = 0; var8 < 3; var8++) {

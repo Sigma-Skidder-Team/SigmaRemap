@@ -51,7 +51,7 @@ public class class_1156 extends class_8715 {
 
    @Override
    public float method_9766(float var1) {
-      return this.field_10503 * class_9299.method_42828(((float)this.field_49475 + var1) / (float)this.field_49476 * 32.0F, 0.0F, 1.0F);
+      return this.field_10503 * MathHelper.clamp(((float)this.field_49475 + var1) / (float)this.field_49476 * 32.0F, 0.0F, 1.0F);
    }
 
    @Override

@@ -54,7 +54,7 @@ public class class_6560 {
       .<Identifier>map(var0 -> new Identifier("textures/" + var0.method_21456() + ".png"))
       .collect(Collectors.<Identifier>toList());
    public static final List<RenderLayer> field_33452 = field_33451.stream().<RenderLayer>map(RenderLayer::method_16719).collect(Collectors.<RenderLayer>toList());
-   private static final Set<class_2843> field_33456 = Util.<Set<class_2843>>method_44659(Sets.newHashSet(), var0 -> {
+   private static final Set<class_2843> field_33456 = Util.<Set<class_2843>>make(Sets.newHashSet(), var0 -> {
       var0.add(field_33450);
       var0.add(field_33438);
       var0.add(field_33464);
@@ -95,10 +95,10 @@ public class class_6560 {
    private static final Map<String, String> field_33442 = Maps.newHashMap(ImmutableMap.of("missing", field_33465));
    private static final Splitter field_33443 = Splitter.on(',');
    private static final Splitter field_33466 = Splitter.on('=').limit(2);
-   public static final class_9403 field_33462 = Util.<class_9403>method_44659(
+   public static final class_9403 field_33462 = Util.<class_9403>make(
       class_9403.method_43560("{\"gui_light\": \"front\"}"), var0 -> var0.field_48083 = "generation marker"
    );
-   public static final class_9403 field_33459 = Util.<class_9403>method_44659(
+   public static final class_9403 field_33459 = Util.<class_9403>make(
       class_9403.method_43560("{\"gui_light\": \"side\"}"), var0 -> var0.field_48083 = "block entity marker"
    );
    private static final class_8021<class_6414, class_2522> field_33434 = new class_2203<class_6414, class_2522>(class_4783.field_23184)
@@ -117,7 +117,7 @@ public class class_6560 {
    private final Map<Identifier, class_7373> field_33449 = Maps.newHashMap();
    private Map<Identifier, Pair<class_8359, class_3930>> field_33430;
    private int field_33454 = 1;
-   private final Object2IntMap<class_2522> field_33447 = Util.<Object2IntMap<class_2522>>method_44659(
+   private final Object2IntMap<class_2522> field_33447 = Util.<Object2IntMap<class_2522>>make(
       new Object2IntOpenHashMap(), var0 -> var0.defaultReturnValue(-1)
    );
    public Map<Identifier, class_2053> field_33467;

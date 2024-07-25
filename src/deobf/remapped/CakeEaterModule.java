@@ -52,7 +52,7 @@ public class CakeEaterModule extends Module {
 
                class_9529 var7 = new class_9529(
                   new class_1343(
-                     (double)field_24090.method_12173() + 0.4 + Math.random() * 0.2,
+                     (double)field_24090.getX() + 0.4 + Math.random() * 0.2,
                      (double)field_24090.method_12165() + 0.5,
                      (double)field_24090.method_12185() + 0.4 + Math.random() * 0.2
                   ),
@@ -71,7 +71,7 @@ public class CakeEaterModule extends Module {
                field_24090 = (BlockPos)var8.get(0);
                if (!this.getBooleanValueByName("Mineplex")) {
                   float[] var6 = class_7211.method_33006(
-                     (double)field_24090.method_12173() + 0.5, (double)field_24090.method_12185() + 0.5, (double)field_24090.method_12165()
+                     (double)field_24090.getX() + 0.5, (double)field_24090.method_12185() + 0.5, (double)field_24090.method_12165()
                   );
                   var1.method_6441(var6[0]);
                   var1.method_6448(var6[1]);
@@ -95,7 +95,7 @@ public class CakeEaterModule extends Module {
                if (client.theWorld.method_28262(var8).method_8360() instanceof class_6726
                   && Math.sqrt(
                         client.thePlayer
-                           .method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
+                           .method_37273((double)var8.getX() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
                      )
                      < (double)var1) {
                   var4.add(var8);

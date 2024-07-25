@@ -56,15 +56,15 @@ public class IronGolemEntity extends class_608 implements class_6250 {
    @Override
    public void method_26596(Entity var1) {
       if (var1 instanceof class_1869 && !(var1 instanceof class_9490) && this.method_26594().nextInt(20) == 0) {
-         this.method_26860((class_5834)var1);
+         this.method_26860((LivingEntity)var1);
       }
 
       super.method_26596(var1);
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (this.field_41632 > 0) {
          this.field_41632--;
       }
@@ -74,9 +74,9 @@ public class IronGolemEntity extends class_608 implements class_6250 {
       }
 
       if (method_37266(this.method_37098()) > 2.5000003E-7F && this.field_41717.nextInt(5) == 0) {
-         int var3 = class_9299.method_42847(this.getPosX());
-         int var4 = class_9299.method_42847(this.method_37309() - 0.2F);
-         int var5 = class_9299.method_42847(this.getPosZ());
+         int var3 = MathHelper.floor(this.getPosX());
+         int var4 = MathHelper.floor(this.method_37309() - 0.2F);
+         int var5 = MathHelper.floor(this.getPosZ());
          class_2522 var6 = this.world.method_28262(new BlockPos(var3, var4, var5));
          if (!var6.method_8345()) {
             this.world
@@ -161,7 +161,7 @@ public class IronGolemEntity extends class_608 implements class_6250 {
          this.method_37096(this, var1);
       }
 
-      this.method_37155(class_463.field_2670, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2670, 1.0F, 1.0F);
       return var6;
    }
 
@@ -170,7 +170,7 @@ public class IronGolemEntity extends class_608 implements class_6250 {
       class_440 var5 = this.method_36976();
       boolean var6 = super.attackEntityFrom(var1, var2);
       if (var6 && this.method_36976() != var5) {
-         this.method_37155(class_463.field_2564, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2564, 1.0F, 1.0F);
       }
 
       return var6;
@@ -194,7 +194,7 @@ public class IronGolemEntity extends class_608 implements class_6250 {
          }
       } else {
          this.field_41632 = 10;
-         this.method_37155(class_463.field_2670, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2670, 1.0F, 1.0F);
       }
    }
 
@@ -213,13 +213,13 @@ public class IronGolemEntity extends class_608 implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2006;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2006;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2858;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2858;
    }
 
    @Override
@@ -231,7 +231,7 @@ public class IronGolemEntity extends class_608 implements class_6250 {
          this.heal(25.0F);
          if (this.method_26551() != var7) {
             float var8 = 1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F;
-            this.method_37155(class_463.field_1936, 1.0F, var8);
+            this.method_37155(SoundEvents.field_1936, 1.0F, var8);
             if (!var1.playerAbilities.isCreativeMode) {
                var5.method_27970(1);
             }
@@ -247,7 +247,7 @@ public class IronGolemEntity extends class_608 implements class_6250 {
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2483, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2483, 1.0F, 1.0F);
    }
 
    public int method_36978() {

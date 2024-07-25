@@ -15,10 +15,10 @@ public abstract class MonsterEntity extends class_4612 implements class_1869 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       this.method_26489();
       this.method_5203();
-      super.method_26606();
+      super.livingTick();
    }
 
    public void method_5203() {
@@ -34,13 +34,13 @@ public abstract class MonsterEntity extends class_4612 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_37239() {
-      return class_463.field_1986;
+   public SoundEvent method_37239() {
+      return SoundEvents.field_1986;
    }
 
    @Override
-   public class_8461 method_37133() {
-      return class_463.field_2384;
+   public SoundEvent method_37133() {
+      return SoundEvents.field_2384;
    }
 
    @Override
@@ -49,18 +49,18 @@ public abstract class MonsterEntity extends class_4612 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2091;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2091;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2402;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2402;
    }
 
    @Override
-   public class_8461 method_26587(int var1) {
-      return var1 <= 4 ? class_463.field_2755 : class_463.field_1963;
+   public SoundEvent method_26587(int var1) {
+      return var1 <= 4 ? SoundEvents.field_2755 : SoundEvents.field_1963;
    }
 
    @Override

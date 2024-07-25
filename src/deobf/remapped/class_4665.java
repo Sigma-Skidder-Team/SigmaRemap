@@ -61,7 +61,7 @@ public class class_4665 {
             new TranslationTextComponent("commands.debug.stopped", String.format(Locale.ROOT, "%.2f", var6), var4.method_11741(), String.format("%.2f", var7)),
             true
          );
-         return class_9299.method_42848(var7);
+         return MathHelper.floor(var7);
       } else {
          throw field_22752.create();
       }

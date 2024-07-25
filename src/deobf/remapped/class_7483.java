@@ -20,7 +20,7 @@ public class class_7483 extends Entity implements class_3713 {
 
    public void method_34038(ItemStack var1) {
       if (var1.method_27960() != class_4897.field_24519 || var1.method_28002()) {
-         this.method_37372().method_36633(field_38200, Util.<ItemStack>method_44659(var1.method_27973(), var0 -> var0.method_28017(1)));
+         this.method_37372().method_36633(field_38200, Util.<ItemStack>make(var1.method_27973(), var0 -> var0.method_28017(1)));
       }
    }
 
@@ -41,7 +41,7 @@ public class class_7483 extends Entity implements class_3713 {
 
    @Override
    public boolean method_37176(double var1) {
-      double var5 = this.method_37241().method_18906() * 4.0;
+      double var5 = this.getBoundingBox().method_18906() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }
@@ -51,12 +51,12 @@ public class class_7483 extends Entity implements class_3713 {
    }
 
    public void method_34037(BlockPos var1) {
-      double var4 = (double)var1.method_12173();
+      double var4 = (double)var1.getX();
       int var6 = var1.method_12165();
       double var7 = (double)var1.method_12185();
       double var9 = var4 - this.getPosX();
       double var11 = var7 - this.getPosZ();
-      float var13 = class_9299.method_42842(var9 * var9 + var11 * var11);
+      float var13 = MathHelper.sqrt(var9 * var9 + var11 * var11);
       if (!(var13 > 12.0F)) {
          this.field_38206 = var4;
          this.field_38204 = (double)var6;
@@ -75,9 +75,9 @@ public class class_7483 extends Entity implements class_3713 {
    public void method_37162(double var1, double var3, double var5) {
       this.method_37214(var1, var3, var5);
       if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
-         float var9 = class_9299.method_42842(var1 * var1 + var5 * var5);
-         this.rotationYaw = (float)(class_9299.method_42821(var1, var5) * 180.0F / (float)Math.PI);
-         this.rotationPitch = (float)(class_9299.method_42821(var3, (double)var9) * 180.0F / (float)Math.PI);
+         float var9 = MathHelper.sqrt(var1 * var1 + var5 * var5);
+         this.rotationYaw = (float)(MathHelper.method_42821(var1, var5) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.method_42821(var3, (double)var9) * 180.0F / (float)Math.PI);
          this.prevRotationYaw = this.rotationYaw;
          this.field_41762 = this.rotationPitch;
       }
@@ -90,15 +90,15 @@ public class class_7483 extends Entity implements class_3713 {
       double var4 = this.getPosX() + var3.field_7336;
       double var6 = this.method_37309() + var3.field_7333;
       double var8 = this.getPosZ() + var3.field_7334;
-      float var10 = class_9299.method_42842(method_37266(var3));
-      this.rotationPitch = class_5783.method_26168(this.field_41762, (float)(class_9299.method_42821(var3.field_7333, (double)var10) * 180.0F / (float)Math.PI));
-      this.rotationYaw = class_5783.method_26168(this.prevRotationYaw, (float)(class_9299.method_42821(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
+      float var10 = MathHelper.sqrt(method_37266(var3));
+      this.rotationPitch = class_5783.method_26168(this.field_41762, (float)(MathHelper.method_42821(var3.field_7333, (double)var10) * 180.0F / (float)Math.PI));
+      this.rotationYaw = class_5783.method_26168(this.prevRotationYaw, (float)(MathHelper.method_42821(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
       if (!this.world.field_33055) {
          double var12 = this.field_38206 - var4;
          double var14 = this.field_38205 - var8;
          float var16 = (float)Math.sqrt(var12 * var12 + var14 * var14);
-         float var17 = (float)class_9299.method_42821(var14, var12);
-         double var18 = class_9299.method_42794(0.0025, (double)var10, (double)var16);
+         float var17 = (float) MathHelper.method_42821(var14, var12);
+         double var18 = MathHelper.lerp(0.0025, (double)var10, (double)var16);
          double var20 = var3.field_7333;
          if (var16 < 1.0F) {
             var18 *= 0.8;
@@ -143,7 +143,7 @@ public class class_7483 extends Entity implements class_3713 {
          this.method_37256(var4, var6, var8);
          this.field_38201++;
          if (this.field_38201 > 80 && !this.world.field_33055) {
-            this.method_37155(class_463.field_2048, 1.0F, 1.0F);
+            this.method_37155(SoundEvents.field_2048, 1.0F, 1.0F);
             this.method_37204();
             if (!this.field_38202) {
                this.world.method_43364(2003, this.method_37075(), 0);

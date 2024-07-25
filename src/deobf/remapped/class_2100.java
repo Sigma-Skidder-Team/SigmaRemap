@@ -10,7 +10,7 @@ public class class_2100 extends class_551 implements class_1538 {
    }
 
    @Override
-   public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
+   public void method_11206(ItemStack var1, World var2, LivingEntity var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
          boolean var8 = var7.playerAbilities.isCreativeMode || class_2931.method_13423(class_3668.field_17874, var1) > 0;
@@ -59,7 +59,7 @@ public class class_2100 extends class_551 implements class_1538 {
                   var7.getPosX(),
                   var7.method_37309(),
                   var7.getPosZ(),
-                  class_463.field_2702,
+                  SoundEvents.field_2702,
                   class_562.field_3335,
                   1.0F,
                   1.0F / (field_12172.nextFloat() * 0.4F + 1.2F) + var11 * 0.5F

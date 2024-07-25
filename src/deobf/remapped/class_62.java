@@ -46,13 +46,13 @@ public class class_62<T extends class_2811> extends class_7939<T> {
 
       if (this.field_11699 > 0.0F) {
          this.field_11705.field_8191 = this.method_10745(this.field_11699, this.field_11705.field_8191, (float) (-Math.PI * 4.0 / 5.0))
-            + this.field_11699 * 0.35F * class_9299.method_42818(0.1F * var4);
+            + this.field_11699 * 0.35F * MathHelper.sin(0.1F * var4);
          this.field_11701.field_8191 = this.method_10745(this.field_11699, this.field_11701.field_8191, (float) (-Math.PI * 4.0 / 5.0))
-            - this.field_11699 * 0.35F * class_9299.method_42818(0.1F * var4);
+            - this.field_11699 * 0.35F * MathHelper.sin(0.1F * var4);
          this.field_11705.field_8185 = this.method_10745(this.field_11699, this.field_11705.field_8185, -0.15F);
          this.field_11701.field_8185 = this.method_10745(this.field_11699, this.field_11701.field_8185, 0.15F);
-         this.field_11703.field_8191 = this.field_11703.field_8191 - this.field_11699 * 0.55F * class_9299.method_42818(0.1F * var4);
-         this.field_11706.field_8191 = this.field_11706.field_8191 + this.field_11699 * 0.55F * class_9299.method_42818(0.1F * var4);
+         this.field_11703.field_8191 = this.field_11703.field_8191 - this.field_11699 * 0.55F * MathHelper.sin(0.1F * var4);
+         this.field_11706.field_8191 = this.field_11706.field_8191 + this.field_11699 * 0.55F * MathHelper.sin(0.1F * var4);
          this.field_11696.field_8191 = 0.0F;
       }
    }

@@ -78,7 +78,7 @@ public class class_3669 extends class_5920<class_5467> {
 
    private Optional<? extends class_5467> method_17026(class_5467 var1) {
       return var1.method_26525()
-         .<List<class_5834>>method_5138(class_6044.field_30901)
+         .<List<LivingEntity>>method_5138(class_6044.field_30901)
          .get()
          .stream()
          .filter(var1x -> var1x.getType() == this.field_17883)

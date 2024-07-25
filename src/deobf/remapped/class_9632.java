@@ -27,7 +27,7 @@ public class class_9632 {
    }
 
    public double method_44449(class_225 var1) {
-      return this.method_44448(var1).method_44996();
+      return this.method_44448(var1).getBaseValue();
    }
 
    public double method_44454(class_225 var1, UUID var2) {

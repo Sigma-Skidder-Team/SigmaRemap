@@ -10,38 +10,38 @@ public class class_5720 extends class_5521 {
    }
 
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       super.method_26918();
-      return class_463.field_2395;
+      return SoundEvents.field_2395;
    }
 
    @Override
-   public class_8461 method_19056() {
+   public SoundEvent method_19056() {
       super.method_19056();
-      return class_463.field_2234;
+      return SoundEvents.field_2234;
    }
 
    @Override
-   public class_8461 method_26599() {
+   public SoundEvent method_26599() {
       super.method_26599();
-      return class_463.field_2524;
+      return SoundEvents.field_2524;
    }
 
    @Nullable
    @Override
-   public class_8461 method_19083() {
-      return class_463.field_2775;
+   public SoundEvent method_19083() {
+      return SoundEvents.field_2775;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
+   public SoundEvent method_26541(DamageSource var1) {
       super.method_26541(var1);
-      return class_463.field_2591;
+      return SoundEvents.field_2591;
    }
 
    @Override
    public void method_25020() {
-      this.method_37155(class_463.field_2630, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
+      this.method_37155(SoundEvents.field_2630, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
    }
 
    @Override

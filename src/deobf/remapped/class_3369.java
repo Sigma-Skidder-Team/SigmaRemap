@@ -10,7 +10,7 @@ public class class_3369 extends class_4556<class_4653, class_379<class_4653>> {
 
    @Override
    public float method_21123(float var1) {
-      return class_9299.method_42840(var1 * 0.02F) * 3.0F;
+      return MathHelper.cos(var1 * 0.02F) * 3.0F;
    }
 
    @Override

@@ -27,13 +27,13 @@ public class class_6589 implements Packet<class_392> {
       this.field_33994 = var3;
       this.field_33983 = var5;
       this.field_33991 = var7;
-      this.field_33986 = class_9299.method_42848(var9 * 256.0F / 360.0F);
-      this.field_33984 = class_9299.method_42848(var10 * 256.0F / 360.0F);
+      this.field_33986 = MathHelper.floor(var9 * 256.0F / 360.0F);
+      this.field_33984 = MathHelper.floor(var10 * 256.0F / 360.0F);
       this.field_33985 = var11;
       this.field_33990 = var12;
-      this.field_33993 = (int)(class_9299.method_42827(var13.field_7336, -3.9, 3.9) * 8000.0);
-      this.field_33988 = (int)(class_9299.method_42827(var13.field_7333, -3.9, 3.9) * 8000.0);
-      this.field_33989 = (int)(class_9299.method_42827(var13.field_7334, -3.9, 3.9) * 8000.0);
+      this.field_33993 = (int)(MathHelper.clamp(var13.field_7336, -3.9, 3.9) * 8000.0);
+      this.field_33988 = (int)(MathHelper.clamp(var13.field_7333, -3.9, 3.9) * 8000.0);
+      this.field_33989 = (int)(MathHelper.clamp(var13.field_7334, -3.9, 3.9) * 8000.0);
    }
 
    public class_6589(Entity var1) {
@@ -59,7 +59,7 @@ public class class_6589 implements Packet<class_392> {
       this(
          var1.method_37145(),
          var1.method_37328(),
-         (double)var4.method_12173(),
+         (double)var4.getX(),
          (double)var4.method_12165(),
          (double)var4.method_12185(),
          var1.rotationPitch,

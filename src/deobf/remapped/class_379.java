@@ -46,13 +46,13 @@ public class class_379<T extends class_4653> extends class_5272<T> {
    }
 
    public void method_1864(T var1, float var2, float var3, float var4, float var5, float var6) {
-      float var9 = class_9299.method_42840(var4 * 0.1F);
+      float var9 = MathHelper.cos(var4 * 0.1F);
       this.field_1540[1].field_8191 = (0.065F + 0.05F * var9) * (float) Math.PI;
       this.field_1540[2]
          .method_7046(
             -2.0F,
-            6.9F + class_9299.method_42840(this.field_1540[1].field_8191) * 10.0F,
-            -0.5F + class_9299.method_42818(this.field_1540[1].field_8191) * 10.0F
+            6.9F + MathHelper.cos(this.field_1540[1].field_8191) * 10.0F,
+            -0.5F + MathHelper.sin(this.field_1540[1].field_8191) * 10.0F
          );
       this.field_1540[2].field_8191 = (0.265F + 0.1F * var9) * (float) Math.PI;
       this.field_1539[0].field_8190 = var5 * (float) (Math.PI / 180.0);

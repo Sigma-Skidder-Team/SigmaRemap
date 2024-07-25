@@ -21,7 +21,7 @@ public class class_5331 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      this.field_27196 = this.field_27195.method_17809();
+      this.field_27196 = this.field_27195.getAttackTarget();
       if (this.field_27196 != null) {
          if (!(this.field_27196.method_37275(this.field_27195) > (double)(this.field_27192 * this.field_27192))) {
             class_1343 var3 = class_3425.method_15837(this.field_27195, 16, 7, this.field_27196.method_37245());

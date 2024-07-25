@@ -33,13 +33,13 @@ public class class_2320 extends class_2833 {
          double var3 = this.field_13884 - this.field_11617.getPosX();
          double var5 = this.field_13886 - this.field_11617.method_37309();
          double var7 = this.field_13880 - this.field_11617.getPosZ();
-         double var9 = (double)class_9299.method_42842(var3 * var3 + var5 * var5 + var7 * var7);
+         double var9 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5 + var7 * var7);
          var5 /= var9;
-         float var11 = (float)(class_9299.method_42821(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
+         float var11 = (float)(MathHelper.method_42821(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
          this.field_11617.rotationYaw = this.method_12882(this.field_11617.rotationYaw, var11, 90.0F);
          this.field_11617.field_29605 = this.field_11617.rotationYaw;
          float var12 = (float)(this.field_13885 * this.field_11617.method_26575(Attributes.MOVEMENT_SPEED));
-         this.field_11617.method_26461(class_9299.method_42795(0.125F, this.field_11617.method_26423(), var12));
+         this.field_11617.method_26461(MathHelper.method_42795(0.125F, this.field_11617.method_26423(), var12));
          this.field_11617.method_37215(this.field_11617.method_37098().method_6214(0.0, (double)this.field_11617.method_26423() * var5 * 0.1, 0.0));
       } else {
          this.field_11617.method_26461(0.0F);

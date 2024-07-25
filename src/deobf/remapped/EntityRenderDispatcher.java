@@ -271,22 +271,22 @@ public class EntityRenderDispatcher {
          float var7 = var3.method_37086() / 2.0F;
          this.method_28132(var1, var2, var3, 1.0F, 1.0F, 1.0F);
          if (var3 instanceof class_2770) {
-            double var10 = -class_9299.method_42794((double)var4, var3.field_41754, var3.getPosX());
-            double var12 = -class_9299.method_42794((double)var4, var3.field_41713, var3.method_37309());
-            double var14 = -class_9299.method_42794((double)var4, var3.field_41724, var3.getPosZ());
+            double var10 = -MathHelper.lerp((double)var4, var3.field_41754, var3.getPosX());
+            double var12 = -MathHelper.lerp((double)var4, var3.field_41713, var3.method_37309());
+            double var14 = -MathHelper.lerp((double)var4, var3.field_41724, var3.getPosZ());
 
             for (class_5708 var19 : ((class_2770)var3).method_12615()) {
                var1.method_36063();
-               double var20 = var10 + class_9299.method_42794((double)var4, var19.field_41754, var19.getPosX());
-               double var22 = var12 + class_9299.method_42794((double)var4, var19.field_41713, var19.method_37309());
-               double var24 = var14 + class_9299.method_42794((double)var4, var19.field_41724, var19.getPosZ());
+               double var20 = var10 + MathHelper.lerp((double)var4, var19.field_41754, var19.getPosX());
+               double var22 = var12 + MathHelper.lerp((double)var4, var19.field_41713, var19.method_37309());
+               double var24 = var14 + MathHelper.lerp((double)var4, var19.field_41724, var19.getPosZ());
                var1.method_36065(var20, var22, var24);
                this.method_28132(var1, var2, var19, 0.25F, 1.0F, 0.0F);
                var1.method_36064();
             }
          }
 
-         if (var3 instanceof class_5834) {
+         if (var3 instanceof LivingEntity) {
             float var8 = 0.01F;
             WorldRenderer.method_20012(
                var1,
@@ -316,7 +316,7 @@ public class EntityRenderDispatcher {
    }
 
    private void method_28132(class_7966 var1, class_7907 var2, Entity var3, float var4, float var5, float var6) {
-      Box var9 = var3.method_37241().method_18918(-var3.getPosX(), -var3.method_37309(), -var3.getPosZ());
+      Box var9 = var3.getBoundingBox().method_18918(-var3.getPosX(), -var3.method_37309(), -var3.getPosZ());
       WorldRenderer.method_20014(var1, var2, var9, var4, var5, var6, 1.0F);
    }
 
@@ -391,15 +391,15 @@ public class EntityRenderDispatcher {
             }
          }
 
-         double var10 = class_9299.method_42794((double)var4, var2.field_41754, var2.getPosX());
-         double var12 = class_9299.method_42794((double)var4, var2.field_41713, var2.method_37309());
-         double var14 = class_9299.method_42794((double)var4, var2.field_41724, var2.getPosZ());
-         int var16 = class_9299.method_42847(var10 - (double)var9);
-         int var17 = class_9299.method_42847(var10 + (double)var9);
-         int var18 = class_9299.method_42847(var12 - (double)var9);
-         int var19 = class_9299.method_42847(var12);
-         int var20 = class_9299.method_42847(var14 - (double)var9);
-         int var21 = class_9299.method_42847(var14 + (double)var9);
+         double var10 = MathHelper.lerp((double)var4, var2.field_41754, var2.getPosX());
+         double var12 = MathHelper.lerp((double)var4, var2.field_41713, var2.method_37309());
+         double var14 = MathHelper.lerp((double)var4, var2.field_41724, var2.getPosZ());
+         int var16 = MathHelper.floor(var10 - (double)var9);
+         int var17 = MathHelper.floor(var10 + (double)var9);
+         int var18 = MathHelper.floor(var12 - (double)var9);
+         int var19 = MathHelper.floor(var12);
+         int var20 = MathHelper.floor(var14 - (double)var9);
+         int var21 = MathHelper.floor(var14 + (double)var9);
          class_6279 var22 = var0.method_36058();
          class_7907 var23 = var1.method_11645(SHADOW_LAYER);
 
@@ -424,8 +424,8 @@ public class EntityRenderDispatcher {
                }
 
                Box var18 = var16.method_19483();
-               double var19 = (double)var3.method_12173() + var18.field_19941;
-               double var21 = (double)var3.method_12173() + var18.field_19940;
+               double var19 = (double)var3.getX() + var18.field_19941;
+               double var21 = (double)var3.getX() + var18.field_19940;
                double var23 = (double)var3.method_12165() + var18.field_19937;
                double var25 = (double)var3.method_12185() + var18.field_19938;
                double var27 = (double)var3.method_12185() + var18.field_19942;

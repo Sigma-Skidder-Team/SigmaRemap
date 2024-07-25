@@ -13,7 +13,7 @@ public class NCPPhase extends PremiumModule {
    @Override
    public void onEnable() {
       this.field_13372 = false;
-      if (!client.thePlayer.field_41744) {
+      if (!client.thePlayer.collidedHorizontally) {
          this.field_13371 = -1;
       } else {
          this.field_13371 = 0;
@@ -63,7 +63,7 @@ public class NCPPhase extends PremiumModule {
    @EventListen
    private void method_12309(class_7767 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.field_41744 && this.field_13371 != 0) {
+         if (client.thePlayer.collidedHorizontally && this.field_13371 != 0) {
             this.field_13371 = 0;
             if (client.thePlayer.onGround) {
                double var4 = client.thePlayer.getPosX();

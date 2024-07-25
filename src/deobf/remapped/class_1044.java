@@ -8,7 +8,7 @@ public class class_1044 extends class_8388 {
       super(var1, var2);
    }
 
-   public class_1044(World var1, class_5834 var2, double var3, double var5, double var7) {
+   public class_1044(World var1, LivingEntity var2, double var3, double var5, double var7) {
       super(EntityType.field_34329, var2, var3, var5, var7, var1);
    }
 
@@ -38,10 +38,10 @@ public class class_1044 extends class_8388 {
          Entity var4 = var1.method_25524();
          Entity var5 = this.method_26166();
          boolean var6;
-         if (!(var5 instanceof class_5834)) {
+         if (!(var5 instanceof LivingEntity)) {
             var6 = var4.attackEntityFrom(DamageSource.field_31686, 5.0F);
          } else {
-            class_5834 var7 = (class_5834)var5;
+            LivingEntity var7 = (LivingEntity)var5;
             var6 = var4.attackEntityFrom(DamageSource.method_28376(this, var7), 8.0F);
             if (var6) {
                if (!var4.isAlive()) {
@@ -52,7 +52,7 @@ public class class_1044 extends class_8388 {
             }
          }
 
-         if (var6 && var4 instanceof class_5834) {
+         if (var6 && var4 instanceof LivingEntity) {
             byte var8 = 0;
             if (this.world.method_43370() != class_423.field_1789) {
                if (this.world.method_43370() == class_423.field_1782) {
@@ -63,7 +63,7 @@ public class class_1044 extends class_8388 {
             }
 
             if (var8 > 0) {
-               ((class_5834)var4).method_26558(new class_2250(Effects.field_19725, 20 * var8, 1));
+               ((LivingEntity)var4).method_26558(new class_2250(Effects.field_19725, 20 * var8, 1));
             }
          }
       }
@@ -73,7 +73,7 @@ public class class_1044 extends class_8388 {
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
       if (!this.world.field_33055) {
-         class_7298 var4 = !this.world.method_29537().method_1285(class_291.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
+         class_7298 var4 = !this.world.getGameRules().getBoolean(GameRules.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
          this.world.method_29574(this, this.getPosX(), this.method_37309(), this.getPosZ(), 1.0F, false, var4);
          this.method_37204();
       }

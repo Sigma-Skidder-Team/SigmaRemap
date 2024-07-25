@@ -14,9 +14,9 @@ public class class_9270 extends class_4285<class_8351> {
       boolean var8 = false;
       int var9 = var5.field_42764.method_15936(var3);
 
-      for (int var10 = var4.method_12173() - var9; var10 <= var4.method_12173() + var9; var10++) {
+      for (int var10 = var4.getX() - var9; var10 <= var4.getX() + var9; var10++) {
          for (int var11 = var4.method_12185() - var9; var11 <= var4.method_12185() + var9; var11++) {
-            int var12 = var10 - var4.method_12173();
+            int var12 = var10 - var4.getX();
             int var13 = var11 - var4.method_12185();
             if (var12 * var12 + var13 * var13 <= var9 * var9) {
                for (int var14 = var4.method_12165() - var5.field_42766; var14 <= var4.method_12165() + var5.field_42766; var14++) {

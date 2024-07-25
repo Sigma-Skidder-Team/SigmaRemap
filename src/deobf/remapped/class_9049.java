@@ -531,7 +531,7 @@ public class class_9049 {
       if (var0.field_7503.length == 1) {
          return var0.field_7503[0];
       } else {
-         int var3 = var1.method_12173();
+         int var3 = var1.getX();
          int var4 = var1.method_12165();
          int var5 = var1.method_12185();
          int var6 = 0;

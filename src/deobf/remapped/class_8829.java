@@ -131,7 +131,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
 
          this.method_40624(true);
          this.method_28538();
-         this.method_37155(class_463.field_2673, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2673, 1.0F, 1.0F);
       }
 
       return var4;
@@ -160,9 +160,9 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    private void method_40585(World var1, double var2, double var4, double var6, double var8, double var10, class_5079 var12) {
       var1.method_43361(
          var12,
-         class_9299.method_42794(var1.field_33033.nextDouble(), var2, var4),
+         MathHelper.lerp(var1.field_33033.nextDouble(), var2, var4),
          var10,
-         class_9299.method_42794(var1.field_33033.nextDouble(), var6, var8),
+         MathHelper.lerp(var1.field_33033.nextDouble(), var6, var8),
          0.0,
          0.0,
          0.0
@@ -215,7 +215,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    private boolean method_40560() {
-      if (this.field_45159 <= 0 && !class_6694.method_30686(this.field_45171) && !this.method_40610() && this.method_17809() == null) {
+      if (this.field_45159 <= 0 && !class_6694.method_30686(this.field_45171) && !this.method_40610() && this.getAttackTarget() == null) {
          boolean var3 = this.method_40611() || this.world.method_29561() || this.world.method_29544() || this.method_40592();
          return var3 && !this.method_40568();
       } else {
@@ -228,7 +228,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    public float method_40549(float var1) {
-      return class_9299.method_42795(var1, this.field_45162, this.field_45166);
+      return MathHelper.method_42795(var1, this.field_45162, this.field_45166);
    }
 
    private void method_40548() {
@@ -255,7 +255,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
 
       if (var3) {
          this.field_45161++;
-         if (this.field_45161 % 5 == 0 && this.field_41717.nextInt(class_9299.method_42829(1200 - this.field_45161, 1, 1200)) == 0) {
+         if (this.field_45161 % 5 == 0 && this.field_41717.nextInt(MathHelper.clamp(1200 - this.field_45161, 1, 1200)) == 0) {
             this.attackEntityFrom(DamageSource.field_31664, this.method_26551());
          }
       }
@@ -340,8 +340,8 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.field_33055) {
          if (this.field_45159 > 0) {
             this.field_45159--;
@@ -355,7 +355,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
             this.field_45154--;
          }
 
-         boolean var3 = this.method_28537() && !this.method_40610() && this.method_17809() != null && this.method_17809().method_37275(this) < 4.0;
+         boolean var3 = this.method_28537() && !this.method_40610() && this.getAttackTarget() != null && this.getAttackTarget().method_37275(this) < 4.0;
          this.method_40593(var3);
          if (this.field_41697 % 20 == 0 && !this.method_40586()) {
             this.field_45160 = null;
@@ -426,7 +426,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       class_5967 var4 = new class_5967(this, this, var1);
       var4.method_23534(false);
       var4.method_5611(false);
@@ -448,18 +448,18 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       return null;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2391;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2391;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2161;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2161;
    }
 
    @Override

@@ -95,8 +95,8 @@ public interface class_7907 extends class_275 {
       int[] var13 = !this.method_35740() ? var2.method_23155() : var2.method_23153();
       this.method_35734(var2.method_23148());
       boolean var14 = class_2174.method_10097();
-      class_2700 var15 = var2.method_23150().method_1037();
-      float var16 = (float)var15.method_12173();
+      Vector3i var15 = var2.method_23150().method_1037();
+      float var16 = (float)var15.getX();
       float var17 = (float)var15.method_12165();
       float var18 = (float)var15.method_12185();
       class_8107 var19 = var1.method_28620();

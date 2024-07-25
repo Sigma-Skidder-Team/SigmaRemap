@@ -14,7 +14,7 @@ public class class_1298 extends class_6788 {
       if (var5 >= 8) {
          return false;
       } else {
-         int var8 = var2.method_12173();
+         int var8 = var2.getX();
          int var9 = var2.method_12165();
          int var10 = var2.method_12185();
          boolean var11 = true;

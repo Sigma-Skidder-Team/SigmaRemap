@@ -33,22 +33,22 @@ public class class_1902 {
    }
 
    private void method_8646() {
-      this.field_9712.field_29605 = class_9299.method_42789(this.field_9712.field_29605, this.field_9712.field_29618, (float)this.field_9712.getHorizontalFaceSpeed());
+      this.field_9712.field_29605 = MathHelper.func_219800_b(this.field_9712.field_29605, this.field_9712.field_29618, (float)this.field_9712.getHorizontalFaceSpeed());
    }
 
    private void method_8642() {
-      this.field_9712.field_29618 = class_9299.method_42789(this.field_9712.field_29618, this.field_9712.field_29605, (float)this.field_9712.getHorizontalFaceSpeed());
+      this.field_9712.field_29618 = MathHelper.func_219800_b(this.field_9712.field_29618, this.field_9712.field_29605, (float)this.field_9712.getHorizontalFaceSpeed());
    }
 
    private void method_8644() {
       int var3 = this.field_9711 - 10;
-      float var4 = class_9299.method_42828((float)var3 / 10.0F, 0.0F, 1.0F);
+      float var4 = MathHelper.clamp((float)var3 / 10.0F, 0.0F, 1.0F);
       float var5 = (float)this.field_9712.getHorizontalFaceSpeed() * (1.0F - var4);
-      this.field_9712.field_29605 = class_9299.method_42789(this.field_9712.field_29605, this.field_9712.field_29618, var5);
+      this.field_9712.field_29605 = MathHelper.func_219800_b(this.field_9712.field_29605, this.field_9712.field_29618, var5);
    }
 
    private boolean method_8647() {
-      return this.field_9712.method_37114().isEmpty() || !(this.field_9712.method_37114().get(0) instanceof MobEntity);
+      return this.field_9712.getPassengers().isEmpty() || !(this.field_9712.getPassengers().get(0) instanceof MobEntity);
    }
 
    private boolean method_8643() {

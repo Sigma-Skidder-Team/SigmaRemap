@@ -44,7 +44,7 @@ public class class_1957 extends class_7067<class_91> {
       boolean var12 = var11.method_33583();
       int var13 = this.method_9054(var9);
       float var14 = 0.25F;
-      float var15 = class_9299.method_42818(((float)var1.method_260() + var3) / 10.0F + var1.field_173) * 0.1F + 0.1F;
+      float var15 = MathHelper.sin(((float)var1.method_260() + var3) / 10.0F + var1.field_173) * 0.1F + 0.1F;
       if (!this.method_9057()) {
          var15 = 0.0F;
       }

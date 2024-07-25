@@ -57,9 +57,9 @@ public class class_5301 extends class_5272<class_2022> {
          this.field_27093.method_7046(0.0F, 0.0F, 0.0F);
          this.field_27089.method_7046(0.0F, 0.0F, 0.0F);
          this.field_27095.method_7046(0.0F, 0.0F, 0.0F);
-         this.field_27091.field_8191 = (float) (Math.PI / 4) + class_9299.method_42840(var4 * 0.1F) * 0.15F;
+         this.field_27091.field_8191 = (float) (Math.PI / 4) + MathHelper.cos(var4 * 0.1F) * 0.15F;
          this.field_27091.field_8190 = 0.0F;
-         this.field_27089.field_8190 = class_9299.method_42840(var4 * 1.3F) * (float) Math.PI * 0.25F;
+         this.field_27089.field_8190 = MathHelper.cos(var4 * 1.3F) * (float) Math.PI * 0.25F;
          this.field_27095.field_8190 = -this.field_27089.field_8190;
          this.field_27094.field_8190 = this.field_27089.field_8190 * 0.5F;
          this.field_27090.field_8190 = -this.field_27089.field_8190 * 0.5F;

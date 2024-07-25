@@ -49,7 +49,7 @@ public class ChestStealerModule extends Module {
             this.method_14638();
             if (this.field_15892 != null && client.field_9623 == null && this.field_15893.method_14772() > 1000L) {
                class_9529 var4 = (class_9529)class_7494.method_34100(this.field_15892.method_17399());
-               if (var4.method_43955().method_12173() == this.field_15892.method_17399().method_12173()
+               if (var4.method_43955().getX() == this.field_15892.method_17399().getX()
                   && var4.method_43955().method_12165() == this.field_15892.method_17399().method_12165()
                   && var4.method_43955().method_12185() == this.field_15892.method_17399().method_12185()) {
                   this.field_15894 = true;
@@ -64,7 +64,7 @@ public class ChestStealerModule extends Module {
             for (Entry var6 : this.field_15896.entrySet()) {
                class_7099 var7 = (class_7099)var6.getKey();
                boolean var8 = (Boolean)var6.getValue();
-               float var9 = (float)var7.method_17399().method_12173();
+               float var9 = (float)var7.method_17399().getX();
                float var10 = (float)var7.method_17399().method_12165() + 0.1F;
                float var11 = (float)var7.method_17399().method_12185();
                if (!this.field_15894
@@ -78,7 +78,7 @@ public class ChestStealerModule extends Module {
                   && this.field_15893.method_14772() > 1000L
                   && client.field_9623 == null) {
                   class_9529 var12 = (class_9529)class_7494.method_34100(var7.method_17399());
-                  if (var12.method_43955().method_12173() == var7.method_17399().method_12173()
+                  if (var12.method_43955().getX() == var7.method_17399().getX()
                      && var12.method_43955().method_12165() == var7.method_17399().method_12165()
                      && var12.method_43955().method_12185() == var7.method_17399().method_12185()) {
                      this.field_15892 = var7;

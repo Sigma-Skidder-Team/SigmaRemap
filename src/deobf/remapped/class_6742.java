@@ -34,7 +34,7 @@ public class class_6742 implements class_2995 {
          for (int var5x = 0; var5x < var2x.size(); var5x++) {
             class_118 var6 = var2x.get(var5x);
             if (var12.method_12171(var6.field_290, 160.0)) {
-               double var7x = (double)var6.field_290.method_12173() + 0.5;
+               double var7x = (double)var6.field_290.getX() + 0.5;
                double var9 = (double)var6.field_290.method_12165() + 2.0 + (double)var5x * 0.25;
                double var11x = (double)var6.field_290.method_12185() + 0.5;
                int var13 = !var6.field_287 ? -3355444 : -16711936;

@@ -28,7 +28,7 @@ public class class_4341 extends class_1871 {
       double var3 = this.field_21095 != null
          ? this.field_21095.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ())
          : 0.0;
-      if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.field_41744 || this.field_9479.field_41774) {
+      if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.collidedHorizontally || this.field_9479.field_41774) {
          this.method_20193();
       }
    }
@@ -45,7 +45,7 @@ public class class_4341 extends class_1871 {
          BlockPos var4 = this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348);
          PlayerEntity var5 = this.field_9479
             .world
-            .method_25858(field_21092, (double)var4.method_12173(), (double)var4.method_12165(), (double)var4.method_12185());
+            .method_25858(field_21092, (double)var4.getX(), (double)var4.method_12165(), (double)var4.method_12185());
          int var6;
          if (var5 == null) {
             var6 = this.field_9479.method_12614(40.0, (double)var4.method_12165(), 0.0);
@@ -54,7 +54,7 @@ public class class_4341 extends class_1871 {
             var6 = this.field_9479.method_12614(-var7.field_7336 * 40.0, 105.0, -var7.field_7334 * 40.0);
          }
 
-         class_5851 var8 = new class_5851(var4.method_12173(), var4.method_12165(), var4.method_12185());
+         class_5851 var8 = new class_5851(var4.getX(), var4.method_12165(), var4.method_12185());
          this.field_21093 = this.field_9479.method_12612(var3, var6, var8);
          if (this.field_21093 != null) {
             this.field_21093.method_18434();
@@ -71,7 +71,7 @@ public class class_4341 extends class_1871 {
       if (this.field_21093 != null && !this.field_21093.method_18436()) {
          BlockPos var3 = this.field_21093.method_18449();
          this.field_21093.method_18434();
-         double var4 = (double)var3.method_12173();
+         double var4 = (double)var3.getX();
          double var6 = (double)var3.method_12185();
 
          double var8;

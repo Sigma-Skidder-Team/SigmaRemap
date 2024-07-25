@@ -31,11 +31,11 @@ public class class_7986 implements class_3254 {
 
    @Override
    public int method_14868(Random var1) {
-      return class_9299.method_42824(var1, class_9299.method_42848(this.field_40919), class_9299.method_42848(this.field_40921));
+      return MathHelper.nextInt(var1, MathHelper.floor(this.field_40919), MathHelper.floor(this.field_40921));
    }
 
    public float method_36244(Random var1) {
-      return class_9299.method_42819(var1, this.field_40919, this.field_40921);
+      return MathHelper.nextFloat(var1, this.field_40919, this.field_40921);
    }
 
    public boolean method_36241(int var1) {

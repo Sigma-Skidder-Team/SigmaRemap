@@ -12,14 +12,14 @@ public class class_6277 {
    }
 
    private static void method_28615(class_1935 var0, boolean var1) {
-      class_9299.field_47437 = var1;
+      MathHelper.fastMath = var1;
       double var4;
       double var6;
       switch (var0) {
          case field_9889:
          case field_9894:
-            var4 = (double)(-class_9299.field_47442);
-            var6 = (double)class_9299.field_47442;
+            var4 = (double)(-MathHelper.PI);
+            var6 = (double) MathHelper.PI;
             break;
          case field_9890:
          case field_9893:
@@ -39,19 +39,19 @@ public class class_6277 {
          switch (var0) {
             case field_9889:
                var12 = (float)Math.sin(var10);
-               var13 = class_9299.method_42818((float)var10);
+               var13 = MathHelper.sin((float)var10);
                break;
             case field_9894:
                var12 = (float)Math.cos(var10);
-               var13 = class_9299.method_42840((float)var10);
+               var13 = MathHelper.cos((float)var10);
                break;
             case field_9890:
                var12 = (float)Math.asin(var10);
-               var13 = class_1750.method_7794((float)var10);
+               var13 = MathUtils.method_7794((float)var10);
                break;
             case field_9893:
                var12 = (float)Math.acos(var10);
-               var13 = class_1750.method_7796((float)var10);
+               var13 = MathUtils.method_7796((float)var10);
                break;
             default:
                return;

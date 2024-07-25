@@ -18,7 +18,7 @@ public interface class_9031 {
    }
 
    default boolean method_41425(World var1, class_9359 var2, class_8932<?> var3) {
-      if (!var3.method_41053() && var1.method_29537().method_1285(class_291.field_1029) && !var2.method_43266().method_5072(var3)) {
+      if (!var3.method_41053() && var1.getGameRules().getBoolean(GameRules.field_1029) && !var2.method_43266().method_5072(var3)) {
          return false;
       } else {
          this.method_41427(var3);

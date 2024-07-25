@@ -52,7 +52,7 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    @Override
    public void method_26919() {
-      class_9747 var3 = this.method_26561(Attributes.MOVEMENT_SPEED);
+      class_9747 var3 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (!this.method_28537()) {
          if (var3.method_45007(field_9785)) {
             var3.method_45004(field_9785);
@@ -66,7 +66,7 @@ public class class_1918 extends class_2811 implements class_6250 {
       }
 
       this.method_28530((class_6331)this.world, true);
-      if (this.method_17809() != null) {
+      if (this.getAttackTarget() != null) {
          this.method_8724();
       }
 
@@ -88,7 +88,7 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    private void method_8724() {
       if (this.field_9783 <= 0) {
-         if (this.method_26928().method_36736(this.method_17809())) {
+         if (this.method_26928().method_36736(this.getAttackTarget())) {
             this.method_8725();
          }
 
@@ -105,18 +105,18 @@ public class class_1918 extends class_2811 implements class_6250 {
          .<class_1918>method_25874(class_1918.class, var5)
          .stream()
          .filter(var1 -> var1 != this)
-         .filter(var0 -> var0.method_17809() == null)
-         .filter(var1 -> !var1.method_37344(this.method_17809()))
-         .forEach(var1 -> var1.method_26860(this.method_17809()));
+         .filter(var0 -> var0.getAttackTarget() == null)
+         .filter(var1 -> !var1.method_37344(this.getAttackTarget()))
+         .forEach(var1 -> var1.method_26860(this.getAttackTarget()));
    }
 
    private void method_8728() {
-      this.method_37155(class_463.field_2331, this.method_26439() * 2.0F, this.method_26547() * 1.8F);
+      this.method_37155(SoundEvents.field_2331, this.method_26439() * 2.0F, this.method_26547() * 1.8F);
    }
 
    @Override
    public void method_26860(LivingEntity var1) {
-      if (this.method_17809() == null && var1 != null) {
+      if (this.getAttackTarget() == null && var1 != null) {
          this.field_9789 = field_9788.method_20387(this.field_41717);
          this.field_9783 = field_9790.method_20387(this.field_41717);
       }
@@ -139,7 +139,7 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    @Override
    public boolean method_26855(class_4924 var1) {
-      return var1.method_6677(this) && !var1.method_22550(this.method_37241());
+      return var1.method_6677(this) && !var1.method_22550(this.getBoundingBox());
    }
 
    @Override
@@ -170,18 +170,18 @@ public class class_1918 extends class_2811 implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.method_28537() ? class_463.field_2488 : class_463.field_2331;
+   public SoundEvent method_26918() {
+      return !this.method_28537() ? SoundEvents.field_2488 : SoundEvents.field_2331;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2350;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2350;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_1935;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_1935;
    }
 
    @Override
@@ -196,7 +196,7 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    @Override
    public void method_12801() {
-      this.method_26561(Attributes.field_37470).method_45006(0.0);
+      this.getAttribute(Attributes.field_37470).setBaseValue(0.0);
    }
 
    @Override

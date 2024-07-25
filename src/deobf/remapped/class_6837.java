@@ -11,7 +11,7 @@ public class class_6837<T extends LivingEntity> extends class_3599 {
    public T field_35258;
    public final float field_35250;
    public class_3998 field_35253;
-   public final class_1249 field_35257;
+   public final PathNavigator field_35257;
    public final Class<T> field_35259;
    public final Predicate<LivingEntity> field_35251;
    public final Predicate<LivingEntity> field_35252;
@@ -49,7 +49,7 @@ public class class_6837<T extends LivingEntity> extends class_3599 {
             this.field_35261.getPosX(),
             this.field_35261.method_37309(),
             this.field_35261.getPosZ(),
-            this.field_35261.method_37241().method_18899((double)this.field_35250, 3.0, (double)this.field_35250)
+            this.field_35261.getBoundingBox().method_18899((double)this.field_35250, 3.0, (double)this.field_35250)
          );
       if (this.field_35258 != null) {
          class_1343 var3 = class_3425.method_15835(this.field_35261, 16, 7, this.field_35258.method_37245());

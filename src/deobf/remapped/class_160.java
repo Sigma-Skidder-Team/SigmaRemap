@@ -26,12 +26,12 @@ public class class_160 {
       return !Double.isInfinite(var0) && var0 < 1.0;
    }
 
-   public static boolean method_647(class_1449 var0, class_5834 var1, Box var2) {
+   public static boolean method_647(class_1449 var0, LivingEntity var1, Box var2) {
       return var0.method_6680(var1, var2).allMatch(class_4190::method_19485);
    }
 
    @Nullable
-   public static class_1343 method_649(class_1449 var0, double var1, double var3, double var5, class_5834 var7, class_7653 var8) {
+   public static class_1343 method_649(class_1449 var0, double var1, double var3, double var5, LivingEntity var7, class_7653 var8) {
       if (method_648(var3)) {
          class_1343 var11 = new class_1343(var1, var3, var5);
          if (method_647(var0, var7, var7.method_26549(var8).method_18920(var11))) {

@@ -124,7 +124,7 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
       if (var1 instanceof LivingEntity) {
          this.field_18950 = 10;
          this.world.method_29587(this, (byte)4);
-         this.method_37155(class_463.field_2853, 1.0F, this.method_26547());
+         this.method_37155(SoundEvents.field_2853, 1.0F, this.method_26547());
          return class_9479.method_43797(this, (LivingEntity)var1);
       } else {
          return false;
@@ -200,7 +200,7 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
    public void method_26910(boolean var1) {
       this.method_37372().method_36633(field_18951, var1);
       if (!this.world.field_33055 && var1) {
-         this.method_26561(Attributes.ATTACK_DAMAGE).method_45006(0.5);
+         this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(0.5);
       }
    }
 
@@ -210,12 +210,12 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.field_18950 > 0) {
          this.field_18950--;
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    @Override
@@ -224,7 +224,7 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
          super.method_37336(var1);
       } else {
          this.field_18950 = 10;
-         this.method_37155(class_463.field_2853, 1.0F, this.method_26547());
+         this.method_37155(SoundEvents.field_2853, 1.0F, this.method_26547());
       }
    }
 
@@ -234,31 +234,31 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
    }
 
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       if (!this.world.field_33055) {
-         return !this.field_29675.method_5117(class_6044.field_30884) ? class_463.field_2726 : class_463.field_2845;
+         return !this.field_29675.method_5117(class_6044.field_30884) ? SoundEvents.field_2726 : SoundEvents.field_2845;
       } else {
          return null;
       }
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2553;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2553;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2363;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2363;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2189, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2189, 0.15F, 1.0F);
    }
 
    public void method_18040() {
-      this.method_37155(class_463.field_2845, 1.0F, this.method_26547());
+      this.method_37155(SoundEvents.field_2845, 1.0F, this.method_26547());
    }
 
    @Override

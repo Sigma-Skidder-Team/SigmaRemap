@@ -174,7 +174,7 @@ public class class_4478 extends Entity {
 
             var27.addAll(this.field_21833);
             if (!var27.isEmpty()) {
-               List var30 = this.world.<LivingEntity>method_25868(LivingEntity.class, this.method_37241());
+               List var30 = this.world.<LivingEntity>method_25868(LivingEntity.class, this.getBoundingBox());
                if (!var30.isEmpty()) {
                   for (LivingEntity var10 : var30) {
                      if (!this.field_21829.containsKey(var10) && var10.method_26611()) {
@@ -224,9 +224,9 @@ public class class_4478 extends Entity {
 
             for (int var28 = 0; (float)var28 < var25; var28++) {
                float var31 = this.field_41717.nextFloat() * (float) (Math.PI * 2);
-               float var34 = class_9299.method_42843(this.field_41717.nextFloat()) * var4;
-               float var36 = class_9299.method_42840(var31) * var34;
-               float var11 = class_9299.method_42818(var31) * var34;
+               float var34 = MathHelper.sqrt(this.field_41717.nextFloat()) * var4;
+               float var36 = MathHelper.cos(var31) * var34;
+               float var11 = MathHelper.sin(var31) * var34;
                if (var24.method_23357() != class_3090.field_15353) {
                   this.world
                      .method_29551(
@@ -258,9 +258,9 @@ public class class_4478 extends Entity {
          } else if (this.field_41717.nextBoolean()) {
             for (int var26 = 0; var26 < 2; var26++) {
                float var29 = this.field_41717.nextFloat() * (float) (Math.PI * 2);
-               float var32 = class_9299.method_42843(this.field_41717.nextFloat()) * 0.2F;
-               float var35 = class_9299.method_42840(var29) * var32;
-               float var37 = class_9299.method_42818(var29) * var32;
+               float var32 = MathHelper.sqrt(this.field_41717.nextFloat()) * 0.2F;
+               float var35 = MathHelper.cos(var29) * var32;
+               float var37 = MathHelper.sin(var29) * var32;
                if (var24.method_23357() != class_3090.field_15353) {
                   this.world
                      .method_29551(var24, this.getPosX() + (double)var35, this.method_37309(), this.getPosZ() + (double)var37, 0.0, 0.0, 0.0);

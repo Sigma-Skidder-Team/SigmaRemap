@@ -26,7 +26,7 @@ public abstract class class_4088 {
    public static boolean method_18872(class_9210 var0, PlayerEntity var1, class_6414 var2) {
       return var0.<Boolean>method_42532(
          (var2x, var3) -> var2x.method_28262(var3).method_8350(var2)
-               ? var1.method_37273((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5) <= 64.0
+               ? var1.method_37273((double)var3.getX() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5) <= 64.0
                : false,
          true
       );
@@ -573,7 +573,7 @@ public abstract class class_4088 {
    public static void method_18875(Set<class_7934> var0, int var1, ItemStack var2, int var3) {
       switch (var1) {
          case 0:
-            var2.method_28017(class_9299.method_42848((float)var2.method_27997() / (float)var0.size()));
+            var2.method_28017(MathHelper.floor((float)var2.method_27997() / (float)var0.size()));
             break;
          case 1:
             var2.method_28017(1);
@@ -607,7 +607,7 @@ public abstract class class_4088 {
          }
 
          var4 /= (float)var0.method_31505();
-         return class_9299.method_42848(var4 * 14.0F) + (var3 <= 0 ? 0 : 1);
+         return MathHelper.floor(var4 * 14.0F) + (var3 <= 0 ? 0 : 1);
       } else {
          return 0;
       }

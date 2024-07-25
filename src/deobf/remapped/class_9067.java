@@ -62,21 +62,21 @@ public class class_9067<T extends Entity> extends class_1498<T> {
       if (this.field_46397 != 3) {
          this.field_46390.field_8191 = (float) (Math.PI / 2);
          if (this.field_46397 != 2) {
-            this.field_46393.field_8191 = class_9299.method_42840(var2 * 0.6662F) * var3;
-            this.field_46399.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * var3;
-            this.field_46392.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * var3;
-            this.field_46398.field_8191 = class_9299.method_42840(var2 * 0.6662F) * var3;
+            this.field_46393.field_8191 = MathHelper.cos(var2 * 0.6662F) * var3;
+            this.field_46399.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * var3;
+            this.field_46392.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * var3;
+            this.field_46398.field_8191 = MathHelper.cos(var2 * 0.6662F) * var3;
             if (this.field_46397 != 1) {
-               this.field_46394.field_8191 = 1.7278761F + 0.47123894F * class_9299.method_42840(var2) * var3;
+               this.field_46394.field_8191 = 1.7278761F + 0.47123894F * MathHelper.cos(var2) * var3;
             } else {
-               this.field_46394.field_8191 = 1.7278761F + (float) (Math.PI / 4) * class_9299.method_42840(var2) * var3;
+               this.field_46394.field_8191 = 1.7278761F + (float) (Math.PI / 4) * MathHelper.cos(var2) * var3;
             }
          } else {
-            this.field_46393.field_8191 = class_9299.method_42840(var2 * 0.6662F) * var3;
-            this.field_46399.field_8191 = class_9299.method_42840(var2 * 0.6662F + 0.3F) * var3;
-            this.field_46392.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI + 0.3F) * var3;
-            this.field_46398.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * var3;
-            this.field_46394.field_8191 = 1.7278761F + (float) (Math.PI / 10) * class_9299.method_42840(var2) * var3;
+            this.field_46393.field_8191 = MathHelper.cos(var2 * 0.6662F) * var3;
+            this.field_46399.field_8191 = MathHelper.cos(var2 * 0.6662F + 0.3F) * var3;
+            this.field_46392.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI + 0.3F) * var3;
+            this.field_46398.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * var3;
+            this.field_46394.field_8191 = 1.7278761F + (float) (Math.PI / 10) * MathHelper.cos(var2) * var3;
          }
       }
    }

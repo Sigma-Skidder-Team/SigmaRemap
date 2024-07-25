@@ -142,7 +142,7 @@ public class class_2013 extends class_4314 {
          class_1788 var7 = (class_1788)var6;
          var7.method_7956(var3.method_27953(1));
          method_9339(var0, var1, var2, true);
-         var0.method_43359((PlayerEntity)null, var1, class_463.field_2482, class_562.field_3322, 1.0F, 1.0F);
+         var0.method_43359((PlayerEntity)null, var1, SoundEvents.field_2482, class_562.field_3322, 1.0F, 1.0F);
       }
    }
 
@@ -195,7 +195,7 @@ public class class_2013 extends class_4314 {
          float var10 = 0.25F * (float)var8.method_1041();
          float var11 = 0.25F * (float)var8.method_1034();
          class_91 var12 = new class_91(
-            var2, (double)var3.method_12173() + 0.5 + (double)var10, (double)(var3.method_12165() + 1), (double)var3.method_12185() + 0.5 + (double)var11, var9
+            var2, (double)var3.getX() + 0.5 + (double)var10, (double)(var3.method_12165() + 1), (double)var3.method_12185() + 0.5 + (double)var11, var9
          );
          var12.method_257();
          var2.method_7509(var12);

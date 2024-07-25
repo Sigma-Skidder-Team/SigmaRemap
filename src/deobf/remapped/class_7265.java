@@ -17,10 +17,10 @@ public class class_7265 {
       float var14 = var4.method_23632();
       float var15 = (var12.field_49930[0] + var12.field_49930[0] + var12.field_49930[2] + var12.field_49930[2]) / 4.0F;
       float var16 = (var12.field_49930[1] + var12.field_49930[1] + var12.field_49930[3] + var12.field_49930[3]) / 4.0F;
-      var12.field_49930[0] = class_9299.method_42795(var14, var12.field_49930[0], var15);
-      var12.field_49930[2] = class_9299.method_42795(var14, var12.field_49930[2], var15);
-      var12.field_49930[1] = class_9299.method_42795(var14, var12.field_49930[1], var16);
-      var12.field_49930[3] = class_9299.method_42795(var14, var12.field_49930[3], var16);
+      var12.field_49930[0] = MathHelper.method_42795(var14, var12.field_49930[0], var15);
+      var12.field_49930[2] = MathHelper.method_42795(var14, var12.field_49930[2], var15);
+      var12.field_49930[1] = MathHelper.method_42795(var14, var12.field_49930[1], var16);
+      var12.field_49930[3] = MathHelper.method_42795(var14, var12.field_49930[3], var16);
       boolean var17 = !class_7860.field_39996.method_3596() ? var8 : false;
       int[] var18 = this.method_33200(var12, var4, var5, this.method_33192(var1, var2), var6.method_25403(), var7, var17);
       Direction var19 = method_33195(var18);
@@ -72,7 +72,7 @@ public class class_7265 {
       }
 
       float var21 = (float)Math.toRadians((double)var0.field_49932);
-      class_2426 var22 = new class_2426(class_9299.method_42840(var21), class_9299.method_42818(var21), 0.0F);
+      class_2426 var22 = new class_2426(MathHelper.cos(var21), MathHelper.sin(var21), 0.0F);
       class_6555 var23 = new class_6555(var6);
       var22.method_11059(var23);
       int var24 = Math.floorMod(-((int)Math.round(Math.toDegrees(Math.atan2((double)var22.method_11061(), (double)var22.method_11057())) / 90.0)) * 90, 360);
@@ -193,8 +193,8 @@ public class class_7265 {
       float var12 = 0.0F;
 
       for (Direction var16 : Direction.values()) {
-         class_2700 var17 = var16.method_1037();
-         class_2426 var18 = new class_2426((float)var17.method_12173(), (float)var17.method_12165(), (float)var17.method_12185());
+         Vector3i var17 = var16.method_1037();
+         class_2426 var18 = new class_2426((float)var17.getX(), (float)var17.method_12165(), (float)var17.method_12185());
          float var19 = var10.method_11067(var18);
          if (var19 >= 0.0F && var19 > var12) {
             var12 = var19;
@@ -264,7 +264,7 @@ public class class_7265 {
             float var17 = Float.intBitsToFloat(var5[var16]);
             float var18 = Float.intBitsToFloat(var5[var16 + 1]);
             float var19 = Float.intBitsToFloat(var5[var16 + 2]);
-            if (class_9299.method_42856(var24, var17) && class_9299.method_42856(var13, var18) && class_9299.method_42856(var14, var19)) {
+            if (MathHelper.epsilonEquals(var24, var17) && MathHelper.epsilonEquals(var13, var18) && MathHelper.epsilonEquals(var14, var19)) {
                var1[var22 + 4] = var5[var16 + 4];
                var1[var22 + 4 + 1] = var5[var16 + 4 + 1];
             }

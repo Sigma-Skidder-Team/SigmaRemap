@@ -12,7 +12,7 @@ public class class_7192 extends class_2829 {
 
    @Override
    public boolean method_16795() {
-      if (this.field_36980.method_26507() || this.field_13867.method_17809() != null) {
+      if (this.field_36980.method_26507() || this.field_13867.getAttackTarget() != null) {
          return false;
       } else if (this.field_36980.field_41768.method_29570()) {
          return true;

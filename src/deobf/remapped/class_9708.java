@@ -67,17 +67,17 @@ public class class_9708 extends class_5841 {
 
    @Override
    public int method_26636() {
-      return class_9299.method_42847(this.field_49366);
+      return MathHelper.floor(this.field_49366);
    }
 
    @Override
    public short method_26640() {
-      return (short)(class_9299.method_42847(this.field_49366) & 65535);
+      return (short)(MathHelper.floor(this.field_49366) & 65535);
    }
 
    @Override
    public byte method_26641() {
-      return (byte)(class_9299.method_42847(this.field_49366) & 0xFF);
+      return (byte)(MathHelper.floor(this.field_49366) & 0xFF);
    }
 
    @Override

@@ -113,10 +113,10 @@ public class class_8474 extends class_4314 implements class_2593 {
       if (var1.<Boolean>method_10313(field_43423)) {
          if (var4.nextInt(10) == 0) {
             var2.method_29527(
-               (double)var3.method_12173() + 0.5,
+               (double)var3.getX() + 0.5,
                (double)var3.method_12165() + 0.5,
                (double)var3.method_12185() + 0.5,
-               class_463.field_2740,
+               SoundEvents.field_2740,
                class_562.field_3322,
                0.5F + var4.nextFloat(),
                var4.nextFloat() * 0.7F + 0.6F,
@@ -128,7 +128,7 @@ public class class_8474 extends class_4314 implements class_2593 {
             for (int var7 = 0; var7 < var4.nextInt(1) + 1; var7++) {
                var2.method_43361(
                   class_3090.field_15372,
-                  (double)var3.method_12173() + 0.5,
+                  (double)var3.getX() + 0.5,
                   (double)var3.method_12165() + 0.5,
                   (double)var3.method_12185() + 0.5,
                   (double)(var4.nextFloat() / 2.0F),
@@ -159,7 +159,7 @@ public class class_8474 extends class_4314 implements class_2593 {
          boolean var7 = var3.<Boolean>method_10313(field_43423);
          if (var7) {
             if (!var1.method_22567()) {
-               var1.method_43359((PlayerEntity)null, var2, class_463.field_2557, class_562.field_3322, 1.0F, 1.0F);
+               var1.method_43359((PlayerEntity)null, var2, SoundEvents.field_2557, class_562.field_3322, 1.0F, 1.0F);
             }
 
             method_39006(var1, var2, var3);
@@ -177,7 +177,7 @@ public class class_8474 extends class_4314 implements class_2593 {
    public void method_10758(World var1, class_2522 var2, class_9529 var3, class_5783 var4) {
       if (!var1.field_33055 && var4.method_37264()) {
          Entity var7 = var4.method_26166();
-         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.method_29537().method_1285(class_291.field_1047);
+         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field_1047);
          if (var8 && !var2.<Boolean>method_10313(field_43423) && !var2.<Boolean>method_10313(field_43421)) {
             BlockPos var9 = var3.method_43955();
             var1.method_7513(var9, var2.method_10308(class_6023.field_30732, Boolean.valueOf(true)), 11);
@@ -191,7 +191,7 @@ public class class_8474 extends class_4314 implements class_2593 {
       var0.method_29552(
          var7,
          true,
-         (double)var1.method_12173() + 0.5 + var6.nextDouble() / 3.0 * (double)(!var6.nextBoolean() ? -1 : 1),
+         (double)var1.getX() + 0.5 + var6.nextDouble() / 3.0 * (double)(!var6.nextBoolean() ? -1 : 1),
          (double)var1.method_12165() + var6.nextDouble() + var6.nextDouble(),
          (double)var1.method_12185() + 0.5 + var6.nextDouble() / 3.0 * (double)(!var6.nextBoolean() ? -1 : 1),
          0.0,
@@ -201,7 +201,7 @@ public class class_8474 extends class_4314 implements class_2593 {
       if (var3) {
          var0.method_43361(
             class_3090.field_15376,
-            (double)var1.method_12173() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),
+            (double)var1.getX() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),
             (double)var1.method_12165() + 0.4,
             (double)var1.method_12185() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),
             0.0,

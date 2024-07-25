@@ -40,18 +40,18 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2199;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2199;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2874;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2874;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2244;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2244;
    }
 
    public void method_7189(boolean var1) {
@@ -67,7 +67,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (!this.world.field_33055 && this.isAlive()) {
          this.field_8348.method_44424();
          if (this.field_8348.method_44423() > 0) {
@@ -87,9 +87,9 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
             } else if (this.field_41717.nextFloat() < 0.05F && this.method_26551() < this.method_26465()) {
                var7 = class_3697.field_18117;
             } else if (this.field_41717.nextFloat() < 0.5F
-               && this.method_17809() != null
+               && this.getAttackTarget() != null
                && !this.isPotionActive(Effects.field_19739)
-               && this.method_17809().method_37275(this) > 121.0) {
+               && this.getAttackTarget().method_37275(this) > 121.0) {
                var7 = class_3697.field_18143;
             }
 
@@ -104,14 +104,14 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
                         this.getPosX(),
                         this.method_37309(),
                         this.getPosZ(),
-                        class_463.field_2010,
+                        SoundEvents.field_2010,
                         this.method_37197(),
                         1.0F,
                         0.8F + this.field_41717.nextFloat() * 0.4F
                      );
                }
 
-               class_9747 var8 = this.method_26561(Attributes.MOVEMENT_SPEED);
+               class_9747 var8 = this.getAttribute(Attributes.MOVEMENT_SPEED);
                var8.method_45004(field_8347);
                var8.method_45011(field_8347);
             }
@@ -128,7 +128,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
                }
             }
 
-            this.method_26561(Attributes.MOVEMENT_SPEED).method_45004(field_8347);
+            this.getAttribute(Attributes.MOVEMENT_SPEED).method_45004(field_8347);
          }
 
          if (this.field_41717.nextFloat() < 7.5E-4F) {
@@ -136,12 +136,12 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
          }
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    @Override
-   public class_8461 method_18591() {
-      return class_463.field_2039;
+   public SoundEvent getRaidLossSound() {
+      return SoundEvents.field_2039;
    }
 
    @Override
@@ -154,7 +154,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
                .method_43361(
                   class_3090.field_15342,
                   this.getPosX() + this.field_41717.nextGaussian() * 0.13F,
-                  this.method_37241().field_19939 + 0.5 + this.field_41717.nextGaussian() * 0.13F,
+                  this.getBoundingBox().field_19939 + 0.5 + this.field_41717.nextGaussian() * 0.13F,
                   this.getPosZ() + this.field_41717.nextGaussian() * 0.13F,
                   0.0,
                   0.0,
@@ -185,7 +185,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
          double var6 = var1.getPosX() + var5.field_7336 - this.getPosX();
          double var8 = var1.method_37388() - 1.1F - this.method_37309();
          double var10 = var1.getPosZ() + var5.field_7334 - this.getPosZ();
-         float var12 = class_9299.method_42842(var6 * var6 + var10 * var10);
+         float var12 = MathHelper.sqrt(var6 * var6 + var10 * var10);
          class_6004 var13 = class_3697.field_18138;
          if (!(var1 instanceof AbstractRaiderEntity)) {
             if (var12 >= 8.0F && !var1.isPotionActive(Effects.field_19743)) {
@@ -216,7 +216,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),
-                  class_463.field_2818,
+                  SoundEvents.field_2818,
                   this.method_37197(),
                   1.0F,
                   0.8F + this.field_41717.nextFloat() * 0.4F

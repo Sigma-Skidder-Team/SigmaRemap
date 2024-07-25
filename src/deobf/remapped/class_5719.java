@@ -31,7 +31,7 @@ public interface class_5719 {
             if (!var6.field_41751
                && var6.field_41759
                && (var1 == null || !var6.method_37308(var1))
-               && class_3370.method_15537(var2, class_3370.method_15523(var6.method_37241()), class_8529.field_43655)) {
+               && class_3370.method_15537(var2, class_3370.method_15523(var6.getBoundingBox()), class_8529.field_43655)) {
                return false;
             }
          }
@@ -50,9 +50,9 @@ public interface class_5719 {
 
    default Stream<class_4190> method_6679(Entity var1, Box var2, Predicate<Entity> var3) {
       if (!(var2.method_18906() < 1.0E-7)) {
-         Box var6 = var2.method_18898(1.0E-7);
+         Box var6 = var2.grow(1.0E-7);
          return this.method_25867(var1, var6, var3.and(var2x -> {
-            if (var2x.method_37241().method_18909(var6)) {
+            if (var2x.getBoundingBox().method_18909(var6)) {
                if (var1 != null) {
                   if (var1.method_37325(var2x)) {
                      return true;
@@ -63,7 +63,7 @@ public interface class_5719 {
             }
 
             return false;
-         })).stream().<Box>map(Entity::method_37241).<class_4190>map(class_3370::method_15523);
+         })).stream().<Box>map(Entity::getBoundingBox).<class_4190>map(class_3370::method_15523);
       } else {
          return Stream.<class_4190>empty();
       }

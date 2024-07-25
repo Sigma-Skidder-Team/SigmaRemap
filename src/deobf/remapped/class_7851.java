@@ -55,7 +55,7 @@ public class class_7851 extends AbstractMinecartEntity {
    @Override
    public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (!var1.method_28367() && this.world.method_29537().method_1285(class_291.field_1024)) {
+      if (!var1.method_28367() && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
          this.method_37312(class_4783.field_23883);
       }
    }
@@ -69,8 +69,8 @@ public class class_7851 extends AbstractMinecartEntity {
       double var10 = method_37266(var9);
       double var12 = this.field_39788 * this.field_39788 + this.field_39786 * this.field_39786;
       if (var12 > 1.0E-4 && var10 > 0.001) {
-         double var14 = (double)class_9299.method_42842(var10);
-         double var16 = (double)class_9299.method_42842(var12);
+         double var14 = (double) MathHelper.sqrt(var10);
+         double var16 = (double) MathHelper.sqrt(var12);
          this.field_39788 = var9.field_7336 / var14 * var16;
          this.field_39786 = var9.field_7334 / var14 * var16;
       }
@@ -82,7 +82,7 @@ public class class_7851 extends AbstractMinecartEntity {
       if (!(var3 > 1.0E-7)) {
          this.method_37215(this.method_37098().method_6210(0.98, 0.0, 0.98));
       } else {
-         var3 = (double)class_9299.method_42842(var3);
+         var3 = (double) MathHelper.sqrt(var3);
          this.field_39788 /= var3;
          this.field_39786 /= var3;
          this.method_37215(this.method_37098().method_6210(0.8, 0.0, 0.8).method_6214(this.field_39788, 0.0, this.field_39786));

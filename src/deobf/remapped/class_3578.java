@@ -73,7 +73,7 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       return new class_9811(this, var1);
    }
 
@@ -83,7 +83,7 @@ public abstract class class_3578 extends class_1829 {
          this.method_37092(0.01F, var1);
          this.method_37226(class_7412.field_37839, this.method_37098());
          this.method_37215(this.method_37098().method_6209(0.9));
-         if (this.method_17809() == null) {
+         if (this.getAttackTarget() == null) {
             this.method_37215(this.method_37098().method_6214(0.0, -0.005, 0.0));
          }
       } else {
@@ -92,7 +92,7 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (!this.method_37285() && this.onGround && this.field_41774) {
          this.method_37215(
             this.method_37098()
@@ -105,14 +105,14 @@ public abstract class class_3578 extends class_1829 {
          this.method_37155(this.method_16632(), this.method_26439(), this.method_26547());
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    @Override
    public class_6910 method_26857(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24999 && this.isAlive()) {
-         this.method_37155(class_463.field_2597, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2597, 1.0F, 1.0F);
          var5.method_27970(1);
          ItemStack var6 = this.method_16633();
          this.method_16630(var6);
@@ -147,11 +147,11 @@ public abstract class class_3578 extends class_1829 {
       return true;
    }
 
-   public abstract class_8461 method_16632();
+   public abstract SoundEvent method_16632();
 
    @Override
-   public class_8461 method_37239() {
-      return class_463.field_2864;
+   public SoundEvent method_37239() {
+      return SoundEvents.field_2864;
    }
 
    @Override

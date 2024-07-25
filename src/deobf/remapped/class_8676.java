@@ -17,7 +17,7 @@ public class class_8676 extends class_3599 {
    @Override
    public boolean method_16795() {
       if (this.field_44530.method_8634() < 0) {
-         List var3 = this.field_44530.world.method_25868(this.field_44530.getClass(), this.field_44530.method_37241().method_18899(8.0, 4.0, 8.0));
+         List var3 = this.field_44530.world.method_25868(this.field_44530.getClass(), this.field_44530.getBoundingBox().method_18899(8.0, 4.0, 8.0));
          class_5467 var4 = null;
          double var5 = Double.MAX_VALUE;
 

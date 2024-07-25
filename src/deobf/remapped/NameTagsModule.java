@@ -258,7 +258,7 @@ public class NameTagsModule extends Module {
          var7 = var2.field_7295.field_31206 + " " + var2.field_7295.method_28008();
       }
 
-      float var8 = (float)((double)var1.method_12173() - client.gameRenderer.method_35949().method_41627().method_61() + 0.5);
+      float var8 = (float)((double)var1.getX() - client.gameRenderer.method_35949().method_41627().method_61() + 0.5);
       float var9 = (float)((double)var1.method_12165() - client.gameRenderer.method_35949().method_41627().method_60() + 1.0);
       float var10 = (float)((double)var1.method_12185() - client.gameRenderer.method_35949().method_41627().method_62() + 0.5);
       GL11.glBlendFunc(770, 771);
@@ -338,8 +338,8 @@ public class NameTagsModule extends Module {
          GL11.glDisable(2929);
          GL11.glDisable(2896);
          GL11.glDepthMask(false);
-         String var17 = (float)Math.round(((class_5834)var7).method_26551() * 10.0F) / 10.0F + "";
-         float var18 = Math.min(((class_5834)var7).method_26551() / ((class_5834)var7).method_26465(), 1.0F);
+         String var17 = (float)Math.round(((LivingEntity)var7).method_26551() * 10.0F) / 10.0F + "";
+         float var18 = Math.min(((LivingEntity)var7).method_26551() / ((LivingEntity)var7).method_26465(), 1.0F);
          GL11.glPushMatrix();
          GL11.glAlphaFunc(519, 0.0F);
          GL11.glTranslated((double)var14, (double)(var15 + 0.6F - 0.33333334F * (1.0F - var8)), (double)var16);
@@ -386,7 +386,7 @@ public class NameTagsModule extends Module {
          class_73.method_94((float)(-var21 - 10), -25.0F, (float)(var21 + 10), (float)(var12.method_15654() + 2), var19);
          class_73.method_94(
             (float)(-var21 - 10),
-            (float)(var12.method_15654() - 1) - (float)((class_5834)var7).field_29645 / 3.0F,
+            (float)(var12.method_15654() - 1) - (float)((LivingEntity)var7).field_29645 / 3.0F,
             Math.min((float)(var21 * 2 + 20) * (var18 - 0.5F), (float)(var21 + 10)),
             (float)(var12.method_15654() + 2),
             var20

@@ -50,9 +50,9 @@ public class class_7236<T extends Entity> extends class_5272<T> {
    public void method_29700(T var1, float var2, float var3, float var4, float var5, float var6) {
       this.field_37126.field_8190 = var5 * (float) (Math.PI / 180.0);
       this.field_37126.field_8191 = var6 * (float) (Math.PI / 180.0);
-      this.field_37125.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
-      this.field_37127.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field_37123.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field_37128.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
+      this.field_37125.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+      this.field_37127.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field_37123.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field_37128.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
    }
 }

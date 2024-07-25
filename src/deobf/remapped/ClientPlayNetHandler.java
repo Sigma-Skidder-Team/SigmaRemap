@@ -197,7 +197,7 @@ public class ClientPlayNetHandler implements class_392 {
                                                                                              }
                                                                                           } else {
                                                                                              var11 = new class_1356(
-                                                                                                this.field_6021, var4, var6, var8, (class_5834)null
+                                                                                                this.field_6021, var4, var6, var8, (LivingEntity)null
                                                                                              );
                                                                                           }
                                                                                        } else {
@@ -211,7 +211,7 @@ public class ClientPlayNetHandler implements class_392 {
                                                                                  }
                                                                               } else {
                                                                                  var11 = new class_1511(
-                                                                                    this.field_6021, var4, var6, var8, 0.0F, 0, (class_5834)null
+                                                                                    this.field_6021, var4, var6, var8, 0.0F, 0, (LivingEntity)null
                                                                                  );
                                                                               }
                                                                            } else {
@@ -647,7 +647,7 @@ public class ClientPlayNetHandler implements class_392 {
    public void method_1961(class_4476 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       Entity var4 = this.field_6021.method_29534(var1.method_20771());
-      Object var5 = (class_5834)this.field_6021.method_29534(var1.method_20770());
+      Object var5 = (LivingEntity)this.field_6021.method_29534(var1.method_20770());
       if (var5 == null) {
          var5 = this.field_6026.thePlayer;
       }
@@ -659,7 +659,7 @@ public class ClientPlayNetHandler implements class_392 {
                   var4.getPosX(),
                   var4.method_37309(),
                   var4.getPosZ(),
-                  class_463.field_2732,
+                  SoundEvents.field_2732,
                   class_562.field_3335,
                   0.2F,
                   (this.field_6033.nextFloat() - this.field_6033.nextFloat()) * 1.4F + 2.0F,
@@ -671,7 +671,7 @@ public class ClientPlayNetHandler implements class_392 {
                   var4.getPosX(),
                   var4.method_37309(),
                   var4.getPosZ(),
-                  class_463.field_2688,
+                  SoundEvents.field_2688,
                   class_562.field_3335,
                   0.1F,
                   (this.field_6033.nextFloat() - this.field_6033.nextFloat()) * 0.35F + 0.9F,
@@ -725,11 +725,11 @@ public class ClientPlayNetHandler implements class_392 {
                   var4.method_37082();
                }
             } else {
-               class_5834 var6 = (class_5834)var4;
+               LivingEntity var6 = (LivingEntity)var4;
                var6.method_26597(Hand.OFF_HAND);
             }
          } else {
-            class_5834 var7 = (class_5834)var4;
+            LivingEntity var7 = (LivingEntity)var4;
             var7.method_26597(Hand.MAIN_HAND);
          }
       }
@@ -743,7 +743,7 @@ public class ClientPlayNetHandler implements class_392 {
       double var8 = var1.method_19697();
       float var10 = (float)(var1.method_19700() * 360) / 256.0F;
       float var11 = (float)(var1.method_19696() * 360) / 256.0F;
-      class_5834 var12 = (class_5834) EntityType.method_30482(var1.method_19692(), this.field_6026.theWorld);
+      LivingEntity var12 = (LivingEntity) EntityType.method_30482(var1.method_19692(), this.field_6026.theWorld);
       if (var12 == null) {
          field_6038.warn("Skipping Entity with id {}", var1.method_19692());
       } else {
@@ -848,7 +848,7 @@ public class ClientPlayNetHandler implements class_392 {
                byte var5 = 40;
                this.field_6026.field_9572.method_43042(var4, class_3090.field_15334, 30);
                this.field_6021
-                  .method_29527(var4.getPosX(), var4.method_37309(), var4.getPosZ(), class_463.field_2834, var4.method_37197(), 1.0F, 1.0F, false);
+                  .method_29527(var4.getPosX(), var4.method_37309(), var4.getPosZ(), SoundEvents.field_2834, var4.method_37197(), 1.0F, 1.0F, false);
                if (var4 == this.field_6026.thePlayer) {
                   this.field_6026.gameRenderer.method_35946(method_4816(this.field_6026.thePlayer));
                }
@@ -1111,7 +1111,7 @@ public class ClientPlayNetHandler implements class_392 {
       ClientPlayerEntity var4 = this.field_6026.thePlayer;
       class_8183 var5 = var1.method_10056();
       float var6 = var1.method_10055();
-      int var7 = class_9299.method_42848(var6 + 0.5F);
+      int var7 = MathHelper.floor(var6 + 0.5F);
       if (var5 != class_2161.field_10779) {
          if (var5 != class_2161.field_10786) {
             if (var5 != class_2161.field_10778) {
@@ -1136,7 +1136,7 @@ public class ClientPlayNetHandler implements class_392 {
                                                 var4.getPosX(),
                                                 var4.method_37309(),
                                                 var4.getPosZ(),
-                                                class_463.field_2239,
+                                                SoundEvents.field_2239,
                                                 class_562.field_3332,
                                                 1.0F,
                                                 1.0F
@@ -1150,7 +1150,7 @@ public class ClientPlayNetHandler implements class_392 {
                                           var4.getPosX(),
                                           var4.method_37309(),
                                           var4.getPosZ(),
-                                          class_463.field_1961,
+                                          SoundEvents.field_1961,
                                           class_562.field_3328,
                                           1.0F,
                                           1.0F
@@ -1165,7 +1165,7 @@ public class ClientPlayNetHandler implements class_392 {
                         } else {
                            this.field_6021
                               .method_29528(
-                                 var4, var4.getPosX(), var4.method_37388(), var4.getPosZ(), class_463.field_2743, class_562.field_3335, 0.18F, 0.45F
+                                 var4, var4.getPosX(), var4.method_37388(), var4.getPosZ(), SoundEvents.field_2743, class_562.field_3335, 0.18F, 0.45F
                               );
                         }
                      } else {
@@ -1388,12 +1388,12 @@ public class ClientPlayNetHandler implements class_392 {
    public void method_1904(class_1661 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       Entity var4 = this.field_6021.method_29534(var1.method_7395());
-      if (var4 instanceof class_5834) {
+      if (var4 instanceof LivingEntity) {
          class_1425 var5 = class_1425.method_6538(var1.method_7396());
          if (var5 != null) {
             class_2250 var6 = new class_2250(var5, var1.method_7404(), var1.method_7398(), var1.method_7402(), var1.method_7399(), var1.method_7397());
             var6.method_10335(var1.method_7400());
-            ((class_5834)var4).method_26440(var6);
+            ((LivingEntity)var4).method_26440(var6);
          }
       }
    }
@@ -1489,8 +1489,8 @@ public class ClientPlayNetHandler implements class_392 {
    public void method_1978(class_4671 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       Entity var4 = var1.method_21615(this.field_6021);
-      if (var4 instanceof class_5834) {
-         ((class_5834)var4).method_26421(var1.method_21613());
+      if (var4 instanceof LivingEntity) {
+         ((LivingEntity)var4).method_26421(var1.method_21613());
       }
    }
 
@@ -2085,16 +2085,16 @@ public class ClientPlayNetHandler implements class_392 {
       class_5965.method_27246(var1, this, this.field_6026);
       Entity var4 = this.field_6021.method_29534(var1.method_18581());
       if (var4 != null) {
-         if (!(var4 instanceof class_5834)) {
+         if (!(var4 instanceof LivingEntity)) {
             throw new IllegalStateException("Server tried to update attributes of a non-living entity (actually: " + var4 + ")");
          }
 
-         class_6711 var5 = ((class_5834)var4).method_26590();
+         class_6711 var5 = ((LivingEntity)var4).method_26590();
 
          for (class_3032 var7 : var1.method_18582()) {
             class_9747 var8 = var5.method_30808(var7.method_13835());
             if (var8 != null) {
-               var8.method_45006(var7.method_13834());
+               var8.setBaseValue(var7.method_13834());
                var8.method_44994();
 
                for (class_9343 var10 : var7.method_13837()) {

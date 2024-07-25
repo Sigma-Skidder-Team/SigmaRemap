@@ -26,11 +26,11 @@ public class class_6962 extends class_3793 {
    @Override
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method_10313(field_18522)) {
-         double var7 = (double)var3.method_12173() + 0.5;
+         double var7 = (double)var3.getX() + 0.5;
          double var9 = (double)var3.method_12165();
          double var11 = (double)var3.method_12185() + 0.5;
          if (var4.nextDouble() < 0.1) {
-            var2.method_29527(var7, var9, var11, class_463.field_2406, class_562.field_3322, 1.0F, 1.0F, false);
+            var2.method_29527(var7, var9, var11, SoundEvents.field_2406, class_562.field_3322, 1.0F, 1.0F, false);
          }
 
          Direction var13 = var1.<Direction>method_10313(field_18523);

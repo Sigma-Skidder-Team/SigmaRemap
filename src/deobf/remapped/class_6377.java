@@ -21,7 +21,7 @@ public class class_6377 {
             float var10 = (float)var9.field_7336;
             float var11 = (float)var9.field_7333;
             float var12 = (float)var9.field_7334;
-            float var13 = class_9299.method_42828(class_9299.method_42840(var2.method_13578(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
+            float var13 = MathHelper.clamp(MathHelper.cos(var2.method_13578(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
             class_859 var14 = var2.getBiomeManager();
             class_1343 var15 = var0.method_41627().method_6193(2.0, 2.0, 2.0).method_6209(0.25);
             class_1343 var16 = class_4555.method_21121(
@@ -33,7 +33,7 @@ public class class_6377 {
             field_32585 = (float)var16.method_60();
             field_32584 = (float)var16.method_62();
             if (var3 >= 4) {
-               float var17 = !(class_9299.method_42818(var2.method_29553(var1)) > 0.0F) ? 1.0F : -1.0F;
+               float var17 = !(MathHelper.sin(var2.method_29553(var1)) > 0.0F) ? 1.0F : -1.0F;
                class_2426 var18 = new class_2426(var17, 0.0F, 0.0F);
                float var21 = var0.method_41634().method_11067(var18);
                if (var21 < 0.0F) {
@@ -93,16 +93,16 @@ public class class_6377 {
          int var40 = field_32579 >> 16 & 0xFF;
          int var41 = field_32579 >> 8 & 0xFF;
          int var43 = field_32579 & 0xFF;
-         float var45 = class_9299.method_42828((float)(var19 - field_32580) / 5000.0F, 0.0F, 1.0F);
-         float var48 = class_9299.method_42795(var45, (float)var40, (float)var32);
-         float var54 = class_9299.method_42795(var45, (float)var41, (float)var38);
-         float var55 = class_9299.method_42795(var45, (float)var43, (float)var39);
+         float var45 = MathHelper.clamp((float)(var19 - field_32580) / 5000.0F, 0.0F, 1.0F);
+         float var48 = MathHelper.method_42795(var45, (float)var40, (float)var32);
+         float var54 = MathHelper.method_42795(var45, (float)var41, (float)var38);
+         float var55 = MathHelper.method_42795(var45, (float)var43, (float)var39);
          field_32578 = var48 / 255.0F;
          field_32585 = var54 / 255.0F;
          field_32584 = var55 / 255.0F;
          if (field_32582 != var25) {
             field_32582 = var25;
-            field_32579 = class_9299.method_42848(var48) << 16 | class_9299.method_42848(var54) << 8 | class_9299.method_42848(var55);
+            field_32579 = MathHelper.floor(var48) << 16 | MathHelper.floor(var54) << 8 | MathHelper.floor(var55);
             field_32580 = var19;
          }
       }
@@ -220,7 +220,7 @@ public class class_6377 {
             if (!var7.method_22007(class_6503.field_33095)) {
                if (var8 instanceof LivingEntity && ((LivingEntity)var8).isPotionActive(Effects.field_19736)) {
                   int var12 = ((LivingEntity)var8).method_26553(Effects.field_19736).method_10347();
-                  float var13 = class_9299.method_42795(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
+                  float var13 = MathHelper.method_42795(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != class_1026.field_5679) {
                      var10 = var13 * 0.25F;
                      var11 = var13;

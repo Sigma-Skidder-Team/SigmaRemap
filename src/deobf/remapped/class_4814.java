@@ -7,7 +7,7 @@ public interface class_4814 {
 
    int method_22187();
 
-   class_8461 method_22191();
+   SoundEvent method_22191();
 
    class_8137 method_22188();
 

@@ -38,16 +38,16 @@ public class class_8197 extends class_9873 {
    }
 
    public void method_37551(float var1, float var2, float var3, float var4) {
-      float var7 = (class_9299.method_42818(var1 * 0.02F) * 0.1F + 1.25F) * var4;
+      float var7 = (MathHelper.sin(var1 * 0.02F) * 0.1F + 1.25F) * var4;
       this.field_41954.field_8190 = (float) Math.PI + var7;
       this.field_41956.field_8190 = -var7;
       this.field_41952.field_8190 = var7;
       this.field_41949.field_8190 = -var7;
       this.field_41955.field_8190 = var7 - var7 * 2.0F * var2;
       this.field_41951.field_8190 = var7 - var7 * 2.0F * var3;
-      this.field_41952.field_8183 = class_9299.method_42818(var7);
-      this.field_41949.field_8183 = class_9299.method_42818(var7);
-      this.field_41955.field_8183 = class_9299.method_42818(var7);
-      this.field_41951.field_8183 = class_9299.method_42818(var7);
+      this.field_41952.field_8183 = MathHelper.sin(var7);
+      this.field_41949.field_8183 = MathHelper.sin(var7);
+      this.field_41955.field_8183 = MathHelper.sin(var7);
+      this.field_41951.field_8183 = MathHelper.sin(var7);
    }
 }

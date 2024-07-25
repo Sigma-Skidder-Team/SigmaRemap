@@ -37,7 +37,7 @@ public class class_9163 {
          }
       }
 
-      boolean var5 = var1.world.method_29537().method_1285(class_291.field_1049);
+      boolean var5 = var1.world.getGameRules().getBoolean(GameRules.field_1049);
       if (var5 && this.field_46891 > 0.0F && var1.method_3246() && this.field_46890 >= 20) {
          this.field_46894++;
          if (this.field_46894 >= 10) {

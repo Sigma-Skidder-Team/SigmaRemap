@@ -19,7 +19,7 @@ public class class_9104 extends class_9733 {
    @Override
    public void method_44951(class_7907 var1, Camera var2, float var3) {
       float var6 = ((float)this.field_49475 + var3) / (float)this.field_49476;
-      float var7 = 0.05F + 0.5F * class_9299.method_42818(var6 * (float) Math.PI);
+      float var7 = 0.05F + 0.5F * MathHelper.sin(var6 * (float) Math.PI);
       class_7966 var8 = new class_7966();
       var8.method_36060(var2.method_41644());
       var8.method_36060(class_2426.field_12080.method_11074(150.0F * var6 - 60.0F));

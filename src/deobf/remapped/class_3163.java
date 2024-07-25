@@ -34,11 +34,11 @@ public class class_3163 extends class_5920<class_7666> {
       }
    }
 
-   public static boolean method_14598(class_5834 var0) {
+   public static boolean method_14598(LivingEntity var0) {
       return var0.method_26525().method_5117(class_6044.field_30896);
    }
 
-   public static boolean method_14600(class_5834 var0) {
+   public static boolean method_14600(LivingEntity var0) {
       return var0.method_26525().method_5117(class_6044.field_30867);
    }
 }

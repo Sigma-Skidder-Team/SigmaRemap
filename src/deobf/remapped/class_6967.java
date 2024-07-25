@@ -58,7 +58,7 @@ public abstract class class_6967 extends class_3599 {
       this.field_35801
          .method_26927()
          .method_5595(
-            (double)((float)this.field_35802.method_12173()) + 0.5,
+            (double)((float)this.field_35802.getX()) + 0.5,
             (double)(this.field_35802.method_12165() + 1),
             (double)((float)this.field_35802.method_12185()) + 0.5,
             this.field_35803
@@ -86,7 +86,7 @@ public abstract class class_6967 extends class_3599 {
             this.field_35801
                .method_26927()
                .method_5595(
-                  (double)((float)var3.method_12173()) + 0.5, (double)var3.method_12165(), (double)((float)var3.method_12185()) + 0.5, this.field_35803
+                  (double)((float)var3.getX()) + 0.5, (double)var3.method_12165(), (double)((float)var3.method_12185()) + 0.5, this.field_35803
                );
          }
       }

@@ -82,7 +82,7 @@ public class class_3425 {
       int var11,
       boolean var12
    ) {
-      class_1249 var15 = var0.method_26927();
+      PathNavigator var15 = var0.method_26927();
       Random var16 = var0.method_26594();
       boolean var17;
       if (!var0.method_26848()) {
@@ -98,12 +98,12 @@ public class class_3425 {
       for (int var22 = 0; var22 < 10; var22++) {
          BlockPos var23 = method_15840(var16, var1, var2, var3, var4, var6);
          if (var23 != null) {
-            int var24 = var23.method_12173();
+            int var24 = var23.getX();
             int var25 = var23.method_12165();
             int var26 = var23.method_12185();
             if (var0.method_26848() && var1 > 1) {
                BlockPos var27 = var0.method_26885();
-               if (!(var0.getPosX() > (double)var27.method_12173())) {
+               if (!(var0.getPosX() > (double)var27.getX())) {
                   var24 += var16.nextInt(var1 / 2);
                } else {
                   var24 -= var16.nextInt(var1 / 2);
@@ -151,9 +151,9 @@ public class class_3425 {
    @Nullable
    private static BlockPos method_15840(Random var0, int var1, int var2, int var3, class_1343 var4, double var5) {
       if (var4 != null && !(var5 >= Math.PI)) {
-         double var12 = class_9299.method_42821(var4.field_7334, var4.field_7336) - (float) (Math.PI / 2);
+         double var12 = MathHelper.method_42821(var4.field_7334, var4.field_7336) - (float) (Math.PI / 2);
          double var14 = var12 + (double)(2.0F * var0.nextFloat() - 1.0F) * var5;
-         double var16 = Math.sqrt(var0.nextDouble()) * (double)class_9299.field_47448 * (double)var1;
+         double var16 = Math.sqrt(var0.nextDouble()) * (double) MathHelper.SQRT_2 * (double)var1;
          double var18 = -var16 * Math.sin(var14);
          double var20 = var16 * Math.cos(var14);
          if (!(Math.abs(var18) > (double)var1) && !(Math.abs(var20) > (double)var1)) {

@@ -27,7 +27,7 @@ public class class_353 extends class_4734 {
          var0.method_21867(),
          new class_9529(
             new class_1343(
-               (double)var1.method_12173() + 0.5 + (double)var2.method_1041() * 0.5,
+               (double)var1.getX() + 0.5 + (double)var2.method_1041() * 0.5,
                (double)var1.method_12165() + 0.5 + (double)var2.method_1054() * 0.5,
                (double)var1.method_12185() + 0.5 + (double)var2.method_1034() * 0.5
             ),

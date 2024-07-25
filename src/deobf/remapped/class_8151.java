@@ -120,7 +120,7 @@ public class class_8151 extends class_4314 {
 
          if (!var1.field_33055) {
             if (var5.method_28021("BlockEntityTag") == null) {
-               var10.method_36935(var1.method_29537().method_1285(class_291.field_1057));
+               var10.method_36935(var1.getGameRules().getBoolean(GameRules.field_1057));
                var9.method_33932(this == class_4783.field_23601);
             }
 
@@ -159,8 +159,8 @@ public class class_8151 extends class_4314 {
 
    private static void method_37413(World var0, BlockPos var1, Direction var2) {
       class_2921 var5 = var1.method_6089();
-      class_291 var6 = var0.method_29537();
-      int var7 = var6.method_1295(class_291.field_1055);
+      GameRules var6 = var0.getGameRules();
+      int var7 = var6.method_1295(GameRules.field_1055);
 
       while (var7-- > 0) {
          var5.method_13368(var2);
@@ -199,7 +199,7 @@ public class class_8151 extends class_4314 {
       }
 
       if (var7 <= 0) {
-         int var13 = Math.max(var6.method_1295(class_291.field_1055), 0);
+         int var13 = Math.max(var6.method_1295(GameRules.field_1055), 0);
          field_41790.warn("Command Block chain tried to execute more than {} steps!", var13);
       }
    }

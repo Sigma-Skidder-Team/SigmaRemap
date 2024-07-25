@@ -19,7 +19,7 @@ public class class_1427 extends class_4285<class_8541> {
       if (var9 == null) {
          return false;
       } else {
-         int var11 = class_9299.method_42824(var3, 4, 13);
+         int var11 = MathHelper.nextInt(var3, 4, 13);
          if (var3.nextInt(12) == 0) {
             var11 *= 2;
          }
@@ -53,7 +53,7 @@ public class class_1427 extends class_4285<class_8541> {
 
       for (int var12 = -var11; var12 <= var11; var12++) {
          for (int var13 = -var11; var13 <= var11; var13++) {
-            boolean var14 = var6 && class_9299.method_42805(var12) == var11 && class_9299.method_42805(var13) == var11;
+            boolean var14 = var6 && MathHelper.abs(var12) == var11 && MathHelper.abs(var13) == var11;
 
             for (int var15 = 0; var15 < var5; var15++) {
                var9.method_13360(var4, var12, var15, var13);
@@ -154,7 +154,7 @@ public class class_1427 extends class_4285<class_8541> {
    private static void method_6555(BlockPos var0, class_9379 var1, Random var2) {
       class_2921 var5 = var0.method_6089().method_13368(Direction.field_802);
       if (var1.method_22548(var5)) {
-         int var6 = class_9299.method_42824(var2, 1, 5);
+         int var6 = MathHelper.nextInt(var2, 1, 5);
          if (var2.nextInt(7) == 0) {
             var6 *= 2;
          }

@@ -57,8 +57,8 @@ public class class_8130 {
          }
       }
 
-      this.field_41639 = class_9299.method_42801(this.field_41639);
-      this.field_41638 = class_9299.method_42801(this.field_41638);
+      this.field_41639 = MathHelper.smallestEncompassingPowerOfTwo(this.field_41639);
+      this.field_41638 = MathHelper.smallestEncompassingPowerOfTwo(this.field_41638);
    }
 
    public void method_36993(class_1798 var1) {
@@ -86,16 +86,16 @@ public class class_8130 {
    }
 
    private boolean method_36997(class_678 var1) {
-      int var4 = class_9299.method_42801(this.field_41639);
-      int var5 = class_9299.method_42801(this.field_41638);
-      int var6 = class_9299.method_42801(this.field_41639 + var1.field_3744);
-      int var7 = class_9299.method_42801(this.field_41638 + var1.field_3742);
+      int var4 = MathHelper.smallestEncompassingPowerOfTwo(this.field_41639);
+      int var5 = MathHelper.smallestEncompassingPowerOfTwo(this.field_41638);
+      int var6 = MathHelper.smallestEncompassingPowerOfTwo(this.field_41639 + var1.field_3744);
+      int var7 = MathHelper.smallestEncompassingPowerOfTwo(this.field_41638 + var1.field_3742);
       boolean var8 = var6 <= this.field_41642;
       boolean var9 = var7 <= this.field_41643;
       if (!var8 && !var9) {
          return false;
       } else {
-         int var10 = class_1750.method_7802(this.field_41638);
+         int var10 = MathUtils.method_7802(this.field_41638);
          boolean var11 = var8 && var6 <= 2 * var10;
          if (this.field_41639 == 0 && this.field_41638 == 0) {
             var11 = true;

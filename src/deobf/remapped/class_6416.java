@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class class_6416 {
    private static String[] field_32768;
-   private static final Map<class_6414, RenderLayer> field_32766 = Util.<Map<class_6414, RenderLayer>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_6414, RenderLayer> field_32766 = Util.<Map<class_6414, RenderLayer>>make(Maps.newHashMap(), var0 -> {
       RenderLayer var3 = RenderLayer.method_16765();
       var0.put(class_4783.field_23460, var3);
       RenderLayer var4 = RenderLayer.method_16756();
@@ -249,7 +249,7 @@ public class class_6416 {
       var0.put(class_4783.field_23320, var6);
       var0.put(class_4783.field_23269, var6);
    });
-   private static final Map<class_2340, RenderLayer> field_32765 = Util.<Map<class_2340, RenderLayer>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_2340, RenderLayer> field_32765 = Util.<Map<class_2340, RenderLayer>>make(Maps.newHashMap(), var0 -> {
       RenderLayer var3 = RenderLayer.method_16762();
       var0.put(class_8532.field_43676, var3);
       var0.put(class_8532.field_43674, var3);

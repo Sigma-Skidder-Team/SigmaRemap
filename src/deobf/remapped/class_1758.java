@@ -119,8 +119,8 @@ public class class_1758 {
       }
 
       while (var2 - var1.size() - var6.size() > 0 && !var6.isEmpty()) {
-         ItemStack var11 = (ItemStack)var6.remove(class_9299.method_42824(var3, 0, var6.size() - 1));
-         int var9 = class_9299.method_42824(var3, 1, var11.method_27997() / 2);
+         ItemStack var11 = (ItemStack)var6.remove(MathHelper.nextInt(var3, 0, var6.size() - 1));
+         int var9 = MathHelper.nextInt(var3, 1, var11.method_27997() / 2);
          ItemStack var10 = var11.method_27953(var9);
          if (var11.method_27997() > 1 && var3.nextBoolean()) {
             var6.add(var11);

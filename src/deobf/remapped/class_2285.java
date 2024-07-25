@@ -59,7 +59,7 @@ public class class_2285 extends class_7114 implements class_2855<class_8137> {
          class_9205.method_42467(this.field_11415)
             .method_8511()
             .method_40274(
-               var10.field_31002[class_9299.method_42848(class_9205.method_42473(this.field_11415) / 30.0F) % var10.field_31002.length], var12, var13
+               var10.field_31002[MathHelper.floor(class_9205.method_42473(this.field_11415) / 30.0F) % var10.field_31002.length], var12, var13
             );
          RenderSystem.method_16489();
       }

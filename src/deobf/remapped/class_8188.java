@@ -27,7 +27,7 @@ public class class_8188 extends class_3599 {
                Predicate var3 = var0 -> var0.method_39438() || !var0.method_39444();
                List var4 = this.field_41900
                   .world
-                  .method_25869(this.field_41900.getClass(), this.field_41900.method_37241().method_18899(8.0, 8.0, 8.0), var3);
+                  .method_25869(this.field_41900.getClass(), this.field_41900.getBoundingBox().method_18899(8.0, 8.0, 8.0), var3);
                class_8574 var5 = var4.stream().filter(class_8574::method_39438).findAny().orElse(this.field_41900);
                var5.method_39437(var4.stream().filter(var0 -> !var0.method_39444()));
                return this.field_41900.method_39444();

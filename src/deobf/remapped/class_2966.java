@@ -136,41 +136,41 @@ public enum class_2966 {
          case field_14546:
             return -method_13561(var1, 0);
          case field_14544:
-            return class_9299.field_47442;
+            return MathHelper.PI;
          case field_14550:
-            return class_9299.method_42818(method_13561(var1, 0));
+            return MathHelper.sin(method_13561(var1, 0));
          case field_14572:
-            return class_9299.method_42840(method_13561(var1, 0));
+            return MathHelper.cos(method_13561(var1, 0));
          case field_14582:
-            return class_1750.method_7794(method_13561(var1, 0));
+            return MathUtils.method_7794(method_13561(var1, 0));
          case field_14568:
-            return class_1750.method_7796(method_13561(var1, 0));
+            return MathUtils.method_7796(method_13561(var1, 0));
          case field_14540:
             return (float)Math.tan((double)method_13561(var1, 0));
          case field_14565:
             return (float)Math.atan((double)method_13561(var1, 0));
          case field_14553:
-            return (float)class_9299.method_42821((double)method_13561(var1, 0), (double)method_13561(var1, 1));
+            return (float) MathHelper.method_42821((double)method_13561(var1, 0), (double)method_13561(var1, 1));
          case field_14579:
-            return class_1750.method_7798(method_13561(var1, 0));
+            return MathUtils.method_7798(method_13561(var1, 0));
          case field_14584:
-            return class_1750.method_7801(method_13561(var1, 0));
+            return MathUtils.method_7801(method_13561(var1, 0));
          case field_14564:
             return this.method_13569(var1);
          case field_14560:
             return this.method_13563(var1);
          case field_14574:
-            return class_9299.method_42828(method_13561(var1, 0), method_13561(var1, 1), method_13561(var1, 2));
+            return MathHelper.clamp(method_13561(var1, 0), method_13561(var1, 1), method_13561(var1, 2));
          case field_14543:
-            return class_9299.method_42804(method_13561(var1, 0));
+            return MathHelper.abs(method_13561(var1, 0));
          case field_14598:
             return (float)Math.exp((double)method_13561(var1, 0));
          case field_14563:
-            return (float)class_9299.method_42848(method_13561(var1, 0));
+            return (float) MathHelper.floor(method_13561(var1, 0));
          case field_14590:
-            return (float)class_9299.method_42816(method_13561(var1, 0));
+            return (float) MathHelper.ceil(method_13561(var1, 0));
          case field_14566:
-            return class_9299.method_42823(method_13561(var1, 0));
+            return MathHelper.frac(method_13561(var1, 0));
          case field_14591:
             return (float)Math.log((double)method_13561(var1, 0));
          case field_14562:
@@ -182,11 +182,11 @@ public enum class_2966 {
          case field_14587:
             return Math.signum(method_13561(var1, 0));
          case field_14548:
-            return class_9299.method_42843(method_13561(var1, 0));
+            return MathHelper.sqrt(method_13561(var1, 0));
          case field_14549:
             float var6 = method_13561(var1, 0);
             float var7 = method_13561(var1, 1);
-            return var6 - var7 * (float)class_9299.method_42848(var6 / var7);
+            return var6 - var7 * (float) MathHelper.floor(var6 / var7);
          case field_14541:
             MinecraftClient var8 = MinecraftClient.getInstance();
             ClientWorld var9 = var8.theWorld;

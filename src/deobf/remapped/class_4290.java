@@ -102,7 +102,7 @@ public abstract class class_4290<K, V extends class_8227<K>> {
 
    public void method_19922() throws IOException {
       JsonArray var3 = new JsonArray();
-      this.field_20815.values().stream().<JsonObject>map(var0 -> Util.method_44659(new JsonObject(), var0::method_37664)).forEach(var3::add);
+      this.field_20815.values().stream().<JsonObject>map(var0 -> Util.make(new JsonObject(), var0::method_37664)).forEach(var3::add);
 
       try (BufferedWriter var4 = Files.newWriter(this.field_20814, StandardCharsets.UTF_8)) {
          field_20816.toJson(var3, var4);

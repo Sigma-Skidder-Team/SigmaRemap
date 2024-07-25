@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_2387 extends Screen {
    private static final Logger field_11903 = LogManager.getLogger();
-   private static final Object2IntMap<class_5621<World>> field_11904 = Util.<Object2IntMap<class_5621<World>>>method_44659(
+   private static final Object2IntMap<class_5621<World>> field_11904 = Util.<Object2IntMap<class_5621<World>>>make(
       new Object2IntOpenCustomHashMap(Util.method_44698()), var0 -> {
          var0.put(World.field_33048, -13408734);
          var0.put(World.field_33029, -10075085);
@@ -90,7 +90,7 @@ public class class_2387 extends Screen {
 
          while (var12.hasNext()) {
             class_5621 var13 = (class_5621)var12.next();
-            int var14 = class_9299.method_42848(this.field_11905.method_14577(var13) * (float)(var8 - var7));
+            int var14 = MathHelper.floor(this.field_11905.method_14577(var13) * (float)(var8 - var7));
             method_9774(var1, var7 + var11, var9, var7 + var11 + var14, var10, field_11904.getInt(var13));
             var11 += var14;
          }
@@ -100,7 +100,7 @@ public class class_2387 extends Screen {
          method_9787(
             var1,
             this.field_948,
-            class_9299.method_42848(this.field_11905.method_14572() * 100.0F) + "%",
+            MathHelper.floor(this.field_11905.method_14572() * 100.0F) + "%",
             this.field_941 / 2,
             var9 + (var10 - var9) / 2 - 4,
             10526880

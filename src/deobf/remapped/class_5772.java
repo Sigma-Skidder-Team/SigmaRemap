@@ -295,7 +295,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
 
    @Nullable
    public static class_6867 method_26108(World var0, BlockPos var1) {
-      return method_26107(var0, (double)var1.method_12173() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5);
+      return method_26107(var0, (double)var1.getX() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5);
    }
 
    @Nullable
@@ -344,7 +344,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
 
    @Override
    public double method_20973() {
-      return (double)this.field_18358.method_12173() + 0.5;
+      return (double)this.field_18358.getX() + 0.5;
    }
 
    @Override
@@ -384,7 +384,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
          BlockPos var4 = this.method_17399();
          if (class_3370.method_15537(
             class_3370.method_15523(
-               var1.method_37241().method_18918((double)(-var4.method_12173()), (double)(-var4.method_12165()), (double)(-var4.method_12185()))
+               var1.getBoundingBox().method_18918((double)(-var4.getX()), (double)(-var4.method_12165()), (double)(-var4.method_12185()))
             ),
             this.method_20972(),
             class_8529.field_43655

@@ -51,11 +51,11 @@ public class class_3182 extends SimpleChannelInboundHandler<ByteBuf> {
          String var6 = new String(var2.readBytes(var2.readShort() * 2).array(), StandardCharsets.UTF_16BE);
          String[] var7 = (String[])Iterables.toArray(class_7081.method_32585().split(var6), String.class);
          if ("§1".equals(var7[0])) {
-            int var8 = class_9299.method_42787(var7[1], 0);
+            int var8 = MathHelper.getInt(var7[1], 0);
             String var9 = var7[2];
             String var10 = var7[3];
-            int var11 = class_9299.method_42787(var7[4], -1);
-            int var12 = class_9299.method_42787(var7[5], -1);
+            int var11 = MathHelper.getInt(var7[4], -1);
+            int var12 = MathHelper.getInt(var7[5], -1);
             this.field_15901.field_8500.field_12663 = -1;
             this.field_15901.field_8500.field_12666 = new StringTextComponent(var9);
             this.field_15901.field_8500.field_12672 = new StringTextComponent(var10);

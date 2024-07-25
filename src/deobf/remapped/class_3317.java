@@ -20,7 +20,7 @@ public class class_3317 extends class_1871 {
             this.field_9479.method_12611().method_29422(class_8978.field_46006);
          } else {
             double var3 = this.field_16390.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ());
-            if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.field_41744 || this.field_9479.field_41774) {
+            if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.collidedHorizontally || this.field_9479.field_41774) {
                this.field_16389++;
             }
          }

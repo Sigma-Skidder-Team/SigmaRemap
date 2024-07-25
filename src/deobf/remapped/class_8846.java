@@ -28,6 +28,6 @@ public enum class_8846 {
    }
 
    public static class_8846 method_40706(int var0) {
-      return field_45240[class_9299.method_42788(var0, field_45240.length)];
+      return field_45240[MathHelper.normalizeAngle(var0, field_45240.length)];
    }
 }

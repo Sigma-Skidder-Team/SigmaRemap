@@ -14,7 +14,7 @@ public class class_3282 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_16255.method_17809();
+      LivingEntity var3 = this.field_16255.getAttackTarget();
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
@@ -34,7 +34,7 @@ public class class_3282 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      class_5834 var3 = this.field_16255.method_17809();
+      LivingEntity var3 = this.field_16255.getAttackTarget();
       if (var3 != null) {
          if (var3.isAlive()) {
             return var3 instanceof PlayerEntity && ((PlayerEntity)var3).playerAbilities.disableDamage ? false : --this.field_16256 > 0;
@@ -48,7 +48,7 @@ public class class_3282 extends class_3599 {
 
    @Override
    public void method_16794() {
-      this.field_16255.method_26914(this.field_16255.method_17809(), 10.0F, 10.0F);
+      this.field_16255.method_26914(this.field_16255.getAttackTarget(), 10.0F, 10.0F);
       ((class_8509)this.field_16255.method_26905()).method_39183(this.field_16255.rotationYaw, this.field_16255.method_1857());
    }
 }

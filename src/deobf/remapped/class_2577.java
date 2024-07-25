@@ -99,7 +99,7 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
    public int method_11703(double var1, double var3) {
       int var7 = this.field_12762 + this.field_12760 / 2 - this.method_11732() / 2;
       int var8 = this.field_12762 + this.field_12760 / 2 + this.method_11732() / 2;
-      int var9 = class_9299.method_42847(var3 - (double)this.field_12765) - this.field_12763 + (int)this.field_12769 - 4;
+      int var9 = MathHelper.floor(var3 - (double)this.field_12765) - this.field_12763 + (int)this.field_12769 - 4;
       int var10 = var9 / this.field_12770;
       return var1 < (double)this.method_11719() && var1 >= (double)var7 && var1 <= (double)var8 && var10 >= 0 && var9 >= 0 && var10 < this.method_11725()
          ? var10
@@ -107,7 +107,7 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
    }
 
    public void method_11715() {
-      this.field_12769 = class_9299.method_42827(this.field_12769, 0.0, (double)this.method_11714());
+      this.field_12769 = MathHelper.clamp(this.field_12769, 0.0, (double)this.method_11714());
    }
 
    public int method_11714() {
@@ -198,7 +198,7 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
          int var15 = this.method_11714();
          if (var15 > 0) {
             int var16 = (int)((float)((this.field_12755 - this.field_12765) * (this.field_12755 - this.field_12765)) / (float)this.method_11718());
-            var16 = class_9299.method_42829(var16, 32, this.field_12755 - this.field_12765 - 8);
+            var16 = MathHelper.clamp(var16, 32, this.field_12755 - this.field_12765 - 8);
             int var17 = (int)this.field_12769 * (this.field_12755 - this.field_12765 - var16) / var15 + this.field_12765;
             if (var17 < this.field_12765) {
                var17 = this.field_12765;
@@ -283,7 +283,7 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
                   }
 
                   int var14 = (int)((float)((this.field_12755 - this.field_12765) * (this.field_12755 - this.field_12765)) / (float)this.method_11718());
-                  var14 = class_9299.method_42829(var14, 32, this.field_12755 - this.field_12765 - 8);
+                  var14 = MathHelper.clamp(var14, 32, this.field_12755 - this.field_12765 - 8);
                   double var15 = var12 / (double)(this.field_12755 - this.field_12765 - var14);
                   if (var15 < 1.0) {
                      var15 = 1.0;

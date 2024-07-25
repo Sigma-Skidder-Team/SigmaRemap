@@ -35,7 +35,7 @@ public class class_1837 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      LivingEntity var3 = this.field_9305.method_17809();
+      LivingEntity var3 = this.field_9305.getAttackTarget();
       if (var3 != null && var3.isAlive()) {
          this.field_9303 = var3;
          return true;
@@ -75,18 +75,18 @@ public class class_1837 extends class_3599 {
       this.field_9305.method_26865().method_17240(this.field_9303, 30.0F, 30.0F);
       if (--this.field_9302 != 0) {
          if (this.field_9302 < 0) {
-            float var6 = class_9299.method_42842(var3) / this.field_9309;
-            this.field_9302 = class_9299.method_42848(var6 * (float)(this.field_9310 - this.field_9306) + (float)this.field_9306);
+            float var6 = MathHelper.sqrt(var3) / this.field_9309;
+            this.field_9302 = MathHelper.floor(var6 * (float)(this.field_9310 - this.field_9306) + (float)this.field_9306);
          }
       } else {
          if (!var5) {
             return;
          }
 
-         float var8 = class_9299.method_42842(var3) / this.field_9309;
-         float var7 = class_9299.method_42828(var8, 0.1F, 1.0F);
+         float var8 = MathHelper.sqrt(var3) / this.field_9309;
+         float var7 = MathHelper.clamp(var8, 0.1F, 1.0F);
          this.field_9311.method_10805(this.field_9303, var7);
-         this.field_9302 = class_9299.method_42848(var8 * (float)(this.field_9310 - this.field_9306) + (float)this.field_9306);
+         this.field_9302 = MathHelper.floor(var8 * (float)(this.field_9310 - this.field_9306) + (float)this.field_9306);
       }
    }
 }

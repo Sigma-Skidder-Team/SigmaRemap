@@ -44,7 +44,7 @@ public class class_5431 extends NearestAttackableTargetGoal<LivingEntity> {
          this.field_27663 = this.field_27661.method_26577();
       }
 
-      this.field_27660.method_37155(class_463.field_2796, 1.0F, 1.0F);
+      this.field_27660.method_37155(SoundEvents.field_2796, 1.0F, 1.0F);
       class_5542.method_25216(this.field_27660, true);
       class_5542.method_25195(this.field_27660);
       super.method_16796();

@@ -23,9 +23,9 @@ public abstract class class_5105<T extends LivingEntity, M extends class_3169<T>
             float var18 = var14.nextFloat();
             float var19 = var14.nextFloat();
             float var20 = var14.nextFloat();
-            float var21 = class_9299.method_42795(var18, var17.field_47182, var17.field_47181) / 16.0F;
-            float var22 = class_9299.method_42795(var19, var17.field_47180, var17.field_47184) / 16.0F;
-            float var23 = class_9299.method_42795(var20, var17.field_47183, var17.field_47179) / 16.0F;
+            float var21 = MathHelper.method_42795(var18, var17.field_47182, var17.field_47181) / 16.0F;
+            float var22 = MathHelper.method_42795(var19, var17.field_47180, var17.field_47184) / 16.0F;
+            float var23 = MathHelper.method_42795(var20, var17.field_47183, var17.field_47179) / 16.0F;
             var1.method_36065((double)var21, (double)var22, (double)var23);
             var18 = -1.0F * (var18 * 2.0F - 1.0F);
             var19 = -1.0F * (var19 * 2.0F - 1.0F);

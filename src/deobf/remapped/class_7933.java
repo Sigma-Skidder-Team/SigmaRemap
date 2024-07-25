@@ -194,7 +194,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
                this.field_40582 = 0;
             }
          } else if (!this.method_35865() && this.field_40582 > 0) {
-            this.field_40582 = class_9299.method_42829(this.field_40582 - 2, 0, this.field_40577);
+            this.field_40582 = MathHelper.clamp(this.field_40582 - 2, 0, this.field_40577);
          }
 
          if (var3 != this.method_35865()) {
@@ -354,7 +354,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    public boolean method_31502(PlayerEntity var1) {
       return this.field_18364.method_28260(this.field_18358) == this
          ? var1.method_37273(
-               (double)this.field_18358.method_12173() + 0.5, (double)this.field_18358.method_12165() + 0.5, (double)this.field_18358.method_12185() + 0.5
+               (double)this.field_18358.getX() + 0.5, (double)this.field_18358.method_12165() + 0.5, (double)this.field_18358.method_12185() + 0.5
             )
             <= 64.0
          : false;
@@ -419,8 +419,8 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    private static void method_35868(World var0, class_1343 var1, int var2, float var3) {
-      int var6 = class_9299.method_42848((float)var2 * var3);
-      float var7 = class_9299.method_42823((float)var2 * var3);
+      int var6 = MathHelper.floor((float)var2 * var3);
+      float var7 = MathHelper.frac((float)var2 * var3);
       if (var7 != 0.0F && Math.random() < (double)var7) {
          var6++;
       }

@@ -21,6 +21,6 @@ public class class_8293 extends class_8715 {
 
    @Override
    public float method_9766(float var1) {
-      return 7.1F * class_9299.method_42818(((float)this.field_49475 + var1 - 1.0F) * 0.25F * (float) Math.PI);
+      return 7.1F * MathHelper.sin(((float)this.field_49475 + var1 - 1.0F) * 0.25F * (float) Math.PI);
    }
 }

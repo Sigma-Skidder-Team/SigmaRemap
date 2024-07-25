@@ -23,7 +23,7 @@ public class class_9040 extends class_1871 {
       double var3 = this.field_46259 != null
          ? this.field_46259.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ())
          : 0.0;
-      if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.field_41744 || this.field_9479.field_41774) {
+      if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.collidedHorizontally || this.field_9479.field_41774) {
          this.method_41498();
       }
    }
@@ -52,14 +52,14 @@ public class class_9040 extends class_1871 {
          double var5 = 64.0;
          PlayerEntity var7 = this.field_9479
             .world
-            .method_25858(field_46257, (double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
+            .method_25858(field_46257, (double)var3.getX(), (double)var3.method_12165(), (double)var3.method_12185());
          if (var7 != null) {
             var5 = var3.method_12179(var7.method_37245(), true) / 512.0;
          }
 
          if (var7 != null
             && !var7.playerAbilities.disableDamage
-            && (this.field_9479.method_26594().nextInt(class_9299.method_42805((int)var5) + 2) == 0 || this.field_9479.method_26594().nextInt(var4 + 2) == 0)) {
+            && (this.field_9479.method_26594().nextInt(MathHelper.abs((int)var5) + 2) == 0 || this.field_9479.method_26594().nextInt(var4 + 2) == 0)) {
             this.method_41500(var7);
             return;
          }
@@ -108,7 +108,7 @@ public class class_9040 extends class_1871 {
       if (this.field_46258 != null && !this.field_46258.method_18436()) {
          BlockPos var3 = this.field_46258.method_18449();
          this.field_46258.method_18434();
-         double var4 = (double)var3.method_12173();
+         double var4 = (double)var3.getX();
          double var6 = (double)var3.method_12185();
 
          double var8;

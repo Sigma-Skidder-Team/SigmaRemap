@@ -63,7 +63,7 @@ public class class_8875<T extends class_9408> extends class_3666<T> {
 
    public void method_40842(T var1, float var2, float var3, float var4) {
       if (!var1.method_28537()) {
-         this.field_45365.field_8190 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
+         this.field_45365.field_8190 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
       } else {
          this.field_45365.field_8190 = 0.0F;
       }
@@ -78,10 +78,10 @@ public class class_8875<T extends class_9408> extends class_3666<T> {
          this.field_45364.method_7046(0.5F, 16.0F, 7.0F);
          this.field_45372.method_7046(-2.5F, 16.0F, -4.0F);
          this.field_45370.method_7046(0.5F, 16.0F, -4.0F);
-         this.field_45368.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
-         this.field_45364.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-         this.field_45372.field_8191 = class_9299.method_42840(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-         this.field_45370.field_8191 = class_9299.method_42840(var2 * 0.6662F) * 1.4F * var3;
+         this.field_45368.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+         this.field_45364.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+         this.field_45372.field_8191 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+         this.field_45370.field_8191 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
       } else {
          this.field_45366.method_7046(-1.0F, 16.0F, -3.0F);
          this.field_45366.field_8191 = (float) (Math.PI * 2.0 / 5.0);

@@ -8,7 +8,7 @@ public class class_4810 extends class_9037 {
    }
 
    @Override
-   public double method_41492(class_5834 var1) {
+   public double method_41492(LivingEntity var1) {
       return (double)(4.0F + var1.method_37086());
    }
 }

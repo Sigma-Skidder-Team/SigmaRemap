@@ -54,24 +54,24 @@ public class class_8768 extends class_7067<class_5490> {
             float var37 = var13 + (float)(var34 * 16);
             float var38 = var14 + (float)((var35 + 1) * 16);
             float var39 = var14 + (float)(var35 * 16);
-            int var40 = class_9299.method_42847(var3.getPosX());
-            int var41 = class_9299.method_42847(var3.method_37309() + (double)((var38 + var39) / 2.0F / 16.0F));
-            int var42 = class_9299.method_42847(var3.getPosZ());
+            int var40 = MathHelper.floor(var3.getPosX());
+            int var41 = MathHelper.floor(var3.method_37309() + (double)((var38 + var39) / 2.0F / 16.0F));
+            int var42 = MathHelper.floor(var3.getPosZ());
             Direction var43 = var3.method_37365();
             if (var43 == Direction.field_818) {
-               var40 = class_9299.method_42847(var3.getPosX() + (double)((var36 + var37) / 2.0F / 16.0F));
+               var40 = MathHelper.floor(var3.getPosX() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.field_809) {
-               var42 = class_9299.method_42847(var3.getPosZ() - (double)((var36 + var37) / 2.0F / 16.0F));
+               var42 = MathHelper.floor(var3.getPosZ() - (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.field_800) {
-               var40 = class_9299.method_42847(var3.getPosX() - (double)((var36 + var37) / 2.0F / 16.0F));
+               var40 = MathHelper.floor(var3.getPosX() - (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.field_804) {
-               var42 = class_9299.method_42847(var3.getPosZ() + (double)((var36 + var37) / 2.0F / 16.0F));
+               var42 = MathHelper.floor(var3.getPosZ() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             int var44 = WorldRenderer.method_20002(var3.world, new BlockPos(var40, var41, var42));

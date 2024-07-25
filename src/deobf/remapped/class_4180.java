@@ -14,23 +14,23 @@ public class class_4180 extends class_1595 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2718;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2718;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2905;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2905;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2433;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2433;
    }
 
    @Override
-   public class_8461 method_7150() {
-      return class_463.field_2502;
+   public SoundEvent method_7150() {
+      return SoundEvents.field_2502;
    }
 
    @Override

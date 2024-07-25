@@ -60,8 +60,8 @@ public class class_9544 {
       return new class_5197<class_7263>(
          ImmutableList.of(
             Pair.of(new class_1203(0.6F), 2),
-            Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34240, 8, class_6044.field_30861, 0.6F, 2), 2),
-            Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34257, 8, class_6044.field_30861, 0.6F, 2), 2),
+            Pair.of(class_4741.<LivingEntity>method_21905(EntityType.field_34240, 8, class_6044.field_30861, 0.6F, 2), 2),
+            Pair.of(class_4741.<LivingEntity>method_21905(EntityType.field_34257, 8, class_6044.field_30861, 0.6F, 2), 2),
             Pair.of(new class_7375(class_6044.field_30854, 0.6F, 2, 100), 2),
             Pair.of(new class_5863(class_6044.field_30854, 0.6F, 5), 2),
             Pair.of(new class_102(30, 60), 1)
@@ -81,13 +81,13 @@ public class class_9544 {
       var0.method_26891(var3.method_5117(class_6044.field_30884));
    }
 
-   private static boolean method_44046(class_6993 var0, class_5834 var1) {
+   private static boolean method_44046(class_6993 var0, LivingEntity var1) {
       return method_44045(var0).filter(var1x -> var1x == var1).isPresent();
    }
 
-   private static Optional<? extends class_5834> method_44045(class_6993 var0) {
+   private static Optional<? extends LivingEntity> method_44045(class_6993 var0) {
       Optional var3 = class_1225.method_5454(var0, class_6044.field_30866);
-      if (var3.isPresent() && method_44054((class_5834)var3.get())) {
+      if (var3.isPresent() && method_44054((LivingEntity)var3.get())) {
          return var3;
       } else {
          Optional var4 = method_44053(var0, class_6044.field_30912);
@@ -95,15 +95,15 @@ public class class_9544 {
       }
    }
 
-   private static boolean method_44054(class_5834 var0) {
+   private static boolean method_44054(LivingEntity var0) {
       return class_3572.field_17480.test(var0);
    }
 
-   private static Optional<? extends class_5834> method_44053(class_6993 var0, class_6044<? extends class_5834> var1) {
+   private static Optional<? extends LivingEntity> method_44053(class_6993 var0, class_6044<? extends LivingEntity> var1) {
       return var0.method_26525().method_5138(var1).filter(var1x -> var1x.method_37124(var0, 12.0));
    }
 
-   public static void method_44048(class_7263 var0, class_5834 var1) {
+   public static void method_44048(class_7263 var0, LivingEntity var1) {
       if (!(var1 instanceof class_6993)) {
          class_134.method_522(var0, var1);
       }

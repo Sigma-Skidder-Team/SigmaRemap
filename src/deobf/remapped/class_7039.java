@@ -700,7 +700,7 @@ public class class_7039 extends class_1094 {
       boolean var11 = this.method_32272((double)var2, (double)var3);
       boolean var12 = var7 && var6;
       if (var12) {
-         float var13 = 0.25F + (1.0F + class_9299.method_42818((float)this.field_36364 * 0.5F)) * 0.25F;
+         float var13 = 0.25F + (1.0F + MathHelper.sin((float)this.field_36364 * 0.5F)) * 0.25F;
          int var14 = 0xFF000000 | (int)(var13 * 64.0F) << 16 | (int)(var13 * 64.0F) << 8 | (int)(var13 * 64.0F) << 0;
          this.method_9772(var1, var4 - 2, var5 - 2, var4 + 18, var5 + 18, var14, var14);
          var14 = 0xFF000000 | (int)(var13 * 255.0F) << 16 | (int)(var13 * 255.0F) << 8 | (int)(var13 * 255.0F) << 0;
@@ -719,7 +719,7 @@ public class class_7039 extends class_1094 {
       if (var15) {
          int var16 = (Math.min(var10, 6) - 1) * 8;
          int var17 = (int)(
-            Math.max(0.0F, Math.max(class_9299.method_42818((float)(10 + this.field_36364) * 0.57F), class_9299.method_42840((float)this.field_36364 * 0.35F)))
+            Math.max(0.0F, Math.max(MathHelper.sin((float)(10 + this.field_36364) * 0.57F), MathHelper.cos((float)this.field_36364 * 0.35F)))
                * -6.0F
          );
          this.field_943.getTextureManager().bindTexture(field_36317);
@@ -927,7 +927,7 @@ public class class_7039 extends class_1094 {
          int var14 = !var11
             ? (int)(
                Math.max(
-                     0.0F, Math.max(class_9299.method_42818((float)(10 + this.field_36364) * 0.57F), class_9299.method_42840((float)this.field_36364 * 0.35F))
+                     0.0F, Math.max(MathHelper.sin((float)(10 + this.field_36364) * 0.57F), MathHelper.cos((float)this.field_36364 * 0.35F))
                   )
                   * -6.0F
             )

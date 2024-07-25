@@ -15,7 +15,7 @@ public class class_2504 extends class_2451 {
          var2.getPosX(),
          var2.method_37309(),
          var2.getPosZ(),
-         class_463.field_2847,
+         SoundEvents.field_2847,
          class_562.field_3335,
          0.5F,
          0.4F / (field_12172.nextFloat() * 0.4F + 0.8F)

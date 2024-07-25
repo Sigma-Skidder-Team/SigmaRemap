@@ -205,15 +205,15 @@ public class TextRenderer {
    }
 
    public int method_45395(String var1) {
-      return class_9299.method_42816(this.field_49881.func_238350_a_(var1));
+      return MathHelper.ceil(this.field_49881.func_238350_a_(var1));
    }
 
    public int method_45379(ITextProperties var1) {
-      return class_9299.method_42816(this.field_49881.func_238356_a_(var1));
+      return MathHelper.ceil(this.field_49881.func_238356_a_(var1));
    }
 
    public int method_45400(class_7107 var1) {
-      return class_9299.method_42816(this.field_49881.func_243238_a(var1));
+      return MathHelper.ceil(this.field_49881.func_243238_a(var1));
    }
 
    public String method_45384(String var1, int var2, boolean var3) {

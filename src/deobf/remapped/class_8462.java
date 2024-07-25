@@ -17,7 +17,7 @@ public final class class_8462 {
          var7 = ((class_7474)var8).method_33993();
       }
 
-      class_5631 var9 = method_38931(var5, var0, var6, var7, var0.method_37241().method_18929(var0.method_37098()).method_18898(1.0), var1);
+      class_5631 var9 = method_38931(var5, var0, var6, var7, var0.getBoundingBox().method_18929(var0.method_37098()).grow(1.0), var1);
       if (var9 != null) {
          var8 = var9;
       }
@@ -33,7 +33,7 @@ public final class class_8462 {
       class_1343 var13 = null;
 
       for (Entity var15 : var9.method_25867(var0, var3, var4)) {
-         Box var16 = var15.method_37241().method_18898((double)var15.method_37355());
+         Box var16 = var15.getBoundingBox().grow((double)var15.method_37355());
          Optional var17 = var16.method_18923(var1, var2);
          if (!var16.method_18903(var1)) {
             if (var17.isPresent()) {
@@ -66,7 +66,7 @@ public final class class_8462 {
       Entity var10 = null;
 
       for (Entity var12 : var0.method_25867(var1, var4, var5)) {
-         Box var13 = var12.method_37241().method_18898(0.3F);
+         Box var13 = var12.getBoundingBox().grow(0.3F);
          Optional var14 = var13.method_18923(var2, var3);
          if (var14.isPresent()) {
             double var15 = var2.method_6204((class_1343)var14.get());
@@ -83,9 +83,9 @@ public final class class_8462 {
    public static final void method_38933(Entity var0, float var1) {
       class_1343 var4 = var0.method_37098();
       if (var4.method_6221() != 0.0) {
-         float var5 = class_9299.method_42842(Entity.method_37266(var4));
-         var0.rotationYaw = (float)(class_9299.method_42821(var4.field_7334, var4.field_7336) * 180.0F / (float)Math.PI) + 90.0F;
-         var0.rotationPitch = (float)(class_9299.method_42821((double)var5, var4.field_7333) * 180.0F / (float)Math.PI) - 90.0F;
+         float var5 = MathHelper.sqrt(Entity.method_37266(var4));
+         var0.rotationYaw = (float)(MathHelper.method_42821(var4.field_7334, var4.field_7336) * 180.0F / (float)Math.PI) + 90.0F;
+         var0.rotationPitch = (float)(MathHelper.method_42821((double)var5, var4.field_7333) * 180.0F / (float)Math.PI) - 90.0F;
 
          while (var0.rotationPitch - var0.field_41762 < -180.0F) {
             var0.field_41762 -= 360.0F;
@@ -103,8 +103,8 @@ public final class class_8462 {
             var0.prevRotationYaw += 360.0F;
          }
 
-         var0.rotationPitch = class_9299.method_42795(var1, var0.field_41762, var0.rotationPitch);
-         var0.rotationYaw = class_9299.method_42795(var1, var0.prevRotationYaw, var0.rotationYaw);
+         var0.rotationPitch = MathHelper.method_42795(var1, var0.field_41762, var0.rotationPitch);
+         var0.rotationYaw = MathHelper.method_42795(var1, var0.prevRotationYaw, var0.rotationYaw);
       }
    }
 

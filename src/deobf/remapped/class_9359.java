@@ -81,7 +81,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
       BlockPos var4 = var1.method_28998();
       if (var1.method_22572().method_40229() && var1.method_29522().method_1601().method_25709() != GameType.ADVENTURE) {
          int var5 = Math.max(0, this.field_47801.method_1720(var1));
-         int var6 = class_9299.method_42847(var1.method_6673().method_9808((double)var4.method_12173(), (double)var4.method_12185()));
+         int var6 = MathHelper.floor(var1.method_6673().method_9808((double)var4.getX(), (double)var4.method_12185()));
          if (var6 < var5) {
             var5 = var6;
          }
@@ -100,7 +100,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
             int var15 = (var13 + var12 * var14) % var11;
             int var16 = var15 % (var5 * 2 + 1);
             int var17 = var15 / (var5 * 2 + 1);
-            BlockPos var18 = class_1077.method_4714(var1, var4.method_12173() + var16 - var5, var4.method_12185() + var17 - var5, false);
+            BlockPos var18 = class_1077.method_4714(var1, var4.getX() + var16 - var5, var4.method_12185() + var17 - var5, false);
             if (var18 != null) {
                this.method_37253(var18, 0.0F, 0.0F);
                if (var1.method_6682(this)) {
@@ -193,7 +193,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
       var1.put("recipeBook", this.field_47805.method_14033());
       var1.method_25941("Dimension", this.world.method_29545().method_25499().toString());
       if (this.field_47779 != null) {
-         var1.putInt("SpawnX", this.field_47779.method_12173());
+         var1.putInt("SpawnX", this.field_47779.getX());
          var1.putInt("SpawnY", this.field_47779.method_12165());
          var1.putInt("SpawnZ", this.field_47779.method_12185());
          var1.putBoolean("SpawnForced", this.field_47787);
@@ -208,7 +208,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
    public void method_43247(int var1) {
       float var4 = (float)this.method_3194();
       float var5 = (var4 - 1.0F) / var4;
-      this.field_3842 = class_9299.method_42828((float)var1 / var4, 0.0F, var5);
+      this.field_3842 = MathHelper.clamp((float)var1 / var4, 0.0F, var5);
       this.field_47772 = -1;
    }
 
@@ -331,32 +331,32 @@ public class class_9359 extends PlayerEntity implements class_117 {
 
          if (this.method_26551() + this.method_26493() != this.field_47798) {
             this.field_47798 = this.method_26551() + this.method_26493();
-            this.method_43267(class_6810.field_35128, class_9299.method_42816(this.field_47798));
+            this.method_43267(class_6810.field_35128, MathHelper.ceil(this.field_47798));
          }
 
          if (this.field_3867.method_42238() != this.field_47786) {
             this.field_47786 = this.field_3867.method_42238();
-            this.method_43267(class_6810.field_35138, class_9299.method_42816((float)this.field_47786));
+            this.method_43267(class_6810.field_35138, MathHelper.ceil((float)this.field_47786));
          }
 
          if (this.method_37229() != this.field_47800) {
             this.field_47800 = this.method_37229();
-            this.method_43267(class_6810.field_35137, class_9299.method_42816((float)this.field_47800));
+            this.method_43267(class_6810.field_35137, MathHelper.ceil((float)this.field_47800));
          }
 
          if (this.method_26565() != this.field_47773) {
             this.field_47773 = this.method_26565();
-            this.method_43267(class_6810.field_35132, class_9299.method_42816((float)this.field_47773));
+            this.method_43267(class_6810.field_35132, MathHelper.ceil((float)this.field_47773));
          }
 
          if (this.field_3862 != this.field_47796) {
             this.field_47796 = this.field_3862;
-            this.method_43267(class_6810.field_35127, class_9299.method_42816((float)this.field_47796));
+            this.method_43267(class_6810.field_35127, MathHelper.ceil((float)this.field_47796));
          }
 
          if (this.field_3840 != this.field_47792) {
             this.field_47792 = this.field_3840;
-            this.method_43267(class_6810.field_35134, class_9299.method_42816((float)this.field_47792));
+            this.method_43267(class_6810.field_35134, MathHelper.ceil((float)this.field_47792));
          }
 
          if (this.field_3862 != this.field_47772) {
@@ -381,7 +381,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
 
    @Override
    public void method_26452(DamageSource var1) {
-      boolean var4 = this.world.method_29537().method_1285(class_291.field_1060);
+      boolean var4 = this.world.getGameRules().getBoolean(GameRules.field_1060);
       if (!var4) {
          this.field_47794.method_4156(new class_7214(this.method_26476(), class_2820.field_13845));
       } else {
@@ -415,7 +415,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
       }
 
       this.method_3157();
-      if (this.world.method_29537().method_1285(class_291.field_1042)) {
+      if (this.world.getGameRules().getBoolean(GameRules.field_1042)) {
          this.method_43256();
       }
 
@@ -1011,7 +1011,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
 
    public void method_43273(class_9359 var1, boolean var2) {
       if (!var2) {
-         if (this.world.method_29537().method_1285(class_291.field_1051) || var1.method_37221()) {
+         if (this.world.getGameRules().getBoolean(GameRules.field_1051) || var1.method_37221()) {
             this.inventory.method_32421(var1.inventory);
             this.field_3840 = var1.field_3840;
             this.field_3862 = var1.field_3862;
@@ -1364,7 +1364,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
    }
 
    @Override
-   public void method_3172(class_8461 var1, class_562 var2, float var3, float var4) {
+   public void method_3172(SoundEvent var1, class_562 var2, float var3, float var4) {
       this.field_47794.method_4156(new class_3740(var1, var2, this.getPosX(), this.method_37309(), this.getPosZ(), var3, var4));
    }
 

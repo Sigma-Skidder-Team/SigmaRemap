@@ -1509,55 +1509,55 @@ public class class_4897 {
    public static final class_2451 field_24447 = method_22435("debug_stick", new class_2588(new class_317().method_1480(1)));
    public static final class_2451 field_24562 = method_22435(
       "music_disc_13",
-      new class_7738(1, class_463.field_2886, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(1, SoundEvents.field_2886, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24580 = method_22435(
       "music_disc_cat",
-      new class_7738(2, class_463.field_2081, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(2, SoundEvents.field_2081, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24441 = method_22435(
       "music_disc_blocks",
-      new class_7738(3, class_463.field_2750, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(3, SoundEvents.field_2750, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24668 = method_22435(
       "music_disc_chirp",
-      new class_7738(4, class_463.field_2839, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(4, SoundEvents.field_2839, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24706 = method_22435(
       "music_disc_far",
-      new class_7738(5, class_463.field_1972, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(5, SoundEvents.field_1972, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24424 = method_22435(
       "music_disc_mall",
-      new class_7738(6, class_463.field_2272, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(6, SoundEvents.field_2272, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24466 = method_22435(
       "music_disc_mellohi",
-      new class_7738(7, class_463.field_2645, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(7, SoundEvents.field_2645, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24970 = method_22435(
       "music_disc_stal",
-      new class_7738(8, class_463.field_2907, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(8, SoundEvents.field_2907, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24786 = method_22435(
       "music_disc_strad",
-      new class_7738(9, class_463.field_2217, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(9, SoundEvents.field_2217, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_25061 = method_22435(
       "music_disc_ward",
-      new class_7738(10, class_463.field_1922, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(10, SoundEvents.field_1922, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24526 = method_22435(
       "music_disc_11",
-      new class_7738(11, class_463.field_2850, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(11, SoundEvents.field_2850, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_25189 = method_22435(
       "music_disc_wait",
-      new class_7738(12, class_463.field_2355, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(12, SoundEvents.field_2355, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_24930 = method_22435(
       "music_disc_pigstep",
-      new class_7738(13, class_463.field_2309, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
+      new class_7738(13, SoundEvents.field_2309, new class_317().method_1480(1).method_1474(class_8230.field_42261).method_1477(class_5053.field_26114))
    );
    public static final class_2451 field_25086 = method_22435("trident", new class_1302(new class_317().method_1478(250).method_1474(class_8230.field_42275)));
    public static final class_2451 field_24795 = method_22435("phantom_membrane", new class_2451(new class_317().method_1474(class_8230.field_42272)));

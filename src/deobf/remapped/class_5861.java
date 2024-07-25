@@ -64,11 +64,11 @@ public class class_5861<T extends Entity> extends class_5272<T> {
    public void method_29700(T var1, float var2, float var3, float var4, float var5, float var6) {
       float var9 = ((float)(var1.method_37145() * 3) + var4) * 0.13F;
       float var10 = 16.0F;
-      this.field_29779.field_8185 = class_9299.method_42840(var9) * 16.0F * (float) (Math.PI / 180.0);
-      this.field_29782.field_8185 = class_9299.method_42840(var9) * 16.0F * (float) (Math.PI / 180.0);
+      this.field_29779.field_8185 = MathHelper.cos(var9) * 16.0F * (float) (Math.PI / 180.0);
+      this.field_29782.field_8185 = MathHelper.cos(var9) * 16.0F * (float) (Math.PI / 180.0);
       this.field_29776.field_8185 = -this.field_29779.field_8185;
       this.field_29780.field_8185 = -this.field_29782.field_8185;
-      this.field_29777.field_8191 = -(5.0F + class_9299.method_42840(var9 * 2.0F) * 5.0F) * (float) (Math.PI / 180.0);
-      this.field_29775.field_8191 = -(5.0F + class_9299.method_42840(var9 * 2.0F) * 5.0F) * (float) (Math.PI / 180.0);
+      this.field_29777.field_8191 = -(5.0F + MathHelper.cos(var9 * 2.0F) * 5.0F) * (float) (Math.PI / 180.0);
+      this.field_29775.field_8191 = -(5.0F + MathHelper.cos(var9 * 2.0F) * 5.0F) * (float) (Math.PI / 180.0);
    }
 }

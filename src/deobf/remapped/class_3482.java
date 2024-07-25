@@ -23,6 +23,6 @@ public class class_3482 {
 
    public ItemStack method_15980() {
       ItemStack[] var3 = this.field_17075.method_37020();
-      return var3[class_9299.method_42848(class_7590.method_34488(this.field_17072) / 30.0F) % var3.length];
+      return var3[MathHelper.floor(class_7590.method_34488(this.field_17072) / 30.0F) % var3.length];
    }
 }

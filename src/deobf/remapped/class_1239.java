@@ -269,7 +269,7 @@ public class class_1239 {
    }
 
    private static int method_5525(class_9155 var0, Entity var1, class_225 var2, double var3) throws CommandSyntaxException {
-      method_5527(var1, var2).method_45006(var3);
+      method_5527(var1, var2).setBaseValue(var3);
       var0.method_42196(
          new TranslationTextComponent("commands.attribute.base_value.set.success", new TranslationTextComponent(var2.method_952()), var1.method_45509(), var3),
          false

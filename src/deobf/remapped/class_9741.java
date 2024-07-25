@@ -81,11 +81,11 @@ public class class_9741 {
 
    public static BlockPos method_44979(BlockPos var0, Direction var1, Direction var2, int var3, int var4, int var5) {
       if (var1 != var2 && var1 != var2.method_1046()) {
-         class_2700 var8 = new class_2700(var1.method_1041(), var1.method_1054(), var1.method_1034());
-         class_2700 var9 = new class_2700(var2.method_1041(), var2.method_1054(), var2.method_1034());
-         class_2700 var10 = var8.method_12166(var9);
+         Vector3i var8 = new Vector3i(var1.method_1041(), var1.method_1054(), var1.method_1034());
+         Vector3i var9 = new Vector3i(var2.method_1041(), var2.method_1054(), var2.method_1034());
+         Vector3i var10 = var8.method_12166(var9);
          return var0.method_6104(
-            var9.method_12173() * -var4 + var10.method_12173() * var3 + var8.method_12173() * var5,
+            var9.getX() * -var4 + var10.getX() * var3 + var8.getX() * var5,
             var9.method_12165() * -var4 + var10.method_12165() * var3 + var8.method_12165() * var5,
             var9.method_12185() * -var4 + var10.method_12185() * var3 + var8.method_12185() * var5
          );

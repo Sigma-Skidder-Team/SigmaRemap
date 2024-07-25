@@ -83,7 +83,7 @@ public class class_8601 extends class_3956 {
    @Override
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method_10313(field_44047)) {
-         double var7 = (double)var3.method_12173() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
+         double var7 = (double)var3.getX() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var9 = (double)var3.method_12165() + 0.7 + (var4.nextDouble() - 0.5) * 0.2;
          double var11 = (double)var3.method_12185() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          var2.method_43361(this.field_19181, var7, var9, var11, 0.0, 0.0, 0.0);

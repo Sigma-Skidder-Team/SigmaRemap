@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_9811 extends class_1249 {
+public class class_9811 extends PathNavigator {
    private static String[] field_49732;
    private boolean field_49733;
 
@@ -36,9 +36,9 @@ public class class_9811 extends class_1249 {
          if (!this.method_5601()) {
             if (this.field_6887 != null && !this.field_6887.method_18436()) {
                class_1343 var3 = this.field_6887.method_18439(this.field_6877);
-               if (class_9299.method_42847(this.field_6877.getPosX()) == class_9299.method_42847(var3.field_7336)
-                  && class_9299.method_42847(this.field_6877.method_37309()) == class_9299.method_42847(var3.field_7333)
-                  && class_9299.method_42847(this.field_6877.getPosZ()) == class_9299.method_42847(var3.field_7334)) {
+               if (MathHelper.floor(this.field_6877.getPosX()) == MathHelper.floor(var3.field_7336)
+                  && MathHelper.floor(this.field_6877.method_37309()) == MathHelper.floor(var3.field_7333)
+                  && MathHelper.floor(this.field_6877.getPosZ()) == MathHelper.floor(var3.field_7334)) {
                   this.field_6887.method_18434();
                }
             }
@@ -107,7 +107,7 @@ public class class_9811 extends class_1249 {
          }
 
          if (this.field_6876 > 0.0 && (double)this.field_6886 > this.field_6876 * 2.0) {
-            this.field_6879 = class_2700.field_13228;
+            this.field_6879 = Vector3i.field_13228;
             this.field_6886 = 0L;
             this.field_6876 = 0.0;
             this.method_5620();

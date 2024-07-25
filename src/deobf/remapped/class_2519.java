@@ -72,7 +72,7 @@ public class class_2519 extends MonsterEntity {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       if (this.field_12486 != null) {
-         var1.putInt("BoundX", this.field_12486.method_12173());
+         var1.putInt("BoundX", this.field_12486.getX());
          var1.putInt("BoundY", this.field_12486.method_12165());
          var1.putInt("BoundZ", this.field_12486.method_12185());
       }
@@ -129,18 +129,18 @@ public class class_2519 extends MonsterEntity {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2186;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2186;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2690;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2690;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2843;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2843;
    }
 
    @Override

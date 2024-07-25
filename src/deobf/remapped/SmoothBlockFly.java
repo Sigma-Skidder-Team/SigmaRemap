@@ -133,7 +133,7 @@ public class SmoothBlockFly extends Module {
             double var4 = var1.method_6450();
             double var6 = var1.method_6438();
             double var8 = var1.method_6454();
-            if (!client.thePlayer.field_41744 && !client.gameOptions.keyJump.pressed) {
+            if (!client.thePlayer.collidedHorizontally && !client.gameOptions.keyJump.pressed) {
                double[] var10 = this.method_36710();
                var4 = var10[0];
                var6 = var10[1];
@@ -226,7 +226,7 @@ public class SmoothBlockFly extends Module {
                break;
             case "Cubecraft":
                double var6 = 0.2;
-               float var8 = this.method_36706(class_9299.method_42810(client.thePlayer.rotationYaw));
+               float var8 = this.method_36706(MathHelper.wrapDegrees(client.thePlayer.rotationYaw));
                if (client.gameOptions.keyJump.isKeyDown()) {
                   client.theTimer.timerSpeed = 1.0F;
                } else if (client.thePlayer.onGround) {
@@ -362,7 +362,7 @@ public class SmoothBlockFly extends Module {
    }
 
    public static class_1343 method_36711(BlockPos var0, Direction var1) {
-      double var4 = (double)var0.method_12173() + 0.5;
+      double var4 = (double)var0.getX() + 0.5;
       double var6 = (double)var0.method_12165() + 0.5;
       double var8 = (double)var0.method_12185() + 0.5;
       var4 += (double)var1.method_1041() / 2.0;

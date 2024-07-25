@@ -15,7 +15,7 @@ public class class_527 implements Packet<class_392> {
    public boolean field_3215;
 
    public static long method_2563(double var0) {
-      return class_9299.method_42854(var0 * 4096.0);
+      return MathHelper.lfloor(var0 * 4096.0);
    }
 
    public static double method_2555(long var0) {

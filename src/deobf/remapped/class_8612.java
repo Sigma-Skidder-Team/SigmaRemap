@@ -8,7 +8,7 @@ public class class_8612 extends class_5783 implements class_3713 {
    private static final class_7821<Boolean> field_44176 = class_8073.<Boolean>method_36641(class_8612.class, class_2734.field_13347);
    private int field_44170;
    private int field_44172;
-   public class_5834 field_44173;
+   public LivingEntity field_44173;
 
    public class_8612(EntityType<? extends class_8612> var1, World var2) {
       super(var1, var2);
@@ -33,7 +33,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       this.method_26159(var2);
    }
 
-   public class_8612(World var1, ItemStack var2, class_5834 var3) {
+   public class_8612(World var1, ItemStack var2, LivingEntity var3) {
       this(var1, var3, var3.getPosX(), var3.method_37309(), var3.getPosZ(), var2);
       this.field_41735.method_36633(field_44171, OptionalInt.of(var3.method_37145()));
       this.field_44173 = var3;
@@ -71,7 +71,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       super.method_37123();
       if (!this.method_39586()) {
          if (!this.method_39583()) {
-            double var9 = !this.field_41744 ? 1.15 : 1.0;
+            double var9 = !this.collidedHorizontally ? 1.15 : 1.0;
             this.method_37215(this.method_37098().method_6210(var9, 1.0, var9).method_6214(0.0, 0.04, 0.0));
          }
 
@@ -82,8 +82,8 @@ public class class_8612 extends class_5783 implements class_3713 {
          if (this.field_44173 == null) {
             this.field_41735.<OptionalInt>method_36640(field_44171).ifPresent(var1 -> {
                Entity var4x = this.world.method_29534(var1);
-               if (var4x instanceof class_5834) {
-                  this.field_44173 = (class_5834)var4x;
+               if (var4x instanceof LivingEntity) {
+                  this.field_44173 = (LivingEntity)var4x;
                }
             });
          }
@@ -119,7 +119,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       if (this.field_44170 == 0 && !this.method_37378()) {
          this.world
             .method_29528(
-               (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2316, class_562.field_3325, 3.0F, 1.0F
+               (PlayerEntity)null, this.getPosX(), this.method_37309(), this.getPosZ(), SoundEvents.field_2316, class_562.field_3325, 3.0F, 1.0F
             );
       }
 
@@ -191,7 +191,7 @@ public class class_8612 extends class_5783 implements class_3713 {
          double var7 = 5.0;
          class_1343 var9 = this.method_37245();
 
-         for (class_5834 var11 : this.world.<class_5834>method_25868(class_5834.class, this.method_37241().method_18898(5.0))) {
+         for (LivingEntity var11 : this.world.<LivingEntity>method_25868(LivingEntity.class, this.getBoundingBox().grow(5.0))) {
             if (var11 != this.field_44173 && !(this.method_37275(var11) > 25.0)) {
                boolean var12 = false;
 

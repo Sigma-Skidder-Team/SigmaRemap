@@ -95,9 +95,9 @@ public abstract class class_8704 {
       class_1906 var14 = var12.method_43366();
       this.method_39980(var2, (class_9359)null, var12);
       class_948 var15 = new class_948(this.field_44631, var1, var2);
-      class_291 var16 = var12.method_29537();
-      boolean var17 = var16.method_1285(class_291.field_1046);
-      boolean var18 = var16.method_1285(class_291.field_1026);
+      GameRules var16 = var12.getGameRules();
+      boolean var17 = var16.getBoolean(GameRules.field_1046);
+      boolean var18 = var16.getBoolean(GameRules.field_1026);
       var15.method_4156(
          new class_1992(
             var2.method_37145(),
@@ -387,7 +387,7 @@ public abstract class class_8704 {
             var18 = var6;
          } else {
             class_1343 var17 = class_1343.method_6200(var5).method_6194(var16).method_6213();
-            var18 = (float)class_9299.method_42809(class_9299.method_42821(var17.field_7334, var17.field_7336) * 180.0F / (float)Math.PI - 90.0);
+            var18 = (float) MathHelper.wrapDegrees(MathHelper.method_42821(var17.field_7334, var17.field_7336) * 180.0F / (float)Math.PI - 90.0);
          }
 
          var12.method_37144(var16.field_7336, var16.field_7333, var16.field_7334, var18, 0.0F);
@@ -428,7 +428,7 @@ public abstract class class_8704 {
          var12.field_47794
             .method_4156(
                new class_3740(
-                  class_463.field_2464, class_562.field_3322, (double)var5.method_12173(), (double)var5.method_12165(), (double)var5.method_12185(), 1.0F, 1.0F
+                  SoundEvents.field_2464, class_562.field_3322, (double)var5.getX(), (double)var5.method_12165(), (double)var5.method_12185(), 1.0F, 1.0F
                )
             );
       }
@@ -604,7 +604,7 @@ public abstract class class_8704 {
    public void method_39955(class_9359 var1, class_6331 var2) {
       class_2098 var5 = this.field_44631.method_1736().method_6673();
       var1.field_47794.method_4156(new class_1388(var5, class_1534.field_8136));
-      var1.field_47794.method_4156(new class_8508(var2.method_29546(), var2.method_29584(), var2.method_29537().method_1285(class_291.field_1037)));
+      var1.field_47794.method_4156(new class_8508(var2.method_29546(), var2.method_29584(), var2.getGameRules().getBoolean(GameRules.field_1037)));
       var1.field_47794.method_4156(new class_2073(var2.method_28998(), var2.method_28988()));
       if (var2.method_29561()) {
          var1.field_47794.method_4156(new class_2161(class_2161.field_10786, 0.0F));

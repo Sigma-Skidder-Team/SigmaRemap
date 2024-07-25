@@ -3,7 +3,7 @@ package remapped;
 public final class class_1493 {
    public static String method_6889(class_2250 var0, float var1) {
       if (!var0.method_10337()) {
-         int var4 = class_9299.method_42848((float)var0.method_10347() * var1);
+         int var4 = MathHelper.floor((float)var0.method_10347() * var1);
          return class_6660.method_30575(var4);
       } else {
          return "**:**";

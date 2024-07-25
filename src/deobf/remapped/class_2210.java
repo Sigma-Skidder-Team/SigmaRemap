@@ -60,7 +60,7 @@ public class class_2210<T extends class_1775> extends class_5272<T> {
 
    public void method_10234(class_1775 var1, float var2, float var3, float var4, float var5, float var6) {
       var3 = Math.min(0.25F, var3);
-      if (var1.method_37114().size() > 0) {
+      if (var1.getPassengers().size() > 0) {
          this.field_11070.field_8191 = 0.0F;
          this.field_11070.field_8190 = 0.0F;
       } else {
@@ -69,22 +69,22 @@ public class class_2210<T extends class_1775> extends class_5272<T> {
       }
 
       float var9 = 1.5F;
-      this.field_11070.field_8185 = 0.1F * class_9299.method_42818(var2 * 1.5F) * 4.0F * var3;
+      this.field_11070.field_8185 = 0.1F * MathHelper.sin(var2 * 1.5F) * 4.0F * var3;
       this.field_11070.field_8181 = 2.0F;
-      this.field_11070.field_8181 = this.field_11070.field_8181 - 2.0F * class_9299.method_42840(var2 * 1.5F) * 2.0F * var3;
-      this.field_11066.field_8191 = class_9299.method_42818(var2 * 1.5F * 0.5F) * 2.0F * var3;
-      this.field_11067.field_8191 = class_9299.method_42818(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
-      this.field_11066.field_8185 = (float) (Math.PI / 18) * class_9299.method_42840(var2 * 1.5F * 0.5F) * var3;
-      this.field_11067.field_8185 = (float) (Math.PI / 18) * class_9299.method_42840(var2 * 1.5F * 0.5F + (float) Math.PI) * var3;
-      this.field_11066.field_8181 = 8.0F + 2.0F * class_9299.method_42818(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
-      this.field_11067.field_8181 = 8.0F + 2.0F * class_9299.method_42818(var2 * 1.5F * 0.5F) * 2.0F * var3;
+      this.field_11070.field_8181 = this.field_11070.field_8181 - 2.0F * MathHelper.cos(var2 * 1.5F) * 2.0F * var3;
+      this.field_11066.field_8191 = MathHelper.sin(var2 * 1.5F * 0.5F) * 2.0F * var3;
+      this.field_11067.field_8191 = MathHelper.sin(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
+      this.field_11066.field_8185 = (float) (Math.PI / 18) * MathHelper.cos(var2 * 1.5F * 0.5F) * var3;
+      this.field_11067.field_8185 = (float) (Math.PI / 18) * MathHelper.cos(var2 * 1.5F * 0.5F + (float) Math.PI) * var3;
+      this.field_11066.field_8181 = 8.0F + 2.0F * MathHelper.sin(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
+      this.field_11067.field_8181 = 8.0F + 2.0F * MathHelper.sin(var2 * 1.5F * 0.5F) * 2.0F * var3;
       this.field_11068.field_8185 = -1.2217305F;
       this.field_11063.field_8185 = -1.134464F;
       this.field_11064.field_8185 = -0.87266463F;
       this.field_11069.field_8185 = 0.87266463F;
       this.field_11065.field_8185 = 1.134464F;
       this.field_11061.field_8185 = 1.2217305F;
-      float var10 = class_9299.method_42840(var2 * 1.5F + (float) Math.PI) * var3;
+      float var10 = MathHelper.cos(var2 * 1.5F + (float) Math.PI) * var3;
       this.field_11068.field_8185 += var10 * 1.3F;
       this.field_11063.field_8185 += var10 * 1.2F;
       this.field_11064.field_8185 += var10 * 0.6F;
@@ -93,12 +93,12 @@ public class class_2210<T extends class_1775> extends class_5272<T> {
       this.field_11061.field_8185 += var10 * 1.3F;
       float var11 = 1.0F;
       float var12 = 1.0F;
-      this.field_11068.field_8185 = this.field_11068.field_8185 + 0.05F * class_9299.method_42818(var4 * 1.0F * -0.4F);
-      this.field_11063.field_8185 = this.field_11063.field_8185 + 0.1F * class_9299.method_42818(var4 * 1.0F * 0.2F);
-      this.field_11064.field_8185 = this.field_11064.field_8185 + 0.1F * class_9299.method_42818(var4 * 1.0F * 0.4F);
-      this.field_11069.field_8185 = this.field_11069.field_8185 + 0.1F * class_9299.method_42818(var4 * 1.0F * 0.4F);
-      this.field_11065.field_8185 = this.field_11065.field_8185 + 0.1F * class_9299.method_42818(var4 * 1.0F * 0.2F);
-      this.field_11061.field_8185 = this.field_11061.field_8185 + 0.05F * class_9299.method_42818(var4 * 1.0F * -0.4F);
+      this.field_11068.field_8185 = this.field_11068.field_8185 + 0.05F * MathHelper.sin(var4 * 1.0F * -0.4F);
+      this.field_11063.field_8185 = this.field_11063.field_8185 + 0.1F * MathHelper.sin(var4 * 1.0F * 0.2F);
+      this.field_11064.field_8185 = this.field_11064.field_8185 + 0.1F * MathHelper.sin(var4 * 1.0F * 0.4F);
+      this.field_11069.field_8185 = this.field_11069.field_8185 + 0.1F * MathHelper.sin(var4 * 1.0F * 0.4F);
+      this.field_11065.field_8185 = this.field_11065.field_8185 + 0.1F * MathHelper.sin(var4 * 1.0F * 0.2F);
+      this.field_11061.field_8185 = this.field_11061.field_8185 + 0.05F * MathHelper.sin(var4 * 1.0F * -0.4F);
    }
 
    public void method_10235(class_1549 var1, float var2, float var3, float var4) {

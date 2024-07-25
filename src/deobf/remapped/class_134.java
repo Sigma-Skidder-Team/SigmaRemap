@@ -427,9 +427,9 @@ public class class_134 {
    }
 
    public static void method_474(PlayerEntity var0, boolean var1) {
-      List var4 = var0.world.<class_2599>method_25868(class_2599.class, var0.method_37241().method_18898(16.0));
+      List var4 = var0.world.<class_2599>method_25868(class_2599.class, var0.getBoundingBox().grow(16.0));
       var4.stream().filter(class_134::method_531).filter(var2 -> !var1 || class_1225.method_5449(var2, var0)).forEach(var1x -> {
-         if (!var1x.field_41768.method_29537().method_1285(class_291.field_1039)) {
+         if (!var1x.field_41768.method_29537().method_1285(GameRules.field_1039)) {
             method_533(var1x, var0);
          } else {
             method_521(var1x, var0);
@@ -491,7 +491,7 @@ public class class_134 {
 
    public static void method_522(class_6993 var0, LivingEntity var1) {
       if (!var0.method_26525().method_5134(class_6275.field_32068) && method_504(var1) && !class_1225.method_5452(var0, var1, 4.0)) {
-         if (var1.getType() == EntityType.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
+         if (var1.getType() == EntityType.field_34300 && var0.world.getGameRules().getBoolean(GameRules.field_1039)) {
             method_521(var0, var1);
             method_517(var0);
          } else {
@@ -501,33 +501,33 @@ public class class_134 {
       }
    }
 
-   public static Optional<class_8461> method_499(class_2599 var0) {
-      return var0.method_26525().method_5126().<class_8461>map(var1 -> method_463(var0, var1));
+   public static Optional<SoundEvent> method_499(class_2599 var0) {
+      return var0.method_26525().method_5126().<SoundEvent>map(var1 -> method_463(var0, var1));
    }
 
-   private static class_8461 method_463(class_2599 var0, class_6275 var1) {
+   private static SoundEvent method_463(class_2599 var0, class_6275 var1) {
       if (var1 != class_6275.field_32070) {
          if (!var0.method_31990()) {
             if (var1 == class_6275.field_32068 && method_529(var0)) {
-               return class_463.field_2337;
+               return SoundEvents.field_2337;
             } else if (var1 != class_6275.field_32078) {
                if (var1 != class_6275.field_32063) {
                   if (!method_507(var0)) {
-                     return !method_489(var0) ? class_463.field_2573 : class_463.field_2337;
+                     return !method_489(var0) ? SoundEvents.field_2573 : SoundEvents.field_2337;
                   } else {
-                     return class_463.field_2222;
+                     return SoundEvents.field_2222;
                   }
                } else {
-                  return class_463.field_2144;
+                  return SoundEvents.field_2144;
                }
             } else {
-               return class_463.field_2580;
+               return SoundEvents.field_2580;
             }
          } else {
-            return class_463.field_2337;
+            return SoundEvents.field_2337;
          }
       } else {
-         return class_463.field_2856;
+         return SoundEvents.field_2856;
       }
    }
 
@@ -593,7 +593,7 @@ public class class_134 {
             method_470(var0);
          }
 
-         if (var1.getType() == EntityType.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
+         if (var1.getType() == EntityType.field_34300 && var0.world.getGameRules().getBoolean(GameRules.field_1039)) {
             var0.method_26525().method_5107(class_6044.field_30880, true, 600L);
          }
       }

@@ -60,8 +60,8 @@ public class class_2143 extends class_6249 {
          int var6 = 1 << var3.field_10678;
          int var7 = var3.field_10689;
          int var8 = var3.field_10677;
-         int var9 = class_9299.method_42847(var2.getPosX() - (double)var7) / var6 + 64;
-         int var10 = class_9299.method_42847(var2.getPosZ() - (double)var8) / var6 + 64;
+         int var9 = MathHelper.floor(var2.getPosX() - (double)var7) / var6 + 64;
+         int var10 = MathHelper.floor(var2.getPosZ() - (double)var8) / var6 + 64;
          int var11 = 128 / var6;
          if (var1.method_22572().method_40244()) {
             var11 /= 2;
@@ -255,7 +255,7 @@ public class class_2143 extends class_6249 {
                   } else {
                      var14 = class_1513.field_8051;
                      if (var12 > 7 && var16 % 2 == 0) {
-                        var13 = (var15 + (int)(class_9299.method_42818((float)var16 + 0.0F) * 7.0F)) / 8 % 5;
+                        var13 = (var15 + (int)(MathHelper.sin((float)var16 + 0.0F) * 7.0F)) / 8 % 5;
                         if (var13 != 3) {
                            if (var13 == 4) {
                               var13 = 0;
@@ -333,7 +333,7 @@ public class class_2143 extends class_6249 {
             var1,
             var5.field_10689,
             var5.field_10677,
-            class_9299.method_42829(var5.field_10678 + var2, 0, 4),
+            MathHelper.clamp(var5.field_10678 + var2, 0, 4),
             var5.field_10681,
             var5.field_10688,
             var5.field_10685

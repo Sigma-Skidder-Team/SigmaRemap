@@ -7,7 +7,7 @@ public class class_1573 {
    private static final Random field_8268 = new Random();
 
    public static void method_7104(World var0, BlockPos var1, class_6867 var2) {
-      method_7103(var0, (double)var1.method_12173(), (double)var1.method_12165(), (double)var1.method_12185(), var2);
+      method_7103(var0, (double)var1.getX(), (double)var1.method_12165(), (double)var1.method_12185(), var2);
    }
 
    public static void method_7105(World var0, Entity var1, class_6867 var2) {
@@ -21,7 +21,7 @@ public class class_1573 {
    }
 
    public static void method_7101(World var0, BlockPos var1, class_2831<ItemStack> var2) {
-      var2.forEach(var2x -> method_7100(var0, (double)var1.method_12173(), (double)var1.method_12165(), (double)var1.method_12185(), var2x));
+      var2.forEach(var2x -> method_7100(var0, (double)var1.getX(), (double)var1.method_12165(), (double)var1.method_12185(), var2x));
    }
 
    public static void method_7100(World var0, double var1, double var3, double var5, ItemStack var7) {

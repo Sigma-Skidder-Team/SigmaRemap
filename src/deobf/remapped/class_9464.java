@@ -77,10 +77,10 @@ public class class_9464 extends class_5877 implements class_724 {
       List var6 = var1.<class_7451>method_25869(
          class_7451.class,
          new Box(
-            (double)var3.method_12173(),
+            (double)var3.getX(),
             (double)var3.method_12165(),
             (double)var3.method_12185(),
-            (double)(var3.method_12173() + 1),
+            (double)(var3.getX() + 1),
             (double)(var3.method_12165() + 1),
             (double)(var3.method_12185() + 1)
          ),
@@ -94,7 +94,7 @@ public class class_9464 extends class_5877 implements class_724 {
       if (var4.playerAbilities.allowEdit) {
          var1 = var1.method_10317(field_48280);
          float var9 = var1.method_10313(field_48280) != class_9607.field_48960 ? 0.5F : 0.55F;
-         var2.method_43359(var4, var3, class_463.field_2263, class_562.field_3322, 0.3F, var9);
+         var2.method_43359(var4, var3, SoundEvents.field_2263, class_562.field_3322, 0.3F, var9);
          var2.method_7513(var3, var1, 2);
          this.method_43738(var2, var3, var1);
          return class_6910.method_31659(var2.field_33055);

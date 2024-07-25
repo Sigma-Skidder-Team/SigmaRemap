@@ -101,7 +101,7 @@ public class class_6722 extends class_4314 {
          }
 
          ((class_9317)var6).method_43016(var3);
-         var1.method_43359((PlayerEntity)null, var2, class_463.field_2276, class_562.field_3322, 2.0F, 1.0F);
+         var1.method_43359((PlayerEntity)null, var2, SoundEvents.field_2276, class_562.field_3322, 2.0F, 1.0F);
          return true;
       } else {
          return false;

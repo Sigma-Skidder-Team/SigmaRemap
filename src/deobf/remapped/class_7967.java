@@ -23,7 +23,7 @@ public class class_7967 {
       double var3 = (double)var0 / 4096.0;
       var3 *= 0.995;
       double var5 = var3 * 2.0 - 1.0;
-      var5 = class_9299.method_42827(var5, -1.0, 1.0);
-      return (double)class_9299.method_42842(1.0 - var5 * var5);
+      var5 = MathHelper.clamp(var5, -1.0, 1.0);
+      return (double) MathHelper.sqrt(1.0 - var5 * var5);
    }
 }

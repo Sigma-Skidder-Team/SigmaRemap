@@ -16,7 +16,7 @@ public class class_2897 extends class_518 {
          if (var3 == null) {
             return this.method_2535();
          } else {
-            this.field_3166 = (double)var3.method_12173();
+            this.field_3166 = (double)var3.getX();
             this.field_3172 = (double)var3.method_12165();
             this.field_3170 = (double)var3.method_12185();
             return true;

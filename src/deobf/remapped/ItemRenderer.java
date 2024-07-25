@@ -234,7 +234,7 @@ public class ItemRenderer implements class_6491 {
       }
    }
 
-   public class_7373 method_40278(ItemStack var1, World var2, class_5834 var3) {
+   public class_7373 method_40278(ItemStack var1, World var2, LivingEntity var3) {
       class_2451 var6 = var1.method_27960();
       class_7373 var7;
       if (var6 != class_4897.field_25086) {
@@ -254,11 +254,11 @@ public class ItemRenderer implements class_6491 {
    }
 
    public void method_40269(ItemStack var1, class_5612 var2, int var3, int var4, class_7966 var5, class_2565 var6) {
-      this.method_40268((class_5834)null, var1, var2, false, var5, var6, (World)null, var3, var4);
+      this.method_40268((LivingEntity)null, var1, var2, false, var5, var6, (World)null, var3, var4);
    }
 
    public void method_40268(
-           class_5834 var1, ItemStack var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, World var7, int var8, int var9
+           LivingEntity var1, ItemStack var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, World var7, int var8, int var9
    ) {
       if (!var2.method_28022()) {
          class_7373 var12 = this.method_40278(var2, var7, var1);
@@ -267,7 +267,7 @@ public class ItemRenderer implements class_6491 {
    }
 
    public void method_40264(ItemStack var1, int var2, int var3) {
-      this.method_40266(var1, var2, var3, this.method_40278(var1, (World)null, (class_5834)null));
+      this.method_40266(var1, var2, var3, this.method_40278(var1, (World)null, (LivingEntity)null));
    }
 
    public void method_40266(ItemStack var1, int var2, int var3, class_7373 var4) {
@@ -310,14 +310,14 @@ public class ItemRenderer implements class_6491 {
    }
 
    public void method_40284(ItemStack var1, int var2, int var3) {
-      this.method_40263((class_5834)null, var1, var2, var3);
+      this.method_40263((LivingEntity)null, var1, var2, var3);
    }
 
-   public void method_40273(class_5834 var1, ItemStack var2, int var3, int var4) {
+   public void method_40273(LivingEntity var1, ItemStack var2, int var3, int var4) {
       this.method_40263(var1, var2, var3, var4);
    }
 
-   private void method_40263(class_5834 var1, ItemStack var2, int var3, int var4) {
+   private void method_40263(LivingEntity var1, ItemStack var2, int var3, int var4) {
       if (!var2.method_28022()) {
          this.field_44875 += 50.0F;
 
@@ -375,7 +375,7 @@ public class ItemRenderer implements class_6491 {
             float var12 = (float)var2.method_27957();
             float var13 = Math.max(0.0F, (var12 - var11) / var12);
             int var14 = Math.round(13.0F - var11 * 13.0F / var12);
-            int var15 = class_9299.method_42792(var13 / 3.0F, 1.0F, 1.0F);
+            int var15 = MathHelper.method_42792(var13 / 3.0F, 1.0F, 1.0F);
             if (class_7860.field_39914.method_3596() && class_7860.field_39876.method_3596()) {
                double var16 = class_7860.method_35578(var2.method_27960(), class_7860.field_39914, var2);
                int var18 = class_7860.method_35569(var2.method_27960(), class_7860.field_39876, var2);
@@ -405,7 +405,7 @@ public class ItemRenderer implements class_6491 {
             class_8042 var23 = class_8042.method_36499();
             class_9633 var24 = var23.method_36501();
             this.method_40276(
-               var24, var3, var4 + class_9299.method_42848(16.0F * (1.0F - var22)), 16, class_9299.method_42816(16.0F * var22), 255, 255, 255, 127
+               var24, var3, var4 + MathHelper.floor(16.0F * (1.0F - var22)), 16, MathHelper.ceil(16.0F * var22), 255, 255, 255, 127
             );
             RenderSystem.method_16432();
             RenderSystem.enableDepthTest();

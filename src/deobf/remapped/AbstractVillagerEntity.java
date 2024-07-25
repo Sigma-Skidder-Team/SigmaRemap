@@ -108,16 +108,16 @@ public abstract class AbstractVillagerEntity extends class_1899 implements class
    }
 
    @Override
-   public class_8461 method_976() {
-      return class_463.field_2635;
+   public SoundEvent method_976() {
+      return SoundEvents.field_2635;
    }
 
-   public class_8461 method_2018(boolean var1) {
-      return !var1 ? class_463.field_2883 : class_463.field_2635;
+   public SoundEvent method_2018(boolean var1) {
+      return !var1 ? SoundEvents.field_2883 : SoundEvents.field_2635;
    }
 
    public void method_2020() {
-      this.method_37155(class_463.field_2716, this.method_26439(), this.method_26547());
+      this.method_37155(SoundEvents.field_2716, this.method_26439(), this.method_26547());
    }
 
    @Override
@@ -221,8 +221,8 @@ public abstract class AbstractVillagerEntity extends class_1899 implements class
 
    @Override
    public class_1343 method_37202(float var1) {
-      float var4 = class_9299.method_42795(var1, this.field_29611, this.field_29605) * (float) (Math.PI / 180.0);
-      class_1343 var5 = new class_1343(0.0, this.method_37241().method_18901() - 1.0, 0.2);
+      float var4 = MathHelper.method_42795(var1, this.field_29611, this.field_29605) * (float) (Math.PI / 180.0);
+      class_1343 var5 = new class_1343(0.0, this.getBoundingBox().method_18901() - 1.0, 0.2);
       return this.method_37280(var1).method_6215(var5.method_6192(-var4));
    }
 }

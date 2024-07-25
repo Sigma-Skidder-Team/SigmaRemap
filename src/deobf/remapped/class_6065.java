@@ -55,7 +55,7 @@ public class class_6065 implements class_8740 {
          JsonElement var4 = var7.put(((class_7727)var1.getFirst()).method_34969(), class_265.method_1152((List<class_265>)var1.getSecond()));
       });
       JsonObject var8 = new JsonObject();
-      var8.add("variants", Util.<JsonElement>method_44659(new JsonObject(), var1 -> var7.forEach(var1::add)));
+      var8.add("variants", Util.<JsonElement>make(new JsonObject(), var1 -> var7.forEach(var1::add)));
       return var8;
    }
 

@@ -37,15 +37,15 @@ public class DamageSource {
    private boolean field_31683;
    public final String field_31693;
 
-   public static DamageSource method_28370(class_5834 var0) {
+   public static DamageSource method_28370(LivingEntity var0) {
       return new class_5405("sting", var0);
    }
 
-   public static DamageSource method_28345(class_5834 var0) {
+   public static DamageSource method_28345(LivingEntity var0) {
       return new class_5405("mob", var0);
    }
 
-   public static DamageSource method_28358(Entity var0, class_5834 var1) {
+   public static DamageSource method_28358(Entity var0, LivingEntity var1) {
       return new class_8758("mob", var0, var1);
    }
 
@@ -91,7 +91,7 @@ public class DamageSource {
       return method_28351(var0 == null ? null : var0.method_12273());
    }
 
-   public static DamageSource method_28351(class_5834 var0) {
+   public static DamageSource method_28351(LivingEntity var0) {
       return var0 == null ? new DamageSource("explosion").method_28366().method_28377() : new class_5405("explosion.player", var0).method_28366().method_28377();
    }
 
@@ -174,8 +174,8 @@ public class DamageSource {
       return this;
    }
 
-   public ITextComponent method_28362(class_5834 var1) {
-      class_5834 var4 = var1.method_26560();
+   public ITextComponent method_28362(LivingEntity var1) {
+      LivingEntity var4 = var1.method_26560();
       String var5 = "death.attack." + this.field_31693;
       String var6 = var5 + ".player";
       return var4 == null

@@ -31,7 +31,7 @@ public class class_8448 implements class_2995 {
       RenderSystem.method_16354();
       class_3372.method_15560(var1, 0.02F, var2.method_33495(), var2.method_33493(), var2.method_33494(), var2.method_33492());
       if (!var2.field_37578.isEmpty()) {
-         double var5 = (double)var1.method_12173() + 0.5;
+         double var5 = (double)var1.getX() + 0.5;
          double var7 = (double)var1.method_12165() + 1.2;
          double var9 = (double)var1.method_12185() + 0.5;
          class_3372.method_15555(var2.field_37578, var5, var7, var9, -1, 0.01F, true, 0.0F, true);

@@ -64,14 +64,14 @@ public class SmoothAimbot extends Module {
       double var4 = var1.getPosX() - client.thePlayer.getPosX() + Math.cos((double)(var1.method_37267() + 90.0F) * Math.PI / 180.0) * 0.14;
       double var6 = var1.method_37309() - 1.6 - this.field_28607 + (double)var1.method_37277() - client.thePlayer.method_37309();
       double var8 = var1.getPosZ() - client.thePlayer.getPosZ() + Math.sin((double)(var1.method_37267() + 90.0F) * Math.PI / 180.0) * 0.14;
-      double var10 = (double)class_9299.method_42842(var4 * var4 + var8 * var8);
+      double var10 = (double) MathHelper.sqrt(var4 * var4 + var8 * var8);
       float var12 = this.method_25541(client.thePlayer.rotationYaw, (float)(Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
       float var13 = this.method_25541(client.thePlayer.rotationPitch, (float)(-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);
       return new float[]{var12, var13};
    }
 
    private float method_25541(float var1, float var2, float var3) {
-      float var6 = class_9299.method_42810(var2 - var1);
+      float var6 = MathHelper.wrapDegrees(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }

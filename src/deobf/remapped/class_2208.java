@@ -105,7 +105,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
          String var15 = null;
          if (!this.field_10965.method_28022() && this.field_10953) {
             var19 = var19.method_27973();
-            var19.method_28017(class_9299.method_42816((float)var19.method_27997() / 2.0F));
+            var19.method_28017(MathHelper.ceil((float)var19.method_27997() / 2.0F));
          } else if (this.field_10980 && this.field_10961.size() > 1) {
             var19 = var19.method_27973();
             var19.method_28017(this.field_10966);
@@ -455,8 +455,8 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
                   this.method_10217(var8, var12, 0, class_6269.field_32027);
                   if (!this.field_943.thePlayer.inventory.method_32424().method_28022()) {
                      this.method_10217(this.field_10975, this.field_10975.field_40588, var5, class_6269.field_32027);
-                     this.field_10978 = class_9299.method_42847(var1 - (double)var9);
-                     this.field_10972 = class_9299.method_42847(var3 - (double)var10);
+                     this.field_10978 = MathHelper.floor(var1 - (double)var9);
+                     this.field_10972 = MathHelper.floor(var3 - (double)var10);
                      this.field_10955 = this.field_10975;
                      this.field_10979 = this.field_10965;
                      this.field_10974 = Util.getMeasuringTimeMs();
@@ -464,8 +464,8 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
                      this.field_10979 = ItemStack.EMPTY;
                   }
                } else if (!this.field_10965.method_28022()) {
-                  this.field_10978 = class_9299.method_42847(var1 - (double)var9);
-                  this.field_10972 = class_9299.method_42847(var3 - (double)var10);
+                  this.field_10978 = MathHelper.floor(var1 - (double)var9);
+                  this.field_10972 = MathHelper.floor(var3 - (double)var10);
                   this.field_10955 = this.field_10975;
                   this.field_10979 = this.field_10965;
                   this.field_10974 = Util.getMeasuringTimeMs();

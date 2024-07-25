@@ -31,7 +31,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
+   public void method_11206(ItemStack var1, World var2, LivingEntity var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
          int var8 = this.method_11230(var1) - var4;
@@ -48,7 +48,7 @@ public class class_1302 extends class_2451 implements class_1538 {
                      }
 
                      var2.method_7509(var10);
-                     var2.method_29540((PlayerEntity)null, var10, class_463.field_2050, class_562.field_3335, 1.0F, 1.0F);
+                     var2.method_29540((PlayerEntity)null, var10, SoundEvents.field_2050, class_562.field_3335, 1.0F, 1.0F);
                      if (!var7.playerAbilities.isCreativeMode) {
                         var7.inventory.method_32419(var1);
                      }
@@ -59,10 +59,10 @@ public class class_1302 extends class_2451 implements class_1538 {
                if (var9 > 0) {
                   float var18 = var7.rotationYaw;
                   float var11 = var7.rotationPitch;
-                  float var12 = -class_9299.method_42818(var18 * (float) (Math.PI / 180.0)) * class_9299.method_42840(var11 * (float) (Math.PI / 180.0));
-                  float var13 = -class_9299.method_42818(var11 * (float) (Math.PI / 180.0));
-                  float var14 = class_9299.method_42840(var18 * (float) (Math.PI / 180.0)) * class_9299.method_42840(var11 * (float) (Math.PI / 180.0));
-                  float var15 = class_9299.method_42843(var12 * var12 + var13 * var13 + var14 * var14);
+                  float var12 = -MathHelper.sin(var18 * (float) (Math.PI / 180.0)) * MathHelper.cos(var11 * (float) (Math.PI / 180.0));
+                  float var13 = -MathHelper.sin(var11 * (float) (Math.PI / 180.0));
+                  float var14 = MathHelper.cos(var18 * (float) (Math.PI / 180.0)) * MathHelper.cos(var11 * (float) (Math.PI / 180.0));
+                  float var15 = MathHelper.sqrt(var12 * var12 + var13 * var13 + var14 * var14);
                   float var16 = 3.0F * ((1.0F + (float)var9) / 4.0F);
                   var12 *= var16 / var15;
                   var13 *= var16 / var15;
@@ -74,15 +74,15 @@ public class class_1302 extends class_2451 implements class_1538 {
                      var7.method_37226(class_7412.field_37839, new class_1343(0.0, 1.1999999F, 0.0));
                   }
 
-                  class_8461 var22;
+                  SoundEvent var22;
                   if (var9 < 3) {
                      if (var9 != 2) {
-                        var22 = class_463.field_2258;
+                        var22 = SoundEvents.field_2258;
                      } else {
-                        var22 = class_463.field_2171;
+                        var22 = SoundEvents.field_2171;
                      }
                   } else {
-                     var22 = class_463.field_2408;
+                     var22 = SoundEvents.field_2408;
                   }
 
                   var2.method_29540((PlayerEntity)null, var7, var22, class_562.field_3335, 1.0F, 1.0F);
@@ -108,13 +108,13 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public boolean method_11246(ItemStack var1, class_5834 var2, class_5834 var3) {
+   public boolean method_11246(ItemStack var1, LivingEntity var2, LivingEntity var3) {
       var1.method_28003(1, var3, var0 -> var0.method_26448(class_6943.field_35707));
       return true;
    }
 
    @Override
-   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, BlockPos var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, BlockPos var4, LivingEntity var5) {
       if ((double)var3.method_8341(var2, var4) != 0.0) {
          var1.method_28003(2, var5, var0 -> var0.method_26448(class_6943.field_35707));
       }

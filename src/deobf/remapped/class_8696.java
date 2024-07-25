@@ -39,13 +39,13 @@ public class class_8696 extends class_8985 {
             if (!this.field_44593.method_12170(this.field_6877.method_37245(), (double)this.field_6877.method_37086())
                && (
                   !(this.field_6877.method_37309() > (double)this.field_44593.method_12165())
-                     || !new BlockPos((double)this.field_44593.method_12173(), this.field_6877.method_37309(), (double)this.field_44593.method_12185())
+                     || !new BlockPos((double)this.field_44593.getX(), this.field_6877.method_37309(), (double)this.field_44593.method_12185())
                         .method_12170(this.field_6877.method_37245(), (double)this.field_6877.method_37086())
                )) {
                this.field_6877
                   .method_26905()
                   .method_12879(
-                     (double)this.field_44593.method_12173(), (double)this.field_44593.method_12165(), (double)this.field_44593.method_12185(), this.field_6871
+                     (double)this.field_44593.getX(), (double)this.field_44593.method_12165(), (double)this.field_44593.method_12185(), this.field_6871
                   );
             } else {
                this.field_44593 = null;

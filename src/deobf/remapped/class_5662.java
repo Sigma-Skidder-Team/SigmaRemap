@@ -14,7 +14,7 @@ public class class_5662 extends class_9037 {
       if (var2 <= var6 && this.method_41493()) {
          this.method_41491();
          this.field_46244.method_26442(var1);
-         this.field_28705.method_37155(class_463.field_2317, 1.0F, 1.0F);
+         this.field_28705.method_37155(SoundEvents.field_2317, 1.0F, 1.0F);
       }
    }
 

@@ -38,7 +38,7 @@ public class BasicClickTP extends Module {
                return;
             }
 
-            double var6 = (double)var5.method_12173() + 0.5;
+            double var6 = (double)var5.getX() + 0.5;
             double var8 = (double)(var5.method_12165() + 1);
             double var10 = (double)var5.method_12185() + 0.5;
             double var12 = client.thePlayer.getPosX() - var6;

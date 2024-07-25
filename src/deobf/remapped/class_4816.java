@@ -103,7 +103,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
                   double var9 = 0.0;
                   double var11 = 0.0;
                   double var13 = 0.0;
-                  Box var15 = var8.method_37241();
+                  Box var15 = var8.getBoundingBox();
                   switch (var4.method_1029()) {
                      case field_47215:
                         if (var4.method_1049() == class_137.field_405) {
@@ -184,7 +184,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
          if (this.field_24080 == 1) {
             this.field_18364
                .method_43359(
-                  (PlayerEntity)null, this.field_18358, class_463.field_2347, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
+                  (PlayerEntity)null, this.field_18358, SoundEvents.field_2347, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
                );
          }
       }
@@ -198,7 +198,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
          if (this.field_24080 <= 0) {
             this.field_18364
                .method_43359(
-                  (PlayerEntity)null, this.field_18358, class_463.field_2287, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
+                  (PlayerEntity)null, this.field_18358, SoundEvents.field_2287, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F
                );
          }
       }
@@ -262,7 +262,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    public float method_22199(float var1) {
-      return class_9299.method_42795(var1, this.field_24078, this.field_24081);
+      return MathHelper.method_42795(var1, this.field_24078, this.field_24081);
    }
 
    @Nullable

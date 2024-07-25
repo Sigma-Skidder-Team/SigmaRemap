@@ -13,9 +13,9 @@ public class class_1703 extends class_1546 {
    @Override
    public class_5851 method_7003() {
       return super.method_7016(
-         class_9299.method_42847(this.field_8166.method_37241().field_19941),
-         class_9299.method_42847(this.field_8166.method_37241().field_19937 + 0.5),
-         class_9299.method_42847(this.field_8166.method_37241().field_19938)
+         MathHelper.floor(this.field_8166.getBoundingBox().field_19941),
+         MathHelper.floor(this.field_8166.getBoundingBox().field_19937 + 0.5),
+         MathHelper.floor(this.field_8166.getBoundingBox().field_19938)
       );
    }
 
@@ -23,9 +23,9 @@ public class class_1703 extends class_1546 {
    public class_1478 method_7013(double var1, double var3, double var5) {
       return new class_1478(
          super.method_7016(
-            class_9299.method_42847(var1 - (double)(this.field_8166.method_37086() / 2.0F)),
-            class_9299.method_42847(var3 + 0.5),
-            class_9299.method_42847(var5 - (double)(this.field_8166.method_37086() / 2.0F))
+            MathHelper.floor(var1 - (double)(this.field_8166.method_37086() / 2.0F)),
+            MathHelper.floor(var3 + 0.5),
+            MathHelper.floor(var5 - (double)(this.field_8166.method_37086() / 2.0F))
          )
       );
    }

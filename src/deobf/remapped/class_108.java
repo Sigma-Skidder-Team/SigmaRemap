@@ -34,9 +34,9 @@ public class class_108 extends class_6414 {
 
    private static int method_333(class_9529 var0, class_1343 var1) {
       Direction var4 = var0.method_43956();
-      double var5 = Math.abs(class_9299.method_42822(var1.field_7336) - 0.5);
-      double var7 = Math.abs(class_9299.method_42822(var1.field_7333) - 0.5);
-      double var9 = Math.abs(class_9299.method_42822(var1.field_7334) - 0.5);
+      double var5 = Math.abs(MathHelper.frac(var1.field_7336) - 0.5);
+      double var7 = Math.abs(MathHelper.frac(var1.field_7333) - 0.5);
+      double var9 = Math.abs(MathHelper.frac(var1.field_7334) - 0.5);
       class_9249 var11 = var4.method_1029();
       double var12;
       if (var11 != class_9249.field_47216) {
@@ -49,7 +49,7 @@ public class class_108 extends class_6414 {
          var12 = Math.max(var5, var9);
       }
 
-      return Math.max(1, class_9299.method_42815(15.0 * class_9299.method_42827((0.5 - var12) / 0.5, 0.0, 1.0)));
+      return Math.max(1, MathHelper.ceil(15.0 * MathHelper.clamp((0.5 - var12) / 0.5, 0.0, 1.0)));
    }
 
    private static void method_334(class_9379 var0, class_2522 var1, int var2, BlockPos var3, int var4) {

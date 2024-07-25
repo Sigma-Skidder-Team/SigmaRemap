@@ -31,7 +31,7 @@ public class class_2925 implements class_1870 {
       int var5 = this.method_13378();
       if (Util.getMeasuringTimeMs() > this.field_14259) {
          this.field_14259 += 500L;
-         field_14255.info(new TranslationTextComponent("menu.preparingSpawn", class_9299.method_42829(var5, 0, 100)).getString());
+         field_14255.info(new TranslationTextComponent("menu.preparingSpawn", MathHelper.clamp(var5, 0, 100)).getString());
       }
    }
 
@@ -42,6 +42,6 @@ public class class_2925 implements class_1870 {
    }
 
    public int method_13378() {
-      return class_9299.method_42848((float)this.field_14257 * 100.0F / (float)this.field_14256);
+      return MathHelper.floor((float)this.field_14257 * 100.0F / (float)this.field_14256);
    }
 }

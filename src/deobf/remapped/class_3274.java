@@ -50,7 +50,7 @@ public class class_3274 extends DataFix {
                var1,
                var1xx -> {
                   int var4 = var1xx.getOptional(var2).<Integer>map(var0xxx -> Math.max(4, DataFixUtils.ceillog2(var0xxx.size()))).orElse(0);
-                  return var4 != 0 && !class_9299.method_42825(var4)
+                  return var4 != 0 && !MathHelper.isPowerOfTwo(var4)
                      ? var1xx.update(DSL.remainderFinder(), var1xxx -> var1xxx.update("BlockStates", var2xx -> method_14946(var1xxx, var2xx, 4096, var4)))
                      : var1xx;
                }

@@ -111,7 +111,7 @@ public class class_2811 extends MonsterEntity {
    public void method_26910(boolean var1) {
       this.method_37372().method_36633(field_13810, var1);
       if (this.world != null && !this.world.field_33055) {
-         class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
+         class_9747 var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
          var4.method_45004(field_13814);
          if (var1) {
             var4.method_45011(field_13814);
@@ -134,7 +134,7 @@ public class class_2811 extends MonsterEntity {
 
    @Override
    public void method_37123() {
-      if (!this.world.field_33055 && this.isAlive() && !this.method_26859()) {
+      if (!this.world.field_33055 && this.isAlive() && !this.isAIDisabled()) {
          if (!this.method_12797()) {
             if (this.method_12795()) {
                if (!this.method_37261(class_6503.field_33094)) {
@@ -158,7 +158,7 @@ public class class_2811 extends MonsterEntity {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.isAlive()) {
          boolean var3 = this.method_12803() && this.method_26884();
          if (var3) {
@@ -181,7 +181,7 @@ public class class_2811 extends MonsterEntity {
          }
       }
 
-      super.method_26606();
+      super.livingTick();
    }
 
    private void method_12794(int var1) {
@@ -214,24 +214,24 @@ public class class_2811 extends MonsterEntity {
          return false;
       } else if (this.world instanceof class_6331) {
          class_6331 var5 = (class_6331)this.world;
-         class_5834 var6 = this.method_17809();
-         if (var6 == null && var1.method_28372() instanceof class_5834) {
-            var6 = (class_5834)var1.method_28372();
+         LivingEntity var6 = this.getAttackTarget();
+         if (var6 == null && var1.method_28372() instanceof LivingEntity) {
+            var6 = (LivingEntity)var1.method_28372();
          }
 
          if (var6 != null
             && this.world.method_43370() == class_423.field_1782
             && (double)this.field_41717.nextFloat() < this.method_26575(Attributes.field_37470)
-            && this.world.method_29537().method_1285(class_291.field_1028)) {
-            int var7 = class_9299.method_42847(this.getPosX());
-            int var8 = class_9299.method_42847(this.method_37309());
-            int var9 = class_9299.method_42847(this.getPosZ());
+            && this.world.getGameRules().getBoolean(GameRules.field_1028)) {
+            int var7 = MathHelper.floor(this.getPosX());
+            int var8 = MathHelper.floor(this.method_37309());
+            int var9 = MathHelper.floor(this.getPosZ());
             class_2811 var10 = new class_2811(this.world);
 
             for (int var11 = 0; var11 < 50; var11++) {
-               int var12 = var7 + class_9299.method_42824(this.field_41717, 7, 40) * class_9299.method_42824(this.field_41717, -1, 1);
-               int var13 = var8 + class_9299.method_42824(this.field_41717, 7, 40) * class_9299.method_42824(this.field_41717, -1, 1);
-               int var14 = var9 + class_9299.method_42824(this.field_41717, 7, 40) * class_9299.method_42824(this.field_41717, -1, 1);
+               int var12 = var7 + MathHelper.nextInt(this.field_41717, 7, 40) * MathHelper.nextInt(this.field_41717, -1, 1);
+               int var13 = var8 + MathHelper.nextInt(this.field_41717, 7, 40) * MathHelper.nextInt(this.field_41717, -1, 1);
+               int var14 = var9 + MathHelper.nextInt(this.field_41717, 7, 40) * MathHelper.nextInt(this.field_41717, -1, 1);
                BlockPos var15 = new BlockPos(var12, var13, var14);
                EntityType var16 = var10.getType();
                class_1257 var17 = class_1136.method_4980(var16);
@@ -241,13 +241,13 @@ public class class_2811 extends MonsterEntity {
                   if (!this.world.method_25866((double)var12, (double)var13, (double)var14, 7.0)
                      && this.world.method_6677(var10)
                      && this.world.method_6682(var10)
-                     && !this.world.method_22550(var10.method_37241())) {
+                     && !this.world.method_22550(var10.getBoundingBox())) {
                      var10.method_26860(var6);
                      var10.method_26864(var5, this.world.method_43368(var10.method_37075()), class_2417.field_12039, (class_8733)null, (CompoundNBT)null);
                      var5.method_7065(var10);
-                     this.method_26561(Attributes.field_37470)
+                     this.getAttribute(Attributes.field_37470)
                         .method_45005(new class_9343("Zombie reinforcement caller charge", -0.05F, class_9342.field_47679));
-                     var10.method_26561(Attributes.field_37470)
+                     var10.getAttribute(Attributes.field_37470)
                         .method_45005(new class_9343("Zombie reinforcement callee charge", -0.05F, class_9342.field_47679));
                      break;
                   }
@@ -275,22 +275,22 @@ public class class_2811 extends MonsterEntity {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2693;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2693;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_1998;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_1998;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2072;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2072;
    }
 
-   public class_8461 method_12805() {
-      return class_463.field_2082;
+   public SoundEvent method_12805() {
+      return SoundEvents.field_2082;
    }
 
    @Override
@@ -337,7 +337,7 @@ public class class_2811 extends MonsterEntity {
    }
 
    @Override
-   public void method_37231(class_6331 var1, class_5834 var2) {
+   public void method_37231(class_6331 var1, LivingEntity var2) {
       super.method_37231(var1, var2);
       if ((var1.method_43370() == class_423.field_1789 || var1.method_43370() == class_423.field_1782) && var2 instanceof class_7666) {
          if (var1.method_43370() != class_423.field_1782 && this.field_41717.nextBoolean()) {
@@ -392,7 +392,7 @@ public class class_2811 extends MonsterEntity {
                      var1.method_7509(var10);
                   }
                } else {
-                  List var14 = var1.<Entity>method_25869(class_3024.class, this.method_37241().method_18899(5.0, 3.0, 5.0), class_3572.field_17484);
+                  List var14 = var1.<Entity>method_25869(class_3024.class, this.getBoundingBox().method_18899(5.0, 3.0, 5.0), class_3572.field_17484);
                   if (!var14.isEmpty()) {
                      class_3024 var11 = (class_3024)var14.get(0);
                      var11.method_13808(true);
@@ -427,24 +427,24 @@ public class class_2811 extends MonsterEntity {
 
    public void method_12790(float var1) {
       this.method_12801();
-      this.method_26561(Attributes.KNOCKBACK_RESISTANCE)
+      this.getAttribute(Attributes.KNOCKBACK_RESISTANCE)
          .method_45005(new class_9343("Random spawn bonus", this.field_41717.nextDouble() * 0.05F, class_9342.field_47679));
       double var4 = this.field_41717.nextDouble() * 1.5 * (double)var1;
       if (var4 > 1.0) {
-         this.method_26561(Attributes.FOLLOW_RANGE).method_45005(new class_9343("Random zombie-spawn bonus", var4, class_9342.field_47677));
+         this.getAttribute(Attributes.FOLLOW_RANGE).method_45005(new class_9343("Random zombie-spawn bonus", var4, class_9342.field_47677));
       }
 
       if (this.field_41717.nextFloat() < var1 * 0.05F) {
-         this.method_26561(Attributes.field_37470)
+         this.getAttribute(Attributes.field_37470)
             .method_45005(new class_9343("Leader zombie bonus", this.field_41717.nextDouble() * 0.25 + 0.5, class_9342.field_47679));
-         this.method_26561(Attributes.MAX_HEALTH)
+         this.getAttribute(Attributes.MAX_HEALTH)
             .method_45005(new class_9343("Leader zombie bonus", this.field_41717.nextDouble() * 3.0 + 1.0, class_9342.field_47677));
          this.method_12799(this.method_12792());
       }
    }
 
    public void method_12801() {
-      this.method_26561(Attributes.field_37470).method_45006(this.field_41717.nextDouble() * 0.1F);
+      this.getAttribute(Attributes.field_37470).setBaseValue(this.field_41717.nextDouble() * 0.1F);
    }
 
    @Override

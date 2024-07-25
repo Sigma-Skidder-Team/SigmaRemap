@@ -19,7 +19,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
    private final int[] field_22694 = new int[2];
    private int field_22699;
    private final class_495 field_22702 = (class_495)new class_495(this.method_19839(), class_1062.field_5821, class_2976.field_14631).method_43461(true);
-   private static final Predicate<class_5834> field_22697 = var0 -> var0.method_26550() != class_2780.field_13579 && var0.method_26556();
+   private static final Predicate<LivingEntity> field_22697 = var0 -> var0.method_26550() != class_2780.field_13579 && var0.method_26556();
    private static final class_4931 field_22696 = new class_4931().method_22607(20.0).method_22606(field_22697);
 
    public class_4653(EntityType<? extends class_4653> var1, World var2) {
@@ -71,22 +71,22 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2481;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2481;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2017;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2017;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2109;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2109;
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       class_1343 var3 = this.method_37098().method_6210(1.0, 0.6, 1.0);
       if (!this.world.field_33055 && this.method_21508(0) > 0) {
          Entity var4 = this.world.method_29534(this.method_21508(0));
@@ -108,10 +108,10 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
 
       this.method_37215(var3);
       if (method_37266(var3) > 0.05) {
-         this.rotationYaw = (float)class_9299.method_42821(var3.field_7334, var3.field_7336) * (180.0F / (float)Math.PI) - 90.0F;
+         this.rotationYaw = (float) MathHelper.method_42821(var3.field_7334, var3.field_7336) * (180.0F / (float)Math.PI) - 90.0F;
       }
 
-      super.method_26606();
+      super.livingTick();
 
       for (int var33 = 0; var33 < 2; var33++) {
          this.field_22690[var33] = this.field_22693[var33];
@@ -134,9 +134,9 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
             double var17 = var10.getPosX() - var11;
             double var19 = var10.method_37388() - var13;
             double var21 = var10.getPosZ() - var15;
-            double var23 = (double)class_9299.method_42842(var17 * var17 + var21 * var21);
-            float var25 = (float)(class_9299.method_42821(var21, var17) * 180.0F / (float)Math.PI) - 90.0F;
-            float var26 = (float)(-(class_9299.method_42821(var19, var23) * 180.0F / (float)Math.PI));
+            double var23 = (double) MathHelper.sqrt(var17 * var17 + var21 * var21);
+            float var25 = (float)(MathHelper.method_42821(var21, var17) * 180.0F / (float)Math.PI) - 90.0F;
+            float var26 = (float)(-(MathHelper.method_42821(var19, var23) * 180.0F / (float)Math.PI));
             this.field_22695[var34] = this.method_21516(this.field_22695[var34], var26, 40.0F);
             this.field_22693[var34] = this.method_21516(this.field_22693[var34], var25, 10.0F);
          }
@@ -203,9 +203,9 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
                   if (var5 > 15) {
                      float var6 = 10.0F;
                      float var7 = 5.0F;
-                     double var8 = class_9299.method_42832(this.field_41717, this.getPosX() - 10.0, this.getPosX() + 10.0);
-                     double var10 = class_9299.method_42832(this.field_41717, this.method_37309() - 5.0, this.method_37309() + 5.0);
-                     double var12 = class_9299.method_42832(this.field_41717, this.getPosZ() - 10.0, this.getPosZ() + 10.0);
+                     double var8 = MathHelper.nextDouble(this.field_41717, this.getPosX() - 10.0, this.getPosX() + 10.0);
+                     double var10 = MathHelper.nextDouble(this.field_41717, this.method_37309() - 5.0, this.method_37309() + 5.0);
+                     double var12 = MathHelper.nextDouble(this.field_41717, this.getPosZ() - 10.0, this.getPosZ() + 10.0);
                      this.method_21515(var3 + 1, var8, var10, var12, true);
                      this.field_22694[var3 - 1] = 0;
                   }
@@ -214,10 +214,10 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
                int var23 = this.method_21508(var3);
                if (var23 <= 0) {
                   List var27 = this.world
-                     .<class_5834>method_25863(class_5834.class, field_22696, this, this.method_37241().method_18899(20.0, 8.0, 20.0));
+                     .<LivingEntity>method_25863(LivingEntity.class, field_22696, this, this.getBoundingBox().method_18899(20.0, 8.0, 20.0));
 
                   for (int var29 = 0; var29 < 10 && !var27.isEmpty(); var29++) {
-                     class_5834 var31 = (class_5834)var27.get(this.field_41717.nextInt(var27.size()));
+                     LivingEntity var31 = (LivingEntity)var27.get(this.field_41717.nextInt(var27.size()));
                      if (var31 != this && var31.isAlive() && this.method_26420(var31)) {
                         if (!(var31 instanceof PlayerEntity)) {
                            this.method_21512(var3, var31.method_37145());
@@ -236,7 +236,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
                   } else if (var26 instanceof PlayerEntity && ((PlayerEntity)var26).playerAbilities.disableDamage) {
                      this.method_21512(var3, 0);
                   } else {
-                     this.method_21519(var3 + 1, (class_5834)var26);
+                     this.method_21519(var3 + 1, (LivingEntity)var26);
                      this.field_22691[var3 - 1] = this.field_41697 + 40 + this.field_41717.nextInt(20);
                      this.field_22694[var3 - 1] = 0;
                   }
@@ -244,18 +244,18 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
             }
          }
 
-         if (this.method_17809() == null) {
+         if (this.getAttackTarget() == null) {
             this.method_21512(0, 0);
          } else {
-            this.method_21512(0, this.method_17809().method_37145());
+            this.method_21512(0, this.getAttackTarget().method_37145());
          }
 
          if (this.field_22699 > 0) {
             this.field_22699--;
-            if (this.field_22699 == 0 && this.world.method_29537().method_1285(class_291.field_1047)) {
-               int var21 = class_9299.method_42847(this.method_37309());
-               int var24 = class_9299.method_42847(this.getPosX());
-               int var28 = class_9299.method_42847(this.getPosZ());
+            if (this.field_22699 == 0 && this.world.getGameRules().getBoolean(GameRules.field_1047)) {
+               int var21 = MathHelper.floor(this.method_37309());
+               int var24 = MathHelper.floor(this.getPosX());
+               int var28 = MathHelper.floor(this.getPosZ());
                boolean var30 = false;
 
                for (int var32 = -1; var32 <= 1; var32++) {
@@ -287,7 +287,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
       } else {
          int var22 = this.method_21507() - 1;
          if (var22 <= 0) {
-            class_7298 var25 = !this.world.method_29537().method_1285(class_291.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
+            class_7298 var25 = !this.world.getGameRules().getBoolean(GameRules.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
             this.world.method_29574(this, this.getPosX(), this.method_37388(), this.getPosZ(), 7.0F, false, var25);
             if (!this.method_37378()) {
                this.world.method_29589(1023, this.method_37075(), 0);
@@ -329,7 +329,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
    private double method_21520(int var1) {
       if (var1 > 0) {
          float var4 = (this.field_29605 + (float)(180 * (var1 - 1))) * (float) (Math.PI / 180.0);
-         float var5 = class_9299.method_42840(var4);
+         float var5 = MathHelper.cos(var4);
          return this.getPosX() + (double)var5 * 1.3;
       } else {
          return this.getPosX();
@@ -343,7 +343,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
    private double method_21518(int var1) {
       if (var1 > 0) {
          float var4 = (this.field_29605 + (float)(180 * (var1 - 1))) * (float) (Math.PI / 180.0);
-         float var5 = class_9299.method_42818(var4);
+         float var5 = MathHelper.sin(var4);
          return this.getPosZ() + (double)var5 * 1.3;
       } else {
          return this.getPosZ();
@@ -351,7 +351,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
    }
 
    private float method_21516(float var1, float var2, float var3) {
-      float var6 = class_9299.method_42810(var2 - var1);
+      float var6 = MathHelper.wrapDegrees(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }
@@ -363,7 +363,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
       return var1 + var6;
    }
 
-   private void method_21519(int var1, class_5834 var2) {
+   private void method_21519(int var1, LivingEntity var2) {
       this.method_21515(
          var1,
          var2.getPosX(),
@@ -395,7 +395,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       this.method_21519(0, var1);
    }
 
@@ -416,7 +416,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
          }
 
          Entity var7 = var1.method_28372();
-         if (var7 != null && !(var7 instanceof PlayerEntity) && var7 instanceof class_5834 && ((class_5834)var7).method_26550() == this.method_26550()) {
+         if (var7 != null && !(var7 instanceof PlayerEntity) && var7 instanceof LivingEntity && ((LivingEntity)var7).method_26550() == this.method_26550()) {
             return false;
          } else {
             if (this.field_22699 <= 0) {

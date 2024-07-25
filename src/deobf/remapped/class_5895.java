@@ -18,7 +18,7 @@ public class class_5895 extends class_7164<class_378, class_1290<class_378>> {
       var2.method_36062(0.999F, 0.999F, 0.999F);
       var2.method_36065(0.0, 0.001F, 0.0);
       float var7 = (float)var1.method_1860();
-      float var8 = class_9299.method_42795(var3, var1.field_1533, var1.field_1538) / (var7 * 0.5F + 1.0F);
+      float var8 = MathHelper.method_42795(var3, var1.field_1533, var1.field_1538) / (var7 * 0.5F + 1.0F);
       float var9 = 1.0F / (var8 + 1.0F);
       var2.method_36062(var9 * var7, 1.0F / var9 * var7, var9 * var7);
    }

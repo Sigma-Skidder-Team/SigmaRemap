@@ -49,7 +49,7 @@ public class class_3711 {
       }
 
       if (!this.field_18205.method_26927().method_5591()) {
-         this.field_18205.field_29618 = class_9299.method_42789(
+         this.field_18205.field_29618 = MathHelper.func_219800_b(
             this.field_18205.field_29618, this.field_18205.field_29605, (float)this.field_18205.getHorizontalFaceSpeed()
          );
       }
@@ -79,23 +79,23 @@ public class class_3711 {
       double var3 = this.field_18209 - this.field_18205.getPosX();
       double var5 = this.field_18203 - this.field_18205.method_37388();
       double var7 = this.field_18206 - this.field_18205.getPosZ();
-      double var9 = (double)class_9299.method_42842(var3 * var3 + var7 * var7);
-      return (float)(-(class_9299.method_42821(var5, var9) * 180.0F / (float)Math.PI));
+      double var9 = (double) MathHelper.sqrt(var3 * var3 + var7 * var7);
+      return (float)(-(MathHelper.method_42821(var5, var9) * 180.0F / (float)Math.PI));
    }
 
    public float method_17243() {
       double var3 = this.field_18209 - this.field_18205.getPosX();
       double var5 = this.field_18206 - this.field_18205.getPosZ();
-      return (float)(class_9299.method_42821(var5, var3) * 180.0F / (float)Math.PI) - 90.0F;
+      return (float)(MathHelper.method_42821(var5, var3) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    public float method_17239(float var1, float var2, float var3) {
-      float var6 = class_9299.method_42834(var1, var2);
-      float var7 = class_9299.method_42828(var6, -var3, var3);
+      float var6 = MathHelper.wrapSubtractDegrees(var1, var2);
+      float var7 = MathHelper.clamp(var6, -var3, var3);
       return var1 + var7;
    }
 
    private static double method_17238(Entity var0) {
-      return !(var0 instanceof LivingEntity) ? (var0.method_37241().field_19937 + var0.method_37241().field_19939) / 2.0 : var0.method_37388();
+      return !(var0 instanceof LivingEntity) ? (var0.getBoundingBox().field_19937 + var0.getBoundingBox().field_19939) / 2.0 : var0.method_37388();
    }
 }

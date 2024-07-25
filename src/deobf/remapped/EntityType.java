@@ -453,15 +453,15 @@ public class EntityType<T extends Entity> {
          if (!var7) {
             var12 = 0.0;
          } else {
-            var11.method_37256((double)var5.method_12173() + 0.5, (double)(var5.method_12165() + 1), (double)var5.method_12185() + 0.5);
-            var12 = method_30461(var1, var5, var8, var11.method_37241());
+            var11.method_37256((double)var5.getX() + 0.5, (double)(var5.method_12165() + 1), (double)var5.method_12185() + 0.5);
+            var12 = method_30461(var1, var5, var8, var11.getBoundingBox());
          }
 
          var11.method_37144(
-            (double)var5.method_12173() + 0.5,
+            (double)var5.getX() + 0.5,
             (double)var5.method_12165() + var12,
             (double)var5.method_12185() + 0.5,
-            class_9299.method_42810(var1.field_33033.nextFloat() * 360.0F),
+            MathHelper.wrapDegrees(var1.field_33033.nextFloat() * 360.0F),
             0.0F
          );
          if (var11 instanceof MobEntity) {

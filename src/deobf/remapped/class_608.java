@@ -14,19 +14,19 @@ public abstract class class_608 extends class_4612 {
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       return null;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26541(DamageSource var1) {
+   public SoundEvent method_26541(DamageSource var1) {
       return null;
    }
 
    @Nullable
    @Override
-   public class_8461 method_26599() {
+   public SoundEvent method_26599() {
       return null;
    }
 

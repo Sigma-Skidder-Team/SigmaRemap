@@ -29,7 +29,7 @@ public class class_3874 implements class_6844 {
             break;
          case 1:
             if (!this.field_18863.field_18364.field_33055 && !class_1100.method_4889(this.field_18863).isEmpty()) {
-               this.field_18863.method_4883(class_463.field_2620);
+               this.field_18863.method_4883(SoundEvents.field_2620);
             }
 
             class_1100.method_4888(this.field_18863, class_1100.method_4878(var2));

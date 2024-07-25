@@ -150,7 +150,7 @@ public class HypixelSpeed extends Module {
                   }
             }
 
-            if (this.field_12322 < var4 || client.thePlayer.field_41744 || !class_314.method_1434() || class_314.method_1437(client.thePlayer)) {
+            if (this.field_12322 < var4 || client.thePlayer.collidedHorizontally || !class_314.method_1434() || class_314.method_1437(client.thePlayer)) {
                this.field_12322 = var4;
             }
 

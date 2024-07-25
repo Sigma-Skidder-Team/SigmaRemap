@@ -119,23 +119,23 @@ public class class_8477 extends class_8574 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2749;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2749;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2555;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2555;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2493;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2493;
    }
 
    @Override
-   public class_8461 method_16632() {
-      return class_463.field_2297;
+   public SoundEvent method_16632() {
+      return SoundEvents.field_2297;
    }
 
    private static int method_39017(int var0) {

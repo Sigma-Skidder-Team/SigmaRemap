@@ -83,7 +83,7 @@ public class class_3913 extends class_2255<class_8398> {
          if (!Config.field_15481) {
             BlockPos var3 = var0.method_17399();
             Entity var4 = MinecraftClient.getInstance().getRenderViewEntity();
-            double var5 = var4.method_37273((double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
+            double var5 = var4.method_37273((double)var3.getX(), (double)var3.method_12165(), (double)var3.method_12185());
             if (var5 > field_19010) {
                return false;
             }

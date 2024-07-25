@@ -9,7 +9,7 @@ public class class_1537 extends class_3429 {
       super(var1, var2);
    }
 
-   public class_1537(World var1, class_5834 var2) {
+   public class_1537(World var1, LivingEntity var2) {
       super(EntityType.field_34259, var2, var1);
    }
 
@@ -55,7 +55,7 @@ public class class_1537 extends class_3429 {
          } else {
             class_9359 var7 = (class_9359)var4;
             if (var7.field_47794.method_9091().method_23493() && var7.world == this.world && !var7.method_26507()) {
-               if (this.field_41717.nextFloat() < 0.05F && this.world.method_29537().method_1285(class_291.field_1028)) {
+               if (this.field_41717.nextFloat() < 0.05F && this.world.getGameRules().getBoolean(GameRules.field_1028)) {
                   class_2667 var6 = EntityType.field_34264.method_30484(this.world);
                   var6.method_12025(true);
                   var6.method_37144(var4.getPosX(), var4.method_37309(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch);

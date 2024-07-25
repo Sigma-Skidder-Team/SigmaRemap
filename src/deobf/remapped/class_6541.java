@@ -57,7 +57,7 @@ public abstract class class_6541 {
                int var17 = (int)Math.round(Math.sin(var9) * var14);
                BlockPos var18 = this.field_33263.method_16085((var16 << 4) + 8, 0, (var17 << 4) + 8, 112, var4::contains, var8);
                if (var18 != null) {
-                  var16 = var18.method_12173() >> 4;
+                  var16 = var18.getX() >> 4;
                   var17 = var18.method_12185() >> 4;
                }
 

@@ -44,7 +44,7 @@ public class class_5851 {
       float var4 = (float)(var1.field_29731 - this.field_29731);
       float var5 = (float)(var1.field_29735 - this.field_29735);
       float var6 = (float)(var1.field_29736 - this.field_29736);
-      return class_9299.method_42843(var4 * var4 + var5 * var5 + var6 * var6);
+      return MathHelper.sqrt(var4 * var4 + var5 * var5 + var6 * var6);
    }
 
    public float method_26687(class_5851 var1) {
@@ -62,7 +62,7 @@ public class class_5851 {
    }
 
    public float method_26691(BlockPos var1) {
-      float var4 = (float)Math.abs(var1.method_12173() - this.field_29731);
+      float var4 = (float)Math.abs(var1.getX() - this.field_29731);
       float var5 = (float)Math.abs(var1.method_12165() - this.field_29735);
       float var6 = (float)Math.abs(var1.method_12185() - this.field_29736);
       return var4 + var5 + var6;

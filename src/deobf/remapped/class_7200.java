@@ -21,7 +21,7 @@ public class class_7200 {
       } else {
          float var6 = (float)(class_4827.method_22216(var5) - class_4827.method_22215(var5));
          float var7 = (float)class_4827.method_22216(var5) - ((float)this.field_37009 + var2);
-         return class_9299.method_42828(var7 / var6, 0.0F, 1.0F);
+         return MathHelper.clamp(var7 / var6, 0.0F, 1.0F);
       }
    }
 

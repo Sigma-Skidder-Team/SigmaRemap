@@ -38,7 +38,7 @@ public class class_2727 extends class_6414 {
    public void method_29279(World var1, BlockPos var2, class_2730 var3) {
       if (!var1.field_33055) {
          class_1356 var6 = new class_1356(
-            var1, (double)var2.method_12173() + 0.5, (double)var2.method_12165(), (double)var2.method_12185() + 0.5, var3.method_12273()
+            var1, (double)var2.getX() + 0.5, (double)var2.method_12165(), (double)var2.method_12185() + 0.5, var3.method_12273()
          );
          var6.method_6255((short)(var1.field_33033.nextInt(var6.method_6258() / 4) + var6.method_6258() / 8));
          var1.method_7509(var6);
@@ -51,10 +51,10 @@ public class class_2727 extends class_6414 {
 
    private static void method_12257(World var0, BlockPos var1, LivingEntity var2) {
       if (!var0.field_33055) {
-         class_1356 var5 = new class_1356(var0, (double)var1.method_12173() + 0.5, (double)var1.method_12165(), (double)var1.method_12185() + 0.5, var2);
+         class_1356 var5 = new class_1356(var0, (double)var1.getX() + 0.5, (double)var1.method_12165(), (double)var1.method_12185() + 0.5, var2);
          var0.method_7509(var5);
          var0.method_29528(
-            (PlayerEntity)null, var5.getPosX(), var5.method_37309(), var5.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
+            (PlayerEntity)null, var5.getPosX(), var5.method_37309(), var5.getPosZ(), SoundEvents.field_2660, class_562.field_3322, 1.0F, 1.0F
          );
       }
    }

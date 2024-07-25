@@ -19,11 +19,11 @@ public interface class_1449 extends class_6163 {
    default boolean method_6671(class_2522 var1, BlockPos var2, class_214 var3) {
       class_4190 var6 = var1.method_8325(this, var2, var3);
       return var6.method_19485()
-         || this.method_6678((Entity)null, var6.method_19496((double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185()));
+         || this.method_6678((Entity)null, var6.method_19496((double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185()));
    }
 
    default boolean method_6677(Entity var1) {
-      return this.method_6678(var1, class_3370.method_15523(var1.method_37241()));
+      return this.method_6678(var1, class_3370.method_15523(var1.getBoundingBox()));
    }
 
    default boolean method_6681(Box var1) {
@@ -31,7 +31,7 @@ public interface class_1449 extends class_6163 {
    }
 
    default boolean method_6682(Entity var1) {
-      return this.method_6672(var1, var1.method_37241(), var0 -> true);
+      return this.method_6672(var1, var1.getBoundingBox(), var0 -> true);
    }
 
    default boolean method_6683(Entity var1, Box var2) {

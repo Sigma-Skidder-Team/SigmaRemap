@@ -13,11 +13,11 @@ public class class_373 extends class_2255<class_945> {
       if (MinecraftClient.getInstance().thePlayer.method_3184() || MinecraftClient.getInstance().thePlayer.method_37221()) {
          BlockPos var9 = var1.method_4116();
          BlockPos var10 = var1.method_4096();
-         if (var10.method_12173() >= 1
+         if (var10.getX() >= 1
             && var10.method_12165() >= 1
             && var10.method_12185() >= 1
             && (var1.method_4085() == class_589.field_3417 || var1.method_4085() == class_589.field_3414)) {
-            double var11 = (double)var9.method_12173();
+            double var11 = (double)var9.getX();
             double var13 = (double)var9.method_12185();
             double var15 = (double)var9.method_12165();
             double var17 = var15 + (double)var10.method_12165();
@@ -25,15 +25,15 @@ public class class_373 extends class_2255<class_945> {
             double var21;
             switch (var1.method_4089()) {
                case field_46148:
-                  var19 = (double)var10.method_12173();
+                  var19 = (double)var10.getX();
                   var21 = (double)(-var10.method_12185());
                   break;
                case field_46144:
-                  var19 = (double)(-var10.method_12173());
+                  var19 = (double)(-var10.getX());
                   var21 = (double)var10.method_12185();
                   break;
                default:
-                  var19 = (double)var10.method_12173();
+                  var19 = (double)var10.getX();
                   var21 = (double)var10.method_12185();
             }
 
@@ -94,10 +94,10 @@ public class class_373 extends class_2255<class_945> {
          boolean var15 = var13.method_8350(class_4783.field_23227);
          if (var14 || var15) {
             float var16 = !var14 ? 0.0F : 0.05F;
-            double var17 = (double)((float)(var12.method_12173() - var9.method_12173()) + 0.45F - var16);
+            double var17 = (double)((float)(var12.getX() - var9.getX()) + 0.45F - var16);
             double var19 = (double)((float)(var12.method_12165() - var9.method_12165()) + 0.45F - var16);
             double var21 = (double)((float)(var12.method_12185() - var9.method_12185()) + 0.45F - var16);
-            double var23 = (double)((float)(var12.method_12173() - var9.method_12173()) + 0.55F + var16);
+            double var23 = (double)((float)(var12.getX() - var9.getX()) + 0.55F + var16);
             double var25 = (double)((float)(var12.method_12165() - var9.method_12165()) + 0.55F + var16);
             double var27 = (double)((float)(var12.method_12185() - var9.method_12185()) + 0.55F + var16);
             if (!var4) {

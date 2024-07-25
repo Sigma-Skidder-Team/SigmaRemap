@@ -28,7 +28,7 @@ public class class_9815 extends class_764 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       return this.method_29260()
-         .method_10308(field_49744, Integer.valueOf(class_9299.method_42847((double)((180.0F + var1.method_21861()) * 16.0F / 360.0F) + 0.5) & 15));
+         .method_10308(field_49744, Integer.valueOf(MathHelper.floor((double)((180.0F + var1.method_21861()) * 16.0F / 360.0F) + 0.5) & 15));
    }
 
    @Override

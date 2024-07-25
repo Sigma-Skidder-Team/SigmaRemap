@@ -49,8 +49,8 @@ public class class_9629 extends class_9310 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.field_33055) {
          this.method_44436();
       }

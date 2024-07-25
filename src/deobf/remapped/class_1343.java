@@ -15,20 +15,20 @@ public class class_1343 implements class_66 {
       return new class_1343(var3, var5, var7);
    }
 
-   public static class_1343 method_6216(class_2700 var0) {
-      return new class_1343((double)var0.method_12173() + 0.5, (double)var0.method_12165() + 0.5, (double)var0.method_12185() + 0.5);
+   public static class_1343 method_6216(Vector3i var0) {
+      return new class_1343((double)var0.getX() + 0.5, (double)var0.method_12165() + 0.5, (double)var0.method_12185() + 0.5);
    }
 
-   public static class_1343 method_6205(class_2700 var0) {
-      return new class_1343((double)var0.method_12173(), (double)var0.method_12165(), (double)var0.method_12185());
+   public static class_1343 method_6205(Vector3i var0) {
+      return new class_1343((double)var0.getX(), (double)var0.method_12165(), (double)var0.method_12185());
    }
 
-   public static class_1343 method_6200(class_2700 var0) {
-      return new class_1343((double)var0.method_12173() + 0.5, (double)var0.method_12165(), (double)var0.method_12185() + 0.5);
+   public static class_1343 method_6200(Vector3i var0) {
+      return new class_1343((double)var0.getX() + 0.5, (double)var0.method_12165(), (double)var0.method_12185() + 0.5);
    }
 
-   public static class_1343 method_6219(class_2700 var0, double var1) {
-      return new class_1343((double)var0.method_12173() + 0.5, (double)var0.method_12165() + var1, (double)var0.method_12185() + 0.5);
+   public static class_1343 method_6219(Vector3i var0, double var1) {
+      return new class_1343((double)var0.getX() + 0.5, (double)var0.method_12165() + var1, (double)var0.method_12185() + 0.5);
    }
 
    public class_1343(double var1, double var3, double var5) {
@@ -46,7 +46,7 @@ public class class_1343 implements class_66 {
    }
 
    public class_1343 method_6213() {
-      double var3 = (double)class_9299.method_42842(this.field_7336 * this.field_7336 + this.field_7333 * this.field_7333 + this.field_7334 * this.field_7334);
+      double var3 = (double) MathHelper.sqrt(this.field_7336 * this.field_7336 + this.field_7333 * this.field_7333 + this.field_7334 * this.field_7334);
       return !(var3 < 1.0E-4) ? new class_1343(this.field_7336 / var3, this.field_7333 / var3, this.field_7334 / var3) : field_7335;
    }
 
@@ -86,7 +86,7 @@ public class class_1343 implements class_66 {
       double var4 = var1.field_7336 - this.field_7336;
       double var6 = var1.field_7333 - this.field_7333;
       double var8 = var1.field_7334 - this.field_7334;
-      return (double)class_9299.method_42842(var4 * var4 + var6 * var6 + var8 * var8);
+      return (double) MathHelper.sqrt(var4 * var4 + var6 * var6 + var8 * var8);
    }
 
    public double method_6204(class_1343 var1) {
@@ -120,7 +120,7 @@ public class class_1343 implements class_66 {
    }
 
    public double method_6217() {
-      return (double)class_9299.method_42842(this.field_7336 * this.field_7336 + this.field_7333 * this.field_7333 + this.field_7334 * this.field_7334);
+      return (double) MathHelper.sqrt(this.field_7336 * this.field_7336 + this.field_7333 * this.field_7333 + this.field_7334 * this.field_7334);
    }
 
    public double method_6221() {
@@ -161,8 +161,8 @@ public class class_1343 implements class_66 {
    }
 
    public class_1343 method_6212(float var1) {
-      float var4 = class_9299.method_42840(var1);
-      float var5 = class_9299.method_42818(var1);
+      float var4 = MathHelper.cos(var1);
+      float var5 = MathHelper.sin(var1);
       double var6 = this.field_7336;
       double var8 = this.field_7333 * (double)var4 + this.field_7334 * (double)var5;
       double var10 = this.field_7334 * (double)var4 - this.field_7333 * (double)var5;
@@ -170,8 +170,8 @@ public class class_1343 implements class_66 {
    }
 
    public class_1343 method_6192(float var1) {
-      float var4 = class_9299.method_42840(var1);
-      float var5 = class_9299.method_42818(var1);
+      float var4 = MathHelper.cos(var1);
+      float var5 = MathHelper.sin(var1);
       double var6 = this.field_7336 * (double)var4 + this.field_7334 * (double)var5;
       double var8 = this.field_7333;
       double var10 = this.field_7334 * (double)var4 - this.field_7336 * (double)var5;
@@ -179,8 +179,8 @@ public class class_1343 implements class_66 {
    }
 
    public class_1343 method_6218(float var1) {
-      float var4 = class_9299.method_42840(var1);
-      float var5 = class_9299.method_42818(var1);
+      float var4 = MathHelper.cos(var1);
+      float var5 = MathHelper.sin(var1);
       double var6 = this.field_7336 * (double)var4 + this.field_7333 * (double)var5;
       double var8 = this.field_7333 * (double)var4 - this.field_7336 * (double)var5;
       double var10 = this.field_7334;
@@ -192,17 +192,17 @@ public class class_1343 implements class_66 {
    }
 
    public static class_1343 method_6198(float var0, float var1) {
-      float var4 = class_9299.method_42840(-var1 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var5 = class_9299.method_42818(-var1 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var6 = -class_9299.method_42840(-var0 * (float) (Math.PI / 180.0));
-      float var7 = class_9299.method_42818(-var0 * (float) (Math.PI / 180.0));
+      float var4 = MathHelper.cos(-var1 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var5 = MathHelper.sin(-var1 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var6 = -MathHelper.cos(-var0 * (float) (Math.PI / 180.0));
+      float var7 = MathHelper.sin(-var0 * (float) (Math.PI / 180.0));
       return new class_1343((double)(var5 * var6), (double)var7, (double)(var4 * var6));
    }
 
    public class_1343 method_6201(EnumSet<class_9249> var1) {
-      double var4 = !var1.contains(class_9249.field_47215) ? this.field_7336 : (double)class_9299.method_42847(this.field_7336);
-      double var6 = !var1.contains(class_9249.field_47216) ? this.field_7333 : (double)class_9299.method_42847(this.field_7333);
-      double var8 = !var1.contains(class_9249.field_47219) ? this.field_7334 : (double)class_9299.method_42847(this.field_7334);
+      double var4 = !var1.contains(class_9249.field_47215) ? this.field_7336 : (double) MathHelper.floor(this.field_7336);
+      double var6 = !var1.contains(class_9249.field_47216) ? this.field_7333 : (double) MathHelper.floor(this.field_7333);
+      double var8 = !var1.contains(class_9249.field_47219) ? this.field_7334 : (double) MathHelper.floor(this.field_7334);
       return new class_1343(var4, var6, var8);
    }
 

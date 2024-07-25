@@ -26,7 +26,7 @@ public class class_9564 implements class_6406 {
             short var10 = 1500;
             float var11 = 300.0F;
             if (var3 >= 1500L) {
-               int var12 = class_9299.method_42848(class_9299.method_42828((float)(var3 - 1500L) / 300.0F, 0.0F, 1.0F) * 252.0F) << 24 | 67108864;
+               int var12 = MathHelper.floor(MathHelper.clamp((float)(var3 - 1500L) / 300.0F, 0.0F, 1.0F) * 252.0F) << 24 | 67108864;
                int var13 = this.method_29238() / 2 - var8.size() * 9 / 2;
 
                for (class_7107 var15 : var8) {
@@ -34,7 +34,7 @@ public class class_9564 implements class_6406 {
                   var13 += 9;
                }
             } else {
-               int var16 = class_9299.method_42848(class_9299.method_42828((float)(1500L - var3) / 300.0F, 0.0F, 1.0F) * 255.0F) << 24 | 67108864;
+               int var16 = MathHelper.floor(MathHelper.clamp((float)(1500L - var3) / 300.0F, 0.0F, 1.0F) * 255.0F) << 24 | 67108864;
                var2.method_42327().textRenderer.method_45378(var1, var7.method_35157().method_15384(), 30.0F, 11.0F, var9 | var16);
             }
          } else {
@@ -45,7 +45,7 @@ public class class_9564 implements class_6406 {
          if (!this.field_48679 && var3 > 0L) {
             this.field_48679 = true;
             if (var7.method_35157() == class_3361.field_16559) {
-               var2.method_42327().getSoundHandler().play(class_4949.method_22676(class_463.field_2139, 1.0F, 1.0F));
+               var2.method_42327().getSoundHandler().play(class_4949.method_22676(SoundEvents.field_2139, 1.0F, 1.0F));
             }
          }
 

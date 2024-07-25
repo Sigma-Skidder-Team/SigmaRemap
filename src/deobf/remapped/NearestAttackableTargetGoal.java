@@ -3,11 +3,11 @@ package remapped;
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
-public class NearestAttackableTargetGoal<T extends class_5834> extends class_956 {
+public class NearestAttackableTargetGoal<T extends LivingEntity> extends class_956 {
    private static String[] field_20143;
    public final Class<T> field_20142;
    public final int field_20145;
-   public class_5834 field_20146;
+   public LivingEntity field_20146;
    public class_4931 field_20144;
 
    public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, boolean var3) {
@@ -15,10 +15,10 @@ public class NearestAttackableTargetGoal<T extends class_5834> extends class_956
    }
 
    public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, boolean var3, boolean var4) {
-      this(var1, var2, 10, var3, var4, (Predicate<class_5834>)null);
+      this(var1, var2, 10, var3, var4, (Predicate<LivingEntity>)null);
    }
 
-   public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, int var3, boolean var4, boolean var5, Predicate<class_5834> var6) {
+   public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, int var3, boolean var4, boolean var5, Predicate<LivingEntity> var6) {
       super(var1, var4, var5);
       this.field_20142 = var2;
       this.field_20145 = var3;
@@ -37,14 +37,14 @@ public class NearestAttackableTargetGoal<T extends class_5834> extends class_956
    }
 
    public Box method_19212(double var1) {
-      return this.field_4915.method_37241().method_18899(var1, 4.0, var1);
+      return this.field_4915.getBoundingBox().method_18899(var1, 4.0, var1);
    }
 
    public void method_19213() {
       if (this.field_20142 != PlayerEntity.class && this.field_20142 != class_9359.class) {
          this.field_20146 = this.field_4915
             .world
-            .<class_5834>method_25872(
+            .<LivingEntity>method_25872(
                this.field_20142,
                this.field_20144,
                this.field_4915,
@@ -66,7 +66,7 @@ public class NearestAttackableTargetGoal<T extends class_5834> extends class_956
       super.method_16796();
    }
 
-   public void method_19214(class_5834 var1) {
+   public void method_19214(LivingEntity var1) {
       this.field_20146 = var1;
    }
 }

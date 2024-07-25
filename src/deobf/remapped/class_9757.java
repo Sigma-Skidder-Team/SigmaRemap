@@ -22,7 +22,7 @@ public final class class_9757 implements class_3825 {
          if (var7 != null
             && !(
                ((Entity)var6).method_37245()
-                     .method_6203((double)var7.method_12173() + 0.5, ((Entity)var6).method_37245().method_60(), (double)var7.method_12185() + 0.5)
+                     .method_6203((double)var7.getX() + 0.5, ((Entity)var6).method_37245().method_60(), (double)var7.method_12185() + 0.5)
                   < 1.0E-5F
             )) {
             boolean var12 = var3 instanceof PlayerEntity && ((PlayerEntity)var3).method_3183();
@@ -43,7 +43,7 @@ public final class class_9757 implements class_3825 {
                var13 = (double)var3.rotationYaw;
             }
 
-            var13 = class_9299.method_42799(var13 / 360.0, 1.0);
+            var13 = MathHelper.positiveModulo(var13 / 360.0, 1.0);
             double var15 = this.method_45034(class_1343.method_6216(var7), (Entity)var6) / (float) (Math.PI * 2);
             double var17;
             if (!var12) {
@@ -56,14 +56,14 @@ public final class class_9757 implements class_3825 {
                var17 = var15 + class_5885.method_26832(this.field_49563);
             }
 
-            return class_9299.method_42800((float)var17, 1.0F);
+            return MathHelper.positiveModulo((float)var17, 1.0F);
          } else {
             if (class_5885.method_26833(this.field_49562, var8)) {
                class_5885.method_26834(this.field_49562, var8, Math.random());
             }
 
             double var10 = class_5885.method_26832(this.field_49562) + (double)((float)var1.hashCode() / 2.1474836E9F);
-            return class_9299.method_42800((float)var10, 1.0F);
+            return MathHelper.positiveModulo((float)var10, 1.0F);
          }
       }
    }
@@ -90,7 +90,7 @@ public final class class_9757 implements class_3825 {
    private double method_45033(class_7451 var1) {
       Direction var4 = var1.method_37365();
       int var5 = !var4.method_1029().method_42626() ? 0 : 90 * var4.method_1049().method_549();
-      return (double)class_9299.method_42811(180 + var4.method_1031() * 90 + var1.method_33907() * 45 + var5);
+      return (double) MathHelper.wrapDegrees(180 + var4.method_1031() * 90 + var1.method_33907() * 45 + var5);
    }
 
    private double method_45034(class_1343 var1, Entity var2) {

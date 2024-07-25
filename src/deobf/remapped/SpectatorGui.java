@@ -24,7 +24,7 @@ public class SpectatorGui extends AbstractGui implements class_3796 {
 
    private float method_38562() {
       long var3 = this.field_42842 - Util.getMeasuringTimeMs() + 5000L;
-      return class_9299.method_42828((float)var3 / 2000.0F, 0.0F, 1.0F);
+      return MathHelper.clamp((float)var3 / 2000.0F, 0.0F, 1.0F);
    }
 
    public void func_238528_a_(class_7966 var1, float var2) {
@@ -34,7 +34,7 @@ public class SpectatorGui extends AbstractGui implements class_3796 {
             int var6 = this.field_42841.getMainWindow().getScaledWidth() / 2;
             int var7 = this.method_9777();
             this.method_9776(-90);
-            int var8 = class_9299.method_42848((float)this.field_42841.getMainWindow().getScaledHeight() - 22.0F * var5);
+            int var8 = MathHelper.floor((float)this.field_42841.getMainWindow().getScaledHeight() - 22.0F * var5);
             class_5017 var9 = this.field_42844.method_15811();
             this.method_38561(var1, var5, var6, var8, var9);
             this.method_9776(var7);

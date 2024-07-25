@@ -318,7 +318,7 @@ public class class_5344 {
    }
 
    public static class_7581 method_24358(int var0) {
-      return field_27245[class_9299.method_42829(33 - var0 + 1, 0, field_27245.length - 1)];
+      return field_27245[MathHelper.clamp(33 - var0 + 1, 0, field_27245.length - 1)];
    }
 
    public boolean method_24352() {

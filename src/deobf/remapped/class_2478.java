@@ -44,7 +44,7 @@ public class class_2478 extends class_3599 {
                .method_7509(new class_9552(this.field_12367.field_41768, this.field_12367, var3, this.field_12367.method_27914().method_1029()));
             this.field_12367
                .method_37155(
-                  class_463.field_2890,
+                  SoundEvents.field_2890,
                   2.0F,
                   (class_6092.method_27910(this.field_12367).nextFloat() - class_6092.method_27922(this.field_12367).nextFloat()) * 0.2F + 1.0F
                );

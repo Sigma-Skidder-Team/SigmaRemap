@@ -29,13 +29,13 @@ public class class_8286 {
 
    public boolean method_38241(Entity var1) {
       if (this != field_42476) {
-         return !(var1 instanceof class_5834) ? false : this.method_38239(((class_5834)var1).method_26491());
+         return !(var1 instanceof LivingEntity) ? false : this.method_38239(((LivingEntity)var1).method_26491());
       } else {
          return true;
       }
    }
 
-   public boolean method_38240(class_5834 var1) {
+   public boolean method_38240(LivingEntity var1) {
       return this != field_42476 ? this.method_38239(var1.method_26491()) : true;
    }
 

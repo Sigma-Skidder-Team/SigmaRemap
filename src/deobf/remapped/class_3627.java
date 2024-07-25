@@ -12,18 +12,18 @@ public class class_3627 extends class_4285<class_9253> {
    public boolean method_16901(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_9253 var5) {
       float var8 = var3.nextFloat() * (float) Math.PI;
       float var9 = (float)var5.field_47236 / 8.0F;
-      int var10 = class_9299.method_42816(((float)var5.field_47236 / 16.0F * 2.0F + 1.0F) / 2.0F);
-      double var11 = (double)var4.method_12173() + Math.sin((double)var8) * (double)var9;
-      double var13 = (double)var4.method_12173() - Math.sin((double)var8) * (double)var9;
+      int var10 = MathHelper.ceil(((float)var5.field_47236 / 16.0F * 2.0F + 1.0F) / 2.0F);
+      double var11 = (double)var4.getX() + Math.sin((double)var8) * (double)var9;
+      double var13 = (double)var4.getX() - Math.sin((double)var8) * (double)var9;
       double var15 = (double)var4.method_12185() + Math.cos((double)var8) * (double)var9;
       double var17 = (double)var4.method_12185() - Math.cos((double)var8) * (double)var9;
       byte var19 = 2;
       double var20 = (double)(var4.method_12165() + var3.nextInt(3) - 2);
       double var22 = (double)(var4.method_12165() + var3.nextInt(3) - 2);
-      int var24 = var4.method_12173() - class_9299.method_42816(var9) - var10;
+      int var24 = var4.getX() - MathHelper.ceil(var9) - var10;
       int var25 = var4.method_12165() - 2 - var10;
-      int var26 = var4.method_12185() - class_9299.method_42816(var9) - var10;
-      int var27 = 2 * (class_9299.method_42816(var9) + var10);
+      int var26 = var4.method_12185() - MathHelper.ceil(var9) - var10;
+      int var27 = 2 * (MathHelper.ceil(var9) + var10);
       int var28 = 2 * (2 + var10);
 
       for (int var29 = var24; var29 <= var24 + var27; var29++) {
@@ -61,11 +61,11 @@ public class class_3627 extends class_4285<class_9253> {
 
       for (int var28 = 0; var28 < var26; var28++) {
          float var29 = (float)var28 / (float)var26;
-         double var30 = class_9299.method_42794((double)var29, var4, var6);
-         double var32 = class_9299.method_42794((double)var29, var12, var14);
-         double var34 = class_9299.method_42794((double)var29, var8, var10);
+         double var30 = MathHelper.lerp((double)var29, var4, var6);
+         double var32 = MathHelper.lerp((double)var29, var12, var14);
+         double var34 = MathHelper.lerp((double)var29, var8, var10);
          double var36 = var2.nextDouble() * (double)var26 / 16.0;
-         double var38 = ((double)(class_9299.method_42818((float) Math.PI * var29) + 1.0F) * var36 + 1.0) / 2.0;
+         double var38 = ((double)(MathHelper.sin((float) Math.PI * var29) + 1.0F) * var36 + 1.0) / 2.0;
          var27[var28 * 4 + 0] = var30;
          var27[var28 * 4 + 1] = var32;
          var27[var28 * 4 + 2] = var34;
@@ -98,12 +98,12 @@ public class class_3627 extends class_4285<class_9253> {
             double var42 = var27[var65 * 4 + 0];
             double var44 = var27[var65 * 4 + 1];
             double var46 = var27[var65 * 4 + 2];
-            int var48 = Math.max(class_9299.method_42847(var42 - var40), var16);
-            int var49 = Math.max(class_9299.method_42847(var44 - var40), var17);
-            int var50 = Math.max(class_9299.method_42847(var46 - var40), var18);
-            int var51 = Math.max(class_9299.method_42847(var42 + var40), var48);
-            int var52 = Math.max(class_9299.method_42847(var44 + var40), var49);
-            int var53 = Math.max(class_9299.method_42847(var46 + var40), var50);
+            int var48 = Math.max(MathHelper.floor(var42 - var40), var16);
+            int var49 = Math.max(MathHelper.floor(var44 - var40), var17);
+            int var50 = Math.max(MathHelper.floor(var46 - var40), var18);
+            int var51 = Math.max(MathHelper.floor(var42 + var40), var48);
+            int var52 = Math.max(MathHelper.floor(var44 + var40), var49);
+            int var53 = Math.max(MathHelper.floor(var46 + var40), var50);
 
             for (int var54 = var48; var54 <= var51; var54++) {
                double var55 = ((double)var54 + 0.5 - var42) / var40;

@@ -259,7 +259,7 @@ public class HypixelBlockFly extends Module {
                break;
             case "Cubecraft":
                double var6 = 0.2;
-               float var8 = this.method_28399(class_9299.method_42810(client.thePlayer.rotationYaw));
+               float var8 = this.method_28399(MathHelper.wrapDegrees(client.thePlayer.rotationYaw));
                if (client.gameOptions.keyJump.isKeyDown()) {
                   client.theTimer.timerSpeed = 1.0F;
                } else if (client.thePlayer.onGround) {
@@ -364,7 +364,7 @@ public class HypixelBlockFly extends Module {
    }
 
    public static class_1343 method_28403(BlockPos var0, Direction var1) {
-      double var4 = (double)var0.method_12173() + 0.5;
+      double var4 = (double)var0.getX() + 0.5;
       double var6 = (double)var0.method_12165() + 0.5;
       double var8 = (double)var0.method_12185() + 0.5;
       var4 += (double)var1.method_1041() / 2.0;

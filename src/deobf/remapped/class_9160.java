@@ -28,8 +28,8 @@ public class class_9160 extends class_8715 {
       this.field_49479 = this.field_49465;
       if (this.field_49475++ < this.field_49476) {
          float var3 = 0.6F;
-         this.field_49481 = this.field_49481 + (double)(0.6F * class_9299.method_42840(this.field_46870));
-         this.field_49471 = this.field_49471 + (double)(0.6F * class_9299.method_42818(this.field_46870));
+         this.field_49481 = this.field_49481 + (double)(0.6F * MathHelper.cos(this.field_46870));
+         this.field_49471 = this.field_49471 + (double)(0.6F * MathHelper.sin(this.field_46870));
          this.field_49481 *= 0.07;
          this.field_49471 *= 0.07;
          this.method_44962(this.field_49481, this.field_49486, this.field_49471);

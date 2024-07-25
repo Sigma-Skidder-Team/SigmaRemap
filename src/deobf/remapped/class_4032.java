@@ -22,7 +22,7 @@ public class class_4032 extends class_6414 {
                double var14 = var7.method_1034() != 0 ? 0.5 + (double)var7.method_1034() * 0.6 : var4.nextDouble();
                var2.method_43361(
                   class_3090.field_15369,
-                  (double)var3.method_12173() + var10,
+                  (double)var3.getX() + var10,
                   (double)var3.method_12165() + var12,
                   (double)var3.method_12185() + var14,
                   0.0,

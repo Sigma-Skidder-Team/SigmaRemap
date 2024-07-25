@@ -24,7 +24,7 @@ public class class_9882 extends class_8377<class_9882> {
    );
    public final String field_50129 = this.method_38611("level-name", "world");
    public final int field_50092 = this.method_38600("server-port", 25565);
-   public final int field_50108 = this.method_38603("max-build-height", var0 -> class_9299.method_42829((var0 + 8) / 16 * 16, 64, 256), 256);
+   public final int field_50108 = this.method_38603("max-build-height", var0 -> MathHelper.clamp((var0 + 8) / 16 * 16, 64, 256), 256);
    public final Boolean field_50107 = this.method_38599("announce-player-achievements");
    public final boolean field_50090 = this.method_38605("enable-query", false);
    public final int field_50114 = this.method_38600("query.port", 25565);
@@ -77,11 +77,11 @@ public class class_9882 extends class_8377<class_9882> {
       this.field_50084 = this.method_38600("network-compression-threshold", 256);
       this.field_50093 = this.method_38605("broadcast-rcon-to-ops", true);
       this.field_50130 = this.method_38605("broadcast-console-to-ops", true);
-      this.field_50106 = this.method_38603("max-world-size", var0 -> class_9299.method_42829(var0, 1, 29999984), 29999984);
+      this.field_50106 = this.method_38603("max-world-size", var0 -> MathHelper.clamp(var0, 1, 29999984), 29999984);
       this.field_50105 = this.method_38605("sync-chunk-writes", true);
       this.field_50128 = this.method_38605("enable-jmx-monitoring", false);
       this.field_50087 = this.method_38605("enable-status", true);
-      this.field_50110 = this.method_38603("entity-broadcast-range-percentage", var0 -> class_9299.method_42829(var0, 10, 1000), 100);
+      this.field_50110 = this.method_38603("entity-broadcast-range-percentage", var0 -> MathHelper.clamp(var0, 10, 1000), 100);
       this.field_50104 = this.method_38611("text-filtering-config", "");
       this.field_50113 = this.method_38608("player-idle-timeout", 0);
       this.field_50098 = this.method_38606("white-list", false);

@@ -11,7 +11,7 @@ public class class_1060 extends class_7067<class_5614> {
    }
 
    public int method_4657(class_5614 var1, BlockPos var2) {
-      return class_9299.method_42829(super.method_32546(var1, var2) + 7, 0, 15);
+      return MathHelper.clamp(super.method_32546(var1, var2) + 7, 0, 15);
    }
 
    public void method_4659(class_5614 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
@@ -30,9 +30,9 @@ public class class_1060 extends class_7067<class_5614> {
          var18 = class_9300.method_42880(var18);
       }
 
-      int var19 = (int)((class_9299.method_42818(var18 + 0.0F) + 1.0F) * 0.5F * 255.0F);
+      int var19 = (int)((MathHelper.sin(var18 + 0.0F) + 1.0F) * 0.5F * 255.0F);
       short var20 = 255;
-      int var21 = (int)((class_9299.method_42818(var18 + (float) (Math.PI * 4.0 / 3.0)) + 1.0F) * 0.1F * 255.0F);
+      int var21 = (int)((MathHelper.sin(var18 + (float) (Math.PI * 4.0 / 3.0)) + 1.0F) * 0.1F * 255.0F);
       var4.method_36065(0.0, 0.1F, 0.0);
       var4.method_36060(this.field_36493.method_28121());
       var4.method_36060(class_2426.field_12074.method_11074(180.0F));

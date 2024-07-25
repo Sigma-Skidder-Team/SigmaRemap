@@ -259,9 +259,9 @@ public class class_9155 implements class_8773 {
       double var5 = var1.field_7336 - var4.field_7336;
       double var7 = var1.field_7333 - var4.field_7333;
       double var9 = var1.field_7334 - var4.field_7334;
-      double var11 = (double)class_9299.method_42842(var5 * var5 + var9 * var9);
-      float var13 = class_9299.method_42810((float)(-(class_9299.method_42821(var7, var11) * 180.0F / (float)Math.PI)));
-      float var14 = class_9299.method_42810((float)(class_9299.method_42821(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
+      double var11 = (double) MathHelper.sqrt(var5 * var5 + var9 * var9);
+      float var13 = MathHelper.wrapDegrees((float)(-(MathHelper.method_42821(var7, var11) * 180.0F / (float)Math.PI)));
+      float var14 = MathHelper.wrapDegrees((float)(MathHelper.method_42821(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
       return this.method_42183(new class_4895(var13, var14));
    }
 
@@ -332,7 +332,7 @@ public class class_9155 implements class_8773 {
    private void method_42190(ITextComponent var1) {
       IFormattableTextComponent var4 = new TranslationTextComponent("chat.type.admin", this.method_42189(), var1)
          .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC});
-      if (this.field_46856.method_1683().method_1285(class_291.field_1057)) {
+      if (this.field_46856.method_1683().getBoolean(GameRules.field_1057)) {
          for (class_9359 var6 : this.field_46856.method_1600().method_39951()) {
             if (var6 != this.field_46849 && this.field_46856.method_1600().method_39962(var6.method_3247())) {
                var6.method_26286(var4, Util.NIL_UUID);
@@ -340,7 +340,7 @@ public class class_9155 implements class_8773 {
          }
       }
 
-      if (this.field_46849 != this.field_46856 && this.field_46856.method_1683().method_1285(class_291.field_1056)) {
+      if (this.field_46849 != this.field_46856 && this.field_46856.method_1683().getBoolean(GameRules.field_1056)) {
          this.field_46856.method_26286(var4, Util.NIL_UUID);
       }
    }

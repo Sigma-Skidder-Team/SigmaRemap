@@ -46,7 +46,7 @@ public class class_1656 extends class_9513 {
          var4.method_37144(this.field_48435.getPosX(), this.field_48435.method_37309(), this.field_48435.getPosZ(), 0.0F, 0.0F);
          var3.method_7065(var4);
          this.field_48439.method_29587(this.field_48435, (byte)18);
-         if (this.field_48439.method_29537().method_1285(class_291.field_1033)) {
+         if (this.field_48439.getGameRules().getBoolean(GameRules.field_1033)) {
             this.field_48439
                .method_7509(
                   new class_5614(

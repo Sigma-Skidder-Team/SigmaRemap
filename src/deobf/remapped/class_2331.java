@@ -33,7 +33,7 @@ public class class_2331 extends class_3599 {
       if (!this.field_11642
          && !this.field_11641.method_41209()
          && !this.field_11641.method_26920()
-         && this.field_11641.method_37241().method_18909(this.field_11640.method_37241())) {
+         && this.field_11641.getBoundingBox().method_18909(this.field_11640.getBoundingBox())) {
          this.field_11642 = this.field_11641.method_35416(this.field_11640);
       }
    }

@@ -79,7 +79,7 @@ public class class_4423 extends class_6414 {
          BlockPos var7 = var3.method_6100();
          class_2522 var8 = var2.method_28262(var7);
          if (!var8.method_8302() || !var8.method_8308(var2, var7, Direction.field_817)) {
-            double var9 = (double)var3.method_12173() + var4.nextDouble();
+            double var9 = (double)var3.getX() + var4.nextDouble();
             double var11 = (double)var3.method_12165() - 0.05;
             double var13 = (double)var3.method_12185() + var4.nextDouble();
             var2.method_43361(class_3090.field_15358, var9, var11, var13, 0.0, 0.0, 0.0);

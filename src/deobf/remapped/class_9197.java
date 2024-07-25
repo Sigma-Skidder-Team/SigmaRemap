@@ -13,8 +13,8 @@ public class class_9197 extends class_4171<class_496, class_1253<class_496>> {
          float var14 = -0.6F;
          float var15 = 1.4F;
          if (var4.method_2427()) {
-            var14 -= 0.2F * class_9299.method_42818(var8 * 0.6F) + 0.2F;
-            var15 -= 0.09F * class_9299.method_42818(var8 * 0.6F);
+            var14 -= 0.2F * MathHelper.sin(var8 * 0.6F) + 0.2F;
+            var15 -= 0.09F * MathHelper.sin(var8 * 0.6F);
          }
 
          var1.method_36063();

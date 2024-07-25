@@ -18,12 +18,12 @@ public class class_6826 {
       if (this.field_35185 != null) {
          if (!var3.method_163().method_38928().equals(this.field_35185.method_16556()) && var3.method_164()) {
             this.field_35186.getSoundHandler().method_16336(this.field_35185);
-            this.field_35184 = class_9299.method_42824(this.field_35188, 0, var3.method_162() / 2);
+            this.field_35184 = MathHelper.nextInt(this.field_35188, 0, var3.method_162() / 2);
          }
 
          if (!this.field_35186.getSoundHandler().method_16331(this.field_35185)) {
             this.field_35185 = null;
-            this.field_35184 = Math.min(this.field_35184, class_9299.method_42824(this.field_35188, var3.method_162(), var3.method_160()));
+            this.field_35184 = Math.min(this.field_35184, MathHelper.nextInt(this.field_35188, var3.method_162(), var3.method_160()));
          }
       }
 

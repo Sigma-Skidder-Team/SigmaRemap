@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_2681 extends Screen {
    private final class_6730 field_13149;
    private long field_13150 = -1L;
-   private static final Object2IntMap<class_7335> field_13148 = Util.<Object2IntMap<class_7335>>method_44659(new Object2IntOpenHashMap(), var0 -> {
+   private static final Object2IntMap<class_7335> field_13148 = Util.<Object2IntMap<class_7335>>make(new Object2IntOpenHashMap(), var0 -> {
       var0.defaultReturnValue(0);
       var0.put(class_7335.field_37504, 5526612);
       var0.put(class_7335.field_37491, 10066329);
@@ -42,7 +42,7 @@ public class class_2681 extends Screen {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
-      String var7 = class_9299.method_42829(this.field_13149.method_30869(), 0, 100) + "%";
+      String var7 = MathHelper.clamp(this.field_13149.method_30869(), 0, 100) + "%";
       long var8 = Util.getMeasuringTimeMs();
       if (var8 - this.field_13150 > 2000L) {
          this.field_13150 = var8;

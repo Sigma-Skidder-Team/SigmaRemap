@@ -21,7 +21,7 @@ public interface class_1906 {
 
    boolean method_8659();
 
-   class_291 method_8653();
+   GameRules method_8653();
 
    class_423 method_8661();
 

@@ -11,7 +11,7 @@ public class class_5032<T> {
    public static final class_5032<class_2034> field_26029 = method_23202("player", Comparator.<class_2034>comparingLong(class_2034::method_9539));
    public static final class_5032<class_2034> field_26025 = method_23202("forced", Comparator.<class_2034>comparingLong(class_2034::method_9539));
    public static final class_5032<class_2034> field_26026 = method_23202("light", Comparator.<class_2034>comparingLong(class_2034::method_9539));
-   public static final class_5032<BlockPos> field_26022 = method_23203("portal", class_2700::compareTo, 300);
+   public static final class_5032<BlockPos> field_26022 = method_23203("portal", Vector3i::compareTo, 300);
    public static final class_5032<Integer> field_26020 = method_23203("post_teleport", Integer::compareTo, 5);
    public static final class_5032<class_2034> field_26024 = method_23203("unknown", Comparator.<class_2034>comparingLong(class_2034::method_9539), 1);
 

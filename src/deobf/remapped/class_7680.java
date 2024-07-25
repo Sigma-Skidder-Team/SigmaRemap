@@ -41,13 +41,13 @@ public class class_7680 extends Screen {
 
    public void method_34809(class_8668 var1) {
       this.field_39029 = var1;
-      this.field_39035 = class_9299.method_42829(this.field_39035, 0, var1.method_39737());
+      this.field_39035 = MathHelper.clamp(this.field_39035, 0, var1.method_39737());
       this.method_34803();
       this.field_39031 = -1;
    }
 
    public boolean method_34804(int var1) {
-      int var4 = class_9299.method_42829(var1, 0, this.field_39029.method_39737() - 1);
+      int var4 = MathHelper.clamp(var1, 0, this.field_39029.method_39737() - 1);
       if (var4 == this.field_39035) {
          return false;
       } else {
@@ -196,8 +196,8 @@ public class class_7680 extends Screen {
    @Nullable
    public Style method_34812(double var1, double var3) {
       if (!this.field_39033.isEmpty()) {
-         int var7 = class_9299.method_42847(var1 - (double)((this.field_941 - 192) / 2) - 36.0);
-         int var8 = class_9299.method_42847(var3 - 2.0 - 30.0);
+         int var7 = MathHelper.floor(var1 - (double)((this.field_941 - 192) / 2) - 36.0);
+         int var8 = MathHelper.floor(var3 - 2.0 - 30.0);
          if (var7 >= 0 && var8 >= 0) {
             int var9 = Math.min(14, this.field_39033.size());
             if (var7 <= 114 && var8 < 9 * var9 + var9) {

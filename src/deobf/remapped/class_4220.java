@@ -51,7 +51,7 @@ public class class_4220 extends class_3077 {
          class_2522 var6 = field_20481.get(var4.method_28262(var5).method_8360());
          if (var6 != null) {
             PlayerEntity var7 = var1.method_21868();
-            var4.method_43359(var7, var5, class_463.field_2160, class_562.field_3322, 1.0F, 1.0F);
+            var4.method_43359(var7, var5, SoundEvents.field_2160, class_562.field_3322, 1.0F, 1.0F);
             if (!var4.field_33055) {
                var4.method_7513(var5, var6, 11);
                if (var7 != null) {

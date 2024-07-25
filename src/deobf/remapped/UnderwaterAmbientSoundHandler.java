@@ -20,15 +20,15 @@ public class UnderwaterAmbientSoundHandler implements IAmbientSoundHandler {
             if (!(var3 < 0.001F)) {
                if (var3 < 0.01F) {
                   this.field_17423 = 0;
-                  this.field_17422.play(new class_6120(this.field_17425, class_463.field_2710));
+                  this.field_17422.play(new class_6120(this.field_17425, SoundEvents.field_2710));
                }
             } else {
                this.field_17423 = 0;
-               this.field_17422.play(new class_6120(this.field_17425, class_463.field_2184));
+               this.field_17422.play(new class_6120(this.field_17425, SoundEvents.field_2184));
             }
          } else {
             this.field_17423 = 0;
-            this.field_17422.play(new class_6120(this.field_17425, class_463.field_2736));
+            this.field_17422.play(new class_6120(this.field_17425, SoundEvents.field_2736));
          }
       }
    }

@@ -160,7 +160,7 @@ public abstract class class_2353 {
 
    @Deprecated
    public long method_10759(class_2522 var1, BlockPos var2) {
-      return class_9299.method_42802(var2);
+      return MathHelper.getPositionRandom(var2);
    }
 
    @Deprecated

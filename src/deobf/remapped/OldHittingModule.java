@@ -163,8 +163,8 @@ public class OldHittingModule extends Module {
       var3.method_36065(0.0, (double)(var1 * -0.6F), 0.0);
       this.method_9358(77.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-      float var6 = class_9299.method_42818(var2 * var2 * (float) Math.PI);
-      float var7 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
+      float var7 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       this.method_9358(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
       this.method_9358(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -178,8 +178,8 @@ public class OldHittingModule extends Module {
       var3.method_36065(0.0, (double)(var1 * -0.6F), 0.0);
       this.method_9358(100.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(-50.0F, 0.0F, 0.0F, 1.0F, var3);
-      float var6 = class_9299.method_42818(var2 * (float) Math.PI);
-      float var7 = class_9299.method_42818(var2 * (float) Math.PI);
+      float var6 = MathHelper.sin(var2 * (float) Math.PI);
+      float var7 = MathHelper.sin(var2 * (float) Math.PI);
       this.method_9358(var6 * -10.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(var7 * -30.0F, 0.0F, 0.0F, 1.0F, var3);
       this.method_9358(var7 * 109.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -193,8 +193,8 @@ public class OldHittingModule extends Module {
       var3.method_36065(0.0, (double)(var1 * -0.6F), 0.0);
       this.method_9358(77.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-      float var6 = class_9299.method_42818(var2 * var2 * (float) Math.PI);
-      float var7 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
+      float var7 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       this.method_9358(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
       this.method_9358(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -208,7 +208,7 @@ public class OldHittingModule extends Module {
       var3.method_36065(0.56F, -0.52F, -0.72F);
       var3.method_36065(0.56F, -0.22F, -0.71999997F);
       this.method_9358(45.0F, 0.0F, 1.0F, 0.0F, var3);
-      float var6 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       this.method_9358(0.0F, 0.0F, 0.0F, 1.0F, var3);
       this.method_9358(var6 * -9.0F, 1.0F, 0.0F, 0.0F, var3);
       this.method_9358(-9.0F, 0.0F, 0.0F, 1.0F, var3);
@@ -222,7 +222,7 @@ public class OldHittingModule extends Module {
       var3.method_36065(0.0, (double)(var1 * -0.6F), 0.0);
       this.method_9358(77.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-      float var6 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       this.method_9358(-80.0F, 1.0F, 0.0F, 0.0F, var3);
       this.method_9358(-var6 * 10.0F, 1.0F, -2.0F, 3.0F, var3);
       float var7 = 1.2F;
@@ -234,7 +234,7 @@ public class OldHittingModule extends Module {
       var3.method_36065(0.0, (double)(var1 * -0.6F), 0.0);
       this.method_9358(77.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-      float var6 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       this.method_9358(-80.0F, 1.0F, 0.0F, 0.0F, var3);
       this.method_9358(-var6 * 20.0F, 1.0F, 0.0F, 0.0F, var3);
       float var7 = 1.2F;
@@ -246,8 +246,8 @@ public class OldHittingModule extends Module {
       var3.method_36065(0.0, (double)(var1 * -0.6F), 0.0);
       this.method_9358(77.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-      float var6 = class_9299.method_42818(var2 * var2 * (float) Math.PI);
-      float var7 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
+      float var7 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       this.method_9358(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
       this.method_9358(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -261,7 +261,7 @@ public class OldHittingModule extends Module {
       var3.method_36065(0.0, (double)(var1 * -0.2F), 0.0);
       this.method_9358(77.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-      float var6 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       this.method_9358(-80.0F, 1.0F, 0.0F, 0.0F, var3);
       float var7 = 1.2F - var6 * 0.3F;
       var3.method_36062(var7, var7, var7);
@@ -269,7 +269,7 @@ public class OldHittingModule extends Module {
 
    private void method_9356(float var1, float var2, class_7966 var3) {
       var3.method_36065(0.56, -0.52, -0.72);
-      float var6 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       this.method_9358(77.0F, 0.0F, 1.0F, 0.0F, var3);
       this.method_9358(-10.0F, 0.0F, 0.0F, 1.0F, var3);
       this.method_9358(-80.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -278,7 +278,7 @@ public class OldHittingModule extends Module {
    }
 
    private void method_9354(float var1, float var2, class_7966 var3) {
-      float var6 = class_9299.method_42818(class_9299.method_42843(var2) * (float) Math.PI);
+      float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
       var3.method_36065(0.48F, -0.55F, -0.71999997F);
       var3.method_36065(0.0, (double)(var6 * -0.2F), 0.0);
       this.method_9358(77.0F, 0.0F, 1.0F, 0.0F, var3);

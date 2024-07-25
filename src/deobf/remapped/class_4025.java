@@ -10,7 +10,7 @@ public class class_4025 extends class_1710<class_9504> {
    }
 
    public Stream<BlockPos> method_18541(Random var1, class_9504 var2, BlockPos var3) {
-      int var6 = var1.nextInt(8) + 4 + var3.method_12173();
+      int var6 = var1.nextInt(8) + 4 + var3.getX();
       int var7 = var1.nextInt(8) + 4 + var3.method_12185();
       return Stream.<BlockPos>of(new BlockPos(var6, var3.method_12165(), var7));
    }

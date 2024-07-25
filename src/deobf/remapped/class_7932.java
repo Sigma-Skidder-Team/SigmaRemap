@@ -48,7 +48,7 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
       this.field_40567 = this.field_40570;
       PlayerEntity var3 = this.field_18364
          .method_25857(
-            (double)this.field_18358.method_12173() + 0.5,
+            (double)this.field_18358.getX() + 0.5,
             (double)this.field_18358.method_12165() + 0.5,
             (double)this.field_18358.method_12185() + 0.5,
             3.0,
@@ -58,9 +58,9 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
          this.field_40564 += 0.02F;
          this.field_40572 -= 0.1F;
       } else {
-         double var4 = var3.getPosX() - ((double)this.field_18358.method_12173() + 0.5);
+         double var4 = var3.getPosX() - ((double)this.field_18358.getX() + 0.5);
          double var6 = var3.getPosZ() - ((double)this.field_18358.method_12185() + 0.5);
-         this.field_40564 = (float)class_9299.method_42821(var6, var4);
+         this.field_40564 = (float) MathHelper.method_42821(var6, var4);
          this.field_40572 += 0.1F;
          if (this.field_40572 < 0.5F || field_40566.nextInt(40) == 0) {
             float var8 = this.field_40565;
@@ -101,12 +101,12 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
       }
 
       this.field_40570 += var9 * 0.4F;
-      this.field_40572 = class_9299.method_42828(this.field_40572, 0.0F, 1.0F);
+      this.field_40572 = MathHelper.clamp(this.field_40572, 0.0F, 1.0F);
       this.field_40571++;
       this.field_40574 = this.field_40575;
       float var10 = (this.field_40565 - this.field_40575) * 0.4F;
       float var11 = 0.2F;
-      var10 = class_9299.method_42828(var10, -0.2F, 0.2F);
+      var10 = MathHelper.clamp(var10, -0.2F, 0.2F);
       this.field_40568 = this.field_40568 + (var10 - this.field_40568) * 0.9F;
       this.field_40575 = this.field_40575 + this.field_40568;
    }

@@ -7,9 +7,9 @@ public class class_7018<T extends MobEntity> extends class_3599 {
    private final T field_35971;
    private final ItemStack field_35970;
    private final Predicate<? super T> field_35969;
-   private final class_8461 field_35972;
+   private final SoundEvent field_35972;
 
-   public class_7018(T var1, ItemStack var2, class_8461 var3, Predicate<? super T> var4) {
+   public class_7018(T var1, ItemStack var2, SoundEvent var3, Predicate<? super T> var4) {
       this.field_35971 = (T)var1;
       this.field_35970 = var2;
       this.field_35972 = var3;

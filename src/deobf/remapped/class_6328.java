@@ -59,7 +59,7 @@ public class class_6328 {
                      var7.getPosX(),
                      var7.method_37309(),
                      var7.getPosZ(),
-                     class_463.field_2732,
+                     SoundEvents.field_2732,
                      class_562.field_3335,
                      0.2F,
                      ((var7.method_26594().nextFloat() - var7.method_26594().nextFloat()) * 0.7F + 1.0F) * 2.0F

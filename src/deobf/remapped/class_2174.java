@@ -477,9 +477,9 @@ public class class_2174 {
             var14 = 1.0F;
             var15 = 1.0F;
          } else {
-            var13 = class_9299.method_42828(var2, 0.0F, 1.0F);
-            var14 = class_9299.method_42828(var3, 0.0F, 1.0F);
-            var15 = class_9299.method_42828(var4, 0.0F, 1.0F);
+            var13 = MathHelper.clamp(var2, 0.0F, 1.0F);
+            var14 = MathHelper.clamp(var3, 0.0F, 1.0F);
+            var15 = MathHelper.clamp(var4, 0.0F, 1.0F);
          }
 
          var1.method_35757(var0, var12, var13, var14, var15, var6, var7);

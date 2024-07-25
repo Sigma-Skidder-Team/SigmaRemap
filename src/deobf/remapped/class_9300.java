@@ -658,7 +658,7 @@ public class class_9300 {
       int var7 = 0;
       int var8 = 0;
       int var9 = 0;
-      int var10 = var2.method_12173();
+      int var10 = var2.getX();
       int var11 = var2.method_12165();
       int var12 = var2.method_12185();
       class_523 var13 = var4;
@@ -778,7 +778,7 @@ public class class_9300 {
 
    public static int method_42918(float var0) {
       if (field_47477 != null) {
-         int var3 = (int)Math.round((double)((class_9299.method_42818(var0) + 1.0F) * (float)(field_47477.method_44167() - 1)) / 2.0);
+         int var3 = (int)Math.round((double)((MathHelper.sin(var0) + 1.0F) * (float)(field_47477.method_44167() - 1)) / 2.0);
          return field_47477.method_44168(var3);
       } else {
          return -1;

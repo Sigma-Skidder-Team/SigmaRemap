@@ -18,40 +18,40 @@ public class class_107 extends class_7819 implements class_674 {
    private static final Set<class_2451> field_273 = Sets.newHashSet(
       new class_2451[]{class_4897.field_24621, class_4897.field_24435, class_4897.field_24480, class_4897.field_24883}
    );
-   private static final Map<EntityType<?>, class_8461> field_265 = Util.<Map<EntityType<?>, class_8461>>method_44659(Maps.newHashMap(), var0 -> {
-      var0.put(EntityType.field_34301, class_463.field_1989);
-      var0.put(EntityType.field_34272, class_463.field_2315);
-      var0.put(EntityType.field_34210, class_463.field_2407);
-      var0.put(EntityType.field_34211, class_463.field_2230);
-      var0.put(EntityType.field_34324, class_463.field_2130);
-      var0.put(EntityType.field_34310, class_463.field_1929);
-      var0.put(EntityType.field_34264, class_463.field_2349);
-      var0.put(EntityType.field_34296, class_463.field_2468);
-      var0.put(EntityType.field_34281, class_463.field_2116);
-      var0.put(EntityType.field_34307, class_463.field_2812);
-      var0.put(EntityType.field_34306, class_463.field_2123);
-      var0.put(EntityType.field_34266, class_463.field_2256);
-      var0.put(EntityType.field_34270, class_463.field_2540);
-      var0.put(EntityType.field_34295, class_463.field_2799);
-      var0.put(EntityType.field_34246, class_463.field_1959);
-      var0.put(EntityType.field_34240, class_463.field_2774);
-      var0.put(EntityType.field_34257, class_463.field_2387);
-      var0.put(EntityType.field_34265, class_463.field_2516);
-      var0.put(EntityType.field_34318, class_463.field_2618);
-      var0.put(EntityType.field_34231, class_463.field_1946);
-      var0.put(EntityType.field_34314, class_463.field_2866);
-      var0.put(EntityType.field_34241, class_463.field_2649);
-      var0.put(EntityType.field_34222, class_463.field_2260);
-      var0.put(EntityType.field_34223, class_463.field_2315);
-      var0.put(EntityType.field_34322, class_463.field_2616);
-      var0.put(EntityType.field_34277, class_463.field_2746);
-      var0.put(EntityType.field_34255, class_463.field_2007);
-      var0.put(EntityType.field_34220, class_463.field_2760);
-      var0.put(EntityType.field_34212, class_463.field_2722);
-      var0.put(EntityType.field_34317, class_463.field_2373);
-      var0.put(EntityType.field_34244, class_463.field_2352);
-      var0.put(EntityType.field_34297, class_463.field_2860);
-      var0.put(EntityType.field_34227, class_463.field_2002);
+   private static final Map<EntityType<?>, SoundEvent> field_265 = Util.<Map<EntityType<?>, SoundEvent>>make(Maps.newHashMap(), var0 -> {
+      var0.put(EntityType.field_34301, SoundEvents.field_1989);
+      var0.put(EntityType.field_34272, SoundEvents.field_2315);
+      var0.put(EntityType.field_34210, SoundEvents.field_2407);
+      var0.put(EntityType.field_34211, SoundEvents.field_2230);
+      var0.put(EntityType.field_34324, SoundEvents.field_2130);
+      var0.put(EntityType.field_34310, SoundEvents.field_1929);
+      var0.put(EntityType.field_34264, SoundEvents.field_2349);
+      var0.put(EntityType.field_34296, SoundEvents.field_2468);
+      var0.put(EntityType.field_34281, SoundEvents.field_2116);
+      var0.put(EntityType.field_34307, SoundEvents.field_2812);
+      var0.put(EntityType.field_34306, SoundEvents.field_2123);
+      var0.put(EntityType.field_34266, SoundEvents.field_2256);
+      var0.put(EntityType.field_34270, SoundEvents.field_2540);
+      var0.put(EntityType.field_34295, SoundEvents.field_2799);
+      var0.put(EntityType.field_34246, SoundEvents.field_1959);
+      var0.put(EntityType.field_34240, SoundEvents.field_2774);
+      var0.put(EntityType.field_34257, SoundEvents.field_2387);
+      var0.put(EntityType.field_34265, SoundEvents.field_2516);
+      var0.put(EntityType.field_34318, SoundEvents.field_2618);
+      var0.put(EntityType.field_34231, SoundEvents.field_1946);
+      var0.put(EntityType.field_34314, SoundEvents.field_2866);
+      var0.put(EntityType.field_34241, SoundEvents.field_2649);
+      var0.put(EntityType.field_34222, SoundEvents.field_2260);
+      var0.put(EntityType.field_34223, SoundEvents.field_2315);
+      var0.put(EntityType.field_34322, SoundEvents.field_2616);
+      var0.put(EntityType.field_34277, SoundEvents.field_2746);
+      var0.put(EntityType.field_34255, SoundEvents.field_2007);
+      var0.put(EntityType.field_34220, SoundEvents.field_2760);
+      var0.put(EntityType.field_34212, SoundEvents.field_2722);
+      var0.put(EntityType.field_34317, SoundEvents.field_2373);
+      var0.put(EntityType.field_34244, SoundEvents.field_2352);
+      var0.put(EntityType.field_34297, SoundEvents.field_2860);
+      var0.put(EntityType.field_34227, SoundEvents.field_2002);
    });
    public float field_262;
    public float field_270;
@@ -105,7 +105,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public class_1249 createNavigator(World var1) {
+   public PathNavigator createNavigator(World var1) {
       class_5133 var4 = new class_5133(this, var1);
       var4.method_23534(false);
       var4.method_5611(true);
@@ -119,7 +119,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public void method_26606() {
+   public void livingTick() {
       if (this.field_266 == null
          || !this.field_266.method_12170(this.method_37245(), 3.46)
          || !this.world.method_28262(this.field_266).method_8350(class_4783.field_23312)) {
@@ -131,7 +131,7 @@ public class class_107 extends class_7819 implements class_674 {
          method_325(this.world, this);
       }
 
-      super.method_26606();
+      super.livingTick();
       this.method_328();
    }
 
@@ -149,7 +149,7 @@ public class class_107 extends class_7819 implements class_674 {
       this.field_269 = this.field_262;
       this.field_263 = this.field_270;
       this.field_270 = (float)((double)this.field_270 + (double)(!this.onGround && !this.isPassenger() ? 4 : -1) * 0.3);
-      this.field_270 = class_9299.method_42828(this.field_270, 0.0F, 1.0F);
+      this.field_270 = MathHelper.clamp(this.field_270, 0.0F, 1.0F);
       if (!this.onGround && this.field_272 < 1.0F) {
          this.field_272 = 1.0F;
       }
@@ -165,11 +165,11 @@ public class class_107 extends class_7819 implements class_674 {
 
    public static boolean method_325(World var0, Entity var1) {
       if (var1.isAlive() && !var1.method_37378() && var0.field_33033.nextInt(2) == 0) {
-         List var4 = var0.<MobEntity>method_25869(MobEntity.class, var1.method_37241().method_18898(20.0), field_271);
+         List var4 = var0.<MobEntity>method_25869(MobEntity.class, var1.getBoundingBox().grow(20.0), field_271);
          if (!var4.isEmpty()) {
             MobEntity var5 = (MobEntity)var4.get(var0.field_33033.nextInt(var4.size()));
             if (!var5.method_37378()) {
-               class_8461 var6 = method_326(var5.getType());
+               SoundEvent var6 = method_326(var5.getType());
                var0.method_29528(
                   (PlayerEntity)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), var6, var1.method_37197(), 0.7F, method_324(var0.field_33033)
                );
@@ -198,7 +198,7 @@ public class class_107 extends class_7819 implements class_674 {
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),
-                  class_463.field_2094,
+                  SoundEvents.field_2094,
                   this.method_37197(),
                   1.0F,
                   1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F
@@ -282,41 +282,41 @@ public class class_107 extends class_7819 implements class_674 {
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       return method_322(this.world, this.world.field_33033);
    }
 
-   public static class_8461 method_322(World var0, Random var1) {
+   public static SoundEvent method_322(World var0, Random var1) {
       if (var0.method_43370() != class_423.field_1790 && var1.nextInt(1000) == 0) {
          ArrayList var4 = Lists.newArrayList(field_265.keySet());
          return method_326((EntityType<?>)var4.get(var1.nextInt(var4.size())));
       } else {
-         return class_463.field_2583;
+         return SoundEvents.field_2583;
       }
    }
 
-   private static class_8461 method_326(EntityType<?> var0) {
-      return field_265.getOrDefault(var0, class_463.field_2583);
+   private static SoundEvent method_326(EntityType<?> var0) {
+      return field_265.getOrDefault(var0, SoundEvents.field_2583);
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2018;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2018;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2631;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2631;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2696, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2696, 0.15F, 1.0F);
    }
 
    @Override
    public float method_37147(float var1) {
-      this.method_37155(class_463.field_2305, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2305, 0.15F, 1.0F);
       return var1 + this.field_270 / 2.0F;
    }
 
@@ -362,7 +362,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    public int method_330() {
-      return class_9299.method_42829(this.field_41735.<Integer>method_36640(field_267), 0, 4);
+      return MathHelper.clamp(this.field_41735.<Integer>method_36640(field_267), 0, 4);
    }
 
    public void method_329(int var1) {

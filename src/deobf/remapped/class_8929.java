@@ -12,7 +12,7 @@ public enum class_8929 {
 
    private final int[] field_45772;
    private final class_6555 field_45765;
-   private static final class_8929[][] field_45774 = Util.<class_8929[][]>method_44659(new class_8929[values().length][values().length], var0 -> {
+   private static final class_8929[][] field_45774 = Util.<class_8929[][]>make(new class_8929[values().length][values().length], var0 -> {
       for (class_8929 var6 : values()) {
          for (class_8929 var10 : values()) {
             int[] var11 = new int[3];

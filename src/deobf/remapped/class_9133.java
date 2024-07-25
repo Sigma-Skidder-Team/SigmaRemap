@@ -16,8 +16,8 @@ public class class_9133 extends class_7067<class_1044> {
    public void method_42036(class_1044 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       var4.method_36063();
       var4.method_36062(-1.0F, -1.0F, 1.0F);
-      float var9 = class_9299.method_42833(var1.prevRotationYaw, var1.rotationYaw, var3);
-      float var10 = class_9299.method_42795(var3, var1.field_41762, var1.rotationPitch);
+      float var9 = MathHelper.method_42833(var1.prevRotationYaw, var1.rotationYaw, var3);
+      float var10 = MathHelper.method_42795(var3, var1.field_41762, var1.rotationPitch);
       class_7907 var11 = var5.method_11645(this.field_46721.method_45498(this.method_42035(var1)));
       this.field_46721.method_7085(0.0F, var9, var10);
       this.field_46721.method_45499(var4, var11, var6, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);

@@ -8,7 +8,7 @@ public class class_2666 extends class_603 {
    }
 
    @Override
-   public class_6749 method_2819(World var1, ItemStack var2, class_5834 var3) {
+   public class_6749 method_2819(World var1, ItemStack var2, LivingEntity var3) {
       return new class_7841(var1, var3);
    }
 }

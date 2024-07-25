@@ -262,7 +262,7 @@ public class class_2206 extends class_3232 {
 
    @Override
    public boolean method_14824(Entity var1) {
-      long var4 = class_2034.method_9540(class_9299.method_42847(var1.getPosX()) >> 4, class_9299.method_42847(var1.getPosZ()) >> 4);
+      long var4 = class_2034.method_9540(MathHelper.floor(var1.getPosX()) >> 4, MathHelper.floor(var1.getPosZ()) >> 4);
       return this.method_10208(var4, class_5344::method_24353);
    }
 
@@ -273,7 +273,7 @@ public class class_2206 extends class_3232 {
 
    @Override
    public boolean method_14815(BlockPos var1) {
-      long var4 = class_2034.method_9540(var1.method_12173() >> 4, var1.method_12185() >> 4);
+      long var4 = class_2034.method_9540(var1.getX() >> 4, var1.method_12185() >> 4);
       return this.method_10208(var4, class_5344::method_24350);
    }
 
@@ -317,10 +317,10 @@ public class class_2206 extends class_3232 {
       this.field_10940 = var3;
       class_1906 var7 = this.field_10944.method_43366();
       boolean var8 = this.field_10944.method_29581();
-      boolean var9 = this.field_10944.method_29537().method_1285(class_291.field_1028);
+      boolean var9 = this.field_10944.getGameRules().getBoolean(GameRules.field_1028);
       if (!var8) {
          this.field_10944.method_29599().startSection("pollingChunks");
-         int var10 = this.field_10944.method_29537().method_1295(class_291.field_1040);
+         int var10 = this.field_10944.getGameRules().method_1295(GameRules.field_1040);
          boolean var11 = var7.method_8658() % 400L == 0L;
          this.field_10944.method_29599().startSection("naturalSpawnCount");
          int var12 = this.field_10943.method_42677();
@@ -388,7 +388,7 @@ public class class_2206 extends class_3232 {
    }
 
    public void method_10195(BlockPos var1) {
-      int var4 = var1.method_12173() >> 4;
+      int var4 = var1.getX() >> 4;
       int var5 = var1.method_12185() >> 4;
       class_5344 var6 = this.method_10194(class_2034.method_9540(var4, var5));
       if (var6 != null) {

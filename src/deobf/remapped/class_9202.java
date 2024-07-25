@@ -233,9 +233,9 @@ public class class_9202 {
       BlockPos var15 = new BlockPos(var3, var5, var7);
       if (World.method_29593(var15)) {
          if (!(var1 instanceof class_9359)) {
-            float var16 = class_9299.method_42810(var10);
-            float var17 = class_9299.method_42810(var11);
-            var17 = class_9299.method_42828(var17, -90.0F, 90.0F);
+            float var16 = MathHelper.wrapDegrees(var10);
+            float var17 = MathHelper.wrapDegrees(var11);
+            var17 = MathHelper.clamp(var17, -90.0F, 90.0F);
             if (var2 != var1.world) {
                var1.method_37269();
                Entity var18 = var1;

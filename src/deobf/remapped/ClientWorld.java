@@ -27,7 +27,7 @@ public class ClientWorld extends World {
    private class_1097 field_570 = new class_1097();
    private final Map<String, class_2134> field_571 = Maps.newHashMap();
    private int field_573;
-   private final Object2ObjectArrayMap<class_6581, class_6530> field_569 = Util.<Object2ObjectArrayMap<class_6581, class_6530>>method_44659(
+   private final Object2ObjectArrayMap<class_6581, class_6530> field_569 = Util.<Object2ObjectArrayMap<class_6581, class_6530>>make(
       new Object2ObjectArrayMap(3), var0 -> {
          var0.put(class_4948.field_25609, new class_6530());
          var0.put(class_4948.field_25610, new class_6530());
@@ -85,7 +85,7 @@ public class ClientWorld extends World {
 
    private void method_722() {
       this.method_735(this.field_33035.method_8658() + 1L);
-      if (this.field_33035.method_8653().method_1285(class_291.field_1037)) {
+      if (this.field_33035.method_8653().getBoolean(GameRules.field_1037)) {
          this.method_719(this.field_33035.method_8666() + 1L);
       }
    }
@@ -96,10 +96,10 @@ public class ClientWorld extends World {
 
    public void method_719(long var1) {
       if (var1 >= 0L) {
-         this.method_29537().<class_5850>method_1287(class_291.field_1037).method_26684(true, (class_341)null);
+         this.getGameRules().<class_5850>method_1287(GameRules.field_1037).method_26684(true, (class_341)null);
       } else {
          var1 = -var1;
-         this.method_29537().<class_5850>method_1287(class_291.field_1037).method_26684(false, (class_341)null);
+         this.getGameRules().<class_5850>method_1287(GameRules.field_1037).method_26684(false, (class_341)null);
       }
 
       this.field_572.method_3498(var1);
@@ -157,7 +157,7 @@ public class ClientWorld extends World {
 
          this.method_728(var1);
          if (var1.field_41727) {
-            for (Entity var5 : var1.method_37114()) {
+            for (Entity var5 : var1.getPassengers()) {
                this.method_730(var1, var5);
             }
          }
@@ -178,7 +178,7 @@ public class ClientWorld extends World {
 
          this.method_728(var2);
          if (var2.field_41727) {
-            for (Entity var6 : var2.method_37114()) {
+            for (Entity var6 : var2.getPassengers()) {
                this.method_730(var2, var6);
             }
          }
@@ -188,9 +188,9 @@ public class ClientWorld extends World {
    private void method_728(Entity var1) {
       if (var1.method_37251()) {
          this.method_29599().startSection("chunkCheck");
-         int var4 = class_9299.method_42847(var1.getPosX() / 16.0);
-         int var5 = class_9299.method_42847(var1.method_37309() / 16.0);
-         int var6 = class_9299.method_42847(var1.getPosZ() / 16.0);
+         int var4 = MathHelper.floor(var1.getPosX() / 16.0);
+         int var5 = MathHelper.floor(var1.method_37309() / 16.0);
+         int var6 = MathHelper.floor(var1.getPosZ() / 16.0);
          if (!var1.field_41727 || var1.field_41742 != var4 || var1.field_41747 != var5 || var1.field_41714 != var6) {
             if (var1.field_41727 && this.method_22560(var1.field_41742, var1.field_41714)) {
                this.method_29554(var1.field_41742, var1.field_41714).method_12000(var1, var1.field_41747);
@@ -255,7 +255,7 @@ public class ClientWorld extends World {
          this.field_568.put(var1, var2);
          this.method_745()
             .method_24468(
-               class_9299.method_42847(var2.getPosX() / 16.0), class_9299.method_42847(var2.getPosZ() / 16.0), class_7335.field_37514, true
+               MathHelper.floor(var2.getPosX() / 16.0), MathHelper.floor(var2.getPosZ() / 16.0), class_7335.field_37514, true
             )
             .method_27342(var2);
          if (class_7860.field_40228.method_3596()) {
@@ -298,8 +298,8 @@ public class ClientWorld extends World {
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
          Entity var6 = (Entity)var5.getValue();
-         int var7 = class_9299.method_42847(var6.getPosX() / 16.0);
-         int var8 = class_9299.method_42847(var6.getPosZ() / 16.0);
+         int var7 = MathHelper.floor(var6.getPosX() / 16.0);
+         int var8 = MathHelper.floor(var6.getPosZ() / 16.0);
          if (var7 == var1.method_27352().field_10328 && var8 == var1.method_27352().field_10327) {
             var1.method_27342(var6);
          }
@@ -372,7 +372,7 @@ public class ClientWorld extends World {
                   if (var2x.method_11683(this.field_33033)) {
                      this.method_43361(
                         var2x.method_11682(),
-                        (double)var7.method_12173() + this.field_33033.nextDouble(),
+                        (double)var7.getX() + this.field_33033.nextDouble(),
                         (double)var7.method_12165() + this.field_33033.nextDouble(),
                         (double)var7.method_12185() + this.field_33033.nextDouble(),
                         0.0,
@@ -406,8 +406,8 @@ public class ClientWorld extends World {
             }
          } else if (var4) {
             this.method_726(
-               (double)var1.method_12173(),
-               (double)(var1.method_12173() + 1),
+               (double)var1.getX(),
+               (double)(var1.getX() + 1),
                (double)var1.method_12185(),
                (double)(var1.method_12185() + 1),
                (double)(var1.method_12165() + 1) - 0.05,
@@ -419,8 +419,8 @@ public class ClientWorld extends World {
 
    private void method_727(BlockPos var1, class_5079 var2, class_4190 var3, double var4) {
       this.method_726(
-         (double)var1.method_12173() + var3.method_19491(class_9249.field_47215),
-         (double)var1.method_12173() + var3.method_19495(class_9249.field_47215),
+         (double)var1.getX() + var3.method_19491(class_9249.field_47215),
+         (double)var1.getX() + var3.method_19495(class_9249.field_47215),
          (double)var1.method_12185() + var3.method_19491(class_9249.field_47219),
          (double)var1.method_12185() + var3.method_19495(class_9249.field_47219),
          var4,
@@ -431,9 +431,9 @@ public class ClientWorld extends World {
    private void method_726(double var1, double var3, double var5, double var7, double var9, class_5079 var11) {
       this.method_43361(
          var11,
-         class_9299.method_42794(this.field_33033.nextDouble(), var1, var3),
+         MathHelper.lerp(this.field_33033.nextDouble(), var1, var3),
          var9,
-         class_9299.method_42794(this.field_33033.nextDouble(), var5, var7),
+         MathHelper.lerp(this.field_33033.nextDouble(), var5, var7),
          0.0,
          0.0,
          0.0
@@ -462,14 +462,14 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method_29528(PlayerEntity var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11) {
+   public void method_29528(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, class_562 var9, float var10, float var11) {
       if (class_7860.field_39943.method_3596()) {
          Object var14 = class_7860.field_39943.method_3582(var1, var8, var9, var10, var11);
          if (class_7860.method_35565(var14, class_7860.field_40233) || class_7860.method_35555(var14, class_7860.field_39895) == null) {
             return;
          }
 
-         var8 = (class_8461)class_7860.method_35555(var14, class_7860.field_39895);
+         var8 = (SoundEvent)class_7860.method_35555(var14, class_7860.field_39895);
          var9 = (class_562)class_7860.method_35555(var14, class_7860.field_40154);
          var10 = class_7860.method_35585(var14, class_7860.field_39894);
       }
@@ -480,14 +480,14 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method_29540(PlayerEntity var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_29540(PlayerEntity var1, Entity var2, SoundEvent var3, class_562 var4, float var5, float var6) {
       if (class_7860.field_39943.method_3596()) {
          Object var9 = class_7860.field_39943.method_3582(var1, var3, var4, var5, var6);
          if (class_7860.method_35565(var9, class_7860.field_40233) || class_7860.method_35555(var9, class_7860.field_39895) == null) {
             return;
          }
 
-         var3 = (class_8461)class_7860.method_35555(var9, class_7860.field_39895);
+         var3 = (SoundEvent)class_7860.method_35555(var9, class_7860.field_39895);
          var4 = (class_562)class_7860.method_35555(var9, class_7860.field_40154);
          var5 = class_7860.method_35585(var9, class_7860.field_39894);
       }
@@ -497,12 +497,12 @@ public class ClientWorld extends World {
       }
    }
 
-   public void method_721(BlockPos var1, class_8461 var2, class_562 var3, float var4, float var5, boolean var6) {
-      this.method_29527((double)var1.method_12173() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5, var2, var3, var4, var5, var6);
+   public void method_721(BlockPos var1, SoundEvent var2, class_562 var3, float var4, float var5, boolean var6) {
+      this.method_29527((double)var1.getX() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public void method_29527(double var1, double var3, double var5, class_8461 var7, class_562 var8, float var9, float var10, boolean var11) {
+   public void method_29527(double var1, double var3, double var5, SoundEvent var7, class_562 var8, float var9, float var10, boolean var11) {
       double var14 = this.field_578.gameRenderer.method_35949().method_41627().method_6203(var1, var3, var5);
       class_4949 var16 = new class_4949(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
@@ -683,8 +683,8 @@ public class ClientWorld extends World {
 
    public float method_731(float var1) {
       float var4 = this.method_13578(var1);
-      float var5 = 1.0F - (class_9299.method_42840(var4 * (float) (Math.PI * 2)) * 2.0F + 0.2F);
-      var5 = class_9299.method_42828(var5, 0.0F, 1.0F);
+      float var5 = 1.0F - (MathHelper.cos(var4 * (float) (Math.PI * 2)) * 2.0F + 0.2F);
+      var5 = MathHelper.clamp(var5, 0.0F, 1.0F);
       var5 = 1.0F - var5;
       var5 = (float)((double)var5 * (1.0 - (double)(this.method_29578(var1) * 5.0F) / 16.0));
       var5 = (float)((double)var5 * (1.0 - (double)(this.method_29601(var1) * 5.0F) / 16.0));
@@ -693,8 +693,8 @@ public class ClientWorld extends World {
 
    public class_1343 method_750(BlockPos var1, float var2) {
       float var5 = this.method_13578(var2);
-      float var6 = class_9299.method_42840(var5 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
-      var6 = class_9299.method_42828(var6, 0.0F, 1.0F);
+      float var6 = MathHelper.cos(var5 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
+      var6 = MathHelper.clamp(var6, 0.0F, 1.0F);
       class_6325 var7 = this.method_22561(var1);
       int var8 = var7.method_28873();
       float var9 = (float)(var8 >> 16 & 0xFF) / 255.0F;
@@ -738,8 +738,8 @@ public class ClientWorld extends World {
 
    public class_1343 method_742(float var1) {
       float var4 = this.method_13578(var1);
-      float var5 = class_9299.method_42840(var4 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
-      var5 = class_9299.method_42828(var5, 0.0F, 1.0F);
+      float var5 = MathHelper.cos(var4 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
+      var5 = MathHelper.clamp(var5, 0.0F, 1.0F);
       float var6 = 1.0F;
       float var7 = 1.0F;
       float var8 = 1.0F;
@@ -769,8 +769,8 @@ public class ClientWorld extends World {
 
    public float method_761(float var1) {
       float var4 = this.method_13578(var1);
-      float var5 = 1.0F - (class_9299.method_42840(var4 * (float) (Math.PI * 2)) * 2.0F + 0.25F);
-      var5 = class_9299.method_42828(var5, 0.0F, 1.0F);
+      float var5 = 1.0F - (MathHelper.cos(var4 * (float) (Math.PI * 2)) * 2.0F + 0.25F);
+      var5 = MathHelper.clamp(var5, 0.0F, 1.0F);
       return var5 * var5 * 0.5F;
    }
 
@@ -824,17 +824,17 @@ public class ClientWorld extends World {
    public int method_759(BlockPos var1, class_6581 var2) {
       int var5 = MinecraftClient.getInstance().gameOptions.field_45526;
       if (var5 == 0) {
-         return var2.method_30079(this.method_22561(var1), (double)var1.method_12173(), (double)var1.method_12185());
+         return var2.method_30079(this.method_22561(var1), (double)var1.getX(), (double)var1.method_12185());
       } else {
          int var6 = (var5 * 2 + 1) * (var5 * 2 + 1);
          int var7 = 0;
          int var8 = 0;
          int var9 = 0;
          class_6281 var10 = new class_6281(
-            var1.method_12173() - var5,
+            var1.getX() - var5,
             var1.method_12165(),
             var1.method_12185() - var5,
-            var1.method_12173() + var5,
+            var1.getX() + var5,
             var1.method_12165(),
             var1.method_12185() + var5
          );
@@ -842,7 +842,7 @@ public class ClientWorld extends World {
 
          while (var10.method_28626()) {
             var11.method_13362(var10.method_28624(), var10.method_28628(), var10.method_28623());
-            int var12 = var2.method_30079(this.method_22561(var11), (double)var11.method_12173(), (double)var11.method_12185());
+            int var12 = var2.method_30079(this.method_22561(var11), (double)var11.getX(), (double)var11.method_12185());
             var7 += (var12 & 0xFF0000) >> 16;
             var8 += (var12 & 0xFF00) >> 8;
             var9 += var12 & 0xFF;

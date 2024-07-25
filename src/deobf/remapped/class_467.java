@@ -90,7 +90,7 @@ public class class_467 {
          this.field_2926.method_13367((int)var10.method_18910() + 5, 0, 0);
          if (var4++ % this.field_2919 == this.field_2919 - 1) {
             this.field_2926.method_13367(0, 0, (int)var5.method_18921() + 6);
-            this.field_2926.method_12167(this.field_2924.method_12173());
+            this.field_2926.method_12167(this.field_2924.getX());
             var5 = new Box(this.field_2926);
          }
       }

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_8062<T extends class_5834, M extends class_6521<T>> extends class_4171<T, M> {
+public class class_8062<T extends LivingEntity, M extends class_6521<T>> extends class_4171<T, M> {
    private static final Identifier field_41263 = new Identifier("textures/entity/elytra.png");
    private final class_7769<T> field_41262 = new class_7769<T>();
 

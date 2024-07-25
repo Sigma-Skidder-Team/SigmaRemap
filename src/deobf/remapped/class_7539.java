@@ -54,10 +54,10 @@ public class class_7539 implements class_2995 {
       if (method_34333(var12, var4, var6, var8) <= 80.0F) {
          class_3372.method_15562(
             new Box(
-                  (double)((float)var12.method_12173() + 0.25F),
+                  (double)((float)var12.getX() + 0.25F),
                   (double)((float)var12.method_12165() + 0.25F),
                   (double)var12.method_12185() + 0.25,
-                  (double)((float)var12.method_12173() + 0.75F),
+                  (double)((float)var12.getX() + 0.75F),
                   (double)((float)var12.method_12165() + 0.75F),
                   (double)((float)var12.method_12185() + 0.75F)
                )
@@ -174,7 +174,7 @@ public class class_7539 implements class_2995 {
          class_5851 var12 = var0.method_18447(var11);
          if (!(method_34333(var12.method_26686(), var1, var3, var5) > 80.0F)) {
             float var13 = (float)var11 / (float)var0.method_18437() * 0.33F;
-            int var14 = var11 != 0 ? class_9299.method_42792(var13, 0.9F, 0.9F) : 0;
+            int var14 = var11 != 0 ? MathHelper.method_42792(var13, 0.9F, 0.9F) : 0;
             int var15 = var14 >> 16 & 0xFF;
             int var16 = var14 >> 8 & 0xFF;
             int var17 = var14 & 0xFF;
@@ -188,6 +188,6 @@ public class class_7539 implements class_2995 {
    }
 
    private static float method_34333(BlockPos var0, double var1, double var3, double var5) {
-      return (float)(Math.abs((double)var0.method_12173() - var1) + Math.abs((double)var0.method_12165() - var3) + Math.abs((double)var0.method_12185() - var5));
+      return (float)(Math.abs((double)var0.getX() - var1) + Math.abs((double)var0.method_12165() - var3) + Math.abs((double)var0.method_12185() - var5));
    }
 }

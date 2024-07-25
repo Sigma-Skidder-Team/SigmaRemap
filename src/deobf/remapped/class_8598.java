@@ -100,7 +100,7 @@ public class class_8598 {
    }
 
    public void method_39523(BlockPos var1, class_7500 var2, Direction var3, int var4) {
-      double var7 = this.field_44036.getPosX() - ((double)var1.method_12173() + 0.5);
+      double var7 = this.field_44036.getPosX() - ((double)var1.getX() + 0.5);
       double var9 = this.field_44036.method_37309() - ((double)var1.method_12165() + 0.5) + 1.5;
       double var11 = this.field_44036.getPosZ() - ((double)var1.method_12185() + 0.5);
       double var13 = var7 * var7 + var9 * var9 + var11 * var11;

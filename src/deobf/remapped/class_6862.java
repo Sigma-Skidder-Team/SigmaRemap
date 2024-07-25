@@ -20,7 +20,7 @@ public class class_6862 extends AbstractVillagerEntity {
             new class_7018<class_6862>(
                this,
                class_9541.method_43999(new ItemStack(class_4897.field_25157), class_3697.field_18126),
-               class_463.field_2449,
+               SoundEvents.field_2449,
                var1 -> this.world.method_29544() && !var1.method_37109()
             )
          );
@@ -28,7 +28,7 @@ public class class_6862 extends AbstractVillagerEntity {
          .addGoal(
             0,
             new class_7018<class_6862>(
-               this, new ItemStack(class_4897.field_24579), class_463.field_2362, var1 -> this.world.method_29602() && var1.method_37109()
+               this, new ItemStack(class_4897.field_24579), SoundEvents.field_2362, var1 -> this.world.method_29602() && var1.method_37109()
             )
          );
       this.goalSelector.addGoal(1, new class_7713(this));
@@ -135,34 +135,34 @@ public class class_6862 extends AbstractVillagerEntity {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return !this.method_2024() ? class_463.field_2462 : class_463.field_2431;
+   public SoundEvent method_26918() {
+      return !this.method_2024() ? SoundEvents.field_2462 : SoundEvents.field_2431;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2822;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2822;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2420;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2420;
    }
 
    @Override
-   public class_8461 method_26566(ItemStack var1) {
+   public SoundEvent method_26566(ItemStack var1) {
       class_2451 var4 = var1.method_27960();
-      return var4 != class_4897.field_24579 ? class_463.field_2699 : class_463.field_1966;
+      return var4 != class_4897.field_24579 ? SoundEvents.field_2699 : SoundEvents.field_1966;
    }
 
    @Override
-   public class_8461 method_2018(boolean var1) {
-      return !var1 ? class_463.field_2255 : class_463.field_2879;
+   public SoundEvent method_2018(boolean var1) {
+      return !var1 ? SoundEvents.field_2255 : SoundEvents.field_2879;
    }
 
    @Override
-   public class_8461 method_976() {
-      return class_463.field_2879;
+   public SoundEvent method_976() {
+      return SoundEvents.field_2879;
    }
 
    public void method_31481(int var1) {
@@ -174,8 +174,8 @@ public class class_6862 extends AbstractVillagerEntity {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.field_33055) {
          this.method_31485();
       }

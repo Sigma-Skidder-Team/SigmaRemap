@@ -15,7 +15,7 @@ public class class_486 extends NearestAttackableTargetGoal<PlayerEntity> {
    @Override
    public boolean method_16799() {
       boolean var3 = this.method_2294();
-      if (var3 && this.field_4915.method_17809() != null) {
+      if (var3 && this.field_4915.getAttackTarget() != null) {
          return super.method_16799();
       } else {
          this.field_4918 = null;

@@ -172,7 +172,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       if (!this.world.field_33055 && this.field_41706 > 3.0F && var3) {
-         float var8 = (float)class_9299.method_42816(this.field_41706 - 3.0F);
+         float var8 = (float) MathHelper.ceil(this.field_41706 - 3.0F);
          if (!var4.method_8345()) {
             double var9 = Math.min((double)(0.2F + var8 / 15.0F), 2.5);
             int var11 = (int)(150.0 * var9);
@@ -191,7 +191,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public float method_26602(float var1) {
-      return class_9299.method_42795(var1, this.field_29624, this.field_29670);
+      return MathHelper.method_42795(var1, this.field_29624, this.field_29670);
    }
 
    @Override
@@ -210,12 +210,12 @@ public abstract class LivingEntity extends Entity {
       boolean var3 = this instanceof PlayerEntity;
       if (this.isAlive()) {
          if (!this.method_37153()) {
-            if (var3 && !this.world.method_6673().method_9815(this.method_37241())) {
+            if (var3 && !this.world.method_6673().method_9815(this.getBoundingBox())) {
                double var4 = this.world.method_6673().method_9809(this) + this.world.method_6673().method_9830();
                if (var4 < 0.0) {
                   double var6 = this.world.method_6673().method_9826();
                   if (var6 > 0.0) {
-                     this.attackEntityFrom(DamageSource.field_31670, (float)Math.max(1, class_9299.method_42847(-var4 * var6)));
+                     this.attackEntityFrom(DamageSource.field_31670, (float)Math.max(1, MathHelper.floor(-var4 * var6)));
                   }
                }
             }
@@ -343,7 +343,7 @@ public abstract class LivingEntity extends Entity {
             var3.field_7334 * -0.2
          );
       float var4 = !(this.field_41717.nextFloat() * 0.4F + this.field_41717.nextFloat() > 0.9F) ? 0.0F : 0.6F;
-      this.method_37155(class_463.field_2041, var4, 0.6F + this.field_41717.nextFloat() * 0.4F);
+      this.method_37155(SoundEvents.field_2041, var4, 0.6F + this.field_41717.nextFloat() * 0.4F);
    }
 
    public boolean method_26444() {
@@ -360,7 +360,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method_26434() {
-      class_9747 var3 = this.method_26561(Attributes.MOVEMENT_SPEED);
+      class_9747 var3 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (var3 != null && var3.method_44997(field_29641) != null) {
          var3.method_45003(field_29641);
       }
@@ -370,7 +370,7 @@ public abstract class LivingEntity extends Entity {
       if (!this.method_37304().method_8345()) {
          int var3 = class_2931.method_13399(class_3668.field_17849, this);
          if (var3 > 0 && this.method_26444()) {
-            class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
+            class_9747 var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
             if (var4 == null) {
                return;
             }
@@ -505,11 +505,11 @@ public abstract class LivingEntity extends Entity {
 
    public void method_26620(ItemStack var1) {
       if (!var1.method_28022()) {
-         class_8461 var4 = class_463.field_2719;
+         SoundEvent var4 = SoundEvents.field_2719;
          class_2451 var5 = var1.method_27960();
          if (!(var5 instanceof class_8228)) {
             if (var5 == class_4897.field_24503) {
-               var4 = class_463.field_1923;
+               var4 = SoundEvents.field_1923;
             }
          } else {
             var4 = ((class_8228)var5).method_37667().method_22191();
@@ -539,7 +539,7 @@ public abstract class LivingEntity extends Entity {
 
       var1.putBoolean("FallFlying", this.method_26618());
       this.method_26518().ifPresent(var1x -> {
-         var1.putInt("SleepingX", var1x.method_12173());
+         var1.putInt("SleepingX", var1x.getX());
          var1.putInt("SleepingY", var1x.method_12165());
          var1.putInt("SleepingZ", var1x.method_12185());
       });
@@ -852,7 +852,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method_26456(float var1) {
-      this.field_41735.method_36633(field_29627, class_9299.method_42828(var1, 0.0F, this.method_26465()));
+      this.field_41735.method_36633(field_29627, MathHelper.clamp(var1, 0.0F, this.method_26465()));
    }
 
    public boolean method_26450() {
@@ -984,7 +984,7 @@ public abstract class LivingEntity extends Entity {
                      var12 = (Math.random() - Math.random()) * 0.01;
                   }
 
-                  this.field_29608 = (float)(class_9299.method_42821(var14, var12) * 180.0F / (float)Math.PI - (double)this.rotationYaw);
+                  this.field_29608 = (float)(MathHelper.method_42821(var14, var12) * 180.0F / (float)Math.PI - (double)this.rotationYaw);
                   this.method_26567(0.4F, var12, var14);
                }
             }
@@ -994,7 +994,7 @@ public abstract class LivingEntity extends Entity {
                   this.method_26593(var1);
                }
             } else if (!this.method_26573(var1)) {
-               class_8461 var18 = this.method_26599();
+               SoundEvent var18 = this.method_26599();
                if (var16 && var18 != null) {
                   this.method_37155(var18, this.method_26439(), this.method_26547());
                }
@@ -1078,7 +1078,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method_26593(DamageSource var1) {
-      class_8461 var4 = this.method_26541(var1);
+      SoundEvent var4 = this.method_26541(var1);
       if (var4 != null) {
          this.method_37155(var4, this.method_26439(), this.method_26547());
       }
@@ -1117,7 +1117,7 @@ public abstract class LivingEntity extends Entity {
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),
-                  class_463.field_1962,
+                  SoundEvents.field_1962,
                   this.method_37197(),
                   0.8F,
                   0.8F + this.world.field_33033.nextFloat() * 0.4F,
@@ -1161,7 +1161,7 @@ public abstract class LivingEntity extends Entity {
       if (!this.world.field_33055) {
          boolean var4 = false;
          if (var1 instanceof class_4653) {
-            if (this.world.method_29537().method_1285(class_291.field_1047)) {
+            if (this.world.getGameRules().getBoolean(GameRules.field_1047)) {
                BlockPos var5 = this.method_37075();
                class_2522 var6 = class_4783.field_23401.method_29260();
                if (this.world.method_28262(var5).method_8345() && var6.method_8309(this.world, var5)) {
@@ -1190,7 +1190,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       boolean var6 = this.field_29665 > 0;
-      if (this.method_26534() && this.world.method_29537().method_1285(class_291.field_1033)) {
+      if (this.method_26534() && this.world.getGameRules().getBoolean(GameRules.field_1033)) {
          this.method_26483(var1, var6);
          this.method_26614(var1, var5, var6);
       }
@@ -1204,7 +1204,7 @@ public abstract class LivingEntity extends Entity {
 
    public void method_26604() {
       if (!this.world.field_33055
-         && (this.method_26586() || this.field_29665 > 0 && this.method_26482() && this.world.method_29537().method_1285(class_291.field_1033))) {
+         && (this.method_26586() || this.field_29665 > 0 && this.method_26482() && this.world.getGameRules().getBoolean(GameRules.field_1033))) {
          int var3 = this.method_26427(this.field_29634);
 
          while (var3 > 0) {
@@ -1259,24 +1259,24 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Nullable
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2152;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2152;
    }
 
    @Nullable
-   public class_8461 method_26599() {
-      return class_463.field_2062;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2062;
    }
 
-   public class_8461 method_26587(int var1) {
-      return var1 <= 4 ? class_463.field_2448 : class_463.field_1953;
+   public SoundEvent method_26587(int var1) {
+      return var1 <= 4 ? SoundEvents.field_2448 : SoundEvents.field_1953;
    }
 
-   public class_8461 method_26566(ItemStack var1) {
+   public SoundEvent method_26566(ItemStack var1) {
       return var1.method_28011();
    }
 
-   public class_8461 method_26484(ItemStack var1) {
+   public SoundEvent method_26484(ItemStack var1) {
       return var1.method_27979();
    }
 
@@ -1351,14 +1351,14 @@ public abstract class LivingEntity extends Entity {
    public int method_26490(float var1, float var2) {
       class_2250 var5 = this.method_26553(Effects.field_19730);
       float var6 = var5 != null ? (float)(var5.method_10333() + 1) : 0.0F;
-      return class_9299.method_42816((var1 - 3.0F - var6) * var2);
+      return MathHelper.ceil((var1 - 3.0F - var6) * var2);
    }
 
    public void method_26512() {
       if (!this.method_37378()) {
-         int var3 = class_9299.method_42847(this.getPosX());
-         int var4 = class_9299.method_42847(this.method_37309() - 0.2F);
-         int var5 = class_9299.method_42847(this.getPosZ());
+         int var3 = MathHelper.floor(this.getPosX());
+         int var4 = MathHelper.floor(this.method_37309() - 0.2F);
+         int var5 = MathHelper.floor(this.getPosZ());
          class_2522 var6 = this.world.method_28262(new BlockPos(var3, var4, var5));
          if (!var6.method_8345()) {
             class_4618 var7 = var6.method_8316();
@@ -1375,7 +1375,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public int method_26565() {
-      return class_9299.method_42847(this.method_26575(Attributes.field_37473));
+      return MathHelper.floor(this.method_26575(Attributes.field_37473));
    }
 
    public void method_26524(DamageSource var1, float var2) {
@@ -1532,7 +1532,7 @@ public abstract class LivingEntity extends Entity {
             this.field_29645 = this.field_29662;
             this.field_29608 = 0.0F;
             if (var4) {
-               this.method_37155(class_463.field_2676, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
+               this.method_37155(SoundEvents.field_2676, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
             }
 
             DamageSource var8;
@@ -1546,7 +1546,7 @@ public abstract class LivingEntity extends Entity {
                var8 = DamageSource.field_31664;
             }
 
-            class_8461 var9 = this.method_26541(var8);
+            SoundEvent var9 = this.method_26541(var8);
             if (var9 != null) {
                this.method_37155(var9, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
             }
@@ -1554,7 +1554,7 @@ public abstract class LivingEntity extends Entity {
             this.attackEntityFrom(DamageSource.field_31664, 0.0F);
             break;
          case 3:
-            class_8461 var10 = this.method_26599();
+            SoundEvent var10 = this.method_26599();
             if (var10 != null) {
                this.method_37155(var10, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
             }
@@ -1605,10 +1605,10 @@ public abstract class LivingEntity extends Entity {
             super.method_37336(var1);
             break;
          case 29:
-            this.method_37155(class_463.field_2771, 1.0F, 0.8F + this.world.field_33033.nextFloat() * 0.4F);
+            this.method_37155(SoundEvents.field_2771, 1.0F, 0.8F + this.world.field_33033.nextFloat() * 0.4F);
             break;
          case 30:
-            this.method_37155(class_463.field_2764, 0.8F, 0.8F + this.world.field_33033.nextFloat() * 0.4F);
+            this.method_37155(SoundEvents.field_2764, 0.8F, 0.8F + this.world.field_33033.nextFloat() * 0.4F);
             break;
          case 46:
             short var11 = 128;
@@ -1618,11 +1618,11 @@ public abstract class LivingEntity extends Entity {
                float var15 = (this.field_41717.nextFloat() - 0.5F) * 0.2F;
                float var16 = (this.field_41717.nextFloat() - 0.5F) * 0.2F;
                float var17 = (this.field_41717.nextFloat() - 0.5F) * 0.2F;
-               double var18 = class_9299.method_42794(var13, this.field_41767, this.getPosX())
+               double var18 = MathHelper.lerp(var13, this.field_41767, this.getPosX())
                   + (this.field_41717.nextDouble() - 0.5) * (double)this.method_37086() * 2.0;
-               double var20 = class_9299.method_42794(var13, this.field_41698, this.method_37309())
+               double var20 = MathHelper.lerp(var13, this.field_41698, this.method_37309())
                   + this.field_41717.nextDouble() * (double)this.method_37074();
-               double var22 = class_9299.method_42794(var13, this.field_41725, this.getPosZ())
+               double var22 = MathHelper.lerp(var13, this.field_41725, this.getPosZ())
                   + (this.field_41717.nextDouble() - 0.5) * (double)this.method_37086() * 2.0;
                this.world.method_43361(class_3090.field_15356, var18, var20, var22, (double)var15, (double)var16, (double)var17);
             }
@@ -1680,7 +1680,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Nullable
-   public class_9747 method_26561(class_225 var1) {
+   public class_9747 getAttribute(class_225 var1) {
       return this.method_26590().method_30808(var1);
    }
 
@@ -1771,7 +1771,7 @@ public abstract class LivingEntity extends Entity {
    @Override
    public void method_37140(boolean var1) {
       super.method_37140(var1);
-      class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
+      class_9747 var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (var4.method_44997(field_29647) != null) {
          var4.method_45004(field_29633);
       }
@@ -1791,7 +1791,7 @@ public abstract class LivingEntity extends Entity {
          : (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.5F;
    }
 
-   public boolean method_26468() {
+   public boolean isMovementBlocked() {
       return this.method_26450();
    }
 
@@ -1839,7 +1839,7 @@ public abstract class LivingEntity extends Entity {
          if (this.method_37321() && !var5.method_13314()) {
             float var6 = this.rotationYaw * (float) (Math.PI / 180.0);
             this.method_37215(
-               this.method_37098().method_6214((double)(-class_9299.method_42818(var6) * 0.2F), 0.0, (double)(class_9299.method_42840(var6) * 0.2F))
+               this.method_37098().method_6214((double)(-MathHelper.sin(var6) * 0.2F), 0.0, (double)(MathHelper.cos(var6) * 0.2F))
             );
          }
 
@@ -1898,14 +1898,14 @@ public abstract class LivingEntity extends Entity {
             this.method_37092(var39, var1);
             this.method_37226(class_7412.field_37839, this.method_37098());
             class_1343 var15 = this.method_37098();
-            if (this.field_41744 && this.method_26505()) {
+            if (this.collidedHorizontally && this.method_26505()) {
                var15 = new class_1343(var15.field_7336, 0.2, var15.field_7334);
             }
 
             this.method_37215(var15.method_6210((double)var38, 0.8F, (double)var38));
             class_1343 var16 = this.method_26579(var4, var6, this.method_37098());
             this.method_37215(var16);
-            if (this.field_41744 && this.method_37159(var16.field_7336, var16.field_7333 + 0.6F - this.method_37309() + var34, var16.field_7334)) {
+            if (this.collidedHorizontally && this.method_37159(var16.field_7336, var16.field_7333 + 0.6F - this.method_37309() + var34, var16.field_7334)) {
                this.method_37214(var16.field_7336, 0.3F, var16.field_7334);
             }
          } else if (this.method_37370() && this.method_26498() && !this.method_26496(var7.method_22005())) {
@@ -1925,7 +1925,7 @@ public abstract class LivingEntity extends Entity {
             }
 
             class_1343 var37 = this.method_37098();
-            if (this.field_41744 && this.method_37159(var37.field_7336, var37.field_7333 + 0.6F - this.method_37309() + var10, var37.field_7334)) {
+            if (this.collidedHorizontally && this.method_37159(var37.field_7336, var37.field_7333 + 0.6F - this.method_37309() + var10, var37.field_7334)) {
                this.method_37214(var37.field_7336, 0.3F, var37.field_7334);
             }
          } else if (!this.method_26618()) {
@@ -1961,7 +1961,7 @@ public abstract class LivingEntity extends Entity {
             double var17 = Math.sqrt(var33.field_7336 * var33.field_7336 + var33.field_7334 * var33.field_7334);
             double var19 = Math.sqrt(method_37266(var31));
             double var21 = var33.method_6217();
-            float var23 = class_9299.method_42840(var35);
+            float var23 = MathHelper.cos(var35);
             var23 = (float)((double)var23 * (double)var23 * Math.min(1.0, var21 / 0.4));
             var31 = this.method_37098().method_6214(0.0, var4 * (-1.0 + (double)var23 * 0.75), 0.0);
             if (var31.field_7333 < 0.0 && var17 > 0.0) {
@@ -1970,7 +1970,7 @@ public abstract class LivingEntity extends Entity {
             }
 
             if (var35 < 0.0F && var17 > 0.0) {
-               double var41 = var19 * (double)(-class_9299.method_42818(var35)) * 0.04;
+               double var41 = var19 * (double)(-MathHelper.sin(var35)) * 0.04;
                var31 = var31.method_6214(-var33.field_7336 * var41 / var17, var41 * 3.2, -var33.field_7334 * var41 / var17);
             }
 
@@ -1982,7 +1982,7 @@ public abstract class LivingEntity extends Entity {
 
             this.method_37215(var31.method_6210(0.99F, 0.98F, 0.99F));
             this.method_37226(class_7412.field_37839, this.method_37098());
-            if (this.field_41744 && !this.world.field_33055) {
+            if (this.collidedHorizontally && !this.world.field_33055) {
                double var42 = Math.sqrt(method_37266(this.method_37098()));
                double var26 = var19 - var42;
                float var28 = (float)(var26 * 10.0 - 3.0);
@@ -2006,7 +2006,7 @@ public abstract class LivingEntity extends Entity {
       double var5 = var1.getPosX() - var1.field_41767;
       double var7 = !var2 ? 0.0 : var1.method_37309() - var1.field_41698;
       double var9 = var1.getPosZ() - var1.field_41725;
-      float var11 = class_9299.method_42842(var5 * var5 + var7 * var7 + var9 * var9) * 4.0F;
+      float var11 = MathHelper.sqrt(var5 * var5 + var7 * var7 + var9 * var9) * 4.0F;
       if (var11 > 1.0F) {
          var11 = 1.0F;
       }
@@ -2020,7 +2020,7 @@ public abstract class LivingEntity extends Entity {
       this.method_37215(this.method_26589(this.method_37098()));
       this.method_37226(class_7412.field_37839, this.method_37098());
       class_1343 var5 = this.method_37098();
-      if ((this.field_41744 || this.field_29654) && this.method_26505()) {
+      if ((this.collidedHorizontally || this.field_29654) && this.method_26505()) {
          var5 = new class_1343(var5.field_7336, 0.2, var5.field_7334);
       }
 
@@ -2046,8 +2046,8 @@ public abstract class LivingEntity extends Entity {
       if (this.method_26505()) {
          this.field_41706 = 0.0F;
          float var4 = 0.15F;
-         double var5 = class_9299.method_42827(var1.field_7336, -0.15F, 0.15F);
-         double var7 = class_9299.method_42827(var1.field_7334, -0.15F, 0.15F);
+         double var5 = MathHelper.clamp(var1.field_7336, -0.15F, 0.15F);
+         double var7 = MathHelper.clamp(var1.field_7334, -0.15F, 0.15F);
          double var9 = Math.max(var1.field_7333, -0.15F);
          if (var9 < 0.0 && !this.method_26603().method_8350(class_4783.field_23348) && this.method_26492() && this instanceof PlayerEntity) {
             var9 = 0.0;
@@ -2123,7 +2123,7 @@ public abstract class LivingEntity extends Entity {
          }
       }
 
-      this.method_26606();
+      this.livingTick();
       double var3 = this.getPosX() - this.field_41767;
       double var5 = this.getPosZ() - this.field_41725;
       float var7 = (float)(var3 * var3 + var5 * var5);
@@ -2134,8 +2134,8 @@ public abstract class LivingEntity extends Entity {
       if (var7 > 0.0025000002F) {
          var10 = 1.0F;
          var9 = (float)Math.sqrt((double)var7) * 3.0F;
-         float var14 = (float)class_9299.method_42821(var5, var3) * (180.0F / (float)Math.PI) - 90.0F;
-         float var15 = class_9299.method_42804(class_9299.method_42810(this.rotationYaw) - var14);
+         float var14 = (float) MathHelper.method_42821(var5, var3) * (180.0F / (float)Math.PI) - 90.0F;
+         float var15 = MathHelper.abs(MathHelper.wrapDegrees(this.rotationYaw) - var14);
          if (95.0F < var15 && var15 < 265.0F) {
             var8 = var14 - 180.0F;
          } else {
@@ -2297,9 +2297,9 @@ public abstract class LivingEntity extends Entity {
    }
 
    public float method_26582(float var1, float var2) {
-      float var5 = class_9299.method_42810(var1 - this.field_29605);
+      float var5 = MathHelper.wrapDegrees(var1 - this.field_29605);
       this.field_29605 += var5 * 0.3F;
-      float var6 = class_9299.method_42810(this.rotationYaw - this.field_29605);
+      float var6 = MathHelper.wrapDegrees(this.rotationYaw - this.field_29605);
       boolean var7 = var6 < -90.0F || var6 >= 90.0F;
       if (var6 < -75.0F) {
          var6 = -75.0F;
@@ -2321,7 +2321,7 @@ public abstract class LivingEntity extends Entity {
       return var2;
    }
 
-   public void method_26606() {
+   public void livingTick() {
       if (this.field_29600 > 0) {
          this.field_29600--;
       }
@@ -2339,7 +2339,7 @@ public abstract class LivingEntity extends Entity {
          double var10 = this.getPosX() + (this.field_29597 - this.getPosX()) / (double)this.field_29612;
          double var12 = this.method_37309() + (this.field_29609 - this.method_37309()) / (double)this.field_29612;
          double var14 = this.getPosZ() + (this.field_29650 - this.getPosZ()) / (double)this.field_29612;
-         double var16 = class_9299.method_42809(this.field_29604 - (double)this.rotationYaw);
+         double var16 = MathHelper.wrapDegrees(this.field_29604 - (double)this.rotationYaw);
          this.rotationYaw = (float)((double)this.rotationYaw + var16 / (double)this.field_29612);
          this.rotationPitch = (float)((double)this.rotationPitch + (this.field_29625 - (double)this.rotationPitch) / (double)this.field_29612);
          this.field_29612--;
@@ -2348,7 +2348,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       if (this.field_29653 > 0) {
-         this.field_29618 = (float)((double)this.field_29618 + class_9299.method_42809(this.field_29614 - (double)this.field_29618) / (double)this.field_29653);
+         this.field_29618 = (float)((double)this.field_29618 + MathHelper.wrapDegrees(this.field_29614 - (double)this.field_29618) / (double)this.field_29653);
          this.field_29653--;
       }
 
@@ -2370,7 +2370,7 @@ public abstract class LivingEntity extends Entity {
 
       this.method_37214(var4, var6, var8);
       this.world.method_29599().startSection("ai");
-      if (!this.method_26468()) {
+      if (!this.isMovementBlocked()) {
          if (this.method_26530()) {
             this.world.method_29599().startSection("newAi");
             this.method_26417();
@@ -2415,13 +2415,13 @@ public abstract class LivingEntity extends Entity {
       this.field_29676 *= 0.98F;
       this.field_29673 *= 0.98F;
       this.method_26571();
-      Box var23 = this.method_37241();
+      Box var23 = this.getBoundingBox();
       this.method_26431(new class_1343((double)this.field_29676, (double)this.field_29651, (double)this.field_29673));
       this.world.method_29599().endSection();
       this.world.method_29599().startSection("push");
       if (this.field_29630 > 0) {
          this.field_29630--;
-         this.method_26542(var23, this.method_37241());
+         this.method_26542(var23, this.getBoundingBox());
       }
 
       this.method_26428();
@@ -2460,9 +2460,9 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method_26428() {
-      List var3 = this.world.method_25867(this, this.method_37241(), class_3572.method_16616(this));
+      List var3 = this.world.method_25867(this, this.getBoundingBox(), class_3572.method_16616(this));
       if (!var3.isEmpty()) {
-         int var4 = this.world.method_29537().method_1295(class_291.field_1027);
+         int var4 = this.world.getGameRules().method_1295(GameRules.field_1027);
          if (var4 > 0 && var3.size() > var4 - 1 && this.field_41717.nextInt(4) == 0) {
             int var5 = 0;
 
@@ -2488,7 +2488,7 @@ public abstract class LivingEntity extends Entity {
       Box var5 = var1.method_18905(var2);
       List var6 = this.world.method_25870(this, var5);
       if (var6.isEmpty()) {
-         if (this.field_41744) {
+         if (this.collidedHorizontally) {
             this.field_29630 = 0;
          }
       } else {
@@ -2585,7 +2585,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public float getYaw(float var1) {
-      return var1 != 1.0F ? class_9299.method_42795(var1, this.field_29657, this.field_29618) : this.field_29618;
+      return var1 != 1.0F ? MathHelper.method_42795(var1, this.field_29657, this.field_29618) : this.field_29618;
    }
 
    public float method_26533(float var1) {
@@ -2897,7 +2897,7 @@ public abstract class LivingEntity extends Entity {
 
          if (var21) {
             this.method_37254(var1, var16, var5);
-            if (var20.method_6682(this) && !var20.method_22550(this.method_37241())) {
+            if (var20.method_6682(this) && !var20.method_22550(this.getBoundingBox())) {
                var18 = true;
             }
          }
@@ -2994,7 +2994,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    private void method_26584(BlockPos var1) {
-      this.method_37256((double)var1.method_12173() + 0.5, (double)var1.method_12165() + 0.6875, (double)var1.method_12185() + 0.5);
+      this.method_37256((double)var1.getX() + 0.5, (double)var1.method_12165() + 0.6875, (double)var1.method_12185() + 0.5);
    }
 
    private boolean method_26415() {
@@ -3008,10 +3008,10 @@ public abstract class LivingEntity extends Entity {
             this.world.method_7513(var1, var4.method_10308(class_3633.field_17728, Boolean.valueOf(false)), 3);
             class_1343 var5 = class_3633.method_16932(this.getType(), this.world, var1, this.rotationYaw).orElseGet(() -> {
                BlockPos var3x = var1.method_6081();
-               return new class_1343((double)var3x.method_12173() + 0.5, (double)var3x.method_12165() + 0.1, (double)var3x.method_12185() + 0.5);
+               return new class_1343((double)var3x.getX() + 0.5, (double)var3x.method_12165() + 0.1, (double)var3x.method_12185() + 0.5);
             });
             class_1343 var6 = class_1343.method_6200(var1).method_6194(var5).method_6213();
-            float var7 = (float)class_9299.method_42809(class_9299.method_42821(var6.field_7334, var6.field_7336) * 180.0F / (float)Math.PI - 90.0);
+            float var7 = (float) MathHelper.wrapDegrees(MathHelper.method_42821(var6.field_7334, var6.field_7336) * 180.0F / (float)Math.PI - 90.0);
             this.method_37256(var5.field_7336, var5.field_7333, var5.field_7334);
             this.rotationYaw = var7;
             this.rotationPitch = 0.0F;
@@ -3112,7 +3112,7 @@ public abstract class LivingEntity extends Entity {
          return super.method_37210();
       } else {
          float var3 = 0.5F;
-         return this.method_37241().method_18899(0.5, 0.5, 0.5);
+         return this.getBoundingBox().method_18899(0.5, 0.5, 0.5);
       }
    }
 }

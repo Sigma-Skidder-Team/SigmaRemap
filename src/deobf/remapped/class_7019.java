@@ -74,23 +74,23 @@ public class class_7019<T extends MobEntity & class_9479> extends class_1498<T> 
    }
 
    public void method_32034(T var1, float var2, float var3, float var4, float var5, float var6) {
-      this.field_35977.field_8185 = (float) (-Math.PI * 2.0 / 9.0) - var3 * class_9299.method_42818(var2);
-      this.field_35975.field_8185 = (float) (Math.PI * 2.0 / 9.0) + var3 * class_9299.method_42818(var2);
+      this.field_35977.field_8185 = (float) (-Math.PI * 2.0 / 9.0) - var3 * MathHelper.sin(var2);
+      this.field_35975.field_8185 = (float) (Math.PI * 2.0 / 9.0) + var3 * MathHelper.sin(var2);
       this.field_35982.field_8190 = var5 * (float) (Math.PI / 180.0);
       int var9 = ((class_9479)var1).method_43795();
-      float var10 = 1.0F - (float)class_9299.method_42805(10 - 2 * var9) / 10.0F;
-      this.field_35982.field_8191 = class_9299.method_42795(var10, 0.87266463F, (float) (-Math.PI / 9));
+      float var10 = 1.0F - (float) MathHelper.abs(10 - 2 * var9) / 10.0F;
+      this.field_35982.field_8191 = MathHelper.method_42795(var10, 0.87266463F, (float) (-Math.PI / 9));
       if (!var1.method_26449()) {
          this.field_35982.field_8181 = 2.0F;
          this.field_35979.field_8187 = -7.0F;
       } else {
-         this.field_35982.field_8181 = class_9299.method_42795(var10, 2.0F, 5.0F);
+         this.field_35982.field_8181 = MathHelper.method_42795(var10, 2.0F, 5.0F);
          this.field_35979.field_8187 = -3.0F;
       }
 
       float var11 = 1.2F;
-      this.field_35981.field_8191 = class_9299.method_42840(var2) * 1.2F * var3;
-      this.field_35976.field_8191 = class_9299.method_42840(var2 + (float) Math.PI) * 1.2F * var3;
+      this.field_35981.field_8191 = MathHelper.cos(var2) * 1.2F * var3;
+      this.field_35976.field_8191 = MathHelper.cos(var2 + (float) Math.PI) * 1.2F * var3;
       this.field_35974.field_8191 = this.field_35976.field_8191;
       this.field_35973.field_8191 = this.field_35981.field_8191;
    }

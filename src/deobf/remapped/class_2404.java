@@ -4,7 +4,7 @@ import java.io.IOException;
 import org.apache.commons.lang3.Validate;
 
 public class class_2404 implements Packet<class_392> {
-   private class_8461 field_11981;
+   private SoundEvent field_11981;
    private class_562 field_11983;
    private int field_11982;
    private float field_11978;
@@ -13,7 +13,7 @@ public class class_2404 implements Packet<class_392> {
    public class_2404() {
    }
 
-   public class_2404(class_8461 var1, class_562 var2, Entity var3, float var4, float var5) {
+   public class_2404(SoundEvent var1, class_562 var2, Entity var3, float var4, float var5) {
       Validate.notNull(var1, "sound", new Object[0]);
       this.field_11981 = var1;
       this.field_11983 = var2;
@@ -40,7 +40,7 @@ public class class_2404 implements Packet<class_392> {
       var1.writeFloat(this.field_11979);
    }
 
-   public class_8461 method_10931() {
+   public SoundEvent method_10931() {
       return this.field_11981;
    }
 

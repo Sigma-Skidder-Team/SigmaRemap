@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.TextFormatting;
 
 public class DebugOverlayGui extends AbstractGui {
-   private static final Map<class_3801, String> field_18927 = Util.<EnumMap<class_3801, String>>method_44659(
+   private static final Map<class_3801, String> field_18927 = Util.<EnumMap<class_3801, String>>make(
       new EnumMap<class_3801, String>(class_3801.class), var0 -> {
          var0.put(class_3801.field_18598, "SW");
          var0.put(class_3801.field_18592, "S");
@@ -236,7 +236,7 @@ public class DebugOverlayGui extends AbstractGui {
                "P: " + this.field_18930.field_9572.method_43053() + ". T: " + this.field_18930.theWorld.method_741(),
                this.field_18930.theWorld.method_29580(),
                "",
-               String.format("Chunk-relative: %d %d %d", var8.method_12173() & 15, var8.method_12165() & 15, var8.method_12185() & 15)
+               String.format("Chunk-relative: %d %d %d", var8.getX() & 15, var8.method_12165() & 15, var8.method_12185() & 15)
             }
          );
       } else {
@@ -302,14 +302,14 @@ public class DebugOverlayGui extends AbstractGui {
                this.field_18930.getRenderViewEntity().getPosZ()
             )
          );
-         var16.add(String.format("Block: %d %d %d", var8.method_12173(), var8.method_12165(), var8.method_12185()));
+         var16.add(String.format("Block: %d %d %d", var8.getX(), var8.method_12165(), var8.method_12185()));
          var16.add(
             String.format(
                "Chunk: %d %d %d in %d %d %d",
-               var8.method_12173() & 15,
+               var8.getX() & 15,
                var8.method_12165() & 15,
                var8.method_12185() & 15,
-               var8.method_12173() >> 4,
+               var8.getX() >> 4,
                var8.method_12165() >> 4,
                var8.method_12185() >> 4
             )
@@ -320,8 +320,8 @@ public class DebugOverlayGui extends AbstractGui {
                "Facing: %s (%s) (%.1f / %.1f)",
                var11,
                var12,
-               class_9299.method_42810(var10.rotationYaw),
-               class_9299.method_42810(var10.rotationPitch)
+               MathHelper.wrapDegrees(var10.rotationYaw),
+               MathHelper.wrapDegrees(var10.rotationPitch)
             )
          );
          if (this.field_18930.theWorld != null) {
@@ -355,7 +355,7 @@ public class DebugOverlayGui extends AbstractGui {
                         var35.append(" ")
                            .append(field_18927.get(var27))
                            .append(": ")
-                           .append(var18.method_27367(var27, var8.method_12173(), var8.method_12185()));
+                           .append(var18.method_27367(var27, var8.getX(), var8.method_12185()));
                      }
                   }
 
@@ -367,7 +367,7 @@ public class DebugOverlayGui extends AbstractGui {
                      if (var40.method_17678()) {
                         var35.append(" ").append(field_18927.get(var40)).append(": ");
                         if (var22 != null) {
-                           var35.append(var22.method_27367(var40, var8.method_12173(), var8.method_12185()));
+                           var35.append(var22.method_27367(var40, var8.getX(), var8.method_12185()));
                         } else {
                            var35.append("??");
                         }
@@ -533,7 +533,7 @@ public class DebugOverlayGui extends AbstractGui {
             BlockPos var24 = ((class_9529)this.field_18928).method_43955();
             class_2522 var27 = this.field_18930.theWorld.method_28262(var24);
             var11.add("");
-            var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.method_12173() + ", " + var24.method_12165() + ", " + var24.method_12185());
+            var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.getX() + ", " + var24.method_12165() + ", " + var24.method_12185());
             var11.add(String.valueOf(class_8669.field_44462.method_39797(var27.method_8360())));
             UnmodifiableIterator var21 = var27.method_10316().entrySet().iterator();
 
@@ -558,7 +558,7 @@ public class DebugOverlayGui extends AbstractGui {
             BlockPos var25 = ((class_9529)this.field_18929).method_43955();
             class_4774 var28 = this.field_18930.theWorld.method_28258(var25);
             var11.add("");
-            var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.method_12173() + ", " + var25.method_12165() + ", " + var25.method_12185());
+            var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.getX() + ", " + var25.method_12165() + ", " + var25.method_12185());
             var11.add(String.valueOf(class_8669.field_44447.method_39797(var28.method_22005())));
             UnmodifiableIterator var31 = var28.method_10316().entrySet().iterator();
 
@@ -644,7 +644,7 @@ public class DebugOverlayGui extends AbstractGui {
          for (class_8107 var22 = class_1221.method_5406().method_5410(); var15 != var10; var15 = var2.method_44835(var15 + 1)) {
             int var23 = var2.method_44833(var11[var15], !var5 ? 60 : 30, !var5 ? 20 : 60);
             int var24 = !var5 ? 60 : 100;
-            int var25 = this.method_17987(class_9299.method_42829(var23, 0, var24), 0, var24 / 2, var24);
+            int var25 = this.method_17987(MathHelper.clamp(var23, 0, var24), 0, var24 / 2, var24);
             int var26 = var25 >> 24 & 0xFF;
             int var27 = var25 >> 16 & 0xFF;
             int var28 = var25 >> 8 & 0xFF;
@@ -705,10 +705,10 @@ public class DebugOverlayGui extends AbstractGui {
       int var11 = var2 >> 16 & 0xFF;
       int var12 = var2 >> 8 & 0xFF;
       int var13 = var2 & 0xFF;
-      int var14 = class_9299.method_42829((int)class_9299.method_42795(var3, (float)var6, (float)var10), 0, 255);
-      int var15 = class_9299.method_42829((int)class_9299.method_42795(var3, (float)var7, (float)var11), 0, 255);
-      int var16 = class_9299.method_42829((int)class_9299.method_42795(var3, (float)var8, (float)var12), 0, 255);
-      int var17 = class_9299.method_42829((int)class_9299.method_42795(var3, (float)var9, (float)var13), 0, 255);
+      int var14 = MathHelper.clamp((int) MathHelper.method_42795(var3, (float)var6, (float)var10), 0, 255);
+      int var15 = MathHelper.clamp((int) MathHelper.method_42795(var3, (float)var7, (float)var11), 0, 255);
+      int var16 = MathHelper.clamp((int) MathHelper.method_42795(var3, (float)var8, (float)var12), 0, 255);
+      int var17 = MathHelper.clamp((int) MathHelper.method_42795(var3, (float)var9, (float)var13), 0, 255);
       return var14 << 24 | var15 << 16 | var16 << 8 | var17;
    }
 

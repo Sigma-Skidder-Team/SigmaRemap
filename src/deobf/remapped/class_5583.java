@@ -11,7 +11,7 @@ public class class_5583 extends class_8990 {
    private static final class_7821<Boolean> field_28344 = class_8073.<Boolean>method_36641(class_5583.class, class_2734.field_13347);
    private static final class_7821<Boolean> field_28356 = class_8073.<Boolean>method_36641(class_5583.class, class_2734.field_13347);
    private static final class_7821<Integer> field_28349 = class_8073.<Integer>method_36641(class_5583.class, class_2734.field_13366);
-   public static final Map<Integer, Identifier> field_28352 = Util.<Map<Integer, Identifier>>method_44659(Maps.newHashMap(), var0 -> {
+   public static final Map<Integer, Identifier> field_28352 = Util.<Map<Integer, Identifier>>make(Maps.newHashMap(), var0 -> {
       var0.put(0, new Identifier("textures/entity/cat/tabby.png"));
       var0.put(1, new Identifier("textures/entity/cat/black.png"));
       var0.put(2, new Identifier("textures/entity/cat/red.png"));
@@ -145,13 +145,13 @@ public class class_5583 extends class_8990 {
 
    @Nullable
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       if (!this.method_41215()) {
-         return class_463.field_1960;
+         return SoundEvents.field_1960;
       } else if (!this.method_24875()) {
-         return this.field_41717.nextInt(4) != 0 ? class_463.field_2851 : class_463.field_2849;
+         return this.field_41717.nextInt(4) != 0 ? SoundEvents.field_2851 : SoundEvents.field_2849;
       } else {
-         return class_463.field_2118;
+         return SoundEvents.field_2118;
       }
    }
 
@@ -161,17 +161,17 @@ public class class_5583 extends class_8990 {
    }
 
    public void method_25363() {
-      this.method_37155(class_463.field_2414, this.method_26439(), this.method_26547());
+      this.method_37155(SoundEvents.field_2414, this.method_26439(), this.method_26547());
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2548;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2548;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2857;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2857;
    }
 
    public static MutableAttribute method_25354() {
@@ -189,7 +189,7 @@ public class class_5583 extends class_8990 {
    @Override
    public void method_24867(PlayerEntity var1, ItemStack var2) {
       if (this.method_24866(var2)) {
-         this.method_37155(class_463.field_2578, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2578, 1.0F, 1.0F);
       }
 
       super.method_24867(var1, var2);
@@ -208,7 +208,7 @@ public class class_5583 extends class_8990 {
    public void method_37123() {
       super.method_37123();
       if (this.field_28350 != null && this.field_28350.method_33089() && !this.method_41215() && this.field_41697 % 100 == 0) {
-         this.method_37155(class_463.field_2677, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_2677, 1.0F, 1.0F);
       }
 
       this.method_25368();
@@ -216,7 +216,7 @@ public class class_5583 extends class_8990 {
 
    private void method_25368() {
       if ((this.method_25365() || this.method_25366()) && this.field_41697 % 5 == 0) {
-         this.method_37155(class_463.field_2118, 0.6F + 0.4F * (this.field_41717.nextFloat() - this.field_41717.nextFloat()), 1.0F);
+         this.method_37155(SoundEvents.field_2118, 0.6F + 0.4F * (this.field_41717.nextFloat() - this.field_41717.nextFloat()), 1.0F);
       }
 
       this.method_25357();
@@ -245,15 +245,15 @@ public class class_5583 extends class_8990 {
    }
 
    public float method_25362(float var1) {
-      return class_9299.method_42795(var1, this.field_28347, this.field_28343);
+      return MathHelper.method_42795(var1, this.field_28347, this.field_28343);
    }
 
    public float method_25361(float var1) {
-      return class_9299.method_42795(var1, this.field_28355, this.field_28351);
+      return MathHelper.method_42795(var1, this.field_28355, this.field_28351);
    }
 
    public float method_25367(float var1) {
-      return class_9299.method_42795(var1, this.field_28357, this.field_28354);
+      return MathHelper.method_42795(var1, this.field_28357, this.field_28354);
    }
 
    public class_5583 method_25369(class_6331 var1, class_1899 var2) {

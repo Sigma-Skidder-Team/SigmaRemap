@@ -72,8 +72,8 @@ public class class_7626 {
    }
 
    public void method_34566(double var1, double var3) {
-      int var7 = class_9299.method_42847(var1);
-      int var8 = class_9299.method_42847(var3);
+      int var7 = MathHelper.floor(var1);
+      int var8 = MathHelper.floor(var3);
 
       for (int var9 = 0; var9 < this.field_38810; var9++) {
          int var10 = this.field_38810 * 16;
@@ -104,12 +104,12 @@ public class class_7626 {
 
    @Nullable
    public class_3511 method_34563(BlockPos var1) {
-      int var4 = var1.method_12173() >> 4;
+      int var4 = var1.getX() >> 4;
       int var5 = var1.method_12165() >> 4;
       int var6 = var1.method_12185() >> 4;
       if (var5 >= 0 && var5 < this.field_38812) {
-         var4 = class_9299.method_42788(var4, this.field_38810);
-         var6 = class_9299.method_42788(var6, this.field_38813);
+         var4 = MathHelper.normalizeAngle(var4, this.field_38810);
+         var6 = MathHelper.normalizeAngle(var6, this.field_38813);
          return this.field_38807[this.method_34567(var4, var5, var6)];
       } else {
          return null;
@@ -118,7 +118,7 @@ public class class_7626 {
 
    private void method_34562(class_3511 var1) {
       BlockPos var4 = var1.method_16189();
-      int var5 = var4.method_12173() >> 8 << 8;
+      int var5 = var4.getX() >> 8 << 8;
       int var6 = var4.method_12185() >> 8 << 8;
       class_2034 var7 = new class_2034(var5, var6);
       RenderLayer[] var8 = RenderLayer.field_17580;

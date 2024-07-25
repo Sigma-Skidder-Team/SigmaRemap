@@ -83,7 +83,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    public int method_42977() {
-      return class_9299.method_42829(this.field_41735.<Integer>method_36640(field_47538), 0, 3);
+      return MathHelper.clamp(this.field_41735.<Integer>method_36640(field_47538), 0, 3);
    }
 
    public void method_42972(int var1) {
@@ -98,8 +98,8 @@ public class class_9310 extends class_5521 implements class_2354 {
    @Override
    public void method_37340(Entity var1) {
       if (this.method_37072(var1)) {
-         float var4 = class_9299.method_42840(this.field_29605 * (float) (Math.PI / 180.0));
-         float var5 = class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0));
+         float var4 = MathHelper.cos(this.field_29605 * (float) (Math.PI / 180.0));
+         float var5 = MathHelper.sin(this.field_29605 * (float) (Math.PI / 180.0));
          float var6 = 0.3F;
          var1.method_37256(
             this.getPosX() + (double)(0.3F * var5),
@@ -169,7 +169,7 @@ public class class_9310 extends class_5521 implements class_2354 {
       }
 
       if (var8 && !this.method_37378()) {
-         class_8461 var10 = this.method_19083();
+         SoundEvent var10 = this.method_19083();
          if (var10 != null) {
             this.world
                .method_29528(
@@ -189,7 +189,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public boolean method_26468() {
+   public boolean isMovementBlocked() {
       return this.method_26450() || this.method_19086();
    }
 
@@ -210,44 +210,44 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public class_8461 method_19056() {
-      return class_463.field_2712;
+   public SoundEvent method_19056() {
+      return SoundEvents.field_2712;
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2584;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2584;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2539;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2539;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2085;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2085;
    }
 
    @Nullable
    @Override
-   public class_8461 method_19083() {
-      return class_463.field_2895;
+   public SoundEvent method_19083() {
+      return SoundEvents.field_2895;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2691, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2691, 0.15F, 1.0F);
    }
 
    @Override
    public void method_25020() {
-      this.method_37155(class_463.field_2454, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
+      this.method_37155(SoundEvents.field_2454, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
    }
 
    @Override
    public void method_19037() {
-      class_8461 var3 = this.method_19056();
+      SoundEvent var3 = this.method_19056();
       if (var3 != null) {
          this.method_37155(var3, this.method_26439(), this.method_26547());
       }
@@ -285,7 +285,7 @@ public class class_9310 extends class_5521 implements class_2354 {
       super.method_36982(var1);
       class_9077 var5 = this.method_42989();
       if (this.field_41697 > 20 && var5 != null && var5 != var4) {
-         this.method_37155(class_463.field_2192, 0.5F, 1.0F);
+         this.method_37155(SoundEvents.field_2192, 0.5F, 1.0F);
       }
    }
 
@@ -346,7 +346,7 @@ public class class_9310 extends class_5521 implements class_2354 {
       double var5 = var1.getPosX() - this.getPosX();
       double var7 = var1.method_37080(0.3333333333333333) - var4.method_37309();
       double var9 = var1.getPosZ() - this.getPosZ();
-      float var11 = class_9299.method_42842(var5 * var5 + var9 * var9) * 0.2F;
+      float var11 = MathHelper.sqrt(var5 * var5 + var9 * var9) * 0.2F;
       var4.method_26161(var5, var7 + (double)var11, var9, 1.5F, 10.0F);
       if (!this.method_37378()) {
          this.world
@@ -355,7 +355,7 @@ public class class_9310 extends class_5521 implements class_2354 {
                this.getPosX(),
                this.method_37309(),
                this.getPosZ(),
-               class_463.field_2821,
+               SoundEvents.field_2821,
                this.method_37197(),
                1.0F,
                1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F

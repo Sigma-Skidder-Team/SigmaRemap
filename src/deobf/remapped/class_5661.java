@@ -17,7 +17,7 @@ public class class_5661 extends class_6967 {
 
    @Override
    public boolean method_16795() {
-      if (this.field_28700.world.method_29537().method_1285(class_291.field_1047)) {
+      if (this.field_28700.world.getGameRules().getBoolean(GameRules.field_1047)) {
          if (this.field_35805 <= 0) {
             if (!this.method_25621()) {
                this.field_35805 = this.method_31862(this.field_35801);
@@ -73,7 +73,7 @@ public class class_5661 extends class_6967 {
                ((class_6331)var3)
                   .method_28957(
                      new class_8661(class_3090.field_15351, new ItemStack(class_4897.field_24962)),
-                     (double)var5.method_12173() + 0.5,
+                     (double)var5.getX() + 0.5,
                      (double)var5.method_12165() + 0.7,
                      (double)var5.method_12185() + 0.5,
                      3,
@@ -103,7 +103,7 @@ public class class_5661 extends class_6967 {
                   ((class_6331)var3)
                      .method_28957(
                         class_3090.field_15343,
-                        (double)var5.method_12173() + 0.5,
+                        (double)var5.getX() + 0.5,
                         (double)var5.method_12165(),
                         (double)var5.method_12185() + 0.5,
                         1,
@@ -143,7 +143,7 @@ public class class_5661 extends class_6967 {
 
    @Override
    public boolean method_31855(class_4924 var1, BlockPos var2) {
-      class_5990 var5 = var1.method_22555(var2.method_12173() >> 4, var2.method_12185() >> 4, class_7335.field_37514, false);
+      class_5990 var5 = var1.method_22555(var2.getX() >> 4, var2.method_12185() >> 4, class_7335.field_37514, false);
       return var5 == null
          ? false
          : var5.method_28262(var2).method_8350(this.field_28701)

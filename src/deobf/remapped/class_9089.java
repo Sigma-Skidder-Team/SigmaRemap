@@ -52,10 +52,10 @@ public class class_9089 extends class_2609 {
    public class_9616 method_11832(class_5799 var1, BlockPos var2, class_6631 var3) {
       BlockPos var6 = this.method_41855(var1, var3);
       return new class_9616(
-         var2.method_12173(),
+         var2.getX(),
          var2.method_12165(),
          var2.method_12185(),
-         var2.method_12173() + var6.method_12173(),
+         var2.getX() + var6.getX(),
          var2.method_12165() + var6.method_12165(),
          var2.method_12185() + var6.method_12185()
       );

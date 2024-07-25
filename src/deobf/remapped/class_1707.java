@@ -98,7 +98,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:swiftness"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:swiftness"))
                            )
                         )
                   )
@@ -107,7 +107,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:slowness"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:slowness"))
                            )
                         )
                   )
@@ -116,7 +116,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:strength"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:strength"))
                            )
                         )
                   )
@@ -125,7 +125,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:healing"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:healing"))
                            )
                         )
                   )
@@ -134,7 +134,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:harming"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:harming"))
                            )
                         )
                   )
@@ -143,7 +143,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:leaping"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:leaping"))
                            )
                         )
                   )
@@ -152,7 +152,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:regeneration"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:regeneration"))
                            )
                         )
                   )
@@ -161,7 +161,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:fire_resistance"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:fire_resistance"))
                            )
                         )
                   )
@@ -170,7 +170,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:water_breathing"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:water_breathing"))
                            )
                         )
                   )
@@ -179,7 +179,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:invisibility"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:invisibility"))
                            )
                         )
                   )
@@ -188,7 +188,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:night_vision"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:night_vision"))
                            )
                         )
                   )
@@ -197,7 +197,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:weakness"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:weakness"))
                            )
                         )
                   )
@@ -206,7 +206,7 @@ public class class_1707 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34360(class_6520.method_29699(class_7986.method_36238(0.0F, 1.0F)))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:poison"))
+                              Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:poison"))
                            )
                         )
                   )

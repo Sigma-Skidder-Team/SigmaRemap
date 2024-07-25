@@ -17,6 +17,6 @@ public final class class_6697 extends class_4190 {
    @Override
    public int method_19487(class_9249 var1, double var2) {
       int var6 = this.field_20395.method_26199(var1);
-      return class_9299.method_42829(class_9299.method_42847(var2 * (double)var6), -1, var6);
+      return MathHelper.clamp(MathHelper.floor(var2 * (double)var6), -1, var6);
    }
 }

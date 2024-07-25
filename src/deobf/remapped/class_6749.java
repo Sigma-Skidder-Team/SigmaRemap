@@ -17,7 +17,7 @@ public abstract class class_6749 extends class_5783 {
    private int field_34833;
    private double field_34838 = 2.0;
    private int field_34832;
-   private class_8461 field_34843 = this.method_30933();
+   private SoundEvent field_34843 = this.method_30933();
    private IntOpenHashSet field_34837;
    private List<Entity> field_34841;
 
@@ -38,13 +38,13 @@ public abstract class class_6749 extends class_5783 {
       }
    }
 
-   public void method_30941(class_8461 var1) {
+   public void method_30941(SoundEvent var1) {
       this.field_34843 = var1;
    }
 
    @Override
    public boolean method_37176(double var1) {
-      double var5 = this.method_37241().method_18906() * 10.0;
+      double var5 = this.getBoundingBox().method_18906() * 10.0;
       if (Double.isNaN(var5)) {
          var5 = 1.0;
       }
@@ -83,9 +83,9 @@ public abstract class class_6749 extends class_5783 {
       boolean var3 = this.method_30926();
       class_1343 var4 = this.method_37098();
       if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
-         float var5 = class_9299.method_42842(method_37266(var4));
-         this.rotationYaw = (float)(class_9299.method_42821(var4.field_7336, var4.field_7334) * 180.0F / (float)Math.PI);
-         this.rotationPitch = (float)(class_9299.method_42821(var4.field_7333, (double)var5) * 180.0F / (float)Math.PI);
+         float var5 = MathHelper.sqrt(method_37266(var4));
+         this.rotationYaw = (float)(MathHelper.method_42821(var4.field_7336, var4.field_7334) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.method_42821(var4.field_7333, (double)var5) * 180.0F / (float)Math.PI);
          this.prevRotationYaw = this.rotationYaw;
          this.field_41762 = this.rotationPitch;
       }
@@ -180,14 +180,14 @@ public abstract class class_6749 extends class_5783 {
          double var16 = this.getPosX() + var10;
          double var18 = this.method_37309() + var12;
          double var20 = this.getPosZ() + var14;
-         float var22 = class_9299.method_42842(method_37266(var4));
+         float var22 = MathHelper.sqrt(method_37266(var4));
          if (!var3) {
-            this.rotationYaw = (float)(class_9299.method_42821(var10, var14) * 180.0F / (float)Math.PI);
+            this.rotationYaw = (float)(MathHelper.method_42821(var10, var14) * 180.0F / (float)Math.PI);
          } else {
-            this.rotationYaw = (float)(class_9299.method_42821(-var10, -var14) * 180.0F / (float)Math.PI);
+            this.rotationYaw = (float)(MathHelper.method_42821(-var10, -var14) * 180.0F / (float)Math.PI);
          }
 
-         this.rotationPitch = (float)(class_9299.method_42821(var12, (double)var22) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.method_42821(var12, (double)var22) * 180.0F / (float)Math.PI);
          this.rotationPitch = method_26168(this.field_41762, this.rotationPitch);
          this.rotationYaw = method_26168(this.prevRotationYaw, this.rotationYaw);
          float var27 = 0.99F;
@@ -213,7 +213,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    private boolean method_30923() {
-      return this.field_34834 && this.world.method_6681(new Box(this.method_37245(), this.method_37245()).method_18898(0.06));
+      return this.field_34834 && this.world.method_6681(new Box(this.method_37245(), this.method_37245()).grow(0.06));
    }
 
    private void method_30930() {
@@ -257,7 +257,7 @@ public abstract class class_6749 extends class_5783 {
       super.method_26163(var1);
       Entity var4 = var1.method_25524();
       float var5 = (float)this.method_37098().method_6217();
-      int var6 = class_9299.method_42815(class_9299.method_42827((double)var5 * this.field_34838, 0.0, 2.147483647E9));
+      int var6 = MathHelper.ceil(MathHelper.clamp((double)var5 * this.field_34838, 0.0, 2.147483647E9));
       if (this.method_30936() > 0) {
          if (this.field_34837 == null) {
             this.field_34837 = new IntOpenHashSet(5);
@@ -371,16 +371,16 @@ public abstract class class_6749 extends class_5783 {
       this.field_34831 = 7;
       this.method_30918(false);
       this.method_30922((byte)0);
-      this.method_30941(class_463.field_2562);
+      this.method_30941(SoundEvents.field_2562);
       this.method_30934(false);
       this.method_30929();
    }
 
-   public class_8461 method_30933() {
-      return class_463.field_2562;
+   public SoundEvent method_30933() {
+      return SoundEvents.field_2562;
    }
 
-   public final class_8461 method_30938() {
+   public final SoundEvent method_30938() {
       return this.field_34843;
    }
 
@@ -390,7 +390,7 @@ public abstract class class_6749 extends class_5783 {
    @Nullable
    public class_5631 method_30939(class_1343 var1, class_1343 var2) {
       return class_8462.method_38931(
-         this.world, this, var1, var2, this.method_37241().method_18929(this.method_37098()).method_18898(1.0), this::method_26164
+         this.world, this, var1, var2, this.getBoundingBox().method_18929(this.method_37098()).grow(1.0), this::method_26164
       );
    }
 

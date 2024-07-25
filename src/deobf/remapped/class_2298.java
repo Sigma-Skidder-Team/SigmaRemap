@@ -23,7 +23,7 @@ public class class_2298 extends class_5837 {
          field_11480.warn("Couldn't set damage of loot item {}", var1);
       } else {
          float var5 = 1.0F - this.field_11478.method_36244(var2.method_12693());
-         var1.method_27999(class_9299.method_42848(var5 * (float)var1.method_27957()));
+         var1.method_27999(MathHelper.floor(var5 * (float)var1.method_27957()));
       }
 
       return var1;

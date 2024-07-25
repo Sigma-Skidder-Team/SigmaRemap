@@ -4,10 +4,10 @@ import java.util.EnumSet;
 
 public class class_5591 extends class_3599 {
    private final class_8990 field_28380;
-   private class_5834 field_28374;
+   private LivingEntity field_28374;
    private final class_4924 field_28376;
    private final double field_28379;
-   private final class_1249 field_28383;
+   private final PathNavigator field_28383;
    private int field_28382;
    private final float field_28381;
    private final float field_28375;
@@ -30,7 +30,7 @@ public class class_5591 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_28380.method_41207();
+      LivingEntity var3 = this.field_28380.method_41207();
       if (var3 != null) {
          if (!var3.method_37221()) {
             if (!this.field_28380.method_41216()) {
@@ -96,7 +96,7 @@ public class class_5591 extends class_3599 {
          int var5 = this.method_25393(-3, 3);
          int var6 = this.method_25393(-1, 1);
          int var7 = this.method_25393(-3, 3);
-         boolean var8 = this.method_25394(var3.method_12173() + var5, var3.method_12165() + var6, var3.method_12185() + var7);
+         boolean var8 = this.method_25394(var3.getX() + var5, var3.method_12165() + var6, var3.method_12185() + var7);
          if (var8) {
             return;
          }
@@ -123,7 +123,7 @@ public class class_5591 extends class_3599 {
             return false;
          } else {
             BlockPos var6 = var1.method_6093(this.field_28380.method_37075());
-            return this.field_28376.method_6683(this.field_28380, this.field_28380.method_37241().method_18919(var6));
+            return this.field_28376.method_6683(this.field_28380, this.field_28380.getBoundingBox().method_18919(var6));
          }
       } else {
          return false;

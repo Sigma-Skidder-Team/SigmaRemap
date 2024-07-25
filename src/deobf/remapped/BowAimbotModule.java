@@ -35,7 +35,7 @@ public class BowAimbotModule extends Module {
          }
 
          if (!this.field_14300.isEmpty() && this.getBooleanValueByName("Silent")) {
-            float[] var4 = class_7211.method_33005((class_5834)this.field_14300.get(0));
+            float[] var4 = class_7211.method_33005((LivingEntity)this.field_14300.get(0));
             var1.method_6441(var4[0]);
             var1.method_6448(var4[1]);
          }
@@ -46,7 +46,7 @@ public class BowAimbotModule extends Module {
    private void method_13456(class_3278 var1) {
       if (this.method_42015() && !this.getBooleanValueByName("Silent")) {
          if (!this.field_14300.isEmpty()) {
-            float[] var4 = class_7211.method_33005((class_5834)this.field_14300.get(0));
+            float[] var4 = class_7211.method_33005((LivingEntity)this.field_14300.get(0));
             client.thePlayer.rotationYaw = var4[0];
             client.thePlayer.rotationPitch = var4[1];
          }
@@ -63,13 +63,13 @@ public class BowAimbotModule extends Module {
             var5.remove();
          } else if (SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
             var5.remove();
-         } else if (!(var6 instanceof class_5834)) {
+         } else if (!(var6 instanceof LivingEntity)) {
             var5.remove();
-         } else if (((class_5834)var6).method_26551() == 0.0F) {
+         } else if (((LivingEntity)var6).method_26551() == 0.0F) {
             var5.remove();
          } else if (client.thePlayer.method_37175(var6) > var1) {
             var5.remove();
-         } else if (!client.thePlayer.method_26608((class_5834)var6)) {
+         } else if (!client.thePlayer.method_26608((LivingEntity)var6)) {
             var5.remove();
          } else if (var6 instanceof class_9399) {
             var5.remove();

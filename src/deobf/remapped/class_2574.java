@@ -82,17 +82,17 @@ public class class_2574 extends class_5272<class_337> {
             .method_6213()
             .method_6192((float) (Math.PI / 2));
          double var18 = var16.method_6206(var17);
-         this.field_12738.field_8183 = class_9299.method_42843((float)Math.abs(var18)) * 2.0F * (float)Math.signum(var18);
+         this.field_12738.field_8183 = MathHelper.sqrt((float)Math.abs(var18)) * 2.0F * (float)Math.signum(var18);
       }
 
       this.field_12738.field_8200 = true;
       float var20 = var1.method_1547(var9);
-      this.field_12740[0].field_8190 = class_9299.method_42818(var20) * (float) Math.PI * 0.05F;
-      this.field_12740[1].field_8190 = class_9299.method_42818(var20) * (float) Math.PI * 0.1F;
+      this.field_12740[0].field_8190 = MathHelper.sin(var20) * (float) Math.PI * 0.05F;
+      this.field_12740[1].field_8190 = MathHelper.sin(var20) * (float) Math.PI * 0.1F;
       this.field_12740[1].field_8183 = -1.5F;
       this.field_12740[1].field_8181 = 0.5F;
       this.field_12740[1].field_8187 = 14.0F;
-      this.field_12740[2].field_8190 = class_9299.method_42818(var20) * (float) Math.PI * 0.15F;
+      this.field_12740[2].field_8190 = MathHelper.sin(var20) * (float) Math.PI * 0.15F;
       this.field_12740[2].field_8183 = 0.5F;
       this.field_12740[2].field_8181 = 0.5F;
       this.field_12740[2].field_8187 = 6.0F;
@@ -103,9 +103,9 @@ public class class_2574 extends class_5272<class_337> {
          this.field_12734[var5].field_8191 = (float) Math.PI * field_12737[var5];
          this.field_12734[var5].field_8190 = (float) Math.PI * field_12735[var5];
          this.field_12734[var5].field_8185 = (float) Math.PI * field_12739[var5];
-         this.field_12734[var5].field_8183 = field_12742[var5] * (1.0F + class_9299.method_42840(var1 * 1.5F + (float)var5) * 0.01F - var2);
-         this.field_12734[var5].field_8181 = 16.0F + field_12743[var5] * (1.0F + class_9299.method_42840(var1 * 1.5F + (float)var5) * 0.01F - var2);
-         this.field_12734[var5].field_8187 = field_12744[var5] * (1.0F + class_9299.method_42840(var1 * 1.5F + (float)var5) * 0.01F - var2);
+         this.field_12734[var5].field_8183 = field_12742[var5] * (1.0F + MathHelper.cos(var1 * 1.5F + (float)var5) * 0.01F - var2);
+         this.field_12734[var5].field_8181 = 16.0F + field_12743[var5] * (1.0F + MathHelper.cos(var1 * 1.5F + (float)var5) * 0.01F - var2);
+         this.field_12734[var5].field_8187 = field_12744[var5] * (1.0F + MathHelper.cos(var1 * 1.5F + (float)var5) * 0.01F - var2);
       }
    }
 }

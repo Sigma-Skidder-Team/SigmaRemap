@@ -29,7 +29,7 @@ public class class_3465 extends class_6414 {
 
    @Override
    public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
-      if (var2.method_22572().method_40233() && var2.method_29537().method_1285(class_291.field_1028) && var4.nextInt(2000) < var2.method_43370().method_2097()
+      if (var2.method_22572().method_40233() && var2.getGameRules().getBoolean(GameRules.field_1028) && var4.nextInt(2000) < var2.method_43370().method_2097()
          )
        {
          while (var2.method_28262(var3).method_8350(this)) {
@@ -67,10 +67,10 @@ public class class_3465 extends class_6414 {
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(100) == 0) {
          var2.method_29527(
-            (double)var3.method_12173() + 0.5,
+            (double)var3.getX() + 0.5,
             (double)var3.method_12165() + 0.5,
             (double)var3.method_12185() + 0.5,
-            class_463.field_2758,
+            SoundEvents.field_2758,
             class_562.field_3322,
             0.5F,
             var4.nextFloat() * 0.4F + 0.8F,
@@ -79,7 +79,7 @@ public class class_3465 extends class_6414 {
       }
 
       for (int var7 = 0; var7 < 4; var7++) {
-         double var8 = (double)var3.method_12173() + var4.nextDouble();
+         double var8 = (double)var3.getX() + var4.nextDouble();
          double var10 = (double)var3.method_12165() + var4.nextDouble();
          double var12 = (double)var3.method_12185() + var4.nextDouble();
          double var14 = ((double)var4.nextFloat() - 0.5) * 0.5;
@@ -87,7 +87,7 @@ public class class_3465 extends class_6414 {
          double var18 = ((double)var4.nextFloat() - 0.5) * 0.5;
          int var20 = var4.nextInt(2) * 2 - 1;
          if (!var2.method_28262(var3.method_6108()).method_8350(this) && !var2.method_28262(var3.method_6090()).method_8350(this)) {
-            var8 = (double)var3.method_12173() + 0.5 + 0.25 * (double)var20;
+            var8 = (double)var3.getX() + 0.5 + 0.25 * (double)var20;
             var14 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          } else {
             var12 = (double)var3.method_12185() + 0.5 + 0.25 * (double)var20;

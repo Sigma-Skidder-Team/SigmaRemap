@@ -72,10 +72,10 @@ public class class_2960 extends class_3578 {
          if (this.field_14452 <= 0) {
             if (this.method_13537() != 0) {
                if (this.field_14451 > 60 && this.method_13537() == 2) {
-                  this.method_37155(class_463.field_2251, this.method_26439(), this.method_26547());
+                  this.method_37155(SoundEvents.field_2251, this.method_26439(), this.method_26547());
                   this.method_13541(1);
                } else if (this.field_14451 > 100 && this.method_13537() == 1) {
-                  this.method_37155(class_463.field_2251, this.method_26439(), this.method_26547());
+                  this.method_37155(SoundEvents.field_2251, this.method_26439(), this.method_26547());
                   this.method_13541(0);
                }
 
@@ -84,11 +84,11 @@ public class class_2960 extends class_3578 {
          } else {
             if (this.method_13537() != 0) {
                if (this.field_14452 > 40 && this.method_13537() == 1) {
-                  this.method_37155(class_463.field_2151, this.method_26439(), this.method_26547());
+                  this.method_37155(SoundEvents.field_2151, this.method_26439(), this.method_26547());
                   this.method_13541(2);
                }
             } else {
-               this.method_37155(class_463.field_2151, this.method_26439(), this.method_26547());
+               this.method_37155(SoundEvents.field_2151, this.method_26439(), this.method_26547());
                this.method_13541(1);
             }
 
@@ -100,10 +100,10 @@ public class class_2960 extends class_3578 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (this.isAlive() && this.method_13537() > 0) {
-         for (MobEntity var4 : this.world.<LivingEntity>method_25869(MobEntity.class, this.method_37241().method_18898(0.3), field_14454)) {
+         for (MobEntity var4 : this.world.<LivingEntity>method_25869(MobEntity.class, this.getBoundingBox().grow(0.3), field_14454)) {
             if (var4.isAlive()) {
                this.method_13536(var4);
             }
@@ -115,7 +115,7 @@ public class class_2960 extends class_3578 {
       int var4 = this.method_13537();
       if (var1.attackEntityFrom(DamageSource.method_28345(this), (float)(1 + var4))) {
          var1.method_26558(new class_2250(Effects.field_19718, 60 * var4, 0));
-         this.method_37155(class_463.field_1961, 1.0F, 1.0F);
+         this.method_37155(SoundEvents.field_1961, 1.0F, 1.0F);
       }
    }
 
@@ -132,23 +132,23 @@ public class class_2960 extends class_3578 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_2405;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_2405;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_1999;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_1999;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2800;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2800;
    }
 
    @Override
-   public class_8461 method_16632() {
-      return class_463.field_2525;
+   public SoundEvent method_16632() {
+      return SoundEvents.field_2525;
    }
 
    @Override

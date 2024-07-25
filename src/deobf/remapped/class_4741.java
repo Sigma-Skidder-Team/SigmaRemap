@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class class_4741<E extends class_5834, T extends class_5834> extends class_5920<E> {
+public class class_4741<E extends LivingEntity, T extends LivingEntity> extends class_5920<E> {
    private static String[] field_22972;
    private final int field_22969;
    private final float field_22968;
@@ -29,8 +29,8 @@ public class class_4741<E extends class_5834, T extends class_5834> extends clas
       this.field_22966 = var5;
    }
 
-   public static <T extends class_5834> class_4741<class_5834, T> method_21905(EntityType<? extends T> var0, int var1, class_6044<T> var2, float var3, int var4) {
-      return new class_4741<class_5834, T>(var0, var1, var0x -> true, var0x -> true, var2, var3, var4);
+   public static <T extends LivingEntity> class_4741<LivingEntity, T> method_21905(EntityType<? extends T> var0, int var1, class_6044<T> var2, float var3, int var4) {
+      return new class_4741<LivingEntity, T>(var0, var1, var0x -> true, var0x -> true, var2, var3, var4);
    }
 
    @Override
@@ -39,22 +39,22 @@ public class class_4741<E extends class_5834, T extends class_5834> extends clas
    }
 
    private boolean method_21907(E var1) {
-      List var4 = var1.method_26525().<List<class_5834>>method_5138(class_6044.field_30901).get();
+      List var4 = var1.method_26525().<List<LivingEntity>>method_5138(class_6044.field_30901).get();
       return var4.stream().anyMatch(this::method_21906);
    }
 
-   private boolean method_21906(class_5834 var1) {
+   private boolean method_21906(LivingEntity var1) {
       return this.field_22973.equals(var1.getType()) && this.field_22967.test((T)var1);
    }
 
    @Override
    public void method_27080(class_6331 var1, E var2, long var3) {
       class_1150 var7 = var2.method_26525();
-      var7.<List<class_5834>>method_5138(class_6044.field_30901)
+      var7.<List<LivingEntity>>method_5138(class_6044.field_30901)
          .ifPresent(
             var3x -> var3x.stream()
                   .filter(var1xx -> this.field_22973.equals(var1xx.method_37387()))
-                  .<class_5834>map(var0 -> (class_5834)var0)
+                  .<LivingEntity>map(var0 -> (LivingEntity)var0)
                   .filter(var2xx -> var2xx.method_37275(var2) <= (double)this.field_22970)
                   .filter(this.field_22967)
                   .findFirst()

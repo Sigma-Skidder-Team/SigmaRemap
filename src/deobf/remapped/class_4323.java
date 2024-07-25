@@ -23,7 +23,7 @@ public class class_4323 extends class_3711 {
          this.field_18205.rotationPitch = this.method_17239(this.field_18205.rotationPitch, this.method_17233() + 10.0F, this.field_18207);
       }
 
-      float var3 = class_9299.method_42810(this.field_18205.field_29618 - this.field_18205.field_29605);
+      float var3 = MathHelper.wrapDegrees(this.field_18205.field_29618 - this.field_18205.field_29605);
       if (!(var3 < (float)(-this.field_21035))) {
          if (var3 > (float)this.field_21035) {
             this.field_18205.field_29605 += 4.0F;

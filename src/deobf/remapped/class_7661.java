@@ -58,11 +58,11 @@ public class class_7661<T extends Entity> extends class_5272<T> {
    @Override
    public void method_29700(T var1, float var2, float var3, float var4, float var5, float var6) {
       for (int var9 = 0; var9 < this.field_38932.length; var9++) {
-         this.field_38932[var9].field_8190 = class_9299.method_42840(var4 * 0.9F + (float)var9 * 0.15F * (float) Math.PI)
+         this.field_38932[var9].field_8190 = MathHelper.cos(var4 * 0.9F + (float)var9 * 0.15F * (float) Math.PI)
             * (float) Math.PI
             * 0.05F
             * (float)(1 + Math.abs(var9 - 2));
-         this.field_38932[var9].field_8183 = class_9299.method_42818(var4 * 0.9F + (float)var9 * 0.15F * (float) Math.PI)
+         this.field_38932[var9].field_8183 = MathHelper.sin(var4 * 0.9F + (float)var9 * 0.15F * (float) Math.PI)
             * (float) Math.PI
             * 0.2F
             * (float)Math.abs(var9 - 2);

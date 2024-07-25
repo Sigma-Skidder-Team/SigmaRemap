@@ -47,7 +47,7 @@ public final class ItemStack {
    );
    private static final Logger field_31209 = LogManager.getLogger();
    public static final ItemStack EMPTY = new ItemStack((class_2451)null);
-   public static final DecimalFormat field_31202 = Util.<DecimalFormat>method_44659(
+   public static final DecimalFormat field_31202 = Util.<DecimalFormat>make(
       new DecimalFormat("#.##"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
    private static final Style field_31216 = Style.EMPTY.setFormatting(TextFormatting.DARK_PURPLE).setItalic(true);
@@ -908,11 +908,11 @@ public final class ItemStack {
       return this.method_27960().method_11247();
    }
 
-   public class_8461 method_28011() {
+   public SoundEvent method_28011() {
       return this.method_27960().method_11253();
    }
 
-   public class_8461 method_27979() {
+   public SoundEvent method_27979() {
       return this.method_27960().method_11243();
    }
 }

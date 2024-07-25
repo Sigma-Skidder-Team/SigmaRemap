@@ -49,10 +49,10 @@ public class class_6414 extends class_2353 implements class_8525 {
 
    public static class_2522 method_29277(class_2522 var0, class_2522 var1, World var2, BlockPos var3) {
       class_4190 var6 = class_3370.method_15529(var0.method_8324(var2, var3), var1.method_8324(var2, var3), class_8529.field_43654)
-         .method_19496((double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
+         .method_19496((double)var3.getX(), (double)var3.method_12165(), (double)var3.method_12185());
 
       for (Entity var8 : var2.method_25870((Entity)null, var6.method_19483())) {
-         double var9 = class_3370.method_15520(class_9249.field_47216, var8.method_37241().method_18918(0.0, 1.0, 0.0), Stream.<class_4190>of(var6), -1.0);
+         double var9 = class_3370.method_15520(class_9249.field_47216, var8.getBoundingBox().method_18918(0.0, 1.0, 0.0), Stream.<class_4190>of(var6), -1.0);
          var8.method_37254(var8.getPosX(), var8.method_37309() + 1.0 + var9, var8.getPosZ());
       }
 
@@ -227,24 +227,24 @@ public class class_6414 extends class_2353 implements class_8525 {
    }
 
    public static void method_29267(World var0, BlockPos var1, ItemStack var2) {
-      if (!var0.field_33055 && !var2.method_28022() && var0.method_29537().method_1285(class_291.field_1058)) {
+      if (!var0.field_33055 && !var2.method_28022() && var0.getGameRules().getBoolean(GameRules.field_1058)) {
          float var5 = 0.5F;
          double var6 = (double)(var0.field_33033.nextFloat() * 0.5F) + 0.25;
          double var8 = (double)(var0.field_33033.nextFloat() * 0.5F) + 0.25;
          double var10 = (double)(var0.field_33033.nextFloat() * 0.5F) + 0.25;
-         class_91 var12 = new class_91(var0, (double)var1.method_12173() + var6, (double)var1.method_12165() + var8, (double)var1.method_12185() + var10, var2);
+         class_91 var12 = new class_91(var0, (double)var1.getX() + var6, (double)var1.method_12165() + var8, (double)var1.method_12185() + var10, var2);
          var12.method_257();
          var0.method_7509(var12);
       }
    }
 
    public void method_29304(class_6331 var1, BlockPos var2, int var3) {
-      if (var1.method_29537().method_1285(class_291.field_1058)) {
+      if (var1.getGameRules().getBoolean(GameRules.field_1058)) {
          while (var3 > 0) {
             int var6 = class_5614.method_25476(var3);
             var3 -= var6;
             var1.method_7509(
-               new class_5614(var1, (double)var2.method_12173() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5, var6)
+               new class_5614(var1, (double)var2.getX() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5, var6)
             );
          }
       }

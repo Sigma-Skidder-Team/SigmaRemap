@@ -8,7 +8,7 @@ public class class_6412 extends class_7812 {
    }
 
    @Override
-   public class_8461 method_35399(boolean var1) {
-      return !var1 ? class_463.field_2190 : class_463.field_2870;
+   public SoundEvent method_35399(boolean var1) {
+      return !var1 ? SoundEvents.field_2190 : SoundEvents.field_2870;
    }
 }

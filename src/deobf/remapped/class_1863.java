@@ -207,7 +207,7 @@ public class class_1863 extends class_7114 implements IRenderable, class_5888 {
    }
 
    public void method_8266(int var1) {
-      this.field_9454 = class_9299.method_42829(var1, 0, this.field_9449.length());
+      this.field_9454 = MathHelper.clamp(var1, 0, this.field_9449.length());
    }
 
    public void method_8253() {
@@ -331,7 +331,7 @@ public class class_1863 extends class_7114 implements IRenderable, class_5888 {
          }
 
          if (this.method_32691() && var8 && var5 == 0) {
-            int var9 = class_9299.method_42847(var1) - this.field_36670;
+            int var9 = MathHelper.floor(var1) - this.field_36670;
             if (this.field_9456) {
                var9 -= 4;
             }
@@ -516,7 +516,7 @@ public class class_1863 extends class_7114 implements IRenderable, class_5888 {
 
    public void method_8248(int var1) {
       int var4 = this.field_9449.length();
-      this.field_9446 = class_9299.method_42829(var1, 0, var4);
+      this.field_9446 = MathHelper.clamp(var1, 0, var4);
       if (this.field_9461 != null) {
          if (this.field_9447 > var4) {
             this.field_9447 = var4;
@@ -537,7 +537,7 @@ public class class_1863 extends class_7114 implements IRenderable, class_5888 {
             this.field_9447 = this.field_9447 + (this.field_9446 - var7);
          }
 
-         this.field_9447 = class_9299.method_42829(this.field_9447, 0, var4);
+         this.field_9447 = MathHelper.clamp(this.field_9447, 0, var4);
       }
    }
 

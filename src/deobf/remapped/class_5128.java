@@ -73,7 +73,7 @@ public class class_5128 extends class_6414 {
       var2.method_43359((PlayerEntity)null, var3, var1.<class_617>method_10313(field_26460).method_2881(), class_562.field_3333, 3.0F, var9);
       var2.method_43361(
          class_3090.field_15374,
-         (double)var3.method_12173() + 0.5,
+         (double)var3.getX() + 0.5,
          (double)var3.method_12165() + 1.2,
          (double)var3.method_12185() + 0.5,
          (double)var8 / 24.0,

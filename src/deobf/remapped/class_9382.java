@@ -11,7 +11,7 @@ public class class_9382 extends class_6906<class_2048> {
       int var9 = var1.method_9572();
       if (var9 > -1 && (float)var9 - var2 + 1.0F < 10.0F) {
          float var10 = 1.0F - ((float)var9 - var2 + 1.0F) / 10.0F;
-         var10 = class_9299.method_42828(var10, 0.0F, 1.0F);
+         var10 = MathHelper.clamp(var10, 0.0F, 1.0F);
          var10 *= var10;
          var10 *= var10;
          float var11 = 1.0F + var10 * 0.3F;

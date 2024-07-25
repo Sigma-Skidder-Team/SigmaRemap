@@ -10,7 +10,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7714 implements class_2237 {
-   public class_7714(class_5414 var1, class_3547 var2, class_291 var3, Map var4) {
+   public class_7714(class_5414 var1, class_3547 var2, GameRules var3, Map var4) {
       this.field_39127 = var1;
       this.field_39124 = var2;
       this.field_39123 = var3;

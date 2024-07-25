@@ -27,11 +27,11 @@ public class class_6021 extends class_4749 {
             var7.method_13371(var3, var11);
             class_2522 var12 = var2.method_28262(var7);
             if (var12.method_8350(this) && !this.method_27459(var12, var2, var7)) {
-               var2.method_28968().method_14011(var7, this, class_9299.method_42824(var4, 20, 40));
+               var2.method_28968().method_14011(var7, this, MathHelper.nextInt(var4, 20, 40));
             }
          }
       } else {
-         var2.method_28968().method_14011(var3, this, class_9299.method_42824(var4, 20, 40));
+         var2.method_28968().method_14011(var3, this, MathHelper.nextInt(var4, 20, 40));
       }
    }
 

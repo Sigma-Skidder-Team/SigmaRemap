@@ -9,7 +9,7 @@ public class class_8270 implements class_1517 {
 
    @Override
    public int method_6937(class_6331 var1, boolean var2, boolean var3) {
-      if (var3 && var1.method_29537().method_1285(class_291.field_1028)) {
+      if (var3 && var1.getGameRules().getBoolean(GameRules.field_1028)) {
          this.field_42422--;
          if (this.field_42422 <= 0) {
             this.field_42422 = 1200;
@@ -20,10 +20,10 @@ public class class_8270 implements class_1517 {
                int var9 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
                BlockPos var10 = var6.method_37075().method_6104(var8, 0, var9);
                if (var1.method_22569(
-                  var10.method_12173() - 10,
+                  var10.getX() - 10,
                   var10.method_12165() - 10,
                   var10.method_12185() - 10,
-                  var10.method_12173() + 10,
+                  var10.getX() + 10,
                   var10.method_12165() + 10,
                   var10.method_12185() + 10
                )) {

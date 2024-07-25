@@ -66,7 +66,7 @@ public class class_1511 extends Entity {
       if (!this.world.field_33055) {
          if (--this.field_8003 < 0) {
             if (this.field_8003 == -8) {
-               for (LivingEntity var16 : this.world.<LivingEntity>method_25868(LivingEntity.class, this.method_37241().method_18899(0.2, 0.0, 0.2))) {
+               for (LivingEntity var16 : this.world.<LivingEntity>method_25868(LivingEntity.class, this.getBoundingBox().method_18899(0.2, 0.0, 0.2))) {
                   this.method_6917(var16);
                }
             }
@@ -122,7 +122,7 @@ public class class_1511 extends Entity {
                   this.getPosX(),
                   this.method_37309(),
                   this.getPosZ(),
-                  class_463.field_2633,
+                  SoundEvents.field_2633,
                   this.method_37197(),
                   1.0F,
                   this.field_41717.nextFloat() * 0.2F + 0.85F,

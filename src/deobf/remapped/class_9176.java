@@ -190,7 +190,7 @@ public class class_9176 extends class_6414 {
          for (int var12 = 0; var12 < var16; var12++) {
             Direction var13 = class_9594.field_48893.method_44313(var2);
             BlockPos var14 = var1.method_6082(var9).method_6098(var13);
-            if (Math.abs(var14.method_12173() - var3.method_12173()) < var4
+            if (Math.abs(var14.getX() - var3.getX()) < var4
                && Math.abs(var14.method_12185() - var3.method_12185()) < var4
                && var0.method_22548(var14)
                && var0.method_22548(var14.method_6100())

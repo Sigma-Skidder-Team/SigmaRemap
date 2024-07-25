@@ -8,7 +8,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    private static final class_7821<Boolean> field_48114 = class_8073.<Boolean>method_36641(class_9408.class, class_2734.field_13347);
    private static final class_7821<Integer> field_48111 = class_8073.<Integer>method_36641(class_9408.class, class_2734.field_13366);
    private static final class_7821<Integer> field_48105 = class_8073.<Integer>method_36641(class_9408.class, class_2734.field_13366);
-   public static final Predicate<class_5834> field_48108 = var0 -> {
+   public static final Predicate<LivingEntity> field_48108 = var0 -> {
       EntityType var3 = var0.getType();
       return var3 == EntityType.field_34321 || var3 == EntityType.field_34251 || var3 == EntityType.field_34250;
    };
@@ -66,7 +66,7 @@ public class class_9408 extends class_8990 implements class_6250 {
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2135, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2135, 0.15F, 1.0F);
    }
 
    @Override
@@ -87,26 +87,26 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26918() {
+   public SoundEvent method_26918() {
       if (!this.method_28537()) {
          if (this.field_41717.nextInt(3) != 0) {
-            return class_463.field_2522;
+            return SoundEvents.field_2522;
          } else {
-            return this.method_41215() && this.method_26551() < 10.0F ? class_463.field_2367 : class_463.field_1997;
+            return this.method_41215() && this.method_26551() < 10.0F ? SoundEvents.field_2367 : SoundEvents.field_1997;
          }
       } else {
-         return class_463.field_2262;
+         return SoundEvents.field_2262;
       }
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2490;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2490;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_2215;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_2215;
    }
 
    @Override
@@ -115,8 +115,8 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public void method_26606() {
-      super.method_26606();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.field_33055 && this.field_48106 && !this.field_48103 && !this.method_21379() && this.onGround) {
          this.field_48103 = true;
          this.field_48110 = 0.0F;
@@ -143,7 +143,7 @@ public class class_9408 extends class_8990 implements class_6250 {
          if (!this.method_37110()) {
             if ((this.field_48106 || this.field_48103) && this.field_48103) {
                if (this.field_48110 == 0.0F) {
-                  this.method_37155(class_463.field_2131, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
+                  this.method_37155(SoundEvents.field_2131, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
                }
 
                this.field_48113 = this.field_48110;
@@ -157,7 +157,7 @@ public class class_9408 extends class_8990 implements class_6250 {
 
                if (this.field_48110 > 0.4F) {
                   float var3 = (float)this.method_37309();
-                  int var4 = (int)(class_9299.method_42818((this.field_48110 - 0.4F) * (float) Math.PI) * 7.0F);
+                  int var4 = (int)(MathHelper.sin((this.field_48110 - 0.4F) * (float) Math.PI) * 7.0F);
                   class_1343 var5 = this.method_37098();
 
                   for (int var6 = 0; var6 < var4; var6++) {
@@ -206,11 +206,11 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    public float method_43581(float var1) {
-      return Math.min(0.5F + class_9299.method_42795(var1, this.field_48113, this.field_48110) / 2.0F * 0.5F, 1.0F);
+      return Math.min(0.5F + MathHelper.method_42795(var1, this.field_48113, this.field_48110) / 2.0F * 0.5F, 1.0F);
    }
 
    public float method_43586(float var1, float var2) {
-      float var5 = (class_9299.method_42795(var1, this.field_48113, this.field_48110) + var2) / 1.8F;
+      float var5 = (MathHelper.method_42795(var1, this.field_48113, this.field_48110) + var2) / 1.8F;
       if (!(var5 < 0.0F)) {
          if (var5 > 1.0F) {
             var5 = 1.0F;
@@ -219,11 +219,11 @@ public class class_9408 extends class_8990 implements class_6250 {
          var5 = 0.0F;
       }
 
-      return class_9299.method_42818(var5 * (float) Math.PI) * class_9299.method_42818(var5 * (float) Math.PI * 11.0F) * 0.15F * (float) Math.PI;
+      return MathHelper.sin(var5 * (float) Math.PI) * MathHelper.sin(var5 * (float) Math.PI * 11.0F) * 0.15F * (float) Math.PI;
    }
 
    public float method_43578(float var1) {
-      return class_9299.method_42795(var1, this.field_48104, this.field_48102) * 0.15F * (float) Math.PI;
+      return MathHelper.method_42795(var1, this.field_48104, this.field_48102) * 0.15F * (float) Math.PI;
    }
 
    @Override
@@ -265,13 +265,13 @@ public class class_9408 extends class_8990 implements class_6250 {
    public void method_41217(boolean var1) {
       super.method_41217(var1);
       if (!var1) {
-         this.method_26561(Attributes.MAX_HEALTH).method_45006(8.0);
+         this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(8.0);
       } else {
-         this.method_26561(Attributes.MAX_HEALTH).method_45006(20.0);
+         this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0);
          this.method_26456(20.0F);
       }
 
-      this.method_26561(Attributes.ATTACK_DAMAGE).method_45006(4.0);
+      this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4.0);
    }
 
    @Override
@@ -290,7 +290,7 @@ public class class_9408 extends class_8990 implements class_6250 {
                } else {
                   this.method_41212(var1);
                   this.field_29904.method_5620();
-                  this.method_26860((class_5834)null);
+                  this.method_26860((LivingEntity)null);
                   this.method_41208(true);
                   this.world.method_29587(this, (byte)7);
                }
@@ -313,7 +313,7 @@ public class class_9408 extends class_8990 implements class_6250 {
                   this.method_41208(!this.method_41216());
                   this.field_29654 = false;
                   this.field_29904.method_5620();
-                  this.method_26860((class_5834)null);
+                  this.method_26860((LivingEntity)null);
                   return class_6910.field_35520;
                }
 
@@ -446,7 +446,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public boolean method_41219(class_5834 var1, class_5834 var2) {
+   public boolean method_41219(LivingEntity var1, LivingEntity var2) {
       if (var1 instanceof class_9490 || var1 instanceof class_4206) {
          return false;
       } else if (!(var1 instanceof class_9408)) {

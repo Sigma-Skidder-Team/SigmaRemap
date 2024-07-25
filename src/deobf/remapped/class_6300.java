@@ -46,8 +46,8 @@ public class class_6300<T extends MobEntity & class_2354> extends class_2344<T> 
       super.method_10738((T)var1, var2, var3, var4, var5, var6);
       ItemStack var9 = var1.method_26446();
       if (var1.method_26892() && (var9.method_28022() || var9.method_27960() != class_4897.field_25206)) {
-         float var10 = class_9299.method_42818(this.field_33202 * (float) Math.PI);
-         float var11 = class_9299.method_42818((1.0F - (1.0F - this.field_33202) * (1.0F - this.field_33202)) * (float) Math.PI);
+         float var10 = MathHelper.sin(this.field_33202 * (float) Math.PI);
+         float var11 = MathHelper.sin((1.0F - (1.0F - this.field_33202) * (1.0F - this.field_33202)) * (float) Math.PI);
          this.field_11705.field_8185 = 0.0F;
          this.field_11701.field_8185 = 0.0F;
          this.field_11705.field_8190 = -(0.1F - var10 * 0.6F);

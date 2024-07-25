@@ -77,7 +77,7 @@ public class class_8011 extends class_3429 implements class_3713 {
    }
 
    private void method_36351() {
-      Box var3 = this.method_37241().method_18899(4.0, 2.0, 4.0);
+      Box var3 = this.getBoundingBox().method_18899(4.0, 2.0, 4.0);
       List var4 = this.world.<LivingEntity>method_25869(LivingEntity.class, var3, field_41037);
       if (!var4.isEmpty()) {
          for (LivingEntity var6 : var4) {
@@ -90,7 +90,7 @@ public class class_8011 extends class_3429 implements class_3713 {
    }
 
    private void method_36350(List<class_2250> var1, Entity var2) {
-      Box var5 = this.method_37241().method_18899(4.0, 2.0, 4.0);
+      Box var5 = this.getBoundingBox().method_18899(4.0, 2.0, 4.0);
       List var6 = this.world.<LivingEntity>method_25868(LivingEntity.class, var5);
       if (!var6.isEmpty()) {
          for (LivingEntity var8 : var6) {

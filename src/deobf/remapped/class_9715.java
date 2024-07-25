@@ -94,7 +94,7 @@ public class class_9715 extends class_292 implements class_4511 {
 
    public boolean method_44871() {
       if (!class_5772.method_26101(this)) {
-         List var3 = this.world.<Entity>method_25869(class_91.class, this.method_37241().method_18899(0.25, 0.0, 0.25), class_3572.field_17481);
+         List var3 = this.world.<Entity>method_25869(class_91.class, this.getBoundingBox().method_18899(0.25, 0.0, 0.25), class_3572.field_17481);
          if (!var3.isEmpty()) {
             class_5772.method_26105(this, (class_91)var3.get(0));
          }
@@ -108,7 +108,7 @@ public class class_9715 extends class_292 implements class_4511 {
    @Override
    public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (this.world.method_29537().method_1285(class_291.field_1024)) {
+      if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
          this.method_37312(class_4783.field_23698);
       }
    }

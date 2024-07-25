@@ -27,7 +27,7 @@ public class class_2587 extends class_5127 {
    @Override
    public int method_44952(float var1) {
       float var4 = ((float)this.field_49475 + var1) / (float)this.field_49476;
-      var4 = class_9299.method_42828(var4, 0.0F, 1.0F);
+      var4 = MathHelper.clamp(var4, 0.0F, 1.0F);
       int var5 = super.method_44952(var1);
       int var6 = var5 & 0xFF;
       int var7 = var5 >> 16 & 0xFF;

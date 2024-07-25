@@ -142,10 +142,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    @Nullable
    private class_3511 method_20003(BlockPos var1, class_3511 var2, Direction var3) {
       BlockPos var4 = var2.method_16143(var3);
-      if (class_9299.method_42805(var1.method_12173() - var4.method_12173()) > this.field_20922 * 16) {
+      if (MathHelper.abs(var1.getX() - var4.getX()) > this.field_20922 * 16) {
          return null;
       } else if (var4.method_12165() >= 0 && var4.method_12165() < 256) {
-         return class_9299.method_42805(var1.method_12185() - var4.method_12185()) > this.field_20922 * 16 ? null : this.field_20966.method_34563(var4);
+         return MathHelper.abs(var1.method_12185() - var4.method_12185()) > this.field_20922 * 16 ? null : this.field_20966.method_34563(var4);
       } else {
          return null;
       }
@@ -161,7 +161,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          for (int var4 = 0; var4 < 32; var4++) {
             float var5 = (float)(var4 - 16);
             float var6 = (float)(var3 - 16);
-            float var7 = class_9299.method_42843(var5 * var5 + var6 * var6);
+            float var7 = MathHelper.sqrt(var5 * var5 + var6 * var6);
             this.field_20931[var3 << 5 | var4] = -var6 / var7;
             this.field_21014[var3 << 5 | var4] = var5 / var7;
          }
@@ -189,9 +189,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          var1.method_26126();
          ClientWorld var10 = this.client.theWorld;
-         int var11 = class_9299.method_42847(var3);
-         int var12 = class_9299.method_42847(var5);
-         int var13 = class_9299.method_42847(var7);
+         int var11 = MathHelper.floor(var3);
+         int var12 = MathHelper.floor(var5);
+         int var13 = MathHelper.floor(var7);
          class_8042 var14 = class_8042.method_36499();
          class_9633 var15 = var14.method_36501();
          RenderSystem.enableAlphaTest();
@@ -255,7 +255,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                         float var35 = -((float)var34 + var2) / 32.0F * (3.0F + var32.nextFloat());
                         double var36 = (double)((float)var21 + 0.5F) - var3;
                         double var38 = (double)((float)var20 + 0.5F) - var7;
-                        float var40 = class_9299.method_42842(var36 * var36 + var38 * var38) / (float)var16;
+                        float var40 = MathHelper.sqrt(var36 * var36 + var38 * var38) / (float)var16;
                         float var41 = ((1.0F - var40 * var40) * 0.5F + 0.5F) * var48;
                         var19.method_13362(var21, var31, var20);
                         int var42 = method_20002(var10, var19);
@@ -295,7 +295,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                         float var51 = (float)(var32.nextDouble() + (double)(var18 * (float)var32.nextGaussian()) * 0.001);
                         double var37 = (double)((float)var21 + 0.5F) - var3;
                         double var39 = (double)((float)var20 + 0.5F) - var7;
-                        float var52 = class_9299.method_42842(var37 * var37 + var39 * var39) / (float)var16;
+                        float var52 = MathHelper.sqrt(var37 * var37 + var39 * var39) / (float)var16;
                         float var53 = ((1.0F - var52 * var52) * 0.3F + 0.5F) * var48;
                         var19.method_13362(var21, var31, var20);
                         int var43 = method_20002(var10, var19);
@@ -383,7 +383,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                this.client
                   .theWorld
                   .method_43361(
-                     var26, (double)var11.method_12173() + var13, (double)var11.method_12165() + var24, (double)var11.method_12185() + var15, 0.0, 0.0, 0.0
+                     var26, (double)var11.getX() + var13, (double)var11.method_12165() + var24, (double)var11.method_12185() + var15, 0.0, 0.0, 0.0
                   );
             }
          }
@@ -391,10 +391,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          if (var6 != null && var3.nextInt(3) < this.field_20965++) {
             this.field_20965 = 0;
             if (var6.method_12165() > var5.method_12165() + 1
-               && var4.method_22563(class_3801.field_18595, var5).method_12165() > class_9299.method_42848((float)var5.method_12165())) {
-               this.client.theWorld.method_721(var6, class_463.field_2554, class_562.field_3330, 0.1F, 0.5F, false);
+               && var4.method_22563(class_3801.field_18595, var5).method_12165() > MathHelper.floor((float)var5.method_12165())) {
+               this.client.theWorld.method_721(var6, SoundEvents.field_2554, class_562.field_3330, 0.1F, 0.5F, false);
             } else {
-               this.client.theWorld.method_721(var6, class_463.field_2741, class_562.field_3330, 0.2F, 1.0F, false);
+               this.client.theWorld.method_721(var6, SoundEvents.field_2741, class_562.field_3330, 0.2F, 1.0F, false);
             }
          }
       }
@@ -801,9 +801,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       class_3511 var14 = this.field_20966.method_34563(var13);
       byte var15 = 16;
       BlockPos var16 = new BlockPos(
-         class_9299.method_42847(var6.field_7336 / 16.0) * 16,
-         class_9299.method_42847(var6.field_7333 / 16.0) * 16,
-         class_9299.method_42847(var6.field_7334 / 16.0) * 16
+         MathHelper.floor(var6.field_7336 / 16.0) * 16,
+         MathHelper.floor(var6.field_7333 / 16.0) * 16,
+         MathHelper.floor(var6.field_7334 / 16.0) * 16
       );
       float var17 = var1.method_41638();
       float var18 = var1.method_41640();
@@ -880,7 +880,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.field_20980.clear();
          Deque var41 = this.field_20980;
          Entity.method_37327(
-            class_9299.method_42827((double)this.client.gameOptions.field_45537 / 8.0, 1.0, 2.5) * (double)this.client.gameOptions.field_45475
+            MathHelper.clamp((double)this.client.gameOptions.field_45537 / 8.0, 1.0, 2.5) * (double)this.client.gameOptions.field_45475
          );
          boolean var43 = this.client.field_9631;
          BlockPos var45 = var1.method_41630();
@@ -893,7 +893,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   this.field_20961.add(var22.method_16166());
                }
 
-               class_1343 var28 = new class_1343((double)var45.method_12173(), (double)var21, (double)var45.method_12185());
+               class_1343 var28 = new class_1343((double)var45.getX(), (double)var21, (double)var45.method_12185());
                class_1343 var29 = new class_1343(var28.method_61(), var28.method_60(), var28.method_62());
                class_2426 var30 = var1.method_41634();
                class_2426 var31 = new class_2426(var30.method_11057(), 0.0F, var30.method_11055());
@@ -934,8 +934,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   this.field_20961.add(var22.method_16166());
                }
 
-               int var52 = class_9299.method_42847(var6.field_7336 / 16.0) * 16;
-               int var54 = class_9299.method_42847(var6.field_7334 / 16.0) * 16;
+               int var52 = MathHelper.floor(var6.field_7336 / 16.0) * 16;
+               int var54 = MathHelper.floor(var6.field_7334 / 16.0) * 16;
                ArrayList var56 = Lists.newArrayList();
 
                for (int var58 = -this.field_20922; var58 <= this.field_20922; var58++) {
@@ -1011,8 +1011,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             if (var47.method_16181() || var42.contains(var47)) {
                this.field_20985 = true;
                BlockPos var48 = var47.method_16189();
-               boolean var51 = (double)class_1750.method_7807(
-                     var16, (float)(var48.method_12173() + 8), (float)(var48.method_12165() + 8), (float)(var48.method_12185() + 8)
+               boolean var51 = (double) MathUtils.method_7807(
+                     var16, (float)(var48.getX() + 8), (float)(var48.method_12165() + 8), (float)(var48.method_12185() + 8)
                   )
                   < 768.0;
                if (!var47.method_16137() && !var51) {
@@ -1044,7 +1044,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       } else {
          if (var4) {
             BlockPos var7 = var6.method_16189();
-            int var8 = var1.method_12173() - var7.method_12173();
+            int var8 = var1.getX() - var7.getX();
             int var9 = var1.method_12185() - var7.method_12185();
             int var10 = var8 * var8 + var9 * var9;
             if (var10 > this.field_20981) {
@@ -1127,7 +1127,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       var20.field_11841 = Config.method_14424() && !class_6588.method_30227();
       float var22 = var7.method_35955();
-      boolean var23 = this.client.theWorld.method_738().method_34252(class_9299.method_42847(var12), class_9299.method_42847(var14))
+      boolean var23 = this.client.theWorld.method_738().method_34252(MathHelper.floor(var12), MathHelper.floor(var14))
          || this.client.field_9614.method_13972().method_21877();
       if ((Config.method_14391() || Config.method_14282() || Config.method_14417()) && !class_6588.field_33945) {
          class_6377.method_29160(var6, class_1026.field_5679, var22, var23, var2);
@@ -1163,7 +1163,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       long var30 = Util.getMeasuringTimeNano() - var3;
       long var32 = this.field_20989.method_41974(var30);
       long var34 = var32 * 3L / 2L;
-      long var36 = class_9299.method_42830(var34, var28, 33333333L);
+      long var36 = MathHelper.clamp(var34, var28, 33333333L);
       class_5099.field_26308.method_24314();
       this.method_20024(var3 + var36);
       class_5099.field_26308.method_24313();
@@ -1235,7 +1235,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                && (
                   var45 != var6.method_41633()
                      || var6.method_41648()
-                     || var6.method_41633() instanceof class_5834 && ((class_5834)var6.method_41633()).method_26507()
+                     || var6.method_41633() instanceof LivingEntity && ((LivingEntity)var6.method_41633()).method_26507()
                )
                && (!(var45 instanceof ClientPlayerEntity) || var6.method_41633() == var45)) {
                String var46 = var45.getClass().getName();
@@ -1320,7 +1320,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                Object var89 = var39;
                var1.method_36063();
                if (MinecraftClient.getInstance().field_9591) {
-                  var1.method_36065((double)var88.method_12173() - var12, (double)var88.method_12165() - var14, (double)var88.method_12185() - var16);
+                  var1.method_36065((double)var88.getX() - var12, (double)var88.method_12165() - var14, (double)var88.method_12185() - var16);
                }
 
                SortedSet var91 = (SortedSet)this.field_20948.get(var88.method_6077());
@@ -1360,7 +1360,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
             BlockPos var83 = var73.method_17399();
             var1.method_36063();
-            var1.method_36065((double)var83.method_12173() - var12, (double)var83.method_12165() - var14, (double)var83.method_12185() - var16);
+            var1.method_36065((double)var83.getX() - var12, (double)var83.method_12165() - var14, (double)var83.method_12185() - var16);
             class_3569.field_17468.method_16586(var73, var2, var1, var39);
             var1.method_36064();
             this.field_20920++;
@@ -1397,7 +1397,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       while (var63.hasNext()) {
          Entry var68 = (Entry)var63.next();
          BlockPos var74 = BlockPos.method_6088(var68.getLongKey());
-         double var79 = (double)var74.method_12173() - var12;
+         double var79 = (double)var74.getX() - var12;
          double var87 = (double)var74.method_12165() - var14;
          double var90 = (double)var74.method_12185() - var16;
          if (!(var79 * var79 + var87 * var87 + var90 * var90 > 1024.0)) {
@@ -1405,7 +1405,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             if (var92 != null && !var92.isEmpty()) {
                int var93 = ((class_9259)var92.last()).method_42656();
                var1.method_36063();
-               var1.method_36065((double)var74.method_12173() - var12, (double)var74.method_12165() - var14, (double)var74.method_12185() - var16);
+               var1.method_36065((double)var74.getX() - var12, (double)var74.method_12165() - var14, (double)var74.method_12185() - var16);
                class_6279 var94 = var1.method_36058();
                class_3764 var54 = new class_3764(
                   this.field_20973.method_13793().method_11645(class_6560.field_33452.get(var93)), var94.method_28620(), var94.method_28618()
@@ -1571,10 +1571,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    public void method_20009(Entity var1, double var2, double var4, double var6, float var8, class_7966 var9, class_2565 var10) {
-      double var11 = class_9299.method_42794((double)var8, var1.field_41754, var1.getPosX());
-      double var13 = class_9299.method_42794((double)var8, var1.field_41713, var1.method_37309());
-      double var15 = class_9299.method_42794((double)var8, var1.field_41724, var1.getPosZ());
-      float var17 = class_9299.method_42795(var8, var1.prevRotationYaw, var1.rotationYaw);
+      double var11 = MathHelper.lerp((double)var8, var1.field_41754, var1.getPosX());
+      double var13 = MathHelper.lerp((double)var8, var1.field_41713, var1.method_37309());
+      double var15 = MathHelper.lerp((double)var8, var1.field_41724, var1.getPosZ());
+      float var17 = MathHelper.method_42795(var8, var1.prevRotationYaw, var1.rotationYaw);
       this.field_20988.method_28115(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field_20988.method_28120(var1, var8));
    }
 
@@ -1679,7 +1679,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                class_7995 var15 = var32.method_16180(var1);
                GlStateManager.method_8757();
                BlockPos var35 = var32.method_16189();
-               GlStateManager.method_8876((double)var35.method_12173() - var3, (double)var35.method_12165() - var5, (double)var35.method_12185() - var7);
+               GlStateManager.method_8876((double)var35.getX() - var3, (double)var35.method_12165() - var5, (double)var35.method_12185() - var7);
                var15.method_36280();
                class_7985.field_40918.method_13179(0L);
                GlStateManager.method_8780();
@@ -1738,11 +1738,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_3511 var12 = var11.field_6947;
             RenderSystem.method_16438();
             BlockPos var13 = var12.method_16189();
-            RenderSystem.method_16483((double)var13.method_12173() - var4, (double)var13.method_12165() - var6, (double)var13.method_12185() - var8);
+            RenderSystem.method_16483((double)var13.getX() - var4, (double)var13.method_12165() - var6, (double)var13.method_12185() - var8);
             if (this.client.field_9569) {
                var3.method_44471(1, class_7985.field_40903);
                RenderSystem.method_16484(10.0F);
-               int var14 = class_1261.method_5674(var11) == 0 ? 0 : class_9299.method_42792((float)class_1261.method_5674(var11) / 50.0F, 0.9F, 0.9F);
+               int var14 = class_1261.method_5674(var11) == 0 ? 0 : MathHelper.method_42792((float)class_1261.method_5674(var11) / 50.0F, 0.9F, 0.9F);
                int var15 = var14 >> 16 & 0xFF;
                int var16 = var14 >> 8 & 0xFF;
                int var17 = var14 & 0xFF;
@@ -2069,7 +2069,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             RenderSystem.method_16486(7425);
             var1.method_36063();
             var1.method_36060(class_2426.field_12080.method_11074(90.0F));
-            float var10 = class_9299.method_42818(this.field_20970.method_29553(var2)) < 0.0F ? 180.0F : 0.0F;
+            float var10 = MathHelper.sin(this.field_20970.method_29553(var2)) < 0.0F ? 180.0F : 0.0F;
             var1.method_36060(class_2426.field_12076.method_11074(var10));
             var1.method_36060(class_2426.field_12076.method_11074(90.0F));
             float var11 = var9[0];
@@ -2082,8 +2082,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
             for (int var16 = 0; var16 <= 16; var16++) {
                float var17 = (float)var16 * (float) (Math.PI * 2) / 16.0F;
-               float var18 = class_9299.method_42818(var17);
-               float var19 = class_9299.method_42840(var17);
+               float var18 = MathHelper.sin(var17);
+               float var19 = MathHelper.cos(var17);
                var8.method_35762(var14, var18 * 120.0F, var19 * 120.0F, -var19 * 40.0F * var9[3]).method_35742(var9[0], var9[1], var9[2], 0.0F).method_35735();
             }
 
@@ -2233,11 +2233,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             double var18 = (double)(var31 - (float)var5 + 0.33F);
             var18 += this.client.gameOptions.field_45398 * 128.0;
             double var20 = var7 / 12.0 + 0.33F;
-            var16 -= (double)(class_9299.method_42847(var16 / 2048.0) * 2048);
-            var20 -= (double)(class_9299.method_42847(var20 / 2048.0) * 2048);
-            float var22 = (float)(var16 - (double)class_9299.method_42847(var16));
-            float var23 = (float)(var18 / 4.0 - (double)class_9299.method_42847(var18 / 4.0)) * 4.0F;
-            float var24 = (float)(var20 - (double)class_9299.method_42847(var20));
+            var16 -= (double)(MathHelper.floor(var16 / 2048.0) * 2048);
+            var20 -= (double)(MathHelper.floor(var20 / 2048.0) * 2048);
+            float var22 = (float)(var16 - (double) MathHelper.floor(var16));
+            float var23 = (float)(var18 / 4.0 - (double) MathHelper.floor(var18 / 4.0)) * 4.0F;
+            float var24 = (float)(var20 - (double) MathHelper.floor(var20));
             class_1343 var25 = this.field_20970.method_742(var2);
             int var26 = (int)Math.floor(var16);
             int var27 = (int)Math.floor(var18 / 4.0);
@@ -2310,8 +2310,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       byte var11 = 8;
       byte var12 = 4;
       float var13 = 9.765625E-4F;
-      float var14 = (float)class_9299.method_42847(var2) * 0.00390625F;
-      float var15 = (float)class_9299.method_42847(var6) * 0.00390625F;
+      float var14 = (float) MathHelper.floor(var2) * 0.00390625F;
+      float var15 = (float) MathHelper.floor(var6) * 0.00390625F;
       float var16 = (float)var8.field_7336;
       float var17 = (float)var8.field_7333;
       float var18 = (float)var8.field_7334;
@@ -2611,8 +2611,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          float var20 = 0.0F;
          float var21 = 128.0F;
          var2.method_44471(7, class_7985.field_40912);
-         double var22 = Math.max((double)class_9299.method_42847(var12 - var4), var3.method_9825());
-         double var24 = Math.min((double)class_9299.method_42815(var12 + var4), var3.method_9816());
+         double var22 = Math.max((double) MathHelper.floor(var12 - var4), var3.method_9825());
+         double var24 = Math.min((double) MathHelper.ceil(var12 + var4), var3.method_9816());
          if (var8 > var3.method_9828() - var4) {
             float var26 = 0.0F;
 
@@ -2641,8 +2641,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
          }
 
-         var22 = Math.max((double)class_9299.method_42847(var8 - var4), var3.method_9821());
-         var24 = Math.min((double)class_9299.method_42815(var8 + var4), var3.method_9828());
+         var22 = Math.max((double) MathHelper.floor(var8 - var4), var3.method_9821());
+         var24 = Math.min((double) MathHelper.ceil(var8 + var4), var3.method_9828());
          if (var12 > var3.method_9816() - var4) {
             float var36 = 0.0F;
 
@@ -2697,7 +2697,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          var1,
          var2,
          var11.method_8335(this.field_20970, var10, class_214.method_926(var3)),
-         (double)var10.method_12173() - var4,
+         (double)var10.getX() - var4,
          (double)var10.method_12165() - var6,
          (double)var10.method_12185() - var8,
          0.0F,
@@ -2711,7 +2711,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       class_7966 var0, class_7907 var1, class_4190 var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
       List var13 = var2.method_19492();
-      int var14 = class_9299.method_42815((double)var13.size() / 3.0);
+      int var14 = MathHelper.ceil((double)var13.size() / 3.0);
 
       for (int var15 = 0; var15 < var13.size(); var15++) {
          Box var16 = (Box)var13.get(var15);
@@ -2862,7 +2862,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
    private void method_20065(BlockPos var1, boolean var2) {
       for (int var3 = var1.method_12185() - 1; var3 <= var1.method_12185() + 1; var3++) {
-         for (int var4 = var1.method_12173() - 1; var4 <= var1.method_12173() + 1; var4++) {
+         for (int var4 = var1.getX() - 1; var4 <= var1.getX() + 1; var4++) {
             for (int var5 = var1.method_12165() - 1; var5 <= var1.method_12165() + 1; var5++) {
                this.method_20071(var4 >> 4, var5 >> 4, var3 >> 4, var2);
             }
@@ -2882,7 +2882,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
    public void method_20094(BlockPos var1, class_2522 var2, class_2522 var3) {
       if (this.client.method_8535().method_33944(var2, var3)) {
-         this.method_20093(var1.method_12173(), var1.method_12165(), var1.method_12185(), var1.method_12173(), var1.method_12165(), var1.method_12185());
+         this.method_20093(var1.getX(), var1.method_12165(), var1.method_12185(), var1.getX(), var1.method_12165(), var1.method_12185());
       }
    }
 
@@ -2904,11 +2904,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.field_20966.method_34569(var1, var2, var3, var4);
    }
 
-   public void method_20088(class_8461 var1, BlockPos var2) {
+   public void method_20088(SoundEvent var1, BlockPos var2) {
       this.method_20089(var1, var2, var1 == null ? null : class_7738.method_35031(var1));
    }
 
-   public void method_20089(class_8461 var1, BlockPos var2, class_7738 var3) {
+   public void method_20089(SoundEvent var1, BlockPos var2, class_7738 var3) {
       class_3560 var4 = this.field_20971.get(var2);
       if (var4 != null) {
          this.client.getSoundHandler().method_16336(var4);
@@ -2925,7 +2925,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.client.field_9614.method_13974(var5.method_35029());
          }
 
-         class_4949 var6 = class_4949.method_22679(var1, (double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185());
+         class_4949 var6 = class_4949.method_22679(var1, (double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185());
          this.field_20971.put(var2, var6);
          this.client.getSoundHandler().play(var6);
       }
@@ -2934,7 +2934,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_20080(World var1, BlockPos var2, boolean var3) {
-      for (class_5834 var5 : var1.<class_5834>method_25868(class_5834.class, new Box(var2).method_18898(3.0))) {
+      for (LivingEntity var5 : var1.<LivingEntity>method_25868(LivingEntity.class, new Box(var2).grow(3.0))) {
          var5.method_26424(var2, var3);
       }
    }
@@ -3077,7 +3077,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          case 1038:
             Camera var4 = this.client.gameRenderer.method_35949();
             if (var4.method_41642()) {
-               double var5 = (double)var2.method_12173() - var4.method_41627().field_7336;
+               double var5 = (double)var2.getX() - var4.method_41627().field_7336;
                double var7 = (double)var2.method_12165() - var4.method_41627().field_7333;
                double var9 = (double)var2.method_12185() - var4.method_41627().field_7334;
                double var11 = Math.sqrt(var5 * var5 + var7 * var7 + var9 * var9);
@@ -3091,11 +3091,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                }
 
                if (var1 == 1023) {
-                  this.field_20970.method_29527(var13, var15, var17, class_463.field_2197, class_562.field_3332, 1.0F, 1.0F, false);
+                  this.field_20970.method_29527(var13, var15, var17, SoundEvents.field_2197, class_562.field_3332, 1.0F, 1.0F, false);
                } else if (var1 == 1038) {
-                  this.field_20970.method_29527(var13, var15, var17, class_463.field_2767, class_562.field_3332, 1.0F, 1.0F, false);
+                  this.field_20970.method_29527(var13, var15, var17, SoundEvents.field_2767, class_562.field_3332, 1.0F, 1.0F, false);
                } else {
-                  this.field_20970.method_29527(var13, var15, var17, class_463.field_2368, class_562.field_3332, 5.0F, 1.0F, false);
+                  this.field_20970.method_29527(var13, var15, var17, SoundEvents.field_2368, class_562.field_3332, 5.0F, 1.0F, false);
                }
             }
       }
@@ -3105,34 +3105,34 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       Random var5 = this.field_20970.field_33033;
       switch (var2) {
          case 1000:
-            this.field_20970.method_721(var3, class_463.field_2033, class_562.field_3322, 1.0F, 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2033, class_562.field_3322, 1.0F, 1.0F, false);
             break;
          case 1001:
-            this.field_20970.method_721(var3, class_463.field_2665, class_562.field_3322, 1.0F, 1.2F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2665, class_562.field_3322, 1.0F, 1.2F, false);
             break;
          case 1002:
-            this.field_20970.method_721(var3, class_463.field_2794, class_562.field_3322, 1.0F, 1.2F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2794, class_562.field_3322, 1.0F, 1.2F, false);
             break;
          case 1003:
-            this.field_20970.method_721(var3, class_463.field_1994, class_562.field_3328, 1.0F, 1.2F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_1994, class_562.field_3328, 1.0F, 1.2F, false);
             break;
          case 1004:
-            this.field_20970.method_721(var3, class_463.field_2784, class_562.field_3328, 1.0F, 1.2F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2784, class_562.field_3328, 1.0F, 1.2F, false);
             break;
          case 1005:
-            this.field_20970.method_721(var3, class_463.field_2301, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2301, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1006:
-            this.field_20970.method_721(var3, class_463.field_2708, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2708, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1007:
-            this.field_20970.method_721(var3, class_463.field_2289, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2289, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1008:
-            this.field_20970.method_721(var3, class_463.field_2666, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2666, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1009:
-            this.field_20970.method_721(var3, class_463.field_2472, class_562.field_3322, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2472, class_562.field_3322, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
             break;
          case 1010:
             if (class_2451.method_11220(var4) instanceof class_7738) {
@@ -3142,113 +3142,113 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   this.method_20088(((class_7738)class_2451.method_11220(var4)).method_35032(), var3);
                }
             } else {
-               this.method_20088((class_8461)null, var3);
+               this.method_20088((SoundEvent)null, var3);
             }
             break;
          case 1011:
-            this.field_20970.method_721(var3, class_463.field_2293, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2293, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1012:
-            this.field_20970.method_721(var3, class_463.field_2334, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2334, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1013:
-            this.field_20970.method_721(var3, class_463.field_2452, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2452, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1014:
-            this.field_20970.method_721(var3, class_463.field_2329, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2329, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1015:
-            this.field_20970.method_721(var3, class_463.field_2569, class_562.field_3332, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2569, class_562.field_3332, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1016:
-            this.field_20970.method_721(var3, class_463.field_2600, class_562.field_3332, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2600, class_562.field_3332, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1017:
-            this.field_20970.method_721(var3, class_463.field_1987, class_562.field_3332, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_1987, class_562.field_3332, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1018:
-            this.field_20970.method_721(var3, class_463.field_2346, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2346, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1019:
-            this.field_20970.method_721(var3, class_463.field_2765, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2765, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1020:
-            this.field_20970.method_721(var3, class_463.field_2111, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2111, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1021:
-            this.field_20970.method_721(var3, class_463.field_2043, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2043, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1022:
-            this.field_20970.method_721(var3, class_463.field_2011, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2011, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1024:
-            this.field_20970.method_721(var3, class_463.field_2138, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2138, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1025:
-            this.field_20970.method_721(var3, class_463.field_2284, class_562.field_3328, 0.05F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2284, class_562.field_3328, 0.05F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1026:
-            this.field_20970.method_721(var3, class_463.field_2241, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2241, class_562.field_3332, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1027:
-            this.field_20970.method_721(var3, class_463.field_2040, class_562.field_3328, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2040, class_562.field_3328, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1029:
-            this.field_20970.method_721(var3, class_463.field_2884, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2884, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1030:
-            this.field_20970.method_721(var3, class_463.field_2829, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2829, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1031:
-            this.field_20970.method_721(var3, class_463.field_2802, class_562.field_3322, 0.3F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2802, class_562.field_3322, 0.3F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1032:
-            this.client.getSoundHandler().play(class_4949.method_22680(class_463.field_2294, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.client.getSoundHandler().play(class_4949.method_22680(SoundEvents.field_2294, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
             break;
          case 1033:
-            this.field_20970.method_721(var3, class_463.field_2280, class_562.field_3322, 1.0F, 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2280, class_562.field_3322, 1.0F, 1.0F, false);
             break;
          case 1034:
-            this.field_20970.method_721(var3, class_463.field_2045, class_562.field_3322, 1.0F, 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2045, class_562.field_3322, 1.0F, 1.0F, false);
             break;
          case 1035:
-            this.field_20970.method_721(var3, class_463.field_2290, class_562.field_3322, 1.0F, 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2290, class_562.field_3322, 1.0F, 1.0F, false);
             break;
          case 1036:
-            this.field_20970.method_721(var3, class_463.field_2503, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2503, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1037:
-            this.field_20970.method_721(var3, class_463.field_2574, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2574, class_562.field_3322, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1039:
-            this.field_20970.method_721(var3, class_463.field_2868, class_562.field_3332, 0.3F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2868, class_562.field_3332, 0.3F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1040:
-            this.field_20970.method_721(var3, class_463.field_2787, class_562.field_3328, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2787, class_562.field_3328, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1041:
-            this.field_20970.method_721(var3, class_463.field_2547, class_562.field_3328, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2547, class_562.field_3328, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1042:
-            this.field_20970.method_721(var3, class_463.field_2132, class_562.field_3322, 1.0F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2132, class_562.field_3322, 1.0F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1043:
-            this.field_20970.method_721(var3, class_463.field_2778, class_562.field_3322, 1.0F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2778, class_562.field_3322, 1.0F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1044:
-            this.field_20970.method_721(var3, class_463.field_1971, class_562.field_3322, 1.0F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_1971, class_562.field_3322, 1.0F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1500:
             class_7689.method_34836(this.field_20970, var3, var4 > 0);
             break;
          case 1501:
-            this.field_20970.method_721(var3, class_463.field_2430, class_562.field_3322, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2430, class_562.field_3322, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
 
             for (int var40 = 0; var40 < 8; var40++) {
                this.field_20970
                   .method_43361(
                      class_3090.field_15319,
-                     (double)var3.method_12173() + var5.nextDouble(),
+                     (double)var3.getX() + var5.nextDouble(),
                      (double)var3.method_12165() + 1.2,
                      (double)var3.method_12185() + var5.nextDouble(),
                      0.0,
@@ -3258,20 +3258,20 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
             break;
          case 1502:
-            this.field_20970.method_721(var3, class_463.field_2575, class_562.field_3322, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2575, class_562.field_3322, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
 
             for (int var39 = 0; var39 < 5; var39++) {
-               double var42 = (double)var3.method_12173() + var5.nextDouble() * 0.6 + 0.2;
+               double var42 = (double)var3.getX() + var5.nextDouble() * 0.6 + 0.2;
                double var44 = (double)var3.method_12165() + var5.nextDouble() * 0.6 + 0.2;
                double var45 = (double)var3.method_12185() + var5.nextDouble() * 0.6 + 0.2;
                this.field_20970.method_43361(class_3090.field_15376, var42, var44, var45, 0.0, 0.0, 0.0);
             }
             break;
          case 1503:
-            this.field_20970.method_721(var3, class_463.field_2689, class_562.field_3322, 1.0F, 1.0F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2689, class_562.field_3322, 1.0F, 1.0F, false);
 
             for (int var38 = 0; var38 < 16; var38++) {
-               double var41 = (double)var3.method_12173() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
+               double var41 = (double)var3.getX() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
                double var43 = (double)var3.method_12165() + 0.8125;
                double var11 = (double)var3.method_12185() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
                this.field_20970.method_43361(class_3090.field_15376, var41, var43, var11, 0.0, 0.0, 0.0);
@@ -3282,7 +3282,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             int var7 = var6.method_1041();
             int var8 = var6.method_1054();
             int var9 = var6.method_1034();
-            double var10 = (double)var3.method_12173() + (double)var7 * 0.6 + 0.5;
+            double var10 = (double)var3.getX() + (double)var7 * 0.6 + 0.5;
             double var12 = (double)var3.method_12165() + (double)var8 * 0.6 + 0.5;
             double var14 = (double)var3.method_12185() + (double)var9 * 0.6 + 0.5;
 
@@ -3355,10 +3355,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                }
             }
 
-            this.field_20970.method_721(var3, class_463.field_2805, class_562.field_3328, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_2805, class_562.field_3328, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 2003:
-            double var22 = (double)var3.method_12173() + 0.5;
+            double var22 = (double)var3.getX() + 0.5;
             double var24 = (double)var3.method_12165();
             double var26 = (double)var3.method_12185() + 0.5;
 
@@ -3397,7 +3397,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             break;
          case 2004:
             for (int var57 = 0; var57 < 20; var57++) {
-               double var60 = (double)var3.method_12173() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
+               double var60 = (double)var3.getX() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
                double var63 = (double)var3.method_12165() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
                double var65 = (double)var3.method_12185() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
                this.field_20970.method_43361(class_3090.field_15376, var60, var63, var65, 0.0, 0.0, 0.0);
@@ -3411,13 +3411,13 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             for (int var56 = 0; var56 < 200; var56++) {
                float var29 = var5.nextFloat() * 4.0F;
                float var30 = var5.nextFloat() * (float) (Math.PI * 2);
-               double var31 = (double)(class_9299.method_42840(var30) * var29);
+               double var31 = (double)(MathHelper.cos(var30) * var29);
                double var33 = 0.01 + var5.nextDouble() * 0.5;
-               double var35 = (double)(class_9299.method_42818(var30) * var29);
+               double var35 = (double)(MathHelper.sin(var30) * var29);
                class_9733 var37 = this.method_20062(
                   class_3090.field_15315,
                   false,
-                  (double)var3.method_12173() + var31 * 0.1,
+                  (double)var3.getX() + var31 * 0.1,
                   (double)var3.method_12165() + 0.3,
                   (double)var3.method_12185() + var35 * 0.1,
                   var31,
@@ -3430,14 +3430,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
 
             if (var4 == 1) {
-               this.field_20970.method_721(var3, class_463.field_2176, class_562.field_3332, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+               this.field_20970.method_721(var3, SoundEvents.field_2176, class_562.field_3332, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             }
             break;
          case 2008:
             this.field_20970
                .method_43361(
                   class_3090.field_15339,
-                  (double)var3.method_12173() + 0.5,
+                  (double)var3.getX() + 0.5,
                   (double)var3.method_12165() + 0.5,
                   (double)var3.method_12185() + 0.5,
                   0.0,
@@ -3450,7 +3450,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                this.field_20970
                   .method_43361(
                      class_3090.field_15385,
-                     (double)var3.method_12173() + var5.nextDouble(),
+                     (double)var3.getX() + var5.nextDouble(),
                      (double)var3.method_12165() + 1.2,
                      (double)var3.method_12185() + var5.nextDouble(),
                      0.0,
@@ -3464,7 +3464,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                .method_29543(
                   class_3090.field_15377,
                   true,
-                  (double)var3.method_12173() + 0.5,
+                  (double)var3.getX() + 0.5,
                   (double)var3.method_12165() + 0.5,
                   (double)var3.method_12185() + 0.5,
                   0.0,
@@ -3474,7 +3474,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.field_20970
                .method_721(
                   var3,
-                  class_463.field_2333,
+                  SoundEvents.field_2333,
                   class_562.field_3322,
                   10.0F,
                   (1.0F + (this.field_20970.field_33033.nextFloat() - this.field_20970.field_33033.nextFloat()) * 0.2F) * 0.7F,
@@ -3482,7 +3482,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                );
             break;
          case 3001:
-            this.field_20970.method_721(var3, class_463.field_1942, class_562.field_3332, 64.0F, 0.8F + this.field_20970.field_33033.nextFloat() * 0.3F, false);
+            this.field_20970.method_721(var3, SoundEvents.field_1942, class_562.field_3332, 64.0F, 0.8F + this.field_20970.field_33033.nextFloat() * 0.3F, false);
       }
    }
 
@@ -3494,7 +3494,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          if (var5 == null
-            || var5.method_42661().method_12173() != var2.method_12173()
+            || var5.method_42661().getX() != var2.getX()
             || var5.method_42661().method_12165() != var2.method_12165()
             || var5.method_42661().method_12185() != var2.method_12185()) {
             var5 = new class_9259(var1, var2);

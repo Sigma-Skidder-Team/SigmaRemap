@@ -39,9 +39,9 @@ public class class_1897 implements Packet<class_392> {
       this.field_9686 = var1.readFloat();
       int var4 = var1.readInt();
       this.field_9690 = Lists.newArrayListWithCapacity(var4);
-      int var5 = class_9299.method_42847(this.field_9691);
-      int var6 = class_9299.method_42847(this.field_9689);
-      int var7 = class_9299.method_42847(this.field_9685);
+      int var5 = MathHelper.floor(this.field_9691);
+      int var6 = MathHelper.floor(this.field_9689);
+      int var7 = MathHelper.floor(this.field_9685);
 
       for (int var8 = 0; var8 < var4; var8++) {
          int var9 = var1.readByte() + var5;
@@ -62,12 +62,12 @@ public class class_1897 implements Packet<class_392> {
       var1.writeFloat((float)this.field_9685);
       var1.writeFloat(this.field_9686);
       var1.writeInt(this.field_9690.size());
-      int var4 = class_9299.method_42847(this.field_9691);
-      int var5 = class_9299.method_42847(this.field_9689);
-      int var6 = class_9299.method_42847(this.field_9685);
+      int var4 = MathHelper.floor(this.field_9691);
+      int var5 = MathHelper.floor(this.field_9689);
+      int var6 = MathHelper.floor(this.field_9685);
 
       for (BlockPos var8 : this.field_9690) {
-         int var9 = var8.method_12173() - var4;
+         int var9 = var8.getX() - var4;
          int var10 = var8.method_12165() - var5;
          int var11 = var8.method_12185() - var6;
          var1.writeByte(var9);

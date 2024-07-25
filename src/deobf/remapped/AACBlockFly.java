@@ -97,7 +97,7 @@ public class AACBlockFly extends Module {
                }
             }
 
-            if (client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F || client.thePlayer.field_41744) {
+            if (client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F || client.thePlayer.collidedHorizontally) {
                this.field_12312 = 0;
             }
 

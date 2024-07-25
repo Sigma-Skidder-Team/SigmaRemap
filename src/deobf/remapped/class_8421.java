@@ -193,7 +193,7 @@ public class class_8421 {
                double var11 = var9.method_43472();
                double var13 = var9.method_43475();
                double var15 = var9.method_43468();
-               double var17 = (double)var0.method_12173() - var11;
+               double var17 = (double)var0.getX() - var11;
                double var19 = (double)var0.method_12165() - var13;
                double var21 = (double)var0.method_12185() - var15;
                double var23 = var17 * var17 + var19 * var19 + var21 * var21;
@@ -283,7 +283,7 @@ public class class_8421 {
                            }
                         }
 
-                        if (!(var0 instanceof class_5834)) {
+                        if (!(var0 instanceof LivingEntity)) {
                            if (!(var0 instanceof class_91)) {
                               return 0;
                            } else {
@@ -292,7 +292,7 @@ public class class_8421 {
                               return method_38771(var18);
                            }
                         } else {
-                           class_5834 var15 = (class_5834)var0;
+                           LivingEntity var15 = (LivingEntity)var0;
                            ItemStack var17 = var15.method_26446();
                            int var5 = method_38771(var17);
                            ItemStack var6 = var15.method_26568();

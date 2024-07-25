@@ -34,8 +34,8 @@ public class class_766 {
 
    public boolean method_3453(Entity var1) {
       if (this != field_4155) {
-         if (var1 instanceof class_5834) {
-            class_5834 var4 = (class_5834)var1;
+         if (var1 instanceof LivingEntity) {
+            LivingEntity var4 = (LivingEntity)var1;
             if (this.field_4148.method_24266(var4.method_26520(class_6943.field_35704))) {
                if (this.field_4151.method_24266(var4.method_26520(class_6943.field_35708))) {
                   if (this.field_4153.method_24266(var4.method_26520(class_6943.field_35698))) {

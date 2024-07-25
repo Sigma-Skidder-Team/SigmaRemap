@@ -17,7 +17,7 @@ public class class_2759 extends class_7164<class_2022, class_5301> {
 
    public void method_12554(class_2022 var1, class_7966 var2, float var3, float var4, float var5) {
       if (!var1.method_9392()) {
-         var2.method_36065(0.0, (double)(class_9299.method_42840(var3 * 0.3F) * 0.1F), 0.0);
+         var2.method_36065(0.0, (double)(MathHelper.cos(var3 * 0.3F) * 0.1F), 0.0);
       } else {
          var2.method_36065(0.0, -0.1F, 0.0);
       }

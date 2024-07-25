@@ -258,7 +258,7 @@ public class class_6262 extends class_462 {
             .method_10308(class_2399.field_11970, !var3.nextBoolean() ? class_3665.field_17831 : class_3665.field_17829);
          this.method_32529(var1, var11, var4, var5, var6, var2);
          class_5340 var12 = new class_5340(
-            var1.method_7066(), (double)var10.method_12173() + 0.5, (double)var10.method_12165() + 0.5, (double)var10.method_12185() + 0.5
+            var1.method_7066(), (double)var10.getX() + 0.5, (double)var10.method_12165() + 0.5, (double)var10.method_12185() + 0.5
          );
          var12.method_1297(var7, var3.nextLong());
          var1.method_7509(var12);

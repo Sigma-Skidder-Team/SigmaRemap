@@ -695,7 +695,7 @@ public class class_1385 {
                Config.method_14317("Less weights defined than tiles, expanding weights: " + var1);
                int[] var7 = new int[this.field_7542.length];
                System.arraycopy(this.field_7522, 0, var7, 0, this.field_7522.length);
-               int var5 = class_1750.method_7797(this.field_7522);
+               int var5 = MathUtils.method_7797(this.field_7522);
 
                for (int var6 = this.field_7522.length; var6 < var7.length; var6++) {
                   var7[var6] = var5;

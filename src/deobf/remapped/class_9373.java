@@ -36,7 +36,7 @@ public class class_9373 extends class_3725 {
                class_4653 var13 = EntityType.field_34212.method_30484(var0);
                BlockPos var14 = var8.method_31795(1, 2, 0).method_41966();
                var13.method_37144(
-                  (double)var14.method_12173() + 0.5,
+                  (double)var14.getX() + 0.5,
                   (double)var14.method_12165() + 0.55,
                   (double)var14.method_12185() + 0.5,
                   var8.method_31796().method_1029() != class_9249.field_47215 ? 90.0F : 0.0F,
@@ -45,7 +45,7 @@ public class class_9373 extends class_3725 {
                var13.field_29605 = var8.method_31796().method_1029() != class_9249.field_47215 ? 90.0F : 0.0F;
                var13.method_21517();
 
-               for (class_9359 var12 : var0.<class_9359>method_25868(class_9359.class, var13.method_37241().method_18898(50.0))) {
+               for (class_9359 var12 : var0.<class_9359>method_25868(class_9359.class, var13.getBoundingBox().grow(50.0))) {
                   class_8807.field_45046.method_22685(var12, var13);
                }
 

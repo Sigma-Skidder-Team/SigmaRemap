@@ -17,7 +17,7 @@ public class class_2871 extends class_9883 {
 
    @Override
    public boolean method_16799() {
-      class_5834 var3 = this.field_14067.method_17809();
+      LivingEntity var3 = this.field_14067.method_17809();
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
@@ -54,15 +54,15 @@ public class class_2871 extends class_9883 {
 
    @Override
    public void method_16793() {
-      this.field_14067.method_26860((class_5834)null);
+      this.field_14067.method_26860((LivingEntity)null);
       class_9825.method_45300(this.field_14067, class_55.field_38);
    }
 
    @Override
    public void method_16794() {
-      class_5834 var3 = this.field_14067.method_17809();
+      LivingEntity var3 = this.field_14067.method_17809();
       class_9825.method_45286(this.field_14067, new class_1343(var3.getPosX(), var3.method_37080(0.5), var3.getPosZ()));
-      if (!this.field_14067.method_37241().method_18898(0.2F).method_18909(var3.method_37241())) {
+      if (!this.field_14067.method_37241().method_18898(0.2F).method_18909(var3.getBoundingBox())) {
          if (this.field_14067.field_41744 || this.field_14067.field_29645 > 0) {
             class_9825.method_45300(this.field_14067, class_55.field_38);
          }

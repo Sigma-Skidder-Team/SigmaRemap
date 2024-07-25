@@ -16,7 +16,7 @@ public class class_5215 extends class_9037 {
    public boolean method_16799() {
       float var3 = this.field_46244.method_37193();
       if (var3 >= 0.5F && this.field_46244.method_26594().nextInt(100) == 0) {
-         this.field_46244.method_26860((class_5834)null);
+         this.field_46244.method_26860((LivingEntity)null);
          return false;
       } else {
          return super.method_16799();
@@ -24,7 +24,7 @@ public class class_5215 extends class_9037 {
    }
 
    @Override
-   public double method_41492(class_5834 var1) {
+   public double method_41492(LivingEntity var1) {
       return (double)(4.0F + var1.method_37086());
    }
 }

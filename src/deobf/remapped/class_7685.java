@@ -10,17 +10,17 @@ public class class_7685 {
    public static Iterator<class_3511> method_34827(ClientWorld var0, double var1, Entity var3, int var4, class_7626 var5) {
       float var8 = class_6588.method_30251();
       if (!(var8 <= 0.0F) && !(var8 >= (float)((var4 - 1) * 16))) {
-         int var19 = class_9299.method_42816(var8 / 16.0F) + 1;
+         int var19 = MathHelper.ceil(var8 / 16.0F) + 1;
          float var10 = var0.method_29553((float)var1);
-         float var11 = class_6588.field_33824 * class_9299.field_47452;
-         float var12 = var10 > class_9299.field_47439 && var10 < 3.0F * class_9299.field_47439 ? var10 + class_9299.field_47442 : var10;
-         float var13 = -class_9299.method_42818(var12);
-         float var14 = class_9299.method_42840(var12) * class_9299.method_42840(var11);
-         float var15 = -class_9299.method_42840(var12) * class_9299.method_42818(var11);
+         float var11 = class_6588.field_33824 * MathHelper.deg2Rad;
+         float var12 = var10 > MathHelper.PId2 && var10 < 3.0F * MathHelper.PId2 ? var10 + MathHelper.PI : var10;
+         float var13 = -MathHelper.sin(var12);
+         float var14 = MathHelper.cos(var12) * MathHelper.cos(var11);
+         float var15 = -MathHelper.cos(var12) * MathHelper.sin(var11);
          BlockPos var16 = new BlockPos(
-            class_9299.method_42847(var3.getPosX()) >> 4,
-            class_9299.method_42847(var3.method_37309()) >> 4,
-            class_9299.method_42847(var3.getPosZ()) >> 4
+            MathHelper.floor(var3.getPosX()) >> 4,
+            MathHelper.floor(var3.method_37309()) >> 4,
+            MathHelper.floor(var3.getPosZ()) >> 4
          );
          BlockPos var17 = var16.method_6103((double)(-var13 * (float)var19), (double)(-var14 * (float)var19), (double)(-var15 * (float)var19));
          BlockPos var18 = var16.method_6103((double)(var13 * (float)var4), (double)(var14 * (float)var4), (double)(var15 * (float)var4));

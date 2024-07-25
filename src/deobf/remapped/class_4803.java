@@ -81,11 +81,11 @@ public class class_4803 extends class_5272<BoatEntity> {
    public void method_22132(BoatEntity var1, int var2, float var3) {
       float var6 = var1.method_42108(var2, var3);
       class_1549 var7 = this.field_23999[var2];
-      var7.field_8191 = (float)class_9299.method_42841(
-         (float) (-Math.PI / 3), (float) (-Math.PI / 12), (double)((class_9299.method_42818(-var6) + 1.0F) / 2.0F)
+      var7.field_8191 = (float) MathHelper.clampedLerp(
+         (float) (-Math.PI / 3), (float) (-Math.PI / 12), (double)((MathHelper.sin(-var6) + 1.0F) / 2.0F)
       );
-      var7.field_8190 = (float)class_9299.method_42841(
-         (float) (-Math.PI / 4), (float) (Math.PI / 4), (double)((class_9299.method_42818(-var6 + 1.0F) + 1.0F) / 2.0F)
+      var7.field_8190 = (float) MathHelper.clampedLerp(
+         (float) (-Math.PI / 4), (float) (Math.PI / 4), (double)((MathHelper.sin(-var6 + 1.0F) + 1.0F) / 2.0F)
       );
       if (var2 == 1) {
          var7.field_8190 = (float) Math.PI - var7.field_8190;

@@ -10,7 +10,7 @@ public class class_2094 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_10517.method_17809();
+      LivingEntity var3 = this.field_10517.method_17809();
       return var3 == null ? false : this.field_10517.method_26609(this.field_10517.method_17809(), class_4931.field_25526);
    }
 
@@ -40,7 +40,7 @@ public class class_2094 extends class_3599 {
             class_9825.method_45300(this.field_10517, class_55.field_37);
             this.method_9795();
             this.field_10515 = (8 + class_9825.method_45302(this.field_10517).nextInt(4)) * 20;
-            this.field_10517.method_37155(class_463.field_2296, 10.0F, 0.95F + class_9825.method_45292(this.field_10517).nextFloat() * 0.1F);
+            this.field_10517.method_37155(SoundEvents.field_2296, 10.0F, 0.95F + class_9825.method_45292(this.field_10517).nextFloat() * 0.1F);
          }
       }
    }

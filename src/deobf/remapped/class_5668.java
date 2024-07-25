@@ -26,7 +26,7 @@ public class class_5668 extends class_1820 {
    @Override
    public boolean method_16795() {
       if (super.method_16795()) {
-         return !this.field_9241.world.method_29537().method_1285(class_291.field_1047)
+         return !this.field_9241.world.getGameRules().getBoolean(GameRules.field_1047)
             ? false
             : this.method_25653(this.field_9241.world.method_43370()) && !this.method_8057();
       } else {

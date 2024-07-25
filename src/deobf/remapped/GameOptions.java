@@ -1236,7 +1236,7 @@ public class GameOptions {
 
       if (var1 == class_1013.field_5235) {
          this.field_45454 = !this.field_45454;
-         class_9299.field_47437 = this.field_45454;
+         MathHelper.fastMath = this.field_45454;
       }
 
       if (var1 == class_1013.field_5238) {
@@ -1968,7 +1968,7 @@ public class GameOptions {
 
                if (var4[0].equals("ofFastMath") && var4.length >= 2) {
                   this.field_45454 = Boolean.valueOf(var4[1]);
-                  class_9299.field_47437 = this.field_45454;
+                  MathHelper.fastMath = this.field_45454;
                }
 
                if (var4[0].equals("ofFastRender") && var4.length >= 2) {

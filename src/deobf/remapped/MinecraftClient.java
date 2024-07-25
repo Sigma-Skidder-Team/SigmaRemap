@@ -965,7 +965,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       double var10 = 0.0;
 
       for (class_692 var13 : var3) {
-         int var14 = class_9299.method_42847(var13.field_3803 / 4.0) + 1;
+         int var14 = MathHelper.floor(var13.field_3803 / 4.0) + 1;
          var6.method_44471(6, class_7985.field_40903);
          int var15 = var13.method_3124();
          int var16 = var15 >> 16 & 0xFF;
@@ -975,8 +975,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
          for (int var19 = var14; var19 >= 0; var19--) {
             float var20 = (float)((var10 + var13.field_3803 * (double)var19 / (double)var14) * (float) (Math.PI * 2) / 100.0);
-            float var21 = class_9299.method_42818(var20) * 160.0F;
-            float var22 = class_9299.method_42840(var20) * 160.0F * 0.5F;
+            float var21 = MathHelper.sin(var20) * 160.0F;
+            float var22 = MathHelper.cos(var20) * 160.0F * 0.5F;
             var6.method_35761((double)((float)var8 + var21), (double)((float)var9 - var22), 0.0).method_35743(var16, var17, var18, 255).method_35735();
          }
 
@@ -985,8 +985,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
          for (int var32 = var14; var32 >= 0; var32--) {
             float var36 = (float)((var10 + var13.field_3803 * (double)var32 / (double)var14) * (float) (Math.PI * 2) / 100.0);
-            float var37 = class_9299.method_42818(var36) * 160.0F;
-            float var38 = class_9299.method_42840(var36) * 160.0F * 0.5F;
+            float var37 = MathHelper.sin(var36) * 160.0F;
+            float var38 = MathHelper.cos(var36) * 160.0F * 0.5F;
             if (!(var38 > 0.0F)) {
                var6.method_35761((double)((float)var8 + var37), (double)((float)var9 - var38), 0.0)
                   .method_35743(var16 >> 1, var17 >> 1, var18 >> 1, 255)
@@ -1335,9 +1335,9 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          if (!this.field_9579 && this.theWorld != null) {
             this.theWorld
                .method_732(
-                  class_9299.method_42847(this.thePlayer.getPosX()),
-                  class_9299.method_42847(this.thePlayer.method_37309()),
-                  class_9299.method_42847(this.thePlayer.getPosZ())
+                  MathHelper.floor(this.thePlayer.getPosX()),
+                  MathHelper.floor(this.thePlayer.method_37309()),
+                  MathHelper.floor(this.thePlayer.getPosZ())
                );
          }
 

@@ -26,7 +26,7 @@ public interface class_233 {
 
    boolean method_982();
 
-   class_8461 method_976();
+   SoundEvent method_976();
 
    default boolean method_983() {
       return false;

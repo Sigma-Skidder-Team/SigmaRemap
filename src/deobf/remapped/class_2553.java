@@ -18,18 +18,18 @@ public class class_2553 extends class_691 {
          return 0;
       } else {
          float var6 = (float)Math.min(this.field_12635, var5) / (float)this.field_12635;
-         return class_9299.method_42816(var6 * 15.0F);
+         return MathHelper.ceil(var6 * 15.0F);
       }
    }
 
    @Override
    public void method_3117(class_9379 var1, BlockPos var2) {
-      var1.method_43359((PlayerEntity)null, var2, class_463.field_2016, class_562.field_3322, 0.3F, 0.90000004F);
+      var1.method_43359((PlayerEntity)null, var2, SoundEvents.field_2016, class_562.field_3322, 0.3F, 0.90000004F);
    }
 
    @Override
    public void method_3120(class_9379 var1, BlockPos var2) {
-      var1.method_43359((PlayerEntity)null, var2, class_463.field_2878, class_562.field_3322, 0.3F, 0.75F);
+      var1.method_43359((PlayerEntity)null, var2, SoundEvents.field_2878, class_562.field_3322, 0.3F, 0.75F);
    }
 
    @Override

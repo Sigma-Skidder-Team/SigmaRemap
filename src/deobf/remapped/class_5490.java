@@ -77,8 +77,8 @@ public class class_5490 extends class_4641 {
 
    @Override
    public void method_21475(Entity var1) {
-      if (this.world.method_29537().method_1285(class_291.field_1024)) {
-         this.method_37155(class_463.field_2198, 1.0F, 1.0F);
+      if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+         this.method_37155(SoundEvents.field_2198, 1.0F, 1.0F);
          if (var1 instanceof PlayerEntity) {
             PlayerEntity var4 = (PlayerEntity)var1;
             if (var4.playerAbilities.isCreativeMode) {
@@ -92,7 +92,7 @@ public class class_5490 extends class_4641 {
 
    @Override
    public void method_21471() {
-      this.method_37155(class_463.field_2679, 1.0F, 1.0F);
+      this.method_37155(SoundEvents.field_2679, 1.0F, 1.0F);
    }
 
    @Override
@@ -103,7 +103,7 @@ public class class_5490 extends class_4641 {
    @Override
    public void method_37318(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
       BlockPos var13 = this.field_22661.method_6103(var1 - this.getPosX(), var3 - this.method_37309(), var5 - this.getPosZ());
-      this.method_37256((double)var13.method_12173(), (double)var13.method_12165(), (double)var13.method_12185());
+      this.method_37256((double)var13.getX(), (double)var13.method_12165(), (double)var13.method_12185());
    }
 
    @Override

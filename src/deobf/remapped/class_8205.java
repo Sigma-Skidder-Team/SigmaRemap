@@ -49,7 +49,7 @@ public class class_8205 extends class_7067<class_3577> {
       var4.method_36064();
       BlockPos var14 = var1.method_16624();
       if (var14 != null) {
-         float var15 = (float)var14.method_12173() + 0.5F;
+         float var15 = (float)var14.getX() + 0.5F;
          float var16 = (float)var14.method_12165() + 0.5F;
          float var17 = (float)var14.method_12185() + 0.5F;
          float var18 = (float)((double)var15 - var1.getPosX());
@@ -64,7 +64,7 @@ public class class_8205 extends class_7067<class_3577> {
 
    public static float method_37574(class_3577 var0, float var1) {
       float var4 = (float)var0.field_17510 + var1;
-      float var5 = class_9299.method_42818(var4 * 0.2F) / 2.0F + 0.5F;
+      float var5 = MathHelper.sin(var4 * 0.2F) / 2.0F + 0.5F;
       var5 = (var5 * var5 + var5) * 0.4F;
       return var5 - 1.4F;
    }

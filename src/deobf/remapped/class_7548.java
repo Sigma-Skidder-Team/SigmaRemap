@@ -11,9 +11,9 @@ public class class_7548 extends class_5783 {
       this(EntityType.field_34328, var1);
       super.method_26159(var2);
       this.method_37256(
-         var2.getPosX() - (double)(var2.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42818(var2.field_29605 * (float) (Math.PI / 180.0)),
+         var2.getPosX() - (double)(var2.method_37086() + 1.0F) * 0.5 * (double) MathHelper.sin(var2.field_29605 * (float) (Math.PI / 180.0)),
          var2.method_37388() - 0.1F,
-         var2.getPosZ() + (double)(var2.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42840(var2.field_29605 * (float) (Math.PI / 180.0))
+         var2.getPosZ() + (double)(var2.method_37086() + 1.0F) * 0.5 * (double) MathHelper.cos(var2.field_29605 * (float) (Math.PI / 180.0))
       );
    }
 
@@ -44,7 +44,7 @@ public class class_7548 extends class_5783 {
       this.method_26167();
       float var11 = 0.99F;
       float var12 = 0.06F;
-      if (!this.world.method_28256(this.method_37241()).noneMatch(class_1873::method_8345)) {
+      if (!this.world.method_28256(this.getBoundingBox()).noneMatch(class_1873::method_8345)) {
          if (!this.method_37134()) {
             this.method_37215(var3.method_6209(0.99F));
             if (!this.method_37078()) {
@@ -64,8 +64,8 @@ public class class_7548 extends class_5783 {
    public void method_26163(class_5631 var1) {
       super.method_26163(var1);
       Entity var4 = this.method_26166();
-      if (var4 instanceof class_5834) {
-         var1.method_25524().attackEntityFrom(DamageSource.method_28358(this, (class_5834)var4).method_28359(), 1.0F);
+      if (var4 instanceof LivingEntity) {
+         var1.method_25524().attackEntityFrom(DamageSource.method_28358(this, (LivingEntity)var4).method_28359(), 1.0F);
       }
    }
 

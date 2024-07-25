@@ -18,10 +18,10 @@ public class class_7980 extends NearestAttackableTargetGoal<PlayerEntity> {
       Direction var5 = ((class_6092)this.field_4915).method_27914();
       if (var5.method_1029() != class_9249.field_47215) {
          return var5.method_1029() != class_9249.field_47219
-            ? this.field_4915.method_37241().method_18899(var1, 4.0, var1)
-            : this.field_4915.method_37241().method_18899(var1, var1, 4.0);
+            ? this.field_4915.getBoundingBox().method_18899(var1, 4.0, var1)
+            : this.field_4915.getBoundingBox().method_18899(var1, var1, 4.0);
       } else {
-         return this.field_4915.method_37241().method_18899(4.0, var1, var1);
+         return this.field_4915.getBoundingBox().method_18899(4.0, var1, var1);
       }
    }
 }

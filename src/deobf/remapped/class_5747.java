@@ -275,7 +275,7 @@ public class class_5747 extends class_1094 {
 
       if (var6) {
          if (var6) {
-            float var15 = 0.9F + 0.1F * class_9299.method_42840((float)this.field_29092 * 0.2F);
+            float var15 = 0.9F + 0.1F * MathHelper.cos((float)this.field_29092 * 0.2F);
             RenderSystem.color4f(var15, var15, var15, 1.0F);
          }
       } else {

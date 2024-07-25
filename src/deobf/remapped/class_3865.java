@@ -14,7 +14,7 @@ public class class_3865 extends class_3599 {
    public boolean method_16795() {
       List var3 = this.field_18831
          .world
-         .<LivingEntity>method_25869(LivingEntity.class, this.field_18831.method_37241().method_18898(2.0), class_2960.method_13539());
+         .<LivingEntity>method_25869(LivingEntity.class, this.field_18831.getBoundingBox().grow(2.0), class_2960.method_13539());
       return !var3.isEmpty();
    }
 
@@ -33,7 +33,7 @@ public class class_3865 extends class_3599 {
    public boolean method_16799() {
       List var3 = this.field_18831
          .world
-         .<LivingEntity>method_25869(LivingEntity.class, this.field_18831.method_37241().method_18898(2.0), class_2960.method_13539());
+         .<LivingEntity>method_25869(LivingEntity.class, this.field_18831.getBoundingBox().grow(2.0), class_2960.method_13539());
       return !var3.isEmpty();
    }
 }

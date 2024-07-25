@@ -42,13 +42,13 @@ public class class_9205 extends AbstractGui implements IRenderable, class_5888 {
       float var20 = (float)(this.field_47094 + var16 * 25);
       float var21 = (float)(var6 + 50);
       if (var20 > var21) {
-         this.field_47094 = (int)((float)this.field_47094 - var7 * (float)class_9299.method_42816((var20 - var21) / var7));
+         this.field_47094 = (int)((float)this.field_47094 - var7 * (float) MathHelper.ceil((var20 - var21) / var7));
       }
 
       float var22 = (float)this.field_47094;
       float var23 = (float)(var6 - 100);
       if (var22 < var23) {
-         this.field_47094 = (int)((float)this.field_47094 - var7 * (float)class_9299.method_42816((var22 - var23) / var7));
+         this.field_47094 = (int)((float)this.field_47094 - var7 * (float) MathHelper.ceil((var22 - var23) / var7));
       }
 
       this.field_47098 = true;
@@ -114,7 +114,7 @@ public class class_9205 extends AbstractGui implements IRenderable, class_5888 {
          RenderSystem.method_16413(0.0F, 0.0F, 170.0F);
          int var7 = this.field_47099.size() > 16 ? 5 : 4;
          int var8 = Math.min(this.field_47099.size(), var7);
-         int var9 = class_9299.method_42816((float)this.field_47099.size() / (float)var7);
+         int var9 = MathHelper.ceil((float)this.field_47099.size() / (float)var7);
          byte var10 = 24;
          byte var11 = 4;
          byte var12 = 82;

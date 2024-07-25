@@ -218,7 +218,7 @@ public class class_4562 implements class_2995 {
    private static void method_21159(String var0, BlockPos var1, int var2, int var3) {
       double var6 = 1.3;
       double var8 = 0.2;
-      double var10 = (double)var1.method_12173() + 0.5;
+      double var10 = (double)var1.getX() + 0.5;
       double var12 = (double)var1.method_12165() + 1.3 + (double)var2 * 0.2;
       double var14 = (double)var1.method_12185() + 0.5;
       class_3372.method_15555(var0, var10, var12, var14, var3, 0.02F, true, 0.0F, true);
@@ -228,7 +228,7 @@ public class class_4562 implements class_2995 {
       double var7 = 2.4;
       double var9 = 0.25;
       BlockPos var11 = new BlockPos(var0);
-      double var12 = (double)var11.method_12173() + 0.5;
+      double var12 = (double)var11.getX() + 0.5;
       double var14 = var0.method_60() + 2.4 + (double)var1 * 0.25;
       double var16 = (double)var11.method_12185() + 0.5;
       float var18 = 0.5F;
@@ -240,7 +240,7 @@ public class class_4562 implements class_2995 {
    }
 
    private String method_21173(class_1236 var1, BlockPos var2) {
-      float var5 = class_9299.method_42842(var2.method_12178(var1.field_6819.method_61(), var1.field_6819.method_60(), var1.field_6819.method_62(), true));
+      float var5 = MathHelper.sqrt(var2.method_12178(var1.field_6819.method_61(), var1.field_6819.method_60(), var1.field_6819.method_62(), true));
       double var6 = (double)Math.round(var5 * 10.0F) / 10.0;
       return var2.method_12175() + " (dist " + var6 + ")";
    }

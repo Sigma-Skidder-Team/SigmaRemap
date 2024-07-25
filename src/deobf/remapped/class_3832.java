@@ -25,7 +25,7 @@ public interface class_3832 extends class_2354 {
    default void method_17811(LivingEntity var1, LivingEntity var2, class_5783 var3, float var4, float var5) {
       double var8 = var2.getPosX() - var1.getPosX();
       double var10 = var2.getPosZ() - var1.getPosZ();
-      double var12 = (double)class_9299.method_42842(var8 * var8 + var10 * var10);
+      double var12 = (double) MathHelper.sqrt(var8 * var8 + var10 * var10);
       double var14 = var2.method_37080(0.3333333333333333) - var3.method_37309() + var12 * 0.2F;
       class_2426 var16 = this.method_17813(var1, new class_1343(var8, var14, var10), var4);
       var3.method_26161(
@@ -35,7 +35,7 @@ public interface class_3832 extends class_2354 {
          var5,
          (float)(14 - var1.world.method_43370().method_2097() * 4)
       );
-      var1.method_37155(class_463.field_2025, 1.0F, 1.0F / (var1.method_26594().nextFloat() * 0.4F + 0.8F));
+      var1.method_37155(SoundEvents.field_2025, 1.0F, 1.0F / (var1.method_26594().nextFloat() * 0.4F + 0.8F));
    }
 
    default class_2426 method_17813(LivingEntity var1, class_1343 var2, float var3) {

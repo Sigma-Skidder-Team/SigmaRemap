@@ -114,7 +114,7 @@ public class class_6524 {
                var41 = class_2904.method_13303(var19);
             } else {
                class_9882 var42 = var21.method_4319();
-               var40 = new class_6292(var42.field_50129, var42.field_50117, var42.field_50096, var42.field_50123, false, new class_291(), var35);
+               var40 = new class_6292(var42.field_50129, var42.field_50117, var42.field_50096, var42.field_50123, false, new GameRules(), var35);
                var41 = var18.has(var7) ? var42.field_50122.method_13285() : var42.field_50122;
             }
 
@@ -163,7 +163,7 @@ public class class_6524 {
          int var10 = var7.method_14576();
          if (var10 > 0) {
             int var11 = var7.method_14580() + var7.method_14574();
-            field_33208.info("{}% completed ({} / {} chunks)...", class_9299.method_42848((float)var11 / (float)var10 * 100.0F), var11, var10);
+            field_33208.info("{}% completed ({} / {} chunks)...", MathHelper.floor((float)var11 / (float)var10 * 100.0F), var11, var10);
          }
 
          if (!var3.getAsBoolean()) {

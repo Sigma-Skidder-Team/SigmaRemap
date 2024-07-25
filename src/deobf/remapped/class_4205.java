@@ -18,8 +18,8 @@ public class class_4205 extends class_3599 {
             float var3 = this.field_20446.rotationYaw * (float) (Math.PI / 180.0);
             int var4 = 0;
             int var5 = 0;
-            float var6 = -class_9299.method_42818(var3);
-            float var7 = class_9299.method_42840(var3);
+            float var6 = -MathHelper.sin(var3);
+            float var7 = MathHelper.cos(var3);
             if ((double)Math.abs(var6) > 0.5) {
                var4 = (int)((float)var4 + var6 / Math.abs(var6));
             }

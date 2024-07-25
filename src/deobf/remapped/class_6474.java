@@ -15,7 +15,7 @@ public class class_6474<T extends MobEntity & class_6250> extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      return this.field_32994.world.method_29537().method_1285(class_291.field_1039) && this.method_29486();
+      return this.field_32994.world.getGameRules().getBoolean(GameRules.field_1039) && this.method_29486();
    }
 
    private boolean method_29486() {

@@ -257,7 +257,7 @@ public class class_948 implements class_1243 {
                return;
             }
 
-            boolean var30 = var5.method_6683(var4, var4.method_37241().method_18924(0.0625));
+            boolean var30 = var5.method_6683(var4, var4.getBoundingBox().method_18924(0.0625));
             var20 = var12 - this.field_4873;
             var22 = var14 - this.field_4882 - 1.0E-6;
             var24 = var16 - this.field_4883;
@@ -279,7 +279,7 @@ public class class_948 implements class_1243 {
             }
 
             var4.method_37249(var12, var14, var16, var18, var19);
-            boolean var32 = var5.method_6683(var4, var4.method_37241().method_18924(0.0625));
+            boolean var32 = var5.method_6683(var4, var4.getBoundingBox().method_18924(0.0625));
             if (var30 && (var31 || !var32)) {
                var4.method_37249(var6, var8, var10, var18, var19);
                this.field_4867.method_23485(new class_3931(var4));
@@ -299,7 +299,7 @@ public class class_948 implements class_1243 {
    }
 
    private boolean method_4166(Entity var1) {
-      return var1.world.method_28256(var1.method_37241().method_18898(0.0625).method_18928(0.0, -0.55, 0.0)).allMatch(class_1873::method_8345);
+      return var1.world.method_28256(var1.getBoundingBox().grow(0.0625).method_18928(0.0, -0.55, 0.0)).allMatch(class_1873::method_8345);
    }
 
    @Override
@@ -710,7 +710,7 @@ public class class_948 implements class_1243 {
                      }
 
                      if (!this.field_4880.method_43262()
-                        && (!this.field_4880.method_43235().method_29537().method_1285(class_291.field_1030) || !this.field_4880.method_26618())) {
+                        && (!this.field_4880.method_43235().getGameRules().getBoolean(GameRules.field_1030) || !this.field_4880.method_26618())) {
                         float var32 = !this.field_4880.method_26618() ? 100.0F : 300.0F;
                         if (var29 - var27 > (double)(var32 * (float)var31) && !this.method_4159()) {
                            field_4870.warn("{} moved too quickly! {},{},{}", this.field_4880.method_45509().getString(), var21, var23, var25);
@@ -725,7 +725,7 @@ public class class_948 implements class_1243 {
                         }
                      }
 
-                     Box var42 = this.field_4880.method_37241();
+                     Box var42 = this.field_4880.getBoundingBox();
                      var21 = var13 - this.field_4859;
                      var23 = var15 - this.field_4863;
                      var25 = var17 - this.field_4855;
@@ -812,7 +812,7 @@ public class class_948 implements class_1243 {
    }
 
    private boolean method_4174(class_4924 var1, Box var2) {
-      Stream var5 = var1.method_6676(this.field_4880, this.field_4880.method_37241().method_18924(1.0E-5F), var0 -> true);
+      Stream var5 = var1.method_6676(this.field_4880, this.field_4880.getBoundingBox().method_18924(1.0E-5F), var0 -> true);
       class_4190 var6 = class_3370.method_15523(var2.method_18924(1.0E-5F));
       return var5.anyMatch(var1x -> !class_3370.method_15537(var1x, var6, class_8529.field_43655));
    }
@@ -901,7 +901,7 @@ public class class_948 implements class_1243 {
          IFormattableTextComponent var10 = new TranslationTextComponent("build.tooHigh", this.field_4877.method_1671()).mergeStyle(TextFormatting.RED);
          this.field_4880.field_47794.method_4156(new class_5182(var10, ChatType.GAME_INFO, Util.NIL_UUID));
       } else if (this.field_4874 == null
-         && this.field_4880.method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5) < 64.0
+         && this.field_4880.method_37273((double)var8.getX() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5) < 64.0
          && var4.method_29538(this.field_4880, var8)) {
          class_6910 var12 = this.field_4880.field_47807.method_39528(this.field_4880, var4, var6, var5, var7);
          if (var9 == Direction.field_817
@@ -1191,7 +1191,7 @@ public class class_948 implements class_1243 {
                this.field_4880 = this.field_4877.method_1600().method_39984(this.field_4880, false);
                if (this.field_4877.method_1634()) {
                   this.field_4880.method_3155(GameType.SPECTATOR);
-                  this.field_4880.method_43235().method_29537().<class_5850>method_1287(class_291.field_1059).method_26684(false, this.field_4877);
+                  this.field_4880.method_43235().getGameRules().<class_5850>method_1287(GameRules.field_1059).method_26684(false, this.field_4877);
                }
             }
             break;

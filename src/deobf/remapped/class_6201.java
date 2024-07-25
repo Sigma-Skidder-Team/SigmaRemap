@@ -63,7 +63,7 @@ public class class_6201 extends class_2451 {
       }
    }
 
-   public class_8461 method_28393(class_2522 var1) {
+   public SoundEvent method_28393(class_2522 var1) {
       return var1.method_8316().method_21391();
    }
 
@@ -140,7 +140,7 @@ public class class_6201 extends class_2451 {
                CompoundNBT var9 = var8.method_17396(new CompoundNBT());
                CompoundNBT var10 = var9.method_25944();
                var9.method_25925(var7);
-               var9.putInt("x", var2.method_12173());
+               var9.putInt("x", var2.getX());
                var9.putInt("y", var2.method_12165());
                var9.putInt("z", var2.method_12185());
                if (!var9.equals(var10)) {

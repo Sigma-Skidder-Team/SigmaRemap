@@ -32,7 +32,7 @@ public class class_5670 extends LookAtGoal {
                      this.field_21568.getPosX(),
                      this.field_21568.method_37388(),
                      this.field_21568.getPosZ(),
-                     this.field_21568.method_37241().method_18899((double)this.field_21566, 3.0, (double)this.field_21566)
+                     this.field_21568.getBoundingBox().method_18899((double)this.field_21566, 3.0, (double)this.field_21566)
                   );
             } else {
                this.field_21563 = this.field_21568

@@ -31,7 +31,7 @@ public abstract class class_3558 extends class_3599 {
       this.field_17439 = this.method_16542();
       this.field_17438.field_37904 = this.method_16545();
       this.field_17437 = this.field_17438.field_41697 + this.method_16541();
-      class_8461 var3 = this.method_16540();
+      SoundEvent var3 = this.method_16540();
       if (var3 != null) {
          this.field_17438.method_37155(var3, 1.0F, 1.0F);
       }
@@ -59,7 +59,7 @@ public abstract class class_3558 extends class_3599 {
    public abstract int method_16541();
 
    @Nullable
-   public abstract class_8461 method_16540();
+   public abstract SoundEvent method_16540();
 
    public abstract class_248 method_16544();
 }

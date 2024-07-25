@@ -68,7 +68,7 @@ public class class_1103 implements ArgumentType<class_4533> {
          case "/=":
             return (var0x, var1) -> {
                if (var1 != 0) {
-                  return class_9299.method_42814(var0x, var1);
+                  return MathHelper.intFloorDiv(var0x, var1);
                } else {
                   throw field_6334.create();
                }
@@ -76,7 +76,7 @@ public class class_1103 implements ArgumentType<class_4533> {
          case "%=":
             return (var0x, var1) -> {
                if (var1 != 0) {
-                  return class_9299.method_42788(var0x, var1);
+                  return MathHelper.normalizeAngle(var0x, var1);
                } else {
                   throw field_6334.create();
                }

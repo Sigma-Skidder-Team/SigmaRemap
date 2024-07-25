@@ -32,7 +32,7 @@ public class RearViewModule extends PremiumModule {
             List var4 = client.theWorld
                .<PlayerEntity>method_25869(
                   PlayerEntity.class,
-                  client.thePlayer.method_37241().method_18898(14.0),
+                  client.thePlayer.getBoundingBox().grow(14.0),
                   var1x -> var1x.method_37175(client.thePlayer) < 12.0F
                         && !this.method_43929(var1x)
                         && client.thePlayer != var1x

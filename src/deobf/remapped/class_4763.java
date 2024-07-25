@@ -377,7 +377,7 @@ public class class_4763 {
          for (int var9 = 0; var9 < 16; var9++) {
             BlockPos var10 = new BlockPos(var6 + var8, 64, var7 + var9);
             int var11 = this.method_21975(
-               new BlockPos(var10.method_12173(), var1.method_27353(class_3801.field_18592).method_9957(var8, var9) - 1, var10.method_12185()), var2
+               new BlockPos(var10.getX(), var1.method_27353(class_3801.field_18592).method_9957(var8, var9) - 1, var10.method_12185()), var2
             );
             var5.put((byte)(var11 >> 16 & 0xFF));
             var5.put((byte)(var11 >> 8 & 0xFF));

@@ -34,7 +34,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
 
    @Override
    public void method_17353() {
-      int var3 = this.field_18358.method_12173();
+      int var3 = this.field_18358.getX();
       int var4 = this.field_18358.method_12165();
       int var5 = this.field_18358.method_12185();
       BlockPos var6;
@@ -95,7 +95,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
 
          if (this.field_6318 > 0 && !this.field_6319.isEmpty()) {
             this.method_4890();
-            this.method_4883(class_463.field_2501);
+            this.method_4883(SoundEvents.field_2501);
          }
       }
 
@@ -106,7 +106,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
          if (!this.field_18364.field_33055) {
             boolean var16 = this.field_6318 > 0;
             if (!var15 && var16) {
-               this.method_4883(class_463.field_1928);
+               this.method_4883(SoundEvents.field_1928);
 
                for (class_9359 var13 : this.field_18364
                   .<class_9359>method_25868(
@@ -116,7 +116,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
                   class_8807.field_45076.method_9160(var13, this);
                }
             } else if (var15 && !var16) {
-               this.method_4883(class_463.field_2636);
+               this.method_4883(SoundEvents.field_2636);
             }
          }
       }
@@ -150,7 +150,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
 
    @Override
    public void method_17406() {
-      this.method_4883(class_463.field_2636);
+      this.method_4883(SoundEvents.field_2636);
       super.method_17406();
    }
 
@@ -163,7 +163,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
          }
 
          int var6 = (9 + this.field_6318 * 2) * 20;
-         Box var7 = new Box(this.field_18358).method_18898(var3).method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
+         Box var7 = new Box(this.field_18358).grow(var3).method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
          List var8 = this.field_18364.<PlayerEntity>method_25868(PlayerEntity.class, var7);
 
          for (PlayerEntity var10 : var8) {
@@ -178,7 +178,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
       }
    }
 
-   public void method_4883(class_8461 var1) {
+   public void method_4883(SoundEvent var1) {
       this.field_18364.method_43359((PlayerEntity)null, this.field_18358, var1, class_562.field_3322, 1.0F, 1.0F);
    }
 

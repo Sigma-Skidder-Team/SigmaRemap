@@ -306,7 +306,7 @@ public class class_5525 {
    }
 
    public static boolean method_25097(int var0) {
-      int var3 = class_9299.method_42801(var0);
+      int var3 = MathHelper.smallestEncompassingPowerOfTwo(var0);
       return var3 == var0;
    }
 

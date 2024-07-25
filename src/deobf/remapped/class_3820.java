@@ -77,7 +77,7 @@ public class class_3820 extends class_4285<class_1941> {
 
          for (int var28 = 0; var28 < 2; var28++) {
             for (int var31 = 0; var31 < 3; var31++) {
-               int var33 = var4.method_12173() + var3.nextInt(var9 * 2 + 1) - var9;
+               int var33 = var4.getX() + var3.nextInt(var9 * 2 + 1) - var9;
                int var35 = var4.method_12165();
                int var37 = var4.method_12185() + var3.nextInt(var14 * 2 + 1) - var14;
                BlockPos var38 = new BlockPos(var33, var35, var37);
@@ -102,7 +102,7 @@ public class class_3820 extends class_4285<class_1941> {
          var1.method_7513(var4, class_4783.field_23617.method_29260(), 2);
          class_3757 var29 = var1.method_28260(var4);
          if (!(var29 instanceof class_1896)) {
-            field_18684.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.method_12173(), var4.method_12165(), var4.method_12185());
+            field_18684.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.getX(), var4.method_12165(), var4.method_12185());
          } else {
             ((class_1896)var29).method_8621().method_16253(this.method_17796(var3));
          }

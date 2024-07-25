@@ -29,7 +29,7 @@ public class class_7878 extends class_3599 {
          .<class_91>method_25869(class_91.class, this.field_40324.method_37241().method_18899(8.0, 8.0, 8.0), class_449.field_1874);
       if (!var3.isEmpty()) {
          this.field_40324.method_26927().method_5616((Entity)var3.get(0), 1.2F);
-         this.field_40324.method_37155(class_463.field_2759, 1.0F, 1.0F);
+         this.field_40324.method_37155(SoundEvents.field_2759, 1.0F, 1.0F);
       }
 
       this.field_40325 = 0;
@@ -73,16 +73,16 @@ public class class_7878 extends class_3599 {
          var6.method_37214(
             (double)(
                0.3F
-                     * -class_9299.method_42818(this.field_40324.field_41701 * (float) (Math.PI / 180.0))
-                     * class_9299.method_42840(this.field_40324.field_41755 * (float) (Math.PI / 180.0))
-                  + class_9299.method_42840(var8) * var9
+                     * -MathHelper.sin(this.field_40324.field_41701 * (float) (Math.PI / 180.0))
+                     * MathHelper.cos(this.field_40324.field_41755 * (float) (Math.PI / 180.0))
+                  + MathHelper.cos(var8) * var9
             ),
-            (double)(0.3F * class_9299.method_42818(this.field_40324.field_41755 * (float) (Math.PI / 180.0)) * 1.5F),
+            (double)(0.3F * MathHelper.sin(this.field_40324.field_41755 * (float) (Math.PI / 180.0)) * 1.5F),
             (double)(
                0.3F
-                     * class_9299.method_42840(this.field_40324.field_41701 * (float) (Math.PI / 180.0))
-                     * class_9299.method_42840(this.field_40324.field_41755 * (float) (Math.PI / 180.0))
-                  + class_9299.method_42818(var8) * var9
+                     * MathHelper.cos(this.field_40324.field_41701 * (float) (Math.PI / 180.0))
+                     * MathHelper.cos(this.field_40324.field_41755 * (float) (Math.PI / 180.0))
+                  + MathHelper.sin(var8) * var9
             )
          );
          this.field_40324.field_41768.method_7509(var6);

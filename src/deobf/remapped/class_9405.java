@@ -34,7 +34,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    @Nullable
    @Override
    public Entity getControllingPassenger() {
-      return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
+      return !this.getPassengers().isEmpty() ? this.getPassengers().get(0) : null;
    }
 
    @Override
@@ -77,23 +77,23 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_8461 method_26918() {
-      return class_463.field_1944;
+   public SoundEvent method_26918() {
+      return SoundEvents.field_1944;
    }
 
    @Override
-   public class_8461 method_26541(DamageSource var1) {
-      return class_463.field_2061;
+   public SoundEvent method_26541(DamageSource var1) {
+      return SoundEvents.field_2061;
    }
 
    @Override
-   public class_8461 method_26599() {
-      return class_463.field_1993;
+   public SoundEvent method_26599() {
+      return SoundEvents.field_1993;
    }
 
    @Override
    public void method_37207(BlockPos var1, class_2522 var2) {
-      this.method_37155(class_463.field_2788, 0.15F, 1.0F);
+      this.method_37155(SoundEvents.field_2788, 0.15F, 1.0F);
    }
 
    @Override
@@ -138,7 +138,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    public void method_43358(class_562 var1) {
       this.field_48087.method_3112(true);
       if (var1 != null) {
-         this.world.method_29540((PlayerEntity)null, this, class_463.field_1931, var1, 0.5F, 1.0F);
+         this.world.method_29540((PlayerEntity)null, this, SoundEvents.field_1931, var1, 0.5F, 1.0F);
       }
    }
 
@@ -158,7 +158,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
             Box var10 = var1.method_26549(var9);
 
             for (int[] var14 : var5) {
-               var7.method_13362(var6.method_12173() + var14[0], var6.method_12165(), var6.method_12185() + var14[1]);
+               var7.method_13362(var6.getX() + var14[0], var6.method_12165(), var6.method_12185() + var14[1]);
                double var15 = this.world.method_28259(var7);
                if (class_160.method_648(var15)) {
                   class_1343 var17 = class_1343.method_6219(var7, var15);

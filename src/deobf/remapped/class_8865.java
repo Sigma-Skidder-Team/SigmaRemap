@@ -7,7 +7,7 @@ public class class_8865 {
    public static double method_40775() {
       double var2 = 0.2873;
       float var4 = 1.0F;
-      class_9747 var5 = field_45329.thePlayer.method_26561(Attributes.MOVEMENT_SPEED);
+      class_9747 var5 = field_45329.thePlayer.getAttribute(Attributes.MOVEMENT_SPEED);
       var4 = (float)((double)var4 * ((var5.method_44998() / (double)field_45329.thePlayer.playerAbilities.getWalkSpeed() + 1.0) / 2.0));
       if (field_45329.thePlayer.method_37321()) {
          var4 = (float)((double)var4 - 0.15);
@@ -258,12 +258,12 @@ public class class_8865 {
       if (!(var8 > var5)) {
          var4 = var3;
       } else {
-         var4 += !(class_9299.method_42810(var3 - var4) > 0.0F) ? -var5 : var5;
+         var4 += !(MathHelper.wrapDegrees(var3 - var4) > 0.0F) ? -var5 : var5;
       }
 
       float var9 = (var4 - 90.0F) * (float) (Math.PI / 180.0);
-      var0.method_35232((double)(-class_9299.method_42818(var9)) * var1);
-      var0.method_35229((double)class_9299.method_42840(var9) * var1);
+      var0.method_35232((double)(-MathHelper.sin(var9)) * var1);
+      var0.method_35229((double) MathHelper.cos(var9) * var1);
       class_314.method_1463(var0.method_35234());
       class_314.method_1405(var0.method_35231());
       return var4;
@@ -274,12 +274,12 @@ public class class_8865 {
       if (!(var7 > var4)) {
          var3 = var2;
       } else {
-         var3 += !(class_9299.method_42810(var2 - var3) > 0.0F) ? -var4 : var4;
+         var3 += !(MathHelper.wrapDegrees(var2 - var3) > 0.0F) ? -var4 : var4;
       }
 
       float var8 = (var3 - 90.0F) * (float) (Math.PI / 180.0);
-      class_314.method_1463((double)(-class_9299.method_42818(var8)) * var0);
-      class_314.method_1405((double)class_9299.method_42840(var8) * var0);
+      class_314.method_1463((double)(-MathHelper.sin(var8)) * var0);
+      class_314.method_1405((double) MathHelper.cos(var8) * var0);
       return var3;
    }
 
@@ -291,8 +291,8 @@ public class class_8865 {
          ? (double)field_45329.thePlayer.field_29674
          : (double)(field_45329.thePlayer.method_26423() * (0.21600002F / (var10 * var10 * var10)));
       class_1343 var13 = (!(var8 > 1.0) ? var7 : var7.method_6213()).method_6209(var11);
-      float var14 = class_9299.method_42818(field_45329.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
-      float var15 = class_9299.method_42840(field_45329.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
+      float var14 = MathHelper.sin(field_45329.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
+      float var15 = MathHelper.cos(field_45329.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
       return new class_1343(
          var13.field_7336 * (double)var15 - var13.field_7334 * (double)var14,
          var13.field_7333,

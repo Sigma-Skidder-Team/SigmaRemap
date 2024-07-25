@@ -60,12 +60,12 @@ public class class_87 extends class_495 {
 
    public void method_212(int var1) {
       this.field_163 = var1;
-      this.method_43459(class_9299.method_42828((float)var1 / (float)this.field_164, 0.0F, 1.0F));
+      this.method_43459(MathHelper.clamp((float)var1 / (float)this.field_164, 0.0F, 1.0F));
    }
 
    public void method_219(int var1) {
       this.field_164 = var1;
-      this.method_43459(class_9299.method_42828((float)this.field_163 / (float)var1, 0.0F, 1.0F));
+      this.method_43459(MathHelper.clamp((float)this.field_163 / (float)var1, 0.0F, 1.0F));
    }
 
    public final ITextComponent method_217() {

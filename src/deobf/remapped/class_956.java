@@ -22,7 +22,7 @@ public abstract class class_956 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      LivingEntity var3 = this.field_4915.method_17809();
+      LivingEntity var3 = this.field_4915.getAttackTarget();
       if (var3 == null) {
          var3 = this.field_4918;
       }
@@ -117,8 +117,8 @@ public abstract class class_956 extends class_3599 {
       if (var4 != null) {
          class_5851 var5 = var4.method_18448();
          if (var5 != null) {
-            int var6 = var5.field_29731 - class_9299.method_42847(var1.getPosX());
-            int var7 = var5.field_29736 - class_9299.method_42847(var1.getPosZ());
+            int var6 = var5.field_29731 - MathHelper.floor(var1.getPosX());
+            int var7 = var5.field_29736 - MathHelper.floor(var1.getPosZ());
             return (double)(var6 * var6 + var7 * var7) <= 2.25;
          } else {
             return false;
