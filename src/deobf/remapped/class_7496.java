@@ -14,7 +14,7 @@ public class class_7496 extends Module {
 
    @Override
    public void method_42006() {
-      if (class_314.method_1413(field_46692.field_9632, 0.001F)) {
+      if (class_314.method_1413(mcInstance.field_9632, 0.001F)) {
          this.field_38245 = this.method_42016("Offset").equals("OldHypixel");
          this.field_38243 = !this.field_38245 ? 1 : 2;
       }
@@ -46,11 +46,11 @@ public class class_7496 extends Module {
    @class_315
    private void method_34125(class_1393 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.field_41726) {
+         if (mcInstance.field_9632.field_41726) {
             this.field_38246 = false;
             if (this.field_38244 && this.field_38243 != 1) {
                this.field_38244 = !this.field_38244;
-               field_46692.field_9632.method_26595();
+               mcInstance.field_9632.method_26595();
             }
 
             if (this.method_42016("Offset").equals("OldHypixel") != this.field_38245) {
@@ -60,8 +60,8 @@ public class class_7496 extends Module {
 
             double var4 = this.field_38245 ? 1.0E-14 : 0.0;
             boolean var6 = false;
-            boolean var7 = field_46692.field_9587 != null && field_46692.field_9587.method_33990() == class_1430.field_7717;
-            boolean var8 = field_46692.field_9647.method_42156() || field_46692.field_9577.field_45530.method_27060() && var7;
+            boolean var7 = mcInstance.field_9587 != null && mcInstance.field_9587.method_33990() == class_1430.field_7717;
+            boolean var8 = mcInstance.field_9647.method_42156() || mcInstance.field_9577.field_45530.method_27060() && var7;
             if (!var8 && !class_7033.method_32081()) {
                switch (this.field_38243) {
                   case 0:
@@ -96,7 +96,7 @@ public class class_7496 extends Module {
             var1.method_6451(var6);
          } else {
             this.field_38243 = this.method_42007("Avoid Fall Damage") && !this.field_38245 ? 3 : 0;
-            if (this.method_42007("Avoid Fall Damage") && this.field_38245 && !this.field_38246 && field_46692.field_9632.method_37098().field_7333 < -0.1) {
+            if (this.method_42007("Avoid Fall Damage") && this.field_38245 && !this.field_38246 && mcInstance.field_9632.method_37098().field_7333 < -0.1) {
                this.field_38246 = !this.field_38246;
                var1.method_6451(true);
             }

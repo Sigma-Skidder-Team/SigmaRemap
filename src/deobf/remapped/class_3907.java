@@ -34,14 +34,14 @@ public class class_3907 extends Module {
       if (!this.method_42015() || SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42015()) {
          field_18992 = 0;
       } else if (var1.method_6449()) {
-         if (field_46692.field_9647.method_42156()) {
+         if (mcInstance.field_9647.method_42156()) {
             field_18992 = 0;
          }
 
          boolean var4 = !this.method_42007("KillAura") || class_2534.field_12558 != null || class_2534.field_12556 != null;
-         if (field_46692.field_9632.field_41726 && field_46692.field_9632.field_41774 && var4) {
+         if (mcInstance.field_9632.field_41726 && mcInstance.field_9632.field_41774 && var4) {
             field_18992++;
-            field_46692.field_9632.field_30502 = 0.0;
+            mcInstance.field_9632.field_30502 = 0.0;
             if (field_18992 != 2) {
                if (field_18992 >= 3) {
                   double var5 = 0.001;

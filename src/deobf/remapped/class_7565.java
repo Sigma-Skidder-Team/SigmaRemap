@@ -73,7 +73,7 @@ public class class_7565 extends class_367 {
    }
 
    private void method_34397(int var1) {
-      if (field_46692.field_9623 == null || field_46692.field_9623 instanceof class_5766) {
+      if (mcInstance.field_9623 == null || mcInstance.field_9623 instanceof class_5766) {
          GL11.glPushMatrix();
          class_73.method_150(var1 - 20, this.field_38544 - 20, var1 + 200, this.field_38544 + 120, true);
          EntityRenderDispatcher var4 = MinecraftClient.getInstance().method_8587();
@@ -137,7 +137,7 @@ public class class_7565 extends class_367 {
          }
 
          GameProfile var8 = new GameProfile(var7, this.field_38555.method_45509().getString());
-         class_1806 var9 = new class_1806(this, field_46692.field_9601, var8);
+         class_1806 var9 = new class_1806(this, mcInstance.field_9601, var8);
          class_3542.method_16438();
          class_3542.method_16413((float)var1 + 50.0F, (float)this.field_38544 + 295.0F, 1000.0F);
          class_3542.method_16403(1.0F, 1.0F, -1.0F);

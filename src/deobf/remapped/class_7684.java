@@ -15,19 +15,19 @@ public class class_7684 extends Module {
 
    @class_9148
    private void method_34825(class_3278 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!MinecraftClient.getInstance().field_9577.field_45567) {
-            if (!(field_46692.field_9623 instanceof class_5766)) {
-               float var4 = field_46692.field_9632.field_41701 % 360.0F - this.field_39044 % 360.0F;
+            if (!(mcInstance.field_9623 instanceof class_5766)) {
+               float var4 = mcInstance.field_9632.field_41701 % 360.0F - this.field_39044 % 360.0F;
                this.field_39044 = this.field_39044 + var4 / (float) MinecraftClient.method_8501() * 1.5F;
                boolean var5 = false;
                int var6 = 14;
                if (this.method_42007("Show Player")) {
-                  var6 += this.method_34823(0, field_46692.window.method_43163() - 23, 114);
+                  var6 += this.method_34823(0, mcInstance.window.method_43163() - 23, 114);
                }
 
                if (this.method_42007("Show Armor")) {
-                  var6 += this.method_34822(var6, field_46692.window.method_43163() - 14) + 10;
+                  var6 += this.method_34822(var6, mcInstance.window.method_43163() - 14) + 10;
                }
 
                if (!this.method_42016("Cords").equals("None")) {
@@ -40,16 +40,16 @@ public class class_7684 extends Module {
 
    public String method_34826(boolean var1) {
       return !var1
-         ? Math.round(field_46692.field_9632.method_37302())
+         ? Math.round(mcInstance.field_9632.method_37302())
             + " "
-            + Math.round(field_46692.field_9632.method_37309())
+            + Math.round(mcInstance.field_9632.method_37309())
             + " "
-            + Math.round(field_46692.field_9632.method_37156())
-         : (float)Math.round(field_46692.field_9632.method_37302() * 10.0) / 10.0F
+            + Math.round(mcInstance.field_9632.method_37156())
+         : (float)Math.round(mcInstance.field_9632.method_37302() * 10.0) / 10.0F
             + " "
-            + (float)Math.round(field_46692.field_9632.method_37309() * 10.0) / 10.0F
+            + (float)Math.round(mcInstance.field_9632.method_37309() * 10.0) / 10.0F
             + " "
-            + (float)Math.round(field_46692.field_9632.method_37156() * 10.0) / 10.0F;
+            + (float)Math.round(mcInstance.field_9632.method_37156() * 10.0) / 10.0F;
    }
 
    public int method_34824(int var1, int var2) {
@@ -58,7 +58,7 @@ public class class_7684 extends Module {
       class_73.method_87(
          class_5320.field_27161,
          (float)var1,
-         (float)(field_46692.window.method_43163() - var2),
+         (float)(mcInstance.window.method_43163() - var2),
          var6,
          class_314.method_1444(class_1255.field_6918.field_6917, 0.8F)
       );
@@ -68,8 +68,8 @@ public class class_7684 extends Module {
    public int method_34822(int var1, int var2) {
       int var5 = 0;
 
-      for (int var6 = 0; var6 < field_46692.field_9632.field_3853.field_36405.size(); var6++) {
-         class_6098 var7 = field_46692.field_9632.field_3853.field_36405.get(var6);
+      for (int var6 = 0; var6 < mcInstance.field_9632.field_3853.field_36405.size(); var6++) {
+         class_6098 var7 = mcInstance.field_9632.field_3853.field_36405.get(var6);
          if (!(var7.method_27960() instanceof class_221)) {
             var5++;
             int var8 = var2 - 32 * var5;

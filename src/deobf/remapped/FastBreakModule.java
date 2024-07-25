@@ -8,11 +8,11 @@ public class FastBreakModule extends Module {
    @class_9148
    private void method_4769(class_5596 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9647.field_46832 > 0.7F) {
-            field_46692.field_9647.field_46832 = 1.0F;
+         if (mcInstance.field_9647.field_46832 > 0.7F) {
+            mcInstance.field_9647.field_46832 = 1.0F;
          }
 
-         field_46692.field_9647.field_46831 = 0;
+         mcInstance.field_9647.field_46831 = 0;
       }
    }
 }

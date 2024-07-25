@@ -22,8 +22,8 @@ public class class_4471 extends class_367 {
    }
 
    public List<Entity> method_20752() {
-      ArrayList var3 = Lists.newArrayList(field_46692.field_9601.method_736());
-      var3.remove(field_46692.field_9632);
+      ArrayList var3 = Lists.newArrayList(mcInstance.field_9601.method_736());
+      var3.remove(mcInstance.field_9632);
       Iterator var4 = var3.iterator();
 
       while (var4.hasNext()) {

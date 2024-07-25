@@ -20,7 +20,7 @@ public class class_6053 extends Module {
    public void method_42006() {
       this.field_30964 = -1;
       this.field_30963 = 0;
-      this.field_30961 = field_46692.field_9632.method_37309();
+      this.field_30961 = mcInstance.field_9632.method_37309();
       this.field_30965 = class_8865.method_40787()[0];
       this.field_30960 = 0;
    }
@@ -43,7 +43,7 @@ public class class_6053 extends Module {
    public void method_27641(class_7767 var1) {
       if (this.method_42015()) {
          String var4 = this.method_42016("Mode");
-         if (class_314.method_1413(field_46692.field_9632, 0.01F)) {
+         if (class_314.method_1413(mcInstance.field_9632, 0.01F)) {
             if (this.field_30960 <= 1) {
                this.field_30960++;
             } else {
@@ -52,16 +52,16 @@ public class class_6053 extends Module {
             }
 
             if (class_314.method_1434() && this.method_42007("Auto Jump")) {
-               field_46692.field_9632.method_26595();
-               var1.method_35235(field_46692.field_9632.method_37098().field_7333);
+               mcInstance.field_9632.method_26595();
+               var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
             }
          } else if (this.field_30964 >= 0) {
             this.field_30964++;
          }
 
-         if (field_46692.field_9632.field_29673 == 0.0F && field_46692.field_9632.field_29676 == 0.0F
-            || field_46692.field_9632.field_41744
-            || field_46692.field_9632.field_29673 <= 0.0F) {
+         if (mcInstance.field_9632.field_29673 == 0.0F && mcInstance.field_9632.field_29676 == 0.0F
+            || mcInstance.field_9632.field_41744
+            || mcInstance.field_9632.field_29673 <= 0.0F) {
             this.field_30963 = 0;
          }
 
@@ -73,20 +73,20 @@ public class class_6053 extends Module {
                this.field_30959 = this.method_27644(this.field_30964, this.field_30963);
                this.field_30958 = this.method_27640(this.field_30964);
                var1.method_35235(this.field_30958);
-               field_46692.field_9632.method_37098().field_7333 = this.field_30958;
+               mcInstance.field_9632.method_37098().field_7333 = this.field_30958;
                break;
             case "Fast2":
                this.field_30959 = this.method_27642(this.field_30964, this.field_30963);
                this.field_30958 = this.method_27643(this.field_30964);
                var1.method_35235(this.field_30958);
-               field_46692.field_9632.method_37098().field_7333 = this.field_30958;
+               mcInstance.field_9632.method_37098().field_7333 = this.field_30958;
          }
 
          if (!class_314.method_1434()) {
             this.field_30959 = 0.0;
          }
 
-         if (field_46692.field_9632.field_41744) {
+         if (mcInstance.field_9632.field_41744) {
             this.field_30959 = this.field_30959 * 0.9 < 0.27 ? 0.27 : this.field_30959 * 0.9;
          }
 
@@ -102,7 +102,7 @@ public class class_6053 extends Module {
    public void method_27639(class_1711 var1) {
       if (this.method_42015()) {
          if (this.method_42007("Fluid Fix")) {
-            if (!field_46692.field_9632.field_41744 && !field_46692.field_9632.field_41774) {
+            if (!mcInstance.field_9632.field_41744 && !mcInstance.field_9632.field_41774) {
                String var4 = this.method_42016("Mode");
                float var5 = 13.0F;
                if (!var4.equals("Fast1")) {
@@ -115,12 +115,12 @@ public class class_6053 extends Module {
 
                if (!((float)this.field_30964 > var5) && this.field_30964 >= 0) {
                   double var6 = Math.cos(Math.toRadians((double)((float)this.field_30964 / var5 * 180.0F - 90.0F)));
-                  field_46692.field_9632.field_41736.field_7333 = this.field_30961 + var6;
-                  field_46692.field_9632.field_3859 = 0.0F;
+                  mcInstance.field_9632.field_41736.field_7333 = this.field_30961 + var6;
+                  mcInstance.field_9632.field_3859 = 0.0F;
                }
             } else {
-               field_46692.field_9632.field_41736.field_7333 = field_46692.field_9632.method_37241().field_19937;
-               this.field_30961 = field_46692.field_9632.method_37309();
+               mcInstance.field_9632.field_41736.field_7333 = mcInstance.field_9632.method_37241().field_19937;
+               this.field_30961 = mcInstance.field_9632.method_37309();
                this.field_30964 = -1;
             }
          }
@@ -156,8 +156,8 @@ public class class_6053 extends Module {
    }
 
    private double method_27640(int var1) {
-      double var4 = field_46692.field_9632.method_37098().field_7333;
-      boolean var6 = class_314.method_1413(field_46692.field_9632, 0.37F);
+      double var4 = mcInstance.field_9632.method_37098().field_7333;
+      boolean var6 = class_314.method_1413(mcInstance.field_9632, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.05, -0.12, -0.192, -0.26, -0.33, !var6 ? -0.4 : -0.0, !var6 ? -0.47 : -0.13};
       if (var1 >= 0 && var1 < var7.length) {
          var4 = var7[var1];
@@ -167,7 +167,7 @@ public class class_6053 extends Module {
    }
 
    private double method_27644(int var1, int var2) {
-      boolean var5 = class_314.method_1413(field_46692.field_9632, 0.37F);
+      boolean var5 = class_314.method_1413(mcInstance.field_9632, 0.37F);
       double[] var6 = new double[]{0.497, 0.671, 0.719, 0.733, 0.738};
       double[] var7 = new double[]{0.303, 0.407, 0.436, 0.444, 0.447};
       double[] var8 = new double[]{0.0, 0.003, 0.004, 0.004, 0.004};
@@ -203,8 +203,8 @@ public class class_6053 extends Module {
    }
 
    private double method_27643(int var1) {
-      double var4 = field_46692.field_9632.method_37098().field_7333;
-      boolean var6 = class_314.method_1413(field_46692.field_9632, 0.37F);
+      double var4 = mcInstance.field_9632.method_37098().field_7333;
+      boolean var6 = class_314.method_1413(mcInstance.field_9632, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.06, -0.14, -0.22, -0.29, 0.0, -0.082, -0.11, 0.0, -0.18};
       if (var1 >= 0 && var1 < var7.length) {
          var4 = var7[var1];
@@ -222,7 +222,7 @@ public class class_6053 extends Module {
    }
 
    private double method_27642(int var1, int var2) {
-      boolean var5 = class_314.method_1413(field_46692.field_9632, 0.37F);
+      boolean var5 = class_314.method_1413(mcInstance.field_9632, 0.37F);
       double[] var6 = new double[]{0.497, 0.709, 0.746, 0.753};
       double[] var7 = new double[]{0.303, 0.43, 0.4525, 0.456};
       double[] var8 = new double[]{0.0, 0.0036, 0.0041, 0.0042};
@@ -293,11 +293,11 @@ public class class_6053 extends Module {
             var2.run();
          }
 
-         if (field_46692.field_9632.field_29673 <= 0.0F) {
+         if (mcInstance.field_9632.field_29673 <= 0.0F) {
             var5 -= 0.06;
          }
 
-         if (field_46692.field_9632.field_41744) {
+         if (mcInstance.field_9632.field_41744) {
             var5 -= 0.1;
             var2.run();
          }

@@ -11,9 +11,9 @@ public class class_6805 extends Module {
    private void method_31154(class_2911 var1) {
       if (this.method_42015()) {
          if (class_2534.field_12548) {
-            field_46692.method_8614()
+            mcInstance.method_8614()
                .method_4813(
-                  new class_9515(field_46692.field_9632.method_37302(), field_46692.field_9632.method_37309(), field_46692.field_9632.method_37156(), true)
+                  new class_9515(mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309(), mcInstance.field_9632.method_37156(), true)
                );
          }
       }

@@ -84,20 +84,20 @@ public class class_2534 extends Module {
       this.field_12553 = 0;
       this.field_12570 = 0;
       field_12551 = 0;
-      this.field_12569 = new class_1988(field_46692.field_9632.field_30535, field_46692.field_9632.field_30524);
-      this.field_12567 = new class_1988(field_46692.field_9632.field_41701, field_46692.field_9632.field_41755);
-      field_12563 = new class_1988(field_46692.field_9632.field_41701, field_46692.field_9632.field_41755);
+      this.field_12569 = new class_1988(mcInstance.field_9632.field_30535, mcInstance.field_9632.field_30524);
+      this.field_12567 = new class_1988(mcInstance.field_9632.field_41701, mcInstance.field_9632.field_41755);
+      field_12563 = new class_1988(mcInstance.field_9632.field_41701, mcInstance.field_9632.field_41755);
       this.field_12562 = -1.0F;
       this.field_12561
          .method_40099(
-            field_46692.field_9632.method_26617(class_2584.field_12791).method_27960() instanceof class_2235
-               && field_46692.field_9577.field_45559.method_27060()
+            mcInstance.field_9632.method_26617(class_2584.field_12791).method_27960() instanceof class_2235
+               && mcInstance.field_9577.field_45559.method_27060()
          );
       this.field_12564 = false;
       this.field_12552 = -1;
       this.field_12561.field_44743.clear();
       this.field_12568.clear();
-      if (field_46692.field_9632.field_41726) {
+      if (mcInstance.field_9632.field_41726) {
          this.field_12545 = 1;
       }
 
@@ -129,7 +129,7 @@ public class class_2534 extends Module {
          }
 
          if (this.method_42007("Disable on death")) {
-            if (!field_46692.field_9632.method_37330()) {
+            if (!mcInstance.field_9632.method_37330()) {
                this.method_41999();
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to death"));
             }
@@ -141,10 +141,10 @@ public class class_2534 extends Module {
    public void method_11535(class_4996 var1) {
       if (this.method_42015()) {
          if (!this.method_42016("Autoblock Mode").equals("None")
-            && (field_46692.field_9632.method_26446().method_27960() instanceof class_2235 || this.field_12565 != field_46692.field_9632.field_3853.field_36404)
+            && (mcInstance.field_9632.method_26446().method_27960() instanceof class_2235 || this.field_12565 != mcInstance.field_9632.field_3853.field_36404)
             && field_12558 != null) {
             var1.method_29715(true);
-         } else if (field_46692.field_9632.method_26446().method_27960() instanceof class_2235) {
+         } else if (mcInstance.field_9632.method_26446().method_27960() instanceof class_2235) {
             this.field_12555 = 2;
          }
       }
@@ -153,9 +153,9 @@ public class class_2534 extends Module {
    @class_9148
    @class_4249
    public void method_11549(class_1393 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!var1.method_6449()) {
-            this.field_12565 = field_46692.field_9632.field_3853.field_36404;
+            this.field_12565 = mcInstance.field_9632.field_3853.field_36404;
             if (field_12558 != null && this.field_12561.method_40097() && this.field_12567 != null) {
                this.field_12561.method_40101(field_12558, this.field_12567.field_10069, this.field_12567.field_10067);
             }
@@ -168,7 +168,7 @@ public class class_2534 extends Module {
                this.field_12561.method_40093();
             }
 
-            if (this.field_12561.method_40094() && (!(field_46692.field_9632.method_26446().method_27960() instanceof class_2235) || field_12558 == null)) {
+            if (this.field_12561.method_40094() && (!(mcInstance.field_9632.method_26446().method_27960() instanceof class_2235) || field_12558 == null)) {
                this.field_12561.method_40099(false);
             }
 
@@ -191,7 +191,7 @@ public class class_2534 extends Module {
                }
 
                this.method_11545();
-               if (var1.method_6442() - field_46692.field_9632.field_41701 != 0.0F) {
+               if (var1.method_6442() - mcInstance.field_9632.field_41701 != 0.0F) {
                   this.field_12567.field_10069 = var1.method_6442();
                   this.field_12567.field_10067 = var1.method_6439();
                }
@@ -199,8 +199,8 @@ public class class_2534 extends Module {
                var1.method_6441(this.field_12567.field_10069);
                var1.method_6448(this.field_12567.field_10067);
                boolean var6 = this.field_12561.method_40090(this.field_12546);
-               float var7 = !((double)field_46692.field_9632.method_3163() < 1.26) && this.method_42007("Cooldown")
-                  ? field_46692.field_9632.method_3203(0.0F)
+               float var7 = !((double) mcInstance.field_9632.method_3163() < 1.26) && this.method_42007("Cooldown")
+                  ? mcInstance.field_9632.method_3203(0.0F)
                   : 1.0F;
                boolean var8 = field_12551 == 0 && var6 && var7 >= 1.0F;
                if (var6) {
@@ -231,13 +231,13 @@ public class class_2534 extends Module {
    public void method_11551(class_3278 var1) {
       if (field_12556 != null && !this.method_42007("Silent") && !this.method_42016("Rotation Mode").equals("None")) {
          float var4 = class_9299.method_42810(
-            this.field_12569.field_10069 + (this.field_12567.field_10069 - this.field_12569.field_10069) * field_46692.method_8554()
+            this.field_12569.field_10069 + (this.field_12567.field_10069 - this.field_12569.field_10069) * mcInstance.method_8554()
          );
          float var5 = class_9299.method_42810(
-            this.field_12569.field_10067 + (this.field_12567.field_10067 - this.field_12569.field_10067) * field_46692.method_8554()
+            this.field_12569.field_10067 + (this.field_12567.field_10067 - this.field_12569.field_10067) * mcInstance.method_8554()
          );
-         field_46692.field_9632.field_41701 = var4;
-         field_46692.field_9632.field_41755 = var5;
+         mcInstance.field_9632.field_41701 = var4;
+         mcInstance.field_9632.field_41755 = var5;
       }
    }
 
@@ -282,8 +282,8 @@ public class class_2534 extends Module {
       if (!(var4 instanceof class_527)) {
          if (var4 instanceof class_295) {
             class_295 var5 = (class_295)var4;
-            if (var5.method_1329() == 3 && this.field_12561.field_44743.containsKey(var5.method_1331(field_46692.field_9601))) {
-               this.field_12561.field_44743.remove(var5.method_1331(field_46692.field_9601));
+            if (var5.method_1329() == 3 && this.field_12561.field_44743.containsKey(var5.method_1331(mcInstance.field_9601))) {
+               this.field_12561.field_44743.remove(var5.method_1331(mcInstance.field_9601));
             }
          }
       } else {
@@ -292,7 +292,7 @@ public class class_2534 extends Module {
             for (Entry var7 : this.field_12561.field_44743.entrySet()) {
                Entity var8 = (Entity)var7.getKey();
                List var9 = (List)var7.getValue();
-               if (var11.method_2564(field_46692.field_9601) == var8) {
+               if (var11.method_2564(mcInstance.field_9601) == var8) {
                   class_1343 var10 = var8.field_41700.method_6209(2.4414062E-4F);
                   var9.add(new class_9097<class_1343, Long>(var10, System.currentTimeMillis()));
                }
@@ -319,9 +319,9 @@ public class class_2534 extends Module {
          var1.field_41724 + (var1.method_37156() - var1.field_41724) * var4
       );
       GL11.glTranslated(
-         -field_46692.gameRenderer.method_35949().method_41627().method_61(),
-         -field_46692.gameRenderer.method_35949().method_41627().method_60(),
-         -field_46692.gameRenderer.method_35949().method_41627().method_62()
+         -mcInstance.gameRenderer.method_35949().method_41627().method_61(),
+         -mcInstance.gameRenderer.method_35949().method_41627().method_60(),
+         -mcInstance.gameRenderer.method_35949().method_41627().method_62()
       );
       GL11.glEnable(32823);
       GL11.glEnable(3008);
@@ -336,9 +336,9 @@ public class class_2534 extends Module {
       this.method_11554(var8, 0.45F * var9, 0.6F, 0.35F * var9, this.field_12568.get(var1).method_11123());
       GL11.glPushMatrix();
       GL11.glTranslated(
-         field_46692.gameRenderer.method_35949().method_41627().method_61(),
-         field_46692.gameRenderer.method_35949().method_41627().method_60(),
-         field_46692.gameRenderer.method_35949().method_41627().method_62()
+         mcInstance.gameRenderer.method_35949().method_41627().method_61(),
+         mcInstance.gameRenderer.method_35949().method_41627().method_60(),
+         mcInstance.gameRenderer.method_35949().method_41627().method_62()
       );
       GL11.glPopMatrix();
       GL11.glEnable(3553);
@@ -395,8 +395,8 @@ public class class_2534 extends Module {
 
    public boolean method_11555() {
       return field_12558 != null
-         && field_46692.field_9632.method_26446() != null
-         && field_46692.field_9632.method_26446().method_27960() instanceof class_2235
+         && mcInstance.field_9632.method_26446() != null
+         && mcInstance.field_9632.method_26446().method_27960() instanceof class_2235
          && !this.method_42016("Autoblock Mode").equals("None");
    }
 
@@ -418,13 +418,13 @@ public class class_2534 extends Module {
       } else if (this.field_12553 == 1) {
          this.field_12553 = 0;
          var8 = false;
-         if (var2.equals("Hypixel") && this.field_12550 != null && field_46692.field_9632.method_37098().field_7333 < 0.0) {
-            field_46692.method_8614().method_4813(new class_9515(this.field_12550[0], this.field_12550[1], this.field_12550[2], false));
+         if (var2.equals("Hypixel") && this.field_12550 != null && mcInstance.field_9632.method_37098().field_7333 < 0.0) {
+            mcInstance.method_8614().method_4813(new class_9515(this.field_12550[0], this.field_12550[1], this.field_12550[2], false));
             this.field_12550 = null;
          }
       }
 
-      boolean var9 = !class_7033.method_32081() && (field_46692.field_9632.field_41726 || class_314.method_1413(field_46692.field_9632, 0.001F));
+      boolean var9 = !class_7033.method_32081() && (mcInstance.field_9632.field_41726 || class_314.method_1413(mcInstance.field_9632, 0.001F));
       if (!var9) {
          this.field_12545 = 0;
          this.field_12553 = 0;
@@ -435,18 +435,18 @@ public class class_2534 extends Module {
                   || SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42016("Type").equalsIgnoreCase("Cubecraft")
                   || SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42016("Type").equalsIgnoreCase("Vanilla")
             )
-            && field_46692.field_9632.field_41774
+            && mcInstance.field_9632.field_41774
             && var9
-            && !field_46692.field_9632.field_29654
-            && !field_46692.field_9632.method_37285()
-            && !field_46692.field_9577.field_45450.method_27060()) {
+            && !mcInstance.field_9632.field_29654
+            && !mcInstance.field_9632.method_37285()
+            && !mcInstance.field_9577.field_45450.method_27060()) {
             if (!(var6 > 0.001)) {
                field_12548 = false;
             } else {
                field_12548 = true;
             }
 
-            var1.method_6455(field_46692.field_9632.method_37309() + var6);
+            var1.method_6455(mcInstance.field_9632.method_37309() + var6);
             var1.method_6451(var8);
          }
       }
@@ -454,7 +454,7 @@ public class class_2534 extends Module {
 
    private Entity method_11557(List<class_3357> var1) {
       var1 = this.field_12561.method_40100(var1);
-      return !var1.isEmpty() && ((class_3357)var1.get(0)).method_15377().method_37175(field_46692.field_9632) <= this.method_42002("Block Range")
+      return !var1.isEmpty() && ((class_3357)var1.get(0)).method_15377().method_37175(mcInstance.field_9632) <= this.method_42002("Block Range")
          ? ((class_3357)var1.get(0)).method_15377()
          : null;
    }
@@ -469,7 +469,7 @@ public class class_2534 extends Module {
          this.method_42006();
       }
 
-      if (var6 != null && var6.size() != 0 && !field_46692.field_9577.field_45530.method_27074()) {
+      if (var6 != null && var6.size() != 0 && !mcInstance.field_9577.field_45530.method_27074()) {
          field_12558 = this.method_11557(var6);
          var6 = this.field_12561.method_40091(var4);
          if (var5.equals("Single") || var5.equals("Multi")) {
@@ -482,8 +482,8 @@ public class class_2534 extends Module {
             this.field_12546 = (int)this.field_12561.method_40095(0);
             this.field_12553 = 0;
             field_12548 = false;
-            this.field_12567.field_10069 = field_46692.field_9632.field_41701;
-            this.field_12567.field_10067 = field_46692.field_9632.field_41755;
+            this.field_12567.field_10069 = mcInstance.field_9632.field_41701;
+            this.field_12567.field_10067 = mcInstance.field_9632.field_41755;
             field_12563.field_10069 = this.field_12567.field_10069;
             field_12563.field_10067 = this.field_12567.field_10067;
             this.field_12562 = -1.0F;
@@ -529,7 +529,7 @@ public class class_2534 extends Module {
                      || field_12556.method_15378() == null
                      || field_12556.method_15375()
                      || !this.field_12560.contains(field_12556)
-                     || field_46692.field_9632.method_37175(field_12556.method_15377()) > var4
+                     || mcInstance.field_9632.method_37175(field_12556.method_15377()) > var4
                )
                && this.field_12560.size() > 0) {
                if (this.field_12570 + 1 < this.field_12560.size()) {
@@ -568,8 +568,8 @@ public class class_2534 extends Module {
          this.field_12546 = (int)this.field_12561.method_40095(0);
          this.field_12553 = 0;
          field_12548 = false;
-         this.field_12567.field_10069 = field_46692.field_9632.field_41701;
-         this.field_12567.field_10067 = field_46692.field_9632.field_41755;
+         this.field_12567.field_10069 = mcInstance.field_9632.field_41701;
+         this.field_12567.field_10067 = mcInstance.field_9632.field_41755;
          field_12563.field_10069 = this.field_12567.field_10069;
          field_12563.field_10067 = this.field_12567.field_10067;
          this.field_12562 = -1.0F;
@@ -615,12 +615,12 @@ public class class_2534 extends Module {
                this.field_12567.field_10069 = this.field_12567.field_10069 + this.field_12566 + (float)this.method_11543(-var13, var13);
             }
 
-            if (field_46692.field_9632.field_41697 % 5 == 0) {
+            if (mcInstance.field_9632.field_41697 % 5 == 0) {
                double var32 = 10.0;
                this.field_12567.field_10069 = this.field_12567.field_10069
-                  + (float)this.method_11543(-var32, var32) / (field_46692.field_9632.method_37175(var3) + 1.0F);
+                  + (float)this.method_11543(-var32, var32) / (mcInstance.field_9632.method_37175(var3) + 1.0F);
                this.field_12567.field_10067 = this.field_12567.field_10067
-                  + (float)this.method_11543(-var32, var32) / (field_46692.field_9632.method_37175(var3) + 1.0F);
+                  + (float)this.method_11543(-var32, var32) / (mcInstance.field_9632.method_37175(var3) + 1.0F);
             }
 
             if (Math.abs(var6) > 10.0F) {
@@ -670,7 +670,7 @@ public class class_2534 extends Module {
                }
 
                this.field_12562 = 0.0F;
-               if (field_46692.field_9662 == null && var29 != 1.0F) {
+               if (mcInstance.field_9662 == null && var29 != 1.0F) {
                   this.field_12549 = Math.random() * 0.5 + 0.25;
                }
 
@@ -687,8 +687,8 @@ public class class_2534 extends Module {
          case "None":
             this.field_12569.field_10069 = this.field_12567.field_10069;
             this.field_12569.field_10067 = this.field_12567.field_10067;
-            this.field_12567.field_10069 = field_46692.field_9632.field_41701;
-            this.field_12567.field_10067 = field_46692.field_9632.field_41755;
+            this.field_12567.field_10069 = mcInstance.field_9632.field_41701;
+            this.field_12567.field_10067 = mcInstance.field_9632.field_41755;
             break;
          case "LockView":
             this.field_12569.field_10069 = this.field_12567.field_10069;
@@ -734,7 +734,7 @@ public class class_2534 extends Module {
                }
 
                this.field_12562 = 0.0F;
-               if (field_46692.field_9662 == null && var10 != 1.0F) {
+               if (mcInstance.field_9662 == null && var10 != 1.0F) {
                   this.field_12549 = Math.random() * 0.5 + 0.25;
                }
 

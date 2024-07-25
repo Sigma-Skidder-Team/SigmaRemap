@@ -13,7 +13,7 @@ public class class_3546 extends Module {
    private void method_16497(class_5596 var1) {
       if (this.method_42015()) {
          if (class_314.method_1387()) {
-            field_46692.field_9577.method_40870();
+            mcInstance.field_9577.method_40870();
          }
       }
    }
@@ -37,7 +37,7 @@ public class class_3546 extends Module {
                int var3 = 0;
 
                for (class_5902 var5x : var5.method_35609()) {
-                  class_704 var6 = field_46692.field_9601.method_25862(var5x.method_27005().getId());
+                  class_704 var6 = mcInstance.field_9601.method_25862(var5x.method_27005().getId());
                   if (var6 == null && var5x.method_27003() != null) {
                      class_314.method_1443("Detected an anomaly " + var5x + var5x.method_27005());
                   } else {

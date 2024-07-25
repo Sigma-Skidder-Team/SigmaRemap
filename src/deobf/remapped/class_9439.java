@@ -8,7 +8,7 @@ public class class_9439 extends Module {
 
    @class_9148
    public void method_43668(class_139 var1) {
-      if (this.method_42015() && field_46692.method_8530() != null) {
+      if (this.method_42015() && mcInstance.method_8530() != null) {
          if (!(var1.method_557() instanceof class_7573)) {
             if (var1.method_557() instanceof class_8913) {
                class_8913 var4 = (class_8913)var1.method_557();

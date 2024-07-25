@@ -25,7 +25,7 @@ public class class_7448 extends Module {
    @class_9148
    public void method_33889(class_7767 var1) {
       if (this.method_42015()) {
-         if (!field_46692.field_9632.field_41726) {
+         if (!mcInstance.field_9632.field_41726) {
             if (class_314.method_1434() && class_7722.field_39147 >= 7) {
                this.field_37948++;
                if (this.field_37948 == 1) {
@@ -38,7 +38,7 @@ public class class_7448 extends Module {
                   }
                }
 
-               if (field_46692.field_9632.field_41744) {
+               if (mcInstance.field_9632.field_41744) {
                   this.field_37949 = class_8865.method_40775();
                }
 
@@ -46,10 +46,10 @@ public class class_7448 extends Module {
             }
          } else if (this.method_42007("Auto Jump") && class_314.method_1434()) {
             this.field_37948 = 0;
-            field_46692.field_9632.method_26595();
-            var1.method_35232(field_46692.field_9632.method_37098().field_7336);
-            var1.method_35235(field_46692.field_9632.method_37098().field_7333);
-            var1.method_35229(field_46692.field_9632.method_37098().field_7334);
+            mcInstance.field_9632.method_26595();
+            var1.method_35232(mcInstance.field_9632.method_37098().field_7336);
+            var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
+            var1.method_35229(mcInstance.field_9632.method_37098().field_7334);
          } else if (var1.method_35236() != 0.4 + (double)class_8865.method_40769() * 0.1) {
             this.field_37951 = 0;
          } else {

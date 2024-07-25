@@ -53,7 +53,7 @@ public class class_7376 extends class_3620 {
    private void method_33595(class_5596 var1) {
       if (this.method_42015()) {
          if (this.field_37692 != null) {
-            if (field_46692.field_9623 instanceof class_5766) {
+            if (mcInstance.field_9623 instanceof class_5766) {
                this.method_33594(null);
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Auto Join", "Auto join was canceled.", 2500));
             } else if (this.field_37692.method_6909()) {
@@ -77,7 +77,7 @@ public class class_7376 extends class_3620 {
             String var4 = this.method_42016("Type");
 
             try {
-               if (field_46692.field_9632.field_41697 <= 3) {
+               if (mcInstance.field_9632.field_41697 <= 3) {
                   this.field_37690.clear();
                }
 

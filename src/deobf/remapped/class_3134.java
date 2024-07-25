@@ -27,7 +27,7 @@ public class class_3134 extends Module {
          boolean var4 = this.method_42007("AutoJump");
          double var5 = class_8865.method_40775();
          boolean var7 = class_314.method_1434();
-         if (!field_46692.field_9632.field_41726) {
+         if (!mcInstance.field_9632.field_41726) {
             this.field_15607++;
             this.field_15606 = 0.36 - (double)this.field_15607 / 250.0;
             if (this.field_15606 < var5) {
@@ -37,8 +37,8 @@ public class class_3134 extends Module {
             class_8865.method_40777(var1, this.field_15606);
          } else {
             this.field_15607 = 0;
-            field_46692.field_9632.method_26595();
-            var1.method_35235(field_46692.field_9632.method_37098().field_7333);
+            mcInstance.field_9632.method_26595();
+            var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
          }
       }
    }

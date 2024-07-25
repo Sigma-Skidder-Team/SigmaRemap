@@ -49,7 +49,7 @@ public class class_9024 extends Module {
    @class_9148
    @class_5355
    private void method_41399(class_1711 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (SigmaMainClass.method_3328().method_3299().method_30987()) {
             if (!MinecraftClient.getInstance().field_9577.field_45470) {
                if (!MinecraftClient.getInstance().field_9577.field_45567) {
@@ -66,7 +66,7 @@ public class class_9024 extends Module {
    @class_9148
    @class_5355
    private void method_41401(class_3278 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null && field_46692.field_9601 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.field_9601 != null) {
          if (!MinecraftClient.getInstance().field_9577.field_45470) {
             if (!MinecraftClient.getInstance().field_9577.field_45567) {
                this.field_46178 = 5 * this.field_46159 + this.field_46163;
@@ -300,7 +300,7 @@ public class class_9024 extends Module {
 
    @class_9148
    private void method_41396(class_3368 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          this.method_41405();
          this.field_46165 = (float)Math.max(Math.round(6.0F - (float) MinecraftClient.method_8501() / 10.0F), 1);
       }

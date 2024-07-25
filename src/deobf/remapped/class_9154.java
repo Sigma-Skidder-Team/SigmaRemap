@@ -32,11 +32,11 @@ public class class_9154 extends class_367 {
       double var3 = class_8865.method_40775() * 0.5;
       class_8865.method_40776(var3);
       if (this.field_46846 != -1) {
-         field_46692.method_8614().method_4813(new class_7371(field_46692.field_9632.field_3853.field_36404));
-         this.field_46846 = field_46692.field_9632.field_3853.field_36404;
+         mcInstance.method_8614().method_4813(new class_7371(mcInstance.field_9632.field_3853.field_36404));
+         this.field_46846 = mcInstance.field_9632.field_3853.field_36404;
       }
 
-      field_46692.field_9616.field_32603 = 1.0F;
+      mcInstance.field_9616.field_32603 = 1.0F;
    }
 
    @class_9148
@@ -60,14 +60,14 @@ public class class_9154 extends class_367 {
       return this.method_42015()
          && this.field_46846 != -1
          && this.field_46845 < (double)this.method_42002("Boost")
-         && (field_46692.field_9632.field_41726 || class_314.method_1413(field_46692.field_9632, 0.001F))
+         && (mcInstance.field_9632.field_41726 || class_314.method_1413(mcInstance.field_9632, 0.001F))
          && !this.field_46839;
    }
 
    @class_9148
    public void method_42170(class_7982 var1) {
-      if (this.method_42015() && this.field_46839 && field_46692.field_9632 != null) {
-         if (field_46692.field_9632.field_41726) {
+      if (this.method_42015() && this.field_46839 && mcInstance.field_9632 != null) {
+         if (mcInstance.field_9632.field_41726) {
             var1.method_36186(true);
          }
       }
@@ -79,8 +79,8 @@ public class class_9154 extends class_367 {
          if (this.field_46839) {
             class_8865.method_40777(var1, 0.01);
          } else {
-            float var4 = field_46692.field_9632.field_41701 + 90.0F;
-            if (!field_46692.field_9632.field_41726 && !class_314.method_1413(field_46692.field_9632, 0.001F)) {
+            float var4 = mcInstance.field_9632.field_41701 + 90.0F;
+            if (!mcInstance.field_9632.field_41726 && !class_314.method_1413(mcInstance.field_9632, 0.001F)) {
                if (this.field_46840 != -1) {
                   if (this.field_46838 && !class_314.method_1434()) {
                      this.field_46838 = !this.field_46838;
@@ -103,7 +103,7 @@ public class class_9154 extends class_367 {
                   }
 
                   var1.method_35235(this.field_46842);
-                  if (field_46692.field_9632.field_41744 || !class_314.method_1434()) {
+                  if (mcInstance.field_9632.field_41744 || !class_314.method_1434()) {
                      this.field_46845 = 0.35;
                   }
 
@@ -129,22 +129,22 @@ public class class_9154 extends class_367 {
                }
 
                class_1343 var6 = new class_1343(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-               class_1331 var7 = new class_1331(field_46692.field_9632.method_37075()).method_6104(0, -1, 0);
+               class_1331 var7 = new class_1331(mcInstance.field_9632.method_37075()).method_6104(0, -1, 0);
                class_9529 var8 = new class_9529(var6, Direction.field_817, var7, false);
                class_8585 var9 = new class_8585(class_2584.field_12791, var8);
-               field_46692.method_8614().method_4813(var9);
+               mcInstance.method_8614().method_4813(var9);
                if (!(this.field_46845 < (double)this.method_42002("Boost"))) {
                   class_8865.method_40777(var1, 0.0);
-                  field_46692.field_9632.method_26595();
+                  mcInstance.field_9632.method_26595();
                   this.field_46842 = 0.4299999;
                   this.field_46843 = 0;
                   this.field_46838 = class_314.method_1434();
                   var1.method_35235(this.field_46842);
-                  this.field_46844 = field_46692.field_9632.method_37309();
+                  this.field_46844 = mcInstance.field_9632.method_37309();
                   this.field_46840++;
                   this.field_46845 += 0.5;
                } else {
-                  field_46692.field_9616.field_32603 = Math.min(1.0F, Math.max(0.1F, (float)(1.2 - this.field_46845 * 0.15)));
+                  mcInstance.field_9616.field_32603 = Math.min(1.0F, Math.max(0.1F, (float)(1.2 - this.field_46845 * 0.15)));
                   if (this.field_46840 > 2) {
                      this.field_46845 += 0.05;
                   }
@@ -178,7 +178,7 @@ public class class_9154 extends class_367 {
          if (var1.method_10047() instanceof class_7371
             && this.field_46846 != -1
             && this.field_46845 < (double)this.method_42002("Boost")
-            && (field_46692.field_9632.field_41726 || class_314.method_1413(field_46692.field_9632, 0.001F))
+            && (mcInstance.field_9632.field_41726 || class_314.method_1413(mcInstance.field_9632, 0.001F))
             && !this.field_46839) {
             var1.method_29715(true);
          }
@@ -186,15 +186,15 @@ public class class_9154 extends class_367 {
    }
 
    private int method_42172() {
-      if (field_46692.field_9632.method_26446().method_28022()) {
-         this.field_46846 = field_46692.field_9632.field_3853.field_36404;
+      if (mcInstance.field_9632.method_26446().method_28022()) {
+         this.field_46846 = mcInstance.field_9632.field_3853.field_36404;
          return this.field_46846;
       } else {
          for (int var3 = 36; var3 < 45; var3++) {
             int var4 = var3 - 36;
-            if (field_46692.field_9632.field_3869.method_18878(var3).method_35898().method_28022()) {
-               if (field_46692.field_9632.field_3853.field_36404 != var4 && this.field_46846 != var4) {
-                  field_46692.method_8614().method_4813(new class_7371(var4));
+            if (mcInstance.field_9632.field_3869.method_18878(var3).method_35898().method_28022()) {
+               if (mcInstance.field_9632.field_3853.field_36404 != var4 && this.field_46846 != var4) {
+                  mcInstance.method_8614().method_4813(new class_7371(var4));
                   this.field_46846 = var4;
                }
 
@@ -202,11 +202,11 @@ public class class_9154 extends class_367 {
             }
          }
 
-         class_2740.method_12356(field_46692.field_9632.field_3869.field_19925, 42, 0, class_6269.field_32019, field_46692.field_9632, true);
-         if (!field_46692.field_9632.field_3869.method_18878(42).method_35898().method_28022()) {
+         class_2740.method_12356(mcInstance.field_9632.field_3869.field_19925, 42, 0, class_6269.field_32019, mcInstance.field_9632, true);
+         if (!mcInstance.field_9632.field_3869.method_18878(42).method_35898().method_28022()) {
             SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Mineplex Fly", "Please empty a slot in your inventory"));
-         } else if (field_46692.field_9632.field_3853.field_36404 != 6 && this.field_46846 != 6) {
-            field_46692.method_8614().method_4813(new class_7371(6));
+         } else if (mcInstance.field_9632.field_3853.field_36404 != 6 && this.field_46846 != 6) {
+            mcInstance.method_8614().method_4813(new class_7371(6));
             this.field_46846 = 6;
             return 6;
          }
@@ -217,13 +217,13 @@ public class class_9154 extends class_367 {
 
    @class_9148
    public void method_42171(class_1711 var1) {
-      if (this.method_42015() && this.method_42007("Fake") && !(this.field_46844 < 0.0) && !(field_46692.field_9632.method_37309() < this.field_46844)) {
-         field_46692.field_9632.field_41736.field_7333 = this.field_46844;
-         field_46692.field_9632.field_41713 = this.field_46844;
-         field_46692.field_9632.field_3864 = this.field_46844;
-         field_46692.field_9632.field_41698 = this.field_46844;
+      if (this.method_42015() && this.method_42007("Fake") && !(this.field_46844 < 0.0) && !(mcInstance.field_9632.method_37309() < this.field_46844)) {
+         mcInstance.field_9632.field_41736.field_7333 = this.field_46844;
+         mcInstance.field_9632.field_41713 = this.field_46844;
+         mcInstance.field_9632.field_3864 = this.field_46844;
+         mcInstance.field_9632.field_41698 = this.field_46844;
          if (class_8865.method_40772()) {
-            field_46692.field_9632.field_3859 = 0.099999994F;
+            mcInstance.field_9632.field_3859 = 0.099999994F;
          }
       }
    }

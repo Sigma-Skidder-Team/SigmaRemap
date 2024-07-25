@@ -18,10 +18,10 @@ public class class_2461 extends Module {
 
    @Override
    public void method_42006() {
-      this.field_12311 = field_46692.field_9632.field_3853.field_36404;
-      this.field_12315 = field_46692.field_9632.field_41701;
-      this.field_12313 = field_46692.field_9632.field_41755;
-      this.field_12316 = (int)field_46692.field_9632.method_37309();
+      this.field_12311 = mcInstance.field_9632.field_3853.field_36404;
+      this.field_12315 = mcInstance.field_9632.field_41701;
+      this.field_12313 = mcInstance.field_9632.field_41755;
+      this.field_12316 = (int) mcInstance.field_9632.method_37309();
       this.field_12312 = -1;
       ((class_3709)this.method_42017()).field_18196 = -1;
    }
@@ -29,22 +29,22 @@ public class class_2461 extends Module {
    @Override
    public void method_42020() {
       if (this.field_12311 != -1 && this.method_42017().method_42016("ItemSpoof").equals("Switch")) {
-         field_46692.field_9632.field_3853.field_36404 = this.field_12311;
+         mcInstance.field_9632.field_3853.field_36404 = this.field_12311;
       }
 
       this.field_12311 = -1;
       if (((class_3709)this.method_42017()).field_18196 >= 0) {
-         field_46692.method_8614().method_4813(new class_7371(field_46692.field_9632.field_3853.field_36404));
+         mcInstance.method_8614().method_4813(new class_7371(mcInstance.field_9632.field_3853.field_36404));
          ((class_3709)this.method_42017()).field_18196 = -1;
       }
 
-      field_46692.field_9616.field_32603 = 1.0F;
+      mcInstance.field_9616.field_32603 = 1.0F;
    }
 
    @class_9148
    @class_7664
    public void method_11335(class_2157 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (var1.method_10047() instanceof class_7371 && ((class_3709)this.method_42017()).field_18196 >= 0) {
             var1.method_29715(true);
          }
@@ -64,7 +64,7 @@ public class class_2461 extends Module {
    @class_9148
    public void method_11342(class_7982 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.field_41726 && SigmaMainClass.method_3328().method_3298().method_847(class_1396.class).method_42015()) {
+         if (mcInstance.field_9632.field_41726 && SigmaMainClass.method_3328().method_3298().method_847(class_1396.class).method_42015()) {
             var1.method_36186(true);
          }
       }
@@ -74,30 +74,30 @@ public class class_2461 extends Module {
    public void method_11337(class_7767 var1) {
       if (this.method_42015()) {
          if (this.method_42017().method_42007("No Sprint")) {
-            field_46692.field_9632.method_37140(false);
+            mcInstance.field_9632.method_37140(false);
          }
 
          if (!this.method_42007("Haphe (AACAP)")) {
-            field_46692.field_9577.field_45444.field_30024 = false;
-            field_46692.field_9632.method_37140(false);
+            mcInstance.field_9577.field_45444.field_30024 = false;
+            mcInstance.field_9632.method_37140(false);
          }
 
          ((class_3709)this.method_42017()).method_17220(var1);
          if (this.method_42007("Haphe (AACAP)")) {
-            if (!field_46692.field_9632.field_41726 || field_46692.field_9632.field_29673 == 0.0F && field_46692.field_9632.field_29676 == 0.0F) {
+            if (!mcInstance.field_9632.field_41726 || mcInstance.field_9632.field_29673 == 0.0F && mcInstance.field_9632.field_29676 == 0.0F) {
                if (this.field_12318 >= 0) {
                   this.field_12318++;
                }
             } else {
                this.field_12318 = 0;
-               field_46692.field_9632.method_26595();
+               mcInstance.field_9632.method_26595();
                var1.method_35235(0.419998 + (double)class_8865.method_40769() * 0.1);
                if (this.field_12312 < 3) {
                   this.field_12312++;
                }
             }
 
-            if (field_46692.field_9632.field_29673 == 0.0F && field_46692.field_9632.field_29676 == 0.0F || field_46692.field_9632.field_41744) {
+            if (mcInstance.field_9632.field_29673 == 0.0F && mcInstance.field_9632.field_29676 == 0.0F || mcInstance.field_9632.field_41744) {
                this.field_12312 = 0;
             }
 
@@ -111,8 +111,8 @@ public class class_2461 extends Module {
 
    @class_9148
    private void method_11341(class_8128 var1) {
-      if (this.method_42015() && field_46692.field_9601 != null && field_46692.field_9632 != null) {
-         if (this.method_42007("Haphe (AACAP)") && class_8865.method_40772() && !field_46692.field_9632.method_37321()) {
+      if (this.method_42015() && mcInstance.field_9601 != null && mcInstance.field_9632 != null) {
+         if (this.method_42007("Haphe (AACAP)") && class_8865.method_40772() && !mcInstance.field_9632.method_37321()) {
             var1.field_41637 *= 1.14F;
          }
       }
@@ -120,18 +120,18 @@ public class class_2461 extends Module {
 
    private boolean method_11333() {
       class_9529 var3 = (class_9529)class_7494.method_34115(
-         field_46692.field_9632.field_30535, field_46692.field_9632.field_30524, class_7494.method_34074(), 0.0F
+         mcInstance.field_9632.field_30535, mcInstance.field_9632.field_30524, class_7494.method_34074(), 0.0F
       );
       boolean var4 = false;
       if (var3 != null && var3.method_33990() == class_1430.field_7717) {
          if (this.method_42017().method_42016("ItemSpoof").equals("None")) {
             class_3709 var10000 = (class_3709)this.method_42017();
-            if (!class_3709.method_17216(field_46692.field_9632.method_26617(class_2584.field_12791).method_27960())) {
+            if (!class_3709.method_17216(mcInstance.field_9632.method_26617(class_2584.field_12791).method_27960())) {
                return false;
             }
          }
 
-         if (this.method_42007("Haphe (AACAP)") && !field_46692.field_9632.field_29654 && !field_46692.field_9632.field_41726) {
+         if (this.method_42007("Haphe (AACAP)") && !mcInstance.field_9632.field_29654 && !mcInstance.field_9632.field_41726) {
             if (var3.method_43956() == Direction.field_817) {
                return false;
             }
@@ -142,31 +142,31 @@ public class class_2461 extends Module {
          }
 
          if (var3.method_43956() == Direction.field_817
-            && (double)(var3.method_43955().method_12165() + 2) > field_46692.field_9632.method_37309()
+            && (double)(var3.method_43955().method_12165() + 2) > mcInstance.field_9632.method_37309()
             && class_7494.method_34090(var3.method_43955())) {
             return false;
          }
 
-         if ((double)var3.method_43955().method_12165() == field_46692.field_9632.method_37309()) {
+         if ((double)var3.method_43955().method_12165() == mcInstance.field_9632.method_37309()) {
             return false;
          }
 
          ((class_3709)this.method_42017()).method_17215();
-         int var5 = field_46692.field_9632.field_3853.field_36404;
+         int var5 = mcInstance.field_9632.field_3853.field_36404;
          if (!this.method_42017().method_42016("ItemSpoof").equals("None")) {
             ((class_3709)this.method_42017()).method_17211();
          }
 
-         class_6910 var6 = field_46692.field_9647.method_42147(field_46692.field_9632, field_46692.field_9601, class_2584.field_12791, var3);
+         class_6910 var6 = mcInstance.field_9647.method_42147(mcInstance.field_9632, mcInstance.field_9601, class_2584.field_12791, var3);
          if (this.method_42017().method_42016("ItemSpoof").equals("Spoof") || this.method_42017().method_42016("ItemSpoof").equals("LiteSpoof")) {
-            field_46692.field_9632.field_3853.field_36404 = var5;
+            mcInstance.field_9632.field_3853.field_36404 = var5;
          }
 
          if (var6 == class_6910.field_35520) {
             if (!this.method_42017().method_42007("NoSwing")) {
-               field_46692.field_9632.method_26597(class_2584.field_12791);
+               mcInstance.field_9632.method_26597(class_2584.field_12791);
             } else {
-               field_46692.method_8614().method_4813(new class_3195(class_2584.field_12791));
+               mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
             }
 
             if (var3.method_43956() == Direction.field_817) {
@@ -181,7 +181,7 @@ public class class_2461 extends Module {
    }
 
    public List<class_7606> method_11334(class_6414 var1, class_1331 var2) {
-      return class_7829.method_35452(var1, var2, (int)field_46692.field_9647.method_42146());
+      return class_7829.method_35452(var1, var2, (int) mcInstance.field_9647.method_42146());
    }
 
    @class_9148
@@ -198,8 +198,8 @@ public class class_2461 extends Module {
    private void method_11336(class_1393 var1) {
       if (this.method_42015()) {
          if (!var1.method_6449()) {
-            if (class_8865.method_40772() && field_46692.field_9632.field_41726 && this.method_42007("Haphe (AACAP)") && !field_46692.field_9632.field_29654) {
-               field_46692.field_9632.method_26595();
+            if (class_8865.method_40772() && mcInstance.field_9632.field_41726 && this.method_42007("Haphe (AACAP)") && !mcInstance.field_9632.field_29654) {
+               mcInstance.field_9632.method_26595();
             }
 
             if (!this.method_42007("Haphe (AACAP)")) {
@@ -214,12 +214,12 @@ public class class_2461 extends Module {
                this.method_11333();
             }
          } else {
-            double var4 = field_46692.field_9632.method_37309();
-            if (!field_46692.field_9632.field_29654 && this.method_42007("Haphe (AACAP)")) {
+            double var4 = mcInstance.field_9632.method_37309();
+            if (!mcInstance.field_9632.field_29654 && this.method_42007("Haphe (AACAP)")) {
                var4 = (double)this.field_12316;
             }
 
-            class_1331 var6 = new class_1331(field_46692.field_9632.method_37302(), (double)Math.round(var4 - 1.0), field_46692.field_9632.method_37156());
+            class_1331 var6 = new class_1331(mcInstance.field_9632.method_37302(), (double)Math.round(var4 - 1.0), mcInstance.field_9632.method_37156());
             List var7 = this.method_11334(class_4783.field_23644, var6);
             if (!var7.isEmpty()) {
                class_7606 var8 = (class_7606)var7.get(var7.size() - 1);

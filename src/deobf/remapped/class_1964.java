@@ -13,15 +13,15 @@ public class class_1964 extends Module {
    @class_9148
    private void method_9061(class_5596 var1) {
       if (this.method_42015()) {
-         if (class_314.method_1448() > this.field_9984 && field_46692.field_9632.field_41697 % 3 == 0) {
+         if (class_314.method_1448() > this.field_9984 && mcInstance.field_9632.field_41697 % 3 == 0) {
             this.field_9984++;
          }
 
-         if (class_314.method_1448() < this.field_9984 && field_46692.field_9632.field_41697 % 3 == 0) {
+         if (class_314.method_1448() < this.field_9984 && mcInstance.field_9632.field_41697 % 3 == 0) {
             this.field_9984--;
          }
 
-         boolean var4 = class_8865.method_40772() || field_46692.field_9632.field_29654 || field_46692.field_9632.method_37252();
+         boolean var4 = class_8865.method_40772() || mcInstance.field_9632.field_29654 || mcInstance.field_9632.method_37252();
          if (!var4) {
             if (this.field_9983.method_11123() == 1.0F && this.field_9983.method_11128() == class_4043.field_19620) {
                this.field_9983.method_11119(class_4043.field_19618);
@@ -36,15 +36,15 @@ public class class_1964 extends Module {
    @class_4249
    private void method_9062(class_3278 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632 != null) {
+         if (mcInstance.field_9632 != null) {
             if (!MinecraftClient.getInstance().field_9577.field_45470) {
                if (!MinecraftClient.getInstance().field_9577.field_45567) {
                   float var4 = Math.min(1.0F, 0.6F + this.field_9983.method_11123() * 4.0F);
-                  String var5 = field_46692.field_9632.method_37075().method_12173()
+                  String var5 = mcInstance.field_9632.method_37075().method_12173()
                      + " "
-                     + field_46692.field_9632.method_37075().method_12165()
+                     + mcInstance.field_9632.method_37075().method_12165()
                      + " "
-                     + field_46692.field_9632.method_37075().method_12185();
+                     + mcInstance.field_9632.method_37075().method_12185();
                   byte var6 = 85;
                   int var7 = var1.method_14966();
                   short var8 = 150;

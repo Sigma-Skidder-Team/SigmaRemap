@@ -10,21 +10,21 @@ public class class_9134 extends Module {
 
    @class_9148
    private void method_42042(class_3278 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!MinecraftClient.getInstance().field_9577.field_45567) {
             byte var4 = 5;
             byte var5 = 60;
             int var6 = !MinecraftClient.getInstance().field_9577.field_45470 ? 0 : 60;
-            ArrayList var7 = this.method_42041((int)this.method_42039(field_46692.field_9632.field_41701), var4);
+            ArrayList var7 = this.method_42041((int)this.method_42039(mcInstance.field_9632.field_41701), var4);
             int var8 = (Integer)var7.get(var4);
-            if (var8 == 0 && this.method_42039(field_46692.field_9632.field_41701) > 345.0F) {
+            if (var8 == 0 && this.method_42039(mcInstance.field_9632.field_41701) > 345.0F) {
                var8 = 360;
             }
 
-            float var9 = 7.0F + this.method_42039(field_46692.field_9632.field_41701) - (float)var8;
+            float var9 = 7.0F + this.method_42039(mcInstance.field_9632.field_41701) - (float)var8;
             double var10 = (double)(var9 / 15.0F * (float)var5);
             class_73.method_99(
-               (float)(field_46692.window.method_43166() / 2) - (float)(var4 * var5) * 1.5F,
+               (float)(mcInstance.window.method_43166() / 2) - (float)(var4 * var5) * 1.5F,
                -40.0F,
                (float)(var4 * var5 * 2) * 1.5F,
                (float)(220 + var6),
@@ -39,7 +39,7 @@ public class class_9134 extends Module {
                double var17 = Math.max(0.0, Math.min(2.25 - ((double)(var12 * var5) - var10) / (double)((float)(var5 * var4)), 1.0));
                float var19 = (float)Math.min(var15, var17);
                this.method_42040(
-                  field_46692.window.method_43166() / 2 + var12 * var5 - (int)var10 - (var4 + 1) * var5 - 2, 30 + var6, var5, var14, var19 * 0.8F
+                  mcInstance.window.method_43166() / 2 + var12 * var5 - (int)var10 - (var4 + 1) * var5 - 2, 30 + var6, var5, var14, var19 * 0.8F
                );
             }
          }

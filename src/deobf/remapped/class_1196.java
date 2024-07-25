@@ -40,7 +40,7 @@ public class class_1196 extends Module {
 
             while (var4.hasNext()) {
                Entry var5 = (Entry)var4.next();
-               if (!(field_46692.field_9601.method_28262((class_1331)var5.getKey()).method_8360() instanceof class_3744)) {
+               if (!(mcInstance.field_9601.method_28262((class_1331)var5.getKey()).method_8360() instanceof class_3744)) {
                   var4.remove();
                }
 
@@ -51,7 +51,7 @@ public class class_1196 extends Module {
          this.field_6696.clear();
 
          for (Entity var7 : class_7494.method_34088(class_314.method_1435())) {
-            if (var7 != field_46692.field_9632
+            if (var7 != mcInstance.field_9632
                && var7 != class_9598.field_48917
                && var7 != class_5477.field_27898
                && !var7.method_37109()
@@ -67,7 +67,7 @@ public class class_1196 extends Module {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_8585) {
             class_8585 var4 = (class_8585)var1.method_10047();
-            if (field_46692.field_9601.method_28262(var4.method_39484().method_43955()).method_8360() instanceof class_3744) {
+            if (mcInstance.field_9601.method_28262(var4.method_39484().method_43955()).method_8360() instanceof class_3744) {
                this.field_6694 = var4.method_39484().method_43955();
             }
          }
@@ -79,8 +79,8 @@ public class class_1196 extends Module {
                return;
             }
 
-            if (field_46692.field_9623 instanceof class_309) {
-               class_309 var6 = (class_309)field_46692.field_9623;
+            if (mcInstance.field_9623 instanceof class_309) {
+               class_309 var6 = (class_309) mcInstance.field_9623;
                var5.field_7295 = var6.method_20393().method_18878(0).method_35898();
                var5.field_7288 = new class_6098(var6.method_20393().method_18878(1).method_35898().method_27960());
                var5.field_7288.field_31206 = var6.method_20393().method_18878(1).method_35898().field_31206;
@@ -188,8 +188,8 @@ public class class_1196 extends Module {
          }
 
          if (this.method_42007("Mob Owners")) {
-            for (Entity var12 : field_46692.field_9601.method_736()) {
-               if (var12 == field_46692.field_9632 && (var12 instanceof class_8990 || var12 instanceof class_3551)) {
+            for (Entity var12 : mcInstance.field_9601.method_736()) {
+               if (var12 == mcInstance.field_9632 && (var12 instanceof class_8990 || var12 instanceof class_3551)) {
                   UUID var14 = !(var12 instanceof class_8990) ? ((class_3551)var12).method_19081() : ((class_8990)var12).method_41211();
                   if (var14 != null) {
                      if (!this.field_6695.containsKey(var14)) {
@@ -232,8 +232,8 @@ public class class_1196 extends Module {
          GL11.glDisable(2896);
          class_3542.method_16420(33986, 240.0F, 240.0F);
          class_9162.method_42212();
-         TextureManager var10000 = field_46692.method_8577();
-         field_46692.method_8577();
+         TextureManager var10000 = mcInstance.method_8577();
+         mcInstance.method_8577();
          var10000.method_35674(TextureManager.field_40364);
       }
    }
@@ -258,9 +258,9 @@ public class class_1196 extends Module {
          var7 = var2.field_7295.field_31206 + " " + var2.field_7295.method_28008();
       }
 
-      float var8 = (float)((double)var1.method_12173() - field_46692.gameRenderer.method_35949().method_41627().method_61() + 0.5);
-      float var9 = (float)((double)var1.method_12165() - field_46692.gameRenderer.method_35949().method_41627().method_60() + 1.0);
-      float var10 = (float)((double)var1.method_12185() - field_46692.gameRenderer.method_35949().method_41627().method_62() + 0.5);
+      float var8 = (float)((double)var1.method_12173() - mcInstance.gameRenderer.method_35949().method_41627().method_61() + 0.5);
+      float var9 = (float)((double)var1.method_12165() - mcInstance.gameRenderer.method_35949().method_41627().method_60() + 1.0);
+      float var10 = (float)((double)var1.method_12185() - mcInstance.gameRenderer.method_35949().method_41627().method_62() + 0.5);
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);
@@ -274,8 +274,8 @@ public class class_1196 extends Module {
       GL11.glPushMatrix();
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glTranslated((double)var8, (double)(var9 + 0.6F - 0.33333334F * (1.0F - var3)), (double)var10);
-      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       GL11.glPushMatrix();
       float var14 = 0.008F;
       GL11.glScalef(-var14 * var3, -var14 * var3, -var14 * var3);
@@ -324,14 +324,14 @@ public class class_1196 extends Module {
    public void method_5289(double var1, double var3, double var5, Entity var7, float var8, String var9) {
       class_3384 var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
-      if (SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42015() && var13.equals(field_46692.method_8502().method_5366())) {
+      if (SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42015() && var13.equals(mcInstance.method_8502().method_5366())) {
          var13 = SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42016("Username");
       }
 
       if (var13.length() != 0) {
-         float var14 = (float)(var1 - field_46692.gameRenderer.method_35949().method_41627().method_61());
-         float var15 = (float)(var3 - field_46692.gameRenderer.method_35949().method_41627().method_60());
-         float var16 = (float)(var5 - field_46692.gameRenderer.method_35949().method_41627().method_62());
+         float var14 = (float)(var1 - mcInstance.gameRenderer.method_35949().method_41627().method_61());
+         float var15 = (float)(var3 - mcInstance.gameRenderer.method_35949().method_41627().method_60());
+         float var16 = (float)(var5 - mcInstance.gameRenderer.method_35949().method_41627().method_62());
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(3042);
          GL11.glEnable(2848);
@@ -343,8 +343,8 @@ public class class_1196 extends Module {
          GL11.glPushMatrix();
          GL11.glAlphaFunc(519, 0.0F);
          GL11.glTranslated((double)var14, (double)(var15 + 0.6F - 0.33333334F * (1.0F - var8)), (double)var16);
-         GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-         GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+         GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+         GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
          GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
          int var19 = this.field_6702;
          if (!SigmaMainClass.method_3328().method_3307().method_14460(var7)) {

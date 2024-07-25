@@ -63,13 +63,13 @@ public class class_8438 extends Module {
 
    @class_9148
    private void method_38820(class_4459 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!var1.method_20668()) {
             class_1920.method_8897(0.0F, (float)(-this.field_43170), 0.0F);
          } else {
-            class_1097 var4 = field_46692.field_9601.method_29562();
+            class_1097 var4 = mcInstance.field_9601.method_29562();
             class_4399 var5 = null;
-            class_3903 var6 = var4.method_4848(field_46692.field_9632.method_37206());
+            class_3903 var6 = var4.method_4848(mcInstance.field_9632.method_37206());
             if (var6 != null) {
                int var7 = var6.method_23381().getColorIndex();
                if (var7 >= 0) {
@@ -103,7 +103,7 @@ public class class_8438 extends Module {
 
    @class_9148
    private void method_38819(class_3278 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          for (Module var5 : this.field_43168.keySet()) {
             if (this.method_42007("Animations")) {
                this.field_43168.get(var5).method_11119(!var5.method_42015() ? class_4043.field_19618 : class_4043.field_19620);
@@ -122,7 +122,7 @@ public class class_8438 extends Module {
             }
 
             if (MinecraftClient.getInstance().field_9577.field_45470) {
-               var7 = (int)((double)(field_46692.field_9614.field_15026.field_18917.size() * 9) * field_46692.window.method_43189() + 7.0);
+               var7 = (int)((double)(mcInstance.field_9614.field_15026.field_18917.size() * 9) * mcInstance.window.method_43189() + 7.0);
             }
 
             byte var10 = 0;

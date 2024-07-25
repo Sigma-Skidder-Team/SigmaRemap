@@ -37,7 +37,7 @@ public class class_4221 extends Module {
 
    @class_9148
    private void method_19656(class_3278 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          String var4 = this.method_42016("Animation");
          String var5 = this.method_42016("Outline");
          this.method_19659();

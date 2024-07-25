@@ -8,8 +8,8 @@ public class class_1247 extends Module {
    @class_9148
    public void method_5589(class_5596 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.field_29654) {
-            field_46692.field_9632.method_26595();
+         if (mcInstance.field_9632.field_29654) {
+            mcInstance.field_9632.method_26595();
          }
       }
    }

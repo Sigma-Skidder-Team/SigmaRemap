@@ -20,11 +20,11 @@ public class class_8726 extends Module {
    public void method_42006() {
       this.field_44720 = null;
 
-      for (class_1331 var4 : class_7494.method_34085(class_7494.method_34110(field_46692.field_9647.method_42146()))) {
-         if (!(class_7494.method_34108(field_46692.field_9632, var4) < 2.0F)
-            && class_7494.method_34116(field_46692.field_9632, var4)
-            && (double)var4.method_12165() >= field_46692.field_9632.method_37309() - 2.0
-            && (double)var4.method_12165() <= field_46692.field_9632.method_37309() - 1.0
+      for (class_1331 var4 : class_7494.method_34085(class_7494.method_34110(mcInstance.field_9647.method_42146()))) {
+         if (!(class_7494.method_34108(mcInstance.field_9632, var4) < 2.0F)
+            && class_7494.method_34116(mcInstance.field_9632, var4)
+            && (double)var4.method_12165() >= mcInstance.field_9632.method_37309() - 2.0
+            && (double)var4.method_12165() <= mcInstance.field_9632.method_37309() - 1.0
             && this.method_40074(var4)) {
             this.field_44720 = var4;
             break;
@@ -95,9 +95,9 @@ public class class_8726 extends Module {
    }
 
    public boolean method_40074(class_1331 var1) {
-      class_2522 var4 = field_46692.field_9601.method_28262(var1);
-      class_2522 var5 = field_46692.field_9601.method_28262(var1.method_6081());
-      class_2522 var6 = field_46692.field_9601.method_28262(var1.method_6082(2));
+      class_2522 var4 = mcInstance.field_9601.method_28262(var1);
+      class_2522 var5 = mcInstance.field_9601.method_28262(var1.method_6081());
+      class_2522 var6 = mcInstance.field_9601.method_28262(var1.method_6082(2));
       return var4.method_8302() && var5.method_8345() && var6.method_8345();
    }
 
@@ -111,9 +111,9 @@ public class class_8726 extends Module {
          if (this.field_44720 != null) {
             GL11.glAlphaFunc(516, 0.0F);
             class_1331 var4 = this.field_44720;
-            double var5 = (double)var4.method_12173() - field_46692.gameRenderer.method_35949().method_41627().method_61();
-            double var7 = (double)var4.method_12165() - field_46692.gameRenderer.method_35949().method_41627().method_60();
-            double var9 = (double)var4.method_12185() - field_46692.gameRenderer.method_35949().method_41627().method_62();
+            double var5 = (double)var4.method_12173() - mcInstance.gameRenderer.method_35949().method_41627().method_61();
+            double var7 = (double)var4.method_12165() - mcInstance.gameRenderer.method_35949().method_41627().method_60();
+            double var9 = (double)var4.method_12185() - mcInstance.gameRenderer.method_35949().method_41627().method_62();
             class_73.method_83(
                new class_8194(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), class_314.method_1444(class_1255.field_6922.field_6917, 0.3F)
             );
@@ -204,24 +204,24 @@ public class class_8726 extends Module {
                         float var5 = class_7494.method_34097(this.field_44720.method_6081(), Direction.field_817)[1];
                         var1.method_6441(var4);
                         var1.method_6448(var5);
-                        int var6 = field_46692.field_9632.field_3853.field_36404;
-                        field_46692.field_9632.field_3853.field_36404 = this.field_44718;
+                        int var6 = mcInstance.field_9632.field_3853.field_36404;
+                        mcInstance.field_9632.field_3853.field_36404 = this.field_44718;
                         class_1343 var7 = class_7494.method_34098(Direction.field_817, this.field_44720);
                         class_9529 var8 = new class_9529(var7, Direction.field_817, this.field_44720, false);
-                        class_6910 var9 = field_46692.field_9647.method_42147(field_46692.field_9632, field_46692.field_9601, class_2584.field_12791, var8);
-                        field_46692.field_9632.method_26597(class_2584.field_12791);
+                        class_6910 var9 = mcInstance.field_9647.method_42147(mcInstance.field_9632, mcInstance.field_9601, class_2584.field_12791, var8);
+                        mcInstance.field_9632.method_26597(class_2584.field_12791);
                         if (var9 == class_6910.field_35520) {
                            this.field_44724++;
-                           field_46692.method_8614().method_4813(new class_2317(field_46692.field_9632, class_4127.field_20098));
-                           field_46692.field_9632.field_30533.field_45289 = true;
-                           field_46692.field_9632.field_3853.field_36404 = this.field_44721;
+                           mcInstance.method_8614().method_4813(new class_2317(mcInstance.field_9632, class_4127.field_20098));
+                           mcInstance.field_9632.field_30533.field_45289 = true;
+                           mcInstance.field_9632.field_3853.field_36404 = this.field_44721;
                            class_1343 var10 = class_7494.method_34098(Direction.field_817, this.field_44720.method_6081());
                            class_9529 var11 = new class_9529(var10, Direction.field_817, this.field_44720.method_6081(), false);
-                           field_46692.field_9647.method_42147(field_46692.field_9632, field_46692.field_9601, class_2584.field_12791, var11);
-                           field_46692.field_9632.method_26597(class_2584.field_12791);
-                           field_46692.field_9632.field_30533.field_45289 = false;
-                           field_46692.method_8614().method_4813(new class_2317(field_46692.field_9632, class_4127.field_20097));
-                           field_46692.field_9647.method_42147(field_46692.field_9632, field_46692.field_9601, class_2584.field_12791, var11);
+                           mcInstance.field_9647.method_42147(mcInstance.field_9632, mcInstance.field_9601, class_2584.field_12791, var11);
+                           mcInstance.field_9632.method_26597(class_2584.field_12791);
+                           mcInstance.field_9632.field_30533.field_45289 = false;
+                           mcInstance.method_8614().method_4813(new class_2317(mcInstance.field_9632, class_4127.field_20097));
+                           mcInstance.field_9647.method_42147(mcInstance.field_9632, mcInstance.field_9601, class_2584.field_12791, var11);
                         }
                      }
                   } else {
@@ -257,11 +257,11 @@ public class class_8726 extends Module {
             int var7 = var4.method_24952();
             if (this.field_44717 == var7 && var5 == 0 && var6.method_27960() != class_4897.field_25302 && !this.field_44719) {
                var1.method_29715(true);
-               field_46692.method_8614().method_4813(new class_5955(var7, var5, 1, class_6269.field_32019, var6, this.field_44723++));
+               mcInstance.method_8614().method_4813(new class_5955(var7, var5, 1, class_6269.field_32019, var6, this.field_44723++));
                int var8 = -1;
 
                for (int var9 = 44; var9 > 9; var9--) {
-                  class_6098 var10 = field_46692.field_9632.field_3869.method_18878(var9).method_35898();
+                  class_6098 var10 = mcInstance.field_9632.field_3869.method_18878(var9).method_35898();
                   if (var10.method_28022()) {
                      var8 = var9;
                      break;
@@ -269,9 +269,9 @@ public class class_8726 extends Module {
                }
 
                if (var8 != -1) {
-                  field_46692.field_9632.field_3869.method_18878(var8).method_35896(var6);
+                  mcInstance.field_9632.field_3869.method_18878(var8).method_35896(var6);
                   if (var8 >= 36) {
-                     field_46692.field_9632.field_3853.field_36404 = var8 % 9;
+                     mcInstance.field_9632.field_3853.field_36404 = var8 % 9;
                   }
                }
 

@@ -21,17 +21,17 @@ public class class_7232 extends Module {
       this.field_37111 = 0.0;
       this.field_37110 = 0;
       this.field_37112 = 0;
-      if (field_46692.field_9632.field_41726 || class_314.method_1413(field_46692.field_9632, 0.001F)) {
-         this.field_37114 = new class_1343(field_46692.field_9632.method_37302(), field_46692.field_9632.method_37309(), field_46692.field_9632.method_37156());
+      if (mcInstance.field_9632.field_41726 || class_314.method_1413(mcInstance.field_9632, 0.001F)) {
+         this.field_37114 = new class_1343(mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309(), mcInstance.field_9632.method_37156());
       }
    }
 
    @class_9148
    private void method_33097(class_7767 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.field_41726 || class_314.method_1413(field_46692.field_9632, 0.001F)) {
+         if (mcInstance.field_9632.field_41726 || class_314.method_1413(mcInstance.field_9632, 0.001F)) {
             this.field_37114 = new class_1343(
-               field_46692.field_9632.method_37302(), field_46692.field_9632.method_37309(), field_46692.field_9632.method_37156()
+               mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309(), mcInstance.field_9632.method_37156()
             );
          }
 
@@ -49,9 +49,9 @@ public class class_7232 extends Module {
                var8 = true;
             }
 
-            if (field_46692.field_9632.method_37098().field_7333 < -0.08 && !var8) {
-               this.field_37111 = this.field_37111 - field_46692.field_9632.method_37098().field_7333;
-            } else if (field_46692.field_9632.field_41726) {
+            if (mcInstance.field_9632.method_37098().field_7333 < -0.08 && !var8) {
+               this.field_37111 = this.field_37111 - mcInstance.field_9632.method_37098().field_7333;
+            } else if (mcInstance.field_9632.field_41726) {
                this.field_37111 = 0.0;
             }
          } else {
@@ -90,11 +90,11 @@ public class class_7232 extends Module {
    }
 
    private boolean method_33100() {
-      if (!(field_46692.field_9632.method_37245().field_7333 < 1.0)) {
-         if (!field_46692.field_9632.field_41726) {
-            class_4092 var3 = field_46692.field_9632.field_41712;
-            var3 = var3.method_18928(0.0, -field_46692.field_9632.method_37245().field_7333, 0.0);
-            return field_46692.field_9601.method_6680(field_46692.field_9632, var3).count() == 0L;
+      if (!(mcInstance.field_9632.method_37245().field_7333 < 1.0)) {
+         if (!mcInstance.field_9632.field_41726) {
+            class_4092 var3 = mcInstance.field_9632.field_41712;
+            var3 = var3.method_18928(0.0, -mcInstance.field_9632.method_37245().field_7333, 0.0);
+            return mcInstance.field_9601.method_6680(mcInstance.field_9632, var3).count() == 0L;
          } else {
             return false;
          }
@@ -104,16 +104,16 @@ public class class_7232 extends Module {
    }
 
    private void method_33096(String var1, class_7767 var2) {
-      double var5 = field_46692.field_9632.method_37245().method_61();
-      double var7 = field_46692.field_9632.method_37245().method_60();
-      double var9 = field_46692.field_9632.method_37245().method_62();
+      double var5 = mcInstance.field_9632.method_37245().method_61();
+      double var7 = mcInstance.field_9632.method_37245().method_60();
+      double var9 = mcInstance.field_9632.method_37245().method_62();
       if (var1.equals("Cubecraft") && !class_314.method_1392()) {
          var1 = "Motion";
       }
 
       switch (var1) {
          case "Hypixel":
-            field_46692.method_8614().method_4813(new class_9515(0.0, -999.0, 0.0, true));
+            mcInstance.method_8614().method_4813(new class_9515(0.0, -999.0, 0.0, true));
             break;
          case "Motion":
             var2.method_35235(0.1);
@@ -121,7 +121,7 @@ public class class_7232 extends Module {
             break;
          case "Cubecraft":
             double var13 = 3.2E7;
-            field_46692.method_8614().method_4813(new class_9515(var5, var13, var9, false));
+            mcInstance.method_8614().method_4813(new class_9515(var5, var13, var9, false));
             SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_41991(false);
             break;
          case "Legit":

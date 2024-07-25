@@ -30,11 +30,11 @@ public class class_9637 extends Module {
    private void method_44493(class_8544 var1) {
       if (this.method_42015() && !var1.method_29716()) {
          double var4 = var1.method_39326();
-         if (class_314.method_1413(field_46692.field_9632, 1.0E-4F) && !class_8865.method_40771()) {
+         if (class_314.method_1413(mcInstance.field_9632, 1.0E-4F) && !class_8865.method_40771()) {
             if (var4 >= 0.625) {
-               double var6 = field_46692.field_9632.method_37302();
-               double var8 = field_46692.field_9632.method_37309();
-               double var10 = field_46692.field_9632.method_37156();
+               double var6 = mcInstance.field_9632.method_37302();
+               double var8 = mcInstance.field_9632.method_37309();
+               double var10 = mcInstance.field_9632.method_37156();
                this.field_49103 = 1;
                if (!(var4 < 1.1)) {
                   if (!(var4 < 1.6)) {
@@ -76,7 +76,7 @@ public class class_9637 extends Module {
                   }
                }
 
-               field_46692.field_9616.field_32603 = this.field_49101;
+               mcInstance.field_9616.field_32603 = this.field_49101;
             }
          } else {
             var1.method_29715(true);
@@ -86,18 +86,18 @@ public class class_9637 extends Module {
 
    @class_9148
    private void method_44491(class_7982 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (this.field_49103 > 0) {
             this.field_49103--;
          }
 
          if (!var1.method_36184()) {
-            field_46692.field_9632.field_41733 = this.method_42002("Maximum heigh");
+            mcInstance.field_9632.field_41733 = this.method_42002("Maximum heigh");
          } else {
-            field_46692.field_9632.field_41733 = 0.5F;
+            mcInstance.field_9632.field_41733 = 0.5F;
             if (this.field_49101 != -1.0F) {
                this.field_49101 = -1.0F;
-               field_46692.field_9616.field_32603 = 1.0F;
+               mcInstance.field_9616.field_32603 = 1.0F;
             }
          }
       }
@@ -110,7 +110,7 @@ public class class_9637 extends Module {
          var1.method_29715(true);
          if (this.field_49103 == 0) {
             for (class_6310 var5 : this.field_49102) {
-               field_46692.method_8614().method_9091().method_23481(var5);
+               mcInstance.method_8614().method_9091().method_23481(var5);
             }
 
             this.field_49102.clear();

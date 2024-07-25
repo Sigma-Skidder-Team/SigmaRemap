@@ -13,13 +13,13 @@ public class class_1532 extends Module {
 
    @class_9148
    public void method_6969(class_5596 var1) {
-      if (this.method_42015() && field_46692.field_9632.field_41697 > 10 && field_46692.method_8515() == null && field_46692.method_8530() != null) {
-         float var4 = field_46692.field_9632.method_26551() / field_46692.field_9632.method_26465() * 10.0F;
+      if (this.method_42015() && mcInstance.field_9632.field_41697 > 10 && mcInstance.method_8515() == null && mcInstance.method_8530() != null) {
+         float var4 = mcInstance.field_9632.method_26551() / mcInstance.field_9632.method_26465() * 10.0F;
          if (var4 < this.method_42002("Min Health") || class_2740.method_12345(class_4897.field_24472) == 0) {
             boolean var5 = this.method_42007("One Time Use");
-            field_46692.field_9601.method_29519();
-            field_46692.method_8499();
-            field_46692.method_8609(
+            mcInstance.field_9601.method_29519();
+            mcInstance.method_8499();
+            mcInstance.method_8609(
                new class_7773(
                   new class_4145(new class_1876()),
                   new TranslationTextComponent("disconnect.lost"),

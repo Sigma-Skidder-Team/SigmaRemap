@@ -20,9 +20,9 @@ public class class_6518 extends Module {
       if (this.method_42015() && var1.method_6449()) {
          if (this.method_42007("Sneak")) {
             if (this.field_33189) {
-               field_46692.method_8614().method_4813(new class_2317(field_46692.field_9632, class_4127.field_20097));
+               mcInstance.method_8614().method_4813(new class_2317(mcInstance.field_9632, class_4127.field_20097));
             } else {
-               field_46692.method_8614().method_4813(new class_2317(field_46692.field_9632, class_4127.field_20098));
+               mcInstance.method_8614().method_4813(new class_2317(mcInstance.field_9632, class_4127.field_20098));
             }
          }
 
@@ -31,7 +31,7 @@ public class class_6518 extends Module {
          if (this.method_42007("Hit") && this.field_33188 > this.field_33187.nextInt(5) + 3) {
             this.field_33188 = 0;
             class_2584 var4 = class_2584.values()[this.field_33187.nextInt(1)];
-            field_46692.field_9632.method_26597(var4);
+            mcInstance.field_9632.method_26597(var4);
          }
 
          String var6 = this.method_42016("Rotation Mode");
@@ -54,6 +54,6 @@ public class class_6518 extends Module {
 
    @Override
    public void method_42006() {
-      this.field_33191 = (int)field_46692.field_9632.field_41701;
+      this.field_33191 = (int) mcInstance.field_9632.field_41701;
    }
 }

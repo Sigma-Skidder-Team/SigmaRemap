@@ -27,7 +27,7 @@ public class class_2656 extends Module {
    @Override
    public void method_42020() {
       for (class_6310 var4 : this.field_13091) {
-         field_46692.method_8614().method_9091().method_23481(var4);
+         mcInstance.method_8614().method_9091().method_23481(var4);
       }
    }
 
@@ -42,7 +42,7 @@ public class class_2656 extends Module {
 
    @class_9148
    private void method_12006(class_2157 var1) {
-      if (this.method_42015() && field_46692.method_8614() != null) {
+      if (this.method_42015() && mcInstance.method_8614() != null) {
          if (!this.field_13092) {
             if ((float)this.field_13090.method_14772() > this.method_42002("Delay") * 1000.0F) {
                this.field_13092 = true;
@@ -76,7 +76,7 @@ public class class_2656 extends Module {
             this.field_13090.method_14773();
 
             for (class_6310 var5 : this.field_13091) {
-               field_46692.method_8614().method_9091().method_23481(var5);
+               mcInstance.method_8614().method_9091().method_23481(var5);
             }
 
             this.field_13091.clear();

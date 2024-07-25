@@ -28,7 +28,7 @@ public class class_4972 extends Module {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4267) {
             class_4267 var4 = (class_4267)var1.method_557();
-            this.method_22854(field_46692.field_9601.method_29542(var4.method_19867()).method_27352());
+            this.method_22854(mcInstance.field_9601.method_29542(var4.method_19867()).method_27352());
          }
 
          if (var1.method_557() instanceof class_4467) {
@@ -70,7 +70,7 @@ public class class_4972 extends Module {
          for (float var12 = (float)var5; var12 <= (float)var8; var12++) {
             for (float var13 = (float)var6; var13 <= (float)var9; var13++) {
                class_1331 var14 = new class_1331((double)var12, (double)var11, (double)var13);
-               if (field_46692.field_9601.method_28262(var14).method_8360() == class_4783.field_23681) {
+               if (mcInstance.field_9601.method_28262(var14).method_8360() == class_4783.field_23681) {
                   var4.add(var14);
                }
             }
@@ -83,7 +83,7 @@ public class class_4972 extends Module {
    @class_9148
    public void method_22861(class_5596 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.field_41697 < 20) {
+         if (mcInstance.field_9632.field_41697 < 20) {
             this.field_25751.clear();
          } else {
             int var4 = (int)this.method_42002("Chunk Range");
@@ -91,7 +91,7 @@ public class class_4972 extends Module {
 
             for (int var6 = -4; var6 < 4; var6++) {
                for (int var7 = -4; var7 < 4; var7++) {
-                  var5.add(new class_2034(field_46692.field_9632.field_41742 + var6, field_46692.field_9632.field_41714 + var7));
+                  var5.add(new class_2034(mcInstance.field_9632.field_41742 + var6, mcInstance.field_9632.field_41714 + var7));
                }
             }
 
@@ -99,7 +99,7 @@ public class class_4972 extends Module {
 
             while (var12.hasNext()) {
                class_522 var13 = (class_522)var12.next();
-               if (var13.method_2543(new class_2034(field_46692.field_9632.field_41742, field_46692.field_9632.field_41714)) > 7
+               if (var13.method_2543(new class_2034(mcInstance.field_9632.field_41742, mcInstance.field_9632.field_41714)) > 7
                   || this.field_25748.contains(var13.method_2544())) {
                   var12.remove();
                }
@@ -121,7 +121,7 @@ public class class_4972 extends Module {
                break;
             }
 
-            if (!var14 && field_46692.field_9632.field_41726 && !SigmaMainClass.method_3328().method_3301().method_27149() && this.field_25750 == null) {
+            if (!var14 && mcInstance.field_9632.field_41726 && !SigmaMainClass.method_3328().method_3301().method_27149() && this.field_25750 == null) {
                List var15 = this.method_22863();
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("AutoMiner", "Computing...", class_2209.field_10993));
                this.field_25750 = new Thread(
@@ -131,7 +131,7 @@ public class class_4972 extends Module {
                      for (class_1331 var6x : var15) {
                         try {
                            this.field_25755 = new class_9806();
-                           class_8670 var7x = new class_8670(new class_7047(field_46692.field_9632.method_37075()));
+                           class_8670 var7x = new class_8670(new class_7047(mcInstance.field_9632.method_37075()));
                            class_8670 var8 = new class_8670(new class_7047(var6x));
                            double var9x = (double)var8.field_44468.method_32372(var7x.field_44468);
                            int var11x = (int)Math.min(30000.0, 5000.0 + var9x * 100.0);
@@ -177,7 +177,7 @@ public class class_4972 extends Module {
             }
 
             if (this.method_42015() && this.field_25755 != null && this.field_25750 != null) {
-               if (field_46692.field_9632.field_41697 % 20 == 0) {
+               if (mcInstance.field_9632.field_41697 % 20 == 0) {
                   this.field_25753 = this.field_25752;
                   this.field_25752 = this.method_22856();
                }
@@ -329,7 +329,7 @@ public class class_4972 extends Module {
          GL11.glLineWidth(1.4F);
          GL11.glColor4d(1.0, 1.0, 1.0, 0.44F);
          GL11.glBegin(3);
-         float var3 = Math.min(1.0F, ((float)(field_46692.field_9632.field_41697 % 20) + field_46692.field_9616.field_32600) / 20.0F);
+         float var3 = Math.min(1.0F, ((float)(mcInstance.field_9632.field_41697 % 20) + mcInstance.field_9616.field_32600) / 20.0F);
 
          for (int var4 = 0; var4 < (int)((float)this.field_25752.size() * var3); var4++) {
             class_7047 var5 = this.field_25752.get(var4);
@@ -344,18 +344,18 @@ public class class_4972 extends Module {
             double var9 = var6.method_32375() + (var5.method_32375() - var6.method_32375());
             double var11 = var6.method_32382() + (var5.method_32382() - var6.method_32382());
             GL11.glVertex3d(
-               var7 - field_46692.gameRenderer.method_35949().method_41627().method_61() + 0.5,
-               var9 - field_46692.gameRenderer.method_35949().method_41627().method_60(),
-               var11 - field_46692.gameRenderer.method_35949().method_41627().method_62() + 0.5
+               var7 - mcInstance.gameRenderer.method_35949().method_41627().method_61() + 0.5,
+               var9 - mcInstance.gameRenderer.method_35949().method_41627().method_60(),
+               var11 - mcInstance.gameRenderer.method_35949().method_41627().method_62() + 0.5
             );
          }
 
          GL11.glEnd();
          GL11.glPushMatrix();
          GL11.glTranslated(
-            field_46692.gameRenderer.method_35949().method_41627().method_61(),
-            field_46692.gameRenderer.method_35949().method_41627().method_60(),
-            field_46692.gameRenderer.method_35949().method_41627().method_62()
+            mcInstance.gameRenderer.method_35949().method_41627().method_61(),
+            mcInstance.gameRenderer.method_35949().method_41627().method_60(),
+            mcInstance.gameRenderer.method_35949().method_41627().method_62()
          );
          GL11.glPopMatrix();
          GL11.glDisable(3042);

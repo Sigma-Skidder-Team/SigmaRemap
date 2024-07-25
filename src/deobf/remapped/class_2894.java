@@ -10,14 +10,14 @@ public class class_2894 extends Module {
 
    @Override
    public void method_42006() {
-      this.field_14151 = field_46692.field_9632.method_37309();
+      this.field_14151 = mcInstance.field_9632.method_37309();
       this.field_14150 = 2;
    }
 
    @Override
    public void method_42020() {
       class_8865.method_40776(0.0);
-      if (field_46692.field_9632.method_37098().field_7333 > 0.0) {
+      if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
       }
    }
@@ -77,8 +77,8 @@ public class class_2894 extends Module {
             }
 
             this.field_14151 = var5.field_3144;
-            var5.field_3143 = field_46692.field_9632.field_41701;
-            var5.field_3140 = field_46692.field_9632.field_41755;
+            var5.field_3143 = mcInstance.field_9632.field_41701;
+            var5.field_3140 = mcInstance.field_9632.field_41755;
          }
       }
    }
@@ -100,10 +100,10 @@ public class class_2894 extends Module {
    public void method_13256(class_1711 var1) {
       if (this.method_42015()) {
          double var4 = this.field_14151;
-         field_46692.field_9632.field_41736.field_7333 = var4;
-         field_46692.field_9632.field_41713 = var4;
-         field_46692.field_9632.field_3864 = var4;
-         field_46692.field_9632.field_41698 = var4;
+         mcInstance.field_9632.field_41736.field_7333 = var4;
+         mcInstance.field_9632.field_41713 = var4;
+         mcInstance.field_9632.field_3864 = var4;
+         mcInstance.field_9632.field_41698 = var4;
       }
    }
 }

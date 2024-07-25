@@ -41,7 +41,7 @@ public class class_2776 extends Module {
                var5[2] = 1;
             }
 
-            if (!field_46692.field_9632.field_41726) {
+            if (!mcInstance.field_9632.field_41726) {
                this.field_13557 = 0;
             } else {
                this.field_13557++;
@@ -49,8 +49,8 @@ public class class_2776 extends Module {
 
             if (this.field_13559 != 1) {
                if (this.field_13559 >= 2) {
-                  field_46692.field_9632.field_3853.field_36404 = this.field_13558;
-                  field_46692.field_9647.method_42129();
+                  mcInstance.field_9632.field_3853.field_36404 = this.field_13558;
+                  mcInstance.field_9647.method_42129();
                   this.field_13559 = 0;
                }
 
@@ -62,8 +62,8 @@ public class class_2776 extends Module {
                               this.method_12639(var1, var4, var5[var6]);
                            }
                         } else if (this.field_13560 > 18
-                           && !field_46692.field_9632.method_26480(class_1425.method_6538(var5[var6]))
-                           && field_46692.field_9632.method_26551() < this.method_42002("Health") * 2.0F) {
+                           && !mcInstance.field_9632.method_26480(class_1425.method_6538(var5[var6]))
+                           && mcInstance.field_9632.method_26551() < this.method_42002("Health") * 2.0F) {
                            this.method_12639(var1, var4, var5[var6]);
                         }
                      }
@@ -71,24 +71,24 @@ public class class_2776 extends Module {
                }
             } else {
                this.field_13559++;
-               field_46692.method_8614().method_4813(new class_1022(class_2584.field_12791));
+               mcInstance.method_8614().method_4813(new class_1022(class_2584.field_12791));
             }
          }
       }
    }
 
    public float[] method_12644() {
-      double var3 = field_46692.field_9632.method_37302() + field_46692.field_9632.method_37098().field_7336 * 26.0;
-      double var5 = field_46692.field_9632.field_41712.field_19937 - 3.6;
-      double var7 = field_46692.field_9632.method_37156() + field_46692.field_9632.method_37098().field_7334 * 26.0;
-      return !this.method_42007("Predict") ? new float[]{field_46692.field_9632.field_41701, 90.0F} : class_7211.method_33006(var3, var7, var5);
+      double var3 = mcInstance.field_9632.method_37302() + mcInstance.field_9632.method_37098().field_7336 * 26.0;
+      double var5 = mcInstance.field_9632.field_41712.field_19937 - 3.6;
+      double var7 = mcInstance.field_9632.method_37156() + mcInstance.field_9632.method_37098().field_7334 * 26.0;
+      return !this.method_42007("Predict") ? new float[]{mcInstance.field_9632.field_41701, 90.0F} : class_7211.method_33006(var3, var7, var5);
    }
 
    public int method_12640() {
       int var3 = 5;
 
       for (int var4 = 36; var4 < 45; var4++) {
-         if (!field_46692.field_9632.field_3869.method_18878(var4).method_35884()) {
+         if (!mcInstance.field_9632.field_3869.method_18878(var4).method_35884()) {
             var3 = var4 - 36;
             break;
          }
@@ -104,8 +104,8 @@ public class class_2776 extends Module {
       int var7 = 0;
 
       for (int var8 = 9; var8 < 45; var8++) {
-         if (field_46692.field_9632.field_3869.method_18878(var8).method_35884()) {
-            class_6098 var9 = field_46692.field_9632.field_3869.method_18878(var8).method_35898();
+         if (mcInstance.field_9632.field_3869.method_18878(var8).method_35884()) {
+            class_6098 var9 = mcInstance.field_9632.field_3869.method_18878(var8).method_35898();
             if (var9.method_27960() instanceof class_5518) {
                List var10 = class_2740.method_12313(var9);
                int var11 = this.method_12643(var10);
@@ -133,8 +133,8 @@ public class class_2776 extends Module {
          }
       }
 
-      return field_46692.field_9632.method_26480(class_1425.method_6538(var1))
-            && field_46692.field_9632.method_26553(class_1425.method_6538(var1)).method_10333() >= var4
+      return mcInstance.field_9632.method_26480(class_1425.method_6538(var1))
+            && mcInstance.field_9632.method_26553(class_1425.method_6538(var1)).method_10333() >= var4
          ? -1
          : var6;
    }
@@ -163,22 +163,22 @@ public class class_2776 extends Module {
             }
          } else {
             this.field_13560 = 0;
-            int var7 = field_46692.field_9632.field_3853.field_36404;
+            int var7 = mcInstance.field_9632.field_3853.field_36404;
             boolean var8 = SigmaMainClass.method_3328().method_3298().method_847(class_9801.class).method_42015()
                && SigmaMainClass.method_3328().method_3298().method_847(class_9801.class).method_42016("Type").equalsIgnoreCase("NoGround");
             float[] var9 = this.method_12644();
-            field_46692.field_9632.field_3853.field_36404 = var6 - 36;
-            field_46692.field_9647.method_42129();
+            mcInstance.field_9632.field_3853.field_36404 = var6 - 36;
+            mcInstance.field_9647.method_42129();
             if (!this.method_42007("Instant")) {
                this.field_13559 = 1;
                var1.method_6441(var9[0]);
                var1.method_6448(var9[1]);
             } else {
-               field_46692.method_8614().method_4813(new class_3616(var9[0], var9[1], !var8 && field_46692.field_9632.field_41726));
-               field_46692.method_8614().method_4813(new class_1022(class_2584.field_12791));
-               field_46692.method_8614().method_4813(new class_1022(class_2584.field_12794));
-               field_46692.field_9632.field_3853.field_36404 = var7;
-               field_46692.field_9647.method_42129();
+               mcInstance.method_8614().method_4813(new class_3616(var9[0], var9[1], !var8 && mcInstance.field_9632.field_41726));
+               mcInstance.method_8614().method_4813(new class_1022(class_2584.field_12791));
+               mcInstance.method_8614().method_4813(new class_1022(class_2584.field_12794));
+               mcInstance.field_9632.field_3853.field_36404 = var7;
+               mcInstance.field_9647.method_42129();
                class_2534.field_12551 = 1;
             }
 

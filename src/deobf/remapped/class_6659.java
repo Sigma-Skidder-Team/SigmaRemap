@@ -8,11 +8,11 @@ public class class_6659 extends Module {
 
    @class_9148
    private void method_30574(class_7982 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!var1.method_36184()) {
-            field_46692.field_9632.field_41733 = this.method_42002("Maximum heigh");
+            mcInstance.field_9632.field_41733 = this.method_42002("Maximum heigh");
          } else {
-            field_46692.field_9632.field_41733 = 0.5F;
+            mcInstance.field_9632.field_41733 = 0.5F;
          }
       }
    }

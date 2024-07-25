@@ -21,15 +21,15 @@ public class class_2016 extends Module {
    private void method_9353(class_1393 var1) {
       if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
          if (var1.method_6449()) {
-            boolean var4 = field_46692.field_9632.method_26446() != null && field_46692.field_9632.method_26446().method_27960() instanceof class_2235;
+            boolean var4 = mcInstance.field_9632.method_26446() != null && mcInstance.field_9632.method_26446().method_27960() instanceof class_2235;
             boolean var5 = SigmaMainClass.method_3328().method_3298().method_847(class_2534.class).method_42003();
             boolean var6 = true;
-            if (!field_46692.field_9632.method_37252()
-               && field_46692.field_9587.method_33990() == class_1430.field_7717
+            if (!mcInstance.field_9632.method_37252()
+               && mcInstance.field_9587.method_33990() == class_1430.field_7717
                && !SigmaMainClass.method_3328().method_3298().method_847(class_2534.class).method_42003()) {
-               class_9529 var7 = (class_9529)field_46692.field_9587;
+               class_9529 var7 = (class_9529) mcInstance.field_9587;
                class_1331 var8 = var7.method_43955();
-               class_6414 var9 = field_46692.field_9601.method_28262(var8).method_8360();
+               class_6414 var9 = mcInstance.field_9601.method_28262(var8).method_8360();
                ArrayList var10 = new ArrayList<class_6414>(
                   Arrays.asList(
                      class_4783.field_23471,
@@ -61,13 +61,13 @@ public class class_2016 extends Module {
                }
             }
 
-            field_10220 = field_46692.field_9577.field_45559.method_27060() && var4 && var6 && var6 || var5;
+            field_10220 = mcInstance.field_9577.field_45559.method_27060() && var4 && var6 && var6 || var5;
             if (!field_10220) {
-               if (class_1857.field_9416.contains(field_46692.field_9632)) {
-                  class_1857.field_9416.remove(field_46692.field_9632);
+               if (class_1857.field_9416.contains(mcInstance.field_9632)) {
+                  class_1857.field_9416.remove(mcInstance.field_9632);
                }
-            } else if (!class_1857.field_9416.contains(field_46692.field_9632)) {
-               class_1857.field_9416.add(field_46692.field_9632);
+            } else if (!class_1857.field_9416.contains(mcInstance.field_9632)) {
+               class_1857.field_9416.add(mcInstance.field_9632);
             }
 
             if (field_10220 && !this.field_10221) {
@@ -87,14 +87,14 @@ public class class_2016 extends Module {
    @class_3932
    private void method_9364(class_139 var1) {
       if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
-         if (field_46692.field_9632 != null) {
+         if (mcInstance.field_9632 != null) {
             if (var1.method_557() instanceof class_9014) {
                class_9014 var4 = (class_9014)var1.method_557();
                Iterator var5 = var4.method_41363().iterator();
 
                while (var5.hasNext()) {
                   Pair var6 = (Pair)var5.next();
-                  if (var4.method_41364() == field_46692.field_9632.method_37145()
+                  if (var4.method_41364() == mcInstance.field_9632.method_37145()
                      && var6.getFirst() == class_6943.field_35701
                      && var6.getSecond() != null
                      && ((class_6098)var6.getSecond()).method_27960() == class_4897.field_24840) {

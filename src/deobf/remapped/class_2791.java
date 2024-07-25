@@ -35,8 +35,8 @@ public class class_2791 extends Module {
       }
 
       this.field_13711++;
-      if (field_46692.field_9632 != null && field_46692.method_8530() != null) {
-         if (field_46692.field_9632.field_41697 <= 1) {
+      if (mcInstance.field_9632 != null && mcInstance.method_8530() != null) {
+         if (mcInstance.field_9632.field_41697 <= 1) {
             this.field_13712.clear();
          }
 
@@ -46,8 +46,8 @@ public class class_2791 extends Module {
             for (int var5 = 0; var5 < var7; var5++) {
                class_5840 var6 = this.field_13712.get(var5);
                if (var6.method_26634()) {
-                  field_46692.method_8614().method_9091();
-                  class_5121.method_23491(var6.method_26633(), field_46692.method_8614().method_9091().field_26435);
+                  mcInstance.method_8614().method_9091();
+                  class_5121.method_23491(var6.method_26633(), mcInstance.method_8614().method_9091().field_26435);
                   this.field_13712.remove(var5);
                   var7--;
                   var5--;
@@ -75,7 +75,7 @@ public class class_2791 extends Module {
          }
       }
 
-      if (field_46692.method_8530() != null) {
+      if (mcInstance.method_8530() != null) {
          class_6310 var7 = var1.method_557();
          if (!(var7 instanceof class_7573)) {
             if (!(var7 instanceof class_8913)) {

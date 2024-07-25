@@ -24,18 +24,18 @@ public class class_9522 extends class_367 {
    public void method_43924(class_5596 var1) {
       if (this.method_42015()) {
          if (field_48470 != null
-            && (field_48470.field_20526 != field_46692.window.method_43178() || field_48470.field_20534 != field_46692.window.method_43198())) {
+            && (field_48470.field_20526 != mcInstance.window.method_43178() || field_48470.field_20534 != mcInstance.window.method_43198())) {
             this.method_42006();
          }
 
          if (this.method_42007("Smart Visibility")) {
-            List var4 = field_46692.field_9601
+            List var4 = mcInstance.field_9601
                .<class_704>method_25869(
                   class_704.class,
-                  field_46692.field_9632.method_37241().method_18898(14.0),
-                  var1x -> var1x.method_37175(field_46692.field_9632) < 12.0F
+                  mcInstance.field_9632.method_37241().method_18898(14.0),
+                  var1x -> var1x.method_37175(mcInstance.field_9632) < 12.0F
                         && !this.method_43929(var1x)
-                        && field_46692.field_9632 != var1x
+                        && mcInstance.field_9632 != var1x
                         && !SigmaMainClass.method_3328().method_3331().method_20495(var1x)
                );
             if (var4.isEmpty()) {
@@ -51,9 +51,9 @@ public class class_9522 extends class_367 {
 
    public boolean method_43929(class_5834 var1) {
       float var4 = class_7211.method_33014(
-         var1, field_46692.field_9632.method_37302(), field_46692.field_9632.method_37309(), field_46692.field_9632.method_37156()
+         var1, mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309(), mcInstance.field_9632.method_37156()
       )[0];
-      return this.method_43925(field_46692.field_9632.field_41701, var4) <= 90.0F;
+      return this.method_43925(mcInstance.field_9632.field_41701, var4) <= 90.0F;
    }
 
    public float method_43925(float var1, float var2) {
@@ -68,12 +68,12 @@ public class class_9522 extends class_367 {
             if (!MinecraftClient.getInstance().field_9577.field_45567) {
                if (!this.method_42007("Smart Visibility")) {
                   this.field_48469
-                     .method_11119(field_46692.field_9623 != null && !this.method_42007("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);
+                     .method_11119(mcInstance.field_9623 != null && !this.method_42007("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);
                } else {
                   this.field_48469.method_11119(this.field_48467 <= 0 ? class_4043.field_19618 : class_4043.field_19620);
                }
 
-               float var4 = (float)field_46692.window.method_43166() / (float)field_46692.window.method_43163();
+               float var4 = (float) mcInstance.window.method_43166() / (float) mcInstance.window.method_43163();
                int var5 = (int)this.method_42002("Size");
                int var6 = (int)((float)var5 / var4);
                int var7 = 10;
@@ -89,8 +89,8 @@ public class class_9522 extends class_367 {
                }
 
                class_73.method_128(
-                  (float)(field_46692.window.method_43166() - var7 - var5),
-                  (float)(field_46692.window.method_43163() + var8),
+                  (float)(mcInstance.window.method_43166() - var7 - var5),
+                  (float)(mcInstance.window.method_43163() + var8),
                   (float)var5,
                   (float)(var6 - 1),
                   14.0F,
@@ -105,8 +105,8 @@ public class class_9522 extends class_367 {
                   field_48470,
                   var5,
                   var6,
-                  (double)(field_46692.window.method_43178() - var7 - var5),
-                  (double)(field_46692.window.method_43198() + var8)
+                  (double)(mcInstance.window.method_43178() - var7 - var5),
+                  (double)(mcInstance.window.method_43198() + var8)
                );
                class_3542.method_16489();
                class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
@@ -114,8 +114,8 @@ public class class_9522 extends class_367 {
                class_3542.method_16476();
                class_3542.method_16376(
                   0.0,
-                  (double)field_46692.window.method_43178() / field_46692.window.method_43189(),
-                  (double)field_46692.window.method_43198() / field_46692.window.method_43189(),
+                  (double) mcInstance.window.method_43178() / mcInstance.window.method_43189(),
+                  (double) mcInstance.window.method_43198() / mcInstance.window.method_43189(),
                   0.0,
                   1000.0,
                   3000.0
@@ -124,19 +124,19 @@ public class class_9522 extends class_367 {
                class_3542.method_16476();
                class_3542.method_16413(0.0F, 0.0F, -2000.0F);
                GL11.glScaled(
-                  1.0 / field_46692.window.method_43189() * (double)class_6763.field_34898,
-                  1.0 / field_46692.window.method_43189() * (double)class_6763.field_34898,
+                  1.0 / mcInstance.window.method_43189() * (double)class_6763.field_34898,
+                  1.0 / mcInstance.window.method_43189() * (double)class_6763.field_34898,
                   1.0
                );
                field_48470.method_19723();
-               field_46692.method_8584().method_19717(true);
+               mcInstance.method_8584().method_19717(true);
             }
          }
       }
    }
 
    public void method_43927(class_4230 var1, int var2, int var3, double var4, double var6) {
-      var6 = var6 - (double)field_46692.window.method_43198() + (double)var3;
+      var6 = var6 - (double) mcInstance.window.method_43198() + (double)var3;
       class_3542.method_16405(true, true, true, false);
       class_3542.method_16491();
       class_3542.method_16387(false);
@@ -175,35 +175,35 @@ public class class_9522 extends class_367 {
    public void method_43928(class_1711 var1) {
       if (this.method_42015()) {
          if (field_48470 != null) {
-            if (field_46692.field_9623 == null || this.method_42007("Show in GUI") || this.field_48467 != 0) {
+            if (mcInstance.field_9623 == null || this.method_42007("Show in GUI") || this.field_48467 != 0) {
                class_73.method_127();
                class_3542.method_16438();
                class_3542.method_16402(16640, false);
                field_48470.method_19717(true);
                class_3542.method_16432();
                class_3542.method_16481();
-               int var4 = field_46692.field_9577.field_45439;
+               int var4 = mcInstance.field_9577.field_45439;
                int var5 = Math.min(MinecraftClient.method_8501(), var4);
                var5 = Math.max(var5, 60);
                long var6 = Util.getMeasuringTimeNano() - var1.field_8849;
-               float var8 = field_46692.field_9632.field_41701;
-               field_46692.field_9632.field_41701 += 180.0F;
+               float var8 = mcInstance.field_9632.field_41701;
+               mcInstance.field_9632.field_41701 += 180.0F;
                class_3542.method_16428();
                GL11.glAlphaFunc(519, 0.0F);
-               double var9 = field_46692.field_9577.field_45543;
-               field_46692.field_9577.field_45543 = 114.0;
-               field_46692.gameRenderer.field_40627 = false;
+               double var9 = mcInstance.field_9577.field_45543;
+               mcInstance.field_9577.field_45543 = 114.0;
+               mcInstance.gameRenderer.field_40627 = false;
                SigmaMainClass.field_3951 = true;
-               class_4230 var11 = field_46692.worldRenderer.field_21000;
-               field_46692.worldRenderer.field_21000 = null;
-               field_46692.gameRenderer.method_35950(var1.field_8848, Util.getMeasuringTimeNano(), new class_7966());
-               field_46692.worldRenderer.field_21000 = var11;
+               class_4230 var11 = mcInstance.worldRenderer.field_21000;
+               mcInstance.worldRenderer.field_21000 = null;
+               mcInstance.gameRenderer.method_35950(var1.field_8848, Util.getMeasuringTimeNano(), new class_7966());
+               mcInstance.worldRenderer.field_21000 = var11;
                SigmaMainClass.field_3951 = false;
-               field_46692.gameRenderer.field_40627 = true;
-               field_46692.field_9577.field_45543 = var9;
-               field_46692.field_9632.field_41701 = var8;
+               mcInstance.gameRenderer.field_40627 = true;
+               mcInstance.field_9577.field_45543 = var9;
+               mcInstance.field_9632.field_41701 = var8;
                class_3542.method_16489();
-               field_46692.method_8584().method_19717(true);
+               mcInstance.method_8584().method_19717(true);
             }
          } else {
             this.method_42006();
@@ -213,8 +213,8 @@ public class class_9522 extends class_367 {
 
    @Override
    public void method_42006() {
-      class_73.method_95(field_46692.method_8584());
-      field_48470 = new class_4230(field_46692.window.method_43178(), field_46692.window.method_43198(), true, MinecraftClient.IS_SYSTEM_MAC);
+      class_73.method_95(mcInstance.method_8584());
+      field_48470 = new class_4230(mcInstance.window.method_43178(), mcInstance.window.method_43198(), true, MinecraftClient.IS_SYSTEM_MAC);
       field_48470.method_19709(1.0F, 1.0F, 1.0F, 1.0F);
    }
 

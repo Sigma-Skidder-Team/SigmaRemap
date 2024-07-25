@@ -9,7 +9,7 @@ public class class_1319 extends Module {
    @class_9148
    private void method_6026(class_7767 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.field_41744) {
+         if (mcInstance.field_9632.field_41744) {
             var1.method_35235((double)this.method_42002("Motion"));
          }
       }

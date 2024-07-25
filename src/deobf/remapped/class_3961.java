@@ -4,7 +4,7 @@ import java.util.List;
 import org.lwjgl.opengl.GL11;
 
 public class class_3961 extends Module {
-   public EntityRenderDispatcher field_19184 = field_46692.method_8587();
+   public EntityRenderDispatcher field_19184 = mcInstance.method_8587();
    public class_1934 field_19188 = new class_1934(0.0F, 0.0F, 0.0F);
    public class_1934 field_19186 = new class_1934(0.0F, 0.0F, 0.0F);
    public class_1934 field_19187 = new class_1934(0.0F, 0.0F, 0.0F);
@@ -17,21 +17,21 @@ public class class_3961 extends Module {
    @class_9148
    public void method_18289(class_3368 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.method_26446() != null) {
-            class_3336 var4 = class_3336.method_15299(field_46692.field_9632.method_26446().method_27960());
+         if (mcInstance.field_9632.method_26446() != null) {
+            class_3336 var4 = class_3336.method_15299(mcInstance.field_9632.method_26446().method_27960());
             if (var4 != null) {
-               float var5 = (float)Math.toRadians((double)(field_46692.field_9632.field_41701 - 25.0F));
-               float var6 = (float)Math.toRadians((double)field_46692.field_9632.field_41755);
+               float var5 = (float)Math.toRadians((double)(mcInstance.field_9632.field_41701 - 25.0F));
+               float var6 = (float)Math.toRadians((double) mcInstance.field_9632.field_41755);
                double var7 = 0.2F;
-               double var9 = field_46692.field_9632.field_41712.method_18906() / 2.0;
+               double var9 = mcInstance.field_9632.field_41712.method_18906() / 2.0;
                double var11 = (double)class_9299.method_42840(var5) * var9;
                double var13 = (double)class_9299.method_42818(var5) * var9;
-               double var15 = field_46692.field_9632.field_41754
-                  + (field_46692.field_9632.method_37302() - field_46692.field_9632.field_41754) * (double)field_46692.field_9616.field_32600;
-               double var17 = field_46692.field_9632.field_41713
-                  + (field_46692.field_9632.method_37309() - field_46692.field_9632.field_41713) * (double)field_46692.field_9616.field_32600;
-               double var19 = field_46692.field_9632.field_41724
-                  + (field_46692.field_9632.method_37156() - field_46692.field_9632.field_41724) * (double)field_46692.field_9616.field_32600;
+               double var15 = mcInstance.field_9632.field_41754
+                  + (mcInstance.field_9632.method_37302() - mcInstance.field_9632.field_41754) * (double) mcInstance.field_9616.field_32600;
+               double var17 = mcInstance.field_9632.field_41713
+                  + (mcInstance.field_9632.method_37309() - mcInstance.field_9632.field_41713) * (double) mcInstance.field_9616.field_32600;
+               double var19 = mcInstance.field_9632.field_41724
+                  + (mcInstance.field_9632.method_37156() - mcInstance.field_9632.field_41724) * (double) mcInstance.field_9616.field_32600;
                GL11.glPushMatrix();
                GL11.glEnable(2848);
                GL11.glBlendFunc(770, 771);
@@ -56,9 +56,9 @@ public class class_3961 extends Module {
                   float var30 = (float)Math.min(1, var22);
                   GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.05F * var30);
                   GL11.glVertex3d(
-                     var23.method_32381() - field_46692.gameRenderer.method_35949().method_41627().method_61() - var24,
-                     var23.method_32375() - field_46692.gameRenderer.method_35949().method_41627().method_60() - var28,
-                     var23.method_32382() - field_46692.gameRenderer.method_35949().method_41627().method_62() - var26
+                     var23.method_32381() - mcInstance.gameRenderer.method_35949().method_41627().method_61() - var24,
+                     var23.method_32375() - mcInstance.gameRenderer.method_35949().method_41627().method_60() - var28,
+                     var23.method_32382() - mcInstance.gameRenderer.method_35949().method_41627().method_62() - var26
                   );
                }
 
@@ -75,9 +75,9 @@ public class class_3961 extends Module {
                   float var48 = (float)Math.min(1, var38);
                   GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F * var48);
                   GL11.glVertex3d(
-                     var39.method_32381() - field_46692.gameRenderer.method_35949().method_41627().method_61() - var40,
-                     var39.method_32375() - field_46692.gameRenderer.method_35949().method_41627().method_60() - var46,
-                     var39.method_32382() - field_46692.gameRenderer.method_35949().method_41627().method_62() - var43
+                     var39.method_32381() - mcInstance.gameRenderer.method_35949().method_41627().method_61() - var40,
+                     var39.method_32375() - mcInstance.gameRenderer.method_35949().method_41627().method_60() - var46,
+                     var39.method_32382() - mcInstance.gameRenderer.method_35949().method_41627().method_62() - var43
                   );
                }
 
@@ -86,14 +86,14 @@ public class class_3961 extends Module {
                if (var4.field_16463 == null) {
                   if (var4.field_16449 != null) {
                      double var31 = var4.field_16449.field_41754
-                        + (var4.field_16449.method_37302() - var4.field_16449.field_41754) * (double)field_46692.field_9616.field_32600
-                        - field_46692.gameRenderer.method_35949().method_41627().method_61();
+                        + (var4.field_16449.method_37302() - var4.field_16449.field_41754) * (double) mcInstance.field_9616.field_32600
+                        - mcInstance.gameRenderer.method_35949().method_41627().method_61();
                      double var41 = var4.field_16449.field_41713
-                        + (var4.field_16449.method_37309() - var4.field_16449.field_41713) * (double)field_46692.field_9616.field_32600
-                        - field_46692.gameRenderer.method_35949().method_41627().method_60();
+                        + (var4.field_16449.method_37309() - var4.field_16449.field_41713) * (double) mcInstance.field_9616.field_32600
+                        - mcInstance.gameRenderer.method_35949().method_41627().method_60();
                      double var44 = var4.field_16449.field_41724
-                        + (var4.field_16449.method_37156() - var4.field_16449.field_41724) * (double)field_46692.field_9616.field_32600
-                        - field_46692.gameRenderer.method_35949().method_41627().method_62();
+                        + (var4.field_16449.method_37156() - var4.field_16449.field_41724) * (double) mcInstance.field_9616.field_32600
+                        - mcInstance.gameRenderer.method_35949().method_41627().method_62();
                      double var47 = (double)(var4.field_16449.method_37086() / 2.0F + 0.2F);
                      double var35 = (double)(var4.field_16449.method_37074() + 0.1F);
                      class_8194 var37 = new class_8194(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
@@ -101,9 +101,9 @@ public class class_3961 extends Module {
                      class_73.method_131(var37, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
                   }
                } else {
-                  double var49 = var4.field_16461 - field_46692.gameRenderer.method_35949().method_41627().method_61();
-                  double var42 = var4.field_16457 - field_46692.gameRenderer.method_35949().method_41627().method_60();
-                  double var45 = var4.field_16443 - field_46692.gameRenderer.method_35949().method_41627().method_62();
+                  double var49 = var4.field_16461 - mcInstance.gameRenderer.method_35949().method_41627().method_61();
+                  double var42 = var4.field_16457 - mcInstance.gameRenderer.method_35949().method_41627().method_60();
+                  double var45 = var4.field_16443 - mcInstance.gameRenderer.method_35949().method_41627().method_62();
                   GL11.glPushMatrix();
                   GL11.glTranslated(var49, var42, var45);
                   class_1331 var33 = new class_1331(0, 0, 0).method_6098(((class_9529)var4.field_16463).method_43956());

@@ -47,9 +47,9 @@ public class ShulkerInfoModule extends Module {
                   0.8F
                );
                if (this.method_31556(var6)) {
-                  double var7 = class_9189.method_42357(var5).field_42648 - field_46692.gameRenderer.method_35949().method_41627().method_61();
-                  double var9 = class_9189.method_42357(var5).field_42646 - field_46692.gameRenderer.method_35949().method_41627().method_60();
-                  double var11 = class_9189.method_42357(var5).field_42649 - field_46692.gameRenderer.method_35949().method_41627().method_62();
+                  double var7 = class_9189.method_42357(var5).field_42648 - mcInstance.gameRenderer.method_35949().method_41627().method_61();
+                  double var9 = class_9189.method_42357(var5).field_42646 - mcInstance.gameRenderer.method_35949().method_41627().method_60();
+                  double var11 = class_9189.method_42357(var5).field_42649 - mcInstance.gameRenderer.method_35949().method_41627().method_62();
                   float var13 = 0.3F;
                   GL11.glEnable(3042);
                   GL11.glAlphaFunc(516, 0.0F);
@@ -68,8 +68,8 @@ public class ShulkerInfoModule extends Module {
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.3F)
                   );
                   GL11.glDisable(3042);
-                  if (field_46692.field_9577.field_45559.method_27060()) {
-                     field_46692.field_9577.field_45559.field_30024 = false;
+                  if (mcInstance.field_9577.field_45559.method_27060()) {
+                     mcInstance.field_9577.field_45559.field_30024 = false;
                      ShulkerPeekCommand.method_30370(var6.method_264());
                   }
                }
@@ -80,25 +80,25 @@ public class ShulkerInfoModule extends Module {
 
          class_3542.method_16420(33986, 240.0F, 240.0F);
          class_9162.method_42212();
-         TextureManager var10000 = field_46692.method_8577();
-         field_46692.method_8577();
+         TextureManager var10000 = mcInstance.method_8577();
+         mcInstance.method_8577();
          var10000.method_35674(TextureManager.field_40364);
       }
    }
 
    public boolean method_31556(class_91 var1) {
-      if (field_46692.field_9632.method_37175(var1) > 5.0F) {
+      if (mcInstance.field_9632.method_37175(var1) > 5.0F) {
          return false;
       } else {
          float var4 = (float)Math.sqrt(6.0 / class_9189.method_42352(var1));
          float var5 = 10.0F * var4;
-         double var6 = var1.method_37302() - field_46692.field_9632.method_37302();
-         double var8 = var1.method_37309() - field_46692.field_9632.method_37309() - (double)field_46692.field_9632.method_37074() + 0.4F;
-         double var10 = var1.method_37156() - field_46692.field_9632.method_37156();
+         double var6 = var1.method_37302() - mcInstance.field_9632.method_37302();
+         double var8 = var1.method_37309() - mcInstance.field_9632.method_37309() - (double) mcInstance.field_9632.method_37074() + 0.4F;
+         double var10 = var1.method_37156() - mcInstance.field_9632.method_37156();
          double var12 = (double)class_9299.method_42842(var6 * var6 + var10 * var10);
-         float var14 = class_7211.method_33002(field_46692.field_9632.field_41701, (float)(Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
-         float var15 = class_7211.method_33002(field_46692.field_9632.field_41755, (float)(-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
-         return this.method_31550(field_46692.field_9632.field_41701, var14) <= var5 && this.method_31550(field_46692.field_9632.field_41755, var15) <= var5;
+         float var14 = class_7211.method_33002(mcInstance.field_9632.field_41701, (float)(Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
+         float var15 = class_7211.method_33002(mcInstance.field_9632.field_41755, (float)(-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
+         return this.method_31550(mcInstance.field_9632.field_41701, var14) <= var5 && this.method_31550(mcInstance.field_9632.field_41755, var15) <= var5;
       }
    }
 
@@ -110,9 +110,9 @@ public class ShulkerInfoModule extends Module {
    public void method_31552(double var1, double var3, double var5, Entity var7, float var8) {
       class_3384 var11 = class_5320.field_27141;
       String var12 = var7.method_45509().getUnformattedComponentText();
-      float var13 = (float)(var1 - field_46692.gameRenderer.method_35949().method_41627().method_61());
-      float var14 = (float)(var3 - field_46692.gameRenderer.method_35949().method_41627().method_60());
-      float var15 = (float)(var5 - field_46692.gameRenderer.method_35949().method_41627().method_62());
+      float var13 = (float)(var1 - mcInstance.gameRenderer.method_35949().method_41627().method_61());
+      float var14 = (float)(var3 - mcInstance.gameRenderer.method_35949().method_41627().method_60());
+      float var15 = (float)(var5 - mcInstance.gameRenderer.method_35949().method_41627().method_62());
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);
@@ -123,8 +123,8 @@ public class ShulkerInfoModule extends Module {
       GL11.glPushMatrix();
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glTranslated((double)var13, (double)(var14 + 0.6F - 0.33333334F * (1.0F - var8)), (double)var15);
-      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
       GL11.glTranslated((double)(-var11.method_18547(var12) / 2), 0.0, 0.0);
       List var16 = this.method_31557(((class_91)var7).method_264());
@@ -140,8 +140,8 @@ public class ShulkerInfoModule extends Module {
    @class_9148
    private void method_31551(class_2532 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9623 instanceof class_2208) {
-            class_2208 var4 = (class_2208)field_46692.field_9623;
+         if (mcInstance.field_9623 instanceof class_2208) {
+            class_2208 var4 = (class_2208) mcInstance.field_9623;
             class_7934 var5 = var4.field_10954;
             if (var5 != null
                && var5.method_35884()
@@ -161,8 +161,8 @@ public class ShulkerInfoModule extends Module {
                byte var10 = 1;
                byte var11 = 12;
                int var12 = class_5320.field_27141.method_15654();
-               int var13 = (int)(field_46692.field_9625.method_39835() * (double)class_6763.field_34898 - (double)(9 * (var9 + var10)) - (double)(var11 * 3));
-               int var14 = (int)(field_46692.field_9625.method_39832() * (double)class_6763.field_34898 - 33.0);
+               int var13 = (int)(mcInstance.field_9625.method_39835() * (double)class_6763.field_34898 - (double)(9 * (var9 + var10)) - (double)(var11 * 3));
+               int var14 = (int)(mcInstance.field_9625.method_39832() * (double)class_6763.field_34898 - 33.0);
                this.method_31549(var13, var14, var7, var6.method_28008().getString(), true);
                GL11.glPopMatrix();
                class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
@@ -242,11 +242,11 @@ public class ShulkerInfoModule extends Module {
          int var27 = var1 + var8 + var23 % 9 * (var10 + var11);
          if (var23 == this.field_35424 && var5) {
             class_3542.method_16487();
-            int var29 = field_46692.textRenderer.method_45395(var24.method_28008().getUnformattedComponentText());
+            int var29 = mcInstance.textRenderer.method_45395(var24.method_28008().getUnformattedComponentText());
             List var32 = this.method_31554(var24);
 
             for (int var20 = 0; var20 < var32.size(); var20++) {
-               var29 = Math.max(var29, field_46692.textRenderer.method_45395((String)var32.get(var20)));
+               var29 = Math.max(var29, mcInstance.textRenderer.method_45395((String)var32.get(var20)));
             }
 
             var29 = (int)((float)var29 * class_73.method_106());
@@ -267,7 +267,7 @@ public class ShulkerInfoModule extends Module {
 
             for (int var21 = 0; var21 < var32.size(); var21++) {
                String var22 = (String)var32.get(var21);
-               field_46692.textRenderer
+               mcInstance.textRenderer
                   .method_45410(
                      var22,
                      (float)(var27 + 5),
@@ -286,7 +286,7 @@ public class ShulkerInfoModule extends Module {
    }
 
    public List<String> method_31554(class_6098 var1) {
-      List var4 = var1.method_28012(field_46692.field_9632, !field_46692.field_9577.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
+      List var4 = var1.method_28012(mcInstance.field_9632, !mcInstance.field_9577.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
       ArrayList var5 = Lists.newArrayList();
 
       for (ITextComponent var7 : var4) {

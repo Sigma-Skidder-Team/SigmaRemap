@@ -18,7 +18,7 @@ public class class_5586 extends Module {
       if (var1.method_6449()) {
          class_3620 var4 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_9758.class);
          if (!var4.method_42015() || !var4.method_42016("Type").equalsIgnoreCase("Minemen")) {
-            if (!field_46692.field_9632.field_41726) {
+            if (!mcInstance.field_9632.field_41726) {
                this.field_28365 = 0;
             } else {
                if (this.field_28365 > 0) {
@@ -33,9 +33,9 @@ public class class_5586 extends Module {
                var1.method_6444(true);
             }
 
-            if (field_46692.field_9647.method_42156() && field_46692.field_9632.field_41726) {
+            if (mcInstance.field_9647.method_42156() && mcInstance.field_9632.field_41726) {
                this.field_28365 = 0;
-               var1.method_6455(field_46692.field_9632.method_37309());
+               var1.method_6455(mcInstance.field_9632.method_37309());
                var1.method_6451(true);
             }
          }

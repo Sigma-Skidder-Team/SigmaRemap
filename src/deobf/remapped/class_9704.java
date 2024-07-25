@@ -19,19 +19,19 @@ public class class_9704 extends Module {
    private void method_44840(class_1393 var1) {
       if (this.method_42015()) {
          boolean var4 = SigmaMainClass.method_3328().method_3298().method_847(class_2534.class).method_42003();
-         boolean var5 = field_46692.field_9632.method_26446() != null && field_46692.field_9632.method_26446().method_27960() instanceof class_2235;
+         boolean var5 = mcInstance.field_9632.method_26446() != null && mcInstance.field_9632.method_26446().method_27960() instanceof class_2235;
          if (!var1.method_6449()) {
-            if (var5 && field_46692.field_9577.field_45559.method_27060() && !this.field_49354 && !var4 && this.method_42016("Mode").equals("NCP")) {
+            if (var5 && mcInstance.field_9577.field_45559.method_27060() && !this.field_49354 && !var4 && this.method_42016("Mode").equals("NCP")) {
                class_314.method_1396();
                this.field_49354 = true;
             } else if (!var5 && this.field_49354) {
                this.field_49354 = false;
             }
          } else if (!this.method_42016("Mode").equals("NCP")) {
-            if (this.field_49354 && !field_46692.field_9577.field_45559.method_27060()) {
+            if (this.field_49354 && !mcInstance.field_9577.field_45559.method_27060()) {
                this.field_49354 = false;
             }
-         } else if (this.field_49354 && field_46692.field_9577.field_45559.method_27060() && !var4) {
+         } else if (this.field_49354 && mcInstance.field_9577.field_45559.method_27060() && !var4) {
             if (var5) {
                class_314.method_1459();
             }

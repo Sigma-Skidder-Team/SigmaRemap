@@ -9,10 +9,10 @@ public class class_5377 extends Module {
 
    @class_9148
    private void method_24511(class_7767 var1) {
-      if (this.method_42015() && field_46692.field_9632.method_26505()) {
-         boolean var4 = class_3347.method_15349() >= class_412.field_1724.method_2055() || field_46692.method_8530() == null;
-         if (!field_46692.field_9632.field_41744 && (!field_46692.field_9632.field_29654 || !var4)) {
-            if (this.method_42016("Down mode").equals("OnSneak") && field_46692.field_9577.field_45560.method_27060()
+      if (this.method_42015() && mcInstance.field_9632.method_26505()) {
+         boolean var4 = class_3347.method_15349() >= class_412.field_1724.method_2055() || mcInstance.method_8530() == null;
+         if (!mcInstance.field_9632.field_41744 && (!mcInstance.field_9632.field_29654 || !var4)) {
+            if (this.method_42016("Down mode").equals("OnSneak") && mcInstance.field_9577.field_45560.method_27060()
                || this.method_42016("Down mode").equals("Always")) {
                var1.method_35235((double)(-this.method_42002("Motion")));
             }

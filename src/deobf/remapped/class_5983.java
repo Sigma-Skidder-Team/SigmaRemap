@@ -15,7 +15,7 @@ public class class_5983 extends Module {
    @Override
    public void method_42020() {
       class_8865.method_40776(0.28F);
-      field_46692.field_9616.field_32603 = 1.0F;
+      mcInstance.field_9616.field_32603 = 1.0F;
    }
 
    @class_9148
@@ -26,15 +26,15 @@ public class class_5983 extends Module {
             if (this.field_30487 != 2) {
                if (this.field_30487 >= 3) {
                   this.field_30487 = 0;
-                  field_46692.field_9616.field_32603 = 0.25F;
+                  mcInstance.field_9616.field_32603 = 0.25F;
                   class_8865.method_40777(var1, (double)this.method_42002("Speed"));
                }
             } else {
-               field_46692.field_9616.field_32603 = 2.0F;
+               mcInstance.field_9616.field_32603 = 2.0F;
                class_8865.method_40777(var1, class_8865.method_40775() + 0.05);
             }
          } else {
-            field_46692.field_9616.field_32603 = 2.0F;
+            mcInstance.field_9616.field_32603 = 2.0F;
             class_8865.method_40777(var1, class_8865.method_40775() + 0.05);
          }
       }

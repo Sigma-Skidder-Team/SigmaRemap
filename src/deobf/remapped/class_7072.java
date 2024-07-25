@@ -12,7 +12,7 @@ public class class_7072 extends Module {
    public void method_32570(class_3368 var1) {
       if (this.method_42015()) {
          for (Entity var5 : class_7494.method_34088(class_314.method_1435())) {
-            if (var5 != field_46692.field_9632 && !SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
+            if (var5 != mcInstance.field_9632 && !SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
                method_32571(
                   var5.field_41754 + (var5.method_37302() - var5.field_41754) * (double) MinecraftClient.getInstance().field_9616.field_32600,
                   var5.field_41713
@@ -82,9 +82,9 @@ public class class_7072 extends Module {
       GL11.glDepthMask(false);
       GL11.glPushMatrix();
       GL11.glTranslated(
-         var0 - field_46692.gameRenderer.method_35949().method_41627().method_61(),
-         var2 - field_46692.gameRenderer.method_35949().method_41627().method_60(),
-         var4 - field_46692.gameRenderer.method_35949().method_41627().method_62()
+         var0 - mcInstance.gameRenderer.method_35949().method_41627().method_61(),
+         var2 - mcInstance.gameRenderer.method_35949().method_41627().method_60(),
+         var4 - mcInstance.gameRenderer.method_35949().method_41627().method_62()
       );
       GL11.glRotated((double)(var6.field_41697 % 180 * 2), 0.0, -1.0, 0.0);
       float var9 = (float)(var6.field_41697 % 100 - 50);

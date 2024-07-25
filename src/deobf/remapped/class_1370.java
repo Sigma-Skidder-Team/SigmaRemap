@@ -4,7 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_1370 extends Module {
    public static class_4719 field_7448 = class_4719.field_22895;
-   public class_3758 field_7447 = class_2565.method_11647(field_46692.method_8589().field_14810, new class_9633(256));
+   public class_3758 field_7447 = class_2565.method_11647(mcInstance.method_8589().field_14810, new class_9633(256));
 
    public class_1370() {
       super(class_5664.field_28709, "Shadow", "Draws a line arround entities");
@@ -14,7 +14,7 @@ public class class_1370 extends Module {
    @class_9148
    private void method_6348(class_3368 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632 != null && field_46692.field_9601 != null) {
+         if (mcInstance.field_9632 != null && mcInstance.field_9601 != null) {
             this.method_6345();
             class_73.method_107();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -38,7 +38,7 @@ public class class_1370 extends Module {
 
    private void method_6343() {
       int var3 = class_314.method_1444(class_1255.field_6918.field_6917, 0.8F);
-      field_46692.field_9601
+      mcInstance.field_9601
          .field_568
          .forEach(
             (var2, var3x) -> {
@@ -51,7 +51,7 @@ public class class_1370 extends Module {
                   GL11.glTranslated(var6, var8, var10);
                   GL11.glTranslatef(0.0F, var3x.method_37074(), 0.0F);
                   GL11.glTranslatef(0.0F, 0.1F, 0.0F);
-                  GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+                  GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
                   GL11.glScalef(-0.11F, -0.11F, -0.11F);
                   class_73.method_102(
                      -var3x.method_37086() * 22.0F,
@@ -89,28 +89,28 @@ public class class_1370 extends Module {
          GL11.glEnable(2896);
       }
 
-      for (Entity var10 : field_46692.field_9601.method_736()) {
+      for (Entity var10 : mcInstance.field_9601.method_736()) {
          if (this.method_6344(var10)) {
             GL11.glPushMatrix();
-            class_1343 var11 = field_46692.gameRenderer.method_35949().method_41627();
+            class_1343 var11 = mcInstance.gameRenderer.method_35949().method_41627();
             double var12 = var11.method_61();
             double var14 = var11.method_60();
             double var16 = var11.method_62();
             class_7966 var18 = new class_7966();
-            boolean var19 = field_46692.field_9577.field_45568;
+            boolean var19 = mcInstance.field_9577.field_45568;
             class_3542.method_16487();
             class_3542.method_16480(0.0F, 0.0F, 1.0F, 0.5F);
             class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
             class_3542.method_16488();
-            field_46692.field_9577.field_45568 = false;
+            mcInstance.field_9577.field_45568 = false;
             int var20 = var10.method_37230();
             boolean var21 = var10.method_37385(0);
             var10.method_37178(0);
             var10.method_37220(0, false);
-            this.method_6350(var10, var12, var14, var16, field_46692.field_9616.field_32600, var18, this.field_7447);
+            this.method_6350(var10, var12, var14, var16, mcInstance.field_9616.field_32600, var18, this.field_7447);
             var10.method_37178(var20);
             var10.method_37220(0, var21);
-            field_46692.field_9577.field_45568 = var19;
+            mcInstance.field_9577.field_45568 = var19;
             GL11.glPopMatrix();
          }
       }
@@ -135,7 +135,7 @@ public class class_1370 extends Module {
       double var15 = class_9299.method_42794((double)var8, var1.field_41713, var1.method_37309());
       double var17 = class_9299.method_42794((double)var8, var1.field_41724, var1.method_37156());
       float var19 = class_9299.method_42795(var8, var1.field_41711, var1.field_41701);
-      field_46692.worldRenderer.field_20988.method_28115(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
+      mcInstance.worldRenderer.field_20988.method_28115(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
    }
 
    @class_9148
@@ -182,7 +182,7 @@ public class class_1370 extends Module {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      field_46692.gameRenderer.field_40623.method_26122();
+      mcInstance.gameRenderer.field_40623.method_26122();
    }
 
    private void method_6346() {
@@ -192,10 +192,10 @@ public class class_1370 extends Module {
       GL11.glEnable(2903);
       class_3542.method_16420(33986, 240.0F, 240.0F);
       class_9162.method_42212();
-      TextureManager var10000 = field_46692.method_8577();
-      field_46692.method_8577();
+      TextureManager var10000 = mcInstance.method_8577();
+      mcInstance.method_8577();
       var10000.method_35674(TextureManager.field_40364);
-      field_46692.gameRenderer.field_40623.method_26126();
+      mcInstance.gameRenderer.field_40623.method_26126();
       GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
       field_7448 = class_4719.field_22895;
    }

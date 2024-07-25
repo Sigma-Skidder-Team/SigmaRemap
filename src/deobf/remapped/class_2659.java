@@ -10,6 +10,6 @@ public class class_2659 implements Comparator<Entity> {
    }
 
    public int compare(Entity var1, Entity var2) {
-      return !(Module.field_46692.field_9632.method_37175(var1) > Module.field_46692.field_9632.method_37175(var2)) ? -1 : 1;
+      return !(Module.mcInstance.field_9632.method_37175(var1) > Module.mcInstance.field_9632.method_37175(var2)) ? -1 : 1;
    }
 }

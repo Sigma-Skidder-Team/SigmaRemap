@@ -14,7 +14,7 @@ public class class_1755 extends Module {
 
    @class_9148
    public void method_7848(class_1393 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null && var1.method_6449()) {
+      if (this.method_42015() && mcInstance.field_9632 != null && var1.method_6449()) {
          this.field_9020++;
          double var4 = -0.1;
          if (this.field_9020 >= 20) {

@@ -8,9 +8,9 @@ public class class_4835 extends Module {
    @class_9148
    @class_315
    public void method_22255(class_7767 var1) {
-      if (field_46692.field_9632.field_41726) {
+      if (mcInstance.field_9632.field_41726) {
          double var4 = 0.3399 + (double)class_8865.method_40770() * 0.06;
-         if (field_46692.field_9632.field_41697 % 3 == 0) {
+         if (mcInstance.field_9632.field_41697 % 3 == 0) {
             var4 = 0.679 + (double)class_8865.method_40770() * 0.12;
          }
 

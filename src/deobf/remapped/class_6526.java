@@ -19,16 +19,16 @@ public class class_6526 extends Module {
 
    @class_9148
    public void method_29713(class_1393 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null && var1.method_6449() && field_46692.method_8530() != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null && var1.method_6449() && mcInstance.method_8530() != null) {
          this.field_33210++;
          double var4 = -4.503599627370497E15;
          String var6 = this.method_42016("Mode");
          switch (var6) {
             case "Basic1":
-               var4 = field_46692.field_9632.method_37309() - 20.0;
+               var4 = mcInstance.field_9632.method_37309() - 20.0;
                break;
             case "Basic2":
-               var4 = field_46692.field_9632.method_37309() - 1000.0 + Math.random() * 1000.0;
+               var4 = mcInstance.field_9632.method_37309() - 1000.0 + Math.random() * 1000.0;
                break;
             case "MinInfinity":
                var4 = Double.NEGATIVE_INFINITY;
@@ -47,7 +47,7 @@ public class class_6526 extends Module {
             this.field_33210 = 0;
             boolean var8 = this.method_42007("OnGround");
             if (this.method_42007("More Packets")) {
-               field_46692.method_8614().method_4813(new class_9515(field_46692.field_9632.method_37302(), var4, field_46692.field_9632.method_37302(), var8));
+               mcInstance.method_8614().method_4813(new class_9515(mcInstance.field_9632.method_37302(), var4, mcInstance.field_9632.method_37302(), var8));
             } else {
                var1.method_6455(var4);
                var1.method_6451(var8);

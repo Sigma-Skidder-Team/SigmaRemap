@@ -15,7 +15,7 @@ public class class_5647 extends Module {
    @Override
    public void method_42020() {
       class_8865.method_40776(0.28F);
-      field_46692.field_9616.field_32603 = 1.0F;
+      mcInstance.field_9616.field_32603 = 1.0F;
    }
 
    @class_9148
@@ -28,7 +28,7 @@ public class class_5647 extends Module {
             var4 = 1.15F + (float)class_8865.method_40770() * 0.04F;
          }
 
-         if (field_46692.field_9577.field_45434.field_30024) {
+         if (mcInstance.field_9577.field_45434.field_30024) {
             var4 /= 1.3F;
          }
 

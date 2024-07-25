@@ -38,7 +38,7 @@ public class class_6799 extends Module {
    @class_9148
    public void method_31148(class_7767 var1) {
       if (this.method_42015()) {
-         if (!field_46692.field_9632.field_41726) {
+         if (!mcInstance.field_9632.field_41726) {
             if (this.field_35041 > 0.0 && this.field_35037 > 0) {
                this.field_35038++;
                if (this.field_35038 != 1) {

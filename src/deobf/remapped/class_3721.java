@@ -11,7 +11,7 @@ public class class_3721 extends class_367 {
    @class_9148
    public void method_17260(class_5596 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.method_37243() != null) {
+         if (mcInstance.field_9632.method_37243() != null) {
             float var4 = class_8865.method_40785();
             float var5 = this.method_42002("Speed");
             double var6 = Math.cos(Math.toRadians((double)var4)) * (double)var5;
@@ -21,9 +21,9 @@ public class class_3721 extends class_367 {
                var8 = 0.0;
             }
 
-            Entity var10 = field_46692.field_9632.method_37243();
-            var10.field_41701 = field_46692.field_9632.field_41701;
-            var10.method_37214(var6, !field_46692.field_9632.field_29654 ? (!this.field_18223 ? 0.0 : (double)(-var5)) : (double)var5, var8);
+            Entity var10 = mcInstance.field_9632.method_37243();
+            var10.field_41701 = mcInstance.field_9632.field_41701;
+            var10.method_37214(var6, !mcInstance.field_9632.field_29654 ? (!this.field_18223 ? 0.0 : (double)(-var5)) : (double)var5, var8);
          }
       }
    }
@@ -31,9 +31,9 @@ public class class_3721 extends class_367 {
    @class_9148
    private void method_17262(class_6435 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.method_37243() != null) {
-            if (!field_46692.field_9632.method_37243().field_41726) {
-               if (var1.method_29384() == field_46692.field_9577.field_45560.field_30027.field_17800) {
+         if (mcInstance.field_9632.method_37243() != null) {
+            if (!mcInstance.field_9632.method_37243().field_41726) {
+               if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = true;
                }
@@ -45,13 +45,13 @@ public class class_3721 extends class_367 {
    @class_9148
    private void method_17261(class_307 var1) {
       if (this.method_42015()) {
-         if (this.field_18223 && var1.method_1364() == field_46692.field_9577.field_45560.field_30027.field_17800) {
+         if (this.field_18223 && var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
             this.field_18223 = false;
          }
 
-         if (field_46692.field_9632.method_37243() != null) {
-            if (!field_46692.field_9632.method_37243().field_41726) {
-               if (var1.method_1364() == field_46692.field_9577.field_45560.field_30027.field_17800) {
+         if (mcInstance.field_9632.method_37243() != null) {
+            if (!mcInstance.field_9632.method_37243().field_41726) {
+               if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = false;
                }
@@ -62,18 +62,18 @@ public class class_3721 extends class_367 {
 
    @Override
    public void method_42006() {
-      if (!field_46692.field_9577.field_45560.method_27060()) {
-         if (!field_46692.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.field_9577.field_45560.method_27060()) {
+         if (!mcInstance.field_9577.field_45560.method_27060()) {
             this.field_18223 = false;
          }
       } else {
-         field_46692.field_9577.field_45560.field_30024 = false;
+         mcInstance.field_9577.field_45560.field_30024 = false;
          this.field_18223 = true;
       }
    }
 
    @Override
    public void method_42020() {
-      field_46692.field_9577.field_45560.field_30024 = this.field_18223;
+      mcInstance.field_9577.field_45560.field_30024 = this.field_18223;
    }
 }

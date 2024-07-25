@@ -36,7 +36,7 @@ public class class_9661 extends Module {
                var1.method_39324(var7);
                this.field_49204 = class_8865.method_40787()[0] - 90.0F;
                this.field_49203 = 1;
-               this.field_49206 = field_46692.field_9632.method_37309();
+               this.field_49206 = mcInstance.field_9632.method_37309();
                var4 = var1.method_39326();
             }
          }
@@ -45,7 +45,7 @@ public class class_9661 extends Module {
 
    @class_9148
    private void method_44592(class_1393 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null && var1.method_6449()) {
+      if (this.method_42015() && mcInstance.field_9632 != null && var1.method_6449()) {
          if (this.field_49203 != 1) {
             if (this.field_49203 == 3) {
                Module var4 = SigmaMainClass.method_3328().method_3298().method_847(class_9801.class);
@@ -63,7 +63,7 @@ public class class_9661 extends Module {
 
    @class_9148
    private void method_44589(class_7767 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (this.field_49203 == 1) {
             double var4 = class_8865.method_40786();
             if (this.field_49205 < 1.1) {
@@ -75,14 +75,14 @@ public class class_9661 extends Module {
             class_8865.method_40777(var1, 0.0);
             this.field_49203++;
          } else if (this.field_49203 == 2) {
-            var1.method_35235(this.field_49206 + this.field_49205 - field_46692.field_9632.method_37309());
+            var1.method_35235(this.field_49206 + this.field_49205 - mcInstance.field_9632.method_37309());
             double var10 = this.method_42016("Mode").equals("AAC") ? 0.301 : class_8865.method_40775();
             float var6 = this.field_49204 * (float) (Math.PI / 180.0);
             var1.method_35232((double)(-class_9299.method_42818(var6)) * var10);
             var1.method_35229((double)class_9299.method_42840(var6) * var10);
             this.field_49203++;
          } else if (this.field_49203 == 3) {
-            if (class_314.method_1413(field_46692.field_9632, 0.001F)) {
+            if (class_314.method_1413(mcInstance.field_9632, 0.001F)) {
                var1.method_35235(-0.078);
                String var7 = this.method_42016("Mode");
                switch (var7) {
@@ -110,11 +110,11 @@ public class class_9661 extends Module {
 
    @class_9148
    private void method_44590(class_7982 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!var1.method_36184()) {
-            field_46692.field_9632.field_41733 = 1.07F;
+            mcInstance.field_9632.field_41733 = 1.07F;
          } else {
-            field_46692.field_9632.field_41733 = 0.5F;
+            mcInstance.field_9632.field_41733 = 0.5F;
          }
       }
    }

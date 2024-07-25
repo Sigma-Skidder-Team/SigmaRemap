@@ -32,7 +32,7 @@ public class class_3620 extends Module {
 
       for (Module var6 : this.field_17661) {
          boolean var7 = this.method_42016("Type").equals(var6.field_46702);
-         if (this.method_42015() && field_46692.field_9632 != null) {
+         if (this.method_42015() && mcInstance.field_9632 != null) {
             var6.method_42023(var7);
             if (var7) {
                this.field_17664 = var6;

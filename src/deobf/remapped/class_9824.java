@@ -39,15 +39,15 @@ public class class_9824 extends Module {
                   float var15 = (float)Math.toRadians((double)(var4.method_37267() - 180.0F));
                   double var16 = var4.method_37245().field_7336 - (double)(class_9299.method_42818(var15) * var7);
                   double var17 = var4.method_37245().field_7334 + (double)(class_9299.method_42840(var15) * var7);
-                  var1.method_35232(var16 - field_46692.field_9632.method_37245().field_7336);
-                  var1.method_35229(var17 - field_46692.field_9632.method_37245().field_7334);
+                  var1.method_35232(var16 - mcInstance.field_9632.method_37245().field_7336);
+                  var1.method_35229(var17 - mcInstance.field_9632.method_37245().field_7334);
                   break;
                case "Random":
                   float var10 = (float)(Math.random() * 2.0 * Math.PI);
                   double var11 = var4.method_37245().field_7336 - (double)(class_9299.method_42818(var10) * var7);
                   double var13 = var4.method_37245().field_7334 + (double)(class_9299.method_42840(var10) * var7);
-                  var1.method_35232(var11 - field_46692.field_9632.method_37245().field_7336);
-                  var1.method_35229(var13 - field_46692.field_9632.method_37245().field_7334);
+                  var1.method_35232(var11 - mcInstance.field_9632.method_37245().field_7336);
+                  var1.method_35229(var13 - mcInstance.field_9632.method_37245().field_7334);
             }
          }
       }
@@ -55,27 +55,27 @@ public class class_9824 extends Module {
 
    public void method_45282(Entity var1, double var2, double var4, class_7767 var6) {
       double var9 = var2 / (var4 * Math.PI * 2.0) * 360.0 * (double)this.field_49775;
-      double var11 = field_46692.field_9632.method_37302() - var1.method_37302();
-      double var13 = field_46692.field_9632.method_37156() - var1.method_37156();
+      double var11 = mcInstance.field_9632.method_37302() - var1.method_37302();
+      double var13 = mcInstance.field_9632.method_37156() - var1.method_37156();
       double var15 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
       double var17 = (var15 + var9) * Math.PI / 180.0;
       double var19 = var1.method_37245().field_7336 - Math.sin(var17) * var4;
       double var21 = var1.method_37245().field_7334 + Math.cos(var17) * var4;
-      var11 = var19 - field_46692.field_9632.method_37302();
-      var13 = var21 - field_46692.field_9632.method_37156();
+      var11 = var19 - mcInstance.field_9632.method_37302();
+      var13 = var21 - mcInstance.field_9632.method_37156();
       double var23 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
       var17 = var23 * Math.PI / 180.0;
       var6.method_35232(-Math.sin(var17) * var2);
       var6.method_35229(Math.cos(var17) * var2);
-      class_1343 var25 = field_46692.field_9632.method_37287(var6.method_35233());
+      class_1343 var25 = mcInstance.field_9632.method_37287(var6.method_35233());
       if (var25.field_7336 != var6.method_35234() || var25.field_7334 != var6.method_35231()) {
          this.field_49775 *= -1;
          var9 *= -1.0;
          var17 = (var15 + var9) * Math.PI / 180.0;
          var19 = var1.method_37245().field_7336 - Math.sin(var17) * var4;
          var21 = var1.method_37245().field_7334 + Math.cos(var17) * var4;
-         var11 = var19 - field_46692.field_9632.method_37302();
-         var13 = var21 - field_46692.field_9632.method_37156();
+         var11 = var19 - mcInstance.field_9632.method_37302();
+         var13 = var21 - mcInstance.field_9632.method_37156();
          var23 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
          var17 = var23 * Math.PI / 180.0;
          var6.method_35232(-Math.sin(var17) * var2);
@@ -83,9 +83,9 @@ public class class_9824 extends Module {
       }
 
       class_1343 var26 = new class_1343(
-         field_46692.field_9632.method_37245().field_7336 + var6.method_35234(),
-         field_46692.field_9632.method_37245().field_7333 + var6.method_35236(),
-         field_46692.field_9632.method_37245().field_7334 + var6.method_35231()
+         mcInstance.field_9632.method_37245().field_7336 + var6.method_35234(),
+         mcInstance.field_9632.method_37245().field_7333 + var6.method_35236(),
+         mcInstance.field_9632.method_37245().field_7334 + var6.method_35231()
       );
       String var27 = this.method_42016("AntiVoid");
       if (!var27.equals("None")) {
@@ -97,14 +97,14 @@ public class class_9824 extends Module {
          }
       }
 
-      if (this.field_49776 && field_46692.field_9632.method_37175(var1) > this.method_42002("Radius")) {
+      if (this.field_49776 && mcInstance.field_9632.method_37175(var1) > this.method_42002("Radius")) {
          if (!var27.equals("Halt")) {
             class_8865.method_40777(var6, var2);
             if (var27.equals("Smart")) {
                var26 = new class_1343(
-                  field_46692.field_9632.method_37245().field_7336 + var6.method_35234(),
-                  field_46692.field_9632.method_37245().field_7333 + var6.method_35236(),
-                  field_46692.field_9632.method_37245().field_7334 + var6.method_35231()
+                  mcInstance.field_9632.method_37245().field_7336 + var6.method_35234(),
+                  mcInstance.field_9632.method_37245().field_7333 + var6.method_35236(),
+                  mcInstance.field_9632.method_37245().field_7334 + var6.method_35231()
                );
                if (this.method_45278(var26) && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
                   class_8865.method_40777(var6, 0.0);
@@ -117,16 +117,16 @@ public class class_9824 extends Module {
    }
 
    private boolean method_45278(class_1343 var1) {
-      if (!(field_46692.field_9632.method_37245().field_7333 < 1.0)) {
-         class_4092 var4 = new class_4092(var1.method_6214(-0.15, 0.0, -0.15), var1.method_6214(0.15, (double)field_46692.field_9632.method_37074(), 0.15));
-         var4 = var4.method_18928(0.0, -field_46692.field_9632.method_37245().field_7333, 0.0);
-         return field_46692.field_9601.method_6680(field_46692.field_9632, var4).count() == 0L;
+      if (!(mcInstance.field_9632.method_37245().field_7333 < 1.0)) {
+         class_4092 var4 = new class_4092(var1.method_6214(-0.15, 0.0, -0.15), var1.method_6214(0.15, (double) mcInstance.field_9632.method_37074(), 0.15));
+         var4 = var4.method_18928(0.0, -mcInstance.field_9632.method_37245().field_7333, 0.0);
+         return mcInstance.field_9601.method_6680(mcInstance.field_9632, var4).count() == 0L;
       } else {
          return true;
       }
    }
 
    private boolean method_45279(double var1, double var3, double var5) {
-      return field_46692.field_9601.method_6680(field_46692.field_9632, field_46692.field_9632.field_41712.method_18918(var1, var3, var5)).count() == 0L;
+      return mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(var1, var3, var5)).count() == 0L;
    }
 }

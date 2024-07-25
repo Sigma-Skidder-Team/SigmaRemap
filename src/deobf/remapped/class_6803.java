@@ -9,12 +9,12 @@ public class class_6803 extends Module {
    @class_9148
    private void method_31152(class_5596 var1) {
       if (this.method_42015()) {
-         field_46692.field_9616.field_32603 = this.method_42002("Timer");
+         mcInstance.field_9616.field_32603 = this.method_42002("Timer");
       }
    }
 
    @Override
    public void method_42020() {
-      field_46692.field_9616.field_32603 = 1.0F;
+      mcInstance.field_9616.field_32603 = 1.0F;
    }
 }

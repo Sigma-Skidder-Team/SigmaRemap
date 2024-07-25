@@ -14,10 +14,10 @@ public class class_1113 extends Module {
    @Override
    public void method_42006() {
       this.field_6382 = 0;
-      if (!field_46692.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.field_9577.field_45560.method_27060()) {
          this.field_6385 = false;
       } else {
-         field_46692.field_9577.field_45560.field_30024 = false;
+         mcInstance.field_9577.field_45560.field_30024 = false;
          this.field_6385 = true;
       }
 
@@ -27,7 +27,7 @@ public class class_1113 extends Module {
    @class_9148
    private void method_4929(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == field_46692.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_6385 = true;
          }
@@ -37,7 +37,7 @@ public class class_1113 extends Module {
    @class_9148
    private void method_4930(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == field_46692.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_6385 = false;
          }
@@ -47,7 +47,7 @@ public class class_1113 extends Module {
    @Override
    public void method_42020() {
       class_8865.method_40776(0.0);
-      if (field_46692.field_9632.method_37098().field_7333 > 0.0) {
+      if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
       }
    }
@@ -93,8 +93,8 @@ public class class_1113 extends Module {
             var1.method_6451(true);
             var1.method_6444(true);
             this.field_6384 = !this.field_6385
-               ? (!field_46692.field_9577.field_45450.method_27060() ? 1 : 3)
-               : (!field_46692.field_9577.field_45450.method_27060() ? 2 : 1);
+               ? (!mcInstance.field_9577.field_45450.method_27060() ? 1 : 3)
+               : (!mcInstance.field_9577.field_45450.method_27060() ? 2 : 1);
          }
       }
    }
@@ -109,17 +109,17 @@ public class class_1113 extends Module {
                this.field_6382 = -1;
             }
 
-            var5.field_3143 = field_46692.field_9632.field_41701;
-            var5.field_3140 = field_46692.field_9632.field_41755;
+            var5.field_3143 = mcInstance.field_9632.field_41701;
+            var5.field_3140 = mcInstance.field_9632.field_41755;
          }
       }
    }
 
    private double method_4927() {
-      if (!(field_46692.field_9632.method_37245().field_7333 < 1.0)) {
-         if (!field_46692.field_9632.field_41726) {
-            class_4092 var3 = field_46692.field_9632.field_41712.method_18928(0.0, -field_46692.field_9632.method_37245().field_7333, 0.0);
-            Iterator var4 = field_46692.field_9601.method_6680(field_46692.field_9632, var3).iterator();
+      if (!(mcInstance.field_9632.method_37245().field_7333 < 1.0)) {
+         if (!mcInstance.field_9632.field_41726) {
+            class_4092 var3 = mcInstance.field_9632.field_41712.method_18928(0.0, -mcInstance.field_9632.method_37245().field_7333, 0.0);
+            Iterator var4 = mcInstance.field_9601.method_6680(mcInstance.field_9632, var3).iterator();
             double var5 = -1.0;
             class_1331 var7 = null;
 
@@ -132,7 +132,7 @@ public class class_1113 extends Module {
             }
 
             if (var7 != null) {
-               class_6414 var9 = field_46692.field_9601.method_28262(var7).method_8360();
+               class_6414 var9 = mcInstance.field_9601.method_28262(var7).method_8360();
                if (var9 instanceof class_163) {
                   var5 = (double)((int)var5) - 1.0E-4;
                }
@@ -140,7 +140,7 @@ public class class_1113 extends Module {
 
             return var5;
          } else {
-            return field_46692.field_9632.method_37309();
+            return mcInstance.field_9632.method_37309();
          }
       } else {
          return -1.0;

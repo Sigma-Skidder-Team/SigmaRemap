@@ -23,9 +23,9 @@ public class class_6295 extends Module {
             var1.method_29715(true);
          }
 
-         if (field_46692.field_9632 != null && var1.method_557() instanceof class_4548) {
+         if (mcInstance.field_9632 != null && var1.method_557() instanceof class_4548) {
             class_4548 var5 = (class_4548)var1.method_557();
-            if (var5.method_21093() == field_46692.field_9632.method_37145()) {
+            if (var5.method_21093() == mcInstance.field_9632.method_37145()) {
                this.field_32171.add(var5);
                var1.method_29715(true);
                if (this.field_32172 == 0) {
@@ -67,14 +67,14 @@ public class class_6295 extends Module {
                var5.field_9687 = var5.field_9687 * this.method_42002("H-Multiplier");
                var5.field_9693 = var5.field_9693 * this.method_42002("H-Multiplier");
                var5.field_9692 = var5.field_9692 * this.method_42002("V-Multiplier");
-               field_46692.method_8614().method_1931(var5);
+               mcInstance.method_8614().method_1931(var5);
             }
          } else {
             class_4548 var6 = (class_4548)var4;
             var6.field_22171 = (int)((float)var6.field_22171 * this.method_42002("H-Multiplier"));
             var6.field_22167 = (int)((float)var6.field_22167 * this.method_42002("H-Multiplier"));
             var6.field_22168 = (int)((float)var6.field_22168 * this.method_42002("V-Multiplier"));
-            field_46692.method_8614().method_1936(var6);
+            mcInstance.method_8614().method_1936(var6);
          }
       }
 

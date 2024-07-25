@@ -55,7 +55,7 @@ public class class_9468 extends Module {
                      GL11.glEnable(3042);
                      GL11.glDisable(3553);
                      int var15 = -65536;
-                     if (!field_46692.field_9632.method_26420(var7)) {
+                     if (!mcInstance.field_9632.method_26420(var7)) {
                         var15 = -256;
                      }
 
@@ -197,14 +197,14 @@ public class class_9468 extends Module {
    }
 
    private void method_43745() {
-      double var3 = field_46692.gameRenderer.method_35949().method_41627().method_61();
-      double var5 = field_46692.gameRenderer.method_35949().method_41627().method_60();
-      double var7 = field_46692.gameRenderer.method_35949().method_41627().method_62();
+      double var3 = mcInstance.gameRenderer.method_35949().method_41627().method_61();
+      double var5 = mcInstance.gameRenderer.method_35949().method_41627().method_60();
+      double var7 = mcInstance.gameRenderer.method_35949().method_41627().method_62();
       field_48289.clear();
       field_48288.clear();
-      float var9 = field_46692.field_9616.field_32600;
+      float var9 = mcInstance.field_9616.field_32600;
 
-      for (Object var11 : field_46692.field_9601.method_736()) {
+      for (Object var11 : mcInstance.field_9601.method_736()) {
          if (var11 instanceof class_704 && !(var11 instanceof class_5989)) {
             class_704 var12 = (class_704)var11;
             double var13 = var12.field_41713 + (var12.method_37309() - var12.field_41713) * (double)var9 - var5;
@@ -235,7 +235,7 @@ public class class_9468 extends Module {
 
    private void method_43744(Entity var1) {
       float var4 = 1.0F;
-      float var5 = (float)((double)var4 * (field_46692.field_9577.field_45543 / field_46692.field_9577.field_45543));
+      float var5 = (float)((double)var4 * (mcInstance.field_9577.field_45543 / mcInstance.field_9577.field_45543));
       if (this.field_48287 == 0.0 || Double.isNaN(this.field_48287)) {
          this.field_48287 = (double)var5;
       }

@@ -18,13 +18,13 @@ public class class_5579 extends Module {
 
    @class_9148
    private void method_25345(class_139 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null) {
+      if (this.method_42015() && mcInstance.field_9632 != null) {
          class_6310 var4 = var1.method_557();
          if (var4 instanceof class_5182) {
             class_5182 var5 = (class_5182)var4;
             String var6 = var5.method_23768().getString();
             String var7 = var5.method_23768().getString();
-            String var8 = field_46692.field_9632.method_45509().getString().toLowerCase();
+            String var8 = mcInstance.field_9632.method_45509().getString().toLowerCase();
             if (this.field_28338.method_42007("AutoL")
                && (
                   var6.toLowerCase().contains("was slain by " + var8)
@@ -57,7 +57,7 @@ public class class_5579 extends Module {
             }
 
             if (this.field_28338.method_42007("AutoGG")
-               && var7.equalsIgnoreCase("§e" + field_46692.field_9632.method_45509().getString() + "§r§a won the game!§r")) {
+               && var7.equalsIgnoreCase("§e" + mcInstance.field_9632.method_45509().getString() + "§r§a won the game!§r")) {
                this.field_28338.method_33593();
             }
          }

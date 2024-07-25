@@ -9,7 +9,7 @@ public class class_9357 extends Module {
       this.method_42010(new class_8563("Custom time", "Set the world time", true));
       this.method_42010(new class_2748<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method_23029(var1 -> {
          if (this.method_42007("Custom time") && this.method_42015()) {
-            field_46692.field_9601.method_719(-((long)this.method_42002("Time")));
+            mcInstance.field_9601.method_719(-((long)this.method_42002("Time")));
          }
       }));
       this.method_42010(new class_8563("Disable rain", "Disable rain", true));
@@ -17,16 +17,16 @@ public class class_9357 extends Module {
 
    @Override
    public void method_42006() {
-      this.field_47767 = field_46692.field_9601.method_29578(1.0F);
-      if (field_46692.field_9601.method_29578(1.0F) != 1.0F) {
-         if (field_46692.field_9601.method_29578(1.0F) == 0.0F) {
+      this.field_47767 = mcInstance.field_9601.method_29578(1.0F);
+      if (mcInstance.field_9601.method_29578(1.0F) != 1.0F) {
+         if (mcInstance.field_9601.method_29578(1.0F) == 0.0F) {
             this.field_47768 = false;
          }
       } else {
          this.field_47768 = true;
       }
 
-      field_46692.field_9601.method_719((long)this.method_42002("Time"));
+      mcInstance.field_9601.method_719((long)this.method_42002("Time"));
    }
 
    @class_9148
@@ -50,8 +50,8 @@ public class class_9357 extends Module {
             this.field_47767 = (float)((double)this.field_47767 - 0.05);
          }
 
-         field_46692.field_9601.method_29582(this.field_47767);
-         field_46692.field_9601.method_29560(this.field_47767);
+         mcInstance.field_9601.method_29582(this.field_47767);
+         mcInstance.field_9601.method_29560(this.field_47767);
       }
    }
 

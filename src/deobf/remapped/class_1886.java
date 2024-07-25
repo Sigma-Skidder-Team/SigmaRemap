@@ -24,11 +24,11 @@ public class class_1886 extends Module {
             for (Pair var6 : var4.method_41363()) {
                if (var6.getSecond() != null
                   && ((class_6098)var6.getSecond()).method_27960() instanceof class_2235
-                  && field_46692.field_9601.method_29534(var4.method_41364()) instanceof class_704) {
-                  Entity var7 = field_46692.field_9601.method_29534(var4.method_41364());
+                  && mcInstance.field_9601.method_29534(var4.method_41364()) instanceof class_704) {
+                  Entity var7 = mcInstance.field_9601.method_29534(var4.method_41364());
                   if (!this.field_9548.toString().equalsIgnoreCase(var7.method_45509().getString())) {
                      if (this.method_42007("Chat Message")) {
-                        field_46692.field_9632.method_27307("Murderer is " + var7.method_45509() + ", detected by Jello client");
+                        mcInstance.field_9632.method_27307("Murderer is " + var7.method_45509() + ", detected by Jello client");
                      }
 
                      this.field_9548 = var7.method_45509().getUnformattedComponentText();

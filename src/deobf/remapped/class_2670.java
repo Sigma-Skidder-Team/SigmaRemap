@@ -8,7 +8,7 @@ public class class_2670 extends Module {
    @class_9148
    private void method_12031(class_5596 var1) {
       if (this.method_42015()) {
-         field_46692.field_9632.field_41772 = false;
+         mcInstance.field_9632.field_41772 = false;
       }
    }
 }

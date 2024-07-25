@@ -14,15 +14,15 @@ public class class_7031 extends Module {
 
    @Override
    public void method_42006() {
-      if (!field_46692.field_9632.field_41726) {
+      if (!mcInstance.field_9632.field_41726) {
          this.field_36207 = false;
       } else {
-         double var3 = field_46692.field_9632.method_37302();
-         double var5 = field_46692.field_9632.method_37309();
-         double var7 = field_46692.field_9632.method_37156();
+         double var3 = mcInstance.field_9632.method_37302();
+         double var5 = mcInstance.field_9632.method_37309();
+         double var7 = mcInstance.field_9632.method_37156();
          this.field_36207 = false;
-         field_46692.method_8614().method_4813(new class_9515(var3, var5 + 0.2, var7, false));
-         field_46692.method_8614().method_4813(new class_9515(var3, var5 + 0.1, var7, false));
+         mcInstance.method_8614().method_4813(new class_9515(var3, var5 + 0.2, var7, false));
+         mcInstance.method_8614().method_4813(new class_9515(var3, var5 + 0.1, var7, false));
          this.field_36207 = true;
          this.field_36204.method_14773();
          this.field_36204.method_14776();
@@ -42,7 +42,7 @@ public class class_7031 extends Module {
          int var3 = this.field_36206.size();
 
          for (int var4 = 0; var4 < var3; var4++) {
-            field_46692.method_8614().method_4813(this.field_36206.get(var4));
+            mcInstance.method_8614().method_4813(this.field_36206.get(var4));
          }
 
          SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Disabler canceled"));
@@ -53,8 +53,8 @@ public class class_7031 extends Module {
 
    @class_9148
    public void method_32068(class_1393 var1) {
-      if (field_46692.field_9632 != null) {
-         if (!this.field_36207 && field_46692.field_9632.field_41726) {
+      if (mcInstance.field_9632 != null) {
+         if (!this.field_36207 && mcInstance.field_9632.field_41726) {
             if (!this.method_42007("Instant")) {
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
             } else {
@@ -70,7 +70,7 @@ public class class_7031 extends Module {
 
    @class_9148
    public void method_32071(class_7767 var1) {
-      if (field_46692.field_9632 != null) {
+      if (mcInstance.field_9632 != null) {
          if (!this.method_42007("Instant") && this.field_36207) {
             var1.method_35232(0.0);
             var1.method_35235(0.0);
@@ -82,7 +82,7 @@ public class class_7031 extends Module {
             int var4 = this.field_36206.size();
 
             for (int var5 = 0; var5 < var4; var5++) {
-               field_46692.method_8614().method_4813(this.field_36206.get(var5));
+               mcInstance.method_8614().method_4813(this.field_36206.get(var5));
             }
 
             this.field_36206.clear();
@@ -96,7 +96,7 @@ public class class_7031 extends Module {
 
    @class_9148
    private void method_32070(class_2157 var1) {
-      if (field_46692.method_8614() != null) {
+      if (mcInstance.method_8614() != null) {
          if (this.field_36207) {
             if (var1.method_10047() instanceof class_2317
                || var1.method_10047() instanceof class_4609
@@ -115,7 +115,7 @@ public class class_7031 extends Module {
 
    @class_9148
    public void method_32069(class_139 var1) {
-      if (field_46692.field_9632 != null && this.field_36207) {
+      if (mcInstance.field_9632 != null && this.field_36207) {
          if (this.method_42015() || this.method_42007("Instant")) {
             if (var1.method_557() instanceof class_509) {
                this.method_42017().method_41999();
@@ -124,12 +124,12 @@ public class class_7031 extends Module {
                } else {
                   class_509 var4 = (class_509)var1.method_557();
                   var1.method_29715(true);
-                  field_46692.method_8614()
+                  mcInstance.method_8614()
                      .method_4813(new class_1514(var4.field_3139, var4.field_3144, var4.field_3141, var4.field_3143, var4.field_3140, false));
                   int var5 = this.field_36206.size();
 
                   for (int var6 = 0; var6 < var5; var6++) {
-                     field_46692.method_8614().method_4813(this.field_36206.get(var6));
+                     mcInstance.method_8614().method_4813(this.field_36206.get(var6));
                   }
 
                   this.field_36206.clear();

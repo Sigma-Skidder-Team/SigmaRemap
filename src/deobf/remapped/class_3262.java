@@ -26,7 +26,7 @@ public class class_3262 extends Module {
 
    @class_9148
    private void method_14880(class_139 var1) {
-      if (field_46692.field_9632 != null) {
+      if (mcInstance.field_9632 != null) {
          class_6310 var4 = var1.method_557();
          if (var4 instanceof class_5182) {
             class_5182 var5 = (class_5182)var4;
@@ -35,7 +35,7 @@ public class class_3262 extends Module {
                return;
             }
 
-            String var7 = field_46692.field_9632.method_45509().getString().toLowerCase();
+            String var7 = mcInstance.field_9632.method_45509().getString().toLowerCase();
             if (SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42015()) {
             }
 
@@ -61,9 +61,9 @@ public class class_3262 extends Module {
                   || var6.toLowerCase().contains("was thrown off a cliff by " + var7 + ".")
                   || var6.toLowerCase().contains("was struck down by " + var7 + ".")
                   || var6.toLowerCase().contains("be sent to davy jones' locker by " + var7 + ".")) {
-                  class_1097 var34 = field_46692.field_9601.method_29562();
+                  class_1097 var34 = mcInstance.field_9601.method_29562();
                   class_4399 var11 = null;
-                  class_3903 var12 = var34.method_4848(field_46692.field_9632.method_37206());
+                  class_3903 var12 = var34.method_4848(mcInstance.field_9632.method_37206());
                   if (var12 != null) {
                      int var13 = var12.method_23381().getColorIndex();
                      if (var13 >= 0) {

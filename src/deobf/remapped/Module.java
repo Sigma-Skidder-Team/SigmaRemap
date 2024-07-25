@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 public abstract class Module {
-   public static MinecraftClient field_46692 = MinecraftClient.getInstance();
+   public static MinecraftClient mcInstance = MinecraftClient.getInstance();
    public String field_46702;
    public String field_46701;
    public class_5664 field_46696;
@@ -155,7 +155,7 @@ public abstract class Module {
          }
       }
 
-      if (this.field_46700 && field_46692.field_9601 != null) {
+      if (this.field_46700 && mcInstance.field_9601 != null) {
          this.method_42006();
       }
 

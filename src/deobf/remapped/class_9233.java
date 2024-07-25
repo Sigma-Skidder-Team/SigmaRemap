@@ -20,7 +20,7 @@ public class class_9233 extends Module {
 
    @class_9148
    public void method_42589(class_7982 var1) {
-      if (this.method_42015() && field_46692.field_9632.field_41726) {
+      if (this.method_42015() && mcInstance.field_9632.field_41726) {
          var1.method_36186(true);
       }
    }
@@ -28,11 +28,11 @@ public class class_9233 extends Module {
    @class_9148
    public void method_42588(class_7767 var1) {
       if (this.method_42015()) {
-         if (this.field_47194 && field_46692.field_9632.method_37309() + 0.42 < this.field_47192) {
+         if (this.field_47194 && mcInstance.field_9632.method_37309() + 0.42 < this.field_47192) {
             this.method_42017().method_41999();
          }
 
-         if (!field_46692.field_9632.field_41726 && this.field_47194) {
+         if (!mcInstance.field_9632.field_41726 && this.field_47194) {
             this.field_47196 = Math.max(this.field_47196, 0.499);
             class_8865.method_40777(var1, this.field_47196);
             this.field_47196 -= 0.007;
@@ -55,7 +55,7 @@ public class class_9233 extends Module {
    @class_9148
    public void method_42590(class_4868 var1) {
       if (this.method_42015()) {
-         if (field_46692.field_9632.field_41726) {
+         if (mcInstance.field_9632.field_41726) {
             if (this.field_47194) {
                this.field_47194 = !this.field_47194;
                class_8865.method_40776(0.0);
@@ -66,29 +66,29 @@ public class class_9233 extends Module {
                return;
             }
 
-            double var4 = field_46692.field_9632.method_37302();
-            double var6 = field_46692.field_9632.method_37156();
-            double var8 = field_46692.field_9632.method_37309();
-            double var10 = (double)field_46692.field_9632.field_30533.field_45287;
-            double var12 = (double)field_46692.field_9632.field_30533.field_45282;
-            float var14 = field_46692.field_9632.field_41701;
+            double var4 = mcInstance.field_9632.method_37302();
+            double var6 = mcInstance.field_9632.method_37156();
+            double var8 = mcInstance.field_9632.method_37309();
+            double var10 = (double) mcInstance.field_9632.field_30533.field_45287;
+            double var12 = (double) mcInstance.field_9632.field_30533.field_45282;
+            float var14 = mcInstance.field_9632.field_41701;
             double var15 = 0.1;
             double var17 = var4
                + (var10 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F))) + var12 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F)))) * var15;
             double var19 = var6
                + (var10 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F))) - var12 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F)))) * var15;
             class_4092 var21 = new class_4092(var17 - 0.3, var8 - 1.0, var19 - 0.3, var17 + 0.3, var8 + 2.0, var19 + 0.3);
-            if (field_46692.field_9601.method_6680(field_46692.field_9632, var21).count() == 0L) {
+            if (mcInstance.field_9601.method_6680(mcInstance.field_9632, var21).count() == 0L) {
                double var22 = this.method_42591(var21);
                if (var22 != 11.0) {
-                  double var24 = field_46692.field_9632.method_37309();
+                  double var24 = mcInstance.field_9632.method_37309();
                   var19 = 312.7;
                   class_9515 var26 = new class_9515(var17, var24 - var22, var19, true);
                   class_9515 var27 = new class_9515(var17, var24, var19, true);
-                  field_46692.method_8614().method_4813(var27);
-                  field_46692.method_8614().method_4813(var26);
+                  mcInstance.method_8614().method_4813(var27);
+                  mcInstance.method_8614().method_4813(var26);
                   this.field_47192 = var24 + 0.42;
-                  field_46692.field_9632.method_37256(var17, var24, var19);
+                  mcInstance.field_9632.method_37256(var17, var24, var19);
                   this.field_47195 = (double)this.method_42002("Motion");
                   this.field_47196 = 0.81;
                }
@@ -109,13 +109,13 @@ public class class_9233 extends Module {
 
    @class_9148
    public void method_42587(class_1711 var1) {
-      if (this.method_42015() && this.field_47194 && !(field_46692.field_9632.method_37309() < this.field_47192) && this.method_42007("Fake fly")) {
-         field_46692.field_9632.field_41736.field_7333 = this.field_47192;
-         field_46692.field_9632.field_41713 = this.field_47192;
-         field_46692.field_9632.field_3864 = this.field_47192;
-         field_46692.field_9632.field_41698 = this.field_47192;
+      if (this.method_42015() && this.field_47194 && !(mcInstance.field_9632.method_37309() < this.field_47192) && this.method_42007("Fake fly")) {
+         mcInstance.field_9632.field_41736.field_7333 = this.field_47192;
+         mcInstance.field_9632.field_41713 = this.field_47192;
+         mcInstance.field_9632.field_3864 = this.field_47192;
+         mcInstance.field_9632.field_41698 = this.field_47192;
          if (class_8865.method_40772()) {
-            field_46692.field_9632.field_3859 = 0.099999994F;
+            mcInstance.field_9632.field_3859 = 0.099999994F;
          }
       }
    }
@@ -126,12 +126,12 @@ public class class_9233 extends Module {
 
       do {
          var6 = var1.method_18918(0.0, -var4, 0.0);
-         if (field_46692.field_9601.method_6680(field_46692.field_9632, var6).count() == 0L) {
+         if (mcInstance.field_9601.method_6680(mcInstance.field_9632, var6).count() == 0L) {
             return var4;
          }
 
          var4 -= 0.5;
-      } while (field_46692.field_9601.method_6680(field_46692.field_9632, var6).count() != 0L && var4 > 3.0);
+      } while (mcInstance.field_9601.method_6680(mcInstance.field_9632, var6).count() != 0L && var4 > 3.0);
 
       return 11.0;
    }

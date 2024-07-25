@@ -35,9 +35,9 @@ public class class_6908 extends class_3620 {
 
    @class_9148
    public void method_31654(class_139 var1) {
-      if (var1.method_557() instanceof class_509 && field_46692.field_9632 != null) {
+      if (var1.method_557() instanceof class_509 && mcInstance.field_9632 != null) {
          field_35509 = 0;
-         if (this.method_42007("Lag back checker") && this.method_42015() && field_46692.field_9632.field_41697 > 2) {
+         if (this.method_42007("Lag back checker") && this.method_42015() && mcInstance.field_9632.field_41697 > 2) {
             SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Speed", "Disabled speed due to lagback."));
             this.method_41999();
          }

@@ -7,8 +7,8 @@ public class class_8536 extends Module {
 
    @class_9148
    public void method_39308(class_5596 var1) {
-      if (this.method_42015() && field_46692.method_8530() != null) {
-         field_46692.method_8614().method_4813(new class_758(1.0F, 1.0F, false, false));
+      if (this.method_42015() && mcInstance.method_8530() != null) {
+         mcInstance.method_8614().method_4813(new class_758(1.0F, 1.0F, false, false));
       }
    }
 }
