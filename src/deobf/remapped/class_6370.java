@@ -23,8 +23,8 @@ public class class_6370 extends Module {
       this.field_32562 = class_7494.method_34079(mcInstance.field_9632.field_41701, mcInstance.field_9632.field_41755, 200.0F);
       if (this.field_32558 != null && this.field_32566 != null) {
          SigmaMainClass.getInstance()
-            .method_3335()
-            .method_27841(new class_8235("AutoMiner", "Computing... (" + this.field_32566.field_49718 + ")", class_2209.field_10993));
+            .getNotificationManager()
+            .pushNotification(new Notification("AutoMiner", "Computing... (" + this.field_32566.field_49718 + ")", class_2209.field_10993));
       }
    }
 

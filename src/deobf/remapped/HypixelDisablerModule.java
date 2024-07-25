@@ -27,9 +27,9 @@ public class HypixelDisablerModule extends Module {
          this.field_36204.method_14773();
          this.field_36204.method_14776();
          if (!this.getBooleanValueByName("Instant")) {
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Wait 5s..."));
          } else {
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Hypixel disabler", "Move where you want"));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Move where you want"));
          }
       }
    }
@@ -45,7 +45,7 @@ public class HypixelDisablerModule extends Module {
             mcInstance.method_8614().method_4813(this.field_36206.get(var4));
          }
 
-         SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Hypixel disabler", "Disabler canceled"));
+         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Disabler canceled"));
       }
 
       this.field_36206.clear();
@@ -56,9 +56,9 @@ public class HypixelDisablerModule extends Module {
       if (mcInstance.field_9632 != null) {
          if (!this.field_36207 && mcInstance.field_9632.field_41726) {
             if (!this.getBooleanValueByName("Instant")) {
-               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Wait 5s..."));
             } else {
-               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Hypixel disabler", "Move where you want"));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Move where you want"));
             }
 
             this.field_36204.method_14773();
@@ -89,7 +89,7 @@ public class HypixelDisablerModule extends Module {
             this.field_36204.method_14773();
             this.field_36204.method_14774();
             this.method_42017().method_41999();
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Hypixel disabler", "Disabler failed"));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Disabler failed"));
          }
       }
    }
@@ -120,7 +120,7 @@ public class HypixelDisablerModule extends Module {
             if (var1.method_557() instanceof class_509) {
                this.method_42017().method_41999();
                if (!this.getBooleanValueByName("Instant")) {
-                  SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Hypixel disabler", "You can do what you want for 5s"));
+                  SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "You can do what you want for 5s"));
                } else {
                   class_509 var4 = (class_509)var1.method_557();
                   var1.method_29715(true);
@@ -133,7 +133,7 @@ public class HypixelDisablerModule extends Module {
                   }
 
                   this.field_36206.clear();
-                  SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Hypixel disabler", "Successfully sent packets"));
+                  SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Successfully sent packets"));
                }
 
                this.field_36207 = false;

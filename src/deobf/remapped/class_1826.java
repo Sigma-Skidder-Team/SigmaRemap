@@ -38,7 +38,7 @@ public class class_1826 extends Module {
          if (!mcInstance.field_9632.field_41726 && !class_314.method_1413(mcInstance.field_9632, 0.001F)) {
             if ((float)this.field_9265 >= this.getFloatValueByName("Flags") && this.field_9264 == 0) {
                this.field_9264 = 60;
-               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Unstuck", "Trying to unstuck you.."));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Unstuck", "Trying to unstuck you.."));
             }
 
             if (this.field_9264 > 0) {

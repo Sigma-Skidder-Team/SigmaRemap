@@ -256,7 +256,7 @@ public class class_2026 {
 
             this.field_10292 = class_6568.method_30015("picture", this.field_10274);
             this.field_10271 = class_6568.method_30015("picture", this.field_10273);
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Now Playing", this.field_10291, 7000, this.field_10271));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Now Playing", this.field_10291, 7000, this.field_10271));
             this.field_10290 = false;
          }
       } catch (IOException var5) {
@@ -345,7 +345,7 @@ public class class_2026 {
                         this.field_10283 = (long)var11.method_23440();
                         if (this.field_10283 > 1300L) {
                            var9.close();
-                           SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Now Playing", "Music is too long."));
+                           SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Now Playing", "Music is too long."));
                         }
 
                         class_8405 var15 = new class_8405(var13.method_8200());
@@ -616,7 +616,7 @@ public class class_2026 {
          if (var9.getMessage() != null
             && var9.getMessage().contains("ERROR: This video contains content from")
             && var9.getMessage().contains("who has blocked it in your country on copyright grounds")) {
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Now Playing", "Not available in your region."));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Now Playing", "Not available in your region."));
          } else {
             var9.printStackTrace();
             this.method_9504();

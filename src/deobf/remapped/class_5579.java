@@ -45,9 +45,9 @@ public class class_5579 extends Module {
                   if (var11 != null && var11.getAction() == ClickEvent$class_47.RUN_COMMAND && var11.getValue().contains("playagain")) {
                      this.field_28338.method_33594(new class_1508(var11.getValue(), (long)this.field_28338.getFloatValueByName("Auto Join delay") * 1000L));
                      SigmaMainClass.getInstance()
-                        .method_3335()
-                        .method_27841(
-                           new class_8235(
+                        .getNotificationManager()
+                        .pushNotification(
+                           new Notification(
                               "Auto Join", "Joining a new game in 3 seconds.", (int)(this.field_28338.getFloatValueByName("Auto Join delay") - 1.0F) * 1000
                            )
                         );

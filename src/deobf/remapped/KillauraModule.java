@@ -116,7 +116,7 @@ public class KillauraModule extends Module {
    @EventListen
    public void method_11541(class_717 var1) {
       if (this.method_42015() && this.getBooleanValueByName("Disable on death")) {
-         SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to respawn"));
+         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Aura", "Aura disabled due to respawn"));
          this.method_41999();
       }
    }
@@ -131,7 +131,7 @@ public class KillauraModule extends Module {
          if (this.getBooleanValueByName("Disable on death")) {
             if (!mcInstance.field_9632.method_37330()) {
                this.method_41999();
-               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to death"));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Aura", "Aura disabled due to death"));
             }
          }
       }

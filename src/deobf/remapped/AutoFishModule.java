@@ -21,7 +21,7 @@ public class AutoFishModule extends Module {
 
                   mcInstance.method_8614().method_4813(new class_1022(class_2584.field_12791));
                   mcInstance.method_8614().method_4813(new class_1022(class_2584.field_12791));
-                  SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("AutoFish", "We catched something!", class_2209.field_11004));
+                  SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("AutoFish", "We catched something!", class_2209.field_11004));
                }
             }
          }

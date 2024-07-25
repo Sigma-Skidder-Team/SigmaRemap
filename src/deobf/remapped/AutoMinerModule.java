@@ -123,7 +123,7 @@ public class AutoMinerModule extends Module {
 
             if (!var14 && mcInstance.field_9632.field_41726 && !SigmaMainClass.getInstance().method_3301().method_27149() && this.field_25750 == null) {
                List var15 = this.method_22863();
-               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("AutoMiner", "Computing...", class_2209.field_10993));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("AutoMiner", "Computing...", class_2209.field_10993));
                this.field_25750 = new Thread(
                   () -> {
                      boolean var4x = false;
@@ -144,9 +144,9 @@ public class AutoMinerModule extends Module {
                            if (var13x.size() > 1) {
                               SigmaMainClass.getInstance().method_3301().method_27153(var13x);
                               SigmaMainClass.getInstance()
-                                 .method_3335()
-                                 .method_27841(
-                                    new class_8235(
+                                 .getNotificationManager()
+                                 .pushNotification(
+                                    new Notification(
                                        "AutoMiner",
                                        "Solved in " + var13x.size() + " steps! (" + this.field_25755.field_49718 + ":" + var11x + ")",
                                        class_2209.field_10993
@@ -163,8 +163,8 @@ public class AutoMinerModule extends Module {
                      try {
                         if (!var4x) {
                            SigmaMainClass.getInstance()
-                              .method_3335()
-                              .method_27841(new class_8235("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", class_2209.field_10993));
+                              .getNotificationManager()
+                              .pushNotification(new Notification("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", class_2209.field_10993));
                            Thread.sleep(1000L);
                         }
                      } catch (InterruptedException var14x) {
@@ -183,8 +183,8 @@ public class AutoMinerModule extends Module {
                }
 
                SigmaMainClass.getInstance()
-                  .method_3335()
-                  .method_27841(new class_8235("AutoMiner", "Computing... (" + this.field_25755.field_49718 + ")", class_2209.field_10993));
+                  .getNotificationManager()
+                  .pushNotification(new Notification("AutoMiner", "Computing... (" + this.field_25755.field_49718 + ")", class_2209.field_10993));
             }
          }
       }
@@ -237,7 +237,7 @@ public class AutoMinerModule extends Module {
       this.field_25751.clear();
       this.field_25748.clear();
       SigmaMainClass.getInstance().method_3301().method_27144();
-      SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("AutoMiner", "Scanning Terrain..."));
+      SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("AutoMiner", "Scanning Terrain..."));
    }
 
    @Override
