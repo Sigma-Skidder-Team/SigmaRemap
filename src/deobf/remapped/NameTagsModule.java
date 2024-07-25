@@ -376,7 +376,7 @@ public class NameTagsModule extends Module {
                -25.0F,
                14.0F,
                (float)(var12.method_15654() + 27),
-               class_2209.field_11018,
+               NotificationIcons.field_11018,
                class_314.method_1444(class_1255.field_6918.field_6917, 0.6F)
             );
             class_73.method_128((float)(-var21 - 10 - 31), -25.0F, (float)(var21 * 2 + 20 + 31 + 27), (float)(var12.method_15654() + 27), 20.0F, 0.5F);
@@ -425,10 +425,10 @@ public class NameTagsModule extends Module {
    }
 
    static {
-      field_6698.put("Tomygaims", class_2209.field_11021);
-      field_6698.put("Andro24", class_2209.field_11001);
-      field_6698.put("Gretorm", class_2209.field_11053);
-      field_6698.put("Flyinqq", class_2209.field_11007);
-      field_6698.put("cxbot", class_2209.field_10989);
+      field_6698.put("Tomygaims", NotificationIcons.field_11021);
+      field_6698.put("Andro24", NotificationIcons.field_11001);
+      field_6698.put("Gretorm", NotificationIcons.field_11053);
+      field_6698.put("Flyinqq", NotificationIcons.field_11007);
+      field_6698.put("cxbot", NotificationIcons.field_10989);
    }
 }

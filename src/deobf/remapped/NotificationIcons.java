@@ -9,7 +9,7 @@ import java.io.InputStream;
 import javax.imageio.ImageIO;
 import org.apache.commons.codec.digest.DigestUtils;
 
-public class class_2209 {
+public class NotificationIcons {
    public static class_8343 field_11015;
    public static class_8343 field_11029;
    public static class_8343 field_11012;

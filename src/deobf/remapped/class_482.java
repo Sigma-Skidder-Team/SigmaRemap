@@ -68,7 +68,7 @@ public class class_482 extends class_446 {
                      (float)var5 + (float)(26 * var6) / 100.0F,
                      18.0F * this.field_2986.method_11123() * (float)var6 / 100.0F,
                      (float)(47 * var6) / 100.0F,
-                     class_2209.field_11022,
+                     NotificationIcons.field_11022,
                      !this.method_32185() ? class_1255.field_6918.field_6917 : this.field_2996
                   );
                }
@@ -92,7 +92,7 @@ public class class_482 extends class_446 {
          (float)this.field_36261,
          100.0F,
          100.0F,
-         class_2209.field_11019,
+         NotificationIcons.field_11019,
          !this.method_32185() ? class_1255.field_6918.field_6917 : this.field_2996
       );
    }
@@ -152,7 +152,7 @@ public class class_482 extends class_446 {
          (float)(this.field_36261 + 42),
          17.0F,
          17.0F,
-         class_2209.field_11052,
+         NotificationIcons.field_11052,
          class_314.method_1444(class_1255.field_6918.field_6917, var5 * var1)
       );
       class_73.method_99(
@@ -160,7 +160,7 @@ public class class_482 extends class_446 {
          (float)(this.field_36261 + 45),
          17.0F,
          13.0F,
-         class_2209.field_11008,
+         NotificationIcons.field_11008,
          class_314.method_1444(class_1255.field_6918.field_6917, this.field_2985 * var1)
       );
    }

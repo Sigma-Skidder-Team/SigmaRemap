@@ -425,7 +425,7 @@ public class BlockFlyModule extends SecondModule {
       GL11.glTranslatef((float)var1, (float)var2, 0.0F);
       GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var1), (float)(-var2), 0.0F);
-      class_73.method_99((float)var1, (float)var2, 9.0F, 23.0F, class_2209.field_11022, class_314.method_1444(-15461356, 0.8F * var3));
+      class_73.method_99((float)var1, (float)var2, 9.0F, 23.0F, NotificationIcons.field_11022, class_314.method_1444(-15461356, 0.8F * var3));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
    }

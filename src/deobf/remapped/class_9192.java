@@ -104,7 +104,7 @@ public class class_9192 extends class_446 {
                (float)this.field_36261 + (float)(26 * this.field_36257) / 100.0F,
                18.0F * this.field_47022 * (float)this.field_36257 / 100.0F,
                (float)(47 * this.field_36257) / 100.0F,
-               class_2209.field_11022,
+               NotificationIcons.field_11022,
                !this.method_32185() ? class_1255.field_6918.field_6917 : this.field_47019
             );
          }
@@ -123,7 +123,7 @@ public class class_9192 extends class_446 {
          (float)this.field_36261,
          100.0F,
          100.0F,
-         class_2209.field_11019,
+         NotificationIcons.field_11019,
          !this.method_32185() ? class_1255.field_6918.field_6917 : this.field_47019
       );
    }

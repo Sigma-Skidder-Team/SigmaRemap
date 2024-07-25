@@ -58,11 +58,11 @@ public class class_1370 extends Module {
                      -var3x.method_37074() * 5.5F,
                      var3x.method_37086() * 44.0F,
                      var3x.method_37074() * 21.0F,
-                     class_2209.field_11045,
+                     NotificationIcons.field_11045,
                      var3,
                      false
                   );
-                  class_2209.field_11044.method_38419();
+                  NotificationIcons.field_11044.method_38419();
                   GL11.glPopMatrix();
                }
             }

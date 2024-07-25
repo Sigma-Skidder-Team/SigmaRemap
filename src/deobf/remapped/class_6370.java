@@ -24,7 +24,7 @@ public class class_6370 extends Module {
       if (this.field_32558 != null && this.field_32566 != null) {
          SigmaMainClass.getInstance()
             .getNotificationManager()
-            .pushNotification(new Notification("AutoMiner", "Computing... (" + this.field_32566.field_49718 + ")", class_2209.field_10993));
+            .pushNotification(new Notification("AutoMiner", "Computing... (" + this.field_32566.field_49718 + ")", NotificationIcons.field_10993));
       }
    }
 

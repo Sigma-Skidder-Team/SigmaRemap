@@ -225,7 +225,7 @@ public class ShulkerInfoModule extends Module {
                (float)(var16 + 7),
                (float)(40 + var19),
                40.0F,
-               class_2209.field_11045,
+               NotificationIcons.field_11045,
                class_314.method_1444(class_1255.field_6918.field_6917, 0.7F),
                false
             );

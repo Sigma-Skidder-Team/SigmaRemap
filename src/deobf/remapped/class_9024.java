@@ -253,10 +253,10 @@ public class class_9024 extends Module {
          var10 + this.field_46163 + this.field_46159 <= var3 ? (float)(var10 + var2 + this.field_46159 - 10) : (float)(var2 + var3 - 10),
          (float)var4,
          14.0F,
-         class_2209.field_10997,
+         NotificationIcons.field_10997,
          this.field_46186
       );
-      class_73.method_99((float)var1, var10 >= 0 ? (float)(var10 + var2) : (float)var2, (float)var4, 14.0F, class_2209.field_10992, this.field_46186);
+      class_73.method_99((float)var1, var10 >= 0 ? (float)(var10 + var2) : (float)var2, (float)var4, 14.0F, NotificationIcons.field_10992, this.field_46186);
       class_73.method_149(
          var1,
          var10 >= 0 ? var10 + var2 : var2,

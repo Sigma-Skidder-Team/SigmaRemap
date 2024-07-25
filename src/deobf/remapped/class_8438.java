@@ -159,7 +159,7 @@ public class class_8438 extends Module {
                   (float)(var7 - 20),
                   (float)var8.method_18547(var22) * 3.0F,
                   (float)(var8.method_15654() + var21 + 40),
-                  class_2209.field_11045,
+                  NotificationIcons.field_11045,
                   class_314.method_1444(class_1255.field_6918.field_6917, 0.36F * var15 * var19)
                );
                class_73.method_87(

@@ -32,7 +32,7 @@ public class class_5320 {
 
    public static class_3384 method_24271(String var0, int var1, float var2) {
       try {
-         InputStream var5 = class_2209.method_10226(var0);
+         InputStream var5 = NotificationIcons.method_10226(var0);
          Font var6 = Font.createFont(0, var5);
          var6 = var6.deriveFont(var1, var2);
          return new class_3384(var6, (int)var2);
@@ -44,7 +44,7 @@ public class class_5320 {
 
    public static class_3384 method_24270(String var0, int var1, float var2) {
       try {
-         InputStream var5 = class_2209.method_10226(var0);
+         InputStream var5 = NotificationIcons.method_10226(var0);
          Font var6 = Font.createFont(0, var5);
          var6 = var6.deriveFont(var1, var2);
          return new class_3384(var6, true);

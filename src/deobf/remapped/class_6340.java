@@ -30,9 +30,9 @@ public class class_6340 extends class_7621 {
    }
 
    public static void method_29017() {
-      field_32372 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/logo.png");
-      field_32369 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/loading/back.png");
-      field_32371 = class_2209.method_10229("com/mentalfrostbyte/gui/resources/loading/back.png", 0.25F, 25);
+      field_32372 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/logo.png");
+      field_32369 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/loading/back.png");
+      field_32371 = NotificationIcons.method_10229("com/mentalfrostbyte/gui/resources/loading/back.png", 0.25F, 25);
    }
 
    @Override

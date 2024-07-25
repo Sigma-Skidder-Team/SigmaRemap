@@ -77,8 +77,8 @@ public class class_8737 extends class_446 {
             class_314.method_1444(class_1255.field_6920.field_6917, 1.0F * var1)
          );
       } else {
-         class_73.method_97((float)var5, (float)this.field_36261, (float)var6, (float)var4, class_2209.field_11025, var1);
-         class_73.method_97((float)var5, (float)(this.field_36261 + this.field_36257 - var4), (float)var6, (float)var4, class_2209.field_11047, var1);
+         class_73.method_97((float)var5, (float)this.field_36261, (float)var6, (float)var4, NotificationIcons.field_11025, var1);
+         class_73.method_97((float)var5, (float)(this.field_36261 + this.field_36257 - var4), (float)var6, (float)var4, NotificationIcons.field_11047, var1);
          class_73.method_94(
             (float)var5,
             (float)(this.field_36261 + var4),

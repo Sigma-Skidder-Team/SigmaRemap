@@ -15,7 +15,7 @@ public class class_8911 extends class_446 {
             (float)(this.field_36261 + 30),
             187.0F,
             36.0F,
-            class_2209.field_11011,
+            NotificationIcons.field_11011,
             class_314.method_1444(class_1255.field_6918.field_6917, var1)
          );
       }

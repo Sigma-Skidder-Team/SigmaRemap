@@ -60,29 +60,29 @@ public class class_9898 extends class_4098 {
 
    public static void method_45592() {
       if (field_50193 == null) {
-         field_50193 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors.png");
-         field_50194 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors2.png");
-         field_50206 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat.png");
-         field_50196 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat2.png");
-         field_50205 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/downarrow.png");
-         field_50208 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear.png");
-         field_50189 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear2.png");
-         field_50188 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement.png");
-         field_50182 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement2.png");
-         field_50183 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo.png");
-         field_50180 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo2.png");
-         field_50197 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/others.png");
-         field_50187 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/others2.png");
-         field_50177 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/player.png");
-         field_50201 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/player2.png");
-         field_50181 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow.png");
-         field_50192 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow2.png");
-         field_50203 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals.png");
-         field_50190 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals2.png");
-         field_50195 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark.png");
-         field_50185 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark2.png");
-         field_50199 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/world.png");
-         field_50207 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/world2.png");
+         field_50193 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors.png");
+         field_50194 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors2.png");
+         field_50206 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat.png");
+         field_50196 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat2.png");
+         field_50205 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/downarrow.png");
+         field_50208 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear.png");
+         field_50189 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear2.png");
+         field_50188 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement.png");
+         field_50182 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement2.png");
+         field_50183 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo.png");
+         field_50180 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo2.png");
+         field_50197 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/others.png");
+         field_50187 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/others2.png");
+         field_50177 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/player.png");
+         field_50201 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/player2.png");
+         field_50181 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow.png");
+         field_50192 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow2.png");
+         field_50203 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals.png");
+         field_50190 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals2.png");
+         field_50195 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark.png");
+         field_50185 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark2.png");
+         field_50199 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/world.png");
+         field_50207 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/world2.png");
       }
    }
 

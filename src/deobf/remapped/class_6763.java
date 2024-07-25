@@ -189,7 +189,7 @@ public class class_6763 {
    }
 
    public void method_30983() {
-      class_2209.field_11030.method_38419();
+      NotificationIcons.field_11030.method_38419();
       if (MinecraftClient.getInstance().field_9601 != null) {
          GL11.glDisable(2896);
          int var3 = 0;
@@ -213,7 +213,7 @@ public class class_6763 {
             class_73.method_87(class_3054.field_15002, 72.0F, 1.0F, "5.0.0", class_314.method_1444(var8, Math.min(1.0F, var7 * 1.4F)));
          } else {
             GL11.glAlphaFunc(519, 0.0F);
-            class_73.method_96((float)var3, (float)var4, 170.0F, 104.0F, !(field_34898 > 1.0F) ? class_2209.field_10995 : class_2209.field_11024);
+            class_73.method_96((float)var3, (float)var4, 170.0F, 104.0F, !(field_34898 > 1.0F) ? NotificationIcons.field_10995 : NotificationIcons.field_11024);
          }
 
          SigmaMainClass.getInstance().method_3302().method_7914(new class_3278());

@@ -130,10 +130,10 @@ public class class_4969 extends Module {
                      float var11 = (float)this.field_25740 * var7;
                      float var12 = (float)this.field_25733 * var7;
                      class_73.method_149(this.field_25731, this.field_25732, this.field_25731 + this.field_25740, this.field_25732 + this.field_25733);
-                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, class_2209.field_11044);
+                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, NotificationIcons.field_11044);
                      float var13 = -var11 / 2.0F + (float)(this.field_25740 / 2) + var9;
                      float var14 = -var12 / 2.0F + (float)(this.field_25733 / 2) + var10;
-                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, class_2209.field_11030);
+                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, NotificationIcons.field_11030);
                      class_73.method_138(
                         var13,
                         var14,

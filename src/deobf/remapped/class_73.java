@@ -974,22 +974,22 @@ public class class_73 {
    public static void method_128(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
       int var8 = class_314.method_1444(class_1255.field_6918.field_6917, var5);
-      method_99(var0 - var4, var1 - var4, var4, var4, class_2209.field_11057, var8);
-      method_99(var0 + var2, var1 - var4, var4, var4, class_2209.field_11051, var8);
-      method_99(var0 - var4, var1 + var3, var4, var4, class_2209.field_11013, var8);
-      method_99(var0 + var2, var1 + var3, var4, var4, class_2209.field_11038, var8);
-      method_102(var0 - var4, var1, var4, var3, class_2209.field_11010, var8, false);
-      method_102(var0 + var2, var1, var4, var3, class_2209.field_11018, var8, false);
-      method_102(var0, var1 - var4, var2, var4, class_2209.field_10997, var8, false);
-      method_102(var0, var1 + var3, var2, var4, class_2209.field_10992, var8, false);
+      method_99(var0 - var4, var1 - var4, var4, var4, NotificationIcons.field_11057, var8);
+      method_99(var0 + var2, var1 - var4, var4, var4, NotificationIcons.field_11051, var8);
+      method_99(var0 - var4, var1 + var3, var4, var4, NotificationIcons.field_11013, var8);
+      method_99(var0 + var2, var1 + var3, var4, var4, NotificationIcons.field_11038, var8);
+      method_102(var0 - var4, var1, var4, var3, NotificationIcons.field_11010, var8, false);
+      method_102(var0 + var2, var1, var4, var3, NotificationIcons.field_11018, var8, false);
+      method_102(var0, var1 - var4, var2, var4, NotificationIcons.field_10997, var8, false);
+      method_102(var0, var1 + var3, var2, var4, NotificationIcons.field_10992, var8, false);
    }
 
    public static void method_147(float var0, float var1, float var2, float var3, float var4, float var5) {
       int var8 = class_314.method_1444(class_1255.field_6918.field_6917, var5);
-      method_102(var0, var1, var4, var3, class_2209.field_11018, var8, false);
-      method_102(var0 + var2 - var4, var1, var4, var3, class_2209.field_11010, var8, false);
-      method_102(var0, var1, var2, var4, class_2209.field_10992, var8, false);
-      method_102(var0, var1 + var3 - var4, var2, var4, class_2209.field_10997, var8, false);
+      method_102(var0, var1, var4, var3, NotificationIcons.field_11018, var8, false);
+      method_102(var0 + var2 - var4, var1, var4, var3, NotificationIcons.field_11010, var8, false);
+      method_102(var0, var1, var2, var4, NotificationIcons.field_10992, var8, false);
+      method_102(var0, var1 + var3 - var4, var2, var4, NotificationIcons.field_10997, var8, false);
    }
 
    public static void method_115(int var0, int var1, int var2, int var3, int var4) {
@@ -1001,29 +1001,29 @@ public class class_73 {
       byte var10 = 10;
       int var11 = var9 - var10;
       method_94((float)(var0 + var10), (float)(var1 + var10), (float)(var0 + var2 - var10), (float)(var1 + var3 - var10), var4);
-      method_99((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, class_2209.field_10996, var4);
+      method_99((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, NotificationIcons.field_10996, var4);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var9 / 2), (float)(var1 + var9 / 2), 0.0F);
       GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-      method_99((float)(var0 + var2 - var11), (float)(var1 - var11), (float)var9, (float)var9, class_2209.field_10996, var4);
+      method_99((float)(var0 + var2 - var11), (float)(var1 - var11), (float)var9, (float)var9, NotificationIcons.field_10996, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var9 / 2), (float)(var1 + var3 + var9 / 2), 0.0F);
       GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var9 / 2), (float)(-var1 - var3 - var9 / 2), 0.0F);
-      method_99((float)(var0 + var2 - var11), (float)(var1 + var10 + var3), (float)var9, (float)var9, class_2209.field_10996, var4);
+      method_99((float)(var0 + var2 - var11), (float)(var1 + var10 + var3), (float)var9, (float)var9, NotificationIcons.field_10996, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 - var9 / 2), (float)(var1 + var3 + var9 / 2), 0.0F);
       GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var3 - var9 / 2), 0.0F);
-      method_99((float)(var0 + var10), (float)(var1 + var10 + var3), (float)var9, (float)var9, class_2209.field_10996, var4);
+      method_99((float)(var0 + var10), (float)(var1 + var10 + var3), (float)var9, (float)var9, NotificationIcons.field_10996, var4);
       GL11.glPopMatrix();
       method_149(var5 - var9, var6 + var10, var5 - var11 + var9, var6 - var10 + var3);
 
       for (byte var12 = 0; var12 < var3; var12 += var9) {
-         method_99((float)(var0 - var11), (float)(var1 + var10 + var12), (float)var9, (float)var9, class_2209.field_11034, var4);
+         method_99((float)(var0 - var11), (float)(var1 + var10 + var12), (float)var9, (float)var9, NotificationIcons.field_11034, var4);
       }
 
       method_141();
@@ -1034,7 +1034,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         method_99((float)(var0 - var11), (float)(var1 - var10 - var13), (float)var9, (float)var9, class_2209.field_11034, var4);
+         method_99((float)(var0 - var11), (float)(var1 - var10 - var13), (float)var9, (float)var9, NotificationIcons.field_11034, var4);
          GL11.glPopMatrix();
       }
 
@@ -1046,7 +1046,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         method_99((float)(var0 - var2 + var10), (float)(var1 - var10 - var14), (float)var9, (float)var9, class_2209.field_11034, var4);
+         method_99((float)(var0 - var2 + var10), (float)(var1 - var10 - var14), (float)var9, (float)var9, NotificationIcons.field_11034, var4);
          GL11.glPopMatrix();
       }
 
@@ -1058,7 +1058,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         method_99((float)(var0 - var3 + var10), (float)(var1 + var10 + var15), (float)var9, (float)var9, class_2209.field_11034, var4);
+         method_99((float)(var0 - var3 + var10), (float)(var1 + var10 + var15), (float)var9, (float)var9, NotificationIcons.field_11034, var4);
          GL11.glPopMatrix();
       }
 
@@ -1070,29 +1070,29 @@ public class class_73 {
       byte var8 = 10;
       int var9 = var7 - var8;
       method_94((float)(var0 + var8), (float)(var1 + var8), (float)(var0 + var2 - var8), (float)(var1 + var3 - var8), var4);
-      method_99((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, class_2209.field_10996, var4);
+      method_99((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, NotificationIcons.field_10996, var4);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var7 / 2), (float)(var1 + var7 / 2), 0.0F);
       GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-      method_99((float)(var0 + var2 - var9), (float)(var1 - var9), (float)var7, (float)var7, class_2209.field_10996, var4);
+      method_99((float)(var0 + var2 - var9), (float)(var1 - var9), (float)var7, (float)var7, NotificationIcons.field_10996, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var7 / 2), (float)(var1 + var3 + var7 / 2), 0.0F);
       GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var7 / 2), (float)(-var1 - var3 - var7 / 2), 0.0F);
-      method_99((float)(var0 + var2 - var9), (float)(var1 + var8 + var3), (float)var7, (float)var7, class_2209.field_10996, var4);
+      method_99((float)(var0 + var2 - var9), (float)(var1 + var8 + var3), (float)var7, (float)var7, NotificationIcons.field_10996, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 - var7 / 2), (float)(var1 + var3 + var7 / 2), 0.0F);
       GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var3 - var7 / 2), 0.0F);
-      method_99((float)(var0 + var8), (float)(var1 + var8 + var3), (float)var7, (float)var7, class_2209.field_10996, var4);
+      method_99((float)(var0 + var8), (float)(var1 + var8 + var3), (float)var7, (float)var7, NotificationIcons.field_10996, var4);
       GL11.glPopMatrix();
       method_150(var0 - var7, var1 + var8, var0 - var9 + var7, var1 - var8 + var3, true);
 
       for (byte var10 = 0; var10 < var3; var10 += var7) {
-         method_99((float)(var0 - var9), (float)(var1 + var8 + var10) - 0.4F, (float)var7, (float)var7 + 0.4F, class_2209.field_11034, var4);
+         method_99((float)(var0 - var9), (float)(var1 + var8 + var10) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.field_11034, var4);
       }
 
       method_141();
@@ -1103,7 +1103,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         method_99((float)(var0 - var9), (float)(var1 - var8 - var11) - 0.4F, (float)var7, (float)var7 + 0.4F, class_2209.field_11034, var4);
+         method_99((float)(var0 - var9), (float)(var1 - var8 - var11) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.field_11034, var4);
          GL11.glPopMatrix();
       }
 
@@ -1115,7 +1115,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         method_99((float)(var0 - var2 + var8), (float)(var1 - var8 - var12) - 0.4F, (float)var7, (float)var7 + 0.4F, class_2209.field_11034, var4);
+         method_99((float)(var0 - var2 + var8), (float)(var1 - var8 - var12) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.field_11034, var4);
          GL11.glPopMatrix();
       }
 
@@ -1127,7 +1127,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         method_99((float)(var0 - var3 + var8), (float)(var1 + var8 + var13) - 0.4F, (float)var7, (float)var7 + 0.4F, class_2209.field_11034, var4);
+         method_99((float)(var0 - var3 + var8), (float)(var1 + var8 + var13) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.field_11034, var4);
          GL11.glPopMatrix();
       }
 

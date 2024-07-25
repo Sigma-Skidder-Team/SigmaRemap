@@ -101,7 +101,7 @@ public class class_777 extends Module {
             );
          mcInstance.field_9632
             .method_37256(mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() + (double)var1, mcInstance.field_9632.method_37156());
-         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, class_2209.field_10993));
+         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, NotificationIcons.field_10993));
       }
    }
 }

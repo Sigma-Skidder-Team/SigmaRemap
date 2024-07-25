@@ -20,9 +20,9 @@ public class class_3778 extends class_2596 {
       class_4643 var9 = null;
       class_4643 var10 = null;
       class_4643 var11 = null;
-      this.method_32148(var9 = new class_4643(this, "pb", var7, var8, var3, var5, class_2209.field_11048));
-      this.method_32148(var11 = new class_4643(this, "pb2", var7, var5 + var8 + 9, var4, var6, class_2209.field_11003));
-      this.method_32148(var10 = new class_4643(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, class_2209.field_11035));
+      this.method_32148(var9 = new class_4643(this, "pb", var7, var8, var3, var5, NotificationIcons.field_11048));
+      this.method_32148(var11 = new class_4643(this, "pb2", var7, var5 + var8 + 9, var4, var6, NotificationIcons.field_11003));
+      this.method_32148(var10 = new class_4643(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, NotificationIcons.field_11035));
       var9.method_32100((var0, var1) -> {
          SigmaMainClass.getInstance().method_3327(class_6015.field_30642);
          MinecraftClient.getInstance().method_8609(new class_1876());
@@ -37,11 +37,11 @@ public class class_3778 extends class_2596 {
       });
       class_7038 var12 = new class_7038(this, "socialbtns", (this.method_32109() - 174) / 2, this.method_32137() - 70, 174, 34);
       class_3304 var13;
-      var12.method_32148(var13 = new class_3304(var12, "youtube", 0, 0, 65, 34, class_2209.field_11031));
+      var12.method_32148(var13 = new class_3304(var12, "youtube", 0, 0, 65, 34, NotificationIcons.field_11031));
       class_3304 var14;
-      var12.method_32148(var14 = new class_3304(var12, "reddit", 85, 0, 36, 34, class_2209.field_11043));
+      var12.method_32148(var14 = new class_3304(var12, "reddit", 85, 0, 36, 34, NotificationIcons.field_11043));
       class_3304 var15;
-      var12.method_32148(var15 = new class_3304(var12, "guilded", 142, 0, 32, 34, class_2209.field_10994));
+      var12.method_32148(var15 = new class_3304(var12, "guilded", 142, 0, 32, 34, NotificationIcons.field_10994));
       var13.method_32100((var0, var1) -> {
          try {
             Util.getOperatingSystem().method_37577(new URL("http://jelloconnect.sigmaclient.info/urls/youtube.php"));

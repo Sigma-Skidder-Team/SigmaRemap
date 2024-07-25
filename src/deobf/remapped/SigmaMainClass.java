@@ -77,7 +77,7 @@ public class SigmaMainClass {
       this.field_3972 = new class_1772();
       this.commandManager = new CommandManager();
       this.commandManager.method_22654();
-      class_2209.method_10227();
+      NotificationIcons.method_10227();
       this.field_3971 = new SigmaLoginStuff();
       this.field_3971.method_23087();
       this.field_3970 = new class_845();
@@ -197,7 +197,7 @@ public class SigmaMainClass {
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glDisable(2896);
       class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-      class_2209.field_11030.method_38419();
+      NotificationIcons.field_11030.method_38419();
       getInstance().method_3302().method_7914(new class_7285());
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       class_3542.method_16361();

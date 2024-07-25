@@ -260,7 +260,7 @@ public class class_8057 extends class_367 {
          if (this.field_41251.isEmpty()) {
             class_314.method_1443("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
             class_314.method_1443("§cPlaying the only integrated demo song!");
-            this.field_41249 = class_4713.method_21790(class_2209.method_10226("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
+            this.field_41249 = class_4713.method_21790(NotificationIcons.method_10226("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
             if (this.field_41249 == null) {
                class_314.method_1443("§cError loading included song, wtf!");
                this.method_41991(false);

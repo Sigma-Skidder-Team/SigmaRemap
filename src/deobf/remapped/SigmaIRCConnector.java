@@ -23,7 +23,7 @@ public class SigmaIRCConnector implements class_6224 {
             var6.printStackTrace();
          }
 
-         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Jello connect", "Connected!", class_2209.field_11030));
+         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Jello connect", "Connected!", NotificationIcons.field_11030));
       }
    }
 }

@@ -570,7 +570,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             if (!this.field_40612.field_9577.field_45567 || this.field_40612.field_9623 != null) {
                class_3542.method_16433();
                this.method_35921(this.field_40612.method_8552().method_43165(), this.field_40612.method_8552().method_43177(), var1);
-               class_2209.field_11030.method_38419();
+               NotificationIcons.field_11030.method_38419();
                this.field_40612.field_9614.method_13997(var10, var1);
                if (this.field_40612.field_9577.field_45385 && !this.field_40612.field_9577.field_45470) {
                   class_3111.method_14343(var10);

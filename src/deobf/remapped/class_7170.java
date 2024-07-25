@@ -17,11 +17,11 @@ public class class_7170 extends class_446 {
 
    public class_7170(class_7038 var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, 700, 512, false);
-      this.field_36888 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/games/bg.png");
-      this.field_36895 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/games/fg.png");
-      this.field_36893 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/games/pipe.png");
-      this.field_36891 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/games/pipe2.png");
-      this.field_36886 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/games/bird.png");
+      this.field_36888 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/games/bg.png");
+      this.field_36895 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/games/fg.png");
+      this.field_36893 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/games/pipe.png");
+      this.field_36891 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/games/pipe2.png");
+      this.field_36886 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/games/bird.png");
    }
 
    private void method_32871() {
