@@ -4,13 +4,13 @@ import javax.annotation.Nullable;
 
 public class class_7079 extends class_8143 {
    private static String[] field_36558;
-   private final class_4639 field_36557;
+   private final Identifier field_36557;
    private final class_3581 field_36559;
    private final class_3581 field_36556;
    private final boolean field_36560;
    private final class_4673 field_36555;
 
-   public class_7079(class_4639 var1, boolean var2) {
+   public class_7079(Identifier var1, boolean var2) {
       this.field_36557 = var1;
       this.field_36560 = var2;
       this.field_36555 = new class_4673(0, 0, 256, 256, null);
@@ -58,7 +58,7 @@ public class class_7079 extends class_8143 {
       }
    }
 
-   public class_4639 method_32578() {
+   public Identifier method_32578() {
       return this.field_36557;
    }
 }

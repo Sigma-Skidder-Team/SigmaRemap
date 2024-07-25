@@ -15,7 +15,7 @@ public class class_1526 extends class_77 {
       int var6,
       int var7,
       int var8,
-      class_4639 var9,
+      Identifier var9,
       int var10,
       int var11,
       class_1500 var12,

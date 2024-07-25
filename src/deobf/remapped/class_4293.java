@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_4293 extends class_2255<class_7932> {
-   public static final class_2843 field_20829 = new class_2843(class_8359.field_42824, new class_4639("entity/enchanting_table_book"));
+   public static final class_2843 field_20829 = new class_2843(class_8359.field_42824, new Identifier("entity/enchanting_table_book"));
    private final class_8197 field_20828 = new class_8197();
 
    public class_4293(class_3569 var1) {

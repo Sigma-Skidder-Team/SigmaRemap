@@ -45,49 +45,49 @@ import javax.annotation.Nullable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_9665 {
-   private static final AtomicInteger field_49233 = new AtomicInteger(1);
-   private static final ExecutorService field_49231 = method_44670("Bootstrap");
-   private static final ExecutorService field_49226 = method_44670("Main");
-   private static final ExecutorService field_49227 = method_44693();
-   public static LongSupplier field_49234 = System::nanoTime;
-   public static final UUID field_49232 = new UUID(0L, 0L);
+public class Util {
+   private static final AtomicInteger NEXT_WORKER_ID = new AtomicInteger(1);
+   private static final ExecutorService BOOTSTRAP_EXECUTOR = createWorker("Bootstrap");
+   private static final ExecutorService MAIN_WORKER_EXECUTOR = createWorker("Main");
+   private static final ExecutorService IO_WORKER_EXECUTOR = createIoWorker();
+   public static LongSupplier nanoTimeSupplier = System::nanoTime;
+   public static final UUID NIL_UUID = new UUID(0L, 0L);
    private static final Logger field_49230 = LogManager.getLogger();
    private static Exception field_49228;
 
-   public static <K, V> Collector<Entry<? extends K, ? extends V>, ?, Map<K, V>> method_44681() {
+   public static <K, V> Collector<Entry<? extends K, ? extends V>, ?, Map<K, V>> toMap() {
       return Collectors.<Entry<? extends K, ? extends V>, K, V>toMap(Entry::getKey, Entry::getValue);
    }
 
-   public static <T extends Comparable<T>> String method_44665(class_5019<T> var0, Object var1) {
+   public static <T extends Comparable<T>> String getValueAsString(class_5019<T> var0, Object var1) {
       return var0.method_23110((T)var1);
    }
 
-   public static String method_44671(String var0, class_4639 var1) {
+   public static String createTranslationKey(String var0, Identifier var1) {
       return var1 != null ? var0 + '.' + var1.method_21461() + '.' + var1.method_21456().replace('/', '.') : var0 + ".unregistered_sadface";
    }
 
-   public static long method_44650() {
-      return method_44657() / 1000000L;
+   public static long getMeasuringTimeMs() {
+      return getMeasuringTimeNano() / 1000000L;
    }
 
-   public static long method_44657() {
-      return field_49234.getAsLong();
+   public static long getMeasuringTimeNano() {
+      return nanoTimeSupplier.getAsLong();
    }
 
-   public static long method_44686() {
+   public static long getEpochTimeMs() {
       return Instant.now().toEpochMilli();
    }
 
-   private static ExecutorService method_44670(String var0) {
+   private static ExecutorService createWorker(String var0) {
       int var3 = class_9299.method_42829(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
       Object var4;
       if (var3 > 0) {
          var4 = new ForkJoinPool(var3, var1 -> {
             class_5724 var4x = new class_5724(var1);
-            var4x.setName("Worker-" + var0 + "-" + field_49233.getAndIncrement());
+            var4x.setName("Worker-" + var0 + "-" + NEXT_WORKER_ID.getAndIncrement());
             return var4x;
-         }, class_9665::method_44673, true);
+         }, Util::method_44673, true);
       } else {
          var4 = MoreExecutors.newDirectExecutorService();
       }
@@ -95,24 +95,24 @@ public class class_9665 {
       return (ExecutorService)var4;
    }
 
-   public static Executor method_44695() {
-      return field_49231;
+   public static Executor getBootstrapExecutor() {
+      return BOOTSTRAP_EXECUTOR;
    }
 
-   public static Executor method_44661() {
-      return field_49226;
+   public static Executor getMainWorkerExecutor() {
+      return MAIN_WORKER_EXECUTOR;
    }
 
-   public static Executor method_44683() {
-      return field_49227;
+   public static Executor getIoWorkerExecutor() {
+      return IO_WORKER_EXECUTOR;
    }
 
-   public static void method_44653() {
-      method_44699(field_49226);
-      method_44699(field_49227);
+   public static void shutdownExecutors() {
+      attemptShutdown(MAIN_WORKER_EXECUTOR);
+      attemptShutdown(IO_WORKER_EXECUTOR);
    }
 
-   private static void method_44699(ExecutorService var0) {
+   private static void attemptShutdown(ExecutorService var0) {
       var0.shutdown();
 
       boolean var3;
@@ -127,22 +127,22 @@ public class class_9665 {
       }
    }
 
-   private static ExecutorService method_44693() {
+   private static ExecutorService createIoWorker() {
       return Executors.newCachedThreadPool(var0 -> {
          Thread var3 = new Thread(var0);
-         var3.setName("IO-Worker-" + field_49233.getAndIncrement());
-         var3.setUncaughtExceptionHandler(class_9665::method_44673);
+         var3.setName("IO-Worker-" + NEXT_WORKER_ID.getAndIncrement());
+         var3.setUncaughtExceptionHandler(Util::method_44673);
          return var3;
       });
    }
 
-   public static <T> CompletableFuture<T> method_44652(Throwable var0) {
+   public static <T> CompletableFuture<T> completeExceptionally(Throwable var0) {
       CompletableFuture var3 = new CompletableFuture();
       var3.completeExceptionally(var0);
       return var3;
    }
 
-   public static void method_44672(Throwable var0) {
+   public static void throwUnchecked(Throwable var0) {
       throw !(var0 instanceof RuntimeException) ? new RuntimeException(var0) : (RuntimeException)var0;
    }
 
@@ -161,12 +161,12 @@ public class class_9665 {
    }
 
    @Nullable
-   public static Type<?> method_44669(TypeReference var0, String var1) {
-      return class_7665.field_38957 ? method_44677(var0, var1) : null;
+   public static Type<?> getChoiceType(TypeReference var0, String var1) {
+      return class_7665.field_38957 ? getChoiceTypeInternal(var0, var1) : null;
    }
 
    @Nullable
-   private static Type<?> method_44677(TypeReference var0, String var1) {
+   private static Type<?> getChoiceTypeInternal(TypeReference var0, String var1) {
       Type var4 = null;
 
       try {
@@ -181,28 +181,28 @@ public class class_9665 {
       return var4;
    }
 
-   public static class_8208 method_44667() {
+   public static OperatingSystem getOperatingSystem() {
       String var2 = System.getProperty("os.name").toLowerCase(Locale.ROOT);
       if (!var2.contains("win")) {
          if (!var2.contains("mac")) {
             if (!var2.contains("solaris")) {
                if (!var2.contains("sunos")) {
                   if (!var2.contains("linux")) {
-                     return !var2.contains("unix") ? class_8208.field_41985 : class_8208.field_41988;
+                     return !var2.contains("unix") ? OperatingSystem.UNKNOWN : OperatingSystem.LINUX;
                   } else {
-                     return class_8208.field_41988;
+                     return OperatingSystem.LINUX;
                   }
                } else {
-                  return class_8208.field_41986;
+                  return OperatingSystem.SOLARIS;
                }
             } else {
-               return class_8208.field_41986;
+               return OperatingSystem.SOLARIS;
             }
          } else {
-            return class_8208.field_41983;
+            return OperatingSystem.OSX;
          }
       } else {
-         return class_8208.field_41987;
+         return OperatingSystem.WINDOWS;
       }
    }
 

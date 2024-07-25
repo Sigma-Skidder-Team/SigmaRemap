@@ -1,11 +1,11 @@
 package remapped;
 
 public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
-   public static final class_4639 field_28393 = new class_4639(field_28394[0] + class_5276.field_26968.method_12948().method_21456() + field_28394[1]);
-   public static final class_4639[] field_28392 = class_5276.field_26969
+   public static final Identifier field_28393 = new Identifier(field_28394[0] + class_5276.field_26968.method_12948().method_21456() + field_28394[1]);
+   public static final Identifier[] field_28392 = class_5276.field_26969
       .stream()
-      .<class_4639>map(var0 -> new class_4639("textures/" + var0.method_12948().method_21456() + ".png"))
-      .<class_4639>toArray(class_4639[]::new);
+      .<Identifier>map(var0 -> new Identifier("textures/" + var0.method_12948().method_21456() + ".png"))
+      .<Identifier>toArray(Identifier[]::new);
 
    public class_5595(class_6122 var1) {
       super(var1, new class_7916<class_6092>(), 0.0F);
@@ -44,7 +44,7 @@ public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
       }
    }
 
-   public class_4639 method_25401(class_6092 var1) {
+   public Identifier method_25401(class_6092 var1) {
       return var1.method_27909() != null ? field_28392[var1.method_27909().method_41794()] : field_28393;
    }
 

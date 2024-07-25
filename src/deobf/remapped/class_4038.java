@@ -5,7 +5,7 @@ import java.io.InputStream;
 import javax.annotation.Nullable;
 
 public interface class_4038 extends Closeable {
-   class_4639 method_18578();
+   Identifier method_18578();
 
    InputStream method_18576();
 

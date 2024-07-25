@@ -5,7 +5,7 @@ import com.google.gson.JsonObject;
 public class class_2270 extends class_4569 {
    private final class_5093 field_11283;
 
-   public class_2270(class_4639 var1, class_8938 var2, class_5093 var3) {
+   public class_2270(Identifier var1, class_8938 var2, class_5093 var3) {
       super(var1, var2);
       this.field_11283 = var3;
    }

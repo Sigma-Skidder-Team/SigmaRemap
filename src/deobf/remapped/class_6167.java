@@ -33,7 +33,7 @@ public class class_6167 {
             int var10 = 0;
 
             try {
-               class_4639 var11 = new class_4639(var9);
+               Identifier var11 = new Identifier(var9);
                InputStream var12 = class_3111.method_14374(var11);
                if (var12 == null) {
                   if (++var10 > 10) {
@@ -49,7 +49,7 @@ public class class_6167 {
                class_2524 var15 = new class_2524(var13, var14);
                if (var15.method_11493(var9)) {
                   String var16 = class_8251.method_37817(var15.field_12510, ".png");
-                  class_4639 var17 = new class_4639(var16);
+                  Identifier var17 = new Identifier(var16);
                   class_8143 var18 = class_5525.method_25065(var17);
                   if (var18 == null) {
                      class_3111.method_14280("CustomSky: Texture not found: " + var17);
@@ -89,7 +89,7 @@ public class class_6167 {
       }
    }
 
-   public static void method_28272(class_6486 var0, class_7889 var1, class_7966 var2, float var3) {
+   public static void method_28272(class_6486 var0, TextureManager var1, class_7966 var2, float var3) {
       if (field_31554 != null) {
          int var6 = class_4869.method_22375(var0);
          if (var6 >= 0 && var6 < field_31554.length) {

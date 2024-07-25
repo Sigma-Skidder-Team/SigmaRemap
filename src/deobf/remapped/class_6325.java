@@ -54,7 +54,7 @@ public final class class_6325 {
    private final class_8862 field_32292;
    private final class_2625 field_32301;
    private final ThreadLocal<Long2FloatLinkedOpenHashMap> field_32291 = ThreadLocal.<Long2FloatLinkedOpenHashMap>withInitial(
-      () -> class_9665.method_44660(() -> {
+      () -> Util.method_44660(() -> {
             class_2032 var3x = new class_2032(this, 1024, 0.25F);
             var3x.defaultReturnValue(Float.NaN);
             return var3x;
@@ -301,7 +301,7 @@ public final class class_6325 {
 
    @Override
    public String toString() {
-      class_4639 var3 = class_889.field_4582.method_39797(this);
+      Identifier var3 = class_889.field_4582.method_39797(this);
       return var3 != null ? var3.toString() : super.toString();
    }
 }

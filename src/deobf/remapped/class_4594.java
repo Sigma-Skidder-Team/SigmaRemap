@@ -12,11 +12,11 @@ public class class_4594<T> implements class_1272<T> {
    private static String[] field_22336;
    public class_2566<T> field_22334 = new class_2566<T>();
    public class_2566<T> field_22337 = new class_2566<T>();
-   private final Function<T, Stream<class_4639>> field_22332;
+   private final Function<T, Stream<Identifier>> field_22332;
    private final List<T> field_22333 = Lists.newArrayList();
    private final Object2IntMap<T> field_22335 = new Object2IntOpenHashMap();
 
-   public class_4594(Function<T, Stream<class_4639>> var1) {
+   public class_4594(Function<T, Stream<Identifier>> var1) {
       this.field_22332 = var1;
    }
 

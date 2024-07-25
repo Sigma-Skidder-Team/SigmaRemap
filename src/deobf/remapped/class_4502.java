@@ -7,8 +7,8 @@ import org.apache.logging.log4j.Logger;
 
 public class class_4502 extends class_1094 {
    private static final Logger field_22016 = LogManager.getLogger();
-   private static final class_4639 field_22017 = new class_4639("realms", "textures/gui/realms/accept_icon.png");
-   private static final class_4639 field_22022 = new class_4639("realms", "textures/gui/realms/reject_icon.png");
+   private static final Identifier field_22017 = new Identifier("realms", "textures/gui/realms/accept_icon.png");
+   private static final Identifier field_22022 = new Identifier("realms", "textures/gui/realms/reject_icon.png");
    private static final ITextComponent field_22020 = new TranslationTextComponent("mco.invites.nopending");
    private static final ITextComponent field_22024 = new TranslationTextComponent(field_22023[1]);
    private static final ITextComponent field_22021 = new TranslationTextComponent(field_22023[2]);

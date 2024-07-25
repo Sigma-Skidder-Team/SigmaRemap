@@ -5,7 +5,7 @@ import java.io.IOException;
 public class class_7799 implements class_6310<class_392> {
    private static String[] field_39505;
    private int field_39506;
-   private class_4639 field_39504;
+   private Identifier field_39504;
 
    public class_7799() {
    }
@@ -15,7 +15,7 @@ public class class_7799 implements class_6310<class_392> {
       this.field_39504 = var2.method_41050();
    }
 
-   public class_4639 method_35373() {
+   public Identifier method_35373() {
       return this.field_39504;
    }
 

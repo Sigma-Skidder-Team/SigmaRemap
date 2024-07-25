@@ -45,7 +45,7 @@ public class class_9186 {
    }
 
    public UUID method_42342(String var1) {
-      return this.field_47002.getOrDefault(var1, class_9665.field_49232);
+      return this.field_47002.getOrDefault(var1, Util.NIL_UUID);
    }
 
    public void method_42343(class_753 var1) {

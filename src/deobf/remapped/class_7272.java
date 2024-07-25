@@ -6,7 +6,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7272 extends class_5467 {
    private static final class_7821<Integer> field_37232 = class_8073.<Integer>method_36641(class_7272.class, class_2734.field_13366);
-   private static final class_4639 field_37238 = new class_4639("killer_bunny");
+   private static final Identifier field_37238 = new Identifier("killer_bunny");
    private int field_37237;
    private int field_37236;
    private boolean field_37239;
@@ -283,7 +283,7 @@ public class class_7272 extends class_5467 {
          this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, true));
          this.field_29908.method_3485(2, new class_4138<class_9408>(this, class_9408.class, true));
          if (!this.method_45507()) {
-            this.method_37303(new TranslationTextComponent(class_9665.method_44671("entity", field_37238)));
+            this.method_37303(new TranslationTextComponent(Util.createTranslationKey("entity", field_37238)));
          }
       }
 

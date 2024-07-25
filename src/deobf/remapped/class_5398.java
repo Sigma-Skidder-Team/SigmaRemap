@@ -21,10 +21,10 @@ import org.apache.logging.log4j.Logger;
 public class class_5398 {
    private static final Logger field_27562 = LogManager.getLogger();
    private static final Map<Class<?>, class_5511<?>> field_27561 = Maps.newHashMap();
-   private static final Map<class_4639, class_5511<?>> field_27560 = Maps.newHashMap();
+   private static final Map<Identifier, class_5511<?>> field_27560 = Maps.newHashMap();
 
    public static <T extends ArgumentType<?>> void method_24581(String var0, Class<T> var1, class_5590<T> var2) {
-      class_4639 var5 = new class_4639(var0);
+      Identifier var5 = new Identifier(var0);
       if (!field_27561.containsKey(var1)) {
          if (!field_27560.containsKey(var5)) {
             class_5511 var6 = new class_5511(var1, var2, var5, null);
@@ -85,7 +85,7 @@ public class class_5398 {
    }
 
    @Nullable
-   private static class_5511<?> method_24585(class_4639 var0) {
+   private static class_5511<?> method_24585(Identifier var0) {
       return field_27560.get(var0);
    }
 
@@ -101,13 +101,13 @@ public class class_5398 {
          var4.field_28066.method_25391((T)var1, var0);
       } else {
          field_27562.error("Could not serialize {} ({}) - will not be sent to client!", var1, var1.getClass());
-         var0.method_37780(new class_4639(""));
+         var0.method_37780(new Identifier(""));
       }
    }
 
    @Nullable
    public static ArgumentType<?> method_24574(class_8248 var0) {
-      class_4639 var3 = var0.method_37768();
+      Identifier var3 = var0.method_37768();
       class_5511 var4 = method_24585(var3);
       if (var4 != null) {
          return var4.field_28066.method_25389(var0);

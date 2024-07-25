@@ -3,7 +3,7 @@ package remapped;
 import java.util.concurrent.CompletableFuture;
 
 public interface class_4302 {
-   CompletableFuture<class_3256> method_19967();
+   CompletableFuture<Unit> method_19967();
 
    float method_19969();
 

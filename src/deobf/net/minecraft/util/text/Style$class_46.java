@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$class_47;
 import net.minecraft.util.text.event.HoverEvent;
-import remapped.class_4639;
+import remapped.Identifier;
 import remapped.class_6539;
 import remapped.class_7485;
 
@@ -34,7 +34,7 @@ public class Style$class_46 implements JsonDeserializer<Style>, JsonSerializer<S
             String clickevent = deserializeInsertion(obool);
             ClickEvent hoverevent = deserializeClickEvent(obool);
             HoverEvent resourcelocation = deserializeHoverEvent(obool);
-            class_4639 var16 = deserializeFont(obool);
+            Identifier var16 = deserializeFont(obool);
             return new Style(s, obool1, obool2, obool3, obool4, color, hoverevent, resourcelocation, clickevent, var16, null);
          }
       } else {
@@ -43,12 +43,12 @@ public class Style$class_46 implements JsonDeserializer<Style>, JsonSerializer<S
    }
 
    @Nullable
-   private static class_4639 deserializeFont(JsonObject json) {
+   private static Identifier deserializeFont(JsonObject json) {
       if (json.has("font")) {
          String resourcelocationexception = class_6539.method_29796(json, "font");
 
          try {
-            return new class_4639(resourcelocationexception);
+            return new Identifier(resourcelocationexception);
          } catch (class_7485 var5) {
             throw new JsonSyntaxException("Invalid font name: " + resourcelocationexception);
          }

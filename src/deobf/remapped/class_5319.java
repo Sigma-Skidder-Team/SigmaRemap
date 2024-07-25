@@ -97,13 +97,13 @@ public class class_5319 {
             class_6000 var6 = class_6000.method_27395(var3.get("nbt"));
             class_2451 var7 = null;
             if (var3.has("item")) {
-               class_4639 var8 = new class_4639(class_6539.method_29796(var3, "item"));
+               Identifier var8 = new Identifier(class_6539.method_29796(var3, "item"));
                var7 = class_8669.field_44382.method_39794(var8).orElseThrow(() -> new JsonSyntaxException("Unknown item id '" + var8 + "'"));
             }
 
             class_2307 var12 = null;
             if (var3.has("tag")) {
-               class_4639 var9 = new class_4639(class_6539.method_29796(var3, "tag"));
+               Identifier var9 = new Identifier(class_6539.method_29796(var3, "tag"));
                var12 = class_8410.method_38721().method_29393().method_43140(var9);
                if (var12 == null) {
                   throw new JsonSyntaxException("Unknown item tag '" + var9 + "'");
@@ -112,7 +112,7 @@ public class class_5319 {
 
             class_6004 var13 = null;
             if (var3.has("potion")) {
-               class_4639 var10 = new class_4639(class_6539.method_29796(var3, "potion"));
+               Identifier var10 = new Identifier(class_6539.method_29796(var3, "potion"));
                var13 = class_8669.field_44365.method_39794(var10).orElseThrow(() -> new JsonSyntaxException("Unknown potion '" + var10 + "'"));
             }
 

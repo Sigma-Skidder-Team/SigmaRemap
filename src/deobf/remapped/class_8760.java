@@ -11,9 +11,9 @@ import java.util.OptionalLong;
 import java.util.function.Supplier;
 
 public class class_8760 {
-   public static final class_4639 field_44835 = new class_4639("overworld");
-   public static final class_4639 field_44849 = new class_4639("the_nether");
-   public static final class_4639 field_44825 = new class_4639("the_end");
+   public static final Identifier field_44835 = new Identifier("overworld");
+   public static final Identifier field_44849 = new Identifier("the_nether");
+   public static final Identifier field_44825 = new Identifier("the_end");
    public static final Codec<class_8760> field_44837 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Codec.LONG
@@ -33,16 +33,16 @@ public class class_8760 {
                Codec.BOOL.fieldOf("respawn_anchor_works").forGetter(class_8760::method_40219),
                Codec.BOOL.fieldOf("has_raids").forGetter(class_8760::method_40239),
                Codec.intRange(0, 256).fieldOf("logical_height").forGetter(class_8760::method_40236),
-               class_4639.field_22655.fieldOf("infiniburn").forGetter(var0x -> var0x.field_44852),
-               class_4639.field_22655.fieldOf("effects").orElse(field_44835).forGetter(var0x -> var0x.field_44827),
+               Identifier.field_22655.fieldOf("infiniburn").forGetter(var0x -> var0x.field_44852),
+               Identifier.field_22655.fieldOf("effects").orElse(field_44835).forGetter(var0x -> var0x.field_44827),
                Codec.FLOAT.fieldOf("ambient_light").forGetter(var0x -> var0x.field_44851)
             )
             .apply(var0, class_8760::new)
    );
    public static final float[] field_44830 = new float[]{1.0F, 0.75F, 0.5F, 0.25F, 0.0F, 0.25F, 0.5F, 0.75F};
-   public static final class_5621<class_8760> field_44833 = class_5621.<class_8760>method_25497(class_8669.field_44415, new class_4639("overworld"));
-   public static final class_5621<class_8760> field_44843 = class_5621.<class_8760>method_25497(class_8669.field_44415, new class_4639("the_nether"));
-   public static final class_5621<class_8760> field_44841 = class_5621.<class_8760>method_25497(class_8669.field_44415, new class_4639("the_end"));
+   public static final class_5621<class_8760> field_44833 = class_5621.<class_8760>method_25497(class_8669.field_44415, new Identifier("overworld"));
+   public static final class_5621<class_8760> field_44843 = class_5621.<class_8760>method_25497(class_8669.field_44415, new Identifier("the_nether"));
+   public static final class_5621<class_8760> field_44841 = class_5621.<class_8760>method_25497(class_8669.field_44415, new Identifier("the_end"));
    public static final class_8760 field_44823 = new class_8760(
       OptionalLong.empty(),
       true,
@@ -97,7 +97,7 @@ public class class_8760 {
       field_44825,
       0.0F
    );
-   public static final class_5621<class_8760> field_44834 = class_5621.<class_8760>method_25497(class_8669.field_44415, new class_4639("overworld_caves"));
+   public static final class_5621<class_8760> field_44834 = class_5621.<class_8760>method_25497(class_8669.field_44415, new Identifier("overworld_caves"));
    public static final class_8760 field_44847 = new class_8760(
       OptionalLong.empty(),
       true,
@@ -130,8 +130,8 @@ public class class_8760 {
    private final boolean field_44832;
    private final int field_44842;
    private final class_6166 field_44840;
-   private final class_4639 field_44852;
-   private final class_4639 field_44827;
+   private final Identifier field_44852;
+   private final Identifier field_44827;
    private final float field_44851;
    private final transient float[] field_44850;
 
@@ -147,8 +147,8 @@ public class class_8760 {
       boolean var10,
       boolean var11,
       int var12,
-      class_4639 var13,
-      class_4639 var14,
+      Identifier var13,
+      Identifier var14,
       float var15
    ) {
       this(var1, var2, var3, var4, var5, var6, false, var8, var9, var10, var11, var12, class_4862.field_24214, var13, var14, var15);
@@ -168,8 +168,8 @@ public class class_8760 {
       boolean var12,
       int var13,
       class_6166 var14,
-      class_4639 var15,
-      class_4639 var16,
+      Identifier var15,
+      Identifier var16,
       float var17
    ) {
       this.field_44844 = var1;
@@ -348,7 +348,7 @@ public class class_8760 {
       return (class_2307<class_6414>)(var3 == null ? class_2351.field_11749 : var3);
    }
 
-   public class_4639 method_40226() {
+   public Identifier method_40226() {
       return this.field_44827;
    }
 

@@ -11,18 +11,18 @@ public class class_5583 extends class_8990 {
    private static final class_7821<Boolean> field_28344 = class_8073.<Boolean>method_36641(class_5583.class, class_2734.field_13347);
    private static final class_7821<Boolean> field_28356 = class_8073.<Boolean>method_36641(class_5583.class, class_2734.field_13347);
    private static final class_7821<Integer> field_28349 = class_8073.<Integer>method_36641(class_5583.class, class_2734.field_13366);
-   public static final Map<Integer, class_4639> field_28352 = class_9665.<Map<Integer, class_4639>>method_44659(Maps.newHashMap(), var0 -> {
-      var0.put(0, new class_4639("textures/entity/cat/tabby.png"));
-      var0.put(1, new class_4639("textures/entity/cat/black.png"));
-      var0.put(2, new class_4639("textures/entity/cat/red.png"));
-      var0.put(3, new class_4639("textures/entity/cat/siamese.png"));
-      var0.put(4, new class_4639("textures/entity/cat/british_shorthair.png"));
-      var0.put(5, new class_4639("textures/entity/cat/calico.png"));
-      var0.put(6, new class_4639("textures/entity/cat/persian.png"));
-      var0.put(7, new class_4639("textures/entity/cat/ragdoll.png"));
-      var0.put(8, new class_4639("textures/entity/cat/white.png"));
-      var0.put(9, new class_4639("textures/entity/cat/jellie.png"));
-      var0.put(10, new class_4639("textures/entity/cat/all_black.png"));
+   public static final Map<Integer, Identifier> field_28352 = Util.<Map<Integer, Identifier>>method_44659(Maps.newHashMap(), var0 -> {
+      var0.put(0, new Identifier("textures/entity/cat/tabby.png"));
+      var0.put(1, new Identifier("textures/entity/cat/black.png"));
+      var0.put(2, new Identifier("textures/entity/cat/red.png"));
+      var0.put(3, new Identifier("textures/entity/cat/siamese.png"));
+      var0.put(4, new Identifier("textures/entity/cat/british_shorthair.png"));
+      var0.put(5, new Identifier("textures/entity/cat/calico.png"));
+      var0.put(6, new Identifier("textures/entity/cat/persian.png"));
+      var0.put(7, new Identifier("textures/entity/cat/ragdoll.png"));
+      var0.put(8, new Identifier("textures/entity/cat/white.png"));
+      var0.put(9, new Identifier("textures/entity/cat/jellie.png"));
+      var0.put(10, new Identifier("textures/entity/cat/all_black.png"));
    });
    private class_4204<class_704> field_28353;
    private class_7228 field_28350;
@@ -37,7 +37,7 @@ public class class_5583 extends class_8990 {
       super(var1, var2);
    }
 
-   public class_4639 method_25352() {
+   public Identifier method_25352() {
       return field_28352.getOrDefault(this.method_25353(), field_28352.get(0));
    }
 

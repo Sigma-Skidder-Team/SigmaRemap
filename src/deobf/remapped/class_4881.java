@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_4881 extends class_7067<class_2844> {
-   private static final class_4639 field_24277 = new class_4639("textures/entity/enderdragon/dragon_fireball.png");
+   private static final Identifier field_24277 = new Identifier("textures/entity/enderdragon/dragon_fireball.png");
    private static final class_3581 field_24278 = class_3581.method_16755(field_24277);
 
    public class_4881(class_6122 var1) {
@@ -39,7 +39,7 @@ public class class_4881 extends class_7067<class_2844> {
          .method_35735();
    }
 
-   public class_4639 method_22395(class_2844 var1) {
+   public Identifier method_22395(class_2844 var1) {
       return field_24277;
    }
 }

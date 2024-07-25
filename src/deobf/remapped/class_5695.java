@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class class_5695 extends class_5837 {
    private static String[] field_28844;
-   private static final Map<class_4639, class_4503> field_28845 = Maps.newHashMap();
+   private static final Map<Identifier, class_4503> field_28845 = Maps.newHashMap();
    private final class_4382 field_28846;
    private final class_3374 field_28843;
 

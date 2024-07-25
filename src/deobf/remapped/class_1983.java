@@ -26,7 +26,7 @@ public class class_1983 implements AutoCloseable {
 
    public class_1983(File var1, boolean var2, String var3) {
       this.field_10047 = new class_9820(var1, var2);
-      this.field_10049 = new class_2696<class_9465>(new class_5943(class_2632.values().length), class_9665.method_44683(), "IOWorker-" + var3);
+      this.field_10049 = new class_2696<class_9465>(new class_5943(class_2632.values().length), Util.getIoWorkerExecutor(), "IOWorker-" + var3);
    }
 
    public CompletableFuture<Void> method_9152(class_2034 var1, class_5734 var2) {
@@ -127,7 +127,7 @@ public class class_1983 implements AutoCloseable {
    public void close() throws IOException {
       if (this.field_10052.compareAndSet(false, true)) {
          CompletableFuture var3 = this.field_10049
-            .method_40493(var0 -> new class_9465(class_2632.field_12967.ordinal(), () -> var0.method_40495(class_3256.field_16155)));
+            .method_40493(var0 -> new class_9465(class_2632.field_12967.ordinal(), () -> var0.method_40495(Unit.INSTANCE)));
 
          try {
             var3.join();

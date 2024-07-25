@@ -5,12 +5,12 @@ import java.util.Collections;
 import java.util.Map;
 
 public class class_6122 {
-   private static final class_3581 field_31310 = class_3581.method_16740(new class_4639("textures/misc/shadow.png"));
+   private static final class_3581 field_31310 = class_3581.method_16740(new Identifier("textures/misc/shadow.png"));
    private final Map<class_6629<?>, class_7067<?>> field_31308 = Maps.newHashMap();
    private final Map<String, class_6670> field_31301 = Maps.newHashMap();
    private final class_6670 field_31307;
    private final TextRenderer field_31302;
-   public final class_7889 field_31309;
+   public final TextureManager field_31309;
    private class_6486 field_31314;
    public class_9071 field_31311;
    private class_5422 field_31312;
@@ -143,7 +143,7 @@ public class class_6122 {
       this.method_28118(class_6629.field_34233, new class_737(this));
    }
 
-   public class_6122(class_7889 var1, class_8765 var2, class_550 var3, TextRenderer var4, class_8881 var5) {
+   public class_6122(TextureManager var1, class_8765 var2, class_550 var3, TextRenderer var4, class_8881 var5) {
       this.field_31309 = var1;
       this.field_31302 = var4;
       this.field_31304 = var5;

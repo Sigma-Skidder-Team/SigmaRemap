@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_9358 extends class_7157 {
-   public class_9358(class_4639 var1) {
+   public class_9358(Identifier var1) {
       super(var1);
    }
 

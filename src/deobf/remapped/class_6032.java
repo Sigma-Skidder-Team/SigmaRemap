@@ -34,7 +34,7 @@ public class class_6032 implements JsonDeserializer<class_9403> {
          var13 = class_683.method_3098(class_6539.method_29796(var6, "gui_light"));
       }
 
-      class_4639 var14 = !var8.isEmpty() ? new class_4639(var8) : null;
+      Identifier var14 = !var8.isEmpty() ? new Identifier(var8) : null;
       return new class_9403(var14, var7, var9, var10, var13, var11, var15);
    }
 
@@ -50,7 +50,7 @@ public class class_6032 implements JsonDeserializer<class_9403> {
    }
 
    private Map<String, Either<class_2843, String>> method_27507(JsonObject var1) {
-      class_4639 var4 = class_8359.field_42824;
+      Identifier var4 = class_8359.field_42824;
       HashMap var5 = Maps.newHashMap();
       if (var1.has("textures")) {
          JsonObject var6 = class_6539.method_29783(var1, "textures");
@@ -63,9 +63,9 @@ public class class_6032 implements JsonDeserializer<class_9403> {
       return var5;
    }
 
-   private static Either<class_2843, String> method_27506(class_4639 var0, String var1) {
+   private static Either<class_2843, String> method_27506(Identifier var0, String var1) {
       if (!class_9403.method_43555(var1)) {
-         class_4639 var4 = class_4639.method_21455(var1);
+         Identifier var4 = Identifier.method_21455(var1);
          if (var4 != null) {
             return Either.left(new class_2843(var0, var4));
          } else {

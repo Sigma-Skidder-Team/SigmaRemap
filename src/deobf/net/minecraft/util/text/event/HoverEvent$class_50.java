@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import remapped.class_2392;
 import remapped.class_2451;
-import remapped.class_4639;
+import remapped.Identifier;
 import remapped.class_5734;
 import remapped.class_6098;
 import remapped.class_6539;
@@ -62,10 +62,10 @@ public class HoverEvent$class_50 {
 
    private static HoverEvent$class_50 deserialize(JsonElement element) {
       if (element.isJsonPrimitive()) {
-         return new HoverEvent$class_50(class_8669.field_44382.method_39806(new class_4639(element.getAsString())), 1, (class_5734)null);
+         return new HoverEvent$class_50(class_8669.field_44382.method_39806(new Identifier(element.getAsString())), 1, (class_5734)null);
       } else {
          JsonObject item = class_6539.method_29782(element, "item");
-         class_2451 i = class_8669.field_44382.method_39806(new class_4639(class_6539.method_29796(item, "id")));
+         class_2451 i = class_8669.field_44382.method_39806(new Identifier(class_6539.method_29796(item, "id")));
          int s = class_6539.method_29768(item, "count", 1);
          if (item.has("tag")) {
             String commandsyntaxexception = class_6539.method_29796(item, "tag");

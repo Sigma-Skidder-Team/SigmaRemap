@@ -1007,7 +1007,7 @@ public class class_6588 {
          var2 = var2.replace("lightmap", "light_map");
       }
 
-      class_4639 var4 = new class_4639(var2);
+      Identifier var4 = new Identifier(var2);
       return new class_2345(var0, var4, var3);
    }
 
@@ -2885,7 +2885,7 @@ public class class_6588 {
    private static void method_30173() {
       field_33806 = new IdentityHashMap<class_6414, Integer>(300);
       if (field_33806.isEmpty()) {
-         for (class_4639 var1 : class_8669.field_44462.method_39805()) {
+         for (Identifier var1 : class_8669.field_44462.method_39805()) {
             class_6414 var2 = class_8669.field_44462.method_39806(var1);
             int var3 = class_8669.field_44462.method_14041(var2);
             field_33806.put(var2, var3);
@@ -2908,7 +2908,7 @@ public class class_6588 {
                   String var14 = var13.group(1);
                   String var4 = var13.group(2);
                   int var5 = Integer.parseInt(var4);
-                  class_4639 var6 = new class_4639(var14);
+                  Identifier var6 = new Identifier(var14);
                   if (class_8669.field_44462.method_39814(var6)) {
                      class_6414 var7 = class_8669.field_44462.method_39806(var6);
                      field_33806.put(var7, var5);

@@ -30,7 +30,7 @@ public class class_6497 implements class_3608 {
          this.field_33083.put(var6.method_33470(), var6);
       }
 
-      for (class_4639 var15 : class_5630.method_25515()) {
+      for (Identifier var15 : class_5630.method_25515()) {
          String var7 = var15.method_21456().trim();
          var7 = "BIOME_" + var7.toUpperCase().replace(' ', '_');
          int var8 = class_5630.method_25521(var15);

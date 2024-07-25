@@ -15,7 +15,7 @@ public class class_5350 implements class_3293 {
    private final class_7832 field_27332;
    private final byte[] field_27334;
    private final String field_27336;
-   private final Map<class_4639, class_5797> field_27335 = Maps.newHashMap();
+   private final Map<Identifier, class_5797> field_27335 = Maps.newHashMap();
 
    public class_5350(class_7832 var1, byte[] var2, String var3) {
       this.field_27332 = var1;
@@ -24,7 +24,7 @@ public class class_5350 implements class_3293 {
 
       for (int var6 = 0; var6 < 256; var6++) {
          int var7 = var6 * 256;
-         class_4639 var8 = this.method_24427(var7);
+         Identifier var8 = this.method_24427(var7);
 
          try (
             class_4038 var9 = this.field_27332.method_35458(var8);
@@ -51,9 +51,9 @@ public class class_5350 implements class_3293 {
       this.field_27335.values().forEach(class_5797::close);
    }
 
-   private class_4639 method_24427(int var1) {
-      class_4639 var4 = new class_4639(String.format(this.field_27336, String.format("%02x", var1 / 256)));
-      return new class_4639(var4.method_21461(), "textures/" + var4.method_21456());
+   private Identifier method_24427(int var1) {
+      Identifier var4 = new Identifier(String.format(this.field_27336, String.format("%02x", var1 / 256)));
+      return new Identifier(var4.method_21461(), "textures/" + var4.method_21456());
    }
 
    @Nullable
@@ -89,7 +89,7 @@ public class class_5350 implements class_3293 {
    }
 
    @Nullable
-   private class_5797 method_24426(class_4639 var1) {
+   private class_5797 method_24426(Identifier var1) {
       try (class_4038 var4 = this.field_27332.method_35458(var1)) {
          return class_5797.method_26232(class_5810.field_29333, var4.method_18576());
       } catch (IOException var18) {

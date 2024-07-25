@@ -10,7 +10,7 @@ public class class_5008 extends class_7164<class_8477, class_6521<class_8477>> {
       this.method_29100(new class_6175(this));
    }
 
-   public class_4639 method_23053(class_8477 var1) {
+   public Identifier method_23053(class_8477 var1) {
       return var1.method_39029();
    }
 

@@ -10,7 +10,7 @@ import javax.swing.JComponent;
 import javax.swing.Timer;
 
 public class class_4276 extends JComponent {
-   private static final DecimalFormat field_20709 = class_9665.<DecimalFormat>method_44659(
+   private static final DecimalFormat field_20709 = Util.<DecimalFormat>method_44659(
       new DecimalFormat("########0.000"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
    private final int[] field_20712 = new int[256];

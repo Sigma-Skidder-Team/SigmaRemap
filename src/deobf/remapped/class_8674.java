@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_8674 extends class_7260<class_5555> {
-   private static final class_4639 field_44528 = new class_4639("textures/entity/end_gateway_beam.png");
+   private static final Identifier field_44528 = new Identifier("textures/entity/end_gateway_beam.png");
 
    public class_8674(class_3569 var1) {
       super(var1);

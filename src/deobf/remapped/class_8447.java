@@ -10,7 +10,7 @@ import java.lang.reflect.Type;
 public class class_8447 implements JsonDeserializer<class_8338> {
    public class_8338 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
       JsonObject var6 = var1.getAsJsonObject();
-      class_4639 var7 = this.method_38851(var6);
+      Identifier var7 = this.method_38851(var6);
       class_7507 var8 = this.method_38847(var6);
       boolean var9 = this.method_38849(var6);
       int var10 = this.method_38850(var6);
@@ -32,8 +32,8 @@ public class class_8447 implements JsonDeserializer<class_8338> {
       }
    }
 
-   public class_4639 method_38851(JsonObject var1) {
-      return new class_4639(class_6539.method_29796(var1, "model"));
+   public Identifier method_38851(JsonObject var1) {
+      return new Identifier(class_6539.method_29796(var1, "model"));
    }
 
    public int method_38850(JsonObject var1) {

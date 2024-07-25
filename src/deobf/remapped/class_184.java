@@ -8,25 +8,25 @@ import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 public class class_184 implements class_4219 {
-   private final class_4639 field_613;
+   private final Identifier field_613;
    private final class_2451 field_615;
    private final int field_610;
    private final String field_617;
    private final List<String> field_619;
    private final Map<Character, class_8137> field_614;
    private final class_3321 field_618;
-   private final class_4639 field_612;
+   private final Identifier field_612;
 
    public class_184(
-      class_4639 var1,
+      Identifier var1,
       class_2451 var2,
       int var3,
       String var4,
       List<String> var5,
       Map<Character, class_8137> var6,
       class_3321 var7,
-      class_4639 var8,
-      class_4639 var9
+      Identifier var8,
+      Identifier var9
    ) {
       this.field_616 = var1;
       this.field_613 = var2;
@@ -74,7 +74,7 @@ public class class_184 implements class_4219 {
    }
 
    @Override
-   public class_4639 method_19650() {
+   public Identifier method_19650() {
       return this.field_613;
    }
 
@@ -86,7 +86,7 @@ public class class_184 implements class_4219 {
 
    @Nullable
    @Override
-   public class_4639 method_19646() {
+   public Identifier method_19646() {
       return this.field_612;
    }
 }

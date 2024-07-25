@@ -506,7 +506,7 @@ public class class_4932 {
    );
 
    private static class_86 method_22611(String var0, ImmutableList<class_2103> var1) {
-      class_4639 var4 = new class_4639(var0);
+      Identifier var4 = new Identifier(var0);
       class_86 var5 = new class_86(var1);
       return class_889.<class_86, class_86>method_3844(class_889.field_4578, var4, var5);
    }

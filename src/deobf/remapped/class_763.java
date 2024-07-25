@@ -1,8 +1,8 @@
 package remapped;
 
 public class class_763 extends class_7164<class_337, class_2574> {
-   private static final class_4639 field_4125 = new class_4639("textures/entity/guardian.png");
-   private static final class_4639 field_4124 = new class_4639("textures/entity/guardian_beam.png");
+   private static final Identifier field_4125 = new Identifier("textures/entity/guardian.png");
+   private static final Identifier field_4124 = new Identifier("textures/entity/guardian_beam.png");
    private static final class_3581 field_4126 = class_3581.method_16755(field_4124);
 
    public class_763(class_6122 var1) {
@@ -123,7 +123,7 @@ public class class_763 extends class_7164<class_337, class_2574> {
          .method_35735();
    }
 
-   public class_4639 method_3441(class_337 var1) {
+   public Identifier method_3441(class_337 var1) {
       return field_4125;
    }
 }

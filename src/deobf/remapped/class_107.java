@@ -18,7 +18,7 @@ public class class_107 extends class_7819 implements class_674 {
    private static final Set<class_2451> field_273 = Sets.newHashSet(
       new class_2451[]{class_4897.field_24621, class_4897.field_24435, class_4897.field_24480, class_4897.field_24883}
    );
-   private static final Map<class_6629<?>, class_8461> field_265 = class_9665.<Map<class_6629<?>, class_8461>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_6629<?>, class_8461> field_265 = Util.<Map<class_6629<?>, class_8461>>method_44659(Maps.newHashMap(), var0 -> {
       var0.put(class_6629.field_34301, class_463.field_1989);
       var0.put(class_6629.field_34272, class_463.field_2315);
       var0.put(class_6629.field_34210, class_463.field_2407);

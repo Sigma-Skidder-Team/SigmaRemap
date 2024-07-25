@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class class_450 {
-   private static final class_4639 field_1875 = new class_4639("textures/misc/underwater.png");
+   private static final Identifier field_1875 = new Identifier("textures/misc/underwater.png");
 
    public static void method_2171(MinecraftClient var0, class_7966 var1) {
       class_3542.method_16458();

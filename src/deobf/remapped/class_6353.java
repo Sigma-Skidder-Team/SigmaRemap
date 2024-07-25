@@ -178,7 +178,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
 
    @Nullable
    public class_3581 method_29108(T var1, boolean var2, boolean var3, boolean var4) {
-      class_4639 var7 = this.method_11446((T)var1);
+      Identifier var7 = this.method_11446((T)var1);
       if (this.method_32556() != null) {
          var7 = this.method_32556();
       }

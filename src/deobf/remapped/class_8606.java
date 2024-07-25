@@ -82,6 +82,6 @@ public abstract class class_8606 {
    public static final class_5621<class_6325> field_44129 = method_39564("basalt_deltas");
 
    private static class_5621<class_6325> method_39564(String var0) {
-      return class_5621.<class_6325>method_25497(class_8669.field_44359, new class_4639(var0));
+      return class_5621.<class_6325>method_25497(class_8669.field_44359, new Identifier(var0));
    }
 }

@@ -74,7 +74,7 @@ public class class_3758 implements class_2565 {
       }
    }
 
-   public class_7907 method_17417(class_4639 var1, class_7907 var2) {
+   public class_7907 method_17417(Identifier var1, class_7907 var2) {
       if (this.field_18370 instanceof class_7634) {
          var1 = class_3581.method_16768(var1);
          class_7634 var5 = (class_7634)this.field_18370;

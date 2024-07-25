@@ -82,7 +82,7 @@ public class class_1325 {
 
             class_1397 var9 = new class_1397(this);
             class_1196.method_5291()
-               .method_10277(var9, var3, class_8677.field_44535, class_8677.field_44535, class_9665.method_44661(), class_1196.method_5295());
+               .method_10277(var9, var3, class_8677.field_44535, class_8677.field_44535, Util.getMainWorkerExecutor(), class_1196.method_5295());
          }
 
          Optional var7 = class_1196.method_5291()

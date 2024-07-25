@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_8825 extends class_9873 {
-   public static final class_4639 field_45139 = new class_4639("textures/entity/trident.png");
+   public static final Identifier field_45139 = new Identifier("textures/entity/trident.png");
    private final class_1549 field_45138 = new class_1549(32, 32, 0, 6);
 
    public class_8825() {

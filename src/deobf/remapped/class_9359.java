@@ -45,7 +45,7 @@ public class class_9359 extends class_704 implements class_117 {
    private int field_47781 = 60;
    private class_1803 field_47809;
    private boolean field_47784 = true;
-   private long field_47785 = class_9665.method_44650();
+   private long field_47785 = Util.getMeasuringTimeMs();
    private class_8145 field_47802;
    private boolean field_47789;
    private boolean field_47783;
@@ -198,7 +198,7 @@ public class class_9359 extends class_704 implements class_117 {
          var1.method_25931("SpawnZ", this.field_47779.method_12185());
          var1.method_25934("SpawnForced", this.field_47787);
          var1.method_25920("SpawnAngle", this.field_47808);
-         class_4639.field_22655
+         Identifier.field_22655
             .encodeStart(class_3504.field_17178, this.field_47782.method_25499())
             .resultOrPartial(field_47780::error)
             .ifPresent(var1x -> var1.method_25946("SpawnDimension", var1x));
@@ -404,7 +404,7 @@ public class class_9359 extends class_704 implements class_117 {
             );
          class_5086 var6 = this.method_37095();
          if (var6 == null || var6.method_23374() == class_1014.field_5325) {
-            this.field_47801.method_1600().method_39983(var5, ChatType.SYSTEM, class_9665.field_49232);
+            this.field_47801.method_1600().method_39983(var5, ChatType.SYSTEM, Util.NIL_UUID);
          } else if (var6.method_23374() != class_1014.field_5327) {
             if (var6.method_23374() == class_1014.field_5328) {
                this.field_47801.method_1600().method_39965(this, var5);
@@ -669,7 +669,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public Either<class_8614, class_3256> method_3200(class_1331 var1) {
+   public Either<class_8614, Unit> method_3200(class_1331 var1) {
       class_240 var4 = this.field_41768.method_28262(var1).<class_240>method_10313(class_380.field_1543);
       if (this.method_26507() || !this.method_37330()) {
          return Either.left(class_8614.field_44186);
@@ -947,10 +947,10 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_3224(class_4639[] var1) {
+   public void method_3224(Identifier[] var1) {
       ArrayList var4 = Lists.newArrayList();
 
-      for (class_4639 var8 : var1) {
+      for (Identifier var8 : var1) {
          this.field_47801.method_1705().method_23139(var8).ifPresent(var4::add);
       }
 
@@ -986,7 +986,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Override
    public void method_3251(ITextComponent var1, boolean var2) {
-      this.field_47794.method_4156(new class_5182(var1, !var2 ? ChatType.CHAT : ChatType.GAME_INFO, class_9665.field_49232));
+      this.field_47794.method_4156(new class_5182(var1, !var2 ? ChatType.CHAT : ChatType.GAME_INFO, Util.NIL_UUID));
    }
 
    @Override
@@ -1183,7 +1183,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    public void method_43237() {
-      this.field_47785 = class_9665.method_44650();
+      this.field_47785 = Util.getMeasuringTimeMs();
    }
 
    public class_7909 method_43271() {
@@ -1334,7 +1334,7 @@ public class class_9359 extends class_704 implements class_117 {
       } else {
          boolean var8 = var2.equals(this.field_47779) && var1.equals(this.field_47782);
          if (var5 && !var8) {
-            this.method_26286(new TranslationTextComponent("block.minecraft.set_spawn"), class_9665.field_49232);
+            this.method_26286(new TranslationTextComponent("block.minecraft.set_spawn"), Util.NIL_UUID);
          }
 
          this.field_47779 = var2;

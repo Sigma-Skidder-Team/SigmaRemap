@@ -10,7 +10,7 @@ public class class_6004 {
    private final ImmutableList<class_2250> field_30579;
 
    public static class_6004 method_27403(String var0) {
-      return class_8669.field_44365.method_39806(class_4639.method_21455(var0));
+      return class_8669.field_44365.method_39806(Identifier.method_21455(var0));
    }
 
    public class_6004(class_2250... var1) {

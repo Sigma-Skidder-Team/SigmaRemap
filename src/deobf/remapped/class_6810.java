@@ -74,15 +74,15 @@ public class class_6810 {
          int var3 = var0.indexOf(58);
          return var3 >= 0
             ? class_8669.field_44376
-               .method_39794(class_4639.method_21459(var0.substring(0, var3), '.'))
-               .<class_6810>flatMap(var2 -> method_31259((class_9478<?>)var2, class_4639.method_21459(var0.substring(var3 + 1), '.')))
+               .method_39794(Identifier.method_21459(var0.substring(0, var3), '.'))
+               .<class_6810>flatMap(var2 -> method_31259((class_9478<?>)var2, Identifier.method_21459(var0.substring(var3 + 1), '.')))
             : Optional.<class_6810>empty();
       } else {
          return Optional.<class_6810>of(field_35136.get(var0));
       }
    }
 
-   private static <T> Optional<class_6810> method_31259(class_9478<T> var0, class_4639 var1) {
+   private static <T> Optional<class_6810> method_31259(class_9478<T> var0, Identifier var1) {
       return var0.method_43788().method_39794(var1).<class_6810>map(var0::method_43790);
    }
 

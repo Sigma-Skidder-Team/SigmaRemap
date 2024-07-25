@@ -13,7 +13,7 @@ public class class_3475 {
          String var2 = "optifine/natural.properties";
 
          try {
-            class_4639 var3 = new class_4639(var2);
+            Identifier var3 = new Identifier(var2);
             if (!class_3111.method_14362(var3)) {
                class_3111.method_14277("NaturalTextures: configuration \"" + var2 + "\" not found");
                return;
@@ -52,7 +52,7 @@ public class class_3475 {
                         if (var17 < 0) {
                            class_3111.method_14317("Natural Textures: Invalid \"" + var2 + "\" line: " + var12);
                         } else {
-                           if (var4 && !class_3111.method_14247(new class_4639("textures/block/" + var14 + ".png"))) {
+                           if (var4 && !class_3111.method_14247(new Identifier("textures/block/" + var14 + ".png"))) {
                               return;
                            }
 

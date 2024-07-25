@@ -11,10 +11,10 @@ public class class_7633 implements class_6798<class_2049> {
    private static String[] field_38833;
    private final List<class_6798<class_2049>> field_38835 = Lists.newArrayList();
    private final Random field_38832 = new Random();
-   private final class_4639 field_38836;
+   private final Identifier field_38836;
    private final ITextComponent field_38834;
 
-   public class_7633(class_4639 var1, String var2) {
+   public class_7633(Identifier var1, String var2) {
       this.field_38836 = var1;
       this.field_38834 = var2 != null ? new TranslationTextComponent(var2) : null;
    }

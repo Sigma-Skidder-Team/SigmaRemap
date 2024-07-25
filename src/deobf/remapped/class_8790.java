@@ -10,7 +10,7 @@ public class class_8790 extends FilterInputStream {
    private final String field_44971;
    private boolean field_44972;
 
-   public class_8790(InputStream var1, class_4639 var2, String var3) {
+   public class_8790(InputStream var1, Identifier var2, String var3) {
       super(var1);
       ByteArrayOutputStream var6 = new ByteArrayOutputStream();
       new Exception().printStackTrace(new PrintStream(var6));

@@ -6,8 +6,8 @@ public class class_5032<T> {
    private final String field_26028;
    private final Comparator<T> field_26019;
    private final long field_26027;
-   public static final class_5032<class_3256> field_26021 = method_23202("start", (var0, var1) -> 0);
-   public static final class_5032<class_3256> field_26023 = method_23202("dragon", (var0, var1) -> 0);
+   public static final class_5032<Unit> field_26021 = method_23202("start", (var0, var1) -> 0);
+   public static final class_5032<Unit> field_26023 = method_23202("dragon", (var0, var1) -> 0);
    public static final class_5032<class_2034> field_26029 = method_23202("player", Comparator.<class_2034>comparingLong(class_2034::method_9539));
    public static final class_5032<class_2034> field_26025 = method_23202("forced", Comparator.<class_2034>comparingLong(class_2034::method_9539));
    public static final class_5032<class_2034> field_26026 = method_23202("light", Comparator.<class_2034>comparingLong(class_2034::method_9539));

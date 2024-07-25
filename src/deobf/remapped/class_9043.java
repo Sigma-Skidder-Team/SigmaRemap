@@ -180,7 +180,7 @@ public class class_9043 extends class_1094 {
          this.method_41518(var1, this.field_46276);
       } else {
          if (this.field_46275 != null) {
-            long var4 = class_9665.method_44650() - this.field_46286;
+            long var4 = Util.getMeasuringTimeMs() - this.field_46286;
             if (var4 == 0L) {
                var4 = 1L;
             }
@@ -190,7 +190,7 @@ public class class_9043 extends class_1094 {
          }
 
          this.field_46275 = this.field_46272.field_7734;
-         this.field_46286 = class_9665.method_44650();
+         this.field_46286 = Util.getMeasuringTimeMs();
       }
    }
 

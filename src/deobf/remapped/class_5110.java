@@ -21,7 +21,7 @@ public class class_5110 {
    public static final class_2190 field_26348 = method_23431("time_check", new class_8654());
 
    private static class_2190 method_23431(String var0, class_6478<? extends class_7279> var1) {
-      return class_8669.<class_2190, class_2190>method_39792(class_8669.field_44384, new class_4639(var0), new class_2190(var1));
+      return class_8669.<class_2190, class_2190>method_39792(class_8669.field_44384, new Identifier(var0), new class_2190(var1));
    }
 
    public static Object method_23433() {

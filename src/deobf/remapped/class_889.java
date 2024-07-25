@@ -9,9 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 public class class_889 {
    public static final Logger field_4581 = LogManager.getLogger();
-   private static final Map<class_4639, Supplier<?>> field_4570 = Maps.newLinkedHashMap();
+   private static final Map<Identifier, Supplier<?>> field_4570 = Maps.newLinkedHashMap();
    private static final class_6433<class_6433<?>> field_4572 = new class_5383<class_6433<?>>(
-      class_5621.<class_6433<?>>method_25494(new class_4639("root")), Lifecycle.experimental()
+      class_5621.<class_6433<?>>method_25494(new Identifier("root")), Lifecycle.experimental()
    );
    public static final class_8669<? extends class_8669<?>> field_4574 = field_4572;
    public static final class_8669<class_7929<?>> field_4573 = method_3843(class_8669.field_44412, () -> class_7036.field_36236);
@@ -32,17 +32,17 @@ public class class_889 {
    }
 
    private static <T, R extends class_6433<T>> R method_3838(class_5621<? extends class_8669<T>> var0, R var1, Supplier<T> var2, Lifecycle var3) {
-      class_4639 var6 = var0.method_25499();
+      Identifier var6 = var0.method_25499();
       field_4570.put(var6, var2);
       class_6433 var7 = field_4572;
       return var7.<R>method_29381(var0, (R)var1, var3);
    }
 
    public static <T> T method_3840(class_8669<? super T> var0, String var1, T var2) {
-      return method_3844(var0, new class_4639(var1), (T)var2);
+      return method_3844(var0, new Identifier(var1), (T)var2);
    }
 
-   public static <V, T extends V> T method_3844(class_8669<V> var0, class_4639 var1, T var2) {
+   public static <V, T extends V> T method_3844(class_8669<V> var0, Identifier var1, T var2) {
       return ((class_6433)var0).<T>method_29381(class_5621.<T>method_25497(var0.method_39798(), var1), (T)var2, Lifecycle.stable());
    }
 

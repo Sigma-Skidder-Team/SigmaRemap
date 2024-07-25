@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 
 public class class_6885 implements AutoCloseable {
    private static String[] field_35436;
-   private final Map<class_4639, class_8359> field_35435;
+   private final Map<Identifier, class_8359> field_35435;
 
    public class_6885(Collection<class_8359> var1) {
       this.field_35435 = var1.stream().collect(Collectors.toMap(class_8359::method_38519, Function.<class_8359>identity()));
    }
 
-   public class_8359 method_31569(class_4639 var1) {
+   public class_8359 method_31569(Identifier var1) {
       return this.field_35435.get(var1);
    }
 

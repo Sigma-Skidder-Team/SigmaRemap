@@ -16,7 +16,7 @@ public class class_1958 extends class_9128 {
 
    @Override
    public void method_42020() {
-      int var3 = GLFW.glfwGetKey(field_46692.field_9602.method_43181(), field_46692.field_9577.field_45416.field_30027.field_17800);
+      int var3 = GLFW.glfwGetKey(field_46692.window.method_43181(), field_46692.field_9577.field_45416.field_30027.field_17800);
       field_46692.field_9577.field_45416.field_30024 = var3 == 1;
    }
 }

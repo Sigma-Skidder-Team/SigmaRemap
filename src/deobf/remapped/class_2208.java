@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
 public abstract class class_2208<T extends class_4088> extends Screen implements class_4378<T> {
-   public static final class_4639 field_10969 = new class_4639("textures/gui/container/inventory.png");
+   public static final Identifier field_10969 = new Identifier("textures/gui/container/inventory.png");
    public int field_10981 = 176;
    public int field_10973 = 166;
    public int field_10959;
@@ -118,7 +118,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
       }
 
       if (!this.field_10979.method_28022()) {
-         float var21 = (float)(class_9665.method_44650() - this.field_10974) / 100.0F;
+         float var21 = (float)(Util.getMeasuringTimeMs() - this.field_10974) / 100.0F;
          if (var21 >= 1.0F) {
             var21 = 1.0F;
             this.field_10979 = class_6098.field_31203;
@@ -194,7 +194,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
       if (var7.method_28022() && var2.method_35886()) {
          Pair var14 = var2.method_35900();
          if (var14 != null) {
-            class_5155 var13 = this.field_943.method_8490((class_4639)var14.getFirst()).apply((class_4639)var14.getSecond());
+            class_5155 var13 = this.field_943.method_8490((Identifier)var14.getFirst()).apply((Identifier)var14.getSecond());
             this.field_943.method_8577().method_35674(var13.method_23608().method_38519());
             method_9782(var1, var5, var6, this.method_9777(), 16, 16, var13);
             var9 = true;
@@ -258,7 +258,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
       } else {
          boolean var8 = this.field_943.field_9577.field_45541.method_27070(var5);
          class_7934 var9 = this.method_10224(var1, var3);
-         long var10 = class_9665.method_44650();
+         long var10 = Util.getMeasuringTimeMs();
          this.field_10964 = this.field_10970 == var9 && var10 - this.field_10983 < 250L && this.field_10976 == var5;
          this.field_10982 = false;
          if (var5 != 0 && var5 != 1 && !var8) {
@@ -368,7 +368,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
          if (var5 == 0 || var5 == 1) {
             if (!this.field_10965.method_28022()) {
                if (this.field_10965.method_27997() > 1 && var12 != null && class_4088.method_18856(var12, this.field_10965, false)) {
-                  long var14 = class_9665.method_44650();
+                  long var14 = Util.getMeasuringTimeMs();
                   if (this.field_10985 != var12) {
                      this.field_10985 = var12;
                      this.field_10963 = var14;
@@ -459,7 +459,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
                      this.field_10972 = class_9299.method_42847(var3 - (double)var10);
                      this.field_10955 = this.field_10975;
                      this.field_10979 = this.field_10965;
-                     this.field_10974 = class_9665.method_44650();
+                     this.field_10974 = Util.getMeasuringTimeMs();
                   } else {
                      this.field_10979 = class_6098.field_31203;
                   }
@@ -468,7 +468,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
                   this.field_10972 = class_9299.method_42847(var3 - (double)var10);
                   this.field_10955 = this.field_10975;
                   this.field_10979 = this.field_10965;
-                  this.field_10974 = class_9665.method_44650();
+                  this.field_10974 = Util.getMeasuringTimeMs();
                }
 
                this.field_10965 = class_6098.field_31203;

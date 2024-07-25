@@ -6,34 +6,34 @@ import java.util.Map;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7510 {
-   private static final Map<class_4639, SuggestionProvider<class_8773>> field_38357 = Maps.newHashMap();
-   private static final class_4639 field_38358 = new class_4639("ask_server");
+   private static final Map<Identifier, SuggestionProvider<class_8773>> field_38357 = Maps.newHashMap();
+   private static final Identifier field_38358 = new Identifier("ask_server");
    public static final SuggestionProvider<class_8773> field_38353 = method_34235(
       field_38358, (var0, var1) -> ((class_8773)var0.getSource()).method_40316(var0, var1)
    );
    public static final SuggestionProvider<class_9155> field_38355 = method_34235(
-      new class_4639("all_recipes"), (var0, var1) -> class_8773.method_40310(((class_8773)var0.getSource()).method_40326(), var1)
+      new Identifier("all_recipes"), (var0, var1) -> class_8773.method_40310(((class_8773)var0.getSource()).method_40326(), var1)
    );
    public static final SuggestionProvider<class_9155> field_38351 = method_34235(
-      new class_4639("available_sounds"), (var0, var1) -> class_8773.method_40324(((class_8773)var0.getSource()).method_40309(), var1)
+      new Identifier("available_sounds"), (var0, var1) -> class_8773.method_40324(((class_8773)var0.getSource()).method_40309(), var1)
    );
    public static final SuggestionProvider<class_9155> field_38352 = method_34235(
-      new class_4639("available_biomes"),
+      new Identifier("available_biomes"),
       (var0, var1) -> class_8773.method_40324(
             ((class_8773)var0.getSource()).method_40327().<class_6325>method_28813(class_8669.field_44359).method_39805(), var1
          )
    );
    public static final SuggestionProvider<class_9155> field_38354 = method_34235(
-      new class_4639("summonable_entities"),
+      new Identifier("summonable_entities"),
       (var0, var1) -> class_8773.method_40318(
             class_8669.field_44400.method_39801().filter(class_6629::method_30465),
             var1,
             class_6629::method_30472,
-            var0x -> new TranslationTextComponent(class_9665.method_44671("entity", class_6629.method_30472(var0x)))
+            var0x -> new TranslationTextComponent(Util.createTranslationKey("entity", class_6629.method_30472(var0x)))
          )
    );
 
-   public static <S extends class_8773> SuggestionProvider<S> method_34235(class_4639 var0, SuggestionProvider<class_8773> var1) {
+   public static <S extends class_8773> SuggestionProvider<S> method_34235(Identifier var0, SuggestionProvider<class_8773> var1) {
       if (!field_38357.containsKey(var0)) {
          field_38357.put(var0, var1);
          return new class_8300(var0, var1);
@@ -42,11 +42,11 @@ public class class_7510 {
       }
    }
 
-   public static SuggestionProvider<class_8773> method_34237(class_4639 var0) {
+   public static SuggestionProvider<class_8773> method_34237(Identifier var0) {
       return field_38357.getOrDefault(var0, field_38353);
    }
 
-   public static class_4639 method_34234(SuggestionProvider<class_8773> var0) {
+   public static Identifier method_34234(SuggestionProvider<class_8773> var0) {
       return !(var0 instanceof class_8300) ? field_38358 : class_8300.method_38287((class_8300)var0);
    }
 

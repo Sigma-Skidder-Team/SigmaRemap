@@ -7,11 +7,11 @@ import org.apache.logging.log4j.Logger;
 
 public class class_8096 {
    private static final Logger field_41481 = LogManager.getLogger();
-   private final class_4639 field_41480;
+   private final Identifier field_41480;
    private final class_264 field_41482;
    private final Gson field_41484 = class_5746.method_26000().create();
 
-   public class_8096(class_4639 var1, class_264 var2) {
+   public class_8096(Identifier var1, class_264 var2) {
       this.field_41480 = var1;
       this.field_41482 = var2;
    }
@@ -28,7 +28,7 @@ public class class_8096 {
       return var6;
    }
 
-   public class_4639 method_36783() {
+   public Identifier method_36783() {
       return this.field_41480;
    }
 }

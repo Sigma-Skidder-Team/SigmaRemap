@@ -10,8 +10,8 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_8226 extends class_2208<class_8372> {
-   private static final class_4639 field_42231 = new class_4639("textures/gui/container/enchanting_table.png");
-   private static final class_4639 field_42227 = new class_4639("textures/entity/enchanting_table_book.png");
+   private static final Identifier field_42231 = new Identifier("textures/gui/container/enchanting_table.png");
+   private static final Identifier field_42227 = new Identifier("textures/entity/enchanting_table_book.png");
    private static final class_8197 field_42233 = new class_8197();
    private final Random field_42234 = new Random();
    public int field_42237;

@@ -6,8 +6,8 @@ import com.mojang.datafixers.util.Pair;
 public class class_4426 {
    public static final class_8115 field_21626 = class_9863.method_45479(
       new class_8115(
-         new class_4639("bastion/starts"),
-         new class_4639("empty"),
+         new Identifier("bastion/starts"),
+         new Identifier("empty"),
          ImmutableList.of(
             Pair.of(class_2609.method_11841("bastion/units/air_base", class_4932.field_25543), 1),
             Pair.of(class_2609.method_11841("bastion/hoglin_stable/air_base", class_4932.field_25543), 1),

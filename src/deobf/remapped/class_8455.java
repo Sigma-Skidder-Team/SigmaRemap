@@ -43,7 +43,7 @@ public class class_8455 {
    }
 
    private boolean method_38886(int var1) {
-      if (this.field_43229 > 0L && this.field_43229 < class_9665.method_44650() - 100L) {
+      if (this.field_43229 > 0L && this.field_43229 < Util.getMeasuringTimeMs() - 100L) {
          return true;
       } else {
          switch (var1) {
@@ -212,7 +212,7 @@ public class class_8455 {
                break;
             case field_7718:
                class_8145 var8 = ((class_5631)var5).method_25524();
-               class_4639 var9 = class_8669.field_44400.method_39797(var8.method_37387());
+               Identifier var9 = class_8669.field_44400.method_39797(var8.method_37387());
                if (var1) {
                   if (var2) {
                      this.field_43225.field_9632.field_30532.method_4809().method_572(var8.method_37145(), var3 -> {
@@ -249,7 +249,7 @@ public class class_8455 {
       this.method_38891(var7);
    }
 
-   private void method_38885(class_4639 var1, class_1343 var2, class_5734 var3) {
+   private void method_38885(Identifier var1, class_1343 var2, class_5734 var3) {
       String var6;
       if (var3 == null) {
          var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", var1.toString(), var2.field_7336, var2.field_7333, var2.field_7334);
@@ -294,8 +294,8 @@ public class class_8455 {
             if (class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 67)
                && class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292)) {
                this.field_43227 = true;
-               this.field_43229 = class_9665.method_44650();
-               this.field_43224 = class_9665.method_44650();
+               this.field_43229 = Util.getMeasuringTimeMs();
+               this.field_43224 = Util.getMeasuringTimeMs();
                this.field_43230 = 0L;
             }
          } else if (!class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 67)
@@ -304,7 +304,7 @@ public class class_8455 {
          }
 
          Screen var15 = this.field_43225.field_9623;
-         if (!(this.field_43225.field_9623 instanceof class_8590) || ((class_8590)var15).field_44015 <= class_9665.method_44650() - 20L) {
+         if (!(this.field_43225.field_9623 instanceof class_8590) || ((class_8590)var15).field_44015 <= Util.getMeasuringTimeMs() - 20L) {
             if (var5 != 1) {
                if (var5 == 0 && this.field_43225.field_9623 instanceof class_8590) {
                   ((class_8590)this.field_43225.field_9623).field_44013 = null;
@@ -500,7 +500,7 @@ public class class_8455 {
 
    public void method_38892() {
       if (this.field_43229 > 0L) {
-         long var3 = class_9665.method_44650();
+         long var3 = Util.getMeasuringTimeMs();
          long var5 = 10000L - (var3 - this.field_43229);
          long var7 = var3 - this.field_43224;
          if (var5 < 0L) {

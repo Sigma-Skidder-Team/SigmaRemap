@@ -21,7 +21,7 @@ public class class_4150 implements Closeable {
       this.field_20190 = var2;
    }
 
-   public static class_4150 method_19265(class_7832 var0, class_4639 var1) {
+   public static class_4150 method_19265(class_7832 var0, Identifier var1) {
       try (class_4038 var4 = var0.method_35458(var1)) {
          class_5797 var6 = class_5797.method_26230(var4.method_18576());
          class_9051 var7 = null;

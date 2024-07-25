@@ -95,7 +95,7 @@ public class class_9030 {
          .method_39801()
          .filter(var0 -> var0.method_30476() != class_4565.field_22251)
          .filter(var0 -> !method_41421((class_6629<?>)var0))
-         .<class_4639>map(class_8669.field_44400::method_39797)
+         .<Identifier>map(class_8669.field_44400::method_39797)
          .forEach(var0 -> {
             if (!class_7665.field_38958) {
                field_46213.error("Entity {} has no attributes", var0);

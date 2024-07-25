@@ -1218,12 +1218,12 @@ public abstract class class_5834 extends class_8145 {
    public void method_26614(class_6199 var1, int var2, boolean var3) {
    }
 
-   public class_4639 method_26591() {
+   public Identifier method_26591() {
       return this.method_37387().method_30480();
    }
 
    public void method_26483(class_6199 var1, boolean var2) {
-      class_4639 var5 = this.method_26591();
+      Identifier var5 = this.method_26591();
       class_1758 var6 = this.field_41768.method_29522().method_1722().method_4604(var5);
       class_8480 var7 = this.method_26502(var2, var1);
       var6.method_7863(var7.method_39064(class_4933.field_25566), this::method_37310);

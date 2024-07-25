@@ -3,14 +3,14 @@ package remapped;
 import com.google.gson.JsonObject;
 
 public class class_1663 extends class_8273<class_2270> {
-   private final class_4639 field_8619;
+   private final Identifier field_8619;
 
-   public class_1663(class_4639 var1) {
+   public class_1663(Identifier var1) {
       this.field_8619 = var1;
    }
 
    @Override
-   public class_4639 method_3899() {
+   public Identifier method_3899() {
       return this.field_8619;
    }
 

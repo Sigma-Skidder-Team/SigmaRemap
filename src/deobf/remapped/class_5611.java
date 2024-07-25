@@ -1,12 +1,12 @@
 package remapped;
 
 public class class_5611 extends class_2255<class_3756> {
-   public static final class_2843 field_28488 = new class_2843(class_8359.field_42824, new class_4639("entity/conduit/base"));
-   public static final class_2843 field_28487 = new class_2843(class_8359.field_42824, new class_4639("entity/conduit/cage"));
-   public static final class_2843 field_28480 = new class_2843(class_8359.field_42824, new class_4639("entity/conduit/wind"));
-   public static final class_2843 field_28479 = new class_2843(class_8359.field_42824, new class_4639("entity/conduit/wind_vertical"));
-   public static final class_2843 field_28482 = new class_2843(class_8359.field_42824, new class_4639("entity/conduit/open_eye"));
-   public static final class_2843 field_28478 = new class_2843(class_8359.field_42824, new class_4639("entity/conduit/closed_eye"));
+   public static final class_2843 field_28488 = new class_2843(class_8359.field_42824, new Identifier("entity/conduit/base"));
+   public static final class_2843 field_28487 = new class_2843(class_8359.field_42824, new Identifier("entity/conduit/cage"));
+   public static final class_2843 field_28480 = new class_2843(class_8359.field_42824, new Identifier("entity/conduit/wind"));
+   public static final class_2843 field_28479 = new class_2843(class_8359.field_42824, new Identifier("entity/conduit/wind_vertical"));
+   public static final class_2843 field_28482 = new class_2843(class_8359.field_42824, new Identifier("entity/conduit/open_eye"));
+   public static final class_2843 field_28478 = new class_2843(class_8359.field_42824, new Identifier("entity/conduit/closed_eye"));
    private final class_1549 field_28481 = new class_1549(16, 16, 0, 0);
    private final class_1549 field_28483;
    private final class_1549 field_28486;

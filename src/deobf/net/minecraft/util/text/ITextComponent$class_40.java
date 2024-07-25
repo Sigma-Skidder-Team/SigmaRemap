@@ -18,13 +18,13 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
-import remapped.class_4639;
+import remapped.Identifier;
 import remapped.class_6539;
 import remapped.class_9303;
-import remapped.class_9665;
+import remapped.Util;
 
 public class ITextComponent$class_40 implements JsonDeserializer<IFormattableTextComponent>, JsonSerializer<ITextComponent> {
-   private static final Gson GSON = class_9665.<Gson>method_44660(() -> {
+   private static final Gson GSON = Util.<Gson>method_44660(() -> {
       GsonBuilder var2 = new GsonBuilder();
       var2.disableHtmlEscaping();
       var2.registerTypeHierarchyAdapter(ITextComponent.class, new ITextComponent$class_40());
@@ -32,7 +32,7 @@ public class ITextComponent$class_40 implements JsonDeserializer<IFormattableTex
       var2.registerTypeAdapterFactory(new class_9303());
       return var2.create();
    });
-   private static final Field JSON_READER_POS_FIELD = class_9665.<Field>method_44660(() -> {
+   private static final Field JSON_READER_POS_FIELD = Util.<Field>method_44660(() -> {
       try {
          new JsonReader(new StringReader(""));
          Field var2 = JsonReader.class.getDeclaredField("pos");
@@ -42,7 +42,7 @@ public class ITextComponent$class_40 implements JsonDeserializer<IFormattableTex
          throw new IllegalStateException("Couldn't get field 'pos' for JsonReader", var3);
       }
    });
-   private static final Field JSON_READER_LINESTART_FIELD = class_9665.<Field>method_44660(() -> {
+   private static final Field JSON_READER_LINESTART_FIELD = Util.<Field>method_44660(() -> {
       try {
          new JsonReader(new StringReader(""));
          Field var2 = JsonReader.class.getDeclaredField("lineStart");
@@ -126,7 +126,7 @@ public class ITextComponent$class_40 implements JsonDeserializer<IFormattableTex
                   throw new JsonParseException("Don't know how to turn " + p_deserialize_1_ + " into a Component");
                }
 
-               jsonarray2 = new NBTTextComponent$class_45(var16, var19, new class_4639(class_6539.method_29796(iformattabletextcomponent, "storage")));
+               jsonarray2 = new NBTTextComponent$class_45(var16, var19, new Identifier(class_6539.method_29796(iformattabletextcomponent, "storage")));
             }
          }
 

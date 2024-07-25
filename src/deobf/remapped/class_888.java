@@ -47,10 +47,10 @@ public class class_888<T> extends class_3766<T> {
       Optional var7 = this.field_4564.method_28814(var2);
       if (var7.isPresent()) {
          class_6433 var8 = (class_6433)var7.get();
-         DataResult var9 = class_4639.field_22655.decode(this.field_18419, var1);
+         DataResult var9 = Identifier.field_22655.decode(this.field_18419, var1);
          if (var9.result().isPresent()) {
             Pair var10 = (Pair)var9.result().get();
-            class_4639 var11 = (class_4639)var10.getFirst();
+            Identifier var11 = (Identifier)var10.getFirst();
             return this.method_3824(var2, var8, var3, var11).map(var1x -> Pair.of(var1x, var10.getSecond()));
          } else {
             return var4 ? var3.decode(this, var1).map(var0 -> var0.mapFirst(var0x -> () -> var0x)) : DataResult.error("Inline definitions not allowed here");
@@ -65,12 +65,12 @@ public class class_888<T> extends class_3766<T> {
       DataResult var7 = DataResult.success(var1, Lifecycle.stable());
       String var8 = var2.method_25499().method_21456() + "/";
 
-      for (class_4639 var10 : var6) {
+      for (Identifier var10 : var6) {
          String var11 = var10.method_21456();
          if (var11.endsWith(".json")) {
             if (var11.startsWith(var8)) {
                String var12 = var11.substring(var8.length(), var11.length() - ".json".length());
-               class_4639 var13 = new class_4639(var10.method_21461(), var12);
+               Identifier var13 = new Identifier(var10.method_21461(), var12);
                var7 = var7.flatMap(var4 -> this.<T>method_3824(var2, var4, var3, var13).map(var1xx -> var4));
             } else {
                field_4569.warn("Skipping resource {} since it does not have a registry name prefix", var10);
@@ -83,7 +83,7 @@ public class class_888<T> extends class_3766<T> {
       return var7.setPartial(var1);
    }
 
-   private <E> DataResult<Supplier<E>> method_3824(class_5621<? extends class_8669<E>> var1, class_6433<E> var2, Codec<E> var3, class_4639 var4) {
+   private <E> DataResult<Supplier<E>> method_3824(class_5621<? extends class_8669<E>> var1, class_6433<E> var2, Codec<E> var3, Identifier var4) {
       class_5621 var7 = class_5621.method_25497(var1, var4);
       class_1627 var8 = this.method_3822(var1);
       DataResult var9 = (DataResult)class_1627.method_7258(var8).get(var7);

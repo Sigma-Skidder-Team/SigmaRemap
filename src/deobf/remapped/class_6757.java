@@ -16,7 +16,7 @@ public class class_6757 extends class_2269 {
    private final class_4145 field_34870;
    private final MinecraftClient field_34865;
    private final class_2560 field_34866;
-   private final class_4639 field_34868;
+   private final Identifier field_34868;
    private String field_34869;
    private class_7884 field_34867;
    private long field_34862;
@@ -26,7 +26,7 @@ public class class_6757 extends class_2269 {
       this.field_34870 = var2;
       this.field_34866 = var3;
       this.field_34865 = MinecraftClient.getInstance();
-      this.field_34868 = new class_4639("servers/" + Hashing.sha1().hashUnencodedChars(var3.field_12675) + "/icon");
+      this.field_34868 = new Identifier("servers/" + Hashing.sha1().hashUnencodedChars(var3.field_12675) + "/icon");
       this.field_34867 = (class_7884)this.field_34865.method_8577().method_35679(this.field_34868);
    }
 
@@ -98,7 +98,7 @@ public class class_6757 extends class_2269 {
             }
          } else {
             var17 = 1;
-            var18 = (int)(class_9665.method_44650() / 100L + (long)(var2 * 2) & 7L);
+            var18 = (int)(Util.getMeasuringTimeMs() / 100L + (long)(var2 * 2) & 7L);
             if (var18 > 4) {
                var18 = 8 - var18;
             }
@@ -175,7 +175,7 @@ public class class_6757 extends class_2269 {
       this.field_34870.method_19242().method_14676();
    }
 
-   public void method_30968(class_7966 var1, int var2, int var3, class_4639 var4) {
+   public void method_30968(class_7966 var1, int var2, int var3, Identifier var4) {
       this.field_34865.method_8577().method_35674(var4);
       class_3542.method_16488();
       class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 32, 32, 32, 32);
@@ -262,11 +262,11 @@ public class class_6757 extends class_2269 {
       }
 
       this.field_34870.method_19234(this);
-      if (class_9665.method_44650() - this.field_34862 < 250L) {
+      if (Util.getMeasuringTimeMs() - this.field_34862 < 250L) {
          this.field_34870.method_19235();
       }
 
-      this.field_34862 = class_9665.method_44650();
+      this.field_34862 = Util.getMeasuringTimeMs();
       return false;
    }
 

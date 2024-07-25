@@ -27,7 +27,7 @@ public class class_5116 {
    public static final class_1404 field_26401 = method_23455("copy_state", new class_3694());
 
    private static class_1404 method_23455(String var0, class_6478<? extends class_2913> var1) {
-      return class_8669.<class_1404, class_1404>method_39792(class_8669.field_44357, new class_4639(var0), new class_1404(var1));
+      return class_8669.<class_1404, class_1404>method_39792(class_8669.field_44357, new Identifier(var0), new class_1404(var1));
    }
 
    public static Object method_23458() {

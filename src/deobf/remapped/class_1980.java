@@ -8,10 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 public class class_1980 extends class_1094 {
    private static final Logger field_10043 = LogManager.getLogger();
-   private static final class_4639 field_10023 = new class_4639("realms", "textures/gui/realms/op_icon.png");
-   private static final class_4639 field_10039 = new class_4639("realms", "textures/gui/realms/user_icon.png");
-   private static final class_4639 field_10032 = new class_4639("realms", "textures/gui/realms/cross_player_icon.png");
-   private static final class_4639 field_10019 = new class_4639("minecraft", "textures/gui/options_background.png");
+   private static final Identifier field_10023 = new Identifier("realms", "textures/gui/realms/op_icon.png");
+   private static final Identifier field_10039 = new Identifier("realms", "textures/gui/realms/user_icon.png");
+   private static final Identifier field_10032 = new Identifier("realms", "textures/gui/realms/cross_player_icon.png");
+   private static final Identifier field_10019 = new Identifier("minecraft", "textures/gui/options_background.png");
    private static final ITextComponent field_10031 = new TranslationTextComponent("mco.configure.world.invites.normal.tooltip");
    private static final ITextComponent field_10037 = new TranslationTextComponent(field_10024[2]);
    private static final ITextComponent field_10036 = new TranslationTextComponent(field_10024[1]);

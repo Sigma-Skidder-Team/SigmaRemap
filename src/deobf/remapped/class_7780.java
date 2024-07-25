@@ -18,8 +18,8 @@ public class class_7780 {
    private final class_7781 field_39436;
    private final class_4666 field_39433;
    private final Map<class_6676<?>, class_7781> field_39438;
-   private final Object2BooleanMap<class_4639> field_39432;
-   private final Map<class_4639, class_4334> field_39434;
+   private final Object2BooleanMap<Identifier> field_39432;
+   private final Map<Identifier, class_4334> field_39434;
 
    private static class_4334 method_35303(JsonElement var0) {
       if (!var0.isJsonPrimitive()) {
@@ -37,7 +37,7 @@ public class class_7780 {
    }
 
    private class_7780(
-      class_7781 var1, class_4666 var2, Map<class_6676<?>, class_7781> var3, Object2BooleanMap<class_4639> var4, Map<class_4639, class_4334> var5
+           class_7781 var1, class_4666 var2, Map<class_6676<?>, class_7781> var3, Object2BooleanMap<Identifier> var4, Map<Identifier, class_4334> var5
    ) {
       this.field_39436 = var1;
       this.field_39433 = var2;
@@ -72,7 +72,7 @@ public class class_7780 {
 
             while (var13.hasNext()) {
                it.unimi.dsi.fastutil.objects.Object2BooleanMap.Entry var15 = (it.unimi.dsi.fastutil.objects.Object2BooleanMap.Entry)var13.next();
-               if (var12.method_5073((class_4639)var15.getKey()) != var15.getBooleanValue()) {
+               if (var12.method_5073((Identifier)var15.getKey()) != var15.getBooleanValue()) {
                   return false;
                }
             }
@@ -82,7 +82,7 @@ public class class_7780 {
                class_8873 var16 = var4.method_37268().method_1703();
 
                for (Entry var10 : this.field_39434.entrySet()) {
-                  class_3139 var11 = var16.method_40818((class_4639)var10.getKey());
+                  class_3139 var11 = var16.method_40818((Identifier)var10.getKey());
                   if (var11 == null || !((class_4334)var10.getValue()).test(var14.method_15389(var11))) {
                      return false;
                   }
@@ -105,13 +105,13 @@ public class class_7780 {
          if (var8 != null) {
             for (JsonElement var10 : var8) {
                JsonObject var11 = class_6539.method_29782(var10, "stats entry");
-               class_4639 var12 = new class_4639(class_6539.method_29796(var11, "type"));
+               Identifier var12 = new Identifier(class_6539.method_29796(var11, "type"));
                class_9478 var13 = class_8669.field_44376.method_39806(var12);
                if (var13 == null) {
                   throw new JsonParseException("Invalid stat type: " + var12);
                }
 
-               class_4639 var14 = new class_4639(class_6539.method_29796(var11, "stat"));
+               Identifier var14 = new Identifier(class_6539.method_29796(var11, "stat"));
                class_6676 var15 = method_35299(var13, var14);
                class_7781 var16 = class_7781.method_35310(var11.get("value"));
                var7.put(var15, var16);
@@ -122,7 +122,7 @@ public class class_7780 {
          JsonObject var18 = class_6539.method_29784(var3, "recipes", new JsonObject());
 
          for (Entry var21 : var18.entrySet()) {
-            class_4639 var23 = new class_4639((String)var21.getKey());
+            Identifier var23 = new Identifier((String)var21.getKey());
             boolean var25 = class_6539.method_29770((JsonElement)var21.getValue(), "recipe present");
             var17.put(var23, var25);
          }
@@ -131,7 +131,7 @@ public class class_7780 {
          JsonObject var22 = class_6539.method_29784(var3, "advancements", new JsonObject());
 
          for (Entry var26 : var22.entrySet()) {
-            class_4639 var27 = new class_4639((String)var26.getKey());
+            Identifier var27 = new Identifier((String)var26.getKey());
             class_4334 var28 = method_35303((JsonElement)var26.getValue());
             var20.put(var27, var28);
          }
@@ -142,7 +142,7 @@ public class class_7780 {
       }
    }
 
-   private static <T> class_6676<T> method_35299(class_9478<T> var0, class_4639 var1) {
+   private static <T> class_6676<T> method_35299(class_9478<T> var0, Identifier var1) {
       class_8669 var4 = var0.method_43788();
       Object var5 = var4.method_39806(var1);
       if (var5 != null) {
@@ -152,7 +152,7 @@ public class class_7780 {
       }
    }
 
-   private static <T> class_4639 method_35302(class_6676<T> var0) {
+   private static <T> Identifier method_35302(class_6676<T> var0) {
       return var0.method_30631().method_43788().method_39797(var0.method_30630());
    }
 

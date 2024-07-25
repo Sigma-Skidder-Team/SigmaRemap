@@ -3,7 +3,7 @@ package remapped;
 import com.google.gson.JsonObject;
 
 public interface class_911<T extends class_5154> {
-   class_4639 method_3899();
+   Identifier method_3899();
 
    void method_3902(class_3362 var1, class_7787<T> var2);
 

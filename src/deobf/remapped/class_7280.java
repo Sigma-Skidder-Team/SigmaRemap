@@ -58,7 +58,7 @@ public class class_7280 implements AutoCloseable {
       MinecraftClient var10 = MinecraftClient.getInstance();
       this.field_37268.method_19853("ScreenSize").method_32386((float)var10.method_8552().method_43178(), (float)var10.method_8552().method_43198());
       this.field_37268.method_19852();
-      this.field_37272.method_19712(MinecraftClient.field_9574);
+      this.field_37272.method_19712(MinecraftClient.IS_SYSTEM_MAC);
       this.field_37272.method_19717(false);
       class_3542.method_16457(519);
       class_9633 var7 = class_8042.method_36499().method_36501();

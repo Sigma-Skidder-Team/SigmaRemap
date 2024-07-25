@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class class_6535<S> implements class_4302 {
    private static String[] field_33235;
    public final class_7832 field_33239;
-   public final CompletableFuture<class_3256> field_33238 = new CompletableFuture<class_3256>();
+   public final CompletableFuture<Unit> field_33238 = new CompletableFuture<Unit>();
    public final CompletableFuture<List<S>> field_33240;
    private final Set<class_2231> field_33244;
    private final int field_33243;
@@ -21,7 +21,7 @@ public class class_6535<S> implements class_4302 {
    private final AtomicInteger field_33237 = new AtomicInteger();
    private final AtomicInteger field_33242 = new AtomicInteger();
 
-   public static class_6535<Void> method_29756(class_7832 var0, List<class_2231> var1, Executor var2, Executor var3, CompletableFuture<class_3256> var4) {
+   public static class_6535<Void> method_29756(class_7832 var0, List<class_2231> var1, Executor var2, Executor var3, CompletableFuture<Unit> var4) {
       return new class_6535<Void>(
          var2,
          var3,
@@ -32,7 +32,7 @@ public class class_6535<S> implements class_4302 {
       );
    }
 
-   public class_6535(Executor var1, Executor var2, class_7832 var3, List<class_2231> var4, class_9234<S> var5, CompletableFuture<class_3256> var6) {
+   public class_6535(Executor var1, Executor var2, class_7832 var3, List<class_2231> var4, class_9234<S> var5, CompletableFuture<Unit> var6) {
       this.field_33239 = var3;
       this.field_33243 = var4.size();
       this.field_33237.incrementAndGet();
@@ -59,11 +59,11 @@ public class class_6535<S> implements class_4302 {
          var10 = var14;
       }
 
-      this.field_33240 = class_9665.<S>method_44680(var9);
+      this.field_33240 = Util.<S>method_44680(var9);
    }
 
-   public CompletableFuture<class_3256> 㞈刃붃핇낛佉() {
-      return this.field_33240.<class_3256>thenApply(var0 -> class_3256.field_16155);
+   public CompletableFuture<Unit> 㞈刃붃핇낛佉() {
+      return this.field_33240.<Unit>thenApply(var0 -> Unit.INSTANCE);
    }
 
    public float 圭甐贞騜ࢹⰛ() {

@@ -70,18 +70,18 @@ public class class_8316 {
       field_42584 = true;
       field_42597 = true;
       field_42577 = true;
-      field_42583 = var0.method_38515(new class_4639("block/grass_block_top"));
-      field_42608 = var0.method_38515(new class_4639("block/grass_block_side"));
-      field_42603 = var0.method_38515(new class_4639("block/grass_path_top"));
-      field_42578 = var0.method_38515(new class_4639("block/grass_path_side"));
-      field_42598 = var0.method_38515(new class_4639("block/mycelium_top"));
-      field_42588 = var0.method_38515(new class_4639("block/podzol_top"));
-      field_42605 = var0.method_38515(new class_4639("block/snow"));
+      field_42583 = var0.method_38515(new Identifier("block/grass_block_top"));
+      field_42608 = var0.method_38515(new Identifier("block/grass_block_side"));
+      field_42603 = var0.method_38515(new Identifier("block/grass_path_top"));
+      field_42578 = var0.method_38515(new Identifier("block/grass_path_side"));
+      field_42598 = var0.method_38515(new Identifier("block/mycelium_top"));
+      field_42588 = var0.method_38515(new Identifier("block/podzol_top"));
+      field_42605 = var0.method_38515(new Identifier("block/snow"));
       field_42582 = true;
       String var3 = "optifine/bettergrass.properties";
 
       try {
-         class_4639 var4 = new class_4639(var3);
+         Identifier var4 = new Identifier(var3);
          if (!class_3111.method_14362(var4)) {
             return;
          }
@@ -131,7 +131,7 @@ public class class_8316 {
       field_42605 = method_38335(var0, field_42605.method_23644());
    }
 
-   private static class_5155 method_38335(class_8359 var0, class_4639 var1) {
+   private static class_5155 method_38335(class_8359 var0, Identifier var1) {
       class_5155 var4 = var0.method_38528(var1);
       if (var4 == null || var4 instanceof class_2008) {
          class_3111.method_14317("Missing BetterGrass sprite: " + var1);
@@ -146,13 +146,13 @@ public class class_8316 {
          var6 = var2;
       }
 
-      class_4639 var7 = new class_4639("textures/" + var6 + ".png");
+      Identifier var7 = new Identifier("textures/" + var6 + ".png");
       if (!class_3111.method_14362(var7)) {
          class_3111.method_14317("BetterGrass texture not found: " + var7);
          var6 = var2;
       }
 
-      class_4639 var8 = new class_4639(var6);
+      Identifier var8 = new Identifier(var6);
       return var3.method_38515(var8);
    }
 

@@ -321,7 +321,7 @@ public class class_9155 implements class_8773 {
 
    public void method_42196(ITextComponent var1, boolean var2) {
       if (this.field_46849.method_26287() && !this.field_46859) {
-         this.field_46849.method_26286(var1, class_9665.field_49232);
+         this.field_46849.method_26286(var1, Util.NIL_UUID);
       }
 
       if (var2 && this.field_46849.method_26284() && !this.field_46859) {
@@ -335,19 +335,19 @@ public class class_9155 implements class_8773 {
       if (this.field_46856.method_1683().method_1285(class_291.field_1057)) {
          for (class_9359 var6 : this.field_46856.method_1600().method_39951()) {
             if (var6 != this.field_46849 && this.field_46856.method_1600().method_39962(var6.method_3247())) {
-               var6.method_26286(var4, class_9665.field_49232);
+               var6.method_26286(var4, Util.NIL_UUID);
             }
          }
       }
 
       if (this.field_46849 != this.field_46856 && this.field_46856.method_1683().method_1285(class_291.field_1056)) {
-         this.field_46856.method_26286(var4, class_9665.field_49232);
+         this.field_46856.method_26286(var4, Util.NIL_UUID);
       }
    }
 
    public void method_42175(ITextComponent var1) {
       if (this.field_46849.method_26285() && !this.field_46859) {
-         this.field_46849.method_26286(new StringTextComponent("").append(var1).mergeStyle(TextFormatting.RED), class_9665.field_49232);
+         this.field_46849.method_26286(new StringTextComponent("").append(var1).mergeStyle(TextFormatting.RED), Util.NIL_UUID);
       }
    }
 
@@ -368,12 +368,12 @@ public class class_9155 implements class_8773 {
    }
 
    @Override
-   public Collection<class_4639> method_40309() {
+   public Collection<Identifier> method_40309() {
       return class_8669.field_44369.method_39805();
    }
 
    @Override
-   public Stream<class_4639> method_40326() {
+   public Stream<Identifier> method_40326() {
       return this.field_46856.method_1705().method_23145();
    }
 

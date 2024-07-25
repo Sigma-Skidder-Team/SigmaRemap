@@ -18,7 +18,7 @@ public class class_2229 extends class_599 {
 
    @Nullable
    @Override
-   public InputStream method_2812(class_3168 var1, class_4639 var2) {
+   public InputStream method_2812(class_3168 var1, Identifier var2) {
       if (var1 == class_3168.field_15844) {
          File var5 = this.field_11124.method_23900(var2);
          if (var5 != null && var5.exists()) {
@@ -33,7 +33,7 @@ public class class_2229 extends class_599 {
    }
 
    @Override
-   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, class_4639 var2) {
+   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, Identifier var2) {
       if (var1 == class_3168.field_15844) {
          File var5 = this.field_11124.method_23900(var2);
          if (var5 != null && var5.exists()) {
@@ -59,7 +59,7 @@ public class class_2229 extends class_599 {
    }
 
    @Override
-   public Collection<class_4639> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<Identifier> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
       Collection var8 = super.ศ哝呓뎫顸瀳(var1, var2, var3, var4, var5);
       var8.addAll(this.field_11124.method_23898(var3, var2, var4, var5));
       return var8;

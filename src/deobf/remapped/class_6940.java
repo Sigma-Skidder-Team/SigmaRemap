@@ -54,12 +54,12 @@ public class class_6940 implements class_5998 {
             .filter(var0 -> var0.toString().endsWith(".snbt"))
             .forEach(
                var3 -> var5.add(
-                     CompletableFuture.<class_9797>supplyAsync(() -> this.method_31752(var3, this.method_31748(var7, var3)), class_9665.method_44661())
+                     CompletableFuture.<class_9797>supplyAsync(() -> this.method_31752(var3, this.method_31748(var7, var3)), Util.getMainWorkerExecutor())
                   )
             );
       }
 
-      class_9665.<class_9797>method_44680(var5).join().stream().filter(Objects::nonNull).forEach(var3 -> this.method_31751(var1, var3, var4));
+      Util.<class_9797>method_44680(var5).join().stream().filter(Objects::nonNull).forEach(var3 -> this.method_31751(var1, var3, var4));
    }
 
    @Override

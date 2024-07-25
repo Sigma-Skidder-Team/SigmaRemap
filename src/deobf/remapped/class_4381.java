@@ -43,7 +43,7 @@ public class class_4381 extends class_2089 implements class_4440 {
 
          while (var10.hasNext()) {
             class_7064 var11 = (class_7064)var10.next();
-            if (var11.method_32539() + 3000L > class_9665.method_44650()) {
+            if (var11.method_32539() + 3000L > Util.getMeasuringTimeMs()) {
                var9 = Math.max(var9, this.field_21493.textRenderer.method_45379(var11.method_32537()));
             } else {
                var10.remove();
@@ -69,7 +69,7 @@ public class class_4381 extends class_2089 implements class_4440 {
             float var24 = 1.0F;
             int var25 = this.field_21493.textRenderer.method_45379(var14);
             int var26 = class_9299.method_42847(
-               class_9299.method_42841(255.0, 75.0, (double)((float)(class_9665.method_44650() - var12.method_32539()) / 3000.0F))
+               class_9299.method_42841(255.0, 75.0, (double)((float)(Util.getMeasuringTimeMs() - var12.method_32539()) / 3000.0F))
             );
             int var27 = var26 << 16 | var26 << 8 | var26;
             class_3542.method_16438();

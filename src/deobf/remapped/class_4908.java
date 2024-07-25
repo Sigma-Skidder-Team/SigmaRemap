@@ -11,8 +11,8 @@ import org.apache.logging.log4j.Logger;
 
 public class class_4908 extends class_1094 {
    private static final Logger field_25400 = LogManager.getLogger();
-   private static final class_4639 field_25406 = new class_4639("realms", "textures/gui/realms/plus_icon.png");
-   private static final class_4639 field_25395 = new class_4639("realms", "textures/gui/realms/restore_icon.png");
+   private static final Identifier field_25406 = new Identifier("realms", "textures/gui/realms/plus_icon.png");
+   private static final Identifier field_25395 = new Identifier("realms", "textures/gui/realms/restore_icon.png");
    private static final ITextComponent field_25398 = new TranslationTextComponent(field_25392[2]);
    private static final ITextComponent field_25409 = new TranslationTextComponent(field_25392[3]);
    private static final ITextComponent field_25405 = new TranslationTextComponent(field_25392[4]);

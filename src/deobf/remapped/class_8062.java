@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_8062<T extends class_5834, M extends class_6521<T>> extends class_4171<T, M> {
-   private static final class_4639 field_41263 = new class_4639("textures/entity/elytra.png");
+   private static final Identifier field_41263 = new Identifier("textures/entity/elytra.png");
    private final class_7769<T> field_41262 = new class_7769<T>();
 
    public class_8062(class_2514<T, M> var1) {
@@ -11,7 +11,7 @@ public class class_8062<T extends class_5834, M extends class_6521<T>> extends c
    public void method_36566(class_7966 var1, class_2565 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       class_6098 var13 = var4.method_26520(class_6943.field_35708);
       if (this.method_36568(var13, (T)var4)) {
-         class_4639 var14;
+         Identifier var14;
          if (!(var4 instanceof class_9716)) {
             var14 = this.method_36567(var13, (T)var4);
             if (class_3111.method_14390()) {
@@ -45,7 +45,7 @@ public class class_8062<T extends class_5834, M extends class_6521<T>> extends c
       return var1.method_27960() == class_4897.field_24503;
    }
 
-   public class_4639 method_36567(class_6098 var1, T var2) {
+   public Identifier method_36567(class_6098 var1, T var2) {
       return field_41263;
    }
 }

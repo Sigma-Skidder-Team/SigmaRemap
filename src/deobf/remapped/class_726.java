@@ -6,7 +6,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.Style;
 
 public class class_726 {
-   private static final class_4639 field_3946 = new class_4639("minecraft", "alt");
+   private static final Identifier field_3946 = new Identifier("minecraft", "alt");
    private static final Style field_3944 = Style.EMPTY.setFontId(field_3946);
    private static final class_726 field_3945 = new class_726();
    private final Random field_3947 = new Random();
@@ -91,7 +91,7 @@ public class class_726 {
             var5.append(" ");
          }
 
-         var5.append(class_9665.<String>method_44697(this.field_3943, this.field_3947));
+         var5.append(Util.<String>method_44697(this.field_3943, this.field_3947));
       }
 
       return var1.method_45381().func_238358_a_(new StringTextComponent(var5.toString()).mergeStyle(field_3944), var2, Style.EMPTY);

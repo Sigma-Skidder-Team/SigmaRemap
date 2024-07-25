@@ -1276,7 +1276,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1943(class_4472 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_4639 var4 = var1.method_20755();
+      Identifier var4 = var1.method_20755();
       if (var4 != null) {
          class_3139 var5 = this.field_6027.method_25749().method_18078(var4);
          this.field_6027.method_25746(var5, false);
@@ -1355,21 +1355,21 @@ public class class_1092 implements class_392 {
       class_6265 var5 = var1.method_31128();
       switch (var5) {
          case field_32010:
-            for (class_4639 var13 : var1.method_31127()) {
+            for (Identifier var13 : var1.method_31127()) {
                this.field_6024.method_23139(var13).ifPresent(var4::method_5070);
             }
             break;
          case field_32013:
-            for (class_4639 var11 : var1.method_31127()) {
+            for (Identifier var11 : var1.method_31127()) {
                this.field_6024.method_23139(var11).ifPresent(var4::method_5084);
             }
 
-            for (class_4639 var12 : var1.method_31129()) {
+            for (Identifier var12 : var1.method_31129()) {
                this.field_6024.method_23139(var12).ifPresent(var4::method_5078);
             }
             break;
          case field_32011:
-            for (class_4639 var7 : var1.method_31127()) {
+            for (Identifier var7 : var1.method_31127()) {
                this.field_6024.method_23139(var7).ifPresent(var2 -> {
                   var4.method_5084((class_8932<?>)var2);
                   var4.method_5078((class_8932<?>)var2);
@@ -1719,7 +1719,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1915(class_6197 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_4639 var4 = var1.method_28332();
+      Identifier var4 = var1.method_28332();
       class_8248 var5 = null;
 
       try {

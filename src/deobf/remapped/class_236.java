@@ -104,12 +104,12 @@ public class class_236 {
    }
 
    private static class_236 method_1001(String var0, Set<class_2522> var1, int var2, int var3) {
-      return method_1008(class_8669.<class_236, class_236>method_39792(class_8669.field_44430, new class_4639(var0), new class_236(var0, var1, var2, var3)));
+      return method_1008(class_8669.<class_236, class_236>method_39792(class_8669.field_44430, new Identifier(var0), new class_236(var0, var1, var2, var3)));
    }
 
    private static class_236 method_1002(String var0, Set<class_2522> var1, int var2, Predicate<class_236> var3, int var4) {
       return method_1008(
-         class_8669.<class_236, class_236>method_39792(class_8669.field_44430, new class_4639(var0), new class_236(var0, var1, var2, var3, var4))
+         class_8669.<class_236, class_236>method_39792(class_8669.field_44430, new Identifier(var0), new class_236(var0, var1, var2, var3, var4))
       );
    }
 
@@ -117,7 +117,7 @@ public class class_236 {
       var0.field_760.forEach(var1 -> {
          class_236 var4 = field_774.put(var1, var0);
          if (var4 != null) {
-            throw (IllegalStateException)class_9665.method_44658(new IllegalStateException(String.format("%s is defined in too many tags", var1)));
+            throw (IllegalStateException) Util.method_44658(new IllegalStateException(String.format("%s is defined in too many tags", var1)));
          }
       });
       return var0;

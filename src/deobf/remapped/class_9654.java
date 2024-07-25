@@ -94,7 +94,7 @@ public class class_9654 {
          for (int var5 = 0; var5 < var1.length; var5++) {
             String var6 = var1[var5];
             if (method_44535(var6)) {
-               class_4639 var7 = new class_4639(var6);
+               Identifier var7 = new Identifier(var6);
                if (var0.method_37467(class_3168.field_15844, var7)) {
                   var4.add(var6);
                }
@@ -183,7 +183,7 @@ public class class_9654 {
    }
 
    public static Properties method_44541(String var0, String var1) {
-      class_4639 var4 = new class_4639(var0);
+      Identifier var4 = new Identifier(var0);
 
       try {
          InputStream var5 = class_3111.method_14374(var4);

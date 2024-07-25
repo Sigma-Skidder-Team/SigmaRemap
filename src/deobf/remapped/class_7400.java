@@ -31,7 +31,7 @@ public class class_7400 extends class_1859 {
       }
 
       this.method_32142(this.field_36258.method_18547(var4) + 50 + 60);
-      this.method_32175(MinecraftClient.getInstance().field_9602.method_43166() - this.field_36278 - 20);
+      this.method_32175(MinecraftClient.getInstance().window.method_43166() - this.field_36278 - 20);
       boolean var6 = this.field_37769 >= this.field_36270 && this.field_37768 <= this.field_36261 + this.method_32137();
       this.field_37767 = Math.max(0.0F, Math.min(1.0F, this.field_37767 + (!var6 ? -0.1F : 0.1F)));
       class_73.method_128(

@@ -22,7 +22,7 @@ public enum class_3801 implements class_4530 {
    private final String field_18601;
    private final class_7195 field_18594;
    private final Predicate<class_2522> field_18597;
-   private static final Map<String, class_3801> field_18600 = class_9665.<Map<String, class_3801>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<String, class_3801> field_18600 = Util.<Map<String, class_3801>>method_44659(Maps.newHashMap(), var0 -> {
       for (class_3801 var6 : values()) {
          var0.put(var6.field_18601, var6);
       }

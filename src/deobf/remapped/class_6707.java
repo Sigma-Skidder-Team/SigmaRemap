@@ -25,7 +25,7 @@ public class class_6707 extends Screen {
    private static final Logger field_34642 = LogManager.getLogger();
    private static final ITextComponent field_34641 = new TranslationTextComponent("pack.dropInfo").mergeStyle(TextFormatting.GRAY);
    private static final ITextComponent field_34643 = new TranslationTextComponent("pack.folderInfo");
-   private static final class_4639 field_34649 = new class_4639("textures/misc/unknown_pack.png");
+   private static final Identifier field_34649 = new Identifier("textures/misc/unknown_pack.png");
    private final class_5655 field_34640;
    private final Screen field_34644;
    private class_1515 field_34647;
@@ -34,7 +34,7 @@ public class class_6707 extends Screen {
    private class_895 field_34646;
    private final File field_34648;
    private class_9521 field_34636;
-   private final Map<String, class_4639> field_34638 = Maps.newHashMap();
+   private final Map<String, Identifier> field_34638 = Maps.newHashMap();
 
    public class_6707(Screen var1, class_6354 var2, Consumer<class_6354> var3, File var4, ITextComponent var5) {
       super(var5);
@@ -73,7 +73,7 @@ public class class_6707 extends Screen {
             150,
             20,
             new TranslationTextComponent("pack.openFolder"),
-            var1 -> class_9665.method_44667().method_37578(this.field_34648),
+            var1 -> Util.getOperatingSystem().method_37578(this.field_34648),
             (var1, var2, var3, var4) -> this.method_1176(var2, field_34643, var3, var4)
          )
       );
@@ -138,7 +138,7 @@ public class class_6707 extends Screen {
          try (Stream var5x = Files.walk(var2x)) {
             var5x.forEach(var3 -> {
                try {
-                  class_9665.method_44696(var2x.getParent(), var2, var3);
+                  Util.method_44696(var2x.getParent(), var2, var3);
                } catch (IOException var7) {
                   field_34642.warn("Failed to copy datapack file  from {} to {}", var3, var2, var7);
                   var5.setTrue();
@@ -167,14 +167,14 @@ public class class_6707 extends Screen {
       }, new TranslationTextComponent("pack.dropConfirm"), new StringTextComponent(var4)));
    }
 
-   private class_4639 method_30758(class_7889 var1, class_5522 var2) {
+   private Identifier method_30758(TextureManager var1, class_5522 var2) {
       try (
          class_8169 var5 = var2.method_25032();
          InputStream var7 = var5.method_37465("pack.png");
       ) {
          String var9 = var2.method_25023();
-         class_4639 var10 = new class_4639(
-            "minecraft", "pack/" + class_9665.method_44678(var9, class_4639::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var9) + "/icon"
+         Identifier var10 = new Identifier(
+            "minecraft", "pack/" + Util.method_44678(var9, Identifier::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var9) + "/icon"
          );
          class_5797 var11 = class_5797.method_26230(var7);
          var1.method_35682(var10, new class_7884(var11));
@@ -187,7 +187,7 @@ public class class_6707 extends Screen {
       return field_34649;
    }
 
-   private class_4639 method_30760(class_5522 var1) {
+   private Identifier method_30760(class_5522 var1) {
       return this.field_34638.computeIfAbsent(var1.method_25023(), var2 -> this.method_30758(this.field_943.method_8577(), var1));
    }
 }

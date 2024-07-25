@@ -36,7 +36,7 @@ public class class_1346<E, T extends class_2491<E>> implements JsonDeserializer<
          }
       } else {
          JsonObject var6 = class_6539.method_29782(var1, this.field_7347);
-         class_4639 var7 = new class_4639(class_6539.method_29796(var6, this.field_7348));
+         Identifier var7 = new Identifier(class_6539.method_29796(var6, this.field_7348));
          class_2491 var8 = this.field_7351.method_39806(var7);
          if (var8 != null) {
             return (E)var8.method_11400().method_29492(var6, var3);

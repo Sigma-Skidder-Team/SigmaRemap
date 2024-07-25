@@ -17,7 +17,7 @@ public class class_148 {
    private static DataFixer method_579() {
       DataFixerBuilder var2 = new DataFixerBuilder(class_7665.method_34674().getWorldVersion());
       method_578(var2);
-      return var2.build(class_9665.method_44695());
+      return var2.build(Util.getBootstrapExecutor());
    }
 
    public static DataFixer method_580() {

@@ -12,7 +12,7 @@ public class class_2714 extends class_4785<class_2714> {
    public class_2714(class_4213 var1, class_6325 var2) {
       this.field_13265 = var1;
       this.field_13268 = var2;
-      class_4639 var5 = class_9336.method_43106(var1.field_20465).method_39797(var2);
+      Identifier var5 = class_9336.method_43106(var1.field_20465).method_39797(var2);
       String var6 = "biome." + var5.method_21461() + "." + var5.method_21456();
       if (!LanguageMap.getInstance().func_230506_b_(var6)) {
          this.field_13266 = new StringTextComponent(var5.toString());

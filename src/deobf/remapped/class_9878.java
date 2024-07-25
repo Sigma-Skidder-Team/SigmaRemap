@@ -13,7 +13,7 @@ public class class_9878 extends class_6535<class_6396> {
    private static final Logger field_49939 = LogManager.getLogger();
    private final Stopwatch field_49938 = Stopwatch.createUnstarted();
 
-   public class_9878(class_7832 var1, List<class_2231> var2, Executor var3, Executor var4, CompletableFuture<class_3256> var5) {
+   public class_9878(class_7832 var1, List<class_2231> var2, Executor var3, Executor var4, CompletableFuture<Unit> var5) {
       super(
          var3,
          var4,
@@ -22,16 +22,16 @@ public class class_9878 extends class_6535<class_6396> {
          (var1x, var2x, var3x, var4x, var5x) -> {
             AtomicLong var8 = new AtomicLong();
             AtomicLong var9 = new AtomicLong();
-            class_4929 var10 = new class_4929(class_9665.field_49234, () -> 0, false);
-            class_4929 var11 = new class_4929(class_9665.field_49234, () -> 0, false);
+            class_4929 var10 = new class_4929(Util.nanoTimeSupplier, () -> 0, false);
+            class_4929 var11 = new class_4929(Util.nanoTimeSupplier, () -> 0, false);
             CompletableFuture var12 = var3x.method_10277(var1x, var2x, var10, var11, var2xx -> var4x.execute(() -> {
-                  long var4xx = class_9665.method_44657();
+                  long var4xx = Util.getMeasuringTimeNano();
                   var2xx.run();
-                  var8.addAndGet(class_9665.method_44657() - var4xx);
+                  var8.addAndGet(Util.getMeasuringTimeNano() - var4xx);
                }), var2xx -> var5x.execute(() -> {
-                  long var4xx = class_9665.method_44657();
+                  long var4xx = Util.getMeasuringTimeNano();
                   var2xx.run();
-                  var9.addAndGet(class_9665.method_44657() - var4xx);
+                  var9.addAndGet(Util.getMeasuringTimeNano() - var4xx);
                }));
             return var12.<class_6396>thenApplyAsync(
                var5xx -> new class_6396(var3x.method_10276(), var10.method_13811(), var11.method_13811(), var8, var9, null), var4

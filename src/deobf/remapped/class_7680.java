@@ -15,7 +15,7 @@ import net.minecraft.util.text.event.ClickEvent$class_47;
 
 public class class_7680 extends Screen {
    public static final class_8668 field_39032 = new class_9531();
-   public static final class_4639 field_39030 = new class_4639("textures/gui/book.png");
+   public static final Identifier field_39030 = new Identifier("textures/gui/book.png");
    private class_8668 field_39029;
    private int field_39035;
    private List<class_7107> field_39033 = Collections.<class_7107>emptyList();

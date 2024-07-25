@@ -14,7 +14,7 @@ public class class_7750 {
    private final ITextComponent field_39298;
    private final ITextComponent field_39290;
    private final class_6098 field_39297;
-   private final class_4639 field_39291;
+   private final Identifier field_39291;
    private final class_3361 field_39300;
    private final boolean field_39292;
    private final boolean field_39294;
@@ -22,7 +22,7 @@ public class class_7750 {
    private float field_39299;
    private float field_39295;
 
-   public class_7750(class_6098 var1, ITextComponent var2, ITextComponent var3, class_4639 var4, class_3361 var5, boolean var6, boolean var7, boolean var8) {
+   public class_7750(class_6098 var1, ITextComponent var2, ITextComponent var3, Identifier var4, class_3361 var5, boolean var6, boolean var7, boolean var8) {
       this.field_39298 = var2;
       this.field_39290 = var3;
       this.field_39297 = var1;
@@ -51,7 +51,7 @@ public class class_7750 {
    }
 
    @Nullable
-   public class_4639 method_35164() {
+   public Identifier method_35164() {
       return this.field_39291;
    }
 
@@ -84,7 +84,7 @@ public class class_7750 {
       IFormattableTextComponent var4 = ITextComponent$class_40.func_240641_a_(var0.get("description"));
       if (var3 != null && var4 != null) {
          class_6098 var5 = method_35152(class_6539.method_29783(var0, "icon"));
-         class_4639 var6 = !var0.has("background") ? null : new class_4639(class_6539.method_29796(var0, "background"));
+         Identifier var6 = !var0.has("background") ? null : new Identifier(class_6539.method_29796(var0, "background"));
          class_3361 var7 = !var0.has("frame") ? class_3361.field_16556 : class_3361.method_15387(class_6539.method_29796(var0, "frame"));
          boolean var8 = class_6539.method_29772(var0, "show_toast", true);
          boolean var9 = class_6539.method_29772(var0, "announce_to_chat", true);
@@ -154,7 +154,7 @@ public class class_7750 {
       Object var8 = null;
       boolean var9 = false;
       boolean var10 = false;
-      class_7750 var11 = new class_7750(var5, var3, var4, (class_4639)var8, var6, var9, false, var10);
+      class_7750 var11 = new class_7750(var5, var3, var4, (Identifier)var8, var6, var9, false, var10);
       var11.method_35155(var0.readFloat(), var0.readFloat());
       return var11;
    }

@@ -18,7 +18,7 @@ public abstract class class_1498<E extends class_8145> extends class_6521<E> {
       this(class_3581::method_16755, var1, var2, var3, var4, var5, var6);
    }
 
-   public class_1498(Function<class_4639, class_3581> var1, boolean var2, float var3, float var4, float var5, float var6, float var7) {
+   public class_1498(Function<Identifier, class_3581> var1, boolean var2, float var3, float var4, float var5, float var6, float var7) {
       super(var1);
       this.field_7961 = var2;
       this.field_7960 = var3;

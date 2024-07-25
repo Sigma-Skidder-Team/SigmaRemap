@@ -13,7 +13,7 @@ public class class_2982 extends class_6942 {
    }
 
    @Override
-   public class_6676<class_4639> method_31764() {
+   public class_6676<Identifier> method_31764() {
       return class_6234.field_31829.method_43790(class_6234.field_31863);
    }
 

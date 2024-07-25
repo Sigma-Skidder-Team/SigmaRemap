@@ -107,7 +107,7 @@ public class class_6711 {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          class_5734 var5 = var1.method_15764(var4);
          String var6 = var5.method_25965("Name");
-         class_9665.<class_225>method_44691(class_8669.field_44403.method_39794(class_4639.method_21455(var6)), var2 -> {
+         Util.<class_225>method_44691(class_8669.field_44403.method_39794(Identifier.method_21455(var6)), var2 -> {
             class_9747 var5x = this.method_30808(var2);
             if (var5x != null) {
                var5x.method_45014(var5);

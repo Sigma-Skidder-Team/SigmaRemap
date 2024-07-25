@@ -248,8 +248,8 @@ public abstract class class_3581 extends class_5348 {
       return field_17574;
    }
 
-   public static class_3581 method_16749(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16749(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "armor_cutout_no_cull",
          var0,
@@ -269,8 +269,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16734(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16734(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_solid",
          var0,
@@ -287,8 +287,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16747(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16747(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_cutout",
          var0,
@@ -306,8 +306,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16737(class_4639 var0, boolean var1) {
-      class_4639 var4 = method_16768(var0);
+   public static class_3581 method_16737(Identifier var0, boolean var1) {
+      Identifier var4 = method_16768(var0);
       return method_16724(
          "entity_cutout_no_cull",
          var0,
@@ -327,12 +327,12 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16755(class_4639 var0) {
+   public static class_3581 method_16755(Identifier var0) {
       return method_16737(var0, true);
    }
 
-   public static class_3581 method_16748(class_4639 var0, boolean var1) {
-      class_4639 var4 = method_16768(var0);
+   public static class_3581 method_16748(Identifier var0, boolean var1) {
+      Identifier var4 = method_16768(var0);
       return method_16724(
          "entity_cutout_no_cull_z_offset",
          var0,
@@ -353,12 +353,12 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16753(class_4639 var0) {
+   public static class_3581 method_16753(Identifier var0) {
       return method_16748(var0, true);
    }
 
-   public static class_3581 method_16766(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16766(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "item_entity_translucent_cull",
          var0,
@@ -378,8 +378,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16735(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16735(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_translucent_cull",
          var0,
@@ -397,8 +397,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16754(class_4639 var0, boolean var1) {
-      class_4639 var4 = method_16768(var0);
+   public static class_3581 method_16754(Identifier var0, boolean var1) {
+      Identifier var4 = method_16768(var0);
       return method_16724(
          "entity_translucent",
          var0,
@@ -418,12 +418,12 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16705(class_4639 var0) {
+   public static class_3581 method_16705(Identifier var0) {
       return method_16754(var0, true);
    }
 
-   public static class_3581 method_16730(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16730(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_smooth_cutout",
          var0,
@@ -441,8 +441,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16731(class_4639 var0, boolean var1) {
-      class_4639 var4 = method_16768(var0);
+   public static class_3581 method_16731(Identifier var0, boolean var1) {
+      Identifier var4 = method_16768(var0);
       return method_16724(
          "beacon_beam",
          var0,
@@ -459,8 +459,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16727(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16727(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_decal",
          var0,
@@ -479,8 +479,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16750(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16750(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_no_outline",
          var0,
@@ -500,8 +500,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16740(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16740(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_shadow",
          var0,
@@ -523,8 +523,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16703(class_4639 var0, float var1) {
-      class_4639 var4 = method_16768(var0);
+   public static class_3581 method_16703(Identifier var0, float var1) {
+      Identifier var4 = method_16768(var0);
       return method_16722(
          "entity_alpha",
          var0,
@@ -540,8 +540,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16769(class_4639 var0) {
-      class_4639 var3 = method_16768(var0);
+   public static class_3581 method_16769(Identifier var0) {
+      Identifier var3 = method_16768(var0);
       return method_16723(
          "eyes",
          var0,
@@ -560,8 +560,8 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16738(class_4639 var0, float var1, float var2) {
-      class_4639 var5 = method_16768(var0);
+   public static class_3581 method_16738(Identifier var0, float var1, float var2) {
+      Identifier var5 = method_16768(var0);
       return method_16721(
          "energy_swirl",
          var0,
@@ -597,11 +597,11 @@ public abstract class class_3581 extends class_5348 {
       return field_17570;
    }
 
-   public static class_3581 method_16773(class_4639 var0) {
+   public static class_3581 method_16773(Identifier var0) {
       return method_16741(var0, field_27319);
    }
 
-   public static class_3581 method_16741(class_4639 var0, class_3754 var1) {
+   public static class_3581 method_16741(Identifier var0, class_3754 var1) {
       return method_16724(
          "outline",
          var0,
@@ -652,7 +652,7 @@ public abstract class class_3581 extends class_5348 {
       return field_17568;
    }
 
-   public static class_3581 method_16719(class_4639 var0) {
+   public static class_3581 method_16719(Identifier var0) {
       return method_16723(
          "crumbling",
          var0,
@@ -677,7 +677,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16732(class_4639 var0) {
+   public static class_3581 method_16732(Identifier var0) {
       return method_16723(
          "text",
          var0,
@@ -698,7 +698,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16752(class_4639 var0) {
+   public static class_3581 method_16752(Identifier var0) {
       return method_16723(
          "text_see_through",
          var0,
@@ -855,22 +855,22 @@ public abstract class class_3581 extends class_5348 {
       return this.field_17578;
    }
 
-   private static class_3581 method_16723(String var0, class_4639 var1, Supplier<class_3581> var2) {
+   private static class_3581 method_16723(String var0, Identifier var1, Supplier<class_3581> var2) {
       class_6998 var5 = new class_6998(var0, var1);
       return method_16725(var5, var2);
    }
 
-   private static class_3581 method_16724(String var0, class_4639 var1, boolean var2, Supplier<class_3581> var3) {
+   private static class_3581 method_16724(String var0, Identifier var1, boolean var2, Supplier<class_3581> var3) {
       class_6998 var6 = new class_6998(var0, var1, var2);
       return method_16725(var6, var3);
    }
 
-   private static class_3581 method_16722(String var0, class_4639 var1, float var2, Supplier<class_3581> var3) {
+   private static class_3581 method_16722(String var0, Identifier var1, float var2, Supplier<class_3581> var3) {
       class_6998 var6 = new class_6998(var0, var1, var2);
       return method_16725(var6, var3);
    }
 
-   private static class_3581 method_16721(String var0, class_4639 var1, float var2, float var3, Supplier<class_3581> var4) {
+   private static class_3581 method_16721(String var0, Identifier var1, float var2, float var3, Supplier<class_3581> var4) {
       class_6998 var7 = new class_6998(var0, var1, var2, var3);
       return method_16725(var7, var4);
    }
@@ -895,7 +895,7 @@ public abstract class class_3581 extends class_5348 {
       }
    }
 
-   public static class_4639 method_16768(class_4639 var0) {
+   public static Identifier method_16768(Identifier var0) {
       if (class_3111.method_14394()) {
          var0 = class_8192.method_37530(var0);
       }
@@ -915,7 +915,7 @@ public abstract class class_3581 extends class_5348 {
       return class_8570.method_39413(class_7634.method_34591(field_17558)).size();
    }
 
-   public class_4639 method_16758() {
+   public Identifier method_16758() {
       return null;
    }
 

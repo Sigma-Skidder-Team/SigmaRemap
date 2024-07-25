@@ -20,7 +20,7 @@ public class class_1878 extends class_9476 {
       .entrySet()
       .stream()
       .filter(var0 -> var0.getKey() != class_240.field_802)
-      .collect(class_9665.<class_240, class_6720>method_44681());
+      .collect(Util.<class_240, class_6720>toMap());
    private static final class_4190 field_9522 = class_6414.method_29292(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
    private static final class_4190 field_9528 = class_6414.method_29292(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
    private static final class_4190 field_9529 = class_6414.method_29292(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);

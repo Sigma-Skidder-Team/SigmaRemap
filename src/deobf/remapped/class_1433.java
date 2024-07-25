@@ -3,7 +3,7 @@ package remapped;
 import java.util.Properties;
 
 public class class_1433 {
-   private class_4639 field_7736;
+   private Identifier field_7736;
    private int field_7739 = 0;
    private int field_7735 = 2;
    private boolean field_7742;
@@ -12,7 +12,7 @@ public class class_1433 {
    private static final int field_7743 = 1;
    private static final int field_7740 = 2;
 
-   public class_1433(class_4639 var1, int var2, int var3, boolean var4) {
+   public class_1433(Identifier var1, int var2, int var3, boolean var4) {
       this.field_7736 = var1;
       this.field_7739 = var2;
       this.field_7735 = var3;
@@ -20,7 +20,7 @@ public class class_1433 {
    }
 
    public static class_1433 method_6578(String var0, int var1, Properties var2) {
-      class_4639 var5 = new class_4639(var0);
+      Identifier var5 = new Identifier(var0);
       int var6 = method_6583(method_6580("scaleMode", var1, var2));
       int var7 = var6 != 0 ? 1 : 2;
       int var8 = method_6582(method_6580("scale", var1, var2), var7);

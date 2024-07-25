@@ -11,13 +11,13 @@ public class class_3460 implements class_1429 {
    private static final SuggestionProvider<class_9155> field_16953 = (var0, var1) -> class_8773.method_40310(method_15922(var0).method_29741(), var1);
    public static final Function<String, class_5098> field_16954 = var0 -> new class_9788(var0);
    private final class_6532 field_16957;
-   private final class_4639 field_16956;
+   private final Identifier field_16956;
 
    private static class_6532 method_15922(CommandContext<class_9155> var0) {
       return ((class_9155)var0.getSource()).method_42177().method_1678();
    }
 
-   private class_3460(class_6532 var1, class_4639 var2) {
+   private class_3460(class_6532 var1, Identifier var2) {
       this.field_16957 = var1;
       this.field_16956 = var2;
    }

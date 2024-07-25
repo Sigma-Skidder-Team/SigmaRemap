@@ -141,7 +141,7 @@ public class class_123 {
    }
 
    public boolean method_374() {
-      return MinecraftClient.field_9574
+      return MinecraftClient.IS_SYSTEM_MAC
          && SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
          && (
             System.getProperty("os.version").startsWith("10.14")
@@ -155,7 +155,7 @@ public class class_123 {
    public void method_375() {
       if (this.method_374()) {
          if (this.field_299 != null) {
-            this.field_299.hide(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().field_9602.method_43181()));
+            this.field_299.hide(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().window.method_43181()));
          }
 
          this.field_299 = new JTouchBar();
@@ -167,7 +167,7 @@ public class class_123 {
             this.field_299.addItem(new TouchBarItem("Jello", var3, true));
          }
 
-         this.field_299.show(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().field_9602.method_43181()));
+         this.field_299.show(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().window.method_43181()));
          this.field_298 = true;
       }
    }
@@ -192,7 +192,7 @@ public class class_123 {
    public void method_378() {
       if (this.method_374()) {
          if (this.field_299 != null) {
-            this.field_299.hide(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().field_9602.method_43181()));
+            this.field_299.hide(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().window.method_43181()));
          }
 
          this.field_299 = new JTouchBar();
@@ -200,7 +200,7 @@ public class class_123 {
          TouchBarTextField var3 = new TouchBarTextField();
          var3.setStringValue(" Jello for Sigma 5.0   -   © SIGMA Prod");
          this.field_299.addItem(new TouchBarItem("Jello", var3, true));
-         this.field_299.show(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().field_9602.method_43181()));
+         this.field_299.show(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().window.method_43181()));
          this.field_298 = false;
       }
    }

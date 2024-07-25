@@ -2,25 +2,25 @@ package net.minecraft.util.text;
 
 import java.util.Objects;
 import java.util.stream.Stream;
-import remapped.class_4639;
+import remapped.Identifier;
 import remapped.class_5734;
 import remapped.class_9155;
 import remapped.class_9257;
 
 public class NBTTextComponent$class_45 extends NBTTextComponent {
-   private final class_4639 field_229725_e_;
+   private final Identifier field_229725_e_;
 
-   public NBTTextComponent$class_45(String p_i226087_1_, boolean p_i226087_2_, class_4639 p_i226087_3_) {
+   public NBTTextComponent$class_45(String p_i226087_1_, boolean p_i226087_2_, Identifier p_i226087_3_) {
       super(p_i226087_1_, p_i226087_2_);
       this.field_229725_e_ = p_i226087_3_;
    }
 
-   public NBTTextComponent$class_45(String p_i226086_1_, class_9257 p_i226086_2_, boolean p_i226086_3_, class_4639 p_i226086_4_) {
+   public NBTTextComponent$class_45(String p_i226086_1_, class_9257 p_i226086_2_, boolean p_i226086_3_, Identifier p_i226086_4_) {
       super(p_i226086_1_, p_i226086_2_, p_i226086_3_);
       this.field_229725_e_ = p_i226086_4_;
    }
 
-   public class_4639 func_229726_k_() {
+   public Identifier func_229726_k_() {
       return this.field_229725_e_;
    }
 

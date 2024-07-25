@@ -86,11 +86,11 @@ public class class_734 extends class_2596 {
             this.method_32150(this.field_4004 = new class_9618(this, "music", true, "Dependencies.", var3.<class_8888>toArray(new class_8888[0])));
             this.field_4004.method_8236(var0 -> {
                if (!SigmaMainClass.method_3328().method_3300().method_9492()) {
-                  class_9665.method_44667().method_37581("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
+                  Util.getOperatingSystem().method_37581("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
                }
 
                if (!SigmaMainClass.method_3328().method_3300().method_9499()) {
-                  class_9665.method_44667().method_37581("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
+                  Util.getOperatingSystem().method_37581("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
                }
             });
             this.field_4004.method_44409(var1 -> new Thread(() -> {
@@ -257,8 +257,8 @@ public class class_734 extends class_2596 {
       }
 
       for (class_7038 var9 : this.method_32134()) {
-         float var10 = (float)(var9.method_32173() + var9.method_32137() / 2 - field_4009.field_9602.method_43163() / 2) * (1.0F - var4) * 0.5F;
-         float var11 = (float)(var9.method_32132() + var9.method_32109() / 2 - field_4009.field_9602.method_43166() / 2) * (1.0F - var4) * 0.5F;
+         float var10 = (float)(var9.method_32173() + var9.method_32137() / 2 - field_4009.window.method_43163() / 2) * (1.0F - var4) * 0.5F;
+         float var11 = (float)(var9.method_32132() + var9.method_32109() / 2 - field_4009.window.method_43166() / 2) * (1.0F - var4) * 0.5F;
          var9.method_32138((int)var11, (int)var10);
          var9.method_32111(1.5F - var4 * 0.5F, 1.5F - var4 * 0.5F);
       }

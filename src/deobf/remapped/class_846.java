@@ -3,7 +3,7 @@ package remapped;
 public class class_846 implements class_6798<class_2049> {
    private static String[] field_4421;
 
-   public class_846(class_5408 var1, class_4639 var2, class_2049 var3) {
+   public class_846(class_5408 var1, Identifier var2, class_2049 var3) {
       this.field_4420 = var1;
       this.field_4422 = var2;
       this.field_4423 = var3;

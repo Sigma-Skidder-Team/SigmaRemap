@@ -21,7 +21,7 @@ public class class_6016 implements class_5998 {
       JsonObject var4 = new JsonObject();
 
       for (class_6414 var6 : class_8669.field_44462) {
-         class_4639 var7 = class_8669.field_44462.method_39797(var6);
+         Identifier var7 = class_8669.field_44462.method_39797(var6);
          JsonObject var8 = new JsonObject();
          class_8021 var9 = var6.method_29306();
          if (!var9.method_36444().isEmpty()) {
@@ -31,7 +31,7 @@ public class class_6016 implements class_5998 {
                JsonArray var13 = new JsonArray();
 
                for (Comparable var15 : var12.method_23105()) {
-                  var13.add(class_9665.method_44665(var12, var15));
+                  var13.add(Util.getValueAsString(var12, var15));
                }
 
                var10.add(var12.method_23109(), var13);
@@ -49,7 +49,7 @@ public class class_6016 implements class_5998 {
             JsonObject var22 = new JsonObject();
 
             for (class_5019 var16 : var9.method_36444()) {
-               var22.addProperty(var16.method_23109(), class_9665.method_44665(var16, var20.method_10313(var16)));
+               var22.addProperty(var16.method_23109(), Util.getValueAsString(var16, var20.method_10313(var16)));
             }
 
             if (var22.size() > 0) {

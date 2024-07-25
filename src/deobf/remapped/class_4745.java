@@ -258,6 +258,6 @@ public class class_4745 extends class_4314 {
    }
 
    public static class_240 method_21912(Random var0) {
-      return class_9665.<class_240>method_44697(field_22990, var0);
+      return Util.<class_240>method_44697(field_22990, var0);
    }
 }

@@ -1258,10 +1258,10 @@ public abstract class class_704 extends class_5834 {
       return this.field_3872;
    }
 
-   public Either<class_8614, class_3256> method_3200(class_1331 var1) {
+   public Either<class_8614, Unit> method_3200(class_1331 var1) {
       this.method_26470(var1);
       this.field_3848 = 0;
-      return Either.right(class_3256.field_16155);
+      return Either.right(Unit.INSTANCE);
    }
 
    public void method_3162(boolean var1, boolean var2) {
@@ -1312,11 +1312,11 @@ public abstract class class_704 extends class_5834 {
    public void method_3251(ITextComponent var1, boolean var2) {
    }
 
-   public void method_3209(class_4639 var1) {
+   public void method_3209(Identifier var1) {
       this.method_3211(class_6234.field_31829.method_43790(var1));
    }
 
-   public void method_3210(class_4639 var1, int var2) {
+   public void method_3210(Identifier var1, int var2) {
       this.method_3212(class_6234.field_31829.method_43790(var1), var2);
    }
 
@@ -1334,7 +1334,7 @@ public abstract class class_704 extends class_5834 {
       return 0;
    }
 
-   public void method_3224(class_4639[] var1) {
+   public void method_3224(Identifier[] var1) {
    }
 
    public int method_3197(Collection<class_8932<?>> var1) {

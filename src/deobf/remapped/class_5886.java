@@ -29,7 +29,7 @@ public abstract class class_5886 extends class_5834 {
    private boolean field_29902;
    private boolean field_29920;
    private final Map<class_1108, Float> field_29917 = Maps.newEnumMap(class_1108.class);
-   private class_4639 field_29906;
+   private Identifier field_29906;
    private long field_29910;
    private class_8145 field_29911;
    private int field_29901;
@@ -396,7 +396,7 @@ public abstract class class_5886 extends class_5834 {
 
       this.method_26932(var1.method_25933("LeftHanded"));
       if (var1.method_25939("DeathLootTable", 8)) {
-         this.field_29906 = new class_4639(var1.method_25965("DeathLootTable"));
+         this.field_29906 = new Identifier(var1.method_25965("DeathLootTable"));
          this.field_29910 = var1.method_25948("DeathLootTableSeed");
       }
 
@@ -415,11 +415,11 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public final class_4639 method_26591() {
+   public final Identifier method_26591() {
       return this.field_29906 != null ? this.field_29906 : this.method_26934();
    }
 
-   public class_4639 method_26934() {
+   public Identifier method_26934() {
       return super.method_26591();
    }
 

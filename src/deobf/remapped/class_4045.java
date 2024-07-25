@@ -78,7 +78,7 @@ public class class_4045 {
    }
 
    private static String method_18614(Random var0, String[] var1) {
-      return class_9665.<String>method_44697(var1, var0);
+      return Util.<String>method_44697(var1, var0);
    }
 
    private static Random method_18613(UUID var0) {

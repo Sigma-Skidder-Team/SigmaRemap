@@ -16,14 +16,14 @@ import org.lwjgl.system.MemoryUtil;
 
 public class class_2165 implements class_3592 {
    private static final Logger field_10801 = LogManager.getLogger();
-   private final class_4639 field_10800;
+   private final Identifier field_10800;
    private final float field_10796;
    private final float field_10797;
    private final float field_10798;
    private final float field_10799;
    private final String field_10802;
 
-   public class_2165(class_4639 var1, float var2, float var3, float var4, float var5, String var6) {
+   public class_2165(Identifier var1, float var2, float var3, float var4, float var5, String var6) {
       this.field_10800 = var1;
       this.field_10796 = var2;
       this.field_10797 = var3;
@@ -60,7 +60,7 @@ public class class_2165 implements class_3592 {
       }
 
       return new class_2165(
-         new class_4639(class_6539.method_29796(var0, "file")),
+         new Identifier(class_6539.method_29796(var0, "file")),
          class_6539.method_29775(var0, "size", 11.0F),
          class_6539.method_29775(var0, "oversample", 1.0F),
          var3,
@@ -75,7 +75,7 @@ public class class_2165 implements class_3592 {
       STBTTFontinfo var4 = null;
       ByteBuffer var5 = null;
 
-      try (class_4038 var6 = var1.method_35458(new class_4639(this.field_10800.method_21461(), "font/" + this.field_10800.method_21456()))) {
+      try (class_4038 var6 = var1.method_35458(new Identifier(this.field_10800.method_21461(), "font/" + this.field_10800.method_21456()))) {
          field_10801.debug("Loading font {}", this.field_10800);
          var4 = STBTTFontinfo.malloc();
          var5 = class_4970.method_22844(var6.method_18576());

@@ -7,7 +7,7 @@ import java.util.UUID;
 public final class class_5753 {
    private static String[] field_29118;
    public static final Codec<UUID> field_29117 = Codec.INT_STREAM
-      .comapFlatMap(var0 -> class_9665.method_44654(var0, 4).map(class_5753::method_26038), var0 -> Arrays.stream(method_26037(var0)));
+      .comapFlatMap(var0 -> Util.method_44654(var0, 4).map(class_5753::method_26038), var0 -> Arrays.stream(method_26037(var0)));
 
    public static UUID method_26038(int[] var0) {
       return new UUID((long)var0[0] << 32 | (long)var0[1] & 4294967295L, (long)var0[2] << 32 | (long)var0[3] & 4294967295L);

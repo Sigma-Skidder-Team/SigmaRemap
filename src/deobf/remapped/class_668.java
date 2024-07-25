@@ -131,7 +131,7 @@ public class class_668 implements IScreen, IRenderable {
                   class_6298 var11;
                   try {
                      class_341.method_1673(var9, var1.field_33532, false);
-                     CompletableFuture var10 = class_6298.method_28747(var9.method_29115(), class_9019.field_46137, 2, class_9665.method_44661(), var2);
+                     CompletableFuture var10 = class_6298.method_28747(var9.method_29115(), class_9019.field_46137, 2, Util.getMainWorkerExecutor(), var2);
                      var2.method_34461(var10::isDone);
                      var11 = (class_6298)var10.get();
                   } catch (InterruptedException | ExecutionException var27) {
@@ -298,7 +298,7 @@ public class class_668 implements IScreen, IRenderable {
       class_8876 var5 = class_8876.method_40843(JsonOps.INSTANCE, this.field_3703);
       class_888 var6 = class_888.method_3825(JsonOps.INSTANCE, var1.method_28743(), var4);
       DataResult var7 = class_2904.field_14169.encodeStart(var5, this.field_3717).flatMap(var1x -> class_2904.field_14169.parse(var6, var1x));
-      var7.resultOrPartial(class_9665.method_44690("Error parsing worldgen settings after loading data packs: ", field_3706::error)).ifPresent(var2 -> {
+      var7.resultOrPartial(Util.method_44690("Error parsing worldgen settings after loading data packs: ", field_3706::error)).ifPresent(var2 -> {
          this.field_3717 = var2;
          this.field_3703 = var4;
       });

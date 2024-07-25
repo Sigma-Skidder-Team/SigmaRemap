@@ -43,8 +43,8 @@ public class class_6621 implements class_6310<class_392> {
    }
 
    public static class_8932<?> method_30437(class_8248 var0) {
-      class_4639 var3 = var0.method_37768();
-      class_4639 var4 = var0.method_37768();
+      Identifier var3 = var0.method_37768();
+      Identifier var4 = var0.method_37768();
       return class_8669.field_44414
          .method_39794(var3)
          .orElseThrow(() -> new IllegalArgumentException("Unknown recipe serializer " + var3))

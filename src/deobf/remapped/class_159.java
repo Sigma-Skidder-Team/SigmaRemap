@@ -59,7 +59,7 @@ public class class_159 {
       });
       this.field_476.method_29850("CPUs", Runtime.getRuntime().availableProcessors());
       this.field_476.method_29851("JVM Flags", () -> {
-         List var2 = class_9665.method_44692().collect(Collectors.toList());
+         List var2 = Util.method_44692().collect(Collectors.toList());
          return String.format("%d total; %s", var2.size(), var2.stream().collect(Collectors.joining(" ")));
       });
       if (class_7860.field_40246 != null) {
@@ -291,7 +291,7 @@ public class class_159 {
       };
 
       try {
-         return var2[(int)(class_9665.method_44657() % (long)var2.length)];
+         return var2[(int)(Util.getMeasuringTimeNano() % (long)var2.length)];
       } catch (Throwable var4) {
          return "Witty comment unavailable :(";
       }

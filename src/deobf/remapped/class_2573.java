@@ -28,7 +28,7 @@ public final class class_2573 extends class_4190 {
          this.field_12732 = var3;
          this.field_12731 = var4;
       } else {
-         throw (IllegalArgumentException)class_9665.method_44658(
+         throw (IllegalArgumentException) Util.method_44658(
             new IllegalArgumentException("Lengths of point arrays must be consistent with the size of the VoxelShape.")
          );
       }

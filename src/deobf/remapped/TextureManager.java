@@ -14,21 +14,21 @@ import javax.annotation.Nullable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_7889 implements class_2231, class_72, AutoCloseable {
+public class TextureManager implements class_2231, class_72, AutoCloseable {
    private static final Logger field_40363 = LogManager.getLogger();
-   public static final class_4639 field_40364 = new class_4639("");
-   private final Map<class_4639, class_8143> field_40366 = Maps.newHashMap();
+   public static final Identifier field_40364 = new Identifier("");
+   private final Map<Identifier, class_8143> field_40366 = Maps.newHashMap();
    private final Set<class_72> field_40359 = Sets.newHashSet();
    private final Map<String, Integer> field_40360 = Maps.newHashMap();
    private final class_7832 field_40365;
    private class_8143 field_40362;
-   private class_4639 field_40361;
+   private Identifier field_40361;
 
-   public class_7889(class_7832 var1) {
+   public TextureManager(class_7832 var1) {
       this.field_40365 = var1;
    }
 
-   public void method_35674(class_4639 var1) {
+   public void method_35674(Identifier var1) {
       if (class_3542.method_16366()) {
          this.method_35686(var1);
       } else {
@@ -36,7 +36,7 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
       }
    }
 
-   private void method_35686(class_4639 var1) {
+   private void method_35686(Identifier var1) {
       if (class_3111.method_14373()) {
          var1 = class_1322.method_6042(var1);
       }
@@ -57,7 +57,7 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
       this.field_40361 = var1;
    }
 
-   public void method_35682(class_4639 var1, class_8143 var2) {
+   public void method_35682(Identifier var1, class_8143 var2) {
       var2 = this.method_35685(var1, var2);
       class_8143 var5 = this.field_40366.put(var1, var2);
       if (var5 != var2) {
@@ -72,7 +72,7 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
       }
    }
 
-   private void method_35680(class_4639 var1, class_8143 var2) {
+   private void method_35680(Identifier var1, class_8143 var2) {
       if (var2 != class_2008.method_9325()) {
          try {
             var2.close();
@@ -84,7 +84,7 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
       var2.method_37052();
    }
 
-   private class_8143 method_35685(class_4639 var1, class_8143 var2) {
+   private class_8143 method_35685(Identifier var1, class_8143 var2) {
       try {
          var2.method_37053(this.field_40365);
          return var2;
@@ -104,11 +104,11 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
    }
 
    @Nullable
-   public class_8143 method_35679(class_4639 var1) {
+   public class_8143 method_35679(Identifier var1) {
       return this.field_40366.get(var1);
    }
 
-   public class_4639 method_35684(String var1, class_7884 var2) {
+   public Identifier method_35684(String var1, class_7884 var2) {
       Integer var5 = this.field_40360.get(var1);
       if (var5 != null) {
          var5 = var5 + 1;
@@ -117,18 +117,18 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
       }
 
       this.field_40360.put(var1, var5);
-      class_4639 var6 = new class_4639(String.format("dynamic/%s_%d", var1, var5));
+      Identifier var6 = new Identifier(String.format("dynamic/%s_%d", var1, var5));
       this.method_35682(var6, var2);
       return var6;
    }
 
-   public CompletableFuture<Void> method_35676(class_4639 var1, Executor var2) {
+   public CompletableFuture<Void> method_35676(Identifier var1, Executor var2) {
       if (this.field_40366.containsKey(var1)) {
          return CompletableFuture.<Void>completedFuture((Void)null);
       } else {
          class_3774 var5 = new class_3774(this.field_40365, var1, var2);
          this.field_40366.put(var1, var5);
-         return var5.method_17467().thenRunAsync(() -> this.method_35682(var1, var5), class_7889::method_35681);
+         return var5.method_17467().thenRunAsync(() -> this.method_35682(var1, var5), TextureManager::method_35681);
       }
    }
 
@@ -143,7 +143,7 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
       }
    }
 
-   public void method_35678(class_4639 var1) {
+   public void method_35678(Identifier var1) {
       class_8143 var4 = this.method_35679(var1);
       if (var4 != null) {
          this.field_40366.remove(var1);
@@ -166,7 +166,7 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
       Iterator var9 = this.field_40366.keySet().iterator();
 
       while (var9.hasNext()) {
-         class_4639 var10 = (class_4639)var9.next();
+         Identifier var10 = (Identifier)var9.next();
          String var11 = var10.method_21456();
          if (var11.startsWith("optifine/") || class_5052.method_23285(var10)) {
             class_8143 var12 = this.field_40366.get(var10);
@@ -184,12 +184,12 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
          .thenAcceptAsync(var3x -> {
             class_2008.method_9325();
             class_7039.method_32337(this.field_40365);
-            HashSet var6x = new HashSet<Entry<class_4639, class_8143>>(this.field_40366.entrySet());
+            HashSet var6x = new HashSet<Entry<Identifier, class_8143>>(this.field_40366.entrySet());
             Iterator var7 = var6x.iterator();
 
             while (var7.hasNext()) {
                Entry var8 = (Entry)var7.next();
-               class_4639 var9x = (class_4639)var8.getKey();
+               Identifier var9x = (Identifier)var8.getKey();
                class_8143 var10x = (class_8143)var8.getValue();
                if (var10x == class_2008.method_9325() && !var9x.equals(class_2008.method_9327())) {
                   var7.remove();
@@ -204,7 +204,7 @@ public class class_7889 implements class_2231, class_72, AutoCloseable {
       return this.field_40362;
    }
 
-   public class_4639 method_35683() {
+   public Identifier method_35683() {
       return this.field_40361;
    }
 }

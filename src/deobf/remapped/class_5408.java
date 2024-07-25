@@ -5,11 +5,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class class_5408 {
-   private final Map<class_4639, class_7633> field_27585 = Maps.newHashMap();
+   private final Map<Identifier, class_7633> field_27585 = Maps.newHashMap();
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   private void method_24613(class_4639 var1, class_7874 var2, class_7832 var3) {
+   private void method_24613(Identifier var1, class_7874 var2, class_7832 var3) {
       class_7633 var6 = this.field_27585.get(var1);
       boolean var7 = var6 == null;
       if (var7 || var2.method_35629()) {
@@ -22,7 +22,7 @@ public class class_5408 {
       }
 
       for (class_2049 var9 : var2.method_35631()) {
-         class_4639 var10 = var9.method_9578();
+         Identifier var10 = var9.method_9578();
          Object var11;
          switch (var9.method_9579()) {
             case field_10317:
@@ -43,7 +43,7 @@ public class class_5408 {
       }
    }
 
-   public void method_24614(Map<class_4639, class_7633> var1, class_132 var2) {
+   public void method_24614(Map<Identifier, class_7633> var1, class_132 var2) {
       var1.clear();
 
       for (Entry var6 : this.field_27585.entrySet()) {

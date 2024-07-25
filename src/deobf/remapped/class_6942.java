@@ -171,7 +171,7 @@ public class class_6942 extends class_8218<class_7099> implements class_2593 {
       }
    }
 
-   public class_6676<class_4639> method_31764() {
+   public class_6676<Identifier> method_31764() {
       return class_6234.field_31829.method_43790(class_6234.field_31885);
    }
 

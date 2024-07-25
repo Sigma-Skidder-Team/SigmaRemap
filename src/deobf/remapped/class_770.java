@@ -9,12 +9,12 @@ import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class class_770 implements Consumer<BiConsumer<class_4639, class_8843>> {
+public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
    private static final class_2184 field_4163 = class_2184.method_10127().method_10126(class_4097.method_18938().method_18935(true).method_18939());
    private static final Set<class_6629<?>> field_4161 = ImmutableSet.of(
       class_6629.field_34300, class_6629.field_34289, class_6629.field_34298, class_6629.field_34253, class_6629.field_34276
    );
-   private final Map<class_4639, class_8843> field_4160 = Maps.newHashMap();
+   private final Map<Identifier, class_8843> field_4160 = Maps.newHashMap();
 
    private static class_8843 method_3459(class_8525 var0) {
       return class_1758.method_7864()
@@ -24,7 +24,7 @@ public class class_770 implements Consumer<BiConsumer<class_4639, class_8843>> {
          );
    }
 
-   public void accept(BiConsumer<class_4639, class_8843> var1) {
+   public void accept(BiConsumer<Identifier, class_8843> var1) {
       this.method_3462(class_6629.field_34289, class_1758.method_7864());
       this.method_3462(class_6629.field_34217, class_1758.method_7864());
       this.method_3462(class_6629.field_34238, class_1758.method_7864());
@@ -750,7 +750,7 @@ public class class_770 implements Consumer<BiConsumer<class_4639, class_8843>> {
                         .method_34360(class_660.method_3018(class_7986.method_36238(0.0F, 1.0F)).method_33995(1))
                         .method_34360(
                            class_6382.method_29169(
-                              class_9665.<class_5734>method_44659(new class_5734(), var0 -> var0.method_25941("Potion", "minecraft:slowness"))
+                              Util.<class_5734>method_44659(new class_5734(), var0 -> var0.method_25941("Potion", "minecraft:slowness"))
                            )
                         )
                   )
@@ -1037,7 +1037,7 @@ public class class_770 implements Consumer<BiConsumer<class_4639, class_8843>> {
       HashSet var4 = Sets.newHashSet();
 
       for (class_6629 var6 : class_8669.field_44400) {
-         class_4639 var7 = var6.method_30480();
+         Identifier var7 = var6.method_30480();
          if (!field_4161.contains(var6) && var6.method_30476() == class_4565.field_22251) {
             if (var7 != class_5931.field_30157 && this.field_4160.remove(var7) != null) {
                throw new IllegalStateException(
@@ -1061,7 +1061,7 @@ public class class_770 implements Consumer<BiConsumer<class_4639, class_8843>> {
       this.method_3461(var1.method_30480(), var2);
    }
 
-   private void method_3461(class_4639 var1, class_8843 var2) {
+   private void method_3461(Identifier var1, class_8843 var2) {
       this.field_4160.put(var1, var2);
    }
 }

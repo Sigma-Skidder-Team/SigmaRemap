@@ -20,7 +20,7 @@ public class class_7483 extends class_8145 implements class_3713 {
 
    public void method_34038(class_6098 var1) {
       if (var1.method_27960() != class_4897.field_24519 || var1.method_28002()) {
-         this.method_37372().method_36633(field_38200, class_9665.<class_6098>method_44659(var1.method_27973(), var0 -> var0.method_28017(1)));
+         this.method_37372().method_36633(field_38200, Util.<class_6098>method_44659(var1.method_27973(), var0 -> var0.method_28017(1)));
       }
    }
 

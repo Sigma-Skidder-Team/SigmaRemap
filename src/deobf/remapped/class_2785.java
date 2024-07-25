@@ -5,9 +5,9 @@ import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
 public class class_2785 {
-   private final BiConsumer<class_4639, Supplier<JsonElement>> field_13592;
+   private final BiConsumer<Identifier, Supplier<JsonElement>> field_13592;
 
-   public class_2785(BiConsumer<class_4639, Supplier<JsonElement>> var1) {
+   public class_2785(BiConsumer<Identifier, Supplier<JsonElement>> var1) {
       this.field_13592 = var1;
    }
 

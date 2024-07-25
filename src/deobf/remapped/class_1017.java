@@ -2,7 +2,7 @@ package remapped;
 
 public final class class_1017 implements class_7154 {
    @Override
-   public void method_32845(class_9633 var1, class_7889 var2) {
+   public void method_32845(class_9633 var1, TextureManager var2) {
       class_3542.method_16448();
       class_3542.method_16387(true);
       var2.method_35674(class_8359.field_42805);

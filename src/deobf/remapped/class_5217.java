@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
 public class class_5217 {
    public static final Logger field_26786 = LogManager.getLogger();
    private final Map<String, File> field_26784 = Maps.newHashMap();
-   private final Map<class_4639, File> field_26787 = Maps.newHashMap();
+   private final Map<Identifier, File> field_26787 = Maps.newHashMap();
 
    public class_5217() {
    }
@@ -45,7 +45,7 @@ public class class_5217 {
                if (var14.length == 1) {
                   this.field_26784.put(var14[0], var16);
                } else {
-                  this.field_26787.put(new class_4639(var14[0], var14[1]), var16);
+                  this.field_26787.put(new Identifier(var14[0], var14[1]), var16);
                }
             }
          }
@@ -59,7 +59,7 @@ public class class_5217 {
    }
 
    @Nullable
-   public File method_23900(class_4639 var1) {
+   public File method_23900(Identifier var1) {
       return this.field_26787.get(var1);
    }
 
@@ -68,10 +68,10 @@ public class class_5217 {
       return this.field_26784.get(var1);
    }
 
-   public Collection<class_4639> method_23898(String var1, String var2, int var3, Predicate<String> var4) {
+   public Collection<Identifier> method_23898(String var1, String var2, int var3, Predicate<String> var4) {
       return this.field_26787.keySet().stream().filter(var3x -> {
          String var6 = var3x.method_21456();
          return var3x.method_21461().equals(var2) && !var6.endsWith(".mcmeta") && var6.startsWith(var1 + "/") && var4.test(var6);
-      }).collect(Collectors.<class_4639>toList());
+      }).collect(Collectors.<Identifier>toList());
    }
 }

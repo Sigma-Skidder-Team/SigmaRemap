@@ -34,19 +34,19 @@ public class class_3670 extends class_7038 {
       this.field_36270 = Math.round(this.field_17889);
       this.field_36261 = Math.round(this.field_17888);
       if (!(this.field_17889 + (float)this.field_36278 < 0.0F)) {
-         if (this.field_17889 > (float) MinecraftClient.getInstance().field_9602.method_43166()) {
+         if (this.field_17889 > (float) MinecraftClient.getInstance().window.method_43166()) {
             this.field_17889 = (float)(0 - this.field_36278);
          }
       } else {
-         this.field_17889 = (float) MinecraftClient.getInstance().field_9602.method_43166();
+         this.field_17889 = (float) MinecraftClient.getInstance().window.method_43166();
       }
 
       if (!(this.field_17888 + (float)this.field_36257 < 0.0F)) {
-         if (this.field_17888 > (float) MinecraftClient.getInstance().field_9602.method_43163()) {
+         if (this.field_17888 > (float) MinecraftClient.getInstance().window.method_43163()) {
             this.field_17888 = (float)(0 - this.field_36257);
          }
       } else {
-         this.field_17888 = (float) MinecraftClient.getInstance().field_9602.method_43163();
+         this.field_17888 = (float) MinecraftClient.getInstance().window.method_43163();
       }
 
       float var5 = (float)(var1 - this.method_32155());

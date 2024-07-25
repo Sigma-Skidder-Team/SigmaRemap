@@ -9,6 +9,9 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_9044 extends Screen implements class_4361 {
    private static final class_4639 field_46301 = new class_4639("textures/gui/advancements/window.png");
    private static final class_4639 field_46297 = new class_4639("textures/gui/advancements/tabs.png");
+public class class_9044 extends Screen implements class_4361 {
+   private static final Identifier field_46301 = new Identifier("textures/gui/advancements/window.png");
+   private static final Identifier field_46297 = new Identifier("textures/gui/advancements/tabs.png");
    private static final ITextComponent field_46295 = new TranslationTextComponent("advancements.sad_label");
    private static final ITextComponent field_46302 = new TranslationTextComponent("advancements.empty");
    private static final ITextComponent field_46298 = new TranslationTextComponent("gui.advancements");

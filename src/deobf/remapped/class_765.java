@@ -196,7 +196,7 @@ public class class_765 extends class_4232 {
 
    private void method_3450() {
       this.field_943.method_32777();
-      class_9352 var3 = this.field_943.method_8552();
+      Window var3 = this.field_943.method_8552();
       int var4 = class_2148.method_10029(this.field_4135);
       int var5 = class_2148.method_10030(this.field_4135);
       int var6 = this.field_4135.field_36670 + (var4 - var5);

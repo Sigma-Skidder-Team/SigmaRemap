@@ -11,7 +11,7 @@ public class class_4879 extends class_446 {
    public class_5794 field_24273 = new class_5794();
 
    public class_4879(class_7038 var1, String var2) {
-      super(var1, var2, 0, 0, MinecraftClient.getInstance().field_9602.method_43166(), MinecraftClient.getInstance().field_9602.method_43163(), false);
+      super(var1, var2, 0, 0, MinecraftClient.getInstance().window.method_43166(), MinecraftClient.getInstance().window.method_43163(), false);
       this.method_32177(false);
       this.method_32119(false);
       this.method_32187(false);
@@ -31,8 +31,8 @@ public class class_4879 extends class_446 {
    @Override
    public void method_32178(float var1) {
       this.method_32130();
-      int var4 = MinecraftClient.getInstance().field_9602.method_43165();
-      int var5 = MinecraftClient.getInstance().field_9602.method_43177();
+      int var4 = MinecraftClient.getInstance().window.method_43165();
+      int var5 = MinecraftClient.getInstance().window.method_43177();
       int var6 = (int)((float)var4 / 4.0F);
       boolean var7 = false;
       if (this.field_24271.size() < var6) {

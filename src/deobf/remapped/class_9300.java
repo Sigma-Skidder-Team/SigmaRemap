@@ -148,7 +148,7 @@ public class class_9300 {
 
    private static String method_42878(String var0, String var1, String[] var2, String var3) {
       try {
-         class_4639 var6 = new class_4639(var0);
+         Identifier var6 = new Identifier(var0);
          InputStream var7 = class_3111.method_14374(var6);
          if (var7 == null) {
             return var3;
@@ -244,7 +244,7 @@ public class class_9300 {
 
    private static int method_42916(String var0, int var1) {
       try {
-         InputStream var4 = class_3111.method_14374(new class_4639(var0));
+         InputStream var4 = class_3111.method_14374(new Identifier(var0));
          if (var4 == null) {
             return var1;
          } else {
@@ -259,7 +259,7 @@ public class class_9300 {
 
    private static void method_42864(String var0) {
       try {
-         class_4639 var3 = new class_4639(var0);
+         Identifier var3 = new Identifier(var0);
          InputStream var4 = class_3111.method_14374(var3);
          if (var4 == null) {
             return;
@@ -356,7 +356,7 @@ public class class_9300 {
          method_42869("Block colormap: " + var9);
 
          try {
-            class_4639 var10 = new class_4639("minecraft", var9);
+            Identifier var10 = new Identifier("minecraft", var9);
             InputStream var11 = class_3111.method_14374(var10);
             if (var11 == null) {
                method_42898("File not found: " + var9);
@@ -503,14 +503,14 @@ public class class_9300 {
 
    public static class_9561 method_42893(String var0, int var1, int var2) {
       try {
-         class_4639 var5 = new class_4639(var0);
+         Identifier var5 = new Identifier(var0);
          if (!class_3111.method_14362(var5)) {
             return null;
          } else {
             method_42869("Colormap " + var0);
             class_8407 var6 = new class_8407();
             String var7 = class_8251.method_37836(var0, ".png", ".properties");
-            class_4639 var8 = new class_4639(var7);
+            Identifier var8 = new Identifier(var7);
             if (class_3111.method_14362(var8)) {
                InputStream var9 = class_3111.method_14374(var8);
                var6.load(var9);
@@ -976,7 +976,7 @@ public class class_9300 {
 
             try {
                if (var13 < 0) {
-                  var13 = class_7070.method_32563(new class_4639(var12).toString());
+                  var13 = class_7070.method_32563(new Identifier(var12).toString());
                }
             } catch (class_7485 var15) {
                class_3111.method_14317("ResourceLocationException: " + var15.getMessage());
@@ -1213,7 +1213,7 @@ public class class_9300 {
    private static int method_42907() {
       int var2 = 0;
 
-      for (class_4639 var4 : class_8669.field_44436.method_39805()) {
+      for (Identifier var4 : class_8669.field_44436.method_39805()) {
          class_1425 var5 = class_6845.method_31412(var4);
          int var6 = class_1425.method_6536(var5);
          if (var6 > var2) {
@@ -1230,7 +1230,7 @@ public class class_9300 {
       } else {
          var0 = class_8251.method_37807(var0, "potion.", "effect.");
 
-         for (class_4639 var4 : class_8669.field_44436.method_39805()) {
+         for (Identifier var4 : class_8669.field_44436.method_39805()) {
             class_1425 var5 = class_6845.method_31412(var4);
             if (var5.method_6540().equals(var0)) {
                return class_1425.method_6536(var5);

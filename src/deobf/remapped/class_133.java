@@ -183,7 +183,7 @@ public class class_133<T extends class_3757> {
    private final Type<?> field_385;
 
    @Nullable
-   public static class_4639 method_445(class_133<?> var0) {
+   public static Identifier method_445(class_133<?> var0) {
       return class_8669.field_44426.method_39797(var0);
    }
 
@@ -192,7 +192,7 @@ public class class_133<T extends class_3757> {
          field_380.warn("Block entity type {} requires at least one valid block to be defined!", var0);
       }
 
-      Type var4 = class_9665.method_44669(class_4002.field_19434, var0);
+      Type var4 = Util.getChoiceType(class_4002.field_19434, var0);
       return class_8669.<class_133<T>>method_39791(class_8669.field_44426, var0, var1.method_44792(var4));
    }
 

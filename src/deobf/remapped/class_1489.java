@@ -138,7 +138,7 @@ public class class_1489 extends class_9821<class_4402> {
 
    public void method_6879(class_2034 var1, class_1315 var2) {
       class_6979 var5 = class_6979.method_31922(var1, var2.method_5997() >> 4);
-      class_9665.<class_4402>method_44691(this.method_45260(var5.method_31925()), var3 -> var3.method_20513(var3x -> {
+      Util.<class_4402>method_44691(this.method_45260(var5.method_31925()), var3 -> var3.method_20513(var3x -> {
             if (method_6865(var2)) {
                this.method_6882(var2, var5, var3x);
             }

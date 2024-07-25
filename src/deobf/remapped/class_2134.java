@@ -99,7 +99,7 @@ public class class_2134 extends class_7186 {
 
    @Override
    public class_5734 method_32920(class_5734 var1) {
-      class_4639.field_22655
+      Identifier.field_22655
          .encodeStart(class_3504.field_17178, this.field_10685.method_25499())
          .resultOrPartial(field_10679::error)
          .ifPresent(var1x -> var1.method_25946("dimension", var1x));

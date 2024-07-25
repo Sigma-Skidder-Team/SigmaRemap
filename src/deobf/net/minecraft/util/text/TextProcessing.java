@@ -1,13 +1,13 @@
 package net.minecraft.util.text;
 
 import java.util.Optional;
-import remapped.class_3256;
+import remapped.Unit;
 import remapped.class_4981;
 import remapped.class_5255;
 import remapped.SigmaMainClass;
 
 public class TextProcessing {
-   private static final Optional<Object> field_238336_a_ = Optional.<Object>of(class_3256.field_16155);
+   private static final Optional<Object> field_238336_a_ = Optional.<Object>of(Unit.INSTANCE);
 
    private static boolean func_238344_a_(Style p_238344_0_, class_5255 p_238344_1_, int p_238344_2_, char p_238344_3_) {
       return Character.isSurrogate(p_238344_3_)

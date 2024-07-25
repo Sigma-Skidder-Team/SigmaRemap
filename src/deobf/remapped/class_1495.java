@@ -10,7 +10,7 @@ public class class_1495 extends class_9521 {
       this.field_7952 = var1;
       this.field_48464 = var1x -> {
          if (class_7039.method_32248(this.field_7952) != null) {
-            class_9665.method_44667().method_37581(class_7039.method_32248(this.field_7952));
+            Util.getOperatingSystem().method_37581(class_7039.method_32248(this.field_7952));
             if (class_7039.method_32215(this.field_7952)) {
                class_8974 var4 = class_3524.method_16270();
                var4.field_45982 = false;

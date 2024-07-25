@@ -18,7 +18,7 @@ public class class_1763 extends class_7789<class_797> {
 
          for (class_1425 var8 : class_797.method_3538(var2).keySet()) {
             JsonObject var9 = new JsonObject();
-            class_4639 var10 = class_8669.field_44436.method_39797(var8);
+            Identifier var10 = class_8669.field_44436.method_39797(var8);
             if (var10 == null) {
                throw new IllegalArgumentException("Don't know how to serialize mob effect " + var8);
             }
@@ -38,7 +38,7 @@ public class class_1763 extends class_7789<class_797> {
          for (JsonElement var8 : class_6539.method_29787(var1, "effects")) {
             String var9 = class_6539.method_29796(var8.getAsJsonObject(), "type");
             class_1425 var10 = class_8669.field_44436
-               .method_39794(new class_4639(var9))
+               .method_39794(new Identifier(var9))
                .orElseThrow(() -> new JsonSyntaxException("Unknown mob effect '" + var9 + "'"));
             class_7986 var11 = class_6539.<class_7986>method_29778(var8.getAsJsonObject(), "duration", var2, class_7986.class);
             var6.put(var10, var11);

@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 
 public class class_968<T> implements class_3065<T> {
    private final List<class_723<T>> field_4962;
-   private final Function<T, class_4639> field_4961;
+   private final Function<T, Identifier> field_4961;
 
-   public class_968(Function<T, class_4639> var1, List<class_4110<T>> var2, long var3) {
+   public class_968(Function<T, Identifier> var1, List<class_4110<T>> var2, long var3) {
       this(
          var1,
          var2.stream()
@@ -19,7 +19,7 @@ public class class_968<T> implements class_3065<T> {
       );
    }
 
-   private class_968(Function<T, class_4639> var1, List<class_723<T>> var2) {
+   private class_968(Function<T, Identifier> var1, List<class_723<T>> var2) {
       this.field_4962 = var2;
       this.field_4961 = var1;
    }
@@ -56,12 +56,12 @@ public class class_968<T> implements class_3065<T> {
       return var3;
    }
 
-   public static <T> class_968<T> method_4243(class_3416 var0, Function<T, class_4639> var1, Function<class_4639, T> var2) {
+   public static <T> class_968<T> method_4243(class_3416 var0, Function<T, Identifier> var1, Function<Identifier, T> var2) {
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < var0.size(); var6++) {
          class_5734 var7 = var0.method_15764(var6);
-         Object var8 = var2.apply(new class_4639(var7.method_25965("i")));
+         Object var8 = var2.apply(new Identifier(var7.method_25965("i")));
          if (var8 != null) {
             class_1331 var9 = new class_1331(var7.method_25947("x"), var7.method_25947("y"), var7.method_25947("z"));
             var5.add(new class_723(var8, var9, var7.method_25947("t"), class_1716.method_7694(var7.method_25947("p")), null));

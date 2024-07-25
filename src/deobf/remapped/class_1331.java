@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 public class class_1331 extends class_2700 {
    public static final Codec<class_1331> field_7305 = Codec.INT_STREAM
       .comapFlatMap(
-         var0 -> class_9665.method_44654(var0, 3).map(var0x -> new class_1331(var0x[0], var0x[1], var0x[2])),
+         var0 -> Util.method_44654(var0, 3).map(var0x -> new class_1331(var0x[0], var0x[1], var0x[2])),
          var0 -> IntStream.of(var0.method_12173(), var0.method_12165(), var0.method_12185())
       )
       .stable();

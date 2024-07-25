@@ -14,7 +14,7 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public abstract class class_7648 extends class_2840<Map<class_4639, JsonElement>> {
+public abstract class class_7648 extends class_2840<Map<Identifier, JsonElement>> {
    private static final Logger field_38870 = LogManager.getLogger();
    private static final int field_38868 = ".json".length();
    private final Gson field_38867;
@@ -25,13 +25,13 @@ public abstract class class_7648 extends class_2840<Map<class_4639, JsonElement>
       this.field_38869 = var2;
    }
 
-   public Map<class_4639, JsonElement> method_34644(class_7832 var1, class_3492 var2) {
+   public Map<Identifier, JsonElement> method_34644(class_7832 var1, class_3492 var2) {
       HashMap var5 = Maps.newHashMap();
       int var6 = this.field_38869.length() + 1;
 
-      for (class_4639 var8 : var1.method_35460(this.field_38869, var0 -> var0.endsWith(".json"))) {
+      for (Identifier var8 : var1.method_35460(this.field_38869, var0 -> var0.endsWith(".json"))) {
          String var9 = var8.method_21456();
-         class_4639 var10 = new class_4639(var8.method_21461(), var9.substring(var6, var9.length() - field_38868));
+         Identifier var10 = new Identifier(var8.method_21461(), var9.substring(var6, var9.length() - field_38868));
 
          try (
             class_4038 var11 = var1.method_35458(var8);

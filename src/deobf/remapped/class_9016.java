@@ -78,7 +78,7 @@ public class class_9016 extends class_1094 {
          return super.method_26940(var1, var3, var5);
       } else {
          this.field_943.field_9600.method_38891("https://aka.ms/MinecraftRealmsTerms");
-         class_9665.method_44667().method_37581("https://aka.ms/MinecraftRealmsTerms");
+         Util.getOperatingSystem().method_37581("https://aka.ms/MinecraftRealmsTerms");
          return true;
       }
    }

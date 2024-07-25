@@ -66,6 +66,6 @@ public class class_4466 {
    }
 
    public static class_4466 method_20721(String var0, class_236 var1, ImmutableSet<class_2451> var2, ImmutableSet<class_6414> var3, class_8461 var4) {
-      return class_8669.<class_4466, class_4466>method_39792(class_8669.field_44425, new class_4639(var0), new class_4466(var0, var1, var2, var3, var4));
+      return class_8669.<class_4466, class_4466>method_39792(class_8669.field_44425, new Identifier(var0), new class_4466(var0, var1, var2, var3, var4));
    }
 }

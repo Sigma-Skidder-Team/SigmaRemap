@@ -22,7 +22,7 @@ public class class_3570 {
    private static final Map<String, Boolean> field_17477 = Maps.newHashMap();
    private static final Map<String, String> field_17472 = Maps.newHashMap();
    private static final Logger field_17473 = LogManager.getLogger();
-   private static final class_4639 field_17475 = new class_4639("textures/gui/presets/isles.png");
+   private static final Identifier field_17475 = new Identifier("textures/gui/presets/isles.png");
 
    public static void method_16600(String var0, String var1) {
       if (var1 != null) {

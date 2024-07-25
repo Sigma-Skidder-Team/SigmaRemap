@@ -58,18 +58,18 @@ public class AltManagerMenu extends class_2596 {
             "alts",
             0,
             114,
-            (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10620) - 4,
-            MinecraftClient.getInstance().field_9602.method_43163() - 119 - this.field_10608
+            (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620) - 4,
+            MinecraftClient.getInstance().window.method_43163() - 119 - this.field_10608
          )
       );
       this.method_32148(
          this.field_10609 = new class_2612(
             this,
             "altView",
-            (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10620),
+            (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620),
             114,
-            (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10606) - this.field_10608,
-            MinecraftClient.getInstance().field_9602.method_43163() - 119 - this.field_10608
+            (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10606) - this.field_10608,
+            MinecraftClient.getInstance().window.method_43163() - 119 - this.field_10608
          )
       );
       this.field_10605.method_32105(false);
@@ -81,13 +81,13 @@ public class AltManagerMenu extends class_2596 {
                this.field_10609,
                "",
                (int)(
-                        (float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10606
-                           - (float)((int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10606))
+                        (float) MinecraftClient.getInstance().window.method_43166() * this.field_10606
+                           - (float)((int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10606))
                      )
                      / 2
                   - 10,
-               MinecraftClient.getInstance().field_9602.method_43163() / 12,
-               (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10606),
+               MinecraftClient.getInstance().window.method_43163() / 12,
+               (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10606),
                350,
                "steve"
             )
@@ -98,18 +98,18 @@ public class AltManagerMenu extends class_2596 {
                this.field_10609,
                "info",
                (int)(
-                        (float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10606
-                           - (float)((int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10606))
+                        (float) MinecraftClient.getInstance().window.method_43166() * this.field_10606
+                           - (float)((int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10606))
                      )
                      / 2
                   - 10,
                this.method_9902(),
-               (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10606),
+               (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10606),
                500
             )
          );
       class_3366 var9 = new class_3366(
-         this, "drop", (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10620) - 220, 44, 200, 32, var3, 0
+         this, "drop", (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620) - 220, 44, 200, 32, var3, 0
       );
       var9.method_15421(var4, 1);
       var9.method_15426(2);
@@ -139,7 +139,7 @@ public class AltManagerMenu extends class_2596 {
          this.field_10604 = new class_3004(
             this,
             "textbox",
-            (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10620),
+            (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620),
             44,
             150,
             32,
@@ -286,10 +286,10 @@ public class AltManagerMenu extends class_2596 {
    public void method_32178(float var1) {
       this.method_9892();
       class_73.method_115(
-         (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10620),
+         (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620),
          114,
-         (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10606) - this.field_10608,
-         MinecraftClient.getInstance().field_9602.method_43163() - 119 - this.field_10608,
+         (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10606) - this.field_10608,
+         MinecraftClient.getInstance().window.method_43163() - 119 - this.field_10608,
          class_1255.field_6918.field_6917
       );
       this.method_9898();
@@ -303,7 +303,7 @@ public class AltManagerMenu extends class_2596 {
          try {
             this.field_10617 = class_6568.method_30015(
                "blur",
-               class_7849.method_35507(0, 0, (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10620) - 15, 114, 4, 40, -921102)
+               class_7849.method_35507(0, 0, (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620) - 15, 114, 4, 40, -921102)
             );
          } catch (IOException var4) {
             var4.printStackTrace();
@@ -316,7 +316,7 @@ public class AltManagerMenu extends class_2596 {
          class_73.method_99(
             0.0F,
             0.0F,
-            (float)((int)((float) MinecraftClient.getInstance().field_9602.method_43166() * this.field_10620) - 15),
+            (float)((int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620) - 15),
             114.0F,
             this.field_10617,
             class_314.method_1444(class_1255.field_6918.field_6917, var3)
@@ -345,7 +345,7 @@ public class AltManagerMenu extends class_2596 {
             for (class_7038 var7 : var5.method_32134()) {
                if (var7 instanceof class_482) {
                   class_482 var8 = (class_482)var7;
-                  if (var7.method_32173() <= MinecraftClient.getInstance().field_9602.method_43163() && this.field_10605.method_11853() == 0) {
+                  if (var7.method_32173() <= MinecraftClient.getInstance().window.method_43163() && this.field_10605.method_11853() == 0) {
                      if (var3 > 0.2F) {
                         var8.field_2995.method_11119(class_4043.field_19620);
                      }
@@ -468,6 +468,6 @@ public class AltManagerMenu extends class_2596 {
    }
 
    public int method_9902() {
-      return MinecraftClient.getInstance().field_9602.method_43163() / 12 + 280 + MinecraftClient.getInstance().field_9602.method_43163() / 12;
+      return MinecraftClient.getInstance().window.method_43163() / 12 + 280 + MinecraftClient.getInstance().window.method_43163() / 12;
    }
 }

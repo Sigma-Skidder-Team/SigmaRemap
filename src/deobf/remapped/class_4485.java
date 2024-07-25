@@ -21,7 +21,7 @@ public abstract class class_4485<T> implements class_5998 {
    private static final Gson field_21861 = new GsonBuilder().setPrettyPrinting().create();
    public final class_6901 field_21862;
    public final class_8669<T> field_21860;
-   private final Map<class_4639, class_1079> field_21863 = Maps.newLinkedHashMap();
+   private final Map<Identifier, class_1079> field_21863 = Maps.newLinkedHashMap();
 
    public class_4485(class_6901 var1, class_8669<T> var2) {
       this.field_21862 = var1;
@@ -73,7 +73,7 @@ public abstract class class_4485<T> implements class_5998 {
          );
    }
 
-   public abstract Path method_20832(class_4639 var1);
+   public abstract Path method_20832(Identifier var1);
 
    public class_5748<T> method_20834(class_8813<T> var1) {
       class_1079 var4 = this.method_20833(var1);

@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public abstract class class_7114 extends class_2089 implements IRenderable, class_5888 {
-   public static final class_4639 field_36678 = new class_4639("textures/gui/widgets.png");
+   public static final Identifier field_36678 = new Identifier("textures/gui/widgets.png");
    public int field_36671;
    public int field_36681;
    public int field_36670;
@@ -72,7 +72,7 @@ public abstract class class_7114 extends class_2089 implements IRenderable, clas
    }
 
    public void method_32700() {
-      if (this.field_36675 && this.method_32703() && class_9665.method_44650() > this.field_36676) {
+      if (this.field_36675 && this.method_32703() && Util.getMeasuringTimeMs() > this.field_36676) {
          String var3 = this.method_32701().getString();
          if (!var3.isEmpty()) {
             class_7542.field_38482.method_34341(var3);
@@ -229,7 +229,7 @@ public abstract class class_7114 extends class_2089 implements IRenderable, clas
    }
 
    public void method_32693(int var1) {
-      this.field_36676 = class_9665.method_44650() + (long)var1;
+      this.field_36676 = Util.getMeasuringTimeMs() + (long)var1;
    }
 
    public ITextComponent method_32685() {

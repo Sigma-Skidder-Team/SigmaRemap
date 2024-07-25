@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 public class class_7100 implements class_7912 {
    private static String[] field_36622;
    private final class_3903 field_36624;
-   private final class_4639 field_36623;
+   private final Identifier field_36623;
    private final List<class_753> field_36621;
 
    public class_7100(class_9586 var1, class_3903 var2) {

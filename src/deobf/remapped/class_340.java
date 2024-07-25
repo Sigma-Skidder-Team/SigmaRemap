@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_340 extends class_2208<class_4034> {
-   private static final class_4639 field_1282 = new class_4639("textures/gui/container/beacon.png");
+   private static final Identifier field_1282 = new Identifier("textures/gui/container/beacon.png");
    private static final ITextComponent field_1276 = new TranslationTextComponent("block.minecraft.beacon.primary");
    private static final ITextComponent field_1278 = new TranslationTextComponent("block.minecraft.beacon.secondary");
    private class_5618 field_1279;

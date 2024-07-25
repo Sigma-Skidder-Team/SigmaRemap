@@ -6,16 +6,16 @@ import java.util.Random;
 import java.util.Set;
 
 public class class_8765 implements class_6491 {
-   public static final class_4639 field_44880 = new class_4639("textures/misc/enchanted_item_glint.png");
+   public static final Identifier field_44880 = new Identifier("textures/misc/enchanted_item_glint.png");
    private static final Set<class_2451> field_44879 = Sets.newHashSet(new class_2451[]{class_4897.field_25302});
    public float field_44875;
    private final class_4480 field_44876;
-   private final class_7889 field_44873;
+   private final TextureManager field_44873;
    private final class_6662 field_44872;
    public class_7458 field_44874 = null;
    private static boolean field_44877 = false;
 
-   public class_8765(class_7889 var1, class_7458 var2, class_6662 var3) {
+   public class_8765(TextureManager var1, class_7458 var2, class_6662 var3) {
       this.field_44873 = var1;
       this.field_44874 = var2;
       if (!class_7860.field_40017.method_22501()) {

@@ -61,7 +61,7 @@ public class class_9844 extends class_9128 {
             var1.method_35235((double)this.field_49840);
          }
 
-         int var7 = GLFW.glfwGetKey(field_46692.field_9602.method_43181(), field_46692.field_9577.field_45560.field_30027.field_17800);
+         int var7 = GLFW.glfwGetKey(field_46692.window.method_43181(), field_46692.field_9577.field_45560.field_30027.field_17800);
          if (var7 == 1 && this.method_42007("NCP")) {
             var1.method_35235(-0.9F);
          } else if (!field_46692.field_9632.method_37252()) {

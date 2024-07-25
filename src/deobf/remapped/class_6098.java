@@ -47,7 +47,7 @@ public final class class_6098 {
    );
    private static final Logger field_31209 = LogManager.getLogger();
    public static final class_6098 field_31203 = new class_6098((class_2451)null);
-   public static final DecimalFormat field_31202 = class_9665.<DecimalFormat>method_44659(
+   public static final DecimalFormat field_31202 = Util.<DecimalFormat>method_44659(
       new DecimalFormat("#.##"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
    private static final Style field_31216 = Style.EMPTY.setFormatting(TextFormatting.DARK_PURPLE).setItalic(true);
@@ -88,7 +88,7 @@ public final class class_6098 {
    }
 
    private class_6098(class_5734 var1) {
-      this.field_31210 = class_8669.field_44382.method_39806(new class_4639(var1.method_25965("id")));
+      this.field_31210 = class_8669.field_44382.method_39806(new Identifier(var1.method_25965("id")));
       this.field_31206 = var1.method_25950("Count");
       if (var1.method_25939("tag", 10)) {
          this.field_31204 = var1.method_25937("tag");
@@ -161,7 +161,7 @@ public final class class_6098 {
    }
 
    public class_5734 method_27998(class_5734 var1) {
-      class_4639 var4 = class_8669.field_44382.method_39797(this.method_27960());
+      Identifier var4 = class_8669.field_44382.method_39797(this.method_27960());
       var1.method_25941("id", var4 != null ? var4.toString() : "minecraft:air");
       var1.method_25921("Count", (byte)this.field_31206);
       if (this.field_31204 != null) {
@@ -658,7 +658,7 @@ public final class class_6098 {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          class_5734 var5 = var1.method_15764(var4);
          class_8669.field_44445
-            .method_39794(class_4639.method_21455(var5.method_25965("id")))
+            .method_39794(Identifier.method_21455(var5.method_25965("id")))
             .ifPresent(var2 -> var0.add(var2.method_20423(var5.method_25947("lvl"))));
       }
    }
@@ -667,7 +667,7 @@ public final class class_6098 {
       try {
          class_4104 var3 = new class_4104(new StringReader(var0), true).method_18973(true);
          class_2522 var4 = var3.method_18967();
-         class_4639 var5 = var3.method_18971();
+         Identifier var5 = var3.method_18971();
          boolean var6 = var4 != null;
          boolean var7 = var5 != null;
          if (var6 || var7) {
@@ -762,7 +762,7 @@ public final class class_6098 {
          for (int var6 = 0; var6 < var5.size(); var6++) {
             class_5734 var7 = var5.method_15764(var6);
             if (!var7.method_25939("Slot", 8) || var7.method_25965("Slot").equals(var1.method_31769())) {
-               Optional var8 = class_8669.field_44403.method_39794(class_4639.method_21455(var7.method_25965("AttributeName")));
+               Optional var8 = class_8669.field_44403.method_39794(Identifier.method_21455(var7.method_25965("AttributeName")));
                if (var8.isPresent()) {
                   class_9343 var9 = class_9343.method_43120(var7);
                   if (var9 != null && var9.method_43122().getLeastSignificantBits() != 0L && var9.method_43122().getMostSignificantBits() != 0L) {

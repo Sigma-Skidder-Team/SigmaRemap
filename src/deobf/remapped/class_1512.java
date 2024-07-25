@@ -3,14 +3,14 @@ package remapped;
 import java.util.UUID;
 
 public class class_1512 {
-   private static final class_4639 field_8008 = new class_4639("textures/entity/steve.png");
-   private static final class_4639 field_8010 = new class_4639("textures/entity/alex.png");
+   private static final Identifier field_8008 = new Identifier("textures/entity/steve.png");
+   private static final Identifier field_8010 = new Identifier("textures/entity/alex.png");
 
-   public static class_4639 method_6922() {
+   public static Identifier method_6922() {
       return field_8008;
    }
 
-   public static class_4639 method_6921(UUID var0) {
+   public static Identifier method_6921(UUID var0) {
       return !method_6920(var0) ? field_8008 : field_8010;
    }
 

@@ -3,8 +3,8 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_9831 extends class_2208<class_1722> implements class_474 {
-   private static final class_4639 field_49797 = new class_4639("textures/gui/container/crafting_table.png");
-   private static final class_4639 field_49800 = new class_4639("textures/gui/recipe_button.png");
+   private static final Identifier field_49797 = new Identifier("textures/gui/container/crafting_table.png");
+   private static final Identifier field_49800 = new Identifier("textures/gui/recipe_button.png");
    private final class_8002 field_49799 = new class_8002();
    private boolean field_49798;
 

@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Locale;
 
-public class class_454 extends class_4639 {
+public class class_454 extends Identifier {
    private final String field_1888;
 
    public class_454(String[] var1) {
@@ -14,7 +14,7 @@ public class class_454 extends class_4639 {
       this(method_2183(var1));
    }
 
-   public class_454(class_4639 var1, String var2) {
+   public class_454(Identifier var1, String var2) {
       this(var1.toString(), var2);
    }
 
@@ -33,7 +33,7 @@ public class class_454 extends class_4639 {
          }
       }
 
-      System.arraycopy(class_4639.method_21452(var5, ':'), 0, var3, 0, 2);
+      System.arraycopy(Identifier.method_21452(var5, ':'), 0, var3, 0, 2);
       return var3;
    }
 

@@ -31,7 +31,7 @@ public class class_2067 {
    }
 
    private static int method_9658(class_9155 var0, Collection<class_9359> var1, ITextComponent var2) {
-      UUID var5 = var0.method_42200() != null ? var0.method_42200().method_37328() : class_9665.field_49232;
+      UUID var5 = var0.method_42200() != null ? var0.method_42200().method_37328() : Util.NIL_UUID;
       class_8145 var6 = var0.method_42200();
       Consumer var7;
       if (!(var6 instanceof class_9359)) {

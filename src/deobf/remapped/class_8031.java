@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 
 public class class_8031 extends class_5467 implements class_9897 {
    private static final class_7821<Byte> field_41107 = class_8073.<Byte>method_36641(class_8031.class, class_2734.field_13361);
-   private static final Map<class_9077, class_8525> field_41110 = class_9665.<Map<class_9077, class_8525>>method_44659(
+   private static final Map<class_9077, class_8525> field_41110 = Util.<Map<class_9077, class_8525>>method_44659(
       Maps.newEnumMap(class_9077.class), var0 -> {
          var0.put(class_9077.field_46493, class_4783.field_23300);
          var0.put(class_9077.field_46486, class_4783.field_23619);
@@ -95,7 +95,7 @@ public class class_8031 extends class_5467 implements class_9897 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Override
-   public class_4639 method_26934() {
+   public Identifier method_26934() {
       if (this.method_36478()) {
          return this.method_37387().method_30480();
       } else {

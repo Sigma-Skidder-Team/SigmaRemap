@@ -28,15 +28,15 @@ public class class_1079 {
       return this.method_4722(new class_2749(var1, var2, null));
    }
 
-   public class_1079 method_4730(class_4639 var1, String var2) {
+   public class_1079 method_4730(Identifier var1, String var2) {
       return this.method_4729(new class_4289(var1), var2);
    }
 
-   public class_1079 method_4723(class_4639 var1, String var2) {
+   public class_1079 method_4723(Identifier var1, String var2) {
       return this.method_4729(new class_5091(var1), var2);
    }
 
-   public <T> Optional<class_2307<T>> method_4719(Function<class_4639, class_2307<T>> var1, Function<class_4639, T> var2) {
+   public <T> Optional<class_2307<T>> method_4719(Function<Identifier, class_2307<T>> var1, Function<Identifier, T> var2) {
       Builder var5 = ImmutableSet.builder();
 
       for (class_2749 var7 : this.field_5878) {
@@ -52,7 +52,7 @@ public class class_1079 {
       return this.field_5878.stream();
    }
 
-   public <T> Stream<class_2749> method_4727(Function<class_4639, class_2307<T>> var1, Function<class_4639, T> var2) {
+   public <T> Stream<class_2749> method_4727(Function<Identifier, class_2307<T>> var1, Function<Identifier, T> var2) {
       return this.method_4720().filter(var2x -> !var2x.method_12388().method_24969(var1, var2, var0x -> {
          }));
    }
@@ -86,10 +86,10 @@ public class class_1079 {
       }
 
       if (!var3.startsWith("#")) {
-         class_4639 var7 = new class_4639(var3);
+         Identifier var7 = new Identifier(var3);
          return (class_5503)(!var4 ? new class_3833(var7) : new class_4289(var7));
       } else {
-         class_4639 var6 = new class_4639(var3.substring(1));
+         Identifier var6 = new Identifier(var3.substring(1));
          return (class_5503)(!var4 ? new class_9585(var6) : new class_5091(var6));
       }
    }

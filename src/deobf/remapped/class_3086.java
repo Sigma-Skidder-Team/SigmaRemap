@@ -27,7 +27,7 @@ public class class_3086 extends class_7449 {
          return var1;
       } else {
          String var5 = ((String)var4.get()).toLowerCase(Locale.ROOT);
-         return var1.set("Motive", var1.createString(new class_4639(field_15297.getOrDefault(var5, var5)).toString()));
+         return var1.set("Motive", var1.createString(new Identifier(field_15297.getOrDefault(var5, var5)).toString()));
       }
    }
 

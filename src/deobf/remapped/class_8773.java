@@ -26,9 +26,9 @@ public interface class_8773 {
 
    Collection<String> method_40330();
 
-   Collection<class_4639> method_40309();
+   Collection<Identifier> method_40309();
 
-   Stream<class_4639> method_40326();
+   Stream<Identifier> method_40326();
 
    CompletableFuture<Suggestions> method_40316(CommandContext<class_8773> var1, SuggestionsBuilder var2);
 
@@ -46,11 +46,11 @@ public interface class_8773 {
 
    boolean method_40314(int var1);
 
-   static <T> void method_40308(Iterable<T> var0, String var1, Function<T, class_4639> var2, Consumer<T> var3) {
+   static <T> void method_40308(Iterable<T> var0, String var1, Function<T, Identifier> var2, Consumer<T> var3) {
       boolean var6 = var1.indexOf(58) > -1;
 
       for (Object var8 : var0) {
-         class_4639 var9 = (class_4639)var2.apply(var8);
+         Identifier var9 = (Identifier)var2.apply(var8);
          if (!var6) {
             if (method_40329(var1, var9.method_21461()) || var9.method_21461().equals("minecraft") && method_40329(var1, var9.method_21456())) {
                var3.accept(var8);
@@ -64,7 +64,7 @@ public interface class_8773 {
       }
    }
 
-   static <T> void method_40312(Iterable<T> var0, String var1, String var2, Function<T, class_4639> var3, Consumer<T> var4) {
+   static <T> void method_40312(Iterable<T> var0, String var1, String var2, Function<T, Identifier> var3, Consumer<T> var4) {
       if (!var1.isEmpty()) {
          String var7 = Strings.commonPrefix(var1, var2);
          if (!var7.isEmpty()) {
@@ -76,29 +76,29 @@ public interface class_8773 {
       }
    }
 
-   static CompletableFuture<Suggestions> method_40325(Iterable<class_4639> var0, SuggestionsBuilder var1, String var2) {
+   static CompletableFuture<Suggestions> method_40325(Iterable<Identifier> var0, SuggestionsBuilder var1, String var2) {
       String var5 = var1.getRemaining().toLowerCase(Locale.ROOT);
       method_40312(var0, var5, var2, var0x -> var0x, var2x -> var1.suggest(var2 + var2x));
       return var1.buildFuture();
    }
 
-   static CompletableFuture<Suggestions> method_40324(Iterable<class_4639> var0, SuggestionsBuilder var1) {
+   static CompletableFuture<Suggestions> method_40324(Iterable<Identifier> var0, SuggestionsBuilder var1) {
       String var4 = var1.getRemaining().toLowerCase(Locale.ROOT);
       method_40308(var0, var4, var0x -> var0x, var1x -> var1.suggest(var1x.toString()));
       return var1.buildFuture();
    }
 
-   static <T> CompletableFuture<Suggestions> method_40315(Iterable<T> var0, SuggestionsBuilder var1, Function<T, class_4639> var2, Function<T, Message> var3) {
+   static <T> CompletableFuture<Suggestions> method_40315(Iterable<T> var0, SuggestionsBuilder var1, Function<T, Identifier> var2, Function<T, Message> var3) {
       String var6 = var1.getRemaining().toLowerCase(Locale.ROOT);
-      method_40308(var0, var6, var2, var3x -> var1.suggest(((class_4639)var2.apply(var3x)).toString(), (Message)var3.apply(var3x)));
+      method_40308(var0, var6, var2, var3x -> var1.suggest(((Identifier)var2.apply(var3x)).toString(), (Message)var3.apply(var3x)));
       return var1.buildFuture();
    }
 
-   static CompletableFuture<Suggestions> method_40310(Stream<class_4639> var0, SuggestionsBuilder var1) {
+   static CompletableFuture<Suggestions> method_40310(Stream<Identifier> var0, SuggestionsBuilder var1) {
       return method_40324(var0::iterator, var1);
    }
 
-   static <T> CompletableFuture<Suggestions> method_40318(Stream<T> var0, SuggestionsBuilder var1, Function<T, class_4639> var2, Function<T, Message> var3) {
+   static <T> CompletableFuture<Suggestions> method_40318(Stream<T> var0, SuggestionsBuilder var1, Function<T, Identifier> var2, Function<T, Message> var3) {
       return method_40315(var0::iterator, var1, var2, var3);
    }
 

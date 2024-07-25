@@ -17,9 +17,9 @@ import org.apache.logging.log4j.Logger;
 
 public class class_3129 extends Screen {
    private static final Logger field_15534 = LogManager.getLogger();
-   private static final class_4639 field_15538 = new class_4639("textures/gui/title/minecraft.png");
-   private static final class_4639 field_15531 = new class_4639("textures/gui/title/edition.png");
-   private static final class_4639 field_15542 = new class_4639("textures/misc/vignette.png");
+   private static final Identifier field_15538 = new Identifier("textures/gui/title/minecraft.png");
+   private static final Identifier field_15531 = new Identifier("textures/gui/title/edition.png");
+   private static final Identifier field_15542 = new Identifier("textures/misc/vignette.png");
    private static final String field_15539 = "" + TextFormatting.WHITE + TextFormatting.OBFUSCATED + TextFormatting.GREEN + TextFormatting.AQUA;
    private final boolean field_15530;
    private final Runnable field_15541;
@@ -68,7 +68,7 @@ public class class_3129 extends Screen {
          try {
             short var4 = 274;
             if (this.field_15530) {
-               var3 = this.field_943.method_8498().method_35458(new class_4639("texts/end.txt"));
+               var3 = this.field_943.method_8498().method_35458(new Identifier("texts/end.txt"));
                InputStream var5 = var3.method_18576();
                BufferedReader var6 = new BufferedReader(new InputStreamReader(var5, StandardCharsets.UTF_8));
                Random var7 = new Random(8124371L);
@@ -95,7 +95,7 @@ public class class_3129 extends Screen {
                }
             }
 
-            InputStream var17 = this.field_943.method_8498().method_35458(new class_4639("texts/credits.txt")).method_18576();
+            InputStream var17 = this.field_943.method_8498().method_35458(new Identifier("texts/credits.txt")).method_18576();
             BufferedReader var18 = new BufferedReader(new InputStreamReader(var17, StandardCharsets.UTF_8));
 
             String var19;

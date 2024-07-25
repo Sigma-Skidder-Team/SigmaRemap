@@ -69,7 +69,7 @@ public class class_7934 {
    }
 
    @Nullable
-   public Pair<class_4639, class_4639> method_35900() {
+   public Pair<Identifier, Identifier> method_35900() {
       return null;
    }
 

@@ -20,7 +20,7 @@ public abstract class class_1080 extends class_8145 {
       class_7653.field_38885, ImmutableList.of(0, 1, -1), class_7653.field_38881, ImmutableList.of(0, 1, -1), class_7653.field_38888, ImmutableList.of(0, 1)
    );
    private boolean field_5893;
-   private static final Map<class_3665, Pair<class_2700, class_2700>> field_5890 = class_9665.<Map<class_3665, Pair<class_2700, class_2700>>>method_44659(
+   private static final Map<class_3665, Pair<class_2700, class_2700>> field_5890 = Util.<Map<class_3665, Pair<class_2700, class_2700>>>method_44659(
       Maps.newEnumMap(class_3665.class), var0 -> {
          class_2700 var3 = class_240.field_809.method_1037();
          class_2700 var4 = class_240.field_804.method_1037();

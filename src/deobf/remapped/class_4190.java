@@ -36,7 +36,7 @@ public abstract class class_4190 {
             this.method_19495(class_9249.field_47219)
          );
       } else {
-         throw (UnsupportedOperationException)class_9665.method_44658(new UnsupportedOperationException("No bounds for empty shape."));
+         throw (UnsupportedOperationException) Util.method_44658(new UnsupportedOperationException("No bounds for empty shape."));
       }
    }
 

@@ -1,9 +1,9 @@
 package remapped;
 
 public class class_772 extends class_1094 {
-   private static final class_4639 field_4181 = new class_4639("realms", "textures/gui/realms/invite_icon.png");
-   private static final class_4639 field_4180 = new class_4639("realms", "textures/gui/realms/trial_icon.png");
-   private static final class_4639 field_4177 = new class_4639("realms", "textures/gui/realms/news_notification_mainscreen.png");
+   private static final Identifier field_4181 = new Identifier("realms", "textures/gui/realms/invite_icon.png");
+   private static final Identifier field_4180 = new Identifier("realms", "textures/gui/realms/trial_icon.png");
+   private static final Identifier field_4177 = new Identifier("realms", "textures/gui/realms/news_notification_mainscreen.png");
    private static final class_8264 field_4172 = new class_8264();
    private volatile int field_4174;
    private static boolean field_4175;
@@ -91,7 +91,7 @@ public class class_772 extends class_1094 {
          this.field_943.method_8577().method_35674(field_4180);
          class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
          byte var12 = 0;
-         if ((class_9665.method_44650() / 800L & 1L) == 1L) {
+         if ((Util.getMeasuringTimeMs() / 800L & 1L) == 1L) {
             var12 = 8;
          }
 

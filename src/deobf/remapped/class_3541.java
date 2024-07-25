@@ -26,7 +26,7 @@ public class class_3541 extends class_2840<class_5408> {
       .registerTypeAdapter(class_7874.class, new class_2834())
       .create();
    private static final TypeToken<Map<String, class_7874>> field_17315 = new class_1589();
-   private final Map<class_4639, class_7633> field_17318 = Maps.newHashMap();
+   private final Map<Identifier, class_7633> field_17318 = Maps.newHashMap();
    private final class_132 field_17314;
 
    public class_3541(class_7832 var1, class_8881 var2) {
@@ -41,7 +41,7 @@ public class class_3541 extends class_2840<class_5408> {
          var2.method_16056(var7);
 
          try {
-            for (class_4038 var9 : var1.method_35457(new class_4639(var7, "sounds.json"))) {
+            for (class_4038 var9 : var1.method_35457(new Identifier(var7, "sounds.json"))) {
                var2.method_16056(var9.method_18579());
 
                try (
@@ -53,7 +53,7 @@ public class class_3541 extends class_2840<class_5408> {
                   var2.method_16050("register");
 
                   for (Entry var16 : var14.entrySet()) {
-                     class_5408.method_24610(var5, new class_4639(var7, (String)var16.getKey()), (class_7874)var16.getValue(), var1);
+                     class_5408.method_24610(var5, new Identifier(var7, (String)var16.getKey()), (class_7874)var16.getValue(), var1);
                   }
 
                   var2.method_16054();
@@ -76,7 +76,7 @@ public class class_3541 extends class_2840<class_5408> {
    public void method_16344(class_5408 var1, class_7832 var2, class_3492 var3) {
       var1.method_24614(this.field_17318, this.field_17314);
 
-      for (class_4639 var7 : this.field_17318.keySet()) {
+      for (Identifier var7 : this.field_17318.keySet()) {
          class_7633 var8 = this.field_17318.get(var7);
          if (var8.method_34585() instanceof TranslationTextComponent) {
             String var9 = ((TranslationTextComponent)var8.method_34585()).getKey();
@@ -87,7 +87,7 @@ public class class_3541 extends class_2840<class_5408> {
       }
 
       if (field_17313.isDebugEnabled()) {
-         for (class_4639 var11 : this.field_17318.keySet()) {
+         for (Identifier var11 : this.field_17318.keySet()) {
             if (!class_8669.field_44369.method_39814(var11)) {
                field_17313.debug("Not having sound event for: {}", var11);
             }
@@ -97,8 +97,8 @@ public class class_3541 extends class_2840<class_5408> {
       this.field_17314.method_418();
    }
 
-   private static boolean method_16339(class_2049 var0, class_4639 var1, class_7832 var2) {
-      class_4639 var5 = var0.method_9577();
+   private static boolean method_16339(class_2049 var0, Identifier var1, class_7832 var2) {
+      Identifier var5 = var0.method_9577();
       if (var2.method_35456(var5)) {
          return true;
       } else {
@@ -108,11 +108,11 @@ public class class_3541 extends class_2840<class_5408> {
    }
 
    @Nullable
-   public class_7633 method_16334(class_4639 var1) {
+   public class_7633 method_16334(Identifier var1) {
       return this.field_17318.get(var1);
    }
 
-   public Collection<class_4639> method_16338() {
+   public Collection<Identifier> method_16338() {
       return this.field_17318.keySet();
    }
 
@@ -176,7 +176,7 @@ public class class_3541 extends class_2840<class_5408> {
       this.field_17314.method_443(var1);
    }
 
-   public void method_16337(class_4639 var1, class_562 var2) {
+   public void method_16337(Identifier var1, class_562 var2) {
       this.field_17314.method_424(var1, var2);
    }
 

@@ -8,7 +8,7 @@ public class class_1374 extends class_2103 {
    private static String[] field_7457;
    public static final Codec<class_1374> field_7458 = Codec.unit(() -> class_1374.field_7456);
    public static final class_1374 field_7456 = new class_1374();
-   private final Map<class_6414, class_6414> field_7455 = class_9665.<Map<class_6414, class_6414>>method_44659(Maps.newHashMap(), var0 -> {
+   private final Map<class_6414, class_6414> field_7455 = Util.<Map<class_6414, class_6414>>method_44659(Maps.newHashMap(), var0 -> {
       var0.put(class_4783.field_23808, class_4783.field_23785);
       var0.put(class_4783.field_23774, class_4783.field_23785);
       var0.put(class_4783.field_23644, class_4783.field_23534);

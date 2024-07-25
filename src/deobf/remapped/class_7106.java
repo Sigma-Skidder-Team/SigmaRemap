@@ -4,25 +4,25 @@ import com.google.gson.JsonObject;
 import javax.annotation.Nullable;
 
 public class class_7106 implements class_4219 {
-   private final class_4639 field_36648;
+   private final Identifier field_36648;
    private final String field_36645;
    private final class_8137 field_36650;
    private final class_2451 field_36651;
    private final float field_36649;
    private final int field_36644;
    private final class_3321 field_36652;
-   private final class_4639 field_36643;
+   private final Identifier field_36643;
    private final class_2994<? extends class_3151> field_36646;
 
    public class_7106(
-      class_4639 var1,
+      Identifier var1,
       String var2,
       class_8137 var3,
       class_2451 var4,
       float var5,
       int var6,
       class_3321 var7,
-      class_4639 var8,
+      Identifier var8,
       class_2994<? extends class_3151> var9
    ) {
       this.field_36648 = var1;
@@ -54,7 +54,7 @@ public class class_7106 implements class_4219 {
    }
 
    @Override
-   public class_4639 method_19650() {
+   public Identifier method_19650() {
       return this.field_36648;
    }
 
@@ -66,7 +66,7 @@ public class class_7106 implements class_4219 {
 
    @Nullable
    @Override
-   public class_4639 method_19646() {
+   public Identifier method_19646() {
       return this.field_36643;
    }
 }

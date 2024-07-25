@@ -95,7 +95,7 @@ public class class_3676 implements AutoCloseable {
          class_5957.method_27218(var8, var9);
          File var10 = new File(var6, "level.dat_old");
          File var11 = new File(var6, "level.dat");
-         class_9665.method_44675(var11, var9, var10);
+         Util.method_44675(var11, var9, var10);
       } catch (Exception var12) {
          class_9663.method_44619().error("Failed to save level {}", var6, var12);
       }

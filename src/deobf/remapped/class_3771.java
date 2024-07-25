@@ -3,26 +3,26 @@ package remapped;
 import java.util.Optional;
 
 public class class_3771 extends class_5348 {
-   private final Optional<class_4639> field_18429;
+   private final Optional<Identifier> field_18429;
    private final boolean field_18428;
    private final boolean field_18427;
 
-   public class_3771(class_4639 var1, boolean var2, boolean var3) {
+   public class_3771(Identifier var1, boolean var2, boolean var3) {
       super("texture", () -> {
          class_3542.method_16432();
-         class_7889 var5 = MinecraftClient.getInstance().method_8577();
+         TextureManager var5 = MinecraftClient.getInstance().method_8577();
          var5.method_35674(var1);
          var5.method_35675().method_37049(var2, var3);
       }, () -> {
       });
-      this.field_18429 = Optional.<class_4639>of(var1);
+      this.field_18429 = Optional.<Identifier>of(var1);
       this.field_18428 = var2;
       this.field_18427 = var3;
    }
 
    public class_3771() {
       super("texture", () -> class_3542.method_16354(), () -> class_3542.method_16432());
-      this.field_18429 = Optional.<class_4639>empty();
+      this.field_18429 = Optional.<Identifier>empty();
       this.field_18428 = false;
       this.field_18427 = false;
    }
@@ -49,7 +49,7 @@ public class class_3771 extends class_5348 {
       return this.field_27283 + '[' + this.field_18429 + "(blur=" + this.field_18428 + ", mipmap=" + this.field_18427 + ")]";
    }
 
-   public Optional<class_4639> method_17452() {
+   public Optional<Identifier> method_17452() {
       return this.field_18429;
    }
 

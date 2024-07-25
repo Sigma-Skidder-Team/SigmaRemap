@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import java.util.Map;
 
 public class class_3564 implements class_2994<class_644> {
-   public class_644 method_16568(class_4639 var1, JsonObject var2) {
+   public class_644 method_16568(Identifier var1, JsonObject var2) {
       String var5 = class_6539.method_29797(var2, "group", "");
       Map var6 = class_644.method_2954(class_6539.method_29783(var2, "key"));
       String[] var7 = class_644.method_2963(class_644.method_2952(class_6539.method_29787(var2, "pattern")));
@@ -15,7 +15,7 @@ public class class_3564 implements class_2994<class_644> {
       return new class_644(var1, var5, var8, var9, var10, var11);
    }
 
-   public class_644 method_16569(class_4639 var1, class_8248 var2) {
+   public class_644 method_16569(Identifier var1, class_8248 var2) {
       int var5 = var2.method_37778();
       int var6 = var2.method_37778();
       String var7 = var2.method_37784(32767);

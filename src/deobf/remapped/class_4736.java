@@ -6,7 +6,7 @@ import java.util.UUID;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_4736 extends class_2089 {
-   private static final class_4639 field_22950 = new class_4639("textures/gui/bars.png");
+   private static final Identifier field_22950 = new Identifier("textures/gui/bars.png");
    private final MinecraftClient field_22948;
    private final Map<UUID, class_5607> field_22947 = Maps.newLinkedHashMap();
 

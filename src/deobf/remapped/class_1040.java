@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 public class class_1040 extends class_7648 {
    private static final Logger field_5742 = LogManager.getLogger();
    private static final Gson field_5741 = class_5746.method_25999().create();
-   private Map<class_4639, class_1758> field_5740 = ImmutableMap.of();
+   private Map<Identifier, class_1758> field_5740 = ImmutableMap.of();
    private final class_264 field_5738;
 
    public class_1040(class_264 var1) {
@@ -20,11 +20,11 @@ public class class_1040 extends class_7648 {
       this.field_5738 = var1;
    }
 
-   public class_1758 method_4604(class_4639 var1) {
+   public class_1758 method_4604(Identifier var1) {
       return this.field_5740.getOrDefault(var1, class_1758.field_9032);
    }
 
-   public void method_4607(Map<class_4639, JsonElement> var1, class_7832 var2, class_3492 var3) {
+   public void method_4607(Map<Identifier, JsonElement> var1, class_7832 var2, class_3492 var3) {
       Builder var6 = ImmutableMap.builder();
       JsonElement var7 = (JsonElement)var1.remove(class_5931.field_30157);
       if (var7 != null) {
@@ -47,7 +47,7 @@ public class class_1040 extends class_7648 {
       this.field_5740 = var8;
    }
 
-   public static void method_4605(class_4737 var0, class_4639 var1, class_1758 var2) {
+   public static void method_4605(class_4737 var0, Identifier var1, class_1758 var2) {
       var2.method_7867(var0.method_21891(var2.method_7860()).method_21894("{" + var1 + "}", var1));
    }
 
@@ -55,7 +55,7 @@ public class class_1040 extends class_7648 {
       return field_5741.toJsonTree(var0);
    }
 
-   public Set<class_4639> method_4606() {
+   public Set<Identifier> method_4606() {
       return this.field_5740.keySet();
    }
 }

@@ -15,7 +15,7 @@ public class class_6284 {
    private String field_32119 = null;
    public static final class_9438[] field_32117 = new class_9438[0];
    public static final class_9077[] field_32118 = new class_9077[0];
-   private static Map<class_4639, class_4859> field_32116 = null;
+   private static Map<Identifier, class_4859> field_32116 = null;
    private static final class_2930<Enum> field_32121 = new class_8331();
    private static final class_2930<class_9077> field_32122 = new class_5898();
 
@@ -150,7 +150,7 @@ public class class_6284 {
 
    public class_6414[] method_28656(String var1, String var2) {
       String var5 = var1 + ":" + var2;
-      class_4639 var6 = new class_4639(var5);
+      Identifier var6 = new Identifier(var5);
       class_6414 var7 = class_9451.method_43712(var6);
       if (var7 != null) {
          return new class_6414[]{var7};
@@ -332,7 +332,7 @@ public class class_6284 {
          }
 
          if (var4) {
-            HashSet var11 = new HashSet<class_4639>(class_5630.method_25515());
+            HashSet var11 = new HashSet<Identifier>(class_5630.method_25515());
 
             for (class_4859 var13 : var6) {
                var11.remove(var13.method_22352());
@@ -347,21 +347,21 @@ public class class_6284 {
 
    public class_4859 method_28657(String var1) {
       var1 = var1.toLowerCase();
-      class_4639 var4 = new class_4639(var1);
+      Identifier var4 = new Identifier(var1);
       class_4859 var5 = class_5630.method_25523(var4);
       if (var5 != null) {
          return var5;
       } else {
          String var6 = var1.replace(" ", "").replace("_", "");
-         class_4639 var7 = new class_4639(var6);
+         Identifier var7 = new Identifier(var6);
          if (field_32116 == null) {
-            field_32116 = new HashMap<class_4639, class_4859>();
+            field_32116 = new HashMap<Identifier, class_4859>();
 
-            for (class_4639 var9 : class_5630.method_25515()) {
+            for (Identifier var9 : class_5630.method_25515()) {
                class_4859 var10 = class_5630.method_25523(var9);
                if (var10 != null) {
                   String var11 = var9.method_21456().replace(" ", "").replace("_", "").toLowerCase();
-                  class_4639 var12 = new class_4639(var9.method_21461(), var11);
+                  Identifier var12 = new Identifier(var9.method_21461(), var11);
                   field_32116.put(var12, var10);
                }
             }
@@ -737,7 +737,7 @@ public class class_6284 {
    private class_4466 method_28661(String var1) {
       if (var1 != null) {
          var1 = var1.toLowerCase();
-         class_4639 var4 = new class_4639(var1);
+         Identifier var4 = new Identifier(var1);
          class_3991 var5 = class_8669.field_44425;
          return var5.method_39814(var4) ? (class_4466)var5.method_39806(var4) : null;
       } else {
@@ -752,7 +752,7 @@ public class class_6284 {
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
-         class_4639 var8 = new class_4639(var7);
+         Identifier var8 = new Identifier(var7);
          class_2451 var9 = class_4354.method_20213(var8);
          if (var9 != null) {
             int var10 = class_4354.method_20212(var9);
@@ -777,7 +777,7 @@ public class class_6284 {
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
-         class_4639 var8 = new class_4639(var7);
+         Identifier var8 = new Identifier(var7);
          class_6629 var9 = class_3057.method_13956(var8);
          if (var9 != null) {
             int var10 = class_8669.field_44400.method_14041(var9);

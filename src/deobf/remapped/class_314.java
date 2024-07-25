@@ -45,7 +45,7 @@ public class class_314 {
    public static final float field_1159 = 0.3F;
    public static final float[] field_1162 = new float[4];
    public static final float[] field_1164 = new float[4];
-   public static final class_4639 field_1160 = new class_4639("shaders/post/blur.json");
+   public static final Identifier field_1160 = new Identifier("shaders/post/blur.json");
    private static boolean field_1163 = false;
 
    public static void method_1443(String var0) {

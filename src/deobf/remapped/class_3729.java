@@ -109,7 +109,7 @@ public class class_3729 extends class_7067<class_900> {
          .method_35735();
    }
 
-   public class_4639 method_17280(class_900 var1) {
+   public Identifier method_17280(class_900 var1) {
       return class_8359.field_42824;
    }
 }

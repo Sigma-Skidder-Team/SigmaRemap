@@ -58,7 +58,7 @@ public class class_8671 {
 
          if (var1 == this.field_44499.method_8552().method_43181()) {
             boolean var16 = var4 == 1;
-            if (MinecraftClient.field_9574 && var3 == 0) {
+            if (MinecraftClient.IS_SYSTEM_MAC && var3 == 0) {
                if (!var16) {
                   if (this.field_44486 > 0) {
                      var3 = 1;
@@ -315,7 +315,7 @@ public class class_8671 {
 
    public void method_39834() {
       if (this.field_44499.method_8558() && !this.field_44496) {
-         if (!MinecraftClient.field_9574) {
+         if (!MinecraftClient.IS_SYSTEM_MAC) {
             class_5916.method_27065();
          }
 

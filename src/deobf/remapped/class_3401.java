@@ -31,7 +31,7 @@ public class class_3401 extends class_7114 {
       this.method_32700();
    }
 
-   private void method_15715(class_7966 var1, class_7889 var2) {
+   private void method_15715(class_7966 var1, TextureManager var2) {
       var2.method_35674(class_5603.method_25422());
       var1.method_36063();
       var1.method_36065((double)this.field_36670, (double)this.field_36674, 0.0);
@@ -39,7 +39,7 @@ public class class_3401 extends class_7114 {
       var1.method_36064();
    }
 
-   private void method_15714(class_7966 var1, class_7889 var2) {
+   private void method_15714(class_7966 var1, TextureManager var2) {
       var2.method_35674(class_5603.method_25422());
       var1.method_36063();
       var1.method_36065((double)this.field_36670, (double)this.field_36674, 0.0);

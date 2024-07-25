@@ -17,7 +17,7 @@ public class class_1914 extends class_7789<class_2104> {
          JsonArray var6 = new JsonArray();
 
          for (class_4382 var8 : class_2104.method_9862(var2)) {
-            class_4639 var9 = class_8669.field_44445.method_39797(var8);
+            Identifier var9 = class_8669.field_44445.method_39797(var8);
             if (var9 == null) {
                throw new IllegalArgumentException("Don't know how to serialize enchantment " + var8);
             }
@@ -35,7 +35,7 @@ public class class_1914 extends class_7789<class_2104> {
          for (JsonElement var8 : class_6539.method_29787(var1, "enchantments")) {
             String var9 = class_6539.method_29795(var8, "enchantment");
             class_4382 var10 = class_8669.field_44445
-               .method_39794(new class_4639(var9))
+               .method_39794(new Identifier(var9))
                .orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var9 + "'"));
             var6.add(var10);
          }

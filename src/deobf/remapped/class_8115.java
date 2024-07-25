@@ -17,25 +17,25 @@ public class class_8115 {
    private static final Logger field_41587 = LogManager.getLogger();
    public static final Codec<class_8115> field_41594 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               class_4639.field_22655.fieldOf("name").forGetter(class_8115::method_36915),
-               class_4639.field_22655.fieldOf("fallback").forGetter(class_8115::method_36911),
+               Identifier.field_22655.fieldOf("name").forGetter(class_8115::method_36915),
+               Identifier.field_22655.fieldOf("fallback").forGetter(class_8115::method_36911),
                Codec.mapPair(class_2609.field_12888.fieldOf("element"), Codec.INT.fieldOf("weight"))
                   .codec()
                   .listOf()
-                  .promotePartial(class_9665.method_44690("Pool element: ", field_41587::error))
+                  .promotePartial(Util.method_44690("Pool element: ", field_41587::error))
                   .fieldOf("elements")
                   .forGetter(var0x -> var0x.field_41592)
             )
             .apply(var0, class_8115::new)
    );
    public static final Codec<Supplier<class_8115>> field_41595 = class_6833.<Supplier<class_8115>>method_31333(class_8669.field_44413, field_41594);
-   private final class_4639 field_41588;
+   private final Identifier field_41588;
    private final List<Pair<class_2609, Integer>> field_41592;
    private final List<class_2609> field_41590;
-   private final class_4639 field_41591;
+   private final Identifier field_41591;
    private int field_41589 = Integer.MIN_VALUE;
 
-   public class_8115(class_4639 var1, class_4639 var2, List<Pair<class_2609, Integer>> var3) {
+   public class_8115(Identifier var1, Identifier var2, List<Pair<class_2609, Integer>> var3) {
       this.field_41588 = var1;
       this.field_41592 = var3;
       this.field_41590 = Lists.newArrayList();
@@ -51,7 +51,7 @@ public class class_8115 {
       this.field_41591 = var2;
    }
 
-   public class_8115(class_4639 var1, class_4639 var2, List<Pair<Function<class_7599, ? extends class_2609>, Integer>> var3, class_7599 var4) {
+   public class_8115(Identifier var1, Identifier var2, List<Pair<Function<class_7599, ? extends class_2609>, Integer>> var3, class_7599 var4) {
       this.field_41588 = var1;
       this.field_41592 = Lists.newArrayList();
       this.field_41590 = Lists.newArrayList();
@@ -80,7 +80,7 @@ public class class_8115 {
       return this.field_41589;
    }
 
-   public class_4639 method_36911() {
+   public Identifier method_36911() {
       return this.field_41591;
    }
 
@@ -92,7 +92,7 @@ public class class_8115 {
       return ImmutableList.copyOf(ObjectArrays.shuffle(this.field_41590.<Object>toArray(new class_2609[0]), var1));
    }
 
-   public class_4639 method_36915() {
+   public Identifier method_36915() {
       return this.field_41588;
    }
 

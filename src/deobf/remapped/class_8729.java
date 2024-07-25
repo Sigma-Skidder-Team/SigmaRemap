@@ -29,7 +29,7 @@ public class class_8729 extends class_2451 {
 
             for (int var11 = 0; var11 < var8.size(); var11++) {
                String var12 = var8.method_15770(var11);
-               Optional var13 = var10.method_23139(new class_4639(var12));
+               Optional var13 = var10.method_23139(new Identifier(var12));
                if (!var13.isPresent()) {
                   field_44731.error("Invalid recipe: {}", var12);
                   return class_954.<class_6098>method_4202(var6);

@@ -341,11 +341,11 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
    }
 
    private void method_1167(URI var1) {
-      class_9665.method_44667().method_37582(var1);
+      Util.getOperatingSystem().method_37582(var1);
    }
 
    public static boolean method_1185() {
-      return !MinecraftClient.field_9574
+      return !MinecraftClient.IS_SYSTEM_MAC
          ? class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 341)
             || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 345)
          : class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 343)

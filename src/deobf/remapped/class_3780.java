@@ -6,7 +6,7 @@ public class class_3780 extends class_4569 {
    private final class_8938 field_18451;
    private final class_8772 field_18449;
 
-   public class_3780(class_4639 var1, class_8938 var2, class_8938 var3, class_8772 var4) {
+   public class_3780(Identifier var1, class_8938 var2, class_8938 var3, class_8772 var4) {
       super(var1, var2);
       this.field_18451 = var3;
       this.field_18449 = var4;

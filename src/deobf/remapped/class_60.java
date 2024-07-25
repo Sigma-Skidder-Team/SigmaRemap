@@ -20,12 +20,12 @@ public class class_60 {
             .then(
                class_465.method_2236("biome", class_4195.method_19515())
                   .suggests(class_7510.field_38352)
-                  .executes(var0x -> method_34((class_9155)var0x.getSource(), (class_4639)var0x.getArgument("biome", class_4639.class)))
+                  .executes(var0x -> method_34((class_9155)var0x.getSource(), (Identifier)var0x.getArgument("biome", Identifier.class)))
             )
       );
    }
 
-   private static int method_34(class_9155 var0, class_4639 var1) throws CommandSyntaxException {
+   private static int method_34(class_9155 var0, Identifier var1) throws CommandSyntaxException {
       class_6325 var4 = var0.method_42177()
          .method_1735()
          .<class_6325>method_28813(class_8669.field_44359)

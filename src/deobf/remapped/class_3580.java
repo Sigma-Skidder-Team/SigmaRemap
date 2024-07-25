@@ -32,7 +32,7 @@ public class class_3580 {
    public int field_17535 = 0;
    public float field_17528 = 1.0F;
    public int field_17553 = 0;
-   public class_4639 field_17524 = null;
+   public Identifier field_17524 = null;
    public Map field_17514 = null;
    public class_5155 field_17533 = null;
    public Map field_17544 = null;
@@ -181,7 +181,7 @@ public class class_3580 {
    }
 
    private class_2451 method_16655(String var1) {
-      class_4639 var4 = new class_4639(var1);
+      Identifier var4 = new Identifier(var1);
       return class_8669.field_44382.method_39814(var4) ? class_8669.field_44382.method_39806(var4) : null;
    }
 
@@ -555,7 +555,7 @@ public class class_3580 {
       if (this.field_17547 != null) {
          this.field_17524 = this.method_16653(this.field_17547);
          if (this.field_17541 == 1) {
-            class_4639 var4 = this.method_16662(this.field_17524);
+            Identifier var4 = this.method_16662(this.field_17524);
             this.field_17533 = var1.method_38515(var4);
          }
       }
@@ -566,10 +566,10 @@ public class class_3580 {
 
          for (String var5 : this.field_17536.keySet()) {
             String var6 = this.field_17536.get(var5);
-            class_4639 var7 = this.method_16653(var6);
+            Identifier var7 = this.method_16653(var6);
             this.field_17514.put(var5, var7);
             if (this.field_17541 == 1) {
-               class_4639 var8 = this.method_16662(var7);
+               Identifier var8 = this.method_16662(var7);
                class_5155 var9 = var1.method_38515(var8);
                this.field_17544.put(var5, var9);
             }
@@ -586,7 +586,7 @@ public class class_3580 {
          for (String var5 : this.field_17544.keySet()) {
             class_5155 var6 = (class_5155)this.field_17544.get(var5);
             if (var6 != null) {
-               class_4639 var7 = var6.method_23644();
+               Identifier var7 = var6.method_23644();
                class_5155 var8 = var1.method_38528(var7);
                if (var8 == null || var8 instanceof class_2008) {
                   class_3111.method_14317("Missing CIT sprite: " + var7 + ", properties: " + this.field_17545);
@@ -598,9 +598,9 @@ public class class_3580 {
       }
    }
 
-   private class_4639 method_16653(String var1) {
+   private Identifier method_16653(String var1) {
       if (var1 != null) {
-         class_4639 var4 = new class_4639(var1);
+         Identifier var4 = new Identifier(var1);
          String var5 = var4.method_21461();
          String var6 = var4.method_21456();
          if (!var6.contains("/")) {
@@ -608,7 +608,7 @@ public class class_3580 {
          }
 
          String var7 = var6 + ".png";
-         class_4639 var8 = new class_4639(var5, var7);
+         Identifier var8 = new Identifier(var5, var7);
          boolean var9 = class_3111.method_14362(var8);
          if (!var9) {
             class_3111.method_14317("File not found: " + var7);
@@ -620,11 +620,11 @@ public class class_3580 {
       }
    }
 
-   private class_4639 method_16662(class_4639 var1) {
+   private Identifier method_16662(Identifier var1) {
       String var4 = var1.method_21456();
       var4 = class_8251.method_37832(var4, "textures/");
       var4 = class_8251.method_37822(var4, ".png");
-      return new class_4639(var1.method_21461(), var4);
+      return new Identifier(var1.method_21461(), var4);
    }
 
    public void method_16676(class_8359 var1, class_4644 var2) {
@@ -802,7 +802,7 @@ public class class_3580 {
          + this.field_17547;
    }
 
-   public float method_16680(class_7889 var1) {
+   public float method_16680(TextureManager var1) {
       if (this.field_17543 <= 0) {
          if (this.field_17524 != null) {
             class_8143 var4 = var1.method_35679(this.field_17524);
@@ -821,7 +821,7 @@ public class class_3580 {
       return (float)this.field_17543;
    }
 
-   public float method_16679(class_7889 var1) {
+   public float method_16679(TextureManager var1) {
       if (this.field_17537 <= 0) {
          if (this.field_17524 != null) {
             class_8143 var4 = var1.method_35679(this.field_17524);
@@ -840,7 +840,7 @@ public class class_3580 {
       return (float)this.field_17537;
    }
 
-   public class_7373 method_16678(class_4639 var1, boolean var2) {
+   public class_7373 method_16678(Identifier var1, boolean var2) {
       class_7373 var5;
       Map var6;
       if (!var2) {
@@ -882,7 +882,7 @@ public class class_3580 {
       class_7458 var3 = class_3111.method_14346();
       class_7373 var4 = var3.method_33942();
       if (this.field_17519 != null) {
-         class_4639 var5 = method_16670(this.field_17519);
+         Identifier var5 = method_16670(this.field_17519);
          class_454 var6 = new class_454(var5, "inventory");
          this.field_17521 = var3.method_33943(var6);
          if (this.field_17521 == var4) {
@@ -896,7 +896,7 @@ public class class_3580 {
             String var7 = this.field_17516.get(var14);
             String var8 = class_8251.method_37832(var14, "model.");
             if (this.method_16663(var8)) {
-               class_4639 var9 = method_16670(var7);
+               Identifier var9 = method_16670(var7);
                class_454 var10 = new class_454(var9, "inventory");
                class_7373 var11 = var3.method_33943(var10);
                if (var11 != var4) {
@@ -915,12 +915,12 @@ public class class_3580 {
    }
 
    private static void method_16681(class_6560 var0, String var1) {
-      class_4639 var4 = method_16670(var1);
+      Identifier var4 = method_16670(var1);
       class_454 var5 = new class_454(var4, "inventory");
       var0.method_29953(var5);
    }
 
-   private static class_4639 method_16670(String var0) {
-      return new class_4639(var0);
+   private static Identifier method_16670(String var0) {
+      return new Identifier(var0);
    }
 }

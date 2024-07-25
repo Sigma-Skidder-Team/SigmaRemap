@@ -1661,10 +1661,10 @@ public class class_4897 {
    }
 
    private static class_2451 method_22435(String var0, class_2451 var1) {
-      return method_22436(new class_4639(var0), var1);
+      return method_22436(new Identifier(var0), var1);
    }
 
-   private static class_2451 method_22436(class_4639 var0, class_2451 var1) {
+   private static class_2451 method_22436(Identifier var0, class_2451 var1) {
       if (var1 instanceof class_6201) {
          ((class_6201)var1).method_28387(class_2451.field_12170, var1);
       }

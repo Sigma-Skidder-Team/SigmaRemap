@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_5895 extends class_7164<class_378, class_1290<class_378>> {
-   private static final class_4639 field_29940 = new class_4639("textures/entity/slime/slime.png");
+   private static final Identifier field_29940 = new Identifier("textures/entity/slime/slime.png");
 
    public class_5895(class_6122 var1) {
       super(var1, new class_1290<class_378>(16), 0.25F);
@@ -23,7 +23,7 @@ public class class_5895 extends class_7164<class_378, class_1290<class_378>> {
       var2.method_36062(var9 * var7, 1.0F / var9 * var7, var9 * var7);
    }
 
-   public class_4639 method_26957(class_378 var1) {
+   public Identifier method_26957(class_378 var1) {
       return field_29940;
    }
 }

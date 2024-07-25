@@ -112,7 +112,7 @@ public class class_7330 {
          String var5 = var3[var4];
 
          try {
-            class_4639 var6 = new class_4639(var5, "shaders/block.properties");
+            Identifier var6 = new Identifier(var5, "shaders/block.properties");
             InputStream var7 = class_3111.method_14374(var6);
             method_33409(var7, var6.toString(), var0);
          } catch (IOException var8) {
@@ -266,7 +266,7 @@ public class class_7330 {
                JsonParser var10 = new JsonParser();
                JsonObject var11 = var10.parse(var6).getAsJsonObject();
                String var12 = var11.get("Name").getAsString();
-               class_4639 var13 = new class_4639(var12);
+               Identifier var13 = new Identifier(var12);
                class_6414 var14 = class_9451.method_43712(var13);
                if (var14 == null) {
                   class_3111.method_14317("Invalid block name (" + var1 + "): " + var12);
@@ -375,7 +375,7 @@ public class class_7330 {
    }
 
    private static void method_33399() {
-      for (class_4639 var3 : class_8669.field_44462.method_39805()) {
+      for (Identifier var3 : class_8669.field_44462.method_39805()) {
          class_6414 var4 = class_8669.field_44462.method_39806(var3);
          int var5 = var4.method_29260().method_11477();
          class_8951[] var6 = method_33398(var5);

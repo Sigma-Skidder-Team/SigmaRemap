@@ -115,7 +115,7 @@ public class class_1789 extends class_4232 {
 
                      try {
                         URI var15 = new File(this.field_943.runDirectory, "shaderpacks").toURI();
-                        class_9665.method_44667().method_37582(var15);
+                        Util.getOperatingSystem().method_37582(var15);
                      } catch (Throwable var10) {
                         var10.printStackTrace();
                         var14 = true;
@@ -123,7 +123,7 @@ public class class_1789 extends class_4232 {
 
                      if (var14) {
                         class_3111.method_14277("Opening via system class!");
-                        class_9665.method_44667().method_37581("file://" + class_6588.field_33909.getAbsolutePath());
+                        Util.getOperatingSystem().method_37581("file://" + class_6588.field_33909.getAbsolutePath());
                      }
                      break;
                   case 202:
@@ -145,7 +145,7 @@ public class class_1789 extends class_4232 {
                   case 210:
                      try {
                         URI var8 = new URI("http://optifine.net/shaderPacks");
-                        class_9665.method_44667().method_37582(var8);
+                        Util.getOperatingSystem().method_37582(var8);
                      } catch (Throwable var9) {
                         var9.printStackTrace();
                      }

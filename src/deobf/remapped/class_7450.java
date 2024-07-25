@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 public class class_7450 {
    private String field_37957 = null;
    private String field_37960 = null;
-   public class_4639 field_37970 = null;
+   public Identifier field_37970 = null;
    private int field_37958 = -1;
    private int field_37962 = 0;
    private int field_37956 = 0;
@@ -24,7 +24,7 @@ public class class_7450 {
    private boolean field_37965 = true;
    private boolean field_37961 = true;
 
-   public class_7450(String var1, byte[] var2, String var3, class_4639 var4, int var5, int var6, int var7, int var8, Properties var9) {
+   public class_7450(String var1, byte[] var2, String var3, Identifier var4, int var5, int var6, int var7, int var8, Properties var9) {
       this.field_37957 = var1;
       this.field_37960 = var3;
       this.field_37970 = var4;
@@ -183,7 +183,7 @@ public class class_7450 {
       return this.field_37960;
    }
 
-   public class_4639 method_33903() {
+   public Identifier method_33903() {
       return this.field_37970;
    }
 

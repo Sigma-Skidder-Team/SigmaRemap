@@ -32,8 +32,8 @@ import org.apache.logging.log4j.Logger;
 public class class_5383<T> extends class_6433<T> {
    public static final Logger field_27476 = LogManager.getLogger();
    private final ObjectList<T> field_27473 = new ObjectArrayList(256);
-   private final Object2IntMap<T> field_27475 = new Object2IntOpenCustomHashMap(class_9665.method_44698());
-   private final BiMap<class_4639, T> field_27469;
+   private final Object2IntMap<T> field_27475 = new Object2IntOpenCustomHashMap(Util.method_44698());
+   private final BiMap<Identifier, T> field_27469;
    private final BiMap<class_5621<T>, T> field_27468;
    private final Map<T, Lifecycle> field_27474;
    private Lifecycle field_27471;
@@ -52,7 +52,7 @@ public class class_5383<T> extends class_6433<T> {
    public static <T> MapCodec<class_8903<T>> method_24528(class_5621<? extends class_8669<T>> var0, MapCodec<T> var1) {
       return RecordCodecBuilder.mapCodec(
          var2 -> var2.group(
-                  class_4639.field_22655.xmap(class_5621.method_25495(var0), class_5621::method_25499).fieldOf("name").forGetter(var0xx -> var0xx.field_45649),
+                  Identifier.field_22655.xmap(class_5621.method_25495(var0), class_5621::method_25499).fieldOf("name").forGetter(var0xx -> var0xx.field_45649),
                   Codec.INT.fieldOf("id").forGetter(var0xx -> var0xx.field_45650),
                   var1.forGetter(var0xx -> var0xx.field_45648)
                )
@@ -119,8 +119,8 @@ public class class_5383<T> extends class_6433<T> {
 
    @Nullable
    @Override
-   public class_4639 method_39797(T var1) {
-      return (class_4639)this.field_27469.inverse().get(var1);
+   public Identifier method_39797(T var1) {
+      return (Identifier)this.field_27469.inverse().get(var1);
    }
 
    @Override
@@ -162,13 +162,13 @@ public class class_5383<T> extends class_6433<T> {
 
    @Nullable
    @Override
-   public T method_39806(class_4639 var1) {
+   public T method_39806(Identifier var1) {
       return (T)this.field_27469.get(var1);
    }
 
    @Override
-   public Set<class_4639> method_39805() {
-      return Collections.<class_4639>unmodifiableSet(this.field_27469.keySet());
+   public Set<Identifier> method_39805() {
+      return Collections.<Identifier>unmodifiableSet(this.field_27469.keySet());
    }
 
    @Override
@@ -187,11 +187,11 @@ public class class_5383<T> extends class_6433<T> {
          this.field_27470 = var4.<Object>toArray(new Object[var4.size()]);
       }
 
-      return class_9665.<T>method_44697((T[])this.field_27470, var1);
+      return Util.<T>method_44697((T[])this.field_27470, var1);
    }
 
    @Override
-   public boolean method_39814(class_4639 var1) {
+   public boolean method_39814(Identifier var1) {
       return this.field_27469.containsKey(var1);
    }
 
@@ -220,7 +220,7 @@ public class class_5383<T> extends class_6433<T> {
    }
 
    public static <T> Codec<class_5383<T>> method_24526(class_5621<? extends class_8669<T>> var0, Lifecycle var1, Codec<T> var2) {
-      return Codec.unboundedMap(class_4639.field_22655.xmap(class_5621.method_25495(var0), class_5621::method_25499), var2).xmap(var2x -> {
+      return Codec.unboundedMap(Identifier.field_22655.xmap(class_5621.method_25495(var0), class_5621::method_25499), var2).xmap(var2x -> {
          class_5383 var5 = new class_5383(var0, var1);
          var2x.forEach((var2xx, var3) -> var5.method_29381((class_5621<T>)var2xx, var3, var1));
          return var5;

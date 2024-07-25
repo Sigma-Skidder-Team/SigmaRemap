@@ -24,7 +24,7 @@ public class class_5645 {
          class_5957.method_27218(var4, var5);
          File var6 = new File(this.field_28617, var1.method_37225() + ".dat");
          File var7 = new File(this.field_28617, var1.method_37225() + ".dat_old");
-         class_9665.method_44675(var6, var5, var7);
+         Util.method_44675(var6, var5, var7);
       } catch (Exception var8) {
          field_28618.warn("Failed to save player data for {}", var1.method_45509().getString());
       }

@@ -5,10 +5,10 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 public class class_8807 {
-   private static final Map<class_4639, class_911<?>> field_45039 = Maps.newHashMap();
+   private static final Map<Identifier, class_911<?>> field_45039 = Maps.newHashMap();
    public static final class_5656 field_45045 = method_40480(new class_5656());
-   public static final class_2544 field_45078 = method_40480(new class_2544(new class_4639("player_killed_entity")));
-   public static final class_2544 field_45060 = method_40480(new class_2544(new class_4639("entity_killed_player")));
+   public static final class_2544 field_45078 = method_40480(new class_2544(new Identifier("player_killed_entity")));
+   public static final class_2544 field_45060 = method_40480(new class_2544(new Identifier("entity_killed_player")));
    public static final class_1836 field_45077 = method_40480(new class_1836());
    public static final class_8281 field_45062 = method_40480(new class_8281());
    public static final class_8435 field_45065 = method_40480(new class_8435());
@@ -21,8 +21,8 @@ public class class_8807 {
    public static final class_5027 field_45080 = method_40480(new class_5027());
    public static final class_4950 field_45046 = method_40480(new class_4950());
    public static final class_1283 field_45072 = method_40480(new class_1283());
-   public static final class_1663 field_45067 = method_40480(new class_1663(new class_4639("location")));
-   public static final class_1663 field_45071 = method_40480(new class_1663(new class_4639("slept_in_bed")));
+   public static final class_1663 field_45067 = method_40480(new class_1663(new Identifier("location")));
+   public static final class_1663 field_45071 = method_40480(new class_1663(new Identifier("slept_in_bed")));
    public static final class_8565 field_45048 = method_40480(new class_8565());
    public static final class_3488 field_45051 = method_40480(new class_3488());
    public static final class_1819 field_45042 = method_40480(new class_1819());
@@ -39,8 +39,8 @@ public class class_8807 {
    public static final class_3279 field_45044 = method_40480(new class_3279());
    public static final class_3989 field_45069 = method_40480(new class_3989());
    public static final class_4577 field_45057 = method_40480(new class_4577());
-   public static final class_1663 field_45064 = method_40480(new class_1663(new class_4639("hero_of_the_village")));
-   public static final class_1663 field_45053 = method_40480(new class_1663(new class_4639("voluntary_exile")));
+   public static final class_1663 field_45064 = method_40480(new class_1663(new Identifier("hero_of_the_village")));
+   public static final class_1663 field_45053 = method_40480(new class_1663(new Identifier("voluntary_exile")));
    public static final class_7363 field_45061 = method_40480(new class_7363());
    public static final class_5784 field_45040 = method_40480(new class_5784());
    public static final class_8892 field_45066 = method_40480(new class_8892());
@@ -59,7 +59,7 @@ public class class_8807 {
    }
 
    @Nullable
-   public static <T extends class_5154> class_911<T> method_40478(class_4639 var0) {
+   public static <T extends class_5154> class_911<T> method_40478(Identifier var0) {
       return (class_911<T>)field_45039.get(var0);
    }
 

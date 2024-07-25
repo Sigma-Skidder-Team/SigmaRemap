@@ -1,13 +1,13 @@
 package remapped;
 
 public class class_1133 extends class_7067<class_9149> {
-   private static final class_4639[] field_6450 = new class_4639[]{
-      new class_4639("textures/entity/boat/oak.png"),
-      new class_4639("textures/entity/boat/spruce.png"),
-      new class_4639("textures/entity/boat/birch.png"),
-      new class_4639("textures/entity/boat/jungle.png"),
-      new class_4639("textures/entity/boat/acacia.png"),
-      new class_4639("textures/entity/boat/dark_oak.png")
+   private static final Identifier[] field_6450 = new Identifier[]{
+      new Identifier("textures/entity/boat/oak.png"),
+      new Identifier("textures/entity/boat/spruce.png"),
+      new Identifier("textures/entity/boat/birch.png"),
+      new Identifier("textures/entity/boat/jungle.png"),
+      new Identifier("textures/entity/boat/acacia.png"),
+      new Identifier("textures/entity/boat/dark_oak.png")
    };
    public final class_4803 field_6452 = new class_4803();
 
@@ -49,7 +49,7 @@ public class class_1133 extends class_7067<class_9149> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_4977(class_9149 var1) {
+   public Identifier method_4977(class_9149 var1) {
       return field_6450[var1.method_42112().ordinal()];
    }
 }

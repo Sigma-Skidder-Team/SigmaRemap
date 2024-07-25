@@ -2,10 +2,10 @@ package remapped;
 
 public class class_2083 {
    private static String[] field_10479;
-   private static final class_2426 field_10478 = class_9665.<class_2426>method_44659(new class_2426(0.2F, 1.0F, -0.7F), class_2426::method_11066);
-   private static final class_2426 field_10477 = class_9665.<class_2426>method_44659(new class_2426(-0.2F, 1.0F, 0.7F), class_2426::method_11066);
-   private static final class_2426 field_10480 = class_9665.<class_2426>method_44659(new class_2426(0.2F, 1.0F, -0.7F), class_2426::method_11066);
-   private static final class_2426 field_10476 = class_9665.<class_2426>method_44659(new class_2426(-0.2F, -1.0F, 0.7F), class_2426::method_11066);
+   private static final class_2426 field_10478 = Util.<class_2426>method_44659(new class_2426(0.2F, 1.0F, -0.7F), class_2426::method_11066);
+   private static final class_2426 field_10477 = Util.<class_2426>method_44659(new class_2426(-0.2F, 1.0F, 0.7F), class_2426::method_11066);
+   private static final class_2426 field_10480 = Util.<class_2426>method_44659(new class_2426(0.2F, 1.0F, -0.7F), class_2426::method_11066);
+   private static final class_2426 field_10476 = Util.<class_2426>method_44659(new class_2426(-0.2F, -1.0F, 0.7F), class_2426::method_11066);
 
    public static void method_9718() {
       class_3542.method_16389();

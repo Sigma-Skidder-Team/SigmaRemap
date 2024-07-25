@@ -20,7 +20,7 @@ public abstract class class_4556<T extends class_8145 & class_7187, M extends cl
 
    public abstract float method_21123(float var1);
 
-   public abstract class_4639 method_21124();
+   public abstract Identifier method_21124();
 
    public abstract class_6521<T> method_21122();
 }

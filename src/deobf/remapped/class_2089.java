@@ -4,9 +4,9 @@ import java.util.function.BiConsumer;
 import net.minecraft.util.text.ITextComponent;
 
 public abstract class class_2089 {
-   public static final class_4639 field_10505 = new class_4639("textures/gui/options_background.png");
-   public static final class_4639 field_10506 = new class_4639("textures/gui/container/stats_icons.png");
-   public static final class_4639 field_10507 = new class_4639("textures/gui/icons.png");
+   public static final Identifier field_10505 = new Identifier("textures/gui/options_background.png");
+   public static final Identifier field_10506 = new Identifier("textures/gui/container/stats_icons.png");
+   public static final Identifier field_10507 = new Identifier("textures/gui/icons.png");
    private int field_10504;
 
    public void method_9789(class_7966 var1, int var2, int var3, int var4, int var5) {

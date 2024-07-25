@@ -7,7 +7,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_895 extends class_8374<class_6635> {
-   private static final class_4639 field_4599 = new class_4639("textures/gui/resource_packs.png");
+   private static final Identifier field_4599 = new Identifier("textures/gui/resource_packs.png");
    private static final ITextComponent field_4602 = new TranslationTextComponent("pack.incompatible");
    private static final ITextComponent field_4603 = new TranslationTextComponent("pack.incompatible.confirm.title");
    private final ITextComponent field_4600;

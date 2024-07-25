@@ -44,7 +44,7 @@ public class class_3776 {
          : "NO CONTEXT";
    }
 
-   public static int method_17493(class_9352 var0) {
+   public static int method_17493(Window var0) {
       class_3542.method_16431(class_3542::method_16366);
       long var3 = GLFW.glfwGetWindowMonitor(var0.method_43181());
       if (var3 == 0L) {
@@ -62,7 +62,7 @@ public class class_3776 {
 
    public static LongSupplier method_17488() {
       class_3542.method_16431(class_3542::method_16395);
-      class_9352.method_43167((var0, var1) -> {
+      Window.method_43167((var0, var1) -> {
          throw new IllegalStateException(String.format("GLFW error before init: [0x%X]%s", var0, var1));
       });
       ArrayList var2 = Lists.newArrayList();
@@ -89,7 +89,7 @@ public class class_3776 {
       }
    }
 
-   public static boolean method_17492(class_9352 var0) {
+   public static boolean method_17492(Window var0) {
       return GLFW.glfwWindowShouldClose(var0.method_43181());
    }
 

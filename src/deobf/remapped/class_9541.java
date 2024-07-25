@@ -116,7 +116,7 @@ public class class_9541 {
    }
 
    public static class_6098 method_43999(class_6098 var0, class_6004 var1) {
-      class_4639 var4 = class_8669.field_44365.method_39797(var1);
+      Identifier var4 = class_8669.field_44365.method_39797(var1);
       if (var1 != class_3697.field_18134) {
          var0.method_27994().method_25941("Potion", var4.toString());
       } else {

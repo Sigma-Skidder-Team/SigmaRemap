@@ -4,13 +4,13 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
 public class class_1591 extends class_2160<class_5886, class_672<class_5886>> {
-   private static final Map<class_6629<?>, class_4639> field_8307 = ImmutableMap.of(
+   private static final Map<class_6629<?>, Identifier> field_8307 = ImmutableMap.of(
       class_6629.field_34240,
-      new class_4639("textures/entity/piglin/piglin.png"),
+      new Identifier("textures/entity/piglin/piglin.png"),
       class_6629.field_34234,
-      new class_4639("textures/entity/piglin/zombified_piglin.png"),
+      new Identifier("textures/entity/piglin/zombified_piglin.png"),
       class_6629.field_34257,
-      new class_4639("textures/entity/piglin/piglin_brute.png")
+      new Identifier("textures/entity/piglin/piglin_brute.png")
    );
 
    public class_1591(class_6122 var1, boolean var2) {
@@ -28,8 +28,8 @@ public class class_1591 extends class_2160<class_5886, class_672<class_5886>> {
    }
 
    @Override
-   public class_4639 method_10053(class_5886 var1) {
-      class_4639 var4 = field_8307.get(var1.method_37387());
+   public Identifier method_10053(class_5886 var1) {
+      Identifier var4 = field_8307.get(var1.method_37387());
       if (var4 != null) {
          return var4;
       } else {

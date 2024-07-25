@@ -20,7 +20,7 @@ public class class_8768 extends class_7067<class_5490> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_40288(class_5490 var1) {
+   public Identifier method_40288(class_5490 var1) {
       return MinecraftClient.getInstance().method_8581().method_21478().method_23608().method_38519();
    }
 

@@ -6,7 +6,7 @@ import com.google.gson.JsonSerializationContext;
 import java.util.Random;
 
 public final class class_7488 implements class_3374 {
-   public static final class_4639 field_38217 = new class_4639("ore_drops");
+   public static final Identifier field_38217 = new Identifier("ore_drops");
 
    private class_7488() {
    }
@@ -34,7 +34,7 @@ public final class class_7488 implements class_3374 {
    }
 
    @Override
-   public class_4639 method_15563() {
+   public Identifier method_15563() {
       return field_38217;
    }
 }

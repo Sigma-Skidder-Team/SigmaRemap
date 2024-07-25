@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_6792 extends class_7067<class_9552> {
-   private static final class_4639 field_35020 = new class_4639("textures/entity/shulker/spark.png");
+   private static final Identifier field_35020 = new Identifier("textures/entity/shulker/spark.png");
    private static final class_3581 field_35019 = class_3581.method_16705(field_35020);
    private final class_7834<class_9552> field_35021 = new class_7834<class_9552>();
 
@@ -33,7 +33,7 @@ public class class_6792 extends class_7067<class_9552> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_31134(class_9552 var1) {
+   public Identifier method_31134(class_9552 var1) {
       return field_35020;
    }
 }

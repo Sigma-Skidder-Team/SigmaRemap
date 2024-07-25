@@ -6,7 +6,7 @@ import java.util.Properties;
 import java.util.function.Consumer;
 
 public class class_2789 extends class_7621 {
-   private static final class_4639 field_13703 = new class_4639("textures/gui/title/mojangstudios.png");
+   private static final Identifier field_13703 = new Identifier("textures/gui/title/mojangstudios.png");
    private static final int field_13709 = class_8496.method_39154(255, 239, 50, 61);
    private static final int field_13698 = field_13709 & 16777215;
    private final MinecraftClient field_13696;
@@ -38,7 +38,7 @@ public class class_2789 extends class_7621 {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       int var7 = this.field_13696.method_8552().method_43165();
       int var8 = this.field_13696.method_8552().method_43177();
-      long var9 = class_9665.method_44650();
+      long var9 = Util.getMeasuringTimeMs();
       if (this.field_13694 && (this.field_13700.method_19968() || this.field_13696.field_9623 != null) && this.field_13702 == -1L) {
          this.field_13702 = var9;
       }
@@ -109,7 +109,7 @@ public class class_2789 extends class_7621 {
       }
 
       if (this.field_13707 == -1L && this.field_13700.method_19970() && (!this.field_13694 || var12 >= 2.0F)) {
-         this.field_13707 = class_9665.method_44650();
+         this.field_13707 = Util.getMeasuringTimeMs();
 
          try {
             this.field_13700.method_19966();
@@ -165,7 +165,7 @@ public class class_2789 extends class_7621 {
       if (class_3111.method_14438()) {
          try {
             String var3 = "optifine/color.properties";
-            class_4639 var4 = new class_4639(var3);
+            Identifier var4 = new Identifier(var3);
             if (!class_3111.method_14362(var4)) {
                return;
             }

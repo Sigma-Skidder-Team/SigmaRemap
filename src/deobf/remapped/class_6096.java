@@ -13,13 +13,13 @@ import java.util.Properties;
 import javax.annotation.Nullable;
 
 public class class_6096 implements class_3592 {
-   private class_4639 field_31195;
+   private Identifier field_31195;
    private final List<int[]> field_31192;
    private final int field_31196;
    private final int field_31194;
 
-   public class_6096(class_4639 var1, int var2, int var3, List<int[]> var4) {
-      this.field_31195 = new class_4639(var1.method_21461(), "textures/" + var1.method_21456());
+   public class_6096(Identifier var1, int var2, int var3, List<int[]> var4) {
+      this.field_31195 = new Identifier(var1.method_21461(), "textures/" + var1.method_21456());
       this.field_31195 = class_4077.method_18801(this.field_31195);
       this.field_31192 = var4;
       this.field_31196 = var2;
@@ -49,7 +49,7 @@ public class class_6096 implements class_3592 {
          }
 
          if (!var5.isEmpty() && ((int[])var5.get(0)).length != 0) {
-            return new class_6096(new class_4639(class_6539.method_29796(var0, "file")), var3, var4, var5);
+            return new class_6096(new Identifier(class_6539.method_29796(var0, "file")), var3, var4, var5);
          } else {
             throw new JsonParseException("Expected to find data in chars, found none.");
          }

@@ -99,7 +99,7 @@ public class class_2525 {
    public void method_11506(Dynamic<?> var1) {
       var1.asStream()
          .<DataResult<class_2147>>map(class_2147::method_10027)
-         .<class_2147>flatMap(var0 -> class_9665.method_44689(var0.result()))
+         .<class_2147>flatMap(var0 -> Util.method_44689(var0.result()))
          .forEach(var1x -> class_3619.method_16857(this.method_11507(var1x.field_10745)).put(var1x.field_10746, var1x.field_10744));
    }
 

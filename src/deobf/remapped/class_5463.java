@@ -5,10 +5,10 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_5463 extends class_4785<class_5463> {
    private static String[] field_27825;
-   private final class_6676<class_4639> field_27822;
+   private final class_6676<Identifier> field_27822;
    private final ITextComponent field_27824;
 
-   private class_5463(class_6676<class_4639> var1, class_6676 var2) {
+   private class_5463(class_6676<Identifier> var1, class_6676 var2) {
       this.field_27823 = var1;
       this.field_27822 = var2;
       this.field_27824 = new TranslationTextComponent(class_3231.method_14811(var2));

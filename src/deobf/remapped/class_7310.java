@@ -3,7 +3,7 @@ package remapped;
 import java.util.Random;
 
 public class class_7310 extends class_7164<class_912, class_5415<class_912>> {
-   private static final class_4639 field_37385 = new class_4639("textures/entity/enderman/enderman.png");
+   private static final Identifier field_37385 = new Identifier("textures/entity/enderman/enderman.png");
    private final Random field_37383 = new Random();
 
    public class_7310(class_6122 var1) {
@@ -29,7 +29,7 @@ public class class_7310 extends class_7164<class_912, class_5415<class_912>> {
       }
    }
 
-   public class_4639 method_33350(class_912 var1) {
+   public Identifier method_33350(class_912 var1) {
       return field_37385;
    }
 }

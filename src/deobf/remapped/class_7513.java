@@ -5,7 +5,7 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import javax.annotation.Nullable;
 
 public abstract class class_7513 {
-   private static final Object2ObjectMap<class_4639, class_7513> field_38367 = class_9665.<Object2ObjectMap<class_4639, class_7513>>method_44659(
+   private static final Object2ObjectMap<Identifier, class_7513> field_38367 = Util.<Object2ObjectMap<Identifier, class_7513>>method_44659(
       new Object2ObjectArrayMap(), var0 -> {
          class_570 var3 = new class_570();
          var0.defaultReturnValue(var3);

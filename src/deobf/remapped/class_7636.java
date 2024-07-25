@@ -27,7 +27,7 @@ public class class_7636 implements Runnable {
    public void run() {
       while (this.field_38848.method_1692()) {
          long var3 = this.field_38848.method_1740();
-         long var5 = class_9665.method_44650();
+         long var5 = Util.getMeasuringTimeMs();
          long var7 = var5 - var3;
          if (var7 > this.field_38847) {
             field_38849.fatal(

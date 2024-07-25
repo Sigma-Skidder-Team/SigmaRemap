@@ -38,7 +38,7 @@ public enum class_4188 {
       new class_9829(class_6636.field_34359, class_6636.field_34360, class_6636.field_34354, null)
    );
 
-   private static final class_4188[] field_20388 = class_9665.<class_4188[]>method_44659(new class_4188[6], var0 -> {
+   private static final class_4188[] field_20388 = Util.<class_4188[]>method_44659(new class_4188[6], var0 -> {
       var0[class_6636.field_34356] = field_20387;
       var0[class_6636.field_34360] = field_20390;
       var0[class_6636.field_34354] = field_20385;

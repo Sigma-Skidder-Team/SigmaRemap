@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_6073 extends class_7067<class_8008> {
-   private static final class_4639 field_31085 = new class_4639("textures/entity/lead_knot.png");
+   private static final Identifier field_31085 = new Identifier("textures/entity/lead_knot.png");
    private final class_2743<class_8008> field_31086 = new class_2743<class_8008>();
 
    public class_6073(class_6122 var1) {
@@ -18,7 +18,7 @@ public class class_6073 extends class_7067<class_8008> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_27814(class_8008 var1) {
+   public Identifier method_27814(class_8008 var1) {
       return field_31085;
    }
 }

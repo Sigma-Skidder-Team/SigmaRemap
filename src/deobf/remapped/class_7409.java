@@ -52,7 +52,7 @@ public class class_7409 extends class_1094 {
                   + "&profileId="
                   + this.field_943.method_8502().method_5367();
                this.field_943.field_9600.method_38891(var4);
-               class_9665.method_44667().method_37581(var4);
+               Util.getOperatingSystem().method_37581(var4);
             }
          )
       );

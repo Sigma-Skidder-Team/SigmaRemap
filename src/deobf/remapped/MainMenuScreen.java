@@ -12,14 +12,14 @@ import org.apache.logging.log4j.Logger;
 
 public class MainMenuScreen extends Screen {
    private static final Logger field_9517 = LogManager.getLogger();
-   public static final class_1973 field_9509 = new class_1973(new class_4639("textures/gui/title/background/panorama"));
-   private static final class_4639 field_9511 = new class_4639("textures/gui/title/background/panorama_overlay.png");
-   private static final class_4639 field_9502 = new class_4639("textures/gui/accessibility.png");
+   public static final class_1973 field_9509 = new class_1973(new Identifier("textures/gui/title/background/panorama"));
+   private static final Identifier field_9511 = new Identifier("textures/gui/title/background/panorama_overlay.png");
+   private static final Identifier field_9502 = new Identifier("textures/gui/accessibility.png");
    private final boolean field_9501;
    private String field_9506;
    private class_9521 field_9500;
-   private static final class_4639 field_9513 = new class_4639("textures/gui/title/minecraft.png");
-   private static final class_4639 field_9510 = new class_4639("textures/gui/title/edition.png");
+   private static final Identifier field_9513 = new Identifier("textures/gui/title/minecraft.png");
+   private static final Identifier field_9510 = new Identifier("textures/gui/title/edition.png");
    private boolean field_9507;
    private Screen field_9508;
    private int field_9516;
@@ -50,7 +50,7 @@ public class MainMenuScreen extends Screen {
       }
    }
 
-   public static CompletableFuture<Void> method_8397(class_7889 var0, Executor var1) {
+   public static CompletableFuture<Void> method_8397(TextureManager var0, Executor var1) {
       return CompletableFuture.allOf(
          var0.method_35676(field_9513, var1), var0.method_35676(field_9510, var1), var0.method_35676(field_9511, var1), field_9509.method_9075(var0, var1)
       );
@@ -252,10 +252,10 @@ public class MainMenuScreen extends Screen {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       if (this.field_9504 == 0L && this.field_9514) {
-         this.field_9504 = class_9665.method_44650();
+         this.field_9504 = Util.getMeasuringTimeMs();
       }
 
-      float var7 = !this.field_9514 ? 1.0F : (float)(class_9665.method_44650() - this.field_9504) / 1000.0F;
+      float var7 = !this.field_9514 ? 1.0F : (float)(Util.getMeasuringTimeMs() - this.field_9504) / 1000.0F;
       class_1920.method_8786();
       method_9774(var1, 0, 0, this.field_941, this.field_940, -1);
       this.field_9505.method_401(var4, class_9299.method_42828(var7, 0.0F, 1.0F));
@@ -298,7 +298,7 @@ public class MainMenuScreen extends Screen {
             class_3542.method_16413((float)(this.field_941 / 2 + 90), 70.0F, 0.0F);
             class_3542.method_16410(-20.0F, 0.0F, 0.0F, 1.0F);
             float var13 = 1.8F
-               - class_9299.method_42804(class_9299.method_42818((float)(class_9665.method_44650() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
+               - class_9299.method_42804(class_9299.method_42818((float)(Util.getMeasuringTimeMs() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
             var13 = var13 * 100.0F / (float)(this.field_948.method_45395(this.field_9506) + 32);
             class_3542.method_16403(var13, var13, var13);
             method_9787(var1, this.field_948, this.field_9506, 0, -8, 16776960 | var12);

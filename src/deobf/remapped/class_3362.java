@@ -40,10 +40,10 @@ public class class_3362 {
    private static final Logger field_16566 = LogManager.getLogger();
    private static final Gson field_16576 = new GsonBuilder()
       .registerTypeAdapter(class_3604.class, new class_8744())
-      .registerTypeAdapter(class_4639.class, new class_6690())
+      .registerTypeAdapter(Identifier.class, new class_6690())
       .setPrettyPrinting()
       .create();
-   private static final TypeToken<Map<class_4639, class_3604>> field_16572 = new class_331();
+   private static final TypeToken<Map<Identifier, class_3604>> field_16572 = new class_331();
    private final DataFixer field_16570;
    private final class_8704 field_16564;
    private final File field_16573;
@@ -138,7 +138,7 @@ public class class_3362 {
                Stream var8 = var7.entrySet().stream().sorted(Comparator.comparing(Entry::getValue));
 
                for (Entry var10 : (List)var8.collect(Collectors.toList())) {
-                  class_3139 var11 = var1.method_40818((class_4639)var10.getKey());
+                  class_3139 var11 = var1.method_40818((Identifier)var10.getKey());
                   if (var11 == null) {
                      field_16566.warn("Ignored advancement '{}' in progress file {} - it doesn't exist anymore?", var10.getKey(), this.field_16573);
                   } else {
@@ -219,7 +219,7 @@ public class class_3362 {
                         "chat.type.advancement." + var1.method_14511().method_35157().method_15385(), this.field_16567.method_19839(), var1.method_14512()
                      ),
                      ChatType.SYSTEM,
-                     class_9665.field_49232
+                     Util.NIL_UUID
                   );
             }
          }

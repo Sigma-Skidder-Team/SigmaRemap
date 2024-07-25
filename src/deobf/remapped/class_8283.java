@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class class_8283 implements class_6310<class_392> {
    private static String[] field_42463;
-   public class_4639 field_42460;
+   public Identifier field_42460;
    private class_562 field_42456;
    private int field_42459;
    private int field_42461 = Integer.MAX_VALUE;
@@ -15,7 +15,7 @@ public class class_8283 implements class_6310<class_392> {
    public class_8283() {
    }
 
-   public class_8283(class_4639 var1, class_562 var2, class_1343 var3, float var4, float var5) {
+   public class_8283(Identifier var1, class_562 var2, class_1343 var3, float var4, float var5) {
       this.field_42460 = var1;
       this.field_42456 = var2;
       this.field_42459 = (int)(var3.field_7336 * 8.0);
@@ -47,7 +47,7 @@ public class class_8283 implements class_6310<class_392> {
       var1.writeFloat(this.field_42458);
    }
 
-   public class_4639 method_38221() {
+   public Identifier method_38221() {
       return this.field_42460;
    }
 

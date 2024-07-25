@@ -27,7 +27,7 @@ public class class_174 extends class_6486 {
    private class_1097 field_570 = new class_1097();
    private final Map<String, class_2134> field_571 = Maps.newHashMap();
    private int field_573;
-   private final Object2ObjectArrayMap<class_6581, class_6530> field_569 = class_9665.<Object2ObjectArrayMap<class_6581, class_6530>>method_44659(
+   private final Object2ObjectArrayMap<class_6581, class_6530> field_569 = Util.<Object2ObjectArrayMap<class_6581, class_6530>>method_44659(
       new Object2ObjectArrayMap(3), var0 -> {
          var0.put(class_4948.field_25609, new class_6530());
          var0.put(class_4948.field_25610, new class_6530());

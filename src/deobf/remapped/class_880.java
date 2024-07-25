@@ -29,9 +29,9 @@ public class class_880 extends class_7732 {
    public class_2522 method_35002(Random var1, class_1331 var2) {
       double var5 = class_6325.field_32304.method_31321((double)var2.method_12173() / 200.0, (double)var2.method_12185() / 200.0, false);
       if (!(var5 < -0.8)) {
-         return var1.nextInt(3) <= 0 ? class_4783.field_23410.method_29260() : class_9665.<class_2522>method_44697(field_4538, var1);
+         return var1.nextInt(3) <= 0 ? class_4783.field_23410.method_29260() : Util.<class_2522>method_44697(field_4538, var1);
       } else {
-         return class_9665.<class_2522>method_44697(field_4534, var1);
+         return Util.<class_2522>method_44697(field_4534, var1);
       }
    }
 }

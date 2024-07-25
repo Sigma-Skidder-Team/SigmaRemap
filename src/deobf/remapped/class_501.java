@@ -75,7 +75,7 @@ public class class_501 extends Screen {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
-      long var7 = class_9665.method_44650();
+      long var7 = Util.getMeasuringTimeMs();
       if (var7 - this.field_3122 > 2000L) {
          this.field_3122 = var7;
          class_7542.field_38482.method_34341(new TranslationTextComponent("narrator.joining").getString());

@@ -2,9 +2,9 @@ package remapped;
 
 public class class_1057 implements class_7803<class_341> {
    private static String[] field_5802;
-   private final class_4639 field_5801;
+   private final Identifier field_5801;
 
-   public class_1057(class_4639 var1) {
+   public class_1057(Identifier var1) {
       this.field_5801 = var1;
    }
 

@@ -3,10 +3,10 @@ package net.minecraft.util.text;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.Optional;
-import remapped.class_3256;
+import remapped.Unit;
 
 public interface ITextProperties {
-   Optional<class_3256> field_240650_b_ = Optional.<class_3256>of(class_3256.field_16155);
+   Optional<Unit> field_240650_b_ = Optional.<Unit>of(Unit.INSTANCE);
    ITextProperties field_240651_c_ = new ITextProperties$1();
 
    <T> Optional<T> func_230438_a_(ITextProperties$class_42<T> var1);

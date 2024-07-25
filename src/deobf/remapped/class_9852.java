@@ -118,7 +118,7 @@ public class class_9852 extends class_8379 {
    }
 
    private byte[] method_45363(DatagramPacket var1) throws IOException {
-      long var4 = class_9665.method_44650();
+      long var4 = Util.getMeasuringTimeMs();
       if (var4 < this.field_49872 + 5000L) {
          byte[] var11 = this.field_49861.method_10493();
          byte[] var12 = this.method_45364(var1.getSocketAddress());
@@ -192,7 +192,7 @@ public class class_9852 extends class_8379 {
 
    private void method_45365() {
       if (this.field_42882) {
-         long var3 = class_9665.method_44650();
+         long var3 = Util.getMeasuringTimeMs();
          if (var3 >= this.field_49873 + 30000L) {
             this.field_49873 = var3;
             this.field_49866.values().removeIf(var2 -> var2.method_29622(var3));
@@ -203,7 +203,7 @@ public class class_9852 extends class_8379 {
    @Override
    public void run() {
       field_49869.info("Query running on {}:{}", this.field_49875, this.field_49864);
-      this.field_49873 = class_9665.method_44650();
+      this.field_49873 = Util.getMeasuringTimeMs();
       DatagramPacket var3 = new DatagramPacket(this.field_49870, this.field_49870.length);
 
       try {

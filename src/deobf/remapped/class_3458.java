@@ -42,7 +42,7 @@ public class class_3458 {
       try {
          for (int var5 = 0; var5 < var1.length; var5++) {
             String var6 = var1[var5];
-            class_4639 var7 = new class_4639(var6);
+            Identifier var7 = new Identifier(var6);
             if (var0.method_37467(class_3168.field_15844, var7)) {
                InputStream var8 = var0.method_37466(class_3168.field_15844, var7);
                if (var8 != null) {
@@ -75,7 +75,7 @@ public class class_3458 {
    public static void method_15909(class_7832 var0, String var1, Map<String, String> var2) {
       try {
          String var5 = "optifine/lang/" + var1 + ".lang";
-         class_4639 var6 = new class_4639(var5);
+         Identifier var6 = new Identifier(var5);
          class_4038 var7 = var0.method_35458(var6);
          InputStream var8 = var7.method_18576();
          method_15905(var8, var2);

@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_875 extends class_7164<class_1609, class_4845<class_1609>> {
-   private static final class_4639 field_4520 = new class_4639("textures/entity/witch.png");
+   private static final Identifier field_4520 = new Identifier("textures/entity/witch.png");
 
    public class_875(class_6122 var1) {
       super(var1, new class_4845<class_1609>(0.0F), 0.5F);
@@ -13,7 +13,7 @@ public class class_875 extends class_7164<class_1609, class_4845<class_1609>> {
       super.method_32866(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_3771(class_1609 var1) {
+   public Identifier method_3771(class_1609 var1) {
       return field_4520;
    }
 

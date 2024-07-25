@@ -5,14 +5,14 @@ import java.util.function.Function;
 
 public class class_8658<T> implements class_8813<T> {
    private class_2307<T> field_44331;
-   public final class_4639 field_44332;
+   public final Identifier field_44332;
 
-   private class_8658(class_4639 var1) {
+   private class_8658(Identifier var1) {
       this.field_44332 = var1;
    }
 
    @Override
-   public class_4639 method_40487() {
+   public Identifier method_40487() {
       return this.field_44332;
    }
 
@@ -24,7 +24,7 @@ public class class_8658<T> implements class_8813<T> {
       }
    }
 
-   public void method_39699(Function<class_4639, class_2307<T>> var1) {
+   public void method_39699(Function<Identifier, class_2307<T>> var1) {
       this.field_44331 = (class_2307<T>)var1.apply(this.field_44332);
    }
 

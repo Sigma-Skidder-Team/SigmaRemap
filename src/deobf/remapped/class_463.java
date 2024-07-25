@@ -995,6 +995,6 @@ public class class_463 {
    public static final class_8461 field_1933 = method_2217("entity.zombie_villager.step");
 
    private static class_8461 method_2217(String var0) {
-      return class_8669.<class_8461>method_39791(class_8669.field_44369, var0, new class_8461(new class_4639(var0)));
+      return class_8669.<class_8461>method_39791(class_8669.field_44369, var0, new class_8461(new Identifier(var0)));
    }
 }

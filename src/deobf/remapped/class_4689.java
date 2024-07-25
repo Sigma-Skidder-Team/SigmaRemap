@@ -40,13 +40,13 @@ public class class_4689 {
          JsonObject var3 = class_6539.method_29782(var0, "fluid");
          class_2340 var4 = null;
          if (var3.has("fluid")) {
-            class_4639 var5 = new class_4639(class_6539.method_29796(var3, "fluid"));
+            Identifier var5 = new Identifier(class_6539.method_29796(var3, "fluid"));
             var4 = class_8669.field_44447.method_39806(var5);
          }
 
          class_2307 var7 = null;
          if (var3.has("tag")) {
-            class_4639 var6 = new class_4639(class_6539.method_29796(var3, "tag"));
+            Identifier var6 = new Identifier(class_6539.method_29796(var3, "tag"));
             var7 = class_8410.method_38721().method_29391().method_43140(var6);
             if (var7 == null) {
                throw new JsonSyntaxException("Unknown fluid tag '" + var6 + "'");

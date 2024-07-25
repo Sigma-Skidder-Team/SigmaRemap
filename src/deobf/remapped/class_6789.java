@@ -10,7 +10,7 @@ public class class_6789 extends class_8781 {
       var0 -> var0.group(method_40367(), method_40366(), method_11825()).apply(var0, class_6789::new)
    );
 
-   public class_6789(Either<class_4639, class_6561> var1, Supplier<class_86> var2, class_7599 var3) {
+   public class_6789(Either<Identifier, class_6561> var1, Supplier<class_86> var2, class_7599 var3) {
       super(var1, var2, var3);
    }
 

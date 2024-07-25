@@ -5,7 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 
 public class class_7383 implements class_2994<class_3197> {
-   public class_3197 method_33630(class_4639 var1, JsonObject var2) {
+   public class_3197 method_33630(Identifier var1, JsonObject var2) {
       String var5 = class_6539.method_29797(var2, "group", "");
       class_2831 var6 = method_33628(class_6539.method_29787(var2, "ingredients"));
       if (!var6.isEmpty()) {
@@ -33,7 +33,7 @@ public class class_7383 implements class_2994<class_3197> {
       return var3;
    }
 
-   public class_3197 method_33631(class_4639 var1, class_8248 var2) {
+   public class_3197 method_33631(Identifier var1, class_8248 var2) {
       String var5 = var2.method_37784(32767);
       int var6 = var2.method_37778();
       class_2831 var7 = class_2831.<class_8137>method_12872(var6, class_8137.field_41675);

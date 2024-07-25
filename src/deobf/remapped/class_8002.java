@@ -11,7 +11,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_8002 extends class_2089 implements IRenderable, class_5888, class_5140, class_2855<class_8137> {
-   public static final class_4639 field_40990 = new class_4639("textures/gui/recipe_book.png");
+   public static final Identifier field_40990 = new Identifier("textures/gui/recipe_book.png");
    private static final ITextComponent field_41003 = new TranslationTextComponent("gui.recipebook.search_hint")
       .mergeStyle(TextFormatting.ITALIC)
       .mergeStyle(TextFormatting.GRAY);

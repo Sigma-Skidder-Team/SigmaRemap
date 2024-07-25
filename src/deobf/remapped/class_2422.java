@@ -4,9 +4,9 @@ import java.util.function.Consumer;
 
 public class class_2422 extends class_8457 {
    private static String[] field_12062;
-   private final class_4639 field_12061;
+   private final Identifier field_12061;
 
-   private class_2422(class_4639 var1, int var2, int var3, class_7279[] var4, class_2913[] var5) {
+   private class_2422(Identifier var1, int var2, int var3, class_7279[] var4, class_2913[] var5) {
       super(var2, var3, var4, var5);
       this.field_12061 = var1;
    }
@@ -21,7 +21,7 @@ public class class_2422 extends class_8457 {
       var2.method_12697(this.field_12061, var1);
    }
 
-   public static class_7550<?> method_11046(class_4639 var0) {
+   public static class_7550<?> method_11046(Identifier var0) {
       return method_38895((var1, var2, var3, var4) -> new class_2422(var0, var1, var2, var3, var4));
    }
 }

@@ -16,8 +16,8 @@ public class class_4116 extends class_8374<class_2269> {
    private static final ThreadPoolExecutor field_20069 = new ScheduledThreadPoolExecutor(
       5, new ThreadFactoryBuilder().setNameFormat("Server Pinger #%d").setDaemon(true).setUncaughtExceptionHandler(new class_447(field_20059)).build()
    );
-   private static final class_4639 field_20064 = new class_4639("textures/misc/unknown_server.png");
-   private static final class_4639 field_20058 = new class_4639("textures/gui/server_selection.png");
+   private static final Identifier field_20064 = new Identifier("textures/misc/unknown_server.png");
+   private static final Identifier field_20058 = new Identifier("textures/gui/server_selection.png");
    private static final ITextComponent field_20056 = new TranslationTextComponent("lanServer.scanning");
    private static final ITextComponent field_20061 = new TranslationTextComponent("multiplayer.status.cannot_resolve").mergeStyle(TextFormatting.DARK_RED);
    private static final ITextComponent field_20055 = new TranslationTextComponent("multiplayer.status.cannot_connect").mergeStyle(TextFormatting.DARK_RED);

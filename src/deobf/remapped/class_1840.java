@@ -10,7 +10,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_1840 extends Screen {
-   public static final class_4639 field_9330 = new class_4639("textures/gui/social_interactions.png");
+   public static final Identifier field_9330 = new Identifier("textures/gui/social_interactions.png");
    private static final ITextComponent field_9319 = new TranslationTextComponent("gui.socialInteractions.tab_all");
    private static final ITextComponent field_9327 = new TranslationTextComponent("gui.socialInteractions.tab_hidden");
    private static final ITextComponent field_9323 = new TranslationTextComponent("gui.socialInteractions.tab_blocked");
@@ -94,7 +94,7 @@ public class class_1840 extends Screen {
       this.field_9320 = this.<class_9521>method_1186(
          new class_9521(var8, var7, var6, 20, field_9328, var1 -> this.field_943.method_8609(new class_260(var1x -> {
                if (var1x) {
-                  class_9665.method_44667().method_37581("https://aka.ms/javablocking");
+                  Util.getOperatingSystem().method_37581("https://aka.ms/javablocking");
                }
 
                this.field_943.method_8609(this);

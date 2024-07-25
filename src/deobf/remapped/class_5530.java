@@ -15,7 +15,7 @@ public class class_5530 extends class_7807<class_5530> {
    private final List<class_5888> field_28198;
    private final UUID field_28196;
    private final String field_28191;
-   private final Supplier<class_4639> field_28185;
+   private final Supplier<Identifier> field_28185;
    private boolean field_28195;
    private class_9521 field_28204;
    private class_9521 field_28197;
@@ -35,7 +35,7 @@ public class class_5530 extends class_7807<class_5530> {
    public static final int field_28189 = class_8496.method_39154(255, 255, 255, 255);
    public static final int field_28184 = class_8496.method_39154(140, 255, 255, 255);
 
-   public class_5530(MinecraftClient var1, class_1840 var2, UUID var3, String var4, Supplier<class_4639> var5) {
+   public class_5530(MinecraftClient var1, class_1840 var2, UUID var3, String var4, Supplier<Identifier> var5) {
       this.field_28199 = var1;
       this.field_28196 = var3;
       this.field_28191 = var4;

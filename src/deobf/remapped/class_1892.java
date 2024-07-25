@@ -67,7 +67,7 @@ public class class_1892 {
    public static void method_8441(class_5354 var0) {
    }
 
-   private static void method_8442(class_6331 var0, class_8248 var1, class_4639 var2) {
+   private static void method_8442(class_6331 var0, class_8248 var1, Identifier var2) {
       class_6197 var5 = new class_6197(var2, var1);
 
       for (class_704 var7 : var0.method_7066().method_25873()) {

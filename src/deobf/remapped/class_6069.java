@@ -18,7 +18,7 @@ public class class_6069 implements class_6895 {
       this.field_31044.execute(() -> {
          class_6535.method_29757(this.field_31045).remove(var1x);
          if (class_6535.method_29757(this.field_31045).isEmpty()) {
-            this.field_31045.field_33238.complete(class_3256.field_16155);
+            this.field_31045.field_33238.complete(Unit.INSTANCE);
          }
       });
       return this.field_31045.field_33238.<T, T>thenCombine(this.field_31047, (var1x, var2) -> (T)var1);

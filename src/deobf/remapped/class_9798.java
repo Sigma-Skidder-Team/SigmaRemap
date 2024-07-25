@@ -40,15 +40,15 @@ public class class_9798 implements class_2053 {
    }
 
    @Override
-   public Collection<class_4639> method_9589() {
-      return this.method_45207().stream().<class_4639>map(class_8338::method_38399).collect(Collectors.<class_4639>toSet());
+   public Collection<Identifier> method_9589() {
+      return this.method_45207().stream().<Identifier>map(class_8338::method_38399).collect(Collectors.<Identifier>toSet());
    }
 
    @Override
-   public Collection<class_2843> method_9591(Function<class_4639, class_2053> var1, Set<Pair<String, String>> var2) {
+   public Collection<class_2843> method_9591(Function<Identifier, class_2053> var1, Set<Pair<String, String>> var2) {
       return this.method_45207()
          .stream()
-         .<class_4639>map(class_8338::method_38399)
+         .<Identifier>map(class_8338::method_38399)
          .distinct()
          .<class_2843>flatMap(var2x -> ((class_2053)var1.apply(var2x)).method_9591(var1, var2).stream())
          .collect(Collectors.<class_2843>toSet());
@@ -56,7 +56,7 @@ public class class_9798 implements class_2053 {
 
    @Nullable
    @Override
-   public class_7373 method_9590(class_6560 var1, Function<class_2843, class_5155> var2, class_5598 var3, class_4639 var4) {
+   public class_7373 method_9590(class_6560 var1, Function<class_2843, class_5155> var2, class_5598 var3, Identifier var4) {
       if (this.method_45207().isEmpty()) {
          return null;
       } else {

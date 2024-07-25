@@ -54,7 +54,7 @@ public class class_6524 {
          class_159.method_634();
          class_2557.method_11618();
          class_2557.method_11617();
-         class_9665.method_44679();
+         Util.method_44679();
          class_7522 var19 = class_6322.method_28810();
          Path var20 = Paths.get("server.properties");
          class_991 var21 = new class_991(var19, var20);
@@ -89,7 +89,7 @@ public class class_6524 {
          class_6354 var34 = new class_6354(new class_2362(), new class_8936(var31.method_17064(class_263.field_924).toFile(), class_2541.field_12594));
          class_2805 var35 = class_341.method_1673(var34, var32 == null ? class_2805.field_13766 : var32, var33);
          CompletableFuture var36 = class_6298.method_28747(
-            var34.method_29115(), class_9019.field_46139, var21.method_4319().field_50086, class_9665.method_44661(), Runnable::run
+            var34.method_29115(), class_9019.field_46139, var21.method_4319().field_50086, Util.getMainWorkerExecutor(), Runnable::run
          );
 
          class_6298 var37;

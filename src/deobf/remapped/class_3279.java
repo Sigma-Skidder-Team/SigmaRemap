@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class class_3279 extends class_8273<class_6047> {
-   private static final class_4639 field_16224 = new class_4639("channeled_lightning");
+   private static final Identifier field_16224 = new Identifier("channeled_lightning");
 
    @Override
-   public class_4639 method_3899() {
+   public Identifier method_3899() {
       return field_16224;
    }
 

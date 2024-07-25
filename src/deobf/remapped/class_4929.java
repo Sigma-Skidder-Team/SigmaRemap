@@ -96,7 +96,7 @@ public class class_4929 implements class_3025 {
 
          this.field_25512 = this.field_25512 + var1;
          this.field_25506.add(this.field_25512);
-         this.field_25517.add(class_9665.method_44657());
+         this.field_25517.add(Util.getMeasuringTimeNano());
          this.field_25520 = null;
       } else {
          field_25519.error("Cannot push '{}' to profiler if profiler tick hasn't started - missing startTick()?", var1);
@@ -112,7 +112,7 @@ public class class_4929 implements class_3025 {
    public void method_16054() {
       if (this.field_25507) {
          if (!this.field_25517.isEmpty()) {
-            long var3 = class_9665.method_44657();
+            long var3 = Util.getMeasuringTimeNano();
             long var5 = this.field_25517.removeLong(this.field_25517.size() - 1);
             this.field_25506.remove(this.field_25506.size() - 1);
             long var7 = var3 - var5;

@@ -1,8 +1,8 @@
 package remapped;
 
 public class class_9133 extends class_7067<class_1044> {
-   private static final class_4639 field_46723 = new class_4639("textures/entity/wither/wither_invulnerable.png");
-   private static final class_4639 field_46722 = new class_4639("textures/entity/wither/wither.png");
+   private static final Identifier field_46723 = new Identifier("textures/entity/wither/wither_invulnerable.png");
+   private static final Identifier field_46722 = new Identifier("textures/entity/wither/wither.png");
    private final class_1570 field_46721 = new class_1570();
 
    public class_9133(class_6122 var1) {
@@ -25,7 +25,7 @@ public class class_9133 extends class_7067<class_1044> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_42035(class_1044 var1) {
+   public Identifier method_42035(class_1044 var1) {
       return !var1.method_4620() ? field_46722 : field_46723;
    }
 }

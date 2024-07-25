@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_3431 extends class_9331<class_3683> implements class_474 {
-   private static final class_4639 field_16867 = new class_4639("textures/gui/recipe_button.png");
+   private static final Identifier field_16867 = new Identifier("textures/gui/recipe_button.png");
    private float field_16866;
    private float field_16868;
    private final class_8002 field_16865 = new class_8002();

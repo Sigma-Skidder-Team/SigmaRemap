@@ -1,14 +1,14 @@
 package remapped;
 
 public abstract class class_7157 implements class_1504 {
-   private final class_4639 field_36861;
+   private final Identifier field_36861;
 
-   public class_7157(class_4639 var1) {
+   public class_7157(Identifier var1) {
       this.field_36861 = var1;
    }
 
    @Override
-   public class_4639 method_41050() {
+   public Identifier method_41050() {
       return this.field_36861;
    }
 

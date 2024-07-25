@@ -10,12 +10,12 @@ import java.util.function.Supplier;
 
 public interface class_2307<T> {
    static <T> Codec<class_2307<T>> method_10610(Supplier<class_9349<T>> var0) {
-      return class_4639.field_22655
+      return Identifier.field_22655
          .flatXmap(
             var1 -> Optional.<class_2307>ofNullable(((class_9349)var0.get()).method_43140(var1))
                   .<DataResult>map(DataResult::success)
                   .orElseGet(() -> DataResult.error("Unknown tag: " + var1)),
-            var1 -> Optional.<class_4639>ofNullable(((class_9349)var0.get()).method_43144(var1))
+            var1 -> Optional.<Identifier>ofNullable(((class_9349)var0.get()).method_43144(var1))
                   .<DataResult>map(DataResult::success)
                   .orElseGet(() -> DataResult.error("Unknown tag: " + var1))
          );

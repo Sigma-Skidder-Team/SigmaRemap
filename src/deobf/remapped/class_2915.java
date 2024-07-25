@@ -14,7 +14,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_2915 {
    private static final SuggestionProvider<class_9155> field_14235 = (var0, var1) -> {
       Collection var4 = ((class_9155)var0.getSource()).method_42177().method_1703().method_40816();
-      return class_8773.method_40310(var4.stream().<class_4639>map(class_3139::method_14520), var1);
+      return class_8773.method_40310(var4.stream().<Identifier>map(class_3139::method_14520), var1);
    };
 
    public static void method_13341(CommandDispatcher<class_9155> var0) {

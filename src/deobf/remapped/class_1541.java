@@ -6,12 +6,12 @@ import it.unimi.dsi.fastutil.longs.Long2IntLinkedOpenHashMap;
 public class class_1541 {
    private static String[] field_8149;
    private boolean field_8146;
-   private final Long2IntLinkedOpenHashMap field_8147 = class_9665.<Long2IntLinkedOpenHashMap>method_44660(() -> {
+   private final Long2IntLinkedOpenHashMap field_8147 = Util.<Long2IntLinkedOpenHashMap>method_44660(() -> {
       class_355 var3 = new class_355(this, 100, 0.25F);
       var3.defaultReturnValue(Integer.MAX_VALUE);
       return var3;
    });
-   private final Long2FloatLinkedOpenHashMap field_8148 = class_9665.<Long2FloatLinkedOpenHashMap>method_44660(() -> {
+   private final Long2FloatLinkedOpenHashMap field_8148 = Util.<Long2FloatLinkedOpenHashMap>method_44660(() -> {
       class_8777 var3 = new class_8777(this, 100, 0.25F);
       var3.defaultReturnValue(Float.NaN);
       return var3;

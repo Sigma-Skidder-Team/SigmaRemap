@@ -16,7 +16,7 @@ public final class class_7522 extends class_6322 {
    private final Map<? extends class_5621<? extends class_8669<?>>, ? extends class_5383<?>> field_38394;
 
    private static <E> Codec<class_7522> method_34274() {
-      Codec var2 = class_4639.field_22655.xmap(class_5621::method_25494, class_5621::method_25499);
+      Codec var2 = Identifier.field_22655.xmap(class_5621::method_25494, class_5621::method_25499);
       Codec var3 = var2.partialDispatch(
          "type",
          var0 -> DataResult.success(var0.method_39798()),

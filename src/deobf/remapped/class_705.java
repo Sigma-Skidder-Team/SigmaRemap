@@ -12,12 +12,12 @@ public class class_705<T extends class_3151> implements class_2994<T> {
       this.field_3879 = var1;
    }
 
-   public T method_3255(class_4639 var1, JsonObject var2) {
+   public T method_3255(Identifier var1, JsonObject var2) {
       String var5 = class_6539.method_29797(var2, "group", "");
       Object var6 = !class_6539.method_29763(var2, "ingredient") ? class_6539.method_29783(var2, "ingredient") : class_6539.method_29787(var2, "ingredient");
       class_8137 var7 = class_8137.method_37024((JsonElement)var6);
       String var8 = class_6539.method_29796(var2, "result");
-      class_4639 var9 = new class_4639(var8);
+      Identifier var9 = new Identifier(var8);
       class_6098 var10 = new class_6098(
          class_8669.field_44382.method_39794(var9).orElseThrow(() -> new IllegalStateException("Item: " + var8 + " does not exist"))
       );
@@ -26,7 +26,7 @@ public class class_705<T extends class_3151> implements class_2994<T> {
       return this.field_3879.method_27279(var1, var5, var7, var10, var11, var12);
    }
 
-   public T method_3256(class_4639 var1, class_8248 var2) {
+   public T method_3256(Identifier var1, class_8248 var2) {
       String var5 = var2.method_37784(32767);
       class_8137 var6 = class_8137.method_37026(var2);
       class_6098 var7 = var2.method_37755();

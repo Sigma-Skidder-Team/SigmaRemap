@@ -68,7 +68,7 @@ public class class_993 extends class_1859 {
          float var7 = (float)(this.field_36278 - var6) / 2.0F;
          float var8 = (float)(this.field_36257 - var6) / 2.0F;
          float var9 = (float)var1 - ((float)this.method_32155() + var8 + (float)(var6 / 2));
-         float var10 = (float)(MinecraftClient.getInstance().field_9602.method_43163() - var2) - ((float)this.method_32093() + var7 + (float)(var6 / 2));
+         float var10 = (float)(MinecraftClient.getInstance().window.method_43163() - var2) - ((float)this.method_32093() + var7 + (float)(var6 / 2));
          float var11 = (float)var6 / ((float)(this.field_5048 - 1) * 2.0F);
          float var12 = (float)(this.field_5050.field_10328 * 16) - this.field_5061 * 16.0F;
          float var13 = (float)(this.field_5050.field_10327 * 16) - this.field_5057 * 16.0F;
@@ -117,9 +117,9 @@ public class class_993 extends class_1859 {
       float var10 = (float)var6 / ((float)this.field_5048 * 2.0F);
       double var11 = ((double)this.field_5057 - Math.floor((double)this.field_5057)) * (double)var10;
       double var13 = ((double)this.field_5061 - Math.floor((double)this.field_5061)) * (double)var10;
-      class_7889 var10000 = var4.method_8577();
+      TextureManager var10000 = var4.method_8577();
       var4.method_8577();
-      var10000.method_35674(class_7889.field_40364);
+      var10000.method_35674(TextureManager.field_40364);
       class_73.method_150(this.field_36270, this.field_36261, this.field_36270 + this.field_36278, this.field_36261 + this.field_36257, true);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.field_36270 + this.field_36278 / 2), (float)(this.field_36261 + this.field_36257 / 2), 0.0F);

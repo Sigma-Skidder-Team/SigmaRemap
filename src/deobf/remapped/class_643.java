@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_643 extends class_763 {
-   public static final class_4639 field_3601 = new class_4639("textures/entity/guardian_elder.png");
+   public static final Identifier field_3601 = new Identifier("textures/entity/guardian_elder.png");
 
    public class_643(class_6122 var1) {
       super(var1, 1.2F);
@@ -12,7 +12,7 @@ public class class_643 extends class_763 {
    }
 
    @Override
-   public class_4639 method_3441(class_337 var1) {
+   public Identifier method_3441(class_337 var1) {
       return field_3601;
    }
 }

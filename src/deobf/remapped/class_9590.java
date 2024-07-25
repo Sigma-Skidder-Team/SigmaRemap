@@ -125,18 +125,18 @@ public class class_9590 {
    public static final class_7701 field_48784 = method_44293("template_skull");
 
    private static class_7701 method_44292(class_8940... var0) {
-      return new class_7701(Optional.<class_4639>empty(), Optional.<String>empty(), var0);
+      return new class_7701(Optional.<Identifier>empty(), Optional.<String>empty(), var0);
    }
 
    private static class_7701 method_44290(String var0, class_8940... var1) {
-      return new class_7701(Optional.<class_4639>of(new class_4639("minecraft", "block/" + var0)), Optional.<String>empty(), var1);
+      return new class_7701(Optional.<Identifier>of(new Identifier("minecraft", "block/" + var0)), Optional.<String>empty(), var1);
    }
 
    private static class_7701 method_44293(String var0, class_8940... var1) {
-      return new class_7701(Optional.<class_4639>of(new class_4639("minecraft", "item/" + var0)), Optional.<String>empty(), var1);
+      return new class_7701(Optional.<Identifier>of(new Identifier("minecraft", "item/" + var0)), Optional.<String>empty(), var1);
    }
 
    private static class_7701 method_44294(String var0, String var1, class_8940... var2) {
-      return new class_7701(Optional.<class_4639>of(new class_4639("minecraft", "block/" + var0)), Optional.<String>of(var1), var2);
+      return new class_7701(Optional.<Identifier>of(new Identifier("minecraft", "block/" + var0)), Optional.<String>of(var1), var2);
    }
 }

@@ -16,19 +16,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class class_3634 extends class_2840<Map<class_4639, List<class_3293>>> {
+public class class_3634 extends class_2840<Map<Identifier, List<class_3293>>> {
    public class_3634(class_950 var1) {
       this.field_17739 = var1;
    }
 
-   public Map<class_4639, List<class_3293>> method_16944(class_7832 var1, class_3492 var2) {
+   public Map<Identifier, List<class_3293>> method_16944(class_7832 var1, class_3492 var2) {
       var2.method_16059();
       Gson var5 = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
       HashMap var6 = Maps.newHashMap();
 
-      for (class_4639 var8 : var1.method_35460("font", var0 -> var0.endsWith(".json"))) {
+      for (Identifier var8 : var1.method_35460("font", var0 -> var0.endsWith(".json"))) {
          String var9 = var8.method_21456();
-         class_4639 var10 = new class_4639(var8.method_21461(), var9.substring("font/".length(), var9.length() - ".json".length()));
+         Identifier var10 = new Identifier(var8.method_21461(), var9.substring("font/".length(), var9.length() - ".json".length()));
          List var11 = var6.computeIfAbsent(var10, var0 -> Lists.newArrayList(new class_3293[]{new class_8365()}));
          var2.method_16057(var10::toString);
 
@@ -99,7 +99,7 @@ public class class_3634 extends class_2840<Map<class_4639, List<class_3293>>> {
       return var6;
    }
 
-   public void method_16943(Map<class_4639, List<class_3293>> var1, class_7832 var2, class_3492 var3) {
+   public void method_16943(Map<Identifier, List<class_3293>> var1, class_7832 var2, class_3492 var3) {
       var3.method_16059();
       var3.method_16056("closing");
       class_950.method_4193(this.field_17739).values().forEach(class_6988::close);

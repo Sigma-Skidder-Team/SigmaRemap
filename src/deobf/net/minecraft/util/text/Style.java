@@ -4,7 +4,7 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.HoverEvent;
-import remapped.class_4639;
+import remapped.Identifier;
 
 public class Style {
    public static final Style EMPTY = new Style(
@@ -17,9 +17,9 @@ public class Style {
       (ClickEvent)null,
       (HoverEvent)null,
       (String)null,
-      (class_4639)null
+      (Identifier)null
    );
-   public static final class_4639 DEFAULT_FONT = new class_4639("minecraft", "default");
+   public static final Identifier DEFAULT_FONT = new Identifier("minecraft", "default");
    private final Color color;
    private final Boolean bold;
    private final Boolean italic;
@@ -29,7 +29,7 @@ public class Style {
    private final ClickEvent clickEvent;
    private final HoverEvent hoverEvent;
    private final String insertion;
-   private final class_4639 fontId;
+   private final Identifier fontId;
 
    private Style(
       Color color,
@@ -41,7 +41,7 @@ public class Style {
       ClickEvent clickEvent,
       HoverEvent hoverEvent,
       String insertion,
-      class_4639 fontId
+      Identifier fontId
    ) {
       this.color = color;
       this.bold = bold;
@@ -99,7 +99,7 @@ public class Style {
       return this.insertion;
    }
 
-   public class_4639 getFontId() {
+   public Identifier getFontId() {
       return this.fontId != null ? this.fontId : DEFAULT_FONT;
    }
 
@@ -149,7 +149,7 @@ public class Style {
       );
    }
 
-   public Style setFontId(class_4639 fontId) {
+   public Style setFontId(Identifier fontId) {
       return new Style(
          this.color, this.bold, this.italic, this.underlined, this.strikethrough, this.obfuscated, this.clickEvent, this.hoverEvent, this.insertion, fontId
       );

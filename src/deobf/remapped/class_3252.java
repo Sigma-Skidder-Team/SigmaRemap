@@ -39,7 +39,7 @@ public class class_3252 extends class_378 {
    }
 
    @Override
-   public class_4639 method_26934() {
+   public Identifier method_26934() {
       return !this.method_1859() ? this.method_37387().method_30480() : class_5931.field_30157;
    }
 

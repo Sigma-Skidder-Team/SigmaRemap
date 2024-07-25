@@ -32,11 +32,11 @@ public class class_7597 extends class_2451 {
    public static void method_34503(class_6098 var0, class_9693 var1) {
       class_3416 var4 = method_34501(var0);
       boolean var5 = true;
-      class_4639 var6 = class_8669.field_44445.method_39797(var1.field_49312);
+      Identifier var6 = class_8669.field_44445.method_39797(var1.field_49312);
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
          class_5734 var8 = var4.method_15764(var7);
-         class_4639 var9 = class_4639.method_21455(var8.method_25965("id"));
+         Identifier var9 = Identifier.method_21455(var8.method_25965("id"));
          if (var9 != null && var9.equals(var6)) {
             if (var8.method_25947("lvl") < var1.field_49313) {
                var8.method_25958("lvl", (short)var1.field_49313);

@@ -5,16 +5,16 @@ import java.io.IOException;
 public class class_1074 implements class_6310<class_1243> {
    private static String[] field_5863;
    private class_1331 field_5868;
-   private class_4639 field_5865;
-   private class_4639 field_5867;
-   private class_4639 field_5864;
+   private Identifier field_5865;
+   private Identifier field_5867;
+   private Identifier field_5864;
    private String field_5869;
    private class_1252 field_5866;
 
    public class_1074() {
    }
 
-   public class_1074(class_1331 var1, class_4639 var2, class_4639 var3, class_4639 var4, String var5, class_1252 var6) {
+   public class_1074(class_1331 var1, Identifier var2, Identifier var3, Identifier var4, String var5, class_1252 var6) {
       this.field_5868 = var1;
       this.field_5865 = var2;
       this.field_5867 = var3;
@@ -51,15 +51,15 @@ public class class_1074 implements class_6310<class_1243> {
       return this.field_5868;
    }
 
-   public class_4639 method_4707() {
+   public Identifier method_4707() {
       return this.field_5865;
    }
 
-   public class_4639 method_4705() {
+   public Identifier method_4705() {
       return this.field_5867;
    }
 
-   public class_4639 method_4703() {
+   public Identifier method_4703() {
       return this.field_5864;
    }
 

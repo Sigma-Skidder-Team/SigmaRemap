@@ -175,7 +175,7 @@ public class class_5056 implements class_7203, class_5684 {
          (UUID)var0.get("WanderingTraderId").read(class_5753.field_29117).result().orElse((UUID)null),
          var0.get("ServerBrands")
             .asStream()
-            .<String>flatMap(var0x -> class_9665.method_44689(var0x.asString().result()))
+            .<String>flatMap(var0x -> Util.method_44689(var0x.asString().result()))
             .collect(Collectors.<String, LinkedHashSet<String>>toCollection(Sets::newLinkedHashSet)),
          new class_5026<class_341>(class_455.field_1893, var0.get("ScheduledEvents").asStream()),
          (class_5734)var0.get("CustomBossEvents").orElseEmptyMap().getValue(),
@@ -212,7 +212,7 @@ public class class_5056 implements class_7203, class_5684 {
       class_8876 var8 = class_8876.method_40843(class_3504.field_17178, var1);
       class_2904.field_14169
          .encodeStart(var8, this.field_26134)
-         .resultOrPartial(class_9665.method_44690("WorldGenSettings: ", field_26153::error))
+         .resultOrPartial(Util.method_44690("WorldGenSettings: ", field_26153::error))
          .ifPresent(var1x -> var2.method_25946("WorldGenSettings", var1x));
       var2.method_25931("GameType", this.field_26154.method_28720().method_21589());
       var2.method_25931("SpawnX", this.field_26152);
@@ -221,7 +221,7 @@ public class class_5056 implements class_7203, class_5684 {
       var2.method_25920("SpawnAngle", this.field_26137);
       var2.method_25949("Time", this.field_26142);
       var2.method_25949("DayTime", this.field_26160);
-      var2.method_25949("LastPlayed", class_9665.method_44686());
+      var2.method_25949("LastPlayed", Util.getEpochTimeMs());
       var2.method_25941("LevelName", this.field_26154.method_28716());
       var2.method_25931("version", 19133);
       var2.method_25931("clearWeatherTime", this.field_26143);
@@ -291,7 +291,7 @@ public class class_5056 implements class_7203, class_5684 {
       if (!this.field_26148 && this.field_26155 != null) {
          if (this.field_26158 < class_7665.method_34674().getWorldVersion()) {
             if (this.field_26136 == null) {
-               throw (NullPointerException)class_9665.method_44658(
+               throw (NullPointerException) Util.method_44658(
                   new NullPointerException("Fixer Upper not set inside LevelData, and the player tag is not upgraded.")
                );
             }

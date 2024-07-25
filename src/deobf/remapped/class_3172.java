@@ -28,6 +28,6 @@ public class class_3172<U extends class_6127<?>> {
    }
 
    private static <U extends class_6127<?>> class_3172<U> method_14625(String var0, Supplier<U> var1) {
-      return class_8669.<class_3172<?>, class_3172<U>>method_39792(class_8669.field_44389, new class_4639(var0), new class_3172<U>(var1));
+      return class_8669.<class_3172<?>, class_3172<U>>method_39792(class_8669.field_44389, new Identifier(var0), new class_3172<U>(var1));
    }
 }

@@ -21,8 +21,8 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> {
    public static final Logger field_44408 = LogManager.getLogger();
-   private static final Map<class_4639, Supplier<?>> field_44358 = Maps.newLinkedHashMap();
-   public static final class_4639 field_44448 = new class_4639("root");
+   private static final Map<Identifier, Supplier<?>> field_44358 = Maps.newLinkedHashMap();
+   public static final Identifier field_44448 = new Identifier("root");
    public static final class_6433<class_6433<?>> field_44444 = new class_5383<class_6433<?>>(method_39804("root"), Lifecycle.experimental());
    public static final class_8669<? extends class_8669<?>> field_44446 = field_44444;
    public static final class_5621<class_8669<class_8461>> field_44362 = method_39804("sound_event");
@@ -36,7 +36,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final class_5621<class_8669<class_8583<?>>> field_44455 = method_39804("particle_type");
    public static final class_5621<class_8669<class_133<?>>> field_44464 = method_39804("block_entity_type");
    public static final class_5621<class_8669<class_6933>> field_44388 = method_39804("motive");
-   public static final class_5621<class_8669<class_4639>> field_44378 = method_39804("custom_stat");
+   public static final class_5621<class_8669<Identifier>> field_44378 = method_39804("custom_stat");
    public static final class_5621<class_8669<class_7335>> field_44442 = method_39804("chunk_status");
    public static final class_5621<class_8669<class_7768<?>>> field_44437 = method_39804("rule_test");
    public static final class_5621<class_8669<class_6614<?>>> field_44438 = method_39804("pos_rule_test");
@@ -69,7 +69,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final class_8669<class_8583<?>> field_44387 = method_39812(field_44455, () -> class_3090.field_15325);
    public static final class_8669<class_133<?>> field_44426 = method_39812(field_44464, () -> class_133.field_383);
    public static final class_3991<class_6933> field_44450 = method_39796(field_44388, "kebab", () -> class_6933.field_35614);
-   public static final class_8669<class_4639> field_44373 = method_39812(field_44378, () -> class_6234.field_31856);
+   public static final class_8669<Identifier> field_44373 = method_39812(field_44378, () -> class_6234.field_31856);
    public static final class_3991<class_7335> field_44381 = method_39796(field_44442, "empty", () -> class_7335.field_37504);
    public static final class_8669<class_7768<?>> field_44407 = method_39812(field_44437, () -> class_7768.field_39366);
    public static final class_8669<class_6614<?>> field_44366 = method_39812(field_44438, () -> class_6614.field_34167);
@@ -132,7 +132,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    private final Lifecycle field_44451;
 
    private static <T> class_5621<class_8669<T>> method_39804(String var0) {
-      return class_5621.<T>method_25494(new class_4639(var0));
+      return class_5621.<T>method_25494(new Identifier(var0));
    }
 
    public static <T extends class_6433<?>> void method_39803(class_6433<T> var0) {
@@ -145,7 +145,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
          }
 
          if (var1 instanceof class_3991) {
-            class_4639 var4 = ((class_3991)var1).method_18397();
+            Identifier var4 = ((class_3991)var1).method_18397();
             Validate.notNull(var1.method_39806(var4), "Missing default of DefaultedMappedRegistry: " + var4, new Object[0]);
          }
       });
@@ -168,7 +168,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    }
 
    private static <T, R extends class_6433<T>> R method_39793(class_5621<? extends class_8669<T>> var0, R var1, Supplier<T> var2, Lifecycle var3) {
-      class_4639 var6 = var0.method_25499();
+      Identifier var6 = var0.method_25499();
       field_44358.put(var6, var2);
       class_6433 var7 = field_44444;
       return var7.<R>method_29381(var0, (R)var1, var3);
@@ -190,11 +190,11 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
 
    public <U> DataResult<Pair<T, U>> decode(DynamicOps<U> var1, U var2) {
       return !var1.compressMaps()
-         ? class_4639.field_22655
+         ? Identifier.field_22655
             .decode(var1, var2)
             .flatMap(
                var1x -> {
-                  Object var4 = this.method_39806((class_4639)var1x.getFirst());
+                  Object var4 = this.method_39806((Identifier)var1x.getFirst());
                   return var4 != null
                      ? DataResult.success(Pair.of(var4, var1x.getSecond()), this.method_39813((T)var4))
                      : DataResult.error("Unknown registry key: " + var1x.getFirst());
@@ -207,7 +207,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    }
 
    public <U> DataResult<U> encode(T var1, DynamicOps<U> var2, U var3) {
-      class_4639 var6 = this.method_39797((T)var1);
+      Identifier var6 = this.method_39797((T)var1);
       if (var6 != null) {
          return !var2.compressMaps()
             ? var2.mergeToPrimitive(var3, var2.createString(var6.toString())).setLifecycle(this.field_44451)
@@ -222,7 +222,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    }
 
    @Nullable
-   public abstract class_4639 method_39797(T var1);
+   public abstract Identifier method_39797(T var1);
 
    public abstract Optional<class_5621<T>> method_39800(T var1);
 
@@ -233,13 +233,13 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public abstract T method_39799(class_5621<T> var1);
 
    @Nullable
-   public abstract T method_39806(class_4639 var1);
+   public abstract T method_39806(Identifier var1);
 
    public abstract Lifecycle method_39813(T var1);
 
    public abstract Lifecycle method_39811();
 
-   public Optional<T> method_39794(class_4639 var1) {
+   public Optional<T> method_39794(Identifier var1) {
       return Optional.<T>ofNullable(this.method_39806(var1));
    }
 
@@ -256,7 +256,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
       }
    }
 
-   public abstract Set<class_4639> method_39805();
+   public abstract Set<Identifier> method_39805();
 
    public abstract Set<Entry<class_5621<T>, T>> method_39808();
 
@@ -264,18 +264,18 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
       return StreamSupport.<T>stream(this.spliterator(), false);
    }
 
-   public abstract boolean method_39814(class_4639 var1);
+   public abstract boolean method_39814(Identifier var1);
 
    public static <T> T method_39791(class_8669<? super T> var0, String var1, T var2) {
-      return method_39792(var0, new class_4639(var1), (T)var2);
+      return method_39792(var0, new Identifier(var1), (T)var2);
    }
 
-   public static <V, T extends V> T method_39792(class_8669<V> var0, class_4639 var1, T var2) {
+   public static <V, T extends V> T method_39792(class_8669<V> var0, Identifier var1, T var2) {
       return ((class_6433)var0).<T>method_29381(class_5621.<T>method_25497(var0.field_44434, var1), (T)var2, Lifecycle.stable());
    }
 
    public static <V, T extends V> T method_39790(class_8669<V> var0, int var1, String var2, T var3) {
-      return ((class_6433)var0).<T>method_29380(var1, class_5621.<T>method_25497(var0.field_44434, new class_4639(var2)), (T)var3, Lifecycle.stable());
+      return ((class_6433)var0).<T>method_29380(var1, class_5621.<T>method_25497(var0.field_44434, new Identifier(var2)), (T)var3, Lifecycle.stable());
    }
 
    static {

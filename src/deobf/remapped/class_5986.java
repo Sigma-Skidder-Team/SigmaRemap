@@ -4,7 +4,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class class_5986 extends class_7114 {
    private static String[] field_30496;
-   public class_4639 field_30492;
+   public Identifier field_30492;
    public boolean field_30498;
    public int field_30493;
    public int field_30494;
@@ -16,7 +16,7 @@ public class class_5986 extends class_7114 {
       this.field_30498 = var5;
    }
 
-   public void method_27297(int var1, int var2, int var3, int var4, class_4639 var5) {
+   public void method_27297(int var1, int var2, int var3, int var4, Identifier var5) {
       this.field_30493 = var1;
       this.field_30494 = var2;
       this.field_30497 = var3;

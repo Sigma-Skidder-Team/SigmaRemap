@@ -14,7 +14,7 @@ public class class_4910 implements Runnable {
          class_1293 var5 = this.field_25415.method_6143(var4);
          class_4113 var6 = null;
          if (var5.method_5850("url")) {
-            class_9665.method_44667().method_37581(var5.method_5861("url"));
+            Util.getOperatingSystem().method_37581(var5.method_5861("url"));
          }
 
          this.field_25417.field_5070.method_11850().method_32150(var6 = new class_4113(this.field_25417.field_5070, "changelog" + var4, var5));

@@ -1,13 +1,13 @@
 package remapped;
 
 public class class_9872 extends class_7164<class_9668, class_8539<class_9668>> {
-   private static final class_4639 field_49925 = new class_4639("textures/entity/bear/polarbear.png");
+   private static final Identifier field_49925 = new Identifier("textures/entity/bear/polarbear.png");
 
    public class_9872(class_6122 var1) {
       super(var1, new class_8539<class_9668>(), 0.9F);
    }
 
-   public class_4639 method_45496(class_9668 var1) {
+   public Identifier method_45496(class_9668 var1) {
       return field_49925;
    }
 

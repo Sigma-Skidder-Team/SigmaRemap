@@ -26,7 +26,7 @@ public class class_2268 implements ArgumentType<class_6782> {
    public class_6782 parse(StringReader var1) throws CommandSyntaxException {
       class_9599 var4 = new class_9599(var1, true).method_44335();
       if (var4.method_44342() == null) {
-         class_4639 var6 = var4.method_44334();
+         Identifier var6 = var4.method_44334();
          return var2 -> {
             class_2307 var5x = ((class_9155)var2.getSource()).method_42177().method_1754().method_29393().method_43140(var6);
             if (var5x != null) {

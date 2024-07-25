@@ -198,7 +198,7 @@ public class class_916 extends class_4037 implements class_6510 {
          }
       }
 
-      CompletableFuture var18 = class_9665.method_44680(var6);
+      CompletableFuture var18 = Util.method_44680(var6);
       return var18.<Either<List<class_5990>, class_1361>>thenApply(var4 -> {
          ArrayList var7x = Lists.newArrayList();
          int var8x = 0;
@@ -481,7 +481,7 @@ public class class_916 extends class_4037 implements class_6510 {
    public void method_4009(class_2034 var1) {
       this.field_4712
          .method_34457(
-            class_9665.method_44687(
+            Util.method_44687(
                () -> this.field_4714.method_42687(class_5032.field_26026, var1, 33 + class_7335.method_33455(class_7335.field_37499), var1),
                () -> "release light ticket " + var1
             )
@@ -894,7 +894,7 @@ public class class_916 extends class_4037 implements class_6510 {
          int var5 = var4.method_30462() * 16;
          int var6 = var4.method_30463();
          if (this.field_4716.containsKey(var1.method_37145())) {
-            throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("Entity is already tracked!"));
+            throw (IllegalStateException) Util.method_44658(new IllegalStateException("Entity is already tracked!"));
          }
 
          class_6650 var7 = new class_6650(this, var1, var5, var6, var4.method_30477());

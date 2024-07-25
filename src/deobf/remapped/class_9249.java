@@ -47,7 +47,7 @@ public enum class_9249 implements class_4530, Predicate<class_240> {
    }
 
    public static class_9249 method_42627(Random var0) {
-      return class_9665.<class_9249>method_44697(field_47218, var0);
+      return Util.<class_9249>method_44697(field_47218, var0);
    }
 
    public boolean test(class_240 var1) {

@@ -41,8 +41,8 @@ public class class_6763 {
       field_34907 = GLFW.glfwCreateStandardCursor(221185);
       field_34905 = GLFW.glfwCreateStandardCursor(221188);
       field_34903 = GLFW.glfwCreateStandardCursor(221186);
-      GLFW.glfwSetCursor(MinecraftClient.getInstance().field_9602.method_43181(), field_34907);
-      field_34898 = (float)(MinecraftClient.getInstance().field_9602.method_43198() / MinecraftClient.getInstance().field_9602.method_43163());
+      GLFW.glfwSetCursor(MinecraftClient.getInstance().window.method_43181(), field_34907);
+      field_34898 = (float)(MinecraftClient.getInstance().window.method_43198() / MinecraftClient.getInstance().window.method_43163());
    }
 
    public void method_31006() {
@@ -124,10 +124,10 @@ public class class_6763 {
    public void method_31009() {
       if (this.field_34904 != null) {
          this.field_34894[0] = Math.max(
-            0, Math.min(MinecraftClient.getInstance().field_9602.method_43166(), (int) MinecraftClient.getInstance().field_9625.method_39835())
+            0, Math.min(MinecraftClient.getInstance().window.method_43166(), (int) MinecraftClient.getInstance().field_9625.method_39835())
          );
          this.field_34894[1] = Math.max(
-            0, Math.min(MinecraftClient.getInstance().field_9602.method_43163(), (int) MinecraftClient.getInstance().field_9625.method_39832())
+            0, Math.min(MinecraftClient.getInstance().window.method_43163(), (int) MinecraftClient.getInstance().field_9625.method_39832())
          );
 
          for (Integer var4 : this.field_34909) {
@@ -197,7 +197,7 @@ public class class_6763 {
          short var5 = 170;
          byte var6 = 95;
          if (MinecraftClient.getInstance().field_9577.field_45470) {
-            var3 = MinecraftClient.getInstance().field_9602.method_43166() / 2 - var5 / 2;
+            var3 = MinecraftClient.getInstance().window.method_43166() / 2 - var5 / 2;
          }
 
          if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30645) {
@@ -282,7 +282,7 @@ public class class_6763 {
 
    public static void method_30993() {
       MinecraftClient.getInstance();
-      if (MinecraftClient.field_9574) {
+      if (MinecraftClient.IS_SYSTEM_MAC) {
          try {
             class_1293 var2 = class_357.method_1789(new File(SigmaMainClass.method_3328().method_3334() + "/config.json"));
             if (var2.method_5850("hidpicocoa")) {
@@ -355,14 +355,14 @@ public class class_6763 {
          this.method_30994(SigmaMainClass.method_3328().method_3304());
       }
 
-      if (MinecraftClient.getInstance().field_9602.method_43166() != 0 && MinecraftClient.getInstance().field_9602.method_43163() != 0) {
+      if (MinecraftClient.getInstance().window.method_43166() != 0 && MinecraftClient.getInstance().window.method_43163() != 0) {
          field_34898 = (float)Math.max(
-            MinecraftClient.getInstance().field_9602.method_43178() / MinecraftClient.getInstance().field_9602.method_43166(),
-            MinecraftClient.getInstance().field_9602.method_43198() / MinecraftClient.getInstance().field_9602.method_43163()
+            MinecraftClient.getInstance().window.method_43178() / MinecraftClient.getInstance().window.method_43166(),
+            MinecraftClient.getInstance().window.method_43198() / MinecraftClient.getInstance().window.method_43163()
          );
       }
 
-      class_73.method_104(MinecraftClient.getInstance().field_9602.method_43166(), MinecraftClient.getInstance().field_9602.method_43163());
+      class_73.method_104(MinecraftClient.getInstance().window.method_43166(), MinecraftClient.getInstance().window.method_43163());
    }
 
    public class_2596 method_31001() {

@@ -4,26 +4,26 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class class_9283 extends class_4285<class_1941> {
-   private static final class_4639 field_47352 = new class_4639("fossil/spine_1");
-   private static final class_4639 field_47350 = new class_4639("fossil/spine_2");
-   private static final class_4639 field_47357 = new class_4639("fossil/spine_3");
-   private static final class_4639 field_47363 = new class_4639("fossil/spine_4");
-   private static final class_4639 field_47351 = new class_4639("fossil/spine_1_coal");
-   private static final class_4639 field_47361 = new class_4639("fossil/spine_2_coal");
-   private static final class_4639 field_47349 = new class_4639("fossil/spine_3_coal");
-   private static final class_4639 field_47359 = new class_4639("fossil/spine_4_coal");
-   private static final class_4639 field_47362 = new class_4639("fossil/skull_1");
-   private static final class_4639 field_47356 = new class_4639("fossil/skull_2");
-   private static final class_4639 field_47354 = new class_4639("fossil/skull_3");
-   private static final class_4639 field_47353 = new class_4639("fossil/skull_4");
-   private static final class_4639 field_47355 = new class_4639("fossil/skull_1_coal");
-   private static final class_4639 field_47347 = new class_4639("fossil/skull_2_coal");
-   private static final class_4639 field_47360 = new class_4639("fossil/skull_3_coal");
-   private static final class_4639 field_47358 = new class_4639("fossil/skull_4_coal");
-   private static final class_4639[] field_47348 = new class_4639[]{
+   private static final Identifier field_47352 = new Identifier("fossil/spine_1");
+   private static final Identifier field_47350 = new Identifier("fossil/spine_2");
+   private static final Identifier field_47357 = new Identifier("fossil/spine_3");
+   private static final Identifier field_47363 = new Identifier("fossil/spine_4");
+   private static final Identifier field_47351 = new Identifier("fossil/spine_1_coal");
+   private static final Identifier field_47361 = new Identifier("fossil/spine_2_coal");
+   private static final Identifier field_47349 = new Identifier("fossil/spine_3_coal");
+   private static final Identifier field_47359 = new Identifier("fossil/spine_4_coal");
+   private static final Identifier field_47362 = new Identifier("fossil/skull_1");
+   private static final Identifier field_47356 = new Identifier("fossil/skull_2");
+   private static final Identifier field_47354 = new Identifier("fossil/skull_3");
+   private static final Identifier field_47353 = new Identifier("fossil/skull_4");
+   private static final Identifier field_47355 = new Identifier("fossil/skull_1_coal");
+   private static final Identifier field_47347 = new Identifier("fossil/skull_2_coal");
+   private static final Identifier field_47360 = new Identifier("fossil/skull_3_coal");
+   private static final Identifier field_47358 = new Identifier("fossil/skull_4_coal");
+   private static final Identifier[] field_47348 = new Identifier[]{
       field_47352, field_47350, field_47357, field_47363, field_47362, field_47356, field_47354, field_47353
    };
-   private static final class_4639[] field_47346 = new class_4639[]{
+   private static final Identifier[] field_47346 = new Identifier[]{
       field_47351, field_47361, field_47349, field_47359, field_47355, field_47347, field_47360, field_47358
    };
 

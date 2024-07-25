@@ -6,7 +6,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public interface class_5802 {
-   DecimalFormat field_29297 = class_9665.<DecimalFormat>method_44659(
+   DecimalFormat field_29297 = Util.<DecimalFormat>method_44659(
       new DecimalFormat("########0.00"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
    class_5802 field_29298 = NumberFormat.getIntegerInstance(Locale.US)::format;

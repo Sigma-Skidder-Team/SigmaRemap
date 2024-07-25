@@ -4,15 +4,15 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 public class class_2102 extends class_7164<class_496, class_1253<class_496>> {
-   private static final Map<class_1360, class_4639> field_10542 = class_9665.<Map<class_1360, class_4639>>method_44659(
+   private static final Map<class_1360, Identifier> field_10542 = Util.<Map<class_1360, Identifier>>method_44659(
       Maps.newEnumMap(class_1360.class), var0 -> {
-         var0.put(class_1360.field_7401, new class_4639("textures/entity/panda/panda.png"));
-         var0.put(class_1360.field_7402, new class_4639("textures/entity/panda/lazy_panda.png"));
-         var0.put(class_1360.field_7409, new class_4639("textures/entity/panda/worried_panda.png"));
-         var0.put(class_1360.field_7400, new class_4639("textures/entity/panda/playful_panda.png"));
-         var0.put(class_1360.field_7410, new class_4639("textures/entity/panda/brown_panda.png"));
-         var0.put(class_1360.field_7406, new class_4639("textures/entity/panda/weak_panda.png"));
-         var0.put(class_1360.field_7403, new class_4639("textures/entity/panda/aggressive_panda.png"));
+         var0.put(class_1360.field_7401, new Identifier("textures/entity/panda/panda.png"));
+         var0.put(class_1360.field_7402, new Identifier("textures/entity/panda/lazy_panda.png"));
+         var0.put(class_1360.field_7409, new Identifier("textures/entity/panda/worried_panda.png"));
+         var0.put(class_1360.field_7400, new Identifier("textures/entity/panda/playful_panda.png"));
+         var0.put(class_1360.field_7410, new Identifier("textures/entity/panda/brown_panda.png"));
+         var0.put(class_1360.field_7406, new Identifier("textures/entity/panda/weak_panda.png"));
+         var0.put(class_1360.field_7403, new Identifier("textures/entity/panda/aggressive_panda.png"));
       }
    );
 
@@ -21,7 +21,7 @@ public class class_2102 extends class_7164<class_496, class_1253<class_496>> {
       this.method_29100(new class_9197(this));
    }
 
-   public class_4639 method_9855(class_496 var1) {
+   public Identifier method_9855(class_496 var1) {
       return field_10542.getOrDefault(var1.method_2448(), field_10542.get(class_1360.field_7401));
    }
 

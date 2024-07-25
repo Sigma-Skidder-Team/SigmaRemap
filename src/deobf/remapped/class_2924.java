@@ -16,7 +16,7 @@ public final class class_2924 implements BooleanSupplier {
          Files.deleteIfExists(this.field_14253);
          return true;
       } catch (IOException var4) {
-         class_9665.method_44663().warn("Failed to delete", var4);
+         Util.method_44663().warn("Failed to delete", var4);
          return false;
       }
    }

@@ -67,7 +67,7 @@ public class class_8590 extends class_3259 {
          }
 
          this.field_44013 = null;
-         this.field_44015 = class_9665.method_44650();
+         this.field_44015 = Util.getMeasuringTimeMs();
          class_5916.method_27067();
          return true;
       }

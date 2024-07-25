@@ -47,12 +47,12 @@ public final class class_9670 {
          class_1331 var20 = var19.method_6098(var18);
          int var21 = var19.method_12165() - var15;
          int var22 = -1;
-         class_4639 var23 = new class_4639(var17.field_19968.method_25965("pool"));
+         Identifier var23 = new Identifier(var17.field_19968.method_25965("pool"));
          Optional var24 = this.field_49258.method_39794(var23);
          if (!var24.isPresent() || ((class_8115)var24.get()).method_36914() == 0 && !Objects.equals(var23, class_9863.field_49908.method_25499())) {
             class_6006.method_27410().warn("Empty or none existent pool: {}", var23);
          } else {
-            class_4639 var25 = ((class_8115)var24.get()).method_36911();
+            Identifier var25 = ((class_8115)var24.get()).method_36911();
             Optional var26 = this.field_49258.method_39794(var25);
             if (var26.isPresent() && (((class_8115)var26.get()).method_36914() != 0 || Objects.equals(var25, class_9863.field_49908.method_25499()))) {
                boolean var27 = var14.method_44395(var20);
@@ -88,7 +88,7 @@ public final class class_9670 {
                      if (var5 && var36.method_44398() <= 16) {
                         var37 = var35.stream().mapToInt(var2x -> {
                            if (var36.method_44395(var2x.field_19965.method_6098(class_195.method_860(var2x.field_19967)))) {
-                              class_4639 var5x = new class_4639(var2x.field_19968.method_25965("pool"));
+                              Identifier var5x = new Identifier(var2x.field_19968.method_25965("pool"));
                               Optional var6 = this.field_49258.method_39794(var5x);
                               Optional var7 = var6.<class_8115>flatMap(var1xx -> this.field_49258.method_39794(var1xx.method_36911()));
                               int var8x = var6.<Integer>map(var1xx -> var1xx.method_36913(this.field_49254)).orElse(0);

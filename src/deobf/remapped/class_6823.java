@@ -84,7 +84,7 @@ public class class_6823 extends class_7067<class_7451> {
       return new class_1343((double)((float)var1.method_37365().method_1041() * 0.3F), -0.25, (double)((float)var1.method_37365().method_1034() * 0.3F));
    }
 
-   public class_4639 method_31301(class_7451 var1) {
+   public Identifier method_31301(class_7451 var1) {
       return class_8359.field_42824;
    }
 

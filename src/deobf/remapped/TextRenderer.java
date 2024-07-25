@@ -18,18 +18,18 @@ public class TextRenderer {
    private static final class_2426 field_49884 = new class_2426(0.0F, 0.0F, 0.03F);
    public final int field_49880 = 9;
    public final Random field_49887 = new Random();
-   private final Function<class_4639, class_6988> field_49886;
+   private final Function<Identifier, class_6988> field_49886;
    private final CharacterManager field_49881;
    private boolean field_49888 = false;
    private class_3525 field_49885 = new class_3525();
    private class_5543 field_49882 = new class_1095(4.0F);
 
-   public TextRenderer(Function<class_4639, class_6988> var1) {
+   public TextRenderer(Function<Identifier, class_6988> var1) {
       this.field_49886 = var1;
       this.field_49881 = new CharacterManager((var1x, var2) -> this.method_45393(var2.getFontId()).method_31974(var1x).method_25221(var2.getBold()));
    }
 
-   private class_6988 method_45393(class_4639 var1) {
+   private class_6988 method_45393(Identifier var1) {
       return this.field_49886.apply(var1);
    }
 

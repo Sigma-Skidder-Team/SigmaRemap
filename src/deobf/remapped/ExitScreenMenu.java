@@ -70,12 +70,12 @@ public class class_6470 extends class_2596 {
 
       this.field_32960.method_11119(class_4043.field_19618);
       this.field_32968.method_11119(class_4043.field_19618);
-      int var3 = MinecraftClient.getInstance().field_9602.method_43166() * MinecraftClient.getInstance().field_9602.method_43163() / 14000;
+      int var3 = MinecraftClient.getInstance().window.method_43166() * MinecraftClient.getInstance().window.method_43163() / 14000;
       Random var4 = new Random();
 
       for (int var5 = 0; var5 < var3; var5++) {
-         int var6 = var4.nextInt(MinecraftClient.getInstance().field_9602.method_43166());
-         int var7 = var4.nextInt(MinecraftClient.getInstance().field_9602.method_43163());
+         int var6 = var4.nextInt(MinecraftClient.getInstance().window.method_43166());
+         int var7 = var4.nextInt(MinecraftClient.getInstance().window.method_43163());
          int var8 = 7 + var4.nextInt(5);
          int var9 = (1 + var4.nextInt(4)) * (!var4.nextBoolean() ? 1 : -1);
          int var10 = 1 + var4.nextInt(2);
@@ -159,7 +159,7 @@ public class class_6470 extends class_2596 {
       } else {
          this.field_32960.method_11119(class_4043.field_19620);
          this.field_32968.method_11119(class_4043.field_19620);
-         float var12 = 0.5F - (float)this.field_32974 / (float) MinecraftClient.getInstance().field_9602.method_43166() * -1.0F;
+         float var12 = 0.5F - (float)this.field_32974 / (float) MinecraftClient.getInstance().window.method_43166() * -1.0F;
          float var13 = 1.0F - this.field_32960.method_11123();
          float var14 = 1.0F - this.field_32968.method_11123();
          float var15 = var14 * var14;

@@ -11,7 +11,7 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentUtils;
 
 public class class_4604 extends class_2089 {
-   private static final class_4639 field_22405 = new class_4639("textures/gui/advancements/widgets.png");
+   private static final Identifier field_22405 = new Identifier("textures/gui/advancements/widgets.png");
    private static final int[] field_22407 = new int[]{0, 10, -10, 25, -25};
    private final class_7797 field_22404;
    private final class_3139 field_22400;

@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public abstract class class_292 extends class_1080 implements class_6867, class_4259 {
    private class_2831<class_6098> field_1062 = class_2831.<class_6098>method_12872(36, class_6098.field_31203);
    private boolean field_1061 = true;
-   private class_4639 field_1063;
+   private Identifier field_1063;
    private long field_1064;
 
    public class_292(class_6629<?> var1, class_6486 var2) {
@@ -129,7 +129,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
       if (!var1.method_25939("LootTable", 8)) {
          class_3037.method_13882(var1, this.field_1062);
       } else {
-         this.field_1063 = new class_4639(var1.method_25965("LootTable"));
+         this.field_1063 = new Identifier(var1.method_25965("LootTable"));
          this.field_1064 = var1.method_25948("LootTableSeed");
       }
    }
@@ -179,7 +179,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
       this.field_1062.clear();
    }
 
-   public void method_1297(class_4639 var1, long var2) {
+   public void method_1297(Identifier var1, long var2) {
       this.field_1063 = var1;
       this.field_1064 = var2;
    }

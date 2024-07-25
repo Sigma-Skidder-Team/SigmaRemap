@@ -1,9 +1,9 @@
 package remapped;
 
 public class class_5162 extends class_7164<class_9408, class_8875<class_9408>> {
-   private static final class_4639 field_26586 = new class_4639("textures/entity/wolf/wolf.png");
-   private static final class_4639 field_26585 = new class_4639("textures/entity/wolf/wolf_tame.png");
-   private static final class_4639 field_26584 = new class_4639("textures/entity/wolf/wolf_angry.png");
+   private static final Identifier field_26586 = new Identifier("textures/entity/wolf/wolf.png");
+   private static final Identifier field_26585 = new Identifier("textures/entity/wolf/wolf_tame.png");
+   private static final Identifier field_26584 = new Identifier("textures/entity/wolf/wolf_angry.png");
 
    public class_5162(class_6122 var1) {
       super(var1, new class_8875<class_9408>(), 0.5F);
@@ -26,7 +26,7 @@ public class class_5162 extends class_7164<class_9408, class_8875<class_9408>> {
       }
    }
 
-   public class_4639 method_23656(class_9408 var1) {
+   public Identifier method_23656(class_9408 var1) {
       if (!var1.method_41215()) {
          return !var1.method_28537() ? field_26586 : field_26584;
       } else {

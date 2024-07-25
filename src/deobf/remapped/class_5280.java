@@ -5,16 +5,16 @@ import java.io.IOException;
 import javax.annotation.Nullable;
 
 public class class_5280 implements class_3592 {
-   private final class_4639 field_27005;
+   private final Identifier field_27005;
    private final String field_27007;
 
-   public class_5280(class_4639 var1, String var2) {
+   public class_5280(Identifier var1, String var2) {
       this.field_27005 = var1;
       this.field_27007 = var2;
    }
 
    public static class_3592 method_24105(JsonObject var0) {
-      return new class_5280(new class_4639(class_6539.method_29796(var0, "sizes")), class_6539.method_29796(var0, "template"));
+      return new class_5280(new Identifier(class_6539.method_29796(var0, "sizes")), class_6539.method_29796(var0, "template"));
    }
 
    @Nullable

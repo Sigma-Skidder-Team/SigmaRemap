@@ -16,7 +16,7 @@ public class class_5178 extends Schema {
    }
 
    public static String method_23742(String var0) {
-      class_4639 var3 = class_4639.method_21455(var0);
+      Identifier var3 = Identifier.method_21455(var0);
       return var3 == null ? var0 : var3.toString();
    }
 

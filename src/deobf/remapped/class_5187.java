@@ -67,7 +67,7 @@ public class class_5187 {
          JsonObject var3 = class_6539.method_29782(var0, "enchantment");
          class_4382 var4 = null;
          if (var3.has("enchantment")) {
-            class_4639 var5 = new class_4639(class_6539.method_29796(var3, "enchantment"));
+            Identifier var5 = new Identifier(class_6539.method_29796(var3, "enchantment"));
             var4 = class_8669.field_44445.method_39794(var5).orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var5 + "'"));
          }
 

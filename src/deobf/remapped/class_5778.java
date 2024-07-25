@@ -3,7 +3,7 @@ package remapped;
 public class class_5778 implements AutoCloseable {
    private final class_7884 field_29181;
    private final class_5797 field_29188;
-   private final class_4639 field_29192;
+   private final Identifier field_29192;
    private boolean field_29190;
    private float field_29182;
    private final GameRenderer field_29185;

@@ -28,7 +28,7 @@ public class class_4644 {
       }
 
       var5.put("particle", !var2.method_43562("particle") ? (Either)var5.get("layer0") : Either.left(var2.method_43564("particle")));
-      class_9403 var11 = new class_9403((class_4639)null, var6, var5, false, var2.method_43552(), var2.method_43563(), var2.method_43553());
+      class_9403 var11 = new class_9403((Identifier)null, var6, var5, false, var2.method_43552(), var2.method_43563(), var2.method_43553());
       var11.field_48083 = var2.field_48083;
       return var11;
    }

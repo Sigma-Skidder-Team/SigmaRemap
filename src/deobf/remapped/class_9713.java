@@ -53,7 +53,7 @@ public class class_9713 {
          String var5 = var3[var4];
 
          try {
-            class_4639 var6 = new class_4639(var5, "shaders/entity.properties");
+            Identifier var6 = new Identifier(var5, "shaders/entity.properties");
             InputStream var7 = class_3111.method_14374(var6);
             method_44862(var7, var6.toString(), var0);
          } catch (IOException var8) {

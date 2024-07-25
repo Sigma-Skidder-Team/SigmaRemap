@@ -9,7 +9,7 @@ public class class_7689 extends class_6414 implements class_8660 {
    public static final class_7044 field_39050 = class_6023.field_30755;
    public static final Object2FloatMap<class_8525> field_39051 = new Object2FloatOpenHashMap();
    private static final class_4190 field_39053 = class_3370.method_15524();
-   private static final class_4190[] field_39054 = class_9665.<class_4190[]>method_44659(
+   private static final class_4190[] field_39054 = Util.<class_4190[]>method_44659(
       new class_4190[9],
       var0 -> {
          for (int var3 = 0; var3 < 8; var3++) {

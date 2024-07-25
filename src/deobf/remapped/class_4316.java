@@ -41,16 +41,16 @@ import org.lwjgl.opengl.GL11;
 
 public class class_4316 implements class_6491, AutoCloseable {
    private static final Logger field_21017 = LogManager.getLogger();
-   private static final class_4639 field_20928 = new class_4639("textures/environment/moon_phases.png");
-   private static final class_4639 field_20977 = new class_4639("textures/environment/sun.png");
-   private static final class_4639 field_20935 = new class_4639("textures/environment/clouds.png");
-   private static final class_4639 field_20938 = new class_4639("textures/environment/end_sky.png");
-   private static final class_4639 field_20936 = new class_4639("textures/misc/forcefield.png");
-   private static final class_4639 field_20990 = new class_4639("textures/environment/rain.png");
-   private static final class_4639 field_21008 = new class_4639("textures/environment/snow.png");
+   private static final Identifier field_20928 = new Identifier("textures/environment/moon_phases.png");
+   private static final Identifier field_20977 = new Identifier("textures/environment/sun.png");
+   private static final Identifier field_20935 = new Identifier("textures/environment/clouds.png");
+   private static final Identifier field_20938 = new Identifier("textures/environment/end_sky.png");
+   private static final Identifier field_20936 = new Identifier("textures/misc/forcefield.png");
+   private static final Identifier field_20990 = new Identifier("textures/environment/rain.png");
+   private static final Identifier field_21008 = new Identifier("textures/environment/snow.png");
    public static final class_240[] field_20942 = class_240.values();
    private final MinecraftClient field_20994;
-   private final class_7889 field_20951;
+   private final TextureManager field_20951;
    public final class_6122 field_20988;
    private final class_3017 field_20973;
    private class_174 field_20970;
@@ -428,7 +428,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          this.field_20926.close();
       }
 
-      class_4639 var1 = new class_4639("shaders/post/entity_outline.json");
+      Identifier var1 = new Identifier("shaders/post/entity_outline.json");
 
       try {
          this.field_20926 = new class_4067(this.field_20994.method_8577(), this.field_20994.method_8498(), this.field_20994.method_8584(), var1);
@@ -447,7 +447,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
    private void method_20048() {
       this.method_20021();
-      class_4639 var1 = new class_4639("shaders/post/transparency.json");
+      Identifier var1 = new Identifier("shaders/post/transparency.json");
 
       try {
          class_4067 var2 = new class_4067(this.field_20994.method_8577(), this.field_20994.method_8498(), this.field_20994.method_8584(), var1);
@@ -675,7 +675,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          this.field_20970.method_753();
          if (this.field_20968 == null) {
             this.field_20968 = new class_6705(
-               this.field_20970, this, class_9665.method_44661(), this.field_20994.method_8533(), this.field_20973.method_13792()
+               this.field_20970, this, Util.getMainWorkerExecutor(), this.field_20994.method_8533(), this.field_20973.method_13792()
             );
          } else {
             this.field_20968.method_30736(this.field_20970);
@@ -1115,7 +1115,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
 
       class_6377.method_29157(var6, var2, this.field_20994.field_9601, this.field_20994.field_9577.field_45537, var7.method_35956(var2));
-      class_3542.method_16402(16640, MinecraftClient.field_9574);
+      class_3542.method_16402(16640, MinecraftClient.IS_SYSTEM_MAC);
       boolean var21 = class_3111.method_14424();
       if (var21) {
          class_6588.method_30182();
@@ -1160,7 +1160,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          var28 = (long)(1000000000 / var25);
       }
 
-      long var30 = class_9665.method_44657() - var3;
+      long var30 = Util.getMeasuringTimeNano() - var3;
       long var32 = this.field_20989.method_41974(var30);
       long var34 = var32 * 3L / 2L;
       long var36 = class_9299.method_42830(var34, var28, 33333333L);
@@ -1206,17 +1206,17 @@ public class class_4316 implements class_6491, AutoCloseable {
       this.field_20979 = 0;
       this.field_20920 = 0;
       if (this.field_20929 != null) {
-         this.field_20929.method_19712(MinecraftClient.field_9574);
+         this.field_20929.method_19712(MinecraftClient.IS_SYSTEM_MAC);
          this.field_20929.method_19710(this.field_20994.method_8584());
          this.field_20994.method_8584().method_19717(false);
       }
 
       if (this.field_20958 != null) {
-         this.field_20958.method_19712(MinecraftClient.field_9574);
+         this.field_20958.method_19712(MinecraftClient.IS_SYSTEM_MAC);
       }
 
       if (this.method_20036()) {
-         this.field_21000.method_19712(MinecraftClient.field_9574);
+         this.field_21000.method_19712(MinecraftClient.IS_SYSTEM_MAC);
          this.field_20994.method_8584().method_19717(false);
       }
 
@@ -1474,13 +1474,13 @@ public class class_4316 implements class_6491, AutoCloseable {
       if (this.field_20930 != null) {
          var39.method_17416(class_3581.method_16744());
          var39.method_17415();
-         this.field_21001.method_19712(MinecraftClient.field_9574);
+         this.field_21001.method_19712(MinecraftClient.IS_SYSTEM_MAC);
          this.field_21001.method_19710(this.field_20994.method_8584());
          var10.method_16050("translucent");
          this.method_20045(class_3581.method_16762(), var1, var12, var14, var16);
          var10.method_16050("string");
          this.method_20045(class_3581.method_16765(), var1, var12, var14, var16);
-         this.field_20996.method_19712(MinecraftClient.field_9574);
+         this.field_20996.method_19712(MinecraftClient.IS_SYSTEM_MAC);
          this.field_20996.method_19710(this.field_20994.method_8584());
          class_5348.field_27312.method_24420();
          var10.method_16050("particles");
@@ -1517,7 +1517,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_3542.method_16358(var1.method_36058().method_28620());
       if (this.field_20994.field_9577.method_40860() != class_9655.field_49168) {
          if (this.field_20930 != null) {
-            this.field_21006.method_19712(MinecraftClient.field_9574);
+            this.field_21006.method_19712(MinecraftClient.IS_SYSTEM_MAC);
             class_5348.field_27300.method_24420();
             var10.method_16050("clouds");
             this.method_20023(var1, var2, var12, var14, var16);
@@ -2512,7 +2512,7 @@ public class class_4316 implements class_6491, AutoCloseable {
    public void method_20024(long var1) {
       var1 = (long)((double)var1 + 1.0E8);
       this.field_20985 = this.field_20985 | this.field_20968.method_30730();
-      long var3 = class_9665.method_44657();
+      long var3 = Util.getMeasuringTimeNano();
       boolean var5 = false;
       if (this.field_20921.size() > 0) {
          Iterator var6 = this.field_20921.iterator();
@@ -2606,7 +2606,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          class_3542.method_16433();
          class_3542.method_16374();
          class_3542.method_16393();
-         float var18 = (float)(class_9665.method_44650() % 3000L) / 3000.0F;
+         float var18 = (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F;
          float var19 = 0.0F;
          float var20 = 0.0F;
          float var21 = 128.0F;

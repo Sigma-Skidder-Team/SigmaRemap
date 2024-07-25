@@ -9,11 +9,11 @@ import java.util.function.Supplier;
 public interface class_2562 {
    class_2109 method_11639(class_6414 var1);
 
-   default class_4639 method_11640(class_6414 var1, BiConsumer<class_4639, Supplier<JsonElement>> var2) {
+   default Identifier method_11640(class_6414 var1, BiConsumer<Identifier, Supplier<JsonElement>> var2) {
       return this.method_11639(var1).method_9873(var1, var2);
    }
 
-   default class_4639 method_11642(class_6414 var1, String var2, BiConsumer<class_4639, Supplier<JsonElement>> var3) {
+   default Identifier method_11642(class_6414 var1, String var2, BiConsumer<Identifier, Supplier<JsonElement>> var3) {
       return this.method_11639(var1).method_9867(var1, var2, var3);
    }
 

@@ -17,11 +17,11 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class class_6486 implements class_9379, AutoCloseable {
    public static final Logger field_33046 = LogManager.getLogger();
-   public static final Codec<class_5621<class_6486>> field_33043 = class_4639.field_22655
+   public static final Codec<class_5621<class_6486>> field_33043 = Identifier.field_22655
       .xmap(class_5621.<class_6486>method_25495(class_8669.field_44372), class_5621::method_25499);
-   public static final class_5621<class_6486> field_33048 = class_5621.<class_6486>method_25497(class_8669.field_44372, new class_4639("overworld"));
-   public static final class_5621<class_6486> field_33029 = class_5621.<class_6486>method_25497(class_8669.field_44372, new class_4639("the_nether"));
-   public static final class_5621<class_6486> field_33038 = class_5621.<class_6486>method_25497(class_8669.field_44372, new class_4639("the_end"));
+   public static final class_5621<class_6486> field_33048 = class_5621.<class_6486>method_25497(class_8669.field_44372, new Identifier("overworld"));
+   public static final class_5621<class_6486> field_33029 = class_5621.<class_6486>method_25497(class_8669.field_44372, new Identifier("the_nether"));
+   public static final class_5621<class_6486> field_33038 = class_5621.<class_6486>method_25497(class_8669.field_44372, new Identifier("the_end"));
    private static final class_240[] field_33052 = class_240.values();
    public final List<class_3757> field_33053 = Lists.newArrayList();
    public final List<class_3757> field_33031 = Lists.newArrayList();

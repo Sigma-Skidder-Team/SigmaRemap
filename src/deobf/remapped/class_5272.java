@@ -7,7 +7,7 @@ public abstract class class_5272<E extends class_8145> extends class_6521<E> {
       this(class_3581::method_16755);
    }
 
-   public class_5272(Function<class_4639, class_3581> var1) {
+   public class_5272(Function<Identifier, class_3581> var1) {
       super(var1);
    }
 

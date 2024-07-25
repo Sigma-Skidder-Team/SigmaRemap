@@ -550,7 +550,7 @@ public class class_3111 {
       class_7832 var2 = method_14450();
       if (var2 != null) {
          try {
-            InputStream var3 = var2.method_35458(new class_4639("optifine/color.properties")).method_18576();
+            InputStream var3 = var2.method_35458(new Identifier("optifine/color.properties")).method_18576();
             if (var3 == null) {
                return;
             }
@@ -805,7 +805,7 @@ public class class_3111 {
       return field_15454;
    }
 
-   public static class_7889 method_14266() {
+   public static TextureManager method_14266() {
       return field_15454.method_8577();
    }
 
@@ -813,20 +813,20 @@ public class class_3111 {
       return field_15454.method_8498();
    }
 
-   public static InputStream method_14374(class_4639 var0) throws IOException {
+   public static InputStream method_14374(Identifier var0) throws IOException {
       return method_14375(field_15454.method_8498(), var0);
    }
 
-   public static InputStream method_14375(class_7832 var0, class_4639 var1) throws IOException {
+   public static InputStream method_14375(class_7832 var0, Identifier var1) throws IOException {
       class_4038 var4 = var0.method_35458(var1);
       return var4 != null ? var4.method_18576() : null;
    }
 
-   public static class_4038 method_14435(class_4639 var0) throws IOException {
+   public static class_4038 method_14435(Identifier var0) throws IOException {
       return field_15454.method_8498().method_35458(var0);
    }
 
-   public static boolean method_14362(class_4639 var0) {
+   public static boolean method_14362(Identifier var0) {
       if (var0 != null) {
          class_8169 var3 = method_14233(var0);
          return var3 != null;
@@ -835,7 +835,7 @@ public class class_3111 {
       }
    }
 
-   public static boolean method_14363(class_7832 var0, class_4639 var1) {
+   public static boolean method_14363(class_7832 var0, Identifier var1) {
       try {
          class_4038 var4 = var0.method_35458(var1);
          return var4 != null;
@@ -844,7 +844,7 @@ public class class_3111 {
       }
    }
 
-   public static boolean method_14364(class_8169 var0, class_4639 var1) {
+   public static boolean method_14364(class_8169 var0, Identifier var1) {
       return var0 != null && var1 != null ? var0.method_37467(class_3168.field_15844, var1) : false;
    }
 
@@ -886,11 +886,11 @@ public class class_3111 {
       return field_15454.method_8606().method_25060();
    }
 
-   public static boolean method_14247(class_4639 var0) {
+   public static boolean method_14247(Identifier var0) {
       return method_14233(var0) == method_14415();
    }
 
-   public static class_8169 method_14233(class_4639 var0) {
+   public static class_8169 method_14233(Identifier var0) {
       class_6354 var3 = field_15454.method_8521();
       Collection var4 = var3.method_29125();
       List var5 = (List)var4;
@@ -1643,9 +1643,9 @@ public class class_3111 {
    }
 
    public static boolean method_14359(URI var0) {
-      class_9665.method_44655((Exception)null);
-      class_9665.method_44667().method_37582(var0);
-      Exception var3 = class_9665.method_44701();
+      Util.method_44655((Exception)null);
+      Util.getOperatingSystem().method_37582(var0);
+      Exception var3 = Util.method_44701();
       return var3 == null;
    }
 

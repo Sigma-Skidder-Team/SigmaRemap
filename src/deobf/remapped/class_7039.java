@@ -17,23 +17,23 @@ import org.apache.logging.log4j.Logger;
 
 public class class_7039 extends class_1094 {
    private static final Logger field_36287 = LogManager.getLogger();
-   private static final class_4639 field_36328 = new class_4639(field_36292[23], "textures/gui/realms/on_icon.png");
-   private static final class_4639 field_36318 = new class_4639(field_36292[23], "textures/gui/realms/off_icon.png");
-   private static final class_4639 field_36369 = new class_4639(field_36292[23], "textures/gui/realms/expired_icon.png");
-   private static final class_4639 field_36309 = new class_4639(field_36292[23], "textures/gui/realms/expires_soon_icon.png");
-   private static final class_4639 field_36306 = new class_4639(field_36292[23], "textures/gui/realms/leave_icon.png");
-   private static final class_4639 field_36317 = new class_4639(field_36292[23], "textures/gui/realms/invitation_icons.png");
-   private static final class_4639 field_36299 = new class_4639(field_36292[23], "textures/gui/realms/invite_icon.png");
-   private static final class_4639 field_36313 = new class_4639(field_36292[23], "textures/gui/realms/world_icon.png");
-   private static final class_4639 field_36331 = new class_4639(field_36292[23], "textures/gui/title/realms.png");
-   private static final class_4639 field_36343 = new class_4639(field_36292[23], "textures/gui/realms/configure_icon.png");
-   private static final class_4639 field_36316 = new class_4639(field_36292[23], "textures/gui/realms/questionmark.png");
-   private static final class_4639 field_36367 = new class_4639(field_36292[23], "textures/gui/realms/news_icon.png");
-   private static final class_4639 field_36353 = new class_4639(field_36292[23], "textures/gui/realms/popup.png");
-   private static final class_4639 field_36288 = new class_4639(field_36292[23], "textures/gui/realms/darken.png");
-   private static final class_4639 field_36334 = new class_4639(field_36292[23], "textures/gui/realms/cross_icon.png");
-   private static final class_4639 field_36352 = new class_4639(field_36292[23], "textures/gui/realms/trial_icon.png");
-   private static final class_4639 field_36350 = new class_4639("minecraft", "textures/gui/widgets.png");
+   private static final Identifier field_36328 = new Identifier(field_36292[23], "textures/gui/realms/on_icon.png");
+   private static final Identifier field_36318 = new Identifier(field_36292[23], "textures/gui/realms/off_icon.png");
+   private static final Identifier field_36369 = new Identifier(field_36292[23], "textures/gui/realms/expired_icon.png");
+   private static final Identifier field_36309 = new Identifier(field_36292[23], "textures/gui/realms/expires_soon_icon.png");
+   private static final Identifier field_36306 = new Identifier(field_36292[23], "textures/gui/realms/leave_icon.png");
+   private static final Identifier field_36317 = new Identifier(field_36292[23], "textures/gui/realms/invitation_icons.png");
+   private static final Identifier field_36299 = new Identifier(field_36292[23], "textures/gui/realms/invite_icon.png");
+   private static final Identifier field_36313 = new Identifier(field_36292[23], "textures/gui/realms/world_icon.png");
+   private static final Identifier field_36331 = new Identifier(field_36292[23], "textures/gui/title/realms.png");
+   private static final Identifier field_36343 = new Identifier(field_36292[23], "textures/gui/realms/configure_icon.png");
+   private static final Identifier field_36316 = new Identifier(field_36292[23], "textures/gui/realms/questionmark.png");
+   private static final Identifier field_36367 = new Identifier(field_36292[23], "textures/gui/realms/news_icon.png");
+   private static final Identifier field_36353 = new Identifier(field_36292[23], "textures/gui/realms/popup.png");
+   private static final Identifier field_36288 = new Identifier(field_36292[23], "textures/gui/realms/darken.png");
+   private static final Identifier field_36334 = new Identifier(field_36292[23], "textures/gui/realms/cross_icon.png");
+   private static final Identifier field_36352 = new Identifier(field_36292[23], "textures/gui/realms/trial_icon.png");
+   private static final Identifier field_36350 = new Identifier("minecraft", "textures/gui/widgets.png");
    private static final ITextComponent field_36333 = new TranslationTextComponent("mco.invites.nopending");
    private static final ITextComponent field_36344 = new TranslationTextComponent("mco.invites.pending");
    private static final List<ITextComponent> field_36323 = ImmutableList.of(
@@ -55,7 +55,7 @@ public class class_7039 extends class_1094 {
    private static final ITextComponent field_36341 = new TranslationTextComponent(field_36292[1]);
    private static final ITextComponent field_36339 = new TranslationTextComponent("mco.selectServer.info");
    private static final ITextComponent field_36368 = new TranslationTextComponent("mco.news");
-   private static List<class_4639> field_36363 = ImmutableList.of();
+   private static List<Identifier> field_36363 = ImmutableList.of();
    private static final class_8264 field_36302 = new class_8264();
    private static boolean field_36345;
    private static int field_36356 = -1;
@@ -238,7 +238,7 @@ public class class_7039 extends class_1094 {
       this.field_36325 = this.<class_9521>method_1186(
          new class_9521(this.field_941 / 2 + 52, this.method_32244() + 137 - 20, 98, 20, new TranslationTextComponent("mco.selectServer.trial"), var1 -> {
             if (this.field_36291 && !this.field_36301) {
-               class_9665.method_44667().method_37581("https://aka.ms/startjavarealmstrial");
+               Util.getOperatingSystem().method_37581("https://aka.ms/startjavarealmstrial");
                this.field_943.method_8609(this.field_36314);
             }
          })
@@ -250,7 +250,7 @@ public class class_7039 extends class_1094 {
             98,
             20,
             new TranslationTextComponent("mco.selectServer.buy"),
-            var0 -> class_9665.method_44667().method_37581("https://aka.ms/BuyJavaRealms")
+            var0 -> Util.getOperatingSystem().method_37581("https://aka.ms/BuyJavaRealms")
          )
       );
       class_7675 var3 = this.method_32331(this.field_36310);
@@ -435,7 +435,7 @@ public class class_7039 extends class_1094 {
             + "&ref="
             + (!var3.field_39005 ? "expiredRealm" : "expiredTrial");
          this.field_943.field_9600.method_38891(var4);
-         class_9665.method_44667().method_37581(var4);
+         Util.getOperatingSystem().method_37581(var4);
       }
    }
 
@@ -596,7 +596,7 @@ public class class_7039 extends class_1094 {
          byte var10 = 8;
          byte var8 = 8;
          byte var9 = 0;
-         if ((class_9665.method_44650() / 800L & 1L) == 1L) {
+         if ((Util.getMeasuringTimeMs() / 800L & 1L) == 1L) {
             var9 = 8;
          }
 

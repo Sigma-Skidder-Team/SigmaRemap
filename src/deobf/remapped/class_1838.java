@@ -22,7 +22,7 @@ public class class_1838 {
             field_9313.warn("Unknown biome id: ", var6);
             return var1.method_39799(class_6297.method_28740(0));
          } else {
-            throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("Unknown biome id: " + var6));
+            throw (IllegalStateException) Util.method_44658(new IllegalStateException("Unknown biome id: " + var6));
          }
       } else {
          throw new IllegalStateException("Unknown biome id emitted by layers: " + var6);

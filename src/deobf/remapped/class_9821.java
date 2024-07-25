@@ -61,7 +61,7 @@ public class class_9821<R> implements AutoCloseable {
             if (var6 != null) {
                return var6;
             } else {
-               throw (IllegalStateException)class_9665.method_44658(new IllegalStateException());
+               throw (IllegalStateException) Util.method_44658(new IllegalStateException());
             }
          } else {
             return var6;

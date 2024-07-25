@@ -51,7 +51,7 @@ public class class_1056 {
                            }
 
                            var12.method_6228(var14);
-                           class_4639 var15 = new class_4639("optifine.net", var13);
+                           Identifier var15 = new Identifier("optifine.net", var13);
                            var12.method_6234(var15);
                         }
 

@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class class_6322 {
    private static final Logger field_32280 = LogManager.getLogger();
-   private static final Map<class_5621<? extends class_8669<?>>, class_7883<?>> field_32282 = class_9665.<Map<class_5621<? extends class_8669<?>>, class_7883<?>>>method_44660(
+   private static final Map<class_5621<? extends class_8669<?>>, class_7883<?>> field_32282 = Util.<Map<class_5621<? extends class_8669<?>>, class_7883<?>>>method_44660(
       () -> {
          Builder var2 = ImmutableMap.builder();
          method_28816(var2, class_8669.field_44415, class_8760.field_44837, class_8760.field_44837);
@@ -28,7 +28,7 @@ public abstract class class_6322 {
          return var2.build();
       }
    );
-   private static final class_7522 field_32281 = class_9665.<class_7522>method_44660(
+   private static final class_7522 field_32281 = Util.<class_7522>method_44660(
       () -> {
          class_7522 var2 = new class_7522();
          class_8760.method_40235(var2);

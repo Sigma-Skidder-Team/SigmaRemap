@@ -5,12 +5,12 @@ import javax.annotation.Nullable;
 
 public class class_7181 {
    private static String[] field_36926;
-   public static final class_7181 field_36927 = new class_7181((class_4639)null);
-   private final class_4639 field_36924;
+   public static final class_7181 field_36927 = new class_7181((Identifier)null);
+   private final Identifier field_36924;
    private boolean field_36925;
    private Optional<class_2581> field_36923 = Optional.<class_2581>empty();
 
-   public class_7181(class_4639 var1) {
+   public class_7181(Identifier var1) {
       this.field_36924 = var1;
    }
 
@@ -33,7 +33,7 @@ public class class_7181 {
    }
 
    @Nullable
-   public class_4639 method_32899() {
-      return this.field_36923.<class_4639>map(var0 -> class_2581.method_11749(var0)).orElse(this.field_36924);
+   public Identifier method_32899() {
+      return this.field_36923.<Identifier>map(var0 -> class_2581.method_11749(var0)).orElse(this.field_36924);
    }
 }

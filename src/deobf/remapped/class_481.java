@@ -1,14 +1,14 @@
 package remapped;
 
 public class class_481 extends class_7164<class_4206, class_1898<class_4206>> {
-   private static final class_4639 field_2983 = new class_4639("textures/entity/ghast/ghast.png");
-   private static final class_4639 field_2984 = new class_4639("textures/entity/ghast/ghast_shooting.png");
+   private static final Identifier field_2983 = new Identifier("textures/entity/ghast/ghast.png");
+   private static final Identifier field_2984 = new Identifier("textures/entity/ghast/ghast_shooting.png");
 
    public class_481(class_6122 var1) {
       super(var1, new class_1898<class_4206>(), 1.5F);
    }
 
-   public class_4639 method_2273(class_4206 var1) {
+   public Identifier method_2273(class_4206 var1) {
       return !var1.method_19572() ? field_2983 : field_2984;
    }
 

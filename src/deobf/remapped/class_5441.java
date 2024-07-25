@@ -44,7 +44,7 @@ public class class_5441 implements class_5998 {
       }
    }
 
-   private static Path method_24779(Path var0, class_4639 var1) {
+   private static Path method_24779(Path var0, Identifier var1) {
       return var0.resolve("reports/biomes/" + var1.method_21456() + ".json");
    }
 

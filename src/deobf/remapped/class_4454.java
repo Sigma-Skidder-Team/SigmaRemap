@@ -81,14 +81,14 @@ public class class_4454 {
             class_3111.method_14277("Texture animation: " + var6);
 
             try {
-               class_4639 var7 = new class_4639(var6);
+               Identifier var7 = new Identifier(var6);
                InputStream var8 = var0.method_37466(class_3168.field_15844, var7);
                class_8407 var9 = new class_8407();
                var9.load(var8);
                var8.close();
                class_7450 var10 = method_20649(var9, var7);
                if (var10 != null) {
-                  class_4639 var11 = new class_4639(var10.method_33898());
+                  Identifier var11 = new Identifier(var10.method_33898());
                   if (!class_3111.method_14364(var0, var11)) {
                      class_3111.method_14277("Skipped: " + var6 + ", target texture not loaded from same resource pack");
                   } else {
@@ -106,7 +106,7 @@ public class class_4454 {
       }
    }
 
-   private static class_7450 method_20649(Properties var0, class_4639 var1) {
+   private static class_7450 method_20649(Properties var0, Identifier var1) {
       String var4 = var0.getProperty("from");
       String var5 = var0.getProperty("to");
       int var6 = class_3111.method_14361(var0.getProperty("x"), -1);
@@ -136,7 +136,7 @@ public class class_4454 {
                );
                return null;
             } else {
-               class_4639 var15 = new class_4639(var5);
+               Identifier var15 = new Identifier(var5);
 
                try {
                   InputStream var16 = class_3111.method_14374(var15);
@@ -177,7 +177,7 @@ public class class_4454 {
       class_8881 var4 = class_3111.method_14310();
 
       try {
-         class_4639 var5 = new class_4639(var0);
+         Identifier var5 = new Identifier(var0);
          InputStream var6 = class_3111.method_14374(var5);
          if (var6 == null) {
             return null;

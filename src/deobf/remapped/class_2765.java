@@ -63,7 +63,7 @@ public class class_2765 {
       var4.method_29594(var1, class_4783.field_23846.method_29260());
       class_945 var8 = (class_945)var4.method_28260(var1);
       var8.method_4110(false);
-      var8.method_4099(new class_4639(var0));
+      var8.method_4099(new Identifier(var0));
       var8.method_4107(var2);
       var8.method_4108(class_589.field_3417);
       var8.method_4123(true);
@@ -177,7 +177,7 @@ public class class_2765 {
 
    private static class_6561 method_12595(String var0, class_6331 var1) {
       class_5799 var4 = var1.method_28978();
-      class_6561 var5 = var4.method_26270(new class_4639(var0));
+      class_6561 var5 = var4.method_26270(new Identifier(var0));
       if (var5 == null) {
          String var6 = var0 + ".snbt";
          Path var7 = Paths.get(field_13510, var6);
@@ -198,7 +198,7 @@ public class class_2765 {
       var7.method_4108(class_589.field_3414);
       var7.method_4092(var2);
       var7.method_4110(false);
-      var7.method_4099(new class_4639(var0));
+      var7.method_4099(new Identifier(var0));
       var7.method_4088(var3, var4);
       if (var7.method_4096() == class_1331.field_7306) {
          class_6561 var8 = method_12595(var0, var3);

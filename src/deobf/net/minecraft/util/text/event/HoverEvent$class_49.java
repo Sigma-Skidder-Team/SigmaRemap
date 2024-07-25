@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import javax.annotation.Nullable;
-import net.minecraft.entity.EntityType;
+
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$class_40;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import remapped.class_2392;
-import remapped.class_4639;
+import remapped.Identifier;
 import remapped.class_5734;
 import remapped.class_6539;
 import remapped.class_6629;
@@ -40,7 +40,7 @@ public class HoverEvent$class_49 {
          return null;
       } else {
          JsonObject entitytype = element.getAsJsonObject();
-         class_6629 uuid = class_8669.field_44400.method_39806(new class_4639(class_6539.method_29796(entitytype, "type")));
+         class_6629 uuid = class_8669.field_44400.method_39806(new Identifier(class_6539.method_29796(entitytype, "type")));
          UUID itextcomponent = UUID.fromString(class_6539.method_29796(entitytype, "id"));
          IFormattableTextComponent var6 = ITextComponent$class_40.func_240641_a_(entitytype.get("name"));
          return new HoverEvent$class_49(uuid, itextcomponent, var6);
@@ -52,7 +52,7 @@ public class HoverEvent$class_49 {
       try {
          class_5734 itextcomponent = class_2392.method_10916(component.getString());
          IFormattableTextComponent entitytype = ITextComponent$class_40.func_240643_a_(itextcomponent.method_25965("name"));
-         class_6629 uuid = class_8669.field_44400.method_39806(new class_4639(itextcomponent.method_25965("type")));
+         class_6629 uuid = class_8669.field_44400.method_39806(new Identifier(itextcomponent.method_25965("type")));
          UUID var6 = UUID.fromString(itextcomponent.method_25965("id"));
          return new HoverEvent$class_49(uuid, var6, entitytype);
       } catch (JsonSyntaxException | CommandSyntaxException var7) {

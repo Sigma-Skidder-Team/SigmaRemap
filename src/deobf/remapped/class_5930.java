@@ -3,14 +3,14 @@ package remapped;
 import java.io.IOException;
 
 public class class_5930 implements class_6310<class_1243> {
-   public static final class_4639 field_30076 = new class_4639("brand");
-   private class_4639 field_30078;
+   public static final Identifier field_30076 = new Identifier("brand");
+   private Identifier field_30078;
    private class_8248 field_30077;
 
    public class_5930() {
    }
 
-   public class_5930(class_4639 var1, class_8248 var2) {
+   public class_5930(Identifier var1, class_8248 var2) {
       this.field_30078 = var1;
       this.field_30077 = var2;
    }

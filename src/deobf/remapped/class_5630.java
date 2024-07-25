@@ -30,7 +30,7 @@ public class class_5630 {
       return field_28565;
    }
 
-   public static class_4639 method_25510(class_6325 var0) {
+   public static Identifier method_25510(class_6325 var0) {
       return method_25511().method_39797(var0);
    }
 
@@ -38,20 +38,20 @@ public class class_5630 {
       return method_25511().method_14041(var0);
    }
 
-   public static int method_25521(class_4639 var0) {
+   public static int method_25521(Identifier var0) {
       class_6325 var3 = method_25518(var0);
       return method_25511().method_14041(var3);
    }
 
-   public static class_4859 method_25523(class_4639 var0) {
+   public static class_4859 method_25523(Identifier var0) {
       return class_4859.method_22353(var0);
    }
 
-   public static class_6325 method_25518(class_4639 var0) {
+   public static class_6325 method_25518(Identifier var0) {
       return method_25511().method_39806(var0);
    }
 
-   public static Set<class_4639> method_25515() {
+   public static Set<Identifier> method_25515() {
       return method_25511().method_39805();
    }
 
@@ -63,10 +63,10 @@ public class class_5630 {
       return method_25514(method_25515());
    }
 
-   public static List<class_4859> method_25514(Collection<class_4639> var0) {
+   public static List<class_4859> method_25514(Collection<Identifier> var0) {
       ArrayList var3 = new ArrayList();
 
-      for (class_4639 var5 : var0) {
+      for (Identifier var5 : var0) {
          class_4859 var6 = class_4859.method_22353(var5);
          if (var6 != null) {
             var3.add(var6);

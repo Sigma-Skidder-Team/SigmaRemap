@@ -34,7 +34,7 @@ public class class_2130 extends class_2089 {
 
    public void method_9944(boolean var1) {
       if (var1 && !this.field_10664) {
-         this.field_10661 = class_9665.method_44650();
+         this.field_10661 = Util.getMeasuringTimeMs();
       }
 
       this.field_10664 = var1;
@@ -208,7 +208,7 @@ public class class_2130 extends class_2089 {
          this.field_10666.textRenderer.method_45390(var7, var11, (float)(var5 - this.field_10666.textRenderer.method_45395(var11)), (float)var2, 16777215);
       } else {
          this.field_10666.method_8577().method_35674(field_10507);
-         long var12 = class_9665.method_44650();
+         long var12 = Util.getMeasuringTimeMs();
          if (this.field_10661 == var6.method_3391()) {
             if (var10 >= var6.method_3407()) {
                if (var10 > var6.method_3407()) {

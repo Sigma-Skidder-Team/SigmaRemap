@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class class_1147 {
    private static String[] field_6533;
-   public final Set<class_4639> field_6530 = Sets.newHashSet();
-   public final Set<class_4639> field_6531 = Sets.newHashSet();
+   public final Set<Identifier> field_6530 = Sets.newHashSet();
+   public final Set<Identifier> field_6531 = Sets.newHashSet();
    private final class_7529 field_6532 = new class_7529();
 
    public void method_5087(class_1147 var1) {
@@ -23,7 +23,7 @@ public class class_1147 {
       }
    }
 
-   public void method_5083(class_4639 var1) {
+   public void method_5083(Identifier var1) {
       this.field_6530.add(var1);
    }
 
@@ -31,7 +31,7 @@ public class class_1147 {
       return var1 != null ? this.field_6530.contains(var1.method_41050()) : false;
    }
 
-   public boolean method_5073(class_4639 var1) {
+   public boolean method_5073(Identifier var1) {
       return this.field_6530.contains(var1);
    }
 
@@ -39,7 +39,7 @@ public class class_1147 {
       this.method_5069(var1.method_41050());
    }
 
-   public void method_5069(class_4639 var1) {
+   public void method_5069(Identifier var1) {
       this.field_6530.remove(var1);
       this.field_6531.remove(var1);
    }
@@ -56,7 +56,7 @@ public class class_1147 {
       this.method_5077(var1.method_41050());
    }
 
-   public void method_5077(class_4639 var1) {
+   public void method_5077(Identifier var1) {
       this.field_6531.add(var1);
    }
 

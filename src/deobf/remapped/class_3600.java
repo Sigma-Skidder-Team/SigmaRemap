@@ -7,7 +7,7 @@ public class class_3600 extends class_7067<class_4478> {
       super(var1);
    }
 
-   public class_4639 method_16802(class_4478 var1) {
+   public Identifier method_16802(class_4478 var1) {
       return class_8359.field_42824;
    }
 }

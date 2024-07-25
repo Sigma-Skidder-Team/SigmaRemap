@@ -6,8 +6,8 @@ import com.mojang.datafixers.util.Pair;
 public class class_5474 {
    public static final class_8115 field_27890 = class_9863.method_45479(
       new class_8115(
-         new class_4639("village/desert/town_centers"),
-         new class_4639("empty"),
+         new Identifier("village/desert/town_centers"),
+         new Identifier("empty"),
          ImmutableList.of(
             Pair.of(class_2609.method_11826("village/desert/town_centers/desert_meeting_point_1"), 98),
             Pair.of(class_2609.method_11826("village/desert/town_centers/desert_meeting_point_2"), 98),
@@ -26,8 +26,8 @@ public class class_5474 {
    static {
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/streets"),
-            new class_4639("village/desert/terminators"),
+            new Identifier("village/desert/streets"),
+            new Identifier("village/desert/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/desert/streets/corner_01"), 3),
                Pair.of(class_2609.method_11826("village/desert/streets/corner_02"), 3),
@@ -46,8 +46,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/zombie/streets"),
-            new class_4639("village/desert/zombie/terminators"),
+            new Identifier("village/desert/zombie/streets"),
+            new Identifier("village/desert/zombie/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/desert/zombie/streets/corner_01"), 3),
                Pair.of(class_2609.method_11826("village/desert/zombie/streets/corner_02"), 3),
@@ -66,8 +66,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/houses"),
-            new class_4639("village/desert/terminators"),
+            new Identifier("village/desert/houses"),
+            new Identifier("village/desert/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/desert/houses/desert_small_house_1"), 2),
                Pair.of(class_2609.method_11826("village/desert/houses/desert_small_house_2"), 2),
@@ -106,8 +106,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/zombie/houses"),
-            new class_4639("village/desert/zombie/terminators"),
+            new Identifier("village/desert/zombie/houses"),
+            new Identifier("village/desert/zombie/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/desert/zombie/houses/desert_small_house_1", class_4932.field_25563), 2),
                Pair.of(class_2609.method_11835("village/desert/zombie/houses/desert_small_house_2", class_4932.field_25563), 2),
@@ -146,8 +146,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/terminators"),
-            new class_4639("empty"),
+            new Identifier("village/desert/terminators"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/desert/terminators/terminator_01"), 1),
                Pair.of(class_2609.method_11826("village/desert/terminators/terminator_02"), 1)
@@ -157,8 +157,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/zombie/terminators"),
-            new class_4639("empty"),
+            new Identifier("village/desert/zombie/terminators"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/desert/terminators/terminator_01"), 1),
                Pair.of(class_2609.method_11826("village/desert/zombie/terminators/terminator_02"), 1)
@@ -168,8 +168,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/decor"),
-            new class_4639("empty"),
+            new Identifier("village/desert/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/desert/desert_lamp_1"), 10),
                Pair.of(class_2609.method_11830(class_7024.field_36006), 4),
@@ -181,8 +181,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/zombie/decor"),
-            new class_4639("empty"),
+            new Identifier("village/desert/zombie/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/desert/desert_lamp_1", class_4932.field_25563), 10),
                Pair.of(class_2609.method_11830(class_7024.field_36006), 4),
@@ -194,8 +194,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/desert/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/desert/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/desert/villagers/baby"), 1),
@@ -206,8 +206,8 @@ public class class_5474 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/desert/zombie/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/desert/zombie/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/desert/zombie/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/desert/zombie/villagers/unemployed"), 10)

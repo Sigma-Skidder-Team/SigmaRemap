@@ -14,7 +14,7 @@ public class class_144 extends class_4485<class_2340> {
    }
 
    @Override
-   public Path method_20832(class_4639 var1) {
+   public Path method_20832(Identifier var1) {
       return this.field_21862.method_31600().resolve("data/" + var1.method_21461() + "/tags/fluids/" + var1.method_21456() + ".json");
    }
 

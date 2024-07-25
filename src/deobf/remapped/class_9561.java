@@ -119,7 +119,7 @@ public class class_9561 implements class_9538 {
    }
 
    private class_9491[] method_44175() {
-      class_4639 var3 = new class_4639(this.field_48662);
+      Identifier var3 = new Identifier(this.field_48662);
       if (!class_8669.field_44462.method_39814(var3)) {
          Pattern var8 = Pattern.compile("^block([0-9]+).*$");
          Matcher var5 = var8.matcher(this.field_48662);
@@ -148,7 +148,7 @@ public class class_9561 implements class_9538 {
          }
 
          String var3 = this.field_48668 + ".png";
-         class_4639 var4 = new class_4639(var3);
+         Identifier var4 = new Identifier(var3);
          InputStream var5 = class_3111.method_14374(var4);
          if (var5 == null) {
             return;

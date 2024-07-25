@@ -13,7 +13,7 @@ public class class_5270 implements class_7462 {
       this.field_26939 = var2;
       this.field_26942 = var4;
       this.field_26938 = (double)var6;
-      this.field_26941 = class_9665.method_44650();
+      this.field_26941 = Util.getMeasuringTimeMs();
       this.field_26937 = this.field_26941 + var6;
    }
 
@@ -39,7 +39,7 @@ public class class_5270 implements class_7462 {
 
    @Override
    public double method_33959() {
-      double var3 = (double)(class_9665.method_44650() - this.field_26941) / this.field_26938;
+      double var3 = (double)(Util.getMeasuringTimeMs() - this.field_26941) / this.field_26938;
       return !(var3 < 1.0) ? this.field_26942 : class_9299.method_42794(var3, this.field_26939, this.field_26942);
    }
 
@@ -50,7 +50,7 @@ public class class_5270 implements class_7462 {
 
    @Override
    public long method_33960() {
-      return this.field_26937 - class_9665.method_44650();
+      return this.field_26937 - Util.getMeasuringTimeMs();
    }
 
    @Override

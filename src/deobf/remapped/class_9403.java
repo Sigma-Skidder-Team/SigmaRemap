@@ -43,7 +43,7 @@ public class class_9403 implements class_2053 {
    public String field_48083 = "";
    public final Map<String, Either<class_2843, String>> field_48076;
    public class_9403 field_48075;
-   public class_4639 field_48072;
+   public Identifier field_48072;
 
    public static class_9403 method_43559(Reader var0) {
       return class_6539.<class_9403>method_29801(field_48080, var0, class_9403.class);
@@ -54,7 +54,7 @@ public class class_9403 implements class_2053 {
    }
 
    public class_9403(
-      class_4639 var1,
+      Identifier var1,
       List<class_9487> var2,
       Map<String, Either<class_2843, String>> var3,
       boolean var4,
@@ -96,7 +96,7 @@ public class class_9403 implements class_2053 {
    }
 
    @Override
-   public Collection<class_4639> method_9589() {
+   public Collection<Identifier> method_9589() {
       HashSet var3 = Sets.newHashSet();
 
       for (class_2729 var5 : this.field_48074) {
@@ -111,7 +111,7 @@ public class class_9403 implements class_2053 {
    }
 
    @Override
-   public Collection<class_2843> method_9591(Function<class_4639, class_2053> var1, Set<Pair<String, String>> var2) {
+   public Collection<class_2843> method_9591(Function<Identifier, class_2053> var1, Set<Pair<String, String>> var2) {
       LinkedHashSet var5 = Sets.newLinkedHashSet();
 
       for (class_9403 var6 = this; var6.field_48072 != null && var6.field_48075 == null; var6 = var6.field_48075) {
@@ -170,11 +170,11 @@ public class class_9403 implements class_2053 {
    }
 
    @Override
-   public class_7373 method_9590(class_6560 var1, Function<class_2843, class_5155> var2, class_5598 var3, class_4639 var4) {
+   public class_7373 method_9590(class_6560 var1, Function<class_2843, class_5155> var2, class_5598 var3, Identifier var4) {
       return this.method_43561(var1, this, var2, var3, var4, true);
    }
 
-   public class_7373 method_43561(class_6560 var1, class_9403 var2, Function<class_2843, class_5155> var3, class_5598 var4, class_4639 var5, boolean var6) {
+   public class_7373 method_43561(class_6560 var1, class_9403 var2, Function<class_2843, class_5155> var3, class_5598 var4, Identifier var5, boolean var6) {
       class_5155 var9 = (class_5155)var3.apply(this.method_43564("particle"));
       if (this.method_43567() == class_6560.field_33459) {
          return new class_5976(this.method_43563(), this.method_43556(var1, var2), var9, this.method_43552().method_3100());
@@ -199,7 +199,7 @@ public class class_9403 implements class_2053 {
       }
    }
 
-   private static class_5024 method_43565(class_9487 var0, class_7300 var1, class_5155 var2, class_240 var3, class_5598 var4, class_4639 var5) {
+   private static class_5024 method_43565(class_9487 var0, class_7300 var1, class_5155 var2, class_240 var3, class_5598 var4, Identifier var5) {
       return field_48079.method_33202(var0.field_48352, var0.field_48350, var1, var2, var3, var4, var0.field_48351, var0.field_48348, var5);
    }
 

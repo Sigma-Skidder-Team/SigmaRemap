@@ -47,7 +47,7 @@ public class class_2135 extends class_2596 {
          this.field_10695 = new class_9486(
             this,
             "textbox",
-            (MinecraftClient.getInstance().field_9602.method_43166() - var9) / 2 - 140,
+            (MinecraftClient.getInstance().window.method_43166() - var9) / 2 - 140,
             this.method_32137() - 40,
             140,
             32,
@@ -61,7 +61,7 @@ public class class_2135 extends class_2596 {
       this.field_10695.method_13721(var1 -> this.method_9989());
       this.method_9986();
       this.method_32148(
-         this.field_10711 = new class_5956(this, "toolbar", (MinecraftClient.getInstance().field_9602.method_43166() - var9) / 2 + 16, this.method_32137() - 94)
+         this.field_10711 = new class_5956(this, "toolbar", (MinecraftClient.getInstance().window.method_43166() - var9) / 2 + 16, this.method_32137() - 94)
       );
       this.field_10711.method_32119(false);
    }
@@ -209,9 +209,9 @@ public class class_2135 extends class_2596 {
          this.method_32179(var6);
       }
 
-      int var7 = MinecraftClient.getInstance().field_9602.method_43166() - 200;
+      int var7 = MinecraftClient.getInstance().window.method_43166() - 200;
       int var8 = this.method_32109() - var7;
-      this.method_32150(this.field_10701 = new class_3241(this, "alts", var8 / 2, 69, var7, MinecraftClient.getInstance().field_9602.method_43163() - 169));
+      this.method_32150(this.field_10701 = new class_3241(this, "alts", var8 / 2, 69, var7, MinecraftClient.getInstance().window.method_43163() - 169));
 
       for (class_7309 var10 : var4) {
          this.method_9990(var10);
@@ -227,7 +227,7 @@ public class class_2135 extends class_2596 {
    }
 
    public int method_9982() {
-      return MinecraftClient.getInstance().field_9602.method_43163() / 12 + 280 + MinecraftClient.getInstance().field_9602.method_43163() / 12;
+      return MinecraftClient.getInstance().window.method_43163() / 12 + 280 + MinecraftClient.getInstance().window.method_43163() / 12;
    }
 
    public class_9192 method_9983() {

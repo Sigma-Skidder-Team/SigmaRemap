@@ -13,7 +13,7 @@ import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 
 public class class_3321 {
-   private class_4639 field_16411;
+   private Identifier field_16411;
    private class_3139 field_16409;
    private class_7750 field_16412;
    private class_5123 field_16408 = class_5123.field_26441;
@@ -21,7 +21,7 @@ public class class_3321 {
    private String[][] field_16406;
    private class_6701 field_16407 = class_6701.field_34597;
 
-   private class_3321(class_4639 var1, class_7750 var2, class_5123 var3, Map<String, class_7353> var4, String[][] var5) {
+   private class_3321(Identifier var1, class_7750 var2, class_5123 var3, Map<String, class_7353> var4, String[][] var5) {
       this.field_16411 = var1;
       this.field_16412 = var2;
       this.field_16408 = var3;
@@ -41,19 +41,19 @@ public class class_3321 {
       return this;
    }
 
-   public class_3321 method_15260(class_4639 var1) {
+   public class_3321 method_15260(Identifier var1) {
       this.field_16411 = var1;
       return this;
    }
 
    public class_3321 method_15261(
-      class_6098 var1, ITextComponent var2, ITextComponent var3, class_4639 var4, class_3361 var5, boolean var6, boolean var7, boolean var8
+           class_6098 var1, ITextComponent var2, ITextComponent var3, Identifier var4, class_3361 var5, boolean var6, boolean var7, boolean var8
    ) {
       return this.method_15262(new class_7750(var1, var2, var3, var4, var5, var6, var7, var8));
    }
 
    public class_3321 method_15263(
-      class_8525 var1, ITextComponent var2, ITextComponent var3, class_4639 var4, class_3361 var5, boolean var6, boolean var7, boolean var8
+           class_8525 var1, ITextComponent var2, ITextComponent var3, Identifier var4, class_3361 var5, boolean var6, boolean var7, boolean var8
    ) {
       return this.method_15262(new class_7750(new class_6098(var1.method_10803()), var2, var3, var4, var5, var6, var7, var8));
    }
@@ -90,7 +90,7 @@ public class class_3321 {
       return this;
    }
 
-   public boolean method_15264(Function<class_4639, class_3139> var1) {
+   public boolean method_15264(Function<Identifier, class_3139> var1) {
       if (this.field_16411 != null) {
          if (this.field_16409 == null) {
             this.field_16409 = (class_3139)var1.apply(this.field_16411);
@@ -102,7 +102,7 @@ public class class_3321 {
       }
    }
 
-   public class_3139 method_15268(class_4639 var1) {
+   public class_3139 method_15268(Identifier var1) {
       if (this.method_15264(var0 -> null)) {
          if (this.field_16406 == null) {
             this.field_16406 = this.field_16407.method_30697(this.field_16410.keySet());
@@ -115,7 +115,7 @@ public class class_3321 {
    }
 
    public class_3139 method_15270(Consumer<class_3139> var1, String var2) {
-      class_3139 var5 = this.method_15268(new class_4639(var2));
+      class_3139 var5 = this.method_15268(new Identifier(var2));
       var1.accept(var5);
       return var5;
    }
@@ -205,7 +205,7 @@ public class class_3321 {
    }
 
    public static class_3321 method_15259(JsonObject var0, class_8096 var1) {
-      class_4639 var4 = !var0.has("parent") ? null : new class_4639(class_6539.method_29796(var0, "parent"));
+      Identifier var4 = !var0.has("parent") ? null : new Identifier(class_6539.method_29796(var0, "parent"));
       class_7750 var5 = !var0.has("display") ? null : class_7750.method_35159(class_6539.method_29783(var0, "display"));
       class_5123 var6 = !var0.has("rewards") ? class_5123.field_26441 : class_5123.method_23511(class_6539.method_29783(var0, "rewards"));
       Map var7 = class_7353.method_33506(class_6539.method_29783(var0, "criteria"), var1);
@@ -267,7 +267,7 @@ public class class_3321 {
    }
 
    public static class_3321 method_15267(class_8248 var0) {
-      class_4639 var3 = !var0.readBoolean() ? null : var0.method_37768();
+      Identifier var3 = !var0.readBoolean() ? null : var0.method_37768();
       class_7750 var4 = !var0.readBoolean() ? null : class_7750.method_35165(var0);
       Map var5 = class_7353.method_33507(var0);
       String[][] var6 = new String[var0.method_37778()][];

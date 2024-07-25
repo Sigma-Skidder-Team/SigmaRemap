@@ -19,7 +19,7 @@ public final class class_322 extends class_6541 {
             )
             .apply(var0, var0.stable(class_322::new))
    );
-   private static final float[] field_1188 = class_9665.<float[]>method_44659(new float[13824], var0 -> {
+   private static final float[] field_1188 = Util.<float[]>method_44659(new float[13824], var0 -> {
       for (int var3 = 0; var3 < 24; var3++) {
          for (int var4 = 0; var4 < 24; var4++) {
             for (int var5 = 0; var5 < 24; var5++) {
@@ -28,7 +28,7 @@ public final class class_322 extends class_6541 {
          }
       }
    });
-   private static final float[] field_1203 = class_9665.<float[]>method_44659(new float[25], var0 -> {
+   private static final float[] field_1203 = Util.<float[]>method_44659(new float[25], var0 -> {
       for (int var3 = -2; var3 <= 2; var3++) {
          for (int var4 = -2; var4 <= 2; var4++) {
             float var5 = 10.0F / class_9299.method_42843((float)(var3 * var3 + var4 * var4) + 0.2F);

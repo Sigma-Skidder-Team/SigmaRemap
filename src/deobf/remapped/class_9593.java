@@ -19,25 +19,25 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class class_9593 {
-   private final class_7889 field_48888;
+   private final TextureManager field_48888;
    private final File field_48890;
    private final MinecraftSessionService field_48889;
    private final LoadingCache<String, Map<Type, MinecraftProfileTexture>> field_48891;
 
-   public class_9593(class_7889 var1, File var2, MinecraftSessionService var3) {
+   public class_9593(TextureManager var1, File var2, MinecraftSessionService var3) {
       this.field_48888 = var1;
       this.field_48890 = var2;
       this.field_48889 = var3;
       this.field_48891 = CacheBuilder.newBuilder().expireAfterAccess(15L, TimeUnit.SECONDS).build(new class_173(this, var3));
    }
 
-   public class_4639 method_44311(MinecraftProfileTexture var1, Type var2) {
+   public Identifier method_44311(MinecraftProfileTexture var1, Type var2) {
       return this.method_44312(var1, var2, (class_3219)null);
    }
 
-   private class_4639 method_44312(MinecraftProfileTexture var1, Type var2, class_3219 var3) {
+   private Identifier method_44312(MinecraftProfileTexture var1, Type var2, class_3219 var3) {
       String var6 = Hashing.sha1().hashUnencodedChars(var1.getHash()).toString();
-      class_4639 var7 = new class_4639("skins/" + var6);
+      Identifier var7 = new Identifier("skins/" + var6);
       class_8143 var8 = this.field_48888.method_35679(var7);
       if (var8 == null) {
          File var9 = new File(this.field_48890, var6.length() <= 2 ? "xx" : var6.substring(0, 2));
@@ -85,7 +85,7 @@ public class class_9593 {
                   }
                })));
       };
-      class_9665.method_44661().execute(var6);
+      Util.getMainWorkerExecutor().execute(var6);
    }
 
    public Map<Type, MinecraftProfileTexture> method_44310(GameProfile var1) {

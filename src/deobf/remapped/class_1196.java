@@ -232,9 +232,9 @@ public class class_1196 extends class_9128 {
          GL11.glDisable(2896);
          class_3542.method_16420(33986, 240.0F, 240.0F);
          class_9162.method_42212();
-         class_7889 var10000 = field_46692.method_8577();
+         TextureManager var10000 = field_46692.method_8577();
          field_46692.method_8577();
-         var10000.method_35674(class_7889.field_40364);
+         var10000.method_35674(TextureManager.field_40364);
       }
    }
 

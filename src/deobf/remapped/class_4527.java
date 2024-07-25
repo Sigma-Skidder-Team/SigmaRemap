@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class class_4527 {
-   private static final Map<String, String> field_22097 = class_9665.<Map<String, String>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<String, String> field_22097 = Util.<Map<String, String>>method_44659(Maps.newHashMap(), var0 -> {
       var0.put("Village", "Village");
       var0.put("Mineshaft", "Mineshaft");
       var0.put("Mansion", "Mansion");
@@ -25,7 +25,7 @@ public class class_4527 {
       var0.put("Fortress", "Fortress");
       var0.put("EndCity", "EndCity");
    });
-   private static final Map<String, String> field_22101 = class_9665.<Map<String, String>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<String, String> field_22101 = Util.<Map<String, String>>method_44659(Maps.newHashMap(), var0 -> {
       var0.put("Iglu", "Igloo");
       var0.put("TeDP", "Desert_Pyramid");
       var0.put("TeJP", "Jungle_Pyramid");

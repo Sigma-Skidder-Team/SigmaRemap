@@ -38,14 +38,14 @@ public class class_9298 extends class_9716 {
    }
 
    @Override
-   public class_4639 method_44889() {
+   public Identifier method_44889() {
       class_753 var3 = this.method_44881();
       return var3 != null ? var3.method_3402() : class_1512.method_6921(this.method_37328());
    }
 
    @Nullable
    @Override
-   public class_4639 method_44891() {
+   public Identifier method_44891() {
       class_753 var3 = this.method_44881();
       return var3 != null ? var3.method_3397() : null;
    }
@@ -57,13 +57,13 @@ public class class_9298 extends class_9716 {
 
    @Nullable
    @Override
-   public class_4639 method_44883() {
+   public Identifier method_44883() {
       class_753 var3 = this.method_44881();
       return var3 != null ? var3.method_3413() : null;
    }
 
-   public static class_9211 method_42784(class_4639 var0, String var1) {
-      class_7889 var4 = MinecraftClient.getInstance().method_8577();
+   public static class_9211 method_42784(Identifier var0, String var1) {
+      TextureManager var4 = MinecraftClient.getInstance().method_8577();
       Object var5 = var4.method_35679(var0);
       if (var5 == null) {
          var5 = new class_9211(
@@ -79,8 +79,8 @@ public class class_9298 extends class_9716 {
       return (class_9211)var5;
    }
 
-   public static class_4639 method_42785(String var0) {
-      return new class_4639("skins/" + Hashing.sha1().hashUnencodedChars(class_6660.method_30578(var0)));
+   public static Identifier method_42785(String var0) {
+      return new Identifier("skins/" + Hashing.sha1().hashUnencodedChars(class_6660.method_30578(var0)));
    }
 
    @Override

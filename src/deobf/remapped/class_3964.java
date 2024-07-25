@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_3964<T extends class_5886 & class_2354, M extends class_6521<T>> extends class_4171<T, M> {
-   private static final class_4639 field_19200 = new class_4639("textures/entity/skeleton/stray_overlay.png");
+   private static final Identifier field_19200 = new Identifier("textures/entity/skeleton/stray_overlay.png");
    private final class_6300<T> field_19199 = new class_6300<T>(0.25F, true);
 
    public class_3964(class_2514<T, M> var1) {

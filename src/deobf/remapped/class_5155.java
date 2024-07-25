@@ -44,7 +44,7 @@ public class class_5155 implements AutoCloseable {
    private boolean field_26542;
    private class_7832 field_26530;
 
-   public class_5155(class_4639 var1) {
+   public class_5155(Identifier var1) {
       this.field_26555 = null;
       this.field_26560 = new class_8353(var1, 0, 0, (class_4016)null);
       this.field_26549 = null;
@@ -63,8 +63,8 @@ public class class_5155 implements AutoCloseable {
    private class_5155(class_5155 var1) {
       this.field_26555 = var1.field_26555;
       class_8353 var4 = var1.field_26560;
-      class_4639 var5 = var4.method_38459();
-      class_4639 var6 = new class_4639(var5.method_21461(), var5.method_21456() + ".sprite_single");
+      Identifier var5 = var4.method_38459();
+      Identifier var6 = new Identifier(var5.method_21461(), var5.method_21456() + ".sprite_single");
       int var7 = var4.method_38453();
       int var8 = var4.method_38456();
       class_4016 var9 = var4.method_38457();
@@ -264,7 +264,7 @@ public class class_5155 implements AutoCloseable {
       return this.field_26547 + var5 * (float)var1 / 16.0F;
    }
 
-   public class_4639 method_23644() {
+   public Identifier method_23644() {
       return class_8353.method_38455(this.field_26560);
    }
 
@@ -565,8 +565,8 @@ public class class_5155 implements AutoCloseable {
    }
 
    public class_5155 method_23637(String var1, int var2) {
-      class_4639 var5 = new class_4639(this.method_23644().method_21461(), this.method_23644().method_21456() + var1);
-      class_4639 var6 = this.field_26555.method_38503(var5);
+      Identifier var5 = new Identifier(this.method_23644().method_21461(), this.method_23644().method_21456() + var1);
+      Identifier var6 = this.field_26555.method_38503(var5);
       class_5155 var7 = null;
       if (this.field_26530.method_35456(var6)) {
          try (class_4038 var8 = this.field_26530.method_35458(var6)) {

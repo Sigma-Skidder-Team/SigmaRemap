@@ -82,7 +82,7 @@ public class class_5787 extends class_9128 {
                if (var7.field_30027.field_17800 > 0
                   && field_46692.field_9577.field_45560.field_30027.field_17800 != var7.field_30027.field_17800
                   && var7.field_30027.field_17800 > 4) {
-                  int var8 = GLFW.glfwGetKey(field_46692.field_9602.method_43181(), var7.field_30027.field_17800);
+                  int var8 = GLFW.glfwGetKey(field_46692.window.method_43181(), var7.field_30027.field_17800);
                   var7.field_30024 = var8 == 1;
                }
             }

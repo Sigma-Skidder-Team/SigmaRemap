@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class class_9205 extends class_2089 implements IRenderable, class_5888 {
-   private static final class_4639 field_47096 = new class_4639("textures/gui/recipe_book.png");
+   private static final Identifier field_47096 = new Identifier("textures/gui/recipe_book.png");
    private final List<class_2285> field_47099 = Lists.newArrayList();
    private boolean field_47098;
    private int field_47090;

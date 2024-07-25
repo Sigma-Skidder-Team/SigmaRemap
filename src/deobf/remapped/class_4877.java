@@ -16,7 +16,7 @@ public class class_4877 extends class_1047 {
    public class_4877(int var1, class_5734 var2) {
       super(var1);
       this.field_24267 = var2;
-      class_4639 var5 = class_4639.method_21455(var2.method_25965("id"));
+      Identifier var5 = Identifier.method_21455(var2.method_25965("id"));
       if (var5 == null) {
          var2.method_25941("id", "minecraft:pig");
       } else {

@@ -9,7 +9,7 @@ public class class_3739 {
    private String field_18298 = null;
    private String field_18288 = null;
    private class_1614 field_18293 = null;
-   private Map<class_4639, class_4639> field_18305 = null;
+   private Map<Identifier, Identifier> field_18305 = null;
    private class_1719 field_18295 = null;
    private class_4859[] field_18301 = null;
    private class_8750 field_18284 = null;
@@ -27,19 +27,19 @@ public class class_3739 {
    private static final class_5469[] field_18290 = new class_5469[]{class_5469.field_27886, class_5469.field_27882};
    private static final class_5469[] field_18300 = new class_5469[0];
    private static final class_9077[] field_18289 = new class_9077[0];
-   private static final class_4639 field_18294 = new class_4639("textures/gui/container/anvil.png");
-   private static final class_4639 field_18283 = new class_4639("textures/gui/container/beacon.png");
-   private static final class_4639 field_18286 = new class_4639("textures/gui/container/brewing_stand.png");
-   private static final class_4639 field_18296 = new class_4639("textures/gui/container/generic_54.png");
-   private static final class_4639 field_18291 = new class_4639("textures/gui/container/crafting_table.png");
-   private static final class_4639 field_18276 = new class_4639("textures/gui/container/horse.png");
-   private static final class_4639 field_18285 = new class_4639("textures/gui/container/dispenser.png");
-   private static final class_4639 field_18275 = new class_4639("textures/gui/container/enchanting_table.png");
-   private static final class_4639 field_18304 = new class_4639("textures/gui/container/furnace.png");
-   private static final class_4639 field_18302 = new class_4639("textures/gui/container/hopper.png");
-   private static final class_4639 field_18274 = new class_4639("textures/gui/container/inventory.png");
-   private static final class_4639 field_18273 = new class_4639("textures/gui/container/shulker_box.png");
-   private static final class_4639 field_18280 = new class_4639("textures/gui/container/villager2.png");
+   private static final Identifier field_18294 = new Identifier("textures/gui/container/anvil.png");
+   private static final Identifier field_18283 = new Identifier("textures/gui/container/beacon.png");
+   private static final Identifier field_18286 = new Identifier("textures/gui/container/brewing_stand.png");
+   private static final Identifier field_18296 = new Identifier("textures/gui/container/generic_54.png");
+   private static final Identifier field_18291 = new Identifier("textures/gui/container/crafting_table.png");
+   private static final Identifier field_18276 = new Identifier("textures/gui/container/horse.png");
+   private static final Identifier field_18285 = new Identifier("textures/gui/container/dispenser.png");
+   private static final Identifier field_18275 = new Identifier("textures/gui/container/enchanting_table.png");
+   private static final Identifier field_18304 = new Identifier("textures/gui/container/furnace.png");
+   private static final Identifier field_18302 = new Identifier("textures/gui/container/hopper.png");
+   private static final Identifier field_18274 = new Identifier("textures/gui/container/inventory.png");
+   private static final Identifier field_18273 = new Identifier("textures/gui/container/shulker_box.png");
+   private static final Identifier field_18280 = new Identifier("textures/gui/container/villager2.png");
 
    public class_3739(Properties var1, String var2) {
       class_6284 var5 = new class_6284("CustomGuis");
@@ -113,7 +113,7 @@ public class class_3739 {
       }
    }
 
-   private static class_4639 method_17338(String var0, String var1) {
+   private static Identifier method_17338(String var0, String var1) {
       if (var0 != null) {
          var0 = var0.trim();
          String var4 = class_5525.method_25096(var0, var1);
@@ -121,18 +121,18 @@ public class class_3739 {
             var4 = var4 + ".png";
          }
 
-         return new class_4639(var1 + "/" + var4);
+         return new Identifier(var1 + "/" + var4);
       } else {
          return null;
       }
    }
 
-   private static Map<class_4639, class_4639> method_17321(Properties var0, String var1, class_1614 var2, String var3, String var4) {
+   private static Map<Identifier, Identifier> method_17321(Properties var0, String var1, class_1614 var2, String var3, String var4) {
       HashMap var7 = new HashMap();
       String var8 = var0.getProperty(var1);
       if (var8 != null) {
-         class_4639 var9 = method_17323(var2);
-         class_4639 var10 = method_17338(var8, var4);
+         Identifier var9 = method_17323(var2);
+         Identifier var10 = method_17338(var8, var4);
          if (var9 != null && var10 != null) {
             var7.put(var9, var10);
          }
@@ -147,8 +147,8 @@ public class class_3739 {
             var12 = class_8251.method_37819(var12, "/", ".png");
             String var13 = var3 + var12 + ".png";
             String var14 = var0.getProperty(var11);
-            class_4639 var15 = new class_4639(var13);
-            class_4639 var16 = method_17338(var14, var4);
+            Identifier var15 = new Identifier(var13);
+            Identifier var16 = method_17338(var14, var4);
             var7.put(var15, var16);
          }
       }
@@ -156,7 +156,7 @@ public class class_3739 {
       return var7;
    }
 
-   private static class_4639 method_17323(class_1614 var0) {
+   private static Identifier method_17323(class_1614 var0) {
       if (var0 == null) {
          return null;
       } else {
@@ -450,8 +450,8 @@ public class class_3739 {
       return this.field_18293;
    }
 
-   public class_4639 method_17329(class_4639 var1) {
-      class_4639 var4 = this.field_18305.get(var1);
+   public Identifier method_17329(Identifier var1) {
+      Identifier var4 = this.field_18305.get(var1);
       return var4 != null ? var4 : var1;
    }
 

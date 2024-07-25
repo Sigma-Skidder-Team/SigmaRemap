@@ -9,7 +9,7 @@ public class class_1201 {
    public class_1201(byte[] var1) {
       this.field_6708 = var1;
       if (var1.length != 2048) {
-         throw (IllegalArgumentException)class_9665.method_44658(new IllegalArgumentException("ChunkNibbleArrays should be 2048 bytes not: " + var1.length));
+         throw (IllegalArgumentException) Util.method_44658(new IllegalArgumentException("ChunkNibbleArrays should be 2048 bytes not: " + var1.length));
       }
    }
 

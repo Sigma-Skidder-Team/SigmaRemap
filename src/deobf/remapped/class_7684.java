@@ -23,11 +23,11 @@ public class class_7684 extends class_9128 {
                boolean var5 = false;
                int var6 = 14;
                if (this.method_42007("Show Player")) {
-                  var6 += this.method_34823(0, field_46692.field_9602.method_43163() - 23, 114);
+                  var6 += this.method_34823(0, field_46692.window.method_43163() - 23, 114);
                }
 
                if (this.method_42007("Show Armor")) {
-                  var6 += this.method_34822(var6, field_46692.field_9602.method_43163() - 14) + 10;
+                  var6 += this.method_34822(var6, field_46692.window.method_43163() - 14) + 10;
                }
 
                if (!this.method_42016("Cords").equals("None")) {
@@ -58,7 +58,7 @@ public class class_7684 extends class_9128 {
       class_73.method_87(
          class_5320.field_27161,
          (float)var1,
-         (float)(field_46692.field_9602.method_43163() - var2),
+         (float)(field_46692.window.method_43163() - var2),
          var6,
          class_314.method_1444(class_1255.field_6918.field_6917, 0.8F)
       );

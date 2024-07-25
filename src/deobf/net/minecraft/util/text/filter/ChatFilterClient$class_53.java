@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import remapped.class_2696;
-import remapped.class_9665;
+import remapped.Util;
 
 public class ChatFilterClient$class_53 implements IChatFilter {
    private final GameProfile field_244585_b;
@@ -39,7 +39,7 @@ public class ChatFilterClient$class_53 implements IChatFilter {
                )
          )
          .collect(ImmutableList.toImmutableList());
-      return class_9665.method_44680(var4)
+      return Util.method_44680(var4)
          .<Optional<List<String>>>thenApply(
             p_244590_0_ -> Optional.<List<String>>of(
                   p_244590_0_.stream().<String>map(p_244588_0_ -> p_244588_0_.orElse("")).collect(ImmutableList.toImmutableList())

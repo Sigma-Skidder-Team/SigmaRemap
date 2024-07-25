@@ -15,9 +15,9 @@ import org.apache.logging.log4j.Logger;
 
 public class class_1991 extends class_1094 {
    private static final Logger field_10098 = LogManager.getLogger();
-   private static final class_4639 field_10085 = new class_4639("realms", "textures/gui/realms/link_icons.png");
-   private static final class_4639 field_10093 = new class_4639("realms", "textures/gui/realms/trailer_icons.png");
-   private static final class_4639 field_10106 = new class_4639("realms", "textures/gui/realms/slot_frame.png");
+   private static final Identifier field_10085 = new Identifier("realms", "textures/gui/realms/link_icons.png");
+   private static final Identifier field_10093 = new Identifier("realms", "textures/gui/realms/trailer_icons.png");
+   private static final Identifier field_10106 = new Identifier("realms", "textures/gui/realms/slot_frame.png");
    private static final ITextComponent field_10086 = new TranslationTextComponent("mco.template.info.tooltip");
    private static final ITextComponent field_10095 = new TranslationTextComponent("mco.template.trailer.tooltip");
    private final class_7875 field_10091;
@@ -67,7 +67,7 @@ public class class_1991 extends class_1094 {
    @Override
    public boolean method_26940(double var1, double var3, int var5) {
       if (this.field_10096 && this.field_10089 != null) {
-         class_9665.method_44667().method_37581("https://www.minecraft.net/realms/adventure-maps-in-1-9");
+         Util.getOperatingSystem().method_37581("https://www.minecraft.net/realms/adventure-maps-in-1-9");
          return true;
       } else {
          return super.method_26940(var1, var3, var5);
@@ -169,7 +169,7 @@ public class class_1991 extends class_1094 {
       if (this.method_9192()) {
          class_2496 var3 = this.method_9222();
          if (!"".equals(var3.field_12415)) {
-            class_9665.method_44667().method_37581(var3.field_12415);
+            Util.getOperatingSystem().method_37581(var3.field_12415);
          }
       }
    }
@@ -178,7 +178,7 @@ public class class_1991 extends class_1094 {
       if (this.method_9192()) {
          class_2496 var3 = this.method_9222();
          if (!"".equals(var3.field_12422)) {
-            class_9665.method_44667().method_37581(var3.field_12422);
+            Util.getOperatingSystem().method_37581(var3.field_12422);
          }
       }
    }

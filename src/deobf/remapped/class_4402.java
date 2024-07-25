@@ -35,7 +35,7 @@ public class class_4402 {
                   )
                   .apply(var1, class_4402::new)
          )
-         .orElseGet(class_9665.method_44690("Failed to read POI section: ", field_21547::error), () -> new class_4402(var0, false, ImmutableList.of()));
+         .orElseGet(Util.method_44690("Failed to read POI section: ", field_21547::error), () -> new class_4402(var0, false, ImmutableList.of()));
    }
 
    public class_4402(Runnable var1) {
@@ -74,7 +74,7 @@ public class class_4402 {
          this.field_21549.computeIfAbsent(var5, var0 -> Sets.newHashSet()).add(var1);
          return true;
       } else if (!var5.equals(var7.method_36341())) {
-         throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("POI data mismatch: already registered at " + var4));
+         throw (IllegalStateException) Util.method_44658(new IllegalStateException("POI data mismatch: already registered at " + var4));
       } else {
          return false;
       }
@@ -98,7 +98,7 @@ public class class_4402 {
          this.field_21545.run();
          return var5;
       } else {
-         throw (IllegalStateException)class_9665.method_44658(new IllegalStateException("POI never registered at " + var1));
+         throw (IllegalStateException) Util.method_44658(new IllegalStateException("POI never registered at " + var1));
       }
    }
 

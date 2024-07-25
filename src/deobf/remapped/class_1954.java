@@ -50,7 +50,7 @@ public class class_1954 {
 
    private static void method_9047(class_4085 var0) {
       Throwable var3 = var0.method_18830();
-      String var4 = (!var0.method_18838() ? "(optional) " : "") + var0.method_18835() + " failed! " + class_9665.method_44664(var3);
+      String var4 = (!var0.method_18838() ? "(optional) " : "") + var0.method_18835() + " failed! " + Util.method_44664(var3);
       method_9042(var0.method_18832(), !var0.method_18838() ? TextFormatting.YELLOW : TextFormatting.RED, var4);
       if (var3 instanceof class_2832) {
          class_2832 var5 = (class_2832)var3;
@@ -104,7 +104,7 @@ public class class_1954 {
    }
 
    private static void method_9042(class_6331 var0, TextFormatting var1, String var2) {
-      var0.method_28990(var0x -> true).forEach(var2x -> var2x.method_26286(new StringTextComponent(var2).mergeStyle(var1), class_9665.field_49232));
+      var0.method_28990(var0x -> true).forEach(var2x -> var2x.method_26286(new StringTextComponent(var2).mergeStyle(var1), Util.NIL_UUID));
    }
 
    public static void method_9039(class_6331 var0) {

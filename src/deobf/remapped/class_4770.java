@@ -43,10 +43,10 @@ public class class_4770 extends class_446 {
          GL11.glColor3f(1.0F, 1.0F, 1.0F);
          class_3542.method_16410(180.0F, 1.0F, 0.0F, 0.0F);
          class_3542.method_16410(180.0F, 0.0F, 0.0F, 1.0F);
-         float var4 = (float)(this.field_23121.field_9602.method_43163() - this.method_32129() - this.field_23121.field_9602.method_43163() / 2);
-         float var5 = (float)(this.field_23121.field_9602.method_43166() - this.method_32189() - this.field_23121.field_9602.method_43166() / 2);
-         float var6 = (float)Math.atan((double)(var4 / (float)(this.field_23121.field_9602.method_43163() / 2))) * 20.0F;
-         float var7 = (float)Math.atan((double)(var5 / (float)(this.field_23121.field_9602.method_43166() / 2))) * 20.0F;
+         float var4 = (float)(this.field_23121.window.method_43163() - this.method_32129() - this.field_23121.window.method_43163() / 2);
+         float var5 = (float)(this.field_23121.window.method_43166() - this.method_32189() - this.field_23121.window.method_43166() / 2);
+         float var6 = (float)Math.atan((double)(var4 / (float)(this.field_23121.window.method_43163() / 2))) * 20.0F;
+         float var7 = (float)Math.atan((double)(var5 / (float)(this.field_23121.window.method_43166() / 2))) * 20.0F;
          class_3542.method_16410(-var6, 1.0F, 0.0F, 0.0F);
          class_3542.method_16410(-var7, 0.0F, 1.0F, 0.0F);
          UUID var8 = UUID.fromString(this.field_23119.method_33322().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.field_23119.method_33322());

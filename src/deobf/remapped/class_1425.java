@@ -99,7 +99,7 @@ public class class_1425 {
 
    public String method_6548() {
       if (this.field_7708 == null) {
-         this.field_7708 = class_9665.method_44671("effect", class_8669.field_44436.method_39797(this));
+         this.field_7708 = Util.createTranslationKey("effect", class_8669.field_44436.method_39797(this));
       }
 
       return this.field_7708;

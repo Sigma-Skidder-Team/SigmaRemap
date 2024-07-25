@@ -6,7 +6,7 @@ import com.google.gson.JsonSerializationContext;
 import java.util.Random;
 
 public final class class_9813 implements class_3374 {
-   public static final class_4639 field_49739 = new class_4639("binomial_with_bonus_count");
+   public static final Identifier field_49739 = new Identifier("binomial_with_bonus_count");
    private final int field_49736;
    private final float field_49738;
 
@@ -39,7 +39,7 @@ public final class class_9813 implements class_3374 {
    }
 
    @Override
-   public class_4639 method_15563() {
+   public Identifier method_15563() {
       return field_49739;
    }
 }

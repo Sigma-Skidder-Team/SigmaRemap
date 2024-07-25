@@ -66,7 +66,7 @@ public class class_9451 {
       return class_8669.field_44462.method_14041(var0);
    }
 
-   public static class_6414 method_43712(class_4639 var0) {
+   public static class_6414 method_43712(Identifier var0) {
       return class_8669.field_44462.method_39814(var0) ? class_8669.field_44462.method_39806(var0) : null;
    }
 

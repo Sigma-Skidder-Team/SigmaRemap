@@ -3,7 +3,7 @@ package remapped;
 import javax.annotation.Nullable;
 
 public interface class_3560 {
-   class_4639 method_16556();
+   Identifier method_16556();
 
    @Nullable
    class_7633 method_16553(class_3541 var1);

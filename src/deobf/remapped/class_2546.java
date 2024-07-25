@@ -15,7 +15,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_2546 extends class_9331<class_7333> {
-   private static final class_4639 field_12617 = new class_4639("textures/gui/container/creative_inventory/tabs.png");
+   private static final Identifier field_12617 = new Identifier("textures/gui/container/creative_inventory/tabs.png");
    private static final class_4657 field_12610 = new class_4657(45);
    private static final ITextComponent field_12614 = new TranslationTextComponent("inventory.binSlot");
    private static int field_12605 = class_8230.field_42278.method_37688();
@@ -27,7 +27,7 @@ public class class_2546 extends class_9331<class_7333> {
    private class_6487 field_12615;
    private boolean field_12613;
    private boolean field_12604;
-   private final Map<class_4639, class_2307<class_2451>> field_12616 = Maps.newTreeMap();
+   private final Map<Identifier, class_2307<class_2451>> field_12616 = Maps.newTreeMap();
 
    public class_2546(class_704 var1) {
       super(new class_7333(var1), var1.field_3853, StringTextComponent.EMPTY);
@@ -616,7 +616,7 @@ public class class_2546 extends class_9331<class_7333> {
          }
       }
 
-      this.field_943.method_8577().method_35674(new class_4639("textures/gui/container/creative_inventory/tab_" + var7.method_37703()));
+      this.field_943.method_8577().method_35674(new Identifier("textures/gui/container/creative_inventory/tab_" + var7.method_37703()));
       this.method_9781(var1, this.field_10984, this.field_10962, 0, 0, this.field_10981, this.field_10973);
       this.field_12608.method_6767(var1, var3, var4, var2);
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);

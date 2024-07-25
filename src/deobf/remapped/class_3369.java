@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_3369 extends class_4556<class_4653, class_379<class_4653>> {
-   private static final class_4639 field_16611 = new class_4639("textures/entity/wither/wither_armor.png");
+   private static final Identifier field_16611 = new Identifier("textures/entity/wither/wither_armor.png");
    private final class_379<class_4653> field_16609 = new class_379<class_4653>(0.5F);
 
    public class_3369(class_2514<class_4653, class_379<class_4653>> var1) {
@@ -14,7 +14,7 @@ public class class_3369 extends class_4556<class_4653, class_379<class_4653>> {
    }
 
    @Override
-   public class_4639 method_21124() {
+   public Identifier method_21124() {
       return field_16611;
    }
 

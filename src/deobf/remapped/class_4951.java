@@ -77,18 +77,18 @@ public class class_4951 {
    }
 
    public void method_22688(Consumer<class_4219> var1, String var2) {
-      class_4639 var5 = class_8669.field_44382.method_39797(this.field_25614);
-      if (!new class_4639(var2).equals(var5)) {
-         this.method_22689(var1, new class_4639(var2));
+      Identifier var5 = class_8669.field_44382.method_39797(this.field_25614);
+      if (!new Identifier(var2).equals(var5)) {
+         this.method_22689(var1, new Identifier(var2));
       } else {
          throw new IllegalStateException("Shaped Recipe " + var2 + " should remove its 'save' argument");
       }
    }
 
-   public void method_22689(Consumer<class_4219> var1, class_4639 var2) {
+   public void method_22689(Consumer<class_4219> var1, Identifier var2) {
       this.method_22696(var2);
       this.field_25620
-         .method_15260(new class_4639("recipes/root"))
+         .method_15260(new Identifier("recipes/root"))
          .method_15272("has_the_recipe", class_8435.method_38807(var2))
          .method_15258(class_7365.method_33536(var2))
          .method_15271(class_6701.field_34598);
@@ -102,12 +102,12 @@ public class class_4951 {
             this.field_25616,
             this.field_25619,
             this.field_25620,
-            new class_4639(var2.method_21461(), "recipes/" + this.field_25614.method_11226().method_37691() + "/" + var2.method_21456())
+            new Identifier(var2.method_21461(), "recipes/" + this.field_25614.method_11226().method_37691() + "/" + var2.method_21456())
          )
       );
    }
 
-   private void method_22696(class_4639 var1) {
+   private void method_22696(Identifier var1) {
       if (this.field_25616.isEmpty()) {
          throw new IllegalStateException("No pattern is defined for shaped recipe " + var1 + "!");
       } else {

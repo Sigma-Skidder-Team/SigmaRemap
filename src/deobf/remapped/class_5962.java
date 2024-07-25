@@ -11,7 +11,7 @@ public class class_5962 implements AutoCloseable {
       this.field_30378 = var1;
       this.field_30380 = var2;
       this.field_30379 = new class_7884(128, 128, true);
-      class_4639 var5 = class_8451.method_38864(var1).method_35684("map/" + var2.method_32926(), this.field_30379);
+      Identifier var5 = class_8451.method_38864(var1).method_35684("map/" + var2.method_32926(), this.field_30379);
       this.field_30377 = class_3581.method_16732(var5);
    }
 

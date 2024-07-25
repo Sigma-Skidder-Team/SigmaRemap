@@ -25,9 +25,9 @@ public interface class_2994<T extends class_8932<?>> {
    class_2994<class_5638> field_14726 = method_13695("stonecutting", new class_9423<class_5638>(class_5638::new));
    class_2994<class_667> field_14719 = method_13695("smithing", new class_1141());
 
-   T method_13696(class_4639 var1, JsonObject var2);
+   T method_13696(Identifier var1, JsonObject var2);
 
-   T method_13697(class_4639 var1, class_8248 var2);
+   T method_13697(Identifier var1, class_8248 var2);
 
    void method_13694(class_8248 var1, T var2);
 

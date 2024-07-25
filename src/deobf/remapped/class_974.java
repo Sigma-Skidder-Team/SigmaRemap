@@ -4,10 +4,10 @@ import java.util.Properties;
 
 public class class_974 {
    private String field_4992 = null;
-   private class_4639 field_4986 = null;
+   private Identifier field_4986 = null;
    private int field_4979;
    private int[] field_4982 = null;
-   private class_4639[] field_4994 = null;
+   private Identifier[] field_4994 = null;
    private int[] field_4976 = null;
    private class_4859[] field_4989 = null;
    private class_8750 field_4988 = null;
@@ -23,7 +23,7 @@ public class class_974 {
    private class_8750 field_4987 = null;
    private class_9614[] field_4984 = null;
 
-   public class_974(Properties var1, String var2, class_4639 var3, int var4, String var5, class_6284 var6) {
+   public class_974(Properties var1, String var2, Identifier var3, int var4, String var5, class_6284 var6) {
       this.field_4992 = var2;
       this.field_4986 = var3;
       this.field_4979 = var4;
@@ -93,9 +93,9 @@ public class class_974 {
       } else if (this.field_4994 != null) {
          return true;
       } else {
-         this.field_4994 = new class_4639[this.field_4982.length];
+         this.field_4994 = new Identifier[this.field_4982.length];
          boolean var4 = this.field_4992.startsWith("optifine/mob/");
-         class_4639 var5 = class_8192.method_37527(this.field_4986, var4);
+         Identifier var5 = class_8192.method_37527(this.field_4986, var4);
          if (var5 == null) {
             class_3111.method_14317("Invalid path: " + this.field_4986.method_21456());
             return false;
@@ -103,7 +103,7 @@ public class class_974 {
             for (int var6 = 0; var6 < this.field_4994.length; var6++) {
                int var7 = this.field_4982[var6];
                if (var7 > 1) {
-                  class_4639 var8 = class_8192.method_37539(var5, var7);
+                  Identifier var8 = class_8192.method_37539(var5, var7);
                   if (var8 == null) {
                      class_3111.method_14317("Invalid path: " + this.field_4986.method_21456());
                      return false;
@@ -293,7 +293,7 @@ public class class_974 {
       }
    }
 
-   public class_4639 method_4262(class_4639 var1, int var2) {
+   public Identifier method_4262(Identifier var1, int var2) {
       if (this.field_4994 != null && this.field_4994.length != 0) {
          int var5 = 0;
          if (this.field_4976 != null) {

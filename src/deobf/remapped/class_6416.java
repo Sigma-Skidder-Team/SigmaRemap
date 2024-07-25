@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class class_6416 {
    private static String[] field_32768;
-   private static final Map<class_6414, class_3581> field_32766 = class_9665.<Map<class_6414, class_3581>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_6414, class_3581> field_32766 = Util.<Map<class_6414, class_3581>>method_44659(Maps.newHashMap(), var0 -> {
       class_3581 var3 = class_3581.method_16765();
       var0.put(class_4783.field_23460, var3);
       class_3581 var4 = class_3581.method_16756();
@@ -249,7 +249,7 @@ public class class_6416 {
       var0.put(class_4783.field_23320, var6);
       var0.put(class_4783.field_23269, var6);
    });
-   private static final Map<class_2340, class_3581> field_32765 = class_9665.<Map<class_2340, class_3581>>method_44659(Maps.newHashMap(), var0 -> {
+   private static final Map<class_2340, class_3581> field_32765 = Util.<Map<class_2340, class_3581>>method_44659(Maps.newHashMap(), var0 -> {
       class_3581 var3 = class_3581.method_16762();
       var0.put(class_8532.field_43676, var3);
       var0.put(class_8532.field_43674, var3);

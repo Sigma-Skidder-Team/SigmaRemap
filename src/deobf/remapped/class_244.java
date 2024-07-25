@@ -32,13 +32,13 @@ public class class_244 {
    private static class_4789[] field_837;
 
    public static String method_1063() {
-      class_8208 var2 = class_9665.method_44667();
+      OperatingSystem var2 = Util.getOperatingSystem();
       switch (var2) {
-         case field_41987:
+         case WINDOWS:
             return "MC_OS_WINDOWS";
-         case field_41983:
+         case OSX:
             return "MC_OS_MAC";
-         case field_41988:
+         case LINUX:
             return "MC_OS_LINUX";
          default:
             return "MC_OS_OTHER";

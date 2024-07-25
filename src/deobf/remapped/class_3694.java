@@ -17,7 +17,7 @@ public class class_3694 extends class_7789<class_4849> {
    }
 
    public class_4849 method_17180(JsonObject var1, JsonDeserializationContext var2, class_7279[] var3) {
-      class_4639 var6 = new class_4639(class_6539.method_29796(var1, "block"));
+      Identifier var6 = new Identifier(class_6539.method_29796(var1, "block"));
       class_6414 var7 = class_8669.field_44462.method_39794(var6).orElseThrow(() -> new IllegalArgumentException("Can't find block " + var6));
       class_8021 var8 = var7.method_29306();
       HashSet var9 = Sets.newHashSet();

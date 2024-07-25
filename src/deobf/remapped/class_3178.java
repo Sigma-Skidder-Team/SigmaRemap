@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 
 public interface class_3178 {
-   class_4639 method_14642();
+   Identifier method_14642();
 
    class_2057 method_14657();
 

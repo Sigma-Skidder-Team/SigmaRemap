@@ -6,13 +6,13 @@ import java.util.Map;
 import java.util.Random;
 
 public class class_71 {
-   private static final class_4639 field_99 = new class_4639("igloo/top");
-   private static final class_4639 field_96 = new class_4639("igloo/middle");
-   private static final class_4639 field_101 = new class_4639("igloo/bottom");
-   private static final Map<class_4639, class_1331> field_98 = ImmutableMap.of(
+   private static final Identifier field_99 = new Identifier("igloo/top");
+   private static final Identifier field_96 = new Identifier("igloo/middle");
+   private static final Identifier field_101 = new Identifier("igloo/bottom");
+   private static final Map<Identifier, class_1331> field_98 = ImmutableMap.of(
       field_99, new class_1331(3, 5, 5), field_96, new class_1331(1, 3, 1), field_101, new class_1331(3, 6, 7)
    );
-   private static final Map<class_4639, class_1331> field_100 = ImmutableMap.of(
+   private static final Map<Identifier, class_1331> field_100 = ImmutableMap.of(
       field_99, class_1331.field_7306, field_96, new class_1331(2, -3, 4), field_101, new class_1331(0, -3, -2)
    );
 

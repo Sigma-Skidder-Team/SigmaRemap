@@ -205,7 +205,7 @@ public abstract class class_5348 {
       class_3542.method_16463(5890);
       class_3542.method_16438();
       class_3542.method_16476();
-      long var3 = class_9665.method_44650() * 8L;
+      long var3 = Util.getMeasuringTimeMs() * 8L;
       float var5 = (float)(var3 % 110000L) / 110000.0F;
       float var6 = (float)(var3 % 30000L) / 30000.0F;
       class_3542.method_16413(-var5, var6, 0.0F);

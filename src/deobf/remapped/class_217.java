@@ -30,7 +30,7 @@ public class class_217 extends class_3418 {
             if (var11 != var7) {
                var12.method_13368(class_240.field_817);
                class_240[] var14 = new class_240[]{var11, class_240.field_817};
-               var15 = class_9665.<class_240>method_44697(var14, var2);
+               var15 = Util.<class_240>method_44697(var14, var2);
                var16 = var2.nextInt(3) + 3;
             } else {
                var15 = var7;

@@ -1,13 +1,13 @@
 package remapped;
 
 public class class_3683 extends class_3954<class_6946> {
-   public static final class_4639 field_18059 = new class_4639("textures/atlas/blocks.png");
-   public static final class_4639 field_18048 = new class_4639("item/empty_armor_slot_helmet");
-   public static final class_4639 field_18058 = new class_4639("item/empty_armor_slot_chestplate");
-   public static final class_4639 field_18050 = new class_4639("item/empty_armor_slot_leggings");
-   public static final class_4639 field_18053 = new class_4639("item/empty_armor_slot_boots");
-   public static final class_4639 field_18055 = new class_4639("item/empty_armor_slot_shield");
-   private static final class_4639[] field_18057 = new class_4639[]{field_18053, field_18050, field_18058, field_18048};
+   public static final Identifier field_18059 = new Identifier("textures/atlas/blocks.png");
+   public static final Identifier field_18048 = new Identifier("item/empty_armor_slot_helmet");
+   public static final Identifier field_18058 = new Identifier("item/empty_armor_slot_chestplate");
+   public static final Identifier field_18050 = new Identifier("item/empty_armor_slot_leggings");
+   public static final Identifier field_18053 = new Identifier("item/empty_armor_slot_boots");
+   public static final Identifier field_18055 = new Identifier("item/empty_armor_slot_shield");
+   private static final Identifier[] field_18057 = new Identifier[]{field_18053, field_18050, field_18058, field_18048};
    private static final class_6943[] field_18054 = new class_6943[]{
       class_6943.field_35704, class_6943.field_35708, class_6943.field_35698, class_6943.field_35700
    };

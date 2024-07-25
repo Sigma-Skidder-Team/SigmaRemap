@@ -3,12 +3,12 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 
 public abstract class class_1629<T extends class_8383> extends class_2208<T> implements class_474 {
-   private static final class_4639 field_8482 = new class_4639("textures/gui/recipe_button.png");
+   private static final Identifier field_8482 = new Identifier("textures/gui/recipe_button.png");
    public final class_3840 field_8483;
    private boolean field_8484;
-   private final class_4639 field_8481;
+   private final Identifier field_8481;
 
-   public class_1629(T var1, class_3840 var2, class_7051 var3, ITextComponent var4, class_4639 var5) {
+   public class_1629(T var1, class_3840 var2, class_7051 var3, ITextComponent var4, Identifier var5) {
       super((T)var1, var3, var4);
       this.field_8483 = var2;
       this.field_8481 = var5;

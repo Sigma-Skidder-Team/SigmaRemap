@@ -60,7 +60,7 @@ public class class_8286 {
          LinkedHashMap var4 = Maps.newLinkedHashMap();
 
          for (Entry var6 : var3.entrySet()) {
-            class_4639 var7 = new class_4639((String)var6.getKey());
+            Identifier var7 = new Identifier((String)var6.getKey());
             class_1425 var8 = class_8669.field_44436.method_39794(var7).orElseThrow(() -> new JsonSyntaxException("Unknown effect '" + var7 + "'"));
             class_3479 var9 = class_3479.method_15974(class_6539.method_29782((JsonElement)var6.getValue(), (String)var6.getKey()));
             var4.put(var8, var9);

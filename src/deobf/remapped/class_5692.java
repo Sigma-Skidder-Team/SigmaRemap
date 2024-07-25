@@ -28,7 +28,7 @@ public class class_5692 {
       this.field_28833.method_18079(var1.method_30516());
 
       for (Entry var5 : var1.method_30514().entrySet()) {
-         class_3139 var6 = this.field_28833.method_18078((class_4639)var5.getKey());
+         class_3139 var6 = this.field_28833.method_18078((Identifier)var5.getKey());
          if (var6 == null) {
             field_28835.warn("Server informed client about progress for unknown advancement {}", var5.getKey());
          } else {

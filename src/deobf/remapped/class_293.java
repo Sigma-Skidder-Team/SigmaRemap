@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 
 public class class_293 {
-   private static final class_4639 field_1066 = new class_4639("textures/entity/end_portal.png");
+   private static final Identifier field_1066 = new Identifier("textures/entity/end_portal.png");
 
    public static void method_1308(class_2336 var0, double var1, double var3, double var5) {
       var0.method_10688(var1, var3, var5);

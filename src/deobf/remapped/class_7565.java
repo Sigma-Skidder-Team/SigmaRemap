@@ -49,12 +49,12 @@ public class class_7565 extends class_367 {
          String var4 = this.method_42016("Position");
          switch (var4) {
             case "Center":
-               this.field_38545 = MinecraftClient.getInstance().field_9602.method_43166() / 2 - this.field_38556 / 2;
-               this.field_38544 = MinecraftClient.getInstance().field_9602.method_43163() / 2 + 40;
+               this.field_38545 = MinecraftClient.getInstance().window.method_43166() / 2 - this.field_38556 / 2;
+               this.field_38544 = MinecraftClient.getInstance().window.method_43163() / 2 + 40;
                break;
             case "Bottom":
-               this.field_38545 = MinecraftClient.getInstance().field_9602.method_43166() / 2 - this.field_38556 / 2;
-               this.field_38544 = MinecraftClient.getInstance().field_9602.method_43163() - 200;
+               this.field_38545 = MinecraftClient.getInstance().window.method_43166() / 2 - this.field_38556 / 2;
+               this.field_38544 = MinecraftClient.getInstance().window.method_43163() - 200;
          }
 
          this.field_38545 -= 100;

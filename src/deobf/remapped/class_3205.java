@@ -3,7 +3,7 @@ package remapped;
 import java.io.IOException;
 
 public class class_3205 extends class_2840<int[]> {
-   private static final class_4639 field_16002 = new class_4639("textures/colormap/grass.png");
+   private static final Identifier field_16002 = new Identifier("textures/colormap/grass.png");
 
    public int[] method_14741(class_7832 var1, class_3492 var2) {
       try {

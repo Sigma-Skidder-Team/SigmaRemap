@@ -11,7 +11,7 @@ public class class_6301 extends class_7934 {
    }
 
    @Override
-   public Pair<class_4639, class_4639> method_35900() {
+   public Pair<Identifier, Identifier> method_35900() {
       return Pair.of(class_3683.field_18059, class_3683.field_18055);
    }
 }

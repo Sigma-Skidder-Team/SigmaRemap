@@ -10,7 +10,7 @@ public abstract class class_4171<T extends class_8145, M extends class_6521<T>> 
    public static <T extends class_5834> void method_19349(
       class_6521<T> var0,
       class_6521<T> var1,
-      class_4639 var2,
+      Identifier var2,
       class_7966 var3,
       class_2565 var4,
       int var5,
@@ -34,7 +34,7 @@ public abstract class class_4171<T extends class_8145, M extends class_6521<T>> 
    }
 
    public static <T extends class_5834> void method_19348(
-      class_6521<T> var0, class_4639 var1, class_7966 var2, class_2565 var3, int var4, T var5, float var6, float var7, float var8
+           class_6521<T> var0, Identifier var1, class_7966 var2, class_2565 var3, int var4, T var5, float var6, float var7, float var8
    ) {
       class_7907 var11 = var3.method_11645(class_3581.method_16755(var1));
       var0.method_45499(var2, var11, var4, class_6353.method_29110(var5, 0.0F), var6, var7, var8, 1.0F);
@@ -44,7 +44,7 @@ public abstract class class_4171<T extends class_8145, M extends class_6521<T>> 
       return this.field_20302.method_11447();
    }
 
-   public class_4639 method_19346(T var1) {
+   public Identifier method_19346(T var1) {
       return this.field_20302.method_11446((T)var1);
    }
 

@@ -1,13 +1,13 @@
 package remapped;
 
 public class class_2759 extends class_7164<class_2022, class_5301> {
-   private static final class_4639 field_13490 = new class_4639("textures/entity/bat.png");
+   private static final Identifier field_13490 = new Identifier("textures/entity/bat.png");
 
    public class_2759(class_6122 var1) {
       super(var1, new class_5301(), 0.25F);
    }
 
-   public class_4639 method_12555(class_2022 var1) {
+   public Identifier method_12555(class_2022 var1) {
       return field_13490;
    }
 

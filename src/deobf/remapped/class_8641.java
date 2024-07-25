@@ -15,7 +15,7 @@ public class class_8641 {
                TranslationTextComponent var4 = new TranslationTextComponent("chat.type.announcement", ((class_9155)var0x.getSource()).method_42189(), var3);
                class_8145 var5 = ((class_9155)var0x.getSource()).method_42200();
                if (var5 == null) {
-                  ((class_9155)var0x.getSource()).method_42177().method_1600().method_39983(var4, ChatType.SYSTEM, class_9665.field_49232);
+                  ((class_9155)var0x.getSource()).method_42177().method_1600().method_39983(var4, ChatType.SYSTEM, Util.NIL_UUID);
                } else {
                   ((class_9155)var0x.getSource()).method_42177().method_1600().method_39983(var4, ChatType.CHAT, var5.method_37328());
                }

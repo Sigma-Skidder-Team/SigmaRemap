@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.TextFormatting;
 
 public class class_3888 extends class_2089 {
-   private static final Map<class_3801, String> field_18927 = class_9665.<EnumMap<class_3801, String>>method_44659(
+   private static final Map<class_3801, String> field_18927 = Util.<EnumMap<class_3801, String>>method_44659(
       new EnumMap<class_3801, String>(class_3801.class), var0 -> {
          var0.put(class_3801.field_18598, "SW");
          var0.put(class_3801.field_18592, "S");
@@ -549,7 +549,7 @@ public class class_3888 extends class_2089 {
                var30 = (Collection)class_7860.method_35555(var27.method_8360(), class_7860.field_40138);
             }
 
-            for (class_4639 var23 : var30) {
+            for (Identifier var23 : var30) {
                var11.add("#" + var23);
             }
          }
@@ -574,7 +574,7 @@ public class class_3888 extends class_2089 {
                var32 = (Collection)class_7860.method_35555(var28.method_22005(), class_7860.field_39971);
             }
 
-            for (class_4639 var36 : var32) {
+            for (Identifier var36 : var32) {
                var11.add("#" + var36);
             }
          }
@@ -597,7 +597,7 @@ public class class_3888 extends class_2089 {
    private String method_17988(Entry<class_5019<?>, Comparable<?>> var1) {
       class_5019 var4 = (class_5019)var1.getKey();
       Comparable var5 = (Comparable)var1.getValue();
-      Object var6 = class_9665.method_44665(var4, var5);
+      Object var6 = Util.getValueAsString(var4, var5);
       if (!Boolean.TRUE.equals(var5)) {
          if (Boolean.FALSE.equals(var5)) {
             var6 = TextFormatting.RED + var6;

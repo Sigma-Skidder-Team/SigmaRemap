@@ -9,9 +9,9 @@ import java.util.Optional;
 import java.util.function.Supplier;
 
 public class class_8796 {
-   private static final Map<class_4639, class_8796> field_45006 = Maps.newHashMap();
+   private static final Map<Identifier, class_8796> field_45006 = Maps.newHashMap();
    public static final class_8796 field_45008 = new class_8796(
-      new class_4639("nether"),
+      new Identifier("nether"),
       (var0, var1, var2) -> new class_7258(
             var2,
             ImmutableList.of(
@@ -25,10 +25,10 @@ public class class_8796 {
             null
          )
    );
-   private final class_4639 field_45007;
+   private final Identifier field_45007;
    private final Function3<class_8796, class_8669<class_6325>, Long, class_7258> field_45009;
 
-   public class_8796(class_4639 var1, Function3<class_8796, class_8669<class_6325>, Long, class_7258> var2) {
+   public class_8796(Identifier var1, Function3<class_8796, class_8669<class_6325>, Long, class_7258> var2) {
       this.field_45007 = var1;
       this.field_45009 = var2;
       field_45006.put(var1, this);

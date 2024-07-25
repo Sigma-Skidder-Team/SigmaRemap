@@ -38,7 +38,7 @@ public class class_4934 extends class_7067<class_1453> {
       }
    }
 
-   public class_4639 method_22628(class_1453 var1) {
+   public Identifier method_22628(class_1453 var1) {
       return class_8359.field_42824;
    }
 }

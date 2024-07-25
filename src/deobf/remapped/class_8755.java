@@ -27,7 +27,7 @@ public class class_8755 implements ArgumentType<class_4382> {
    }
 
    public class_4382 parse(StringReader var1) throws CommandSyntaxException {
-      class_4639 var4 = class_4639.method_21464(var1);
+      Identifier var4 = Identifier.method_21464(var1);
       return class_8669.field_44445.method_39794(var4).orElseThrow(() -> field_44812.create(var4));
    }
 

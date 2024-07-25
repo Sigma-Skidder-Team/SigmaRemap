@@ -54,15 +54,15 @@ public class class_7248 extends class_3200<class_1267> {
          var10.field_20271 = 0.0F;
       }
 
-      class_4639 var26;
+      Identifier var26;
       if (!(this.field_15989.nextFloat() < 0.05F)) {
-         var26 = new class_4639(class_4721.method_21826()[this.field_15989.nextInt(class_4721.method_21826().length)]);
+         var26 = new Identifier(class_4721.method_21826()[this.field_15989.nextInt(class_4721.method_21826().length)]);
       } else {
-         var26 = new class_4639(class_4721.method_21825()[this.field_15989.nextInt(class_4721.method_21825().length)]);
+         var26 = new Identifier(class_4721.method_21825()[this.field_15989.nextInt(class_4721.method_21825().length)]);
       }
 
       class_6561 var13 = var3.method_26279(var26);
-      class_6631 var14 = class_9665.<class_6631>method_44697(class_6631.values(), this.field_15989);
+      class_6631 var14 = Util.<class_6631>method_44697(class_6631.values(), this.field_15989);
       class_9022 var15 = !(this.field_15989.nextFloat() < 0.5F) ? class_9022.field_46144 : class_9022.field_46145;
       class_1331 var16 = new class_1331(var13.method_29975().method_12173() / 2, 0, var13.method_29975().method_12185() / 2);
       class_1331 var17 = new class_2034(var4, var5).method_9546();

@@ -13,7 +13,7 @@ public interface class_4219 {
       return var3;
    }
 
-   class_4639 method_19650();
+   Identifier method_19650();
 
    class_2994<?> method_19651();
 
@@ -21,5 +21,5 @@ public interface class_4219 {
    JsonObject method_19649();
 
    @Nullable
-   class_4639 method_19646();
+   Identifier method_19646();
 }

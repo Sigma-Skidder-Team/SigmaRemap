@@ -114,6 +114,6 @@ public class class_3820 extends class_4285<class_1941> {
    }
 
    private class_6629<?> method_17796(Random var1) {
-      return class_9665.<class_6629<?>>method_44697(field_18683, var1);
+      return Util.<class_6629<?>>method_44697(field_18683, var1);
    }
 }

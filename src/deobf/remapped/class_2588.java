@@ -71,11 +71,11 @@ public class class_2588 extends class_2451 {
    }
 
    private static <T> T method_11760(Iterable<T> var0, T var1, boolean var2) {
-      return !var2 ? class_9665.<T>method_44694(var0, (T)var1) : class_9665.<T>method_44656(var0, (T)var1);
+      return !var2 ? Util.<T>method_44694(var0, (T)var1) : Util.<T>method_44656(var0, (T)var1);
    }
 
    private static void method_11757(class_704 var0, ITextComponent var1) {
-      ((class_9359)var0).method_43265(var1, ChatType.GAME_INFO, class_9665.field_49232);
+      ((class_9359)var0).method_43265(var1, ChatType.GAME_INFO, Util.NIL_UUID);
    }
 
    private static <T extends Comparable<T>> String method_11759(class_2522 var0, class_5019<T> var1) {

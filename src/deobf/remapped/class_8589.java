@@ -22,7 +22,7 @@ public final class class_8589 extends MapCodec<class_1150<E>> {
    public <T> Stream<T> keys(DynamicOps<T> var1) {
       return this.field_44010
          .stream()
-         .<class_4639>flatMap(var0 -> class_9665.method_44689(var0.method_27594().map(var1x -> class_8669.field_44431.method_39797((class_6044<?>)var0))))
+         .<Identifier>flatMap(var0 -> Util.method_44689(var0.method_27594().map(var1x -> class_8669.field_44431.method_39797((class_6044<?>)var0))))
          .<T>map(var1x -> (T)var1.createString(var1x.toString()));
    }
 

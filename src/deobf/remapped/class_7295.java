@@ -9,7 +9,7 @@ public class class_7295 {
    public class_7295(String var1, String var2) {
       this.field_37300 = var1;
       this.field_37301 = var2;
-      this.field_37302 = class_9665.method_44650();
+      this.field_37302 = Util.getMeasuringTimeMs();
    }
 
    public String method_33291() {
@@ -21,6 +21,6 @@ public class class_7295 {
    }
 
    public void method_33294() {
-      this.field_37302 = class_9665.method_44650();
+      this.field_37302 = Util.getMeasuringTimeMs();
    }
 }

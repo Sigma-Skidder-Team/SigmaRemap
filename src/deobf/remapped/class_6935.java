@@ -139,7 +139,7 @@ public class class_6935 {
    }
 
    public void method_31706(int var1, boolean var2) {
-      this.field_35648 = class_9665.method_44662(this.field_35649.get(), this.field_35648, var1);
+      this.field_35648 = Util.method_44662(this.field_35649.get(), this.field_35648, var1);
       this.method_31710(var2);
    }
 
@@ -153,7 +153,7 @@ public class class_6935 {
       if (!var4.isEmpty()) {
          String var8;
          if (this.field_35646 == this.field_35648) {
-            int var5 = class_9665.method_44662(var4, this.field_35648, var1);
+            int var5 = Util.method_44662(var4, this.field_35648, var1);
             int var6 = Math.min(var5, this.field_35648);
             int var7 = Math.max(var5, this.field_35648);
             var8 = new StringBuilder(var4).delete(var6, var7).toString();

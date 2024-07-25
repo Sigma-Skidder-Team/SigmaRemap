@@ -11,7 +11,7 @@ public class class_5570 {
    public static final class_3515 field_28300 = method_25289("group", class_4024.method_18539(class_6472::new));
 
    private static class_3515 method_25289(String var0, class_6478<? extends class_3765> var1) {
-      return class_8669.<class_3515, class_3515>method_39792(class_8669.field_44463, new class_4639(var0), new class_3515(var1));
+      return class_8669.<class_3515, class_3515>method_39792(class_8669.field_44463, new Identifier(var0), new class_3515(var1));
    }
 
    public static Object method_25290() {

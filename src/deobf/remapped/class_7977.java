@@ -368,7 +368,7 @@ public class class_7977 {
       return var4;
    }
 
-   public static BufferedImage method_36171(class_4639 var0) {
+   public static BufferedImage method_36171(Identifier var0) {
       try {
          if (!class_3111.method_14362(var0)) {
             return null;
@@ -642,18 +642,18 @@ public class class_7977 {
       class_1920.method_8899(33984);
    }
 
-   public static class_4639 method_36172(class_4639 var0, String var1) {
+   public static Identifier method_36172(Identifier var0, String var1) {
       if (var0 != null) {
          String var4 = var0.method_21456();
          String[] var5 = var4.split(".png");
          String var6 = var5[0];
-         return new class_4639(var0.method_21461(), var6 + "_" + var1 + ".png");
+         return new Identifier(var0.method_21461(), var6 + "_" + var1 + ".png");
       } else {
          return null;
       }
    }
 
-   private static class_5797 method_36168(class_7832 var0, class_4639 var1, int var2, int var3, int var4) {
+   private static class_5797 method_36168(class_7832 var0, Identifier var1, int var2, int var3, int var4) {
       class_5797 var7 = method_36160(var0, var1, var2, var3);
       if (var7 == null) {
          var7 = new class_5797(var2, var3, false);
@@ -671,7 +671,7 @@ public class class_7977 {
       return var5;
    }
 
-   private static class_5797 method_36160(class_7832 var0, class_4639 var1, int var2, int var3) {
+   private static class_5797 method_36160(class_7832 var0, Identifier var1, int var2, int var3) {
       if (var1 == null) {
          return null;
       } else {
@@ -692,14 +692,14 @@ public class class_7977 {
       }
    }
 
-   public static void method_36146(int var0, class_5797 var1, boolean var2, boolean var3, class_7832 var4, class_4639 var5, class_9510 var6) {
+   public static void method_36146(int var0, class_5797 var1, boolean var2, boolean var3, class_7832 var4, Identifier var5, class_9510 var6) {
       int var9 = var1.method_26228();
       int var10 = var1.method_26253();
-      class_4639 var11 = method_36172(var5, "n");
+      Identifier var11 = method_36172(var5, "n");
       class_5797 var12 = method_36168(var4, var11, var9, var10, -8421377);
       class_4970.method_22841(var6.field_48418, 0, var9, var10);
       var12.method_26259(0, 0, 0, 0, 0, var9, var10, var2, var3, false, true);
-      class_4639 var13 = method_36172(var5, "s");
+      Identifier var13 = method_36172(var5, "s");
       class_5797 var14 = method_36168(var4, var13, var9, var10, 0);
       class_4970.method_22841(var6.field_48419, 0, var9, var10);
       var14.method_26259(0, 0, 0, 0, 0, var9, var10, var2, var3, false, true);
@@ -718,7 +718,7 @@ public class class_7977 {
    }
 
    public static void method_36151() {
-      class_7889 var2 = MinecraftClient.getInstance().method_8577();
+      TextureManager var2 = MinecraftClient.getInstance().method_8577();
       class_8143 var3 = var2.method_35679(class_8359.field_42824);
       if (var3 != null) {
          class_9510 var4 = var3.method_37050();

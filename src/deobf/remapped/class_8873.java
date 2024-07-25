@@ -24,7 +24,7 @@ public class class_8873 extends class_7648 {
       this.field_45359 = var1;
    }
 
-   public void method_40817(Map<class_4639, JsonElement> var1, class_7832 var2, class_3492 var3) {
+   public void method_40817(Map<Identifier, JsonElement> var1, class_7832 var2, class_3492 var3) {
       HashMap var6 = Maps.newHashMap();
       var1.forEach((var2x, var3x) -> {
          try {
@@ -48,7 +48,7 @@ public class class_8873 extends class_7648 {
    }
 
    @Nullable
-   public class_3139 method_40818(class_4639 var1) {
+   public class_3139 method_40818(Identifier var1) {
       return this.field_45357.method_18078(var1);
    }
 

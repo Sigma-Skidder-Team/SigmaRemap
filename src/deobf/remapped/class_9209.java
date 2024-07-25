@@ -379,7 +379,7 @@ public class class_9209 {
       }
    }
 
-   private static void method_42512(class_9155 var0, List<class_6098> var1, class_4639 var2) {
+   private static void method_42512(class_9155 var0, List<class_6098> var1, Identifier var2) {
       if (var1.size() != 1) {
          var0.method_42196(new TranslationTextComponent("commands.drop.success.multiple_with_table", var1.size(), var2), false);
       } else {
@@ -414,7 +414,7 @@ public class class_9209 {
 
    private static int method_42510(CommandContext<class_9155> var0, class_8145 var1, class_6374 var2) throws CommandSyntaxException {
       if (var1 instanceof class_5834) {
-         class_4639 var5 = ((class_5834)var1).method_26591();
+         Identifier var5 = ((class_5834)var1).method_26591();
          class_9155 var6 = (class_9155)var0.getSource();
          class_8480 var7 = new class_8480(var6.method_42198());
          class_8145 var8 = var6.method_42200();
@@ -435,7 +435,7 @@ public class class_9209 {
       }
    }
 
-   private static int method_42511(CommandContext<class_9155> var0, class_4639 var1, class_6374 var2) throws CommandSyntaxException {
+   private static int method_42511(CommandContext<class_9155> var0, Identifier var1, class_6374 var2) throws CommandSyntaxException {
       class_9155 var5 = (class_9155)var0.getSource();
       class_8480 var6 = new class_8480(var5.method_42198())
          .method_39069(class_8712.field_44676, var5.method_42200())
@@ -443,7 +443,7 @@ public class class_9209 {
       return method_42509(var0, var1, var6.method_39064(class_4933.field_25565), var2);
    }
 
-   private static int method_42524(CommandContext<class_9155> var0, class_4639 var1, class_1331 var2, class_6098 var3, class_6374 var4) throws CommandSyntaxException {
+   private static int method_42524(CommandContext<class_9155> var0, Identifier var1, class_1331 var2, class_6098 var3, class_6374 var4) throws CommandSyntaxException {
       class_9155 var7 = (class_9155)var0.getSource();
       class_2792 var8 = new class_8480(var7.method_42198())
          .method_39065(class_8712.field_44671, class_1343.method_6216(var2))
@@ -453,7 +453,7 @@ public class class_9209 {
       return method_42509(var0, var1, var8, var4);
    }
 
-   private static int method_42509(CommandContext<class_9155> var0, class_4639 var1, class_2792 var2, class_6374 var3) throws CommandSyntaxException {
+   private static int method_42509(CommandContext<class_9155> var0, Identifier var1, class_2792 var2, class_6374 var3) throws CommandSyntaxException {
       class_9155 var6 = (class_9155)var0.getSource();
       class_1758 var7 = var6.method_42177().method_1722().method_4604(var1);
       List var8 = var7.method_7862(var2);

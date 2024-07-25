@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_82<T extends class_4359> extends class_4171<T, class_62<T>> {
-   private static final class_4639 field_137 = new class_4639("textures/entity/zombie/drowned_outer_layer.png");
+   private static final Identifier field_137 = new Identifier("textures/entity/zombie/drowned_outer_layer.png");
    private final class_62<T> field_138 = new class_62<T>(0.25F, 0.0F, 64, 64);
 
    public class_82(class_2514<T, class_62<T>> var1) {

@@ -10,7 +10,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class class_753 {
    private final GameProfile field_4088;
-   private final Map<Type, class_4639> field_4087 = Maps.newEnumMap(Type.class);
+   private final Map<Type, Identifier> field_4087 = Maps.newEnumMap(Type.class);
    private class_4666 field_4083;
    private int field_4090;
    private boolean field_4091;
@@ -58,19 +58,19 @@ public class class_753 {
       return this.field_4095 != null ? this.field_4095 : class_1512.method_6923(this.field_4088.getId());
    }
 
-   public class_4639 method_3402() {
+   public Identifier method_3402() {
       this.method_3412();
-      return (class_4639)MoreObjects.firstNonNull(this.field_4087.get(Type.SKIN), class_1512.method_6921(this.field_4088.getId()));
+      return (Identifier)MoreObjects.firstNonNull(this.field_4087.get(Type.SKIN), class_1512.method_6921(this.field_4088.getId()));
    }
 
    @Nullable
-   public class_4639 method_3397() {
+   public Identifier method_3397() {
       this.method_3412();
       return this.field_4087.get(Type.CAPE);
    }
 
    @Nullable
-   public class_4639 method_3413() {
+   public Identifier method_3413() {
       this.method_3412();
       return this.field_4087.get(Type.ELYTRA);
    }

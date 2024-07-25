@@ -18,7 +18,7 @@ public class class_3071 extends class_1147 {
       int var6 = 0;
 
       for (class_8932 var8 : var1) {
-         class_4639 var9 = var8.method_41050();
+         Identifier var9 = var8.method_41050();
          if (!this.field_6530.contains(var9) && !var8.method_41053()) {
             this.method_5083(var9);
             this.method_5077(var9);
@@ -37,7 +37,7 @@ public class class_3071 extends class_1147 {
       int var6 = 0;
 
       for (class_8932 var8 : var1) {
-         class_4639 var9 = var8.method_41050();
+         Identifier var9 = var8.method_41050();
          if (this.field_6530.contains(var9)) {
             this.method_5069(var9);
             var5.add(var9);
@@ -49,8 +49,8 @@ public class class_3071 extends class_1147 {
       return var6;
    }
 
-   private void method_14037(class_6265 var1, class_9359 var2, List<class_4639> var3) {
-      var2.field_47794.method_4156(new class_6791(var1, var3, Collections.<class_4639>emptyList(), this.method_5074()));
+   private void method_14037(class_6265 var1, class_9359 var2, List<Identifier> var3) {
+      var2.field_47794.method_4156(new class_6791(var1, var3, Collections.<Identifier>emptyList(), this.method_5074()));
    }
 
    public class_5734 method_14033() {
@@ -58,14 +58,14 @@ public class class_3071 extends class_1147 {
       this.method_5074().method_34309(var3);
       class_3416 var4 = new class_3416();
 
-      for (class_4639 var6 : this.field_6530) {
+      for (Identifier var6 : this.field_6530) {
          var4.add(class_473.method_2261(var6.toString()));
       }
 
       var3.method_25946("recipes", var4);
       class_3416 var8 = new class_3416();
 
-      for (class_4639 var7 : this.field_6531) {
+      for (Identifier var7 : this.field_6531) {
          var8.add(class_473.method_2261(var7.toString()));
       }
 
@@ -86,7 +86,7 @@ public class class_3071 extends class_1147 {
          String var7 = var1.method_15770(var6);
 
          try {
-            class_4639 var8 = new class_4639(var7);
+            Identifier var8 = new Identifier(var7);
             Optional var9 = var3.method_23139(var8);
             if (!var9.isPresent()) {
                field_15087.error("Tried to load unrecognized recipe: {} removed now.", var8);

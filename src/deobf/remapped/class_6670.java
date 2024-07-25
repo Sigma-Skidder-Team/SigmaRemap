@@ -92,7 +92,7 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
       }
    }
 
-   public class_4639 method_30607(class_9716 var1) {
+   public Identifier method_30607(class_9716 var1) {
       return var1.method_44889();
    }
 

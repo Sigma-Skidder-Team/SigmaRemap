@@ -64,7 +64,7 @@ public class class_73 {
    }
 
    public static float method_106() {
-      return (float)field_108.field_9602.method_43189();
+      return (float)field_108.window.method_43189();
    }
 
    public static void method_148(float var0, float var1, float var2, float var3) {
@@ -99,7 +99,7 @@ public class class_73 {
          GL11.glGetIntegerv(3088, var17);
          field_105.push(var17);
          int var18 = var17.get(0);
-         int var9 = MinecraftClient.getInstance().field_9602.method_43198() - var17.get(1) - var17.get(3);
+         int var9 = MinecraftClient.getInstance().window.method_43198() - var17.get(1) - var17.get(3);
          int var10 = var18 + var17.get(2);
          int var11 = var9 + var17.get(3);
          if (var0 < var18) {
@@ -127,7 +127,7 @@ public class class_73 {
          }
       }
 
-      int var19 = MinecraftClient.getInstance().field_9602.method_43198() - var3;
+      int var19 = MinecraftClient.getInstance().window.method_43198() - var3;
       int var20 = var2 - var0;
       int var21 = var3 - var1;
       GL11.glEnable(3089);
@@ -1147,7 +1147,7 @@ public class class_73 {
       int var3 = EXTFramebufferObject.glGenRenderbuffersEXT();
       EXTFramebufferObject.glBindRenderbufferEXT(36161, var3);
       EXTFramebufferObject.glRenderbufferStorageEXT(
-         36161, 34041, MinecraftClient.getInstance().field_9602.method_43178(), MinecraftClient.getInstance().field_9602.method_43198()
+         36161, 34041, MinecraftClient.getInstance().window.method_43178(), MinecraftClient.getInstance().window.method_43198()
       );
       EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, var3);
       EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, var3);
@@ -1252,9 +1252,9 @@ public class class_73 {
 
    public static void method_126(class_6098 var0, int var1, int var2, int var3, int var4) {
       if (var0 != null) {
-         class_7889 var10000 = field_108.method_8577();
+         TextureManager var10000 = field_108.method_8577();
          field_108.method_8577();
-         var10000.method_35674(class_7889.field_40364);
+         var10000.method_35674(TextureManager.field_40364);
          GL11.glPushMatrix();
          GL11.glTranslatef((float)var1, (float)var2, 0.0F);
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
@@ -1282,7 +1282,7 @@ public class class_73 {
          class_9162.method_42212();
          var10000 = field_108.method_8577();
          field_108.method_8577();
-         var10000.method_35674(class_7889.field_40364);
+         var10000.method_35674(TextureManager.field_40364);
          class_2083.method_9717();
       }
    }
@@ -1292,15 +1292,15 @@ public class class_73 {
       class_3542.method_16463(5888);
       class_3542.method_16476();
       field_108.method_8511().field_44875 -= 1101.0F;
-      class_3542.method_16356(1.0 / field_108.field_9602.method_43189(), 1.0 / field_108.field_9602.method_43189(), 1.0);
+      class_3542.method_16356(1.0 / field_108.window.method_43189(), 1.0 / field_108.window.method_43189(), 1.0);
       class_3542.method_16413((float)var1, (float)var2, 0.0F);
       class_3542.method_16403(var3 / 16.0F, var3 / 16.0F, 1.0F);
       field_108.method_8511().method_40264(var0, 0, 0);
       field_108.method_8511().field_44875 += 1101.0F;
       class_9162.method_42212();
-      class_7889 var6 = field_108.method_8577();
+      TextureManager var6 = field_108.method_8577();
       field_108.method_8577();
-      var6.method_35674(class_7889.field_40364);
+      var6.method_35674(TextureManager.field_40364);
       GL11.glPopMatrix();
    }
 
@@ -1309,7 +1309,7 @@ public class class_73 {
       var1 = (int)((float)var1 * class_6763.field_34898);
       ByteBuffer var5 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
-      GL11.glReadPixels(var0, MinecraftClient.getInstance().field_9602.method_43198() - var1, 1, 1, 6407, 5120, var5);
+      GL11.glReadPixels(var0, MinecraftClient.getInstance().window.method_43198() - var1, 1, 1, 6407, 5120, var5);
       return new Color(var5.get(0) * 2, var5.get(1) * 2, var5.get(2) * 2, 1);
    }
 

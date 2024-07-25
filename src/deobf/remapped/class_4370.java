@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-public class class_4370 implements Consumer<BiConsumer<class_4639, class_8843>> {
+public class class_4370 implements Consumer<BiConsumer<Identifier, class_8843>> {
    private static final class_5704 field_21441 = class_5328.method_24286(
       class_9518.method_43918().method_43920(new class_5187(class_3668.field_17870, class_7781.method_35305(1)))
    );
@@ -51,7 +51,7 @@ public class class_4370 implements Consumer<BiConsumer<class_4639, class_8843>> 
       .collect(ImmutableSet.toImmutableSet());
    private static final float[] field_21437 = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
    private static final float[] field_21436 = new float[]{0.025F, 0.027777778F, 0.03125F, 0.041666668F, 0.1F};
-   private final Map<class_4639, class_8843> field_21438 = Maps.newHashMap();
+   private final Map<Identifier, class_8843> field_21438 = Maps.newHashMap();
 
    private static <T> T method_20360(class_8525 var0, class_5481<T> var1) {
       return (T)(field_21440.contains(var0.method_10803()) ? var1.method_13888() : var1.method_24901(class_4332.method_20157()));
@@ -422,7 +422,7 @@ public class class_4370 implements Consumer<BiConsumer<class_4639, class_8843>> 
       return class_1758.method_7864();
    }
 
-   public void accept(BiConsumer<class_4639, class_8843> var1) {
+   public void accept(BiConsumer<Identifier, class_8843> var1) {
       this.method_20346(class_4783.field_23695);
       this.method_20346(class_4783.field_23716);
       this.method_20346(class_4783.field_23440);
@@ -1466,7 +1466,7 @@ public class class_4370 implements Consumer<BiConsumer<class_4639, class_8843>> 
       HashSet var8 = Sets.newHashSet();
 
       for (class_6414 var10 : class_8669.field_44462) {
-         class_4639 var11 = var10.method_10786();
+         Identifier var11 = var10.method_10786();
          if (var11 != class_5931.field_30157 && var8.add(var11)) {
             class_8843 var12 = this.field_21438.remove(var11);
             if (var12 == null) {

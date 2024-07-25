@@ -26,7 +26,7 @@ public class class_1549 {
    public float field_8201 = 1.0F;
    public float field_8182 = 1.0F;
    public float field_8193 = 1.0F;
-   private class_4639 field_8203 = null;
+   private Identifier field_8203 = null;
    private String field_8199 = null;
    private class_4776 field_8194;
    private class_4316 field_8196 = class_3111.method_14387();
@@ -236,11 +236,11 @@ public class class_1549 {
       this.field_8188.add(new class_4905(this, this.field_8192, this.field_8186, var1, var2, var3, var4, var5, var6, var7));
    }
 
-   public class_4639 method_7045() {
+   public Identifier method_7045() {
       return this.field_8203;
    }
 
-   public void method_7058(class_4639 var1) {
+   public void method_7058(Identifier var1) {
       this.field_8203 = var1;
    }
 

@@ -9,7 +9,7 @@ import java.util.Map;
 public class class_7524 extends class_7157 {
    private static String[] field_38422;
 
-   public class_7524(class_4639 var1) {
+   public class_7524(Identifier var1) {
       super(var1);
    }
 

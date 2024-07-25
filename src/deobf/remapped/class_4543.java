@@ -8,14 +8,14 @@ import net.minecraft.util.text.ITextComponent;
 
 public class class_4543 {
    private static String[] field_22154;
-   private final Map<class_4639, class_87> field_22153 = Maps.newHashMap();
+   private final Map<Identifier, class_87> field_22153 = Maps.newHashMap();
 
    @Nullable
-   public class_87 method_21079(class_4639 var1) {
+   public class_87 method_21079(Identifier var1) {
       return this.field_22153.get(var1);
    }
 
-   public class_87 method_21081(class_4639 var1, ITextComponent var2) {
+   public class_87 method_21081(Identifier var1, ITextComponent var2) {
       class_87 var5 = new class_87(var1, var2);
       this.field_22153.put(var1, var5);
       return var5;
@@ -25,7 +25,7 @@ public class class_4543 {
       this.field_22153.remove(var1.method_216());
    }
 
-   public Collection<class_4639> method_21075() {
+   public Collection<Identifier> method_21075() {
       return this.field_22153.keySet();
    }
 
@@ -45,7 +45,7 @@ public class class_4543 {
 
    public void method_21077(class_5734 var1) {
       for (String var5 : var1.method_25952()) {
-         class_4639 var6 = new class_4639(var5);
+         Identifier var6 = new Identifier(var5);
          this.field_22153.put(var6, class_87.method_220(var1.method_25937(var5), var6));
       }
    }

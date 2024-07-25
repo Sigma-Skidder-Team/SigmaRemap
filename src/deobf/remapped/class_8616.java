@@ -108,14 +108,14 @@ public class class_8616 {
       }
    }
 
-   private static class_4639 method_39603(String var0) {
+   private static Identifier method_39603(String var0) {
       int var3 = var0.indexOf(58);
       if (var3 >= 0) {
          String var4 = var0.substring(0, var3);
          String var5 = var0.substring(var3 + 1);
-         return new class_4639(var4, var5);
+         return new Identifier(var4, var5);
       } else {
-         return new class_4639(var0);
+         return new Identifier(var0);
       }
    }
 

@@ -65,19 +65,19 @@ public abstract class class_2609 {
    }
 
    public static Function<class_7599, class_6789> method_11826(String var0) {
-      return var1 -> new class_6789(Either.left(new class_4639(var0)), () -> class_4932.field_25542, var1);
+      return var1 -> new class_6789(Either.left(new Identifier(var0)), () -> class_4932.field_25542, var1);
    }
 
    public static Function<class_7599, class_6789> method_11835(String var0, class_86 var1) {
-      return var2 -> new class_6789(Either.left(new class_4639(var0)), () -> var1, var2);
+      return var2 -> new class_6789(Either.left(new Identifier(var0)), () -> var1, var2);
    }
 
    public static Function<class_7599, class_8781> method_11839(String var0) {
-      return var1 -> new class_8781(Either.left(new class_4639(var0)), () -> class_4932.field_25542, var1);
+      return var1 -> new class_8781(Either.left(new Identifier(var0)), () -> class_4932.field_25542, var1);
    }
 
    public static Function<class_7599, class_8781> method_11841(String var0, class_86 var1) {
-      return var2 -> new class_8781(Either.left(new class_4639(var0)), () -> var1, var2);
+      return var2 -> new class_8781(Either.left(new Identifier(var0)), () -> var1, var2);
    }
 
    public static Function<class_7599, class_9089> method_11830(class_5927<?, ?> var0) {

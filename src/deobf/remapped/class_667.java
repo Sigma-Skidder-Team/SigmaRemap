@@ -5,9 +5,9 @@ public class class_667 implements class_8932<class_6867> {
    private final class_8137 field_3695;
    private final class_8137 field_3697;
    private final class_6098 field_3698;
-   private final class_4639 field_3696;
+   private final Identifier field_3696;
 
-   public class_667(class_4639 var1, class_8137 var2, class_8137 var3, class_6098 var4) {
+   public class_667(Identifier var1, class_8137 var2, class_8137 var3, class_6098 var4) {
       this.field_3696 = var1;
       this.field_3695 = var2;
       this.field_3697 = var3;
@@ -50,7 +50,7 @@ public class class_667 implements class_8932<class_6867> {
    }
 
    @Override
-   public class_4639 method_41050() {
+   public Identifier method_41050() {
       return this.field_3696;
    }
 
