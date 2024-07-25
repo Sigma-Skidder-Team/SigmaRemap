@@ -4,7 +4,7 @@ public class class_8454 extends Module {
    private class_7376 field_43222;
 
    public class_8454() {
-      super(class_5664.field_28711, "Funcraft", "Gameplay for Funcraft");
+      super(Category.MISC, "Funcraft", "Gameplay for Funcraft");
    }
 
    @Override

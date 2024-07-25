@@ -7,7 +7,7 @@ public class class_6799 extends Module {
    private float field_35039;
 
    public class_6799() {
-      super(class_5664.field_28716, "Gomme", "Speed for GommeHD");
+      super(Category.MOVEMENT, "Gomme", "Speed for GommeHD");
    }
 
    @Override

@@ -21,7 +21,7 @@ public class class_1196 extends Module {
    public int field_6702 = class_314.method_1444(class_314.method_1442(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917, 75.0F), 0.5F);
 
    public class_1196() {
-      super(class_5664.field_28709, "NameTags", "Render better name tags");
+      super(Category.RENDER, "NameTags", "Render better name tags");
       this.addSetting(new BooleanSetting("Magnify", "Scales nametags to keep them readable", true));
       this.addSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));
       this.addSetting(new BooleanSetting("Mob Owners", "Shows mob owners", true));
@@ -324,8 +324,8 @@ public class class_1196 extends Module {
    public void method_5289(double var1, double var3, double var5, Entity var7, float var8, String var9) {
       class_3384 var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
-      if (SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42015() && var13.equals(mcInstance.method_8502().method_5366())) {
-         var13 = SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42016("Username");
+      if (SigmaMainClass.method_3328().getModuleManager().method_847(class_9495.class).method_42015() && var13.equals(mcInstance.method_8502().method_5366())) {
+         var13 = SigmaMainClass.method_3328().getModuleManager().method_847(class_9495.class).method_42016("Username");
       }
 
       if (var13.length() != 0) {

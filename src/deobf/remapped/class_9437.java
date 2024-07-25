@@ -9,7 +9,7 @@ public class class_9437 extends Module {
    private List<class_1331> field_48180;
 
    public class_9437() {
-      super(class_5664.field_28718, "Nuker", "Destroys blocks around you");
+      super(Category.WORLD, "Nuker", "Destroys blocks around you");
       this.addSetting(new FloatSetting<Float>("Range", "Range value for nuker", 6.0F, Float.class, 2.0F, 10.0F, 1.0F));
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "All", "One hit", "Bed", "Egg"));
       this.addSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));

@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1268 extends Module {
    public class_1268() {
-      super(class_5664.field_28714, "HitSounds", "Changes the player hurting sounds client side.");
+      super(Category.COMBAT, "HitSounds", "Changes the player hurting sounds client side.");
    }
 
    @class_9148

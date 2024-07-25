@@ -11,17 +11,16 @@ public abstract class Module {
    public static MinecraftClient mcInstance = MinecraftClient.getInstance();
    public String field_46702;
    public String field_46701;
-   public class_5664 field_46696;
+   public Category field_46696;
    public boolean field_46700;
    public boolean field_46699;
    private boolean field_46698 = true;
-   private static List<Class<? extends Module>> field_46693 = new ArrayList<Class<? extends Module>>();
+   private static List<Class<? extends Module>> developmentModules = new ArrayList<Class<? extends Module>>();
    private Module field_46695 = null;
    private int field_46691 = 0;
-   private Set<String> field_46694 = new HashSet<String>();
    public Map<String, Setting> settingMap = new LinkedHashMap<String, Setting>();
 
-   public Module(class_5664 var1, String var2, String var3) {
+   public Module(Category var1, String var2, String var3) {
       this.field_46696 = var1;
       this.field_46702 = var2;
       this.field_46701 = var3;
@@ -177,9 +176,9 @@ public abstract class Module {
    }
 
    public void method_42006() {
-      if (this.getClass().isAnnotationPresent(class_1748.class) && !field_46693.contains(this.getClass())) {
+      if (this.getClass().isAnnotationPresent(InDevelopment.class) && !developmentModules.contains(this.getClass())) {
          SigmaMainClass.method_3328().method_3326().method_12862("This mod is still in development. Be careful!");
-         field_46693.add((Class<? extends Module>)this.getClass());
+         developmentModules.add(this.getClass());
       }
    }
 
@@ -206,12 +205,12 @@ public abstract class Module {
       return this.field_46701;
    }
 
-   public class_5664 method_42004() {
-      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == class_5664.field_28712) {
-         return class_5664.field_28710;
+   public Category method_42004() {
+      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == Category.ITEM) {
+         return Category.PLAYER;
       } else {
-         return SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == class_5664.field_28717
-            ? class_5664.field_28711
+         return SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == Category.EXPLOIT
+            ? Category.MISC
             : this.field_46696;
       }
    }
@@ -220,7 +219,7 @@ public abstract class Module {
       return this.field_46691;
    }
 
-   public class_5664 method_41998() {
+   public Category method_41998() {
       return this.field_46696;
    }
 
@@ -243,7 +242,7 @@ public abstract class Module {
          }
       }
 
-      SigmaMainClass.method_3328().method_3298().method_835().method_370(this);
+      SigmaMainClass.method_3328().getModuleManager().method_835().method_370(this);
    }
 
    public void method_42018(boolean var1) {
@@ -259,14 +258,14 @@ public abstract class Module {
       if (this.field_46700 != var1) {
          if (!(this.field_46700 = var1)) {
             SigmaMainClass.method_3328().method_3302().method_7915(this);
-            if (!(this instanceof class_3620)) {
+            if (!(this instanceof SecondModule)) {
                if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
-                  && SigmaMainClass.method_3328().method_3298().method_847(class_8438.class).method_42007("Sound")) {
+                  && SigmaMainClass.method_3328().getModuleManager().method_847(class_8438.class).method_42007("Sound")) {
                   SigmaMainClass.method_3328().method_3315().method_21206("deactivate");
                }
 
                if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
-                  && SigmaMainClass.method_3328().method_3298().method_847(class_4221.class).method_42007("Sound")) {
+                  && SigmaMainClass.method_3328().getModuleManager().method_847(class_4221.class).method_42007("Sound")) {
                   MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.6F));
                }
             }
@@ -275,12 +274,12 @@ public abstract class Module {
          } else {
             SigmaMainClass.method_3328().method_3302().method_7917(this);
             if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
-               && SigmaMainClass.method_3328().method_3298().method_847(class_8438.class).method_42007("Sound")) {
+               && SigmaMainClass.method_3328().getModuleManager().method_847(class_8438.class).method_42007("Sound")) {
                SigmaMainClass.method_3328().method_3315().method_21206("activate");
             }
 
             if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
-               && SigmaMainClass.method_3328().method_3298().method_847(class_4221.class).method_42007("Sound")) {
+               && SigmaMainClass.method_3328().getModuleManager().method_847(class_4221.class).method_42007("Sound")) {
                MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
             }
 
@@ -289,7 +288,7 @@ public abstract class Module {
          }
       }
 
-      SigmaMainClass.method_3328().method_3298().method_835().method_370(this);
+      SigmaMainClass.method_3328().getModuleManager().method_835().method_370(this);
    }
 
    public void method_41999() {

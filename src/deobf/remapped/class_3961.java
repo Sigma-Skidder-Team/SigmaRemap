@@ -10,7 +10,7 @@ public class class_3961 extends Module {
    public class_1934 field_19187 = new class_1934(0.0F, 0.0F, 0.0F);
 
    public class_3961() {
-      super(class_5664.field_28709, "Projectiles", "Predict the path of a projectile");
+      super(Category.RENDER, "Projectiles", "Predict the path of a projectile");
       this.method_42011(false);
    }
 

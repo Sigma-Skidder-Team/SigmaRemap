@@ -23,7 +23,7 @@ public class class_9598 extends Module {
    public boolean field_48911;
 
    public class_9598() {
-      super(class_5664.field_28709, "Freecam", "Move client side but not server side");
+      super(Category.RENDER, "Freecam", "Move client side but not server side");
       this.addSetting(new FloatSetting<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
    }
 

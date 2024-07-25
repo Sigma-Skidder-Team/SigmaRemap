@@ -1,11 +1,11 @@
 package remapped;
 
-public class class_6908 extends class_3620 {
+public class class_6908 extends SecondModule {
    public static int field_35509;
 
    public class_6908() {
       super(
-         class_5664.field_28716,
+         Category.MOVEMENT,
          "Speed",
          "Vroom vroom",
          new class_8191(),
@@ -13,7 +13,7 @@ public class class_6908 extends class_3620 {
          new class_6053(),
          new class_7448(),
          new class_5647(),
-         new class_3134(),
+         new SlowHopModule(),
          new class_1467(),
          new class_6865(),
          new class_8318(),

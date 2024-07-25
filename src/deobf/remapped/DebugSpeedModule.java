@@ -10,7 +10,7 @@ public class DebugSpeedModule extends Module {
    public class_1343 field_49933;
 
    public DebugSpeedModule() {
-      super(class_5664.field_28711, "DebugSpeed", "");
+      super(Category.MISC, "DebugSpeed", "");
    }
 
    @class_9148

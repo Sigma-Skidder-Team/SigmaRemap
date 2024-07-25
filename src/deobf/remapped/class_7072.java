@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_7072 extends Module {
    public class_7072() {
-      super(class_5664.field_28709, "Sims", "You know what it is");
+      super(Category.RENDER, "Sims", "You know what it is");
    }
 
    @class_9148

@@ -8,7 +8,7 @@ public class class_4820 extends Module {
    public static class_1331 field_24090;
 
    public class_4820() {
-      super(class_5664.field_28718, "CakeEater", "Automatically eats cake");
+      super(Category.WORLD, "CakeEater", "Automatically eats cake");
       this.addSetting(new BooleanSetting("No Swing", "Removes the swing animation.", true));
       this.addSetting(new BooleanSetting("Mineplex", "Mineplex mode.", true));
    }
@@ -34,7 +34,7 @@ public class class_4820 extends Module {
    @class_315
    private void method_22207(class_1393 var1) {
       if (this.method_42015()) {
-         class_3620 var4 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_2368.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class);
          if (var4.method_16864() instanceof class_9154) {
             class_9154 var5 = (class_9154)var4.method_16864();
             if (var5.method_42164()) {

@@ -2,7 +2,7 @@ package remapped;
 
 public class class_9439 extends Module {
    public class_9439() {
-      super(class_5664.field_28717, "Null", "Makes you invisible for the anticheat.");
+      super(Category.EXPLOIT, "Null", "Makes you invisible for the anticheat.");
       this.addSetting(new BooleanSetting("Inv Bypass", "Avoid inventory glitchs on some servers", false));
    }
 

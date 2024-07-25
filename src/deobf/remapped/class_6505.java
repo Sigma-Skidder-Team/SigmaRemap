@@ -6,7 +6,7 @@ public class class_6505 extends Module {
    private class_3223 field_33097 = new class_3223();
 
    public class_6505() {
-      super(class_5664.field_28711, "Mineplex", "Gameplay for Mineplex");
+      super(Category.MISC, "Mineplex", "Gameplay for Mineplex");
    }
 
    @Override

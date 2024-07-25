@@ -5,7 +5,7 @@ public class class_1731 extends Module {
    private class_3223 field_8927 = new class_3223();
 
    public class_1731() {
-      super(class_5664.field_28716, "Bow", "Fly for Bow");
+      super(Category.MOVEMENT, "Bow", "Fly for Bow");
    }
 
    @Override

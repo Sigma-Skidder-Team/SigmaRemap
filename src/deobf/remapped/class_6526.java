@@ -4,7 +4,7 @@ public class class_6526 extends Module {
    private int field_33210;
 
    public class_6526() {
-      super(class_5664.field_28717, "TP", "Disabler working on some anticheats.");
+      super(Category.EXPLOIT, "TP", "Disabler working on some anticheats.");
       this.addSetting(new FloatSetting<Float>("Delay", "Tp delay.", 20.0F, Float.class, 5.0F, 40.0F, 1.0F));
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic1", "Basic2", "MinInfinity", "MaxInfinity", "MinValue", "MaxValue"));
       this.addSetting(new BooleanSetting("OnGround", "Send on ground packets.", false));

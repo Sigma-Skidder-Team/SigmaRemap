@@ -9,7 +9,7 @@ public class class_2590 extends class_367 {
    private List<class_385> field_12813 = new ArrayList<class_385>();
 
    public class_2590() {
-      super("MusicParticles", "Shows nice particles when music is playing", class_5664.field_28708);
+      super("MusicParticles", "Shows nice particles when music is playing", Category.GUI);
       this.method_42011(false);
    }
 

@@ -14,7 +14,7 @@ public class class_7401 extends Module {
    private Thread field_37781;
 
    public class_7401() {
-      super(class_5664.field_28714, "InfiniteAura", "Basically infinite aura");
+      super(Category.COMBAT, "InfiniteAura", "Basically infinite aura");
       this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 8.0F, 120.0F, 1.0F));
       this.addSetting(new FloatSetting<Float>("CPS", "CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F));
       this.addSetting(new FloatSetting<Float>("Targets", "Number of targets", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
@@ -71,7 +71,7 @@ public class class_7401 extends Module {
                         ArrayList var11 = class_6306.method_28770(var10, var9);
                         this.field_37777.add(var11);
                         Collections.reverse(var11);
-                        this.method_33701(var11, SigmaMainClass.method_3328().method_3298().method_847(class_9801.class).method_42015());
+                        this.method_33701(var11, SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).method_42015());
                         class_314.method_1431(var8, !this.method_42007("No Swing"));
                         Collections.reverse(var11);
                         this.method_33701(var11, false);
@@ -191,7 +191,7 @@ public class class_7401 extends Module {
                               } else if (!var8.method_37367()) {
                                  if (var8 instanceof class_704
                                     && class_5876.method_26760((class_704)var8)
-                                    && SigmaMainClass.method_3328().method_3298().method_847(class_3595.class).method_42015()) {
+                                    && SigmaMainClass.method_3328().getModuleManager().method_847(class_3595.class).method_42015()) {
                                     var7.remove();
                                  }
                               } else {

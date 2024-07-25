@@ -41,7 +41,7 @@ public class class_434 extends class_7038 {
          class_314.method_1444(class_1255.field_6918.field_6917, 0.4F * var1)
       );
       String var5 = "Click GUI is currently bound to: "
-         + class_314.method_1451(SigmaMainClass.method_3328().method_3298().method_835().method_380(class_1046.class))
+         + class_314.method_1451(SigmaMainClass.method_3328().getModuleManager().method_835().method_380(class_1046.class))
          + " Key";
       class_73.method_87(
          class_5320.field_27152,

@@ -15,7 +15,7 @@ public class class_9140 extends class_2794 {
          SigmaMainClass.method_3328().method_3326().method_12863("Saving profiles...");
 
          try {
-            SigmaMainClass.method_3328().method_3298().method_848().method_4306();
+            SigmaMainClass.method_3328().getModuleManager().method_848().method_4306();
             SigmaMainClass.method_3328().method_3318();
          } catch (IOException var4) {
             var4.printStackTrace();

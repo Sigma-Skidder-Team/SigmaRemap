@@ -4,7 +4,7 @@ public class class_1931 extends class_367 {
    private int field_9875;
 
    public class_1931() {
-      super("ServerCrasher", "Crashes a server", class_5664.field_28718);
+      super("ServerCrasher", "Crashes a server", Category.WORLD);
       this.addSetting(new ModeSetting("Mode", "Crasher mode", 0, "Flying Enabled", "Vanilla", "Book", "Infinity", "BrainFreeze"));
    }
 

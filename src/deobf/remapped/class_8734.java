@@ -138,7 +138,7 @@ public class class_8734 {
       }
 
       Iterator var24 = var4.iterator();
-      class_3620 var25 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_4557.class);
+      SecondModule var25 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
       float var7 = 150.0F;
       if (var25.method_42015() && var25.method_42016("Type").equalsIgnoreCase("PingSpoof")) {
          var7 += var25.method_16864().method_42002("Lag");
@@ -175,7 +175,7 @@ public class class_8734 {
             var24.remove();
          } else if (!(var9 instanceof class_704)
             || !class_5876.method_26760((class_704)var9)
-            || !SigmaMainClass.method_3328().method_3298().method_847(class_3595.class).method_42015()) {
+            || !SigmaMainClass.method_3328().getModuleManager().method_847(class_3595.class).method_42015()) {
             class_1343 var10 = class_314.method_1429(var9);
             if (!(this.field_44744.field_9632.method_37175(var9) < 40.0F)) {
                if (this.field_44743.containsKey(var9)) {

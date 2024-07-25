@@ -2,7 +2,7 @@ package remapped;
 
 public class class_4658 extends Module {
    public class_4658() {
-      super(class_5664.field_28711, "ChatCleaner", "Cleans chat in atempt to avoid spam on anarchy servers");
+      super(Category.MISC, "ChatCleaner", "Cleans chat in atempt to avoid spam on anarchy servers");
    }
 
    @class_9148

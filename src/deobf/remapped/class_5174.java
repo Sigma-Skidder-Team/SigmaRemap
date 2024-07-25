@@ -13,7 +13,7 @@ public class class_5174 extends class_367 {
    public ArrayList<Integer> field_26636 = new ArrayList<Integer>();
 
    public class_5174() {
-      super("InvManager", "Drops all useless items from your inventory", class_5664.field_28712);
+      super("InvManager", "Drops all useless items from your inventory", Category.ITEM);
       this.addSetting(new ModeSetting("Mode", "The way it will move items in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
       this.addSetting(new FloatSetting<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.01F, 1.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Block Cap", "Maximum blocks.", 150.0F, Float.class, 0.0F, 256.0F, 10.0F));
@@ -110,7 +110,7 @@ public class class_5174 extends class_367 {
 
    public static boolean method_23720(class_6098 var0) {
       float var3 = method_23718(var0);
-      Module var4 = SigmaMainClass.method_3328().method_3298().method_847(class_5174.class);
+      Module var4 = SigmaMainClass.method_3328().getModuleManager().method_847(class_5174.class);
 
       for (int var5 = 9; var5 < 45; var5++) {
          if (mcInstance.field_9632.field_3869.method_18878(var5).method_35884()) {
@@ -197,11 +197,11 @@ public class class_5174 extends class_367 {
          }
 
          if (var5 instanceof class_6201
-            && (this.method_23721() > (int)this.method_42002("Block Cap") || class_3709.field_18195.contains(((class_6201)var5).method_28392()))) {
+            && (this.method_23721() > (int)this.method_42002("Block Cap") || BlockFlyModule.field_18195.contains(((class_6201)var5).method_28392()))) {
             return true;
-         } else if (var5 == class_4897.field_24999 && SigmaMainClass.method_3328().method_3298().method_847(class_3588.class).method_42015()) {
+         } else if (var5 == class_4897.field_24999 && SigmaMainClass.method_3328().getModuleManager().method_847(class_3588.class).method_42015()) {
             return method_23723(class_4897.field_24999) > 1;
-         } else if (var5 == class_4897.field_24548 && SigmaMainClass.method_3328().method_3298().method_847(class_3588.class).method_42015()) {
+         } else if (var5 == class_4897.field_24548 && SigmaMainClass.method_3328().getModuleManager().method_847(class_3588.class).method_42015()) {
             return method_23723(class_4897.field_24548) > 1;
          } else if (var5 instanceof class_5518 && class_2740.method_12360(var1)) {
             return true;
@@ -260,7 +260,7 @@ public class class_5174 extends class_367 {
          if (mcInstance.field_9632.field_3869.method_18878(var4).method_35884()) {
             class_6098 var5 = mcInstance.field_9632.field_3869.method_18878(var4).method_35898();
             class_2451 var6 = var5.method_27960();
-            if (var5.method_27960() instanceof class_6201 && !class_3709.field_18195.contains(((class_6201)var6).method_28392())) {
+            if (var5.method_27960() instanceof class_6201 && !BlockFlyModule.field_18195.contains(((class_6201)var6).method_28392())) {
                var3 += var5.field_31206;
             }
          }

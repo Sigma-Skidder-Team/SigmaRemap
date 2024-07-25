@@ -1,5 +1,5 @@
 package remapped;
 
 public interface class_713 {
-   void method_3268(class_3620 var1, Module var2, boolean var3);
+   void method_3268(SecondModule var1, Module var2, boolean var3);
 }

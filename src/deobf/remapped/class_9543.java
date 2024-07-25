@@ -21,7 +21,7 @@ public class class_9543 extends class_367 {
    private List<class_1331> field_48551 = new ArrayList<class_1331>();
 
    public class_9543() {
-      super("AutoCrystal", "Automatically detonates crystals", class_5664.field_28718);
+      super("AutoCrystal", "Automatically detonates crystals", Category.WORLD);
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch"));
       this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("CPS", "Click per seconds", 9.0F, Float.class, 1.0F, 20.0F, 1.0F));
@@ -261,7 +261,7 @@ public class class_9543 extends class_367 {
                               } else if (!var6.method_37367()) {
                                  if (var6 instanceof class_704
                                     && class_5876.method_26760((class_704)var6)
-                                    && SigmaMainClass.method_3328().method_3298().method_847(class_3595.class).method_42015()) {
+                                    && SigmaMainClass.method_3328().getModuleManager().method_847(class_3595.class).method_42015()) {
                                     var5.remove();
                                  }
                               } else {

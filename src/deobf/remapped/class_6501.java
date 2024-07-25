@@ -4,7 +4,7 @@ public class class_6501 extends Module {
    public int field_33089 = -1;
 
    public class_6501() {
-      super(class_5664.field_28712, "AutoTools", "Picks the best tool when breaking blocks");
+      super(Category.ITEM, "AutoTools", "Picks the best tool when breaking blocks");
       this.addSetting(new ModeSetting("Inv Mode", "The way it will move tools in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
    }
 

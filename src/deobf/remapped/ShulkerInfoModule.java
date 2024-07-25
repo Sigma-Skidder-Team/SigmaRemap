@@ -11,7 +11,7 @@ public class ShulkerInfoModule extends Module {
    public double field_35423;
 
    public ShulkerInfoModule() {
-      super(class_5664.field_28708, "ShulkerInfo", "Shows shulker information");
+      super(Category.GUI, "ShulkerInfo", "Shows shulker information");
       this.method_42011(false);
    }
 

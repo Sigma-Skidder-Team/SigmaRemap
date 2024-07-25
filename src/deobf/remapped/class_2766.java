@@ -8,14 +8,14 @@ public class class_2766 extends Module {
    private int field_13516;
 
    public class_2766() {
-      super(class_5664.field_28716, "YPort", "YPort speed");
+      super(Category.MOVEMENT, "YPort", "YPort speed");
       this.addSetting(new ModeSetting("Mode", "YPort mode", 0, "NCP", "OldNCP"));
       this.addSetting(new BooleanSetting("OnGround", "See yourself on ground", true));
    }
 
    @class_9148
    public void method_12600(class_1393 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+      if (this.method_42015() && mcInstance.field_9632 != null && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (mcInstance.field_9632.field_41726 && var1.method_6449() && class_314.method_1387()) {
             var1.method_6455(var1.method_6454() + 1.0E-14);
          }
@@ -41,7 +41,7 @@ public class class_2766 extends Module {
 
    @class_9148
    public void method_12598(class_7767 var1) {
-      if (this.method_42015() && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+      if (this.method_42015() && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (!mcInstance.field_9632.field_29654) {
             String var4 = this.method_42016("Mode");
             switch (var4) {
@@ -110,7 +110,7 @@ public class class_2766 extends Module {
    private void method_12602(class_4868 var1) {
       if (this.method_42015()
          && !this.method_42016("Mode").equalsIgnoreCase("NCP")
-         && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (!mcInstance.field_9632.method_37285() && !mcInstance.field_9632.method_37370() && !mcInstance.field_9632.method_26505()) {
             if (!mcInstance.field_9577.field_45450.field_30024
                && !mcInstance.field_9632.method_26505()
@@ -136,7 +136,7 @@ public class class_2766 extends Module {
          && !((double) mcInstance.field_9632.field_41706 > 0.09)
          && this.method_42007("OnGround")
          && !mcInstance.field_9577.field_45450.field_30024
-         && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (mcInstance.field_9632.field_41726 && class_314.method_1413(mcInstance.field_9632, 0.001F)) {
             this.field_13513 = mcInstance.field_9632.method_37309();
          }

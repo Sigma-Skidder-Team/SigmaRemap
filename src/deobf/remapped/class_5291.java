@@ -2,7 +2,7 @@ package remapped;
 
 public class class_5291 extends Module {
    public class_5291() {
-      super(class_5664.field_28716, "FullBlock", "Basic phase");
+      super(Category.MOVEMENT, "FullBlock", "Basic phase");
    }
 
    @class_9148

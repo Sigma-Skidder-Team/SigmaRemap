@@ -14,7 +14,7 @@ public class class_3262 extends Module {
    private class_7376 field_16172;
 
    public class_3262() {
-      super(class_5664.field_28711, "Hypixel", "Gameplay for Hypixel");
+      super(Category.MISC, "Hypixel", "Gameplay for Hypixel");
       this.addSetting(new BooleanSetting("FriendAccept", "Automatically accept friend requests", false));
       this.addSetting(new BooleanSetting("Hide infos", "Hide scoreboard server informations & date when ingame", false));
    }
@@ -36,7 +36,7 @@ public class class_3262 extends Module {
             }
 
             String var7 = mcInstance.field_9632.method_45509().getString().toLowerCase();
-            if (SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42015()) {
+            if (SigmaMainClass.method_3328().getModuleManager().method_847(class_9495.class).method_42015()) {
             }
 
             if (this.field_16172.method_42007("AutoL")) {

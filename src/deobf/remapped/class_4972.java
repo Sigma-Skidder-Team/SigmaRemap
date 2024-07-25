@@ -20,7 +20,7 @@ public class class_4972 extends Module {
    public List<class_7047> field_25753 = new ArrayList<class_7047>();
 
    public class_4972() {
-      super(class_5664.field_28718, "AutoMiner", "Automatically mines blocks");
+      super(Category.WORLD, "AutoMiner", "Automatically mines blocks");
    }
 
    @class_9148

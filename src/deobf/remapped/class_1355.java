@@ -4,7 +4,7 @@ public class class_1355 extends Module {
    private int field_7386;
 
    public class_1355() {
-      super(class_5664.field_28711, "Spammer", "Spam a message");
+      super(Category.MISC, "Spammer", "Spam a message");
       this.addSetting(new TextInputSetting("Message", "The message sent.", "Use Sigma Client, it's free ! %r"));
       this.addSetting(new FloatSetting<Float>("Messages delay", "Delay between messages", 3.0F, Float.class, 0.1F, 10.0F, 0.1F));
    }

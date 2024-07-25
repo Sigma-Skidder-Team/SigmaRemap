@@ -12,7 +12,7 @@ public class class_2461 extends Module {
    private double field_12314;
 
    public class_2461() {
-      super(class_5664.field_28716, "AAC", "Places block underneath if it is in hand");
+      super(Category.MOVEMENT, "AAC", "Places block underneath if it is in hand");
       this.addSetting(new BooleanSetting("Haphe (AACAP)", "Never let's you touch the ground.", false));
    }
 
@@ -23,7 +23,7 @@ public class class_2461 extends Module {
       this.field_12313 = mcInstance.field_9632.field_41755;
       this.field_12316 = (int) mcInstance.field_9632.method_37309();
       this.field_12312 = -1;
-      ((class_3709)this.method_42017()).field_18196 = -1;
+      ((BlockFlyModule)this.method_42017()).field_18196 = -1;
    }
 
    @Override
@@ -33,9 +33,9 @@ public class class_2461 extends Module {
       }
 
       this.field_12311 = -1;
-      if (((class_3709)this.method_42017()).field_18196 >= 0) {
+      if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
          mcInstance.method_8614().method_4813(new class_7371(mcInstance.field_9632.field_3853.field_36404));
-         ((class_3709)this.method_42017()).field_18196 = -1;
+         ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
       mcInstance.field_9616.field_32603 = 1.0F;
@@ -45,7 +45,7 @@ public class class_2461 extends Module {
    @class_7664
    public void method_11335(class_2157 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (var1.method_10047() instanceof class_7371 && ((class_3709)this.method_42017()).field_18196 >= 0) {
+         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
             var1.method_29715(true);
          }
       }
@@ -64,7 +64,7 @@ public class class_2461 extends Module {
    @class_9148
    public void method_11342(class_7982 var1) {
       if (this.method_42015()) {
-         if (mcInstance.field_9632.field_41726 && SigmaMainClass.method_3328().method_3298().method_847(class_1396.class).method_42015()) {
+         if (mcInstance.field_9632.field_41726 && SigmaMainClass.method_3328().getModuleManager().method_847(class_1396.class).method_42015()) {
             var1.method_36186(true);
          }
       }
@@ -82,7 +82,7 @@ public class class_2461 extends Module {
             mcInstance.field_9632.method_37140(false);
          }
 
-         ((class_3709)this.method_42017()).method_17220(var1);
+         ((BlockFlyModule)this.method_42017()).method_17220(var1);
          if (this.method_42007("Haphe (AACAP)")) {
             if (!mcInstance.field_9632.field_41726 || mcInstance.field_9632.field_29673 == 0.0F && mcInstance.field_9632.field_29676 == 0.0F) {
                if (this.field_12318 >= 0) {
@@ -125,8 +125,8 @@ public class class_2461 extends Module {
       boolean var4 = false;
       if (var3 != null && var3.method_33990() == class_1430.field_7717) {
          if (this.method_42017().method_42016("ItemSpoof").equals("None")) {
-            class_3709 var10000 = (class_3709)this.method_42017();
-            if (!class_3709.method_17216(mcInstance.field_9632.method_26617(class_2584.field_12791).method_27960())) {
+            BlockFlyModule var10000 = (BlockFlyModule)this.method_42017();
+            if (!BlockFlyModule.method_17216(mcInstance.field_9632.method_26617(class_2584.field_12791).method_27960())) {
                return false;
             }
          }
@@ -151,10 +151,10 @@ public class class_2461 extends Module {
             return false;
          }
 
-         ((class_3709)this.method_42017()).method_17215();
+         ((BlockFlyModule)this.method_42017()).method_17215();
          int var5 = mcInstance.field_9632.field_3853.field_36404;
          if (!this.method_42017().method_42016("ItemSpoof").equals("None")) {
-            ((class_3709)this.method_42017()).method_17211();
+            ((BlockFlyModule)this.method_42017()).method_17211();
          }
 
          class_6910 var6 = mcInstance.field_9647.method_42147(mcInstance.field_9632, mcInstance.field_9601, class_2584.field_12791, var3);

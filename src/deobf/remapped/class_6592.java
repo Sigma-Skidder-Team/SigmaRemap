@@ -5,7 +5,7 @@ public class class_6592 extends Module {
    public int field_34012 = 0;
 
    public class_6592() {
-      super(class_5664.field_28716, "EntitySpeed", "Speed up your rideable entities");
+      super(Category.MOVEMENT, "EntitySpeed", "Speed up your rideable entities");
    }
 
    @Override

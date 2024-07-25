@@ -7,7 +7,7 @@ public class class_2419 extends Module {
    private ArrayList<class_6287> field_12047 = new ArrayList<class_6287>();
 
    public class_2419() {
-      super(class_5664.field_28717, "Viper", "Disabler for ViperMC");
+      super(Category.EXPLOIT, "Viper", "Disabler for ViperMC");
    }
 
    @Override

@@ -2,7 +2,7 @@ package remapped;
 
 public class class_5981 extends Module {
    public class_5981() {
-      super(class_5664.field_28714, "AntiBot", "Avoid the client to focus bots.");
+      super(Category.COMBAT, "AntiBot", "Avoid the client to focus bots.");
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Advanced", "Hypixel").method_23029(var1 -> this.method_27290()));
    }
 

@@ -2,7 +2,7 @@ package remapped;
 
 public class class_4835 extends Module {
    public class_4835() {
-      super(class_5664.field_28716, "Minemen", "Speed for AGC");
+      super(Category.MOVEMENT, "Minemen", "Speed for AGC");
    }
 
    @class_9148

@@ -4,7 +4,7 @@ public class class_914 extends Module {
    public float field_4691 = 1.0F;
 
    public class_914() {
-      super(class_5664.field_28709, "Fullbright", "Makes you see in the dark");
+      super(Category.RENDER, "Fullbright", "Makes you see in the dark");
       this.addSetting(new ModeSetting("Type", "Fullbright type", 0, "Normal"));
    }
 

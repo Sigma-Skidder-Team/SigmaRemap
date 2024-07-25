@@ -10,7 +10,7 @@ public class class_8444 extends Module {
    private int field_43197 = -3200;
 
    public class_8444() {
-      super(class_5664.field_28718, "AntiVanish", "Detects if there are vanished players");
+      super(Category.WORLD, "AntiVanish", "Detects if there are vanished players");
    }
 
    @class_9148

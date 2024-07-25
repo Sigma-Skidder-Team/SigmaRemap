@@ -11,7 +11,7 @@ public class class_1191 extends Module {
    private double field_6677;
 
    public class_1191() {
-      super(class_5664.field_28716, "Test", "A fly for OmegaCraft");
+      super(Category.MOVEMENT, "Test", "A fly for OmegaCraft");
    }
 
    @Override

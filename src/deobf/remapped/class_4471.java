@@ -10,8 +10,8 @@ public class class_4471 extends class_367 {
    public Entity field_21799;
    public class_1343 field_21798;
 
-   public class_4471(String var1, String var2, class_5664 var3) {
-      super("FightBot", "Jello AI Fight Bot", class_5664.field_28718);
+   public class_4471(String var1, String var2, Category var3) {
+      super("FightBot", "Jello AI Fight Bot", Category.WORLD);
    }
 
    @class_9148

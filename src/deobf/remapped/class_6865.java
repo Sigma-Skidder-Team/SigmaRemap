@@ -8,7 +8,7 @@ public class class_6865 extends Module {
    private float field_35372 = 1.0F;
 
    public class_6865() {
-      super(class_5664.field_28716, "Legit", "Legit Sprint jumping.");
+      super(Category.MOVEMENT, "Legit", "Legit Sprint jumping.");
       this.addSetting(new BooleanSetting("Sprint", "Sprints when walking", true));
       this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
    }

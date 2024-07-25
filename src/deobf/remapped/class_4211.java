@@ -5,7 +5,7 @@ public class class_4211 extends Module {
    private double field_20458;
 
    public class_4211() {
-      super(class_5664.field_28716, "Redesky", "Longjump for Redesky.");
+      super(Category.MOVEMENT, "Redesky", "Longjump for Redesky.");
       this.addSetting(new FloatSetting<Float>("Boost", "Longjump boost", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Heigh", "Longjump heigh", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
       this.addSetting(new BooleanSetting("NoFall", "Avoid taking fall damage", true));

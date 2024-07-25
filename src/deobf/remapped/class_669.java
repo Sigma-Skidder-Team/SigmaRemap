@@ -9,7 +9,7 @@ public class class_669 extends Module {
    private int field_3718;
 
    public class_669() {
-      super(class_5664.field_28716, "Vanilla", "Regular vanilla fly");
+      super(Category.MOVEMENT, "Vanilla", "Regular vanilla fly");
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
       this.addSetting(new BooleanSetting("Kick bypass", "Bypass vanilla kick for flying", true));
    }

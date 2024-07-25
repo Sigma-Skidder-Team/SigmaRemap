@@ -4,7 +4,7 @@ public class class_5586 extends Module {
    private int field_28365;
 
    public class_5586() {
-      super(class_5664.field_28714, "Minemen", "Criticals for Anti Gaming Chair");
+      super(Category.COMBAT, "Minemen", "Criticals for Anti Gaming Chair");
    }
 
    @Override
@@ -16,7 +16,7 @@ public class class_5586 extends Module {
    @class_315
    private void method_25379(class_1393 var1) {
       if (var1.method_6449()) {
-         class_3620 var4 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_9758.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_9758.class);
          if (!var4.method_42015() || !var4.method_42016("Type").equalsIgnoreCase("Minemen")) {
             if (!mcInstance.field_9632.field_41726) {
                this.field_28365 = 0;

@@ -1,14 +1,14 @@
 package remapped;
 
-public class class_8625 extends class_3620 {
+public class class_8625 extends SecondModule {
    public class_8625() {
       super(
-         class_5664.field_28716,
+         Category.MOVEMENT,
          "Phase",
          "Allows you to go through blocks",
          new class_5291(),
          new class_2738(),
-         new class_5152(),
+         new NoClipModule(),
          new class_1394(),
          new class_1917()
       );

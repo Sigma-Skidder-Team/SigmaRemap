@@ -7,7 +7,7 @@ public class class_3404 extends Module {
    private double field_16755;
 
    public class_3404() {
-      super(class_5664.field_28716, "Hawk", "A fly for Hawk anticheat");
+      super(Category.MOVEMENT, "Hawk", "A fly for Hawk anticheat");
    }
 
    @Override

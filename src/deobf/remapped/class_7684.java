@@ -6,7 +6,7 @@ public class class_7684 extends Module {
    public float field_39044 = 0.0F;
 
    public class_7684() {
-      super(class_5664.field_28708, "Info HUD", "Shows a bunch of usefull stuff");
+      super(Category.GUI, "Info HUD", "Shows a bunch of usefull stuff");
       this.addSetting(new ModeSetting("Cords", "Coordinate display type", 1, "None", "Normal", "Precise"));
       this.addSetting(new BooleanSetting("Show Player", "Renders a miniature version of your character", true));
       this.addSetting(new BooleanSetting("Show Armor", "Shows your armor's status", true));

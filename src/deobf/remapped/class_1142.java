@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1142 extends Module {
    public class_1142() {
-      super(class_5664.field_28709, "Streaming", "Useful module when recording or streaming");
+      super(Category.RENDER, "Streaming", "Useful module when recording or streaming");
       this.addSetting(new BooleanSetting("Hide skins", "Spoof all players skin", true));
       this.addSetting(new BooleanSetting("Hide server name", "Spoof server name", false));
       this.addSetting(new TextInputSetting("Server name", "The server name that you need to hide", "servernamehere"));

@@ -2,9 +2,9 @@ package remapped;
 
 import org.lwjgl.opengl.GL11;
 
-public class class_8968 extends class_3620 {
+public class class_8968 extends SecondModule {
    public class_8968() {
-      super(class_5664.field_28716, "ClickTP", "TP's you when you click", new class_6371(), new class_2420());
+      super(Category.MOVEMENT, "ClickTP", "TP's you when you click", new class_6371(), new class_2420());
       this.addSetting(new BooleanSetting("Sneak", "Allows teleport only when sneaking", true));
       this.addSetting(new BooleanSetting("Auto Disable", "Disable ClickTP after teleporting", true));
       this.addSetting(new FloatSetting<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));

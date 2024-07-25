@@ -9,7 +9,7 @@ public class class_2941 extends Module {
    private List<Entity> field_14300 = new ArrayList<Entity>();
 
    public class_2941() {
-      super(class_5664.field_28714, "BowAimbot", "Automatically aims at players while using a bow");
+      super(Category.COMBAT, "BowAimbot", "Automatically aims at players while using a bow");
       this.addSetting(new ModeSetting("Sort mode", "Sort mode", 0, "Angle", "Range"));
       this.addSetting(new FloatSetting<Float>("Range", "Range value", 70.0F, Float.class, 10.0F, 100.0F, 1.0F));
       this.addSetting(new BooleanSetting("Silent", "Server-sided rotations.", false));

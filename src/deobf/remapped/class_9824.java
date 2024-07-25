@@ -5,7 +5,7 @@ public class class_9824 extends Module {
    private boolean field_49776;
 
    public class_9824() {
-      super(class_5664.field_28716, "TargetStrafe", "Allows you to strafe arround targets with speed");
+      super(Category.MOVEMENT, "TargetStrafe", "Allows you to strafe arround targets with speed");
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Ninja", "Random"));
       this.addSetting(new FloatSetting<Float>("Radius", "Radius of the circle", 2.0F, Float.class, 1.0F, 6.0F, 0.01F));
       this.addSetting(new BooleanSetting("Only speed", "Use target strafe only when speed is enabled", true));
@@ -19,11 +19,11 @@ public class class_9824 extends Module {
    public void method_45280(class_7767 var1) {
       if (this.method_42015()) {
          Entity var4 = null;
-         if (SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42003() || !this.method_42007("Only speed")) {
-            if (class_2534.field_12556 != null) {
-               var4 = class_2534.field_12556.method_15377();
-            } else if (class_2534.field_12558 != null) {
-               var4 = class_2534.field_12558;
+         if (SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42003() || !this.method_42007("Only speed")) {
+            if (KillauraModule.field_12556 != null) {
+               var4 = KillauraModule.field_12556.method_15377();
+            } else if (KillauraModule.field_12558 != null) {
+               var4 = KillauraModule.field_12558;
             }
          }
 
@@ -89,7 +89,7 @@ public class class_9824 extends Module {
       );
       String var27 = this.method_42016("AntiVoid");
       if (!var27.equals("None")) {
-         if (!this.field_49776 && this.method_45278(var26) && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         if (!this.field_49776 && this.method_45278(var26) && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
             this.field_49775 *= -1;
             this.field_49776 = true;
          } else if (this.field_49776 && !this.method_45278(var26)) {
@@ -106,7 +106,7 @@ public class class_9824 extends Module {
                   mcInstance.field_9632.method_37245().field_7333 + var6.method_35236(),
                   mcInstance.field_9632.method_37245().field_7334 + var6.method_35231()
                );
-               if (this.method_45278(var26) && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+               if (this.method_45278(var26) && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
                   class_8865.method_40777(var6, 0.0);
                }
             }

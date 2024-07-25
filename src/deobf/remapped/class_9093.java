@@ -21,7 +21,7 @@ public class class_9093 extends Module {
    private int field_46569;
 
    public class_9093() {
-      super(class_5664.field_28718, "JelloEdit", "Client side world edit");
+      super(Category.WORLD, "JelloEdit", "Client side world edit");
       File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/shematics");
       if (var3.exists()) {
          this.field_46568 = new ArrayList<String>(Arrays.asList(var3.list()));

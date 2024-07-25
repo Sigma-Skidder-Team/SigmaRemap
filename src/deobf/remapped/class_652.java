@@ -2,7 +2,7 @@ package remapped;
 
 public class class_652 extends Module {
    public class_652() {
-      super(class_5664.field_28711, "ChatFilter", "Bypasse chat filters");
+      super(Category.MISC, "ChatFilter", "Bypasse chat filters");
    }
 
    @class_9148

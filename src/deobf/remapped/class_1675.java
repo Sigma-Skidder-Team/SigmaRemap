@@ -59,8 +59,8 @@ public class class_1675 {
                SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            for (Module var8 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
-               if (var8.method_41992().equals(var6) && var8.method_42004() != class_5664.field_28708 && var8.method_42004() != class_5664.field_28709) {
+            for (Module var8 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+               if (var8.method_41992().equals(var6) && var8.method_42004() != Category.GUI && var8.method_42004() != Category.RENDER) {
                   var5.method_5820("enabled", "false");
                }
             }
@@ -89,7 +89,7 @@ public class class_1675 {
             }
 
             if (var2.method_41992().equals(var9)) {
-               if (var2.method_42004() != class_5664.field_28708 && var2.method_42004() != class_5664.field_28709) {
+               if (var2.method_42004() != Category.GUI && var2.method_42004() != Category.RENDER) {
                   var5.method_6154(var7, var1);
                }
 

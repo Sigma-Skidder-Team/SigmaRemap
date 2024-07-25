@@ -17,7 +17,7 @@ public class class_8438 extends Module {
    public class_3384 field_43169 = class_5320.field_27152;
 
    public class_8438() {
-      super(class_5664.field_28708, "ActiveMods", "Renders active mods");
+      super(Category.GUI, "ActiveMods", "Renders active mods");
       this.addSetting(new ModeSetting("Size", "The font size", 0, "Normal", "Small", "Tiny"));
       this.addSetting(new BooleanSetting("Animations", "Scale in animation", true));
       this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
@@ -48,8 +48,8 @@ public class class_8438 extends Module {
    public void method_42012() {
       this.field_43173.clear();
 
-      for (Module var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
-         if (var4.method_42004() != class_5664.field_28708) {
+      for (Module var4 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+         if (var4.method_42004() != Category.GUI) {
             this.field_43173.add(var4);
             this.field_43168.put(var4, new class_2440(150, 150, class_4043.field_19618));
             if (this.method_42007("Animations")) {

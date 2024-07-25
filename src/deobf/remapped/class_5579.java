@@ -8,7 +8,7 @@ public class class_5579 extends Module {
    private class_7376 field_28338;
 
    public class_5579() {
-      super(class_5664.field_28711, "Cubecraft", "Gameplay for Cubecraft");
+      super(Category.MISC, "Cubecraft", "Gameplay for Cubecraft");
    }
 
    @Override

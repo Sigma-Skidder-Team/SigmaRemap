@@ -11,7 +11,7 @@ public class class_5477 extends Module {
    public float field_27901;
 
    public class_5477() {
-      super(class_5664.field_28710, "Blink", "Stops your packets to blink");
+      super(Category.PLAYER, "Blink", "Stops your packets to blink");
    }
 
    @Override

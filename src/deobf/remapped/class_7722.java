@@ -6,7 +6,7 @@ public class class_7722 extends Module {
    public float field_39148;
 
    public class_7722() {
-      super(class_5664.field_28714, "AAC", "Places block underneath");
+      super(Category.COMBAT, "AAC", "Places block underneath");
       this.addSetting(new FloatSetting<Float>("Strengh", "Boost strengh", 0.7F, Float.class, 0.0F, 1.0F, 0.01F));
       field_39147 = 20;
    }

@@ -6,7 +6,7 @@ public class class_9740 extends Module {
    private int field_49495;
 
    public class_9740() {
-      super(class_5664.field_28710, "Basic", "Basic AutoGapple");
+      super(Category.PLAYER, "Basic", "Basic AutoGapple");
    }
 
    @Override

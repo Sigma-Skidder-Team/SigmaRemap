@@ -1,12 +1,12 @@
 package remapped;
 
 public class class_777 extends Module {
-   public class_5664 field_4192;
+   public Category field_4192;
    public Module field_4193;
    private String field_4194 = ">";
 
    public class_777() {
-      super(class_5664.field_28716, "VClip", "Climp Walls like spiders!");
+      super(Category.MOVEMENT, "VClip", "Climp Walls like spiders!");
    }
 
    @class_9148

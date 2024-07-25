@@ -224,14 +224,14 @@ public class class_123 {
 
    public Color method_371(Module var1) {
       Color var4 = new Color(0.0F, 0.0F, 0.0F, 0.0F);
-      if (var1.method_42004() != class_5664.field_28714) {
-         if (var1.method_42004() != class_5664.field_28708) {
-            if (var1.method_42004() != class_5664.field_28712) {
-               if (var1.method_42004() != class_5664.field_28711) {
-                  if (var1.method_42004() != class_5664.field_28716) {
-                     if (var1.method_42004() != class_5664.field_28710) {
-                        if (var1.method_42004() != class_5664.field_28709) {
-                           if (var1.method_42004() == class_5664.field_28718) {
+      if (var1.method_42004() != Category.COMBAT) {
+         if (var1.method_42004() != Category.GUI) {
+            if (var1.method_42004() != Category.ITEM) {
+               if (var1.method_42004() != Category.MISC) {
+                  if (var1.method_42004() != Category.MOVEMENT) {
+                     if (var1.method_42004() != Category.PLAYER) {
+                        if (var1.method_42004() != Category.RENDER) {
+                           if (var1.method_42004() == Category.WORLD) {
                               var4 = this.method_385(-5118535, var1.method_42015());
                            }
                         } else {

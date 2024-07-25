@@ -4,7 +4,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class class_9604 extends Module {
    public class_9604() {
-      super(class_5664.field_28711, "GameIdler", "Lowers your fps when the game is idle to increase performance");
+      super(Category.MISC, "GameIdler", "Lowers your fps when the game is idle to increase performance");
    }
 
    @class_9148

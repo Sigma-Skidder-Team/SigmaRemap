@@ -10,7 +10,7 @@ public class class_1886 extends Module {
    private boolean field_9550;
 
    public class_1886() {
-      super(class_5664.field_28711, "Murderer", "Detects murderer in murder mystery minigame on hypixel");
+      super(Category.MISC, "Murderer", "Detects murderer in murder mystery minigame on hypixel");
       this.addSetting(new BooleanSetting("GUI", "Shows a GUI with info on the murderer", true));
       this.addSetting(new BooleanSetting("Chat Message", "Sends a message with the murderer's name", true));
    }

@@ -2,7 +2,7 @@ package remapped;
 
 public class class_7342 extends Module {
    public class_7342() {
-      super(class_5664.field_28711, "AntiLevitation", "Removes levitation effects");
+      super(Category.MISC, "AntiLevitation", "Removes levitation effects");
    }
 
    @class_9148

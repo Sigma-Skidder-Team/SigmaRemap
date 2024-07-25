@@ -14,7 +14,7 @@ public class class_3177 extends Module {
    private class_7099 field_15892;
 
    public class_3177() {
-      super(class_5664.field_28712, "ChestStealer", "Steals items from chest");
+      super(Category.ITEM, "ChestStealer", "Steals items from chest");
       this.addSetting(new BooleanSetting("Aura", "Automatically open chests near you.", false));
       this.addSetting(new BooleanSetting("Ignore Junk", "Ignores useless items.", true));
       this.addSetting(new BooleanSetting("Fix ViaVersion", "Fixes ViaVersion delay.", true));
@@ -272,10 +272,10 @@ public class class_3177 extends Module {
                return !class_5174.method_23719(var1);
             } else if (!(var4 instanceof class_5518)) {
                if (var4 instanceof class_6201) {
-                  return !class_3709.method_17216(var4);
+                  return !BlockFlyModule.method_17216(var4);
                } else if (!(var4 instanceof class_603)
-                  && (!(var4 instanceof class_2100) || !SigmaMainClass.method_3328().method_3298().method_847(class_5174.class).method_42007("Archery"))) {
-                  if (var4 == class_4897.field_24999 && SigmaMainClass.method_3328().method_3298().method_847(class_3588.class).method_42015()) {
+                  && (!(var4 instanceof class_2100) || !SigmaMainClass.method_3328().getModuleManager().method_847(class_5174.class).method_42007("Archery"))) {
+                  if (var4 == class_4897.field_24999 && SigmaMainClass.method_3328().getModuleManager().method_847(class_3588.class).method_42015()) {
                      return false;
                   } else {
                      ArrayList var5 = new ArrayList<class_2451>(

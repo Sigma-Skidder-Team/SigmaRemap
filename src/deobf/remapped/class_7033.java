@@ -9,7 +9,7 @@ public class class_7033 extends Module {
    public int field_36212;
 
    public class_7033() {
-      super(class_5664.field_28716, "Jesus", "Where's the scientific proof?");
+      super(Category.MOVEMENT, "Jesus", "Where's the scientific proof?");
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin").method_12861("Dolphin"));
       this.addSetting(new BooleanSetting("Swim up", "Automatically swim up", true));
    }

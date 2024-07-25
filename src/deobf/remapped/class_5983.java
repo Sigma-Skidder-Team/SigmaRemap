@@ -4,7 +4,7 @@ public class class_5983 extends Module {
    private int field_30487;
 
    public class_5983() {
-      super(class_5664.field_28716, "Invaded", "Speed for Invadedlands");
+      super(Category.MOVEMENT, "Invaded", "Speed for Invadedlands");
       this.addSetting(new FloatSetting<Float>("Speed", "Speed value", 3.0F, Float.class, 0.5F, 9.5F, 0.1F));
    }
 

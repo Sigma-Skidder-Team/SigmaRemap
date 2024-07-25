@@ -7,7 +7,7 @@ public class class_7480 extends Module {
    private double[] field_38169 = new double[]{0.0, 0.25, 0.5, 0.75, 1.0};
 
    public class_7480() {
-      super(class_5664.field_28716, "OmegaCraft", "A fly for OmegaCraft anticheat");
+      super(Category.MOVEMENT, "OmegaCraft", "A fly for OmegaCraft anticheat");
    }
 
    @Override

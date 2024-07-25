@@ -8,7 +8,7 @@ public class class_2791 extends Module {
    private int field_13713;
 
    public class_2791() {
-      super(class_5664.field_28717, "PingSpoof", "Makes you lagggy.");
+      super(Category.EXPLOIT, "PingSpoof", "Makes you lagggy.");
       this.addSetting(new FloatSetting<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
       this.addSetting(new BooleanSetting("Inv Bypass", "Avoid inventory glitchs on some servers", false));
    }
@@ -16,7 +16,7 @@ public class class_2791 extends Module {
    @class_9148
    public void method_12682(class_717 var1) {
       if (!this.method_42015()) {
-         class_3620 var4 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_4557.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
          if (!var4.method_42015() || !var4.method_42016("Type").equalsIgnoreCase("TP") || !var4.method_16864().method_42007("Ping spoof")) {
             return;
          }
@@ -28,7 +28,7 @@ public class class_2791 extends Module {
    @class_9148
    public void method_12683(class_5596 var1) {
       if (!this.method_42015()) {
-         class_3620 var4 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_4557.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
          if (!var4.method_42015() || !var4.method_42016("Type").equalsIgnoreCase("TP") || !var4.method_16864().method_42007("Ping spoof")) {
             return;
          }
@@ -69,7 +69,7 @@ public class class_2791 extends Module {
    @class_9148
    public void method_12684(class_139 var1) {
       if (!this.method_42015()) {
-         class_3620 var4 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_4557.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
          if (!var4.method_42015() || !var4.method_42016("Type").equalsIgnoreCase("TP") || !var4.method_16864().method_42007("Ping spoof")) {
             return;
          }

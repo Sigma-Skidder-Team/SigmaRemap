@@ -15,7 +15,7 @@ public class class_6370 extends Module {
    public class_9806 field_32566;
 
    public class_6370() {
-      super(class_5664.field_28709, "PathFinder", "You know what it is");
+      super(Category.RENDER, "PathFinder", "You know what it is");
    }
 
    @class_9148

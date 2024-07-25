@@ -49,12 +49,12 @@ public class class_9898 extends class_4098 {
       this.method_32148(var7 = new class_4980(this, "exit", this.method_32109() - 41, 9));
       var7.method_32100((var0, var1x) -> MinecraftClient.getInstance().method_8609(null));
       class_4647 var8 = (class_4647)this.method_32167();
-      this.field_50202.method_32100((var1x, var2x) -> var8.method_21497("Combat", class_5664.field_28714));
-      this.field_50178.method_32100((var1x, var2x) -> var8.method_21497("Movement", class_5664.field_28716));
-      this.field_50186.method_32100((var1x, var2x) -> var8.method_21497("World", class_5664.field_28718));
-      this.field_50184.method_32100((var1x, var2x) -> var8.method_21497("Player", class_5664.field_28710));
-      this.field_50198.method_32100((var1x, var2x) -> var8.method_21497("Visuals", class_5664.field_28709, class_5664.field_28708));
-      this.field_50179.method_32100((var1x, var2x) -> var8.method_21497("Others", class_5664.field_28711));
+      this.field_50202.method_32100((var1x, var2x) -> var8.method_21497("Combat", Category.COMBAT));
+      this.field_50178.method_32100((var1x, var2x) -> var8.method_21497("Movement", Category.MOVEMENT));
+      this.field_50186.method_32100((var1x, var2x) -> var8.method_21497("World", Category.WORLD));
+      this.field_50184.method_32100((var1x, var2x) -> var8.method_21497("Player", Category.PLAYER));
+      this.field_50198.method_32100((var1x, var2x) -> var8.method_21497("Visuals", Category.RENDER, Category.GUI));
+      this.field_50179.method_32100((var1x, var2x) -> var8.method_21497("Others", Category.MISC));
       this.method_32105(false);
    }
 

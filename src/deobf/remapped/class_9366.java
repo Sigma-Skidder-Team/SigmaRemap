@@ -12,7 +12,7 @@ public class class_9366 extends Module {
    public Set<class_2034> field_47901 = new HashSet<class_2034>();
 
    public class_9366() {
-      super(class_5664.field_28709, "Search", "Searches blocks through the world");
+      super(Category.RENDER, "Search", "Searches blocks through the world");
       FloatSetting var3;
       this.addSetting(var3 = new FloatSetting<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
       BooleanSetting var4;

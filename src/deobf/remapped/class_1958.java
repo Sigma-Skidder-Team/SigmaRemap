@@ -4,7 +4,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class class_1958 extends Module {
    public class_1958() {
-      super(class_5664.field_28710, "AutoWalk", "Automatically walks forward");
+      super(Category.PLAYER, "AutoWalk", "Automatically walks forward");
    }
 
    @class_9148

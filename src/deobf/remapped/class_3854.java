@@ -13,7 +13,7 @@ public class class_3854 extends Module {
    private List<Short> field_18793 = new ArrayList<Short>();
 
    public class_3854() {
-      super(class_5664.field_28716, "Hypixel", "Fly for Hypixel");
+      super(Category.MOVEMENT, "Hypixel", "Fly for Hypixel");
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Funcraft").method_12861("Fast"));
       this.addSetting(new FloatSetting<Float>("Speed", "Fast and Funcraft speed", 1.0F, Float.class, 0.0F, 1.0F, 0.1F));
       this.addSetting(new BooleanSetting("No Collision", "Prevents block collison.", true));
@@ -126,7 +126,7 @@ public class class_3854 extends Module {
          this.field_18794 = 1.0F;
       }
 
-      if (!SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+      if (!SigmaMainClass.method_3328().getModuleManager().method_847(class_6803.class).method_42015()) {
          mcInstance.field_9616.field_32603 = this.field_18794;
       }
 

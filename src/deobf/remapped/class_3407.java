@@ -5,7 +5,7 @@ import java.util.List;
 import org.lwjgl.opengl.GL11;
 
 public class class_3407 extends class_4178 {
-   public final class_5664 field_16766;
+   public final Category field_16766;
    public class_1996 field_16769;
    public float field_16773;
    public static final int field_16768 = 60;
@@ -14,7 +14,7 @@ public class class_3407 extends class_4178 {
    private int field_16774;
    private final List<class_8524> field_16771 = new ArrayList<class_8524>();
 
-   public class_3407(class_7038 var1, String var2, int var3, int var4, class_5664 var5) {
+   public class_3407(class_7038 var1, String var2, int var3, int var4, Category var5) {
       super(var1, var2, var3, var4, 200, 350, true);
       this.method_32142(200);
       this.method_32158(350);
@@ -114,7 +114,7 @@ public class class_3407 extends class_4178 {
          this.field_16774 = 20;
       }
 
-      String var5 = this.method_15726().method_25628();
+      String var5 = this.method_15726().getCategoryName();
       class_73.method_88(
          class_5320.field_27141,
          (float)(this.method_32132() + 20),
@@ -139,7 +139,7 @@ public class class_3407 extends class_4178 {
       }
    }
 
-   public class_5664 method_15726() {
+   public Category method_15726() {
       return this.field_16766;
    }
 

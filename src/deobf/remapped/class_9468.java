@@ -12,7 +12,7 @@ public class class_9468 extends Module {
    public static Map<class_5834, double[]> field_48288 = new HashMap<class_5834, double[]>();
 
    public class_9468() {
-      super(class_5664.field_28709, "2D Esp", "You know what it is");
+      super(Category.RENDER, "2D Esp", "You know what it is");
       this.addSetting(new BooleanSetting("Show Health", "Shows a health bar", true));
    }
 

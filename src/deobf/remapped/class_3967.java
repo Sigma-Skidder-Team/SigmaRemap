@@ -2,7 +2,7 @@ package remapped;
 
 public class class_3967 extends Module {
    public class_3967() {
-      super(class_5664.field_28709, "LowFire", "Makes the fire transparent when you're burning");
+      super(Category.RENDER, "LowFire", "Makes the fire transparent when you're burning");
    }
 
    @class_9148

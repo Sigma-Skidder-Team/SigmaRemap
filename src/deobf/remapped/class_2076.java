@@ -7,7 +7,7 @@ public class class_2076 extends class_367 {
    private boolean field_10452;
 
    public class_2076() {
-      super("Cubecraft2", "A fly for 1.9+ cubecraft", class_5664.field_28716);
+      super("Cubecraft2", "A fly for 1.9+ cubecraft", Category.MOVEMENT);
    }
 
    @Override

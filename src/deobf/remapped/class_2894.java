@@ -5,7 +5,7 @@ public class class_2894 extends Module {
    private double field_14151;
 
    public class_2894() {
-      super(class_5664.field_28716, "NCPSpigot", "A fly for NoCheatPlus");
+      super(Category.MOVEMENT, "NCPSpigot", "A fly for NoCheatPlus");
    }
 
    @Override

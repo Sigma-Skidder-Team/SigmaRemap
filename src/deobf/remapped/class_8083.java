@@ -8,27 +8,27 @@ public class class_8083 extends Module {
    private int field_41380;
    private int field_41381;
    private class_2584 field_41379;
-   private class_3709 field_41373 = null;
+   private BlockFlyModule field_41373 = null;
    private boolean field_41374;
    private boolean field_41377 = false;
    private double field_41371;
    private int field_41375 = 0;
 
    public class_8083() {
-      super(class_5664.field_28716, "Smooth", "Places block underneath");
+      super(Category.MOVEMENT, "Smooth", "Places block underneath");
       this.addSetting(new ModeSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
    }
 
    @Override
    public void method_42012() {
-      this.field_41373 = (class_3709)this.method_42017();
+      this.field_41373 = (BlockFlyModule)this.method_42017();
    }
 
    @Override
    public void method_42006() {
       this.field_41378 = mcInstance.field_9632.field_3853.field_36404;
       this.field_41370 = this.field_41376 = 999.0F;
-      ((class_3709)this.method_42017()).field_18196 = -1;
+      ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       this.field_41371 = -1.0;
       this.field_41377 = false;
       if (mcInstance.field_9632.field_41726) {
@@ -45,9 +45,9 @@ public class class_8083 extends Module {
       }
 
       this.field_41378 = -1;
-      if (((class_3709)this.method_42017()).field_18196 >= 0) {
+      if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
          mcInstance.method_8614().method_4813(new class_7371(mcInstance.field_9632.field_3853.field_36404));
-         ((class_3709)this.method_42017()).field_18196 = -1;
+         ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
       class_8865.method_40776(class_8865.method_40775() * 0.9);
@@ -60,7 +60,7 @@ public class class_8083 extends Module {
    @class_9148
    public void method_36707(class_7982 var1) {
       if (this.method_42015()) {
-         if (this.method_42016("Speed Mode").equals("Cubecraft") && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         if (this.method_42016("Speed Mode").equals("Cubecraft") && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
             if (mcInstance.field_9601
                      .method_6680(
                         mcInstance.field_9632,
@@ -71,7 +71,7 @@ public class class_8083 extends Module {
                && mcInstance.field_9632.field_41706 < 1.0F) {
                var1.method_36186(true);
             }
-         } else if (mcInstance.field_9632.field_41726 && SigmaMainClass.method_3328().method_3298().method_847(class_1396.class).method_42015()) {
+         } else if (mcInstance.field_9632.field_41726 && SigmaMainClass.method_3328().getModuleManager().method_847(class_1396.class).method_42015()) {
             var1.method_36186(true);
          }
       }
@@ -122,10 +122,10 @@ public class class_8083 extends Module {
             this.field_41375--;
             var1.method_6444(true);
             this.field_41379 = class_2584.field_12791;
-            if (class_3709.method_17216(mcInstance.field_9632.method_26617(class_2584.field_12794).method_27960())
+            if (BlockFlyModule.method_17216(mcInstance.field_9632.method_26617(class_2584.field_12794).method_27960())
                && (
                   mcInstance.field_9632.method_26617(this.field_41379).method_28022()
-                     || !class_3709.method_17216(mcInstance.field_9632.method_26617(this.field_41379).method_27960())
+                     || !BlockFlyModule.method_17216(mcInstance.field_9632.method_26617(this.field_41379).method_27960())
                )) {
                this.field_41379 = class_2584.field_12794;
             }
@@ -203,7 +203,7 @@ public class class_8083 extends Module {
          }
 
          if (this.field_41373 == null) {
-            this.field_41373 = (class_3709)this.method_42017();
+            this.field_41373 = (BlockFlyModule)this.method_42017();
          }
 
          String var4 = this.method_42016("Speed Mode");
@@ -212,7 +212,7 @@ public class class_8083 extends Module {
                if (mcInstance.field_9632.field_41726 && class_314.method_1434() && !mcInstance.field_9632.method_37252() && !this.field_41374) {
                   this.field_41377 = false;
                   mcInstance.field_9632.method_26595();
-                  ((class_6908) SigmaMainClass.method_3328().method_3298().method_847(class_6908.class)).method_31653();
+                  ((class_6908) SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class)).method_31653();
                   this.field_41377 = true;
                   var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
                   var1.method_35232(mcInstance.field_9632.method_37098().field_7336);
@@ -295,7 +295,7 @@ public class class_8083 extends Module {
    @class_7664
    public void method_36713(class_2157 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (var1.method_10047() instanceof class_7371 && ((class_3709)this.method_42017()).field_18196 >= 0) {
+         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
             var1.method_29715(true);
          }
       }

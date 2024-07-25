@@ -5,7 +5,7 @@ public class class_5520 extends Module {
    private boolean field_28094;
 
    public class_5520() {
-      super(class_5664.field_28716, "LibreCraft", "A fly for LibreCraft");
+      super(Category.MOVEMENT, "LibreCraft", "A fly for LibreCraft");
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 10.0F, 0.1F));
    }
 

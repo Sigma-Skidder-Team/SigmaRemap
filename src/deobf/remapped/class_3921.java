@@ -8,7 +8,7 @@ public class class_3921 extends Module {
    public double field_19045;
 
    public class_3921() {
-      super(class_5664.field_28716, "Strafe", "Strafe in mid air");
+      super(Category.MOVEMENT, "Strafe", "Strafe in mid air");
    }
 
    @class_9148

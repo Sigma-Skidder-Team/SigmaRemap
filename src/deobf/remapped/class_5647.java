@@ -4,7 +4,7 @@ public class class_5647 extends Module {
    private int field_28624;
 
    public class_5647() {
-      super(class_5664.field_28716, "ViperMC", "ViperMC speed");
+      super(Category.MOVEMENT, "ViperMC", "ViperMC speed");
    }
 
    @Override

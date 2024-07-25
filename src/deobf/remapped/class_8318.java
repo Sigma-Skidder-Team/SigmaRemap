@@ -6,7 +6,7 @@ public class class_8318 extends Module {
    private double field_42612;
 
    public class_8318() {
-      super(class_5664.field_28716, "Cubecraft", "Speed for Cubecraft");
+      super(Category.MOVEMENT, "Cubecraft", "Speed for Cubecraft");
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hop", "YPort"));
       this.addSetting(new FloatSetting<Float>("Speed", "Speed value", 0.75F, Float.class, 0.1F, 1.0F, 0.01F));
       this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", false));
@@ -30,7 +30,7 @@ public class class_8318 extends Module {
    @class_9148
    public void method_38349(class_7767 var1) {
       if (this.method_42015()
-         && !SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42015()
+         && !SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class).method_42015()
          && !class_314.method_1437(mcInstance.field_9632)) {
          String var4 = this.method_42016("Mode");
          switch (var4) {
@@ -100,7 +100,7 @@ public class class_8318 extends Module {
                   }
 
                   this.field_42612 = mcInstance.field_9632.method_37309();
-                  if (!SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+                  if (!SigmaMainClass.method_3328().getModuleManager().method_847(class_6803.class).method_42015()) {
                      mcInstance.field_9616.field_32603 = 1.0F;
                   }
                } else {

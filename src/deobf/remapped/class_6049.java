@@ -8,13 +8,13 @@ public class class_6049 extends Module {
    private int field_30934;
    private int field_30939;
    private class_2584 field_30940;
-   private class_3709 field_30936 = null;
+   private BlockFlyModule field_30936 = null;
    private boolean field_30935;
    private boolean field_30941 = false;
    private double field_30931;
 
    public class_6049() {
-      super(class_5664.field_28716, "NCP", "Places block underneath");
+      super(Category.MOVEMENT, "NCP", "Places block underneath");
       this.addSetting(new ModeSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Slow", "Sneak"));
       this.addSetting(new BooleanSetting("KeepRotations", "Keeps your rotations.", true));
       this.addSetting(new FloatSetting<Float>("Extend", "Extend value", 0.0F, Float.class, 0.0F, 6.0F, 0.1F));
@@ -23,14 +23,14 @@ public class class_6049 extends Module {
 
    @Override
    public void method_42012() {
-      this.field_30936 = (class_3709)this.method_42017();
+      this.field_30936 = (BlockFlyModule)this.method_42017();
    }
 
    @Override
    public void method_42006() {
       this.field_30933 = mcInstance.field_9632.field_3853.field_36404;
       this.field_30942 = this.field_30937 = 999.0F;
-      ((class_3709)this.method_42017()).field_18196 = -1;
+      ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       if (mcInstance.field_9577.field_45560.method_27060() && this.method_42007("Downwards")) {
          mcInstance.field_9577.field_45560.field_30024 = false;
          this.field_30935 = true;
@@ -56,9 +56,9 @@ public class class_6049 extends Module {
       }
 
       this.field_30933 = -1;
-      if (((class_3709)this.method_42017()).field_18196 >= 0) {
+      if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
          mcInstance.method_8614().method_4813(new class_7371(mcInstance.field_9632.field_3853.field_36404));
-         ((class_3709)this.method_42017()).field_18196 = -1;
+         ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
       class_8865.method_40776(class_8865.method_40775() * 0.9);
@@ -71,7 +71,7 @@ public class class_6049 extends Module {
    @class_9148
    public void method_27618(class_7982 var1) {
       if (this.method_42015()) {
-         if (this.method_42016("Speed Mode").equals("Cubecraft") && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         if (this.method_42016("Speed Mode").equals("Cubecraft") && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
             if (mcInstance.field_9601
                      .method_6680(
                         mcInstance.field_9632,
@@ -83,7 +83,7 @@ public class class_6049 extends Module {
                var1.method_36186(true);
             }
          } else if (mcInstance.field_9632.field_41726
-            && SigmaMainClass.method_3328().method_3298().method_847(class_1396.class).method_42015()
+            && SigmaMainClass.method_3328().getModuleManager().method_847(class_1396.class).method_42015()
             && (!this.field_30935 || !this.method_42007("Downwards"))) {
             var1.method_36186(true);
          }
@@ -140,10 +140,10 @@ public class class_6049 extends Module {
             this.field_30934++;
             var1.method_6444(true);
             this.field_30940 = class_2584.field_12791;
-            if (class_3709.method_17216(mcInstance.field_9632.method_26617(class_2584.field_12794).method_27960())
+            if (BlockFlyModule.method_17216(mcInstance.field_9632.method_26617(class_2584.field_12794).method_27960())
                && (
                   mcInstance.field_9632.method_26617(this.field_30940).method_28022()
-                     || !class_3709.method_17216(mcInstance.field_9632.method_26617(this.field_30940).method_27960())
+                     || !BlockFlyModule.method_17216(mcInstance.field_9632.method_26617(this.field_30940).method_27960())
                )) {
                this.field_30940 = class_2584.field_12794;
             }
@@ -225,7 +225,7 @@ public class class_6049 extends Module {
          }
 
          if (this.field_30936 == null) {
-            this.field_30936 = (class_3709)this.method_42017();
+            this.field_30936 = (BlockFlyModule)this.method_42017();
          }
 
          String var4 = this.method_42016("Speed Mode");
@@ -234,7 +234,7 @@ public class class_6049 extends Module {
                if (mcInstance.field_9632.field_41726 && class_314.method_1434() && !mcInstance.field_9632.method_37252() && !this.field_30935) {
                   this.field_30941 = false;
                   mcInstance.field_9632.method_26595();
-                  ((class_6908) SigmaMainClass.method_3328().method_3298().method_847(class_6908.class)).method_31653();
+                  ((class_6908) SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class)).method_31653();
                   this.field_30941 = true;
                   var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
                   var1.method_35232(mcInstance.field_9632.method_37098().field_7336);
@@ -317,7 +317,7 @@ public class class_6049 extends Module {
    @class_7664
    public void method_27624(class_2157 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (var1.method_10047() instanceof class_7371 && ((class_3709)this.method_42017()).field_18196 >= 0) {
+         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
             var1.method_29715(true);
          }
       }

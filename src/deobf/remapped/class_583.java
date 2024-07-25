@@ -7,7 +7,7 @@ public class class_583 extends Module {
    private double field_3398;
 
    public class_583() {
-      super(class_5664.field_28716, "NCP", "Longjump for NoCheatPlus.");
+      super(Category.MOVEMENT, "NCP", "Longjump for NoCheatPlus.");
       this.addSetting(new FloatSetting<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Duration", "Speed duration", 10.0F, Float.class, 7.0F, 200.0F, 1.0F));
       this.addSetting(new ModeSetting("Glide Mode", "The way you will glide", 1, "None", "Basic", "High"));
@@ -96,7 +96,7 @@ public class class_583 extends Module {
                      case "High":
                         var1.method_35235(((class_1213)this.method_42017()).method_5381(this.field_3400));
                         if (class_314.method_1387()
-                           && SigmaMainClass.method_3328().method_3298().method_847(class_3095.class).method_42015()
+                           && SigmaMainClass.method_3328().getModuleManager().method_847(class_3095.class).method_42015()
                            && (this.field_3400 == 8 || this.field_3400 == 21)) {
                            double var9 = mcInstance.field_9632.method_37309() + var1.method_35236();
                            double var11 = var9 - (double)((int)(var9 + 0.001));

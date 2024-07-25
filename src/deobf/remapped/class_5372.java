@@ -4,7 +4,7 @@ public class class_5372 extends Module {
    private boolean field_27443 = false;
 
    public class_5372() {
-      super(class_5664.field_28716, "Minemen", "Minemen spider");
+      super(Category.MOVEMENT, "Minemen", "Minemen spider");
       this.addSetting(new BooleanSetting("AutoClimb", "Automatically climbs for you", true));
       this.addSetting(new BooleanSetting("Ceiling", "Allows you to fly under ceiling", true));
       this.addSetting(new BooleanSetting("SneakVClip", "Allows you to phase through ground", true));

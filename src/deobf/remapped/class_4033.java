@@ -6,7 +6,7 @@ public class class_4033 extends Module {
    public int field_19585 = class_314.method_1444(class_1255.field_6918.field_6917, 0.8F);
 
    public class_4033() {
-      super(class_5664.field_28709, "Box Outline", "Draws a line arround players");
+      super(Category.RENDER, "Box Outline", "Draws a line arround players");
       this.addSetting(new ColorSetting("Color", "The tracers color", class_1255.field_6918.field_6917));
    }
 

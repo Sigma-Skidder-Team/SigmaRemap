@@ -2,7 +2,7 @@ package remapped;
 
 public class class_7057 extends Module {
    public class_7057() {
-      super(class_5664.field_28711, "NickNameDetector", "Detect if a player has a custom name");
+      super(Category.MISC, "NickNameDetector", "Detect if a player has a custom name");
    }
 
    @class_9148

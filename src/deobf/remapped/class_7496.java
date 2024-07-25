@@ -7,7 +7,7 @@ public class class_7496 extends Module {
    private boolean field_38246;
 
    public class_7496() {
-      super(class_5664.field_28714, "NoGround", "NoGround criticals");
+      super(Category.COMBAT, "NoGround", "NoGround criticals");
       this.addSetting(new ModeSetting("Offset", "The way you will fake no ground", 0, "Vanilla", "OldHypixel"));
       this.addSetting(new BooleanSetting("Avoid Fall Damage", "Avoid fall damages.", true));
    }

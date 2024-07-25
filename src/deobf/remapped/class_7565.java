@@ -22,7 +22,7 @@ public class class_7565 extends class_367 {
    public int field_38550 = class_314.method_1444(class_1255.field_6929.field_6917, 0.05F);
 
    public class_7565() {
-      super("TargetHUD", "Shows target info with killaura", class_5664.field_28708);
+      super("TargetHUD", "Shows target info with killaura", Category.GUI);
       this.addSetting(new ModeSetting("Background", "Background", 0, "Blur", "Color", "None"));
       this.addSetting(new ModeSetting("Position", "HUD Position", 0, "Center", "Bottom"));
       this.addSetting(new ModeSetting("HealthBar", "Healthbar color", 0, "Health", "White"));

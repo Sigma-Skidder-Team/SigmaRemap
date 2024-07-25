@@ -9,7 +9,7 @@ public class class_5870 extends Module {
    private boolean field_29810;
 
    public class_5870() {
-      super(class_5664.field_28712, "AutoSoup", "Automatically eats soup when low life");
+      super(Category.ITEM, "AutoSoup", "Automatically eats soup when low life");
       this.addSetting(new FloatSetting<Float>("Health", "Minimum health before eating soup", 13.0F, Float.class, 1.0F, 19.0F, 1.0F));
       this.addSetting(new FloatSetting<Float>("Refill delay", "Refill delay", 4.0F, Float.class, 0.0F, 8.0F, 1.0F));
       this.addSetting(new FloatSetting<Float>("Refill accuracy", "Refill accuracy", 100.0F, Float.class, 30.0F, 100.0F, 1.0F));

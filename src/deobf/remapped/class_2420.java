@@ -5,7 +5,7 @@ public class class_2420 extends Module {
    private class_1331 field_12051;
 
    public class_2420() {
-      super(class_5664.field_28716, "Spartan", "ClickTP for spartan anticheat");
+      super(Category.MOVEMENT, "Spartan", "ClickTP for spartan anticheat");
    }
 
    @Override

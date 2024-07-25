@@ -5,7 +5,7 @@ public class class_8683 extends Module {
    private boolean field_44554;
 
    public class_8683() {
-      super(class_5664.field_28714, "Packet", "Packet criticals");
+      super(Category.COMBAT, "Packet", "Packet criticals");
       this.addSetting(new FloatSetting<Integer>("HurtTime", "The hurtTime to crit at", 15.0F, Integer.class, 0.0F, 20.0F, 1.0F));
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel"));
    }

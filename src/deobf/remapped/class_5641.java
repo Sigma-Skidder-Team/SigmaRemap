@@ -5,7 +5,7 @@ public class class_5641 extends Module {
    private double field_28607;
 
    public class_5641() {
-      super(class_5664.field_28714, "Smooth", "Automatically aims at players");
+      super(Category.COMBAT, "Smooth", "Automatically aims at players");
       this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
    }
 

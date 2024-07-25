@@ -4,7 +4,7 @@ public class class_3907 extends Module {
    private static int field_18992;
 
    public class_3907() {
-      super(class_5664.field_28714, "AAC 4", "Criticals for aac 4.*");
+      super(Category.COMBAT, "AAC 4", "Criticals for aac 4.*");
       this.addSetting(new BooleanSetting("KillAura", "Criticals only if KillAura is enabled", false));
    }
 
@@ -31,14 +31,14 @@ public class class_3907 extends Module {
    @class_9148
    @class_315
    private void method_18092(class_1393 var1) {
-      if (!this.method_42015() || SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42015()) {
+      if (!this.method_42015() || SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42015()) {
          field_18992 = 0;
       } else if (var1.method_6449()) {
          if (mcInstance.field_9647.method_42156()) {
             field_18992 = 0;
          }
 
-         boolean var4 = !this.method_42007("KillAura") || class_2534.field_12558 != null || class_2534.field_12556 != null;
+         boolean var4 = !this.method_42007("KillAura") || KillauraModule.field_12558 != null || KillauraModule.field_12556 != null;
          if (mcInstance.field_9632.field_41726 && mcInstance.field_9632.field_41774 && var4) {
             field_18992++;
             mcInstance.field_9632.field_30502 = 0.0;

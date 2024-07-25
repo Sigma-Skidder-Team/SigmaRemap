@@ -714,7 +714,7 @@ public class class_314 {
             && !field_1158.field_9632.method_37285()
             && !field_1158.field_9632.method_26480(class_4054.field_19736)
             && !field_1158.field_9632.method_37070();
-         if (var7 || field_1158.field_9632.field_41726 && SigmaMainClass.method_3328().method_3298().method_847(class_9801.class).method_42015()) {
+         if (var7 || field_1158.field_9632.field_41726 && SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).method_42015()) {
             field_1158.field_9572.method_43051(var5.method_16973(), class_3090.field_15322);
          }
 
@@ -1048,7 +1048,7 @@ public class class_314 {
                return !var0.method_37367()
                   ? !(var0 instanceof class_704)
                      || !class_5876.method_26760((class_704)var0)
-                     || !SigmaMainClass.method_3328().method_3298().method_847(class_3595.class).method_42015()
+                     || !SigmaMainClass.method_3328().getModuleManager().method_847(class_3595.class).method_42015()
                   : false;
             }
          } else {

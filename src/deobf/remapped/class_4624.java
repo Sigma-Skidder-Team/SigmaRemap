@@ -2,7 +2,7 @@ package remapped;
 
 public class class_4624 extends Module {
    public class_4624() {
-      super(class_5664.field_28718, "AutoFarm", "Automatically breaks and replants crops");
+      super(Category.WORLD, "AutoFarm", "Automatically breaks and replants crops");
    }
 
    @class_9148

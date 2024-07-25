@@ -10,7 +10,7 @@ public class class_3055 extends Module {
    public static class_3055 field_15012;
 
    public class_3055() {
-      super(class_5664.field_28709, "NameTags", "Render better name tags");
+      super(Category.RENDER, "NameTags", "Render better name tags");
       field_15012 = this;
    }
 

@@ -8,7 +8,7 @@ public class class_4256 extends Module {
    private class_7376 field_20629;
 
    public class_4256() {
-      super(class_5664.field_28711, "Jartex", "Gameplay for Jartex network");
+      super(Category.MISC, "Jartex", "Gameplay for Jartex network");
    }
 
    @Override

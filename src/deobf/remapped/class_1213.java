@@ -1,8 +1,8 @@
 package remapped;
 
-public class class_1213 extends class_3620 {
+public class class_1213 extends SecondModule {
    public class_1213() {
-      super(class_5664.field_28716, "LongJump", "Makes you jump far away", new class_583(), new class_8857(), new class_4452(), new class_4211());
+      super(Category.MOVEMENT, "LongJump", "Makes you jump far away", new class_583(), new class_8857(), new class_4452(), new class_4211());
       this.addSetting(new BooleanSetting("Auto Disable", "Disable Longjump when landing", true));
       this.addSetting(new BooleanSetting("BorderJump", "Jumps when you are close to a border", true));
       this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps when you can", true));

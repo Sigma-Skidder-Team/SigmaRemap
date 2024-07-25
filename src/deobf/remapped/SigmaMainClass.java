@@ -23,7 +23,7 @@ public class SigmaMainClass {
    private class_2827 field_3953;
    private class_201 field_3961;
    private class_1772 field_3972;
-   private class_191 field_3978;
+   private ModuleManager moduleManager;
    private CommandManager commandManager;
    private class_6763 field_3977;
    private class_3116 field_3958;
@@ -154,8 +154,8 @@ public class SigmaMainClass {
             this.field_3977.method_31013(this.field_3974);
          }
 
-         if (this.field_3978 != null) {
-            this.field_3978.method_849(this.field_3974);
+         if (this.moduleManager != null) {
+            this.moduleManager.method_849(this.field_3974);
          }
 
          class_4975 var3 = new class_4975(this.field_3974);
@@ -272,8 +272,8 @@ public class SigmaMainClass {
       return this.field_3972;
    }
 
-   public class_191 method_3298() {
-      return this.field_3978;
+   public ModuleManager getModuleManager() {
+      return this.moduleManager;
    }
 
    public class_3116 method_3307() {
@@ -369,11 +369,11 @@ public class SigmaMainClass {
          GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Classic Sigma 5.0");
       }
 
-      if (this.field_3978 == null && class_1235.field_6812 != null) {
-         this.field_3978 = new class_191();
-         this.field_3978.method_845(this.field_3983);
-         this.field_3978.method_842(this.field_3974);
-         this.field_3978.method_846();
+      if (this.moduleManager == null && class_1235.field_6812 != null) {
+         this.moduleManager = new ModuleManager();
+         this.moduleManager.registerAllModules(this.field_3983);
+         this.moduleManager.method_842(this.field_3974);
+         this.moduleManager.method_846();
       }
 
       System.gc();

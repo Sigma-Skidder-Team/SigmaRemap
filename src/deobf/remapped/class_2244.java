@@ -13,7 +13,7 @@ public class class_2244 extends Module {
    public boolean field_11175 = false;
 
    public class_2244() {
-      super(class_5664.field_28711, "JelloAIBot", "Experimental");
+      super(Category.MISC, "JelloAIBot", "Experimental");
    }
 
    @Override

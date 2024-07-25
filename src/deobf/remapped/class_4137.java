@@ -13,7 +13,7 @@ public class class_4137 extends Module {
    public int field_20134 = 0;
 
    public class_4137() {
-      super(class_5664.field_28709, "DVD Simulator", "wtf");
+      super(Category.RENDER, "DVD Simulator", "wtf");
       this.method_19211();
    }
 

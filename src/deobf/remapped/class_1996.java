@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class class_1996 extends class_2612 implements class_1768 {
-   public final class_5664 field_10143;
+   public final Category field_10143;
    private List<class_6220> field_10142 = new ArrayList<class_6220>();
    private boolean field_10145;
    private boolean field_10140;
    private float field_10144 = 1.0F;
 
-   public class_1996(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_5664 var7) {
+   public class_1996(class_7038 var1, String var2, int var3, int var4, int var5, int var6, Category var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field_10143 = var7;
       this.field_10140 = true;
@@ -23,7 +23,7 @@ public class class_1996 extends class_2612 implements class_1768 {
    public void method_9266() {
       int var3 = 0;
 
-      for (Module var5 : SigmaMainClass.method_3328().method_3298().method_844(this.field_10143)) {
+      for (Module var5 : SigmaMainClass.method_3328().getModuleManager().method_844(this.field_10143)) {
          int var9 = class_314.method_1444(-3487030, 0.0F);
          byte var10 = 30;
          class_590 var12 = new class_590(!var5.method_42015() ? 1895167477 : -14047489, !var5.method_42015() ? var9 : -14042881)

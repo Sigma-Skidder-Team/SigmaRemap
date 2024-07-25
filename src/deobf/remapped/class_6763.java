@@ -385,8 +385,8 @@ public class class_6763 {
          this.field_34904.method_32145(this.field_34894[0], this.field_34894[1]);
       }
 
-      if (SigmaMainClass.method_3328().method_3298() != null) {
-         SigmaMainClass.method_3328().method_3298().method_835().method_384(null);
+      if (SigmaMainClass.method_3328().getModuleManager() != null) {
+         SigmaMainClass.method_3328().getModuleManager().method_835().method_384(null);
       }
    }
 

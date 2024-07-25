@@ -9,7 +9,7 @@ public class class_4304 extends Module {
    private static Map<class_704, float[][]> field_20882 = new HashMap<class_704, float[][]>();
 
    public class_4304() {
-      super(class_5664.field_28709, "Skeleton", "Skeleton ESP.");
+      super(Category.RENDER, "Skeleton", "Skeleton ESP.");
       this.addSetting(new ColorSetting("Color", "The Skeleton color", class_1255.field_6918.field_6917));
       this.addSetting(new BooleanSetting("CSGO", "Add a CSGO look.", true));
    }

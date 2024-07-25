@@ -6,7 +6,7 @@ public class class_1467 extends Module {
    private double field_7882;
 
    public class_1467() {
-      super(class_5664.field_28716, "NCP", "Speed for NCP");
+      super(Category.MOVEMENT, "NCP", "Speed for NCP");
       this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
    }
 
@@ -23,7 +23,7 @@ public class class_1467 extends Module {
       if (this.method_42015()
          && mcInstance.field_9632 != null
          && !class_7033.method_32081()
-         && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (var1.method_6449() && class_6908.field_35509 > 1) {
             double var4 = mcInstance.field_9632.method_37302() - mcInstance.field_9632.field_30525;
             double var6 = mcInstance.field_9632.method_37156() - mcInstance.field_9632.field_30507;
@@ -80,7 +80,7 @@ public class class_1467 extends Module {
             var1.method_29715(true);
          }
 
-         if (!mcInstance.field_9577.field_45450.method_27060() || !SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42015()) {
+         if (!mcInstance.field_9577.field_45450.method_27060() || !SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class).method_42015()) {
             double var4 = 0.56 + (double)class_8865.method_40770() * 0.1;
             var1.method_13313(0.407 + (double)class_8865.method_40769() * 0.1 + Math.random() * 1.0E-5);
             if (class_6908.field_35509 < 2) {

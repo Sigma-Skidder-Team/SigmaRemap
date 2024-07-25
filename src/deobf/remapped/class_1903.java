@@ -6,7 +6,7 @@ public class class_1903 extends Module {
    private double field_9715;
 
    public class_1903() {
-      super(class_5664.field_28716, "Hypixel", "Highjump for Hypixel");
+      super(Category.MOVEMENT, "Hypixel", "Highjump for Hypixel");
       this.addSetting(new FloatSetting<Float>("Motion", "Highjump motion", 0.75F, Float.class, 0.42F, 5.0F, 0.05F));
    }
 

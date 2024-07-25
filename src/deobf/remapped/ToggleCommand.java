@@ -24,7 +24,7 @@ public class ToggleCommand extends Command {
    }
 
    public Module method_21895(String var1) {
-      for (Module var5 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+      for (Module var5 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
          if (var5.method_41992().replace(" ", "").equalsIgnoreCase(var1)) {
             return var5;
          }

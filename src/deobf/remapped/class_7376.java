@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ConcurrentModificationException;
 
-public class class_7376 extends class_3620 {
+public class class_7376 extends SecondModule {
    private ArrayList<String> field_37694 = new ArrayList<String>();
    private ArrayList<String> field_37690 = new ArrayList<String>();
    private class_1508 field_37692;
@@ -13,7 +13,7 @@ public class class_7376 extends class_3620 {
 
    public class_7376() {
       super(
-         class_5664.field_28711,
+         Category.MISC,
          "GamePlay",
          "Manage your gameplay experience just for you.",
          new class_3262(),

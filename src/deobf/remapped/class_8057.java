@@ -15,7 +15,7 @@ public class class_8057 extends class_367 {
    private List<class_1331> field_41246 = new ArrayList<class_1331>();
 
    public class_8057() {
-      super("NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs", class_5664.field_28711);
+      super("NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs", Category.MISC);
       File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/nbs");
       if (var3.exists()) {
          this.field_41251 = new ArrayList<String>(Arrays.asList(var3.list()));

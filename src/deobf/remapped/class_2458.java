@@ -2,7 +2,7 @@ package remapped;
 
 public class class_2458 extends Module {
    public class_2458() {
-      super(class_5664.field_28709, "NoServerInfo", "Hides the server scoreboard and boss bar at top");
+      super(Category.RENDER, "NoServerInfo", "Hides the server scoreboard and boss bar at top");
    }
 
    @class_9148

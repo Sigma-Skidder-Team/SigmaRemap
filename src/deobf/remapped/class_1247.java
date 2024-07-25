@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1247 extends Module {
    public class_1247() {
-      super(class_5664.field_28716, "Jetpack", "A jetpack type fly");
+      super(Category.MOVEMENT, "Jetpack", "A jetpack type fly");
    }
 
    @class_9148

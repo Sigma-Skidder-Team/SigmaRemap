@@ -2,7 +2,7 @@ package remapped;
 
 public class class_4244 extends Module {
    public class_4244() {
-      super(class_5664.field_28714, "Legit", "Increase the knockback you give to players");
+      super(Category.COMBAT, "Legit", "Increase the knockback you give to players");
    }
 
    @class_9148

@@ -9,7 +9,7 @@ public class class_7693 extends Module {
    public ArrayList<class_3074> field_39064 = new ArrayList<class_3074>();
 
    public class_7693() {
-      super(class_5664.field_28708, "KeyStrokes", "Shows what keybind you are pressing");
+      super(Category.GUI, "KeyStrokes", "Shows what keybind you are pressing");
       this.method_42011(false);
    }
 

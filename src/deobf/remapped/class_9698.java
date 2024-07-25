@@ -2,7 +2,7 @@ package remapped;
 
 public class class_9698 extends Module {
    public class_9698() {
-      super(class_5664.field_28710, "Sneak", "Always sneaks");
+      super(Category.PLAYER, "Sneak", "Always sneaks");
    }
 
    @Override

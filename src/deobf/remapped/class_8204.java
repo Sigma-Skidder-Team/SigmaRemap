@@ -4,7 +4,7 @@ public class class_8204 extends Module {
    public int field_41968 = -1;
 
    public class_8204() {
-      super(class_5664.field_28712, "AutoTotem", "Automatically equips a totem in your second hand");
+      super(Category.ITEM, "AutoTotem", "Automatically equips a totem in your second hand");
    }
 
    @class_9148

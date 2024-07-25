@@ -5,7 +5,7 @@ public class class_1394 extends Module {
    private double field_7608;
 
    public class_1394() {
-      super(class_5664.field_28716, "Unfull", "Weird Hypixel VClip for some blocks");
+      super(Category.MOVEMENT, "Unfull", "Weird Hypixel VClip for some blocks");
    }
 
    @class_9148

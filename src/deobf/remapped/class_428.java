@@ -2,7 +2,7 @@ package remapped;
 
 public class class_428 extends Module {
    public class_428() {
-      super(class_5664.field_28711, "PortalGodMode", "Makes you invulnerable when you go through a portal and stay in it");
+      super(Category.MISC, "PortalGodMode", "Makes you invulnerable when you go through a portal and stay in it");
    }
 
    @class_9148

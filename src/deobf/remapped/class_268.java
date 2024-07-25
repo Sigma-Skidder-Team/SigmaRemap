@@ -8,26 +8,26 @@ public class class_268 extends Module {
    public static final class_2440 field_955 = new class_2440(200, 200, class_4043.field_19618);
    public class_2440 field_957 = new class_2440(500, 0, class_4043.field_19618);
    private class_2440 field_956 = new class_2440(300, 300, class_4043.field_19618);
-   private List<class_5664> field_958 = new ArrayList<class_5664>();
+   private List<Category> field_958 = new ArrayList<Category>();
    private int field_959 = 0;
    private static List<class_3622> field_960 = new ArrayList<class_3622>();
 
    public class_268() {
-      super(class_5664.field_28708, "TabGUI", "Manage mods without opening the ClickGUI");
+      super(Category.GUI, "TabGUI", "Manage mods without opening the ClickGUI");
    }
 
    @Override
    public void method_42012() {
-      this.field_958.add(class_5664.field_28714);
-      this.field_958.add(class_5664.field_28710);
-      this.field_958.add(class_5664.field_28716);
-      this.field_958.add(class_5664.field_28709);
-      this.field_958.add(class_5664.field_28718);
-      this.field_958.add(class_5664.field_28711);
+      this.field_958.add(Category.COMBAT);
+      this.field_958.add(Category.PLAYER);
+      this.field_958.add(Category.MOVEMENT);
+      this.field_958.add(Category.RENDER);
+      this.field_958.add(Category.WORLD);
+      this.field_958.add(Category.MISC);
       ArrayList var3 = new ArrayList();
 
-      for (class_5664 var5 : this.field_958) {
-         var3.add(var5.method_25628());
+      for (Category var5 : this.field_958) {
+         var3.add(var5.getCategoryName());
       }
 
       field_960.add(0, new class_2990(var3, 0));
@@ -81,8 +81,8 @@ public class class_268 extends Module {
                   } else if (var5 == 2 && var6 instanceof class_2990) {
                      class_2990 var12 = (class_2990)field_960.get(0);
                      class_2990 var15 = (class_2990)var6;
-                     class_5664 var16 = this.field_958.get(var12.field_14700);
-                     Module var17 = SigmaMainClass.method_3328().method_3298().method_844(var16).get(var15.field_14700);
+                     Category var16 = this.field_958.get(var12.field_14700);
+                     Module var17 = SigmaMainClass.method_3328().getModuleManager().method_844(var16).get(var15.field_14700);
                      this.method_1205(var17);
                   } else if (var5 == 3) {
                      this.method_1203(true);
@@ -92,8 +92,8 @@ public class class_268 extends Module {
                   if (var5 == 2 && var6 instanceof class_2990) {
                      class_2990 var7 = (class_2990)field_960.get(0);
                      class_2990 var8 = (class_2990)var6;
-                     class_5664 var9 = this.field_958.get(var7.field_14700);
-                     Module var10 = SigmaMainClass.method_3328().method_3298().method_844(var9).get(var8.field_14700);
+                     Category var9 = this.field_958.get(var7.field_14700);
+                     Module var10 = SigmaMainClass.method_3328().getModuleManager().method_844(var9).get(var8.field_14700);
                      var10.method_41991(!var10.method_42015());
                   }
             }
@@ -105,8 +105,8 @@ public class class_268 extends Module {
       class_2990 var4 = (class_2990)field_960.get(0);
       class_2990 var5 = (class_2990)field_960.get(1);
       class_2990 var6 = (class_2990)field_960.get(2);
-      class_5664 var7 = this.field_958.get(var4.field_14700);
-      Module var8 = SigmaMainClass.method_3328().method_3298().method_844(var7).get(var5.field_14700);
+      Category var7 = this.field_958.get(var4.field_14700);
+      Module var8 = SigmaMainClass.method_3328().getModuleManager().method_844(var7).get(var5.field_14700);
       Setting var9 = this.method_1206(var8).get(var6.field_14700);
       if (!(var9 instanceof ModeSetting)) {
          if (!(var9 instanceof BooleanSetting)) {
@@ -187,10 +187,10 @@ public class class_268 extends Module {
       if (field_960.size() >= 2) {
          class_2990 var3 = (class_2990)field_960.get(1);
          class_2990 var4 = (class_2990)field_960.get(0);
-         class_5664 var5 = this.field_958.get(var4.field_14700);
+         Category var5 = this.field_958.get(var4.field_14700);
          int var6 = 0;
 
-         for (Module var8 : SigmaMainClass.method_3328().method_3298().method_844(var5)) {
+         for (Module var8 : SigmaMainClass.method_3328().getModuleManager().method_844(var5)) {
             var3.method_13685(var6++, (!var8.method_42015() ? "§7" : "") + var8.method_41987());
          }
       }
@@ -215,8 +215,8 @@ public class class_268 extends Module {
             }
          }
 
-         class_5664 var9 = this.field_958.get(var5.field_14700);
-         Module var10 = SigmaMainClass.method_3328().method_3298().method_844(var9).get(var6.field_14700);
+         Category var9 = this.field_958.get(var5.field_14700);
+         Module var10 = SigmaMainClass.method_3328().getModuleManager().method_844(var9).get(var6.field_14700);
          String var11 = var10.method_42001();
          if (var4 == 3) {
             Setting var12 = this.method_1206(var10).get(var7.field_14700);
@@ -283,10 +283,10 @@ public class class_268 extends Module {
       return 4 + var3 + 5 * var0;
    }
 
-   public void method_1200(class_5664 var1) {
+   public void method_1200(Category var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Module var6 : SigmaMainClass.method_3328().method_3298().method_844(var1)) {
+      for (Module var6 : SigmaMainClass.method_3328().getModuleManager().method_844(var1)) {
          var4.add(var6.method_41987());
       }
 
@@ -336,8 +336,8 @@ public class class_268 extends Module {
 
    public List<Setting> method_1206(Module var1) {
       ArrayList var4 = new ArrayList<Setting>(var1.method_41996().values());
-      if (var1 instanceof class_3620) {
-         class_3620 var5 = (class_3620)var1;
+      if (var1 instanceof SecondModule) {
+         SecondModule var5 = (SecondModule)var1;
          var5.method_16866();
          if (var5.method_16864() != null) {
             var4.addAll(var5.method_16864().method_41996().values());

@@ -172,7 +172,7 @@ public class class_1857 {
    @class_9148
    @class_5355
    public void method_8221(class_139 var1) {
-      if (!SigmaMainClass.method_3328().method_3298().method_847(class_2016.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
+      if (!SigmaMainClass.method_3328().getModuleManager().method_847(OldHittingModule.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
          )
        {
          if (!field_9416.isEmpty()) {
@@ -185,7 +185,7 @@ public class class_1857 {
             if (var6.getFirst() == class_6943.field_35701
                && var6.getSecond() != null
                && (
-                  SigmaMainClass.method_3328().method_3298().method_847(class_2016.class).method_42015()
+                  SigmaMainClass.method_3328().getModuleManager().method_847(OldHittingModule.class).method_42015()
                      || class_3347.method_15349() == class_412.field_1747.method_2055()
                )) {
                if (!(((class_6098)var6.getSecond()).method_27960() instanceof class_8440)) {

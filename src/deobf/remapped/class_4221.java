@@ -12,7 +12,7 @@ public class class_4221 extends Module {
    private class_2440 field_20486;
 
    public class_4221() {
-      super(class_5664.field_28709, "ActiveMods", "Shows active mods");
+      super(Category.RENDER, "ActiveMods", "Shows active mods");
       this.addSetting(new ModeSetting("Outline", "Outline", 0, "All", "Left", "Right", "None"));
       this.addSetting(new ModeSetting("Animation", "Animation", 0, "Smooth", "Slide", "Both", "None"));
       this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
@@ -131,8 +131,8 @@ public class class_4221 extends Module {
       if (this.field_20487.isEmpty()) {
          this.field_20487.clear();
 
-         for (Module var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
-            if (var4 != this && var4.method_41998() != class_5664.field_28708) {
+         for (Module var4 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+            if (var4 != this && var4.method_41998() != Category.GUI) {
                class_2440 var5 = new class_2440(200, 200, !var4.method_42015() ? class_4043.field_19620 : class_4043.field_19618);
                var5.method_11122(!var4.method_42015() ? 1.0F : 0.0F);
                this.field_20487.put(var4, var5);

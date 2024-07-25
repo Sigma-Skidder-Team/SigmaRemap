@@ -7,7 +7,7 @@ public class class_1964 extends Module {
    private class_2440 field_9983 = new class_2440(1500, 1500, class_4043.field_19618);
 
    public class_1964() {
-      super(class_5664.field_28708, "Cords", "Displays coordinates");
+      super(Category.GUI, "Cords", "Displays coordinates");
    }
 
    @class_9148

@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_367 extends Module {
-   public class_367(String var1, String var2, class_5664 var3) {
+   public class_367(String var1, String var2, Category var3) {
       super(var3, var1, var2);
    }
 

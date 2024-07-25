@@ -4,7 +4,7 @@ public class class_5741 extends Module {
    private int field_29085;
 
    public class_5741() {
-      super(class_5664.field_28714, "FastBow", "Shoots arrows faster");
+      super(Category.COMBAT, "FastBow", "Shoots arrows faster");
    }
 
    @class_9148

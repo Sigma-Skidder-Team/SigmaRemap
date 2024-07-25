@@ -4,7 +4,7 @@ public class class_9704 extends Module {
    private boolean field_49354;
 
    public class_9704() {
-      super(class_5664.field_28716, "NoSlow", "Stops slowdown when using an item");
+      super(Category.MOVEMENT, "NoSlow", "Stops slowdown when using an item");
       this.addSetting(new ModeSetting("Mode", "NoSlow mode", 0, "Vanilla", "NCP"));
    }
 
@@ -18,7 +18,7 @@ public class class_9704 extends Module {
    @class_9148
    private void method_44840(class_1393 var1) {
       if (this.method_42015()) {
-         boolean var4 = SigmaMainClass.method_3328().method_3298().method_847(class_2534.class).method_42003();
+         boolean var4 = SigmaMainClass.method_3328().getModuleManager().method_847(KillauraModule.class).method_42003();
          boolean var5 = mcInstance.field_9632.method_26446() != null && mcInstance.field_9632.method_26446().method_27960() instanceof class_2235;
          if (!var1.method_6449()) {
             if (var5 && mcInstance.field_9577.field_45559.method_27060() && !this.field_49354 && !var4 && this.method_42016("Mode").equals("NCP")) {

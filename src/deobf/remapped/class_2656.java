@@ -8,7 +8,7 @@ public class class_2656 extends Module {
    private boolean field_13092;
 
    public class_2656() {
-      super(class_5664.field_28718, "FakeLag", "Other players will see you lagging !");
+      super(Category.WORLD, "FakeLag", "Other players will see you lagging !");
       this.addSetting(new FloatSetting<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
       this.addSetting(new BooleanSetting("Combat", "Delay combat packets", true));

@@ -9,7 +9,7 @@ public class class_4452 extends Module {
    private boolean field_21696;
 
    public class_4452() {
-      super(class_5664.field_28716, "Mineplex", "Mineplex longjump.");
+      super(Category.MOVEMENT, "Mineplex", "Mineplex longjump.");
    }
 
    @Override

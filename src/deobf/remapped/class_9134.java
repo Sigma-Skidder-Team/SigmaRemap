@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class class_9134 extends Module {
    public class_9134() {
-      super(class_5664.field_28708, "Compass", "Fornite style directions");
+      super(Category.GUI, "Compass", "Fornite style directions");
       this.method_42011(false);
    }
 

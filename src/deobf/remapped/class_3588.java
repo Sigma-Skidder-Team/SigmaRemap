@@ -10,7 +10,7 @@ public class class_3588 extends class_367 {
    private class_1331 field_17596;
 
    public class_3588() {
-      super("AutoMLG", "Automatically places water when falling", class_5664.field_28712);
+      super("AutoMLG", "Automatically places water when falling", Category.ITEM);
       this.addSetting(new BooleanSetting("Cubecraft", "Cubecraft bypass", true));
       field_17597 = -1;
    }
@@ -66,7 +66,7 @@ public class class_3588 extends class_367 {
          }
 
          int var7 = this.method_16778();
-         if (!SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()
+         if (!SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()
             && var7 != -1
             && !mcInstance.field_9632.field_41726
             && mcInstance.field_9632.field_41706 > 3.0F) {

@@ -13,7 +13,7 @@ public class class_4233 {
    public static void method_19731(int var0) {
       if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30642) {
          if (var0 != -1) {
-            for (class_3158 var5 : SigmaMainClass.method_3328().method_3298().method_835().method_382(var0)) {
+            for (class_3158 var5 : SigmaMainClass.method_3328().getModuleManager().method_835().method_382(var0)) {
                if (var5 != null && var5.method_14561()) {
                   switch (var5.method_14566()) {
                      case field_25372:

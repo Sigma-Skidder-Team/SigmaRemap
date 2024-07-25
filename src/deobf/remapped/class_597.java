@@ -4,7 +4,7 @@ public class class_597 extends Module {
    public static boolean field_3439 = false;
 
    public class_597() {
-      super(class_5664.field_28709, "FPSBooster", "Disables Armor Stand and particle rendering");
+      super(Category.RENDER, "FPSBooster", "Disables Armor Stand and particle rendering");
    }
 
    @Override

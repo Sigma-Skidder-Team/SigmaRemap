@@ -8,7 +8,7 @@ public class class_8193 extends Module {
    private double field_41929;
 
    public class_8193() {
-      super(class_5664.field_28716, "Cubecraft", "Fly for Cubecraft");
+      super(Category.MOVEMENT, "Cubecraft", "Fly for Cubecraft");
       this.addSetting(new BooleanSetting("Damage", "Allows you to go infinitly up", false));
    }
 

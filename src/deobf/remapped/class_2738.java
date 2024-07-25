@@ -6,7 +6,7 @@ public class class_2738 extends class_367 {
    private int field_13370;
 
    public class_2738() {
-      super("NCP", "Phase for NCP anticheat", class_5664.field_28716);
+      super("NCP", "Phase for NCP anticheat", Category.MOVEMENT);
       this.addSetting(new BooleanSetting("Hypixel", "Hypixel bypass", true));
    }
 

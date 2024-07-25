@@ -5,7 +5,7 @@ public class class_9357 extends Module {
    private boolean field_47768;
 
    public class_9357() {
-      super(class_5664.field_28718, "Weather", "Removes rain and changes the world's time");
+      super(Category.WORLD, "Weather", "Removes rain and changes the world's time");
       this.addSetting(new BooleanSetting("Custom time", "Set the world time", true));
       this.addSetting(new FloatSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method_23029(var1 -> {
          if (this.method_42007("Custom time") && this.method_42015()) {

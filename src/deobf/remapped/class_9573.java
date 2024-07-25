@@ -4,12 +4,12 @@ public class class_9573 extends class_4098 {
    public class_5329 field_48702;
    public int field_48701 = 0;
 
-   public class_9573(class_7038 var1, String var2, int var3, int var4, class_5664[] var5) {
+   public class_9573(class_7038 var1, String var2, int var3, int var4, Category[] var5) {
       super(var1, var2, var3 - 296, var4 - 346, 592, 692);
 
-      for (Module var9 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+      for (Module var9 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
          if (var9.method_42013()) {
-            for (class_5664 var13 : var5) {
+            for (Category var13 : var5) {
                if (var9.method_42004().equals(var13)) {
                   this.method_44238(var9);
                }

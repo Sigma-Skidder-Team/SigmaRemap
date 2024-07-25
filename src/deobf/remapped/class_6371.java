@@ -9,7 +9,7 @@ public class class_6371 extends Module {
    private class_3223 field_32570 = new class_3223();
 
    public class_6371() {
-      super(class_5664.field_28716, "Basic", "Basic click tp");
+      super(Category.MOVEMENT, "Basic", "Basic click tp");
    }
 
    @Override

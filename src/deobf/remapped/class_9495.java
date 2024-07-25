@@ -5,7 +5,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class class_9495 extends Module {
    public class_9495() {
-      super(class_5664.field_28709, "NameProtect", "Useful for recording/streaming");
+      super(Category.RENDER, "NameProtect", "Useful for recording/streaming");
       this.addSetting(new TextInputSetting("Username", "The name which your username is replaced with", "Me"));
    }
 

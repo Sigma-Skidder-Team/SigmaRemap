@@ -4,7 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_3723 extends Module {
    public class_3723() {
-      super(class_5664.field_28709, "Box", "Draws a box where chests are");
+      super(Category.RENDER, "Box", "Draws a box where chests are");
    }
 
    @class_9148

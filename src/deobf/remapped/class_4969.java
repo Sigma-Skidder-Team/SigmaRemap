@@ -28,7 +28,7 @@ public class class_4969 extends Module {
    private double field_25734;
 
    public class_4969() {
-      super(class_5664.field_28708, "MiniMap", "Shows a mini map");
+      super(Category.GUI, "MiniMap", "Shows a mini map");
       this.method_42011(false);
    }
 

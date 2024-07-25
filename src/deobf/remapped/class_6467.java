@@ -7,7 +7,7 @@ public class class_6467 extends Module {
    public class_3758 field_32955 = class_2565.method_11647(mcInstance.method_8589().field_14810, new class_9633(256));
 
    public class_6467() {
-      super(class_5664.field_28709, "Fill", "Fill ESP");
+      super(Category.RENDER, "Fill", "Fill ESP");
       this.addSetting(new ColorSetting("Color", "The tracers color", class_1255.field_6918.field_6917));
    }
 

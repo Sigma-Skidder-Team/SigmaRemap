@@ -2,7 +2,7 @@ package remapped;
 
 public class class_3733 extends Module {
    public class_3733() {
-      super(class_5664.field_28709, "NoHurtCam", "Disables the hurt animation");
+      super(Category.RENDER, "NoHurtCam", "Disables the hurt animation");
    }
 
    @class_9148

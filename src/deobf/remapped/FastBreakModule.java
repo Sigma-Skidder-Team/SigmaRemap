@@ -2,7 +2,7 @@ package remapped;
 
 public class FastBreakModule extends Module {
    public FastBreakModule() {
-      super(class_5664.field_28718, "FastBreak", "Break blocks faster");
+      super(Category.WORLD, "FastBreak", "Break blocks faster");
    }
 
    @class_9148

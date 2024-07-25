@@ -2,7 +2,7 @@ package remapped;
 
 public class class_452 extends Module {
    public class_452() {
-      super(class_5664.field_28709, "Vanilla", "Draws a line arround players");
+      super(Category.RENDER, "Vanilla", "Draws a line arround players");
    }
 
    @class_9148

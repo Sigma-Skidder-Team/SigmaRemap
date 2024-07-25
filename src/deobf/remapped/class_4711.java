@@ -1,8 +1,8 @@
 package remapped;
 
-public class class_4711 extends class_3620 {
+public class class_4711 extends SecondModule {
    public class_4711() {
-      super(class_5664.field_28709, "ChestESP", "Allows you to see chests through blocks", new class_4004(), new class_3723());
+      super(Category.RENDER, "ChestESP", "Allows you to see chests through blocks", new class_4004(), new class_3723());
       this.addSetting(new BooleanSetting("Show Regular Chests", "Renders the regular chest esp", true));
       this.addSetting(new ColorSetting("Regular Color", "The render color", class_1255.field_6918.field_6917));
       this.addSetting(new BooleanSetting("Show Trapped Chests", "Renders the regular chest esp", true));

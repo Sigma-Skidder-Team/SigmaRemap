@@ -9,7 +9,7 @@ public class class_2481 extends Module {
    private ArrayList<class_2034> field_12370 = new ArrayList<class_2034>();
 
    public class_2481() {
-      super(class_5664.field_28718, "NewChunks", "Detects new chunks on non vanilla servers");
+      super(Category.WORLD, "NewChunks", "Detects new chunks on non vanilla servers");
    }
 
    @class_9148

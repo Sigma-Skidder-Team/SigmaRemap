@@ -86,7 +86,7 @@ public class class_986 {
          this.field_5025.add(this.field_5020 = new class_1675(var1, new JSONObjectImpl()));
       }
 
-      SigmaMainClass.method_3328().method_3298().method_838(this.field_5020.field_8678);
+      SigmaMainClass.method_3328().getModuleManager().method_838(this.field_5020.field_8678);
    }
 
    public boolean method_4299(String var1) {
@@ -100,7 +100,7 @@ public class class_986 {
    }
 
    public void method_4306() throws IOException {
-      this.field_5020.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new JSONObjectImpl());
+      this.field_5020.field_8678 = SigmaMainClass.method_3328().getModuleManager().method_839(new JSONObjectImpl());
       File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/profiles/");
       if (!var3.exists()) {
          var3.mkdirs();
@@ -130,15 +130,15 @@ public class class_986 {
       SigmaMainClass.method_3328().method_3318();
       class_1235.field_6813 = new HashMap<Object, Integer>();
       if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30644) {
-         this.field_5020.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new JSONObjectImpl());
+         this.field_5020.field_8678 = SigmaMainClass.method_3328().getModuleManager().method_839(new JSONObjectImpl());
          this.field_5020 = var1;
          SigmaMainClass.method_3328().method_3304().method_5820("profile", var1.field_8677);
-         SigmaMainClass.method_3328().method_3298().method_838(var1.field_8678);
+         SigmaMainClass.method_3328().getModuleManager().method_838(var1.field_8678);
          SigmaMainClass.method_3328().method_3318();
       } else {
          this.field_5020.field_8678 = var1.method_7499();
          SigmaMainClass.method_3328().method_3304().method_5820("profile", "Classic");
-         SigmaMainClass.method_3328().method_3298().method_838(var1.field_8678);
+         SigmaMainClass.method_3328().getModuleManager().method_838(var1.field_8678);
          SigmaMainClass.method_3328().method_3318();
       }
    }

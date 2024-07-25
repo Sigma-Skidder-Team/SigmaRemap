@@ -5,7 +5,7 @@ public class class_4246 extends Module {
    private double field_20589;
 
    public class_4246() {
-      super(class_5664.field_28714, "Gomme", "AntiKB for GommeHD");
+      super(Category.COMBAT, "Gomme", "AntiKB for GommeHD");
       this.addSetting(new FloatSetting<Float>("Delay", "Boost delay", 0.5F, Float.class, 0.0F, 1.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
    }

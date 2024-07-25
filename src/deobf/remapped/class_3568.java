@@ -8,7 +8,7 @@ public class class_3568 extends Module {
    private boolean field_17456;
 
    public class_3568() {
-      super(class_5664.field_28716, "VeltPvP", "A fly for VeltPvP");
+      super(Category.MOVEMENT, "VeltPvP", "A fly for VeltPvP");
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 5.0F, 0.1F));
    }
 

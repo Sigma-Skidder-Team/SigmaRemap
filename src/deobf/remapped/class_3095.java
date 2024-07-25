@@ -7,7 +7,7 @@ public class class_3095 extends Module {
    private boolean field_15403;
 
    public class_3095() {
-      super(class_5664.field_28710, "NoFall", "Avoid you from getting fall damages");
+      super(Category.PLAYER, "NoFall", "Avoid you from getting fall damages");
       this.addSetting(
          new ModeSetting("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
             .method_12861("Hypixel", "Hypixel2")

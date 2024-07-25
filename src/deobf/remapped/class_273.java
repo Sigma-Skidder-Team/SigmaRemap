@@ -261,8 +261,8 @@ public class class_273 extends class_2612 implements class_1768 {
       }
 
       int var17 = var4;
-      if (this.field_977 instanceof class_3620) {
-         class_3620 var18 = (class_3620)this.field_977;
+      if (this.field_977 instanceof SecondModule) {
+         SecondModule var18 = (SecondModule)this.field_977;
 
          for (Module var10 : var18.field_17661) {
             int var11 = 0;

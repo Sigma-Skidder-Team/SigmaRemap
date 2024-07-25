@@ -7,7 +7,7 @@ public class class_5761 extends Module {
    private double field_29130;
 
    public class_5761() {
-      super(class_5664.field_28716, "Mineplex", "Speed for Mineplex");
+      super(Category.MOVEMENT, "Mineplex", "Speed for Mineplex");
       this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
       this.addSetting(new BooleanSetting("OnGround", "OnGround Speed.", true));
       this.addSetting(new FloatSetting<Float>("OnGround Speed", "OnGround value.", 0.8F, Float.class, 0.3F, 1.5F, 0.01F));
@@ -34,7 +34,7 @@ public class class_5761 extends Module {
    @class_315
    public void method_26048(class_7767 var1) {
       if (this.method_42015()
-         && !SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42015()
+         && !SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class).method_42015()
          && !class_314.method_1437(mcInstance.field_9632)) {
          double var4 = (double)this.method_42002("OnGround Speed");
          if (!mcInstance.field_9632.field_41726) {

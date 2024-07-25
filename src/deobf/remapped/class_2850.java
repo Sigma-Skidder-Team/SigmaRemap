@@ -6,7 +6,7 @@ public class class_2850 extends Module {
    private boolean field_13967;
 
    public class_2850() {
-      super(class_5664.field_28716, "Spartan", "A fly for Spartan anticheat");
+      super(Category.MOVEMENT, "Spartan", "A fly for Spartan anticheat");
       this.addSetting(new BooleanSetting("Ground Spoof", "Send on ground packets", true));
       this.addSetting(new BooleanSetting("Fake Block", "Send on fake blockplacing packet", true));
    }

@@ -35,17 +35,17 @@ public class ConfigCommand extends Command {
                         throw new class_2900();
                      }
 
-                     var3.method_3731("§l" + SigmaMainClass.method_3328().method_3298().method_848().method_4305().size() + " " + this.method_8240() + " :");
+                     var3.method_3731("§l" + SigmaMainClass.method_3328().getModuleManager().method_848().method_4305().size() + " " + this.method_8240() + " :");
 
-                     for (class_1675 var8 : SigmaMainClass.method_3328().method_3298().method_848().method_4305()) {
-                        boolean var9 = SigmaMainClass.method_3328().method_3298().method_848().method_4301() == var8;
+                     for (class_1675 var8 : SigmaMainClass.method_3328().getModuleManager().method_848().method_4305()) {
+                        boolean var9 = SigmaMainClass.method_3328().getModuleManager().method_848().method_4301() == var8;
                         if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30644 || !var9) {
                            var3.method_3731((!var9 ? "" : "§n") + var8.field_8677);
                         }
                      }
                   } else if (var2.length != 1) {
                      String var10 = var2[1].method_24060().toLowerCase();
-                     if (!SigmaMainClass.method_3328().method_3298().method_848().method_4302(var10)) {
+                     if (!SigmaMainClass.method_3328().getModuleManager().method_848().method_4302(var10)) {
                         var3.method_3731(this.method_8240() + " not found!");
                      } else {
                         var3.method_3731("Removed " + this.method_8240());
@@ -55,21 +55,21 @@ public class ConfigCommand extends Command {
                   }
                } else if (var2.length != 1) {
                   String var11 = var2[1].method_24060().toLowerCase();
-                  class_1675 var13 = SigmaMainClass.method_3328().method_3298().method_848().method_4301();
-                  var13.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new JSONObjectImpl());
-                  SigmaMainClass.method_3328().method_3298().method_848().method_4302(var11);
-                  SigmaMainClass.method_3328().method_3298().method_848().method_4298(new class_1675(var11, var13.field_8678));
+                  class_1675 var13 = SigmaMainClass.method_3328().getModuleManager().method_848().method_4301();
+                  var13.field_8678 = SigmaMainClass.method_3328().getModuleManager().method_839(new JSONObjectImpl());
+                  SigmaMainClass.method_3328().getModuleManager().method_848().method_4302(var11);
+                  SigmaMainClass.method_3328().getModuleManager().method_848().method_4298(new class_1675(var11, var13.field_8678));
                   var3.method_3731("Saved " + this.method_8240());
                } else {
                   var3.method_3731("Usage : .config save <name>");
                }
             } else if (var2.length != 1) {
                String var12 = var2[1].method_24060().toLowerCase();
-               class_1675 var14 = SigmaMainClass.method_3328().method_3298().method_848().method_4307(var12);
+               class_1675 var14 = SigmaMainClass.method_3328().getModuleManager().method_848().method_4307(var12);
                if (var14 == null) {
                   var3.method_3731(this.method_8240() + " not found!");
                } else {
-                  SigmaMainClass.method_3328().method_3298().method_848().method_4300(var14);
+                  SigmaMainClass.method_3328().getModuleManager().method_848().method_4300(var14);
                   var3.method_3731(this.method_8240() + " was loaded!");
                }
             } else {
@@ -86,7 +86,7 @@ public class ConfigCommand extends Command {
    }
 
    public void method_8239(String var1) {
-      JSONObjectImpl var4 = SigmaMainClass.method_3328().method_3298().method_839(new JSONObjectImpl());
+      JSONObjectImpl var4 = SigmaMainClass.method_3328().getModuleManager().method_839(new JSONObjectImpl());
       File var5 = new File(SigmaMainClass.method_3328().method_3334() + "/configs/");
       if (!var5.exists()) {
          var5.mkdirs();

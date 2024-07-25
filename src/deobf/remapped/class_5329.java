@@ -154,8 +154,8 @@ public class class_5329 extends class_2612 {
          }
       }
 
-      if (this.field_27182 instanceof class_3620) {
-         class_3620 var16 = (class_3620)this.field_27182;
+      if (this.field_27182 instanceof SecondModule) {
+         SecondModule var16 = (SecondModule)this.field_27182;
 
          for (Module var11 : var16.field_17661) {
             int var12 = 10;

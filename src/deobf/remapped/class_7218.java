@@ -5,17 +5,17 @@ public class class_7218 extends Module {
    private boolean field_37058;
 
    public class_7218() {
-      super(class_5664.field_28710, "AutoSprint", "Sprints for you");
+      super(Category.PLAYER, "AutoSprint", "Sprints for you");
       this.addSetting(new BooleanSetting("Keep Sprint", "Keep Sprinting after hitting a player", true));
    }
 
    @class_9148
    public void method_33059(class_5596 var1) {
       if (this.method_42015()) {
-         class_3620 var4 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_3709.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class);
          Module var5 = var4.field_17664;
          if (var5 == null || !var5.method_42015() || !(var5 instanceof class_2461) || var5.method_42007("Haphe (AACAP)")) {
-            if (mcInstance.field_9632.field_29673 > 0.0F && !((class_3709) SigmaMainClass.method_3328().method_3298().method_847(class_3709.class)).method_17212()) {
+            if (mcInstance.field_9632.field_29673 > 0.0F && !((BlockFlyModule) SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class)).method_17212()) {
                mcInstance.field_9632.method_37140(true);
             } else {
                mcInstance.field_9632.method_37140(false);
@@ -29,7 +29,7 @@ public class class_7218 extends Module {
       if (this.method_42015()
          && !(mcInstance.field_9632.field_29673 <= 0.0F)
          && (!mcInstance.field_9632.method_26554() || mcInstance.field_9632.method_26576().method_27960() != class_4897.field_25206)
-         && !((class_3709) SigmaMainClass.method_3328().method_3298().method_847(class_3709.class)).method_17212()) {
+         && !((BlockFlyModule) SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class)).method_17212()) {
          class_9747 var4 = mcInstance.field_9632.method_26561(class_7331.field_37465);
          float var5 = (float)(
                (var4.method_44996() + 0.03F + (double)(0.015F * (float)class_8865.method_40770())) / (double) mcInstance.field_9632.field_3876.method_4229()

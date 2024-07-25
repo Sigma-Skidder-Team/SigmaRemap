@@ -4,7 +4,7 @@ public class class_9459 extends Module {
    public int field_48266 = 30;
 
    public class_9459() {
-      super(class_5664.field_28710, "AutoRespawn", "Respawns for you");
+      super(Category.PLAYER, "AutoRespawn", "Respawns for you");
    }
 
    @class_9148

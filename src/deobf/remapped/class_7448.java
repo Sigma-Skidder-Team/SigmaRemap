@@ -7,7 +7,7 @@ public class class_7448 extends Module {
    private int field_37951;
 
    public class_7448() {
-      super(class_5664.field_28716, "OldAAC", "Speed for old version of AAC");
+      super(Category.MOVEMENT, "OldAAC", "Speed for old version of AAC");
       this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
    }
 

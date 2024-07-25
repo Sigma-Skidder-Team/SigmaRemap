@@ -4,7 +4,7 @@ public class class_8136 extends Module {
    private boolean field_41672 = false;
 
    public class_8136() {
-      super(class_5664.field_28716, "Jump", "Jump spider");
+      super(Category.MOVEMENT, "Jump", "Jump spider");
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Spartan"));
       this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you", true));
    }

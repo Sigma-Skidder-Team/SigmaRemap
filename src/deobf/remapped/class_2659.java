@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class class_2659 implements Comparator<Entity> {
    private static String[] field_13100;
 
-   public class_2659(class_1704 var1) {
+   public class_2659(TestModule var1) {
       this.field_13099 = var1;
    }
 

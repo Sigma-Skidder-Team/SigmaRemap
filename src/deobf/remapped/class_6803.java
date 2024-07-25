@@ -2,7 +2,7 @@ package remapped;
 
 public class class_6803 extends Module {
    public class_6803() {
-      super(class_5664.field_28718, "Timer", "Speeds up the world's timer");
+      super(Category.WORLD, "Timer", "Speeds up the world's timer");
       this.addSetting(new FloatSetting<Float>("Timer", "Timer value", 0.1F, Float.class, 0.1F, 10.0F, 0.1F));
    }
 

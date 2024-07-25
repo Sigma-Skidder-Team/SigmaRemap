@@ -4,7 +4,7 @@ public class class_3721 extends class_367 {
    public boolean field_18223 = false;
 
    public class_3721() {
-      super("BoatFly", "Fly with a boat", class_5664.field_28716);
+      super("BoatFly", "Fly with a boat", Category.MOVEMENT);
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
    }
 

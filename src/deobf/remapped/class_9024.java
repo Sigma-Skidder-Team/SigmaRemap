@@ -17,8 +17,8 @@ public class class_9024 extends Module {
    private int field_46185 = 90;
    private int field_46158 = 150;
    private int field_46178 = 150;
-   public List<class_5664> field_46170 = new ArrayList<class_5664>();
-   public HashMap<class_5664, Float> field_46155 = new HashMap<class_5664, Float>();
+   public List<Category> field_46170 = new ArrayList<Category>();
+   public HashMap<Category, Float> field_46155 = new HashMap<Category, Float>();
    public HashMap<Module, Float> field_46167 = new HashMap<Module, Float>();
    private int field_46179 = 0;
    private int field_46180 = 0;
@@ -27,7 +27,7 @@ public class class_9024 extends Module {
    private int field_46163 = 4;
    private float field_46165 = 1.0F;
    public boolean field_46166 = false;
-   private class_5664 field_46172;
+   private Category field_46172;
    private int field_46160 = 0;
    private int field_46176;
    private Module field_46187;
@@ -37,11 +37,11 @@ public class class_9024 extends Module {
    public ArrayList<class_3922> field_46164 = new ArrayList<class_3922>();
    public int field_46162 = class_314.method_1444(class_1255.field_6929.field_6917, 0.0625F);
    public int field_46186 = class_314.method_1444(class_1255.field_6918.field_6917, 0.3F);
-   public List<class_5664> field_46183 = this.method_41402();
+   public List<Category> field_46183 = this.method_41402();
    public int field_46157 = class_314.method_1444(class_1255.field_6920.field_6917, 0.05F);
 
    public class_9024() {
-      super(class_5664.field_28708, "TabGUI", "Manage mods without opening the ClickGUI");
+      super(Category.GUI, "TabGUI", "Manage mods without opening the ClickGUI");
       this.method_42011(false);
       field_46156 = this;
    }
@@ -104,10 +104,10 @@ public class class_9024 extends Module {
       return Math.max(this.field_46179 * this.field_46159 - 4 * this.field_46159, 0);
    }
 
-   private List<Module> method_41400(class_5664 var1) {
+   private List<Module> method_41400(Category var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Module var6 : SigmaMainClass.method_3328().method_3298().method_844(var1)) {
+      for (Module var6 : SigmaMainClass.method_3328().getModuleManager().method_844(var1)) {
          var4.add(var6);
       }
 
@@ -154,10 +154,10 @@ public class class_9024 extends Module {
       }
    }
 
-   private void method_41395(int var1, int var2, List<class_5664> var3) {
+   private void method_41395(int var1, int var2, List<Category> var3) {
       int var6 = 0;
 
-      for (class_5664 var8 : var3) {
+      for (Category var8 : var3) {
          if (this.field_46179 == var6) {
             this.field_46172 = var8;
          }
@@ -286,15 +286,15 @@ public class class_9024 extends Module {
       class_73.method_141();
    }
 
-   private List<class_5664> method_41402() {
+   private List<Category> method_41402() {
       ArrayList var3 = new ArrayList();
-      var3.add(class_5664.field_28716);
-      var3.add(class_5664.field_28710);
-      var3.add(class_5664.field_28714);
-      var3.add(class_5664.field_28712);
-      var3.add(class_5664.field_28709);
-      var3.add(class_5664.field_28718);
-      var3.add(class_5664.field_28711);
+      var3.add(Category.MOVEMENT);
+      var3.add(Category.PLAYER);
+      var3.add(Category.COMBAT);
+      var3.add(Category.ITEM);
+      var3.add(Category.RENDER);
+      var3.add(Category.WORLD);
+      var3.add(Category.MISC);
       return var3;
    }
 

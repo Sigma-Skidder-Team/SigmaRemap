@@ -8,10 +8,10 @@ import org.lwjgl.opengl.GL11;
 
 public class class_9137 extends Module {
    public HashMap<UUID, class_4333> field_46733 = new HashMap<UUID, class_4333>();
-   private class_5664 field_46735 = class_5664.field_28710;
+   private Category field_46735 = Category.PLAYER;
 
    public class_9137() {
-      super(class_5664.field_28709, "Waypoints", "Renders waypoints you added in Jello maps");
+      super(Category.RENDER, "Waypoints", "Renders waypoints you added in Jello maps");
       this.addSetting(new BooleanSetting("Unspawn Positions", "Adds a waypoint when a player unspawns", false));
       this.method_42011(false);
    }

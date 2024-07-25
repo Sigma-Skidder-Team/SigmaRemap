@@ -13,7 +13,7 @@ public class class_5694 extends Module {
    public List<String> field_28842 = new ArrayList<String>();
 
    public class_5694() {
-      super(class_5664.field_28717, "Dumper", "Dumps the plugins/commands from the server");
+      super(Category.EXPLOIT, "Dumper", "Dumps the plugins/commands from the server");
    }
 
    @Override

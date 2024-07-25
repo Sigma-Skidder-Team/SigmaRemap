@@ -2,7 +2,7 @@ package remapped;
 
 public class class_2670 extends Module {
    public class_2670() {
-      super(class_5664.field_28711, "PortalGui", "Allows GUIs while in nether portal");
+      super(Category.MISC, "PortalGui", "Allows GUIs while in nether portal");
    }
 
    @class_9148

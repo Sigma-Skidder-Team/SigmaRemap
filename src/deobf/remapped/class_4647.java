@@ -17,7 +17,7 @@ public class class_4647 extends class_2596 {
       this.method_32102(() -> this.method_21495());
    }
 
-   public void method_21497(String var1, class_5664... var2) {
+   public void method_21497(String var1, Category... var2) {
       this.method_32102(() -> {
          if (this.field_22679 != null) {
             this.method_32179(this.field_22679);

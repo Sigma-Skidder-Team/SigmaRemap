@@ -5,7 +5,7 @@ public class class_7847 extends Module {
    private boolean field_39768;
 
    public class_7847() {
-      super(class_5664.field_28714, "Minemen", "Minemen Club bypass");
+      super(Category.COMBAT, "Minemen", "Minemen Club bypass");
    }
 
    @Override

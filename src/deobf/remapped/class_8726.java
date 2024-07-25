@@ -13,7 +13,7 @@ public class class_8726 extends Module {
    public boolean field_44719 = false;
 
    public class_8726() {
-      super(class_5664.field_28718, "Auto32k", "Automaticly places 32k shulker + hopper in hotbar");
+      super(Category.WORLD, "Auto32k", "Automaticly places 32k shulker + hopper in hotbar");
    }
 
    @Override

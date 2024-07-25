@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1917 extends Module {
    public class_1917() {
-      super(class_5664.field_28716, "Vanilla", "Vanilla phase");
+      super(Category.MOVEMENT, "Vanilla", "Vanilla phase");
    }
 
    @class_9148

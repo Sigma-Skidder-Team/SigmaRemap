@@ -6,7 +6,7 @@ public class class_5787 extends Module {
    private boolean field_29226;
 
    public class_5787() {
-      super(class_5664.field_28710, "InvMove", "Move freely in the inventory");
+      super(Category.PLAYER, "InvMove", "Move freely in the inventory");
       this.addSetting(new BooleanSetting("AACP", "Bypass for AACP", true));
       this.field_29226 = false;
    }

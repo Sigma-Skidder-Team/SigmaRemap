@@ -7,7 +7,7 @@ public class class_1370 extends Module {
    public class_3758 field_7447 = class_2565.method_11647(mcInstance.method_8589().field_14810, new class_9633(256));
 
    public class_1370() {
-      super(class_5664.field_28709, "Shadow", "Draws a line arround entities");
+      super(Category.RENDER, "Shadow", "Draws a line arround entities");
       this.addSetting(new ColorSetting("Color", "The tracers color", class_1255.field_6918.field_6917));
    }
 
