@@ -438,7 +438,7 @@ public class class_9326 implements class_2231 {
          int var7 = var1.method_12165();
          int var8 = var1.method_12185();
          float var9 = 0.1F;
-         class_4092 var10 = var5.method_8334(this.field_47617, var1).method_19483();
+         Box var10 = var5.method_8334(this.field_47617, var1).method_19483();
          double var11 = (double)var6 + this.field_47620.nextDouble() * (var10.field_19940 - var10.field_19941 - 0.2F) + 0.1F + var10.field_19941;
          double var13 = (double)var7 + this.field_47620.nextDouble() * (var10.field_19939 - var10.field_19937 - 0.2F) + 0.1F + var10.field_19937;
          double var15 = (double)var8 + this.field_47620.nextDouble() * (var10.field_19942 - var10.field_19938 - 0.2F) + 0.1F + var10.field_19938;

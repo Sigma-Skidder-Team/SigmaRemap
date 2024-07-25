@@ -52,7 +52,7 @@ public class class_2547 extends class_7429 implements class_2354 {
    }
 
    @Override
-   public class_4092 method_37210() {
+   public Box method_37210() {
       return this.method_37241().method_18899(3.0, 0.0, 3.0);
    }
 

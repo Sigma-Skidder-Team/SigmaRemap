@@ -31,9 +31,9 @@ public abstract class class_7067<T extends Entity> {
          if (var1.field_41750) {
             return true;
          } else {
-            class_4092 var11 = var1.method_37210().method_18898(0.5);
+            Box var11 = var1.method_37210().method_18898(0.5);
             if (var11.method_18925() || var11.method_18906() == 0.0) {
-               var11 = new class_4092(
+               var11 = new Box(
                   var1.getPosX() - 2.0,
                   var1.method_37309() - 2.0,
                   var1.getPosZ() - 2.0,

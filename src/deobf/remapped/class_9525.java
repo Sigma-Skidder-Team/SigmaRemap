@@ -82,12 +82,12 @@ public class class_9525 implements class_6163, class_1449 {
    }
 
    @Override
-   public Stream<class_4190> method_6679(Entity var1, class_4092 var2, Predicate<Entity> var3) {
+   public Stream<class_4190> method_6679(Entity var1, Box var2, Predicate<Entity> var3) {
       return Stream.<class_4190>empty();
    }
 
    @Override
-   public Stream<class_4190> method_6676(Entity var1, class_4092 var2, Predicate<Entity> var3) {
+   public Stream<class_4190> method_6676(Entity var1, Box var2, Predicate<Entity> var3) {
       return this.method_6680(var1, var2);
    }
 

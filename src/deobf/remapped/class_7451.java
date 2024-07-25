@@ -74,7 +74,7 @@ public class class_7451 extends class_4641 {
          var11 /= 32.0;
          var13 /= 32.0;
          var15 /= 32.0;
-         this.method_37094(new class_4092(var5 - var11, var7 - var13, var9 - var15, var5 + var11, var7 + var13, var9 + var15));
+         this.method_37094(new Box(var5 - var11, var7 - var13, var9 - var15, var5 + var11, var7 + var13, var9 + var15));
       }
    }
 

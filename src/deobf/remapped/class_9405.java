@@ -155,7 +155,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
 
          while (var8.hasNext()) {
             class_7653 var9 = (class_7653)var8.next();
-            class_4092 var10 = var1.method_26549(var9);
+            Box var10 = var1.method_26549(var9);
 
             for (int[] var14 : var5) {
                var7.method_13362(var6.method_12173() + var14[0], var6.method_12165(), var6.method_12185() + var14[1]);

@@ -18,7 +18,7 @@ public class class_8194 {
       this.field_41936 = var11;
    }
 
-   public class_8194(class_4092 var1) {
+   public class_8194(Box var1) {
       this.field_41941 = var1.field_19941;
       this.field_41938 = var1.field_19937;
       this.field_41935 = var1.field_19938;

@@ -44,7 +44,7 @@ public class FreeCamModule extends Module {
          }
 
          client.thePlayer.lastReportedPitch = client.thePlayer.rotationPitch;
-         class_4092 var4 = client.thePlayer.field_41712;
+         Box var4 = client.thePlayer.field_41712;
          field_48917.method_37256((var4.field_19941 + var4.field_19940) / 2.0, var4.field_19937, (var4.field_19938 + var4.field_19942) / 2.0);
          double var5 = this.field_48912 + (this.field_48921 - this.field_48912) * (double)var1.field_8848;
          double var7 = this.field_48926 + (this.field_48927 - this.field_48926) * (double)var1.field_8848;
@@ -71,7 +71,7 @@ public class FreeCamModule extends Module {
    public void method_44322(class_3368 var1) {
       if (this.method_42015()) {
          field_48917.method_37298();
-         field_48917.field_41712 = new class_4092(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+         field_48917.field_41712 = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
       }
    }
 
@@ -263,7 +263,7 @@ public class FreeCamModule extends Module {
                float var12 = class_704.field_3865.field_31200;
                client.thePlayer
                   .method_37094(
-                     new class_4092(var5 - (double)var11, var7, var9 - (double)var11, var5 + (double)var11, var7 + (double)var12, var9 + (double)var11)
+                     new Box(var5 - (double)var11, var7, var9 - (double)var11, var5 + (double)var11, var7 + (double)var12, var9 + (double)var11)
                   );
                var1.method_29715(true);
                field_48917.method_37214(0.0, 0.0, 0.0);

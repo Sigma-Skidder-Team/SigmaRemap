@@ -135,14 +135,14 @@ public class AutoMLGModule extends PremiumModule {
       double var3 = client.thePlayer.method_37098().field_7336;
       double var5 = client.thePlayer.method_37098().field_7333;
       double var7 = client.thePlayer.method_37098().field_7334;
-      class_4092 var9 = client.thePlayer.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
+      Box var9 = client.thePlayer.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
       Stream var10 = client.theWorld.method_6680(client.thePlayer, var9);
       Iterator var11 = var10.iterator();
       BlockPos var12 = null;
 
       while (var11.hasNext()) {
          class_4190 var13 = (class_4190)var11.next();
-         class_4092 var14 = var13.method_19483();
+         Box var14 = var13.method_19483();
          BlockPos var15 = new BlockPos(var14.method_18926());
          if (class_7494.method_34090(var15)
             && (double)(var15.method_12165() + 1) < client.thePlayer.method_37309()
@@ -167,7 +167,7 @@ public class AutoMLGModule extends PremiumModule {
 
          while (var11.hasNext()) {
             class_4190 var20 = (class_4190)var11.next();
-            class_4092 var21 = var20.method_19483();
+            Box var21 = var20.method_19483();
             BlockPos var22 = new BlockPos(var21.method_18926());
             if (class_7494.method_34090(var22)
                && (double)(var22.method_12165() + 1) < client.thePlayer.method_37309()

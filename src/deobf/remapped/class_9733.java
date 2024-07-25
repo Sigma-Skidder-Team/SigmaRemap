@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 public abstract class class_9733 {
-   private static final class_4092 field_49483 = new class_4092(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+   private static final Box field_49483 = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
    public final ClientWorld field_49469;
    public double field_49459;
    public double field_49480;
@@ -15,7 +15,7 @@ public abstract class class_9733 {
    public double field_49481;
    public double field_49486;
    public double field_49471;
-   private class_4092 field_49461 = field_49483;
+   private Box field_49461 = field_49483;
    public boolean field_49482;
    public boolean field_49474 = true;
    private boolean field_49460;
@@ -138,11 +138,11 @@ public abstract class class_9733 {
       if (var1 != this.field_49484 || var2 != this.field_49463) {
          this.field_49484 = var1;
          this.field_49463 = var2;
-         class_4092 var5 = this.method_44945();
+         Box var5 = this.method_44945();
          double var6 = (var5.field_19941 + var5.field_19940 - (double)var1) / 2.0;
          double var8 = (var5.field_19938 + var5.field_19942 - (double)var1) / 2.0;
          this.method_44961(
-            new class_4092(
+            new Box(
                var6, var5.field_19937, var8, var6 + (double)this.field_49484, var5.field_19937 + (double)this.field_49463, var8 + (double)this.field_49484
             )
          );
@@ -155,7 +155,7 @@ public abstract class class_9733 {
       this.field_49465 = var5;
       float var9 = this.field_49484 / 2.0F;
       float var10 = this.field_49463;
-      this.method_44961(new class_4092(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)var10, var5 + (double)var9));
+      this.method_44961(new Box(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)var10, var5 + (double)var9));
    }
 
    public void method_44962(double var1, double var3, double var5) {
@@ -198,7 +198,7 @@ public abstract class class_9733 {
    }
 
    public void method_44944() {
-      class_4092 var3 = this.method_44945();
+      Box var3 = this.method_44945();
       this.field_49462 = (var3.field_19941 + var3.field_19940) / 2.0;
       this.field_49473 = var3.field_19937;
       this.field_49465 = (var3.field_19938 + var3.field_19942) / 2.0;
@@ -213,11 +213,11 @@ public abstract class class_9733 {
       return !this.field_49464;
    }
 
-   public class_4092 method_44945() {
+   public Box method_44945() {
       return this.field_49461;
    }
 
-   public void method_44961(class_4092 var1) {
+   public void method_44961(Box var1) {
       this.field_49461 = var1;
    }
 

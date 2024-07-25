@@ -77,7 +77,7 @@ public class class_7194 {
       }
    }
 
-   public static boolean method_32945(class_4092 var0, class_5371 var1) {
+   public static boolean method_32945(Box var0, class_5371 var1) {
       int var4 = class_9299.method_42847(var0.field_19941);
       int var5 = class_9299.method_42815(var0.field_19940);
       int var6 = class_9299.method_42847(var0.field_19937);

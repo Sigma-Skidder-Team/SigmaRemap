@@ -26,7 +26,7 @@ public class class_160 {
       return !Double.isInfinite(var0) && var0 < 1.0;
    }
 
-   public static boolean method_647(class_1449 var0, class_5834 var1, class_4092 var2) {
+   public static boolean method_647(class_1449 var0, class_5834 var1, Box var2) {
       return var0.method_6680(var1, var2).allMatch(class_4190::method_19485);
    }
 

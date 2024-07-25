@@ -65,7 +65,7 @@ public final class class_9670 {
                   var28 = var13;
                   var29 = var15;
                   if (var13.getValue() == null) {
-                     var13.setValue(class_3370.method_15523(class_4092.method_18912(var14)));
+                     var13.setValue(class_3370.method_15523(Box.method_18912(var14)));
                   }
                }
 
@@ -136,11 +136,11 @@ public final class class_9670 {
                            }
 
                            if (!class_3370.method_15537(
-                              (class_4190)var28.getValue(), class_3370.method_15523(class_4092.method_18912(var50).method_18924(0.25)), class_8529.field_43654
+                              (class_4190)var28.getValue(), class_3370.method_15523(Box.method_18912(var50).method_18924(0.25)), class_8529.field_43654
                            )) {
                               var28.setValue(
                                  class_3370.method_15529(
-                                    (class_4190)var28.getValue(), class_3370.method_15523(class_4092.method_18912(var50)), class_8529.field_43656
+                                    (class_4190)var28.getValue(), class_3370.method_15523(Box.method_18912(var50)), class_8529.field_43656
                                  )
                               );
                               int var56 = var1.method_34558();

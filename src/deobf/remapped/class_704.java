@@ -437,7 +437,7 @@ public abstract class class_704 extends class_5834 {
 
       this.field_3859 = this.field_3859 + (var3 - this.field_3859) * 0.4F;
       if (this.method_26551() > 0.0F && !this.method_37221()) {
-         class_4092 var4;
+         Box var4;
          if (this.isPassenger() && !this.method_37243().field_41751) {
             var4 = this.method_37241().method_18905(this.method_37243().method_37241()).method_18899(1.0, 0.0, 1.0);
          } else {

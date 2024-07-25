@@ -118,7 +118,7 @@ public class TargetStrafeModule extends Module {
 
    private boolean method_45278(class_1343 var1) {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
-         class_4092 var4 = new class_4092(var1.method_6214(-0.15, 0.0, -0.15), var1.method_6214(0.15, (double) client.thePlayer.method_37074(), 0.15));
+         Box var4 = new Box(var1.method_6214(-0.15, 0.0, -0.15), var1.method_6214(0.15, (double) client.thePlayer.method_37074(), 0.15));
          var4 = var4.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
          return client.theWorld.method_6680(client.thePlayer, var4).count() == 0L;
       } else {

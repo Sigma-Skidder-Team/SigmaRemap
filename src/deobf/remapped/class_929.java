@@ -142,7 +142,7 @@ public class class_929 extends class_2266 {
             }
 
             if (var13 == class_1108.field_6366) {
-               class_4092 var17 = new class_4092(
+               Box var17 = new Box(
                   (double)var1 - var15 + 0.5,
                   (double)var2 + 0.001,
                   (double)var3 - var15 + 0.5,

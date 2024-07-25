@@ -389,7 +389,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       super.method_37376(var1);
       class_3047.field_14935
          .encodeStart(class_3504.field_17178, this.method_15891())
-         .resultOrPartial(field_41741::error)
+         .resultOrPartial(LOGGER::error)
          .ifPresent(var1x -> var1.put("VillagerData", var1x));
       var1.method_25921("FoodLevel", this.field_38969);
       var1.put("Gossips", (class_8406)this.field_38977.method_11515(class_3504.field_17178).getValue());
@@ -407,7 +407,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       super.method_37314(var1);
       if (var1.contains("VillagerData", 10)) {
          DataResult var4 = class_3047.field_14935.parse(new Dynamic(class_3504.field_17178, var1.method_25929("VillagerData")));
-         var4.resultOrPartial(field_41741::error).ifPresent(this::method_34716);
+         var4.resultOrPartial(LOGGER::error).ifPresent(this::method_34716);
       }
 
       if (var1.contains("Offers", 10)) {
@@ -513,7 +513,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
 
    @Override
    public void method_26452(DamageSource var1) {
-      field_41741.info("Villager {} died, message: '{}'", this, var1.method_28362(this).getString());
+      LOGGER.info("Villager {} died, message: '{}'", this, var1.method_28362(this).getString());
       Entity var4 = var1.method_28372();
       if (var4 != null) {
          this.method_34729(var4);
@@ -688,7 +688,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       if (var1.method_43370() == class_423.field_1790) {
          super.method_37384(var1, var2);
       } else {
-         field_41741.info("Villager {} was struck by lightning {}.", this, var2);
+         LOGGER.info("Villager {} was struck by lightning {}.", this, var2);
          class_1609 var5 = class_6629.field_34220.method_30484(var1);
          var5.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method_26864(var1, var1.method_43368(var5.method_37075()), class_2417.field_12041, (class_8733)null, (CompoundNBT)null);
@@ -785,7 +785,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
 
    public void method_34712(class_6331 var1, long var2, int var4) {
       if (this.method_34697(var2)) {
-         class_4092 var7 = this.method_37241().method_18899(10.0, 10.0, 10.0);
+         Box var7 = this.method_37241().method_18899(10.0, 10.0, 10.0);
          List var8 = var1.<class_7666>method_25868(class_7666.class, var7);
          List var9 = var8.stream().filter(var2x -> var2x.method_34697(var2)).limit(5L).collect(Collectors.toList());
          if (var9.size() >= var4) {

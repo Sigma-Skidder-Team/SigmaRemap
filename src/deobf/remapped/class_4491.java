@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 public class class_4491 extends AbstractSpliterator<class_4190> {
    private static String[] field_21960;
    private final Entity field_21953;
-   private final class_4092 field_21958;
+   private final Box field_21958;
    private final class_214 field_21955;
    private final class_6281 field_21959;
    private final class_2921 field_21957;
@@ -18,11 +18,11 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
    private boolean field_21951;
    private final BiPredicate<class_2522, BlockPos> field_21956;
 
-   public class_4491(class_1449 var1, Entity var2, class_4092 var3) {
+   public class_4491(class_1449 var1, Entity var2, Box var3) {
       this(var1, var2, var3, (var0, var1x) -> true);
    }
 
-   public class_4491(class_1449 var1, Entity var2, class_4092 var3, BiPredicate<class_2522, BlockPos> var4) {
+   public class_4491(class_1449 var1, Entity var2, Box var3, BiPredicate<class_2522, BlockPos> var4) {
       super(Long.MAX_VALUE, 1280);
       this.field_21955 = var2 != null ? class_214.method_926(var2) : class_214.method_928();
       this.field_21957 = new class_2921();
@@ -100,7 +100,7 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
       Objects.<Entity>requireNonNull(this.field_21953);
       this.field_21951 = false;
       class_2098 var4 = this.field_21952.method_6673();
-      class_4092 var5 = this.field_21953.method_37241();
+      Box var5 = this.field_21953.method_37241();
       if (!method_20868(var4, var5)) {
          class_4190 var6 = var4.method_9820();
          if (!method_20871(var6, var5) && method_20870(var6, var5)) {
@@ -112,15 +112,15 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
       return false;
    }
 
-   private static boolean method_20870(class_4190 var0, class_4092 var1) {
+   private static boolean method_20870(class_4190 var0, Box var1) {
       return class_3370.method_15537(var0, class_3370.method_15523(var1.method_18898(1.0E-7)), class_8529.field_43655);
    }
 
-   private static boolean method_20871(class_4190 var0, class_4092 var1) {
+   private static boolean method_20871(class_4190 var0, Box var1) {
       return class_3370.method_15537(var0, class_3370.method_15523(var1.method_18924(1.0E-7)), class_8529.field_43655);
    }
 
-   public static boolean method_20868(class_2098 var0, class_4092 var1) {
+   public static boolean method_20868(class_2098 var0, Box var1) {
       double var4 = (double)class_9299.method_42847(var0.method_9821());
       double var6 = (double)class_9299.method_42847(var0.method_9825());
       double var8 = (double)class_9299.method_42815(var0.method_9828());

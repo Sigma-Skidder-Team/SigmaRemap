@@ -48,7 +48,7 @@ public class class_5973 extends class_3599 {
    }
 
    private boolean method_27274() {
-      for (class_5583 var4 : this.field_30422.world.<class_5583>method_25868(class_5583.class, new class_4092(this.field_30423).method_18898(2.0))) {
+      for (class_5583 var4 : this.field_30422.world.<class_5583>method_25868(class_5583.class, new Box(this.field_30423).method_18898(2.0))) {
          if (var4 != this.field_30422 && (var4.method_25365() || var4.method_25366())) {
             return true;
          }

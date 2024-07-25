@@ -219,7 +219,7 @@ public class class_6942 extends class_8218<class_7099> implements class_2593 {
    private static boolean method_31763(class_9379 var0, BlockPos var1) {
       List var4 = var0.<class_5583>method_25868(
          class_5583.class,
-         new class_4092(
+         new Box(
             (double)var1.method_12173(),
             (double)(var1.method_12165() + 1),
             (double)var1.method_12185(),

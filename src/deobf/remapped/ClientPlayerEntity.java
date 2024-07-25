@@ -136,9 +136,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       return 0.0F;
    }
 
-   public void onUpdateWalkingPlayer() {
+   public void method_27305() {
       class_4092 var3 = this.method_37241();
-      class_1393 var4 = new class_1393(this.getPosX(), var3.field_19937, this.getPosZ(), this.rotationPitch, this.rotationYaw, this.onGround);
+      class_1393 var4 = new class_1393(this.method_37302(), var3.field_19937, this.method_37156(), this.rotationPitch, this.rotationYaw, this.field_41726);
       SigmaMainClass.getInstance().getEventManager().call(var4);
 
       if (!var4.method_29716()) {
@@ -387,8 +387,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    private boolean method_27312(BlockPos var1) {
-      class_4092 var4 = this.method_37241();
-      class_4092 var5 = new class_4092(
+      Box var4 = this.method_37241();
+      Box var5 = new Box(
             (double)var1.method_12173(),
             var4.field_19937,
             (double)var1.method_12185(),
@@ -876,7 +876,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   class_1343 var21 = var6.method_6215(var43.method_6209((double)var20));
                   float var22 = this.method_37086();
                   float var23 = this.method_37074();
-                  class_4092 var24 = new class_4092(var5, var21.method_6214(0.0, (double)var23, 0.0)).method_18899((double)var22, 0.0, (double)var22);
+                  Box var24 = new Box(var5, var21.method_6214(0.0, (double)var23, 0.0)).method_18899((double)var22, 0.0, (double)var22);
                   class_1343 var25 = var5.method_6214(0.0, 0.51F, 0.0);
                   var21 = var21.method_6214(0.0, 0.51F, 0.0);
                   class_1343 var26 = var43.method_6196(new class_1343(0.0, 1.0, 0.0));
@@ -885,11 +885,11 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   class_1343 var29 = var21.method_6194(var27);
                   class_1343 var30 = var25.method_6215(var27);
                   class_1343 var31 = var21.method_6215(var27);
-                  Iterator var32 = this.world.method_6676(this, var24, var0 -> true).<class_4092>flatMap(var0 -> var0.method_19492().stream()).iterator();
+                  Iterator var32 = this.world.method_6676(this, var24, var0 -> true).<Box>flatMap(var0 -> var0.method_19492().stream()).iterator();
                   float var33 = Float.MIN_VALUE;
 
                   while (var32.hasNext()) {
-                     class_4092 var34 = (class_4092)var32.next();
+                     Box var34 = (Box)var32.next();
                      if (var34.method_18908(var28, var29) || var34.method_18908(var30, var31)) {
                         var33 = (float)var34.field_19939;
                         class_1343 var35 = var34.method_18926();

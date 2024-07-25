@@ -89,7 +89,7 @@ public class NukerModule extends Module {
          double var5 = (double)this.field_48181.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
          double var7 = (double)this.field_48181.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
          double var9 = (double)this.field_48181.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
-         class_4092 var11 = client.theWorld.method_28262(this.field_48181).method_8324(client.theWorld, this.field_48181).method_19483();
+         Box var11 = client.theWorld.method_28262(this.field_48181).method_8324(client.theWorld, this.field_48181).method_19483();
          class_8194 var12 = new class_8194(
             var5 + var11.field_19941,
             var7 + var11.field_19937,

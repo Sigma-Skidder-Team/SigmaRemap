@@ -316,7 +316,7 @@ public class EntityRenderDispatcher {
    }
 
    private void method_28132(class_7966 var1, class_7907 var2, Entity var3, float var4, float var5, float var6) {
-      class_4092 var9 = var3.method_37241().method_18918(-var3.getPosX(), -var3.method_37309(), -var3.getPosZ());
+      Box var9 = var3.method_37241().method_18918(-var3.getPosX(), -var3.method_37309(), -var3.getPosZ());
       WorldRenderer.method_20014(var1, var2, var9, var4, var5, var6, 1.0F);
    }
 
@@ -423,7 +423,7 @@ public class EntityRenderDispatcher {
                   var17 = 1.0F;
                }
 
-               class_4092 var18 = var16.method_19483();
+               Box var18 = var16.method_19483();
                double var19 = (double)var3.method_12173() + var18.field_19941;
                double var21 = (double)var3.method_12173() + var18.field_19940;
                double var23 = (double)var3.method_12165() + var18.field_19937;

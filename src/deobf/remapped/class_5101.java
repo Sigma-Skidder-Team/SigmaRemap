@@ -27,7 +27,7 @@ public class class_5101 extends class_2451 {
             class_1343 var12 = var2.method_37335(1.0F);
 
             for (Entity var14 : var11) {
-               class_4092 var15 = var14.method_37241().method_18898((double)var14.method_37355());
+               Box var15 = var14.method_37241().method_18898((double)var14.method_37355());
                if (var15.method_18903(var12)) {
                   return class_954.<ItemStack>method_4207(var6);
                }

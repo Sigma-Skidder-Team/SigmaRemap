@@ -110,7 +110,7 @@ public class class_7885 extends class_4040 {
 
          if (this.field_41744 && this.world.method_29537().method_1285(class_291.field_1047)) {
             boolean var7 = false;
-            class_4092 var8 = this.method_37241().method_18898(0.2);
+            Box var8 = this.method_37241().method_18898(0.2);
 
             for (BlockPos var10 : BlockPos.method_6075(
                class_9299.method_42847(var8.field_19941),

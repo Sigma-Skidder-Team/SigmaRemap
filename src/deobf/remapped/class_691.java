@@ -5,7 +5,7 @@ import java.util.Random;
 public abstract class class_691 extends class_6414 {
    public static final class_4190 field_3797 = class_6414.method_29292(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
    public static final class_4190 field_3796 = class_6414.method_29292(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
-   public static final class_4092 field_3798 = new class_4092(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
+   public static final Box field_3798 = new Box(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
 
    public class_691(class_3073 var1) {
       super(var1);

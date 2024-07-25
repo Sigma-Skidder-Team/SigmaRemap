@@ -192,7 +192,7 @@ public class class_6092 extends class_608 implements class_1869 {
          double var9 = 0.5 - (double)class_9299.method_42818((0.5F + this.field_31173) * (float) Math.PI) * 0.5;
          Direction var11 = this.method_27914().method_1046();
          this.method_37094(
-            new class_4092(
+            new Box(
                   this.getPosX() - 0.5,
                   this.method_37309(),
                   this.getPosZ() - 0.5,
@@ -267,7 +267,7 @@ public class class_6092 extends class_608 implements class_1869 {
             if (var5.method_12165() > 0
                && this.world.method_22548(var5)
                && this.world.method_6673().method_9813(var5)
-               && this.world.method_6683(this, new class_4092(var5))) {
+               && this.world.method_6683(this, new Box(var5))) {
                Direction var6 = this.method_27907(var5);
                if (var6 != null) {
                   this.field_41735.method_36633(field_31172, var6);

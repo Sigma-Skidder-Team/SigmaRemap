@@ -22,7 +22,7 @@ public class class_8899 extends class_2451 {
             double var8 = (double)var7.method_12173();
             double var10 = (double)var7.method_12165();
             double var12 = (double)var7.method_12185();
-            List var14 = var4.method_25870((Entity)null, new class_4092(var8, var10, var12, var8 + 1.0, var10 + 2.0, var12 + 1.0));
+            List var14 = var4.method_25870((Entity)null, new Box(var8, var10, var12, var8 + 1.0, var10 + 2.0, var12 + 1.0));
             if (var14.isEmpty()) {
                if (var4 instanceof class_6331) {
                   class_3577 var15 = new class_3577(var4, var8 + 0.5, var10, var12 + 0.5);

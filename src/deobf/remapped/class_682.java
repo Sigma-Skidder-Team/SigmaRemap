@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_682 extends class_4092 {
+public class class_682 extends Box {
    private static String[] field_3762;
    private int field_3760 = -1;
    private boolean field_3761 = false;

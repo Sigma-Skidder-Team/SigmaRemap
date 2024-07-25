@@ -400,7 +400,7 @@ public class class_2770 extends class_5886 implements class_1869 {
       return (float)class_9299.method_42809(var1);
    }
 
-   private boolean method_12608(class_4092 var1) {
+   private boolean method_12608(Box var1) {
       int var4 = class_9299.method_42847(var1.field_19941);
       int var5 = class_9299.method_42847(var1.field_19937);
       int var6 = class_9299.method_42847(var1.field_19938);

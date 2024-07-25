@@ -209,7 +209,7 @@ public class class_8734 {
                      for (class_9097 var30 : var27) {
                         class_1343 var31 = (class_1343)var30.method_41933();
                         double var19 = 0.15;
-                        class_4092 var21 = new class_4092(
+                        Box var21 = new Box(
                            var31.field_7336 - var19,
                            var31.field_7333,
                            var31.field_7334 - var19,

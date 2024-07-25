@@ -97,7 +97,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
 
       for (class_704 var10 : var0.<class_704>method_25868(
          class_704.class,
-         new class_4092(
+         new Box(
             (double)((float)var2 - 5.0F),
             (double)((float)var3 - 5.0F),
             (double)((float)var4 - 5.0F),

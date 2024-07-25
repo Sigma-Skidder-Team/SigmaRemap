@@ -45,7 +45,7 @@ public class NoFallModule extends Module {
                }
 
                if (var13 > var17 && var13 < var15) {
-                  class_4092 var19 = client.thePlayer
+                  Box var19 = client.thePlayer
                      .field_41712
                      .method_18918(var1.method_35234(), var1.method_35236() + var13 + var17, var1.method_35231());
                   if (client.theWorld.method_6680(client.thePlayer, var19).count() != 0L) {

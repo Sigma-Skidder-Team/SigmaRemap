@@ -84,7 +84,7 @@ public class class_3420 extends class_3757 implements class_3745 {
       double var5 = (double)(var1 - this.field_16835);
       class_4190 var7 = this.method_15794().method_8324(this.field_18364, this.method_17399());
       if (!var7.method_19485()) {
-         class_4092 var8 = this.method_15797(var7.method_19483());
+         Box var8 = this.method_15797(var7.method_19483());
          List var9 = this.field_18364.method_25870((Entity)null, class_2686.method_12066(var8, var4, var5).method_18905(var8));
          if (!var9.isEmpty()) {
             List var10 = var7.method_19492();
@@ -128,9 +128,9 @@ public class class_3420 extends class_3757 implements class_3745 {
 
                double var21 = 0.0;
 
-               for (class_4092 var24 : var10) {
-                  class_4092 var25 = class_2686.method_12066(this.method_15797(var24), var4, var5);
-                  class_4092 var26 = var13.method_37241();
+               for (Box var24 : var10) {
+                  Box var25 = class_2686.method_12066(this.method_15797(var24), var4, var5);
+                  Box var26 = var13.method_37241();
                   if (var25.method_18909(var26)) {
                      var21 = Math.max(var21, method_15781(var25, var4, var26));
                      if (var21 >= var5) {
@@ -164,7 +164,7 @@ public class class_3420 extends class_3757 implements class_3745 {
          Direction var4 = this.method_15800();
          if (var4.method_1029().method_42629()) {
             double var5 = this.field_16829.method_8324(this.field_18364, this.field_18358).method_19495(class_9249.field_47216);
-            class_4092 var7 = this.method_15797(new class_4092(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
+            Box var7 = this.method_15797(new Box(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
             double var8 = (double)(var1 - this.field_16835);
 
             for (Entity var11 : this.field_18364.method_25867((Entity)null, var7, var1x -> method_15790(var7, var1x))) {
@@ -174,7 +174,7 @@ public class class_3420 extends class_3757 implements class_3745 {
       }
    }
 
-   private static boolean method_15790(class_4092 var0, Entity var1) {
+   private static boolean method_15790(Box var0, Entity var1) {
       return var1.method_37132() == class_718.field_3913
          && var1.method_37360()
          && var1.getPosX() >= var0.field_19941
@@ -193,7 +193,7 @@ public class class_3420 extends class_3757 implements class_3745 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   private static double method_15781(class_4092 var0, Direction var1, class_4092 var2) {
+   private static double method_15781(Box var0, Direction var1, Box var2) {
       switch (var1) {
          case field_804:
             return var0.field_19940 - var2.field_19941;
@@ -211,7 +211,7 @@ public class class_3420 extends class_3757 implements class_3745 {
       }
    }
 
-   private class_4092 method_15797(class_4092 var1) {
+   private Box method_15797(Box var1) {
       double var4 = (double)this.method_15799(this.field_16835);
       return var1.method_18918(
          (double)this.field_18358.method_12173() + var4 * (double)this.field_16834.method_1041(),
@@ -221,8 +221,8 @@ public class class_3420 extends class_3757 implements class_3745 {
    }
 
    private void method_15788(Entity var1, Direction var2, double var3) {
-      class_4092 var7 = var1.method_37241();
-      class_4092 var8 = class_3370.method_15524().method_19483().method_18919(this.field_18358);
+      Box var7 = var1.method_37241();
+      Box var8 = class_3370.method_15524().method_19483().method_18919(this.field_18358);
       if (var7.method_18909(var8)) {
          Direction var9 = var2.method_1046();
          double var10 = method_15781(var8, var9, var7) + 0.01;

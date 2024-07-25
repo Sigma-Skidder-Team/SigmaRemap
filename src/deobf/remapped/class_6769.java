@@ -298,7 +298,7 @@ public class class_6769 {
       }
 
       method_31067(var7, var0);
-      class_4092 var9 = class_2765.method_12596(var5);
+      Box var9 = class_2765.method_12596(var5);
       BlockPos var10 = new BlockPos(var9.field_19941, var9.field_19937, var9.field_19938);
       class_1954.method_9032(var8, var10, class_2983.field_14682);
    }

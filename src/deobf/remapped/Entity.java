@@ -29,13 +29,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public abstract class Entity implements class_9875, class_5801 {
-   public static final Logger field_41741 = LogManager.getLogger();
-   private static final AtomicInteger field_41718 = new AtomicInteger();
-   private static final List<ItemStack> field_41696 = Collections.<ItemStack>emptyList();
-   private static final class_4092 field_41769 = new class_4092(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+   public static final Logger LOGGER = LogManager.getLogger();
+   private static final AtomicInteger MAX_ENTITY_ID = new AtomicInteger();
+   private static final List<ItemStack> EMPTY_STACK_LIST = Collections.<ItemStack>emptyList();
+   private static final Box NULL_BOX = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
    private static double field_41756 = 1.0;
    private final class_6629<?> field_41719;
-   private int field_41740 = field_41718.incrementAndGet();
+   private int field_41740 = MAX_ENTITY_ID.incrementAndGet();
    public boolean field_41759;
    private final List<Entity> field_41707 = Lists.newArrayList();
    public int field_41773;
@@ -52,7 +52,7 @@ public abstract class Entity implements class_9875, class_5801 {
    public float rotationPitch;
    public float prevRotationYaw;
    public float field_41762;
-   public class_4092 field_41712 = field_41769;
+   public Box field_41712 = NULL_BOX;
    public boolean onGround;
    public boolean field_41744;
    public boolean field_41774;
@@ -396,7 +396,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return this.method_37089(this.method_37241().method_18918(var1, var3, var5));
    }
 
-   private boolean method_37089(class_4092 var1) {
+   private boolean method_37089(Box var1) {
       return this.world.method_6683(this, var1) && !this.world.method_22550(var1);
    }
 
@@ -611,7 +611,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public class_1343 method_37287(class_1343 var1) {
-      class_4092 var4 = this.method_37241();
+      Box var4 = this.method_37241();
       class_214 var5 = class_214.method_926(this);
       class_4190 var6 = this.world.method_6673().method_9820();
       Stream var7 = !class_3370.method_15537(var6, class_3370.method_15523(var4.method_18924(1.0E-7)), class_8529.field_43655)
@@ -662,7 +662,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return var0.field_7336 * var0.field_7336 + var0.field_7334 * var0.field_7334;
    }
 
-   public static class_1343 method_37301(Entity var0, class_1343 var1, class_4092 var2, World var3, class_214 var4, class_4997<class_4190> var5) {
+   public static class_1343 method_37301(Entity var0, class_1343 var1, Box var2, World var3, class_214 var4, class_4997<class_4190> var5) {
       boolean var8 = var1.field_7336 == 0.0;
       boolean var9 = var1.field_7333 == 0.0;
       boolean var10 = var1.field_7334 == 0.0;
@@ -675,7 +675,7 @@ public abstract class Entity implements class_9875, class_5801 {
       }
    }
 
-   public static class_1343 method_37194(class_1343 var0, class_4092 var1, class_4997<class_4190> var2) {
+   public static class_1343 method_37194(class_1343 var0, Box var1, class_4997<class_4190> var2) {
       double var5 = var0.field_7336;
       double var7 = var0.field_7333;
       double var9 = var0.field_7334;
@@ -708,7 +708,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return new class_1343(var5, var7, var9);
    }
 
-   public static class_1343 method_37288(class_1343 var0, class_4092 var1, class_4924 var2, class_214 var3, class_4997<class_4190> var4, boolean var5) {
+   public static class_1343 method_37288(class_1343 var0, Box var1, class_4924 var2, class_214 var3, class_4997<class_4190> var4, boolean var5) {
       double var8 = var0.field_7336;
       double var10 = var0.field_7333;
       double var12 = var0.field_7334;
@@ -746,7 +746,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37298() {
-      class_4092 var3 = this.method_37241();
+      Box var3 = this.method_37241();
       this.method_37222((var3.field_19941 + var3.field_19940) / 2.0, var3.field_19937, (var3.field_19938 + var3.field_19942) / 2.0);
    }
 
@@ -763,7 +763,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37097() {
-      class_4092 var3 = this.method_37241();
+      Box var3 = this.method_37241();
       BlockPos var4 = new BlockPos(var3.field_19941 + 0.001, var3.field_19937 + 0.001, var3.field_19938 + 0.001);
       BlockPos var5 = new BlockPos(var3.field_19940 - 0.001, var3.field_19939 - 0.001, var3.field_19942 - 0.001);
       class_2921 var6 = new class_2921();
@@ -1419,7 +1419,7 @@ public abstract class Entity implements class_9875, class_5801 {
                try {
                   this.method_37303(ITextComponent$class_40.func_240643_a_(var13));
                } catch (Exception var16) {
-                  field_41741.warn("Failed to parse entity custom name {}", var13, var16);
+                  LOGGER.warn("Failed to parse entity custom name {}", var13, var16);
                }
             }
 
@@ -1526,7 +1526,7 @@ public abstract class Entity implements class_9875, class_5801 {
       if (!this.field_41731) {
          float var3 = 0.1F;
          float var4 = this.field_41758.field_31199 * 0.8F;
-         class_4092 var5 = class_4092.method_18913((double)var4, 0.1F, (double)var4)
+         Box var5 = Box.method_18913((double)var4, 0.1F, (double)var4)
             .method_18918(this.getPosX(), this.method_37388(), this.getPosZ());
          return this.world.method_6674(this, var5, (var1, var2) -> var1.method_8313(this.world, var2)).findAny().isPresent();
       } else {
@@ -1743,11 +1743,11 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public Iterable<ItemStack> method_37294() {
-      return field_41696;
+      return EMPTY_STACK_LIST;
    }
 
    public Iterable<ItemStack> method_37262() {
-      return field_41696;
+      return EMPTY_STACK_LIST;
    }
 
    public Iterable<ItemStack> method_37342() {
@@ -2299,9 +2299,9 @@ public abstract class Entity implements class_9875, class_5801 {
       this.field_41758 = var5;
       this.field_41710 = this.method_37279(var4, var5);
       if (!(var5.field_31199 < var3.field_31199)) {
-         class_4092 var6 = this.method_37241();
+         Box var6 = this.method_37241();
          this.method_37094(
-            new class_4092(
+            new Box(
                var6.field_19941,
                var6.field_19937,
                var6.field_19938,
@@ -2317,7 +2317,7 @@ public abstract class Entity implements class_9875, class_5801 {
       } else {
          double var7 = (double)var5.field_31199 / 2.0;
          this.method_37094(
-            new class_4092(
+            new Box(
                this.getPosX() - var7,
                this.method_37309(),
                this.getPosZ() - var7,
@@ -2345,23 +2345,23 @@ public abstract class Entity implements class_9875, class_5801 {
       return true;
    }
 
-   public class_4092 method_37241() {
+   public Box method_37241() {
       return this.field_41712;
    }
 
-   public class_4092 method_37210() {
+   public Box method_37210() {
       return this.method_37241();
    }
 
-   public class_4092 method_37242(class_7653 var1) {
+   public Box method_37242(class_7653 var1) {
       class_6097 var4 = this.method_37190(var1);
       float var5 = var4.field_31199 / 2.0F;
       class_1343 var6 = new class_1343(this.getPosX() - (double)var5, this.method_37309(), this.getPosZ() - (double)var5);
       class_1343 var7 = new class_1343(this.getPosX() + (double)var5, this.method_37309() + (double)var4.field_31200, this.getPosZ() + (double)var5);
-      return new class_4092(var6, var7);
+      return new Box(var6, var7);
    }
 
-   public void method_37094(class_4092 var1) {
+   public void method_37094(Box var1) {
       this.field_41712 = var1;
    }
 
@@ -2639,7 +2639,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean method_37143(class_2307<class_2340> var1, double var2) {
-      class_4092 var6 = this.method_37241().method_18924(0.001);
+      Box var6 = this.method_37241().method_18924(0.001);
       int var7 = class_9299.method_42847(var6.field_19941);
       int var8 = class_9299.method_42815(var6.field_19940);
       int var9 = class_9299.method_42847(var6.field_19937);

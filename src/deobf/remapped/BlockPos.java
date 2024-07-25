@@ -258,7 +258,7 @@ public class BlockPos extends class_2700 {
       );
    }
 
-   public static Stream<BlockPos> method_6085(class_4092 var0) {
+   public static Stream<BlockPos> method_6085(Box var0) {
       return method_6083(
          class_9299.method_42847(var0.field_19941),
          class_9299.method_42847(var0.field_19937),

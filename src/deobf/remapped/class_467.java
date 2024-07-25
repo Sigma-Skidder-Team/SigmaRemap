@@ -78,12 +78,12 @@ public class class_467 {
 
    private void method_2245(Collection<class_4085> var1) {
       int var4 = 0;
-      class_4092 var5 = new class_4092(this.field_2926);
+      Box var5 = new Box(this.field_2926);
 
       for (class_4085 var7 : var1) {
          BlockPos var8 = new BlockPos(this.field_2926);
          class_945 var9 = class_2765.method_12584(var7.method_18839(), var8, var7.method_18840(), 2, this.field_2928, true);
-         class_4092 var10 = class_2765.method_12596(var9);
+         Box var10 = class_2765.method_12596(var9);
          var7.method_18846(var9.method_17399());
          this.field_2929.put(var7, new BlockPos(this.field_2926));
          var5 = var5.method_18905(var10);
@@ -91,7 +91,7 @@ public class class_467 {
          if (var4++ % this.field_2919 == this.field_2919 - 1) {
             this.field_2926.method_13367(0, 0, (int)var5.method_18921() + 6);
             this.field_2926.method_12167(this.field_2924.method_12173());
-            var5 = new class_4092(this.field_2926);
+            var5 = new Box(this.field_2926);
          }
       }
    }

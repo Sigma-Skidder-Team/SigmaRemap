@@ -43,7 +43,7 @@ public class class_6006 {
       var6.add(var16);
       if (var1.method_35387() > 0) {
          byte var22 = 80;
-         class_4092 var23 = new class_4092(
+         Box var23 = new Box(
             (double)(var18 - 80), (double)(var20 - 80), (double)(var19 - 80), (double)(var18 + 80 + 1), (double)(var20 + 80 + 1), (double)(var19 + 80 + 1)
          );
          class_9670 var24 = new class_9670(var12, var1.method_35387(), var2, var3, var4, var6, var7, null);
@@ -52,7 +52,7 @@ public class class_6006 {
                new class_1522(
                   var16,
                   new MutableObject(
-                     class_3370.method_15533(class_3370.method_15523(var23), class_3370.method_15523(class_4092.method_18912(var17)), class_8529.field_43656)
+                     class_3370.method_15533(class_3370.method_15523(var23), class_3370.method_15523(Box.method_18912(var17)), class_8529.field_43656)
                   ),
                   var20 + 80,
                   0,

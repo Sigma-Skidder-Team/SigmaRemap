@@ -3,7 +3,7 @@ package remapped;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-public class class_4092 {
+public class Box {
    public final double field_19941;
    public final double field_19937;
    public final double field_19938;
@@ -11,7 +11,7 @@ public class class_4092 {
    public final double field_19939;
    public final double field_19942;
 
-   public class_4092(double var1, double var3, double var5, double var7, double var9, double var11) {
+   public Box(double var1, double var3, double var5, double var7, double var9, double var11) {
       this.field_19941 = Math.min(var1, var7);
       this.field_19937 = Math.min(var3, var9);
       this.field_19938 = Math.min(var5, var11);
@@ -20,7 +20,7 @@ public class class_4092 {
       this.field_19942 = Math.max(var5, var11);
    }
 
-   public class_4092(BlockPos var1) {
+   public Box(BlockPos var1) {
       this(
          (double)var1.method_12173(),
          (double)var1.method_12165(),
@@ -31,7 +31,7 @@ public class class_4092 {
       );
    }
 
-   public class_4092(BlockPos var1, BlockPos var2) {
+   public Box(BlockPos var1, BlockPos var2) {
       this(
          (double)var1.method_12173(),
          (double)var1.method_12165(),
@@ -42,12 +42,12 @@ public class class_4092 {
       );
    }
 
-   public class_4092(class_1343 var1, class_1343 var2) {
+   public Box(class_1343 var1, class_1343 var2) {
       this(var1.field_7336, var1.field_7333, var1.field_7334, var2.field_7336, var2.field_7333, var2.field_7334);
    }
 
-   public static class_4092 method_18912(class_9616 var0) {
-      return new class_4092(
+   public static Box method_18912(class_9616 var0) {
+      return new Box(
          (double)var0.field_48996,
          (double)var0.field_48995,
          (double)var0.field_48992,
@@ -57,8 +57,8 @@ public class class_4092 {
       );
    }
 
-   public static class_4092 method_18911(class_1343 var0) {
-      return new class_4092(var0.field_7336, var0.field_7333, var0.field_7334, var0.field_7336 + 1.0, var0.field_7333 + 1.0, var0.field_7334 + 1.0);
+   public static Box method_18911(class_1343 var0) {
+      return new Box(var0.field_7336, var0.field_7333, var0.field_7334, var0.field_7336 + 1.0, var0.field_7333 + 1.0, var0.field_7334 + 1.0);
    }
 
    public double method_18915(class_9249 var1) {
@@ -72,8 +72,8 @@ public class class_4092 {
    @Override
    public boolean equals(Object var1) {
       if (this != var1) {
-         if (var1 instanceof class_4092) {
-            class_4092 var4 = (class_4092)var1;
+         if (var1 instanceof Box) {
+            Box var4 = (Box)var1;
             if (Double.compare(var4.field_19941, this.field_19941) == 0) {
                if (Double.compare(var4.field_19937, this.field_19937) == 0) {
                   if (Double.compare(var4.field_19938, this.field_19938) == 0) {
@@ -115,7 +115,7 @@ public class class_4092 {
       return 31 * var5 + (int)(var3 ^ var3 >>> 32);
    }
 
-   public class_4092 method_18900(double var1, double var3, double var5) {
+   public Box method_18900(double var1, double var3, double var5) {
       double var9 = this.field_19941;
       double var11 = this.field_19937;
       double var13 = this.field_19938;
@@ -146,14 +146,14 @@ public class class_4092 {
          var13 -= var5;
       }
 
-      return new class_4092(var9, var11, var13, var15, var17, var19);
+      return new Box(var9, var11, var13, var15, var17, var19);
    }
 
-   public class_4092 method_18929(class_1343 var1) {
+   public Box method_18929(class_1343 var1) {
       return this.method_18928(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 
-   public class_4092 method_18928(double var1, double var3, double var5) {
+   public Box method_18928(double var1, double var3, double var5) {
       double var9 = this.field_19941;
       double var11 = this.field_19937;
       double var13 = this.field_19938;
@@ -184,51 +184,51 @@ public class class_4092 {
          var13 += var5;
       }
 
-      return new class_4092(var9, var11, var13, var15, var17, var19);
+      return new Box(var9, var11, var13, var15, var17, var19);
    }
 
-   public class_4092 method_18899(double var1, double var3, double var5) {
+   public Box method_18899(double var1, double var3, double var5) {
       double var9 = this.field_19941 - var1;
       double var11 = this.field_19937 - var3;
       double var13 = this.field_19938 - var5;
       double var15 = this.field_19940 + var1;
       double var17 = this.field_19939 + var3;
       double var19 = this.field_19942 + var5;
-      return new class_4092(var9, var11, var13, var15, var17, var19);
+      return new Box(var9, var11, var13, var15, var17, var19);
    }
 
-   public class_4092 method_18898(double var1) {
+   public Box method_18898(double var1) {
       return this.method_18899(var1, var1, var1);
    }
 
-   public class_4092 method_18914(class_4092 var1) {
+   public Box method_18914(Box var1) {
       double var4 = Math.max(this.field_19941, var1.field_19941);
       double var6 = Math.max(this.field_19937, var1.field_19937);
       double var8 = Math.max(this.field_19938, var1.field_19938);
       double var10 = Math.min(this.field_19940, var1.field_19940);
       double var12 = Math.min(this.field_19939, var1.field_19939);
       double var14 = Math.min(this.field_19942, var1.field_19942);
-      return new class_4092(var4, var6, var8, var10, var12, var14);
+      return new Box(var4, var6, var8, var10, var12, var14);
    }
 
-   public class_4092 method_18905(class_4092 var1) {
+   public Box method_18905(Box var1) {
       double var4 = Math.min(this.field_19941, var1.field_19941);
       double var6 = Math.min(this.field_19937, var1.field_19937);
       double var8 = Math.min(this.field_19938, var1.field_19938);
       double var10 = Math.max(this.field_19940, var1.field_19940);
       double var12 = Math.max(this.field_19939, var1.field_19939);
       double var14 = Math.max(this.field_19942, var1.field_19942);
-      return new class_4092(var4, var6, var8, var10, var12, var14);
+      return new Box(var4, var6, var8, var10, var12, var14);
    }
 
-   public class_4092 method_18918(double var1, double var3, double var5) {
-      return new class_4092(
+   public Box method_18918(double var1, double var3, double var5) {
+      return new Box(
          this.field_19941 + var1, this.field_19937 + var3, this.field_19938 + var5, this.field_19940 + var1, this.field_19939 + var3, this.field_19942 + var5
       );
    }
 
-   public class_4092 method_18919(BlockPos var1) {
-      return new class_4092(
+   public Box method_18919(BlockPos var1) {
+      return new Box(
          this.field_19941 + (double)var1.method_12173(),
          this.field_19937 + (double)var1.method_12165(),
          this.field_19938 + (double)var1.method_12185(),
@@ -238,11 +238,11 @@ public class class_4092 {
       );
    }
 
-   public class_4092 method_18920(class_1343 var1) {
+   public Box method_18920(class_1343 var1) {
       return this.method_18918(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 
-   public boolean method_18909(class_4092 var1) {
+   public boolean method_18909(Box var1) {
       return this.method_18907(var1.field_19941, var1.field_19937, var1.field_19938, var1.field_19940, var1.field_19939, var1.field_19942);
    }
 
@@ -298,7 +298,7 @@ public class class_4092 {
       return this.field_19942 - this.field_19938;
    }
 
-   public class_4092 method_18924(double var1) {
+   public Box method_18924(double var1) {
       return this.method_18898(-var1);
    }
 
@@ -317,14 +317,14 @@ public class class_4092 {
    }
 
    @Nullable
-   public static class_9529 method_18922(Iterable<class_4092> var0, class_1343 var1, class_1343 var2, BlockPos var3) {
+   public static class_9529 method_18922(Iterable<Box> var0, class_1343 var1, class_1343 var2, BlockPos var3) {
       double[] var6 = new double[]{1.0};
       Direction var7 = null;
       double var8 = var2.field_7336 - var1.field_7336;
       double var10 = var2.field_7333 - var1.field_7333;
       double var12 = var2.field_7334 - var1.field_7334;
 
-      for (class_4092 var17 : var0) {
+      for (Box var17 : var0) {
          var7 = method_18904(var17.method_18919(var3), var1, var6, var7, var8, var10, var12);
       }
 
@@ -337,7 +337,7 @@ public class class_4092 {
    }
 
    @Nullable
-   private static Direction method_18904(class_4092 var0, class_1343 var1, double[] var2, Direction var3, double var4, double var6, double var8) {
+   private static Direction method_18904(Box var0, class_1343 var1, double[] var2, Direction var3, double var4, double var6, double var8) {
       if (!(var4 > 1.0E-7)) {
          if (var4 < -1.0E-7) {
             var3 = method_18916(
@@ -517,7 +517,7 @@ public class class_4092 {
       );
    }
 
-   public static class_4092 method_18913(double var0, double var2, double var4) {
-      return new class_4092(-var0 / 2.0, -var2 / 2.0, -var4 / 2.0, var0 / 2.0, var2 / 2.0, var4 / 2.0);
+   public static Box method_18913(double var0, double var2, double var4) {
+      return new Box(-var0 / 2.0, -var2 / 2.0, -var4 / 2.0, var0 / 2.0, var2 / 2.0, var4 / 2.0);
    }
 }

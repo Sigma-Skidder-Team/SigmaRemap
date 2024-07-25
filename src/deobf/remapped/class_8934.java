@@ -8,7 +8,7 @@ public class class_8934 extends class_2359 {
    }
 
    @Override
-   public boolean method_10824(class_4092 var1) {
+   public boolean method_10824(Box var1) {
       return true;
    }
 }

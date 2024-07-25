@@ -36,7 +36,7 @@ public class class_4138<T extends class_5834> extends class_956 {
       }
    }
 
-   public class_4092 method_19212(double var1) {
+   public Box method_19212(double var1) {
       return this.field_4915.method_37241().method_18899(var1, 4.0, var1);
    }
 

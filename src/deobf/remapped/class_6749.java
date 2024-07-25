@@ -97,7 +97,7 @@ public abstract class class_6749 extends class_5783 {
          if (!var7.method_19485()) {
             class_1343 var8 = this.method_37245();
 
-            for (class_4092 var23 : var7.method_19492()) {
+            for (Box var23 : var7.method_19492()) {
                if (var23.method_18919(var32).method_18903(var8)) {
                   this.field_34834 = true;
                   break;
@@ -213,7 +213,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    private boolean method_30923() {
-      return this.field_34834 && this.world.method_6681(new class_4092(this.method_37245(), this.method_37245()).method_18898(0.06));
+      return this.field_34834 && this.world.method_6681(new Box(this.method_37245(), this.method_37245()).method_18898(0.06));
    }
 
    private void method_30930() {

@@ -20,7 +20,7 @@ public class class_4550 {
    private final Predicate<Entity> field_22178;
    private final class_6115 field_22173;
    private final Function<class_1343, class_1343> field_22185;
-   private final class_4092 field_22175;
+   private final Box field_22175;
    private final BiConsumer<class_1343, List<? extends Entity>> field_22183;
    private final boolean field_22176;
    private final String field_22180;
@@ -35,7 +35,7 @@ public class class_4550 {
       Predicate<Entity> var4,
       class_6115 var5,
       Function<class_1343, class_1343> var6,
-      class_4092 var7,
+      Box var7,
       BiConsumer<class_1343, List<? extends Entity>> var8,
       boolean var9,
       String var10,
@@ -192,7 +192,7 @@ public class class_4550 {
    private Predicate<Entity> method_21102(class_1343 var1) {
       Predicate var4 = this.field_22178;
       if (this.field_22175 != null) {
-         class_4092 var5 = this.field_22175.method_18920(var1);
+         Box var5 = this.field_22175.method_18920(var1);
          var4 = var4.and(var1x -> var5.method_18909(var1x.method_37241()));
       }
 

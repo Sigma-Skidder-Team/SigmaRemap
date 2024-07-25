@@ -77,7 +77,7 @@ public class class_9233 extends Module {
                + (var10 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F))) + var12 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F)))) * var15;
             double var19 = var6
                + (var10 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F))) - var12 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F)))) * var15;
-            class_4092 var21 = new class_4092(var17 - 0.3, var8 - 1.0, var19 - 0.3, var17 + 0.3, var8 + 2.0, var19 + 0.3);
+            Box var21 = new Box(var17 - 0.3, var8 - 1.0, var19 - 0.3, var17 + 0.3, var8 + 2.0, var19 + 0.3);
             if (client.theWorld.method_6680(client.thePlayer, var21).count() == 0L) {
                double var22 = this.method_42591(var21);
                if (var22 != 11.0) {
@@ -120,9 +120,9 @@ public class class_9233 extends Module {
       }
    }
 
-   public double method_42591(class_4092 var1) {
+   public double method_42591(Box var1) {
       double var4 = 6.0;
-      class_4092 var6 = var1.method_18918(0.0, -var4, 0.0);
+      Box var6 = var1.method_18918(0.0, -var4, 0.0);
 
       do {
          var6 = var1.method_18918(0.0, -var4, 0.0);

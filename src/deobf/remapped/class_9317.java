@@ -78,7 +78,7 @@ public class class_9317 extends class_3757 implements class_3745 {
       BlockPos var3 = this.method_17399();
       if (this.field_18364.method_29546() > this.field_47579 + 60L || this.field_47583 == null) {
          this.field_47579 = this.field_18364.method_29546();
-         class_4092 var4 = new class_4092(var3).method_18898(48.0);
+         Box var4 = new Box(var3).method_18898(48.0);
          this.field_47583 = this.field_18364.<class_5834>method_25868(class_5834.class, var4);
       }
 

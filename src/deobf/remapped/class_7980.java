@@ -14,7 +14,7 @@ public class class_7980 extends class_4138<class_704> {
    }
 
    @Override
-   public class_4092 method_19212(double var1) {
+   public Box method_19212(double var1) {
       Direction var5 = ((class_6092)this.field_4915).method_27914();
       if (var5.method_1029() != class_9249.field_47215) {
          return var5.method_1029() != class_9249.field_47219

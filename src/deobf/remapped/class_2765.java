@@ -34,11 +34,11 @@ public class class_2765 {
       }
    }
 
-   public static class_4092 method_12596(class_945 var0) {
+   public static Box method_12596(class_945 var0) {
       BlockPos var3 = var0.method_17399();
       BlockPos var4 = var3.method_6105(var0.method_4096().method_6104(-1, -1, -1));
       BlockPos var5 = class_6561.method_29966(var4, class_9022.field_46145, var0.method_4120(), var3);
-      return new class_4092(var3, var5);
+      return new Box(var3, var5);
    }
 
    public static class_9616 method_12591(class_945 var0) {
@@ -118,7 +118,7 @@ public class class_2765 {
       BlockPos.method_6086(var5).forEach(var2x -> method_12590(var1, var2x, var2));
       var2.method_28968().method_13096(var5, true, false);
       var2.method_28937(var5);
-      class_4092 var6 = new class_4092(
+      Box var6 = new Box(
          (double)var5.field_48996,
          (double)var5.field_48995,
          (double)var5.field_48992,
@@ -157,7 +157,7 @@ public class class_2765 {
 
    public static Collection<BlockPos> method_12585(BlockPos var0, int var1, class_6331 var2) {
       ArrayList var5 = Lists.newArrayList();
-      class_4092 var6 = new class_4092(var0);
+      Box var6 = new Box(var0);
       var6 = var6.method_18898((double)var1);
 
       for (int var7 = (int)var6.field_19941; var7 <= (int)var6.field_19940; var7++) {
@@ -255,7 +255,7 @@ public class class_2765 {
 
    private static boolean method_12593(BlockPos var0, BlockPos var1, class_6331 var2) {
       class_945 var5 = (class_945)var2.method_28260(var0);
-      class_4092 var6 = method_12596(var5).method_18898(1.0);
+      Box var6 = method_12596(var5).method_18898(1.0);
       return var6.method_18903(class_1343.method_6216(var1));
    }
 }

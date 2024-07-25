@@ -420,7 +420,7 @@ public class class_6331 extends World implements class_700 {
 
    public BlockPos method_28993(BlockPos var1) {
       BlockPos var4 = this.method_22563(class_3801.field_18595, var1);
-      class_4092 var5 = new class_4092(var4, new BlockPos(var4.method_12173(), this.method_28261(), var4.method_12185())).method_18898(3.0);
+      Box var5 = new Box(var4, new BlockPos(var4.method_12173(), this.method_28261(), var4.method_12185())).method_18898(3.0);
       List var6 = this.<class_5834>method_25869(
          class_5834.class, var5, var1x -> var1x != null && var1x.method_37330() && this.method_25263(var1x.method_37075())
       );

@@ -58,7 +58,7 @@ public abstract class class_4641 extends Entity {
          var16 /= 32.0;
          var18 /= 32.0;
          var20 /= 32.0;
-         this.method_37094(new class_4092(var3 - var16, var5 - var18, var7 - var20, var3 + var16, var5 + var18, var7 + var20));
+         this.method_37094(new Box(var3 - var16, var5 - var18, var7 - var20, var3 + var16, var5 + var18, var7 + var20));
       }
    }
 

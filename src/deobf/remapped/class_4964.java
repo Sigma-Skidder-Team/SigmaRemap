@@ -91,13 +91,13 @@ public class class_4964 {
    }
 
    public class_4550 method_22750() {
-      class_4092 var3;
+      Box var3;
       if (this.field_25667 == null && this.field_25684 == null && this.field_25689 == null) {
          if (this.field_25688.method_27855() == null) {
             var3 = null;
          } else {
             float var4 = this.field_25688.method_27855();
-            var3 = new class_4092((double)(-var4), (double)(-var4), (double)(-var4), (double)(var4 + 1.0F), (double)(var4 + 1.0F), (double)(var4 + 1.0F));
+            var3 = new Box((double)(-var4), (double)(-var4), (double)(-var4), (double)(var4 + 1.0F), (double)(var4 + 1.0F), (double)(var4 + 1.0F));
          }
       } else {
          var3 = this.method_22781(
@@ -135,7 +135,7 @@ public class class_4964 {
       );
    }
 
-   private class_4092 method_22781(double var1, double var3, double var5) {
+   private Box method_22781(double var1, double var3, double var5) {
       boolean var9 = var1 < 0.0;
       boolean var10 = var3 < 0.0;
       boolean var11 = var5 < 0.0;
@@ -145,7 +145,7 @@ public class class_4964 {
       double var18 = (!var9 ? var1 : 0.0) + 1.0;
       double var20 = (!var10 ? var3 : 0.0) + 1.0;
       double var22 = (!var11 ? var5 : 0.0) + 1.0;
-      return new class_4092(var12, var14, var16, var18, var20, var22);
+      return new Box(var12, var14, var16, var18, var20, var22);
    }
 
    private void method_22800() {

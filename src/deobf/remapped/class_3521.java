@@ -100,7 +100,7 @@ public abstract class class_3521 {
 
                      int var25 = var3.method_25868(
                            var24.getClass(),
-                           new class_4092(
+                           new Box(
                                  (double)var4.method_12173(),
                                  (double)var4.method_12165(),
                                  (double)var4.method_12185(),

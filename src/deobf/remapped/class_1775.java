@@ -174,7 +174,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
                while (var20.hasNext()) {
                   class_7653 var21 = (class_7653)var20.next();
-                  class_4092 var22 = var1.method_26549(var21);
+                  Box var22 = var1.method_26549(var21);
                   if (class_160.method_647(this.world, var1, var22.method_18920(var19))) {
                      var1.method_37356(var21);
                      return var19;

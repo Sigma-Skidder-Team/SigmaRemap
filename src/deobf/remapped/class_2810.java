@@ -418,7 +418,7 @@ public class class_2810 {
          BlockPos var5 = var3.method_6082(1);
 
          for (Direction var7 : class_9594.field_48893) {
-            List var8 = this.field_13790.<class_3577>method_25868(class_3577.class, new class_4092(var5.method_6099(var7, 2)));
+            List var8 = this.field_13790.<class_3577>method_25868(class_3577.class, new Box(var5.method_6099(var7, 2)));
             if (var8.isEmpty()) {
                return;
             }

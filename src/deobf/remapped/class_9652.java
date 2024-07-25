@@ -25,7 +25,7 @@ public class class_9652 extends class_7164<class_5583, class_6399<class_5583>> {
          var2.method_36060(class_2426.field_12076.method_11074(class_9299.method_42837(var8, 0.0F, 90.0F)));
          BlockPos var9 = var1.method_37075();
 
-         for (class_704 var11 : var1.world.<class_704>method_25868(class_704.class, new class_4092(var9).method_18899(2.0, 2.0, 2.0))) {
+         for (class_704 var11 : var1.world.<class_704>method_25868(class_704.class, new Box(var9).method_18899(2.0, 2.0, 2.0))) {
             if (var11.method_26507()) {
                var2.method_36065((double)(0.15F * var8), 0.0, 0.0);
                break;

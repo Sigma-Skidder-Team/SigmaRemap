@@ -61,7 +61,7 @@ public class BasicClickTP extends Module {
                var32 -= var26;
                var34 -= var28;
                double var37 = 0.3;
-               class_4092 var39 = new class_4092(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
+               Box var39 = new Box(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
                if (client.theWorld.method_6680(client.thePlayer, var39).count() == 0L) {
                   client.method_8614().sendPacket(new class_9515(var30, var34, var32, true));
                }

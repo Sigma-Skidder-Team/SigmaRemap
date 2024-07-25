@@ -21,7 +21,7 @@ public class class_763 extends class_7164<class_337, class_2574> {
                class_1343 var12 = this.method_3438(var11, (double)var11.method_37074() * 0.5, 1.0F);
                class_1343 var13 = this.method_3438(var1, (double)var1.method_37277(), 1.0F);
                return var2.method_10824(
-                  new class_4092(var13.field_7336, var13.field_7333, var13.field_7334, var12.field_7336, var12.field_7333, var12.field_7334)
+                  new Box(var13.field_7336, var13.field_7333, var13.field_7334, var12.field_7336, var12.field_7333, var12.field_7334)
                );
             }
          }

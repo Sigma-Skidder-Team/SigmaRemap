@@ -13,7 +13,7 @@ public class class_3511 {
    private class_7240 field_17217;
    private final Set<class_3757> field_17216;
    private final Map<RenderLayer, class_7995> field_17199;
-   public class_4092 field_17221;
+   public Box field_17221;
    private int field_17213;
    private boolean field_17210;
    private final class_2921 field_17223;
@@ -107,7 +107,7 @@ public class class_3511 {
             this.field_17211 = var3 - this.field_17222;
          }
 
-         this.field_17221 = new class_4092((double)var1, (double)var2, (double)var3, (double)(var1 + 16), (double)(var2 + 16), (double)(var3 + 16));
+         this.field_17221 = new Box((double)var1, (double)var2, (double)var3, (double)(var1 + 16), (double)(var2 + 16), (double)(var3 + 16));
 
          for (Direction var9 : Direction.field_803) {
             this.field_17209[var9.ordinal()].method_13364(this.field_17223).method_13369(var9, 16);

@@ -100,7 +100,7 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    private void method_8725() {
       double var3 = this.method_26575(class_7331.field_37471);
-      class_4092 var5 = class_4092.method_18911(this.method_37245()).method_18899(var3, 10.0, var3);
+      Box var5 = Box.method_18911(this.method_37245()).method_18899(var3, 10.0, var3);
       this.world
          .<class_1918>method_25874(class_1918.class, var5)
          .stream()

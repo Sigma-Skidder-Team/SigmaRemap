@@ -441,7 +441,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    private void method_43256() {
-      class_4092 var3 = new class_4092(this.method_37075()).method_18899(32.0, 10.0, 32.0);
+      Box var3 = new Box(this.method_37075()).method_18899(32.0, 10.0, 32.0);
       this.world
          .<class_5886>method_25874(class_5886.class, var3)
          .stream()
@@ -687,7 +687,7 @@ public class class_9359 extends class_704 implements class_117 {
                List var11 = this.world
                   .<class_1173>method_25869(
                      class_1173.class,
-                     new class_4092(
+                     new Box(
                         var10.method_61() - 8.0,
                         var10.method_60() - 5.0,
                         var10.method_62() - 8.0,

@@ -77,11 +77,11 @@ public class class_8526 extends class_2654 {
    }
 
    @Override
-   public void method_11990(Entity var1, class_4092 var2, List<Entity> var3, Predicate<? super Entity> var4) {
+   public void method_11990(Entity var1, Box var2, List<Entity> var3, Predicate<? super Entity> var4) {
    }
 
    @Override
-   public <T extends Entity> void method_11994(Class<? extends T> var1, class_4092 var2, List<T> var3, Predicate<? super T> var4) {
+   public <T extends Entity> void method_11994(Class<? extends T> var1, Box var2, List<T> var3, Predicate<? super T> var4) {
    }
 
    @Override

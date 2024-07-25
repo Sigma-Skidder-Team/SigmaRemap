@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public interface class_582 extends class_5719, class_4924, class_6755 {
    @Override
-   default Stream<class_4190> method_6679(Entity var1, class_4092 var2, Predicate<Entity> var3) {
+   default Stream<class_4190> method_6679(Entity var1, Box var2, Predicate<Entity> var3) {
       return class_5719.super.method_6679(var1, var2, var3);
    }
 

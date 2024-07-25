@@ -19,7 +19,7 @@ public class class_9191 {
    private final int field_47017;
    private final int field_47016;
    private final boolean field_47011;
-   private final class_4092 field_47014;
+   private final Box field_47014;
 
    public class_9191(int var1, int var2, int var3, int var4, boolean var5) {
       this.field_47010 = var1;
@@ -27,7 +27,7 @@ public class class_9191 {
       this.field_47017 = var3;
       this.field_47016 = var4;
       this.field_47011 = var5;
-      this.field_47014 = new class_4092((double)(var1 - var3), 0.0, (double)(var2 - var3), (double)(var1 + var3), 256.0, (double)(var2 + var3));
+      this.field_47014 = new Box((double)(var1 - var3), 0.0, (double)(var2 - var3), (double)(var1 + var3), 256.0, (double)(var2 + var3));
    }
 
    public boolean method_42368(BlockPos var1) {
@@ -54,7 +54,7 @@ public class class_9191 {
       return this.field_47011;
    }
 
-   public class_4092 method_42372() {
+   public Box method_42372() {
       return this.field_47014;
    }
 }

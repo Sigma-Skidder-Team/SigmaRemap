@@ -133,7 +133,7 @@ public class class_3756 extends class_3757 implements class_3745 {
       int var5 = this.field_18358.method_12173();
       int var6 = this.field_18358.method_12165();
       int var7 = this.field_18358.method_12185();
-      class_4092 var8 = new class_4092((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
+      Box var8 = new Box((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
          .method_18898((double)var4)
          .method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
       List var9 = this.field_18364.<class_704>method_25868(class_704.class, var8);
@@ -202,11 +202,11 @@ public class class_3756 extends class_3757 implements class_3745 {
       }
    }
 
-   private class_4092 method_17371() {
+   private Box method_17371() {
       int var3 = this.field_18358.method_12173();
       int var4 = this.field_18358.method_12165();
       int var5 = this.field_18358.method_12185();
-      return new class_4092((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).method_18898(8.0);
+      return new Box((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).method_18898(8.0);
    }
 
    @Nullable

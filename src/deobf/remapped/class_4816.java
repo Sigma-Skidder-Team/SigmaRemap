@@ -68,11 +68,11 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
       return this.field_24084;
    }
 
-   public class_4092 method_22195(class_2522 var1) {
+   public Box method_22195(class_2522 var1) {
       return this.method_22194(var1.<Direction>method_10313(class_3153.field_15681));
    }
 
-   public class_4092 method_22194(Direction var1) {
+   public Box method_22194(Direction var1) {
       float var4 = this.method_22199(1.0F);
       return class_3370.method_15524()
          .method_19483()
@@ -83,7 +83,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
          );
    }
 
-   private class_4092 method_22193(Direction var1) {
+   private Box method_22193(Direction var1) {
       Direction var4 = var1.method_1046();
       return this.method_22194(var1).method_18900((double)var4.method_1041(), (double)var4.method_1054(), (double)var4.method_1034());
    }
@@ -94,7 +94,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
       class_2522 var3 = this.field_18364.method_28262(this.method_17399());
       if (var3.method_8360() instanceof class_3153) {
          Direction var4 = var3.<Direction>method_10313(class_3153.field_15681);
-         class_4092 var5 = this.method_22193(var4).method_18919(this.field_18358);
+         Box var5 = this.method_22193(var4).method_18919(this.field_18358);
          List var6 = this.field_18364.method_25870((Entity)null, var5);
          if (!var6.isEmpty()) {
             for (int var7 = 0; var7 < var6.size(); var7++) {
@@ -103,7 +103,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
                   double var9 = 0.0;
                   double var11 = 0.0;
                   double var13 = 0.0;
-                  class_4092 var15 = var8.method_37241();
+                  Box var15 = var8.method_37241();
                   switch (var4.method_1029()) {
                      case field_47215:
                         if (var4.method_1049() == class_137.field_405) {

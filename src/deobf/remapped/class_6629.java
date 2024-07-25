@@ -483,8 +483,8 @@ public class class_6629<T extends Entity> {
       }
    }
 
-   public static double method_30461(class_4924 var0, BlockPos var1, boolean var2, class_4092 var3) {
-      class_4092 var6 = new class_4092(var1);
+   public static double method_30461(class_4924 var0, BlockPos var1, boolean var2, Box var3) {
+      Box var6 = new Box(var1);
       if (var2) {
          var6 = var6.method_18928(0.0, -1.0, 0.0);
       }
@@ -587,9 +587,9 @@ public class class_6629<T extends Entity> {
       return var1 != null ? var1.method_30484(var0) : null;
    }
 
-   public class_4092 method_30456(double var1, double var3, double var5) {
+   public Box method_30456(double var1, double var3, double var5) {
       float var9 = this.method_30459() / 2.0F;
-      return new class_4092(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)this.method_30468(), var5 + (double)var9);
+      return new Box(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)this.method_30468(), var5 + (double)var9);
    }
 
    public boolean method_30481(class_2522 var1) {

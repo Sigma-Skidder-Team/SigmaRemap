@@ -43,7 +43,7 @@ public class class_8551 extends class_691 {
 
    @Override
    public int method_3122(World var1, BlockPos var2) {
-      class_4092 var5 = field_3798.method_18919(var2);
+      Box var5 = field_3798.method_18919(var2);
       List var6;
       switch (this.field_43753) {
          case field_32138:

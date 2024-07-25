@@ -26,7 +26,7 @@ public interface class_6163 {
       return 256;
    }
 
-   default Stream<class_2522> method_28256(class_4092 var1) {
+   default Stream<class_2522> method_28256(Box var1) {
       return BlockPos.method_6085(var1).<class_2522>map(this::method_28262);
    }
 

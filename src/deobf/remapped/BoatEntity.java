@@ -419,7 +419,7 @@ public class BoatEntity extends Entity {
    }
 
    public float method_42103() {
-      class_4092 var3 = this.method_37241();
+      Box var3 = this.method_37241();
       int var4 = class_9299.method_42847(var3.field_19941);
       int var5 = class_9299.method_42815(var3.field_19940);
       int var6 = class_9299.method_42847(var3.field_19939);
@@ -455,8 +455,8 @@ public class BoatEntity extends Entity {
    }
 
    public float method_42111() {
-      class_4092 var3 = this.method_37241();
-      class_4092 var4 = new class_4092(var3.field_19941, var3.field_19937 - 0.001, var3.field_19938, var3.field_19940, var3.field_19937, var3.field_19942);
+      Box var3 = this.method_37241();
+      Box var4 = new Box(var3.field_19941, var3.field_19937 - 0.001, var3.field_19938, var3.field_19940, var3.field_19937, var3.field_19942);
       int var5 = class_9299.method_42847(var4.field_19941) - 1;
       int var6 = class_9299.method_42815(var4.field_19940) + 1;
       int var7 = class_9299.method_42847(var4.field_19937) - 1;
@@ -493,7 +493,7 @@ public class BoatEntity extends Entity {
    }
 
    private boolean method_42096() {
-      class_4092 var3 = this.method_37241();
+      Box var3 = this.method_37241();
       int var4 = class_9299.method_42847(var3.field_19941);
       int var5 = class_9299.method_42815(var3.field_19940);
       int var6 = class_9299.method_42847(var3.field_19937);
@@ -523,7 +523,7 @@ public class BoatEntity extends Entity {
 
    @Nullable
    private class_1038 method_42089() {
-      class_4092 var3 = this.method_37241();
+      Box var3 = this.method_37241();
       double var4 = var3.field_19939 + 0.001;
       int var6 = class_9299.method_42847(var3.field_19941);
       int var7 = class_9299.method_42815(var3.field_19940);

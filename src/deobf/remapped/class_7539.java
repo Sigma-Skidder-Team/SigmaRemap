@@ -53,7 +53,7 @@ public class class_7539 implements class_2995 {
       BlockPos var12 = var0.method_18426();
       if (method_34333(var12, var4, var6, var8) <= 80.0F) {
          class_3372.method_15562(
-            new class_4092(
+            new Box(
                   (double)((float)var12.method_12173() + 0.25F),
                   (double)((float)var12.method_12165() + 0.25F),
                   (double)var12.method_12185() + 0.25,
@@ -74,7 +74,7 @@ public class class_7539 implements class_2995 {
                float var15 = var13 != var0.method_18429() ? 0.0F : 1.0F;
                float var16 = var13 != var0.method_18429() ? 1.0F : 0.0F;
                class_3372.method_15562(
-                  new class_4092(
+                  new Box(
                         (double)((float)var14.field_29731 + 0.5F - var1),
                         (double)((float)var14.field_29735 + 0.01F * (float)var13),
                         (double)((float)var14.field_29736 + 0.5F - var1),
@@ -96,7 +96,7 @@ public class class_7539 implements class_2995 {
          for (class_5851 var25 : var0.method_18431()) {
             if (method_34333(var25.method_26686(), var4, var6, var8) <= 80.0F) {
                class_3372.method_15562(
-                  new class_4092(
+                  new Box(
                         (double)((float)var25.field_29731 + 0.5F - var1 / 2.0F),
                         (double)((float)var25.field_29735 + 0.01F),
                         (double)((float)var25.field_29736 + 0.5F - var1 / 2.0F),
@@ -116,7 +116,7 @@ public class class_7539 implements class_2995 {
          for (class_5851 var26 : var0.method_18435()) {
             if (method_34333(var26.method_26686(), var4, var6, var8) <= 80.0F) {
                class_3372.method_15562(
-                  new class_4092(
+                  new Box(
                         (double)((float)var26.field_29731 + 0.5F - var1 / 2.0F),
                         (double)((float)var26.field_29735 + 0.01F),
                         (double)((float)var26.field_29736 + 0.5F - var1 / 2.0F),

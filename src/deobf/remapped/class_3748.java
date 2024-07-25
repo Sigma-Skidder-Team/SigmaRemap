@@ -23,7 +23,7 @@ public class class_3748 implements class_2995 {
          if (var15.method_22007(class_6503.field_33094)) {
             double var16 = (double)((float)var14.method_12165() + var15.method_22008(var12, var14));
             class_3372.method_15562(
-               new class_4092(
+               new Box(
                      (double)((float)var14.method_12173() + 0.01F),
                      (double)((float)var14.method_12165() + 0.01F),
                      (double)((float)var14.method_12185() + 0.01F),

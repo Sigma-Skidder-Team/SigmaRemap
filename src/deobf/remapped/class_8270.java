@@ -55,7 +55,7 @@ public class class_8270 implements class_1517 {
    private int method_38122(class_6331 var1, BlockPos var2) {
       byte var5 = 48;
       if (var1.method_28969().method_6866(class_236.field_778.method_1007(), var2, 48, class_8122.field_41618) > 4L) {
-         List var6 = var1.<class_5583>method_25868(class_5583.class, new class_4092(var2).method_18899(48.0, 8.0, 48.0));
+         List var6 = var1.<class_5583>method_25868(class_5583.class, new Box(var2).method_18899(48.0, 8.0, 48.0));
          if (var6.size() < 5) {
             return this.method_38124(var2, var1);
          }
@@ -66,7 +66,7 @@ public class class_8270 implements class_1517 {
 
    private int method_38125(class_6331 var1, BlockPos var2) {
       byte var5 = 16;
-      List var6 = var1.<class_5583>method_25868(class_5583.class, new class_4092(var2).method_18899(16.0, 8.0, 16.0));
+      List var6 = var1.<class_5583>method_25868(class_5583.class, new Box(var2).method_18899(16.0, 8.0, 16.0));
       return var6.size() >= 1 ? 0 : this.method_38124(var2, var1);
    }
 

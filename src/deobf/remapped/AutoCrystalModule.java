@@ -154,7 +154,7 @@ public class AutoCrystalModule extends PremiumModule {
          )
          && client.theWorld.method_28262(var4).method_8360() == class_4783.field_23184
          && client.theWorld.method_28262(var5).method_8360() == class_4783.field_23184
-         && client.theWorld.<Entity>method_25868(Entity.class, new class_4092(var4)).isEmpty();
+         && client.theWorld.<Entity>method_25868(Entity.class, new Box(var4)).isEmpty();
    }
 
    public List<BlockPos> method_44015(BlockPos var1, float var2, int var3, boolean var4, boolean var5, int var6) {

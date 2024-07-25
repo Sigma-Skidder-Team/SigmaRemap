@@ -84,7 +84,7 @@ public class class_3372 {
          class_1343 var4 = var0.method_37335(1.0F);
          class_1343 var5 = var0.method_37307(1.0F).method_6209((double)var1);
          class_1343 var6 = var4.method_6215(var5);
-         class_4092 var7 = var0.method_37241().method_18929(var5).method_18898(1.0);
+         Box var7 = var0.method_37241().method_18929(var5).method_18898(1.0);
          int var8 = var1 * var1;
          Predicate var9 = var0x -> !var0x.method_37221() && var0x.method_37167();
          class_5631 var10 = class_8462.method_38932(var0, var4, var6, var7, var9, (double)var8);
@@ -102,7 +102,7 @@ public class class_3372 {
       Camera var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
-         class_4092 var10 = new class_4092(var0, var1).method_18920(var9);
+         Box var10 = new Box(var0, var1).method_18920(var9);
          method_15562(var10, var2, var3, var4, var5);
       }
    }
@@ -111,12 +111,12 @@ public class class_3372 {
       Camera var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
-         class_4092 var10 = new class_4092(var0).method_18920(var9).method_18898((double)var1);
+         Box var10 = new Box(var0).method_18920(var9).method_18898((double)var1);
          method_15562(var10, var2, var3, var4, var5);
       }
    }
 
-   public static void method_15562(class_4092 var0, float var1, float var2, float var3, float var4) {
+   public static void method_15562(Box var0, float var1, float var2, float var3, float var4) {
       method_15559(var0.field_19941, var0.field_19937, var0.field_19938, var0.field_19940, var0.field_19939, var0.field_19942, var1, var2, var3, var4);
    }
 

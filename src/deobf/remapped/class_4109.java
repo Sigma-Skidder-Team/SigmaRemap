@@ -968,7 +968,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             }
 
             if (class_160.method_648(var16)) {
-               class_4092 var18 = var2.method_26549(var13);
+               Box var18 = var2.method_26549(var13);
                class_1343 var19 = new class_1343(var5, (double)var11.method_12165() + var16, var9);
                if (class_160.method_647(this.world, var2, var18.method_18920(var19))) {
                   var2.method_37356(var13);

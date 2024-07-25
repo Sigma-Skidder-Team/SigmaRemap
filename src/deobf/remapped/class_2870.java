@@ -130,7 +130,7 @@ public class class_2870 {
       }
    }
 
-   public static class_4092 method_13192(class_4092 var0, class_7971 var1, BlockPos var2) {
+   public static Box method_13192(Box var0, class_7971 var1, BlockPos var2) {
       int var5 = var2.method_12173();
       int var6 = var2.method_12185();
       long var7 = (long)(var5 * 3129871) ^ (long)var6 * 116129781L;

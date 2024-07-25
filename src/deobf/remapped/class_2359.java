@@ -37,7 +37,7 @@ public class class_2359 {
       this.field_11838[var5] = var8;
    }
 
-   public boolean method_10824(class_4092 var1) {
+   public boolean method_10824(Box var1) {
       return this.method_10822(var1.field_19941, var1.field_19937, var1.field_19938, var1.field_19940, var1.field_19939, var1.field_19942);
    }
 

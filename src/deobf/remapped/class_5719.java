@@ -9,17 +9,17 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public interface class_5719 {
-   List<Entity> method_25867(Entity var1, class_4092 var2, Predicate<? super Entity> var3);
+   List<Entity> method_25867(Entity var1, Box var2, Predicate<? super Entity> var3);
 
-   <T extends Entity> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3);
+   <T extends Entity> List<T> method_25869(Class<? extends T> var1, Box var2, Predicate<? super T> var3);
 
-   default <T extends Entity> List<T> method_25875(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
+   default <T extends Entity> List<T> method_25875(Class<? extends T> var1, Box var2, Predicate<? super T> var3) {
       return this.<T>method_25869(var1, var2, var3);
    }
 
    List<? extends class_704> method_25873();
 
-   default List<Entity> method_25870(Entity var1, class_4092 var2) {
+   default List<Entity> method_25870(Entity var1, Box var2) {
       return this.method_25867(var1, var2, class_3572.field_17483);
    }
 
@@ -40,17 +40,17 @@ public interface class_5719 {
       }
    }
 
-   default <T extends Entity> List<T> method_25868(Class<? extends T> var1, class_4092 var2) {
+   default <T extends Entity> List<T> method_25868(Class<? extends T> var1, Box var2) {
       return this.<T>method_25869(var1, var2, class_3572.field_17483);
    }
 
-   default <T extends Entity> List<T> method_25874(Class<? extends T> var1, class_4092 var2) {
+   default <T extends Entity> List<T> method_25874(Class<? extends T> var1, Box var2) {
       return this.<T>method_25875(var1, var2, class_3572.field_17483);
    }
 
-   default Stream<class_4190> method_6679(Entity var1, class_4092 var2, Predicate<Entity> var3) {
+   default Stream<class_4190> method_6679(Entity var1, Box var2, Predicate<Entity> var3) {
       if (!(var2.method_18906() < 1.0E-7)) {
-         class_4092 var6 = var2.method_18898(1.0E-7);
+         Box var6 = var2.method_18898(1.0E-7);
          return this.method_25867(var1, var6, var3.and(var2x -> {
             if (var2x.method_37241().method_18909(var6)) {
                if (var1 != null) {
@@ -63,7 +63,7 @@ public interface class_5719 {
             }
 
             return false;
-         })).stream().<class_4092>map(Entity::method_37241).<class_4190>map(class_3370::method_15523);
+         })).stream().<Box>map(Entity::method_37241).<class_4190>map(class_3370::method_15523);
       } else {
          return Stream.<class_4190>empty();
       }
@@ -128,14 +128,14 @@ public interface class_5719 {
 
    @Nullable
    default <T extends class_5834> T method_25865(
-      Class<? extends T> var1, class_4931 var2, class_5834 var3, double var4, double var6, double var8, class_4092 var10
+      Class<? extends T> var1, class_4931 var2, class_5834 var3, double var4, double var6, double var8, Box var10
    ) {
       return this.<T>method_25864(this.method_25869(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
    default <T extends class_5834> T method_25872(
-      Class<? extends T> var1, class_4931 var2, class_5834 var3, double var4, double var6, double var8, class_4092 var10
+      Class<? extends T> var1, class_4931 var2, class_5834 var3, double var4, double var6, double var8, Box var10
    ) {
       return this.<T>method_25864(this.method_25875(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
@@ -158,7 +158,7 @@ public interface class_5719 {
       return (T)var14;
    }
 
-   default List<class_704> method_25871(class_4931 var1, class_5834 var2, class_4092 var3) {
+   default List<class_704> method_25871(class_4931 var1, class_5834 var2, Box var3) {
       ArrayList var6 = Lists.newArrayList();
 
       for (class_704 var8 : this.method_25873()) {
@@ -170,7 +170,7 @@ public interface class_5719 {
       return var6;
    }
 
-   default <T extends class_5834> List<T> method_25863(Class<? extends T> var1, class_4931 var2, class_5834 var3, class_4092 var4) {
+   default <T extends class_5834> List<T> method_25863(Class<? extends T> var1, class_4931 var2, class_5834 var3, Box var4) {
       List var7 = this.method_25869(var1, var4, (Predicate<? super T>)null);
       ArrayList var8 = Lists.newArrayList();
 

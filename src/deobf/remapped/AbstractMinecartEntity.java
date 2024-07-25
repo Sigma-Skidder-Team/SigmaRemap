@@ -151,7 +151,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                   double var21 = this.world
                      .method_28264(class_160.method_646(this.world, var7), () -> class_160.method_646(this.world, var7.method_6100()));
                   if (class_160.method_648(var21)) {
-                     class_4092 var23 = new class_4092((double)(-var14), 0.0, (double)(-var14), (double)var14, (double)var12.field_31200, (double)var14);
+                     Box var23 = new Box((double)(-var14), 0.0, (double)(-var14), (double)var14, (double)var12.field_31200, (double)var14);
                      class_1343 var24 = class_1343.method_6219(var7, var21);
                      if (class_160.method_647(this.world, var1, var23.method_18920(var24))) {
                         var1.method_37356(var13);
@@ -641,8 +641,8 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    @Override
-   public class_4092 method_37210() {
-      class_4092 var3 = this.method_37241();
+   public Box method_37210() {
+      Box var3 = this.method_37241();
       return !this.method_4754() ? var3 : var3.method_18898((double)Math.abs(this.method_4741()) / 16.0);
    }
 

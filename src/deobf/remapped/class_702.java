@@ -337,12 +337,12 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public <T extends Entity> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_25869(Class<? extends T> var1, Box var2, Predicate<? super T> var3) {
       return Collections.<T>emptyList();
    }
 
    @Override
-   public List<Entity> method_25867(Entity var1, class_4092 var2, Predicate<? super Entity> var3) {
+   public List<Entity> method_25867(Entity var1, Box var2, Predicate<? super Entity> var3) {
       return Collections.<Entity>emptyList();
    }
 

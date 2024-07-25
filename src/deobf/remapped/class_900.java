@@ -85,7 +85,7 @@ public class class_900 extends Entity {
                List var6 = this.world
                   .method_25867(
                      this,
-                     new class_4092(
+                     new Box(
                         this.getPosX() - 3.0,
                         this.method_37309() - 3.0,
                         this.getPosZ() - 3.0,

@@ -88,7 +88,7 @@ public class class_3633 extends class_380 implements class_724 {
    }
 
    private boolean method_16934(World var1, BlockPos var2) {
-      List var5 = var1.<class_7666>method_25869(class_7666.class, new class_4092(var2), class_5834::method_26507);
+      List var5 = var1.<class_7666>method_25869(class_7666.class, new Box(var2), class_5834::method_26507);
       if (!var5.isEmpty()) {
          ((class_7666)var5.get(0)).method_26557();
          return true;

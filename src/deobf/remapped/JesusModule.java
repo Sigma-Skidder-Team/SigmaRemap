@@ -169,11 +169,11 @@ public class JesusModule extends Module {
       return class_8865.method_40771();
    }
 
-   public boolean method_32078(class_4092 var1) {
+   public boolean method_32078(Box var1) {
       return this.method_32083(var1, class_5371.field_27439) || this.method_32083(var1, class_5371.field_27413);
    }
 
-   public boolean method_32083(class_4092 var1, class_5371 var2) {
+   public boolean method_32083(Box var1, class_5371 var2) {
       int var5 = class_9299.method_42847(var1.field_19941);
       int var6 = class_9299.method_42815(var1.field_19940);
       int var7 = class_9299.method_42847(var1.field_19937);
@@ -185,14 +185,14 @@ public class JesusModule extends Module {
    }
 
    public static boolean method_32081() {
-      class_4092 var2 = client.thePlayer.field_41712.method_18918(0.0, -0.001, 0.0);
+      Box var2 = client.thePlayer.field_41712.method_18918(0.0, -0.001, 0.0);
       Stream var3 = client.theWorld.method_6680(client.thePlayer, var2);
       Iterator var4 = var3.iterator();
       boolean var5 = true;
       if (var4.hasNext()) {
          while (var4.hasNext()) {
             class_4190 var6 = (class_4190)var4.next();
-            class_4092 var7 = var6.method_19483();
+            Box var7 = var6.method_19483();
             BlockPos var8 = new BlockPos(var7.method_18926());
             class_6414 var9 = client.theWorld.method_28262(var8).method_8360();
             if (var9 != class_4783.field_23900

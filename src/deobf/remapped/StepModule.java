@@ -34,7 +34,7 @@ public class StepModule extends SecondModule {
       double var6 = client.thePlayer.getPosZ() + var1.method_39325().field_7334;
       double var8 = 0.41;
       double var10 = var1.method_39326() - var1.method_39323();
-      class_4092 var12 = new class_4092(
+      Box var12 = new Box(
          var4 - var8,
          client.thePlayer.field_41712.field_19937,
          var6 - var8,

@@ -138,10 +138,10 @@ public class class_6306 {
    }
 
    public static boolean method_28766(int var0, int var1, int var2, boolean var3) {
-      class_4092 var6 = field_32228.thePlayer.method_37243() != null
+      Box var6 = field_32228.thePlayer.method_37243() != null
          ? field_32228.thePlayer.method_37243().method_37241()
          : field_32228.thePlayer.method_37241();
-      class_4092 var7 = new class_4092(
+      Box var7 = new Box(
          (double)((float)var0 + 0.5F) - var6.method_18910() / 2.0,
          (double)var1,
          (double)((float)var2 + 0.5F) - var6.method_18921() / 2.0,

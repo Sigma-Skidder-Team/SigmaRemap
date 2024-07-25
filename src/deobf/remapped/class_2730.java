@@ -65,7 +65,7 @@ public class class_2730 {
    }
 
    public static float method_12265(class_1343 var0, Entity var1) {
-      class_4092 var4 = var1.method_37241();
+      Box var4 = var1.method_37241();
       double var5 = 1.0 / ((var4.field_19940 - var4.field_19941) * 2.0 + 1.0);
       double var7 = 1.0 / ((var4.field_19939 - var4.field_19937) * 2.0 + 1.0);
       double var9 = 1.0 / ((var4.field_19942 - var4.field_19938) * 2.0 + 1.0);
@@ -149,7 +149,7 @@ public class class_2730 {
       int var10 = class_9299.method_42847(this.field_13326 - (double)var53 - 1.0);
       int var11 = class_9299.method_42847(this.field_13326 + (double)var53 + 1.0);
       List var12 = this.field_13330
-         .method_25870(this.field_13323, new class_4092((double)var54, (double)var8, (double)var10, (double)var55, (double)var9, (double)var11));
+         .method_25870(this.field_13323, new Box((double)var54, (double)var8, (double)var10, (double)var55, (double)var9, (double)var11));
       class_1343 var13 = new class_1343(this.field_13322, this.field_13336, this.field_13326);
 
       for (int var14 = 0; var14 < var12.size(); var14++) {

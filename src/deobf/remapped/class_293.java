@@ -242,7 +242,7 @@ public class class_293 {
             if (!var37.isEmpty()) {
                for (class_3757 var30 : var37) {
                   if (var33) {
-                     class_4092 var31 = (class_4092)class_7860.method_35555(var30, class_7860.field_40135);
+                     Box var31 = (Box)class_7860.method_35555(var30, class_7860.field_40135);
                      if (var31 != null && !var34.method_10824(var31)) {
                         continue;
                      }

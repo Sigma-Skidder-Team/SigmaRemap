@@ -89,7 +89,7 @@ public class AntiVoidModule extends Module {
    private boolean method_33100() {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
          if (!client.thePlayer.onGround) {
-            class_4092 var3 = client.thePlayer.field_41712;
+            Box var3 = client.thePlayer.field_41712;
             var3 = var3.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
             return client.theWorld.method_6680(client.thePlayer, var3).count() == 0L;
          } else {

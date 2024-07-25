@@ -320,7 +320,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
 
       if (var9 == null) {
          List var14 = var0.method_25867(
-            (Entity)null, new class_4092(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), class_3572.field_17485
+            (Entity)null, new Box(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), class_3572.field_17485
          );
          if (!var14.isEmpty()) {
             var9 = (class_6867)var14.get(var0.field_33033.nextInt(var14.size()));

@@ -60,7 +60,7 @@ public class class_8420 extends class_956 {
 
    public void method_38755() {
       double var3 = this.method_4211();
-      class_4092 var5 = class_4092.method_18911(this.field_4915.method_37245()).method_18899(var3, 10.0, var3);
+      Box var5 = Box.method_18911(this.field_4915.method_37245()).method_18899(var3, 10.0, var3);
       List var6 = this.field_4915.world.method_25874(this.field_4915.getClass(), var5);
       Iterator var7 = var6.iterator();
 

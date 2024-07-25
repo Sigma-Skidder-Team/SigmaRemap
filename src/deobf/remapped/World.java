@@ -613,7 +613,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public List<Entity> method_25867(Entity var1, class_4092 var2, Predicate<? super Entity> var3) {
+   public List<Entity> method_25867(Entity var1, Box var2, Predicate<? super Entity> var3) {
       this.method_29599().method_16055("getEntities");
       ArrayList var6 = Lists.newArrayList();
       int var7 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
@@ -634,7 +634,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return var6;
    }
 
-   public <T extends Entity> List<T> method_29583(class_6629<T> var1, class_4092 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_29583(class_6629<T> var1, Box var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getEntities");
       int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
       int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);
@@ -655,7 +655,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public <T extends Entity> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_25869(Class<? extends T> var1, Box var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getEntities");
       int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
       int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);
@@ -677,7 +677,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public <T extends Entity> List<T> method_25875(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_25875(Class<? extends T> var1, Box var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getLoadedEntities");
       int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
       int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);

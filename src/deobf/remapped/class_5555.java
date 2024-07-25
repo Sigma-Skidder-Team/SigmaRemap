@@ -55,7 +55,7 @@ public class class_5555 extends class_9795 implements class_3745 {
       this.field_28273++;
       if (!var4) {
          if (!this.field_18364.field_33055) {
-            List var5 = this.field_18364.<Entity>method_25869(Entity.class, new class_4092(this.method_17399()), class_5555::method_25250);
+            List var5 = this.field_18364.<Entity>method_25869(Entity.class, new Box(this.method_17399()), class_5555::method_25250);
             if (!var5.isEmpty()) {
                this.method_25252((Entity)var5.get(this.field_18364.field_33033.nextInt(var5.size())));
             }

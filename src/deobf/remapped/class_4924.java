@@ -20,7 +20,7 @@ public interface class_4924 extends class_5561, class_1449, class_6142 {
       return this.getBiomeManager().method_3726(var1);
    }
 
-   default Stream<class_2522> method_22549(class_4092 var1) {
+   default Stream<class_2522> method_22549(Box var1) {
       int var4 = class_9299.method_42847(var1.field_19941);
       int var5 = class_9299.method_42847(var1.field_19940);
       int var6 = class_9299.method_42847(var1.field_19937);
@@ -109,7 +109,7 @@ public interface class_4924 extends class_5561, class_1449, class_6142 {
       return this.method_28258(var1).method_22007(class_6503.field_33094);
    }
 
-   default boolean method_22550(class_4092 var1) {
+   default boolean method_22550(Box var1) {
       int var4 = class_9299.method_42847(var1.field_19941);
       int var5 = class_9299.method_42815(var1.field_19940);
       int var6 = class_9299.method_42847(var1.field_19937);

@@ -31,7 +31,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       super.method_37376(var1);
       class_3047.field_14935
          .encodeStart(class_3504.field_17178, this.method_15891())
-         .resultOrPartial(field_41741::error)
+         .resultOrPartial(LOGGER::error)
          .ifPresent(var1x -> var1.put("VillagerData", var1x));
       if (this.field_47748 != null) {
          var1.put("Offers", this.field_47748);
@@ -54,7 +54,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       super.method_37314(var1);
       if (var1.contains("VillagerData", 10)) {
          DataResult var4 = class_3047.field_14935.parse(new Dynamic(class_3504.field_17178, var1.method_25929("VillagerData")));
-         var4.resultOrPartial(field_41741::error).ifPresent(this::method_43207);
+         var4.resultOrPartial(LOGGER::error).ifPresent(this::method_43207);
       }
 
       if (var1.contains("Offers", 10)) {

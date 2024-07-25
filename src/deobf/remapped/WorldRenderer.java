@@ -1306,7 +1306,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          if (!var72.isEmpty()) {
             for (class_3757 var82 : var72) {
                if (var57) {
-                  class_4092 var86 = (class_4092)class_7860.method_35555(var82, class_7860.field_40135);
+                  Box var86 = (Box)class_7860.method_35555(var82, class_7860.field_40135);
                   if (var86 != null && !var59.method_10824(var86)) {
                      continue;
                   }
@@ -1348,7 +1348,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       synchronized (this.field_20972) {
          for (class_3757 var73 : this.field_20972) {
             if (var57) {
-               class_4092 var78 = (class_4092)class_7860.method_35555(var73, class_7860.field_40135);
+               Box var78 = (Box)class_7860.method_35555(var73, class_7860.field_40135);
                if (var78 != null && !var59.method_10824(var78)) {
                   continue;
                }
@@ -2714,7 +2714,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       int var14 = class_9299.method_42815((double)var13.size() / 3.0);
 
       for (int var15 = 0; var15 < var13.size(); var15++) {
-         class_4092 var16 = (class_4092)var13.get(var15);
+         Box var16 = (Box)var13.get(var15);
          float var17 = ((float)var15 % (float)var14 + 1.0F) / (float)var14;
          float var18 = (float)(var15 / var14);
          float var19 = var17 * (float)(var18 == 0.0F ? 1 : 0);
@@ -2734,7 +2734,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       });
    }
 
-   public static void method_20014(class_7966 var0, class_7907 var1, class_4092 var2, float var3, float var4, float var5, float var6) {
+   public static void method_20014(class_7966 var0, class_7907 var1, Box var2, float var3, float var4, float var5, float var6) {
       method_20013(
          var0,
          var1,
@@ -2934,7 +2934,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_20080(World var1, BlockPos var2, boolean var3) {
-      for (class_5834 var5 : var1.<class_5834>method_25868(class_5834.class, new class_4092(var2).method_18898(3.0))) {
+      for (class_5834 var5 : var1.<class_5834>method_25868(class_5834.class, new Box(var2).method_18898(3.0))) {
          var5.method_26424(var2, var3);
       }
    }

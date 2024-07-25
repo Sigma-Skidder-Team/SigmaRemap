@@ -11,7 +11,7 @@ public class class_2266 extends class_1546 {
    private static String[] field_11277;
    public float field_11276;
    private final Long2ObjectMap<class_1108> field_11279 = new Long2ObjectOpenHashMap();
-   private final Object2BooleanMap<class_4092> field_11278 = new Object2BooleanOpenHashMap();
+   private final Object2BooleanMap<Box> field_11278 = new Object2BooleanOpenHashMap();
 
    @Override
    public void method_7014(class_9525 var1, class_5886 var2) {
@@ -70,7 +70,7 @@ public class class_2266 extends class_1546 {
       BlockPos var11 = this.field_8166.method_37075();
       class_1108 var7 = this.method_10454(this.field_8166, var11.method_12173(), var4, var11.method_12185());
       if (this.field_8166.method_26931(var7) < 0.0F) {
-         class_4092 var8 = this.field_8166.method_37241();
+         Box var8 = this.field_8166.method_37241();
          if (this.method_10453(var3.method_13361(var8.field_19941, (double)var4, var8.field_19938))
             || this.method_10453(var3.method_13361(var8.field_19941, (double)var4, var8.field_19942))
             || this.method_10453(var3.method_13361(var8.field_19940, (double)var4, var8.field_19938))
@@ -179,7 +179,7 @@ public class class_2266 extends class_1546 {
          (double)var1.field_29735 - this.field_8166.method_37309(),
          (double)var1.field_29736 - this.field_8166.getPosZ()
       );
-      class_4092 var5 = this.field_8166.method_37241();
+      Box var5 = this.field_8166.method_37241();
       int var6 = class_9299.method_42815(var4.method_6217() / var5.method_18906());
       var4 = var4.method_6209((double)(1.0F / (float)var6));
 
@@ -232,7 +232,7 @@ public class class_2266 extends class_1546 {
                   && this.field_8166.method_37086() < 1.0F) {
                   double var19 = (double)(var1 - var7.method_1041()) + 0.5;
                   double var21 = (double)(var3 - var7.method_1034()) + 0.5;
-                  class_4092 var23 = new class_4092(
+                  Box var23 = new Box(
                      var19 - var17,
                      method_10464(this.field_8165, var12.method_13361(var19, (double)(var2 + 1), var21)) + 0.001,
                      var21 - var17,
@@ -316,7 +316,7 @@ public class class_2266 extends class_1546 {
       }
    }
 
-   private boolean method_10455(class_4092 var1) {
+   private boolean method_10455(Box var1) {
       return (Boolean)this.field_11278.computeIfAbsent(var1, var2 -> !this.field_8165.method_6683(this.field_8166, var1));
    }
 

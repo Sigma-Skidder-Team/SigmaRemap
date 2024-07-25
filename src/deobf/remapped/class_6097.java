@@ -11,14 +11,14 @@ public class class_6097 {
       this.field_31198 = var3;
    }
 
-   public class_4092 method_27939(class_1343 var1) {
+   public Box method_27939(class_1343 var1) {
       return this.method_27940(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 
-   public class_4092 method_27940(double var1, double var3, double var5) {
+   public Box method_27940(double var1, double var3, double var5) {
       float var9 = this.field_31199 / 2.0F;
       float var10 = this.field_31200;
-      return new class_4092(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)var10, var5 + (double)var9);
+      return new Box(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)var10, var5 + (double)var9);
    }
 
    public class_6097 method_27942(float var1) {

@@ -33,7 +33,7 @@ public class class_8006 extends class_8085 {
    }
 
    private static boolean method_36328(class_6331 var0, BlockPos var1) {
-      for (class_5834 var5 : var0.<Entity>method_25869(class_5834.class, new class_4092(var1), class_3572.field_17483)) {
+      for (class_5834 var5 : var0.<Entity>method_25869(class_5834.class, new Box(var1), class_3572.field_17483)) {
          if (var5 instanceof class_9897) {
             class_9897 var6 = (class_9897)var5;
             if (var6.method_45584()) {

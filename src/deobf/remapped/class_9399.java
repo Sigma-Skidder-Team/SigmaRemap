@@ -781,7 +781,7 @@ public class class_9399 extends class_5834 {
       if (!this.method_43493()) {
          return super.method_37339(var1);
       } else {
-         class_4092 var4 = this.method_43508(false).method_27939(this.method_37245());
+         Box var4 = this.method_43508(false).method_27939(this.method_37245());
          BlockPos var5 = this.method_37075();
          int var6 = Integer.MIN_VALUE;
 

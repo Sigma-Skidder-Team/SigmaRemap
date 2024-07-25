@@ -94,7 +94,7 @@ public enum class_3336 {
             this.field_16461 + (double)this.field_16451, this.field_16457 + (double)this.field_16445, this.field_16443 + (double)this.field_16456
          );
          float var15 = (float)(!(this.field_16454 instanceof class_2100) ? 0.25 : 0.3);
-         class_4092 var16 = new class_4092(
+         Box var16 = new Box(
             this.field_16461 - (double)var15,
             this.field_16457 - (double)var15,
             this.field_16443 - (double)var15,

@@ -544,7 +544,7 @@ public abstract class class_5834 extends Entity {
          var1.method_25931("SleepingZ", var1x.method_12185());
       });
       DataResult var7 = this.field_29675.method_5131(class_3504.field_17178);
-      var7.resultOrPartial(field_41741::error).ifPresent(var1x -> var1.put("Brain", var1x));
+      var7.resultOrPartial(LOGGER::error).ifPresent(var1x -> var1.put("Brain", var1x));
    }
 
    @Override
@@ -578,7 +578,7 @@ public abstract class class_5834 extends Entity {
          class_3903 var10 = this.world.method_29562().method_4850(var8);
          boolean var11 = var10 != null && this.world.method_29562().method_4842(this.method_37225(), var10);
          if (!var11) {
-            field_41741.warn("Unable to add mob to team \"{}\" (that team probably doesn't exist)", var8);
+            LOGGER.warn("Unable to add mob to team \"{}\" (that team probably doesn't exist)", var8);
          }
       }
 
@@ -2415,7 +2415,7 @@ public abstract class class_5834 extends Entity {
       this.field_29676 *= 0.98F;
       this.field_29673 *= 0.98F;
       this.method_26571();
-      class_4092 var23 = this.method_37241();
+      Box var23 = this.method_37241();
       this.method_26431(new class_1343((double)this.field_29676, (double)this.field_29651, (double)this.field_29673));
       this.world.method_29599().endSection();
       this.world.method_29599().startSection("push");
@@ -2484,8 +2484,8 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26542(class_4092 var1, class_4092 var2) {
-      class_4092 var5 = var1.method_18905(var2);
+   public void method_26542(Box var1, Box var2) {
+      Box var5 = var1.method_18905(var2);
       List var6 = this.world.method_25870(this, var5);
       if (var6.isEmpty()) {
          if (this.field_41744) {
@@ -2948,9 +2948,9 @@ public abstract class class_5834 extends Entity {
       return ImmutableList.of(class_7653.field_38885);
    }
 
-   public class_4092 method_26549(class_7653 var1) {
+   public Box method_26549(class_7653 var1) {
       class_6097 var4 = this.method_37190(var1);
-      return new class_4092(
+      return new Box(
          (double)(-var4.field_31199 / 2.0F),
          0.0,
          (double)(-var4.field_31199 / 2.0F),
@@ -3107,7 +3107,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public class_4092 method_37210() {
+   public Box method_37210() {
       if (this.method_26520(class_6943.field_35704).method_27960() != class_4897.field_24540) {
          return super.method_37210();
       } else {

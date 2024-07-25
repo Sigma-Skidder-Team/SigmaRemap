@@ -40,9 +40,9 @@ public class class_4745 extends class_4314 {
    }
 
    private void method_21917(World var1, BlockPos var2) {
-      List var5 = var1.<class_8829>method_25868(class_8829.class, new class_4092(var2).method_18899(8.0, 6.0, 8.0));
+      List var5 = var1.<class_8829>method_25868(class_8829.class, new Box(var2).method_18899(8.0, 6.0, 8.0));
       if (!var5.isEmpty()) {
-         List var6 = var1.<class_704>method_25868(class_704.class, new class_4092(var2).method_18899(8.0, 6.0, 8.0));
+         List var6 = var1.<class_704>method_25868(class_704.class, new Box(var2).method_18899(8.0, 6.0, 8.0));
          int var7 = var6.size();
 
          for (class_8829 var9 : var5) {

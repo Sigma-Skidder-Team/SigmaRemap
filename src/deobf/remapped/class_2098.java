@@ -30,7 +30,7 @@ public class class_2098 {
          && (double)var1.method_9545() < this.method_9816();
    }
 
-   public boolean method_9815(class_4092 var1) {
+   public boolean method_9815(Box var1) {
       return var1.field_19940 > this.method_9821()
          && var1.field_19941 < this.method_9828()
          && var1.field_19942 > this.method_9825()

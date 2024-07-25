@@ -111,7 +111,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
                for (class_9359 var13 : this.field_18364
                   .<class_9359>method_25868(
                      class_9359.class,
-                     new class_4092((double)var3, (double)var4, (double)var5, (double)var3, (double)(var4 - 4), (double)var5).method_18899(10.0, 5.0, 10.0)
+                     new Box((double)var3, (double)var4, (double)var5, (double)var3, (double)(var4 - 4), (double)var5).method_18899(10.0, 5.0, 10.0)
                   )) {
                   class_8807.field_45076.method_9160(var13, this);
                }
@@ -163,7 +163,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
          }
 
          int var6 = (9 + this.field_6318 * 2) * 20;
-         class_4092 var7 = new class_4092(this.field_18358).method_18898(var3).method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
+         Box var7 = new Box(this.field_18358).method_18898(var3).method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
          List var8 = this.field_18364.<class_704>method_25868(class_704.class, var7);
 
          for (class_704 var10 : var8) {

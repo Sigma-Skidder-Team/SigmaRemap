@@ -33,7 +33,7 @@ public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
          if (var1.method_27925() > 0 && var1.method_27918()) {
             class_1343 var11 = class_1343.method_6205(var1.method_27906());
             class_1343 var12 = class_1343.method_6205(var1.method_27921());
-            if (var2.method_10824(new class_4092(var12.field_7336, var12.field_7333, var12.field_7334, var11.field_7336, var11.field_7333, var11.field_7334))) {
+            if (var2.method_10824(new Box(var12.field_7336, var12.field_7333, var12.field_7334, var11.field_7336, var11.field_7333, var11.field_7334))) {
                return true;
             }
          }

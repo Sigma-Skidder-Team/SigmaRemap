@@ -38,10 +38,10 @@ public final class class_3370 {
    }
 
    public static class_4190 method_15522(double var0, double var2, double var4, double var6, double var8, double var10) {
-      return method_15523(new class_4092(var0, var2, var4, var6, var8, var10));
+      return method_15523(new Box(var0, var2, var4, var6, var8, var10));
    }
 
-   public static class_4190 method_15523(class_4092 var0) {
+   public static class_4190 method_15523(Box var0) {
       int var3 = method_15539(var0.field_19941, var0.field_19940);
       int var4 = method_15539(var0.field_19937, var0.field_19939);
       int var5 = method_15539(var0.field_19938, var0.field_19942);
@@ -198,7 +198,7 @@ public final class class_3370 {
       );
    }
 
-   public static double method_15520(class_9249 var0, class_4092 var1, Stream<class_4190> var2, double var3) {
+   public static double method_15520(class_9249 var0, Box var1, Stream<class_4190> var2, double var3) {
       Iterator var7 = var2.iterator();
 
       while (var7.hasNext()) {
@@ -212,11 +212,11 @@ public final class class_3370 {
       return var3;
    }
 
-   public static double method_15521(class_9249 var0, class_4092 var1, class_4924 var2, double var3, class_214 var5, Stream<class_4190> var6, boolean var7) {
+   public static double method_15521(class_9249 var0, Box var1, class_4924 var2, double var3, class_214 var5, Stream<class_4190> var6, boolean var7) {
       return method_15519(var1, var2, var3, var5, class_5587.method_25381(var0, class_9249.field_47219), var6, var7);
    }
 
-   private static double method_15519(class_4092 var0, class_4924 var1, double var2, class_214 var4, class_5587 var5, Stream<class_4190> var6, boolean var7) {
+   private static double method_15519(Box var0, class_4924 var1, double var2, class_214 var4, class_5587 var5, Stream<class_4190> var6, boolean var7) {
       if (var0.method_18910() < 1.0E-6 || var0.method_18901() < 1.0E-6 || var0.method_18921() < 1.0E-6) {
          return var2;
       } else if (Math.abs(var2) < 1.0E-7) {

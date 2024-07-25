@@ -129,9 +129,9 @@ public class class_2380 extends class_6788 {
       return var1.<T>method_25869(var3, this.method_10871(var2), var4);
    }
 
-   private class_4092 method_10871(BlockPos var1) {
+   private Box method_10871(BlockPos var1) {
       double var4 = 0.2;
-      return new class_4092(
+      return new Box(
          (double)var1.method_12173() + 0.2,
          (double)var1.method_12165(),
          (double)var1.method_12185() + 0.2,

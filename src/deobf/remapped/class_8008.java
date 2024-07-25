@@ -16,7 +16,7 @@ public class class_8008 extends class_4641 {
       float var6 = 0.1875F;
       float var7 = 0.25F;
       this.method_37094(
-         new class_4092(
+         new Box(
             this.getPosX() - 0.1875,
             this.method_37309() - 0.25 + 0.125,
             this.getPosZ() - 0.1875,
@@ -87,7 +87,7 @@ public class class_8008 extends class_4641 {
          List var8 = this.world
             .<class_5886>method_25868(
                class_5886.class,
-               new class_4092(
+               new Box(
                   this.getPosX() - 7.0,
                   this.method_37309() - 7.0,
                   this.getPosZ() - 7.0,
@@ -131,7 +131,7 @@ public class class_8008 extends class_4641 {
 
       for (class_8008 var8 : var0.<class_8008>method_25868(
          class_8008.class,
-         new class_4092((double)var4 - 1.0, (double)var5 - 1.0, (double)var6 - 1.0, (double)var4 + 1.0, (double)var5 + 1.0, (double)var6 + 1.0)
+         new Box((double)var4 - 1.0, (double)var5 - 1.0, (double)var6 - 1.0, (double)var4 + 1.0, (double)var5 + 1.0, (double)var6 + 1.0)
       )) {
          if (var8.method_21469().equals(var1)) {
             return var8;

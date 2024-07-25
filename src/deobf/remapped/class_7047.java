@@ -196,7 +196,7 @@ public class class_7047 {
          if (var4.method_19485()) {
             return false;
          } else {
-            class_4092 var5 = var4.method_19483();
+            Box var5 = var4.method_19483();
             return var5.method_18901() >= 0.9 && var5.method_18901() <= 1.0;
          }
       } else {

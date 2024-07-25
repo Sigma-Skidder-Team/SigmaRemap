@@ -76,7 +76,7 @@ public class class_9464 extends class_5877 implements class_724 {
    private class_7451 method_43739(World var1, Direction var2, BlockPos var3) {
       List var6 = var1.<class_7451>method_25869(
          class_7451.class,
-         new class_4092(
+         new Box(
             (double)var3.method_12173(),
             (double)var3.method_12165(),
             (double)var3.method_12185(),

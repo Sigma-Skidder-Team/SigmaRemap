@@ -104,7 +104,7 @@ public class class_6561 {
    }
 
    private void method_29964(World var1, BlockPos var2, BlockPos var3) {
-      List var6 = var1.<Entity>method_25869(Entity.class, new class_4092(var2, var3), var0 -> !(var0 instanceof class_704));
+      List var6 = var1.<Entity>method_25869(Entity.class, new Box(var2, var3), var0 -> !(var0 instanceof class_704));
       this.field_33470.clear();
 
       for (Entity var8 : var6) {

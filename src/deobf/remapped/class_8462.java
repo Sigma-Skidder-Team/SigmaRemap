@@ -26,14 +26,14 @@ public final class class_8462 {
    }
 
    @Nullable
-   public static class_5631 method_38932(Entity var0, class_1343 var1, class_1343 var2, class_4092 var3, Predicate<Entity> var4, double var5) {
+   public static class_5631 method_38932(Entity var0, class_1343 var1, class_1343 var2, Box var3, Predicate<Entity> var4, double var5) {
       World var9 = var0.world;
       double var10 = var5;
       Entity var12 = null;
       class_1343 var13 = null;
 
       for (Entity var15 : var9.method_25867(var0, var3, var4)) {
-         class_4092 var16 = var15.method_37241().method_18898((double)var15.method_37355());
+         Box var16 = var15.method_37241().method_18898((double)var15.method_37355());
          Optional var17 = var16.method_18923(var1, var2);
          if (!var16.method_18903(var1)) {
             if (var17.isPresent()) {
@@ -61,12 +61,12 @@ public final class class_8462 {
    }
 
    @Nullable
-   public static class_5631 method_38931(World var0, Entity var1, class_1343 var2, class_1343 var3, class_4092 var4, Predicate<Entity> var5) {
+   public static class_5631 method_38931(World var0, Entity var1, class_1343 var2, class_1343 var3, Box var4, Predicate<Entity> var5) {
       double var8 = Double.MAX_VALUE;
       Entity var10 = null;
 
       for (Entity var12 : var0.method_25867(var1, var4, var5)) {
-         class_4092 var13 = var12.method_37241().method_18898(0.3F);
+         Box var13 = var12.method_37241().method_18898(0.3F);
          Optional var14 = var13.method_18923(var2, var3);
          if (var14.isPresent()) {
             double var15 = var2.method_6204((class_1343)var14.get());

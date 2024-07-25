@@ -30,7 +30,7 @@ public class class_9851 extends class_2833 {
    }
 
    private boolean method_45361(class_1343 var1, int var2) {
-      class_4092 var5 = this.field_49858.method_37241();
+      Box var5 = this.field_49858.method_37241();
 
       for (int var6 = 1; var6 < var2; var6++) {
          var5 = var5.method_18920(var1);

@@ -25,9 +25,9 @@ public abstract class class_4190 {
       return var4 > 0 ? this.method_19490(var1, var4) : Double.NEGATIVE_INFINITY;
    }
 
-   public class_4092 method_19483() {
+   public Box method_19483() {
       if (!this.method_19485()) {
-         return new class_4092(
+         return new Box(
             this.method_19491(class_9249.field_47215),
             this.method_19491(class_9249.field_47216),
             this.method_19491(class_9249.field_47219),
@@ -99,9 +99,9 @@ public abstract class class_4190 {
          );
    }
 
-   public List<class_4092> method_19492() {
+   public List<Box> method_19492() {
       ArrayList var3 = Lists.newArrayList();
-      this.method_19500((var1, var3x, var5, var7, var9, var11) -> var3.add(new class_4092(var1, var3x, var5, var7, var9, var11)));
+      this.method_19500((var1, var3x, var5, var7, var9, var11) -> var3.add(new Box(var1, var3x, var5, var7, var9, var11)));
       return var3;
    }
 
@@ -140,7 +140,7 @@ public abstract class class_4190 {
             return !this.method_19484(
                   var7.field_7336 - (double)var3.method_12173(), var7.field_7333 - (double)var3.method_12165(), var7.field_7334 - (double)var3.method_12185()
                )
-               ? class_4092.method_18922(this.method_19492(), var1, var2, var3)
+               ? Box.method_18922(this.method_19492(), var1, var2, var3)
                : new class_9529(var7, Direction.method_1044(var6.field_7336, var6.field_7333, var6.field_7334).method_1046(), var3, true);
          } else {
             return null;
@@ -181,11 +181,11 @@ public abstract class class_4190 {
       }
    }
 
-   public double method_19482(class_9249 var1, class_4092 var2, double var3) {
+   public double method_19482(class_9249 var1, Box var2, double var3) {
       return this.method_19481(class_5587.method_25381(var1, class_9249.field_47215), var2, var3);
    }
 
-   public double method_19481(class_5587 var1, class_4092 var2, double var3) {
+   public double method_19481(class_5587 var1, Box var2, double var3) {
       if (!this.method_19485()) {
          if (Math.abs(var3) < 1.0E-7) {
             return 0.0;

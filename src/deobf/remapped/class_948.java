@@ -725,7 +725,7 @@ public class class_948 implements class_1243 {
                         }
                      }
 
-                     class_4092 var42 = this.field_4880.method_37241();
+                     Box var42 = this.field_4880.method_37241();
                      var21 = var13 - this.field_4859;
                      var23 = var15 - this.field_4863;
                      var25 = var17 - this.field_4855;
@@ -811,7 +811,7 @@ public class class_948 implements class_1243 {
       }
    }
 
-   private boolean method_4174(class_4924 var1, class_4092 var2) {
+   private boolean method_4174(class_4924 var1, Box var2) {
       Stream var5 = var1.method_6676(this.field_4880, this.field_4880.method_37241().method_18924(1.0E-5F), var0 -> true);
       class_4190 var6 = class_3370.method_15523(var2.method_18924(1.0E-5F));
       return var5.anyMatch(var1x -> !class_3370.method_15537(var1x, var6, class_8529.field_43655));

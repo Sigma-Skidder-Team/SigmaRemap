@@ -250,7 +250,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          class_1343 var12 = var4.method_37307(1.0F);
          class_1343 var13 = var7.method_6214(var12.field_7336 * var5, var12.field_7333 * var5, var12.field_7334 * var5);
          float var14 = 1.0F;
-         class_4092 var15 = var4.method_37241().method_18929(var12.method_6209(var5)).method_18899(1.0, 1.0, 1.0);
+         Box var15 = var4.method_37241().method_18929(var12.method_6209(var5)).method_18899(1.0, 1.0, 1.0);
          class_5631 var16 = class_8462.method_38932(var4, var7, var13, var15, var0 -> !var0.method_37221() && var0.method_37167(), var10);
          if (var16 != null) {
             Entity var17 = var16.method_25524();

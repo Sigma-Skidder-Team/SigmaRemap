@@ -450,7 +450,7 @@ public class class_2654 implements class_5990 {
       this.field_13065 = true;
    }
 
-   public void method_11990(Entity var1, class_4092 var2, List<Entity> var3, Predicate<? super Entity> var4) {
+   public void method_11990(Entity var1, Box var2, List<Entity> var3, Predicate<? super Entity> var4) {
       int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
       int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
       var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);
@@ -480,7 +480,7 @@ public class class_2654 implements class_5990 {
       }
    }
 
-   public <T extends Entity> void method_11998(class_6629<?> var1, class_4092 var2, List<? super T> var3, Predicate<? super T> var4) {
+   public <T extends Entity> void method_11998(class_6629<?> var1, Box var2, List<? super T> var3, Predicate<? super T> var4) {
       int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
       int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
       var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);
@@ -495,7 +495,7 @@ public class class_2654 implements class_5990 {
       }
    }
 
-   public <T extends Entity> void method_11994(Class<? extends T> var1, class_4092 var2, List<T> var3, Predicate<? super T> var4) {
+   public <T extends Entity> void method_11994(Class<? extends T> var1, Box var2, List<T> var3, Predicate<? super T> var4) {
       int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
       int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
       var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);

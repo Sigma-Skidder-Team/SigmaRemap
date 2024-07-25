@@ -116,7 +116,7 @@ public class MovementAntibot extends class_5676 {
 
    public boolean method_7141(Entity var1) {
       if (!field_28769.theWorld.method_28262(var1.method_37075()).method_8302()) {
-         class_4092 var4 = new class_4092(
+         Box var4 = new Box(
             var1.field_41712.field_19941,
             var1.field_41712.field_19937 - 0.5,
             var1.field_41712.field_19938,
