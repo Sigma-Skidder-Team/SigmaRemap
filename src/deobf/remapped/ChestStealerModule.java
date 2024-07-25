@@ -36,7 +36,7 @@ public class ChestStealerModule extends Module {
    @EventListen
    public void method_14639(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
-         if (this.method_42007("Aura")) {
+         if (this.getBooleanValueByName("Aura")) {
             if (this.field_15893.method_14772() > 2000L && this.field_15894) {
                this.field_15893.method_14773();
                this.field_15894 = false;
@@ -122,7 +122,7 @@ public class ChestStealerModule extends Module {
 
             if (!((float) SigmaMainClass.getInstance().method_3310().method_25303() < this.getFloatValueByName("Delay") * 20.0F)) {
                if (class_2740.method_12366()) {
-                  if (this.method_42007("Close")) {
+                  if (this.getBooleanValueByName("Close")) {
                      mc.field_9632.method_3207();
                   }
                } else {
@@ -146,7 +146,7 @@ public class ChestStealerModule extends Module {
                                  this.field_15894 = !this.field_15894;
                               }
 
-                              if (!this.method_42007("Fix ViaVersion")) {
+                              if (!this.getBooleanValueByName("Fix ViaVersion")) {
                                  class_2740.method_12355(var4.field_10956.field_19925, var7.field_40588, 0, class_6269.field_32019, mc.field_9632);
                               } else {
                                  class_2740.method_12356(
@@ -168,7 +168,7 @@ public class ChestStealerModule extends Module {
                            this.field_15894 = !this.field_15894;
                         }
 
-                        if (this.method_42007("Close")) {
+                        if (this.getBooleanValueByName("Close")) {
                            mc.field_9632.method_3207();
                         }
 
@@ -244,15 +244,15 @@ public class ChestStealerModule extends Module {
       List var5 = class_7494.method_34110(8.0F);
       String var6 = var1.method_1165().replaceAll("§.", "").toLowerCase();
 
-      for (String var8 : var4) {
-         int var9 = var6.indexOf(var8);
+      for (Object var8 : var4) {
+         int var9 = var6.indexOf((Integer) var8);
          if (var9 > 0 && var9 < 40) {
             return false;
          }
       }
 
-      for (class_1331 var11 : var5) {
-         if (class_7494.method_34120(var11) instanceof class_6942 || class_7494.method_34120(var11) instanceof class_3311) {
+      for (Object var11 : var5) {
+         if (class_7494.method_34120((class_1331) var11) instanceof class_6942 || class_7494.method_34120((class_1331) var11) instanceof class_3311) {
             return true;
          }
       }
@@ -262,7 +262,7 @@ public class ChestStealerModule extends Module {
 
    private boolean method_14636(class_6098 var1) {
       class_2451 var4 = var1.method_27960();
-      if (!this.method_42007("Ignore Junk")) {
+      if (!this.getBooleanValueByName("Ignore Junk")) {
          return false;
       } else if (!(var4 instanceof class_2235)) {
          if (var4 instanceof class_670) {
@@ -274,7 +274,7 @@ public class ChestStealerModule extends Module {
                if (var4 instanceof class_6201) {
                   return !BlockFlyModule.method_17216(var4);
                } else if (!(var4 instanceof class_603)
-                  && (!(var4 instanceof class_2100) || !SigmaMainClass.getInstance().getModuleManager().method_847(InvManagerModule.class).method_42007("Archery"))) {
+                  && (!(var4 instanceof class_2100) || !SigmaMainClass.getInstance().getModuleManager().method_847(InvManagerModule.class).getBooleanValueByName("Archery"))) {
                   if (var4 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().method_847(AutoMLGModule.class).method_42015()) {
                      return false;
                   } else {
@@ -327,7 +327,7 @@ public class ChestStealerModule extends Module {
       List var3 = mc.field_9601.field_33053;
       var3.removeIf(var0 -> !(var0 instanceof class_7099));
 
-      for (class_3757 var5 : var3) {
+      for (Object var5 : var3) {
          if (!this.field_15896.containsKey((class_7099)var5)) {
             this.field_15896.put((class_7099)var5, false);
          }

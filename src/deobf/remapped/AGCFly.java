@@ -2,12 +2,12 @@ package remapped;
 
 import java.util.Iterator;
 
-public class AGCFlyModule extends Module {
+public class AGCFly extends Module {
    private int field_6382;
    private int field_6384;
    private boolean field_6385;
 
-   public AGCFlyModule() {
+   public AGCFly() {
       super(Category.MOVEMENT, "AGC", "A fly for AntiGamingChair");
    }
 
