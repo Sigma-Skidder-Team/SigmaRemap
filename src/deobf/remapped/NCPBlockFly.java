@@ -23,14 +23,14 @@ public class NCPBlockFly extends Module {
 
    @Override
    public void method_42012() {
-      this.field_30936 = (BlockFlyModule)this.method_42017();
+      this.field_30936 = (BlockFlyModule)this.getModule();
    }
 
    @Override
    public void onEnable() {
       this.field_30933 = client.thePlayer.inventory.field_36404;
       this.field_30942 = this.field_30937 = 999.0F;
-      ((BlockFlyModule)this.method_42017()).field_18196 = -1;
+      ((BlockFlyModule)this.getModule()).field_18196 = -1;
       if (client.gameOptions.keySneak.isKeyDown() && this.getBooleanValueByName("Downwards")) {
          client.gameOptions.keySneak.pressed = false;
          this.field_30935 = true;
@@ -51,14 +51,14 @@ public class NCPBlockFly extends Module {
 
    @Override
    public void onDisable() {
-      if (this.field_30933 != -1 && this.method_42017().getStringValueByName("ItemSpoof").equals("Switch")) {
+      if (this.field_30933 != -1 && this.getModule().getStringValueByName("ItemSpoof").equals("Switch")) {
          client.thePlayer.inventory.field_36404 = this.field_30933;
       }
 
       this.field_30933 = -1;
-      if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
+      if (((BlockFlyModule)this.getModule()).field_18196 >= 0) {
          client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
-         ((BlockFlyModule)this.method_42017()).field_18196 = -1;
+         ((BlockFlyModule)this.getModule()).field_18196 = -1;
       }
 
       class_8865.method_40776(class_8865.method_40775() * 0.9);
@@ -121,18 +121,18 @@ public class NCPBlockFly extends Module {
                   method_27625(this.field_30932.field_14163, this.field_30932.field_14162), this.field_30932.field_14162, this.field_30932.field_14163, false
                );
                int var14 = client.thePlayer.inventory.field_36404;
-               if (!this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
+               if (!this.getModule().getStringValueByName("ItemSpoof").equals("None")) {
                   this.field_30936.method_17211();
                }
 
                client.playerController.method_42147(client.thePlayer, client.theWorld, this.field_30940, var13);
-               if (!this.method_42017().getBooleanValueByName("NoSwing")) {
+               if (!this.getModule().getBooleanValueByName("NoSwing")) {
                   client.thePlayer.method_26597(this.field_30940);
                } else {
                   client.method_8614().sendPacket(new class_3195(this.field_30940));
                }
 
-               if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
+               if (this.getModule().getStringValueByName("ItemSpoof").equals("Spoof") || this.getModule().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
                   client.thePlayer.inventory.field_36404 = var14;
                }
             }
@@ -214,7 +214,7 @@ public class NCPBlockFly extends Module {
             this.field_30931 = client.thePlayer.method_37309();
          }
 
-         if (this.method_42017().getBooleanValueByName("No Sprint")) {
+         if (this.getModule().getBooleanValueByName("No Sprint")) {
             client.thePlayer.method_37140(false);
          }
 
@@ -225,7 +225,7 @@ public class NCPBlockFly extends Module {
          }
 
          if (this.field_30936 == null) {
-            this.field_30936 = (BlockFlyModule)this.method_42017();
+            this.field_30936 = (BlockFlyModule)this.getModule();
          }
 
          String var4 = this.getStringValueByName("Speed Mode");
@@ -317,7 +317,7 @@ public class NCPBlockFly extends Module {
    @class_7664
    public void method_27624(class_2157 var1) {
       if (this.method_42015() && client.thePlayer != null) {
-         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
+         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.getModule()).field_18196 >= 0) {
             var1.method_29715(true);
          }
       }
@@ -326,8 +326,8 @@ public class NCPBlockFly extends Module {
    @EventListen
    public void method_27621(class_2911 var1) {
       if (this.method_42015() && this.field_30941) {
-         if (this.method_42017().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-            && (!class_314.method_1434() || this.method_42017().getBooleanValueByName("Tower while moving"))) {
+         if (this.getModule().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
+            && (!class_314.method_1434() || this.getModule().getBooleanValueByName("Tower while moving"))) {
             var1.method_29715(true);
          }
       }

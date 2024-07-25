@@ -11,7 +11,7 @@ public class MineplexGamePlay extends Module {
 
    @Override
    public void method_42012() {
-      this.field_33098 = (GamePlayModule)this.method_42017();
+      this.field_33098 = (GamePlayModule)this.getModule();
    }
 
    @Override

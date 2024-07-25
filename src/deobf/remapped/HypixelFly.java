@@ -92,7 +92,7 @@ public class HypixelFly extends Module {
          Packet var4 = var1.method_557();
          if (this.method_42015()) {
             if (var4 instanceof class_509) {
-               this.method_42017().method_41999();
+               this.getModule().method_41999();
             }
          }
       }

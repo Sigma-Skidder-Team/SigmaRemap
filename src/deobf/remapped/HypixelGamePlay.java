@@ -21,7 +21,7 @@ public class HypixelGamePlay extends Module {
 
    @Override
    public void method_42012() {
-      this.field_16172 = (GamePlayModule)this.method_42017();
+      this.field_16172 = (GamePlayModule)this.getModule();
    }
 
    @EventListen

@@ -32,7 +32,7 @@ import org.lwjgl.opengl.GL11;
 public class class_2026 {
    private static MinecraftClient field_10270 = MinecraftClient.getInstance();
    private boolean field_10295 = false;
-   private class_8896 field_10298;
+   private Channel field_10298;
    private int field_10285 = 50;
    private long field_10283 = -1L;
    private Thread field_10278 = new Thread();
@@ -60,7 +60,7 @@ public class class_2026 {
    private double field_10286 = 0.0;
 
    public void method_9478() {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
       this.method_9507();
       if (!this.method_9468()) {
          this.method_9477();
@@ -557,9 +557,9 @@ public class class_2026 {
       }
    }
 
-   public void method_9489(class_8896 var1, class_7144 var2) {
+   public void method_9489(Channel var1, class_7144 var2) {
       if (var1 == null) {
-         var1 = new class_8896("temp", "temp", class_9023.field_46153);
+         var1 = new Channel("temp", "temp", class_9023.field_46153);
          var1.field_45627.add(var2);
       }
 

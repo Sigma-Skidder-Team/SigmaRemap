@@ -52,7 +52,7 @@ public class class_7842 {
 
             SigmaMainClass.getInstance().getEventManager().method_7913();
 
-            for (Module var23 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+            for (Module var23 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
                for (Setting var28 : var23.method_41996().values()) {
                   var28.method_23040();
                }

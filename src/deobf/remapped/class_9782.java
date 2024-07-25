@@ -10,7 +10,7 @@ public class class_9782 {
 
    public class_9782() {
       this.field_49649 = new Timer();
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
    }
 
    @EventListen

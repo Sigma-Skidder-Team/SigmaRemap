@@ -57,7 +57,7 @@ public class KeybindManagerMenu extends class_2596 {
    public static ArrayList<class_1226> method_38833() {
       ArrayList var2 = new ArrayList();
 
-      for (Module var4 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+      for (Module var4 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
          var2.add(new class_1226(var4));
       }
 

@@ -33,8 +33,8 @@ public class NCPLongjump extends Module {
          if (client.thePlayer.onGround) {
             this.field_3400 = 0;
             this.field_3397++;
-            if (this.field_3399 && var1.method_35236() != 0.599 && this.method_42017().getBooleanValueByName("Auto Disable")) {
-               this.method_42017().method_41999();
+            if (this.field_3399 && var1.method_35236() != 0.599 && this.getModule().getBooleanValueByName("Auto Disable")) {
+               this.getModule().method_41999();
                class_8865.method_40777(var1, class_8865.method_40767() * 0.8);
                return;
             }
@@ -43,12 +43,12 @@ public class NCPLongjump extends Module {
                client.thePlayer.getPosX(), client.thePlayer.method_37309() - 0.4, client.thePlayer.getPosZ()
             );
             if (StepModule.field_20352 > 1) {
-               if (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var4) && this.field_3397 > 0 && class_314.method_1434()) {
+               if (this.getModule().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var4) && this.field_3397 > 0 && class_314.method_1434()) {
                   client.thePlayer.method_26595();
                   var1.method_35232(client.thePlayer.method_37098().field_7336);
                   var1.method_35235(client.thePlayer.method_37098().field_7333);
                   var1.method_35229(client.thePlayer.method_37098().field_7334);
-               } else if (this.method_42017().getBooleanValueByName("Auto Jump") && this.field_3397 > (this.field_3399 ? 1 : 0) && class_314.method_1434()) {
+               } else if (this.getModule().getBooleanValueByName("Auto Jump") && this.field_3397 > (this.field_3399 ? 1 : 0) && class_314.method_1434()) {
                   client.thePlayer.method_26595();
                   var1.method_35232(client.thePlayer.method_37098().field_7336);
                   var1.method_35235(client.thePlayer.method_37098().field_7333);
@@ -91,10 +91,10 @@ public class NCPLongjump extends Module {
                   String var13 = this.getStringValueByName("Glide Mode");
                   switch (var13) {
                      case "Basic":
-                        var1.method_35235(((LongJumpModule)this.method_42017()).method_5380(this.field_3400));
+                        var1.method_35235(((LongJumpModule)this.getModule()).method_5380(this.field_3400));
                         break;
                      case "High":
-                        var1.method_35235(((LongJumpModule)this.method_42017()).method_5381(this.field_3400));
+                        var1.method_35235(((LongJumpModule)this.getModule()).method_5381(this.field_3400));
                         if (class_314.method_1387()
                            && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NoFallModule.class).method_42015()
                            && (this.field_3400 == 8 || this.field_3400 == 21)) {
@@ -113,7 +113,7 @@ public class NCPLongjump extends Module {
                }
             }
 
-            if (this.field_3397 == 1 && client.thePlayer.method_37098().field_7333 < 0.0 && this.method_42017().getBooleanValueByName("Auto Jump")) {
+            if (this.field_3397 == 1 && client.thePlayer.method_37098().field_7333 < 0.0 && this.getModule().getBooleanValueByName("Auto Jump")) {
                class_8865.method_40777(var1, class_8865.method_40767() * 0.2);
             }
          }

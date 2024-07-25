@@ -49,8 +49,8 @@ public class BasicAutoGapple extends Module {
          }
 
          int var4 = -1;
-         if (client.thePlayer.method_26551() <= this.method_42017().getFloatValueByName("Health") * 2.0F) {
-            var4 = ((AutoGapple)this.method_42017()).method_29349(false);
+         if (client.thePlayer.method_26551() <= this.getModule().getFloatValueByName("Health") * 2.0F) {
+            var4 = ((AutoGapple)this.getModule()).method_29349(false);
             if (this.field_49494 == -1 && this.field_49495 >= 20 && var4 != -1) {
                this.field_49494 = 0;
                this.field_49495 = 0;

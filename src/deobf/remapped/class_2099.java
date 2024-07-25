@@ -7,7 +7,7 @@ public class class_2099 extends class_1859 {
    private List<class_6220> field_10535 = new ArrayList<class_6220>();
    public final class_2440 field_10536;
    public class_2612 field_10537;
-   public class_3305 field_10538;
+   public ProfileManagerGUI field_10538;
    private List<class_299> field_10533 = new ArrayList<class_299>();
 
    public class_2099(class_7038 var1, String var2, int var3, int var4) {
@@ -22,7 +22,7 @@ public class class_2099 extends class_1859 {
          )
       );
       var7.method_32100((var1x, var2x) -> this.field_10538.method_15155(true));
-      this.method_32148(this.field_10538 = new class_3305(this, "profile", 0, 69, this.field_36278, 200));
+      this.method_32148(this.field_10538 = new ProfileManagerGUI(this, "profile", 0, 69, this.field_36278, 200));
       this.field_10538.method_32187(true);
       this.method_9847();
    }

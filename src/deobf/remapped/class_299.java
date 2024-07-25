@@ -81,7 +81,7 @@ public class class_299 extends class_446 {
                class_2099 var5x = (class_2099)this.method_32167().method_32167().method_32167();
                var5x.method_32102(() -> var5x.method_9847());
 
-               for (Module var7x : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+               for (Module var7x : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
                   if (var7x instanceof PremiumModule && !SigmaMainClass.getInstance().getAccountManager().method_23084()) {
                      var7x.setEnabled1(false);
                   }

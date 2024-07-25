@@ -59,7 +59,7 @@ public class class_1675 {
                SigmaMainClass.getInstance().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            for (Module var8 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+            for (Module var8 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
                if (var8.getName().equals(var6) && var8.method_42004() != Category.GUI && var8.method_42004() != Category.RENDER) {
                   var5.method_5820("enabled", "false");
                }

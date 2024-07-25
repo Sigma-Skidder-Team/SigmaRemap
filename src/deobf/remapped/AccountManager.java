@@ -17,29 +17,29 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 
 public class AccountManager {
-   public HttpClient field_25928;
+   public HttpClient httpClient;
    public class_8646 field_25936;
    public class_4042 field_25940;
-   public String field_25931 = "https://jelloprg.sigmaclient.info/";
-   public String field_25932 = this.field_25931 + "/login";
-   public String field_25934 = this.field_25931 + "/register";
-   public String field_25941 = this.field_25931 + "/claim_premium";
-   public String field_25935 = this.field_25931 + "/challenge";
+   public String url = "https://jelloprg.sigmaclient.info/";
+   public String field_25932 = this.url + "/login";
+   public String field_25934 = this.url + "/register";
+   public String field_25941 = this.url + "/claim_premium";
+   public String field_25935 = this.url + "/challenge";
    public String field_25929;
-   public String field_25939 = UUID.randomUUID().toString().replaceAll("-", "");
+   public String randomUID = UUID.randomUUID().toString().replaceAll("-", "");
    public static boolean field_25938 = false;
    public static boolean field_25930 = false;
-   public SigmaIRC field_25933;
+   public SigmaIRC sigmaIRC;
 
    public AccountManager() {
-      this.field_25928 = HttpClients.createDefault();
+      this.httpClient = HttpClients.createDefault();
       if (!field_25938) {
       }
    }
 
    public void initAndRunIRC() {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
-      this.field_25933 = new SigmaIRC(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
+      this.sigmaIRC = new SigmaIRC(this);
    }
 
    public String method_23079(String var1, String var2, class_8646 var3) {
@@ -52,10 +52,10 @@ public class AccountManager {
          var8.add(new BasicNameValuePair("password", var2));
          var8.add(new BasicNameValuePair("challengeUid", var3.method_39657()));
          var8.add(new BasicNameValuePair("challengeAnswer", var3.method_39660()));
-         var8.add(new BasicNameValuePair("token", this.field_25939));
+         var8.add(new BasicNameValuePair("token", this.randomUID));
          var3.method_39655(false);
          var7.setEntity(new UrlEncodedFormEntity(var8, "UTF-8"));
-         HttpResponse var9 = this.field_25928.execute(var7);
+         HttpResponse var9 = this.httpClient.execute(var7);
          HttpEntity var10 = var9.getEntity();
          if (var10 != null) {
             String var15;
@@ -103,10 +103,10 @@ public class AccountManager {
          var9.add(new BasicNameValuePair("email", var3));
          var9.add(new BasicNameValuePair("challengeUid", var4.method_39657()));
          var9.add(new BasicNameValuePair("challengeAnswer", var4.method_39660()));
-         var9.add(new BasicNameValuePair("token", this.field_25939));
+         var9.add(new BasicNameValuePair("token", this.randomUID));
          var4.method_39655(false);
          var8.setEntity(new UrlEncodedFormEntity(var9, "UTF-8"));
-         HttpResponse var10 = this.field_25928.execute(var8);
+         HttpResponse var10 = this.httpClient.execute(var8);
          HttpEntity var11 = var10.getEntity();
          if (var11 != null) {
             String var16;
@@ -142,9 +142,9 @@ public class AccountManager {
          HttpPost var4 = new HttpPost(this.field_25932);
          ArrayList var5 = new ArrayList();
          var5.add(new BasicNameValuePair("auth_token", this.field_25940.field_19613));
-         var5.add(new BasicNameValuePair("token", this.field_25939));
+         var5.add(new BasicNameValuePair("token", this.randomUID));
          var4.setEntity(new UrlEncodedFormEntity(var5, "UTF-8"));
-         HttpResponse var6 = this.field_25928.execute(var4);
+         HttpResponse var6 = this.httpClient.execute(var4);
          HttpEntity var7 = var6.getEntity();
          if (var7 != null) {
             String var12;
@@ -206,10 +206,10 @@ public class AccountManager {
          var7.add(new BasicNameValuePair("key", var1));
          var7.add(new BasicNameValuePair("challengeUid", var2.method_39657()));
          var7.add(new BasicNameValuePair("challengeAnswer", var2.method_39660()));
-         var7.add(new BasicNameValuePair("token", this.field_25939));
+         var7.add(new BasicNameValuePair("token", this.randomUID));
          var2.method_39655(false);
          var6.setEntity(new UrlEncodedFormEntity(var7, "UTF-8"));
-         HttpResponse var8 = this.field_25928.execute(var6);
+         HttpResponse var8 = this.httpClient.execute(var6);
          HttpEntity var9 = var8.getEntity();
          if (var9 != null) {
             String var14;
@@ -245,9 +245,9 @@ public class AccountManager {
          try {
             HttpPost var3 = new HttpPost(this.field_25935);
             ArrayList var4 = new ArrayList();
-            var4.add(new BasicNameValuePair("token", this.field_25939));
+            var4.add(new BasicNameValuePair("token", this.randomUID));
             var3.setEntity(new UrlEncodedFormEntity(var4, "UTF-8"));
-            HttpResponse var5 = this.field_25928.execute(var3);
+            HttpResponse var5 = this.httpClient.execute(var3);
             HttpEntity var6 = var5.getEntity();
             if (var6 != null) {
                class_8646 var13;
@@ -338,7 +338,7 @@ public class AccountManager {
    }
 
    public String method_23077() {
-      return this.field_25939;
+      return this.randomUID;
    }
 
    public boolean method_23084() {

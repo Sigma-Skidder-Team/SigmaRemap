@@ -13,7 +13,7 @@ public class SmoothAimbot extends Module {
    private void method_25540(class_3368 var1) {
       if (this.method_42015()) {
          if (!(client.thePlayer.rotationPitch > 45.0F)) {
-            Entity var4 = ((AimbotModule)this.method_42017()).method_10678(this.getFloatValueByName("Range"));
+            Entity var4 = ((AimbotModule)this.getModule()).method_10678(this.getFloatValueByName("Range"));
             if (var4 != null) {
                double var5 = (double)(client.thePlayer.rotationPitch - this.method_25542(var4)[1]);
                double var7 = (double)(client.thePlayer.rotationYaw - this.method_25542(var4)[0]);

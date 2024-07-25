@@ -113,29 +113,29 @@ public class SigmaMainClass {
       this.field_3953.method_12863("Initialized.");
    }
 
-   public void method_3336() {
-      DiscordRPC var3 = DiscordRPC.INSTANCE;
-      String var4 = "693493612754763907";
+   public void initDRPC() {
+      DiscordRPC discordRPC = DiscordRPC.INSTANCE;
+      String discordAppID = "693493612754763907";
       String var5 = "";
       DiscordEventHandlers var6 = new DiscordEventHandlers();
       var6.ready = var0 -> System.out.println("Ready!");
-      var3.Discord_Initialize(var4, var6, true, var5);
-      DiscordRichPresence var7 = new DiscordRichPresence();
-      var7.startTimestamp = System.currentTimeMillis() / 1000L;
-      var7.state = "Playing Minecraft";
-      var7.details = "Jello for Sigma";
-      var7.largeImageKey = "jello";
-      var3.Discord_UpdatePresence(var7);
+      discordRPC.Discord_Initialize(discordAppID, var6, true, var5);
+      DiscordRichPresence richPresence = new DiscordRichPresence();
+      richPresence.startTimestamp = System.currentTimeMillis() / 1000L;
+      richPresence.state = "Playing Minecraft";
+      richPresence.details = "Jello for Sigma";
+      richPresence.largeImageKey = "jello";
+      discordRPC.Discord_UpdatePresence(richPresence);
       new Thread(() -> {
          while (!Thread.currentThread().isInterrupted()) {
-            var3.Discord_RunCallbacks();
+            discordRPC.Discord_RunCallbacks();
 
             try {
                Thread.sleep(2000L);
-               if (getInstance().getAccountManager().method_23084() && (var7.smallImageKey == null || var7.smallImageKey.equals("premium"))) {
-                  var7.smallImageKey = "premium";
-                  var7.smallImageText = "Premium";
-                  var3.Discord_UpdatePresence(var7);
+               if (getInstance().getAccountManager().method_23084() && (richPresence.smallImageKey == null || richPresence.smallImageKey.equals("premium"))) {
+                  richPresence.smallImageKey = "premium";
+                  richPresence.smallImageText = "Premium";
+                  discordRPC.Discord_UpdatePresence(richPresence);
                }
             } catch (InterruptedException var5x) {
             }
@@ -360,7 +360,7 @@ public class SigmaMainClass {
       this.field_3983 = var1;
       if (var1 != class_6015.field_30644) {
          if (var1 == class_6015.field_30645) {
-            this.method_3336();
+            this.initDRPC();
             GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Jello for Sigma 5.0");
          }
       } else {

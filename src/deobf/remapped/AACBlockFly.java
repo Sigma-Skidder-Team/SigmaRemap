@@ -23,19 +23,19 @@ public class AACBlockFly extends Module {
       this.field_12313 = client.thePlayer.rotationPitch;
       this.field_12316 = (int) client.thePlayer.method_37309();
       this.field_12312 = -1;
-      ((BlockFlyModule)this.method_42017()).field_18196 = -1;
+      ((BlockFlyModule)this.getModule()).field_18196 = -1;
    }
 
    @Override
    public void onDisable() {
-      if (this.field_12311 != -1 && this.method_42017().getStringValueByName("ItemSpoof").equals("Switch")) {
+      if (this.field_12311 != -1 && this.getModule().getStringValueByName("ItemSpoof").equals("Switch")) {
          client.thePlayer.inventory.field_36404 = this.field_12311;
       }
 
       this.field_12311 = -1;
-      if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
+      if (((BlockFlyModule)this.getModule()).field_18196 >= 0) {
          client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
-         ((BlockFlyModule)this.method_42017()).field_18196 = -1;
+         ((BlockFlyModule)this.getModule()).field_18196 = -1;
       }
 
       client.theTimer.timerSpeed = 1.0F;
@@ -45,7 +45,7 @@ public class AACBlockFly extends Module {
    @class_7664
    public void method_11335(class_2157 var1) {
       if (this.method_42015() && client.thePlayer != null) {
-         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
+         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.getModule()).field_18196 >= 0) {
             var1.method_29715(true);
          }
       }
@@ -73,7 +73,7 @@ public class AACBlockFly extends Module {
    @EventListen
    public void method_11337(class_7767 var1) {
       if (this.method_42015()) {
-         if (this.method_42017().getBooleanValueByName("No Sprint")) {
+         if (this.getModule().getBooleanValueByName("No Sprint")) {
             client.thePlayer.method_37140(false);
          }
 
@@ -82,7 +82,7 @@ public class AACBlockFly extends Module {
             client.thePlayer.method_37140(false);
          }
 
-         ((BlockFlyModule)this.method_42017()).method_17220(var1);
+         ((BlockFlyModule)this.getModule()).method_17220(var1);
          if (this.getBooleanValueByName("Haphe (AACAP)")) {
             if (!client.thePlayer.onGround || client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F) {
                if (this.field_12318 >= 0) {
@@ -124,8 +124,8 @@ public class AACBlockFly extends Module {
       );
       boolean var4 = false;
       if (var3 != null && var3.method_33990() == class_1430.field_7717) {
-         if (this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
-            BlockFlyModule var10000 = (BlockFlyModule)this.method_42017();
+         if (this.getModule().getStringValueByName("ItemSpoof").equals("None")) {
+            BlockFlyModule var10000 = (BlockFlyModule)this.getModule();
             if (!BlockFlyModule.method_17216(client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960())) {
                return false;
             }
@@ -151,19 +151,19 @@ public class AACBlockFly extends Module {
             return false;
          }
 
-         ((BlockFlyModule)this.method_42017()).method_17215();
+         ((BlockFlyModule)this.getModule()).method_17215();
          int var5 = client.thePlayer.inventory.field_36404;
-         if (!this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
-            ((BlockFlyModule)this.method_42017()).method_17211();
+         if (!this.getModule().getStringValueByName("ItemSpoof").equals("None")) {
+            ((BlockFlyModule)this.getModule()).method_17211();
          }
 
          class_6910 var6 = client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var3);
-         if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
+         if (this.getModule().getStringValueByName("ItemSpoof").equals("Spoof") || this.getModule().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
             client.thePlayer.inventory.field_36404 = var5;
          }
 
          if (var6 == class_6910.field_35520) {
-            if (!this.method_42017().getBooleanValueByName("NoSwing")) {
+            if (!this.getModule().getBooleanValueByName("NoSwing")) {
                client.thePlayer.method_26597(Hand.MAIN_HAND);
             } else {
                client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
@@ -240,8 +240,8 @@ public class AACBlockFly extends Module {
    @EventListen
    public void method_11340(class_2911 var1) {
       if (this.method_42015()) {
-         if (this.method_42017().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-            && (!class_314.method_1434() || this.method_42017().getBooleanValueByName("Tower while moving"))) {
+         if (this.getModule().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
+            && (!class_314.method_1434() || this.getModule().getBooleanValueByName("Tower while moving"))) {
             var1.method_29715(true);
          }
       }

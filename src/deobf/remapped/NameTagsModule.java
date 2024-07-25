@@ -402,7 +402,7 @@ public class NameTagsModule extends Module {
 
          class_73.method_87(var12, 0.0F, -20.0F, var13, class_1255.field_6918.field_6917);
          class_73.method_87(class_5320.field_27138, 0.0F, 10.0F, var23 + var17, class_1255.field_6918.field_6917);
-         class_4567 var25 = SigmaMainClass.getInstance().getAccountManager().field_25933.method_20845(var7);
+         class_4567 var25 = SigmaMainClass.getInstance().getAccountManager().sigmaIRC.method_20845(var7);
          if (var25 != null) {
             class_73.method_87(class_5320.field_27138, 0.0F, -30.0F, var25.field_22258, class_1255.field_6918.field_6917);
          }

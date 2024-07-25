@@ -14,7 +14,7 @@ public class class_5937 {
    public class_8670 field_30286 = null;
 
    public void method_27158() {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
    }
 
    public void method_27144() {

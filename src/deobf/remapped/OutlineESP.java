@@ -31,14 +31,14 @@ public class OutlineESP extends Module {
    }
 
    private void method_18483(boolean var1) {
-      int var4 = class_314.method_1444(this.method_42017().getIntValueByName("Regular Color"), 0.7F);
-      int var5 = class_314.method_1444(this.method_42017().getIntValueByName("Ender Color"), 0.7F);
-      int var6 = class_314.method_1444(this.method_42017().getIntValueByName("Trapped Color"), 0.7F);
+      int var4 = class_314.method_1444(this.getModule().getIntValueByName("Regular Color"), 0.7F);
+      int var5 = class_314.method_1444(this.getModule().getIntValueByName("Ender Color"), 0.7F);
+      int var6 = class_314.method_1444(this.getModule().getIntValueByName("Trapped Color"), 0.7F);
 
       for (class_3757 var8 : client.theWorld.field_33053) {
-         boolean var9 = var8 instanceof class_7099 && !(var8 instanceof class_1962) && this.method_42017().getBooleanValueByName("Show Regular Chests");
-         boolean var10 = var8 instanceof class_9180 && this.method_42017().getBooleanValueByName("Show Ender Chests");
-         boolean var11 = var8 instanceof class_1962 && this.method_42017().getBooleanValueByName("Show Trapped Chests");
+         boolean var9 = var8 instanceof class_7099 && !(var8 instanceof class_1962) && this.getModule().getBooleanValueByName("Show Regular Chests");
+         boolean var10 = var8 instanceof class_9180 && this.getModule().getBooleanValueByName("Show Ender Chests");
+         boolean var11 = var8 instanceof class_1962 && this.getModule().getBooleanValueByName("Show Trapped Chests");
          if (var9 || var10 || var11) {
             double var12 = class_9189.method_42356(var8.method_17399()).field_42648;
             double var14 = class_9189.method_42356(var8.method_17399()).field_42646;

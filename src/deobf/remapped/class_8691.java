@@ -16,8 +16,8 @@ public class class_8691 {
    }
 
    public void method_39914() {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
-      SigmaMainClass.getInstance().getEventManager().method_7908(this.field_44580);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this.field_44580);
    }
 
    @Deprecated

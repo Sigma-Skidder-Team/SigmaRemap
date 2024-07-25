@@ -31,7 +31,7 @@ public class BowAimbotModule extends Module {
          if (!(client.thePlayer.method_26576().method_27960() instanceof class_2100)) {
             this.field_14300.clear();
          } else {
-            this.field_14300 = this.method_13451(this.method_42017().getFloatValueByName("Range"));
+            this.field_14300 = this.method_13451(this.getModule().getFloatValueByName("Range"));
          }
 
          if (!this.field_14300.isEmpty() && this.getBooleanValueByName("Silent")) {

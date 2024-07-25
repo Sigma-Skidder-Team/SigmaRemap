@@ -9,7 +9,7 @@ public class FuncraftGamePlay extends Module {
 
    @Override
    public void method_42012() {
-      this.field_43222 = (GamePlayModule)this.method_42017();
+      this.field_43222 = (GamePlayModule)this.getModule();
    }
 
    @EventListen

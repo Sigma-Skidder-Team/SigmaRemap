@@ -28,8 +28,8 @@ public class HypixelAutoGapple extends PremiumModule {
          }
 
          if (this.field_3481 == -1 && this.field_3483 >= 20 && this.field_3479 == -1) {
-            if (client.thePlayer.method_26551() <= this.method_42017().getFloatValueByName("Health") * 2.0F && client.thePlayer.method_26493() == 0.0F) {
-               this.field_3481 = ((AutoGapple)this.method_42017()).method_29349(false);
+            if (client.thePlayer.method_26551() <= this.getModule().getFloatValueByName("Health") * 2.0F && client.thePlayer.method_26493() == 0.0F) {
+               this.field_3481 = ((AutoGapple)this.getModule()).method_29349(false);
                if (this.field_3481 >= 0) {
                   this.field_3479 = 0;
                   this.field_3483 = 0;
@@ -37,7 +37,7 @@ public class HypixelAutoGapple extends PremiumModule {
             }
 
             if (this.field_3479 == -1 && this.getBooleanValueByName("Fire resistance potions") && !client.thePlayer.isPotionActive(class_1425.method_6538(12))) {
-               this.field_3481 = ((AutoGapple)this.method_42017()).method_29349(true);
+               this.field_3481 = ((AutoGapple)this.getModule()).method_29349(true);
                if (this.field_3481 >= 0) {
                   this.field_3479 = 0;
                   this.field_3483 = 0;

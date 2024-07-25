@@ -92,7 +92,7 @@ public class BindCommand extends Command {
    }
 
    public Module method_3683(String var1) {
-      for (Module var5 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+      for (Module var5 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
          if (var5.getName().replace(" ", "").equalsIgnoreCase(var1)) {
             return var5;
          }

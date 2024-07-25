@@ -21,7 +21,7 @@ public class JelloTouch {
    public HashMap<Module, TouchBarButton> field_301 = new HashMap<Module, TouchBarButton>();
 
    public JelloTouch() {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
       if (class_357.field_1386) {
          this.field_297.add(new class_3158(344, ClassicClickGUI.class));
       }

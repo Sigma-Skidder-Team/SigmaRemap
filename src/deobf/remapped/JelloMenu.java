@@ -11,7 +11,7 @@ public class JelloMenu extends class_2596 {
    private static boolean field_4008;
    private static boolean field_4001;
    private Map<Category, class_3407> field_4003 = new HashMap<Category, class_3407>();
-   public class_5484 field_4007;
+   public MusicPlayer field_4007;
    public class_5572 field_4010;
    public class_2099 field_4002;
    public class_9107 field_3999;
@@ -27,7 +27,7 @@ public class JelloMenu extends class_2596 {
       this.method_32148(this.field_4010 = new class_5572(this, "brainFreeze"));
       JelloMenu var5 = this;
 
-      for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+      for (Module var7 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
          if (!this.field_4003.containsKey(var7.method_42004())) {
             class_3407 var8 = new class_3407(this, var7.method_42004().getCategoryName(), var3, var4, var7.method_42004());
             this.field_4003.put(var7.method_42004(), var8);
@@ -45,7 +45,7 @@ public class JelloMenu extends class_2596 {
          }
       }
 
-      this.method_32148(this.field_4007 = new class_5484(this, "musicPlayer"));
+      this.method_32148(this.field_4007 = new MusicPlayer(this, "musicPlayer"));
       this.field_4007.method_1533(true);
       class_122 var9;
       this.method_32148(var9 = new class_122(this, "more", this.method_32109() - 69, this.method_32137() - 55, 55, 41, NotificationIcons.field_11042));

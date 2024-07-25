@@ -33,12 +33,12 @@ public class CubeCraftLongjump extends Module {
 
             class_8865.method_40776(this.field_45278);
             if (this.field_45277 > 5) {
-               this.method_42017().method_41999();
+               this.getModule().method_41999();
             }
          } else {
             if (this.field_45277 > 0) {
                class_8865.method_40776(0.0);
-               this.method_42017().method_41999();
+               this.getModule().method_41999();
                this.field_45277 = 0;
             }
 

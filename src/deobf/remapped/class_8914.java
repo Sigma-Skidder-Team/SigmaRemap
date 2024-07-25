@@ -67,7 +67,7 @@ public class class_8914 extends class_1859 {
 
       var11 += 50;
 
-      for (Module var19 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+      for (Module var19 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
          class_590 var20 = new class_590(16777215, -986896).method_2765(class_1255.field_6929.field_6917).method_2776(class_6206.field_31724);
          class_6220 var21;
          this.field_45699
@@ -78,7 +78,7 @@ public class class_8914 extends class_1859 {
             );
          var21.method_28444(10);
          var21.method_32100((var2x, var3x) -> {
-            for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+            for (Module var7 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
                if (var7.getName().equals(var21.method_32165()) && !this.field_45702) {
                   this.field_45694 = new class_1226(var7);
                   this.field_45702 = true;

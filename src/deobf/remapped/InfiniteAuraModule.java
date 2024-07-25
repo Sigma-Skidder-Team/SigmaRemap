@@ -29,7 +29,7 @@ public class InfiniteAuraModule extends Module {
    @Override
    public void onEnable() {
       this.field_37780 = false;
-      this.field_37778 = (int)(20.0F / this.method_42017().getFloatValueByName("CPS"));
+      this.field_37778 = (int)(20.0F / this.getModule().getFloatValueByName("CPS"));
       this.field_37779 = (float)this.field_37778;
    }
 
@@ -47,7 +47,7 @@ public class InfiniteAuraModule extends Module {
          List var4 = this.method_33696((float)((int)this.getFloatValueByName("Range")));
          if (var4 != null && var4.size() != 0) {
             if (this.field_37779 < 1.0F) {
-               this.field_37779 = this.field_37779 + 20.0F / this.method_42017().getFloatValueByName("CPS");
+               this.field_37779 = this.field_37779 + 20.0F / this.getModule().getFloatValueByName("CPS");
             }
 
             this.field_37778++;

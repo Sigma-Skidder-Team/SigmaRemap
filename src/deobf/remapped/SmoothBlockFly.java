@@ -21,14 +21,14 @@ public class SmoothBlockFly extends Module {
 
    @Override
    public void method_42012() {
-      this.field_41373 = (BlockFlyModule)this.method_42017();
+      this.field_41373 = (BlockFlyModule)this.getModule();
    }
 
    @Override
    public void onEnable() {
       this.field_41378 = client.thePlayer.inventory.field_36404;
       this.field_41370 = this.field_41376 = 999.0F;
-      ((BlockFlyModule)this.method_42017()).field_18196 = -1;
+      ((BlockFlyModule)this.getModule()).field_18196 = -1;
       this.field_41371 = -1.0;
       this.field_41377 = false;
       if (client.thePlayer.onGround) {
@@ -40,14 +40,14 @@ public class SmoothBlockFly extends Module {
 
    @Override
    public void onDisable() {
-      if (this.field_41378 != -1 && this.method_42017().getStringValueByName("ItemSpoof").equals("Switch")) {
+      if (this.field_41378 != -1 && this.getModule().getStringValueByName("ItemSpoof").equals("Switch")) {
          client.thePlayer.inventory.field_36404 = this.field_41378;
       }
 
       this.field_41378 = -1;
-      if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
+      if (((BlockFlyModule)this.getModule()).field_18196 >= 0) {
          client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
-         ((BlockFlyModule)this.method_42017()).field_18196 = -1;
+         ((BlockFlyModule)this.getModule()).field_18196 = -1;
       }
 
       class_8865.method_40776(class_8865.method_40775() * 0.9);
@@ -97,7 +97,7 @@ public class SmoothBlockFly extends Module {
                   }
 
                   int var14 = client.thePlayer.inventory.field_36404;
-                  if (!this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
+                  if (!this.getModule().getStringValueByName("ItemSpoof").equals("None")) {
                      this.field_41373.method_17211();
                   }
 
@@ -106,13 +106,13 @@ public class SmoothBlockFly extends Module {
                   int var17 = var15.method_27997();
                   client.playerController.method_42147(client.thePlayer, client.theWorld, this.field_41379, var13);
                   this.field_41372 = null;
-                  if (!this.method_42017().method_42007("NoSwing")) {
+                  if (!this.getModule().method_42007("NoSwing")) {
                      client.thePlayer.method_26597(this.field_41379);
                   } else {
                      client.method_8614().sendPacket(new class_3195(this.field_41379));
                   }
 
-                  if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
+                  if (this.getModule().getStringValueByName("ItemSpoof").equals("Spoof") || this.getModule().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
                      client.thePlayer.inventory.field_36404 = var14;
                   }
                }
@@ -192,7 +192,7 @@ public class SmoothBlockFly extends Module {
             this.field_41371 = client.thePlayer.method_37309();
          }
 
-         if (this.method_42017().method_42007("No Sprint")) {
+         if (this.getModule().method_42007("No Sprint")) {
             client.thePlayer.method_37140(false);
          }
 
@@ -203,7 +203,7 @@ public class SmoothBlockFly extends Module {
          }
 
          if (this.field_41373 == null) {
-            this.field_41373 = (BlockFlyModule)this.method_42017();
+            this.field_41373 = (BlockFlyModule)this.getModule();
          }
 
          String var4 = this.getStringValueByName("Speed Mode");
@@ -295,7 +295,7 @@ public class SmoothBlockFly extends Module {
    @class_7664
    public void method_36713(class_2157 var1) {
       if (this.method_42015() && client.thePlayer != null) {
-         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
+         if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.getModule()).field_18196 >= 0) {
             var1.method_29715(true);
          }
       }
@@ -304,8 +304,8 @@ public class SmoothBlockFly extends Module {
    @EventListen
    public void method_36709(class_2911 var1) {
       if (this.method_42015() && this.field_41377) {
-         if (this.method_42017().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-            && (!class_314.method_1434() || this.method_42017().method_42007("Tower while moving"))) {
+         if (this.getModule().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
+            && (!class_314.method_1434() || this.getModule().method_42007("Tower while moving"))) {
             var1.method_29715(true);
          }
       }

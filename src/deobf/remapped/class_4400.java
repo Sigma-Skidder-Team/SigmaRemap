@@ -9,7 +9,7 @@ public class class_4400 {
    public List<Entity> field_21536 = new CopyOnWriteArrayList<Entity>();
 
    public void method_20492() {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
    }
 
    public boolean method_20495(Entity var1) {

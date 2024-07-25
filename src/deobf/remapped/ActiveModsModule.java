@@ -48,7 +48,7 @@ public class ActiveModsModule extends Module {
    public void method_42012() {
       this.field_43173.clear();
 
-      for (Module var4 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+      for (Module var4 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
          if (var4.method_42004() != Category.GUI) {
             this.field_43173.add(var4);
             this.field_43168.put(var4, new class_2440(150, 150, class_4043.field_19618));

@@ -14,19 +14,19 @@ public abstract class Module {
    public boolean allowed;
    private boolean field_46698 = true;
    private static List<Class<? extends Module>> developmentModules = new ArrayList<Class<? extends Module>>();
-   private Module field_46695 = null;
+   private Module module = null;
    private int field_46691 = 0;
-   public Map<String, Setting> settingMap = new LinkedHashMap<String, Setting>();
+   public Map<String, Setting> settingMap = new LinkedHashMap<>();
 
-   public Module(Category var1, String var2, String var3) {
-      this.category = var1;
-      this.name = var2;
-      this.description = var3;
+   public Module(Category category, String name, String desc) {
+      this.category = category;
+      this.name = name;
+      this.description = desc;
    }
 
-   public void addSetting(Setting var1) {
-      if (!this.settingMap.containsKey(var1.getName())) {
-         this.settingMap.put(var1.getName(), var1);
+   public void addSetting(Setting<?> setting) {
+      if (!this.settingMap.containsKey(setting.getName())) {
+         this.settingMap.put(setting.getName(), setting);
       } else {
          throw new IllegalArgumentException("Attempted to add an option with the same name");
       }
@@ -301,16 +301,16 @@ public abstract class Module {
       return this.allowed;
    }
 
-   public void setAllowed(boolean var1) {
-      this.allowed = var1;
+   public void setAllowed(boolean allowed) {
+      this.allowed = allowed;
    }
 
-   public void method_41995(Module var1) {
-      this.field_46695 = var1;
+   public void setModule(Module module) {
+      this.module = module;
    }
 
-   public Module method_42017() {
-      return this.field_46695 != null ? this.field_46695 : this;
+   public Module getModule() {
+      return this.module != null ? this.module : this;
    }
 
    public void method_42011(boolean var1) {

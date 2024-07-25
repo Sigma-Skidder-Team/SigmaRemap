@@ -21,7 +21,7 @@ public class SpiderStep extends Module {
    private void method_44591(class_8544 var1) {
       if (this.method_42015() && !var1.method_29716()) {
          double var4 = var1.method_39326();
-         class_1380 var6 = ((StepModule)this.method_42017()).method_19450(var1);
+         class_1380 var6 = ((StepModule)this.getModule()).method_19450(var1);
          if (var6 == class_1380.field_7487) {
             var1.method_29715(true);
          } else if (var6 != class_1380.field_7484) {

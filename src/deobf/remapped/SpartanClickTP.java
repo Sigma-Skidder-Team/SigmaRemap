@@ -24,10 +24,10 @@ public class SpartanClickTP extends Module {
 
    @EventListen
    private void method_11040(class_8706 var1) {
-      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.method_42017().getBooleanValueByName("Sneak"))) {
+      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.getModule().getBooleanValueByName("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
             class_9529 var4 = class_7494.method_34079(
-               client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.method_42017().getFloatValueByName("Maximum range")
+               client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.getModule().getFloatValueByName("Maximum range")
             );
             BlockPos var5 = null;
             if (var4 != null) {
@@ -62,7 +62,7 @@ public class SpartanClickTP extends Module {
                && var4.field_3144 == (double)(this.field_12051.method_12165() + 1)
                && var4.field_3141 == (double)this.field_12051.method_12185() + 0.5) {
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("ClickTP", "Successfully teleported"));
-               if (!this.method_42017().getBooleanValueByName("Auto Disable")) {
+               if (!this.getModule().getBooleanValueByName("Auto Disable")) {
                   this.field_12052 = -1;
                   this.field_12051 = null;
                   class_314.method_1408(-0.08);
@@ -70,7 +70,7 @@ public class SpartanClickTP extends Module {
                   class_8865.method_40776(var5);
                   client.theTimer.timerSpeed = 1.0F;
                } else {
-                  this.method_42017().method_41999();
+                  this.getModule().method_41999();
                }
             }
          }

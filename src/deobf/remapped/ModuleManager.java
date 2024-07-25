@@ -29,7 +29,7 @@ public class ModuleManager {
       this.moduleList.sort(new class_5309(this));
 
       for (Module var4 : this.moduleList) {
-         SigmaMainClass.getInstance().getEventManager().method_7908(var4);
+         SigmaMainClass.getInstance().getEventManager().subscribe2(var4);
          this.moduleMap.put(var4.getClass(), var4);
       }
 
@@ -329,7 +329,7 @@ public class ModuleManager {
       return this.moduleMap.get(var1);
    }
 
-   public Map<Class<? extends Module>, Module> method_843() {
+   public Map<Class<? extends Module>, Module> getModuleMap() {
       return this.moduleMap;
    }
 

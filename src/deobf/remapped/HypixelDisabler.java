@@ -88,7 +88,7 @@ public class HypixelDisabler extends Module {
             this.field_36206.clear();
             this.field_36204.method_14773();
             this.field_36204.method_14774();
-            this.method_42017().method_41999();
+            this.getModule().method_41999();
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Disabler failed"));
          }
       }
@@ -118,7 +118,7 @@ public class HypixelDisabler extends Module {
       if (client.thePlayer != null && this.field_36207) {
          if (this.method_42015() || this.getBooleanValueByName("Instant")) {
             if (var1.method_557() instanceof class_509) {
-               this.method_42017().method_41999();
+               this.getModule().method_41999();
                if (!this.getBooleanValueByName("Instant")) {
                   SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "You can do what you want for 5s"));
                } else {

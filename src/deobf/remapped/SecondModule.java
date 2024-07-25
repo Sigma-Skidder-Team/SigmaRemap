@@ -15,9 +15,9 @@ public class SecondModule extends Module {
       this.field_17661 = var4;
 
       for (Module var10 : this.field_17661) {
-         SigmaMainClass.getInstance().getEventManager().method_7908(var10);
+         SigmaMainClass.getInstance().getEventManager().subscribe2(var10);
          this.field_17660.add(var10.getName());
-         var10.method_41995(this);
+         var10.setModule(this);
       }
 
       this.addSetting(this.field_17659 = new ModeSetting("Type", var2 + " mode", 0, this.field_17660.<String>toArray(new String[0])));

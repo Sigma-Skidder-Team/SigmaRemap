@@ -32,7 +32,7 @@ public class SigmaIRC {
    public class_6427 field_21936;
 
    public SigmaIRC(AccountManager var1) {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
       this.field_21931 = HttpClients.createDefault();
       this.field_21930 = var1;
       this.field_21936 = new class_6427(this);

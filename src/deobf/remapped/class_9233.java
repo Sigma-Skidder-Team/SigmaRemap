@@ -29,7 +29,7 @@ public class class_9233 extends Module {
    public void method_42588(class_7767 var1) {
       if (this.method_42015()) {
          if (this.field_47194 && client.thePlayer.method_37309() + 0.42 < this.field_47192) {
-            this.method_42017().method_41999();
+            this.getModule().method_41999();
          }
 
          if (!client.thePlayer.onGround && this.field_47194) {
@@ -60,7 +60,7 @@ public class class_9233 extends Module {
                this.field_47194 = !this.field_47194;
                class_8865.method_40776(0.0);
                if (this.getBooleanValueByName("Disable")) {
-                  this.method_42017().method_41999();
+                  this.getModule().method_41999();
                }
 
                return;
@@ -102,7 +102,7 @@ public class class_9233 extends Module {
       if (this.method_42015()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
-            this.method_42017().method_41999();
+            this.getModule().method_41999();
          }
       }
    }

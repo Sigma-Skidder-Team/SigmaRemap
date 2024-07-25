@@ -8,20 +8,20 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class class_5484 extends class_446 {
+public class MusicPlayer extends class_446 {
    private int field_27953 = 250;
    private int field_27948 = 40;
    private int field_27927 = 64;
    private int field_27941 = 94;
-   private String field_27936 = "Music Player";
-   public static URL field_27944;
+   private String title = "Music Player";
+   public static URL url;
    private class_2612 field_27937;
    private class_2612 field_27939;
    private class_7038 field_27945;
    private class_2026 field_27956 = SigmaMainClass.getInstance().method_3300();
-   public static Map<String, class_8896> field_27926 = new LinkedHashMap<String, class_8896>();
+   public static Map<String, Channel> field_27926 = new LinkedHashMap<String, Channel>();
    public static String field_27946;
-   public static class_8896 field_27942;
+   public static Channel field_27942;
    private class_6220 field_27928;
    private class_6220 field_27955;
    private class_6220 field_27950;
@@ -32,7 +32,7 @@ public class class_5484 extends class_446 {
    private class_7038 field_27929;
    public class_1461 field_27934;
    public class_5915 field_27932;
-   public static class_8896[] field_27930;
+   public static Channel[] field_27930;
    private static CookieManager field_27952 = new CookieManager();
    public static long field_27935 = 0L;
    public float field_27951 = 0.0F;
@@ -40,7 +40,7 @@ public class class_5484 extends class_446 {
    private class_2440 field_27949 = new class_2440(80, 150, class_4043.field_19618);
    public boolean field_27933 = false;
 
-   public class_5484(class_7038 var1, String var2) {
+   public MusicPlayer(class_7038 var1, String var2) {
       super(var1, var2, 875, 55, 800, 600, false);
       field_27935 = System.nanoTime();
       this.method_32142(800);
@@ -69,10 +69,10 @@ public class class_5484 extends class_446 {
       this.field_27929.method_32105(false);
       class_590 var6 = new class_590(1250067, -15329770).method_2765(class_1255.field_6918.field_6917).method_2775(class_6206.field_31726);
       ArrayList var7 = new ArrayList();
-      class_5484 var8 = this;
+      MusicPlayer var8 = this;
       int var9 = 0;
 
-      for (class_8896 var13 : field_27930) {
+      for (Channel var13 : field_27930) {
          var7.add(new Thread(() -> {
             if (!field_27926.containsKey(var13.field_45629) && !var13.field_45630) {
                var13.field_45630 = true;
@@ -159,13 +159,13 @@ public class class_5484 extends class_446 {
       }
 
       var1.method_32104(true);
-      this.field_27936 = var1.method_32165();
+      this.title = var1.method_32165();
       this.field_27939 = var1;
       this.field_27934.method_32104(false);
       this.field_27939.field_12900 = 65;
    }
 
-   private void method_24920(class_8896 var1, class_7144 var2) {
+   private void method_24920(Channel var1, class_7144 var2) {
       if (!((JelloMenu)this.method_32167()).method_3358()) {
          this.field_27956.method_9489(var1, var2);
          field_27942 = var1;
@@ -503,16 +503,16 @@ public class class_5484 extends class_446 {
       );
       class_73.method_87(
          class_5320.field_27141,
-         (float)((this.method_32109() - class_5320.field_27141.method_18547(this.field_27936) + this.field_27953) / 2),
+         (float)((this.method_32109() - class_5320.field_27141.method_18547(this.title) + this.field_27953) / 2),
          16.0F + (1.0F - var4) * 14.0F,
-         this.field_27936,
+         this.title,
          class_314.method_1444(class_1255.field_6918.field_6917, var4)
       );
       class_73.method_87(
          class_5320.field_27155,
-         (float)((this.method_32109() - class_5320.field_27155.method_18547(this.field_27936) + this.field_27953) / 2),
+         (float)((this.method_32109() - class_5320.field_27155.method_18547(this.title) + this.field_27953) / 2),
          16.0F + (1.0F - var4) * 14.0F,
-         this.field_27936,
+         this.title,
          class_314.method_1444(class_1255.field_6918.field_6917, 1.0F - var4)
       );
       class_73.method_99(
@@ -527,16 +527,16 @@ public class class_5484 extends class_446 {
    }
 
    static {
-      class_8896[] var4 = new class_8896[]{
-         new class_8896("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", class_9023.field_46153),
-         new class_8896("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", class_9023.field_46153),
-         new class_8896("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", class_9023.field_46153),
-         new class_8896("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", class_9023.field_46153),
-         new class_8896("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", class_9023.field_46153),
-         new class_8896("Trap City", "UU65afEgL62PGFWXY7n6CUbA", class_9023.field_46153),
-         new class_8896("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", class_9023.field_46153),
-         new class_8896("NCS", "UU_aEa8K-EOJ3D6gOs7HcyNg", class_9023.field_46153)
+      Channel[] channelList = new Channel[]{
+         new Channel("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", class_9023.field_46153),
+         new Channel("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", class_9023.field_46153),
+         new Channel("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", class_9023.field_46153),
+         new Channel("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", class_9023.field_46153),
+         new Channel("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", class_9023.field_46153),
+         new Channel("Trap City", "UU65afEgL62PGFWXY7n6CUbA", class_9023.field_46153),
+         new Channel("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", class_9023.field_46153),
+         new Channel("NCS", "UU_aEa8K-EOJ3D6gOs7HcyNg", class_9023.field_46153)
       };
-      field_27930 = var4;
+      field_27930 = channelList;
    }
 }

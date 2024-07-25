@@ -239,7 +239,7 @@ public class BlockFlyModule extends SecondModule {
    }
 
    public boolean method_17224(Hand var1) {
-      if (!this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
+      if (!this.getModule().getStringValueByName("ItemSpoof").equals("None")) {
          if (this.method_17219() == 0) {
             return false;
          }

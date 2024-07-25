@@ -140,6 +140,6 @@ public class class_6080 {
    }
 
    public void method_27843() {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
    }
 }

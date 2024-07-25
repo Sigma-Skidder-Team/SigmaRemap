@@ -24,10 +24,10 @@ public class BasicClickTP extends Module {
 
    @EventListen
    private void method_29151(class_8706 var1) {
-      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.method_42017().getBooleanValueByName("Sneak"))) {
+      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.getModule().getBooleanValueByName("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
             class_9529 var4 = class_7494.method_34079(
-               client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.method_42017().getFloatValueByName("Maximum range")
+               client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.getModule().getFloatValueByName("Maximum range")
             );
             BlockPos var5 = null;
             if (var4 != null) {
@@ -73,8 +73,8 @@ public class BasicClickTP extends Module {
             client.thePlayer.method_37256(var6, var8, var10);
             this.field_32570.method_14773();
             this.field_32570.method_14776();
-            if (this.method_42017().getBooleanValueByName("Auto Disable")) {
-               this.method_42017().method_41999();
+            if (this.getModule().getBooleanValueByName("Auto Disable")) {
+               this.getModule().method_41999();
             }
          }
       }

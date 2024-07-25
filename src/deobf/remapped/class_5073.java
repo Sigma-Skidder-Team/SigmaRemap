@@ -3,7 +3,7 @@ package remapped;
 public class class_5073 implements Runnable {
    private static String[] field_26210;
 
-   public class_5073(class_5484 var1, class_8896 var2, class_590 var3, class_5484 var4) {
+   public class_5073(MusicPlayer var1, Channel var2, class_590 var3, MusicPlayer var4) {
       this.field_26214 = var1;
       this.field_26212 = var2;
       this.field_26211 = var3;
@@ -12,17 +12,17 @@ public class class_5073 implements Runnable {
 
    @Override
    public void run() {
-      if (!class_5484.method_24915(this.field_26214).method_32115(this.field_26212.field_45629)) {
+      if (!MusicPlayer.method_24915(this.field_26214).method_32115(this.field_26212.field_45629)) {
          class_6220 var3;
-         class_5484.method_24915(this.field_26214)
+         MusicPlayer.method_24915(this.field_26214)
             .method_32148(
                var3 = new class_6220(
-                  class_5484.method_24915(this.field_26214),
+                  MusicPlayer.method_24915(this.field_26214),
                   this.field_26212.field_45629,
                   0,
-                  class_5484.method_24915(this.field_26214).method_11850().method_32134().size() * class_5484.method_24923(this.field_26214),
-                  class_5484.method_24925(this.field_26214),
-                  class_5484.method_24923(this.field_26214),
+                  MusicPlayer.method_24915(this.field_26214).method_11850().method_32134().size() * MusicPlayer.method_24923(this.field_26214),
+                  MusicPlayer.method_24925(this.field_26214),
+                  MusicPlayer.method_24923(this.field_26214),
                   this.field_26211,
                   this.field_26212.field_45631,
                   class_5320.field_27138
@@ -34,10 +34,10 @@ public class class_5073 implements Runnable {
                var4 = new class_2612(
                   this.field_26213,
                   this.field_26212.field_45629,
-                  class_5484.method_24925(this.field_26214),
+                  MusicPlayer.method_24925(this.field_26214),
                   0,
-                  this.field_26213.method_32109() - class_5484.method_24925(this.field_26214),
-                  this.field_26213.method_32137() - class_5484.method_24922(this.field_26214),
+                  this.field_26213.method_32109() - MusicPlayer.method_24925(this.field_26214),
+                  this.field_26213.method_32137() - MusicPlayer.method_24922(this.field_26214),
                   class_590.field_3421,
                   this.field_26212.field_45631
                )
@@ -62,12 +62,12 @@ public class class_5073 implements Runnable {
                         var6
                      )
                   );
-                  var7.method_32100((var3x, var4x) -> class_5484.method_24916(this.field_26214, var1, var6));
+                  var7.method_32100((var3x, var4x) -> MusicPlayer.method_24916(this.field_26214, var1, var6));
                }
             }
          }
 
-         var3.method_32100((var2, var3x) -> class_5484.method_24917(this.field_26214, var4));
+         var3.method_32100((var2, var3x) -> MusicPlayer.method_24917(this.field_26214, var4));
       }
    }
 }

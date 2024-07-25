@@ -99,7 +99,7 @@ public class EventManager {
       this.method_7913();
    }
 
-   public void method_7908(Object var1) {
+   public void subscribe2(Object var1) {
       if (var1 != null) {
          boolean var4 = false;
 

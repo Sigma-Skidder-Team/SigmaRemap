@@ -3,7 +3,7 @@ package remapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class class_8896 {
+public class Channel {
    private static String[] field_45628;
    public String field_45631;
    public String field_45629;
@@ -11,7 +11,7 @@ public class class_8896 {
    public List<class_7144> field_45627 = new ArrayList<class_7144>();
    public boolean field_45630 = false;
 
-   public class_8896(String var1, String var2, class_9023 var3) {
+   public Channel(String var1, String var2, class_9023 var3) {
       this.field_45631 = var1;
       this.field_45629 = var2;
       this.field_45632 = var3;
@@ -36,8 +36,8 @@ public class class_8896 {
    @Override
    public boolean equals(Object var1) {
       if (var1 != this) {
-         if (var1 instanceof class_8896) {
-            class_8896 var4 = (class_8896)var1;
+         if (var1 instanceof Channel) {
+            Channel var4 = (Channel)var1;
             return var4.field_45629.equals(this.field_45629);
          } else {
             return false;

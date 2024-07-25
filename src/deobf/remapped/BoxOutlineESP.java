@@ -40,8 +40,8 @@ public class BoxOutlineESP extends Module {
             .field_568
             .forEach(
                (var1, var2) -> {
-                  boolean var5 = class_314.method_1426(var2) == class_9374.field_47922 && this.method_42017().getBooleanValueByName("Show Players");
-                  boolean var6 = !var2.method_37109() || this.method_42017().getBooleanValueByName("Show Invisibles");
+                  boolean var5 = class_314.method_1426(var2) == class_9374.field_47922 && this.getModule().getBooleanValueByName("Show Players");
+                  boolean var6 = !var2.method_37109() || this.getModule().getBooleanValueByName("Show Invisibles");
                   if (!SigmaMainClass.getInstance().method_3331().method_20495(var2) && var5 && var6 && var2 != client.thePlayer) {
                      double var7 = class_9189.method_42353(var2).field_42648;
                      double var9 = class_9189.method_42353(var2).field_42646;
@@ -73,10 +73,10 @@ public class BoxOutlineESP extends Module {
    private void method_18558(boolean var1) {
       for (Entity var5 : client.theWorld.method_736()) {
          if (!SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
-            boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.method_42017().getBooleanValueByName("Show Players");
-            boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.method_42017().getBooleanValueByName("Show Mobs");
-            boolean var8 = class_314.method_1426(var5) == class_9374.field_47923 && this.method_42017().getBooleanValueByName("Show Passives");
-            boolean var9 = !var5.method_37109() || this.method_42017().getBooleanValueByName("Show Invisibles");
+            boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.getModule().getBooleanValueByName("Show Players");
+            boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.getModule().getBooleanValueByName("Show Mobs");
+            boolean var8 = class_314.method_1426(var5) == class_9374.field_47923 && this.getModule().getBooleanValueByName("Show Passives");
+            boolean var9 = !var5.method_37109() || this.getModule().getBooleanValueByName("Show Invisibles");
             if ((var7 || var6 || var8) && var9 && var5 != client.thePlayer) {
                GL11.glPushMatrix();
                GL11.glTranslated(

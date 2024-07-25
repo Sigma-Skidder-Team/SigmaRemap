@@ -13,7 +13,7 @@ public class CubecraftGamePlay extends Module {
 
    @Override
    public void method_42012() {
-      this.field_28338 = (GamePlayModule)this.method_42017();
+      this.field_28338 = (GamePlayModule)this.getModule();
    }
 
    @EventListen

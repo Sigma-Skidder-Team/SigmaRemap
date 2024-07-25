@@ -33,7 +33,7 @@ public class class_4763 {
    public ByteBuffer field_23059 = BufferUtils.createByteBuffer(this.field_23057 * 16 * this.field_23057 * 16 * 3);
 
    public void method_21976() {
-      SigmaMainClass.getInstance().getEventManager().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe2(this);
       int var3 = -7687425;
 
       for (int var4 = 0; var4 < 16; var4++) {

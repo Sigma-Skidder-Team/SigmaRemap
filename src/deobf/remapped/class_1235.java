@@ -25,9 +25,9 @@ public class class_1235 implements Runnable {
                boolean var3 = false;
                boolean var4 = false;
                if (SigmaMainClass.getInstance().getModuleManager() != null) {
-                  ArrayList var5 = new ArrayList<Module>(SigmaMainClass.getInstance().getModuleManager().method_843().values());
+                  ArrayList var5 = new ArrayList<Module>(SigmaMainClass.getInstance().getModuleManager().getModuleMap().values());
 
-                  for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+                  for (Module var7 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
                      if (var7 instanceof SecondModule) {
                         var5.addAll(Arrays.asList(((SecondModule)var7).field_17661));
                      }

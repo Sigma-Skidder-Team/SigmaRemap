@@ -112,7 +112,7 @@ public class MineplexFly extends PremiumModule {
             } else {
                if (this.field_46843 > 0) {
                   class_8865.method_40777(var1, 0.0);
-                  this.method_42017().method_41999();
+                  this.getModule().method_41999();
                   return;
                }
 

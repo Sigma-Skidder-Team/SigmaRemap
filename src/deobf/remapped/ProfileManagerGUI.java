@@ -1,13 +1,13 @@
 package remapped;
 
-public class class_3305 extends class_1859 {
+public class ProfileManagerGUI extends class_1859 {
    public class_2440 field_16351 = new class_2440(300, 200, class_4043.field_19618);
    private final int field_16347;
    private class_2612 field_16348;
    public static class_3969 field_16350;
    private class_1581 field_16352;
 
-   public class_3305(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
+   public ProfileManagerGUI(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, 0, class_590.field_3421, false);
       class_8223 var9;
       this.method_32148(

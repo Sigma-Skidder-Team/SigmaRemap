@@ -28,7 +28,7 @@ public class class_3158 {
             String var4 = var1.method_5861("type");
             switch (var4) {
                case "mod":
-                  for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
+                  for (Module var7 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
                      if (var1.method_5861("target").equals(var7.getName())) {
                         this.field_15686 = var7;
                      }
