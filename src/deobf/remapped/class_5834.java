@@ -208,7 +208,7 @@ public abstract class class_5834 extends Entity {
       super.method_37219();
       this.world.method_29599().startSection("livingEntityBaseTick");
       boolean var3 = this instanceof class_704;
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          if (!this.method_37153()) {
             if (var3 && !this.world.method_6673().method_9815(this.method_37241())) {
                double var4 = this.world.method_6673().method_9809(this) + this.world.method_6673().method_9830();
@@ -229,7 +229,7 @@ public abstract class class_5834 extends Entity {
       }
 
       boolean var8 = var3 && ((class_704)this).playerAbilities.disableDamage;
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          if (this.method_37261(class_6503.field_33094)
             && !this.world
                .method_28262(new BlockPos(this.getPosX(), this.method_37388(), this.getPosZ()))
@@ -276,7 +276,7 @@ public abstract class class_5834 extends Entity {
          }
       }
 
-      if (this.method_37330() && this.method_37110()) {
+      if (this.isAlive() && this.method_37110()) {
          this.method_37136();
       }
 
@@ -298,12 +298,12 @@ public abstract class class_5834 extends Entity {
          this.field_29665--;
       }
 
-      if (this.field_29623 != null && !this.field_29623.method_37330()) {
+      if (this.field_29623 != null && !this.field_29623.isAlive()) {
          this.field_29623 = null;
       }
 
       if (this.field_29663 != null) {
-         if (this.field_29663.method_37330()) {
+         if (this.field_29663.isAlive()) {
             if (this.field_41697 - this.field_29636 > 100) {
                this.method_26511((class_5834)null);
             }
@@ -1330,7 +1330,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public boolean method_37330() {
+   public boolean isAlive() {
       return !this.field_41751 && this.method_26551() > 0.0F;
    }
 
@@ -2608,7 +2608,7 @@ public abstract class class_5834 extends Entity {
 
    @Override
    public boolean method_37177() {
-      return this.method_37330() && !this.method_37221() && !this.method_26505();
+      return this.isAlive() && !this.method_37221() && !this.method_26505();
    }
 
    @Override

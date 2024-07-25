@@ -21,7 +21,7 @@ public class class_9110<T extends AbstractRaiderEntity> extends class_3599 {
          && this.field_46652.method_21357()
          && !ItemStack.method_27982(this.field_46652.method_26520(class_6943.field_35704), class_2452.method_11292())) {
          AbstractRaiderEntity var4 = var3.method_11282(this.field_46652.method_18592());
-         if (var4 == null || !var4.method_37330()) {
+         if (var4 == null || !var4.isAlive()) {
             List var5 = this.field_46652
                .world
                .<class_91>method_25869(class_91.class, this.field_46652.method_37241().method_18899(16.0, 8.0, 16.0), AbstractRaiderEntity.method_18599());

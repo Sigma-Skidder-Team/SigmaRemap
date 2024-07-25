@@ -76,7 +76,7 @@ public class class_9355 extends class_2811 implements class_3449 {
 
    @Override
    public void method_37123() {
-      if (!this.world.field_33055 && this.method_37330() && this.method_43208()) {
+      if (!this.world.field_33055 && this.isAlive() && this.method_43208()) {
          int var3 = this.method_43202();
          this.field_47746 -= var3;
          if (this.field_47746 <= 0) {

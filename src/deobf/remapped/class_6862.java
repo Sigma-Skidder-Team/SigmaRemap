@@ -62,7 +62,7 @@ public class class_6862 extends class_405 {
    @Override
    public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
-      if (var5.method_27960() != class_4897.field_25034 && this.method_37330() && !this.method_2024() && !this.method_26449()) {
+      if (var5.method_27960() != class_4897.field_25034 && this.isAlive() && !this.method_2024() && !this.method_26449()) {
          if (var2 == Hand.MAIN_HAND) {
             var1.method_3209(class_6234.field_31910);
          }

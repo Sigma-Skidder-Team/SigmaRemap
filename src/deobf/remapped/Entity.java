@@ -1013,7 +1013,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean method_37374() {
-      return this.method_37321() && !this.method_37285() && !this.method_37221() && !this.method_37382() && !this.method_37370() && this.method_37330();
+      return this.method_37321() && !this.method_37285() && !this.method_37221() && !this.method_37382() && !this.method_37370() && this.isAlive();
    }
 
    public void method_37343() {
@@ -1518,7 +1518,7 @@ public abstract class Entity implements class_9875, class_5801 {
       }
    }
 
-   public boolean method_37330() {
+   public boolean isAlive() {
       return !this.field_41751;
    }
 

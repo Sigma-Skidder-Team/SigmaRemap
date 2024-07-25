@@ -209,7 +209,7 @@ public class class_3942 extends class_5783 {
       ItemStack var5 = var1.method_26568();
       boolean var6 = var4.method_27960() == class_4897.field_24505;
       boolean var7 = var5.method_27960() == class_4897.field_24505;
-      if (!var1.field_41751 && var1.method_37330() && (var6 || var7) && !(this.method_37275(var1) > 1024.0)) {
+      if (!var1.field_41751 && var1.isAlive() && (var6 || var7) && !(this.method_37275(var1) > 1024.0)) {
          return false;
       } else {
          this.method_37204();
@@ -224,7 +224,7 @@ public class class_3942 extends class_5783 {
 
    @Override
    public boolean method_26164(Entity var1) {
-      return super.method_26164(var1) || var1.method_37330() && var1 instanceof class_91;
+      return super.method_26164(var1) || var1.isAlive() && var1 instanceof class_91;
    }
 
    @Override

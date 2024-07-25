@@ -33,7 +33,7 @@ public abstract class class_8574 extends class_3578 {
    }
 
    public boolean method_39444() {
-      return this.field_43947 != null && this.field_43947.method_37330();
+      return this.field_43947 != null && this.field_43947.isAlive();
    }
 
    public class_8574 method_39443(class_8574 var1) {

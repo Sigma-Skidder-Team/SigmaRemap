@@ -141,7 +141,7 @@ public class class_6415 extends class_4088 {
       super.method_18876(var1);
       this.field_32763.method_975((class_704)null);
       if (!this.field_32763.method_972().field_33055) {
-         if (!var1.method_37330() || var1 instanceof class_9359 && ((class_9359)var1).method_43252()) {
+         if (!var1.isAlive() || var1 instanceof class_9359 && ((class_9359)var1).method_43252()) {
             ItemStack var4 = this.field_32764.method_31507(0);
             if (!var4.method_28022()) {
                var1.method_3153(var4, false);

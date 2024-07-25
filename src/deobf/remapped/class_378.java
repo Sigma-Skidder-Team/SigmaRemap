@@ -196,7 +196,7 @@ public class class_378 extends class_5886 implements class_1869 {
    }
 
    public void method_1856(class_5834 var1) {
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          int var4 = this.method_1860();
          if (this.method_37275(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
             && this.method_26420(var1)

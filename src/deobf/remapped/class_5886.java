@@ -166,7 +166,7 @@ public abstract class class_5886 extends class_5834 {
    public void method_37219() {
       super.method_37219();
       this.world.method_29599().startSection("mobBaseTick");
-      if (this.method_37330() && this.field_41717.nextInt(1000) < this.field_29913++) {
+      if (this.isAlive() && this.field_41717.nextInt(1000) < this.field_29913++) {
          this.method_26877();
          this.method_26853();
       }
@@ -450,7 +450,7 @@ public abstract class class_5886 extends class_5834 {
          var3 = class_7860.method_35566(class_7860.field_40243, this.world, this);
       }
 
-      if (!this.world.field_33055 && this.method_26930() && this.method_37330() && !this.field_29659 && var3) {
+      if (!this.world.field_33055 && this.method_26930() && this.isAlive() && !this.field_29659 && var3) {
          for (class_91 var5 : this.world.<class_91>method_25868(class_91.class, this.method_37241().method_18899(1.0, 0.0, 1.0))) {
             if (!var5.field_41751 && !var5.method_264().method_28022() && !var5.method_258() && this.method_26873(var5.method_264())) {
                this.method_26902(var5);
@@ -1019,7 +1019,7 @@ public abstract class class_5886 extends class_5834 {
 
    @Override
    public final class_6910 method_37128(class_704 var1, Hand var2) {
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          if (this.method_26922() != var1) {
             class_6910 var5 = this.method_26842(var1, var2);
             if (!var5.method_31662()) {
@@ -1147,7 +1147,7 @@ public abstract class class_5886 extends class_5834 {
          this.method_26844();
       }
 
-      if (this.field_29911 != null && (!this.method_37330() || !this.field_29911.method_37330())) {
+      if (this.field_29911 != null && (!this.isAlive() || !this.field_29911.isAlive())) {
          this.method_26916(true, true);
       }
    }

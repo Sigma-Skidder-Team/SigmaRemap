@@ -5,10 +5,10 @@ import java.util.function.Predicate;
 
 public final class class_3572 {
    private static String[] field_17486;
-   public static final Predicate<Entity> field_17481 = Entity::method_37330;
-   public static final Predicate<class_5834> field_17482 = class_5834::method_37330;
-   public static final Predicate<Entity> field_17484 = var0 -> var0.method_37330() && !var0.method_37151() && !var0.isPassenger();
-   public static final Predicate<Entity> field_17485 = var0 -> var0 instanceof class_6867 && var0.method_37330();
+   public static final Predicate<Entity> field_17481 = Entity::isAlive;
+   public static final Predicate<class_5834> field_17482 = class_5834::isAlive;
+   public static final Predicate<Entity> field_17484 = var0 -> var0.isAlive() && !var0.method_37151() && !var0.isPassenger();
+   public static final Predicate<Entity> field_17485 = var0 -> var0 instanceof class_6867 && var0.isAlive();
    public static final Predicate<Entity> field_17479 = var0 -> !(var0 instanceof class_704) || !var0.method_37221() && !((class_704)var0).method_3186();
    public static final Predicate<Entity> field_17480 = var0 -> !(var0 instanceof class_704)
          || !var0.method_37221() && !((class_704)var0).method_3186() && var0.world.method_43370() != class_423.field_1790;

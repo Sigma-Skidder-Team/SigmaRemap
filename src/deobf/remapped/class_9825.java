@@ -113,7 +113,7 @@ public class class_9825 extends class_516 implements class_1869 {
 
    @Override
    public void method_26606() {
-      if (this.method_37330() && this.method_26884()) {
+      if (this.isAlive() && this.method_26884()) {
          this.method_37178(8);
       }
 

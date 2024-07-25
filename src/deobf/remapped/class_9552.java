@@ -176,7 +176,7 @@ public class class_9552 extends class_5783 {
          }
 
          if (this.field_48601 == null
-            || !this.field_48601.method_37330()
+            || !this.field_48601.isAlive()
             || this.field_48601 instanceof class_704 && ((class_704)this.field_48601).method_37221()) {
             if (!this.method_37078()) {
                this.method_37215(this.method_37098().method_6214(0.0, -0.04, 0.0));

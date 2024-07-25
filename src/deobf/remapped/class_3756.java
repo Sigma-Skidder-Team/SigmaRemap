@@ -154,7 +154,7 @@ public class class_3756 extends class_3757 implements class_3745 {
             this.field_18356 = this.method_17381();
             this.field_18351 = null;
          } else if (this.field_18356 != null) {
-            if (!this.field_18356.method_37330() || !this.field_18358.method_12171(this.field_18356.method_37075(), 8.0)) {
+            if (!this.field_18356.isAlive() || !this.field_18358.method_12171(this.field_18356.method_37075(), 8.0)) {
                this.field_18356 = null;
             }
          } else {

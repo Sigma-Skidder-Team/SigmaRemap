@@ -44,7 +44,7 @@ public class class_1044 extends class_8388 {
             class_5834 var7 = (class_5834)var5;
             var6 = var4.attackEntityFrom(DamageSource.method_28376(this, var7), 8.0F);
             if (var6) {
-               if (!var4.method_37330()) {
+               if (!var4.isAlive()) {
                   var7.heal(5.0F);
                } else {
                   this.method_37096(var7, var4);

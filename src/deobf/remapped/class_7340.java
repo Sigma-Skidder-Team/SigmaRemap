@@ -36,7 +36,7 @@ public enum class_7340 implements class_1342 {
          class_5834 var4 = (class_5834)var3;
          switch (this) {
             case field_37541:
-               return var4.method_37330();
+               return var4.isAlive();
             case field_37534:
                return var4.method_37264();
             case field_37532:

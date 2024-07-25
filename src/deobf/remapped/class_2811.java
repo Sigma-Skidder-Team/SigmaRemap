@@ -134,7 +134,7 @@ public class class_2811 extends class_1173 {
 
    @Override
    public void method_37123() {
-      if (!this.world.field_33055 && this.method_37330() && !this.method_26859()) {
+      if (!this.world.field_33055 && this.isAlive() && !this.method_26859()) {
          if (!this.method_12797()) {
             if (this.method_12795()) {
                if (!this.method_37261(class_6503.field_33094)) {
@@ -159,7 +159,7 @@ public class class_2811 extends class_1173 {
 
    @Override
    public void method_26606() {
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          boolean var3 = this.method_12803() && this.method_26884();
          if (var3) {
             ItemStack var4 = this.method_26520(class_6943.field_35704);

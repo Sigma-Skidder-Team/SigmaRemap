@@ -14,7 +14,7 @@ public class class_2478 extends class_3599 {
    @Override
    public boolean method_16795() {
       class_5834 var3 = this.field_12367.method_17809();
-      return var3 != null && var3.method_37330() ? this.field_12367.field_41768.method_43370() != class_423.field_1790 : false;
+      return var3 != null && var3.isAlive() ? this.field_12367.field_41768.method_43370() != class_423.field_1790 : false;
    }
 
    @Override

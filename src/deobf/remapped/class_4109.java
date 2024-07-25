@@ -131,7 +131,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Override
    public boolean method_43356() {
-      return this.method_37330() && !this.method_26449() && this.method_19043();
+      return this.isAlive() && !this.method_26449() && this.method_19043();
    }
 
    @Override
@@ -486,7 +486,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       }
 
       super.method_26606();
-      if (!this.world.field_33055 && this.method_37330()) {
+      if (!this.world.field_33055 && this.isAlive()) {
          if (this.field_41717.nextInt(900) == 0 && this.field_29677 == 0) {
             this.heal(1.0F);
          }
@@ -641,7 +641,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Override
    public void method_26431(class_1343 var1) {
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          if (this.method_37151() && this.method_26863() && this.method_43357()) {
             class_5834 var4 = (class_5834)this.method_37259();
             this.rotationYaw = var4.rotationYaw;

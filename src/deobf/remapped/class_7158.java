@@ -17,7 +17,7 @@ public class class_7158 extends class_3599 {
       } else {
          class_5834 var3 = this.field_36862.method_17809();
          return var3 != null
-            && var3.method_37330()
+            && var3.isAlive()
             && class_5542.method_25200().test(var3)
             && this.field_36862.method_37275(var3) > 36.0
             && !this.field_36862.method_37382()

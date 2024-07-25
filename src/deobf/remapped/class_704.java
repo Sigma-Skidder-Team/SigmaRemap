@@ -152,7 +152,7 @@ public abstract class class_704 extends class_5834 {
       if (!this.world.field_33055) {
          this.field_3867.method_42228(this);
          this.method_3209(class_6234.field_31835);
-         if (this.method_37330()) {
+         if (this.isAlive()) {
             this.method_3209(class_6234.field_31889);
          }
 

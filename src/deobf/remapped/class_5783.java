@@ -130,7 +130,7 @@ public abstract class class_5783 extends Entity {
    }
 
    public boolean method_26164(Entity var1) {
-      if (!var1.method_37221() && var1.method_37330() && var1.method_37167()) {
+      if (!var1.method_37221() && var1.isAlive() && var1.method_37167()) {
          Entity var4 = this.method_26166();
          return var4 == null || this.field_29206 || !var4.method_37308(var1);
       } else {

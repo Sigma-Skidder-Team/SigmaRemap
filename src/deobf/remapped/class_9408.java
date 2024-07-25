@@ -132,7 +132,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          this.field_48104 = this.field_48102;
          if (!this.method_43583()) {
             this.field_48102 = this.field_48102 + (0.0F - this.field_48102) * 0.4F;

@@ -164,7 +164,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    public static boolean method_325(World var0, Entity var1) {
-      if (var1.method_37330() && !var1.method_37378() && var0.field_33033.nextInt(2) == 0) {
+      if (var1.isAlive() && !var1.method_37378() && var0.field_33033.nextInt(2) == 0) {
          List var4 = var0.<class_5886>method_25869(class_5886.class, var1.method_37241().method_18898(20.0), field_271);
          if (!var4.isEmpty()) {
             class_5886 var5 = (class_5886)var4.get(var0.field_33033.nextInt(var4.size()));

@@ -36,7 +36,7 @@ public class class_1837 extends class_3599 {
    @Override
    public boolean method_16795() {
       class_5834 var3 = this.field_9305.method_17809();
-      if (var3 != null && var3.method_37330()) {
+      if (var3 != null && var3.isAlive()) {
          this.field_9303 = var3;
          return true;
       } else {

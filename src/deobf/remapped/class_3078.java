@@ -66,7 +66,7 @@ public class class_3078 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      if (this.field_15140.method_42974() && this.field_15140.method_42970().method_37330() && this.method_14107(this.field_15140, 0)) {
+      if (this.field_15140.method_42974() && this.field_15140.method_42970().isAlive() && this.method_14107(this.field_15140, 0)) {
          double var3 = this.field_15140.method_37275(this.field_15140.method_42970());
          if (var3 > 676.0) {
             if (this.field_15139 <= 3.0) {

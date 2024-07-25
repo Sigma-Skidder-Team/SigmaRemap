@@ -103,7 +103,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          var4.method_36065(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
          float var16 = 0.0F;
-         if (!var1.isPassenger() && var1.method_37330()) {
+         if (!var1.isPassenger() && var1.isAlive()) {
             var35 = class_9299.method_42795(var3, var1.field_29598, var1.field_29643);
             var16 = var1.field_29671 - var1.field_29643 * (1.0F - var3);
             if (var1.method_26449()) {

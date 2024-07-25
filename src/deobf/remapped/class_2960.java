@@ -68,7 +68,7 @@ public class class_2960 extends class_3578 {
 
    @Override
    public void method_37123() {
-      if (!this.world.field_33055 && this.method_37330() && this.method_26530()) {
+      if (!this.world.field_33055 && this.isAlive() && this.method_26530()) {
          if (this.field_14452 <= 0) {
             if (this.method_13537() != 0) {
                if (this.field_14451 > 60 && this.method_13537() == 2) {
@@ -102,9 +102,9 @@ public class class_2960 extends class_3578 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (this.method_37330() && this.method_13537() > 0) {
+      if (this.isAlive() && this.method_13537() > 0) {
          for (class_5886 var4 : this.world.<class_5834>method_25869(class_5886.class, this.method_37241().method_18898(0.3), field_14454)) {
-            if (var4.method_37330()) {
+            if (var4.isAlive()) {
                this.method_13536(var4);
             }
          }

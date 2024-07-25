@@ -56,7 +56,7 @@ public class class_3024 extends class_5467 {
       }
 
       this.field_14831 = this.field_14831 + this.field_14825 * 2.0F;
-      if (!this.world.field_33055 && this.method_37330() && !this.method_26449() && !this.method_13809() && --this.field_14824 <= 0) {
+      if (!this.world.field_33055 && this.isAlive() && !this.method_26449() && !this.method_13809() && --this.field_14824 <= 0) {
          this.method_37155(class_463.field_2876, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
          this.method_37312(class_4897.field_24962);
          this.field_14824 = this.field_41717.nextInt(6000) + 6000;

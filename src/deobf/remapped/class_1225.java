@@ -24,7 +24,7 @@ public class class_1225 {
    }
 
    private static boolean method_5441(class_1150<?> var0, class_6044<? extends class_5834> var1, Predicate<class_5834> var2) {
-      return var0.<class_5834>method_5138(var1).filter(var2).filter(class_5834::method_37330).filter(var1x -> method_5453(var0, var1x)).isPresent();
+      return var0.<class_5834>method_5138(var1).filter(var2).filter(class_5834::isAlive).filter(var1x -> method_5453(var0, var1x)).isPresent();
    }
 
    private static void method_5448(class_5834 var0, class_5834 var1) {
@@ -124,7 +124,7 @@ public class class_1225 {
             var2 -> var2.stream()
                   .filter(var1xx -> var1xx instanceof class_7666 && var1xx != var0)
                   .<class_7666>map(var0xx -> (class_7666)var0xx)
-                  .filter(class_5834::method_37330)
+                  .filter(class_5834::isAlive)
                   .filter(var1)
          )
          .orElseGet(Stream::empty);

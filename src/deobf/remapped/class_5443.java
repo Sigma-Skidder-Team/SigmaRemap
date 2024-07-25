@@ -54,7 +54,7 @@ public class class_5443<E extends class_5886> extends class_5920<E> {
 
    private boolean method_24797(E var1) {
       Optional var4 = var1.method_26525().<class_5834>method_5138(class_6044.field_30884);
-      return var4.isPresent() && !((class_5834)var4.get()).method_37330();
+      return var4.isPresent() && !((class_5834)var4.get()).isAlive();
    }
 
    private void method_24801(E var1) {

@@ -57,7 +57,7 @@ public class class_3096 extends class_3558 {
    @Override
    public void method_16543() {
       class_8031 var3 = class_1799.method_8006(this.field_15406);
-      if (var3 != null && var3.method_37330()) {
+      if (var3 != null && var3.isAlive()) {
          var3.method_36471(class_9077.field_46494);
       }
    }

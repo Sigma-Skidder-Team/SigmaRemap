@@ -218,7 +218,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
 
                   for (int var29 = 0; var29 < 10 && !var27.isEmpty(); var29++) {
                      class_5834 var31 = (class_5834)var27.get(this.field_41717.nextInt(var27.size()));
-                     if (var31 != this && var31.method_37330() && this.method_26420(var31)) {
+                     if (var31 != this && var31.isAlive() && this.method_26420(var31)) {
                         if (!(var31 instanceof class_704)) {
                            this.method_21512(var3, var31.method_37145());
                         } else if (!((class_704)var31).playerAbilities.disableDamage) {
@@ -231,7 +231,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
                   }
                } else {
                   Entity var26 = this.world.method_29534(var23);
-                  if (var26 == null || !var26.method_37330() || this.method_37275(var26) > 900.0 || !this.method_26420(var26)) {
+                  if (var26 == null || !var26.isAlive() || this.method_37275(var26) > 900.0 || !this.method_26420(var26)) {
                      this.method_21512(var3, 0);
                   } else if (var26 instanceof class_704 && ((class_704)var26).playerAbilities.disableDamage) {
                      this.method_21512(var3, 0);

@@ -112,7 +112,7 @@ public class class_9782 {
          var1.method_35232(0.0);
          var1.method_35235(0.0);
          var1.method_35229(0.0);
-         if (this.field_49648 == null || !this.field_49648.method_37330() || !class_314.method_1440().contains(this.field_49648)) {
+         if (this.field_49648 == null || !this.field_49648.isAlive() || !class_314.method_1440().contains(this.field_49648)) {
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Teleport", "Target lost"));
             this.field_49646 = 0;
             this.field_49648 = null;

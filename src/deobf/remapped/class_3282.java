@@ -16,7 +16,7 @@ public class class_3282 extends class_3599 {
    public boolean method_16795() {
       class_5834 var3 = this.field_16255.method_17809();
       if (var3 != null) {
-         if (!var3.method_37330()) {
+         if (!var3.isAlive()) {
             return false;
          } else {
             return var3 instanceof class_704 && ((class_704)var3).playerAbilities.disableDamage ? false : this.field_16255.method_26905() instanceof class_8509;
@@ -36,7 +36,7 @@ public class class_3282 extends class_3599 {
    public boolean method_16799() {
       class_5834 var3 = this.field_16255.method_17809();
       if (var3 != null) {
-         if (var3.method_37330()) {
+         if (var3.isAlive()) {
             return var3 instanceof class_704 && ((class_704)var3).playerAbilities.disableDamage ? false : --this.field_16256 > 0;
          } else {
             return false;

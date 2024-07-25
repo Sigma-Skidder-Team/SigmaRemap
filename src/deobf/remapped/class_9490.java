@@ -89,7 +89,7 @@ public class class_9490 extends class_1173 implements class_7187 {
 
    @Override
    public void method_37123() {
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          this.field_48360 = this.field_48356;
          if (this.method_43835()) {
             this.method_43836(1);

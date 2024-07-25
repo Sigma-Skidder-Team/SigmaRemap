@@ -329,7 +329,7 @@ public class IngameGUI extends AbstractGui {
                boolean var7 = false;
                if (this.mc.field_9662 != null && this.mc.field_9662 instanceof class_5834 && var6 >= 1.0F) {
                   var7 = this.mc.thePlayer.method_3163() > 5.0F;
-                  var7 &= this.mc.field_9662.method_37330();
+                  var7 &= this.mc.field_9662.isAlive();
                }
 
                int var8 = this.scaledHeight / 2 - 7 + 16;

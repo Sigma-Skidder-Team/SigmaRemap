@@ -47,7 +47,7 @@ public class class_8676 extends class_3599 {
    @Override
    public boolean method_16799() {
       if (this.field_44530.method_8634() < 0) {
-         if (!this.field_44534.method_37330()) {
+         if (!this.field_44534.isAlive()) {
             return false;
          } else {
             double var3 = this.field_44530.method_37275(this.field_44534);

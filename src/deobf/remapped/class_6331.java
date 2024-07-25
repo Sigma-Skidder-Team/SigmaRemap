@@ -422,7 +422,7 @@ public class class_6331 extends World implements class_700 {
       BlockPos var4 = this.method_22563(class_3801.field_18595, var1);
       Box var5 = new Box(var4, new BlockPos(var4.method_12173(), this.method_28261(), var4.method_12185())).method_18898(3.0);
       List var6 = this.<class_5834>method_25869(
-         class_5834.class, var5, var1x -> var1x != null && var1x.method_37330() && this.method_25263(var1x.method_37075())
+         class_5834.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method_25263(var1x.method_37075())
       );
       if (var6.isEmpty()) {
          if (var4.method_12165() == -1) {
@@ -616,7 +616,7 @@ public class class_6331 extends World implements class_700 {
 
       while (var4.hasNext()) {
          Entity var5 = (Entity)var4.next();
-         if (var5 instanceof class_2770 && var5.method_37330()) {
+         if (var5 instanceof class_2770 && var5.isAlive()) {
             var3.add((class_2770)var5);
          }
       }
@@ -638,7 +638,7 @@ public class class_6331 extends World implements class_700 {
 
    @Nullable
    public class_9359 method_28948() {
-      List var3 = this.method_28990(class_5834::method_37330);
+      List var3 = this.method_28990(class_5834::isAlive);
       return !var3.isEmpty() ? (class_9359)var3.get(this.field_33033.nextInt(var3.size())) : null;
    }
 
@@ -1295,7 +1295,7 @@ public class class_6331 extends World implements class_700 {
             var6.getPosZ(),
             var6.method_37328(),
             class_8669.field_44400.method_39797(var6.method_37387()),
-            var6.method_37330(),
+            var6.isAlive(),
             var8.getString(),
             var7 == null ? null : var7.getString()
          );

@@ -228,7 +228,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    @Override
    public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
-      if (var5.method_27960() == class_4897.field_25034 || !this.method_37330() || this.method_2024() || this.method_26507()) {
+      if (var5.method_27960() == class_4897.field_25034 || !this.isAlive() || this.method_2024() || this.method_26507()) {
          return super.method_26857(var1, var2);
       } else if (!this.method_26449()) {
          boolean var6 = this.method_974().isEmpty();
@@ -503,7 +503,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    public void method_26511(class_5834 var1) {
       if (var1 != null && this.world instanceof class_6331) {
          ((class_6331)this.world).method_28955(class_3894.field_18943, var1, this);
-         if (this.method_37330() && var1 instanceof class_704) {
+         if (this.isAlive() && var1 instanceof class_704) {
             this.world.method_29587(this, (byte)13);
          }
       }

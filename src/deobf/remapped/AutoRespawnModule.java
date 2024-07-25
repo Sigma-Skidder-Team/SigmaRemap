@@ -10,7 +10,7 @@ public class AutoRespawnModule extends Module {
    @EventListen
    public void method_43730(class_5596 var1) {
       if (this.method_42015()) {
-         if (!client.thePlayer.method_37330()) {
+         if (!client.thePlayer.isAlive()) {
             client.thePlayer.method_3205();
          }
       }

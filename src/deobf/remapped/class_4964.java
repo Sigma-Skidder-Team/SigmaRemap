@@ -189,7 +189,7 @@ public class class_4964 {
                      this.field_25692 = Integer.MAX_VALUE;
                      this.field_25681 = true;
                      this.field_25701 = field_25668;
-                     this.field_25665 = Entity::method_37330;
+                     this.field_25665 = Entity::isAlive;
                   } else {
                      this.field_25692 = 1;
                      this.field_25681 = true;

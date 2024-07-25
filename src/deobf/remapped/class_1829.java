@@ -32,7 +32,7 @@ public abstract class class_1829 extends class_4612 {
    }
 
    public void method_8085(int var1) {
-      if (this.method_37330() && !this.method_37134()) {
+      if (this.isAlive() && !this.method_37134()) {
          this.method_37192(var1 - 1);
          if (this.method_37229() == -20) {
             this.method_37192(0);

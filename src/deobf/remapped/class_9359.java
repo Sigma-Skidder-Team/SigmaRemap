@@ -285,7 +285,7 @@ public class class_9359 extends class_704 implements class_117 {
 
       Entity var7 = this.method_43276();
       if (var7 != this) {
-         if (!var7.method_37330()) {
+         if (!var7.isAlive()) {
             this.method_43284(this);
          } else {
             this.method_37249(var7.getPosX(), var7.method_37309(), var7.getPosZ(), var7.rotationYaw, var7.rotationPitch);
@@ -671,7 +671,7 @@ public class class_9359 extends class_704 implements class_117 {
    @Override
    public Either<class_8614, Unit> method_3200(BlockPos var1) {
       Direction var4 = this.world.method_28262(var1).<Direction>method_10313(class_380.field_1543);
-      if (this.method_26507() || !this.method_37330()) {
+      if (this.method_26507() || !this.isAlive()) {
          return Either.left(class_8614.field_44186);
       } else if (!this.world.method_22572().method_40233()) {
          return Either.left(class_8614.field_44185);
@@ -1350,7 +1350,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    public void method_43234(class_2034 var1) {
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          this.field_47794.method_4156(new class_2972(var1.field_10328, var1.field_10327));
       }
    }

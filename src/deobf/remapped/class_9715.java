@@ -74,7 +74,7 @@ public class class_9715 extends class_292 implements class_4511 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (!this.world.field_33055 && this.method_37330() && this.method_44873()) {
+      if (!this.world.field_33055 && this.isAlive() && this.method_44873()) {
          BlockPos var3 = this.method_37075();
          if (!var3.equals(this.field_49378)) {
             this.method_44869(0);

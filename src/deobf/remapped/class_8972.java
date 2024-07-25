@@ -44,7 +44,7 @@ public enum class_8972 implements class_1342 {
 
             switch (this) {
                case field_45969:
-                  return var5.method_37330();
+                  return var5.isAlive();
                case field_45964:
                   return var5.method_37264();
                case field_45965:

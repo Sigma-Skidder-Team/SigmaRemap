@@ -55,7 +55,7 @@ public class class_3435 {
       this.field_16881.add(var6);
       this.field_16884 = this.field_16886.field_41697;
       this.field_16883 = true;
-      if (var6.method_40798() && !this.field_16888 && this.field_16886.method_37330()) {
+      if (var6.method_40798() && !this.field_16888 && this.field_16886.isAlive()) {
          this.field_16888 = true;
          this.field_16887 = this.field_16886.field_41697;
          this.field_16882 = this.field_16887;
@@ -173,7 +173,7 @@ public class class_3435 {
 
    public void method_15868() {
       int var3 = !this.field_16888 ? 100 : 300;
-      if (this.field_16883 && (!this.field_16886.method_37330() || this.field_16886.field_41697 - this.field_16884 > var3)) {
+      if (this.field_16883 && (!this.field_16886.isAlive() || this.field_16886.field_41697 - this.field_16884 > var3)) {
          boolean var4 = this.field_16888;
          this.field_16883 = false;
          this.field_16888 = false;

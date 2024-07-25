@@ -71,7 +71,7 @@ public class class_3348 extends class_6749 {
 
    private boolean method_15351() {
       Entity var3 = this.method_26166();
-      return var3 != null && var3.method_37330() ? !(var3 instanceof class_9359) || !var3.method_37221() : false;
+      return var3 != null && var3.isAlive() ? !(var3 instanceof class_9359) || !var3.method_37221() : false;
    }
 
    @Override

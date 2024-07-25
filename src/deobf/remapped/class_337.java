@@ -159,7 +159,7 @@ public class class_337 extends class_1173 {
 
    @Override
    public void method_26606() {
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          if (this.world.field_33055) {
             this.field_1256 = this.field_1253;
             if (this.method_37285()) {

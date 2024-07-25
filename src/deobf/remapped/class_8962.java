@@ -25,7 +25,7 @@ public class class_8962<E extends class_5886> extends class_5920<E> {
          return false;
       } else {
          Optional var5 = this.field_45911.apply((E)var2);
-         return var5.isPresent() && ((class_5834)var5.get()).method_37330();
+         return var5.isPresent() && ((class_5834)var5.get()).isAlive();
       }
    }
 

@@ -109,7 +109,7 @@ public abstract class class_1899 extends class_4612 {
    public void method_26606() {
       super.method_26606();
       if (!this.world.field_33055) {
-         if (this.method_37330()) {
+         if (this.isAlive()) {
             int var3 = this.method_8634();
             if (var3 >= 0) {
                if (var3 > 0) {

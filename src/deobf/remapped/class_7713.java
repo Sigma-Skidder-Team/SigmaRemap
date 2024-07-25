@@ -13,7 +13,7 @@ public class class_7713 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      if (this.field_39121.method_37330()) {
+      if (this.field_39121.isAlive()) {
          if (!this.field_39121.method_37285()) {
             if (this.field_39121.method_37360()) {
                if (!this.field_39121.field_41743) {

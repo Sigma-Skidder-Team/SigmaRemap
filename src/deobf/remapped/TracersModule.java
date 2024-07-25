@@ -23,7 +23,7 @@ public class TracersModule extends Module {
 
          for (Entity var5 : class_314.method_1435()) {
             if (var5 != client.thePlayer
-               && var5.method_37330()
+               && var5.isAlive()
                && var5.field_41712.method_18906() > 0.8
                && var5.field_41697 > 30
                && !SigmaMainClass.getInstance().method_3331().method_20495(var5)) {

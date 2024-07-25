@@ -12,7 +12,7 @@ public class class_1268 extends Module {
          if (var1.method_557() instanceof class_295) {
             class_295 var4 = (class_295)var1.method_557();
             if (var4.method_1331(client.theWorld) == null
-               || !var4.method_1331(client.theWorld).method_37330()
+               || !var4.method_1331(client.theWorld).isAlive()
                || var4.method_1331(client.theWorld).method_37175(client.thePlayer) > 5.0F
                || var4.method_1331(client.theWorld) == client.thePlayer) {
                return;

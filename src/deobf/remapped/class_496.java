@@ -24,7 +24,7 @@ public class class_496 extends class_5467 {
    private class_5670 field_3084;
    private static final Predicate<class_91> field_3087 = var0 -> {
       class_2451 var3 = var0.method_264().method_27960();
-      return (var3 == class_4783.field_23886.method_10803() || var3 == class_4783.field_23770.method_10803()) && var0.method_37330() && !var0.method_258();
+      return (var3 == class_4783.field_23886.method_10803() || var3 == class_4783.field_23770.method_10803()) && var0.isAlive() && !var0.method_258();
    };
 
    public class_496(EntityType<? extends class_496> var1, World var2) {

@@ -10,7 +10,7 @@ public class class_6675 extends class_2451 {
    @Override
    public class_6910 method_11202(ItemStack var1, class_704 var2, class_5834 var3, Hand var4) {
       if (var1.method_28018() && !(var3 instanceof class_704)) {
-         if (!var2.world.field_33055 && var3.method_37330()) {
+         if (!var2.world.field_33055 && var3.isAlive()) {
             var3.method_37303(var1.method_28008());
             if (var3 instanceof class_5886) {
                ((class_5886)var3).method_26883();

@@ -325,7 +325,7 @@ public class class_1097 {
    }
 
    public void method_4866(Entity var1) {
-      if (var1 != null && !(var1 instanceof class_704) && !var1.method_37330()) {
+      if (var1 != null && !(var1 instanceof class_704) && !var1.isAlive()) {
          String var4 = var1.method_37225();
          this.method_4869(var4, (class_4399)null);
          this.method_4861(var4);

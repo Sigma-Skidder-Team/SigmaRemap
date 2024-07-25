@@ -163,7 +163,7 @@ public class class_4393 extends class_2803 implements class_9897 {
 
    @Override
    public boolean method_45584() {
-      return this.method_37330() && !this.method_26449();
+      return this.isAlive() && !this.method_26449();
    }
 
    @Override

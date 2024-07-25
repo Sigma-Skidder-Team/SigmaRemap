@@ -12,7 +12,7 @@ public class class_6995 extends class_6127<class_5834> {
    @Override
    public void method_28154(class_6331 var1, class_5834 var2) {
       Box var5 = var2.method_37241().method_18899(16.0, 16.0, 16.0);
-      List var6 = var1.<class_5834>method_25869(class_5834.class, var5, var1x -> var1x != var2 && var1x.method_37330());
+      List var6 = var1.<class_5834>method_25869(class_5834.class, var5, var1x -> var1x != var2 && var1x.isAlive());
       var6.sort(Comparator.comparingDouble(var2::method_37275));
       class_1150 var7 = var2.method_26525();
       var7.method_5105(class_6044.field_30907, var6);

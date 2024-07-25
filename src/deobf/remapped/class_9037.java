@@ -30,7 +30,7 @@ public class class_9037 extends class_3599 {
          this.field_46243 = var3;
          class_5834 var5 = this.field_46244.method_17809();
          if (var5 != null) {
-            if (var5.method_37330()) {
+            if (var5.isAlive()) {
                this.field_46242 = this.field_46244.method_26927().method_5598(var5, 0);
                return this.field_46242 == null
                   ? this.method_41492(var5) >= this.field_46244.method_37273(var5.getPosX(), var5.method_37309(), var5.getPosZ())
@@ -50,7 +50,7 @@ public class class_9037 extends class_3599 {
    public boolean method_16799() {
       class_5834 var3 = this.field_46244.method_17809();
       if (var3 != null) {
-         if (!var3.method_37330()) {
+         if (!var3.isAlive()) {
             return false;
          } else if (this.field_46246) {
             return !this.field_46244.method_26880(var3.method_37075())

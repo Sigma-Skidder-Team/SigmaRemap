@@ -28,7 +28,7 @@ public abstract class class_956 extends class_3599 {
       }
 
       if (var3 != null) {
-         if (var3.method_37330()) {
+         if (var3.isAlive()) {
             class_5086 var4 = this.field_4915.method_37095();
             class_5086 var5 = var3.method_37095();
             if (var4 != null && var5 == var4) {

@@ -38,7 +38,7 @@ public class class_9513 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      return this.field_48441.method_37330() && this.field_48441.method_24875() && this.field_48437 < 60;
+      return this.field_48441.isAlive() && this.field_48441.method_24875() && this.field_48437 < 60;
    }
 
    @Override

@@ -13,7 +13,7 @@ public class class_5542 extends class_5467 {
    private static final class_7821<Byte> field_28238 = class_8073.<Byte>method_36641(class_5542.class, class_2734.field_13361);
    private static final class_7821<Optional<UUID>> field_28235 = class_8073.<Optional<UUID>>method_36641(class_5542.class, class_2734.field_13348);
    private static final class_7821<Optional<UUID>> field_28248 = class_8073.<Optional<UUID>>method_36641(class_5542.class, class_2734.field_13348);
-   private static final Predicate<class_91> field_28236 = var0 -> !var0.method_258() && var0.method_37330();
+   private static final Predicate<class_91> field_28236 = var0 -> !var0.method_258() && var0.isAlive();
    private static final Predicate<Entity> field_28241 = var0 -> {
       if (!(var0 instanceof class_5834)) {
          return false;
@@ -96,7 +96,7 @@ public class class_5542 extends class_5467 {
 
    @Override
    public void method_26606() {
-      if (!this.world.field_33055 && this.method_37330() && this.method_26530()) {
+      if (!this.world.field_33055 && this.isAlive() && this.method_26530()) {
          this.field_28243++;
          ItemStack var3 = this.method_26520(class_6943.field_35707);
          if (this.method_25176(var3)) {
@@ -116,7 +116,7 @@ public class class_5542 extends class_5467 {
          }
 
          class_5834 var5 = this.method_17809();
-         if (var5 == null || !var5.method_37330()) {
+         if (var5 == null || !var5.isAlive()) {
             this.method_25168(false);
             this.method_25181(false);
          }

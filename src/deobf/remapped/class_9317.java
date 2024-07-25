@@ -84,7 +84,7 @@ public class class_9317 extends class_3757 implements class_3745 {
 
       if (!this.field_18364.field_33055) {
          for (class_5834 var5 : this.field_47583) {
-            if (var5.method_37330() && !var5.field_41751 && var3.method_12170(var5.method_37245(), 32.0)) {
+            if (var5.isAlive() && !var5.field_41751 && var3.method_12170(var5.method_37245(), 32.0)) {
                var5.method_26525().method_5105(class_6044.field_30894, this.field_18364.method_29546());
             }
          }
@@ -95,7 +95,7 @@ public class class_9317 extends class_3757 implements class_3745 {
       BlockPos var3 = this.method_17399();
 
       for (class_5834 var5 : this.field_47583) {
-         if (var5.method_37330()
+         if (var5.isAlive()
             && !var5.field_41751
             && var3.method_12170(var5.method_37245(), 32.0)
             && var5.method_37387().method_30453(class_5218.field_26788)) {
@@ -144,7 +144,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    }
 
    private boolean method_43019(class_5834 var1) {
-      return var1.method_37330()
+      return var1.isAlive()
          && !var1.field_41751
          && this.method_17399().method_12170(var1.method_37245(), 48.0)
          && var1.method_37387().method_30453(class_5218.field_26788);

@@ -46,7 +46,7 @@ public class class_3669 extends class_5920<class_5467> {
          return false;
       } else {
          class_5467 var7 = this.method_17022(var2);
-         return var7.method_37330() && var2.method_24873(var7) && class_1225.method_5453(var2.method_26525(), var7) && var3 <= this.field_17884;
+         return var7.isAlive() && var2.method_24873(var7) && class_1225.method_5453(var2.method_26525(), var7) && var3 <= this.field_17884;
       }
    }
 

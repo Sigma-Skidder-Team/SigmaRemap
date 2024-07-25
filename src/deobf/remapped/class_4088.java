@@ -421,7 +421,7 @@ public abstract class class_4088 {
    }
 
    public void method_18887(class_704 var1, World var2, class_6867 var3) {
-      if (!var1.method_37330() || var1 instanceof class_9359 && ((class_9359)var1).method_43252()) {
+      if (!var1.isAlive() || var1 instanceof class_9359 && ((class_9359)var1).method_43252()) {
          for (int var7 = 0; var7 < var3.method_31505(); var7++) {
             var1.method_3153(var3.method_31507(var7), false);
          }

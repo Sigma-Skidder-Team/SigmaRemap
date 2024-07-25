@@ -378,7 +378,7 @@ public class class_134 {
       } else {
          class_5886 var4 = (class_5886)var1;
          return !var4.method_26449()
-            || !var4.method_37330()
+            || !var4.isAlive()
             || method_543(var0)
             || method_543(var4)
             || var4 instanceof class_2599 && var4.method_37243() == null;

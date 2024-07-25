@@ -11,7 +11,7 @@ public class class_8050 extends class_9335 {
    public boolean method_16795() {
       if (this.field_41216.method_25170()) {
          class_5834 var3 = this.field_41216.method_17809();
-         if (var3 != null && var3.method_37330()) {
+         if (var3 != null && var3.isAlive()) {
             if (var3.method_37235() == var3.method_37365()) {
                boolean var4 = class_5542.method_25207(this.field_41216, var3);
                if (!var4) {
@@ -35,7 +35,7 @@ public class class_8050 extends class_9335 {
    @Override
    public boolean method_16799() {
       class_5834 var3 = this.field_41216.method_17809();
-      if (var3 != null && var3.method_37330()) {
+      if (var3 != null && var3.isAlive()) {
          double var4 = this.field_41216.method_37098().field_7333;
          return (!(var4 * var4 < 0.05F) || !(Math.abs(this.field_41216.field_41755) < 15.0F) || !this.field_41216.field_41726)
             && !this.field_41216.method_25212();

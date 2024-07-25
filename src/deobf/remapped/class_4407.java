@@ -69,7 +69,7 @@ public class class_4407 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      if (this.field_21563.method_37330()) {
+      if (this.field_21563.isAlive()) {
          return !(this.field_21568.method_37275(this.field_21563) > (double)(this.field_21566 * this.field_21566)) ? this.field_21564 > 0 : false;
       } else {
          return false;

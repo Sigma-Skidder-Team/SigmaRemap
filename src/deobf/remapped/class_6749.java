@@ -337,7 +337,7 @@ public abstract class class_6749 extends class_5783 {
                ((class_9359)var7).field_47794.method_4156(new class_2161(class_2161.field_10780, 0.0F));
             }
 
-            if (!var4.method_37330() && this.field_34841 != null) {
+            if (!var4.isAlive() && this.field_34841 != null) {
                this.field_34841.add(var13);
             }
 
@@ -345,7 +345,7 @@ public abstract class class_6749 extends class_5783 {
                class_9359 var15 = (class_9359)var7;
                if (this.field_34841 != null && this.method_30927()) {
                   class_8807.field_45057.method_21226(var15, this.field_34841);
-               } else if (!var4.method_37330() && this.method_30927()) {
+               } else if (!var4.isAlive() && this.method_30927()) {
                   class_8807.field_45057.method_21226(var15, Arrays.<Entity>asList(var4));
                }
             }

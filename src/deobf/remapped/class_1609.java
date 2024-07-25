@@ -68,7 +68,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
 
    @Override
    public void method_26606() {
-      if (!this.world.field_33055 && this.method_37330()) {
+      if (!this.world.field_33055 && this.isAlive()) {
          this.field_8348.method_44424();
          if (this.field_8348.method_44423() > 0) {
             this.field_8349.method_13645(false);

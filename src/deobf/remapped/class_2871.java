@@ -19,7 +19,7 @@ public class class_2871 extends class_9883 {
    public boolean method_16799() {
       class_5834 var3 = this.field_14067.method_17809();
       if (var3 != null) {
-         if (!var3.method_37330()) {
+         if (!var3.isAlive()) {
             return false;
          } else if (!(var3 instanceof class_704) || !((class_704)var3).method_37221() && !((class_704)var3).method_3186()) {
             if (!this.method_16795()) {

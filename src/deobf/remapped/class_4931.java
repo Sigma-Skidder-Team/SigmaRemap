@@ -51,7 +51,7 @@ public class class_4931 {
    public boolean method_22604(class_5834 var1, class_5834 var2) {
       if (var1 != var2) {
          if (!var2.method_37221()) {
-            if (var2.method_37330()) {
+            if (var2.isAlive()) {
                if (!this.field_25524 && var2.method_37367()) {
                   return false;
                } else if (this.field_25523 != null && !this.field_25523.test(var2)) {

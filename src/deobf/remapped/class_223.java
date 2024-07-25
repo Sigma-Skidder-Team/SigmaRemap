@@ -122,7 +122,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
 
    @Override
    public boolean method_45584() {
-      return this.method_37330() && this.method_947();
+      return this.isAlive() && this.method_947();
    }
 
    public boolean method_947() {

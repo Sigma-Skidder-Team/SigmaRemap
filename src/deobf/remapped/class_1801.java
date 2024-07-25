@@ -35,7 +35,7 @@ public class class_1801<T extends class_1173 & class_2354 & class_3832> extends 
    }
 
    private boolean method_8010() {
-      return this.field_9179.method_17809() != null && this.field_9179.method_17809().method_37330();
+      return this.field_9179.method_17809() != null && this.field_9179.method_17809().isAlive();
    }
 
    @Override

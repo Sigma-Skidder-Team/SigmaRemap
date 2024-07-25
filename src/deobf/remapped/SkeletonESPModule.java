@@ -29,7 +29,7 @@ public class SkeletonESPModule extends Module {
       );
       if (!var2.method_37109()) {
          float[][] var6 = field_20882.get(var2);
-         if (var6 != null && var2.method_37330() && var2 != client.thePlayer && !var2.method_26507()) {
+         if (var6 != null && var2.isAlive() && var2 != client.thePlayer && !var2.method_26507()) {
             GL11.glPushMatrix();
             GL11.glLineWidth(2.0F);
             GL11.glColor4f((float)(var5.getRed() / 255), (float)(var5.getGreen() / 255), (float)(var5.getBlue() / 255), 1.0F);

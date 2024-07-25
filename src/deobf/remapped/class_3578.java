@@ -111,7 +111,7 @@ public abstract class class_3578 extends class_1829 {
    @Override
    public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
-      if (var5.method_27960() == class_4897.field_24999 && this.method_37330()) {
+      if (var5.method_27960() == class_4897.field_24999 && this.isAlive()) {
          this.method_37155(class_463.field_2597, 1.0F, 1.0F);
          var5.method_27970(1);
          ItemStack var6 = this.method_16633();

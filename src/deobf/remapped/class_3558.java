@@ -13,7 +13,7 @@ public abstract class class_3558 extends class_3599 {
    @Override
    public boolean method_16795() {
       class_5834 var3 = this.field_17438.method_17809();
-      if (var3 == null || !var3.method_37330()) {
+      if (var3 == null || !var3.isAlive()) {
          return false;
       } else {
          return !this.field_17438.method_33825() ? this.field_17438.field_41697 >= this.field_17437 : false;
@@ -23,7 +23,7 @@ public abstract class class_3558 extends class_3599 {
    @Override
    public boolean method_16799() {
       class_5834 var3 = this.field_17438.method_17809();
-      return var3 != null && var3.method_37330() && this.field_17439 > 0;
+      return var3 != null && var3.isAlive() && this.field_17439 > 0;
    }
 
    @Override

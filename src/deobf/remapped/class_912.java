@@ -209,7 +209,7 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    public boolean method_3914() {
-      if (!this.world.method_22567() && this.method_37330()) {
+      if (!this.world.method_22567() && this.isAlive()) {
          double var3 = this.getPosX() + (this.field_41717.nextDouble() - 0.5) * 64.0;
          double var5 = this.method_37309() + (double)(this.field_41717.nextInt(64) - 32);
          double var7 = this.getPosZ() + (this.field_41717.nextDouble() - 0.5) * 64.0;

@@ -30,7 +30,7 @@ public class class_4843 implements class_7835 {
          return true;
       } else {
          Optional var4 = var1.method_26525().<List<class_5834>>method_5138(class_6044.field_30901);
-         return this.field_24168.method_37330() && var4.isPresent() && ((List)var4.get()).contains(this.field_24168);
+         return this.field_24168.isAlive() && var4.isPresent() && ((List)var4.get()).contains(this.field_24168);
       }
    }
 

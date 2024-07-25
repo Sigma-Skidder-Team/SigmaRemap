@@ -98,7 +98,7 @@ public class class_1511 extends Entity {
 
    private void method_6917(class_5834 var1) {
       class_5834 var4 = this.method_6916();
-      if (var1.method_37330() && !var1.method_37367() && var1 != var4) {
+      if (var1.isAlive() && !var1.method_37367() && var1 != var4) {
          if (var4 != null) {
             if (var4.method_37344(var1)) {
                return;

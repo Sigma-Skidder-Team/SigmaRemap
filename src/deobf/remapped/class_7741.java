@@ -35,7 +35,7 @@ public class class_7741 extends class_4088 {
 
    @Override
    public boolean method_18861(class_704 var1) {
-      return this.field_39252.method_31502(var1) && this.field_39253.method_37330() && this.field_39253.method_37175(var1) < 8.0F;
+      return this.field_39252.method_31502(var1) && this.field_39253.isAlive() && this.field_39253.method_37175(var1) < 8.0F;
    }
 
    @Override

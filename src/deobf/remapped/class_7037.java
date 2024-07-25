@@ -28,7 +28,7 @@ public class class_7037 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      if (this.field_36249.method_37330()) {
+      if (this.field_36249.isAlive()) {
          return this.field_36247.method_37275(this.field_36249) > 225.0 ? false : !this.field_36247.method_26927().method_5591() || this.method_16795();
       } else {
          return false;

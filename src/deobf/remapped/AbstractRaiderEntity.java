@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 public abstract class AbstractRaiderEntity extends class_4607 {
    public static final class_7821<Boolean> field_19606 = class_8073.<Boolean>method_36641(AbstractRaiderEntity.class, class_2734.field_13347);
    private static final Predicate<class_91> field_19607 = var0 -> !var0.method_258()
-         && var0.method_37330()
+         && var0.isAlive()
          && ItemStack.method_27982(var0.method_264(), class_2452.method_11292());
    public class_2452 field_19610;
    private int field_19611;
@@ -44,7 +44,7 @@ public abstract class AbstractRaiderEntity extends class_4607 {
 
    @Override
    public void method_26606() {
-      if (this.world instanceof class_6331 && this.method_37330()) {
+      if (this.world instanceof class_6331 && this.isAlive()) {
          class_2452 var3 = this.method_18589();
          if (this.method_18593()) {
             if (var3 != null) {

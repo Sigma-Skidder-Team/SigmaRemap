@@ -23,8 +23,8 @@ public class class_1665 extends class_5920<class_7666> {
       } else {
          class_5834 var6 = var5.<class_5834>method_5138(class_6044.field_30861).get();
          return var6.method_37387() == EntityType.field_34300
-            && var2.method_37330()
-            && var6.method_37330()
+            && var2.isAlive()
+            && var6.isAlive()
             && !var2.method_26449()
             && var2.method_37275(var6) <= 17.0;
       }

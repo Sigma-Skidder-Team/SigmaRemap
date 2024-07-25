@@ -233,7 +233,7 @@ public class class_3845 extends class_5467 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (this.method_37330() && this.method_17862() && this.field_18767 >= 1 && this.field_18767 % 5 == 0) {
+      if (this.isAlive() && this.method_17862() && this.field_18767 >= 1 && this.field_18767 % 5 == 0) {
          BlockPos var3 = this.method_37075();
          if (class_1477.method_6812(this.world, var3)) {
             this.world.method_43364(2001, var3, class_6414.method_29285(class_4783.field_23216.method_29260()));

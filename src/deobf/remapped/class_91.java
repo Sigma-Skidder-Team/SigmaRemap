@@ -160,7 +160,7 @@ public class class_91 extends Entity {
 
    private boolean method_261() {
       ItemStack var3 = this.method_264();
-      return this.method_37330() && this.field_174 != 32767 && this.field_178 != -32768 && this.field_178 < 6000 && var3.method_27997() < var3.method_28016();
+      return this.isAlive() && this.field_174 != 32767 && this.field_178 != -32768 && this.field_178 < 6000 && var3.method_27997() < var3.method_28016();
    }
 
    private void method_263(class_91 var1) {

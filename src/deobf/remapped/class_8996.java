@@ -51,7 +51,7 @@ public class class_8996 extends class_7186 {
 
    public static boolean method_41275(AbstractRaiderEntity var0, class_2452 var1) {
       return var0 != null && var1 != null && var1.method_11267() != null
-         ? var0.method_37330() && var0.method_18593() && var0.method_26532() <= 2400 && var0.world.method_22572() == var1.method_11267().method_22572()
+         ? var0.isAlive() && var0.method_18593() && var0.method_26532() <= 2400 && var0.world.method_22572() == var1.method_11267().method_22572()
          : false;
    }
 

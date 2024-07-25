@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
 public class RavagerEntity extends AbstractRaiderEntity {
-   private static final Predicate<Entity> field_40350 = var0 -> var0.method_37330() && !(var0 instanceof RavagerEntity);
+   private static final Predicate<Entity> field_40350 = var0 -> var0.isAlive() && !(var0 instanceof RavagerEntity);
    private int field_40349;
    private int field_40351;
    private int field_40347;
@@ -99,7 +99,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          if (!this.method_26468()) {
             double var3 = this.method_17809() == null ? 0.3 : 0.35;
             double var5 = this.method_26561(class_7331.field_37465).method_44996();
@@ -194,7 +194,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    private void method_35657() {
-      if (this.method_37330()) {
+      if (this.isAlive()) {
          for (Entity var4 : this.world.<Entity>method_25869(class_5834.class, this.method_37241().method_18898(4.0), field_40350)) {
             if (!(var4 instanceof class_7637)) {
                var4.attackEntityFrom(DamageSource.method_28345(this), 6.0F);

@@ -8,7 +8,7 @@ public interface class_8190 {
    float method_37516();
 
    default boolean method_37517(class_5886 var1, class_686 var2, class_1343 var3) {
-      if (var1.method_37330()) {
+      if (var1.isAlive()) {
          Entity var6 = !var1.method_37114().isEmpty() ? var1.method_37114().get(0) : null;
          if (var1.method_37151() && var1.method_26863() && var6 instanceof class_704) {
             var1.rotationYaw = var6.rotationYaw;

@@ -11,7 +11,7 @@ public class class_449 extends class_1829 {
    private static final class_7821<Boolean> field_1871 = class_8073.<Boolean>method_36641(class_449.class, class_2734.field_13347);
    private static final class_7821<Integer> field_1869 = class_8073.<Integer>method_36641(class_449.class, class_2734.field_13366);
    private static final class_4931 field_1873 = new class_4931().method_22607(10.0).method_22601().method_22603().method_22602();
-   public static final Predicate<class_91> field_1874 = var0 -> !var0.method_258() && var0.method_37330() && var0.method_37285();
+   public static final Predicate<class_91> field_1874 = var0 -> !var0.method_258() && var0.isAlive() && var0.method_37285();
 
    public class_449(EntityType<? extends class_449> var1, World var2) {
       super(var1, var2);

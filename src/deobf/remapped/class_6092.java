@@ -259,7 +259,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    public boolean method_27920() {
-      if (!this.method_26859() && this.method_37330()) {
+      if (!this.method_26859() && this.isAlive()) {
          BlockPos var3 = this.method_37075();
 
          for (int var4 = 0; var4 < 5; var4++) {
@@ -345,7 +345,7 @@ public class class_6092 extends class_608 implements class_1869 {
 
    @Override
    public boolean method_37173() {
-      return this.method_37330();
+      return this.isAlive();
    }
 
    public Direction method_27914() {

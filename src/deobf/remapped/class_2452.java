@@ -120,7 +120,7 @@ public class class_2452 {
    private Predicate<class_9359> method_11273() {
       return var1 -> {
          BlockPos var4 = var1.method_37075();
-         return var1.method_37330() && this.field_12189.method_28984(var4) == this;
+         return var1.isAlive() && this.field_12189.method_28984(var4) == this;
       };
    }
 

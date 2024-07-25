@@ -129,7 +129,7 @@ public class KillauraModule extends Module {
          }
 
          if (this.getBooleanValueByName("Disable on death")) {
-            if (!client.thePlayer.method_37330()) {
+            if (!client.thePlayer.isAlive()) {
                this.method_41999();
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Aura", "Aura disabled due to death"));
             }
@@ -309,7 +309,7 @@ public class KillauraModule extends Module {
       GL11.glEnable(2929);
       GL11.glLineWidth(1.4F);
       double var4 = (double) MinecraftClient.getInstance().theTimer.field_32600;
-      if (!var1.method_37330()) {
+      if (!var1.isAlive()) {
          var4 = 0.0;
       }
 
