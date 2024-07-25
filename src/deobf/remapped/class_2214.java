@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public class class_2214<E extends class_5834> extends class_5920<E> {
+public class class_2214<E extends LivingEntity> extends class_5920<E> {
    private final Predicate<E> field_11086;
    private final class_5920<? super E> field_11085;
    private final boolean field_11087;

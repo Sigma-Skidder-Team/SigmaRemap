@@ -10,7 +10,7 @@ public class class_1607 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_8338.method_26531();
+      LivingEntity var3 = this.field_8338.method_26531();
       return this.field_8338.method_37285() && var3 != null ? this.field_8338.method_37275(var3) < 100.0 : false;
    }
 
@@ -22,7 +22,7 @@ public class class_1607 extends class_3599 {
    @Override
    public void method_16794() {
       this.field_8340++;
-      class_5834 var3 = this.field_8338.method_26531();
+      LivingEntity var3 = this.field_8338.method_26531();
       if (var3 != null) {
          class_1343 var4 = new class_1343(
             this.field_8338.method_37302() - var3.getPosX(),

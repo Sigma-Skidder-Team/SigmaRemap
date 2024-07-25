@@ -18,7 +18,7 @@ public class class_8032 extends class_7937 {
       if (!super.method_26442(var1)) {
          return false;
       } else {
-         if (var1 instanceof class_5834) {
+         if (var1 instanceof LivingEntity) {
             byte var4 = 0;
             if (this.world.method_43370() != class_423.field_1789) {
                if (this.world.method_43370() == class_423.field_1782) {
@@ -29,7 +29,7 @@ public class class_8032 extends class_7937 {
             }
 
             if (var4 > 0) {
-               ((class_5834)var1).method_26558(new class_2250(Effects.field_19718, var4 * 20, 0));
+               ((LivingEntity)var1).method_26558(new class_2250(Effects.field_19718, var4 * 20, 0));
             }
          }
 

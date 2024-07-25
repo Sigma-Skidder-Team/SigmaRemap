@@ -14,10 +14,10 @@ public class class_6960 extends class_6127<class_1899> {
    }
 
    public void method_31816(class_6331 var1, class_1899 var2) {
-      var2.method_26525().<List<class_5834>>method_5138(class_6044.field_30901).ifPresent(var2x -> this.method_31815(var2, (List<class_5834>)var2x));
+      var2.method_26525().<List<LivingEntity>>method_5138(class_6044.field_30901).ifPresent(var2x -> this.method_31815(var2, (List<LivingEntity>)var2x));
    }
 
-   private void method_31815(class_1899 var1, List<class_5834> var2) {
+   private void method_31815(class_1899 var1, List<LivingEntity> var2) {
       Optional var5 = var2.stream()
          .filter(var1x -> var1x.getType() == var1.getType())
          .<class_1899>map(var0 -> (class_1899)var0)

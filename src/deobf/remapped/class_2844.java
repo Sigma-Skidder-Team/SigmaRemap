@@ -13,7 +13,7 @@ public class class_2844 extends class_8388 {
       super(EntityType.field_34267, var2, var4, var6, var8, var10, var12, var1);
    }
 
-   public class_2844(World var1, class_5834 var2, double var3, double var5, double var7) {
+   public class_2844(World var1, LivingEntity var2, double var3, double var5, double var7) {
       super(EntityType.field_34267, var2, var3, var5, var7, var1);
    }
 
@@ -22,10 +22,10 @@ public class class_2844 extends class_8388 {
       super.method_26160(var1);
       Entity var4 = this.method_26166();
       if ((var1.method_33990() != class_1430.field_7718 || !((class_5631)var1).method_25524().method_37171(var4)) && !this.world.field_33055) {
-         List var5 = this.world.<class_5834>method_25868(class_5834.class, this.method_37241().method_18899(4.0, 2.0, 4.0));
+         List var5 = this.world.<LivingEntity>method_25868(LivingEntity.class, this.method_37241().method_18899(4.0, 2.0, 4.0));
          class_4478 var6 = new class_4478(this.world, this.getPosX(), this.method_37309(), this.getPosZ());
-         if (var4 instanceof class_5834) {
-            var6.method_20782((class_5834)var4);
+         if (var4 instanceof LivingEntity) {
+            var6.method_20782((LivingEntity)var4);
          }
 
          var6.method_20789(class_3090.field_15315);
@@ -34,7 +34,7 @@ public class class_2844 extends class_8388 {
          var6.method_20780((7.0F - var6.method_20783()) / (float)var6.method_20791());
          var6.method_20788(new class_2250(Effects.field_19723, 1, 1));
          if (!var5.isEmpty()) {
-            for (class_5834 var8 : var5) {
+            for (LivingEntity var8 : var5) {
                double var9 = this.method_37275(var8);
                if (var9 < 16.0) {
                   var6.method_37256(var8.getPosX(), var8.method_37309(), var8.getPosZ());

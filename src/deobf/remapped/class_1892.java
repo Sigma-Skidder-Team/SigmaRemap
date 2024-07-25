@@ -58,7 +58,7 @@ public class class_1892 {
    public static void method_8431(class_6331 var0, Collection<class_2452> var1) {
    }
 
-   public static void method_8440(class_5834 var0) {
+   public static void method_8440(LivingEntity var0) {
    }
 
    public static void method_8435(class_8829 var0) {

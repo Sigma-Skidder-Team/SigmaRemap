@@ -5,7 +5,7 @@ import java.util.EnumSet;
 public class class_1837 extends class_3599 {
    private final MobEntity field_9305;
    private final class_2354 field_9311;
-   private class_5834 field_9303;
+   private LivingEntity field_9303;
    private int field_9302 = -1;
    private final double field_9308;
    private int field_9307;
@@ -19,7 +19,7 @@ public class class_1837 extends class_3599 {
    }
 
    public class_1837(class_2354 var1, double var2, int var4, int var5, float var6) {
-      if (var1 instanceof class_5834) {
+      if (var1 instanceof LivingEntity) {
          this.field_9311 = var1;
          this.field_9305 = (MobEntity)var1;
          this.field_9308 = var2;
@@ -35,7 +35,7 @@ public class class_1837 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_9305.method_17809();
+      LivingEntity var3 = this.field_9305.method_17809();
       if (var3 != null && var3.isAlive()) {
          this.field_9303 = var3;
          return true;

@@ -252,11 +252,11 @@ public class class_7860 {
    );
    public static class_9859 field_39944 = new class_9859("net.minecraftforge.client.event.RenderLivingEvent$Pre");
    public static class_4911 field_40097 = new class_4911(
-      field_39944, new Class[]{class_5834.class, class_6353.class, float.class, class_7966.class, class_2565.class, int.class}
+      field_39944, new Class[]{LivingEntity.class, class_6353.class, float.class, class_7966.class, class_2565.class, int.class}
    );
    public static class_9859 field_39847 = new class_9859("net.minecraftforge.client.event.RenderLivingEvent$Post");
    public static class_4911 field_40037 = new class_4911(
-      field_39847, new Class[]{class_5834.class, class_6353.class, float.class, class_7966.class, class_2565.class, int.class}
+      field_39847, new Class[]{LivingEntity.class, class_6353.class, float.class, class_7966.class, class_2565.class, int.class}
    );
    public static class_9859 field_39958 = new class_9859("net.minecraftforge.client.event.RenderNameplateEvent");
    public static class_4911 field_40248 = new class_4911(

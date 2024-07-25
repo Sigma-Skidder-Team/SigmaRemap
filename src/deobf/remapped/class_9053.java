@@ -11,7 +11,7 @@ public class class_9053 extends class_2550 {
       super(EntityType.field_34216, var2, var4, var6, var8, var10, var12, var1);
    }
 
-   public class_9053(World var1, class_5834 var2, double var3, double var5, double var7) {
+   public class_9053(World var1, LivingEntity var2, double var3, double var5, double var7) {
       super(EntityType.field_34216, var2, var3, var5, var7, var1);
    }
 
@@ -41,8 +41,8 @@ public class class_9053 extends class_2550 {
          Entity var4 = var1.method_25524();
          Entity var5 = this.method_26166();
          var4.attackEntityFrom(DamageSource.method_28375(this, var5), 6.0F);
-         if (var5 instanceof class_5834) {
-            this.method_37096((class_5834)var5, var4);
+         if (var5 instanceof LivingEntity) {
+            this.method_37096((LivingEntity)var5, var4);
          }
       }
    }

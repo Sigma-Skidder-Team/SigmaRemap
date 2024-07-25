@@ -25,7 +25,7 @@ public abstract class class_4382 {
       this.field_21497 = var3;
    }
 
-   public Map<class_6943, ItemStack> method_20420(class_5834 var1) {
+   public Map<class_6943, ItemStack> method_20420(LivingEntity var1) {
       EnumMap var4 = Maps.newEnumMap(class_6943.class);
 
       for (class_6943 var8 : this.field_21497) {
@@ -105,10 +105,10 @@ public abstract class class_4382 {
       return this.field_21496.method_40057(var1.method_27960());
    }
 
-   public void method_20421(class_5834 var1, Entity var2, int var3) {
+   public void method_20421(LivingEntity var1, Entity var2, int var3) {
    }
 
-   public void method_20427(class_5834 var1, Entity var2, int var3) {
+   public void method_20427(LivingEntity var1, Entity var2, int var3) {
    }
 
    public boolean method_20429() {

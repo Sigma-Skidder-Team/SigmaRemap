@@ -40,7 +40,7 @@ public class class_1957 extends class_7067<class_91> {
       ItemStack var9 = var1.method_264();
       int var10 = !var9.method_28022() ? class_2451.method_11244(var9.method_27960()) + var9.method_28026() : 187;
       this.field_9970.setSeed((long)var10);
-      class_7373 var11 = this.field_9971.method_40278(var9, var1.world, (class_5834)null);
+      class_7373 var11 = this.field_9971.method_40278(var9, var1.world, (LivingEntity)null);
       boolean var12 = var11.method_33583();
       int var13 = this.method_9054(var9);
       float var14 = 0.25F;

@@ -5,7 +5,7 @@ import java.util.EnumSet;
 public class class_990 extends class_3599 {
    private static String[] field_5041;
    private final class_912 field_5040;
-   private class_5834 field_5042;
+   private LivingEntity field_5042;
 
    public class_990(class_912 var1) {
       this.field_5040 = var1;

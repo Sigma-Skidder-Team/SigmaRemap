@@ -111,7 +111,7 @@ public class class_7772 {
                }
             }
 
-            if ((this.field_39384 || this.field_39387.field_41763 || this.field_39387 instanceof class_5834 && ((class_5834)this.field_39387).method_26618())
+            if ((this.field_39384 || this.field_39387.field_41763 || this.field_39387 instanceof LivingEntity && ((LivingEntity)this.field_39387).method_26618())
                && this.field_39397 > 0) {
                class_1343 var18 = this.field_39387.method_37098();
                double var19 = var18.method_6204(this.field_39382);
@@ -191,13 +191,13 @@ public class class_7772 {
       }
 
       boolean var5 = this.field_39384;
-      if (this.field_39387 instanceof class_5834) {
-         Collection var6 = ((class_5834)this.field_39387).method_26590().method_30803();
+      if (this.field_39387 instanceof LivingEntity) {
+         Collection var6 = ((LivingEntity)this.field_39387).method_26590().method_30803();
          if (!var6.isEmpty()) {
             var1.accept(new class_4039(this.field_39387.method_37145(), var6));
          }
 
-         if (((class_5834)this.field_39387).method_26618()) {
+         if (((LivingEntity)this.field_39387).method_26618()) {
             var5 = true;
          }
       }
@@ -207,11 +207,11 @@ public class class_7772 {
          var1.accept(new class_4548(this.field_39387.method_37145(), this.field_39382));
       }
 
-      if (this.field_39387 instanceof class_5834) {
+      if (this.field_39387 instanceof LivingEntity) {
          ArrayList var12 = Lists.newArrayList();
 
          for (class_6943 var10 : class_6943.values()) {
-            ItemStack var11 = ((class_5834)this.field_39387).method_26520(var10);
+            ItemStack var11 = ((LivingEntity)this.field_39387).method_26520(var10);
             if (!var11.method_28022()) {
                var12.add(Pair.of(var10, var11.method_27973()));
             }
@@ -222,8 +222,8 @@ public class class_7772 {
          }
       }
 
-      if (this.field_39387 instanceof class_5834) {
-         class_5834 var13 = (class_5834)this.field_39387;
+      if (this.field_39387 instanceof LivingEntity) {
+         LivingEntity var13 = (LivingEntity)this.field_39387;
 
          for (class_2250 var16 : var13.method_26503()) {
             var1.accept(new class_1661(this.field_39387.method_37145(), var16));
@@ -252,8 +252,8 @@ public class class_7772 {
          this.method_35257(new class_8163(this.field_39387.method_37145(), var3, false));
       }
 
-      if (this.field_39387 instanceof class_5834) {
-         Set var4 = ((class_5834)this.field_39387).method_26590().method_30813();
+      if (this.field_39387 instanceof LivingEntity) {
+         Set var4 = ((LivingEntity)this.field_39387).method_26590().method_30813();
          if (!var4.isEmpty()) {
             this.method_35257(new class_4039(this.field_39387.method_37145(), var4));
          }

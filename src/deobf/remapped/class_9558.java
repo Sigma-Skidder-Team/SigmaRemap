@@ -223,7 +223,7 @@ public class class_9558 {
             boolean var3 = var0.method_22796();
             String var4 = var0.method_22749().readUnquotedString();
             var0.method_22758(var2 -> {
-               if (var2 instanceof class_5834) {
+               if (var2 instanceof LivingEntity) {
                   class_5086 var5 = var2.method_37095();
                   String var6 = var5 != null ? var5.method_23383() : "";
                   return var6.equals(var4) != var3;

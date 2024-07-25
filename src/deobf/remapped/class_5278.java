@@ -7,12 +7,12 @@ public class class_5278 extends class_5039 {
    private float field_26985;
    private float field_26987;
    private float field_26982;
-   private class_5834 field_26990;
+   private LivingEntity field_26990;
    private boolean field_26983 = true;
    private boolean field_26984 = true;
    private class_8817 field_26991;
 
-   public class_5278(float var1, float var2, float var3, float var4, float var5, class_5834 var6) {
+   public class_5278(float var1, float var2, float var3, float var4, float var5, LivingEntity var6) {
       this.field_26986 = var1;
       this.field_26989 = var2;
       this.field_26985 = var3;
@@ -66,7 +66,7 @@ public class class_5278 extends class_5039 {
       this.field_26987 = var1;
    }
 
-   public class_5834 method_24098() {
+   public LivingEntity method_24098() {
       return this.field_26990;
    }
 

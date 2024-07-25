@@ -30,8 +30,8 @@ public class class_7908 implements class_1979 {
 
    @Override
    public int method_9097() {
-      if (this.field_40430 instanceof class_5834) {
-         class_5834 var3 = (class_5834)this.field_40430;
+      if (this.field_40430 instanceof LivingEntity) {
+         LivingEntity var3 = (LivingEntity)this.field_40430;
          return (int)var3.method_26551();
       } else {
          return 0;
@@ -40,8 +40,8 @@ public class class_7908 implements class_1979 {
 
    @Override
    public int method_9096() {
-      if (this.field_40430 instanceof class_5834) {
-         class_5834 var3 = (class_5834)this.field_40430;
+      if (this.field_40430 instanceof LivingEntity) {
+         LivingEntity var3 = (LivingEntity)this.field_40430;
          return (int)var3.method_26465();
       } else {
          return 0;

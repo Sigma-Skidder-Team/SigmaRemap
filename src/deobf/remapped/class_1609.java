@@ -22,7 +22,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
       this.field_8348 = new class_9625<AbstractRaiderEntity>(
          this, AbstractRaiderEntity.class, true, var1 -> var1 != null && this.method_18600() && var1.getType() != EntityType.field_34220
       );
-      this.field_8349 = new class_2978<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<class_5834>)null);
+      this.field_8349 = new class_2978<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<LivingEntity>)null);
       this.goalSelector.addGoal(1, new SwimGoal(this));
       this.goalSelector.addGoal(2, new class_1837(this, 1.0, 60, 10.0F));
       this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0));
@@ -179,7 +179,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       if (!this.method_7190()) {
          class_1343 var5 = var1.method_37098();
          double var6 = var1.getPosX() + var5.field_7336 - this.getPosX();
@@ -202,7 +202,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
                var13 = class_3697.field_18117;
             }
 
-            this.method_26860((class_5834)null);
+            this.method_26860((LivingEntity)null);
          }
 
          class_8011 var14 = new class_8011(this.world, this);

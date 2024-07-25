@@ -3,12 +3,12 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.function.BiPredicate;
 
-public class class_9273 extends class_5920<class_5834> {
+public class class_9273 extends class_5920<LivingEntity> {
    private static String[] field_47307;
    private final int field_47306;
-   private final BiPredicate<class_5834, class_5834> field_47305;
+   private final BiPredicate<LivingEntity, LivingEntity> field_47305;
 
-   public class_9273(int var1, BiPredicate<class_5834, class_5834> var2) {
+   public class_9273(int var1, BiPredicate<LivingEntity, LivingEntity> var2) {
       super(
          ImmutableMap.of(
             class_6044.field_30884,
@@ -26,13 +26,13 @@ public class class_9273 extends class_5920<class_5834> {
    }
 
    @Override
-   public boolean method_27088(class_6331 var1, class_5834 var2) {
+   public boolean method_27088(class_6331 var1, LivingEntity var2) {
       return this.method_42725(var2).method_26450();
    }
 
    @Override
-   public void method_27080(class_6331 var1, class_5834 var2, long var3) {
-      class_5834 var7 = this.method_42725(var2);
+   public void method_27080(class_6331 var1, LivingEntity var2, long var3) {
+      LivingEntity var7 = this.method_42725(var2);
       if (this.field_47305.test(var2, var7)) {
          var2.method_26525().method_5107(class_6044.field_30862, true, (long)this.field_47306);
       }
@@ -44,7 +44,7 @@ public class class_9273 extends class_5920<class_5834> {
       }
    }
 
-   private class_5834 method_42725(class_5834 var1) {
-      return var1.method_26525().<class_5834>method_5138(class_6044.field_30884).get();
+   private LivingEntity method_42725(LivingEntity var1) {
+      return var1.method_26525().<LivingEntity>method_5138(class_6044.field_30884).get();
    }
 }

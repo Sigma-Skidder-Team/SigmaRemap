@@ -116,9 +116,9 @@ public class class_8803 {
       }
 
       for (Entity var11 : var1) {
-         if (var11 instanceof class_5834) {
+         if (var11 instanceof LivingEntity) {
             class_2250 var12 = new class_2250(var2, var9, var4, false, var5);
-            if (((class_5834)var11).method_26558(var12)) {
+            if (((LivingEntity)var11).method_26558(var12)) {
                var8++;
             }
          }
@@ -146,7 +146,7 @@ public class class_8803 {
       int var4 = 0;
 
       for (Entity var6 : var1) {
-         if (var6 instanceof class_5834 && ((class_5834)var6).method_26523()) {
+         if (var6 instanceof LivingEntity && ((LivingEntity)var6).method_26523()) {
             var4++;
          }
       }
@@ -170,7 +170,7 @@ public class class_8803 {
       int var5 = 0;
 
       for (Entity var7 : var1) {
-         if (var7 instanceof class_5834 && ((class_5834)var7).removeEffect(var2)) {
+         if (var7 instanceof LivingEntity && ((LivingEntity)var7).removeEffect(var2)) {
             var5++;
          }
       }

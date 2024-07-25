@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1721<T extends class_5834> extends NearestAttackableTargetGoal<T> {
+public class class_1721<T extends LivingEntity> extends NearestAttackableTargetGoal<T> {
    private static String[] field_8889;
 
    public class_1721(class_7937 var1, Class<T> var2) {

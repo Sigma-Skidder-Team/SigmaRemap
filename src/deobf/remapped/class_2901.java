@@ -19,6 +19,6 @@ public class class_2901 extends class_5920<class_7666> {
    }
 
    private static boolean method_13270(class_7666 var0) {
-      return var0.method_26525().<class_5834>method_5138(class_6044.field_30859).filter(var1 -> var1.method_37275(var0) <= 36.0).isPresent();
+      return var0.method_26525().<LivingEntity>method_5138(class_6044.field_30859).filter(var1 -> var1.method_37275(var0) <= 36.0).isPresent();
    }
 }

@@ -147,7 +147,7 @@ public class class_4134 extends class_7637 implements class_3832 {
       if (super.method_37344(var1)) {
          return true;
       } else {
-         return var1 instanceof class_5834 && ((class_5834)var1).method_26550() == class_2780.field_13576
+         return var1 instanceof LivingEntity && ((LivingEntity)var1).method_26550() == class_2780.field_13576
             ? this.method_37095() == null && var1.method_37095() == null
             : false;
       }
@@ -169,12 +169,12 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       this.method_17815(this, 1.6F);
    }
 
    @Override
-   public void method_17812(class_5834 var1, ItemStack var2, class_5783 var3, float var4) {
+   public void method_17812(LivingEntity var1, ItemStack var2, class_5783 var3, float var4) {
       this.method_17811(this, var1, var3, var4, 1.6F);
    }
 

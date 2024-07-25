@@ -169,8 +169,8 @@ public class class_2730 {
                   double var48 = (1.0 - var36) * var46;
                   var35.attackEntityFrom(this.method_12274(), (float)((int)((var48 * var48 + var48) / 2.0 * 7.0 * (double)var53 + 1.0)));
                   double var50 = var48;
-                  if (var35 instanceof class_5834) {
-                     var50 = class_5139.method_23553((class_5834)var35, var48);
+                  if (var35 instanceof LivingEntity) {
+                     var50 = class_5139.method_23553((LivingEntity)var35, var48);
                   }
 
                   var35.method_37215(var35.method_37098().method_6214(var38 * var50, var40 * var50, var42 * var50));
@@ -287,20 +287,20 @@ public class class_2730 {
    }
 
    @Nullable
-   public class_5834 method_12273() {
+   public LivingEntity method_12273() {
       if (this.field_13323 != null) {
          if (!(this.field_13323 instanceof class_1356)) {
-            if (!(this.field_13323 instanceof class_5834)) {
+            if (!(this.field_13323 instanceof LivingEntity)) {
                if (this.field_13323 instanceof class_5783) {
                   Entity var3 = ((class_5783)this.field_13323).method_26166();
-                  if (var3 instanceof class_5834) {
-                     return (class_5834)var3;
+                  if (var3 instanceof LivingEntity) {
+                     return (LivingEntity)var3;
                   }
                }
 
                return null;
             } else {
-               return (class_5834)this.field_13323;
+               return (LivingEntity)this.field_13323;
             }
          } else {
             return ((class_1356)this.field_13323).method_6256();

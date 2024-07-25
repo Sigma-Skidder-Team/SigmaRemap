@@ -79,7 +79,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       class_6889 var5 = new class_6889(this.world, this);
       double var6 = var1.method_37388() - 1.1F;
       double var8 = var1.getPosX() - this.getPosX();

@@ -32,8 +32,8 @@ public enum class_7340 implements class_1342 {
    @Override
    public boolean method_6191() {
       Entity var3 = MinecraftClient.getInstance().getRenderViewEntity();
-      if (var3 instanceof class_5834) {
-         class_5834 var4 = (class_5834)var3;
+      if (var3 instanceof LivingEntity) {
+         LivingEntity var4 = (LivingEntity)var3;
          switch (this) {
             case field_37541:
                return var4.isAlive();

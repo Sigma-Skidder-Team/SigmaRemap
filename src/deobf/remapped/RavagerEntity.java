@@ -72,7 +72,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
 
    @Override
    public class_1249 createNavigator(World var1) {
-      return new class_9052(this, var1);
+      return new Navigator(this, var1);
    }
 
    @Override
@@ -86,8 +86,8 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    @Override
-   public boolean method_26863() {
-      return !this.method_26859() && this.getControllingPassenger() instanceof class_5834;
+   public boolean canBeSteered() {
+      return !this.isAIDisabled() && this.getControllingPassenger() instanceof LivingEntity;
    }
 
    @Nullable
@@ -178,7 +178,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    @Override
-   public void method_26469(class_5834 var1) {
+   public void method_26469(LivingEntity var1) {
       if (this.roarTick == 0) {
          if (!(this.field_41717.nextDouble() < 0.5)) {
             this.method_35658(var1);
@@ -195,7 +195,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
 
    private void method_35657() {
       if (this.isAlive()) {
-         for (Entity var4 : this.world.<Entity>method_25869(class_5834.class, this.method_37241().method_18898(4.0), field_40350)) {
+         for (Entity var4 : this.world.<Entity>method_25869(LivingEntity.class, this.method_37241().method_18898(4.0), field_40350)) {
             if (!(var4 instanceof class_7637)) {
                var4.attackEntityFrom(DamageSource.method_28345(this), 6.0F);
             }

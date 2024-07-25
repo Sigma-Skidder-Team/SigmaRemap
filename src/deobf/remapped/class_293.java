@@ -215,7 +215,7 @@ public class class_293 {
                      var29 != var1.method_41633()
                         || var23
                         || var1.method_41648()
-                        || var1.method_41633() instanceof class_5834 && ((class_5834)var1.method_41633()).method_26507()
+                        || var1.method_41633() instanceof LivingEntity && ((LivingEntity)var1.method_41633()).method_26507()
                   )
                   && (!(var29 instanceof ClientPlayerEntity) || var1.method_41633() == var29)) {
                   var20.field_21016 = var29;

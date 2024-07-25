@@ -58,19 +58,19 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      if (var1 instanceof class_5834) {
+      if (var1 instanceof LivingEntity) {
          this.field_34611 = 10;
          this.world.method_29587(this, (byte)4);
          this.method_37155(class_463.field_2523, 1.0F, this.method_26547());
-         class_6902.method_31606(this, (class_5834)var1);
-         return class_9479.method_43797(this, (class_5834)var1);
+         class_6902.method_31606(this, (LivingEntity)var1);
+         return class_9479.method_43797(this, (LivingEntity)var1);
       } else {
          return false;
       }
    }
 
    @Override
-   public void method_26469(class_5834 var1) {
+   public void method_26469(LivingEntity var1) {
       if (this.method_30714()) {
          class_9479.method_43796(this, var1);
       }
@@ -80,8 +80,8 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       boolean var5 = super.attackEntityFrom(var1, var2);
       if (!this.world.field_33055) {
-         if (var5 && var1.method_28372() instanceof class_5834) {
-            class_6902.method_31607(this, (class_5834)var1.method_28372());
+         if (var5 && var1.method_28372() instanceof LivingEntity) {
+            class_6902.method_31607(this, (LivingEntity)var1.method_28372());
          }
 
          return var5;
@@ -262,7 +262,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    public boolean method_30710() {
-      return !this.world.method_22572().method_40227() && !this.method_30709() && !this.method_26859();
+      return !this.world.method_22572().method_40227() && !this.method_30709() && !this.isAIDisabled();
    }
 
    private void method_30708(boolean var1) {

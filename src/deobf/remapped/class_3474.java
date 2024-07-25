@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class class_3474<E extends class_5834> extends class_5920<E> {
+public class class_3474<E extends LivingEntity> extends class_5920<E> {
    private final Set<class_6044<?>> field_17034;
    private final class_6681 field_17035;
    private final class_5351 field_17036;

@@ -121,7 +121,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public boolean method_26863() {
+   public boolean canBeSteered() {
       Entity var3 = this.getControllingPassenger();
       if (!(var3 instanceof PlayerEntity)) {
          return false;
@@ -143,7 +143,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_1343 method_37282(class_5834 var1) {
+   public class_1343 method_37282(LivingEntity var1) {
       class_1343[] var4 = new class_1343[]{
          method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw),
          method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw - 22.5F),

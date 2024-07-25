@@ -10,7 +10,7 @@ public class class_8050 extends class_9335 {
    @Override
    public boolean method_16795() {
       if (this.field_41216.method_25170()) {
-         class_5834 var3 = this.field_41216.method_17809();
+         LivingEntity var3 = this.field_41216.method_17809();
          if (var3 != null && var3.isAlive()) {
             if (var3.method_37235() == var3.method_37365()) {
                boolean var4 = class_5542.method_25207(this.field_41216, var3);
@@ -34,7 +34,7 @@ public class class_8050 extends class_9335 {
 
    @Override
    public boolean method_16799() {
-      class_5834 var3 = this.field_41216.method_17809();
+      LivingEntity var3 = this.field_41216.method_17809();
       if (var3 != null && var3.isAlive()) {
          double var4 = this.field_41216.method_37098().field_7333;
          return (!(var4 * var4 < 0.05F) || !(Math.abs(this.field_41216.field_41755) < 15.0F) || !this.field_41216.field_41726)
@@ -54,7 +54,7 @@ public class class_8050 extends class_9335 {
       this.field_41216.method_26528(true);
       this.field_41216.method_25171(true);
       this.field_41216.method_25181(false);
-      class_5834 var3 = this.field_41216.method_17809();
+      LivingEntity var3 = this.field_41216.method_17809();
       this.field_41216.method_26865().method_17240(var3, 60.0F, 30.0F);
       class_1343 var4 = new class_1343(
             var3.getPosX() - this.field_41216.method_37302(),
@@ -77,7 +77,7 @@ public class class_8050 extends class_9335 {
 
    @Override
    public void method_16794() {
-      class_5834 var3 = this.field_41216.method_17809();
+      LivingEntity var3 = this.field_41216.method_17809();
       if (var3 != null) {
          this.field_41216.method_26865().method_17240(var3, 60.0F, 30.0F);
       }
@@ -100,7 +100,7 @@ public class class_8050 extends class_9335 {
          && (float)this.field_41216.method_37098().field_7333 != 0.0F
          && this.field_41216.field_41768.method_28262(this.field_41216.method_37075()).method_8350(class_4783.field_23552)) {
          this.field_41216.field_41755 = 60.0F;
-         this.field_41216.method_26860((class_5834)null);
+         this.field_41216.method_26860((LivingEntity)null);
          class_5542.method_25203(this.field_41216, true);
       }
    }

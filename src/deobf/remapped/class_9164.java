@@ -22,7 +22,7 @@ public class class_9164 {
       this.field_46901 = var1.method_8511();
    }
 
-   public void method_42248(class_5834 var1, ItemStack var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, int var7) {
+   public void method_42248(LivingEntity var1, ItemStack var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, int var7) {
       class_3290.method_15104(var4);
       if (!var2.method_28022()) {
          this.field_46901.method_40268(var1, var2, var3, var4, var5, var6, var1.world, var7, class_5367.field_27381);

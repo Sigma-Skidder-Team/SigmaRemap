@@ -20,10 +20,10 @@ public class AimbotModule extends SecondModule {
          Entity var7 = (Entity)var6.next();
          if (var7 != client.thePlayer) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var7)) {
-               if (var7 instanceof class_5834) {
-                  if (((class_5834)var7).method_26551() != 0.0F) {
+               if (var7 instanceof LivingEntity) {
+                  if (((LivingEntity)var7).method_26551() != 0.0F) {
                      if (!(client.thePlayer.method_37175(var7) > var1)) {
-                        if (client.thePlayer.method_26608((class_5834)var7)) {
+                        if (client.thePlayer.method_26608((LivingEntity)var7)) {
                            if (!(var7 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var7 instanceof PlayerEntity) {
                                  var6.remove();

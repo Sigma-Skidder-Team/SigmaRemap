@@ -186,9 +186,9 @@ public class AutoCrystalModule extends PremiumModule {
       double var15 = (1.0 - var10) * var13;
       float var17 = (float)((int)((var15 * var15 + var15) / 2.0 * 7.0 * (double)var9 + 1.0));
       double var18 = 1.0;
-      if (var6 instanceof class_5834) {
+      if (var6 instanceof LivingEntity) {
          var18 = (double)method_44023(
-            (class_5834)var6,
+            (LivingEntity)var6,
             method_44028(var17),
             new class_2730(client.theWorld, null, null, null, var0, var2, var4, 6.0F, false, class_7298.field_37309)
          );
@@ -202,7 +202,7 @@ public class AutoCrystalModule extends PremiumModule {
       return var0 * (var3 != 0 ? (var3 != 2 ? (var3 != 1 ? 1.5F : 0.5F) : 1.0F) : 0.0F);
    }
 
-   public static float method_44023(class_5834 var0, float var1, class_2730 var2) {
+   public static float method_44023(LivingEntity var0, float var1, class_2730 var2) {
       if (!(var0 instanceof PlayerEntity)) {
          return class_6357.method_29129(var1, (float)var0.method_26565(), (float)var0.method_26575(Attributes.field_37472));
       } else {
@@ -243,10 +243,10 @@ public class AutoCrystalModule extends PremiumModule {
          Entity var6 = (Entity)var5.next();
          if (var6 != client.thePlayer) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
-               if (var6 instanceof class_5834) {
-                  if (((class_5834)var6).method_26551() != 0.0F) {
+               if (var6 instanceof LivingEntity) {
+                  if (((LivingEntity)var6).method_26551() != 0.0F) {
                      if (!(client.thePlayer.method_37175(var6) > var1)) {
-                        if (client.thePlayer.method_26608((class_5834)var6)) {
+                        if (client.thePlayer.method_26608((LivingEntity)var6)) {
                            if (!(var6 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var6 instanceof PlayerEntity) {
                                  var5.remove();

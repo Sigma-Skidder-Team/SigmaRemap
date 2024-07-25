@@ -48,7 +48,7 @@ public class class_2451 implements class_8525 {
       this.field_12175 = class_317.method_1484(var1);
    }
 
-   public void method_11228(World var1, class_5834 var2, ItemStack var3, int var4) {
+   public void method_11228(World var1, LivingEntity var2, ItemStack var3, int var4) {
    }
 
    public boolean method_11215(CompoundNBT var1) {
@@ -86,7 +86,7 @@ public class class_2451 implements class_8525 {
       }
    }
 
-   public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
+   public ItemStack method_11242(ItemStack var1, World var2, LivingEntity var3) {
       return !this.method_11247() ? var1 : var3.method_26426(var2, var1);
    }
 
@@ -102,11 +102,11 @@ public class class_2451 implements class_8525 {
       return this.field_12176 > 0;
    }
 
-   public boolean method_11246(ItemStack var1, class_5834 var2, class_5834 var3) {
+   public boolean method_11246(ItemStack var1, LivingEntity var2, LivingEntity var3) {
       return false;
    }
 
-   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, BlockPos var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, BlockPos var4, LivingEntity var5) {
       return false;
    }
 
@@ -114,7 +114,7 @@ public class class_2451 implements class_8525 {
       return false;
    }
 
-   public class_6910 method_11202(ItemStack var1, PlayerEntity var2, class_5834 var3, Hand var4) {
+   public class_6910 method_11202(ItemStack var1, PlayerEntity var2, LivingEntity var3, Hand var4) {
       return class_6910.field_35521;
    }
 
@@ -178,7 +178,7 @@ public class class_2451 implements class_8525 {
       }
    }
 
-   public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
+   public void method_11206(ItemStack var1, World var2, LivingEntity var3, int var4) {
    }
 
    public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {

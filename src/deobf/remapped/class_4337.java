@@ -6,7 +6,7 @@ import java.util.List;
 public class class_4337 extends class_956 {
    private static String[] field_21081;
    private final IronGolemEntity field_21080;
-   private class_5834 field_21083;
+   private LivingEntity field_21083;
    private final class_4931 field_21082 = new class_4931().method_22607(64.0);
 
    public class_4337(IronGolemEntity var1) {
@@ -21,7 +21,7 @@ public class class_4337 extends class_956 {
       List var4 = this.field_21080.world.<class_7666>method_25863(class_7666.class, this.field_21082, this.field_21080, var3);
       List var5 = this.field_21080.world.method_25871(this.field_21082, this.field_21080, var3);
 
-      for (class_5834 var7 : var4) {
+      for (LivingEntity var7 : var4) {
          class_7666 var8 = (class_7666)var7;
 
          for (PlayerEntity var10 : var5) {

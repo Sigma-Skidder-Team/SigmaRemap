@@ -3,7 +3,7 @@ package remapped;
 public interface class_9479 {
    int method_43795();
 
-   static boolean method_43797(class_5834 var0, class_5834 var1) {
+   static boolean method_43797(LivingEntity var0, LivingEntity var1) {
       float var4 = (float)var0.method_26575(Attributes.ATTACK_DAMAGE);
       float var5;
       if (!var0.method_26449() && (int)var4 > 0) {
@@ -23,7 +23,7 @@ public interface class_9479 {
       return var6;
    }
 
-   static void method_43796(class_5834 var0, class_5834 var1) {
+   static void method_43796(LivingEntity var0, LivingEntity var1) {
       double var4 = var0.method_26575(Attributes.ATTACK_KNOCKBACK);
       double var6 = var1.method_26575(Attributes.KNOCKBACK_RESISTANCE);
       double var8 = var4 - var6;

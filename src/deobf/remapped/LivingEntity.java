@@ -21,17 +21,17 @@ import java.util.UUID;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public abstract class class_5834 extends Entity {
+public abstract class LivingEntity extends Entity {
    private static final UUID field_29647 = UUID.fromString("662A6B8D-DA3E-4C1C-8813-96EA6097278D");
    private static final UUID field_29641 = UUID.fromString("87f46a96-686f-4796-b035-22e16ee9e038");
    private static final class_9343 field_29633 = new class_9343(field_29647, "Sprinting speed boost", 0.3F, class_9342.field_47677);
-   public static final class_7821<Byte> field_29638 = class_8073.<Byte>method_36641(class_5834.class, class_2734.field_13361);
-   private static final class_7821<Float> field_29627 = class_8073.<Float>method_36641(class_5834.class, class_2734.field_13350);
-   private static final class_7821<Integer> field_29640 = class_8073.<Integer>method_36641(class_5834.class, class_2734.field_13366);
-   private static final class_7821<Boolean> field_29626 = class_8073.<Boolean>method_36641(class_5834.class, class_2734.field_13347);
-   private static final class_7821<Integer> field_29631 = class_8073.<Integer>method_36641(class_5834.class, class_2734.field_13366);
-   private static final class_7821<Integer> field_29610 = class_8073.<Integer>method_36641(class_5834.class, class_2734.field_13366);
-   private static final class_7821<Optional<BlockPos>> field_29621 = class_8073.<Optional<BlockPos>>method_36641(class_5834.class, class_2734.field_13352);
+   public static final class_7821<Byte> field_29638 = class_8073.<Byte>method_36641(LivingEntity.class, class_2734.field_13361);
+   private static final class_7821<Float> field_29627 = class_8073.<Float>method_36641(LivingEntity.class, class_2734.field_13350);
+   private static final class_7821<Integer> field_29640 = class_8073.<Integer>method_36641(LivingEntity.class, class_2734.field_13366);
+   private static final class_7821<Boolean> field_29626 = class_8073.<Boolean>method_36641(LivingEntity.class, class_2734.field_13347);
+   private static final class_7821<Integer> field_29631 = class_8073.<Integer>method_36641(LivingEntity.class, class_2734.field_13366);
+   private static final class_7821<Integer> field_29610 = class_8073.<Integer>method_36641(LivingEntity.class, class_2734.field_13366);
+   private static final class_7821<Optional<BlockPos>> field_29621 = class_8073.<Optional<BlockPos>>method_36641(LivingEntity.class, class_2734.field_13352);
    public static final class_6097 field_29629 = class_6097.method_27941(0.2F, 0.2F);
    private final class_6711 field_29603;
    private final class_3435 field_29649 = new class_3435(this);
@@ -85,9 +85,9 @@ public abstract class class_5834 extends Entity {
    public double field_29614;
    public int field_29653;
    private boolean field_29628 = true;
-   private class_5834 field_29663;
+   private LivingEntity field_29663;
    private int field_29636;
-   private class_5834 field_29623;
+   private LivingEntity field_29623;
    private int field_29635;
    private float field_29655;
    public int field_29600;
@@ -104,7 +104,7 @@ public abstract class class_5834 extends Entity {
    private float field_29624;
    public class_1150<?> field_29675;
 
-   public class_5834(EntityType<? extends class_5834> var1, World var2) {
+   public LivingEntity(EntityType<? extends LivingEntity> var1, World var2) {
       super(var1, var2);
       this.field_29603 = new class_6711(class_9030.method_41423(var1));
       this.method_26456(this.method_26465());
@@ -305,10 +305,10 @@ public abstract class class_5834 extends Entity {
       if (this.field_29663 != null) {
          if (this.field_29663.isAlive()) {
             if (this.field_41697 - this.field_29636 > 100) {
-               this.method_26511((class_5834)null);
+               this.method_26511((LivingEntity)null);
             }
          } else {
-            this.method_26511((class_5834)null);
+            this.method_26511((LivingEntity)null);
          }
       }
 
@@ -458,7 +458,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Nullable
-   public class_5834 method_26531() {
+   public LivingEntity method_26531() {
       return this.field_29663;
    }
 
@@ -471,13 +471,13 @@ public abstract class class_5834 extends Entity {
       this.field_29665 = this.field_41697;
    }
 
-   public void method_26511(class_5834 var1) {
+   public void method_26511(LivingEntity var1) {
       this.field_29663 = var1;
       this.field_29636 = this.field_41697;
    }
 
    @Nullable
-   public class_5834 method_26455() {
+   public LivingEntity method_26455() {
       return this.field_29623;
    }
 
@@ -486,10 +486,10 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26510(Entity var1) {
-      if (!(var1 instanceof class_5834)) {
+      if (!(var1 instanceof LivingEntity)) {
          this.field_29623 = null;
       } else {
-         this.field_29623 = (class_5834)var1;
+         this.field_29623 = (LivingEntity)var1;
       }
 
       this.field_29635 = this.field_41697;
@@ -700,11 +700,11 @@ public abstract class class_5834 extends Entity {
       return var4;
    }
 
-   public boolean method_26608(class_5834 var1) {
+   public boolean method_26608(LivingEntity var1) {
       return true;
    }
 
-   public boolean method_26609(class_5834 var1, class_4931 var2) {
+   public boolean method_26609(LivingEntity var1, class_4931 var2) {
       return var2.method_22604(this, var1);
    }
 
@@ -889,8 +889,8 @@ public abstract class class_5834 extends Entity {
                var2 = 0.0F;
                if (!var1.method_28357()) {
                   Entity var8 = var1.method_28353();
-                  if (var8 instanceof class_5834) {
-                     this.method_26548((class_5834)var8);
+                  if (var8 instanceof LivingEntity) {
+                     this.method_26548((LivingEntity)var8);
                   }
                }
 
@@ -918,8 +918,8 @@ public abstract class class_5834 extends Entity {
             this.field_29608 = 0.0F;
             Entity var9 = var1.method_28372();
             if (var9 != null) {
-               if (var9 instanceof class_5834) {
-                  this.method_26511((class_5834)var9);
+               if (var9 instanceof LivingEntity) {
+                  this.method_26511((LivingEntity)var9);
                }
 
                if (!(var9 instanceof PlayerEntity)) {
@@ -927,7 +927,7 @@ public abstract class class_5834 extends Entity {
                      class_9408 var10 = (class_9408)var9;
                      if (var10.method_41215()) {
                         this.field_29665 = 100;
-                        class_5834 var11 = var10.method_41207();
+                        LivingEntity var11 = var10.method_41207();
                         if (var11 != null && var11.getType() == EntityType.field_34300) {
                            this.field_29634 = (PlayerEntity)var11;
                         } else {
@@ -1026,11 +1026,11 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26548(class_5834 var1) {
+   public void method_26548(LivingEntity var1) {
       var1.method_26469(this);
    }
 
-   public void method_26469(class_5834 var1) {
+   public void method_26469(LivingEntity var1) {
       var1.method_26567(0.5F, var1.getPosX() - this.getPosX(), var1.getPosZ() - this.getPosZ());
    }
 
@@ -1132,7 +1132,7 @@ public abstract class class_5834 extends Entity {
    public void method_26452(DamageSource var1) {
       if (!this.field_41751 && !this.field_29659) {
          Entity var4 = var1.method_28372();
-         class_5834 var5 = this.method_26560();
+         LivingEntity var5 = this.method_26560();
          if (this.field_29644 >= 0 && var5 != null) {
             var5.method_37392(this, this.field_29644, var1);
          }
@@ -1157,7 +1157,7 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26487(class_5834 var1) {
+   public void method_26487(LivingEntity var1) {
       if (!this.world.field_33055) {
          boolean var4 = false;
          if (var1 instanceof class_4653) {
@@ -1186,7 +1186,7 @@ public abstract class class_5834 extends Entity {
       if (!(var4 instanceof PlayerEntity)) {
          var5 = 0;
       } else {
-         var5 = class_2931.method_13397((class_5834)var4);
+         var5 = class_2931.method_13397((LivingEntity)var4);
       }
 
       boolean var6 = this.field_29665 > 0;
@@ -1453,7 +1453,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Nullable
-   public class_5834 method_26560() {
+   public LivingEntity method_26560() {
       if (this.field_29649.method_15876() == null) {
          if (this.field_29634 == null) {
             return this.field_29663 == null ? null : this.field_29663;
@@ -2001,7 +2001,7 @@ public abstract class class_5834 extends Entity {
       this.method_26418(this, this instanceof class_674);
    }
 
-   public void method_26418(class_5834 var1, boolean var2) {
+   public void method_26418(LivingEntity var1, boolean var2) {
       var1.field_29598 = var1.field_29643;
       double var5 = var1.getPosX() - var1.field_41767;
       double var7 = !var2 ? 0.0 : var1.method_37309() - var1.field_41698;
@@ -2494,8 +2494,8 @@ public abstract class class_5834 extends Entity {
       } else {
          for (int var7 = 0; var7 < var6.size(); var7++) {
             Entity var8 = (Entity)var6.get(var7);
-            if (var8 instanceof class_5834) {
-               this.method_26539((class_5834)var8);
+            if (var8 instanceof LivingEntity) {
+               this.method_26539((LivingEntity)var8);
                this.field_29630 = 0;
                this.method_37215(this.method_37098().method_6209(-0.2));
                break;
@@ -2512,7 +2512,7 @@ public abstract class class_5834 extends Entity {
       var1.method_37183(this);
    }
 
-   public void method_26539(class_5834 var1) {
+   public void method_26539(LivingEntity var1) {
    }
 
    public void method_26445(int var1) {
@@ -3068,7 +3068,7 @@ public abstract class class_5834 extends Entity {
       return var2;
    }
 
-   private void method_26497(ItemStack var1, World var2, class_5834 var3) {
+   private void method_26497(ItemStack var1, World var2, LivingEntity var3) {
       class_2451 var6 = var1.method_27960();
       if (var6.method_11247()) {
          for (Pair var8 : var6.method_11227().method_38408()) {

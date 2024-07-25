@@ -6,7 +6,7 @@ import com.mojang.datafixers.util.Pair;
 import java.util.List;
 import java.util.Map;
 
-public class class_5197<E extends class_5834> extends class_3474<E> {
+public class class_5197<E extends LivingEntity> extends class_3474<E> {
    private static String[] field_26730;
 
    public class_5197(List<Pair<class_5920<? super E>, Integer>> var1) {

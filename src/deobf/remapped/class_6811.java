@@ -4,7 +4,7 @@ public class class_6811 {
    private static String[] field_35143;
    private static final MinecraftClient field_35144 = MinecraftClient.getInstance();
 
-   public static double[] method_31263(class_5834 var0) {
+   public static double[] method_31263(LivingEntity var0) {
       if (var0 != null) {
          double var3 = var0.getPosX() - var0.field_41754;
          double var5 = 0.0;
@@ -15,7 +15,7 @@ public class class_6811 {
       }
    }
 
-   public static double[] method_31265(class_5834 var0) {
+   public static double[] method_31265(LivingEntity var0) {
       if (var0 != null) {
          double var3 = var0.getPosX() - var0.field_41754;
          double var5 = 0.0;

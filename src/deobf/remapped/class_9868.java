@@ -16,7 +16,7 @@ public class class_9868 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_49920.method_17809();
+      LivingEntity var3 = this.field_49920.method_17809();
       return var3 != null && var3.isAlive();
    }
 
@@ -36,13 +36,13 @@ public class class_9868 extends class_3599 {
    @Override
    public void method_16793() {
       class_337.method_1550(this.field_49920, 0);
-      this.field_49920.method_26860((class_5834)null);
+      this.field_49920.method_26860((LivingEntity)null);
       this.field_49920.field_1260.method_38234();
    }
 
    @Override
    public void method_16794() {
-      class_5834 var3 = this.field_49920.method_17809();
+      LivingEntity var3 = this.field_49920.method_17809();
       this.field_49920.method_26927().method_5620();
       this.field_49920.method_26865().method_17240(var3, 90.0F, 90.0F);
       if (this.field_49920.method_26420(var3)) {
@@ -60,7 +60,7 @@ public class class_9868 extends class_3599 {
 
                var3.attackEntityFrom(DamageSource.method_28369(this.field_49920, this.field_49920), var4);
                var3.attackEntityFrom(DamageSource.method_28345(this.field_49920), (float)this.field_49920.method_26575(Attributes.ATTACK_DAMAGE));
-               this.field_49920.method_26860((class_5834)null);
+               this.field_49920.method_26860((LivingEntity)null);
             }
          } else {
             class_337.method_1550(this.field_49920, this.field_49920.method_17809().method_37145());
@@ -71,7 +71,7 @@ public class class_9868 extends class_3599 {
 
          super.method_16794();
       } else {
-         this.field_49920.method_26860((class_5834)null);
+         this.field_49920.method_26860((LivingEntity)null);
       }
    }
 }

@@ -16,7 +16,7 @@ public abstract class class_551 extends class_2451 {
 
    public abstract Predicate<ItemStack> method_2655();
 
-   public static ItemStack method_2656(class_5834 var0, Predicate<ItemStack> var1) {
+   public static ItemStack method_2656(LivingEntity var0, Predicate<ItemStack> var1) {
       if (!var1.test(var0.method_26617(Hand.OFF_HAND))) {
          return !var1.test(var0.method_26617(Hand.MAIN_HAND)) ? ItemStack.EMPTY : var0.method_26617(Hand.MAIN_HAND);
       } else {

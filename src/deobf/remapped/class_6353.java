@@ -7,11 +7,11 @@ import net.minecraft.util.text.TextFormatting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public abstract class class_6353<T extends class_5834, M extends class_6521<T>> extends class_7067<T> implements class_2514<T, M> {
+public abstract class class_6353<T extends LivingEntity, M extends class_6521<T>> extends class_7067<T> implements class_2514<T, M> {
    private static final Logger field_32478 = LogManager.getLogger();
    public M field_32487;
    public final List<class_4171<T, M>> field_32480 = Lists.newArrayList();
-   public class_5834 field_32481;
+   public LivingEntity field_32481;
    public float field_32485;
    public float field_32484;
    public float field_32482;
@@ -55,8 +55,8 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          float var9 = class_9299.method_42837(var3, var1.field_29611, var1.field_29605);
          float var10 = class_9299.method_42837(var3, var1.field_29657, var1.field_29618);
          float var11 = var10 - var9;
-         if (this.field_32487.field_33203 && var1.getRidingEntity() instanceof class_5834) {
-            class_5834 var12 = (class_5834)var1.getRidingEntity();
+         if (this.field_32487.field_33203 && var1.getRidingEntity() instanceof LivingEntity) {
+            LivingEntity var12 = (LivingEntity)var1.getRidingEntity();
             var9 = class_9299.method_42837(var3, var12.field_29611, var12.field_29605);
             var11 = var10 - var9;
             float var13 = class_9299.method_42810(var11);
@@ -198,7 +198,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
       }
    }
 
-   public static int method_29110(class_5834 var0, float var1) {
+   public static int method_29110(LivingEntity var0, float var1) {
       return class_5367.method_24487(class_5367.method_24485(var1), class_5367.method_24483(var0.field_29645 > 0 || var0.field_29677 > 0));
    }
 

@@ -7,8 +7,8 @@ import org.apache.logging.log4j.Logger;
 
 public class class_9030 {
    private static final Logger field_46213 = LogManager.getLogger();
-   private static final Map<EntityType<? extends class_5834>, class_9632> field_46212 = ImmutableMap.builder()
-      .put(EntityType.field_34289, class_5834.method_26409().method_5980())
+   private static final Map<EntityType<? extends LivingEntity>, class_9632> field_46212 = ImmutableMap.builder()
+      .put(EntityType.field_34289, LivingEntity.method_26409().method_5980())
       .put(EntityType.field_34217, class_2022.method_9394().method_5980())
       .put(EntityType.field_34238, class_8829.method_40625().method_5980())
       .put(EntityType.field_34301, class_2806.method_12757().method_5980())
@@ -82,7 +82,7 @@ public class class_9030 {
       .put(EntityType.field_34234, class_1918.method_8729().method_5980())
       .build();
 
-   public static class_9632 method_41423(EntityType<? extends class_5834> var0) {
+   public static class_9632 method_41423(EntityType<? extends LivingEntity> var0) {
       return field_46212.get(var0);
    }
 

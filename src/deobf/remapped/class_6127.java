@@ -3,7 +3,7 @@ package remapped;
 import java.util.Random;
 import java.util.Set;
 
-public abstract class class_6127<E extends class_5834> {
+public abstract class class_6127<E extends LivingEntity> {
    private static final Random field_31451 = new Random();
    private static final class_4931 field_31450 = new class_4931().method_22607(16.0).method_22601().method_22609();
    private static final class_4931 field_31454 = new class_4931().method_22607(16.0).method_22601().method_22609().method_22608();
@@ -30,7 +30,7 @@ public abstract class class_6127<E extends class_5834> {
 
    public abstract Set<class_6044<?>> method_28152();
 
-   public static boolean method_28150(class_5834 var0, class_5834 var1) {
+   public static boolean method_28150(LivingEntity var0, LivingEntity var1) {
       return !var0.method_26525().method_5140(class_6044.field_30884, var1) ? field_31450.method_22604(var0, var1) : field_31454.method_22604(var0, var1);
    }
 }

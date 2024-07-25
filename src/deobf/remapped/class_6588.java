@@ -3251,7 +3251,7 @@ public class class_6588 {
          field_33829 = field_33829 * var7 + field_33961 * (1.0F - var7);
          Entity var8 = var1.method_41633();
          if (var8 != null) {
-            field_33874 = var8 instanceof class_5834 && ((class_5834)var8).method_26507();
+            field_33874 = var8 instanceof LivingEntity && ((LivingEntity)var8).method_26507();
             field_33816 = (float)var1.method_41627().method_60();
             field_33757 = field_33837.method_8587().method_28120(var8, var2);
             float var9 = (float)field_33903 * 0.01F;
@@ -3267,8 +3267,8 @@ public class class_6588 {
                field_33725 = 0;
             }
 
-            if (var8 instanceof class_5834) {
-               class_5834 var12 = (class_5834)var8;
+            if (var8 instanceof LivingEntity) {
+               LivingEntity var12 = (LivingEntity)var8;
                field_33933 = 0.0F;
                if (var12.isPotionActive(Effects.field_19746)) {
                   GameRenderer var13 = field_33681;

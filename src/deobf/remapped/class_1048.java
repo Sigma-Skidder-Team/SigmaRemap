@@ -22,8 +22,8 @@ public class class_1048 implements class_214 {
       this(
          var1.method_37283(),
          var1.method_37309(),
-         !(var1 instanceof class_5834) ? class_4897.field_25302 : ((class_5834)var1).method_26446().method_27960(),
-         !(var1 instanceof class_5834) ? var0 -> false : ((class_5834)var1)::method_26496
+         !(var1 instanceof LivingEntity) ? class_4897.field_25302 : ((LivingEntity)var1).method_26446().method_27960(),
+         !(var1 instanceof LivingEntity) ? var0 -> false : ((LivingEntity)var1)::method_26496
       );
    }
 

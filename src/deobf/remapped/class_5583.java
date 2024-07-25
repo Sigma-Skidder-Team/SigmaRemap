@@ -56,7 +56,7 @@ public class class_5583 extends class_8990 {
       this.goalSelector.addGoal(10, new class_9513(this, 0.8));
       this.goalSelector.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
       this.goalSelector.addGoal(12, new LookAtGoal(this, PlayerEntity.class, 10.0F));
-      this.targetSelector.addGoal(1, new class_5327<class_7272>(this, class_7272.class, false, (Predicate<class_5834>)null));
+      this.targetSelector.addGoal(1, new class_5327<class_7272>(this, class_7272.class, false, (Predicate<LivingEntity>)null));
       this.targetSelector.addGoal(1, new class_5327<class_3845>(this, class_3845.class, false, class_3845.field_18768));
    }
 

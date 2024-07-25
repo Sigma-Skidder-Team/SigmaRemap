@@ -214,7 +214,7 @@ public class SkeletonESPModule extends Module {
       GL11.glDepthMask(var1);
    }
 
-   private int method_19974(class_5834 var1) {
+   private int method_19974(LivingEntity var1) {
       float var4 = var1.method_26551();
       float var5 = var1.method_26465();
       float var6 = Math.max(0.0F, Math.min(var4, var5) / var5);

@@ -132,7 +132,7 @@ public class class_2250 implements Comparable<class_2250> {
       return this.field_11186;
    }
 
-   public boolean method_10341(class_5834 var1, Runnable var2) {
+   public boolean method_10341(LivingEntity var1, Runnable var2) {
       if (this.field_11188 > 0) {
          if (this.field_11187.method_6549(this.field_11188, this.field_11193)) {
             this.method_10349(var1);
@@ -157,7 +157,7 @@ public class class_2250 implements Comparable<class_2250> {
       return --this.field_11188;
    }
 
-   public void method_10349(class_5834 var1) {
+   public void method_10349(LivingEntity var1) {
       if (this.field_11188 > 0) {
          this.field_11187.method_6537(var1, this.field_11193);
       }

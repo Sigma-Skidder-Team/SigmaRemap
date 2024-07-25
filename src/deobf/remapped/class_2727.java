@@ -46,10 +46,10 @@ public class class_2727 extends class_6414 {
    }
 
    public static void method_12256(World var0, BlockPos var1) {
-      method_12257(var0, var1, (class_5834)null);
+      method_12257(var0, var1, (LivingEntity)null);
    }
 
-   private static void method_12257(World var0, BlockPos var1, class_5834 var2) {
+   private static void method_12257(World var0, BlockPos var1, LivingEntity var2) {
       if (!var0.field_33055) {
          class_1356 var5 = new class_1356(var0, (double)var1.method_12173() + 0.5, (double)var1.method_12165(), (double)var1.method_12185() + 0.5, var2);
          var0.method_7509(var5);
@@ -86,7 +86,7 @@ public class class_2727 extends class_6414 {
          Entity var7 = var4.method_26166();
          if (var4.method_37264()) {
             BlockPos var8 = var3.method_43955();
-            method_12257(var1, var8, !(var7 instanceof class_5834) ? null : (class_5834)var7);
+            method_12257(var1, var8, !(var7 instanceof LivingEntity) ? null : (LivingEntity)var7);
             var1.method_7508(var8, false);
          }
       }

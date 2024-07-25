@@ -18,7 +18,7 @@ public class class_581 extends class_6749 {
       super(EntityType.field_34290, var2, var4, var6, var1);
    }
 
-   public class_581(World var1, class_5834 var2) {
+   public class_581(World var1, LivingEntity var2) {
       super(EntityType.field_34290, var2, var1);
    }
 
@@ -152,7 +152,7 @@ public class class_581 extends class_6749 {
    }
 
    @Override
-   public void method_30935(class_5834 var1) {
+   public void method_30935(LivingEntity var1) {
       super.method_30935(var1);
 
       for (class_2250 var5 : this.field_3394.method_27404()) {

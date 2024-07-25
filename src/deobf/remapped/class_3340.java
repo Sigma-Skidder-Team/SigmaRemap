@@ -87,7 +87,7 @@ public class class_3340 extends class_5920<class_7666> {
       var2.method_26525().method_5127(class_6044.field_30874);
    }
 
-   private void method_15325(class_7666 var1, class_5834 var2) {
+   private void method_15325(class_7666 var1, LivingEntity var2) {
       for (ItemStack var6 : this.method_15327(var1)) {
          class_1225.method_5439(var1, var6, var2.method_37245());
       }

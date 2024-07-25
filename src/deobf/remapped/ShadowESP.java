@@ -155,7 +155,7 @@ public class ShadowESP extends Module {
    }
 
    private boolean method_6344(Entity var1) {
-      if (var1 instanceof class_5834) {
+      if (var1 instanceof LivingEntity) {
          if (var1 instanceof PlayerEntity) {
             if (!(var1 instanceof ClientPlayerEntity)) {
                return !var1.method_37109() ? !SigmaMainClass.getInstance().method_3331().method_20495(var1) : false;

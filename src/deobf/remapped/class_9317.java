@@ -9,7 +9,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    public int field_47581;
    public boolean field_47584;
    public Direction field_47577;
-   private List<class_5834> field_47583;
+   private List<LivingEntity> field_47583;
    private boolean field_47578;
    private int field_47580;
 
@@ -79,11 +79,11 @@ public class class_9317 extends class_3757 implements class_3745 {
       if (this.field_18364.method_29546() > this.field_47579 + 60L || this.field_47583 == null) {
          this.field_47579 = this.field_18364.method_29546();
          Box var4 = new Box(var3).method_18898(48.0);
-         this.field_47583 = this.field_18364.<class_5834>method_25868(class_5834.class, var4);
+         this.field_47583 = this.field_18364.<LivingEntity>method_25868(LivingEntity.class, var4);
       }
 
       if (!this.field_18364.field_33055) {
-         for (class_5834 var5 : this.field_47583) {
+         for (LivingEntity var5 : this.field_47583) {
             if (var5.isAlive() && !var5.field_41751 && var3.method_12170(var5.method_37245(), 32.0)) {
                var5.method_26525().method_5105(class_6044.field_30894, this.field_18364.method_29546());
             }
@@ -94,7 +94,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    private boolean method_43013() {
       BlockPos var3 = this.method_17399();
 
-      for (class_5834 var5 : this.field_47583) {
+      for (LivingEntity var5 : this.field_47583) {
          if (var5.isAlive()
             && !var5.field_41751
             && var3.method_12170(var5.method_37245(), 32.0)
@@ -143,14 +143,14 @@ public class class_9317 extends class_3757 implements class_3745 {
       }
    }
 
-   private boolean method_43019(class_5834 var1) {
+   private boolean method_43019(LivingEntity var1) {
       return var1.isAlive()
          && !var1.field_41751
          && this.method_17399().method_12170(var1.method_37245(), 48.0)
          && var1.getType().isContained(EntityTypeTags.RAIDERS);
    }
 
-   private void method_43014(class_5834 var1) {
+   private void method_43014(LivingEntity var1) {
       var1.method_26558(new class_2250(Effects.field_19722, 60));
    }
 }

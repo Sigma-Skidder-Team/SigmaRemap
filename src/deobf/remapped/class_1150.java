@@ -23,7 +23,7 @@ import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_1150<E extends class_5834> {
+public class class_1150<E extends LivingEntity> {
    private static final Logger field_6550 = LogManager.getLogger();
    private final Supplier<Codec<class_1150<E>>> field_6548;
    private final Map<class_6044<?>, Optional<? extends class_3909<?>>> field_6546 = Maps.newHashMap();
@@ -37,13 +37,13 @@ public class class_1150<E extends class_5834> {
    private class_6275 field_6539 = class_6275.field_32075;
    private long field_6540 = -9999L;
 
-   public static <E extends class_5834> class_1193<E> method_5128(
+   public static <E extends LivingEntity> class_1193<E> method_5128(
       Collection<? extends class_6044<?>> var0, Collection<? extends class_3172<? extends class_6127<? super E>>> var1
    ) {
       return new class_1193<E>(var0, var1, null);
    }
 
-   public static <E extends class_5834> Codec<class_1150<E>> method_5120(
+   public static <E extends LivingEntity> Codec<class_1150<E>> method_5120(
       Collection<? extends class_6044<?>> var0, Collection<? extends class_3172<? extends class_6127<? super E>>> var1
    ) {
       MutableObject var4 = new MutableObject();

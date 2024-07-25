@@ -15,10 +15,10 @@ public class class_5542 extends class_5467 {
    private static final class_7821<Optional<UUID>> field_28248 = class_8073.<Optional<UUID>>method_36641(class_5542.class, class_2734.field_13348);
    private static final Predicate<class_91> field_28236 = var0 -> !var0.method_258() && var0.isAlive();
    private static final Predicate<Entity> field_28241 = var0 -> {
-      if (!(var0 instanceof class_5834)) {
+      if (!(var0 instanceof LivingEntity)) {
          return false;
       } else {
-         class_5834 var3 = (class_5834)var0;
+         LivingEntity var3 = (LivingEntity)var0;
          return var3.method_26455() != null && var3.method_26581() < var3.field_41697 + 600;
       }
    };
@@ -85,7 +85,7 @@ public class class_5542 extends class_5467 {
       this.goalSelector.addGoal(13, new class_2650(this));
       this.targetSelector
          .addGoal(
-            3, new class_5431(this, (boolean)class_5834.class, false, false, var1 -> field_28241.test(var1) && !this.method_25180(var1.method_37328()))
+            3, new class_5431(this, (boolean) LivingEntity.class, false, false, var1 -> field_28241.test(var1) && !this.method_25180(var1.method_37328()))
          );
    }
 
@@ -115,7 +115,7 @@ public class class_5542 extends class_5467 {
             }
          }
 
-         class_5834 var5 = this.method_17809();
+         LivingEntity var5 = this.method_17809();
          if (var5 == null || !var5.isAlive()) {
             this.method_25168(false);
             this.method_25181(false);
@@ -512,7 +512,7 @@ public class class_5542 extends class_5467 {
    }
 
    @Override
-   public void method_26860(class_5834 var1) {
+   public void method_26860(LivingEntity var1) {
       if (this.method_25172() && var1 == null) {
          this.method_25186(false);
       }
@@ -596,7 +596,7 @@ public class class_5542 extends class_5467 {
       super.method_26513(var1);
    }
 
-   public static boolean method_25207(class_5542 var0, class_5834 var1) {
+   public static boolean method_25207(class_5542 var0, LivingEntity var1) {
       double var4 = var1.getPosZ() - var0.getPosZ();
       double var6 = var1.getPosX() - var0.getPosX();
       double var8 = var4 / var6;

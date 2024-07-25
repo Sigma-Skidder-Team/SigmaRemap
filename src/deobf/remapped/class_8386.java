@@ -4,7 +4,7 @@ import com.mojang.authlib.GameProfile;
 import java.util.UUID;
 import org.apache.commons.lang3.StringUtils;
 
-public class class_8386<T extends class_5834, M extends class_6521<T> & class_8667> extends class_4171<T, M> {
+public class class_8386<T extends LivingEntity, M extends class_6521<T> & class_8667> extends class_4171<T, M> {
    private final float field_42904;
    private final float field_42903;
    private final float field_42902;

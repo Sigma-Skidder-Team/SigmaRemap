@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class class_2987 extends class_6127<class_5834> {
+public class class_2987 extends class_6127<LivingEntity> {
    private static String[] field_14690;
 
    @Override
@@ -27,7 +27,7 @@ public class class_2987 extends class_6127<class_5834> {
    }
 
    @Override
-   public void method_28154(class_6331 var1, class_5834 var2) {
+   public void method_28154(class_6331 var1, LivingEntity var2) {
       class_1150 var5 = var2.method_26525();
       var5.method_5106(class_6044.field_30905, method_13673(var1, var2));
       Optional var6 = Optional.empty();
@@ -41,17 +41,17 @@ public class class_2987 extends class_6127<class_5834> {
       ArrayList var14 = Lists.newArrayList();
       ArrayList var15 = Lists.newArrayList();
 
-      for (class_5834 var17 : var5.<List<class_5834>>method_5138(class_6044.field_30901).orElse(ImmutableList.of())) {
+      for (LivingEntity var17 : var5.<List<LivingEntity>>method_5138(class_6044.field_30901).orElse(ImmutableList.of())) {
          if (!(var17 instanceof class_6704)) {
             if (!(var17 instanceof class_7263)) {
                if (!(var17 instanceof class_2599)) {
                   if (!(var17 instanceof PlayerEntity)) {
                      if (var6.isPresent() || !(var17 instanceof class_3204) && !(var17 instanceof class_4653)) {
                         if (!var10.isPresent() && class_134.method_466(var17.getType())) {
-                           var10 = Optional.<class_5834>of(var17);
+                           var10 = Optional.<LivingEntity>of(var17);
                         }
                      } else {
-                        var6 = Optional.<class_5834>of((MobEntity)var17);
+                        var6 = Optional.<LivingEntity>of((MobEntity)var17);
                      }
                   } else {
                      PlayerEntity var22 = (PlayerEntity)var17;
@@ -87,7 +87,7 @@ public class class_2987 extends class_6127<class_5834> {
          }
       }
 
-      for (class_5834 var20 : var5.<List<class_5834>>method_5138(class_6044.field_30907).orElse(ImmutableList.of())) {
+      for (LivingEntity var20 : var5.<List<LivingEntity>>method_5138(class_6044.field_30907).orElse(ImmutableList.of())) {
          if (var20 instanceof class_6993 && ((class_6993)var20).method_31995()) {
             var15.add((class_6993)var20);
          }
@@ -105,7 +105,7 @@ public class class_2987 extends class_6127<class_5834> {
       var5.method_5105(class_6044.field_30906, var13);
    }
 
-   private static Optional<BlockPos> method_13673(class_6331 var0, class_5834 var1) {
+   private static Optional<BlockPos> method_13673(class_6331 var0, LivingEntity var1) {
       return BlockPos.method_6102(var1.method_37075(), 8, 4, var1x -> method_13672(var0, var1x));
    }
 

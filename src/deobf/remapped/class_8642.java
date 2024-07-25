@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_8642 extends NearestAttackableTargetGoal<class_5834> {
+public class class_8642 extends NearestAttackableTargetGoal<LivingEntity> {
    private static String[] field_44292;
 
    public class_8642(class_298 var1) {
-      super(var1, class_5834.class, 0, true, true, class_5834::method_26556);
+      super(var1, LivingEntity.class, 0, true, true, LivingEntity::method_26556);
    }
 
    @Override

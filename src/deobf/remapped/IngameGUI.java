@@ -327,7 +327,7 @@ public class IngameGUI extends AbstractGui {
             if (this.mc.gameOptions.field_45555 == class_8846.field_45243) {
                float var6 = this.mc.thePlayer.method_3203(0.0F);
                boolean var7 = false;
-               if (this.mc.field_9662 != null && this.mc.field_9662 instanceof class_5834 && var6 >= 1.0F) {
+               if (this.mc.field_9662 != null && this.mc.field_9662 instanceof LivingEntity && var6 >= 1.0F) {
                   var7 = this.mc.thePlayer.method_3163() > 5.0F;
                   var7 &= this.mc.field_9662.isAlive();
                }
@@ -671,7 +671,7 @@ public class IngameGUI extends AbstractGui {
       return this.mc.getRenderViewEntity() instanceof PlayerEntity ? (PlayerEntity)this.mc.getRenderViewEntity() : null;
    }
 
-   private class_5834 method_13981() {
+   private LivingEntity method_13981() {
       PlayerEntity var3 = this.method_13976();
       if (var3 != null) {
          Entity var4 = var3.getRidingEntity();
@@ -679,15 +679,15 @@ public class IngameGUI extends AbstractGui {
             return null;
          }
 
-         if (var4 instanceof class_5834) {
-            return (class_5834)var4;
+         if (var4 instanceof LivingEntity) {
+            return (LivingEntity)var4;
          }
       }
 
       return null;
    }
 
-   private int method_13980(class_5834 var1) {
+   private int method_13980(LivingEntity var1) {
       if (var1 != null && var1.method_37359()) {
          float var4 = var1.method_26465();
          int var5 = (int)(var4 + 0.5F) / 2;
@@ -826,7 +826,7 @@ public class IngameGUI extends AbstractGui {
             }
          }
 
-         class_5834 var34 = this.method_13981();
+         LivingEntity var34 = this.method_13981();
          int var36 = this.method_13980(var34);
          if (var36 == 0) {
             this.mc.getProfiler().method_16050("food");
@@ -881,7 +881,7 @@ public class IngameGUI extends AbstractGui {
    }
 
    private void func_238458_f_(class_7966 var1) {
-      class_5834 var4 = this.method_13981();
+      LivingEntity var4 = this.method_13981();
       if (var4 != null) {
          int var5 = this.method_13980(var4);
          if (var5 != 0) {

@@ -3,7 +3,7 @@ package remapped;
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
-public class class_6837<T extends class_5834> extends class_3599 {
+public class class_6837<T extends LivingEntity> extends class_3599 {
    private static String[] field_35254;
    public final class_4612 field_35261;
    private final double field_35256;
@@ -13,15 +13,15 @@ public class class_6837<T extends class_5834> extends class_3599 {
    public class_3998 field_35253;
    public final class_1249 field_35257;
    public final Class<T> field_35259;
-   public final Predicate<class_5834> field_35251;
-   public final Predicate<class_5834> field_35252;
+   public final Predicate<LivingEntity> field_35251;
+   public final Predicate<LivingEntity> field_35252;
    private final class_4931 field_35260;
 
    public class_6837(class_4612 var1, Class<T> var2, float var3, double var4, double var6) {
       this(var1, var2, var0 -> true, var3, var4, var6, class_3572.field_17479::test);
    }
 
-   public class_6837(class_4612 var1, Class<T> var2, Predicate<class_5834> var3, float var4, double var5, double var7, Predicate<class_5834> var9) {
+   public class_6837(class_4612 var1, Class<T> var2, Predicate<LivingEntity> var3, float var4, double var5, double var7, Predicate<LivingEntity> var9) {
       this.field_35261 = var1;
       this.field_35259 = var2;
       this.field_35251 = var3;
@@ -34,7 +34,7 @@ public class class_6837<T extends class_5834> extends class_3599 {
       this.field_35260 = new class_4931().method_22607((double)var4).method_22606(var9.and(var3));
    }
 
-   public class_6837(class_4612 var1, Class<T> var2, float var3, double var4, double var6, Predicate<class_5834> var8) {
+   public class_6837(class_4612 var1, Class<T> var2, float var3, double var4, double var6, Predicate<LivingEntity> var8) {
       this(var1, var2, var0 -> true, var3, var4, var6, var8);
    }
 

@@ -101,8 +101,8 @@ public class class_7263 extends class_6993 {
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       boolean var5 = super.attackEntityFrom(var1, var2);
       if (!this.world.field_33055) {
-         if (var5 && var1.method_28372() instanceof class_5834) {
-            class_9544.method_44048(this, (class_5834)var1.method_28372());
+         if (var5 && var1.method_28372() instanceof LivingEntity) {
+            class_9544.method_44048(this, (LivingEntity)var1.method_28372());
          }
 
          return var5;

@@ -201,7 +201,7 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
          this.field_38973 = null;
       }
 
-      if (!this.method_26859() && this.field_41717.nextInt(100) == 0) {
+      if (!this.isAIDisabled() && this.field_41717.nextInt(100) == 0) {
          class_2452 var3 = ((class_6331)this.world).method_28984(this.method_37075());
          if (var3 != null && var3.method_11306() && !var3.method_11259()) {
             this.world.method_29587(this, (byte)42);
@@ -500,7 +500,7 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
    }
 
    @Override
-   public void method_26511(class_5834 var1) {
+   public void method_26511(LivingEntity var1) {
       if (var1 != null && this.world instanceof class_6331) {
          ((class_6331)this.world).method_28955(class_3894.field_18943, var1, this);
          if (this.isAlive() && var1 instanceof PlayerEntity) {
@@ -532,7 +532,7 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
 
    private void method_34729(Entity var1) {
       if (this.world instanceof class_6331) {
-         Optional var4 = this.field_29675.<List<class_5834>>method_5138(class_6044.field_30901);
+         Optional var4 = this.field_29675.<List<LivingEntity>>method_5138(class_6044.field_30901);
          if (var4.isPresent()) {
             class_6331 var5 = (class_6331)this.world;
             ((List)var4.get())
@@ -692,7 +692,7 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
          class_1609 var5 = EntityType.field_34220.method_30484(var1);
          var5.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method_26864(var1, var1.method_43368(var5.method_37075()), class_2417.field_12041, (class_8733)null, (CompoundNBT)null);
-         var5.method_26888(this.method_26859());
+         var5.method_26888(this.isAIDisabled());
          if (this.method_45507()) {
             var5.method_37303(this.method_45508());
             var5.method_37319(this.method_37135());

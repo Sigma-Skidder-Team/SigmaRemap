@@ -19,7 +19,7 @@ public class class_3156 extends class_3599 {
    @Override
    public void method_16794() {
       if (this.field_15684.method_17809() != null) {
-         class_5834 var3 = this.field_15684.method_17809();
+         LivingEntity var3 = this.field_15684.method_17809();
          double var4 = 64.0;
          if (var3.method_37275(this.field_15684) < 4096.0) {
             double var6 = var3.getPosX() - this.field_15684.getPosX();

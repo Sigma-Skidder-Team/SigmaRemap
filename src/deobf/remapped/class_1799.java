@@ -70,7 +70,7 @@ public class class_1799 extends class_7429 {
             if (var1 instanceof class_2519) {
                return this.method_37344(((class_2519)var1).method_11454());
             } else {
-               return var1 instanceof class_5834 && ((class_5834)var1).method_26550() == class_2780.field_13576
+               return var1 instanceof LivingEntity && ((LivingEntity)var1).method_26550() == class_2780.field_13576
                   ? this.method_37095() == null && var1.method_37095() == null
                   : false;
             }

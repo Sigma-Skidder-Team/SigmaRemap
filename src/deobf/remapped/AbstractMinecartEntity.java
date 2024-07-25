@@ -117,7 +117,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    @Override
    public class_1343 method_37375(class_9249 var1, class_8623 var2) {
-      return class_5834.method_26437(super.method_37375(var1, var2));
+      return LivingEntity.method_26437(super.method_37375(var1, var2));
    }
 
    @Override
@@ -126,7 +126,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    @Override
-   public class_1343 method_37282(class_5834 var1) {
+   public class_1343 method_37282(LivingEntity var1) {
       Direction var4 = this.method_37235();
       if (var4.method_1029() == class_9249.field_47216) {
          return super.method_37282(var1);

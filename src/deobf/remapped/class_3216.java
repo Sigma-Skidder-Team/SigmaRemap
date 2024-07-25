@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class class_3216 extends class_5920<class_5834> {
+public class class_3216 extends class_5920<LivingEntity> {
    private static String[] field_16041;
    private final float field_16039;
    private final Long2LongMap field_16040 = new Long2LongOpenHashMap();
@@ -20,7 +20,7 @@ public class class_3216 extends class_5920<class_5834> {
    }
 
    @Override
-   public boolean method_27088(class_6331 var1, class_5834 var2) {
+   public boolean method_27088(class_6331 var1, LivingEntity var2) {
       if (var1.method_29546() - this.field_16042 < 20L) {
          return false;
       } else {
@@ -32,7 +32,7 @@ public class class_3216 extends class_5920<class_5834> {
    }
 
    @Override
-   public void method_27080(class_6331 var1, class_5834 var2, long var3) {
+   public void method_27080(class_6331 var1, LivingEntity var2, long var3) {
       this.field_16038 = 0;
       this.field_16042 = var1.method_29546() + (long)var1.method_43360().nextInt(20);
       class_4612 var7 = (class_4612)var2;

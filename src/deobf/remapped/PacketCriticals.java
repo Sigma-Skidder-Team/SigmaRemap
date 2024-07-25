@@ -14,7 +14,7 @@ public class PacketCriticals extends Module {
    private void method_39870(class_3645 var1) {
       if (this.method_42015() && var1.method_16973() != null && var1.method_16971()) {
          Entity var4 = var1.method_16973();
-         if (var4 instanceof class_5834
+         if (var4 instanceof LivingEntity
             && var4.field_41749 <= (int)this.getFloatValueByName("HurtTime")
             && StepModule.field_20352 > 1
             && (this.field_44552.method_14772() > 200L || var4.field_41749 > 0)

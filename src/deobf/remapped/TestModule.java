@@ -295,10 +295,10 @@ public class TestModule extends Module {
          Entity var6 = (Entity)var5.next();
          if (var6 != client.thePlayer) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
-               if (var6 instanceof class_5834) {
-                  if (((class_5834)var6).method_26551() != 0.0F) {
+               if (var6 instanceof LivingEntity) {
+                  if (((LivingEntity)var6).method_26551() != 0.0F) {
                      if (!(client.thePlayer.method_37175(var6) > var1)) {
-                        if (client.thePlayer.method_26608((class_5834)var6)) {
+                        if (client.thePlayer.method_26608((LivingEntity)var6)) {
                            if (!(var6 instanceof class_9399) && !(var6 instanceof PlayerEntity)) {
                               if (var6 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
                                  var5.remove();
@@ -347,10 +347,10 @@ public class TestModule extends Module {
          Entity var7 = (Entity)var6.next();
          if (var7 != client.thePlayer) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var7)) {
-               if (var7 instanceof class_5834) {
-                  if (((class_5834)var7).method_26551() != 0.0F) {
+               if (var7 instanceof LivingEntity) {
+                  if (((LivingEntity)var7).method_26551() != 0.0F) {
                      if (!(client.thePlayer.method_37175(var7) > var1)) {
-                        if (client.thePlayer.method_26608((class_5834)var7)) {
+                        if (client.thePlayer.method_26608((LivingEntity)var7)) {
                            if (!(var7 instanceof class_9399)) {
                               if (var7 instanceof PlayerEntity && SigmaMainClass.getInstance().method_3331().method_20495(var7)) {
                                  var6.remove();

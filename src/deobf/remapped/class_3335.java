@@ -19,7 +19,7 @@ public abstract class class_3335 extends class_3599 {
    public boolean method_15297() {
       return !this.field_16442
          .field_41768
-         .<class_5834>method_25863(class_5834.class, this.field_16441, this.field_16442, this.field_16442.method_37241().method_18899(12.0, 6.0, 12.0))
+         .<LivingEntity>method_25863(LivingEntity.class, this.field_16441, this.field_16442, this.field_16442.method_37241().method_18899(12.0, 6.0, 12.0))
          .isEmpty();
    }
 }

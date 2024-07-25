@@ -11,7 +11,7 @@ public class class_3933 extends class_6414 {
 
    @Override
    public void method_29286(World var1, BlockPos var2, Entity var3) {
-      if (!var3.method_37087() && var3 instanceof class_5834 && !class_2931.method_13407((class_5834)var3)) {
+      if (!var3.method_37087() && var3 instanceof LivingEntity && !class_2931.method_13407((LivingEntity)var3)) {
          var3.attackEntityFrom(DamageSource.field_31675, 1.0F);
       }
 

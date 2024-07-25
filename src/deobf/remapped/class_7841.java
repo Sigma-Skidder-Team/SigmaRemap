@@ -7,7 +7,7 @@ public class class_7841 extends class_6749 {
       super(var1, var2);
    }
 
-   public class_7841(World var1, class_5834 var2) {
+   public class_7841(World var1, LivingEntity var2) {
       super(EntityType.field_34260, var2, var1);
    }
 
@@ -29,7 +29,7 @@ public class class_7841 extends class_6749 {
    }
 
    @Override
-   public void method_30935(class_5834 var1) {
+   public void method_30935(LivingEntity var1) {
       super.method_30935(var1);
       class_2250 var4 = new class_2250(Effects.field_19722, this.field_39755, 0);
       var1.method_26558(var4);

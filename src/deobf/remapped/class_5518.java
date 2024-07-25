@@ -14,7 +14,7 @@ public class class_5518 extends class_2451 {
    }
 
    @Override
-   public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
+   public ItemStack method_11242(ItemStack var1, World var2, LivingEntity var3) {
       PlayerEntity var6 = !(var3 instanceof PlayerEntity) ? null : (PlayerEntity)var3;
       if (var6 instanceof class_9359) {
          class_8807.field_45081.method_43401((class_9359)var6, var1);

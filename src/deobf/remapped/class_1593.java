@@ -7,7 +7,7 @@ public class class_1593 extends class_2550 {
       super(var1, var2);
    }
 
-   public class_1593(World var1, class_5834 var2, double var3, double var5, double var7) {
+   public class_1593(World var1, LivingEntity var2, double var3, double var5, double var7) {
       super(EntityType.field_34288, var2, var3, var5, var7, var1);
    }
 
@@ -26,8 +26,8 @@ public class class_1593 extends class_2550 {
             var4.method_37178(5);
             boolean var7 = var4.attackEntityFrom(DamageSource.method_28375(this, var5), 5.0F);
             if (var7) {
-               if (var5 instanceof class_5834) {
-                  this.method_37096((class_5834)var5, var4);
+               if (var5 instanceof LivingEntity) {
+                  this.method_37096((LivingEntity)var5, var4);
                }
             } else {
                var4.method_37164(var6);

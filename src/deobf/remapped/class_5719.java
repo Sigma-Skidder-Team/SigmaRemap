@@ -112,40 +112,40 @@ public interface class_5719 {
    }
 
    @Nullable
-   default PlayerEntity method_25859(class_4931 var1, class_5834 var2) {
+   default PlayerEntity method_25859(class_4931 var1, LivingEntity var2) {
       return this.<PlayerEntity>method_25864(this.method_25873(), var1, var2, var2.getPosX(), var2.method_37309(), var2.getPosZ());
    }
 
    @Nullable
-   default PlayerEntity method_25860(class_4931 var1, class_5834 var2, double var3, double var5, double var7) {
+   default PlayerEntity method_25860(class_4931 var1, LivingEntity var2, double var3, double var5, double var7) {
       return this.<PlayerEntity>method_25864(this.method_25873(), var1, var2, var3, var5, var7);
    }
 
    @Nullable
    default PlayerEntity method_25858(class_4931 var1, double var2, double var4, double var6) {
-      return this.<PlayerEntity>method_25864(this.method_25873(), var1, (class_5834)null, var2, var4, var6);
+      return this.<PlayerEntity>method_25864(this.method_25873(), var1, (LivingEntity)null, var2, var4, var6);
    }
 
    @Nullable
-   default <T extends class_5834> T method_25865(
-      Class<? extends T> var1, class_4931 var2, class_5834 var3, double var4, double var6, double var8, Box var10
+   default <T extends LivingEntity> T method_25865(
+           Class<? extends T> var1, class_4931 var2, LivingEntity var3, double var4, double var6, double var8, Box var10
    ) {
       return this.<T>method_25864(this.method_25869(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
-   default <T extends class_5834> T method_25872(
-      Class<? extends T> var1, class_4931 var2, class_5834 var3, double var4, double var6, double var8, Box var10
+   default <T extends LivingEntity> T method_25872(
+           Class<? extends T> var1, class_4931 var2, LivingEntity var3, double var4, double var6, double var8, Box var10
    ) {
       return this.<T>method_25864(this.method_25875(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
-   default <T extends class_5834> T method_25864(List<? extends T> var1, class_4931 var2, class_5834 var3, double var4, double var6, double var8) {
+   default <T extends LivingEntity> T method_25864(List<? extends T> var1, class_4931 var2, LivingEntity var3, double var4, double var6, double var8) {
       double var12 = -1.0;
-      class_5834 var14 = null;
+      LivingEntity var14 = null;
 
-      for (class_5834 var16 : var1) {
+      for (LivingEntity var16 : var1) {
          if (var2.method_22604(var3, var16)) {
             double var17 = var16.method_37273(var4, var6, var8);
             if (var12 == -1.0 || var17 < var12) {
@@ -158,7 +158,7 @@ public interface class_5719 {
       return (T)var14;
    }
 
-   default List<PlayerEntity> method_25871(class_4931 var1, class_5834 var2, Box var3) {
+   default List<PlayerEntity> method_25871(class_4931 var1, LivingEntity var2, Box var3) {
       ArrayList var6 = Lists.newArrayList();
 
       for (PlayerEntity var8 : this.method_25873()) {
@@ -170,11 +170,11 @@ public interface class_5719 {
       return var6;
    }
 
-   default <T extends class_5834> List<T> method_25863(Class<? extends T> var1, class_4931 var2, class_5834 var3, Box var4) {
+   default <T extends LivingEntity> List<T> method_25863(Class<? extends T> var1, class_4931 var2, LivingEntity var3, Box var4) {
       List var7 = this.method_25869(var1, var4, (Predicate<? super T>)null);
       ArrayList var8 = Lists.newArrayList();
 
-      for (class_5834 var10 : var7) {
+      for (LivingEntity var10 : var7) {
          if (var2.method_22604(var3, var10)) {
             var8.add(var10);
          }

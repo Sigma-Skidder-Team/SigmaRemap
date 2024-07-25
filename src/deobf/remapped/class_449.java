@@ -183,7 +183,7 @@ public class class_449 extends class_1829 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (!this.method_26859()) {
+      if (!this.isAIDisabled()) {
          if (!this.method_37110()) {
             this.method_2157(this.method_2159() - 1);
             if (this.method_2159() <= 0) {

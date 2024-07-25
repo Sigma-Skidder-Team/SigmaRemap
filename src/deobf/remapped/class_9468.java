@@ -8,8 +8,8 @@ import org.lwjgl.opengl.GL11;
 
 public class class_9468 extends Module {
    private double field_48287;
-   public static Map<class_5834, double[]> field_48289 = new HashMap<class_5834, double[]>();
-   public static Map<class_5834, double[]> field_48288 = new HashMap<class_5834, double[]>();
+   public static Map<LivingEntity, double[]> field_48289 = new HashMap<LivingEntity, double[]>();
+   public static Map<LivingEntity, double[]> field_48288 = new HashMap<LivingEntity, double[]>();
 
    public class_9468() {
       super(Category.RENDER, "2D Esp", "You know what it is");

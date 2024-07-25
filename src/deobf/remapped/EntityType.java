@@ -472,7 +472,7 @@ public class EntityType<T extends Entity> {
             var14.method_26853();
          }
 
-         if (var3 != null && var11 instanceof class_5834) {
+         if (var3 != null && var11 instanceof LivingEntity) {
             var11.method_37303(var3);
          }
 

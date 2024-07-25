@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class class_8011 extends class_3429 implements class_3713 {
-   public static final Predicate<class_5834> field_41037 = class_5834::method_26537;
+   public static final Predicate<LivingEntity> field_41037 = LivingEntity::method_26537;
 
    public class_8011(EntityType<? extends class_8011> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_8011(World var1, class_5834 var2) {
+   public class_8011(World var1, LivingEntity var2) {
       super(EntityType.field_34312, var2, var1);
    }
 
@@ -78,9 +78,9 @@ public class class_8011 extends class_3429 implements class_3713 {
 
    private void method_36351() {
       Box var3 = this.method_37241().method_18899(4.0, 2.0, 4.0);
-      List var4 = this.world.<class_5834>method_25869(class_5834.class, var3, field_41037);
+      List var4 = this.world.<LivingEntity>method_25869(LivingEntity.class, var3, field_41037);
       if (!var4.isEmpty()) {
-         for (class_5834 var6 : var4) {
+         for (LivingEntity var6 : var4) {
             double var7 = this.method_37275(var6);
             if (var7 < 16.0 && var6.method_26537()) {
                var6.attackEntityFrom(DamageSource.method_28369(var6, this.method_26166()), 1.0F);
@@ -91,9 +91,9 @@ public class class_8011 extends class_3429 implements class_3713 {
 
    private void method_36350(List<class_2250> var1, Entity var2) {
       Box var5 = this.method_37241().method_18899(4.0, 2.0, 4.0);
-      List var6 = this.world.<class_5834>method_25868(class_5834.class, var5);
+      List var6 = this.world.<LivingEntity>method_25868(LivingEntity.class, var5);
       if (!var6.isEmpty()) {
-         for (class_5834 var8 : var6) {
+         for (LivingEntity var8 : var6) {
             if (var8.method_26611()) {
                double var9 = this.method_37275(var8);
                if (var9 < 16.0) {
@@ -122,8 +122,8 @@ public class class_8011 extends class_3429 implements class_3713 {
    private void method_36347(ItemStack var1, class_6004 var2) {
       class_4478 var5 = new class_4478(this.world, this.getPosX(), this.method_37309(), this.getPosZ());
       Entity var6 = this.method_26166();
-      if (var6 instanceof class_5834) {
-         var5.method_20782((class_5834)var6);
+      if (var6 instanceof LivingEntity) {
+         var5.method_20782((LivingEntity)var6);
       }
 
       var5.method_20781(3.0F);

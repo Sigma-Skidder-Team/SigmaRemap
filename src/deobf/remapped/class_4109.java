@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
 public abstract class class_4109 extends class_5467 implements class_8129, class_9766, class_9378 {
-   private static final Predicate<class_5834> field_20016 = var0 -> var0 instanceof class_4109 && ((class_4109)var0).method_19044();
+   private static final Predicate<LivingEntity> field_20016 = var0 -> var0 instanceof class_4109 && ((class_4109)var0).method_19044();
    private static final class_4931 field_20015 = new class_4931().method_22607(16.0).method_22603().method_22601().method_22602().method_22606(field_20016);
    private static final class_8137 field_20029 = class_8137.method_37019(
       class_4897.field_24813,
@@ -511,7 +511,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    public void method_19088() {
       if (this.method_19044() && this.method_26449() && !this.method_19086()) {
-         class_5834 var3 = this.world
+         LivingEntity var3 = this.world
             .<class_4109>method_25865(
                class_4109.class, field_20015, this, this.getPosX(), this.method_37309(), this.getPosZ(), this.method_37241().method_18898(16.0)
             );
@@ -642,8 +642,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    @Override
    public void method_26431(class_1343 var1) {
       if (this.isAlive()) {
-         if (this.method_37151() && this.method_26863() && this.method_43357()) {
-            class_5834 var4 = (class_5834)this.getControllingPassenger();
+         if (this.method_37151() && this.canBeSteered() && this.method_43357()) {
+            LivingEntity var4 = (LivingEntity)this.getControllingPassenger();
             this.rotationYaw = var4.rotationYaw;
             this.prevRotationYaw = this.rotationYaw;
             this.rotationPitch = var4.rotationPitch * 0.5F;
@@ -786,8 +786,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public boolean method_26863() {
-      return this.getControllingPassenger() instanceof class_5834;
+   public boolean canBeSteered() {
+      return this.getControllingPassenger() instanceof LivingEntity;
    }
 
    public float method_19045(float var1) {
@@ -878,8 +878,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             this.method_37309() + this.getMountedYOffset() + var1.method_37106() + (double)var7,
             this.getPosZ() - (double)(var6 * var5)
          );
-         if (var1 instanceof class_5834) {
-            ((class_5834)var1).field_29605 = this.field_29605;
+         if (var1 instanceof LivingEntity) {
+            ((LivingEntity)var1).field_29605 = this.field_29605;
          }
       }
    }
@@ -949,7 +949,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Nullable
-   private class_1343 method_19059(class_1343 var1, class_5834 var2) {
+   private class_1343 method_19059(class_1343 var1, LivingEntity var2) {
       double var5 = this.getPosX() + var1.field_7336;
       double var7 = this.method_37241().field_19937;
       double var9 = this.getPosZ() + var1.field_7334;
@@ -984,7 +984,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public class_1343 method_37282(class_5834 var1) {
+   public class_1343 method_37282(LivingEntity var1) {
       class_1343 var4 = method_37373(
          (double)this.method_37086(), (double)var1.method_37086(), this.rotationYaw + (var1.method_26432() != class_1736.field_8943 ? -90.0F : 90.0F)
       );

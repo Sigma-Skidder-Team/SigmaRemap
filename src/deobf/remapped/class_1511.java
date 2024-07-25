@@ -8,14 +8,14 @@ public class class_1511 extends Entity {
    private boolean field_8002;
    private int field_8001 = 22;
    private boolean field_8006;
-   private class_5834 field_8005;
+   private LivingEntity field_8005;
    private UUID field_8007;
 
    public class_1511(EntityType<? extends class_1511> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_1511(World var1, double var2, double var4, double var6, float var8, int var9, class_5834 var10) {
+   public class_1511(World var1, double var2, double var4, double var6, float var8, int var9, LivingEntity var10) {
       this(EntityType.field_34309, var1);
       this.field_8003 = var9;
       this.method_6918(var10);
@@ -27,17 +27,17 @@ public class class_1511 extends Entity {
    public void method_37329() {
    }
 
-   public void method_6918(class_5834 var1) {
+   public void method_6918(LivingEntity var1) {
       this.field_8005 = var1;
       this.field_8007 = var1 != null ? var1.method_37328() : null;
    }
 
    @Nullable
-   public class_5834 method_6916() {
+   public LivingEntity method_6916() {
       if (this.field_8005 == null && this.field_8007 != null && this.world instanceof class_6331) {
          Entity var3 = ((class_6331)this.world).method_28925(this.field_8007);
-         if (var3 instanceof class_5834) {
-            this.field_8005 = (class_5834)var3;
+         if (var3 instanceof LivingEntity) {
+            this.field_8005 = (LivingEntity)var3;
          }
       }
 
@@ -66,7 +66,7 @@ public class class_1511 extends Entity {
       if (!this.world.field_33055) {
          if (--this.field_8003 < 0) {
             if (this.field_8003 == -8) {
-               for (class_5834 var16 : this.world.<class_5834>method_25868(class_5834.class, this.method_37241().method_18899(0.2, 0.0, 0.2))) {
+               for (LivingEntity var16 : this.world.<LivingEntity>method_25868(LivingEntity.class, this.method_37241().method_18899(0.2, 0.0, 0.2))) {
                   this.method_6917(var16);
                }
             }
@@ -96,8 +96,8 @@ public class class_1511 extends Entity {
       }
    }
 
-   private void method_6917(class_5834 var1) {
-      class_5834 var4 = this.method_6916();
+   private void method_6917(LivingEntity var1) {
+      LivingEntity var4 = this.method_6916();
       if (var1.isAlive() && !var1.method_37367() && var1 != var4) {
          if (var4 != null) {
             if (var4.method_37344(var1)) {

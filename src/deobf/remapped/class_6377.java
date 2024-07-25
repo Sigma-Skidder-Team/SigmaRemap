@@ -108,8 +108,8 @@ public class class_6377 {
       }
 
       double var49 = var0.method_41627().field_7333 * var2.method_749().method_3494();
-      if (var0.method_41633() instanceof class_5834 && ((class_5834)var0.method_41633()).isPotionActive(Effects.field_19736)) {
-         int var26 = ((class_5834)var0.method_41633()).method_26553(Effects.field_19736).method_10347();
+      if (var0.method_41633() instanceof LivingEntity && ((LivingEntity)var0.method_41633()).isPotionActive(Effects.field_19736)) {
+         int var26 = ((LivingEntity)var0.method_41633()).method_26553(Effects.field_19736).method_10347();
          if (var26 >= 20) {
             var49 = 0.0;
          } else {
@@ -135,8 +135,8 @@ public class class_6377 {
       }
 
       if (!var7.method_22007(class_6503.field_33094)) {
-         if (var0.method_41633() instanceof class_5834 && ((class_5834)var0.method_41633()).isPotionActive(Effects.field_19746)) {
-            float var27 = GameRenderer.method_35954((class_5834)var0.method_41633(), var1);
+         if (var0.method_41633() instanceof LivingEntity && ((LivingEntity)var0.method_41633()).isPotionActive(Effects.field_19746)) {
+            float var27 = GameRenderer.method_35954((LivingEntity)var0.method_41633(), var1);
             float var33 = Math.min(1.0F / field_32578, Math.min(1.0F / field_32585, 1.0F / field_32584));
             if (Float.isInfinite(var33)) {
                var33 = Math.nextAfter(var33, 0.0);
@@ -218,8 +218,8 @@ public class class_6377 {
             float var10;
             float var11;
             if (!var7.method_22007(class_6503.field_33095)) {
-               if (var8 instanceof class_5834 && ((class_5834)var8).isPotionActive(Effects.field_19736)) {
-                  int var12 = ((class_5834)var8).method_26553(Effects.field_19736).method_10347();
+               if (var8 instanceof LivingEntity && ((LivingEntity)var8).isPotionActive(Effects.field_19736)) {
+                  int var12 = ((LivingEntity)var8).method_26553(Effects.field_19736).method_10347();
                   float var13 = class_9299.method_42795(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != class_1026.field_5679) {
                      var10 = var13 * 0.25F;
@@ -243,7 +243,7 @@ public class class_6377 {
                   var10 = var2 * 0.05F;
                   var11 = Math.min(var2, 192.0F) * 0.5F;
                }
-            } else if (var8 instanceof class_5834 && ((class_5834)var8).isPotionActive(Effects.field_19745)) {
+            } else if (var8 instanceof LivingEntity && ((LivingEntity)var8).isPotionActive(Effects.field_19745)) {
                var10 = 0.0F;
                var11 = 3.0F;
             } else {

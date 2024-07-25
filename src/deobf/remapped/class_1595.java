@@ -124,7 +124,7 @@ public abstract class class_1595 extends MonsterEntity implements class_2354 {
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       ItemStack var5 = this.method_26475(this.method_26617(class_8462.method_38934(this, class_4897.field_25206)));
       class_6749 var6 = this.method_7152(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();

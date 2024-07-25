@@ -77,7 +77,7 @@ public class class_3760 extends class_6414 {
    }
 
    @Override
-   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, LivingEntity var4, ItemStack var5) {
       this.method_17424(var1, var2, var3, false, false, -1, (class_2522)null);
    }
 

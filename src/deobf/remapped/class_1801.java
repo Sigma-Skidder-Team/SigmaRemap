@@ -42,7 +42,7 @@ public class class_1801<T extends MonsterEntity & class_2354 & class_3832> exten
    public void method_16793() {
       super.method_16793();
       this.field_9179.method_26891(false);
-      this.field_9179.method_26860((class_5834)null);
+      this.field_9179.method_26860((LivingEntity)null);
       this.field_9178 = 0;
       if (this.field_9179.method_26554()) {
          this.field_9179.method_26529();
@@ -53,7 +53,7 @@ public class class_1801<T extends MonsterEntity & class_2354 & class_3832> exten
 
    @Override
    public void method_16794() {
-      class_5834 var3 = this.field_9179.method_17809();
+      LivingEntity var3 = this.field_9179.method_17809();
       if (var3 != null) {
          boolean var4 = this.field_9179.method_26928().method_36736(var3);
          boolean var5 = this.field_9178 > 0;

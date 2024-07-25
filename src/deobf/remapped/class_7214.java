@@ -21,7 +21,7 @@ public class class_7214 implements Packet<class_392> {
 
    public class_7214(class_3435 var1, class_2820 var2, ITextComponent var3) {
       this.field_37049 = var2;
-      class_5834 var6 = var1.method_15876();
+      LivingEntity var6 = var1.method_15876();
       switch (var2) {
          case field_13847:
             this.field_37045 = var1.method_15866();

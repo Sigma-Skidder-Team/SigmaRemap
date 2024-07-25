@@ -30,7 +30,7 @@ public class class_4478 extends Entity {
    private int field_21821;
    private float field_21831;
    private float field_21823;
-   private class_5834 field_21825;
+   private LivingEntity field_21825;
    private UUID field_21837;
 
    public class_4478(EntityType<? extends class_4478> var1, World var2) {
@@ -174,9 +174,9 @@ public class class_4478 extends Entity {
 
             var27.addAll(this.field_21833);
             if (!var27.isEmpty()) {
-               List var30 = this.world.<class_5834>method_25868(class_5834.class, this.method_37241());
+               List var30 = this.world.<LivingEntity>method_25868(LivingEntity.class, this.method_37241());
                if (!var30.isEmpty()) {
-                  for (class_5834 var10 : var30) {
+                  for (LivingEntity var10 : var30) {
                      if (!this.field_21829.containsKey(var10) && var10.method_26611()) {
                         double var16 = var10.getPosX() - this.getPosX();
                         double var18 = var10.getPosZ() - this.getPosZ();
@@ -297,17 +297,17 @@ public class class_4478 extends Entity {
       this.field_21824 = var1;
    }
 
-   public void method_20782(class_5834 var1) {
+   public void method_20782(LivingEntity var1) {
       this.field_21825 = var1;
       this.field_21837 = var1 != null ? var1.method_37328() : null;
    }
 
    @Nullable
-   public class_5834 method_20795() {
+   public LivingEntity method_20795() {
       if (this.field_21825 == null && this.field_21837 != null && this.world instanceof class_6331) {
          Entity var3 = ((class_6331)this.world).method_28925(this.field_21837);
-         if (var3 instanceof class_5834) {
-            this.field_21825 = (class_5834)var3;
+         if (var3 instanceof LivingEntity) {
+            this.field_21825 = (LivingEntity)var3;
          }
       }
 

@@ -30,7 +30,7 @@ public abstract class class_6749 extends class_5783 {
       this.method_37256(var2, var4, var6);
    }
 
-   public class_6749(EntityType<? extends class_6749> var1, class_5834 var2, World var3) {
+   public class_6749(EntityType<? extends class_6749> var1, LivingEntity var2, World var3) {
       this(var1, var2.getPosX(), var2.method_37388() - 0.1F, var2.getPosZ(), var3);
       this.method_26159(var2);
       if (var2 instanceof PlayerEntity) {
@@ -284,8 +284,8 @@ public abstract class class_6749 extends class_5783 {
       DamageSource var8;
       if (var7 != null) {
          var8 = DamageSource.method_28379(this, var7);
-         if (var7 instanceof class_5834) {
-            ((class_5834)var7).method_26510(var4);
+         if (var7 instanceof LivingEntity) {
+            ((LivingEntity)var7).method_26510(var4);
          }
       } else {
          var8 = DamageSource.method_28379(this, this);
@@ -314,8 +314,8 @@ public abstract class class_6749 extends class_5783 {
             return;
          }
 
-         if (var4 instanceof class_5834) {
-            class_5834 var13 = (class_5834)var4;
+         if (var4 instanceof LivingEntity) {
+            LivingEntity var13 = (LivingEntity)var4;
             if (!this.world.field_33055 && this.method_30936() <= 0) {
                var13.method_26508(var13.method_26569() + 1);
             }
@@ -327,9 +327,9 @@ public abstract class class_6749 extends class_5783 {
                }
             }
 
-            if (!this.world.field_33055 && var7 instanceof class_5834) {
+            if (!this.world.field_33055 && var7 instanceof LivingEntity) {
                class_2931.method_13429(var13, var7);
-               class_2931.method_13406((class_5834)var7, var13);
+               class_2931.method_13406((LivingEntity)var7, var13);
             }
 
             this.method_30935(var13);
@@ -384,7 +384,7 @@ public abstract class class_6749 extends class_5783 {
       return this.field_34843;
    }
 
-   public void method_30935(class_5834 var1) {
+   public void method_30935(LivingEntity var1) {
    }
 
    @Nullable
@@ -533,7 +533,7 @@ public abstract class class_6749 extends class_5783 {
       return this.field_41735.<Byte>method_36640(field_34842);
    }
 
-   public void method_30937(class_5834 var1, float var2) {
+   public void method_30937(LivingEntity var1, float var2) {
       int var5 = class_2931.method_13399(class_3668.field_17850, var1);
       int var6 = class_2931.method_13399(class_3668.field_17845, var1);
       this.method_30924((double)(var2 * 2.0F) + this.field_41717.nextGaussian() * 0.25 + (double)((float)this.world.method_43370().method_2097() * 0.11F));

@@ -5,7 +5,7 @@ import java.util.EnumSet;
 public class class_3800 extends class_956 {
    private static String[] field_18589;
    private final class_8990 field_18588;
-   private class_5834 field_18587;
+   private LivingEntity field_18587;
    private int field_18586;
 
    public class_3800(class_8990 var1) {
@@ -17,7 +17,7 @@ public class class_3800 extends class_956 {
    @Override
    public boolean method_16795() {
       if (this.field_18588.method_41215() && !this.field_18588.method_41216()) {
-         class_5834 var3 = this.field_18588.method_41207();
+         LivingEntity var3 = this.field_18588.method_41207();
          if (var3 == null) {
             return false;
          } else {
@@ -35,7 +35,7 @@ public class class_3800 extends class_956 {
    @Override
    public void method_16796() {
       this.field_4915.method_26860(this.field_18587);
-      class_5834 var3 = this.field_18588.method_41207();
+      LivingEntity var3 = this.field_18588.method_41207();
       if (var3 != null) {
          this.field_18586 = var3.method_26581();
       }

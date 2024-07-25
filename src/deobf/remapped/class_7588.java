@@ -30,11 +30,11 @@ public class class_7588 extends class_6127<class_6704> {
       int var7 = 0;
       ArrayList var8 = Lists.newArrayList();
 
-      for (class_5834 var10 : var5.<List<class_5834>>method_5138(class_6044.field_30901).orElse(Lists.newArrayList())) {
+      for (LivingEntity var10 : var5.<List<LivingEntity>>method_5138(class_6044.field_30901).orElse(Lists.newArrayList())) {
          if (var10 instanceof class_2599 && !var10.method_26449()) {
             var7++;
             if (!var6.isPresent()) {
-               var6 = Optional.<class_5834>of((class_2599)var10);
+               var6 = Optional.<LivingEntity>of((class_2599)var10);
             }
          }
 

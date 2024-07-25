@@ -100,7 +100,7 @@ public class class_6467 extends Module {
    }
 
    private boolean method_29451(Entity var1) {
-      if (var1 instanceof class_5834) {
+      if (var1 instanceof LivingEntity) {
          if (var1 instanceof PlayerEntity) {
             return !(var1 instanceof ClientPlayerEntity) ? !SigmaMainClass.getInstance().method_3331().method_20495(var1) : false;
          } else {

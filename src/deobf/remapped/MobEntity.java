@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
-public abstract class MobEntity extends class_5834 {
+public abstract class MobEntity extends LivingEntity {
    private static final class_7821<Byte> field_29912 = class_8073.<Byte>method_36641(MobEntity.class, class_2734.field_13361);
    public int field_29913;
    public int field_29915;
@@ -20,7 +20,7 @@ public abstract class MobEntity extends class_5834 {
    public class_1249 field_29904;
    public final class_782 goalSelector;
    public final class_782 targetSelector;
-   private class_5834 field_29905;
+   private LivingEntity field_29905;
    private final class_8091 field_29898;
    private final class_2831<ItemStack> field_29903 = class_2831.<ItemStack>method_12872(2, ItemStack.EMPTY);
    public final float[] field_29923 = new float[2];
@@ -58,7 +58,7 @@ public abstract class MobEntity extends class_5834 {
    }
 
    public static MutableAttribute method_26846() {
-      return class_5834.method_26409().createMutableAttribute(Attributes.FOLLOW_RANGE, 16.0).method_5983(Attributes.ATTACK_KNOCKBACK);
+      return LivingEntity.method_26409().createMutableAttribute(Attributes.FOLLOW_RANGE, 16.0).method_5983(Attributes.ATTACK_KNOCKBACK);
    }
 
    public class_1249 createNavigator(World var1) {
@@ -124,11 +124,11 @@ public abstract class MobEntity extends class_5834 {
    }
 
    @Nullable
-   public class_5834 method_17809() {
+   public LivingEntity method_17809() {
       return this.field_29905;
    }
 
-   public void method_26860(class_5834 var1) {
+   public void method_26860(LivingEntity var1) {
       this.field_29905 = var1;
       class_7860.method_35547(class_7860.field_40009, this, var1);
    }
@@ -322,7 +322,7 @@ public abstract class MobEntity extends class_5834 {
          }
       } else {
          CompoundNBT var20 = new CompoundNBT();
-         if (!(this.field_29911 instanceof class_5834)) {
+         if (!(this.field_29911 instanceof LivingEntity)) {
             if (this.field_29911 instanceof class_4641) {
                BlockPos var22 = ((class_4641)this.field_29911).method_21469();
                var20.putInt("X", var22.method_12173());
@@ -345,8 +345,8 @@ public abstract class MobEntity extends class_5834 {
          }
       }
 
-      if (this.method_26859()) {
-         var1.putBoolean("NoAI", this.method_26859());
+      if (this.isAIDisabled()) {
+         var1.putBoolean("NoAI", this.isAIDisabled());
       }
    }
 
@@ -682,10 +682,10 @@ public abstract class MobEntity extends class_5834 {
       double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.getPosZ() - this.getPosZ();
       double var10;
-      if (!(var1 instanceof class_5834)) {
+      if (!(var1 instanceof LivingEntity)) {
          var10 = (var1.method_37241().field_19937 + var1.method_37241().field_19939) / 2.0 - this.method_37388();
       } else {
-         class_5834 var12 = (class_5834)var1;
+         LivingEntity var12 = (LivingEntity)var1;
          var10 = var12.method_37388() - this.method_37388();
       }
 
@@ -979,7 +979,7 @@ public abstract class MobEntity extends class_5834 {
       return var4;
    }
 
-   public boolean method_26863() {
+   public boolean canBeSteered() {
       return false;
    }
 
@@ -1106,7 +1106,7 @@ public abstract class MobEntity extends class_5834 {
          MobEntity var5 = (MobEntity)var1.method_30484(this.world);
          var5.method_37299(this);
          var5.method_26910(this.method_26449());
-         var5.method_26888(this.method_26859());
+         var5.method_26888(this.isAIDisabled());
          if (this.method_45507()) {
             var5.method_37303(this.method_45508());
             var5.method_37319(this.method_37135());
@@ -1283,7 +1283,7 @@ public abstract class MobEntity extends class_5834 {
 
    @Override
    public boolean canPassengerSteer() {
-      return this.method_26863() && super.canPassengerSteer();
+      return this.canBeSteered() && super.canPassengerSteer();
    }
 
    public static boolean method_26868(class_6943 var0, ItemStack var1) {
@@ -1295,7 +1295,7 @@ public abstract class MobEntity extends class_5834 {
 
    @Override
    public boolean method_26530() {
-      return super.method_26530() && !this.method_26859();
+      return super.method_26530() && !this.isAIDisabled();
    }
 
    public void method_26888(boolean var1) {
@@ -1313,7 +1313,7 @@ public abstract class MobEntity extends class_5834 {
       this.field_41735.method_36633(field_29912, !var1 ? (byte)(var4 & -5) : (byte)(var4 | 4));
    }
 
-   public boolean method_26859() {
+   public boolean isAIDisabled() {
       return (this.field_41735.<Byte>method_36640(field_29912) & 1) != 0;
    }
 
@@ -1334,7 +1334,7 @@ public abstract class MobEntity extends class_5834 {
    }
 
    @Override
-   public boolean method_26608(class_5834 var1) {
+   public boolean method_26608(LivingEntity var1) {
       return var1.getType() == EntityType.field_34300 && ((PlayerEntity)var1).playerAbilities.disableDamage ? false : super.method_26608(var1);
    }
 
@@ -1342,8 +1342,8 @@ public abstract class MobEntity extends class_5834 {
    public boolean method_26442(Entity var1) {
       float var4 = (float)this.method_26575(Attributes.ATTACK_DAMAGE);
       float var5 = (float)this.method_26575(Attributes.ATTACK_KNOCKBACK);
-      if (var1 instanceof class_5834) {
-         var4 += class_2931.method_13425(this.method_26446(), ((class_5834)var1).method_26550());
+      if (var1 instanceof LivingEntity) {
+         var4 += class_2931.method_13425(this.method_26446(), ((LivingEntity)var1).method_26550());
          var5 += (float)class_2931.method_13433(this);
       }
 
@@ -1354,8 +1354,8 @@ public abstract class MobEntity extends class_5834 {
 
       boolean var7 = var1.attackEntityFrom(DamageSource.method_28345(this), var4);
       if (var7) {
-         if (var5 > 0.0F && var1 instanceof class_5834) {
-            ((class_5834)var1)
+         if (var5 > 0.0F && var1 instanceof LivingEntity) {
+            ((LivingEntity)var1)
                .method_26567(
                   var5 * 0.5F,
                   (double)class_9299.method_42818(this.rotationYaw * (float) (Math.PI / 180.0)),

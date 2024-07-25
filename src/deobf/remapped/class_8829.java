@@ -113,8 +113,8 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
       boolean var4 = var1.attackEntityFrom(DamageSource.method_28370(this), (float)((int)this.method_26575(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.method_37096(this, var1);
-         if (var1 instanceof class_5834) {
-            ((class_5834)var1).method_26504(((class_5834)var1).method_26619() + 1);
+         if (var1 instanceof LivingEntity) {
+            ((LivingEntity)var1).method_26504(((LivingEntity)var1).method_26619() + 1);
             byte var5 = 0;
             if (this.world.method_43370() != class_423.field_1789) {
                if (this.world.method_43370() == class_423.field_1782) {
@@ -125,7 +125,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
             }
 
             if (var5 > 0) {
-               ((class_5834)var1).method_26558(new class_2250(Effects.field_19718, var5 * 20, 0));
+               ((LivingEntity)var1).method_26558(new class_2250(Effects.field_19718, var5 * 20, 0));
             }
          }
 

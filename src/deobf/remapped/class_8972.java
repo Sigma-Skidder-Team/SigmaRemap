@@ -37,7 +37,7 @@ public enum class_8972 implements class_1342 {
       } else {
          if (var3 instanceof class_6353) {
             class_6353 var4 = (class_6353)var3;
-            class_5834 var5 = var4.field_32481;
+            LivingEntity var5 = var4.field_32481;
             if (var5 == null) {
                return false;
             }

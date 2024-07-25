@@ -6,7 +6,7 @@ public class class_7037 extends class_3599 {
    private static String[] field_36245;
    private final class_6163 field_36246;
    private final MobEntity field_36247;
-   private class_5834 field_36249;
+   private LivingEntity field_36249;
    private int field_36248;
 
    public class_7037(MobEntity var1) {
@@ -17,7 +17,7 @@ public class class_7037 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_36247.method_17809();
+      LivingEntity var3 = this.field_36247.method_17809();
       if (var3 != null) {
          this.field_36249 = var3;
          return true;

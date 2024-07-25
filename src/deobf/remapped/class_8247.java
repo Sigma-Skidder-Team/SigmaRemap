@@ -3,11 +3,11 @@ package remapped;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
-public class class_8247 extends class_6127<class_5834> {
+public class class_8247 extends class_6127<LivingEntity> {
    private static String[] field_42335;
 
    @Override
-   public void method_28154(class_6331 var1, class_5834 var2) {
+   public void method_28154(class_6331 var1, LivingEntity var2) {
    }
 
    @Override

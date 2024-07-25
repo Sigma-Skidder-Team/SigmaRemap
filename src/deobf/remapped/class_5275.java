@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class class_5275 extends class_6127<class_5834> {
+public class class_5275 extends class_6127<LivingEntity> {
    private static String[] field_26950;
 
    @Override
@@ -17,19 +17,19 @@ public class class_5275 extends class_6127<class_5834> {
    }
 
    @Override
-   public void method_28154(class_6331 var1, class_5834 var2) {
+   public void method_28154(class_6331 var1, LivingEntity var2) {
       class_1150 var5 = var2.method_26525();
       Optional var6 = Optional.empty();
       ArrayList var7 = Lists.newArrayList();
 
-      for (class_5834 var9 : var5.<List<class_5834>>method_5138(class_6044.field_30901).orElse(ImmutableList.of())) {
+      for (LivingEntity var9 : var5.<List<LivingEntity>>method_5138(class_6044.field_30901).orElse(ImmutableList.of())) {
          if (var9 instanceof class_3204 || var9 instanceof class_4653) {
-            var6 = Optional.<class_5834>of((MobEntity)var9);
+            var6 = Optional.<LivingEntity>of((MobEntity)var9);
             break;
          }
       }
 
-      for (class_5834 var11 : var5.<List<class_5834>>method_5138(class_6044.field_30907).orElse(ImmutableList.of())) {
+      for (LivingEntity var11 : var5.<List<LivingEntity>>method_5138(class_6044.field_30907).orElse(ImmutableList.of())) {
          if (var11 instanceof class_6993 && ((class_6993)var11).method_31995()) {
             var7.add((class_6993)var11);
          }

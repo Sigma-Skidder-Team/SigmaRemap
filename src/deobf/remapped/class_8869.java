@@ -30,7 +30,7 @@ public class class_8869 {
    }
 
    public boolean method_40798() {
-      return this.field_45341.method_28372() instanceof class_5834;
+      return this.field_45341.method_28372() instanceof LivingEntity;
    }
 
    @Nullable

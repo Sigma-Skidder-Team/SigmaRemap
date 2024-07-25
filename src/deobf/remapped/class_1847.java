@@ -22,13 +22,13 @@ public class class_1847 extends class_5920<class_7666> {
    }
 
    public void method_8164(class_6331 var1, class_7666 var2, long var3) {
-      class_7666 var7 = (class_7666)var2.method_26525().<class_5834>method_5138(class_6044.field_30861).get();
+      class_7666 var7 = (class_7666)var2.method_26525().<LivingEntity>method_5138(class_6044.field_30861).get();
       class_1225.method_5443(var2, var7, 0.5F);
       this.field_9376 = method_8169(var2, var7);
    }
 
    public void method_8163(class_6331 var1, class_7666 var2, long var3) {
-      class_7666 var7 = (class_7666)var2.method_26525().<class_5834>method_5138(class_6044.field_30861).get();
+      class_7666 var7 = (class_7666)var2.method_26525().<LivingEntity>method_5138(class_6044.field_30861).get();
       if (!(var2.method_37275(var7) > 5.0)) {
          class_1225.method_5443(var2, var7, 0.5F);
          var2.method_34717(var1, var7, var3);
@@ -57,7 +57,7 @@ public class class_1847 extends class_5920<class_7666> {
       return var4.stream().filter(var1x -> !var5.contains(var1x)).collect(Collectors.<class_2451>toSet());
    }
 
-   private static void method_8166(class_7666 var0, Set<class_2451> var1, class_5834 var2) {
+   private static void method_8166(class_7666 var0, Set<class_2451> var1, LivingEntity var2) {
       class_4657 var5 = var0.method_2017();
       ItemStack var6 = ItemStack.EMPTY;
 

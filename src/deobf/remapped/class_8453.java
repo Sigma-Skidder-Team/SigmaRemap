@@ -22,7 +22,7 @@ public class class_8453 extends class_3599 {
          if (this.field_43220.method_37134()) {
             return false;
          } else if (this.field_43220.method_37360()) {
-            class_5834 var3 = this.field_43220.method_41207();
+            LivingEntity var3 = this.field_43220.method_41207();
             if (var3 == null) {
                return true;
             } else {

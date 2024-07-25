@@ -158,7 +158,7 @@ public class class_945 extends class_3757 {
       this.field_4835 = var1;
    }
 
-   public void method_4112(class_5834 var1) {
+   public void method_4112(LivingEntity var1) {
       this.field_4827 = var1.method_45509().getString();
    }
 

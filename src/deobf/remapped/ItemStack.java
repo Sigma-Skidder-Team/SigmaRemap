@@ -156,7 +156,7 @@ public final class ItemStack {
       return this.method_27960().method_11231(var1, var2, var3);
    }
 
-   public ItemStack method_27971(World var1, class_5834 var2) {
+   public ItemStack method_27971(World var1, LivingEntity var2) {
       return this.method_27960().method_11242(this, var1, var2);
    }
 
@@ -234,7 +234,7 @@ public final class ItemStack {
       }
    }
 
-   public <T extends class_5834> void method_28003(int var1, T var2, Consumer<T> var3) {
+   public <T extends LivingEntity> void method_28003(int var1, T var2, Consumer<T> var3) {
       if (!var2.world.field_33055
          && (!(var2 instanceof PlayerEntity) || !((PlayerEntity)var2).playerAbilities.isCreativeMode)
          && this.method_27959()
@@ -250,7 +250,7 @@ public final class ItemStack {
       }
    }
 
-   public void method_27974(class_5834 var1, PlayerEntity var2) {
+   public void method_27974(LivingEntity var1, PlayerEntity var2) {
       class_2451 var5 = this.method_27960();
       if (var5.method_11246(this, var1, var2)) {
          var2.method_3211(class_6234.field_31907.method_43790(var5));
@@ -268,7 +268,7 @@ public final class ItemStack {
       return this.method_27960().method_11222(var1);
    }
 
-   public class_6910 method_28000(PlayerEntity var1, class_5834 var2, Hand var3) {
+   public class_6910 method_28000(PlayerEntity var1, LivingEntity var2, Hand var3) {
       return this.method_27960().method_11202(this, var1, var2, var3);
    }
 
@@ -370,7 +370,7 @@ public final class ItemStack {
       return this.method_27960().method_11233(this);
    }
 
-   public void method_27989(World var1, class_5834 var2, int var3) {
+   public void method_27989(World var1, LivingEntity var2, int var3) {
       this.method_27960().method_11206(this, var1, var2, var3);
    }
 
@@ -900,7 +900,7 @@ public final class ItemStack {
       this.method_28030(-var1);
    }
 
-   public void method_28033(World var1, class_5834 var2, int var3) {
+   public void method_28033(World var1, LivingEntity var2, int var3) {
       this.method_27960().method_11228(var1, var2, this, var3);
    }
 

@@ -41,7 +41,7 @@ public class class_4012 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      class_5834 var3 = this.field_19482.method_17809();
+      LivingEntity var3 = this.field_19482.method_17809();
       return var3 == null ? false : this.field_19482.method_26609(var3, class_4931.field_25526);
    }
 }

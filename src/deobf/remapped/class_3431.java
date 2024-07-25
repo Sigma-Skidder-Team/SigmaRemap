@@ -82,7 +82,7 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
       method_15860(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field_16866, (float)(var8 + 75 - 50) - this.field_16868, this.field_943.thePlayer);
    }
 
-   public static void method_15860(int var0, int var1, int var2, float var3, float var4, class_5834 var5) {
+   public static void method_15860(int var0, int var1, int var2, float var3, float var4, LivingEntity var5) {
       float var8 = (float)Math.atan((double)(var3 / 40.0F));
       float var9 = (float)Math.atan((double)(var4 / 40.0F));
       RenderSystem.method_16438();

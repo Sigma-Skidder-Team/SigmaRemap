@@ -424,7 +424,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
       }
 
       this.method_3219().method_4851(class_6810.field_35131, this.method_37206(), class_8274::method_38145);
-      class_5834 var7 = this.method_26560();
+      LivingEntity var7 = this.method_26560();
       if (var7 != null) {
          this.method_3211(class_6234.field_31834.method_43790(var7.getType()));
          var7.method_37392(this, this.field_29644, var1);

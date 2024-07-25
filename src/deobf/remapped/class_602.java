@@ -42,7 +42,7 @@ public class class_602 {
    }
 
    @Nullable
-   public class_7373 method_2816(class_7373 var1, ItemStack var2, ClientWorld var3, class_5834 var4) {
+   public class_7373 method_2816(class_7373 var1, ItemStack var2, ClientWorld var3, LivingEntity var4) {
       boolean var7 = Config.method_14390();
       if (var7) {
          field_3456 = null;

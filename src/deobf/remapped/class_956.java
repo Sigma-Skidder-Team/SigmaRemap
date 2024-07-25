@@ -7,7 +7,7 @@ public abstract class class_956 extends class_3599 {
    private int field_4917;
    private int field_4919;
    private int field_4920;
-   public class_5834 field_4918;
+   public LivingEntity field_4918;
    public int field_4922 = 60;
 
    public class_956(MobEntity var1, boolean var2) {
@@ -22,7 +22,7 @@ public abstract class class_956 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      class_5834 var3 = this.field_4915.method_17809();
+      LivingEntity var3 = this.field_4915.method_17809();
       if (var3 == null) {
          var3 = this.field_4918;
       }
@@ -77,11 +77,11 @@ public abstract class class_956 extends class_3599 {
 
    @Override
    public void method_16793() {
-      this.field_4915.method_26860((class_5834)null);
+      this.field_4915.method_26860((LivingEntity)null);
       this.field_4918 = null;
    }
 
-   public boolean method_4210(class_5834 var1, class_4931 var2) {
+   public boolean method_4210(LivingEntity var1, class_4931 var2) {
       if (var1 != null) {
          if (var2.method_22604(this.field_4915, var1)) {
             if (this.field_4915.method_26880(var1.method_37075())) {
@@ -111,7 +111,7 @@ public abstract class class_956 extends class_3599 {
       }
    }
 
-   private boolean method_4212(class_5834 var1) {
+   private boolean method_4212(LivingEntity var1) {
       this.field_4919 = 10 + this.field_4915.method_26594().nextInt(5);
       class_3998 var4 = this.field_4915.method_26927().method_5598(var1, 0);
       if (var4 != null) {

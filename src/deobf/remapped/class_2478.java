@@ -13,7 +13,7 @@ public class class_2478 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_12367.method_17809();
+      LivingEntity var3 = this.field_12367.method_17809();
       return var3 != null && var3.isAlive() ? this.field_12367.field_41768.method_43370() != class_423.field_1790 : false;
    }
 
@@ -32,11 +32,11 @@ public class class_2478 extends class_3599 {
    public void method_16794() {
       if (this.field_12367.field_41768.method_43370() != class_423.field_1790) {
          this.field_12365--;
-         class_5834 var3 = this.field_12367.method_17809();
+         LivingEntity var3 = this.field_12367.method_17809();
          this.field_12367.method_26865().method_17240(var3, 180.0F, 180.0F);
          double var4 = this.field_12367.method_37275(var3);
          if (!(var4 < 400.0)) {
-            this.field_12367.method_26860((class_5834)null);
+            this.field_12367.method_26860((LivingEntity)null);
          } else if (this.field_12365 <= 0) {
             this.field_12365 = 20 + class_6092.method_27912(this.field_12367).nextInt(10) * 20 / 2;
             this.field_12367

@@ -25,9 +25,9 @@ public class class_8758 extends class_5405 {
    }
 
    @Override
-   public ITextComponent method_28362(class_5834 var1) {
+   public ITextComponent method_28362(LivingEntity var1) {
       ITextComponent var4 = this.field_44817 != null ? this.field_44817.method_19839() : this.field_27576.method_19839();
-      ItemStack var5 = !(this.field_44817 instanceof class_5834) ? ItemStack.EMPTY : ((class_5834)this.field_44817).method_26446();
+      ItemStack var5 = !(this.field_44817 instanceof LivingEntity) ? ItemStack.EMPTY : ((LivingEntity)this.field_44817).method_26446();
       String var6 = "death.attack." + this.field_31693;
       String var7 = var6 + ".item";
       return !var5.method_28022() && var5.method_28018()

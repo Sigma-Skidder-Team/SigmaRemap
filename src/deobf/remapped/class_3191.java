@@ -12,7 +12,7 @@ public class class_3191 {
       var7.field_8191 = -1.5F + var2.field_8191;
    }
 
-   public static void method_14685(class_1549 var0, class_1549 var1, class_5834 var2, boolean var3) {
+   public static void method_14685(class_1549 var0, class_1549 var1, LivingEntity var2, boolean var3) {
       class_1549 var6 = !var3 ? var1 : var0;
       class_1549 var7 = !var3 ? var0 : var1;
       var6.field_8190 = !var3 ? 0.8F : -0.8F;

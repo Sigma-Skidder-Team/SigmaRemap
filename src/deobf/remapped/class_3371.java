@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class class_3371 extends class_5920<class_5834> {
+public class class_3371 extends class_5920<LivingEntity> {
    private static String[] field_16616;
    private class_5851 field_16618;
    private int field_16617;
@@ -17,7 +17,7 @@ public class class_3371 extends class_5920<class_5834> {
    }
 
    @Override
-   public boolean method_27088(class_6331 var1, class_5834 var2) {
+   public boolean method_27088(class_6331 var1, LivingEntity var2) {
       class_3998 var5 = var2.method_26525().<class_3998>method_5138(class_6044.field_30888).get();
       if (!var5.method_18440() && !var5.method_18436()) {
          if (Objects.equals(this.field_16618, var5.method_18438())) {
@@ -36,7 +36,7 @@ public class class_3371 extends class_5920<class_5834> {
    }
 
    @Override
-   public void method_27080(class_6331 var1, class_5834 var2, long var3) {
+   public void method_27080(class_6331 var1, LivingEntity var2, long var3) {
       class_3998 var7 = var2.method_26525().<class_3998>method_5138(class_6044.field_30888).get();
       this.field_16618 = var7.method_18438();
       class_5851 var8 = var7.method_18442();
@@ -65,7 +65,7 @@ public class class_3371 extends class_5920<class_5834> {
       method_15548(var1, var2, var8, var9);
    }
 
-   public static void method_15548(class_6331 var0, class_5834 var1, class_5851 var2, class_5851 var3) {
+   public static void method_15548(class_6331 var0, LivingEntity var1, class_5851 var2, class_5851 var3) {
       class_1150 var6 = var1.method_26525();
       if (var6.method_5117(class_6044.field_30872)) {
          Iterator var7 = var6.<Set<class_8150>>method_5138(class_6044.field_30872).get().iterator();
@@ -99,10 +99,10 @@ public class class_3371 extends class_5920<class_5834> {
       }
    }
 
-   private static boolean method_15546(class_6331 var0, class_5834 var1, BlockPos var2) {
+   private static boolean method_15546(class_6331 var0, LivingEntity var1, BlockPos var2) {
       class_1150 var5 = var1.method_26525();
       return var5.method_5117(class_6044.field_30907)
-         ? var5.<List<class_5834>>method_5138(class_6044.field_30907)
+         ? var5.<List<LivingEntity>>method_5138(class_6044.field_30907)
             .get()
             .stream()
             .filter(var1x -> var1x.method_37387() == var1.getType())
@@ -111,7 +111,7 @@ public class class_3371 extends class_5920<class_5834> {
          : false;
    }
 
-   private static boolean method_15544(class_6331 var0, class_5834 var1, BlockPos var2) {
+   private static boolean method_15544(class_6331 var0, LivingEntity var1, BlockPos var2) {
       if (!var1.method_26525().method_5117(class_6044.field_30888)) {
          return false;
       } else {
@@ -130,11 +130,11 @@ public class class_3371 extends class_5920<class_5834> {
       }
    }
 
-   private static boolean method_15547(class_6331 var0, class_5834 var1, class_8150 var2) {
+   private static boolean method_15547(class_6331 var0, LivingEntity var1, class_8150 var2) {
       return var2.method_37408() != var0.method_29545() || !var2.method_37409().method_12170(var1.method_37245(), 2.0);
    }
 
-   private void method_15545(class_6331 var1, class_5834 var2, BlockPos var3) {
+   private void method_15545(class_6331 var1, LivingEntity var2, BlockPos var3) {
       class_1150 var6 = var2.method_26525();
       class_8150 var7 = class_8150.method_37410(var1.method_29545(), var3);
       if (!var6.<Set<class_8150>>method_5138(class_6044.field_30872).isPresent()) {

@@ -214,16 +214,16 @@ public class class_1239 {
       }
    }
 
-   private static class_5834 method_5522(Entity var0) throws CommandSyntaxException {
-      if (var0 instanceof class_5834) {
-         return (class_5834)var0;
+   private static LivingEntity method_5522(Entity var0) throws CommandSyntaxException {
+      if (var0 instanceof LivingEntity) {
+         return (LivingEntity)var0;
       } else {
          throw field_6838.create(var0.method_45509());
       }
    }
 
-   private static class_5834 method_5521(Entity var0, class_225 var1) throws CommandSyntaxException {
-      class_5834 var4 = method_5522(var0);
+   private static LivingEntity method_5521(Entity var0, class_225 var1) throws CommandSyntaxException {
+      LivingEntity var4 = method_5522(var0);
       if (var4.method_26590().method_30801(var1)) {
          return var4;
       } else {
@@ -232,7 +232,7 @@ public class class_1239 {
    }
 
    private static int method_5530(class_9155 var0, Entity var1, class_225 var2, double var3) throws CommandSyntaxException {
-      class_5834 var7 = method_5521(var1, var2);
+      LivingEntity var7 = method_5521(var1, var2);
       double var8 = var7.method_26575(var2);
       var0.method_42196(
          new TranslationTextComponent("commands.attribute.value.get.success", new TranslationTextComponent(var2.method_952()), var1.method_45509(), var8),
@@ -242,7 +242,7 @@ public class class_1239 {
    }
 
    private static int method_5524(class_9155 var0, Entity var1, class_225 var2, double var3) throws CommandSyntaxException {
-      class_5834 var7 = method_5521(var1, var2);
+      LivingEntity var7 = method_5521(var1, var2);
       double var8 = var7.method_26419(var2);
       var0.method_42196(
          new TranslationTextComponent("commands.attribute.base_value.get.success", new TranslationTextComponent(var2.method_952()), var1.method_45509(), var8),
@@ -252,7 +252,7 @@ public class class_1239 {
    }
 
    private static int method_5523(class_9155 var0, Entity var1, class_225 var2, UUID var3, double var4) throws CommandSyntaxException {
-      class_5834 var8 = method_5521(var1, var2);
+      LivingEntity var8 = method_5521(var1, var2);
       class_6711 var9 = var8.method_26590();
       if (var9.method_30810(var2, var3)) {
          double var10 = var9.method_30806(var2, var3);

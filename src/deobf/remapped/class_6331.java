@@ -342,7 +342,7 @@ public class class_6331 extends World implements class_700 {
    }
 
    private void method_28939() {
-      this.field_32340.stream().filter(class_5834::method_26507).collect(Collectors.toList()).forEach(var0 -> var0.method_3162(false, false));
+      this.field_32340.stream().filter(LivingEntity::method_26507).collect(Collectors.toList()).forEach(var0 -> var0.method_3162(false, false));
    }
 
    public void method_28929(class_2654 var1, int var2) {
@@ -421,8 +421,8 @@ public class class_6331 extends World implements class_700 {
    public BlockPos method_28993(BlockPos var1) {
       BlockPos var4 = this.method_22563(class_3801.field_18595, var1);
       Box var5 = new Box(var4, new BlockPos(var4.method_12173(), this.method_28261(), var4.method_12185())).method_18898(3.0);
-      List var6 = this.<class_5834>method_25869(
-         class_5834.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method_25263(var1x.method_37075())
+      List var6 = this.<LivingEntity>method_25869(
+         LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method_25263(var1x.method_37075())
       );
       if (var6.isEmpty()) {
          if (var4.method_12165() == -1) {
@@ -431,7 +431,7 @@ public class class_6331 extends World implements class_700 {
 
          return var4;
       } else {
-         return ((class_5834)var6.get(this.field_33033.nextInt(var6.size()))).method_37075();
+         return ((LivingEntity)var6.get(this.field_33033.nextInt(var6.size()))).method_37075();
       }
    }
 
@@ -638,7 +638,7 @@ public class class_6331 extends World implements class_700 {
 
    @Nullable
    public class_9359 method_28948() {
-      List var3 = this.method_28990(class_5834::isAlive);
+      List var3 = this.method_28990(LivingEntity::isAlive);
       return !var3.isEmpty() ? (class_9359)var3.get(this.field_33033.nextInt(var3.size())) : null;
    }
 

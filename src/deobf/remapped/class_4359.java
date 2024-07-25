@@ -130,7 +130,7 @@ public class class_4359 extends class_2811 implements class_2354 {
       return var1.method_6677(this);
    }
 
-   public boolean method_20226(class_5834 var1) {
+   public boolean method_20226(LivingEntity var1) {
       return var1 == null ? false : !this.world.method_29602() || var1.method_37285();
    }
 
@@ -143,7 +143,7 @@ public class class_4359 extends class_2811 implements class_2354 {
       if (this.field_21387) {
          return true;
       } else {
-         class_5834 var3 = this.method_17809();
+         LivingEntity var3 = this.method_17809();
          return var3 != null && var3.method_37285();
       }
    }
@@ -188,7 +188,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       class_3348 var5 = new class_3348(this.world, this, new ItemStack(class_4897.field_25086));
       double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.method_37080(0.3333333333333333) - var5.method_37309();

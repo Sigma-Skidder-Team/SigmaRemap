@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5160<T extends class_5834> extends class_6837<T> {
+public class class_5160<T extends LivingEntity> extends class_6837<T> {
    private static String[] field_26571;
    private final class_9408 field_26570;
 
@@ -23,13 +23,13 @@ public class class_5160<T extends class_5834> extends class_6837<T> {
 
    @Override
    public void method_16796() {
-      this.field_26572.method_26860((class_5834)null);
+      this.field_26572.method_26860((LivingEntity)null);
       super.method_16796();
    }
 
    @Override
    public void method_16794() {
-      this.field_26572.method_26860((class_5834)null);
+      this.field_26572.method_26860((LivingEntity)null);
       super.method_16794();
    }
 }

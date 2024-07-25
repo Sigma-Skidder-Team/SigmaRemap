@@ -151,11 +151,11 @@ public class class_8734 {
             var24.remove();
          } else if (SigmaMainClass.getInstance().method_3307().method_14460(var9)) {
             var24.remove();
-         } else if (!(var9 instanceof class_5834)) {
+         } else if (!(var9 instanceof LivingEntity)) {
             var24.remove();
-         } else if (((class_5834)var9).method_26551() == 0.0F) {
+         } else if (((LivingEntity)var9).method_26551() == 0.0F) {
             var24.remove();
-         } else if (!this.field_44744.thePlayer.method_26608((class_5834)var9)) {
+         } else if (!this.field_44744.thePlayer.method_26608((LivingEntity)var9)) {
             var24.remove();
          } else if (var9 instanceof class_9399) {
             var24.remove();

@@ -50,7 +50,7 @@ public class class_8551 extends class_691 {
             var6 = var1.method_25870((Entity)null, var5);
             break;
          case field_32140:
-            var6 = var1.<class_5834>method_25868(class_5834.class, var5);
+            var6 = var1.<LivingEntity>method_25868(LivingEntity.class, var5);
             break;
          default:
             return 0;

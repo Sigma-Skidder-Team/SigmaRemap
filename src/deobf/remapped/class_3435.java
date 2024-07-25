@@ -9,7 +9,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_3435 {
    private final List<class_8869> field_16881 = Lists.newArrayList();
-   private final class_5834 field_16886;
+   private final LivingEntity field_16886;
    private int field_16884;
    private int field_16887;
    private int field_16882;
@@ -17,7 +17,7 @@ public class class_3435 {
    private boolean field_16883;
    private String field_16885;
 
-   public class_3435(class_5834 var1) {
+   public class_3435(LivingEntity var1) {
       this.field_16886 = var1;
    }
 
@@ -78,7 +78,7 @@ public class class_3435 {
                var7 = new TranslationTextComponent("death.fell.accident." + this.method_15869(var3), this.field_16886.method_19839());
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
                Entity var11 = var3.method_40799().method_28372();
-               ItemStack var10 = !(var11 instanceof class_5834) ? ItemStack.EMPTY : ((class_5834)var11).method_26446();
+               ItemStack var10 = !(var11 instanceof LivingEntity) ? ItemStack.EMPTY : ((LivingEntity)var11).method_26446();
                if (!var10.method_28022() && var10.method_28018()) {
                   var7 = new TranslationTextComponent("death.fell.assist.item", this.field_16886.method_19839(), var8, var10.method_28001());
                } else {
@@ -87,7 +87,7 @@ public class class_3435 {
             } else if (var5 == null) {
                var7 = new TranslationTextComponent("death.fell.killer", this.field_16886.method_19839());
             } else {
-               ItemStack var9 = !(var6 instanceof class_5834) ? ItemStack.EMPTY : ((class_5834)var6).method_26446();
+               ItemStack var9 = !(var6 instanceof LivingEntity) ? ItemStack.EMPTY : ((LivingEntity)var6).method_26446();
                if (!var9.method_28022() && var9.method_28018()) {
                   var7 = new TranslationTextComponent("death.fell.finish.item", this.field_16886.method_19839(), var5, var9.method_28001());
                } else {
@@ -103,8 +103,8 @@ public class class_3435 {
    }
 
    @Nullable
-   public class_5834 method_15876() {
-      class_5834 var3 = null;
+   public LivingEntity method_15876() {
+      LivingEntity var3 = null;
       PlayerEntity var4 = null;
       float var5 = 0.0F;
       float var6 = 0.0F;
@@ -115,13 +115,13 @@ public class class_3435 {
             var4 = (PlayerEntity)var8.method_40799().method_28372();
          }
 
-         if (var8.method_40799().method_28372() instanceof class_5834 && (var3 == null || var8.method_40800() > var5)) {
+         if (var8.method_40799().method_28372() instanceof LivingEntity && (var3 == null || var8.method_40800() > var5)) {
             var5 = var8.method_40800();
-            var3 = (class_5834)var8.method_40799().method_28372();
+            var3 = (LivingEntity)var8.method_40799().method_28372();
          }
       }
 
-      return (class_5834)(var4 != null && var6 >= var5 / 3.0F ? var4 : var3);
+      return (LivingEntity)(var4 != null && var6 >= var5 / 3.0F ? var4 : var3);
    }
 
    @Nullable
@@ -186,7 +186,7 @@ public class class_3435 {
       }
    }
 
-   public class_5834 method_15867() {
+   public LivingEntity method_15867() {
       return this.field_16886;
    }
 }

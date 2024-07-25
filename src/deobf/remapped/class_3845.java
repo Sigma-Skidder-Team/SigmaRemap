@@ -12,7 +12,7 @@ public class class_3845 extends class_5467 {
    private static final class_7821<Boolean> field_18764 = class_8073.<Boolean>method_36641(class_3845.class, class_2734.field_13347);
    private static final class_7821<Boolean> field_18770 = class_8073.<Boolean>method_36641(class_3845.class, class_2734.field_13347);
    private int field_18767;
-   public static final Predicate<class_5834> field_18768 = var0 -> var0.method_26449() && !var0.method_37285();
+   public static final Predicate<LivingEntity> field_18768 = var0 -> var0.method_26449() && !var0.method_37285();
 
    public class_3845(EntityType<? extends class_3845> var1, World var2) {
       super(var1, var2);

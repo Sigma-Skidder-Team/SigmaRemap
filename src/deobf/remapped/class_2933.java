@@ -20,7 +20,7 @@ public class class_2933 implements class_7835 {
    }
 
    @Override
-   public boolean method_35463(class_5834 var1) {
+   public boolean method_35463(LivingEntity var1) {
       return true;
    }
 

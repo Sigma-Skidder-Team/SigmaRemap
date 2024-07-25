@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_6829<T extends class_5834, M extends class_3169<T>> extends class_5105<T, M> {
+public class class_6829<T extends LivingEntity, M extends class_3169<T>> extends class_5105<T, M> {
    private static String[] field_35219;
    private final EntityRenderDispatcher field_35220;
    private class_581 field_35221;

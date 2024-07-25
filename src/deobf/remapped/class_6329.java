@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_6329<T extends class_5834, M extends class_6521<T> & class_1787> extends class_4171<T, M> {
+public class class_6329<T extends LivingEntity, M extends class_6521<T> & class_1787> extends class_4171<T, M> {
    private static String[] field_32316;
 
    public class_6329(class_2514<T, M> var1) {
@@ -25,7 +25,7 @@ public class class_6329<T extends class_5834, M extends class_6521<T> & class_17
       }
    }
 
-   private void method_28897(class_5834 var1, ItemStack var2, class_5612 var3, class_1736 var4, class_7966 var5, class_2565 var6, int var7) {
+   private void method_28897(LivingEntity var1, ItemStack var2, class_5612 var3, class_1736 var4, class_7966 var5, class_2565 var6, int var7) {
       if (!var2.method_28022()) {
          var5.method_36063();
          this.method_19347().method_7948(var4, var5);

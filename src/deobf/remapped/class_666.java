@@ -16,7 +16,7 @@ public class class_666 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_3691.method_17809();
+      LivingEntity var3 = this.field_3691.method_17809();
       return var3 != null && var3.isAlive() && this.field_3691.method_26608(var3);
    }
 
@@ -34,7 +34,7 @@ public class class_666 extends class_3599 {
    @Override
    public void method_16794() {
       this.field_3693--;
-      class_5834 var3 = this.field_3691.method_17809();
+      LivingEntity var3 = this.field_3691.method_17809();
       if (var3 != null) {
          boolean var4 = this.field_3691.method_26928().method_36736(var3);
          if (!var4) {

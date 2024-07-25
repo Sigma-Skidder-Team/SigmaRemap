@@ -109,12 +109,12 @@ public class class_2931 {
       return var4.floatValue();
    }
 
-   public static float method_13405(class_5834 var0) {
+   public static float method_13405(LivingEntity var0) {
       int var3 = method_13399(class_3668.field_17858, var0);
       return var3 <= 0 ? 0.0F : class_6317.method_28789(var3);
    }
 
-   public static void method_13429(class_5834 var0, Entity var1) {
+   public static void method_13429(LivingEntity var0, Entity var1) {
       class_4800 var4 = (var2, var3) -> var2.method_20427(var0, var1, var3);
       if (var0 != null) {
          method_13416(var4, var0.method_37342());
@@ -125,7 +125,7 @@ public class class_2931 {
       }
    }
 
-   public static void method_13406(class_5834 var0, Entity var1) {
+   public static void method_13406(LivingEntity var0, Entity var1) {
       class_4800 var4 = (var2, var3) -> var2.method_20421(var0, var1, var3);
       if (var0 != null) {
          method_13416(var4, var0.method_37342());
@@ -136,7 +136,7 @@ public class class_2931 {
       }
    }
 
-   public static int method_13399(class_4382 var0, class_5834 var1) {
+   public static int method_13399(class_4382 var0, LivingEntity var1) {
       Collection var4 = var0.method_20420(var1).values();
       if (var4 != null) {
          int var5 = 0;
@@ -154,23 +154,23 @@ public class class_2931 {
       }
    }
 
-   public static int method_13433(class_5834 var0) {
+   public static int method_13433(LivingEntity var0) {
       return method_13399(class_3668.field_17851, var0);
    }
 
-   public static int method_13410(class_5834 var0) {
+   public static int method_13410(LivingEntity var0) {
       return method_13399(class_3668.field_17868, var0);
    }
 
-   public static int method_13430(class_5834 var0) {
+   public static int method_13430(LivingEntity var0) {
       return method_13399(class_3668.field_17865, var0);
    }
 
-   public static int method_13417(class_5834 var0) {
+   public static int method_13417(LivingEntity var0) {
       return method_13399(class_3668.field_17869, var0);
    }
 
-   public static int method_13414(class_5834 var0) {
+   public static int method_13414(LivingEntity var0) {
       return method_13399(class_3668.field_17879, var0);
    }
 
@@ -182,19 +182,19 @@ public class class_2931 {
       return method_13423(class_3668.field_17852, var0);
    }
 
-   public static int method_13397(class_5834 var0) {
+   public static int method_13397(LivingEntity var0) {
       return method_13399(class_3668.field_17873, var0);
    }
 
-   public static boolean method_13403(class_5834 var0) {
+   public static boolean method_13403(LivingEntity var0) {
       return method_13399(class_3668.field_17847, var0) > 0;
    }
 
-   public static boolean method_13407(class_5834 var0) {
+   public static boolean method_13407(LivingEntity var0) {
       return method_13399(class_3668.field_17848, var0) > 0;
    }
 
-   public static boolean method_13411(class_5834 var0) {
+   public static boolean method_13411(LivingEntity var0) {
       return method_13399(class_3668.field_17849, var0) > 0;
    }
 
@@ -219,12 +219,12 @@ public class class_2931 {
    }
 
    @Nullable
-   public static Entry<class_6943, ItemStack> method_13412(class_4382 var0, class_5834 var1) {
+   public static Entry<class_6943, ItemStack> method_13412(class_4382 var0, LivingEntity var1) {
       return method_13413(var0, var1, var0x -> true);
    }
 
    @Nullable
-   public static Entry<class_6943, ItemStack> method_13413(class_4382 var0, class_5834 var1, Predicate<ItemStack> var2) {
+   public static Entry<class_6943, ItemStack> method_13413(class_4382 var0, LivingEntity var1, Predicate<ItemStack> var2) {
       Map var5 = var0.method_20420(var1);
       if (!var5.isEmpty()) {
          ArrayList var6 = Lists.newArrayList();

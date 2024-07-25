@@ -8,7 +8,7 @@ public class class_6675 extends class_2451 {
    }
 
    @Override
-   public class_6910 method_11202(ItemStack var1, PlayerEntity var2, class_5834 var3, Hand var4) {
+   public class_6910 method_11202(ItemStack var1, PlayerEntity var2, LivingEntity var3, Hand var4) {
       if (var1.method_28018() && !(var3 instanceof PlayerEntity)) {
          if (!var2.world.field_33055 && var3.isAlive()) {
             var3.method_37303(var1.method_28008());

@@ -11,7 +11,7 @@ public class class_9344 extends NearestAttackableTargetGoal<PlayerEntity> {
    private final class_4931 field_47691;
    private final class_4931 field_47690 = new class_4931().method_22602();
 
-   public class_9344(class_912 var1, Predicate<class_5834> var2) {
+   public class_9344(class_912 var1, Predicate<LivingEntity> var2) {
       super(var1, PlayerEntity.class, 10, false, false, var2);
       this.field_47688 = var1;
       this.field_47691 = new class_4931().method_22607(this.method_4211()).method_22606(var1x -> class_912.method_3906(var1, (PlayerEntity)var1x));
@@ -53,7 +53,7 @@ public class class_9344 extends NearestAttackableTargetGoal<PlayerEntity> {
    @Override
    public void method_16794() {
       if (this.field_47688.method_17809() == null) {
-         super.method_19214((class_5834)null);
+         super.method_19214((LivingEntity)null);
       }
 
       if (this.field_47693 == null) {

@@ -6,7 +6,7 @@ public class class_2960 extends class_3578 {
    private static final class_7821<Integer> field_14453 = class_8073.<Integer>method_36641(class_2960.class, class_2734.field_13366);
    private int field_14452;
    private int field_14451;
-   private static final Predicate<class_5834> field_14454 = var0 -> {
+   private static final Predicate<LivingEntity> field_14454 = var0 -> {
       if (var0 == null) {
          return false;
       } else {
@@ -103,7 +103,7 @@ public class class_2960 extends class_3578 {
    public void method_26606() {
       super.method_26606();
       if (this.isAlive() && this.method_13537() > 0) {
-         for (MobEntity var4 : this.world.<class_5834>method_25869(MobEntity.class, this.method_37241().method_18898(0.3), field_14454)) {
+         for (MobEntity var4 : this.world.<LivingEntity>method_25869(MobEntity.class, this.method_37241().method_18898(0.3), field_14454)) {
             if (var4.isAlive()) {
                this.method_13536(var4);
             }

@@ -115,7 +115,7 @@ public class class_1918 extends class_2811 implements class_6250 {
    }
 
    @Override
-   public void method_26860(class_5834 var1) {
+   public void method_26860(LivingEntity var1) {
       if (this.method_17809() == null && var1 != null) {
          this.field_9789 = field_9788.method_20387(this.field_41717);
          this.field_9783 = field_9790.method_20387(this.field_41717);

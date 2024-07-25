@@ -31,7 +31,7 @@ public class class_7403 extends class_4382 {
    }
 
    @Override
-   public void method_20427(class_5834 var1, Entity var2, int var3) {
+   public void method_20427(LivingEntity var1, Entity var2, int var3) {
       Random var6 = var1.method_26594();
       Entry var7 = class_2931.method_13412(class_3668.field_17882, var1);
       if (method_33706(var3, var6)) {

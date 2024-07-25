@@ -153,7 +153,7 @@ public class class_378 extends MobEntity implements class_1869 {
       int var3 = this.method_1860();
       if (!this.world.field_33055 && var3 > 1 && this.method_26450()) {
          ITextComponent var4 = this.method_45508();
-         boolean var5 = this.method_26859();
+         boolean var5 = this.isAIDisabled();
          float var6 = (float)var3 / 4.0F;
          int var7 = var3 / 2;
          int var8 = 2 + this.field_41717.nextInt(3);
@@ -184,7 +184,7 @@ public class class_378 extends MobEntity implements class_1869 {
    public void method_37183(Entity var1) {
       super.method_37183(var1);
       if (var1 instanceof IronGolemEntity && this.method_1857()) {
-         this.method_1856((class_5834)var1);
+         this.method_1856((LivingEntity)var1);
       }
    }
 
@@ -195,7 +195,7 @@ public class class_378 extends MobEntity implements class_1869 {
       }
    }
 
-   public void method_1856(class_5834 var1) {
+   public void method_1856(LivingEntity var1) {
       if (this.isAlive()) {
          int var4 = this.method_1860();
          if (this.method_37275(var1) < 0.6 * (double)var4 * 0.6 * (double)var4

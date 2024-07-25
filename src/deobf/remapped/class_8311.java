@@ -51,9 +51,9 @@ public class class_8311 extends class_4382 {
    }
 
    @Override
-   public void method_20421(class_5834 var1, Entity var2, int var3) {
-      if (var2 instanceof class_5834) {
-         class_5834 var6 = (class_5834)var2;
+   public void method_20421(LivingEntity var1, Entity var2, int var3) {
+      if (var2 instanceof LivingEntity) {
+         LivingEntity var6 = (LivingEntity)var2;
          if (this.field_42566 == 2 && var6.method_26550() == class_2780.field_13575) {
             int var7 = 20 + var1.method_26594().nextInt(10 * var3);
             var6.method_26558(new class_2250(Effects.field_19743, var7, 3));

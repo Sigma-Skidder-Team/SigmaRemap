@@ -9,7 +9,7 @@ public class class_2959 extends class_9037 {
    }
 
    @Override
-   public double method_41492(class_5834 var1) {
+   public double method_41492(LivingEntity var1) {
       if (!(this.field_46244.getRidingEntity() instanceof RavagerEntity)) {
          return super.method_41492(var1);
       } else {

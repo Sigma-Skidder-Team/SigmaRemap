@@ -77,8 +77,8 @@ public class class_8159 {
             new class_5197(
                ImmutableMap.of(class_6044.field_30875, class_561.field_3318),
                ImmutableList.of(
-                  Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34276, 8, class_6044.field_30861, var0, 2), 2),
-                  Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34249, 8, class_6044.field_30861, var0, 2), 1),
+                  Pair.of(class_4741.<LivingEntity>method_21905(EntityType.field_34276, 8, class_6044.field_30861, var0, 2), 2),
+                  Pair.of(class_4741.<LivingEntity>method_21905(EntityType.field_34249, 8, class_6044.field_30861, var0, 2), 1),
                   Pair.of(new class_4716(var0), 1),
                   Pair.of(new class_324(var0, 2), 1),
                   Pair.of(new class_8418(var0), 2),
@@ -138,14 +138,14 @@ public class class_8159 {
             2,
             new class_5197(
                ImmutableList.of(
-                  Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34276, 8, class_6044.field_30861, var1, 2), 2),
+                  Pair.of(class_4741.<LivingEntity>method_21905(EntityType.field_34276, 8, class_6044.field_30861, var1, 2), 2),
                   Pair.of(
                      new class_4741<class_7666, class_1899>(
                         EntityType.field_34276, 8, class_1899::method_8636, class_1899::method_8636, class_6044.field_30892, var1, 2
                      ),
                      1
                   ),
-                  Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34249, 8, class_6044.field_30861, var1, 2), 1),
+                  Pair.of(class_4741.<LivingEntity>method_21905(EntityType.field_34249, 8, class_6044.field_30861, var1, 2), 1),
                   Pair.of(new class_4716(var1), 1),
                   Pair.of(new class_324(var1, 2), 1),
                   Pair.of(new class_8418(var1), 1),
@@ -221,7 +221,7 @@ public class class_8159 {
       return ImmutableList.of(Pair.of(0, new class_6934(15, 3)), Pair.of(1, new class_3962(32, var1 * 1.25F, 2)), method_37435());
    }
 
-   private static Pair<Integer, class_5920<class_5834>> method_37425() {
+   private static Pair<Integer, class_5920<LivingEntity>> method_37425() {
       return Pair.of(
          5,
          new class_5197(
@@ -239,7 +239,7 @@ public class class_8159 {
       );
    }
 
-   private static Pair<Integer, class_5920<class_5834>> method_37435() {
+   private static Pair<Integer, class_5920<LivingEntity>> method_37435() {
       return Pair.of(
          5,
          new class_5197(

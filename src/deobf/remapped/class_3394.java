@@ -9,7 +9,7 @@ public class class_3394 extends class_1871 {
    private int field_16721;
    private class_3998 field_16719;
    private class_1343 field_16718;
-   private class_5834 field_16723;
+   private LivingEntity field_16723;
    private boolean field_16724;
 
    public class_3394(class_2770 var1) {
@@ -151,7 +151,7 @@ public class class_3394 extends class_1871 {
       this.field_16723 = null;
    }
 
-   public void method_15684(class_5834 var1) {
+   public void method_15684(LivingEntity var1) {
       this.field_16723 = var1;
       int var4 = this.field_9479.method_12606();
       int var5 = this.field_9479.method_12614(this.field_16723.getPosX(), this.field_16723.method_37309(), this.field_16723.getPosZ());

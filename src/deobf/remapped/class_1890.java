@@ -7,7 +7,7 @@ public class class_1890 extends class_3429 {
       super(var1, var2);
    }
 
-   public class_1890(World var1, class_5834 var2) {
+   public class_1890(World var1, LivingEntity var2) {
       super(EntityType.field_34274, var2, var1);
    }
 

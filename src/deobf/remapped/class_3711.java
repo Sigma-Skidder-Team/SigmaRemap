@@ -96,6 +96,6 @@ public class class_3711 {
    }
 
    private static double method_17238(Entity var0) {
-      return !(var0 instanceof class_5834) ? (var0.method_37241().field_19937 + var0.method_37241().field_19939) / 2.0 : var0.method_37388();
+      return !(var0 instanceof LivingEntity) ? (var0.method_37241().field_19937 + var0.method_37241().field_19939) / 2.0 : var0.method_37388();
    }
 }

@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.Optional;
 
-public class class_3962 extends class_5920<class_5834> {
+public class class_3962 extends class_5920<LivingEntity> {
    private static String[] field_19193;
    private final float field_19191;
    private final int field_19189;
@@ -22,7 +22,7 @@ public class class_3962 extends class_5920<class_5834> {
    }
 
    @Override
-   public boolean method_27088(class_6331 var1, class_5834 var2) {
+   public boolean method_27088(class_6331 var1, LivingEntity var2) {
       Optional var5 = var1.method_28969()
          .method_6876(var0 -> var0 == class_236.field_778, var0 -> true, var2.method_37075(), this.field_19190 + 1, class_8122.field_41615);
       if (var5.isPresent() && ((BlockPos)var5.get()).method_12170(var2.method_37245(), (double)this.field_19190)) {
@@ -35,7 +35,7 @@ public class class_3962 extends class_5920<class_5834> {
    }
 
    @Override
-   public void method_27080(class_6331 var1, class_5834 var2, long var3) {
+   public void method_27080(class_6331 var1, LivingEntity var2, long var3) {
       class_1150 var7 = var2.method_26525();
       Optional var8 = this.field_19192;
       if (!var8.isPresent()) {

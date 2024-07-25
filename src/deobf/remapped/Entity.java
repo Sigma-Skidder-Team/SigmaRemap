@@ -367,8 +367,8 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public void method_37178(int var1) {
       int var4 = var1 * 20;
-      if (this instanceof class_5834) {
-         var4 = class_5139.method_23552((class_5834)this, var4);
+      if (this instanceof LivingEntity) {
+         var4 = class_5139.method_23552((LivingEntity)this, var4);
       }
 
       if (this.field_41728 < var4) {
@@ -1581,7 +1581,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean method_37359() {
-      return this instanceof class_5834;
+      return this instanceof LivingEntity;
    }
 
    public boolean startRiding(Entity var1, boolean var2) {
@@ -1926,7 +1926,7 @@ public abstract class Entity implements class_9875, class_5801 {
       this.field_41706 = 0.0F;
    }
 
-   public void method_37231(class_6331 var1, class_5834 var2) {
+   public void method_37231(class_6331 var1, LivingEntity var2) {
    }
 
    public void method_37160(double var1, double var3, double var5) {
@@ -2406,9 +2406,9 @@ public abstract class Entity implements class_9875, class_5801 {
       return false;
    }
 
-   public void method_37096(class_5834 var1, Entity var2) {
-      if (var2 instanceof class_5834) {
-         class_2931.method_13429((class_5834)var2, var1);
+   public void method_37096(LivingEntity var1, Entity var2) {
+      if (var2 instanceof LivingEntity) {
+         class_2931.method_13429((LivingEntity)var2, var1);
       }
 
       class_2931.method_13406(var1, var2);
@@ -2567,7 +2567,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return new class_1343((double)var9 * var7 / (double)var11, 0.0, (double)var10 * var7 / (double)var11);
    }
 
-   public class_1343 method_37282(class_5834 var1) {
+   public class_1343 method_37282(LivingEntity var1) {
       return new class_1343(this.getPosX(), this.method_37241().field_19939, this.getPosZ());
    }
 

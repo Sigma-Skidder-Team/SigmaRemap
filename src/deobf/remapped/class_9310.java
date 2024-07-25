@@ -115,7 +115,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public boolean method_26863() {
+   public boolean canBeSteered() {
       return false;
    }
 
@@ -341,7 +341,7 @@ public class class_9310 extends class_5521 implements class_2354 {
       return EntityType.field_34327.method_30484(this.world);
    }
 
-   private void method_42985(class_5834 var1) {
+   private void method_42985(LivingEntity var1) {
       class_7548 var4 = new class_7548(this.world, this);
       double var5 = var1.getPosX() - this.getPosX();
       double var7 = var1.method_37080(0.3333333333333333) - var4.method_37309();
@@ -434,7 +434,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public void method_10805(class_5834 var1, float var2) {
+   public void method_10805(LivingEntity var1, float var2) {
       this.method_42985(var1);
    }
 

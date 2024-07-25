@@ -25,11 +25,11 @@ public class class_4843 implements class_7835 {
    }
 
    @Override
-   public boolean method_35463(class_5834 var1) {
-      if (!(this.field_24168 instanceof class_5834)) {
+   public boolean method_35463(LivingEntity var1) {
+      if (!(this.field_24168 instanceof LivingEntity)) {
          return true;
       } else {
-         Optional var4 = var1.method_26525().<List<class_5834>>method_5138(class_6044.field_30901);
+         Optional var4 = var1.method_26525().<List<LivingEntity>>method_5138(class_6044.field_30901);
          return this.field_24168.isAlive() && var4.isPresent() && ((List)var4.get()).contains(this.field_24168);
       }
    }

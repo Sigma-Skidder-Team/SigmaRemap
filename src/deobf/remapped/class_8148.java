@@ -36,14 +36,14 @@ public class class_8148<E extends MobEntity> extends class_5920<E> {
    }
 
    private boolean method_37403(E var1) {
-      return var1.method_26525().<List<class_5834>>method_5138(class_6044.field_30901).get().contains(this.method_37404((E)var1));
+      return var1.method_26525().<List<LivingEntity>>method_5138(class_6044.field_30901).get().contains(this.method_37404((E)var1));
    }
 
    private boolean method_37402(E var1) {
       return this.method_37404((E)var1).method_37124(var1, (double)this.field_41776);
    }
 
-   private class_5834 method_37404(E var1) {
-      return var1.method_26525().<class_5834>method_5138(class_6044.field_30884).get();
+   private LivingEntity method_37404(E var1) {
+      return var1.method_26525().<LivingEntity>method_5138(class_6044.field_30884).get();
    }
 }

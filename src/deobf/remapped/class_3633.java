@@ -88,7 +88,7 @@ public class class_3633 extends class_380 implements class_724 {
    }
 
    private boolean method_16934(World var1, BlockPos var2) {
-      List var5 = var1.<class_7666>method_25869(class_7666.class, new Box(var2), class_5834::method_26507);
+      List var5 = var1.<class_7666>method_25869(class_7666.class, new Box(var2), LivingEntity::method_26507);
       if (!var5.isEmpty()) {
          ((class_7666)var5.get(0)).method_26557();
          return true;
@@ -114,7 +114,7 @@ public class class_3633 extends class_380 implements class_724 {
    private void method_16927(Entity var1) {
       class_1343 var4 = var1.method_37098();
       if (var4.field_7333 < 0.0) {
-         double var5 = !(var1 instanceof class_5834) ? 0.8 : 1.0;
+         double var5 = !(var1 instanceof LivingEntity) ? 0.8 : 1.0;
          var1.method_37214(var4.field_7336, -var4.field_7333 * 0.66F * var5, var4.field_7334);
       }
    }
@@ -267,7 +267,7 @@ public class class_3633 extends class_380 implements class_724 {
    }
 
    @Override
-   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, LivingEntity var4, ItemStack var5) {
       super.method_29257(var1, var2, var3, var4, var5);
       if (!var1.field_33055) {
          BlockPos var8 = var2.method_6098(var3.<Direction>method_10313(field_1543));

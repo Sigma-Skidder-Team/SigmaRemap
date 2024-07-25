@@ -274,7 +274,7 @@ public class class_9202 {
             var12.method_22262(var0, var1);
          }
 
-         if (!(var1 instanceof class_5834) || !((class_5834)var1).method_26618()) {
+         if (!(var1 instanceof LivingEntity) || !((LivingEntity)var1).method_26618()) {
             var1.method_37215(var1.method_37098().method_6210(1.0, 0.0, 1.0));
             var1.method_37386(true);
          }

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public class class_9399 extends class_5834 {
+public class class_9399 extends LivingEntity {
    private static final class_1366 field_48039 = new class_1366(0.0F, 0.0F, 0.0F);
    private static final class_1366 field_48053 = new class_1366(0.0F, 0.0F, 0.0F);
    private static final class_1366 field_48034 = new class_1366(-10.0F, 0.0F, -10.0F);

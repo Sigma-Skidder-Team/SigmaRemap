@@ -16,7 +16,7 @@ public class class_763 extends class_7164<class_337, class_2574> {
    public boolean method_3439(class_337 var1, class_2359 var2, double var3, double var5, double var7) {
       if (!super.method_32863(var1, var2, var3, var5, var7)) {
          if (var1.method_1555()) {
-            class_5834 var11 = var1.method_1552();
+            LivingEntity var11 = var1.method_1552();
             if (var11 != null) {
                class_1343 var12 = this.method_3438(var11, (double)var11.method_37074() * 0.5, 1.0F);
                class_1343 var13 = this.method_3438(var1, (double)var1.method_37277(), 1.0F);
@@ -32,7 +32,7 @@ public class class_763 extends class_7164<class_337, class_2574> {
       }
    }
 
-   private class_1343 method_3438(class_5834 var1, double var2, float var4) {
+   private class_1343 method_3438(LivingEntity var1, double var2, float var4) {
       double var7 = class_9299.method_42794((double)var4, var1.field_41754, var1.getPosX());
       double var9 = class_9299.method_42794((double)var4, var1.field_41713, var1.method_37309()) + var2;
       double var11 = class_9299.method_42794((double)var4, var1.field_41724, var1.getPosZ());
@@ -41,7 +41,7 @@ public class class_763 extends class_7164<class_337, class_2574> {
 
    public void method_3442(class_337 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       super.method_32866(var1, var2, var3, var4, var5, var6);
-      class_5834 var9 = var1.method_1552();
+      LivingEntity var9 = var1.method_1552();
       if (var9 != null) {
          float var10 = var1.method_1546(var3);
          float var11 = (float)var1.world.method_29546() + var3;

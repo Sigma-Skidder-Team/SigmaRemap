@@ -15,7 +15,7 @@ public class class_3756 extends class_3757 implements class_3745 {
    private boolean field_18357;
    private boolean field_18353;
    private final List<BlockPos> field_18352 = Lists.newArrayList();
-   private class_5834 field_18356;
+   private LivingEntity field_18356;
    private UUID field_18351;
    private long field_18348;
 
@@ -147,7 +147,7 @@ public class class_3756 extends class_3757 implements class_3745 {
    }
 
    private void method_17379() {
-      class_5834 var3 = this.field_18356;
+      LivingEntity var3 = this.field_18356;
       int var4 = this.field_18352.size();
       if (var4 >= 42) {
          if (this.field_18356 == null && this.field_18351 != null) {
@@ -159,9 +159,9 @@ public class class_3756 extends class_3757 implements class_3745 {
             }
          } else {
             List var5 = this.field_18364
-               .<class_5834>method_25869(class_5834.class, this.method_17371(), var0 -> var0 instanceof class_1869 && var0.method_37363());
+               .<LivingEntity>method_25869(LivingEntity.class, this.method_17371(), var0 -> var0 instanceof class_1869 && var0.method_37363());
             if (!var5.isEmpty()) {
-               this.field_18356 = (class_5834)var5.get(this.field_18364.field_33033.nextInt(var5.size()));
+               this.field_18356 = (LivingEntity)var5.get(this.field_18364.field_33033.nextInt(var5.size()));
             }
          }
       } else {
@@ -210,9 +210,9 @@ public class class_3756 extends class_3757 implements class_3745 {
    }
 
    @Nullable
-   private class_5834 method_17381() {
-      List var3 = this.field_18364.<class_5834>method_25869(class_5834.class, this.method_17371(), var1 -> var1.method_37328().equals(this.field_18351));
-      return var3.size() != 1 ? null : (class_5834)var3.get(0);
+   private LivingEntity method_17381() {
+      List var3 = this.field_18364.<LivingEntity>method_25869(LivingEntity.class, this.method_17371(), var1 -> var1.method_37328().equals(this.field_18351));
+      return var3.size() != 1 ? null : (LivingEntity)var3.get(0);
    }
 
    private void method_17372() {

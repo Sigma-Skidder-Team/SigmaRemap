@@ -10,11 +10,11 @@ public final class class_1493 {
       }
    }
 
-   public static boolean method_6892(class_5834 var0) {
+   public static boolean method_6892(LivingEntity var0) {
       return var0.isPotionActive(Effects.field_19735) || var0.isPotionActive(Effects.field_19744);
    }
 
-   public static int method_6888(class_5834 var0) {
+   public static int method_6888(LivingEntity var0) {
       int var3 = 0;
       int var4 = 0;
       if (var0.isPotionActive(Effects.field_19735)) {
@@ -28,7 +28,7 @@ public final class class_1493 {
       return Math.max(var3, var4);
    }
 
-   public static boolean method_6890(class_5834 var0) {
+   public static boolean method_6890(LivingEntity var0) {
       return var0.isPotionActive(Effects.field_19720) || var0.isPotionActive(Effects.field_19744);
    }
 }

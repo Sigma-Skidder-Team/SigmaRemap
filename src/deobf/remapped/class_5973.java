@@ -17,7 +17,7 @@ public class class_5973 extends class_3599 {
    public boolean method_16795() {
       if (this.field_30422.method_41215()) {
          if (!this.field_30422.method_41216()) {
-            class_5834 var3 = this.field_30422.method_41207();
+            LivingEntity var3 = this.field_30422.method_41207();
             if (var3 instanceof PlayerEntity) {
                this.field_30424 = (PlayerEntity)var3;
                if (!var3.method_26507()) {

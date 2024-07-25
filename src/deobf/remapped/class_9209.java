@@ -390,10 +390,10 @@ public class class_9209 {
 
    private static ItemStack method_42527(class_9155 var0, class_6943 var1) throws CommandSyntaxException {
       Entity var4 = var0.method_42178();
-      if (!(var4 instanceof class_5834)) {
+      if (!(var4 instanceof LivingEntity)) {
          throw field_47102.create(var4.method_19839());
       } else {
-         return ((class_5834)var4).method_26520(var1);
+         return ((LivingEntity)var4).method_26520(var1);
       }
    }
 
@@ -413,8 +413,8 @@ public class class_9209 {
    }
 
    private static int method_42510(CommandContext<class_9155> var0, Entity var1, class_6374 var2) throws CommandSyntaxException {
-      if (var1 instanceof class_5834) {
-         Identifier var5 = ((class_5834)var1).method_26591();
+      if (var1 instanceof LivingEntity) {
+         Identifier var5 = ((LivingEntity)var1).method_26591();
          class_9155 var6 = (class_9155)var0.getSource();
          class_8480 var7 = new class_8480(var6.method_42198());
          Entity var8 = var6.method_42200();

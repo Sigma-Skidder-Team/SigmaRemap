@@ -48,7 +48,7 @@ public abstract class AbstractRaiderEntity extends class_4607 {
          class_2452 var3 = this.method_18589();
          if (this.method_18593()) {
             if (var3 != null) {
-               class_5834 var4 = this.method_17809();
+               LivingEntity var4 = this.method_17809();
                if (var4 != null && (var4.getType() == EntityType.field_34300 || var4.getType() == EntityType.field_34298)) {
                   this.field_29658 = 0;
                }
@@ -92,7 +92,7 @@ public abstract class AbstractRaiderEntity extends class_4607 {
             if (!(var4 instanceof PlayerEntity)) {
                if (var4 instanceof class_9408) {
                   class_9408 var8 = (class_9408)var4;
-                  class_5834 var9 = var8.method_41207();
+                  LivingEntity var9 = var8.method_41207();
                   if (var8.method_41215() && var9 instanceof PlayerEntity) {
                      var7 = (PlayerEntity)var9;
                   }

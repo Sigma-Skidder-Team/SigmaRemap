@@ -271,7 +271,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       method_29295(var4, var1, var3, var5, var2, var6);
    }
 
-   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, LivingEntity var4, ItemStack var5) {
    }
 
    public boolean method_29278() {

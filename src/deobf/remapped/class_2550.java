@@ -11,7 +11,7 @@ public abstract class class_2550 extends class_8388 implements class_3713 {
       super(var1, var2, var4, var6, var8, var10, var12, var14);
    }
 
-   public class_2550(EntityType<? extends class_2550> var1, class_5834 var2, double var3, double var5, double var7, World var9) {
+   public class_2550(EntityType<? extends class_2550> var1, LivingEntity var2, double var3, double var5, double var7, World var9) {
       super(var1, var2, var3, var5, var7, var9);
    }
 

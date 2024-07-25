@@ -6,7 +6,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Random;
 
-public class class_3169<T extends class_5834> extends class_2344<T> {
+public class class_3169<T extends LivingEntity> extends class_2344<T> {
    private static String[] field_15850;
    private List<class_1549> field_15854 = Lists.newArrayList();
    public final class_1549 field_15851;

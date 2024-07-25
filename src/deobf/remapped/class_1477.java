@@ -129,7 +129,7 @@ public class class_1477 extends class_6414 {
       if (var2 instanceof class_3845 || var2 instanceof class_2022) {
          return false;
       } else {
-         return !(var2 instanceof class_5834) ? false : var2 instanceof PlayerEntity || var1.method_29537().method_1285(class_291.field_1047);
+         return !(var2 instanceof LivingEntity) ? false : var2 instanceof PlayerEntity || var1.method_29537().method_1285(class_291.field_1047);
       }
    }
 }

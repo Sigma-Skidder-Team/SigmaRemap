@@ -10,7 +10,7 @@ public abstract class class_9506 extends class_5783 {
       this.method_37256(var2, var4, var6);
    }
 
-   public class_9506(EntityType<? extends class_9506> var1, class_5834 var2, World var3) {
+   public class_9506(EntityType<? extends class_9506> var1, LivingEntity var2, World var3) {
       this(var1, var2.getPosX(), var2.method_37388() - 0.1F, var2.getPosZ(), var3);
       this.method_26159(var2);
    }

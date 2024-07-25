@@ -16,7 +16,7 @@ public class class_4699 extends class_2451 {
    }
 
    @Override
-   public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
+   public ItemStack method_11242(ItemStack var1, World var2, LivingEntity var3) {
       ItemStack var6 = super.method_11242(var1, var2, var3);
       CompoundNBT var7 = var1.method_27990();
       if (var7 != null && var7.contains("Effects", 9)) {

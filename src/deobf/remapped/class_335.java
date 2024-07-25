@@ -2,14 +2,14 @@ package remapped;
 
 import java.util.function.Predicate;
 
-public class class_335 implements Predicate<class_5834> {
+public class class_335 implements Predicate<LivingEntity> {
    private static String[] field_1244;
 
    public class_335(class_5542 var1) {
       this.field_1245 = var1;
    }
 
-   public boolean test(class_5834 var1) {
+   public boolean test(LivingEntity var1) {
       if (var1 instanceof class_5542) {
          return false;
       } else if (var1 instanceof class_3024 || var1 instanceof class_7272 || var1 instanceof MonsterEntity) {

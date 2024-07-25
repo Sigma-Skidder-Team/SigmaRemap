@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.ImmutableMap;
 
-public class class_3424<E extends MobEntity & class_3832, T extends class_5834> extends class_5920<E> {
+public class class_3424<E extends MobEntity & class_3832, T extends LivingEntity> extends class_5920<E> {
    private static String[] field_16857;
    private int field_16856;
    private class_2151 field_16858 = class_2151.field_10757;
@@ -12,7 +12,7 @@ public class class_3424<E extends MobEntity & class_3832, T extends class_5834> 
    }
 
    public boolean method_15830(class_6331 var1, E var2) {
-      class_5834 var5 = method_15825(var2);
+      LivingEntity var5 = method_15825(var2);
       return var2.method_26443(class_4897.field_25030) && class_1225.method_5449(var2, var5) && class_1225.method_5451(var2, var5, 0);
    }
 
@@ -21,7 +21,7 @@ public class class_3424<E extends MobEntity & class_3832, T extends class_5834> 
    }
 
    public void method_15826(class_6331 var1, E var2, long var3) {
-      class_5834 var7 = method_15825(var2);
+      LivingEntity var7 = method_15825(var2);
       this.method_15829(var2, var7);
       this.method_15831((E)var2, var7);
    }
@@ -37,7 +37,7 @@ public class class_3424<E extends MobEntity & class_3832, T extends class_5834> 
       }
    }
 
-   private void method_15831(E var1, class_5834 var2) {
+   private void method_15831(E var1, LivingEntity var2) {
       if (this.field_16858 != class_2151.field_10757) {
          if (this.field_16858 != class_2151.field_10759) {
             if (this.field_16858 != class_2151.field_10761) {
@@ -74,11 +74,11 @@ public class class_3424<E extends MobEntity & class_3832, T extends class_5834> 
       }
    }
 
-   private void method_15829(MobEntity var1, class_5834 var2) {
+   private void method_15829(MobEntity var1, LivingEntity var2) {
       var1.method_26525().method_5105(class_6044.field_30874, new class_4843(var2, true));
    }
 
-   private static class_5834 method_15825(class_5834 var0) {
-      return var0.method_26525().<class_5834>method_5138(class_6044.field_30884).get();
+   private static LivingEntity method_15825(LivingEntity var0) {
+      return var0.method_26525().<LivingEntity>method_5138(class_6044.field_30884).get();
    }
 }

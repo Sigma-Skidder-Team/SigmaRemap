@@ -112,7 +112,7 @@ public class class_4115 extends class_6414 {
    }
 
    @Override
-   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, LivingEntity var4, ItemStack var5) {
       var1.method_7513(var2.method_6081(), var3.method_10308(field_20045, class_7422.field_37874), 3);
    }
 

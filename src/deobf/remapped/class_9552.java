@@ -24,7 +24,7 @@ public class class_9552 extends class_5783 {
       this.method_37214(var8, var10, var12);
    }
 
-   public class_9552(World var1, class_5834 var2, Entity var3, class_9249 var4) {
+   public class_9552(World var1, LivingEntity var2, Entity var3, class_9249 var4) {
       this(EntityType.field_34271, var1);
       this.method_26159(var2);
       BlockPos var7 = var2.method_37075();
@@ -266,12 +266,12 @@ public class class_9552 extends class_5783 {
       super.method_26163(var1);
       Entity var4 = var1.method_25524();
       Entity var5 = this.method_26166();
-      class_5834 var6 = !(var5 instanceof class_5834) ? null : (class_5834)var5;
+      LivingEntity var6 = !(var5 instanceof LivingEntity) ? null : (LivingEntity)var5;
       boolean var7 = var4.attackEntityFrom(DamageSource.method_28358(this, var6).method_28359(), 4.0F);
       if (var7) {
          this.method_37096(var6, var4);
-         if (var4 instanceof class_5834) {
-            ((class_5834)var4).method_26558(new class_2250(Effects.LevitationEffect, 200));
+         if (var4 instanceof LivingEntity) {
+            ((LivingEntity)var4).method_26558(new class_2250(Effects.LevitationEffect, 200));
          }
       }
    }

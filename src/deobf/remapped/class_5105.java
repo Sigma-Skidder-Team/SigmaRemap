@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Random;
 
-public abstract class class_5105<T extends class_5834, M extends class_3169<T>> extends class_4171<T, M> {
+public abstract class class_5105<T extends LivingEntity, M extends class_3169<T>> extends class_4171<T, M> {
    public class_5105(class_6353<T, M> var1) {
       super(var1);
    }

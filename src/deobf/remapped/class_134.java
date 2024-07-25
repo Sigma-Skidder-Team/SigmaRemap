@@ -163,8 +163,8 @@ public class class_134 {
       return new class_5197<class_2599>(
          ImmutableList.of(
             Pair.of(new class_1203(0.6F), 2),
-            Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34240, 8, class_6044.field_30861, 0.6F, 2), 2),
-            Pair.of(new class_2214<class_5834>(class_134::method_502, new class_324(0.6F, 3)), 2),
+            Pair.of(class_4741.<LivingEntity>method_21905(EntityType.field_34240, 8, class_6044.field_30861, 0.6F, 2), 2),
+            Pair.of(new class_2214<LivingEntity>(class_134::method_502, new class_324(0.6F, 3)), 2),
             Pair.of(new class_102(30, 60), 1)
          )
       );
@@ -174,12 +174,12 @@ public class class_134 {
       return class_2300.method_10574(class_6044.field_30905, 1.0F, 8, false);
    }
 
-   private static class_6959<class_2599, class_5834> method_545() {
-      return new class_6959<class_2599, class_5834>(class_2599::method_26449, class_6044.field_30891, class_6044.field_30913, field_392);
+   private static class_6959<class_2599, LivingEntity> method_545() {
+      return new class_6959<class_2599, LivingEntity>(class_2599::method_26449, class_6044.field_30891, class_6044.field_30913, field_392);
    }
 
-   private static class_6959<class_2599, class_5834> method_532() {
-      return new class_6959<class_2599, class_5834>(class_134::method_542, class_6044.field_30908, class_6044.field_30913, field_389);
+   private static class_6959<class_2599, LivingEntity> method_532() {
+      return new class_6959<class_2599, LivingEntity>(class_134::method_542, class_6044.field_30908, class_6044.field_30913, field_389);
    }
 
    public static void method_534(class_2599 var0) {
@@ -342,7 +342,7 @@ public class class_134 {
       );
    }
 
-   private static boolean method_477(class_5834 var0, class_5834 var1) {
+   private static boolean method_477(LivingEntity var0, LivingEntity var1) {
       return var1.getType() == EntityType.field_34306 ? new Random(var0.world.method_29546()).nextFloat() < 0.1F : false;
    }
 
@@ -385,7 +385,7 @@ public class class_134 {
       }
    }
 
-   private static boolean method_526(class_2599 var0, class_5834 var1) {
+   private static boolean method_526(class_2599 var0, LivingEntity var1) {
       return method_519(var0).filter(var1x -> var1x == var1).isPresent();
    }
 
@@ -394,16 +394,16 @@ public class class_134 {
       if (!var3.method_5117(class_6044.field_30908)) {
          return false;
       } else {
-         class_5834 var4 = var3.<class_5834>method_5138(class_6044.field_30908).get();
+         LivingEntity var4 = var3.<LivingEntity>method_5138(class_6044.field_30908).get();
          return var0.method_37124(var4, 6.0);
       }
    }
 
-   private static Optional<? extends class_5834> method_519(class_2599 var0) {
+   private static Optional<? extends LivingEntity> method_519(class_2599 var0) {
       class_1150 var3 = var0.method_26525();
       if (!method_542(var0)) {
          Optional var4 = class_1225.method_5454(var0, class_6044.field_30866);
-         if (var4.isPresent() && method_504((class_5834)var4.get())) {
+         if (var4.isPresent() && method_504((LivingEntity)var4.get())) {
             return var4;
          } else {
             if (var3.method_5117(class_6044.field_30880)) {
@@ -418,7 +418,7 @@ public class class_134 {
                return var7;
             } else {
                Optional var6 = var3.<PlayerEntity>method_5138(class_6044.field_30904);
-               return var6.isPresent() && method_504((class_5834)var6.get()) ? var6 : Optional.empty();
+               return var6.isPresent() && method_504((LivingEntity)var6.get()) ? var6 : Optional.empty();
             }
          }
       } else {
@@ -454,7 +454,7 @@ public class class_134 {
       return !method_484(var0) && !method_468(var0) && var0.method_31995() && method_513(var1.method_27960());
    }
 
-   public static void method_483(class_2599 var0, class_5834 var1) {
+   public static void method_483(class_2599 var0, LivingEntity var1) {
       if (!(var1 instanceof class_2599)) {
          if (method_528(var0)) {
             method_485(var0, false);
@@ -489,7 +489,7 @@ public class class_134 {
       }
    }
 
-   public static void method_522(class_6993 var0, class_5834 var1) {
+   public static void method_522(class_6993 var0, LivingEntity var1) {
       if (!var0.method_26525().method_5134(class_6275.field_32068) && method_504(var1) && !class_1225.method_5452(var0, var1, 4.0)) {
          if (var1.getType() == EntityType.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
             method_521(var0, var1);
@@ -533,7 +533,7 @@ public class class_134 {
 
    private static boolean method_529(class_2599 var0) {
       class_1150 var3 = var0.method_26525();
-      return var3.method_5117(class_6044.field_30913) ? var3.<class_5834>method_5138(class_6044.field_30913).get().method_37124(var0, 12.0) : false;
+      return var3.method_5117(class_6044.field_30913) ? var3.<LivingEntity>method_5138(class_6044.field_30913).get().method_37124(var0, 12.0) : false;
    }
 
    public static boolean method_465(class_2599 var0) {
@@ -549,7 +549,7 @@ public class class_134 {
       return var0.method_26525().<List<class_6993>>method_5138(class_6044.field_30876).orElse(ImmutableList.of());
    }
 
-   public static boolean method_500(class_5834 var0) {
+   public static boolean method_500(LivingEntity var0) {
       for (ItemStack var4 : var0.method_37262()) {
          class_2451 var5 = var4.method_27960();
          if (var5 instanceof class_8228 && ((class_8228)var5).method_37667() == class_5667.field_28729) {
@@ -569,7 +569,7 @@ public class class_134 {
       return new class_5499<class_2599>(new class_6959(class_2599::method_26449, class_6044.field_30914, class_6044.field_30903, field_393), field_390);
    }
 
-   public static void method_540(class_6993 var0, class_5834 var1) {
+   public static void method_540(class_6993 var0, LivingEntity var1) {
       method_471(var0).forEach(var1x -> {
          if (var1.getType() != EntityType.field_34306 || var1x.method_31988() && ((class_6704)var1).method_30707()) {
             method_536(var1x, var1);
@@ -585,7 +585,7 @@ public class class_134 {
       method_494(var0).forEach(class_134::method_470);
    }
 
-   public static void method_533(class_6993 var0, class_5834 var1) {
+   public static void method_533(class_6993 var0, LivingEntity var1) {
       if (method_504(var1)) {
          var0.method_26525().method_5127(class_6044.field_30909);
          var0.method_26525().method_5107(class_6044.field_30866, var1.method_37328(), 600L);
@@ -599,31 +599,31 @@ public class class_134 {
       }
    }
 
-   private static void method_521(class_6993 var0, class_5834 var1) {
+   private static void method_521(class_6993 var0, LivingEntity var1) {
       Optional var4 = method_476(var0);
       if (!var4.isPresent()) {
          method_533(var0, var1);
       } else {
-         method_533(var0, (class_5834)var4.get());
+         method_533(var0, (LivingEntity)var4.get());
       }
    }
 
-   private static void method_536(class_6993 var0, class_5834 var1) {
+   private static void method_536(class_6993 var0, LivingEntity var1) {
       Optional var4 = method_538(var0);
-      class_5834 var5 = class_1225.method_5440(var0, var4, var1);
+      LivingEntity var5 = class_1225.method_5440(var0, var4, var1);
       if (!var4.isPresent() || var4.get() != var5) {
          method_533(var0, var5);
       }
    }
 
-   private static Optional<class_5834> method_538(class_6993 var0) {
+   private static Optional<LivingEntity> method_538(class_6993 var0) {
       return class_1225.method_5454(var0, class_6044.field_30866);
    }
 
-   public static Optional<class_5834> method_469(class_2599 var0) {
+   public static Optional<LivingEntity> method_469(class_2599 var0) {
       return !var0.method_26525().method_5117(class_6044.field_30913)
-         ? Optional.<class_5834>empty()
-         : var0.method_26525().<class_5834>method_5138(class_6044.field_30913);
+         ? Optional.<LivingEntity>empty()
+         : var0.method_26525().<LivingEntity>method_5138(class_6044.field_30913);
    }
 
    public static Optional<PlayerEntity> method_476(class_6993 var0) {
@@ -632,21 +632,21 @@ public class class_134 {
          : var0.method_26525().<PlayerEntity>method_5138(class_6044.field_30912);
    }
 
-   private static void method_487(class_2599 var0, class_5834 var1) {
+   private static void method_487(class_2599 var0, LivingEntity var1) {
       method_494(var0).stream().filter(var0x -> var0x instanceof class_2599).forEach(var1x -> method_501((class_2599)var1x, var1));
    }
 
-   private static void method_501(class_2599 var0, class_5834 var1) {
+   private static void method_501(class_2599 var0, LivingEntity var1) {
       class_1150 var4 = var0.method_26525();
-      class_5834 var5 = class_1225.method_5440(var0, var4.<class_5834>method_5138(class_6044.field_30913), var1);
-      var5 = class_1225.method_5440(var0, var4.<class_5834>method_5138(class_6044.field_30884), var5);
+      LivingEntity var5 = class_1225.method_5440(var0, var4.<LivingEntity>method_5138(class_6044.field_30913), var1);
+      var5 = class_1225.method_5440(var0, var4.<LivingEntity>method_5138(class_6044.field_30884), var5);
       method_492(var0, var5);
    }
 
    private static boolean method_523(class_2599 var0) {
       class_1150 var3 = var0.method_26525();
       if (var3.method_5117(class_6044.field_30913)) {
-         class_5834 var4 = var3.<class_5834>method_5138(class_6044.field_30913).get();
+         LivingEntity var4 = var3.<LivingEntity>method_5138(class_6044.field_30913).get();
          EntityType var5 = var4.getType();
          if (var5 != EntityType.field_34306) {
             return !method_466(var5) ? false : !var3.method_5140(class_6044.field_30908, var4);
@@ -668,7 +668,7 @@ public class class_134 {
       return var4 > var3;
    }
 
-   private static void method_492(class_2599 var0, class_5834 var1) {
+   private static void method_492(class_2599 var0, LivingEntity var1) {
       var0.method_26525().method_5127(class_6044.field_30866);
       var0.method_26525().method_5127(class_6044.field_30884);
       var0.method_26525().method_5127(class_6044.field_30889);
@@ -697,11 +697,11 @@ public class class_134 {
       return var0.method_26525().method_5134(class_6275.field_32075);
    }
 
-   private static boolean method_490(class_5834 var0) {
+   private static boolean method_490(LivingEntity var0) {
       return var0.method_26443(class_4897.field_25030);
    }
 
-   private static void method_482(class_5834 var0) {
+   private static void method_482(LivingEntity var0) {
       var0.method_26525().method_5107(class_6044.field_30897, true, 120L);
    }
 
@@ -717,7 +717,7 @@ public class class_134 {
       return field_395.contains(var0);
    }
 
-   private static boolean method_504(class_5834 var0) {
+   private static boolean method_504(LivingEntity var0) {
       return class_3572.field_17480.test(var0);
    }
 
@@ -725,15 +725,15 @@ public class class_134 {
       return var0.method_26525().method_5117(class_6044.field_30905);
    }
 
-   private static boolean method_507(class_5834 var0) {
+   private static boolean method_507(LivingEntity var0) {
       return var0.method_26525().method_5117(class_6044.field_30911);
    }
 
-   private static boolean method_502(class_5834 var0) {
+   private static boolean method_502(LivingEntity var0) {
       return !method_507(var0);
    }
 
-   public static boolean method_512(class_5834 var0) {
+   public static boolean method_512(LivingEntity var0) {
       return var0.getType() == EntityType.field_34300 && var0.method_26564(class_134::method_491);
    }
 
@@ -741,7 +741,7 @@ public class class_134 {
       return var0.method_26525().method_5117(class_6044.field_30879);
    }
 
-   private static boolean method_543(class_5834 var0) {
+   private static boolean method_543(LivingEntity var0) {
       return var0.method_26525().method_5117(class_6044.field_30867);
    }
 

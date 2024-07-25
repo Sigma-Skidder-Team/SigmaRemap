@@ -12,7 +12,7 @@ public abstract class class_3558 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_17438.method_17809();
+      LivingEntity var3 = this.field_17438.method_17809();
       if (var3 == null || !var3.isAlive()) {
          return false;
       } else {
@@ -22,7 +22,7 @@ public abstract class class_3558 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      class_5834 var3 = this.field_17438.method_17809();
+      LivingEntity var3 = this.field_17438.method_17809();
       return var3 != null && var3.isAlive() && this.field_17439 > 0;
    }
 

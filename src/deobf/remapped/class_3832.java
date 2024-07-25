@@ -5,14 +5,14 @@ import javax.annotation.Nullable;
 public interface class_3832 extends class_2354 {
    void method_17810(boolean var1);
 
-   void method_17812(class_5834 var1, ItemStack var2, class_5783 var3, float var4);
+   void method_17812(LivingEntity var1, ItemStack var2, class_5783 var3, float var4);
 
    @Nullable
-   class_5834 method_17809();
+   LivingEntity method_17809();
 
    void method_17814();
 
-   default void method_17815(class_5834 var1, float var2) {
+   default void method_17815(LivingEntity var1, float var2) {
       Hand var5 = class_8462.method_38934(var1, class_4897.field_25030);
       ItemStack var6 = var1.method_26617(var5);
       if (var1.method_26443(class_4897.field_25030)) {
@@ -22,7 +22,7 @@ public interface class_3832 extends class_2354 {
       this.method_17814();
    }
 
-   default void method_17811(class_5834 var1, class_5834 var2, class_5783 var3, float var4, float var5) {
+   default void method_17811(LivingEntity var1, LivingEntity var2, class_5783 var3, float var4, float var5) {
       double var8 = var2.getPosX() - var1.getPosX();
       double var10 = var2.getPosZ() - var1.getPosZ();
       double var12 = (double)class_9299.method_42842(var8 * var8 + var10 * var10);
@@ -38,7 +38,7 @@ public interface class_3832 extends class_2354 {
       var1.method_37155(class_463.field_2025, 1.0F, 1.0F / (var1.method_26594().nextFloat() * 0.4F + 0.8F));
    }
 
-   default class_2426 method_17813(class_5834 var1, class_1343 var2, float var3) {
+   default class_2426 method_17813(LivingEntity var1, class_1343 var2, float var3) {
       class_1343 var6 = var2.method_6213();
       class_1343 var7 = var6.method_6196(new class_1343(0.0, 1.0, 0.0));
       if (var7.method_6221() <= 1.0E-7) {

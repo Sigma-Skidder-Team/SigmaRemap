@@ -8,7 +8,7 @@ public final class class_9757 implements class_3825 {
    private final class_5885 field_49562 = new class_5885(null);
 
    @Override
-   public float method_17802(ItemStack var1, ClientWorld var2, class_5834 var3) {
+   public float method_17802(ItemStack var1, ClientWorld var2, LivingEntity var3) {
       Object var6 = var3 == null ? var1.method_27993() : var3;
       if (var6 == null) {
          return 0.0F;

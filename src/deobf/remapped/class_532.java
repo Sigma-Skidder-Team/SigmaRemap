@@ -20,7 +20,7 @@ public class class_532 extends class_3558 {
 
    @Override
    public void method_16543() {
-      class_5834 var3 = this.field_3238.method_17809();
+      LivingEntity var3 = this.field_3238.method_17809();
       double var4 = Math.min(var3.method_37309(), this.field_3238.method_37309());
       double var6 = Math.max(var3.method_37309(), this.field_3238.method_37309()) + 1.0;
       float var8 = (float)class_9299.method_42821(var3.getPosZ() - this.field_3238.method_37156(), var3.getPosX() - this.field_3238.method_37302());

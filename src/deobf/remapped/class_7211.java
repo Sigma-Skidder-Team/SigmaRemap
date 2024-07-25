@@ -22,7 +22,7 @@ public class class_7211 {
       return var0 + var5;
    }
 
-   public static float[] method_33000(class_5834 var0, double var1, double var3, double var5) {
+   public static float[] method_33000(LivingEntity var0, double var1, double var3, double var5) {
       double[] var9 = class_6811.method_31263(var0);
       double var10 = var9[0] - var1;
       double var12 = var0.method_37309() - (double)field_37040.thePlayer.method_37277() - 0.02F + (double)var0.method_37277() - var3;
@@ -56,7 +56,7 @@ public class class_7211 {
       return new float[]{var23, var24};
    }
 
-   public static float[] method_33004(class_5834 var0, double var1, double var3, double var5) {
+   public static float[] method_33004(LivingEntity var0, double var1, double var3, double var5) {
       double var9 = var0.getPosX() - var1 + 0.25 - Math.random() * 0.5;
       double var11 = var0.method_37309() - (double)field_37040.thePlayer.method_37277() - 0.02F + (double)var0.method_37277() - var3 - Math.random();
       double var13 = var0.getPosZ() - var5 + 0.25 - Math.random() * 0.5;
@@ -66,7 +66,7 @@ public class class_7211 {
       return new float[]{var17, var18};
    }
 
-   public static float[] method_32996(class_5834 var0, double var1, double var3, double var5) {
+   public static float[] method_32996(LivingEntity var0, double var1, double var3, double var5) {
       double var9 = Math.sin((double)(System.currentTimeMillis() - 500L) / 521.0) * 0.2;
       double var11 = Math.sin((double)System.currentTimeMillis() / 300.0) * 0.65;
       double var13 = Math.cos(((double)System.currentTimeMillis() - 150.0) / 705.0) * 0.2;
@@ -79,7 +79,7 @@ public class class_7211 {
       return new float[]{var23, var24};
    }
 
-   public static float[] method_32995(class_5834 var0, double var1, double var3, double var5, float var7) {
+   public static float[] method_32995(LivingEntity var0, double var1, double var3, double var5, float var7) {
       Entity var10 = class_314.method_1458(field_37037, field_37039, var7, 0.0);
       if (var10 == null) {
          if (field_37036 <= new Date().getTime() - 500L) {
@@ -138,7 +138,7 @@ public class class_7211 {
       return new float[]{var12, var13};
    }
 
-   public static float[] method_33005(class_5834 var0) {
+   public static float[] method_33005(LivingEntity var0) {
       double var3 = field_37040.thePlayer.getPosX()
          + (field_37040.thePlayer.getPosX() - field_37040.thePlayer.field_41754) * (double)field_37040.method_8554();
       double var5 = field_37040.thePlayer.getPosZ()

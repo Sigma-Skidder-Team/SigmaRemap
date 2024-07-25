@@ -32,8 +32,8 @@ public class Camera {
          class_9299.method_42794((double)var5, var2.field_41725, var2.getPosZ())
       );
       if (!var3) {
-         if (var2 instanceof class_5834 && ((class_5834)var2).method_26507()) {
-            Direction var8 = ((class_5834)var2).method_26408();
+         if (var2 instanceof LivingEntity && ((LivingEntity)var2).method_26507()) {
+            Direction var8 = ((LivingEntity)var2).method_26408();
             this.method_41637(var8 == null ? 0.0F : var8.method_1028() - 180.0F, 0.0F);
             this.method_41635(0.0, 0.3, 0.0);
          }

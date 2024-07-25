@@ -58,7 +58,7 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
          10,
          ImmutableList.of(
             new class_8962(class_3895::method_18033),
-            new class_5499<class_5834>(new class_6109(8.0F), class_4376.method_20391(30, 60)),
+            new class_5499<LivingEntity>(new class_6109(8.0F), class_4376.method_20391(30, 60)),
             new class_5197(ImmutableList.of(Pair.of(new class_1203(0.4F), 2), Pair.of(new class_324(0.4F, 3), 2), Pair.of(new class_102(30, 60), 1)))
          )
       );
@@ -78,16 +78,16 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
       );
    }
 
-   private Optional<? extends class_5834> method_18033() {
+   private Optional<? extends LivingEntity> method_18033() {
       return this.method_26525()
-         .<List<class_5834>>method_5138(class_6044.field_30901)
+         .<List<LivingEntity>>method_5138(class_6044.field_30901)
          .orElse(ImmutableList.of())
          .stream()
          .filter(class_3895::method_18035)
          .findFirst();
    }
 
-   private static boolean method_18035(class_5834 var0) {
+   private static boolean method_18035(LivingEntity var0) {
       EntityType var3 = var0.getType();
       return var3 != EntityType.field_34244 && var3 != EntityType.field_34210 && class_3572.field_17480.test(var0);
    }
@@ -121,11 +121,11 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
 
    @Override
    public boolean method_26442(Entity var1) {
-      if (var1 instanceof class_5834) {
+      if (var1 instanceof LivingEntity) {
          this.field_18950 = 10;
          this.world.method_29587(this, (byte)4);
          this.method_37155(class_463.field_2853, 1.0F, this.method_26547());
-         return class_9479.method_43797(this, (class_5834)var1);
+         return class_9479.method_43797(this, (LivingEntity)var1);
       } else {
          return false;
       }
@@ -137,7 +137,7 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
    }
 
    @Override
-   public void method_26469(class_5834 var1) {
+   public void method_26469(LivingEntity var1) {
       if (!this.method_26449()) {
          class_9479.method_43796(this, var1);
       }
@@ -152,8 +152,8 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       boolean var5 = super.attackEntityFrom(var1, var2);
       if (!this.world.field_33055) {
-         if (var5 && var1.method_28372() instanceof class_5834) {
-            class_5834 var6 = (class_5834)var1.method_28372();
+         if (var5 && var1.method_28372() instanceof LivingEntity) {
+            LivingEntity var6 = (LivingEntity)var1.method_28372();
             if (class_3572.field_17480.test(var6) && !class_1225.method_5452(this, var6, 4.0)) {
                this.method_18042(var6);
             }
@@ -167,7 +167,7 @@ public class class_3895 extends MonsterEntity implements class_1869, class_9479 
       }
    }
 
-   private void method_18042(class_5834 var1) {
+   private void method_18042(LivingEntity var1) {
       this.field_29675.method_5127(class_6044.field_30909);
       this.field_29675.method_5107(class_6044.field_30884, var1, 200L);
    }

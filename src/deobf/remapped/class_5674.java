@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.function.BiPredicate;
 
-public class class_5674<E extends class_5834, T extends Entity> extends class_5920<E> {
+public class class_5674<E extends LivingEntity, T extends Entity> extends class_5920<E> {
    private static String[] field_28761;
    private final int field_28760;
    private final BiPredicate<E, Entity> field_28759;

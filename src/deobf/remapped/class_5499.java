@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5499<E extends class_5834> extends class_5920<E> {
+public class class_5499<E extends LivingEntity> extends class_5920<E> {
    private boolean field_27994;
    private boolean field_27993;
    private final class_4376 field_27996;

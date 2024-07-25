@@ -4,12 +4,12 @@ public class class_5670 extends LookAtGoal {
    private static String[] field_28748;
    private final class_496 field_28747;
 
-   public class_5670(class_496 var1, Class<? extends class_5834> var2, float var3) {
+   public class_5670(class_496 var1, Class<? extends LivingEntity> var2, float var3) {
       super(var1, var2, var3);
       this.field_28747 = var1;
    }
 
-   public void method_25654(class_5834 var1) {
+   public void method_25654(LivingEntity var1) {
       this.field_21563 = var1;
    }
 
@@ -25,7 +25,7 @@ public class class_5670 extends LookAtGoal {
             if (this.field_21567 != PlayerEntity.class) {
                this.field_21563 = this.field_21568
                   .world
-                  .<class_5834>method_25872(
+                  .<LivingEntity>method_25872(
                      this.field_21567,
                      this.field_21569,
                      this.field_21568,

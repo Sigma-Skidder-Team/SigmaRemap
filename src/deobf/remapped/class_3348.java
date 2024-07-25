@@ -13,7 +13,7 @@ public class class_3348 extends class_6749 {
       super(var1, var2);
    }
 
-   public class_3348(World var1, class_5834 var2, ItemStack var3) {
+   public class_3348(World var1, LivingEntity var2, ItemStack var3) {
       super(EntityType.field_34284, var2, var1);
       this.field_16520 = var3.method_27973();
       this.field_41735.method_36633(field_16515, (byte)class_2931.method_13431(var3));
@@ -93,8 +93,8 @@ public class class_3348 extends class_6749 {
    public void method_26163(class_5631 var1) {
       Entity var4 = var1.method_25524();
       float var5 = 8.0F;
-      if (var4 instanceof class_5834) {
-         class_5834 var6 = (class_5834)var4;
+      if (var4 instanceof LivingEntity) {
+         LivingEntity var6 = (LivingEntity)var4;
          var5 += class_2931.method_13425(this.field_16520, var6.method_26550());
       }
 
@@ -107,11 +107,11 @@ public class class_3348 extends class_6749 {
             return;
          }
 
-         if (var4 instanceof class_5834) {
-            class_5834 var9 = (class_5834)var4;
-            if (var12 instanceof class_5834) {
+         if (var4 instanceof LivingEntity) {
+            LivingEntity var9 = (LivingEntity)var4;
+            if (var12 instanceof LivingEntity) {
                class_2931.method_13429(var9, var12);
-               class_2931.method_13406((class_5834)var12, var9);
+               class_2931.method_13406((LivingEntity)var12, var9);
             }
 
             this.method_30935(var9);

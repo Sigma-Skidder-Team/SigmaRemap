@@ -5,5 +5,5 @@ public interface class_7835 {
 
    BlockPos method_35462();
 
-   boolean method_35463(class_5834 var1);
+   boolean method_35463(LivingEntity var1);
 }

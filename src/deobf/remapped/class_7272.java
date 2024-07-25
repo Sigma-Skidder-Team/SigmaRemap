@@ -117,7 +117,7 @@ public class class_7272 extends class_5467 {
          }
 
          if (this.method_33239() == 99 && this.field_37233 == 0) {
-            class_5834 var3 = this.method_17809();
+            LivingEntity var3 = this.method_17809();
             if (var3 != null && this.method_37275(var3) < 16.0) {
                this.method_33243(var3.getPosX(), var3.getPosZ());
                this.field_29900.method_12879(var3.getPosX(), var3.method_37309(), var3.getPosZ(), this.field_29900.method_12880());

@@ -18,7 +18,7 @@ public class class_1052 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      class_5834 var3 = this.field_5778.method_26531();
+      LivingEntity var3 = this.field_5778.method_26531();
       return this.field_5778.method_18589() == null
          && this.field_5778.method_21352()
          && this.field_5778.method_17809() != null
@@ -41,7 +41,7 @@ public class class_1052 extends class_3599 {
    @Override
    public void method_16793() {
       super.method_16793();
-      class_5834 var3 = this.field_5778.method_17809();
+      LivingEntity var3 = this.field_5778.method_17809();
       if (var3 != null) {
          for (AbstractRaiderEntity var5 : this.field_5778
             .world
@@ -56,7 +56,7 @@ public class class_1052 extends class_3599 {
 
    @Override
    public void method_16794() {
-      class_5834 var3 = this.field_5778.method_17809();
+      LivingEntity var3 = this.field_5778.method_17809();
       if (var3 != null) {
          if (!(this.field_5778.method_37275(var3) > (double)this.field_5775)) {
             this.field_5778.method_26891(true);

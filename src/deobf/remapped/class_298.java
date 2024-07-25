@@ -34,7 +34,7 @@ public class class_298 extends class_7637 {
 
    @Override
    public void method_26919() {
-      if (!this.method_26859() && class_3613.method_16840(this)) {
+      if (!this.isAIDisabled() && class_3613.method_16840(this)) {
          boolean var3 = ((class_6331)this.world).method_28983(this.method_37075());
          ((class_8985)this.method_26927()).method_41199(var3);
       }
@@ -102,7 +102,7 @@ public class class_298 extends class_7637 {
       if (super.method_37344(var1)) {
          return true;
       } else {
-         return var1 instanceof class_5834 && ((class_5834)var1).method_26550() == class_2780.field_13576
+         return var1 instanceof LivingEntity && ((LivingEntity)var1).method_26550() == class_2780.field_13576
             ? this.method_37095() == null && var1.method_37095() == null
             : false;
       }

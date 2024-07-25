@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class class_8252 extends class_6127<class_5834> {
+public class class_8252 extends class_6127<LivingEntity> {
    private static String[] field_42349;
 
    @Override
@@ -16,7 +16,7 @@ public class class_8252 extends class_6127<class_5834> {
    }
 
    @Override
-   public void method_28154(class_6331 var1, class_5834 var2) {
+   public void method_28154(class_6331 var1, LivingEntity var2) {
       List var5 = var1.method_25873()
          .stream()
          .filter(class_3572.field_17483)
