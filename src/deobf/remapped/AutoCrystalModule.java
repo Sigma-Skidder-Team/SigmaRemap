@@ -204,11 +204,11 @@ public class AutoCrystalModule extends PremiumModule {
 
    public static float method_44023(class_5834 var0, float var1, class_2730 var2) {
       if (!(var0 instanceof PlayerEntity)) {
-         return class_6357.method_29129(var1, (float)var0.method_26565(), (float)var0.method_26575(class_7331.field_37472));
+         return class_6357.method_29129(var1, (float)var0.method_26565(), (float)var0.method_26575(Attributes.field_37472));
       } else {
          PlayerEntity var5 = (PlayerEntity)var0;
          DamageSource var6 = DamageSource.method_28350(var2);
-         var1 = class_6357.method_29129(var1, (float)var5.method_26565(), (float)var5.method_26575(class_7331.field_37472));
+         var1 = class_6357.method_29129(var1, (float)var5.method_26565(), (float)var5.method_26575(Attributes.field_37472));
          int var7 = class_2931.method_13427(var5.method_37262(), var6);
          float var8 = class_9299.method_42828((float)var7, 0.0F, 20.0F);
          var1 *= 1.0F - var8 / 25.0F;

@@ -27,8 +27,8 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
       this.goalSelector.addGoal(8, new class_9691(this));
    }
 
-   public static class_1313 method_43571() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 10.0).method_5984(class_7331.field_37465, 0.25);
+   public static MutableAttribute method_43571() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 10.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Nullable
@@ -65,14 +65,14 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       this.field_48087.method_3111(var1);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_48087.method_3106(var1);
    }
 
@@ -202,7 +202,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
 
    @Override
    public float method_37516() {
-      return (float)this.method_26575(class_7331.field_37465) * 0.225F;
+      return (float)this.method_26575(Attributes.MOVEMENT_SPEED) * 0.225F;
    }
 
    @Override

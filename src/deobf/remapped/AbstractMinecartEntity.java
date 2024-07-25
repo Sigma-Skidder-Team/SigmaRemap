@@ -121,7 +121,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       return 0.0;
    }
 
@@ -647,7 +647,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       if (var1.getBoolean("CustomDisplayTile")) {
          this.method_4753(class_4338.method_20185(var1.getCompound("DisplayState")));
          this.method_4738(var1.method_25947("DisplayOffset"));
@@ -655,11 +655,11 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       if (this.method_4754()) {
          var1.putBoolean("CustomDisplayTile", true);
          var1.put("DisplayState", class_4338.method_20187(this.method_4739()));
-         var1.method_25931("DisplayOffset", this.method_4741());
+         var1.putInt("DisplayOffset", this.method_4741());
       }
    }
 

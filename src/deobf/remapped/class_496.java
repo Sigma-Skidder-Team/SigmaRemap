@@ -157,15 +157,15 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method_25941("MainGene", this.method_2467().method_6269());
       var1.method_25941("HiddenGene", this.method_2435().method_6269());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_2415(class_1360.method_6262(var1.method_25965("MainGene")));
       this.method_2424(class_1360.method_6262(var1.method_25965("HiddenGene")));
    }
@@ -190,7 +190,7 @@ public class class_496 extends class_5467 {
       this.goalSelector.addGoal(3, new class_5685(this, 1.2F, true));
       this.goalSelector.addGoal(4, new class_7228(this, 1.0, class_8137.method_37019(class_4783.field_23886.method_10803()), false));
       this.goalSelector.addGoal(6, new class_368<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
-      this.goalSelector.addGoal(6, new class_368<class_1173>(this, class_1173.class, 4.0F, 2.0, 2.0));
+      this.goalSelector.addGoal(6, new class_368<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.0, 2.0));
       this.goalSelector.addGoal(7, new class_2256(this));
       this.goalSelector.addGoal(8, new class_6630(this));
       this.goalSelector.addGoal(8, new class_8399(this));
@@ -203,8 +203,8 @@ public class class_496 extends class_5467 {
       this.targetSelector.addGoal(1, new class_2199(this).setCallsForHelp(new Class[0]));
    }
 
-   public static class_1313 method_2413() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37465, 0.15F).method_5984(class_7331.field_37462, 6.0);
+   public static MutableAttribute method_2413() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.15F).createMutableAttribute(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
    public class_1360 method_2448() {
@@ -520,11 +520,11 @@ public class class_496 extends class_5467 {
 
    public void method_2455() {
       if (this.method_2416()) {
-         this.method_26561(class_7331.field_37468).method_45006(10.0);
+         this.method_26561(Attributes.MAX_HEALTH).method_45006(10.0);
       }
 
       if (this.method_2468()) {
-         this.method_26561(class_7331.field_37465).method_45006(0.07F);
+         this.method_26561(Attributes.MOVEMENT_SPEED).method_45006(0.07F);
       }
    }
 

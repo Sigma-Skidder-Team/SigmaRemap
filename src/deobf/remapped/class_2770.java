@@ -61,8 +61,8 @@ public class class_2770 extends MobEntity implements class_1869 {
       this.field_13534 = new class_6455(this);
    }
 
-   public static class_1313 method_12605() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 200.0);
+   public static MutableAttribute method_12605() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 200.0);
    }
 
    @Override
@@ -735,14 +735,14 @@ public class class_2770 extends MobEntity implements class_1869 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("DragonPhase", this.field_13534.method_29421().method_23464().method_41171());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("DragonPhase", this.field_13534.method_29421().method_23464().method_41171());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.method_25938("DragonPhase")) {
          this.field_13534.method_29422(class_8978.method_41168(var1.method_25947("DragonPhase")));
       }

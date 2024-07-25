@@ -23,7 +23,7 @@ public class class_6262 extends class_462 {
       var1.putBoolean("hr", this.field_32003);
       var1.putBoolean("sc", this.field_32000);
       var1.putBoolean("hps", this.field_32004);
-      var1.method_25931("Num", this.field_32001);
+      var1.putInt("Num", this.field_32001);
    }
 
    public class_6262(int var1, Random var2, class_9616 var3, Direction var4, class_1143 var5) {

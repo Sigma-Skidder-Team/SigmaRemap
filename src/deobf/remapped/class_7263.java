@@ -37,11 +37,11 @@ public class class_7263 extends class_6993 {
       this.field_29915 = 20;
    }
 
-   public static class_1313 method_33190() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 50.0)
-         .method_5984(class_7331.field_37465, 0.35F)
-         .method_5984(class_7331.field_37462, 7.0);
+   public static MutableAttribute method_33190() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 50.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.35F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 7.0);
    }
 
    @Nullable

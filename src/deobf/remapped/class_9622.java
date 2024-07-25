@@ -26,7 +26,7 @@ public class class_9622 extends class_6315 {
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25931("Seed", this.field_49017);
+      var1.putInt("Seed", this.field_49017);
    }
 
    @Override

@@ -22,8 +22,8 @@ public abstract class class_8990 extends class_5467 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method_41211() != null) {
          var1.method_25964("Owner", this.method_41211());
       }
@@ -32,8 +32,8 @@ public abstract class class_8990 extends class_5467 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       UUID var4;
       if (var1.method_25954("Owner")) {
          var4 = var1.method_25926("Owner");

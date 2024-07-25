@@ -49,11 +49,11 @@ public class class_9408 extends class_8990 implements class_6250 {
       this.targetSelector.addGoal(8, new class_6474<class_9408>(this, true));
    }
 
-   public static class_1313 method_43585() {
+   public static MutableAttribute method_43585() {
       return MobEntity.method_26846()
-         .method_5984(class_7331.field_37465, 0.3F)
-         .method_5984(class_7331.field_37468, 8.0)
-         .method_5984(class_7331.field_37462, 2.0);
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 8.0)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 2.0);
    }
 
    @Override
@@ -70,15 +70,15 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method_25921("CollarColor", (byte)this.method_43584().method_41794());
       this.method_28528(var1);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("CollarColor", 99)) {
          this.method_43582(class_9077.method_41789(var1.method_25947("CollarColor")));
       }
@@ -253,7 +253,7 @@ public class class_9408 extends class_8990 implements class_6250 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.method_37096(this, var1);
       }
@@ -265,13 +265,13 @@ public class class_9408 extends class_8990 implements class_6250 {
    public void method_41217(boolean var1) {
       super.method_41217(var1);
       if (!var1) {
-         this.method_26561(class_7331.field_37468).method_45006(8.0);
+         this.method_26561(Attributes.MAX_HEALTH).method_45006(8.0);
       } else {
-         this.method_26561(class_7331.field_37468).method_45006(20.0);
+         this.method_26561(Attributes.MAX_HEALTH).method_45006(20.0);
          this.method_26456(20.0F);
       }
 
-      this.method_26561(class_7331.field_37462).method_45006(4.0);
+      this.method_26561(Attributes.ATTACK_DAMAGE).method_45006(4.0);
    }
 
    @Override

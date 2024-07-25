@@ -167,7 +167,7 @@ public class class_8734 {
             var24.remove();
          } else if (!this.field_44747.getBooleanValueByName("Animals") && (var9 instanceof class_5467 || var9 instanceof class_7666)) {
             var24.remove();
-         } else if (!this.field_44747.getBooleanValueByName("Monsters") && var9 instanceof class_1173) {
+         } else if (!this.field_44747.getBooleanValueByName("Monsters") && var9 instanceof MonsterEntity) {
             var24.remove();
          } else if (this.field_44744.thePlayer.getRidingEntity() != null && this.field_44744.thePlayer.getRidingEntity().equals(var9)) {
             var24.remove();

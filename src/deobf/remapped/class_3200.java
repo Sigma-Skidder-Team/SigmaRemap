@@ -67,9 +67,9 @@ public abstract class class_3200<C extends class_6157> {
       CompoundNBT var5 = new CompoundNBT();
       if (this.method_14731()) {
          var5.method_25941("id", class_8669.field_44457.method_39797(this.method_14727()).toString());
-         var5.method_25931("ChunkX", var1);
-         var5.method_25931("ChunkZ", var2);
-         var5.method_25931("references", this.field_15990);
+         var5.putInt("ChunkX", var1);
+         var5.putInt("ChunkZ", var2);
+         var5.putInt("references", this.field_15990);
          var5.put("BB", this.field_15988.method_44388());
          class_3416 var6 = new class_3416();
          synchronized (this.field_15986) {

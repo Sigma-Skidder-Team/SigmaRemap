@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.Maps;
 import java.util.Map;
 
-public class class_1313 {
+public class MutableAttribute {
    private final Map<class_225, class_9747> field_7251 = Maps.newHashMap();
    private boolean field_7250;
 
@@ -17,12 +17,12 @@ public class class_1313 {
       return var4;
    }
 
-   public class_1313 method_5983(class_225 var1) {
+   public MutableAttribute method_5983(class_225 var1) {
       this.method_5982(var1);
       return this;
    }
 
-   public class_1313 method_5984(class_225 var1, double var2) {
+   public MutableAttribute createMutableAttribute(class_225 var1, double var2) {
       class_9747 var6 = this.method_5982(var1);
       var6.method_45006(var2);
       return this;

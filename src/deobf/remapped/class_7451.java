@@ -270,8 +270,8 @@ public class class_7451 extends class_4641 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (!this.method_33905().method_28022()) {
          var1.put("Item", this.method_33905().method_27998(new CompoundNBT()));
          var1.method_25921("ItemRotation", (byte)this.method_33907());
@@ -284,8 +284,8 @@ public class class_7451 extends class_4641 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       CompoundNBT var4 = var1.getCompound("Item");
       if (var4 != null && !var4.method_25940()) {
          ItemStack var5 = ItemStack.method_28015(var4);

@@ -10,7 +10,7 @@ public class class_4699 extends class_2451 {
       class_3416 var6 = var5.method_25927("Effects", 9);
       CompoundNBT var7 = new CompoundNBT();
       var7.method_25921("EffectId", (byte)class_1425.method_6536(var1));
-      var7.method_25931("EffectDuration", var2);
+      var7.putInt("EffectDuration", var2);
       var6.add(var7);
       var5.put("Effects", var6);
    }

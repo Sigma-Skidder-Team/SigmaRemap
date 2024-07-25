@@ -677,20 +677,20 @@ public class class_2452 {
    }
 
    public CompoundNBT method_11279(CompoundNBT var1) {
-      var1.method_25931("Id", this.field_12180);
+      var1.putInt("Id", this.field_12180);
       var1.putBoolean("Started", this.field_12188);
       var1.putBoolean("Active", this.field_12200);
       var1.method_25949("TicksActive", this.field_12183);
-      var1.method_25931("BadOmenLevel", this.field_12202);
-      var1.method_25931("GroupsSpawned", this.field_12182);
-      var1.method_25931("PreRaidTicks", this.field_12197);
-      var1.method_25931("PostRaidTicks", this.field_12178);
+      var1.putInt("BadOmenLevel", this.field_12202);
+      var1.putInt("GroupsSpawned", this.field_12182);
+      var1.putInt("PreRaidTicks", this.field_12197);
+      var1.putInt("PostRaidTicks", this.field_12178);
       var1.putFloat("TotalHealth", this.field_12201);
-      var1.method_25931("NumGroups", this.field_12195);
+      var1.putInt("NumGroups", this.field_12195);
       var1.method_25941("Status", this.field_12198.method_19860());
-      var1.method_25931("CX", this.field_12185.method_12173());
-      var1.method_25931("CY", this.field_12185.method_12165());
-      var1.method_25931("CZ", this.field_12185.method_12185());
+      var1.putInt("CX", this.field_12185.method_12173());
+      var1.putInt("CY", this.field_12185.method_12165());
+      var1.putInt("CZ", this.field_12185.method_12185());
       class_3416 var4 = new class_3416();
 
       for (UUID var6 : this.field_12190) {

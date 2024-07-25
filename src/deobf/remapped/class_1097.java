@@ -342,7 +342,7 @@ public class class_1097 {
                CompoundNBT var4 = new CompoundNBT();
                var4.method_25941("Name", var1x.method_38147());
                var4.method_25941("Objective", var1x.method_38149().method_20490());
-               var4.method_25931("Score", var1x.method_38146());
+               var4.putInt("Score", var1x.method_38146());
                var4.putBoolean("Locked", var1x.method_38148());
                var3.add(var4);
             }));

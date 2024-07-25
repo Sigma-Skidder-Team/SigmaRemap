@@ -51,8 +51,8 @@ public class class_9632 {
       }
    }
 
-   public static class_1313 method_44452() {
-      return new class_1313();
+   public static MutableAttribute method_44452() {
+      return new MutableAttribute();
    }
 
    public boolean method_44451(class_225 var1) {

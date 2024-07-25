@@ -2,7 +2,7 @@ package remapped;
 
 import javax.annotation.Nullable;
 
-public abstract class class_6993 extends class_1173 {
+public abstract class class_6993 extends MonsterEntity {
    public static final class_7821<Boolean> field_35907 = class_8073.<Boolean>method_36641(class_6993.class, class_2734.field_13347);
    public int field_35908 = 0;
 
@@ -37,13 +37,13 @@ public abstract class class_6993 extends class_1173 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method_31991()) {
          var1.putBoolean("IsImmuneToZombification", true);
       }
 
-      var1.method_25931("TimeInOverworld", this.field_35908);
+      var1.putInt("TimeInOverworld", this.field_35908);
    }
 
    @Override
@@ -52,8 +52,8 @@ public abstract class class_6993 extends class_1173 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_31989(var1.getBoolean("IsImmuneToZombification"));
       this.field_35908 = var1.method_25947("TimeInOverworld");
    }

@@ -50,7 +50,7 @@ public class class_3711 {
 
       if (!this.field_18205.method_26927().method_5591()) {
          this.field_18205.field_29618 = class_9299.method_42789(
-            this.field_18205.field_29618, this.field_18205.field_29605, (float)this.field_18205.method_26903()
+            this.field_18205.field_29618, this.field_18205.field_29605, (float)this.field_18205.getHorizontalFaceSpeed()
          );
       }
    }

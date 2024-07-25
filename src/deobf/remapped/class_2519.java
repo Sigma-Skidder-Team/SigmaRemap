@@ -2,7 +2,7 @@ package remapped;
 
 import javax.annotation.Nullable;
 
-public class class_2519 extends class_1173 {
+public class class_2519 extends MonsterEntity {
    public static final class_7821<Byte> field_12483 = class_8073.<Byte>method_36641(class_2519.class, class_2734.field_13361);
    private MobEntity field_12485;
    private BlockPos field_12486;
@@ -46,8 +46,8 @@ public class class_2519 extends class_1173 {
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
-   public static class_1313 method_11453() {
-      return class_1173.method_5201().method_5984(class_7331.field_37468, 14.0).method_5984(class_7331.field_37462, 4.0);
+   public static MutableAttribute method_11453() {
+      return MonsterEntity.func_234295_eP_().createMutableAttribute(Attributes.MAX_HEALTH, 14.0).createMutableAttribute(Attributes.ATTACK_DAMAGE, 4.0);
    }
 
    @Override
@@ -57,8 +57,8 @@ public class class_2519 extends class_1173 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.method_25938("BoundX")) {
          this.field_12486 = new BlockPos(var1.method_25947("BoundX"), var1.method_25947("BoundY"), var1.method_25947("BoundZ"));
       }
@@ -69,16 +69,16 @@ public class class_2519 extends class_1173 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field_12486 != null) {
-         var1.method_25931("BoundX", this.field_12486.method_12173());
-         var1.method_25931("BoundY", this.field_12486.method_12165());
-         var1.method_25931("BoundZ", this.field_12486.method_12185());
+         var1.putInt("BoundX", this.field_12486.method_12173());
+         var1.putInt("BoundY", this.field_12486.method_12165());
+         var1.putInt("BoundZ", this.field_12486.method_12185());
       }
 
       if (this.field_12482) {
-         var1.method_25931("LifeTicks", this.field_12484);
+         var1.putInt("LifeTicks", this.field_12484);
       }
    }
 

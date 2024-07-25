@@ -29,7 +29,7 @@ public class class_7272 extends class_5467 {
          .addGoal(3, new class_7228(this, 1.0, class_8137.method_37019(class_4897.field_25136, class_4897.field_25070, class_4783.field_23410), false));
       this.goalSelector.addGoal(4, new class_8695<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
       this.goalSelector.addGoal(4, new class_8695<class_9408>(this, class_9408.class, 10.0F, 2.2, 2.2));
-      this.goalSelector.addGoal(4, new class_8695<class_1173>(this, class_1173.class, 4.0F, 2.2, 2.2));
+      this.goalSelector.addGoal(4, new class_8695<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.2, 2.2));
       this.goalSelector.addGoal(5, new class_805(this));
       this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.6));
       this.goalSelector.addGoal(11, new LookAtGoal(this, PlayerEntity.class, 10.0F));
@@ -190,20 +190,20 @@ public class class_7272 extends class_5467 {
       }
    }
 
-   public static class_1313 method_33234() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 3.0).method_5984(class_7331.field_37465, 0.3F);
+   public static MutableAttribute method_33234() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 3.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F);
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("RabbitType", this.method_33239());
-      var1.method_25931("MoreCarrotTicks", this.field_37234);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("RabbitType", this.method_33239());
+      var1.putInt("MoreCarrotTicks", this.field_37234);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_33231(var1.method_25947("RabbitType"));
       this.field_37234 = var1.method_25947("MoreCarrotTicks");
    }
@@ -277,7 +277,7 @@ public class class_7272 extends class_5467 {
 
    public void method_33231(int var1) {
       if (var1 == 99) {
-         this.method_26561(class_7331.field_37473).method_45006(8.0);
+         this.method_26561(Attributes.field_37473).method_45006(8.0);
          this.goalSelector.addGoal(4, new class_4810(this));
          this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
          this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));

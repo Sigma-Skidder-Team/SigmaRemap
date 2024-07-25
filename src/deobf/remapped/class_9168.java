@@ -21,7 +21,7 @@ public interface class_9168 {
    }
 
    default void method_42262(ItemStack var1, int var2) {
-      var1.method_27978("display").method_25931("color", var2);
+      var1.method_27978("display").putInt("color", var2);
    }
 
    static ItemStack method_42264(ItemStack var0, List<class_239> var1) {

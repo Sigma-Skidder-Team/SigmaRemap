@@ -315,7 +315,7 @@ public class class_4478 extends Entity {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field_41697 = var1.method_25947("Age");
       this.field_21826 = var1.method_25947("Duration");
       this.field_21824 = var1.method_25947("WaitTime");
@@ -358,12 +358,12 @@ public class class_4478 extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      var1.method_25931("Age", this.field_41697);
-      var1.method_25931("Duration", this.field_21826);
-      var1.method_25931("WaitTime", this.field_21824);
-      var1.method_25931("ReapplicationDelay", this.field_21828);
-      var1.method_25931("DurationOnUse", this.field_21821);
+   public void writeAdditional(CompoundNBT var1) {
+      var1.putInt("Age", this.field_41697);
+      var1.putInt("Duration", this.field_21826);
+      var1.putInt("WaitTime", this.field_21824);
+      var1.putInt("ReapplicationDelay", this.field_21828);
+      var1.putInt("DurationOnUse", this.field_21821);
       var1.putFloat("RadiusOnUse", this.field_21831);
       var1.putFloat("RadiusPerTick", this.field_21823);
       var1.putFloat("Radius", this.method_20783());
@@ -373,7 +373,7 @@ public class class_4478 extends Entity {
       }
 
       if (this.field_21832) {
-         var1.method_25931("Color", this.method_20790());
+         var1.putInt("Color", this.method_20790());
       }
 
       if (this.field_21822 != class_3697.field_18134 && this.field_21822 != null) {

@@ -13,9 +13,9 @@ public class class_3551 extends class_4109 {
 
    @Override
    public void method_19084() {
-      this.method_26561(class_7331.field_37468).method_45006((double)this.method_19082());
-      this.method_26561(class_7331.field_37465).method_45006(this.method_19087());
-      this.method_26561(class_7331.field_37464).method_45006(this.method_19046());
+      this.method_26561(Attributes.MAX_HEALTH).method_45006((double)this.method_19082());
+      this.method_26561(Attributes.MOVEMENT_SPEED).method_45006(this.method_19087());
+      this.method_26561(Attributes.field_37464).method_45006(this.method_19046());
    }
 
    @Override
@@ -25,9 +25,9 @@ public class class_3551 extends class_4109 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Variant", this.method_16529());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Variant", this.method_16529());
       if (!this.field_20021.method_31498(1).method_28022()) {
          var1.put("ArmorItem", this.field_20021.method_31498(1).method_27998(new CompoundNBT()));
       }
@@ -43,8 +43,8 @@ public class class_3551 extends class_4109 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_16525(var1.method_25947("Variant"));
       if (var1.contains("ArmorItem", 10)) {
          ItemStack var4 = ItemStack.method_28015(var1.getCompound("ArmorItem"));
@@ -88,11 +88,11 @@ public class class_3551 extends class_4109 {
    private void method_16522(ItemStack var1) {
       this.method_16527(var1);
       if (!this.world.field_33055) {
-         this.method_26561(class_7331.field_37473).method_45003(field_17373);
+         this.method_26561(Attributes.field_37473).method_45003(field_17373);
          if (this.method_19069(var1)) {
             int var4 = ((class_2706)var1.method_27960()).method_12198();
             if (var4 != 0) {
-               this.method_26561(class_7331.field_37473).method_45011(new class_9343(field_17373, "Horse armor bonus", (double)var4, class_9342.field_47679));
+               this.method_26561(Attributes.field_37473).method_45011(new class_9343(field_17373, "Horse armor bonus", (double)var4, class_9342.field_47679));
             }
          }
       }

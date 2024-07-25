@@ -7,7 +7,7 @@ public class class_5472 extends class_5668 {
 
    public class_5472(MobEntity var1) {
       super(var1, 6, class_298.method_1337());
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
    }
 
    @Override

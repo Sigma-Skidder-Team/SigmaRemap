@@ -97,15 +97,15 @@ public class class_107 extends class_7819 implements class_674 {
       this.goalSelector.addGoal(3, new class_2652(this, 1.0, 3.0F, 7.0F));
    }
 
-   public static class_1313 method_331() {
+   public static MutableAttribute method_331() {
       return MobEntity.method_26846()
-         .method_5984(class_7331.field_37468, 6.0)
-         .method_5984(class_7331.field_37474, 0.4F)
-         .method_5984(class_7331.field_37465, 0.2F);
+         .createMutableAttribute(Attributes.MAX_HEALTH, 6.0)
+         .createMutableAttribute(Attributes.field_37474, 0.4F)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       class_5133 var4 = new class_5133(this, var1);
       var4.method_23534(false);
       var4.method_5611(true);
@@ -376,14 +376,14 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Variant", this.method_330());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Variant", this.method_330());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_329(var1.method_25947("Variant"));
    }
 

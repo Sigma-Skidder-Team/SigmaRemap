@@ -400,8 +400,8 @@ public abstract class class_6749 extends class_5783 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method_25958("life", (short)this.field_34833);
       if (this.field_34836 != null) {
          var1.put("inBlockState", class_4338.method_20187(this.field_34836));
@@ -418,8 +418,8 @@ public abstract class class_6749 extends class_5783 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_34833 = var1.method_25956("life");
       if (var1.contains("inBlockState", 10)) {
          this.field_34836 = class_4338.method_20185(var1.getCompound("inBlockState"));

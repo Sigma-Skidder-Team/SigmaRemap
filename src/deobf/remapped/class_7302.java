@@ -23,7 +23,7 @@ public class class_7302 extends class_3599 {
       this.field_37327 = var4;
       this.field_37319 = var5;
       this.field_37326 = var6;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
       if (!class_3613.method_16840(var1)) {
          throw new IllegalArgumentException("Unsupported mob for MoveThroughVillageGoal");
       }

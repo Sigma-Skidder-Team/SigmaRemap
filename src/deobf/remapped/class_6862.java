@@ -99,17 +99,17 @@ public class class_6862 extends AbstractVillagerEntity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("DespawnDelay", this.field_35359);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("DespawnDelay", this.field_35359);
       if (this.field_35357 != null) {
          var1.put("WanderTarget", class_4338.method_20190(this.field_35357));
       }
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("DespawnDelay", 99)) {
          this.field_35359 = var1.method_25947("DespawnDelay");
       }

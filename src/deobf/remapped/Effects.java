@@ -4,31 +4,31 @@ public class Effects {
    public static final class_1425 field_19739 = method_18712(
       1,
       "speed",
-      new class_1425(class_7822.field_39674, 8171462).method_6545(class_7331.field_37465, "91AEAA56-376B-4498-935B-2F7F68070635", 0.2F, class_9342.field_47677)
+      new class_1425(class_7822.field_39674, 8171462).method_6545(Attributes.MOVEMENT_SPEED, "91AEAA56-376B-4498-935B-2F7F68070635", 0.2F, class_9342.field_47677)
    );
    public static final class_1425 field_19743 = method_18712(
       2,
       "slowness",
       new class_1425(class_7822.field_39673, 5926017)
-         .method_6545(class_7331.field_37465, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.15F, class_9342.field_47677)
+         .method_6545(Attributes.MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.15F, class_9342.field_47677)
    );
    public static final class_1425 field_19735 = method_18712(
       3,
       "haste",
       new class_1425(class_7822.field_39674, 14270531)
-         .method_6545(class_7331.field_37466, "AF8B6E3F-3328-4C0A-AA36-5BA2BB9DBEF3", 0.1F, class_9342.field_47677)
+         .method_6545(Attributes.field_37466, "AF8B6E3F-3328-4C0A-AA36-5BA2BB9DBEF3", 0.1F, class_9342.field_47677)
    );
    public static final class_1425 field_19748 = method_18712(
       4,
       "mining_fatigue",
       new class_1425(class_7822.field_39673, 4866583)
-         .method_6545(class_7331.field_37466, "55FCED67-E92A-486E-9800-B47F202C4386", -0.1F, class_9342.field_47677)
+         .method_6545(Attributes.field_37466, "55FCED67-E92A-486E-9800-B47F202C4386", -0.1F, class_9342.field_47677)
    );
    public static final class_1425 field_19733 = method_18712(
       5,
       "strength",
       new class_5070(class_7822.field_39674, 9643043, 3.0)
-         .method_6545(class_7331.field_37462, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 0.0, class_9342.field_47679)
+         .method_6545(Attributes.ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 0.0, class_9342.field_47679)
    );
    public static final class_1425 field_19749 = method_18712(6, "instant_health", new class_2181(class_7822.field_39674, 16262179));
    public static final class_1425 field_19723 = method_18712(7, "instant_damage", new class_2181(class_7822.field_39673, 4393481));
@@ -46,14 +46,14 @@ public class Effects {
       18,
       "weakness",
       new class_5070(class_7822.field_39673, 4738376, -4.0)
-         .method_6545(class_7331.field_37462, "22653B89-116E-49DC-9B6B-9971489B5BE5", 0.0, class_9342.field_47679)
+         .method_6545(Attributes.ATTACK_DAMAGE, "22653B89-116E-49DC-9B6B-9971489B5BE5", 0.0, class_9342.field_47679)
    );
    public static final class_1425 field_19718 = method_18712(19, "poison", new class_1425(class_7822.field_39673, 5149489));
    public static final class_1425 field_19725 = method_18712(20, "wither", new class_1425(class_7822.field_39673, 3484199));
    public static final class_1425 field_19728 = method_18712(
       21,
       "health_boost",
-      new class_7082(class_7822.field_39674, 16284963).method_6545(class_7331.field_37468, "5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 4.0, class_9342.field_47679)
+      new class_7082(class_7822.field_39674, 16284963).method_6545(Attributes.MAX_HEALTH, "5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 4.0, class_9342.field_47679)
    );
    public static final class_1425 field_19731 = method_18712(22, "absorption", new class_4170(class_7822.field_39674, 2445989));
    public static final class_1425 field_19734 = method_18712(23, "saturation", new class_2181(class_7822.field_39674, 16262179));
@@ -62,13 +62,13 @@ public class Effects {
    public static final class_1425 field_19719 = method_18712(
       26,
       "luck",
-      new class_1425(class_7822.field_39674, 3381504).method_6545(class_7331.field_37469, "03C3C89D-7037-4B42-869F-B146BCB64D2E", 1.0, class_9342.field_47679)
+      new class_1425(class_7822.field_39674, 3381504).method_6545(Attributes.field_37469, "03C3C89D-7037-4B42-869F-B146BCB64D2E", 1.0, class_9342.field_47679)
    );
    public static final class_1425 field_19738 = method_18712(
       27,
       "unluck",
       new class_1425(class_7822.field_39673, 12624973)
-         .method_6545(class_7331.field_37469, "CC5AF142-2BD2-4215-B636-2605AED11727", -1.0, class_9342.field_47679)
+         .method_6545(Attributes.field_37469, "CC5AF142-2BD2-4215-B636-2605AED11727", -1.0, class_9342.field_47679)
    );
    public static final class_1425 field_19750 = method_18712(28, "slow_falling", new class_1425(class_7822.field_39674, 16773073));
    public static final class_1425 field_19744 = method_18712(29, "conduit_power", new class_1425(class_7822.field_39674, 1950417));

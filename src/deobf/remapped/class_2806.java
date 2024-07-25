@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_2806 extends class_1173 {
+public class class_2806 extends MonsterEntity {
    private static String[] field_13772;
    private float field_13774 = 0.5F;
    private int field_13771;
@@ -26,11 +26,11 @@ public class class_2806 extends class_1173 {
       this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
-   public static class_1313 method_12757() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37462, 6.0)
-         .method_5984(class_7331.field_37465, 0.23F)
-         .method_5984(class_7331.field_37471, 48.0);
+   public static MutableAttribute method_12757() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 6.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.23F)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 48.0);
    }
 
    @Override

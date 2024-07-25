@@ -234,7 +234,7 @@ public class class_91 extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.method_25958("Health", (short)this.field_177);
       var1.method_25958("Age", (short)this.field_178);
       var1.method_25958("PickupDelay", (short)this.field_174);
@@ -252,7 +252,7 @@ public class class_91 extends Entity {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field_177 = var1.method_25956("Health");
       this.field_178 = var1.method_25956("Age");
       if (var1.method_25938("PickupDelay")) {

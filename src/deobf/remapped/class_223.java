@@ -18,8 +18,8 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
       this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 10, true, false, var0 -> var0 instanceof class_1869));
    }
 
-   public static class_1313 method_946() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 4.0).method_5984(class_7331.field_37465, 0.2F);
+   public static MutableAttribute method_946() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 4.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
@@ -29,14 +29,14 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("Pumpkin", this.method_947());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.method_25938("Pumpkin")) {
          this.method_948(var1.getBoolean("Pumpkin"));
       }

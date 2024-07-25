@@ -76,7 +76,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final class_8669<class_4165<?>> field_44402 = method_39812(field_44393, () -> class_4165.field_20266);
    public static final class_8669<class_1510<?>> field_44435 = method_39812(field_44379, () -> class_1510.field_7997);
    public static final class_8669<class_2994<?>> field_44414 = method_39812(field_44396, () -> class_2994.field_14706);
-   public static final class_8669<class_225> field_44403 = method_39812(field_44371, () -> class_7331.field_37469);
+   public static final class_8669<class_225> field_44403 = method_39812(field_44371, () -> Attributes.field_37469);
    public static final class_8669<class_9478<?>> field_44376 = method_39812(field_44423, () -> class_6234.field_31907);
    public static final class_3991<class_8853> field_44375 = method_39796(field_44443, "plains", () -> class_8853.field_45268);
    public static final class_3991<class_4466> field_44425 = method_39796(field_44356, "none", () -> class_4466.field_21775);

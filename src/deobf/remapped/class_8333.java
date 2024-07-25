@@ -9,7 +9,7 @@ public class class_8333 extends class_3599 {
 
    public class_8333(class_449 var1) {
       this.field_42658 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
    }
 
    @Override
@@ -92,7 +92,7 @@ public class class_8333 extends class_3599 {
          this.field_42658
             .method_26865()
             .method_17231(
-               var5.field_7336, var5.field_7333, var5.field_7334, (float)(this.field_42658.method_26903() + 20), (float)this.field_42658.method_26862()
+               var5.field_7336, var5.field_7333, var5.field_7334, (float)(this.field_42658.getHorizontalFaceSpeed() + 20), (float)this.field_42658.method_26862()
             );
          this.field_42658.method_26927().method_5595(var5.field_7336, var5.field_7333, var5.field_7334, 1.3);
          if (var3.field_33033.nextInt(80) == 0) {

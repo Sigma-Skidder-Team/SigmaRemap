@@ -139,11 +139,11 @@ public class class_900 extends Entity {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
    }
 
    @Override

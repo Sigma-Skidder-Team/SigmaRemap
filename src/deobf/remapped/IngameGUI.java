@@ -733,7 +733,7 @@ public class IngameGUI extends AbstractGui {
          int var12 = this.scaledWidth / 2 - 91;
          int var13 = this.scaledWidth / 2 + 91;
          int var14 = this.scaledHeight - 39;
-         float var15 = (float)var4.method_26575(class_7331.field_37468);
+         float var15 = (float)var4.method_26575(Attributes.MAX_HEALTH);
          int var16 = class_9299.method_42816(var4.method_26493());
          int var17 = class_9299.method_42816((var15 + (float)var16) / 2.0F / 10.0F);
          int var18 = Math.max(10 - (var17 - 2), 3);

@@ -122,8 +122,8 @@ public class class_9359 extends PlayerEntity implements class_117 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("playerGameType", 99)) {
          if (!this.method_37268().method_1621()) {
             this.field_47807
@@ -166,10 +166,10 @@ public class class_9359 extends PlayerEntity implements class_117 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("playerGameType", this.field_47807.method_39517().getID());
-      var1.method_25931("previousPlayerGameType", this.field_47807.method_39524().getID());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("playerGameType", this.field_47807.method_39517().getID());
+      var1.putInt("previousPlayerGameType", this.field_47807.method_39524().getID());
       var1.putBoolean("seenCredits", this.field_47783);
       if (this.field_47793 != null) {
          CompoundNBT var4 = new CompoundNBT();
@@ -193,9 +193,9 @@ public class class_9359 extends PlayerEntity implements class_117 {
       var1.put("recipeBook", this.field_47805.method_14033());
       var1.method_25941("Dimension", this.world.method_29545().method_25499().toString());
       if (this.field_47779 != null) {
-         var1.method_25931("SpawnX", this.field_47779.method_12173());
-         var1.method_25931("SpawnY", this.field_47779.method_12165());
-         var1.method_25931("SpawnZ", this.field_47779.method_12185());
+         var1.putInt("SpawnX", this.field_47779.method_12173());
+         var1.putInt("SpawnY", this.field_47779.method_12165());
+         var1.putInt("SpawnZ", this.field_47779.method_12185());
          var1.putBoolean("SpawnForced", this.field_47787);
          var1.putFloat("SpawnAngle", this.field_47808);
          Identifier.field_22655
@@ -685,8 +685,8 @@ public class class_9359 extends PlayerEntity implements class_117 {
                double var8 = 5.0;
                class_1343 var10 = class_1343.method_6200(var1);
                List var11 = this.world
-                  .<class_1173>method_25869(
-                     class_1173.class,
+                  .<MonsterEntity>method_25869(
+                     MonsterEntity.class,
                      new Box(
                         var10.method_61() - 8.0,
                         var10.method_60() - 5.0,

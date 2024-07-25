@@ -11,7 +11,7 @@ public class class_6405 extends class_3599 {
 
    public class_6405(IronGolemEntity var1) {
       this.field_32694 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
    }
 
    @Override

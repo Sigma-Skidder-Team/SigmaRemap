@@ -200,12 +200,12 @@ public class class_5542 extends class_5467 {
       }
    }
 
-   public static class_1313 method_25204() {
+   public static MutableAttribute method_25204() {
       return MobEntity.method_26846()
-         .method_5984(class_7331.field_37465, 0.3F)
-         .method_5984(class_7331.field_37468, 10.0)
-         .method_5984(class_7331.field_37471, 32.0)
-         .method_5984(class_7331.field_37462, 2.0);
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 10.0)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 32.0)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 2.0);
    }
 
    public class_5542 method_25213(class_6331 var1, class_1899 var2) {
@@ -292,8 +292,8 @@ public class class_5542 extends class_5467 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       List var4 = this.method_25215();
       class_3416 var5 = new class_3416();
 
@@ -311,8 +311,8 @@ public class class_5542 extends class_5467 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       class_3416 var4 = var1.method_25927("Trusted", 11);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {

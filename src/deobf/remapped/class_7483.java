@@ -155,7 +155,7 @@ public class class_7483 extends Entity implements class_3713 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       ItemStack var4 = this.method_34036();
       if (!var4.method_28022()) {
          var1.put("Item", var4.method_27998(new CompoundNBT()));
@@ -163,7 +163,7 @@ public class class_7483 extends Entity implements class_3713 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       ItemStack var4 = ItemStack.method_28015(var1.getCompound("Item"));
       this.method_34038(var4);
    }

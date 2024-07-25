@@ -12,7 +12,7 @@ public class class_335 implements Predicate<class_5834> {
    public boolean test(class_5834 var1) {
       if (var1 instanceof class_5542) {
          return false;
-      } else if (var1 instanceof class_3024 || var1 instanceof class_7272 || var1 instanceof class_1173) {
+      } else if (var1 instanceof class_3024 || var1 instanceof class_7272 || var1 instanceof MonsterEntity) {
          return true;
       } else if (var1 instanceof class_8990) {
          return !((class_8990)var1).method_41215();

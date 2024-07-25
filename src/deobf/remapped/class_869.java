@@ -21,8 +21,8 @@ public class class_869 {
    public CompoundNBT method_3761() {
       CompoundNBT var3 = new CompoundNBT();
       var3.put("Pos", class_4338.method_20190(this.field_4509));
-      var3.method_25931("Rotation", this.field_4508);
-      var3.method_25931("EntityId", this.field_4507);
+      var3.putInt("Rotation", this.field_4508);
+      var3.putInt("EntityId", this.field_4507);
       return var3;
    }
 

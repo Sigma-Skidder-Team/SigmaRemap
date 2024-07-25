@@ -156,8 +156,8 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       class_3416 var4 = new class_3416();
 
       for (ItemStack var6 : this.field_48054) {
@@ -185,7 +185,7 @@ public class class_9399 extends class_5834 {
       var1.putBoolean("Invisible", this.method_37109());
       var1.putBoolean("Small", this.method_43503());
       var1.putBoolean("ShowArms", this.method_43499());
-      var1.method_25931("DisabledSlots", this.field_48051);
+      var1.putInt("DisabledSlots", this.field_48051);
       var1.putBoolean("NoBasePlate", this.method_43495());
       if (this.method_43493()) {
          var1.putBoolean("Marker", this.method_43493());
@@ -195,8 +195,8 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("ArmorItems", 9)) {
          class_3416 var4 = var1.method_25927("ArmorItems", 10);
 

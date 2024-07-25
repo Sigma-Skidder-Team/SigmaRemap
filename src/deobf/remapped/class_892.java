@@ -10,7 +10,7 @@ public class class_892 extends class_3757 {
    @Override
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
-      var1.method_25931("OutputSignal", this.field_4589);
+      var1.putInt("OutputSignal", this.field_4589);
       return var1;
    }
 

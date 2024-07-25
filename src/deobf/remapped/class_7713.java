@@ -8,7 +8,7 @@ public class class_7713 extends class_3599 {
 
    public class_7713(AbstractVillagerEntity var1) {
       this.field_39121 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9561, class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.JUMP, Flag.MOVE));
    }
 
    @Override

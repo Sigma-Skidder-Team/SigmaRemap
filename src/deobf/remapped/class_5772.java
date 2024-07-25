@@ -35,7 +35,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
          class_3037.method_13878(var1, this.field_29157);
       }
 
-      var1.method_25931("TransferCooldown", this.field_29158);
+      var1.putInt("TransferCooldown", this.field_29158);
       return var1;
    }
 

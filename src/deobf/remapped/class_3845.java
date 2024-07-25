@@ -82,24 +82,24 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("HomePosX", this.method_17868().method_12173());
-      var1.method_25931("HomePosY", this.method_17868().method_12165());
-      var1.method_25931("HomePosZ", this.method_17868().method_12185());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("HomePosX", this.method_17868().method_12173());
+      var1.putInt("HomePosY", this.method_17868().method_12165());
+      var1.putInt("HomePosZ", this.method_17868().method_12185());
       var1.putBoolean("HasEgg", this.method_17856());
-      var1.method_25931("TravelPosX", this.method_17852().method_12173());
-      var1.method_25931("TravelPosY", this.method_17852().method_12165());
-      var1.method_25931("TravelPosZ", this.method_17852().method_12185());
+      var1.putInt("TravelPosX", this.method_17852().method_12173());
+      var1.putInt("TravelPosY", this.method_17852().method_12165());
+      var1.putInt("TravelPosZ", this.method_17852().method_12185());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       int var4 = var1.method_25947("HomePosX");
       int var5 = var1.method_25947("HomePosY");
       int var6 = var1.method_25947("HomePosZ");
       this.method_17859(new BlockPos(var4, var5, var6));
-      super.method_37314(var1);
+      super.readAdditional(var1);
       this.method_17865(var1.getBoolean("HasEgg"));
       int var7 = var1.method_25947("TravelPosX");
       int var8 = var1.method_25947("TravelPosY");
@@ -132,8 +132,8 @@ public class class_3845 extends class_5467 {
       this.goalSelector.addGoal(9, new class_8373(this, 1.0, 100, null));
    }
 
-   public static class_1313 method_17860() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 30.0).method_5984(class_7331.field_37465, 0.25);
+   public static MutableAttribute method_17860() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 30.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -206,7 +206,7 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       return new class_4704(this, var1);
    }
 

@@ -11,7 +11,7 @@ public class class_666 extends class_3599 {
 
    public class_666(class_2806 var1) {
       this.field_3691 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
    }
 
    @Override
@@ -104,6 +104,6 @@ public class class_666 extends class_3599 {
    }
 
    private double method_3039() {
-      return this.field_3691.method_26575(class_7331.field_37471);
+      return this.field_3691.method_26575(Attributes.FOLLOW_RANGE);
    }
 }

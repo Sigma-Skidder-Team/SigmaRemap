@@ -30,7 +30,7 @@ public class class_6837<T extends class_5834> extends class_3599 {
       this.field_35255 = var7;
       this.field_35252 = var9;
       this.field_35257 = var1.method_26927();
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
       this.field_35260 = new class_4931().method_22607((double)var4).method_22606(var9.and(var3));
    }
 

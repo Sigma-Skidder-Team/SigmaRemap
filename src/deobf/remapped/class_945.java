@@ -40,12 +40,12 @@ public class class_945 extends class_3757 {
       var1.method_25941("name", this.method_4113());
       var1.method_25941("author", this.field_4827);
       var1.method_25941("metadata", this.field_4838);
-      var1.method_25931("posX", this.field_4836.method_12173());
-      var1.method_25931("posY", this.field_4836.method_12165());
-      var1.method_25931("posZ", this.field_4836.method_12185());
-      var1.method_25931("sizeX", this.field_4833.method_12173());
-      var1.method_25931("sizeY", this.field_4833.method_12165());
-      var1.method_25931("sizeZ", this.field_4833.method_12185());
+      var1.putInt("posX", this.field_4836.method_12173());
+      var1.putInt("posY", this.field_4836.method_12165());
+      var1.putInt("posZ", this.field_4836.method_12185());
+      var1.putInt("sizeX", this.field_4833.method_12173());
+      var1.putInt("sizeY", this.field_4833.method_12165());
+      var1.putInt("sizeZ", this.field_4833.method_12185());
       var1.method_25941("rotation", this.field_4831.toString());
       var1.method_25941("mirror", this.field_4840.toString());
       var1.method_25941("mode", this.field_4830.toString());

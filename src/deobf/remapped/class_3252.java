@@ -9,8 +9,8 @@ public class class_3252 extends class_378 {
       super(var1, var2);
    }
 
-   public static class_1313 method_14866() {
-      return class_1173.method_5201().method_5984(class_7331.field_37465, 0.2F);
+   public static MutableAttribute method_14866() {
+      return MonsterEntity.func_234295_eP_().createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    public static boolean method_14865(EntityType<class_3252> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
@@ -25,7 +25,7 @@ public class class_3252 extends class_378 {
    @Override
    public void method_1861(int var1, boolean var2) {
       super.method_1861(var1, var2);
-      this.method_26561(class_7331.field_37473).method_45006((double)(var1 * 3));
+      this.method_26561(Attributes.field_37473).method_45006((double)(var1 * 3));
    }
 
    @Override

@@ -5,7 +5,7 @@ import java.util.EnumSet;
 public abstract class class_9883 extends class_3599 {
    public class_9883(class_9825 var1) {
       this.field_50133 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
    }
 
    public boolean method_45532() {

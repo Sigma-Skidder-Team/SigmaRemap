@@ -62,8 +62,8 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
       return this.method_37372().<Boolean>method_36640(field_8352);
    }
 
-   public static class_1313 method_7188() {
-      return class_1173.method_5201().method_5984(class_7331.field_37468, 26.0).method_5984(class_7331.field_37465, 0.25);
+   public static MutableAttribute method_7188() {
+      return MonsterEntity.func_234295_eP_().createMutableAttribute(Attributes.MAX_HEALTH, 26.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -111,7 +111,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
                      );
                }
 
-               class_9747 var8 = this.method_26561(class_7331.field_37465);
+               class_9747 var8 = this.method_26561(Attributes.MOVEMENT_SPEED);
                var8.method_45004(field_8347);
                var8.method_45011(field_8347);
             }
@@ -128,7 +128,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
                }
             }
 
-            this.method_26561(class_7331.field_37465).method_45004(field_8347);
+            this.method_26561(Attributes.MOVEMENT_SPEED).method_45004(field_8347);
          }
 
          if (this.field_41717.nextFloat() < 7.5E-4F) {

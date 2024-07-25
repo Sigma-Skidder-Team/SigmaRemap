@@ -211,9 +211,9 @@ public class class_702 implements class_700 {
          }
       } else if (var7.method_27364().method_33446() != class_5592.field_28385) {
          CompoundNBT var10 = new CompoundNBT();
-         var10.method_25931("x", var1.method_12173());
-         var10.method_25931("y", var1.method_12165());
-         var10.method_25931("z", var1.method_12185());
+         var10.putInt("x", var1.method_12173());
+         var10.putInt("y", var1.method_12165());
+         var10.putInt("z", var1.method_12185());
          var10.method_25941("id", "DUMMY");
          var7.method_27347(var10);
       } else {

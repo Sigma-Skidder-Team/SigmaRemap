@@ -32,7 +32,7 @@ public abstract class class_8116 implements class_5801 {
 
    public CompoundNBT method_36938(CompoundNBT var1) {
       var1.method_25941("Command", this.field_41599);
-      var1.method_25931("SuccessCount", this.field_41602);
+      var1.putInt("SuccessCount", this.field_41602);
       var1.method_25941("CustomName", ITextComponent$class_40.toJson(this.field_41603));
       var1.putBoolean("TrackOutput", this.field_41601);
       if (this.field_41597 != null && this.field_41601) {

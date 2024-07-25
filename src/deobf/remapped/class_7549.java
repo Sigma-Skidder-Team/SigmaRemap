@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7549 extends class_1173 {
+public class class_7549 extends MonsterEntity {
    private static String[] field_38498;
 
    public class_7549(EntityType<? extends class_7549> var1, World var2) {
@@ -12,11 +12,11 @@ public class class_7549 extends class_1173 {
       return 10.440001F;
    }
 
-   public static class_1313 method_34356() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 100.0)
-         .method_5984(class_7331.field_37465, 0.5)
-         .method_5984(class_7331.field_37462, 50.0);
+   public static MutableAttribute method_34356() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 100.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 50.0);
    }
 
    @Override

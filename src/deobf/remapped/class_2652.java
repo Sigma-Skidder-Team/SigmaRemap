@@ -22,7 +22,7 @@ public class class_2652 extends class_3599 {
       this.field_13063 = var1.method_26927();
       this.field_13060 = var4;
       this.field_13057 = var5;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
       if (!(var1.method_26927() instanceof class_8985) && !(var1.method_26927() instanceof class_5133)) {
          throw new IllegalArgumentException("Unsupported mob type for FollowMobGoal");
       }

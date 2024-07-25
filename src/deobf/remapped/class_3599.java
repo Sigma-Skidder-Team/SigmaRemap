@@ -3,7 +3,7 @@ package remapped;
 import java.util.EnumSet;
 
 public abstract class class_3599 {
-   private final EnumSet<class_1891> field_17615 = EnumSet.<class_1891>noneOf(class_1891.class);
+   private final EnumSet<Flag> field_17615 = EnumSet.<Flag>noneOf(Flag.class);
 
    public abstract boolean method_16795();
 
@@ -24,7 +24,7 @@ public abstract class class_3599 {
    public void method_16794() {
    }
 
-   public void method_16800(EnumSet<class_1891> var1) {
+   public void method_16800(EnumSet<Flag> var1) {
       this.field_17615.clear();
       this.field_17615.addAll(var1);
    }
@@ -34,7 +34,7 @@ public abstract class class_3599 {
       return this.getClass().getSimpleName();
    }
 
-   public EnumSet<class_1891> method_16797() {
+   public EnumSet<Flag> method_16797() {
       return this.field_17615;
    }
 }

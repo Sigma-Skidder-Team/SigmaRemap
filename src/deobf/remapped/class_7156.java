@@ -17,7 +17,7 @@ public class class_7156 extends class_3599 {
       this.field_36854 = var1;
       this.field_36857 = var2;
       this.field_36860 = var1.world;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
    }
 
    @Override

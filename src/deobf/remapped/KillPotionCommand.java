@@ -13,9 +13,9 @@ public class KillPotionCommand extends Command {
          if (!field_18219.playerController.method_42149()) {
             ItemStack var6 = new ItemStack(class_4897.field_25226);
             CompoundNBT var7 = new CompoundNBT();
-            var7.method_25931("Amplifier", 125);
-            var7.method_25931("Duration", 2000);
-            var7.method_25931("Id", 6);
+            var7.putInt("Amplifier", 125);
+            var7.putInt("Duration", 2000);
+            var7.putInt("Id", 6);
             class_3416 var8 = new class_3416();
             var8.add(var7);
             var6.method_27954("CustomPotionEffects", var8);

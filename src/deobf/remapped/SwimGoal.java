@@ -8,7 +8,7 @@ public class SwimGoal extends class_3599 {
 
    public SwimGoal(MobEntity var1) {
       this.field_4226 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9561));
+      this.method_16800(EnumSet.<Flag>of(Flag.JUMP));
       var1.method_26927().method_5611(true);
    }
 

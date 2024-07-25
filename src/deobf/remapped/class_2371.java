@@ -25,8 +25,8 @@ public class class_2371 {
    }
 
    public static void method_10849(class_7522 var0, class_6744 var1, CompoundNBT var2, class_3498 var3) {
-      var2.method_25931("xPos", var1.field_34808);
-      var2.method_25931("zPos", var1.field_34804);
+      var2.putInt("xPos", var1.field_34808);
+      var2.putInt("zPos", var1.field_34804);
       var2.method_25949("LastUpdate", var1.field_34805);
       int[] var6 = new int[var1.field_34803.length];
 

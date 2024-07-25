@@ -45,7 +45,7 @@ public abstract class MobEntity extends class_5834 {
       this.field_29900 = new class_2833(this);
       this.field_29914 = new class_4072(this);
       this.field_29921 = this.method_26847();
-      this.field_29904 = this.method_26933(var2);
+      this.field_29904 = this.createNavigator(var2);
       this.field_29898 = new class_8091(this);
       Arrays.fill(this.field_29918, 0.085F);
       Arrays.fill(this.field_29923, 0.085F);
@@ -57,11 +57,11 @@ public abstract class MobEntity extends class_5834 {
    public void registerGoals() {
    }
 
-   public static class_1313 method_26846() {
-      return class_5834.method_26409().method_5984(class_7331.field_37471, 16.0).method_5983(class_7331.field_37467);
+   public static MutableAttribute method_26846() {
+      return class_5834.method_26409().createMutableAttribute(Attributes.FOLLOW_RANGE, 16.0).method_5983(Attributes.ATTACK_KNOCKBACK);
    }
 
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       return new class_8985(this, var1);
    }
 
@@ -257,9 +257,9 @@ public abstract class MobEntity extends class_5834 {
    public void updateMovementGoalFlags() {
       boolean var3 = !(this.getControllingPassenger() instanceof MobEntity);
       boolean var4 = !(this.getRidingEntity() instanceof BoatEntity);
-      this.goalSelector.method_3493(class_1891.field_9564, var3);
-      this.goalSelector.method_3493(class_1891.field_9561, var3 && var4);
-      this.goalSelector.method_3493(class_1891.field_9560, var3);
+      this.goalSelector.setFlag(Flag.MOVE, var3);
+      this.goalSelector.setFlag(Flag.JUMP, var3 && var4);
+      this.goalSelector.setFlag(Flag.LOOK, var3);
    }
 
    @Override
@@ -274,8 +274,8 @@ public abstract class MobEntity extends class_5834 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("CanPickUpLoot", this.method_26930());
       var1.putBoolean("PersistenceRequired", this.field_29920);
       class_3416 var4 = new class_3416();
@@ -325,9 +325,9 @@ public abstract class MobEntity extends class_5834 {
          if (!(this.field_29911 instanceof class_5834)) {
             if (this.field_29911 instanceof class_4641) {
                BlockPos var22 = ((class_4641)this.field_29911).method_21469();
-               var20.method_25931("X", var22.method_12173());
-               var20.method_25931("Y", var22.method_12165());
-               var20.method_25931("Z", var22.method_12185());
+               var20.putInt("X", var22.method_12173());
+               var20.putInt("Y", var22.method_12165());
+               var20.putInt("Z", var22.method_12185());
             }
          } else {
             UUID var23 = this.field_29911.method_37328();
@@ -351,8 +351,8 @@ public abstract class MobEntity extends class_5834 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("CanPickUpLoot", 1)) {
          this.method_26871(var1.getBoolean("CanPickUpLoot"));
       }
@@ -670,7 +670,7 @@ public abstract class MobEntity extends class_5834 {
       return 40;
    }
 
-   public int method_26903() {
+   public int getHorizontalFaceSpeed() {
       return 75;
    }
 
@@ -968,7 +968,7 @@ public abstract class MobEntity extends class_5834 {
 
    @Nullable
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
-      this.method_26561(class_7331.field_37471)
+      this.method_26561(Attributes.FOLLOW_RANGE)
          .method_45005(new class_9343("Random spawn bonus", this.field_41717.nextGaussian() * 0.05, class_9342.field_47678));
       if (!(this.field_41717.nextFloat() < 0.05F)) {
          this.method_26932(false);
@@ -1340,8 +1340,8 @@ public abstract class MobEntity extends class_5834 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      float var4 = (float)this.method_26575(class_7331.field_37462);
-      float var5 = (float)this.method_26575(class_7331.field_37467);
+      float var4 = (float)this.method_26575(Attributes.ATTACK_DAMAGE);
+      float var5 = (float)this.method_26575(Attributes.ATTACK_KNOCKBACK);
       if (var1 instanceof class_5834) {
          var4 += class_2931.method_13425(this.method_26446(), ((class_5834)var1).method_26550());
          var5 += (float)class_2931.method_13433(this);
@@ -1461,7 +1461,7 @@ public abstract class MobEntity extends class_5834 {
 
    private void method_26917() {
       this.field_29658++;
-      if (this instanceof class_1173) {
+      if (this instanceof MonsterEntity) {
          float var3 = this.method_37193();
          if (var3 > 0.5F) {
             this.field_29658 += 2;

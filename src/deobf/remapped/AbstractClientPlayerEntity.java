@@ -129,7 +129,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
          var3 *= 1.1F;
       }
 
-      var3 = (float)((double)var3 * ((this.method_26575(class_7331.field_37465) / (double)this.playerAbilities.getWalkSpeed() + 1.0) / 2.0));
+      var3 = (float)((double)var3 * ((this.method_26575(Attributes.MOVEMENT_SPEED) / (double)this.playerAbilities.getWalkSpeed() + 1.0) / 2.0));
       if (this.playerAbilities.getWalkSpeed() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
          var3 = 1.0F;
       }

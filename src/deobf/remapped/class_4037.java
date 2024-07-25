@@ -32,7 +32,7 @@ public class class_4037 implements AutoCloseable {
 
       var3 = class_4338.method_20179(this.field_19601, class_5397.field_27558, var3, Math.max(1493, var6));
       if (var6 < class_7665.method_34674().getWorldVersion()) {
-         var3.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
+         var3.putInt("DataVersion", class_7665.method_34674().getWorldVersion());
       }
 
       return var3;

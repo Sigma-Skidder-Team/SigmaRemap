@@ -25,7 +25,7 @@ public class class_4469 extends class_2833 {
             this.field_21792.rotationYaw = this.method_12882(this.field_21792.rotationYaw, var11, 10.0F);
             this.field_21792.field_29605 = this.field_21792.rotationYaw;
             this.field_21792.field_29618 = this.field_21792.rotationYaw;
-            float var12 = (float)(this.field_13885 * this.field_21792.method_26575(class_7331.field_37465));
+            float var12 = (float)(this.field_13885 * this.field_21792.method_26575(Attributes.MOVEMENT_SPEED));
             if (!this.field_21792.method_37285()) {
                this.field_21792.method_26461(var12 * 0.1F);
             } else {

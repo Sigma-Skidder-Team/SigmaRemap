@@ -7,7 +7,7 @@ public class class_2940 extends class_3599 {
 
    public class_2940(class_2519 var1) {
       this.field_14298 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
    }
 
    @Override

@@ -31,9 +31,9 @@ public class class_8509 extends class_2833 {
       if (this.field_13878 == class_1737.field_8946) {
          this.field_13878 = class_1737.field_8945;
          if (!this.field_13879.method_37360()) {
-            this.field_13879.method_26461((float)(this.field_13885 * this.field_13879.method_26575(class_7331.field_37465)));
+            this.field_13879.method_26461((float)(this.field_13885 * this.field_13879.method_26575(Attributes.MOVEMENT_SPEED)));
          } else {
-            this.field_13879.method_26461((float)(this.field_13885 * this.field_13879.method_26575(class_7331.field_37465)));
+            this.field_13879.method_26461((float)(this.field_13885 * this.field_13879.method_26575(Attributes.MOVEMENT_SPEED)));
             if (this.field_43553-- > 0) {
                this.field_43554.field_29676 = 0.0F;
                this.field_43554.field_29673 = 0.0F;

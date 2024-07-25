@@ -47,12 +47,12 @@ public class class_9668 extends class_5467 implements class_6250 {
       this.targetSelector.addGoal(5, new class_6474<class_9668>(this, false));
    }
 
-   public static class_1313 method_44713() {
+   public static MutableAttribute method_44713() {
       return MobEntity.method_26846()
-         .method_5984(class_7331.field_37468, 30.0)
-         .method_5984(class_7331.field_37471, 20.0)
-         .method_5984(class_7331.field_37465, 0.25)
-         .method_5984(class_7331.field_37462, 6.0);
+         .createMutableAttribute(Attributes.MAX_HEALTH, 30.0)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 20.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
    public static boolean method_44711(EntityType<class_9668> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
@@ -64,14 +64,14 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_28533((class_6331)this.world, var1);
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       this.method_28528(var1);
    }
 
@@ -171,7 +171,7 @@ public class class_9668 extends class_5467 implements class_6250 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.method_37096(this, var1);
       }

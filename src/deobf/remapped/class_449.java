@@ -70,22 +70,22 @@ public class class_449 extends class_1829 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("TreasurePosX", this.method_2163().method_12173());
-      var1.method_25931("TreasurePosY", this.method_2163().method_12165());
-      var1.method_25931("TreasurePosZ", this.method_2163().method_12185());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("TreasurePosX", this.method_2163().method_12173());
+      var1.putInt("TreasurePosY", this.method_2163().method_12165());
+      var1.putInt("TreasurePosZ", this.method_2163().method_12185());
       var1.putBoolean("GotFish", this.method_2161());
-      var1.method_25931("Moistness", this.method_2159());
+      var1.putInt("Moistness", this.method_2159());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       int var4 = var1.method_25947("TreasurePosX");
       int var5 = var1.method_25947("TreasurePosY");
       int var6 = var1.method_25947("TreasurePosZ");
       this.method_2155(new BlockPos(var4, var5, var6));
-      super.method_37314(var1);
+      super.readAdditional(var1);
       this.method_2153(var1.getBoolean("GotFish"));
       this.method_2157(var1.method_25947("Moistness"));
    }
@@ -107,21 +107,21 @@ public class class_449 extends class_1829 {
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this, class_337.class).setCallsForHelp());
    }
 
-   public static class_1313 method_2164() {
+   public static MutableAttribute method_2164() {
       return MobEntity.method_26846()
-         .method_5984(class_7331.field_37468, 10.0)
-         .method_5984(class_7331.field_37465, 1.2F)
-         .method_5984(class_7331.field_37462, 3.0);
+         .createMutableAttribute(Attributes.MAX_HEALTH, 10.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 1.2F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 3.0);
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       return new class_9811(this, var1);
    }
 
    @Override
    public boolean method_26442(Entity var1) {
-      boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.method_37096(this, var1);
          this.method_37155(class_463.field_2613, 1.0F, 1.0F);
@@ -151,7 +151,7 @@ public class class_449 extends class_1829 {
    }
 
    @Override
-   public int method_26903() {
+   public int getHorizontalFaceSpeed() {
       return 1;
    }
 

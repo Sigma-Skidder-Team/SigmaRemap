@@ -43,25 +43,25 @@ public class class_9552 extends class_5783 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field_48601 != null) {
          var1.method_25964("Target", this.field_48601.method_37328());
       }
 
       if (this.field_48599 != null) {
-         var1.method_25931("Dir", this.field_48599.method_1050());
+         var1.putInt("Dir", this.field_48599.method_1050());
       }
 
-      var1.method_25931("Steps", this.field_48600);
+      var1.putInt("Steps", this.field_48600);
       var1.method_25923("TXD", this.field_48604);
       var1.method_25923("TYD", this.field_48598);
       var1.method_25923("TZD", this.field_48597);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_48600 = var1.method_25947("Steps");
       this.field_48604 = var1.method_25932("TXD");
       this.field_48598 = var1.method_25932("TYD");

@@ -13,10 +13,10 @@ import org.apache.logging.log4j.Logger;
 public class class_782 {
    private static final Logger field_4204 = LogManager.getLogger();
    private static final class_3556 field_4201 = new class_2438(Integer.MAX_VALUE, new class_3886());
-   private final Map<class_1891, class_3556> field_4208 = new EnumMap<class_1891, class_3556>(class_1891.class);
+   private final Map<Flag, class_3556> field_4208 = new EnumMap<Flag, class_3556>(Flag.class);
    private final Set<class_3556> field_4207 = Sets.newLinkedHashSet();
    private final Supplier<class_3492> field_4203;
-   private final EnumSet<class_1891> field_4205 = EnumSet.<class_1891>noneOf(class_1891.class);
+   private final EnumSet<Flag> field_4205 = EnumSet.<Flag>noneOf(Flag.class);
    private int field_4206 = 3;
 
    public class_782(Supplier<class_3492> var1) {
@@ -78,11 +78,11 @@ public class class_782 {
       var3.endSection();
    }
 
-   private static boolean method_3486(class_3556 var0, EnumSet<class_1891> var1, Map<class_1891, class_3556> var2) {
+   private static boolean method_3486(class_3556 var0, EnumSet<Flag> var1, Map<Flag, class_3556> var2) {
       if (var1.isEmpty()) {
          return true;
       } else {
-         for (class_1891 var6 : var1) {
+         for (Flag var6 : var1) {
             class_3556 var7 = var2.getOrDefault(var6, field_4201);
             if (!var7.method_16535(var0)) {
                return false;
@@ -93,9 +93,9 @@ public class class_782 {
       }
    }
 
-   private static void method_3484(class_3556 var0, EnumSet<class_1891> var1, Map<class_1891, class_3556> var2) {
+   private static void method_3484(class_3556 var0, EnumSet<Flag> var1, Map<Flag, class_3556> var2) {
       if (!var1.isEmpty()) {
-         for (class_1891 var6 : var1) {
+         for (Flag var6 : var1) {
             class_3556 var7 = var2.getOrDefault(var6, field_4201);
             var7.method_16793();
             var2.put(var6, var0);
@@ -107,15 +107,15 @@ public class class_782 {
       return this.field_4207.stream().filter(class_3556::method_16536);
    }
 
-   public void method_3487(class_1891 var1) {
+   public void method_3487(Flag var1) {
       this.field_4205.add(var1);
    }
 
-   public void method_3491(class_1891 var1) {
+   public void method_3491(Flag var1) {
       this.field_4205.remove(var1);
    }
 
-   public void method_3493(class_1891 var1, boolean var2) {
+   public void setFlag(Flag var1, boolean var2) {
       if (!var2) {
          this.method_3487(var1);
       } else {

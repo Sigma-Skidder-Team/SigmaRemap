@@ -18,7 +18,7 @@ public class class_1697 {
       for (Pair var5 : this.field_8771) {
          CompoundNBT var6 = new CompoundNBT();
          var6.method_25941("Pattern", class_8427.method_38786((class_8427)var5.getLeft()));
-         var6.method_25931("Color", ((class_9077)var5.getRight()).method_41794());
+         var6.putInt("Color", ((class_9077)var5.getRight()).method_41794());
          var3.add(var6);
       }
 

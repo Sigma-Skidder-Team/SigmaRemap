@@ -19,9 +19,9 @@ public class class_5749 implements class_1429 {
 
    @Override
    public void method_6572(CompoundNBT var1) {
-      var1.method_25931("x", this.field_29107.method_12173());
-      var1.method_25931("y", this.field_29107.method_12165());
-      var1.method_25931("z", this.field_29107.method_12185());
+      var1.putInt("x", this.field_29107.method_12173());
+      var1.putInt("y", this.field_29107.method_12165());
+      var1.putInt("z", this.field_29107.method_12185());
       class_2522 var4 = this.field_29110.method_17402().method_28262(this.field_29107);
       this.field_29110.method_17394(var4, var1);
       this.field_29110.method_17407();

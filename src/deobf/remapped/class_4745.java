@@ -219,7 +219,7 @@ public class class_4745 extends class_4314 {
             }
 
             CompoundNBT var14 = new CompoundNBT();
-            var14.method_25931("honey_level", var10);
+            var14.putInt("honey_level", var10);
             var9.method_27954("BlockStateTag", var14);
             class_91 var13 = new class_91(var1, (double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185(), var9);
             var13.method_257();

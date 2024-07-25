@@ -56,7 +56,7 @@ public class class_3973 extends class_4088 {
             if (var8 == class_4897.field_24622 && !var9.field_10686 && var9.field_10678 < 4) {
                var10 = var1.method_27973();
                var10.method_28017(1);
-               var10.method_27994().method_25931("map_scale_direction", 1);
+               var10.method_27994().putInt("map_scale_direction", 1);
                this.method_18877();
             } else if (var8 == class_4897.field_24799 && !var9.field_10686) {
                var10 = var1.method_27973();

@@ -90,7 +90,7 @@ public class class_5799 {
 
    public class_6561 method_26269(CompoundNBT var1) {
       if (!var1.contains("DataVersion", 99)) {
-         var1.method_25931("DataVersion", 500);
+         var1.putInt("DataVersion", 500);
       }
 
       class_6561 var4 = new class_6561();

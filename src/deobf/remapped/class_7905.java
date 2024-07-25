@@ -10,7 +10,7 @@ public class class_7905 extends class_8285 {
 
    public class_7905(class_6174 var1) {
       super(var1, 1.0, 10);
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
    }
 
    @Override

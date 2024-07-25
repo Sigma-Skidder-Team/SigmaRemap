@@ -17,7 +17,7 @@ public class class_949 extends class_958 {
       this.field_4885 = this.field_4884.field_41768.field_33033.nextInt(10);
       this.field_4886 = Lists.newArrayList();
       this.field_4887 = null;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
    }
 
    @Override

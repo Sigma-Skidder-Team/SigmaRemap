@@ -195,10 +195,10 @@ public class class_9477 {
       class_2034 var4 = var1.method_27352();
       CompoundNBT var5 = new CompoundNBT();
       CompoundNBT var6 = new CompoundNBT();
-      var5.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
+      var5.putInt("DataVersion", class_7665.method_34674().getWorldVersion());
       var5.put("Level", var6);
-      var6.method_25931("xPos", var4.field_10328);
-      var6.method_25931("zPos", var4.field_10327);
+      var6.putInt("xPos", var4.field_10328);
+      var6.putInt("zPos", var4.field_10327);
       var6.method_25949("LastUpdate", var0.method_29546());
       var6.method_25949("InhabitedTime", var1.method_27340());
       var6.method_25941("Status", var1.method_27364().method_33460());

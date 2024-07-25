@@ -149,7 +149,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       var1.method_25958("CookTimeTotal", (short)this.field_40577);
       class_3037.method_13878(var1, this.field_40579);
       CompoundNBT var4 = new CompoundNBT();
-      this.field_40586.forEach((var1x, var2) -> var4.method_25931(var1x.toString(), var2));
+      this.field_40586.forEach((var1x, var2) -> var4.putInt(var1x.toString(), var2));
       var1.put("RecipesUsed", var4);
       return var1;
    }

@@ -69,8 +69,8 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method_40588()) {
          var1.put("HivePos", class_4338.method_20190(this.method_40605()));
       }
@@ -81,14 +81,14 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
 
       var1.putBoolean("HasNectar", this.method_40592());
       var1.putBoolean("HasStung", this.method_40610());
-      var1.method_25931("TicksSincePollination", this.field_45165);
-      var1.method_25931("CannotEnterHiveTicks", this.field_45159);
-      var1.method_25931("CropsGrownSincePollination", this.field_45158);
+      var1.putInt("TicksSincePollination", this.field_45165);
+      var1.putInt("CannotEnterHiveTicks", this.field_45159);
+      var1.putInt("CropsGrownSincePollination", this.field_45158);
       this.method_28528(var1);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field_45160 = null;
       if (var1.method_25938("HivePos")) {
          this.field_45160 = class_4338.method_20189(var1.getCompound("HivePos"));
@@ -99,7 +99,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
          this.field_45156 = class_4338.method_20189(var1.getCompound("FlowerPos"));
       }
 
-      super.method_37314(var1);
+      super.readAdditional(var1);
       this.method_40598(var1.getBoolean("HasNectar"));
       this.method_40624(var1.getBoolean("HasStung"));
       this.field_45165 = var1.method_25947("TicksSincePollination");
@@ -110,7 +110,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      boolean var4 = var1.attackEntityFrom(DamageSource.method_28370(this), (float)((int)this.method_26575(class_7331.field_37462)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method_28370(this), (float)((int)this.method_26575(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.method_37096(this, var1);
          if (var1 instanceof class_5834) {
@@ -416,17 +416,17 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
       return (this.field_41735.<Byte>method_36640(field_45170) & var1) != 0;
    }
 
-   public static class_1313 method_40625() {
+   public static MutableAttribute method_40625() {
       return MobEntity.method_26846()
-         .method_5984(class_7331.field_37468, 10.0)
-         .method_5984(class_7331.field_37474, 0.6F)
-         .method_5984(class_7331.field_37465, 0.3F)
-         .method_5984(class_7331.field_37462, 2.0)
-         .method_5984(class_7331.field_37471, 48.0);
+         .createMutableAttribute(Attributes.MAX_HEALTH, 10.0)
+         .createMutableAttribute(Attributes.field_37474, 0.6F)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 2.0)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 48.0);
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       class_5967 var4 = new class_5967(this, this, var1);
       var4.method_23534(false);
       var4.method_5611(false);

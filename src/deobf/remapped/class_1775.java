@@ -54,14 +54,14 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       this.field_9086.method_3111(var1);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_9086.method_3106(var1);
    }
 
@@ -114,7 +114,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       float var3 = Math.min(0.25F, this.field_29643);
       float var4 = this.field_29671;
       return (double)this.method_37074() - 0.19 + (double)(0.12F * class_9299.method_42840(var4 * 1.5F) * 2.0F * var3);
@@ -194,12 +194,12 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    public float method_7923() {
-      return (float)this.method_26575(class_7331.field_37465) * (!this.method_7924() ? 1.0F : 0.66F);
+      return (float)this.method_26575(Attributes.MOVEMENT_SPEED) * (!this.method_7924() ? 1.0F : 0.66F);
    }
 
    @Override
    public float method_37516() {
-      return (float)this.method_26575(class_7331.field_37465) * (!this.method_7924() ? 0.55F : 0.23F);
+      return (float)this.method_26575(Attributes.MOVEMENT_SPEED) * (!this.method_7924() ? 0.55F : 0.23F);
    }
 
    @Override
@@ -274,8 +274,8 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       }
    }
 
-   public static class_1313 method_7928() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37465, 0.175F).method_5984(class_7331.field_37471, 16.0);
+   public static MutableAttribute method_7928() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.175F).createMutableAttribute(Attributes.FOLLOW_RANGE, 16.0);
    }
 
    @Override
@@ -309,7 +309,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       return new class_7632(this, var1);
    }
 

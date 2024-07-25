@@ -9,13 +9,13 @@ public class class_6734 extends class_4109 {
       super(var1, var2);
    }
 
-   public static class_1313 method_30877() {
-      return method_19064().method_5984(class_7331.field_37468, 15.0).method_5984(class_7331.field_37465, 0.2F);
+   public static MutableAttribute method_30877() {
+      return method_19064().createMutableAttribute(Attributes.MAX_HEALTH, 15.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
    public void method_19084() {
-      this.method_26561(class_7331.field_37464).method_45006(this.method_19046());
+      this.method_26561(Attributes.field_37464).method_45006(this.method_19046());
    }
 
    @Override

@@ -4,7 +4,7 @@ import java.util.EnumSet;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class class_337 extends class_1173 {
+public class class_337 extends MonsterEntity {
    private static String[] field_1252;
    private static final class_7821<Boolean> field_1257 = class_8073.<Boolean>method_36641(class_337.class, class_2734.field_13347);
    private static final class_7821<Integer> field_1254 = class_8073.<Integer>method_36641(class_337.class, class_2734.field_13366);
@@ -37,21 +37,21 @@ public class class_337 extends class_1173 {
       this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(8, new LookAtGoal(this, class_337.class, 12.0F, 0.01F));
       this.goalSelector.addGoal(9, new class_9691(this));
-      this.field_1260.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
-      var3.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.field_1260.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
+      var3.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
       this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<class_5834>(this, class_5834.class, 10, true, false, new class_853(this)));
    }
 
-   public static class_1313 method_1544() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37462, 6.0)
-         .method_5984(class_7331.field_37465, 0.5)
-         .method_5984(class_7331.field_37471, 16.0)
-         .method_5984(class_7331.field_37468, 30.0);
+   public static MutableAttribute method_1544() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 6.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 16.0)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 30.0);
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       return new class_9811(this, var1);
    }
 

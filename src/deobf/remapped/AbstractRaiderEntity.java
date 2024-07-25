@@ -158,18 +158,18 @@ public abstract class AbstractRaiderEntity extends class_4607 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Wave", this.field_19611);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Wave", this.field_19611);
       var1.putBoolean("CanJoinRaid", this.field_19608);
       if (this.field_19610 != null) {
-         var1.method_25931("RaidId", this.field_19610.method_11288());
+         var1.putInt("RaidId", this.field_19610.method_11288());
       }
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_19611 = var1.method_25947("Wave");
       this.field_19608 = var1.getBoolean("CanJoinRaid");
       if (var1.contains("RaidId", 3)) {

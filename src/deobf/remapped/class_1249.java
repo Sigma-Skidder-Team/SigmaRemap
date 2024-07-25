@@ -31,7 +31,7 @@ public abstract class class_1249 {
    public class_1249(MobEntity var1, World var2) {
       this.field_6877 = var1;
       this.field_6882 = var2;
-      int var5 = class_9299.method_42847(var1.method_26575(class_7331.field_37471) * 16.0);
+      int var5 = class_9299.method_42847(var1.method_26575(Attributes.FOLLOW_RANGE) * 16.0);
       this.field_6873 = this.method_5605(var5);
    }
 
@@ -102,7 +102,7 @@ public abstract class class_1249 {
                   return this.field_6887;
                } else {
                   this.field_6882.method_29599().startSection("pathfind");
-                  float var7 = (float)this.field_6877.method_26575(class_7331.field_37471);
+                  float var7 = (float)this.field_6877.method_26575(Attributes.FOLLOW_RANGE);
                   BlockPos var8 = !var3 ? this.field_6877.method_37075() : this.field_6877.method_37075().method_6081();
                   int var9 = (int)(var7 + (float)var2);
                   class_9525 var10 = new class_9525(this.field_6882, var8.method_6104(-var9, -var9, -var9), var8.method_6104(var9, var9, var9));

@@ -33,19 +33,19 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Variant", this.method_42977());
-      var1.method_25931("Strength", this.method_42988());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Variant", this.method_42977());
+      var1.putInt("Strength", this.method_42988());
       if (!this.field_20021.method_31498(1).method_28022()) {
          var1.put("DecorItem", this.field_20021.method_31498(1).method_27998(new CompoundNBT()));
       }
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.method_42983(var1.method_25947("Strength"));
-      super.method_37314(var1);
+      super.readAdditional(var1);
       this.method_42972(var1.method_25947("Variant"));
       if (var1.contains("DecorItem", 10)) {
          this.field_20021.method_31503(1, ItemStack.method_28015(var1.getCompound("DecorItem")));
@@ -70,8 +70,8 @@ public class class_9310 extends class_5521 implements class_2354 {
       this.targetSelector.addGoal(2, new class_2712(this));
    }
 
-   public static class_1313 method_42979() {
-      return method_25018().method_5984(class_7331.field_37471, 40.0);
+   public static MutableAttribute method_42979() {
+      return method_25018().createMutableAttribute(Attributes.FOLLOW_RANGE, 40.0);
    }
 
    @Override
@@ -103,14 +103,14 @@ public class class_9310 extends class_5521 implements class_2354 {
          float var6 = 0.3F;
          var1.method_37256(
             this.getPosX() + (double)(0.3F * var5),
-            this.method_37309() + this.method_37149() + var1.method_37106(),
+            this.method_37309() + this.getMountedYOffset() + var1.method_37106(),
             this.getPosZ() - (double)(0.3F * var4)
          );
       }
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       return (double)this.method_37074() * 0.67;
    }
 

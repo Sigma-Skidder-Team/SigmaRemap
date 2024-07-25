@@ -47,13 +47,13 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
       return !this.method_26920();
    }
 
-   public static class_1313 method_30713() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 40.0)
-         .method_5984(class_7331.field_37465, 0.3F)
-         .method_5984(class_7331.field_37463, 0.6F)
-         .method_5984(class_7331.field_37467, 1.0)
-         .method_5984(class_7331.field_37462, 6.0);
+   public static MutableAttribute method_30713() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 40.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)
+         .createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 0.6F)
+         .createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 1.0)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
    @Override
@@ -135,10 +135,10 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    public void method_8637() {
       if (!this.method_26449()) {
          this.field_29915 = 5;
-         this.method_26561(class_7331.field_37462).method_45006(6.0);
+         this.method_26561(Attributes.ATTACK_DAMAGE).method_45006(6.0);
       } else {
          this.field_29915 = 3;
-         this.method_26561(class_7331.field_37462).method_45006(0.5);
+         this.method_26561(Attributes.ATTACK_DAMAGE).method_45006(0.5);
       }
    }
 
@@ -171,7 +171,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       return (double)this.method_37074() - (!this.method_26449() ? 0.15 : 0.2);
    }
 
@@ -233,21 +233,21 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method_30709()) {
          var1.putBoolean("IsImmuneToZombification", true);
       }
 
-      var1.method_25931("TimeInOverworld", this.field_34612);
+      var1.putInt("TimeInOverworld", this.field_34612);
       if (this.field_34613) {
          var1.putBoolean("CannotBeHunted", true);
       }
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_30711(var1.getBoolean("IsImmuneToZombification"));
       this.field_34612 = var1.method_25947("TimeInOverworld");
       this.method_30708(var1.getBoolean("CannotBeHunted"));

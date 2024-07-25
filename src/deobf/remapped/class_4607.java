@@ -3,7 +3,7 @@ package remapped;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public abstract class class_4607 extends class_1173 {
+public abstract class class_4607 extends MonsterEntity {
    private BlockPos field_22413;
    private boolean field_22414;
    private boolean field_22415;
@@ -19,8 +19,8 @@ public abstract class class_4607 extends class_1173 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field_22413 != null) {
          var1.put("PatrolTarget", class_4338.method_20190(this.field_22413));
       }
@@ -30,8 +30,8 @@ public abstract class class_4607 extends class_1173 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.method_25938("PatrolTarget")) {
          this.field_22413 = class_4338.method_20189(var1.getCompound("PatrolTarget"));
       }

@@ -10,7 +10,7 @@ public class class_3518 extends class_3335 {
       super(var1, null);
       this.field_17240 = var1;
       this.field_17239 = class_5542.method_25211(this.field_17240).nextInt(140);
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560, class_1891.field_9561));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK, Flag.JUMP));
    }
 
    @Override

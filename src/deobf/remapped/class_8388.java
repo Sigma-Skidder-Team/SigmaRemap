@@ -107,14 +107,14 @@ public abstract class class_8388 extends class_5783 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.put("power", this.method_37272(new double[]{this.field_42909, this.field_42910, this.field_42911}));
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("power", 9)) {
          class_3416 var4 = var1.method_25927("power", 6);
          if (var4.size() == 3) {

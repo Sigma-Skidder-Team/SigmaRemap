@@ -307,7 +307,7 @@ public class class_3420 extends class_3757 implements class_3745 {
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.put("blockState", class_4338.method_20187(this.field_16829));
-      var1.method_25931("facing", this.field_16834.method_1050());
+      var1.putInt("facing", this.field_16834.method_1050());
       var1.putFloat("progress", this.field_16833);
       var1.putBoolean("extending", this.field_16827);
       var1.putBoolean("source", this.field_16836);

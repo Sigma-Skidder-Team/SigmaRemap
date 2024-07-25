@@ -40,12 +40,12 @@ public class IronGolemEntity extends class_608 implements class_6250 {
       this.field_41735.method_36634(field_41629, (byte)0);
    }
 
-   public static class_1313 method_36980() {
+   public static MutableAttribute method_36980() {
       return MobEntity.method_26846()
-         .method_5984(class_7331.field_37468, 100.0)
-         .method_5984(class_7331.field_37465, 0.25)
-         .method_5984(class_7331.field_37463, 1.0)
-         .method_5984(class_7331.field_37462, 15.0);
+         .createMutableAttribute(Attributes.MAX_HEALTH, 100.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25)
+         .createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 1.0)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 15.0);
    }
 
    @Override
@@ -107,15 +107,15 @@ public class IronGolemEntity extends class_608 implements class_6250 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("PlayerCreated", this.method_36974());
       this.method_28528(var1);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_36979(var1.getBoolean("PlayerCreated"));
       this.method_28533((class_6331)this.world, var1);
    }
@@ -146,7 +146,7 @@ public class IronGolemEntity extends class_608 implements class_6250 {
    }
 
    private float method_36975() {
-      return (float)this.method_26575(class_7331.field_37462);
+      return (float)this.method_26575(Attributes.ATTACK_DAMAGE);
    }
 
    @Override

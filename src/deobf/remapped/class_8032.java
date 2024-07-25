@@ -9,8 +9,8 @@ public class class_8032 extends class_7937 {
       super(var1, var2);
    }
 
-   public static class_1313 method_36481() {
-      return class_7937.method_35905().method_5984(class_7331.field_37468, 12.0);
+   public static MutableAttribute method_36481() {
+      return class_7937.method_35905().createMutableAttribute(Attributes.MAX_HEALTH, 12.0);
    }
 
    @Override

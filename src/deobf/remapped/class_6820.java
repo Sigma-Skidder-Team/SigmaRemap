@@ -75,7 +75,7 @@ public class class_6820 extends class_644 {
 
       var4 = var4.method_27973();
       var4.method_28017(1);
-      var4.method_27994().method_25931("map_scale_direction", 1);
+      var4.method_27994().putInt("map_scale_direction", 1);
       return var4;
    }
 

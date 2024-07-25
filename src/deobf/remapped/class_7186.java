@@ -38,7 +38,7 @@ public abstract class class_7186 {
       if (this.method_32925()) {
          CompoundNBT var4 = new CompoundNBT();
          var4.put("data", this.method_32920(new CompoundNBT()));
-         var4.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
+         var4.putInt("DataVersion", class_7665.method_34674().getWorldVersion());
 
          try {
             class_5957.method_27218(var4, var1);

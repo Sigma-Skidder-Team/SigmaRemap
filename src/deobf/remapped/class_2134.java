@@ -103,8 +103,8 @@ public class class_2134 extends class_7186 {
          .encodeStart(class_3504.field_17178, this.field_10685.method_25499())
          .resultOrPartial(field_10679::error)
          .ifPresent(var1x -> var1.put("dimension", var1x));
-      var1.method_25931("xCenter", this.field_10689);
-      var1.method_25931("zCenter", this.field_10677);
+      var1.putInt("xCenter", this.field_10689);
+      var1.putInt("zCenter", this.field_10677);
       var1.method_25921("scale", this.field_10678);
       var1.method_25953("colors", this.field_10691);
       var1.putBoolean("trackingPosition", this.field_10681);
@@ -230,7 +230,7 @@ public class class_2134 extends class_7186 {
       var6.add(var7);
       if (var3.method_36722()) {
          CompoundNBT var8 = var0.method_27978("display");
-         var8.method_25931("MapColor", var3.method_36720());
+         var8.putInt("MapColor", var3.method_36720());
       }
    }
 

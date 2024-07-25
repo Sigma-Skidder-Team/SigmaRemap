@@ -47,7 +47,7 @@ public class class_2143 extends class_6249 {
       class_2134 var11 = new class_2134(method_10015(var10));
       var11.method_9965(var2, var3, var4, var5, var6, var7);
       var1.method_29524(var11);
-      var0.method_27994().method_25931("map", var10);
+      var0.method_27994().putInt("map", var10);
       return var11;
    }
 

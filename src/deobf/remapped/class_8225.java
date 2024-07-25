@@ -21,7 +21,7 @@ public class class_8225 extends class_8549 {
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25931("Steps", this.field_42225);
+      var1.putInt("Steps", this.field_42225);
    }
 
    public static class_9616 method_37659(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5) {

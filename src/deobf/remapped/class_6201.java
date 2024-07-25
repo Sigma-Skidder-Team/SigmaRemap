@@ -140,9 +140,9 @@ public class class_6201 extends class_2451 {
                CompoundNBT var9 = var8.method_17396(new CompoundNBT());
                CompoundNBT var10 = var9.method_25944();
                var9.method_25925(var7);
-               var9.method_25931("x", var2.method_12173());
-               var9.method_25931("y", var2.method_12165());
-               var9.method_25931("z", var2.method_12185());
+               var9.putInt("x", var2.method_12173());
+               var9.putInt("y", var2.method_12165());
+               var9.putInt("z", var2.method_12185());
                if (!var9.equals(var10)) {
                   var8.method_17394(var0.method_28262(var2), var9);
                   var8.method_17407();

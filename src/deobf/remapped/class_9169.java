@@ -13,7 +13,7 @@ public class class_9169 extends class_3599 {
    public class_9169(class_4109 var1, double var2) {
       this.field_46926 = var1;
       this.field_46925 = var2;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
    }
 
    @Override

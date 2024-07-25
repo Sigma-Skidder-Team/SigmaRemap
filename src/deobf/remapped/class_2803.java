@@ -19,8 +19,8 @@ public class class_2803 extends class_5467 {
       this.goalSelector.addGoal(7, new class_9691(this));
    }
 
-   public static class_1313 method_12747() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 10.0).method_5984(class_7331.field_37465, 0.2F);
+   public static MutableAttribute method_12747() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 10.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override

@@ -11,7 +11,7 @@ public class class_9868 extends class_3599 {
    public class_9868(class_337 var1) {
       this.field_49920 = var1;
       this.field_49918 = var1 instanceof class_4965;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
    }
 
    @Override
@@ -59,7 +59,7 @@ public class class_9868 extends class_3599 {
                }
 
                var3.attackEntityFrom(DamageSource.method_28369(this.field_49920, this.field_49920), var4);
-               var3.attackEntityFrom(DamageSource.method_28345(this.field_49920), (float)this.field_49920.method_26575(class_7331.field_37462));
+               var3.attackEntityFrom(DamageSource.method_28345(this.field_49920), (float)this.field_49920.method_26575(Attributes.ATTACK_DAMAGE));
                this.field_49920.method_26860((class_5834)null);
             }
          } else {

@@ -38,11 +38,11 @@ public class class_1918 extends class_2811 implements class_6250 {
       this.targetSelector.addGoal(3, new class_6474<class_1918>(this, true));
    }
 
-   public static class_1313 method_8729() {
+   public static MutableAttribute method_8729() {
       return class_2811.method_12802()
-         .method_5984(class_7331.field_37470, 0.0)
-         .method_5984(class_7331.field_37465, 0.23F)
-         .method_5984(class_7331.field_37462, 5.0);
+         .createMutableAttribute(Attributes.field_37470, 0.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.23F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
    @Override
@@ -52,7 +52,7 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    @Override
    public void method_26919() {
-      class_9747 var3 = this.method_26561(class_7331.field_37465);
+      class_9747 var3 = this.method_26561(Attributes.MOVEMENT_SPEED);
       if (!this.method_28537()) {
          if (var3.method_45007(field_9785)) {
             var3.method_45004(field_9785);
@@ -99,7 +99,7 @@ public class class_1918 extends class_2811 implements class_6250 {
    }
 
    private void method_8725() {
-      double var3 = this.method_26575(class_7331.field_37471);
+      double var3 = this.method_26575(Attributes.FOLLOW_RANGE);
       Box var5 = Box.method_18911(this.method_37245()).method_18899(var3, 10.0, var3);
       this.world
          .<class_1918>method_25874(class_1918.class, var5)
@@ -143,14 +143,14 @@ public class class_1918 extends class_2811 implements class_6250 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       this.method_28528(var1);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_28533((class_6331)this.world, var1);
    }
 
@@ -196,7 +196,7 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    @Override
    public void method_12801() {
-      this.method_26561(class_7331.field_37470).method_45006(0.0);
+      this.method_26561(Attributes.field_37470).method_45006(0.0);
    }
 
    @Override

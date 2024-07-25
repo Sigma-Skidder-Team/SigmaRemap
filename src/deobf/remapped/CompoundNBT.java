@@ -85,7 +85,7 @@ public class CompoundNBT implements class_8406 {
       this.field_28975.put(var1, class_7745.method_35070(var2));
    }
 
-   public void method_25931(String var1, int var2) {
+   public void putInt(String var1, int var2) {
       this.field_28975.put(var1, class_9413.method_43597(var2));
    }
 

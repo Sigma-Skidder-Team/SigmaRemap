@@ -17,7 +17,7 @@ public class class_6138 extends class_462 {
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.putBoolean("tf", this.field_31485);
-      var1.method_25931("D", this.field_31486.method_1031());
+      var1.putInt("D", this.field_31486.method_1031());
    }
 
    public class_6138(int var1, class_9616 var2, Direction var3, class_1143 var4) {

@@ -71,12 +71,12 @@ public class class_1356 extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.method_25958("Fuse", (short)this.method_6258());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.method_6255(var1.method_25956("Fuse"));
    }
 

@@ -30,7 +30,7 @@ public class class_5265 extends class_7186 {
 
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
-         var1.method_25931((String)var5.getKey(), var5.getIntValue());
+         var1.putInt((String)var5.getKey(), var5.getIntValue());
       }
 
       return var1;

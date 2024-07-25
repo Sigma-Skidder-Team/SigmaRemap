@@ -173,7 +173,7 @@ public class class_3682 extends class_4088 {
 
             CompoundNBT var10 = new CompoundNBT();
             var10.method_25941("Pattern", var6.method_38789());
-            var10.method_25931("Color", var7.method_41794());
+            var10.putInt("Color", var7.method_41794());
             var9.add(var10);
          }
 

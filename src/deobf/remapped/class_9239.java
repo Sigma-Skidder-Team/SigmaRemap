@@ -16,7 +16,7 @@ public class class_9239 extends class_2833 {
       }
 
       if (this.field_13878 == class_1737.field_8946 && !this.field_47202.method_26927().method_5591()) {
-         float var3 = (float)(this.field_13885 * this.field_47202.method_26575(class_7331.field_37465));
+         float var3 = (float)(this.field_13885 * this.field_47202.method_26575(Attributes.MOVEMENT_SPEED));
          this.field_47202.method_26461(class_9299.method_42795(0.125F, this.field_47202.method_26423(), var3));
          double var4 = this.field_13884 - this.field_47202.getPosX();
          double var6 = this.field_13886 - this.field_47202.method_37309();

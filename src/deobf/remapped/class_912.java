@@ -5,7 +5,7 @@ import java.util.UUID;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public class class_912 extends class_1173 implements class_6250 {
+public class class_912 extends MonsterEntity implements class_6250 {
    private static final UUID field_4676 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
    private static final class_9343 field_4683 = new class_9343(field_4676, "Attacking speed boost", 0.15F, class_9342.field_47679);
    private static final class_7821<Optional<class_2522>> field_4686 = class_8073.<Optional<class_2522>>method_36641(class_912.class, class_2734.field_13354);
@@ -40,18 +40,18 @@ public class class_912 extends class_1173 implements class_6250 {
       this.targetSelector.addGoal(4, new class_6474<class_912>(this, false));
    }
 
-   public static class_1313 method_3909() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 40.0)
-         .method_5984(class_7331.field_37465, 0.3F)
-         .method_5984(class_7331.field_37462, 7.0)
-         .method_5984(class_7331.field_37471, 64.0);
+   public static MutableAttribute method_3909() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 40.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 7.0)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 64.0);
    }
 
    @Override
    public void method_26860(class_5834 var1) {
       super.method_26860(var1);
-      class_9747 var4 = this.method_26561(class_7331.field_37465);
+      class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
       if (var1 != null) {
          this.field_4677 = this.field_41697;
          this.field_41735.method_36633(field_4678, true);
@@ -119,8 +119,8 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       class_2522 var4 = this.method_3913();
       if (var4 != null) {
          var1.put("carriedBlockState", class_4338.method_20187(var4));
@@ -130,8 +130,8 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       class_2522 var4 = null;
       if (var1.contains("carriedBlockState", 10)) {
          var4 = class_4338.method_20185(var1.getCompound("carriedBlockState"));

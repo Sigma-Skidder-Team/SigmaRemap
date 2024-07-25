@@ -1323,7 +1323,7 @@ public abstract class Entity implements class_9875, class_5801 {
          var1.method_25958("Air", (short)this.method_37229());
          var1.putBoolean("OnGround", this.onGround);
          var1.putBoolean("Invulnerable", this.field_41704);
-         var1.method_25931("PortalCooldown", this.field_41771);
+         var1.putInt("PortalCooldown", this.field_41771);
          var1.method_25964("UUID", this.method_37328());
          ITextComponent var11 = this.method_45508();
          if (var11 != null) {
@@ -1356,7 +1356,7 @@ public abstract class Entity implements class_9875, class_5801 {
             var1.put("Tags", var12);
          }
 
-         this.method_37376(var1);
+         this.writeAdditional(var1);
          if (this.method_37151()) {
             class_3416 var13 = new class_3416();
 
@@ -1437,7 +1437,7 @@ public abstract class Entity implements class_9875, class_5801 {
                }
             }
 
-            this.method_37314(var1);
+            this.readAdditional(var1);
             if (this.method_37118()) {
                this.method_37351();
             }
@@ -1463,9 +1463,9 @@ public abstract class Entity implements class_9875, class_5801 {
       return var3.method_30471() && var4 != null ? var4.toString() : null;
    }
 
-   public abstract void method_37314(CompoundNBT var1);
+   public abstract void readAdditional(CompoundNBT var1);
 
-   public abstract void method_37376(CompoundNBT var1);
+   public abstract void writeAdditional(CompoundNBT var1);
 
    public class_3416 method_37272(double... var1) {
       class_3416 var4 = new class_3416();
@@ -1560,7 +1560,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    private void method_37125(Entity var1, class_8015 var2) {
       if (this.method_37072(var1)) {
-         double var5 = this.method_37309() + this.method_37149() + var1.method_37106();
+         double var5 = this.method_37309() + this.getMountedYOffset() + var1.method_37106();
          var2.method_36384(var1, this.getPosX(), var5, this.getPosZ());
       }
    }
@@ -1572,7 +1572,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return 0.0;
    }
 
-   public double method_37149() {
+   public double getMountedYOffset() {
       return (double)this.field_41758.field_31200 * 0.75;
    }
 

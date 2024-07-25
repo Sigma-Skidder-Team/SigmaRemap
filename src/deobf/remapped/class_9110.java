@@ -10,7 +10,7 @@ public class class_9110<T extends AbstractRaiderEntity> extends class_3599 {
    public class_9110(T var1, AbstractRaiderEntity var2) {
       this.field_46651 = var1;
       this.field_46652 = (T)var2;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE));
    }
 
    @Override

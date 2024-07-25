@@ -197,7 +197,7 @@ public final class ItemStack {
    }
 
    public void method_27999(int var1) {
-      this.method_27994().method_25931("Damage", Math.max(0, var1));
+      this.method_27994().putInt("Damage", Math.max(0, var1));
    }
 
    public int method_27957() {
@@ -542,11 +542,11 @@ public final class ItemStack {
                   boolean var18 = false;
                   if (var1 != null) {
                      if (var15.method_43122() == class_2451.field_12168) {
-                        var16 += var1.method_26419(class_7331.field_37462);
+                        var16 += var1.method_26419(Attributes.ATTACK_DAMAGE);
                         var16 += (double)class_2931.method_13425(this, class_2780.field_13574);
                         var18 = true;
                      } else if (var15.method_43122() == class_2451.field_12167) {
-                        var16 += var1.method_26419(class_7331.field_37466);
+                        var16 += var1.method_26419(Attributes.field_37466);
                         var18 = true;
                      }
                   }
@@ -554,7 +554,7 @@ public final class ItemStack {
                   double var19;
                   if (var15.method_43121() == class_9342.field_47678 || var15.method_43121() == class_9342.field_47677) {
                      var19 = var16 * 100.0;
-                  } else if (((class_225)var14.getKey()).equals(class_7331.field_37463)) {
+                  } else if (((class_225)var14.getKey()).equals(Attributes.KNOCKBACK_RESISTANCE)) {
                      var19 = var16 * 10.0;
                   } else {
                      var19 = var16;
@@ -651,7 +651,7 @@ public final class ItemStack {
 
    public void method_27980(class_8749 var1) {
       CompoundNBT var4 = this.method_27994();
-      var4.method_25931("HideFlags", var4.method_25947("HideFlags") | var1.method_40158());
+      var4.putInt("HideFlags", var4.method_25947("HideFlags") | var1.method_40158());
    }
 
    public static void method_28029(List<ITextComponent> var0, class_3416 var1) {
@@ -750,7 +750,7 @@ public final class ItemStack {
    }
 
    public void method_27986(int var1) {
-      this.method_27994().method_25931("RepairCost", var1);
+      this.method_27994().putInt("RepairCost", var1);
    }
 
    public Multimap<class_225, class_9343> method_28034(class_6943 var1) {

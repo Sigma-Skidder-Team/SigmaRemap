@@ -93,12 +93,12 @@ public abstract class PlayerEntity extends class_5834 {
       }
    }
 
-   public static class_1313 method_3230() {
+   public static MutableAttribute method_3230() {
       return class_5834.method_26409()
-         .method_5984(class_7331.field_37462, 1.0)
-         .method_5984(class_7331.field_37465, 0.1F)
-         .method_5983(class_7331.field_37466)
-         .method_5983(class_7331.field_37469);
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 1.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.1F)
+         .method_5983(Attributes.field_37466)
+         .method_5983(Attributes.field_37469);
    }
 
    @Override
@@ -427,7 +427,7 @@ public abstract class PlayerEntity extends class_5834 {
          this.field_29674 = (float)((double)this.field_29674 + 0.005999999865889549);
       }
 
-      this.method_26461((float)this.method_26575(class_7331.field_37465));
+      this.method_26461((float)this.method_26575(Attributes.MOVEMENT_SPEED));
       float var3;
       if (this.onGround && !this.method_26450() && !this.method_37113()) {
          var3 = Math.min(0.1F, class_9299.method_42842(method_37266(this.method_37098())));
@@ -670,8 +670,8 @@ public abstract class PlayerEntity extends class_5834 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_37377(method_3242(this.field_3872));
       class_3416 var4 = var1.method_25927("Inventory", 10);
       this.inventory.method_32423(var4);
@@ -688,7 +688,7 @@ public abstract class PlayerEntity extends class_5834 {
       this.method_3215(var1.method_25947("Score"));
       this.field_3867.method_42230(var1);
       this.playerAbilities.read(var1);
-      this.method_26561(class_7331.field_37465).method_45006((double)this.playerAbilities.getWalkSpeed());
+      this.method_26561(Attributes.MOVEMENT_SPEED).method_45006((double)this.playerAbilities.getWalkSpeed());
       if (var1.contains("EnderItems", 9)) {
          this.field_3860.method_21549(var1.method_25927("EnderItems", 10));
       }
@@ -703,17 +703,17 @@ public abstract class PlayerEntity extends class_5834 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("DataVersion", class_7665.method_34674().getWorldVersion());
       var1.put("Inventory", this.inventory.method_32396(new class_3416()));
-      var1.method_25931("SelectedItemSlot", this.inventory.field_36404);
+      var1.putInt("SelectedItemSlot", this.inventory.field_36404);
       var1.method_25958("SleepTimer", (short)this.field_3848);
       var1.putFloat("XpP", this.field_3842);
-      var1.method_25931("XpLevel", this.field_3840);
-      var1.method_25931("XpTotal", this.field_3862);
-      var1.method_25931("XpSeed", this.field_3847);
-      var1.method_25931("Score", this.method_3227());
+      var1.putInt("XpLevel", this.field_3840);
+      var1.putInt("XpTotal", this.field_3862);
+      var1.putInt("XpSeed", this.field_3847);
+      var1.putInt("Score", this.method_3227());
       this.field_3867.method_42233(var1);
       this.playerAbilities.write(var1);
       var1.put("EnderItems", this.field_3860.method_21552());
@@ -1004,7 +1004,7 @@ public abstract class PlayerEntity extends class_5834 {
 
    public void method_3158(Entity var1) {
       if (var1.method_37394() && !var1.method_37296(this)) {
-         float var4 = (float)this.method_26575(class_7331.field_37462);
+         float var4 = (float)this.method_26575(Attributes.ATTACK_DAMAGE);
          float var5;
          if (!(var1 instanceof class_5834)) {
             var5 = class_2931.method_13425(this.method_26446(), class_2780.field_13574);
@@ -1403,7 +1403,7 @@ public abstract class PlayerEntity extends class_5834 {
 
    @Override
    public float method_26423() {
-      return (float)this.method_26575(class_7331.field_37465);
+      return (float)this.method_26575(Attributes.MOVEMENT_SPEED);
    }
 
    public void method_3214(double var1, double var3, double var5) {
@@ -1953,7 +1953,7 @@ public abstract class PlayerEntity extends class_5834 {
    }
 
    public float method_3163() {
-      return (float)(1.0 / this.method_26575(class_7331.field_37466) * 20.0);
+      return (float)(1.0 / this.method_26575(Attributes.field_37466) * 20.0);
    }
 
    public float method_3203(float var1) {
@@ -1974,7 +1974,7 @@ public abstract class PlayerEntity extends class_5834 {
    }
 
    public float method_3234() {
-      return (float)this.method_26575(class_7331.field_37469);
+      return (float)this.method_26575(Attributes.field_37469);
    }
 
    public boolean method_3184() {

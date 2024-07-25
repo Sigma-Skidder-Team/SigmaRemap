@@ -252,7 +252,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    public double method_19078() {
-      return this.method_26575(class_7331.field_37464);
+      return this.method_26575(Attributes.field_37464);
    }
 
    @Nullable
@@ -320,11 +320,11 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       this.method_37155(class_463.field_2335, var1.method_21395() * 0.15F, var1.method_21393());
    }
 
-   public static class_1313 method_19064() {
+   public static MutableAttribute method_19064() {
       return MobEntity.method_26846()
-         .method_5983(class_7331.field_37464)
-         .method_5984(class_7331.field_37468, 53.0)
-         .method_5984(class_7331.field_37465, 0.225F);
+         .method_5983(Attributes.field_37464)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 53.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.225F);
    }
 
    @Override
@@ -690,7 +690,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
                   this.method_37215(class_1343.field_7335);
                }
             } else {
-               this.method_26461((float)this.method_26575(class_7331.field_37465));
+               this.method_26461((float)this.method_26575(Attributes.MOVEMENT_SPEED));
                super.method_26431(new class_1343((double)var5, var1.field_7333, (double)var6));
             }
 
@@ -712,11 +712,11 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("EatingHaystack", this.method_19086());
       var1.putBoolean("Bred", this.method_19044());
-      var1.method_25931("Temper", this.method_19062());
+      var1.putInt("Temper", this.method_19062());
       var1.putBoolean("Tame", this.method_19043());
       if (this.method_19081() != null) {
          var1.method_25964("Owner", this.method_19081());
@@ -728,8 +728,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_19054(var1.getBoolean("EatingHaystack"));
       this.method_19066(var1.getBoolean("Bred"));
       this.method_19071(var1.method_25947("Temper"));
@@ -777,12 +777,12 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    public void method_19055(class_1899 var1, class_4109 var2) {
-      double var5 = this.method_26419(class_7331.field_37468) + var1.method_26419(class_7331.field_37468) + (double)this.method_19082();
-      var2.method_26561(class_7331.field_37468).method_45006(var5 / 3.0);
-      double var7 = this.method_26419(class_7331.field_37464) + var1.method_26419(class_7331.field_37464) + this.method_19046();
-      var2.method_26561(class_7331.field_37464).method_45006(var7 / 3.0);
-      double var9 = this.method_26419(class_7331.field_37465) + var1.method_26419(class_7331.field_37465) + this.method_19087();
-      var2.method_26561(class_7331.field_37465).method_45006(var9 / 3.0);
+      double var5 = this.method_26419(Attributes.MAX_HEALTH) + var1.method_26419(Attributes.MAX_HEALTH) + (double)this.method_19082();
+      var2.method_26561(Attributes.MAX_HEALTH).method_45006(var5 / 3.0);
+      double var7 = this.method_26419(Attributes.field_37464) + var1.method_26419(Attributes.field_37464) + this.method_19046();
+      var2.method_26561(Attributes.field_37464).method_45006(var7 / 3.0);
+      double var9 = this.method_26419(Attributes.MOVEMENT_SPEED) + var1.method_26419(Attributes.MOVEMENT_SPEED) + this.method_19087();
+      var2.method_26561(Attributes.MOVEMENT_SPEED).method_45006(var9 / 3.0);
    }
 
    @Override
@@ -875,7 +875,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
          float var7 = 0.15F * this.field_20010;
          var1.method_37256(
             this.getPosX() + (double)(var6 * var8),
-            this.method_37309() + this.method_37149() + var1.method_37106() + (double)var7,
+            this.method_37309() + this.getMountedYOffset() + var1.method_37106() + (double)var7,
             this.getPosZ() - (double)(var6 * var5)
          );
          if (var1 instanceof class_5834) {

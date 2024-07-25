@@ -24,7 +24,7 @@ public class class_1008 extends class_2833 {
          float var12 = (float)(class_9299.method_42821(var3.field_7334, var3.field_7336) * 180.0F / (float)Math.PI) - 90.0F;
          this.field_5182.rotationYaw = this.method_12882(this.field_5182.rotationYaw, var12, 90.0F);
          this.field_5182.field_29605 = this.field_5182.rotationYaw;
-         float var13 = (float)(this.field_13885 * this.field_5182.method_26575(class_7331.field_37465));
+         float var13 = (float)(this.field_13885 * this.field_5182.method_26575(Attributes.MOVEMENT_SPEED));
          float var14 = class_9299.method_42795(0.125F, this.field_5182.method_26423(), var13);
          this.field_5182.method_26461(var14);
          double var15 = Math.sin((double)(this.field_5182.field_41697 + this.field_5182.method_37145()) * 0.5) * 0.05;

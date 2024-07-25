@@ -29,7 +29,7 @@ public class class_3459 {
          }
 
          if (!var3.contains("DataVersion", 99)) {
-            var3.method_25931("DataVersion", 1343);
+            var3.putInt("DataVersion", 1343);
          }
 
          var3 = class_4338.method_20179(this.field_16948, class_5397.field_27551, var3, var3.method_25947("DataVersion"));
@@ -45,7 +45,7 @@ public class class_3459 {
    public void method_15917() {
       try {
          CompoundNBT var3 = new CompoundNBT();
-         var3.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
+         var3.putInt("DataVersion", class_7665.method_34674().getWorldVersion());
 
          for (int var4 = 0; var4 < 9; var4++) {
             var3.put(String.valueOf(var4), this.method_15915(var4).method_9442());

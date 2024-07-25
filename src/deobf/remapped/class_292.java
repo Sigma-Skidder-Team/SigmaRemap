@@ -110,8 +110,8 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field_1063 == null) {
          class_3037.method_13878(var1, this.field_1062);
       } else {
@@ -123,8 +123,8 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_1062 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       if (!var1.contains("LootTable", 8)) {
          class_3037.method_13882(var1, this.field_1062);

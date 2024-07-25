@@ -67,8 +67,8 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method_26449()) {
          var1.putBoolean("IsBaby", true);
       }
@@ -81,8 +81,8 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_26910(var1.getBoolean("IsBaby"));
       this.method_11791(var1.getBoolean("CannotHunt"));
       this.field_12846.method_21549(var1.method_25927("Inventory", 10));
@@ -118,11 +118,11 @@ public class class_2599 extends class_6993 implements class_3832 {
       }
    }
 
-   public static class_1313 method_11801() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 16.0)
-         .method_5984(class_7331.field_37465, 0.35F)
-         .method_5984(class_7331.field_37462, 5.0);
+   public static MutableAttribute method_11801() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 16.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.35F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
    public static boolean method_11799(EntityType<class_2599> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
@@ -210,7 +210,7 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       return (double)this.method_37074() * 0.92;
    }
 
@@ -218,7 +218,7 @@ public class class_2599 extends class_6993 implements class_3832 {
    public void method_26910(boolean var1) {
       this.method_37372().method_36633(field_12843, var1);
       if (!this.world.field_33055) {
-         class_9747 var4 = this.method_26561(class_7331.field_37465);
+         class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
          var4.method_45004(field_12839);
          if (var1) {
             var4.method_45011(field_12839);

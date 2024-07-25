@@ -28,12 +28,12 @@ public class class_4134 extends class_7637 implements class_3832 {
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
-   public static class_1313 method_19206() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37465, 0.35F)
-         .method_5984(class_7331.field_37468, 24.0)
-         .method_5984(class_7331.field_37462, 5.0)
-         .method_5984(class_7331.field_37471, 32.0);
+   public static MutableAttribute method_19206() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.35F)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 24.0)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 5.0)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 32.0);
    }
 
    @Override
@@ -62,8 +62,8 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       class_3416 var4 = new class_3416();
 
       for (int var5 = 0; var5 < this.field_20123.method_31505(); var5++) {
@@ -90,8 +90,8 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       class_3416 var4 = var1.method_25927("Inventory", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {

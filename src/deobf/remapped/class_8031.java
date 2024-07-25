@@ -82,8 +82,8 @@ public class class_8031 extends class_5467 implements class_9897 {
       super.method_26606();
    }
 
-   public static class_1313 method_36475() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 8.0).method_5984(class_7331.field_37465, 0.23F);
+   public static MutableAttribute method_36475() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 8.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.23F);
    }
 
    @Override
@@ -208,15 +208,15 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("Sheared", this.method_36478());
       var1.method_25921("Color", (byte)this.method_36474().method_41794());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_36469(var1.getBoolean("Sheared"));
       this.method_36471(class_9077.method_41789(var1.method_25950("Color")));
    }

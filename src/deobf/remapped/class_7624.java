@@ -44,10 +44,10 @@ public class class_7624 extends class_7060 {
 
    @Override
    public void method_32517(CompoundNBT var1) {
-      var1.method_25931("PosX", this.field_38792.method_12173());
-      var1.method_25931("PosY", this.field_38792.method_12165());
-      var1.method_25931("PosZ", this.field_38792.method_12185());
-      var1.method_25931("ground_level_delta", this.field_38795);
+      var1.putInt("PosX", this.field_38792.method_12173());
+      var1.putInt("PosY", this.field_38792.method_12165());
+      var1.putInt("PosZ", this.field_38792.method_12185());
+      var1.putInt("ground_level_delta", this.field_38795);
       class_2609.field_12888
          .encodeStart(class_3504.field_17178, this.field_38789)
          .resultOrPartial(field_38788::error)

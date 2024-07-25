@@ -40,7 +40,7 @@ public abstract class class_4612 extends MobEntity {
          this.method_21377(var4);
          if (!(var4 > 10.0F)) {
             if (!(var4 > 6.0F)) {
-               this.goalSelector.method_3491(class_1891.field_9564);
+               this.goalSelector.method_3491(Flag.MOVE);
                float var5 = 2.0F;
                class_1343 var6 = new class_1343(
                      var3.getPosX() - this.getPosX(), var3.method_37309() - this.method_37309(), var3.getPosZ() - this.getPosZ()
@@ -62,7 +62,7 @@ public abstract class class_4612 extends MobEntity {
             }
          } else {
             this.method_26916(true, true);
-            this.goalSelector.method_3487(class_1891.field_9564);
+            this.goalSelector.method_3487(Flag.MOVE);
          }
       }
    }

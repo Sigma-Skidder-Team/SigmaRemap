@@ -1,6 +1,6 @@
 package remapped;
 
-public abstract class class_2460<T extends class_1173> extends class_2344<T> {
+public abstract class class_2460<T extends MonsterEntity> extends class_2344<T> {
    public class_2460(float var1, float var2, int var3, int var4) {
       super(var1, var2, var3, var4);
    }

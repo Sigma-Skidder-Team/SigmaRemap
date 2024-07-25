@@ -12,7 +12,7 @@ public class class_4337 extends class_956 {
    public class_4337(IronGolemEntity var1) {
       super(var1, false, true);
       this.field_21080 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9563));
+      this.method_16800(EnumSet.<Flag>of(Flag.TARGET));
    }
 
    @Override

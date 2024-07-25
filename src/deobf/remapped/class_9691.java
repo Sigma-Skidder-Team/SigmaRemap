@@ -11,7 +11,7 @@ public class class_9691 extends class_3599 {
 
    public class_9691(MobEntity var1) {
       this.field_49308 = var1;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
    }
 
    @Override

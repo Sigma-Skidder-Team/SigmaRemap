@@ -74,8 +74,8 @@ public class class_6092 extends class_608 implements class_1869 {
       this.field_41735.method_36634(field_31177, (byte)16);
    }
 
-   public static class_1313 method_27908() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 30.0);
+   public static MutableAttribute method_27908() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 30.0);
    }
 
    @Override
@@ -84,8 +84,8 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_41735.method_36633(field_31172, Direction.method_1033(var1.method_25950("AttachFace")));
       this.field_41735.method_36633(field_31170, var1.method_25950("Peek"));
       this.field_41735.method_36633(field_31177, var1.method_25950("Color"));
@@ -100,16 +100,16 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method_25921("AttachFace", (byte)this.field_41735.<Direction>method_36640(field_31172).method_1050());
       var1.method_25921("Peek", this.field_41735.<Byte>method_36640(field_31170));
       var1.method_25921("Color", this.field_41735.<Byte>method_36640(field_31177));
       BlockPos var4 = this.method_27906();
       if (var4 != null) {
-         var1.method_25931("APX", var4.method_12173());
-         var1.method_25931("APY", var4.method_12165());
-         var1.method_25931("APZ", var4.method_12185());
+         var1.putInt("APX", var4.method_12173());
+         var1.putInt("APY", var4.method_12165());
+         var1.putInt("APZ", var4.method_12185());
       }
    }
 
@@ -367,11 +367,11 @@ public class class_6092 extends class_608 implements class_1869 {
 
    public void method_27913(int var1) {
       if (!this.world.field_33055) {
-         this.method_26561(class_7331.field_37473).method_45004(field_31180);
+         this.method_26561(Attributes.field_37473).method_45004(field_31180);
          if (var1 != 0) {
             this.method_37155(class_463.field_2073, 1.0F, 1.0F);
          } else {
-            this.method_26561(class_7331.field_37473).method_45005(field_31180);
+            this.method_26561(Attributes.field_37473).method_45005(field_31180);
             this.method_37155(class_463.field_2341, 1.0F, 1.0F);
          }
       }
@@ -402,7 +402,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public int method_26903() {
+   public int getHorizontalFaceSpeed() {
       return 180;
    }
 

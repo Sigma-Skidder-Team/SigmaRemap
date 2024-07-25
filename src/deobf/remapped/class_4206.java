@@ -58,8 +58,8 @@ public class class_4206 extends class_516 implements class_1869 {
       this.field_41735.method_36634(field_20448, false);
    }
 
-   public static class_1313 method_19571() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 10.0).method_5984(class_7331.field_37471, 100.0);
+   public static MutableAttribute method_19571() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 10.0).createMutableAttribute(Attributes.FOLLOW_RANGE, 100.0);
    }
 
    @Override
@@ -97,14 +97,14 @@ public class class_4206 extends class_516 implements class_1869 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("ExplosionPower", this.field_20450);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("ExplosionPower", this.field_20450);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("ExplosionPower", 99)) {
          this.field_20450 = var1.method_25947("ExplosionPower");
       }

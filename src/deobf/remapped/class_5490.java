@@ -51,17 +51,17 @@ public class class_5490 extends class_4641 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.method_25941("Motive", class_8669.field_44450.method_39797(this.field_27978).toString());
       var1.method_25921("Facing", (byte)this.field_22663.method_1031());
-      super.method_37376(var1);
+      super.writeAdditional(var1);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field_27978 = class_8669.field_44450.method_39806(Identifier.method_21455(var1.method_25965("Motive")));
       this.field_22663 = Direction.method_1040(var1.method_25950("Facing"));
-      super.method_37314(var1);
+      super.readAdditional(var1);
       this.method_21468(this.field_22663);
    }
 

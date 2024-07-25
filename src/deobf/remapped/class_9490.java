@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Collection;
 
-public class class_9490 extends class_1173 implements class_7187 {
+public class class_9490 extends MonsterEntity implements class_7187 {
    private static final class_7821<Integer> field_48362 = class_8073.<Integer>method_36641(class_9490.class, class_2734.field_13366);
    private static final class_7821<Boolean> field_48363 = class_8073.<Boolean>method_36641(class_9490.class, class_2734.field_13347);
    private static final class_7821<Boolean> field_48358 = class_8073.<Boolean>method_36641(class_9490.class, class_2734.field_13347);
@@ -30,8 +30,8 @@ public class class_9490 extends class_1173 implements class_7187 {
       this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
    }
 
-   public static class_1313 method_43834() {
-      return class_1173.method_5201().method_5984(class_7331.field_37465, 0.25);
+   public static MutableAttribute method_43834() {
+      return MonsterEntity.func_234295_eP_().createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -59,8 +59,8 @@ public class class_9490 extends class_1173 implements class_7187 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field_41735.<Boolean>method_36640(field_48363)) {
          var1.putBoolean("powered", true);
       }
@@ -71,8 +71,8 @@ public class class_9490 extends class_1173 implements class_7187 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_41735.method_36633(field_48363, var1.getBoolean("powered"));
       if (var1.contains("Fuse", 99)) {
          this.field_48361 = var1.method_25956("Fuse");

@@ -404,11 +404,11 @@ public class class_3942 extends class_5783 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
    }
 
    public int method_18216(ItemStack var1) {

@@ -901,7 +901,7 @@ public class class_314 {
    public static class_9374 method_1426(Entity var0) {
       if (var0 instanceof class_5834) {
          if (!(var0 instanceof PlayerEntity)) {
-            return !(var0 instanceof MobEntity) && !(var0 instanceof class_1173) && !(var0 instanceof class_378) && !(var0 instanceof class_516)
+            return !(var0 instanceof MobEntity) && !(var0 instanceof MonsterEntity) && !(var0 instanceof class_378) && !(var0 instanceof class_516)
                ? class_9374.field_47923
                : class_9374.field_47924;
          } else {

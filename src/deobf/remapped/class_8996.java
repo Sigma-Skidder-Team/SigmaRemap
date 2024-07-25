@@ -137,8 +137,8 @@ public class class_8996 extends class_7186 {
 
    @Override
    public CompoundNBT method_32920(CompoundNBT var1) {
-      var1.method_25931("NextAvailableID", this.field_46057);
-      var1.method_25931("Tick", this.field_46055);
+      var1.putInt("NextAvailableID", this.field_46057);
+      var1.putInt("Tick", this.field_46055);
       class_3416 var4 = new class_3416();
 
       for (class_2452 var6 : this.field_46053.values()) {

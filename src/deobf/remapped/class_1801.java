@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.EnumSet;
 
-public class class_1801<T extends class_1173 & class_2354 & class_3832> extends class_3599 {
+public class class_1801<T extends MonsterEntity & class_2354 & class_3832> extends class_3599 {
    private static String[] field_9173;
    public static final class_4376 field_9172 = new class_4376(20, 40);
    private final T field_9179;
@@ -17,7 +17,7 @@ public class class_1801<T extends class_1173 & class_2354 & class_3832> extends 
       this.field_9179 = (T)var1;
       this.field_9175 = var2;
       this.field_9171 = var4 * var4;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
    }
 
    @Override

@@ -270,8 +270,8 @@ public class class_5354 extends class_3757 implements class_3745 {
          class_7955.method_35994(var5).method_25959("UUID");
          CompoundNBT var6 = new CompoundNBT();
          var6.put("EntityData", class_7955.method_35994(var5));
-         var6.method_25931("TicksInHive", class_7955.method_35996(var5));
-         var6.method_25931("MinOccupationTicks", class_7955.method_35993(var5));
+         var6.putInt("TicksInHive", class_7955.method_35996(var5));
+         var6.putInt("MinOccupationTicks", class_7955.method_35993(var5));
          var3.add(var6);
       }
 

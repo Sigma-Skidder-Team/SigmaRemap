@@ -57,7 +57,7 @@ public class class_6553 extends class_7157 {
       if (!var5.method_28022() && var5.method_28002() && var4 >= 1 && class_1138.method_4992(var5) < 2) {
          ItemStack var8 = new ItemStack(class_4897.field_24698, var4);
          CompoundNBT var9 = var5.method_27990().method_25944();
-         var9.method_25931("generation", class_1138.method_4992(var5) + 1);
+         var9.putInt("generation", class_1138.method_4992(var5) + 1);
          var8.method_27965(var9);
          return var8;
       } else {

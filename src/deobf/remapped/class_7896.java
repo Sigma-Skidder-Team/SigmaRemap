@@ -31,10 +31,10 @@ public abstract class class_7896 extends class_7060 {
 
    @Override
    public void method_32517(CompoundNBT var1) {
-      var1.method_25931("Width", this.field_40379);
-      var1.method_25931("Height", this.field_40378);
-      var1.method_25931("Depth", this.field_40376);
-      var1.method_25931("HPos", this.field_40377);
+      var1.putInt("Width", this.field_40379);
+      var1.putInt("Height", this.field_40378);
+      var1.putInt("Depth", this.field_40376);
+      var1.putInt("HPos", this.field_40377);
    }
 
    public boolean method_35693(class_9379 var1, class_9616 var2, int var3) {

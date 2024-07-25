@@ -207,9 +207,9 @@ public class class_6561 {
                      if (var20.field_19968 != null) {
                         class_3757 var39 = var1.method_28260(var21);
                         if (var39 != null) {
-                           var20.field_19968.method_25931("x", var21.method_12173());
-                           var20.field_19968.method_25931("y", var21.method_12165());
-                           var20.field_19968.method_25931("z", var21.method_12185());
+                           var20.field_19968.putInt("x", var21.method_12173());
+                           var20.field_19968.putInt("y", var21.method_12165());
+                           var20.field_19968.putInt("z", var21.method_12185());
                            if (var39 instanceof class_2358) {
                               var20.field_19968.method_25949("LootTableSeed", var5.nextLong());
                            }
@@ -550,7 +550,7 @@ public class class_6561 {
             CompoundNBT var10 = new CompoundNBT();
             var10.put("pos", this.method_29983(var9.field_19965.method_12173(), var9.field_19965.method_12165(), var9.field_19965.method_12185()));
             int var11 = var5.method_13475(var9.field_19967);
-            var10.method_25931("state", var11);
+            var10.putInt("state", var11);
             if (var9.field_19968 != null) {
                var10.put("nbt", var9.field_19968);
             }
@@ -607,7 +607,7 @@ public class class_6561 {
 
       var1.put("entities", var14);
       var1.put("size", this.method_29983(this.field_33472.method_12173(), this.field_33472.method_12165(), this.field_33472.method_12185()));
-      var1.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
+      var1.putInt("DataVersion", class_7665.method_34674().getWorldVersion());
       return var1;
    }
 

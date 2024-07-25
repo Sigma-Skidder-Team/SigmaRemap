@@ -30,7 +30,7 @@ public class AutoSprintModule extends Module {
          && !(client.thePlayer.field_29673 <= 0.0F)
          && (!client.thePlayer.method_26554() || client.thePlayer.method_26576().method_27960() != class_4897.field_25206)
          && !((BlockFlyModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class)).method_17212()) {
-         class_9747 var4 = client.thePlayer.method_26561(class_7331.field_37465);
+         class_9747 var4 = client.thePlayer.method_26561(Attributes.MOVEMENT_SPEED);
          float var5 = (float)(
                (var4.method_44996() + 0.03F + (double)(0.015F * (float)class_8865.method_40770())) / (double) client.thePlayer.playerAbilities.getWalkSpeed()
                   + 1.0

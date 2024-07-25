@@ -15,7 +15,7 @@ public class HurtByTargetGoal extends class_956 {
    public HurtByTargetGoal(class_4612 var1, Class<?>... var2) {
       super(var1, true);
       this.field_43057 = var2;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9563));
+      this.method_16800(EnumSet.<Flag>of(Flag.TARGET));
    }
 
    @Override

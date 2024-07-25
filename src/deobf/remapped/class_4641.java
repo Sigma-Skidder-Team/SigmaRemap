@@ -161,15 +161,15 @@ public abstract class class_4641 extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       BlockPos var4 = this.method_21469();
-      var1.method_25931("TileX", var4.method_12173());
-      var1.method_25931("TileY", var4.method_12165());
-      var1.method_25931("TileZ", var4.method_12185());
+      var1.putInt("TileX", var4.method_12173());
+      var1.putInt("TileY", var4.method_12165());
+      var1.putInt("TileZ", var4.method_12185());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field_22661 = new BlockPos(var1.method_25947("TileX"), var1.method_25947("TileY"), var1.method_25947("TileZ"));
    }
 

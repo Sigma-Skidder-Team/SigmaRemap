@@ -31,8 +31,8 @@ public class class_6011 extends class_1829 {
       this.goalSelector.addGoal(1, new class_1607(this, null));
    }
 
-   public static class_1313 method_27440() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 10.0);
+   public static MutableAttribute method_27440() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 10.0);
    }
 
    @Override

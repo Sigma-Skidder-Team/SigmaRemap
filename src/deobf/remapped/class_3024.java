@@ -34,8 +34,8 @@ public class class_3024 extends class_5467 {
       return !this.method_26449() ? var2.field_31200 * 0.92F : var2.field_31200 * 0.85F;
    }
 
-   public static class_1313 method_13807() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 4.0).method_5984(class_7331.field_37465, 0.25);
+   public static MutableAttribute method_13807() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 4.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -103,8 +103,8 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_14828 = var1.getBoolean("IsChickenJockey");
       if (var1.method_25938("EggLayTime")) {
          this.field_14824 = var1.method_25947("EggLayTime");
@@ -112,10 +112,10 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("IsChickenJockey", this.field_14828);
-      var1.method_25931("EggLayTime", this.field_14824);
+      var1.putInt("EggLayTime", this.field_14824);
    }
 
    @Override

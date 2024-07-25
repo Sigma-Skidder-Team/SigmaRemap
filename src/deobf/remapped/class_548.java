@@ -13,7 +13,7 @@ public class class_548 implements class_2017 {
 
    private static CompoundNBT method_2645(CompoundNBT var0) {
       if (!var0.contains("DataVersion", 99)) {
-         var0.method_25931("DataVersion", 500);
+         var0.putInt("DataVersion", 500);
       }
 
       return var0;

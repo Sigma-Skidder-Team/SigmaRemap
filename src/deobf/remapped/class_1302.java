@@ -10,8 +10,8 @@ public class class_1302 extends class_2451 implements class_1538 {
    public class_1302(class_317 var1) {
       super(var1);
       Builder var4 = ImmutableMultimap.builder();
-      var4.put(class_7331.field_37462, new class_9343(field_12168, "Tool modifier", 8.0, class_9342.field_47679));
-      var4.put(class_7331.field_37466, new class_9343(field_12167, "Tool modifier", -2.9F, class_9342.field_47679));
+      var4.put(Attributes.ATTACK_DAMAGE, new class_9343(field_12168, "Tool modifier", 8.0, class_9342.field_47679));
+      var4.put(Attributes.field_37466, new class_9343(field_12167, "Tool modifier", -2.9F, class_9342.field_47679));
       this.field_7217 = var4.build();
    }
 

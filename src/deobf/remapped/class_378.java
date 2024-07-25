@@ -39,9 +39,9 @@ public class class_378 extends MobEntity implements class_1869 {
       this.field_41735.method_36633(field_1534, var1);
       this.method_37351();
       this.method_37187();
-      this.method_26561(class_7331.field_37468).method_45006((double)(var1 * var1));
-      this.method_26561(class_7331.field_37465).method_45006((double)(0.2F + 0.1F * (float)var1));
-      this.method_26561(class_7331.field_37462).method_45006((double)var1);
+      this.method_26561(Attributes.MAX_HEALTH).method_45006((double)(var1 * var1));
+      this.method_26561(Attributes.MOVEMENT_SPEED).method_45006((double)(0.2F + 0.1F * (float)var1));
+      this.method_26561(Attributes.ATTACK_DAMAGE).method_45006((double)var1);
       if (var2) {
          this.method_26456(this.method_26465());
       }
@@ -54,21 +54,21 @@ public class class_378 extends MobEntity implements class_1869 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Size", this.method_1860() - 1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Size", this.method_1860() - 1);
       var1.putBoolean("wasOnGround", this.field_1535);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       int var4 = var1.method_25947("Size");
       if (var4 < 0) {
          var4 = 0;
       }
 
       this.method_1861(var4 + 1, false);
-      super.method_37314(var1);
+      super.readAdditional(var1);
       this.field_1535 = var1.getBoolean("wasOnGround");
    }
 
@@ -217,7 +217,7 @@ public class class_378 extends MobEntity implements class_1869 {
    }
 
    public float method_1858() {
-      return (float)this.method_26575(class_7331.field_37462);
+      return (float)this.method_26575(Attributes.ATTACK_DAMAGE);
    }
 
    @Override

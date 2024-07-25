@@ -121,8 +121,8 @@ public abstract class AbstractVillagerEntity extends class_1899 implements class
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       class_2795 var4 = this.method_974();
       if (!var4.isEmpty()) {
          var1.put("Offers", var4.method_12711());
@@ -132,8 +132,8 @@ public abstract class AbstractVillagerEntity extends class_1899 implements class
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Offers", 10)) {
          this.field_1687 = new class_2795(var1.getCompound("Offers"));
       }

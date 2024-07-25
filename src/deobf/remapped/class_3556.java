@@ -54,12 +54,12 @@ public class class_3556 extends class_3599 {
    }
 
    @Override
-   public void method_16800(EnumSet<class_1891> var1) {
+   public void method_16800(EnumSet<Flag> var1) {
       this.field_17433.method_16800(var1);
    }
 
    @Override
-   public EnumSet<class_1891> method_16797() {
+   public EnumSet<Flag> method_16797() {
       return this.field_17433.method_16797();
    }
 

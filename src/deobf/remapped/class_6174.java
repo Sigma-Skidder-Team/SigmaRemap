@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Random;
 
-public class class_6174 extends class_1173 {
+public class class_6174 extends MonsterEntity {
    private static String[] field_31580;
    private class_128 field_31581;
 
@@ -31,11 +31,11 @@ public class class_6174 extends class_1173 {
       return 0.13F;
    }
 
-   public static class_1313 method_28294() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 8.0)
-         .method_5984(class_7331.field_37465, 0.25)
-         .method_5984(class_7331.field_37462, 1.0);
+   public static MutableAttribute method_28294() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 8.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 1.0);
    }
 
    @Override

@@ -97,7 +97,7 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       return -0.1;
    }
 
@@ -641,7 +641,7 @@ public class BoatEntity extends Entity {
    public void method_37340(Entity var1) {
       if (this.method_37072(var1)) {
          float var4 = 0.0F;
-         float var5 = (float)((!this.field_41751 ? this.method_37149() : 0.01F) + var1.method_37106());
+         float var5 = (float)((!this.field_41751 ? this.getMountedYOffset() : 0.01F) + var1.method_37106());
          if (this.method_37114().size() > 1) {
             int var6 = this.method_37114().indexOf(var1);
             if (var6 != 0) {
@@ -714,12 +714,12 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.method_25941("Type", this.method_42112().method_17824());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       if (var1.contains("Type", 8)) {
          this.method_42101(class_3837.method_17825(var1.method_25965("Type")));
       }

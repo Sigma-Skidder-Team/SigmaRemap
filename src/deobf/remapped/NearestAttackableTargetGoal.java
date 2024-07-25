@@ -22,7 +22,7 @@ public class NearestAttackableTargetGoal<T extends class_5834> extends class_956
       super(var1, var4, var5);
       this.field_20142 = var2;
       this.field_20145 = var3;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9563));
+      this.method_16800(EnumSet.<Flag>of(Flag.TARGET));
       this.field_20144 = new class_4931().method_22607(this.method_4211()).method_22606(var6);
    }
 

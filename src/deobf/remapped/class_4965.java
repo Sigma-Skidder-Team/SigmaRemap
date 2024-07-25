@@ -14,11 +14,11 @@ public class class_4965 extends class_337 {
       }
    }
 
-   public static class_1313 method_22810() {
+   public static MutableAttribute method_22810() {
       return class_337.method_1544()
-         .method_5984(class_7331.field_37465, 0.3F)
-         .method_5984(class_7331.field_37462, 8.0)
-         .method_5984(class_7331.field_37468, 80.0);
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 8.0)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 80.0);
    }
 
    @Override

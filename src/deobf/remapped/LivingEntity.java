@@ -151,13 +151,13 @@ public abstract class class_5834 extends Entity {
       this.field_41735.method_36634(field_29621, Optional.<BlockPos>empty());
    }
 
-   public static class_1313 method_26409() {
+   public static MutableAttribute method_26409() {
       return class_9632.method_44452()
-         .method_5983(class_7331.field_37468)
-         .method_5983(class_7331.field_37463)
-         .method_5983(class_7331.field_37465)
-         .method_5983(class_7331.field_37473)
-         .method_5983(class_7331.field_37472);
+         .method_5983(Attributes.MAX_HEALTH)
+         .method_5983(Attributes.KNOCKBACK_RESISTANCE)
+         .method_5983(Attributes.MOVEMENT_SPEED)
+         .method_5983(Attributes.field_37473)
+         .method_5983(Attributes.field_37472);
    }
 
    @Override
@@ -360,7 +360,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26434() {
-      class_9747 var3 = this.method_26561(class_7331.field_37465);
+      class_9747 var3 = this.method_26561(Attributes.MOVEMENT_SPEED);
       if (var3 != null && var3.method_44997(field_29641) != null) {
          var3.method_45003(field_29641);
       }
@@ -370,7 +370,7 @@ public abstract class class_5834 extends Entity {
       if (!this.method_37304().method_8345()) {
          int var3 = class_2931.method_13399(class_3668.field_17849, this);
          if (var3 > 0 && this.method_26444()) {
-            class_9747 var4 = this.method_26561(class_7331.field_37465);
+            class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
             if (var4 == null) {
                return;
             }
@@ -520,10 +520,10 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.putFloat("Health", this.method_26551());
       var1.method_25958("HurtTime", (short)this.field_29645);
-      var1.method_25931("HurtByTimestamp", this.field_29636);
+      var1.putInt("HurtByTimestamp", this.field_29636);
       var1.method_25958("DeathTime", (short)this.field_29677);
       var1.putFloat("AbsorptionAmount", this.method_26493());
       var1.put("Attributes", this.method_26590().method_30807());
@@ -539,16 +539,16 @@ public abstract class class_5834 extends Entity {
 
       var1.putBoolean("FallFlying", this.method_26618());
       this.method_26518().ifPresent(var1x -> {
-         var1.method_25931("SleepingX", var1x.method_12173());
-         var1.method_25931("SleepingY", var1x.method_12165());
-         var1.method_25931("SleepingZ", var1x.method_12185());
+         var1.putInt("SleepingX", var1x.method_12173());
+         var1.putInt("SleepingY", var1x.method_12165());
+         var1.putInt("SleepingZ", var1x.method_12185());
       });
       DataResult var7 = this.field_29675.method_5131(class_3504.field_17178);
       var7.resultOrPartial(LOGGER::error).ifPresent(var1x -> var1.put("Brain", var1x));
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.method_26460(var1.getFloat("AbsorptionAmount"));
       if (var1.contains("Attributes", 9) && this.world != null && !this.world.field_33055) {
          this.method_26590().method_30812(var1.method_25927("Attributes", 10));
@@ -1245,7 +1245,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26567(float var1, double var2, double var4) {
-      var1 = (float)((double)var1 * (1.0 - this.method_26575(class_7331.field_37463)));
+      var1 = (float)((double)var1 * (1.0 - this.method_26575(Attributes.KNOCKBACK_RESISTANCE)));
       if (!(var1 <= 0.0F)) {
          this.field_41763 = true;
          class_1343 var8 = this.method_37098();
@@ -1375,7 +1375,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public int method_26565() {
-      return class_9299.method_42847(this.method_26575(class_7331.field_37473));
+      return class_9299.method_42847(this.method_26575(Attributes.field_37473));
    }
 
    public void method_26524(DamageSource var1, float var2) {
@@ -1387,7 +1387,7 @@ public abstract class class_5834 extends Entity {
    public float method_26555(DamageSource var1, float var2) {
       if (!var1.method_28380()) {
          this.method_26524(var1, var2);
-         var2 = class_6357.method_29129(var2, (float)this.method_26565(), (float)this.method_26575(class_7331.field_37472));
+         var2 = class_6357.method_29129(var2, (float)this.method_26565(), (float)this.method_26575(Attributes.field_37472));
       }
 
       return var2;
@@ -1466,7 +1466,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public final float method_26465() {
-      return (float)this.method_26575(class_7331.field_37468);
+      return (float)this.method_26575(Attributes.MAX_HEALTH);
    }
 
    public final int method_26569() {
@@ -1771,7 +1771,7 @@ public abstract class class_5834 extends Entity {
    @Override
    public void method_37140(boolean var1) {
       super.method_37140(var1);
-      class_9747 var4 = this.method_26561(class_7331.field_37465);
+      class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
       if (var4.method_44997(field_29647) != null) {
          var4.method_45004(field_29633);
       }
@@ -2613,7 +2613,7 @@ public abstract class class_5834 extends Entity {
 
    @Override
    public void method_37138() {
-      this.field_41743 = this.field_41717.nextDouble() >= this.method_26575(class_7331.field_37463);
+      this.field_41743 = this.field_41717.nextDouble() >= this.method_26575(Attributes.KNOCKBACK_RESISTANCE);
    }
 
    @Override

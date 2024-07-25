@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_4653 extends class_1173 implements class_7187, class_2354 {
+public class class_4653 extends MonsterEntity implements class_7187, class_2354 {
    private static final class_7821<Integer> field_22692 = class_8073.<Integer>method_36641(class_4653.class, class_2734.field_13366);
    private static final class_7821<Integer> field_22703 = class_8073.<Integer>method_36641(class_4653.class, class_2734.field_13366);
    private static final class_7821<Integer> field_22700 = class_8073.<Integer>method_36641(class_4653.class, class_2734.field_13366);
@@ -50,14 +50,14 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Invul", this.method_21507());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Invul", this.method_21507());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_21509(var1.method_25947("Invul"));
       if (this.method_45507()) {
          this.field_22702.method_43451(this.method_19839());
@@ -460,12 +460,12 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
       return false;
    }
 
-   public static class_1313 method_21506() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 300.0)
-         .method_5984(class_7331.field_37465, 0.6F)
-         .method_5984(class_7331.field_37471, 40.0)
-         .method_5984(class_7331.field_37473, 4.0);
+   public static MutableAttribute method_21506() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 300.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.6F)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 40.0)
+         .createMutableAttribute(Attributes.field_37473, 4.0);
    }
 
    public float method_21511(int var1) {

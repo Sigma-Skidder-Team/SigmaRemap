@@ -166,8 +166,8 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
       }
    }
 
-   public static class_1313 method_34690() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37465, 0.5).method_5984(class_7331.field_37471, 48.0);
+   public static MutableAttribute method_34690() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5).createMutableAttribute(Attributes.FOLLOW_RANGE, 48.0);
    }
 
    public boolean method_34698() {
@@ -385,26 +385,26 @@ public class class_7666 extends AbstractVillagerEntity implements class_5545, cl
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       class_3047.field_14935
          .encodeStart(class_3504.field_17178, this.method_15891())
          .resultOrPartial(LOGGER::error)
          .ifPresent(var1x -> var1.put("VillagerData", var1x));
       var1.method_25921("FoodLevel", this.field_38969);
       var1.put("Gossips", (class_8406)this.field_38977.method_11515(class_3504.field_17178).getValue());
-      var1.method_25931("Xp", this.field_38965);
+      var1.putInt("Xp", this.field_38965);
       var1.method_25949("LastRestock", this.field_38971);
       var1.method_25949("LastGossipDecay", this.field_38960);
-      var1.method_25931("RestocksToday", this.field_38962);
+      var1.putInt("RestocksToday", this.field_38962);
       if (this.field_38966) {
          var1.putBoolean("AssignProfessionWhenSpawned", true);
       }
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("VillagerData", 10)) {
          DataResult var4 = class_3047.field_14935.parse(new Dynamic(class_3504.field_17178, var1.method_25929("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method_34716);

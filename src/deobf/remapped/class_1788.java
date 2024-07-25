@@ -115,7 +115,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
       super.method_17396(var1);
       if (!this.method_7958().method_28022()) {
          var1.put("Book", this.method_7958().method_27998(new CompoundNBT()));
-         var1.method_25931("Page", this.field_9135);
+         var1.putInt("Page", this.field_9135);
       }
 
       return var1;

@@ -22,7 +22,7 @@ public class class_5271 extends class_8549 {
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25931("Type", this.field_26945);
+      var1.putInt("Type", this.field_26945);
    }
 
    @Override

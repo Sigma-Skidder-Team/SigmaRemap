@@ -112,14 +112,14 @@ public class class_581 extends class_6749 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field_3394 != class_3697.field_18134 && this.field_3394 != null) {
          var1.method_25941("Potion", class_8669.field_44365.method_39797(this.field_3394).toString());
       }
 
       if (this.field_3392) {
-         var1.method_25931("Color", this.method_2750());
+         var1.putInt("Color", this.method_2750());
       }
 
       if (!this.field_3395.isEmpty()) {
@@ -134,8 +134,8 @@ public class class_581 extends class_6749 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Potion", 8)) {
          this.field_3394 = class_9541.method_43989(var1);
       }
@@ -177,7 +177,7 @@ public class class_581 extends class_6749 {
          class_9541.method_43999(var3, this.field_3394);
          class_9541.method_43992(var3, this.field_3395);
          if (this.field_3392) {
-            var3.method_27994().method_25931("CustomPotionColor", this.method_2750());
+            var3.method_27994().putInt("CustomPotionColor", this.method_2750());
          }
 
          return var3;

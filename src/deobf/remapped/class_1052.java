@@ -13,7 +13,7 @@ public class class_1052 extends class_3599 {
       this.field_5779 = new class_4931().method_22607(8.0).method_22609().method_22603().method_22601().method_22602().method_22608();
       this.field_5778 = var2;
       this.field_5775 = var3 * var3;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
    }
 
    @Override

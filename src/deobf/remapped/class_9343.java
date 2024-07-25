@@ -83,7 +83,7 @@ public class class_9343 {
       CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("Name", this.method_43125());
       var3.method_25923("Amount", this.field_47682);
-      var3.method_25931("Operation", this.field_47681.method_43115());
+      var3.putInt("Operation", this.field_47681.method_43115());
       var3.method_25964("UUID", this.field_47685);
       return var3;
    }

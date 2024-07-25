@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 import java.util.List;
 import java.util.Optional;
 
-public class class_3895 extends class_1173 implements class_1869, class_9479 {
+public class class_3895 extends MonsterEntity implements class_1869, class_9479 {
    private static final class_7821<Boolean> field_18951 = class_8073.<Boolean>method_36641(class_3895.class, class_2734.field_13347);
    private int field_18950;
    public static final ImmutableList<? extends class_3172<? extends class_6127<? super class_3895>>> field_18948 = ImmutableList.of(
@@ -106,13 +106,13 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
       }
    }
 
-   public static class_1313 method_18038() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 40.0)
-         .method_5984(class_7331.field_37465, 0.3F)
-         .method_5984(class_7331.field_37463, 0.6F)
-         .method_5984(class_7331.field_37467, 1.0)
-         .method_5984(class_7331.field_37462, 6.0);
+   public static MutableAttribute method_18038() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 40.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)
+         .createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 0.6F)
+         .createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 1.0)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
    public boolean method_18039() {
@@ -144,7 +144,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       return (double)this.method_37074() - (!this.method_26449() ? 0.15 : 0.2);
    }
 
@@ -200,7 +200,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    public void method_26910(boolean var1) {
       this.method_37372().method_36633(field_18951, var1);
       if (!this.world.field_33055 && var1) {
-         this.method_26561(class_7331.field_37462).method_45006(0.5);
+         this.method_26561(Attributes.ATTACK_DAMAGE).method_45006(0.5);
       }
    }
 
@@ -273,16 +273,16 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method_26449()) {
          var1.putBoolean("IsBaby", true);
       }
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.getBoolean("IsBaby")) {
          this.method_26910(true);
       }

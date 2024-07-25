@@ -11,13 +11,13 @@ public class class_5948 extends class_4109 {
       super(var1, var2);
    }
 
-   public static class_1313 method_27192() {
-      return method_19064().method_5984(class_7331.field_37468, 15.0).method_5984(class_7331.field_37465, 0.2F);
+   public static MutableAttribute method_27192() {
+      return method_19064().createMutableAttribute(Attributes.MAX_HEALTH, 15.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
    public void method_19084() {
-      this.method_26561(class_7331.field_37464).method_45006(this.method_19046());
+      this.method_26561(Attributes.field_37464).method_45006(this.method_19046());
    }
 
    @Override
@@ -86,8 +86,8 @@ public class class_5948 extends class_4109 {
    }
 
    @Override
-   public double method_37149() {
-      return super.method_37149() - 0.1875;
+   public double getMountedYOffset() {
+      return super.getMountedYOffset() - 0.1875;
    }
 
    @Override
@@ -99,15 +99,15 @@ public class class_5948 extends class_4109 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("SkeletonTrap", this.method_27191());
-      var1.method_25931("SkeletonTrapTime", this.field_30331);
+      var1.putInt("SkeletonTrapTime", this.field_30331);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_27190(var1.getBoolean("SkeletonTrap"));
       this.field_30331 = var1.method_25947("SkeletonTrapTime");
    }

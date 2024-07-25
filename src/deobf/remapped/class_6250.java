@@ -17,7 +17,7 @@ public interface class_6250 {
    void method_28529();
 
    default void method_28528(CompoundNBT var1) {
-      var1.method_25931("AngerTime", this.method_28539());
+      var1.putInt("AngerTime", this.method_28539());
       if (this.method_28535() != null) {
          var1.method_25964("AngryAt", this.method_28535());
       }

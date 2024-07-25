@@ -106,15 +106,15 @@ public class class_5583 extends class_8990 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("CatType", this.method_25353());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("CatType", this.method_25353());
       var1.method_25921("CollarColor", (byte)this.method_25360().method_41794());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_25356(var1.method_25947("CatType"));
       if (var1.contains("CollarColor", 99)) {
          this.method_25351(class_9077.method_41789(var1.method_25947("CollarColor")));
@@ -174,11 +174,11 @@ public class class_5583 extends class_8990 {
       return class_463.field_2857;
    }
 
-   public static class_1313 method_25354() {
+   public static MutableAttribute method_25354() {
       return MobEntity.method_26846()
-         .method_5984(class_7331.field_37468, 10.0)
-         .method_5984(class_7331.field_37465, 0.3F)
-         .method_5984(class_7331.field_37462, 3.0);
+         .createMutableAttribute(Attributes.MAX_HEALTH, 10.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 3.0);
    }
 
    @Override
@@ -196,7 +196,7 @@ public class class_5583 extends class_8990 {
    }
 
    private float method_25359() {
-      return (float)this.method_26575(class_7331.field_37462);
+      return (float)this.method_26575(Attributes.ATTACK_DAMAGE);
    }
 
    @Override

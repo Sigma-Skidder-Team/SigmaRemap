@@ -83,15 +83,15 @@ public abstract class class_1899 extends class_4612 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Age", this.method_8634());
-      var1.method_25931("ForcedAge", this.field_9697);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Age", this.method_8634());
+      var1.putInt("ForcedAge", this.field_9697);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_8635(var1.method_25947("Age"));
       this.field_9697 = var1.method_25947("ForcedAge");
    }

@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Random;
 
-public class class_2667 extends class_1173 {
+public class class_2667 extends MonsterEntity {
    private int field_13118;
    private boolean field_13119;
 
@@ -27,11 +27,11 @@ public class class_2667 extends class_1173 {
       return 0.13F;
    }
 
-   public static class_1313 method_12023() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 8.0)
-         .method_5984(class_7331.field_37465, 0.25)
-         .method_5984(class_7331.field_37462, 2.0);
+   public static MutableAttribute method_12023() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 8.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 2.0);
    }
 
    @Override
@@ -60,16 +60,16 @@ public class class_2667 extends class_1173 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_13118 = var1.method_25947("Lifetime");
       this.field_13119 = var1.getBoolean("PlayerSpawned");
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Lifetime", this.field_13118);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Lifetime", this.field_13118);
       var1.putBoolean("PlayerSpawned", this.field_13119);
    }
 

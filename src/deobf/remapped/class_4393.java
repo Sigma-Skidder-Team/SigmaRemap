@@ -167,18 +167,18 @@ public class class_4393 extends class_2803 implements class_9897 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method_25941("Type", class_2066.method_9651(this.method_20463()));
       if (this.field_21516 != null) {
          var1.method_25921("EffectId", (byte)class_1425.method_6536(this.field_21516));
-         var1.method_25931("EffectDuration", this.field_21515);
+         var1.putInt("EffectDuration", this.field_21515);
       }
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_20464(class_2066.method_9654(var1.method_25965("Type")));
       if (var1.contains("EffectId", 1)) {
          this.field_21516 = class_1425.method_6538(var1.method_25950("EffectId"));

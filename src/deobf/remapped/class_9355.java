@@ -27,8 +27,8 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       class_3047.field_14935
          .encodeStart(class_3504.field_17178, this.method_15891())
          .resultOrPartial(LOGGER::error)
@@ -41,17 +41,17 @@ public class class_9355 extends class_2811 implements class_3449 {
          var1.put("Gossips", this.field_47744);
       }
 
-      var1.method_25931("ConversionTime", !this.method_43208() ? -1 : this.field_47746);
+      var1.putInt("ConversionTime", !this.method_43208() ? -1 : this.field_47746);
       if (this.field_47750 != null) {
          var1.method_25964("ConversionPlayer", this.field_47750);
       }
 
-      var1.method_25931("Xp", this.field_47751);
+      var1.putInt("Xp", this.field_47751);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("VillagerData", 10)) {
          DataResult var4 = class_3047.field_14935.parse(new Dynamic(class_3504.field_17178, var1.method_25929("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method_43207);

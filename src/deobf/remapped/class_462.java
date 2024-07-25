@@ -15,7 +15,7 @@ public abstract class class_462 extends class_7060 {
 
    @Override
    public void method_32517(CompoundNBT var1) {
-      var1.method_25931("MST", this.field_1919.ordinal());
+      var1.putInt("MST", this.field_1919.ordinal());
    }
 
    public class_2522 method_2213() {

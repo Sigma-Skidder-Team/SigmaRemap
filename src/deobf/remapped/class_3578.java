@@ -15,8 +15,8 @@ public abstract class class_3578 extends class_1829 {
       return var2.field_31200 * 0.65F;
    }
 
-   public static class_1313 method_16629() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 3.0);
+   public static MutableAttribute method_16629() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 3.0);
    }
 
    @Override
@@ -53,14 +53,14 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("FromBucket", this.method_16636());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_16631(var1.getBoolean("FromBucket"));
    }
 
@@ -73,7 +73,7 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       return new class_9811(this, var1);
    }
 

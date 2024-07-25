@@ -48,8 +48,8 @@ public abstract class class_7060 {
       var3.method_25941("id", class_8669.field_44364.method_39797(this.method_32521()).toString());
       var3.put("BB", this.field_36435.method_44388());
       Direction var4 = this.method_32518();
-      var3.method_25931("O", var4 != null ? var4.method_1031() : -1);
-      var3.method_25931("GD", this.field_36441);
+      var3.putInt("O", var4 != null ? var4.method_1031() : -1);
+      var3.putInt("GD", this.field_36441);
       this.method_32517(var3);
       return var3;
    }

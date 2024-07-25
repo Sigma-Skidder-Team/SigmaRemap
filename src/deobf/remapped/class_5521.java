@@ -10,7 +10,7 @@ public abstract class class_5521 extends class_4109 {
 
    @Override
    public void method_19084() {
-      this.method_26561(class_7331.field_37468).method_45006((double)this.method_19082());
+      this.method_26561(Attributes.MAX_HEALTH).method_45006((double)this.method_19082());
    }
 
    @Override
@@ -19,8 +19,8 @@ public abstract class class_5521 extends class_4109 {
       this.field_41735.method_36634(field_28096, false);
    }
 
-   public static class_1313 method_25018() {
-      return method_19064().method_5984(class_7331.field_37465, 0.175F).method_5984(class_7331.field_37464, 0.5);
+   public static MutableAttribute method_25018() {
+      return method_19064().createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.175F).createMutableAttribute(Attributes.field_37464, 0.5);
    }
 
    public boolean method_25017() {
@@ -37,8 +37,8 @@ public abstract class class_5521 extends class_4109 {
    }
 
    @Override
-   public double method_37149() {
-      return super.method_37149() - 0.25;
+   public double getMountedYOffset() {
+      return super.getMountedYOffset() - 0.25;
    }
 
    @Override
@@ -54,8 +54,8 @@ public abstract class class_5521 extends class_4109 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("ChestedHorse", this.method_25017());
       if (this.method_25017()) {
          class_3416 var4 = new class_3416();
@@ -75,8 +75,8 @@ public abstract class class_5521 extends class_4109 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_25016(var1.getBoolean("ChestedHorse"));
       if (this.method_25017()) {
          class_3416 var4 = var1.method_25927("Items", 10);

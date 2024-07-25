@@ -33,11 +33,11 @@ public class class_2547 extends class_7429 implements class_2354 {
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, false).method_4209(300));
    }
 
-   public static class_1313 method_11596() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37465, 0.5)
-         .method_5984(class_7331.field_37471, 18.0)
-         .method_5984(class_7331.field_37468, 32.0);
+   public static MutableAttribute method_11596() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 18.0)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 32.0);
    }
 
    @Override

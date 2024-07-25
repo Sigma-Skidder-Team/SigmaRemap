@@ -75,7 +75,7 @@ public class class_7909 extends StatisticsManager {
             if (!var7.isJsonNull()) {
                CompoundNBT var8 = method_35776(var7.getAsJsonObject());
                if (!var8.contains("DataVersion", 99)) {
-                  var8.method_25931("DataVersion", 1343);
+                  var8.putInt("DataVersion", 1343);
                }
 
                var8 = class_4338.method_20179(var1, class_5397.field_27552, var8, var8.method_25947("DataVersion"));
@@ -149,7 +149,7 @@ public class class_7909 extends StatisticsManager {
             if (var6.isJsonPrimitive()) {
                JsonPrimitive var7 = var6.getAsJsonPrimitive();
                if (var7.isNumber()) {
-                  var3.method_25931((String)var5.getKey(), var7.getAsInt());
+                  var3.putInt((String)var5.getKey(), var7.getAsInt());
                }
             }
          } else {

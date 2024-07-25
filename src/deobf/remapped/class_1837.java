@@ -27,7 +27,7 @@ public class class_1837 extends class_3599 {
          this.field_9310 = var5;
          this.field_9309 = var6;
          this.field_9304 = var6 * var6;
-         this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+         this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
       } else {
          throw new IllegalArgumentException("ArrowAttackGoal requires Mob implements RangedAttackMob");
       }

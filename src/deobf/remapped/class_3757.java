@@ -44,9 +44,9 @@ public abstract class class_3757 {
       Identifier var4 = class_133.method_445(this.method_17405());
       if (var4 != null) {
          var1.method_25941("id", var4.toString());
-         var1.method_25931("x", this.field_18358.method_12173());
-         var1.method_25931("y", this.field_18358.method_12165());
-         var1.method_25931("z", this.field_18358.method_12185());
+         var1.putInt("x", this.field_18358.method_12173());
+         var1.putInt("y", this.field_18358.method_12165());
+         var1.putInt("z", this.field_18358.method_12185());
          return var1;
       } else {
          throw new RuntimeException(this.getClass() + " is missing a mapping! This is a bug!");

@@ -82,14 +82,14 @@ public class class_8477 extends class_8574 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Variant", this.method_39018());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Variant", this.method_39018());
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_39025(var1.method_25947("Variant"));
    }
 
@@ -110,7 +110,7 @@ public class class_8477 extends class_8574 {
    public void method_16630(ItemStack var1) {
       super.method_16630(var1);
       CompoundNBT var4 = var1.method_27994();
-      var4.method_25931("BucketVariantTag", this.method_39018());
+      var4.putInt("BucketVariantTag", this.method_39018());
    }
 
    @Override

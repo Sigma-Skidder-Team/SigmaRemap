@@ -38,7 +38,7 @@ public class class_9825 extends class_516 implements class_1869 {
 
    private void method_45293() {
       this.method_37187();
-      this.method_26561(class_7331.field_37462).method_45006((double)(6 + this.method_45296()));
+      this.method_26561(Attributes.ATTACK_DAMAGE).method_45006((double)(6 + this.method_45296()));
    }
 
    public int method_45296() {
@@ -133,8 +133,8 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.method_25938("AX")) {
          this.field_49779 = new BlockPos(var1.method_25947("AX"), var1.method_25947("AY"), var1.method_25947("AZ"));
       }
@@ -143,12 +143,12 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("AX", this.field_49779.method_12173());
-      var1.method_25931("AY", this.field_49779.method_12165());
-      var1.method_25931("AZ", this.field_49779.method_12185());
-      var1.method_25931("Size", this.method_45296());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("AX", this.field_49779.method_12173());
+      var1.putInt("AY", this.field_49779.method_12165());
+      var1.putInt("AZ", this.field_49779.method_12185());
+      var1.putInt("Size", this.method_45296());
    }
 
    @Override

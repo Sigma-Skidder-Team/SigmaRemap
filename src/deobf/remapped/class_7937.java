@@ -2,7 +2,7 @@ package remapped;
 
 import javax.annotation.Nullable;
 
-public class class_7937 extends class_1173 {
+public class class_7937 extends MonsterEntity {
    private static String[] field_40596;
    private static final class_7821<Byte> field_40597 = class_8073.<Byte>method_36641(class_7937.class, class_2734.field_13361);
 
@@ -24,12 +24,12 @@ public class class_7937 extends class_1173 {
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       return (double)(this.method_37074() * 0.5F);
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       return new class_8696(this, var1);
    }
 
@@ -47,8 +47,8 @@ public class class_7937 extends class_1173 {
       }
    }
 
-   public static class_1313 method_35905() {
-      return class_1173.method_5201().method_5984(class_7331.field_37468, 16.0).method_5984(class_7331.field_37465, 0.3F);
+   public static MutableAttribute method_35905() {
+      return MonsterEntity.func_234295_eP_().createMutableAttribute(Attributes.MAX_HEALTH, 16.0).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F);
    }
 
    @Override

@@ -250,10 +250,10 @@ public class class_8612 extends class_5783 implements class_3713 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Life", this.field_44170);
-      var1.method_25931("LifeTime", this.field_44172);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Life", this.field_44170);
+      var1.putInt("LifeTime", this.field_44172);
       ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
       if (!var4.method_28022()) {
          var1.put("FireworksItem", var4.method_27998(new CompoundNBT()));
@@ -263,8 +263,8 @@ public class class_8612 extends class_5783 implements class_3713 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_44170 = var1.method_25947("Life");
       this.field_44172 = var1.method_25947("LifeTime");
       ItemStack var4 = ItemStack.method_28015(var1.getCompound("FireworksItem"));

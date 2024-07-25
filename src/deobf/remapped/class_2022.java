@@ -60,8 +60,8 @@ public class class_2022 extends class_1944 {
    public void method_26428() {
    }
 
-   public static class_1313 method_9394() {
-      return MobEntity.method_26846().method_5984(class_7331.field_37468, 6.0);
+   public static MutableAttribute method_9394() {
+      return MobEntity.method_26846().createMutableAttribute(Attributes.MAX_HEALTH, 6.0);
    }
 
    public boolean method_9392() {
@@ -178,14 +178,14 @@ public class class_2022 extends class_1944 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_41735.method_36633(field_10248, var1.method_25950("BatFlags"));
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method_25921("BatFlags", this.field_41735.<Byte>method_36640(field_10248));
    }
 

@@ -77,8 +77,8 @@ public class class_9163 {
    }
 
    public void method_42233(CompoundNBT var1) {
-      var1.method_25931("foodLevel", this.field_46890);
-      var1.method_25931("foodTickTimer", this.field_46894);
+      var1.putInt("foodLevel", this.field_46890);
+      var1.putInt("foodTickTimer", this.field_46894);
       var1.putFloat("foodSaturationLevel", this.field_46891);
       var1.putFloat("foodExhaustionLevel", this.field_46892);
    }

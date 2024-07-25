@@ -29,11 +29,11 @@ public class class_1799 extends class_7429 {
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, false));
    }
 
-   public static class_1313 method_8001() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37465, 0.5)
-         .method_5984(class_7331.field_37471, 12.0)
-         .method_5984(class_7331.field_37468, 24.0);
+   public static MutableAttribute method_8001() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 12.0)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 24.0);
    }
 
    @Override
@@ -42,8 +42,8 @@ public class class_1799 extends class_7429 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
    }
 
    @Override
@@ -52,8 +52,8 @@ public class class_1799 extends class_7429 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
    }
 
    @Override

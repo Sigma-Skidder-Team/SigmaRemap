@@ -21,7 +21,7 @@ public class LookAtGoal extends class_3599 {
       this.field_21567 = var2;
       this.field_21566 = var3;
       this.field_21565 = var4;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.LOOK));
       if (var2 != PlayerEntity.class) {
          this.field_21569 = new class_4931().method_22607((double)var3).method_22601().method_22603().method_22609();
       } else {

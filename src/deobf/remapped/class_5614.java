@@ -138,14 +138,14 @@ public class class_5614 extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.method_25958("Health", (short)this.field_28510);
       var1.method_25958("Age", (short)this.field_28514);
       var1.method_25958("Value", (short)this.field_28513);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field_28510 = var1.method_25956("Health");
       this.field_28514 = var1.method_25956("Age");
       this.field_28513 = var1.method_25956("Value");

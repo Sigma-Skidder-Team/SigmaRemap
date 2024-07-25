@@ -65,7 +65,7 @@ public abstract class class_956 extends class_3599 {
    }
 
    public double method_4211() {
-      return this.field_4915.method_26575(class_7331.field_37471);
+      return this.field_4915.method_26575(Attributes.FOLLOW_RANGE);
    }
 
    @Override

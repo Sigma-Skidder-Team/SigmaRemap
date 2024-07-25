@@ -39,8 +39,8 @@ public abstract class class_3429 extends class_9506 implements class_3713 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       ItemStack var4 = this.method_15853();
       if (!var4.method_28022()) {
          var1.put("Item", var4.method_27998(new CompoundNBT()));
@@ -48,8 +48,8 @@ public abstract class class_3429 extends class_9506 implements class_3713 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       ItemStack var4 = ItemStack.method_28015(var1.getCompound("Item"));
       this.method_15852(var4);
    }

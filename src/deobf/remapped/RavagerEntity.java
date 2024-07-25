@@ -33,33 +33,33 @@ public class RavagerEntity extends AbstractRaiderEntity {
    public void updateMovementGoalFlags() {
       boolean flag = !(this.getControllingPassenger() instanceof MobEntity) || this.getControllingPassenger().getType().isContained(EntityTypeTags.RAIDERS);
       boolean flag1 = !(this.getRidingEntity() instanceof BoatEntity);
-      this.goalSelector.method_3493(class_1891.field_9564, flag);
-      this.goalSelector.method_3493(class_1891.field_9561, flag && flag1);
-      this.goalSelector.method_3493(class_1891.field_9560, flag);
-      this.goalSelector.method_3493(class_1891.field_9563, flag);
+      this.goalSelector.setFlag(Flag.MOVE, flag);
+      this.goalSelector.setFlag(Flag.JUMP, flag && flag1);
+      this.goalSelector.setFlag(Flag.LOOK, flag);
+      this.goalSelector.setFlag(Flag.TARGET, flag);
    }
 
-   public static class_1313 method_35660() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37468, 100.0)
-         .method_5984(class_7331.field_37465, 0.3)
-         .method_5984(class_7331.field_37463, 0.75)
-         .method_5984(class_7331.field_37462, 12.0)
-         .method_5984(class_7331.field_37467, 1.5)
-         .method_5984(class_7331.field_37471, 32.0);
-   }
-
-   @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("AttackTick", this.attackTick);
-      var1.method_25931("StunTick", this.stunTick);
-      var1.method_25931("RoarTick", this.roarTick);
+   public static MutableAttribute func_234297_m_() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MAX_HEALTH, 100.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3)
+         .createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 0.75)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 12.0)
+         .createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 1.5)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 32.0);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("AttackTick", this.attackTick);
+      var1.putInt("StunTick", this.stunTick);
+      var1.putInt("RoarTick", this.roarTick);
+   }
+
+   @Override
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.attackTick = var1.method_25947("AttackTick");
       this.stunTick = var1.method_25947("StunTick");
       this.roarTick = var1.method_25947("RoarTick");
@@ -71,17 +71,17 @@ public class RavagerEntity extends AbstractRaiderEntity {
    }
 
    @Override
-   public class_1249 method_26933(World var1) {
+   public class_1249 createNavigator(World var1) {
       return new class_9052(this, var1);
    }
 
    @Override
-   public int method_26903() {
+   public int getHorizontalFaceSpeed() {
       return 45;
    }
 
    @Override
-   public double method_37149() {
+   public double getMountedYOffset() {
       return 2.1;
    }
 
@@ -102,10 +102,10 @@ public class RavagerEntity extends AbstractRaiderEntity {
       if (this.isAlive()) {
          if (!this.method_26468()) {
             double var3 = this.method_17809() == null ? 0.3 : 0.35;
-            double var5 = this.method_26561(class_7331.field_37465).method_44996();
-            this.method_26561(class_7331.field_37465).method_45006(class_9299.method_42794(0.1, var5, var3));
+            double var5 = this.method_26561(Attributes.MOVEMENT_SPEED).method_44996();
+            this.method_26561(Attributes.MOVEMENT_SPEED).method_45006(class_9299.method_42794(0.1, var5, var3));
          } else {
-            this.method_26561(class_7331.field_37465).method_45006(0.0);
+            this.method_26561(Attributes.MOVEMENT_SPEED).method_45006(0.0);
          }
 
          if (this.field_41744 && this.world.method_29537().method_1285(class_291.field_1047)) {

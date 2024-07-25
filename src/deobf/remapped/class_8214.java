@@ -11,7 +11,7 @@ public class class_8214 extends class_3599 {
    public class_8214(class_449 var1, double var2) {
       this.field_42022 = var1;
       this.field_42024 = var2;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
    }
 
    @Override
@@ -38,7 +38,7 @@ public class class_8214 extends class_3599 {
 
    @Override
    public void method_16794() {
-      this.field_42022.method_26865().method_17240(this.field_42021, (float)(this.field_42022.method_26903() + 20), (float)this.field_42022.method_26862());
+      this.field_42022.method_26865().method_17240(this.field_42021, (float)(this.field_42022.getHorizontalFaceSpeed() + 20), (float)this.field_42022.method_26862());
       if (!(this.field_42022.method_37275(this.field_42021) < 6.25)) {
          this.field_42022.method_26927().method_5616(this.field_42021, this.field_42024);
       } else {

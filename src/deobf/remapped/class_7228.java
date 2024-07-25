@@ -26,7 +26,7 @@ public class class_7228 extends class_3599 {
       this.field_37098 = var2;
       this.field_37100 = var5;
       this.field_37093 = var4;
-      this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
+      this.method_16800(EnumSet.<Flag>of(Flag.MOVE, Flag.LOOK));
       if (!(var1.method_26927() instanceof class_8985) && !(var1.method_26927() instanceof class_5133)) {
          throw new IllegalArgumentException("Unsupported mob type for TemptGoal");
       }
@@ -94,7 +94,7 @@ public class class_7228 extends class_3599 {
 
    @Override
    public void method_16794() {
-      this.field_37092.method_26865().method_17240(this.field_37102, (float)(this.field_37092.method_26903() + 20), (float)this.field_37092.method_26862());
+      this.field_37092.method_26865().method_17240(this.field_37102, (float)(this.field_37092.getHorizontalFaceSpeed() + 20), (float)this.field_37092.method_26862());
       if (!(this.field_37092.method_37275(this.field_37102) < 6.25)) {
          this.field_37092.method_26927().method_5616(this.field_37102, this.field_37098);
       } else {

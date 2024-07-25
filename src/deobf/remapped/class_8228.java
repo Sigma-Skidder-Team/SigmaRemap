@@ -50,10 +50,10 @@ public class class_8228 extends class_2451 implements class_9866 {
       class_6451.method_29408(this, field_42243);
       Builder var6 = ImmutableMultimap.builder();
       UUID var7 = field_42247[var2.method_31767()];
-      var6.put(class_7331.field_37473, new class_9343(var7, "Armor modifier", (double)this.field_42244, class_9342.field_47679));
-      var6.put(class_7331.field_37472, new class_9343(var7, "Armor toughness", (double)this.field_42240, class_9342.field_47679));
+      var6.put(Attributes.field_37473, new class_9343(var7, "Armor modifier", (double)this.field_42244, class_9342.field_47679));
+      var6.put(Attributes.field_37472, new class_9343(var7, "Armor toughness", (double)this.field_42240, class_9342.field_47679));
       if (var1 == class_5667.field_28732) {
-         var6.put(class_7331.field_37463, new class_9343(var7, "Armor knockback resistance", (double)this.field_42242, class_9342.field_47679));
+         var6.put(Attributes.KNOCKBACK_RESISTANCE, new class_9343(var7, "Armor knockback resistance", (double)this.field_42242, class_9342.field_47679));
       }
 
       this.field_42241 = var6.build();

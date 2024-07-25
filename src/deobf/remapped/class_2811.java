@@ -8,7 +8,7 @@ import java.util.UUID;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public class class_2811 extends class_1173 {
+public class class_2811 extends MonsterEntity {
    private static final UUID field_13815 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
    private static final class_9343 field_13814 = new class_9343(field_13815, "Baby speed boost", 0.5, class_9342.field_47678);
    private static final class_7821<Boolean> field_13810 = class_8073.<Boolean>method_36641(class_2811.class, class_2734.field_13347);
@@ -47,13 +47,13 @@ public class class_2811 extends class_1173 {
       this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<class_3845>(this, class_3845.class, 10, true, false, class_3845.field_18768));
    }
 
-   public static class_1313 method_12802() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37471, 35.0)
-         .method_5984(class_7331.field_37465, 0.23F)
-         .method_5984(class_7331.field_37462, 3.0)
-         .method_5984(class_7331.field_37473, 2.0)
-         .method_5983(class_7331.field_37470);
+   public static MutableAttribute method_12802() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 35.0)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.23F)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 3.0)
+         .createMutableAttribute(Attributes.field_37473, 2.0)
+         .method_5983(Attributes.field_37470);
    }
 
    @Override
@@ -111,7 +111,7 @@ public class class_2811 extends class_1173 {
    public void method_26910(boolean var1) {
       this.method_37372().method_36633(field_13810, var1);
       if (this.world != null && !this.world.field_33055) {
-         class_9747 var4 = this.method_26561(class_7331.field_37465);
+         class_9747 var4 = this.method_26561(Attributes.MOVEMENT_SPEED);
          var4.method_45004(field_13814);
          if (var1) {
             var4.method_45011(field_13814);
@@ -221,7 +221,7 @@ public class class_2811 extends class_1173 {
 
          if (var6 != null
             && this.world.method_43370() == class_423.field_1782
-            && (double)this.field_41717.nextFloat() < this.method_26575(class_7331.field_37470)
+            && (double)this.field_41717.nextFloat() < this.method_26575(Attributes.field_37470)
             && this.world.method_29537().method_1285(class_291.field_1028)) {
             int var7 = class_9299.method_42847(this.getPosX());
             int var8 = class_9299.method_42847(this.method_37309());
@@ -245,9 +245,9 @@ public class class_2811 extends class_1173 {
                      var10.method_26860(var6);
                      var10.method_26864(var5, this.world.method_43368(var10.method_37075()), class_2417.field_12039, (class_8733)null, (CompoundNBT)null);
                      var5.method_7065(var10);
-                     this.method_26561(class_7331.field_37470)
+                     this.method_26561(Attributes.field_37470)
                         .method_45005(new class_9343("Zombie reinforcement caller charge", -0.05F, class_9342.field_47679));
-                     var10.method_26561(class_7331.field_37470)
+                     var10.method_26561(Attributes.field_37470)
                         .method_45005(new class_9343("Zombie reinforcement callee charge", -0.05F, class_9342.field_47679));
                      break;
                   }
@@ -317,17 +317,17 @@ public class class_2811 extends class_1173 {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("IsBaby", this.method_26449());
       var1.putBoolean("CanBreakDoors", this.method_12793());
-      var1.method_25931("InWaterTime", !this.method_37285() ? -1 : this.field_13809);
-      var1.method_25931("DrownedConversionTime", !this.method_12797() ? -1 : this.field_13808);
+      var1.putInt("InWaterTime", !this.method_37285() ? -1 : this.field_13809);
+      var1.putInt("DrownedConversionTime", !this.method_12797() ? -1 : this.field_13808);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_26910(var1.getBoolean("IsBaby"));
       this.method_12799(var1.getBoolean("CanBreakDoors"));
       this.field_13809 = var1.method_25947("InWaterTime");
@@ -427,24 +427,24 @@ public class class_2811 extends class_1173 {
 
    public void method_12790(float var1) {
       this.method_12801();
-      this.method_26561(class_7331.field_37463)
+      this.method_26561(Attributes.KNOCKBACK_RESISTANCE)
          .method_45005(new class_9343("Random spawn bonus", this.field_41717.nextDouble() * 0.05F, class_9342.field_47679));
       double var4 = this.field_41717.nextDouble() * 1.5 * (double)var1;
       if (var4 > 1.0) {
-         this.method_26561(class_7331.field_37471).method_45005(new class_9343("Random zombie-spawn bonus", var4, class_9342.field_47677));
+         this.method_26561(Attributes.FOLLOW_RANGE).method_45005(new class_9343("Random zombie-spawn bonus", var4, class_9342.field_47677));
       }
 
       if (this.field_41717.nextFloat() < var1 * 0.05F) {
-         this.method_26561(class_7331.field_37470)
+         this.method_26561(Attributes.field_37470)
             .method_45005(new class_9343("Leader zombie bonus", this.field_41717.nextDouble() * 0.25 + 0.5, class_9342.field_47679));
-         this.method_26561(class_7331.field_37468)
+         this.method_26561(Attributes.MAX_HEALTH)
             .method_45005(new class_9343("Leader zombie bonus", this.field_41717.nextDouble() * 3.0 + 1.0, class_9342.field_47677));
          this.method_12799(this.method_12792());
       }
    }
 
    public void method_12801() {
-      this.method_26561(class_7331.field_37470).method_45006(this.field_41717.nextDouble() * 0.1F);
+      this.method_26561(Attributes.field_37470).method_45006(this.field_41717.nextDouble() * 0.1F);
    }
 
    @Override

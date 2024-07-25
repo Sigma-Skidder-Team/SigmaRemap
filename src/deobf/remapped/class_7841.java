@@ -36,16 +36,16 @@ public class class_7841 extends class_6749 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.method_25938("Duration")) {
          this.field_39755 = var1.method_25947("Duration");
       }
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("Duration", this.field_39755);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Duration", this.field_39755);
    }
 }

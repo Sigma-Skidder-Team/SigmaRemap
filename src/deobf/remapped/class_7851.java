@@ -111,16 +111,16 @@ public class class_7851 extends AbstractMinecartEntity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method_25923("PushX", this.field_39788);
       var1.method_25923("PushZ", this.field_39786);
       var1.method_25958("Fuel", (short)this.field_39789);
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field_39788 = var1.method_25932("PushX");
       this.field_39786 = var1.method_25932("PushZ");
       this.field_39789 = var1.method_25956("Fuel");

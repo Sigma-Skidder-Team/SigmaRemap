@@ -1,21 +1,21 @@
 package remapped;
 
-public class class_7331 {
-   public static final class_225 field_37468 = method_33412(
+public class Attributes {
+   public static final class_225 MAX_HEALTH = method_33412(
       "generic.max_health", new class_806("attribute.name.generic.max_health", 20.0, 1.0, 1024.0).method_951(true)
    );
-   public static final class_225 field_37471 = method_33412("generic.follow_range", new class_806("attribute.name.generic.follow_range", 32.0, 0.0, 2048.0));
-   public static final class_225 field_37463 = method_33412(
+   public static final class_225 FOLLOW_RANGE = method_33412("generic.follow_range", new class_806("attribute.name.generic.follow_range", 32.0, 0.0, 2048.0));
+   public static final class_225 KNOCKBACK_RESISTANCE = method_33412(
       "generic.knockback_resistance", new class_806("attribute.name.generic.knockback_resistance", 0.0, 0.0, 1.0)
    );
-   public static final class_225 field_37465 = method_33412(
+   public static final class_225 MOVEMENT_SPEED = method_33412(
       "generic.movement_speed", new class_806("attribute.name.generic.movement_speed", 0.7F, 0.0, 1024.0).method_951(true)
    );
    public static final class_225 field_37474 = method_33412(
       "generic.flying_speed", new class_806("attribute.name.generic.flying_speed", 0.4F, 0.0, 1024.0).method_951(true)
    );
-   public static final class_225 field_37462 = method_33412("generic.attack_damage", new class_806("attribute.name.generic.attack_damage", 2.0, 0.0, 2048.0));
-   public static final class_225 field_37467 = method_33412("generic.attack_knockback", new class_806("attribute.name.generic.attack_knockback", 0.0, 0.0, 5.0));
+   public static final class_225 ATTACK_DAMAGE = method_33412("generic.attack_damage", new class_806("attribute.name.generic.attack_damage", 2.0, 0.0, 2048.0));
+   public static final class_225 ATTACK_KNOCKBACK = method_33412("generic.attack_knockback", new class_806("attribute.name.generic.attack_knockback", 0.0, 0.0, 5.0));
    public static final class_225 field_37466 = method_33412(
       "generic.attack_speed", new class_806("attribute.name.generic.attack_speed", 4.0, 0.0, 1024.0).method_951(true)
    );

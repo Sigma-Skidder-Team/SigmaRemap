@@ -227,9 +227,9 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
    @Override
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
-      var1.method_25931("Primary", class_1425.method_6536(this.field_6322));
-      var1.method_25931("Secondary", class_1425.method_6536(this.field_6323));
-      var1.method_25931("Levels", this.field_6318);
+      var1.putInt("Primary", class_1425.method_6536(this.field_6322));
+      var1.putInt("Secondary", class_1425.method_6536(this.field_6323));
+      var1.putInt("Levels", this.field_6318);
       if (this.field_6320 != null) {
          var1.method_25941("CustomName", ITextComponent$class_40.toJson(this.field_6320));
       }

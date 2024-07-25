@@ -133,8 +133,8 @@ public class class_87 extends class_495 {
       CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("Name", ITextComponent$class_40.toJson(this.field_48006));
       var3.putBoolean("Visible", this.method_2409());
-      var3.method_25931("Value", this.field_163);
-      var3.method_25931("Max", this.field_164);
+      var3.putInt("Value", this.field_163);
+      var3.putInt("Max", this.field_164);
       var3.method_25941("Color", this.method_43456().method_4665());
       var3.method_25941("Overlay", this.method_43462().method_13618());
       var3.putBoolean("DarkenScreen", this.method_43460());

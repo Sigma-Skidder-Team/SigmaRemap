@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import javax.annotation.Nullable;
 
-public abstract class class_1595 extends class_1173 implements class_2354 {
+public abstract class class_1595 extends MonsterEntity implements class_2354 {
    private final class_5479<class_1595> field_8312 = new class_5479<class_1595>(this, 1.0, 20, 15.0F);
    private final class_9037 field_8311 = new class_1054(this, this, 1.2, false);
 
@@ -27,8 +27,8 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_3845>(this, class_3845.class, 10, true, false, class_3845.field_18768));
    }
 
-   public static class_1313 method_7151() {
-      return class_1173.method_5201().method_5984(class_7331.field_37465, 0.25);
+   public static MutableAttribute method_7151() {
+      return MonsterEntity.func_234295_eP_().createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -146,8 +146,8 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method_7153();
    }
 

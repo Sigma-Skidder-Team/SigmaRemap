@@ -158,11 +158,11 @@ public class class_2858<T> implements class_3065<T> {
       for (class_4110 var8 : var1) {
          CompoundNBT var9 = new CompoundNBT();
          var9.method_25941("i", ((Identifier)var0.apply(var8.method_19096())).toString());
-         var9.method_25931("x", var8.field_20034.method_12173());
-         var9.method_25931("y", var8.field_20034.method_12165());
-         var9.method_25931("z", var8.field_20034.method_12185());
-         var9.method_25931("t", (int)(var8.field_20036 - var2));
-         var9.method_25931("p", var8.field_20035.method_7693());
+         var9.putInt("x", var8.field_20034.method_12173());
+         var9.putInt("y", var8.field_20034.method_12165());
+         var9.putInt("z", var8.field_20034.method_12185());
+         var9.putInt("t", (int)(var8.field_20036 - var2));
+         var9.putInt("p", var8.field_20035.method_7693());
          var6.add(var9);
       }
 

@@ -7,7 +7,7 @@ public class class_8865 {
    public static double method_40775() {
       double var2 = 0.2873;
       float var4 = 1.0F;
-      class_9747 var5 = field_45329.thePlayer.method_26561(class_7331.field_37465);
+      class_9747 var5 = field_45329.thePlayer.method_26561(Attributes.MOVEMENT_SPEED);
       var4 = (float)((double)var4 * ((var5.method_44998() / (double)field_45329.thePlayer.playerAbilities.getWalkSpeed() + 1.0) / 2.0));
       if (field_45329.thePlayer.method_37321()) {
          var4 = (float)((double)var4 - 0.15);

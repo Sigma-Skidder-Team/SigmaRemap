@@ -226,7 +226,7 @@ public class class_2250 implements Comparable<class_2250> {
 
    private void method_10344(CompoundNBT var1) {
       var1.method_25921("Amplifier", (byte)this.method_10333());
-      var1.method_25931("Duration", this.method_10347());
+      var1.putInt("Duration", this.method_10347());
       var1.putBoolean("Ambient", this.method_10338());
       var1.putBoolean("ShowParticles", this.method_10336());
       var1.putBoolean("ShowIcon", this.method_10342());

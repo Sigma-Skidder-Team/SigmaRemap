@@ -42,17 +42,17 @@ public class class_298 extends class_7637 {
       super.method_26919();
    }
 
-   public static class_1313 method_1340() {
-      return class_1173.method_5201()
-         .method_5984(class_7331.field_37465, 0.35F)
-         .method_5984(class_7331.field_37471, 12.0)
-         .method_5984(class_7331.field_37468, 24.0)
-         .method_5984(class_7331.field_37462, 5.0);
+   public static MutableAttribute method_1340() {
+      return MonsterEntity.func_234295_eP_()
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.35F)
+         .createMutableAttribute(Attributes.FOLLOW_RANGE, 12.0)
+         .createMutableAttribute(Attributes.MAX_HEALTH, 24.0)
+         .createMutableAttribute(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field_1083) {
          var1.putBoolean("Johnny", true);
       }
@@ -68,8 +68,8 @@ public class class_298 extends class_7637 {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Johnny", 99)) {
          this.field_1083 = var1.getBoolean("Johnny");
       }

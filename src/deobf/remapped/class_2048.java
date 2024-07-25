@@ -150,16 +150,16 @@ public class class_2048 extends AbstractMinecartEntity {
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
-      super.method_37314(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("TNTFuse", 99)) {
          this.field_10361 = var1.method_25947("TNTFuse");
       }
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
-      super.method_37376(var1);
-      var1.method_25931("TNTFuse", this.field_10361);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("TNTFuse", this.field_10361);
    }
 }

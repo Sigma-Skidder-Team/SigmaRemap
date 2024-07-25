@@ -199,20 +199,20 @@ public class class_1453 extends Entity {
    }
 
    @Override
-   public void method_37376(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.put("BlockState", class_4338.method_20187(this.field_7822));
-      var1.method_25931("Time", this.field_7827);
+      var1.putInt("Time", this.field_7827);
       var1.putBoolean("DropItem", this.field_7818);
       var1.putBoolean("HurtEntities", this.field_7825);
       var1.putFloat("FallHurtAmount", this.field_7826);
-      var1.method_25931("FallHurtMax", this.field_7823);
+      var1.putInt("FallHurtMax", this.field_7823);
       if (this.field_7819 != null) {
          var1.put("TileEntityData", this.field_7819);
       }
    }
 
    @Override
-   public void method_37314(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field_7822 = class_4338.method_20185(var1.getCompound("BlockState"));
       this.field_7827 = var1.method_25947("Time");
       if (!var1.contains("HurtEntities", 99)) {

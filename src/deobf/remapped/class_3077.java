@@ -17,8 +17,8 @@ public class class_3077 extends class_9742 implements class_1538 {
       this.field_15134 = var3.method_6959();
       this.field_15135 = var1 + var3.method_6957();
       Builder var8 = ImmutableMultimap.builder();
-      var8.put(class_7331.field_37462, new class_9343(field_12168, "Tool modifier", (double)this.field_15135, class_9342.field_47679));
-      var8.put(class_7331.field_37466, new class_9343(field_12167, "Tool modifier", (double)var2, class_9342.field_47679));
+      var8.put(Attributes.ATTACK_DAMAGE, new class_9343(field_12168, "Tool modifier", (double)this.field_15135, class_9342.field_47679));
+      var8.put(Attributes.field_37466, new class_9343(field_12167, "Tool modifier", (double)var2, class_9342.field_47679));
       this.field_15133 = var8.build();
    }
 
