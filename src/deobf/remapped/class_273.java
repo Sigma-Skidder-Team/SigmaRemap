@@ -27,8 +27,8 @@ public class class_273 extends class_2612 implements class_1768 {
          case field_26724:
             byte var21 = 24;
             byte var29 = 24;
-            class_1552 var37 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.method_23032());
-            class_7688 var45 = new class_7688(var1, var2.method_23032() + "checkbox", var1.method_32109() - 24 - var5, var4 + 6, 24, 24);
+            class_1552 var37 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.getName());
+            class_7688 var45 = new class_7688(var1, var2.getName() + "checkbox", var1.method_32109() - 24 - var5, var4 + 6, 24, 24);
             this.field_976.put(var37, var2);
             var45.method_34833((Boolean)var2.method_23031(), false);
             var2.method_23029(var1x -> {
@@ -45,10 +45,10 @@ public class class_273 extends class_2612 implements class_1768 {
          case field_26718:
             byte var20 = 126;
             byte var28 = 24;
-            class_1552 var36 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.method_23032());
+            class_1552 var36 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.getName());
             this.field_976.put(var36, var2);
             FloatSetting var44 = (FloatSetting)var2;
-            class_1479 var47 = new class_1479(var1, var2.method_23032() + "slider", var1.method_32109() - 126 - var5, var4 + 6, 126, 24);
+            class_1479 var47 = new class_1479(var1, var2.getName() + "slider", var1.method_32109() - 126 - var5, var4 + 6, 126, 24);
             var47.method_6824().method_32144(class_5320.field_27138);
             var47.method_32186(Float.toString((Float)var2.method_23031()));
             var47.method_6827(class_1479.method_6825(var44.method_12385(), var44.method_12387(), (Float)var44.method_23031()), false);
@@ -81,14 +81,14 @@ public class class_273 extends class_2612 implements class_1768 {
             byte var27 = 27;
             class_1552 var43;
             this.method_32148(
-               var43 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, var27, class_1552.field_8208, var2.method_23032())
+               var43 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, var27, class_1552.field_8208, var2.getName())
             );
             this.field_976.put(var43, var2);
             class_3004 var35;
             this.method_32148(
                var35 = new class_3004(
                   var1,
-                  var2.method_23032() + "txt",
+                  var2.getName() + "txt",
                   var1.method_32109() - var5 - var19,
                   var4 + var27 / 4 - 1,
                   var19,
@@ -109,10 +109,10 @@ public class class_273 extends class_2612 implements class_1768 {
          case field_26722:
             byte var18 = 123;
             byte var26 = 27;
-            class_1552 var34 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4 + 2, this.field_982, 27, class_1552.field_8208, var2.method_23032());
+            class_1552 var34 = new class_1552(var1, var2.getName() + "lbl", var3, var4 + 2, this.field_982, 27, class_1552.field_8208, var2.getName());
             class_3366 var42 = new class_3366(
                var1,
-               var2.method_23032() + "btn",
+               var2.getName() + "btn",
                var1.method_32109() - var5,
                var4 + 6 - 1,
                123,
@@ -138,7 +138,7 @@ public class class_273 extends class_2612 implements class_1768 {
          default:
             break;
          case field_26716:
-            class_7038 var17 = new class_7038(var1, var2.method_23032() + "view", var3, var4, var1.method_32109(), 0);
+            class_7038 var17 = new class_7038(var1, var2.getName() + "view", var3, var4, var1.method_32109(), 0);
             int var25 = 0;
 
             for (Setting var41 : ((class_7131)var2).method_9875()) {
@@ -153,10 +153,10 @@ public class class_273 extends class_2612 implements class_1768 {
          case field_26720:
             byte var16 = 123;
             byte var24 = 27;
-            class_1552 var32 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, 27, class_1552.field_8208, var2.method_23032());
+            class_1552 var32 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 27, class_1552.field_8208, var2.getName());
             class_9563 var40 = new class_9563(
                var1,
-               var2.method_23032() + "btn",
+               var2.getName() + "btn",
                var1.method_32109() - var5,
                var4 + 6,
                123,
@@ -179,10 +179,10 @@ public class class_273 extends class_2612 implements class_1768 {
          case field_26719:
             short var15 = 175;
             short var23 = 200;
-            class_1552 var31 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, 200, class_1552.field_8208, var2.method_23032());
+            class_1552 var31 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 200, class_1552.field_8208, var2.getName());
             class_1723 var39 = new class_1723(
                var1,
-               var2.method_23032() + "picker",
+               var2.getName() + "picker",
                var1.method_32109() - var5,
                var4 + 5,
                175,
@@ -201,9 +201,9 @@ public class class_273 extends class_2612 implements class_1768 {
             short var14 = 160;
             byte var22 = 114;
             ColorSetting var30 = (ColorSetting)var2;
-            class_1552 var38 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.method_23032());
+            class_1552 var38 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.getName());
             class_628 var46 = new class_628(
-               var1, var2.method_23032() + "color", var1.method_32109() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.method_23031(), var30.method_4268()
+               var1, var2.getName() + "color", var1.method_32109() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.method_23031(), var30.method_4268()
             );
             this.field_976.put(var38, var2);
             var2.method_23029(var3x -> {
@@ -222,10 +222,10 @@ public class class_273 extends class_2612 implements class_1768 {
             short var8 = 150;
             short var9 = 150;
             class_7928 var10 = (class_7928)var2.method_23031();
-            class_1552 var11 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.method_23032());
+            class_1552 var11 = new class_1552(var1, var2.getName() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.getName());
             class_8310 var12 = new class_8310(
                var1,
-               var2.method_23032() + "color",
+               var2.getName() + "color",
                var1.method_32109() - 150 - var5 + 10,
                var4,
                150,
@@ -309,8 +309,8 @@ public class class_273 extends class_2612 implements class_1768 {
          Setting var8 = (Setting)var6.getValue();
          if (var7.method_32183() && var7.method_32147()) {
             var4 = true;
-            this.field_981 = var8.method_23033();
-            this.field_980 = var8.method_23032();
+            this.field_981 = var8.getDescription();
+            this.field_980 = var8.getName();
             break;
          }
       }

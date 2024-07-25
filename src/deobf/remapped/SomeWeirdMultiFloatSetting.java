@@ -13,7 +13,7 @@ public class SomeWeirdMultiFloatSetting extends Setting<class_7928> {
 
    @Override
    public JSONObjectImpl loadDataFromJson(JSONObjectImpl var1) {
-      var1.method_5820("name", this.method_23032());
+      var1.method_5820("name", this.getName());
       var1.method_5820("value", this.method_23031().method_35842());
       return var1;
    }

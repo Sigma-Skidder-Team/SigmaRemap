@@ -25,8 +25,8 @@ public abstract class Module {
    }
 
    public void addSetting(Setting var1) {
-      if (!this.settingMap.containsKey(var1.method_23032())) {
-         this.settingMap.put(var1.method_23032(), var1);
+      if (!this.settingMap.containsKey(var1.getName())) {
+         this.settingMap.put(var1.getName(), var1);
       } else {
          throw new IllegalArgumentException("Attempted to add an option with the same name");
       }
@@ -138,13 +138,13 @@ public abstract class Module {
             }
 
             for (Setting var9 : this.settingMap.values()) {
-               if (var9.method_23032().equals(var7)) {
+               if (var9.getName().equals(var7)) {
                   try {
                      var9.saveDataToJson(var6);
                   } catch (class_7584 var11) {
                      SigmaMainClass.getInstance()
                         .method_3326()
-                        .method_12862("Could not initialize settings of " + this.getName() + "." + var9.method_23032() + " from config.");
+                        .method_12862("Could not initialize settings of " + this.getName() + "." + var9.getName() + " from config.");
                   }
                   break;
                }

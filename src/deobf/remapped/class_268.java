@@ -220,7 +220,7 @@ public class class_268 extends Module {
          String var11 = var10.getDescription();
          if (var4 == 3) {
             Setting var12 = this.method_1206(var10).get(var7.field_14700);
-            var11 = var12.method_23033();
+            var11 = var12.getDescription();
          }
 
          float var17 = class_3483.method_15985(this.field_956.method_11123(), 0.0F, 1.0F, 1.0F) * field_955.method_11123();
@@ -328,7 +328,7 @@ public class class_268 extends Module {
       ArrayList var4 = new ArrayList();
 
       for (Setting var6 : this.method_1206(var1)) {
-         var4.add(var6.method_23032() + " " + var6.method_23031());
+         var4.add(var6.getName() + " " + var6.method_23031());
       }
 
       return var4;
@@ -348,7 +348,7 @@ public class class_268 extends Module {
 
       while (var7.hasNext()) {
          Setting var6 = (Setting)var7.next();
-         if (var6.method_23032().equals("Keybind")) {
+         if (var6.getName().equals("Keybind")) {
             var7.remove();
          }
       }

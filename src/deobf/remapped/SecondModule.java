@@ -95,13 +95,13 @@ public class SecondModule extends Module {
                   }
 
                   for (Setting var14 : var8.settingMap.values()) {
-                     if (var14.method_23032().equals(var12)) {
+                     if (var14.getName().equals(var12)) {
                         try {
                            var14.saveDataToJson(var11);
                         } catch (class_7584 var16) {
                            SigmaMainClass.getInstance()
                               .method_3326()
-                              .method_12862("Could not initialize settings of " + var8.getName() + "." + var14.method_23032() + " from config.");
+                              .method_12862("Could not initialize settings of " + var8.getName() + "." + var14.getName() + " from config.");
                         }
                         break;
                      }

@@ -14,7 +14,7 @@ public class MultiSetting extends Setting<List<String>> {
 
    @Override
    public JSONObjectImpl loadDataFromJson(JSONObjectImpl var1) {
-      var1.method_5820("name", this.method_23032());
+      var1.method_5820("name", this.getName());
       var1.method_5820("value", new JSONArray(this.field_25890));
       return var1;
    }

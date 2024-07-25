@@ -18,6 +18,6 @@ public class class_5412 extends class_1859 {
          (float)(this.method_32173() + this.method_32137()),
          -3618616
       );
-      class_73.method_87(class_3054.field_14989, (float)(this.method_32132() + 5), (float)(this.method_32173() - 2), this.field_27596.method_23033(), -14540254);
+      class_73.method_87(class_3054.field_14989, (float)(this.method_32132() + 5), (float)(this.method_32173() - 2), this.field_27596.getDescription(), -14540254);
    }
 }
