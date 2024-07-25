@@ -8,7 +8,7 @@ import java.util.Locale.Category;
 import org.apache.commons.lang3.ArrayUtils;
 import org.lwjgl.opengl.GL11;
 
-public class class_6470 extends class_2596 {
+public class ExitScreenMenu extends class_2596 {
    public static long field_32965 = 0L;
    private int field_32971 = 0;
    private int field_32974 = 0;
@@ -60,7 +60,7 @@ public class class_6470 extends class_2596 {
    public class_9618 field_32969;
    public class_9618 field_32976;
 
-   public class_6470() {
+   public ExitScreenMenu() {
       super("Main Screen");
       this.method_32105(false);
       field_32965 = System.nanoTime();
@@ -289,7 +289,7 @@ public class class_6470 extends class_2596 {
             var3.add(new class_8888(class_2880.field_14100, "Agora", 45));
             var3.add(new class_8888(class_2880.field_14098, "Agora is not yet available...", 35));
             var3.add(new class_8888(class_2880.field_14103, "Ok", 55));
-            this.method_32150(this.field_32969 = new class_9618(this, "music", true, "Dependencies.", var3.<class_8888>toArray(new class_8888[0])));
+            this.method_32150(this.field_32969 = new class_9618((class_7038) this, "music", true, "Dependencies.", (class_8888) var3.toArray(new class_8888[0])));
             this.field_32969.method_44409(var1 -> new Thread(() -> {
                   try {
                      Thread.sleep(114L);

@@ -402,7 +402,7 @@ public class class_6763 {
    }
 
    static {
-      field_34895.put(class_1876.class, class_6470.class);
+      field_34895.put(class_1876.class, ExitScreenMenu.class);
       field_34895.put(class_1046.class, class_734.class);
       field_34895.put(class_9743.class, class_8441.class);
       field_34895.put(class_1786.class, class_2315.class);

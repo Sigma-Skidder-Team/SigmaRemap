@@ -131,7 +131,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
          )
       );
       this.field_8714.method_32100((var1x, var2x) -> {
-         ((class_6470)this.method_32167()).method_29473();
+         ((ExitScreenMenu)this.method_32167()).method_29473();
          new Thread(() -> {
             try {
                Thread.sleep(1900L);
@@ -145,12 +145,12 @@ public class AnotherSigmaMainMenu extends class_7038 {
       this.method_32148(this.field_8719 = new class_8911(this, "pre", 0, 0, 240, 100));
       this.field_8719.method_32184((var1x, var2x) -> {
          if (SigmaMainClass.method_3328().method_3332().method_23081() != null) {
-            ((class_6470)this.method_32167()).method_29468();
+            ((ExitScreenMenu)this.method_32167()).method_29468();
          } else {
             this.method_7601(new class_5702());
          }
       });
-      this.field_8724.method_32100((var1x, var2x) -> ((class_6470)this.method_32167()).method_29472());
+      this.field_8724.method_32100((var1x, var2x) -> ((ExitScreenMenu)this.method_32167()).method_29472());
       this.field_8718.method_32100((var1x, var2x) -> this.method_7600(new class_7899(MinecraftClient.getInstance().field_9623)));
       this.field_8721.method_32100((var1x, var2x) -> this.method_7600(new class_9888(MinecraftClient.getInstance().field_9623)));
       this.field_8717
@@ -159,7 +159,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       this.field_8713.method_32100((var1x, var2x) -> this.method_7597());
       this.field_8716.method_32100((var1x, var2x) -> {
          if (SigmaMainClass.method_3328().method_3332().method_23081() != null) {
-            ((class_6470)this.method_32167()).method_29469();
+            ((ExitScreenMenu)this.method_32167()).method_29469();
          } else {
             this.method_7601(new class_5702());
          }

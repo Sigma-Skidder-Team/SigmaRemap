@@ -15,7 +15,7 @@ public abstract class class_5875 implements class_8266, Runnable {
          field_29831.error("", var4);
       }
    }
-   
+
    public static void method_26755(Screen var0) {
       MinecraftClient var3 = MinecraftClient.getInstance();
       var3.execute(() -> var3.method_8609(var0));

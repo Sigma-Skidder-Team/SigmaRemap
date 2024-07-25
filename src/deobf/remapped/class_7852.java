@@ -40,7 +40,7 @@ public class class_7852 extends class_7038 {
             }
 
             if (SigmaMainClass.method_3328().method_3332().method_23084()) {
-               this.method_32102(() -> ((class_6470)this.method_32167()).method_29470());
+               this.method_32102(() -> ((ExitScreenMenu)this.method_32167()).method_29470());
             }
          }).start());
    }

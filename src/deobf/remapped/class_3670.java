@@ -29,8 +29,8 @@ public class class_3670 extends class_7038 {
          this.field_17888 = (float)this.field_36261;
       }
 
-      this.field_17889 = this.field_17889 + this.field_17892 * class_6470.field_32966;
-      this.field_17888 = this.field_17888 + this.field_17893 * class_6470.field_32966;
+      this.field_17889 = this.field_17889 + this.field_17892 * ExitScreenMenu.field_32966;
+      this.field_17888 = this.field_17888 + this.field_17893 * ExitScreenMenu.field_32966;
       this.field_36270 = Math.round(this.field_17889);
       this.field_36261 = Math.round(this.field_17888);
       if (!(this.field_17889 + (float)this.field_36278 < 0.0F)) {
@@ -53,8 +53,8 @@ public class class_3670 extends class_7038 {
       float var6 = (float)(var2 - this.method_32093());
       this.field_17894 = (float)(1.0 - Math.sqrt((double)(var5 * var5 + var6 * var6)) / (double)this.field_17897);
       if (!(Math.sqrt((double)(var5 * var5 + var6 * var6)) < (double)this.field_17897)) {
-         this.field_17892 = this.field_17892 - (this.field_17892 - this.field_17898) * 0.05F * class_6470.field_32966;
-         this.field_17893 = this.field_17893 - (this.field_17893 - this.field_17887) * 0.05F * class_6470.field_32966;
+         this.field_17892 = this.field_17892 - (this.field_17892 - this.field_17898) * 0.05F * ExitScreenMenu.field_32966;
+         this.field_17893 = this.field_17893 - (this.field_17893 - this.field_17887) * 0.05F * ExitScreenMenu.field_32966;
       } else {
          float var7 = this.field_17889 - (float)var1;
          float var8 = this.field_17888 - (float)var2;
@@ -62,8 +62,8 @@ public class class_3670 extends class_7038 {
          float var10 = var9 / 2.0F;
          float var11 = var7 / var10;
          float var12 = var8 / var10;
-         this.field_17892 = this.field_17892 + var11 / (1.0F + this.field_17894) * class_6470.field_32966;
-         this.field_17893 = this.field_17893 + var12 / (1.0F + this.field_17894) * class_6470.field_32966;
+         this.field_17892 = this.field_17892 + var11 / (1.0F + this.field_17894) * ExitScreenMenu.field_32966;
+         this.field_17893 = this.field_17893 + var12 / (1.0F + this.field_17894) * ExitScreenMenu.field_32966;
       }
 
       this.field_17896 = var1;
