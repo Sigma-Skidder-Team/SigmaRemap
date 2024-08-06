@@ -79,7 +79,7 @@ public class class_3778 extends class_2596 {
          byte var4 = 40;
          float var5 = -field_18442 / (float) MinecraftClient.getInstance().window.method_43166();
          float var6 = -field_18444 / (float) MinecraftClient.getInstance().window.method_43163();
-         class_73.method_96(
+         FontManager.method_96(
             (float)var4 * var5,
             (float)var4 * var6,
             (float)(MinecraftClient.getInstance().window.method_43166() + var4),
@@ -89,7 +89,7 @@ public class class_3778 extends class_2596 {
          float var7 = class_5181.method_23766(field_18445.method_11123(), 0.16, 0.71, 0.0, 0.99);
          int var8 = (MinecraftClient.getInstance().window.method_43166() - 455) / 2;
          int var9 = (int)((float)((MinecraftClient.getInstance().window.method_43163() - 78) / 2 - 14) - 116.0F * var7);
-         class_73.method_103(
+         FontManager.method_103(
             0.0F,
             0.0F,
             (float) MinecraftClient.getInstance().window.method_43166(),
@@ -97,7 +97,7 @@ public class class_3778 extends class_2596 {
             class_314.method_1444(class_1255.field_6929.field_6917, 0.3F)
          );
          super.method_32178(var1);
-         class_73.method_99(
+         FontManager.method_99(
             0.0F,
             0.0F,
             (float) MinecraftClient.getInstance().window.method_43166(),
@@ -105,14 +105,14 @@ public class class_3778 extends class_2596 {
             class_6340.field_32371,
             class_314.method_1444(class_1255.field_6918.field_6917, 1.0F - field_18445.method_11123())
          );
-         class_73.method_103(
+         FontManager.method_103(
             0.0F,
             0.0F,
             (float) MinecraftClient.getInstance().window.method_43166(),
             (float) MinecraftClient.getInstance().window.method_43163(),
             class_314.method_1444(0, 0.75F * (1.0F - field_18445.method_11123()))
          );
-         class_73.method_96((float)var8, (float)var9, 455.0F, 78.0F, class_6340.field_32372);
+         FontManager.method_96((float)var8, (float)var9, 455.0F, 78.0F, class_6340.field_32372);
       }
    }
 

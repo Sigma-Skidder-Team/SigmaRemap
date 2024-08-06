@@ -23,8 +23,8 @@ public class AnotherSigmaMainMenu extends class_7038 {
       byte var12 = 2;
       short var13 = 128;
       short var14 = 128;
-      class_3384 var15 = class_5320.field_27152;
-      class_3384 var16 = class_5320.field_27139;
+      FontRenderer var15 = class_5320.field_27152;
+      FontRenderer var16 = class_5320.field_27139;
       int var17 = 0;
       byte var18 = 80;
       byte var19 = 10;
@@ -188,7 +188,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
          var4 = NotificationIcons.logo_large2x;
       }
 
-      class_73.method_99(
+      FontManager.method_99(
          (float)(this.method_32109() / 2 - var5 / 2),
          (float)(this.method_32137() / 2 - var6),
          (float)var5,

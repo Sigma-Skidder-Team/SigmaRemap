@@ -74,7 +74,7 @@ public class class_3670 extends class_7038 {
    public void method_32178(float var1) {
       float var4 = 0.07F;
       float var5 = 0.3F;
-      class_73.method_124(
+      FontManager.method_124(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.method_32109(),

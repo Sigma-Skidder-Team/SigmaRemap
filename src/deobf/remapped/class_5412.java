@@ -11,13 +11,13 @@ public class class_5412 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),
          (float)(this.method_32173() + this.method_32137()),
          -3618616
       );
-      class_73.method_87(class_3054.field_14989, (float)(this.method_32132() + 5), (float)(this.method_32173() - 2), this.field_27596.getDescription(), -14540254);
+      FontManager.method_87(class_3054.field_14989, (float)(this.method_32132() + 5), (float)(this.method_32173() - 2), this.field_27596.getDescription(), -14540254);
    }
 }

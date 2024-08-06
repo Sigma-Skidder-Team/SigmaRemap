@@ -36,7 +36,7 @@ public class class_3451 extends class_1859 {
    @Override
    public void method_32178(float var1) {
       byte var4 = 14;
-      class_73.method_128(
+      FontManager.method_128(
          (float)(this.field_36270 + var4 / 2),
          (float)(this.field_36261 + var4 / 2),
          (float)(this.field_36278 - var4),
@@ -49,7 +49,7 @@ public class class_3451 extends class_1859 {
          var5 = 0.95F;
       }
 
-      class_73.method_108(
+      FontManager.method_108(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,
@@ -57,7 +57,7 @@ public class class_3451 extends class_1859 {
          14.0F,
          class_314.method_1444(class_1255.field_6918.field_6917, var5)
       );
-      class_73.method_139(
+      FontManager.method_139(
          (float)(this.field_36270 + this.field_16930),
          (float)this.field_36261,
          (float)(this.field_36278 - this.field_16930),
@@ -65,11 +65,11 @@ public class class_3451 extends class_1859 {
          14.0F,
          -7687425
       );
-      class_73.method_107();
-      class_73.method_139(
+      FontManager.method_107();
+      FontManager.method_139(
          (float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, 14.0F, class_1255.field_6918.field_6917
       );
-      class_73.method_85(class_3118.field_15505);
+      FontManager.method_85(class_3118.field_15505);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)this.method_32132(), (float)this.method_32173(), 0.0F);
       this.field_16931.method_32178(var1);
@@ -78,8 +78,8 @@ public class class_3451 extends class_1859 {
       GL11.glTranslatef((float)this.method_32132(), (float)this.method_32173(), 0.0F);
       this.field_16933.method_32178(var1);
       GL11.glPopMatrix();
-      class_73.method_145();
-      class_73.method_103(
+      FontManager.method_145();
+      FontManager.method_103(
          (float)(this.field_36270 + this.field_16930),
          (float)(this.field_36261 + 0),
          1.0F,
@@ -88,8 +88,8 @@ public class class_3451 extends class_1859 {
       );
       int var6 = class_314.method_1444(class_314.method_1401(-7687425, 0.2F), 0.8F);
       var6 = class_314.method_1444(class_1255.field_6929.field_6917, 0.6F);
-      class_73.method_87(class_5320.field_27141, (float)(this.field_36270 + 30), (float)(this.field_36261 + 25), "Waypoints", var6);
-      class_73.method_87(
+      FontManager.method_87(class_5320.field_27141, (float)(this.field_36270 + 30), (float)(this.field_36261 + 25), "Waypoints", var6);
+      FontManager.method_87(
          class_5320.field_27147,
          (float)this.field_36270,
          (float)((this.field_36283.method_32137() - this.field_36257) / 2 - 70),
@@ -97,7 +97,7 @@ public class class_3451 extends class_1859 {
          class_1255.field_6918.field_6917
       );
       String var7 = SigmaMainClass.getInstance().method_3309().method_21978().replace("/", " - ");
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27150,
          (float)(this.field_36270 + this.field_36278 - class_5320.field_27150.method_18547(var7) - 10),
          (float)((this.field_36283.method_32137() - this.field_36257) / 2 - 62),

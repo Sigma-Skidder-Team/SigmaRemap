@@ -97,8 +97,8 @@ public class ProjectilesModule extends Module {
                      double var47 = (double)(var4.field_16449.method_37086() / 2.0F + 0.2F);
                      double var35 = (double)(var4.field_16449.method_37074() + 0.1F);
                      class_8194 var37 = new class_8194(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
-                     class_73.method_83(var37, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
-                     class_73.method_131(var37, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
+                     FontManager.method_83(var37, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
+                     FontManager.method_131(var37, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
                   }
                } else {
                   double var49 = var4.field_16461 - client.gameRenderer.method_35949().method_41627().method_61();
@@ -121,8 +121,8 @@ public class ProjectilesModule extends Module {
                   );
                   GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
                   class_8194 var34 = new class_8194(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
-                  class_73.method_83(var34, class_314.method_1444(class_1255.field_6922.field_6917, 0.1F));
-                  class_73.method_131(var34, class_314.method_1444(class_1255.field_6922.field_6917, 0.1F));
+                  FontManager.method_83(var34, class_314.method_1444(class_1255.field_6922.field_6917, 0.1F));
+                  FontManager.method_131(var34, class_314.method_1444(class_1255.field_6922.field_6917, 0.1F));
                   GL11.glPopMatrix();
                }
 

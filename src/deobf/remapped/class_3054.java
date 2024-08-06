@@ -14,17 +14,17 @@ public class class_3054 {
    public static class_8343 field_15010;
    public static class_8343 field_14987;
    public static class_8343 field_15007;
-   public static class_3384 field_15008;
-   public static class_3384 field_14988;
-   public static class_3384 field_14994;
-   public static class_3384 field_14989;
-   public static class_3384 field_15006;
-   public static class_3384 field_14992;
-   public static class_3384 field_14991;
-   public static class_3384 field_14998;
-   public static class_3384 field_14990;
-   public static class_3384 field_15002;
-   public static class_3384 field_14997;
+   public static FontRenderer field_15008;
+   public static FontRenderer field_14988;
+   public static FontRenderer field_14994;
+   public static FontRenderer field_14989;
+   public static FontRenderer field_15006;
+   public static FontRenderer field_14992;
+   public static FontRenderer field_14991;
+   public static FontRenderer field_14998;
+   public static FontRenderer field_14990;
+   public static FontRenderer field_15002;
+   public static FontRenderer field_14997;
 
    public static void method_13951() {
       field_14996 = NotificationIcons.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/singleplayer.png");

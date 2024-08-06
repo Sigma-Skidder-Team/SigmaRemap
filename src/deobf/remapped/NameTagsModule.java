@@ -252,7 +252,7 @@ public class NameTagsModule extends Module {
    }
 
    public void method_5290(BlockPos var1, class_1325 var2, float var3) {
-      class_3384 var6 = class_5320.field_27141;
+      FontRenderer var6 = class_5320.field_27141;
       String var7 = "None";
       if (var2.field_7295 != null) {
          var7 = var2.field_7295.field_31206 + " " + var2.field_7295.method_28008();
@@ -291,24 +291,24 @@ public class NameTagsModule extends Module {
       int var18 = 85 + var13 * 2;
       GL11.glTranslated((double)(-var17 / 2), (double)(-var18 / 2), 0.0);
       byte var19 = 40;
-      class_73.method_94(0.0F, 0.0F, (float)var17, (float)var18, this.field_6702);
-      class_73.method_128(0.0F, 0.0F, (float)var17, (float)var18, 20.0F, 0.5F);
-      class_73.method_87(var6, (float)var13, (float)(var13 - 5), "Furnace", class_1255.field_6918.field_6917);
+      FontManager.method_94(0.0F, 0.0F, (float)var17, (float)var18, this.field_6702);
+      FontManager.method_128(0.0F, 0.0F, (float)var17, (float)var18, 20.0F, 0.5F);
+      FontManager.method_87(var6, (float)var13, (float)(var13 - 5), "Furnace", class_1255.field_6918.field_6917);
       if (var16 == null) {
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27152, (float)(var13 + 15), (float)(var13 + 40), "Empty", class_314.method_1444(class_1255.field_6918.field_6917, 0.6F)
          );
       }
 
       ItemStack var20 = var2.method_6050();
       if (var20 != null) {
-         class_73.method_126(var20, var13, var13 + 27, 45, 45);
-         class_73.method_87(class_5320.field_27152, (float)(var13 + 51), 40.0F, var20.method_28008().getString(), class_1255.field_6918.field_6917);
-         class_73.method_87(class_5320.field_27138, (float)(var13 + 51), 62.0F, "Count: " + var20.field_31206, class_1255.field_6918.field_6917);
+         FontManager.method_126(var20, var13, var13 + 27, 45, 45);
+         FontManager.method_87(class_5320.field_27152, (float)(var13 + 51), 40.0F, var20.method_28008().getString(), class_1255.field_6918.field_6917);
+         FontManager.method_87(class_5320.field_27138, (float)(var13 + 51), 62.0F, "Count: " + var20.field_31206, class_1255.field_6918.field_6917);
       }
 
-      class_73.method_94(0.0F, (float)var18 - 12.0F, Math.min((float)var17 * var12, (float)var17), (float)var18 - 6.0F, class_314.method_1444(-106750, 0.3F));
-      class_73.method_94(
+      FontManager.method_94(0.0F, (float)var18 - 12.0F, Math.min((float)var17 * var12, (float)var17), (float)var18 - 6.0F, class_314.method_1444(-106750, 0.3F));
+      FontManager.method_94(
          0.0F, (float)var18 - 6.0F, Math.min((float)var17 * var11, (float)var17), (float)var18, class_314.method_1444(class_1255.field_6918.field_6917, 0.75F)
       );
       GL11.glPopMatrix();
@@ -322,7 +322,7 @@ public class NameTagsModule extends Module {
    }
 
    public void method_5289(double var1, double var3, double var5, Entity var7, float var8, String var9) {
-      class_3384 var12 = class_5320.field_27141;
+      FontRenderer var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
       if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).method_42015() && var13.equals(client.method_8502().method_5366())) {
          var13 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).getStringValueByName("Username");
@@ -360,10 +360,10 @@ public class NameTagsModule extends Module {
          );
          int var21 = var12.method_18547(var13) / 2;
          if (!field_6698.containsKey(var13)) {
-            class_73.method_128((float)(-var21 - 10), -25.0F, (float)(var21 * 2 + 20), (float)(var12.method_15654() + 27), 20.0F, 0.5F);
+            FontManager.method_128((float)(-var21 - 10), -25.0F, (float)(var21 * 2 + 20), (float)(var12.method_15654() + 27), 20.0F, 0.5F);
          } else {
             int var22 = Color.getHSBColor((float)(System.currentTimeMillis() % 10000L) / 10000.0F, 0.5F, 1.0F).getRGB();
-            class_73.method_99(
+            FontManager.method_99(
                (float)(-var21 - 10 - 31),
                -25.0F,
                (float)(var12.method_15654() + 27),
@@ -371,7 +371,7 @@ public class NameTagsModule extends Module {
                field_6698.get(var13),
                class_314.method_1444(var22, 0.7F)
             );
-            class_73.method_99(
+            FontManager.method_99(
                (float)(-var21 - 10 - 31 + var12.method_15654() + 27),
                -25.0F,
                14.0F,
@@ -379,12 +379,12 @@ public class NameTagsModule extends Module {
                NotificationIcons.shadow_right,
                class_314.method_1444(class_1255.field_6918.field_6917, 0.6F)
             );
-            class_73.method_128((float)(-var21 - 10 - 31), -25.0F, (float)(var21 * 2 + 20 + 31 + 27), (float)(var12.method_15654() + 27), 20.0F, 0.5F);
+            FontManager.method_128((float)(-var21 - 10 - 31), -25.0F, (float)(var21 * 2 + 20 + 31 + 27), (float)(var12.method_15654() + 27), 20.0F, 0.5F);
             GL11.glTranslatef(27.0F, 0.0F, 0.0F);
          }
 
-         class_73.method_94((float)(-var21 - 10), -25.0F, (float)(var21 + 10), (float)(var12.method_15654() + 2), var19);
-         class_73.method_94(
+         FontManager.method_94((float)(-var21 - 10), -25.0F, (float)(var21 + 10), (float)(var12.method_15654() + 2), var19);
+         FontManager.method_94(
             (float)(-var21 - 10),
             (float)(var12.method_15654() - 1) - (float)((LivingEntity)var7).field_29645 / 3.0F,
             Math.min((float)(var21 * 2 + 20) * (var18 - 0.5F), (float)(var21 + 10)),
@@ -400,11 +400,11 @@ public class NameTagsModule extends Module {
             var23 = "H: ";
          }
 
-         class_73.method_87(var12, 0.0F, -20.0F, var13, class_1255.field_6918.field_6917);
-         class_73.method_87(class_5320.field_27138, 0.0F, 10.0F, var23 + var17, class_1255.field_6918.field_6917);
+         FontManager.method_87(var12, 0.0F, -20.0F, var13, class_1255.field_6918.field_6917);
+         FontManager.method_87(class_5320.field_27138, 0.0F, 10.0F, var23 + var17, class_1255.field_6918.field_6917);
          class_4567 var25 = SigmaMainClass.getInstance().getAccountManager().sigmaIRC.method_20845(var7);
          if (var25 != null) {
-            class_73.method_87(class_5320.field_27138, 0.0F, -30.0F, var25.field_22258, class_1255.field_6918.field_6917);
+            FontManager.method_87(class_5320.field_27138, 0.0F, -30.0F, var25.field_22258, class_1255.field_6918.field_6917);
          }
 
          GL11.glPopMatrix();

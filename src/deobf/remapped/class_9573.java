@@ -54,10 +54,10 @@ public class class_9573 extends class_4098 {
          for (class_7038 var5 : this.method_32134()) {
             if (var5 instanceof class_4599 && this.field_19963.method_11123() == 1.0F && var5.method_32120(this.method_32189(), this.method_32129())) {
                class_4599 var6 = (class_4599)var5;
-               class_73.method_87(class_3054.field_14989, 20.0F, (float)(this.method_32137() - 26), var6.field_22361.getDescription(), -14540254);
-               class_73.method_135(5.0F, (float)(this.method_32137() - 27), 12.0F, 24.0F);
-               class_73.method_96(5.0F, (float)(this.method_32137() - 27), 24.0F, 24.0F, class_9898.field_50195);
-               class_73.method_141();
+               FontManager.method_87(class_3054.field_14989, 20.0F, (float)(this.method_32137() - 26), var6.field_22361.getDescription(), -14540254);
+               FontManager.method_135(5.0F, (float)(this.method_32137() - 27), 12.0F, 24.0F);
+               FontManager.method_96(5.0F, (float)(this.method_32137() - 27), 24.0F, 24.0F, class_9898.field_50195);
+               FontManager.method_141();
                break;
             }
          }

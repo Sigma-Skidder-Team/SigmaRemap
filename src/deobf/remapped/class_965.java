@@ -64,10 +64,10 @@ public class class_965 extends class_2596 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_96(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_3054.field_15004);
-      class_73.method_94(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6912.field_6917, 0.1F));
-      class_73.method_94(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6929.field_6917, 0.95F));
-      class_73.method_88(
+      FontManager.method_96(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_3054.field_15004);
+      FontManager.method_94(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6912.field_6917, 0.1F));
+      FontManager.method_94(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6929.field_6917, 0.95F));
+      FontManager.method_88(
          class_5320.field_27156,
          (float)(this.method_32109() / 2),
          38.0F,
@@ -76,7 +76,7 @@ public class class_965 extends class_2596 {
          class_6206.field_31726,
          class_6206.field_31724
       );
-      class_73.method_89(
+      FontManager.method_89(
          class_5320.field_27156,
          (float)(this.method_32109() / 2),
          58.0F,

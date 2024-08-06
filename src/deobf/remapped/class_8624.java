@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import org.lwjgl.opengl.GL11;
 
-public class class_8624 extends class_3384 {
+public class class_8624 extends FontRenderer {
    public final int field_44252;
    public MinecraftClient field_44253 = MinecraftClient.getInstance();
 

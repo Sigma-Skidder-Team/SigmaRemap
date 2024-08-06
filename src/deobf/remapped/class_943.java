@@ -78,20 +78,20 @@ public class class_943 extends class_1859 {
       super.method_32190();
       super.method_32130();
       byte var4 = 28;
-      class_73.method_97((float)(this.field_36270 + var4), (float)(this.field_36261 + var4 + 10), 160.0F, 160.0F, NotificationIcons.sigmamental, var1);
+      FontManager.method_97((float)(this.field_36270 + var4), (float)(this.field_36261 + var4 + 10), 160.0F, 160.0F, NotificationIcons.sigmamental, var1);
       class_8646 var5 = SigmaMainClass.getInstance().getAccountManager().method_23083();
       if (var5 != null) {
          this.field_4818.method_32104(var5.method_39653());
          if (var5.method_39653()) {
-            class_73.method_103(
+            FontManager.method_103(
                (float)(this.field_36270 + 330), (float)(this.field_36261 + 255), 114.0F, 40.0F, class_314.method_1444(class_1255.field_6929.field_6917, 0.04F)
             );
          }
 
          if (var5.method_39654() != null) {
-            class_73.method_135((float)(this.field_36270 + 316), (float)(this.field_36261 + 255), 190.0F, 50.0F);
-            class_73.method_96((float)(this.field_36270 + 316), (float)(this.field_36261 + 255), 190.0F, 190.0F, var5.method_39654());
-            class_73.method_141();
+            FontManager.method_135((float)(this.field_36270 + 316), (float)(this.field_36261 + 255), 190.0F, 50.0F);
+            FontManager.method_96((float)(this.field_36270 + 316), (float)(this.field_36261 + 255), 190.0F, 190.0F, var5.method_39654());
+            FontManager.method_141();
          }
       }
 

@@ -71,7 +71,7 @@ public class JelloMapsMenu extends class_2596 {
       float var4 = class_9556.method_44073(var1, 0.0F, 1.0F, 1.0F);
       this.method_32111(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.field_36278),

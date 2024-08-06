@@ -51,15 +51,15 @@ public class class_6738 extends class_1859 {
          }
       }
 
-      class_73.method_150(this.field_36270, this.field_36261, this.field_36270 + this.field_36278, this.field_36261 + this.field_36257, true);
-      class_73.method_87(
+      FontManager.method_150(this.field_36270, this.field_36261, this.field_36270 + this.field_36278, this.field_36261 + this.field_36257, true);
+      FontManager.method_87(
          class_5320.field_27154,
          (float)(this.field_36270 + 25),
          (float)this.field_36261 + (float)this.field_36257 / 2.0F - 17.5F,
          this.field_34787.method_5460(),
          class_314.method_1444(class_1255.field_6929.field_6917, 0.6F * var1)
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27145,
          (float)(this.field_36270 + 25),
          (float)this.field_36261 + (float)this.field_36257 / 2.0F + 7.5F,
@@ -68,6 +68,6 @@ public class class_6738 extends class_1859 {
       );
       this.field_34783.method_32117((int)((float)this.field_36257 / 2.0F - 7.5F));
       super.method_32178(var1);
-      class_73.method_141();
+      FontManager.method_141();
    }
 }

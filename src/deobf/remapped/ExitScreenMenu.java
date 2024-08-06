@@ -171,14 +171,14 @@ public class ExitScreenMenu extends class_2596 {
          int var17 = (int)(600.0F * var16);
          int var18 = (int)(450.0F * var16);
          byte var19 = 0;
-         class_73.method_96(
+         FontManager.method_96(
             (float)this.field_32974 - (float)var17 * var12,
             (float)this.field_32971,
             (float)(this.method_32109() * 2 + var17),
             (float)(this.method_32137() + 114),
             NotificationIcons.background
          );
-         class_73.method_96(
+         FontManager.method_96(
             (float)this.field_32974 - (float)var18 * var12,
             (float)this.field_32971,
             (float)(this.method_32109() * 2 + var18),
@@ -192,7 +192,7 @@ public class ExitScreenMenu extends class_2596 {
             GL11.glPopMatrix();
          }
 
-         class_73.method_96(
+         FontManager.method_96(
             (float)this.field_32974 - (float)var19 * var12,
             (float)this.field_32971,
             (float)(this.method_32109() * 2 + var19),
@@ -206,7 +206,7 @@ public class ExitScreenMenu extends class_2596 {
             var26 = NotificationIcons.logo_large2x;
          }
 
-         class_73.method_102(
+         FontManager.method_102(
             (float)this.field_32974,
             (float)(this.field_32971 - 50),
             (float)(this.method_32109() * 2),
@@ -215,7 +215,7 @@ public class ExitScreenMenu extends class_2596 {
             class_314.method_1444(class_1255.field_6918.field_6917, var4),
             false
          );
-         class_73.method_103(
+         FontManager.method_103(
             0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6929.field_6917, var4 * 0.3F)
          );
 
@@ -252,7 +252,7 @@ public class ExitScreenMenu extends class_2596 {
          }
 
          if (this.field_32975.method_11128() == class_4043.field_19620) {
-            class_73.method_88(
+            FontManager.method_88(
                class_5320.field_27144,
                (float)(this.field_36278 / 2),
                (float)(this.field_36257 / 2 - 30),
@@ -261,7 +261,7 @@ public class ExitScreenMenu extends class_2596 {
                class_6206.field_31726,
                class_6206.field_31726
             );
-            class_73.method_88(
+            FontManager.method_88(
                class_5320.field_27139,
                (float)(this.field_36278 / 2),
                (float)(this.field_36257 / 2 + 30),

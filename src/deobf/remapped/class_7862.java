@@ -28,7 +28,7 @@ public class class_7862 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_103((float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, this.field_40257);
+      FontManager.method_103((float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, this.field_40257);
       super.method_32178(var1);
    }
 

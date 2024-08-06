@@ -37,11 +37,11 @@ public class class_2377 extends class_1859 {
       int var4 = class_314.method_1444(Color.HSBtoRGB(this.field_11882, 0.0F, 1.0F), var1);
       int var5 = class_314.method_1444(Color.HSBtoRGB(this.field_11882, 1.0F, 1.0F), var1);
       int var6 = class_314.method_1444(class_1255.field_6929.field_6917, var1);
-      class_73.method_151(this);
-      class_73.method_82(
+      FontManager.method_151(this);
+      FontManager.method_82(
          this.method_32132(), this.method_32173(), this.method_32132() + this.method_32109(), this.method_32173() + this.method_32137(), var4, var5, var5, var4
       );
-      class_73.method_82(
+      FontManager.method_82(
          this.method_32132(),
          this.method_32173(),
          this.method_32132() + this.method_32109(),
@@ -57,14 +57,14 @@ public class class_2377 extends class_1859 {
          Color.HSBtoRGB(this.field_11882, this.field_11884, this.field_11881),
          var1
       );
-      class_73.method_109(
+      FontManager.method_109(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),
          (float)(this.method_32173() + this.method_32137()),
          class_314.method_1444(class_1255.field_6929.field_6917, 0.25F * var1)
       );
-      class_73.method_141();
+      FontManager.method_141();
       super.method_32178(var1);
    }
 

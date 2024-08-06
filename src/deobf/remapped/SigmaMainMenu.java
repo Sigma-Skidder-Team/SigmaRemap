@@ -79,7 +79,7 @@ public class SigmaMainMenu extends class_7038 {
    @Override
    public void method_32178(float var1) {
       this.method_32130();
-      class_73.method_96((float)(this.field_36270 + (this.method_32109() - 300) / 2), (float)(this.field_36261 + 30), 300.0F, 97.0F, class_3054.field_15010);
+      FontManager.method_96((float)(this.field_36270 + (this.method_32109() - 300) / 2), (float)(this.field_36261 + 30), 300.0F, 97.0F, class_3054.field_15010);
       super.method_32178(var1);
    }
 }

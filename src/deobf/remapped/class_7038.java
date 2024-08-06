@@ -29,7 +29,7 @@ public class class_7038 implements class_6482 {
    public boolean field_36264;
    public boolean field_36255;
    public String field_36275;
-   public class_3384 field_36258;
+   public FontRenderer field_36258;
    public class_590 field_36272;
    private ArrayList<Runnable> field_36251 = new ArrayList<Runnable>();
    private final List<class_7038> field_36253 = new ArrayList<class_7038>();
@@ -60,7 +60,7 @@ public class class_7038 implements class_6482 {
       this(var1, var2, var3, var4, var5, var6, var7, var8, class_5320.field_27141);
    }
 
-   public class_7038(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, class_3384 var9) {
+   public class_7038(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, FontRenderer var9) {
       this.field_36268 = var2;
       this.field_36283 = var1;
       this.field_36270 = var3;
@@ -823,11 +823,11 @@ public class class_7038 implements class_6482 {
       this.field_36275 = var1;
    }
 
-   public class_3384 method_32097() {
+   public FontRenderer method_32097() {
       return this.field_36258;
    }
 
-   public void method_32144(class_3384 var1) {
+   public void method_32144(FontRenderer var1) {
       this.field_36258 = var1;
    }
 

@@ -117,9 +117,9 @@ public class MiniMapModule extends Module {
                   this.field_25732 = var1.method_14966();
                   if (var4 != null) {
                      String var5 = "^";
-                     class_3384 var6 = class_5320.field_27161;
+                     FontRenderer var6 = class_5320.field_27161;
                      float var7 = 1.5F;
-                     class_73.method_103((float)this.field_25731, (float)this.field_25732, (float)this.field_25740, (float)this.field_25733, -7687425);
+                     FontManager.method_103((float)this.field_25731, (float)this.field_25732, (float)this.field_25740, (float)this.field_25733, -7687425);
                      GL11.glPushMatrix();
                      float var8 = (float)(this.field_25740 / this.field_25729);
                      float var9 = (float)((double)(var8 * var7) * this.field_25734);
@@ -129,12 +129,12 @@ public class MiniMapModule extends Module {
                      GL11.glTranslatef((float)(-this.field_25740 / 2), (float)(-this.field_25733 / 2), 0.0F);
                      float var11 = (float)this.field_25740 * var7;
                      float var12 = (float)this.field_25733 * var7;
-                     class_73.method_149(this.field_25731, this.field_25732, this.field_25731 + this.field_25740, this.field_25732 + this.field_25733);
-                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, NotificationIcons.shouticon);
+                     FontManager.method_149(this.field_25731, this.field_25732, this.field_25731 + this.field_25740, this.field_25732 + this.field_25733);
+                     FontManager.method_96(0.0F, 0.0F, 0.0F, 0.0F, NotificationIcons.shouticon);
                      float var13 = -var11 / 2.0F + (float)(this.field_25740 / 2) + var9;
                      float var14 = -var12 / 2.0F + (float)(this.field_25733 / 2) + var10;
-                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, NotificationIcons.gingerbread);
-                     class_73.method_138(
+                     FontManager.method_96(0.0F, 0.0F, 0.0F, 0.0F, NotificationIcons.gingerbread);
+                     FontManager.method_138(
                         var13,
                         var14,
                         var11,
@@ -148,14 +148,14 @@ public class MiniMapModule extends Module {
                         true,
                         false
                      );
-                     class_73.method_141();
+                     FontManager.method_141();
                      GL11.glPopMatrix();
                      GL11.glPushMatrix();
                      int var15 = (int)class_8865.method_40787()[0];
                      GL11.glTranslatef((float)(this.field_25731 + this.field_25740 / 2 + 1), (float)(this.field_25732 + this.field_25733 / 2 + 3), 0.0F);
                      GL11.glRotatef((float)(270 + var15) - client.thePlayer.rotationYaw, 0.0F, 0.0F, 1.0F);
                      GL11.glTranslatef((float)(-(this.field_25731 + this.field_25740 / 2 + 1)), (float)(-(this.field_25732 + this.field_25733 / 2)), 0.0F);
-                     class_73.method_87(
+                     FontManager.method_87(
                         var6, (float)(this.field_25731 + this.field_25740 / 2 - 4), (float)(this.field_25732 + this.field_25733 / 2 - 8), var5, 1879048192
                      );
                      GL11.glPopMatrix();
@@ -163,7 +163,7 @@ public class MiniMapModule extends Module {
                      GL11.glTranslatef((float)(this.field_25731 + this.field_25740 / 2 + 1), (float)(this.field_25732 + this.field_25733 / 2), 0.0F);
                      GL11.glRotatef((float)(270 + var15) - client.thePlayer.rotationYaw, 0.0F, 0.0F, 1.0F);
                      GL11.glTranslatef((float)(-(this.field_25731 + this.field_25740 / 2 + 1)), (float)(-(this.field_25732 + this.field_25733 / 2)), 0.0F);
-                     class_73.method_87(
+                     FontManager.method_87(
                         var6,
                         (float)(this.field_25731 + this.field_25740 / 2 - 4),
                         (float)(this.field_25732 + this.field_25733 / 2 - 8),
@@ -171,8 +171,8 @@ public class MiniMapModule extends Module {
                         class_1255.field_6918.field_6917
                      );
                      GL11.glPopMatrix();
-                     class_73.method_147((float)this.field_25731, (float)this.field_25732, (float)this.field_25740, (float)this.field_25733, 23.0F, 0.75F);
-                     class_73.method_128((float)this.field_25731, (float)this.field_25732, (float)this.field_25740, (float)this.field_25733, 8.0F, 0.7F);
+                     FontManager.method_147((float)this.field_25731, (float)this.field_25732, (float)this.field_25740, (float)this.field_25733, 23.0F, 0.75F);
+                     FontManager.method_128((float)this.field_25731, (float)this.field_25732, (float)this.field_25740, (float)this.field_25733, 8.0F, 0.7F);
                   }
 
                   var1.method_14968(this.field_25733 + 10);

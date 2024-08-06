@@ -79,7 +79,7 @@ public class class_9568 extends class_446 implements class_475 {
          var4 = 0;
          var7 -= 8;
          var6 += 8;
-         class_73.method_94(
+         FontManager.method_94(
             (float)var6,
             (float)(this.field_36261 + var4),
             (float)(var6 + var7),
@@ -87,9 +87,9 @@ public class class_9568 extends class_446 implements class_475 {
             class_314.method_1444(class_1255.field_6920.field_6917, 0.1F * var1)
          );
       } else {
-         class_73.method_97((float)var6, (float)this.field_36261, (float)var7, 5.0F, NotificationIcons.verticalscrollbartop, 0.45F * var1);
-         class_73.method_97((float)var6, (float)(this.field_36261 + this.field_36257 - var4), (float)var7, 5.0F, NotificationIcons.verticalscrollbarbottom, 0.45F * var1);
-         class_73.method_94((float)var6, (float)(this.field_36261 + var4), (float)(var6 + var7), (float)(this.field_36261 + this.field_36257 - var4), var5);
+         FontManager.method_97((float)var6, (float)this.field_36261, (float)var7, 5.0F, NotificationIcons.verticalscrollbartop, 0.45F * var1);
+         FontManager.method_97((float)var6, (float)(this.field_36261 + this.field_36257 - var4), (float)var7, 5.0F, NotificationIcons.verticalscrollbarbottom, 0.45F * var1);
+         FontManager.method_94((float)var6, (float)(this.field_36261 + var4), (float)(var6 + var7), (float)(this.field_36261 + this.field_36257 - var4), var5);
       }
 
       super.method_32178(var1);

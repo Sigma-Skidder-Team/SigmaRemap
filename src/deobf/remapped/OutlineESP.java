@@ -12,10 +12,10 @@ public class OutlineESP extends Module {
       if (this.method_42015()) {
          if (client.thePlayer != null && client.theWorld != null) {
             this.method_18486();
-            class_73.method_107();
+            FontManager.method_107();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.method_18483(false);
-            class_73.method_85(class_3118.field_15504);
+            FontManager.method_85(class_3118.field_15504);
             GL11.glLineWidth(3.0F);
             RenderSystem.alphaFunc(518, 0.0F);
             RenderSystem.enableAlphaTest();
@@ -24,7 +24,7 @@ public class OutlineESP extends Module {
             GL11.glDisable(2896);
             this.method_18483(true);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            class_73.method_145();
+            FontManager.method_145();
             this.method_18484();
          }
       }
@@ -58,9 +58,9 @@ public class OutlineESP extends Module {
                var8.method_17403().method_8334(client.theWorld, var8.method_17399()).method_19483().method_18918(var12, var14, var16)
             );
             if (var1) {
-               class_73.method_130(var19, 3.0F, var18);
+               FontManager.method_130(var19, 3.0F, var18);
             } else {
-               class_73.method_83(var19, class_1255.field_6918.field_6917);
+               FontManager.method_83(var19, class_1255.field_6918.field_6917);
             }
 
             GL11.glDisable(3042);

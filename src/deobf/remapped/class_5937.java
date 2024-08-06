@@ -379,7 +379,7 @@ public class class_5937 {
                      double var12 = (double)var9.getY() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
                      double var14 = (double)var9.getZ() - this.field_30282.gameRenderer.method_35949().method_41627().method_62();
                      class_8194 var16 = new class_8194(var10, var12, var14, var10 + 1.0, var12 + 1.0, var14 + 1.0);
-                     class_73.method_83(var16, var18);
+                     FontManager.method_83(var16, var18);
                   }
                }
 
@@ -390,7 +390,7 @@ public class class_5937 {
                      double var23 = (double)var21.getY() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
                      double var24 = (double)var21.getZ() - this.field_30282.gameRenderer.method_35949().method_41627().method_62();
                      class_8194 var25 = new class_8194(var22, var23, var24, var22 + 1.0, var23 + 1.0, var24 + 1.0);
-                     class_73.method_83(var25, var6);
+                     FontManager.method_83(var25, var6);
                   }
                }
 
@@ -419,10 +419,10 @@ public class class_5937 {
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glRotatef(this.field_30282.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
       GL11.glRotatef(this.field_30282.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
-      class_3384 var10 = class_5320.field_27141;
+      FontRenderer var10 = class_5320.field_27141;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);
-      class_73.method_94(
+      FontManager.method_94(
          (float)(-var10.method_18547(var7) / 2 - 10),
          0.0F,
          (float)(var10.method_18547(var7) / 2 + 10),
@@ -430,7 +430,7 @@ public class class_5937 {
          class_314.method_1444(class_1255.field_6929.field_6917, 0.1F)
       );
       GL11.glTranslated((double)(-var10.method_18547(var7) / 2), 0.0, 0.0);
-      class_73.method_87(var10, 0.0F, 0.0F, var7, class_314.method_1444(class_1255.field_6918.field_6917, 0.3F));
+      FontManager.method_87(var10, 0.0F, 0.0F, var7, class_314.method_1444(class_1255.field_6918.field_6917, 0.3F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
       GL11.glEnable(3553);

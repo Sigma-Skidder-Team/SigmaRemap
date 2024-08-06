@@ -32,7 +32,7 @@ public class class_1479 extends class_1859 {
       this.method_6821();
    }
 
-   public class_1479(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, class_3384 var9) {
+   public class_1479(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, FontRenderer var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       this.method_6821();
    }
@@ -63,10 +63,10 @@ public class class_1479 extends class_1859 {
       int var8 = this.method_32132() + this.field_7928.method_32109() / 4 + 3;
       int var9 = this.method_32173() + this.method_32137() / 2 - var6 / 2;
       int var10 = this.field_7928.method_32132() + this.field_7928.method_32109() / 2 - 6;
-      class_73.method_108(
+      FontManager.method_108(
          (float)var8, (float)var9, (float)var10, (float)var6, (float)(var6 / 2), class_314.method_1444(this.field_36272.method_2764(), var1 * var1 * var1)
       );
-      class_73.method_108(
+      FontManager.method_108(
          (float)(var8 + var10),
          (float)var9,
          (float)(var7 - var10),
@@ -76,7 +76,7 @@ public class class_1479 extends class_1859 {
       );
       if (this.method_32165() != null) {
          int var11 = Math.max(0, 9 - this.field_7928.method_32132());
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27138,
             (float)(var8 - class_5320.field_27138.method_18547(this.method_32165()) - 10 - var11),
             (float)(var9 - 5),

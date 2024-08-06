@@ -54,7 +54,7 @@ public class class_8310 extends class_1859 {
       float var8 = var4[1];
       float var9 = var4[2];
       float var10 = var4[3];
-      class_73.method_108(
+      FontManager.method_108(
          (float)(this.field_36270 + var5),
          (float)(this.field_36261 + var5),
          (float)(this.field_36278 - var5 * 2),
@@ -69,7 +69,7 @@ public class class_8310 extends class_1859 {
       var11.add(new class_9671(1.0, 1.0));
       class_5181 var12 = new class_5181((double)(1.0F / var6 * 2.0F));
       double var13 = var12.method_23765(var11, Math.min(0.8F, this.field_42560.method_11123()) * 1.25F);
-      class_73.method_121(
+      FontManager.method_121(
          (float)((double)this.field_36270 + (double)var6 * var13 + (double)var5),
          (float)(this.field_36261 - var5 / 2 + this.field_36257),
          14.0F,

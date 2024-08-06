@@ -22,7 +22,7 @@ public class class_4984 extends class_6220 {
       this.method_32133(1.0F + this.field_25811.method_11123());
       this.method_32146(1.0F + this.field_25811.method_11123());
       this.method_32190();
-      class_73.method_87(
+      FontManager.method_87(
          this.method_32097(), (float)this.method_32132(), (float)this.method_32173(), "" + this.field_25811.method_11123(), class_1255.field_6929.field_6917
       );
       GL11.glPushMatrix();

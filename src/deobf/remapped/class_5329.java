@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class class_5329 extends class_2612 {
    private Module field_27182;
-   public class_3384 field_27184 = class_3054.field_14994;
+   public FontRenderer field_27184 = class_3054.field_14994;
    public class_2440 field_27181 = new class_2440(150, 150);
    public HashMap<Module, class_7038> field_27185 = new HashMap<Module, class_7038>();
 
@@ -197,9 +197,9 @@ public class class_5329 extends class_2612 {
          var4 = Math.round((float)this.method_32137() * class_3483.method_15984(this.field_27181.method_11123(), 0.0F, 1.0F, 1.0F));
       }
 
-      class_73.method_135((float)this.field_36270, (float)(70 + this.method_32137() - var4), (float)this.method_32109(), (float)var4);
-      class_73.method_103((float)this.field_36270, (float)(70 + this.method_32137() - var4), (float)this.method_32109(), (float)var4, -2631721);
+      FontManager.method_135((float)this.field_36270, (float)(70 + this.method_32137() - var4), (float)this.method_32109(), (float)var4);
+      FontManager.method_103((float)this.field_36270, (float)(70 + this.method_32137() - var4), (float)this.method_32109(), (float)var4, -2631721);
       super.method_32178(var1);
-      class_73.method_141();
+      FontManager.method_141();
    }
 }

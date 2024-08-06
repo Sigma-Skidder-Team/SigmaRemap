@@ -49,7 +49,7 @@ public class JelloOptionsMenu extends class_2596 {
 
       int var6 = class_314.method_1442(-1072689136, class_314.method_1444(class_1255.field_6929.field_6917, 0.1F), var5);
       int var7 = class_314.method_1442(-804253680, class_314.method_1444(class_1255.field_6929.field_6917, 0.1F), var5);
-      class_73.method_81(0, 0, this.method_32109(), this.method_32137(), var6, var7);
+      FontManager.method_81(0, 0, this.method_32109(), this.method_32137(), var6, var7);
       this.method_32111(var4, var4);
       this.method_32190();
       super.method_32178(field_8537.method_11123());
@@ -67,7 +67,7 @@ public class JelloOptionsMenu extends class_2596 {
       float var6 = var5 - (float)this.field_8541;
       float var7 = (float)(var4 - this.field_8539);
       GL11.glPushMatrix();
-      class_73.method_153(
+      FontManager.method_153(
          (float)this.field_8539,
          (float)this.field_8541,
          (float)(this.method_32109() * 2),

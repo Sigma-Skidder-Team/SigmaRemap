@@ -319,21 +319,21 @@ public class class_273 extends class_2612 implements class_1768 {
       super.method_32178(var1);
       GL11.glPopMatrix();
       this.field_979.method_11119(!var4 ? class_4043.field_19618 : class_4043.field_19620);
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27138,
          (float)(this.method_32132() + 10),
          (float)(this.method_32173() + this.method_32137() + 24),
          this.field_980,
          class_314.method_1444(class_1255.field_6918.field_6917, 0.5F * this.field_979.method_11123())
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27138,
          (float)(this.method_32132() + 11),
          (float)(this.method_32173() + this.method_32137() + 24),
          this.field_980,
          class_314.method_1444(class_1255.field_6918.field_6917, 0.5F * this.field_979.method_11123())
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27138,
          (float)(this.method_32132() + 14 + class_5320.field_27138.method_18547(this.field_980) + 2),
          (float)(this.method_32173() + this.method_32137() + 24),

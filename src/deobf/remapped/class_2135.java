@@ -124,8 +124,8 @@ public class class_2135 extends class_2596 {
    public void method_32178(float var1) {
       this.method_9981();
       super.method_32178(var1);
-      class_73.method_87(class_5320.field_27156, 20.0F, 20.0F, MinecraftClient.getInstance().method_8502().method_5366(), -2236963);
-      class_73.method_88(
+      FontManager.method_87(class_5320.field_27156, 20.0F, 20.0F, MinecraftClient.getInstance().method_8502().method_5366(), -2236963);
+      FontManager.method_88(
          class_5320.field_27156,
          (float)(this.method_32109() / 2),
          20.0F,
@@ -134,7 +134,7 @@ public class class_2135 extends class_2596 {
          class_6206.field_31726,
          class_6206.field_31724
       );
-      class_73.method_89(
+      FontManager.method_89(
          class_5320.field_27156,
          (float)(this.method_32109() / 2),
          40.0F,
@@ -161,8 +161,8 @@ public class class_2135 extends class_2596 {
    }
 
    private void method_9981() {
-      class_73.method_96(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_3054.field_15004);
-      class_73.method_103(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6929.field_6917, 0.23F));
+      FontManager.method_96(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_3054.field_15004);
+      FontManager.method_103(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6929.field_6917, 0.23F));
    }
 
    @Override

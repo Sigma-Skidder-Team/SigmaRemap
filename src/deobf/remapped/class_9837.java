@@ -44,7 +44,7 @@ public class class_9837 extends class_446 {
       GL11.glRotated(1.0 * Math.abs(var4 * var6), var6, var4, 0.0);
       GL11.glTranslatef((float)(-this.field_36270 - this.field_36278 / 2), (float)(-this.field_36261 - this.field_36257 / 2), 0.0F);
       GL11.glDisable(2929);
-      class_73.method_103((float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, class_1255.field_6928.field_6917);
+      FontManager.method_103((float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, class_1255.field_6928.field_6917);
       GL11.glPopMatrix();
       super.method_32178(var1);
    }

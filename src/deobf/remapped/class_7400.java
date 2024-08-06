@@ -34,10 +34,10 @@ public class class_7400 extends class_1859 {
       this.method_32175(MinecraftClient.getInstance().window.method_43166() - this.field_36278 - 20);
       boolean var6 = this.field_37769 >= this.field_36270 && this.field_37768 <= this.field_36261 + this.method_32137();
       this.field_37767 = Math.max(0.0F, Math.min(1.0F, this.field_37767 + (!var6 ? -0.1F : 0.1F)));
-      class_73.method_128(
+      FontManager.method_128(
          (float)this.field_36270, (float)this.field_36261, (float)this.method_32109(), (float)this.method_32137(), 20.0F, this.field_37767 * 0.2F * var1
       );
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.method_32109()),
@@ -46,7 +46,7 @@ public class class_7400 extends class_1859 {
       );
       float var7 = (float)(this.field_36270 + this.field_36278 - 60 - 10);
       float var8 = (float)(this.field_36261 + 10);
-      class_73.method_99(
+      FontManager.method_99(
          (float)(this.field_36270 + this.field_36278 - 60 - 10),
          (float)(this.field_36261 + 10),
          60.0F,
@@ -54,7 +54,7 @@ public class class_7400 extends class_1859 {
          var5,
          class_314.method_1444(class_1255.field_6918.field_6917, (0.5F + 0.5F * this.field_37767) * var1)
       );
-      class_73.method_87(
+      FontManager.method_87(
          this.field_36258,
          (float)(this.field_36270 + this.field_36278 - 90 - this.field_36258.method_18547(var4)),
          (float)(this.field_36261 + 27),

@@ -30,7 +30,7 @@ public class class_397 extends class_1859 {
       this.method_1990();
    }
 
-   public class_397(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, class_3384 var9) {
+   public class_397(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, FontRenderer var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       this.method_1990();
    }
@@ -50,10 +50,10 @@ public class class_397 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_103((float)(this.field_36270 + this.field_36278), (float)(this.field_36261 + 1), 1.0F, (float)(this.field_36257 - 2), -8882056);
-      class_73.method_103((float)(this.field_36270 + 1), (float)this.field_36261, (float)(this.field_36278 - 1), (float)this.field_36257, -8882056);
-      class_73.method_103((float)this.field_36270, (float)(this.field_36261 + 1), 1.0F, (float)(this.field_36257 - 2), -6250336);
-      class_73.method_103(
+      FontManager.method_103((float)(this.field_36270 + this.field_36278), (float)(this.field_36261 + 1), 1.0F, (float)(this.field_36257 - 2), -8882056);
+      FontManager.method_103((float)(this.field_36270 + 1), (float)this.field_36261, (float)(this.field_36278 - 1), (float)this.field_36257, -8882056);
+      FontManager.method_103((float)this.field_36270, (float)(this.field_36261 + 1), 1.0F, (float)(this.field_36257 - 2), -6250336);
+      FontManager.method_103(
          (float)(this.field_36270 + 1), (float)this.field_36261, (float)this.field_36278 * this.field_1665 - 1.0F, (float)this.field_36257, -6250336
       );
       this.method_1991(Math.round((float)this.field_36270 + (float)this.field_36278 * this.field_1665) - 2, this.field_36261 - 3);
@@ -61,15 +61,15 @@ public class class_397 extends class_1859 {
    }
 
    public void method_1991(int var1, int var2) {
-      class_73.method_103((float)(var1 + 1), (float)(var2 + 1), 4.0F, 8.0F, -3618616);
-      class_73.method_103((float)(var1 + 1), (float)(var2 + 1), 1.0F, 1.0F, -4934476);
-      class_73.method_103((float)(var1 + 4), (float)(var2 + 1), 1.0F, 1.0F, -4934476);
-      class_73.method_103((float)(var1 + 1), (float)(var2 + 8), 1.0F, 1.0F, -4934476);
-      class_73.method_103((float)(var1 + 4), (float)(var2 + 8), 1.0F, 1.0F, -4934476);
-      class_73.method_103((float)var1, (float)(var2 + 1), 1.0F, 8.0F, -4934476);
-      class_73.method_103((float)(var1 + 5), (float)(var2 + 1), 1.0F, 8.0F, -4934476);
-      class_73.method_103((float)(var1 + 1), (float)var2, 4.0F, 1.0F, -4934476);
-      class_73.method_103((float)(var1 + 1), (float)(var2 + 9), 4.0F, 1.0F, -4934476);
+      FontManager.method_103((float)(var1 + 1), (float)(var2 + 1), 4.0F, 8.0F, -3618616);
+      FontManager.method_103((float)(var1 + 1), (float)(var2 + 1), 1.0F, 1.0F, -4934476);
+      FontManager.method_103((float)(var1 + 4), (float)(var2 + 1), 1.0F, 1.0F, -4934476);
+      FontManager.method_103((float)(var1 + 1), (float)(var2 + 8), 1.0F, 1.0F, -4934476);
+      FontManager.method_103((float)(var1 + 4), (float)(var2 + 8), 1.0F, 1.0F, -4934476);
+      FontManager.method_103((float)var1, (float)(var2 + 1), 1.0F, 8.0F, -4934476);
+      FontManager.method_103((float)(var1 + 5), (float)(var2 + 1), 1.0F, 8.0F, -4934476);
+      FontManager.method_103((float)(var1 + 1), (float)var2, 4.0F, 1.0F, -4934476);
+      FontManager.method_103((float)(var1 + 1), (float)(var2 + 9), 4.0F, 1.0F, -4934476);
    }
 
    @Override

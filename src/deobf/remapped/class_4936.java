@@ -15,14 +15,14 @@ public class class_4936 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.field_36278),
          (float)this.field_36261 + (float)this.field_36257 * this.field_25584,
          class_314.method_1444(class_1255.field_6929.field_6917, 0.2F)
       );
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)(this.field_36261 + this.field_36257),
          (float)(this.field_36270 + this.field_36278),

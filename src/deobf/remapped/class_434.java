@@ -33,7 +33,7 @@ public class class_434 extends class_7038 {
       StringBuilder var10000 = new StringBuilder().append("You're currently using Sigma ");
       SigmaMainClass.getInstance();
       String var4 = var10000.append(SigmaMainClass.clientVersion).toString();
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27152,
          (float)(this.field_36270 + (this.method_32109() - class_5320.field_27152.method_18547(var4)) / 2),
          (float)(this.field_36261 + 70),
@@ -43,7 +43,7 @@ public class class_434 extends class_7038 {
       String var5 = "Click GUI is currently bound to: "
          + class_314.method_1451(SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_380(ClassicClickGUI.class))
          + " Key";
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27152,
          (float)(this.method_32132() + (this.method_32109() - class_5320.field_27152.method_18547(var5)) / 2),
          (float)(this.method_32173() + this.method_32137() - 180),
@@ -51,7 +51,7 @@ public class class_434 extends class_7038 {
          class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1)
       );
       String var6 = "Configure all your keybinds in the keybind manager!";
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27138,
          (float)(this.method_32132() + (this.method_32109() - class_5320.field_27138.method_18547(var6)) / 2),
          (float)(this.method_32173() + this.method_32137() - 150),
@@ -59,7 +59,7 @@ public class class_434 extends class_7038 {
          class_314.method_1444(class_1255.field_6918.field_6917, 0.4F * var1)
       );
       String var7 = "GUI Blur: ";
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27152,
          (float)(this.method_32132() + (this.method_32109() - class_5320.field_27152.method_18547(var7)) / 2 - 114),
          (float)(this.method_32173() + this.method_32137() - 221),
@@ -67,7 +67,7 @@ public class class_434 extends class_7038 {
          class_314.method_1444(class_1255.field_6918.field_6917, 0.5F * var1)
       );
       String var8 = "GPU Accelerated: ";
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27152,
          (float)(this.method_32132() + (this.method_32109() - class_5320.field_27152.method_18547(var8)) / 2 + 52),
          (float)(this.method_32173() + this.method_32137() - 221),
@@ -78,8 +78,8 @@ public class class_434 extends class_7038 {
    }
 
    private void method_2128(int var1, int var2, float var3) {
-      class_73.method_87(class_5320.field_27147, (float)var1, (float)(var2 + 1), "Jello", class_314.method_1444(class_1255.field_6918.field_6917, var3));
-      class_73.method_87(
+      FontManager.method_87(class_5320.field_27147, (float)var1, (float)(var2 + 1), "Jello", class_314.method_1444(class_1255.field_6918.field_6917, var3));
+      FontManager.method_87(
          class_5320.field_27141, (float)(var1 + 95), (float)(var2 + 14), "for Sigma", class_314.method_1444(class_1255.field_6918.field_6917, 0.86F * var3)
       );
    }

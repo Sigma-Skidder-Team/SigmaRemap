@@ -912,7 +912,7 @@ public class class_314 {
       }
    }
 
-   public static String[] method_1393(String var0, int var1, class_3384 var2) {
+   public static String[] method_1393(String var0, int var1, FontRenderer var2) {
       String[] var5 = var0.split(" ");
       HashMap var6 = new HashMap();
       int var7 = 0;

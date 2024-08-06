@@ -6,7 +6,7 @@ public class class_4336 {
    private static String[] field_21079;
 
    public static void method_20172() {
-      class_73.method_127();
+      FontManager.method_127();
       GL11.glPushAttrib(1048575);
       GL11.glDisable(3008);
       GL11.glDisable(3553);

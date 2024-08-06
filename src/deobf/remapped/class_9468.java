@@ -59,8 +59,8 @@ public class class_9468 extends Module {
                         var15 = -256;
                      }
 
-                     class_73.method_140((double)var13, (double)var10, (double)var14, (double)var11, 2.25, class_1516.method_6935(0, 0, 0, 0), var15);
-                     class_73.method_140(
+                     FontManager.method_140((double)var13, (double)var10, (double)var14, (double)var11, 2.25, class_1516.method_6935(0, 0, 0, 0), var15);
+                     FontManager.method_140(
                         (double)var13 - 0.5,
                         (double)var10 - 0.5,
                         (double)var14 + 0.5,
@@ -69,7 +69,7 @@ public class class_9468 extends Module {
                         class_1516.method_6933(0, 0),
                         class_1516.method_6932(0)
                      );
-                     class_73.method_140(
+                     FontManager.method_140(
                         (double)var13 + 2.5,
                         (double)var10 + 2.5,
                         (double)var14 - 2.5,
@@ -78,7 +78,7 @@ public class class_9468 extends Module {
                         class_1516.method_6933(0, 0),
                         class_1516.method_6932(0)
                      );
-                     class_73.method_140(
+                     FontManager.method_140(
                         (double)(var13 - 5.0F),
                         (double)(var10 - 1.0F),
                         (double)(var13 - 1.0F),
@@ -93,7 +93,7 @@ public class class_9468 extends Module {
                      float var19 = var16 * 5.0F * 0.01F;
                      Color var20 = method_43749(var17, var18, var19).brighter();
                      float var21 = var11 + (var10 - var11) * var16 * 5.0F * 0.01F;
-                     class_73.method_94(var13 - 4.0F, var11 - 1.0F, var13 - 2.0F, var21, var20.getRGB());
+                     FontManager.method_94(var13 - 4.0F, var11 - 1.0F, var13 - 2.0F, var21, var20.getRGB());
                      if ((int)class_9687.method_44787((double)(var16 * 5.0F), 1.0) != 100 && var5) {
                         RenderSystem.method_16438();
                         RenderSystem.method_16403(2.0F, 2.0F, 2.0F);
@@ -211,8 +211,8 @@ public class class_9468 extends Module {
             double var15 = var12.field_41754 + (var12.getPosX() + 10.0 - (var12.field_41754 + 10.0)) * (double)var9 - var3;
             double var17 = var12.field_41724 + (var12.getPosZ() + 10.0 - (var12.field_41724 + 10.0)) * (double)var9 - var7;
             var13 += (double)var12.method_37074() + 0.2;
-            double[] var19 = class_73.method_143(var15, var13, var17);
-            double var20 = Math.abs(class_73.method_143(var15, var13 + 1.0, var17)[1] - class_73.method_143(var15, var13, var17)[1]);
+            double[] var19 = FontManager.method_143(var15, var13, var17);
+            double var20 = Math.abs(FontManager.method_143(var15, var13 + 1.0, var17)[1] - FontManager.method_143(var15, var13, var17)[1]);
 
             assert var19 != null;
 
@@ -222,10 +222,10 @@ public class class_9468 extends Module {
                field_48288.put(
                   var12,
                   new double[]{
-                     class_73.method_143(var15, var13, var17)[0],
-                     class_73.method_143(var15, var13, var17)[1],
+                     FontManager.method_143(var15, var13, var17)[0],
+                     FontManager.method_143(var15, var13, var17)[1],
                      var20,
-                     class_73.method_143(var15, var13, var17)[2]
+                     FontManager.method_143(var15, var13, var17)[2]
                   }
                );
             }

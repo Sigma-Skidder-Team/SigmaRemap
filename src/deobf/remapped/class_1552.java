@@ -18,7 +18,7 @@ public class class_1552 extends class_446 {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
    }
 
-   public class_1552(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, class_3384 var9) {
+   public class_1552(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, FontRenderer var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
    }
 
@@ -26,7 +26,7 @@ public class class_1552 extends class_446 {
    public void method_32178(float var1) {
       if (this.field_8207) {
          GL11.glAlphaFunc(518, 0.01F);
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27146,
             (float)this.method_32132(),
             (float)this.method_32173(),
@@ -37,7 +37,7 @@ public class class_1552 extends class_446 {
       }
 
       if (this.field_36275 != null) {
-         class_73.method_87(
+         FontManager.method_87(
             this.method_32097(),
             (float)this.method_32132(),
             (float)this.method_32173(),

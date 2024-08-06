@@ -22,25 +22,25 @@ public class class_1816 extends class_6220 {
       }
 
       int var4 = (int)(class_9556.method_44077(this.field_9222.method_11123(), 0.0F, 1.0F, 1.0F, 7.0F) * 3.0F);
-      class_73.method_121(
+      FontManager.method_121(
          (float)(this.field_36270 + this.field_36278 / 2),
          (float)(this.field_36261 + this.field_36257 / 2),
          25.0F,
          class_314.method_1444(class_1255.field_6929.field_6917, 0.025F * var1 * this.field_9222.method_11123())
       );
-      class_73.method_121(
+      FontManager.method_121(
          (float)(this.field_36270 + this.field_36278 / 2),
          (float)(this.field_36261 + this.field_36257 / 2),
          23.0F,
          class_314.method_1444(class_1255.field_6929.field_6917, 0.05F * var1 * this.field_9222.method_11123())
       );
-      class_73.method_121(
+      FontManager.method_121(
          (float)(this.field_36270 + this.field_36278 / 2),
          (float)(this.field_36261 + this.field_36257 / 2),
          (float)(18 + var4),
          class_314.method_1444(class_1255.field_6918.field_6917, var1 * this.field_9222.method_11123())
       );
-      class_73.method_121(
+      FontManager.method_121(
          (float)(this.field_36270 + this.field_36278 / 2),
          (float)(this.field_36261 + this.field_36257 / 2),
          (float)(18 - var4),

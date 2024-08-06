@@ -75,7 +75,7 @@ public class TabGUIModule extends Module {
                this.field_46175 = this.field_46175 + Math.min(var4, var4 * 0.14F * this.field_46165) * (float)(!var5 ? 1 : -1);
                this.field_46185 = var1.method_14966();
                this.method_41406(this.field_46182, this.field_46185, this.field_46158, this.field_46178, this.field_46174, null, this.field_46173, 1.0F);
-               class_73.method_135((float)this.field_46182, (float)this.field_46185, (float)this.field_46158, (float)this.field_46178);
+               FontManager.method_135((float)this.field_46182, (float)this.field_46185, (float)this.field_46158, (float)this.field_46178);
                this.method_41403(
                   this.field_46182,
                   this.field_46185 - Math.round(this.field_46175),
@@ -86,7 +86,7 @@ public class TabGUIModule extends Module {
                   1.0F
                );
                this.method_41395(this.field_46182, this.field_46185 - Math.round(this.field_46175), this.field_46183);
-               class_73.method_141();
+               FontManager.method_141();
                if (this.field_46166) {
                   this.field_46160 = this.method_41400(this.field_46172).size() * this.field_46159 + this.field_46163;
                   this.method_41406(170, this.field_46185, this.field_46161, this.field_46160, this.field_46169, this.field_46168, this.field_46171, 1.0F);
@@ -133,7 +133,7 @@ public class TabGUIModule extends Module {
          }
 
          if (var9.method_42015()) {
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27161,
                (float)(var1 + 11) + this.field_46167.get(var9),
                (float)(var2 + this.field_46159 / 2 - class_5320.field_27161.method_15654() / 2 + 3 + var7 * this.field_46159),
@@ -141,7 +141,7 @@ public class TabGUIModule extends Module {
                class_1255.field_6918.field_6917
             );
          } else {
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27152,
                (float)(var1 + 11) + this.field_46167.get(var9),
                (float)(var2 + this.field_46159 / 2 - class_5320.field_27152.method_15654() / 2 + 2 + var7 * this.field_46159),
@@ -172,7 +172,7 @@ public class TabGUIModule extends Module {
             this.field_46155.put(var8, this.field_46155.get(var8) - this.field_46165);
          }
 
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27152,
             (float)(var1 + 11) + this.field_46155.get(var8),
             (float)(var2 + this.field_46159 / 2 - class_5320.field_27152.method_15654() / 2 + 2 + var6 * this.field_46159),
@@ -239,7 +239,7 @@ public class TabGUIModule extends Module {
          this.field_46180 = Math.max(this.field_46180, 120 + Math.round(this.field_46175));
       }
 
-      class_73.method_94(
+      FontManager.method_94(
          (float)var1,
          var10 >= 0 ? (float)(var10 + var2) : (float)var2,
          (float)(var1 + var4),
@@ -248,7 +248,7 @@ public class TabGUIModule extends Module {
             : (float)(var2 + var3 + this.field_46163),
          this.field_46162
       );
-      class_73.method_99(
+      FontManager.method_99(
          (float)var1,
          var10 + this.field_46163 + this.field_46159 <= var3 ? (float)(var10 + var2 + this.field_46159 - 10) : (float)(var2 + var3 - 10),
          (float)var4,
@@ -256,8 +256,8 @@ public class TabGUIModule extends Module {
          NotificationIcons.shadow_top,
          this.field_46186
       );
-      class_73.method_99((float)var1, var10 >= 0 ? (float)(var10 + var2) : (float)var2, (float)var4, 14.0F, NotificationIcons.shadow_bottom, this.field_46186);
-      class_73.method_149(
+      FontManager.method_99((float)var1, var10 >= 0 ? (float)(var10 + var2) : (float)var2, (float)var4, 14.0F, NotificationIcons.shadow_bottom, this.field_46186);
+      FontManager.method_149(
          var1,
          var10 >= 0 ? var10 + var2 : var2,
          var1 + var4,
@@ -274,7 +274,7 @@ public class TabGUIModule extends Module {
                var14 = class_314.method_1444(-1, (1.0F - var13) * 0.14F);
             }
 
-            class_73.method_124(
+            FontManager.method_124(
                (float)var1, var10 >= 0 ? (float)(var10 + var2 + 14) : (float)var2, (float)var4 * class_9681.method_44756(var13, 0.0F, 1.0F, 1.0F) + 4.0F, var14
             );
             if (var12.field_19052.method_11123() == 1.0F) {
@@ -283,7 +283,7 @@ public class TabGUIModule extends Module {
          }
       }
 
-      class_73.method_141();
+      FontManager.method_141();
    }
 
    private List<Category> method_41402() {
@@ -379,15 +379,15 @@ public class TabGUIModule extends Module {
       }
 
       if (!var11) {
-         class_73.method_81(var1, var2, var1 + var3, var2 + var4, var14, var15);
+         FontManager.method_81(var1, var2, var1 + var3, var2 + var4, var14, var15);
       } else {
-         class_73.method_135((float)var1, (float)var2, (float)var3, (float)var4);
+         FontManager.method_135((float)var1, (float)var2, (float)var3, (float)var4);
          class_4746.method_21924();
-         class_73.method_141();
-         class_73.method_94((float)var1, (float)var2, (float)(var1 + var3), (float)(var2 + var4), this.field_46157);
+         FontManager.method_141();
+         FontManager.method_94((float)var1, (float)var2, (float)(var1 + var3), (float)(var2 + var4), this.field_46157);
       }
 
-      class_73.method_128((float)var1, (float)var2, (float)var3, (float)var4, 8.0F, 0.7F * var8);
+      FontManager.method_128((float)var1, (float)var2, (float)var3, (float)var4, 8.0F, 0.7F * var8);
    }
 
    private void method_41405() {
@@ -414,7 +414,7 @@ public class TabGUIModule extends Module {
    }
 
    private Color method_41398(int var1, int var2, Color var3) {
-      Color var6 = class_73.method_114(var1, var2, var3);
+      Color var6 = FontManager.method_114(var1, var2, var3);
       if (var3 != null) {
          var6 = class_314.method_1388(var6, var3, 0.08F * this.field_46165);
       }

@@ -25,11 +25,11 @@ public class class_6450 extends class_446 {
          var9 = class_314.method_1444(class_1255.field_6918.field_6917, var1);
       }
 
-      class_73.method_139((float)var4, (float)var5, (float)var6, (float)var7, 9.0F, var8);
+      FontManager.method_139((float)var4, (float)var5, (float)var6, (float)var7, 9.0F, var8);
       int var10 = 0;
 
       for (String var14 : this.field_32897.field_37243) {
-         class_73.method_87(class_5320.field_27139, (float)(var4 + 10), (float)(var5 + 5 + var10 * class_5320.field_27139.method_15654()), var14, var9);
+         FontManager.method_87(class_5320.field_27139, (float)(var4 + 10), (float)(var5 + 5 + var10 * class_5320.field_27139.method_15654()), var14, var9);
          var10++;
       }
 

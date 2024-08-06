@@ -120,14 +120,14 @@ public class class_993 extends class_1859 {
       TextureManager var10000 = var4.getTextureManager();
       var4.getTextureManager();
       var10000.bindTexture(TextureManager.field_40364);
-      class_73.method_150(this.field_36270, this.field_36261, this.field_36270 + this.field_36278, this.field_36261 + this.field_36257, true);
+      FontManager.method_150(this.field_36270, this.field_36261, this.field_36270 + this.field_36278, this.field_36261 + this.field_36257, true);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.field_36270 + this.field_36278 / 2), (float)(this.field_36261 + this.field_36257 / 2), 0.0F);
       GL11.glScalef(var9, var9, 0.0F);
       GL11.glRotatef(-90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.field_36270 - this.field_36278 / 2), (float)(-this.field_36261 - this.field_36257 / 2), 0.0F);
       GL11.glTranslated(-var11, var13, 0.0);
-      class_73.method_138(
+      FontManager.method_138(
          (float)(this.field_36270 + var7),
          (float)(this.field_36261 + var8),
          (float)var6,
@@ -149,7 +149,7 @@ public class class_993 extends class_1859 {
          float var19 = (float)var16.field_21071 - var17 + 1.0F;
          float var20 = (float)var16.field_21073 - var18 + 1.0F;
          float var21 = (float)var6 / ((float)(this.field_5048 - 1) * 2.0F);
-         class_73.method_99(
+         FontManager.method_99(
             (float)(this.field_36270 + Math.round(var19 * var21 / 16.0F) + this.field_36278 / 2 - 16),
             (float)(this.field_36261 + Math.round(var20 * var21 / 16.0F) + this.field_36257 / 2 - 42),
             32.0F,
@@ -159,11 +159,11 @@ public class class_993 extends class_1859 {
          );
       }
 
-      class_73.method_141();
+      FontManager.method_141();
       int var22 = Math.round((float)(this.field_5050.field_10328 * 16) - this.field_5061 * 16.0F);
       int var23 = Math.round((float)(this.field_5050.field_10327 * 16) - this.field_5057 * 16.0F);
       String var24 = var22 + "  " + var23;
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27138,
          (float)(this.field_36270 - class_5320.field_27138.method_18547(var24) - 23),
          (float)(this.field_36261 + 35),

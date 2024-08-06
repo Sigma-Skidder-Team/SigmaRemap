@@ -89,10 +89,10 @@ public class class_6340 extends class_7621 {
 
       GL11.glEnable(3008);
       GL11.glEnable(3042);
-      class_73.method_97(
+      FontManager.method_97(
          0.0F, 0.0F, (float) MinecraftClient.getInstance().window.method_43166(), (float) MinecraftClient.getInstance().window.method_43163(), field_32371, var0
       );
-      class_73.method_103(
+      FontManager.method_103(
          0.0F,
          0.0F,
          (float) MinecraftClient.getInstance().window.method_43166(),
@@ -110,15 +110,15 @@ public class class_6340 extends class_7621 {
       GL11.glTranslatef(
          (float)(-MinecraftClient.getInstance().window.method_43166() / 2), (float)(-MinecraftClient.getInstance().window.method_43163() / 2), 0.0F
       );
-      class_73.method_99((float)var6, (float)var7, (float)var4, (float)var5, field_32372, class_314.method_1444(class_1255.field_6918.field_6917, var0));
+      FontManager.method_99((float)var6, (float)var7, (float)var4, (float)var5, field_32372, class_314.method_1444(class_1255.field_6918.field_6917, var0));
       float var9 = Math.min(1.0F, var1 * 1.02F);
       float var10 = 1.0F - var0;
       byte var11 = 80;
       if (var0 == 1.0F) {
-         class_73.method_108(
+         FontManager.method_108(
             (float)var6, (float)(var7 + var5 + var11), (float)var4, 20.0F, 10.0F, class_314.method_1444(class_1255.field_6918.field_6917, 0.3F * var0)
          );
-         class_73.method_108(
+         FontManager.method_108(
             (float)(var6 + 1),
             (float)(var7 + var5 + var11 + 1),
             (float)(var4 - 2),
@@ -128,7 +128,7 @@ public class class_6340 extends class_7621 {
          );
       }
 
-      class_73.method_108(
+      FontManager.method_108(
          (float)(var6 + 2),
          (float)(var7 + var5 + var11 + 2),
          (float)((int)((float)(var4 - 4) * var9)),

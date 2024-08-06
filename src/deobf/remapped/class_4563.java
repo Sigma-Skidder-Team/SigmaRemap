@@ -78,14 +78,14 @@ public class class_4563 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),
          (float)(this.method_32173() + this.method_32137() + this.method_21191()),
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
-      class_73.method_128(
+      FontManager.method_128(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)this.method_32109(),
@@ -94,18 +94,18 @@ public class class_4563 extends class_1859 {
          var1 * 0.21F
       );
       if (this.method_32165() != null) {
-         class_73.method_151(this);
-         class_73.method_87(
+         FontManager.method_151(this);
+         FontManager.method_87(
             this.method_32097(),
             (float)(this.method_32132() + 10),
             (float)(this.method_32173() + (this.method_32137() - this.method_32097().method_15654()) / 2 + 1),
             this.field_36275,
             class_314.method_1444(this.field_36272.method_2764(), var1 * 0.7F)
          );
-         class_73.method_141();
+         FontManager.method_141();
       }
 
-      class_73.method_149(
+      FontManager.method_149(
          this.method_32155(), this.method_32093(), this.method_32155() + this.method_32109(), this.method_32093() + this.method_32137() + this.method_21191()
       );
       GL11.glPushMatrix();
@@ -114,8 +114,8 @@ public class class_4563 extends class_1859 {
       }
 
       GL11.glPopMatrix();
-      class_73.method_141();
-      class_73.method_109(
+      FontManager.method_141();
+      FontManager.method_109(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),
@@ -128,7 +128,7 @@ public class class_4563 extends class_1859 {
       GL11.glTranslatef((float)(this.method_32132() + var4), (float)(this.method_32173() + var5), 0.0F);
       GL11.glRotatef(90.0F * this.field_22227, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.method_32132() - var4), (float)(-this.method_32173() - var5), 0.0F);
-      class_73.method_87(
+      FontManager.method_87(
          this.field_36258,
          (float)(this.method_32132() + var4 - 6),
          (float)(this.method_32173() + var5 - 14),

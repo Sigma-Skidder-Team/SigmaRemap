@@ -130,7 +130,7 @@ public class class_5940 extends class_2612 {
 
       super.method_32178(var1);
       int var8 = Math.round(class_9681.method_44757(1.0F - this.field_30293.method_11123(), 0.0F, 1.0F, 1.0F) * 30.0F);
-      class_73.method_102(
+      FontManager.method_102(
          (float)(this.field_36270 - var8 + 18),
          (float)(this.field_36257 - 46),
          22.0F,

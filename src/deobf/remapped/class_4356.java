@@ -68,8 +68,8 @@ public class class_4356 extends class_446 {
             }
          }
 
-         class_73.method_151(this);
-         class_73.method_94(
+         FontManager.method_151(this);
+         FontManager.method_94(
             (float)this.field_36270,
             (float)this.field_36261,
             (float)(this.field_36270 + this.field_36278),
@@ -88,7 +88,7 @@ public class class_4356 extends class_446 {
          GL11.glScaled(1.0 + 0.4 * (double)var4, 1.0 + 0.4 * (double)var4, 0.0);
          GL11.glTranslatef((float)(-this.method_32132() - var9), (float)(-this.method_32173() - var7), 0.0F);
          if (this.field_21338 != null) {
-            class_73.method_99(
+            FontManager.method_99(
                (float)this.field_36270,
                (float)(this.field_36261 - (this.field_36278 - this.field_36257) / 2),
                (float)this.field_36278,
@@ -99,8 +99,8 @@ public class class_4356 extends class_446 {
          }
 
          GL11.glPopMatrix();
-         class_73.method_141();
-         class_73.method_94(
+         FontManager.method_141();
+         FontManager.method_94(
             (float)this.field_36270,
             (float)this.field_36261,
             (float)(this.field_36270 + this.field_36278),
@@ -134,11 +134,11 @@ public class class_4356 extends class_446 {
       GL11.glTranslatef((float)(-this.method_32132() - 44), (float)(-this.method_32173() - 44), 0.0F);
       if (this.field_21333 == null) {
          MinecraftClient.getInstance().getTextureManager().bindTexture(new Identifier("textures/misc/unknown_server.png"));
-         class_73.method_137(
+         FontManager.method_137(
             (float)(this.field_36270 + 12), (float)(this.field_36261 + 12), 64.0F, 64.0F, class_1255.field_6918.field_6917, 0.0F, 0.0F, 64.0F, 64.0F
          );
       } else {
-         class_73.method_102(
+         FontManager.method_102(
             (float)(this.field_36270 + 12), (float)(this.field_36261 + 12), 64.0F, 64.0F, this.field_21333, class_1255.field_6918.field_6917, true
          );
       }
@@ -154,7 +154,7 @@ public class class_4356 extends class_446 {
       int var6 = (int)(var3 / 60000L % 60L);
       int var7 = (int)(var3 / 3600000L % 24L);
       int var8 = (int)(var3 / 86400000L);
-      class_73.method_149(
+      FontManager.method_149(
          this.method_32155() + this.method_32181(),
          this.method_32093() + this.method_32164(),
          this.method_32155() + this.method_32181() + this.field_36278,
@@ -171,7 +171,7 @@ public class class_4356 extends class_446 {
       GL11.glTranslatef((float)(this.method_32132() + 76), (float)(this.method_32173() + 44), 0.0F);
       GL11.glScaled(1.0 - 0.1 * (double)var11, 1.0 - 0.1 * (double)var11, 0.0);
       GL11.glTranslatef((float)(-this.method_32132() - 76), (float)(-this.method_32173() - 44), 0.0F);
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27155,
          (float)(this.field_36270 + 94),
          (float)(this.field_36261 + 16),
@@ -184,7 +184,7 @@ public class class_4356 extends class_446 {
       byte var13 = 46;
       if (this.field_21339.method_27122().getTime() != 9223372036854775806L) {
          if (var3 > 0L && this.field_21339.method_27122().getTime() != Long.MAX_VALUE) {
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27139,
                (float)(this.field_36270 + var12),
                (float)(this.field_36261 + var13),
@@ -192,7 +192,7 @@ public class class_4356 extends class_446 {
                class_314.method_1442(class_1255.field_6929.field_6917, class_1255.field_6918.field_6917, 0.2F)
             );
          } else if (this.field_21339.method_27122().getTime() != Long.MAX_VALUE) {
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27139,
                (float)(this.field_36270 + var12),
                (float)(this.field_36261 + var13),
@@ -200,7 +200,7 @@ public class class_4356 extends class_446 {
                class_314.method_1442(class_1255.field_6932.field_6917, class_1255.field_6918.field_6917, 0.3F)
             );
          } else {
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27139,
                (float)(this.field_36270 + var12),
                (float)(this.field_36261 + var13),
@@ -209,7 +209,7 @@ public class class_4356 extends class_446 {
             );
          }
       } else {
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27139,
             (float)(this.field_36270 + var12),
             (float)(this.field_36261 + var13),
@@ -219,7 +219,7 @@ public class class_4356 extends class_446 {
       }
 
       GL11.glPopMatrix();
-      class_73.method_141();
+      FontManager.method_141();
    }
 
    public static BufferedImage method_20215(String var0) {

@@ -11,7 +11,7 @@ public class class_6430 extends class_2612 {
    private float field_32850 = 1.0F;
    private int field_32843 = 0;
    private int field_32844 = 14;
-   private static class_3384 field_32848 = class_5320.field_27139;
+   private static FontRenderer field_32848 = class_5320.field_27139;
    private static int field_32842 = 14;
    private boolean field_32845 = false;
    private static final String field_32846 = "\n";

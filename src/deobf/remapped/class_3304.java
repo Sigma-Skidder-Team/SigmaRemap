@@ -11,7 +11,7 @@ public class class_3304 extends class_446 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_99(
+      FontManager.method_99(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,

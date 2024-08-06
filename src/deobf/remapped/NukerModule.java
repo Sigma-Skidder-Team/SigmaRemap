@@ -98,7 +98,7 @@ public class NukerModule extends Module {
             var7 + var11.field_19939,
             var9 + var11.field_19942
          );
-         class_73.method_83(var12, var4);
+         FontManager.method_83(var12, var4);
          GL11.glEnable(2929);
          GL11.glPopMatrix();
       }

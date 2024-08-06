@@ -10,7 +10,7 @@ public class class_4980 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_96((float)this.field_36270, (float)this.field_36261, 30.0F, 30.0F, !this.method_32183() ? class_9898.field_50195 : class_9898.field_50185);
+      FontManager.method_96((float)this.field_36270, (float)this.field_36261, 30.0F, 30.0F, !this.method_32183() ? class_9898.field_50195 : class_9898.field_50185);
       super.method_32178(var1);
    }
 }

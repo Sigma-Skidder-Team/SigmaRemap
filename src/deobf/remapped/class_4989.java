@@ -14,11 +14,11 @@ public class class_4989 extends class_446 {
       if (this.method_32109() != 0) {
          this.method_32130();
          float var4 = 1.0F - Math.min(1.0F, Math.max((float)this.method_32109() / (float)this.field_25829, 0.0F));
-         class_73.method_103(
+         FontManager.method_103(
             (float)this.field_36270, (float)this.field_36261, (float)this.field_25829, (float)this.field_36257, class_314.method_1444(-3254955, var1)
          );
          super.method_32178(var1 * (1.0F - var4));
-         class_73.method_99(
+         FontManager.method_99(
             0.0F, 0.0F, 20.0F, (float)this.field_36257, NotificationIcons.shadow_right, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1)
          );
       }

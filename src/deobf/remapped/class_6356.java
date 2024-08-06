@@ -117,31 +117,31 @@ public class class_6356 extends class_2596 {
 
       this.field_32516 = !this.field_32516;
       var1 = class_9681.method_44754(this.field_32514, 0.0F, 1.0F, 1.0F);
-      class_73.method_128((float)(var7 + 5), (float)(var8 + 5), (float)(this.field_32505 - 10), (float)(var10 - 10), 25.0F, var1 * 0.4F);
-      class_73.method_86((float)var7, (float)var8, (float)var9, (float)var10, 10.0F);
+      FontManager.method_128((float)(var7 + 5), (float)(var8 + 5), (float)(this.field_32505 - 10), (float)(var10 - 10), 25.0F, var1 * 0.4F);
+      FontManager.method_86((float)var7, (float)var8, (float)var9, (float)var10, 10.0F);
       if (this.field_32504 != null) {
-         class_73.method_99(
+         FontManager.method_99(
             (float)var7, (float)var8, (float)this.field_32505, (float)var10, this.field_32504, class_314.method_1444(class_1255.field_6918.field_6917, var1)
          );
       }
 
-      class_73.method_94(
+      FontManager.method_94(
          (float)var7, (float)var8, (float)(var7 + this.field_32505), (float)(var8 + 80), class_314.method_1444(class_1255.field_6929.field_6917, 0.14F)
       );
-      class_73.method_145();
-      class_73.method_149(var7 + this.field_32505, var8 - this.field_32511, var7 + var9 + this.field_32511, var8 + var10 + this.field_32511);
-      class_73.method_120(var7, var8, var9, var10, class_314.method_1444(class_1255.field_6918.field_6917, var1));
-      class_73.method_141();
-      class_73.method_149(var7 - this.field_32511, var8 - this.field_32511, var7 + this.field_32505, var8 + var10 + this.field_32511);
-      class_73.method_120(var7, var8, var9, var10, class_314.method_1444(-2236963, var1 * 0.75F));
-      class_73.method_94(
+      FontManager.method_145();
+      FontManager.method_149(var7 + this.field_32505, var8 - this.field_32511, var7 + var9 + this.field_32511, var8 + var10 + this.field_32511);
+      FontManager.method_120(var7, var8, var9, var10, class_314.method_1444(class_1255.field_6918.field_6917, var1));
+      FontManager.method_141();
+      FontManager.method_149(var7 - this.field_32511, var8 - this.field_32511, var7 + this.field_32505, var8 + var10 + this.field_32511);
+      FontManager.method_120(var7, var8, var9, var10, class_314.method_1444(-2236963, var1 * 0.75F));
+      FontManager.method_94(
          (float)(var7 + this.field_32505 - 1),
          (float)var8,
          (float)(var7 + this.field_32505),
          (float)(var8 + var10),
          class_314.method_1444(class_1255.field_6929.field_6917, 0.05F)
       );
-      class_73.method_141();
+      FontManager.method_141();
       super.method_32178(var1);
    }
 }

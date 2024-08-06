@@ -10,7 +10,7 @@ public class class_8911 extends class_446 {
    @Override
    public void method_32178(float var1) {
       if (this.method_32126()) {
-         class_73.method_99(
+         FontManager.method_99(
             (float)(this.field_36270 + 30),
             (float)(this.field_36261 + 30),
             187.0F,

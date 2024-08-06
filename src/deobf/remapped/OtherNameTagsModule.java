@@ -30,11 +30,11 @@ public class OtherNameTagsModule extends Module {
                int var13 = Math.round(var9.field_24329);
                GL11.glPushMatrix();
                GL11.glTranslatef((float)(-var11 / 2), (float)(-var4), 0.0F);
-               class_73.method_103((float)var12, (float)var13, (float)var11, 20.0F, class_314.method_1444(class_1255.field_6929.field_6917, 0.5F));
-               class_73.method_87(
+               FontManager.method_103((float)var12, (float)var13, (float)var11, 20.0F, class_314.method_1444(class_1255.field_6929.field_6917, 0.5F));
+               FontManager.method_87(
                   class_3054.field_14990, (float)(var12 + 3), (float)var13, var10, class_314.method_1444(class_1255.field_6929.field_6917, 0.5F)
                );
-               class_73.method_87(class_3054.field_14990, (float)(var12 + 3), (float)(var13 - 1), var10, class_1255.field_6918.field_6917);
+               FontManager.method_87(class_3054.field_14990, (float)(var12 + 3), (float)(var13 - 1), var10, class_1255.field_6918.field_6917);
                GL11.glPopMatrix();
                List var14 = class_2740.method_12340(var8);
                if (var14.size() != 0) {
@@ -100,7 +100,7 @@ public class OtherNameTagsModule extends Module {
             if (var5 instanceof PlayerEntity && !(var5 instanceof ClientPlayerEntity)) {
                PlayerEntity var6 = (PlayerEntity)var5;
                class_8328 var7 = class_9189.method_42353(var6);
-               double[] var8 = class_73.method_143(var7.field_42648, var7.field_42646 + (double)var6.method_37074() + 0.3F, var7.field_42649);
+               double[] var8 = FontManager.method_143(var7.field_42648, var7.field_42646 + (double)var6.method_37074() + 0.3F, var7.field_42649);
                if (var8 != null && var8[2] >= 0.0 && var8[2] < 1.0) {
                   this.field_15013.put(var6, new class_4895((float)var8[0], (float)var8[1]));
                }

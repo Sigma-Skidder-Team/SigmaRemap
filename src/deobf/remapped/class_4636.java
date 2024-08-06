@@ -14,14 +14,14 @@ public class class_4636 extends class_446 {
    @Override
    public void method_32178(float var1) {
       this.method_32144(class_5320.field_27156);
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.field_36278),
          (float)(this.field_36261 + this.field_36257),
          class_314.method_1444(this.field_22650, !this.method_32140() ? 0.25F : (!this.method_32183() ? 0.4F : (!this.method_32185() ? 0.5F : 0.6F)))
       );
-      class_73.method_110(
+      FontManager.method_110(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.field_36278),
@@ -29,7 +29,7 @@ public class class_4636 extends class_446 {
          2,
          class_314.method_1444(this.field_22650, 0.2F)
       );
-      class_73.method_88(
+      FontManager.method_88(
          class_5320.field_27156,
          (float)(this.method_32132() + this.method_32109() / 2),
          (float)(this.method_32173() + this.method_32137() / 2),

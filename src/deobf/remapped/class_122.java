@@ -7,7 +7,7 @@ public class class_122 extends class_6220 {
    public static final class_590 field_296 = new class_590(class_1255.field_6918.field_6917, class_314.method_1401(class_1255.field_6918.field_6917, 0.1F));
    public class_8343 field_294;
 
-   public class_122(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_8343 var7, class_590 var8, String var9, class_3384 var10) {
+   public class_122(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_8343 var7, class_590 var8, String var9, FontRenderer var10) {
       super(var1, var2, var3, var4, var5, var6, var8, var9, var10);
       this.field_294 = var7;
    }
@@ -38,7 +38,7 @@ public class class_122 extends class_6220 {
    @Override
    public void method_32178(float var1) {
       float var4 = !this.method_32140() ? 0.3F : (!this.method_1535() ? (!this.method_32185() ? Math.max(var1 * this.field_31774, 0.0F) : 1.5F) : 0.0F);
-      class_73.method_99(
+      FontManager.method_99(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)this.method_32109(),
@@ -50,7 +50,7 @@ public class class_122 extends class_6220 {
          )
       );
       if (this.method_32165() != null) {
-         class_73.method_88(
+         FontManager.method_88(
             this.method_32097(),
             (float)(this.method_32132() + this.method_32109() / 2),
             (float)(this.method_32173() + this.method_32137() / 2),

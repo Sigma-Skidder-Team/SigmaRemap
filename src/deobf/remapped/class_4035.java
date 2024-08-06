@@ -8,7 +8,7 @@ public class class_4035 {
    public int field_19596;
    public int field_19593;
 
-   public class_4035(class_3384 var1) {
+   public class_4035(FontRenderer var1) {
       this.field_19594 = var1;
    }
 }

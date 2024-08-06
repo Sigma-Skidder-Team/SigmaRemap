@@ -114,7 +114,7 @@ public class AutoCrystalModule extends PremiumModule {
          double var9 = (double)var6.getY() - client.gameRenderer.method_35949().method_41627().method_60();
          double var11 = (double)var6.getZ() - client.gameRenderer.method_35949().method_41627().method_62();
          class_8194 var13 = new class_8194(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
-         class_73.method_83(var13, var4);
+         FontManager.method_83(var13, var4);
       }
 
       var4 = class_314.method_1444(9000000, 1.0F);
@@ -124,7 +124,7 @@ public class AutoCrystalModule extends PremiumModule {
          double var20 = this.field_48550.getPosZ() - client.gameRenderer.method_35949().method_41627().method_62();
          float var16 = 0.3F;
          class_8194 var17 = new class_8194(var14 - (double)var16, var19 + 0.9, var20 - (double)var16, var14 + (double)var16, var19 + 1.0, var20 + (double)var16);
-         class_73.method_83(var17, var4);
+         FontManager.method_83(var17, var4);
       }
 
       GL11.glEnable(2929);

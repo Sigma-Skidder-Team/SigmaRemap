@@ -52,7 +52,7 @@ public class MurdererModule extends Module {
       if (this.method_42015()) {
          if (this.field_9550) {
             if (this.method_42007("GUI")) {
-               class_3384 var4 = class_5320.field_27152;
+               FontRenderer var4 = class_5320.field_27152;
                byte var5 = -1;
                int var6 = MinecraftClient.getInstance().window.method_43166();
                int var7 = MinecraftClient.getInstance().window.method_43163();
@@ -61,11 +61,11 @@ public class MurdererModule extends Module {
                }
 
                if (this.field_9549 != null) {
-                  class_73.method_94(
+                  FontManager.method_94(
                      (float)(var6 - var4.method_18547(this.field_9548) - 90), (float)(var7 - 130), (float)(var6 - 10), (float)(var7 - 10), 1342177280
                   );
-                  class_73.method_96((float)(var6 - var4.method_18547(this.field_9548) - 80), (float)(var7 - 120), 50.0F, 100.0F, this.field_9549);
-                  class_73.method_87(
+                  FontManager.method_96((float)(var6 - var4.method_18547(this.field_9548) - 80), (float)(var7 - 120), 50.0F, 100.0F, this.field_9549);
+                  FontManager.method_87(
                      var4,
                      (float)(var6 - var4.method_18547(this.field_9548) - 20),
                      (float)(var7 - var4.method_18548(this.field_9548) - 60),

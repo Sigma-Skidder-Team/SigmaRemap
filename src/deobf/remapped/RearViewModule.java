@@ -88,7 +88,7 @@ public class RearViewModule extends PremiumModule {
                   var8 = (int)((float)var8 * class_5181.method_23766(this.field_48469.method_11123(), 0.3, 0.88, 0.47, 1.0));
                }
 
-               class_73.method_128(
+               FontManager.method_128(
                   (float)(client.window.method_43166() - var7 - var5),
                   (float)(client.window.method_43163() + var8),
                   (float)var5,
@@ -176,7 +176,7 @@ public class RearViewModule extends PremiumModule {
       if (this.method_42015()) {
          if (field_48470 != null) {
             if (client.screen == null || this.getBooleanValueByName("Show in GUI") || this.field_48467 != 0) {
-               class_73.method_127();
+               FontManager.method_127();
                RenderSystem.method_16438();
                RenderSystem.method_16402(16640, false);
                field_48470.method_19717(true);
@@ -213,7 +213,7 @@ public class RearViewModule extends PremiumModule {
 
    @Override
    public void onEnable() {
-      class_73.method_95(client.method_8584());
+      FontManager.method_95(client.method_8584());
       field_48470 = new class_4230(client.window.getFramebufferWidth(), client.window.getFramebufferHeight(), true, MinecraftClient.IS_SYSTEM_MAC);
       field_48470.method_19709(1.0F, 1.0F, 1.0F, 1.0F);
    }

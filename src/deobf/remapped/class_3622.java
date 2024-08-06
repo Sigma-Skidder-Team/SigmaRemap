@@ -2,7 +2,7 @@ package remapped;
 
 public class class_3622 {
    private static String[] field_17667;
-   public final class_3384 field_17671;
+   public final FontRenderer field_17671;
    public final int field_17666;
    private boolean field_17668 = false;
    public final int field_17670 = 25;
@@ -49,9 +49,9 @@ public class class_3622 {
          var4 = class_3483.method_15984(this.field_17669.method_11123(), 0.0F, 1.0F, 1.0F);
       }
 
-      class_73.method_135((float)this.method_16873(), (float)this.method_16871(), (float)this.method_16874() * var4, (float)this.method_16875());
+      FontManager.method_135((float)this.method_16873(), (float)this.method_16871(), (float)this.method_16874() * var4, (float)this.method_16875());
       this.method_16870(var1);
-      class_73.method_141();
+      FontManager.method_141();
    }
 
    public void method_16870(float var1) {

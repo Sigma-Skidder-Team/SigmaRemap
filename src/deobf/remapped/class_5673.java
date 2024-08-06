@@ -114,7 +114,7 @@ public class class_5673 extends class_446 {
          float var6 = (float)Math.round((float)(this.method_32173() + 15) - 5.0F * var4);
          float var7 = (float)Math.round((float)(this.method_32109() - 30) + 10.0F * var4);
          float var8 = (float)Math.round((float)(this.method_32109() - 30) + 10.0F * var4);
-         class_73.method_128(
+         FontManager.method_128(
             (float)(this.method_32132() + 15) - 5.0F * var4,
             (float)(this.method_32173() + 15) - 5.0F * var4,
             (float)(this.method_32109() - 30) + 10.0F * var4,
@@ -123,9 +123,9 @@ public class class_5673 extends class_446 {
             var1
          );
          if (this.field_28756 == null && this.field_28752 == null) {
-            class_73.method_99(var5, var6, var7, var8, NotificationIcons.musicartwork, class_314.method_1444(class_1255.field_6918.field_6917, var1 * (1.0F - var4)));
+            FontManager.method_99(var5, var6, var7, var8, NotificationIcons.musicartwork, class_314.method_1444(class_1255.field_6918.field_6917, var1 * (1.0F - var4)));
             if (this.field_28753 != null) {
-               class_73.method_99(var5, var6, var7, var8, NotificationIcons.musicartwork, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1));
+               FontManager.method_99(var5, var6, var7, var8, NotificationIcons.musicartwork, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1));
             }
          } else {
             if (this.field_28756 == null) {
@@ -154,9 +154,9 @@ public class class_5673 extends class_446 {
                this.field_28753 = null;
             }
 
-            class_73.method_99(var5, var6, var7, var8, this.field_28756, class_314.method_1444(class_1255.field_6918.field_6917, var1 * (1.0F - var4)));
+            FontManager.method_99(var5, var6, var7, var8, this.field_28756, class_314.method_1444(class_1255.field_6918.field_6917, var1 * (1.0F - var4)));
             if (this.field_28753 != null) {
-               class_73.method_99(var5, var6, var7, var8, this.field_28753, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1));
+               FontManager.method_99(var5, var6, var7, var8, this.field_28753, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1));
             }
          }
 
@@ -166,7 +166,7 @@ public class class_5673 extends class_446 {
          }
 
          float var10 = 0.5F + var4 / 2.0F;
-         class_73.method_99(
+         FontManager.method_99(
             (float)(this.method_32132() + this.method_32109() / 2) - (float)(var9 / 2) * var10,
             (float)(this.method_32173() + this.method_32109() / 2) - (float)(var9 / 2) * var10,
             (float)var9 * var10,
@@ -174,19 +174,19 @@ public class class_5673 extends class_446 {
             NotificationIcons.playicon,
             class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1)
          );
-         class_3384 var11 = class_5320.field_27145;
+         FontRenderer var11 = class_5320.field_27145;
          if (this.field_36275 != null) {
-            class_73.method_151(this);
+            FontManager.method_151(this);
             String[] var12 = this.method_32165().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
             if (var12.length > 1) {
-               class_73.method_87(
+               FontManager.method_87(
                   var11,
                   (float)(this.method_32132() + (this.method_32109() - var11.method_18547(var12[1])) / 2),
                   (float)(this.method_32173() + this.method_32109() - 2),
                   var12[1],
                   class_314.method_1444(class_1255.field_6918.field_6917, var1)
                );
-               class_73.method_87(
+               FontManager.method_87(
                   var11,
                   (float)(this.method_32132() + (this.method_32109() - var11.method_18547(var12[0])) / 2),
                   (float)(this.method_32173() + this.method_32109() - 2 + 13),
@@ -194,7 +194,7 @@ public class class_5673 extends class_446 {
                   class_314.method_1444(class_1255.field_6918.field_6917, var1)
                );
             } else {
-               class_73.method_87(
+               FontManager.method_87(
                   var11,
                   (float)(this.method_32132() + (this.method_32109() - var11.method_18547(var12[0])) / 2),
                   (float)(this.method_32173() + this.method_32109() - 2 + 6),
@@ -203,7 +203,7 @@ public class class_5673 extends class_446 {
                );
             }
 
-            class_73.method_141();
+            FontManager.method_141();
          }
       }
    }

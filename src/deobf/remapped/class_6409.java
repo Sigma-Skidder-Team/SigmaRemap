@@ -75,7 +75,7 @@ public class class_6409 extends class_1859 {
          }
 
          if (this.field_32709 != null) {
-            class_73.method_128(
+            FontManager.method_128(
                (float)(this.field_36270 + var5),
                (float)(this.field_36261 + var5),
                (float)(this.field_36278 - var5 * 2),
@@ -83,7 +83,7 @@ public class class_6409 extends class_1859 {
                20.0F,
                var1 * 0.5F
             );
-            class_73.method_128(
+            FontManager.method_128(
                (float)(this.field_36270 + var5),
                (float)(this.field_36261 + var5),
                (float)(this.field_36278 - var5 * 2),
@@ -92,12 +92,12 @@ public class class_6409 extends class_1859 {
                var1
             );
             GL11.glPushMatrix();
-            class_73.method_107();
-            class_73.method_139(
+            FontManager.method_107();
+            FontManager.method_139(
                (float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, 8.0F, class_1255.field_6918.field_6917
             );
-            class_73.method_85(class_3118.field_15505);
-            class_73.method_153(
+            FontManager.method_85(class_3118.field_15505);
+            FontManager.method_153(
                (float)(this.field_36270 - 1),
                (float)(this.field_36261 - 1),
                (float)(this.field_36278 + 2),
@@ -111,22 +111,22 @@ public class class_6409 extends class_1859 {
                int var7 = this.field_36257 / 2;
                int var8 = this.field_36261 + (var11.field_7417 ? 0 : var7);
                int var9 = this.field_36278 / 2;
-               class_73.method_150(this.field_36270, var8, this.field_36270 + this.field_36278, var8 + var7, true);
-               class_73.method_124(
+               FontManager.method_150(this.field_36270, var8, this.field_36270 + this.field_36278, var8 + var7, true);
+               FontManager.method_124(
                   (float)(this.field_36270 + var9),
                   (float)(var8 + this.field_36257 / 4),
                   (float)(var9 * 2 - 4) * var11.field_7415 + 4.0F,
                   class_314.method_1444(class_1255.field_6918.field_6917, (1.0F - var11.field_7415 * (0.5F + var11.field_7415 * 0.5F)) * 0.4F)
                );
-               class_73.method_141();
+               FontManager.method_141();
                var11.field_7415 = Math.min(var11.field_7415 + 3.0F / (float) MinecraftClient.method_8501(), 1.0F);
                if (var11.field_7415 == 1.0F) {
                   var4.remove();
                }
             }
 
-            class_73.method_145();
-            class_73.method_108(
+            FontManager.method_145();
+            FontManager.method_108(
                (float)this.field_36270,
                (float)this.field_36261,
                (float)this.field_36278,
@@ -135,14 +135,14 @@ public class class_6409 extends class_1859 {
                class_314.method_1444(class_1255.field_6929.field_6917, 0.3F)
             );
             GL11.glPopMatrix();
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27161,
                (float)(this.field_36270 + 14),
                (float)(this.field_36261 + 8),
                "+",
                class_314.method_1444(class_1255.field_6918.field_6917, 0.8F)
             );
-            class_73.method_103(
+            FontManager.method_103(
                (float)(this.field_36270 + 16), (float)(this.field_36261 + 65), 8.0F, 2.0F, class_314.method_1444(class_1255.field_6918.field_6917, 0.8F)
             );
          }

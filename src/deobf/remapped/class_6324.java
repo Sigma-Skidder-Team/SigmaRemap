@@ -71,7 +71,7 @@ public class class_6324 {
       return var6 + var1 + var7;
    }
 
-   public static int method_28822(String var0, class_3384 var1, float var2, int var3, float var4) {
+   public static int method_28822(String var0, FontRenderer var1, float var2, int var3, float var4) {
       int var7 = -1;
       int var8 = -1;
 

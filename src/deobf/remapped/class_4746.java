@@ -81,9 +81,9 @@ public class class_4746 {
             1.0
          );
          byte var4 = 35;
-         class_73.method_149(field_22995, field_22999 - var4, field_23000, field_23001 + var4);
+         FontManager.method_149(field_22995, field_22999 - var4, field_23000, field_23001 + var4);
          field_22994.method_18755(field_22998.theTimer.field_32600);
-         class_73.method_141();
+         FontManager.method_141();
          GL11.glEnable(3008);
          field_22996.method_19717(true);
          field_22998.field_9596.method_19717(true);

@@ -14,13 +14,13 @@ public class class_6899 extends class_1859 {
    public void method_32178(float var1) {
       this.field_35471.method_11119(!this.method_32183() ? class_4043.field_19618 : class_4043.field_19620);
       var1 *= 0.09F + 0.25F * this.field_35471.method_11123() + (this.field_35472 ? 0.0F : 0.2F);
-      class_73.method_103(
+      FontManager.method_103(
          (float)(this.field_36270 + 10), (float)(this.field_36261 + 16), 5.0F, 14.0F, class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
-      class_73.method_103(
+      FontManager.method_103(
          (float)(this.field_36270 + 17), (float)(this.field_36261 + 10), 5.0F, 20.0F, class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
-      class_73.method_103(
+      FontManager.method_103(
          (float)(this.field_36270 + 24), (float)(this.field_36261 + 20), 5.0F, 10.0F, class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
       super.method_32178(var1);

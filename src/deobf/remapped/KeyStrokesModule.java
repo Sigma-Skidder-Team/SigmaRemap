@@ -47,7 +47,7 @@ public class KeyStrokesModule extends Module {
                   for (class_6849 var7 : class_6849.values()) {
                      class_7737 var8 = var7.method_31422();
                      class_7737 var9 = var7.method_31423();
-                     class_73.method_149(
+                     FontManager.method_149(
                         this.field_39065 + var8.field_39233,
                         this.field_39066 + var8.field_39236,
                         this.field_39065 + var8.field_39233 + var9.field_39233,
@@ -55,7 +55,7 @@ public class KeyStrokesModule extends Module {
                      );
                      class_4746.method_21925(this.field_39065 + var8.field_39233, this.field_39066 + var8.field_39236, var9.field_39233, var9.field_39236);
                      class_4746.method_21924();
-                     class_73.method_141();
+                     FontManager.method_141();
                   }
                }
 
@@ -78,14 +78,14 @@ public class KeyStrokesModule extends Module {
                      var12 = "L";
                   }
 
-                  class_73.method_94(
+                  FontManager.method_94(
                      (float)(this.field_39065 + var21.field_39233),
                      (float)(this.field_39066 + var21.field_39236),
                      (float)(this.field_39065 + var21.field_39233 + var23.field_39233),
                      (float)(this.field_39066 + var21.field_39236 + var23.field_39236),
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.5F * var10)
                   );
-                  class_73.method_128(
+                  FontManager.method_128(
                      (float)(this.field_39065 + var21.field_39233),
                      (float)(this.field_39066 + var21.field_39236),
                      (float)var23.field_39233,
@@ -93,7 +93,7 @@ public class KeyStrokesModule extends Module {
                      10.0F,
                      0.75F * var11
                   );
-                  class_73.method_87(
+                  FontManager.method_87(
                      class_5320.field_27139,
                      (float)(this.field_39065 + var21.field_39233 + (var23.field_39233 - class_5320.field_27139.method_18547(var12)) / 2),
                      (float)(this.field_39066 + var21.field_39236 + 12),
@@ -109,7 +109,7 @@ public class KeyStrokesModule extends Module {
                   class_6849 var18 = var16.field_15113;
                   class_7737 var20 = var18.method_31422();
                   class_7737 var22 = var18.method_31423();
-                  class_73.method_149(
+                  FontManager.method_149(
                      this.field_39065 + var20.field_39233,
                      this.field_39066 + var20.field_39236,
                      this.field_39065 + var20.field_39233 + var22.field_39233,
@@ -134,13 +134,13 @@ public class KeyStrokesModule extends Module {
                      var29 = class_314.method_1444(-1, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
                   }
 
-                  class_73.method_124(
+                  FontManager.method_124(
                      (float)(this.field_39065 + var20.field_39233 + var22.method_35028() / 2),
                      (float)(this.field_39066 + var20.field_39236 + var22.field_39236 / 2),
                      (float)(var22.method_35028() - 4) * var27 + 4.0F,
                      var29
                   );
-                  class_73.method_141();
+                  FontManager.method_141();
                   if (var16.field_15112.method_11123() == 1.0F) {
                      var14.remove();
                   }

@@ -17,8 +17,8 @@ public class class_6080 {
    private int field_31117 = 10;
    private int field_31113 = 10;
    private int field_31119 = 10;
-   private class_3384 field_31120 = class_5320.field_27138;
-   private class_3384 field_31122 = class_5320.field_27152;
+   private FontRenderer field_31120 = class_5320.field_27138;
+   private FontRenderer field_31122 = class_5320.field_27152;
 
    public void pushNotification(Notification var1) {
       for (Notification var5 : this.field_31118) {
@@ -72,27 +72,27 @@ public class class_6080 {
             int var10 = new Color(0.14F, 0.14F, 0.14F, var9 * 0.93F).getRGB();
             int var11 = new Color(0.0F, 0.0F, 0.0F, Math.min(var6 * 0.075F, 1.0F)).getRGB();
             int var12 = new Color(1.0F, 1.0F, 1.0F, var9).getRGB();
-            class_73.method_128((float)var7, (float)var8, (float)this.field_31110, (float)this.field_31121, 10.0F, var9);
-            class_73.method_94((float)var7, (float)var8, (float)(var7 + this.field_31110), (float)(var8 + this.field_31121), var10);
-            class_73.method_94((float)var7, (float)var8, (float)(var7 + this.field_31110), (float)(var8 + 1), var11);
-            class_73.method_94((float)var7, (float)(var8 + this.field_31121 - 1), (float)(var7 + this.field_31110), (float)(var8 + this.field_31121), var11);
-            class_73.method_94((float)var7, (float)(var8 + 1), (float)(var7 + 1), (float)(var8 + this.field_31121 - 1), var11);
-            class_73.method_94(
+            FontManager.method_128((float)var7, (float)var8, (float)this.field_31110, (float)this.field_31121, 10.0F, var9);
+            FontManager.method_94((float)var7, (float)var8, (float)(var7 + this.field_31110), (float)(var8 + this.field_31121), var10);
+            FontManager.method_94((float)var7, (float)var8, (float)(var7 + this.field_31110), (float)(var8 + 1), var11);
+            FontManager.method_94((float)var7, (float)(var8 + this.field_31121 - 1), (float)(var7 + this.field_31110), (float)(var8 + this.field_31121), var11);
+            FontManager.method_94((float)var7, (float)(var8 + 1), (float)(var7 + 1), (float)(var8 + this.field_31121 - 1), var11);
+            FontManager.method_94(
                (float)(var7 + this.field_31110 - 1), (float)(var8 + 1), (float)(var7 + this.field_31110), (float)(var8 + this.field_31121 - 1), var11
             );
-            class_73.method_149(var7, var8, var7 + this.field_31110 - this.field_31119, var8 + this.field_31121);
-            class_73.method_87(
+            FontManager.method_149(var7, var8, var7 + this.field_31110 - this.field_31119, var8 + this.field_31121);
+            FontManager.method_87(
                this.field_31122, (float)(var7 + this.field_31121 + this.field_31119 - 2), (float)(var8 + this.field_31119), var5.field_42295, var12
             );
-            class_73.method_87(
+            FontManager.method_87(
                this.field_31120,
                (float)(var7 + this.field_31121 + this.field_31119 - 2),
                (float)(var8 + this.field_31119 + this.field_31122.method_18548(var5.field_42295)),
                var5.field_42299,
                var12
             );
-            class_73.method_141();
-            class_73.method_96(
+            FontManager.method_141();
+            FontManager.method_96(
                (float)(var7 + this.field_31119 / 2),
                (float)(var8 + this.field_31119 / 2),
                (float)(this.field_31121 - this.field_31119),
@@ -133,8 +133,8 @@ public class class_6080 {
             - var3 * (int)((float)this.field_31121 * this.method_27837(var3) + (float)this.field_31119 * this.method_27837(var3));
 
          for (int var8 = 0; var8 < 3; var8++) {
-            var4.field_42293[var8] = class_73.method_114(var6 + this.field_31110 / 3 * var8, var7, var4.field_42293[var8]);
-            var4.field_42292[var8] = class_73.method_114(var6 + this.field_31110 / 3 * var8, var7 + this.field_31121, var4.field_42292[var8]);
+            var4.field_42293[var8] = FontManager.method_114(var6 + this.field_31110 / 3 * var8, var7, var4.field_42293[var8]);
+            var4.field_42292[var8] = FontManager.method_114(var6 + this.field_31110 / 3 * var8, var7 + this.field_31121, var4.field_42292[var8]);
          }
       }
    }

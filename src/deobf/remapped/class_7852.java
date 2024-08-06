@@ -61,8 +61,8 @@ public class class_7852 extends class_7038 {
       if (var5 != null) {
          this.field_39795.method_32104(var5.method_39653());
          if (var5.method_39654() != null) {
-            class_73.method_135((float)(this.field_36270 + 295), (float)(this.field_36261 + 280), 190.0F, 50.0F);
-            class_73.method_99(
+            FontManager.method_135((float)(this.field_36270 + 295), (float)(this.field_36261 + 280), 190.0F, 50.0F);
+            FontManager.method_99(
                (float)(this.field_36270 + 316),
                (float)(this.field_36261 + 280),
                190.0F,
@@ -70,19 +70,19 @@ public class class_7852 extends class_7038 {
                var5.method_39654(),
                class_314.method_1444(class_1255.field_6918.field_6917, var1)
             );
-            class_73.method_141();
+            FontManager.method_141();
          }
       }
 
-      class_73.method_87(class_5320.field_27140, 100.0F, 100.0F, "Redeem Premium", class_314.method_1444(class_1255.field_6918.field_6917, var1));
-      class_73.method_87(
+      FontManager.method_87(class_5320.field_27140, 100.0F, 100.0F, "Redeem Premium", class_314.method_1444(class_1255.field_6918.field_6917, var1));
+      FontManager.method_87(
          class_5320.field_27141,
          100.0F,
          150.0F,
          "Visit http://sigmaclient.info for more info",
          class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1)
       );
-      class_73.method_87(class_5320.field_27139, 100.0F, 263.0F, this.field_39791, class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1));
+      FontManager.method_87(class_5320.field_27139, 100.0F, 263.0F, this.field_39791, class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1));
       super.method_32178(var1);
    }
 }

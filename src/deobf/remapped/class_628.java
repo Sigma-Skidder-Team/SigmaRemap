@@ -66,13 +66,13 @@ public class class_628 extends class_1859 {
 
    public static void method_2920(int var0, int var1, int var2, float var3) {
       byte var6 = 14;
-      class_73.method_121((float)var0, (float)var1, (float)var6, class_314.method_1444(class_1255.field_6929.field_6917, 0.1F * var3));
-      class_73.method_121((float)var0, (float)var1, (float)(var6 - 1), class_314.method_1444(class_1255.field_6929.field_6917, 0.14F * var3));
-      class_73.method_121((float)var0, (float)var1, (float)(var6 - 2), class_314.method_1444(class_1255.field_6918.field_6917, var3));
-      class_73.method_121(
+      FontManager.method_121((float)var0, (float)var1, (float)var6, class_314.method_1444(class_1255.field_6929.field_6917, 0.1F * var3));
+      FontManager.method_121((float)var0, (float)var1, (float)(var6 - 1), class_314.method_1444(class_1255.field_6929.field_6917, 0.14F * var3));
+      FontManager.method_121((float)var0, (float)var1, (float)(var6 - 2), class_314.method_1444(class_1255.field_6918.field_6917, var3));
+      FontManager.method_121(
          (float)var0, (float)var1, (float)(var6 - 6), class_314.method_1444(class_314.method_1442(var2, class_1255.field_6929.field_6917, 0.7F), var3)
       );
-      class_73.method_121((float)var0, (float)var1, (float)(var6 - 7), class_314.method_1444(var2, var3));
+      FontManager.method_121((float)var0, (float)var1, (float)(var6 - 7), class_314.method_1444(var2, var3));
    }
 
    @Override

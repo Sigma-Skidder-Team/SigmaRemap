@@ -47,7 +47,7 @@ public class class_3004 extends class_446 {
       this.field_14742.method_14776();
    }
 
-   public class_3004(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, String var9, class_3384 var10) {
+   public class_3004(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, String var9, FontRenderer var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field_14743 = var9;
       this.field_14742.method_14776();
@@ -331,12 +331,12 @@ public class class_3004 extends class_446 {
          var6 = this.field_36275.replaceAll(".", this.field_14745);
       }
 
-      class_73.method_150(this.method_32132(), this.method_32173(), this.method_32132() + this.field_36278, this.method_32173() + this.field_36257, true);
+      FontManager.method_150(this.method_32132(), this.method_32173(), this.method_32132() + this.field_36278, this.method_32173() + this.field_36257, true);
       int var7 = this.field_36270 + 4;
       int var8 = this.field_36278 - 4;
       float var9 = (float)var7 + this.field_14754 + (float)this.field_36258.method_18547(var6.substring(0, this.field_14752));
       if (this.method_32098()) {
-         class_73.method_94(
+         FontManager.method_94(
             var9 + (float)(var6.isEmpty() ? 0 : -1),
             (float)(this.field_36261 + this.field_36257 / 2 - this.field_36258.method_18548(var6) / 2 + 2),
             var9 + (float)(var6.isEmpty() ? 1 : 0),
@@ -359,7 +359,7 @@ public class class_3004 extends class_446 {
       this.field_14746 = Math.min(Math.max(0, this.field_14746), var6.length());
       float var14 = (float)var7 + this.field_14754 + (float)this.field_36258.method_18547(var6.substring(0, this.field_14756));
       float var11 = (float)var7 + this.field_14754 + (float)this.field_36258.method_18547(var6.substring(0, this.field_14746));
-      class_73.method_94(
+      FontManager.method_94(
          var14,
          (float)(this.field_36261 + this.field_36257 / 2 - this.field_36258.method_18548(var6) / 2),
          var11,
@@ -368,7 +368,7 @@ public class class_3004 extends class_446 {
       );
       class_6206 var12 = this.field_36272.method_2773();
       class_6206 var13 = this.field_36272.method_2770();
-      class_73.method_88(
+      FontManager.method_88(
          this.field_36258,
          (float)var7 + this.field_14754,
          (float)(this.field_36261 + this.field_36257 / 2),
@@ -377,9 +377,9 @@ public class class_3004 extends class_446 {
          var12,
          var13
       );
-      class_73.method_141();
+      FontManager.method_141();
       if (this.field_14747) {
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.field_36270,
             (float)(this.field_36261 + this.field_36257 - 2),
             (float)(this.field_36270 + this.field_36278),

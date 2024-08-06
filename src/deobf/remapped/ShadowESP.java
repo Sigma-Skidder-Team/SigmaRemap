@@ -16,10 +16,10 @@ public class ShadowESP extends Module {
       if (this.method_42015()) {
          if (client.thePlayer != null && client.theWorld != null) {
             this.method_6345();
-            class_73.method_107();
+            FontManager.method_107();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.method_6347(class_4719.field_22893);
-            class_73.method_85(class_3118.field_15504);
+            FontManager.method_85(class_3118.field_15504);
             GL11.glLineWidth(1.0F);
             this.method_6343();
             this.method_6347(class_4719.field_22894);
@@ -29,7 +29,7 @@ public class ShadowESP extends Module {
             GL11.glEnable(3042);
             GL11.glDisable(2896);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            class_73.method_145();
+            FontManager.method_145();
             this.method_6346();
             this.field_7447.method_17415();
          }
@@ -53,7 +53,7 @@ public class ShadowESP extends Module {
                   GL11.glTranslatef(0.0F, 0.1F, 0.0F);
                   GL11.glRotatef(client.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
                   GL11.glScalef(-0.11F, -0.11F, -0.11F);
-                  class_73.method_102(
+                  FontManager.method_102(
                      -var3x.method_37086() * 22.0F,
                      -var3x.method_37074() * 5.5F,
                      var3x.method_37086() * 44.0F,

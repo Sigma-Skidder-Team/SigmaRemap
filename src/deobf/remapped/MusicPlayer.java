@@ -276,14 +276,14 @@ public class MusicPlayer extends class_446 {
          this.field_27955.method_32104(false);
       }
 
-      class_73.method_94(
+      FontManager.method_94(
          (float)(this.method_32132() + this.field_27953),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),
          (float)(this.method_32173() + this.method_32137() - this.field_27941),
          class_314.method_1444(-14277082, var1 * 0.8F)
       );
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.field_27953),
@@ -294,21 +294,21 @@ public class MusicPlayer extends class_446 {
       this.method_24918(var1);
       this.method_24921(var1);
       byte var4 = 55;
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27153,
          (float)(var4 + this.method_32132()),
          (float)(this.method_32173() + 20),
          "Jello",
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27152,
          (float)(var4 + this.method_32132() + 80),
          (float)(this.method_32173() + 40),
          "music",
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
-      class_73.method_128((float)this.method_32132(), (float)this.method_32173(), (float)this.method_32109(), (float)this.method_32137(), 14.0F, var1);
+      FontManager.method_128((float)this.method_32132(), (float)this.method_32173(), (float)this.method_32109(), (float)this.method_32137(), 14.0F, var1);
       super.method_32178(var1);
       if (this.field_27939 != null) {
          this.method_24926(var1);
@@ -318,14 +318,14 @@ public class MusicPlayer extends class_446 {
    private void method_24921(float var1) {
       int var4 = (int)this.field_27956.method_9466();
       int var5 = this.field_27956.method_9483();
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27138,
          (float)(this.method_32132() + this.field_27953 + 14),
          (float)(this.method_32173() + this.method_32137() - 10) - 22.0F * var1,
          class_7763.method_35222(var4),
          class_314.method_1444(class_1255.field_6918.field_6917, var1 * var1)
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27138,
          (float)(this.method_32132() + this.method_32109() - 14 - class_5320.field_27138.method_18547(class_7763.method_35222(var5))),
          (float)(this.method_32173() + this.method_32137() - 10) - 22.0F * var1,
@@ -338,7 +338,7 @@ public class MusicPlayer extends class_446 {
       class_8343 var4 = this.field_27956.method_9500();
       class_8343 var5 = this.field_27956.method_9506();
       if (var4 != null && var5 != null) {
-         class_73.method_99(
+         FontManager.method_99(
             (float)this.method_32132(),
             (float)(this.method_32173() + this.method_32137() - this.field_27941),
             (float)this.method_32109(),
@@ -346,21 +346,21 @@ public class MusicPlayer extends class_446 {
             var5,
             class_314.method_1444(class_1255.field_6918.field_6917, var1 * var1)
          );
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.method_32132(),
             (float)(this.method_32173() + this.method_32137() - this.field_27941),
             (float)(this.method_32132() + this.method_32109()),
             (float)(this.method_32173() + this.method_32137() - 5),
             class_314.method_1444(class_1255.field_6929.field_6917, 0.43F * var1)
          );
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.method_32132(),
             (float)(this.method_32173() + this.method_32137() - 5),
             (float)(this.method_32132() + this.field_27953),
             (float)(this.method_32173() + this.method_32137()),
             class_314.method_1444(class_1255.field_6929.field_6917, 0.43F * var1)
          );
-         class_73.method_99(
+         FontManager.method_99(
             (float)(this.method_32132() + (this.field_27953 - 114) / 2),
             (float)(this.method_32173() + this.method_32137() - 170),
             114.0F,
@@ -368,11 +368,11 @@ public class MusicPlayer extends class_446 {
             var4,
             class_314.method_1444(class_1255.field_6918.field_6917, var1)
          );
-         class_73.method_128(
+         FontManager.method_128(
             (float)(this.method_32132() + (this.field_27953 - 114) / 2), (float)(this.method_32173() + this.method_32137() - 170), 114.0F, 114.0F, 14.0F, var1
          );
       } else {
-         class_73.method_99(
+         FontManager.method_99(
             (float)this.method_32132(),
             (float)(this.method_32173() + this.method_32137() - this.field_27941),
             (float)this.method_32109(),
@@ -380,21 +380,21 @@ public class MusicPlayer extends class_446 {
             NotificationIcons.musicbg,
             class_314.method_1444(class_1255.field_6918.field_6917, var1 * var1)
          );
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.method_32132(),
             (float)(this.method_32173() + this.method_32137() - this.field_27941),
             (float)(this.method_32132() + this.method_32109()),
             (float)(this.method_32173() + this.method_32137() - 5),
             class_314.method_1444(class_1255.field_6929.field_6917, 0.43F * var1)
          );
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.method_32132(),
             (float)(this.method_32173() + this.method_32137() - 5),
             (float)(this.method_32132() + this.field_27953),
             (float)(this.method_32173() + this.method_32137()),
             class_314.method_1444(class_1255.field_6929.field_6917, 0.43F * var1)
          );
-         class_73.method_99(
+         FontManager.method_99(
             (float)(this.method_32132() + (this.field_27953 - 114) / 2),
             (float)(this.method_32173() + this.method_32137() - 170),
             114.0F,
@@ -402,7 +402,7 @@ public class MusicPlayer extends class_446 {
             NotificationIcons.musicartwork,
             class_314.method_1444(class_1255.field_6918.field_6917, var1)
          );
-         class_73.method_128(
+         FontManager.method_128(
             (float)(this.method_32132() + (this.field_27953 - 114) / 2), (float)(this.method_32173() + this.method_32137() - 170), 114.0F, 114.0F, 14.0F, var1
          );
       }
@@ -442,8 +442,8 @@ public class MusicPlayer extends class_446 {
          var9 = 0.0F;
       }
 
-      class_73.method_150(var13, var14, var13 + var11, var14 + var12, true);
-      class_73.method_87(
+      FontManager.method_150(var13, var14, var13 + var11, var14 + var12, true);
+      FontManager.method_87(
          class_5320.field_27138,
          (float)var13 - (float)var10 * var9 - 50.0F * var9,
          (float)var14,
@@ -451,7 +451,7 @@ public class MusicPlayer extends class_446 {
          class_314.method_1444(class_1255.field_6918.field_6917, var1 * var1 * Math.min(1.0F, Math.max(0.0F, 1.0F - var9 * 0.75F)))
       );
       if (var9 > 0.0F) {
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27138,
             (float)var13 - (float)var10 * var9 + (float)var10,
             (float)var14,
@@ -460,7 +460,7 @@ public class MusicPlayer extends class_446 {
          );
       }
 
-      class_73.method_141();
+      FontManager.method_141();
    }
 
    private void method_24926(float var1) {
@@ -484,7 +484,7 @@ public class MusicPlayer extends class_446 {
 
       float var4 = this.field_27931 < 50 ? (float)this.field_27931 / 50.0F : 1.0F;
       if (this.field_27943 != null) {
-         class_73.method_153(
+         FontManager.method_153(
             (float)this.field_27953,
             0.0F,
             (float)(this.method_32109() - this.field_27953),
@@ -494,28 +494,28 @@ public class MusicPlayer extends class_446 {
          );
       }
 
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_27953,
          0.0F,
          (float)this.method_32109(),
          (float)this.field_27927,
          class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1 * 0.2F)
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27141,
          (float)((this.method_32109() - class_5320.field_27141.method_18547(this.title) + this.field_27953) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.title,
          class_314.method_1444(class_1255.field_6918.field_6917, var4)
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27155,
          (float)((this.method_32109() - class_5320.field_27155.method_18547(this.title) + this.field_27953) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.title,
          class_314.method_1444(class_1255.field_6918.field_6917, 1.0F - var4)
       );
-      class_73.method_99(
+      FontManager.method_99(
          (float)this.field_27953,
          (float)this.field_27927,
          (float)(this.method_32109() - this.field_27953),

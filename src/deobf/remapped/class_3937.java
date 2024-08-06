@@ -56,7 +56,7 @@ public class class_3937 extends class_446 {
       if (this.field_19127 == null) {
          int var4 = this.field_36278 - 30;
          int var5 = this.field_36270 + 5;
-         class_73.method_96(
+         FontManager.method_96(
             (float)var5,
             (float)((MinecraftClient.getInstance().window.method_43163() - var4 * 342 / 460) / 2 - 60),
             (float)var4,
@@ -68,7 +68,7 @@ public class class_3937 extends class_446 {
       if (this.field_19127 != null) {
          int var6 = class_314.method_1444(class_1255.field_6929.field_6917, 0.2F);
          int var7 = class_314.method_1444(class_1255.field_6929.field_6917, 0.7F);
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27140,
             (float)(this.field_36270 + (this.field_36278 - class_5320.field_27140.method_18547(this.field_19127.method_33321())) / 2),
             (float)this.field_36261,

@@ -43,7 +43,7 @@ public class class_9729 extends class_1859 {
          }
 
          if (var10) {
-            class_73.method_94(
+            FontManager.method_94(
                (float)this.field_36270,
                (float)this.field_36261,
                (float)(this.field_36270 + this.field_36278),
@@ -59,14 +59,14 @@ public class class_9729 extends class_1859 {
             var13 = class_1255.field_6918.field_6917;
          }
 
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27138,
             (float)(this.field_36270 + var11 + 50),
             (float)(this.field_36261 + var12 + 5),
             this.field_36275,
             class_314.method_1444(var13, var1)
          );
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27145,
             (float)(this.field_36270 + var11 + 50),
             (float)(this.field_36261 + var12 + 19),

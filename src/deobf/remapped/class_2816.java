@@ -42,7 +42,7 @@ public class class_2816 extends class_6220 {
 
       byte var5 = 5;
       float var6 = (float)this.method_32109();
-      class_73.method_128(
+      FontManager.method_128(
          (float)(this.method_32132() + var5),
          (float)(this.method_32173() + var5),
          (float)(this.method_32109() - var5 * 2),
@@ -50,7 +50,7 @@ public class class_2816 extends class_6220 {
          10.0F,
          var1 * 0.8F
       );
-      class_73.method_121(
+      FontManager.method_121(
          (float)(this.method_32132() + this.method_32109() / 2),
          (float)(this.method_32173() + this.method_32109() / 2),
          var6,
@@ -59,7 +59,7 @@ public class class_2816 extends class_6220 {
       if (this.method_32165() == null) {
       }
 
-      class_3384 var7 = class_5320.field_27145;
+      FontRenderer var7 = class_5320.field_27145;
       super.method_32182(var1);
    }
 }

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class class_3384 implements class_4027 {
+public class FontRenderer implements class_4027 {
    private static final class_1299 field_16672 = class_3980.method_18363();
    private class_4035[] field_16675 = new class_4035[256];
    private Map field_16679 = new HashMap();
@@ -24,7 +24,7 @@ public class class_3384 implements class_4027 {
    private FontMetrics field_16673;
    private final int field_16674;
 
-   public class_3384(Font var1, boolean var2, char[] var3, int var4) {
+   public FontRenderer(Font var1, boolean var2, char[] var3, int var4) {
       class_5750.method_26030();
       this.field_16683 = var1;
       this.field_16682 = var1.getSize();
@@ -38,15 +38,15 @@ public class class_3384 implements class_4027 {
       this.method_15649(var3);
    }
 
-   public class_3384(Font var1, boolean var2, char[] var3) {
+   public FontRenderer(Font var1, boolean var2, char[] var3) {
       this(var1, var2, var3, 0);
    }
 
-   public class_3384(Font var1, boolean var2) {
+   public FontRenderer(Font var1, boolean var2) {
       this(var1, var2, null);
    }
 
-   public class_3384(Font var1, int var2) {
+   public FontRenderer(Font var1, int var2) {
       this(var1, true, null, var2);
    }
 

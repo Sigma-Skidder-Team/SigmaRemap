@@ -285,7 +285,7 @@ public class AltManagerMenu extends class_2596 {
    @Override
    public void method_32178(float var1) {
       this.method_9892();
-      class_73.method_115(
+      FontManager.method_115(
          (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620),
          114,
          (int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10606) - this.field_10608,
@@ -313,7 +313,7 @@ public class AltManagerMenu extends class_2596 {
       float var3 = this.field_10598 < 25.0F ? this.field_10598 / 25.0F : 1.0F;
       GL11.glTexParameteri(3553, 10241, 9728);
       if (this.field_10617 != null) {
-         class_73.method_99(
+         FontManager.method_99(
             0.0F,
             0.0F,
             (float)((int)((float) MinecraftClient.getInstance().window.method_43166() * this.field_10620) - 15),
@@ -333,8 +333,8 @@ public class AltManagerMenu extends class_2596 {
       int var3 = this.field_36270 + this.field_10608;
       int var4 = this.field_36261 + this.field_10608;
       int var5 = class_314.method_1444(class_1255.field_6929.field_6917, 0.8F);
-      class_73.method_87(class_5320.field_27153, (float)var3, (float)var4, "Jello", var5);
-      class_73.method_87(class_5320.field_27141, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
+      FontManager.method_87(class_5320.field_27153, (float)var3, (float)var4, "Jello", var5);
+      FontManager.method_87(class_5320.field_27141, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
    }
 
    private void method_9897() {
@@ -417,7 +417,7 @@ public class AltManagerMenu extends class_2596 {
 
       float var5 = var4 - this.field_10602;
       float var6 = (float)(var3 - this.field_10607);
-      class_73.method_96(
+      FontManager.method_96(
          (float)this.field_10607, this.field_10602, (float)(this.method_32109() * 2), (float)(this.method_32137() + 114), NotificationIcons.panorama5
       );
       float var7 = 0.5F;
@@ -429,7 +429,7 @@ public class AltManagerMenu extends class_2596 {
          this.field_10607 = (int)((float)this.field_10607 + var6 * var7);
       }
 
-      class_73.method_94(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6918.field_6917, 0.95F));
+      FontManager.method_94(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6918.field_6917, 0.95F));
    }
 
    @Override

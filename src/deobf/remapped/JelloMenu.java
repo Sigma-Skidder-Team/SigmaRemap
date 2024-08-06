@@ -226,7 +226,7 @@ public class JelloMenu extends class_2596 {
          ? this.method_3357(field_4000.method_11123(), 0.8F) * 0.5F + 0.5F
          : (!field_4001 ? 1.0F : this.method_3357(field_4000.method_11123(), 1.0F));
       float var5 = 0.2F * var1 * var4;
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.field_36278),
@@ -247,7 +247,7 @@ public class JelloMenu extends class_2596 {
 
       if (SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4301() != null) {
          String var12 = SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4301().field_8677;
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27152,
             (float)(this.field_36278 - class_5320.field_27152.method_18547(var12) - 80),
             (float)(this.field_36257 - 47),

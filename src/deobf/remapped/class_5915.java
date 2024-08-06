@@ -34,7 +34,7 @@ public class class_5915 extends class_1859 {
       }
 
       if (var4 == 0 && !this.field_30018.method_9486()) {
-         class_73.method_103(
+         FontManager.method_103(
             (float)this.method_32132(),
             (float)this.method_32173(),
             (float)this.method_32109(),
@@ -42,21 +42,21 @@ public class class_5915 extends class_1859 {
             class_314.method_1444(class_1255.field_6929.field_6917, 0.43F * var1)
          );
       } else {
-         class_73.method_103(
+         FontManager.method_103(
             (float)this.method_32132(),
             (float)this.method_32173(),
             (float)this.method_32109(),
             (float)this.method_32137(),
             class_314.method_1444(class_1255.field_6920.field_6917, 0.075F)
          );
-         class_73.method_103(
+         FontManager.method_103(
             (float)this.method_32132() + (float)this.method_32109() * var9,
             (float)this.method_32173(),
             (float)this.method_32109() * (1.0F - var9),
             (float)this.method_32137(),
             class_314.method_1444(class_1255.field_6929.field_6917, 0.43F * var1)
          );
-         class_73.method_103(
+         FontManager.method_103(
             (float)this.method_32132(),
             (float)this.method_32173(),
             (float)this.method_32109() * var8,
@@ -64,7 +64,7 @@ public class class_5915 extends class_1859 {
             class_314.method_1444(class_1255.field_6918.field_6917, var1 * var1)
          );
          if (var8 != 0.0F) {
-            class_73.method_96((float)this.method_32132() + (float)this.method_32109() * var8, (float)this.method_32173(), 5.0F, 5.0F, NotificationIcons.shadow_right);
+            FontManager.method_96((float)this.method_32132() + (float)this.method_32109() * var8, (float)this.method_32173(), 5.0F, 5.0F, NotificationIcons.shadow_right);
          }
       }
    }

@@ -50,20 +50,20 @@ public class class_482 extends class_446 {
       var5 += var4;
       if (var5 - var4 <= var8) {
          if (var7 != 0.0F) {
-            class_73.method_120(
+            FontManager.method_120(
                this.field_36270,
                var5,
                this.field_36278,
                Math.max(20, var6),
                class_314.method_1444(!this.method_32185() ? class_1255.field_6918.field_6917 : this.field_2996, var7)
             );
-            class_73.method_150(this.field_36270, var5, this.field_36270 + this.field_36278 + 20, var5 + var6, true);
+            FontManager.method_150(this.field_36270, var5, this.field_36270 + this.field_36278 + 20, var5 + var6, true);
             if (this.field_2988 != null) {
                this.method_2275();
                this.method_2278();
                this.method_2277(var7);
                if (this.field_2986.method_11123() > 0.0F && var6 > 55) {
-                  class_73.method_99(
+                  FontManager.method_99(
                      (float)(this.field_36270 + this.method_32109()),
                      (float)var5 + (float)(26 * var6) / 100.0F,
                      18.0F * this.field_2986.method_11123() * (float)var6 / 100.0F,
@@ -74,7 +74,7 @@ public class class_482 extends class_446 {
                }
 
                super.method_32178(var1 * var7);
-               class_73.method_141();
+               FontManager.method_141();
             }
          }
       } else {
@@ -83,11 +83,11 @@ public class class_482 extends class_446 {
    }
 
    public void method_2275() {
-      class_73.method_102(
+      FontManager.method_102(
          (float)(this.field_36270 + 13), (float)(this.field_36261 + 13), 75.0F, 75.0F, this.field_2988.method_33340(), class_1255.field_6918.field_6917, true
       );
-      class_73.method_147((float)(this.field_36270 + 13), (float)(this.field_36261 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
-      class_73.method_99(
+      FontManager.method_147((float)(this.field_36270 + 13), (float)(this.field_36261 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
+      FontManager.method_99(
          (float)(this.field_36270 + 1),
          (float)this.field_36261,
          100.0F,
@@ -99,39 +99,39 @@ public class class_482 extends class_446 {
 
    public void method_2278() {
       if (this.field_2988.method_33338()) {
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27141,
             (float)(this.field_36270 + 110),
             (float)(this.field_36261 + 18),
             this.field_2988.method_33344(),
             class_1255.field_6929.field_6917
          );
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27138,
             (float)(this.field_36270 + 110),
             (float)(this.field_36261 + 50),
             "Username: " + this.field_2988.method_33344(),
             class_1255.field_6920.field_6917
          );
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27138, (float)(this.field_36270 + 110), (float)(this.field_36261 + 65), "Offline account", class_1255.field_6920.field_6917
          );
       } else {
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27141,
             (float)(this.field_36270 + 110),
             (float)(this.field_36261 + 18),
             this.field_2988.method_33321(),
             class_1255.field_6929.field_6917
          );
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27138,
             (float)(this.field_36270 + 110),
             (float)(this.field_36261 + 50),
             "Email: " + this.field_2988.method_33344(),
             class_1255.field_6920.field_6917
          );
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27138,
             (float)(this.field_36270 + 110),
             (float)(this.field_36261 + 65),
@@ -147,7 +147,7 @@ public class class_482 extends class_446 {
       this.field_2987 = Math.max(0, this.field_2987 - 1);
       float var4 = this.field_2987 <= 20 ? 20.0F : -20.0F;
       float var5 = (float)this.field_2987 >= var4 && (float)this.field_2987 <= (float)this.field_2991 - var4 ? 1.0F : (float)this.field_2987 % var4 / var4;
-      class_73.method_99(
+      FontManager.method_99(
          (float)(this.field_36270 + this.field_36278 - 45),
          (float)(this.field_36261 + 42),
          17.0F,
@@ -155,7 +155,7 @@ public class class_482 extends class_446 {
          NotificationIcons.alterrors,
          class_314.method_1444(class_1255.field_6918.field_6917, var5 * var1)
       );
-      class_73.method_99(
+      FontManager.method_99(
          (float)(this.field_36270 + this.field_36278 - 45),
          (float)(this.field_36261 + 45),
          17.0F,

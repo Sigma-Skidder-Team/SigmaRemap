@@ -14,7 +14,7 @@ public class ActiveModsModule extends Module {
    public int field_43171 = 0;
    public int field_43170;
    public HashMap<Module, class_2440> field_43168 = new HashMap<Module, class_2440>();
-   public class_3384 field_43169 = class_5320.field_27152;
+   public FontRenderer field_43169 = class_5320.field_27152;
 
    public ActiveModsModule() {
       super(Category.GUI, "ActiveMods", "Renders active mods");
@@ -114,7 +114,7 @@ public class ActiveModsModule extends Module {
             byte var20 = 10;
             byte var21 = 1;
             int var6 = MinecraftClient.getInstance().window.method_43166();
-            class_3384 var8 = this.field_43169;
+            FontRenderer var8 = this.field_43169;
             byte var9 = -1;
             int var7 = var20 - 4;
             if (this.field_43169 == class_5320.field_27138) {
@@ -154,7 +154,7 @@ public class ActiveModsModule extends Module {
                GL11.glScalef(var14, var14, 1.0F);
                GL11.glTranslatef((float)(-var17), (float)(-var18), 0.0F);
                float var19 = (float)Math.sqrt((double)Math.min(1.2F, (float)var8.method_18547(var22) / 63.0F));
-               class_73.method_99(
+               FontManager.method_99(
                   (float)var6 - (float)var8.method_18547(var22) * 1.5F - (float)var20 - 20.0F,
                   (float)(var7 - 20),
                   (float)var8.method_18547(var22) * 3.0F,
@@ -162,7 +162,7 @@ public class ActiveModsModule extends Module {
                   NotificationIcons.altshadow,
                   class_314.method_1444(class_1255.field_6918.field_6917, 0.36F * var15 * var19)
                );
-               class_73.method_87(
+               FontManager.method_87(
                   var8, (float)(var6 - var20 - var8.method_18547(var22)), (float)var7, var22, var15 != 1.0F ? class_314.method_1444(-1, var15 * 0.95F) : var11
                );
                GL11.glPopMatrix();

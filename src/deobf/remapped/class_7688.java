@@ -32,7 +32,7 @@ public class class_7688 extends class_1859 {
    @Override
    public void method_32178(float var1) {
       float var4 = !this.method_32185() ? 0.43F : 0.6F;
-      class_73.method_108(
+      FontManager.method_108(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,
@@ -41,7 +41,7 @@ public class class_7688 extends class_1859 {
          class_314.method_1444(-4144960, var4 * this.field_39047.method_11123() * var1)
       );
       float var5 = (1.0F - this.field_39047.method_11123()) * var1;
-      class_73.method_108(
+      FontManager.method_108(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,
@@ -53,7 +53,7 @@ public class class_7688 extends class_1859 {
       GL11.glTranslatef((float)(this.method_32132() + this.method_32109() / 2), (float)(this.method_32173() + this.method_32137() / 2), 0.0F);
       GL11.glScalef(1.5F - 0.5F * var5, 1.5F - 0.5F * var5, 0.0F);
       GL11.glTranslatef((float)(-this.method_32132() - this.method_32109() / 2), (float)(-this.method_32173() - this.method_32137() / 2), 0.0F);
-      class_73.method_99(
+      FontManager.method_99(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,

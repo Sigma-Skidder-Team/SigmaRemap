@@ -26,7 +26,7 @@ public class class_3707 extends class_1859 {
    public void method_32178(float var1) {
       for (int var4 = 0; var4 < this.field_36278; var4++) {
          float var5 = (float)var4 / (float)this.field_36278;
-         class_73.method_103(
+         FontManager.method_103(
             (float)(this.field_36270 + var4),
             (float)this.field_36261,
             1.0F,
@@ -35,7 +35,7 @@ public class class_3707 extends class_1859 {
          );
       }
 
-      class_73.method_109(
+      FontManager.method_109(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),

@@ -87,7 +87,7 @@ public class class_556 extends class_1859 {
       super.method_32190();
       byte var5 = 10;
       int var6 = class_314.method_1444(-723724, class_9681.method_44756(var1, 0.0F, 1.0F, 1.0F));
-      class_73.method_128(
+      FontManager.method_128(
          (float)(this.field_36270 + var5 / 2),
          (float)(this.field_36261 + var5 / 2),
          (float)(this.field_36278 - var5),
@@ -95,19 +95,19 @@ public class class_556 extends class_1859 {
          35.0F,
          var1
       );
-      class_73.method_94(
+      FontManager.method_94(
          (float)(this.field_36270 + var5 / 2),
          (float)(this.field_36261 + var5 / 2),
          (float)(this.field_36270 - var5 / 2 + this.field_36278),
          (float)(this.field_36261 - var5 / 2 + this.field_36257),
          class_314.method_1444(class_1255.field_6929.field_6917, var1 * 0.25F)
       );
-      class_73.method_108((float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, (float)var5, var6);
+      FontManager.method_108((float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, (float)var5, var6);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)this.field_36270, (float)this.field_36261, 0.0F);
       GL11.glRotatef(!this.field_3305 ? -90.0F : 90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.field_36270), (float)(-this.field_36261), 0.0F);
-      class_73.method_99(
+      FontManager.method_99(
          (float)(this.field_36270 + (!this.field_3305 ? 0 : this.field_36257)),
          (float)this.field_36261 + (float)((this.field_36278 - 47) / 2) * (!this.field_3305 ? 1.0F : -1.58F),
          18.0F,
@@ -116,7 +116,7 @@ public class class_556 extends class_1859 {
          var6
       );
       GL11.glPopMatrix();
-      class_73.method_94(
+      FontManager.method_94(
          (float)(this.field_36270 + 25),
          (float)(this.field_36261 + 68),
          (float)(this.field_36270 + this.field_36278 - 25),

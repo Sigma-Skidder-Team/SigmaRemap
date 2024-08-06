@@ -23,7 +23,7 @@ public class class_3534 extends class_1859 {
       GL11.glTranslatef((float)var4, (float)var5, 0.0F);
       GL11.glRotatef(this.field_17296.method_11123() * 360.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var4), (float)(-var5), 0.0F);
-      class_73.method_96((float)this.field_36270, (float)this.field_36261, 20.0F, 20.0F, !this.method_32183() ? class_9898.field_50208 : class_9898.field_50189);
+      FontManager.method_96((float)this.field_36270, (float)this.field_36261, 20.0F, 20.0F, !this.method_32183() ? class_9898.field_50208 : class_9898.field_50189);
       GL11.glPopMatrix();
       super.method_32178(var1);
    }

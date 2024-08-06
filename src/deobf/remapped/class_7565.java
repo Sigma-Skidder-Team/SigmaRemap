@@ -75,7 +75,7 @@ public class class_7565 extends PremiumModule {
    private void method_34397(int var1) {
       if (client.screen == null || client.screen instanceof class_5766) {
          GL11.glPushMatrix();
-         class_73.method_150(var1 - 20, this.field_38544 - 20, var1 + 200, this.field_38544 + 120, true);
+         FontManager.method_150(var1 - 20, this.field_38544 - 20, var1 + 200, this.field_38544 + 120, true);
          EntityRenderDispatcher var4 = MinecraftClient.getInstance().method_8587();
          class_5869 var5 = new class_5869(var4);
          short var6 = 150;
@@ -156,13 +156,13 @@ public class class_7565 extends PremiumModule {
          var12.method_17415();
          var4.method_28136(true);
          RenderSystem.method_16489();
-         class_73.method_141();
+         FontManager.method_141();
          GL11.glPopMatrix();
       }
    }
 
    private Color method_34400(int var1, int var2, Color var3) {
-      Color var6 = class_73.method_114(var1, var2, var3);
+      Color var6 = FontManager.method_114(var1, var2, var3);
       if (var3 != null) {
          var6 = class_314.method_1388(var6, var3, 0.08F * this.field_38551);
       }
@@ -233,7 +233,7 @@ public class class_7565 extends PremiumModule {
 
       while (var4.hasNext()) {
          ItemStack var6 = (ItemStack)var4.next();
-         class_73.method_125(var6, var1, this.field_38544 + this.field_38543 / 2 - var5 * 35, 1.0F);
+         FontManager.method_125(var6, var1, this.field_38544 + this.field_38543 / 2 - var5 * 35, 1.0F);
          if (++var5 == 2) {
             var1 -= 35;
             var5 -= 2;

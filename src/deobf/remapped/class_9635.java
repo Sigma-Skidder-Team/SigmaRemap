@@ -17,13 +17,13 @@ public class class_9635 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_121(
+      FontManager.method_121(
          (float)(this.field_36270 + this.field_36278 / 2),
          (float)(this.field_36261 + this.field_36257 / 2),
          (float)this.field_36278,
          class_314.method_1444(class_1255.field_6928.field_6917, (0.5F + this.field_49092 * 0.3F + (!this.field_36267 ? 0.0F : 0.2F)) * var1)
       );
-      class_73.method_103(
+      FontManager.method_103(
          (float)(this.field_36270 + (this.field_36278 - 10) / 2),
          (float)(this.field_36261 + this.field_36257 / 2 - 1),
          10.0F,

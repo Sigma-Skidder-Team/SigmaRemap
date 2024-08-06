@@ -386,14 +386,14 @@ public class BlockFlyModule extends SecondModule {
    public void method_17222(int var1, int var2, float var3) {
       var3 = (float)(0.5 + 0.5 * (double)var3);
       GL11.glAlphaFunc(518, 0.1F);
-      class_73.method_87(
+      FontManager.method_87(
          class_3054.field_14997,
          (float)(var1 + 10),
          (float)(var2 + 5),
          this.field_18193 + " Blocks",
          class_314.method_1444(class_1255.field_6929.field_6917, var3 * 0.3F)
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_3054.field_14997,
          (float)(var1 + 10),
          (float)(var2 + 4),
@@ -412,11 +412,11 @@ public class BlockFlyModule extends SecondModule {
       byte var9 = 32;
       var1 -= var8 / 2;
       GL11.glPushMatrix();
-      class_73.method_115(var1, var2, var8, var9, class_314.method_1444(-15461356, 0.8F * var3));
-      class_73.method_87(
+      FontManager.method_115(var1, var2, var8, var9, class_314.method_1444(-15461356, 0.8F * var3));
+      FontManager.method_87(
          class_5320.field_27139, (float)(var1 + 10), (float)(var2 + 4), this.field_18193 + "", class_314.method_1444(class_1255.field_6918.field_6917, var3)
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27138, (float)(var1 + 10 + var7), (float)(var2 + 8), "Blocks", class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var3)
       );
       var1 += 11 + var8 / 2;
@@ -425,7 +425,7 @@ public class BlockFlyModule extends SecondModule {
       GL11.glTranslatef((float)var1, (float)var2, 0.0F);
       GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var1), (float)(-var2), 0.0F);
-      class_73.method_99((float)var1, (float)var2, 9.0F, 23.0F, NotificationIcons.altselect, class_314.method_1444(-15461356, 0.8F * var3));
+      FontManager.method_99((float)var1, (float)var2, 9.0F, 23.0F, NotificationIcons.altselect, class_314.method_1444(-15461356, 0.8F * var3));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
    }

@@ -8,7 +8,7 @@ public class class_8443 extends class_122 implements class_6375 {
    public boolean field_43194 = false;
    public class_2440 field_43191 = new class_2440(160, 140, class_4043.field_19618);
 
-   public class_8443(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_8343 var7, class_590 var8, String var9, class_3384 var10) {
+   public class_8443(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_8343 var7, class_590 var8, String var9, FontRenderer var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
@@ -65,7 +65,7 @@ public class class_8443 extends class_122 implements class_6375 {
       int var9 = (int)((double)(this.method_32173() - (var7 - this.method_32137()) / 2) - (double)((float)(this.method_32137() / 2) * var5) * 0.2);
       float[] var10 = class_314.method_1464(this.method_365().method_38423(), this.method_365().method_38414(), (float)var6, (float)var7);
       byte var11 = 85;
-      class_73.method_99(
+      FontManager.method_99(
          (float)var8 + var10[0] - (float)var11,
          (float)var9 + var10[1] - (float)var11,
          var10[2] + (float)(var11 * 2),
@@ -73,7 +73,7 @@ public class class_8443 extends class_122 implements class_6375 {
          NotificationIcons.altshadow,
          class_314.method_1444(class_1255.field_6918.field_6917, this.field_43191.method_11123() * 0.7F * var1)
       );
-      class_73.method_99(
+      FontManager.method_99(
          (float)var8 + var10[0],
          (float)var9 + var10[1],
          var10[2],
@@ -82,7 +82,7 @@ public class class_8443 extends class_122 implements class_6375 {
          class_314.method_1444(class_314.method_1442(this.field_36272.method_2764(), this.field_36272.method_2768(), 1.0F - var4), var1)
       );
       if (this.method_32165() != null) {
-         class_73.method_88(
+         FontManager.method_88(
             this.method_32097(),
             (float)(var8 + var6 / 2),
             (float)(var9 + var7 / 2),
@@ -93,7 +93,7 @@ public class class_8443 extends class_122 implements class_6375 {
          );
       }
 
-      class_3384 var12 = this.method_32097();
+      FontRenderer var12 = this.method_32097();
       float var13 = 0.8F + var5 * 0.2F;
       if (var5 > 0.0F) {
          GL11.glPushMatrix();
@@ -105,7 +105,7 @@ public class class_8443 extends class_122 implements class_6375 {
          );
          GL11.glScalef(var13, var13, var13);
          GL11.glAlphaFunc(519, 0.0F);
-         class_73.method_97(
+         FontManager.method_97(
             (1.0F - var13) * (float)var12.method_18547(var14) / 2.0F + 1.0F - (float)var12.method_18547(var14) / 2.0F,
             (float)var12.method_18548(var14) / 3.0F,
             (float)(var12.method_18547(var14) * 2),
@@ -113,7 +113,7 @@ public class class_8443 extends class_122 implements class_6375 {
             NotificationIcons.altshadow,
             var5 * 0.6F * var1
          );
-         class_73.method_87(
+         FontManager.method_87(
             var12,
             (1.0F - var13) * (float)var12.method_18547(var14) / 2.0F + 1.0F,
             40.0F,

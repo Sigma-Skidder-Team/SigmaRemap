@@ -55,7 +55,7 @@ public class class_7684 extends Module {
    public int method_34824(int var1, int var2) {
       String var5 = "Facing South";
       String var6 = this.method_34826(this.getStringValueByName("Cords").equals("Precise"));
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27161,
          (float)var1,
          (float)(client.window.method_43163() - var2),
@@ -73,12 +73,12 @@ public class class_7684 extends Module {
          if (!(var7.method_27960() instanceof class_221)) {
             var5++;
             int var8 = var2 - 32 * var5;
-            class_73.method_126(var7, var1, var8, 32, 32);
+            FontManager.method_126(var7, var1, var8, 32, 32);
             GL11.glDisable(2896);
             float var9 = 1.0F - (float)var7.method_28026() / (float)var7.method_27957();
             if (var9 != 1.0F) {
-               class_73.method_103((float)(var1 + 2), (float)(var8 + 28), 28.0F, 5.0F, class_314.method_1444(class_1255.field_6929.field_6917, 0.5F));
-               class_73.method_103(
+               FontManager.method_103((float)(var1 + 2), (float)(var8 + 28), 28.0F, 5.0F, class_314.method_1444(class_1255.field_6929.field_6917, 0.5F));
+               FontManager.method_103(
                   (float)(var1 + 2),
                   (float)(var8 + 28),
                   28.0F * var9,

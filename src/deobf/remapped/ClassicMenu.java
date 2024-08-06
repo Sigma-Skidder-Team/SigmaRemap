@@ -67,7 +67,7 @@ public class ClassicMenu extends class_2596 {
    @Override
    public void method_32178(float var1) {
       float var4 = field_22681.method_11123();
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.field_36278),

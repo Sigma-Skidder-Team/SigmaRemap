@@ -36,7 +36,7 @@ public class class_5376 extends class_446 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_121(
+      FontManager.method_121(
          (float)(this.field_36270 + 5),
          (float)(this.field_36261 + 5),
          10.0F,

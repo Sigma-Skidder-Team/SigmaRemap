@@ -37,14 +37,14 @@ public class CreditsAndLicensingMenu extends class_2596 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_103(
+      FontManager.method_103(
          0.0F,
          0.0F,
          (float)this.field_36278,
          (float)this.field_36257,
          class_314.method_1444(class_1255.field_6929.field_6917, this.field_31637.method_11123() * 0.95F)
       );
-      class_73.method_87(class_5320.field_27147, 40.0F, 40.0F, "Credits and third party licensing information", class_1255.field_6918.field_6917);
+      FontManager.method_87(class_5320.field_27147, 40.0F, 40.0F, "Credits and third party licensing information", class_1255.field_6918.field_6917);
       byte var4 = 40;
       super.method_32178(this.field_31637.method_11123());
    }

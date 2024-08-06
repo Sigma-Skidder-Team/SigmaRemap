@@ -18,7 +18,7 @@ public class class_6220 extends class_1859 {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
    }
 
-   public class_6220(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, class_3384 var9) {
+   public class_6220(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, FontRenderer var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
    }
 
@@ -41,7 +41,7 @@ public class class_6220 extends class_1859 {
       int var8 = var5 >> 8 & 0xFF;
       int var9 = var5 & 0xFF;
       if (this.field_31777 <= 0) {
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.method_32132(),
             (float)this.method_32173(),
             (float)(this.method_32132() + this.method_32109()),
@@ -49,7 +49,7 @@ public class class_6220 extends class_1859 {
             var5
          );
       } else {
-         class_73.method_139(
+         FontManager.method_139(
             (float)this.method_32132(), (float)this.method_32173(), (float)this.method_32109(), (float)this.method_32137(), (float)this.field_31777, var5
          );
       }
@@ -67,7 +67,7 @@ public class class_6220 extends class_1859 {
                : (this.field_36272.method_2770() != class_6206.field_31720 ? this.method_32137() / 2 : this.method_32137())
          );
       if (this.method_32165() != null) {
-         class_73.method_88(
+         FontManager.method_88(
             this.method_32097(),
             (float)(this.field_31775 + var10),
             (float)var11,

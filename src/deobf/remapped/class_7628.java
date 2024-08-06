@@ -59,7 +59,7 @@ public class class_7628 extends class_446 {
    public void method_32178(float var1) {
       byte var4 = 20;
       if (!((double)var1 < 0.6)) {
-         class_73.method_115(
+         FontManager.method_115(
             this.field_36270 + var4,
             this.field_36261 + var4,
             this.field_36278 - var4 * 2,

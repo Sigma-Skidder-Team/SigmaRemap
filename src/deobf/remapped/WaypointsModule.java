@@ -251,19 +251,19 @@ public class WaypointsModule extends Module {
       GL11.glTranslated((double)var1 + 0.5, (double)var2 + 1.9, (double)var3 + 0.5);
       GL11.glRotatef(client.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
       GL11.glRotatef(client.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
-      class_3384 var9 = class_5320.field_27141;
+      FontRenderer var9 = class_5320.field_27141;
       GL11.glPushMatrix();
       GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);
       GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt((double)var6)), 0.0);
       int var11 = class_314.method_1444(class_314.method_1442(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917, 75.0F), 0.5F);
-      class_73.method_94(
+      FontManager.method_94(
          (float)(-var9.method_18547(var4) / 2 - 14), -5.0F, (float)var9.method_18547(var4) / 2.0F + 14.0F, (float)(var9.method_15654() + 7), var11
       );
-      class_73.method_128(
+      FontManager.method_128(
          (float)(-var9.method_18547(var4) / 2 - 14), -5.0F, (float)(var9.method_18547(var4) + 28), (float)(var9.method_15654() + 12), 20.0F, 0.5F
       );
       GL11.glTranslated((double)(-var9.method_18547(var4) / 2), 0.0, 0.0);
-      class_73.method_87(var9, 0.0F, 0.0F, var4, class_314.method_1444(class_1255.field_6918.field_6917, 0.8F));
+      FontManager.method_87(var9, 0.0F, 0.0F, var4, class_314.method_1444(class_1255.field_6918.field_6917, 0.8F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
       GL11.glEnable(3553);

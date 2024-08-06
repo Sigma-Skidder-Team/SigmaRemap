@@ -28,7 +28,7 @@ public class SnakeGameMenu extends class_2596 {
       float var4 = class_9556.method_44073(var1, 0.0F, 1.0F, 1.0F);
       this.method_32111(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.field_36278),
@@ -36,7 +36,7 @@ public class SnakeGameMenu extends class_2596 {
          class_314.method_1444(class_1255.field_6929.field_6917, var5)
       );
       super.method_32190();
-      class_73.method_128(
+      FontManager.method_128(
          (float)this.field_46317.method_32132(),
          (float)this.field_46317.method_32173(),
          (float)this.field_46317.method_32109(),
@@ -44,7 +44,7 @@ public class SnakeGameMenu extends class_2596 {
          40.0F,
          var1
       );
-      class_73.method_108(
+      FontManager.method_108(
          (float)(this.field_46317.method_32132() - 20),
          (float)(this.field_46317.method_32173() - 20),
          (float)(this.field_46317.method_32109() + 40),
@@ -55,10 +55,10 @@ public class SnakeGameMenu extends class_2596 {
       super.method_32178(var1);
       int var6 = (this.field_36278 - this.field_46317.method_32109()) / 2;
       int var7 = (this.field_36257 - this.field_46317.method_32137()) / 2;
-      class_73.method_87(class_5320.field_27147, (float)var6, (float)(var7 - 60), "Snake", class_1255.field_6918.field_6917);
+      FontManager.method_87(class_5320.field_27147, (float)var6, (float)(var7 - 60), "Snake", class_1255.field_6918.field_6917);
       this.field_46313 = Math.max(this.field_46317.method_9558(), this.field_46313);
       String var8 = "Max: " + this.field_46313 + "   |   Score: " + this.field_46317.method_9558();
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27152,
          (float)(var6 + this.field_46317.method_32109() - class_5320.field_27152.method_18547(var8)),
          (float)(var7 - 50),

@@ -11,7 +11,7 @@ import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;
 
-public class class_73 {
+public class FontManager {
    private static String[] field_104;
    private static final boolean field_102 = false;
    private static final MinecraftClient field_108 = MinecraftClient.getInstance();
@@ -411,17 +411,17 @@ public class class_73 {
       RenderSystem.disableBlend();
    }
 
-   public static void method_87(class_3384 var0, float var1, float var2, String var3, int var4) {
+   public static void method_87(FontRenderer var0, float var1, float var2, String var3, int var4) {
       method_89(var0, var1, var2, var3, var4, class_6206.field_31724, class_6206.field_31723, false);
    }
 
-   public static void method_88(class_3384 var0, float var1, float var2, String var3, int var4, class_6206 var5, class_6206 var6) {
+   public static void method_88(FontRenderer var0, float var1, float var2, String var3, int var4, class_6206 var5, class_6206 var6) {
       method_89(var0, var1, var2, var3, var4, var5, var6, false);
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public static void method_89(class_3384 var0, float var1, float var2, String var3, int var4, class_6206 var5, class_6206 var6, boolean var7) {
+   public static void method_89(FontRenderer var0, float var1, float var2, String var3, int var4, class_6206 var5, class_6206 var6, boolean var7) {
       RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;

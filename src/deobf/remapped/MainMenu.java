@@ -52,7 +52,7 @@ public class MainMenu extends class_2596 {
       byte var6 = 2;
       byte var7 = 114;
       short var8 = 140;
-      class_3384 var9 = class_3054.field_14994;
+      FontRenderer var9 = class_3054.field_14994;
       boolean var10 = false;
       String var11 = "© Sigma Prod";
       StringBuilder var10000 = new StringBuilder().append("Sigma ");
@@ -131,7 +131,7 @@ public class MainMenu extends class_2596 {
          (double)((int)((float)(-this.method_32137() / 100) + this.field_47385 / 100.0F) - var4),
          0.0
       );
-      class_73.method_96(-10.0F, -10.0F, (float)(this.method_32109() + 20), (float)(this.method_32137() + 20), class_3054.field_15004);
+      FontManager.method_96(-10.0F, -10.0F, (float)(this.method_32109() + 20), (float)(this.method_32137() + 20), class_3054.field_15004);
       GL11.glPopMatrix();
       this.field_47389
          .method_32138(

@@ -203,17 +203,17 @@ public class GUIManager {
          if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30645) {
             float var7 = 0.5F + OtherTabGUIModule.field_955.method_11123() * 0.5F;
             GL11.glAlphaFunc(516, 0.1F);
-            class_73.method_103(4.0F, 2.0F, 106.0F, 28.0F, class_314.method_1444(class_1255.field_6929.field_6917, 0.6F * var7));
-            class_73.method_87(class_3054.field_14991, 9.0F, 2.0F, "Sigma", class_314.method_1444(class_1255.field_6929.field_6917, 0.5F * var7));
-            class_73.method_87(
+            FontManager.method_103(4.0F, 2.0F, 106.0F, 28.0F, class_314.method_1444(class_1255.field_6929.field_6917, 0.6F * var7));
+            FontManager.method_87(class_3054.field_14991, 9.0F, 2.0F, "Sigma", class_314.method_1444(class_1255.field_6929.field_6917, 0.5F * var7));
+            FontManager.method_87(
                class_3054.field_14991, 8.0F, 1.0F, "Sigma", class_314.method_1444(class_1255.field_6918.field_6917, Math.min(1.0F, var7 * 1.2F))
             );
             int var8 = Color.getHSBColor((float)(System.currentTimeMillis() % 4000L) / 4000.0F, 1.0F, 1.0F).getRGB();
-            class_73.method_87(class_3054.field_15002, 73.0F, 2.0F, "5.0.0", class_314.method_1444(class_1255.field_6929.field_6917, 0.5F));
-            class_73.method_87(class_3054.field_15002, 72.0F, 1.0F, "5.0.0", class_314.method_1444(var8, Math.min(1.0F, var7 * 1.4F)));
+            FontManager.method_87(class_3054.field_15002, 73.0F, 2.0F, "5.0.0", class_314.method_1444(class_1255.field_6929.field_6917, 0.5F));
+            FontManager.method_87(class_3054.field_15002, 72.0F, 1.0F, "5.0.0", class_314.method_1444(var8, Math.min(1.0F, var7 * 1.4F)));
          } else {
             GL11.glAlphaFunc(519, 0.0F);
-            class_73.method_96((float)var3, (float)var4, 170.0F, 104.0F, !(field_34898 > 1.0F) ? NotificationIcons.watermark : NotificationIcons.watermark2x);
+            FontManager.method_96((float)var3, (float)var4, 170.0F, 104.0F, !(field_34898 > 1.0F) ? NotificationIcons.watermark : NotificationIcons.watermark2x);
          }
 
          SigmaMainClass.getInstance().getEventManager().call(new class_3278());
@@ -362,7 +362,7 @@ public class GUIManager {
          );
       }
 
-      class_73.method_104(MinecraftClient.getInstance().window.method_43166(), MinecraftClient.getInstance().window.method_43163());
+      FontManager.method_104(MinecraftClient.getInstance().window.method_43166(), MinecraftClient.getInstance().window.method_43163());
    }
 
    public class_2596 method_31001() {

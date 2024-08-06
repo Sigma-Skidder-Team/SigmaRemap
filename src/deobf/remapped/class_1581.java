@@ -22,7 +22,7 @@ public class class_1581 extends class_446 {
          GL11.glTranslatef((float)(this.field_36270 + this.field_36278 / 2), (float)(this.field_36261 + this.field_36257 / 2), 0.0F);
          GL11.glRotatef(var4 * 30.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-this.field_36270 - this.field_36278 / 2), (float)(-this.field_36261 - this.field_36257 / 2), 0.0F);
-         class_73.method_99(
+         FontManager.method_99(
             (float)this.field_36270,
             (float)this.field_36261,
             (float)this.field_36278,

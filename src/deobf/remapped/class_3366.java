@@ -40,7 +40,7 @@ public class class_3366 extends class_1859 {
    }
 
    public class_3366(
-      class_7038 var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, class_590 var9, String var10, class_3384 var11
+      class_7038 var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, class_590 var9, String var10, FontRenderer var11
    ) {
       super(var1, var2, var3, var4, var5, var6, var9, var10, var11, false);
       this.field_16593 = var7;
@@ -191,14 +191,14 @@ public class class_3366 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),
          (float)(this.method_32173() + this.method_32137()),
          class_314.method_1444(class_1255.field_6918.field_6917, var1 * this.field_16589.method_11123())
       );
-      class_73.method_128(
+      FontManager.method_128(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)this.method_32109(),
@@ -206,7 +206,7 @@ public class class_3366 extends class_1859 {
          6.0F,
          var1 * 0.1F * this.field_16589.method_11123()
       );
-      class_73.method_128(
+      FontManager.method_128(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)this.method_32109(),
@@ -215,7 +215,7 @@ public class class_3366 extends class_1859 {
          var1 * 0.2F * this.field_16589.method_11123()
       );
       if (this.method_32165() != null) {
-         class_73.method_151(this);
+         FontManager.method_151(this);
          String var4 = "";
 
          for (Entry var6 : this.field_16588.entrySet()) {
@@ -224,19 +224,19 @@ public class class_3366 extends class_1859 {
             }
          }
 
-         class_73.method_87(
+         FontManager.method_87(
             this.method_32097(),
             (float)(this.method_32132() + 10),
             (float)(this.method_32173() + (this.method_32137() - this.method_32097().method_15654()) / 2 + 1),
             this.method_32165() + var4,
             class_314.method_1444(this.field_36272.method_2764(), var1 * 0.7F)
          );
-         class_73.method_141();
+         FontManager.method_141();
       }
 
       boolean var8 = this.field_16589.method_11123() < 1.0F;
       if (var8) {
-         class_73.method_149(
+         FontManager.method_149(
             this.method_32155(),
             this.method_32093(),
             this.method_32155() + this.method_32109() + 140,
@@ -251,7 +251,7 @@ public class class_3366 extends class_1859 {
 
       GL11.glPopMatrix();
       if (var8) {
-         class_73.method_141();
+         FontManager.method_141();
       }
 
       int var9 = this.method_32109() - (int)((float)this.method_32137() / 2.0F + 0.5F);
@@ -260,7 +260,7 @@ public class class_3366 extends class_1859 {
       GL11.glTranslatef((float)(this.method_32132() + var9), (float)(this.method_32173() + var10), 0.0F);
       GL11.glRotatef(90.0F * this.field_16589.method_11123(), 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.method_32132() - var9), (float)(-this.method_32173() - var10), 0.0F);
-      class_73.method_87(
+      FontManager.method_87(
          this.field_36258,
          (float)(this.method_32132() + var9 - 6),
          (float)(this.method_32173() + var10 - 14),

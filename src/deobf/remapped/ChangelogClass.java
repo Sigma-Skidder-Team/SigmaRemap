@@ -60,12 +60,12 @@ public class ChangelogClass extends class_7038 {
 
       this.method_32124((int)(150.0F * (1.0F - var4)));
       this.method_32130();
-      class_73.method_87(class_5320.field_27140, 100.0F, 100.0F, "Changelog", class_314.method_1444(class_1255.field_6918.field_6917, var1));
-      class_3384 var10000 = class_5320.field_27141;
+      FontManager.method_87(class_5320.field_27140, 100.0F, 100.0F, "Changelog", class_314.method_1444(class_1255.field_6918.field_6917, var1));
+      FontRenderer lightFont = class_5320.field_27141;
       StringBuilder var10003 = new StringBuilder().append("You're currently using Sigma ");
       SigmaMainClass.getInstance();
-      class_73.method_87(
-         var10000, 100.0F, 150.0F, var10003.append(SigmaMainClass.clientVersion).toString(), class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1)
+      FontManager.method_87(
+         lightFont, 100.0F, 150.0F, var10003.append(SigmaMainClass.clientVersion).toString(), class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1)
       );
       super.method_32178(var1);
    }
@@ -75,7 +75,7 @@ public class ChangelogClass extends class_7038 {
          return field_5071;
       } else {
          try {
-            HttpGet var3 = new HttpGet("https://jelloconnect.sigmaclient.info/changelog.php?v=" + SigmaMainClass.clientVersion);
+            HttpGet var3 = new HttpGet("https://jelloconnect.sigmaclient.info/changelog.php?v=5.0.0b15" + SigmaMainClass.clientVersion);
             CloseableHttpResponse var4 = HttpClients.createDefault().execute(var3);
             HttpEntity var5 = var4.getEntity();
             if (var5 != null) {

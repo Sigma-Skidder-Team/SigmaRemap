@@ -114,7 +114,7 @@ public class Auto32KModule extends Module {
             double var5 = (double)var4.getX() - client.gameRenderer.method_35949().method_41627().method_61();
             double var7 = (double)var4.getY() - client.gameRenderer.method_35949().method_41627().method_60();
             double var9 = (double)var4.getZ() - client.gameRenderer.method_35949().method_41627().method_62();
-            class_73.method_83(
+            FontManager.method_83(
                new class_8194(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), class_314.method_1444(class_1255.field_6922.field_6917, 0.3F)
             );
             GL11.glColor3f(1.0F, 1.0F, 1.0F);

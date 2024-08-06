@@ -46,8 +46,8 @@ public class BoxESP extends Module {
                var7.method_17403().method_8334(client.theWorld, var7.method_17399()).method_19483().method_18918(var11, var13, var15)
             );
             GL11.glAlphaFunc(519, 0.0F);
-            class_73.method_83(var18, var17);
-            class_73.method_130(var18, 2.0F, var17);
+            FontManager.method_83(var18, var17);
+            FontManager.method_130(var18, 2.0F, var17);
             GL11.glDisable(3042);
          }
       }

@@ -24,7 +24,7 @@ public class class_8059 extends class_1859 {
    }
 
    public class_8059(
-      class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, class_3384 var9, boolean var10, class_1742 var11
+           class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, FontRenderer var9, boolean var10, class_1742 var11
    ) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
       this.field_41256 = var11;

@@ -23,12 +23,12 @@ public class class_4786 extends class_446 {
    @Override
    public void method_32178(float var1) {
       if (this.field_36275 != null) {
-         class_73.method_94((float)this.method_32132(), (float)this.method_32173(), (float)this.field_36278, (float)this.field_36257, -14144460);
-         class_73.method_147(
+         FontManager.method_94((float)this.method_32132(), (float)this.method_32173(), (float)this.field_36278, (float)this.field_36257, -14144460);
+         FontManager.method_147(
             (float)this.method_32132(), (float)this.method_32173(), (float)this.field_36278, (float)(this.field_36257 - this.method_32173()), 114.0F, var1
          );
          byte var4 = 30;
-         class_3384 var5 = class_5320.field_27139;
+         FontRenderer var5 = class_5320.field_27139;
          String var6 = System.getProperty("line.separator");
          String[] var7 = this.field_36275.split("(?<=" + var6 + ")");
          int var8 = this.field_23924;
@@ -40,7 +40,7 @@ public class class_4786 extends class_446 {
             int var13 = 0;
 
             for (String var15 : var12) {
-               class_73.method_87(
+               FontManager.method_87(
                   var5,
                   (float)(this.method_32132() + var13 + var4),
                   (float)(this.method_32173() + var4 + var11 * var5.method_15654()),
@@ -64,7 +64,7 @@ public class class_4786 extends class_446 {
             }
          }
 
-         class_73.method_94(
+         FontManager.method_94(
             (float)var4 + var10,
             (float)(this.method_32173() + var4 + var9 * var5.method_15654()),
             (float)var4 + var10 + 1.0F,

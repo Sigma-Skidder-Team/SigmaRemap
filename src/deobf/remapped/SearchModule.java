@@ -181,7 +181,7 @@ public class SearchModule extends Module {
             double var10 = (double)var7.getY() - client.gameRenderer.method_35949().method_41627().method_60();
             double var12 = (double)var7.getZ() - client.gameRenderer.method_35949().method_41627().method_62();
             class_8194 var14 = new class_8194(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
-            class_73.method_83(var14, var3);
+            FontManager.method_83(var14, var3);
          }
       }
 

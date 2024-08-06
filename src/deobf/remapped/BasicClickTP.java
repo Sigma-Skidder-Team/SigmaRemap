@@ -121,7 +121,7 @@ public class BasicClickTP extends Module {
                var12.method_21801() - client.gameRenderer.method_35949().method_41627().method_60() + 1.6F,
                var8 + 0.3F
             );
-            class_73.method_83(var10, class_314.method_1444(class_1255.field_6922.field_6917, 0.2F));
+            FontManager.method_83(var10, class_314.method_1444(class_1255.field_6922.field_6917, 0.2F));
          }
 
          GL11.glPushMatrix();

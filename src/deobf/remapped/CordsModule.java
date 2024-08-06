@@ -60,7 +60,7 @@ public class CordsModule extends Module {
                   GL11.glTranslatef((float)var6, (float)(var7 + 10), 0.0F);
                   GL11.glScalef(var10, var10, 1.0F);
                   GL11.glTranslatef((float)(-var6), (float)(-var7 - 10), 0.0F);
-                  class_73.method_88(
+                  FontManager.method_88(
                      class_5320.field_27146,
                      (float)var6,
                      (float)var7,
@@ -69,7 +69,7 @@ public class CordsModule extends Module {
                      class_6206.field_31726,
                      class_6206.field_31724
                   );
-                  class_73.method_88(
+                  FontManager.method_88(
                      class_5320.field_27139,
                      (float)var6,
                      (float)var7,

@@ -17,7 +17,7 @@ public class class_6086 extends class_1859 {
    public void method_32178(float var1) {
       this.field_31142.method_32177(true);
       byte var4 = 10;
-      class_73.method_128(
+      FontManager.method_128(
          (float)(this.field_36270 + var4 / 2),
          (float)(this.field_36261 + var4 / 2),
          (float)(this.field_36278 - var4),
@@ -25,7 +25,7 @@ public class class_6086 extends class_1859 {
          9.0F,
          var1 * 0.9F
       );
-      class_73.method_128(
+      FontManager.method_128(
          (float)(this.field_36270 + var4 / 2),
          (float)(this.field_36261 + var4 / 2),
          (float)(this.field_36278 - var4),
@@ -33,7 +33,7 @@ public class class_6086 extends class_1859 {
          30.0F,
          var1 * 0.4F
       );
-      class_73.method_108(
+      FontManager.method_108(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,
@@ -41,7 +41,7 @@ public class class_6086 extends class_1859 {
          (float)var4,
          class_314.method_1444(class_1255.field_6918.field_6917, 0.97F)
       );
-      class_73.method_99(
+      FontManager.method_99(
          (float)(this.field_36270 + 20),
          (float)(this.field_36261 + 20),
          20.0F,
@@ -55,7 +55,7 @@ public class class_6086 extends class_1859 {
          String var7 = this.field_31143
             + ((Module)var5.get(0)).getName().substring(this.field_31143.length(), var6.length())
             + (!((Module)var5.get(0)).method_42015() ? " - Disabled" : " - Enabled");
-         class_73.method_87(
+         FontManager.method_87(
             this.field_31142.method_32097(),
             (float)(this.field_36270 + 54),
             (float)(this.field_36261 + 14),

@@ -14,7 +14,7 @@ public class class_4792 extends class_1859 {
    public void method_32178(float var1) {
       byte var4 = 5;
       if (this.method_22100() || this.method_32183()) {
-         class_73.method_147(
+         FontManager.method_147(
             (float)this.field_36270,
             (float)this.field_36261,
             (float)this.field_36278,
@@ -24,7 +24,7 @@ public class class_4792 extends class_1859 {
          );
       }
 
-      class_73.method_126(this.field_23969, this.field_36270 + var4, this.field_36261 + var4, this.field_36278 - var4 * 2, this.field_36257 - var4 * 2);
+      FontManager.method_126(this.field_23969, this.field_36270 + var4, this.field_36261 + var4, this.field_36278 - var4 * 2, this.field_36257 - var4 * 2);
       super.method_32178(var1);
    }
 

@@ -38,14 +38,14 @@ public class class_9888 extends class_4145 {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       super.method_6767(var1, var2, var3, var4);
-      class_73.method_149(
+      FontManager.method_149(
          0,
          0,
          MinecraftClient.getInstance().window.method_43166(),
          (int)(30.0 * MinecraftClient.getInstance().window.method_43189() / (double) GUIManager.field_34898)
       );
       this.method_1183(var1);
-      class_73.method_141();
+      FontManager.method_141();
       this.field_50143.method_6767(var1, var2, var3, var4);
       method_9770(var1, this.field_948, this.method_1168().getString(), this.field_941 / 2 - 146, 13, 16777215);
       method_9770(var1, this.field_948, "Jello Portal:", this.field_941 / 2 - 30, 13, class_314.method_1444(class_1255.field_6918.field_6917, 0.5F));

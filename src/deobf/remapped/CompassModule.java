@@ -23,7 +23,7 @@ public class CompassModule extends Module {
 
             float var9 = 7.0F + this.method_42039(client.thePlayer.rotationYaw) - (float)var8;
             double var10 = (double)(var9 / 15.0F * (float)var5);
-            class_73.method_99(
+            FontManager.method_99(
                (float)(client.window.method_43166() / 2) - (float)(var4 * var5) * 1.5F,
                -40.0F,
                (float)(var4 * var5 * 2) * 1.5F,
@@ -82,7 +82,7 @@ public class CompassModule extends Module {
 
       if (!var8.matches(".*\\d+.*")) {
          if (var8.length() != 1) {
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27141,
                (float)(var1 + (var3 - class_5320.field_27141.method_18547(var8)) / 2),
                (float)(var2 + 20),
@@ -90,7 +90,7 @@ public class CompassModule extends Module {
                class_314.method_1444(class_1255.field_6918.field_6917, var5)
             );
          } else {
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27147,
                (float)(var1 + (var3 - class_5320.field_27147.method_18547(var8)) / 2),
                (float)(var2 + 10),
@@ -99,14 +99,14 @@ public class CompassModule extends Module {
             );
          }
       } else {
-         class_73.method_94(
+         FontManager.method_94(
             (float)(var1 + var3 / 2 - 1),
             (float)(var2 + 28),
             (float)(var1 + var3 / 2 + 1),
             (float)(var2 + 38),
             class_314.method_1444(class_1255.field_6918.field_6917, var5 * 0.5F)
          );
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27139,
             (float)(var1 + (var3 - class_5320.field_27139.method_18547(var8)) / 2),
             (float)(var2 + 40),

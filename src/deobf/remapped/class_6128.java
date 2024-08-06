@@ -45,7 +45,7 @@ public class class_6128 {
    }
 
    public void method_28157(float var1) {
-      class_73.method_121(
+      FontManager.method_121(
          this.field_31461 * 2.0F, this.field_31466 * 2.0F, this.field_31457 * 2.0F, class_314.method_1444(this.field_31456.getRGB(), var1 * 0.7F)
       );
    }

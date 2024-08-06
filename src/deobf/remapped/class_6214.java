@@ -66,14 +66,14 @@ public class class_6214 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),
          (float)(this.method_32173() + this.method_32137() + this.method_28420()),
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
-      class_73.method_128(
+      FontManager.method_128(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)this.method_32109(),
@@ -81,7 +81,7 @@ public class class_6214 extends class_1859 {
          6.0F,
          var1 * 0.1F
       );
-      class_73.method_128(
+      FontManager.method_128(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)this.method_32109(),

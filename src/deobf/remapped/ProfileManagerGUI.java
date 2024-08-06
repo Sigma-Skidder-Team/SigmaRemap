@@ -98,7 +98,7 @@ public class ProfileManagerGUI extends class_1859 {
 
       this.method_32158((int)((float)this.field_16347 * var4));
       if (this.field_16351.method_11123() != 0.0F) {
-         class_73.method_99(
+         FontManager.method_99(
             (float)this.field_36270,
             (float)(this.field_36261 + this.field_36257),
             (float)this.field_36278,
@@ -106,12 +106,12 @@ public class ProfileManagerGUI extends class_1859 {
             NotificationIcons.shadow_bottom,
             class_314.method_1444(class_1255.field_6918.field_6917, this.field_16351.method_11123() * var1 * 0.3F)
          );
-         class_73.method_151(this);
-         class_73.method_103(
+         FontManager.method_151(this);
+         FontManager.method_103(
             (float)this.field_36270, (float)this.field_36261, (float)this.field_36278, (float)this.field_36257, class_314.method_1444(-723724, var1)
          );
          if (field_16350 != null && class_3969.field_19214 != null && class_3969.field_19214.isEmpty()) {
-            class_73.method_87(
+            FontManager.method_87(
                class_5320.field_27138,
                (float)(this.field_36270 + 40),
                (float)(this.field_36261 + 110),
@@ -121,7 +121,7 @@ public class ProfileManagerGUI extends class_1859 {
          }
 
          super.method_32178(var1);
-         class_73.method_141();
+         FontManager.method_141();
       }
    }
 }

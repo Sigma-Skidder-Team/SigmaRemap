@@ -90,8 +90,8 @@ public class class_4103 extends class_1859 {
       int var7 = this.field_36261 - var4;
       int var8 = this.field_36278 + var4 * 2;
       int var9 = this.field_36257 + 5 + var4 * 2;
-      class_73.method_128((float)(var6 + var5 / 2), (float)(var7 + var5 / 2), (float)(var8 - var5), (float)(var9 - var5), 20.0F, var1 * 0.5F);
-      class_73.method_139((float)var6, (float)var7, (float)var8, (float)var9, 14.0F, class_1255.field_6918.field_6917);
+      FontManager.method_128((float)(var6 + var5 / 2), (float)(var7 + var5 / 2), (float)(var8 - var5), (float)(var9 - var5), 20.0F, var1 * 0.5F);
+      FontManager.method_139((float)var6, (float)var7, (float)var8, (float)var9, 14.0F, class_1255.field_6918.field_6917);
       super.method_32178(var1);
    }
 }

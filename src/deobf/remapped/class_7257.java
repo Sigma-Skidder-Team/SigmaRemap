@@ -30,7 +30,7 @@ public class class_7257 extends class_446 {
    @Override
    public void method_32178(float var1) {
       if (!this.field_37175) {
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.field_36270,
             (float)this.field_36261,
             (float)(this.field_36270 + this.field_36278),
@@ -38,7 +38,7 @@ public class class_7257 extends class_446 {
             class_314.method_1444(class_1255.field_6918.field_6917, var1)
          );
       } else {
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.field_36270,
             (float)this.field_36261,
             (float)(this.field_36270 + this.field_36278),
@@ -47,7 +47,7 @@ public class class_7257 extends class_446 {
          );
       }
 
-      class_73.method_109(
+      FontManager.method_109(
          (float)(this.field_36270 - 1),
          (float)(this.field_36261 - 1),
          (float)(this.field_36270 + this.field_36278),

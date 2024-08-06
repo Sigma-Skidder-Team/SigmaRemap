@@ -54,13 +54,13 @@ public class ShulkerInfoModule extends Module {
                   GL11.glEnable(3042);
                   GL11.glAlphaFunc(516, 0.0F);
                   GL11.glEnable(2848);
-                  class_73.method_83(
+                  FontManager.method_83(
                      new class_8194(
                         var7 - (double)var13, var9 + 0.01F, var11 - (double)var13, var7 + (double)var13, var9 + (double)(var13 * 2.0F), var11 + (double)var13
                      ),
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.1F)
                   );
-                  class_73.method_130(
+                  FontManager.method_130(
                      new class_8194(
                         var7 - (double)var13, var9 + 0.01F, var11 - (double)var13, var7 + (double)var13, var9 + (double)(var13 * 2.0F), var11 + (double)var13
                      ),
@@ -108,7 +108,7 @@ public class ShulkerInfoModule extends Module {
    }
 
    public void method_31552(double var1, double var3, double var5, Entity var7, float var8) {
-      class_3384 var11 = class_5320.field_27141;
+      FontRenderer var11 = class_5320.field_27141;
       String var12 = var7.method_45509().getUnformattedComponentText();
       float var13 = (float)(var1 - client.gameRenderer.method_35949().method_41627().method_61());
       float var14 = (float)(var3 - client.gameRenderer.method_35949().method_41627().method_60());
@@ -156,8 +156,8 @@ public class ShulkerInfoModule extends Module {
 
                GL11.glPushMatrix();
                GL11.glTranslatef(0.0F, 0.0F, 1000.0F);
-               GL11.glScalef(1.0F / class_73.method_106(), 1.0F / class_73.method_106(), 0.0F);
-               int var9 = Math.round(16.0F * class_73.method_106());
+               GL11.glScalef(1.0F / FontManager.method_106(), 1.0F / FontManager.method_106(), 0.0F);
+               int var9 = Math.round(16.0F * FontManager.method_106());
                byte var10 = 1;
                byte var11 = 12;
                int var12 = class_5320.field_27141.method_15654();
@@ -181,26 +181,26 @@ public class ShulkerInfoModule extends Module {
    private void method_31549(int var1, int var2, List<ItemStack> var3, String var4, boolean var5) {
       byte var8 = 12;
       int var9 = class_5320.field_27141.method_15654();
-      int var10 = Math.round(16.0F * class_73.method_106());
+      int var10 = Math.round(16.0F * FontManager.method_106());
       byte var11 = 1;
       int var12 = (int)Math.ceil((double)((float)var3.size() / 9.0F)) * (var10 + var11) + var8 * 2 + var9;
       int var13 = 9 * (var10 + var11) + var8 * 2;
       RenderSystem.method_16487();
       GL11.glAlphaFunc(519, 0.0F);
       if (!var5) {
-         class_73.method_103(
+         FontManager.method_103(
             (float)var1,
             (float)var2,
             (float)var13,
             (float)var12,
             class_314.method_1444(class_314.method_1442(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917, 75.0F), 0.7F)
          );
-         class_73.method_128((float)var1, (float)var2, (float)var13, (float)var12, 10.0F, 0.5F);
+         FontManager.method_128((float)var1, (float)var2, (float)var13, (float)var12, 10.0F, 0.5F);
       } else {
-         class_73.method_120(var1, var2, var13, var12, class_314.method_1444(class_1255.field_6929.field_6917, 0.94F));
+         FontManager.method_120(var1, var2, var13, var12, class_314.method_1444(class_1255.field_6929.field_6917, 0.94F));
       }
 
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27141, (float)(var1 + var8), (float)(var2 + var8 - 3), var4, class_314.method_1444(class_1255.field_6918.field_6917, 0.8F)
       );
       RenderSystem.method_16389();
@@ -211,16 +211,16 @@ public class ShulkerInfoModule extends Module {
          int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
          RenderSystem.method_16487();
          if (var14 == this.field_35424 && var5) {
-            class_73.method_103((float)var17, (float)var16, (float)var10, (float)var10, class_314.method_1444(class_1255.field_6918.field_6917, 0.15F));
+            FontManager.method_103((float)var17, (float)var16, (float)var10, (float)var10, class_314.method_1444(class_1255.field_6918.field_6917, 0.15F));
          }
 
-         class_73.method_126(var15, var17, var16, var10, var10);
+         FontManager.method_126(var15, var17, var16, var10, var10);
          if (var15.field_31206 > 1) {
             int var18 = var10 - class_5320.field_27152.method_18547("" + var15.field_31206);
             int var19 = class_5320.field_27152.method_18547("" + var15.field_31206);
             GL11.glAlphaFunc(519, 0.0F);
             RenderSystem.method_16487();
-            class_73.method_102(
+            FontManager.method_102(
                (float)(var17 + var18 - 17 - var19 / 4),
                (float)(var16 + 7),
                (float)(40 + var19),
@@ -229,7 +229,7 @@ public class ShulkerInfoModule extends Module {
                class_314.method_1444(class_1255.field_6918.field_6917, 0.7F),
                false
             );
-            class_73.method_87(class_5320.field_27152, (float)(var17 + var18), (float)(var16 + 13), "" + var15.field_31206, class_1255.field_6918.field_6917);
+            FontManager.method_87(class_5320.field_27152, (float)(var17 + var18), (float)(var16 + 13), "" + var15.field_31206, class_1255.field_6918.field_6917);
             RenderSystem.method_16389();
          }
 
@@ -249,21 +249,21 @@ public class ShulkerInfoModule extends Module {
                var29 = Math.max(var29, client.textRenderer.method_45395((String)var32.get(var20)));
             }
 
-            var29 = (int)((float)var29 * class_73.method_106());
+            var29 = (int)((float)var29 * FontManager.method_106());
             int var33 = var32.size();
-            class_73.method_103(
+            FontManager.method_103(
                (float)var27,
                (float)(var25 + var10),
-               (float)var29 + 9.0F * class_73.method_106(),
-               10.0F * class_73.method_106() * (float)var33 + 7.0F * class_73.method_106(),
+               (float)var29 + 9.0F * FontManager.method_106(),
+               10.0F * FontManager.method_106() * (float)var33 + 7.0F * FontManager.method_106(),
                class_314.method_1444(class_1255.field_6929.field_6917, 0.8F)
             );
             GL11.glPushMatrix();
-            GL11.glScalef(class_73.method_106(), class_73.method_106(), 0.0F);
-            var25 = (int)((float)var25 * (1.0F / class_73.method_106()));
-            var27 = (int)((float)var27 * (1.0F / class_73.method_106()));
-            var10 = (int)((float)var10 * (1.0F / class_73.method_106()));
-            var29 = (int)((float)var29 * (1.0F / class_73.method_106()));
+            GL11.glScalef(FontManager.method_106(), FontManager.method_106(), 0.0F);
+            var25 = (int)((float)var25 * (1.0F / FontManager.method_106()));
+            var27 = (int)((float)var27 * (1.0F / FontManager.method_106()));
+            var10 = (int)((float)var10 * (1.0F / FontManager.method_106()));
+            var29 = (int)((float)var29 * (1.0F / FontManager.method_106()));
 
             for (int var21 = 0; var21 < var32.size(); var21++) {
                String var22 = (String)var32.get(var21);

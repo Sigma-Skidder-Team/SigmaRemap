@@ -11,20 +11,20 @@ public class class_7557 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      class_73.method_121(
+      FontManager.method_121(
          (float)this.field_36270 + (float)this.field_36278 / 2.0F,
          (float)this.field_36261 + (float)this.field_36278 / 2.0F,
          (float)this.field_36278,
          class_314.method_1444(class_314.method_1442(this.field_38519, class_1255.field_6929.field_6917, 0.8F), var1)
       );
-      class_73.method_121(
+      FontManager.method_121(
          (float)this.field_36270 + (float)this.field_36278 / 2.0F,
          (float)this.field_36261 + (float)this.field_36278 / 2.0F,
          (float)(this.field_36278 - 2),
          class_314.method_1444(this.field_38519, var1)
       );
       if (this.method_32185()) {
-         class_73.method_121(
+         FontManager.method_121(
             (float)this.field_36270 + (float)this.field_36278 / 2.0F,
             (float)this.field_36261 + (float)this.field_36278 / 2.0F,
             (float)(this.field_36278 - 2),

@@ -31,14 +31,14 @@ public class class_5228 extends class_1859 {
 
       this.method_32124((int)(-25.0F * var4));
       this.method_32130();
-      class_73.method_96((float)(this.field_36270 + 20), (float)this.field_36261, 100.0F, 100.0F, this.field_26822);
+      FontManager.method_96((float)(this.field_36270 + 20), (float)this.field_36261, 100.0F, 100.0F, this.field_26822);
       int var5 = this.field_36270 + 12 - (class_3054.field_14994.method_18547(this.field_36268) - this.field_36278) / 2;
       int var6 = this.field_36261 + 102;
       GL11.glAlphaFunc(516, 0.1F);
-      class_73.method_87(
+      FontManager.method_87(
          class_3054.field_14994, (float)var5, (float)(var6 + 1), this.field_36268, class_314.method_1444(class_1255.field_6929.field_6917, 0.5F)
       );
-      class_73.method_87(class_3054.field_14994, (float)var5, (float)var6, this.field_36268, class_1255.field_6918.field_6917);
+      FontManager.method_87(class_3054.field_14994, (float)var5, (float)var6, this.field_36268, class_1255.field_6918.field_6917);
       GL11.glAlphaFunc(519, 0.0F);
       super.method_32182(var1);
    }

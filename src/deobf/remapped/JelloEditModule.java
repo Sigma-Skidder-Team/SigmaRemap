@@ -100,9 +100,9 @@ public class class_9093 extends Module {
                double var9 = (double)var6.getY() - client.gameRenderer.method_35949().method_41627().method_60();
                double var11 = (double)var6.getZ() - client.gameRenderer.method_35949().method_41627().method_62();
                class_8194 var13 = new class_8194(var7, var9, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
-               class_73.method_83(var13, class_314.method_1444(class_1255.field_6922.field_6917, 0.02F));
+               FontManager.method_83(var13, class_314.method_1444(class_1255.field_6922.field_6917, 0.02F));
                GL11.glEnable(2848);
-               class_73.method_131(var13, class_314.method_1444(class_1255.field_6922.field_6917, 0.03F));
+               FontManager.method_131(var13, class_314.method_1444(class_1255.field_6922.field_6917, 0.03F));
                GL11.glColor3f(1.0F, 1.0F, 1.0F);
             }
          }
@@ -113,8 +113,8 @@ public class class_9093 extends Module {
             double var18 = (double)var16.getY() - client.gameRenderer.method_35949().method_41627().method_60();
             double var19 = (double)var16.getZ() - client.gameRenderer.method_35949().method_41627().method_62();
             class_8194 var20 = new class_8194(var17, var18, var19, var17 + 1.0, var18 + 1.0, var19 + 1.0);
-            class_73.method_83(var20, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
-            class_73.method_131(var20, class_314.method_1444(class_1255.field_6925.field_6917, 0.2F));
+            FontManager.method_83(var20, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
+            FontManager.method_131(var20, class_314.method_1444(class_1255.field_6925.field_6917, 0.2F));
             GL11.glColor3f(1.0F, 1.0F, 1.0F);
          }
       }

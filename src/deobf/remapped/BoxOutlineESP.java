@@ -15,10 +15,10 @@ public class BoxOutlineESP extends Module {
       if (this.method_42015()) {
          if (client.thePlayer != null && client.theWorld != null) {
             this.method_18559();
-            class_73.method_107();
+            FontManager.method_107();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.method_18558(false);
-            class_73.method_85(class_3118.field_15504);
+            FontManager.method_85(class_3118.field_15504);
             GL11.glLineWidth(3.0F);
             RenderSystem.alphaFunc(518, 0.0F);
             RenderSystem.enableAlphaTest();
@@ -28,7 +28,7 @@ public class BoxOutlineESP extends Module {
             GL11.glDisable(2896);
             this.method_18558(true);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            class_73.method_145();
+            FontManager.method_145();
             this.method_18560();
          }
       }
@@ -53,7 +53,7 @@ public class BoxOutlineESP extends Module {
                      GL11.glTranslatef(0.0F, 0.1F, 0.0F);
                      GL11.glRotatef(client.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
                      GL11.glScalef(-0.11F, -0.11F, -0.11F);
-                     class_73.method_102(
+                     FontManager.method_102(
                         -var2.method_37086() * 22.0F,
                         -var2.method_37074() * 5.5F,
                         var2.method_37086() * 44.0F,
@@ -92,9 +92,9 @@ public class BoxOutlineESP extends Module {
                double var15 = (var5.getPosZ() - var5.field_41724) * (double) client.theTimer.field_32600 - (var5.getPosZ() - var5.field_41724);
                class_8194 var17 = new class_8194(var5.getBoundingBox().method_18918(var11, var13, var15)).method_37547(0.1F);
                if (var1) {
-                  class_73.method_130(var17, 3.0F, class_314.method_1444(var10, SigmaMainClass.getInstance().method_3312() != class_6015.field_30645 ? 0.8F : 0.35F));
+                  FontManager.method_130(var17, 3.0F, class_314.method_1444(var10, SigmaMainClass.getInstance().method_3312() != class_6015.field_30645 ? 0.8F : 0.35F));
                } else {
-                  class_73.method_83(var17, class_1255.field_6918.field_6917);
+                  FontManager.method_83(var17, class_1255.field_6918.field_6917);
                }
 
                GL11.glDisable(3042);

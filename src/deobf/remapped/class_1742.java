@@ -96,7 +96,7 @@ public class class_1742 {
    public void method_7766(int var1, int var2, int var3, int var4, float var5) {
       int var8 = this.field_8978 % this.field_8977 * this.field_8967;
       int var9 = this.field_8978 / this.field_8977 * this.field_8972;
-      class_73.method_100(
+      FontManager.method_100(
          (float)var1,
          (float)var2,
          (float)var3,

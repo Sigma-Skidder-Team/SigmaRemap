@@ -61,7 +61,7 @@ public class class_9107 extends class_1859 {
       }
 
       this.method_32111(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,
@@ -69,7 +69,7 @@ public class class_9107 extends class_1859 {
          class_314.method_1444(class_1255.field_6929.field_6917, 0.45F * var1)
       );
       super.method_32190();
-      class_73.method_108(
+      FontManager.method_108(
          (float)this.field_46626,
          (float)this.field_46627,
          (float)this.field_46624,
@@ -77,7 +77,7 @@ public class class_9107 extends class_1859 {
          10.0F,
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27147,
          (float)this.field_46626,
          (float)(this.field_46627 - 60),
@@ -85,15 +85,15 @@ public class class_9107 extends class_1859 {
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
       byte var5 = 30;
-      class_73.method_135((float)this.field_46626, (float)this.field_46627, (float)(this.field_46624 - 30), (float)this.field_46629);
-      class_73.method_87(
+      FontManager.method_135((float)this.field_46626, (float)this.field_46627, (float)(this.field_46624 - 30), (float)this.field_46629);
+      FontManager.method_87(
          class_5320.field_27152,
          (float)(var5 + this.field_46626),
          (float)(var5 + this.field_46627),
          this.field_46630.getDescription(),
          class_314.method_1444(class_1255.field_6929.field_6917, var1 * 0.7F)
       );
-      class_73.method_141();
+      FontManager.method_141();
       super.method_32178(var1);
    }
 }

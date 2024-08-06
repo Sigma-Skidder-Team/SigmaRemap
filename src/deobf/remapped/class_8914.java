@@ -179,7 +179,7 @@ public class class_8914 extends class_1859 {
          this.method_41004(this.field_45694);
       }
 
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,
@@ -187,7 +187,7 @@ public class class_8914 extends class_1859 {
          class_314.method_1444(class_1255.field_6929.field_6917, 0.3F * var1)
       );
       super.method_32190();
-      class_73.method_108(
+      FontManager.method_108(
          (float)this.field_45693,
          (float)this.field_45703,
          (float)this.field_45701,
@@ -196,7 +196,7 @@ public class class_8914 extends class_1859 {
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
       byte var5 = 30;
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27140,
          (float)(var5 + this.field_45693),
          (float)(var5 + this.field_45703),

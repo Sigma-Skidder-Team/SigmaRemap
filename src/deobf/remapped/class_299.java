@@ -134,9 +134,9 @@ public class class_299 extends class_446 {
       this.field_1093.method_32119(this.field_1084.method_11123() == 1.0F);
       this.field_1093.method_32142(Math.max(0, (int)((float)this.field_1092 * var5)));
       this.field_1093.method_32188((int)((float)this.field_1092 * (1.0F - var5)));
-      class_73.method_151(this);
+      FontManager.method_151(this);
       float var6 = this.method_32185() && this.field_1084.method_11128().equals(class_4043.field_19618) ? 0.03F : 0.0F;
-      class_73.method_103(
+      FontManager.method_103(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)this.field_36278,
@@ -144,7 +144,7 @@ public class class_299 extends class_446 {
          class_314.method_1444(class_1255.field_6929.field_6917, 0.04F * this.field_1086.method_11123() + var6)
       );
       if (!this.field_1089.method_32098()) {
-         class_73.method_87(
+         FontManager.method_87(
             class_5320.field_27150,
             (float)(this.field_36270 + 20) - var5 * (float)this.field_36278,
             (float)(this.field_36261 + 18),
@@ -155,7 +155,7 @@ public class class_299 extends class_446 {
 
       this.field_1089.method_32188(Math.round(-var5 * (float)this.field_36278));
       if (SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4301() == this.field_1090) {
-         class_73.method_99(
+         FontManager.method_99(
             (float)(this.method_32132() + this.method_32109() - 35) - var5 * (float)this.field_36278,
             (float)(this.method_32173() + 27),
             17.0F,
@@ -166,6 +166,6 @@ public class class_299 extends class_446 {
       }
 
       super.method_32178(var1);
-      class_73.method_141();
+      FontManager.method_141();
    }
 }

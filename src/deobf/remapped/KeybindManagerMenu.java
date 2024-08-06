@@ -128,7 +128,7 @@ public class KeybindManagerMenu extends class_2596 {
       float var4 = class_9556.method_44073(var1, 0.0F, 1.0F, 1.0F);
       this.method_32111(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.field_36270,
          (float)this.field_36261,
          (float)(this.field_36270 + this.field_36278),
@@ -136,7 +136,7 @@ public class KeybindManagerMenu extends class_2596 {
          class_314.method_1444(class_1255.field_6929.field_6917, var5)
       );
       super.method_32190();
-      class_73.method_87(
+      FontManager.method_87(
          class_5320.field_27147,
          (float)((this.field_36278 - 1060) / 2),
          (float)((this.field_36257 - 357) / 2 - 90),

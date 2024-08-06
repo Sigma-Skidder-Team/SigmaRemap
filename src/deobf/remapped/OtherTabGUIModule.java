@@ -177,7 +177,7 @@ public class OtherTabGUIModule extends Module {
                }
 
                this.method_1210((float)(0.5 + (double)field_955.method_11123() * 0.5));
-               class_73.method_103(12.0F, 30.0F, 90.0F, 1.0F, class_1255.field_6918.field_6917);
+               FontManager.method_103(12.0F, 30.0F, 90.0F, 1.0F, class_1255.field_6918.field_6917);
             }
          }
       }
@@ -228,7 +228,7 @@ public class OtherTabGUIModule extends Module {
             var17 = class_3483.method_15984(this.field_956.method_11123(), 0.0F, 1.0F, 1.0F);
          }
 
-         class_73.method_152(
+         FontManager.method_152(
             (float)var8.method_16873() + (float)var8.method_16874() + 14.0F * var17,
             (float)var8.method_16871() + 16.0F + (float)(25 * var8.field_14700),
             24.0F * var17,
@@ -239,16 +239,16 @@ public class OtherTabGUIModule extends Module {
          int var14 = var8.method_16871() + 25 * var8.field_14700 + 4;
          int var15 = var8.field_17671.method_18547(var11) + 8;
          float var16 = class_3483.method_15985(this.field_957.method_11123(), 0.0F, 1.0F, 1.0F);
-         class_73.method_103((float)var13, (float)var14, (float)var15 * var16, 25.0F, class_314.method_1444(class_1255.field_6929.field_6917, var1 * 0.6F));
-         class_73.method_135((float)var13, (float)var14, (float)var15 * var16, 25.0F);
-         class_73.method_87(
+         FontManager.method_103((float)var13, (float)var14, (float)var15 * var16, 25.0F, class_314.method_1444(class_1255.field_6929.field_6917, var1 * 0.6F));
+         FontManager.method_135((float)var13, (float)var14, (float)var15 * var16, 25.0F);
+         FontManager.method_87(
             var8.field_17671,
             (float)(var13 + 4),
             (float)(var14 + 2),
             var11,
             class_314.method_1444(class_1255.field_6918.field_6917, Math.min(1.0F, var1 * 1.7F))
          );
-         class_73.method_141();
+         FontManager.method_141();
       }
    }
 

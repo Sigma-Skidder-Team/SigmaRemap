@@ -43,7 +43,7 @@ public class class_2990 extends class_3622 {
 
    @Override
    public void method_16870(float var1) {
-      class_73.method_103(
+      FontManager.method_103(
          (float)this.method_16873(),
          (float)this.method_16871(),
          (float)this.method_16874(),
@@ -57,7 +57,7 @@ public class class_2990 extends class_3622 {
       byte var7 = 25;
       int var8 = -15781024;
       int var9 = -15626304;
-      class_73.method_82(var4, var5, var4 + var6, var5 + var7, var8, var9, var9, var8);
+      FontManager.method_82(var4, var5, var4 + var6, var5 + var7, var8, var9, var9, var8);
       byte var10 = 6;
 
       for (String var12 : this.field_14698) {
@@ -67,7 +67,7 @@ public class class_2990 extends class_3622 {
             var13 = class_1255.field_6920.field_6917;
          }
 
-         class_73.method_87(
+         FontManager.method_87(
             this.field_17671,
             (float)(7 + this.method_16873()),
             (float)(this.method_16871() + var10),

@@ -84,7 +84,7 @@ public class class_3407 extends class_4178 {
       super.method_32190();
       super.method_32130();
       int var4 = (int)(1.0F + 10.0F * (1.0F - this.field_16773));
-      class_73.method_128(
+      FontManager.method_128(
          (float)(this.method_32132() + (var4 - 1)),
          (float)(this.method_32173() + (var4 - 1)),
          (float)(this.method_32109() - (var4 - 1) * 2),
@@ -92,14 +92,14 @@ public class class_3407 extends class_4178 {
          (float)this.field_16774 + (1.0F - this.field_16773) * (float)var4,
          var1
       );
-      class_73.method_94(
+      FontManager.method_94(
          (float)this.method_32132(),
          (float)this.method_32173(),
          (float)(this.method_32132() + this.method_32109()),
          (float)(this.method_32173() + 60),
          class_314.method_1444(class_1255.field_6918.field_6917, Math.min(1.0F, var1 * 0.9F * this.field_16773))
       );
-      class_73.method_103(
+      FontManager.method_103(
          (float)this.method_32132(),
          (float)this.method_32173() + 60.0F * this.field_16773,
          (float)this.method_32109(),
@@ -115,7 +115,7 @@ public class class_3407 extends class_4178 {
       }
 
       String var5 = this.method_15726().getCategoryName();
-      class_73.method_88(
+      FontManager.method_88(
          class_5320.field_27141,
          (float)(this.method_32132() + 20),
          (float)(this.method_32173() + 30),
@@ -128,7 +128,7 @@ public class class_3407 extends class_4178 {
       super.method_32178(var1 * var1);
       GL11.glPopMatrix();
       if (this.field_16769.method_11853() > 0) {
-         class_73.method_99(
+         FontManager.method_99(
             (float)this.method_32132(),
             (float)(this.method_32173() + 60),
             (float)this.method_32109(),

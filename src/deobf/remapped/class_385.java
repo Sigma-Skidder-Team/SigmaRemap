@@ -36,7 +36,7 @@ public class class_385 {
       );
       int var5 = Color.getHSBColor((float)(System.currentTimeMillis() % 4000L) / 4000.0F, 0.3F, 1.0F).getRGB();
       float var6 = 60.0F * this.field_1571;
-      class_73.method_99(
+      FontManager.method_99(
          (float)this.field_1570 - var6 / 2.0F,
          (float)this.field_1569 - var6 / 2.0F,
          var6,

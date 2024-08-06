@@ -43,7 +43,7 @@ public class class_9192 extends class_446 {
       this.field_47022 = Math.min(1.0F, Math.max(0.0F, this.field_47022));
       this.field_47019 = class_314.method_1442(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917, 2.0F);
       if (this.field_47023 || this.method_32185() || this.method_32183()) {
-         class_73.method_94(
+         FontManager.method_94(
             (float)this.field_36270,
             (float)this.field_36261,
             (float)(this.field_36270 + this.field_36278),
@@ -54,7 +54,7 @@ public class class_9192 extends class_446 {
 
       if (!this.method_32185()) {
          if (this.method_32183() && this.field_47023) {
-            class_73.method_110(
+            FontManager.method_110(
                (float)this.field_36270,
                (float)this.field_36261,
                (float)(this.field_36270 + this.field_36278),
@@ -64,7 +64,7 @@ public class class_9192 extends class_446 {
             );
          } else if (!this.method_32183()) {
             if (this.field_47023) {
-               class_73.method_110(
+               FontManager.method_110(
                   (float)this.field_36270,
                   (float)this.field_36261,
                   (float)(this.field_36270 + this.field_36278),
@@ -74,7 +74,7 @@ public class class_9192 extends class_446 {
                );
             }
          } else {
-            class_73.method_110(
+            FontManager.method_110(
                (float)this.field_36270,
                (float)this.field_36261,
                (float)(this.field_36270 + this.field_36278),
@@ -84,7 +84,7 @@ public class class_9192 extends class_446 {
             );
          }
       } else {
-         class_73.method_110(
+         FontManager.method_110(
             (float)this.field_36270,
             (float)this.field_36261,
             (float)(this.field_36270 + this.field_36278),
@@ -94,12 +94,12 @@ public class class_9192 extends class_446 {
          );
       }
 
-      class_73.method_150(this.field_36270, this.field_36261, this.field_36270 + this.field_36278, this.field_36261 + this.field_36257, true);
+      FontManager.method_150(this.field_36270, this.field_36261, this.field_36270 + this.field_36278, this.field_36261 + this.field_36257, true);
       if (this.field_47028 != null) {
          this.method_42377();
-         class_73.method_141();
+         FontManager.method_141();
          if (this.field_47022 > 0.0F && this.field_36257 > 55) {
-            class_73.method_99(
+            FontManager.method_99(
                (float)(this.field_36270 + this.method_32109()),
                (float)this.field_36261 + (float)(26 * this.field_36257) / 100.0F,
                18.0F * this.field_47022 * (float)this.field_36257 / 100.0F,
@@ -114,11 +114,11 @@ public class class_9192 extends class_446 {
    }
 
    public void method_42380() {
-      class_73.method_102(
+      FontManager.method_102(
          (float)(this.field_36270 + 13), (float)(this.field_36261 + 13), 75.0F, 75.0F, this.field_47028.method_33340(), class_1255.field_6918.field_6917, true
       );
-      class_73.method_147((float)(this.field_36270 + 13), (float)(this.field_36261 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
-      class_73.method_99(
+      FontManager.method_147((float)(this.field_36270 + 13), (float)(this.field_36261 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
+      FontManager.method_99(
          (float)(this.field_36270 + 1),
          (float)this.field_36261,
          100.0F,
@@ -134,7 +134,7 @@ public class class_9192 extends class_446 {
          var3 = this.field_47028.method_33344();
       }
 
-      class_73.method_88(
+      FontManager.method_88(
          class_5320.field_27156,
          (float)(this.field_36270 + this.field_36278 / 2),
          (float)(this.field_36261 + 20),
@@ -143,7 +143,7 @@ public class class_9192 extends class_446 {
          class_6206.field_31726,
          class_6206.field_31726
       );
-      class_73.method_88(
+      FontManager.method_88(
          class_5320.field_27156,
          (float)(this.field_36270 + this.field_36278 / 2),
          (float)(this.field_36261 + 18),
@@ -153,7 +153,7 @@ public class class_9192 extends class_446 {
          class_6206.field_31726
       );
       if (!this.field_47028.method_33338()) {
-         class_73.method_89(
+         FontManager.method_89(
             class_5320.field_27156,
             (float)(this.field_36270 + this.field_36278 / 2),
             (float)(this.field_36261 + 32),
@@ -164,7 +164,7 @@ public class class_9192 extends class_446 {
             true
          );
       } else {
-         class_73.method_89(
+         FontManager.method_89(
             class_5320.field_27156,
             (float)(this.field_36270 + this.field_36278 / 2),
             (float)(this.field_36261 + 29),

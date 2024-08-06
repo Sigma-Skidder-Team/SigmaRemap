@@ -5,7 +5,7 @@ public class class_8402 extends class_6220 implements class_6375 {
    public float field_42986;
    public boolean field_42985 = false;
 
-   public class_8402(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, class_3384 var9) {
+   public class_8402(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_590 var7, String var8, FontRenderer var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
    }
 
@@ -36,13 +36,13 @@ public class class_8402 extends class_6220 implements class_6375 {
       int var6 = (int)((float)this.method_32137() * this.field_42986);
       int var7 = this.method_32132() - (var5 - this.method_32109()) / 2;
       int var8 = this.method_32173() - (var6 - this.method_32137()) / 2;
-      class_73.method_149(
+      FontManager.method_149(
          this.method_32155() + var7 - this.field_36270,
          this.method_32093() + var8 - this.field_36261,
          this.method_32155() + var7 - this.field_36270 + var5,
          this.method_32093() + var8 - this.field_36261 + var6
       );
-      class_73.method_94(
+      FontManager.method_94(
          (float)var7,
          (float)var8,
          (float)(var7 + var5),
@@ -50,7 +50,7 @@ public class class_8402 extends class_6220 implements class_6375 {
          class_314.method_1444(class_314.method_1442(this.field_36272.method_2764(), this.field_36272.method_2768(), 1.0F - var4), var1)
       );
       if (this.method_32165() != null) {
-         class_73.method_88(
+         FontManager.method_88(
             this.method_32097(),
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),
@@ -61,7 +61,7 @@ public class class_8402 extends class_6220 implements class_6375 {
          );
       }
 
-      class_73.method_141();
+      FontManager.method_141();
       super.method_32182(var1);
    }
 

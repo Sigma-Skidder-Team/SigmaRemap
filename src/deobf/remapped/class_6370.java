@@ -40,7 +40,7 @@ public class class_6370 extends Module {
             double var8 = (double)var5.getY() - client.gameRenderer.method_35949().method_41627().method_60();
             double var10 = (double)var5.getZ() - client.gameRenderer.method_35949().method_41627().method_62();
             class_8194 var12 = new class_8194(var6, var8, var10, var6 + 1.0, var8 + 1.0, var10 + 1.0);
-            class_73.method_83(var12, var4);
+            FontManager.method_83(var12, var4);
             GL11.glEnable(2929);
             GL11.glPopMatrix();
          }

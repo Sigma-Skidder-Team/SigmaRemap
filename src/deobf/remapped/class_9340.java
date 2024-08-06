@@ -25,7 +25,7 @@ public class class_9340 extends class_6220 {
             float var6 = 0.0F;
          }
 
-         class_73.method_139(
+         FontManager.method_139(
             (float)this.method_32132(),
             (float)this.method_32173(),
             (float)this.method_32109(),
@@ -34,7 +34,7 @@ public class class_9340 extends class_6220 {
             class_314.method_1444(this.field_36272.method_2764(), var1)
          );
          if (this.method_32165() != null) {
-            class_73.method_88(
+            FontManager.method_88(
                this.method_32097(),
                (float)(this.method_32132() + this.method_32109() / 2),
                (float)(this.method_32173() + this.method_32137() / 2),

@@ -52,7 +52,7 @@ public class DVDSimulatorModule extends Module {
 
          this.field_20136 = this.field_20136 + this.field_20138 * (float)var6;
          this.field_20137 = this.field_20137 + this.field_20139 * (float)var6;
-         class_73.method_99(
+         FontManager.method_99(
             this.field_20136,
             this.field_20137,
             (float)this.field_20140.field_36201,

@@ -16,7 +16,7 @@ public class class_629 extends class_1859 {
    @Override
    public void method_32178(float var1) {
       GL11.glAlphaFunc(518, 0.1F);
-      class_73.method_99(
+      FontManager.method_99(
          (float)(this.field_36270 + (this.field_36278 - 64) / 2),
          (float)(this.field_36261 + 10),
          64.0F,
@@ -26,7 +26,7 @@ public class class_629 extends class_1859 {
       );
       int var4 = this.method_32109() / 2 + this.field_36270;
       int var5 = this.method_32137() / 2 + this.field_36261;
-      class_73.method_87(
+      FontManager.method_87(
          class_3054.field_14988,
          (float)(this.field_36270 + (this.method_32109() - class_3054.field_14988.method_18547(this.field_36275)) / 2),
          (float)(this.field_36261 + this.method_32137() - 50),

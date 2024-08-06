@@ -59,10 +59,10 @@ public class class_7170 extends class_446 {
    @Override
    public void method_32178(float var1) {
       this.method_32872();
-      class_73.method_151(this);
+      FontManager.method_151(this);
 
       for (int var4 = 0; var4 < 3; var4++) {
-         class_73.method_96((float)(this.field_36270 + 288 * var4), (float)this.field_36261, 288.0F, 512.0F, this.field_36888);
+         FontManager.method_96((float)(this.field_36270 + 288 * var4), (float)this.field_36261, 288.0F, 512.0F, this.field_36888);
       }
 
       float var16 = 60.0F / (float) MinecraftClient.method_8501();
@@ -77,7 +77,7 @@ public class class_7170 extends class_446 {
          int var11 = (int)((Long)var10.getKey() - System.currentTimeMillis());
          float var12 = (float)var11 / 12.0F;
          float var13 = (float)var7 / 12.0F;
-         class_73.method_99(
+         FontManager.method_99(
             (float)this.field_36270 + var13 + var12,
             (float)(this.field_36261 - 320 + (int)((double)var8 * (Double)var10.getValue()) - var6 / 2),
             52.0F,
@@ -85,7 +85,7 @@ public class class_7170 extends class_446 {
             this.field_36893,
             class_1255.field_6918.field_6917
          );
-         class_73.method_99(
+         FontManager.method_99(
             (float)this.field_36270 + var13 + var12,
             (float)(this.field_36261 + (int)((double)var8 * (Double)var10.getValue()) + var6 / 2),
             52.0F,
@@ -106,16 +106,16 @@ public class class_7170 extends class_446 {
       float var18 = (float)(System.currentTimeMillis() % (long)var17) / (float)var17;
 
       for (int var19 = 0; var19 < 4; var19++) {
-         class_73.method_96((float)(this.field_36270 + 288 * var19) - 288.0F * var18, (float)(this.field_36261 + var8), 288.0F, 112.0F, this.field_36895);
+         FontManager.method_96((float)(this.field_36270 + 288 * var19) - 288.0F * var18, (float)(this.field_36261 + var8), 288.0F, 112.0F, this.field_36895);
       }
 
-      class_73.method_124(
+      FontManager.method_124(
          (float)this.field_36270 + (float)var7 / 12.0F,
          (float)this.field_36261 + (float)var8 * (1.0F - this.field_36887),
          10.0F,
          class_1255.field_6928.field_6917
       );
-      class_73.method_141();
+      FontManager.method_141();
       this.field_36889 = System.currentTimeMillis();
       super.method_32178(var1);
    }

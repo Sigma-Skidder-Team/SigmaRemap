@@ -7,8 +7,8 @@ import org.lwjgl.opengl.GL11;
 
 public class OtherActiveModsModule extends Module {
    private TreeMap<Module, class_2440> field_20487 = new TreeMap<Module, class_2440>();
-   private class_3384 field_20484;
-   private class_3384 field_20488;
+   private FontRenderer field_20484;
+   private FontRenderer field_20488;
    private class_2440 field_20486;
 
    public OtherActiveModsModule() {
@@ -73,19 +73,19 @@ public class OtherActiveModsModule extends Module {
                   GL11.glTranslated(-3.0, 0.0, 0.0);
                }
 
-               class_73.method_94((float)(var7 - var19 - 3), (float)(var6 + 1), (float)(var7 + 2), (float)(var6 + var20 + 1), new Color(0, 0, 0, 150).getRGB());
+               FontManager.method_94((float)(var7 - var19 - 3), (float)(var6 + 1), (float)(var7 + 2), (float)(var6 + var20 + 1), new Color(0, 0, 0, 150).getRGB());
                if (!var5.equalsIgnoreCase("None")) {
                   if (!var5.equalsIgnoreCase("All")) {
                      if (!var5.equalsIgnoreCase("Left")) {
                         if (var5.equalsIgnoreCase("Right")) {
-                           class_73.method_94((float)(var7 + 2), (float)(var6 + 1), (float)(var7 + 7), (float)(var6 + 1 + var20), var10);
+                           FontManager.method_94((float)(var7 + 2), (float)(var6 + 1), (float)(var7 + 7), (float)(var6 + 1 + var20), var10);
                         }
                      } else {
-                        class_73.method_94((float)(var7 - var19 - 6), (float)(var6 + 1), (float)(var7 - var19 - 3), (float)(var6 + 1 + var20), var10);
+                        FontManager.method_94((float)(var7 - var19 - 6), (float)(var6 + 1), (float)(var7 - var19 - 3), (float)(var6 + 1 + var20), var10);
                      }
                   } else {
-                     class_73.method_94((float)(var7 - var19 - 5), (float)(var6 + 1), (float)(var7 - var19 - 3), (float)(var6 + 1 + var20), var10);
-                     class_73.method_94((float)(var7 - var19 - 3), (float)(var6 + 1), (float)(var7 - var11 - 5), (float)(var6 + 3), var10);
+                     FontManager.method_94((float)(var7 - var19 - 5), (float)(var6 + 1), (float)(var7 - var19 - 3), (float)(var6 + 1 + var20), var10);
+                     FontManager.method_94((float)(var7 - var19 - 3), (float)(var6 + 1), (float)(var7 - var11 - 5), (float)(var6 + 3), var10);
                   }
                }
 
@@ -95,7 +95,7 @@ public class OtherActiveModsModule extends Module {
                   GL11.glTranslated((double)((float)var19 * class_9681.method_44756(var15.method_11123(), 0.0F, 1.0F, 1.0F)), 0.0, 0.0);
                }
 
-               class_73.method_148(
+               FontManager.method_148(
                   (float)(var7 - var19 - 3),
                   (float)(var6 + 1),
                   (float)var7,
@@ -109,7 +109,7 @@ public class OtherActiveModsModule extends Module {
                      this.method_19655(var16),
                      new class_8709(160, 160, 160)
                   );
-               class_73.method_141();
+               FontManager.method_141();
                RenderSystem.disableBlend();
                var6 += var20;
                RenderSystem.method_16489();
@@ -122,7 +122,7 @@ public class OtherActiveModsModule extends Module {
          }
 
          if (var5.equalsIgnoreCase("All") && var11 > 0) {
-            class_73.method_94((float)(var7 - var11 - 5), (float)(var6 + 1), (float)(var7 + 2), (float)(var6 + 3), var10);
+            FontManager.method_94((float)(var7 - var11 - 5), (float)(var6 + 1), (float)(var7 + 2), (float)(var6 + 3), var10);
          }
       }
    }

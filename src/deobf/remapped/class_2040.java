@@ -27,8 +27,8 @@ public class class_2040 extends class_446 {
 
       GL11.glPushMatrix();
       GL11.glTranslatef((float)this.field_36270, (float)this.field_36261, 0.0F);
-      class_73.method_103(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_1255.field_6929.field_6917);
-      class_73.method_139(
+      FontManager.method_103(0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_1255.field_6929.field_6917);
+      FontManager.method_139(
          (float)(this.field_10343.method_21529().field_36201 * this.field_10341),
          (float)(this.field_10343.method_21529().field_36203 * this.field_10341),
          (float)this.field_10341,
@@ -38,7 +38,7 @@ public class class_2040 extends class_446 {
       );
 
       for (class_7030 var5 : this.field_10343.method_21530().method_21230()) {
-         class_73.method_103(
+         FontManager.method_103(
             (float)(var5.field_36201 * this.field_10341),
             (float)(var5.field_36203 * this.field_10341),
             (float)this.field_10341,

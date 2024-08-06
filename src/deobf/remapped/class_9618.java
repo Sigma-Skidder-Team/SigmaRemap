@@ -201,7 +201,7 @@ public class class_9618 extends class_1859 {
          float var8 = this.method_44407(this.field_49001.method_11123(), 1.0F);
          var4 = (int)((float)var4 * var8);
          var5 = (int)((float)var5 * var8);
-         class_73.method_153(
+         FontManager.method_153(
             -5.0F,
             -5.0F,
             (float)(this.method_32109() + 10),
@@ -209,11 +209,11 @@ public class class_9618 extends class_1859 {
             this.field_49007,
             class_314.method_1444(class_1255.field_6918.field_6917, var7)
          );
-         class_73.method_94(
+         FontManager.method_94(
             0.0F, 0.0F, (float)this.method_32109(), (float)this.method_32137(), class_314.method_1444(class_1255.field_6929.field_6917, 0.1F * var7)
          );
          if (var4 > 0) {
-            class_73.method_115(
+            FontManager.method_115(
                (this.field_36278 - var4) / 2, (this.field_36257 - var5) / 2, var4, var5, class_314.method_1444(class_1255.field_6918.field_6917, var7)
             );
          }

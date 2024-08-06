@@ -122,13 +122,13 @@ public class class_5702 extends class_2596 {
       this.field_28863.method_32146(var4);
       this.field_28862.method_32133(var4);
       this.field_28862.method_32146(var4);
-      Rectangle var5 = class_73.method_123(class_73.method_84(this.field_28863), this.field_28863.method_32191(), this.field_28863.method_32152());
+      Rectangle var5 = FontManager.method_123(FontManager.method_84(this.field_28863), this.field_28863.method_32191(), this.field_28863.method_32152());
       if (this.field_28862.method_32126()) {
-         var5 = class_73.method_123(class_73.method_84(this.field_28862), this.field_28862.method_32191(), this.field_28862.method_32152());
+         var5 = FontManager.method_123(FontManager.method_84(this.field_28862), this.field_28862.method_32191(), this.field_28862.method_32152());
       }
 
       if ((double)var4 > 0.1) {
-         class_73.method_115(
+         FontManager.method_115(
             (int)((double)this.field_36278 - var5.getWidth()) / 2,
             (int)((double)this.field_36257 - var5.getHeight()) / 2,
             (int)var5.getWidth(),
@@ -149,20 +149,20 @@ public class class_5702 extends class_2596 {
          int var10 = var8 + Math.max(class_5320.field_27147.method_18547(var7), class_5320.field_27140.method_18547(var6)) + var9 * 10;
          int var11 = (this.field_36278 - var10) / 2;
          int var12 = (this.field_36257 - var8 * 2) / 2;
-         class_73.method_94(
+         FontManager.method_94(
             0.0F,
             0.0F,
             (float)this.field_36278,
             (float)this.field_36257,
             class_314.method_1444(class_1255.field_6929.field_6917, 0.45F * this.field_28858.method_11123())
          );
-         class_73.method_97(
+         FontManager.method_97(
             (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), NotificationIcons.sigmamental, this.field_28858.method_11123()
          );
          short var13 = 165;
          byte var14 = 54;
-         class_73.method_87(class_5320.field_27147, (float)(var11 + var13), (float)(var12 + var14), var7, class_1255.field_6918.field_6917);
-         class_73.method_87(class_5320.field_27140, (float)(var11 + var13), (float)(var12 + var14 + 45), var6, class_1255.field_6918.field_6917);
+         FontManager.method_87(class_5320.field_27147, (float)(var11 + var13), (float)(var12 + var14), var7, class_1255.field_6918.field_6917);
+         FontManager.method_87(class_5320.field_27140, (float)(var11 + var13), (float)(var12 + var14 + 45), var6, class_1255.field_6918.field_6917);
       }
 
       GL11.glPushMatrix();
@@ -188,7 +188,7 @@ public class class_5702 extends class_2596 {
       GL11.glTranslatef((float)this.field_36278 / 2.0F, (float)this.field_36278 / 2.0F, 0.0F);
       GL11.glScalef(1.0F + var7 * 0.2F, 1.0F + var7 * 0.2F, 0.0F);
       GL11.glTranslatef((float)(-this.field_36278) / 2.0F, (float)(-this.field_36278) / 2.0F, 0.0F);
-      class_73.method_153(
+      FontManager.method_153(
          (float)this.field_28853,
          (float)this.field_28854,
          (float)(this.method_32109() * 2),
