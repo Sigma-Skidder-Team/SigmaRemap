@@ -7,7 +7,7 @@ public class class_4555 {
    private static final double[] field_22201 = new double[]{0.0, 1.0, 4.0, 6.0, 4.0, 1.0, 0.0};
 
    @Nonnull
-   public static class_1343 method_21121(class_1343 var0, class_7141 var1) {
+   public static Vector3d method_21121(Vector3d var0, class_7141 var1) {
       int var4 = MathHelper.floor(var0.method_61());
       int var5 = MathHelper.floor(var0.method_60());
       int var6 = MathHelper.floor(var0.method_62());
@@ -15,7 +15,7 @@ public class class_4555 {
       double var9 = var0.method_60() - (double)var5;
       double var11 = var0.method_62() - (double)var6;
       double var13 = 0.0;
-      class_1343 var15 = class_1343.field_7335;
+      Vector3d var15 = Vector3d.ZERO;
 
       for (int var16 = 0; var16 < 6; var16++) {
          double var17 = MathHelper.lerp(var7, field_22201[var16 + 1], field_22201[var16]);

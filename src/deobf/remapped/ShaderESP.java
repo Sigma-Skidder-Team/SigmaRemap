@@ -6,8 +6,8 @@ public class ShaderESP extends Module {
    }
 
    @EventListen
-   public void method_2176(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_2176(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          for (Entity var5 : client.theWorld.method_736()) {
             if (!SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.getModule().method_42007("Show Players");

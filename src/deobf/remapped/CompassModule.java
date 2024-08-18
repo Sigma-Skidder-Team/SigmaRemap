@@ -10,7 +10,7 @@ public class CompassModule extends Module {
 
    @EventListen
    private void method_42042(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
             byte var4 = 5;
             byte var5 = 60;

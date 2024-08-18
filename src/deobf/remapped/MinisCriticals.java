@@ -9,7 +9,7 @@ public class MinisCriticals extends Module {
 
    @EventListen
    private void method_31154(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (KillauraModule.field_12548) {
             client.method_8614()
                .sendPacket(
@@ -21,7 +21,7 @@ public class MinisCriticals extends Module {
 
    @EventListen
    private void method_31155(class_8544 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (KillauraModule.field_12548) {
             var1.method_29715(true);
          }

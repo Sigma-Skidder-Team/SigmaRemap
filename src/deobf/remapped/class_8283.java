@@ -15,7 +15,7 @@ public class class_8283 implements Packet<class_392> {
    public class_8283() {
    }
 
-   public class_8283(Identifier var1, class_562 var2, class_1343 var3, float var4, float var5) {
+   public class_8283(Identifier var1, class_562 var2, Vector3d var3, float var4, float var5) {
       this.field_42460 = var1;
       this.field_42456 = var2;
       this.field_42459 = (int)(var3.field_7336 * 8.0);

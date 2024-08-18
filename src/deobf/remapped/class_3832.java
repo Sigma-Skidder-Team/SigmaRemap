@@ -27,7 +27,7 @@ public interface class_3832 extends class_2354 {
       double var10 = var2.getPosZ() - var1.getPosZ();
       double var12 = (double) MathHelper.sqrt(var8 * var8 + var10 * var10);
       double var14 = var2.method_37080(0.3333333333333333) - var3.method_37309() + var12 * 0.2F;
-      class_2426 var16 = this.method_17813(var1, new class_1343(var8, var14, var10), var4);
+      class_2426 var16 = this.method_17813(var1, new Vector3d(var8, var14, var10), var4);
       var3.method_26161(
          (double)var16.method_11057(),
          (double)var16.method_11061(),
@@ -38,9 +38,9 @@ public interface class_3832 extends class_2354 {
       var1.method_37155(SoundEvents.field_2025, 1.0F, 1.0F / (var1.method_26594().nextFloat() * 0.4F + 0.8F));
    }
 
-   default class_2426 method_17813(LivingEntity var1, class_1343 var2, float var3) {
-      class_1343 var6 = var2.method_6213();
-      class_1343 var7 = var6.method_6196(new class_1343(0.0, 1.0, 0.0));
+   default class_2426 method_17813(LivingEntity var1, Vector3d var2, float var3) {
+      Vector3d var6 = var2.method_6213();
+      Vector3d var7 = var6.method_6196(new Vector3d(0.0, 1.0, 0.0));
       if (var7.method_6221() <= 1.0E-7) {
          var7 = var6.method_6196(var1.method_37371(1.0F));
       }

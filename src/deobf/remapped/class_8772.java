@@ -37,7 +37,7 @@ public class class_8772 {
       return this.method_40299(var1.method_43235(), var1.method_37245(), var2);
    }
 
-   public boolean method_40299(class_6331 var1, class_1343 var2, DamageSource var3) {
+   public boolean method_40299(class_6331 var1, Vector3d var2, DamageSource var3) {
       if (this != field_44906) {
          if (this.field_44905 != null && this.field_44905 != var3.method_28357()) {
             return false;

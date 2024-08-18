@@ -55,7 +55,7 @@ public class class_3338 {
       );
    }
 
-   private static int method_15315(class_9155 var0, Identifier var1, class_1343 var2, CompoundNBT var3, boolean var4) throws CommandSyntaxException {
+   private static int method_15315(class_9155 var0, Identifier var1, Vector3d var2, CompoundNBT var3, boolean var4) throws CommandSyntaxException {
       BlockPos var7 = new BlockPos(var2);
       if (World.method_29593(var7)) {
          CompoundNBT var8 = var3.method_25944();

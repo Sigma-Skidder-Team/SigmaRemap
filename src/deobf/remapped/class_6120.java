@@ -16,7 +16,7 @@ public class class_6120 extends class_6165 {
 
    @Override
    public void method_29511() {
-      if (this.field_31278.field_41751 || !this.field_31278.method_37179()) {
+      if (this.field_31278.removed || !this.field_31278.method_37179()) {
          this.method_28267();
       }
    }

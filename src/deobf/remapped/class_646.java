@@ -48,11 +48,11 @@ public class class_646<T extends class_4607> extends class_3599 {
          } else if (var3 && this.field_3618.method_21358().method_12170(this.field_3618.method_37245(), 10.0)) {
             this.field_3618.method_21356();
          } else {
-            class_1343 var6 = class_1343.method_6200(this.field_3618.method_21358());
-            class_1343 var7 = this.field_3618.method_37245();
-            class_1343 var8 = var7.method_6194(var6);
+            Vector3d var6 = Vector3d.method_6200(this.field_3618.method_21358());
+            Vector3d var7 = this.field_3618.method_37245();
+            Vector3d var8 = var7.method_6194(var6);
             var6 = var8.method_6192(90.0F).method_6209(0.4).method_6215(var6);
-            class_1343 var9 = var6.method_6194(var7).method_6213().method_6209(10.0).method_6215(var7);
+            Vector3d var9 = var6.method_6194(var7).method_6213().method_6209(10.0).method_6215(var7);
             BlockPos var10 = new BlockPos(var9);
             var10 = this.field_3618.world.method_22563(class_3801.field_18590, var10);
             if (var4.method_5595(

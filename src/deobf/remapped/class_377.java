@@ -39,14 +39,14 @@ public class class_377 extends class_5920<class_7666> {
                      var7.method_5105(class_6044.field_30889, new class_6651(var6.method_37409(), this.field_1527, this.field_1529));
                   }
                } else {
-                  class_1343 var9 = null;
+                  Vector3d var9 = null;
                   int var10 = 0;
 
                   for (short var11 = 1000;
                      var10 < 1000 && (var9 == null || this.method_1847(var2, class_8150.method_37410(var1.method_29545(), new BlockPos(var9))));
                      var10++
                   ) {
-                     var9 = class_3425.method_15837(var2, 15, 7, class_1343.method_6200(var6.method_37409()));
+                     var9 = class_3425.method_15837(var2, 15, 7, Vector3d.method_6200(var6.method_37409()));
                   }
 
                   if (var10 == 1000) {

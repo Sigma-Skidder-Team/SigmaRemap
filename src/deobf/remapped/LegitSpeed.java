@@ -15,9 +15,9 @@ public class LegitSpeed extends Module {
 
    @EventListen
    public void method_31490(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.onGround
-            && client.thePlayer.field_41774
+            && client.thePlayer.collidedVertically
             && (client.thePlayer.field_29673 != 0.0F || client.thePlayer.field_29676 != 0.0F)
             && this.getBooleanValueByName("AutoJump")) {
             client.thePlayer.method_26595();
@@ -62,7 +62,7 @@ public class LegitSpeed extends Module {
 
    @EventListen
    private void method_31489(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
             if (var4.method_21093() == client.thePlayer.method_37145()) {

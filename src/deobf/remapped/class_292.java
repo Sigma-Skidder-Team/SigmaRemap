@@ -90,7 +90,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
 
    @Override
    public boolean method_31502(PlayerEntity var1) {
-      return !this.field_41751 ? !(var1.method_37275(this) > 64.0) : false;
+      return !this.removed ? !(var1.method_37275(this) > 64.0) : false;
    }
 
    @Nullable

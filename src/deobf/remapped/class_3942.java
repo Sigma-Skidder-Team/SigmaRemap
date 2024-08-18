@@ -35,9 +35,9 @@ public class class_3942 extends class_5783 {
    public class_3942(World var1, PlayerEntity var2, double var3, double var5, double var7) {
       this(var1, var2, 0, 0);
       this.method_37256(var3, var5, var7);
-      this.field_41767 = this.getPosX();
-      this.field_41698 = this.method_37309();
-      this.field_41725 = this.getPosZ();
+      this.prevPosX = this.getPosX();
+      this.prevPosY = this.method_37309();
+      this.prevPosZ = this.getPosZ();
    }
 
    public class_3942(PlayerEntity var1, World var2, int var3, int var4) {
@@ -52,7 +52,7 @@ public class class_3942 extends class_5783 {
       double var15 = var1.method_37388();
       double var17 = var1.getPosZ() - (double)var9 * 0.3;
       this.method_37144(var13, var15, var17, var8, var7);
-      class_1343 var19 = new class_1343((double)(-var10), (double) MathHelper.clamp(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
+      Vector3d var19 = new Vector3d((double)(-var10), (double) MathHelper.clamp(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
       double var20 = var19.method_6217();
       var19 = var19.method_6210(
          0.6 / var20 + 0.5 + this.field_41717.nextGaussian() * 0.0045,
@@ -63,7 +63,7 @@ public class class_3942 extends class_5783 {
       this.rotationYaw = (float)(MathHelper.atan2(var19.field_7336, var19.field_7334) * 180.0F / (float)Math.PI);
       this.rotationPitch = (float)(MathHelper.atan2(var19.field_7333, (double) MathHelper.sqrt(method_37266(var19))) * 180.0F / (float)Math.PI);
       this.prevRotationYaw = this.rotationYaw;
-      this.field_41762 = this.rotationPitch;
+      this.prevRotationPitch = this.rotationPitch;
    }
 
    @Override
@@ -129,7 +129,7 @@ public class class_3942 extends class_5783 {
             if (this.field_19135 != class_2753.field_13471) {
                if (this.field_19135 == class_2753.field_13474) {
                   if (this.field_19144 != null) {
-                     if (!this.field_19144.field_41751) {
+                     if (!this.field_19144.removed) {
                         this.method_37256(this.field_19144.getPosX(), this.field_19144.method_37080(0.8), this.field_19144.getPosZ());
                      } else {
                         this.field_19144 = null;
@@ -141,7 +141,7 @@ public class class_3942 extends class_5783 {
                }
 
                if (this.field_19135 == class_2753.field_13475) {
-                  class_1343 var10 = this.method_37098();
+                  Vector3d var10 = this.method_37098();
                   double var11 = this.method_37309() + var10.field_7333 - (double)var5.getY() - (double)var4;
                   if (Math.abs(var11) < 0.01) {
                      var11 += Math.signum(var11) * 0.1;
@@ -171,7 +171,7 @@ public class class_3942 extends class_5783 {
                }
             } else {
                if (this.field_19144 != null) {
-                  this.method_37215(class_1343.field_7335);
+                  this.method_37215(Vector3d.ZERO);
                   this.field_19135 = class_2753.field_13474;
                   return;
                }
@@ -192,7 +192,7 @@ public class class_3942 extends class_5783 {
             this.method_37226(class_7412.field_37839, this.method_37098());
             this.method_26167();
             if (this.field_19135 == class_2753.field_13471 && (this.onGround || this.collidedHorizontally)) {
-               this.method_37215(class_1343.field_7335);
+               this.method_37215(Vector3d.ZERO);
             }
 
             double var8 = 0.92;
@@ -209,7 +209,7 @@ public class class_3942 extends class_5783 {
       ItemStack var5 = var1.method_26568();
       boolean var6 = var4.method_27960() == class_4897.field_24505;
       boolean var7 = var5.method_27960() == class_4897.field_24505;
-      if (!var1.field_41751 && var1.isAlive() && (var6 || var7) && !(this.method_37275(var1) > 1024.0)) {
+      if (!var1.removed && var1.isAlive() && (var6 || var7) && !(this.method_37275(var1) > 1024.0)) {
          return false;
       } else {
          this.method_37204();
@@ -478,7 +478,7 @@ public class class_3942 extends class_5783 {
    public void method_18224() {
       Entity var3 = this.method_26166();
       if (var3 != null) {
-         class_1343 var4 = new class_1343(
+         Vector3d var4 = new Vector3d(
                var3.getPosX() - this.getPosX(), var3.method_37309() - this.method_37309(), var3.getPosZ() - this.getPosZ()
             )
             .method_6209(0.1);

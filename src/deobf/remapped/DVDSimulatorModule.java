@@ -26,7 +26,7 @@ public class DVDSimulatorModule extends Module {
 
    @EventListen
    private void method_19210(class_3278 var1) throws IOException {
-      if (this.method_42015() && client.thePlayer != null && client.theWorld != null) {
+      if (this.isEnabled() && client.thePlayer != null && client.theWorld != null) {
          int var4 = client.window.method_43163();
          int var5 = client.window.method_43166();
          byte var6 = 2;

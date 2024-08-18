@@ -8,10 +8,10 @@ public final class class_8462 {
    private static String[] field_43262;
 
    public static class_7474 method_38935(Entity var0, Predicate<Entity> var1) {
-      class_1343 var4 = var0.method_37098();
+      Vector3d var4 = var0.method_37098();
       World var5 = var0.world;
-      class_1343 var6 = var0.method_37245();
-      class_1343 var7 = var6.method_6215(var4);
+      Vector3d var6 = var0.method_37245();
+      Vector3d var7 = var6.method_6215(var4);
       Object var8 = var5.method_28265(new class_972(var6, var7, class_3132.field_15553, class_9583.field_48747, var0));
       if (((class_7474)var8).method_33990() != class_1430.field_7721) {
          var7 = ((class_7474)var8).method_33993();
@@ -26,18 +26,18 @@ public final class class_8462 {
    }
 
    @Nullable
-   public static class_5631 method_38932(Entity var0, class_1343 var1, class_1343 var2, Box var3, Predicate<Entity> var4, double var5) {
+   public static class_5631 method_38932(Entity var0, Vector3d var1, Vector3d var2, Box var3, Predicate<Entity> var4, double var5) {
       World var9 = var0.world;
       double var10 = var5;
       Entity var12 = null;
-      class_1343 var13 = null;
+      Vector3d var13 = null;
 
       for (Entity var15 : var9.method_25867(var0, var3, var4)) {
          Box var16 = var15.getBoundingBox().grow((double)var15.method_37355());
          Optional var17 = var16.method_18923(var1, var2);
          if (!var16.method_18903(var1)) {
             if (var17.isPresent()) {
-               class_1343 var18 = (class_1343)var17.get();
+               Vector3d var18 = (Vector3d)var17.get();
                double var19 = var1.method_6204(var18);
                if (var19 < var10 || var10 == 0.0) {
                   if (var15.getLowestRidingEntity() != var0.getLowestRidingEntity()) {
@@ -61,7 +61,7 @@ public final class class_8462 {
    }
 
    @Nullable
-   public static class_5631 method_38931(World var0, Entity var1, class_1343 var2, class_1343 var3, Box var4, Predicate<Entity> var5) {
+   public static class_5631 method_38931(World var0, Entity var1, Vector3d var2, Vector3d var3, Box var4, Predicate<Entity> var5) {
       double var8 = Double.MAX_VALUE;
       Entity var10 = null;
 
@@ -69,7 +69,7 @@ public final class class_8462 {
          Box var13 = var12.getBoundingBox().grow(0.3F);
          Optional var14 = var13.method_18923(var2, var3);
          if (var14.isPresent()) {
-            double var15 = var2.method_6204((class_1343)var14.get());
+            double var15 = var2.method_6204((Vector3d)var14.get());
             if (var15 < var8) {
                var10 = var12;
                var8 = var15;
@@ -81,18 +81,18 @@ public final class class_8462 {
    }
 
    public static final void method_38933(Entity var0, float var1) {
-      class_1343 var4 = var0.method_37098();
+      Vector3d var4 = var0.method_37098();
       if (var4.method_6221() != 0.0) {
          float var5 = MathHelper.sqrt(Entity.method_37266(var4));
          var0.rotationYaw = (float)(MathHelper.atan2(var4.field_7334, var4.field_7336) * 180.0F / (float)Math.PI) + 90.0F;
          var0.rotationPitch = (float)(MathHelper.atan2((double)var5, var4.field_7333) * 180.0F / (float)Math.PI) - 90.0F;
 
-         while (var0.rotationPitch - var0.field_41762 < -180.0F) {
-            var0.field_41762 -= 360.0F;
+         while (var0.rotationPitch - var0.prevRotationPitch < -180.0F) {
+            var0.prevRotationPitch -= 360.0F;
          }
 
-         while (var0.rotationPitch - var0.field_41762 >= 180.0F) {
-            var0.field_41762 += 360.0F;
+         while (var0.rotationPitch - var0.prevRotationPitch >= 180.0F) {
+            var0.prevRotationPitch += 360.0F;
          }
 
          while (var0.rotationYaw - var0.prevRotationYaw < -180.0F) {
@@ -103,7 +103,7 @@ public final class class_8462 {
             var0.prevRotationYaw += 360.0F;
          }
 
-         var0.rotationPitch = MathHelper.lerp(var1, var0.field_41762, var0.rotationPitch);
+         var0.rotationPitch = MathHelper.lerp(var1, var0.prevRotationPitch, var0.rotationPitch);
          var0.rotationYaw = MathHelper.lerp(var1, var0.prevRotationYaw, var0.rotationYaw);
       }
    }

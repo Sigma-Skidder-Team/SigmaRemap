@@ -41,9 +41,9 @@ public class class_5614 extends Entity {
          this.field_28509--;
       }
 
-      this.field_41767 = this.getPosX();
-      this.field_41698 = this.method_37309();
-      this.field_41725 = this.getPosZ();
+      this.prevPosX = this.getPosX();
+      this.prevPosY = this.method_37309();
+      this.prevPosZ = this.getPosZ();
       if (!this.method_37261(class_6503.field_33094)) {
          if (!this.method_37078()) {
             this.method_37215(this.method_37098().method_6214(0.0, -0.03, 0.0));
@@ -79,7 +79,7 @@ public class class_5614 extends Entity {
       }
 
       if (this.field_28507 != null) {
-         class_1343 var5 = new class_1343(
+         Vector3d var5 = new Vector3d(
             this.field_28507.getPosX() - this.getPosX(),
             this.field_28507.method_37309() + (double)this.field_28507.method_37277() / 2.0 - this.method_37309(),
             this.field_28507.getPosZ() - this.getPosZ()
@@ -114,7 +114,7 @@ public class class_5614 extends Entity {
    }
 
    private void method_25472() {
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       this.method_37214(var3.field_7336 * 0.99F, Math.min(var3.field_7333 + 5.0E-4F, 0.06F), var3.field_7334 * 0.99F);
    }
 

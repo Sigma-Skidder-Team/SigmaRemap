@@ -8,15 +8,15 @@ import java.util.List;
 public class class_4471 extends PremiumModule {
    public ArrayList<Thread> field_21797 = new ArrayList<Thread>();
    public Entity field_21799;
-   public class_1343 field_21798;
+   public Vector3d field_21798;
 
    public class_4471(String var1, String var2, Category var3) {
       super("FightBot", "Jello AI Fight Bot", Category.WORLD);
    }
 
    @EventListen
-   public void method_20753(class_5596 var1) {
-      if (!this.method_42015()) {
+   public void method_20753(PlayerTickEvent var1) {
+      if (!this.isEnabled()) {
          ;
       }
    }

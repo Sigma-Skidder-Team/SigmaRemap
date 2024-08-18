@@ -122,7 +122,7 @@ public class class_314 {
 
    public static final boolean method_1437(Entity var0) {
       ClientWorld var3 = field_1158.theWorld;
-      Box var4 = var0.field_41712;
+      Box var4 = var0.boundingBox;
       return var3.method_22550(var4);
    }
 
@@ -461,7 +461,7 @@ public class class_314 {
    }
 
    public static class_5631 method_1461(float var0, float var1, float var2, double var3) {
-      class_1343 var7 = new class_1343(
+      Vector3d var7 = new Vector3d(
          field_1158.thePlayer.getPosX(),
          field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277(),
          field_1158.thePlayer.getPosZ()
@@ -473,8 +473,8 @@ public class class_314 {
             var9 = (double)var2;
          }
 
-         class_1343 var11 = method_1449(var1, var0);
-         class_1343 var12 = var7.method_6214(var11.field_7336 * var9, var11.field_7333 * var9, var11.field_7334 * var9);
+         Vector3d var11 = method_1449(var1, var0);
+         Vector3d var12 = var7.method_6214(var11.field_7336 * var9, var11.field_7333 * var9, var11.field_7334 * var9);
          float var13 = 1.0F;
          Box var14 = var8.getBoundingBox().method_18929(var11.method_6209(var9)).method_18899(1.0, 1.0, 1.0);
          return method_1433(
@@ -486,7 +486,7 @@ public class class_314 {
    }
 
    public static class_5631 method_1433(
-           World var0, Entity var1, class_1343 var2, class_1343 var3, Box var4, Predicate<Entity> var5, double var6, double var8
+           World var0, Entity var1, Vector3d var2, Vector3d var3, Box var4, Predicate<Entity> var5, double var6, double var8
    ) {
       double var12 = var6;
       Entity var14 = null;
@@ -500,7 +500,7 @@ public class class_314 {
                break;
             }
          } else {
-            double var19 = var2.method_6204((class_1343)var18.get());
+            double var19 = var2.method_6204((Vector3d)var18.get());
             if (var19 < var12) {
                var14 = var16;
                var12 = var19;
@@ -514,23 +514,23 @@ public class class_314 {
    public static class_5631 method_1410(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
       double var8 = var4 * var4;
       Entity var10 = null;
-      class_1343 var11 = null;
-      class_1343 var12 = new class_1343(
+      Vector3d var11 = null;
+      Vector3d var12 = new Vector3d(
          field_1158.thePlayer.getPosX(),
          field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277(),
          field_1158.thePlayer.getPosZ()
       );
-      class_1343 var13 = method_1449(var2, var1);
-      class_1343 var14 = var12.method_6214(var13.field_7336 * var8, var13.field_7333 * var8, var13.field_7334 * var8);
+      Vector3d var13 = method_1449(var2, var1);
+      Vector3d var14 = var12.method_6214(var13.field_7336 * var8, var13.field_7333 * var8, var13.field_7334 * var8);
 
       for (Entity var16 : field_1158.theWorld
          .method_25867(field_1158.thePlayer, field_1158.thePlayer.getBoundingBox().method_18929(var13.method_6209(var8)).method_18899(1.0, 1.0, 1.0), var3)) {
          Box var17 = var16.getBoundingBox();
          Optional var18 = var17.method_18923(var12, var14);
          if (var18.isPresent()) {
-            double var19 = var12.method_6204((class_1343)var18.get());
+            double var19 = var12.method_6204((Vector3d)var18.get());
             if (var19 < var8 && (var16 == var0 || var0 == null)) {
-               var11 = ((class_1343)var18.get()).method_6193(var16.getPosX(), var16.method_37309(), var16.getPosZ());
+               var11 = ((Vector3d)var18.get()).method_6193(var16.getPosX(), var16.method_37309(), var16.getPosZ());
                var10 = var16;
                var8 = var19;
             }
@@ -540,7 +540,7 @@ public class class_314 {
       return var10 != null && var11 != null ? new class_5631(var10, var11) : null;
    }
 
-   public static boolean method_1386(class_1343 var0, Box var1) {
+   public static boolean method_1386(Vector3d var0, Box var1) {
       return var0.field_7336 >= var1.field_19941
          && var0.field_7336 <= var1.field_19940
          && var0.field_7333 >= var1.field_19937
@@ -578,14 +578,14 @@ public class class_314 {
       return field_1158.method_8530() == null || field_1158.method_8530().field_12675.toLowerCase().contains("localhost");
    }
 
-   public static class_1343 method_1449(float var0, float var1) {
+   public static Vector3d method_1449(float var0, float var1) {
       float var4 = var0 * (float) (Math.PI / 180.0);
       float var5 = -var1 * (float) (Math.PI / 180.0);
       float var6 = MathHelper.cos(var5);
       float var7 = MathHelper.sin(var5);
       float var8 = MathHelper.cos(var4);
       float var9 = MathHelper.sin(var4);
-      return new class_1343((double)(var7 * var8), (double)(-var9), (double)(var6 * var8));
+      return new Vector3d((double)(var7 * var8), (double)(-var9), (double)(var6 * var8));
    }
 
    public static UUID method_1465(String var0) {
@@ -613,7 +613,7 @@ public class class_314 {
    }
 
    public static boolean method_1454(double var0, double var2, boolean var4) {
-      Box var7 = field_1158.thePlayer.field_41712;
+      Box var7 = field_1158.thePlayer.boundingBox;
       if (var4) {
          var7 = var7.method_18899(1.235F, 0.0, 1.235F);
       }
@@ -630,11 +630,11 @@ public class class_314 {
    }
 
    public static boolean method_1452() {
-      Box var2 = field_1158.thePlayer.field_41712.method_18918(0.0, -1.0, 0.0);
+      Box var2 = field_1158.thePlayer.boundingBox.method_18918(0.0, -1.0, 0.0);
       if (field_1158.thePlayer.getRidingEntity() != null) {
-         double var4 = field_1158.thePlayer.getRidingEntity().field_41767 - field_1158.thePlayer.getRidingEntity().getPosX();
-         double var6 = field_1158.thePlayer.getRidingEntity().field_41725 - field_1158.thePlayer.getRidingEntity().getPosZ();
-         var2 = field_1158.thePlayer.getRidingEntity().field_41712.method_18928(Math.abs(var4), 1.0, Math.abs(var6));
+         double var4 = field_1158.thePlayer.getRidingEntity().prevPosX - field_1158.thePlayer.getRidingEntity().getPosX();
+         double var6 = field_1158.thePlayer.getRidingEntity().prevPosZ - field_1158.thePlayer.getRidingEntity().getPosZ();
+         var2 = field_1158.thePlayer.getRidingEntity().boundingBox.method_18928(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
       Stream var3 = field_1158.theWorld.method_6680(field_1158.thePlayer, var2);
@@ -643,12 +643,12 @@ public class class_314 {
 
    public static boolean method_1413(Entity var0, float var1) {
       Box var4 = new Box(
-         var0.field_41712.field_19941,
-         var0.field_41712.field_19937 - (double)var1,
-         var0.field_41712.field_19938,
-         var0.field_41712.field_19940,
-         var0.field_41712.field_19939,
-         var0.field_41712.field_19942
+         var0.boundingBox.field_19941,
+         var0.boundingBox.field_19937 - (double)var1,
+         var0.boundingBox.field_19938,
+         var0.boundingBox.field_19940,
+         var0.boundingBox.field_19939,
+         var0.boundingBox.field_19942
       );
       Stream var5 = field_1158.theWorld.method_6680(field_1158.thePlayer, var4);
       return var5.count() != 0L;
@@ -714,7 +714,7 @@ public class class_314 {
             && !field_1158.thePlayer.method_37285()
             && !field_1158.thePlayer.isPotionActive(Effects.field_19736)
             && !field_1158.thePlayer.isPassenger();
-         if (var7 || field_1158.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42015()) {
+         if (var7 || field_1158.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).isEnabled()) {
             field_1158.field_9572.method_43051(var5.method_16973(), class_3090.field_15322);
          }
 
@@ -1048,7 +1048,7 @@ public class class_314 {
                return !var0.method_37367()
                   ? !(var0 instanceof PlayerEntity)
                      || !class_5876.method_26760((PlayerEntity)var0)
-                     || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()
+                     || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).isEnabled()
                   : false;
             }
          } else {
@@ -1082,11 +1082,11 @@ public class class_314 {
       return Math.random() * 1.0E-8;
    }
 
-   public static class_1343 method_1429(Entity var0) {
-      return method_1428(var0.field_41712);
+   public static Vector3d method_1429(Entity var0) {
+      return method_1428(var0.boundingBox);
    }
 
-   public static class_1343 method_1428(Box var0) {
+   public static Vector3d method_1428(Box var0) {
       double var3 = var0.method_18926().field_7336;
       double var5 = var0.field_19937;
       double var7 = var0.method_18926().field_7334;
@@ -1096,7 +1096,7 @@ public class class_314 {
       double var15 = Math.max(var5, Math.min(var5 + var9, field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277()));
       double var17 = Math.max(var3 - var11 / 2.0, Math.min(var3 + var11 / 2.0, field_1158.thePlayer.getPosX()));
       double var19 = Math.max(var7 - var13 / 2.0, Math.min(var7 + var13 / 2.0, field_1158.thePlayer.getPosZ()));
-      return new class_1343(var17, var15, var19);
+      return new Vector3d(var17, var15, var19);
    }
 
    public static float method_1438(float var0) {
@@ -1143,7 +1143,7 @@ public class class_314 {
       return var5;
    }
 
-   public static double method_1419(class_1343 var0) {
+   public static double method_1419(Vector3d var0) {
       double var3 = field_1158.thePlayer.getPosX() - var0.field_7336;
       double var5 = field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277() - var0.field_7333;
       double var7 = field_1158.thePlayer.getPosZ() - var0.field_7334;
@@ -1151,7 +1151,7 @@ public class class_314 {
    }
 
    public static double method_1420(Box var0) {
-      class_1343 var3 = method_1428(var0);
+      Vector3d var3 = method_1428(var0);
       return method_1419(var3);
    }
 
@@ -1187,7 +1187,7 @@ public class class_314 {
       return var5;
    }
 
-   public static float[] method_1441(class_1343 var0, class_1343 var1) {
+   public static float[] method_1441(Vector3d var0, Vector3d var1) {
       double var4 = var1.field_7336 - var0.field_7336;
       double var6 = (var1.field_7333 - var0.field_7333) * -1.0;
       double var8 = var1.field_7334 - var0.field_7334;
@@ -1198,7 +1198,7 @@ public class class_314 {
    }
 
    public static Direction method_1409(double var0) {
-      Box var4 = field_1158.thePlayer.field_41712;
+      Box var4 = field_1158.thePlayer.boundingBox;
       Direction[] var5 = new Direction[]{Direction.field_804, Direction.field_809, Direction.field_800, Direction.field_818};
 
       for (Direction var9 : var5) {
@@ -1213,8 +1213,8 @@ public class class_314 {
       return null;
    }
 
-   public static class_9097<Direction, class_1343> method_1462(double var0) {
-      Box var4 = field_1158.thePlayer.field_41712;
+   public static class_9097<Direction, Vector3d> method_1462(double var0) {
+      Box var4 = field_1158.thePlayer.boundingBox;
       Direction[] var5 = new Direction[]{Direction.field_804, Direction.field_809, Direction.field_800, Direction.field_818};
 
       for (Direction var9 : var5) {
@@ -1222,10 +1222,10 @@ public class class_314 {
             .method_6680(field_1158.thePlayer, var4.method_18928(var0 * (double)var9.method_1041(), 0.0, var0 * (double)var9.method_1034()))
             .iterator();
          if (var10.hasNext()) {
-            class_1343 var11 = field_1158.thePlayer
+            Vector3d var11 = field_1158.thePlayer
                .method_37245()
-               .method_6215(field_1158.thePlayer.method_37287(new class_1343((double)var9.method_1041(), 0.0, (double)var9.method_1034())));
-            return new class_9097<Direction, class_1343>(var9, var11);
+               .method_6215(field_1158.thePlayer.method_37287(new Vector3d((double)var9.method_1041(), 0.0, (double)var9.method_1034())));
+            return new class_9097<Direction, Vector3d>(var9, var11);
          }
       }
 
@@ -1235,7 +1235,7 @@ public class class_314 {
    public static boolean method_1383() {
       double var2 = 1.0E-7;
       return field_1158.theWorld
-            .method_6680(field_1158.thePlayer, field_1158.thePlayer.field_41712.method_18928(var2, 0.0, var2).method_18928(-var2, 0.0, -var2))
+            .method_6680(field_1158.thePlayer, field_1158.thePlayer.boundingBox.method_18928(var2, 0.0, var2).method_18928(-var2, 0.0, -var2))
             .count()
          > 0L;
    }

@@ -24,7 +24,7 @@ public class SpartanClickTP extends Module {
 
    @EventListen
    private void method_11040(class_8706 var1) {
-      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.getModule().getBooleanValueByName("Sneak"))) {
+      if (this.isEnabled() && (client.thePlayer.isSneaking() || !this.getModule().getBooleanValueByName("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
             class_9529 var4 = class_7494.method_34079(
                client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.getModule().getFloatValueByName("Maximum range")
@@ -55,7 +55,7 @@ public class SpartanClickTP extends Module {
 
    @EventListen
    public void method_11042(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_509) {
             class_509 var4 = (class_509)var1.method_557();
             if (var4.field_3139 == (double)this.field_12051.getX() + 0.5
@@ -79,7 +79,7 @@ public class SpartanClickTP extends Module {
 
    @EventListen
    private void method_11041(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_12052 > -1 && this.field_12051 != null) {
             var1.method_35235(0.01);
             this.field_12052++;

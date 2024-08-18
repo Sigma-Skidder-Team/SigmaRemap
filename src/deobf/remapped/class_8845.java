@@ -30,7 +30,7 @@ public class class_8845 {
    }
 
    public boolean method_40688(Direction var1, Direction var2) {
-      return !XRayModule.field_37635.method_42015() ? this.field_45234.method_31246(var1, var2) : true;
+      return !XRayModule.field_37635.isEnabled() ? this.field_45234.method_31246(var1, var2) : true;
    }
 
    public BitSet method_40690(RenderLayer var1) {

@@ -128,7 +128,7 @@ public class class_7211 {
       return new float[]{var16, var17};
    }
 
-   public static float[] method_33007(class_1343 var0, class_1343 var1) {
+   public static float[] method_33007(Vector3d var0, Vector3d var1) {
       double var4 = var1.field_7336 - var0.field_7336;
       double var6 = var1.field_7334 - var0.field_7334;
       double var8 = var1.field_7333 - var0.field_7333;
@@ -172,13 +172,13 @@ public class class_7211 {
       return new class_1988(var3[0], var3[1]);
    }
 
-   public static class_1988 method_33015(class_1343 var0) {
+   public static class_1988 method_33015(Vector3d var0) {
       float[] var3 = method_33007(field_37040.thePlayer.method_37245().method_6214(0.0, (double)field_37040.thePlayer.method_37277(), 0.0), var0);
       return new class_1988(var3[0], var3[1]);
    }
 
-   public static boolean method_32997(class_1343 var0) {
-      class_1343 var3 = new class_1343(
+   public static boolean method_32997(Vector3d var0) {
+      Vector3d var3 = new Vector3d(
          field_37040.thePlayer.getPosX(),
          field_37040.thePlayer.method_37309() + (double)field_37040.thePlayer.method_37277(),
          field_37040.thePlayer.getPosZ()
@@ -191,12 +191,12 @@ public class class_7211 {
    }
 
    public static class_1988 method_33010(Entity var0, boolean var1) {
-      class_1343 var4 = class_314.method_1429(var0);
+      Vector3d var4 = class_314.method_1429(var0);
       if (var1 && !method_32997(var4)) {
          for (int var5 = -1; var5 < 2; var5++) {
             double var6 = (double)var5;
             if (var5 != -1) {
-               var6 *= var0.field_41712.method_18901();
+               var6 *= var0.boundingBox.method_18901();
             } else {
                var6 = (double)(var0.method_37277() - 0.02F);
             }
@@ -210,7 +210,7 @@ public class class_7211 {
             double var20 = (double) MathHelper.sqrt(var14 * var14 + var18 * var18);
             float var22 = method_33002(field_37040.thePlayer.rotationYaw, (float)(Math.atan2(var18, var14) * 180.0 / Math.PI) - 90.0F, 360.0F);
             float var23 = method_33002(field_37040.thePlayer.rotationPitch, (float)(-(Math.atan2(var16, var20) * 180.0 / Math.PI)), 360.0F);
-            boolean var24 = method_32997(new class_1343(var8, var12, var10));
+            boolean var24 = method_32997(new Vector3d(var8, var12, var10));
             if (var24) {
                return new class_1988(var22, var23);
             }
@@ -219,8 +219,8 @@ public class class_7211 {
                var8 = var0.getPosX() + (var0.getPosX() - var0.field_41754) * (double)field_37040.method_8554();
                var10 = var0.getPosZ() + (var0.getPosZ() - var0.field_41724) * (double)field_37040.method_8554();
                var12 = var0.method_37309() + 0.05 + (var0.method_37309() - var0.field_41713) * (double)field_37040.method_8554() + var6;
-               double var26 = var0.field_41712.method_18910() / 2.5 * (double)var25;
-               double var28 = var0.field_41712.method_18921() / 2.5 * (double)var25;
+               double var26 = var0.boundingBox.method_18910() / 2.5 * (double)var25;
+               double var28 = var0.boundingBox.method_18921() / 2.5 * (double)var25;
                if (!(field_37040.thePlayer.getPosX() < var8 + var26)) {
                   if (field_37040.thePlayer.getPosX() > var8 + var26) {
                      if (!(field_37040.thePlayer.getPosZ() < var10 - var28)) {
@@ -255,7 +255,7 @@ public class class_7211 {
                var20 = (double) MathHelper.sqrt(var14 * var14 + var18 * var18);
                var22 = method_33002(field_37040.thePlayer.rotationYaw, (float)(Math.atan2(var18, var14) * 180.0 / Math.PI) - 90.0F, 360.0F);
                var23 = method_33002(field_37040.thePlayer.rotationPitch, (float)(-(Math.atan2(var16, var20) * 180.0 / Math.PI)), 360.0F);
-               var24 = method_32997(new class_1343(var8, var12, var10));
+               var24 = method_32997(new Vector3d(var8, var12, var10));
                if (var24) {
                   return new class_1988(var22, var23);
                }

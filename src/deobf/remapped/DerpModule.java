@@ -17,7 +17,7 @@ public class DerpModule extends Module {
 
    @EventListen
    public void method_29695(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          if (this.getBooleanValueByName("Sneak")) {
             if (this.field_33189) {
                client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.PRESS_SHIFT_KEY));

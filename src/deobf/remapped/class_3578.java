@@ -78,7 +78,7 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       if (this.method_26530() && this.method_37285()) {
          this.method_37092(0.01F, var1);
          this.method_37226(class_7412.field_37839, this.method_37098());
@@ -93,7 +93,7 @@ public abstract class class_3578 extends class_1829 {
 
    @Override
    public void livingTick() {
-      if (!this.method_37285() && this.onGround && this.field_41774) {
+      if (!this.method_37285() && this.onGround && this.collidedVertically) {
          this.method_37215(
             this.method_37098()
                .method_6214(

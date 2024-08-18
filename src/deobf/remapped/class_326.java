@@ -14,7 +14,7 @@ public class class_326 extends class_7164<class_5542, class_6980<class_5542>> {
    public void method_1511(class_5542 var1, class_7966 var2, float var3, float var4, float var5) {
       super.method_29099(var1, var2, var3, var4, var5);
       if (var1.method_25188() || var1.method_25212()) {
-         float var8 = -MathHelper.lerp(var5, var1.field_41762, var1.rotationPitch);
+         float var8 = -MathHelper.lerp(var5, var1.prevRotationPitch, var1.rotationPitch);
          var2.method_36060(class_2426.field_12080.method_11074(var8));
       }
    }

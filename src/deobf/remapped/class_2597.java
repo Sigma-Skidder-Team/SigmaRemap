@@ -26,7 +26,7 @@ public class class_2597 extends class_3333 {
    }
 
    private void method_11774(Entity var1) {
-      class_1343 var4 = var1.method_37098();
+      Vector3d var4 = var1.method_37098();
       if (var4.field_7333 < 0.0) {
          double var5 = !(var1 instanceof LivingEntity) ? 0.8 : 1.0;
          var1.method_37214(var4.field_7336, -var4.field_7333 * var5, var4.field_7334);

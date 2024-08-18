@@ -20,7 +20,7 @@ public class class_8890 extends class_8543 {
    @Override
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       class_4190 var7 = this.method_10769(var1, var2, var3, class_214.method_928());
-      class_1343 var8 = var7.method_19483().method_18926();
+      Vector3d var8 = var7.method_19483().method_18926();
       double var9 = (double)var3.getX() + var8.field_7336;
       double var11 = (double)var3.getZ() + var8.field_7334;
 

@@ -9,7 +9,7 @@ public class OutlineESP extends Module {
 
    @EventListen
    private void method_18485(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && client.theWorld != null) {
             this.method_18486();
             FontManager.method_107();

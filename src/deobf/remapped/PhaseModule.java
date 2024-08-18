@@ -16,7 +16,7 @@ public class PhaseModule extends SecondModule {
 
    @EventListen
    private void method_39616(class_9081 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_41811(0.0F);
          var1.method_29715(true);
       }

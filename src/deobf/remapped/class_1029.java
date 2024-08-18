@@ -31,7 +31,7 @@ public class class_1029 implements ArgumentType<class_1808> {
       return new class_1029(var0);
    }
 
-   public static class_1343 method_4555(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+   public static Vector3d method_4555(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
       return ((class_1808)var0.getArgument(var1, class_1808.class)).method_8027((class_9155)var0.getSource());
    }
 

@@ -19,7 +19,7 @@ public class TeleportDisabler extends Module {
 
    @EventListen
    public void method_29713(class_1393 var1) {
-      if (this.method_42015() && client.thePlayer != null && var1.method_6449() && client.method_8530() != null) {
+      if (this.isEnabled() && client.thePlayer != null && var1.method_6449() && client.method_8530() != null) {
          this.field_33210++;
          double var4 = -4.503599627370497E15;
          String var6 = this.getStringValueByName("Mode");

@@ -75,7 +75,7 @@ public class class_8612 extends class_5783 implements class_3713 {
             this.method_37215(this.method_37098().method_6210(var9, 1.0, var9).method_6214(0.0, 0.04, 0.0));
          }
 
-         class_1343 var3 = this.method_37098();
+         Vector3d var3 = this.method_37098();
          this.method_37226(class_7412.field_37839, var3);
          this.method_37215(var3);
       } else {
@@ -90,10 +90,10 @@ public class class_8612 extends class_5783 implements class_3713 {
 
          if (this.field_44173 != null) {
             if (this.field_44173.method_26618()) {
-               class_1343 var11 = this.field_44173.method_37246();
+               Vector3d var11 = this.field_44173.method_37246();
                double var4 = 1.5;
                double var6 = 0.1;
-               class_1343 var8 = this.field_44173.method_37098();
+               Vector3d var8 = this.field_44173.method_37098();
                this.field_44173
                   .method_37215(
                      var8.method_6214(
@@ -189,14 +189,14 @@ public class class_8612 extends class_5783 implements class_3713 {
          }
 
          double var7 = 5.0;
-         class_1343 var9 = this.method_37245();
+         Vector3d var9 = this.method_37245();
 
          for (LivingEntity var11 : this.world.<LivingEntity>method_25868(LivingEntity.class, this.getBoundingBox().grow(5.0))) {
             if (var11 != this.field_44173 && !(this.method_37275(var11) > 25.0)) {
                boolean var12 = false;
 
                for (int var13 = 0; var13 < 2; var13++) {
-                  class_1343 var14 = new class_1343(var11.getPosX(), var11.method_37080(0.5 * (double)var13), var11.getPosZ());
+                  Vector3d var14 = new Vector3d(var11.getPosX(), var11.method_37080(0.5 * (double)var13), var11.getPosZ());
                   class_9529 var15 = this.world.method_28265(new class_972(var9, var14, class_3132.field_15553, class_9583.field_48747, this));
                   if (var15.method_33990() == class_1430.field_7721) {
                      var12 = true;
@@ -227,7 +227,7 @@ public class class_8612 extends class_5783 implements class_3713 {
          if (this.method_39587()) {
             ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
             CompoundNBT var5 = !var4.method_28022() ? var4.method_28021("Fireworks") : null;
-            class_1343 var6 = this.method_37098();
+            Vector3d var6 = this.method_37098();
             this.world
                .method_29536(this.getPosX(), this.method_37309(), this.getPosZ(), var6.field_7336, var6.field_7333, var6.field_7334, var5);
          } else {

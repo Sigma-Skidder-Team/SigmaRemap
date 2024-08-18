@@ -10,7 +10,7 @@ public class class_5109 extends class_7513 {
    }
 
    @Override
-   public class_1343 method_34246(class_1343 var1, float var2) {
+   public Vector3d method_34246(Vector3d var1, float var2) {
       return var1.method_6209(0.15F);
    }
 

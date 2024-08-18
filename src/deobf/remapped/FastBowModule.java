@@ -8,8 +8,8 @@ public class FastBowModule extends Module {
    }
 
    @EventListen
-   private void method_25988(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_25988(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (client.thePlayer.method_26446() != null
             && client.thePlayer.method_26446().method_27960() instanceof class_2100
             && client.thePlayer.onGround) {

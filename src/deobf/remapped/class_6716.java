@@ -24,7 +24,7 @@ public class class_6716 extends class_4569 {
       return var4;
    }
 
-   public boolean method_30837(class_2792 var1, class_1343 var2, int var3) {
+   public boolean method_30837(class_2792 var1, Vector3d var2, int var3) {
       return this.field_34699.method_35307(var3) ? this.field_34700.method_41071(var1) : false;
    }
 }

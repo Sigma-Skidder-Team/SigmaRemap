@@ -16,11 +16,11 @@ public class class_9284 extends class_4171<AbstractClientPlayerEntity, class_316
             var1.method_36063();
             var1.method_36065(0.0, 0.0, 0.125);
             double var14 = MathHelper.lerp((double)var7, var4.field_3849, var4.field_3868)
-               - MathHelper.lerp((double)var7, var4.field_41767, var4.getPosX());
+               - MathHelper.lerp((double)var7, var4.prevPosX, var4.getPosX());
             double var16 = MathHelper.lerp((double)var7, var4.field_3854, var4.field_3864)
-               - MathHelper.lerp((double)var7, var4.field_41698, var4.method_37309());
+               - MathHelper.lerp((double)var7, var4.prevPosY, var4.method_37309());
             double var18 = MathHelper.lerp((double)var7, var4.field_3843, var4.field_3858)
-               - MathHelper.lerp((double)var7, var4.field_41725, var4.getPosZ());
+               - MathHelper.lerp((double)var7, var4.prevPosZ, var4.getPosZ());
             float var20 = var4.field_29611 + (var4.field_29605 - var4.field_29611);
             double var21 = (double) MathHelper.sin(var20 * (float) (Math.PI / 180.0));
             double var23 = (double)(-MathHelper.cos(var20 * (float) (Math.PI / 180.0)));

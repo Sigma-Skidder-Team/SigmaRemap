@@ -20,7 +20,7 @@ public class CakeEaterModule extends Module {
 
    @EventListen
    private void method_22206(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_5182) {
             class_5182 var4 = (class_5182)var1.method_557();
             if (var4.method_23768().getString().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
@@ -33,7 +33,7 @@ public class CakeEaterModule extends Module {
    @EventListen
    @class_315
    private void method_22207(class_1393 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class);
          if (var4.method_16864() instanceof MineplexFly) {
             MineplexFly var5 = (MineplexFly)var4.method_16864();
@@ -51,7 +51,7 @@ public class CakeEaterModule extends Module {
                }
 
                class_9529 var7 = new class_9529(
-                  new class_1343(
+                  new Vector3d(
                      (double)field_24090.getX() + 0.4 + Math.random() * 0.2,
                      (double)field_24090.getY() + 0.5,
                      (double)field_24090.getZ() + 0.4 + Math.random() * 0.2

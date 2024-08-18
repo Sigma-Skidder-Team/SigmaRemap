@@ -12,7 +12,7 @@ public class class_1008 extends class_2833 {
    @Override
    public void method_12883() {
       if (this.field_13878 == class_1737.field_8946 && !this.field_5182.method_26927().method_5591()) {
-         class_1343 var3 = new class_1343(
+         Vector3d var3 = new Vector3d(
             this.field_13884 - this.field_5182.getPosX(),
             this.field_13886 - this.field_5182.method_37309(),
             this.field_13880 - this.field_5182.getPosZ()

@@ -43,7 +43,7 @@ public class class_7302 extends class_3599 {
             if (!var3.method_28981(var4, 6)) {
                return false;
             } else {
-               class_1343 var5 = class_3425.method_15846(this.field_37323, 15, 7, var3x -> {
+               Vector3d var5 = class_3425.method_15846(this.field_37323, 15, 7, var3x -> {
                   if (var3.method_28994(var3x)) {
                      Optional var6x = var3.method_28969().method_6876(class_236.field_768, this::method_33300, var3x, 10, class_8122.field_41618);
                      return var6x.isPresent() ? -((BlockPos)var6x.get()).method_12180(var4) : Double.NEGATIVE_INFINITY;
@@ -65,7 +65,7 @@ public class class_7302 extends class_3599 {
                      this.field_37320 = var7.method_5615(this.field_37324, 0);
                      var7.method_41199(var8);
                      if (this.field_37320 == null) {
-                        class_1343 var9 = class_3425.method_15837(this.field_37323, 10, 7, class_1343.method_6200(this.field_37324));
+                        Vector3d var9 = class_3425.method_15837(this.field_37323, 10, 7, Vector3d.method_6200(this.field_37324));
                         if (var9 == null) {
                            return false;
                         }

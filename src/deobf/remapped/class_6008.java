@@ -2,10 +2,10 @@ package remapped;
 
 public class class_6008 {
    private static String[] field_30594;
-   private class_1343 field_30593 = null;
+   private Vector3d field_30593 = null;
    private long field_30595 = System.currentTimeMillis();
 
-   public class_1343 method_27427(double var1, double var3, double var5) {
+   public Vector3d method_27427(double var1, double var3, double var5) {
       if (this.field_30593 != null) {
          long var9 = System.currentTimeMillis();
          long var11 = var9 - this.field_30595;
@@ -24,14 +24,14 @@ public class class_6008 {
                double var21 = this.field_30593.field_7336 + var15 * var13;
                double var23 = this.field_30593.field_7333 + var17 * var13;
                double var25 = this.field_30593.field_7334 + var19 * var13;
-               this.field_30593 = new class_1343(var21, var23, var25);
+               this.field_30593 = new Vector3d(var21, var23, var25);
                return this.field_30593;
             }
          } else {
             return this.field_30593;
          }
       } else {
-         this.field_30593 = new class_1343(var1, var3, var5);
+         this.field_30593 = new Vector3d(var1, var3, var5);
          return this.field_30593;
       }
    }

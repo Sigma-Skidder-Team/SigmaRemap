@@ -29,7 +29,7 @@ public class NCPLongjump extends Module {
 
    @EventListen
    public void method_2758(class_7767 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (client.thePlayer.onGround) {
             this.field_3400 = 0;
             this.field_3397++;
@@ -96,7 +96,7 @@ public class NCPLongjump extends Module {
                      case "High":
                         var1.method_35235(((LongJumpModule)this.getModule()).method_5381(this.field_3400));
                         if (class_314.method_1387()
-                           && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NoFallModule.class).method_42015()
+                           && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NoFallModule.class).isEnabled()
                            && (this.field_3400 == 8 || this.field_3400 == 21)) {
                            double var9 = client.thePlayer.method_37309() + var1.method_35236();
                            double var11 = var9 - (double)((int)(var9 + 0.001));
@@ -124,7 +124,7 @@ public class NCPLongjump extends Module {
 
    @EventListen
    public void method_2756(class_2911 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          this.field_3399 = true;
          this.field_3398 = class_8865.method_40767();
          var1.method_13315(this.field_3398);
@@ -167,7 +167,7 @@ public class NCPLongjump extends Module {
 
    @EventListen
    public void method_2757(class_7982 var1) {
-      if (!this.method_42015() || !this.getStringValueByName("Glide Mode").equals("High")) {
+      if (!this.isEnabled() || !this.getStringValueByName("Glide Mode").equals("High")) {
          ;
       }
    }

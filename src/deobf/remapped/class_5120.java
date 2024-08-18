@@ -22,7 +22,7 @@ public interface class_5120 {
    class_8978<? extends class_5120> method_23464();
 
    @Nullable
-   class_1343 method_23463();
+   Vector3d method_23463();
 
    float method_23467(DamageSource var1, float var2);
 }

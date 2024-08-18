@@ -26,7 +26,7 @@ public class AGCFly extends Module {
 
    @EventListen
    private void method_4929(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_6385 = true;
@@ -36,7 +36,7 @@ public class AGCFly extends Module {
 
    @EventListen
    private void method_4930(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_6385 = false;
@@ -55,7 +55,7 @@ public class AGCFly extends Module {
    @EventListen
    @class_7664
    public void method_4931(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_6382 <= (this.field_6384 != 3 ? this.field_6384 : 1) - 2) {
             if (this.field_6382 == -1) {
                var1.method_35235(this.field_6384 != 3 ? 0.001 : 0.095);
@@ -74,7 +74,7 @@ public class AGCFly extends Module {
 
    @EventListen
    public void method_4926(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_6382++;
          if (this.field_6382 != (this.field_6384 != 3 ? this.field_6384 : 1)) {
             if (this.field_6382 > (this.field_6384 != 3 ? this.field_6384 : 1)) {
@@ -101,7 +101,7 @@ public class AGCFly extends Module {
 
    @EventListen
    public void method_4928(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;
@@ -118,7 +118,7 @@ public class AGCFly extends Module {
    private double method_4927() {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
          if (!client.thePlayer.onGround) {
-            Box var3 = client.thePlayer.field_41712.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
+            Box var3 = client.thePlayer.boundingBox.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
             Iterator var4 = client.theWorld.method_6680(client.thePlayer, var3).iterator();
             double var5 = -1.0;
             BlockPos var7 = null;

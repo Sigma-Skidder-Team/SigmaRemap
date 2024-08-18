@@ -83,7 +83,7 @@ public class class_2022 extends class_1944 {
       if (!this.method_9392()) {
          this.method_37215(this.method_37098().method_6210(1.0, 0.6, 1.0));
       } else {
-         this.method_37215(class_1343.field_7335);
+         this.method_37215(Vector3d.ZERO);
          this.method_37222(this.getPosX(), (double) MathHelper.floor(this.method_37309()) + 1.0 - (double)this.method_37074(), this.getPosZ());
       }
    }
@@ -109,8 +109,8 @@ public class class_2022 extends class_1944 {
          double var6 = (double)this.field_10246.getX() + 0.5 - this.getPosX();
          double var8 = (double)this.field_10246.getY() + 0.1 - this.method_37309();
          double var10 = (double)this.field_10246.getZ() + 0.5 - this.getPosZ();
-         class_1343 var12 = this.method_37098();
-         class_1343 var13 = var12.method_6214(
+         Vector3d var12 = this.method_37098();
+         Vector3d var13 = var12.method_6214(
             (Math.signum(var6) * 0.5 - var12.field_7336) * 0.1F,
             (Math.signum(var8) * 0.7F - var12.field_7333) * 0.1F,
             (Math.signum(var10) * 0.5 - var12.field_7334) * 0.1F

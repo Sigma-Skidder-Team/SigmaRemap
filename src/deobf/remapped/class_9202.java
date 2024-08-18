@@ -162,7 +162,7 @@ public class class_9202 {
    }
 
    private static int method_42459(class_9155 var0, Collection<? extends Entity> var1, class_6331 var2, class_1808 var3, class_1808 var4, class_4839 var5) throws CommandSyntaxException {
-      class_1343 var8 = var3.method_8027(var0);
+      Vector3d var8 = var3.method_8027(var0);
       class_4895 var9 = var4 != null ? var4.method_8025(var0) : null;
       EnumSet var10 = EnumSet.<class_8089>noneOf(class_8089.class);
       if (var3.method_8028()) {
@@ -248,7 +248,7 @@ public class class_9202 {
                var1.method_37144(var3, var5, var7, var16, var17);
                var1.setRotationYawHead(var16);
                var2.method_28954(var1);
-               var18.field_41751 = true;
+               var18.removed = true;
             } else {
                var1.method_37144(var3, var5, var7, var16, var17);
                var1.setRotationYawHead(var16);

@@ -11,7 +11,7 @@ public class class_6097 {
       this.field_31198 = var3;
    }
 
-   public Box method_27939(class_1343 var1) {
+   public Box method_27939(Vector3d var1) {
       return this.method_27940(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 

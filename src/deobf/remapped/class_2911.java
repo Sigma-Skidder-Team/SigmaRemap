@@ -2,10 +2,10 @@ package remapped;
 
 public class class_2911 extends class_7764 {
    private static String[] field_14224;
-   public class_1343 field_14226;
+   public Vector3d field_14226;
    public boolean field_14225;
 
-   public class_2911(class_1343 var1) {
+   public class_2911(Vector3d var1) {
       this.field_14226 = var1;
    }
 
@@ -13,7 +13,7 @@ public class class_2911 extends class_7764 {
       return this.field_14225;
    }
 
-   public class_1343 method_13317() {
+   public Vector3d method_13317() {
       return this.field_14226;
    }
 
@@ -40,7 +40,7 @@ public class class_2911 extends class_7764 {
       this.field_14225 = true;
    }
 
-   public void method_13316(class_1343 var1) {
+   public void method_13316(Vector3d var1) {
       this.field_14226 = var1;
       this.field_14225 = true;
    }

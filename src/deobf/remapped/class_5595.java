@@ -12,7 +12,7 @@ public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
       this.method_29100(new class_5994(this));
    }
 
-   public class_1343 method_25402(class_6092 var1, float var2) {
+   public Vector3d method_25402(class_6092 var1, float var2) {
       int var5 = var1.method_27925();
       if (var5 > 0 && var1.method_27918()) {
          BlockPos var6 = var1.method_27906();
@@ -22,7 +22,7 @@ public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
          double var10 = (double)(var6.getX() - var7.getX()) * var8;
          double var12 = (double)(var6.getY() - var7.getY()) * var8;
          double var14 = (double)(var6.getZ() - var7.getZ()) * var8;
-         return new class_1343(-var10, -var12, -var14);
+         return new Vector3d(-var10, -var12, -var14);
       } else {
          return super.method_32555(var1, var2);
       }
@@ -31,8 +31,8 @@ public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
    public boolean method_25400(class_6092 var1, class_2359 var2, double var3, double var5, double var7) {
       if (!super.method_32863(var1, var2, var3, var5, var7)) {
          if (var1.method_27925() > 0 && var1.method_27918()) {
-            class_1343 var11 = class_1343.method_6205(var1.method_27906());
-            class_1343 var12 = class_1343.method_6205(var1.method_27921());
+            Vector3d var11 = Vector3d.method_6205(var1.method_27906());
+            Vector3d var12 = Vector3d.method_6205(var1.method_27921());
             if (var2.method_10824(new Box(var12.field_7336, var12.field_7333, var12.field_7334, var11.field_7336, var11.field_7333, var11.field_7334))) {
                return true;
             }

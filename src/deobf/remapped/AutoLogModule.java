@@ -12,8 +12,8 @@ public class AutoLogModule extends Module {
    }
 
    @EventListen
-   public void method_6969(class_5596 var1) {
-      if (this.method_42015() && client.thePlayer.field_41697 > 10 && client.method_8515() == null && client.method_8530() != null) {
+   public void method_6969(PlayerTickEvent var1) {
+      if (this.isEnabled() && client.thePlayer.field_41697 > 10 && client.method_8515() == null && client.method_8530() != null) {
          float var4 = client.thePlayer.method_26551() / client.thePlayer.method_26465() * 10.0F;
          if (var4 < this.getFloatValueByName("Min Health") || class_2740.method_12345(class_4897.field_24472) == 0) {
             boolean var5 = this.method_42007("One Time Use");

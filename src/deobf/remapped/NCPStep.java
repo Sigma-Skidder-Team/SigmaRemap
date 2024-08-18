@@ -28,7 +28,7 @@ public class NCPStep extends Module {
    @EventListen
    @class_7664
    private void method_44493(class_8544 var1) {
-      if (this.method_42015() && !var1.method_29716()) {
+      if (this.isEnabled() && !var1.method_29716()) {
          double var4 = var1.method_39326();
          if (class_314.method_1413(client.thePlayer, 1.0E-4F) && !class_8865.method_40771()) {
             if (var4 >= 0.625) {
@@ -86,7 +86,7 @@ public class NCPStep extends Module {
 
    @EventListen
    private void method_44491(class_7982 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (this.field_49103 > 0) {
             this.field_49103--;
          }

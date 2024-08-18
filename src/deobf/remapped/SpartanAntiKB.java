@@ -9,8 +9,8 @@ public class SpartanAntiKB extends Module {
    }
 
    @EventListen
-   private void method_45041(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_45041(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.field_49568 < 10) {
             this.field_49568++;
             if (this.field_49568 == (int)this.getFloatValueByName("Ticks")) {
@@ -22,7 +22,7 @@ public class SpartanAntiKB extends Module {
 
    @EventListen
    private void method_45040(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
             if (var4.method_21093() == client.thePlayer.method_37145()) {

@@ -12,7 +12,7 @@ public class XRayModule extends Module {
    public void onEnable() {
       client.worldRenderer.method_19998();
       FullbrightModule var3 = (FullbrightModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FullbrightModule.class);
-      if (!var3.method_42015()) {
+      if (!var3.isEnabled()) {
          var3.method_42023(true);
       }
    }
@@ -24,7 +24,7 @@ public class XRayModule extends Module {
 
    @EventListen
    public void method_33542(class_3310 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          class_1873 var4 = var1.method_15183();
          if (!(var4.method_8360() instanceof class_285) && var4.method_8360() != class_4783.field_23211) {
             var1.method_29715(true);

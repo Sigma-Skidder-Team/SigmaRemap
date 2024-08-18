@@ -12,7 +12,7 @@ public class BoxOutlineESP extends Module {
 
    @EventListen
    private void method_18562(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && client.theWorld != null) {
             this.method_18559();
             FontManager.method_107();

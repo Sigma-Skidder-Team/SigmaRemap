@@ -174,7 +174,7 @@ public class class_2266 extends class_1546 {
    }
 
    private boolean method_10451(class_5851 var1) {
-      class_1343 var4 = new class_1343(
+      Vector3d var4 = new Vector3d(
          (double)var1.field_29731 - this.field_8166.getPosX(),
          (double)var1.field_29735 - this.field_8166.method_37309(),
          (double)var1.field_29736 - this.field_8166.getPosZ()

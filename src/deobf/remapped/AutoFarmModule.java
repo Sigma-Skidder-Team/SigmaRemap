@@ -7,7 +7,7 @@ public class AutoFarmModule extends Module {
 
    @EventListen
    public void method_21418(class_1393 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && client.theWorld != null) {
             for (BlockPos var5 : class_7494.method_34085(class_7494.method_34110(client.playerController.method_42146()))) {
                if (class_7494.method_34116(client.thePlayer, var5)) {

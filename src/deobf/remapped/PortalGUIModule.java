@@ -6,8 +6,8 @@ public class PortalGUIModule extends Module {
    }
 
    @EventListen
-   private void method_12031(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_12031(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          client.thePlayer.field_41772 = false;
       }
    }

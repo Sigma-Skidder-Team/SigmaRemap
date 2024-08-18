@@ -54,7 +54,7 @@ public abstract class class_9506 extends class_5783 {
       }
 
       this.method_37097();
-      class_1343 var17 = this.method_37098();
+      Vector3d var17 = this.method_37098();
       double var6 = this.getPosX() + var17.field_7336;
       double var8 = this.method_37309() + var17.field_7333;
       double var10 = this.getPosZ() + var17.field_7334;
@@ -82,7 +82,7 @@ public abstract class class_9506 extends class_5783 {
 
       this.method_37215(var17.method_6209((double)var12));
       if (!this.method_37078()) {
-         class_1343 var18 = this.method_37098();
+         Vector3d var18 = this.method_37098();
          this.method_37214(var18.field_7336, var18.field_7333 - (double)this.method_43874(), var18.field_7334);
       }
 

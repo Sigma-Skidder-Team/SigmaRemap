@@ -9,7 +9,7 @@ public class FastLadderModule extends Module {
 
    @EventListen
    private void method_24511(class_7767 var1) {
-      if (this.method_42015() && client.thePlayer.method_26505()) {
+      if (this.isEnabled() && client.thePlayer.method_26505()) {
          boolean var4 = class_3347.method_15349() >= class_412.field_1724.method_2055() || client.method_8530() == null;
          if (!client.thePlayer.collidedHorizontally && (!client.thePlayer.field_29654 || !var4)) {
             if (this.getStringValueByName("Down mode").equals("OnSneak") && client.gameOptions.keySneak.isKeyDown()

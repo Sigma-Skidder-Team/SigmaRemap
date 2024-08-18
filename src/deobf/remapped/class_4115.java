@@ -141,7 +141,7 @@ public class class_4115 extends class_6414 {
          if ((!var20 || var19) && var18 >= 0) {
             int var21 = var6.method_1041();
             int var22 = var6.method_1034();
-            class_1343 var23 = var1.method_21865();
+            Vector3d var23 = var1.method_21865();
             double var24 = var23.field_7336 - (double)var5.getX();
             double var26 = var23.field_7334 - (double)var5.getZ();
             return var21 < 0 && var26 < 0.5 || var21 > 0 && var26 > 0.5 || var22 < 0 && var24 > 0.5 || var22 > 0 && var24 < 0.5

@@ -10,7 +10,7 @@ public class AutoToolsModule extends Module {
 
    @EventListen
    public void method_29644(class_307 var1) {
-      if (this.method_42015() && client.thePlayer != null && var1.method_1364() == 0) {
+      if (this.isEnabled() && client.thePlayer != null && var1.method_1364() == 0) {
          if (this.field_33089 != -1) {
             client.thePlayer.inventory.field_36404 = this.field_33089;
             this.field_33089 = -1;
@@ -20,14 +20,14 @@ public class AutoToolsModule extends Module {
 
    @EventListen
    private void method_29646(class_6435 var1) {
-      if (this.method_42015() && client.thePlayer != null && var1.method_29384() == 0) {
+      if (this.isEnabled() && client.thePlayer != null && var1.method_29384() == 0) {
          this.method_29647(var1.method_29386());
       }
    }
 
    @EventListen
-   private void method_29645(class_5596 var1) {
-      if (this.method_42015() && client.thePlayer != null && client.gameOptions.keyAttack.isKeyDown()) {
+   private void method_29645(PlayerTickEvent var1) {
+      if (this.isEnabled() && client.thePlayer != null && client.gameOptions.keyAttack.isKeyDown()) {
          this.method_29647(null);
       }
    }

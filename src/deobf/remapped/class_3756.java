@@ -219,7 +219,7 @@ public class class_3756 extends class_3757 implements class_3745 {
       Random var3 = this.field_18364.field_33033;
       double var4 = (double)(MathHelper.sin((float)(this.field_18349 + 35) * 0.1F) / 2.0F + 0.5F);
       var4 = (var4 * var4 + var4) * 0.3F;
-      class_1343 var6 = new class_1343(
+      Vector3d var6 = new Vector3d(
          (double)this.field_18358.getX() + 0.5, (double)this.field_18358.getY() + 1.5 + var4, (double)this.field_18358.getZ() + 0.5
       );
 
@@ -229,7 +229,7 @@ public class class_3756 extends class_3757 implements class_3745 {
             float var10 = -2.0F + var3.nextFloat();
             float var11 = -0.5F + var3.nextFloat();
             BlockPos var12 = var8.method_6093(this.field_18358);
-            class_1343 var13 = new class_1343((double)var9, (double)var10, (double)var11)
+            Vector3d var13 = new Vector3d((double)var9, (double)var10, (double)var11)
                .method_6214((double)var12.getX(), (double)var12.getY(), (double)var12.getZ());
             this.field_18364
                .method_43361(class_3090.field_15357, var6.field_7336, var6.field_7333, var6.field_7334, var13.field_7336, var13.field_7333, var13.field_7334);
@@ -237,11 +237,11 @@ public class class_3756 extends class_3757 implements class_3745 {
       }
 
       if (this.field_18356 != null) {
-         class_1343 var15 = new class_1343(this.field_18356.getPosX(), this.field_18356.method_37388(), this.field_18356.getPosZ());
+         Vector3d var15 = new Vector3d(this.field_18356.getPosX(), this.field_18356.method_37388(), this.field_18356.getPosZ());
          float var16 = (-0.5F + var3.nextFloat()) * (3.0F + this.field_18356.method_37086());
          float var17 = -1.0F + var3.nextFloat() * this.field_18356.method_37074();
          float var18 = (-0.5F + var3.nextFloat()) * (3.0F + this.field_18356.method_37086());
-         class_1343 var19 = new class_1343((double)var16, (double)var17, (double)var18);
+         Vector3d var19 = new Vector3d((double)var16, (double)var17, (double)var18);
          this.field_18364
             .method_43361(class_3090.field_15357, var15.field_7336, var15.field_7333, var15.field_7334, var19.field_7336, var19.field_7333, var19.field_7334);
       }

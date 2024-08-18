@@ -45,7 +45,7 @@ public abstract class class_8388 extends class_5783 {
    @Override
    public void method_37123() {
       Entity var3 = this.method_26166();
-      if (this.world.field_33055 || (var3 == null || !var3.field_41751) && this.world.isBlockLoaded(this.method_37075())) {
+      if (this.world.field_33055 || (var3 == null || !var3.removed) && this.world.isBlockLoaded(this.method_37075())) {
          super.method_37123();
          if (this.method_38646()) {
             this.method_37178(1);
@@ -57,7 +57,7 @@ public abstract class class_8388 extends class_5783 {
          }
 
          this.method_37097();
-         class_1343 var5 = this.method_37098();
+         Vector3d var5 = this.method_37098();
          double var6 = this.getPosX() + var5.field_7336;
          double var8 = this.method_37309() + var5.field_7333;
          double var10 = this.getPosZ() + var5.field_7334;
@@ -143,7 +143,7 @@ public abstract class class_8388 extends class_5783 {
          if (var5 == null) {
             return false;
          } else {
-            class_1343 var6 = var5.method_37246();
+            Vector3d var6 = var5.method_37246();
             this.method_37215(var6);
             this.field_42909 = var6.field_7336 * 0.1;
             this.field_42910 = var6.field_7333 * 0.1;
@@ -175,7 +175,7 @@ public abstract class class_8388 extends class_5783 {
          this.rotationYaw,
          this.getType(),
          var4,
-         new class_1343(this.field_42909, this.field_42910, this.field_42911)
+         new Vector3d(this.field_42909, this.field_42910, this.field_42911)
       );
    }
 }

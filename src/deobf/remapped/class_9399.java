@@ -290,7 +290,7 @@ public class class_9399 extends LivingEntity {
    }
 
    @Override
-   public class_6910 method_37227(PlayerEntity var1, class_1343 var2, Hand var3) {
+   public class_6910 method_37227(PlayerEntity var1, Vector3d var2, Hand var3) {
       ItemStack var6 = var1.method_26617(var3);
       if (this.method_43493() || var6.method_27960() == class_4897.field_24948) {
          return class_6910.field_35521;
@@ -324,7 +324,7 @@ public class class_9399 extends LivingEntity {
       }
    }
 
-   private class_6943 method_43512(class_1343 var1) {
+   private class_6943 method_43512(Vector3d var1) {
       class_6943 var4 = class_6943.field_35707;
       boolean var5 = this.method_43503();
       double var6 = !var5 ? var1.field_7333 : var1.field_7333 * 2.0;
@@ -376,7 +376,7 @@ public class class_9399 extends LivingEntity {
 
    @Override
    public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (this.world.field_33055 || this.field_41751) {
+      if (this.world.field_33055 || this.removed) {
          return false;
       } else if (DamageSource.field_31685.equals(var1)) {
          this.method_37204();
@@ -528,7 +528,7 @@ public class class_9399 extends LivingEntity {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       if (this.method_43497()) {
          super.method_26431(var1);
       }
@@ -752,7 +752,7 @@ public class class_9399 extends LivingEntity {
    public void method_37191(class_7821<?> var1) {
       if (field_48042.equals(var1)) {
          this.method_37187();
-         this.field_41759 = !this.method_43493();
+         this.preventEntitySpawning = !this.method_43493();
       }
 
       super.method_37191(var1);
@@ -777,7 +777,7 @@ public class class_9399 extends LivingEntity {
    }
 
    @Override
-   public class_1343 method_37339(float var1) {
+   public Vector3d method_37339(float var1) {
       if (!this.method_43493()) {
          return super.method_37339(var1);
       } else {
@@ -790,7 +790,7 @@ public class class_9399 extends LivingEntity {
          )) {
             int var9 = Math.max(this.world.method_25266(class_2957.field_14440, var8), this.world.method_25266(class_2957.field_14437, var8));
             if (var9 == 15) {
-               return class_1343.method_6216(var8);
+               return Vector3d.method_6216(var8);
             }
 
             if (var9 > var6) {
@@ -799,7 +799,7 @@ public class class_9399 extends LivingEntity {
             }
          }
 
-         return class_1343.method_6216(var5);
+         return Vector3d.method_6216(var5);
       }
    }
 }

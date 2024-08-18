@@ -81,13 +81,13 @@ public abstract class class_6749 extends class_5783 {
    public void method_37123() {
       super.method_37123();
       boolean var3 = this.method_30926();
-      class_1343 var4 = this.method_37098();
-      if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
+      Vector3d var4 = this.method_37098();
+      if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
          float var5 = MathHelper.sqrt(method_37266(var4));
          this.rotationYaw = (float)(MathHelper.atan2(var4.field_7336, var4.field_7334) * 180.0F / (float)Math.PI);
          this.rotationPitch = (float)(MathHelper.atan2(var4.field_7333, (double)var5) * 180.0F / (float)Math.PI);
          this.prevRotationYaw = this.rotationYaw;
-         this.field_41762 = this.rotationPitch;
+         this.prevRotationPitch = this.rotationPitch;
       }
 
       BlockPos var32 = this.method_37075();
@@ -95,7 +95,7 @@ public abstract class class_6749 extends class_5783 {
       if (!var6.method_8345() && !var3) {
          class_4190 var7 = var6.method_8324(this.world, var32);
          if (!var7.method_19485()) {
-            class_1343 var8 = this.method_37245();
+            Vector3d var8 = this.method_37245();
 
             for (Box var23 : var7.method_19492()) {
                if (var23.method_18919(var32).method_18903(var8)) {
@@ -124,14 +124,14 @@ public abstract class class_6749 extends class_5783 {
          this.field_34840++;
       } else {
          this.field_34840 = 0;
-         class_1343 var33 = this.method_37245();
-         class_1343 var34 = var33.method_6215(var4);
+         Vector3d var33 = this.method_37245();
+         Vector3d var34 = var33.method_6215(var4);
          Object var35 = this.world.method_28265(new class_972(var33, var34, class_3132.field_15553, class_9583.field_48747, this));
          if (((class_7474)var35).method_33990() != class_1430.field_7721) {
             var34 = ((class_7474)var35).method_33993();
          }
 
-         while (!this.field_41751) {
+         while (!this.removed) {
             class_5631 var36 = this.method_30939(var33, var34);
             if (var36 != null) {
                var35 = var36;
@@ -188,7 +188,7 @@ public abstract class class_6749 extends class_5783 {
          }
 
          this.rotationPitch = (float)(MathHelper.atan2(var12, (double)var22) * 180.0F / (float)Math.PI);
-         this.rotationPitch = method_26168(this.field_41762, this.rotationPitch);
+         this.rotationPitch = method_26168(this.prevRotationPitch, this.rotationPitch);
          this.rotationYaw = method_26168(this.prevRotationYaw, this.rotationYaw);
          float var27 = 0.99F;
          float var28 = 0.05F;
@@ -203,7 +203,7 @@ public abstract class class_6749 extends class_5783 {
 
          this.method_37215(var4.method_6209((double)var27));
          if (!this.method_37078() && !var3) {
-            class_1343 var37 = this.method_37098();
+            Vector3d var37 = this.method_37098();
             this.method_37214(var37.field_7336, var37.field_7333 - 0.05F, var37.field_7334);
          }
 
@@ -218,7 +218,7 @@ public abstract class class_6749 extends class_5783 {
 
    private void method_30930() {
       this.field_34834 = false;
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       this.method_37215(
          var3.method_6210(
             (double)(this.field_41717.nextFloat() * 0.2F), (double)(this.field_41717.nextFloat() * 0.2F), (double)(this.field_41717.nextFloat() * 0.2F)
@@ -228,7 +228,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    @Override
-   public void method_37226(class_7412 var1, class_1343 var2) {
+   public void method_37226(class_7412 var1, Vector3d var2) {
       super.method_37226(var1, var2);
       if (var1 != class_7412.field_37839 && this.method_30923()) {
          this.method_30930();
@@ -321,7 +321,7 @@ public abstract class class_6749 extends class_5783 {
             }
 
             if (this.field_34832 > 0) {
-               class_1343 var14 = this.method_37098().method_6210(1.0, 0.0, 1.0).method_6213().method_6209((double)this.field_34832 * 0.6);
+               Vector3d var14 = this.method_37098().method_6210(1.0, 0.0, 1.0).method_6213().method_6209((double)this.field_34832 * 0.6);
                if (var14.method_6221() > 0.0) {
                   var13.method_37186(var14.field_7336, 0.1, var14.field_7334);
                }
@@ -362,9 +362,9 @@ public abstract class class_6749 extends class_5783 {
    public void method_26165(class_9529 var1) {
       this.field_34836 = this.world.method_28262(var1.method_43955());
       super.method_26165(var1);
-      class_1343 var4 = var1.method_33993().method_6193(this.getPosX(), this.method_37309(), this.getPosZ());
+      Vector3d var4 = var1.method_33993().method_6193(this.getPosX(), this.method_37309(), this.getPosZ());
       this.method_37215(var4);
-      class_1343 var5 = var4.method_6213().method_6209(0.05F);
+      Vector3d var5 = var4.method_6213().method_6209(0.05F);
       this.method_37222(this.getPosX() - var5.field_7336, this.method_37309() - var5.field_7333, this.getPosZ() - var5.field_7334);
       this.method_37155(this.method_30938(), 1.0F, 1.2F / (this.field_41717.nextFloat() * 0.2F + 0.9F));
       this.field_34834 = true;
@@ -388,7 +388,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    @Nullable
-   public class_5631 method_30939(class_1343 var1, class_1343 var2) {
+   public class_5631 method_30939(Vector3d var1, Vector3d var2) {
       return class_8462.method_38931(
          this.world, this, var1, var2, this.getBoundingBox().method_18929(this.method_37098()).grow(1.0), this::method_26164
       );

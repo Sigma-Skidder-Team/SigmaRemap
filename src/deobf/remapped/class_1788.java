@@ -78,7 +78,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
          var5 = new StringTextComponent("Lectern");
       }
 
-      class_1343 var6 = class_1343.method_6216(this.field_18358);
+      Vector3d var6 = Vector3d.method_6216(this.field_18358);
       return new class_9155(
          class_5801.field_29295,
          var6,

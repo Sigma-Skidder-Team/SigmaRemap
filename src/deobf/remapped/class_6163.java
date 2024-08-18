@@ -36,8 +36,8 @@ public interface class_6163 {
          (var1x, var2) -> {
             class_2522 var5 = this.method_28262(var2);
             class_4774 var6 = this.method_28258(var2);
-            class_1343 var7 = var1x.method_4255();
-            class_1343 var8 = var1x.method_4256();
+            Vector3d var7 = var1x.method_4255();
+            Vector3d var8 = var1x.method_4256();
             class_4190 var9 = var1x.method_4257(var5, this, var2);
             class_9529 var10 = this.method_28266(var7, var8, var2, var9, var5);
             class_4190 var11 = var1x.method_4258(var6, this, var2);
@@ -47,7 +47,7 @@ public interface class_6163 {
             return !(var13 <= var15) ? var12 : var10;
          },
          var0 -> {
-            class_1343 var3 = var0.method_4255().method_6194(var0.method_4256());
+            Vector3d var3 = var0.method_4255().method_6194(var0.method_4256());
             return class_9529.method_43958(
                var0.method_4256(), Direction.method_1044(var3.field_7336, var3.field_7333, var3.field_7334), new BlockPos(var0.method_4256())
             );
@@ -56,7 +56,7 @@ public interface class_6163 {
    }
 
    @Nullable
-   default class_9529 method_28266(class_1343 var1, class_1343 var2, BlockPos var3, class_4190 var4, class_2522 var5) {
+   default class_9529 method_28266(Vector3d var1, Vector3d var2, BlockPos var3, class_4190 var4, class_2522 var5) {
       class_9529 var8 = var4.method_19493(var1, var2, var3);
       if (var8 != null) {
          class_9529 var9 = var5.method_8351(this, var3).method_19493(var1, var2, var3);
@@ -85,8 +85,8 @@ public interface class_6163 {
    }
 
    static <T> T method_28257(class_972 var0, BiFunction<class_972, BlockPos, T> var1, Function<class_972, T> var2) {
-      class_1343 var5 = var0.method_4255();
-      class_1343 var6 = var0.method_4256();
+      Vector3d var5 = var0.method_4255();
+      Vector3d var6 = var0.method_4256();
       if (!var5.equals(var6)) {
          double var7 = MathHelper.lerp(-1.0E-7, var6.field_7336, var5.field_7336);
          double var9 = MathHelper.lerp(-1.0E-7, var6.field_7333, var5.field_7333);

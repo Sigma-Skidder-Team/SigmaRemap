@@ -8,7 +8,7 @@ public abstract class class_6090<T extends class_6749> extends class_7067<T> {
    public void method_27903(T var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       var4.method_36063();
       var4.method_36060(class_2426.field_12074.method_11074(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
-      var4.method_36060(class_2426.field_12076.method_11074(MathHelper.lerp(var3, var1.field_41762, var1.rotationPitch)));
+      var4.method_36060(class_2426.field_12076.method_11074(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch)));
       boolean var9 = false;
       float var10 = 0.0F;
       float var11 = 0.5F;

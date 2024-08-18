@@ -33,7 +33,7 @@ public class FakeLagModule extends Module {
 
    @EventListen
    private void method_12007(class_717 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_13091.clear();
          this.field_13092 = false;
          this.field_13090.method_14773();
@@ -42,7 +42,7 @@ public class FakeLagModule extends Module {
 
    @EventListen
    private void method_12006(class_2157 var1) {
-      if (this.method_42015() && client.method_8614() != null) {
+      if (this.isEnabled() && client.method_8614() != null) {
          if (!this.field_13092) {
             if ((float)this.field_13090.method_14772() > this.getFloatValueByName("Delay") * 1000.0F) {
                this.field_13092 = true;

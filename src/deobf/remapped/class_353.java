@@ -26,7 +26,7 @@ public class class_353 extends class_4734 {
          var0.method_21860(),
          var0.method_21867(),
          new class_9529(
-            new class_1343(
+            new Vector3d(
                (double)var1.getX() + 0.5 + (double)var2.method_1041() * 0.5,
                (double)var1.getY() + 0.5 + (double)var2.method_1054() * 0.5,
                (double)var1.getZ() + 0.5 + (double)var2.method_1034() * 0.5

@@ -28,13 +28,13 @@ public class class_3948 extends class_6017 {
                this.field_9479
                   .method_12611()
                   .<class_3317>method_29420(class_8978.field_46002)
-                  .method_15243(new class_1343(var3.getPosX(), var3.method_37309(), var3.getPosZ()));
+                  .method_15243(new Vector3d(var3.getPosX(), var3.method_37309(), var3.getPosZ()));
             }
          }
       } else if (this.field_19164 <= 25) {
-         class_1343 var4 = new class_1343(var3.getPosX() - this.field_9479.getPosX(), 0.0, var3.getPosZ() - this.field_9479.getPosZ())
+         Vector3d var4 = new Vector3d(var3.getPosX() - this.field_9479.getPosX(), 0.0, var3.getPosZ() - this.field_9479.getPosZ())
             .method_6213();
-         class_1343 var5 = new class_1343(
+         Vector3d var5 = new Vector3d(
                (double) MathHelper.sin(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)),
                0.0,
                (double)(-MathHelper.cos(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)))

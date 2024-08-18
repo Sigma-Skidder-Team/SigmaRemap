@@ -6,8 +6,8 @@ public class class_4244 extends Module {
    }
 
    @EventListen
-   private void method_19784(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_19784(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          client.gameOptions.keySprint.pressed = true;
          if (client.thePlayer.field_29666 != 1) {
             if (client.thePlayer.field_29666 == 0) {

@@ -32,7 +32,7 @@ public class LibreCraftFly extends Module {
 
    @EventListen
    private void method_25014(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28094 = true;
@@ -42,7 +42,7 @@ public class LibreCraftFly extends Module {
 
    @EventListen
    private void method_25015(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28094 = false;
@@ -53,7 +53,7 @@ public class LibreCraftFly extends Module {
    @EventListen
    @class_7664
    public void method_25011(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_28095 <= 0) {
             if (this.field_28095 != -1) {
                if (this.field_28095 == 0) {
@@ -75,7 +75,7 @@ public class LibreCraftFly extends Module {
 
    @EventListen
    public void method_25012(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_28095++;
          if (this.field_28095 != 2) {
             if (this.field_28095 > 2) {
@@ -95,7 +95,7 @@ public class LibreCraftFly extends Module {
 
    @EventListen
    public void method_25013(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (client.thePlayer != null && var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;

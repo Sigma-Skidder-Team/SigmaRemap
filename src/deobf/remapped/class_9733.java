@@ -164,9 +164,9 @@ public abstract class class_9733 {
          double var11 = var3;
          double var13 = var5;
          if (this.field_49474 && (var1 != 0.0 || var3 != 0.0 || var5 != 0.0) && this.method_44954(var1, var3, var5)) {
-            class_1343 var15 = Entity.method_37301(
+            Vector3d var15 = Entity.method_37301(
                (Entity)null,
-               new class_1343(var1, var3, var5),
+               new Vector3d(var1, var3, var5),
                this.method_44945(),
                this.field_49469,
                class_214.method_928(),

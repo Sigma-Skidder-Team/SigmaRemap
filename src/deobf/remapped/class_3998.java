@@ -68,19 +68,19 @@ public class class_3998 {
       this.field_19420 = var1;
    }
 
-   public class_1343 method_18432(Entity var1, int var2) {
+   public Vector3d method_18432(Entity var1, int var2) {
       class_5851 var5 = this.field_19422.get(var2);
       double var6 = (double)var5.field_29731 + (double)((int)(var1.method_37086() + 1.0F)) * 0.5;
       double var8 = (double)var5.field_29735;
       double var10 = (double)var5.field_29736 + (double)((int)(var1.method_37086() + 1.0F)) * 0.5;
-      return new class_1343(var6, var8, var10);
+      return new Vector3d(var6, var8, var10);
    }
 
    public BlockPos method_18445(int var1) {
       return this.field_19422.get(var1).method_26686();
    }
 
-   public class_1343 method_18439(Entity var1) {
+   public Vector3d method_18439(Entity var1) {
       return this.method_18432(var1, this.field_19420);
    }
 

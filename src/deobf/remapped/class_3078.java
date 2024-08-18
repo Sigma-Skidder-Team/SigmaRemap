@@ -102,7 +102,7 @@ public class class_3078 extends class_3599 {
          class_9310 var3 = this.field_15140.method_42970();
          double var4 = (double)this.field_15140.method_37175(var3);
          float var6 = 2.0F;
-         class_1343 var7 = new class_1343(
+         Vector3d var7 = new Vector3d(
                var3.getPosX() - this.field_15140.getPosX(),
                var3.method_37309() - this.field_15140.method_37309(),
                var3.getPosZ() - this.field_15140.getPosZ()

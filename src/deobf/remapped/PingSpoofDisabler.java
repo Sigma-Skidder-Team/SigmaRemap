@@ -15,9 +15,9 @@ public class PingSpoofDisabler extends Module {
 
    @EventListen
    public void method_12682(class_717 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(DisablerModule.class);
-         if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
+         if (!var4.isEnabled() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
       }
@@ -26,10 +26,10 @@ public class PingSpoofDisabler extends Module {
    }
 
    @EventListen
-   public void method_12683(class_5596 var1) {
-      if (!this.method_42015()) {
+   public void method_12683(PlayerTickEvent var1) {
+      if (!this.isEnabled()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(DisablerModule.class);
-         if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
+         if (!var4.isEnabled() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
       }
@@ -68,9 +68,9 @@ public class PingSpoofDisabler extends Module {
 
    @EventListen
    public void method_12684(PacketEvent var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(DisablerModule.class);
-         if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
+         if (!var4.isEnabled() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
       }

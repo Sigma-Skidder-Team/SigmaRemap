@@ -135,7 +135,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
 
                   var8.method_37226(
                      class_7412.field_37837,
-                     new class_1343(var9 * (double)var4.method_1041(), var11 * (double)var4.method_1054(), var13 * (double)var4.method_1034())
+                     new Vector3d(var9 * (double)var4.method_1041(), var11 * (double)var4.method_1054(), var13 * (double)var4.method_1034())
                   );
                }
             }

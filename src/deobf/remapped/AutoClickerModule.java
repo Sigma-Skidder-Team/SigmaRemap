@@ -10,8 +10,8 @@ public class AutoClickerModule extends Module {
    }
 
    @EventListen
-   private void method_30401(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_30401(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          this.field_34164++;
          Random var4 = new Random();
          byte var5 = 2;

@@ -2,7 +2,7 @@ package remapped;
 
 public class class_4839 {
    private static String[] field_24149;
-   private final class_1343 field_24148;
+   private final Vector3d field_24148;
    private final Entity field_24150;
    private final class_6139 field_24147;
 
@@ -12,7 +12,7 @@ public class class_4839 {
       this.field_24148 = var2.method_28187(var1);
    }
 
-   public class_4839(class_1343 var1) {
+   public class_4839(Vector3d var1) {
       this.field_24150 = null;
       this.field_24148 = var1;
       this.field_24147 = null;

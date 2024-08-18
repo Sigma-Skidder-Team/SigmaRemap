@@ -23,7 +23,7 @@ public class SlowHopSpeed extends Module {
 
    @EventListen
    public void method_14501(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          boolean var4 = this.getBooleanValueByName("AutoJump");
          double var5 = class_8865.method_40775();
          boolean var7 = class_314.method_1434();
@@ -45,7 +45,7 @@ public class SlowHopSpeed extends Module {
 
    @EventListen
    public void method_14500(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_13313(0.407 + 0.1 * (double)class_8865.method_40769());
          this.field_15607 = 0;
          var1.method_13315(1.8);

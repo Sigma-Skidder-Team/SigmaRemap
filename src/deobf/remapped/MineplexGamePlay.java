@@ -21,7 +21,7 @@ public class MineplexGamePlay extends Module {
 
    @EventListen
    private void method_29653(PacketEvent var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_5182) {
             class_5182 var5 = (class_5182)var4;
@@ -45,14 +45,14 @@ public class MineplexGamePlay extends Module {
 
    @EventListen
    private void method_29654(class_717 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_33096 = false;
       }
    }
 
    @EventListen
-   private void method_29652(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_29652(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.getBooleanValueByName("AutoGG") && this.field_33097.method_14772() > 5000L && this.field_33096) {
             this.field_33096 = false;
             this.field_33097.method_14773();

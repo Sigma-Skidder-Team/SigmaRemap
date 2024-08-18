@@ -238,7 +238,7 @@ public class MusicManager {
    }
 
    @EventListen
-   private void method_9502(class_5596 var1) {
+   private void method_9502(PlayerTickEvent var1) {
       if (!this.field_10295) {
          this.field_10297.clear();
          this.field_10293.clear();

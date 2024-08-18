@@ -25,7 +25,7 @@ public class AutoMinerModule extends Module {
 
    @EventListen
    public void method_22860(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_4267) {
             class_4267 var4 = (class_4267)var1.method_557();
             this.method_22854(client.theWorld.method_29542(var4.method_19867()).method_27352());
@@ -81,8 +81,8 @@ public class AutoMinerModule extends Module {
    }
 
    @EventListen
-   public void method_22861(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_22861(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (client.thePlayer.field_41697 < 20) {
             this.field_25751.clear();
          } else {
@@ -176,7 +176,7 @@ public class AutoMinerModule extends Module {
                this.field_25750.start();
             }
 
-            if (this.method_42015() && this.field_25755 != null && this.field_25750 != null) {
+            if (this.isEnabled() && this.field_25755 != null && this.field_25750 != null) {
                if (client.thePlayer.field_41697 % 20 == 0) {
                   this.field_25753 = this.field_25752;
                   this.field_25752 = this.method_22856();
@@ -301,7 +301,7 @@ public class AutoMinerModule extends Module {
 
    @EventListen
    public void method_22858(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.method_22857();
       }
    }
@@ -318,7 +318,7 @@ public class AutoMinerModule extends Module {
    }
 
    public void method_22857() {
-      if (this.method_42015() && this.field_25755 != null && this.field_25750 != null) {
+      if (this.isEnabled() && this.field_25755 != null && this.field_25750 != null) {
          GL11.glPushMatrix();
          GL11.glEnable(2848);
          GL11.glBlendFunc(770, 771);

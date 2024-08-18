@@ -8,8 +8,8 @@ public class FastEatModule extends Module {
    }
 
    @EventListen
-   public void method_20195(class_5596 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+   public void method_20195(PlayerTickEvent var1) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (client.thePlayer.method_26554()) {
             ItemStack var4 = client.thePlayer.method_26576();
             if (var4 != null

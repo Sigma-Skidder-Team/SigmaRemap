@@ -36,8 +36,8 @@ public class NoteblockPlayerModule extends PremiumModule {
    }
 
    @EventListen
-   private void method_36555(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_36555(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.field_41249 != null) {
             if (client.playerController.method_42140()) {
                class_314.method_1443("§cNoteBlockPlayer isn't available in creative mode!");
@@ -135,7 +135,7 @@ public class NoteblockPlayerModule extends PremiumModule {
 
    @EventListen
    private void method_36548(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_41248 != null) {
             for (class_663 var5 : this.field_41248) {
                ;
@@ -160,7 +160,7 @@ public class NoteblockPlayerModule extends PremiumModule {
       GL11.glDisable(2929);
       GL11.glDepthMask(false);
       GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
-      class_1343 var9 = new class_1343(0.0, 0.0, 1.0)
+      Vector3d var9 = new Vector3d(0.0, 0.0, 1.0)
          .method_6212(-((float)Math.toRadians((double) MinecraftClient.getInstance().thePlayer.rotationPitch)))
          .method_6192(-((float)Math.toRadians((double) MinecraftClient.getInstance().thePlayer.rotationYaw)));
       GL11.glBegin(1);
@@ -188,7 +188,7 @@ public class NoteblockPlayerModule extends PremiumModule {
 
    @EventListen
    private void method_36546(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_41248 != null) {
             if (var1.method_557() instanceof class_3740) {
                class_3740 var4 = (class_3740)var1.method_557();

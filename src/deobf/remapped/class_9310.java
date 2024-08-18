@@ -439,7 +439,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, 0.75 * (double)this.method_37277(), (double)this.method_37086() * 0.5);
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, 0.75 * (double)this.method_37277(), (double)this.method_37086() * 0.5);
    }
 }

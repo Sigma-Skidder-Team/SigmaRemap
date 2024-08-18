@@ -24,7 +24,7 @@ public class TestModule extends Module {
    private float field_8830;
    private float field_8833;
    public class_2440 field_8816;
-   public class_1343 field_8820;
+   public Vector3d field_8820;
    private Entity field_8822;
 
    public TestModule() {
@@ -76,7 +76,7 @@ public class TestModule extends Module {
    @EventListen
    @class_7664
    public void method_7654(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = Math.sqrt(var1.method_35234() * var1.method_35234() + var1.method_35231() * var1.method_35231());
          class_314.method_1408(var1.method_35236());
       }
@@ -84,21 +84,21 @@ public class TestModule extends Module {
 
    @EventListen
    public void method_7665(class_1393 var1) {
-      if (!this.method_42015() || !var1.method_6449()) {
+      if (!this.isEnabled() || !var1.method_6449()) {
          ;
       }
    }
 
    @EventListen
-   public void method_7653(class_5596 var1) {
-      if (!this.method_42015()) {
+   public void method_7653(PlayerTickEvent var1) {
+      if (!this.isEnabled()) {
          ;
       }
    }
 
    @EventListen
    public void method_7651(class_3278 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          ;
       }
    }
@@ -109,14 +109,14 @@ public class TestModule extends Module {
 
    @EventListen
    public void method_7660(class_4996 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          ;
       }
    }
 
    @EventListen
    public void method_7658(class_7982 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          ;
       }
    }
@@ -129,7 +129,7 @@ public class TestModule extends Module {
    @EventListen
    @class_4249
    public void method_7663(class_6435 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          ;
       }
    }
@@ -137,7 +137,7 @@ public class TestModule extends Module {
    @EventListen
    @class_4249
    public void method_7650(class_8706 var1) {
-      if (!this.method_42015() || client.screen != null) {
+      if (!this.isEnabled() || client.screen != null) {
          ;
       }
    }
@@ -150,7 +150,7 @@ public class TestModule extends Module {
    @class_4249
    public void method_7655(class_2157 var1) {
       Packet var4 = var1.method_10047();
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!(var4 instanceof class_3398)) {
             if (!(var4 instanceof class_4609)) {
                if (!(var4 instanceof class_7371)) {
@@ -221,7 +221,7 @@ public class TestModule extends Module {
    @EventListen
    public void method_7659(PacketEvent var1) {
       Packet var4 = var1.method_557();
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!(var4 instanceof class_527)) {
          }
 

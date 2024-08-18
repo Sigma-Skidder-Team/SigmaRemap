@@ -11,7 +11,7 @@ public class class_8979 extends class_2833 {
    @Override
    public void method_12883() {
       if (this.field_13878 == class_1737.field_8946) {
-         class_1343 var3 = new class_1343(
+         Vector3d var3 = new Vector3d(
             this.field_13884 - this.field_46010.method_37302(),
             this.field_13886 - this.field_46010.method_37309(),
             this.field_13880 - this.field_46010.method_37156()
@@ -25,7 +25,7 @@ public class class_8979 extends class_2833 {
                this.field_46010.field_41701 = -((float) MathHelper.atan2(var6, var8)) * (180.0F / (float)Math.PI);
                this.field_46010.field_29605 = this.field_46010.field_41701;
             } else {
-               class_1343 var10 = this.field_46010.method_37098();
+               Vector3d var10 = this.field_46010.method_37098();
                this.field_46010.field_41701 = -((float) MathHelper.atan2(var10.field_7336, var10.field_7334)) * (180.0F / (float)Math.PI);
                this.field_46010.field_29605 = this.field_46010.field_41701;
             }

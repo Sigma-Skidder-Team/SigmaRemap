@@ -9,8 +9,8 @@ public class BoatFlyModule extends PremiumModule {
    }
 
    @EventListen
-   public void method_17260(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_17260(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (client.thePlayer.getRidingEntity() != null) {
             float var4 = class_8865.method_40785();
             float var5 = this.getFloatValueByName("Speed");
@@ -30,7 +30,7 @@ public class BoatFlyModule extends PremiumModule {
 
    @EventListen
    private void method_17262(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.getRidingEntity() != null) {
             if (!client.thePlayer.getRidingEntity().onGround) {
                if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
@@ -44,7 +44,7 @@ public class BoatFlyModule extends PremiumModule {
 
    @EventListen
    private void method_17261(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_18223 && var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             this.field_18223 = false;
          }

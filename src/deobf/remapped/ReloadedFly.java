@@ -36,7 +36,7 @@ public class ReloadedFly extends Module {
 
    @EventListen
    private void method_25672(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28772 = true;
@@ -46,7 +46,7 @@ public class ReloadedFly extends Module {
 
    @EventListen
    private void method_25673(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28772 = false;
@@ -57,7 +57,7 @@ public class ReloadedFly extends Module {
    @EventListen
    @class_7664
    public void method_25676(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_28770 != -1) {
             if (this.field_28770 == 0) {
                if (Math.abs(var1.method_35236()) < 0.08) {
@@ -86,7 +86,7 @@ public class ReloadedFly extends Module {
 
    @EventListen
    public void method_25677(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_28770++;
          if (this.field_28770 != 2) {
             if (this.field_28770 > 2 && this.field_28770 >= 20 && this.field_28770 % 20 == 0) {
@@ -106,7 +106,7 @@ public class ReloadedFly extends Module {
 
    @EventListen
    public void method_25674(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;
@@ -123,7 +123,7 @@ public class ReloadedFly extends Module {
 
    @EventListen
    public void method_25675(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_10047();
          if (var4 instanceof class_4609) {
             class_4609 var5 = (class_4609)var4;
@@ -136,12 +136,12 @@ public class ReloadedFly extends Module {
 
    @EventListen
    public void method_25678(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = this.field_28771;
-         client.thePlayer.field_41736.field_7333 = var4;
+         client.thePlayer.positionVec.field_7333 = var4;
          client.thePlayer.field_41713 = var4;
          client.thePlayer.field_3864 = var4;
-         client.thePlayer.field_41698 = var4;
+         client.thePlayer.prevPosY = var4;
       }
    }
 }

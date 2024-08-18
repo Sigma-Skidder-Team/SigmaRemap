@@ -280,7 +280,7 @@ public class class_378 extends MobEntity implements class_1869 {
 
    @Override
    public void method_26595() {
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       this.method_37214(var3.field_7336, (double)this.method_26538(), var3.field_7334);
       this.field_41763 = true;
    }

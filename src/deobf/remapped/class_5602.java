@@ -29,8 +29,8 @@ public class class_5602 extends class_3599 {
    public void method_16794() {
       if (this.field_28412.method_37309() < (double)(this.field_28413 - 1)
          && (this.field_28412.method_26927().method_5591() || this.field_28412.method_20223())) {
-         class_1343 var3 = class_3425.method_15837(
-            this.field_28412, 4, 8, new class_1343(this.field_28412.getPosX(), (double)(this.field_28413 - 1), this.field_28412.getPosZ())
+         Vector3d var3 = class_3425.method_15837(
+            this.field_28412, 4, 8, new Vector3d(this.field_28412.getPosX(), (double)(this.field_28413 - 1), this.field_28412.getPosZ())
          );
          if (var3 == null) {
             this.field_28409 = true;

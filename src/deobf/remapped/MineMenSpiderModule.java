@@ -19,7 +19,7 @@ public class MineMenSpiderModule extends Module {
    private void method_24505(class_7767 var1) {
       double var4 = 1.0E-5;
       boolean var6 = client.theWorld
-            .method_6680(client.thePlayer, client.thePlayer.field_41712.method_18928(var4, 0.0, var4).method_18928(-var4, 0.0, -var4))
+            .method_6680(client.thePlayer, client.thePlayer.boundingBox.method_18928(var4, 0.0, var4).method_18928(-var4, 0.0, -var4))
             .count()
          > 0L;
       if (var6) {
@@ -39,7 +39,7 @@ public class MineMenSpiderModule extends Module {
       if (class_314.method_1413(client.thePlayer, 0.001F) && this.getBooleanValueByName("SneakVClip")) {
          if (client.gameOptions.keySneak.isKeyDown()
             && !this.field_27443
-            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
+            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.boundingBox.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
             client.method_8614()
                .sendPacket(
                   new class_9515(
@@ -65,7 +65,7 @@ public class MineMenSpiderModule extends Module {
       } else {
          if (this.getBooleanValueByName("Ceiling")
             && !client.gameOptions.keySneak.isKeyDown()
-            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
+            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.boundingBox.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
             var1.method_35235(1.0E-14);
             class_8865.method_40777(var1, 0.689 + (double)class_8865.method_40770() * 0.06);
          }
@@ -83,18 +83,18 @@ public class MineMenSpiderModule extends Module {
 
    @EventListen
    private void method_24504(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          class_9097 var4 = class_314.method_1462(1.0E-4);
          if (this.getBooleanValueByName("Ceiling")
             && !client.thePlayer.onGround
-            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
+            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.boundingBox.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
          }
 
          double var5 = 1.0E-5;
          if (var4 != null
             && client.theWorld
-                  .method_6680(client.thePlayer, client.thePlayer.field_41712.method_18928(var5, 0.0, var5).method_18928(-var5, 0.0, -var5))
+                  .method_6680(client.thePlayer, client.thePlayer.boundingBox.method_18928(var5, 0.0, var5).method_18928(-var5, 0.0, -var5))
                   .count()
                > 0L) {
             if (!class_314.method_1413(client.thePlayer, 1.0E-4F)) {
@@ -104,12 +104,12 @@ public class MineMenSpiderModule extends Module {
             double var7 = 4.88E-7;
             if (((Direction)var4.method_41933()).method_1029() != class_9249.field_47215) {
                var1.method_6453(
-                  (double)Math.round((((class_1343)var4.method_41934()).field_7334 + 1.1921022E-8) * 10000.0) / 10000.0
+                  (double)Math.round((((Vector3d)var4.method_41934()).field_7334 + 1.1921022E-8) * 10000.0) / 10000.0
                      + (double)((Direction)var4.method_41933()).method_1034() * var7
                );
             } else {
                var1.method_6443(
-                  (double)Math.round((((class_1343)var4.method_41934()).field_7336 + 1.1921022E-8) * 10000.0) / 10000.0
+                  (double)Math.round((((Vector3d)var4.method_41934()).field_7336 + 1.1921022E-8) * 10000.0) / 10000.0
                      + (double)((Direction)var4.method_41933()).method_1041() * var7
                );
             }
@@ -119,10 +119,10 @@ public class MineMenSpiderModule extends Module {
 
    @EventListen
    private void method_24503(class_5243 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_23988() != null
             && !var1.method_23988().method_19485()
-            && var1.method_23988().method_19483().field_19937 > client.thePlayer.field_41712.field_19937 + 1.0) {
+            && var1.method_23988().method_19483().field_19937 > client.thePlayer.boundingBox.field_19937 + 1.0) {
             var1.method_29715(true);
          }
       }

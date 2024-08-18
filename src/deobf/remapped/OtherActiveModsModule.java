@@ -37,7 +37,7 @@ public class OtherActiveModsModule extends Module {
 
    @EventListen
    private void method_19656(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          String var4 = this.getStringValueByName("Animation");
          String var5 = this.getStringValueByName("Outline");
          this.method_19659();
@@ -56,7 +56,7 @@ public class OtherActiveModsModule extends Module {
          for (Entry var14 : this.field_20487.entrySet()) {
             class_2440 var15 = (class_2440)var14.getValue();
             Module var16 = (Module)var14.getKey();
-            if (var16.method_42015() || var15.method_11123() != 1.0F && !var4.equalsIgnoreCase("None")) {
+            if (var16.isEnabled() || var15.method_11123() != 1.0F && !var4.equalsIgnoreCase("None")) {
                boolean var17 = true;
                boolean var18 = true;
                var9 = Color.HSBtoRGB(var12, 1.0F, 1.0F);
@@ -133,8 +133,8 @@ public class OtherActiveModsModule extends Module {
 
          for (Module var4 : SigmaMainClass.getInstance().getModuleManager().getModuleMap().values()) {
             if (var4 != this && var4.method_41998() != Category.GUI) {
-               class_2440 var5 = new class_2440(200, 200, !var4.method_42015() ? class_4043.field_19620 : class_4043.field_19618);
-               var5.method_11122(!var4.method_42015() ? 1.0F : 0.0F);
+               class_2440 var5 = new class_2440(200, 200, !var4.isEnabled() ? class_4043.field_19620 : class_4043.field_19618);
+               var5.method_11122(!var4.isEnabled() ? 1.0F : 0.0F);
                this.field_20487.put(var4, var5);
                Setting var6 = var4.method_41996().get("Type");
                if (var6 == null) {
@@ -152,7 +152,7 @@ public class OtherActiveModsModule extends Module {
       for (Entry var8 : this.field_20487.entrySet()) {
          Module var9 = (Module)var8.getKey();
          class_2440 var11 = (class_2440)var8.getValue();
-         var11.method_11119(!var9.method_42015() ? class_4043.field_19620 : class_4043.field_19618);
+         var11.method_11119(!var9.isEnabled() ? class_4043.field_19620 : class_4043.field_19618);
       }
    }
 

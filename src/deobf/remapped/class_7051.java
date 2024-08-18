@@ -524,7 +524,7 @@ public class class_7051 implements class_6867, class_9875 {
 
    @Override
    public boolean method_31502(PlayerEntity var1) {
-      return !this.field_36409.field_41751 ? !(var1.method_37275(this.field_36409) > 64.0) : false;
+      return !this.field_36409.removed ? !(var1.method_37275(this.field_36409) > 64.0) : false;
    }
 
    public boolean method_32405(ItemStack var1) {

@@ -28,8 +28,8 @@ public interface class_5719 {
          return true;
       } else {
          for (Entity var6 : this.method_25870(var1, var2.method_19483())) {
-            if (!var6.field_41751
-               && var6.field_41759
+            if (!var6.removed
+               && var6.preventEntitySpawning
                && (var1 == null || !var6.method_37308(var1))
                && class_3370.method_15537(var2, class_3370.method_15523(var6.getBoundingBox()), class_8529.field_43655)) {
                return false;

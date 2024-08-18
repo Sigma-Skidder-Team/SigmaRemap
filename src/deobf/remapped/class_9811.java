@@ -21,8 +21,8 @@ public class class_9811 extends PathNavigator {
    }
 
    @Override
-   public class_1343 method_5596() {
-      return new class_1343(this.field_6877.getPosX(), this.field_6877.method_37080(0.5), this.field_6877.getPosZ());
+   public Vector3d method_5596() {
+      return new Vector3d(this.field_6877.getPosX(), this.field_6877.method_37080(0.5), this.field_6877.getPosZ());
    }
 
    @Override
@@ -35,7 +35,7 @@ public class class_9811 extends PathNavigator {
       if (!this.method_5591()) {
          if (!this.method_5601()) {
             if (this.field_6887 != null && !this.field_6887.method_18436()) {
-               class_1343 var3 = this.field_6887.method_18439(this.field_6877);
+               Vector3d var3 = this.field_6887.method_18439(this.field_6877);
                if (MathHelper.floor(this.field_6877.getPosX()) == MathHelper.floor(var3.field_7336)
                   && MathHelper.floor(this.field_6877.method_37309()) == MathHelper.floor(var3.field_7333)
                   && MathHelper.floor(this.field_6877.getPosZ()) == MathHelper.floor(var3.field_7334)) {
@@ -48,7 +48,7 @@ public class class_9811 extends PathNavigator {
 
          class_1892.method_8443(this.field_6882, this.field_6877, this.field_6887, this.field_6889);
          if (!this.method_5591()) {
-            class_1343 var4 = this.field_6887.method_18439(this.field_6877);
+            Vector3d var4 = this.field_6887.method_18439(this.field_6877);
             this.field_6877.method_26905().method_12879(var4.field_7336, var4.field_7333, var4.field_7334, this.field_6871);
          }
       }
@@ -57,16 +57,16 @@ public class class_9811 extends PathNavigator {
    @Override
    public void method_5592() {
       if (this.field_6887 != null) {
-         class_1343 var3 = this.method_5596();
+         Vector3d var3 = this.method_5596();
          float var4 = this.field_6877.method_37086();
          float var5 = !(var4 > 0.75F) ? 0.75F - var4 / 2.0F : var4 / 2.0F;
-         class_1343 var6 = this.field_6877.method_37098();
+         Vector3d var6 = this.field_6877.method_37098();
          if (Math.abs(var6.field_7336) > 0.2 || Math.abs(var6.field_7334) > 0.2) {
             var5 = (float)((double)var5 * var6.method_6217() * 6.0);
          }
 
          byte var7 = 6;
-         class_1343 var8 = class_1343.method_6200(this.field_6887.method_18449());
+         Vector3d var8 = Vector3d.method_6200(this.field_6887.method_18449());
          if (Math.abs(this.field_6877.getPosX() - var8.field_7336) < (double)var5
             && Math.abs(this.field_6877.getPosZ() - var8.field_7334) < (double)var5
             && Math.abs(this.field_6877.method_37309() - var8.field_7333) < (double)(var5 * 2.0F)) {
@@ -86,7 +86,7 @@ public class class_9811 extends PathNavigator {
    }
 
    @Override
-   public void method_5619(class_1343 var1) {
+   public void method_5619(Vector3d var1) {
       if (this.field_6875 - this.field_6884 > 100) {
          if (var1.method_6204(this.field_6885) < 2.25) {
             this.method_5620();
@@ -100,7 +100,7 @@ public class class_9811 extends PathNavigator {
          BlockPos var4 = this.field_6887.method_18449();
          if (!var4.equals(this.field_6879)) {
             this.field_6879 = var4;
-            double var5 = var1.method_6195(class_1343.method_6216(this.field_6879));
+            double var5 = var1.method_6195(Vector3d.method_6216(this.field_6879));
             this.field_6876 = !(this.field_6877.method_26423() > 0.0F) ? 0.0 : var5 / (double)this.field_6877.method_26423() * 100.0;
          } else {
             this.field_6886 = this.field_6886 + (Util.getMeasuringTimeMs() - this.field_6870);
@@ -118,8 +118,8 @@ public class class_9811 extends PathNavigator {
    }
 
    @Override
-   public boolean method_5599(class_1343 var1, class_1343 var2, int var3, int var4, int var5) {
-      class_1343 var8 = new class_1343(var2.field_7336, var2.field_7333 + (double)this.field_6877.method_37074() * 0.5, var2.field_7334);
+   public boolean method_5599(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
+      Vector3d var8 = new Vector3d(var2.field_7336, var2.field_7333 + (double)this.field_6877.method_37074() * 0.5, var2.field_7334);
       return this.field_6882.method_28265(new class_972(var1, var8, class_3132.field_15553, class_9583.field_48747, this.field_6877)).method_33990()
          == class_1430.field_7721;
    }

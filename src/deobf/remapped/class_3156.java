@@ -28,7 +28,7 @@ public class class_3156 extends class_3599 {
             this.field_15684.field_29605 = this.field_15684.rotationYaw;
          }
       } else {
-         class_1343 var10 = this.field_15684.method_37098();
+         Vector3d var10 = this.field_15684.method_37098();
          this.field_15684.rotationYaw = -((float) MathHelper.atan2(var10.field_7336, var10.field_7334)) * (180.0F / (float)Math.PI);
          this.field_15684.field_29605 = this.field_15684.rotationYaw;
       }

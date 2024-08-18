@@ -10,7 +10,7 @@ public class class_6651 {
       this(new class_2933(var1), var2, var3);
    }
 
-   public class_6651(class_1343 var1, float var2, int var3) {
+   public class_6651(Vector3d var1, float var2, int var3) {
       this(new class_2933(new BlockPos(var1)), var2, var3);
    }
 

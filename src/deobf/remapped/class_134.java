@@ -322,7 +322,7 @@ public class class_134 {
       method_497(var0, var2, var1.method_37245());
    }
 
-   private static void method_497(class_2599 var0, List<ItemStack> var1, class_1343 var2) {
+   private static void method_497(class_2599 var0, List<ItemStack> var1, Vector3d var2) {
       if (!var1.isEmpty()) {
          var0.method_26597(Hand.OFF_HAND);
 
@@ -684,8 +684,8 @@ public class class_134 {
       var0.method_26525().method_5107(class_6044.field_30857, true, 200L);
    }
 
-   private static class_1343 method_464(class_2599 var0) {
-      class_1343 var3 = class_3425.method_15834(var0, 4, 2);
+   private static Vector3d method_464(class_2599 var0) {
+      Vector3d var3 = class_3425.method_15834(var0, 4, 2);
       return var3 != null ? var3 : var0.method_37245();
    }
 

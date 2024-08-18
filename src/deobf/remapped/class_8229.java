@@ -62,7 +62,7 @@ public class class_8229 implements class_2231 {
                HashMap var6x = Maps.newHashMap();
                class_9155 var7 = new class_9155(
                   class_5801.field_29295,
-                  class_1343.field_7335,
+                  Vector3d.ZERO,
                   class_4895.field_24322,
                   (class_6331)null,
                   this.field_42257,

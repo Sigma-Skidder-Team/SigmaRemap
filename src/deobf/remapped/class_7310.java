@@ -20,12 +20,12 @@ public class class_7310 extends class_7164<class_912, class_5415<class_912>> {
       super.method_32866(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_1343 method_33352(class_912 var1, float var2) {
+   public Vector3d method_33352(class_912 var1, float var2) {
       if (!var1.method_3910()) {
          return super.method_32555(var1, var2);
       } else {
          double var5 = 0.02;
-         return new class_1343(this.field_37383.nextGaussian() * 0.02, 0.0, this.field_37383.nextGaussian() * 0.02);
+         return new Vector3d(this.field_37383.nextGaussian() * 0.02, 0.0, this.field_37383.nextGaussian() * 0.02);
       }
    }
 

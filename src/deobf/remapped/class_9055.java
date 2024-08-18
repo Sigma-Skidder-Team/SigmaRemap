@@ -14,8 +14,8 @@ public class class_9055 extends class_2340 {
    }
 
    @Override
-   public class_1343 method_10725(class_6163 var1, BlockPos var2, class_4774 var3) {
-      return class_1343.field_7335;
+   public Vector3d method_10725(class_6163 var1, BlockPos var2, class_4774 var3) {
+      return Vector3d.ZERO;
    }
 
    @Override

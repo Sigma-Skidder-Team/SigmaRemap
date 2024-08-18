@@ -19,11 +19,11 @@ public class class_1604 extends ClientPlayerEntity {
    }
 
    @Override
-   public void method_37226(class_7412 var1, class_1343 var2) {
+   public void method_37226(class_7412 var1, Vector3d var2) {
       class_7767 var5 = new class_7767(var2);
       SigmaMainClass.getInstance().getEventManager().call(var5);
       if (!var5.method_29716()) {
-         super.method_37226(var1, new class_1343(var5.method_35234(), var5.method_35236(), var5.method_35231()));
+         super.method_37226(var1, new Vector3d(var5.method_35234(), var5.method_35236(), var5.method_35231()));
       }
    }
 
@@ -38,7 +38,7 @@ public class class_1604 extends ClientPlayerEntity {
 
    @Override
    public void method_37123() {
-      class_5596 var3 = new class_5596();
+      PlayerTickEvent var3 = new PlayerTickEvent();
       if (class_1235.field_6811 && this.field_41697 > 1000) {
          try {
             if (this.field_41697 % 150 == 0) {

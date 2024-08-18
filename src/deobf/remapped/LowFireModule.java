@@ -7,7 +7,7 @@ public class LowFireModule extends Module {
 
    @EventListen
    public void method_18317(class_9081 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_41811(0.14F);
       }
    }

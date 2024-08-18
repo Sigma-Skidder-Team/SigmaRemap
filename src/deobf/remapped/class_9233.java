@@ -20,14 +20,14 @@ public class class_9233 extends Module {
 
    @EventListen
    public void method_42589(class_7982 var1) {
-      if (this.method_42015() && client.thePlayer.onGround) {
+      if (this.isEnabled() && client.thePlayer.onGround) {
          var1.method_36186(true);
       }
    }
 
    @EventListen
    public void method_42588(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_47194 && client.thePlayer.method_37309() + 0.42 < this.field_47192) {
             this.getModule().method_41999();
          }
@@ -54,7 +54,7 @@ public class class_9233 extends Module {
 
    @EventListen
    public void method_42590(class_4868 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.onGround) {
             if (this.field_47194) {
                this.field_47194 = !this.field_47194;
@@ -99,7 +99,7 @@ public class class_9233 extends Module {
 
    @EventListen
    public void method_42592(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             this.getModule().method_41999();
@@ -109,11 +109,11 @@ public class class_9233 extends Module {
 
    @EventListen
    public void method_42587(class_1711 var1) {
-      if (this.method_42015() && this.field_47194 && !(client.thePlayer.method_37309() < this.field_47192) && this.getBooleanValueByName("Fake fly")) {
-         client.thePlayer.field_41736.field_7333 = this.field_47192;
+      if (this.isEnabled() && this.field_47194 && !(client.thePlayer.method_37309() < this.field_47192) && this.getBooleanValueByName("Fake fly")) {
+         client.thePlayer.positionVec.field_7333 = this.field_47192;
          client.thePlayer.field_41713 = this.field_47192;
          client.thePlayer.field_3864 = this.field_47192;
-         client.thePlayer.field_41698 = this.field_47192;
+         client.thePlayer.prevPosY = this.field_47192;
          if (class_8865.method_40772()) {
             client.thePlayer.field_3859 = 0.099999994F;
          }

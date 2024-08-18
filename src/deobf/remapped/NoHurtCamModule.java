@@ -7,7 +7,7 @@ public class NoHurtCamModule extends Module {
 
    @EventListen
    private void method_17287(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          client.thePlayer.field_29645 = 0;
       }
    }

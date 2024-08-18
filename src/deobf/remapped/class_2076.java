@@ -50,7 +50,7 @@ public class class_2076 extends PremiumModule {
 
    @EventListen
    private void method_9689(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_10452 = true;
@@ -60,7 +60,7 @@ public class class_2076 extends PremiumModule {
 
    @EventListen
    private void method_9690(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_10452 = false;
@@ -71,7 +71,7 @@ public class class_2076 extends PremiumModule {
    @EventListen
    @class_7664
    public void method_9687(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_10453++;
          if (this.field_10453 != 1) {
             if (this.field_10453 != 2) {
@@ -123,7 +123,7 @@ public class class_2076 extends PremiumModule {
          var1.method_29715(true);
       }
 
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          var1.method_6444(true);
          var1.method_6451(true);
          if (this.field_10453 != 3) {
@@ -144,7 +144,7 @@ public class class_2076 extends PremiumModule {
 
    @EventListen
    public void method_9688(PacketEvent var1) {
-      if (this.method_42015() || this.field_10453 < 0) {
+      if (this.isEnabled() || this.field_10453 < 0) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;

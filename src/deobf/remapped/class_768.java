@@ -30,7 +30,7 @@ public class class_768 extends class_3599 {
    @Override
    public void method_16796() {
       LivingEntity var3 = this.field_4156.method_17809();
-      class_1343 var4 = var3.method_37335(1.0F);
+      Vector3d var4 = var3.method_37335(1.0F);
       class_2519.method_11458(this.field_4156).method_12879(var4.field_7336, var4.field_7333, var4.field_7334, 1.0);
       this.field_4156.method_11468(true);
       this.field_4156.method_37155(SoundEvents.field_2683, 1.0F, 1.0F);
@@ -47,7 +47,7 @@ public class class_768 extends class_3599 {
       if (!this.field_4156.method_37241().method_18909(var3.getBoundingBox())) {
          double var4 = this.field_4156.method_37275(var3);
          if (var4 < 9.0) {
-            class_1343 var6 = var3.method_37335(1.0F);
+            Vector3d var6 = var3.method_37335(1.0F);
             class_2519.method_11462(this.field_4156).method_12879(var6.field_7336, var6.field_7333, var6.field_7334, 1.0);
          }
       } else {

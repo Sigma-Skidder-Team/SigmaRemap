@@ -56,7 +56,7 @@ public class class_948 implements class_1243 {
    private double field_4873;
    private double field_4882;
    private double field_4883;
-   private class_1343 field_4874;
+   private Vector3d field_4874;
    private int field_4852;
    private int field_4858;
    private boolean field_4861;
@@ -80,9 +80,9 @@ public class class_948 implements class_1243 {
 
    public void method_4160() {
       this.method_4165();
-      this.field_4880.field_41767 = this.field_4880.getPosX();
-      this.field_4880.field_41698 = this.field_4880.method_37309();
-      this.field_4880.field_41725 = this.field_4880.getPosZ();
+      this.field_4880.prevPosX = this.field_4880.getPosX();
+      this.field_4880.prevPosY = this.field_4880.method_37309();
+      this.field_4880.prevPosZ = this.field_4880.getPosZ();
       this.field_4880.method_43233();
       this.field_4880.method_37249(this.field_4853, this.field_4881, this.field_4856, this.field_4880.rotationYaw, this.field_4880.rotationPitch);
       this.field_4862++;
@@ -261,7 +261,7 @@ public class class_948 implements class_1243 {
             var20 = var12 - this.field_4873;
             var22 = var14 - this.field_4882 - 1.0E-6;
             var24 = var16 - this.field_4883;
-            var4.method_37226(class_7412.field_37842, new class_1343(var20, var22, var24));
+            var4.method_37226(class_7412.field_37842, new Vector3d(var20, var22, var24));
             var20 = var12 - var4.getPosX();
             var22 = var14 - var4.method_37309();
             if (var22 > -0.5 || var22 < 0.5) {
@@ -734,7 +734,7 @@ public class class_948 implements class_1243 {
                         this.field_4880.method_26595();
                      }
 
-                     this.field_4880.method_37226(class_7412.field_37842, new class_1343(var21, var23, var25));
+                     this.field_4880.method_37226(class_7412.field_37842, new Vector3d(var21, var23, var25));
                      var21 = var13 - this.field_4880.getPosX();
                      var23 = var15 - this.field_4880.method_37309();
                      if (var23 > -0.5 || var23 < 0.5) {
@@ -827,7 +827,7 @@ public class class_948 implements class_1243 {
       double var16 = !var9.contains(class_8089.field_41424) ? 0.0 : this.field_4880.getPosZ();
       float var18 = !var9.contains(class_8089.field_41428) ? 0.0F : this.field_4880.rotationYaw;
       float var19 = !var9.contains(class_8089.field_41429) ? 0.0F : this.field_4880.rotationPitch;
-      this.field_4874 = new class_1343(var1, var3, var5);
+      this.field_4874 = new Vector3d(var1, var3, var5);
       if (++this.field_4852 == Integer.MAX_VALUE) {
          this.field_4852 = 0;
       }

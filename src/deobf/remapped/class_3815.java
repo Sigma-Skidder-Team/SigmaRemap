@@ -144,7 +144,7 @@ public final class class_3815 {
    private static boolean method_17776(class_6331 var0, class_5990 var1, class_2921 var2, double var3) {
       if (!(var3 <= 576.0)) {
          if (var0.method_28998()
-            .method_12170(new class_1343((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5), 24.0)) {
+            .method_12170(new Vector3d((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5), 24.0)) {
             return false;
          } else {
             class_2034 var7 = new class_2034(var2);

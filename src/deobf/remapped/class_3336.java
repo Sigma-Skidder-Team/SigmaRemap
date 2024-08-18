@@ -89,8 +89,8 @@ public enum class_3336 {
       var3.add(new class_7047(this.field_16461, this.field_16457, this.field_16443));
 
       while (this.field_16463 == null && this.field_16449 == null && this.field_16457 > 0.0) {
-         class_1343 var13 = new class_1343(this.field_16461, this.field_16457, this.field_16443);
-         class_1343 var14 = new class_1343(
+         Vector3d var13 = new Vector3d(this.field_16461, this.field_16457, this.field_16443);
+         Vector3d var14 = new Vector3d(
             this.field_16461 + (double)this.field_16451, this.field_16457 + (double)this.field_16445, this.field_16443 + (double)this.field_16456
          );
          float var15 = (float)(!(this.field_16454 instanceof class_2100) ? 0.25 : 0.3);

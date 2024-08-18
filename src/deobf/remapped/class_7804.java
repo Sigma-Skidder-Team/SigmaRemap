@@ -55,7 +55,7 @@ public class class_7804 extends class_4314 {
 
    @Override
    public List<ItemStack> method_10796(class_2522 var1, class_8480 var2) {
-      class_3420 var5 = this.method_35383(var2.method_39060(), new BlockPos(var2.<class_1343>method_39062(class_8712.field_44671)));
+      class_3420 var5 = this.method_35383(var2.method_39060(), new BlockPos(var2.<Vector3d>method_39062(class_8712.field_44671)));
       return var5 != null ? var5.method_15792().method_8333(var2) : Collections.<ItemStack>emptyList();
    }
 

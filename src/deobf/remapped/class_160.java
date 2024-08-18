@@ -31,9 +31,9 @@ public class class_160 {
    }
 
    @Nullable
-   public static class_1343 method_649(class_1449 var0, double var1, double var3, double var5, LivingEntity var7, class_7653 var8) {
+   public static Vector3d method_649(class_1449 var0, double var1, double var3, double var5, LivingEntity var7, class_7653 var8) {
       if (method_648(var3)) {
-         class_1343 var11 = new class_1343(var1, var3, var5);
+         Vector3d var11 = new Vector3d(var1, var3, var5);
          if (method_647(var0, var7, var7.method_26549(var8).method_18920(var11))) {
             return var11;
          }
@@ -67,7 +67,7 @@ public class class_160 {
    }
 
    @Nullable
-   public static class_1343 method_650(EntityType<?> var0, class_1449 var1, BlockPos var2, boolean var3) {
+   public static Vector3d method_650(EntityType<?> var0, class_1449 var1, BlockPos var2, boolean var3) {
       if (var3 && var0.method_30481(var1.method_28262(var2))) {
          return null;
       } else {
@@ -76,7 +76,7 @@ public class class_160 {
             if (var3 && var6 <= 0.0 && var0.method_30481(var1.method_28262(var2.method_6100()))) {
                return null;
             } else {
-               class_1343 var8 = class_1343.method_6219(var2, var6);
+               Vector3d var8 = Vector3d.method_6219(var2, var6);
                return !var1.method_6680((Entity)null, var0.method_30473().method_27939(var8)).allMatch(class_4190::method_19485) ? null : var8;
             }
          } else {

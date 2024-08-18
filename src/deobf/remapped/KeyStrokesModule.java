@@ -39,7 +39,7 @@ public class KeyStrokesModule extends Module {
 
    @EventListen
    private void method_34855(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
             if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                this.field_39066 = var1.method_14966();
@@ -154,7 +154,7 @@ public class KeyStrokesModule extends Module {
 
    @EventListen
    private void method_34861(class_6435 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (this.method_34853(var1.method_29384()) != null && !var1.method_29385()) {
             this.field_39064.add(new class_3074(this, this.method_34853(var1.method_29384())));
          }
@@ -163,7 +163,7 @@ public class KeyStrokesModule extends Module {
 
    @EventListen
    private void method_34850(class_8706 var1) {
-      if (!this.method_42015() || client.thePlayer == null) {
+      if (!this.isEnabled() || client.thePlayer == null) {
          ;
       }
    }

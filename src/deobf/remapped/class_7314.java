@@ -12,7 +12,7 @@ public class class_7314 extends class_9733 {
       this(var1, var2, var3, var4, var5, var4.method_37098());
    }
 
-   private class_7314(EntityRenderDispatcher var1, class_3017 var2, ClientWorld var3, Entity var4, Entity var5, class_1343 var6) {
+   private class_7314(EntityRenderDispatcher var1, class_3017 var2, ClientWorld var3, Entity var4, Entity var5, Vector3d var6) {
       super(var3, var4.getPosX(), var4.method_37309(), var4.getPosZ(), var6.field_7336, var6.field_7333, var6.field_7334);
       this.field_37396 = var2;
       this.field_37398 = this.method_33357(var4);
@@ -46,7 +46,7 @@ public class class_7314 extends class_9733 {
       double var16 = MathHelper.lerp((double)var7, this.field_37398.method_37309(), var10);
       double var18 = MathHelper.lerp((double)var7, this.field_37398.getPosZ(), var12);
       class_3758 var20 = this.field_37396.method_13796();
-      class_1343 var21 = var2.method_41627();
+      Vector3d var21 = var2.method_41627();
       this.field_37400
          .method_28115(
             this.field_37398,

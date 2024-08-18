@@ -21,8 +21,8 @@ public class RearViewModule extends PremiumModule {
    }
 
    @EventListen
-   public void method_43924(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_43924(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (field_48470 != null
             && (field_48470.field_20526 != client.window.getFramebufferWidth() || field_48470.field_20534 != client.window.getFramebufferHeight())) {
             this.onEnable();
@@ -64,7 +64,7 @@ public class RearViewModule extends PremiumModule {
    @EventListen
    public void method_43926(class_3278 var1) {
       if (field_48470 != null) {
-         if (this.method_42015()) {
+         if (this.isEnabled()) {
             if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                if (!this.getBooleanValueByName("Smart Visibility")) {
                   this.field_48469
@@ -173,7 +173,7 @@ public class RearViewModule extends PremiumModule {
 
    @EventListen
    public void method_43928(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (field_48470 != null) {
             if (client.screen == null || this.getBooleanValueByName("Show in GUI") || this.field_48467 != 0) {
                FontManager.method_127();

@@ -48,7 +48,7 @@ public class class_3348 extends class_6749 {
             this.method_37204();
          } else if (var4 > 0) {
             this.method_30919(true);
-            class_1343 var5 = new class_1343(
+            Vector3d var5 = new Vector3d(
                var3.getPosX() - this.getPosX(), var3.method_37388() - this.method_37309(), var3.getPosZ() - this.getPosZ()
             );
             this.method_37222(this.getPosX(), this.method_37309() + var5.field_7333 * 0.015 * (double)var4, this.getPosZ());
@@ -85,7 +85,7 @@ public class class_3348 extends class_6749 {
 
    @Nullable
    @Override
-   public class_5631 method_30939(class_1343 var1, class_1343 var2) {
+   public class_5631 method_30939(Vector3d var1, Vector3d var2) {
       return !this.field_16518 ? super.method_30939(var1, var2) : null;
    }
 
@@ -124,7 +124,7 @@ public class class_3348 extends class_6749 {
          BlockPos var10 = var4.method_37075();
          if (this.world.method_25263(var10)) {
             class_900 var11 = EntityType.field_34224.method_30484(this.world);
-            var11.method_37196(class_1343.method_6200(var10));
+            var11.method_37196(Vector3d.method_6200(var10));
             var11.method_3857(!(var12 instanceof class_9359) ? null : (class_9359)var12);
             this.world.method_7509(var11);
             var8 = SoundEvents.field_2225;

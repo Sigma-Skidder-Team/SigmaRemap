@@ -65,7 +65,7 @@ public class class_7842 {
                   }
                }
 
-               if (var23.method_42015()) {
+               if (var23.isEnabled()) {
                   SigmaMainClass.getInstance().getEventManager().subscribe(var23);
                   if (var23 instanceof SecondModule) {
                      SecondModule var27 = (SecondModule)var23;

@@ -28,7 +28,7 @@ public class class_2730 {
    private final DamageSource field_13324;
    private final class_7571 field_13333;
    private final List<BlockPos> field_13335 = Lists.newArrayList();
-   private final Map<PlayerEntity, class_1343> field_13331 = Maps.newHashMap();
+   private final Map<PlayerEntity, Vector3d> field_13331 = Maps.newHashMap();
 
    public class_2730(World var1, Entity var2, double var3, double var5, double var7, float var9, List<BlockPos> var10) {
       this(var1, var2, var3, var5, var7, var9, false, class_7298.field_37311, var10);
@@ -64,7 +64,7 @@ public class class_2730 {
       return (class_7571)(var1 != null ? new class_362(var1) : field_13328);
    }
 
-   public static float method_12265(class_1343 var0, Entity var1) {
+   public static float method_12265(Vector3d var0, Entity var1) {
       Box var4 = var1.getBoundingBox();
       double var5 = 1.0 / ((var4.field_19940 - var4.field_19941) * 2.0 + 1.0);
       double var7 = 1.0 / ((var4.field_19939 - var4.field_19937) * 2.0 + 1.0);
@@ -81,7 +81,7 @@ public class class_2730 {
                   double var20 = MathHelper.lerp((double)var17, var4.field_19941, var4.field_19940);
                   double var22 = MathHelper.lerp((double)var18, var4.field_19937, var4.field_19939);
                   double var24 = MathHelper.lerp((double)var19, var4.field_19938, var4.field_19942);
-                  class_1343 var26 = new class_1343(var20 + var11, var22, var24 + var13);
+                  Vector3d var26 = new Vector3d(var20 + var11, var22, var24 + var13);
                   if (var1.world.method_28265(new class_972(var26, var0, class_3132.field_15553, class_9583.field_48747, var1)).method_33990()
                      == class_1430.field_7721) {
                      var15++;
@@ -150,7 +150,7 @@ public class class_2730 {
       int var11 = MathHelper.floor(this.field_13326 + (double)var53 + 1.0);
       List var12 = this.field_13330
          .method_25870(this.field_13323, new Box((double)var54, (double)var8, (double)var10, (double)var55, (double)var9, (double)var11));
-      class_1343 var13 = new class_1343(this.field_13322, this.field_13336, this.field_13326);
+      Vector3d var13 = new Vector3d(this.field_13322, this.field_13336, this.field_13326);
 
       for (int var14 = 0; var14 < var12.size(); var14++) {
          Entity var35 = (Entity)var12.get(var14);
@@ -177,7 +177,7 @@ public class class_2730 {
                   if (var35 instanceof PlayerEntity) {
                      PlayerEntity var52 = (PlayerEntity)var35;
                      if (!var52.method_37221() && (!var52.method_3186() || !var52.playerAbilities.isFlying)) {
-                        this.field_13331.put(var52, new class_1343(var38 * var48, var40 * var48, var42 * var48));
+                        this.field_13331.put(var52, new Vector3d(var38 * var48, var40 * var48, var42 * var48));
                      }
                   }
                }
@@ -224,7 +224,7 @@ public class class_2730 {
                   class_3757 var11 = !var9.method_10802() ? null : this.field_13330.method_28260(var7);
                   class_8480 var12 = new class_8480((class_6331)this.field_13330)
                      .method_39068(this.field_13330.field_33033)
-                     .method_39065(class_8712.field_44671, class_1343.method_6216(var7))
+                     .method_39065(class_8712.field_44671, Vector3d.method_6216(var7))
                      .method_39065(class_8712.field_44670, ItemStack.EMPTY)
                      .method_39069(class_8712.field_44673, var11)
                      .method_39069(class_8712.field_44676, this.field_13323);
@@ -282,7 +282,7 @@ public class class_2730 {
       return this.field_13324;
    }
 
-   public Map<PlayerEntity, class_1343> method_12267() {
+   public Map<PlayerEntity, Vector3d> method_12267() {
       return this.field_13331;
    }
 

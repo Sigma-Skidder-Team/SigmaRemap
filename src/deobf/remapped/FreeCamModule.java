@@ -29,7 +29,7 @@ public class FreeCamModule extends Module {
 
    @EventListen
    public void method_44323(class_5278 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_24098() instanceof ClientPlayerEntity && var1.method_24098() != field_48917) {
             var1.method_29715(true);
          }
@@ -38,29 +38,29 @@ public class FreeCamModule extends Module {
 
    @EventListen
    public void method_44321(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (field_48917 == null) {
             this.onEnable();
          }
 
          client.thePlayer.lastReportedPitch = client.thePlayer.rotationPitch;
-         Box var4 = client.thePlayer.field_41712;
+         Box var4 = client.thePlayer.boundingBox;
          field_48917.method_37256((var4.field_19941 + var4.field_19940) / 2.0, var4.field_19937, (var4.field_19938 + var4.field_19942) / 2.0);
          double var5 = this.field_48912 + (this.field_48921 - this.field_48912) * (double)var1.field_8848;
          double var7 = this.field_48926 + (this.field_48927 - this.field_48926) * (double)var1.field_8848;
          double var9 = this.field_48916 + (this.field_48914 - this.field_48916) * (double)var1.field_8848;
-         client.thePlayer.field_41736.field_7336 = var5;
+         client.thePlayer.positionVec.field_7336 = var5;
          client.thePlayer.field_41754 = var5;
          client.thePlayer.field_3868 = var5;
-         client.thePlayer.field_41767 = var5;
-         client.thePlayer.field_41736.field_7333 = var7;
+         client.thePlayer.prevPosX = var5;
+         client.thePlayer.positionVec.field_7333 = var7;
          client.thePlayer.field_41713 = var7;
          client.thePlayer.field_3864 = var7;
-         client.thePlayer.field_41698 = var7;
-         client.thePlayer.field_41736.field_7334 = var9;
+         client.thePlayer.prevPosY = var7;
+         client.thePlayer.positionVec.field_7334 = var9;
          client.thePlayer.field_41724 = var9;
          client.thePlayer.field_3858 = var9;
-         client.thePlayer.field_41725 = var9;
+         client.thePlayer.prevPosZ = var9;
          if (class_8865.method_40772()) {
             client.thePlayer.field_3859 = 0.099999994F;
          }
@@ -69,9 +69,9 @@ public class FreeCamModule extends Module {
 
    @EventListen
    public void method_44322(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          field_48917.method_37298();
-         field_48917.field_41712 = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+         field_48917.boundingBox = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
       }
    }
 
@@ -129,14 +129,14 @@ public class FreeCamModule extends Module {
 
    @EventListen
    private void method_44330(class_3574 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_29715(true);
       }
    }
 
    @EventListen
    private void method_44329(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() != client.gameOptions.keySneak.field_30027.field_17800) {
             if (var1.method_29384() != client.gameOptions.keyJump.field_30027.field_17800) {
                if (var1.method_29384() != client.gameOptions.keyForward.field_30027.field_17800) {
@@ -174,7 +174,7 @@ public class FreeCamModule extends Module {
 
    @EventListen
    private void method_44328(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_1364() != client.gameOptions.keySneak.field_30027.field_17800) {
             if (var1.method_1364() != client.gameOptions.keyJump.field_30027.field_17800) {
                if (var1.method_1364() != client.gameOptions.keyForward.field_30027.field_17800) {
@@ -212,14 +212,14 @@ public class FreeCamModule extends Module {
 
    @EventListen
    public void method_44320(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_29715(true);
       }
    }
 
    @EventListen
    public void method_44319(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          var1.method_6441(this.field_48915 % 360.0F);
          var1.method_6448(this.field_48920);
          client.thePlayer.lastReportedYaw = this.field_48915;
@@ -248,7 +248,7 @@ public class FreeCamModule extends Module {
 
    @EventListen
    private void method_44326(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null) {
             if (var1.method_557() instanceof class_509) {
                class_509 var4 = (class_509)var1.method_557();
@@ -274,7 +274,7 @@ public class FreeCamModule extends Module {
 
    @EventListen
    private void method_44327(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_10047() instanceof class_3195) {
             field_48917.method_26597(Hand.MAIN_HAND);
          }
@@ -290,14 +290,14 @@ public class FreeCamModule extends Module {
 
    @EventListen
    private void method_44325(class_9081 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_29715(true);
       }
    }
 
    @EventListen
    private void method_44324(class_717 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.method_42023(false);
       }
    }

@@ -58,7 +58,7 @@ public class class_3569 {
    }
 
    public <E extends class_3757> void method_16586(E var1, float var2, class_7966 var3, class_2565 var4) {
-      if (class_1343.method_6216(var1.method_17399()).method_6222(this.field_17463.method_41627(), var1.method_17404())) {
+      if (Vector3d.method_6216(var1.method_17399()).method_6222(this.field_17463.method_41627(), var1.method_17404())) {
          class_2255 var7 = this.<class_3757>method_16595(var1);
          if (var7 != null && var1.method_17392() && var1.method_17405().method_448(var1.method_17403().method_8360())) {
             method_16593(var1, () -> method_16585(var7, var1, var2, var3, var4));

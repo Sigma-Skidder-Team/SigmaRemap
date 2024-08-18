@@ -11,7 +11,7 @@ public class StreamingModule extends Module {
 
    @EventListen
    public void method_5003(class_4981 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.getBooleanValueByName("Hide server name") && this.getStringValueByName("Server name").length() > 1) {
             var1.method_22940(var1.method_22941().replaceAll(this.getStringValueByName("Server name"), "sigmaclient"));
             var1.method_22940(var1.method_22941().replaceAll(this.getStringValueByName("Server name").toLowerCase(), "sigmaclient"));
@@ -26,7 +26,7 @@ public class StreamingModule extends Module {
 
    @EventListen
    public void method_5004(class_5278 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.getBooleanValueByName("Hide skins")) {
             var1.method_24088(false);
          }

@@ -23,7 +23,7 @@ public class class_9155 implements class_8773 {
    public static final SimpleCommandExceptionType field_46861 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.player"));
    public static final SimpleCommandExceptionType field_46857 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.entity"));
    private final class_5801 field_46849;
-   private final class_1343 field_46860;
+   private final Vector3d field_46860;
    private final class_6331 field_46847;
    private final int field_46851;
    private final String field_46854;
@@ -36,7 +36,7 @@ public class class_9155 implements class_8773 {
    private final class_4895 field_46858;
 
    public class_9155(
-      class_5801 var1, class_1343 var2, class_4895 var3, class_6331 var4, int var5, String var6, ITextComponent var7, class_341 var8, Entity var9
+           class_5801 var1, Vector3d var2, class_4895 var3, class_6331 var4, int var5, String var6, ITextComponent var7, class_341 var8, Entity var9
    ) {
       this(var1, var2, var3, var4, var5, var6, var7, var8, var9, false, (var0, var1x, var2x) -> {
       }, class_6139.field_31493);
@@ -44,7 +44,7 @@ public class class_9155 implements class_8773 {
 
    public class_9155(
       class_5801 var1,
-      class_1343 var2,
+      Vector3d var2,
       class_4895 var3,
       class_6331 var4,
       int var5,
@@ -89,7 +89,7 @@ public class class_9155 implements class_8773 {
          : this;
    }
 
-   public class_9155 method_42180(class_1343 var1) {
+   public class_9155 method_42180(Vector3d var1) {
       return !this.field_46860.equals(var1)
          ? new class_9155(
             this.field_46849,
@@ -230,7 +230,7 @@ public class class_9155 implements class_8773 {
    public class_9155 method_42195(class_6331 var1) {
       if (var1 != this.field_46847) {
          double var4 = class_8760.method_40232(this.field_46847.method_22572(), var1.method_22572());
-         class_1343 var6 = new class_1343(this.field_46860.field_7336 * var4, this.field_46860.field_7333, this.field_46860.field_7334 * var4);
+         Vector3d var6 = new Vector3d(this.field_46860.field_7336 * var4, this.field_46860.field_7333, this.field_46860.field_7334 * var4);
          return new class_9155(
             this.field_46849,
             var6,
@@ -254,8 +254,8 @@ public class class_9155 implements class_8773 {
       return this.method_42182(var2.method_28187(var1));
    }
 
-   public class_9155 method_42182(class_1343 var1) throws CommandSyntaxException {
-      class_1343 var4 = this.field_46850.method_28188(this);
+   public class_9155 method_42182(Vector3d var1) throws CommandSyntaxException {
+      Vector3d var4 = this.field_46850.method_28188(this);
       double var5 = var1.field_7336 - var4.field_7336;
       double var7 = var1.field_7333 - var4.field_7333;
       double var9 = var1.field_7334 - var4.field_7334;
@@ -278,7 +278,7 @@ public class class_9155 implements class_8773 {
       return this.field_46851 >= var1;
    }
 
-   public class_1343 method_42192() {
+   public Vector3d method_42192() {
       return this.field_46860;
    }
 

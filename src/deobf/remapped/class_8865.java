@@ -283,17 +283,17 @@ public class class_8865 {
       return var3;
    }
 
-   public static class_1343 method_40768(boolean var0, double var1, double var3) {
-      class_1343 var7 = new class_1343(var1, (double)field_45329.thePlayer.field_29651, var3);
+   public static Vector3d method_40768(boolean var0, double var1, double var3) {
+      Vector3d var7 = new Vector3d(var1, (double)field_45329.thePlayer.field_29651, var3);
       double var8 = var7.method_6221();
       float var10 = 0.6F;
       double var11 = !var0
          ? (double)field_45329.thePlayer.field_29674
          : (double)(field_45329.thePlayer.method_26423() * (0.21600002F / (var10 * var10 * var10)));
-      class_1343 var13 = (!(var8 > 1.0) ? var7 : var7.method_6213()).method_6209(var11);
+      Vector3d var13 = (!(var8 > 1.0) ? var7 : var7.method_6213()).method_6209(var11);
       float var14 = MathHelper.sin(field_45329.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
       float var15 = MathHelper.cos(field_45329.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
-      return new class_1343(
+      return new Vector3d(
          var13.field_7336 * (double)var15 - var13.field_7334 * (double)var14,
          var13.field_7333,
          var13.field_7334 * (double)var15 + var13.field_7336 * (double)var14

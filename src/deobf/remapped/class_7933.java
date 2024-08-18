@@ -403,7 +403,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       this.field_40586.clear();
    }
 
-   public List<class_8932<?>> method_35879(World var1, class_1343 var2) {
+   public List<class_8932<?>> method_35879(World var1, Vector3d var2) {
       ArrayList var5 = Lists.newArrayList();
       ObjectIterator var6 = this.field_40586.object2IntEntrySet().iterator();
 
@@ -418,7 +418,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       return var5;
    }
 
-   private static void method_35868(World var0, class_1343 var1, int var2, float var3) {
+   private static void method_35868(World var0, Vector3d var1, int var2, float var3) {
       int var6 = MathHelper.floor((float)var2 * var3);
       float var7 = MathHelper.frac((float)var2 * var3);
       if (var7 != 0.0F && Math.random() < (double)var7) {

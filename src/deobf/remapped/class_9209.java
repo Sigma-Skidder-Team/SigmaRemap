@@ -359,7 +359,7 @@ public class class_9209 {
       return var7.size();
    }
 
-   private static int method_42522(class_9155 var0, class_1343 var1, List<ItemStack> var2, class_3119 var3) throws CommandSyntaxException {
+   private static int method_42522(class_9155 var0, Vector3d var1, List<ItemStack> var2, class_3119 var3) throws CommandSyntaxException {
       class_6331 var6 = var0.method_42198();
       var2.forEach(var2x -> {
          class_91 var5 = new class_91(var6, var1.field_7336, var1.field_7333, var1.field_7334, var2x.method_27973());
@@ -403,7 +403,7 @@ public class class_9209 {
       class_2522 var8 = var7.method_28262(var1);
       class_3757 var9 = var7.method_28260(var1);
       class_8480 var10 = new class_8480(var7)
-         .method_39065(class_8712.field_44671, class_1343.method_6216(var1))
+         .method_39065(class_8712.field_44671, Vector3d.method_6216(var1))
          .method_39065(class_8712.field_44677, var8)
          .method_39069(class_8712.field_44673, var9)
          .method_39069(class_8712.field_44676, var6.method_42200())
@@ -446,7 +446,7 @@ public class class_9209 {
    private static int method_42524(CommandContext<class_9155> var0, Identifier var1, BlockPos var2, ItemStack var3, class_6374 var4) throws CommandSyntaxException {
       class_9155 var7 = (class_9155)var0.getSource();
       class_2792 var8 = new class_8480(var7.method_42198())
-         .method_39065(class_8712.field_44671, class_1343.method_6216(var2))
+         .method_39065(class_8712.field_44671, Vector3d.method_6216(var2))
          .method_39065(class_8712.field_44670, var3)
          .method_39069(class_8712.field_44676, var7.method_42200())
          .method_39064(class_4933.field_25570);

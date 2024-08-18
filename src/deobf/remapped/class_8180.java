@@ -36,13 +36,13 @@ public class class_8180 extends class_3599 {
             class_6862.method_31486(this.field_41874)
                .method_5595((double)var3.getX(), (double)var3.getY(), (double)var3.getZ(), this.field_41875);
          } else {
-            class_1343 var4 = new class_1343(
+            Vector3d var4 = new Vector3d(
                   (double)var3.getX() - this.field_41876.getPosX(),
                   (double)var3.getY() - this.field_41876.method_37309(),
                   (double)var3.getZ() - this.field_41876.getPosZ()
                )
                .method_6213();
-            class_1343 var5 = var4.method_6209(10.0)
+            Vector3d var5 = var4.method_6209(10.0)
                .method_6214(this.field_41876.getPosX(), this.field_41876.method_37309(), this.field_41876.getPosZ());
             class_6862.method_31478(this.field_41874).method_5595(var5.field_7336, var5.field_7333, var5.field_7334, this.field_41875);
          }

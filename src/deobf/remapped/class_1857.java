@@ -81,8 +81,8 @@ public class class_1857 {
          }
 
          if (class_3347.method_15349() == class_412.field_1747.method_2055()) {
-            if (this.field_9415.thePlayer.field_41712.field_19939 - this.field_9415.thePlayer.field_41712.field_19937 == 1.5) {
-               this.field_9415.thePlayer.field_41712 = this.field_9415.thePlayer.field_41712.method_18928(0.0, 0.29999995F, 0.0);
+            if (this.field_9415.thePlayer.boundingBox.field_19939 - this.field_9415.thePlayer.boundingBox.field_19937 == 1.5) {
+               this.field_9415.thePlayer.boundingBox = this.field_9415.thePlayer.boundingBox.method_18928(0.0, 0.29999995F, 0.0);
             }
 
             if (this.field_9415.thePlayer.field_41710 == 1.27F) {
@@ -94,7 +94,7 @@ public class class_1857 {
 
    @EventListen
    @class_5355
-   public void method_8225(class_5596 var1) {
+   public void method_8225(PlayerTickEvent var1) {
       if (this.method_8231()) {
          int var4 = field_9416.size();
 
@@ -172,7 +172,7 @@ public class class_1857 {
    @EventListen
    @class_5355
    public void method_8221(PacketEvent var1) {
-      if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OldHittingModule.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
+      if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OldHittingModule.class).isEnabled() && class_3347.method_15349() != class_412.field_1747.method_2055()
          )
        {
          if (!field_9416.isEmpty()) {
@@ -185,7 +185,7 @@ public class class_1857 {
             if (var6.getFirst() == class_6943.field_35701
                && var6.getSecond() != null
                && (
-                  SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OldHittingModule.class).method_42015()
+                  SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OldHittingModule.class).isEnabled()
                      || class_3347.method_15349() == class_412.field_1747.method_2055()
                )) {
                if (!(((ItemStack)var6.getSecond()).method_27960() instanceof class_8440)) {
@@ -356,7 +356,7 @@ public class class_1857 {
                   var1.method_24090(MathHelper.interpolateAngle(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29618));
                   var1.method_24086(MathHelper.lerp(var1.method_24094(), class_1393.field_7602, var1.method_24098().rotationPitch));
                   var1.method_24099(var1.method_24092() - var1.method_24091());
-                  var1.method_24098().field_41762 = class_1393.field_7602;
+                  var1.method_24098().prevRotationPitch = class_1393.field_7602;
                   var1.method_24098().prevRotationYaw = class_1393.field_7593;
                   var1.method_24098().field_29657 = class_1393.field_7593;
                   var1.method_24098().field_29611 = class_1393.field_7593;

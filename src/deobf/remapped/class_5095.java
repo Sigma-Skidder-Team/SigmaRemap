@@ -16,9 +16,9 @@ public class class_5095 implements class_1808 {
    }
 
    @Override
-   public class_1343 method_8027(class_9155 var1) {
-      class_1343 var4 = var1.method_42192();
-      return new class_1343(
+   public Vector3d method_8027(class_9155 var1) {
+      Vector3d var4 = var1.method_42192();
+      return new Vector3d(
          this.field_26286.method_27167(var4.field_7336), this.field_26285.method_27167(var4.field_7333), this.field_26288.method_27167(var4.field_7334)
       );
    }

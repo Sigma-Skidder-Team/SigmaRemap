@@ -59,7 +59,7 @@ public class class_6650 {
 
    public void method_30550(class_9359 var1) {
       if (var1 != this.field_34409) {
-         class_1343 var4 = var1.method_37245().method_6194(this.field_34414.method_35255());
+         Vector3d var4 = var1.method_37245().method_6194(this.field_34414.method_35255());
          int var5 = Math.min(this.method_30556(), (class_916.method_4026(this.field_34408) - 1) * 16);
          boolean var6 = var4.field_7336 >= (double)(-var5)
             && var4.field_7336 <= (double)var5
@@ -71,7 +71,7 @@ public class class_6650 {
                this.field_34414.method_35262(var1);
             }
          } else {
-            boolean var7 = this.field_34409.field_41722;
+            boolean var7 = this.field_34409.forceSpawn;
             if (!var7) {
                class_2034 var8 = new class_2034(this.field_34409.field_41742, this.field_34409.field_41714);
                class_5344 var9 = this.field_34408.method_4023(var8.method_9539());

@@ -69,7 +69,7 @@ public class class_8996 extends class_7186 {
             BlockPos var5 = var1.method_37075();
             List var6 = this.field_46054.method_28969().method_6877(class_236.field_768, var5, 64, class_8122.field_41618).collect(Collectors.toList());
             int var7 = 0;
-            class_1343 var8 = class_1343.field_7335;
+            Vector3d var8 = Vector3d.ZERO;
 
             for (class_8009 var10 : var6) {
                BlockPos var11 = var10.method_36337();

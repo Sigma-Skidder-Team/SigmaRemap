@@ -163,7 +163,7 @@ public class class_293 {
          var8.getProfiler().method_16050("shadow frustum");
          class_8934 var11 = new class_8934();
          var8.getProfiler().method_16050("shadow culling");
-         class_1343 var12 = var1.method_41627();
+         Vector3d var12 = var1.method_41627();
          var11.method_10820(var12.field_7336, var12.field_7333, var12.field_7334);
          GlStateManager.method_8932(7425);
          GlStateManager.enableDepthTest();

@@ -11,14 +11,14 @@ public class NameProtectModule extends Module {
 
    @EventListen
    public void method_43855(class_4981 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_22940(var1.method_22941().replaceAll(client.method_8502().method_5366(), this.getStringValueByName("Username")));
       }
    }
 
    @EventListen
    public void method_43854(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_1625) {
             class_1625 var5 = (class_1625)var4;

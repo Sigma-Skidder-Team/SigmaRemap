@@ -16,7 +16,7 @@ public class class_7713 extends class_3599 {
       if (this.field_39121.isAlive()) {
          if (!this.field_39121.method_37285()) {
             if (this.field_39121.method_37360()) {
-               if (!this.field_39121.field_41743) {
+               if (!this.field_39121.velocityChanged) {
                   PlayerEntity var3 = this.field_39121.method_978();
                   if (var3 != null) {
                      return !(this.field_39121.method_37275(var3) > 16.0) ? var3.field_3874 != null : false;

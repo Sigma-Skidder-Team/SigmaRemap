@@ -17,7 +17,7 @@ public class class_3052 extends class_8273<class_2230> {
       return new class_2230(var2, var6, var7, var8);
    }
 
-   public void method_13945(class_9359 var1, class_1343 var2) {
+   public void method_13945(class_9359 var1, Vector3d var2) {
       this.method_38137(var1, var2x -> var2x.method_10274(var1.method_43235(), var2, var1.getPosX(), var1.method_37309(), var1.getPosZ()));
    }
 }

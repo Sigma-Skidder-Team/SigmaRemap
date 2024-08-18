@@ -28,7 +28,7 @@ public class AutoPotionModule extends Module {
    @EventListen
    @class_4249
    private void method_12642(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          if (this.getBooleanValueByName("In fight") || KillauraModule.field_12556 == null && KillauraModule.field_12558 == null) {
             int var4 = this.method_12640();
             this.field_13560++;
@@ -79,7 +79,7 @@ public class AutoPotionModule extends Module {
 
    public float[] method_12644() {
       double var3 = client.thePlayer.getPosX() + client.thePlayer.method_37098().field_7336 * 26.0;
-      double var5 = client.thePlayer.field_41712.field_19937 - 3.6;
+      double var5 = client.thePlayer.boundingBox.field_19937 - 3.6;
       double var7 = client.thePlayer.getPosZ() + client.thePlayer.method_37098().field_7334 * 26.0;
       return !this.getBooleanValueByName("Predict") ? new float[]{client.thePlayer.rotationYaw, 90.0F} : class_7211.method_33006(var3, var7, var5);
    }
@@ -164,7 +164,7 @@ public class AutoPotionModule extends Module {
          } else {
             this.field_13560 = 0;
             int var7 = client.thePlayer.inventory.field_36404;
-            boolean var8 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42015()
+            boolean var8 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).isEnabled()
                && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).getStringValueByName("Type").equalsIgnoreCase("NoGround");
             float[] var9 = this.method_12644();
             client.thePlayer.inventory.field_36404 = var6 - 36;

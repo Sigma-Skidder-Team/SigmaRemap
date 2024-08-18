@@ -48,7 +48,7 @@ public abstract class class_2340 {
 
    public abstract boolean method_10709(class_4774 var1, class_6163 var2, BlockPos var3, class_2340 var4, Direction var5);
 
-   public abstract class_1343 method_10725(class_6163 var1, BlockPos var2, class_4774 var3);
+   public abstract Vector3d method_10725(class_6163 var1, BlockPos var2, class_4774 var3);
 
    public abstract int method_10711(class_4924 var1);
 

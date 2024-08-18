@@ -10,7 +10,7 @@ public class SimsESP extends Module {
 
    @EventListen
    public void method_32570(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          for (Entity var5 : class_7494.method_34088(class_314.method_1435())) {
             if (var5 != client.thePlayer && !SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                method_32571(

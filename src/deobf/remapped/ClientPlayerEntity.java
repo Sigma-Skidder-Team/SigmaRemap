@@ -186,7 +186,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   this.connection.sendPacket(new class_9515(var8, var10, var12, var16));
                }
             } else {
-               class_1343 var29 = this.method_37098();
+               Vector3d var29 = this.method_37098();
                this.connection.sendPacket(new class_1514(var29.field_7336, -999.0, var29.field_7334, var15, var14, var16));
                var27 = false;
             }
@@ -376,7 +376,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          if (var12 != null) {
-            class_1343 var24 = this.method_37098();
+            Vector3d var24 = this.method_37098();
             if (var12.method_1029() != class_9249.field_47215) {
                this.method_37214(var24.field_7336, var24.field_7333, 0.1 * (double)var12.method_1034());
             } else {
@@ -823,7 +823,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method_37226(class_7412 var1, class_1343 var2) {
+   public void method_37226(class_7412 var1, Vector3d var2) {
       double var5 = this.getPosX();
       double var7 = this.getPosZ();
       super.method_37226(var1, var2);
@@ -836,9 +836,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    public void method_27316(float var1, float var2) {
       if (this.method_27325()) {
-         class_1343 var5 = this.method_37245();
-         class_1343 var6 = var5.method_6214((double)var1, 0.0, (double)var2);
-         class_1343 var7 = new class_1343((double)var1, 0.0, (double)var2);
+         Vector3d var5 = this.method_37245();
+         Vector3d var6 = var5.method_6214((double)var1, 0.0, (double)var2);
+         Vector3d var7 = new Vector3d((double)var1, 0.0, (double)var2);
          float var8 = this.method_26423();
          float var9 = (float)var7.method_6221();
          if (var9 <= 0.001F) {
@@ -847,7 +847,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             float var12 = var8 * var10.field_24329;
             float var13 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0));
             float var14 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
-            var7 = new class_1343((double)(var11 * var14 - var12 * var13), var7.field_7333, (double)(var12 * var14 + var11 * var13));
+            var7 = new Vector3d((double)(var11 * var14 - var12 * var13), var7.field_7333, (double)(var12 * var14 + var11 * var13));
             var9 = (float)var7.method_6221();
             if (var9 <= 0.001F) {
                return;
@@ -855,8 +855,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          float var42 = MathHelper.fastInvSqrt(var9);
-         class_1343 var43 = var7.method_6209((double)var42);
-         class_1343 var44 = this.method_37129();
+         Vector3d var43 = var7.method_6209((double)var42);
+         Vector3d var44 = this.method_37129();
          float var45 = (float)(var44.field_7336 * var43.field_7336 + var44.field_7334 * var43.field_7334);
          if (!(var45 < -0.15F)) {
             class_214 var46 = class_214.method_926(this);
@@ -873,18 +873,18 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   }
 
                   float var20 = Math.max(var8 * 7.0F, 1.0F / var42);
-                  class_1343 var21 = var6.method_6215(var43.method_6209((double)var20));
+                  Vector3d var21 = var6.method_6215(var43.method_6209((double)var20));
                   float var22 = this.method_37086();
                   float var23 = this.method_37074();
                   Box var24 = new Box(var5, var21.method_6214(0.0, (double)var23, 0.0)).method_18899((double)var22, 0.0, (double)var22);
-                  class_1343 var25 = var5.method_6214(0.0, 0.51F, 0.0);
+                  Vector3d var25 = var5.method_6214(0.0, 0.51F, 0.0);
                   var21 = var21.method_6214(0.0, 0.51F, 0.0);
-                  class_1343 var26 = var43.method_6196(new class_1343(0.0, 1.0, 0.0));
-                  class_1343 var27 = var26.method_6209((double)(var22 * 0.5F));
-                  class_1343 var28 = var25.method_6194(var27);
-                  class_1343 var29 = var21.method_6194(var27);
-                  class_1343 var30 = var25.method_6215(var27);
-                  class_1343 var31 = var21.method_6215(var27);
+                  Vector3d var26 = var43.method_6196(new Vector3d(0.0, 1.0, 0.0));
+                  Vector3d var27 = var26.method_6209((double)(var22 * 0.5F));
+                  Vector3d var28 = var25.method_6194(var27);
+                  Vector3d var29 = var21.method_6194(var27);
+                  Vector3d var30 = var25.method_6215(var27);
+                  Vector3d var31 = var21.method_6215(var27);
                   Iterator var32 = this.world.method_6676(this, var24, var0 -> true).<Box>flatMap(var0 -> var0.method_19492().stream()).iterator();
                   float var33 = Float.MIN_VALUE;
 
@@ -892,7 +892,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                      Box var34 = (Box)var32.next();
                      if (var34.method_18908(var28, var29) || var34.method_18908(var30, var31)) {
                         var33 = (float)var34.field_19939;
-                        class_1343 var35 = var34.method_18926();
+                        Vector3d var35 = var34.method_18926();
                         BlockPos var36 = new BlockPos(var35);
 
                         for (int var37 = 1; (float)var37 < var19; var37++) {
@@ -994,14 +994,14 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public class_1343 method_37202(float var1) {
+   public Vector3d method_37202(float var1) {
       if (!this.client.gameOptions.getPointOfView().method_42383()) {
          return super.method_37202(var1);
       } else {
          float var4 = MathHelper.lerp(var1 * 0.5F, this.rotationYaw, this.prevRotationYaw) * (float) (Math.PI / 180.0);
-         float var5 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.field_41762) * (float) (Math.PI / 180.0);
+         float var5 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
          double var6 = this.method_26432() != class_1736.field_8943 ? 1.0 : -1.0;
-         class_1343 var8 = new class_1343(0.39 * var6, -0.6, 0.3);
+         Vector3d var8 = new Vector3d(0.39 * var6, -0.6, 0.3);
          return var8.method_6212(-var5).method_6192(-var4).method_6215(this.method_37335(var1));
       }
    }

@@ -22,7 +22,7 @@ public final class class_2426 {
       this.field_12079 = var3;
    }
 
-   public class_2426(class_1343 var1) {
+   public class_2426(Vector3d var1) {
       this((float)var1.field_7336, (float)var1.field_7333, (float)var1.field_7334);
    }
 

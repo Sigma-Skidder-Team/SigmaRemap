@@ -24,7 +24,7 @@ public class class_1607 extends class_3599 {
       this.field_8340++;
       LivingEntity var3 = this.field_8338.method_26531();
       if (var3 != null) {
-         class_1343 var4 = new class_1343(
+         Vector3d var4 = new Vector3d(
             this.field_8338.method_37302() - var3.getPosX(),
             this.field_8338.method_37309() - var3.method_37309(),
             this.field_8338.method_37156() - var3.getPosZ()

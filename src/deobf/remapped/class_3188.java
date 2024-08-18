@@ -17,22 +17,22 @@ public class class_3188 implements class_1808 {
    }
 
    @Override
-   public class_1343 method_8027(class_9155 var1) {
+   public Vector3d method_8027(class_9155 var1) {
       class_4895 var4 = var1.method_42174();
-      class_1343 var5 = var1.method_42181().method_28188(var1);
+      Vector3d var5 = var1.method_42181().method_28188(var1);
       float var6 = MathHelper.cos((var4.field_24329 + 90.0F) * (float) (Math.PI / 180.0));
       float var7 = MathHelper.sin((var4.field_24329 + 90.0F) * (float) (Math.PI / 180.0));
       float var8 = MathHelper.cos(-var4.field_24326 * (float) (Math.PI / 180.0));
       float var9 = MathHelper.sin(-var4.field_24326 * (float) (Math.PI / 180.0));
       float var10 = MathHelper.cos((-var4.field_24326 + 90.0F) * (float) (Math.PI / 180.0));
       float var11 = MathHelper.sin((-var4.field_24326 + 90.0F) * (float) (Math.PI / 180.0));
-      class_1343 var12 = new class_1343((double)(var6 * var8), (double)var9, (double)(var7 * var8));
-      class_1343 var13 = new class_1343((double)(var6 * var10), (double)var11, (double)(var7 * var10));
-      class_1343 var14 = var12.method_6196(var13).method_6209(-1.0);
+      Vector3d var12 = new Vector3d((double)(var6 * var8), (double)var9, (double)(var7 * var8));
+      Vector3d var13 = new Vector3d((double)(var6 * var10), (double)var11, (double)(var7 * var10));
+      Vector3d var14 = var12.method_6196(var13).method_6209(-1.0);
       double var15 = var12.field_7336 * this.field_15922 + var13.field_7336 * this.field_15919 + var14.field_7336 * this.field_15920;
       double var17 = var12.field_7333 * this.field_15922 + var13.field_7333 * this.field_15919 + var14.field_7333 * this.field_15920;
       double var19 = var12.field_7334 * this.field_15922 + var13.field_7334 * this.field_15919 + var14.field_7334 * this.field_15920;
-      return new class_1343(var5.field_7336 + var15, var5.field_7333 + var17, var5.field_7334 + var19);
+      return new Vector3d(var5.field_7336 + var15, var5.field_7333 + var17, var5.field_7334 + var19);
    }
 
    @Override

@@ -30,12 +30,12 @@ public class SecondModule extends Module {
 
       for (Module var6 : this.field_17661) {
          boolean var7 = this.getStringValueByName("Type").equals(var6.name);
-         if (this.method_42015() && client.thePlayer != null) {
+         if (this.isEnabled() && client.thePlayer != null) {
             var6.method_42023(var7);
             if (var7) {
                this.field_17664 = var6;
             }
-         } else if (this.method_42015()) {
+         } else if (this.isEnabled()) {
             var6.setEnabled1(var7);
          }
 
@@ -75,7 +75,7 @@ public class SecondModule extends Module {
          this.method_16866();
       }
 
-      return this.field_17664 != null ? this.field_17664.method_42003() : this.method_42015();
+      return this.field_17664 != null ? this.field_17664.method_42003() : this.isEnabled();
    }
 
    @Override

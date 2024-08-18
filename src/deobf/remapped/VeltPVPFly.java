@@ -36,7 +36,7 @@ public class VeltPVPFly extends Module {
 
    @EventListen
    private void method_16579(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_17456 = true;
@@ -46,7 +46,7 @@ public class VeltPVPFly extends Module {
 
    @EventListen
    private void method_16578(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_17456 = false;
@@ -57,7 +57,7 @@ public class VeltPVPFly extends Module {
    @EventListen
    @class_7664
    public void method_16577(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = (double)this.getFloatValueByName("Speed");
          if (this.field_17458 <= 0) {
             if (this.field_17458 != -1) {
@@ -90,7 +90,7 @@ public class VeltPVPFly extends Module {
 
    @EventListen
    public void method_16576(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_17458++;
          if (this.field_17458 != 2) {
             if (this.field_17458 > 2) {
@@ -116,7 +116,7 @@ public class VeltPVPFly extends Module {
 
    @EventListen
    public void method_16580(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (!(var4 instanceof class_509)) {
             if (var4 instanceof class_5182) {
@@ -141,7 +141,7 @@ public class VeltPVPFly extends Module {
 
    @EventListen
    public void method_16581(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_10047();
          if (var4 instanceof class_4609) {
             class_4609 var5 = (class_4609)var4;
@@ -154,12 +154,12 @@ public class VeltPVPFly extends Module {
 
    @EventListen
    public void method_16582(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = this.field_17460;
-         client.thePlayer.field_41736.field_7333 = var4;
+         client.thePlayer.positionVec.field_7333 = var4;
          client.thePlayer.field_41713 = var4;
          client.thePlayer.field_3864 = var4;
-         client.thePlayer.field_41698 = var4;
+         client.thePlayer.prevPosY = var4;
       }
    }
 }

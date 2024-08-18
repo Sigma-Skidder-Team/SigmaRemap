@@ -105,7 +105,7 @@ public class class_3420 extends class_3757 implements class_3745 {
                      }
 
                      if (!(var13 instanceof class_9359)) {
-                        class_1343 var14 = var13.method_37098();
+                        Vector3d var14 = var13.method_37098();
                         double var15 = var14.field_7336;
                         double var17 = var14.field_7333;
                         double var19 = var14.field_7334;
@@ -154,7 +154,7 @@ public class class_3420 extends class_3757 implements class_3745 {
    private static void method_15782(Direction var0, Entity var1, double var2, Direction var4) {
       field_16831.set(var0);
       var1.method_37226(
-         class_7412.field_37838, new class_1343(var2 * (double)var4.method_1041(), var2 * (double)var4.method_1054(), var2 * (double)var4.method_1034())
+         class_7412.field_37838, new Vector3d(var2 * (double)var4.method_1041(), var2 * (double)var4.method_1054(), var2 * (double)var4.method_1034())
       );
       field_16831.set((Direction)null);
    }

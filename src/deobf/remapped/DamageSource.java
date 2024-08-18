@@ -215,7 +215,7 @@ public class DamageSource {
    }
 
    @Nullable
-   public class_1343 method_28365() {
+   public Vector3d method_28365() {
       return null;
    }
 }

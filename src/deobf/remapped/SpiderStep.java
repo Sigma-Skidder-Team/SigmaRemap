@@ -19,7 +19,7 @@ public class SpiderStep extends Module {
    @EventListen
    @class_7664
    private void method_44591(class_8544 var1) {
-      if (this.method_42015() && !var1.method_29716()) {
+      if (this.isEnabled() && !var1.method_29716()) {
          double var4 = var1.method_39326();
          class_1380 var6 = ((StepModule)this.getModule()).method_19450(var1);
          if (var6 == class_1380.field_7487) {
@@ -45,11 +45,11 @@ public class SpiderStep extends Module {
 
    @EventListen
    private void method_44592(class_1393 var1) {
-      if (this.method_42015() && client.thePlayer != null && var1.method_6449()) {
+      if (this.isEnabled() && client.thePlayer != null && var1.method_6449()) {
          if (this.field_49203 != 1) {
             if (this.field_49203 == 3) {
                Module var4 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class);
-               if (var4.method_42015() && var4.getStringValueByName("Type").equals("NoGround")) {
+               if (var4.isEnabled() && var4.getStringValueByName("Type").equals("NoGround")) {
                   var1.method_6455(var1.method_6454() + 1.0E-14);
                } else {
                   var1.method_6451(true);
@@ -63,7 +63,7 @@ public class SpiderStep extends Module {
 
    @EventListen
    private void method_44589(class_7767 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (this.field_49203 == 1) {
             double var4 = class_8865.method_40786();
             if (this.field_49205 < 1.1) {
@@ -110,7 +110,7 @@ public class SpiderStep extends Module {
 
    @EventListen
    private void method_44590(class_7982 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!var1.method_36184()) {
             client.thePlayer.field_41733 = 1.07F;
          } else {

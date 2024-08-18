@@ -35,7 +35,7 @@ public class ChestStealerModule extends Module {
 
    @EventListen
    public void method_14639(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          if (this.getBooleanValueByName("Aura")) {
             if (this.field_15893.method_14772() > 2000L && this.field_15894) {
                this.field_15893.method_14773();
@@ -107,7 +107,7 @@ public class ChestStealerModule extends Module {
 
    @EventListen
    public void method_14635(class_3278 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!(client.screen instanceof class_2141)) {
             this.field_15894 = false;
             this.field_15895.method_14774();
@@ -275,7 +275,7 @@ public class ChestStealerModule extends Module {
                   return !BlockFlyModule.method_17216(var4);
                } else if (!(var4 instanceof class_603)
                   && (!(var4 instanceof class_2100) || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(InvManagerModule.class).getBooleanValueByName("Archery"))) {
-                  if (var4 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).method_42015()) {
+                  if (var4 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).isEnabled()) {
                      return false;
                   } else {
                      ArrayList var5 = new ArrayList<class_2451>(

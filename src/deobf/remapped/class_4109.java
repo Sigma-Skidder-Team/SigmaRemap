@@ -640,7 +640,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       if (this.isAlive()) {
          if (this.method_37151() && this.canBeSteered() && this.method_43357()) {
             LivingEntity var4 = (LivingEntity)this.getControllingPassenger();
@@ -671,7 +671,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
                   var9 = var7 + (double)((float)(this.method_26553(Effects.field_19730).method_10333() + 1) * 0.1F);
                }
 
-               class_1343 var11 = this.method_37098();
+               Vector3d var11 = this.method_37098();
                this.method_37214(var11.field_7336, var9, var11.field_7334);
                this.method_19080(true);
                this.field_41763 = true;
@@ -687,11 +687,11 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             this.field_29674 = this.method_26423() * 0.1F;
             if (!this.canPassengerSteer()) {
                if (var4 instanceof PlayerEntity) {
-                  this.method_37215(class_1343.field_7335);
+                  this.method_37215(Vector3d.ZERO);
                }
             } else {
                this.method_26461((float)this.method_26575(Attributes.MOVEMENT_SPEED));
-               super.method_26431(new class_1343((double)var5, var1.field_7333, (double)var6));
+               super.method_26431(new Vector3d((double)var5, var1.field_7333, (double)var6));
             }
 
             if (this.onGround) {
@@ -949,7 +949,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Nullable
-   private class_1343 method_19059(class_1343 var1, LivingEntity var2) {
+   private Vector3d method_19059(Vector3d var1, LivingEntity var2) {
       double var5 = this.getPosX() + var1.field_7336;
       double var7 = this.getBoundingBox().field_19937;
       double var9 = this.getPosZ() + var1.field_7334;
@@ -969,7 +969,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
             if (class_160.method_648(var16)) {
                Box var18 = var2.method_26549(var13);
-               class_1343 var19 = new class_1343(var5, (double)var11.getY() + var16, var9);
+               Vector3d var19 = new Vector3d(var5, (double)var11.getY() + var16, var9);
                if (class_160.method_647(this.world, var2, var18.method_18920(var19))) {
                   var2.method_37356(var13);
                   return var19;
@@ -984,16 +984,16 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public class_1343 method_37282(LivingEntity var1) {
-      class_1343 var4 = method_37373(
+   public Vector3d method_37282(LivingEntity var1) {
+      Vector3d var4 = method_37373(
          (double)this.method_37086(), (double)var1.method_37086(), this.rotationYaw + (var1.method_26432() != class_1736.field_8943 ? -90.0F : 90.0F)
       );
-      class_1343 var5 = this.method_19059(var4, var1);
+      Vector3d var5 = this.method_19059(var4, var1);
       if (var5 == null) {
-         class_1343 var6 = method_37373(
+         Vector3d var6 = method_37373(
             (double)this.method_37086(), (double)var1.method_37086(), this.rotationYaw + (var1.method_26432() != class_1736.field_8940 ? -90.0F : 90.0F)
          );
-         class_1343 var7 = this.method_19059(var6, var1);
+         Vector3d var7 = this.method_19059(var6, var1);
          return var7 == null ? this.method_37245() : var7;
       } else {
          return var5;

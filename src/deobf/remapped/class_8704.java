@@ -253,11 +253,11 @@ public abstract class class_8704 {
             field_44623.debug("Removing player mount");
             var1.method_37390();
             var4.method_28977(var5);
-            var5.field_41751 = true;
+            var5.removed = true;
 
             for (Entity var7 : var5.method_37379()) {
                var4.method_28977(var7);
-               var7.field_41751 = true;
+               var7.removed = true;
             }
 
             var4.method_29554(var1.field_41742, var1.field_41714).method_11992();
@@ -381,12 +381,12 @@ public abstract class class_8704 {
       } else {
          class_2522 var20 = var10.method_28262(var5);
          boolean var15 = var20.method_8350(class_4783.field_23807);
-         class_1343 var16 = (class_1343)var9.get();
+         Vector3d var16 = (Vector3d)var9.get();
          float var18;
          if (!var20.method_8349(class_2351.field_11784) && !var15) {
             var18 = var6;
          } else {
-            class_1343 var17 = class_1343.method_6200(var5).method_6194(var16).method_6213();
+            Vector3d var17 = Vector3d.method_6200(var5).method_6194(var16).method_6213();
             var18 = (float) MathHelper.wrapDegrees(MathHelper.atan2(var17.field_7334, var17.field_7336) * 180.0F / (float)Math.PI - 90.0);
          }
 

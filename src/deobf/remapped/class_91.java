@@ -58,10 +58,10 @@ public class class_91 extends Entity {
             this.field_174--;
          }
 
-         this.field_41767 = this.getPosX();
-         this.field_41698 = this.method_37309();
-         this.field_41725 = this.getPosZ();
-         class_1343 var3 = this.method_37098();
+         this.prevPosX = this.getPosX();
+         this.prevPosY = this.method_37309();
+         this.prevPosZ = this.getPosZ();
+         Vector3d var3 = this.method_37098();
          float var4 = this.method_37277() - 0.11111111F;
          if (this.method_37285() && this.method_37284(class_6503.field_33094) > (double)var4) {
             this.method_262();
@@ -93,16 +93,16 @@ public class class_91 extends Entity {
 
             this.method_37215(this.method_37098().method_6210((double)var5, 0.98, (double)var5));
             if (this.onGround) {
-               class_1343 var6 = this.method_37098();
+               Vector3d var6 = this.method_37098();
                if (var6.field_7333 < 0.0) {
                   this.method_37215(var6.method_6210(1.0, -0.5, 1.0));
                }
             }
          }
 
-         boolean var9 = MathHelper.floor(this.field_41767) != MathHelper.floor(this.getPosX())
-            || MathHelper.floor(this.field_41698) != MathHelper.floor(this.method_37309())
-            || MathHelper.floor(this.field_41725) != MathHelper.floor(this.getPosZ());
+         boolean var9 = MathHelper.floor(this.prevPosX) != MathHelper.floor(this.getPosX())
+            || MathHelper.floor(this.prevPosY) != MathHelper.floor(this.method_37309())
+            || MathHelper.floor(this.prevPosZ) != MathHelper.floor(this.getPosZ());
          int var10 = !var9 ? 40 : 2;
          if (this.field_41697 % var10 == 0) {
             if (this.world.method_28258(this.method_37075()).method_22007(class_6503.field_33095) && !this.method_37087()) {
@@ -135,12 +135,12 @@ public class class_91 extends Entity {
    }
 
    private void method_262() {
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       this.method_37214(var3.field_7336 * 0.99F, var3.field_7333 + (double)(!(var3.field_7333 < 0.06F) ? 0.0F : 5.0E-4F), var3.field_7334 * 0.99F);
    }
 
    private void method_251() {
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       this.method_37214(var3.field_7336 * 0.95F, var3.field_7333 + (double)(!(var3.field_7333 < 0.06F) ? 0.0F : 5.0E-4F), var3.field_7334 * 0.95F);
    }
 
@@ -150,7 +150,7 @@ public class class_91 extends Entity {
             .<class_91>method_25869(class_91.class, this.getBoundingBox().method_18899(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method_261())) {
             if (var4.method_261()) {
                this.method_263(var4);
-               if (this.field_41751) {
+               if (this.removed) {
                   break;
                }
             }

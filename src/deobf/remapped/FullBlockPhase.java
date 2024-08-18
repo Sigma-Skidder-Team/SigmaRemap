@@ -7,14 +7,14 @@ public class FullBlockPhase extends Module {
 
    @EventListen
    private void method_24133(class_1393 var1) {
-      if (this.method_42015() && class_314.method_1383()) {
+      if (this.isEnabled() && class_314.method_1383()) {
          var1.method_6444(true);
       }
    }
 
    @EventListen
    private void method_24134(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!class_314.method_1383()) {
             if (client.thePlayer.collidedHorizontally) {
                class_8865.method_40777(var1, 0.0);
@@ -28,7 +28,7 @@ public class FullBlockPhase extends Module {
 
    @EventListen
    private void method_24132(class_3574 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_29715(true);
       }
    }

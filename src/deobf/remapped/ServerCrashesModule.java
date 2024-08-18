@@ -14,8 +14,8 @@ public class ServerCrashesModule extends PremiumModule {
    }
 
    @EventListen
-   private void method_8971(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_8971(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (client.method_8520()) {
             this.method_41999();
          } else {

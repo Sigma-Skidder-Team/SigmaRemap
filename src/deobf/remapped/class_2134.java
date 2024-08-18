@@ -151,7 +151,7 @@ public class class_2134 extends class_7186 {
       for (int var9 = 0; var9 < this.field_10684.size(); var9++) {
          class_4986 var6 = this.field_10684.get(var9);
          String var7 = var6.field_25824.method_45509().getString();
-         if (!var6.field_25824.field_41751 && (var6.field_25824.inventory.method_32405(var2) || var2.method_27966())) {
+         if (!var6.field_25824.removed && (var6.field_25824.inventory.method_32405(var2) || var2.method_27966())) {
             if (!var2.method_27966() && var6.field_25824.world.method_29545() == this.field_10685 && this.field_10681) {
                this.method_9972(
                   class_8086.field_41393,

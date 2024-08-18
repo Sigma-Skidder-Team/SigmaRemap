@@ -14,7 +14,7 @@ public class class_496 extends class_5467 {
    private boolean field_3095;
    private boolean field_3093;
    public int field_3086;
-   private class_1343 field_3080;
+   private Vector3d field_3080;
    private float field_3089;
    private float field_3094;
    private float field_3090;
@@ -345,13 +345,13 @@ public class class_496 extends class_5467 {
          );
 
          for (int var3 = 0; var3 < 6; var3++) {
-            class_1343 var4 = new class_1343(
+            Vector3d var4 = new Vector3d(
                ((double)this.field_41717.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double)this.field_41717.nextFloat() - 0.5) * 0.1
             );
             var4 = var4.method_6212(-this.rotationPitch * (float) (Math.PI / 180.0));
             var4 = var4.method_6192(-this.rotationYaw * (float) (Math.PI / 180.0));
             double var5 = (double)(-this.field_41717.nextFloat()) * 0.6 - 0.3;
-            class_1343 var7 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.8, var5, 1.0 + ((double)this.field_41717.nextFloat() - 0.5) * 0.4);
+            Vector3d var7 = new Vector3d(((double)this.field_41717.nextFloat() - 0.5) * 0.8, var5, 1.0 + ((double)this.field_41717.nextFloat() - 0.5) * 0.4);
             var7 = var7.method_6192(-this.field_29605 * (float) (Math.PI / 180.0));
             var7 = var7.method_6214(this.getPosX(), this.method_37388() + 1.0, this.getPosZ());
             this.world
@@ -411,7 +411,7 @@ public class class_496 extends class_5467 {
       this.field_3086++;
       if (this.field_3086 <= 32) {
          if (!this.world.field_33055) {
-            class_1343 var3 = this.method_37098();
+            Vector3d var3 = this.method_37098();
             if (this.field_3086 != 1) {
                if ((float)this.field_3086 != 7.0F && (float)this.field_3086 != 15.0F && (float)this.field_3086 != 23.0F) {
                   this.method_37214(this.field_3080.field_7336, var3.field_7333, this.field_3080.field_7334);
@@ -421,7 +421,7 @@ public class class_496 extends class_5467 {
             } else {
                float var4 = this.rotationYaw * (float) (Math.PI / 180.0);
                float var5 = !this.method_26449() ? 0.2F : 0.1F;
-               this.field_3080 = new class_1343(
+               this.field_3080 = new Vector3d(
                   var3.field_7336 + (double)(-MathHelper.sin(var4) * var5), 0.0, var3.field_7334 + (double)(MathHelper.cos(var4) * var5)
                );
                this.method_37215(this.field_3080.method_6214(0.0, 0.27, 0.0));
@@ -433,7 +433,7 @@ public class class_496 extends class_5467 {
    }
 
    private void method_2426() {
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       this.world
          .method_43361(
             class_3090.field_15326,

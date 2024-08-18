@@ -18,7 +18,7 @@ public class class_2230 extends class_4569 {
       return new class_2230(class_8938.field_45798, class_5093.field_26274, class_5093.field_26274, var0);
    }
 
-   public boolean method_10274(class_6331 var1, class_1343 var2, double var3, double var5, double var7) {
+   public boolean method_10274(class_6331 var1, Vector3d var2, double var3, double var5, double var7) {
       if (this.field_11128.method_23401(var1, var2.field_7336, var2.field_7333, var2.field_7334)) {
          return this.field_11125.method_23401(var1, var3, var5, var7)
             ? this.field_11126.method_28548(var2.field_7336, var2.field_7333, var2.field_7334, var3, var5, var7)

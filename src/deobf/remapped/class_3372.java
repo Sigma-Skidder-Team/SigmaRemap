@@ -81,9 +81,9 @@ public class class_3372 {
 
    public static Optional<Entity> method_15558(Entity var0, int var1) {
       if (var0 != null) {
-         class_1343 var4 = var0.method_37335(1.0F);
-         class_1343 var5 = var0.method_37307(1.0F).method_6209((double)var1);
-         class_1343 var6 = var4.method_6215(var5);
+         Vector3d var4 = var0.method_37335(1.0F);
+         Vector3d var5 = var0.method_37307(1.0F).method_6209((double)var1);
+         Vector3d var6 = var4.method_6215(var5);
          Box var7 = var0.getBoundingBox().method_18929(var5).grow(1.0);
          int var8 = var1 * var1;
          Predicate var9 = var0x -> !var0x.method_37221() && var0x.method_37167();
@@ -101,7 +101,7 @@ public class class_3372 {
    public static void method_15561(BlockPos var0, BlockPos var1, float var2, float var3, float var4, float var5) {
       Camera var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
-         class_1343 var9 = var8.method_41627().method_6207();
+         Vector3d var9 = var8.method_41627().method_6207();
          Box var10 = new Box(var0, var1).method_18920(var9);
          method_15562(var10, var2, var3, var4, var5);
       }
@@ -110,7 +110,7 @@ public class class_3372 {
    public static void method_15560(BlockPos var0, float var1, float var2, float var3, float var4, float var5) {
       Camera var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
-         class_1343 var9 = var8.method_41627().method_6207();
+         Vector3d var9 = var8.method_41627().method_6207();
          Box var10 = new Box(var0).method_18920(var9).grow((double)var1);
          method_15562(var10, var2, var3, var4, var5);
       }

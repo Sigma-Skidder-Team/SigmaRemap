@@ -181,7 +181,7 @@ public class class_9164 {
    public void method_42243(float var1, class_7966 var2, class_3758 var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.method_26533(var1);
       Hand var9 = (Hand)MoreObjects.firstNonNull(var4.field_29616, Hand.MAIN_HAND);
-      float var10 = MathHelper.lerp(var1, var4.field_41762, var4.rotationPitch);
+      float var10 = MathHelper.lerp(var1, var4.prevRotationPitch, var4.rotationPitch);
       boolean var11 = true;
       boolean var12 = true;
       if (!var4.method_26554()) {

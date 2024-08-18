@@ -55,9 +55,9 @@ public class class_9782 {
 
                         for (class_4714 var9x : var6x) {
                            if (var7 != null) {
-                              var7.field_41736.field_7336 = var9x.method_21803() + 0.5;
-                              var7.field_41736.field_7333 = var9x.method_21801();
-                              var7.field_41736.field_7334 = var9x.method_21799() + 0.5;
+                              var7.positionVec.field_7336 = var9x.method_21803() + 0.5;
+                              var7.positionVec.field_7333 = var9x.method_21801();
+                              var7.positionVec.field_7334 = var9x.method_21799() + 0.5;
                               this.field_49645.method_8614().sendPacket(new class_8125(false, false));
                               this.field_49645
                                  .method_8614()

@@ -210,7 +210,7 @@ public class class_6092 extends class_608 implements class_1869 {
                   if (!(var16 instanceof class_6092) && !var16.field_41731) {
                      var16.method_37226(
                         class_7412.field_37841,
-                        new class_1343(var12 * (double)var11.method_1041(), var12 * (double)var11.method_1054(), var12 * (double)var11.method_1034())
+                        new Vector3d(var12 * (double)var11.method_1041(), var12 * (double)var11.method_1054(), var12 * (double)var11.method_1034())
                      );
                   }
                }
@@ -220,7 +220,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public void method_37226(class_7412 var1, class_1343 var2) {
+   public void method_37226(class_7412 var1, Vector3d var2) {
       if (var1 != class_7412.field_37837) {
          super.method_37226(var1, var2);
       } else {
@@ -289,7 +289,7 @@ public class class_6092 extends class_608 implements class_1869 {
    @Override
    public void livingTick() {
       super.livingTick();
-      this.method_37215(class_1343.field_7335);
+      this.method_37215(Vector3d.ZERO);
       if (!this.isAIDisabled()) {
          this.field_29611 = 0.0F;
          this.field_29605 = 0.0F;

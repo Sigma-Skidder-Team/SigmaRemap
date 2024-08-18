@@ -16,7 +16,7 @@ public class DelayAntiKB extends Module {
 
    @EventListen
    private void method_28731(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_1897) {
             class_1897 var4 = (class_1897)var1.method_557();
             this.field_32171.add(var4);
@@ -38,7 +38,7 @@ public class DelayAntiKB extends Module {
 
    @EventListen
    private void method_28732(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_10047() instanceof class_3398) {
             class_3398 var4 = (class_3398)var1.method_10047();
             class_92 var5 = var4.method_15694();
@@ -49,7 +49,7 @@ public class DelayAntiKB extends Module {
    }
 
    @EventListen
-   private void method_28730(class_5596 var1) {
+   private void method_28730(PlayerTickEvent var1) {
       if (this.field_32172 != 0) {
          if (this.field_32172 > 0) {
             this.field_32172--;

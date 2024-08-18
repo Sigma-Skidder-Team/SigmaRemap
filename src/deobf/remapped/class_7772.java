@@ -24,7 +24,7 @@ public class class_7772 {
    private int field_39383;
    private int field_39393;
    private int field_39398;
-   private class_1343 field_39382 = class_1343.field_7335;
+   private Vector3d field_39382 = Vector3d.ZERO;
    private int field_39397;
    private int field_39388;
    private List<Entity> field_39385 = Collections.<Entity>emptyList();
@@ -74,7 +74,7 @@ public class class_7772 {
             this.field_39388++;
             int var22 = MathHelper.floor(this.field_39387.rotationYaw * 256.0F / 360.0F);
             int var25 = MathHelper.floor(this.field_39387.rotationPitch * 256.0F / 360.0F);
-            class_1343 var27 = this.field_39387.method_37245().method_6194(class_527.method_2556(this.field_39386, this.field_39392, this.field_39400));
+            Vector3d var27 = this.field_39387.method_37245().method_6194(class_527.method_2556(this.field_39386, this.field_39392, this.field_39400));
             boolean var28 = var27.method_6221() >= 7.6293945E-6F;
             Object var29 = null;
             boolean var30 = var28 || this.field_39397 % 60 == 0;
@@ -113,7 +113,7 @@ public class class_7772 {
 
             if ((this.field_39384 || this.field_39387.field_41763 || this.field_39387 instanceof LivingEntity && ((LivingEntity)this.field_39387).method_26618())
                && this.field_39397 > 0) {
-               class_1343 var18 = this.field_39387.method_37098();
+               Vector3d var18 = this.field_39387.method_37098();
                double var19 = var18.method_6204(this.field_39382);
                if (var19 > 1.0E-7 || var19 > 0.0 && var18.method_6221() == 0.0) {
                   this.field_39382 = var18;
@@ -161,9 +161,9 @@ public class class_7772 {
       }
 
       this.field_39397++;
-      if (this.field_39387.field_41743) {
+      if (this.field_39387.velocityChanged) {
          this.method_35257(new class_4548(this.field_39387));
-         this.field_39387.field_41743 = false;
+         this.field_39387.velocityChanged = false;
       }
    }
 
@@ -179,7 +179,7 @@ public class class_7772 {
    }
 
    public void method_35260(Consumer<Packet<?>> var1) {
-      if (this.field_39387.field_41751) {
+      if (this.field_39387.removed) {
          field_39399.warn("Fetching packet for removed entity " + this.field_39387);
       }
 
@@ -268,7 +268,7 @@ public class class_7772 {
       this.field_39400 = class_527.method_2563(this.field_39387.getPosZ());
    }
 
-   public class_1343 method_35255() {
+   public Vector3d method_35255() {
       return class_527.method_2556(this.field_39386, this.field_39392, this.field_39400);
    }
 

@@ -132,11 +132,11 @@ public abstract class class_4190 {
    }
 
    @Nullable
-   public class_9529 method_19493(class_1343 var1, class_1343 var2, BlockPos var3) {
+   public class_9529 method_19493(Vector3d var1, Vector3d var2, BlockPos var3) {
       if (!this.method_19485()) {
-         class_1343 var6 = var2.method_6194(var1);
+         Vector3d var6 = var2.method_6194(var1);
          if (!(var6.method_6221() < 1.0E-7)) {
-            class_1343 var7 = var1.method_6215(var6.method_6209(0.001));
+            Vector3d var7 = var1.method_6215(var6.method_6209(0.001));
             return !this.method_19484(
                   var7.field_7336 - (double)var3.getX(), var7.field_7333 - (double)var3.getY(), var7.field_7334 - (double)var3.getZ()
                )

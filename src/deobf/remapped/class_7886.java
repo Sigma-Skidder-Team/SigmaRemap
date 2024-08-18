@@ -28,7 +28,7 @@ public class class_7886 extends class_4117 {
       if (!this.field_20070.get()) {
          if (this.field_40354.method_16154()) {
             if (!this.field_20070.get()) {
-               class_1343 var4 = this.field_40354.field_17225.method_30747();
+               Vector3d var4 = this.field_40354.field_17225.method_30747();
                float var5 = (float)var4.field_7336;
                float var6 = (float)var4.field_7333;
                float var7 = (float)var4.field_7334;

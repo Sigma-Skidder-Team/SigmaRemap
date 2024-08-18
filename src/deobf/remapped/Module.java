@@ -184,7 +184,7 @@ public abstract class Module {
    }
 
    public boolean method_42003() {
-      return this.method_42015();
+      return this.isEnabled();
    }
 
    public Map<String, Setting> method_41996() {
@@ -221,7 +221,7 @@ public abstract class Module {
       return this.category;
    }
 
-   public boolean method_42015() {
+   public boolean isEnabled() {
       if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30642) {
          return SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && !this.method_42013() ? false : this.enabled;
       } else {
@@ -290,7 +290,7 @@ public abstract class Module {
    }
 
    public void method_41999() {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.setEnabled2(false);
       } else {
          this.setEnabled2(true);

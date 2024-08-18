@@ -16,14 +16,14 @@ public class ProjectilesModule extends Module {
 
    @EventListen
    public void method_18289(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.method_26446() != null) {
             class_3336 var4 = class_3336.method_15299(client.thePlayer.method_26446().method_27960());
             if (var4 != null) {
                float var5 = (float)Math.toRadians((double)(client.thePlayer.rotationYaw - 25.0F));
                float var6 = (float)Math.toRadians((double) client.thePlayer.rotationPitch);
                double var7 = 0.2F;
-               double var9 = client.thePlayer.field_41712.method_18906() / 2.0;
+               double var9 = client.thePlayer.boundingBox.method_18906() / 2.0;
                double var11 = (double) MathHelper.cos(var5) * var9;
                double var13 = (double) MathHelper.sin(var5) * var9;
                double var15 = client.thePlayer.field_41754

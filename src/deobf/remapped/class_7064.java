@@ -6,9 +6,9 @@ public class class_7064 {
    private static String[] field_36451;
    private final ITextComponent field_36455;
    private long field_36454;
-   private class_1343 field_36453;
+   private Vector3d field_36453;
 
-   public class_7064(SubtitleOverlayGui var1, ITextComponent var2, class_1343 var3) {
+   public class_7064(SubtitleOverlayGui var1, ITextComponent var2, Vector3d var3) {
       this.field_36452 = var1;
       this.field_36455 = var2;
       this.field_36453 = var3;
@@ -23,11 +23,11 @@ public class class_7064 {
       return this.field_36454;
    }
 
-   public class_1343 method_32536() {
+   public Vector3d method_32536() {
       return this.field_36453;
    }
 
-   public void method_32538(class_1343 var1) {
+   public void method_32538(Vector3d var1) {
       this.field_36453 = var1;
       this.field_36454 = Util.getMeasuringTimeMs();
    }

@@ -25,7 +25,7 @@ public class SpartanFly extends Module {
 
    @EventListen
    private void method_12962(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_13967 = true;
@@ -35,7 +35,7 @@ public class SpartanFly extends Module {
 
    @EventListen
    private void method_12964(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_13967 = false;
@@ -45,7 +45,7 @@ public class SpartanFly extends Module {
 
    @EventListen
    public void method_12963(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449() && this.getBooleanValueByName("Ground Spoof")) {
+      if (this.isEnabled() && var1.method_6449() && this.getBooleanValueByName("Ground Spoof")) {
          if (this.field_13969) {
             this.field_13969 = !this.field_13969;
             var1.method_6451(true);
@@ -55,7 +55,7 @@ public class SpartanFly extends Module {
 
    @EventListen
    public void method_12965(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          boolean var4 = client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F);
          if (!var4) {
             if (var1.method_35236() < 0.0) {

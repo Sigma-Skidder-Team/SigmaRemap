@@ -38,7 +38,7 @@ public class class_518 extends class_3599 {
    }
 
    public boolean method_2535() {
-      class_1343 var3 = class_3425.method_15845(this.field_3169, 5, 4);
+      Vector3d var3 = class_3425.method_15845(this.field_3169, 5, 4);
       if (var3 != null) {
          this.field_3166 = var3.field_7336;
          this.field_3172 = var3.field_7333;

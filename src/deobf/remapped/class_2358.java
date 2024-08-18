@@ -50,7 +50,7 @@ public abstract class class_2358 extends class_8346 {
 
          this.field_11837 = null;
          class_8480 var5 = new class_8480((class_6331)this.field_18364)
-            .method_39065(class_8712.field_44671, class_1343.method_6216(this.field_18358))
+            .method_39065(class_8712.field_44671, Vector3d.method_6216(this.field_18358))
             .method_39067(this.field_11836);
          if (var1 != null) {
             var5.method_39063(var1.method_3234()).method_39065(class_8712.field_44676, var1);

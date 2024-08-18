@@ -110,7 +110,7 @@ public class class_1657 extends class_5920<MobEntity> {
             return true;
          }
 
-         class_1343 var10 = class_3425.method_15837((class_4612)var1, 10, 7, class_1343.method_6200(var7));
+         Vector3d var10 = class_3425.method_15837((class_4612)var1, 10, 7, Vector3d.method_6200(var7));
          if (var10 != null) {
             this.field_8601 = var1.method_26927().method_5614(var10.field_7336, var10.field_7333, var10.field_7334, 0);
             return this.field_8601 != null;

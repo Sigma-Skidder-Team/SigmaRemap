@@ -29,7 +29,7 @@ public abstract class class_3798 extends class_2340 {
    }
 
    @Override
-   public class_1343 method_10725(class_6163 var1, BlockPos var2, class_4774 var3) {
+   public Vector3d method_10725(class_6163 var1, BlockPos var2, class_4774 var3) {
       double var6 = 0.0;
       double var8 = 0.0;
       class_2921 var10 = new class_2921();
@@ -62,7 +62,7 @@ public abstract class class_3798 extends class_2340 {
          }
       }
 
-      class_1343 var18 = new class_1343(var6, 0.0, var8);
+      Vector3d var18 = new Vector3d(var6, 0.0, var8);
       if (var3.<Boolean>method_10313(field_18532)) {
          for (Direction var20 : class_9594.field_48893) {
             var10.method_13371(var2, var20);

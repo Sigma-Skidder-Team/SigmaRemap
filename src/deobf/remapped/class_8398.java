@@ -133,7 +133,7 @@ public class class_8398 extends class_3757 {
       Object var5 = var1 != null ? var1.method_19839() : new StringTextComponent("Sign");
       return new class_9155(
          class_5801.field_29295,
-         class_1343.method_6216(this.field_18358),
+         Vector3d.method_6216(this.field_18358),
          class_4895.field_24322,
          (class_6331)this.field_18364,
          2,

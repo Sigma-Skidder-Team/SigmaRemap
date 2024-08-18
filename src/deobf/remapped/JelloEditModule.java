@@ -86,7 +86,7 @@ public class class_9093 extends Module {
 
    @EventListen
    private void method_41924(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          GL11.glAlphaFunc(516, 0.0F);
 
          for (class_278 var5 : this.field_46580.method_27432()) {

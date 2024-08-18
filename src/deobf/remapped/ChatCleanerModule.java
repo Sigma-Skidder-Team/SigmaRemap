@@ -7,7 +7,7 @@ public class ChatCleanerModule extends Module {
 
    @EventListen
    private void method_21556(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_5182) {
             class_5182 var4 = (class_5182)var1.method_557();
             if (this.contains(this.method_21554(var4.method_23768().getString()))) {

@@ -27,16 +27,16 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
          RenderSystem.method_16438();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
-         class_1343 var4 = new class_1343(
+         Vector3d var4 = new Vector3d(
             this.field_21493.thePlayer.getPosX(), this.field_21493.thePlayer.method_37388(), this.field_21493.thePlayer.getPosZ()
          );
-         class_1343 var5 = new class_1343(0.0, 0.0, -1.0)
+         Vector3d var5 = new Vector3d(0.0, 0.0, -1.0)
             .method_6212(-this.field_21493.thePlayer.rotationPitch * (float) (Math.PI / 180.0))
             .method_6192(-this.field_21493.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
-         class_1343 var6 = new class_1343(0.0, 1.0, 0.0)
+         Vector3d var6 = new Vector3d(0.0, 1.0, 0.0)
             .method_6212(-this.field_21493.thePlayer.rotationPitch * (float) (Math.PI / 180.0))
             .method_6192(-this.field_21493.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
-         class_1343 var7 = var5.method_6196(var6);
+         Vector3d var7 = var5.method_6196(var6);
          int var8 = 0;
          int var9 = 0;
          Iterator var10 = this.field_21494.iterator();
@@ -59,7 +59,7 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
          for (class_7064 var12 : this.field_21494) {
             short var13 = 255;
             ITextComponent var14 = var12.method_32537();
-            class_1343 var15 = var12.method_32536().method_6194(var4).method_6213();
+            Vector3d var15 = var12.method_32536().method_6194(var4).method_6213();
             double var16 = -var7.method_6206(var15);
             double var18 = -var5.method_6206(var15);
             boolean var20 = var18 > 0.5;
@@ -109,13 +109,13 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
          if (!this.field_21494.isEmpty()) {
             for (class_7064 var7 : this.field_21494) {
                if (var7.method_32537().equals(var5)) {
-                  var7.method_32538(new class_1343(var1.method_16548(), var1.method_16557(), var1.method_16561()));
+                  var7.method_32538(new Vector3d(var1.method_16548(), var1.method_16557(), var1.method_16561()));
                   return;
                }
             }
          }
 
-         this.field_21494.add(new class_7064(this, var5, new class_1343(var1.method_16548(), var1.method_16557(), var1.method_16561())));
+         this.field_21494.add(new class_7064(this, var5, new Vector3d(var1.method_16548(), var1.method_16557(), var1.method_16561())));
       }
    }
 }

@@ -40,8 +40,8 @@ public class class_1937 extends class_3599 {
 
    @Override
    public void method_16796() {
-      class_1343 var3 = this.field_9897.method_37098();
-      class_1343 var4 = new class_1343(
+      Vector3d var3 = this.field_9897.method_37098();
+      Vector3d var4 = new Vector3d(
          this.field_9899.getPosX() - this.field_9897.getPosX(), 0.0, this.field_9899.getPosZ() - this.field_9897.getPosZ()
       );
       if (var4.method_6221() > 1.0E-7) {

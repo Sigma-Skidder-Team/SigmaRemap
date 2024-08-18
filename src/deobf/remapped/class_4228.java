@@ -32,7 +32,7 @@ public class class_4228 implements Packet<class_392> {
       this.field_20519 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
       this.field_20523 = (byte)((int)(var1.field_29618 * 256.0F / 360.0F));
       double var4 = 3.9;
-      class_1343 var6 = var1.method_37098();
+      Vector3d var6 = var1.method_37098();
       double var7 = MathHelper.clamp(var6.field_7336, -3.9, 3.9);
       double var9 = MathHelper.clamp(var6.field_7333, -3.9, 3.9);
       double var11 = MathHelper.clamp(var6.field_7334, -3.9, 3.9);

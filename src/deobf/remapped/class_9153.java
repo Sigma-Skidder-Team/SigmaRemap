@@ -17,7 +17,7 @@ public class class_9153 {
    private boolean field_46829;
    private GameType field_46833 = GameType.SURVIVAL;
    private GameType field_46828 = GameType.NOT_SET;
-   private final Object2ObjectLinkedOpenHashMap<Pair<BlockPos, class_7500>, class_1343> field_46830 = new Object2ObjectLinkedOpenHashMap();
+   private final Object2ObjectLinkedOpenHashMap<Pair<BlockPos, class_7500>, Vector3d> field_46830 = new Object2ObjectLinkedOpenHashMap();
    private int field_46834;
 
    public class_9153(MinecraftClient var1, ClientPlayNetHandler var2) {
@@ -303,7 +303,7 @@ public class class_9153 {
 
    public class_6910 method_42145(PlayerEntity var1, Entity var2, class_5631 var3, Hand var4) {
       this.method_42129();
-      class_1343 var7 = var3.method_33993().method_6193(var2.getPosX(), var2.method_37309(), var2.getPosZ());
+      Vector3d var7 = var3.method_33993().method_6193(var2.getPosX(), var2.method_37309(), var2.getPosZ());
       this.field_46837.sendPacket(new class_3398(var2, var4, var7, var1.isSneaking()));
       return this.field_46833 != GameType.SPECTATOR ? var2.method_37227(var1, var7, var4) : class_6910.field_35521;
    }
@@ -385,7 +385,7 @@ public class class_9153 {
    }
 
    public void method_42159(ClientWorld var1, BlockPos var2, class_2522 var3, class_7500 var4, boolean var5) {
-      class_1343 var8 = (class_1343)this.field_46830.remove(Pair.of(var2, var4));
+      Vector3d var8 = (Vector3d)this.field_46830.remove(Pair.of(var2, var4));
       class_2522 var9 = var1.method_28262(var2);
       if ((var8 == null || !var5 || var4 != class_7500.field_38263 && var9 != var3) && var9 != var3) {
          var1.method_743(var2, var3);

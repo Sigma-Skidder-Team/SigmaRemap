@@ -44,7 +44,7 @@ public class AACBlockFly extends Module {
    @EventListen
    @class_7664
    public void method_11335(class_2157 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.getModule()).field_18196 >= 0) {
             var1.method_29715(true);
          }
@@ -53,7 +53,7 @@ public class AACBlockFly extends Module {
 
    @EventListen
    public void method_11338(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             this.field_12312 = 0;
@@ -63,8 +63,8 @@ public class AACBlockFly extends Module {
 
    @EventListen
    public void method_11342(class_7982 var1) {
-      if (this.method_42015()) {
-         if (client.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()) {
+      if (this.isEnabled()) {
+         if (client.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).isEnabled()) {
             var1.method_36186(true);
          }
       }
@@ -72,7 +72,7 @@ public class AACBlockFly extends Module {
 
    @EventListen
    public void method_11337(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.getModule().getBooleanValueByName("No Sprint")) {
             client.thePlayer.method_37140(false);
          }
@@ -111,7 +111,7 @@ public class AACBlockFly extends Module {
 
    @EventListen
    private void method_11341(class_8128 var1) {
-      if (this.method_42015() && client.theWorld != null && client.thePlayer != null) {
+      if (this.isEnabled() && client.theWorld != null && client.thePlayer != null) {
          if (this.getBooleanValueByName("Haphe (AACAP)") && class_8865.method_40772() && !client.thePlayer.method_37321()) {
             var1.field_41637 *= 1.14F;
          }
@@ -186,7 +186,7 @@ public class AACBlockFly extends Module {
 
    @EventListen
    public void method_11339(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!this.getBooleanValueByName("Haphe (AACAP)")) {
             ;
          }
@@ -196,7 +196,7 @@ public class AACBlockFly extends Module {
    @EventListen
    @class_4249
    private void method_11336(class_1393 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!var1.method_6449()) {
             if (class_8865.method_40772() && client.thePlayer.onGround && this.getBooleanValueByName("Haphe (AACAP)") && !client.thePlayer.field_29654) {
                client.thePlayer.method_26595();
@@ -239,7 +239,7 @@ public class AACBlockFly extends Module {
 
    @EventListen
    public void method_11340(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.getModule().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
             && (!class_314.method_1434() || this.getModule().getBooleanValueByName("Tower while moving"))) {
             var1.method_29715(true);

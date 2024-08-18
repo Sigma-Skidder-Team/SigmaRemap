@@ -8,7 +8,7 @@ public class VanillaHighJumpModule extends Module {
 
    @EventListen
    public void method_35348(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_13313((double)this.getFloatValueByName("Motion"));
       }
    }

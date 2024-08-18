@@ -13,7 +13,7 @@ public class class_4843 implements class_7835 {
    }
 
    @Override
-   public class_1343 method_35464() {
+   public Vector3d method_35464() {
       return !this.field_24169
          ? this.field_24168.method_37245()
          : this.field_24168.method_37245().method_6214(0.0, (double)this.field_24168.method_37277(), 0.0);

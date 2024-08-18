@@ -6,7 +6,7 @@ public class class_9040 extends class_1871 {
    private static String[] field_46260;
    private static final class_4931 field_46257 = new class_4931().method_22607(64.0);
    private class_3998 field_46258;
-   private class_1343 field_46259;
+   private Vector3d field_46259;
    private boolean field_46256;
 
    public class_9040(class_2770 var1) {
@@ -23,7 +23,7 @@ public class class_9040 extends class_1871 {
       double var3 = this.field_46259 != null
          ? this.field_46259.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ())
          : 0.0;
-      if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.collidedHorizontally || this.field_9479.field_41774) {
+      if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.collidedHorizontally || this.field_9479.collidedVertically) {
          this.method_41498();
       }
    }
@@ -36,7 +36,7 @@ public class class_9040 extends class_1871 {
 
    @Nullable
    @Override
-   public class_1343 method_23463() {
+   public Vector3d method_23463() {
       return this.field_46259;
    }
 
@@ -116,7 +116,7 @@ public class class_9040 extends class_1871 {
             var8 = (double)((float)var3.getY() + this.field_9479.method_26594().nextFloat() * 20.0F);
          } while (var8 < (double)var3.getY());
 
-         this.field_46259 = new class_1343(var4, var8, var6);
+         this.field_46259 = new Vector3d(var4, var8, var6);
       }
    }
 

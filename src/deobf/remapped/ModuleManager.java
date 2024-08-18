@@ -205,7 +205,7 @@ public class ModuleManager {
       }
 
       for (Module var18 : this.moduleMap.values()) {
-         if (var18.method_42015()) {
+         if (var18.isEnabled()) {
             SigmaMainClass.getInstance().getEventManager().subscribe(var18);
             if (var18 instanceof SecondModule) {
                SecondModule var20 = (SecondModule)var18;
@@ -349,7 +349,7 @@ public class ModuleManager {
       ArrayList var3 = new ArrayList();
 
       for (Module var5 : this.moduleMap.values()) {
-         if (var5.method_42015()) {
+         if (var5.isEnabled()) {
             var3.add(var5);
          }
       }

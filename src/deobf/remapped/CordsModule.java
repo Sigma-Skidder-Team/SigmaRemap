@@ -11,8 +11,8 @@ public class CordsModule extends Module {
    }
 
    @EventListen
-   private void method_9061(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_9061(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (class_314.method_1448() > this.field_9984 && client.thePlayer.field_41697 % 3 == 0) {
             this.field_9984++;
          }
@@ -35,7 +35,7 @@ public class CordsModule extends Module {
    @EventListen
    @class_4249
    private void method_9062(class_3278 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null) {
             if (!MinecraftClient.getInstance().gameOptions.field_45470) {
                if (!MinecraftClient.getInstance().gameOptions.hideGUI) {

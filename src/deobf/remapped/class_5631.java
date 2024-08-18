@@ -8,7 +8,7 @@ public class class_5631 extends class_7474 {
       this(var1, var1.method_37245());
    }
 
-   public class_5631(Entity var1, class_1343 var2) {
+   public class_5631(Entity var1, Vector3d var2) {
       super(var2);
       this.field_28570 = var1;
    }

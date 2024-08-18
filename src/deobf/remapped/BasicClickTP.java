@@ -24,7 +24,7 @@ public class BasicClickTP extends Module {
 
    @EventListen
    private void method_29151(class_8706 var1) {
-      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.getModule().getBooleanValueByName("Sneak"))) {
+      if (this.isEnabled() && (client.thePlayer.isSneaking() || !this.getModule().getBooleanValueByName("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
             class_9529 var4 = class_7494.method_34079(
                client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.getModule().getFloatValueByName("Maximum range")
@@ -82,7 +82,7 @@ public class BasicClickTP extends Module {
 
    @EventListen
    public void method_29150(class_3368 var1) {
-      if (this.method_42015() && this.field_32569 != null && this.field_32569.size() != 0) {
+      if (this.isEnabled() && this.field_32569 != null && this.field_32569.size() != 0) {
          if (this.field_32570.method_14772() > 4000L) {
             this.field_32570.method_14774();
             this.field_32570.method_14773();

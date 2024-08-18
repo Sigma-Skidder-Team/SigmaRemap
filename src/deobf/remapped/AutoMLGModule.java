@@ -31,7 +31,7 @@ public class AutoMLGModule extends PremiumModule {
 
    @EventListen
    private void method_16782(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (field_17597 > 0 && !client.thePlayer.onGround) {
             class_8865.method_40777(var1, 0.0);
          }
@@ -41,7 +41,7 @@ public class AutoMLGModule extends PremiumModule {
    @EventListen
    @class_7664
    private void method_16779(class_1393 var1) {
-      if (this.method_42015() && client.playerController.gameIsSurvivalOrAdventure()) {
+      if (this.isEnabled() && client.playerController.gameIsSurvivalOrAdventure()) {
          if (var1.method_6449() && field_17597 >= 0) {
             field_17597++;
             float[] var4 = class_7211.method_33006(
@@ -66,7 +66,7 @@ public class AutoMLGModule extends PremiumModule {
          }
 
          int var7 = this.method_16778();
-         if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()
+         if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()
             && var7 != -1
             && !client.thePlayer.onGround
             && client.thePlayer.field_41706 > 3.0F) {
@@ -135,7 +135,7 @@ public class AutoMLGModule extends PremiumModule {
       double var3 = client.thePlayer.method_37098().field_7336;
       double var5 = client.thePlayer.method_37098().field_7333;
       double var7 = client.thePlayer.method_37098().field_7334;
-      Box var9 = client.thePlayer.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
+      Box var9 = client.thePlayer.boundingBox.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
       Stream var10 = client.theWorld.method_6680(client.thePlayer, var9);
       Iterator var11 = var10.iterator();
       BlockPos var12 = null;
@@ -161,7 +161,7 @@ public class AutoMLGModule extends PremiumModule {
          return var12;
       } else {
          var5 = client.thePlayer.method_37098().field_7333 - 1.0;
-         var9 = client.thePlayer.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
+         var9 = client.thePlayer.boundingBox.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
          var10 = client.theWorld.method_6680(client.thePlayer, var9);
          var11 = var10.iterator();
 

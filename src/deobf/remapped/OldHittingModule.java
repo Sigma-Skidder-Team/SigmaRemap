@@ -19,7 +19,7 @@ public class OldHittingModule extends Module {
    @class_315
    @class_3932
    private void method_9353(class_1393 var1) {
-      if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
+      if (this.isEnabled() || class_3347.method_15348() == class_412.field_1747) {
          if (var1.method_6449()) {
             boolean var4 = client.thePlayer.method_26446() != null && client.thePlayer.method_26446().method_27960() instanceof class_2235;
             boolean var5 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(KillauraModule.class).method_42003();
@@ -86,7 +86,7 @@ public class OldHittingModule extends Module {
    @class_7664
    @class_3932
    private void method_9364(PacketEvent var1) {
-      if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
+      if (this.isEnabled() || class_3347.method_15348() == class_412.field_1747) {
          if (client.thePlayer != null) {
             if (var1.method_557() instanceof class_9014) {
                class_9014 var4 = (class_9014)var1.method_557();
@@ -110,7 +110,7 @@ public class OldHittingModule extends Module {
    @class_7664
    @class_3932
    private void method_9357(class_5396 var1) {
-      if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
+      if (this.isEnabled() || class_3347.method_15348() == class_412.field_1747) {
          float var4 = var1.method_24563();
          if (var1.method_24570() && var1.method_24567() == class_1736.field_8940 && var1.method_24564().method_27960() instanceof class_8440) {
             var1.method_24565(false);

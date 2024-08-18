@@ -19,7 +19,7 @@ public class class_3537 extends class_3599 {
    @Override
    public boolean method_16795() {
       if (!this.field_17304.method_26867()) {
-         class_1343 var3 = class_3425.method_15837(this.field_17304, 16, 7, class_1343.method_6200(this.field_17304.method_26885()));
+         Vector3d var3 = class_3425.method_15837(this.field_17304, 16, 7, Vector3d.method_6200(this.field_17304.method_26885()));
          if (var3 != null) {
             this.field_17307 = var3.field_7336;
             this.field_17303 = var3.field_7333;

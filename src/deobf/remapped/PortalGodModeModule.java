@@ -7,7 +7,7 @@ public class PortalGodModeModule extends Module {
 
    @EventListen
    private void method_2116(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_2492) {
             var1.method_29715(true);
          }

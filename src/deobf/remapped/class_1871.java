@@ -41,7 +41,7 @@ public abstract class class_1871 implements class_5120 {
 
    @Nullable
    @Override
-   public class_1343 method_23463() {
+   public Vector3d method_23463() {
       return null;
    }
 

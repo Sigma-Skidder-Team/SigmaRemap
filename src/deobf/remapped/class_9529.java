@@ -7,15 +7,15 @@ public class class_9529 extends class_7474 {
    private final boolean field_48500;
    private final boolean field_48501;
 
-   public static class_9529 method_43958(class_1343 var0, Direction var1, BlockPos var2) {
+   public static class_9529 method_43958(Vector3d var0, Direction var1, BlockPos var2) {
       return new class_9529(true, var0, var1, var2, false);
    }
 
-   public class_9529(class_1343 var1, Direction var2, BlockPos var3, boolean var4) {
+   public class_9529(Vector3d var1, Direction var2, BlockPos var3, boolean var4) {
       this(false, var1, var2, var3, var4);
    }
 
-   private class_9529(boolean var1, class_1343 var2, Direction var3, BlockPos var4, boolean var5) {
+   private class_9529(boolean var1, Vector3d var2, Direction var3, BlockPos var4, boolean var5) {
       super(var2);
       this.field_48500 = var1;
       this.field_48502 = var3;

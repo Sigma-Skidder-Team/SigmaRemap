@@ -35,7 +35,7 @@ public class OtherTabGUIModule extends Module {
 
    @EventListen
    private void method_1204(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          class_8404 var4 = method_1209(var1.method_29384());
          if (var4 != null) {
             field_955.method_11119(class_4043.field_19620);
@@ -94,7 +94,7 @@ public class OtherTabGUIModule extends Module {
                      class_2990 var8 = (class_2990)var6;
                      Category var9 = this.categoryList.get(var7.field_14700);
                      Module var10 = SigmaMainClass.getInstance().getModuleManager().method_844(var9).get(var8.field_14700);
-                     var10.setEnabled2(!var10.method_42015());
+                     var10.setEnabled2(!var10.isEnabled());
                   }
             }
          }
@@ -153,8 +153,8 @@ public class OtherTabGUIModule extends Module {
    }
 
    @EventListen
-   private void method_1197(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_1197(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.field_959 <= 0) {
             field_955.method_11119(class_4043.field_19618);
             this.field_957.method_11119(class_4043.field_19618);
@@ -167,7 +167,7 @@ public class OtherTabGUIModule extends Module {
    @EventListen
    @class_5355
    private void method_1196(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
             if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                this.method_1208();
@@ -191,7 +191,7 @@ public class OtherTabGUIModule extends Module {
          int var6 = 0;
 
          for (Module var8 : SigmaMainClass.getInstance().getModuleManager().method_844(var5)) {
-            var3.method_13685(var6++, (!var8.method_42015() ? "§7" : "") + var8.getName2());
+            var3.method_13685(var6++, (!var8.isEnabled() ? "§7" : "") + var8.getName2());
          }
       }
    }

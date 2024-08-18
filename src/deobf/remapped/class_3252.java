@@ -60,7 +60,7 @@ public class class_3252 extends class_378 {
 
    @Override
    public void method_26595() {
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       this.method_37214(var3.field_7336, (double)(this.method_26538() + (float)this.method_1860() * 0.1F), var3.field_7334);
       this.field_41763 = true;
    }
@@ -70,7 +70,7 @@ public class class_3252 extends class_378 {
       if (var1 != class_6503.field_33095) {
          super.method_26583(var1);
       } else {
-         class_1343 var4 = this.method_37098();
+         Vector3d var4 = this.method_37098();
          this.method_37214(var4.field_7336, (double)(0.22F + (float)this.method_1860() * 0.05F), var4.field_7334);
          this.field_41763 = true;
       }

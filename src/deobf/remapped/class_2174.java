@@ -134,7 +134,7 @@ public class class_2174 {
          var12 = var2.method_16964(var1, var4, var3, var12);
       }
 
-      class_1343 var16 = var3.method_8353(var1, var4);
+      Vector3d var16 = var3.method_8353(var1, var4);
       var5.method_36065(var16.field_7336, var16.field_7333, var16.field_7334);
 
       try {
@@ -520,7 +520,7 @@ public class class_2174 {
       long var10,
       class_4460 var12,
       boolean var13,
-      class_1343 var14
+      Vector3d var14
    ) {
       if (var12.method_20671()) {
          for (int var17 = 0; var17 < field_10835.length; var17++) {

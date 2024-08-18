@@ -94,7 +94,7 @@ public class class_865 {
       return this.method_3736(var1.method_43235(), var1.method_37245(), var2);
    }
 
-   public boolean method_3736(class_6331 var1, class_1343 var2, Entity var3) {
+   public boolean method_3736(class_6331 var1, Vector3d var2, Entity var3) {
       if (this != field_4485) {
          if (var3 == null) {
             return false;

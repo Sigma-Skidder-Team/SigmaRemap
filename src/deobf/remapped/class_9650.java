@@ -44,7 +44,7 @@ public class class_9650 extends class_2833 {
       double var18 = (double)(this.field_49156 * MathHelper.cos(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var3 / var10);
       double var20 = (double)(this.field_49156 * MathHelper.sin(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var5 / var10);
       double var22 = (double)(this.field_49156 * MathHelper.sin(var16 * (float) (Math.PI / 180.0))) * Math.abs((double)var4 / var10);
-      class_1343 var24 = this.field_49154.method_37098();
-      this.field_49154.method_37215(var24.method_6215(new class_1343(var18, var22, var20).method_6194(var24).method_6209(0.2)));
+      Vector3d var24 = this.field_49154.method_37098();
+      this.field_49154.method_37215(var24.method_6215(new Vector3d(var18, var22, var20).method_6194(var24).method_6209(0.2)));
    }
 }

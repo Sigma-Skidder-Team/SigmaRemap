@@ -59,19 +59,19 @@ public class SmoothBlockFly extends Module {
 
    @EventListen
    public void method_36707(class_7982 var1) {
-      if (this.method_42015()) {
-         if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+      if (this.isEnabled()) {
+         if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
             if (client.theWorld
                      .method_6680(
                         client.thePlayer,
-                        client.thePlayer.field_41712.method_18928(0.0, -1.5, 0.0).method_18900(0.05, 0.0, 0.05).method_18900(-0.05, 0.0, -0.05)
+                        client.thePlayer.boundingBox.method_18928(0.0, -1.5, 0.0).method_18900(0.05, 0.0, 0.05).method_18900(-0.05, 0.0, -0.05)
                      )
                      .count()
                   == 0L
                && client.thePlayer.field_41706 < 1.0F) {
                var1.method_36186(true);
             }
-         } else if (client.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()) {
+         } else if (client.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).isEnabled()) {
             var1.method_36186(true);
          }
       }
@@ -80,7 +80,7 @@ public class SmoothBlockFly extends Module {
    @EventListen
    @class_7664
    public void method_36714(class_1393 var1) {
-      if (this.method_42015() && this.field_41373.method_17219() != 0) {
+      if (this.isEnabled() && this.field_41373.method_17219() != 0) {
          if (!var1.method_6449()) {
             if (this.field_41370 != 999.0F) {
                this.field_41373.method_17215();
@@ -187,7 +187,7 @@ public class SmoothBlockFly extends Module {
    @EventListen
    @class_315
    public void method_36705(class_7767 var1) {
-      if (this.method_42015() && this.field_41373.method_17219() != 0) {
+      if (this.isEnabled() && this.field_41373.method_17219() != 0) {
          if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.01F)) {
             this.field_41371 = client.thePlayer.method_37309();
          }
@@ -294,7 +294,7 @@ public class SmoothBlockFly extends Module {
    @EventListen
    @class_7664
    public void method_36713(class_2157 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.getModule()).field_18196 >= 0) {
             var1.method_29715(true);
          }
@@ -303,7 +303,7 @@ public class SmoothBlockFly extends Module {
 
    @EventListen
    public void method_36709(class_2911 var1) {
-      if (this.method_42015() && this.field_41377) {
+      if (this.isEnabled() && this.field_41377) {
          if (this.getModule().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
             && (!class_314.method_1434() || this.getModule().method_42007("Tower while moving"))) {
             var1.method_29715(true);
@@ -313,14 +313,14 @@ public class SmoothBlockFly extends Module {
 
    @EventListen
    public void method_36708(class_1711 var1) {
-      if (this.method_42015() && this.getStringValueByName("Speed Mode").equals("Cubecraft") && this.field_41381 >= 0) {
+      if (this.isEnabled() && this.getStringValueByName("Speed Mode").equals("Cubecraft") && this.field_41381 >= 0) {
          if (!(client.thePlayer.field_41706 > 1.2F)) {
             if (!(client.thePlayer.field_3864 < this.field_41371)) {
                if (!client.thePlayer.field_29654) {
-                  client.thePlayer.field_41736.field_7333 = this.field_41371;
+                  client.thePlayer.positionVec.field_7333 = this.field_41371;
                   client.thePlayer.field_41713 = this.field_41371;
                   client.thePlayer.field_3864 = this.field_41371;
-                  client.thePlayer.field_41698 = this.field_41371;
+                  client.thePlayer.prevPosY = this.field_41371;
                   if (class_8865.method_40772()) {
                      client.thePlayer.field_3859 = 0.099999994F;
                   }
@@ -361,7 +361,7 @@ public class SmoothBlockFly extends Module {
       return new double[]{var13, var15};
    }
 
-   public static class_1343 method_36711(BlockPos var0, Direction var1) {
+   public static Vector3d method_36711(BlockPos var0, Direction var1) {
       double var4 = (double)var0.getX() + 0.5;
       double var6 = (double)var0.getY() + 0.5;
       double var8 = (double)var0.getZ() + 0.5;
@@ -384,7 +384,7 @@ public class SmoothBlockFly extends Module {
          var4 += method_36712(var10, -var10);
       }
 
-      return new class_1343(var4, var6, var8);
+      return new Vector3d(var4, var6, var8);
    }
 
    public static double method_36712(double var0, double var2) {

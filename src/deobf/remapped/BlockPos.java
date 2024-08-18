@@ -39,7 +39,7 @@ public class BlockPos extends Vector3i {
       super(var1, var3, var5);
    }
 
-   public BlockPos(class_1343 var1) {
+   public BlockPos(Vector3d var1) {
       this(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 

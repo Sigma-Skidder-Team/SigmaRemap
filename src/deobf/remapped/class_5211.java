@@ -17,7 +17,7 @@ public class class_5211 extends class_6165 {
 
    @Override
    public void method_29511() {
-      if (!this.field_26772.field_41751 && this.field_26771 >= 0) {
+      if (!this.field_26772.removed && this.field_26771 >= 0) {
          if (!this.field_26772.method_37179()) {
             this.field_26771 -= 2;
          } else {

@@ -28,7 +28,7 @@ public class GommeSpeed extends Module {
 
    @EventListen
    public void method_31147(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_509) {
             this.field_35037 = 0;
          }
@@ -37,7 +37,7 @@ public class GommeSpeed extends Module {
 
    @EventListen
    public void method_31148(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!client.thePlayer.onGround) {
             if (this.field_35041 > 0.0 && this.field_35037 > 0) {
                this.field_35038++;

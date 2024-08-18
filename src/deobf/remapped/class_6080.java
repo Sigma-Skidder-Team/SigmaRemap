@@ -104,7 +104,7 @@ public class class_6080 {
    }
 
    @EventListen
-   private void method_27840(class_5596 var1) {
+   private void method_27840(PlayerTickEvent var1) {
       Iterator var4 = this.field_31118.iterator();
 
       while (var4.hasNext()) {

@@ -60,7 +60,7 @@ public abstract class class_7513 {
       return this.field_38368;
    }
 
-   public abstract class_1343 method_34246(class_1343 var1, float var2);
+   public abstract Vector3d method_34246(Vector3d var1, float var2);
 
    public abstract boolean method_34252(int var1, int var2);
 

@@ -230,7 +230,7 @@ public class class_7617 extends class_5467 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, (double)(0.5F * this.method_37277()), (double)(this.method_37086() * 0.4F));
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, (double)(0.5F * this.method_37277()), (double)(this.method_37086() * 0.4F));
    }
 }

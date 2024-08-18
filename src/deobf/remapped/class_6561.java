@@ -108,7 +108,7 @@ public class class_6561 {
       this.field_33470.clear();
 
       for (Entity var8 : var6) {
-         class_1343 var9 = new class_1343(
+         Vector3d var9 = new Vector3d(
             var8.getPosX() - (double)var2.getX(),
             var8.method_37309() - (double)var2.getY(),
             var8.getPosZ() - (double)var2.getZ()
@@ -353,8 +353,8 @@ public class class_6561 {
          BlockPos var12 = method_29966(var11.field_45183, var3, var4, var5).method_6105(var2);
          if (var6 == null || var6.method_44395(var12)) {
             CompoundNBT var13 = var11.field_45182.method_25944();
-            class_1343 var14 = method_29967(var11.field_45180, var3, var4, var5);
-            class_1343 var15 = var14.method_6214((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
+            Vector3d var14 = method_29967(var11.field_45180, var3, var4, var5);
+            Vector3d var15 = var14.method_6214((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
             class_3416 var16 = new class_3416();
             var16.add(class_9708.method_44846(var15.field_7336));
             var16.add(class_9708.method_44846(var15.field_7333));
@@ -423,7 +423,7 @@ public class class_6561 {
       }
    }
 
-   public static class_1343 method_29967(class_1343 var0, class_9022 var1, class_6631 var2, BlockPos var3) {
+   public static Vector3d method_29967(Vector3d var0, class_9022 var1, class_6631 var2, BlockPos var3) {
       double var6 = var0.field_7336;
       double var8 = var0.field_7333;
       double var10 = var0.field_7334;
@@ -443,13 +443,13 @@ public class class_6561 {
       int var14 = var3.getZ();
       switch (var2) {
          case field_34335:
-            return new class_1343((double)(var13 - var14) + var10, var8, (double)(var13 + var14 + 1) - var6);
+            return new Vector3d((double)(var13 - var14) + var10, var8, (double)(var13 + var14 + 1) - var6);
          case field_34334:
-            return new class_1343((double)(var13 + var14 + 1) - var10, var8, (double)(var14 - var13) + var6);
+            return new Vector3d((double)(var13 + var14 + 1) - var10, var8, (double)(var14 - var13) + var6);
          case field_34338:
-            return new class_1343((double)(var13 + var13 + 1) - var6, var8, (double)(var14 + var14 + 1) - var10);
+            return new Vector3d((double)(var13 + var13 + 1) - var6, var8, (double)(var14 + var14 + 1) - var10);
          default:
-            return var12 ? new class_1343(var6, var8, var10) : var0;
+            return var12 ? new Vector3d(var6, var8, var10) : var0;
       }
    }
 
@@ -632,7 +632,7 @@ public class class_6561 {
       for (int var15 = 0; var15 < var14.size(); var15++) {
          CompoundNBT var8 = var14.method_15764(var15);
          class_3416 var9 = var8.method_25927("pos", 6);
-         class_1343 var10 = new class_1343(var9.method_15763(0), var9.method_15763(1), var9.method_15763(2));
+         Vector3d var10 = new Vector3d(var9.method_15763(0), var9.method_15763(1), var9.method_15763(2));
          class_3416 var11 = var8.method_25927("blockPos", 3);
          BlockPos var12 = new BlockPos(var11.method_15762(0), var11.method_15762(1), var11.method_15762(2));
          if (var8.method_25938("nbt")) {

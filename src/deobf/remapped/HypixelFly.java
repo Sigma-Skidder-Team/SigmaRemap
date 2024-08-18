@@ -90,7 +90,7 @@ public class HypixelFly extends Module {
    public void method_17884(PacketEvent var1) {
       if (client.method_8614() != null && class_314.method_1387()) {
          Packet var4 = var1.method_557();
-         if (this.method_42015()) {
+         if (this.isEnabled()) {
             if (var4 instanceof class_509) {
                this.getModule().method_41999();
             }
@@ -100,7 +100,7 @@ public class HypixelFly extends Module {
 
    @EventListen
    @class_3932
-   public void method_17887(class_5596 var1) {
+   public void method_17887(PlayerTickEvent var1) {
    }
 
    @EventListen
@@ -126,7 +126,7 @@ public class HypixelFly extends Module {
          this.field_18794 = 1.0F;
       }
 
-      if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TimerModule.class).method_42015()) {
+      if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TimerModule.class).isEnabled()) {
          client.theTimer.timerSpeed = this.field_18794;
       }
 
@@ -165,7 +165,7 @@ public class HypixelFly extends Module {
 
          double var6 = 0.99375 - (double)this.field_18800 * 1.0E-13;
          this.field_18795 *= var6;
-         if (client.thePlayer.collidedHorizontally || client.thePlayer.field_41774) {
+         if (client.thePlayer.collidedHorizontally || client.thePlayer.collidedVertically) {
             this.field_18795 = 0.0;
          }
 
@@ -189,37 +189,37 @@ public class HypixelFly extends Module {
             }
          }
 
-         class_1343 var18 = client.thePlayer.method_37287(var1.method_35233().method_6214(0.0, -var1.method_35233().method_60(), 0.0));
+         Vector3d var18 = client.thePlayer.method_37287(var1.method_35233().method_6214(0.0, -var1.method_35233().method_60(), 0.0));
          double var19 = Math.abs(Math.sqrt(var18.method_6221()) - this.field_18795);
          boolean var21 = var19 < 1.0E-4;
          if (this.getBooleanValueByName("No Collision") && this.field_18795 > var10) {
             ArrayList var22 = new ArrayList();
             float var23 = MathHelper.wrapDegrees(class_8865.method_40785());
             if (var23 > 0.0F && var23 < 90.0F) {
-               var22.add(new class_1343(1.0, 0.0, 0.0));
-               var22.add(new class_1343(0.0, 0.0, 1.0));
-               var22.add(new class_1343(0.0, 0.0, -1.0));
-               var22.add(new class_1343(-1.0, 0.0, 0.0));
+               var22.add(new Vector3d(1.0, 0.0, 0.0));
+               var22.add(new Vector3d(0.0, 0.0, 1.0));
+               var22.add(new Vector3d(0.0, 0.0, -1.0));
+               var22.add(new Vector3d(-1.0, 0.0, 0.0));
             } else if (var23 > 90.0F && var23 < 180.0F) {
-               var22.add(new class_1343(0.0, 0.0, 1.0));
-               var22.add(new class_1343(-1.0, 0.0, 0.0));
-               var22.add(new class_1343(0.0, 0.0, -1.0));
-               var22.add(new class_1343(1.0, 0.0, 0.0));
+               var22.add(new Vector3d(0.0, 0.0, 1.0));
+               var22.add(new Vector3d(-1.0, 0.0, 0.0));
+               var22.add(new Vector3d(0.0, 0.0, -1.0));
+               var22.add(new Vector3d(1.0, 0.0, 0.0));
             } else if (var23 > -180.0F && var23 < -90.0F) {
-               var22.add(new class_1343(0.0, 0.0, -1.0));
-               var22.add(new class_1343(-1.0, 0.0, 0.0));
-               var22.add(new class_1343(1.0, 0.0, 0.0));
-               var22.add(new class_1343(0.0, 0.0, 1.0));
+               var22.add(new Vector3d(0.0, 0.0, -1.0));
+               var22.add(new Vector3d(-1.0, 0.0, 0.0));
+               var22.add(new Vector3d(1.0, 0.0, 0.0));
+               var22.add(new Vector3d(0.0, 0.0, 1.0));
             } else {
-               var22.add(new class_1343(0.0, 0.0, -1.0));
-               var22.add(new class_1343(1.0, 0.0, 0.0));
-               var22.add(new class_1343(0.0, 0.0, 1.0));
-               var22.add(new class_1343(-1.0, 0.0, 0.0));
+               var22.add(new Vector3d(0.0, 0.0, -1.0));
+               var22.add(new Vector3d(1.0, 0.0, 0.0));
+               var22.add(new Vector3d(0.0, 0.0, 1.0));
+               var22.add(new Vector3d(-1.0, 0.0, 0.0));
             }
 
             var1.method_35230(var18);
             if (!var21 && client.thePlayer.method_37309() % 1.0 > 0.1F && class_8865.method_40772()) {
-               for (class_1343 var25 : var22) {
+               for (Vector3d var25 : var22) {
                   var25.field_7336 = var25.field_7336 * this.field_18795;
                   var25.field_7334 = var25.field_7334 * this.field_18795;
                   double var26 = Math.abs(Math.sqrt(client.thePlayer.method_37287(var25).method_6221()) - this.field_18795);

@@ -56,7 +56,7 @@ public class AutoCrystalModule extends PremiumModule {
          if ((float)this.field_48557 >= 20.0F / this.getFloatValueByName("CPS")) {
             class_3577 var5 = client.theWorld
                .<Entity>method_25869(
-                  Entity.class, this.field_48550.field_41712.method_18928(2.0, 4.0, 2.0).method_18928(-2.0, -3.0, -2.0), var0 -> var0 instanceof class_3577
+                  Entity.class, this.field_48550.boundingBox.method_18928(2.0, 4.0, 2.0).method_18928(-2.0, -3.0, -2.0), var0 -> var0 instanceof class_3577
                )
                .stream()
                .<class_3577>map(var0 -> (class_3577)var0)
@@ -65,7 +65,7 @@ public class AutoCrystalModule extends PremiumModule {
                .min(Comparator.comparing(var1x -> method_44033(var1x.getPosX(), var1x.method_37309(), var1x.getPosZ(), this.field_48550)))
                .orElse(null);
             if (var5 != null) {
-               class_1988 var9 = class_7211.method_33015(var5.field_41736);
+               class_1988 var9 = class_7211.method_33015(var5.positionVec);
                var1.method_6441(var9.field_10069);
                var1.method_6448(var9.field_10067);
                this.field_48557 = 0;
@@ -93,7 +93,7 @@ public class AutoCrystalModule extends PremiumModule {
                .orElse(null);
             if (var6 != null) {
                class_1988 var7 = class_7211.method_33015(
-                  new class_1343((double)var6.field_13231 + 0.5, (double)var6.field_13230 + 0.5, (double)var6.field_13229 + 0.5)
+                  new Vector3d((double)var6.field_13231 + 0.5, (double)var6.field_13230 + 0.5, (double)var6.field_13229 + 0.5)
                );
                var1.method_6441(var7.field_10069);
                var1.method_6448(var7.field_10067);
@@ -181,7 +181,7 @@ public class AutoCrystalModule extends PremiumModule {
    public static float method_44033(double var0, double var2, double var4, Entity var6) {
       float var9 = 12.0F;
       double var10 = Math.sqrt(var6.method_37273(var0, var2, var4)) / (double)var9;
-      class_1343 var12 = new class_1343(var0, var2, var4);
+      Vector3d var12 = new Vector3d(var0, var2, var4);
       double var13 = (double)class_2730.method_12265(var12, var6);
       double var15 = (1.0 - var10) * var13;
       float var17 = (float)((int)((var15 * var15 + var15) / 2.0 * 7.0 * (double)var9 + 1.0));
@@ -228,7 +228,7 @@ public class AutoCrystalModule extends PremiumModule {
       }
    }
 
-   private void method_44017(class_1343 var1) {
+   private void method_44017(Vector3d var1) {
       class_1988 var4 = class_7211.method_33015(var1);
       field_48553 = var4.field_10069;
       field_48549 = var4.field_10067;
@@ -261,7 +261,7 @@ public class AutoCrystalModule extends PremiumModule {
                               } else if (!var6.method_37367()) {
                                  if (var6 instanceof PlayerEntity
                                     && class_5876.method_26760((PlayerEntity)var6)
-                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).isEnabled()) {
                                     var5.remove();
                                  }
                               } else {

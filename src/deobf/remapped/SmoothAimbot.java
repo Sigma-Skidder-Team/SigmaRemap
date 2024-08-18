@@ -11,7 +11,7 @@ public class SmoothAimbot extends Module {
 
    @EventListen
    private void method_25540(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!(client.thePlayer.rotationPitch > 45.0F)) {
             Entity var4 = ((AimbotModule)this.getModule()).method_10678(this.getFloatValueByName("Range"));
             if (var4 != null) {

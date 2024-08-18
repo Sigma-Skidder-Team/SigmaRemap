@@ -3,9 +3,9 @@ package remapped;
 public class class_8544 extends class_7764 {
    private static String[] field_43734;
    private double field_43733;
-   private class_1343 field_43732;
+   private Vector3d field_43732;
 
-   public class_8544(double var1, class_1343 var3) {
+   public class_8544(double var1, Vector3d var3) {
       this.field_43733 = var1;
       this.field_43732 = var3;
    }
@@ -23,7 +23,7 @@ public class class_8544 extends class_7764 {
       return this.field_43732.field_7333;
    }
 
-   public class_1343 method_39325() {
+   public Vector3d method_39325() {
       return this.field_43732;
    }
 }

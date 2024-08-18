@@ -206,7 +206,7 @@ public class class_449 extends class_1829 {
          }
 
          if (this.world.field_33055 && this.method_37285() && this.method_37098().method_6221() > 0.03) {
-            class_1343 var3 = this.method_37307(0.0F);
+            Vector3d var3 = this.method_37307(0.0F);
             float var4 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
             float var5 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
             float var6 = 1.2F - this.field_41717.nextFloat() * 0.7F;
@@ -322,7 +322,7 @@ public class class_449 extends class_1829 {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       if (this.method_26530() && this.method_37285()) {
          this.method_37092(this.method_26423(), var1);
          this.method_37226(class_7412.field_37839, this.method_37098());

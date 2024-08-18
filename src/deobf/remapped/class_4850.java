@@ -78,7 +78,7 @@ public class class_4850 {
       return this.method_22342() == 4116;
    }
 
-   public void method_22330(class_1343 var1) {
+   public void method_22330(Vector3d var1) {
       AL10.alSourcefv(this.field_24188, 4100, new float[]{(float)var1.field_7336, (float)var1.field_7333, (float)var1.field_7334});
    }
 

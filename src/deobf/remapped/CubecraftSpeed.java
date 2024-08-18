@@ -29,8 +29,8 @@ public class CubecraftSpeed extends Module {
 
    @EventListen
    public void method_38349(class_7767 var1) {
-      if (this.method_42015()
-         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).method_42015()
+      if (this.isEnabled()
+         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).isEnabled()
          && !class_314.method_1437(client.thePlayer)) {
          String var4 = this.getStringValueByName("Mode");
          switch (var4) {
@@ -72,7 +72,7 @@ public class CubecraftSpeed extends Module {
                class_8865.method_40777(var1, this.field_42614);
                break;
             case "Hop":
-               if (!client.thePlayer.field_41774 || !class_314.method_1413(client.thePlayer, 0.001F) || !class_8865.method_40772()) {
+               if (!client.thePlayer.collidedVertically || !class_314.method_1413(client.thePlayer, 0.001F) || !class_8865.method_40772()) {
                   this.field_42613++;
                   if (this.field_42613 == 1) {
                      this.field_42614 = 0.4 + (double)class_8865.method_40770() * 0.1;
@@ -100,7 +100,7 @@ public class CubecraftSpeed extends Module {
                   }
 
                   this.field_42612 = client.thePlayer.method_37309();
-                  if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TimerModule.class).method_42015()) {
+                  if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TimerModule.class).isEnabled()) {
                      client.theTimer.timerSpeed = 1.0F;
                   }
                } else {
@@ -121,15 +121,15 @@ public class CubecraftSpeed extends Module {
 
    @EventListen
    public void method_38351(class_1711 var1) {
-      if (this.method_42015() && !(this.field_42612 < 0.0) && this.getStringValueByName("Mode").equals("YPort")) {
+      if (this.isEnabled() && !(this.field_42612 < 0.0) && this.getStringValueByName("Mode").equals("YPort")) {
          if (client.thePlayer.onGround && class_314.method_1413(client.thePlayer, 0.001F)) {
             this.field_42612 = client.thePlayer.method_37309();
          }
 
-         client.thePlayer.field_41736.field_7333 = this.field_42612;
+         client.thePlayer.positionVec.field_7333 = this.field_42612;
          client.thePlayer.field_41713 = this.field_42612;
          client.thePlayer.field_3864 = this.field_42612;
-         client.thePlayer.field_41698 = this.field_42612;
+         client.thePlayer.prevPosY = this.field_42612;
          if (class_8865.method_40772()) {
             client.thePlayer.field_3859 = 0.099999994F;
          }
@@ -138,7 +138,7 @@ public class CubecraftSpeed extends Module {
 
    @EventListen
    public void method_38350(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_13313(0.4);
          this.field_42614 = 0.6 + (double)class_8865.method_40770() * 0.1;
          this.field_42613 = 0;

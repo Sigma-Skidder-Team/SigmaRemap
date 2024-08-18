@@ -16,7 +16,7 @@ public class UnstuckModule extends Module {
 
    @EventListen
    public void method_8070(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if ((float)this.field_9265 >= this.getFloatValueByName("Flags")) {
             class_8865.method_40777(var1, 0.0);
             var1.method_35235(0.0);
@@ -27,14 +27,14 @@ public class UnstuckModule extends Module {
 
    @EventListen
    public void method_8069(class_717 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_9265 = 0;
       }
    }
 
    @EventListen
    public void method_8072(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          if (!client.thePlayer.onGround && !class_314.method_1413(client.thePlayer, 0.001F)) {
             if ((float)this.field_9265 >= this.getFloatValueByName("Flags") && this.field_9264 == 0) {
                this.field_9264 = 60;
@@ -57,7 +57,7 @@ public class UnstuckModule extends Module {
 
    @EventListen
    public void method_8071(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null) {
             if (var1.method_557() instanceof class_509 && !class_314.method_1413(client.thePlayer, 0.3F) && client.thePlayer.field_41697 > 10) {
                this.field_9265++;

@@ -208,17 +208,17 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return class_6414.method_29303(this.method_8325(var1, var2, class_214.method_926(var3)), var4);
    }
 
-   public class_1343 method_8353(class_6163 var1, BlockPos var2) {
+   public Vector3d method_8353(class_6163 var1, BlockPos var2) {
       class_7971 var5 = this.method_8360().method_10772();
       if (var5 != class_7971.field_40823) {
          long var6 = MathHelper.getCoordinateRandom(var2.getX(), 0, var2.getZ());
-         return new class_1343(
+         return new Vector3d(
             ((double)((float)(var6 & 15L) / 15.0F) - 0.5) * 0.5,
             var5 != class_7971.field_40822 ? 0.0 : ((double)((float)(var6 >> 4 & 15L) / 15.0F) - 1.0) * 0.2,
             ((double)((float)(var6 >> 8 & 15L) / 15.0F) - 0.5) * 0.5
          );
       } else {
-         return class_1343.field_7335;
+         return Vector3d.ZERO;
       }
    }
 

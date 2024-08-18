@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 public class class_5832 extends class_1871 {
    private static String[] field_29592;
-   private class_1343 field_29593;
+   private Vector3d field_29593;
 
    public class_5832(class_2770 var1) {
       super(var1);
@@ -34,7 +34,7 @@ public class class_5832 extends class_1871 {
 
    @Nullable
    @Override
-   public class_1343 method_23463() {
+   public Vector3d method_23463() {
       return this.field_29593;
    }
 

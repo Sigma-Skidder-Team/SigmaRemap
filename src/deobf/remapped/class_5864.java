@@ -64,12 +64,12 @@ public class class_5864 extends class_3333 {
    }
 
    private void method_26721(Entity var1) {
-      class_1343 var4 = var1.method_37098();
+      Vector3d var4 = var1.method_37098();
       if (!(var4.field_7333 < -0.13)) {
-         var1.method_37215(new class_1343(var4.field_7336, -0.05, var4.field_7334));
+         var1.method_37215(new Vector3d(var4.field_7336, -0.05, var4.field_7334));
       } else {
          double var5 = -0.05 / var4.field_7333;
-         var1.method_37215(new class_1343(var4.field_7336 * var5, -0.05, var4.field_7334 * var5));
+         var1.method_37215(new Vector3d(var4.field_7336 * var5, -0.05, var4.field_7334 * var5));
       }
 
       var1.field_41706 = 0.0F;

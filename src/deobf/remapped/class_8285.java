@@ -43,7 +43,7 @@ public class class_8285 extends class_3599 {
             }
          }
 
-         class_1343 var3 = this.method_38233();
+         Vector3d var3 = this.method_38233();
          if (var3 != null) {
             this.field_42467 = var3.field_7336;
             this.field_42470 = var3.field_7333;
@@ -59,7 +59,7 @@ public class class_8285 extends class_3599 {
    }
 
    @Nullable
-   public class_1343 method_38233() {
+   public Vector3d method_38233() {
       return class_3425.method_15845(this.field_42465, 10, 7);
    }
 

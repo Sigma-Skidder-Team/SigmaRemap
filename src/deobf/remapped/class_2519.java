@@ -16,7 +16,7 @@ public class class_2519 extends MonsterEntity {
    }
 
    @Override
-   public void method_37226(class_7412 var1, class_1343 var2) {
+   public void method_37226(class_7412 var1, Vector3d var2) {
       super.method_37226(var1, var2);
       this.method_37097();
    }

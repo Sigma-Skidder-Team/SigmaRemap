@@ -14,7 +14,7 @@ public class HoverCriticals extends Module {
 
    @EventListen
    public void method_12646(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             this.field_13568 = 1.0E-11;
@@ -25,7 +25,7 @@ public class HoverCriticals extends Module {
    @EventListen
    @class_315
    private void method_12647(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          boolean var4 = client.field_9587 != null && client.field_9587.method_33990() == class_1430.field_7717;
          boolean var5 = client.playerController.method_42156() || client.gameOptions.keyAttack.isKeyDown() && var4;
          if (SigmaMainClass.getInstance().method_3310().method_25293() > 0 && !var5) {

@@ -8,7 +8,7 @@ public class class_6862 extends AbstractVillagerEntity {
 
    public class_6862(EntityType<? extends class_6862> var1, World var2) {
       super(var1, var2);
-      this.field_41722 = true;
+      this.forceSpawn = true;
    }
 
    @Override

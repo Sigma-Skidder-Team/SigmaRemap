@@ -28,7 +28,7 @@ public class NCPPhase extends PremiumModule {
 
    @EventListen
    private void method_12308(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          if (client.gameOptions.keySneak.isKeyDown()) {
             double var4 = client.thePlayer.getPosX();
             double var6 = client.thePlayer.method_37309();
@@ -62,7 +62,7 @@ public class NCPPhase extends PremiumModule {
 
    @EventListen
    private void method_12309(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.collidedHorizontally && this.field_13371 != 0) {
             this.field_13371 = 0;
             if (client.thePlayer.onGround) {
@@ -98,14 +98,14 @@ public class NCPPhase extends PremiumModule {
 
    @EventListen
    private void method_12307(class_3574 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          var1.method_29715(true);
       }
    }
 
    @EventListen
    private void method_12306(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;

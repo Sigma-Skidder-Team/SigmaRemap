@@ -76,7 +76,7 @@ public abstract class class_6353<T extends LivingEntity, M extends class_6521<T>
             var11 = var10 - var9;
          }
 
-         float var31 = MathHelper.lerp(var3, var1.field_41762, var1.rotationPitch);
+         float var31 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
          class_5278 var33 = new class_5278(var9, var10, var11, var31, var3, var1);
          SigmaMainClass.getInstance().getEventManager().call(var33);
          if (var33.method_29716()) {

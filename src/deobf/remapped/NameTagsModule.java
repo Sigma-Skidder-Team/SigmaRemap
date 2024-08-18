@@ -30,8 +30,8 @@ public class NameTagsModule extends Module {
    }
 
    @EventListen
-   private void method_5292(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_5292(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          this.field_6697 = this.method_42007("Furnaces");
          if (!this.field_6697) {
             this.field_6693.clear();
@@ -64,7 +64,7 @@ public class NameTagsModule extends Module {
 
    @EventListen
    private void method_5299(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_10047() instanceof class_8585) {
             class_8585 var4 = (class_8585)var1.method_10047();
             if (client.theWorld.method_28262(var4.method_39484().method_43955()).method_8360() instanceof class_3744) {
@@ -92,7 +92,7 @@ public class NameTagsModule extends Module {
 
    @EventListen
    private void method_5298(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_5149) {
             class_5149 var4 = (class_5149)var1.method_557();
             if (var4.method_23575() != class_4165.field_20254) {
@@ -157,7 +157,7 @@ public class NameTagsModule extends Module {
 
    @EventListen
    public void method_5293(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          RenderSystem.method_16420(33986, 240.0F, 240.0F);
          boolean var4 = this.method_42007("Magnify");
 
@@ -324,7 +324,7 @@ public class NameTagsModule extends Module {
    public void method_5289(double var1, double var3, double var5, Entity var7, float var8, String var9) {
       FontRenderer var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
-      if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).method_42015() && var13.equals(client.method_8502().method_5366())) {
+      if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).isEnabled() && var13.equals(client.method_8502().method_5366())) {
          var13 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).getStringValueByName("Username");
       }
 
@@ -419,7 +419,7 @@ public class NameTagsModule extends Module {
 
    @EventListen
    public void method_5294(class_2563 var1) {
-      if (this.method_42015() && var1.method_11643() instanceof PlayerEntity) {
+      if (this.isEnabled() && var1.method_11643() instanceof PlayerEntity) {
          var1.method_29715(true);
       }
    }

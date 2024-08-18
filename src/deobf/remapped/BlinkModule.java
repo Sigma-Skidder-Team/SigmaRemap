@@ -6,7 +6,7 @@ import java.util.List;
 public class BlinkModule extends Module {
    public static class_9745 field_27898;
    private List<Packet<?>> packetList = new ArrayList<Packet<?>>();
-   private class_1343 field_27899;
+   private Vector3d field_27899;
    public float field_27900;
    public float field_27901;
 
@@ -16,7 +16,7 @@ public class BlinkModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_27899 = new class_1343(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ());
+      this.field_27899 = new Vector3d(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ());
       this.field_27900 = client.thePlayer.rotationYaw;
       this.field_27901 = client.thePlayer.rotationPitch;
       field_27898 = new class_9745(client.theWorld, client.thePlayer.method_3247());
@@ -40,7 +40,7 @@ public class BlinkModule extends Module {
 
    @EventListen
    private void method_24894(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && var1.method_10047() instanceof class_2317
             || var1.method_10047() instanceof class_4609
             || var1.method_10047() instanceof class_3398

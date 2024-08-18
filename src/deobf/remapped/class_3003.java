@@ -127,7 +127,7 @@ public class class_3003 extends class_2451 {
    }
 
    public Optional<MobEntity> method_13714(
-           PlayerEntity var1, MobEntity var2, EntityType<? extends MobEntity> var3, class_6331 var4, class_1343 var5, ItemStack var6
+           PlayerEntity var1, MobEntity var2, EntityType<? extends MobEntity> var3, class_6331 var4, Vector3d var5, ItemStack var6
    ) {
       if (this.method_13717(var6.method_27990(), var3)) {
          Object var9;

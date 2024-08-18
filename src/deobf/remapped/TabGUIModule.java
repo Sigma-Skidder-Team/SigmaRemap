@@ -49,7 +49,7 @@ public class TabGUIModule extends Module {
    @EventListen
    @class_5355
    private void method_41399(class_1711 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (SigmaMainClass.getInstance().getGUIManager().method_30987()) {
             if (!MinecraftClient.getInstance().gameOptions.field_45470) {
                if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
@@ -66,7 +66,7 @@ public class TabGUIModule extends Module {
    @EventListen
    @class_5355
    private void method_41401(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null && client.theWorld != null) {
+      if (this.isEnabled() && client.thePlayer != null && client.theWorld != null) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
             if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                this.field_46178 = 5 * this.field_46159 + this.field_46163;
@@ -132,7 +132,7 @@ public class TabGUIModule extends Module {
             this.field_46167.put(var9, this.field_46167.get(var9) - this.field_46165);
          }
 
-         if (var9.method_42015()) {
+         if (var9.isEnabled()) {
             FontManager.method_87(
                class_5320.field_27161,
                (float)(var1 + 11) + this.field_46167.get(var9),
@@ -300,7 +300,7 @@ public class TabGUIModule extends Module {
 
    @EventListen
    private void method_41396(class_3368 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          this.method_41405();
          this.field_46165 = (float)Math.max(Math.round(6.0F - (float) MinecraftClient.method_8501() / 10.0F), 1);
       }
@@ -308,7 +308,7 @@ public class TabGUIModule extends Module {
 
    @EventListen
    private void method_41404(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          switch (var1.method_29384()) {
             case 257:
                if (this.field_46166) {

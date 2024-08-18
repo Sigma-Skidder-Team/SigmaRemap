@@ -16,7 +16,7 @@ public class OtherNameTagsModule extends Module {
 
    @EventListen
    public void method_13955(class_7285 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          byte var4 = 20;
          byte var5 = 32;
 
@@ -93,7 +93,7 @@ public class OtherNameTagsModule extends Module {
 
    @EventListen
    public void method_13953(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_15013.clear();
 
          for (Entity var5 : client.theWorld.method_736()) {
@@ -111,7 +111,7 @@ public class OtherNameTagsModule extends Module {
 
    @EventListen
    public void method_13954(class_2563 var1) {
-      if (this.method_42015() && var1.method_11643() instanceof PlayerEntity) {
+      if (this.isEnabled() && var1.method_11643() instanceof PlayerEntity) {
          var1.method_29715(true);
       }
    }

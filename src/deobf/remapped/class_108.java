@@ -32,7 +32,7 @@ public class class_108 extends class_6414 {
       return var6;
    }
 
-   private static int method_333(class_9529 var0, class_1343 var1) {
+   private static int method_333(class_9529 var0, Vector3d var1) {
       Direction var4 = var0.method_43956();
       double var5 = Math.abs(MathHelper.frac(var1.field_7336) - 0.5);
       double var7 = Math.abs(MathHelper.frac(var1.field_7333) - 0.5);

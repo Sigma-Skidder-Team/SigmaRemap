@@ -189,7 +189,7 @@ public class class_6414 extends class_2353 implements class_8525 {
    public static List<ItemStack> method_29288(class_2522 var0, class_6331 var1, BlockPos var2, class_3757 var3) {
       class_8480 var6 = new class_8480(var1)
          .method_39068(var1.field_33033)
-         .method_39065(class_8712.field_44671, class_1343.method_6216(var2))
+         .method_39065(class_8712.field_44671, Vector3d.method_6216(var2))
          .method_39065(class_8712.field_44670, ItemStack.EMPTY)
          .method_39069(class_8712.field_44673, var3);
       return var0.method_8333(var6);
@@ -198,7 +198,7 @@ public class class_6414 extends class_2353 implements class_8525 {
    public static List<ItemStack> method_29289(class_2522 var0, class_6331 var1, BlockPos var2, class_3757 var3, Entity var4, ItemStack var5) {
       class_8480 var8 = new class_8480(var1)
          .method_39068(var1.field_33033)
-         .method_39065(class_8712.field_44671, class_1343.method_6216(var2))
+         .method_39065(class_8712.field_44671, Vector3d.method_6216(var2))
          .method_39065(class_8712.field_44670, var5)
          .method_39069(class_8712.field_44676, var4)
          .method_39069(class_8712.field_44673, var3);

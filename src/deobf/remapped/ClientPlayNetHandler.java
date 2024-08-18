@@ -461,7 +461,7 @@ public class ClientPlayNetHandler implements class_392 {
                var4.method_37318(var4.getPosX(), var4.method_37309(), var4.getPosZ(), var5, var6, 3, false);
             }
          } else {
-            class_1343 var8 = var1.method_2558(var4.method_37103());
+            Vector3d var8 = var1.method_2558(var4.method_37103());
             var4.method_37358(var8);
             float var9 = !var1.method_2560() ? var4.rotationYaw : (float)(var1.method_2557() * 360) / 256.0F;
             float var7 = !var1.method_2560() ? var4.rotationPitch : (float)(var1.method_2561() * 360) / 256.0F;
@@ -496,7 +496,7 @@ public class ClientPlayNetHandler implements class_392 {
    public void method_1894(class_509 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       ClientPlayerEntity var4 = this.field_6026.thePlayer;
-      class_1343 var5 = var4.method_37098();
+      Vector3d var5 = var4.method_37098();
       boolean var6 = var1.method_2518().contains(class_8089.field_41423);
       boolean var7 = var1.method_2518().contains(class_8089.field_41427);
       boolean var8 = var1.method_2518().contains(class_8089.field_41424);
@@ -541,9 +541,9 @@ public class ClientPlayNetHandler implements class_392 {
       }
 
       var4.method_37222(var11, var15, var19);
-      var4.field_41767 = var11;
-      var4.field_41698 = var15;
-      var4.field_41725 = var19;
+      var4.prevPosX = var11;
+      var4.prevPosY = var15;
+      var4.prevPosZ = var19;
       var4.method_37214(var9, var13, var17);
       float var21 = var1.method_2522();
       float var22 = var1.method_2523();
@@ -1318,7 +1318,7 @@ public class ClientPlayNetHandler implements class_392 {
    @Override
    public void method_1920(class_2436 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_1343 var4 = var1.method_11101(this.field_6021);
+      Vector3d var4 = var1.method_11101(this.field_6021);
       if (var4 != null) {
          this.field_6026.thePlayer.method_37332(var1.method_11099(), var4);
       }

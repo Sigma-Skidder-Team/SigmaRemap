@@ -7,7 +7,7 @@ public class ChatFilterModule extends Module {
 
    @EventListen
    private void method_2982(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_10047() instanceof class_3211) {
             class_3211 var4 = (class_3211)var1.method_10047();
             String[] var5 = var4.field_16018.split(" ");

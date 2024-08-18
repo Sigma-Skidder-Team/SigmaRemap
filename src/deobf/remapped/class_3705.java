@@ -15,7 +15,7 @@ public class class_3705 extends class_3289 {
       this(var1, var2, var3, var4, var2.method_37098());
    }
 
-   private class_3705(ClientWorld var1, Entity var2, class_5079 var3, int var4, class_1343 var5) {
+   private class_3705(ClientWorld var1, Entity var2, class_5079 var3, int var4, Vector3d var5) {
       super(var1, var2.getPosX(), var2.method_37080(0.5), var2.getPosZ(), var5.field_7336, var5.field_7333, var5.field_7334);
       this.field_18186 = var2;
       this.field_18185 = var4;

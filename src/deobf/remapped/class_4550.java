@@ -19,9 +19,9 @@ public class class_4550 {
    private final boolean field_22182;
    private final Predicate<Entity> field_22178;
    private final class_6115 field_22173;
-   private final Function<class_1343, class_1343> field_22185;
+   private final Function<Vector3d, Vector3d> field_22185;
    private final Box field_22175;
-   private final BiConsumer<class_1343, List<? extends Entity>> field_22183;
+   private final BiConsumer<Vector3d, List<? extends Entity>> field_22183;
    private final boolean field_22176;
    private final String field_22180;
    private final UUID field_22186;
@@ -34,9 +34,9 @@ public class class_4550 {
       boolean var3,
       Predicate<Entity> var4,
       class_6115 var5,
-      Function<class_1343, class_1343> var6,
+      Function<Vector3d, Vector3d> var6,
       Box var7,
-      BiConsumer<class_1343, List<? extends Entity>> var8,
+      BiConsumer<Vector3d, List<? extends Entity>> var8,
       boolean var9,
       String var10,
       UUID var11,
@@ -102,7 +102,7 @@ public class class_4550 {
          class_9359 var10 = var1.method_42177().method_1600().method_39993(this.field_22180);
          return (List<? extends Entity>)(var10 != null ? Lists.newArrayList(new class_9359[]{var10}) : Collections.emptyList());
       } else if (this.field_22186 == null) {
-         class_1343 var9 = this.field_22185.apply(var1.method_42192());
+         Vector3d var9 = this.field_22185.apply(var1.method_42192());
          Predicate var11 = this.method_21102(var9);
          if (!this.field_22176) {
             ArrayList var12 = Lists.newArrayList();
@@ -132,7 +132,7 @@ public class class_4550 {
       }
    }
 
-   private void method_21112(List<Entity> var1, class_6331 var2, class_1343 var3, Predicate<Entity> var4) {
+   private void method_21112(List<Entity> var1, class_6331 var2, Vector3d var3, Predicate<Entity> var4) {
       if (this.field_22175 == null) {
          var1.addAll(var2.method_28926(this.field_22177, var4));
       } else {
@@ -156,7 +156,7 @@ public class class_4550 {
          class_9359 var10 = var1.method_42177().method_1600().method_39993(this.field_22180);
          return (List<class_9359>)(var10 != null ? Lists.newArrayList(new class_9359[]{var10}) : Collections.<class_9359>emptyList());
       } else if (this.field_22186 == null) {
-         class_1343 var9 = this.field_22185.apply(var1.method_42192());
+         Vector3d var9 = this.field_22185.apply(var1.method_42192());
          Predicate var5 = this.method_21102(var9);
          if (this.field_22176) {
             if (var1.method_42200() instanceof class_9359) {
@@ -189,7 +189,7 @@ public class class_4550 {
       }
    }
 
-   private Predicate<Entity> method_21102(class_1343 var1) {
+   private Predicate<Entity> method_21102(Vector3d var1) {
       Predicate var4 = this.field_22178;
       if (this.field_22175 != null) {
          Box var5 = this.field_22175.method_18920(var1);
@@ -203,7 +203,7 @@ public class class_4550 {
       return var4;
    }
 
-   private <T extends Entity> List<T> method_21113(class_1343 var1, List<T> var2) {
+   private <T extends Entity> List<T> method_21113(Vector3d var1, List<T> var2) {
       if (var2.size() > 1) {
          this.field_22183.accept(var1, var2);
       }

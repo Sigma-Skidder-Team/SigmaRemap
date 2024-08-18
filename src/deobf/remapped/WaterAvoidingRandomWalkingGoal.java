@@ -17,11 +17,11 @@ public class WaterAvoidingRandomWalkingGoal extends class_8285 {
 
    @Nullable
    @Override
-   public class_1343 method_38233() {
+   public Vector3d method_38233() {
       if (!this.field_42465.method_37134()) {
          return !(this.field_42465.method_26594().nextFloat() >= this.field_14136) ? super.method_38233() : class_3425.method_15834(this.field_42465, 10, 7);
       } else {
-         class_1343 var3 = class_3425.method_15834(this.field_42465, 15, 7);
+         Vector3d var3 = class_3425.method_15834(this.field_42465, 15, 7);
          return var3 != null ? var3 : super.method_38233();
       }
    }

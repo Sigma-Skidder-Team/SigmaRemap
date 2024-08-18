@@ -16,7 +16,7 @@ public class class_7854 extends class_6165 {
    @Override
    public void method_29511() {
       this.field_39800++;
-      if (!this.field_39802.field_41751 && (this.field_39800 <= 20 || this.field_39802.method_26618())) {
+      if (!this.field_39802.removed && (this.field_39800 <= 20 || this.field_39802.method_26618())) {
          this.field_5761 = (double)((float)this.field_39802.getPosX());
          this.field_5765 = (double)((float)this.field_39802.method_37309());
          this.field_5762 = (double)((float)this.field_39802.getPosZ());

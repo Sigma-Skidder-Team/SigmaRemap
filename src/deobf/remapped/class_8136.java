@@ -44,12 +44,12 @@ public class class_8136 extends Module {
 
    @EventListen
    private void method_37010(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          class_9097 var4 = class_314.method_1462(1.0E-4);
          String var5 = this.getStringValueByName("Mode");
          if (this.getBooleanValueByName("Ceiling")
             && !client.thePlayer.onGround
-            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
+            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.boundingBox.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
          }
 
@@ -81,12 +81,12 @@ public class class_8136 extends Module {
 
             if (((Direction)var4.method_41933()).method_1029() == class_9249.field_47215) {
                var1.method_6443(
-                  (double)Math.round((((class_1343)var4.method_41934()).field_7336 + 1.1921022E-8) * 10000.0) / 10000.0
+                  (double)Math.round((((Vector3d)var4.method_41934()).field_7336 + 1.1921022E-8) * 10000.0) / 10000.0
                      + (double)((Direction)var4.method_41933()).method_1041() * var6
                );
             } else {
                var1.method_6453(
-                  (double)Math.round((((class_1343)var4.method_41934()).field_7334 + 1.1921022E-8) * 10000.0) / 10000.0
+                  (double)Math.round((((Vector3d)var4.method_41934()).field_7334 + 1.1921022E-8) * 10000.0) / 10000.0
                      + (double)((Direction)var4.method_41933()).method_1034() * var6
                );
             }
@@ -96,10 +96,10 @@ public class class_8136 extends Module {
 
    @EventListen
    private void method_37008(class_5243 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_23988() != null
             && !var1.method_23988().method_19485()
-            && var1.method_23988().method_19483().field_19937 > client.thePlayer.field_41712.field_19937 + 1.0) {
+            && var1.method_23988().method_19483().field_19937 > client.thePlayer.boundingBox.field_19937 + 1.0) {
             var1.method_29715(true);
          }
       }

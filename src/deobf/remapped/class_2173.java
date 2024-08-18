@@ -6,7 +6,7 @@ public class class_2173 extends class_1871 {
    private static String[] field_10829;
    private boolean field_10830;
    private class_3998 field_10827;
-   private class_1343 field_10828;
+   private Vector3d field_10828;
 
    public class_2173(class_2770 var1) {
       super(var1);
@@ -34,7 +34,7 @@ public class class_2173 extends class_1871 {
 
    private void method_10092() {
       int var3 = this.field_9479.method_12606();
-      class_1343 var4 = this.field_9479.method_12609(1.0F);
+      Vector3d var4 = this.field_9479.method_12609(1.0F);
       int var5 = this.field_9479.method_12614(-var4.field_7336 * 40.0, 105.0, -var4.field_7334 * 40.0);
       if (this.field_9479.method_12622() != null && this.field_9479.method_12622().method_12784() > 0) {
          var5 %= 12;
@@ -63,14 +63,14 @@ public class class_2173 extends class_1871 {
                var4 = (double)((float)var3.getY() + this.field_9479.method_26594().nextFloat() * 20.0F);
             } while (var4 < (double)var3.getY());
 
-            this.field_10828 = new class_1343((double)var3.getX(), var4, (double)var3.getZ());
+            this.field_10828 = new Vector3d((double)var3.getX(), var4, (double)var3.getZ());
          }
       }
    }
 
    @Nullable
    @Override
-   public class_1343 method_23463() {
+   public Vector3d method_23463() {
       return this.field_10828;
    }
 

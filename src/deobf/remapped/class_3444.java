@@ -19,7 +19,7 @@ public class class_3444 extends class_8116 {
    }
 
    @Override
-   public class_1343 method_36923() {
+   public Vector3d method_36923() {
       return this.field_16913.method_37245();
    }
 

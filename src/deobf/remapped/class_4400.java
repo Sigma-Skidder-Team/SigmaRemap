@@ -28,7 +28,7 @@ public class class_4400 {
 
    @EventListen
    @class_5355
-   private void method_20496(class_5596 var1) {
+   private void method_20496(PlayerTickEvent var1) {
       if (this.field_21538 != null) {
          for (PlayerEntity var5 : class_314.method_1435()) {
             if (!this.field_21538.method_7183(var5)) {

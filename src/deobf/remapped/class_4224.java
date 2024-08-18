@@ -24,7 +24,7 @@ public class class_4224 implements class_5801 {
    public class_9155 method_19669() {
       class_6331 var3 = this.field_20496.method_1736();
       return new class_9155(
-         this, class_1343.method_6205(var3.method_28998()), class_4895.field_24322, var3, 4, "Rcon", field_20494, this.field_20496, (Entity)null
+         this, Vector3d.method_6205(var3.method_28998()), class_4895.field_24322, var3, 4, "Rcon", field_20494, this.field_20496, (Entity)null
       );
    }
 

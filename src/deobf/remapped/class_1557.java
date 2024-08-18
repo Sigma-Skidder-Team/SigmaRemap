@@ -18,7 +18,7 @@ public class class_1557 extends class_2451 {
       World var4 = var1.method_21862();
       if (!var4.field_33055) {
          ItemStack var5 = var1.method_21867();
-         class_1343 var6 = var1.method_21865();
+         Vector3d var6 = var1.method_21865();
          Direction var7 = var1.method_21857();
          class_8612 var8 = new class_8612(
             var4,

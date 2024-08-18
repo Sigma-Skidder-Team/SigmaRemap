@@ -29,7 +29,7 @@ public class HawkFly extends Module {
    @EventListen
    @class_7664
    public void method_15718(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = 0.125;
          if (this.field_16754 != -1) {
             if (this.field_16754 == 0) {
@@ -48,7 +48,7 @@ public class HawkFly extends Module {
 
    @EventListen
    public void method_15719(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_16754++;
          if (this.field_16754 == 1) {
             var1.method_6455(0.1);
@@ -61,7 +61,7 @@ public class HawkFly extends Module {
 
    @EventListen
    public void method_15721(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;
@@ -80,22 +80,22 @@ public class HawkFly extends Module {
 
    @EventListen
    public void method_15720(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = this.field_16751;
          double var6 = this.field_16753;
          double var8 = this.field_16755;
-         client.thePlayer.field_41736.field_7333 = var4;
+         client.thePlayer.positionVec.field_7333 = var4;
          client.thePlayer.field_41713 = var4;
          client.thePlayer.field_3864 = var4;
-         client.thePlayer.field_41698 = var4;
-         client.thePlayer.field_41736.field_7336 = var6;
+         client.thePlayer.prevPosY = var4;
+         client.thePlayer.positionVec.field_7336 = var6;
          client.thePlayer.field_41754 = var6;
          client.thePlayer.field_3868 = var6;
-         client.thePlayer.field_41767 = var6;
-         client.thePlayer.field_41736.field_7334 = var8;
+         client.thePlayer.prevPosX = var6;
+         client.thePlayer.positionVec.field_7334 = var8;
          client.thePlayer.field_41724 = var8;
          client.thePlayer.field_3858 = var8;
-         client.thePlayer.field_41725 = var8;
+         client.thePlayer.prevPosZ = var8;
       }
    }
 }

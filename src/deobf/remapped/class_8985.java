@@ -21,8 +21,8 @@ public class class_8985 extends PathNavigator {
    }
 
    @Override
-   public class_1343 method_5596() {
-      return new class_1343(this.field_6877.getPosX(), (double)this.method_41196(), this.field_6877.getPosZ());
+   public Vector3d method_5596() {
+      return new Vector3d(this.field_6877.getPosX(), (double)this.method_41196(), this.field_6877.getPosZ());
    }
 
    @Override
@@ -105,7 +105,7 @@ public class class_8985 extends PathNavigator {
    }
 
    @Override
-   public boolean method_5599(class_1343 var1, class_1343 var2, int var3, int var4, int var5) {
+   public boolean method_5599(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
       int var8 = MathHelper.floor(var1.field_7336);
       int var9 = MathHelper.floor(var1.field_7334);
       double var10 = var2.field_7336 - var1.field_7336;
@@ -166,7 +166,7 @@ public class class_8985 extends PathNavigator {
       }
    }
 
-   private boolean method_41198(int var1, int var2, int var3, int var4, int var5, int var6, class_1343 var7, double var8, double var10) {
+   private boolean method_41198(int var1, int var2, int var3, int var4, int var5, int var6, Vector3d var7, double var8, double var10) {
       int var14 = var1 - var4 / 2;
       int var15 = var3 - var6 / 2;
       if (!this.method_41195(var14, var2, var15, var4, var5, var6, var7, var8, var10)) {
@@ -209,7 +209,7 @@ public class class_8985 extends PathNavigator {
       }
    }
 
-   private boolean method_41195(int var1, int var2, int var3, int var4, int var5, int var6, class_1343 var7, double var8, double var10) {
+   private boolean method_41195(int var1, int var2, int var3, int var4, int var5, int var6, Vector3d var7, double var8, double var10) {
       for (BlockPos var15 : BlockPos.method_6076(new BlockPos(var1, var2, var3), new BlockPos(var1 + var4 - 1, var2 + var5 - 1, var3 + var6 - 1))) {
          double var16 = (double)var15.getX() + 0.5 - var7.field_7336;
          double var18 = (double)var15.getZ() + 0.5 - var7.field_7334;

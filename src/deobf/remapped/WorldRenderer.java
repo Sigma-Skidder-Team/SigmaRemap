@@ -91,7 +91,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    private int field_20944 = Integer.MIN_VALUE;
    private int field_20919 = Integer.MIN_VALUE;
    private int field_20957 = Integer.MIN_VALUE;
-   private class_1343 field_20975 = class_1343.field_7335;
+   private Vector3d field_20975 = Vector3d.ZERO;
    private class_9655 field_20992;
    private class_6705 field_20968;
    private final class_2868 field_20969 = class_7985.field_40918;
@@ -768,7 +768,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    public void method_20016(Camera var1, class_2359 var2, boolean var3, int var4, boolean var5) {
-      class_1343 var6 = var1.method_41627();
+      Vector3d var6 = var1.method_41627();
       if (this.client.gameOptions.field_45537 != this.field_20922) {
          this.method_19998();
       }
@@ -893,8 +893,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   this.field_20961.add(var22.method_16166());
                }
 
-               class_1343 var28 = new class_1343((double)var45.getX(), (double)var21, (double)var45.getZ());
-               class_1343 var29 = new class_1343(var28.method_61(), var28.method_60(), var28.method_62());
+               Vector3d var28 = new Vector3d((double)var45.getX(), (double)var21, (double)var45.getZ());
+               Vector3d var29 = new Vector3d(var28.method_61(), var28.method_60(), var28.method_62());
                class_2426 var30 = var1.method_41634();
                class_2426 var31 = new class_2426(var30.method_11057(), 0.0F, var30.method_11055());
                if (!var31.method_11066()) {
@@ -1085,7 +1085,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       class_3492 var10 = this.field_20970.method_29599();
       var10.method_16050("light_updates");
       this.client.theWorld.method_745().method_14813().method_21571(Integer.MAX_VALUE, true, true);
-      class_1343 var11 = var6.method_41627();
+      Vector3d var11 = var6.method_41627();
       double var12 = var11.method_61();
       double var14 = var11.method_60();
       double var16 = var11.method_62();
@@ -1975,7 +1975,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             int var7 = 40;
             int var8 = 40;
             if (Config.method_14438()) {
-               class_1343 var9 = new class_1343((double)var6 / 255.0, (double)var7 / 255.0, (double)var8 / 255.0);
+               Vector3d var9 = new Vector3d((double)var6 / 255.0, (double)var7 / 255.0, (double)var8 / 255.0);
                var9 = class_9300.method_42927(var9, this.field_20970, this.client.getRenderViewEntity(), 0.0F);
                var6 = (int)(var9.field_7336 * 255.0);
                var7 = (int)(var9.field_7333 * 255.0);
@@ -2015,7 +2015,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_6588.method_30299();
          }
 
-         class_1343 var4 = this.field_20970.method_750(this.client.gameRenderer.method_35949().method_41630(), var2);
+         Vector3d var4 = this.field_20970.method_750(this.client.gameRenderer.method_35949().method_41630(), var2);
          var4 = class_9300.method_42885(
             var4,
             this.client.theWorld,
@@ -2238,7 +2238,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             float var22 = (float)(var16 - (double) MathHelper.floor(var16));
             float var23 = (float)(var18 / 4.0 - (double) MathHelper.floor(var18 / 4.0)) * 4.0F;
             float var24 = (float)(var20 - (double) MathHelper.floor(var20));
-            class_1343 var25 = this.field_20970.method_742(var2);
+            Vector3d var25 = this.field_20970.method_742(var2);
             int var26 = (int)Math.floor(var16);
             int var27 = (int)Math.floor(var18 / 4.0);
             int var28 = (int)Math.floor(var20);
@@ -2304,7 +2304,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
    }
 
-   private void method_20030(class_9633 var1, double var2, double var4, double var6, class_1343 var8) {
+   private void method_20030(class_9633 var1, double var2, double var4, double var6, Vector3d var8) {
       float var9 = 4.0F;
       float var10 = 0.00390625F;
       byte var11 = 8;
@@ -3313,7 +3313,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             break;
          case 2002:
          case 2007:
-            class_1343 var17 = class_1343.method_6200(var3);
+            Vector3d var17 = Vector3d.method_6200(var3);
 
             for (int var18 = 0; var18 < 8; var18++) {
                this.method_20061(

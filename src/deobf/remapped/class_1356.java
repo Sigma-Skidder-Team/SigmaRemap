@@ -9,7 +9,7 @@ public class class_1356 extends Entity {
 
    public class_1356(EntityType<? extends class_1356> var1, World var2) {
       super(var1, var2);
-      this.field_41759 = true;
+      this.preventEntitySpawning = true;
    }
 
    public class_1356(World var1, double var2, double var4, double var6, LivingEntity var8) {
@@ -18,9 +18,9 @@ public class class_1356 extends Entity {
       double var11 = var1.field_33033.nextDouble() * (float) (Math.PI * 2);
       this.method_37214(-Math.sin(var11) * 0.02, 0.2F, -Math.cos(var11) * 0.02);
       this.method_6255(80);
-      this.field_41767 = var2;
-      this.field_41698 = var4;
-      this.field_41725 = var6;
+      this.prevPosX = var2;
+      this.prevPosY = var4;
+      this.prevPosZ = var6;
       this.field_7388 = var8;
    }
 
@@ -36,7 +36,7 @@ public class class_1356 extends Entity {
 
    @Override
    public boolean method_37167() {
-      return !this.field_41751;
+      return !this.removed;
    }
 
    @Override

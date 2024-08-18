@@ -132,7 +132,7 @@ public class JelloTouch {
    }
 
    @EventListen
-   public void method_384(class_5596 var1) {
+   public void method_384(PlayerTickEvent var1) {
       if (MinecraftClient.getInstance().theWorld == null && this.field_298) {
          this.method_378();
       } else if (MinecraftClient.getInstance().theWorld != null && !this.field_298) {
@@ -232,31 +232,31 @@ public class JelloTouch {
                      if (var1.method_42004() != Category.PLAYER) {
                         if (var1.method_42004() != Category.RENDER) {
                            if (var1.method_42004() == Category.WORLD) {
-                              var4 = this.method_385(-5118535, var1.method_42015());
+                              var4 = this.method_385(-5118535, var1.isEnabled());
                            }
                         } else {
-                           var4 = this.method_385(-1710108, var1.method_42015());
+                           var4 = this.method_385(-1710108, var1.isEnabled());
                         }
                      } else {
-                        var4 = this.method_385(-4208147, var1.method_42015());
+                        var4 = this.method_385(-4208147, var1.isEnabled());
                      }
                   } else {
-                     var4 = this.method_385(-1587309, var1.method_42015());
+                     var4 = this.method_385(-1587309, var1.isEnabled());
                   }
                } else {
-                  var4 = this.method_385(-1916956, var1.method_42015());
+                  var4 = this.method_385(-1916956, var1.isEnabled());
                }
             } else {
-               var4 = this.method_385(-2899864, var1.method_42015());
+               var4 = this.method_385(-2899864, var1.isEnabled());
             }
          } else {
-            var4 = this.method_385(-2697514, var1.method_42015());
+            var4 = this.method_385(-2697514, var1.isEnabled());
          }
       } else {
-         var4 = this.method_385(-20561, var1.method_42015());
+         var4 = this.method_385(-20561, var1.isEnabled());
       }
 
-      var4.setAlpha(!var1.method_42015() ? 0.35F : 1.0F);
+      var4.setAlpha(!var1.isEnabled() ? 0.35F : 1.0F);
       return var4;
    }
 

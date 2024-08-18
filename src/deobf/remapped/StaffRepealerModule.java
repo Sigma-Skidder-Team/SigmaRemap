@@ -10,8 +10,8 @@ public class StaffRepealerModule extends Module {
    }
 
    @EventListen
-   private void method_16497(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_16497(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (class_314.method_1387()) {
             client.gameOptions.method_40870();
          }
@@ -20,7 +20,7 @@ public class StaffRepealerModule extends Module {
 
    @EventListen
    private void method_16498(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_527) {
             class_527 var4 = (class_527)var1.method_557();
          }

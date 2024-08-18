@@ -3,16 +3,16 @@ package remapped;
 public class class_2547 extends class_7429 implements class_2354 {
    private static String[] field_12618;
    private int field_12620;
-   private final class_1343[][] field_12619;
+   private final Vector3d[][] field_12619;
 
    public class_2547(EntityType<? extends class_2547> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
-      this.field_12619 = new class_1343[2][4];
+      this.field_12619 = new Vector3d[2][4];
 
       for (int var5 = 0; var5 < 4; var5++) {
-         this.field_12619[0][var5] = class_1343.field_7335;
-         this.field_12619[1][var5] = class_1343.field_7335;
+         this.field_12619[0][var5] = Vector3d.ZERO;
+         this.field_12619[1][var5] = Vector3d.ZERO;
       }
    }
 
@@ -72,7 +72,7 @@ public class class_2547 extends class_7429 implements class_2354 {
 
             for (int var5 = 0; var5 < 4; var5++) {
                this.field_12619[0][var5] = this.field_12619[1][var5];
-               this.field_12619[1][var5] = new class_1343(
+               this.field_12619[1][var5] = new Vector3d(
                   (double)(-6.0F + (float)this.field_41717.nextInt(13)) * 0.5,
                   (double)Math.max(0, this.field_41717.nextInt(6) - 4),
                   (double)(-6.0F + (float)this.field_41717.nextInt(13)) * 0.5
@@ -90,7 +90,7 @@ public class class_2547 extends class_7429 implements class_2354 {
 
             for (int var3 = 0; var3 < 4; var3++) {
                this.field_12619[0][var3] = this.field_12619[1][var3];
-               this.field_12619[1][var3] = new class_1343(0.0, 0.0, 0.0);
+               this.field_12619[1][var3] = new Vector3d(0.0, 0.0, 0.0);
             }
          }
       }
@@ -101,13 +101,13 @@ public class class_2547 extends class_7429 implements class_2354 {
       return SoundEvents.field_2727;
    }
 
-   public class_1343[] method_11597(float var1) {
+   public Vector3d[] method_11597(float var1) {
       if (this.field_12620 <= 0) {
          return this.field_12619[1];
       } else {
          double var4 = (double)(((float)this.field_12620 - var1) / 3.0F);
          var4 = Math.pow(var4, 0.25);
-         class_1343[] var6 = new class_1343[4];
+         Vector3d[] var6 = new Vector3d[4];
 
          for (int var7 = 0; var7 < 4; var7++) {
             var6[var7] = this.field_12619[1][var7].method_6209(1.0 - var4).method_6215(this.field_12619[0][var7].method_6209(var4));

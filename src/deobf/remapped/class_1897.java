@@ -18,7 +18,7 @@ public class class_1897 implements Packet<class_392> {
    public class_1897() {
    }
 
-   public class_1897(double var1, double var3, double var5, float var7, List<BlockPos> var8, class_1343 var9) {
+   public class_1897(double var1, double var3, double var5, float var7, List<BlockPos> var8, Vector3d var9) {
       this.field_9691 = var1;
       this.field_9689 = var3;
       this.field_9685 = var5;

@@ -50,7 +50,7 @@ public class class_3024 extends class_5467 {
       }
 
       this.field_14825 = (float)((double)this.field_14825 * 0.9);
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       if (!this.onGround && var3.field_7333 < 0.0) {
          this.method_37215(var3.method_6210(1.0, 0.6, 1.0));
       }

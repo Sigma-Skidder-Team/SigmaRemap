@@ -5,7 +5,7 @@ import com.google.common.base.Predicate;
 public class class_8528 implements Predicate<Entity> {
    private static String[] field_43642;
 
-   public class_8528(class_3336 var1, float var2, class_1343 var3, class_1343 var4) {
+   public class_8528(class_3336 var1, float var2, Vector3d var3, Vector3d var4) {
       this.field_43641 = var1;
       this.field_43639 = var2;
       this.field_43640 = var3;

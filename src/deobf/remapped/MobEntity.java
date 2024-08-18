@@ -452,7 +452,7 @@ public abstract class MobEntity extends LivingEntity {
 
       if (!this.world.field_33055 && this.method_26930() && this.isAlive() && !this.field_29659 && var3) {
          for (class_91 var5 : this.world.<class_91>method_25868(class_91.class, this.getBoundingBox().method_18899(1.0, 0.0, 1.0))) {
-            if (!var5.field_41751 && !var5.method_264().method_28022() && !var5.method_258() && this.method_26873(var5.method_264())) {
+            if (!var5.removed && !var5.method_264().method_28022() && !var5.method_258() && this.method_26873(var5.method_264())) {
                this.method_26902(var5);
             }
          }
@@ -1100,7 +1100,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Nullable
    public <T extends MobEntity> T method_26898(EntityType<T> var1, boolean var2) {
-      if (this.field_41751) {
+      if (this.removed) {
          return null;
       } else {
          MobEntity var5 = (MobEntity)var1.method_30484(this.world);
@@ -1154,9 +1154,9 @@ public abstract class MobEntity extends LivingEntity {
 
    public void method_26916(boolean var1, boolean var2) {
       if (this.field_29911 != null) {
-         this.field_41722 = false;
+         this.forceSpawn = false;
          if (!(this.field_29911 instanceof PlayerEntity)) {
-            this.field_29911.field_41722 = false;
+            this.field_29911.forceSpawn = false;
          }
 
          this.field_29911 = null;
@@ -1191,9 +1191,9 @@ public abstract class MobEntity extends LivingEntity {
    public void method_26901(Entity var1, boolean var2) {
       this.field_29911 = var1;
       this.field_29899 = null;
-      this.field_41722 = true;
+      this.forceSpawn = true;
       if (!(this.field_29911 instanceof PlayerEntity)) {
-         this.field_29911.field_41722 = true;
+         this.field_29911.forceSpawn = true;
       }
 
       if (!this.world.field_33055 && var2 && this.world instanceof class_6331) {

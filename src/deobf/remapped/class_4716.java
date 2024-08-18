@@ -36,14 +36,14 @@ public class class_4716 extends class_5920<class_4612> {
    }
 
    private void method_21810(class_4612 var1, class_6979 var2) {
-      Optional var5 = Optional.<class_1343>ofNullable(
-         class_3425.method_15837(var1, this.field_22885, this.field_22883, class_1343.method_6200(var2.method_31892()))
+      Optional var5 = Optional.<Vector3d>ofNullable(
+         class_3425.method_15837(var1, this.field_22885, this.field_22883, Vector3d.method_6200(var2.method_31892()))
       );
       var1.method_26525().method_5106(class_6044.field_30889, var5.map(var1x -> new class_6651(var1x, this.field_22884, 0)));
    }
 
    private void method_21811(class_4612 var1) {
-      Optional var4 = Optional.<class_1343>ofNullable(class_3425.method_15834(var1, this.field_22885, this.field_22883));
+      Optional var4 = Optional.<Vector3d>ofNullable(class_3425.method_15834(var1, this.field_22885, this.field_22883));
       var1.method_26525().method_5106(class_6044.field_30889, var4.map(var1x -> new class_6651(var1x, this.field_22884, 0)));
    }
 }

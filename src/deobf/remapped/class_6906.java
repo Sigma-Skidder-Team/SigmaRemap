@@ -22,11 +22,11 @@ public class class_6906<T extends AbstractMinecartEntity> extends class_7067<T> 
       double var16 = MathHelper.lerp((double)var3, var1.field_41713, var1.method_37309());
       double var18 = MathHelper.lerp((double)var3, var1.field_41724, var1.getPosZ());
       double var20 = 0.3F;
-      class_1343 var22 = var1.method_4748(var14, var16, var18);
-      float var23 = MathHelper.lerp(var3, var1.field_41762, var1.rotationPitch);
+      Vector3d var22 = var1.method_4748(var14, var16, var18);
+      float var23 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
       if (var22 != null) {
-         class_1343 var24 = var1.method_4745(var14, var16, var18, 0.3F);
-         class_1343 var25 = var1.method_4745(var14, var16, var18, -0.3F);
+         Vector3d var24 = var1.method_4745(var14, var16, var18, 0.3F);
+         Vector3d var25 = var1.method_4745(var14, var16, var18, -0.3F);
          if (var24 == null) {
             var24 = var22;
          }
@@ -36,7 +36,7 @@ public class class_6906<T extends AbstractMinecartEntity> extends class_7067<T> 
          }
 
          var4.method_36065(var22.field_7336 - var14, (var24.field_7333 + var25.field_7333) / 2.0 - var16, var22.field_7334 - var18);
-         class_1343 var26 = var25.method_6214(-var24.field_7336, -var24.field_7333, -var24.field_7334);
+         Vector3d var26 = var25.method_6214(-var24.field_7336, -var24.field_7333, -var24.field_7334);
          if (var26.method_6217() != 0.0) {
             var26 = var26.method_6213();
             var2 = (float)(Math.atan2(var26.field_7334, var26.field_7336) * 180.0 / Math.PI);

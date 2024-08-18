@@ -11,7 +11,7 @@ public class class_777 extends Module {
 
    @EventListen
    private void method_3476(class_8706 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.gameOptions.keySneak.isKeyDown() && var1.method_40004() == class_3237.field_16101) {
             if (!(client.thePlayer.rotationPitch < 0.0F)) {
                this.method_3473(this.method_3477());

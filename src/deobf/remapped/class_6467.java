@@ -13,7 +13,7 @@ public class class_6467 extends Module {
 
    @EventListen
    private void method_29452(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && client.theWorld != null) {
             this.method_29455();
             this.method_29453();
@@ -46,7 +46,7 @@ public class class_6467 extends Module {
       for (Entity var9 : client.theWorld.method_736()) {
          if (this.method_29451(var9)) {
             GL11.glPushMatrix();
-            class_1343 var10 = client.gameRenderer.method_35949().method_41627();
+            Vector3d var10 = client.gameRenderer.method_35949().method_41627();
             double var11 = var10.method_61();
             double var13 = var10.method_60();
             double var15 = var10.method_62();
@@ -77,7 +77,7 @@ public class class_6467 extends Module {
 
    @EventListen
    public void method_29454(class_2563 var1) {
-      if (this.method_42015() && this.field_32957 && var1.method_11643() instanceof PlayerEntity) {
+      if (this.isEnabled() && this.field_32957 && var1.method_11643() instanceof PlayerEntity) {
          var1.method_29715(true);
       }
    }
@@ -92,7 +92,7 @@ public class class_6467 extends Module {
 
    @EventListen
    public void method_29449(class_5278 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_32957) {
             var1.method_24101(false);
          }

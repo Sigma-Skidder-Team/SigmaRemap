@@ -14,7 +14,7 @@ public class NewChunksModule extends Module {
 
    @EventListen
    private void method_11373(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_4808) {
             class_4808 var4 = (class_4808)var1.method_557();
             class_2034 var5 = new class_2034(var4.method_22149(), var4.method_22151());
@@ -27,7 +27,7 @@ public class NewChunksModule extends Module {
 
    @EventListen
    private void method_11374(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          for (Iterator var4 = this.field_12370.iterator(); var4.hasNext(); var4.remove()) {
             class_2034 var5 = (class_2034)var4.next();
             if (!this.field_12372.contains(var5)) {

@@ -2,15 +2,15 @@ package remapped;
 
 public class class_2933 implements class_7835 {
    private final BlockPos field_14279;
-   private final class_1343 field_14278;
+   private final Vector3d field_14278;
 
    public class_2933(BlockPos var1) {
       this.field_14279 = var1;
-      this.field_14278 = class_1343.method_6216(var1);
+      this.field_14278 = Vector3d.method_6216(var1);
    }
 
    @Override
-   public class_1343 method_35464() {
+   public Vector3d method_35464() {
       return this.field_14278;
    }
 

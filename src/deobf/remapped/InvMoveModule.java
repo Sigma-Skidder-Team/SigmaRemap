@@ -13,7 +13,7 @@ public class InvMoveModule extends Module {
 
    @EventListen
    private void method_26179(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() == client.gameOptions.keyInventory.field_30027.field_17800 && client.thePlayer.method_37321()) {
             client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.START_SPRINTING));
          }
@@ -22,7 +22,7 @@ public class InvMoveModule extends Module {
 
    @EventListen
    private void method_26177(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_29226 && var1.method_10047() instanceof class_2317 && this.getBooleanValueByName("AACP")) {
             class_2317 var4 = (class_2317)var1.method_10047();
             if (var4.method_10650() == Action.STOP_SPRINTING) {
@@ -33,8 +33,8 @@ public class InvMoveModule extends Module {
    }
 
    @EventListen
-   private void method_26178(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_26178(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.getBooleanValueByName("AACP")) {
             boolean var4 = !(client.screen instanceof class_3431) || !(client.screen instanceof class_2141);
             if (this.field_29226 && !var4) {

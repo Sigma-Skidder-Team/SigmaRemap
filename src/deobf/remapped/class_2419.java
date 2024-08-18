@@ -17,7 +17,7 @@ public class class_2419 extends Module {
 
    @EventListen
    public void method_11038(class_1393 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          this.field_12048++;
          boolean var4 = var1.method_6454() > client.thePlayer.method_37309() - 1.0E-6
             && var1.method_6454() < client.thePlayer.method_37309() + 1.0E-6;
@@ -59,7 +59,7 @@ public class class_2419 extends Module {
 
    @EventListen
    public void method_11039(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_7573) {
             class_7573 var5 = (class_7573)var4;

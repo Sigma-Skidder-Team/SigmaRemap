@@ -20,7 +20,7 @@ public class ViperMCSpeed extends Module {
 
    @EventListen
    public void method_25561(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_28624++;
          float var4 = 0.28F + (float)class_8865.method_40770() * 0.05F;
          if (this.field_28624 >= 4) {

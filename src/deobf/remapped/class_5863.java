@@ -26,7 +26,7 @@ public class class_5863 extends class_5920<class_4612> {
 
    public void method_26714(class_6331 var1, class_4612 var2, long var3) {
       if (var3 > this.field_29794) {
-         Optional var7 = Optional.<class_1343>ofNullable(class_3425.method_15834(var2, 8, 6));
+         Optional var7 = Optional.<Vector3d>ofNullable(class_3425.method_15834(var2, 8, 6));
          var2.method_26525().method_5106(class_6044.field_30889, var7.map(var1x -> new class_6651(var1x, this.field_29793, 1)));
          this.field_29794 = var3 + 180L;
       }

@@ -35,15 +35,15 @@ public class class_4964 {
    public static final DynamicCommandExceptionType field_25675 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("argument.entity.options.valueless", var0)
    );
-   public static final BiConsumer<class_1343, List<? extends Entity>> field_25668 = (var0, var1) -> {
+   public static final BiConsumer<Vector3d, List<? extends Entity>> field_25668 = (var0, var1) -> {
    };
-   public static final BiConsumer<class_1343, List<? extends Entity>> field_25697 = (var0, var1) -> var1.sort(
+   public static final BiConsumer<Vector3d, List<? extends Entity>> field_25697 = (var0, var1) -> var1.sort(
          (var1x, var2) -> Doubles.compare(var1x.method_37274(var0), var2.method_37274(var0))
       );
-   public static final BiConsumer<class_1343, List<? extends Entity>> field_25703 = (var0, var1) -> var1.sort(
+   public static final BiConsumer<Vector3d, List<? extends Entity>> field_25703 = (var0, var1) -> var1.sort(
          (var1x, var2) -> Doubles.compare(var2.method_37274(var0), var1x.method_37274(var0))
       );
-   public static final BiConsumer<class_1343, List<? extends Entity>> field_25696 = (var0, var1) -> Collections.shuffle(var1);
+   public static final BiConsumer<Vector3d, List<? extends Entity>> field_25696 = (var0, var1) -> Collections.shuffle(var1);
    public static final BiFunction<SuggestionsBuilder, Consumer<SuggestionsBuilder>, CompletableFuture<Suggestions>> field_25676 = (var0, var1) -> var0.buildFuture();
    private final StringReader field_25677;
    private final boolean field_25671;
@@ -61,7 +61,7 @@ public class class_4964 {
    private class_9721 field_25693 = class_9721.field_49421;
    private class_9721 field_25673 = class_9721.field_49421;
    private Predicate<Entity> field_25665 = var0 -> true;
-   private BiConsumer<class_1343, List<? extends Entity>> field_25701 = field_25668;
+   private BiConsumer<Vector3d, List<? extends Entity>> field_25701 = field_25668;
    private boolean field_25691;
    private String field_25711;
    private int field_25679;
@@ -111,7 +111,7 @@ public class class_4964 {
       if (this.field_25704 == null && this.field_25700 == null && this.field_25707 == null) {
          var5 = var0 -> var0;
       } else {
-         var5 = var1 -> new class_1343(
+         var5 = var1 -> new Vector3d(
                this.field_25704 != null ? this.field_25704 : var1.field_7336,
                this.field_25700 != null ? this.field_25700 : var1.field_7333,
                this.field_25707 != null ? this.field_25707 : var1.field_7334
@@ -419,7 +419,7 @@ public class class_4964 {
       this.field_25681 = var1;
    }
 
-   public void method_22806(BiConsumer<class_1343, List<? extends Entity>> var1) {
+   public void method_22806(BiConsumer<Vector3d, List<? extends Entity>> var1) {
       this.field_25701 = var1;
    }
 

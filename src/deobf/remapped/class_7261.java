@@ -60,7 +60,7 @@ public class class_7261 extends class_3599 {
    public void method_16794() {
       this.method_33184();
       this.field_37201
-         .method_37092(0.02F, new class_1343((double)this.field_37201.field_29676, (double)this.field_37201.field_29651, (double)this.field_37201.field_29673));
+         .method_37092(0.02F, new Vector3d((double)this.field_37201.field_29676, (double)this.field_37201.field_29651, (double)this.field_37201.field_29673));
       this.field_37201.method_37226(class_7412.field_37839, this.field_37201.method_37098());
    }
 

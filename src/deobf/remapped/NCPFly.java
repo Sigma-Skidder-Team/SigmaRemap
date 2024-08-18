@@ -25,7 +25,7 @@ public class NCPFly extends Module {
    @EventListen
    @class_7664
    public void method_13255(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_14150 <= 1) {
             if (this.field_14150 != -1) {
                if (this.field_14150 != 0) {
@@ -52,7 +52,7 @@ public class NCPFly extends Module {
 
    @EventListen
    public void method_13257(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_14150++;
          if (this.field_14150 != 3) {
             if (this.field_14150 > 3 && this.field_14150 >= 20 && this.field_14150 % 20 == 0) {
@@ -68,7 +68,7 @@ public class NCPFly extends Module {
 
    @EventListen
    public void method_13253(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;
@@ -85,7 +85,7 @@ public class NCPFly extends Module {
 
    @EventListen
    public void method_13254(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_10047();
          if (var4 instanceof class_4609) {
             class_4609 var5 = (class_4609)var4;
@@ -98,12 +98,12 @@ public class NCPFly extends Module {
 
    @EventListen
    public void method_13256(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = this.field_14151;
-         client.thePlayer.field_41736.field_7333 = var4;
+         client.thePlayer.positionVec.field_7333 = var4;
          client.thePlayer.field_41713 = var4;
          client.thePlayer.field_3864 = var4;
-         client.thePlayer.field_41698 = var4;
+         client.thePlayer.prevPosY = var4;
       }
    }
 }

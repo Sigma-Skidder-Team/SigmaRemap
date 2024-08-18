@@ -1,9 +1,9 @@
 package remapped;
 
 public abstract class class_7474 {
-   public final class_1343 field_38155;
+   public final Vector3d field_38155;
 
-   public class_7474(class_1343 var1) {
+   public class_7474(Vector3d var1) {
       this.field_38155 = var1;
    }
 
@@ -16,7 +16,7 @@ public abstract class class_7474 {
 
    public abstract class_1430 method_33990();
 
-   public class_1343 method_33993() {
+   public Vector3d method_33993() {
       return this.field_38155;
    }
 }

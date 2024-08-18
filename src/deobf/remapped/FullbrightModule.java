@@ -10,7 +10,7 @@ public class FullbrightModule extends Module {
 
    @Override
    public void method_42012() {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          client.gameOptions.brightnessGamma = 1.0;
       }
    }
@@ -23,8 +23,8 @@ public class FullbrightModule extends Module {
    }
 
    @EventListen
-   public void method_3924(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_3924(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          client.gameOptions.brightnessGamma = 999.0;
          if (client.theWorld != null) {
             if (!this.getStringValueByName("Type").equals("Normal")) {

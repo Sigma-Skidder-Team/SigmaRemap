@@ -14,7 +14,7 @@ public class class_5985 extends class_4171<AbstractClientPlayerEntity, class_316
 
          for (int var15 = 0; var15 < 2; var15++) {
             float var16 = MathHelper.lerp(var7, var4.prevRotationYaw, var4.rotationYaw) - MathHelper.lerp(var7, var4.field_29611, var4.field_29605);
-            float var17 = MathHelper.lerp(var7, var4.field_41762, var4.rotationPitch);
+            float var17 = MathHelper.lerp(var7, var4.prevRotationPitch, var4.rotationPitch);
             var1.method_36063();
             var1.method_36060(class_2426.field_12074.method_11074(var16));
             var1.method_36060(class_2426.field_12080.method_11074(var17));

@@ -17,7 +17,7 @@ public class class_6339 extends class_6499<class_2547> {
       if (!var1.method_37109()) {
          super.method_32866(var1, var2, var3, var4, var5, var6);
       } else {
-         class_1343[] var9 = var1.method_11597(var3);
+         Vector3d[] var9 = var1.method_11597(var3);
          float var10 = this.method_29109(var1, var3);
 
          for (int var11 = 0; var11 < var9.length; var11++) {

@@ -72,7 +72,7 @@ public abstract class class_5783 extends Entity {
    }
 
    public void method_26161(double var1, double var3, double var5, float var7, float var8) {
-      class_1343 var11 = new class_1343(var1, var3, var5)
+      Vector3d var11 = new Vector3d(var1, var3, var5)
          .method_6213()
          .method_6214(
             this.field_41717.nextGaussian() * 0.0075F * (double)var8,
@@ -85,7 +85,7 @@ public abstract class class_5783 extends Entity {
       this.rotationYaw = (float)(MathHelper.atan2(var11.field_7336, var11.field_7334) * 180.0F / (float)Math.PI);
       this.rotationPitch = (float)(MathHelper.atan2(var11.field_7333, (double)var12) * 180.0F / (float)Math.PI);
       this.prevRotationYaw = this.rotationYaw;
-      this.field_41762 = this.rotationPitch;
+      this.prevRotationPitch = this.rotationPitch;
    }
 
    public void method_26158(Entity var1, float var2, float var3, float var4, float var5, float var6) {
@@ -93,7 +93,7 @@ public abstract class class_5783 extends Entity {
       float var10 = -MathHelper.sin((var2 + var4) * (float) (Math.PI / 180.0));
       float var11 = MathHelper.cos(var3 * (float) (Math.PI / 180.0)) * MathHelper.cos(var2 * (float) (Math.PI / 180.0));
       this.method_26161((double)var9, (double)var10, (double)var11, var5, var6);
-      class_1343 var12 = var1.method_37098();
+      Vector3d var12 = var1.method_37098();
       this.method_37215(this.method_37098().method_6214(var12.field_7336, !var1.method_37360() ? var12.field_7333 : 0.0, var12.field_7334));
    }
 
@@ -119,11 +119,11 @@ public abstract class class_5783 extends Entity {
    @Override
    public void method_37162(double var1, double var3, double var5) {
       this.method_37214(var1, var3, var5);
-      if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
+      if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
          float var9 = MathHelper.sqrt(var1 * var1 + var5 * var5);
          this.rotationPitch = (float)(MathHelper.atan2(var3, (double)var9) * 180.0F / (float)Math.PI);
          this.rotationYaw = (float)(MathHelper.atan2(var1, var5) * 180.0F / (float)Math.PI);
-         this.field_41762 = this.rotationPitch;
+         this.prevRotationPitch = this.rotationPitch;
          this.prevRotationYaw = this.rotationYaw;
          this.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
@@ -139,9 +139,9 @@ public abstract class class_5783 extends Entity {
    }
 
    public void method_26167() {
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       float var4 = MathHelper.sqrt(method_37266(var3));
-      this.rotationPitch = method_26168(this.field_41762, (float)(MathHelper.atan2(var3.field_7333, (double)var4) * 180.0F / (float)Math.PI));
+      this.rotationPitch = method_26168(this.prevRotationPitch, (float)(MathHelper.atan2(var3.field_7333, (double)var4) * 180.0F / (float)Math.PI));
       this.rotationYaw = method_26168(this.prevRotationYaw, (float)(MathHelper.atan2(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
    }
 

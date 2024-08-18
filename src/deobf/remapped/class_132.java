@@ -161,7 +161,7 @@ public class class_132 {
          } else {
             float var5 = this.method_417(var4);
             float var6 = this.method_439(var4);
-            class_1343 var7 = new class_1343(var4.method_16548(), var4.method_16557(), var4.method_16561());
+            Vector3d var7 = new Vector3d(var4.method_16548(), var4.method_16557(), var4.method_16561());
             class_9046 var8 = this.field_344.get(var4);
             if (var8 != null) {
                var8.method_41530(var3 -> {
@@ -259,7 +259,7 @@ public class class_132 {
                if (var10 == 0.0F && !var1.method_16558()) {
                   field_330.debug(field_339, "Skipped playing sound {}, volume was zero.", var6.method_9578());
                } else {
-                  class_1343 var14 = new class_1343(var1.method_16548(), var1.method_16557(), var1.method_16561());
+                  Vector3d var14 = new Vector3d(var1.method_16548(), var1.method_16557(), var1.method_16561());
                   if (!this.field_343.isEmpty()) {
                      boolean var15 = var13 || var12 == class_6656.field_34443 || this.field_340.method_42755().method_6204(var14) < (double)(var8 * var8);
                      if (!var15) {
@@ -359,7 +359,7 @@ public class class_132 {
 
    public void method_437(Camera var1) {
       if (this.field_329 && var1.method_41642()) {
-         class_1343 var4 = var1.method_41627();
+         Vector3d var4 = var1.method_41627();
          class_2426 var5 = var1.method_41634();
          class_2426 var6 = var1.method_41632();
          this.field_328.execute(() -> {

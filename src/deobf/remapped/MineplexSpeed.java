@@ -33,8 +33,8 @@ public class MineplexSpeed extends Module {
    @EventListen
    @class_315
    public void method_26048(class_7767 var1) {
-      if (this.method_42015()
-         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).method_42015()
+      if (this.isEnabled()
+         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).isEnabled()
          && !class_314.method_1437(client.thePlayer)) {
          double var4 = (double)this.getFloatValueByName("OnGround Speed");
          if (!client.thePlayer.onGround) {
@@ -80,7 +80,7 @@ public class MineplexSpeed extends Module {
                return;
             }
 
-            class_1343 var7 = new class_1343(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
+            Vector3d var7 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
             BlockPos var8 = new BlockPos(client.thePlayer.method_37075()).method_6104(0, -1, 0);
             class_9529 var9 = new class_9529(var7, Direction.field_817, var8, false);
             class_8585 var10 = new class_8585(Hand.MAIN_HAND, var9);
@@ -105,7 +105,7 @@ public class MineplexSpeed extends Module {
 
    @EventListen
    public void method_26052(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_29130 = 0.81 + (double)this.field_29132 * 0.095;
          if (client.thePlayer.method_37309() != (double)((int) client.thePlayer.method_37309())) {
             this.field_29130 = 0.52;
@@ -128,7 +128,7 @@ public class MineplexSpeed extends Module {
 
    @EventListen
    public void method_26050(PacketEvent var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_557() instanceof class_509) {
             this.field_29132 = 0;
             this.field_29130 = 0.0;
@@ -138,7 +138,7 @@ public class MineplexSpeed extends Module {
 
    @EventListen
    public void method_26051(class_8544 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_39326() > 0.2) {
             this.field_29130 = this.field_29130 - (double)(this.getFloatValueByName("OnGround Speed") / 4.0F);
          }

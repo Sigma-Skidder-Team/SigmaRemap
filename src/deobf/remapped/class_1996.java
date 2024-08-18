@@ -26,8 +26,8 @@ public class class_1996 extends class_2612 implements class_1768 {
       for (Module var5 : SigmaMainClass.getInstance().getModuleManager().method_844(this.field_10143)) {
          int var9 = class_314.method_1444(-3487030, 0.0F);
          byte var10 = 30;
-         class_590 var12 = new class_590(!var5.method_42015() ? 1895167477 : -14047489, !var5.method_42015() ? var9 : -14042881)
-            .method_2765(!var5.method_42015() ? class_1255.field_6929.field_6917 : class_1255.field_6918.field_6917);
+         class_590 var12 = new class_590(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
+            .method_2765(!var5.isEnabled() ? class_1255.field_6929.field_6917 : class_1255.field_6918.field_6917);
          var12.method_2776(class_6206.field_31724);
          class_6220 var13;
          this.method_11850()
@@ -44,7 +44,7 @@ public class class_1996 extends class_2612 implements class_1768 {
                   class_5320.field_27152
                )
             );
-         if (!var5.method_42015()) {
+         if (!var5.isEnabled()) {
             var13.method_28444(22);
          } else {
             var13.method_28444(30);
@@ -61,9 +61,9 @@ public class class_1996 extends class_2612 implements class_1768 {
                   }
                } else {
                   var5.method_41999();
-                  class_590 var9x = new class_590(!var5.method_42015() ? 1895167477 : -14047489, !var5.method_42015() ? var9 : -14042881)
-                     .method_2765(!var5.method_42015() ? class_1255.field_6929.field_6917 : class_1255.field_6918.field_6917);
-                  if (!var5.method_42015()) {
+                  class_590 var9x = new class_590(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
+                     .method_2765(!var5.isEnabled() ? class_1255.field_6929.field_6917 : class_1255.field_6918.field_6917);
+                  if (!var5.isEnabled()) {
                      var7.method_28444(22);
                   } else {
                      var7.method_28444(30);

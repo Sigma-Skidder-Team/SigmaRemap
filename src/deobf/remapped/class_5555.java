@@ -163,8 +163,8 @@ public class class_5555 extends class_9795 implements class_3745 {
    }
 
    private void method_25251(class_6331 var1) {
-      class_1343 var4 = new class_1343((double)this.method_17399().getX(), 0.0, (double)this.method_17399().getZ()).method_6213();
-      class_1343 var5 = var4.method_6209(1024.0);
+      Vector3d var4 = new Vector3d((double)this.method_17399().getX(), 0.0, (double)this.method_17399().getZ()).method_6213();
+      Vector3d var5 = var4.method_6209(1024.0);
 
       for (int var6 = 16; method_25243(var1, var5).method_27350() > 0 && var6-- > 0; var5 = var5.method_6215(var4.method_6209(-16.0))) {
          field_28270.debug("Skipping backwards past nonempty chunk at {}", var5);
@@ -213,7 +213,7 @@ public class class_5555 extends class_9795 implements class_3745 {
       return var6 != null ? var6 : var1;
    }
 
-   private static class_2654 method_25243(World var0, class_1343 var1) {
+   private static class_2654 method_25243(World var0, Vector3d var1) {
       return var0.method_29554(MathHelper.floor(var1.field_7336 / 16.0), MathHelper.floor(var1.field_7334 / 16.0));
    }
 

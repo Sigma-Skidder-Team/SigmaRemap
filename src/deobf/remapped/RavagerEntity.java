@@ -189,7 +189,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
             var1.method_37183(this);
          }
 
-         var1.field_41743 = true;
+         var1.velocityChanged = true;
       }
    }
 
@@ -203,7 +203,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
             this.method_35658(var4);
          }
 
-         class_1343 var11 = this.getBoundingBox().method_18926();
+         Vector3d var11 = this.getBoundingBox().method_18926();
 
          for (int var12 = 0; var12 < 40; var12++) {
             double var5 = this.field_41717.nextGaussian() * 0.2;

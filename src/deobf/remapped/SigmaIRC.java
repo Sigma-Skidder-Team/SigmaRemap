@@ -52,7 +52,7 @@ public class SigmaIRC {
    }
 
    @EventListen
-   private void method_20858(class_5596 var1) {
+   private void method_20858(PlayerTickEvent var1) {
       if (this.field_21934.thePlayer.field_41697 % 100 == 0) {
          this.method_20857();
          List var4 = this.field_21934.theWorld.method_25873();

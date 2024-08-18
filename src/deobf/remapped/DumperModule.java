@@ -70,7 +70,7 @@ public class DumperModule extends Module {
 
    @EventListen
    private void method_25759(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_2610) {
             for (Suggestion var6 : ((class_2610)var1.method_557()).method_11842().getList()) {
                String[] var7 = var6.getText().split(":");

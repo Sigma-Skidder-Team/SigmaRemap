@@ -56,7 +56,7 @@ public class class_8050 extends class_9335 {
       this.field_41216.method_25181(false);
       LivingEntity var3 = this.field_41216.method_17809();
       this.field_41216.method_26865().method_17240(var3, 60.0F, 30.0F);
-      class_1343 var4 = new class_1343(
+      Vector3d var4 = new Vector3d(
             var3.getPosX() - this.field_41216.method_37302(),
             var3.method_37309() - this.field_41216.method_37309(),
             var3.getPosZ() - this.field_41216.method_37156()
@@ -83,7 +83,7 @@ public class class_8050 extends class_9335 {
       }
 
       if (!this.field_41216.method_25212()) {
-         class_1343 var4 = this.field_41216.method_37098();
+         Vector3d var4 = this.field_41216.method_37098();
          if (var4.field_7333 * var4.field_7333 < 0.03F && this.field_41216.field_41755 != 0.0F) {
             this.field_41216.field_41755 = MathHelper.rotLerp(this.field_41216.field_41755, 0.0F, 0.2F);
          } else {

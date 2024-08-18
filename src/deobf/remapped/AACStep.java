@@ -8,7 +8,7 @@ public class AACStep extends Module {
    @EventListen
    @class_7664
    private void method_37719(class_8544 var1) {
-      if (this.method_42015() && !var1.method_29716()) {
+      if (this.isEnabled() && !var1.method_29716()) {
          double var4 = var1.method_39326();
          if (!class_314.method_1413(client.thePlayer, 1.0E-4F)) {
             var1.method_29715(true);
@@ -31,7 +31,7 @@ public class AACStep extends Module {
 
    @EventListen
    private void method_37718(class_7982 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!var1.method_36184()) {
             client.thePlayer.field_41733 = 1.0F;
          } else {

@@ -24,7 +24,7 @@ public class NoFallModule extends Module {
    @EventListen
    @class_7664
    private void method_14177(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_35236() < -0.5
             && (double) client.thePlayer.field_41706 > 2.0 + (double)class_8865.method_40769() * 0.5
             && !client.thePlayer.onGround
@@ -46,7 +46,7 @@ public class NoFallModule extends Module {
 
                if (var13 > var17 && var13 < var15) {
                   Box var19 = client.thePlayer
-                     .field_41712
+                     .boundingBox
                      .method_18918(var1.method_35234(), var1.method_35236() + var13 + var17, var1.method_35231());
                   if (client.theWorld.method_6680(client.thePlayer, var19).count() != 0L) {
                      var13 -= 1.0E-5;
@@ -72,7 +72,7 @@ public class NoFallModule extends Module {
 
    @EventListen
    private void method_14176(class_1393 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!(client.thePlayer.method_37309() < 2.0)) {
             String var4 = this.getStringValueByName("Mode");
             if (!class_314.method_1387() && var4.equals("Hypixel")) {

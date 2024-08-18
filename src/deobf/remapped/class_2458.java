@@ -7,7 +7,7 @@ public class class_2458 extends Module {
 
    @EventListen
    private void method_11328(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_9889) {
             class_9889 var4 = (class_9889)var1.method_557();
             var1.method_29715(true);

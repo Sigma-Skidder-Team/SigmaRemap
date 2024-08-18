@@ -185,9 +185,9 @@ public class class_4380 extends class_551 implements class_1538 {
          }
 
          if (!(var1 instanceof class_3832)) {
-            class_1343 var14 = var1.method_37371(1.0F);
+            Vector3d var14 = var1.method_37371(1.0F);
             Quaternion var15 = new Quaternion(new class_2426(var14), var9, true);
-            class_1343 var16 = var1.method_37307(1.0F);
+            Vector3d var16 = var1.method_37307(1.0F);
             class_2426 var17 = new class_2426(var16);
             var17.method_11058(var15);
             ((class_5783)var13).method_26161((double)var17.method_11057(), (double)var17.method_11061(), (double)var17.method_11055(), var7, var8);

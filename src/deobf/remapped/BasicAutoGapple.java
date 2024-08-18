@@ -17,7 +17,7 @@ public class BasicAutoGapple extends Module {
 
    @EventListen
    public void method_44976(class_4996 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_49494 >= 0) {
             var1.method_29715(true);
          }
@@ -26,7 +26,7 @@ public class BasicAutoGapple extends Module {
 
    @EventListen
    public void method_44975(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          int var4 = client.gameOptions.hotbarKeys.length;
 
          for (int var5 = 0; var5 < var4; var5++) {
@@ -42,8 +42,8 @@ public class BasicAutoGapple extends Module {
    }
 
    @EventListen
-   public void method_44977(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_44977(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.field_49495 < 20) {
             this.field_49495++;
          }
@@ -81,7 +81,7 @@ public class BasicAutoGapple extends Module {
 
    @EventListen
    public void method_44978(PacketEvent var1) {
-      if (this.method_42015() && this.field_49494 > 1) {
+      if (this.isEnabled() && this.field_49494 > 1) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_8163) {
             class_8163 var5 = (class_8163)var4;

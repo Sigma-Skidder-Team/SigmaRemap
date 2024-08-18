@@ -49,9 +49,9 @@ public class class_9300 {
    private static int field_47502 = -1;
    private static int field_47472 = -1;
    private static int field_47485 = -1;
-   private static class_1343 field_47471 = null;
-   private static class_1343 field_47496 = null;
-   private static class_1343 field_47455 = null;
+   private static Vector3d field_47471 = null;
+   private static Vector3d field_47496 = null;
+   private static Vector3d field_47455 = null;
    private static int[] field_47467 = null;
    private static int[] field_47460 = null;
    private static float[][] field_47500 = (float[][])null;
@@ -473,7 +473,7 @@ public class class_9300 {
       }
    }
 
-   private static class_1343 method_42901(Properties var0, String var1) {
+   private static Vector3d method_42901(Properties var0, String var1) {
       int var4 = method_42866(var0, var1);
       if (var4 >= 0) {
          int var5 = var4 >> 16 & 0xFF;
@@ -482,7 +482,7 @@ public class class_9300 {
          float var8 = (float)var5 / 255.0F;
          float var9 = (float)var6 / 255.0F;
          float var10 = (float)var7 / 255.0F;
-         return new class_1343((double)var8, (double)var9, (double)var10);
+         return new Vector3d((double)var8, (double)var9, (double)var10);
       } else {
          return null;
       }
@@ -822,19 +822,19 @@ public class class_9300 {
       return field_47466 >= 0 ? field_47466 : method_42886().method_20749(class_4783.field_23860.method_29260(), var0, var1, 0);
    }
 
-   private static class_1343 method_42924(class_1343 var0) {
+   private static Vector3d method_42924(Vector3d var0) {
       return field_47471 != null ? field_47471 : var0;
    }
 
-   private static class_1343 method_42899(class_1343 var0) {
+   private static Vector3d method_42899(Vector3d var0) {
       return field_47496 != null ? field_47496 : var0;
    }
 
-   private static class_1343 method_42884(class_1343 var0) {
+   private static Vector3d method_42884(Vector3d var0) {
       return field_47455 != null ? field_47455 : var0;
    }
 
-   public static class_1343 method_42885(class_1343 var0, class_5561 var1, double var2, double var4, double var6) {
+   public static Vector3d method_42885(Vector3d var0, class_5561 var1, double var2, double var4, double var6) {
       if (field_47488 != null) {
          int var10 = field_47488.method_44174(var1, var2, var4, var6, 3);
          int var11 = var10 >> 16 & 0xFF;
@@ -855,7 +855,7 @@ public class class_9300 {
       }
    }
 
-   private static class_1343 method_42920(class_1343 var0, class_5561 var1, double var2, double var4, double var6) {
+   private static Vector3d method_42920(Vector3d var0, class_5561 var1, double var2, double var4, double var6) {
       if (field_47499 != null) {
          int var10 = field_47499.method_44174(var1, var2, var4, var6, 3);
          int var11 = var10 >> 16 & 0xFF;
@@ -876,15 +876,15 @@ public class class_9300 {
       }
    }
 
-   public static class_1343 method_42917(class_5561 var0, double var1, double var3, double var5) {
+   public static Vector3d method_42917(class_5561 var0, double var1, double var3, double var5) {
       return method_42908(var0, var1, var3, var5, field_47503, field_47458);
    }
 
-   public static class_1343 method_42928(class_5561 var0, double var1, double var3, double var5) {
+   public static Vector3d method_42928(class_5561 var0, double var1, double var3, double var5) {
       return method_42908(var0, var1, var3, var5, field_47493, field_47454);
    }
 
-   public static class_1343 method_42908(class_5561 var0, double var1, double var3, double var5, class_9561 var7, class_6008 var8) {
+   public static Vector3d method_42908(class_5561 var0, double var1, double var3, double var5, class_9561 var7, class_6008 var8) {
       if (var7 != null) {
          int var11 = var7.method_44174(var0, var1, var3, var5, 3);
          int var12 = var11 >> 16 & 0xFF;
@@ -941,7 +941,7 @@ public class class_9300 {
       }
    }
 
-   public static class_1343 method_42860(class_1343 var0, World var1, Entity var2, float var3) {
+   public static Vector3d method_42860(Vector3d var0, World var1, Entity var2, float var3) {
       MinecraftClient var6 = MinecraftClient.getInstance();
       if (!class_4869.method_22377(var1)) {
          if (!class_4869.method_22376(var1)) {
@@ -954,7 +954,7 @@ public class class_9300 {
       }
    }
 
-   public static class_1343 method_42927(class_1343 var0, World var1, Entity var2, float var3) {
+   public static Vector3d method_42927(Vector3d var0, World var1, Entity var2, float var3) {
       MinecraftClient var6 = MinecraftClient.getInstance();
       if (!class_4869.method_22376(var1)) {
          return !class_4869.method_22378(var1) ? var0 : method_42884(var0);

@@ -66,7 +66,7 @@ public class class_5661 extends class_6967 {
       Random var6 = this.field_28700.method_26594();
       if (this.method_31860() && var5 != null) {
          if (this.field_28702 > 0) {
-            class_1343 var7 = this.field_28700.method_37098();
+            Vector3d var7 = this.field_28700.method_37098();
             this.field_28700.method_37214(var7.field_7336, 0.3, var7.field_7334);
             if (!var3.field_33055) {
                double var8 = 0.08;
@@ -86,7 +86,7 @@ public class class_5661 extends class_6967 {
          }
 
          if (this.field_28702 % 2 == 0) {
-            class_1343 var14 = this.field_28700.method_37098();
+            Vector3d var14 = this.field_28700.method_37098();
             this.field_28700.method_37214(var14.field_7336, -0.3, var14.field_7334);
             if (this.field_28702 % 6 == 0) {
                this.method_25623(var3, this.field_35802);

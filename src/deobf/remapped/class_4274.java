@@ -22,19 +22,19 @@ public class class_4274 implements Iterator<BlockPos> {
       this.field_20691 = !var7 ? 1 : -1;
       this.field_20696 = !var8 ? 1 : -1;
       this.field_20698 = !var9 ? 1 : -1;
-      class_1343 var10 = new class_1343(
+      Vector3d var10 = new Vector3d(
          (double)(var2.getX() - var1.getX()),
          (double)(var2.getY() - var1.getY()),
          (double)(var2.getZ() - var1.getZ())
       );
-      class_1343 var11 = var10.method_6213();
-      class_1343 var12 = new class_1343(1.0, 0.0, 0.0);
+      Vector3d var11 = var10.method_6213();
+      Vector3d var12 = new Vector3d(1.0, 0.0, 0.0);
       double var13 = var11.method_6206(var12);
       double var15 = Math.abs(var13);
-      class_1343 var17 = new class_1343(0.0, 1.0, 0.0);
+      Vector3d var17 = new Vector3d(0.0, 1.0, 0.0);
       double var18 = var11.method_6206(var17);
       double var20 = Math.abs(var18);
-      class_1343 var22 = new class_1343(0.0, 0.0, 1.0);
+      Vector3d var22 = new Vector3d(0.0, 0.0, 1.0);
       double var23 = var11.method_6206(var22);
       double var25 = Math.abs(var23);
       if (var25 >= var20 && var25 >= var15) {

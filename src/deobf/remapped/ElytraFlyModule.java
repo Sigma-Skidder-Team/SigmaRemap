@@ -16,8 +16,8 @@ public class ElytraFlyModule extends Module {
    }
 
    @EventListen
-   public void method_45348(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_45348(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          client.gameOptions.keySneak.pressed = false;
          if (!(client.thePlayer.method_37098().field_7333 < 0.08) || client.thePlayer.onGround) {
             client.thePlayer.method_37220(7, false);
@@ -33,7 +33,7 @@ public class ElytraFlyModule extends Module {
 
    @EventListen
    public void method_45349(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = class_8865.method_40775();
          boolean var6 = class_314.method_1434();
          if (!this.getBooleanValueByName("NCP") && client.thePlayer.isSneaking()) {
@@ -78,7 +78,7 @@ public class ElytraFlyModule extends Module {
 
    @EventListen
    private void method_45346(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
             Entity var5 = client.theWorld.method_29534(var4.method_21093());
@@ -97,7 +97,7 @@ public class ElytraFlyModule extends Module {
 
    @EventListen
    private void method_45345(class_1393 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          byte var4 = 65;
          if (this.field_49842 != var4 - 1) {
             if (this.field_49842 <= 0 && client.thePlayer.field_29654) {
@@ -132,14 +132,14 @@ public class ElytraFlyModule extends Module {
    @EventListen
    @class_315
    private void method_45347(class_2157 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          ;
       }
    }
 
    @EventListen
    private void method_45344(class_307 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          ;
       }
    }

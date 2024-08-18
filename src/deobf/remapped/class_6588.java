@@ -3282,7 +3282,7 @@ public class class_6588 {
                }
             }
 
-            class_1343 var16 = var5.method_750(var8.method_37075(), var2);
+            Vector3d var16 = var5.method_750(var8.method_37075(), var2);
             var16 = class_9300.method_42927(var16, var5, var8, var2);
             field_33797 = (float)var16.field_7336;
             field_33668 = (float)var16.field_7333;
@@ -3516,7 +3516,7 @@ public class class_6588 {
 
    public static void method_30194(class_7966 var0, Camera var1, float var2) {
       Entity var3 = var1.method_41633();
-      class_1343 var4 = var1.method_41627();
+      Vector3d var4 = var1.method_41627();
       double var5 = var4.field_7336;
       double var7 = var4.field_7333;
       double var9 = var4.field_7334;
@@ -3562,7 +3562,7 @@ public class class_6588 {
 
    public static void method_30214(class_7966 var0, Camera var1, float var2) {
       Entity var3 = var1.method_41633();
-      class_1343 var4 = var1.method_41627();
+      Vector3d var4 = var1.method_41627();
       double var5 = var4.field_7336;
       double var7 = var4.field_7333;
       double var9 = var4.field_7334;
@@ -3959,7 +3959,7 @@ public class class_6588 {
       method_30241(-2, 0);
    }
 
-   public static void method_30238(class_1343 var0) {
+   public static void method_30238(Vector3d var0) {
       field_33797 = (float)var0.field_7336;
       field_33668 = (float)var0.field_7333;
       field_33670 = (float)var0.field_7334;

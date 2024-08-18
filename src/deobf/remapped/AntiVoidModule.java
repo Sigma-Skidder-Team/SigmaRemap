@@ -4,7 +4,7 @@ public class AntiVoidModule extends Module {
    private double field_37111;
    private int field_37112;
    private int field_37110;
-   private class_1343 field_37114 = null;
+   private Vector3d field_37114 = null;
 
    public AntiVoidModule() {
       super(Category.PLAYER, "AntiVoid", "Avoids you from falling in the void");
@@ -19,15 +19,15 @@ public class AntiVoidModule extends Module {
       this.field_37110 = 0;
       this.field_37112 = 0;
       if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F)) {
-         this.field_37114 = new class_1343(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ());
+         this.field_37114 = new Vector3d(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ());
       }
    }
 
    @EventListen
    private void method_33097(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F)) {
-            this.field_37114 = new class_1343(
+            this.field_37114 = new Vector3d(
                client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ()
             );
          }
@@ -37,12 +37,12 @@ public class AntiVoidModule extends Module {
             String var5 = var4.getStringValueByName("Type");
             Module var6 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(HighJumpModule.class);
             String var7 = var6.getStringValueByName("Type");
-            boolean var8 = var4.method_42015();
+            boolean var8 = var4.isEnabled();
             if (var5.equals("Cubecraft") && var1.method_35236() < -0.4) {
                var8 = false;
             }
 
-            if (var6.method_42015() && var7.equals("Hypixel")) {
+            if (var6.isEnabled() && var7.equals("Hypixel")) {
                var8 = true;
             }
 
@@ -71,14 +71,14 @@ public class AntiVoidModule extends Module {
 
    @EventListen
    private void method_33099(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449() && this.field_37110 != 0) {
+      if (this.isEnabled() && var1.method_6449() && this.field_37110 != 0) {
          var1.method_29715(true);
       }
    }
 
    @EventListen
    private void method_33098(PacketEvent var1) {
-      if (this.method_42015() && this.field_37110 != 0) {
+      if (this.isEnabled() && this.field_37110 != 0) {
          if (var1.method_557() instanceof class_509) {
             this.field_37110 = 0;
             this.field_37112 = 4;
@@ -89,7 +89,7 @@ public class AntiVoidModule extends Module {
    private boolean method_33100() {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
          if (!client.thePlayer.onGround) {
-            Box var3 = client.thePlayer.field_41712;
+            Box var3 = client.thePlayer.boundingBox;
             var3 = var3.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
             return client.theWorld.method_6680(client.thePlayer, var3).count() == 0L;
          } else {

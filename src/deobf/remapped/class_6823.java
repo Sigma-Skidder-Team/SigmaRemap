@@ -18,7 +18,7 @@ public class class_6823 extends class_7067<class_7451> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
       var4.method_36063();
       Direction var9 = var1.method_37365();
-      class_1343 var10 = this.method_31305(var1, var3);
+      Vector3d var10 = this.method_31305(var1, var3);
       var4.method_36065(-var10.method_61(), -var10.method_60(), -var10.method_62());
       double var11 = 0.46875;
       var4.method_36065((double)var9.method_1041() * 0.46875, (double)var9.method_1054() * 0.46875, (double)var9.method_1034() * 0.46875);
@@ -80,8 +80,8 @@ public class class_6823 extends class_7067<class_7451> {
       var4.method_36064();
    }
 
-   public class_1343 method_31305(class_7451 var1, float var2) {
-      return new class_1343((double)((float)var1.method_37365().method_1041() * 0.3F), -0.25, (double)((float)var1.method_37365().method_1034() * 0.3F));
+   public Vector3d method_31305(class_7451 var1, float var2) {
+      return new Vector3d((double)((float)var1.method_37365().method_1041() * 0.3F), -0.25, (double)((float)var1.method_37365().method_1034() * 0.3F));
    }
 
    public Identifier method_31301(class_7451 var1) {

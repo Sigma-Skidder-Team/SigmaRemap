@@ -8,7 +8,7 @@ public class class_4599 extends class_1859 {
       this.field_22361 = var7;
       class_3540 var10;
       this.method_32148(var10 = new class_3540(this, "enable", 114, 9, 40, 18));
-      var10.method_16323(var7.method_42015());
+      var10.method_16323(var7.isEnabled());
       var10.method_8236(var2x -> var7.setEnabled2(var10.method_16328()));
       if (var7.method_41996().size() > 0) {
          class_3534 var11;
@@ -24,7 +24,7 @@ public class class_4599 extends class_1859 {
          (float)(this.field_36270 + 10),
          (float)(this.field_36261 + 8),
          this.field_22361.getName2(),
-         class_314.method_1444(class_1255.field_6929.field_6917, !this.field_22361.method_42015() ? 0.5F : 0.9F)
+         class_314.method_1444(class_1255.field_6929.field_6917, !this.field_22361.isEnabled() ? 0.5F : 0.9F)
       );
       FontManager.method_87(
          class_3054.field_15006,

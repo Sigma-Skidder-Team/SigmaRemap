@@ -42,7 +42,7 @@ public abstract class class_3793 extends class_4314 {
          class_3757 var8 = var2.method_28260(var3);
          if (var8 instanceof class_7933) {
             class_1573.method_7104(var2, var3, (class_7933)var8);
-            ((class_7933)var8).method_35879(var2, class_1343.method_6216(var3));
+            ((class_7933)var8).method_35879(var2, Vector3d.method_6216(var3));
             var2.method_29523(var3, this);
          }
 

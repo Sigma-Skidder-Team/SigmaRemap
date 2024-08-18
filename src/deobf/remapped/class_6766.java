@@ -46,6 +46,6 @@ public class class_6766 extends class_3599 {
          && !var5.method_8350(class_4783.field_23433)
          && var5.method_8306(var1, var6)
          && var3.method_8309(var1, var2)
-         && var1.method_25870(this.field_34923, Box.method_18911(class_1343.method_6205(var2))).isEmpty();
+         && var1.method_25870(this.field_34923, Box.method_18911(Vector3d.method_6205(var2))).isEmpty();
    }
 }

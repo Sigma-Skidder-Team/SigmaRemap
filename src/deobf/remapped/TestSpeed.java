@@ -17,7 +17,7 @@ public class TestSpeed extends Module {
 
    @EventListen
    public void method_33363(class_1393 var1) {
-      if (this.method_42015() && client.thePlayer != null && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+      if (this.isEnabled() && client.thePlayer != null && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
          if (client.thePlayer.onGround && var1.method_6449()) {
             var1.method_6455(var1.method_6454() + 1.0E-14);
          }
@@ -26,9 +26,9 @@ public class TestSpeed extends Module {
 
    @EventListen
    public void method_33366(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.onGround
-            && client.thePlayer.field_41774
+            && client.thePlayer.collidedVertically
             && (client.thePlayer.field_29673 != 0.0F || client.thePlayer.field_29676 != 0.0F)
             && this.getBooleanValueByName("AutoJump")) {
             client.thePlayer.method_26595();
@@ -62,8 +62,8 @@ public class TestSpeed extends Module {
    @EventListen
    @class_7664
    public void method_33364(class_2911 var1) {
-      if (this.method_42015() && !JesusModule.method_32081() && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
-         if (!client.gameOptions.keyJump.isKeyDown() || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).method_42015()) {
+      if (this.isEnabled() && !JesusModule.method_32081() && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
+         if (!client.gameOptions.keyJump.isKeyDown() || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).isEnabled()) {
             this.field_37410 = class_8865.method_40787()[0];
             this.field_37411 = 0;
             var1.method_13315(var1.method_13317().method_6217() * 1.05F);
@@ -73,7 +73,7 @@ public class TestSpeed extends Module {
 
    @EventListen
    private void method_33365(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
             if (var4.method_21093() != client.thePlayer.method_37145()) {

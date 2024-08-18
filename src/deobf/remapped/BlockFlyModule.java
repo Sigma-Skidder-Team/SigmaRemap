@@ -65,7 +65,7 @@ public class BlockFlyModule extends SecondModule {
    }
 
    public boolean method_17212() {
-      return this.getBooleanValueByName("No Sprint") && this.method_42015();
+      return this.getBooleanValueByName("No Sprint") && this.isEnabled();
    }
 
    public static boolean method_17216(class_2451 var0) {
@@ -259,7 +259,7 @@ public class BlockFlyModule extends SecondModule {
          client.theTimer.timerSpeed = 1.0F;
       }
 
-      if (this.method_17219() != 0 && (!client.thePlayer.field_41774 || this.getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
+      if (this.method_17219() != 0 && (!client.thePlayer.collidedVertically || this.getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
          if (!class_314.method_1434() || this.getBooleanValueByName("Tower while moving")) {
             String var4 = this.getStringValueByName("Tower Mode");
             switch (var4) {
@@ -309,7 +309,7 @@ public class BlockFlyModule extends SecondModule {
                case "Vanilla":
                   if (client.gameOptions.keyJump.pressed
                      && class_314.method_1413(client.thePlayer, 0.001F)
-                     && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0, 0.0)).count()
+                     && client.theWorld.method_6680(client.thePlayer, client.thePlayer.boundingBox.method_18918(0.0, 1.0, 0.0)).count()
                         == 0L) {
                      client.thePlayer
                         .method_37256(client.thePlayer.getPosX(), client.thePlayer.method_37309() + 1.0, client.thePlayer.getPosZ());
@@ -347,8 +347,8 @@ public class BlockFlyModule extends SecondModule {
    }
 
    @EventListen
-   public void method_17218(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_17218(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.getBooleanValueByName("Show Block Amount")) {
             this.field_18193 = this.method_17219();
          }

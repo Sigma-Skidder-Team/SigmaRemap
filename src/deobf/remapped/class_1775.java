@@ -19,7 +19,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    public class_1775(EntityType<? extends class_1775> var1, World var2) {
       super(var1, var2);
-      this.field_41759 = true;
+      this.preventEntitySpawning = true;
       this.method_26895(class_1108.field_6359, -1.0F);
       this.method_26895(class_1108.field_6360, 0.0F);
       this.method_26895(class_1108.field_6357, 0.0F);
@@ -143,8 +143,8 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_1343 method_37282(LivingEntity var1) {
-      class_1343[] var4 = new class_1343[]{
+   public Vector3d method_37282(LivingEntity var1) {
+      Vector3d[] var4 = new Vector3d[]{
          method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw),
          method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw - 22.5F),
          method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw + 22.5F),
@@ -156,7 +156,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       double var8 = this.getBoundingBox().field_19937 - 0.5;
       class_2921 var10 = new class_2921();
 
-      for (class_1343 var14 : var4) {
+      for (Vector3d var14 : var4) {
          var10.method_13361(this.getPosX() + var14.field_7336, var6, this.getPosZ() + var14.field_7334);
 
          for (double var15 = var6; var15 > var8; var15--) {
@@ -169,7 +169,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          if (!this.world.method_28258(var24).method_22007(class_6503.field_33095)) {
             double var17 = this.world.method_28259(var24);
             if (class_160.method_648(var17)) {
-               class_1343 var19 = class_1343.method_6219(var24, var17);
+               Vector3d var19 = Vector3d.method_6219(var24, var17);
                UnmodifiableIterator var20 = var1.method_26454().iterator();
 
                while (var20.hasNext()) {
@@ -184,11 +184,11 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          }
       }
 
-      return new class_1343(this.getPosX(), this.getBoundingBox().field_19939, this.getPosZ());
+      return new Vector3d(this.getPosX(), this.getBoundingBox().field_19939, this.getPosZ());
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       this.method_26461(this.method_7923());
       this.method_37517(this, this.field_9086, var1);
    }
@@ -203,7 +203,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public void method_37519(class_1343 var1) {
+   public void method_37519(Vector3d var1) {
       super.method_26431(var1);
    }
 
@@ -374,8 +374,8 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, (double)(0.6F * this.method_37277()), (double)(this.method_37086() * 0.4F));
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, (double)(0.6F * this.method_37277()), (double)(this.method_37086() * 0.4F));
    }
 
    @Nullable

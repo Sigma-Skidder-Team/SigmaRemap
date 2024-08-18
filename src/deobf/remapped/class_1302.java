@@ -71,7 +71,7 @@ public class class_1302 extends class_2451 implements class_1538 {
                   var7.method_26445(20);
                   if (var7.method_37360()) {
                      float var17 = 1.1999999F;
-                     var7.method_37226(class_7412.field_37839, new class_1343(0.0, 1.1999999F, 0.0));
+                     var7.method_37226(class_7412.field_37839, new Vector3d(0.0, 1.1999999F, 0.0));
                   }
 
                   SoundEvent var22;

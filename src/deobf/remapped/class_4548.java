@@ -16,7 +16,7 @@ public class class_4548 implements Packet<class_392> {
       this(var1.method_37145(), var1.method_37098());
    }
 
-   public class_4548(int var1, class_1343 var2) {
+   public class_4548(int var1, Vector3d var2) {
       this.field_22169 = var1;
       double var5 = 3.9;
       double var7 = MathHelper.clamp(var2.field_7336, -3.9, 3.9);

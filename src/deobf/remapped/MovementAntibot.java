@@ -21,7 +21,7 @@ public class MovementAntibot extends class_5676 {
    }
 
    @EventListen
-   private void method_7143(class_5596 var1) {
+   private void method_7143(PlayerTickEvent var1) {
       if (field_28769.thePlayer.field_41697 < 10) {
          this.field_8305.clear();
       }
@@ -117,12 +117,12 @@ public class MovementAntibot extends class_5676 {
    public boolean method_7141(Entity var1) {
       if (!field_28769.theWorld.method_28262(var1.method_37075()).method_8302()) {
          Box var4 = new Box(
-            var1.field_41712.field_19941,
-            var1.field_41712.field_19937 - 0.5,
-            var1.field_41712.field_19938,
-            var1.field_41712.field_19940,
-            var1.field_41712.field_19939,
-            var1.field_41712.field_19942
+            var1.boundingBox.field_19941,
+            var1.boundingBox.field_19937 - 0.5,
+            var1.boundingBox.field_19938,
+            var1.boundingBox.field_19940,
+            var1.boundingBox.field_19939,
+            var1.boundingBox.field_19942
          );
 
          for (BlockPos var6 : method_7142(var1)) {

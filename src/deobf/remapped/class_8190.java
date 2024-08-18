@@ -3,11 +3,11 @@ package remapped;
 public interface class_8190 {
    boolean method_37518();
 
-   void method_37519(class_1343 var1);
+   void method_37519(Vector3d var1);
 
    float method_37516();
 
-   default boolean method_37517(MobEntity var1, class_686 var2, class_1343 var3) {
+   default boolean method_37517(MobEntity var1, class_686 var2, Vector3d var3) {
       if (var1.isAlive()) {
          Entity var6 = !var1.getPassengers().isEmpty() ? var1.getPassengers().get(0) : null;
          if (var1.method_37151() && var1.canBeSteered() && var6 instanceof PlayerEntity) {
@@ -25,7 +25,7 @@ public interface class_8190 {
 
             if (!var1.canPassengerSteer()) {
                var1.method_26418(var1, false);
-               var1.method_37215(class_1343.field_7335);
+               var1.method_37215(Vector3d.ZERO);
             } else {
                float var7 = this.method_37516();
                if (var2.field_3773) {
@@ -33,7 +33,7 @@ public interface class_8190 {
                }
 
                var1.method_26461(var7);
-               this.method_37519(new class_1343(0.0, 0.0, 1.0));
+               this.method_37519(new Vector3d(0.0, 0.0, 1.0));
                var1.field_29612 = 0;
             }
 

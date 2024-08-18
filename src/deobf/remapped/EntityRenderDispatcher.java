@@ -208,7 +208,7 @@ public class EntityRenderDispatcher {
             class_7067 var15 = this.<Entity>method_28131(var1);
 
             try {
-               class_1343 var16 = var15.method_32555(var1, var9);
+               Vector3d var16 = var15.method_32555(var1, var9);
                double var17 = var2 + var16.method_61();
                double var19 = var4 + var16.method_60();
                double var21 = var6 + var16.method_62();
@@ -304,7 +304,7 @@ public class EntityRenderDispatcher {
             );
          }
 
-         class_1343 var26 = var3.method_37307(var4);
+         Vector3d var26 = var3.method_37307(var4);
          class_8107 var9 = var1.method_36058().method_28620();
          var2.method_35762(var9, 0.0F, var3.method_37277(), 0.0F).method_35743(0, 0, 255, 255).method_35735();
          var2.method_35762(

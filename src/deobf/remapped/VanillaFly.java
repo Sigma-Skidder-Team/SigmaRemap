@@ -38,7 +38,7 @@ public class VanillaFly extends Module {
 
    @EventListen
    private void method_3072(class_6435 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_3720 = true;
@@ -48,7 +48,7 @@ public class VanillaFly extends Module {
 
    @EventListen
    private void method_3075(class_307 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_3720 = false;
@@ -58,7 +58,7 @@ public class VanillaFly extends Module {
 
    @EventListen
    public void method_3074(class_1393 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!client.thePlayer.onGround && this.getBooleanValueByName("Kick bypass")) {
             if (this.field_3718 > 0 && this.field_3718 % 30 == 0 && !class_314.method_1413(client.thePlayer, 0.01F)) {
                if (class_3347.method_15349() != class_412.field_1747.method_2055()) {
@@ -103,7 +103,7 @@ public class VanillaFly extends Module {
 
    @EventListen
    public void method_3071(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!class_314.method_1413(client.thePlayer, 0.01F)) {
             this.field_3718++;
          } else {
@@ -131,7 +131,7 @@ public class VanillaFly extends Module {
    private double method_3073() {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
          if (!client.thePlayer.onGround) {
-            Box var3 = client.thePlayer.field_41712.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
+            Box var3 = client.thePlayer.boundingBox.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
             Iterator var4 = client.theWorld.method_6680(client.thePlayer, var3).iterator();
             double var5 = -1.0;
 

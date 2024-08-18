@@ -6,7 +6,7 @@ public class class_8712 {
    public static final class_9791<DamageSource> field_44674 = method_40046("damage_source");
    public static final class_9791<Entity> field_44678 = method_40046("killer_entity");
    public static final class_9791<Entity> field_44669 = method_40046("direct_killer_entity");
-   public static final class_9791<class_1343> field_44671 = method_40046("origin");
+   public static final class_9791<Vector3d> field_44671 = method_40046("origin");
    public static final class_9791<class_2522> field_44677 = method_40046("block_state");
    public static final class_9791<class_3757> field_44673 = method_40046("block_entity");
    public static final class_9791<ItemStack> field_44670 = method_40046("tool");

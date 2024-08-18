@@ -115,15 +115,15 @@ public class KillauraModule extends Module {
 
    @EventListen
    public void method_11541(class_717 var1) {
-      if (this.method_42015() && this.getBooleanValueByName("Disable on death")) {
+      if (this.isEnabled() && this.getBooleanValueByName("Disable on death")) {
          SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Aura", "Aura disabled due to respawn"));
          this.method_41999();
       }
    }
 
    @EventListen
-   public void method_11558(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_11558(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.field_12562 != -1.0F) {
             this.field_12562++;
          }
@@ -139,7 +139,7 @@ public class KillauraModule extends Module {
 
    @EventListen
    public void method_11535(class_4996 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!this.getStringValueByName("Autoblock Mode").equals("None")
             && (client.thePlayer.method_26446().method_27960() instanceof class_2235 || this.field_12565 != client.thePlayer.inventory.field_36404)
             && field_12558 != null) {
@@ -153,7 +153,7 @@ public class KillauraModule extends Module {
    @EventListen
    @class_4249
    public void method_11549(class_1393 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!var1.method_6449()) {
             this.field_12565 = client.thePlayer.inventory.field_36404;
             if (field_12558 != null && this.field_12561.method_40097() && this.field_12567 != null) {
@@ -186,7 +186,7 @@ public class KillauraModule extends Module {
                this.field_12546++;
                float var4 = this.getFloatValueByName("Hit box expand");
                SecondModule var5 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class);
-               if (var5.method_42015() && var5.getStringValueByName("Type").equalsIgnoreCase("Minis")) {
+               if (var5.isEnabled() && var5.getStringValueByName("Type").equalsIgnoreCase("Minis")) {
                   this.method_11542(var1, var5.method_16864().getStringValueByName("Mode"), var5.method_16864().getBooleanValueByName("Avoid Fall Damage"));
                }
 
@@ -293,8 +293,8 @@ public class KillauraModule extends Module {
                Entity var8 = (Entity)var7.getKey();
                List var9 = (List)var7.getValue();
                if (var11.method_2564(client.theWorld) == var8) {
-                  class_1343 var10 = var8.field_41700.method_6209(2.4414062E-4F);
-                  var9.add(new class_9097<class_1343, Long>(var10, System.currentTimeMillis()));
+                  Vector3d var10 = var8.field_41700.method_6209(2.4414062E-4F);
+                  var9.add(new class_9097<Vector3d, Long>(var10, System.currentTimeMillis()));
                }
             }
          }
@@ -402,7 +402,7 @@ public class KillauraModule extends Module {
 
    @Override
    public boolean method_42003() {
-      return this.method_42015() && this.method_11555();
+      return this.isEnabled() && this.method_11555();
    }
 
    public void method_11542(class_1393 var1, String var2, boolean var3) {
@@ -431,11 +431,11 @@ public class KillauraModule extends Module {
       } else {
          this.field_12545++;
          if ((
-               !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class).method_42015()
+               !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class).isEnabled()
                   || SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class).getStringValueByName("Type").equalsIgnoreCase("Cubecraft")
                   || SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class).getStringValueByName("Type").equalsIgnoreCase("Vanilla")
             )
-            && client.thePlayer.field_41774
+            && client.thePlayer.collidedVertically
             && var9
             && !client.thePlayer.field_29654
             && !client.thePlayer.method_37285()
@@ -540,7 +540,7 @@ public class KillauraModule extends Module {
                   this.field_12570 = 0;
                }
 
-               class_1343 var14 = class_314.method_1429(this.field_12560.get(this.field_12570).method_15377());
+               Vector3d var14 = class_314.method_1429(this.field_12560.get(this.field_12570).method_15377());
                float var9 = Math.abs(class_314.method_1422(class_7211.method_33015(var14).field_10069, field_12563.field_10069));
                this.field_12547 = var9 * 1.95F / 50.0F;
                this.field_12549 = Math.random();
@@ -642,7 +642,7 @@ public class KillauraModule extends Module {
             break;
          case "AAC":
             if (!class_7211.method_32997(
-               new class_1343(var3.getPosX(), var3.method_37309() - 1.6 - this.field_12549 + (double)var3.method_37277(), var3.getPosZ())
+               new Vector3d(var3.getPosX(), var3.method_37309() - 1.6 - this.field_12549 + (double)var3.method_37277(), var3.getPosZ())
             )) {
             }
 

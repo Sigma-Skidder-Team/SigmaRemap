@@ -46,7 +46,7 @@ public class class_1537 extends class_3429 {
             );
       }
 
-      if (!this.world.field_33055 && !this.field_41751) {
+      if (!this.world.field_33055 && !this.removed) {
          if (!(var4 instanceof class_9359)) {
             if (var4 != null) {
                var4.method_37254(this.getPosX(), this.method_37309(), this.getPosZ());

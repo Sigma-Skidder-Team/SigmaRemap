@@ -438,7 +438,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.field_3859 = this.field_3859 + (var3 - this.field_3859) * 0.4F;
       if (this.method_26551() > 0.0F && !this.method_37221()) {
          Box var4;
-         if (this.isPassenger() && !this.getRidingEntity().field_41751) {
+         if (this.isPassenger() && !this.getRidingEntity().removed) {
             var4 = this.getBoundingBox().method_18905(this.getRidingEntity().getBoundingBox()).method_18899(1.0, 0.0, 1.0);
          } else {
             var4 = this.getBoundingBox().method_18899(1.0, 0.5, 1.0);
@@ -448,7 +448,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
             Entity var7 = (Entity)var5.get(var6);
-            if (!var7.field_41751) {
+            if (!var7.removed) {
                this.method_3248(var7);
             }
          }
@@ -927,7 +927,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public void dismount() {
       super.dismount();
-      this.field_41773 = 0;
+      this.rideCooldown = 0;
    }
 
    @Override
@@ -941,7 +941,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public class_1343 method_37295(class_1343 var1, class_7412 var2) {
+   public Vector3d method_37295(Vector3d var1, class_7412 var2) {
       class_7982 var5 = new class_7982(true);
       SigmaMainClass.getInstance().getEventManager().call(var5);
       if (var5.method_36185() == class_9528.field_48495
@@ -988,7 +988,7 @@ public abstract class PlayerEntity extends LivingEntity {
             }
          }
 
-         var1 = new class_1343(var6, var1.field_7333, var8);
+         var1 = new Vector3d(var6, var1.field_7333, var8);
       }
 
       class_7982 var12 = new class_7982(false);
@@ -1064,7 +1064,7 @@ public abstract class PlayerEntity extends LivingEntity {
                }
             }
 
-            class_1343 var17 = var1.method_37098();
+            Vector3d var17 = var1.method_37098();
             boolean var18 = var1.attackEntityFrom(DamageSource.method_28344(this), var4);
             if (!var18) {
                this.world
@@ -1120,9 +1120,9 @@ public abstract class PlayerEntity extends LivingEntity {
                   this.method_3188();
                }
 
-               if (var1 instanceof class_9359 && var1.field_41743) {
+               if (var1 instanceof class_9359 && var1.velocityChanged) {
                   ((class_9359)var1).field_47794.method_4156(new class_4548(var1));
-                  var1.field_41743 = false;
+                  var1.velocityChanged = false;
                   var1.method_37215(var17);
                }
 
@@ -1278,7 +1278,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.method_3162(true, true);
    }
 
-   public static Optional<class_1343> method_3167(class_6331 var0, BlockPos var1, float var2, boolean var3, boolean var4) {
+   public static Optional<Vector3d> method_3167(class_6331 var0, BlockPos var1, float var2, boolean var3, boolean var4) {
       class_2522 var7 = var0.method_28262(var1);
       class_6414 var8 = var7.method_8360();
       if (var8 instanceof class_545 && var7.<Integer>method_10313(class_545.field_3268) > 0 && class_545.method_2640(var0)) {
@@ -1291,13 +1291,13 @@ public abstract class PlayerEntity extends LivingEntity {
       } else if (var8 instanceof class_3633 && class_3633.method_16930(var0)) {
          return class_3633.method_16932(EntityType.field_34300, var0, var1, var2);
       } else if (!var3) {
-         return Optional.<class_1343>empty();
+         return Optional.<Vector3d>empty();
       } else {
          boolean var9 = var8.method_29278();
          boolean var10 = var0.method_28262(var1.method_6081()).method_8360().method_29278();
          return var9 && var10
-            ? Optional.<class_1343>of(new class_1343((double)var1.getX() + 0.5, (double)var1.getY() + 0.1, (double)var1.getZ() + 0.5))
-            : Optional.<class_1343>empty();
+            ? Optional.<Vector3d>of(new Vector3d((double)var1.getX() + 0.5, (double)var1.getY() + 0.1, (double)var1.getZ() + 0.5))
+            : Optional.<Vector3d>empty();
       }
    }
 
@@ -1353,7 +1353,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       double var4 = this.getPosX();
       double var6 = this.method_37309();
       double var8 = this.getPosZ();
@@ -1366,7 +1366,7 @@ public abstract class PlayerEntity extends LivingEntity {
                .method_28262(new BlockPos(this.getPosX(), this.method_37309() + 1.0 - 0.1, this.getPosZ()))
                .method_8364()
                .method_22001()) {
-            class_1343 var14 = this.method_37098();
+            Vector3d var14 = this.method_37098();
             this.method_37215(var14.method_6214(0.0, (var10 - var14.field_7333) * var12, 0.0));
          }
       }
@@ -1376,7 +1376,7 @@ public abstract class PlayerEntity extends LivingEntity {
          float var15 = this.field_29674;
          this.field_29674 = this.playerAbilities.getFlySpeed() * (float)(!this.method_37321() ? 1 : 2);
          super.method_26431(var1);
-         class_1343 var16 = this.method_37098();
+         Vector3d var16 = this.method_37098();
          this.method_37214(var16.field_7336, var17 * 0.6, var16.field_7334);
          this.field_29674 = var15;
          this.field_41706 = 0.0F;
@@ -1546,7 +1546,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public void method_37130(class_2522 var1, class_1343 var2) {
+   public void method_37130(class_2522 var1, Vector3d var2) {
       if (!this.playerAbilities.isFlying) {
          super.method_37130(var1, var2);
       }
@@ -2048,13 +2048,13 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public class_1343 method_37202(float var1) {
+   public Vector3d method_37202(float var1) {
       double var4 = 0.22 * (this.method_26432() != class_1736.field_8943 ? 1.0 : -1.0);
-      float var6 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.field_41762) * (float) (Math.PI / 180.0);
+      float var6 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
       float var7 = MathHelper.lerp(var1, this.field_29611, this.field_29605) * (float) (Math.PI / 180.0);
       if (this.method_26618() || this.method_26600()) {
-         class_1343 var8 = this.method_37307(var1);
-         class_1343 var9 = this.method_37098();
+         Vector3d var8 = this.method_37307(var1);
+         Vector3d var9 = this.method_37098();
          double var21 = Entity.method_37266(var9);
          double var12 = Entity.method_37266(var8);
          float var14;
@@ -2066,13 +2066,13 @@ public abstract class PlayerEntity extends LivingEntity {
             var14 = 0.0F;
          }
 
-         return this.method_37280(var1).method_6215(new class_1343(var4, -0.11, 0.85).method_6218(-var14).method_6212(-var6).method_6192(-var7));
+         return this.method_37280(var1).method_6215(new Vector3d(var4, -0.11, 0.85).method_6218(-var14).method_6212(-var6).method_6192(-var7));
       } else if (!this.method_37297()) {
          double var15 = this.getBoundingBox().method_18901() - 1.0;
          double var10 = !this.method_37382() ? 0.07 : -0.2;
-         return this.method_37280(var1).method_6215(new class_1343(var4, var15, var10).method_6192(-var7));
+         return this.method_37280(var1).method_6215(new Vector3d(var4, var15, var10).method_6192(-var7));
       } else {
-         return this.method_37280(var1).method_6215(new class_1343(var4, 0.2, -0.15).method_6212(-var6).method_6192(-var7));
+         return this.method_37280(var1).method_6215(new Vector3d(var4, 0.2, -0.15).method_6212(-var6).method_6192(-var7));
       }
    }
 }

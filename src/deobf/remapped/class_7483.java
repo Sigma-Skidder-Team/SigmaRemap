@@ -74,24 +74,24 @@ public class class_7483 extends Entity implements class_3713 {
    @Override
    public void method_37162(double var1, double var3, double var5) {
       this.method_37214(var1, var3, var5);
-      if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
+      if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
          float var9 = MathHelper.sqrt(var1 * var1 + var5 * var5);
          this.rotationYaw = (float)(MathHelper.atan2(var1, var5) * 180.0F / (float)Math.PI);
          this.rotationPitch = (float)(MathHelper.atan2(var3, (double)var9) * 180.0F / (float)Math.PI);
          this.prevRotationYaw = this.rotationYaw;
-         this.field_41762 = this.rotationPitch;
+         this.prevRotationPitch = this.rotationPitch;
       }
    }
 
    @Override
    public void method_37123() {
       super.method_37123();
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       double var4 = this.getPosX() + var3.field_7336;
       double var6 = this.method_37309() + var3.field_7333;
       double var8 = this.getPosZ() + var3.field_7334;
       float var10 = MathHelper.sqrt(method_37266(var3));
-      this.rotationPitch = class_5783.method_26168(this.field_41762, (float)(MathHelper.atan2(var3.field_7333, (double)var10) * 180.0F / (float)Math.PI));
+      this.rotationPitch = class_5783.method_26168(this.prevRotationPitch, (float)(MathHelper.atan2(var3.field_7333, (double)var10) * 180.0F / (float)Math.PI));
       this.rotationYaw = class_5783.method_26168(this.prevRotationYaw, (float)(MathHelper.atan2(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
       if (!this.world.field_33055) {
          double var12 = this.field_38206 - var4;
@@ -106,7 +106,7 @@ public class class_7483 extends Entity implements class_3713 {
          }
 
          int var22 = !(this.method_37309() < this.field_38204) ? -1 : 1;
-         var3 = new class_1343(Math.cos((double)var17) * var18, var20 + ((double)var22 - var20) * 0.015F, Math.sin((double)var17) * var18);
+         var3 = new Vector3d(Math.cos((double)var17) * var18, var20 + ((double)var22 - var20) * 0.015F, Math.sin((double)var17) * var18);
          this.method_37215(var3);
       }
 

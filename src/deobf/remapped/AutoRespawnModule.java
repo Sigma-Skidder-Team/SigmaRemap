@@ -8,8 +8,8 @@ public class AutoRespawnModule extends Module {
    }
 
    @EventListen
-   public void method_43730(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_43730(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (!client.thePlayer.isAlive()) {
             client.thePlayer.method_3205();
          }

@@ -54,11 +54,11 @@ public class class_1225 {
       var0.method_26525().method_5105(class_6044.field_30889, var6);
    }
 
-   public static void method_5439(LivingEntity var0, ItemStack var1, class_1343 var2) {
+   public static void method_5439(LivingEntity var0, ItemStack var1, Vector3d var2) {
       double var5 = var0.method_37388() - 0.3F;
       class_91 var7 = new class_91(var0.world, var0.getPosX(), var5, var0.getPosZ(), var1);
       float var8 = 0.3F;
-      class_1343 var9 = var2.method_6194(var0.method_37245());
+      Vector3d var9 = var2.method_6194(var0.method_37245());
       var9 = var9.method_6213().method_6209(0.3F);
       var7.method_37215(var9);
       var7.method_257();
@@ -107,8 +107,8 @@ public class class_1225 {
    }
 
    public static LivingEntity method_5442(LivingEntity var0, LivingEntity var1, LivingEntity var2) {
-      class_1343 var5 = var1.method_37245();
-      class_1343 var6 = var2.method_37245();
+      Vector3d var5 = var1.method_37245();
+      Vector3d var6 = var2.method_37245();
       return !(var0.method_37274(var5) < var0.method_37274(var6)) ? var2 : var1;
    }
 

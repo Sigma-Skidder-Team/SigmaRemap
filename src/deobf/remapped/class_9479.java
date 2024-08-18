@@ -32,10 +32,10 @@ public interface class_9479 {
          double var12 = var1.getPosZ() - var0.getPosZ();
          float var14 = (float)(var0.world.field_33033.nextInt(21) - 10);
          double var15 = var8 * (double)(var0.world.field_33033.nextFloat() * 0.5F + 0.2F);
-         class_1343 var17 = new class_1343(var10, 0.0, var12).method_6213().method_6209(var15).method_6192(var14);
+         Vector3d var17 = new Vector3d(var10, 0.0, var12).method_6213().method_6209(var15).method_6192(var14);
          double var18 = var8 * (double)var0.world.field_33033.nextFloat() * 0.5;
          var1.method_37186(var17.field_7336, var18, var17.field_7334);
-         var1.field_41743 = true;
+         var1.velocityChanged = true;
       }
    }
 }

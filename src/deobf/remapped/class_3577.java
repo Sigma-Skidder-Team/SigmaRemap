@@ -10,7 +10,7 @@ public class class_3577 extends Entity {
 
    public class_3577(EntityType<? extends class_3577> var1, World var2) {
       super(var1, var2);
-      this.field_41759 = true;
+      this.preventEntitySpawning = true;
       this.field_17510 = this.field_41717.nextInt(100000);
    }
 
@@ -70,7 +70,7 @@ public class class_3577 extends Entity {
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
          if (!(var1.method_28372() instanceof class_2770)) {
-            if (!this.field_41751 && !this.world.field_33055) {
+            if (!this.removed && !this.world.field_33055) {
                this.method_37204();
                if (!var1.method_28367()) {
                   this.world.method_29573((Entity)null, this.getPosX(), this.method_37309(), this.getPosZ(), 6.0F, class_7298.field_37311);

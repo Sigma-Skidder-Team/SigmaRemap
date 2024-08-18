@@ -24,7 +24,7 @@ public class class_7156 extends class_3599 {
    public boolean method_16795() {
       if (this.field_36860.method_29602()) {
          if (!this.field_36854.method_37285()) {
-            class_1343 var3 = this.method_32848();
+            Vector3d var3 = this.method_32848();
             if (var3 != null) {
                this.field_36856 = var3.field_7336;
                this.field_36859 = var3.field_7333;
@@ -52,14 +52,14 @@ public class class_7156 extends class_3599 {
    }
 
    @Nullable
-   private class_1343 method_32848() {
+   private Vector3d method_32848() {
       Random var3 = this.field_36854.method_26594();
       BlockPos var4 = this.field_36854.method_37075();
 
       for (int var5 = 0; var5 < 10; var5++) {
          BlockPos var6 = var4.method_6104(var3.nextInt(20) - 10, 2 - var3.nextInt(8), var3.nextInt(20) - 10);
          if (this.field_36860.method_28262(var6).method_8350(class_4783.field_23900)) {
-            return class_1343.method_6200(var6);
+            return Vector3d.method_6200(var6);
          }
       }
 

@@ -27,8 +27,8 @@ public class class_6670 extends class_6353<AbstractClientPlayerEntity, class_316
       super.method_29107(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_1343 method_30612(AbstractClientPlayerEntity var1, float var2) {
-      return !var1.method_37382() ? super.method_32555(var1, var2) : new class_1343(0.0, -0.125, 0.0);
+   public Vector3d method_30612(AbstractClientPlayerEntity var1, float var2) {
+      return !var1.method_37382() ? super.method_32555(var1, var2) : new Vector3d(0.0, -0.125, 0.0);
    }
 
    private void method_30611(AbstractClientPlayerEntity var1) {
@@ -163,8 +163,8 @@ public class class_6670 extends class_6353<AbstractClientPlayerEntity, class_316
             var2.method_36060(class_2426.field_12080.method_11074(var22 * (-90.0F - var1.rotationPitch)));
          }
 
-         class_1343 var11 = var1.method_37307(var5);
-         class_1343 var12 = var1.method_37098();
+         Vector3d var11 = var1.method_37307(var5);
+         Vector3d var12 = var1.method_37098();
          double var13 = Entity.method_37266(var12);
          double var15 = Entity.method_37266(var11);
          if (var13 > 0.0 && var15 > 0.0) {

@@ -20,7 +20,7 @@ public class InvadedSpeed extends Module {
 
    @EventListen
    public void method_27293(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_30487++;
          if (this.field_30487 != 1) {
             if (this.field_30487 != 2) {

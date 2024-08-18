@@ -249,7 +249,7 @@ public class class_8455 {
       this.method_38891(var7);
    }
 
-   private void method_38885(Identifier var1, class_1343 var2, CompoundNBT var3) {
+   private void method_38885(Identifier var1, Vector3d var2, CompoundNBT var3) {
       String var6;
       if (var3 == null) {
          var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", var1.toString(), var2.field_7336, var2.field_7333, var2.field_7334);

@@ -7,21 +7,21 @@ public class OtherKeyStrokesModule extends Module {
 
    @EventListen
    private void method_11912(class_3278 var1) {
-      if (!this.method_42015() || client.thePlayer == null) {
+      if (!this.isEnabled() || client.thePlayer == null) {
          ;
       }
    }
 
    @EventListen
    private void method_11911(class_6435 var1) {
-      if (!this.method_42015() || client.thePlayer == null) {
+      if (!this.isEnabled() || client.thePlayer == null) {
          ;
       }
    }
 
    @EventListen
    private void method_11910(class_8706 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_40004() != class_3237.field_16098 && var1.method_40004() != class_3237.field_16101) {
          }
       }

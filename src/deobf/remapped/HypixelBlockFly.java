@@ -69,12 +69,12 @@ public class HypixelBlockFly extends Module {
 
    @EventListen
    public void method_28401(class_7982 var1) {
-      if (this.method_42015()) {
-         if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+      if (this.isEnabled()) {
+         if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
             if (client.theWorld
                      .method_6680(
                         client.thePlayer,
-                        client.thePlayer.field_41712.method_18928(0.0, -1.5, 0.0).method_18900(0.05, 0.0, 0.05).method_18900(-0.05, 0.0, -0.05)
+                        client.thePlayer.boundingBox.method_18928(0.0, -1.5, 0.0).method_18900(0.05, 0.0, 0.05).method_18900(-0.05, 0.0, -0.05)
                      )
                      .count()
                   == 0L
@@ -82,7 +82,7 @@ public class HypixelBlockFly extends Module {
                var1.method_36186(true);
             }
          } else if (client.thePlayer.onGround
-            && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()
+            && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).isEnabled()
             && (!this.field_31719 || !this.getBooleanValueByName("Downwards"))) {
             var1.method_36186(true);
          }
@@ -91,7 +91,7 @@ public class HypixelBlockFly extends Module {
 
    @EventListen
    private void method_28408(class_6435 var1) {
-      if (this.method_42015() && this.getBooleanValueByName("Downwards")) {
+      if (this.isEnabled() && this.getBooleanValueByName("Downwards")) {
          if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_31719 = true;
@@ -101,7 +101,7 @@ public class HypixelBlockFly extends Module {
 
    @EventListen
    private void method_28407(class_307 var1) {
-      if (this.method_42015() && this.getBooleanValueByName("Downwards")) {
+      if (this.isEnabled() && this.getBooleanValueByName("Downwards")) {
          if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_31719 = false;
@@ -112,9 +112,9 @@ public class HypixelBlockFly extends Module {
    @EventListen
    @class_7664
    public void method_28409(class_1393 var1) {
-      if (this.method_42015() && this.field_31710.method_17219() != 0) {
+      if (this.isEnabled() && this.field_31710.method_17219() != 0) {
          SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class);
-         if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method_16864().getStringValueByName("Bypass").equals("Blink")) {
+         if (!var4.isEnabled() || !var4.getStringValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method_16864().getStringValueByName("Bypass").equals("Blink")) {
             if (!var1.method_6449()) {
                this.field_31710.method_17215();
                if (this.field_31718 != null) {
@@ -220,7 +220,7 @@ public class HypixelBlockFly extends Module {
    @EventListen
    @class_315
    public void method_28400(class_7767 var1) {
-      if (this.method_42015() && this.field_31710.method_17219() != 0) {
+      if (this.isEnabled() && this.field_31710.method_17219() != 0) {
          if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.01F)) {
             this.field_31717 = client.thePlayer.method_37309();
          }
@@ -327,7 +327,7 @@ public class HypixelBlockFly extends Module {
    @EventListen
    @class_7664
    public void method_28402(class_2157 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.getModule()).field_18196 >= 0) {
             var1.method_29715(true);
          }
@@ -336,7 +336,7 @@ public class HypixelBlockFly extends Module {
 
    @EventListen
    public void method_28406(class_2911 var1) {
-      if (this.method_42015() && this.field_31715) {
+      if (this.isEnabled() && this.field_31715) {
          if (this.getModule().getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
             && (!class_314.method_1434() || this.getModule().getBooleanValueByName("Tower while moving"))) {
             var1.method_29715(true);
@@ -346,14 +346,14 @@ public class HypixelBlockFly extends Module {
 
    @EventListen
    public void method_28404(class_1711 var1) {
-      if (this.method_42015() && this.getStringValueByName("Speed Mode").equals("Cubecraft") && this.field_31716 >= 0) {
+      if (this.isEnabled() && this.getStringValueByName("Speed Mode").equals("Cubecraft") && this.field_31716 >= 0) {
          if (!(client.thePlayer.field_41706 > 1.2F)) {
             if (!(client.thePlayer.field_3864 < this.field_31717)) {
                if (!client.thePlayer.field_29654) {
-                  client.thePlayer.field_41736.field_7333 = this.field_31717;
+                  client.thePlayer.positionVec.field_7333 = this.field_31717;
                   client.thePlayer.field_41713 = this.field_31717;
                   client.thePlayer.field_3864 = this.field_31717;
-                  client.thePlayer.field_41698 = this.field_31717;
+                  client.thePlayer.prevPosY = this.field_31717;
                   if (class_8865.method_40772()) {
                      client.thePlayer.field_3859 = 0.099999994F;
                   }
@@ -363,7 +363,7 @@ public class HypixelBlockFly extends Module {
       }
    }
 
-   public static class_1343 method_28403(BlockPos var0, Direction var1) {
+   public static Vector3d method_28403(BlockPos var0, Direction var1) {
       double var4 = (double)var0.getX() + 0.5;
       double var6 = (double)var0.getY() + 0.5;
       double var8 = (double)var0.getZ() + 0.5;
@@ -386,7 +386,7 @@ public class HypixelBlockFly extends Module {
          var4 += method_28405(var10, -var10);
       }
 
-      return new class_1343(var4, var6, var8);
+      return new Vector3d(var4, var6, var8);
    }
 
    public static double method_28405(double var0, double var2) {

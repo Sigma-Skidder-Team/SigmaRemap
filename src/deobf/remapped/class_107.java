@@ -155,7 +155,7 @@ public class class_107 extends class_7819 implements class_674 {
       }
 
       this.field_272 = (float)((double)this.field_272 * 0.9);
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       if (!this.onGround && var3.field_7333 < 0.0) {
          this.method_37215(var3.method_6210(1.0, 0.6, 1.0));
       }
@@ -392,7 +392,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, (double)(0.5F * this.method_37277()), (double)(this.method_37086() * 0.4F));
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, (double)(0.5F * this.method_37277()), (double)(this.method_37086() * 0.4F));
    }
 }

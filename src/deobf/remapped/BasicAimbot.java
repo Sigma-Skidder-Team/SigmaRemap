@@ -8,7 +8,7 @@ public class BasicAimbot extends Module {
 
    @EventListen
    private void method_7262(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Entity var4 = ((AimbotModule)this.getModule()).method_10678(this.getFloatValueByName("Range"));
          if (var4 != null) {
             float[] var5 = class_7211.method_33013(var4);

@@ -8,8 +8,8 @@ public class RegenModule extends Module {
    }
 
    @EventListen
-   private void method_19790(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_19790(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (!client.thePlayer.playerAbilities.isCreativeMode
             && client.thePlayer.method_3161().method_42238() > 17
             && client.thePlayer.method_26551() < 20.0F

@@ -8,7 +8,7 @@ public class AntiBotModule extends Module {
 
    @Override
    public void method_42012() {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.initModes();
       }
    }

@@ -256,6 +256,6 @@ public class class_2765 {
    private static boolean method_12593(BlockPos var0, BlockPos var1, class_6331 var2) {
       class_945 var5 = (class_945)var2.method_28260(var0);
       Box var6 = method_12596(var5).grow(1.0);
-      return var6.method_18903(class_1343.method_6216(var1));
+      return var6.method_18903(Vector3d.method_6216(var1));
    }
 }

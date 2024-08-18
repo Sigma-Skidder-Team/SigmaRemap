@@ -227,7 +227,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          this.field_40612.field_9662 = null;
          double var5 = (double)this.field_40612.playerController.method_42146();
          this.field_40612.field_9587 = var4.method_37201(var5, var1, false);
-         class_1343 var7 = var4.method_37335(var1);
+         Vector3d var7 = var4.method_37335(var1);
          boolean var8 = false;
          byte var9 = 3;
          double var10 = var5;
@@ -247,14 +247,14 @@ public class GameRenderer implements class_6491, AutoCloseable {
             var10 = this.field_40612.field_9587.method_33993().method_6204(var7);
          }
 
-         class_1343 var12 = var4.method_37307(1.0F);
-         class_1343 var13 = var7.method_6214(var12.field_7336 * var5, var12.field_7333 * var5, var12.field_7334 * var5);
+         Vector3d var12 = var4.method_37307(1.0F);
+         Vector3d var13 = var7.method_6214(var12.field_7336 * var5, var12.field_7333 * var5, var12.field_7334 * var5);
          float var14 = 1.0F;
          Box var15 = var4.getBoundingBox().method_18929(var12.method_6209(var5)).method_18899(1.0, 1.0, 1.0);
          class_5631 var16 = class_8462.method_38932(var4, var7, var13, var15, var0 -> !var0.method_37221() && var0.method_37167(), var10);
          if (var16 != null) {
             Entity var17 = var16.method_25524();
-            class_1343 var18 = var16.method_33993();
+            Vector3d var18 = var16.method_33993();
             double var19 = var7.method_6204(var18);
             if (var8 && var19 > 9.0) {
                this.field_40612.field_9587 = class_9529.method_43958(

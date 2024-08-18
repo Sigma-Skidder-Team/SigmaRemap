@@ -16,7 +16,7 @@ public class SkeletonESPModule extends Module {
 
    @EventListen
    public void method_19976(class_3368 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          ;
       }
    }

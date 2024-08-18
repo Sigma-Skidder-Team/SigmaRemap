@@ -50,8 +50,8 @@ public class GamePlayModule extends SecondModule {
    }
 
    @EventListen
-   private void method_33595(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_33595(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (this.field_37692 != null) {
             if (client.screen instanceof class_5766) {
                this.method_33594(null);

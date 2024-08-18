@@ -84,7 +84,7 @@ public class class_5131 extends class_9335 {
          this.field_26468.method_37155(SoundEvents.field_2196, 1.0F, 1.0F);
       }
 
-      class_1343 var9 = this.field_26468.method_37098();
+      Vector3d var9 = this.field_26468.method_37098();
       if (var9.field_7333 * var9.field_7333 < 0.03F && this.field_26468.rotationPitch != 0.0F) {
          this.field_26468.rotationPitch = MathHelper.rotLerp(this.field_26468.rotationPitch, 0.0F, 0.2F);
       } else {

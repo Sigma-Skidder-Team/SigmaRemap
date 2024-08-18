@@ -35,12 +35,12 @@ public class InvManagerModule extends PremiumModule {
    }
 
    @EventListen
-   public void method_23709(class_5596 var1) {
+   public void method_23709(PlayerTickEvent var1) {
       if (!this.field_26629.method_14771()) {
          this.field_26629.method_14776();
       }
 
-      if (this.method_42015() && !AutoArmorModule.field_9392) {
+      if (this.isEnabled() && !AutoArmorModule.field_9392) {
          String var4 = this.getStringValueByName("Mode");
          if (!this.getStringValueByName("Mode").equals("OpenInv") || client.screen instanceof class_3431) {
             long var5 = (long)(this.getFloatValueByName("Delay") * 20.0F);
@@ -199,9 +199,9 @@ public class InvManagerModule extends PremiumModule {
          if (var5 instanceof class_6201
             && (this.method_23721() > (int)this.getFloatValueByName("Block Cap") || BlockFlyModule.field_18195.contains(((class_6201)var5).method_28392()))) {
             return true;
-         } else if (var5 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).method_42015()) {
+         } else if (var5 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).isEnabled()) {
             return method_23723(class_4897.field_24999) > 1;
-         } else if (var5 == class_4897.field_24548 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).method_42015()) {
+         } else if (var5 == class_4897.field_24548 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).isEnabled()) {
             return method_23723(class_4897.field_24548) > 1;
          } else if (var5 instanceof class_5518 && class_2740.method_12360(var1)) {
             return true;

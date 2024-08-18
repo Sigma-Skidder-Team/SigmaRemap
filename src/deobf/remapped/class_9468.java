@@ -18,14 +18,14 @@ public class class_9468 extends Module {
 
    @EventListen
    public void method_43747(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.method_43745();
       }
    }
 
    @EventListen
    public void method_43746(class_7285 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          boolean var4 = this.getModule().getBooleanValueByName("Show Invisibles");
          boolean var5 = this.getBooleanValueByName("Show Health");
          RenderSystem.method_16438();

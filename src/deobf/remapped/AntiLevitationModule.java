@@ -6,8 +6,8 @@ public class AntiLevitationModule extends Module {
    }
 
    @EventListen
-   public void method_33472(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_33472(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          client.thePlayer.removeEffect(Effects.LevitationEffect);
       }
    }

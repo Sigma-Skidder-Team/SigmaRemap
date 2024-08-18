@@ -8,8 +8,8 @@ public class AutoWalkModule extends Module {
    }
 
    @EventListen
-   private void method_9058(class_5596 var1) {
-      if (this.method_42015()) {
+   private void method_9058(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          client.gameOptions.keyForward.pressed = true;
       }
    }

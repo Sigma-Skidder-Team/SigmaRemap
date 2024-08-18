@@ -15,7 +15,7 @@ public class MusicParticlesModule extends PremiumModule {
 
    @EventListen
    private void method_11764(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (SigmaMainClass.getInstance().method_3300().method_9486() && SigmaMainClass.getInstance().method_3300().field_10297.size() != 0) {
             long var4 = System.nanoTime() - this.field_12812;
             float var6 = Math.min(10.0F, Math.max(0.0F, (float)var4 / 1.810361E7F));

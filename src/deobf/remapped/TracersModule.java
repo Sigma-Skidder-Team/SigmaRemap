@@ -10,7 +10,7 @@ public class TracersModule extends Module {
 
    @EventListen
    public void method_19872(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          GL11.glBlendFunc(770, 771);
          GL11.glAlphaFunc(519, 0.0F);
          GL11.glEnable(3042);
@@ -24,7 +24,7 @@ public class TracersModule extends Module {
          for (Entity var5 : class_314.method_1435()) {
             if (var5 != client.thePlayer
                && var5.isAlive()
-               && var5.field_41712.method_18906() > 0.8
+               && var5.boundingBox.method_18906() > 0.8
                && var5.field_41697 > 30
                && !SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                this.method_19871(var5);
@@ -43,7 +43,7 @@ public class TracersModule extends Module {
       double var4 = class_9189.method_42353(var1).field_42648;
       double var6 = class_9189.method_42353(var1).field_42646 + (double)(var1.method_37074() / 2.0F);
       double var8 = class_9189.method_42353(var1).field_42649;
-      class_1343 var10 = new class_1343(0.0, 0.0, 10.0)
+      Vector3d var10 = new Vector3d(0.0, 0.0, 10.0)
          .method_6212(-((float)Math.toRadians((double) MinecraftClient.getInstance().thePlayer.rotationPitch)))
          .method_6192(-((float)Math.toRadians((double) MinecraftClient.getInstance().thePlayer.rotationYaw)));
       int var11 = this.getIntValueByName("Color");

@@ -39,16 +39,16 @@ public class BoatEntity extends Entity {
 
    public BoatEntity(EntityType<? extends BoatEntity> var1, World var2) {
       super(var1, var2);
-      this.field_41759 = true;
+      this.preventEntitySpawning = true;
    }
 
    public BoatEntity(World var1, double var2, double var4, double var6) {
       this(EntityType.field_34330, var1);
       this.method_37256(var2, var4, var6);
-      this.method_37215(class_1343.field_7335);
-      this.field_41767 = var2;
-      this.field_41698 = var4;
-      this.field_41725 = var6;
+      this.method_37215(Vector3d.ZERO);
+      this.prevPosX = var2;
+      this.prevPosY = var4;
+      this.prevPosZ = var6;
    }
 
    @Override
@@ -92,7 +92,7 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public class_1343 method_37375(class_9249 var1, class_8623 var2) {
+   public Vector3d method_37375(class_9249 var1, class_8623 var2) {
       return LivingEntity.method_26437(super.method_37375(var1, var2));
    }
 
@@ -105,7 +105,7 @@ public class BoatEntity extends Entity {
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (this.method_37180(var1)) {
          return false;
-      } else if (!this.world.field_33055 && !this.field_41751) {
+      } else if (!this.world.field_33055 && !this.removed) {
          this.method_42106(-this.method_42094());
          this.method_42098(10);
          this.method_42099(this.method_42109() + var2 * 10.0F);
@@ -200,7 +200,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public boolean method_37167() {
-      return !this.field_41751;
+      return !this.removed;
    }
 
    @Override
@@ -243,7 +243,7 @@ public class BoatEntity extends Entity {
       super.method_37123();
       this.method_42088();
       if (!this.canPassengerSteer()) {
-         this.method_37215(class_1343.field_7335);
+         this.method_37215(Vector3d.ZERO);
       } else {
          if (this.getPassengers().isEmpty() || !(this.getPassengers().get(0) instanceof PlayerEntity)) {
             this.method_42087(false, false);
@@ -269,7 +269,7 @@ public class BoatEntity extends Entity {
                && ((double)this.field_46807[var3] + (float) (Math.PI / 8)) % (float) (Math.PI * 2) >= (float) (Math.PI / 4)) {
                SoundEvent var4 = this.method_42097();
                if (var4 != null) {
-                  class_1343 var5 = this.method_37307(1.0F);
+                  Vector3d var5 = this.method_37307(1.0F);
                   double var6 = var3 != 1 ? var5.field_7334 : -var5.field_7334;
                   double var8 = var3 != 1 ? -var5.field_7336 : var5.field_7336;
                   this.world
@@ -326,7 +326,7 @@ public class BoatEntity extends Entity {
             int var4 = 60 - var3 - 1;
             if (var4 > 0 && var3 == 0) {
                this.method_42102(0);
-               class_1343 var5 = this.method_37098();
+               Vector3d var5 = this.method_37098();
                if (!this.field_46818) {
                   this.method_37214(var5.field_7336, !this.method_37071(PlayerEntity.class) ? 0.6 : 2.7, var5.field_7334);
                } else {
@@ -591,11 +591,11 @@ public class BoatEntity extends Entity {
             this.field_46801 = 0.9F;
          }
 
-         class_1343 var9 = this.method_37098();
+         Vector3d var9 = this.method_37098();
          this.method_37214(var9.field_7336 * (double)this.field_46801, var9.field_7333 + var5, var9.field_7334 * (double)this.field_46801);
          this.field_46789 = this.field_46789 * this.field_46801;
          if (var7 > 0.0) {
-            class_1343 var10 = this.method_37098();
+            Vector3d var10 = this.method_37098();
             this.method_37214(var10.field_7336, (var10.field_7333 + var7 * 0.06153846016296973) * 0.75, var10.field_7334);
          }
       }
@@ -641,7 +641,7 @@ public class BoatEntity extends Entity {
    public void method_37340(Entity var1) {
       if (this.method_37072(var1)) {
          float var4 = 0.0F;
-         float var5 = (float)((!this.field_41751 ? this.getMountedYOffset() : 0.01F) + var1.method_37106());
+         float var5 = (float)((!this.removed ? this.getMountedYOffset() : 0.01F) + var1.method_37106());
          if (this.getPassengers().size() > 1) {
             int var6 = this.getPassengers().indexOf(var1);
             if (var6 != 0) {
@@ -655,7 +655,7 @@ public class BoatEntity extends Entity {
             }
          }
 
-         class_1343 var8 = new class_1343((double)var4, 0.0, 0.0).method_6192(-this.rotationYaw * (float) (Math.PI / 180.0) - (float) (Math.PI / 2));
+         Vector3d var8 = new Vector3d((double)var4, 0.0, 0.0).method_6192(-this.rotationYaw * (float) (Math.PI / 180.0) - (float) (Math.PI / 2));
          var1.method_37256(this.getPosX() + var8.field_7336, this.method_37309() + (double)var5, this.getPosZ() + var8.field_7334);
          var1.rotationYaw = var1.rotationYaw + this.field_46789;
          var1.setRotationYawHead(var1.method_37267() + this.field_46789);
@@ -669,8 +669,8 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public class_1343 method_37282(LivingEntity var1) {
-      class_1343 var4 = method_37373((double)(this.method_37086() * MathHelper.SQRT_2), (double)var1.method_37086(), this.rotationYaw);
+   public Vector3d method_37282(LivingEntity var1) {
+      Vector3d var4 = method_37373((double)(this.method_37086() * MathHelper.SQRT_2), (double)var1.method_37086(), this.rotationYaw);
       double var5 = this.getPosX() + var4.field_7336;
       double var7 = this.getPosZ() + var4.field_7334;
       BlockPos var9 = new BlockPos(var5, this.getBoundingBox().field_19939, var7);
@@ -682,13 +682,13 @@ public class BoatEntity extends Entity {
 
          while (var15.hasNext()) {
             class_7653 var16 = (class_7653)var15.next();
-            class_1343 var17 = class_160.method_649(this.world, var5, var11, var7, var1, var16);
+            Vector3d var17 = class_160.method_649(this.world, var5, var11, var7, var1, var16);
             if (var17 != null) {
                var1.method_37356(var16);
                return var17;
             }
 
-            class_1343 var18 = class_160.method_649(this.world, var5, var13, var7, var1, var16);
+            Vector3d var18 = class_160.method_649(this.world, var5, var13, var7, var1, var16);
             if (var18 != null) {
                var1.method_37356(var16);
                return var18;
@@ -756,7 +756,7 @@ public class BoatEntity extends Entity {
                }
 
                this.method_37270(this.field_41706, 1.0F);
-               if (!this.world.field_33055 && !this.field_41751) {
+               if (!this.world.field_33055 && !this.removed) {
                   this.method_37204();
                   if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                      for (int var8 = 0; var8 < 3; var8++) {

@@ -185,7 +185,7 @@ public class class_9552 extends class_5783 {
             this.field_48604 = MathHelper.clamp(this.field_48604 * 1.025, -1.0, 1.0);
             this.field_48598 = MathHelper.clamp(this.field_48598 * 1.025, -1.0, 1.0);
             this.field_48597 = MathHelper.clamp(this.field_48597 * 1.025, -1.0, 1.0);
-            class_1343 var3 = this.method_37098();
+            Vector3d var3 = this.method_37098();
             this.method_37215(
                var3.method_6214(
                   (this.field_48604 - var3.field_7336) * 0.2, (this.field_48598 - var3.field_7333) * 0.2, (this.field_48597 - var3.field_7334) * 0.2
@@ -200,11 +200,11 @@ public class class_9552 extends class_5783 {
       }
 
       this.method_37097();
-      class_1343 var8 = this.method_37098();
+      Vector3d var8 = this.method_37098();
       this.method_37256(this.getPosX() + var8.field_7336, this.method_37309() + var8.field_7333, this.getPosZ() + var8.field_7334);
       class_8462.method_38933(this, 0.5F);
       if (!this.world.field_33055) {
-         if (this.field_48601 != null && !this.field_48601.field_41751) {
+         if (this.field_48601 != null && !this.field_48601.removed) {
             if (this.field_48600 > 0) {
                this.field_48600--;
                if (this.field_48600 == 0) {

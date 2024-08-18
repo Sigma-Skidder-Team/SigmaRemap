@@ -13,7 +13,7 @@ public class ShadowESP extends Module {
 
    @EventListen
    private void method_6348(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer != null && client.theWorld != null) {
             this.method_6345();
             FontManager.method_107();
@@ -92,7 +92,7 @@ public class ShadowESP extends Module {
       for (Entity var10 : client.theWorld.method_736()) {
          if (this.method_6344(var10)) {
             GL11.glPushMatrix();
-            class_1343 var11 = client.gameRenderer.method_35949().method_41627();
+            Vector3d var11 = client.gameRenderer.method_35949().method_41627();
             double var12 = var11.method_61();
             double var14 = var11.method_60();
             double var16 = var11.method_62();
@@ -140,7 +140,7 @@ public class ShadowESP extends Module {
 
    @EventListen
    public void method_6351(class_5278 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (field_7448 != class_4719.field_22895) {
             var1.method_24101(false);
          }
@@ -149,7 +149,7 @@ public class ShadowESP extends Module {
 
    @EventListen
    public void method_6349(class_2563 var1) {
-      if (this.method_42015() && field_7448 != class_4719.field_22895 && var1.method_11643() instanceof PlayerEntity) {
+      if (this.isEnabled() && field_7448 != class_4719.field_22895 && var1.method_11643() instanceof PlayerEntity) {
          var1.method_29715(true);
       }
    }

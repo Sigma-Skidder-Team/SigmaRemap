@@ -16,7 +16,7 @@ public class class_5212 extends class_5920<LivingEntity> {
 
    @Override
    public void method_27080(class_6331 var1, LivingEntity var2, long var3) {
-      Optional var7 = Optional.<class_1343>ofNullable(this.method_23889(var1, var2));
+      Optional var7 = Optional.<Vector3d>ofNullable(this.method_23889(var1, var2));
       if (var7.isPresent()) {
          var2.method_26525().method_5106(class_6044.field_30889, var7.map(var1x -> new class_6651(var1x, this.field_26774, 0)));
       }
@@ -28,14 +28,14 @@ public class class_5212 extends class_5920<LivingEntity> {
    }
 
    @Nullable
-   private class_1343 method_23889(class_6331 var1, LivingEntity var2) {
+   private Vector3d method_23889(class_6331 var1, LivingEntity var2) {
       Random var5 = var2.method_26594();
       BlockPos var6 = var2.method_37075();
 
       for (int var7 = 0; var7 < 10; var7++) {
          BlockPos var8 = var6.method_6104(var5.nextInt(20) - 10, var5.nextInt(6) - 3, var5.nextInt(20) - 10);
          if (method_23890(var1, var2, var8)) {
-            return class_1343.method_6200(var8);
+            return Vector3d.method_6200(var8);
          }
       }
 

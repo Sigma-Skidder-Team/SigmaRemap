@@ -278,13 +278,13 @@ public class class_6331 extends World implements class_700 {
             }
 
             var4.startSection("checkDespawn");
-            if (!var17.field_41751) {
+            if (!var17.removed) {
                var17.method_37233();
             }
 
             var4.endSection();
             if (var20 != null) {
-               if (!var20.field_41751 && var20.method_37072(var17)) {
+               if (!var20.removed && var20.method_37072(var17)) {
                   continue;
                }
 
@@ -292,13 +292,13 @@ public class class_6331 extends World implements class_700 {
             }
 
             var4.startSection("tick");
-            if (!var17.field_41751 && !(var17 instanceof class_5708)) {
+            if (!var17.removed && !(var17 instanceof class_5708)) {
                this.method_29532(this::method_28997, var17);
             }
 
             var4.endSection();
             var4.startSection("remove");
-            if (var17.field_41751) {
+            if (var17.removed) {
                this.method_28952(var17);
                var15.remove();
                this.method_28979(var17);
@@ -366,7 +366,7 @@ public class class_6331 extends World implements class_700 {
             }
 
             class_900 var25 = EntityType.field_34224.method_30484(this);
-            var25.method_37196(class_1343.method_6200(var10));
+            var25.method_37196(Vector3d.method_6200(var10));
             var25.method_3858(var12);
             this.method_7509(var25);
          }
@@ -494,7 +494,7 @@ public class class_6331 extends World implements class_700 {
       } else {
          var1.method_37306(var1.getPosX(), var1.method_37309(), var1.getPosZ());
          var1.prevRotationYaw = var1.rotationYaw;
-         var1.field_41762 = var1.rotationPitch;
+         var1.prevRotationPitch = var1.rotationPitch;
          if (var1.field_41727) {
             var1.field_41697++;
             class_3492 var4 = this.method_29599();
@@ -514,12 +514,12 @@ public class class_6331 extends World implements class_700 {
    }
 
    public void method_28975(Entity var1, Entity var2) {
-      if (var2.field_41751 || var2.getRidingEntity() != var1) {
+      if (var2.removed || var2.getRidingEntity() != var1) {
          var2.method_37390();
       } else if (var2 instanceof PlayerEntity || this.method_28945().method_14824(var2)) {
          var2.method_37306(var2.getPosX(), var2.method_37309(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
-         var2.field_41762 = var2.rotationPitch;
+         var2.prevRotationPitch = var2.rotationPitch;
          if (var2.field_41727) {
             var2.field_41697++;
             class_3492 var5 = this.method_29599();
@@ -652,10 +652,10 @@ public class class_6331 extends World implements class_700 {
    }
 
    public void method_28954(Entity var1) {
-      boolean var4 = var1.field_41722;
-      var1.field_41722 = true;
+      boolean var4 = var1.forceSpawn;
+      var1.forceSpawn = true;
       this.method_28972(var1);
-      var1.field_41722 = var4;
+      var1.forceSpawn = var4;
       this.method_28987(var1);
    }
 
@@ -698,13 +698,13 @@ public class class_6331 extends World implements class_700 {
    }
 
    private boolean method_28986(Entity var1) {
-      if (!var1.field_41751) {
+      if (!var1.removed) {
          if (!this.method_28922(var1)) {
             class_5990 var4 = this.method_22555(
                MathHelper.floor(var1.getPosX() / 16.0),
                MathHelper.floor(var1.getPosZ() / 16.0),
                class_7335.field_37514,
-               var1.field_41722
+               var1.forceSpawn
             );
             if (var4 instanceof class_2654) {
                var4.method_27342(var1);
@@ -1041,7 +1041,7 @@ public class class_6331 extends World implements class_700 {
    private boolean method_28976(class_9359 var1, boolean var2, double var3, double var5, double var7, Packet<?> var9) {
       if (var1.method_43235() == this) {
          BlockPos var12 = var1.method_37075();
-         if (!var12.method_12170(new class_1343(var3, var5, var7), !var2 ? 32.0 : 512.0)) {
+         if (!var12.method_12170(new Vector3d(var3, var5, var7), !var2 ? 32.0 : 512.0)) {
             return false;
          } else {
             var1.field_47794.method_4156(var9);

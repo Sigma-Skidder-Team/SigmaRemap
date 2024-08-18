@@ -220,9 +220,9 @@ public abstract class AbstractVillagerEntity extends class_1899 implements class
    }
 
    @Override
-   public class_1343 method_37202(float var1) {
+   public Vector3d method_37202(float var1) {
       float var4 = MathHelper.lerp(var1, this.field_29611, this.field_29605) * (float) (Math.PI / 180.0);
-      class_1343 var5 = new class_1343(0.0, this.getBoundingBox().method_18901() - 1.0, 0.2);
+      Vector3d var5 = new Vector3d(0.0, this.getBoundingBox().method_18901() - 1.0, 0.2);
       return this.method_37280(var1).method_6215(var5.method_6192(-var4));
    }
 }

@@ -53,7 +53,7 @@ public class ActiveModsModule extends Module {
             this.field_43173.add(var4);
             this.field_43168.put(var4, new class_2440(150, 150, class_4043.field_19618));
             if (this.getBooleanValueByName("Animations")) {
-               this.field_43168.get(var4).method_11119(!var4.method_42015() ? class_4043.field_19618 : class_4043.field_19620);
+               this.field_43168.get(var4).method_11119(!var4.isEnabled() ? class_4043.field_19618 : class_4043.field_19620);
             }
          }
       }
@@ -63,7 +63,7 @@ public class ActiveModsModule extends Module {
 
    @EventListen
    private void method_38820(class_4459 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!var1.method_20668()) {
             GlStateManager.translatef(0.0F, (float)(-this.field_43170), 0.0F);
          } else {
@@ -82,7 +82,7 @@ public class ActiveModsModule extends Module {
             int var9 = 0;
 
             for (Module var11 : this.field_43173) {
-               if (var11.method_42015()) {
+               if (var11.isEnabled()) {
                   var9++;
                }
             }
@@ -103,10 +103,10 @@ public class ActiveModsModule extends Module {
 
    @EventListen
    private void method_38819(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          for (Module var5 : this.field_43168.keySet()) {
             if (this.getBooleanValueByName("Animations")) {
-               this.field_43168.get(var5).method_11119(!var5.method_42015() ? class_4043.field_19618 : class_4043.field_19620);
+               this.field_43168.get(var5).method_11119(!var5.isEnabled() ? class_4043.field_19618 : class_4043.field_19620);
             }
          }
 
@@ -132,7 +132,7 @@ public class ActiveModsModule extends Module {
                float var14 = 1.0F;
                float var15 = 1.0F;
                if (!this.getBooleanValueByName("Animations")) {
-                  if (!var13.method_42015()) {
+                  if (!var13.isEnabled()) {
                      continue;
                   }
                } else {

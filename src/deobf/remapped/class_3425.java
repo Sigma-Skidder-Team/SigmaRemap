@@ -7,73 +7,73 @@ import javax.annotation.Nullable;
 
 public class class_3425 {
    @Nullable
-   public static class_1343 method_15845(class_4612 var0, int var1, int var2) {
-      return method_15833(var0, var1, var2, 0, (class_1343)null, true, (float) (Math.PI / 2), var0::method_21375, false, 0, 0, true);
+   public static Vector3d method_15845(class_4612 var0, int var1, int var2) {
+      return method_15833(var0, var1, var2, 0, (Vector3d)null, true, (float) (Math.PI / 2), var0::method_21375, false, 0, 0, true);
    }
 
    @Nullable
-   public static class_1343 method_15843(class_4612 var0, int var1, int var2, int var3, class_1343 var4, double var5) {
+   public static Vector3d method_15843(class_4612 var0, int var1, int var2, int var3, Vector3d var4, double var5) {
       return method_15833(var0, var1, var2, var3, var4, true, var5, var0::method_21375, true, 0, 0, false);
    }
 
    @Nullable
-   public static class_1343 method_15834(class_4612 var0, int var1, int var2) {
+   public static Vector3d method_15834(class_4612 var0, int var1, int var2) {
       return method_15846(var0, var1, var2, var0::method_21375);
    }
 
    @Nullable
-   public static class_1343 method_15846(class_4612 var0, int var1, int var2, ToDoubleFunction<BlockPos> var3) {
-      return method_15833(var0, var1, var2, 0, (class_1343)null, false, 0.0, var3, true, 0, 0, true);
+   public static Vector3d method_15846(class_4612 var0, int var1, int var2, ToDoubleFunction<BlockPos> var3) {
+      return method_15833(var0, var1, var2, 0, (Vector3d)null, false, 0.0, var3, true, 0, 0, true);
    }
 
    @Nullable
-   public static class_1343 method_15842(class_4612 var0, int var1, int var2, class_1343 var3, float var4, int var5, int var6) {
+   public static Vector3d method_15842(class_4612 var0, int var1, int var2, Vector3d var3, float var4, int var5, int var6) {
       return method_15833(var0, var1, var2, 0, var3, false, (double)var4, var0::method_21375, true, var5, var6, true);
    }
 
    @Nullable
-   public static class_1343 method_15838(class_4612 var0, int var1, int var2, class_1343 var3) {
-      class_1343 var6 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
+   public static Vector3d method_15838(class_4612 var0, int var1, int var2, Vector3d var3) {
+      Vector3d var6 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
       return method_15833(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::method_21375, true, 0, 0, true);
    }
 
    @Nullable
-   public static class_1343 method_15837(class_4612 var0, int var1, int var2, class_1343 var3) {
-      class_1343 var6 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
+   public static Vector3d method_15837(class_4612 var0, int var1, int var2, Vector3d var3) {
+      Vector3d var6 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
       return method_15833(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::method_21375, false, 0, 0, true);
    }
 
    @Nullable
-   public static class_1343 method_15841(class_4612 var0, int var1, int var2, class_1343 var3, double var4) {
-      class_1343 var8 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
+   public static Vector3d method_15841(class_4612 var0, int var1, int var2, Vector3d var3, double var4) {
+      Vector3d var8 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
       return method_15833(var0, var1, var2, 0, var8, true, var4, var0::method_21375, false, 0, 0, true);
    }
 
    @Nullable
-   public static class_1343 method_15847(class_4612 var0, int var1, int var2, int var3, class_1343 var4, double var5) {
-      class_1343 var9 = var4.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
+   public static Vector3d method_15847(class_4612 var0, int var1, int var2, int var3, Vector3d var4, double var5) {
+      Vector3d var9 = var4.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
       return method_15833(var0, var1, var2, var3, var9, false, var5, var0::method_21375, true, 0, 0, false);
    }
 
    @Nullable
-   public static class_1343 method_15835(class_4612 var0, int var1, int var2, class_1343 var3) {
-      class_1343 var6 = var0.method_37245().method_6194(var3);
+   public static Vector3d method_15835(class_4612 var0, int var1, int var2, Vector3d var3) {
+      Vector3d var6 = var0.method_37245().method_6194(var3);
       return method_15833(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::method_21375, false, 0, 0, true);
    }
 
    @Nullable
-   public static class_1343 method_15836(class_4612 var0, int var1, int var2, class_1343 var3) {
-      class_1343 var6 = var0.method_37245().method_6194(var3);
+   public static Vector3d method_15836(class_4612 var0, int var1, int var2, Vector3d var3) {
+      Vector3d var6 = var0.method_37245().method_6194(var3);
       return method_15833(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::method_21375, true, 0, 0, true);
    }
 
    @Nullable
-   private static class_1343 method_15833(
+   private static Vector3d method_15833(
       class_4612 var0,
       int var1,
       int var2,
       int var3,
-      class_1343 var4,
+      Vector3d var4,
       boolean var5,
       double var6,
       ToDoubleFunction<BlockPos> var8,
@@ -145,11 +145,11 @@ public class class_3425 {
          }
       }
 
-      return !var18 ? null : class_1343.method_6200(var21);
+      return !var18 ? null : Vector3d.method_6200(var21);
    }
 
    @Nullable
-   private static BlockPos method_15840(Random var0, int var1, int var2, int var3, class_1343 var4, double var5) {
+   private static BlockPos method_15840(Random var0, int var1, int var2, int var3, Vector3d var4, double var5) {
       if (var4 != null && !(var5 >= Math.PI)) {
          double var12 = MathHelper.atan2(var4.field_7334, var4.field_7336) - (float) (Math.PI / 2);
          double var14 = var12 + (double)(2.0F * var0.nextFloat() - 1.0F) * var5;

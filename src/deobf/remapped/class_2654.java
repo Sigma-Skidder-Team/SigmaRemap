@@ -302,7 +302,7 @@ public class class_2654 implements class_5990 {
       int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
       if (var4 != this.field_13067.field_10328 || var5 != this.field_13067.field_10327) {
          field_13080.warn("Wrong location! ({}, {}) should be ({}, {}), {}", var4, var5, this.field_13067.field_10328, this.field_13067.field_10327, var1);
-         var1.field_41751 = true;
+         var1.removed = true;
       }
 
       int var6 = MathHelper.floor(var1.method_37309() / 16.0);

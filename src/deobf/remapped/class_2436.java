@@ -27,7 +27,7 @@ public class class_2436 implements Packet<class_392> {
       this.field_12108 = var1;
       this.field_12109 = var2.method_37145();
       this.field_12111 = var3;
-      class_1343 var6 = var3.method_28187(var2);
+      Vector3d var6 = var3.method_28187(var2);
       this.field_12112 = var6.field_7336;
       this.field_12110 = var6.field_7333;
       this.field_12107 = var6.field_7334;
@@ -69,12 +69,12 @@ public class class_2436 implements Packet<class_392> {
    }
 
    @Nullable
-   public class_1343 method_11101(World var1) {
+   public Vector3d method_11101(World var1) {
       if (!this.field_12105) {
-         return new class_1343(this.field_12112, this.field_12110, this.field_12107);
+         return new Vector3d(this.field_12112, this.field_12110, this.field_12107);
       } else {
          Entity var4 = var1.method_29534(this.field_12109);
-         return var4 != null ? this.field_12111.method_28187(var4) : new class_1343(this.field_12112, this.field_12110, this.field_12107);
+         return var4 != null ? this.field_12111.method_28187(var4) : new Vector3d(this.field_12112, this.field_12110, this.field_12107);
       }
    }
 }

@@ -158,7 +158,7 @@ public class class_9408 extends class_8990 implements class_6250 {
                if (this.field_48110 > 0.4F) {
                   float var3 = (float)this.method_37309();
                   int var4 = (int)(MathHelper.sin((this.field_48110 - 0.4F) * (float) Math.PI) * 7.0F);
-                  class_1343 var5 = this.method_37098();
+                  Vector3d var5 = this.method_37098();
 
                   for (int var6 = 0; var6 < var4; var6++) {
                      float var7 = (this.field_41717.nextFloat() * 2.0F - 1.0F) * this.method_37086() * 0.5F;
@@ -469,7 +469,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, (double)(0.6F * this.method_37277()), (double)(this.method_37086() * 0.4F));
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, (double)(0.6F * this.method_37277()), (double)(this.method_37086() * 0.4F));
    }
 }

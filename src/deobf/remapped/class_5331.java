@@ -24,7 +24,7 @@ public class class_5331 extends class_3599 {
       this.field_27196 = this.field_27195.getAttackTarget();
       if (this.field_27196 != null) {
          if (!(this.field_27196.method_37275(this.field_27195) > (double)(this.field_27192 * this.field_27192))) {
-            class_1343 var3 = class_3425.method_15837(this.field_27195, 16, 7, this.field_27196.method_37245());
+            Vector3d var3 = class_3425.method_15837(this.field_27195, 16, 7, this.field_27196.method_37245());
             if (var3 != null) {
                this.field_27193 = var3.field_7336;
                this.field_27199 = var3.field_7333;

@@ -25,7 +25,7 @@ public class class_8008 extends class_4641 {
             this.getPosZ() + 0.1875
          )
       );
-      this.field_41722 = true;
+      this.forceSpawn = true;
    }
 
    @Override
@@ -155,7 +155,7 @@ public class class_8008 extends class_4641 {
    }
 
    @Override
-   public class_1343 method_37202(float var1) {
+   public Vector3d method_37202(float var1) {
       return this.method_37280(var1).method_6214(0.0, 0.2, 0.0);
    }
 }

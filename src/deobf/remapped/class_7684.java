@@ -15,7 +15,7 @@ public class class_7684 extends Module {
 
    @EventListen
    private void method_34825(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
             if (!(client.screen instanceof class_5766)) {
                float var4 = client.thePlayer.rotationYaw % 360.0F - this.field_39044 % 360.0F;

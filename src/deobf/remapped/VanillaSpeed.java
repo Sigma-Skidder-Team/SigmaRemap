@@ -8,7 +8,7 @@ public class VanillaSpeed extends Module {
 
    @EventListen
    public void method_37520(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = class_8865.method_40775() * (double)this.getFloatValueByName("Speed");
          class_8865.method_40777(var1, var4);
       }

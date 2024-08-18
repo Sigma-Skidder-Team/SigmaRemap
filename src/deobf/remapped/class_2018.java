@@ -151,7 +151,7 @@ public class class_2018 {
       return this.method_9383() && this.field_10227 == this.field_10225 * this.field_10230;
    }
 
-   public static class_1343 method_9370(class_8623 var0, class_9249 var1, class_1343 var2, class_6097 var3) {
+   public static Vector3d method_9370(class_8623 var0, class_9249 var1, Vector3d var2, class_6097 var3) {
       double var6 = (double)var0.field_44251 - (double)var3.field_31199;
       double var8 = (double)var0.field_44249 - (double)var3.field_31200;
       BlockPos var10 = var0.field_44250;
@@ -173,11 +173,11 @@ public class class_2018 {
 
       class_9249 var19 = var1 != class_9249.field_47215 ? class_9249.field_47215 : class_9249.field_47219;
       double var17 = var2.method_6197(var19) - ((double)var10.method_12174(var19) + 0.5);
-      return new class_1343(var11, var14, var17);
+      return new Vector3d(var11, var14, var17);
    }
 
    public static class_9606 method_9379(
-      class_6331 var0, class_8623 var1, class_9249 var2, class_1343 var3, class_6097 var4, class_1343 var5, float var6, float var7
+           class_6331 var0, class_8623 var1, class_9249 var2, Vector3d var3, class_6097 var4, Vector3d var5, float var6, float var7
    ) {
       BlockPos var10 = var1.field_44250;
       class_2522 var11 = var0.method_28262(var10);
@@ -185,12 +185,12 @@ public class class_2018 {
       double var13 = (double)var1.field_44251;
       double var15 = (double)var1.field_44249;
       int var17 = var2 != var12 ? 90 : 0;
-      class_1343 var18 = var2 != var12 ? new class_1343(var5.field_7334, var5.field_7333, -var5.field_7336) : var5;
+      Vector3d var18 = var2 != var12 ? new Vector3d(var5.field_7334, var5.field_7333, -var5.field_7336) : var5;
       double var19 = (double)var4.field_31199 / 2.0 + (var13 - (double)var4.field_31199) * var3.method_61();
       double var21 = (var15 - (double)var4.field_31200) * var3.method_60();
       double var23 = 0.5 + var3.method_62();
       boolean var25 = var12 == class_9249.field_47215;
-      class_1343 var26 = new class_1343(
+      Vector3d var26 = new Vector3d(
          (double)var10.getX() + (!var25 ? var23 : var19), (double)var10.getY() + var21, (double)var10.getZ() + (!var25 ? var19 : var23)
       );
       return new class_9606(var26, var18, var6 + (float)var17, var7);

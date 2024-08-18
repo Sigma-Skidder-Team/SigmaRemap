@@ -17,7 +17,7 @@ public class TargetStrafeModule extends Module {
    @EventListen
    @class_7664
    public void method_45280(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Entity var4 = null;
          if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class).method_42003() || !this.getBooleanValueByName("Only speed")) {
             if (KillauraModule.field_12556 != null) {
@@ -67,7 +67,7 @@ public class TargetStrafeModule extends Module {
       var17 = var23 * Math.PI / 180.0;
       var6.method_35232(-Math.sin(var17) * var2);
       var6.method_35229(Math.cos(var17) * var2);
-      class_1343 var25 = client.thePlayer.method_37287(var6.method_35233());
+      Vector3d var25 = client.thePlayer.method_37287(var6.method_35233());
       if (var25.field_7336 != var6.method_35234() || var25.field_7334 != var6.method_35231()) {
          this.field_49775 *= -1;
          var9 *= -1.0;
@@ -82,14 +82,14 @@ public class TargetStrafeModule extends Module {
          var6.method_35229(Math.cos(var17) * var2);
       }
 
-      class_1343 var26 = new class_1343(
+      Vector3d var26 = new Vector3d(
          client.thePlayer.method_37245().field_7336 + var6.method_35234(),
          client.thePlayer.method_37245().field_7333 + var6.method_35236(),
          client.thePlayer.method_37245().field_7334 + var6.method_35231()
       );
       String var27 = this.getStringValueByName("AntiVoid");
       if (!var27.equals("None")) {
-         if (!this.field_49776 && this.method_45278(var26) && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+         if (!this.field_49776 && this.method_45278(var26) && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
             this.field_49775 *= -1;
             this.field_49776 = true;
          } else if (this.field_49776 && !this.method_45278(var26)) {
@@ -101,12 +101,12 @@ public class TargetStrafeModule extends Module {
          if (!var27.equals("Halt")) {
             class_8865.method_40777(var6, var2);
             if (var27.equals("Smart")) {
-               var26 = new class_1343(
+               var26 = new Vector3d(
                   client.thePlayer.method_37245().field_7336 + var6.method_35234(),
                   client.thePlayer.method_37245().field_7333 + var6.method_35236(),
                   client.thePlayer.method_37245().field_7334 + var6.method_35231()
                );
-               if (this.method_45278(var26) && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+               if (this.method_45278(var26) && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
                   class_8865.method_40777(var6, 0.0);
                }
             }
@@ -116,7 +116,7 @@ public class TargetStrafeModule extends Module {
       }
    }
 
-   private boolean method_45278(class_1343 var1) {
+   private boolean method_45278(Vector3d var1) {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
          Box var4 = new Box(var1.method_6214(-0.15, 0.0, -0.15), var1.method_6214(0.15, (double) client.thePlayer.method_37074(), 0.15));
          var4 = var4.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
@@ -127,6 +127,6 @@ public class TargetStrafeModule extends Module {
    }
 
    private boolean method_45279(double var1, double var3, double var5) {
-      return client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(var1, var3, var5)).count() == 0L;
+      return client.theWorld.method_6680(client.thePlayer, client.thePlayer.boundingBox.method_18918(var1, var3, var5)).count() == 0L;
    }
 }

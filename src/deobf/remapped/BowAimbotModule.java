@@ -27,7 +27,7 @@ public class BowAimbotModule extends Module {
 
    @EventListen
    private void method_13455(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          if (!(client.thePlayer.method_26576().method_27960() instanceof class_2100)) {
             this.field_14300.clear();
          } else {
@@ -44,7 +44,7 @@ public class BowAimbotModule extends Module {
 
    @EventListen
    private void method_13456(class_3278 var1) {
-      if (this.method_42015() && !this.getBooleanValueByName("Silent")) {
+      if (this.isEnabled() && !this.getBooleanValueByName("Silent")) {
          if (!this.field_14300.isEmpty()) {
             float[] var4 = class_7211.method_33005((LivingEntity)this.field_14300.get(0));
             client.thePlayer.rotationYaw = var4[0];

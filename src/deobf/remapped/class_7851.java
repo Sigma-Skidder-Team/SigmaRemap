@@ -65,7 +65,7 @@ public class class_7851 extends AbstractMinecartEntity {
       double var5 = 1.0E-4;
       double var7 = 0.001;
       super.method_4750(var1, var2);
-      class_1343 var9 = this.method_37098();
+      Vector3d var9 = this.method_37098();
       double var10 = method_37266(var9);
       double var12 = this.field_39788 * this.field_39788 + this.field_39786 * this.field_39786;
       if (var12 > 1.0E-4 && var10 > 0.001) {

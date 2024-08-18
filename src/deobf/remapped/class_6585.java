@@ -11,8 +11,8 @@ public class class_6585 extends class_8285 {
 
    @Nullable
    @Override
-   public class_1343 method_38233() {
-      class_1343 var3 = class_3425.method_15845(this.field_42465, 10, 7);
+   public Vector3d method_38233() {
+      Vector3d var3 = class_3425.method_15845(this.field_42465, 10, 7);
       int var4 = 0;
 
       while (

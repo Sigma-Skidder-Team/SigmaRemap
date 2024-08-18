@@ -6,8 +6,8 @@ public class PremiumModule extends Module {
    }
 
    @Override
-   public boolean method_42015() {
-      return SigmaMainClass.getInstance().getAccountManager().method_23084() ? super.method_42015() : false;
+   public boolean isEnabled() {
+      return SigmaMainClass.getInstance().getAccountManager().method_23084() ? super.isEnabled() : false;
    }
 
    public void method_42023(boolean var1) {
@@ -37,7 +37,7 @@ public class PremiumModule extends Module {
       if (SigmaMainClass.getInstance().getAccountManager().method_23084()) {
          super.setEnabled2(var1);
       } else {
-         if (this.method_42015() != var1) {
+         if (this.isEnabled() != var1) {
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Premium", this.getName() + " Not yet available for free version"));
             SigmaMainClass.getInstance().getSoundManager().playSound("error");
          }

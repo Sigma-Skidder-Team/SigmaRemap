@@ -15,7 +15,7 @@ public class YPortSpeed extends Module {
 
    @EventListen
    public void method_12600(class_1393 var1) {
-      if (this.method_42015() && client.thePlayer != null && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+      if (this.isEnabled() && client.thePlayer != null && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
          if (client.thePlayer.onGround && var1.method_6449() && class_314.method_1387()) {
             var1.method_6455(var1.method_6454() + 1.0E-14);
          }
@@ -41,7 +41,7 @@ public class YPortSpeed extends Module {
 
    @EventListen
    public void method_12598(class_7767 var1) {
-      if (this.method_42015() && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+      if (this.isEnabled() && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
          if (!client.thePlayer.field_29654) {
             String var4 = this.getStringValueByName("Mode");
             switch (var4) {
@@ -86,11 +86,11 @@ public class YPortSpeed extends Module {
                      if (client.theWorld
                               .method_6680(
                                  client.thePlayer,
-                                 client.thePlayer.field_41712.method_18918(0.0, client.thePlayer.method_37098().field_7333, 0.0)
+                                 client.thePlayer.boundingBox.method_18918(0.0, client.thePlayer.method_37098().field_7333, 0.0)
                               )
                               .count()
                            > 0L
-                        || client.thePlayer.field_41774) {
+                        || client.thePlayer.collidedVertically) {
                         this.field_13516 = 1;
                      }
 
@@ -108,9 +108,9 @@ public class YPortSpeed extends Module {
 
    @EventListen
    private void method_12602(class_4868 var1) {
-      if (this.method_42015()
+      if (this.isEnabled()
          && !this.getStringValueByName("Mode").equalsIgnoreCase("NCP")
-         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
          if (!client.thePlayer.method_37285() && !client.thePlayer.method_37370() && !client.thePlayer.method_26505()) {
             if (!client.gameOptions.keyJump.pressed
                && !client.thePlayer.method_26505()
@@ -122,8 +122,8 @@ public class YPortSpeed extends Module {
                class_314.method_1408(-0.3994);
             }
 
-            double var4 = client.thePlayer.getPosX() - client.thePlayer.field_41767;
-            double var6 = client.thePlayer.getPosZ() - client.thePlayer.field_41725;
+            double var4 = client.thePlayer.getPosX() - client.thePlayer.prevPosX;
+            double var6 = client.thePlayer.getPosZ() - client.thePlayer.prevPosZ;
             this.field_13514 = Math.sqrt(var4 * var4 + var6 * var6);
          }
       }
@@ -131,20 +131,20 @@ public class YPortSpeed extends Module {
 
    @EventListen
    public void method_12599(class_1711 var1) {
-      if (this.method_42015()
+      if (this.isEnabled()
          && class_314.method_1413(client.thePlayer, 0.43F)
          && !((double) client.thePlayer.field_41706 > 0.09)
          && this.getBooleanValueByName("OnGround")
          && !client.gameOptions.keyJump.pressed
-         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
          if (client.thePlayer.onGround && class_314.method_1413(client.thePlayer, 0.001F)) {
             this.field_13513 = client.thePlayer.method_37309();
          }
 
-         client.thePlayer.field_41736.field_7333 = this.field_13513;
+         client.thePlayer.positionVec.field_7333 = this.field_13513;
          client.thePlayer.field_41713 = this.field_13513;
          client.thePlayer.field_3864 = this.field_13513;
-         client.thePlayer.field_41698 = this.field_13513;
+         client.thePlayer.prevPosY = this.field_13513;
          if (class_8865.method_40772()) {
             client.thePlayer.field_3859 = 0.099999994F;
          }
@@ -153,7 +153,7 @@ public class YPortSpeed extends Module {
 
    @EventListen
    private void method_12601(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_509) {
             this.field_13514 = 0.0;
          }

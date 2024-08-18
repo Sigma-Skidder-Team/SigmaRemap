@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 
 public class class_5536 extends class_1871 {
    private static String[] field_28216;
-   private class_1343 field_28217;
+   private Vector3d field_28217;
 
    public class_5536(class_2770 var1) {
       super(var1);
@@ -13,7 +13,7 @@ public class class_5536 extends class_1871 {
 
    @Override
    public void method_23466() {
-      class_1343 var3 = this.field_9479.method_12609(1.0F).method_6213();
+      Vector3d var3 = this.field_9479.method_12609(1.0F).method_6213();
       var3.method_6192((float) (-Math.PI / 4));
       double var4 = this.field_9479.field_13542.getPosX();
       double var6 = this.field_9479.field_13542.method_37080(0.5);
@@ -24,7 +24,7 @@ public class class_5536 extends class_1871 {
          double var12 = var4 + var11.nextGaussian() / 2.0;
          double var14 = var6 + var11.nextGaussian() / 2.0;
          double var16 = var8 + var11.nextGaussian() / 2.0;
-         class_1343 var18 = this.field_9479.method_37098();
+         Vector3d var18 = this.field_9479.method_37098();
          this.field_9479
             .world
             .method_43361(
@@ -43,7 +43,7 @@ public class class_5536 extends class_1871 {
    @Override
    public void method_23473() {
       if (this.field_28217 == null) {
-         this.field_28217 = class_1343.method_6200(this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348));
+         this.field_28217 = Vector3d.method_6200(this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348));
       }
 
       if (this.field_28217.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ()) < 1.0) {
@@ -71,7 +71,7 @@ public class class_5536 extends class_1871 {
 
    @Nullable
    @Override
-   public class_1343 method_23463() {
+   public Vector3d method_23463() {
       return this.field_28217;
    }
 

@@ -17,7 +17,7 @@ public class class_9133 extends class_7067<class_1044> {
       var4.method_36063();
       var4.method_36062(-1.0F, -1.0F, 1.0F);
       float var9 = MathHelper.rotLerp(var1.prevRotationYaw, var1.rotationYaw, var3);
-      float var10 = MathHelper.lerp(var3, var1.field_41762, var1.rotationPitch);
+      float var10 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
       class_7907 var11 = var5.method_11645(this.field_46721.method_45498(this.method_42035(var1)));
       this.field_46721.method_7085(0.0F, var9, var10);
       this.field_46721.method_45499(var4, var11, var6, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);

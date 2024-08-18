@@ -23,7 +23,7 @@ public class class_6705 {
    private final Executor field_34623;
    private World field_34634;
    private final WorldRenderer field_34619;
-   private class_1343 field_34617 = class_1343.field_7335;
+   private Vector3d field_34617 = Vector3d.ZERO;
    private int field_34624;
    private List<class_2848> field_34630 = new ArrayList<class_2848>();
    public static final RenderLayer[] field_34622 = RenderLayer.method_16770().<RenderLayer>toArray(new RenderLayer[0]);
@@ -114,11 +114,11 @@ public class class_6705 {
       return String.format("pC: %03d, pU: %02d, aB: %02d", this.field_34621, this.field_34628.size(), this.field_34614);
    }
 
-   public void method_30739(class_1343 var1) {
+   public void method_30739(Vector3d var1) {
       this.field_34617 = var1;
    }
 
-   public class_1343 method_30747() {
+   public Vector3d method_30747() {
       return this.field_34617;
    }
 

@@ -367,7 +367,7 @@ public class class_2452 {
 
          for (AbstractRaiderEntity var7 : var5) {
             BlockPos var8 = var7.method_37075();
-            if (var7.field_41751 || var7.world.method_29545() != this.field_12189.method_29545() || this.field_12185.method_12180(var8) >= 12544.0) {
+            if (var7.removed || var7.world.method_29545() != this.field_12189.method_29545() || this.field_12185.method_12180(var8) >= 12544.0) {
                var4.add(var7);
             } else if (var7.field_41697 > 600) {
                if (this.field_12189.method_28925(var7.method_37328()) == null) {
@@ -396,8 +396,8 @@ public class class_2452 {
       Collection var6 = this.field_12186.method_2406();
 
       for (class_9359 var8 : this.field_12189.method_25873()) {
-         class_1343 var9 = var8.method_37245();
-         class_1343 var10 = class_1343.method_6216(var1);
+         Vector3d var9 = var8.method_37245();
+         Vector3d var10 = Vector3d.method_6216(var1);
          float var11 = MathHelper.sqrt(
             (var10.field_7336 - var9.field_7336) * (var10.field_7336 - var9.field_7336)
                + (var10.field_7334 - var9.field_7334) * (var10.field_7334 - var9.field_7334)

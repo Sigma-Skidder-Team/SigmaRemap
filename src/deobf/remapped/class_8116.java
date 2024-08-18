@@ -174,7 +174,7 @@ public abstract class class_8116 implements class_5801 {
       }
    }
 
-   public abstract class_1343 method_36923();
+   public abstract Vector3d method_36923();
 
    public abstract class_9155 method_36929();
 

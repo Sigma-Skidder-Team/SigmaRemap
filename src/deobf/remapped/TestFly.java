@@ -37,7 +37,7 @@ public class TestFly extends Module {
    @EventListen
    @class_7664
    public void method_5276(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = Math.sqrt(var1.method_35234() * var1.method_35234() + var1.method_35231() * var1.method_35231());
          if (this.field_6675 <= 1) {
             if (this.field_6675 != -1) {
@@ -64,7 +64,7 @@ public class TestFly extends Module {
 
    @EventListen
    public void method_5280(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_6675++;
          if (this.field_6675 != 3) {
             if (this.field_6675 > 3) {
@@ -84,7 +84,7 @@ public class TestFly extends Module {
 
    @EventListen
    public void method_5278(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;
@@ -105,7 +105,7 @@ public class TestFly extends Module {
 
    @EventListen
    public void method_5279(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method_10047();
          if (var4 instanceof class_4609) {
             class_4609 var5 = (class_4609)var4;
@@ -118,7 +118,7 @@ public class TestFly extends Module {
 
    @EventListen
    public void method_5277(class_1711 var1) {
-      if (!this.method_42015()) {
+      if (!this.isEnabled()) {
          ;
       }
    }

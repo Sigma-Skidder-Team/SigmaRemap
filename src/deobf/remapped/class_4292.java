@@ -26,7 +26,7 @@ public class class_4292 {
 
    @EventListen
    @class_3932
-   public void method_19939(class_5596 var1) {
+   public void method_19939(PlayerTickEvent var1) {
    }
 
    @EventListen

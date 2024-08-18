@@ -32,7 +32,7 @@ public class class_5869<T extends Entity> extends class_6353<AbstractClientPlaye
       var1.rotationPitch = var13;
    }
 
-   public class_1343 method_26733(AbstractClientPlayerEntity var1, float var2) {
+   public Vector3d method_26733(AbstractClientPlayerEntity var1, float var2) {
       return super.method_32555(var1, var2);
    }
 

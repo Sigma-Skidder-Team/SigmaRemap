@@ -107,7 +107,7 @@ public class Auto32KModule extends Module {
 
    @EventListen
    private void method_40073(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_44720 != null) {
             GL11.glAlphaFunc(516, 0.0F);
             BlockPos var4 = this.field_44720;
@@ -194,7 +194,7 @@ public class Auto32KModule extends Module {
 
    @EventListen
    private void method_40075(class_1393 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_44718 != -1) {
             if (this.field_44721 != -1) {
                if (this.field_44720 != null) {
@@ -206,7 +206,7 @@ public class Auto32KModule extends Module {
                         var1.method_6448(var5);
                         int var6 = client.thePlayer.inventory.field_36404;
                         client.thePlayer.inventory.field_36404 = this.field_44718;
-                        class_1343 var7 = class_7494.method_34098(Direction.field_817, this.field_44720);
+                        Vector3d var7 = class_7494.method_34098(Direction.field_817, this.field_44720);
                         class_9529 var8 = new class_9529(var7, Direction.field_817, this.field_44720, false);
                         class_6910 var9 = client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var8);
                         client.thePlayer.method_26597(Hand.MAIN_HAND);
@@ -215,7 +215,7 @@ public class Auto32KModule extends Module {
                            client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.RELEASE_SHIFT_KEY));
                            client.thePlayer.movementInput.field_45289 = true;
                            client.thePlayer.inventory.field_36404 = this.field_44721;
-                           class_1343 var10 = class_7494.method_34098(Direction.field_817, this.field_44720.method_6081());
+                           Vector3d var10 = class_7494.method_34098(Direction.field_817, this.field_44720.method_6081());
                            class_9529 var11 = new class_9529(var10, Direction.field_817, this.field_44720.method_6081(), false);
                            client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var11);
                            client.thePlayer.method_26597(Hand.MAIN_HAND);
@@ -239,10 +239,10 @@ public class Auto32KModule extends Module {
 
    @EventListen
    private void method_40077(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_5149) {
             this.field_44716 = (class_5149)var1.method_557();
-            if (this.method_42015() && this.field_44716.method_23575() == class_4165.field_20265) {
+            if (this.isEnabled() && this.field_44716.method_23575() == class_4165.field_20265) {
                var1.method_29715(true);
             }
 
@@ -287,7 +287,7 @@ public class Auto32KModule extends Module {
 
    @EventListen
    private void method_40076(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_10047() instanceof class_1194) {
             var1.method_29715(true);
          }

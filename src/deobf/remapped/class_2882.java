@@ -39,7 +39,7 @@ public class class_2882 extends class_5837 {
    @Override
    public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       if (var1.method_27960() == class_4897.field_25113) {
-         class_1343 var5 = var2.<class_1343>method_12698(class_8712.field_44671);
+         Vector3d var5 = var2.<Vector3d>method_12698(class_8712.field_44671);
          if (var5 != null) {
             class_6331 var6 = var2.method_12694();
             BlockPos var7 = var6.method_29000(this.field_14118, new BlockPos(var5), this.field_14114, this.field_14117);

@@ -15,7 +15,7 @@ public abstract class class_516 extends MobEntity {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       if (!this.method_37285()) {
          if (!this.method_37370()) {
             float var4 = 0.91F;

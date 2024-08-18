@@ -124,7 +124,7 @@ public class class_6011 extends class_1829 {
             );
          }
 
-         class_1343 var7 = this.method_37098();
+         Vector3d var7 = this.method_37098();
          float var4 = MathHelper.sqrt(method_37266(var7));
          this.field_29605 = this.field_29605
             + (-((float) MathHelper.atan2(var7.field_7336, var7.field_7334)) * (180.0F / (float)Math.PI) - this.field_29605) * 0.1F;
@@ -145,20 +145,20 @@ public class class_6011 extends class_1829 {
       }
    }
 
-   private class_1343 method_27441(class_1343 var1) {
-      class_1343 var4 = var1.method_6212(this.field_30611 * (float) (Math.PI / 180.0));
+   private Vector3d method_27441(Vector3d var1) {
+      Vector3d var4 = var1.method_6212(this.field_30611 * (float) (Math.PI / 180.0));
       return var4.method_6192(-this.field_29611 * (float) (Math.PI / 180.0));
    }
 
    private void method_27438() {
       this.method_37155(SoundEvents.field_2032, this.method_26439(), this.method_26547());
-      class_1343 var3 = this.method_27441(new class_1343(0.0, -1.0, 0.0)).method_6214(this.getPosX(), this.method_37309(), this.getPosZ());
+      Vector3d var3 = this.method_27441(new Vector3d(0.0, -1.0, 0.0)).method_6214(this.getPosX(), this.method_37309(), this.getPosZ());
 
       for (int var4 = 0; var4 < 30; var4++) {
-         class_1343 var5 = this.method_27441(
-            new class_1343((double)this.field_41717.nextFloat() * 0.6 - 0.3, -1.0, (double)this.field_41717.nextFloat() * 0.6 - 0.3)
+         Vector3d var5 = this.method_27441(
+            new Vector3d((double)this.field_41717.nextFloat() * 0.6 - 0.3, -1.0, (double)this.field_41717.nextFloat() * 0.6 - 0.3)
          );
-         class_1343 var6 = var5.method_6209(0.3 + (double)(this.field_41717.nextFloat() * 2.0F));
+         Vector3d var6 = var5.method_6209(0.3 + (double)(this.field_41717.nextFloat() * 2.0F));
          ((class_6331)this.world)
             .method_28957(
                class_3090.field_15368, var3.field_7336, var3.field_7333 + 0.5, var3.field_7334, 0, var6.field_7336, var6.field_7333, var6.field_7334, 0.1F
@@ -167,7 +167,7 @@ public class class_6011 extends class_1829 {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       this.method_37226(class_7412.field_37839, this.method_37098());
    }
 

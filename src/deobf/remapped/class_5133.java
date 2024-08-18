@@ -20,7 +20,7 @@ public class class_5133 extends PathNavigator {
    }
 
    @Override
-   public class_1343 method_5596() {
+   public Vector3d method_5596() {
       return this.field_6877.method_37245();
    }
 
@@ -39,7 +39,7 @@ public class class_5133 extends PathNavigator {
       if (!this.method_5591()) {
          if (!this.method_5601()) {
             if (this.field_6887 != null && !this.field_6887.method_18436()) {
-               class_1343 var3 = this.field_6887.method_18439(this.field_6877);
+               Vector3d var3 = this.field_6887.method_18439(this.field_6877);
                if (MathHelper.floor(this.field_6877.getPosX()) == MathHelper.floor(var3.field_7336)
                   && MathHelper.floor(this.field_6877.method_37309()) == MathHelper.floor(var3.field_7333)
                   && MathHelper.floor(this.field_6877.getPosZ()) == MathHelper.floor(var3.field_7334)) {
@@ -52,14 +52,14 @@ public class class_5133 extends PathNavigator {
 
          class_1892.method_8443(this.field_6882, this.field_6877, this.field_6887, this.field_6889);
          if (!this.method_5591()) {
-            class_1343 var4 = this.field_6887.method_18439(this.field_6877);
+            Vector3d var4 = this.field_6887.method_18439(this.field_6877);
             this.field_6877.method_26905().method_12879(var4.field_7336, var4.field_7333, var4.field_7334, this.field_6871);
          }
       }
    }
 
    @Override
-   public boolean method_5599(class_1343 var1, class_1343 var2, int var3, int var4, int var5) {
+   public boolean method_5599(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
       int var8 = MathHelper.floor(var1.field_7336);
       int var9 = MathHelper.floor(var1.field_7333);
       int var10 = MathHelper.floor(var1.field_7334);

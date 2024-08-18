@@ -28,7 +28,7 @@ public class ShulkerInfoModule extends Module {
 
    @EventListen
    public void method_31553(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          RenderSystem.method_16420(33986, 240.0F, 240.0F);
 
          for (Entity var5 : class_314.method_1440()) {
@@ -139,7 +139,7 @@ public class ShulkerInfoModule extends Module {
 
    @EventListen
    private void method_31551(class_2532 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.screen instanceof class_2208) {
             class_2208 var4 = (class_2208) client.screen;
             class_7934 var5 = var4.field_10954;

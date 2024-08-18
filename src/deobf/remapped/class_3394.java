@@ -8,7 +8,7 @@ public class class_3394 extends class_1871 {
    private static final Logger field_16720 = LogManager.getLogger();
    private int field_16721;
    private class_3998 field_16719;
-   private class_1343 field_16718;
+   private Vector3d field_16718;
    private LivingEntity field_16723;
    private boolean field_16724;
 
@@ -26,7 +26,7 @@ public class class_3394 extends class_1871 {
             double var9 = var5 - this.field_9479.getPosZ();
             double var11 = (double) MathHelper.sqrt(var7 * var7 + var9 * var9);
             double var13 = Math.min(0.4F + var11 / 80.0 - 1.0, 10.0);
-            this.field_16718 = new class_1343(var3, this.field_16723.method_37309() + var13, var5);
+            this.field_16718 = new Vector3d(var3, this.field_16723.method_37309() + var13, var5);
          }
 
          double var33 = this.field_16718 != null
@@ -47,11 +47,11 @@ public class class_3394 extends class_1871 {
             }
          } else {
             this.field_16721++;
-            class_1343 var15 = new class_1343(
+            Vector3d var15 = new Vector3d(
                   this.field_16723.getPosX() - this.field_9479.getPosX(), 0.0, this.field_16723.getPosZ() - this.field_9479.getPosZ()
                )
                .method_6213();
-            class_1343 var16 = new class_1343(
+            Vector3d var16 = new Vector3d(
                   (double) MathHelper.sin(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)),
                   0.0,
                   (double)(-MathHelper.cos(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)))
@@ -62,7 +62,7 @@ public class class_3394 extends class_1871 {
             var18 += 0.5F;
             if (this.field_16721 >= 5 && var18 >= 0.0F && var18 < 10.0F) {
                double var35 = 1.0;
-               class_1343 var19 = this.field_9479.method_37307(1.0F);
+               Vector3d var19 = this.field_9479.method_37307(1.0F);
                double var20 = this.field_9479.field_13542.getPosX() - var19.field_7336 * 1.0;
                double var22 = this.field_9479.field_13542.method_37080(0.5) + 0.5;
                double var24 = this.field_9479.field_13542.getPosZ() - var19.field_7334 * 1.0;
@@ -139,7 +139,7 @@ public class class_3394 extends class_1871 {
             var8 = (double)((float)var3.getY() + this.field_9479.method_26594().nextFloat() * 20.0F);
          } while (var8 < (double)var3.getY());
 
-         this.field_16718 = new class_1343(var4, var8, var6);
+         this.field_16718 = new Vector3d(var4, var8, var6);
       }
    }
 
@@ -172,7 +172,7 @@ public class class_3394 extends class_1871 {
 
    @Nullable
    @Override
-   public class_1343 method_23463() {
+   public Vector3d method_23463() {
       return this.field_16718;
    }
 

@@ -19,7 +19,7 @@ public class class_1903 extends Module {
 
    @EventListen
    public void method_8648(class_7767 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (client.thePlayer.field_41706 > 3.0F + this.getFloatValueByName("Motion") * 4.0F && var1.method_35236() < -0.3) {
             if (this.field_9713) {
                if (client.thePlayer.method_37309() + var1.method_35236() < this.field_9715) {
@@ -51,7 +51,7 @@ public class class_1903 extends Module {
 
    @EventListen
    public void method_8649(class_1393 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_9716 >= 0) {
             var1.method_6444(true);
          }

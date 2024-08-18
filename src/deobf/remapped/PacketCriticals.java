@@ -12,14 +12,14 @@ public class PacketCriticals extends Module {
 
    @EventListen
    private void method_39870(class_3645 var1) {
-      if (this.method_42015() && var1.method_16973() != null && var1.method_16971()) {
+      if (this.isEnabled() && var1.method_16973() != null && var1.method_16971()) {
          Entity var4 = var1.method_16973();
          if (var4 instanceof LivingEntity
             && var4.field_41749 <= (int)this.getFloatValueByName("HurtTime")
             && StepModule.field_20352 > 1
             && (this.field_44552.method_14772() > 200L || var4.field_41749 > 0)
             && client.thePlayer.onGround
-            && client.thePlayer.field_41774) {
+            && client.thePlayer.collidedVertically) {
             double[] var5 = new double[]{0.2, 0.0};
             if (this.getStringValueByName("Mode").equals("Hypixel")) {
                var5 = new double[]{
@@ -45,7 +45,7 @@ public class PacketCriticals extends Module {
    @EventListen
    @class_315
    private void method_39871(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_10047() instanceof class_4609) {
             if (!this.field_44552.method_14771()) {
                this.field_44552.method_14776();

@@ -63,11 +63,11 @@ public class class_7047 {
       return this.field_36389;
    }
 
-   public class_1343 method_32363() {
-      return new class_1343(this.method_32381(), this.method_32375(), this.method_32382()).method_6214(0.5, 0.0, 0.5);
+   public Vector3d method_32363() {
+      return new Vector3d(this.method_32381(), this.method_32375(), this.method_32382()).method_6214(0.5, 0.0, 0.5);
    }
 
-   public double method_32367(class_1343 var1) {
+   public double method_32367(Vector3d var1) {
       double var4 = var1.field_7336 - this.method_32381() - 0.5;
       double var6 = var1.field_7334 - this.method_32382() - 0.5;
       return (double) MathHelper.sqrt(var4 * var4 + var6 * var6);

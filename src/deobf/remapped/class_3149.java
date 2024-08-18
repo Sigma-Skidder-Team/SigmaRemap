@@ -23,7 +23,7 @@ public class class_3149 extends class_3599 {
                class_6331 var3 = (class_6331)this.field_15662.world;
                BlockPos var4 = this.field_15662.method_37075();
                if (var3.method_28981(var4, 6)) {
-                  class_1343 var5 = class_3425.method_15846(this.field_15662, 15, 7, var1 -> (double)(-var3.method_28956(class_6979.method_31921(var1))));
+                  Vector3d var5 = class_3425.method_15846(this.field_15662, 15, 7, var1 -> (double)(-var3.method_28956(class_6979.method_31921(var1))));
                   this.field_15661 = var5 != null ? new BlockPos(var5) : null;
                   return this.field_15661 != null;
                } else {
@@ -52,11 +52,11 @@ public class class_3149 extends class_3599 {
       if (this.field_15661 != null) {
          PathNavigator var3 = this.field_15662.method_26927();
          if (var3.method_5591() && !this.field_15661.method_12170(this.field_15662.method_37245(), 10.0)) {
-            class_1343 var4 = class_1343.method_6200(this.field_15661);
-            class_1343 var5 = this.field_15662.method_37245();
-            class_1343 var6 = var5.method_6194(var4);
+            Vector3d var4 = Vector3d.method_6200(this.field_15661);
+            Vector3d var5 = this.field_15662.method_37245();
+            Vector3d var6 = var5.method_6194(var4);
             var4 = var6.method_6209(0.4).method_6215(var4);
-            class_1343 var7 = var4.method_6194(var5).method_6213().method_6209(10.0).method_6215(var5);
+            Vector3d var7 = var4.method_6194(var5).method_6213().method_6209(10.0).method_6215(var5);
             BlockPos var8 = new BlockPos(var7);
             var8 = this.field_15662.world.method_22563(class_3801.field_18590, var8);
             if (!var3.method_5595((double)var8.getX(), (double)var8.getY(), (double)var8.getZ(), 1.0)) {

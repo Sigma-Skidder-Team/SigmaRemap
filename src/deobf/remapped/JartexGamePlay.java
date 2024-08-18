@@ -2,7 +2,6 @@ package remapped;
 
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.event.ClickEvent;
-import net.minecraft.util.text.event.ClickEvent$class_47;
 
 public class JartexGamePlay extends Module {
    private GamePlayModule parentModule;
@@ -18,7 +17,7 @@ public class JartexGamePlay extends Module {
 
    @EventListen
    private void onPacket(PacketEvent packetEvent) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          Packet var4 = packetEvent.method_557();
          if (var4 instanceof class_5182) {
             class_5182 var5 = (class_5182)var4;

@@ -21,7 +21,7 @@ public class BowFly extends Module {
 
    @EventListen
    public void method_7737(class_4996 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960() == class_4897.field_25206 && this.field_8926 >= 1) {
             var1.method_29715(true);
          }
@@ -30,7 +30,7 @@ public class BowFly extends Module {
 
    @EventListen
    public void method_7738(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          double var4 = var1.method_35233().field_7333;
          var1.method_35233().field_7333 = 0.0;
          double var6 = var1.method_35233().method_6217();
@@ -55,7 +55,7 @@ public class BowFly extends Module {
 
    @EventListen
    public void method_7739(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          if (!this.field_8927.method_14771()) {
             this.field_8927.method_14776();
          }
@@ -92,7 +92,7 @@ public class BowFly extends Module {
 
                var1.method_6448(var6);
                var1.method_6441(var5);
-               if (client.thePlayer.onGround && client.thePlayer.field_41774) {
+               if (client.thePlayer.onGround && client.thePlayer.collidedVertically) {
                   client.thePlayer.method_26595();
                } else if (!(client.thePlayer.method_37098().field_7333 < 0.0)) {
                   if (client.theTimer.timerSpeed == 0.1F) {

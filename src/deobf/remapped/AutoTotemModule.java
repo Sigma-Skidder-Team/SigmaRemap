@@ -8,7 +8,7 @@ public class AutoTotemModule extends Module {
    }
 
    @EventListen
-   private void method_37570(class_5596 var1) {
+   private void method_37570(PlayerTickEvent var1) {
       this.method_37568();
    }
 
@@ -25,7 +25,7 @@ public class AutoTotemModule extends Module {
    }
 
    private void method_37568() {
-      if (this.method_42015() && client.thePlayer != null && !client.thePlayer.playerAbilities.isCreativeMode) {
+      if (this.isEnabled() && client.thePlayer != null && !client.thePlayer.playerAbilities.isCreativeMode) {
          ItemStack var3 = client.thePlayer.method_26520(class_6943.field_35701);
          if (var3.method_27960() != class_4897.field_24472) {
             int var4 = class_2740.method_12318(class_4897.field_24472);

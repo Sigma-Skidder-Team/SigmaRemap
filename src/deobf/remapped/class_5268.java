@@ -102,7 +102,7 @@ public class class_5268 {
    }
 
    private static int method_24041(
-           class_9155 var0, Collection<class_9359> var1, Identifier var2, class_562 var3, class_1343 var4, float var5, float var6, float var7
+           class_9155 var0, Collection<class_9359> var1, Identifier var2, class_562 var3, Vector3d var4, float var5, float var6, float var7
    ) throws CommandSyntaxException {
       double var10 = Math.pow(!(var5 > 1.0F) ? 16.0 : (double)(var5 * 16.0F), 2.0);
       int var12 = 0;
@@ -112,7 +112,7 @@ public class class_5268 {
          double var17 = var4.field_7333 - var14.method_37309();
          double var19 = var4.field_7334 - var14.getPosZ();
          double var21 = var15 * var15 + var17 * var17 + var19 * var19;
-         class_1343 var23 = var4;
+         Vector3d var23 = var4;
          float var24 = var5;
          if (var21 > var10) {
             if (var7 <= 0.0F) {
@@ -120,7 +120,7 @@ public class class_5268 {
             }
 
             double var25 = (double) MathHelper.sqrt(var21);
-            var23 = new class_1343(
+            var23 = new Vector3d(
                var14.getPosX() + var15 / var25 * 2.0, var14.method_37309() + var17 / var25 * 2.0, var14.getPosZ() + var19 / var25 * 2.0
             );
             var24 = var7;

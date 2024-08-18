@@ -42,7 +42,7 @@ public abstract class class_4612 extends MobEntity {
             if (!(var4 > 6.0F)) {
                this.goalSelector.method_3491(Flag.MOVE);
                float var5 = 2.0F;
-               class_1343 var6 = new class_1343(
+               Vector3d var6 = new Vector3d(
                      var3.getPosX() - this.getPosX(), var3.method_37309() - this.method_37309(), var3.getPosZ() - this.getPosZ()
                   )
                   .method_6213()

@@ -22,8 +22,8 @@ public class CubeCraftLongjump extends Module {
    }
 
    @EventListen
-   public void method_40742(class_5596 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+   public void method_40742(PlayerTickEvent var1) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!class_314.method_1413(client.thePlayer, 0.001F)) {
             this.field_45277++;
             this.field_45278 -= 0.005;

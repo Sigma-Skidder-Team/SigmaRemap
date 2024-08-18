@@ -20,11 +20,11 @@ public class class_5101 extends class_2451 {
       if (var7.method_33990() == class_1430.field_7721) {
          return class_954.<ItemStack>method_4207(var6);
       } else {
-         class_1343 var8 = var2.method_37307(1.0F);
+         Vector3d var8 = var2.method_37307(1.0F);
          double var9 = 5.0;
          List var11 = var1.method_25867(var2, var2.getBoundingBox().method_18929(var8.method_6209(5.0)).grow(1.0), field_26316);
          if (!var11.isEmpty()) {
-            class_1343 var12 = var2.method_37335(1.0F);
+            Vector3d var12 = var2.method_37335(1.0F);
 
             for (Entity var14 : var11) {
                Box var15 = var14.getBoundingBox().grow((double)var14.method_37355());

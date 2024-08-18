@@ -27,14 +27,14 @@ public class MineplexLongjump extends Module {
 
    @EventListen
    public void method_20637(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449() && this.field_21695 >= 0) {
+      if (this.isEnabled() && var1.method_6449() && this.field_21695 >= 0) {
          var1.method_6444(true);
       }
    }
 
    @EventListen
    public void method_20638(class_7767 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!client.thePlayer.onGround) {
             if (this.field_21695 >= 0) {
                if (this.field_21696 && !class_314.method_1434()) {
@@ -62,7 +62,7 @@ public class MineplexLongjump extends Module {
                   this.field_21691 = 1;
                }
 
-               if (client.thePlayer.field_41774) {
+               if (client.thePlayer.collidedVertically) {
                   this.field_21694 = -0.078;
                   this.field_21695 = 23;
                }
@@ -106,7 +106,7 @@ public class MineplexLongjump extends Module {
 
    @EventListen
    public void method_20636(class_2911 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          this.field_21693 = 0.81 + (double)this.field_21691 * 0.095;
          if (client.thePlayer.method_37309() != (double)((int) client.thePlayer.method_37309())) {
             this.field_21693 = 0.52;
@@ -127,7 +127,7 @@ public class MineplexLongjump extends Module {
 
    @EventListen
    public void method_20635(PacketEvent var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (var1.method_557() instanceof class_509) {
             this.field_21695 = -1;
             this.field_21691 = 0;

@@ -23,7 +23,7 @@ public class class_5310 implements class_7279 {
 
    public boolean test(class_2792 var1) {
       DamageSource var4 = var1.<DamageSource>method_12698(class_8712.field_44674);
-      class_1343 var5 = var1.<class_1343>method_12698(class_8712.field_44671);
+      Vector3d var5 = var1.<Vector3d>method_12698(class_8712.field_44671);
       return var5 != null && var4 != null && this.field_27108.method_40299(var1.method_12694(), var5, var4);
    }
 

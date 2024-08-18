@@ -42,8 +42,8 @@ public class InfiniteAuraModule extends Module {
 
    @EventListen
    @class_7664
-   public void method_33698(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_33698(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          List var4 = this.method_33696((float)((int)this.getFloatValueByName("Range")));
          if (var4 != null && var4.size() != 0) {
             if (this.field_37779 < 1.0F) {
@@ -71,7 +71,7 @@ public class InfiniteAuraModule extends Module {
                         ArrayList var11 = class_6306.method_28770(var10, var9);
                         this.field_37777.add(var11);
                         Collections.reverse(var11);
-                        this.method_33701(var11, SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42015());
+                        this.method_33701(var11, SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).isEnabled());
                         class_314.method_1431(var8, !this.getBooleanValueByName("No Swing"));
                         Collections.reverse(var11);
                         this.method_33701(var11, false);
@@ -100,9 +100,9 @@ public class InfiniteAuraModule extends Module {
          if (var5 == null) {
             client.method_8614().sendPacket(new class_9515(var8.method_21803(), var8.method_21801(), var8.method_21799(), true));
          } else {
-            var5.field_41736.field_7336 = var8.method_21803() + 0.5;
-            var5.field_41736.field_7333 = var8.method_21801();
-            var5.field_41736.field_7334 = var8.method_21799() + 0.5;
+            var5.positionVec.field_7336 = var8.method_21803() + 0.5;
+            var5.positionVec.field_7333 = var8.method_21801();
+            var5.positionVec.field_7334 = var8.method_21799() + 0.5;
             client.method_8614().sendPacket(new class_8125(false, false));
             client.method_8614().sendPacket(new RotationPacket(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, false));
             client.method_8614().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
@@ -121,7 +121,7 @@ public class InfiniteAuraModule extends Module {
 
    @EventListen
    public void method_33699(class_3368 var1) {
-      if (this.method_42015() && this.field_37777 != null && this.field_37777.size() != 0) {
+      if (this.isEnabled() && this.field_37777 != null && this.field_37777.size() != 0) {
          for (List var5 : this.field_37777) {
             GL11.glPushMatrix();
             GL11.glEnable(2848);
@@ -191,7 +191,7 @@ public class InfiniteAuraModule extends Module {
                               } else if (!var8.method_37367()) {
                                  if (var8 instanceof PlayerEntity
                                     && class_5876.method_26760((PlayerEntity)var8)
-                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).isEnabled()) {
                                     var7.remove();
                                  }
                               } else {
@@ -232,6 +232,6 @@ public class InfiniteAuraModule extends Module {
 
    @Override
    public boolean method_42003() {
-      return this.method_42015() && this.method_33702() && SigmaMainClass.getInstance().method_3310().method_25294();
+      return this.isEnabled() && this.method_33702() && SigmaMainClass.getInstance().method_3310().method_25294();
    }
 }

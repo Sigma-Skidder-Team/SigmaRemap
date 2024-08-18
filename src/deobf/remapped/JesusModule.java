@@ -20,7 +20,7 @@ public class JesusModule extends Module {
 
    @EventListen
    public void method_32082(class_5243 var1) {
-      if (this.method_42015() && client.theWorld != null && !AutoMLGModule.method_16781()) {
+      if (this.isEnabled() && client.theWorld != null && !AutoMLGModule.method_16781()) {
          if (client.theWorld.method_28262(var1.method_23989()).method_8362() == class_5371.field_27410
             || client.theWorld.method_28262(var1.method_23989()).method_8362() == class_5371.field_27439
             || client.theWorld.method_28262(var1.method_23989()).method_8362() == class_5371.field_27413) {
@@ -28,7 +28,7 @@ public class JesusModule extends Module {
                (double)var1.method_23989().getY()
                   >= client.thePlayer.method_37309() - (double)(client.thePlayer.method_37309() % 0.5 != 0.0 ? 0.0F : 0.5F)
             )) {
-               if (!this.method_32078(client.thePlayer.field_41712)) {
+               if (!this.method_32078(client.thePlayer.boundingBox)) {
                   if (!client.thePlayer.isSneaking()) {
                      if (!(client.thePlayer.field_41706 > 10.0F)) {
                         class_2522 var4 = client.theWorld.method_28262(var1.method_23989());
@@ -54,14 +54,14 @@ public class JesusModule extends Module {
 
    @EventListen
    public void method_32076(class_1393 var1) {
-      if (this.method_42015() && client.theWorld != null && var1.method_6449() && client.method_8530() != null) {
-         if (method_32081() && !this.method_32078(client.thePlayer.field_41712)) {
+      if (this.isEnabled() && client.theWorld != null && var1.method_6449() && client.method_8530() != null) {
+         if (method_32081() && !this.method_32078(client.thePlayer.boundingBox)) {
             this.field_36212++;
          } else {
             this.field_36212 = 0;
          }
 
-         if (method_32081() && !this.method_32078(client.thePlayer.field_41712)) {
+         if (method_32081() && !this.method_32078(client.thePlayer.boundingBox)) {
             client.thePlayer.field_29600 = 0;
             var1.method_6444(true);
             this.field_36213++;
@@ -77,8 +77,8 @@ public class JesusModule extends Module {
    @EventListen
    @class_7664
    public void method_32079(class_7767 var1) {
-      if (this.method_42015() && client.theWorld != null && !AutoMLGModule.method_16781()) {
-         if (this.method_32078(client.thePlayer.field_41712) && !client.thePlayer.isSneaking()) {
+      if (this.isEnabled() && client.theWorld != null && !AutoMLGModule.method_16781()) {
+         if (this.method_32078(client.thePlayer.boundingBox) && !client.thePlayer.isSneaking()) {
             class_2522 var4 = client.theWorld.method_28262(client.thePlayer.method_37075());
             if (var4 != null && !var4.method_8364().method_22001()) {
                double var5 = (double)var4.method_8364().method_21998();
@@ -87,7 +87,7 @@ public class JesusModule extends Module {
                      var1.method_35235(0.13);
                   }
 
-                  boolean var7 = this.method_32078(client.thePlayer.field_41712.method_18918(0.0, var1.method_35236(), 0.0));
+                  boolean var7 = this.method_32078(client.thePlayer.boundingBox.method_18918(0.0, var1.method_35236(), 0.0));
                   if (!var7) {
                      double var8 = (double)((int) client.thePlayer.method_37309() + 1);
                      double var10 = var8 - client.thePlayer.method_37309();
@@ -107,7 +107,7 @@ public class JesusModule extends Module {
                   if (class_314.method_1413(client.thePlayer, 0.001F)) {
                      this.field_36210 = 0;
                   } else {
-                     if (client.thePlayer.isSneaking() || client.thePlayer.field_41774) {
+                     if (client.thePlayer.isSneaking() || client.thePlayer.collidedVertically) {
                         this.field_36210 = 0;
                         return;
                      }
@@ -140,7 +140,7 @@ public class JesusModule extends Module {
 
    @EventListen
    public void method_32085(class_2911 var1) {
-      if (this.method_42015() && client.theWorld != null && client.method_8530() != null) {
+      if (this.isEnabled() && client.theWorld != null && client.method_8530() != null) {
          if (method_32081()) {
             if (this.field_36213 % 2 != 0) {
                var1.method_29715(true);
@@ -153,7 +153,7 @@ public class JesusModule extends Module {
 
    @EventListen
    public void method_32084(class_8544 var1) {
-      if (this.method_42015() && !(var1.method_39326() < 0.2)) {
+      if (this.isEnabled() && !(var1.method_39326() < 0.2)) {
          if (method_32081()) {
             var1.method_29715(true);
          }
@@ -162,7 +162,7 @@ public class JesusModule extends Module {
 
    @Override
    public boolean method_42003() {
-      return this.method_42015() && method_32081() && !this.method_32077();
+      return this.isEnabled() && method_32081() && !this.method_32077();
    }
 
    public boolean method_32077() {
@@ -185,7 +185,7 @@ public class JesusModule extends Module {
    }
 
    public static boolean method_32081() {
-      Box var2 = client.thePlayer.field_41712.method_18918(0.0, -0.001, 0.0);
+      Box var2 = client.thePlayer.boundingBox.method_18918(0.0, -0.001, 0.0);
       Stream var3 = client.theWorld.method_6680(client.thePlayer, var2);
       Iterator var4 = var3.iterator();
       boolean var5 = true;

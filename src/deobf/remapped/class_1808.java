@@ -1,7 +1,7 @@
 package remapped;
 
 public interface class_1808 {
-   class_1343 method_8027(class_9155 var1);
+   Vector3d method_8027(class_9155 var1);
 
    class_4895 method_8025(class_9155 var1);
 

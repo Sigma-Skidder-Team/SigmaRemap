@@ -16,7 +16,7 @@ public class AAC4Criticals extends Module {
    @EventListen
    @class_7664
    private void method_18089(class_8544 var1) {
-      if (this.method_42015() && !(var1.method_39326() < 0.625)) {
+      if (this.isEnabled() && !(var1.method_39326() < 0.625)) {
          field_18992 = 0;
       }
    }
@@ -31,7 +31,7 @@ public class AAC4Criticals extends Module {
    @EventListen
    @class_315
    private void method_18092(class_1393 var1) {
-      if (!this.method_42015() || SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class).method_42015()) {
+      if (!this.isEnabled() || SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class).isEnabled()) {
          field_18992 = 0;
       } else if (var1.method_6449()) {
          if (client.playerController.method_42156()) {
@@ -39,7 +39,7 @@ public class AAC4Criticals extends Module {
          }
 
          boolean var4 = !this.getBooleanValueByName("KillAura") || KillauraModule.field_12558 != null || KillauraModule.field_12556 != null;
-         if (client.thePlayer.onGround && client.thePlayer.field_41774 && var4) {
+         if (client.thePlayer.onGround && client.thePlayer.collidedVertically && var4) {
             field_18992++;
             client.thePlayer.lastReportedPosY = 0.0;
             if (field_18992 != 2) {

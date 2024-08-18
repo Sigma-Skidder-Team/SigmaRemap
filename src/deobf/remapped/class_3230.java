@@ -40,7 +40,7 @@ public class class_3230<T extends AbstractRaiderEntity> extends class_3599 {
          }
 
          if (!this.field_16076.method_21379()) {
-            class_1343 var4 = class_3425.method_15837(this.field_16076, 15, 4, class_1343.method_6200(var3.method_11269()));
+            Vector3d var4 = class_3425.method_15837(this.field_16076, 15, 4, Vector3d.method_6200(var3.method_11269()));
             if (var4 != null) {
                this.field_16076.method_26927().method_5595(var4.field_7336, var4.field_7333, var4.field_7334, 1.0);
             }

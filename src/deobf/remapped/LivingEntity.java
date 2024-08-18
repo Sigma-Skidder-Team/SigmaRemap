@@ -108,7 +108,7 @@ public abstract class LivingEntity extends Entity {
       super(var1, var2);
       this.field_29603 = new class_6711(class_9030.method_41423(var1));
       this.method_26456(this.method_26465());
-      this.field_41759 = true;
+      this.preventEntitySpawning = true;
       this.field_29637 = (float)((Math.random() + 1.0) * 0.01F);
       this.method_37351();
       this.field_29617 = (float)Math.random() * 12398.0F;
@@ -238,7 +238,7 @@ public abstract class LivingEntity extends Entity {
                this.method_37192(this.method_26536(this.method_37229()));
                if (this.method_37229() == -20) {
                   this.method_37192(0);
-                  class_1343 var9 = this.method_37098();
+                  Vector3d var9 = this.method_37098();
 
                   for (int var10 = 0; var10 < 8; var10++) {
                      double var11 = this.field_41717.nextDouble() - this.field_41717.nextDouble();
@@ -317,7 +317,7 @@ public abstract class LivingEntity extends Entity {
       this.field_29611 = this.field_29605;
       this.field_29657 = this.field_29618;
       this.prevRotationYaw = this.rotationYaw;
-      this.field_41762 = this.rotationPitch;
+      this.prevRotationPitch = this.rotationPitch;
       this.world.method_29599().endSection();
    }
 
@@ -331,7 +331,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method_26535() {
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       this.world
          .method_43361(
             class_3090.field_15380,
@@ -1095,11 +1095,11 @@ public abstract class LivingEntity extends Entity {
       }
 
       if (!var1.method_28380() && this.method_26463() && !var5) {
-         class_1343 var9 = var1.method_28365();
+         Vector3d var9 = var1.method_28365();
          if (var9 != null) {
-            class_1343 var7 = this.method_37307(1.0F);
-            class_1343 var8 = var9.method_6202(this.method_37245()).method_6213();
-            var8 = new class_1343(var8.field_7336, 0.0, var8.field_7334);
+            Vector3d var7 = this.method_37307(1.0F);
+            Vector3d var8 = var9.method_6202(this.method_37245()).method_6213();
+            var8 = new Vector3d(var8.field_7336, 0.0, var8.field_7334);
             if (var8.method_6206(var7) < 0.0) {
                return true;
             }
@@ -1130,7 +1130,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method_26452(DamageSource var1) {
-      if (!this.field_41751 && !this.field_29659) {
+      if (!this.removed && !this.field_29659) {
          Entity var4 = var1.method_28372();
          LivingEntity var5 = this.method_26560();
          if (this.field_29644 >= 0 && var5 != null) {
@@ -1248,8 +1248,8 @@ public abstract class LivingEntity extends Entity {
       var1 = (float)((double)var1 * (1.0 - this.method_26575(Attributes.KNOCKBACK_RESISTANCE)));
       if (!(var1 <= 0.0F)) {
          this.field_41763 = true;
-         class_1343 var8 = this.method_37098();
-         class_1343 var9 = new class_1343(var2, 0.0, var4).method_6213().method_6209((double)var1);
+         Vector3d var8 = this.method_37098();
+         Vector3d var9 = new Vector3d(var2, 0.0, var4).method_6213().method_6209((double)var1);
          this.method_37214(
             var8.field_7336 / 2.0 - var9.field_7336,
             !this.onGround ? var8.field_7333 : Math.min(0.4, var8.field_7333 / 2.0 + (double)var1),
@@ -1331,7 +1331,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public boolean isAlive() {
-      return !this.field_41751 && this.method_26551() > 0.0F;
+      return !this.removed && this.method_26551() > 0.0F;
    }
 
    @Override
@@ -1618,11 +1618,11 @@ public abstract class LivingEntity extends Entity {
                float var15 = (this.field_41717.nextFloat() - 0.5F) * 0.2F;
                float var16 = (this.field_41717.nextFloat() - 0.5F) * 0.2F;
                float var17 = (this.field_41717.nextFloat() - 0.5F) * 0.2F;
-               double var18 = MathHelper.lerp(var13, this.field_41767, this.getPosX())
+               double var18 = MathHelper.lerp(var13, this.prevPosX, this.getPosX())
                   + (this.field_41717.nextDouble() - 0.5) * (double)this.method_37086() * 2.0;
-               double var20 = MathHelper.lerp(var13, this.field_41698, this.method_37309())
+               double var20 = MathHelper.lerp(var13, this.prevPosY, this.method_37309())
                   + this.field_41717.nextDouble() * (double)this.method_37074();
-               double var22 = MathHelper.lerp(var13, this.field_41725, this.getPosZ())
+               double var22 = MathHelper.lerp(var13, this.prevPosZ, this.getPosZ())
                   + (this.field_41717.nextDouble() - 0.5) * (double)this.method_37086() * 2.0;
                this.world.method_43361(class_3090.field_15356, var18, var20, var22, (double)var15, (double)var16, (double)var17);
             }
@@ -1803,11 +1803,11 @@ public abstract class LivingEntity extends Entity {
    }
 
    private void method_26433(Entity var1) {
-      class_1343 var4;
-      if (!var1.field_41751 && !this.world.method_28262(var1.method_37075()).method_8360().method_29299(class_2351.field_11740)) {
+      Vector3d var4;
+      if (!var1.removed && !this.world.method_28262(var1.method_37075()).method_8360().method_29299(class_2351.field_11740)) {
          var4 = var1.method_37282(this);
       } else {
-         var4 = new class_1343(var1.getPosX(), var1.method_37309() + (double)var1.method_37074(), var1.getPosZ());
+         var4 = new Vector3d(var1.getPosX(), var1.method_37309() + (double)var1.method_37074(), var1.getPosZ());
       }
 
       this.method_37254(var4.field_7336, var4.field_7333, var4.field_7334);
@@ -1828,8 +1828,8 @@ public abstract class LivingEntity extends Entity {
          var3 += 0.1F * (float)(this.method_26553(Effects.field_19730).method_10333() + 1);
       }
 
-      class_1343 var4 = this.method_37098();
-      class_2911 var5 = new class_2911(new class_1343(var4.field_7336, (double)var3, var4.field_7334));
+      Vector3d var4 = this.method_37098();
+      class_2911 var5 = new class_2911(new Vector3d(var4.field_7336, (double)var3, var4.field_7334));
       if (this instanceof ClientPlayerEntity) {
          SigmaMainClass.getInstance().getEventManager().call(var5);
       }
@@ -1863,7 +1863,7 @@ public abstract class LivingEntity extends Entity {
       return false;
    }
 
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       if (this.method_26530() || this.canPassengerSteer()) {
          double var4 = 0.08;
          boolean var6 = this.method_37098().field_7333 <= 0.0;
@@ -1897,13 +1897,13 @@ public abstract class LivingEntity extends Entity {
 
             this.method_37092(var39, var1);
             this.method_37226(class_7412.field_37839, this.method_37098());
-            class_1343 var15 = this.method_37098();
+            Vector3d var15 = this.method_37098();
             if (this.collidedHorizontally && this.method_26505()) {
-               var15 = new class_1343(var15.field_7336, 0.2, var15.field_7334);
+               var15 = new Vector3d(var15.field_7336, 0.2, var15.field_7334);
             }
 
             this.method_37215(var15.method_6210((double)var38, 0.8F, (double)var38));
-            class_1343 var16 = this.method_26579(var4, var6, this.method_37098());
+            Vector3d var16 = this.method_26579(var4, var6, this.method_37098());
             this.method_37215(var16);
             if (this.collidedHorizontally && this.method_37159(var16.field_7336, var16.field_7333 + 0.6F - this.method_37309() + var34, var16.field_7334)) {
                this.method_37214(var16.field_7336, 0.3F, var16.field_7334);
@@ -1916,7 +1916,7 @@ public abstract class LivingEntity extends Entity {
                this.method_37215(this.method_37098().method_6209(0.5));
             } else {
                this.method_37215(this.method_37098().method_6210(0.5, 0.8F, 0.5));
-               class_1343 var36 = this.method_26579(var4, var6, this.method_37098());
+               Vector3d var36 = this.method_26579(var4, var6, this.method_37098());
                this.method_37215(var36);
             }
 
@@ -1924,7 +1924,7 @@ public abstract class LivingEntity extends Entity {
                this.method_37215(this.method_37098().method_6214(0.0, -var4 / 4.0, 0.0));
             }
 
-            class_1343 var37 = this.method_37098();
+            Vector3d var37 = this.method_37098();
             if (this.collidedHorizontally && this.method_37159(var37.field_7336, var37.field_7333 + 0.6F - this.method_37309() + var10, var37.field_7334)) {
                this.method_37214(var37.field_7336, 0.3F, var37.field_7334);
             }
@@ -1932,7 +1932,7 @@ public abstract class LivingEntity extends Entity {
             BlockPos var8 = this.method_37119();
             float var9 = this.world.method_28262(var8).method_8360().method_29308();
             float var12 = !this.onGround ? 0.91F : var9 * 0.91F;
-            class_1343 var13 = this.method_26588(var1, var9);
+            Vector3d var13 = this.method_26588(var1, var9);
             double var29 = var13.field_7333;
             if (!this.isPotionActive(Effects.LevitationEffect)) {
                if (this.world.field_33055 && !this.world.isBlockLoaded(var8)) {
@@ -1951,12 +1951,12 @@ public abstract class LivingEntity extends Entity {
 
             this.method_37214(var13.field_7336 * (double)var12, var29 * 0.98F, var13.field_7334 * (double)var12);
          } else {
-            class_1343 var31 = this.method_37098();
+            Vector3d var31 = this.method_37098();
             if (var31.field_7333 > -0.5) {
                this.field_41706 = 1.0F;
             }
 
-            class_1343 var33 = this.method_37246();
+            Vector3d var33 = this.method_37246();
             float var35 = this.rotationPitch * (float) (Math.PI / 180.0);
             double var17 = Math.sqrt(var33.field_7336 * var33.field_7336 + var33.field_7334 * var33.field_7334);
             double var19 = Math.sqrt(method_37266(var31));
@@ -2003,9 +2003,9 @@ public abstract class LivingEntity extends Entity {
 
    public void method_26418(LivingEntity var1, boolean var2) {
       var1.field_29598 = var1.field_29643;
-      double var5 = var1.getPosX() - var1.field_41767;
-      double var7 = !var2 ? 0.0 : var1.method_37309() - var1.field_41698;
-      double var9 = var1.getPosZ() - var1.field_41725;
+      double var5 = var1.getPosX() - var1.prevPosX;
+      double var7 = !var2 ? 0.0 : var1.method_37309() - var1.prevPosY;
+      double var9 = var1.getPosZ() - var1.prevPosZ;
       float var11 = MathHelper.sqrt(var5 * var5 + var7 * var7 + var9 * var9) * 4.0F;
       if (var11 > 1.0F) {
          var11 = 1.0F;
@@ -2015,19 +2015,19 @@ public abstract class LivingEntity extends Entity {
       var1.field_29671 = var1.field_29671 + var1.field_29643;
    }
 
-   public class_1343 method_26588(class_1343 var1, float var2) {
+   public Vector3d method_26588(Vector3d var1, float var2) {
       this.method_37092(this.method_26506(var2), var1);
       this.method_37215(this.method_26589(this.method_37098()));
       this.method_37226(class_7412.field_37839, this.method_37098());
-      class_1343 var5 = this.method_37098();
+      Vector3d var5 = this.method_37098();
       if ((this.collidedHorizontally || this.field_29654) && this.method_26505()) {
-         var5 = new class_1343(var5.field_7336, 0.2, var5.field_7334);
+         var5 = new Vector3d(var5.field_7336, 0.2, var5.field_7334);
       }
 
       return var5;
    }
 
-   public class_1343 method_26579(double var1, boolean var3, class_1343 var4) {
+   public Vector3d method_26579(double var1, boolean var3, Vector3d var4) {
       if (!this.method_37078() && !this.method_37321()) {
          double var7;
          if (var3 && Math.abs(var4.field_7333 - 0.005) >= 0.003 && Math.abs(var4.field_7333 - var1 / 16.0) < 0.003) {
@@ -2036,13 +2036,13 @@ public abstract class LivingEntity extends Entity {
             var7 = var4.field_7333 - var1 / 16.0;
          }
 
-         return new class_1343(var4.field_7336, var7, var4.field_7334);
+         return new Vector3d(var4.field_7336, var7, var4.field_7334);
       } else {
          return var4;
       }
    }
 
-   private class_1343 method_26589(class_1343 var1) {
+   private Vector3d method_26589(Vector3d var1) {
       if (this.method_26505()) {
          this.field_41706 = 0.0F;
          float var4 = 0.15F;
@@ -2053,7 +2053,7 @@ public abstract class LivingEntity extends Entity {
             var9 = 0.0;
          }
 
-         var1 = new class_1343(var5, var9, var7);
+         var1 = new Vector3d(var5, var9, var7);
       }
 
       return var1;
@@ -2124,8 +2124,8 @@ public abstract class LivingEntity extends Entity {
       }
 
       this.livingTick();
-      double var3 = this.getPosX() - this.field_41767;
-      double var5 = this.getPosZ() - this.field_41725;
+      double var3 = this.getPosX() - this.prevPosX;
+      double var5 = this.getPosZ() - this.prevPosZ;
       float var7 = (float)(var3 * var3 + var5 * var5);
       float var8 = this.field_29605;
       float var9 = 0.0F;
@@ -2173,12 +2173,12 @@ public abstract class LivingEntity extends Entity {
          this.field_29611 += 360.0F;
       }
 
-      while (this.rotationPitch - this.field_41762 < -180.0F) {
-         this.field_41762 -= 360.0F;
+      while (this.rotationPitch - this.prevRotationPitch < -180.0F) {
+         this.prevRotationPitch -= 360.0F;
       }
 
-      while (this.rotationPitch - this.field_41762 >= 180.0F) {
-         this.field_41762 += 360.0F;
+      while (this.rotationPitch - this.prevRotationPitch >= 180.0F) {
+         this.prevRotationPitch += 360.0F;
       }
 
       while (this.field_29618 - this.field_29657 < -180.0F) {
@@ -2352,7 +2352,7 @@ public abstract class LivingEntity extends Entity {
          this.field_29653--;
       }
 
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       double var4 = var3.field_7336;
       double var6 = var3.field_7333;
       double var8 = var3.field_7334;
@@ -2416,7 +2416,7 @@ public abstract class LivingEntity extends Entity {
       this.field_29673 *= 0.98F;
       this.method_26571();
       Box var23 = this.getBoundingBox();
-      this.method_26431(new class_1343((double)this.field_29676, (double)this.field_29651, (double)this.field_29673));
+      this.method_26431(new Vector3d((double)this.field_29676, (double)this.field_29651, (double)this.field_29673));
       this.world.method_29599().endSection();
       this.world.method_29599().startSection("push");
       if (this.field_29630 > 0) {
@@ -2571,14 +2571,14 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method_26467(Entity var1, int var2) {
-      if (!var1.field_41751 && !this.world.field_33055 && (var1 instanceof class_91 || var1 instanceof class_6749 || var1 instanceof class_5614)) {
+      if (!var1.removed && !this.world.field_33055 && (var1 instanceof class_91 || var1 instanceof class_6749 || var1 instanceof class_5614)) {
          ((class_6331)this.world).method_28945().method_10200(var1, new class_4476(var1.method_37145(), this.method_37145(), var2));
       }
    }
 
    public boolean method_26420(Entity var1) {
-      class_1343 var4 = new class_1343(this.getPosX(), this.method_37388(), this.getPosZ());
-      class_1343 var5 = new class_1343(var1.getPosX(), var1.method_37388(), var1.getPosZ());
+      Vector3d var4 = new Vector3d(this.getPosX(), this.method_37388(), this.getPosZ());
+      Vector3d var5 = new Vector3d(var1.getPosX(), var1.method_37388(), var1.getPosZ());
       return this.world.method_28265(new class_972(var4, var5, class_3132.field_15553, class_9583.field_48747, this)).method_33990()
          == class_1430.field_7721;
    }
@@ -2603,7 +2603,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public boolean method_37167() {
-      return !this.field_41751;
+      return !this.removed;
    }
 
    @Override
@@ -2613,7 +2613,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public void method_37138() {
-      this.field_41743 = this.field_41717.nextDouble() >= this.method_26575(Attributes.KNOCKBACK_RESISTANCE);
+      this.velocityChanged = this.field_41717.nextDouble() >= this.method_26575(Attributes.KNOCKBACK_RESISTANCE);
    }
 
    @Override
@@ -2632,12 +2632,12 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Override
-   public class_1343 method_37375(class_9249 var1, class_8623 var2) {
+   public Vector3d method_37375(class_9249 var1, class_8623 var2) {
       return method_26437(super.method_37375(var1, var2));
    }
 
-   public static class_1343 method_26437(class_1343 var0) {
-      return new class_1343(var0.field_7336, var0.field_7333, 0.0);
+   public static Vector3d method_26437(Vector3d var0) {
+      return new Vector3d(var0.field_7336, var0.field_7333, 0.0);
    }
 
    public float method_26493() {
@@ -2751,7 +2751,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Override
-   public void method_37332(class_6139 var1, class_1343 var2) {
+   public void method_37332(class_6139 var1, Vector3d var2) {
       super.method_37332(var1, var2);
       this.field_29657 = this.field_29618;
       this.field_29605 = this.field_29618;
@@ -2777,11 +2777,11 @@ public abstract class LivingEntity extends Entity {
 
    private void method_26519(ItemStack var1, int var2) {
       for (int var5 = 0; var5 < var2; var5++) {
-         class_1343 var6 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0);
+         Vector3d var6 = new Vector3d(((double)this.field_41717.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0);
          var6 = var6.method_6212(-this.rotationPitch * (float) (Math.PI / 180.0));
          var6 = var6.method_6192(-this.rotationYaw * (float) (Math.PI / 180.0));
          double var7 = (double)(-this.field_41717.nextFloat()) * 0.6 - 0.3;
-         class_1343 var9 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.3, var7, 0.6);
+         Vector3d var9 = new Vector3d(((double)this.field_41717.nextFloat() - 0.5) * 0.3, var7, 0.6);
          var9 = var9.method_6212(-this.rotationPitch * (float) (Math.PI / 180.0));
          var9 = var9.method_6192(-this.rotationYaw * (float) (Math.PI / 180.0));
          var9 = var9.method_6214(this.getPosX(), this.method_37388(), this.getPosZ());
@@ -2989,7 +2989,7 @@ public abstract class LivingEntity extends Entity {
       this.method_37356(class_7653.field_38886);
       this.method_26584(var1);
       this.method_26601(var1);
-      this.method_37215(class_1343.field_7335);
+      this.method_37215(Vector3d.ZERO);
       this.field_41763 = true;
    }
 
@@ -3006,18 +3006,18 @@ public abstract class LivingEntity extends Entity {
          class_2522 var4 = this.world.method_28262(var1);
          if (var4.method_8360() instanceof class_3633) {
             this.world.method_7513(var1, var4.method_10308(class_3633.field_17728, Boolean.valueOf(false)), 3);
-            class_1343 var5 = class_3633.method_16932(this.getType(), this.world, var1, this.rotationYaw).orElseGet(() -> {
+            Vector3d var5 = class_3633.method_16932(this.getType(), this.world, var1, this.rotationYaw).orElseGet(() -> {
                BlockPos var3x = var1.method_6081();
-               return new class_1343((double)var3x.getX() + 0.5, (double)var3x.getY() + 0.1, (double)var3x.getZ() + 0.5);
+               return new Vector3d((double)var3x.getX() + 0.5, (double)var3x.getY() + 0.1, (double)var3x.getZ() + 0.5);
             });
-            class_1343 var6 = class_1343.method_6200(var1).method_6194(var5).method_6213();
+            Vector3d var6 = Vector3d.method_6200(var1).method_6194(var5).method_6213();
             float var7 = (float) MathHelper.wrapDegrees(MathHelper.atan2(var6.field_7334, var6.field_7336) * 180.0F / (float)Math.PI - 90.0);
             this.method_37256(var5.field_7336, var5.field_7333, var5.field_7334);
             this.rotationYaw = var7;
             this.rotationPitch = 0.0F;
          }
       });
-      class_1343 var3 = this.method_37245();
+      Vector3d var3 = this.method_37245();
       this.method_37356(class_7653.field_38885);
       this.method_37256(var3.field_7336, var3.field_7333, var3.field_7334);
       this.method_26570();

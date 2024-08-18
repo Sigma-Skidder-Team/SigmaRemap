@@ -21,7 +21,7 @@ public class class_6589 implements Packet<class_392> {
    public class_6589() {
    }
 
-   public class_6589(int var1, UUID var2, double var3, double var5, double var7, float var9, float var10, EntityType<?> var11, int var12, class_1343 var13) {
+   public class_6589(int var1, UUID var2, double var3, double var5, double var7, float var9, float var10, EntityType<?> var11, int var12, Vector3d var13) {
       this.field_33995 = var1;
       this.field_33992 = var2;
       this.field_33994 = var3;

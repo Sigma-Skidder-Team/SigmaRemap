@@ -24,7 +24,7 @@ public class OldAACSpeed extends Module {
 
    @EventListen
    public void method_33889(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (!client.thePlayer.onGround) {
             if (class_314.method_1434() && AACAntiKB.field_39147 >= 7) {
                this.field_37948++;
@@ -60,7 +60,7 @@ public class OldAACSpeed extends Module {
 
    @EventListen
    public void method_33888(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_37951 < 2) {
             this.field_37951++;
          }
@@ -82,7 +82,7 @@ public class OldAACSpeed extends Module {
 
    @EventListen
    public void method_33887(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_509) {
             this.field_37951 = 0;
             this.field_37949 = class_8865.method_40775();

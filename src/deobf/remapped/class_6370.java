@@ -19,7 +19,7 @@ public class class_6370 extends Module {
    }
 
    @EventListen
-   public void method_29149(class_5596 var1) {
+   public void method_29149(PlayerTickEvent var1) {
       this.field_32562 = class_7494.method_34079(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, 200.0F);
       if (this.field_32558 != null && this.field_32566 != null) {
          SigmaMainClass.getInstance()
@@ -30,7 +30,7 @@ public class class_6370 extends Module {
 
    @EventListen
    public void method_29148(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_32562 != null) {
             int var4 = class_314.method_1444(class_1255.field_6928.field_6917, 0.14F);
             GL11.glPushMatrix();

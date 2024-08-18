@@ -103,7 +103,7 @@ public class class_2806 extends MonsterEntity {
 
       LivingEntity var3 = this.getAttackTarget();
       if (var3 != null && var3.method_37388() > this.method_37388() + (double)this.field_13774 && this.method_26608(var3)) {
-         class_1343 var4 = this.method_37098();
+         Vector3d var4 = this.method_37098();
          this.method_37215(this.method_37098().method_6214(0.0, (0.3F - var4.field_7333) * 0.3F, 0.0));
          this.field_41763 = true;
       }

@@ -147,8 +147,8 @@ public class class_912 extends MonsterEntity implements class_6250 {
    private boolean method_3905(PlayerEntity var1) {
       ItemStack var4 = var1.inventory.field_36405.get(3);
       if (var4.method_27960() != class_4783.field_23281.method_10803()) {
-         class_1343 var5 = var1.method_37307(1.0F).method_6213();
-         class_1343 var6 = new class_1343(
+         Vector3d var5 = var1.method_37307(1.0F).method_6213();
+         Vector3d var6 = new Vector3d(
             this.getPosX() - var1.getPosX(), this.method_37388() - var1.method_37388(), this.getPosZ() - var1.getPosZ()
          );
          double var7 = var6.method_6217();
@@ -220,7 +220,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
    }
 
    private boolean method_3911(Entity var1) {
-      class_1343 var4 = new class_1343(
+      Vector3d var4 = new Vector3d(
          this.getPosX() - var1.getPosX(), this.method_37080(0.5) - var1.method_37388(), this.getPosZ() - var1.getPosZ()
       );
       var4 = var4.method_6213();
@@ -245,7 +245,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
          boolean var13 = this.method_26499(var1, var3, var5, true);
          if (var13 && !this.method_37378()) {
             this.world
-               .method_29528((PlayerEntity)null, this.field_41767, this.field_41698, this.field_41725, SoundEvents.field_2563, this.method_37197(), 1.0F, 1.0F);
+               .method_29528((PlayerEntity)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.field_2563, this.method_37197(), 1.0F, 1.0F);
             this.method_37155(SoundEvents.field_2563, 1.0F, 1.0F);
          }
 

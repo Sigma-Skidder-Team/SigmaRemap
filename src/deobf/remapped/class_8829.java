@@ -170,7 +170,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    private void method_40553(BlockPos var1) {
-      class_1343 var4 = class_1343.method_6200(var1);
+      Vector3d var4 = Vector3d.method_6200(var1);
       byte var5 = 0;
       BlockPos var6 = this.method_37075();
       int var7 = (int)var4.field_7333 - var6.getY();
@@ -190,7 +190,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
          var9 = var10 / 2;
       }
 
-      class_1343 var11 = class_3425.method_15847(this, var8, var9, var5, var4, (float) (Math.PI / 10));
+      Vector3d var11 = class_3425.method_15847(this, var8, var9, var5, var4, (float) (Math.PI / 10));
       if (var11 != null) {
          this.field_29904.method_5613(0.5F);
          this.field_29904.method_5595(var11.field_7336, var11.field_7333, var11.field_7334, 1.0);
@@ -520,8 +520,8 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, (double)(0.5F * this.method_37277()), (double)(this.method_37086() * 0.2F));
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, (double)(0.5F * this.method_37277()), (double)(this.method_37086() * 0.2F));
    }
 
    private boolean method_40545(BlockPos var1, int var2) {

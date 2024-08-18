@@ -16,7 +16,7 @@ public class class_5571 {
    }
 
    @EventListen
-   private void method_25296(class_5596 var1) {
+   private void method_25296(PlayerTickEvent var1) {
       this.field_28315++;
       this.field_28308++;
       this.field_28311++;

@@ -77,7 +77,7 @@ public class class_7937 extends MonsterEntity {
    }
 
    @Override
-   public void method_37130(class_2522 var1, class_1343 var2) {
+   public void method_37130(class_2522 var1, Vector3d var2) {
       if (!var1.method_8350(class_4783.field_23718)) {
          super.method_37130(var1, var2);
       }

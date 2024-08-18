@@ -131,7 +131,7 @@ public class class_2770 extends MobEntity implements class_1869 {
       this.field_13544 = this.field_13526;
       if (!this.method_26450()) {
          this.method_12620();
-         class_1343 var42 = this.method_37098();
+         Vector3d var42 = this.method_37098();
          float var44 = 0.2F / (MathHelper.sqrt(method_37266(var42)) * 10.0F + 1.0F);
          var44 *= (float)Math.pow(2.0, var42.field_7333);
          if (!this.field_13534.method_29421().method_23472()) {
@@ -167,7 +167,7 @@ public class class_2770 extends MobEntity implements class_1869 {
                   var47.method_23473();
                }
 
-               class_1343 var6 = var47.method_23463();
+               Vector3d var6 = var47.method_23463();
                if (var6 != null) {
                   double var9 = var6.field_7336 - this.getPosX();
                   double var11 = var6.field_7333 - this.method_37309();
@@ -184,8 +184,8 @@ public class class_2770 extends MobEntity implements class_1869 {
                   double var20 = MathHelper.clamp(
                      MathHelper.wrapDegrees(180.0 - MathHelper.atan2(var9, var13) * 180.0F / (float)Math.PI - (double)this.rotationYaw), -50.0, 50.0
                   );
-                  class_1343 var22 = var6.method_6193(this.getPosX(), this.method_37309(), this.getPosZ()).method_6213();
-                  class_1343 var23 = new class_1343(
+                  Vector3d var22 = var6.method_6193(this.getPosX(), this.method_37309(), this.getPosZ()).method_6213();
+                  Vector3d var23 = new Vector3d(
                         (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
                         this.method_37098().field_7333,
                         (double)(-MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)))
@@ -197,14 +197,14 @@ public class class_2770 extends MobEntity implements class_1869 {
                   this.rotationYaw = this.rotationYaw + this.field_13546 * 0.1F;
                   float var25 = (float)(2.0 / (var15 + 1.0));
                   float var26 = 0.06F;
-                  this.method_37092(0.06F * (var24 * var25 + (1.0F - var25)), new class_1343(0.0, 0.0, -1.0));
+                  this.method_37092(0.06F * (var24 * var25 + (1.0F - var25)), new Vector3d(0.0, 0.0, -1.0));
                   if (!this.field_13530) {
                      this.method_37226(class_7412.field_37839, this.method_37098());
                   } else {
                      this.method_37226(class_7412.field_37839, this.method_37098().method_6209(0.8F));
                   }
 
-                  class_1343 var27 = this.method_37098().method_6213();
+                  Vector3d var27 = this.method_37098().method_6213();
                   double var28 = 0.8 + 0.15 * (var27.method_6206(var23) + 1.0) / 2.0;
                   this.method_37215(this.method_37098().method_6210(var28, 0.91F, var28));
                }
@@ -225,10 +225,10 @@ public class class_2770 extends MobEntity implements class_1869 {
             }
 
             this.field_29605 = this.rotationYaw;
-            class_1343[] var48 = new class_1343[this.field_13533.length];
+            Vector3d[] var48 = new Vector3d[this.field_13533.length];
 
             for (int var50 = 0; var50 < this.field_13533.length; var50++) {
-               var48[var50] = new class_1343(
+               var48[var50] = new Vector3d(
                   this.field_13533[var50].getPosX(), this.field_13533[var50].method_37309(), this.field_13533[var50].getPosZ()
                );
             }
@@ -300,9 +300,9 @@ public class class_2770 extends MobEntity implements class_1869 {
             }
 
             for (int var60 = 0; var60 < this.field_13533.length; var60++) {
-               this.field_13533[var60].field_41767 = var48[var60].field_7336;
-               this.field_13533[var60].field_41698 = var48[var60].field_7333;
-               this.field_13533[var60].field_41725 = var48[var60].field_7334;
+               this.field_13533[var60].prevPosX = var48[var60].field_7336;
+               this.field_13533[var60].prevPosY = var48[var60].field_7333;
+               this.field_13533[var60].prevPosZ = var48[var60].field_7334;
                this.field_13533[var60].field_41754 = var48[var60].field_7336;
                this.field_13533[var60].field_41713 = var48[var60].field_7333;
                this.field_13533[var60].field_41724 = var48[var60].field_7334;
@@ -343,7 +343,7 @@ public class class_2770 extends MobEntity implements class_1869 {
 
    private void method_12620() {
       if (this.field_13548 != null) {
-         if (!this.field_13548.field_41751) {
+         if (!this.field_13548.removed) {
             if (this.field_41697 % 10 == 0 && this.method_26551() < this.method_26465()) {
                this.method_26456(this.method_26551() + 1.0F);
             }
@@ -534,7 +534,7 @@ public class class_2770 extends MobEntity implements class_1869 {
          }
       }
 
-      this.method_37226(class_7412.field_37839, new class_1343(0.0, 0.1F, 0.0));
+      this.method_37226(class_7412.field_37839, new Vector3d(0.0, 0.1F, 0.0));
       this.rotationYaw += 20.0F;
       this.field_29605 = this.rotationYaw;
       if (this.field_13537 == 200 && !this.world.field_33055) {
@@ -802,10 +802,10 @@ public class class_2770 extends MobEntity implements class_1869 {
       return (float)var10;
    }
 
-   public class_1343 method_12609(float var1) {
+   public Vector3d method_12609(float var1) {
       class_5120 var4 = this.field_13534.method_29421();
       class_8978 var5 = var4.method_23464();
-      class_1343 var11;
+      Vector3d var11;
       if (var5 == class_8978.field_45995 || var5 == class_8978.field_46003) {
          BlockPos var12 = this.world.method_22563(class_3801.field_18590, class_8870.field_45348);
          float var13 = Math.max(MathHelper.sqrt(var12.method_12179(this.method_37245(), true)) / 4.0F, 1.0F);

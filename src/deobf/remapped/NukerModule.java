@@ -19,7 +19,7 @@ public class NukerModule extends Module {
 
    @EventListen
    private void method_43656(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_48180 = this.method_43660(this.getFloatValueByName("Range") / 2.0F);
          if (this.field_48180.isEmpty()) {
             this.field_48181 = null;

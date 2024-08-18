@@ -10,8 +10,8 @@ public class SpammerModule extends Module {
    }
 
    @EventListen
-   public void method_6254(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_6254(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          this.field_7386++;
          if ((float)this.field_7386 > this.getFloatValueByName("Messages delay") * 20.0F) {
             this.field_7386 = 0;

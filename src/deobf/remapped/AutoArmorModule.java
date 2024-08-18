@@ -32,8 +32,8 @@ public class AutoArmorModule extends Module {
 
    @EventListen
    @class_315
-   public void method_8194(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_8194(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (!this.field_9397.method_14771()) {
             this.field_9397.method_14776();
          }

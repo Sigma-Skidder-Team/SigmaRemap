@@ -100,7 +100,7 @@ public class WaypointsModule extends Module {
 
    @EventListen
    public void method_42053(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          for (class_4333 var5 : this.method_42044(SigmaMainClass.getInstance().method_3309().method_21960())) {
             BlockPos var6 = new BlockPos(
                (double)(var5.field_21071 - (var5.field_21071 <= 0 ? 1 : 0)),

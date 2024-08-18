@@ -18,7 +18,7 @@ public class CubecraftGamePlay extends Module {
 
    @EventListen
    private void method_25345(PacketEvent var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_5182) {
             class_5182 var5 = (class_5182)var4;

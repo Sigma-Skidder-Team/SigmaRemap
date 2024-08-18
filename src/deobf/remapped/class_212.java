@@ -122,7 +122,7 @@ public class class_212 {
                var29 -= 0.001F;
                var30 -= 0.001F;
                var31 -= 0.001F;
-               class_1343 var86 = var4.method_22003(var1, var2);
+               Vector3d var86 = var4.method_22003(var1, var2);
                float var47;
                float var48;
                float var49;

@@ -216,7 +216,7 @@ public class class_7494 {
       return var0;
    }
 
-   public static List<BlockPos> method_34086(List<BlockPos> var0, class_1343 var1) {
+   public static List<BlockPos> method_34086(List<BlockPos> var0, Vector3d var1) {
       var0.sort((var1x, var2) -> {
          float var5 = method_34106(var1, var1x);
          float var6 = method_34106(var1, var2);
@@ -229,7 +229,7 @@ public class class_7494 {
       return var0;
    }
 
-   public static List<BlockPos> method_34087(List<BlockPos> var0, class_1343 var1, boolean var2) {
+   public static List<BlockPos> method_34087(List<BlockPos> var0, Vector3d var1, boolean var2) {
       if (!var2) {
          method_34086(var0, var1);
       } else {
@@ -253,11 +253,11 @@ public class class_7494 {
       return method_34107(var0, (double)var1.getX(), (double)var1.getY(), (double)var1.getZ());
    }
 
-   public static float method_34106(class_1343 var0, BlockPos var1) {
+   public static float method_34106(Vector3d var0, BlockPos var1) {
       return method_34105(var0, (double)var1.getX(), (double)var1.getY(), (double)var1.getZ());
    }
 
-   public static float method_34084(class_1343 var0, BlockPos var1) {
+   public static float method_34084(Vector3d var0, BlockPos var1) {
       return method_34104(var0, (double)var1.getX(), (double)var1.getZ());
    }
 
@@ -268,14 +268,14 @@ public class class_7494 {
       return method_34103(var9, var10, var11);
    }
 
-   public static float method_34105(class_1343 var0, double var1, double var3, double var5) {
+   public static float method_34105(Vector3d var0, double var1, double var3, double var5) {
       float var9 = (float)(var0.method_61() - var1);
       float var10 = (float)(var0.method_60() - var3);
       float var11 = (float)(var0.method_62() - var5);
       return method_34103(var9, var10, var11);
    }
 
-   public static float method_34104(class_1343 var0, double var1, double var3) {
+   public static float method_34104(Vector3d var0, double var1, double var3) {
       float var7 = (float)(var0.method_61() - var1);
       float var8 = (float)(var0.method_62() - var3);
       return method_34102(var7, var8);
@@ -390,13 +390,13 @@ public class class_7494 {
    }
 
    public static class_9529 method_34099(float var0) {
-      class_1343 var3 = new class_1343(field_38239.thePlayer.lastReportedPosX, field_38239.thePlayer.lastReportedPosY - 0.8F, field_38239.thePlayer.lastReportedPosZ);
+      Vector3d var3 = new Vector3d(field_38239.thePlayer.lastReportedPosX, field_38239.thePlayer.lastReportedPosY - 0.8F, field_38239.thePlayer.lastReportedPosZ);
       var0 = (float)Math.toRadians((double)var0);
       float var4 = 0.0F;
       float var5 = -MathHelper.sin(var0) * MathHelper.cos(var4);
       float var6 = MathHelper.cos(var0) * MathHelper.cos(var4);
       float var7 = 2.3F;
-      class_1343 var8 = new class_1343(
+      Vector3d var8 = new Vector3d(
          field_38239.thePlayer.lastReportedPosX + (double)(var5 * var7),
          field_38239.thePlayer.lastReportedPosY - 0.8F - (double)(!field_38239.thePlayer.field_29654 ? 0.0F : 0.6F),
          field_38239.thePlayer.lastReportedPosZ + (double)(var6 * var7)
@@ -406,7 +406,7 @@ public class class_7494 {
    }
 
    public static class_9529 method_34079(float var0, float var1, float var2) {
-      class_1343 var5 = new class_1343(
+      Vector3d var5 = new Vector3d(
          field_38239.thePlayer.lastReportedPosX,
          field_38239.thePlayer.lastReportedPosY + (double)field_38239.thePlayer.method_37277(),
          field_38239.thePlayer.lastReportedPosZ
@@ -420,7 +420,7 @@ public class class_7494 {
          var2 = field_38239.playerController.method_42146();
       }
 
-      class_1343 var9 = new class_1343(
+      Vector3d var9 = new Vector3d(
          field_38239.thePlayer.lastReportedPosX + (double)(var6 * var2),
          field_38239.thePlayer.lastReportedPosY + (double)(var7 * var2) + (double)field_38239.thePlayer.method_37277(),
          field_38239.thePlayer.lastReportedPosZ + (double)(var8 * var2)
@@ -430,7 +430,7 @@ public class class_7494 {
    }
 
    public static class_9529 method_34080(float var0, float var1, float var2, class_1393 var3) {
-      class_1343 var6 = new class_1343(var3.method_6450(), (double)field_38239.thePlayer.method_37277() + var3.method_6454(), var3.method_6438());
+      Vector3d var6 = new Vector3d(var3.method_6450(), (double)field_38239.thePlayer.method_37277() + var3.method_6454(), var3.method_6438());
       var0 = (float)Math.toRadians((double)var0);
       var1 = (float)Math.toRadians((double)var1);
       float var7 = -MathHelper.sin(var0) * MathHelper.cos(var1);
@@ -440,7 +440,7 @@ public class class_7494 {
          var2 = field_38239.playerController.method_42146();
       }
 
-      class_1343 var10 = new class_1343(
+      Vector3d var10 = new Vector3d(
          field_38239.thePlayer.lastReportedPosX + (double)(var7 * var2),
          field_38239.thePlayer.lastReportedPosY + (double)(var8 * var2) + (double)field_38239.thePlayer.method_37277(),
          field_38239.thePlayer.lastReportedPosZ + (double)(var9 * var2)
@@ -452,7 +452,7 @@ public class class_7494 {
    public static class_7474 method_34115(float var0, float var1, float var2, float var3) {
       double var6 = Math.cos((double)class_8865.method_40785() * Math.PI / 180.0) * (double)var3;
       double var8 = Math.sin((double)class_8865.method_40785() * Math.PI / 180.0) * (double)var3;
-      class_1343 var10 = new class_1343(
+      Vector3d var10 = new Vector3d(
          field_38239.thePlayer.getPosX() + var6,
          field_38239.thePlayer.method_37309() + (double)field_38239.thePlayer.method_37277(),
          field_38239.thePlayer.getPosZ() + var8
@@ -466,7 +466,7 @@ public class class_7494 {
          var2 = field_38239.playerController.method_42146();
       }
 
-      class_1343 var14 = new class_1343(
+      Vector3d var14 = new Vector3d(
          field_38239.thePlayer.lastReportedPosX + (double)(var11 * var2),
          field_38239.thePlayer.lastReportedPosY + (double)(var12 * var2) + (double)field_38239.thePlayer.method_37277(),
          field_38239.thePlayer.lastReportedPosZ + (double)(var13 * var2)
@@ -476,12 +476,12 @@ public class class_7494 {
    }
 
    public static class_7474 method_34100(BlockPos var0) {
-      class_1343 var3 = new class_1343(
+      Vector3d var3 = new Vector3d(
          field_38239.thePlayer.getPosX(),
          field_38239.thePlayer.method_37309() + (double)field_38239.thePlayer.method_37277(),
          field_38239.thePlayer.getPosZ()
       );
-      class_1343 var4 = new class_1343(
+      Vector3d var4 = new Vector3d(
          (double)var0.getX() + 0.5 + RandomUtils.nextDouble(0.01, 0.04),
          (double)var0.getY(),
          (double)var0.getZ() + 0.5 + RandomUtils.nextDouble(0.01, 0.04)
@@ -490,7 +490,7 @@ public class class_7494 {
    }
 
    private boolean method_34093(class_7606 var1, float var2, float var3) {
-      class_1343 var6 = new class_1343(
+      Vector3d var6 = new Vector3d(
          field_38239.thePlayer.getPosX(),
          field_38239.thePlayer.method_37309() + (double)field_38239.thePlayer.method_37277(),
          field_38239.thePlayer.getPosZ()
@@ -501,7 +501,7 @@ public class class_7494 {
       float var8 = -MathHelper.sin(var3);
       float var9 = MathHelper.cos(var2) * MathHelper.cos(var3);
       float var10 = field_38239.playerController.method_42146();
-      class_1343 var11 = new class_1343(
+      Vector3d var11 = new Vector3d(
          field_38239.thePlayer.getPosX() + (double)(var7 * var10),
          field_38239.thePlayer.method_37309() + (double)(var8 * var10) + (double)field_38239.thePlayer.method_37277(),
          field_38239.thePlayer.getPosZ() + (double)(var9 * var10)
@@ -511,13 +511,13 @@ public class class_7494 {
       return var13 == null ? false : var13.method_43955().equals(var1.field_38725) && var13.method_43956() == var1.field_38724;
    }
 
-   public static class_1343 method_34098(Direction var0, BlockPos var1) {
+   public static Vector3d method_34098(Direction var0, BlockPos var1) {
       float var4 = (float)Math.max(0, var0.method_1041());
       float var5 = (float)Math.max(0, var0.method_1034());
       float var6 = (float)var1.getX() + var4 + (var0.method_1041() != 0 ? 0.0F : (float)Math.random());
       float var7 = (float)var1.getY() + (var0.method_1054() != 0 ? 0.0F : (var0.method_1054() != 1 ? (float)Math.random() : 1.0F));
       float var8 = (float)var1.getZ() + var5 + (var0.method_1034() != 0 ? 0.0F : (float)Math.random());
-      return new class_1343((double)var6, (double)var7, (double)var8);
+      return new Vector3d((double)var6, (double)var7, (double)var8);
    }
 
    public static int method_34075(class_2522 var0) {
@@ -583,7 +583,7 @@ public class class_7494 {
 
       for (BlockPos var8 : method_34087(
          method_34089(var0),
-         new class_1343(field_38239.thePlayer.getPosX(), field_38239.thePlayer.method_37309(), field_38239.thePlayer.getPosZ()),
+         new Vector3d(field_38239.thePlayer.getPosX(), field_38239.thePlayer.method_37309(), field_38239.thePlayer.getPosZ()),
          var2
       )) {
          for (Direction var12 : Direction.values()) {
@@ -613,7 +613,7 @@ public class class_7494 {
          return new float[]{var0, var1};
       } else {
          float var6 = method_34076(var2.field_14163)[0];
-         class_1343 var7 = new class_1343(
+         Vector3d var7 = new Vector3d(
             (double)var2.field_14163.getX() + 0.5, (double)var2.field_14163.getY() + 0.5, (double)var2.field_14163.getZ() + 0.5
          );
          float var8 = (var6 + 90.0F) * (float) (Math.PI / 180.0);
@@ -626,7 +626,7 @@ public class class_7494 {
          var8 = (var6 - 90.0F) * (float) (Math.PI / 180.0);
          var9 = (double)(-MathHelper.sin(var8)) / 2.1;
          var11 = (double) MathHelper.cos(var8) / 2.1;
-         var7 = new class_1343(
+         var7 = new Vector3d(
             (double)var2.field_14163.getX() + 0.5, (double)var2.field_14163.getY() + 0.5, (double)var2.field_14163.getZ() + 0.5
          );
          var7 = var7.method_6214(var9, 0.0, var11);
@@ -682,7 +682,7 @@ public class class_7494 {
       float var7 = (float)var2.getY() + 1.0F;
       float var8 = (float)var2.getZ() + 0.5F;
       float var9 = var5 * 2.0F;
-      class_1343 var10 = new class_1343((double)var6, (double)var7, (double)var8);
+      Vector3d var10 = new Vector3d((double)var6, (double)var7, (double)var8);
       if (!var1.method_37085()) {
          double var11 = (double)(MathHelper.sqrt(var1.method_37274(var10)) / var9);
          if (var11 <= 1.0) {

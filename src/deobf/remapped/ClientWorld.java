@@ -119,13 +119,13 @@ public class ClientWorld extends World {
          Entity var6 = (Entity)var5.getValue();
          if (!var6.isPassenger()) {
             var3.startSection("tick");
-            if (!var6.field_41751) {
+            if (!var6.removed) {
                this.method_29532(this::method_755, var6);
             }
 
             var3.endSection();
             var3.startSection("remove");
-            if (var6.field_41751) {
+            if (var6.removed) {
                var4.remove();
                this.method_757(var6);
             }
@@ -144,7 +144,7 @@ public class ClientWorld extends World {
       } else {
          var1.method_37306(var1.getPosX(), var1.method_37309(), var1.getPosZ());
          var1.prevRotationYaw = var1.rotationYaw;
-         var1.field_41762 = var1.rotationPitch;
+         var1.prevRotationPitch = var1.rotationPitch;
          if (var1.field_41727 || var1.method_37221()) {
             var1.field_41697++;
             this.method_29599().method_16057(() -> class_8669.field_44400.method_39797(var1.getType()).toString());
@@ -165,12 +165,12 @@ public class ClientWorld extends World {
    }
 
    public void method_730(Entity var1, Entity var2) {
-      if (var2.field_41751 || var2.getRidingEntity() != var1) {
+      if (var2.removed || var2.getRidingEntity() != var1) {
          var2.method_37390();
       } else if (var2 instanceof PlayerEntity || this.method_745().method_14824(var2)) {
          var2.method_37306(var2.getPosX(), var2.method_37309(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
-         var2.field_41762 = var2.rotationPitch;
+         var2.prevRotationPitch = var2.rotationPitch;
          if (var2.field_41727) {
             var2.field_41697++;
             var2.method_37189();
@@ -446,7 +446,7 @@ public class ClientWorld extends World {
       while (var3.hasNext()) {
          Entry var4 = (Entry)var3.next();
          Entity var5 = (Entity)var4.getValue();
-         if (var5.field_41751) {
+         if (var5.removed) {
             var3.remove();
             this.method_757(var5);
          }
@@ -691,7 +691,7 @@ public class ClientWorld extends World {
       return var5 * 0.8F + 0.2F;
    }
 
-   public class_1343 method_750(BlockPos var1, float var2) {
+   public Vector3d method_750(BlockPos var1, float var2) {
       float var5 = this.method_13578(var2);
       float var6 = MathHelper.cos(var5 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
       var6 = MathHelper.clamp(var6, 0.0F, 1.0F);
@@ -733,10 +733,10 @@ public class ClientWorld extends World {
          var11 = var11 * (1.0F - var22) + 1.0F * var22;
       }
 
-      return new class_1343((double)var9, (double)var10, (double)var11);
+      return new Vector3d((double)var9, (double)var10, (double)var11);
    }
 
-   public class_1343 method_742(float var1) {
+   public Vector3d method_742(float var1) {
       float var4 = this.method_13578(var1);
       float var5 = MathHelper.cos(var4 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
       var5 = MathHelper.clamp(var5, 0.0F, 1.0F);
@@ -764,7 +764,7 @@ public class ClientWorld extends World {
          var8 = var8 * var12 + var18 * (1.0F - var12);
       }
 
-      return new class_1343((double)var6, (double)var7, (double)var8);
+      return new Vector3d((double)var6, (double)var7, (double)var8);
    }
 
    public float method_761(float var1) {

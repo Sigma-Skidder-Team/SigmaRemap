@@ -32,7 +32,7 @@ public class class_7548 extends class_5783 {
    @Override
    public void method_37123() {
       super.method_37123();
-      class_1343 var3 = this.method_37098();
+      Vector3d var3 = this.method_37098();
       class_7474 var4 = class_8462.method_38935(this, this::method_26164);
       if (var4 != null) {
          this.method_26160(var4);

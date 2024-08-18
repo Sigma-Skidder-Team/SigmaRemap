@@ -27,7 +27,7 @@ public class SearchModule extends Module {
 
    @EventListen
    public void method_43312(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_4267) {
             class_4267 var4 = (class_4267)var1.method_557();
             this.method_43310(client.theWorld.method_29542(var4.method_19867()).method_27352());
@@ -116,8 +116,8 @@ public class SearchModule extends Module {
    }
 
    @EventListen
-   public void method_43316(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_43316(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          if (client.thePlayer.field_41697 < 20) {
             this.field_47903.clear();
          } else {
@@ -165,7 +165,7 @@ public class SearchModule extends Module {
 
    @EventListen
    public void method_43314(class_3368 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.method_43313();
       }
    }

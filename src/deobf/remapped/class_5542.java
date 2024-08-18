@@ -182,7 +182,7 @@ public class class_5542 extends class_5467 {
          ItemStack var4 = this.method_26520(class_6943.field_35707);
          if (!var4.method_28022()) {
             for (int var5 = 0; var5 < 8; var5++) {
-               class_1343 var6 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0)
+               Vector3d var6 = new Vector3d(((double)this.field_41717.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0)
                   .method_6212(-this.rotationPitch * (float) (Math.PI / 180.0))
                   .method_6192(-this.rotationYaw * (float) (Math.PI / 180.0));
                this.world
@@ -620,7 +620,7 @@ public class class_5542 extends class_5467 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, (double)(0.55F * this.method_37277()), (double)(this.method_37086() * 0.4F));
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, (double)(0.55F * this.method_37277()), (double)(this.method_37086() * 0.4F));
    }
 }

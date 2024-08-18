@@ -8,7 +8,7 @@ import java.util.List;
 public class class_2244 extends Module {
    private List<class_8670> field_11176;
    public Entity field_11174;
-   public class_1343 field_11171;
+   public Vector3d field_11171;
    public Thread field_11172;
    public boolean field_11175 = false;
 
@@ -39,11 +39,11 @@ public class class_2244 extends Module {
    }
 
    public boolean method_10320() {
-      return this.field_11174 == null || this.field_11174.field_41736.method_6195(this.field_11171) > 6.0;
+      return this.field_11174 == null || this.field_11174.positionVec.method_6195(this.field_11171) > 6.0;
    }
 
    @EventListen
-   public void method_10321(class_5596 var1) {
+   public void method_10321(PlayerTickEvent var1) {
       if (client.thePlayer != null) {
          if (client.thePlayer.field_41697 % 14 == 0) {
             Entity var4 = this.method_10319();
@@ -57,7 +57,7 @@ public class class_2244 extends Module {
                      class_9806 var4x = new class_9806();
                      class_8670 var5 = new class_8670(new class_7047(client.thePlayer.method_37075()));
                      class_4265 var6 = new class_4265(this.field_11174 = var4);
-                     this.field_11171 = this.field_11174.field_41736;
+                     this.field_11171 = this.field_11174.positionVec;
                      class_1623 var7 = new class_1623(var5, var6);
                      var7.field_8450 = true;
                      var7.field_8451 = 310;

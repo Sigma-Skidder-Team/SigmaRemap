@@ -16,17 +16,17 @@ public class class_6377 {
          if (!var7.method_22007(class_6503.field_33095)) {
             float var8 = 0.25F + 0.75F * (float)var3 / 32.0F;
             var8 = 1.0F - (float)Math.pow((double)var8, 0.25);
-            class_1343 var9 = var2.method_750(var0.method_41630(), var1);
+            Vector3d var9 = var2.method_750(var0.method_41630(), var1);
             var9 = class_9300.method_42927(var9, var2, var0.method_41633(), var1);
             float var10 = (float)var9.field_7336;
             float var11 = (float)var9.field_7333;
             float var12 = (float)var9.field_7334;
             float var13 = MathHelper.clamp(MathHelper.cos(var2.method_13578(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
             class_859 var14 = var2.getBiomeManager();
-            class_1343 var15 = var0.method_41627().method_6193(2.0, 2.0, 2.0).method_6209(0.25);
-            class_1343 var16 = class_4555.method_21121(
+            Vector3d var15 = var0.method_41627().method_6193(2.0, 2.0, 2.0).method_6209(0.25);
+            Vector3d var16 = class_4555.method_21121(
                var15,
-               (var3x, var4x, var5) -> var2.method_738().method_34246(class_1343.method_6220(var14.method_3727(var3x, var4x, var5).method_28874()), var13)
+               (var3x, var4x, var5) -> var2.method_738().method_34246(Vector3d.method_6220(var14.method_3727(var3x, var4x, var5).method_28874()), var13)
             );
             var16 = class_9300.method_42860(var16, var2, var0.method_41633(), var1);
             field_32578 = (float)var16.method_61();
@@ -166,7 +166,7 @@ public class class_6377 {
       if (!var7.method_22007(class_6503.field_33094)) {
          if (var7.method_22007(class_6503.field_33095)) {
             Entity var29 = var0.method_41633();
-            class_1343 var36 = class_9300.method_42928(var2, var29.getPosX(), var29.method_37309() + 1.0, var29.getPosZ());
+            Vector3d var36 = class_9300.method_42928(var2, var29.getPosX(), var29.method_37309() + 1.0, var29.getPosZ());
             if (var36 != null) {
                field_32578 = (float)var36.field_7336;
                field_32585 = (float)var36.field_7333;
@@ -175,7 +175,7 @@ public class class_6377 {
          }
       } else {
          Entity var30 = var0.method_41633();
-         class_1343 var37 = class_9300.method_42917(var2, var30.getPosX(), var30.method_37309() + 1.0, var30.getPosZ());
+         Vector3d var37 = class_9300.method_42917(var2, var30.getPosX(), var30.method_37309() + 1.0, var30.getPosZ());
          if (var37 != null) {
             field_32578 = (float)var37.field_7336;
             field_32585 = (float)var37.field_7333;

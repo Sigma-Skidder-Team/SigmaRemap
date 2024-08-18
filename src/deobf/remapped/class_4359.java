@@ -149,7 +149,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       if (this.method_26530() && this.method_37285() && this.method_20227()) {
          this.method_37092(0.01F, var1);
          this.method_37226(class_7412.field_37839, this.method_37098());

@@ -42,7 +42,7 @@ public class Box {
       );
    }
 
-   public Box(class_1343 var1, class_1343 var2) {
+   public Box(Vector3d var1, Vector3d var2) {
       this(var1.field_7336, var1.field_7333, var1.field_7334, var2.field_7336, var2.field_7333, var2.field_7334);
    }
 
@@ -57,7 +57,7 @@ public class Box {
       );
    }
 
-   public static Box method_18911(class_1343 var0) {
+   public static Box method_18911(Vector3d var0) {
       return new Box(var0.field_7336, var0.field_7333, var0.field_7334, var0.field_7336 + 1.0, var0.field_7333 + 1.0, var0.field_7334 + 1.0);
    }
 
@@ -149,7 +149,7 @@ public class Box {
       return new Box(var9, var11, var13, var15, var17, var19);
    }
 
-   public Box method_18929(class_1343 var1) {
+   public Box method_18929(Vector3d var1) {
       return this.method_18928(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 
@@ -238,7 +238,7 @@ public class Box {
       );
    }
 
-   public Box method_18920(class_1343 var1) {
+   public Box method_18920(Vector3d var1) {
       return this.method_18918(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 
@@ -255,7 +255,7 @@ public class Box {
          && this.field_19942 > var5;
    }
 
-   public boolean method_18908(class_1343 var1, class_1343 var2) {
+   public boolean method_18908(Vector3d var1, Vector3d var2) {
       return this.method_18907(
          Math.min(var1.field_7336, var2.field_7336),
          Math.min(var1.field_7333, var2.field_7333),
@@ -266,7 +266,7 @@ public class Box {
       );
    }
 
-   public boolean method_18903(class_1343 var1) {
+   public boolean method_18903(Vector3d var1) {
       return this.method_18902(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 
@@ -302,7 +302,7 @@ public class Box {
       return this.grow(-var1);
    }
 
-   public Optional<class_1343> method_18923(class_1343 var1, class_1343 var2) {
+   public Optional<Vector3d> method_18923(Vector3d var1, Vector3d var2) {
       double[] var5 = new double[]{1.0};
       double var6 = var2.field_7336 - var1.field_7336;
       double var8 = var2.field_7333 - var1.field_7333;
@@ -310,14 +310,14 @@ public class Box {
       Direction var12 = method_18904(this, var1, var5, (Direction)null, var6, var8, var10);
       if (var12 != null) {
          double var13 = var5[0];
-         return Optional.<class_1343>of(var1.method_6214(var13 * var6, var13 * var8, var13 * var10));
+         return Optional.<Vector3d>of(var1.method_6214(var13 * var6, var13 * var8, var13 * var10));
       } else {
-         return Optional.<class_1343>empty();
+         return Optional.<Vector3d>empty();
       }
    }
 
    @Nullable
-   public static class_9529 method_18922(Iterable<Box> var0, class_1343 var1, class_1343 var2, BlockPos var3) {
+   public static class_9529 method_18922(Iterable<Box> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
       double[] var6 = new double[]{1.0};
       Direction var7 = null;
       double var8 = var2.field_7336 - var1.field_7336;
@@ -337,7 +337,7 @@ public class Box {
    }
 
    @Nullable
-   private static Direction method_18904(Box var0, class_1343 var1, double[] var2, Direction var3, double var4, double var6, double var8) {
+   private static Direction method_18904(Box var0, Vector3d var1, double[] var2, Direction var3, double var4, double var6, double var8) {
       if (!(var4 > 1.0E-7)) {
          if (var4 < -1.0E-7) {
             var3 = method_18916(
@@ -509,8 +509,8 @@ public class Box {
          || Double.isNaN(this.field_19942);
    }
 
-   public class_1343 method_18926() {
-      return new class_1343(
+   public Vector3d method_18926() {
+      return new Vector3d(
          MathHelper.lerp(0.5, this.field_19941, this.field_19940),
          MathHelper.lerp(0.5, this.field_19937, this.field_19939),
          MathHelper.lerp(0.5, this.field_19938, this.field_19942)

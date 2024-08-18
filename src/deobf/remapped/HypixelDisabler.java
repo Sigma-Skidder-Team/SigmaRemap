@@ -116,7 +116,7 @@ public class HypixelDisabler extends Module {
    @EventListen
    public void method_32069(PacketEvent var1) {
       if (client.thePlayer != null && this.field_36207) {
-         if (this.method_42015() || this.getBooleanValueByName("Instant")) {
+         if (this.isEnabled() || this.getBooleanValueByName("Instant")) {
             if (var1.method_557() instanceof class_509) {
                this.getModule().method_41999();
                if (!this.getBooleanValueByName("Instant")) {

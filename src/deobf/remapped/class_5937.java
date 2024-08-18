@@ -78,7 +78,7 @@ public class class_5937 {
             }
 
             BlockPos var15 = this.field_30282.thePlayer.method_37075();
-            if (this.field_30282.thePlayer.field_41736.field_7333 % 1.0 >= 0.93) {
+            if (this.field_30282.thePlayer.positionVec.field_7333 % 1.0 >= 0.93) {
                var15 = var15.method_6081();
             }
 
@@ -125,7 +125,7 @@ public class class_5937 {
                var8 = this.field_30284.get(var7);
                var9 = var8.field_44477;
                float var18 = class_7211.method_33007(this.field_30282.thePlayer.method_37245(), var8.field_44468.method_32363())[0];
-               float var19 = class_7211.method_33007(new class_1343(0.0, 0.0, 0.0), this.field_30282.thePlayer.method_37098().method_6213())[0];
+               float var19 = class_7211.method_33007(new Vector3d(0.0, 0.0, 0.0), this.field_30282.thePlayer.method_37098().method_6213())[0];
                float var20 = Math.abs(class_314.method_1422(var19, var18));
                if (!this.field_30282.thePlayer.onGround && var20 > 60.0F
                   || !this.field_30282.thePlayer.onGround && var20 > 45.0F && this.field_30282.thePlayer.method_37098().method_6217() > 0.24
@@ -136,7 +136,7 @@ public class class_5937 {
             }
 
             if (var10 < var12
-               && (var14 || var8.field_44472.size() > 0 && (double)this.field_30282.thePlayer.field_41702.field_13230 > var8.field_44468.method_32375())) {
+               && (var14 || var8.field_44472.size() > 0 && (double)this.field_30282.thePlayer.position.field_13230 > var8.field_44468.method_32375())) {
                class_314.method_1463(this.field_30282.thePlayer.method_37098().field_7336 * 0.5);
                class_314.method_1405(this.field_30282.thePlayer.method_37098().field_7334 * 0.5);
             }
@@ -180,7 +180,7 @@ public class class_5937 {
                   if (var8.field_44469 == class_8104.field_41502) {
                      var38 = var10 < 1.14;
                      if (this.field_30286 != null) {
-                        var38 &= (double)this.field_30282.thePlayer.field_41702.field_13230 - var8.field_44468.method_32375() != 0.0;
+                        var38 &= (double)this.field_30282.thePlayer.position.field_13230 - var8.field_44468.method_32375() != 0.0;
                      }
                   }
 
@@ -211,11 +211,11 @@ public class class_5937 {
             }
 
             this.field_30282.thePlayer.rotationYaw = var37;
-            if (var36 && !this.field_30282.thePlayer.onGround && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+            if (var36 && !this.field_30282.thePlayer.onGround && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
                class_314.method_1463(0.0);
                class_314.method_1405(0.0);
             } else {
-               if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()
+               if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()
                   && !class_314.method_1413(this.field_30282.thePlayer, 5.0F)) {
                   var36 = true;
                }

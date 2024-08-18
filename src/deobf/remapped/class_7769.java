@@ -38,9 +38,9 @@ public class class_7769<T extends LivingEntity> extends class_1498<T> {
          }
       } else {
          float var13 = 1.0F;
-         class_1343 var14 = var1.method_37098();
+         Vector3d var14 = var1.method_37098();
          if (var14.field_7333 < 0.0) {
-            class_1343 var15 = var14.method_6213();
+            Vector3d var15 = var14.method_6213();
             var13 = 1.0F - (float)Math.pow(-var15.field_7333, 1.5);
          }
 

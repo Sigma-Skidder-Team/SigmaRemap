@@ -21,12 +21,12 @@ public class class_1453 extends Entity {
    public class_1453(World var1, double var2, double var4, double var6, class_2522 var8) {
       this(EntityType.field_34245, var1);
       this.field_7822 = var8;
-      this.field_41759 = true;
+      this.preventEntitySpawning = true;
       this.method_37256(var2, var4 + (double)((1.0F - this.method_37074()) / 2.0F), var6);
-      this.method_37215(class_1343.field_7335);
-      this.field_41767 = var2;
-      this.field_41698 = var4;
-      this.field_41725 = var6;
+      this.method_37215(Vector3d.ZERO);
+      this.prevPosX = var2;
+      this.prevPosY = var4;
+      this.prevPosZ = var6;
       this.method_6687(this.method_37075());
    }
 
@@ -55,7 +55,7 @@ public class class_1453 extends Entity {
 
    @Override
    public boolean method_37167() {
-      return !this.field_41751;
+      return !this.removed;
    }
 
    @Override
@@ -88,7 +88,7 @@ public class class_1453 extends Entity {
                class_9529 var9 = this.world
                   .method_28265(
                      new class_972(
-                        new class_1343(this.field_41767, this.field_41698, this.field_41725),
+                        new Vector3d(this.prevPosX, this.prevPosY, this.prevPosZ),
                         this.method_37245(),
                         class_3132.field_15553,
                         class_9583.field_48749,

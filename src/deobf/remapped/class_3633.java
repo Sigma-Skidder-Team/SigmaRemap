@@ -112,7 +112,7 @@ public class class_3633 extends class_380 implements class_724 {
    }
 
    private void method_16927(Entity var1) {
-      class_1343 var4 = var1.method_37098();
+      Vector3d var4 = var1.method_37098();
       if (var4.field_7333 < 0.0) {
          double var5 = !(var1 instanceof LivingEntity) ? 0.8 : 1.0;
          var1.method_37214(var4.field_7336, -var4.field_7333 * 0.66F * var5, var4.field_7334);
@@ -191,7 +191,7 @@ public class class_3633 extends class_380 implements class_724 {
       return var0.method_28262(var1.method_6100()).method_8360() instanceof class_3633;
    }
 
-   public static Optional<class_1343> method_16932(EntityType<?> var0, class_1449 var1, BlockPos var2, float var3) {
+   public static Optional<Vector3d> method_16932(EntityType<?> var0, class_1449 var1, BlockPos var2, float var3) {
       Direction var6 = var1.method_28262(var2).<Direction>method_10313(field_1543);
       Direction var7 = var6.method_1042();
       Direction var8 = !var7.method_1052(var3) ? var7 : var7.method_1046();
@@ -204,7 +204,7 @@ public class class_3633 extends class_380 implements class_724 {
       }
    }
 
-   private static Optional<class_1343> method_16937(EntityType<?> var0, class_1449 var1, BlockPos var2, Direction var3, Direction var4) {
+   private static Optional<Vector3d> method_16937(EntityType<?> var0, class_1449 var1, BlockPos var2, Direction var3, Direction var4) {
       int[][] var7 = method_16933(var3, var4);
       Optional var8 = method_16924(var0, var1, var2, var7, true);
       if (!var8.isPresent()) {
@@ -232,18 +232,18 @@ public class class_3633 extends class_380 implements class_724 {
       }
    }
 
-   private static Optional<class_1343> method_16924(EntityType<?> var0, class_1449 var1, BlockPos var2, int[][] var3, boolean var4) {
+   private static Optional<Vector3d> method_16924(EntityType<?> var0, class_1449 var1, BlockPos var2, int[][] var3, boolean var4) {
       class_2921 var7 = new class_2921();
 
       for (int[] var11 : var3) {
          var7.method_13362(var2.getX() + var11[0], var2.getY(), var2.getZ() + var11[1]);
-         class_1343 var12 = class_160.method_650(var0, var1, var7, var4);
+         Vector3d var12 = class_160.method_650(var0, var1, var7, var4);
          if (var12 != null) {
-            return Optional.<class_1343>of(var12);
+            return Optional.<Vector3d>of(var12);
          }
       }
 
-      return Optional.<class_1343>empty();
+      return Optional.<Vector3d>empty();
    }
 
    @Override

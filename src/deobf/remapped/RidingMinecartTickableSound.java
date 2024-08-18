@@ -27,7 +27,7 @@ public class RidingMinecartTickableSound extends class_6165 {
 
    @Override
    public void method_29511() {
-      if (!this.field_45863.field_41751 && this.field_45864.isPassenger() && this.field_45864.getRidingEntity() == this.field_45863) {
+      if (!this.field_45863.removed && this.field_45864.isPassenger() && this.field_45864.getRidingEntity() == this.field_45863) {
          float var3 = MathHelper.sqrt(Entity.method_37266(this.field_45863.method_37098()));
          if (!((double)var3 >= 0.01)) {
             this.field_5766 = 0.0F;

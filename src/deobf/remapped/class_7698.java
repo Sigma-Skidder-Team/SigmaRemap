@@ -53,8 +53,8 @@ public class class_7698 extends class_3599 {
       }
 
       if (this.field_39078.method_26927().method_5591()) {
-         class_1343 var5 = class_1343.method_6200(var3);
-         class_1343 var6 = class_3425.method_15841(this.field_39078, 16, 3, var5, (float) (Math.PI / 10));
+         Vector3d var5 = Vector3d.method_6200(var3);
+         Vector3d var6 = class_3425.method_15841(this.field_39078, 16, 3, var5, (float) (Math.PI / 10));
          if (var6 == null) {
             var6 = class_3425.method_15837(this.field_39078, 8, 7, var5);
          }

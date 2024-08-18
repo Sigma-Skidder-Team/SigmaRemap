@@ -29,7 +29,7 @@ public class AutoSoupModule extends Module {
 
    @EventListen
    private void method_26741(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          this.field_29805++;
          this.field_29804++;
          String var4 = this.getStringValueByName("Refill mode");
@@ -60,7 +60,7 @@ public class AutoSoupModule extends Module {
 
    @EventListen
    private void method_26740(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_29810 && var1.method_10047() instanceof class_8559) {
             class_8559 var4 = (class_8559)var1.method_10047();
             if (var4.method_39391() == class_2105.field_10551) {

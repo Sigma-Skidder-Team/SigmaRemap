@@ -29,12 +29,12 @@ public class class_1198 extends class_3599 {
       BlockPos var8 = new BlockPos(var5, var6, var7);
       class_2522 var9 = var4.method_28262(var8);
       class_6414 var10 = var9.method_8360();
-      class_1343 var11 = new class_1343(
+      Vector3d var11 = new Vector3d(
          (double) MathHelper.floor(this.field_6704.getPosX()) + 0.5,
          (double)var6 + 0.5,
          (double) MathHelper.floor(this.field_6704.getPosZ()) + 0.5
       );
-      class_1343 var12 = new class_1343((double)var5 + 0.5, (double)var6 + 0.5, (double)var7 + 0.5);
+      Vector3d var12 = new Vector3d((double)var5 + 0.5, (double)var6 + 0.5, (double)var7 + 0.5);
       class_9529 var13 = var4.method_28265(new class_972(var11, var12, class_3132.field_15549, class_9583.field_48747, this.field_6704));
       boolean var14 = var13.method_43955().equals(var8);
       if (var10.method_29299(class_2351.field_11801) && var14) {

@@ -143,7 +143,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_1343 method_37282(LivingEntity var1) {
+   public Vector3d method_37282(LivingEntity var1) {
       Direction var4 = this.method_37235();
       if (var4.method_1029() == class_9249.field_47216) {
          return super.method_37282(var1);
@@ -161,7 +161,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
                var7.method_13362(var6.getX() + var14[0], var6.getY(), var6.getZ() + var14[1]);
                double var15 = this.world.method_28259(var7);
                if (class_160.method_648(var15)) {
-                  class_1343 var17 = class_1343.method_6219(var7, var15);
+                  Vector3d var17 = Vector3d.method_6219(var7, var15);
                   if (class_160.method_647(this.world, var1, var10.method_18920(var17))) {
                      var1.method_37356(var9);
                      return var17;
@@ -196,7 +196,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       this.method_37517(this, this.field_48087, var1);
    }
 
@@ -206,7 +206,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public void method_37519(class_1343 var1) {
+   public void method_37519(Vector3d var1) {
       super.method_26431(var1);
    }
 
@@ -225,7 +225,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, (double)(0.6F * this.method_37277()), (double)(this.method_37086() * 0.4F));
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, (double)(0.6F * this.method_37277()), (double)(this.method_37086() * 0.4F));
    }
 }

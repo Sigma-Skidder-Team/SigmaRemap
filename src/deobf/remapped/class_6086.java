@@ -54,7 +54,7 @@ public class class_6086 extends class_1859 {
          String var6 = ((Module)var5.get(0)).getName();
          String var7 = this.field_31143
             + ((Module)var5.get(0)).getName().substring(this.field_31143.length(), var6.length())
-            + (!((Module)var5.get(0)).method_42015() ? " - Disabled" : " - Enabled");
+            + (!((Module)var5.get(0)).isEnabled() ? " - Disabled" : " - Enabled");
          FontManager.method_87(
             this.field_31142.method_32097(),
             (float)(this.field_36270 + 54),

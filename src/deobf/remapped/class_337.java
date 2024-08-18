@@ -172,7 +172,7 @@ public class class_337 extends MonsterEntity {
                }
             } else {
                this.field_1255 = 2.0F;
-               class_1343 var3 = this.method_37098();
+               Vector3d var3 = this.method_37098();
                if (var3.field_7333 > 0.0 && this.field_1251 && !this.method_37378()) {
                   this.world
                      .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), this.method_1554(), this.method_37197(), 1.0F, 1.0F, false);
@@ -194,7 +194,7 @@ public class class_337 extends MonsterEntity {
             }
 
             if (this.method_1553() && this.method_37285()) {
-               class_1343 var17 = this.method_37307(0.0F);
+               Vector3d var17 = this.method_37307(0.0F);
 
                for (int var4 = 0; var4 < 2; var4++) {
                   this.world
@@ -319,7 +319,7 @@ public class class_337 extends MonsterEntity {
    }
 
    @Override
-   public void method_26431(class_1343 var1) {
+   public void method_26431(Vector3d var1) {
       if (this.method_26530() && this.method_37285()) {
          this.method_37092(0.1F, var1);
          this.method_37226(class_7412.field_37839, this.method_37098());

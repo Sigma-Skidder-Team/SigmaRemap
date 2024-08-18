@@ -81,7 +81,7 @@ public class class_1275 implements class_1517 {
    }
 
    private void method_5716(class_6331 var1) {
-      class_1343 var4 = this.method_5713(var1, new BlockPos(this.field_7017, this.field_7015, this.field_7012));
+      Vector3d var4 = this.method_5713(var1, new BlockPos(this.field_7017, this.field_7015, this.field_7012));
       if (var4 != null) {
          class_2811 var5;
          try {
@@ -98,14 +98,14 @@ public class class_1275 implements class_1517 {
    }
 
    @Nullable
-   private class_1343 method_5713(class_6331 var1, BlockPos var2) {
+   private Vector3d method_5713(class_6331 var1, BlockPos var2) {
       for (int var5 = 0; var5 < 10; var5++) {
          int var6 = var2.getX() + var1.field_33033.nextInt(16) - 8;
          int var7 = var2.getZ() + var1.field_33033.nextInt(16) - 8;
          int var8 = var1.method_22562(class_3801.field_18592, var6, var7);
          BlockPos var9 = new BlockPos(var6, var8, var7);
          if (var1.method_28994(var9) && MonsterEntity.method_5199(EntityType.field_34297, var1, class_2417.field_12040, var9, var1.field_33033)) {
-            return class_1343.method_6200(var9);
+            return Vector3d.method_6200(var9);
          }
       }
 

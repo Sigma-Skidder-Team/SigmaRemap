@@ -12,7 +12,7 @@ public class class_8734 {
    private Module field_44747;
    public MinecraftClient field_44744 = MinecraftClient.getInstance();
    public boolean field_44749;
-   public HashMap<Entity, List<class_9097<class_1343, Long>>> field_44743 = new HashMap<Entity, List<class_9097<class_1343, Long>>>();
+   public HashMap<Entity, List<class_9097<Vector3d, Long>>> field_44743 = new HashMap<Entity, List<class_9097<Vector3d, Long>>>();
 
    public class_8734(Module var1) {
       this.field_44747 = var1;
@@ -140,7 +140,7 @@ public class class_8734 {
       Iterator var24 = var4.iterator();
       SecondModule var25 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(DisablerModule.class);
       float var7 = 150.0F;
-      if (var25.method_42015() && var25.getStringValueByName("Type").equalsIgnoreCase("PingSpoof")) {
+      if (var25.isEnabled() && var25.getStringValueByName("Type").equalsIgnoreCase("PingSpoof")) {
          var7 += var25.method_16864().getFloatValueByName("Lag");
       }
 
@@ -175,14 +175,14 @@ public class class_8734 {
             var24.remove();
          } else if (!(var9 instanceof PlayerEntity)
             || !class_5876.method_26760((PlayerEntity)var9)
-            || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
-            class_1343 var10 = class_314.method_1429(var9);
+            || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).isEnabled()) {
+            Vector3d var10 = class_314.method_1429(var9);
             if (!(this.field_44744.thePlayer.method_37175(var9) < 40.0F)) {
                if (this.field_44743.containsKey(var9)) {
                   this.field_44743.remove(var9);
                }
             } else if (!this.field_44743.containsKey(var9)) {
-               this.field_44743.put(var9, new ArrayList<class_9097<class_1343, Long>>());
+               this.field_44743.put(var9, new ArrayList<class_9097<Vector3d, Long>>());
             } else {
                for (List var12 : this.field_44743.values()) {
                   int var13 = var12.size();
@@ -207,14 +207,14 @@ public class class_8734 {
                   List var27 = this.field_44743.get(var9);
                   if (var27 != null) {
                      for (class_9097 var30 : var27) {
-                        class_1343 var31 = (class_1343)var30.method_41933();
+                        Vector3d var31 = (Vector3d)var30.method_41933();
                         double var19 = 0.15;
                         Box var21 = new Box(
                            var31.field_7336 - var19,
                            var31.field_7333,
                            var31.field_7334 - var19,
                            var31.field_7336 + var19,
-                           var31.field_7333 + this.field_44744.thePlayer.field_41712.method_18901(),
+                           var31.field_7333 + this.field_44744.thePlayer.boundingBox.method_18901(),
                            var31.field_7334 + var19
                         );
                         double var22 = class_314.method_1420(var21);

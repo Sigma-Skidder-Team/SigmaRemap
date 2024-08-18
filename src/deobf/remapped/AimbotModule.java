@@ -38,7 +38,7 @@ public class AimbotModule extends SecondModule {
                               } else if (!var7.method_37367()) {
                                  if (var7 instanceof PlayerEntity
                                     && class_5876.method_26760((PlayerEntity)var7)
-                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).isEnabled()) {
                                     var6.remove();
                                  } else if (var5 == null || client.thePlayer.method_37175(var7) < client.thePlayer.method_37175(var5)) {
                                     var5 = var7;

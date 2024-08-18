@@ -14,7 +14,7 @@ public class class_9851 extends class_2833 {
    public void method_12883() {
       if (this.field_13878 == class_1737.field_8946 && this.field_49860-- <= 0) {
          this.field_49860 = this.field_49860 + this.field_49858.method_26594().nextInt(5) + 2;
-         class_1343 var3 = new class_1343(
+         Vector3d var3 = new Vector3d(
             this.field_13884 - this.field_49858.getPosX(),
             this.field_13886 - this.field_49858.method_37309(),
             this.field_13880 - this.field_49858.getPosZ()
@@ -29,7 +29,7 @@ public class class_9851 extends class_2833 {
       }
    }
 
-   private boolean method_45361(class_1343 var1, int var2) {
+   private boolean method_45361(Vector3d var1, int var2) {
       Box var5 = this.field_49858.getBoundingBox();
 
       for (int var6 = 1; var6 < var2; var6++) {

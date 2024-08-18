@@ -25,7 +25,7 @@ public class NoGroundCriticals extends Module {
    @EventListen
    @class_315
    private void method_34126(class_8544 var1) {
-      if (this.method_42015() && !(var1.method_39326() < 0.625)) {
+      if (this.isEnabled() && !(var1.method_39326() < 0.625)) {
          if (this.field_38243 == 0 && this.field_38245) {
             var1.method_29715(true);
          }
@@ -34,7 +34,7 @@ public class NoGroundCriticals extends Module {
 
    @EventListen
    private void method_34124(class_2911 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_38243 == 1) {
             var1.method_29715(true);
             this.field_38244 = true;
@@ -45,7 +45,7 @@ public class NoGroundCriticals extends Module {
    @EventListen
    @class_315
    private void method_34125(class_1393 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (client.thePlayer.onGround) {
             this.field_38246 = false;
             if (this.field_38244 && this.field_38243 != 1) {

@@ -99,7 +99,7 @@ public class class_793 implements class_8773 {
    public Collection<class_7461> method_40323() {
       class_7474 var3 = this.field_4259.field_9587;
       if (var3 != null && var3.method_33990() == class_1430.field_7717) {
-         class_1343 var4 = var3.method_33993();
+         Vector3d var4 = var3.method_33993();
          return Collections.<class_7461>singleton(new class_7461(method_3522(var4.field_7336), method_3522(var4.field_7333), method_3522(var4.field_7334)));
       } else {
          return class_8773.super.method_40323();

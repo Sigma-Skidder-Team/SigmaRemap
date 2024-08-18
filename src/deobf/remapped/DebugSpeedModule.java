@@ -7,16 +7,16 @@ import java.math.RoundingMode;
 public class DebugSpeedModule extends Module {
    public FileWriter field_49935;
    public int field_49934 = 1;
-   public class_1343 field_49933;
+   public Vector3d field_49933;
 
    public DebugSpeedModule() {
       super(Category.MISC, "DebugSpeed", "");
    }
 
    @EventListen
-   public void method_45511(class_5596 var1) {
-      if (this.method_42015()) {
-         class_1343 var4 = new class_1343(client.thePlayer.getPosX(), 0.0, client.thePlayer.getPosZ());
+   public void method_45511(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
+         Vector3d var4 = new Vector3d(client.thePlayer.getPosX(), 0.0, client.thePlayer.getPosZ());
          if (client.thePlayer.onGround && this.field_49933 != null) {
             double var5 = var4.method_6195(this.field_49933) / (double)this.field_49934;
             var5 *= (double) client.theTimer.timerSpeed;

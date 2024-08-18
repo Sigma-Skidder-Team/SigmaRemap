@@ -22,15 +22,15 @@ public class class_527 implements Packet<class_392> {
       return (double)var0 / 4096.0;
    }
 
-   public class_1343 method_2558(class_1343 var1) {
+   public Vector3d method_2558(Vector3d var1) {
       double var4 = this.field_3209 != 0 ? method_2555(method_2563(var1.field_7336) + (long)this.field_3209) : var1.field_7336;
       double var6 = this.field_3213 != 0 ? method_2555(method_2563(var1.field_7333) + (long)this.field_3213) : var1.field_7333;
       double var8 = this.field_3207 != 0 ? method_2555(method_2563(var1.field_7334) + (long)this.field_3207) : var1.field_7334;
-      return new class_1343(var4, var6, var8);
+      return new Vector3d(var4, var6, var8);
    }
 
-   public static class_1343 method_2556(long var0, long var2, long var4) {
-      return new class_1343((double)var0, (double)var2, (double)var4).method_6209(2.4414062E-4F);
+   public static Vector3d method_2556(long var0, long var2, long var4) {
+      return new Vector3d((double)var0, (double)var2, (double)var4).method_6209(2.4414062E-4F);
    }
 
    public class_527() {

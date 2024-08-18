@@ -52,7 +52,7 @@ public class class_6837<T extends LivingEntity> extends class_3599 {
             this.field_35261.getBoundingBox().method_18899((double)this.field_35250, 3.0, (double)this.field_35250)
          );
       if (this.field_35258 != null) {
-         class_1343 var3 = class_3425.method_15835(this.field_35261, 16, 7, this.field_35258.method_37245());
+         Vector3d var3 = class_3425.method_15835(this.field_35261, 16, 7, this.field_35258.method_37245());
          if (var3 != null) {
             if (!(this.field_35258.method_37273(var3.field_7336, var3.field_7333, var3.field_7334) < this.field_35258.method_37275(this.field_35261))) {
                this.field_35253 = this.field_35257.method_5614(var3.field_7336, var3.field_7333, var3.field_7334, 0);

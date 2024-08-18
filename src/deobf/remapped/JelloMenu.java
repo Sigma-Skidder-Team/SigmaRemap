@@ -123,7 +123,7 @@ public class JelloMenu extends class_2596 {
       this.field_4007.method_32104(this.field_4007.method_32109() < this.method_32109() && this.field_4007.method_32137() < this.method_32137());
       super.method_32145(var1, var2);
       class_314.method_1399(Math.min(1.0F, field_4000.method_11123() * 4.0F));
-      this.field_4010.method_32104(SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BrainFreezeModule.class).method_42015());
+      this.field_4010.method_32104(SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BrainFreezeModule.class).isEnabled());
       if (this.field_4002 != null) {
          int var5 = var1 - this.field_4002.method_32155();
          int var6 = var2 - this.field_4002.method_32093();

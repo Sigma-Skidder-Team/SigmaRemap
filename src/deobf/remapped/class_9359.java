@@ -50,10 +50,10 @@ public class class_9359 extends PlayerEntity implements class_117 {
    private boolean field_47789;
    private boolean field_47783;
    private final class_3071 field_47805 = new class_3071();
-   private class_1343 field_47797;
+   private Vector3d field_47797;
    private int field_47795;
    private boolean field_47774;
-   private class_1343 field_47793;
+   private Vector3d field_47793;
    private class_6979 field_47803 = class_6979.method_31893(0, 0, 0);
    private class_5621<World> field_47782 = World.field_33048;
    private BlockPos field_47779;
@@ -140,7 +140,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
 
       if (var1.contains("enteredNetherPosition", 10)) {
          CompoundNBT var4 = var1.getCompound("enteredNetherPosition");
-         this.field_47793 = new class_1343(var4.method_25932("x"), var4.method_25932("y"), var4.method_25932("z"));
+         this.field_47793 = new Vector3d(var4.method_25932("x"), var4.method_25932("y"), var4.method_25932("z"));
       }
 
       this.field_47783 = var1.getBoolean("seenCredits");
@@ -523,8 +523,8 @@ public class class_9359 extends PlayerEntity implements class_117 {
    public class_9606 method_37081(class_6331 var1) {
       class_9606 var4 = super.method_37081(var1);
       if (var4 != null && this.world.method_29545() == World.field_33048 && var1.method_29545() == World.field_33038) {
-         class_1343 var5 = var4.field_48952.method_6214(0.0, -1.0, 0.0);
-         return new class_9606(var5, class_1343.field_7335, 90.0F, 0.0F);
+         Vector3d var5 = var4.field_48952.method_6214(0.0, -1.0, 0.0);
+         return new class_9606(var5, Vector3d.ZERO, 90.0F, 0.0F);
       } else {
          return var4;
       }
@@ -565,7 +565,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
          class_8704 var7 = this.field_47801.method_1600();
          var7.method_39976(this);
          var4.method_28964(this);
-         this.field_41751 = false;
+         this.removed = false;
          class_9606 var8 = this.method_37081(var1);
          if (var8 != null) {
             var4.method_29599().startSection("moving");
@@ -683,7 +683,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
             if (!this.method_3186()) {
                double var6 = 8.0;
                double var8 = 5.0;
-               class_1343 var10 = class_1343.method_6200(var1);
+               Vector3d var10 = Vector3d.method_6200(var1);
                List var11 = this.world
                   .<MonsterEntity>method_25869(
                      MonsterEntity.class,
@@ -727,7 +727,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
    }
 
    private boolean method_43258(BlockPos var1) {
-      class_1343 var4 = class_1343.method_6200(var1);
+      Vector3d var4 = Vector3d.method_6200(var1);
       return Math.abs(this.getPosX() - var4.method_61()) <= 3.0
          && Math.abs(this.method_37309() - var4.method_60()) <= 2.0
          && Math.abs(this.getPosZ() - var4.method_62()) <= 3.0;
@@ -998,13 +998,13 @@ public class class_9359 extends PlayerEntity implements class_117 {
    }
 
    @Override
-   public void method_37332(class_6139 var1, class_1343 var2) {
+   public void method_37332(class_6139 var1, Vector3d var2) {
       super.method_37332(var1, var2);
       this.field_47794.method_4156(new class_2436(var1, var2.field_7336, var2.field_7333, var2.field_7334));
    }
 
    public void method_43282(class_6139 var1, Entity var2, class_6139 var3) {
-      class_1343 var6 = var3.method_28187(var2);
+      Vector3d var6 = var3.method_28187(var2);
       super.method_37332(var1, var6);
       this.field_47794.method_4156(new class_2436(var1, var2, var3));
    }
@@ -1294,7 +1294,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
          this.field_47794.method_4156(new class_9275(var13.method_8661(), var13.method_8662()));
          this.field_47801.method_1600().method_39976(this);
          var12.method_28964(this);
-         this.field_41751 = false;
+         this.removed = false;
          this.method_37144(var2, var4, var6, var8, var9);
          this.method_37120(var1);
          var1.method_28966(this);

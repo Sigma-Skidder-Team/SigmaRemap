@@ -16,7 +16,7 @@ public class class_1600 implements class_7279 {
    }
 
    public boolean test(class_2792 var1) {
-      class_1343 var4 = var1.<class_1343>method_12698(class_8712.field_44671);
+      Vector3d var4 = var1.<Vector3d>method_12698(class_8712.field_44671);
       return var4 != null
          && this.field_8329
             .method_23401(

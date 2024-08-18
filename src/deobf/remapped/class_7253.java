@@ -13,10 +13,10 @@ public class class_7253 extends class_8285 {
 
    @Nullable
    @Override
-   public class_1343 method_38233() {
+   public Vector3d method_38233() {
       float var3 = this.field_42465.world.field_33033.nextFloat();
       if (!(this.field_42465.world.field_33033.nextFloat() < 0.3F)) {
-         class_1343 var4;
+         Vector3d var4;
          if (!(var3 < 0.7F)) {
             var4 = this.method_33150();
             if (var4 == null) {
@@ -36,17 +36,17 @@ public class class_7253 extends class_8285 {
    }
 
    @Nullable
-   private class_1343 method_33149() {
+   private Vector3d method_33149() {
       return class_3425.method_15834(this.field_42465, 10, 7);
    }
 
    @Nullable
-   private class_1343 method_33154() {
+   private Vector3d method_33154() {
       class_6331 var3 = (class_6331)this.field_42465.world;
       List var4 = var3.<class_7666>method_29583(EntityType.field_34276, this.field_42465.getBoundingBox().grow(32.0), this::method_33153);
       if (!var4.isEmpty()) {
          class_7666 var5 = (class_7666)var4.get(this.field_42465.world.field_33033.nextInt(var4.size()));
-         class_1343 var6 = var5.method_37245();
+         Vector3d var6 = var5.method_37245();
          return class_3425.method_15838(this.field_42465, 10, 7, var6);
       } else {
          return null;
@@ -54,11 +54,11 @@ public class class_7253 extends class_8285 {
    }
 
    @Nullable
-   private class_1343 method_33150() {
+   private Vector3d method_33150() {
       class_6979 var3 = this.method_33151();
       if (var3 != null) {
          BlockPos var4 = this.method_33152(var3);
-         return var4 != null ? class_3425.method_15838(this.field_42465, 10, 7, class_1343.method_6200(var4)) : null;
+         return var4 != null ? class_3425.method_15838(this.field_42465, 10, 7, Vector3d.method_6200(var4)) : null;
       } else {
          return null;
       }

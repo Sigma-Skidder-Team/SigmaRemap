@@ -11,8 +11,8 @@ public class class_3539 extends WaterAvoidingRandomWalkingGoal {
 
    @Nullable
    @Override
-   public class_1343 method_38233() {
-      class_1343 var3 = null;
+   public Vector3d method_38233() {
+      Vector3d var3 = null;
       if (this.field_42465.method_37285()) {
          var3 = class_3425.method_15834(this.field_42465, 15, 15);
       }
@@ -25,7 +25,7 @@ public class class_3539 extends WaterAvoidingRandomWalkingGoal {
    }
 
    @Nullable
-   private class_1343 method_16322() {
+   private Vector3d method_16322() {
       BlockPos var3 = this.field_42465.method_37075();
       class_2921 var4 = new class_2921();
       class_2921 var5 = new class_2921();
@@ -44,7 +44,7 @@ public class class_3539 extends WaterAvoidingRandomWalkingGoal {
             if (var9
                && this.field_42465.world.method_22548(var7)
                && this.field_42465.world.method_22548(var4.method_13371(var7, Direction.field_817))) {
-               return class_1343.method_6200(var7);
+               return Vector3d.method_6200(var7);
             }
          }
       }

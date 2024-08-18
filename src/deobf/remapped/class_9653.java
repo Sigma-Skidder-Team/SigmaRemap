@@ -69,7 +69,7 @@ public class class_9653 extends class_9883 {
       this.field_49159 = this.field_49159 + this.field_49160 * 15.0F * (float) (Math.PI / 180.0);
       class_9825.method_45286(
          this.field_49164,
-         class_1343.method_6205(class_9825.method_45298(this.field_49164))
+         Vector3d.method_6205(class_9825.method_45298(this.field_49164))
             .method_6214(
                (double)(this.field_49163 * MathHelper.cos(this.field_49159)),
                (double)(-4.0F + this.field_49161),

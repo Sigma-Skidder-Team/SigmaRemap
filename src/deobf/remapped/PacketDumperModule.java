@@ -79,14 +79,14 @@ public class PacketDumperModule extends Module {
 
    @EventListen
    private void method_44435(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.method_44432(var1.method_10047(), true);
       }
    }
 
    @EventListen
    private void method_44431(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.method_44432(var1.method_557(), false);
       }
    }

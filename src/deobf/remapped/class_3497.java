@@ -23,7 +23,7 @@ public class class_3497 {
                               (class_9155)var0x.getSource(),
                               class_3469.method_15953(var0x, "name"),
                               ((class_9155)var0x.getSource()).method_42192(),
-                              class_1343.field_7335,
+                              Vector3d.ZERO,
                               0.0F,
                               0,
                               false,
@@ -37,7 +37,7 @@ public class class_3497 {
                                     (class_9155)var0x.getSource(),
                                     class_3469.method_15953(var0x, "name"),
                                     class_1029.method_4555(var0x, "pos"),
-                                    class_1343.field_7335,
+                                    Vector3d.ZERO,
                                     0.0F,
                                     0,
                                     false,
@@ -131,7 +131,7 @@ public class class_3497 {
    }
 
    private static int method_16079(
-      class_9155 var0, class_5079 var1, class_1343 var2, class_1343 var3, float var4, int var5, boolean var6, Collection<class_9359> var7
+           class_9155 var0, class_5079 var1, Vector3d var2, Vector3d var3, float var4, int var5, boolean var6, Collection<class_9359> var7
    ) throws CommandSyntaxException {
       int var10 = 0;
 

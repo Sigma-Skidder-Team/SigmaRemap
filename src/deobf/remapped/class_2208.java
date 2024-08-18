@@ -586,7 +586,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
    @Override
    public void method_5312() {
       super.method_5312();
-      if (!this.field_943.thePlayer.isAlive() || this.field_943.thePlayer.field_41751) {
+      if (!this.field_943.thePlayer.isAlive() || this.field_943.thePlayer.removed) {
          this.field_943.thePlayer.method_3207();
       }
    }

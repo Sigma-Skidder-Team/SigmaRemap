@@ -40,7 +40,7 @@ public class class_7272 extends class_5467 {
       if (!this.collidedHorizontally && (!this.field_29900.method_12877() || !(this.field_29900.method_12881() > this.method_37309() + 0.5))) {
          class_3998 var3 = this.field_29904.method_5594();
          if (var3 != null && !var3.method_18436()) {
-            class_1343 var4 = var3.method_18439(this);
+            Vector3d var4 = var3.method_18439(this);
             if (var4.field_7333 > this.method_37309() + 0.5) {
                return 0.5F;
             }
@@ -59,7 +59,7 @@ public class class_7272 extends class_5467 {
       if (var3 > 0.0) {
          double var5 = method_37266(this.method_37098());
          if (var5 < 0.01) {
-            this.method_37092(0.1F, new class_1343(0.0, 0.0, 1.0));
+            this.method_37092(0.1F, new Vector3d(0.0, 0.0, 1.0));
          }
       }
 
@@ -133,7 +133,7 @@ public class class_7272 extends class_5467 {
             }
          } else if (this.field_29900.method_12877() && this.field_37233 == 0) {
             class_3998 var4 = this.field_29904.method_5594();
-            class_1343 var5 = new class_1343(this.field_29900.method_12887(), this.field_29900.method_12881(), this.field_29900.method_12886());
+            Vector3d var5 = new Vector3d(this.field_29900.method_12887(), this.field_29900.method_12881(), this.field_29900.method_12886());
             if (var4 != null && !var4.method_18436()) {
                var5 = var4.method_18439(this);
             }
@@ -340,7 +340,7 @@ public class class_7272 extends class_5467 {
    }
 
    @Override
-   public class_1343 method_37323() {
-      return new class_1343(0.0, (double)(0.6F * this.method_37277()), (double)(this.method_37086() * 0.4F));
+   public Vector3d method_37323() {
+      return new Vector3d(0.0, (double)(0.6F * this.method_37277()), (double)(this.method_37086() * 0.4F));
    }
 }

@@ -72,7 +72,7 @@ public class class_2973 implements class_2995 {
    private void method_13605() {
       this.field_14617.entrySet().removeIf(var1 -> {
          Entity var4 = this.field_14620.theWorld.method_29534(var1.getValue().field_32622);
-         return var4 == null || var4.field_41751;
+         return var4 == null || var4.removed;
       });
    }
 

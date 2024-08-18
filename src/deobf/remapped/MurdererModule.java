@@ -17,7 +17,7 @@ public class MurdererModule extends Module {
 
    @EventListen
    private void method_8421(PacketEvent var1) throws IOException {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_9014) {
             class_9014 var4 = (class_9014)var1.method_557();
 
@@ -49,7 +49,7 @@ public class MurdererModule extends Module {
 
    @EventListen
    private void method_8422(class_3278 var1) throws IOException {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_9550) {
             if (this.method_42007("GUI")) {
                FontRenderer var4 = class_5320.field_27152;

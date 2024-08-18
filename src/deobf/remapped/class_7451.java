@@ -43,7 +43,7 @@ public class class_7451 extends class_4641 {
          this.rotationYaw = (float)(this.field_22663.method_1031() * 90);
       }
 
-      this.field_41762 = this.rotationPitch;
+      this.prevRotationPitch = this.rotationPitch;
       this.prevRotationYaw = this.rotationYaw;
       this.method_21474();
    }
@@ -95,7 +95,7 @@ public class class_7451 extends class_4641 {
    }
 
    @Override
-   public void method_37226(class_7412 var1, class_1343 var2) {
+   public void method_37226(class_7412 var1, Vector3d var2) {
       if (!this.field_37976) {
          super.method_37226(var1, var2);
       }
@@ -320,7 +320,7 @@ public class class_7451 extends class_4641 {
             if (var6) {
                this.method_37155(SoundEvents.field_2457, 1.0F, 1.0F);
                this.method_33910(this.method_33907() + 1);
-            } else if (var7 && !this.field_41751) {
+            } else if (var7 && !this.removed) {
                this.method_33912(var5);
                if (!var1.playerAbilities.isCreativeMode) {
                   var5.method_27970(1);

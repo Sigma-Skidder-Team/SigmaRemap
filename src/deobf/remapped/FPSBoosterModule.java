@@ -10,7 +10,7 @@ public class FPSBoosterModule extends Module {
    @Override
    public void method_42012() {
       super.method_42012();
-      field_3439 = this.method_42015();
+      field_3439 = this.isEnabled();
    }
 
    @Override

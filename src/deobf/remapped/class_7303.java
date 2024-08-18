@@ -9,6 +9,6 @@ public class class_7303 {
    }
 
    @EventListen
-   private void method_33303(class_5596 var1) {
+   private void method_33303(PlayerTickEvent var1) {
    }
 }

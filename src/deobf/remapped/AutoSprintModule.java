@@ -10,11 +10,11 @@ public class AutoSprintModule extends Module {
    }
 
    @EventListen
-   public void method_33059(class_5596 var1) {
-      if (this.method_42015()) {
+   public void method_33059(PlayerTickEvent var1) {
+      if (this.isEnabled()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class);
          Module var5 = var4.field_17664;
-         if (var5 == null || !var5.method_42015() || !(var5 instanceof AACBlockFly) || var5.getBooleanValueByName("Haphe (AACAP)")) {
+         if (var5 == null || !var5.isEnabled() || !(var5 instanceof AACBlockFly) || var5.getBooleanValueByName("Haphe (AACAP)")) {
             if (client.thePlayer.field_29673 > 0.0F && !((BlockFlyModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class)).method_17212()) {
                client.thePlayer.method_37140(true);
             } else {
@@ -26,7 +26,7 @@ public class AutoSprintModule extends Module {
 
    @EventListen
    public void method_33060(class_8128 var1) {
-      if (this.method_42015()
+      if (this.isEnabled()
          && !(client.thePlayer.field_29673 <= 0.0F)
          && (!client.thePlayer.method_26554() || client.thePlayer.method_26576().method_27960() != class_4897.field_25206)
          && !((BlockFlyModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class)).method_17212()) {
@@ -42,7 +42,7 @@ public class AutoSprintModule extends Module {
 
    @EventListen
    public void method_33058(class_3645 var1) {
-      if (this.method_42015() && this.getBooleanValueByName("Keep Sprint")) {
+      if (this.isEnabled() && this.getBooleanValueByName("Keep Sprint")) {
          if (!var1.method_16971()) {
             if (this.field_37059.length == 2) {
                double var4 = this.field_37059[0] - client.thePlayer.method_37098().field_7336;

@@ -13,7 +13,7 @@ public class StrafeModule extends Module {
 
    @EventListen
    public void method_18146(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_19049 = class_8865.method_40775();
          float var4 = class_8865.method_40773()[1];
          float var5 = class_8865.method_40773()[2];

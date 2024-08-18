@@ -29,14 +29,14 @@ public abstract class class_7164<T extends MobEntity, M extends class_6521<T>> e
    private <E extends Entity> void method_32862(T var1, float var2, class_7966 var3, class_2565 var4, E var5) {
       if (!Config.method_14424() || !class_6588.field_33945) {
          var3.method_36063();
-         class_1343 var8 = var5.method_37202(var2);
+         Vector3d var8 = var5.method_37202(var2);
          double var9 = (double)(MathHelper.lerp(var2, var1.field_29605, var1.field_29611) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
-         class_1343 var11 = var1.method_37323();
+         Vector3d var11 = var1.method_37323();
          double var12 = Math.cos(var9) * var11.field_7334 + Math.sin(var9) * var11.field_7336;
          double var14 = Math.sin(var9) * var11.field_7334 - Math.cos(var9) * var11.field_7336;
-         double var16 = MathHelper.lerp((double)var2, var1.field_41767, var1.getPosX()) + var12;
-         double var18 = MathHelper.lerp((double)var2, var1.field_41698, var1.method_37309()) + var11.field_7333;
-         double var20 = MathHelper.lerp((double)var2, var1.field_41725, var1.getPosZ()) + var14;
+         double var16 = MathHelper.lerp((double)var2, var1.prevPosX, var1.getPosX()) + var12;
+         double var18 = MathHelper.lerp((double)var2, var1.prevPosY, var1.method_37309()) + var11.field_7333;
+         double var20 = MathHelper.lerp((double)var2, var1.prevPosZ, var1.getPosZ()) + var14;
          var3.method_36065(var12, var11.field_7333, var14);
          float var22 = (float)(var8.field_7336 - var16);
          float var23 = (float)(var8.field_7333 - var18);

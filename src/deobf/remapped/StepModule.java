@@ -36,10 +36,10 @@ public class StepModule extends SecondModule {
       double var10 = var1.method_39326() - var1.method_39323();
       Box var12 = new Box(
          var4 - var8,
-         client.thePlayer.field_41712.field_19937,
+         client.thePlayer.boundingBox.field_19937,
          var6 - var8,
          var4 + var8,
-         client.thePlayer.field_41712.field_19937 + var10,
+         client.thePlayer.boundingBox.field_19937 + var10,
          var6 + var8
       );
       Object[] var13 = client.theWorld.method_6680(client.thePlayer, var12).toArray();

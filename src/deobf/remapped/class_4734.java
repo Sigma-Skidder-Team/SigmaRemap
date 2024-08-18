@@ -34,7 +34,7 @@ public class class_4734 {
       return this.field_22944.method_43956();
    }
 
-   public class_1343 method_21865() {
+   public Vector3d method_21865() {
       return this.field_22944.method_33993();
    }
 

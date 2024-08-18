@@ -68,7 +68,7 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       this.method_22005().method_10706(var1, var2, this, var3);
    }
 
-   public class_1343 method_22003(class_6163 var1, BlockPos var2) {
+   public Vector3d method_22003(class_6163 var1, BlockPos var2) {
       return this.method_22005().method_10725(var1, var2, this);
    }
 

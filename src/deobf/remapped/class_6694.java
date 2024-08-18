@@ -10,7 +10,7 @@ public class class_6694 extends class_958 {
    private int field_34586;
    private int field_34584;
    private boolean field_34589;
-   private class_1343 field_34587;
+   private Vector3d field_34587;
    private int field_34585;
 
    public class_6694(class_8829 var1) {
@@ -125,7 +125,7 @@ public class class_6694 extends class_958 {
    public void method_16794() {
       this.field_34585++;
       if (this.field_34585 <= 600) {
-         class_1343 var3 = class_1343.method_6200(class_8829.method_40554(this.field_34583)).method_6214(0.0, 0.6F, 0.0);
+         Vector3d var3 = Vector3d.method_6200(class_8829.method_40554(this.field_34583)).method_6214(0.0, 0.6F, 0.0);
          if (!(var3.method_6195(this.field_34583.method_37245()) > 1.0)) {
             if (this.field_34587 == null) {
                this.field_34587 = var3;
@@ -141,7 +141,7 @@ public class class_6694 extends class_958 {
                   if (!var6) {
                      var5 = false;
                   } else {
-                     this.field_34587 = new class_1343(
+                     this.field_34587 = new Vector3d(
                         var3.method_61() + (double)this.method_30691(), var3.method_60(), var3.method_62() + (double)this.method_30691()
                      );
                      class_8829.method_40575(this.field_34583).method_5620();

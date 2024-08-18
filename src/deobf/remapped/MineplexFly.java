@@ -41,14 +41,14 @@ public class MineplexFly extends PremiumModule {
 
    @EventListen
    public void method_42168(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449()) {
+      if (this.isEnabled() && var1.method_6449()) {
          var1.method_6444(true);
       }
    }
 
    @EventListen
    public void method_42167(class_717 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          this.field_46844 = (double)(this.field_46840 = this.field_46846 = -1);
          this.field_46843 = 0;
          this.field_46839 = false;
@@ -57,7 +57,7 @@ public class MineplexFly extends PremiumModule {
    }
 
    public boolean method_42164() {
-      return this.method_42015()
+      return this.isEnabled()
          && this.field_46846 != -1
          && this.field_46845 < (double)this.getFloatValueByName("Boost")
          && (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F))
@@ -66,7 +66,7 @@ public class MineplexFly extends PremiumModule {
 
    @EventListen
    public void method_42170(class_7982 var1) {
-      if (this.method_42015() && this.field_46839 && client.thePlayer != null) {
+      if (this.isEnabled() && this.field_46839 && client.thePlayer != null) {
          if (client.thePlayer.onGround) {
             var1.method_36186(true);
          }
@@ -75,7 +75,7 @@ public class MineplexFly extends PremiumModule {
 
    @EventListen
    public void method_42169(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.field_46839) {
             class_8865.method_40777(var1, 0.01);
          } else {
@@ -128,7 +128,7 @@ public class MineplexFly extends PremiumModule {
                   return;
                }
 
-               class_1343 var6 = new class_1343(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
+               Vector3d var6 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
                BlockPos var7 = new BlockPos(client.thePlayer.method_37075()).method_6104(0, -1, 0);
                class_9529 var8 = new class_9529(var6, Direction.field_817, var7, false);
                class_8585 var9 = new class_8585(Hand.MAIN_HAND, var8);
@@ -164,7 +164,7 @@ public class MineplexFly extends PremiumModule {
 
    @EventListen
    public void method_42165(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_509) {
             this.field_46839 = true;
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Mineplex fly", "Please try again"));
@@ -174,7 +174,7 @@ public class MineplexFly extends PremiumModule {
 
    @EventListen
    public void method_42166(class_2157 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_10047() instanceof class_7371
             && this.field_46846 != -1
             && this.field_46845 < (double)this.getFloatValueByName("Boost")
@@ -217,11 +217,11 @@ public class MineplexFly extends PremiumModule {
 
    @EventListen
    public void method_42171(class_1711 var1) {
-      if (this.method_42015() && this.getBooleanValueByName("Fake") && !(this.field_46844 < 0.0) && !(client.thePlayer.method_37309() < this.field_46844)) {
-         client.thePlayer.field_41736.field_7333 = this.field_46844;
+      if (this.isEnabled() && this.getBooleanValueByName("Fake") && !(this.field_46844 < 0.0) && !(client.thePlayer.method_37309() < this.field_46844)) {
+         client.thePlayer.positionVec.field_7333 = this.field_46844;
          client.thePlayer.field_41713 = this.field_46844;
          client.thePlayer.field_3864 = this.field_46844;
-         client.thePlayer.field_41698 = this.field_46844;
+         client.thePlayer.prevPosY = this.field_46844;
          if (class_8865.method_40772()) {
             client.thePlayer.field_3859 = 0.099999994F;
          }

@@ -43,7 +43,7 @@ public class class_7086 extends class_2830 implements class_3978 {
    @Override
    public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
       if (var4 instanceof LivingEntity && var4.getType() != EntityType.field_34250 && var4.getType() != EntityType.field_34238) {
-         var4.method_37130(var1, new class_1343(0.8F, 0.75, 0.8F));
+         var4.method_37130(var1, new Vector3d(0.8F, 0.75, 0.8F));
          if (!var2.field_33055
             && var1.<Integer>method_10313(field_36577) > 0
             && (var4.field_41754 != var4.getPosX() || var4.field_41724 != var4.getPosZ())) {

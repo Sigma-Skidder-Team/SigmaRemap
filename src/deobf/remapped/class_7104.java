@@ -16,7 +16,7 @@ public class class_7104 extends class_4569 {
       return new class_7104(class_8938.field_45798, var0, class_7781.field_39439);
    }
 
-   public boolean method_32648(class_9359 var1, class_1343 var2, int var3) {
+   public boolean method_32648(class_9359 var1, Vector3d var2, int var3) {
       return this.field_36640.method_28548(var2.field_7336, var2.field_7333, var2.field_7334, var1.getPosX(), var1.method_37309(), var1.getPosZ())
          ? this.field_36638.method_35307(var3)
          : false;

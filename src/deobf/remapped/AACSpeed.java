@@ -32,7 +32,7 @@ public class AACSpeed extends Module {
 
    @EventListen
    public void method_27636(PacketEvent var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (var1.method_557() instanceof class_509) {
             this.field_30963 = 0;
          }
@@ -41,7 +41,7 @@ public class AACSpeed extends Module {
 
    @EventListen
    public void method_27641(class_7767 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          String var4 = this.getStringValueByName("Mode");
          if (class_314.method_1413(client.thePlayer, 0.01F)) {
             if (this.field_30960 <= 1) {
@@ -100,9 +100,9 @@ public class AACSpeed extends Module {
 
    @EventListen
    public void method_27639(class_1711 var1) {
-      if (this.method_42015()) {
+      if (this.isEnabled()) {
          if (this.getBooleanValueByName("Fluid Fix")) {
-            if (!client.thePlayer.collidedHorizontally && !client.thePlayer.field_41774) {
+            if (!client.thePlayer.collidedHorizontally && !client.thePlayer.collidedVertically) {
                String var4 = this.getStringValueByName("Mode");
                float var5 = 13.0F;
                if (!var4.equals("Fast1")) {
@@ -115,11 +115,11 @@ public class AACSpeed extends Module {
 
                if (!((float)this.field_30964 > var5) && this.field_30964 >= 0) {
                   double var6 = Math.cos(Math.toRadians((double)((float)this.field_30964 / var5 * 180.0F - 90.0F)));
-                  client.thePlayer.field_41736.field_7333 = this.field_30961 + var6;
+                  client.thePlayer.positionVec.field_7333 = this.field_30961 + var6;
                   client.thePlayer.field_3859 = 0.0F;
                }
             } else {
-               client.thePlayer.field_41736.field_7333 = client.thePlayer.getBoundingBox().field_19937;
+               client.thePlayer.positionVec.field_7333 = client.thePlayer.getBoundingBox().field_19937;
                this.field_30961 = client.thePlayer.method_37309();
                this.field_30964 = -1;
             }

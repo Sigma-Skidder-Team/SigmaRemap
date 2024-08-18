@@ -13,7 +13,7 @@ public abstract class PathNavigator {
    public double field_6871;
    public int field_6875;
    public int field_6884;
-   public class_1343 field_6885 = class_1343.field_7335;
+   public Vector3d field_6885 = Vector3d.ZERO;
    public Vector3i field_6879 = Vector3i.field_13228;
    public long field_6886;
    public long field_6870;
@@ -146,7 +146,7 @@ public abstract class PathNavigator {
             this.method_5618();
             if (this.field_6887.method_18437() > 0) {
                this.field_6871 = var2;
-               class_1343 var6 = this.method_5596();
+               Vector3d var6 = this.method_5596();
                this.field_6884 = this.field_6875;
                this.field_6885 = var6;
                return true;
@@ -176,8 +176,8 @@ public abstract class PathNavigator {
       if (!this.method_5591()) {
          if (!this.method_5601()) {
             if (this.field_6887 != null && !this.field_6887.method_18436()) {
-               class_1343 var3 = this.method_5596();
-               class_1343 var4 = this.field_6887.method_18439(this.field_6877);
+               Vector3d var3 = this.method_5596();
+               Vector3d var4 = this.field_6887.method_18439(this.field_6877);
                if (var3.field_7333 > var4.field_7333
                   && !this.field_6877.method_37360()
                   && MathHelper.floor(var3.field_7336) == MathHelper.floor(var4.field_7336)
@@ -191,7 +191,7 @@ public abstract class PathNavigator {
 
          class_1892.method_8443(this.field_6882, this.field_6877, this.field_6887, this.field_6889);
          if (!this.method_5591()) {
-            class_1343 var5 = this.field_6887.method_18439(this.field_6877);
+            Vector3d var5 = this.field_6887.method_18439(this.field_6877);
             BlockPos var6 = new BlockPos(var5);
             this.field_6877
                .method_26905()
@@ -206,7 +206,7 @@ public abstract class PathNavigator {
    }
 
    public void method_5592() {
-      class_1343 var3 = this.method_5596();
+      Vector3d var3 = this.method_5596();
       this.field_6889 = !(this.field_6877.method_37086() > 0.75F) ? 0.75F - this.field_6877.method_37086() / 2.0F : this.field_6877.method_37086() / 2.0F;
       BlockPos var4 = this.field_6887.method_18449();
       double var5 = Math.abs(this.field_6877.getPosX() - ((double)var4.getX() + 0.5));
@@ -220,13 +220,13 @@ public abstract class PathNavigator {
       this.method_5619(var3);
    }
 
-   private boolean method_5593(class_1343 var1) {
+   private boolean method_5593(Vector3d var1) {
       if (this.field_6887.method_18429() + 1 < this.field_6887.method_18437()) {
-         class_1343 var4 = class_1343.method_6200(this.field_6887.method_18449());
+         Vector3d var4 = Vector3d.method_6200(this.field_6887.method_18449());
          if (var1.method_6222(var4, 2.0)) {
-            class_1343 var5 = class_1343.method_6200(this.field_6887.method_18445(this.field_6887.method_18429() + 1));
-            class_1343 var6 = var5.method_6194(var4);
-            class_1343 var7 = var1.method_6194(var4);
+            Vector3d var5 = Vector3d.method_6200(this.field_6887.method_18445(this.field_6887.method_18429() + 1));
+            Vector3d var6 = var5.method_6194(var4);
+            Vector3d var7 = var1.method_6194(var4);
             return var6.method_6206(var7) > 0.0;
          } else {
             return false;
@@ -236,7 +236,7 @@ public abstract class PathNavigator {
       }
    }
 
-   public void method_5619(class_1343 var1) {
+   public void method_5619(Vector3d var1) {
       if (this.field_6875 - this.field_6884 > 100) {
          if (!(var1.method_6204(this.field_6885) < 2.25)) {
             this.field_6881 = false;
@@ -253,7 +253,7 @@ public abstract class PathNavigator {
          BlockPos var4 = this.field_6887.method_18449();
          if (!var4.equals(this.field_6879)) {
             this.field_6879 = var4;
-            double var5 = var1.method_6195(class_1343.method_6200(this.field_6879));
+            double var5 = var1.method_6195(Vector3d.method_6200(this.field_6879));
             this.field_6876 = !(this.field_6877.method_26423() > 0.0F) ? 0.0 : var5 / (double)this.field_6877.method_26423() * 1000.0;
          } else {
             this.field_6886 = this.field_6886 + (Util.getMeasuringTimeMs() - this.field_6870);
@@ -291,7 +291,7 @@ public abstract class PathNavigator {
       this.field_6887 = null;
    }
 
-   public abstract class_1343 method_5596();
+   public abstract Vector3d method_5596();
 
    public abstract boolean method_5601();
 
@@ -315,7 +315,7 @@ public abstract class PathNavigator {
       }
    }
 
-   public abstract boolean method_5599(class_1343 var1, class_1343 var2, int var3, int var4, int var5);
+   public abstract boolean method_5599(Vector3d var1, Vector3d var2, int var3, int var4, int var5);
 
    public boolean method_5609(BlockPos var1) {
       BlockPos var4 = var1.method_6100();
@@ -337,7 +337,7 @@ public abstract class PathNavigator {
    public void method_5625(BlockPos var1) {
       if (this.field_6887 != null && !this.field_6887.method_18436() && this.field_6887.method_18437() != 0) {
          class_5851 var4 = this.field_6887.method_18448();
-         class_1343 var5 = new class_1343(
+         Vector3d var5 = new Vector3d(
             ((double)var4.field_29731 + this.field_6877.getPosX()) / 2.0,
             ((double)var4.field_29735 + this.field_6877.method_37309()) / 2.0,
             ((double)var4.field_29736 + this.field_6877.getPosZ()) / 2.0

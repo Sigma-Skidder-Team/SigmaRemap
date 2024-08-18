@@ -37,7 +37,7 @@ public class class_2221 extends class_3599 {
 
          if (this.field_11103 == 20) {
             double var7 = 4.0;
-            class_1343 var9 = this.field_11104.method_37307(1.0F);
+            Vector3d var9 = this.field_11104.method_37307(1.0F);
             double var10 = var3.getPosX() - (this.field_11104.getPosX() + var9.field_7336 * 4.0);
             double var12 = var3.method_37080(0.5) - (0.5 + this.field_11104.method_37080(0.5));
             double var14 = var3.getPosZ() - (this.field_11104.getPosZ() + var9.field_7334 * 4.0);

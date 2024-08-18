@@ -41,8 +41,8 @@ public class class_59 extends class_3599 {
    @Override
    public void method_16794() {
       if (this.field_53.method_26927().method_5591()) {
-         class_1343 var3 = class_1343.method_6200(class_3845.method_17846(this.field_53));
-         class_1343 var4 = class_3425.method_15841(this.field_53, 16, 3, var3, (float) (Math.PI / 10));
+         Vector3d var3 = Vector3d.method_6200(class_3845.method_17846(this.field_53));
+         Vector3d var4 = class_3425.method_15841(this.field_53, 16, 3, var3, (float) (Math.PI / 10));
          if (var4 == null) {
             var4 = class_3425.method_15837(this.field_53, 8, 7, var3);
          }

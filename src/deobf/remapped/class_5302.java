@@ -67,7 +67,7 @@ public class class_5302 extends class_3599 {
       boolean var3 = MathHelper.abs(this.field_27099.field_29676) > 0.0F || MathHelper.abs(this.field_27099.field_29673) > 0.0F;
       float var4 = this.field_27100 != class_9414.field_48137 ? 0.015F : (!var3 ? 0.0F : 0.01F);
       this.field_27098
-         .method_37092(var4, new class_1343((double)this.field_27098.field_29676, (double)this.field_27098.field_29651, (double)this.field_27098.field_29673));
+         .method_37092(var4, new Vector3d((double)this.field_27098.field_29676, (double)this.field_27098.field_29651, (double)this.field_27098.field_29673));
       this.field_27098.method_37226(class_7412.field_37839, this.field_27098.method_37098());
       if (--this.field_27096 <= 0) {
          this.field_27096 = 10;

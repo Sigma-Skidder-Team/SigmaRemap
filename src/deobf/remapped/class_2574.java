@@ -67,8 +67,8 @@ public class class_2574 extends class_5272<class_337> {
       }
 
       if (var11 != null) {
-         class_1343 var12 = ((Entity)var11).method_37335(0.0F);
-         class_1343 var13 = var1.method_37335(0.0F);
+         Vector3d var12 = ((Entity)var11).method_37335(0.0F);
+         Vector3d var13 = var1.method_37335(0.0F);
          double var14 = var12.field_7333 - var13.field_7333;
          if (!(var14 > 0.0)) {
             this.field_12738.field_8181 = 1.0F;
@@ -76,9 +76,9 @@ public class class_2574 extends class_5272<class_337> {
             this.field_12738.field_8181 = 0.0F;
          }
 
-         class_1343 var16 = var1.method_37307(0.0F);
-         var16 = new class_1343(var16.field_7336, 0.0, var16.field_7334);
-         class_1343 var17 = new class_1343(var13.field_7336 - var12.field_7336, 0.0, var13.field_7334 - var12.field_7334)
+         Vector3d var16 = var1.method_37307(0.0F);
+         var16 = new Vector3d(var16.field_7336, 0.0, var16.field_7334);
+         Vector3d var17 = new Vector3d(var13.field_7336 - var12.field_7336, 0.0, var13.field_7334 - var12.field_7334)
             .method_6213()
             .method_6192((float) (Math.PI / 2));
          double var18 = var16.method_6206(var17);

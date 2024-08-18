@@ -2,7 +2,7 @@ package remapped;
 
 public class class_9825 extends class_516 implements class_1869 {
    private static final class_7821<Integer> field_49780 = class_8073.<Integer>method_36641(class_9825.class, class_2734.field_13366);
-   private class_1343 field_49778 = class_1343.field_7335;
+   private Vector3d field_49778 = Vector3d.ZERO;
    private BlockPos field_49779 = BlockPos.field_7306;
    private class_55 field_49777 = class_55.field_38;
 

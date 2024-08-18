@@ -5,7 +5,7 @@ public class Camera {
    private boolean field_46421;
    private class_6163 field_46410;
    private Entity field_46419;
-   private class_1343 field_46411 = class_1343.field_7335;
+   private Vector3d field_46411 = Vector3d.ZERO;
    private final class_2921 field_46414 = new class_2921();
    private final class_2426 field_46408 = new class_2426(0.0F, 0.0F, 1.0F);
    private final class_2426 field_46423 = new class_2426(0.0F, 1.0F, 0.0F);
@@ -26,10 +26,10 @@ public class Camera {
       this.field_46409 = var4;
       this.method_41637(var2.getYaw(var5), var2.getPitch(var5));
       this.method_41628(
-         MathHelper.lerp((double)var5, var2.field_41767, var2.getPosX()),
-         MathHelper.lerp((double)var5, var2.field_41698, var2.method_37309())
+         MathHelper.lerp((double)var5, var2.prevPosX, var2.getPosX()),
+         MathHelper.lerp((double)var5, var2.prevPosY, var2.method_37309())
             + (double) MathHelper.lerp(var5, this.field_46420, this.field_46413),
-         MathHelper.lerp((double)var5, var2.field_41725, var2.getPosZ())
+         MathHelper.lerp((double)var5, var2.prevPosZ, var2.getPosZ())
       );
       if (!var3) {
          if (var2 instanceof LivingEntity && ((LivingEntity)var2).method_26507()) {
@@ -61,8 +61,8 @@ public class Camera {
          var6 *= 0.1F;
          var7 *= 0.1F;
          var8 *= 0.1F;
-         class_1343 var9 = this.field_46411.method_6214((double)var6, (double)var7, (double)var8);
-         class_1343 var10 = new class_1343(
+         Vector3d var9 = this.field_46411.method_6214((double)var6, (double)var7, (double)var8);
+         Vector3d var10 = new Vector3d(
             this.field_46411.field_7336 - (double)this.field_46408.method_11057() * var1 + (double)var6 + (double)var8,
             this.field_46411.field_7333 - (double)this.field_46408.method_11061() * var1 + (double)var7,
             this.field_46411.field_7334 - (double)this.field_46408.method_11055() * var1 + (double)var8
@@ -70,7 +70,7 @@ public class Camera {
          class_9529 var11 = this.field_46410.method_28265(new class_972(var9, var10, class_3132.field_15552, class_9583.field_48747, this.field_46419));
          if (var11.method_33990() != class_1430.field_7721) {
             double var12 = var11.method_33993().method_6195(this.field_46411);
-            if (var12 < var1 && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CameraNoClipModule.class).method_42015()) {
+            if (var12 < var1 && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CameraNoClipModule.class).isEnabled()) {
                var1 = var12;
             }
          }
@@ -89,7 +89,7 @@ public class Camera {
       double var13 = (double)this.field_46408.method_11055() * var1
          + (double)this.field_46423.method_11055() * var3
          + (double)this.field_46418.method_11055() * var5;
-      this.method_41629(new class_1343(this.field_46411.field_7336 + var9, this.field_46411.field_7333 + var11, this.field_46411.field_7334 + var13));
+      this.method_41629(new Vector3d(this.field_46411.field_7336 + var9, this.field_46411.field_7333 + var11, this.field_46411.field_7334 + var13));
    }
 
    public void method_41637(float var1, float var2) {
@@ -107,15 +107,15 @@ public class Camera {
    }
 
    public void method_41628(double var1, double var3, double var5) {
-      this.method_41629(new class_1343(var1, var3, var5));
+      this.method_41629(new Vector3d(var1, var3, var5));
    }
 
-   public void method_41629(class_1343 var1) {
+   public void method_41629(Vector3d var1) {
       this.field_46411 = var1;
       this.field_46414.method_13361(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 
-   public class_1343 method_41627() {
+   public Vector3d method_41627() {
       return this.field_46411;
    }
 

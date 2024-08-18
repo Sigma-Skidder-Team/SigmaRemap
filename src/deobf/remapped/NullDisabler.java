@@ -8,7 +8,7 @@ public class NullDisabler extends Module {
 
    @EventListen
    public void method_43668(PacketEvent var1) {
-      if (this.method_42015() && client.method_8530() != null) {
+      if (this.isEnabled() && client.method_8530() != null) {
          if (!(var1.method_557() instanceof class_7573)) {
             if (var1.method_557() instanceof class_8913) {
                class_8913 var4 = (class_8913)var1.method_557();

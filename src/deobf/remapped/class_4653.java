@@ -87,7 +87,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
 
    @Override
    public void livingTick() {
-      class_1343 var3 = this.method_37098().method_6210(1.0, 0.6, 1.0);
+      Vector3d var3 = this.method_37098().method_6210(1.0, 0.6, 1.0);
       if (!this.world.field_33055 && this.method_21508(0) > 0) {
          Entity var4 = this.world.method_29534(this.method_21508(0));
          if (var4 != null) {
@@ -97,10 +97,10 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
                var5 += 0.3 - var5 * 0.6F;
             }
 
-            var3 = new class_1343(var3.field_7336, var5, var3.field_7334);
-            class_1343 var7 = new class_1343(var4.getPosX() - this.getPosX(), 0.0, var4.getPosZ() - this.getPosZ());
+            var3 = new Vector3d(var3.field_7336, var5, var3.field_7334);
+            Vector3d var7 = new Vector3d(var4.getPosX() - this.getPosX(), 0.0, var4.getPosZ() - this.getPosZ());
             if (method_37266(var7) > 9.0) {
-               class_1343 var8 = var7.method_6213();
+               Vector3d var8 = var7.method_6213();
                var3 = var3.method_6214(var8.field_7336 * 0.3 - var3.field_7336 * 0.6, 0.0, var8.field_7334 * 0.3 - var3.field_7334 * 0.6);
             }
          }
@@ -311,7 +311,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
    }
 
    @Override
-   public void method_37130(class_2522 var1, class_1343 var2) {
+   public void method_37130(class_2522 var1, Vector3d var2) {
    }
 
    @Override

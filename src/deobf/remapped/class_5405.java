@@ -44,7 +44,7 @@ public class class_5405 extends DamageSource {
 
    @Nullable
    @Override
-   public class_1343 method_28365() {
+   public Vector3d method_28365() {
       return this.field_27576 == null ? null : this.field_27576.method_37245();
    }
 

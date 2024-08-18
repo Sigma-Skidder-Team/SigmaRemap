@@ -27,7 +27,7 @@ public class class_1843 implements ArgumentType<class_1808> {
    }
 
    public static class_4895 method_8146(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
-      class_1343 var4 = ((class_1808)var0.getArgument(var1, class_1808.class)).method_8027((class_9155)var0.getSource());
+      Vector3d var4 = ((class_1808)var0.getArgument(var1, class_1808.class)).method_8027((class_9155)var0.getSource());
       return new class_4895((float)var4.field_7336, (float)var4.field_7334);
    }
 

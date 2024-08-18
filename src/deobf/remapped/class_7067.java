@@ -50,8 +50,8 @@ public abstract class class_7067<T extends Entity> {
       }
    }
 
-   public class_1343 method_32555(T var1, float var2) {
-      return class_1343.field_7335;
+   public Vector3d method_32555(T var1, float var2) {
+      return Vector3d.ZERO;
    }
 
    public void method_32551(T var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {

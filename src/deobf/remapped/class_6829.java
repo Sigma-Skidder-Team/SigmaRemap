@@ -22,7 +22,7 @@ public class class_6829<T extends LivingEntity, M extends class_3169<T>> extends
       this.field_35221.rotationYaw = (float)(Math.atan2((double)var5, (double)var7) * 180.0F / (float)Math.PI);
       this.field_35221.rotationPitch = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);
       this.field_35221.prevRotationYaw = this.field_35221.rotationYaw;
-      this.field_35221.field_41762 = this.field_35221.rotationPitch;
+      this.field_35221.prevRotationPitch = this.field_35221.rotationPitch;
       this.field_35220.method_28115(this.field_35221, 0.0, 0.0, 0.0, 0.0F, var8, var1, var2, var3);
    }
 }

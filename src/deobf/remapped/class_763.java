@@ -18,8 +18,8 @@ public class class_763 extends class_7164<class_337, class_2574> {
          if (var1.method_1555()) {
             LivingEntity var11 = var1.method_1552();
             if (var11 != null) {
-               class_1343 var12 = this.method_3438(var11, (double)var11.method_37074() * 0.5, 1.0F);
-               class_1343 var13 = this.method_3438(var1, (double)var1.method_37277(), 1.0F);
+               Vector3d var12 = this.method_3438(var11, (double)var11.method_37074() * 0.5, 1.0F);
+               Vector3d var13 = this.method_3438(var1, (double)var1.method_37277(), 1.0F);
                return var2.method_10824(
                   new Box(var13.field_7336, var13.field_7333, var13.field_7334, var12.field_7336, var12.field_7333, var12.field_7334)
                );
@@ -32,11 +32,11 @@ public class class_763 extends class_7164<class_337, class_2574> {
       }
    }
 
-   private class_1343 method_3438(LivingEntity var1, double var2, float var4) {
+   private Vector3d method_3438(LivingEntity var1, double var2, float var4) {
       double var7 = MathHelper.lerp((double)var4, var1.field_41754, var1.getPosX());
       double var9 = MathHelper.lerp((double)var4, var1.field_41713, var1.method_37309()) + var2;
       double var11 = MathHelper.lerp((double)var4, var1.field_41724, var1.getPosZ());
-      return new class_1343(var7, var9, var11);
+      return new Vector3d(var7, var9, var11);
    }
 
    public void method_3442(class_337 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
@@ -49,9 +49,9 @@ public class class_763 extends class_7164<class_337, class_2574> {
          float var13 = var1.method_37277();
          var4.method_36063();
          var4.method_36065(0.0, (double)var13, 0.0);
-         class_1343 var14 = this.method_3438(var9, (double)var9.method_37074() * 0.5, var3);
-         class_1343 var15 = this.method_3438(var1, (double)var13, var3);
-         class_1343 var16 = var14.method_6194(var15);
+         Vector3d var14 = this.method_3438(var9, (double)var9.method_37074() * 0.5, var3);
+         Vector3d var15 = this.method_3438(var1, (double)var13, var3);
+         Vector3d var16 = var14.method_6194(var15);
          float var17 = (float)(var16.method_6217() + 1.0);
          var16 = var16.method_6213();
          float var18 = (float)Math.acos(var16.field_7333);

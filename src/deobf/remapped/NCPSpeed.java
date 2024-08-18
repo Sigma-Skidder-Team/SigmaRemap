@@ -20,10 +20,10 @@ public class NCPSpeed extends Module {
 
    @EventListen
    public void method_6779(class_1393 var1) {
-      if (this.method_42015()
+      if (this.isEnabled()
          && client.thePlayer != null
          && !JesusModule.method_32081()
-         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).isEnabled()) {
          if (var1.method_6449() && SpeedModule.field_35509 > 1) {
             double var4 = client.thePlayer.getPosX() - client.thePlayer.lastReportedPosX;
             double var6 = client.thePlayer.getPosZ() - client.thePlayer.lastReportedPosZ;
@@ -38,7 +38,7 @@ public class NCPSpeed extends Module {
 
    @EventListen
    public void method_6782(class_7767 var1) {
-      if (this.method_42015() && client.thePlayer != null) {
+      if (this.isEnabled() && client.thePlayer != null) {
          if (!JesusModule.method_32081() && !client.thePlayer.method_37285()) {
             if (this.field_7883 < 2) {
                this.field_7883++;
@@ -75,12 +75,12 @@ public class NCPSpeed extends Module {
    @EventListen
    @class_7664
    public void method_6780(class_2911 var1) {
-      if (this.method_42015() && !JesusModule.method_32081()) {
+      if (this.isEnabled() && !JesusModule.method_32081()) {
          if (this.field_7881 != 0) {
             var1.method_29715(true);
          }
 
-         if (!client.gameOptions.keyJump.isKeyDown() || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).method_42015()) {
+         if (!client.gameOptions.keyJump.isKeyDown() || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).isEnabled()) {
             double var4 = 0.56 + (double)class_8865.method_40770() * 0.1;
             var1.method_13313(0.407 + (double)class_8865.method_40769() * 0.1 + Math.random() * 1.0E-5);
             if (SpeedModule.field_35509 < 2) {
@@ -96,7 +96,7 @@ public class NCPSpeed extends Module {
 
    @EventListen
    public void method_6781(class_8544 var1) {
-      if (this.method_42015() && !(var1.method_39326() < 0.9)) {
+      if (this.isEnabled() && !(var1.method_39326() < 0.9)) {
          this.field_7883 = 0;
       }
    }

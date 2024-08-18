@@ -181,7 +181,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
    @Override
    public void method_10805(LivingEntity var1, float var2) {
       if (!this.method_7190()) {
-         class_1343 var5 = var1.method_37098();
+         Vector3d var5 = var1.method_37098();
          double var6 = var1.getPosX() + var5.field_7336 - this.getPosX();
          double var8 = var1.method_37388() - 1.1F - this.method_37309();
          double var10 = var1.getPosZ() + var5.field_7334 - this.getPosZ();

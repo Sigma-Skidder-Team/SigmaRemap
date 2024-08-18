@@ -17,7 +17,7 @@ public class class_8537 extends class_6414 implements class_3978 {
 
    @Override
    public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
-      class_1343 var7 = var1.method_8353(var2, var3);
+      Vector3d var7 = var1.method_8353(var2, var3);
       return field_43705.method_19496(var7.field_7336, var7.field_7333, var7.field_7334);
    }
 

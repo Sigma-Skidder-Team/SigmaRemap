@@ -1243,7 +1243,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       class_6331 var3 = this.method_1736();
       return new class_9155(
          this,
-         var3 != null ? class_1343.method_6205(var3.method_28998()) : class_1343.field_7335,
+         var3 != null ? Vector3d.method_6205(var3.method_28998()) : Vector3d.ZERO,
          class_4895.field_24322,
          var3,
          4,

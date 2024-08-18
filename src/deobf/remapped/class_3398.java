@@ -7,7 +7,7 @@ public class class_3398 implements Packet<class_1243> {
    private static String[] field_16737;
    private int field_16735;
    private class_92 field_16738;
-   private class_1343 field_16734;
+   private Vector3d field_16734;
    private Hand field_16733;
    private boolean field_16736;
 
@@ -27,7 +27,7 @@ public class class_3398 implements Packet<class_1243> {
       this.field_16736 = var3;
    }
 
-   public class_3398(Entity var1, Hand var2, class_1343 var3, boolean var4) {
+   public class_3398(Entity var1, Hand var2, Vector3d var3, boolean var4) {
       this.field_16735 = var1.method_37145();
       this.field_16738 = class_92.field_184;
       this.field_16733 = var2;
@@ -40,7 +40,7 @@ public class class_3398 implements Packet<class_1243> {
       this.field_16735 = var1.method_37778();
       this.field_16738 = var1.<class_92>method_37787(class_92.class);
       if (this.field_16738 == class_92.field_184) {
-         this.field_16734 = new class_1343((double)var1.readFloat(), (double)var1.readFloat(), (double)var1.readFloat());
+         this.field_16734 = new Vector3d((double)var1.readFloat(), (double)var1.readFloat(), (double)var1.readFloat());
       }
 
       if (this.field_16738 == class_92.field_185 || this.field_16738 == class_92.field_184) {
@@ -85,7 +85,7 @@ public class class_3398 implements Packet<class_1243> {
       return this.field_16733;
    }
 
-   public class_1343 method_15697() {
+   public Vector3d method_15697() {
       return this.field_16734;
    }
 

@@ -75,7 +75,7 @@ public abstract class class_4641 extends Entity {
 
          if (this.field_22664++ == 100) {
             this.field_22664 = 0;
-            if (!this.field_41751 && !this.method_21472()) {
+            if (!this.removed && !this.method_21472()) {
                this.method_37204();
                this.method_21475((Entity)null);
             }
@@ -132,7 +132,7 @@ public abstract class class_4641 extends Entity {
    @Override
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
-         if (!this.field_41751 && !this.world.field_33055) {
+         if (!this.removed && !this.world.field_33055) {
             this.method_37204();
             this.method_37138();
             this.method_21475(var1.method_28372());
@@ -145,8 +145,8 @@ public abstract class class_4641 extends Entity {
    }
 
    @Override
-   public void method_37226(class_7412 var1, class_1343 var2) {
-      if (!this.world.field_33055 && !this.field_41751 && var2.method_6221() > 0.0) {
+   public void method_37226(class_7412 var1, Vector3d var2) {
+      if (!this.world.field_33055 && !this.removed && var2.method_6221() > 0.0) {
          this.method_37204();
          this.method_21475((Entity)null);
       }
@@ -154,7 +154,7 @@ public abstract class class_4641 extends Entity {
 
    @Override
    public void method_37186(double var1, double var3, double var5) {
-      if (!this.world.field_33055 && !this.field_41751 && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
+      if (!this.world.field_33055 && !this.removed && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
          this.method_37204();
          this.method_21475((Entity)null);
       }

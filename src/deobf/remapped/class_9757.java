@@ -44,7 +44,7 @@ public final class class_9757 implements class_3825 {
             }
 
             var13 = MathHelper.positiveModulo(var13 / 360.0, 1.0);
-            double var15 = this.method_45034(class_1343.method_6216(var7), (Entity)var6) / (float) (Math.PI * 2);
+            double var15 = this.method_45034(Vector3d.method_6216(var7), (Entity)var6) / (float) (Math.PI * 2);
             double var17;
             if (!var12) {
                var17 = 0.5 - (var13 - 0.25 - var15);
@@ -93,7 +93,7 @@ public final class class_9757 implements class_3825 {
       return (double) MathHelper.wrapDegrees(180 + var4.method_1031() * 90 + var1.method_33907() * 45 + var5);
    }
 
-   private double method_45034(class_1343 var1, Entity var2) {
+   private double method_45034(Vector3d var1, Entity var2) {
       return Math.atan2(var1.method_62() - var2.getPosZ(), var1.method_61() - var2.getPosX());
    }
 }
