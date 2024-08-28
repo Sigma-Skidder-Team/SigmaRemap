@@ -3,7 +3,7 @@ package mapped;
 public class Class4692 extends Class4689 {
    private static String[] field22276;
 
-   public Class4692(Class4688[] var1, Class122[] var2) {
+   public Class4692(Class4688[] var1, ILootCondition[] var2) {
       super(var1, var2);
    }
 

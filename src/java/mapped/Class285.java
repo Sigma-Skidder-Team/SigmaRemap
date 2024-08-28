@@ -25,7 +25,7 @@ public class Class285 extends Class281 {
       HashMap var6 = Maps.newHashMap();
       var1.forEach((var2x, var3x) -> {
          try {
-            JsonObject var6x = Class8963.method32781(var3x, "advancement");
+            JsonObject var6x = JSONUtils.method32781(var3x, "advancement");
             Class7999 var7x = Class7999.method27320(var6x, new Class9366(var2x, this.field1087));
             var6.put(var2x, var7x);
          } catch (JsonParseException | IllegalArgumentException var8) {

@@ -24,7 +24,7 @@ public class Class4473 extends Class4457 {
       return var4;
    }
 
-   public boolean method14129(Class7812 var1, Vector3d var2, int var3) {
+   public boolean method14129(LootContext var1, Vector3d var2, int var3) {
       return this.field21662.method32015(var3) ? this.field21663.method37227(var1) : false;
    }
 }

@@ -355,34 +355,34 @@ public class Class9725 {
       }
    }
 
-   private static Class39 method38091(Class7481 var0, Map<Class2961<?>, Class5444<?>> var1, Map<Class2961<?>, LongSet> var2) {
+   private static Class39 method38091(Class7481 var0, Map<Structure<?>, Class5444<?>> var1, Map<Structure<?>, LongSet> var2) {
       Class39 var5 = new Class39();
       Class39 var6 = new Class39();
 
       for (Entry var8 : var1.entrySet()) {
-         var6.method99(((Class2961)var8.getKey()).method11373(), ((Class5444)var8.getValue()).method17114(var0.field32174, var0.field32175));
+         var6.method99(((Structure)var8.getKey()).method11373(), ((Class5444)var8.getValue()).method17114(var0.field32174, var0.field32175));
       }
 
       var5.method99("Starts", var6);
       Class39 var10 = new Class39();
 
       for (Entry var9 : var2.entrySet()) {
-         var10.method99(((Class2961)var9.getKey()).method11373(), new Class42((LongSet)var9.getValue()));
+         var10.method99(((Structure)var9.getKey()).method11373(), new Class42((LongSet)var9.getValue()));
       }
 
       var5.method99("References", var10);
       return var5;
    }
 
-   private static Map<Class2961<?>, Class5444<?>> method38092(Class8761 var0, Class39 var1, long var2) {
+   private static Map<Structure<?>, Class5444<?>> method38092(Class8761 var0, Class39 var1, long var2) {
       HashMap var6 = Maps.newHashMap();
       Class39 var7 = var1.method130("Starts");
 
       for (String var9 : var7.method97()) {
          String var10 = var9.toLowerCase(Locale.ROOT);
-         Class2961 var11 = (Class2961)Class2961.field18055.get(var10);
+         Structure var11 = (Structure) Structure.field_236365_a_.get(var10);
          if (var11 != null) {
-            Class5444 var12 = Class2961.method11366(var0, var7.method130(var9), var2);
+            Class5444 var12 = Structure.method11366(var0, var7.method130(var9), var2);
             if (var12 != null) {
                var6.put(var11, var12);
             }
@@ -394,12 +394,12 @@ public class Class9725 {
       return var6;
    }
 
-   private static Map<Class2961<?>, LongSet> method38093(Class7481 var0, Class39 var1) {
+   private static Map<Structure<?>, LongSet> method38093(Class7481 var0, Class39 var1) {
       HashMap var4 = Maps.newHashMap();
       Class39 var5 = var1.method130("References");
 
       for (String var7 : var5.method97()) {
-         var4.put(Class2961.field18055.get(var7.toLowerCase(Locale.ROOT)), new LongOpenHashSet(Arrays.stream(var5.method129(var7)).filter(var2 -> {
+         var4.put(Structure.field_236365_a_.get(var7.toLowerCase(Locale.ROOT)), new LongOpenHashSet(Arrays.stream(var5.method129(var7)).filter(var2 -> {
             Class7481 var6 = new Class7481(var2);
             if (var6.method24365(var0) <= 8) {
                return true;

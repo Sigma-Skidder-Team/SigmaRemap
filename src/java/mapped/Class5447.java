@@ -6,7 +6,7 @@ public class Class5447 extends Class5444<Class4712> {
    private static String[] field24204;
    private final long field24205;
 
-   public Class5447(Class2961<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public Class5447(Structure<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.field24205 = var6;
    }

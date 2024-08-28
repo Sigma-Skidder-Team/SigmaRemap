@@ -72,7 +72,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("in_city", Class4474.method14130(Class8576.method30649(Class2961.field18071)))
+         .method27312("in_city", Class4474.method14130(Class8576.method30649(Structure.field18071)))
          .method27317(var1, "end/find_end_city");
       Class7999.method27304()
          .method27305(var5)

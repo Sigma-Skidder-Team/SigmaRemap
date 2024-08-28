@@ -6,7 +6,7 @@ public abstract class Class4689 extends Class4688 {
    public final Class4688[] field22273;
    private final Class4693 field22274;
 
-   public Class4689(Class4688[] var1, Class122[] var2) {
+   public Class4689(Class4688[] var1, ILootCondition[] var2) {
       super(var2);
       this.field22273 = var1;
       this.field22274 = this.method14710(var1);
@@ -27,7 +27,7 @@ public abstract class Class4689 extends Class4688 {
    public abstract Class4693 method14710(Class4693[] var1);
 
    @Override
-   public final boolean method14697(Class7812 var1, Consumer<Class6549> var2) {
+   public final boolean method14697(LootContext var1, Consumer<Class6549> var2) {
       return this.method14709(var1) ? this.field22274.method14697(var1, var2) : false;
    }
 

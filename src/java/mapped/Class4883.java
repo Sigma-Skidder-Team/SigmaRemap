@@ -11,7 +11,7 @@ public class Class4883 extends Class4874<Class4491> {
    }
 
    public Class4491 method15047(JsonObject var1, Class9587 var2, Class9366 var3) {
-      JsonObject var6 = Class8963.method32783(var1, "slots", new JsonObject());
+      JsonObject var6 = JSONUtils.method32783(var1, "slots", new JsonObject());
       Class8840 var7 = Class8840.method32016(var6.get("occupied"));
       Class8840 var8 = Class8840.method32016(var6.get("full"));
       Class8840 var9 = Class8840.method32016(var6.get("empty"));

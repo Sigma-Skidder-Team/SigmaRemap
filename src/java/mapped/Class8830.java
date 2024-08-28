@@ -83,10 +83,10 @@ public class Class8830<U> {
    }
 
    private static <U> Class8830<U> method31927(String var0, Codec<U> var1) {
-      return Registry.<Class8830<?>, Class8830<U>>method9195(Registry.field16092, new ResourceLocation(var0), new Class8830<U>(Optional.<Codec<U>>of(var1)));
+      return Registry.<Class8830<?>, Class8830<U>>register(Registry.field16092, new ResourceLocation(var0), new Class8830<U>(Optional.<Codec<U>>of(var1)));
    }
 
    private static <U> Class8830<U> method31928(String var0) {
-      return Registry.<Class8830<?>, Class8830<U>>method9195(Registry.field16092, new ResourceLocation(var0), new Class8830<U>(Optional.<Codec<U>>empty()));
+      return Registry.<Class8830<?>, Class8830<U>>register(Registry.field16092, new ResourceLocation(var0), new Class8830<U>(Optional.<Codec<U>>empty()));
    }
 }

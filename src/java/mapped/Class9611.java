@@ -113,7 +113,7 @@ public class Class9611 extends DataFix {
                Dynamic<?> var5;
                if (!"flat".equalsIgnoreCase(var1x.get("generatorName").asString(""))) {
                   if ("buffet".equalsIgnoreCase(var1x.get("generatorName").asString("")) && var4.isPresent()) {
-                     Dynamic<?> var6 = new Dynamic<>(JsonOps.INSTANCE, Class8963.method32798((String)var4.get(), true));
+                     Dynamic<?> var6 = new Dynamic<>(JsonOps.INSTANCE, JSONUtils.method32798((String)var4.get(), true));
                      var5 = var1x.set("generatorOptions", var6.convert(var1x.getOps()));
                   } else {
                      var5 = var1x;

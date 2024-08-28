@@ -4,8 +4,8 @@ import com.mojang.serialization.Codec;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class Class9300<FC extends Class4698, F extends Class2961<FC>> {
-   public static final Codec<Class9300<?, ?>> field43171 = Registry.field16114.dispatch(var0 -> var0.field43174, Class2961::method11367);
+public class Class9300<FC extends Class4698, F extends Structure<FC>> {
+   public static final Codec<Class9300<?, ?>> field43171 = Registry.field16114.dispatch(var0 -> var0.field43174, Structure::method11367);
    public static final Codec<Supplier<Class9300<?, ?>>> field43172 = Class9054.method33671(Registry.field16103, field43171);
    public static final Codec<List<Supplier<Class9300<?, ?>>>> field43173 = Class9054.<Class9300<?, ?>>method33672(Registry.field16103, field43171);
    public final F field43174;

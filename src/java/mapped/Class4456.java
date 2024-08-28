@@ -14,7 +14,7 @@ public class Class4456 extends Class4457 {
       return new Class4456(Class9587.field44822, Class9587.method37226(var0.method24717()));
    }
 
-   public boolean method14091(Class7812 var1) {
+   public boolean method14091(LootContext var1) {
       return this.field21633.method37227(var1);
    }
 

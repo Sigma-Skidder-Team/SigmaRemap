@@ -4,19 +4,19 @@ public class Class149 extends Class128 {
    private final ResourceLocation field493;
    private final long field494;
 
-   public Class149(Class122[] var1, ResourceLocation var2, long var3) {
+   public Class149(ILootCondition[] var1, ResourceLocation var2, long var3) {
       super(var1);
       this.field493 = var2;
       this.field494 = var3;
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38633;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.SET_LOOT_TABLE;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       if (!var1.method32105()) {
          Class39 var5 = new Class39();
          var5.method109("LootTable", this.field493.toString());

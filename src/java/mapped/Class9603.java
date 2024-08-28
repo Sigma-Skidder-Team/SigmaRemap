@@ -39,9 +39,9 @@ public class Class9603 {
    }
 
    public static Class9603 method37315(JsonObject var0) {
-      String var3 = Class8963.method32763(var0, "source");
-      String var4 = Class8963.method32763(var0, "target");
-      Class1819 var5 = Class1819.method8069(Class8963.method32763(var0, "op"));
+      String var3 = JSONUtils.method32763(var0, "source");
+      String var4 = JSONUtils.method32763(var0, "target");
+      Class1819 var5 = Class1819.method8069(JSONUtils.method32763(var0, "op"));
       return new Class9603(var3, var4, var5);
    }
 }

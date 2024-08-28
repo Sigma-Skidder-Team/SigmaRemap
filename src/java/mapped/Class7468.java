@@ -41,41 +41,41 @@ public class Class7468 {
       return this.field32104;
    }
 
-   public Class2223 method24186() {
+   public MapDecorationType method24186() {
       switch (Class7178.field30861[this.field32105.ordinal()]) {
          case 1:
-            return Class2223.field14526;
+            return MapDecorationType.field14526;
          case 2:
-            return Class2223.field14527;
+            return MapDecorationType.field14527;
          case 3:
-            return Class2223.field14528;
+            return MapDecorationType.field14528;
          case 4:
-            return Class2223.field14529;
+            return MapDecorationType.field14529;
          case 5:
-            return Class2223.field14530;
+            return MapDecorationType.field14530;
          case 6:
-            return Class2223.field14531;
+            return MapDecorationType.field14531;
          case 7:
-            return Class2223.field14532;
+            return MapDecorationType.field14532;
          case 8:
-            return Class2223.field14533;
+            return MapDecorationType.field14533;
          case 9:
-            return Class2223.field14534;
+            return MapDecorationType.field14534;
          case 10:
-            return Class2223.field14535;
+            return MapDecorationType.field14535;
          case 11:
-            return Class2223.field14536;
+            return MapDecorationType.field14536;
          case 12:
-            return Class2223.field14537;
+            return MapDecorationType.field14537;
          case 13:
-            return Class2223.field14538;
+            return MapDecorationType.field14538;
          case 14:
-            return Class2223.field14539;
+            return MapDecorationType.field14539;
          case 15:
-            return Class2223.field14540;
+            return MapDecorationType.field14540;
          case 16:
          default:
-            return Class2223.field14541;
+            return MapDecorationType.field14541;
       }
    }
 

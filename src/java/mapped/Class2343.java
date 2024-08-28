@@ -10,7 +10,7 @@ public enum Class2343 {
 
    public final String field16022;
    public final Class9821<?> field16023;
-   public final Function<Class7812, Class30> field16024;
+   public final Function<LootContext, Class30> field16024;
    private static final Class2343[] field16025 = new Class2343[]{field16018, field16019, field16020, field16021};
 
    private <T> Class2343(String var3, Class9821<T> var4, Function<? super T, Class30> var5) {

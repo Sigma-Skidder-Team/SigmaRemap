@@ -113,7 +113,7 @@ public final class Class9309 {
 
    private static Class9309 method35172(Class9763 var0, Class7380 var1, Class7380 var2, ResourceLocation var3) {
       HashMap var6 = Maps.newHashMap(Class9763.field45674);
-      var6.put(Class2961.field18064, new Class8483(25, 10, 34222645));
+      var6.put(Structure.field18064, new Class8483(25, 10, 34222645));
       return new Class9309(
          new Class9763(Optional.<Class9245>ofNullable(var0.method38382()), var6),
          new Class9556(

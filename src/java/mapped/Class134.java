@@ -13,18 +13,18 @@ public class Class134 extends Class128 {
    private static final Logger field454 = LogManager.getLogger();
    private final List<Class6069> field455;
 
-   public Class134(Class122[] var1, Collection<Class6069> var2) {
+   public Class134(ILootCondition[] var1, Collection<Class6069> var2) {
       super(var1);
       this.field455 = ImmutableList.copyOf(var2);
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38620;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.ENCHANT_RANDOMLY;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       Random var5 = var2.method26088();
       Class6069 var6;
       if (!this.field455.isEmpty()) {

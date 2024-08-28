@@ -12,15 +12,15 @@ public class Class138 extends Class128 {
    private final Class6069 field465;
    private final Class2582 field466;
 
-   public Class138(Class122[] var1, Class6069 var2, Class2582 var3) {
+   public Class138(ILootCondition[] var1, Class6069 var2, Class2582 var3) {
       super(var1);
       this.field465 = var2;
       this.field466 = var3;
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38632;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.APPLY_BONUS;
    }
 
    @Override
@@ -29,7 +29,7 @@ public class Class138 extends Class128 {
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       ItemStack var5 = var2.<ItemStack>method26081(Class9525.field44338);
       if (var5 != null) {
          int var6 = Class7858.method26311(this.field465, var5);

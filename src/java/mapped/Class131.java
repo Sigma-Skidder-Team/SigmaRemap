@@ -8,17 +8,17 @@ import java.util.Optional;
 public class Class131 extends Class128 {
    private static final Logger field448 = LogManager.getLogger();
 
-   public Class131(Class122[] var1) {
+   public Class131(ILootCondition[] var1) {
       super(var1);
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38622;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.FURNACE_SMELT;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       if (!var1.method32105()) {
          Optional var5 = var2.method26090().method6816().<Class920, Class4849>method1030(Class7207.field30936, new Class927(var1), var2.method26090());
          if (var5.isPresent()) {

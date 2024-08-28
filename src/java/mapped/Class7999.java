@@ -205,22 +205,22 @@ public class Class7999 {
    }
 
    public static Class7999 method27320(JsonObject var0, Class9366 var1) {
-      ResourceLocation var4 = !var0.has("parent") ? null : new ResourceLocation(Class8963.method32763(var0, "parent"));
-      Class9272 var5 = !var0.has("display") ? null : Class9272.method34944(Class8963.method32782(var0, "display"));
-      Class8588 var6 = !var0.has("rewards") ? Class8588.field38664 : Class8588.method30724(Class8963.method32782(var0, "rewards"));
-      Map<String, Class9181> var7 = Class9181.method34338(Class8963.method32782(var0, "criteria"), var1);
+      ResourceLocation var4 = !var0.has("parent") ? null : new ResourceLocation(JSONUtils.method32763(var0, "parent"));
+      Class9272 var5 = !var0.has("display") ? null : Class9272.method34944(JSONUtils.method32782(var0, "display"));
+      Class8588 var6 = !var0.has("rewards") ? Class8588.field38664 : Class8588.method30724(JSONUtils.method32782(var0, "rewards"));
+      Map<String, Class9181> var7 = Class9181.method34338(JSONUtils.method32782(var0, "criteria"), var1);
       if (var7.isEmpty()) {
          throw new JsonSyntaxException("Advancement criteria cannot be empty");
       } else {
-         JsonArray var8 = Class8963.method32786(var0, "requirements", new JsonArray());
+         JsonArray var8 = JSONUtils.method32786(var0, "requirements", new JsonArray());
          String[][] var9 = new String[var8.size()][];
 
          for (int var10 = 0; var10 < var8.size(); var10++) {
-            JsonArray var11 = Class8963.method32784(var8.get(var10), "requirements[" + var10 + "]");
+            JsonArray var11 = JSONUtils.method32784(var8.get(var10), "requirements[" + var10 + "]");
             var9[var10] = new String[var11.size()];
 
             for (int var12 = 0; var12 < var11.size(); var12++) {
-               var9[var10][var12] = Class8963.method32762(var11.get(var12), "requirements[" + var10 + "][" + var12 + "]");
+               var9[var10][var12] = JSONUtils.method32762(var11.get(var12), "requirements[" + var10 + "][" + var12 + "]");
             }
          }
 

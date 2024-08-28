@@ -65,7 +65,7 @@ public class Class6597 {
 
    public static Class6597 method19998(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "equipment");
+         JsonObject var3 = JSONUtils.method32781(var0, "equipment");
          Class8634 var4 = Class8634.method31017(var3.get("head"));
          Class8634 var5 = Class8634.method31017(var3.get("chest"));
          Class8634 var6 = Class8634.method31017(var3.get("legs"));

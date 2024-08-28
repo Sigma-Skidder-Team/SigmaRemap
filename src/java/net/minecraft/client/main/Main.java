@@ -84,8 +84,8 @@ public class Main {
       boolean var41 = var28.has("disableChat");
       String var42 = getOptionValueOrDefault(var28, var17);
       Gson var43 = new GsonBuilder().registerTypeAdapter(PropertyMap.class, new Serializer()).create();
-      PropertyMap var44 = Class8963.<PropertyMap>method32797(var43, getOptionValueOrDefault(var28, var22), PropertyMap.class);
-      PropertyMap var45 = Class8963.<PropertyMap>method32797(var43, getOptionValueOrDefault(var28, var23), PropertyMap.class);
+      PropertyMap var44 = JSONUtils.<PropertyMap>method32797(var43, getOptionValueOrDefault(var28, var22), PropertyMap.class);
+      PropertyMap var45 = JSONUtils.<PropertyMap>method32797(var43, getOptionValueOrDefault(var28, var23), PropertyMap.class);
       String var46 = getOptionValueOrDefault(var28, var26);
       File var47 = getOptionValueOrDefault(var28, var6);
       File var48 = var28.has(var7) ? getOptionValueOrDefault(var28, var7) : new File(var47, "assets/");

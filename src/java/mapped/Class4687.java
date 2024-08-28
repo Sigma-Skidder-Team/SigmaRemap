@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 public class Class4687 extends Class4686 {
    private final ResourceLocation field22270;
 
-   public Class4687(ResourceLocation var1, int var2, int var3, Class122[] var4, Class127[] var5) {
+   public Class4687(ResourceLocation var1, int var2, int var3, ILootCondition[] var4, ILootFunction[] var5) {
       super(var2, var3, var4, var5);
       this.field22270 = var1;
    }
@@ -16,7 +16,7 @@ public class Class4687 extends Class4686 {
    }
 
    @Override
-   public void method14695(Consumer<ItemStack> var1, Class7812 var2) {
+   public void method14695(Consumer<ItemStack> var1, LootContext var2) {
       Class7318 var5 = var2.method26086(this.field22270);
       var5.method23180(var2, var1);
    }

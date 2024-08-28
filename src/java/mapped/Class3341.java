@@ -49,7 +49,7 @@ public class Class3341 extends Class3257 {
       } else {
          var2.method3154(var3);
          if (var1 instanceof ServerWorld) {
-            BlockPos var8 = ((ServerWorld)var1).method6883().method7370().method17820((ServerWorld)var1, Class2961.field18067, var2.method3432(), 100, false);
+            BlockPos var8 = ((ServerWorld)var1).method6883().method7370().method17820((ServerWorld)var1, Structure.field18067, var2.method3432(), 100, false);
             if (var8 != null) {
                Class897 var9 = new Class897(var1, var2.getPosX(), var2.method3440(0.5), var2.getPosZ());
                var9.method3522(var6);

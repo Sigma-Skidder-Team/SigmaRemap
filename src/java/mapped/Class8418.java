@@ -71,7 +71,7 @@ public class Class8418 {
       Class39 var7 = var6.method130("References");
 
       for (String var9 : this.field36094) {
-         Class2961 var10 = (Class2961)Class2961.field18055.get(var9.toLowerCase(Locale.ROOT));
+         Structure var10 = (Structure) Structure.field_236365_a_.get(var9.toLowerCase(Locale.ROOT));
          if (!var7.method119(var9, 12) && var10 != null) {
             byte var11 = 8;
             LongArrayList var12 = new LongArrayList();

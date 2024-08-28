@@ -26,7 +26,7 @@ public class Class4462 extends Class4457 {
       return new Class4462(Class9587.field44822, Class9587.method37226(var0), Class9587.method37226(var1), Class9587.method37226(var2));
    }
 
-   public boolean method14107(Class7812 var1, Class7812 var2, Class7812 var3) {
+   public boolean method14107(LootContext var1, LootContext var2, LootContext var3) {
       return this.field21644 == Class9587.field44822 || var3 != null && this.field21644.method37227(var3)
          ? this.field21642.method37227(var1) && this.field21643.method37227(var2) || this.field21642.method37227(var2) && this.field21643.method37227(var1)
          : false;

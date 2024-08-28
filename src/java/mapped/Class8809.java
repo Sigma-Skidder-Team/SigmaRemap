@@ -29,7 +29,7 @@ public class Class8809 extends DataFix {
                   if (!"null".equals(var3) && !StringUtils.isEmpty(var3)) {
                      if (var3.charAt(0) == '"' && var3.charAt(var3.length() - 1) == '"' || var3.charAt(0) == '{' && var3.charAt(var3.length() - 1) == '}') {
                         try {
-                           var4 = Class8963.<ITextComponent>method32793(Class6726.field29439, var3, ITextComponent.class, true);
+                           var4 = JSONUtils.<ITextComponent>method32793(Class6726.field29439, var3, ITextComponent.class, true);
                            if (var4 == null) {
                               var4 = StringTextComponent.EMPTY;
                            }

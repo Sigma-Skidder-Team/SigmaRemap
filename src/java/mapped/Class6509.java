@@ -4,9 +4,9 @@ import com.google.gson.JsonObject;
 
 public class Class6509 implements Class6504<Class4846> {
    public Class4846 method19700(ResourceLocation var1, JsonObject var2) {
-      Class120 var5 = Class120.method344(Class8963.method32782(var2, "base"));
-      Class120 var6 = Class120.method344(Class8963.method32782(var2, "addition"));
-      ItemStack var7 = Class4852.method14987(Class8963.method32782(var2, "result"));
+      Class120 var5 = Class120.method344(JSONUtils.method32782(var2, "base"));
+      Class120 var6 = Class120.method344(JSONUtils.method32782(var2, "addition"));
+      ItemStack var7 = Class4852.method14987(JSONUtils.method32782(var2, "result"));
       return new Class4846(var1, var5, var6, var7);
    }
 

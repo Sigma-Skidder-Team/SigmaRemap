@@ -33,14 +33,14 @@ public class Class7949 {
 
       try {
          var7 = Files.newReader(var6, StandardCharsets.UTF_8);
-         JsonObject var8 = Class8963.method32801(var7);
-         JsonObject var9 = Class8963.method32783(var8, "objects", (JsonObject)null);
+         JsonObject var8 = JSONUtils.method32801(var7);
+         JsonObject var9 = JSONUtils.method32783(var8, "objects", (JsonObject)null);
          if (var9 != null) {
             for (Entry var11 : var9.entrySet()) {
                JsonObject var12 = (JsonObject)var11.getValue();
                String var13 = (String)var11.getKey();
                String[] var14 = var13.split("/", 2);
-               String var15 = Class8963.method32763(var12, "hash");
+               String var15 = JSONUtils.method32763(var12, "hash");
                File var16 = new File(var5, var15.substring(0, 2) + "/" + var15);
                if (var14.length == 1) {
                   this.field34182.put(var14[0], var16);

@@ -29,8 +29,8 @@ public class Class1672 implements Class1670 {
    private final List<Class39> field9098 = Lists.newArrayList();
    private final List<BlockPos> field9099 = Lists.newArrayList();
    private final ShortList[] field9100 = new ShortList[16];
-   private final Map<Class2961<?>, Class5444<?>> field9101 = Maps.newHashMap();
-   private final Map<Class2961<?>, LongSet> field9102 = Maps.newHashMap();
+   private final Map<Structure<?>, Class5444<?>> field9101 = Maps.newHashMap();
+   private final Map<Structure<?>, LongSet> field9102 = Maps.newHashMap();
    private final Class8922 field9103;
    private final Class6806<Block> field9104;
    private final Class6806<Class7631> field9105;
@@ -289,46 +289,46 @@ public class Class1672 implements Class1670 {
 
    @Nullable
    @Override
-   public Class5444<?> method7097(Class2961<?> var1) {
+   public Class5444<?> method7097(Structure<?> var1) {
       return this.field9101.get(var1);
    }
 
    @Override
-   public void method7098(Class2961<?> var1, Class5444<?> var2) {
+   public void method7098(Structure<?> var1, Class5444<?> var2) {
       this.field9101.put(var1, var2);
       this.field9090 = true;
    }
 
    @Override
-   public Map<Class2961<?>, Class5444<?>> method7074() {
-      return Collections.<Class2961<?>, Class5444<?>>unmodifiableMap(this.field9101);
+   public Map<Structure<?>, Class5444<?>> method7074() {
+      return Collections.<Structure<?>, Class5444<?>>unmodifiableMap(this.field9101);
    }
 
    @Override
-   public void method7075(Map<Class2961<?>, Class5444<?>> var1) {
+   public void method7075(Map<Structure<?>, Class5444<?>> var1) {
       this.field9101.clear();
       this.field9101.putAll(var1);
       this.field9090 = true;
    }
 
    @Override
-   public LongSet method7099(Class2961<?> var1) {
+   public LongSet method7099(Structure<?> var1) {
       return this.field9102.computeIfAbsent(var1, var0 -> new LongOpenHashSet());
    }
 
    @Override
-   public void method7100(Class2961<?> var1, long var2) {
+   public void method7100(Structure<?> var1, long var2) {
       this.field9102.computeIfAbsent(var1, var0 -> new LongOpenHashSet()).add(var2);
       this.field9090 = true;
    }
 
    @Override
-   public Map<Class2961<?>, LongSet> method7101() {
-      return Collections.<Class2961<?>, LongSet>unmodifiableMap(this.field9102);
+   public Map<Structure<?>, LongSet> method7101() {
+      return Collections.<Structure<?>, LongSet>unmodifiableMap(this.field9102);
    }
 
    @Override
-   public void method7102(Map<Class2961<?>, LongSet> var1) {
+   public void method7102(Map<Structure<?>, LongSet> var1) {
       this.field9102.clear();
       this.field9102.putAll(var1);
       this.field9090 = true;

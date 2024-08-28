@@ -51,7 +51,7 @@ public class Class9768<T> {
                         InputStream var11 = var10.method7763();
                         BufferedReader var13 = new BufferedReader(new InputStreamReader(var11, StandardCharsets.UTF_8));
                      ) {
-                        JsonObject var15 = Class8963.<JsonObject>method32796(field45703, var13, JsonObject.class);
+                        JsonObject var15 = JSONUtils.<JsonObject>method32796(field45703, var13, JsonObject.class);
                         if (var15 == null) {
                            field45702.error(
                               "Couldn't load {} tag list {} from {} in data pack {} as it is empty or null", this.field45707, var8, var6, var10.method7765()

@@ -147,7 +147,7 @@ public abstract class Class3390 {
    public List<ItemStack> method11697(Class7380 var1, Class9464 var2) {
       ResourceLocation var5 = this.method11999();
       if (var5 != Class8793.field39533) {
-         Class7812 var6 = var2.method36454(Class9525.field44336, var1).method36460(Class8524.field38292);
+         LootContext var6 = var2.method36454(Class9525.field44336, var1).method36460(Class8524.field38292);
          ServerWorld var7 = var6.method26090();
          Class7318 var8 = var7.method6715().method1411().method1058(var5);
          return var8.method23182(var6);

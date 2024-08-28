@@ -15,12 +15,12 @@ public class Class2557 implements JsonDeserializer<Class1903> {
    }
 
    private boolean method10749(JsonObject var1) {
-      return Class8963.method32769(var1, "uvlock", false);
+      return JSONUtils.getBoolean(var1, "uvlock", false);
    }
 
    public Class1901 method10750(JsonObject var1) {
-      int var4 = Class8963.method32778(var1, "x", 0);
-      int var5 = Class8963.method32778(var1, "y", 0);
+      int var4 = JSONUtils.getInt(var1, "x", 0);
+      int var5 = JSONUtils.getInt(var1, "y", 0);
       Class1901 var6 = Class1901.method8167(var4, var5);
       if (var6 != null) {
          return var6;
@@ -30,11 +30,11 @@ public class Class2557 implements JsonDeserializer<Class1903> {
    }
 
    public ResourceLocation method10751(JsonObject var1) {
-      return new ResourceLocation(Class8963.method32763(var1, "model"));
+      return new ResourceLocation(JSONUtils.method32763(var1, "model"));
    }
 
    public int method10752(JsonObject var1) {
-      int var4 = Class8963.method32778(var1, "weight", 1);
+      int var4 = JSONUtils.getInt(var1, "weight", 1);
       if (var4 >= 1) {
          return var4;
       } else {

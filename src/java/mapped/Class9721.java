@@ -246,9 +246,9 @@ public class Class9721 {
                   1,
                   new Class5391[]{new Class5396(Class8514.field37899, 24, 16, 2), new Class5395(Class8514.field38056, 7, 1, 1)},
                   2,
-                  new Class5391[]{new Class5396(Class8514.field37471, 11, 16, 10), new Class5398(13, Class2961.field18068, Class2223.field14525, 12, 5)},
+                  new Class5391[]{new Class5396(Class8514.field37471, 11, 16, 10), new Class5398(13, Structure.field18068, MapDecorationType.field14525, 12, 5)},
                   3,
-                  new Class5391[]{new Class5396(Class8514.field37905, 1, 12, 20), new Class5398(14, Class2961.field18060, Class2223.field14524, 12, 10)},
+                  new Class5391[]{new Class5396(Class8514.field37905, 1, 12, 20), new Class5398(14, Structure.field18060, MapDecorationType.field14524, 12, 10)},
                   4,
                   new Class5391[]{
                      new Class5395(Class8514.field38050, 7, 1, 15),

@@ -10,7 +10,7 @@ public class Class8746 {
          .registerTypeAdapter(Class6872.class, new Class2575())
          .registerTypeAdapter(Class6869.class, new Class2578())
          .registerTypeAdapter(Class6871.class, new Class2555())
-         .registerTypeHierarchyAdapter(Class122.class, Class8582.method30664())
+         .registerTypeHierarchyAdapter(ILootCondition.class, Class8582.method30664())
          .registerTypeHierarchyAdapter(Class2063.class, new Class8500());
    }
 
@@ -18,7 +18,7 @@ public class Class8746 {
       return method31555()
          .registerTypeAdapter(Class12.class, new Class2573())
          .registerTypeHierarchyAdapter(Class4688.class, Class8695.method31322())
-         .registerTypeHierarchyAdapter(Class127.class, Class8585.method30685());
+         .registerTypeHierarchyAdapter(ILootFunction.class, LootFunctionManager.func_237450_a_());
    }
 
    public static GsonBuilder method31557() {

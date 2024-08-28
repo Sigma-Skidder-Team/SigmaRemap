@@ -37,7 +37,7 @@ public abstract class Class5646 {
             ArrayList var4 = Lists.newArrayList();
 
             for (Biome var6 : this.field24985.method7201()) {
-               if (var6.method32507().method24277(Class2961.field18067)) {
+               if (var6.method32507().method24277(Structure.field18067)) {
                   var4.add(var6);
                }
             }
@@ -112,9 +112,9 @@ public abstract class Class5646 {
    }
 
    @Nullable
-   public BlockPos method17820(ServerWorld var1, Class2961<?> var2, BlockPos var3, int var4, boolean var5) {
+   public BlockPos method17820(ServerWorld var1, Structure<?> var2, BlockPos var3, int var4, boolean var5) {
       if (this.field24985.method7205(var2)) {
-         if (var2 != Class2961.field18067) {
+         if (var2 != Structure.field18067) {
             Class8483 var16 = this.field24987.method38381(var2);
             return var16 != null ? var2.method11369(var1, var1.method6893(), var3, var4, var5, var1.method6967(), var16) : null;
          } else {

@@ -27,14 +27,14 @@ public class Class7546 implements Class7544 {
    }
 
    public static Class7546 method24666(JsonObject var0) {
-      int var3 = Class8963.method32778(var0, "height", 8);
-      int var4 = Class8963.method32777(var0, "ascent");
+      int var3 = JSONUtils.getInt(var0, "height", 8);
+      int var4 = JSONUtils.method32777(var0, "ascent");
       if (var4 <= var3) {
          ArrayList var5 = Lists.newArrayList();
-         JsonArray var6 = Class8963.method32785(var0, "chars");
+         JsonArray var6 = JSONUtils.method32785(var0, "chars");
 
          for (int var7 = 0; var7 < var6.size(); var7++) {
-            String var8 = Class8963.method32762(var6.get(var7), "chars[" + var7 + "]");
+            String var8 = JSONUtils.method32762(var6.get(var7), "chars[" + var7 + "]");
             int[] var9 = var8.codePoints().toArray();
             if (var7 > 0) {
                int var10 = ((int[])var5.get(0)).length;
@@ -49,7 +49,7 @@ public class Class7546 implements Class7544 {
          }
 
          if (!var5.isEmpty() && ((int[])var5.get(0)).length != 0) {
-            return new Class7546(new ResourceLocation(Class8963.method32763(var0, "file")), var3, var4, var5);
+            return new Class7546(new ResourceLocation(JSONUtils.method32763(var0, "file")), var3, var4, var5);
          } else {
             throw new JsonParseException("Expected to find data in chars, found none.");
          }

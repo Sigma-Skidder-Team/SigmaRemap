@@ -11,18 +11,18 @@ public class Class133 extends Class128 {
    private static String[] field452;
    private final Map<Class7144, Class6872> field453;
 
-   public Class133(Class122[] var1, Map<Class7144, Class6872> var2) {
+   public Class133(ILootCondition[] var1, Map<Class7144, Class6872> var2) {
       super(var1);
       this.field453 = ImmutableMap.copyOf(var2);
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38628;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.SET_STEW_EFFECT;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       if (var1.method32107() == Class8514.field38149 && !this.field453.isEmpty()) {
          Random var5 = var2.method26088();
          int var6 = var5.nextInt(this.field453.size());

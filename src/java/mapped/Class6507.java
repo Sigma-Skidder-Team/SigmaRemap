@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class Class6507 implements Class6504<Class4852> {
    public Class4852 method19700(ResourceLocation var1, JsonObject var2) {
-      String var5 = Class8963.method32764(var2, "group", "");
-      Map var6 = Class4852.method14989(Class8963.method32782(var2, "key"));
-      String[] var7 = Class4852.method14982(Class4852.method14990(Class8963.method32785(var2, "pattern")));
+      String var5 = JSONUtils.method32764(var2, "group", "");
+      Map var6 = Class4852.method14989(JSONUtils.method32782(var2, "key"));
+      String[] var7 = Class4852.method14982(Class4852.method14990(JSONUtils.method32785(var2, "pattern")));
       int var8 = var7[0].length();
       int var9 = var7.length;
       Class25 var10 = Class4852.method14991(var7, var6, var8, var9);
-      ItemStack var11 = Class4852.method14987(Class8963.method32782(var2, "result"));
+      ItemStack var11 = Class4852.method14987(JSONUtils.method32782(var2, "result"));
       return new Class4852(var1, var5, var8, var9, var10, var11);
    }
 

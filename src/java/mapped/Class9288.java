@@ -14,7 +14,7 @@ public class Class9288 {
    public static Class6870 method35013(JsonElement var0, JsonDeserializationContext var1) throws JsonParseException {
       if (!var0.isJsonPrimitive()) {
          JsonObject var4 = var0.getAsJsonObject();
-         String var5 = Class8963.method32764(var4, "type", Class6870.field29798.toString());
+         String var5 = JSONUtils.method32764(var4, "type", Class6870.field29798.toString());
          Class var6 = field42711.get(new ResourceLocation(var5));
          if (var6 != null) {
             return (Class6870)var1.deserialize(var4, var6);

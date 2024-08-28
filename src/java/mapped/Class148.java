@@ -10,18 +10,18 @@ public class Class148 extends Class128 {
    private static String[] field491;
    private final List<Class6884> field492;
 
-   public Class148(Class122[] var1, List<Class6884> var2) {
+   public Class148(ILootCondition[] var1, List<Class6884> var2) {
       super(var1);
       this.field492 = ImmutableList.copyOf(var2);
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38625;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.SET_ATTRIBUTES;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       Random var5 = var2.method26088();
 
       for (Class6884 var7 : this.field492) {

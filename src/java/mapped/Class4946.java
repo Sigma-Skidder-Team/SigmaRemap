@@ -4,8 +4,8 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 
-public class Class4946 implements Class4929<Class153> {
-   public void method15246(JsonObject var1, Class153 var2, JsonSerializationContext var3) {
+public class Class4946 implements ILootSerializer<Class153> {
+   public void serialize(JsonObject var1, Class153 var2, JsonSerializationContext var3) {
       var1.add("predicate", Class153.method464(var2).method36915());
    }
 

@@ -94,39 +94,39 @@ public class Class1673 extends Class1672 {
 
    @Nullable
    @Override
-   public Class5444<?> method7097(Class2961<?> var1) {
+   public Class5444<?> method7097(Structure<?> var1) {
       return this.field9109.method7097(var1);
    }
 
    @Override
-   public void method7098(Class2961<?> var1, Class5444<?> var2) {
+   public void method7098(Structure<?> var1, Class5444<?> var2) {
    }
 
    @Override
-   public Map<Class2961<?>, Class5444<?>> method7074() {
+   public Map<Structure<?>, Class5444<?>> method7074() {
       return this.field9109.method7074();
    }
 
    @Override
-   public void method7075(Map<Class2961<?>, Class5444<?>> var1) {
+   public void method7075(Map<Structure<?>, Class5444<?>> var1) {
    }
 
    @Override
-   public LongSet method7099(Class2961<?> var1) {
+   public LongSet method7099(Structure<?> var1) {
       return this.field9109.method7099(var1);
    }
 
    @Override
-   public void method7100(Class2961<?> var1, long var2) {
+   public void method7100(Structure<?> var1, long var2) {
    }
 
    @Override
-   public Map<Class2961<?>, LongSet> method7101() {
+   public Map<Structure<?>, LongSet> method7101() {
       return this.field9109.method7101();
    }
 
    @Override
-   public void method7102(Map<Class2961<?>, LongSet> var1) {
+   public void method7102(Map<Structure<?>, LongSet> var1) {
    }
 
    @Override

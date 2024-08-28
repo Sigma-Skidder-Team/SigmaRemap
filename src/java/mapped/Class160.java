@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-public class Class160 implements Class122 {
+public class Class160 implements ILootCondition {
    private static String[] field519;
    private final Map<String, Class6872> field520;
    private final Class2063 field521;
@@ -27,7 +27,7 @@ public class Class160 implements Class122 {
       return ImmutableSet.of(this.field521.method8717());
    }
 
-   public boolean test(Class7812 var1) {
+   public boolean test(LootContext var1) {
       Entity var4 = var1.method26081(this.field521.method8717());
       if (var4 == null) {
          return false;

@@ -34,8 +34,8 @@ public final class Class2583 implements Class2582 {
    }
 
    public static Class2582 method10789(JsonObject var0, JsonDeserializationContext var1) {
-      int var4 = Class8963.method32777(var0, "extra");
-      float var5 = Class8963.method32771(var0, "probability");
+      int var4 = JSONUtils.method32777(var0, "extra");
+      float var5 = JSONUtils.method32771(var0, "probability");
       return new Class2583(var4, var5);
    }
 

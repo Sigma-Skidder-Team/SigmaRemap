@@ -21,14 +21,14 @@ public class Class2553 implements JsonDeserializer<Class7496> {
       boolean var10 = this.method10747(var6);
       Class9264 var11 = Class9264.field42603;
       if (var6.has("display")) {
-         JsonObject var12 = Class8963.method32782(var6, "display");
+         JsonObject var12 = JSONUtils.method32782(var6, "display");
          var11 = (Class9264)var3.deserialize(var12, Class9264.class);
       }
 
       List var15 = this.method10743(var3, var6);
       Class2129 var13 = null;
       if (var6.has("gui_light")) {
-         var13 = Class2129.method8811(Class8963.method32763(var6, "gui_light"));
+         var13 = Class2129.method8811(JSONUtils.method32763(var6, "gui_light"));
       }
 
       ResourceLocation var14 = !var8.isEmpty() ? new ResourceLocation(var8) : null;
@@ -38,7 +38,7 @@ public class Class2553 implements JsonDeserializer<Class7496> {
    public List<Class7781> method10743(JsonDeserializationContext var1, JsonObject var2) {
       ArrayList var5 = Lists.newArrayList();
       if (var2.has("overrides")) {
-         for (JsonElement var7 : Class8963.method32785(var2, "overrides")) {
+         for (JsonElement var7 : JSONUtils.method32785(var2, "overrides")) {
             var5.add(var1.deserialize(var7, Class7781.class));
          }
       }
@@ -50,7 +50,7 @@ public class Class2553 implements JsonDeserializer<Class7496> {
       ResourceLocation var4 = Class289.field1102;
       HashMap var5 = Maps.newHashMap();
       if (var1.has("textures")) {
-         JsonObject var6 = Class8963.method32782(var1, "textures");
+         JsonObject var6 = JSONUtils.method32782(var1, "textures");
 
          for (Entry var8 : var6.entrySet()) {
             var5.put(var8.getKey(), method10745(var4, ((JsonElement)var8.getValue()).getAsString()));
@@ -74,17 +74,17 @@ public class Class2553 implements JsonDeserializer<Class7496> {
    }
 
    private String method10746(JsonObject var1) {
-      return Class8963.method32764(var1, "parent", "");
+      return JSONUtils.method32764(var1, "parent", "");
    }
 
    public boolean method10747(JsonObject var1) {
-      return Class8963.method32769(var1, "ambientocclusion", true);
+      return JSONUtils.getBoolean(var1, "ambientocclusion", true);
    }
 
    public List<Class9726> method10748(JsonDeserializationContext var1, JsonObject var2) {
       ArrayList var5 = Lists.newArrayList();
       if (var2.has("elements")) {
-         for (JsonElement var7 : Class8963.method32785(var2, "elements")) {
+         for (JsonElement var7 : JSONUtils.method32785(var2, "elements")) {
             var5.add(var1.deserialize(var7, Class9726.class));
          }
       }

@@ -222,7 +222,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("in_stronghold", Class4474.method14130(Class8576.method30649(Class2961.field18067)))
+         .method27312("in_stronghold", Class4474.method14130(Class8576.method30649(Structure.field18067)))
          .method27317(var1, "story/follow_ender_eye");
       Class7999.method27304()
          .method27305(var14)

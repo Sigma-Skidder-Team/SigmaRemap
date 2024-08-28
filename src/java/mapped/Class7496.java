@@ -46,7 +46,7 @@ public class Class7496 implements Class7495 {
    public ResourceLocation field32210;
 
    public static Class7496 method24426(Reader var0) {
-      return Class8963.<Class7496>method32796(field32201, var0, Class7496.class);
+      return JSONUtils.<Class7496>method32796(field32201, var0, Class7496.class);
    }
 
    public static Class7496 method24427(String var0) {

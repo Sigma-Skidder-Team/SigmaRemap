@@ -31,23 +31,23 @@ public class Class9733 {
                .apply(var0, Class9733::new)
       )
       .stable();
-   private static final Map<Class2961<?>, Class9300<?, ?>> field45444 = Util.<Map<Class2961<?>, Class9300<?, ?>>>method38508(Maps.newHashMap(), var0 -> {
-      var0.put(Class2961.field18059, Class9438.field43835);
-      var0.put(Class2961.field18073, Class9438.field43853);
-      var0.put(Class2961.field18067, Class9438.field43844);
-      var0.put(Class2961.field18066, Class9438.field43843);
-      var0.put(Class2961.field18062, Class9438.field43839);
-      var0.put(Class2961.field18061, Class9438.field43838);
-      var0.put(Class2961.field18063, Class9438.field43840);
-      var0.put(Class2961.field18069, Class9438.field43846);
-      var0.put(Class2961.field18065, Class9438.field43841);
-      var0.put(Class2961.field18068, Class9438.field43845);
-      var0.put(Class2961.field18071, Class9438.field43850);
-      var0.put(Class2961.field18060, Class9438.field43837);
-      var0.put(Class2961.field18070, Class9438.field43848);
-      var0.put(Class2961.field18058, Class9438.field43834);
-      var0.put(Class2961.field18064, Class9438.field43858);
-      var0.put(Class2961.field18075, Class9438.field43852);
+   private static final Map<Structure<?>, Class9300<?, ?>> field45444 = Util.<Map<Structure<?>, Class9300<?, ?>>>method38508(Maps.newHashMap(), var0 -> {
+      var0.put(Structure.field18059, Class9438.field43835);
+      var0.put(Structure.field18073, Class9438.field43853);
+      var0.put(Structure.field18067, Class9438.field43844);
+      var0.put(Structure.field18066, Class9438.field43843);
+      var0.put(Structure.field18062, Class9438.field43839);
+      var0.put(Structure.field18061, Class9438.field43838);
+      var0.put(Structure.field18063, Class9438.field43840);
+      var0.put(Structure.field18069, Class9438.field43846);
+      var0.put(Structure.field18065, Class9438.field43841);
+      var0.put(Structure.field18068, Class9438.field43845);
+      var0.put(Structure.field18071, Class9438.field43850);
+      var0.put(Structure.field18060, Class9438.field43837);
+      var0.put(Structure.field18070, Class9438.field43848);
+      var0.put(Structure.field18058, Class9438.field43834);
+      var0.put(Structure.field18064, Class9438.field43858);
+      var0.put(Structure.field18075, Class9438.field43852);
    });
    private final Registry<Biome> field45445;
    private final Class9763 field45446;
@@ -209,7 +209,7 @@ public class Class9733 {
 
    public static Class9733 method38132(Registry<Biome> var0) {
       Class9763 var3 = new Class9763(
-         Optional.<Class9245>of(Class9763.field45675), Maps.newHashMap(ImmutableMap.of(Class2961.field18073, Class9763.field45674.get(Class2961.field18073)))
+         Optional.<Class9245>of(Class9763.field45675), Maps.newHashMap(ImmutableMap.of(Structure.field18073, Class9763.field45674.get(Structure.field18073)))
       );
       Class9733 var4 = new Class9733(var3, var0);
       var4.field45448 = () -> var0.method9189(Class9495.field44122);

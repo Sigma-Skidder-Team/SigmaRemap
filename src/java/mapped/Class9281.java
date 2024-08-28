@@ -24,9 +24,9 @@ public class Class9281 {
    private static Class172 method34995(JsonElement var0) {
       if (!var0.isJsonPrimitive()) {
          Object2BooleanOpenHashMap var5 = new Object2BooleanOpenHashMap();
-         JsonObject var4 = Class8963.method32781(var0, "criterion data");
+         JsonObject var4 = JSONUtils.method32781(var0, "criterion data");
          var4.entrySet().forEach(var1 -> {
-            boolean var4x = Class8963.method32767((JsonElement)var1.getValue(), "criterion test");
+            boolean var4x = JSONUtils.method32767((JsonElement)var1.getValue(), "criterion test");
             var5.put(var1.getKey(), var4x);
          });
          return new Class173(var5);
@@ -94,22 +94,22 @@ public class Class9281 {
 
    public static Class9281 method34997(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "player");
+         JsonObject var3 = JSONUtils.method32781(var0, "player");
          Class8840 var4 = Class8840.method32016(var3.get("level"));
-         String var5 = Class8963.method32764(var3, "gamemode", "");
+         String var5 = JSONUtils.method32764(var3, "gamemode", "");
          Class1894 var6 = Class1894.method8162(var5, Class1894.field11101);
          HashMap var7 = Maps.newHashMap();
-         JsonArray var8 = Class8963.method32786(var3, "stats", (JsonArray)null);
+         JsonArray var8 = JSONUtils.method32786(var3, "stats", (JsonArray)null);
          if (var8 != null) {
             for (JsonElement var10 : var8) {
-               JsonObject var11 = Class8963.method32781(var10, "stats entry");
-               ResourceLocation var12 = new ResourceLocation(Class8963.method32763(var11, "type"));
+               JsonObject var11 = JSONUtils.method32781(var10, "stats entry");
+               ResourceLocation var12 = new ResourceLocation(JSONUtils.method32763(var11, "type"));
                Class49 var13 = Registry.field16088.method9184(var12);
                if (var13 == null) {
                   throw new JsonParseException("Invalid stat type: " + var12);
                }
 
-               ResourceLocation var14 = new ResourceLocation(Class8963.method32763(var11, "stat"));
+               ResourceLocation var14 = new ResourceLocation(JSONUtils.method32763(var11, "stat"));
                Class9007 var15 = method34998(var13, var14);
                Class8840 var16 = Class8840.method32016(var11.get("value"));
                var7.put(var15, var16);
@@ -117,16 +117,16 @@ public class Class9281 {
          }
 
          Object2BooleanOpenHashMap var17 = new Object2BooleanOpenHashMap();
-         JsonObject var18 = Class8963.method32783(var3, "recipes", new JsonObject());
+         JsonObject var18 = JSONUtils.method32783(var3, "recipes", new JsonObject());
 
          for (Entry var21 : var18.entrySet()) {
             ResourceLocation var23 = new ResourceLocation((String)var21.getKey());
-            boolean var25 = Class8963.method32767((JsonElement)var21.getValue(), "recipe present");
+            boolean var25 = JSONUtils.method32767((JsonElement)var21.getValue(), "recipe present");
             var17.put(var23, var25);
          }
 
          HashMap var20 = Maps.newHashMap();
-         JsonObject var22 = Class8963.method32783(var3, "advancements", new JsonObject());
+         JsonObject var22 = JSONUtils.method32783(var3, "advancements", new JsonObject());
 
          for (Entry var26 : var22.entrySet()) {
             ResourceLocation var27 = new ResourceLocation((String)var26.getKey());

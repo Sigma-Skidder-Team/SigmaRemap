@@ -6,7 +6,7 @@ public class Class8912 {
    private Class8841 field40337 = Class8841.field39940;
    private Class8841 field40338 = Class8841.field39940;
    private RegistryKey<Biome> field40339;
-   private Class2961<?> field40340;
+   private Structure<?> field40340;
    private RegistryKey<World> field40341;
    private Boolean field40342;
    private Class7231 field40343 = Class7231.field31074;

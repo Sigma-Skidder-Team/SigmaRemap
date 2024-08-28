@@ -41,28 +41,28 @@ public class Class7543 implements Class7544 {
             throw new JsonParseException("Expected 2 elements in 'shift', found " + var5.size());
          }
 
-         var3 = Class8963.method32770(var5.get(0), "shift[0]");
-         var4 = Class8963.method32770(var5.get(1), "shift[1]");
+         var3 = JSONUtils.method32770(var5.get(0), "shift[0]");
+         var4 = JSONUtils.method32770(var5.get(1), "shift[1]");
       }
 
       StringBuilder var9 = new StringBuilder();
       if (var0.has("skip")) {
          JsonElement var6 = var0.get("skip");
          if (!var6.isJsonArray()) {
-            var9.append(Class8963.method32762(var6, "skip"));
+            var9.append(JSONUtils.method32762(var6, "skip"));
          } else {
-            JsonArray var7 = Class8963.method32784(var6, "skip");
+            JsonArray var7 = JSONUtils.method32784(var6, "skip");
 
             for (int var8 = 0; var8 < var7.size(); var8++) {
-               var9.append(Class8963.method32762(var7.get(var8), "skip[" + var8 + "]"));
+               var9.append(JSONUtils.method32762(var7.get(var8), "skip[" + var8 + "]"));
             }
          }
       }
 
       return new Class7543(
-         new ResourceLocation(Class8963.method32763(var0, "file")),
-         Class8963.method32772(var0, "size", 11.0F),
-         Class8963.method32772(var0, "oversample", 1.0F),
+         new ResourceLocation(JSONUtils.method32763(var0, "file")),
+         JSONUtils.method32772(var0, "size", 11.0F),
+         JSONUtils.method32772(var0, "oversample", 1.0F),
          var3,
          var4,
          var9.toString()

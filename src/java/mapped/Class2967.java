@@ -2,7 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 
-public class Class2967 extends Class2961<Class4700> {
+public class Class2967 extends Structure<Class4700> {
    private static String[] field18080;
    private final int field18081;
    private final boolean field18082;

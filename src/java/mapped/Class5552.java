@@ -29,7 +29,7 @@ public class Class5552 implements Packet<Class5112> {
 
    @Override
    public void method17175(PacketBuffer var1) throws IOException {
-      this.field24654 = Class8963.<Class8783>method32797(field24653, var1.method35728(32767), Class8783.class);
+      this.field24654 = JSONUtils.<Class8783>method32797(field24653, var1.method35728(32767), Class8783.class);
    }
 
    @Override

@@ -349,7 +349,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Stream<? extends Class5444<?>> method6969(Class2002 var1, Class2961<?> var2) {
+   public Stream<? extends Class5444<?>> method6969(Class2002 var1, Structure<?> var2) {
       return this.field9215.method24340(var1, var2);
    }
 }

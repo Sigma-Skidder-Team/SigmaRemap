@@ -7,16 +7,16 @@ import com.google.gson.JsonObject;
 import java.util.function.Predicate;
 
 public class Class9587 {
-   public static final Class9587 field44822 = new Class9587(new Class122[0]);
-   private final Class122[] field44823;
-   private final Predicate<Class7812> field44824;
+   public static final Class9587 field44822 = new Class9587(new ILootCondition[0]);
+   private final ILootCondition[] field44823;
+   private final Predicate<LootContext> field44824;
 
-   private Class9587(Class122[] var1) {
+   private Class9587(ILootCondition[] var1) {
       this.field44823 = var1;
-      this.field44824 = Class8582.<Class7812>method30665(var1);
+      this.field44824 = Class8582.<LootContext>method30665(var1);
    }
 
-   public static Class9587 method37222(Class122... var0) {
+   public static Class9587 method37222(ILootCondition... var0) {
       return new Class9587(var0);
    }
 
@@ -28,7 +28,7 @@ public class Class9587 {
    public static Class9587[] method37224(JsonObject var0, String var1, Class9366 var2) {
       JsonElement var5 = var0.get(var1);
       if (var5 != null && !var5.isJsonNull()) {
-         JsonArray var6 = Class8963.method32784(var5, var1);
+         JsonArray var6 = JSONUtils.method32784(var5, var1);
          Class9587[] var7 = new Class9587[var6.size()];
 
          for (int var8 = 0; var8 < var6.size(); var8++) {
@@ -43,7 +43,7 @@ public class Class9587 {
 
    private static Class9587 method37225(String var0, Class9366 var1, JsonElement var2) {
       if (var2 != null && var2.isJsonArray()) {
-         Class122[] var6 = var1.method35497(var2.getAsJsonArray(), var1.method35498().toString() + "/" + var0, Class8524.field38290);
+         ILootCondition[] var6 = var1.method35497(var2.getAsJsonArray(), var1.method35498().toString() + "/" + var0, Class8524.field38290);
          return new Class9587(var6);
       } else {
          Class6671 var5 = Class6671.method20330(var2);
@@ -53,14 +53,14 @@ public class Class9587 {
 
    public static Class9587 method37226(Class6671 var0) {
       if (var0 != Class6671.field29242) {
-         Class122 var3 = Class123.method358(Class2063.field13447, var0).method24517();
-         return new Class9587(new Class122[]{var3});
+         ILootCondition var3 = Class123.method358(Class2063.field13447, var0).method24517();
+         return new Class9587(new ILootCondition[]{var3});
       } else {
          return field44822;
       }
    }
 
-   public boolean method37227(Class7812 var1) {
+   public boolean method37227(LootContext var1) {
       return this.field44824.test(var1);
    }
 

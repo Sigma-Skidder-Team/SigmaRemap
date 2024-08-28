@@ -3,7 +3,7 @@ package mapped;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class157 implements Class122 {
+public class Class157 implements ILootCondition {
    private static final Logger field512 = LogManager.getLogger();
    private final ResourceLocation field513;
 
@@ -19,8 +19,8 @@ public class Class157 implements Class122 {
    @Override
    public void method367(Class8478 var1) {
       if (!var1.method29960(this.field513)) {
-         Class122.super.method367(var1);
-         Class122 var4 = var1.method29964(this.field513);
+         ILootCondition.super.method367(var1);
+         ILootCondition var4 = var1.method29964(this.field513);
          if (var4 != null) {
             var4.method367(var1.method29957(".{" + this.field513 + "}", this.field513));
          } else {
@@ -31,8 +31,8 @@ public class Class157 implements Class122 {
       }
    }
 
-   public boolean test(Class7812 var1) {
-      Class122 var4 = var1.method26087(this.field513);
+   public boolean test(LootContext var1) {
+      ILootCondition var4 = var1.method26087(this.field513);
       if (var1.method26084(var4)) {
          boolean var5;
          try {

@@ -87,7 +87,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("fortress", Class4474.method14130(Class8576.method30649(Class2961.field18070)))
+         .method27312("fortress", Class4474.method14130(Class8576.method30649(Structure.field18070)))
          .method27317(var1, "nether/find_fortress");
       Class7999.method27304()
          .method27305(var4)
@@ -421,7 +421,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("bastion", Class4474.method14130(Class8576.method30649(Class2961.field18075)))
+         .method27312("bastion", Class4474.method14130(Class8576.method30649(Structure.field18075)))
          .method27317(var1, "nether/find_bastion");
       Class7999.method27304()
          .method27305(var16)

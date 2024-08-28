@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class151 implements Class122 {
+public class Class151 implements ILootCondition {
    private static String[] field497;
    private final float field498;
 
@@ -13,7 +13,7 @@ public class Class151 implements Class122 {
       return Class8582.field38597;
    }
 
-   public boolean test(Class7812 var1) {
+   public boolean test(LootContext var1) {
       return var1.method26088().nextFloat() < this.field498;
    }
 

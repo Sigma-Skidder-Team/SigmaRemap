@@ -9,15 +9,15 @@ public class Class130 extends Class128 {
    private final Class6872 field446;
    private final int field447;
 
-   public Class130(Class122[] var1, Class6872 var2, int var3) {
+   public Class130(ILootCondition[] var1, Class6872 var2, int var3) {
       super(var1);
       this.field446 = var2;
       this.field447 = var3;
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38623;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.LOOTING_ENCHANT;
    }
 
    @Override
@@ -30,7 +30,7 @@ public class Class130 extends Class128 {
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       Entity var5 = var2.<Entity>method26081(Class9525.field44333);
       if (var5 instanceof Class880) {
          int var6 = Class7858.method26330((Class880)var5);

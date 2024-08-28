@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class Class2978 extends Class2961<Class4726> {
+public class Class2978 extends Structure<Class4726> {
    private static final String[] field18089 = new String[]{
       "ruined_portal/portal_1",
       "ruined_portal/portal_2",

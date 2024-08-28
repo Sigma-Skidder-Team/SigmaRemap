@@ -32,7 +32,7 @@ public class Class7231 {
 
    public static Class7231 method22706(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "light");
+         JsonObject var3 = JSONUtils.method32781(var0, "light");
          Class8840 var4 = Class8840.method32016(var3.get("light"));
          return new Class7231(var4);
       } else {

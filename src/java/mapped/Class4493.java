@@ -17,11 +17,11 @@ public class Class4493 extends Class4457 {
       return new Class4493(Class9587.field44822, Stream.<Class6671>of(var0).<Class9587>map(Class9587::method37226).<Class9587>toArray(Class9587[]::new));
    }
 
-   public boolean method14170(Collection<? extends Class7812> var1) {
+   public boolean method14170(Collection<? extends LootContext> var1) {
       for (Class9587 var7 : this.field21699) {
          boolean var8 = false;
 
-         for (Class7812 var10 : var1) {
+         for (LootContext var10 : var1) {
             if (var7.method37227(var10)) {
                var8 = true;
                break;

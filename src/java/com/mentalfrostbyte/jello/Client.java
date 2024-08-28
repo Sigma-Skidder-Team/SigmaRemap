@@ -148,6 +148,7 @@ public class Client {
         var7.state = "Playing Minecraft";
         var7.details = "Jello for Sigma";
         var7.largeImageKey = "jello";
+
         var3.Discord_UpdatePresence(var7);
         new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
@@ -155,11 +156,9 @@ public class Client {
 
                 try {
                     Thread.sleep(2000L);
-                    if (getInstance().getNetworkManager().isPremium() && (var7.smallImageKey == null || var7.smallImageKey.equals("premium"))) {
-                        var7.smallImageKey = "premium";
-                        var7.smallImageText = "Premium";
-                        var3.Discord_UpdatePresence(var7);
-                    }
+                    var7.smallImageKey = "premium";
+                    var7.smallImageText = "Premium";
+                    var3.Discord_UpdatePresence(var7);
                 } catch (InterruptedException ignored) {
                 }
             }
@@ -384,7 +383,7 @@ public class Client {
         if (var1 != ClientMode.CLASSIC) {
             if (var1 == ClientMode.JELLO) {
                 this.method19921();
-                GLFW.glfwSetWindowTitle(mc.mainWindow.method8039(), "Jello for Sigma 6.0");
+                GLFW.glfwSetWindowTitle(mc.mainWindow.method8039(), "Jello for Sigma 5.0");
             }
         } else {
             Class7925.method26597();

@@ -389,7 +389,7 @@ public final class Class5645 extends Class5646 {
       int var11 = var9 << 4;
       int var12 = var10 << 4;
 
-      for (Class2961 var14 : Class2961.field18076) {
+      for (Structure var14 : Structure.field18076) {
          var2.method24340(Class2002.method8391(var8, 0), var14).forEach(var5 -> {
             for (Class4178 var9x : var5.method17111()) {
                if (var9x.method12917(var8, 12)) {
@@ -559,27 +559,27 @@ public final class Class5645 extends Class5646 {
 
    @Override
    public List<Class6692> method17808(Biome var1, Class7480 var2, Class179 var3, BlockPos var4) {
-      if (var2.method24345(var4, true, Class2961.field18066).method17117()) {
+      if (var2.method24345(var4, true, Structure.field18066).method17117()) {
          if (var3 == Class179.field623) {
-            return Class2961.field18066.method11374();
+            return Structure.field18066.method11374();
          }
 
          if (var3 == Class179.field624) {
-            return Class2961.field18066.method11375();
+            return Structure.field18066.method11375();
          }
       }
 
       if (var3 == Class179.field623) {
-         if (var2.method24345(var4, false, Class2961.field18058).method17117()) {
-            return Class2961.field18058.method11374();
+         if (var2.method24345(var4, false, Structure.field18058).method17117()) {
+            return Structure.field18058.method11374();
          }
 
-         if (var2.method24345(var4, false, Class2961.field18068).method17117()) {
-            return Class2961.field18068.method11374();
+         if (var2.method24345(var4, false, Structure.field18068).method17117()) {
+            return Structure.field18068.method11374();
          }
 
-         if (var2.method24345(var4, true, Class2961.field18070).method17117()) {
-            return Class2961.field18070.method11374();
+         if (var2.method24345(var4, true, Structure.field18070).method17117()) {
+            return Structure.field18070.method11374();
          }
       }
 

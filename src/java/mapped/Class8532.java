@@ -20,13 +20,13 @@ public class Class8532 {
    }
 
    public static Class8532 method30266(JsonObject var0) {
-      JsonArray var3 = Class8963.method32786(var0, "textures", (JsonArray)null);
+      JsonArray var3 = JSONUtils.method32786(var0, "textures", (JsonArray)null);
       List var4;
       if (var3 == null) {
          var4 = null;
       } else {
          var4 = Streams.stream(var3)
-            .<String>map(var0x -> Class8963.method32762(var0x, "texture"))
+            .<String>map(var0x -> JSONUtils.method32762(var0x, "texture"))
             .<ResourceLocation>map(ResourceLocation::new)
             .collect(ImmutableList.toImmutableList());
       }

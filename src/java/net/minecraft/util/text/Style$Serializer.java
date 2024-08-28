@@ -3,7 +3,7 @@ package net.minecraft.util.text;
 import com.google.gson.*;
 import mapped.ResourceLocation;
 import mapped.Class2496;
-import mapped.Class8963;
+import mapped.JSONUtils;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
@@ -39,7 +39,7 @@ public class Style$Serializer implements JsonDeserializer<Style>, JsonSerializer
    @Nullable
    private static ResourceLocation deserializeFont(JsonObject json) {
       if (json.has("font")) {
-         String resourcelocationexception = Class8963.method32763(json, "font");
+         String resourcelocationexception = JSONUtils.method32763(json, "font");
 
          try {
             return new ResourceLocation(resourcelocationexception);
@@ -54,7 +54,7 @@ public class Style$Serializer implements JsonDeserializer<Style>, JsonSerializer
    @Nullable
    private static HoverEvent deserializeHoverEvent(JsonObject json) {
       if (json.has("hoverEvent")) {
-         JsonObject hoverevent = Class8963.method32782(json, "hoverEvent");
+         JsonObject hoverevent = JSONUtils.method32782(json, "hoverEvent");
          HoverEvent var4 = HoverEvent.deserialize(hoverevent);
          if (var4 != null && var4.getAction().shouldAllowInChat()) {
             return var4;
@@ -67,10 +67,10 @@ public class Style$Serializer implements JsonDeserializer<Style>, JsonSerializer
    @Nullable
    private static ClickEvent deserializeClickEvent(JsonObject json) {
       if (json.has("clickEvent")) {
-         JsonObject s = Class8963.method32782(json, "clickEvent");
-         String clickevent$action = Class8963.method32764(s, "action", (String)null);
+         JsonObject s = JSONUtils.method32782(json, "clickEvent");
+         String clickevent$action = JSONUtils.method32764(s, "action", (String)null);
          ClickEvent$Action s1 = clickevent$action == null ? null : ClickEvent$Action.getValueByCanonicalName(clickevent$action);
-         String var6 = Class8963.method32764(s, "value", (String)null);
+         String var6 = JSONUtils.method32764(s, "value", (String)null);
          if (s1 != null && var6 != null && s1.shouldAllowInChat()) {
             return new ClickEvent(s1, var6);
          }
@@ -81,13 +81,13 @@ public class Style$Serializer implements JsonDeserializer<Style>, JsonSerializer
 
    @Nullable
    private static String deserializeInsertion(JsonObject json) {
-      return Class8963.method32764(json, "insertion", (String)null);
+      return JSONUtils.method32764(json, "insertion", (String)null);
    }
 
    @Nullable
    private static Color deserializeColor(JsonObject json) {
       if (json.has("color")) {
-         String var3 = Class8963.method32763(json, "color");
+         String var3 = JSONUtils.method32763(json, "color");
          return Color.func_240745_a_(var3);
       } else {
          return null;

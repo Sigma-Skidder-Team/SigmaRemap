@@ -34,7 +34,7 @@ public class Class8811 {
       if (var0 != null && !var0.isJsonNull()) {
          Class39 var3;
          try {
-            var3 = Class7671.method25188(Class8963.method32762(var0, "nbt"));
+            var3 = Class7671.method25188(JSONUtils.method32762(var0, "nbt"));
          } catch (CommandSyntaxException var5) {
             throw new JsonSyntaxException("Invalid nbt tag: " + var5.getMessage());
          }

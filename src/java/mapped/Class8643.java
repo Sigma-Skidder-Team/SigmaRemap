@@ -18,7 +18,7 @@ public class Class8643<E, T extends Class7129<E>> {
       this.field38921 = var4;
    }
 
-   public Object method31075() {
+   public Object getSerializer() {
       return new Class2567(this.field38918, this.field38919, this.field38920, this.field38921, this.field38922);
    }
 }

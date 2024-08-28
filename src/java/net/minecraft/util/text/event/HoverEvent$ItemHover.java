@@ -59,11 +59,11 @@ public class HoverEvent$ItemHover {
       if (element.isJsonPrimitive()) {
          return new HoverEvent$ItemHover(Registry.field16075.method9184(new ResourceLocation(element.getAsString())), 1, (Class39)null);
       } else {
-         JsonObject item = Class8963.method32781(element, "item");
-         Class3257 i = Registry.field16075.method9184(new ResourceLocation(Class8963.method32763(item, "id")));
-         int s = Class8963.method32778(item, "count", 1);
+         JsonObject item = JSONUtils.method32781(element, "item");
+         Class3257 i = Registry.field16075.method9184(new ResourceLocation(JSONUtils.method32763(item, "id")));
+         int s = JSONUtils.getInt(item, "count", 1);
          if (item.has("tag")) {
-            String commandsyntaxexception = Class8963.method32763(item, "tag");
+            String commandsyntaxexception = JSONUtils.method32763(item, "tag");
 
             try {
                Class39 var7 = Class7671.method25188(commandsyntaxexception);

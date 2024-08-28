@@ -54,9 +54,9 @@ public interface Class1670 extends Class1665, Class1671 {
 
    void method7073(long var1);
 
-   Map<Class2961<?>, Class5444<?>> method7074();
+   Map<Structure<?>, Class5444<?>> method7074();
 
-   void method7075(Map<Class2961<?>, Class5444<?>> var1);
+   void method7075(Map<Structure<?>, Class5444<?>> var1);
 
    default boolean method7076(int var1, int var2) {
       if (var1 < 0) {

@@ -32,7 +32,7 @@ public class Class7017 implements Class7016 {
                         return this.method21746(var1, var10);
                      }
 
-                     if (var1.method6893().method24345(var10, true, Class2961.field18066).method17117()) {
+                     if (var1.method6893().method24345(var10, true, Structure.field18066).method17117()) {
                         return this.method21747(var1, var10);
                      }
                   }

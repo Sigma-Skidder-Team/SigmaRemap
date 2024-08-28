@@ -53,7 +53,7 @@ public class Class4853 extends Class4852 {
    private boolean method14997(Class7529 var1) {
       if (var1.field32327 != null) {
          for (Class7982 var5 : var1.field32327.values()) {
-            if (var5.method27126() == Class2223.field14524 || var5.method27126() == Class2223.field14525) {
+            if (var5.method27126() == MapDecorationType.field14524 || var5.method27126() == MapDecorationType.field14525) {
                return true;
             }
          }

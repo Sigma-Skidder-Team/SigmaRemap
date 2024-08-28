@@ -435,9 +435,9 @@ public class Class9748 {
                   var2 -> {
                      if (var2.field5024 instanceof ServerWorld) {
                         ServerWorld var5 = (ServerWorld)var2.field5024;
-                        Class122 var6 = var5.method6715().method1412().method1052(var4);
+                        ILootCondition var6 = var5.method6715().method1412().method1052(var4);
                         if (var6 != null) {
-                           Class7812 var7 = new Class9464(var5)
+                           LootContext var7 = new Class9464(var5)
                               .method36454(Class9525.field44330, var2)
                               .method36454(Class9525.field44335, var2.getPositionVec())
                               .method36460(Class8524.field38284);

@@ -6,11 +6,11 @@ import com.google.gson.JsonParseException;
 
 public class Class6506 implements Class6504<Class4854> {
    public Class4854 method19700(ResourceLocation var1, JsonObject var2) {
-      String var5 = Class8963.method32764(var2, "group", "");
-      Class25 var6 = method19703(Class8963.method32785(var2, "ingredients"));
+      String var5 = JSONUtils.method32764(var2, "group", "");
+      Class25 var6 = method19703(JSONUtils.method32785(var2, "ingredients"));
       if (!var6.isEmpty()) {
          if (var6.size() <= 9) {
-            ItemStack var7 = Class4852.method14987(Class8963.method32782(var2, "result"));
+            ItemStack var7 = Class4852.method14987(JSONUtils.method32782(var2, "result"));
             return new Class4854(var1, var5, var7, var6);
          } else {
             throw new JsonParseException("Too many ingredients for shapeless recipe");

@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import mapped.Class8963;
+import mapped.JSONUtils;
 import mapped.Class9125;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -45,7 +45,7 @@ public abstract class LanguageMap {
       JsonObject var4 = (JsonObject)field_240591_b_.fromJson(new InputStreamReader(p_240593_0_, StandardCharsets.UTF_8), JsonObject.class);
 
       for (Entry s : var4.entrySet()) {
-         String var7 = NUMERIC_VARIABLE_PATTERN.matcher(Class8963.method32762((JsonElement)s.getValue(), (String)s.getKey())).replaceAll("%$1s");
+         String var7 = NUMERIC_VARIABLE_PATTERN.matcher(JSONUtils.method32762((JsonElement)s.getValue(), (String)s.getKey())).replaceAll("%$1s");
          p_240593_1_.accept((String)s.getKey(), var7);
       }
    }

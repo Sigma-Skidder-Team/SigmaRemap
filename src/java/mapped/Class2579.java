@@ -17,10 +17,10 @@ public class Class2579 implements JsonDeserializer<Class9726> {
       Class7680 var8 = this.method10779(var6);
       Class7360 var9 = this.method10773(var6);
       Map var10 = this.method10776(var3, var6);
-      if (var6.has("shade") && !Class8963.method32758(var6, "shade")) {
+      if (var6.has("shade") && !JSONUtils.method32758(var6, "shade")) {
          throw new JsonParseException("Expected shade to be a Boolean");
       } else {
-         boolean var11 = Class8963.method32769(var6, "shade", true);
+         boolean var11 = JSONUtils.getBoolean(var6, "shade", true);
          return new Class9726(var7, var8, var10, var9, var11);
       }
    }
@@ -29,12 +29,12 @@ public class Class2579 implements JsonDeserializer<Class9726> {
    private Class7360 method10773(JsonObject var1) {
       Class7360 var4 = null;
       if (var1.has("rotation")) {
-         JsonObject var5 = Class8963.method32782(var1, "rotation");
+         JsonObject var5 = JSONUtils.method32782(var1, "rotation");
          Class7680 var6 = this.method10781(var5, "origin");
          var6.method25272(0.0625F);
          Class113 var7 = this.method10775(var5);
          float var8 = this.method10774(var5);
-         boolean var9 = Class8963.method32769(var5, "rescale", false);
+         boolean var9 = JSONUtils.getBoolean(var5, "rescale", false);
          var4 = new Class7360(var6, var7, var8, var9);
       }
 
@@ -42,7 +42,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
    }
 
    private float method10774(JsonObject var1) {
-      float var4 = Class8963.method32771(var1, "angle");
+      float var4 = JSONUtils.method32771(var1, "angle");
       if (var4 != 0.0F && MathHelper.method37771(var4) != 22.5F && MathHelper.method37771(var4) != 45.0F) {
          throw new JsonParseException("Invalid rotation " + var4 + " found, only -45/-22.5/0/22.5/45 allowed");
       } else {
@@ -51,7 +51,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
    }
 
    private Class113 method10775(JsonObject var1) {
-      String var4 = Class8963.method32763(var1, "axis");
+      String var4 = JSONUtils.method32763(var1, "axis");
       Class113 var5 = Class113.method321(var4.toLowerCase(Locale.ROOT));
       if (var5 != null) {
          return var5;
@@ -71,7 +71,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
 
    private Map<Direction, Class9163> method10777(JsonDeserializationContext var1, JsonObject var2) {
       EnumMap var5 = Maps.newEnumMap(Direction.class);
-      JsonObject var6 = Class8963.method32782(var2, "faces");
+      JsonObject var6 = JSONUtils.method32782(var2, "faces");
 
       for (Entry var8 : var6.entrySet()) {
          Direction var9 = this.method10778((String)var8.getKey());
@@ -119,14 +119,14 @@ public class Class2579 implements JsonDeserializer<Class9726> {
    }
 
    private Class7680 method10781(JsonObject var1, String var2) {
-      JsonArray var5 = Class8963.method32785(var1, var2);
+      JsonArray var5 = JSONUtils.method32785(var1, var2);
       if (var5.size() != 3) {
          throw new JsonParseException("Expected 3 " + var2 + " values, found: " + var5.size());
       } else {
          float[] var6 = new float[3];
 
          for (int var7 = 0; var7 < var6.length; var7++) {
-            var6[var7] = Class8963.method32770(var5.get(var7), var2 + "[" + var7 + "]");
+            var6[var7] = JSONUtils.method32770(var5.get(var7), var2 + "[" + var7 + "]");
          }
 
          return new Class7680(var6[0], var6[1], var6[2]);

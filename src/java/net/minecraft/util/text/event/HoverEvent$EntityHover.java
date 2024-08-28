@@ -31,8 +31,8 @@ public class HoverEvent$EntityHover {
          return null;
       } else {
          JsonObject entitytype = element.getAsJsonObject();
-         Class8992 uuid = Registry.field16074.method9184(new ResourceLocation(Class8963.method32763(entitytype, "type")));
-         UUID itextcomponent = UUID.fromString(Class8963.method32763(entitytype, "id"));
+         Class8992 uuid = Registry.field16074.method9184(new ResourceLocation(JSONUtils.method32763(entitytype, "type")));
+         UUID itextcomponent = UUID.fromString(JSONUtils.method32763(entitytype, "id"));
          IFormattableTextComponent var6 = ITextComponent$Serializer.func_240641_a_(entitytype.get("name"));
          return new HoverEvent$EntityHover(uuid, itextcomponent, var6);
       }

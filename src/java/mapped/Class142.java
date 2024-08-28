@@ -15,15 +15,15 @@ public class Class142 extends Class128 {
    private static final Function<Entity, Class30> field481 = Class8811::method31813;
    private static final Function<Class944, Class30> field482 = var0 -> var0.method3646(new Class39());
 
-   public Class142(Class122[] var1, Class2343 var2, List<Class9603> var3) {
+   public Class142(ILootCondition[] var1, Class2343 var2, List<Class9603> var3) {
       super(var1);
       this.field479 = var2;
       this.field480 = ImmutableList.copyOf(var3);
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38637;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.COPY_NBT;
    }
 
    private static Class9670 method430(String var0) {
@@ -40,7 +40,7 @@ public class Class142 extends Class128 {
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       Class30 var5 = this.field479.field16024.apply(var2);
       if (var5 != null) {
          this.field480.forEach(var2x -> var2x.method37313(var1::method32143, var5));

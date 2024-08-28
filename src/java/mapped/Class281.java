@@ -39,7 +39,7 @@ public abstract class Class281 extends Class269<Map<ResourceLocation, JsonElemen
             InputStream var13 = var11.method7763();
             BufferedReader var15 = new BufferedReader(new InputStreamReader(var13, StandardCharsets.UTF_8));
          ) {
-            JsonElement var17 = Class8963.method32796(this.field1072, var15, JsonElement.class);
+            JsonElement var17 = JSONUtils.method32796(this.field1072, var15, JsonElement.class);
             if (var17 != null) {
                JsonElement var18 = var5.put(var10, var17);
                if (var18 != null) {

@@ -11,14 +11,14 @@ import org.apache.commons.lang3.Validate;
 public class Class7172 implements Class7170<Class7788> {
    public Class7788 method22519(JsonObject var1) {
       ArrayList var4 = Lists.newArrayList();
-      int var5 = Class8963.method32778(var1, "frametime", 1);
+      int var5 = JSONUtils.getInt(var1, "frametime", 1);
       if (var5 != 1) {
          Validate.inclusiveBetween(1L, 2147483647L, (long)var5, "Invalid default frame time");
       }
 
       if (var1.has("frames")) {
          try {
-            JsonArray var6 = Class8963.method32785(var1, "frames");
+            JsonArray var6 = JSONUtils.method32785(var1, "frames");
 
             for (int var7 = 0; var7 < var6.size(); var7++) {
                JsonElement var8 = var6.get(var7);
@@ -32,8 +32,8 @@ public class Class7172 implements Class7170<Class7788> {
          }
       }
 
-      int var11 = Class8963.method32778(var1, "width", -1);
-      int var12 = Class8963.method32778(var1, "height", -1);
+      int var11 = JSONUtils.getInt(var1, "width", -1);
+      int var12 = JSONUtils.getInt(var1, "height", -1);
       if (var11 != -1) {
          Validate.inclusiveBetween(1L, 2147483647L, (long)var11, "Invalid width");
       }
@@ -42,7 +42,7 @@ public class Class7172 implements Class7170<Class7788> {
          Validate.inclusiveBetween(1L, 2147483647L, (long)var12, "Invalid height");
       }
 
-      boolean var13 = Class8963.method32769(var1, "interpolate", false);
+      boolean var13 = JSONUtils.getBoolean(var1, "interpolate", false);
       return new Class7788(var4, var11, var12, var5, var13);
    }
 
@@ -51,18 +51,18 @@ public class Class7172 implements Class7170<Class7788> {
          if (!var2.isJsonObject()) {
             return null;
          } else {
-            JsonObject var5 = Class8963.method32781(var2, "frames[" + var1 + "]");
-            int var6 = Class8963.method32778(var5, "time", -1);
+            JsonObject var5 = JSONUtils.method32781(var2, "frames[" + var1 + "]");
+            int var6 = JSONUtils.getInt(var5, "time", -1);
             if (var5.has("time")) {
                Validate.inclusiveBetween(1L, 2147483647L, (long)var6, "Invalid frame time");
             }
 
-            int var7 = Class8963.method32777(var5, "index");
+            int var7 = JSONUtils.method32777(var5, "index");
             Validate.inclusiveBetween(0L, 2147483647L, (long)var7, "Invalid frame index");
             return new Class9704(var7, var6);
          }
       } else {
-         return new Class9704(Class8963.method32776(var2, "frames[" + var1 + "]"));
+         return new Class9704(JSONUtils.method32776(var2, "frames[" + var1 + "]"));
       }
    }
 

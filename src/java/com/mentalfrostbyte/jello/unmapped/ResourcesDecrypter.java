@@ -10,10 +10,10 @@ import org.apache.commons.codec.digest.DigestUtils;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ResourcesDecrypter {
     public static final String field32485 = "com/mentalfrostbyte/gui/resources/";
@@ -88,7 +88,6 @@ public class ResourcesDecrypter {
     public static Texture youtubePNG;
     public static Texture guildedPNG;
     public static Texture redditPNG;
-    private static final byte[] field32483 = new byte[]{-119, 80, 78, 71, 13, 10, 26, 10};
     private static final byte[] field32484 = new byte[]{89, -73, -35, -84, 17, -87, -79, -44};
 
     public static void decrypt() {
@@ -162,6 +161,14 @@ public class ResourcesDecrypter {
         guildedPNG = loadTexture("com/mentalfrostbyte/gui/resources/loading/guilded.png");
         redditPNG = loadTexture("com/mentalfrostbyte/gui/resources/loading/reddit.png");
         dvdPNG = loadTexture("com/mentalfrostbyte/gui/resources/jello/dvd.png");
+        readInputStream("com/mentalfrostbyte/gui/resources/audio/activate.mp3");
+        readInputStream("com/mentalfrostbyte/gui/resources/audio/deactivate.mp3");
+        readInputStream("com/mentalfrostbyte/gui/resources/audio/click.mp3");
+        readInputStream("com/mentalfrostbyte/gui/resources/audio/error.mp3");
+        readInputStream("com/mentalfrostbyte/gui/resources/audio/pop.mp3");
+        readInputStream("com/mentalfrostbyte/gui/resources/audio/connect.mp3");
+        readInputStream("com/mentalfrostbyte/gui/resources/audio/switch.mp3");
+        readInputStream("com/mentalfrostbyte/gui/resources/audio/clicksound.mp3");
         panoramaPNG = createScaledAndProcessedTexture1("com/mentalfrostbyte/gui/resources/" + getPanoramaPNG(), 0.25F, 30);
     }
 
@@ -202,42 +209,49 @@ public class ResourcesDecrypter {
         }
     }
 
-    public static InputStream readInputStream(String var0) {
+    public static InputStream readInputStream(String fileName) {
         try {
-            String sha1HexResult = DigestUtils.sha1Hex(var0);
-//            if (sha1HexResult.equalsIgnoreCase("de5379f60d61cd0a7fb8274bd6445cbad12a2909")) {
-                System.out.println(var0 + " : " + sha1HexResult);
-//            }
+            String sha1HexResult = DigestUtils.sha1Hex(fileName);
 
-            String var3 = sha1HexResult + ".bmp";
-            if (Client.getInstance().getClass().getClassLoader().getResource(var3) != null) {
-                ByteArrayInputStream var41;
-                try (
-                        InputStream var4 = Client.getInstance().getClass().getClassLoader().getResourceAsStream(var3);
-                        ByteArrayOutputStream var6 = new ByteArrayOutputStream()
-                ) {
-                    byte[] var8 = new byte[4096];
-                    int var9 = 0;
+            System.out.println(fileName + " : " + sha1HexResult);
 
-                    int var10;
-                    while ((var10 = var4.read(var8)) > -1) {
-                        for (int var11 = 0; var11 < var10; var11++) {
-                            var8[var11] ^= field32484[var9++ % field32484.length];
-                        }
+            String encryptedFileName = sha1HexResult + ".bmp";
 
-                        var6.write(var8, 0, var10);
-                    }
+            InputStream resourceStream = Client.getInstance().getClass().getClassLoader().getResourceAsStream(encryptedFileName);
 
-                    var41 = new ByteArrayInputStream(var6.toByteArray());
+            if (resourceStream != null) {
+                if (!Files.exists(Paths.get("lol"))) {
+                    Files.createDirectory(Paths.get("lol"));
                 }
 
-                return var41;
+                File outputFile = new File("lol", fileName);
+                outputFile.getParentFile().mkdirs();
+
+                try (OutputStream fileOutputStream = Files.newOutputStream(outputFile.toPath());
+                     ByteArrayOutputStream decryptedOutputStream = new ByteArrayOutputStream()) {
+
+                    byte[] buffer = new byte[4096];
+                    int bytesRead;
+                    int xorIndex = 0;
+
+                    while ((bytesRead = resourceStream.read(buffer)) != -1) {
+                        for (int i = 0; i < bytesRead; i++) {
+                            buffer[i] ^= field32484[xorIndex++ % field32484.length];
+                        }
+                        decryptedOutputStream.write(buffer, 0, bytesRead);
+                    }
+
+                    decryptedOutputStream.writeTo(fileOutputStream);
+
+                    System.out.println("Decrypted file saved to: " + outputFile.getAbsolutePath());
+                    return new ByteArrayInputStream(decryptedOutputStream.toByteArray());
+                }
             } else {
-                return Client.getInstance().getClass().getClassLoader().getResourceAsStream(var0);
+                return Client.getInstance().getClass().getClassLoader().getResourceAsStream(fileName);
             }
-        } catch (IOException var40) {
+        } catch (IOException e) {
             throw new IllegalStateException(
-                    "Unable to find " + var0 + ". You've probably obfuscated the archive and forgot to transfer the assets or keep package names."
+                    "Unable to process " + fileName + ". Error during decryption or resource loading.", e
             );
         }
     }

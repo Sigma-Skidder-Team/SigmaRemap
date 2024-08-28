@@ -15,7 +15,7 @@ public class Class7520 implements Class7519 {
    }
 
    @Override
-   public Class122 method24517() {
+   public ILootCondition method24517() {
       return new Class161(this.field32253, this.field32254);
    }
 }

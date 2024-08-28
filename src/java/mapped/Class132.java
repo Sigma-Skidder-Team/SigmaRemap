@@ -15,15 +15,15 @@ public class Class132 extends Class128 {
    private final ITextComponent field450;
    private final Class2063 field451;
 
-   public Class132(Class122[] var1, ITextComponent var2, Class2063 var3) {
+   public Class132(ILootCondition[] var1, ITextComponent var2, Class2063 var3) {
       super(var1);
       this.field450 = var2;
       this.field451 = var3;
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38626;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.SET_NAME;
    }
 
    @Override
@@ -31,7 +31,7 @@ public class Class132 extends Class128 {
       return this.field451 == null ? ImmutableSet.of() : ImmutableSet.of(this.field451.method8717());
    }
 
-   public static UnaryOperator<ITextComponent> method384(Class7812 var0, Class2063 var1) {
+   public static UnaryOperator<ITextComponent> method384(LootContext var0, Class2063 var1) {
       if (var1 != null) {
          Entity var4 = var0.method26081(var1.method8717());
          if (var4 != null) {
@@ -51,7 +51,7 @@ public class Class132 extends Class128 {
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       if (this.field450 != null) {
          var1.method32150(method384(var2, this.field451).apply(this.field450));
       }

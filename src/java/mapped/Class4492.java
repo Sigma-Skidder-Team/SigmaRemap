@@ -16,7 +16,7 @@ public class Class4492 extends Class4457 {
       return new Class4492(var0, var1.method38151(), var2);
    }
 
-   public boolean method14168(ServerPlayerEntity var1, ItemStack var2, Class7812 var3) {
+   public boolean method14168(ServerPlayerEntity var1, ItemStack var2, LootContext var3) {
       return this.field21697.method31016(var2) ? this.field21698.method37227(var3) : false;
    }
 

@@ -19,7 +19,7 @@ public class Class4905 extends Class4874<Class4476> {
    }
 
    public void method15158(ServerPlayerEntity var1, Entity var2, Class8654 var3) {
-      Class7812 var6 = Class6671.method20332(var1, var2);
+      LootContext var6 = Class6671.method20332(var1, var2);
       this.method15053(var1, var3x -> var3x.method14138(var1, var6, var3));
    }
 

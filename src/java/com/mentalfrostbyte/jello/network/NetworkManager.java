@@ -7,14 +7,13 @@ import org.apache.http.impl.client.HttpClients;
 
 public class NetworkManager {
     public static boolean premium = true;
-    public HttpClient httpClient;
     public Class9507 field38418;
     public Account account;
     public String field38425;
     public Class8402 field38429;
 
     public NetworkManager() {
-        this.httpClient = HttpClients.createDefault();
+
     }
 
     public void init() {
@@ -23,19 +22,16 @@ public class NetworkManager {
     }
 
     public String method30447(String var1, String var2, Class9507 var3) {
-        String var6 = "Unexpected error";
         NetworkManager.premium = true;
         return null;
     }
 
     public String method30448(String var1, String var2, String var3, Class9507 var4) {
-        String var7 = "Unexpected error";
-        return var7;
+        return "Unexpected error";
     }
 
     public String method30451(String var1, Class9507 var2) {
-        String var5 = "Unexpected error";
-        return var5;
+        return "Unexpected error";
     }
 
     public Class9507 method30452() {

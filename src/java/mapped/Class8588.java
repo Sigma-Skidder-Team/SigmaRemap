@@ -23,7 +23,7 @@ public class Class8588 {
 
    public void method30722(ServerPlayerEntity var1) {
       var1.method2781(this.field38665);
-      Class7812 var4 = new Class9464(var1.getServerWorld())
+      LootContext var4 = new Class9464(var1.getServerWorld())
          .method36454(Class9525.field44330, var1)
          .method36454(Class9525.field44335, var1.getPositionVec())
          .method36450(var1.method3013())
@@ -118,26 +118,26 @@ public class Class8588 {
    }
 
    public static Class8588 method30724(JsonObject var0) throws JsonParseException {
-      int var3 = Class8963.method32778(var0, "experience", 0);
-      JsonArray var4 = Class8963.method32786(var0, "loot", new JsonArray());
+      int var3 = JSONUtils.getInt(var0, "experience", 0);
+      JsonArray var4 = JSONUtils.method32786(var0, "loot", new JsonArray());
       ResourceLocation[] var5 = new ResourceLocation[var4.size()];
 
       for (int var6 = 0; var6 < var5.length; var6++) {
-         var5[var6] = new ResourceLocation(Class8963.method32762(var4.get(var6), "loot[" + var6 + "]"));
+         var5[var6] = new ResourceLocation(JSONUtils.method32762(var4.get(var6), "loot[" + var6 + "]"));
       }
 
-      JsonArray var9 = Class8963.method32786(var0, "recipes", new JsonArray());
+      JsonArray var9 = JSONUtils.method32786(var0, "recipes", new JsonArray());
       ResourceLocation[] var7 = new ResourceLocation[var9.size()];
 
       for (int var8 = 0; var8 < var7.length; var8++) {
-         var7[var8] = new ResourceLocation(Class8963.method32762(var9.get(var8), "recipes[" + var8 + "]"));
+         var7[var8] = new ResourceLocation(JSONUtils.method32762(var9.get(var8), "recipes[" + var8 + "]"));
       }
 
       Class9137 var10;
       if (!var0.has("function")) {
          var10 = Class9137.field41987;
       } else {
-         var10 = new Class9137(new ResourceLocation(Class8963.method32763(var0, "function")));
+         var10 = new Class9137(new ResourceLocation(JSONUtils.method32763(var0, "function")));
       }
 
       return new Class8588(var3, var5, var7, var10);

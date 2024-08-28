@@ -20,7 +20,7 @@ public class Class2943 extends Class2898<Class4705> {
          return false;
       } else {
          var4 = var4.method8340(4);
-         if (var1.method6969(Class2002.method8390(var4), Class2961.field18073).findAny().isPresent()) {
+         if (var1.method6969(Class2002.method8390(var4), Structure.field18073).findAny().isPresent()) {
             return false;
          } else {
             boolean[] var8 = new boolean[2048];

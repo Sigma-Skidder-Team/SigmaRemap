@@ -17,7 +17,7 @@ public class Class2570 implements JsonDeserializer<Class9350> {
    }
 
    private Class7562 method10762(JsonObject var1) {
-      return !var1.has("when") ? Class7562.field32488 : method10763(Class8963.method32782(var1, "when"));
+      return !var1.has("when") ? Class7562.field32488 : method10763(JSONUtils.method32782(var1, "when"));
    }
 
    @VisibleForTesting
@@ -30,13 +30,13 @@ public class Class2570 implements JsonDeserializer<Class9350> {
             if (!var0.has("AND")) {
                return method10764(var3.iterator().next());
             } else {
-               List var5 = Streams.stream(Class8963.method32785(var0, "AND"))
+               List var5 = Streams.stream(JSONUtils.method32785(var0, "AND"))
                   .<Class7562>map(var0x -> method10763(var0x.getAsJsonObject()))
                   .collect(Collectors.toList());
                return new Class7563(var5);
             }
          } else {
-            List var4 = Streams.stream(Class8963.method32785(var0, "OR"))
+            List var4 = Streams.stream(JSONUtils.method32785(var0, "OR"))
                .<Class7562>map(var0x -> method10763(var0x.getAsJsonObject()))
                .collect(Collectors.toList());
             return new Class7564(var4);

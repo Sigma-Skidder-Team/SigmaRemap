@@ -15,8 +15,8 @@ public class Class4937 extends Class4936<Class4695> {
       }
    }
 
-   public Class4695 method15251(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, Class122[] var5, Class127[] var6) {
-      Class3257 var9 = Class8963.method32766(var1, "name");
+   public Class4695 method15251(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, ILootCondition[] var5, ILootFunction[] var6) {
+      Class3257 var9 = JSONUtils.method32766(var1, "name");
       return new Class4695(var9, var3, var4, var5, var6);
    }
 }

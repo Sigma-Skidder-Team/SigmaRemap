@@ -199,12 +199,12 @@ public class Class1313 extends Screen {
    }
 
    private static void method6206(
-           ITextComponent var0, Class3303 var1, RegistryKey<Biome> var2, List<Class2961<?>> var3, boolean var4, boolean var5, boolean var6, Class9537... var7
+           ITextComponent var0, Class3303 var1, RegistryKey<Biome> var2, List<Structure<?>> var3, boolean var4, boolean var5, boolean var6, Class9537... var7
    ) {
       field6926.add(new Class5966(var1.method11581(), var0, var6x -> {
          HashMap var9 = Maps.newHashMap();
 
-         for (Class2961 var11 : var3) {
+         for (Structure var11 : var3) {
             var9.put(var11, Class9763.field45674.get(var11));
          }
 
@@ -263,7 +263,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.classic_flat"),
          Blocks.field36395,
          Class9495.field44122,
-         Arrays.<Class2961<?>>asList(Class2961.field18073),
+         Arrays.<Structure<?>>asList(Structure.field18073),
          false,
          false,
          false,
@@ -275,7 +275,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.tunnelers_dream"),
          Blocks.STONE,
          Class9495.field44124,
-         Arrays.<Class2961<?>>asList(Class2961.field18059),
+         Arrays.<Structure<?>>asList(Structure.field18059),
          true,
          true,
          false,
@@ -288,7 +288,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.water_world"),
          Class8514.field37883,
          Class9495.field44145,
-         Arrays.<Class2961<?>>asList(Class2961.field18069, Class2961.field18065, Class2961.field18068),
+         Arrays.<Structure<?>>asList(Structure.field18069, Structure.field18065, Structure.field18068),
          false,
          false,
          false,
@@ -302,7 +302,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.overworld"),
          Blocks.GRASS,
          Class9495.field44122,
-         Arrays.<Class2961<?>>asList(Class2961.field18073, Class2961.field18059, Class2961.field18058, Class2961.field18064),
+         Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18059, Structure.field18058, Structure.field18064),
          true,
          true,
          true,
@@ -315,7 +315,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.snowy_kingdom"),
          Blocks.SNOW,
          Class9495.field44133,
-         Arrays.<Class2961<?>>asList(Class2961.field18073, Class2961.field18063),
+         Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18063),
          false,
          false,
          false,
@@ -329,7 +329,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.bottomless_pit"),
          Class8514.field37839,
          Class9495.field44122,
-         Arrays.<Class2961<?>>asList(Class2961.field18073),
+         Arrays.<Structure<?>>asList(Structure.field18073),
          false,
          false,
          false,
@@ -341,7 +341,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.desert"),
          Blocks.SAND,
          Class9495.field44123,
-         Arrays.<Class2961<?>>asList(Class2961.field18073, Class2961.field18062, Class2961.field18059),
+         Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18062, Structure.field18059),
          true,
          true,
          false,
@@ -354,7 +354,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.redstone_ready"),
          Class8514.field37887,
          Class9495.field44123,
-         Collections.<Class2961<?>>emptyList(),
+         Collections.<Structure<?>>emptyList(),
          false,
          false,
          false,
@@ -366,7 +366,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.the_void"),
          Blocks.field36765,
          Class9495.field44172,
-         Collections.<Class2961<?>>emptyList(),
+         Collections.<Structure<?>>emptyList(),
          false,
          true,
          false,

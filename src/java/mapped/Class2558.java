@@ -16,16 +16,16 @@ public class Class2558 implements JsonDeserializer<Class9163> {
    }
 
    public int method10753(JsonObject var1) {
-      return Class8963.method32778(var1, "tintindex", -1);
+      return JSONUtils.getInt(var1, "tintindex", -1);
    }
 
    private String method10754(JsonObject var1) {
-      return Class8963.method32763(var1, "texture");
+      return JSONUtils.method32763(var1, "texture");
    }
 
    @Nullable
    private Direction method10755(JsonObject var1) {
-      String var4 = Class8963.method32764(var1, "cullface", "");
+      String var4 = JSONUtils.method32764(var1, "cullface", "");
       return Direction.method545(var4);
    }
 }

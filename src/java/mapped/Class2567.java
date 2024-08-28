@@ -29,8 +29,8 @@ public class Class2567<E, T extends Class7129<E>> implements JsonDeserializer<E>
             throw new UnsupportedOperationException("Object " + var1 + " can't be deserialized");
          }
       } else {
-         JsonObject var6 = Class8963.method32781(var1, this.field16791);
-         ResourceLocation var7 = new ResourceLocation(Class8963.method32763(var6, this.field16792));
+         JsonObject var6 = JSONUtils.method32781(var1, this.field16791);
+         ResourceLocation var7 = new ResourceLocation(JSONUtils.method32763(var6, this.field16792));
          Class7129 var8 = this.field16790.method9184(var7);
          if (var8 != null) {
             return (E)var8.method22239().method15248(var6, var3);
@@ -47,7 +47,7 @@ public class Class2567<E, T extends Class7129<E>> implements JsonDeserializer<E>
       } else if (var6 != null) {
          JsonObject var7 = new JsonObject();
          var7.addProperty(this.field16792, this.field16790.method9181((T)var6).toString());
-         var6.method22239().method15246(var7, var1, var3);
+         var6.method22239().serialize(var7, var1, var3);
          return var7;
       } else {
          throw new JsonSyntaxException("Unknown type: " + var1);

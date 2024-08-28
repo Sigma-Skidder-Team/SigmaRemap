@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableSet.Builder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -58,14 +58,14 @@ public class Class6879 {
    }
 
    public Class6879 method20950(JsonObject var1, String var2) {
-      JsonArray var5 = Class8963.method32785(var1, "values");
+      JsonArray var5 = JSONUtils.method32785(var1, "values");
       List<Class8184> var6 = Lists.newArrayList();
 
       for (JsonElement var8 : var5) {
          var6.add(method20951(var8));
       }
 
-      if (Class8963.method32769(var1, "replace", false)) {
+      if (JSONUtils.getBoolean(var1, "replace", false)) {
          this.field29819.clear();
       }
 
@@ -77,12 +77,12 @@ public class Class6879 {
       String var3;
       boolean var4;
       if (!var0.isJsonObject()) {
-         var3 = Class8963.method32762(var0, "id");
+         var3 = JSONUtils.method32762(var0, "id");
          var4 = true;
       } else {
          JsonObject var5 = var0.getAsJsonObject();
-         var3 = Class8963.method32763(var5, "id");
-         var4 = Class8963.method32769(var5, "required", true);
+         var3 = JSONUtils.method32763(var5, "id");
+         var4 = JSONUtils.getBoolean(var5, "required", true);
       }
 
       if (!var3.startsWith("#")) {

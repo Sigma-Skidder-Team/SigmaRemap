@@ -6,7 +6,7 @@ public class Class4695 extends Class4686 {
    private static String[] field22280;
    private final Class3257 field22281;
 
-   public Class4695(Class3257 var1, int var2, int var3, Class122[] var4, Class127[] var5) {
+   public Class4695(Class3257 var1, int var2, int var3, ILootCondition[] var4, ILootFunction[] var5) {
       super(var2, var3, var4, var5);
       this.field22281 = var1;
    }
@@ -17,7 +17,7 @@ public class Class4695 extends Class4686 {
    }
 
    @Override
-   public void method14695(Consumer<ItemStack> var1, Class7812 var2) {
+   public void method14695(Consumer<ItemStack> var1, LootContext var2) {
       var1.accept(new ItemStack(this.field22281));
    }
 

@@ -24,7 +24,7 @@ public class Class4880 extends Class4874<Class4479> {
       if (!var0.has("block")) {
          return null;
       } else {
-         ResourceLocation var3 = new ResourceLocation(Class8963.method32763(var0, "block"));
+         ResourceLocation var3 = new ResourceLocation(JSONUtils.method32763(var0, "block"));
          return Registry.field16072.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown block type '" + var3 + "'"));
       }
    }

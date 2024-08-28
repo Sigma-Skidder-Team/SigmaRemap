@@ -44,7 +44,7 @@ public class Class8841 extends Class8839<Float> {
    }
 
    public static Class8841 method32025(JsonElement var0) {
-      return method32006(var0, field39940, Class8963::method32770, Class8841::new);
+      return method32006(var0, field39940, JSONUtils::method32770, Class8841::new);
    }
 
    public static Class8841 method32026(StringReader var0) throws CommandSyntaxException {

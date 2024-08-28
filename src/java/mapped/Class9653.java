@@ -439,7 +439,7 @@ public class Class9653 {
 
    private static int method37675(CommandContext<Class6619> var0, ResourceLocation var1, BlockPos var2, ItemStack var3, Class8914 var4) throws CommandSyntaxException {
       Class6619 var7 = (Class6619)var0.getSource();
-      Class7812 var8 = new Class9464(var7.method20172())
+      LootContext var8 = new Class9464(var7.method20172())
          .method36454(Class9525.field44335, Vector3d.method11328(var2))
          .method36454(Class9525.field44338, var3)
          .method36455(Class9525.field44330, var7.method20173())
@@ -447,7 +447,7 @@ public class Class9653 {
       return method37676(var0, var1, var8, var4);
    }
 
-   private static int method37676(CommandContext<Class6619> var0, ResourceLocation var1, Class7812 var2, Class8914 var3) throws CommandSyntaxException {
+   private static int method37676(CommandContext<Class6619> var0, ResourceLocation var1, LootContext var2, Class8914 var3) throws CommandSyntaxException {
       Class6619 var6 = (Class6619)var0.getSource();
       Class7318 var7 = var6.method20177().method1411().method1058(var1);
       List var8 = var7.method23182(var2);

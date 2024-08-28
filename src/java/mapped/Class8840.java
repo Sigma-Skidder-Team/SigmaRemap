@@ -44,7 +44,7 @@ public class Class8840 extends Class8839<Integer> {
    }
 
    public static Class8840 method32016(JsonElement var0) {
-      return method32006(var0, field39936, Class8963::method32776, Class8840::new);
+      return method32006(var0, field39936, JSONUtils::method32776, Class8840::new);
    }
 
    public static Class8840 method32017(StringReader var0) throws CommandSyntaxException {

@@ -56,13 +56,13 @@ public class Class9415 {
 
    public static Class9415 method36124(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "effects");
+         JsonObject var3 = JSONUtils.method32781(var0, "effects");
          LinkedHashMap var4 = Maps.newLinkedHashMap();
 
          for (Entry var6 : var3.entrySet()) {
             ResourceLocation var7 = new ResourceLocation((String)var6.getKey());
             Class7144 var8 = Registry.field16071.method9187(var7).orElseThrow(() -> new JsonSyntaxException("Unknown effect '" + var7 + "'"));
-            Class8053 var9 = Class8053.method27659(Class8963.method32781((JsonElement)var6.getValue(), (String)var6.getKey()));
+            Class8053 var9 = Class8053.method27659(JSONUtils.method32781((JsonElement)var6.getValue(), (String)var6.getKey()));
             var4.put(var8, var9);
          }
 

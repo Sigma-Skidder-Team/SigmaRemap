@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Class7518 implements Class7519 {
    private static String[] field32250;
-   private final List<Class122> field32251 = Lists.newArrayList();
+   private final List<ILootCondition> field32251 = Lists.newArrayList();
 
    public Class7518(Class7519... var1) {
       for (Class7519 var7 : var1) {
@@ -20,7 +20,7 @@ public class Class7518 implements Class7519 {
    }
 
    @Override
-   public Class122 method24517() {
-      return new Class150(this.field32251.<Class122>toArray(new Class122[0]));
+   public ILootCondition method24517() {
+      return new Class150(this.field32251.<ILootCondition>toArray(new ILootCondition[0]));
    }
 }

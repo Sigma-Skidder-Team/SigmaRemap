@@ -2,7 +2,7 @@ package net.minecraft.util.text.event;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import mapped.Class8963;
+import mapped.JSONUtils;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import org.apache.logging.log4j.LogManager;
@@ -55,7 +55,7 @@ public class HoverEvent {
 
    @Nullable
    public static HoverEvent deserialize(JsonObject json) {
-      String action = Class8963.method32764(json, "action", (String)null);
+      String action = JSONUtils.method32764(json, "action", (String)null);
       if (action == null) {
          return null;
       } else {

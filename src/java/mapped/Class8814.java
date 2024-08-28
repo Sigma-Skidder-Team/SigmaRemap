@@ -22,7 +22,7 @@ public class Class8814 {
       boolean var8,
       boolean var9
    ) {
-      Class2961.method11365();
+      Structure.method11365();
       Class2349 var12 = var0.<Class9369>method32453(Registry.field16105);
       Class80 var13 = Class80.method254(var7);
       Class9369 var14 = var1.method14743().get();

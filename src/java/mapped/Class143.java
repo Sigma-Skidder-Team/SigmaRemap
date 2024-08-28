@@ -7,19 +7,19 @@ public class Class143 extends Class128 {
    private final Class6870 field484;
    private final boolean field485;
 
-   public Class143(Class122[] var1, Class6870 var2, boolean var3) {
+   public Class143(ILootCondition[] var1, Class6870 var2, boolean var3) {
       super(var1);
       this.field484 = var2;
       this.field485 = var3;
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38619;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.ENCHANT_WITH_LEVELS;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       Random var5 = var2.method26088();
       return Class7858.method26342(var5, var1, this.field484.method20914(var5), this.field485);
    }

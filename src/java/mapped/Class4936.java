@@ -20,12 +20,12 @@ public abstract class Class4936<T extends Class4686> extends Class4934<T> {
       }
    }
 
-   public final T method15250(JsonObject var1, JsonDeserializationContext var2, Class122[] var3) {
-      int var6 = Class8963.method32778(var1, "weight", 1);
-      int var7 = Class8963.method32778(var1, "quality", 0);
-      Class127[] var8 = Class8963.<Class127[]>method32789(var1, "functions", new Class127[0], var2, Class127[].class);
+   public final T method15250(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] var3) {
+      int var6 = JSONUtils.getInt(var1, "weight", 1);
+      int var7 = JSONUtils.getInt(var1, "quality", 0);
+      ILootFunction[] var8 = JSONUtils.<ILootFunction[]>method32789(var1, "functions", new ILootFunction[0], var2, ILootFunction[].class);
       return this.method15251(var1, var2, var6, var7, var3, var8);
    }
 
-   public abstract T method15251(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, Class122[] var5, Class127[] var6);
+   public abstract T method15251(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, ILootCondition[] var5, ILootFunction[] var6);
 }

@@ -16,11 +16,11 @@ public class Class9366 {
       this.field43469 = var2;
    }
 
-   public final Class122[] method35497(JsonArray var1, String var2, Class7538 var3) {
-      Class122[] var6 = (Class122[])this.field43470.fromJson(var1, Class122[].class);
+   public final ILootCondition[] method35497(JsonArray var1, String var2, Class7538 var3) {
+      ILootCondition[] var6 = (ILootCondition[])this.field43470.fromJson(var1, ILootCondition[].class);
       Class8478 var7 = new Class8478(var3, this.field43469::method1052, var0 -> null);
 
-      for (Class122 var11 : var6) {
+      for (ILootCondition var11 : var6) {
          var11.method367(var7);
          var7.method29961().forEach((var1x, var2x) -> field43467.warn("Found validation problem in advancement trigger {}/{}: {}", var2, var1x, var2x));
       }

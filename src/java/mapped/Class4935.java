@@ -15,8 +15,8 @@ public final class Class4935<T extends Class4688> extends Class4934<T> {
       jsonObject.add("children", jsonSerializationContext.serialize(((Class4689)t).field22273));
    }
 
-   public final T method15250(JsonObject var1, JsonDeserializationContext var2, Class122[] var3) {
-      Class4688[] var6 = Class8963.<Class4688[]>method32788(var1, "children", var2, Class4688[].class);
+   public final T method15250(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] var3) {
+      Class4688[] var6 = JSONUtils.<Class4688[]>method32788(var1, "children", var2, Class4688[].class);
       return (T)this.field22840.method31518(var6, var3);
    }
 }

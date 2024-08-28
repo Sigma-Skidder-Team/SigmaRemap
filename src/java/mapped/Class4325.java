@@ -65,14 +65,17 @@ public class Class4325 extends Class4307 {
       float var6 = var5 - (float)this.field21109;
       float var7 = (float)(var4 - this.field21110);
       GL11.glPushMatrix();
-      Class3192.method11448(
-         (float)this.field21110,
-         (float)this.field21109,
-         (float)(this.method13267() * 2),
-         (float)(this.method13269() + 114),
-         this.field21113,
-         Class5628.method17688(Class1979.field12896.field12910, var1)
-      );
+      if (this.field21113 != null) {
+         Class3192.method11448(
+                 (float)this.field21110,
+                 (float)this.field21109,
+                 (float)(this.method13267() * 2),
+                 (float)(this.method13269() + 114),
+                 this.field21113,
+                 Class5628.method17688(Class1979.field12896.field12910, var1)
+         );
+      }
+
       GL11.glPopMatrix();
       float var8 = 0.5F;
       if (var5 != (float)this.field21109) {

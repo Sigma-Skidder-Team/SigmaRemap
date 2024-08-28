@@ -83,12 +83,12 @@ public class Class9272 {
       IFormattableTextComponent var3 = ITextComponent$Serializer.func_240641_a_(var0.get("title"));
       IFormattableTextComponent var4 = ITextComponent$Serializer.func_240641_a_(var0.get("description"));
       if (var3 != null && var4 != null) {
-         ItemStack var5 = method34945(Class8963.method32782(var0, "icon"));
-         ResourceLocation var6 = !var0.has("background") ? null : new ResourceLocation(Class8963.method32763(var0, "background"));
-         Class1965 var7 = !var0.has("frame") ? Class1965.field12814 : Class1965.method8243(Class8963.method32763(var0, "frame"));
-         boolean var8 = Class8963.method32769(var0, "show_toast", true);
-         boolean var9 = Class8963.method32769(var0, "announce_to_chat", true);
-         boolean var10 = Class8963.method32769(var0, "hidden", false);
+         ItemStack var5 = method34945(JSONUtils.method32782(var0, "icon"));
+         ResourceLocation var6 = !var0.has("background") ? null : new ResourceLocation(JSONUtils.method32763(var0, "background"));
+         Class1965 var7 = !var0.has("frame") ? Class1965.field12814 : Class1965.method8243(JSONUtils.method32763(var0, "frame"));
+         boolean var8 = JSONUtils.getBoolean(var0, "show_toast", true);
+         boolean var9 = JSONUtils.getBoolean(var0, "announce_to_chat", true);
+         boolean var10 = JSONUtils.getBoolean(var0, "hidden", false);
          return new Class9272(var5, var3, var4, var6, var7, var8, var9, var10);
       } else {
          throw new JsonSyntaxException("Both title and description must be set");
@@ -99,14 +99,14 @@ public class Class9272 {
       if (!var0.has("item")) {
          throw new JsonSyntaxException("Unsupported icon type, currently only items are supported (add 'item' key)");
       } else {
-         Class3257 var3 = Class8963.method32766(var0, "item");
+         Class3257 var3 = JSONUtils.method32766(var0, "item");
          if (var0.has("data")) {
             throw new JsonParseException("Disallowed data tag found");
          } else {
             ItemStack var4 = new ItemStack(var3);
             if (var0.has("nbt")) {
                try {
-                  Class39 var5 = Class7671.method25188(Class8963.method32762(var0.get("nbt"), "nbt"));
+                  Class39 var5 = Class7671.method25188(JSONUtils.method32762(var0.get("nbt"), "nbt"));
                   var4.method32148(var5);
                } catch (CommandSyntaxException var6) {
                   throw new JsonSyntaxException("Invalid nbt tag: " + var6.getMessage());

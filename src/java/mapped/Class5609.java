@@ -46,7 +46,7 @@ public class Class5609 implements Packet<Class5116> {
       this.field24895 = new Class7982[var1.method35714()];
 
       for (int var4 = 0; var4 < this.field24895.length; var4++) {
-         Class2223 var5 = var1.<Class2223>method35712(Class2223.class);
+         MapDecorationType var5 = var1.<MapDecorationType>method35712(MapDecorationType.class);
          this.field24895[var4] = new Class7982(
             var5, var1.readByte(), var1.readByte(), (byte)(var1.readByte() & 15), !var1.readBoolean() ? null : var1.method35710()
          );

@@ -65,7 +65,7 @@ public class Class9539 {
 
    public static Class9539 method36913(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "damage type");
+         JsonObject var3 = JSONUtils.method32781(var0, "damage type");
          Boolean var4 = method36914(var3, "is_projectile");
          Boolean var5 = method36914(var3, "is_explosion");
          Boolean var6 = method36914(var3, "bypasses_armor");
@@ -84,7 +84,7 @@ public class Class9539 {
 
    @Nullable
    private static Boolean method36914(JsonObject var0, String var1) {
-      return !var0.has(var1) ? null : Class8963.method32768(var0, var1);
+      return !var0.has(var1) ? null : JSONUtils.method32768(var0, var1);
    }
 
    public JsonElement method36915() {

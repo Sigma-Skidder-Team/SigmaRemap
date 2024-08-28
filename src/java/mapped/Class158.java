@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class Class158 implements Class122 {
+public class Class158 implements ILootCondition {
    private static String[] field514;
    private final Class6069 field515;
    private final float[] field516;
@@ -24,7 +24,7 @@ public class Class158 implements Class122 {
       return ImmutableSet.of(Class9525.field44338);
    }
 
-   public boolean test(Class7812 var1) {
+   public boolean test(LootContext var1) {
       ItemStack var4 = var1.<ItemStack>method26081(Class9525.field44338);
       int var5 = var4 == null ? 0 : Class7858.method26311(this.field515, var4);
       float var6 = this.field516[Math.min(var5, this.field516.length - 1)];

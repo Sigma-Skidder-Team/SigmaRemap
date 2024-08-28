@@ -50,7 +50,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class8234>> field16061 = createKey("schedule");
    public static final RegistryKey<Registry<Class8890>> field16062 = createKey("activity");
    public static final RegistryKey<Registry<Class7131>> field16063 = createKey("loot_pool_entry_type");
-   public static final RegistryKey<Registry<Class7128>> field16064 = createKey("loot_function_type");
+   public static final RegistryKey<Registry<LootFunctionType>> field16064 = createKey("loot_function_type");
    public static final RegistryKey<Registry<Class7130>> field16065 = createKey("loot_condition_type");
    public static final RegistryKey<Registry<Class9535>> field16066 = createKey("dimension_type");
    public static final RegistryKey<Registry<World>> field16067 = createKey("dimension");
@@ -83,7 +83,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class8234> field16094 = method9175(field16061, () -> Class8234.field35349);
    public static final Registry<Class8890> field16095 = method9175(field16062, () -> Class8890.field40220);
    public static final Registry<Class7131> field16096 = method9175(field16063, () -> Class8695.field39239);
-   public static final Registry<Class7128> field16097 = method9175(field16064, () -> Class8585.field38618);
+   public static final Registry<LootFunctionType> LOOT_FUNCTION_TYPE = method9175(field16064, () -> LootFunctionManager.SET_COUNT);
    public static final Registry<Class7130> field16098 = method9175(field16065, () -> Class8582.field38595);
    public static final RegistryKey<Registry<Class9309>> field16099 = createKey("worldgen/noise_settings");
    public static final RegistryKey<Registry<Class9319<?>>> field16100 = createKey("worldgen/configured_surface_builder");
@@ -99,8 +99,8 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class7195<?>> field16110 = method9175(field16109, () -> Class7195.field30888);
    public static final RegistryKey<Registry<Class2898<?>>> field16111 = createKey("worldgen/feature");
    public static final Registry<Class2898<?>> field16112 = method9175(field16111, () -> Class2898.field17961);
-   public static final RegistryKey<Registry<Class2961<?>>> field16113 = createKey("worldgen/structure_feature");
-   public static final Registry<Class2961<?>> field16114 = method9175(field16113, () -> Class2961.field18059);
+   public static final RegistryKey<Registry<Structure<?>>> field16113 = createKey("worldgen/structure_feature");
+   public static final Registry<Structure<?>> field16114 = method9175(field16113, () -> Structure.field18059);
    public static final RegistryKey<Registry<Class7792>> field16115 = createKey("worldgen/structure_piece");
    public static final Registry<Class7792> field16116 = method9175(field16115, () -> Class7792.field33427);
    public static final RegistryKey<Registry<Class6272<?>>> field16117 = createKey("worldgen/decorator");
@@ -264,10 +264,10 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public abstract boolean method9193(ResourceLocation var1);
 
    public static <T> T method9194(Registry<? super T> var0, String var1, T var2) {
-      return method9195(var0, new ResourceLocation(var1), (T)var2);
+      return register(var0, new ResourceLocation(var1), (T)var2);
    }
 
-   public static <V, T extends V> T method9195(Registry<V> var0, ResourceLocation var1, T var2) {
+   public static <V, T extends V> T register(Registry<V> var0, ResourceLocation var1, T var2) {
       return ((Class2349<V>)var0).method9250(RegistryKey.method31395(var0.field16139, var1), (T)var2, Lifecycle.stable());
    }
 

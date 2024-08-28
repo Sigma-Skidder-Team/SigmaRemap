@@ -7,7 +7,7 @@ public class Class4685 extends Class4686 {
    private final Class7608<Class3257> field22263;
    private final boolean field22264;
 
-   private Class4685(Class7608<Class3257> var1, boolean var2, int var3, int var4, Class122[] var5, Class127[] var6) {
+   private Class4685(Class7608<Class3257> var1, boolean var2, int var3, int var4, ILootCondition[] var5, ILootFunction[] var6) {
       super(var3, var4, var5, var6);
       this.field22263 = var1;
       this.field22264 = var2;
@@ -19,11 +19,11 @@ public class Class4685 extends Class4686 {
    }
 
    @Override
-   public void method14695(Consumer<ItemStack> var1, Class7812 var2) {
+   public void method14695(Consumer<ItemStack> var1, LootContext var2) {
       this.field22263.method24918().forEach(var1x -> var1.accept(new ItemStack(var1x)));
    }
 
-   private boolean method14696(Class7812 var1, Consumer<Class6549> var2) {
+   private boolean method14696(LootContext var1, Consumer<Class6549> var2) {
       if (!this.method14709(var1)) {
          return false;
       } else {
@@ -36,7 +36,7 @@ public class Class4685 extends Class4686 {
    }
 
    @Override
-   public boolean method14697(Class7812 var1, Consumer<Class6549> var2) {
+   public boolean method14697(LootContext var1, Consumer<Class6549> var2) {
       return !this.field22264 ? super.method14697(var1, var2) : this.method14696(var1, var2);
    }
 
@@ -55,7 +55,7 @@ public class Class4685 extends Class4686 {
    }
 
    // $VF: synthetic method
-   public Class4685(Class7608 var1, boolean var2, int var3, int var4, Class122[] var5, Class127[] var6, Class6551 var7) {
+   public Class4685(Class7608 var1, boolean var2, int var3, int var4, ILootCondition[] var5, ILootFunction[] var6, Class6551 var7) {
       this(var1, var2, var3, var4, var5, var6);
    }
 }

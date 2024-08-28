@@ -42,10 +42,10 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
       return (Class4843<?>)var4.method1035(var5).orElseThrow(() -> field35695.create(var5));
    }
 
-   public static Class122 method29034(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static ILootCondition method29034(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
       Class283 var5 = ((Class6619)var0.getSource()).method20177().method1412();
-      Class122 var6 = var5.method1052(var4);
+      ILootCondition var6 = var5.method1052(var4);
       if (var6 != null) {
          return var6;
       } else {

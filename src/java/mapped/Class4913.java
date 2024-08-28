@@ -104,11 +104,11 @@ public class Class4913 {
    }
 
    private static Class4913 method15184(String var0, Set<Class7380> var1, int var2, int var3) {
-      return method15186(Registry.<Class4913, Class4913>method9195(Registry.field16091, new ResourceLocation(var0), new Class4913(var0, var1, var2, var3)));
+      return method15186(Registry.<Class4913, Class4913>register(Registry.field16091, new ResourceLocation(var0), new Class4913(var0, var1, var2, var3)));
    }
 
    private static Class4913 method15185(String var0, Set<Class7380> var1, int var2, Predicate<Class4913> var3, int var4) {
-      return method15186(Registry.<Class4913, Class4913>method9195(Registry.field16091, new ResourceLocation(var0), new Class4913(var0, var1, var2, var3, var4)));
+      return method15186(Registry.<Class4913, Class4913>register(Registry.field16091, new ResourceLocation(var0), new Class4913(var0, var1, var2, var3, var4)));
    }
 
    private static Class4913 method15186(Class4913 var0) {

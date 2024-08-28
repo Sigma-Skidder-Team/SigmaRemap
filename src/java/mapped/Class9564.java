@@ -72,7 +72,7 @@ public final class Class9564 {
    }
 
    private static Class9564 method37067(String var0) {
-      return Registry.<Class9564, Class9564>method9195(Registry.field16089, new ResourceLocation(var0), new Class9564(var0));
+      return Registry.<Class9564, Class9564>register(Registry.field16089, new ResourceLocation(var0), new Class9564(var0));
    }
 
    public static Class9564 method37068(Optional<RegistryKey<Biome>> var0) {

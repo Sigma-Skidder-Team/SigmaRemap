@@ -6,16 +6,16 @@ import java.util.function.Consumer;
 public abstract class Class4686 extends Class4688 {
    public final int field22265;
    public final int field22266;
-   public final Class127[] field22267;
-   private final BiFunction<ItemStack, Class7812, ItemStack> field22268;
+   public final ILootFunction[] field22267;
+   private final BiFunction<ItemStack, LootContext, ItemStack> field22268;
    private final Class6549 field22269 = new Class6550(this);
 
-   public Class4686(int var1, int var2, Class122[] var3, Class127[] var4) {
+   public Class4686(int var1, int var2, ILootCondition[] var3, ILootFunction[] var4) {
       super(var3);
       this.field22265 = var1;
       this.field22266 = var2;
       this.field22267 = var4;
-      this.field22268 = Class8585.method30686(var4);
+      this.field22268 = LootFunctionManager.combine(var4);
    }
 
    @Override
@@ -27,10 +27,10 @@ public abstract class Class4686 extends Class4688 {
       }
    }
 
-   public abstract void method14695(Consumer<ItemStack> var1, Class7812 var2);
+   public abstract void method14695(Consumer<ItemStack> var1, LootContext var2);
 
    @Override
-   public boolean method14697(Class7812 var1, Consumer<Class6549> var2) {
+   public boolean method14697(LootContext var1, Consumer<Class6549> var2) {
       if (!this.method14709(var1)) {
          return false;
       } else {

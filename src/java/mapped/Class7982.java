@@ -6,13 +6,13 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class7982 {
    private static String[] field34302;
-   private final Class2223 field34303;
+   private final MapDecorationType field34303;
    private byte field34304;
    private byte field34305;
    private byte field34306;
    private final ITextComponent field34307;
 
-   public Class7982(Class2223 var1, byte var2, byte var3, byte var4, ITextComponent var5) {
+   public Class7982(MapDecorationType var1, byte var2, byte var3, byte var4, ITextComponent var5) {
       this.field34303 = var1;
       this.field34304 = var2;
       this.field34305 = var3;
@@ -24,7 +24,7 @@ public class Class7982 {
       return this.field34303.method8953();
    }
 
-   public Class2223 method27126() {
+   public MapDecorationType method27126() {
       return this.field34303;
    }
 

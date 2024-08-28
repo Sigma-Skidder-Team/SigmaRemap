@@ -45,7 +45,7 @@ public abstract class Class4874<T extends Class4457> implements Class4907<T> {
       Class8019 var5 = var1.method2823();
       Set<Class9282<T>> var6 = this.field22708.get(var5);
       if (var6 != null && !var6.isEmpty()) {
-         Class7812 var7 = Class6671.method20332(var1, var1);
+         LootContext var7 = Class6671.method20332(var1, var1);
          List<Class9282<T>> var8 = null;
 
          for (Class9282<T> var10 : var6) {

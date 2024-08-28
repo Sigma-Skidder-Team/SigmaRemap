@@ -20,16 +20,16 @@ public class Class9417 {
    public static void method36131(CommandDispatcher<Class6619> var0) {
       LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)Class6099.method18839("locate").requires(var0x -> var0x.method20129(2));
 
-      for (Entry var5 : Class2961.field18055.entrySet()) {
+      for (Entry var5 : Structure.field_236365_a_.entrySet()) {
          var3 = (LiteralArgumentBuilder)var3.then(
-            Class6099.method18839((String)var5.getKey()).executes(var1 -> method36132((Class6619)var1.getSource(), (Class2961<?>)var5.getValue()))
+            Class6099.method18839((String)var5.getKey()).executes(var1 -> method36132((Class6619)var1.getSource(), (Structure<?>)var5.getValue()))
          );
       }
 
       var0.register(var3);
    }
 
-   private static int method36132(Class6619 var0, Class2961<?> var1) throws CommandSyntaxException {
+   private static int method36132(Class6619 var0, Structure<?> var1) throws CommandSyntaxException {
       BlockPos var4 = new BlockPos(var0.method20171());
       BlockPos var5 = var0.method20172().method6943(var1, var4, 100, false);
       if (var5 != null) {

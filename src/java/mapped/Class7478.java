@@ -66,7 +66,7 @@ public class Class7478 {
       return this.field32139.getOrDefault(var1, ImmutableList.of());
    }
 
-   public boolean method24277(Class2961<?> var1) {
+   public boolean method24277(Structure<?> var1) {
       return this.field32141.stream().anyMatch(var1x -> var1x.get().field43174 == var1);
    }
 

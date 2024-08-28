@@ -2,7 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 
-public class Class2979 extends Class2961<Class4712> {
+public class Class2979 extends Structure<Class4712> {
    public Class2979(Codec<Class4712> var1) {
       super(var1);
    }

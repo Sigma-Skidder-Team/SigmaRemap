@@ -4,18 +4,18 @@ public class Class136 extends Class128 {
    private static String[] field458;
    private final Class39 field459;
 
-   public Class136(Class122[] var1, Class39 var2) {
+   public Class136(ILootCondition[] var1, Class39 var2) {
       super(var1);
       this.field459 = var2;
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38621;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.SET_NBT;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       var1.method32143().method140(this.field459);
       return var1;
    }

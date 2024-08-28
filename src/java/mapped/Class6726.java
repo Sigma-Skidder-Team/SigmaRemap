@@ -25,7 +25,7 @@ public class Class6726 extends Class6717 {
       if (!"null".equals(var5) && !StringUtils.isEmpty(var5)) {
          if (var5.charAt(0) == '"' && var5.charAt(var5.length() - 1) == '"' || var5.charAt(0) == '{' && var5.charAt(var5.length() - 1) == '}') {
             try {
-               var6 = Class8963.<ITextComponent>method32793(field29439, var5, ITextComponent.class, true);
+               var6 = JSONUtils.<ITextComponent>method32793(field29439, var5, ITextComponent.class, true);
                if (var6 == null) {
                   var6 = StringTextComponent.EMPTY;
                }

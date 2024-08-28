@@ -17,10 +17,10 @@ public class Class7171 implements Class7170<Class9168> {
             throw new JsonParseException("Invalid language->'" + var7 + "': language code must not be more than " + 16 + " characters long");
          }
 
-         JsonObject var8 = Class8963.method32781((JsonElement)var6.getValue(), "language");
-         String var9 = Class8963.method32763(var8, "region");
-         String var10 = Class8963.method32763(var8, "name");
-         boolean var11 = Class8963.method32769(var8, "bidirectional", false);
+         JsonObject var8 = JSONUtils.method32781((JsonElement)var6.getValue(), "language");
+         String var9 = JSONUtils.method32763(var8, "region");
+         String var10 = JSONUtils.method32763(var8, "name");
+         boolean var11 = JSONUtils.getBoolean(var8, "bidirectional", false);
          if (var9.isEmpty()) {
             throw new JsonParseException("Invalid language->'" + var7 + "'->region: empty value");
          }

@@ -568,7 +568,7 @@ public class Class6137 {
       return var6.method20979(var4, var5) ? var1.method32015(var6.method20980(var4, var5).method36050()) : false;
    }
 
-   private static boolean method18968(Class6619 var0, Class122 var1) {
+   private static boolean method18968(Class6619 var0, ILootCondition var1) {
       ServerWorld var4 = var0.method20172();
       Class9464 var5 = new Class9464(var4).method36454(Class9525.field44335, var0.method20171()).method36455(Class9525.field44330, var0.method20173());
       return var1.test(var5.method36460(Class8524.field38283));

@@ -66,6 +66,6 @@ public class Class8395 {
    }
 
    public static Class8395 method29462(String var0, Class4913 var1, ImmutableSet<Class3257> var2, ImmutableSet<Block> var3, Class9455 var4) {
-      return Registry.<Class8395, Class8395>method9195(Registry.field16090, new ResourceLocation(var0), new Class8395(var0, var1, var2, var3, var4));
+      return Registry.<Class8395, Class8395>register(Registry.field16090, new ResourceLocation(var0), new Class8395(var0, var1, var2, var3, var4));
    }
 }

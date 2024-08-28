@@ -37,12 +37,12 @@ public class Class9157 {
 
    @Nullable
    private static Boolean method34188(JsonObject var0, String var1) {
-      return !var0.has(var1) ? null : Class8963.method32768(var0, var1);
+      return !var0.has(var1) ? null : JSONUtils.method32768(var0, var1);
    }
 
    public static Class9157 method34189(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "entity flags");
+         JsonObject var3 = JSONUtils.method32781(var0, "entity flags");
          Boolean var4 = method34188(var3, "is_on_fire");
          Boolean var5 = method34188(var3, "is_sneaking");
          Boolean var6 = method34188(var3, "is_sprinting");

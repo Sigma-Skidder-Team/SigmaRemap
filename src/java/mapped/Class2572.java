@@ -14,7 +14,7 @@ public class Class2572 implements JsonDeserializer<Class9840> {
    }
 
    public int method10769(JsonObject var1) {
-      int var4 = Class8963.method32778(var1, "rotation", 0);
+      int var4 = JSONUtils.getInt(var1, "rotation", 0);
       if (var4 >= 0 && var4 % 90 == 0 && var4 / 90 <= 3) {
          return var4;
       } else {
@@ -27,14 +27,14 @@ public class Class2572 implements JsonDeserializer<Class9840> {
       if (!var1.has("uv")) {
          return null;
       } else {
-         JsonArray var4 = Class8963.method32785(var1, "uv");
+         JsonArray var4 = JSONUtils.method32785(var1, "uv");
          if (var4.size() != 4) {
             throw new JsonParseException("Expected 4 uv values, found: " + var4.size());
          } else {
             float[] var5 = new float[4];
 
             for (int var6 = 0; var6 < var5.length; var6++) {
-               var5[var6] = Class8963.method32770(var4.get(var6), "uv[" + var6 + "]");
+               var5[var6] = JSONUtils.method32770(var4.get(var6), "uv[" + var6 + "]");
             }
 
             return var5;

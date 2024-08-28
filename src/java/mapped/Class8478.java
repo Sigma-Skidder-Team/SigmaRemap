@@ -13,13 +13,13 @@ public class Class8478 {
    private final Multimap<String, String> field36337;
    private final Supplier<String> field36338;
    private final Class7538 field36339;
-   private final Function<ResourceLocation, Class122> field36340;
+   private final Function<ResourceLocation, ILootCondition> field36340;
    private final Set<ResourceLocation> field36341;
    private final Function<ResourceLocation, Class7318> field36342;
    private final Set<ResourceLocation> field36343;
    private String field36344;
 
-   public Class8478(Class7538 var1, Function<ResourceLocation, Class122> var2, Function<ResourceLocation, Class7318> var3) {
+   public Class8478(Class7538 var1, Function<ResourceLocation, ILootCondition> var2, Function<ResourceLocation, Class7318> var3) {
       this(HashMultimap.create(), () -> "", var1, var2, ImmutableSet.of(), var3, ImmutableSet.of());
    }
 
@@ -27,7 +27,7 @@ public class Class8478 {
       Multimap<String, String> var1,
       Supplier<String> var2,
       Class7538 var3,
-      Function<ResourceLocation, Class122> var4,
+      Function<ResourceLocation, ILootCondition> var4,
       Set<ResourceLocation> var5,
       Function<ResourceLocation, Class7318> var6,
       Set<ResourceLocation> var7
@@ -91,7 +91,7 @@ public class Class8478 {
    }
 
    @Nullable
-   public Class122 method29964(ResourceLocation var1) {
+   public ILootCondition method29964(ResourceLocation var1) {
       return this.field36340.apply(var1);
    }
 

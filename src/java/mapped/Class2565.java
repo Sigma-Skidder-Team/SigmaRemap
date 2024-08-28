@@ -7,7 +7,7 @@ import java.lang.reflect.Type;
 
 public class Class2565 implements JsonDeserializer<Class8783>, JsonSerializer<Class8783> {
    public Class8783 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = Class8963.method32781(var1, "status");
+      JsonObject var6 = JSONUtils.method32781(var1, "status");
       Class8783 var7 = new Class8783();
       if (var6.has("description")) {
          var7.method31701((ITextComponent)var3.deserialize(var6.get("description"), ITextComponent.class));
@@ -22,7 +22,7 @@ public class Class2565 implements JsonDeserializer<Class8783>, JsonSerializer<Cl
       }
 
       if (var6.has("favicon")) {
-         var7.method31706(Class8963.method32763(var6, "favicon"));
+         var7.method31706(JSONUtils.method32763(var6, "favicon"));
       }
 
       return var7;

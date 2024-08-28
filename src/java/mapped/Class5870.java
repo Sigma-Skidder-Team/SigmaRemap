@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Class5870 implements Class5871<Class5870>, Class5875<Class5870> {
    private final List<Class4688> field25654 = Lists.newArrayList();
-   private final List<Class122> field25655 = Lists.newArrayList();
-   private final List<Class127> field25656 = Lists.newArrayList();
+   private final List<ILootCondition> field25655 = Lists.newArrayList();
+   private final List<ILootFunction> field25656 = Lists.newArrayList();
    private Class6870 field25657 = new Class6872(1.0F);
    private Class6872 field25658 = new Class6872(0.0F, 0.0F);
 
@@ -38,8 +38,8 @@ public class Class5870 implements Class5871<Class5870>, Class5875<Class5870> {
       if (this.field25657 != null) {
          return new Class8894(
             this.field25654.<Class4688>toArray(new Class4688[0]),
-            this.field25655.<Class122>toArray(new Class122[0]),
-            this.field25656.<Class127>toArray(new Class127[0]),
+            this.field25655.<ILootCondition>toArray(new ILootCondition[0]),
+            this.field25656.<ILootFunction>toArray(new ILootFunction[0]),
             this.field25657,
             this.field25658
          );

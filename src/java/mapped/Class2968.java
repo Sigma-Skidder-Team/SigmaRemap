@@ -26,13 +26,13 @@ public class Class2968 extends Class2967 {
    }
 
    private boolean method11382(Class5646 var1, long var2, Class2420 var4, int var5, int var6) {
-      Class8483 var9 = var1.method17822().method38381(Class2961.field18073);
+      Class8483 var9 = var1.method17822().method38381(Structure.field18073);
       if (var9 == null) {
          return false;
       } else {
          for (int var10 = var5 - 10; var10 <= var5 + 10; var10++) {
             for (int var11 = var6 - 10; var11 <= var6 + 10; var11++) {
-               Class7481 var12 = Class2961.field18073.method11370(var9, var2, var4, var10, var11);
+               Class7481 var12 = Structure.field18073.method11370(var9, var2, var4, var10, var11);
                if (var10 == var12.field32174 && var11 == var12.field32175) {
                   return true;
                }

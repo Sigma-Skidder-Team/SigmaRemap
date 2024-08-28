@@ -45,10 +45,10 @@ public class Class1808 implements Class1809, AutoCloseable {
 
       try {
          var6 = var1.method580(var5);
-         JsonObject var7 = Class8963.method32801(new InputStreamReader(var6.method7763(), StandardCharsets.UTF_8));
-         String var29 = Class8963.method32763(var7, "vertex");
-         String var30 = Class8963.method32763(var7, "fragment");
-         JsonArray var10 = Class8963.method32786(var7, "samplers", (JsonArray)null);
+         JsonObject var7 = JSONUtils.method32801(new InputStreamReader(var6.method7763(), StandardCharsets.UTF_8));
+         String var29 = JSONUtils.method32763(var7, "vertex");
+         String var30 = JSONUtils.method32763(var7, "fragment");
+         JsonArray var10 = JSONUtils.method32786(var7, "samplers", (JsonArray)null);
          if (var10 != null) {
             int var11 = 0;
 
@@ -65,7 +65,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             }
          }
 
-         JsonArray var31 = Class8963.method32786(var7, "attributes", (JsonArray)null);
+         JsonArray var31 = JSONUtils.method32786(var7, "attributes", (JsonArray)null);
          if (var31 != null) {
             int var32 = 0;
             this.field9756 = Lists.newArrayListWithCapacity(var31.size());
@@ -73,7 +73,7 @@ public class Class1808 implements Class1809, AutoCloseable {
 
             for (JsonElement var14 : var31) {
                try {
-                  this.field9757.add(Class8963.method32762(var14, "attribute"));
+                  this.field9757.add(JSONUtils.method32762(var14, "attribute"));
                } catch (Exception var25) {
                   JSONException var16 = JSONException.method10464(var25);
                   var16.method10462("attributes[" + var32 + "]");
@@ -87,7 +87,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             this.field9757 = null;
          }
 
-         JsonArray var33 = Class8963.method32786(var7, "uniforms", (JsonArray)null);
+         JsonArray var33 = JSONUtils.method32786(var7, "uniforms", (JsonArray)null);
          if (var33 != null) {
             int var35 = 0;
 
@@ -104,7 +104,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             }
          }
 
-         this.field9755 = method7932(Class8963.method32783(var7, "blend", (JsonObject)null));
+         this.field9755 = method7932(JSONUtils.method32783(var7, "blend", (JsonObject)null));
          this.field9758 = method7931(var1, Class1853.field9872, var29);
          this.field9759 = method7931(var1, Class1853.field9873, var30);
          this.field9752 = Class8692.method31317();
@@ -159,28 +159,28 @@ public class Class1808 implements Class1809, AutoCloseable {
          int var7 = 0;
          boolean var8 = true;
          boolean var9 = false;
-         if (Class8963.method32755(var0, "func")) {
+         if (JSONUtils.method32755(var0, "func")) {
             var3 = Class5869.method18287(var0.get("func").getAsString());
             if (var3 != 32774) {
                var8 = false;
             }
          }
 
-         if (Class8963.method32755(var0, "srcrgb")) {
+         if (JSONUtils.method32755(var0, "srcrgb")) {
             var4 = Class5869.method18288(var0.get("srcrgb").getAsString());
             if (var4 != 1) {
                var8 = false;
             }
          }
 
-         if (Class8963.method32755(var0, "dstrgb")) {
+         if (JSONUtils.method32755(var0, "dstrgb")) {
             var5 = Class5869.method18288(var0.get("dstrgb").getAsString());
             if (var5 != 0) {
                var8 = false;
             }
          }
 
-         if (Class8963.method32755(var0, "srcalpha")) {
+         if (JSONUtils.method32755(var0, "srcalpha")) {
             var6 = Class5869.method18288(var0.get("srcalpha").getAsString());
             if (var6 != 1) {
                var8 = false;
@@ -189,7 +189,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             var9 = true;
          }
 
-         if (Class8963.method32755(var0, "dstalpha")) {
+         if (JSONUtils.method32755(var0, "dstalpha")) {
             var7 = Class5869.method18288(var0.get("dstalpha").getAsString());
             if (var7 != 0) {
                var8 = false;
@@ -312,9 +312,9 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    private void method7939(JsonElement var1) {
-      JsonObject var4 = Class8963.method32781(var1, "sampler");
-      String var5 = Class8963.method32763(var4, "name");
-      if (Class8963.method32755(var4, "file")) {
+      JsonObject var4 = JSONUtils.method32781(var1, "sampler");
+      String var5 = JSONUtils.method32763(var4, "name");
+      if (JSONUtils.method32755(var4, "file")) {
          this.field9747.add(var5);
       } else {
          this.field9746.put(var5, (IntSupplier)null);
@@ -332,12 +332,12 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    private void method7941(JsonElement var1) throws JSONException {
-      JsonObject var4 = Class8963.method32781(var1, "uniform");
-      String var5 = Class8963.method32763(var4, "name");
-      int var6 = Class1708.method7434(Class8963.method32763(var4, "type"));
-      int var7 = Class8963.method32777(var4, "count");
+      JsonObject var4 = JSONUtils.method32781(var1, "uniform");
+      String var5 = JSONUtils.method32763(var4, "name");
+      int var6 = Class1708.method7434(JSONUtils.method32763(var4, "type"));
+      int var7 = JSONUtils.method32777(var4, "count");
       float[] var8 = new float[Math.max(var7, 16)];
-      JsonArray var9 = Class8963.method32785(var4, "values");
+      JsonArray var9 = JSONUtils.method32785(var4, "values");
       if (var9.size() != var7 && var9.size() > 1) {
          throw new JSONException("Invalid amount of values specified (expected " + var7 + ", found " + var9.size() + ")");
       } else {
@@ -345,7 +345,7 @@ public class Class1808 implements Class1809, AutoCloseable {
 
          for (JsonElement var12 : var9) {
             try {
-               var8[var10] = Class8963.method32770(var12, "value");
+               var8[var10] = JSONUtils.method32770(var12, "value");
             } catch (Exception var15) {
                JSONException var14 = JSONException.method10464(var15);
                var14.method10462("values[" + var10 + "]");

@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class155 implements Class122 {
+public class Class155 implements ILootCondition {
    private static String[] field506;
    private final Class8576 field507;
    private final BlockPos field508;
@@ -15,7 +15,7 @@ public class Class155 implements Class122 {
       return Class8582.field38607;
    }
 
-   public boolean test(Class7812 var1) {
+   public boolean test(LootContext var1) {
       Vector3d var4 = var1.<Vector3d>method26081(Class9525.field44335);
       return var4 != null
          && this.field507

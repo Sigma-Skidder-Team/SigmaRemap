@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class154 implements Class122 {
+public class Class154 implements ILootCondition {
    private static String[] field503;
    private final Boolean field504;
    private final Boolean field505;
@@ -15,7 +15,7 @@ public class Class154 implements Class122 {
       return Class8582.field38608;
    }
 
-   public boolean test(Class7812 var1) {
+   public boolean test(LootContext var1) {
       ServerWorld var4 = var1.method26090();
       return this.field504 != null && this.field504 != var4.method6795() ? false : this.field505 == null || this.field505 == var4.method6794();
    }

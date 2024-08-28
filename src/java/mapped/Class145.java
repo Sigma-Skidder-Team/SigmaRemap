@@ -7,18 +7,18 @@ public class Class145 extends Class128 {
    private static final Logger field487 = LogManager.getLogger();
    private final Class6872 field488;
 
-   public Class145(Class122[] var1, Class6872 var2) {
+   public Class145(ILootCondition[] var1, Class6872 var2) {
       super(var1);
       this.field488 = var2;
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38624;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.SET_DAMAGE;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       if (!var1.method32115()) {
          field487.warn("Couldn't set damage of loot item {}", var1);
       } else {

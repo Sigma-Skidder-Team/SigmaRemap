@@ -17,7 +17,7 @@ public class Class5883 extends Class5876<Class5883> {
    }
 
    @Override
-   public Class127 method18309() {
+   public ILootFunction method18309() {
       return new Class133(this.method18306(), this.field25686);
    }
 }

@@ -25,7 +25,7 @@ public final class Class2581 implements Class2582 {
    }
 
    public static Class2582 method10787(JsonObject var0, JsonDeserializationContext var1) {
-      int var4 = Class8963.method32777(var0, "bonusMultiplier");
+      int var4 = JSONUtils.method32777(var0, "bonusMultiplier");
       return new Class2581(var4);
    }
 

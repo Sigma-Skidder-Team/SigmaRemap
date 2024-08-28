@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Random;
 import java.util.Set;
 
-public class Class162 implements Class122 {
+public class Class162 implements ILootCondition {
    private static String[] field525;
    private static final Class162 field526 = new Class162();
 
@@ -22,7 +22,7 @@ public class Class162 implements Class122 {
       return ImmutableSet.of(Class9525.field44339);
    }
 
-   public boolean test(Class7812 var1) {
+   public boolean test(LootContext var1) {
       Float var4 = var1.<Float>method26081(Class9525.field44339);
       if (var4 == null) {
          return true;

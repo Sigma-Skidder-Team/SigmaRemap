@@ -2,7 +2,7 @@ package mapped;
 
 @FunctionalInterface
 public interface Class7519 {
-   Class122 method24517();
+   ILootCondition method24517();
 
    default Class7519 method24518() {
       return Class152.method459(this);

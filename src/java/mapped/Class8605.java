@@ -64,10 +64,10 @@ public class Class8605 {
 
    public static Class8605 method30837(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "enchantment");
+         JsonObject var3 = JSONUtils.method32781(var0, "enchantment");
          Class6069 var4 = null;
          if (var3.has("enchantment")) {
-            ResourceLocation var5 = new ResourceLocation(Class8963.method32763(var3, "enchantment"));
+            ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var3, "enchantment"));
             var4 = Registry.field16073.method9187(var5).orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var5 + "'"));
          }
 
@@ -80,7 +80,7 @@ public class Class8605 {
 
    public static Class8605[] method30838(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonArray var3 = Class8963.method32784(var0, "enchantments");
+         JsonArray var3 = JSONUtils.method32784(var0, "enchantments");
          Class8605[] var4 = new Class8605[var3.size()];
 
          for (int var5 = 0; var5 < var4.length; var5++) {

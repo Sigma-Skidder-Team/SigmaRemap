@@ -26,13 +26,13 @@ public class Class2576 implements JsonDeserializer<Class2006>, JsonSerializer<Cl
    }
 
    public Class2006 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = Class8963.method32781(var1, "advancement");
-      JsonObject var7 = Class8963.method32783(var6, "criteria", new JsonObject());
+      JsonObject var6 = JSONUtils.method32781(var1, "advancement");
+      JsonObject var7 = JSONUtils.method32783(var6, "criteria", new JsonObject());
       Class2006 var8 = new Class2006();
 
       for (Entry var10 : var7.entrySet()) {
          String var11 = (String)var10.getKey();
-         Class2006.method8503(var8).put(var11, Class9599.method37270(Class8963.method32762((JsonElement)var10.getValue(), var11)));
+         Class2006.method8503(var8).put(var11, Class9599.method37270(JSONUtils.method32762((JsonElement)var10.getValue(), var11)));
       }
 
       return var8;

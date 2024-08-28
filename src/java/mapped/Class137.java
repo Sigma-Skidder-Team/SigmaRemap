@@ -15,7 +15,7 @@ public class Class137 extends Class128 {
    private final List<ITextComponent> field461;
    private final Class2063 field462;
 
-   public Class137(Class122[] var1, boolean var2, List<ITextComponent> var3, Class2063 var4) {
+   public Class137(ILootCondition[] var1, boolean var2, List<ITextComponent> var3, Class2063 var4) {
       super(var1);
       this.field460 = var2;
       this.field461 = ImmutableList.copyOf(var3);
@@ -23,8 +23,8 @@ public class Class137 extends Class128 {
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38635;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.SET_LORE;
    }
 
    @Override
@@ -33,7 +33,7 @@ public class Class137 extends Class128 {
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       Class41 var5 = this.method402(var1, !this.field461.isEmpty());
       if (var5 != null) {
          if (this.field460) {

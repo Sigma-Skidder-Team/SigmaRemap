@@ -14,7 +14,7 @@ public abstract class Class8924 {
 
    public static Class8924 method32626(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         String var3 = Class8963.method32762(var0, "type");
+         String var3 = JSONUtils.method32762(var0, "type");
          if (!var3.startsWith("#")) {
             ResourceLocation var6 = new ResourceLocation(var3);
             Class8992 var5 = Registry.field16074

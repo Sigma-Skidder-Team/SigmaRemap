@@ -5,7 +5,7 @@ import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.mojang.authlib.GameProfile;
-import mapped.Class8963;
+import mapped.JSONUtils;
 import mapped.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -72,15 +72,15 @@ public class ChatFilterClient implements AutoCloseable {
          return CompletableFuture.<Optional<String>>supplyAsync(() -> {
             try {
                JsonObject flag = this.func_244564_a(var7, this.field_244552_d);
-               boolean s = Class8963.method32769(flag, "response", false);
+               boolean s = JSONUtils.getBoolean(flag, "response", false);
                if (s) {
                   return Optional.<String>of(p_244567_2_);
                } else {
-                  String i = Class8963.method32764(flag, "hashed", (String)null);
+                  String i = JSONUtils.method32764(flag, "hashed", (String)null);
                   if (i == null) {
                      return Optional.<String>empty();
                   } else {
-                     int var9 = Class8963.method32785(flag, "hashes").size();
+                     int var9 = JSONUtils.method32785(flag, "hashes").size();
                      return p_244567_3_.shouldIgnore(i, var9) ? Optional.<String>empty() : Optional.<String>of(i);
                   }
                }

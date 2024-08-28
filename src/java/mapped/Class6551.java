@@ -14,7 +14,7 @@ public class Class6551 extends Class6548 {
    }
 
    @Override
-   public void method19893(Consumer<ItemStack> var1, Class7812 var2) {
+   public void method19893(Consumer<ItemStack> var1, LootContext var2) {
       var1.accept(new ItemStack(this.field28910));
    }
 }

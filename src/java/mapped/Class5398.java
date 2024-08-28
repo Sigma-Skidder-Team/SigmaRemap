@@ -8,12 +8,12 @@ import java.util.Random;
 
 public class Class5398 implements Class5391 {
    private final int field24069;
-   private final Class2961<?> field24070;
-   private final Class2223 field24071;
+   private final Structure<?> field24070;
+   private final MapDecorationType field24071;
    private final int field24072;
    private final int field24073;
 
-   public Class5398(int var1, Class2961<?> var2, Class2223 var3, int var4, int var5) {
+   public Class5398(int var1, Structure<?> var2, MapDecorationType var3, int var4, int var5) {
       this.field24069 = var1;
       this.field24070 = var2;
       this.field24071 = var3;

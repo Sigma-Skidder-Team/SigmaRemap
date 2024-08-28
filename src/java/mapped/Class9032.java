@@ -11,7 +11,7 @@ public class Class9032 {
    private Class7498 field41330;
 
    public static Class9032 method33448(Class9786 var0, Reader var1) {
-      return Class8963.<Class9032>method32796(var0.field45755, var1, Class9032.class);
+      return JSONUtils.<Class9032>method32796(var0.field45755, var1, Class9032.class);
    }
 
    public Class9032(Map<String, Class7497> var1, Class7498 var2) {

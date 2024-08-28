@@ -12,11 +12,11 @@ public class Class4940 extends Class4936<Class4685> {
       var1.addProperty("expand", Class4685.method14702(var2));
    }
 
-   public Class4685 method15251(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, Class122[] var5, Class127[] var6) {
-      ResourceLocation var9 = new ResourceLocation(Class8963.method32763(var1, "name"));
+   public Class4685 method15251(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, ILootCondition[] var5, ILootFunction[] var6) {
+      ResourceLocation var9 = new ResourceLocation(JSONUtils.method32763(var1, "name"));
       Class7608 var10 = Class9443.method36296().method32658().method27135(var9);
       if (var10 != null) {
-         boolean var11 = Class8963.method32768(var1, "expand");
+         boolean var11 = JSONUtils.method32768(var1, "expand");
          return new Class4685(var10, var11, var3, var4, var5, var6, null);
       } else {
          throw new JsonParseException("Can't find tag: " + var9);

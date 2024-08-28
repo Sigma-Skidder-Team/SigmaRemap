@@ -21,7 +21,7 @@ public class Class7480 {
       }
    }
 
-   public Stream<? extends Class5444<?>> method24340(Class2002 var1, Class2961<?> var2) {
+   public Stream<? extends Class5444<?>> method24340(Class2002 var1, Structure<?> var2) {
       return this.field32171
          .method7012(var1.method8410(), var1.method8412(), Class9176.field42135)
          .method7099(var2)
@@ -32,15 +32,15 @@ public class Class7480 {
    }
 
    @Nullable
-   public Class5444<?> method24341(Class2002 var1, Class2961<?> var2, Class1671 var3) {
+   public Class5444<?> method24341(Class2002 var1, Structure<?> var2, Class1671 var3) {
       return var3.method7097(var2);
    }
 
-   public void method24342(Class2002 var1, Class2961<?> var2, Class5444<?> var3, Class1671 var4) {
+   public void method24342(Class2002 var1, Structure<?> var2, Class5444<?> var3, Class1671 var4) {
       var4.method7098(var2, var3);
    }
 
-   public void method24343(Class2002 var1, Class2961<?> var2, long var3, Class1671 var5) {
+   public void method24343(Class2002 var1, Structure<?> var2, long var3, Class1671 var5) {
       var5.method7100(var2, var3);
    }
 
@@ -48,7 +48,7 @@ public class Class7480 {
       return this.field32172.method26260();
    }
 
-   public Class5444<?> method24345(BlockPos var1, boolean var2, Class2961<?> var3) {
+   public Class5444<?> method24345(BlockPos var1, boolean var2, Structure<?> var3) {
       return (Class5444<?>)DataFixUtils.orElse(
          this.method24340(Class2002.method8390(var1), var3)
             .filter(var1x -> var1x.method17110().method38396(var1))

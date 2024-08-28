@@ -3,7 +3,7 @@ package mapped;
 import org.apache.commons.lang3.ArrayUtils;
 
 public class Class4690 extends Class4689 {
-   public Class4690(Class4688[] var1, Class122[] var2) {
+   public Class4690(Class4688[] var1, ILootCondition[] var2) {
       super(var1, var2);
    }
 

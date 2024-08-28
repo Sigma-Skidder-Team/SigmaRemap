@@ -1045,7 +1045,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    @Nullable
-   public BlockPos method6943(Class2961<?> var1, BlockPos var2, int var3, boolean var4) {
+   public BlockPos method6943(Structure<?> var1, BlockPos var2, int var3, boolean var4) {
       return this.field9045.method1436().method20087().method26260() ? this.method6883().method7370().method17820(this, var1, var2, var3, var4) : null;
    }
 
@@ -1331,7 +1331,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    @Override
-   public Stream<? extends Class5444<?>> method6969(Class2002 var1, Class2961<?> var2) {
+   public Stream<? extends Class5444<?>> method6969(Class2002 var1, Structure<?> var2) {
       return this.method6893().method24340(var1, var2);
    }
 

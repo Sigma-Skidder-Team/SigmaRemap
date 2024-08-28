@@ -33,7 +33,7 @@ public class Class4467 extends Class4457 {
       return new Class4467(Class9587.field44822, var3, var0);
    }
 
-   public boolean method14117(Collection<Class7812> var1, int var2) {
+   public boolean method14117(Collection<LootContext> var1, int var2) {
       if (this.field21653.length > 0) {
          ArrayList var5 = Lists.newArrayList(var1);
 
@@ -42,7 +42,7 @@ public class Class4467 extends Class4457 {
             Iterator var11 = var5.iterator();
 
             while (var11.hasNext()) {
-               Class7812 var12 = (Class7812)var11.next();
+               LootContext var12 = (LootContext)var11.next();
                if (var9.method37227(var12)) {
                   var11.remove();
                   var10 = true;

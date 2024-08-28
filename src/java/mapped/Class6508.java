@@ -10,16 +10,16 @@ public class Class6508<T extends Class4844> implements Class6504<T> {
    }
 
    public T method19700(ResourceLocation var1, JsonObject var2) {
-      String var5 = Class8963.method32764(var2, "group", "");
+      String var5 = JSONUtils.method32764(var2, "group", "");
       Class120 var6;
-      if (!Class8963.method32759(var2, "ingredient")) {
-         var6 = Class120.method344(Class8963.method32782(var2, "ingredient"));
+      if (!JSONUtils.method32759(var2, "ingredient")) {
+         var6 = Class120.method344(JSONUtils.method32782(var2, "ingredient"));
       } else {
-         var6 = Class120.method344(Class8963.method32785(var2, "ingredient"));
+         var6 = Class120.method344(JSONUtils.method32785(var2, "ingredient"));
       }
 
-      String var7 = Class8963.method32763(var2, "result");
-      int var8 = Class8963.method32777(var2, "count");
+      String var7 = JSONUtils.method32763(var2, "result");
+      int var8 = JSONUtils.method32777(var2, "count");
       ItemStack var9 = new ItemStack(Registry.field16075.method9184(new ResourceLocation(var7)), var8);
       return this.field28493.method17789(var1, var5, var6, var9);
    }

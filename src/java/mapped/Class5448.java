@@ -3,7 +3,7 @@ package mapped;
 public class Class5448 extends Class5444<Class4728> {
    private static String[] field24206;
 
-   public Class5448(Class2961<Class4728> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public Class5448(Structure<Class4728> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
       super(var1, var2, var3, var4, var5, var6);
    }
 

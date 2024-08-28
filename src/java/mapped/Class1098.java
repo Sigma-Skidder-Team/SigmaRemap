@@ -302,7 +302,7 @@ public class Class1098 extends Class1013 {
       }
 
       ServerWorld var8 = var1.method6970();
-      if (var8 instanceof ServerWorld && var8.method6893().method24345(this.method3432(), true, Class2961.field18066).method17117()) {
+      if (var8 instanceof ServerWorld && var8.method6893().method24345(this.method3432(), true, Structure.field18066).method17117()) {
          this.method5251(10);
          this.method4278();
       }

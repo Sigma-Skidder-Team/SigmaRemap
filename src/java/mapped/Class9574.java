@@ -514,14 +514,14 @@ public class Class9574 {
                }
 
                if ("resourcePacks".equals(var4)) {
-                  this.field44580 = Class8963.<List<String>>method32795(field44570, var5, field44571);
+                  this.field44580 = JSONUtils.<List<String>>method32795(field44570, var5, field44571);
                   if (this.field44580 == null) {
                      this.field44580 = Lists.newArrayList();
                   }
                }
 
                if ("incompatibleResourcePacks".equals(var4)) {
-                  this.field44581 = Class8963.<List<String>>method32795(field44570, var5, field44571);
+                  this.field44581 = JSONUtils.<List<String>>method32795(field44570, var5, field44571);
                   if (this.field44581 == null) {
                      this.field44581 = Lists.newArrayList();
                   }

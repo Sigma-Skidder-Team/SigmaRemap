@@ -6,7 +6,7 @@ import java.lang.reflect.Type;
 
 public class Class2555 implements JsonDeserializer<Class6871>, JsonSerializer<Class6871> {
    public Class6871 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      return new Class6871(Class8963.method32776(var1, "value"));
+      return new Class6871(JSONUtils.method32776(var1, "value"));
    }
 
    public JsonElement serialize(Class6871 var1, Type var2, JsonSerializationContext var3) {

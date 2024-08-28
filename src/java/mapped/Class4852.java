@@ -200,7 +200,7 @@ public class Class4852 implements Class4842 {
          throw new JsonSyntaxException("Invalid pattern: empty pattern not allowed");
       } else {
          for (int var4 = 0; var4 < var3.length; var4++) {
-            String var5 = Class8963.method32762(var0.get(var4), "pattern[" + var4 + "]");
+            String var5 = JSONUtils.method32762(var0.get(var4), "pattern[" + var4 + "]");
             if (var5.length() > 3) {
                throw new JsonSyntaxException("Invalid pattern: too many columns, 3 is maximum");
             }
@@ -236,10 +236,10 @@ public class Class4852 implements Class4842 {
    }
 
    public static ItemStack method14987(JsonObject var0) {
-      String var3 = Class8963.method32763(var0, "item");
+      String var3 = JSONUtils.method32763(var0, "item");
       Class3257 var4 = Registry.field16075.method9187(new ResourceLocation(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
       if (!var0.has("data")) {
-         int var5 = Class8963.method32778(var0, "count", 1);
+         int var5 = JSONUtils.getInt(var0, "count", 1);
          return new ItemStack(var4, var5);
       } else {
          throw new JsonParseException("Disallowed data tag found");

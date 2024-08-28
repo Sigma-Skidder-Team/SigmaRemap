@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class Class153 implements Class122 {
+public class Class153 implements ILootCondition {
    private static String[] field501;
    private final Class9539 field502;
 
@@ -22,7 +22,7 @@ public class Class153 implements Class122 {
       return ImmutableSet.of(Class9525.field44335, Class9525.field44332);
    }
 
-   public boolean test(Class7812 var1) {
+   public boolean test(LootContext var1) {
       Class8654 var4 = var1.<Class8654>method26081(Class9525.field44332);
       Vector3d var5 = var1.<Vector3d>method26081(Class9525.field44335);
       return var5 != null && var4 != null && this.field502.method36912(var1.method26090(), var5, var4);

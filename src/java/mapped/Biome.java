@@ -40,9 +40,9 @@ public final class Biome {
    );
    public static final Codec<Supplier<Biome>> field40309 = Class9054.method33671(Registry.BIOME_KEY, field40307);
    public static final Codec<List<Supplier<Biome>>> field40310 = Class9054.<Biome>method33672(Registry.BIOME_KEY, field40307);
-   private final Map<Integer, List<Class2961<?>>> field40311 = Registry.field16114
+   private final Map<Integer, List<Structure<?>>> field40311 = Registry.field16114
       .method9192()
-      .collect(Collectors.<Class2961<?>, Integer>groupingBy(var0 -> var0.method11364().ordinal()));
+      .collect(Collectors.<Structure<?>, Integer>groupingBy(var0 -> var0.method11364().ordinal()));
    private static final Class7691 field40312 = new Class7691(new Class2420(1234L), ImmutableList.of(0));
    private static final Class7691 field40313 = new Class7691(new Class2420(3456L), ImmutableList.of(-2, -1, 0));
    public static final Class7691 field40314 = new Class7691(new Class2420(2345L), ImmutableList.of(0));
@@ -168,7 +168,7 @@ public final class Biome {
       for (int var12 = 0; var12 < var11; var12++) {
          int var13 = 0;
          if (var1.method24344()) {
-            for (Class2961 var15 : this.field40311.getOrDefault(var12, Collections.<Class2961<?>>emptyList())) {
+            for (Structure var15 : this.field40311.getOrDefault(var12, Collections.<Structure<?>>emptyList())) {
                var6.method10372(var4, var13, var12);
                int var16 = var7.method8304() >> 4;
                int var17 = var7.method8306() >> 4;

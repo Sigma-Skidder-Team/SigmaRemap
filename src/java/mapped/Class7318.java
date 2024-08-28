@@ -13,18 +13,18 @@ import org.apache.logging.log4j.Logger;
 
 public class Class7318 {
    private static final Logger field31379 = LogManager.getLogger();
-   public static final Class7318 field31380 = new Class7318(Class8524.field38281, new Class8894[0], new Class127[0]);
+   public static final Class7318 field31380 = new Class7318(Class8524.field38281, new Class8894[0], new ILootFunction[0]);
    public static final Class7538 field31381 = Class8524.field38291;
    private final Class7538 field31382;
    private final Class8894[] field31383;
-   private final Class127[] field31384;
-   private final BiFunction<ItemStack, Class7812, ItemStack> field31385;
+   private final ILootFunction[] field31384;
+   private final BiFunction<ItemStack, LootContext, ItemStack> field31385;
 
-   public Class7318(Class7538 var1, Class8894[] var2, Class127[] var3) {
+   public Class7318(Class7538 var1, Class8894[] var2, ILootFunction[] var3) {
       this.field31382 = var1;
       this.field31383 = var2;
       this.field31384 = var3;
-      this.field31385 = Class8585.method30686(var3);
+      this.field31385 = LootFunctionManager.combine(var3);
    }
 
    public static Consumer<ItemStack> method23179(Consumer<ItemStack> var0) {
@@ -44,11 +44,11 @@ public class Class7318 {
       };
    }
 
-   public void method23180(Class7812 var1, Consumer<ItemStack> var2) {
+   public void method23180(LootContext var1, Consumer<ItemStack> var2) {
       if (!var1.method26082(this)) {
          field31379.warn("Detected infinite loop in loot tables");
       } else {
-         Consumer var5 = Class127.method369(this.field31385, var2, var1);
+         Consumer var5 = ILootFunction.method369(this.field31385, var2, var1);
 
          for (Class8894 var9 : this.field31383) {
             var9.method32371(var5, var1);
@@ -58,11 +58,11 @@ public class Class7318 {
       }
    }
 
-   public void method23181(Class7812 var1, Consumer<ItemStack> var2) {
+   public void method23181(LootContext var1, Consumer<ItemStack> var2) {
       this.method23180(var1, method23179(var2));
    }
 
-   public List<ItemStack> method23182(Class7812 var1) {
+   public List<ItemStack> method23182(LootContext var1) {
       ArrayList var4 = Lists.newArrayList();
       this.method23181(var1, var4::add);
       return var4;
@@ -82,7 +82,7 @@ public class Class7318 {
       }
    }
 
-   public void method23185(Class920 var1, Class7812 var2) {
+   public void method23185(Class920 var1, LootContext var2) {
       List<ItemStack> var5 = this.method23182(var2);
       Random var6 = var2.method26088();
       List<Integer> var7 = this.method23187(var1, var6);
@@ -172,7 +172,7 @@ public class Class7318 {
    }
 
    // $VF: synthetic method
-   public static Class127[] method23193(Class7318 var0) {
+   public static ILootFunction[] method23193(Class7318 var0) {
       return var0.field31384;
    }
 }

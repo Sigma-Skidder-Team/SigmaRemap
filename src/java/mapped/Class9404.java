@@ -50,10 +50,10 @@ public class Class9404 {
 
    public static Class9404 method35780(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "damage");
+         JsonObject var3 = JSONUtils.method32781(var0, "damage");
          Class8841 var4 = Class8841.method32025(var3.get("dealt"));
          Class8841 var5 = Class8841.method32025(var3.get("taken"));
-         Boolean var6 = !var3.has("blocked") ? null : Class8963.method32768(var3, "blocked");
+         Boolean var6 = !var3.has("blocked") ? null : JSONUtils.method32768(var3, "blocked");
          Class6671 var7 = Class6671.method20330(var3.get("source_entity"));
          Class9539 var8 = Class9539.method36913(var3.get("type"));
          return new Class9404(var4, var5, var7, var6, var8);

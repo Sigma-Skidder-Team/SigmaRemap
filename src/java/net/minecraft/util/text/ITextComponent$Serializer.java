@@ -3,7 +3,7 @@ package net.minecraft.util.text;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 import mapped.ResourceLocation;
-import mapped.Class8963;
+import mapped.JSONUtils;
 import mapped.Class9681;
 import mapped.Util;
 
@@ -69,11 +69,11 @@ public class ITextComponent$Serializer implements JsonDeserializer<IFormattableT
          JsonObject iformattabletextcomponent = p_deserialize_1_.getAsJsonObject();
          Object jsonarray2;
          if (iformattabletextcomponent.has("text")) {
-            jsonarray2 = new StringTextComponent(Class8963.method32763(iformattabletextcomponent, "text"));
+            jsonarray2 = new StringTextComponent(JSONUtils.method32763(iformattabletextcomponent, "text"));
          } else if (iformattabletextcomponent.has("translate")) {
-            String j = Class8963.method32763(iformattabletextcomponent, "translate");
+            String j = JSONUtils.method32763(iformattabletextcomponent, "translate");
             if (iformattabletextcomponent.has("with")) {
-               JsonArray aobject = Class8963.method32785(iformattabletextcomponent, "with");
+               JsonArray aobject = JSONUtils.method32785(iformattabletextcomponent, "with");
                Object[] i = new Object[aobject.size()];
 
                for (int stringtextcomponent = 0; stringtextcomponent < i.length; stringtextcomponent++) {
@@ -91,38 +91,38 @@ public class ITextComponent$Serializer implements JsonDeserializer<IFormattableT
                jsonarray2 = new TranslationTextComponent(j);
             }
          } else if (iformattabletextcomponent.has("score")) {
-            JsonObject var15 = Class8963.method32782(iformattabletextcomponent, "score");
+            JsonObject var15 = JSONUtils.method32782(iformattabletextcomponent, "score");
             if (!var15.has("name") || !var15.has("objective")) {
                throw new JsonParseException("A score component needs a least a name and an objective");
             }
 
-            jsonarray2 = new ScoreTextComponent(Class8963.method32763(var15, "name"), Class8963.method32763(var15, "objective"));
+            jsonarray2 = new ScoreTextComponent(JSONUtils.method32763(var15, "name"), JSONUtils.method32763(var15, "objective"));
          } else if (iformattabletextcomponent.has("selector")) {
-            jsonarray2 = new SelectorTextComponent(Class8963.method32763(iformattabletextcomponent, "selector"));
+            jsonarray2 = new SelectorTextComponent(JSONUtils.method32763(iformattabletextcomponent, "selector"));
          } else if (iformattabletextcomponent.has("keybind")) {
-            jsonarray2 = new KeybindTextComponent(Class8963.method32763(iformattabletextcomponent, "keybind"));
+            jsonarray2 = new KeybindTextComponent(JSONUtils.method32763(iformattabletextcomponent, "keybind"));
          } else {
             if (!iformattabletextcomponent.has("nbt")) {
                throw new JsonParseException("Don't know how to turn " + p_deserialize_1_ + " into a Component");
             }
 
-            String var16 = Class8963.method32763(iformattabletextcomponent, "nbt");
-            boolean var19 = Class8963.method32769(iformattabletextcomponent, "interpret", false);
+            String var16 = JSONUtils.method32763(iformattabletextcomponent, "nbt");
+            boolean var19 = JSONUtils.getBoolean(iformattabletextcomponent, "interpret", false);
             if (iformattabletextcomponent.has("block")) {
-               jsonarray2 = new NBTTextComponent$Block(var16, var19, Class8963.method32763(iformattabletextcomponent, "block"));
+               jsonarray2 = new NBTTextComponent$Block(var16, var19, JSONUtils.method32763(iformattabletextcomponent, "block"));
             } else if (iformattabletextcomponent.has("entity")) {
-               jsonarray2 = new NBTTextComponent$Entity(var16, var19, Class8963.method32763(iformattabletextcomponent, "entity"));
+               jsonarray2 = new NBTTextComponent$Entity(var16, var19, JSONUtils.method32763(iformattabletextcomponent, "entity"));
             } else {
                if (!iformattabletextcomponent.has("storage")) {
                   throw new JsonParseException("Don't know how to turn " + p_deserialize_1_ + " into a Component");
                }
 
-               jsonarray2 = new NBTTextComponent$Storage(var16, var19, new ResourceLocation(Class8963.method32763(iformattabletextcomponent, "storage")));
+               jsonarray2 = new NBTTextComponent$Storage(var16, var19, new ResourceLocation(JSONUtils.method32763(iformattabletextcomponent, "storage")));
             }
          }
 
          if (iformattabletextcomponent.has("extra")) {
-            JsonArray var17 = Class8963.method32785(iformattabletextcomponent, "extra");
+            JsonArray var17 = JSONUtils.method32785(iformattabletextcomponent, "extra");
             if (var17.size() <= 0) {
                throw new JsonParseException("Unexpected empty array of components");
             }
@@ -231,7 +231,7 @@ public class ITextComponent$Serializer implements JsonDeserializer<IFormattableT
 
    @Nullable
    public static IFormattableTextComponent func_240643_a_(String p_240643_0_) {
-      return Class8963.<IFormattableTextComponent>method32793(GSON, p_240643_0_, IFormattableTextComponent.class, false);
+      return JSONUtils.<IFormattableTextComponent>method32793(GSON, p_240643_0_, IFormattableTextComponent.class, false);
    }
 
    @Nullable
@@ -241,7 +241,7 @@ public class ITextComponent$Serializer implements JsonDeserializer<IFormattableT
 
    @Nullable
    public static IFormattableTextComponent func_240644_b_(String p_240644_0_) {
-      return Class8963.<IFormattableTextComponent>method32793(GSON, p_240644_0_, IFormattableTextComponent.class, true);
+      return JSONUtils.<IFormattableTextComponent>method32793(GSON, p_240644_0_, IFormattableTextComponent.class, true);
    }
 
    public static IFormattableTextComponent func_240642_a_(com.mojang.brigadier.StringReader p_240642_0_) {

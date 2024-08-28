@@ -197,7 +197,7 @@ public class Class7846 {
       Class2350<Class9459> var17 = Class9535.method36871(var14, var15, var16, var10);
       switch (var9) {
          case "flat":
-            JsonObject var20 = !var4.isEmpty() ? Class8963.method32800(var4) : new JsonObject();
+            JsonObject var20 = !var4.isEmpty() ? JSONUtils.method32800(var4) : new JsonObject();
             Dynamic<JsonElement> var21 = new Dynamic<>(JsonOps.INSTANCE, var20);
             return new Class7846(
                var10,

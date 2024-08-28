@@ -5,17 +5,17 @@ import java.util.Random;
 public class Class144 extends Class128 {
    private static String[] field486;
 
-   public Class144(Class122[] var1) {
+   public Class144(ILootCondition[] var1) {
       super(var1);
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38634;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.EXPLOSION_DECAY;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       Float var5 = var2.<Float>method26081(Class9525.field44339);
       if (var5 != null) {
          Random var6 = var2.method26088();

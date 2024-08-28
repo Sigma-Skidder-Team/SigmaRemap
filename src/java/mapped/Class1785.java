@@ -51,7 +51,7 @@ public class Class1785 implements Class1783 {
 
             try {
                var4 = new BufferedReader(new InputStreamReader(this.field9627, StandardCharsets.UTF_8));
-               this.field9629 = Class8963.method32801(var4);
+               this.field9629 = JSONUtils.method32801(var4);
             } finally {
                IOUtils.closeQuietly(var4);
             }
@@ -61,7 +61,7 @@ public class Class1785 implements Class1783 {
             return null;
          } else {
             String var8 = var1.method22518();
-            return (T)(this.field9629.has(var8) ? var1.method22519(Class8963.method32782(this.field9629, var8)) : null);
+            return (T)(this.field9629.has(var8) ? var1.method22519(JSONUtils.method32782(this.field9629, var8)) : null);
          }
       }
    }

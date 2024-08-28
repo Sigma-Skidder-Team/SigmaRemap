@@ -8,17 +8,17 @@ import java.util.UUID;
 
 public class Class2556 implements JsonDeserializer<Class9762>, JsonSerializer<Class9762> {
    public Class9762 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = Class8963.method32781(var1, "players");
-      Class9762 var7 = new Class9762(Class8963.method32777(var6, "max"), Class8963.method32777(var6, "online"));
-      if (Class8963.method32759(var6, "sample")) {
-         JsonArray var8 = Class8963.method32785(var6, "sample");
+      JsonObject var6 = JSONUtils.method32781(var1, "players");
+      Class9762 var7 = new Class9762(JSONUtils.method32777(var6, "max"), JSONUtils.method32777(var6, "online"));
+      if (JSONUtils.method32759(var6, "sample")) {
+         JsonArray var8 = JSONUtils.method32785(var6, "sample");
          if (var8.size() > 0) {
             GameProfile[] var9 = new GameProfile[var8.size()];
 
             for (int var10 = 0; var10 < var9.length; var10++) {
-               JsonObject var11 = Class8963.method32781(var8.get(var10), "player[" + var10 + "]");
-               String var12 = Class8963.method32763(var11, "id");
-               var9[var10] = new GameProfile(UUID.fromString(var12), Class8963.method32763(var11, "name"));
+               JsonObject var11 = JSONUtils.method32781(var8.get(var10), "player[" + var10 + "]");
+               String var12 = JSONUtils.method32763(var11, "id");
+               var9[var10] = new GameProfile(UUID.fromString(var12), JSONUtils.method32763(var11, "name"));
             }
 
             var7.method38379(var9);

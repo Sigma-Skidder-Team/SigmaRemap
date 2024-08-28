@@ -11,24 +11,24 @@ import org.apache.commons.lang3.mutable.MutableInt;
 
 public class Class8894 {
    private final Class4688[] field40251;
-   private final Class122[] field40252;
-   private final Predicate<Class7812> field40253;
-   private final Class127[] field40254;
-   private final BiFunction<ItemStack, Class7812, ItemStack> field40255;
+   private final ILootCondition[] field40252;
+   private final Predicate<LootContext> field40253;
+   private final ILootFunction[] field40254;
+   private final BiFunction<ItemStack, LootContext, ItemStack> field40255;
    private final Class6870 field40256;
    private final Class6872 field40257;
 
-   public Class8894(Class4688[] var1, Class122[] var2, Class127[] var3, Class6870 var4, Class6872 var5) {
+   public Class8894(Class4688[] var1, ILootCondition[] var2, ILootFunction[] var3, Class6870 var4, Class6872 var5) {
       this.field40251 = var1;
       this.field40252 = var2;
-      this.field40253 = Class8582.<Class7812>method30665(var2);
+      this.field40253 = Class8582.<LootContext>method30665(var2);
       this.field40254 = var3;
-      this.field40255 = Class8585.method30686(var3);
+      this.field40255 = LootFunctionManager.combine(var3);
       this.field40256 = var4;
       this.field40257 = var5;
    }
 
-   private void method32370(Consumer<ItemStack> var1, Class7812 var2) {
+   private void method32370(Consumer<ItemStack> var1, LootContext var2) {
       Random var5 = var2.method26088();
       List<Class6549> var6 = Lists.newArrayList();
       MutableInt var7 = new MutableInt();
@@ -61,9 +61,9 @@ public class Class8894 {
       }
    }
 
-   public void method32371(Consumer<ItemStack> var1, Class7812 var2) {
+   public void method32371(Consumer<ItemStack> var1, LootContext var2) {
       if (this.field40253.test(var2)) {
-         Consumer var5 = Class127.method369(this.field40255, var1, var2);
+         Consumer var5 = ILootFunction.method369(this.field40255, var1, var2);
          Random var6 = var2.method26088();
          int var7 = this.field40256.method20914(var6) + MathHelper.method37767(this.field40257.method20924(var6) * var2.method26089());
 
@@ -107,12 +107,12 @@ public class Class8894 {
    }
 
    // $VF: synthetic method
-   public static Class122[] method32378(Class8894 var0) {
+   public static ILootCondition[] method32378(Class8894 var0) {
       return var0.field40252;
    }
 
    // $VF: synthetic method
-   public static Class127[] method32379(Class8894 var0) {
+   public static ILootFunction[] method32379(Class8894 var0) {
       return var0.field40254;
    }
 }

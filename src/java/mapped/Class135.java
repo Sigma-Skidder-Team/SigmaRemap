@@ -4,18 +4,18 @@ public class Class135 extends Class128 {
    private static String[] field456;
    private final Class12 field457;
 
-   public Class135(Class122[] var1, Class12 var2) {
+   public Class135(ILootCondition[] var1, Class12 var2) {
       super(var1);
       this.field457 = var2;
    }
 
    @Override
-   public Class7128 method368() {
-      return Class8585.field38631;
+   public LootFunctionType getFunctionType() {
+      return LootFunctionManager.LIMIT_COUNT;
    }
 
    @Override
-   public ItemStack method371(ItemStack var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, LootContext var2) {
       int var5 = this.field457.applyAsInt(var1.method32179());
       var1.method32180(var5);
       return var1;

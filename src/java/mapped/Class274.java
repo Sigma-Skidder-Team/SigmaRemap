@@ -50,7 +50,7 @@ public class Class274 extends Class269<Class8657> {
                   InputStreamReader var12 = new InputStreamReader(var10, StandardCharsets.UTF_8);
                ) {
                   var2.startSection("parse");
-                  Map<String, Class9304> var14 = Class8963.method32794(field1053, var12, field1054);
+                  Map<String, Class9304> var14 = JSONUtils.method32794(field1053, var12, field1054);
                   var2.endStartSection("register");
 
                   for (Entry<String, Class9304> var16 : var14.entrySet()) {

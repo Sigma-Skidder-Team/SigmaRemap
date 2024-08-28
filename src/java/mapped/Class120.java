@@ -131,7 +131,7 @@ public final class Class120 implements Predicate<ItemStack> {
       } else {
          JsonArray var3 = var0.getAsJsonArray();
          if (var3.size() != 0) {
-            return method338(StreamSupport.<JsonElement>stream(var3.spliterator(), false).map(var0x -> method345(Class8963.method32781(var0x, "item"))));
+            return method338(StreamSupport.<JsonElement>stream(var3.spliterator(), false).map(var0x -> method345(JSONUtils.method32781(var0x, "item"))));
          } else {
             throw new JsonSyntaxException("Item array cannot be empty, at least one item must be defined");
          }
@@ -145,7 +145,7 @@ public final class Class120 implements Predicate<ItemStack> {
          if (!var0.has("tag")) {
             throw new JsonParseException("An ingredient entry needs either a tag or an item");
          } else {
-            ResourceLocation var5 = new ResourceLocation(Class8963.method32763(var0, "tag"));
+            ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var0, "tag"));
             Class7608 var6 = Class9443.method36296().method32658().method27135(var5);
             if (var6 != null) {
                return new Class4828(var6);
@@ -154,7 +154,7 @@ public final class Class120 implements Predicate<ItemStack> {
             }
          }
       } else {
-         ResourceLocation var3 = new ResourceLocation(Class8963.method32763(var0, "item"));
+         ResourceLocation var3 = new ResourceLocation(JSONUtils.method32763(var0, "item"));
          Class3257 var4 = Registry.field16075.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
          return new Class4827(new ItemStack(var4));
       }

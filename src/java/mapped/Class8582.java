@@ -20,12 +20,12 @@ public class Class8582 {
    public static final Class7130 field38609 = method30663("reference", new Class4931());
    public static final Class7130 field38610 = method30663("time_check", new Class4932());
 
-   private static Class7130 method30663(String var0, Class4929<? extends Class122> var1) {
-      return Registry.<Class7130, Class7130>method9195(Registry.field16098, new ResourceLocation(var0), new Class7130(var1));
+   private static Class7130 method30663(String var0, ILootSerializer<? extends ILootCondition> var1) {
+      return Registry.<Class7130, Class7130>register(Registry.field16098, new ResourceLocation(var0), new Class7130(var1));
    }
 
    public static Object method30664() {
-      return Class9709.<Class122, Class7130>method38040(Registry.field16098, "condition", "condition", Class122::method354).method31075();
+      return LootTypesManager.<ILootCondition, Class7130>getLootTypeRegistryWrapper(Registry.field16098, "condition", "condition", ILootCondition::method354).getSerializer();
    }
 
    public static <T> Predicate<T> method30665(Predicate<T>[] var0) {

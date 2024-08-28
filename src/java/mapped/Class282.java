@@ -30,7 +30,7 @@ public class Class282 extends Class281 {
          ResourceLocation var9 = var8.getKey();
 
          try {
-            Class4843<?> var10 = method1038(var9, Class8963.method32781((JsonElement)var8.getValue(), "top element"));
+            Class4843<?> var10 = method1038(var9, JSONUtils.method32781((JsonElement)var8.getValue(), "top element"));
             var6.computeIfAbsent(var10.method14967(), var0 -> ImmutableMap.builder()).put(var9, var10);
          } catch (JsonParseException | IllegalArgumentException var11) {
             field1075.error("Parsing error loading recipe {}", var9, var11);
@@ -94,7 +94,7 @@ public class Class282 extends Class281 {
    }
 
    public static Class4843<?> method1038(ResourceLocation var0, JsonObject var1) {
-      String var4 = Class8963.method32763(var1, "type");
+      String var4 = JSONUtils.method32763(var1, "type");
       return Registry.field16086
          .method9187(new ResourceLocation(var4))
          .orElseThrow(() -> new JsonSyntaxException("Invalid or unsupported recipe type '" + var4 + "'"))

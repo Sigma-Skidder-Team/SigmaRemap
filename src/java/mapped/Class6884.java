@@ -52,29 +52,29 @@ public class Class6884 {
    }
 
    public static Class6884 method20961(JsonObject var0, JsonDeserializationContext var1) {
-      String var4 = Class8963.method32763(var0, "name");
-      ResourceLocation var5 = new ResourceLocation(Class8963.method32763(var0, "attribute"));
+      String var4 = JSONUtils.method32763(var0, "name");
+      ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var0, "attribute"));
       Class4869 var6 = Registry.field16087.method9184(var5);
       if (var6 == null) {
          throw new JsonSyntaxException("Unknown attribute: " + var5);
       } else {
-         Class2045 var7 = method20963(Class8963.method32763(var0, "operation"));
-         Class6872 var8 = Class8963.<Class6872>method32788(var0, "amount", var1, Class6872.class);
+         Class2045 var7 = method20963(JSONUtils.method32763(var0, "operation"));
+         Class6872 var8 = JSONUtils.<Class6872>method32788(var0, "amount", var1, Class6872.class);
          UUID var9 = null;
          Class2106[] var10;
-         if (Class8963.method32755(var0, "slot")) {
-            var10 = new Class2106[]{Class2106.method8776(Class8963.method32763(var0, "slot"))};
+         if (JSONUtils.method32755(var0, "slot")) {
+            var10 = new Class2106[]{Class2106.method8776(JSONUtils.method32763(var0, "slot"))};
          } else {
-            if (!Class8963.method32759(var0, "slot")) {
+            if (!JSONUtils.method32759(var0, "slot")) {
                throw new JsonSyntaxException("Invalid or missing attribute modifier slot; must be either string or array of strings.");
             }
 
-            JsonArray var11 = Class8963.method32785(var0, "slot");
+            JsonArray var11 = JSONUtils.method32785(var0, "slot");
             var10 = new Class2106[var11.size()];
             int var12 = 0;
 
             for (JsonElement var14 : var11) {
-               var10[var12++] = Class2106.method8776(Class8963.method32762(var14, "slot"));
+               var10[var12++] = Class2106.method8776(JSONUtils.method32762(var14, "slot"));
             }
 
             if (var10.length == 0) {
@@ -83,7 +83,7 @@ public class Class6884 {
          }
 
          if (var0.has("id")) {
-            String var16 = Class8963.method32763(var0, "id");
+            String var16 = JSONUtils.method32763(var0, "id");
 
             try {
                var9 = UUID.fromString(var16);

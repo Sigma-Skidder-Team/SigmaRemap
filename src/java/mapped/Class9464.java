@@ -88,7 +88,7 @@ public class Class9464 {
       return (T)this.field43975.get(var1);
    }
 
-   public Class7812 method36460(Class7538 var1) {
+   public LootContext method36460(Class7538 var1) {
       SetView var4 = Sets.difference(this.field43975.keySet(), var1.method24644());
       if (var4.isEmpty()) {
          SetView var5 = Sets.difference(var1.method24643(), this.field43975.keySet());
@@ -99,7 +99,7 @@ public class Class9464 {
             }
 
             MinecraftServer var7 = this.field43974.method6715();
-            return new Class7812(
+            return new LootContext(
                var6, this.field43978, this.field43974, var7.method1411()::method1058, var7.method1412()::method1052, this.field43975, this.field43976
             );
          } else {

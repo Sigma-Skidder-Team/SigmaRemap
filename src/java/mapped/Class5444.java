@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Random;
 
 public abstract class Class5444<C extends Class4698> {
-   public static final Class5444<?> field24194 = new Class5443(Class2961.field18059, 0, 0, Class9764.method38386(), 0, 0L);
-   private final Class2961<C> field24195;
+   public static final Class5444<?> field24194 = new Class5443(Structure.field18059, 0, 0, Class9764.method38386(), 0, 0L);
+   private final Structure<C> field24195;
    public final List<Class4178> field24196 = Lists.newArrayList();
    public Class9764 field24197;
    private final int field24198;
@@ -15,7 +15,7 @@ public abstract class Class5444<C extends Class4698> {
    private int field24200;
    public final Class2420 field24201;
 
-   public Class5444(Class2961<C> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public Class5444(Structure<C> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
       this.field24195 = var1;
       this.field24198 = var2;
       this.field24199 = var3;
@@ -150,7 +150,7 @@ public abstract class Class5444<C extends Class4698> {
       return 1;
    }
 
-   public Class2961<?> method17125() {
+   public Structure<?> method17125() {
       return this.field24195;
    }
 }

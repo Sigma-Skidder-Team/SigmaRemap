@@ -90,20 +90,20 @@ public class Class8634 {
 
    public static Class8634 method31017(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = Class8963.method32781(var0, "item");
+         JsonObject var3 = JSONUtils.method32781(var0, "item");
          Class8840 var4 = Class8840.method32016(var3.get("count"));
          Class8840 var5 = Class8840.method32016(var3.get("durability"));
          if (!var3.has("data")) {
             Class8811 var6 = Class8811.method31812(var3.get("nbt"));
             Class3257 var7 = null;
             if (var3.has("item")) {
-               ResourceLocation var8 = new ResourceLocation(Class8963.method32763(var3, "item"));
+               ResourceLocation var8 = new ResourceLocation(JSONUtils.method32763(var3, "item"));
                var7 = Registry.field16075.method9187(var8).orElseThrow(() -> new JsonSyntaxException("Unknown item id '" + var8 + "'"));
             }
 
             Class7608 var12 = null;
             if (var3.has("tag")) {
-               ResourceLocation var9 = new ResourceLocation(Class8963.method32763(var3, "tag"));
+               ResourceLocation var9 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
                var12 = Class9443.method36296().method32658().method27135(var9);
                if (var12 == null) {
                   throw new JsonSyntaxException("Unknown item tag '" + var9 + "'");
@@ -112,7 +112,7 @@ public class Class8634 {
 
             Class8812 var13 = null;
             if (var3.has("potion")) {
-               ResourceLocation var10 = new ResourceLocation(Class8963.method32763(var3, "potion"));
+               ResourceLocation var10 = new ResourceLocation(JSONUtils.method32763(var3, "potion"));
                var13 = Registry.field16076.method9187(var10).orElseThrow(() -> new JsonSyntaxException("Unknown potion '" + var10 + "'"));
             }
 
@@ -173,7 +173,7 @@ public class Class8634 {
 
    public static Class8634[] method31019(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonArray var3 = Class8963.method32784(var0, "items");
+         JsonArray var3 = JSONUtils.method32784(var0, "items");
          Class8634[] var4 = new Class8634[var3.size()];
 
          for (int var5 = 0; var5 < var4.length; var5++) {

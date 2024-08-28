@@ -67,7 +67,7 @@ public abstract class Class308 implements Class303 {
    public static <T> T method1257(Class7170<T> var0, InputStream var1) {
       JsonObject var6;
       try (BufferedReader var4 = new BufferedReader(new InputStreamReader(var1, StandardCharsets.UTF_8))) {
-         var6 = Class8963.method32801(var4);
+         var6 = JSONUtils.method32801(var4);
       } catch (JsonParseException | IOException var20) {
          field1196.error("Couldn't load {} metadata", var0.method22518(), var20);
          return null;
@@ -77,7 +77,7 @@ public abstract class Class308 implements Class303 {
          return null;
       } else {
          try {
-            return (T)var0.method22519(Class8963.method32782(var6, var0.method22518()));
+            return (T)var0.method22519(JSONUtils.method32782(var6, var0.method22518()));
          } catch (JsonParseException var17) {
             field1196.error("Couldn't load {} metadata", var0.method22518(), var17);
             return null;

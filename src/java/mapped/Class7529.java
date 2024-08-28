@@ -86,7 +86,7 @@ public class Class7529 extends Class7530 {
          Class6674 var7 = Class6674.method20349(var8.method153(var9));
          this.field32328.put(var7.method20354(), var7);
          this.method24596(
-            Class2223.field14517,
+            MapDecorationType.field14517,
             (Class1660)null,
             "frame-" + var7.method20353(),
             (double)var7.method20351().method8304(),
@@ -154,7 +154,7 @@ public class Class7529 extends Class7530 {
          if (!var6.field38390.field5041 && (var6.field38390.field4902.method4058(var2) || var2.method32165())) {
             if (!var2.method32165() && var6.field38390.field5024.method6813() == this.field32318 && this.field32319) {
                this.method24596(
-                  Class2223.field14516,
+                  MapDecorationType.field14516,
                   var6.field38390.field5024,
                   var7,
                   var6.field38390.getPosX(),
@@ -180,7 +180,7 @@ public class Class7529 extends Class7530 {
 
          Class6674 var8 = new Class6674(var12, var10.method3386().method534() * 90, var10.method3205());
          this.method24596(
-            Class2223.field14517,
+            MapDecorationType.field14517,
             var1.field5024,
             "frame-" + var10.method3205(),
             (double)var12.method8304(),
@@ -199,7 +199,7 @@ public class Class7529 extends Class7530 {
             Class39 var16 = var13.method153(var15);
             if (!this.field32327.containsKey(var16.method126("id"))) {
                this.method24596(
-                  Class2223.method8957(var16.method120("type")),
+                  MapDecorationType.method8957(var16.method120("type")),
                   var1.field5024,
                   var16.method126("id"),
                   var16.method125("x"),
@@ -212,7 +212,7 @@ public class Class7529 extends Class7530 {
       }
    }
 
-   public static void method24595(ItemStack var0, BlockPos var1, String var2, Class2223 var3) {
+   public static void method24595(ItemStack var0, BlockPos var1, String var2, MapDecorationType var3) {
       Class41 var6;
       if (var0.method32141() && var0.method32142().method119("Decorations", 9)) {
          var6 = var0.method32142().method131("Decorations", 10);
@@ -234,7 +234,7 @@ public class Class7529 extends Class7530 {
       }
    }
 
-   private void method24596(Class2223 var1, Class1660 var2, String var3, double var4, double var6, double var8, ITextComponent var10) {
+   private void method24596(MapDecorationType var1, Class1660 var2, String var3, double var4, double var6, double var8, ITextComponent var10) {
       int var13 = 1 << this.field32321;
       float var14 = (float)(var4 - (double)this.field32316) / (float)var13;
       float var15 = (float)(var6 - (double)this.field32317) / (float)var13;
@@ -250,21 +250,21 @@ public class Class7529 extends Class7530 {
             var20 = (byte)(var22 * var22 * 34187121 + var22 * 121 >> 15 & 15);
          }
       } else {
-         if (var1 != Class2223.field14516) {
+         if (var1 != MapDecorationType.field14516) {
             this.field32327.remove(var3);
             return;
          }
 
          short var19 = 320;
          if (Math.abs(var14) < 320.0F && Math.abs(var15) < 320.0F) {
-            var1 = Class2223.field14522;
+            var1 = MapDecorationType.field14522;
          } else {
             if (!this.field32320) {
                this.field32327.remove(var3);
                return;
             }
 
-            var1 = Class2223.field14523;
+            var1 = MapDecorationType.field14523;
          }
 
          var20 = 0;

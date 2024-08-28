@@ -24,14 +24,14 @@ public class Class2561 implements JsonDeserializer<Class6792> {
       if (!var1.has(var2)) {
          return var3;
       } else {
-         JsonArray var6 = Class8963.method32785(var1, var2);
+         JsonArray var6 = JSONUtils.method32785(var1, var2);
          if (var6.size() != 3) {
             throw new JsonParseException("Expected 3 " + var2 + " values, found: " + var6.size());
          } else {
             float[] var7 = new float[3];
 
             for (int var8 = 0; var8 < var7.length; var8++) {
-               var7[var8] = Class8963.method32770(var6.get(var8), var2 + "[" + var8 + "]");
+               var7[var8] = JSONUtils.method32770(var6.get(var8), var2 + "[" + var8 + "]");
             }
 
             return new Class7680(var7[0], var7[1], var7[2]);

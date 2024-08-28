@@ -46,8 +46,8 @@ public class Class8053 {
    public static Class8053 method27659(JsonObject var0) {
       Class8840 var3 = Class8840.method32016(var0.get("amplifier"));
       Class8840 var4 = Class8840.method32016(var0.get("duration"));
-      Boolean var5 = !var0.has("ambient") ? null : Class8963.method32768(var0, "ambient");
-      Boolean var6 = !var0.has("visible") ? null : Class8963.method32768(var0, "visible");
+      Boolean var5 = !var0.has("ambient") ? null : JSONUtils.method32768(var0, "ambient");
+      Boolean var6 = !var0.has("visible") ? null : JSONUtils.method32768(var0, "visible");
       return new Class8053(var3, var4, var5, var6);
    }
 }

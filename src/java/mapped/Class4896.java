@@ -17,7 +17,7 @@ public class Class4896 extends Class4874<Class4494> {
    }
 
    public void test(ServerPlayerEntity var1, ItemStack var2, Entity var3) {
-      Class7812 var6 = Class6671.method20332(var1, var3);
+      LootContext var6 = Class6671.method20332(var1, var3);
       this.method15053(var1, var2x -> var2x.method14173(var2, var6));
    }
 

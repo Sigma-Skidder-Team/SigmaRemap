@@ -24,7 +24,7 @@ public class Class2571 implements JsonDeserializer<Class9032> {
    public Map<String, Class7497> method10767(JsonDeserializationContext var1, JsonObject var2) {
       HashMap var5 = Maps.newHashMap();
       if (var2.has("variants")) {
-         JsonObject var6 = Class8963.method32782(var2, "variants");
+         JsonObject var6 = JSONUtils.method32782(var2, "variants");
 
          for (Entry var8 : var6.entrySet()) {
             var5.put(var8.getKey(), var1.deserialize((JsonElement)var8.getValue(), Class7497.class));
@@ -37,7 +37,7 @@ public class Class2571 implements JsonDeserializer<Class9032> {
    @Nullable
    public Class7498 method10768(JsonDeserializationContext var1, JsonObject var2) {
       if (var2.has("multipart")) {
-         JsonArray var5 = Class8963.method32785(var2, "multipart");
+         JsonArray var5 = JSONUtils.method32785(var2, "multipart");
          return (Class7498)var1.deserialize(var5, Class7498.class);
       } else {
          return null;
