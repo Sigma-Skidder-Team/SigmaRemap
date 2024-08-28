@@ -1,0 +1,34 @@
+package mapped;
+
+import com.google.common.collect.ImmutableList;
+import com.mojang.serialization.Codec;
+
+import java.util.List;
+
+public class Class2973 extends Class2961<Class4712> {
+   private static final List<Class6692> field18086 = ImmutableList.of(
+      new Class6692(Class8992.field41010, 10, 2, 3),
+      new Class6692(Class8992.field41110, 5, 4, 4),
+      new Class6692(Class8992.field41103, 8, 5, 5),
+      new Class6692(Class8992.field41078, 2, 5, 5),
+      new Class6692(Class8992.field41049, 3, 4, 4)
+   );
+
+   public Class2973(Codec<Class4712> var1) {
+      super(var1);
+   }
+
+   public boolean method11361(Class5646 var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Class8907 var8, Class7481 var9, Class4712 var10) {
+      return var5.nextInt(5) < 2;
+   }
+
+   @Override
+   public Class7072<Class4712> method11359() {
+      return Class5449::new;
+   }
+
+   @Override
+   public List<Class6692> method11374() {
+      return field18086;
+   }
+}

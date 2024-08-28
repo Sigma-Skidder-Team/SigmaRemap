@@ -1,0 +1,285 @@
+package mapped;
+
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.Lists;
+import com.mojang.brigadier.StringReader;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
+import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
+import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+import net.minecraft.util.text.TranslationTextComponent;
+
+public class Class7671 {
+   public static final SimpleCommandExceptionType field32863 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.trailing"));
+   public static final SimpleCommandExceptionType field32864 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.expected.key"));
+   public static final SimpleCommandExceptionType field32865 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.expected.value"));
+   public static final Dynamic2CommandExceptionType field32866 = new Dynamic2CommandExceptionType(
+      (var0, var1) -> new TranslationTextComponent("argument.nbt.list.mixed", var0, var1)
+   );
+   public static final Dynamic2CommandExceptionType field32867 = new Dynamic2CommandExceptionType(
+      (var0, var1) -> new TranslationTextComponent("argument.nbt.array.mixed", var0, var1)
+   );
+   public static final DynamicCommandExceptionType field32868 = new DynamicCommandExceptionType(
+      var0 -> new TranslationTextComponent("argument.nbt.array.invalid", var0)
+   );
+   private static final Pattern field32869 = Pattern.compile("[-+]?(?:[0-9]+[.]|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?", 2);
+   private static final Pattern field32870 = Pattern.compile("[-+]?(?:[0-9]+[.]?|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?d", 2);
+   private static final Pattern field32871 = Pattern.compile("[-+]?(?:[0-9]+[.]?|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?f", 2);
+   private static final Pattern field32872 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)b", 2);
+   private static final Pattern field32873 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)l", 2);
+   private static final Pattern field32874 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)s", 2);
+   private static final Pattern field32875 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)");
+   private final StringReader field32876;
+
+   public static Class39 method25188(String var0) throws CommandSyntaxException {
+      return new Class7671(new StringReader(var0)).method25189();
+   }
+
+   @VisibleForTesting
+   public Class39 method25189() throws CommandSyntaxException {
+      Class39 var3 = this.method25195();
+      this.field32876.skipWhitespace();
+      if (!this.field32876.canRead()) {
+         return var3;
+      } else {
+         throw field32863.createWithContext(this.field32876);
+      }
+   }
+
+   public Class7671(StringReader var1) {
+      this.field32876 = var1;
+   }
+
+   public String method25190() throws CommandSyntaxException {
+      this.field32876.skipWhitespace();
+      if (this.field32876.canRead()) {
+         return this.field32876.readString();
+      } else {
+         throw field32864.createWithContext(this.field32876);
+      }
+   }
+
+   public Class30 method25191() throws CommandSyntaxException {
+      this.field32876.skipWhitespace();
+      int var3 = this.field32876.getCursor();
+      if (!StringReader.isQuotedStringStart(this.field32876.peek())) {
+         String var4 = this.field32876.readUnquotedString();
+         if (!var4.isEmpty()) {
+            return this.method25192(var4);
+         } else {
+            this.field32876.setCursor(var3);
+            throw field32865.createWithContext(this.field32876);
+         }
+      } else {
+         return Class40.method150(this.field32876.readQuotedString());
+      }
+   }
+
+   private Class30 method25192(String var1) {
+      try {
+         if (field32871.matcher(var1).matches()) {
+            return Class32.method90(Float.parseFloat(var1.substring(0, var1.length() - 1)));
+         }
+
+         if (field32872.matcher(var1).matches()) {
+            return Class33.method91(Byte.parseByte(var1.substring(0, var1.length() - 1)));
+         }
+
+         if (field32873.matcher(var1).matches()) {
+            return Class35.method94(Long.parseLong(var1.substring(0, var1.length() - 1)));
+         }
+
+         if (field32874.matcher(var1).matches()) {
+            return Class37.method96(Short.parseShort(var1.substring(0, var1.length() - 1)));
+         }
+
+         if (field32875.matcher(var1).matches()) {
+            return Class36.method95(Integer.parseInt(var1));
+         }
+
+         if (field32870.matcher(var1).matches()) {
+            return Class34.method93(Double.parseDouble(var1.substring(0, var1.length() - 1)));
+         }
+
+         if (field32869.matcher(var1).matches()) {
+            return Class34.method93(Double.parseDouble(var1));
+         }
+
+         if ("true".equalsIgnoreCase(var1)) {
+            return Class33.field65;
+         }
+
+         if ("false".equalsIgnoreCase(var1)) {
+            return Class33.field64;
+         }
+      } catch (NumberFormatException var5) {
+      }
+
+      return Class40.method150(var1);
+   }
+
+   public Class30 method25193() throws CommandSyntaxException {
+      this.field32876.skipWhitespace();
+      if (this.field32876.canRead()) {
+         char var3 = this.field32876.peek();
+         if (var3 != '{') {
+            return var3 != '[' ? this.method25191() : this.method25194();
+         } else {
+            return this.method25195();
+         }
+      } else {
+         throw field32865.createWithContext(this.field32876);
+      }
+   }
+
+   public Class30 method25194() throws CommandSyntaxException {
+      return this.field32876.canRead(3) && !StringReader.isQuotedStringStart(this.field32876.peek(1)) && this.field32876.peek(2) == ';'
+         ? this.method25197()
+         : this.method25196();
+   }
+
+   public Class39 method25195() throws CommandSyntaxException {
+      this.method25200('{');
+      Class39 var3 = new Class39();
+      this.field32876.skipWhitespace();
+
+      while (this.field32876.canRead() && this.field32876.peek() != '}') {
+         int var4 = this.field32876.getCursor();
+         String var5 = this.method25190();
+         if (var5.isEmpty()) {
+            this.field32876.setCursor(var4);
+            throw field32864.createWithContext(this.field32876);
+         }
+
+         this.method25200(':');
+         var3.method99(var5, this.method25193());
+         if (!this.method25199()) {
+            break;
+         }
+
+         if (!this.field32876.canRead()) {
+            throw field32864.createWithContext(this.field32876);
+         }
+      }
+
+      this.method25200('}');
+      return var3;
+   }
+
+   private Class30 method25196() throws CommandSyntaxException {
+      this.method25200('[');
+      this.field32876.skipWhitespace();
+      if (!this.field32876.canRead()) {
+         throw field32865.createWithContext(this.field32876);
+      } else {
+         Class41 var3 = new Class41();
+         Class7052 var4 = null;
+
+         while (this.field32876.peek() != ']') {
+            int var5 = this.field32876.getCursor();
+            Class30 var6 = this.method25193();
+            Class7052 var7 = var6.method75();
+            if (var4 != null) {
+               if (var7 != var4) {
+                  this.field32876.setCursor(var5);
+                  throw field32866.createWithContext(this.field32876, var7.method21976(), var4.method21976());
+               }
+            } else {
+               var4 = var7;
+            }
+
+            var3.add(var6);
+            if (!this.method25199()) {
+               break;
+            }
+
+            if (!this.field32876.canRead()) {
+               throw field32865.createWithContext(this.field32876);
+            }
+         }
+
+         this.method25200(']');
+         return var3;
+      }
+   }
+
+   private Class30 method25197() throws CommandSyntaxException {
+      this.method25200('[');
+      int var3 = this.field32876.getCursor();
+      char var4 = this.field32876.read();
+      this.field32876.read();
+      this.field32876.skipWhitespace();
+      if (this.field32876.canRead()) {
+         if (var4 != 'B') {
+            if (var4 != 'L') {
+               if (var4 != 'I') {
+                  this.field32876.setCursor(var3);
+                  throw field32868.createWithContext(this.field32876, String.valueOf(var4));
+               } else {
+                  return new Class28(this.<Integer>method25198(Class28.field52, Class36.field73));
+               }
+            } else {
+               return new Class42(this.<Long>method25198(Class42.field91, Class35.field70));
+            }
+         } else {
+            return new Class29(this.<Byte>method25198(Class29.field54, Class33.field63));
+         }
+      } else {
+         throw field32865.createWithContext(this.field32876);
+      }
+   }
+
+   private <T extends Number> List<T> method25198(Class7052<?> var1, Class7052<?> var2) throws CommandSyntaxException {
+      ArrayList var5 = Lists.newArrayList();
+
+      while (this.field32876.peek() != ']') {
+         int var6 = this.field32876.getCursor();
+         Class30 var7 = this.method25193();
+         Class7052 var8 = var7.method75();
+         if (var8 != var2) {
+            this.field32876.setCursor(var6);
+            throw field32867.createWithContext(this.field32876, var8.method21976(), var1.method21976());
+         }
+
+         if (var2 != Class33.field63) {
+            if (var2 != Class35.field70) {
+               var5.add(((Class31)var7).method84());
+            } else {
+               var5.add(((Class31)var7).method83());
+            }
+         } else {
+            var5.add(((Class31)var7).method86());
+         }
+
+         if (!this.method25199()) {
+            break;
+         }
+
+         if (!this.field32876.canRead()) {
+            throw field32865.createWithContext(this.field32876);
+         }
+      }
+
+      this.method25200(']');
+      return var5;
+   }
+
+   private boolean method25199() {
+      this.field32876.skipWhitespace();
+      if (this.field32876.canRead() && this.field32876.peek() == ',') {
+         this.field32876.skip();
+         this.field32876.skipWhitespace();
+         return true;
+      } else {
+         return false;
+      }
+   }
+
+   private void method25200(char var1) throws CommandSyntaxException {
+      this.field32876.skipWhitespace();
+      this.field32876.expect(var1);
+   }
+}

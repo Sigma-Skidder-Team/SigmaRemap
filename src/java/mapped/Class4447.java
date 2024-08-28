@@ -1,0 +1,3737 @@
+package mapped;
+
+import com.google.common.collect.Sets;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+public class Class4447 implements Class4442 {
+   private static final Logger field21616 = LogManager.getLogger();
+   private static final Gson field21617 = new GsonBuilder().setPrettyPrinting().create();
+   private final Class9068 field21618;
+
+   public Class4447(Class9068 var1) {
+      this.field21618 = var1;
+   }
+
+   @Override
+   public void method14013(Class8297 var1) throws IOException {
+      Path var4 = this.field21618.method33776();
+      HashSet var5 = Sets.newHashSet();
+      method14047(
+         var3 -> {
+            if (var5.add(var3.method14634())) {
+               method14045(
+                  var1, var3.method14637(), var4.resolve("data/" + var3.method14634().method8293() + "/recipes/" + var3.method14634().method8292() + ".json")
+               );
+               JsonObject var6 = var3.method14635();
+               if (var6 != null) {
+                  method14046(
+                     var1, var6, var4.resolve("data/" + var3.method14634().method8293() + "/advancements/" + var3.method14636().method8292() + ".json")
+                  );
+               }
+            } else {
+               throw new IllegalStateException("Duplicate recipe " + var3.method14634());
+            }
+         }
+      );
+      method14046(
+         var1, Class7999.method27304().method27312("impossible", new Class4478()).method27318(), var4.resolve("data/minecraft/advancements/recipes/root.json")
+      );
+   }
+
+   private static void method14045(Class8297 var0, JsonObject var1, Path var2) {
+      try {
+         String var5 = field21617.toJson(var1);
+         String var6 = field21602.hashUnencodedChars(var5).toString();
+         if (!Objects.equals(var0.method29001(var2), var6) || !Files.exists(var2)) {
+            Files.createDirectories(var2.getParent());
+
+            try (BufferedWriter var7 = Files.newBufferedWriter(var2)) {
+               var7.write(var5);
+            }
+         }
+
+         var0.method29002(var2, var6);
+      } catch (IOException var20) {
+         field21616.error("Couldn't save recipe {}", var2, var20);
+      }
+   }
+
+   private static void method14046(Class8297 var0, JsonObject var1, Path var2) {
+      try {
+         String var5 = field21617.toJson(var1);
+         String var6 = field21602.hashUnencodedChars(var5).toString();
+         if (!Objects.equals(var0.method29001(var2), var6) || !Files.exists(var2)) {
+            Files.createDirectories(var2.getParent());
+
+            try (BufferedWriter var7 = Files.newBufferedWriter(var2)) {
+               var7.write(var5);
+            }
+         }
+
+         var0.method29002(var2, var6);
+      } catch (IOException var20) {
+         field21616.error("Couldn't save recipe advancement {}", var2, var20);
+      }
+   }
+
+   private static void method14047(Consumer<Class4664> var0) {
+      method14049(var0, Class8487.field36404, Class5985.field26089);
+      method14050(var0, Class8487.field36402, Class5985.field26088);
+      method14050(var0, Class8487.field37091, Class5985.field26092);
+      method14049(var0, Class8487.field36405, Class5985.field26086);
+      method14050(var0, Class8487.field36403, Class5985.field26090);
+      method14050(var0, Class8487.field36400, Class5985.field26087);
+      method14050(var0, Class8487.field36401, Class5985.field26091);
+      method14050(var0, Class8487.field37092, Class5985.field26093);
+      method14051(var0, Class8487.field36438, Class8487.field36426);
+      method14051(var0, Class8487.field36436, Class8487.field36424);
+      method14051(var0, Class8487.field36439, Class8487.field36427);
+      method14051(var0, Class8487.field36437, Class8487.field36425);
+      method14051(var0, Class8487.field36434, Class8487.field36422);
+      method14051(var0, Class8487.field36435, Class8487.field36423);
+      method14051(var0, Class8487.field37081, Class8487.field37079);
+      method14051(var0, Class8487.field37072, Class8487.field37070);
+      method14051(var0, Class8487.field36444, Class8487.field36431);
+      method14051(var0, Class8487.field36442, Class8487.field36429);
+      method14051(var0, Class8487.field36445, Class8487.field36432);
+      method14051(var0, Class8487.field36443, Class8487.field36430);
+      method14051(var0, Class8487.field36440, Class8487.field36433);
+      method14051(var0, Class8487.field36441, Class8487.field36428);
+      method14051(var0, Class8487.field37082, Class8487.field37080);
+      method14051(var0, Class8487.field37073, Class8487.field37071);
+      method14052(var0, Class8514.field38124, Class8487.field36404);
+      method14052(var0, Class8514.field38122, Class8487.field36402);
+      method14052(var0, Class8514.field38125, Class8487.field36405);
+      method14052(var0, Class8514.field38123, Class8487.field36403);
+      method14052(var0, Class8514.field37889, Class8487.field36400);
+      method14052(var0, Class8514.field38121, Class8487.field36401);
+      method14053(var0, Class8487.field36699, Class8487.field36404);
+      method14054(var0, Class8487.field36875, Class8487.field36404);
+      method14055(var0, Class8487.field36870, Class8487.field36404);
+      method14056(var0, Class8487.field36865, Class8487.field36404);
+      method14057(var0, Class8487.field36565, Class8487.field36404);
+      method14058(var0, Class8487.field36843, Class8487.field36404);
+      method14059(var0, Class8487.field36762, Class8487.field36404);
+      method14060(var0, Class8487.field36613, Class8487.field36404);
+      method14061(var0, Class8487.field36545, Class8487.field36404);
+      method14053(var0, Class8487.field36697, Class8487.field36402);
+      method14054(var0, Class8487.field36873, Class8487.field36402);
+      method14055(var0, Class8487.field36868, Class8487.field36402);
+      method14056(var0, Class8487.field36863, Class8487.field36402);
+      method14057(var0, Class8487.field36563, Class8487.field36402);
+      method14058(var0, Class8487.field36841, Class8487.field36402);
+      method14059(var0, Class8487.field36662, Class8487.field36402);
+      method14060(var0, Class8487.field36611, Class8487.field36402);
+      method14061(var0, Class8487.field36544, Class8487.field36402);
+      method14053(var0, Class8487.field37105, Class8487.field37091);
+      method14054(var0, Class8487.field37107, Class8487.field37091);
+      method14055(var0, Class8487.field37097, Class8487.field37091);
+      method14056(var0, Class8487.field37101, Class8487.field37091);
+      method14057(var0, Class8487.field37095, Class8487.field37091);
+      method14058(var0, Class8487.field37093, Class8487.field37091);
+      method14059(var0, Class8487.field37103, Class8487.field37091);
+      method14060(var0, Class8487.field37099, Class8487.field37091);
+      method14061(var0, Class8487.field37109, Class8487.field37091);
+      method14053(var0, Class8487.field36700, Class8487.field36405);
+      method14054(var0, Class8487.field36876, Class8487.field36405);
+      method14055(var0, Class8487.field36871, Class8487.field36405);
+      method14056(var0, Class8487.field36866, Class8487.field36405);
+      method14057(var0, Class8487.field36566, Class8487.field36405);
+      method14058(var0, Class8487.field36844, Class8487.field36405);
+      method14059(var0, Class8487.field36763, Class8487.field36405);
+      method14060(var0, Class8487.field36614, Class8487.field36405);
+      method14061(var0, Class8487.field36547, Class8487.field36405);
+      method14053(var0, Class8487.field36698, Class8487.field36403);
+      method14054(var0, Class8487.field36874, Class8487.field36403);
+      method14055(var0, Class8487.field36869, Class8487.field36403);
+      method14056(var0, Class8487.field36864, Class8487.field36403);
+      method14057(var0, Class8487.field36564, Class8487.field36403);
+      method14058(var0, Class8487.field36842, Class8487.field36403);
+      method14059(var0, Class8487.field36663, Class8487.field36403);
+      method14060(var0, Class8487.field36612, Class8487.field36403);
+      method14061(var0, Class8487.field36546, Class8487.field36403);
+      method14053(var0, Class8487.field36695, Class8487.field36400);
+      method14054(var0, Class8487.field36548, Class8487.field36400);
+      method14055(var0, Class8487.field36578, Class8487.field36400);
+      method14056(var0, Class8487.field36637, Class8487.field36400);
+      method14057(var0, Class8487.field36561, Class8487.field36400);
+      method14058(var0, Class8487.field36839, Class8487.field36400);
+      method14059(var0, Class8487.field36533, Class8487.field36400);
+      method14060(var0, Class8487.field36609, Class8487.field36400);
+      method14061(var0, Class8487.field36542, Class8487.field36400);
+      method14053(var0, Class8487.field36696, Class8487.field36401);
+      method14054(var0, Class8487.field36872, Class8487.field36401);
+      method14055(var0, Class8487.field36867, Class8487.field36401);
+      method14056(var0, Class8487.field36862, Class8487.field36401);
+      method14057(var0, Class8487.field36562, Class8487.field36401);
+      method14058(var0, Class8487.field36840, Class8487.field36401);
+      method14059(var0, Class8487.field36661, Class8487.field36401);
+      method14060(var0, Class8487.field36610, Class8487.field36401);
+      method14061(var0, Class8487.field36543, Class8487.field36401);
+      method14053(var0, Class8487.field37106, Class8487.field37092);
+      method14054(var0, Class8487.field37108, Class8487.field37092);
+      method14055(var0, Class8487.field37098, Class8487.field37092);
+      method14056(var0, Class8487.field37102, Class8487.field37092);
+      method14057(var0, Class8487.field37096, Class8487.field37092);
+      method14058(var0, Class8487.field37094, Class8487.field37092);
+      method14059(var0, Class8487.field37104, Class8487.field37092);
+      method14060(var0, Class8487.field37100, Class8487.field37092);
+      method14061(var0, Class8487.field37110, Class8487.field37092);
+      method14062(var0, Class8487.field36504, Class8514.field37933);
+      method14063(var0, Class8487.field36793, Class8487.field36504);
+      method14064(var0, Class8487.field36793, Class8514.field37933);
+      method14065(var0, Class8514.field37953, Class8487.field36504);
+      method14066(var0, Class8514.field37953, Class8514.field37933);
+      method14067(var0, Class8514.field38107, Class8487.field36504);
+      method14062(var0, Class8487.field36500, Class8514.field37929);
+      method14063(var0, Class8487.field36789, Class8487.field36500);
+      method14064(var0, Class8487.field36789, Class8514.field37929);
+      method14065(var0, Class8514.field37949, Class8487.field36500);
+      method14066(var0, Class8514.field37949, Class8514.field37929);
+      method14067(var0, Class8514.field38103, Class8487.field36500);
+      method14062(var0, Class8487.field36501, Class8514.field37930);
+      method14063(var0, Class8487.field36790, Class8487.field36501);
+      method14064(var0, Class8487.field36790, Class8514.field37930);
+      method14065(var0, Class8514.field37950, Class8487.field36501);
+      method14066(var0, Class8514.field37950, Class8514.field37930);
+      method14067(var0, Class8514.field38104, Class8487.field36501);
+      method14062(var0, Class8487.field36498, Class8514.field37927);
+      method14063(var0, Class8487.field36787, Class8487.field36498);
+      method14064(var0, Class8487.field36787, Class8514.field37927);
+      method14065(var0, Class8514.field37947, Class8487.field36498);
+      method14066(var0, Class8514.field37947, Class8514.field37927);
+      method14067(var0, Class8514.field38101, Class8487.field36498);
+      method14062(var0, Class8487.field36496, Class8514.field37925);
+      method14063(var0, Class8487.field36785, Class8487.field36496);
+      method14064(var0, Class8487.field36785, Class8514.field37925);
+      method14065(var0, Class8514.field37945, Class8487.field36496);
+      method14066(var0, Class8514.field37945, Class8514.field37925);
+      method14067(var0, Class8514.field38099, Class8487.field36496);
+      method14062(var0, Class8487.field36502, Class8514.field37931);
+      method14063(var0, Class8487.field36791, Class8487.field36502);
+      method14064(var0, Class8487.field36791, Class8514.field37931);
+      method14065(var0, Class8514.field37951, Class8487.field36502);
+      method14066(var0, Class8514.field37951, Class8514.field37931);
+      method14067(var0, Class8514.field38105, Class8487.field36502);
+      method14062(var0, Class8487.field36492, Class8514.field37921);
+      method14063(var0, Class8487.field36781, Class8487.field36492);
+      method14064(var0, Class8487.field36781, Class8514.field37921);
+      method14065(var0, Class8514.field37941, Class8487.field36492);
+      method14066(var0, Class8514.field37941, Class8514.field37921);
+      method14067(var0, Class8514.field38095, Class8487.field36492);
+      method14062(var0, Class8487.field36497, Class8514.field37926);
+      method14063(var0, Class8487.field36786, Class8487.field36497);
+      method14064(var0, Class8487.field36786, Class8514.field37926);
+      method14065(var0, Class8514.field37946, Class8487.field36497);
+      method14066(var0, Class8514.field37946, Class8514.field37926);
+      method14067(var0, Class8514.field38100, Class8487.field36497);
+      method14062(var0, Class8487.field36494, Class8514.field37923);
+      method14063(var0, Class8487.field36783, Class8487.field36494);
+      method14064(var0, Class8487.field36783, Class8514.field37923);
+      method14065(var0, Class8514.field37943, Class8487.field36494);
+      method14066(var0, Class8514.field37943, Class8514.field37923);
+      method14067(var0, Class8514.field38097, Class8487.field36494);
+      method14062(var0, Class8487.field36491, Class8514.field37920);
+      method14063(var0, Class8487.field36780, Class8487.field36491);
+      method14064(var0, Class8487.field36780, Class8514.field37920);
+      method14065(var0, Class8514.field37940, Class8487.field36491);
+      method14066(var0, Class8514.field37940, Class8514.field37920);
+      method14067(var0, Class8514.field38094, Class8487.field36491);
+      method14062(var0, Class8487.field36490, Class8514.field37919);
+      method14063(var0, Class8487.field36779, Class8487.field36490);
+      method14064(var0, Class8487.field36779, Class8514.field37919);
+      method14065(var0, Class8514.field37939, Class8487.field36490);
+      method14066(var0, Class8514.field37939, Class8514.field37919);
+      method14067(var0, Class8514.field38093, Class8487.field36490);
+      method14062(var0, Class8487.field36495, Class8514.field37924);
+      method14063(var0, Class8487.field36784, Class8487.field36495);
+      method14064(var0, Class8487.field36784, Class8514.field37924);
+      method14065(var0, Class8514.field37944, Class8487.field36495);
+      method14066(var0, Class8514.field37944, Class8514.field37924);
+      method14067(var0, Class8514.field38098, Class8487.field36495);
+      method14062(var0, Class8487.field36499, Class8514.field37928);
+      method14063(var0, Class8487.field36788, Class8487.field36499);
+      method14064(var0, Class8487.field36788, Class8514.field37928);
+      method14065(var0, Class8514.field37948, Class8487.field36499);
+      method14066(var0, Class8514.field37948, Class8514.field37928);
+      method14067(var0, Class8514.field38102, Class8487.field36499);
+      method14062(var0, Class8487.field36503, Class8514.field37932);
+      method14063(var0, Class8487.field36792, Class8487.field36503);
+      method14064(var0, Class8487.field36792, Class8514.field37932);
+      method14065(var0, Class8514.field37952, Class8487.field36503);
+      method14066(var0, Class8514.field37952, Class8514.field37932);
+      method14067(var0, Class8514.field38106, Class8487.field36503);
+      method14063(var0, Class8487.field36778, Class8487.field36489);
+      method14065(var0, Class8514.field37938, Class8487.field36489);
+      method14067(var0, Class8514.field38092, Class8487.field36489);
+      method14062(var0, Class8487.field36493, Class8514.field37922);
+      method14063(var0, Class8487.field36782, Class8487.field36493);
+      method14064(var0, Class8487.field36782, Class8514.field37922);
+      method14065(var0, Class8514.field37942, Class8487.field36493);
+      method14066(var0, Class8514.field37942, Class8514.field37922);
+      method14067(var0, Class8514.field38096, Class8487.field36493);
+      method14068(var0, Class8487.field36608, Class8514.field37933);
+      method14069(var0, Class8487.field36761, Class8487.field36608);
+      method14070(var0, Class8487.field36761, Class8514.field37933);
+      method14068(var0, Class8487.field36604, Class8514.field37929);
+      method14069(var0, Class8487.field36757, Class8487.field36604);
+      method14070(var0, Class8487.field36757, Class8514.field37929);
+      method14068(var0, Class8487.field36605, Class8514.field37930);
+      method14069(var0, Class8487.field36758, Class8487.field36605);
+      method14070(var0, Class8487.field36758, Class8514.field37930);
+      method14068(var0, Class8487.field36602, Class8514.field37927);
+      method14069(var0, Class8487.field36755, Class8487.field36602);
+      method14070(var0, Class8487.field36755, Class8514.field37927);
+      method14068(var0, Class8487.field36600, Class8514.field37925);
+      method14069(var0, Class8487.field36753, Class8487.field36600);
+      method14070(var0, Class8487.field36753, Class8514.field37925);
+      method14068(var0, Class8487.field36606, Class8514.field37931);
+      method14069(var0, Class8487.field36759, Class8487.field36606);
+      method14070(var0, Class8487.field36759, Class8514.field37931);
+      method14068(var0, Class8487.field36596, Class8514.field37921);
+      method14069(var0, Class8487.field36749, Class8487.field36596);
+      method14070(var0, Class8487.field36749, Class8514.field37921);
+      method14068(var0, Class8487.field36601, Class8514.field37926);
+      method14069(var0, Class8487.field36754, Class8487.field36601);
+      method14070(var0, Class8487.field36754, Class8514.field37926);
+      method14068(var0, Class8487.field36598, Class8514.field37923);
+      method14069(var0, Class8487.field36751, Class8487.field36598);
+      method14070(var0, Class8487.field36751, Class8514.field37923);
+      method14068(var0, Class8487.field36595, Class8514.field37920);
+      method14069(var0, Class8487.field36748, Class8487.field36595);
+      method14070(var0, Class8487.field36748, Class8514.field37920);
+      method14068(var0, Class8487.field36594, Class8514.field37919);
+      method14069(var0, Class8487.field36747, Class8487.field36594);
+      method14070(var0, Class8487.field36747, Class8514.field37919);
+      method14068(var0, Class8487.field36599, Class8514.field37924);
+      method14069(var0, Class8487.field36752, Class8487.field36599);
+      method14070(var0, Class8487.field36752, Class8514.field37924);
+      method14068(var0, Class8487.field36603, Class8514.field37928);
+      method14069(var0, Class8487.field36756, Class8487.field36603);
+      method14070(var0, Class8487.field36756, Class8514.field37928);
+      method14068(var0, Class8487.field36607, Class8514.field37932);
+      method14069(var0, Class8487.field36760, Class8487.field36607);
+      method14070(var0, Class8487.field36760, Class8514.field37932);
+      method14068(var0, Class8487.field36593, Class8514.field37918);
+      method14069(var0, Class8487.field36746, Class8487.field36593);
+      method14070(var0, Class8487.field36746, Class8514.field37918);
+      method14068(var0, Class8487.field36597, Class8514.field37922);
+      method14069(var0, Class8487.field36750, Class8487.field36597);
+      method14070(var0, Class8487.field36750, Class8514.field37922);
+      method14071(var0, Class8487.field36745, Class8514.field37933);
+      method14071(var0, Class8487.field36741, Class8514.field37929);
+      method14071(var0, Class8487.field36742, Class8514.field37930);
+      method14071(var0, Class8487.field36739, Class8514.field37927);
+      method14071(var0, Class8487.field36737, Class8514.field37925);
+      method14071(var0, Class8487.field36743, Class8514.field37931);
+      method14071(var0, Class8487.field36733, Class8514.field37921);
+      method14071(var0, Class8487.field36738, Class8514.field37926);
+      method14071(var0, Class8487.field36735, Class8514.field37923);
+      method14071(var0, Class8487.field36732, Class8514.field37920);
+      method14071(var0, Class8487.field36731, Class8514.field37919);
+      method14071(var0, Class8487.field36736, Class8514.field37924);
+      method14071(var0, Class8487.field36740, Class8514.field37928);
+      method14071(var0, Class8487.field36744, Class8514.field37932);
+      method14071(var0, Class8487.field36730, Class8514.field37918);
+      method14071(var0, Class8487.field36734, Class8514.field37922);
+      method14072(var0, Class8487.field36960, Class8514.field37933);
+      method14072(var0, Class8487.field36956, Class8514.field37929);
+      method14072(var0, Class8487.field36957, Class8514.field37930);
+      method14072(var0, Class8487.field36954, Class8514.field37927);
+      method14072(var0, Class8487.field36952, Class8514.field37925);
+      method14072(var0, Class8487.field36958, Class8514.field37931);
+      method14072(var0, Class8487.field36948, Class8514.field37921);
+      method14072(var0, Class8487.field36953, Class8514.field37926);
+      method14072(var0, Class8487.field36950, Class8514.field37923);
+      method14072(var0, Class8487.field36947, Class8514.field37920);
+      method14072(var0, Class8487.field36946, Class8514.field37919);
+      method14072(var0, Class8487.field36951, Class8514.field37924);
+      method14072(var0, Class8487.field36955, Class8514.field37928);
+      method14072(var0, Class8487.field36959, Class8514.field37932);
+      method14072(var0, Class8487.field36945, Class8514.field37918);
+      method14072(var0, Class8487.field36949, Class8514.field37922);
+      Class8528.method30248(Class8487.field36728, 6)
+         .method30250('#', Class8487.field36568)
+         .method30250('S', Class8514.field37835)
+         .method30250('X', Class8514.field37801)
+         .method30252("XSX")
+         .method30252("X#X")
+         .method30252("XSX")
+         .method30253("has_rail", method14075(Class8487.field36550))
+         .method30255(var0);
+      Class8888.method32342(Class8487.field36393, 2)
+         .method32344(Class8487.field36391)
+         .method32344(Class8487.field36399)
+         .method32348("has_stone", method14075(Class8487.field36391))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36713)
+         .method30250('I', Class8487.field36522)
+         .method30250('i', Class8514.field37801)
+         .method30252("III")
+         .method30252(" i ")
+         .method30252("iii")
+         .method30253("has_iron_block", method14075(Class8487.field36522))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38082)
+         .method30250('/', Class8514.field37835)
+         .method30250('_', Class8487.field36846)
+         .method30252("///")
+         .method30252(" / ")
+         .method30252("/_/")
+         .method30253("has_stone_slab", method14075(Class8487.field36846))
+         .method30255(var0);
+      Class8528.method30248(Class8514.field37797, 4)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37868)
+         .method30250('Y', Class8514.field37839)
+         .method30252("X")
+         .method30252("#")
+         .method30252("Y")
+         .method30253("has_feather", method14075(Class8514.field37839))
+         .method30253("has_flint", method14075(Class8514.field37868))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37055, 1)
+         .method30249('P', Class5985.field26071)
+         .method30249('S', Class5985.field26078)
+         .method30252("PSP")
+         .method30252("P P")
+         .method30252("PSP")
+         .method30253("has_planks", method14076(Class5985.field26071))
+         .method30253("has_wood_slab", method14076(Class5985.field26078))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36665)
+         .method30250('S', Class8514.field38066)
+         .method30250('G', Class8487.field36454)
+         .method30250('O', Class8487.field36527)
+         .method30252("GGG")
+         .method30252("GSG")
+         .method30252("OOO")
+         .method30253("has_nether_star", method14075(Class8514.field38066))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37118)
+         .method30249('P', Class5985.field26071)
+         .method30250('H', Class8514.field38174)
+         .method30252("PPP")
+         .method30252("HHH")
+         .method30252("PPP")
+         .method30253("has_honeycomb", method14075(Class8514.field38174))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field38113)
+         .method32344(Class8514.field37836)
+         .method32345(Class8514.field38111, 6)
+         .method32348("has_beetroot", method14075(Class8514.field38111))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field37933)
+         .method32344(Class8514.field37915)
+         .method32349("black_dye")
+         .method32348("has_ink_sac", method14075(Class8514.field37915))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field37933)
+         .method32344(Class8487.field36517)
+         .method32349("black_dye")
+         .method32348("has_black_flower", method14075(Class8487.field36517))
+         .method32351(var0, "black_dye_from_wither_rose");
+      Class8888.method32342(Class8514.field37975, 2)
+         .method32344(Class8514.field37967)
+         .method32348("has_blaze_rod", method14075(Class8514.field37967))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field37929)
+         .method32344(Class8514.field37917)
+         .method32349("blue_dye")
+         .method32348("has_lapis_lazuli", method14075(Class8514.field37917))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field37929)
+         .method32344(Class8487.field36516)
+         .method32349("blue_dye")
+         .method32348("has_blue_flower", method14075(Class8487.field36516))
+         .method32351(var0, "blue_dye_from_cornflower");
+      Class8528.method30247(Class8487.field37006)
+         .method30250('#', Class8487.field36796)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_packed_ice", method14075(Class8487.field36796))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36893)
+         .method30250('X', Class8514.field37934)
+         .method30252("XXX")
+         .method30252("XXX")
+         .method30252("XXX")
+         .method30253("has_bonemeal", method14075(Class8514.field37934))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37934, 3)
+         .method32344(Class8514.field37935)
+         .method32349("bonemeal")
+         .method32348("has_bone", method14075(Class8514.field37935))
+         .method32350(var0);
+      Class8888.method32342(Class8514.field37934, 9)
+         .method32344(Class8487.field36893)
+         .method32349("bonemeal")
+         .method32348("has_bone_block", method14075(Class8487.field36893))
+         .method32351(var0, "bone_meal_from_bone_block");
+      Class8888.method32341(Class8514.field37900)
+         .method32345(Class8514.field37899, 3)
+         .method32344(Class8514.field37890)
+         .method32348("has_paper", method14075(Class8514.field37899))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36525)
+         .method30249('#', Class5985.field26071)
+         .method30250('X', Class8514.field37900)
+         .method30252("###")
+         .method30252("XXX")
+         .method30252("###")
+         .method30253("has_book", method14075(Class8514.field37900))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37796)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37838)
+         .method30252(" #X")
+         .method30252("# X")
+         .method30252(" #X")
+         .method30253("has_string", method14075(Class8514.field37838))
+         .method30255(var0);
+      Class8528.method30248(Class8514.field37836, 4)
+         .method30249('#', Class5985.field26071)
+         .method30252("# #")
+         .method30252(" # ")
+         .method30253("has_brown_mushroom", method14075(Class8487.field36519))
+         .method30253("has_red_mushroom", method14075(Class8487.field36520))
+         .method30253("has_mushroom_stew", method14075(Class8514.field37837))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37843)
+         .method30250('#', Class8514.field37842)
+         .method30252("###")
+         .method30253("has_wheat", method14075(Class8514.field37842))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36647)
+         .method30250('B', Class8514.field37967)
+         .method30249('#', Class5985.field26123)
+         .method30252(" B ")
+         .method30252("###")
+         .method30253("has_blaze_rod", method14075(Class8514.field37967))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36523)
+         .method30250('#', Class8514.field37896)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_brick", method14075(Class8514.field37896))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36851, 6)
+         .method30250('#', Class8487.field36523)
+         .method30252("###")
+         .method30253("has_brick_block", method14075(Class8487.field36523))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36638, 4)
+         .method30250('#', Class8487.field36523)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_brick_block", method14075(Class8487.field36523))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37930)
+         .method32344(Class8514.field37916)
+         .method32349("brown_dye")
+         .method32348("has_cocoa_beans", method14075(Class8514.field37916))
+         .method32350(var0);
+      Class8528.method30247(Class8514.field37882)
+         .method30250('#', Class8514.field37801)
+         .method30252("# #")
+         .method30252(" # ")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36591)
+         .method30250('A', Class8514.field37891)
+         .method30250('B', Class8514.field37936)
+         .method30250('C', Class8514.field37842)
+         .method30250('E', Class8514.field37904)
+         .method30252("AAA")
+         .method30252("BEB")
+         .method30252("CCC")
+         .method30253("has_egg", method14075(Class8514.field37904))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37067)
+         .method30249('L', Class5985.field26085)
+         .method30250('S', Class8514.field37835)
+         .method30249('C', Class5985.field26118)
+         .method30252(" S ")
+         .method30252("SCS")
+         .method30252("LLL")
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30253("has_coal", method14076(Class5985.field26118))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38064)
+         .method30250('#', Class8514.field37906)
+         .method30250('X', Class8514.field38052)
+         .method30252("# ")
+         .method30252(" X")
+         .method30253("has_carrot", method14075(Class8514.field38052))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38065)
+         .method30250('#', Class8514.field37906)
+         .method30250('X', Class8514.field37349)
+         .method30252("# ")
+         .method30252(" X")
+         .method30253("has_warped_fungus", method14075(Class8514.field37349))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36648)
+         .method30250('#', Class8514.field37801)
+         .method30252("# #")
+         .method30252("# #")
+         .method30252("###")
+         .method30253("has_water_bucket", method14075(Class8514.field37883))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37115)
+         .method30249('#', Class5985.field26078)
+         .method30252("# #")
+         .method30252("# #")
+         .method30252("###")
+         .method30253("has_wood_slab", method14076(Class5985.field26078))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36534)
+         .method30249('#', Class5985.field26071)
+         .method30252("###")
+         .method30252("# #")
+         .method30252("###")
+         .method30253(
+            "has_lots_of_items", new Class4491(Class9587.field44822, Class8840.method32014(10), Class8840.field39936, Class8840.field39936, new Class8634[0])
+         )
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37902)
+         .method30250('A', Class8487.field36534)
+         .method30250('B', Class8514.field37885)
+         .method30252("A")
+         .method30252("B")
+         .method30253("has_minecart", method14075(Class8514.field37885))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37147)
+         .method30250('#', Class8487.field36853)
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_nether_bricks", method14075(Class8487.field36642))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36725)
+         .method30250('#', Class8487.field36854)
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_chiseled_quartz_block", method14075(Class8487.field36725))
+         .method30253("has_quartz_block", method14075(Class8487.field36724))
+         .method30253("has_quartz_pillar", method14075(Class8487.field36726))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36618)
+         .method30250('#', Class8487.field36852)
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_stone_bricks", method14076(Class5985.field26072))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36575)
+         .method30250('#', Class8514.field37897)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_clay_ball", method14075(Class8514.field37897))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37907)
+         .method30250('#', Class8514.field37802)
+         .method30250('X', Class8514.field37887)
+         .method30252(" # ")
+         .method30252("#X#")
+         .method30252(" # ")
+         .method30253("has_redstone", method14075(Class8514.field37887))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37798, 9)
+         .method32344(Class8487.field36795)
+         .method32348("has_coal_block", method14075(Class8487.field36795))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36795)
+         .method30250('#', Class8514.field37798)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_coal", method14075(Class8514.field37798))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36397, 4)
+         .method30250('D', Class8487.field36396)
+         .method30250('G', Class8487.field36417)
+         .method30252("DG")
+         .method30252("GD")
+         .method30253("has_gravel", method14075(Class8487.field36417))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36850, 6)
+         .method30250('#', Class8487.field36399)
+         .method30252("###")
+         .method30253("has_cobblestone", method14075(Class8487.field36399))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36666, 6)
+         .method30250('#', Class8487.field36399)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_cobblestone", method14075(Class8487.field36399))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36719)
+         .method30250('#', Class8487.field36568)
+         .method30250('X', Class8514.field38072)
+         .method30250('I', Class8487.field36388)
+         .method30252(" # ")
+         .method30252("#X#")
+         .method30252("III")
+         .method30253("has_quartz", method14075(Class8514.field38072))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37905)
+         .method30250('#', Class8514.field37801)
+         .method30250('X', Class8514.field37887)
+         .method30252(" # ")
+         .method30252("#X#")
+         .method30252(" # ")
+         .method30253("has_redstone", method14075(Class8514.field37887))
+         .method30255(var0);
+      Class8528.method30248(Class8514.field37954, 8)
+         .method30250('#', Class8514.field37842)
+         .method30250('X', Class8514.field37916)
+         .method30252("#X#")
+         .method30253("has_cocoa", method14075(Class8514.field37916))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36538)
+         .method30249('#', Class5985.field26071)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_planks", method14076(Class5985.field26071))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38148)
+         .method30250('~', Class8514.field37838)
+         .method30250('#', Class8514.field37835)
+         .method30250('&', Class8514.field37801)
+         .method30250('$', Class8487.field36658)
+         .method30252("#&#")
+         .method30252("~$~")
+         .method30252(" # ")
+         .method30253("has_string", method14075(Class8514.field37838))
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30253("has_tripwire_hook", method14075(Class8487.field36658))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37054)
+         .method30249('#', Class5985.field26071)
+         .method30250('@', Class8514.field37838)
+         .method30252("@@")
+         .method30252("##")
+         .method30253("has_string", method14075(Class8514.field37838))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36836)
+         .method30250('#', Class8487.field36855)
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_red_sandstone", method14075(Class8487.field36835))
+         .method30253("has_chiseled_red_sandstone", method14075(Class8487.field36836))
+         .method30253("has_cut_red_sandstone", method14075(Class8487.field36837))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36459)
+         .method30250('#', Class8487.field36847)
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_stone_slab", method14075(Class8487.field36847))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37927, 2)
+         .method32344(Class8514.field37929)
+         .method32344(Class8514.field37931)
+         .method32348("has_green_dye", method14075(Class8514.field37931))
+         .method32348("has_blue_dye", method14075(Class8514.field37929))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36769)
+         .method30250('S', Class8514.field38075)
+         .method30250('I', Class8514.field37933)
+         .method30252("SSS")
+         .method30252("SIS")
+         .method30252("SSS")
+         .method30253("has_prismarine_shard", method14075(Class8514.field38075))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36770, 4)
+         .method30250('#', Class8487.field36767)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_prismarine", method14075(Class8487.field36767))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36771, 4)
+         .method30250('#', Class8487.field36768)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_prismarine_bricks", method14075(Class8487.field36768))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36772, 4)
+         .method30250('#', Class8487.field36769)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_dark_prismarine", method14075(Class8487.field36769))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36720)
+         .method30250('Q', Class8514.field38072)
+         .method30250('G', Class8487.field36454)
+         .method30251('W', Class120.method342(Class5985.field26078))
+         .method30252("GGG")
+         .method30252("QQQ")
+         .method30252("WWW")
+         .method30253("has_quartz", method14075(Class8514.field38072))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36479, 6)
+         .method30250('R', Class8514.field37887)
+         .method30250('#', Class8487.field36559)
+         .method30250('X', Class8514.field37801)
+         .method30252("X X")
+         .method30252("X#X")
+         .method30252("XRX")
+         .method30253("has_rail", method14075(Class8487.field36550))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37800, 9)
+         .method32344(Class8487.field36537)
+         .method32348("has_diamond_block", method14075(Class8487.field36537))
+         .method32350(var0);
+      Class8528.method30247(Class8514.field37828)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37800)
+         .method30252("XX")
+         .method30252("X#")
+         .method30252(" #")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36537)
+         .method30250('#', Class8514.field37800)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37859)
+         .method30250('X', Class8514.field37800)
+         .method30252("X X")
+         .method30252("X X")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37857)
+         .method30250('X', Class8514.field37800)
+         .method30252("X X")
+         .method30252("XXX")
+         .method30252("XXX")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37856)
+         .method30250('X', Class8514.field37800)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37829)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37800)
+         .method30252("XX")
+         .method30252(" #")
+         .method30252(" #")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37858)
+         .method30250('X', Class8514.field37800)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30252("X X")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37827)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37800)
+         .method30252("XXX")
+         .method30252(" # ")
+         .method30252(" # ")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37826)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37800)
+         .method30252("X")
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37825)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37800)
+         .method30252("X")
+         .method30252("X")
+         .method30252("#")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36391, 2)
+         .method30250('Q', Class8514.field38072)
+         .method30250('C', Class8487.field36399)
+         .method30252("CQ")
+         .method30252("QC")
+         .method30253("has_quartz", method14075(Class8514.field38072))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36457)
+         .method30250('R', Class8514.field37887)
+         .method30250('#', Class8487.field36399)
+         .method30250('X', Class8514.field37796)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("#R#")
+         .method30253("has_bow", method14075(Class8514.field37796))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36729)
+         .method30250('R', Class8514.field37887)
+         .method30250('#', Class8487.field36399)
+         .method30252("###")
+         .method30252("# #")
+         .method30252("#R#")
+         .method30253("has_redstone", method14075(Class8514.field37887))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field38049, 9)
+         .method32344(Class8487.field36660)
+         .method32348("has_emerald_block", method14075(Class8487.field36660))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36660)
+         .method30250('#', Class8514.field38049)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_emerald", method14075(Class8514.field38049))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36646)
+         .method30250('B', Class8514.field37900)
+         .method30250('#', Class8487.field36527)
+         .method30250('D', Class8514.field37800)
+         .method30252(" B ")
+         .method30252("D#D")
+         .method30252("###")
+         .method30253("has_obsidian", method14075(Class8487.field36527))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36657)
+         .method30250('#', Class8487.field36527)
+         .method30250('E', Class8514.field37979)
+         .method30252("###")
+         .method30252("#E#")
+         .method30252("###")
+         .method30253("has_ender_eye", method14075(Class8514.field37979))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37979)
+         .method32344(Class8514.field37966)
+         .method32344(Class8514.field37975)
+         .method32348("has_blaze_powder", method14075(Class8514.field37975))
+         .method32350(var0);
+      Class8528.method30248(Class8487.field36883, 4)
+         .method30250('#', Class8487.field36651)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_end_stone", method14075(Class8487.field36651))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38108)
+         .method30250('T', Class8514.field37968)
+         .method30250('E', Class8514.field37979)
+         .method30250('G', Class8487.field36454)
+         .method30252("GGG")
+         .method30252("GEG")
+         .method30252("GTG")
+         .method30253("has_ender_eye", method14075(Class8514.field37979))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36877, 4)
+         .method30250('#', Class8514.field38110)
+         .method30250('/', Class8514.field37967)
+         .method30252("/")
+         .method30252("#")
+         .method30253("has_chorus_fruit_popped", method14075(Class8514.field38110))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37974)
+         .method32344(Class8514.field37973)
+         .method32344(Class8487.field36519)
+         .method32344(Class8514.field37936)
+         .method32348("has_spider_eye", method14075(Class8514.field37973))
+         .method32350(var0);
+      Class8888.method32342(Class8514.field38046, 3)
+         .method32344(Class8514.field37840)
+         .method32344(Class8514.field37975)
+         .method32346(Class120.method339(Class8514.field37798, Class8514.field37799))
+         .method32348("has_blaze_powder", method14075(Class8514.field37975))
+         .method32350(var0);
+      Class8528.method30247(Class8514.field37906)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37838)
+         .method30252("  #")
+         .method30252(" #X")
+         .method30252("# X")
+         .method30253("has_string", method14075(Class8514.field37838))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37794)
+         .method32344(Class8514.field37801)
+         .method32344(Class8514.field37868)
+         .method32348("has_flint", method14075(Class8514.field37868))
+         .method32348("has_obsidian", method14075(Class8487.field36527))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36668)
+         .method30250('#', Class8514.field37896)
+         .method30252("# #")
+         .method30252(" # ")
+         .method30253("has_brick", method14075(Class8514.field37896))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36541)
+         .method30249('#', Class5985.field26123)
+         .method30252("###")
+         .method30252("# #")
+         .method30252("###")
+         .method30253("has_cobblestone", method14076(Class5985.field26123))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37903)
+         .method30250('A', Class8487.field36541)
+         .method30250('B', Class8514.field37885)
+         .method30252("A")
+         .method30252("B")
+         .method30253("has_minecart", method14075(Class8514.field37885))
+         .method30255(var0);
+      Class8528.method30248(Class8514.field37972, 3)
+         .method30250('#', Class8487.field36454)
+         .method30252("# #")
+         .method30252(" # ")
+         .method30253("has_glass", method14075(Class8487.field36454))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36630, 16)
+         .method30250('#', Class8487.field36454)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_glass", method14075(Class8487.field36454))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36587)
+         .method30250('#', Class8514.field37908)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_glowstone_dust", method14075(Class8514.field37908))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37872)
+         .method30250('#', Class8514.field37802)
+         .method30250('X', Class8514.field37795)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37818)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37802)
+         .method30252("XX")
+         .method30252("X#")
+         .method30252(" #")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37863)
+         .method30250('X', Class8514.field37802)
+         .method30252("X X")
+         .method30252("X X")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38057)
+         .method30250('#', Class8514.field37969)
+         .method30250('X', Class8514.field38052)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_gold_nugget", method14075(Class8514.field37969))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37861)
+         .method30250('X', Class8514.field37802)
+         .method30252("X X")
+         .method30252("XXX")
+         .method30252("XXX")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37860)
+         .method30250('X', Class8514.field37802)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37819)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37802)
+         .method30252("XX")
+         .method30252(" #")
+         .method30252(" #")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37862)
+         .method30250('X', Class8514.field37802)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30252("X X")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37817)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37802)
+         .method30252("XXX")
+         .method30252(" # ")
+         .method30252(" # ")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36478, 6)
+         .method30250('R', Class8514.field37887)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37802)
+         .method30252("X X")
+         .method30252("X#X")
+         .method30252("XRX")
+         .method30253("has_rail", method14075(Class8487.field36550))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37816)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37802)
+         .method30252("X")
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37815)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37802)
+         .method30252("X")
+         .method30252("X")
+         .method30252("#")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36521)
+         .method30250('#', Class8514.field37802)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37802, 9)
+         .method32344(Class8487.field36521)
+         .method32349("gold_ingot")
+         .method32348("has_gold_block", method14075(Class8487.field36521))
+         .method32351(var0, "gold_ingot_from_gold_block");
+      Class8528.method30247(Class8514.field37802)
+         .method30250('#', Class8514.field37969)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30254("gold_ingot")
+         .method30253("has_gold_nugget", method14075(Class8514.field37969))
+         .method30256(var0, "gold_ingot_from_nuggets");
+      Class8888.method32342(Class8514.field37969, 9)
+         .method32344(Class8514.field37802)
+         .method32348("has_gold_ingot", method14075(Class8514.field37802))
+         .method32350(var0);
+      Class8888.method32341(Class8487.field36389)
+         .method32344(Class8487.field36391)
+         .method32344(Class8514.field38072)
+         .method32348("has_quartz", method14075(Class8514.field38072))
+         .method32350(var0);
+      Class8888.method32342(Class8514.field37925, 2)
+         .method32344(Class8514.field37933)
+         .method32344(Class8514.field37918)
+         .method32348("has_white_dye", method14075(Class8514.field37918))
+         .method32348("has_black_dye", method14075(Class8514.field37933))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36777)
+         .method30250('#', Class8514.field37842)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_wheat", method14075(Class8514.field37842))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36718)
+         .method30250('#', Class8514.field37801)
+         .method30252("##")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field38177, 4)
+         .method32344(Class8514.field38178)
+         .method32345(Class8514.field37972, 4)
+         .method32348("has_honey_block", method14075(Class8487.field37119))
+         .method32350(var0);
+      Class8528.method30248(Class8487.field37119, 1)
+         .method30250('S', Class8514.field38177)
+         .method30252("SS")
+         .method30252("SS")
+         .method30253("has_honey_bottle", method14075(Class8514.field38177))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37120)
+         .method30250('H', Class8514.field38174)
+         .method30252("HH")
+         .method30252("HH")
+         .method30253("has_honeycomb", method14075(Class8514.field38174))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36723)
+         .method30250('C', Class8487.field36534)
+         .method30250('I', Class8514.field37801)
+         .method30252("I I")
+         .method30252("ICI")
+         .method30252(" I ")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38074)
+         .method30250('A', Class8487.field36723)
+         .method30250('B', Class8514.field37885)
+         .method30252("A")
+         .method30252("B")
+         .method30253("has_minecart", method14075(Class8514.field37885))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37823)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37801)
+         .method30252("XX")
+         .method30252("X#")
+         .method30252(" #")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36628, 16)
+         .method30250('#', Class8514.field37801)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36522)
+         .method30250('#', Class8514.field37801)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37855)
+         .method30250('X', Class8514.field37801)
+         .method30252("X X")
+         .method30252("X X")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37853)
+         .method30250('X', Class8514.field37801)
+         .method30252("X X")
+         .method30252("XXX")
+         .method30252("XXX")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36560, 3)
+         .method30250('#', Class8514.field37801)
+         .method30252("##")
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37852)
+         .method30250('X', Class8514.field37801)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37824)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37801)
+         .method30252("XX")
+         .method30252(" #")
+         .method30252(" #")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37801, 9)
+         .method32344(Class8487.field36522)
+         .method32349("iron_ingot")
+         .method32348("has_iron_block", method14075(Class8487.field36522))
+         .method32351(var0, "iron_ingot_from_iron_block");
+      Class8528.method30247(Class8514.field37801)
+         .method30250('#', Class8514.field38128)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30254("iron_ingot")
+         .method30253("has_iron_nugget", method14075(Class8514.field38128))
+         .method30256(var0, "iron_ingot_from_nuggets");
+      Class8528.method30247(Class8514.field37854)
+         .method30250('X', Class8514.field37801)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30252("X X")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field38128, 9)
+         .method32344(Class8514.field37801)
+         .method32348("has_iron_ingot", method14075(Class8514.field37801))
+         .method32350(var0);
+      Class8528.method30247(Class8514.field37822)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37801)
+         .method30252("XXX")
+         .method30252(" # ")
+         .method30252(" # ")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37821)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37801)
+         .method30252("X")
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37820)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37801)
+         .method30252("X")
+         .method30252("X")
+         .method30252("#")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36766)
+         .method30250('#', Class8514.field37801)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38050)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37890)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_leather", method14075(Class8514.field37890))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36577)
+         .method30249('#', Class5985.field26071)
+         .method30250('X', Class8514.field37800)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_diamond", method14075(Class8514.field37800))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36549, 3)
+         .method30250('#', Class8514.field37835)
+         .method30252("# #")
+         .method30252("###")
+         .method30252("# #")
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36456)
+         .method30250('#', Class8514.field37917)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_lapis", method14075(Class8514.field37917))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37917, 9)
+         .method32344(Class8487.field36456)
+         .method32348("has_lapis_block", method14075(Class8487.field36456))
+         .method32350(var0);
+      Class8528.method30248(Class8514.field38087, 2)
+         .method30250('~', Class8514.field37838)
+         .method30250('O', Class8514.field37901)
+         .method30252("~~ ")
+         .method30252("~O ")
+         .method30252("  ~")
+         .method30253("has_slime_ball", method14075(Class8514.field37901))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37890)
+         .method30250('#', Class8514.field38081)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_rabbit_hide", method14075(Class8514.field38081))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37847)
+         .method30250('X', Class8514.field37890)
+         .method30252("X X")
+         .method30252("X X")
+         .method30253("has_leather", method14075(Class8514.field37890))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37845)
+         .method30250('X', Class8514.field37890)
+         .method30252("X X")
+         .method30252("XXX")
+         .method30252("XXX")
+         .method30253("has_leather", method14075(Class8514.field37890))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37844)
+         .method30250('X', Class8514.field37890)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30253("has_leather", method14075(Class8514.field37890))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37846)
+         .method30250('X', Class8514.field37890)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30252("X X")
+         .method30253("has_leather", method14075(Class8514.field37890))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38086)
+         .method30250('X', Class8514.field37890)
+         .method30252("X X")
+         .method30252("XXX")
+         .method30252("X X")
+         .method30253("has_leather", method14075(Class8514.field37890))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37061)
+         .method30249('S', Class5985.field26078)
+         .method30250('B', Class8487.field36525)
+         .method30252("SSS")
+         .method30252(" B ")
+         .method30252(" S ")
+         .method30253("has_book", method14075(Class8514.field37900))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36558)
+         .method30250('#', Class8487.field36399)
+         .method30250('X', Class8514.field37835)
+         .method30252("X")
+         .method30252("#")
+         .method30253("has_cobblestone", method14075(Class8487.field36399))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37921)
+         .method32344(Class8487.field36508)
+         .method32349("light_blue_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36508))
+         .method32351(var0, "light_blue_dye_from_blue_orchid");
+      Class8888.method32342(Class8514.field37921, 2)
+         .method32344(Class8514.field37929)
+         .method32344(Class8514.field37918)
+         .method32349("light_blue_dye")
+         .method32348("has_blue_dye", method14075(Class8514.field37929))
+         .method32348("has_white_dye", method14075(Class8514.field37918))
+         .method32351(var0, "light_blue_dye_from_blue_white_dye");
+      Class8888.method32341(Class8514.field37926)
+         .method32344(Class8487.field36510)
+         .method32349("light_gray_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36510))
+         .method32351(var0, "light_gray_dye_from_azure_bluet");
+      Class8888.method32342(Class8514.field37926, 2)
+         .method32344(Class8514.field37925)
+         .method32344(Class8514.field37918)
+         .method32349("light_gray_dye")
+         .method32348("has_gray_dye", method14075(Class8514.field37925))
+         .method32348("has_white_dye", method14075(Class8514.field37918))
+         .method32351(var0, "light_gray_dye_from_gray_white_dye");
+      Class8888.method32342(Class8514.field37926, 3)
+         .method32344(Class8514.field37933)
+         .method32345(Class8514.field37918, 2)
+         .method32349("light_gray_dye")
+         .method32348("has_white_dye", method14075(Class8514.field37918))
+         .method32348("has_black_dye", method14075(Class8514.field37933))
+         .method32351(var0, "light_gray_dye_from_black_white_dye");
+      Class8888.method32341(Class8514.field37926)
+         .method32344(Class8487.field36515)
+         .method32349("light_gray_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36515))
+         .method32351(var0, "light_gray_dye_from_oxeye_daisy");
+      Class8888.method32341(Class8514.field37926)
+         .method32344(Class8487.field36513)
+         .method32349("light_gray_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36513))
+         .method32351(var0, "light_gray_dye_from_white_tulip");
+      Class8528.method30247(Class8487.field36717)
+         .method30250('#', Class8514.field37802)
+         .method30252("##")
+         .method30253("has_gold_ingot", method14075(Class8514.field37802))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37923, 2)
+         .method32344(Class8514.field37931)
+         .method32344(Class8514.field37918)
+         .method32348("has_green_dye", method14075(Class8514.field37931))
+         .method32348("has_white_dye", method14075(Class8514.field37918))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36590)
+         .method30250('A', Class8487.field36589)
+         .method30250('B', Class8487.field36528)
+         .method30252("A")
+         .method30252("B")
+         .method30253("has_carved_pumpkin", method14075(Class8487.field36589))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37920)
+         .method32344(Class8487.field36509)
+         .method32349("magenta_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36509))
+         .method32351(var0, "magenta_dye_from_allium");
+      Class8888.method32342(Class8514.field37920, 4)
+         .method32344(Class8514.field37929)
+         .method32345(Class8514.field37932, 2)
+         .method32344(Class8514.field37918)
+         .method32349("magenta_dye")
+         .method32348("has_blue_dye", method14075(Class8514.field37929))
+         .method32348("has_rose_red", method14075(Class8514.field37932))
+         .method32348("has_white_dye", method14075(Class8514.field37918))
+         .method32351(var0, "magenta_dye_from_blue_red_white_dye");
+      Class8888.method32342(Class8514.field37920, 3)
+         .method32344(Class8514.field37929)
+         .method32344(Class8514.field37932)
+         .method32344(Class8514.field37924)
+         .method32349("magenta_dye")
+         .method32348("has_pink_dye", method14075(Class8514.field37924))
+         .method32348("has_blue_dye", method14075(Class8514.field37929))
+         .method32348("has_red_dye", method14075(Class8514.field37932))
+         .method32351(var0, "magenta_dye_from_blue_red_pink");
+      Class8888.method32342(Class8514.field37920, 2)
+         .method32344(Class8487.field36798)
+         .method32349("magenta_dye")
+         .method32348("has_double_plant", method14075(Class8487.field36798))
+         .method32351(var0, "magenta_dye_from_lilac");
+      Class8888.method32342(Class8514.field37920, 2)
+         .method32344(Class8514.field37928)
+         .method32344(Class8514.field37924)
+         .method32349("magenta_dye")
+         .method32348("has_pink_dye", method14075(Class8514.field37924))
+         .method32348("has_purple_dye", method14075(Class8514.field37928))
+         .method32351(var0, "magenta_dye_from_purple_and_pink");
+      Class8528.method30247(Class8487.field36890)
+         .method30250('#', Class8514.field37976)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_magma_cream", method14075(Class8514.field37976))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37976)
+         .method32344(Class8514.field37975)
+         .method32344(Class8514.field37901)
+         .method32348("has_blaze_powder", method14075(Class8514.field37975))
+         .method32350(var0);
+      Class8528.method30247(Class8514.field38056)
+         .method30250('#', Class8514.field37899)
+         .method30250('X', Class8514.field37905)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_compass", method14075(Class8514.field37905))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36631)
+         .method30250('M', Class8514.field37957)
+         .method30252("MMM")
+         .method30252("MMM")
+         .method30252("MMM")
+         .method30253("has_melon", method14075(Class8514.field37957))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37960)
+         .method32344(Class8514.field37957)
+         .method32348("has_melon", method14075(Class8514.field37957))
+         .method32350(var0);
+      Class8528.method30247(Class8514.field37885)
+         .method30250('#', Class8514.field37801)
+         .method30252("# #")
+         .method30252("###")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8888.method32341(Class8487.field36526)
+         .method32344(Class8487.field36399)
+         .method32344(Class8487.field36636)
+         .method32348("has_vine", method14075(Class8487.field36636))
+         .method32350(var0);
+      Class8528.method30248(Class8487.field36667, 6)
+         .method30250('#', Class8487.field36526)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_mossy_cobblestone", method14075(Class8487.field36526))
+         .method30255(var0);
+      Class8888.method32341(Class8487.field36616)
+         .method32344(Class8487.field36615)
+         .method32344(Class8487.field36636)
+         .method32348("has_mossy_cobblestone", method14075(Class8487.field36526))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field37837)
+         .method32344(Class8487.field36519)
+         .method32344(Class8487.field36520)
+         .method32344(Class8514.field37836)
+         .method32348("has_mushroom_stew", method14075(Class8514.field37837))
+         .method32348("has_bowl", method14075(Class8514.field37836))
+         .method32348("has_brown_mushroom", method14075(Class8487.field36519))
+         .method32348("has_red_mushroom", method14075(Class8487.field36520))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36642)
+         .method30250('N', Class8514.field38071)
+         .method30252("NN")
+         .method30252("NN")
+         .method30253("has_netherbrick", method14075(Class8514.field38071))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36643, 6)
+         .method30250('#', Class8487.field36642)
+         .method30250('-', Class8514.field38071)
+         .method30252("#-#")
+         .method30252("#-#")
+         .method30253("has_nether_brick", method14075(Class8487.field36642))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36853, 6)
+         .method30250('#', Class8487.field36642)
+         .method30252("###")
+         .method30253("has_nether_brick", method14075(Class8487.field36642))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36644, 4)
+         .method30250('#', Class8487.field36642)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_nether_brick", method14075(Class8487.field36642))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36891)
+         .method30250('#', Class8514.field37970)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_nether_wart", method14075(Class8514.field37970))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36461)
+         .method30249('#', Class5985.field26071)
+         .method30250('X', Class8514.field37887)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_redstone", method14075(Class8514.field37887))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36895)
+         .method30250('Q', Class8514.field38072)
+         .method30250('R', Class8514.field37887)
+         .method30250('#', Class8487.field36399)
+         .method30252("###")
+         .method30252("RRQ")
+         .method30252("###")
+         .method30253("has_quartz", method14075(Class8514.field38072))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37919)
+         .method32344(Class8487.field36512)
+         .method32349("orange_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36512))
+         .method32351(var0, "orange_dye_from_orange_tulip");
+      Class8888.method32342(Class8514.field37919, 2)
+         .method32344(Class8514.field37932)
+         .method32344(Class8514.field37922)
+         .method32349("orange_dye")
+         .method32348("has_red_dye", method14075(Class8514.field37932))
+         .method32348("has_yellow_dye", method14075(Class8514.field37922))
+         .method32351(var0, "orange_dye_from_red_yellow");
+      Class8528.method30247(Class8514.field37871)
+         .method30250('#', Class8514.field37835)
+         .method30251('X', Class120.method342(Class5985.field26070))
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_wool", method14076(Class5985.field26070))
+         .method30255(var0);
+      Class8528.method30248(Class8514.field37899, 3)
+         .method30250('#', Class8487.field36576)
+         .method30252("###")
+         .method30253("has_reeds", method14075(Class8487.field36576))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36726, 2)
+         .method30250('#', Class8487.field36724)
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_chiseled_quartz_block", method14075(Class8487.field36725))
+         .method30253("has_quartz_block", method14075(Class8487.field36724))
+         .method30253("has_quartz_pillar", method14075(Class8487.field36726))
+         .method30255(var0);
+      Class8888.method32341(Class8487.field36796)
+         .method32345(Class8487.field36572, 9)
+         .method32348("has_ice", method14075(Class8487.field36572))
+         .method32350(var0);
+      Class8888.method32342(Class8514.field37924, 2)
+         .method32344(Class8487.field36800)
+         .method32349("pink_dye")
+         .method32348("has_double_plant", method14075(Class8487.field36800))
+         .method32351(var0, "pink_dye_from_peony");
+      Class8888.method32341(Class8514.field37924)
+         .method32344(Class8487.field36514)
+         .method32349("pink_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36514))
+         .method32351(var0, "pink_dye_from_pink_tulip");
+      Class8888.method32342(Class8514.field37924, 2)
+         .method32344(Class8514.field37932)
+         .method32344(Class8514.field37918)
+         .method32349("pink_dye")
+         .method32348("has_white_dye", method14075(Class8514.field37918))
+         .method32348("has_red_dye", method14075(Class8514.field37932))
+         .method32351(var0, "pink_dye_from_red_white_dye");
+      Class8528.method30247(Class8487.field36487)
+         .method30250('R', Class8514.field37887)
+         .method30250('#', Class8487.field36399)
+         .method30249('T', Class5985.field26071)
+         .method30250('X', Class8514.field37801)
+         .method30252("TTT")
+         .method30252("#X#")
+         .method30252("#R#")
+         .method30253("has_redstone", method14075(Class8514.field37887))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36584, 4)
+         .method30250('S', Class8487.field36583)
+         .method30252("SS")
+         .method30252("SS")
+         .method30253("has_basalt", method14075(Class8487.field36583))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36390, 4)
+         .method30250('S', Class8487.field36389)
+         .method30252("SS")
+         .method30252("SS")
+         .method30253("has_stone", method14075(Class8487.field36389))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36392, 4)
+         .method30250('S', Class8487.field36391)
+         .method30252("SS")
+         .method30252("SS")
+         .method30253("has_stone", method14075(Class8487.field36391))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36394, 4)
+         .method30250('S', Class8487.field36393)
+         .method30252("SS")
+         .method30252("SS")
+         .method30253("has_stone", method14075(Class8487.field36393))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36767)
+         .method30250('S', Class8514.field38075)
+         .method30252("SS")
+         .method30252("SS")
+         .method30253("has_prismarine_shard", method14075(Class8514.field38075))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36768)
+         .method30250('S', Class8514.field38075)
+         .method30252("SSS")
+         .method30252("SSS")
+         .method30252("SSS")
+         .method30253("has_prismarine_shard", method14075(Class8514.field38075))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36773, 6)
+         .method30250('#', Class8487.field36767)
+         .method30252("###")
+         .method30253("has_prismarine", method14075(Class8487.field36767))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36774, 6)
+         .method30250('#', Class8487.field36768)
+         .method30252("###")
+         .method30253("has_prismarine_bricks", method14075(Class8487.field36768))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36775, 6)
+         .method30250('#', Class8487.field36769)
+         .method30252("###")
+         .method30253("has_dark_prismarine", method14075(Class8487.field36769))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field38067)
+         .method32344(Class8487.field36579)
+         .method32344(Class8514.field37936)
+         .method32344(Class8514.field37904)
+         .method32348("has_carved_pumpkin", method14075(Class8487.field36589))
+         .method32348("has_pumpkin", method14075(Class8487.field36579))
+         .method32350(var0);
+      Class8888.method32342(Class8514.field37959, 4)
+         .method32344(Class8487.field36579)
+         .method32348("has_pumpkin", method14075(Class8487.field36579))
+         .method32350(var0);
+      Class8888.method32342(Class8514.field37928, 2)
+         .method32344(Class8514.field37929)
+         .method32344(Class8514.field37932)
+         .method32348("has_blue_dye", method14075(Class8514.field37929))
+         .method32348("has_red_dye", method14075(Class8514.field37932))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36896)
+         .method30250('#', Class8487.field36534)
+         .method30250('-', Class8514.field38127)
+         .method30252("-")
+         .method30252("#")
+         .method30252("-")
+         .method30253("has_shulker_shell", method14075(Class8514.field38127))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36880, 4)
+         .method30250('F', Class8514.field38110)
+         .method30252("FF")
+         .method30252("FF")
+         .method30253("has_chorus_fruit_popped", method14075(Class8514.field38110))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36881)
+         .method30250('#', Class8487.field36857)
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_purpur_block", method14075(Class8487.field36880))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36857, 6)
+         .method30251('#', Class120.method339(Class8487.field36880, Class8487.field36881))
+         .method30252("###")
+         .method30253("has_purpur_block", method14075(Class8487.field36880))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36882, 4)
+         .method30251('#', Class120.method339(Class8487.field36880, Class8487.field36881))
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_purpur_block", method14075(Class8487.field36880))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36724)
+         .method30250('#', Class8514.field38072)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_quartz", method14075(Class8514.field38072))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37149, 4)
+         .method30250('#', Class8487.field36724)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_quartz_block", method14075(Class8487.field36724))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36854, 6)
+         .method30251('#', Class120.method339(Class8487.field36725, Class8487.field36724, Class8487.field36726))
+         .method30252("###")
+         .method30253("has_chiseled_quartz_block", method14075(Class8487.field36725))
+         .method30253("has_quartz_block", method14075(Class8487.field36724))
+         .method30253("has_quartz_pillar", method14075(Class8487.field36726))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36727, 4)
+         .method30251('#', Class120.method339(Class8487.field36725, Class8487.field36724, Class8487.field36726))
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_chiseled_quartz_block", method14075(Class8487.field36725))
+         .method30253("has_quartz_block", method14075(Class8487.field36724))
+         .method30253("has_quartz_pillar", method14075(Class8487.field36726))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field38079)
+         .method32344(Class8514.field38054)
+         .method32344(Class8514.field38078)
+         .method32344(Class8514.field37836)
+         .method32344(Class8514.field38052)
+         .method32344(Class8487.field36519)
+         .method32349("rabbit_stew")
+         .method32348("has_cooked_rabbit", method14075(Class8514.field38078))
+         .method32351(var0, "rabbit_stew_from_brown_mushroom");
+      Class8888.method32341(Class8514.field38079)
+         .method32344(Class8514.field38054)
+         .method32344(Class8514.field38078)
+         .method32344(Class8514.field37836)
+         .method32344(Class8514.field38052)
+         .method32344(Class8487.field36520)
+         .method32349("rabbit_stew")
+         .method32348("has_cooked_rabbit", method14075(Class8514.field38078))
+         .method32351(var0, "rabbit_stew_from_red_mushroom");
+      Class8528.method30248(Class8487.field36550, 16)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37801)
+         .method30252("X X")
+         .method30252("X#X")
+         .method30252("X X")
+         .method30253("has_minecart", method14075(Class8514.field37885))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37887, 9)
+         .method32344(Class8487.field36721)
+         .method32348("has_redstone_block", method14075(Class8487.field36721))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field36721)
+         .method30250('#', Class8514.field37887)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_redstone", method14075(Class8514.field37887))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36653)
+         .method30250('R', Class8514.field37887)
+         .method30250('G', Class8487.field36587)
+         .method30252(" R ")
+         .method30252("RGR")
+         .method30252(" R ")
+         .method30253("has_glowstone", method14075(Class8487.field36587))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36568)
+         .method30250('#', Class8514.field37835)
+         .method30250('X', Class8514.field37887)
+         .method30252("X")
+         .method30252("#")
+         .method30253("has_redstone", method14075(Class8514.field37887))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field37932)
+         .method32344(Class8514.field38111)
+         .method32349("red_dye")
+         .method32348("has_beetroot", method14075(Class8514.field38111))
+         .method32351(var0, "red_dye_from_beetroot");
+      Class8888.method32341(Class8514.field37932)
+         .method32344(Class8487.field36507)
+         .method32349("red_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36507))
+         .method32351(var0, "red_dye_from_poppy");
+      Class8888.method32342(Class8514.field37932, 2)
+         .method32344(Class8487.field36799)
+         .method32349("red_dye")
+         .method32348("has_double_plant", method14075(Class8487.field36799))
+         .method32351(var0, "red_dye_from_rose_bush");
+      Class8888.method32341(Class8514.field37932)
+         .method32344(Class8487.field36511)
+         .method32349("red_dye")
+         .method32348("has_red_flower", method14075(Class8487.field36511))
+         .method32351(var0, "red_dye_from_tulip");
+      Class8528.method30247(Class8487.field36892)
+         .method30250('W', Class8514.field37970)
+         .method30250('N', Class8514.field38071)
+         .method30252("NW")
+         .method30252("WN")
+         .method30253("has_nether_wart", method14075(Class8514.field37970))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36835)
+         .method30250('#', Class8487.field36416)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_sand", method14075(Class8487.field36416))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36855, 6)
+         .method30251('#', Class120.method339(Class8487.field36835, Class8487.field36836))
+         .method30252("###")
+         .method30253("has_red_sandstone", method14075(Class8487.field36835))
+         .method30253("has_chiseled_red_sandstone", method14075(Class8487.field36836))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36856, 6)
+         .method30250('#', Class8487.field36837)
+         .method30252("###")
+         .method30253("has_cut_red_sandstone", method14075(Class8487.field36837))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36838, 4)
+         .method30251('#', Class120.method339(Class8487.field36835, Class8487.field36836, Class8487.field36837))
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_red_sandstone", method14075(Class8487.field36835))
+         .method30253("has_chiseled_red_sandstone", method14075(Class8487.field36836))
+         .method30253("has_cut_red_sandstone", method14075(Class8487.field36837))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36592)
+         .method30250('#', Class8487.field36568)
+         .method30250('X', Class8514.field37887)
+         .method30250('I', Class8487.field36388)
+         .method30252("#X#")
+         .method30252("III")
+         .method30253("has_redstone_torch", method14075(Class8487.field36568))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36458)
+         .method30250('#', Class8487.field36415)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_sand", method14075(Class8487.field36415))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36847, 6)
+         .method30251('#', Class120.method339(Class8487.field36458, Class8487.field36459))
+         .method30252("###")
+         .method30253("has_sandstone", method14075(Class8487.field36458))
+         .method30253("has_chiseled_sandstone", method14075(Class8487.field36459))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36848, 6)
+         .method30250('#', Class8487.field36460)
+         .method30252("###")
+         .method30253("has_cut_sandstone", method14075(Class8487.field36460))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36655, 4)
+         .method30251('#', Class120.method339(Class8487.field36458, Class8487.field36459, Class8487.field36460))
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_sandstone", method14075(Class8487.field36458))
+         .method30253("has_chiseled_sandstone", method14075(Class8487.field36459))
+         .method30253("has_cut_sandstone", method14075(Class8487.field36460))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36776)
+         .method30250('S', Class8514.field38075)
+         .method30250('C', Class8514.field38076)
+         .method30252("SCS")
+         .method30252("CCC")
+         .method30252("SCS")
+         .method30253("has_prismarine_crystals", method14075(Class8514.field38076))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37956)
+         .method30250('#', Class8514.field37801)
+         .method30252(" #")
+         .method30252("# ")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38119)
+         .method30249('W', Class5985.field26071)
+         .method30250('o', Class8514.field37801)
+         .method30252("WoW")
+         .method30252("WWW")
+         .method30252(" W ")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36764)
+         .method30250('#', Class8514.field37901)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_slime_ball", method14075(Class8514.field37901))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37901, 9)
+         .method32344(Class8487.field36764)
+         .method32348("has_slime", method14075(Class8487.field36764))
+         .method32350(var0);
+      Class8528.method30248(Class8487.field36837, 4)
+         .method30250('#', Class8487.field36835)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_red_sandstone", method14075(Class8487.field36835))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36460, 4)
+         .method30250('#', Class8487.field36458)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_sandstone", method14075(Class8487.field36458))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36573)
+         .method30250('#', Class8514.field37888)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_snowball", method14075(Class8514.field37888))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36571, 6)
+         .method30250('#', Class8487.field36573)
+         .method30252("###")
+         .method30253("has_snowball", method14075(Class8514.field37888))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37068)
+         .method30249('L', Class5985.field26085)
+         .method30250('S', Class8514.field37835)
+         .method30249('#', Class5985.field26112)
+         .method30252(" S ")
+         .method30252("S#S")
+         .method30252("LLL")
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30253("has_soul_sand", method14076(Class5985.field26112))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37980)
+         .method30250('#', Class8514.field37969)
+         .method30250('X', Class8514.field37957)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_melon", method14075(Class8514.field37957))
+         .method30255(var0);
+      Class8528.method30248(Class8514.field38116, 2)
+         .method30250('#', Class8514.field37908)
+         .method30250('X', Class8514.field37797)
+         .method30252(" # ")
+         .method30252("#X#")
+         .method30252(" # ")
+         .method30253("has_glowstone_dust", method14075(Class8514.field37908))
+         .method30255(var0);
+      Class8528.method30248(Class8514.field37835, 4)
+         .method30249('#', Class5985.field26071)
+         .method30252("#")
+         .method30252("#")
+         .method30254("sticks")
+         .method30253("has_planks", method14076(Class5985.field26071))
+         .method30255(var0);
+      Class8528.method30248(Class8514.field37835, 1)
+         .method30250('#', Class8487.field37009)
+         .method30252("#")
+         .method30252("#")
+         .method30254("sticks")
+         .method30253("has_bamboo", method14075(Class8487.field37009))
+         .method30256(var0, "stick_from_bamboo_item");
+      Class8528.method30247(Class8487.field36480)
+         .method30250('P', Class8487.field36487)
+         .method30250('S', Class8514.field37901)
+         .method30252("S")
+         .method30252("P")
+         .method30253("has_slime_ball", method14075(Class8514.field37901))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36615, 4)
+         .method30250('#', Class8487.field36388)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_stone", method14075(Class8487.field36388))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37813)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26122)
+         .method30252("XX")
+         .method30252("X#")
+         .method30252(" #")
+         .method30253("has_cobblestone", method14076(Class5985.field26122))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36852, 6)
+         .method30250('#', Class8487.field36615)
+         .method30252("###")
+         .method30253("has_stone_bricks", method14076(Class5985.field26072))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36639, 4)
+         .method30250('#', Class8487.field36615)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_stone_bricks", method14076(Class5985.field26072))
+         .method30255(var0);
+      Class8888.method32341(Class8487.field36570)
+         .method32344(Class8487.field36388)
+         .method32348("has_stone", method14075(Class8487.field36388))
+         .method32350(var0);
+      Class8528.method30247(Class8514.field37814)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26122)
+         .method30252("XX")
+         .method30252(" #")
+         .method30252(" #")
+         .method30253("has_cobblestone", method14076(Class5985.field26122))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37812)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26122)
+         .method30252("XXX")
+         .method30252(" # ")
+         .method30252(" # ")
+         .method30253("has_cobblestone", method14076(Class5985.field26122))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36559)
+         .method30250('#', Class8487.field36388)
+         .method30252("##")
+         .method30253("has_stone", method14075(Class8487.field36388))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37811)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26122)
+         .method30252("X")
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_cobblestone", method14076(Class5985.field26122))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36845, 6)
+         .method30250('#', Class8487.field36388)
+         .method30252("###")
+         .method30253("has_stone", method14075(Class8487.field36388))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36846, 6)
+         .method30250('#', Class8487.field36858)
+         .method30252("###")
+         .method30253("has_smooth_stone", method14075(Class8487.field36858))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36551, 4)
+         .method30250('#', Class8487.field36399)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_cobblestone", method14075(Class8487.field36399))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37810)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26122)
+         .method30252("X")
+         .method30252("X")
+         .method30252("#")
+         .method30253("has_cobblestone", method14076(Class5985.field26122))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36489)
+         .method30250('#', Class8514.field37838)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_string", method14075(Class8514.field37838))
+         .method30256(var0, "white_wool_from_string");
+      Class8888.method32341(Class8514.field37936)
+         .method32344(Class8487.field36576)
+         .method32349("sugar")
+         .method32348("has_reeds", method14075(Class8487.field36576))
+         .method32351(var0, "sugar_from_sugar_cane");
+      Class8888.method32342(Class8514.field37936, 3)
+         .method32344(Class8514.field38177)
+         .method32349("sugar")
+         .method32348("has_honey_bottle", method14075(Class8514.field38177))
+         .method32351(var0, "sugar_from_honey_bottle");
+      Class8528.method30247(Class8487.field37116)
+         .method30250('H', Class8514.field37571)
+         .method30250('R', Class8514.field37887)
+         .method30252(" R ")
+         .method30252("RHR")
+         .method30252(" R ")
+         .method30253("has_redstone", method14075(Class8514.field37887))
+         .method30253("has_hay_block", method14075(Class8487.field36777))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36524)
+         .method30251('#', Class120.method339(Class8487.field36415, Class8487.field36416))
+         .method30250('X', Class8514.field37840)
+         .method30252("X#X")
+         .method30252("#X#")
+         .method30252("X#X")
+         .method30253("has_gunpowder", method14075(Class8514.field37840))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field38073)
+         .method30250('A', Class8487.field36524)
+         .method30250('B', Class8514.field37885)
+         .method30252("A")
+         .method30252("B")
+         .method30253("has_minecart", method14075(Class8514.field37885))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36528, 4)
+         .method30250('#', Class8514.field37835)
+         .method30251('X', Class120.method339(Class8514.field37798, Class8514.field37799))
+         .method30252("X")
+         .method30252("#")
+         .method30253("has_stone_pickaxe", method14075(Class8514.field37812))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field36585, 4)
+         .method30251('X', Class120.method339(Class8514.field37798, Class8514.field37799))
+         .method30250('#', Class8514.field37835)
+         .method30249('S', Class5985.field26112)
+         .method30252("X")
+         .method30252("#")
+         .method30252("S")
+         .method30253("has_soul_sand", method14076(Class5985.field26112))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37065)
+         .method30250('#', Class8514.field37393)
+         .method30250('X', Class8514.field38128)
+         .method30252("XXX")
+         .method30252("X#X")
+         .method30252("XXX")
+         .method30253("has_iron_nugget", method14075(Class8514.field38128))
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37066)
+         .method30250('#', Class8514.field37445)
+         .method30250('X', Class8514.field38128)
+         .method30252("XXX")
+         .method30252("X#X")
+         .method30252("XXX")
+         .method30253("has_soul_torch", method14075(Class8514.field37445))
+         .method30255(var0);
+      Class8888.method32341(Class8487.field36716)
+         .method32344(Class8487.field36534)
+         .method32344(Class8487.field36658)
+         .method32348("has_tripwire_hook", method14075(Class8487.field36658))
+         .method32350(var0);
+      Class8528.method30248(Class8487.field36658, 2)
+         .method30249('#', Class5985.field26071)
+         .method30250('S', Class8514.field37835)
+         .method30250('I', Class8514.field37801)
+         .method30252("I")
+         .method30252("S")
+         .method30252("#")
+         .method30253("has_string", method14075(Class8514.field37838))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37792)
+         .method30250('X', Class8514.field37793)
+         .method30252("XXX")
+         .method30252("X X")
+         .method30253("has_scute", method14075(Class8514.field37793))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37842, 9)
+         .method32344(Class8487.field36777)
+         .method32348("has_hay_block", method14075(Class8487.field36777))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field37918)
+         .method32344(Class8514.field37934)
+         .method32349("white_dye")
+         .method32348("has_bone_meal", method14075(Class8514.field37934))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field37918)
+         .method32344(Class8487.field36518)
+         .method32349("white_dye")
+         .method32348("has_white_flower", method14075(Class8487.field36518))
+         .method32351(var0, "white_dye_from_lily_of_the_valley");
+      Class8528.method30247(Class8514.field37808)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26071)
+         .method30252("XX")
+         .method30252("X#")
+         .method30252(" #")
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37809)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26071)
+         .method30252("XX")
+         .method30252(" #")
+         .method30252(" #")
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37807)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26071)
+         .method30252("XXX")
+         .method30252(" # ")
+         .method30252(" # ")
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37806)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26071)
+         .method30252("X")
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30255(var0);
+      Class8528.method30247(Class8514.field37805)
+         .method30250('#', Class8514.field37835)
+         .method30249('X', Class5985.field26071)
+         .method30252("X")
+         .method30252("X")
+         .method30252("#")
+         .method30253("has_stick", method14075(Class8514.field37835))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field38047)
+         .method32344(Class8514.field37900)
+         .method32344(Class8514.field37915)
+         .method32344(Class8514.field37839)
+         .method32348("has_book", method14075(Class8514.field37900))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field37922)
+         .method32344(Class8487.field36506)
+         .method32349("yellow_dye")
+         .method32348("has_yellow_flower", method14075(Class8487.field36506))
+         .method32351(var0, "yellow_dye_from_dandelion");
+      Class8888.method32342(Class8514.field37922, 2)
+         .method32344(Class8487.field36797)
+         .method32349("yellow_dye")
+         .method32348("has_double_plant", method14075(Class8487.field36797))
+         .method32351(var0, "yellow_dye_from_sunflower");
+      Class8888.method32342(Class8514.field37958, 9)
+         .method32344(Class8487.field36963)
+         .method32348("has_dried_kelp_block", method14075(Class8487.field36963))
+         .method32350(var0);
+      Class8888.method32341(Class8487.field36963)
+         .method32345(Class8514.field37958, 9)
+         .method32348("has_dried_kelp", method14075(Class8514.field37958))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field37007)
+         .method30250('#', Class8514.field38146)
+         .method30250('X', Class8514.field38147)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30253("has_nautilus_core", method14075(Class8514.field38147))
+         .method30253("has_nautilus_shell", method14075(Class8514.field38146))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37014, 4)
+         .method30250('#', Class8487.field36390)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_polished_granite", method14075(Class8487.field36390))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37015, 4)
+         .method30250('#', Class8487.field36861)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_smooth_red_sandstone", method14075(Class8487.field36861))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37016, 4)
+         .method30250('#', Class8487.field36616)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_mossy_stone_bricks", method14075(Class8487.field36616))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37017, 4)
+         .method30250('#', Class8487.field36392)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_polished_diorite", method14075(Class8487.field36392))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37018, 4)
+         .method30250('#', Class8487.field36526)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_mossy_cobblestone", method14075(Class8487.field36526))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37019, 4)
+         .method30250('#', Class8487.field36883)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_end_stone_bricks", method14075(Class8487.field36883))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37020, 4)
+         .method30250('#', Class8487.field36388)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_stone", method14075(Class8487.field36388))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37021, 4)
+         .method30250('#', Class8487.field36859)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_smooth_sandstone", method14075(Class8487.field36859))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37022, 4)
+         .method30250('#', Class8487.field36860)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_smooth_quartz", method14075(Class8487.field36860))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37023, 4)
+         .method30250('#', Class8487.field36389)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_granite", method14075(Class8487.field36389))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37024, 4)
+         .method30250('#', Class8487.field36393)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_andesite", method14075(Class8487.field36393))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37025, 4)
+         .method30250('#', Class8487.field36892)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_red_nether_bricks", method14075(Class8487.field36892))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37026, 4)
+         .method30250('#', Class8487.field36394)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_polished_andesite", method14075(Class8487.field36394))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37027, 4)
+         .method30250('#', Class8487.field36391)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_diorite", method14075(Class8487.field36391))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37028, 6)
+         .method30250('#', Class8487.field36390)
+         .method30252("###")
+         .method30253("has_polished_granite", method14075(Class8487.field36390))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37029, 6)
+         .method30250('#', Class8487.field36861)
+         .method30252("###")
+         .method30253("has_smooth_red_sandstone", method14075(Class8487.field36861))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37030, 6)
+         .method30250('#', Class8487.field36616)
+         .method30252("###")
+         .method30253("has_mossy_stone_bricks", method14075(Class8487.field36616))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37031, 6)
+         .method30250('#', Class8487.field36392)
+         .method30252("###")
+         .method30253("has_polished_diorite", method14075(Class8487.field36392))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37032, 6)
+         .method30250('#', Class8487.field36526)
+         .method30252("###")
+         .method30253("has_mossy_cobblestone", method14075(Class8487.field36526))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37033, 6)
+         .method30250('#', Class8487.field36883)
+         .method30252("###")
+         .method30253("has_end_stone_bricks", method14075(Class8487.field36883))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37034, 6)
+         .method30250('#', Class8487.field36859)
+         .method30252("###")
+         .method30253("has_smooth_sandstone", method14075(Class8487.field36859))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37035, 6)
+         .method30250('#', Class8487.field36860)
+         .method30252("###")
+         .method30253("has_smooth_quartz", method14075(Class8487.field36860))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37036, 6)
+         .method30250('#', Class8487.field36389)
+         .method30252("###")
+         .method30253("has_granite", method14075(Class8487.field36389))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37037, 6)
+         .method30250('#', Class8487.field36393)
+         .method30252("###")
+         .method30253("has_andesite", method14075(Class8487.field36393))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37038, 6)
+         .method30250('#', Class8487.field36892)
+         .method30252("###")
+         .method30253("has_red_nether_bricks", method14075(Class8487.field36892))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37039, 6)
+         .method30250('#', Class8487.field36394)
+         .method30252("###")
+         .method30253("has_polished_andesite", method14075(Class8487.field36394))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37040, 6)
+         .method30250('#', Class8487.field36391)
+         .method30252("###")
+         .method30253("has_diorite", method14075(Class8487.field36391))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37041, 6)
+         .method30250('#', Class8487.field36523)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_bricks", method14075(Class8487.field36523))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37042, 6)
+         .method30250('#', Class8487.field36767)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_prismarine", method14075(Class8487.field36767))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37043, 6)
+         .method30250('#', Class8487.field36835)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_red_sandstone", method14075(Class8487.field36835))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37044, 6)
+         .method30250('#', Class8487.field36616)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_mossy_stone_bricks", method14075(Class8487.field36616))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37045, 6)
+         .method30250('#', Class8487.field36389)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_granite", method14075(Class8487.field36389))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37046, 6)
+         .method30250('#', Class8487.field36615)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_stone_bricks", method14075(Class8487.field36615))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37047, 6)
+         .method30250('#', Class8487.field36642)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_nether_bricks", method14075(Class8487.field36642))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37048, 6)
+         .method30250('#', Class8487.field36393)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_andesite", method14075(Class8487.field36393))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37049, 6)
+         .method30250('#', Class8487.field36892)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_red_nether_bricks", method14075(Class8487.field36892))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37050, 6)
+         .method30250('#', Class8487.field36458)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_sandstone", method14075(Class8487.field36458))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37051, 6)
+         .method30250('#', Class8487.field36883)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_end_stone_bricks", method14075(Class8487.field36883))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37052, 6)
+         .method30250('#', Class8487.field36391)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_diorite", method14075(Class8487.field36391))
+         .method30255(var0);
+      Class8888.method32341(Class8514.field38152)
+         .method32344(Class8514.field37899)
+         .method32344(Class8514.field38062)
+         .method32348("has_creeper_head", method14075(Class8514.field38062))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field38153)
+         .method32344(Class8514.field37899)
+         .method32344(Class8514.field38059)
+         .method32348("has_wither_skeleton_skull", method14075(Class8514.field38059))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field38151)
+         .method32344(Class8514.field37899)
+         .method32344(Class8487.field36515)
+         .method32348("has_oxeye_daisy", method14075(Class8487.field36515))
+         .method32350(var0);
+      Class8888.method32341(Class8514.field38154)
+         .method32344(Class8514.field37899)
+         .method32344(Class8514.field37873)
+         .method32348("has_enchanted_golden_apple", method14075(Class8514.field37873))
+         .method32350(var0);
+      Class8528.method30248(Class8487.field37053, 6)
+         .method30250('~', Class8514.field37838)
+         .method30250('I', Class8487.field37009)
+         .method30252("I~I")
+         .method30252("I I")
+         .method30252("I I")
+         .method30253("has_bamboo", method14075(Class8487.field37009))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37060)
+         .method30250('I', Class8514.field37835)
+         .method30250('-', Class8487.field36845)
+         .method30249('#', Class5985.field26071)
+         .method30252("I-I")
+         .method30252("# #")
+         .method30253("has_stone_slab", method14075(Class8487.field36845))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37057)
+         .method30250('#', Class8487.field36858)
+         .method30250('X', Class8487.field36541)
+         .method30250('I', Class8514.field37801)
+         .method30252("III")
+         .method30252("IXI")
+         .method30252("###")
+         .method30253("has_smooth_stone", method14075(Class8487.field36858))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37056)
+         .method30249('#', Class5985.field26085)
+         .method30250('X', Class8487.field36541)
+         .method30252(" # ")
+         .method30252("#X#")
+         .method30252(" # ")
+         .method30253("has_furnace", method14075(Class8487.field36541))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37058)
+         .method30249('#', Class5985.field26071)
+         .method30250('@', Class8514.field37899)
+         .method30252("@@")
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_paper", method14075(Class8514.field37899))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37062)
+         .method30249('#', Class5985.field26071)
+         .method30250('@', Class8514.field37801)
+         .method30252("@@")
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37059)
+         .method30249('#', Class5985.field26071)
+         .method30250('@', Class8514.field37868)
+         .method30252("@@")
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_flint", method14075(Class8514.field37868))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37063)
+         .method30250('I', Class8514.field37801)
+         .method30250('#', Class8487.field36388)
+         .method30252(" I ")
+         .method30252("###")
+         .method30253("has_stone", method14075(Class8487.field36388))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37129)
+         .method30250('S', Class8514.field37465)
+         .method30250('#', Class8514.field37803)
+         .method30252("SSS")
+         .method30252("S#S")
+         .method30252("SSS")
+         .method30253("has_netherite_ingot", method14075(Class8514.field37803))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37121)
+         .method30250('#', Class8514.field37803)
+         .method30252("###")
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_netherite_ingot", method14075(Class8514.field37803))
+         .method30255(var0);
+      Class8888.method32342(Class8514.field37803, 9)
+         .method32344(Class8487.field37121)
+         .method32349("netherite_ingot")
+         .method32348("has_netherite_block", method14075(Class8487.field37121))
+         .method32351(var0, "netherite_ingot_from_netherite_block");
+      Class8888.method32341(Class8514.field37803)
+         .method32345(Class8514.field37804, 4)
+         .method32345(Class8514.field37802, 4)
+         .method32349("netherite_ingot")
+         .method32348("has_netherite_scrap", method14075(Class8514.field37804))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field37124)
+         .method30250('O', Class8487.field37123)
+         .method30250('G', Class8487.field36587)
+         .method30252("OOO")
+         .method30252("GGG")
+         .method30252("OOO")
+         .method30253("has_obsidian", method14075(Class8487.field37123))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37131, 4)
+         .method30250('#', Class8487.field37130)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_blackstone", method14075(Class8487.field37130))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37142, 4)
+         .method30250('#', Class8487.field37134)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_polished_blackstone", method14075(Class8487.field37134))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37139, 4)
+         .method30250('#', Class8487.field37135)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30253("has_polished_blackstone_bricks", method14075(Class8487.field37135))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37133, 6)
+         .method30250('#', Class8487.field37130)
+         .method30252("###")
+         .method30253("has_blackstone", method14075(Class8487.field37130))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37143, 6)
+         .method30250('#', Class8487.field37134)
+         .method30252("###")
+         .method30253("has_polished_blackstone", method14075(Class8487.field37134))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37138, 6)
+         .method30250('#', Class8487.field37135)
+         .method30252("###")
+         .method30253("has_polished_blackstone_bricks", method14075(Class8487.field37135))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37134, 4)
+         .method30250('S', Class8487.field37130)
+         .method30252("SS")
+         .method30252("SS")
+         .method30253("has_blackstone", method14075(Class8487.field37130))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37135, 4)
+         .method30250('#', Class8487.field37134)
+         .method30252("##")
+         .method30252("##")
+         .method30253("has_polished_blackstone", method14075(Class8487.field37134))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field37137)
+         .method30250('#', Class8487.field37143)
+         .method30252("#")
+         .method30252("#")
+         .method30253("has_polished_blackstone", method14075(Class8487.field37134))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37132, 6)
+         .method30250('#', Class8487.field37130)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_blackstone", method14075(Class8487.field37130))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37146, 6)
+         .method30250('#', Class8487.field37134)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_polished_blackstone", method14075(Class8487.field37134))
+         .method30255(var0);
+      Class8528.method30248(Class8487.field37140, 6)
+         .method30250('#', Class8487.field37135)
+         .method30252("###")
+         .method30252("###")
+         .method30253("has_polished_blackstone_bricks", method14075(Class8487.field37135))
+         .method30255(var0);
+      Class8888.method32341(Class8487.field37145)
+         .method32344(Class8487.field37134)
+         .method32348("has_polished_blackstone", method14075(Class8487.field37134))
+         .method32350(var0);
+      Class8528.method30247(Class8487.field37144)
+         .method30250('#', Class8487.field37134)
+         .method30252("##")
+         .method30253("has_polished_blackstone", method14075(Class8487.field37134))
+         .method30255(var0);
+      Class8528.method30247(Class8487.field36629)
+         .method30250('I', Class8514.field37801)
+         .method30250('N', Class8514.field38128)
+         .method30252("N")
+         .method30252("I")
+         .method30252("N")
+         .method30253("has_iron_nugget", method14075(Class8514.field38128))
+         .method30253("has_iron_ingot", method14075(Class8514.field37801))
+         .method30255(var0);
+      Class7557.method24734(Class6504.field28472).method24735(var0, "armor_dye");
+      Class7557.method24734(Class6504.field28480).method24735(var0, "banner_duplicate");
+      Class7557.method24734(Class6504.field28473).method24735(var0, "book_cloning");
+      Class7557.method24734(Class6504.field28476).method24735(var0, "firework_rocket");
+      Class7557.method24734(Class6504.field28477).method24735(var0, "firework_star");
+      Class7557.method24734(Class6504.field28478).method24735(var0, "firework_star_fade");
+      Class7557.method24734(Class6504.field28474).method24735(var0, "map_cloning");
+      Class7557.method24734(Class6504.field28475).method24735(var0, "map_extending");
+      Class7557.method24734(Class6504.field28484).method24735(var0, "repair_item");
+      Class7557.method24734(Class6504.field28481).method24735(var0, "shield_decoration");
+      Class7557.method24734(Class6504.field28482).method24735(var0, "shulker_box_coloring");
+      Class7557.method24734(Class6504.field28479).method24735(var0, "tipped_arrow");
+      Class7557.method24734(Class6504.field28483).method24735(var0, "suspicious_stew");
+      Class5625.method17666(Class120.method339(Class8514.field38053), Class8514.field38054, 0.35F, 200)
+         .method17667("has_potato", method14075(Class8514.field38053))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8514.field37897), Class8514.field37896, 0.3F, 200)
+         .method17667("has_clay_ball", method14075(Class8514.field37897))
+         .method17668(var0);
+      Class5625.method17666(Class120.method342(Class5985.field26084), Class8514.field37799, 0.15F, 200)
+         .method17667("has_log", method14076(Class5985.field26084))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8514.field38109), Class8514.field38110, 0.1F, 200)
+         .method17667("has_chorus_fruit", method14075(Class8514.field38109))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36420.method11581()), Class8514.field37798, 0.1F, 200)
+         .method17667("has_coal_ore", method14075(Class8487.field36420))
+         .method17669(var0, "coal_from_smelting");
+      Class5625.method17666(Class120.method339(Class8514.field37961), Class8514.field37962, 0.35F, 200)
+         .method17667("has_beef", method14075(Class8514.field37961))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8514.field37963), Class8514.field37964, 0.35F, 200)
+         .method17667("has_chicken", method14075(Class8514.field37963))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8514.field37909), Class8514.field37913, 0.35F, 200)
+         .method17667("has_cod", method14075(Class8514.field37909))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36961), Class8514.field37958, 0.1F, 200)
+         .method17667("has_kelp", method14075(Class8487.field36961))
+         .method17669(var0, "dried_kelp_from_smelting");
+      Class5625.method17666(Class120.method339(Class8514.field37910), Class8514.field37914, 0.35F, 200)
+         .method17667("has_salmon", method14075(Class8514.field37910))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8514.field38090), Class8514.field38091, 0.35F, 200)
+         .method17667("has_mutton", method14075(Class8514.field38090))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8514.field37869), Class8514.field37870, 0.35F, 200)
+         .method17667("has_porkchop", method14075(Class8514.field37869))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8514.field38077), Class8514.field38078, 0.35F, 200)
+         .method17667("has_rabbit", method14075(Class8514.field38077))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36536.method11581()), Class8514.field37800, 1.0F, 200)
+         .method17667("has_diamond_ore", method14075(Class8487.field36536))
+         .method17669(var0, "diamond_from_smelting");
+      Class5625.method17666(Class120.method339(Class8487.field36455.method11581()), Class8514.field37917, 0.2F, 200)
+         .method17667("has_lapis_ore", method14075(Class8487.field36455))
+         .method17669(var0, "lapis_from_smelting");
+      Class5625.method17666(Class120.method339(Class8487.field36656.method11581()), Class8514.field38049, 1.0F, 200)
+         .method17667("has_emerald_ore", method14075(Class8487.field36656))
+         .method17669(var0, "emerald_from_smelting");
+      Class5625.method17666(Class120.method342(Class5985.field26095), Class8487.field36454.method11581(), 0.1F, 200)
+         .method17667("has_sand", method14076(Class5985.field26095))
+         .method17668(var0);
+      Class5625.method17666(Class120.method342(Class5985.field26110), Class8514.field37802, 1.0F, 200)
+         .method17667("has_gold_ore", method14076(Class5985.field26110))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field37005.method11581()), Class8514.field37923, 0.1F, 200)
+         .method17667("has_sea_pickle", method14075(Class8487.field37005))
+         .method17669(var0, "lime_dye_from_smelting");
+      Class5625.method17666(Class120.method339(Class8487.field36574.method11581()), Class8514.field37931, 1.0F, 200)
+         .method17667("has_cactus", method14075(Class8487.field36574))
+         .method17668(var0);
+      Class5625.method17666(
+            Class120.method339(
+               Class8514.field37817,
+               Class8514.field37816,
+               Class8514.field37818,
+               Class8514.field37819,
+               Class8514.field37815,
+               Class8514.field37860,
+               Class8514.field37861,
+               Class8514.field37862,
+               Class8514.field37863,
+               Class8514.field38084
+            ),
+            Class8514.field37969,
+            0.1F,
+            200
+         )
+         .method17667("has_golden_pickaxe", method14075(Class8514.field37817))
+         .method17667("has_golden_shovel", method14075(Class8514.field37816))
+         .method17667("has_golden_axe", method14075(Class8514.field37818))
+         .method17667("has_golden_hoe", method14075(Class8514.field37819))
+         .method17667("has_golden_sword", method14075(Class8514.field37815))
+         .method17667("has_golden_helmet", method14075(Class8514.field37860))
+         .method17667("has_golden_chestplate", method14075(Class8514.field37861))
+         .method17667("has_golden_leggings", method14075(Class8514.field37862))
+         .method17667("has_golden_boots", method14075(Class8514.field37863))
+         .method17667("has_golden_horse_armor", method14075(Class8514.field38084))
+         .method17669(var0, "gold_nugget_from_smelting");
+      Class5625.method17666(
+            Class120.method339(
+               Class8514.field37822,
+               Class8514.field37821,
+               Class8514.field37823,
+               Class8514.field37824,
+               Class8514.field37820,
+               Class8514.field37852,
+               Class8514.field37853,
+               Class8514.field37854,
+               Class8514.field37855,
+               Class8514.field38083,
+               Class8514.field37848,
+               Class8514.field37849,
+               Class8514.field37850,
+               Class8514.field37851
+            ),
+            Class8514.field38128,
+            0.1F,
+            200
+         )
+         .method17667("has_iron_pickaxe", method14075(Class8514.field37822))
+         .method17667("has_iron_shovel", method14075(Class8514.field37821))
+         .method17667("has_iron_axe", method14075(Class8514.field37823))
+         .method17667("has_iron_hoe", method14075(Class8514.field37824))
+         .method17667("has_iron_sword", method14075(Class8514.field37820))
+         .method17667("has_iron_helmet", method14075(Class8514.field37852))
+         .method17667("has_iron_chestplate", method14075(Class8514.field37853))
+         .method17667("has_iron_leggings", method14075(Class8514.field37854))
+         .method17667("has_iron_boots", method14075(Class8514.field37855))
+         .method17667("has_iron_horse_armor", method14075(Class8514.field38083))
+         .method17667("has_chainmail_helmet", method14075(Class8514.field37848))
+         .method17667("has_chainmail_chestplate", method14075(Class8514.field37849))
+         .method17667("has_chainmail_leggings", method14075(Class8514.field37850))
+         .method17667("has_chainmail_boots", method14075(Class8514.field37851))
+         .method17669(var0, "iron_nugget_from_smelting");
+      Class5625.method17666(Class120.method339(Class8487.field36419.method11581()), Class8514.field37801, 0.7F, 200)
+         .method17667("has_iron_ore", method14075(Class8487.field36419.method11581()))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36575), Class8487.field36794.method11581(), 0.35F, 200)
+         .method17667("has_clay_block", method14075(Class8487.field36575))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36580), Class8514.field38071, 0.1F, 200)
+         .method17667("has_netherrack", method14075(Class8487.field36580))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36722), Class8514.field38072, 0.2F, 200)
+         .method17667("has_nether_quartz_ore", method14075(Class8487.field36722))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36567), Class8514.field37887, 0.7F, 200)
+         .method17667("has_redstone_ore", method14075(Class8487.field36567))
+         .method17669(var0, "redstone_from_smelting");
+      Class5625.method17666(Class120.method339(Class8487.field36453), Class8487.field36452.method11581(), 0.15F, 200)
+         .method17667("has_wet_sponge", method14075(Class8487.field36453))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36399), Class8487.field36388.method11581(), 0.1F, 200)
+         .method17667("has_cobblestone", method14075(Class8487.field36399))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36388), Class8487.field36858.method11581(), 0.1F, 200)
+         .method17667("has_stone", method14075(Class8487.field36388))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36458), Class8487.field36859.method11581(), 0.1F, 200)
+         .method17667("has_sandstone", method14075(Class8487.field36458))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36835), Class8487.field36861.method11581(), 0.1F, 200)
+         .method17667("has_red_sandstone", method14075(Class8487.field36835))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36724), Class8487.field36860.method11581(), 0.1F, 200)
+         .method17667("has_quartz_block", method14075(Class8487.field36724))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36615), Class8487.field36617.method11581(), 0.1F, 200)
+         .method17667("has_stone_bricks", method14075(Class8487.field36615))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36745), Class8487.field36928.method11581(), 0.1F, 200)
+         .method17667("has_black_terracotta", method14075(Class8487.field36745))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36741), Class8487.field36924.method11581(), 0.1F, 200)
+         .method17667("has_blue_terracotta", method14075(Class8487.field36741))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36742), Class8487.field36925.method11581(), 0.1F, 200)
+         .method17667("has_brown_terracotta", method14075(Class8487.field36742))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36739), Class8487.field36922.method11581(), 0.1F, 200)
+         .method17667("has_cyan_terracotta", method14075(Class8487.field36739))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36737), Class8487.field36920.method11581(), 0.1F, 200)
+         .method17667("has_gray_terracotta", method14075(Class8487.field36737))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36743), Class8487.field36926.method11581(), 0.1F, 200)
+         .method17667("has_green_terracotta", method14075(Class8487.field36743))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36733), Class8487.field36916.method11581(), 0.1F, 200)
+         .method17667("has_light_blue_terracotta", method14075(Class8487.field36733))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36738), Class8487.field36921.method11581(), 0.1F, 200)
+         .method17667("has_light_gray_terracotta", method14075(Class8487.field36738))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36735), Class8487.field36918.method11581(), 0.1F, 200)
+         .method17667("has_lime_terracotta", method14075(Class8487.field36735))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36732), Class8487.field36915.method11581(), 0.1F, 200)
+         .method17667("has_magenta_terracotta", method14075(Class8487.field36732))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36731), Class8487.field36914.method11581(), 0.1F, 200)
+         .method17667("has_orange_terracotta", method14075(Class8487.field36731))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36736), Class8487.field36919.method11581(), 0.1F, 200)
+         .method17667("has_pink_terracotta", method14075(Class8487.field36736))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36740), Class8487.field36923.method11581(), 0.1F, 200)
+         .method17667("has_purple_terracotta", method14075(Class8487.field36740))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36744), Class8487.field36927.method11581(), 0.1F, 200)
+         .method17667("has_red_terracotta", method14075(Class8487.field36744))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36730), Class8487.field36913.method11581(), 0.1F, 200)
+         .method17667("has_white_terracotta", method14075(Class8487.field36730))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36734), Class8487.field36917.method11581(), 0.1F, 200)
+         .method17667("has_yellow_terracotta", method14075(Class8487.field36734))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field37122), Class8514.field37804, 2.0F, 200)
+         .method17667("has_ancient_debris", method14075(Class8487.field37122))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field37135), Class8487.field37136.method11581(), 0.1F, 200)
+         .method17667("has_blackstone_bricks", method14075(Class8487.field37135))
+         .method17668(var0);
+      Class5625.method17666(Class120.method339(Class8487.field36642), Class8487.field37148.method11581(), 0.1F, 200)
+         .method17667("has_nether_bricks", method14075(Class8487.field36642))
+         .method17668(var0);
+      Class5625.method17665(Class120.method339(Class8487.field36419.method11581()), Class8514.field37801, 0.7F, 100)
+         .method17667("has_iron_ore", method14075(Class8487.field36419.method11581()))
+         .method17669(var0, "iron_ingot_from_blasting");
+      Class5625.method17665(Class120.method342(Class5985.field26110), Class8514.field37802, 1.0F, 100)
+         .method17667("has_gold_ore", method14076(Class5985.field26110))
+         .method17669(var0, "gold_ingot_from_blasting");
+      Class5625.method17665(Class120.method339(Class8487.field36536.method11581()), Class8514.field37800, 1.0F, 100)
+         .method17667("has_diamond_ore", method14075(Class8487.field36536))
+         .method17669(var0, "diamond_from_blasting");
+      Class5625.method17665(Class120.method339(Class8487.field36455.method11581()), Class8514.field37917, 0.2F, 100)
+         .method17667("has_lapis_ore", method14075(Class8487.field36455))
+         .method17669(var0, "lapis_from_blasting");
+      Class5625.method17665(Class120.method339(Class8487.field36567), Class8514.field37887, 0.7F, 100)
+         .method17667("has_redstone_ore", method14075(Class8487.field36567))
+         .method17669(var0, "redstone_from_blasting");
+      Class5625.method17665(Class120.method339(Class8487.field36420.method11581()), Class8514.field37798, 0.1F, 100)
+         .method17667("has_coal_ore", method14075(Class8487.field36420))
+         .method17669(var0, "coal_from_blasting");
+      Class5625.method17665(Class120.method339(Class8487.field36656.method11581()), Class8514.field38049, 1.0F, 100)
+         .method17667("has_emerald_ore", method14075(Class8487.field36656))
+         .method17669(var0, "emerald_from_blasting");
+      Class5625.method17665(Class120.method339(Class8487.field36722), Class8514.field38072, 0.2F, 100)
+         .method17667("has_nether_quartz_ore", method14075(Class8487.field36722))
+         .method17669(var0, "quartz_from_blasting");
+      Class5625.method17665(
+            Class120.method339(
+               Class8514.field37817,
+               Class8514.field37816,
+               Class8514.field37818,
+               Class8514.field37819,
+               Class8514.field37815,
+               Class8514.field37860,
+               Class8514.field37861,
+               Class8514.field37862,
+               Class8514.field37863,
+               Class8514.field38084
+            ),
+            Class8514.field37969,
+            0.1F,
+            100
+         )
+         .method17667("has_golden_pickaxe", method14075(Class8514.field37817))
+         .method17667("has_golden_shovel", method14075(Class8514.field37816))
+         .method17667("has_golden_axe", method14075(Class8514.field37818))
+         .method17667("has_golden_hoe", method14075(Class8514.field37819))
+         .method17667("has_golden_sword", method14075(Class8514.field37815))
+         .method17667("has_golden_helmet", method14075(Class8514.field37860))
+         .method17667("has_golden_chestplate", method14075(Class8514.field37861))
+         .method17667("has_golden_leggings", method14075(Class8514.field37862))
+         .method17667("has_golden_boots", method14075(Class8514.field37863))
+         .method17667("has_golden_horse_armor", method14075(Class8514.field38084))
+         .method17669(var0, "gold_nugget_from_blasting");
+      Class5625.method17665(
+            Class120.method339(
+               Class8514.field37822,
+               Class8514.field37821,
+               Class8514.field37823,
+               Class8514.field37824,
+               Class8514.field37820,
+               Class8514.field37852,
+               Class8514.field37853,
+               Class8514.field37854,
+               Class8514.field37855,
+               Class8514.field38083,
+               Class8514.field37848,
+               Class8514.field37849,
+               Class8514.field37850,
+               Class8514.field37851
+            ),
+            Class8514.field38128,
+            0.1F,
+            100
+         )
+         .method17667("has_iron_pickaxe", method14075(Class8514.field37822))
+         .method17667("has_iron_shovel", method14075(Class8514.field37821))
+         .method17667("has_iron_axe", method14075(Class8514.field37823))
+         .method17667("has_iron_hoe", method14075(Class8514.field37824))
+         .method17667("has_iron_sword", method14075(Class8514.field37820))
+         .method17667("has_iron_helmet", method14075(Class8514.field37852))
+         .method17667("has_iron_chestplate", method14075(Class8514.field37853))
+         .method17667("has_iron_leggings", method14075(Class8514.field37854))
+         .method17667("has_iron_boots", method14075(Class8514.field37855))
+         .method17667("has_iron_horse_armor", method14075(Class8514.field38083))
+         .method17667("has_chainmail_helmet", method14075(Class8514.field37848))
+         .method17667("has_chainmail_chestplate", method14075(Class8514.field37849))
+         .method17667("has_chainmail_leggings", method14075(Class8514.field37850))
+         .method17667("has_chainmail_boots", method14075(Class8514.field37851))
+         .method17669(var0, "iron_nugget_from_blasting");
+      Class5625.method17665(Class120.method339(Class8487.field37122), Class8514.field37804, 2.0F, 100)
+         .method17667("has_ancient_debris", method14075(Class8487.field37122))
+         .method17669(var0, "netherite_scrap_from_blasting");
+      method14073(var0, "smoking", Class6504.field28487, 100);
+      method14073(var0, "campfire_cooking", Class6504.field28488, 600);
+      Class9067.method33770(Class120.method339(Class8487.field36388), Class8487.field36845, 2)
+         .method33771("has_stone", method14075(Class8487.field36388))
+         .method33772(var0, "stone_slab_from_stone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36388), Class8487.field37020)
+         .method33771("has_stone", method14075(Class8487.field36388))
+         .method33772(var0, "stone_stairs_from_stone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36388), Class8487.field36615)
+         .method33771("has_stone", method14075(Class8487.field36388))
+         .method33772(var0, "stone_bricks_from_stone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36388), Class8487.field36852, 2)
+         .method33771("has_stone", method14075(Class8487.field36388))
+         .method33772(var0, "stone_brick_slab_from_stone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36388), Class8487.field36639)
+         .method33771("has_stone", method14075(Class8487.field36388))
+         .method33772(var0, "stone_brick_stairs_from_stone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36388), Class8487.field36618)
+         .method33771("has_stone", method14075(Class8487.field36388))
+         .method33772(var0, "chiseled_stone_bricks_stone_from_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36388), Class8487.field37046)
+         .method33771("has_stone", method14075(Class8487.field36388))
+         .method33772(var0, "stone_brick_walls_from_stone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36458), Class8487.field36460)
+         .method33771("has_sandstone", method14075(Class8487.field36458))
+         .method33772(var0, "cut_sandstone_from_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36458), Class8487.field36847, 2)
+         .method33771("has_sandstone", method14075(Class8487.field36458))
+         .method33772(var0, "sandstone_slab_from_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36458), Class8487.field36848, 2)
+         .method33771("has_sandstone", method14075(Class8487.field36458))
+         .method33772(var0, "cut_sandstone_slab_from_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36460), Class8487.field36848, 2)
+         .method33771("has_cut_sandstone", method14075(Class8487.field36458))
+         .method33772(var0, "cut_sandstone_slab_from_cut_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36458), Class8487.field36655)
+         .method33771("has_sandstone", method14075(Class8487.field36458))
+         .method33772(var0, "sandstone_stairs_from_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36458), Class8487.field37050)
+         .method33771("has_sandstone", method14075(Class8487.field36458))
+         .method33772(var0, "sandstone_wall_from_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36458), Class8487.field36459)
+         .method33771("has_sandstone", method14075(Class8487.field36458))
+         .method33772(var0, "chiseled_sandstone_from_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36835), Class8487.field36837)
+         .method33771("has_red_sandstone", method14075(Class8487.field36835))
+         .method33772(var0, "cut_red_sandstone_from_red_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36835), Class8487.field36855, 2)
+         .method33771("has_red_sandstone", method14075(Class8487.field36835))
+         .method33772(var0, "red_sandstone_slab_from_red_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36835), Class8487.field36856, 2)
+         .method33771("has_red_sandstone", method14075(Class8487.field36835))
+         .method33772(var0, "cut_red_sandstone_slab_from_red_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36837), Class8487.field36856, 2)
+         .method33771("has_cut_red_sandstone", method14075(Class8487.field36835))
+         .method33772(var0, "cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36835), Class8487.field36838)
+         .method33771("has_red_sandstone", method14075(Class8487.field36835))
+         .method33772(var0, "red_sandstone_stairs_from_red_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36835), Class8487.field37043)
+         .method33771("has_red_sandstone", method14075(Class8487.field36835))
+         .method33772(var0, "red_sandstone_wall_from_red_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36835), Class8487.field36836)
+         .method33771("has_red_sandstone", method14075(Class8487.field36835))
+         .method33772(var0, "chiseled_red_sandstone_from_red_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36724), Class8487.field36854, 2)
+         .method33771("has_quartz_block", method14075(Class8487.field36724))
+         .method33772(var0, "quartz_slab_from_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36724), Class8487.field36727)
+         .method33771("has_quartz_block", method14075(Class8487.field36724))
+         .method33772(var0, "quartz_stairs_from_quartz_block_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36724), Class8487.field36726)
+         .method33771("has_quartz_block", method14075(Class8487.field36724))
+         .method33772(var0, "quartz_pillar_from_quartz_block_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36724), Class8487.field36725)
+         .method33771("has_quartz_block", method14075(Class8487.field36724))
+         .method33772(var0, "chiseled_quartz_block_from_quartz_block_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36724), Class8487.field37149)
+         .method33771("has_quartz_block", method14075(Class8487.field36724))
+         .method33772(var0, "quartz_bricks_from_quartz_block_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36399), Class8487.field36551)
+         .method33771("has_cobblestone", method14075(Class8487.field36399))
+         .method33772(var0, "cobblestone_stairs_from_cobblestone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36399), Class8487.field36850, 2)
+         .method33771("has_cobblestone", method14075(Class8487.field36399))
+         .method33772(var0, "cobblestone_slab_from_cobblestone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36399), Class8487.field36666)
+         .method33771("has_cobblestone", method14075(Class8487.field36399))
+         .method33772(var0, "cobblestone_wall_from_cobblestone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36615), Class8487.field36852, 2)
+         .method33771("has_stone_bricks", method14075(Class8487.field36615))
+         .method33772(var0, "stone_brick_slab_from_stone_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36615), Class8487.field36639)
+         .method33771("has_stone_bricks", method14075(Class8487.field36615))
+         .method33772(var0, "stone_brick_stairs_from_stone_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36615), Class8487.field37046)
+         .method33771("has_stone_bricks", method14075(Class8487.field36615))
+         .method33772(var0, "stone_brick_wall_from_stone_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36615), Class8487.field36618)
+         .method33771("has_stone_bricks", method14075(Class8487.field36615))
+         .method33772(var0, "chiseled_stone_bricks_from_stone_bricks_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36523), Class8487.field36851, 2)
+         .method33771("has_bricks", method14075(Class8487.field36523))
+         .method33772(var0, "brick_slab_from_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36523), Class8487.field36638)
+         .method33771("has_bricks", method14075(Class8487.field36523))
+         .method33772(var0, "brick_stairs_from_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36523), Class8487.field37041)
+         .method33771("has_bricks", method14075(Class8487.field36523))
+         .method33772(var0, "brick_wall_from_bricks_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36642), Class8487.field36853, 2)
+         .method33771("has_nether_bricks", method14075(Class8487.field36642))
+         .method33772(var0, "nether_brick_slab_from_nether_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36642), Class8487.field36644)
+         .method33771("has_nether_bricks", method14075(Class8487.field36642))
+         .method33772(var0, "nether_brick_stairs_from_nether_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36642), Class8487.field37047)
+         .method33771("has_nether_bricks", method14075(Class8487.field36642))
+         .method33772(var0, "nether_brick_wall_from_nether_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36642), Class8487.field37147)
+         .method33771("has_nether_bricks", method14075(Class8487.field36642))
+         .method33772(var0, "chiseled_nether_bricks_from_nether_bricks_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36892), Class8487.field37038, 2)
+         .method33771("has_nether_bricks", method14075(Class8487.field36892))
+         .method33772(var0, "red_nether_brick_slab_from_red_nether_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36892), Class8487.field37025)
+         .method33771("has_nether_bricks", method14075(Class8487.field36892))
+         .method33772(var0, "red_nether_brick_stairs_from_red_nether_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36892), Class8487.field37049)
+         .method33771("has_nether_bricks", method14075(Class8487.field36892))
+         .method33772(var0, "red_nether_brick_wall_from_red_nether_bricks_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36880), Class8487.field36857, 2)
+         .method33771("has_purpur_block", method14075(Class8487.field36880))
+         .method33772(var0, "purpur_slab_from_purpur_block_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36880), Class8487.field36882)
+         .method33771("has_purpur_block", method14075(Class8487.field36880))
+         .method33772(var0, "purpur_stairs_from_purpur_block_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36880), Class8487.field36881)
+         .method33771("has_purpur_block", method14075(Class8487.field36880))
+         .method33772(var0, "purpur_pillar_from_purpur_block_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36767), Class8487.field36773, 2)
+         .method33771("has_prismarine", method14075(Class8487.field36767))
+         .method33772(var0, "prismarine_slab_from_prismarine_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36767), Class8487.field36770)
+         .method33771("has_prismarine", method14075(Class8487.field36767))
+         .method33772(var0, "prismarine_stairs_from_prismarine_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36767), Class8487.field37042)
+         .method33771("has_prismarine", method14075(Class8487.field36767))
+         .method33772(var0, "prismarine_wall_from_prismarine_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36768), Class8487.field36774, 2)
+         .method33771("has_prismarine_brick", method14075(Class8487.field36768))
+         .method33772(var0, "prismarine_brick_slab_from_prismarine_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36768), Class8487.field36771)
+         .method33771("has_prismarine_brick", method14075(Class8487.field36768))
+         .method33772(var0, "prismarine_brick_stairs_from_prismarine_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36769), Class8487.field36775, 2)
+         .method33771("has_dark_prismarine", method14075(Class8487.field36769))
+         .method33772(var0, "dark_prismarine_slab_from_dark_prismarine_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36769), Class8487.field36772)
+         .method33771("has_dark_prismarine", method14075(Class8487.field36769))
+         .method33772(var0, "dark_prismarine_stairs_from_dark_prismarine_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36393), Class8487.field37037, 2)
+         .method33771("has_andesite", method14075(Class8487.field36393))
+         .method33772(var0, "andesite_slab_from_andesite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36393), Class8487.field37024)
+         .method33771("has_andesite", method14075(Class8487.field36393))
+         .method33772(var0, "andesite_stairs_from_andesite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36393), Class8487.field37048)
+         .method33771("has_andesite", method14075(Class8487.field36393))
+         .method33772(var0, "andesite_wall_from_andesite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36393), Class8487.field36394)
+         .method33771("has_andesite", method14075(Class8487.field36393))
+         .method33772(var0, "polished_andesite_from_andesite_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36393), Class8487.field37039, 2)
+         .method33771("has_andesite", method14075(Class8487.field36393))
+         .method33772(var0, "polished_andesite_slab_from_andesite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36393), Class8487.field37026)
+         .method33771("has_andesite", method14075(Class8487.field36393))
+         .method33772(var0, "polished_andesite_stairs_from_andesite_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36394), Class8487.field37039, 2)
+         .method33771("has_polished_andesite", method14075(Class8487.field36394))
+         .method33772(var0, "polished_andesite_slab_from_polished_andesite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36394), Class8487.field37026)
+         .method33771("has_polished_andesite", method14075(Class8487.field36394))
+         .method33772(var0, "polished_andesite_stairs_from_polished_andesite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36583), Class8487.field36584)
+         .method33771("has_basalt", method14075(Class8487.field36583))
+         .method33772(var0, "polished_basalt_from_basalt_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36389), Class8487.field37036, 2)
+         .method33771("has_granite", method14075(Class8487.field36389))
+         .method33772(var0, "granite_slab_from_granite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36389), Class8487.field37023)
+         .method33771("has_granite", method14075(Class8487.field36389))
+         .method33772(var0, "granite_stairs_from_granite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36389), Class8487.field37045)
+         .method33771("has_granite", method14075(Class8487.field36389))
+         .method33772(var0, "granite_wall_from_granite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36389), Class8487.field36390)
+         .method33771("has_granite", method14075(Class8487.field36389))
+         .method33772(var0, "polished_granite_from_granite_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36389), Class8487.field37028, 2)
+         .method33771("has_granite", method14075(Class8487.field36389))
+         .method33772(var0, "polished_granite_slab_from_granite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36389), Class8487.field37014)
+         .method33771("has_granite", method14075(Class8487.field36389))
+         .method33772(var0, "polished_granite_stairs_from_granite_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36390), Class8487.field37028, 2)
+         .method33771("has_polished_granite", method14075(Class8487.field36390))
+         .method33772(var0, "polished_granite_slab_from_polished_granite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36390), Class8487.field37014)
+         .method33771("has_polished_granite", method14075(Class8487.field36390))
+         .method33772(var0, "polished_granite_stairs_from_polished_granite_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36391), Class8487.field37040, 2)
+         .method33771("has_diorite", method14075(Class8487.field36391))
+         .method33772(var0, "diorite_slab_from_diorite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36391), Class8487.field37027)
+         .method33771("has_diorite", method14075(Class8487.field36391))
+         .method33772(var0, "diorite_stairs_from_diorite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36391), Class8487.field37052)
+         .method33771("has_diorite", method14075(Class8487.field36391))
+         .method33772(var0, "diorite_wall_from_diorite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36391), Class8487.field36392)
+         .method33771("has_diorite", method14075(Class8487.field36391))
+         .method33772(var0, "polished_diorite_from_diorite_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36391), Class8487.field37031, 2)
+         .method33771("has_diorite", method14075(Class8487.field36392))
+         .method33772(var0, "polished_diorite_slab_from_diorite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36391), Class8487.field37017)
+         .method33771("has_diorite", method14075(Class8487.field36392))
+         .method33772(var0, "polished_diorite_stairs_from_diorite_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36392), Class8487.field37031, 2)
+         .method33771("has_polished_diorite", method14075(Class8487.field36392))
+         .method33772(var0, "polished_diorite_slab_from_polished_diorite_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36392), Class8487.field37017)
+         .method33771("has_polished_diorite", method14075(Class8487.field36392))
+         .method33772(var0, "polished_diorite_stairs_from_polished_diorite_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36616), Class8487.field37030, 2)
+         .method33771("has_mossy_stone_bricks", method14075(Class8487.field36616))
+         .method33772(var0, "mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36616), Class8487.field37016)
+         .method33771("has_mossy_stone_bricks", method14075(Class8487.field36616))
+         .method33772(var0, "mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36616), Class8487.field37044)
+         .method33771("has_mossy_stone_bricks", method14075(Class8487.field36616))
+         .method33772(var0, "mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36526), Class8487.field37032, 2)
+         .method33771("has_mossy_cobblestone", method14075(Class8487.field36526))
+         .method33772(var0, "mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36526), Class8487.field37018)
+         .method33771("has_mossy_cobblestone", method14075(Class8487.field36526))
+         .method33772(var0, "mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36526), Class8487.field36667)
+         .method33771("has_mossy_cobblestone", method14075(Class8487.field36526))
+         .method33772(var0, "mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36859), Class8487.field37034, 2)
+         .method33771("has_smooth_sandstone", method14075(Class8487.field36859))
+         .method33772(var0, "smooth_sandstone_slab_from_smooth_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36859), Class8487.field37021)
+         .method33771("has_mossy_cobblestone", method14075(Class8487.field36859))
+         .method33772(var0, "smooth_sandstone_stairs_from_smooth_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36861), Class8487.field37029, 2)
+         .method33771("has_smooth_red_sandstone", method14075(Class8487.field36861))
+         .method33772(var0, "smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36861), Class8487.field37015)
+         .method33771("has_smooth_red_sandstone", method14075(Class8487.field36861))
+         .method33772(var0, "smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36860), Class8487.field37035, 2)
+         .method33771("has_smooth_quartz", method14075(Class8487.field36860))
+         .method33772(var0, "smooth_quartz_slab_from_smooth_quartz_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36860), Class8487.field37022)
+         .method33771("has_smooth_quartz", method14075(Class8487.field36860))
+         .method33772(var0, "smooth_quartz_stairs_from_smooth_quartz_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36883), Class8487.field37033, 2)
+         .method33771("has_end_stone_brick", method14075(Class8487.field36883))
+         .method33772(var0, "end_stone_brick_slab_from_end_stone_brick_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36883), Class8487.field37019)
+         .method33771("has_end_stone_brick", method14075(Class8487.field36883))
+         .method33772(var0, "end_stone_brick_stairs_from_end_stone_brick_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36883), Class8487.field37051)
+         .method33771("has_end_stone_brick", method14075(Class8487.field36883))
+         .method33772(var0, "end_stone_brick_wall_from_end_stone_brick_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36651), Class8487.field36883)
+         .method33771("has_end_stone", method14075(Class8487.field36651))
+         .method33772(var0, "end_stone_bricks_from_end_stone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36651), Class8487.field37033, 2)
+         .method33771("has_end_stone", method14075(Class8487.field36651))
+         .method33772(var0, "end_stone_brick_slab_from_end_stone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36651), Class8487.field37019)
+         .method33771("has_end_stone", method14075(Class8487.field36651))
+         .method33772(var0, "end_stone_brick_stairs_from_end_stone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field36651), Class8487.field37051)
+         .method33771("has_end_stone", method14075(Class8487.field36651))
+         .method33772(var0, "end_stone_brick_wall_from_end_stone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field36858), Class8487.field36846, 2)
+         .method33771("has_smooth_stone", method14075(Class8487.field36858))
+         .method33772(var0, "smooth_stone_slab_from_smooth_stone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field37130), Class8487.field37133, 2)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "blackstone_slab_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37131)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "blackstone_stairs_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37132)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "blackstone_wall_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37134)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "polished_blackstone_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37146)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "polished_blackstone_wall_from_blackstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field37130), Class8487.field37143, 2)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "polished_blackstone_slab_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37142)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "polished_blackstone_stairs_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37137)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "chiseled_polished_blackstone_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37135)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "polished_blackstone_bricks_from_blackstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field37130), Class8487.field37138, 2)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "polished_blackstone_brick_slab_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37139)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "polished_blackstone_brick_stairs_from_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37130), Class8487.field37140)
+         .method33771("has_blackstone", method14075(Class8487.field37130))
+         .method33772(var0, "polished_blackstone_brick_wall_from_blackstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field37134), Class8487.field37143, 2)
+         .method33771("has_polished_blackstone", method14075(Class8487.field37134))
+         .method33772(var0, "polished_blackstone_slab_from_polished_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37134), Class8487.field37142)
+         .method33771("has_polished_blackstone", method14075(Class8487.field37134))
+         .method33772(var0, "polished_blackstone_stairs_from_polished_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37134), Class8487.field37135)
+         .method33771("has_polished_blackstone", method14075(Class8487.field37134))
+         .method33772(var0, "polished_blackstone_bricks_from_polished_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37134), Class8487.field37146)
+         .method33771("has_polished_blackstone", method14075(Class8487.field37134))
+         .method33772(var0, "polished_blackstone_wall_from_polished_blackstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field37134), Class8487.field37138, 2)
+         .method33771("has_polished_blackstone", method14075(Class8487.field37134))
+         .method33772(var0, "polished_blackstone_brick_slab_from_polished_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37134), Class8487.field37139)
+         .method33771("has_polished_blackstone", method14075(Class8487.field37134))
+         .method33772(var0, "polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37134), Class8487.field37140)
+         .method33771("has_polished_blackstone", method14075(Class8487.field37134))
+         .method33772(var0, "polished_blackstone_brick_wall_from_polished_blackstone_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37134), Class8487.field37137)
+         .method33771("has_polished_blackstone", method14075(Class8487.field37134))
+         .method33772(var0, "chiseled_polished_blackstone_from_polished_blackstone_stonecutting");
+      Class9067.method33770(Class120.method339(Class8487.field37135), Class8487.field37138, 2)
+         .method33771("has_polished_blackstone_bricks", method14075(Class8487.field37135))
+         .method33772(var0, "polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37135), Class8487.field37139)
+         .method33771("has_polished_blackstone_bricks", method14075(Class8487.field37135))
+         .method33772(var0, "polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting");
+      Class9067.method33769(Class120.method339(Class8487.field37135), Class8487.field37140)
+         .method33771("has_polished_blackstone_bricks", method14075(Class8487.field37135))
+         .method33772(var0, "polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting");
+      method14048(var0, Class8514.field37857, Class8514.field37865);
+      method14048(var0, Class8514.field37858, Class8514.field37866);
+      method14048(var0, Class8514.field37856, Class8514.field37864);
+      method14048(var0, Class8514.field37859, Class8514.field37867);
+      method14048(var0, Class8514.field37825, Class8514.field37830);
+      method14048(var0, Class8514.field37828, Class8514.field37833);
+      method14048(var0, Class8514.field37827, Class8514.field37832);
+      method14048(var0, Class8514.field37829, Class8514.field37834);
+      method14048(var0, Class8514.field37826, Class8514.field37831);
+   }
+
+   private static void method14048(Consumer<Class4664> var0, Class3257 var1, Class3257 var2) {
+      Class9828.method38783(Class120.method339(var1), Class120.method339(Class8514.field37803), var2)
+         .method38784("has_netherite_ingot", method14075(Class8514.field37803))
+         .method38785(var0, Class2348.field16075.method9181(var2.method11581()).method8292() + "_smithing");
+   }
+
+   private static void method14049(Consumer<Class4664> var0, Class3303 var1, Class7608<Class3257> var2) {
+      Class8888.method32342(var1, 4).method32343(var2).method32349("planks").method32348("has_log", method14076(var2)).method32350(var0);
+   }
+
+   private static void method14050(Consumer<Class4664> var0, Class3303 var1, Class7608<Class3257> var2) {
+      Class8888.method32342(var1, 4).method32343(var2).method32349("planks").method32348("has_logs", method14076(var2)).method32350(var0);
+   }
+
+   private static void method14051(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 3)
+         .method30250('#', var2)
+         .method30252("##")
+         .method30252("##")
+         .method30254("bark")
+         .method30253("has_log", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14052(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30247(var1)
+         .method30250('#', var2)
+         .method30252("# #")
+         .method30252("###")
+         .method30254("boat")
+         .method30253("in_water", method14074(Class8487.field36413))
+         .method30255(var0);
+   }
+
+   private static void method14053(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8888.method32341(var1).method32344(var2).method32349("wooden_button").method32348("has_planks", method14075(var2)).method32350(var0);
+   }
+
+   private static void method14054(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 3)
+         .method30250('#', var2)
+         .method30252("##")
+         .method30252("##")
+         .method30252("##")
+         .method30254("wooden_door")
+         .method30253("has_planks", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14055(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 3)
+         .method30250('#', Class8514.field37835)
+         .method30250('W', var2)
+         .method30252("W#W")
+         .method30252("W#W")
+         .method30254("wooden_fence")
+         .method30253("has_planks", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14056(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30247(var1)
+         .method30250('#', Class8514.field37835)
+         .method30250('W', var2)
+         .method30252("#W#")
+         .method30252("#W#")
+         .method30254("wooden_fence_gate")
+         .method30253("has_planks", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14057(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30247(var1)
+         .method30250('#', var2)
+         .method30252("##")
+         .method30254("wooden_pressure_plate")
+         .method30253("has_planks", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14058(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 6)
+         .method30250('#', var2)
+         .method30252("###")
+         .method30254("wooden_slab")
+         .method30253("has_planks", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14059(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 4)
+         .method30250('#', var2)
+         .method30252("#  ")
+         .method30252("## ")
+         .method30252("###")
+         .method30254("wooden_stairs")
+         .method30253("has_planks", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14060(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 2)
+         .method30250('#', var2)
+         .method30252("###")
+         .method30252("###")
+         .method30254("wooden_trapdoor")
+         .method30253("has_planks", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14061(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      String var5 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      Class8528.method30248(var1, 3)
+         .method30254("sign")
+         .method30250('#', var2)
+         .method30250('X', Class8514.field37835)
+         .method30252("###")
+         .method30252("###")
+         .method30252(" X ")
+         .method30253("has_" + var5, method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14062(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8888.method32341(var1)
+         .method32344(var2)
+         .method32344(Class8487.field36489)
+         .method32349("wool")
+         .method32348("has_white_wool", method14075(Class8487.field36489))
+         .method32350(var0);
+   }
+
+   private static void method14063(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      String var5 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      Class8528.method30248(var1, 3)
+         .method30250('#', var2)
+         .method30252("##")
+         .method30254("carpet")
+         .method30253("has_" + var5, method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14064(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      String var5 = Class2348.field16075.method9181(var1.method11581()).method8292();
+      String var6 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      Class8528.method30248(var1, 8)
+         .method30250('#', Class8487.field36778)
+         .method30250('$', var2)
+         .method30252("###")
+         .method30252("#$#")
+         .method30252("###")
+         .method30254("carpet")
+         .method30253("has_white_carpet", method14075(Class8487.field36778))
+         .method30253("has_" + var6, method14075(var2))
+         .method30256(var0, var5 + "_from_white_carpet");
+   }
+
+   private static void method14065(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      String var5 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      Class8528.method30247(var1)
+         .method30250('#', var2)
+         .method30249('X', Class5985.field26071)
+         .method30252("###")
+         .method30252("XXX")
+         .method30254("bed")
+         .method30253("has_" + var5, method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14066(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      String var5 = Class2348.field16075.method9181(var1.method11581()).method8292();
+      Class8888.method32341(var1)
+         .method32344(Class8514.field37938)
+         .method32344(var2)
+         .method32349("dyed_bed")
+         .method32348("has_bed", method14075(Class8514.field37938))
+         .method32351(var0, var5 + "_from_white_bed");
+   }
+
+   private static void method14067(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      String var5 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      Class8528.method30247(var1)
+         .method30250('#', var2)
+         .method30250('|', Class8514.field37835)
+         .method30252("###")
+         .method30252("###")
+         .method30252(" | ")
+         .method30254("banner")
+         .method30253("has_" + var5, method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14068(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 8)
+         .method30250('#', Class8487.field36454)
+         .method30250('X', var2)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30254("stained_glass")
+         .method30253("has_glass", method14075(Class8487.field36454))
+         .method30255(var0);
+   }
+
+   private static void method14069(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 16)
+         .method30250('#', var2)
+         .method30252("###")
+         .method30252("###")
+         .method30254("stained_glass_pane")
+         .method30253("has_glass", method14075(var2))
+         .method30255(var0);
+   }
+
+   private static void method14070(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      String var5 = Class2348.field16075.method9181(var1.method11581()).method8292();
+      String var6 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      Class8528.method30248(var1, 8)
+         .method30250('#', Class8487.field36630)
+         .method30250('$', var2)
+         .method30252("###")
+         .method30252("#$#")
+         .method30252("###")
+         .method30254("stained_glass_pane")
+         .method30253("has_glass_pane", method14075(Class8487.field36630))
+         .method30253("has_" + var6, method14075(var2))
+         .method30256(var0, var5 + "_from_glass_pane");
+   }
+
+   private static void method14071(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8528.method30248(var1, 8)
+         .method30250('#', Class8487.field36794)
+         .method30250('X', var2)
+         .method30252("###")
+         .method30252("#X#")
+         .method30252("###")
+         .method30254("stained_terracotta")
+         .method30253("has_terracotta", method14075(Class8487.field36794))
+         .method30255(var0);
+   }
+
+   private static void method14072(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+      Class8888.method32342(var1, 8)
+         .method32344(var2)
+         .method32345(Class8487.field36415, 4)
+         .method32345(Class8487.field36417, 4)
+         .method32349("concrete_powder")
+         .method32348("has_sand", method14075(Class8487.field36415))
+         .method32348("has_gravel", method14075(Class8487.field36417))
+         .method32350(var0);
+   }
+
+   private static void method14073(Consumer<Class4664> var0, String var1, Class6503<?> var2, int var3) {
+      Class5625.method17664(Class120.method339(Class8514.field37961), Class8514.field37962, 0.35F, var3, var2)
+         .method17667("has_beef", method14075(Class8514.field37961))
+         .method17669(var0, "cooked_beef_from_" + var1);
+      Class5625.method17664(Class120.method339(Class8514.field37963), Class8514.field37964, 0.35F, var3, var2)
+         .method17667("has_chicken", method14075(Class8514.field37963))
+         .method17669(var0, "cooked_chicken_from_" + var1);
+      Class5625.method17664(Class120.method339(Class8514.field37909), Class8514.field37913, 0.35F, var3, var2)
+         .method17667("has_cod", method14075(Class8514.field37909))
+         .method17669(var0, "cooked_cod_from_" + var1);
+      Class5625.method17664(Class120.method339(Class8487.field36961), Class8514.field37958, 0.1F, var3, var2)
+         .method17667("has_kelp", method14075(Class8487.field36961))
+         .method17669(var0, "dried_kelp_from_" + var1);
+      Class5625.method17664(Class120.method339(Class8514.field37910), Class8514.field37914, 0.35F, var3, var2)
+         .method17667("has_salmon", method14075(Class8514.field37910))
+         .method17669(var0, "cooked_salmon_from_" + var1);
+      Class5625.method17664(Class120.method339(Class8514.field38090), Class8514.field38091, 0.35F, var3, var2)
+         .method17667("has_mutton", method14075(Class8514.field38090))
+         .method17669(var0, "cooked_mutton_from_" + var1);
+      Class5625.method17664(Class120.method339(Class8514.field37869), Class8514.field37870, 0.35F, var3, var2)
+         .method17667("has_porkchop", method14075(Class8514.field37869))
+         .method17669(var0, "cooked_porkchop_from_" + var1);
+      Class5625.method17664(Class120.method339(Class8514.field38053), Class8514.field38054, 0.35F, var3, var2)
+         .method17667("has_potato", method14075(Class8514.field38053))
+         .method17669(var0, "baked_potato_from_" + var1);
+      Class5625.method17664(Class120.method339(Class8514.field38077), Class8514.field38078, 0.35F, var3, var2)
+         .method17667("has_rabbit", method14075(Class8514.field38077))
+         .method17669(var0, "cooked_rabbit_from_" + var1);
+   }
+
+   private static Class4466 method14074(Class3209 var0) {
+      return new Class4466(Class9587.field44822, var0, Class7340.field31445);
+   }
+
+   private static Class4491 method14075(Class3303 var0) {
+      return method14077(Class9735.method38146().method38147(var0).method38151());
+   }
+
+   private static Class4491 method14076(Class7608<Class3257> var0) {
+      return method14077(Class9735.method38146().method38148(var0).method38151());
+   }
+
+   private static Class4491 method14077(Class8634... var0) {
+      return new Class4491(Class9587.field44822, Class8840.field39936, Class8840.field39936, Class8840.field39936, var0);
+   }
+
+   @Override
+   public String method14012() {
+      return "Recipes";
+   }
+}

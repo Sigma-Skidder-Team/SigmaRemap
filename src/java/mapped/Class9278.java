@@ -1,0 +1,281 @@
+package mapped;
+
+import com.google.common.collect.Lists;
+import com.mojang.datafixers.util.Pair;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+import java.util.function.Consumer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Class9278 {
+   private static final Logger field42666 = LogManager.getLogger();
+   private final Class1657 field42667;
+   private final Entity field42668;
+   private final int field42669;
+   private final boolean field42670;
+   private final Consumer<Packet<?>> field42671;
+   private long field42672;
+   private long field42673;
+   private long field42674;
+   private int field42675;
+   private int field42676;
+   private int field42677;
+   private Vector3d field42678 = Vector3d.field18047;
+   private int field42679;
+   private int field42680;
+   private List<Entity> field42681 = Collections.<Entity>emptyList();
+   private boolean field42682;
+   private boolean field42683;
+
+   public Class9278(Class1657 var1, Entity var2, int var3, boolean var4, Consumer<Packet<?>> var5) {
+      this.field42667 = var1;
+      this.field42671 = var5;
+      this.field42668 = var2;
+      this.field42669 = var3;
+      this.field42670 = var4;
+      this.method34974();
+      this.field42675 = Class9679.method37767(var2.field5031 * 256.0F / 360.0F);
+      this.field42676 = Class9679.method37767(var2.field5032 * 256.0F / 360.0F);
+      this.field42677 = Class9679.method37767(var2.method3142() * 256.0F / 360.0F);
+      this.field42683 = var2.method3226();
+   }
+
+   public void method34969() {
+      List var3 = this.field42668.method3408();
+      if (!var3.equals(this.field42681)) {
+         this.field42681 = var3;
+         this.field42671.accept(new Class5485(this.field42668));
+      }
+
+      if (this.field42668 instanceof Class997 && this.field42679 % 10 == 0) {
+         Class997 var4 = (Class997)this.field42668;
+         Class8848 var5 = var4.method4090();
+         if (var5.method32107() instanceof Class3316) {
+            Class7529 var6 = Class3316.method11861(var5, this.field42667);
+
+            for (Class878 var8 : this.field42667.method6870()) {
+               var6.method24594(var8, var5);
+               Packet var9 = ((Class3316)var5.method32107()).method11858(var5, this.field42667, var8);
+               if (var9 != null) {
+                  var8.field4855.method15671(var9);
+               }
+            }
+         }
+
+         this.method34973();
+      }
+
+      if (this.field42679 % this.field42669 == 0 || this.field42668.field5078 || this.field42668.method3210().method35447()) {
+         if (!this.field42668.method3328()) {
+            this.field42680++;
+            int var22 = Class9679.method37767(this.field42668.field5031 * 256.0F / 360.0F);
+            int var25 = Class9679.method37767(this.field42668.field5032 * 256.0F / 360.0F);
+            Vector3d var27 = this.field42668.method3431().method11336(Class5476.method17232(this.field42672, this.field42673, this.field42674));
+            boolean var28 = var27.method11349() >= 7.6293945E-6F;
+            Object var29 = null;
+            boolean var30 = var28 || this.field42679 % 60 == 0;
+            boolean var10 = Math.abs(var22 - this.field42675) >= 1 || Math.abs(var25 - this.field42676) >= 1;
+            if (this.field42679 > 0 || this.field42668 instanceof Class884) {
+               long var11 = Class5476.method17229(var27.field18048);
+               long var13 = Class5476.method17229(var27.field18049);
+               long var15 = Class5476.method17229(var27.field18050);
+               boolean var17 = var11 < -32768L || var11 > 32767L || var13 < -32768L || var13 > 32767L || var15 < -32768L || var15 > 32767L;
+               if (var17 || this.field42680 > 400 || this.field42682 || this.field42683 != this.field42668.method3226()) {
+                  this.field42683 = this.field42668.method3226();
+                  this.field42680 = 0;
+                  var29 = new Class5595(this.field42668);
+               } else if ((!var30 || !var10) && !(this.field42668 instanceof Class884)) {
+                  if (!var30) {
+                     if (var10) {
+                        var29 = new Class5479(this.field42668.method3205(), (byte)var22, (byte)var25, this.field42668.method3226());
+                     }
+                  } else {
+                     var29 = new Class5477(
+                        this.field42668.method3205(), (short)((int)var11), (short)((int)var13), (short)((int)var15), this.field42668.method3226()
+                     );
+                  }
+               } else {
+                  var29 = new Class5478(
+                     this.field42668.method3205(),
+                     (short)((int)var11),
+                     (short)((int)var13),
+                     (short)((int)var15),
+                     (byte)var22,
+                     (byte)var25,
+                     this.field42668.method3226()
+                  );
+               }
+            }
+
+            if ((this.field42670 || this.field42668.field5078 || this.field42668 instanceof Class880 && ((Class880)this.field42668).method3165())
+               && this.field42679 > 0) {
+               Vector3d var18 = this.field42668.method3433();
+               double var19 = var18.method11342(this.field42678);
+               if (var19 > 1.0E-7 || var19 > 0.0 && var18.method11349() == 0.0) {
+                  this.field42678 = var18;
+                  this.field42671.accept(new Class5590(this.field42668.method3205(), this.field42678));
+               }
+            }
+
+            if (var29 != null) {
+               this.field42671.accept((Packet<?>)var29);
+            }
+
+            this.method34973();
+            if (var30) {
+               this.method34974();
+            }
+
+            if (var10) {
+               this.field42675 = var22;
+               this.field42676 = var25;
+            }
+
+            this.field42682 = false;
+         } else {
+            int var21 = Class9679.method37767(this.field42668.field5031 * 256.0F / 360.0F);
+            int var24 = Class9679.method37767(this.field42668.field5032 * 256.0F / 360.0F);
+            boolean var26 = Math.abs(var21 - this.field42675) >= 1 || Math.abs(var24 - this.field42676) >= 1;
+            if (var26) {
+               this.field42671.accept(new Class5479(this.field42668.method3205(), (byte)var21, (byte)var24, this.field42668.method3226()));
+               this.field42675 = var21;
+               this.field42676 = var24;
+            }
+
+            this.method34974();
+            this.method34973();
+            this.field42682 = true;
+         }
+
+         int var23 = Class9679.method37767(this.field42668.method3142() * 256.0F / 360.0F);
+         if (Math.abs(var23 - this.field42677) >= 1) {
+            this.field42671.accept(new Class5516(this.field42668, (byte)var23));
+            this.field42677 = var23;
+         }
+
+         this.field42668.field5078 = false;
+      }
+
+      this.field42679++;
+      if (this.field42668.field5039) {
+         this.method34976(new Class5590(this.field42668));
+         this.field42668.field5039 = false;
+      }
+   }
+
+   public void method34970(Class878 var1) {
+      this.field42668.method3401(var1);
+      var1.method2811(this.field42668);
+   }
+
+   public void method34971(Class878 var1) {
+      this.method34972(var1.field4855::method15671);
+      this.field42668.method3400(var1);
+      var1.method2812(this.field42668);
+   }
+
+   public void method34972(Consumer<Packet<?>> var1) {
+      if (this.field42668.field5041) {
+         field42666.warn("Fetching packet for removed entity " + this.field42668);
+      }
+
+      Packet var4 = this.field42668.method2835();
+      this.field42677 = Class9679.method37767(this.field42668.method3142() * 256.0F / 360.0F);
+      var1.accept(var4);
+      if (!this.field42668.method3210().method35456()) {
+         var1.accept(new Class5553(this.field42668.method3205(), this.field42668.method3210(), true));
+      }
+
+      boolean var5 = this.field42670;
+      if (this.field42668 instanceof Class880) {
+         Collection var6 = ((Class880)this.field42668).method3088().method33379();
+         if (!var6.isEmpty()) {
+            var1.accept(new Class5550(this.field42668.method3205(), var6));
+         }
+
+         if (((Class880)this.field42668).method3165()) {
+            var5 = true;
+         }
+      }
+
+      this.field42678 = this.field42668.method3433();
+      if (var5 && !(var4 instanceof Class5582)) {
+         var1.accept(new Class5590(this.field42668.method3205(), this.field42678));
+      }
+
+      if (this.field42668 instanceof Class880) {
+         ArrayList var12 = Lists.newArrayList();
+
+         for (Class2106 var10 : Class2106.values()) {
+            Class8848 var11 = ((Class880)this.field42668).method2943(var10);
+            if (!var11.method32105()) {
+               var12.add(Pair.of(var10, var11.method32126()));
+            }
+         }
+
+         if (!var12.isEmpty()) {
+            var1.accept(new Class5588(this.field42668.method3205(), var12));
+         }
+      }
+
+      if (this.field42668 instanceof Class880) {
+         Class880 var13 = (Class880)this.field42668;
+
+         for (Class2023 var16 : var13.method3031()) {
+            var1.accept(new Class5537(this.field42668.method3205(), var16));
+         }
+      }
+
+      if (!this.field42668.method3408().isEmpty()) {
+         var1.accept(new Class5485(this.field42668));
+      }
+
+      if (this.field42668.method3328()) {
+         var1.accept(new Class5485(this.field42668.method3421()));
+      }
+
+      if (this.field42668 instanceof Class1006) {
+         Class1006 var14 = (Class1006)this.field42668;
+         if (var14.method4296()) {
+            var1.accept(new Class5593(var14, var14.method4297()));
+         }
+      }
+   }
+
+   private void method34973() {
+      Class9361 var3 = this.field42668.method3210();
+      if (var3.method35447()) {
+         this.method34976(new Class5553(this.field42668.method3205(), var3, false));
+      }
+
+      if (this.field42668 instanceof Class880) {
+         Set var4 = ((Class880)this.field42668).method3088().method33378();
+         if (!var4.isEmpty()) {
+            this.method34976(new Class5550(this.field42668.method3205(), var4));
+         }
+
+         var4.clear();
+      }
+   }
+
+   private void method34974() {
+      this.field42672 = Class5476.method17229(this.field42668.getPosX());
+      this.field42673 = Class5476.method17229(this.field42668.getPosY());
+      this.field42674 = Class5476.method17229(this.field42668.getPosZ());
+   }
+
+   public Vector3d method34975() {
+      return Class5476.method17232(this.field42672, this.field42673, this.field42674);
+   }
+
+   private void method34976(Packet<?> var1) {
+      this.field42671.accept(var1);
+      if (this.field42668 instanceof Class878) {
+         ((Class878)this.field42668).field4855.method15671(var1);
+      }
+   }
+}

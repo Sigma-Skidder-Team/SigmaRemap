@@ -1,0 +1,32 @@
+package mapped;
+
+import java.io.IOException;
+
+public class Class5054 extends Class5046 {
+   private int field23053;
+   private int field23054;
+   private int field23055;
+   private double field23056;
+
+   public Class5054() {
+      super("FD Hint Sample Entry");
+   }
+
+   @Override
+   public void method15262(Class8827 var1) throws IOException {
+      super.method15262(var1);
+      this.field23053 = (int)var1.method31863(2);
+      this.field23054 = (int)var1.method31863(2);
+      this.field23055 = (int)var1.method31863(2);
+      this.field23056 = var1.method31869(8, 8);
+      this.method15441(var1);
+   }
+
+   public int method15464() {
+      return this.field23055;
+   }
+
+   public double method15465() {
+      return this.field23056;
+   }
+}

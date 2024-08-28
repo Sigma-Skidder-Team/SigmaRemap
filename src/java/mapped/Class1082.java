@@ -1,0 +1,171 @@
+package mapped;
+
+import javax.annotation.Nullable;
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
+
+public abstract class Class1082 extends Class1009 implements Class1022 {
+   private final Class2758<Class1082> field5946 = new Class2758<Class1082>(this, 1.0, 20, 15.0F);
+   private final Class2647 field5947 = new Class2652(this, this, 1.2, false);
+
+   public Class1082(Class8992<? extends Class1082> var1, Class1655 var2) {
+      super(var1, var2);
+      this.method5031();
+   }
+
+   @Override
+   public void method4219() {
+      this.field5600.method20002(2, new Class2617(this));
+      this.field5600.method20002(3, new Class2640(this, 1.0));
+      this.field5600.method20002(3, new Class2770<Class1012>(this, Class1012.class, 6.0F, 1.0, 1.2));
+      this.field5600.method20002(5, new Class2737(this, 1.0));
+      this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.method20002(6, new Class2668(this));
+      this.field5601.method20002(1, new Class2704(this));
+      this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
+      this.field5601.method20002(3, new Class2709<Class1058>(this, Class1058.class, true));
+      this.field5601.method20002(3, new Class2709<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
+   }
+
+   public static Class7037 method5029() {
+      return Class1009.method4343().method21849(Class9173.field42108, 0.25);
+   }
+
+   @Override
+   public void method3241(BlockPos var1, Class7380 var2) {
+      this.method2863(this.method5030(), 0.15F, 1.0F);
+   }
+
+   public abstract Class9455 method5030();
+
+   @Override
+   public Class7809 method3089() {
+      return Class7809.field33506;
+   }
+
+   @Override
+   public void method2871() {
+      boolean var3 = this.method4310();
+      if (var3) {
+         Class8848 var4 = this.method2943(Class2106.field13736);
+         if (!var4.method32105()) {
+            if (var4.method32115()) {
+               var4.method32118(var4.method32117() + this.field5054.nextInt(2));
+               if (var4.method32117() >= var4.method32119()) {
+                  this.method3184(Class2106.field13736);
+                  this.method2944(Class2106.field13736, Class8848.field39973);
+               }
+            }
+
+            var3 = false;
+         }
+
+         if (var3) {
+            this.method3221(8);
+         }
+      }
+
+      super.method2871();
+   }
+
+   @Override
+   public void method2868() {
+      super.method2868();
+      if (this.method3421() instanceof Class1046) {
+         Class1046 var3 = (Class1046)this.method3421();
+         this.field4965 = var3.field4965;
+      }
+   }
+
+   @Override
+   public void method4270(Class9755 var1) {
+      super.method4270(var1);
+      this.method2944(Class2106.field13731, new Class8848(Class8514.field37796));
+   }
+
+   @Nullable
+   @Override
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+      var4 = super.method4276(var1, var2, var3, var4, var5);
+      this.method4270(var2);
+      this.method4273(var2);
+      this.method5031();
+      this.method4281(this.field5054.nextFloat() < 0.55F * var2.method38330());
+      if (this.method2943(Class2106.field13736).method32105()) {
+         LocalDate var8 = LocalDate.now();
+         int var9 = var8.get(ChronoField.DAY_OF_MONTH);
+         int var10 = var8.get(ChronoField.MONTH_OF_YEAR);
+         if (var10 == 10 && var9 == 31 && this.field5054.nextFloat() < 0.25F) {
+            this.method2944(Class2106.field13736, new Class8848(!(this.field5054.nextFloat() < 0.1F) ? Class8487.field36589 : Class8487.field36590));
+            this.field5607[Class2106.field13736.method8773()] = 0.0F;
+         }
+      }
+
+      return var4;
+   }
+
+   public void method5031() {
+      if (this.field5024 != null && !this.field5024.field9020) {
+         this.field5600.method20003(this.field5947);
+         this.field5600.method20003(this.field5946);
+         Class8848 var3 = this.method3094(Class9456.method36389(this, Class8514.field37796));
+         if (var3.method32107() != Class8514.field37796) {
+            this.field5600.method20002(4, this.field5947);
+         } else {
+            byte var4 = 20;
+            if (this.field5024.method6997() != Class2197.field14354) {
+               var4 = 40;
+            }
+
+            this.field5946.method10961(var4);
+            this.field5600.method20002(4, this.field5946);
+         }
+      }
+   }
+
+   @Override
+   public void method4530(Class880 var1, float var2) {
+      Class8848 var5 = this.method2983(this.method3094(Class9456.method36389(this, Class8514.field37796)));
+      Class884 var6 = this.method5032(var5, var2);
+      double var7 = var1.getPosX() - this.getPosX();
+      double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
+      double var11 = var1.getPosZ() - this.getPosZ();
+      double var13 = (double)Class9679.method37766(var7 * var7 + var11 * var11);
+      var6.method3462(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.field5024.method6997().method8905() * 4));
+      this.method2863(Class6067.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
+      this.field5024.method6916(var6);
+   }
+
+   public Class884 method5032(Class8848 var1, float var2) {
+      return Class9456.method36390(this, var1, var2);
+   }
+
+   @Override
+   public boolean method4234(Class3262 var1) {
+      return var1 == Class8514.field37796;
+   }
+
+   @Override
+   public void method2723(Class39 var1) {
+      super.method2723(var1);
+      this.method5031();
+   }
+
+   @Override
+   public void method2944(Class2106 var1, Class8848 var2) {
+      super.method2944(var1, var2);
+      if (!this.field5024.field9020) {
+         this.method5031();
+      }
+   }
+
+   @Override
+   public float method2957(Class2090 var1, Class8847 var2) {
+      return 1.74F;
+   }
+
+   @Override
+   public double method2894() {
+      return -0.6;
+   }
+}

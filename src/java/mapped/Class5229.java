@@ -1,0 +1,110 @@
+package mapped;
+
+import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.jello.event.EventTarget;
+import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.Class4429;
+import com.mentalfrostbyte.jello.module.Module;
+import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.notification.Notification;
+import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+
+public class Class5229 extends Module {
+    public ModuleCategory field23576;
+    public Module field23577;
+    private final String field23578 = ">";
+
+    public Class5229() {
+        super(ModuleCategory.MOVEMENT, "VClip", "Climp Walls like spiders!");
+    }
+
+    public static boolean method16291(String var0) {
+        return var0.matches("-?\\d+(\\.\\d+)?");
+    }
+
+    @EventTarget
+    private void method16289(Class4429 var1) {
+        if (this.method15996()) {
+            if (field23386.field1299.field44637.method8509() && var1.method13976() == Class2116.field13791) {
+                if (!(field23386.field1339.field5032 < 0.0F)) {
+                    this.method16294(this.method16292());
+                } else {
+                    this.method16294(this.method16293());
+                }
+            }
+        }
+    }
+
+    @EventTarget
+    private void method16290(Class4402 var1) {
+        if (var1.method13932() instanceof Class5522) {
+            Class5522 var4 = (Class5522) var1.method13932();
+            String var5 = var4.method17359();
+            String var6 = "hclip";
+            if (!var5.startsWith("/" + var6)) {
+                return;
+            }
+
+            var1.method13900(true);
+            int var7 = 0;
+            var5 = var5.replace("/" + var6, "").replaceAll("\\s", "");
+            if (method16291(var5)) {
+                var7 = Integer.parseInt(var5);
+            }
+
+            float var8 = (float) Math.toRadians(field23386.field1339.field5031 + 90.0F);
+            double var9 = Class9679.method37764(var8) * (float) var7;
+            double var11 = Class9679.method37763(var8) * (float) var7;
+            field23386.field1339
+                    .method3215(field23386.field1339.getPosX() + var9, field23386.field1339.getPosY(), field23386.field1339.getPosZ() + var11);
+        }
+    }
+
+    private int method16292() {
+        boolean var3 = false;
+        int var4 = 0;
+
+        for (int var5 = 0; var5 < 10; var5++) {
+            BlockPos var6 = new BlockPos(field23386.field1339.getPosX(), field23386.field1339.getPosY() - (double) var5, field23386.field1339.getPosZ());
+            if (field23386.field1338.method6738(var6).method23410() && var3) {
+                var4 = -var5;
+                break;
+            }
+
+            var3 = field23386.field1338.method6738(var6).method23410();
+        }
+
+        return var4;
+    }
+
+    private int method16293() {
+        boolean var3 = false;
+        int var4 = 0;
+
+        for (int var5 = 10; var5 > 0; var5--) {
+            BlockPos var6 = new BlockPos(field23386.field1339.getPosX(), field23386.field1339.getPosY() + (double) var5, field23386.field1339.getPosZ());
+            if (field23386.field1338.method6738(var6).method23410() && var3 && !field23386.field1338.method6738(var6.method8313()).method23410()) {
+                var4 = var5;
+                break;
+            }
+
+            var3 = field23386.field1338.method6738(var6).method23410();
+        }
+
+        return var4;
+    }
+
+    private void method16294(int var1) {
+        if (var1 == 0) {
+            Class5628.method17678("§cCouldn't VClip");
+        } else {
+            field23386.getClientPlayNetHandler()
+                    .sendPacket(
+                            new Class5605(field23386.field1339.getPosX(), field23386.field1339.getPosY() + (double) var1, field23386.field1339.getPosZ(), false)
+                    );
+            field23386.field1339
+                    .method3215(field23386.field1339.getPosX(), field23386.field1339.getPosY() + (double) var1, field23386.field1339.getPosZ());
+            Client.getInstance().getNotificationManager().post(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, ResourcesDecrypter.directionIconPNG));
+        }
+    }
+}

@@ -1,0 +1,2048 @@
+package mapped;
+
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
+import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.jello.event.impl.Class4417;
+import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mojang.authlib.GameProfile;
+import com.mojang.datafixers.util.Either;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.event.ClickEvent;
+import net.minecraft.util.text.event.ClickEvent$Action;
+
+import javax.annotation.Nullable;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.function.Predicate;
+
+public abstract class PlayerEntity extends Class880 {
+   public static final Class8847 field4893 = Class8847.method32101(0.6F, 1.8F);
+   private static final Map<Class2090, Class8847> field4894 = ImmutableMap.<Class2090, Class8847>builder()
+      .put(Class2090.field13619, field4893)
+      .put(Class2090.field13621, field4941)
+      .put(Class2090.field13620, Class8847.method32101(0.6F, 0.6F))
+      .put(Class2090.field13622, Class8847.method32101(0.6F, 0.6F))
+      .put(Class2090.field13623, Class8847.method32101(0.6F, 0.6F))
+      .put(Class2090.field13624, Class8847.method32101(0.6F, 1.5F))
+      .put(Class2090.field13625, Class8847.method32102(0.2F, 0.2F))
+      .build();
+   private static final Class9289<Float> field4895 = Class9361.<Float>method35441(PlayerEntity.class, Class7784.field33392);
+   private static final Class9289<Integer> field4896 = Class9361.<Integer>method35441(PlayerEntity.class, Class7784.field33391);
+   public static final Class9289<Byte> field4897 = Class9361.<Byte>method35441(PlayerEntity.class, Class7784.field33390);
+   public static final Class9289<Byte> field4898 = Class9361.<Byte>method35441(PlayerEntity.class, Class7784.field33390);
+   public static final Class9289<Class39> field4899 = Class9361.<Class39>method35441(PlayerEntity.class, Class7784.field33405);
+   public static final Class9289<Class39> field4900 = Class9361.<Class39>method35441(PlayerEntity.class, Class7784.field33405);
+   private long field4901;
+   public Class974 field4902 = new Class974(this);
+   public Class980 field4903 = new Class980();
+   public final Class5830 field4904;
+   public Class5812 field4905;
+   public Class9640 field4906 = new Class9640();
+   public int field4907;
+   public float field4908;
+   public float field4909;
+   public int field4910;
+   public double field4911;
+   public double field4912;
+   public double field4913;
+   public double field4914;
+   public double field4915;
+   public double field4916;
+   private int field4917;
+   public boolean field4918;
+   public final Class6799 field4919 = new Class6799();
+   public int field4920;
+   public int field4921;
+   public float field4922;
+   public int field4923;
+   public final float field4924 = 0.02F;
+   private int field4925;
+   private final GameProfile field4926;
+   private boolean field4927;
+   private Class8848 field4928 = Class8848.field39973;
+   private final Class6462 field4929 = this.method2733();
+   public Class904 field4930;
+
+   public PlayerEntity(Class1655 var1, BlockPos var2, float var3, GameProfile var4) {
+      super(Class8992.field41111, var1);
+      this.method3374(method2960(var4));
+      this.field4926 = var4;
+      this.field4904 = new Class5830(this.field4902, !var1.field9020, this);
+      this.field4905 = this.field4904;
+      this.method3273((double)var2.method8304() + 0.5, (double)(var2.getY() + 1), (double)var2.method8306() + 0.5, var3, 0.0F);
+      this.field4978 = 180.0F;
+   }
+
+   public boolean method2848(Class1655 var1, BlockPos var2, Class1894 var3) {
+      if (!var3.method8156()) {
+         return false;
+      } else if (var3 != Class1894.field11105) {
+         if (this.method2935()) {
+            return false;
+         } else {
+            Class8848 var6 = this.method3090();
+            return var6.method32105() || !var6.method32175(var1.method6817(), new Class9632(var1, var2, false));
+         }
+      } else {
+         return true;
+      }
+   }
+
+   public static Class7037 method2849() {
+      return Class880.method2997()
+         .method21849(Class9173.field42110, 1.0)
+         .method21849(Class9173.field42108, 0.1F)
+         .method21848(Class9173.field42112)
+         .method21848(Class9173.field42115);
+   }
+
+   @Override
+   public void method2850() {
+      super.method2850();
+      this.field5063.method35442(field4895, 0.0F);
+      this.field5063.method35442(field4896, 0);
+      this.field5063.method35442(field4897, (byte)0);
+      this.field5063.method35442(field4898, (byte)1);
+      this.field5063.method35442(field4899, new Class39());
+      this.field5063.method35442(field4900, new Class39());
+   }
+
+   @Override
+   public void tick() {
+      this.field5052 = this.method2800();
+      if (this.method2800()) {
+         this.field5036 = false;
+      }
+
+      if (this.field4910 > 0) {
+         this.field4910--;
+      }
+
+      if (!this.method3176()) {
+         if (this.field4917 > 0) {
+            this.field4917++;
+            if (this.field4917 >= 110) {
+               this.field4917 = 0;
+            }
+         }
+      } else {
+         this.field4917++;
+         if (this.field4917 > 100) {
+            this.field4917 = 100;
+         }
+
+         if (!this.field5024.field9020 && this.field5024.method6740()) {
+            this.method2757(false, true);
+         }
+      }
+
+      this.method2854();
+      super.tick();
+      if (!this.field5024.field9020 && this.field4905 != null && !this.field4905.method18103(this)) {
+         this.method2772();
+         this.field4905 = this.field4904;
+      }
+
+      this.method2856();
+      if (!this.field5024.field9020) {
+         this.field4906.method37571(this);
+         this.method2911(Class8876.field40106);
+         if (this.method3066()) {
+            this.method2911(Class8876.field40107);
+         }
+
+         if (this.method3334()) {
+            this.method2911(Class8876.field40109);
+         }
+
+         if (!this.method3176()) {
+            this.method2911(Class8876.field40108);
+         }
+      }
+
+      double var4 = Class9679.method37778(this.getPosX(), -2.9999999E7, 2.9999999E7);
+      double var6 = Class9679.method37778(this.getPosZ(), -2.9999999E7, 2.9999999E7);
+      if (var4 != this.getPosX() || var6 != this.getPosZ()) {
+         this.method3215(var4, this.getPosY(), var6);
+      }
+
+      this.field4958++;
+      Class8848 var8 = this.method3090();
+      if (!Class8848.method32128(this.field4928, var8)) {
+         if (!Class8848.method32131(this.field4928, var8)) {
+            this.method2975();
+         }
+
+         this.field4928 = var8.method32126();
+      }
+
+      this.method2855();
+      this.field4929.method19637();
+      this.method2857();
+   }
+
+   public boolean method2851() {
+      return this.method3331();
+   }
+
+   public boolean method2852() {
+      return this.method3331();
+   }
+
+   public boolean method2853() {
+      return this.method3331();
+   }
+
+   public boolean method2854() {
+      this.field4918 = this.method3263(Class8953.field40469);
+      return this.field4918;
+   }
+
+   private void method2855() {
+      Class8848 var3 = this.method2943(Class2106.field13736);
+      if (var3.method32107() == Class8514.field37792 && !this.method3263(Class8953.field40469)) {
+         this.method3035(new Class2023(Class8254.field35479, 200, 0, false, false, true));
+      }
+   }
+
+   public Class6462 method2733() {
+      return new Class6462();
+   }
+
+   private void method2856() {
+      this.field4911 = this.field4914;
+      this.field4912 = this.field4915;
+      this.field4913 = this.field4916;
+      double var3 = this.getPosX() - this.field4914;
+      double var5 = this.getPosY() - this.field4915;
+      double var7 = this.getPosZ() - this.field4916;
+      double var9 = 10.0;
+      if (var3 > 10.0) {
+         this.field4914 = this.getPosX();
+         this.field4911 = this.field4914;
+      }
+
+      if (var7 > 10.0) {
+         this.field4916 = this.getPosZ();
+         this.field4913 = this.field4916;
+      }
+
+      if (var5 > 10.0) {
+         this.field4915 = this.getPosY();
+         this.field4912 = this.field4915;
+      }
+
+      if (var3 < -10.0) {
+         this.field4914 = this.getPosX();
+         this.field4911 = this.field4914;
+      }
+
+      if (var7 < -10.0) {
+         this.field4916 = this.getPosZ();
+         this.field4913 = this.field4916;
+      }
+
+      if (var5 < -10.0) {
+         this.field4915 = this.getPosY();
+         this.field4912 = this.field4915;
+      }
+
+      this.field4914 += var3 * 0.25;
+      this.field4916 += var7 * 0.25;
+      this.field4915 += var5 * 0.25;
+   }
+
+   public void method2857() {
+      if (this.method3314(Class2090.field13622)) {
+         Class2090 var3;
+         if (!this.method3165()) {
+            if (!this.method3176()) {
+               if (!this.method2951()) {
+                  if (!this.method3130()) {
+                     if (this.method3331() && !this.field4919.field29607) {
+                        var3 = Class2090.field13624;
+                     } else {
+                        var3 = Class2090.field13619;
+                     }
+                  } else {
+                     var3 = Class2090.field13623;
+                  }
+               } else {
+                  var3 = Class2090.field13622;
+               }
+            } else {
+               var3 = Class2090.field13621;
+            }
+         } else {
+            var3 = Class2090.field13620;
+         }
+
+         Class2090 var4;
+         if (this.method2800() || this.method3328() || this.method3314(var3)) {
+            var4 = var3;
+         } else if (!this.method3314(Class2090.field13624)) {
+            var4 = Class2090.field13622;
+         } else {
+            var4 = Class2090.field13624;
+         }
+
+         this.method3211(var4);
+      }
+   }
+
+   @Override
+   public int method2858() {
+      return !this.field4919.field29606 ? 80 : 1;
+   }
+
+   @Override
+   public Class9455 method2859() {
+      return Class6067.field26969;
+   }
+
+   @Override
+   public Class9455 method2860() {
+      return Class6067.field26967;
+   }
+
+   @Override
+   public Class9455 method2861() {
+      return Class6067.field26968;
+   }
+
+   @Override
+   public int method2862() {
+      return 10;
+   }
+
+   @Override
+   public void method2863(Class9455 var1, float var2, float var3) {
+      this.field5024.method6743(this, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3);
+   }
+
+   public void method2834(Class9455 var1, Class2266 var2, float var3, float var4) {
+   }
+
+   @Override
+   public Class2266 method2864() {
+      return Class2266.field14735;
+   }
+
+   @Override
+   public int method2865() {
+      return 20;
+   }
+
+   @Override
+   public void method2866(byte var1) {
+      if (var1 != 9) {
+         if (var1 != 23) {
+            if (var1 != 22) {
+               if (var1 != 43) {
+                  super.method2866(var1);
+               } else {
+                  this.method2867(Class7940.field34053);
+               }
+            } else {
+               this.field4927 = true;
+            }
+         } else {
+            this.field4927 = false;
+         }
+      } else {
+         this.method2786();
+      }
+   }
+
+   private void method2867(Class7436 var1) {
+      for (int var4 = 0; var4 < 5; var4++) {
+         double var5 = this.field5054.nextGaussian() * 0.02;
+         double var7 = this.field5054.nextGaussian() * 0.02;
+         double var9 = this.field5054.nextGaussian() * 0.02;
+         this.field5024.method6746(var1, this.method3438(1.0), this.method3441() + 1.0, this.method3445(1.0), var5, var7, var9);
+      }
+   }
+
+   public void method2772() {
+      this.field4905 = this.field4904;
+   }
+
+   @Override
+   public void method2868() {
+      if (this.method2852() && this.method3328()) {
+         this.method2759();
+         this.method3330(false);
+      } else {
+         double var3 = this.getPosX();
+         double var5 = this.getPosY();
+         double var7 = this.getPosZ();
+         super.method2868();
+         this.field4908 = this.field4909;
+         this.field4909 = 0.0F;
+         this.method2920(this.getPosX() - var3, this.getPosY() - var5, this.getPosZ() - var7);
+      }
+   }
+
+   @Override
+   public void method2869() {
+      this.method3211(Class2090.field13619);
+      super.method2869();
+      this.method3043(this.method3075());
+      this.field4955 = 0;
+   }
+
+   @Override
+   public void updateEntityActionState() {
+      super.updateEntityActionState();
+      this.method3084();
+      this.field4967 = this.field5031;
+   }
+
+   @Override
+   public void method2871() {
+      if (this.field4907 > 0) {
+         this.field4907--;
+      }
+
+      if (this.field5024.method6997() == Class2197.field14351 && this.field5024.method6789().method17135(Class5462.field24231)) {
+         if (this.method3042() < this.method3075() && this.field5055 % 20 == 0) {
+            this.method3041(1.0F);
+         }
+
+         if (this.field4906.method37575() && this.field5055 % 10 == 0) {
+            this.field4906.method37578(this.field4906.method37574() + 1);
+         }
+      }
+
+      this.field4902.method4044();
+      this.field4908 = this.field4909;
+      super.method2871();
+      this.field4969 = 0.02F;
+      if (this.method3337()) {
+         this.field4969 = (float)((double)this.field4969 + 0.005999999865889549);
+      }
+
+      this.method3113((float)this.method3086(Class9173.field42108));
+      float var3;
+      if (this.field5036 && !this.method3044() && !this.method2951()) {
+         var3 = Math.min(0.1F, Class9679.method37766(method3234(this.method3433())));
+      } else {
+         var3 = 0.0F;
+      }
+
+      this.field4909 = this.field4909 + (var3 - this.field4909) * 0.4F;
+      if (this.method3042() > 0.0F && !this.method2800()) {
+         Class6488 var4;
+         if (this.method3328() && !this.method3421().field5041) {
+            var4 = this.method3389().method19666(this.method3421().method3389()).method19663(1.0, 0.0, 1.0);
+         } else {
+            var4 = this.method3389().method19663(1.0, 0.5, 1.0);
+         }
+
+         List var5 = this.field5024.method7181(this, var4);
+
+         for (int var6 = 0; var6 < var5.size(); var6++) {
+            Entity var7 = (Entity)var5.get(var6);
+            if (!var7.field5041) {
+               this.method2873(var7);
+            }
+         }
+      }
+
+      this.method2872(this.method2969());
+      this.method2872(this.method2971());
+      if (!this.field5024.field9020 && (this.field5045 > 0.5F || this.method3250()) || this.field4919.field29607 || this.method3176()) {
+         this.method2949();
+      }
+   }
+
+   private void method2872(Class39 var1) {
+      if (var1 != null && (!var1.method118("Silent") || !var1.method132("Silent")) && this.field5024.field9016.nextInt(200) == 0) {
+         String var4 = var1.method126("id");
+         Class8992.method33199(var4)
+            .filter(var0 -> var0 == Class8992.field41062)
+            .ifPresent(
+               var1x -> {
+                  if (!Class1015.method4409(this.field5024, this)) {
+                     this.field5024
+                        .method6743(
+                           (PlayerEntity)null,
+                           this.getPosX(),
+                           this.getPosY(),
+                           this.getPosZ(),
+                           Class1015.method4411(this.field5024, this.field5024.field9016),
+                           this.method2864(),
+                           1.0F,
+                           Class1015.method4413(this.field5024.field9016)
+                        );
+                  }
+               }
+            );
+      }
+   }
+
+   private void method2873(Entity var1) {
+      var1.method3279(this);
+   }
+
+   public int method2874() {
+      return this.field5063.<Integer>method35445(field4896);
+   }
+
+   public void method2875(int var1) {
+      this.field5063.method35446(field4896, var1);
+   }
+
+   public void method2876(int var1) {
+      int var4 = this.method2874();
+      this.field5063.method35446(field4896, var4 + var1);
+   }
+
+   @Override
+   public void method2737(Class8654 var1) {
+      super.method2737(var1);
+      this.method3216();
+      if (!this.method2800()) {
+         this.method3052(var1);
+      }
+
+      if (var1 == null) {
+         this.method3435(0.0, 0.1, 0.0);
+      } else {
+         this.method3435(
+            (double)(-Class9679.method37764((this.field4954 + this.field5031) * (float) (Math.PI / 180.0)) * 0.1F),
+            0.1F,
+            (double)(-Class9679.method37763((this.field4954 + this.field5031) * (float) (Math.PI / 180.0)) * 0.1F)
+         );
+      }
+
+      this.method2911(Class8876.field40134);
+      this.method2777(Class8876.field40104.method172(Class8876.field40107));
+      this.method2777(Class8876.field40104.method172(Class8876.field40108));
+      this.method3223();
+      this.method3349(0, false);
+   }
+
+   @Override
+   public void method2877() {
+      super.method2877();
+      if (!this.field5024.method6789().method17135(Class5462.field24225)) {
+         this.method2878();
+         this.field4902.method4054();
+      }
+   }
+
+   public void method2878() {
+      for (int var3 = 0; var3 < this.field4902.method3629(); var3++) {
+         Class8848 var4 = this.field4902.method3618(var3);
+         if (!var4.method32105() && Class7858.method26335(var4)) {
+            this.field4902.method3620(var3);
+         }
+      }
+   }
+
+   @Override
+   public Class9455 method2879(Class8654 var1) {
+      if (var1 != Class8654.field38994) {
+         if (var1 != Class8654.field38999) {
+            return var1 != Class8654.field39012 ? Class6067.field26961 : Class6067.field26964;
+         } else {
+            return Class6067.field26962;
+         }
+      } else {
+         return Class6067.field26963;
+      }
+   }
+
+   @Override
+   public Class9455 method2880() {
+      return Class6067.field26960;
+   }
+
+   public boolean method2881(boolean var1) {
+      return this.method2836(
+            this.field4902
+               .method3619(this.field4902.field5443, var1 && !this.field4902.method4028().method32105() ? this.field4902.method4028().method32179() : 1),
+            false,
+            true
+         )
+         != null;
+   }
+
+   @Nullable
+   public Class1000 method2882(Class8848 var1, boolean var2) {
+      return this.method2836(var1, false, var2);
+   }
+
+   @Nullable
+   public Class1000 method2836(Class8848 var1, boolean var2, boolean var3) {
+      if (!var1.method32105()) {
+         if (this.field5024.field9020 && Class8005.method27372().method18582() >= Class5989.field26151.method18582()) {
+            this.method2820(Class79.field182);
+         }
+
+         double var6 = this.method3442() - 0.3F;
+         Class1000 var8 = new Class1000(this.field5024, this.getPosX(), var6, this.getPosZ(), var1);
+         var8.method4134(40);
+         if (var3) {
+            var8.method4129(this.method3375());
+         }
+
+         if (!var2) {
+            float var9 = 0.3F;
+            float var10 = Class9679.method37763(this.field5032 * (float) (Math.PI / 180.0));
+            float var11 = Class9679.method37764(this.field5032 * (float) (Math.PI / 180.0));
+            float var12 = Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0));
+            float var13 = Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0));
+            float var14 = this.field5054.nextFloat() * (float) (Math.PI * 2);
+            float var15 = 0.02F * this.field5054.nextFloat();
+            var8.method3435(
+               (double)(-var12 * var11 * 0.3F) + Math.cos((double)var14) * (double)var15,
+               (double)(-var10 * 0.3F + 0.1F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.1F),
+               (double)(var13 * var11 * 0.3F) + Math.sin((double)var14) * (double)var15
+            );
+         } else {
+            float var16 = this.field5054.nextFloat() * 0.5F;
+            float var17 = this.field5054.nextFloat() * (float) (Math.PI * 2);
+            var8.method3435((double)(-Class9679.method37763(var17) * var16), 0.2F, (double)(Class9679.method37764(var17) * var16));
+         }
+
+         return var8;
+      } else {
+         return null;
+      }
+   }
+
+   public float method2883(Class7380 var1) {
+      float var4 = this.field4902.method4049(var1);
+      if (var4 > 1.0F) {
+         int var5 = Class7858.method26327(this);
+         Class8848 var6 = this.method3090();
+         if (var5 > 0 && !var6.method32105()) {
+            var4 += (float)(var5 * var5 + 1);
+         }
+      }
+
+      if (Class7182.method22536(this)) {
+         var4 *= 1.0F + (float)(Class7182.method22537(this) + 1) * 0.2F;
+      }
+
+      if (this.method3033(Class8254.field35470)) {
+         float var7;
+         switch (this.method3034(Class8254.field35470).method8629()) {
+            case 0:
+               var7 = 0.3F;
+               break;
+            case 1:
+               var7 = 0.09F;
+               break;
+            case 2:
+               var7 = 0.0027F;
+               break;
+            case 3:
+            default:
+               var7 = 8.1E-4F;
+         }
+
+         var4 *= var7;
+      }
+
+      if (this.method3263(Class8953.field40469) && !Class7858.method26331(this)) {
+         var4 /= 5.0F;
+      }
+
+      if (!this.field5036) {
+         var4 /= 5.0F;
+      }
+
+      return var4;
+   }
+
+   public boolean method2884(Class7380 var1) {
+      return !var1.method23458() || this.field4902.method4028().method32124(var1);
+   }
+
+   @Override
+   public void method2723(Class39 var1) {
+      super.method2723(var1);
+      this.method3374(method2960(this.field4926));
+      Class41 var4 = var1.method131("Inventory", 10);
+      this.field4902.method4051(var4);
+      this.field4902.field5443 = var1.method122("SelectedItemSlot");
+      this.field4917 = var1.method121("SleepTimer");
+      this.field4922 = var1.method124("XpP");
+      this.field4920 = var1.method122("XpLevel");
+      this.field4921 = var1.method122("XpTotal");
+      this.field4923 = var1.method122("XpSeed");
+      if (this.field4923 == 0) {
+         this.field4923 = this.field5054.nextInt();
+      }
+
+      this.method2875(var1.method122("Score"));
+      this.field4906.method37572(var1);
+      this.field4919.method20713(var1);
+      this.method3085(Class9173.field42108).method38661((double)this.field4919.method20716());
+      if (var1.method119("EnderItems", 9)) {
+         this.field4903.method3682(var1.method131("EnderItems", 10));
+      }
+
+      if (var1.method119("ShoulderEntityLeft", 10)) {
+         this.method2970(var1.method130("ShoulderEntityLeft"));
+      }
+
+      if (var1.method119("ShoulderEntityRight", 10)) {
+         this.method2972(var1.method130("ShoulderEntityRight"));
+      }
+   }
+
+   @Override
+   public void method2724(Class39 var1) {
+      super.method2724(var1);
+      var1.method102("DataVersion", Class9246.method34773().getWorldVersion());
+      var1.method99("Inventory", this.field4902.method4050(new Class41()));
+      var1.method102("SelectedItemSlot", this.field4902.field5443);
+      var1.method101("SleepTimer", (short)this.field4917);
+      var1.method107("XpP", this.field4922);
+      var1.method102("XpLevel", this.field4920);
+      var1.method102("XpTotal", this.field4921);
+      var1.method102("XpSeed", this.field4923);
+      var1.method102("Score", this.method2874());
+      this.field4906.method37573(var1);
+      this.field4919.method20712(var1);
+      var1.method99("EnderItems", this.field4903.method3683());
+      if (!this.method2969().method134()) {
+         var1.method99("ShoulderEntityLeft", this.method2969());
+      }
+
+      if (!this.method2971().method134()) {
+         var1.method99("ShoulderEntityRight", this.method2971());
+      }
+   }
+
+   @Override
+   public boolean method2760(Class8654 var1) {
+      if (!super.method2760(var1)) {
+         if (var1 != Class8654.field38999) {
+            if (var1 != Class8654.field39002) {
+               return !var1.method31141() ? false : !this.field5024.method6789().method17135(Class5462.field24251);
+            } else {
+               return !this.field5024.method6789().method17135(Class5462.field24250);
+            }
+         } else {
+            return !this.field5024.method6789().method17135(Class5462.field24249);
+         }
+      } else {
+         return true;
+      }
+   }
+
+   @Override
+   public boolean method2741(Class8654 var1, float var2) {
+      if (!this.method2760(var1)) {
+         if (this.field4919.field29606 && !var1.method31135()) {
+            return false;
+         } else {
+            this.field4973 = 0;
+            if (!this.method3044()) {
+               this.method2949();
+               if (var1.method31111()) {
+                  if (this.field5024.method6997() == Class2197.field14351) {
+                     var2 = 0.0F;
+                  }
+
+                  if (this.field5024.method6997() == Class2197.field14352) {
+                     var2 = Math.min(var2 / 2.0F + 1.0F, var2);
+                  }
+
+                  if (this.field5024.method6997() == Class2197.field14354) {
+                     var2 = var2 * 3.0F / 2.0F;
+                  }
+               }
+
+               return var2 != 0.0F ? super.method2741(var1, var2) : false;
+            } else {
+               return false;
+            }
+         }
+      } else {
+         return false;
+      }
+   }
+
+   @Override
+   public void method2885(Class880 var1) {
+      super.method2885(var1);
+      if (var1.method3090().method32107() instanceof Class3265) {
+         this.method2901(true);
+      }
+   }
+
+   public boolean method2742(PlayerEntity var1) {
+      Class8219 var4 = this.method3344();
+      Class8219 var5 = var1.method3344();
+      if (var4 != null) {
+         return var4.method28592(var5) ? var4.method28578() : true;
+      } else {
+         return true;
+      }
+   }
+
+   @Override
+   public void method2886(Class8654 var1, float var2) {
+      this.field4902.method4053(var1, var2);
+   }
+
+   @Override
+   public void method2887(float var1) {
+      if (this.field5001.method32107() == Class8514.field38119) {
+         if (!this.field5024.field9020) {
+            this.method2913(Class8876.field40098.method172(this.field5001.method32107()));
+         }
+
+         if (var1 >= 3.0F) {
+            int var4 = 1 + Class9679.method37767(var1);
+            Class79 var5 = this.method3149();
+            this.field5001.method32121(var4, this, var1x -> var1x.method3185(var5));
+            if (this.field5001.method32105()) {
+               if (var5 != Class79.field182) {
+                  this.method2944(Class2106.field13732, Class8848.field39973);
+               } else {
+                  this.method2944(Class2106.field13731, Class8848.field39973);
+               }
+
+               this.field5001 = Class8848.field39973;
+               this.method2863(Class6067.field27036, 0.8F, 0.8F + this.field5024.field9016.nextFloat() * 0.4F);
+            }
+         }
+      }
+   }
+
+   @Override
+   public void method2888(Class8654 var1, float var2) {
+      if (!this.method2760(var1)) {
+         var2 = this.method3071(var1, var2);
+         var2 = this.method3072(var1, var2);
+         float var5 = Math.max(var2 - this.method2959(), 0.0F);
+         this.method2958(this.method2959() - (var2 - var5));
+         float var6 = var2 - var5;
+         if (var6 > 0.0F && var6 < 3.4028235E37F) {
+            this.method2912(Class8876.field40132, Math.round(var6 * 10.0F));
+         }
+
+         if (var5 != 0.0F) {
+            this.method2931(var1.method31134());
+            float var7 = this.method3042();
+            this.method3043(this.method3042() - var5);
+            this.method3073().method27599(var1, var7, var5);
+            if (var5 < 3.4028235E37F) {
+               this.method2912(Class8876.field40130, Math.round(var5 * 10.0F));
+            }
+         }
+      }
+   }
+
+   @Override
+   public boolean method2889() {
+      return !this.field4919.field29607 && super.method2889();
+   }
+
+   public void method2764(Class954 var1) {
+   }
+
+   public void method2890(Class911 var1) {
+   }
+
+   public void method2770(Class969 var1) {
+   }
+
+   public void method2891(Class964 var1) {
+   }
+
+   public void method2892(Class965 var1) {
+   }
+
+   public void method2768(Class1068 var1, Class920 var2) {
+   }
+
+   public OptionalInt method2766(Class949 var1) {
+      return OptionalInt.empty();
+   }
+
+   public void method2767(int var1, Class46 var2, int var3, int var4, boolean var5, boolean var6) {
+   }
+
+   public void method2769(Class8848 var1, Class79 var2) {
+   }
+
+   public Class2274 method2893(Entity var1, Class79 var2) {
+      if (!this.method2800()) {
+         Class8848 var5 = this.method3094(var2);
+         Class8848 var6 = var5.method32126();
+         Class2274 var7 = var1.method3304(this, var2);
+         if (!var7.method9000()) {
+            if (!var5.method32105() && var1 instanceof Class880) {
+               if (this.field4919.field29609) {
+                  var5 = var6;
+               }
+
+               Class2274 var8 = var5.method32125(this, (Class880)var1, var2);
+               if (var8.method9000()) {
+                  if (var5.method32105() && !this.field4919.field29609) {
+                     this.method3095(var2, Class8848.field39973);
+                  }
+
+                  return var8;
+               }
+            }
+
+            return Class2274.field14820;
+         } else {
+            if (this.field4919.field29609 && var5 == this.method3094(var2) && var5.method32179() < var6.method32179()) {
+               var5.method32180(var6.method32179());
+            }
+
+            return var7;
+         }
+      } else {
+         if (var1 instanceof Class949) {
+            this.method2766((Class949)var1);
+         }
+
+         return Class2274.field14820;
+      }
+   }
+
+   @Override
+   public double method2894() {
+      return -0.35;
+   }
+
+   @Override
+   public void method2895() {
+      super.method2895();
+      this.field5021 = 0;
+   }
+
+   @Override
+   public boolean method2896() {
+      return super.method2896() || this.method3176();
+   }
+
+   @Override
+   public boolean method2897() {
+      return !this.field4919.field29607;
+   }
+
+   @Override
+   public Vector3d method2898(Vector3d var1, Class2107 var2) {
+      Class4417 var5 = new Class4417(true);
+      Client.getInstance().getEventManager().call(var5);
+      if (var5.method13965() == Class1893.field11098
+         || !this.field4919.field29607 && (var2 == Class2107.field13742 || var2 == Class2107.field13743) && this.method2853() && this.method2899()) {
+         double var6 = var1.field18048;
+         double var8 = var1.field18050;
+         double var10 = 0.05;
+
+         while (var6 != 0.0 && this.field5024.method7053(this, this.method3389().method19667(var6, (double)(-this.field5051), 0.0))) {
+            if (var6 < 0.05 && var6 >= -0.05) {
+               var6 = 0.0;
+            } else if (!(var6 > 0.0)) {
+               var6 += 0.05;
+            } else {
+               var6 -= 0.05;
+            }
+         }
+
+         while (var8 != 0.0 && this.field5024.method7053(this, this.method3389().method19667(0.0, (double)(-this.field5051), var8))) {
+            if (var8 < 0.05 && var8 >= -0.05) {
+               var8 = 0.0;
+            } else if (!(var8 > 0.0)) {
+               var8 += 0.05;
+            } else {
+               var8 -= 0.05;
+            }
+         }
+
+         while (var6 != 0.0 && var8 != 0.0 && this.field5024.method7053(this, this.method3389().method19667(var6, (double)(-this.field5051), var8))) {
+            if (var6 < 0.05 && var6 >= -0.05) {
+               var6 = 0.0;
+            } else if (!(var6 > 0.0)) {
+               var6 += 0.05;
+            } else {
+               var6 -= 0.05;
+            }
+
+            if (var8 < 0.05 && var8 >= -0.05) {
+               var8 = 0.0;
+            } else if (!(var8 > 0.0)) {
+               var8 += 0.05;
+            } else {
+               var8 -= 0.05;
+            }
+         }
+
+         var1 = new Vector3d(var6, var1.field18049, var8);
+      }
+
+      Class4417 var12 = new Class4417(false);
+      Client.getInstance().getEventManager().call(var12);
+      return var1;
+   }
+
+   private boolean method2899() {
+      return this.field5036
+         || this.field5045 < this.field5051
+            && !this.field5024.method7053(this, this.method3389().method19667(0.0, (double)(this.field5045 - this.field5051), 0.0));
+   }
+
+   public void method2817(Entity var1) {
+      if (var1.method3360() && !var1.method3361(this)) {
+         float var4 = (float)this.method3086(Class9173.field42110);
+         float var5;
+         if (!(var1 instanceof Class880)) {
+            var5 = Class7858.method26318(this.method3090(), Class7809.field33505);
+         } else {
+            var5 = Class7858.method26318(this.method3090(), ((Class880)var1).method3089());
+         }
+
+         float var6 = this.method2974(0.5F);
+         var4 *= 0.2F + var6 * var6 * 0.8F;
+         var5 *= var6;
+         this.method2975();
+         if (var4 > 0.0F || var5 > 0.0F) {
+            boolean var7 = var6 > 0.9F;
+            boolean var8 = false;
+            int var9 = 0;
+            var9 += Class7858.method26323(this);
+            if (this.method3337() && var7) {
+               this.field5024
+                  .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26952, this.method2864(), 1.0F, 1.0F);
+               var9++;
+               var8 = true;
+            }
+
+            boolean var10 = var7
+               && this.field5045 > 0.0F
+               && !this.field5036
+               && !this.method3063()
+               && !this.method3250()
+               && !this.method3033(Class8254.field35481)
+               && !this.method3328()
+               && var1 instanceof Class880;
+            var10 = var10 && !this.method3337();
+            if (var10) {
+               var4 *= 1.5F;
+            }
+
+            var4 += var5;
+            boolean var11 = false;
+            double var12 = (double)(this.field5043 - this.field5042);
+            if (var7 && !var10 && !var8 && this.field5036 && var12 < (double)this.method2918()) {
+               Class8848 var14 = this.method3094(Class79.field182);
+               if (var14.method32107() instanceof Class3267) {
+                  var11 = true;
+               }
+            }
+
+            float var28 = 0.0F;
+            boolean var15 = false;
+            int var16 = Class7858.method26324(this);
+            if (var1 instanceof Class880) {
+               var28 = ((Class880)var1).method3042();
+               if (var16 > 0 && !var1.method3327()) {
+                  var15 = true;
+                  var1.method3221(1);
+               }
+            }
+
+            Vector3d var17 = var1.method3433();
+            boolean var18 = var1.method2741(Class8654.method31117(this), var4);
+            if (!var18) {
+               this.field5024
+                  .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26953, this.method2864(), 1.0F, 1.0F);
+               if (var15) {
+                  var1.method3223();
+               }
+            } else {
+               if (var9 > 0) {
+                  if (!(var1 instanceof Class880)) {
+                     var1.method3280(
+                        (double)(-Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)) * (float)var9 * 0.5F),
+                        0.1,
+                        (double)(Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)) * (float)var9 * 0.5F)
+                     );
+                  } else {
+                     ((Class880)var1)
+                        .method3058(
+                           (float)var9 * 0.5F,
+                           (double)Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)),
+                           (double)(-Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)))
+                        );
+                  }
+
+                  this.method3434(this.method3433().method11347(0.6, 1.0, 0.6));
+                  this.method3098(false);
+               }
+
+               if (var11) {
+                  float var19 = 1.0F + Class7858.method26319(this) * var4;
+
+                  for (Class880 var21 : this.field5024.<Class880>method7182(Class880.class, var1.method3389().method19663(1.0, 0.25, 1.0))) {
+                     if (var21 != this
+                        && var21 != var1
+                        && !this.method3345(var21)
+                        && (!(var21 instanceof Class1005) || !((Class1005)var21).method4203())
+                        && this.method3277(var21) < 9.0) {
+                        var21.method3058(
+                           0.4F,
+                           (double)Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)),
+                           (double)(-Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)))
+                        );
+                        var21.method2741(Class8654.method31117(this), var19);
+                     }
+                  }
+
+                  this.field5024
+                     .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26955, this.method2864(), 1.0F, 1.0F);
+                  this.method2902();
+               }
+
+               if (var1 instanceof Class878 && var1.field5039) {
+                  ((Class878)var1).field4855.method15671(new Class5590(var1));
+                  var1.field5039 = false;
+                  var1.method3434(var17);
+               }
+
+               if (var10) {
+                  this.field5024
+                     .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26951, this.method2864(), 1.0F, 1.0F);
+                  this.method2795(var1);
+               }
+
+               if (!var10 && !var11) {
+                  if (!var7) {
+                     this.field5024
+                        .method6743(
+                           (PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26956, this.method2864(), 1.0F, 1.0F
+                        );
+                  } else {
+                     this.field5024
+                        .method6743(
+                           (PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26954, this.method2864(), 1.0F, 1.0F
+                        );
+                  }
+               }
+
+               if (var5 > 0.0F) {
+                  this.method2796(var1);
+               }
+
+               this.method3020(var1);
+               if (var1 instanceof Class880) {
+                  Class7858.method26320((Class880)var1, this);
+               }
+
+               Class7858.method26321(this, var1);
+               Class8848 var29 = this.method3090();
+               Object var30 = var1;
+               if (var1 instanceof Class908) {
+                  var30 = ((Class908)var1).field5186;
+               }
+
+               if (!this.field5024.field9020 && !var29.method32105() && var30 instanceof Class880) {
+                  var29.method32122((Class880)var30, this);
+                  if (var29.method32105()) {
+                     this.method3095(Class79.field182, Class8848.field39973);
+                  }
+               }
+
+               if (var1 instanceof Class880) {
+                  float var31 = var28 - ((Class880)var1).method3042();
+                  this.method2912(Class8876.field40127, Math.round(var31 * 10.0F));
+                  if (var16 > 0) {
+                     var1.method3221(var16 * 4);
+                  }
+
+                  if (this.field5024 instanceof Class1657 && var31 > 2.0F) {
+                     int var22 = (int)((double)var31 * 0.5);
+                     ((Class1657)this.field5024)
+                        .method6939(Class7940.field34055, var1.getPosX(), var1.method3440(0.5), var1.getPosZ(), var22, 0.1, 0.0, 0.1, 0.2);
+                  }
+               }
+
+               this.method2931(0.1F);
+            }
+         }
+      }
+   }
+
+   @Override
+   public void method2900(Class880 var1) {
+      this.method2817(var1);
+   }
+
+   public void method2901(boolean var1) {
+      float var4 = 0.25F + (float)Class7858.method26327(this) * 0.05F;
+      if (var1) {
+         var4 += 0.75F;
+      }
+
+      if (this.field5054.nextFloat() < var4) {
+         this.method2976().method19638(Class8514.field38119, 100);
+         this.method3162();
+         this.field5024.method6786(this, (byte)30);
+      }
+   }
+
+   public void method2795(Entity var1) {
+   }
+
+   public void method2796(Entity var1) {
+   }
+
+   public void method2902() {
+      double var3 = (double)(-Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)));
+      double var5 = (double)Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0));
+      if (this.field5024 instanceof Class1657) {
+         ((Class1657)this.field5024)
+            .method6939(Class7940.field34096, this.getPosX() + var3, this.method3440(0.5), this.getPosZ() + var5, 0, var3, 0.0, var5, 0.0);
+      }
+   }
+
+   public void method2903() {
+   }
+
+   @Override
+   public void method2904() {
+      super.method2904();
+      this.field4904.method18113(this);
+      if (this.field4905 != null) {
+         this.field4905.method18113(this);
+      }
+   }
+
+   public boolean method2905() {
+      return false;
+   }
+
+   public GameProfile method2906() {
+      return this.field4926;
+   }
+
+   public Either<Class2104, Class2341> method2752(BlockPos var1) {
+      this.method2753(var1);
+      this.field4917 = 0;
+      return Either.right(Class2341.field16010);
+   }
+
+   public void method2757(boolean var1, boolean var2) {
+      super.method2907();
+      if (this.field5024 instanceof Class1657 && var2) {
+         ((Class1657)this.field5024).method6902();
+      }
+
+      this.field4917 = !var1 ? 100 : 0;
+   }
+
+   @Override
+   public void method2907() {
+      this.method2757(true, true);
+   }
+
+   public static Optional<Vector3d> method2908(Class1657 var0, BlockPos var1, float var2, boolean var3, boolean var4) {
+      Class7380 var7 = var0.method6738(var1);
+      Class3209 var8 = var7.method23383();
+      if (var8 instanceof Class3389 && var7.<Integer>method23463(Class3389.field19000) > 0 && Class3389.method11988(var0)) {
+         Optional var11 = Class3389.method11991(Class8992.field41111, var0, var1);
+         if (!var4 && var11.isPresent()) {
+            var0.method6725(var1, var7.method23465(Class3389.field19000, Integer.valueOf(var7.<Integer>method23463(Class3389.field19000) - 1)), 3);
+         }
+
+         return var11;
+      } else if (var8 instanceof Class3250 && Class3250.method11679(var0)) {
+         return Class3250.method11686(Class8992.field41111, var0, var1, var2);
+      } else if (!var3) {
+         return Optional.<Vector3d>empty();
+      } else {
+         boolean var9 = var8.method11564();
+         boolean var10 = var0.method6738(var1.method8311()).method23383().method11564();
+         return var9 && var10
+            ? Optional.<Vector3d>of(new Vector3d((double)var1.method8304() + 0.5, (double)var1.getY() + 0.1, (double)var1.method8306() + 0.5))
+            : Optional.<Vector3d>empty();
+      }
+   }
+
+   public boolean method2909() {
+      return this.method3176() && this.field4917 >= 100;
+   }
+
+   public int method2910() {
+      return this.field4917;
+   }
+
+   public void method2785(ITextComponent var1, boolean var2) {
+   }
+
+   public void method2911(ResourceLocation var1) {
+      this.method2913(Class8876.field40104.method172(var1));
+   }
+
+   public void method2912(ResourceLocation var1, int var2) {
+      this.method2776(Class8876.field40104.method172(var1), var2);
+   }
+
+   public void method2913(Class9007<?> var1) {
+      this.method2776(var1, 1);
+   }
+
+   public void method2776(Class9007<?> var1, int var2) {
+   }
+
+   public void method2777(Class9007<?> var1) {
+   }
+
+   public int method2778(Collection<Class4843<?>> var1) {
+      return 0;
+   }
+
+   public void method2779(ResourceLocation[] var1) {
+   }
+
+   public int method2780(Collection<Class4843<?>> var1) {
+      return 0;
+   }
+
+   @Override
+   public void method2914() {
+      super.method2914();
+      this.method2911(Class8876.field40125);
+      if (!this.method3337()) {
+         this.method2931(0.05F);
+      } else {
+         this.method2931(0.2F);
+      }
+   }
+
+   @Override
+   public void method2915(Vector3d var1) {
+      double var4 = this.getPosX();
+      double var6 = this.getPosY();
+      double var8 = this.getPosZ();
+      if (this.method2951() && !this.method3328()) {
+         double var10 = this.method3320().field18049;
+         double var12 = !(var10 < -0.2) ? 0.06 : 0.085;
+         if (var10 <= 0.0
+            || this.field4981
+            || !this.field5024.method6738(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).method23449().method23474()) {
+            Vector3d var14 = this.method3433();
+            this.method3434(var14.method11339(0.0, (var10 - var14.field18049) * var12, 0.0));
+         }
+      }
+
+      if (this.field4919.field29607 && !this.method3328()) {
+         double var17 = this.method3433().field18049;
+         float var15 = this.field4969;
+         this.field4969 = this.field4919.method20714() * (float)(!this.method3337() ? 1 : 2);
+         super.method2915(var1);
+         Vector3d var16 = this.method3433();
+         this.method3435(var16.field18048, var17 * 0.6, var16.field18050);
+         this.field4969 = var15;
+         this.field5045 = 0.0F;
+         this.method3349(7, false);
+      } else {
+         super.method2915(var1);
+      }
+
+      this.method2919(this.getPosX() - var4, this.getPosY() - var6, this.getPosZ() - var8);
+   }
+
+   @Override
+   public void method2916() {
+      if (!this.field4919.field29607) {
+         super.method2916();
+      } else {
+         this.method3339(false);
+      }
+   }
+
+   public boolean method2917(BlockPos var1) {
+      return !this.field5024.method6738(var1).method23437(this.field5024, var1);
+   }
+
+   @Override
+   public float method2918() {
+      return (float)this.method3086(Class9173.field42108);
+   }
+
+   public void method2919(double var1, double var3, double var5) {
+      if (!this.method3328()) {
+         if (!this.method2951()) {
+            if (!this.method3263(Class8953.field40469)) {
+               if (!this.method3250()) {
+                  if (!this.method3063()) {
+                     if (!this.field5036) {
+                        if (!this.method3165()) {
+                           int var9 = Math.round(Class9679.method37766(var1 * var1 + var5 * var5) * 100.0F);
+                           if (var9 > 25) {
+                              this.method2912(Class8876.field40116, var9);
+                           }
+                        } else {
+                           int var10 = Math.round(Class9679.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
+                           this.method2912(Class8876.field40122, var10);
+                        }
+                     } else {
+                        int var11 = Math.round(Class9679.method37766(var1 * var1 + var5 * var5) * 100.0F);
+                        if (var11 > 0) {
+                           if (!this.method3337()) {
+                              if (!this.method3336()) {
+                                 this.method2912(Class8876.field40110, var11);
+                                 this.method2931(0.0F * (float)var11 * 0.01F);
+                              } else {
+                                 this.method2912(Class8876.field40111, var11);
+                                 this.method2931(0.0F * (float)var11 * 0.01F);
+                              }
+                           } else {
+                              this.method2912(Class8876.field40112, var11);
+                              this.method2931(0.1F * (float)var11 * 0.01F);
+                           }
+                        }
+                     }
+                  } else if (var3 > 0.0) {
+                     this.method2912(Class8876.field40115, (int)Math.round(var3 * 100.0));
+                  }
+               } else {
+                  int var12 = Math.round(Class9679.method37766(var1 * var1 + var5 * var5) * 100.0F);
+                  if (var12 > 0) {
+                     this.method2912(Class8876.field40113, var12);
+                     this.method2931(0.01F * (float)var12 * 0.01F);
+                  }
+               }
+            } else {
+               int var13 = Math.round(Class9679.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
+               if (var13 > 0) {
+                  this.method2912(Class8876.field40117, var13);
+                  this.method2931(0.01F * (float)var13 * 0.01F);
+               }
+            }
+         } else {
+            int var14 = Math.round(Class9679.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
+            if (var14 > 0) {
+               this.method2912(Class8876.field40123, var14);
+               this.method2931(0.01F * (float)var14 * 0.01F);
+            }
+         }
+      }
+   }
+
+   private void method2920(double var1, double var3, double var5) {
+      if (this.method3328()) {
+         int var9 = Math.round(Class9679.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
+         if (var9 > 0) {
+            Entity var10 = this.method3421();
+            if (!(var10 instanceof Class916)) {
+               if (!(var10 instanceof Class1002)) {
+                  if (!(var10 instanceof Class1072)) {
+                     if (!(var10 instanceof Class1068)) {
+                        if (var10 instanceof Class1070) {
+                           this.method2912(Class8876.field40124, var9);
+                        }
+                     } else {
+                        this.method2912(Class8876.field40121, var9);
+                     }
+                  } else {
+                     this.method2912(Class8876.field40120, var9);
+                  }
+               } else {
+                  this.method2912(Class8876.field40119, var9);
+               }
+            } else {
+               this.method2912(Class8876.field40118, var9);
+            }
+         }
+      }
+   }
+
+   @Override
+   public boolean method2921(float var1, float var2) {
+      if (!this.field4919.field29608) {
+         if (var1 >= 2.0F) {
+            this.method2912(Class8876.field40114, (int)Math.round((double)var1 * 100.0));
+         }
+
+         return super.method2921(var1, var2);
+      } else {
+         return false;
+      }
+   }
+
+   public boolean method2922() {
+      if (!this.field5036 && !this.method3165() && !this.method3250() && !this.method3033(Class8254.field35491)) {
+         Class8848 var3 = this.method2943(Class2106.field13735);
+         if (var3.method32107() == Class8514.field38120 && Class3256.method11698(var3)) {
+            this.method2923();
+            return true;
+         }
+      }
+
+      return false;
+   }
+
+   public void method2923() {
+      this.method3349(7, true);
+   }
+
+   public void method2924() {
+      this.method3349(7, true);
+      this.method3349(7, false);
+   }
+
+   @Override
+   public void method2925() {
+      if (!this.method2800()) {
+         super.method2925();
+      }
+   }
+
+   @Override
+   public Class9455 method2926(int var1) {
+      return var1 <= 4 ? Class6067.field26966 : Class6067.field26957;
+   }
+
+   @Override
+   public void method2927(Class1657 var1, Class880 var2) {
+      this.method2913(Class8876.field40102.method172(var2.method3204()));
+   }
+
+   @Override
+   public void method2928(Class7380 var1, Vector3d var2) {
+      if (!this.field4919.field29607) {
+         super.method2928(var1, var2);
+      }
+   }
+
+   public void method2781(int var1) {
+      this.method2876(var1);
+      this.field4922 = this.field4922 + (float)var1 / (float)this.method2930();
+      this.field4921 = Class9679.method37775(this.field4921 + var1, 0, Integer.MAX_VALUE);
+
+      while (this.field4922 < 0.0F) {
+         float var4 = this.field4922 * (float)this.method2930();
+         if (this.field4920 <= 0) {
+            this.method2727(-1);
+            this.field4922 = 0.0F;
+         } else {
+            this.method2727(-1);
+            this.field4922 = 1.0F + var4 / (float)this.method2930();
+         }
+      }
+
+      while (this.field4922 >= 1.0F) {
+         this.field4922 = (this.field4922 - 1.0F) * (float)this.method2930();
+         this.method2727(1);
+         this.field4922 = this.field4922 / (float)this.method2930();
+      }
+   }
+
+   public int method2929() {
+      return this.field4923;
+   }
+
+   public void method2728(Class8848 var1, int var2) {
+      this.field4920 -= var2;
+      if (this.field4920 < 0) {
+         this.field4920 = 0;
+         this.field4922 = 0.0F;
+         this.field4921 = 0;
+      }
+
+      this.field4923 = this.field5054.nextInt();
+   }
+
+   public void method2727(int var1) {
+      this.field4920 += var1;
+      if (this.field4920 < 0) {
+         this.field4920 = 0;
+         this.field4922 = 0.0F;
+         this.field4921 = 0;
+      }
+
+      if (var1 > 0 && this.field4920 % 5 == 0 && (float)this.field4925 < (float)this.field5055 - 100.0F) {
+         float var4 = this.field4920 <= 30 ? (float)this.field4920 / 30.0F : 1.0F;
+         this.field5024
+            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26965, this.method2864(), var4 * 0.75F, 1.0F);
+         this.field4925 = this.field5055;
+      }
+   }
+
+   public int method2930() {
+      if (this.field4920 < 30) {
+         return this.field4920 < 15 ? 7 + this.field4920 * 2 : 37 + (this.field4920 - 15) * 5;
+      } else {
+         return 112 + (this.field4920 - 30) * 9;
+      }
+   }
+
+   public void method2931(float var1) {
+      if (!this.field4919.field29606 && !this.field5024.field9020) {
+         this.field4906.method37576(var1);
+      }
+   }
+
+   public Class9640 method2932() {
+      return this.field4906;
+   }
+
+   public boolean method2933(boolean var1) {
+      return this.field4919.field29606 || var1 || this.field4906.method37575();
+   }
+
+   public boolean method2934() {
+      return this.method3042() > 0.0F && this.method3042() < this.method3075();
+   }
+
+   public boolean method2935() {
+      return this.field4919.field29610;
+   }
+
+   public boolean method2936(BlockPos var1, Direction var2, Class8848 var3) {
+      if (!this.field4919.field29610) {
+         BlockPos var6 = var1.method8349(var2.method536());
+         Class9632 var7 = new Class9632(this.field5024, var6, false);
+         return var3.method32176(this.field5024.method6817(), var7);
+      } else {
+         return true;
+      }
+   }
+
+   @Override
+   public int method2937(PlayerEntity var1) {
+      if (!this.field5024.method6789().method17135(Class5462.field24225) && !this.method2800()) {
+         int var4 = this.field4920 * 7;
+         return var4 <= 100 ? var4 : 100;
+      } else {
+         return 0;
+      }
+   }
+
+   @Override
+   public boolean method2938() {
+      return true;
+   }
+
+   @Override
+   public boolean method2939() {
+      return true;
+   }
+
+   @Override
+   public boolean method2940() {
+      return !this.field4919.field29607 && (!this.field5036 || !this.method3334());
+   }
+
+   public void method2797() {
+   }
+
+   public void method2799(Class1894 var1) {
+   }
+
+   @Override
+   public ITextComponent method2941() {
+      return new StringTextComponent(this.field4926.getName());
+   }
+
+   public Class980 method2942() {
+      return this.field4903;
+   }
+
+   @Override
+   public Class8848 method2943(Class2106 var1) {
+      if (var1 != Class2106.field13731) {
+         if (var1 != Class2106.field13732) {
+            return var1.method8772() != Class1969.field12837 ? Class8848.field39973 : this.field4902.field5440.get(var1.method8773());
+         } else {
+            return this.field4902.field5441.get(0);
+         }
+      } else {
+         return this.field4902.method4028();
+      }
+   }
+
+   @Override
+   public void method2944(Class2106 var1, Class8848 var2) {
+      if (var1 != Class2106.field13731) {
+         if (var1 != Class2106.field13732) {
+            if (var1.method8772() == Class1969.field12837) {
+               this.method3023(var2);
+               this.field4902.field5440.set(var1.method8773(), var2);
+            }
+         } else {
+            this.method3023(var2);
+            this.field4902.field5441.set(0, var2);
+         }
+      } else {
+         this.method3023(var2);
+         this.field4902.field5439.set(this.field4902.field5443, var2);
+      }
+   }
+
+   public boolean method2945(Class8848 var1) {
+      this.method3023(var1);
+      return this.field4902.method4045(var1);
+   }
+
+   @Override
+   public Iterable<Class8848> method2946() {
+      return Lists.newArrayList(new Class8848[]{this.method3090(), this.method3091()});
+   }
+
+   @Override
+   public Iterable<Class8848> method2947() {
+      return this.field4902.field5440;
+   }
+
+   public boolean method2948(Class39 var1) {
+      if (this.method3328() || !this.field5036 || this.method3250()) {
+         return false;
+      } else if (this.method2969().method134()) {
+         this.method2970(var1);
+         this.field4901 = this.field5024.method6783();
+         return true;
+      } else if (!this.method2971().method134()) {
+         return false;
+      } else {
+         this.method2972(var1);
+         this.field4901 = this.field5024.method6783();
+         return true;
+      }
+   }
+
+   public void method2949() {
+      if (this.field4901 + 20L < this.field5024.method6783()) {
+         this.method2950(this.method2969());
+         this.method2970(new Class39());
+         this.method2950(this.method2971());
+         this.method2972(new Class39());
+      }
+   }
+
+   private void method2950(Class39 var1) {
+      if (!this.field5024.field9020 && !var1.method134()) {
+         Class8992.method33217(var1, this.field5024).ifPresent(var1x -> {
+            if (var1x instanceof Class1013) {
+               ((Class1013)var1x).method4398(this.field5084);
+            }
+
+            var1x.method3215(this.getPosX(), this.getPosY() + 0.7F, this.getPosZ());
+            ((Class1657)this.field5024).method6917(var1x);
+         });
+      }
+   }
+
+   @Override
+   public abstract boolean method2800();
+
+   @Override
+   public boolean method2951() {
+      return !this.field4919.field29607 && !this.method2800() && super.method2951();
+   }
+
+   public abstract boolean method2801();
+
+   @Override
+   public boolean method2952() {
+      return !this.field4919.field29607;
+   }
+
+   public Class6886 method2953() {
+      return this.field5024.method6805();
+   }
+
+   @Override
+   public ITextComponent method2954() {
+      IFormattableTextComponent var3 = Class8218.method28577(this.method3344(), this.method2941());
+      return this.method2955(var3);
+   }
+
+   private IFormattableTextComponent method2955(IFormattableTextComponent var1) {
+      String var4 = this.method2906().getName();
+      return var1.modifyStyle(
+         var2 -> var2.setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/tell " + var4 + " "))
+               .setHoverEvent(this.method3388())
+               .setInsertion(var4)
+      );
+   }
+
+   @Override
+   public String method2956() {
+      return this.method2906().getName();
+   }
+
+   @Override
+   public float method2957(Class2090 var1, Class8847 var2) {
+      switch (Class9138.field41992[var1.ordinal()]) {
+         case 1:
+         case 2:
+         case 3:
+            return 0.4F;
+         case 4:
+            return 1.27F;
+         default:
+            return 1.62F;
+      }
+   }
+
+   @Override
+   public void method2958(float var1) {
+      if (var1 < 0.0F) {
+         var1 = 0.0F;
+      }
+
+      this.method3210().method35446(field4895, var1);
+   }
+
+   @Override
+   public float method2959() {
+      return this.method3210().<Float>method35445(field4895);
+   }
+
+   public static UUID method2960(GameProfile var0) {
+      UUID var3 = var0.getId();
+      if (var3 == null) {
+         var3 = method2961(var0.getName());
+      }
+
+      return var3;
+   }
+
+   public static UUID method2961(String var0) {
+      return UUID.nameUUIDFromBytes(("OfflinePlayer:" + var0).getBytes(StandardCharsets.UTF_8));
+   }
+
+   public boolean method2962(Class2318 var1) {
+      return (this.method3210().<Byte>method35445(field4897) & var1.method9090()) == var1.method9090();
+   }
+
+   @Override
+   public boolean method2963(int var1, Class8848 var2) {
+      if (var1 >= 0 && var1 < this.field4902.field5439.size()) {
+         this.field4902.method3621(var1, var2);
+         return true;
+      } else {
+         Class2106 var5;
+         if (var1 != 100 + Class2106.field13736.method8773()) {
+            if (var1 != 100 + Class2106.field13735.method8773()) {
+               if (var1 != 100 + Class2106.field13734.method8773()) {
+                  if (var1 != 100 + Class2106.field13733.method8773()) {
+                     var5 = null;
+                  } else {
+                     var5 = Class2106.field13733;
+                  }
+               } else {
+                  var5 = Class2106.field13734;
+               }
+            } else {
+               var5 = Class2106.field13735;
+            }
+         } else {
+            var5 = Class2106.field13736;
+         }
+
+         if (var1 == 98) {
+            this.method2944(Class2106.field13731, var2);
+            return true;
+         } else if (var1 != 99) {
+            if (var5 == null) {
+               int var6 = var1 - 200;
+               if (var6 >= 0 && var6 < this.field4903.method3629()) {
+                  this.field4903.method3621(var6, var2);
+                  return true;
+               } else {
+                  return false;
+               }
+            } else {
+               if (!var2.method32105()) {
+                  if (!(var2.method32107() instanceof Class3279) && !(var2.method32107() instanceof Class3256)) {
+                     if (var5 != Class2106.field13736) {
+                        return false;
+                     }
+                  } else if (Class1006.method4271(var2) != var5) {
+                     return false;
+                  }
+               }
+
+               this.field4902.method3621(var5.method8773() + this.field4902.field5439.size(), var2);
+               return true;
+            }
+         } else {
+            this.method2944(Class2106.field13732, var2);
+            return true;
+         }
+      }
+   }
+
+   public boolean method2964() {
+      return this.field4927;
+   }
+
+   public void method2965(boolean var1) {
+      this.field4927 = var1;
+   }
+
+   @Override
+   public void method2966(int var1) {
+      super.method2966(!this.field4919.field29606 ? var1 : Math.min(var1, 1));
+   }
+
+   @Override
+   public Class2205 method2967() {
+      return this.field5063.<Byte>method35445(field4898) != 0 ? Class2205.field14418 : Class2205.field14417;
+   }
+
+   public void method2968(Class2205 var1) {
+      this.field5063.method35446(field4898, (byte)(var1 != Class2205.field14417 ? 1 : 0));
+   }
+
+   public Class39 method2969() {
+      return this.field5063.<Class39>method35445(field4899);
+   }
+
+   public void method2970(Class39 var1) {
+      this.field5063.method35446(field4899, var1);
+   }
+
+   public Class39 method2971() {
+      return this.field5063.<Class39>method35445(field4900);
+   }
+
+   public void method2972(Class39 var1) {
+      this.field5063.method35446(field4900, var1);
+   }
+
+   public float method2973() {
+      return (float)(1.0 / this.method3086(Class9173.field42112) * 20.0);
+   }
+
+   public float method2974(float var1) {
+      return Class9679.method37777(((float)this.field4958 + var1) / this.method2973(), 0.0F, 1.0F);
+   }
+
+   public void method2975() {
+      this.field4958 = 0;
+   }
+
+   public Class6462 method2976() {
+      return this.field4929;
+   }
+
+   @Override
+   public float method2977() {
+      return !this.field4919.field29607 && !this.method3165() ? super.method2977() : 1.0F;
+   }
+
+   public float method2978() {
+      return (float)this.method3086(Class9173.field42115);
+   }
+
+   public boolean method2979() {
+      return this.field4919.field29609 && this.method2807() >= 2;
+   }
+
+   @Override
+   public boolean method2980(Class8848 var1) {
+      Class2106 var4 = Class1006.method4271(var1);
+      return this.method2943(var4).method32105();
+   }
+
+   @Override
+   public Class8847 method2981(Class2090 var1) {
+      return field4894.getOrDefault(var1, field4893);
+   }
+
+   @Override
+   public ImmutableList<Class2090> method2982() {
+      return ImmutableList.of(Class2090.field13619, Class2090.field13624, Class2090.field13622);
+   }
+
+   @Override
+   public Class8848 method2983(Class8848 var1) {
+      if (!(var1.method32107() instanceof Class3262)) {
+         return Class8848.field39973;
+      } else {
+         Predicate var4 = ((Class3262)var1.method32107()).method11751();
+         Class8848 var5 = Class3262.method11774(this, var4);
+         if (!var5.method32105()) {
+            return var5;
+         } else {
+            var4 = ((Class3262)var1.method32107()).method11752();
+
+            for (int var6 = 0; var6 < this.field4902.method3629(); var6++) {
+               Class8848 var7 = this.field4902.method3618(var6);
+               if (var4.test(var7)) {
+                  return var7;
+               }
+            }
+
+            return !this.field4919.field29609 ? Class8848.field39973 : new Class8848(Class8514.field37797);
+         }
+      }
+   }
+
+   @Override
+   public Class8848 method2984(Class1655 var1, Class8848 var2) {
+      this.method2932().method37570(var2.method32107(), var2);
+      this.method2913(Class8876.field40098.method172(var2.method32107()));
+      var1.method6743(
+         (PlayerEntity)null,
+         this.getPosX(),
+         this.getPosY(),
+         this.getPosZ(),
+         Class6067.field26959,
+         Class2266.field14735,
+         0.5F,
+         var1.field9016.nextFloat() * 0.1F + 0.9F
+      );
+      if (this instanceof Class878) {
+         Class9551.field44490.method15174((Class878)this, var2);
+      }
+
+      return super.method2984(var1, var2);
+   }
+
+   @Override
+   public boolean method2985(Class7380 var1) {
+      return this.field4919.field29607 || super.method2985(var1);
+   }
+
+   @Override
+   public Vector3d method2986(float var1) {
+      double var4 = 0.22 * (this.method2967() != Class2205.field14418 ? 1.0 : -1.0);
+      float var6 = Class9679.method37821(var1 * 0.5F, this.field5032, this.field5034) * (float) (Math.PI / 180.0);
+      float var7 = Class9679.method37821(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
+      if (this.method3165() || this.method3130()) {
+         Vector3d var8 = this.method3281(var1);
+         Vector3d var9 = this.method3433();
+         double var21 = Entity.method3234(var9);
+         double var12 = Entity.method3234(var8);
+         float var14;
+         if (var21 > 0.0 && var12 > 0.0) {
+            double var17 = (var9.field18048 * var8.field18048 + var9.field18050 * var8.field18050) / Math.sqrt(var21 * var12);
+            double var19 = var9.field18048 * var8.field18050 - var9.field18050 * var8.field18048;
+            var14 = (float)(Math.signum(var19) * Math.acos(var17));
+         } else {
+            var14 = 0.0F;
+         }
+
+         return this.method3288(var1).method11338(new Vector3d(var4, -0.11, 0.85).method11352(-var14).method11350(-var6).method11351(-var7));
+      } else if (!this.method3166()) {
+         double var15 = this.method3389().method19677() - 1.0;
+         double var10 = !this.method3336() ? 0.07 : -0.2;
+         return this.method3288(var1).method11338(new Vector3d(var4, var15, var10).method11351(-var7));
+      } else {
+         return this.method3288(var1).method11338(new Vector3d(var4, 0.2, -0.15).method11350(-var6).method11351(-var7));
+      }
+   }
+}

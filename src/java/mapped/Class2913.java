@@ -1,0 +1,29 @@
+package mapped;
+
+import com.mojang.serialization.Codec;
+
+import java.util.Random;
+
+public class Class2913 extends Class2898<Class4712> {
+   public Class2913(Codec<Class4712> var1) {
+      super(var1);
+   }
+
+   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
+      float var8 = (float)(var3.nextInt(3) + 4);
+
+      for (int var9 = 0; var8 > 0.5F; var9--) {
+         for (int var10 = Class9679.method37767(-var8); var10 <= Class9679.method37773(var8); var10++) {
+            for (int var11 = Class9679.method37767(-var8); var11 <= Class9679.method37773(var8); var11++) {
+               if ((float)(var10 * var10 + var11 * var11) <= (var8 + 1.0F) * (var8 + 1.0F)) {
+                  this.method11217(var1, var4.method8336(var10, var9, var11), Class8487.field36651.method11579());
+               }
+            }
+         }
+
+         var8 = (float)((double)var8 - ((double)var3.nextInt(2) + 0.5));
+      }
+
+      return true;
+   }
+}

@@ -1,0 +1,195 @@
+package mapped;
+
+import com.google.common.collect.ImmutableList;
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.BoolArgumentType;
+import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import java.util.Collection;
+import net.minecraft.util.text.TranslationTextComponent;
+
+public class Class9548 {
+   private static final SimpleCommandExceptionType field44458 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.effect.give.failed"));
+   private static final SimpleCommandExceptionType field44459 = new SimpleCommandExceptionType(
+      new TranslationTextComponent("commands.effect.clear.everything.failed")
+   );
+   private static final SimpleCommandExceptionType field44460 = new SimpleCommandExceptionType(
+      new TranslationTextComponent("commands.effect.clear.specific.failed")
+   );
+
+   public static void method36984(CommandDispatcher<Class6619> var0) {
+      var0.register(
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("effect").requires(var0x -> var0x.method20129(2)))
+               .then(
+                  ((LiteralArgumentBuilder)Class6099.method18839("clear")
+                        .executes(var0x -> method36986((Class6619)var0x.getSource(), ImmutableList.of(((Class6619)var0x.getSource()).method20174()))))
+                     .then(
+                        ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31347())
+                              .executes(var0x -> method36986((Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"))))
+                           .then(
+                              Class6099.method18840("effect", Class9468.method36510())
+                                 .executes(
+                                    var0x -> method36987(
+                                          (Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class9468.method36511(var0x, "effect")
+                                       )
+                                 )
+                           )
+                     )
+               ))
+            .then(
+               Class6099.method18839("give")
+                  .then(
+                     Class6099.method18840("targets", Class8700.method31347())
+                        .then(
+                           ((RequiredArgumentBuilder)Class6099.method18840("effect", Class9468.method36510())
+                                 .executes(
+                                    var0x -> method36985(
+                                          (Class6619)var0x.getSource(),
+                                          Class8700.method31348(var0x, "targets"),
+                                          Class9468.method36511(var0x, "effect"),
+                                          (Integer)null,
+                                          0,
+                                          true
+                                       )
+                                 ))
+                              .then(
+                                 ((RequiredArgumentBuilder)Class6099.method18840("seconds", IntegerArgumentType.integer(1, 1000000))
+                                       .executes(
+                                          var0x -> method36985(
+                                                (Class6619)var0x.getSource(),
+                                                Class8700.method31348(var0x, "targets"),
+                                                Class9468.method36511(var0x, "effect"),
+                                                IntegerArgumentType.getInteger(var0x, "seconds"),
+                                                0,
+                                                true
+                                             )
+                                       ))
+                                    .then(
+                                       ((RequiredArgumentBuilder)Class6099.method18840("amplifier", IntegerArgumentType.integer(0, 255))
+                                             .executes(
+                                                var0x -> method36985(
+                                                      (Class6619)var0x.getSource(),
+                                                      Class8700.method31348(var0x, "targets"),
+                                                      Class9468.method36511(var0x, "effect"),
+                                                      IntegerArgumentType.getInteger(var0x, "seconds"),
+                                                      IntegerArgumentType.getInteger(var0x, "amplifier"),
+                                                      true
+                                                   )
+                                             ))
+                                          .then(
+                                             Class6099.method18840("hideParticles", BoolArgumentType.bool())
+                                                .executes(
+                                                   var0x -> method36985(
+                                                         (Class6619)var0x.getSource(),
+                                                         Class8700.method31348(var0x, "targets"),
+                                                         Class9468.method36511(var0x, "effect"),
+                                                         IntegerArgumentType.getInteger(var0x, "seconds"),
+                                                         IntegerArgumentType.getInteger(var0x, "amplifier"),
+                                                         !BoolArgumentType.getBool(var0x, "hideParticles")
+                                                      )
+                                                )
+                                          )
+                                    )
+                              )
+                        )
+                  )
+            )
+      );
+   }
+
+   private static int method36985(Class6619 var0, Collection<? extends Entity> var1, Class7144 var2, Integer var3, int var4, boolean var5) throws CommandSyntaxException {
+      int var8 = 0;
+      int var9;
+      if (var3 == null) {
+         if (!var2.method22292()) {
+            var9 = 600;
+         } else {
+            var9 = 1;
+         }
+      } else if (!var2.method22292()) {
+         var9 = var3 * 20;
+      } else {
+         var9 = var3;
+      }
+
+      for (Entity var11 : var1) {
+         if (var11 instanceof Class880) {
+            Class2023 var12 = new Class2023(var2, var9, var4, false, var5);
+            if (((Class880)var11).method3035(var12)) {
+               var8++;
+            }
+         }
+      }
+
+      if (var8 != 0) {
+         if (var1.size() != 1) {
+            var0.method20179(new TranslationTextComponent("commands.effect.give.success.multiple", var2.method22295(), var1.size(), var9 / 20), true);
+         } else {
+            var0.method20179(
+               new TranslationTextComponent(
+                  "commands.effect.give.success.single", var2.method22295(), ((Entity)var1.iterator().next()).method2954(), var9 / 20
+               ),
+               true
+            );
+         }
+
+         return var8;
+      } else {
+         throw field44458.create();
+      }
+   }
+
+   private static int method36986(Class6619 var0, Collection<? extends Entity> var1) throws CommandSyntaxException {
+      int var4 = 0;
+
+      for (Entity var6 : var1) {
+         if (var6 instanceof Class880 && ((Class880)var6).method3030()) {
+            var4++;
+         }
+      }
+
+      if (var4 != 0) {
+         if (var1.size() != 1) {
+            var0.method20179(new TranslationTextComponent("commands.effect.clear.everything.success.multiple", var1.size()), true);
+         } else {
+            var0.method20179(
+               new TranslationTextComponent("commands.effect.clear.everything.success.single", ((Entity)var1.iterator().next()).method2954()), true
+            );
+         }
+
+         return var4;
+      } else {
+         throw field44459.create();
+      }
+   }
+
+   private static int method36987(Class6619 var0, Collection<? extends Entity> var1, Class7144 var2) throws CommandSyntaxException {
+      int var5 = 0;
+
+      for (Entity var7 : var1) {
+         if (var7 instanceof Class880 && ((Class880)var7).method3040(var2)) {
+            var5++;
+         }
+      }
+
+      if (var5 != 0) {
+         if (var1.size() != 1) {
+            var0.method20179(new TranslationTextComponent("commands.effect.clear.specific.success.multiple", var2.method22295(), var1.size()), true);
+         } else {
+            var0.method20179(
+               new TranslationTextComponent(
+                  "commands.effect.clear.specific.success.single", var2.method22295(), ((Entity)var1.iterator().next()).method2954()
+               ),
+               true
+            );
+         }
+
+         return var5;
+      } else {
+         throw field44460.create();
+      }
+   }
+}

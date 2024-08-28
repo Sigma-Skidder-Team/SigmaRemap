@@ -1,0 +1,49 @@
+package mapped;
+
+import java.io.IOException;
+
+public class Class5508 implements Packet<Class5116> {
+   private static String[] field24450;
+   private int field24451;
+   private int field24452;
+   private int field24453;
+
+   public Class5508() {
+   }
+
+   public Class5508(int var1, int var2, int var3) {
+      this.field24451 = var1;
+      this.field24452 = var2;
+      this.field24453 = var3;
+   }
+
+   public void method17180(Class5116 var1) {
+      var1.method15712(this);
+   }
+
+   @Override
+   public void method17175(PacketBuffer var1) throws IOException {
+      this.field24451 = var1.readUnsignedByte();
+      this.field24452 = var1.method35714();
+      this.field24453 = var1.readInt();
+   }
+
+   @Override
+   public void writePacketData(PacketBuffer var1) throws IOException {
+      var1.writeByte(this.field24451);
+      var1.writeVarInt(this.field24452);
+      var1.writeInt(this.field24453);
+   }
+
+   public int method17324() {
+      return this.field24451;
+   }
+
+   public int method17325() {
+      return this.field24452;
+   }
+
+   public int method17326() {
+      return this.field24453;
+   }
+}

@@ -1,0 +1,341 @@
+package mapped;
+
+import com.google.common.collect.Lists;
+import com.mentalfrostbyte.jello.event.EventTarget;
+import com.mentalfrostbyte.jello.event.impl.Class4414;
+import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Class4431;
+import com.mentalfrostbyte.jello.gui.GuiManager;
+import com.mentalfrostbyte.jello.module.Module;
+import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.util.text.ITextComponent;
+import org.lwjgl.opengl.GL11;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Class5305 extends Module {
+    public int field23841 = -1;
+    public double field23842;
+
+    public Class5305() {
+        super(ModuleCategory.GUI, "ShulkerInfo", "Shows shulker information");
+        this.method16005(false);
+    }
+
+    @EventTarget
+    private void method16669(Class4431 var1) {
+        this.field23842 = this.field23842 - var1.method13980();
+    }
+
+    private int method16670() {
+        int var3 = !(this.field23842 > 0.0) ? (int) Math.floor(this.field23842 / 5.0) : (int) Math.ceil(this.field23842 / 5.0);
+        this.field23842 = 0.0;
+        return var3;
+    }
+
+    @EventTarget
+    public void method16671(Class4420 var1) {
+        if (this.method15996()) {
+            RenderSystem.method27905(33986, 240.0F, 240.0F);
+
+            for (Entity var5 : Class5628.method17708()) {
+                if (var5 instanceof Class1000) {
+                    Class1000 var6 = (Class1000) var5;
+                    if (!(var6.method4124().method32107() instanceof Class3292)
+                            || !(((Class3292) var6.method4124().method32107()).method11845() instanceof Class3368)) {
+                        return;
+                    }
+
+                    this.method16674(
+                            Class9647.method37622(var5).field43722,
+                            Class9647.method37622(var5).field43723 + (double) var5.method3430(),
+                            Class9647.method37622(var5).field43724,
+                            var5,
+                            0.8F
+                    );
+                    if (this.method16672(var6)) {
+                        double var7 = Class9647.method37622(var5).field43722 - field23386.field1295.method768().method37504().method11320();
+                        double var9 = Class9647.method37622(var5).field43723 - field23386.field1295.method768().method37504().method11321();
+                        double var11 = Class9647.method37622(var5).field43724 - field23386.field1295.method768().method37504().method11322();
+                        float var13 = 0.3F;
+                        GL11.glEnable(3042);
+                        GL11.glAlphaFunc(516, 0.0F);
+                        GL11.glEnable(2848);
+                        Class3192.method11459(
+                                new Class9388(
+                                        var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
+                                ),
+                                Class5628.method17688(Class1979.field12891.field12910, 0.1F)
+                        );
+                        Class3192.method11462(
+                                new Class9388(
+                                        var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
+                                ),
+                                3.0F,
+                                Class5628.method17688(Class1979.field12891.field12910, 0.3F)
+                        );
+                        GL11.glDisable(3042);
+                        if (field23386.field1299.field44642.method8509()) {
+                            field23386.field1299.field44642.field13071 = false;
+                            Peek.method18337(var6.method4124());
+                        }
+                    }
+
+                    GL11.glColor3f(1.0F, 1.0F, 1.0F);
+                }
+            }
+
+            RenderSystem.method27905(33986, 240.0F, 240.0F);
+            TextureImpl.method36180();
+            TextureManager var10000 = field23386.getTextureManager();
+            field23386.getTextureManager();
+            var10000.bindTexture(TextureManager.field1094);
+        }
+    }
+
+    public boolean method16672(Class1000 var1) {
+        if (field23386.field1339.method3275(var1) > 5.0F) {
+            return false;
+        } else {
+            float var4 = (float) Math.sqrt(6.0 / Class9647.method37620(var1));
+            float var5 = 10.0F * var4;
+            double var6 = var1.getPosX() - field23386.field1339.getPosX();
+            double var8 = var1.getPosY() - field23386.field1339.getPosY() - (double) field23386.field1339.method3430() + 0.4F;
+            double var10 = var1.getPosZ() - field23386.field1339.getPosZ();
+            double var12 = Class9679.method37766(var6 * var6 + var10 * var10);
+            float var14 = Class9142.method34135(field23386.field1339.field5031, (float) (Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
+            float var15 = Class9142.method34135(field23386.field1339.field5032, (float) (-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
+            return this.method16673(field23386.field1339.field5031, var14) <= var5 && this.method16673(field23386.field1339.field5032, var15) <= var5;
+        }
+    }
+
+    public float method16673(float var1, float var2) {
+        float var5 = Math.abs(var2 - var1) % 360.0F;
+        return !(var5 > 180.0F) ? var5 : 360.0F - var5;
+    }
+
+    public void method16674(double var1, double var3, double var5, Entity var7, float var8) {
+        ClientResource var11 = ResourceRegistry.field38855;
+        String var12 = var7.method2941().getUnformattedComponentText();
+        float var13 = (float) (var1 - field23386.field1295.method768().method37504().method11320());
+        float var14 = (float) (var3 - field23386.field1295.method768().method37504().method11321());
+        float var15 = (float) (var5 - field23386.field1295.method768().method37504().method11322());
+        GL11.glBlendFunc(770, 771);
+        GL11.glEnable(3042);
+        GL11.glEnable(2848);
+        GL11.glDisable(3553);
+        GL11.glDisable(2929);
+        GL11.glDisable(2896);
+        GL11.glDepthMask(false);
+        GL11.glPushMatrix();
+        GL11.glAlphaFunc(519, 0.0F);
+        GL11.glTranslated(var13, var14 + 0.6F - 0.33333334F * (1.0F - var8), var15);
+        GL11.glRotatef(field23386.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(field23386.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
+        GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
+        GL11.glTranslated(-var11.method23942(var12) / 2, 0.0, 0.0);
+        List var16 = this.method16678(((Class1000) var7).method4124());
+        this.method16676(-87, -70, var16, ((Class1000) var7).method4124().method32149().getString(), false);
+        GL11.glPopMatrix();
+        GL11.glEnable(2929);
+        GL11.glEnable(2896);
+        GL11.glDisable(2848);
+        GL11.glDepthMask(true);
+        GL11.glDisable(3042);
+    }
+
+    @EventTarget
+    private void method16675(Class4414 var1) {
+        if (this.method15996()) {
+            if (field23386.field1355 instanceof Class851) {
+                Class851 var4 = (Class851) field23386.field1355;
+                Class5839 var5 = var4.field4729;
+                if (var5 != null
+                        && var5.method18266()
+                        && var5.method18265().method32107() instanceof Class3292
+                        && ((Class3292) var5.method18265().method32107()).method11845() instanceof Class3368) {
+                    Class8848 var6 = var5.method18265();
+                    List var7 = this.method16678(var6);
+                    int var8 = Math.max(-1, Math.min(1, this.method16670()));
+                    if (var8 != 0 || this.field23841 != -1) {
+                        this.field23841 = Math.max(0, Math.min(var7.size() - 1, this.field23841 - var8));
+                    }
+
+                    GL11.glPushMatrix();
+                    GL11.glTranslatef(0.0F, 0.0F, 1000.0F);
+                    GL11.glScalef(1.0F / Class3192.method11417(), 1.0F / Class3192.method11417(), 0.0F);
+                    int var9 = Math.round(16.0F * Class3192.method11417());
+                    byte var10 = 1;
+                    byte var11 = 12;
+                    int var12 = ResourceRegistry.field38855.method23952();
+                    int var13 = (int) (field23386.field1301.method36738() * (double) GuiManager.field41348 - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
+                    int var14 = (int) (field23386.field1301.method36739() * (double) GuiManager.field41348 - 33.0);
+                    this.method16676(var13, var14, var7, var6.method32149().getString(), true);
+                    GL11.glPopMatrix();
+                    RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+                    RenderSystem.method27849();
+                    RenderSystem.disableDepthTest();
+                    RenderSystem.enableBlend();
+                    RenderSystem.method27819(518, 0.1F);
+                } else {
+                    this.field23841 = -1;
+                    this.field23842 = 0.0;
+                }
+            }
+        }
+    }
+
+    private void method16676(int var1, int var2, List<Class8848> var3, String var4, boolean var5) {
+        byte var8 = 12;
+        int var9 = ResourceRegistry.field38855.method23952();
+        int var10 = Math.round(16.0F * Class3192.method11417());
+        byte var11 = 1;
+        int var12 = (int) Math.ceil((float) var3.size() / 9.0F) * (var10 + var11) + var8 * 2 + var9;
+        int var13 = 9 * (var10 + var11) + var8 * 2;
+        RenderSystem.method27821();
+        GL11.glAlphaFunc(519, 0.0F);
+        if (!var5) {
+            Class3192.method11424(
+                    (float) var1,
+                    (float) var2,
+                    (float) var13,
+                    (float) var12,
+                    Class5628.method17688(Class5628.method17690(Class1979.field12896.field12910, Class1979.field12891.field12910, 75.0F), 0.7F)
+            );
+            Class3192.method11463((float) var1, (float) var2, (float) var13, (float) var12, 10.0F, 0.5F);
+        } else {
+            Class3192.method11467(var1, var2, var13, var12, Class5628.method17688(Class1979.field12891.field12910, 0.94F));
+        }
+
+        Class3192.method11439(
+                ResourceRegistry.field38855, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, Class5628.method17688(Class1979.field12896.field12910, 0.8F)
+        );
+        RenderSystem.method27820();
+
+        for (int var14 = 0; var14 < var3.size(); var14++) {
+            Class8848 var15 = var3.get(var14);
+            int var16 = var2 + var9 + var8 + var14 / 9 * (var10 + var11);
+            int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
+            RenderSystem.method27821();
+            if (var14 == this.field23841 && var5) {
+                Class3192.method11424((float) var17, (float) var16, (float) var10, (float) var10, Class5628.method17688(Class1979.field12896.field12910, 0.15F));
+            }
+
+            Class3192.method11479(var15, var17, var16, var10, var10);
+            if (var15.field39976 > 1) {
+                int var18 = var10 - ResourceRegistry.field38854.method23942("" + var15.field39976);
+                int var19 = ResourceRegistry.field38854.method23942("" + var15.field39976);
+                GL11.glAlphaFunc(519, 0.0F);
+                RenderSystem.method27821();
+                Class3192.method11450(
+                        (float) (var17 + var18 - 17 - var19 / 4),
+                        (float) (var16 + 7),
+                        (float) (40 + var19),
+                        40.0F,
+                        ResourcesDecrypter.shadowPNG,
+                        Class5628.method17688(Class1979.field12896.field12910, 0.7F),
+                        false
+                );
+                Class3192.method11439(ResourceRegistry.field38854, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, Class1979.field12896.field12910);
+                RenderSystem.method27820();
+            }
+
+            RenderSystem.method27820();
+        }
+
+        for (int var23 = 0; var23 < var3.size(); var23++) {
+            Class8848 var24 = var3.get(var23);
+            int var25 = var2 + var9 + var8 + var23 / 9 * (var10 + var11);
+            int var27 = var1 + var8 + var23 % 9 * (var10 + var11);
+            if (var23 == this.field23841 && var5) {
+                RenderSystem.method27821();
+                int var29 = field23386.field1294.method38820(var24.method32149().getUnformattedComponentText());
+                List var32 = this.method16677(var24);
+
+                for (int var20 = 0; var20 < var32.size(); var20++) {
+                    var29 = Math.max(var29, field23386.field1294.method38820((String) var32.get(var20)));
+                }
+
+                var29 = (int) ((float) var29 * Class3192.method11417());
+                int var33 = var32.size();
+                Class3192.method11424(
+                        (float) var27,
+                        (float) (var25 + var10),
+                        (float) var29 + 9.0F * Class3192.method11417(),
+                        10.0F * Class3192.method11417() * (float) var33 + 7.0F * Class3192.method11417(),
+                        Class5628.method17688(Class1979.field12891.field12910, 0.8F)
+                );
+                GL11.glPushMatrix();
+                GL11.glScalef(Class3192.method11417(), Class3192.method11417(), 0.0F);
+                var25 = (int) ((float) var25 * (1.0F / Class3192.method11417()));
+                var27 = (int) ((float) var27 * (1.0F / Class3192.method11417()));
+                var10 = (int) ((float) var10 * (1.0F / Class3192.method11417()));
+                var29 = (int) ((float) var29 * (1.0F / Class3192.method11417()));
+
+                for (int var21 = 0; var21 < var32.size(); var21++) {
+                    String var22 = (String) var32.get(var21);
+                    field23386.field1294
+                            .method38807(
+                                    var22,
+                                    (float) (var27 + 5),
+                                    5.3F + (float) var25 + (float) var10 + (float) (var21 * 10),
+                                    Class1979.field12896.field12910,
+                                    new Class9332().method35296().method32361(),
+                                    false,
+                                    false
+                            );
+                }
+
+                GL11.glPopMatrix();
+                RenderSystem.method27820();
+            }
+        }
+    }
+
+    public List<String> method16677(Class8848 var1) {
+        List<ITextComponent> var4 = var1.method32153(field23386.field1339, !field23386.field1299.field44588 ? Class2215.field14480 : Class2215.field14481);
+        List var5 = Lists.newArrayList();
+
+        for (ITextComponent var7 : var4) {
+            var5.add(var7.getString());
+        }
+
+        return var5;
+    }
+
+    private List<Class8848> method16678(Class8848 var1) {
+        List<Class8848> var4 = new ArrayList();
+        Class39 var5 = var1.method32142();
+        if (var5 != null && var5.method119("BlockEntityTag", 10)) {
+            Class39 var6 = var5.method130("BlockEntityTag");
+            Peek.method18338(var6);
+            if (var6.method119("Items", 9)) {
+                Class25<Class8848> var7 = Class25.method68(27, Class8848.field39973);
+                Class7920.method26567(var6, var7);
+
+                for (Class8848 var9 : var7) {
+                    if (!var9.method32105()) {
+                        boolean var10 = true;
+
+                        for (Class8848 var12 : var4) {
+                            if (var9.method32132(var12) && Class8848.method32127(var12, var9)) {
+                                var12.method32180(var9.method32179() + var12.method32179());
+                                var10 = false;
+                            }
+                        }
+
+                        if (var10) {
+                            var4.add(var9);
+                        }
+                    }
+                }
+            }
+        }
+
+        return var4;
+    }
+}

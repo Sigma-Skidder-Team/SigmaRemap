@@ -1,0 +1,23 @@
+package mapped;
+
+public class Class1099 extends Class1009 {
+   private static String[] field6050;
+
+   public Class1099(Class8992<? extends Class1099> var1, Class1655 var2) {
+      super(var1, var2);
+   }
+
+   @Override
+   public float method2957(Class2090 var1, Class8847 var2) {
+      return 10.440001F;
+   }
+
+   public static Class7037 method5268() {
+      return Class1009.method4343().method21849(Class9173.field42105, 100.0).method21849(Class9173.field42108, 0.5).method21849(Class9173.field42110, 50.0);
+   }
+
+   @Override
+   public float method4339(BlockPos var1, Class1662 var2) {
+      return var2.method7009(var1) - 0.5F;
+   }
+}

@@ -1,0 +1,34 @@
+package mapped;
+
+public class Class3349 extends Class3348 {
+   private static String[] field18864;
+
+   public Class3349(Class7929 var1) {
+      super(var1, () -> Class4387.field21423);
+   }
+
+   @Override
+   public Class944 method11646(Class1665 var1) {
+      return new Class970();
+   }
+
+   @Override
+   public Class9007<ResourceLocation> method11910() {
+      return Class8876.field40104.method172(Class8876.field40155);
+   }
+
+   @Override
+   public boolean method11516(Class7380 var1) {
+      return true;
+   }
+
+   @Override
+   public int method11514(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
+      return Class9679.method37775(Class941.method3763(var2, var3), 0, 15);
+   }
+
+   @Override
+   public int method11515(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
+      return var4 != Direction.field673 ? 0 : var1.method23402(var2, var3, var4);
+   }
+}

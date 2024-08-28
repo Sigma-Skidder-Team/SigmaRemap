@@ -1,0 +1,83 @@
+package mapped;
+
+public class Class5454 extends Class5444<Class4726> {
+   private static String[] field24213;
+
+   public Class5454(Class2961<Class4726> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+      super(var1, var2, var3, var4, var5, var6);
+   }
+
+   public void method17109(Class8904 var1, Class5646 var2, Class8761 var3, int var4, int var5, Class8907 var6, Class4726 var7) {
+      Class8299 var10 = new Class8299();
+      Class2219 var11;
+      if (var7.field22393 != Class107.field337) {
+         if (var7.field22393 != Class107.field338) {
+            if (var7.field22393 != Class107.field339) {
+               if (var7.field22393 != Class107.field340) {
+                  if (var7.field22393 != Class107.field341) {
+                     if (var7.field22393 != Class107.field342) {
+                        boolean var12 = this.field24201.nextFloat() < 0.5F;
+                        var11 = !var12 ? Class2219.field14494 : Class2219.field14498;
+                        var10.field35676 = var12 || this.field24201.nextFloat() < 0.5F;
+                     } else {
+                        var11 = Class2219.field14499;
+                        var10.field35676 = this.field24201.nextFloat() < 0.5F;
+                        var10.field35675 = 0.0F;
+                        var10.field35679 = true;
+                     }
+                  } else {
+                     var11 = Class2219.field14496;
+                     var10.field35676 = false;
+                     var10.field35675 = 0.8F;
+                  }
+               } else {
+                  boolean var25 = this.field24201.nextFloat() < 0.5F;
+                  var11 = !var25 ? Class2219.field14494 : Class2219.field14497;
+                  var10.field35676 = var25 || this.field24201.nextFloat() < 0.5F;
+               }
+            } else {
+               var11 = Class2219.field14496;
+               var10.field35676 = false;
+               var10.field35675 = 0.5F;
+               var10.field35678 = true;
+            }
+         } else {
+            var11 = Class2219.field14494;
+            var10.field35676 = this.field24201.nextFloat() < 0.5F;
+            var10.field35675 = 0.8F;
+            var10.field35677 = true;
+            var10.field35678 = true;
+         }
+      } else {
+         var11 = Class2219.field14495;
+         var10.field35676 = false;
+         var10.field35675 = 0.0F;
+      }
+
+      ResourceLocation var26;
+      if (!(this.field24201.nextFloat() < 0.05F)) {
+         var26 = new ResourceLocation(Class2978.method11389()[this.field24201.nextInt(Class2978.method11389().length)]);
+      } else {
+         var26 = new ResourceLocation(Class2978.method11388()[this.field24201.nextInt(Class2978.method11388().length)]);
+      }
+
+      Class8969 var13 = var3.method31603(var26);
+      Class80 var14 = Util.<Class80>method38518(Class80.values(), this.field24201);
+      Class2089 var15 = !(this.field24201.nextFloat() < 0.5F) ? Class2089.field13616 : Class2089.field13614;
+      BlockPos var16 = new BlockPos(var13.method32886().method8304() / 2, 0, var13.method32886().method8306() / 2);
+      BlockPos var17 = new Class7481(var4, var5).method24364();
+      Class9764 var18 = var13.method32910(var17, var14, var16, var15);
+      Class1998 var19 = var18.method38401();
+      int var20 = var19.method8304();
+      int var21 = var19.method8306();
+      int var22 = var2.method17797(var20, var21, Class4184.method12959(var11)) - 1;
+      int var23 = Class2978.method11390(this.field24201, var2, var11, var10.field35676, var22, var18.method38399(), var18);
+      BlockPos var24 = new BlockPos(var17.method8304(), var23, var17.method8306());
+      if (var7.field22393 == Class107.field340 || var7.field22393 == Class107.field341 || var7.field22393 == Class107.field336) {
+         var10.field35674 = Class2978.method11391(var24, var6);
+      }
+
+      this.field24196.add(new Class4184(var24, var11, var10, var26, var13, var14, var15, var16));
+      this.method17113();
+   }
+}

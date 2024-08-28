@@ -1,0 +1,95 @@
+package mapped;
+
+import java.util.Random;
+
+public class Class3220 extends Class3209 {
+   private static String[] field18639;
+   public static final Class8554 field18640 = Class8820.field39743;
+   public static final Class6408 field18641 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+   public static final Class6408 field18642 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+
+   public Class3220(Class7929 var1) {
+      super(var1);
+      this.method11578(this.field18612.method35393().method23465(field18640, Integer.valueOf(0)));
+   }
+
+   @Override
+   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+      if (!var1.method23443(var2, var3)) {
+         var2.method7179(var3, true);
+      }
+   }
+
+   @Override
+   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+      BlockPos var7 = var3.method8311();
+      if (var2.method7007(var7)) {
+         int var8 = 1;
+
+         while (var2.method6738(var3.method8340(var8)).method23448(this)) {
+            var8++;
+         }
+
+         if (var8 < 3) {
+            int var9 = var1.<Integer>method23463(field18640);
+            if (var9 != 15) {
+               var2.method6725(var3, var1.method23465(field18640, Integer.valueOf(var9 + 1)), 4);
+            } else {
+               var2.method6730(var7, this.method11579());
+               Class7380 var10 = var1.method23465(field18640, Integer.valueOf(0));
+               var2.method6725(var3, var10, 4);
+               var10.method23423(var2, var7, this, var3, false);
+            }
+         }
+      }
+   }
+
+   @Override
+   public Class6408 method11502(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+      return field18641;
+   }
+
+   @Override
+   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+      return field18642;
+   }
+
+   @Override
+   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      if (!var1.method23443(var4, var5)) {
+         var4.method6860().method20726(var5, this, 1);
+      }
+
+      return super.method11491(var1, var2, var3, var4, var5, var6);
+   }
+
+   @Override
+   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
+      for (Direction var7 : Class76.field161) {
+         Class7380 var8 = var2.method6738(var3.method8349(var7));
+         Class8649 var9 = var8.method23384();
+         if (var9.method31086() || var2.method6739(var3.method8349(var7)).method23486(Class8953.field40470)) {
+            return false;
+         }
+      }
+
+      Class7380 var10 = var2.method6738(var3.method8313());
+      return (var10.method23448(Class8487.field36574) || var10.method23448(Class8487.field36415) || var10.method23448(Class8487.field36416))
+         && !var2.method6738(var3.method8311()).method23384().method31085();
+   }
+
+   @Override
+   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+      var4.method2741(Class8654.field39001, 1.0F);
+   }
+
+   @Override
+   public void method11489(Class7558<Class3209, Class7380> var1) {
+      var1.method24737(field18640);
+   }
+
+   @Override
+   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+      return false;
+   }
+}

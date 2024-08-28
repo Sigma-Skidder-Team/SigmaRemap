@@ -1,0 +1,162 @@
+package mapped;
+
+import com.google.gson.*;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntComparators;
+import it.unimi.dsi.fastutil.ints.IntList;
+
+import java.util.Arrays;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
+public final class Class120 implements Predicate<Class8848> {
+   public static final Class120 field427 = new Class120(Stream.empty());
+   private final Class4826[] field428;
+   private Class8848[] field429;
+   private IntList field430;
+
+   private Class120(Stream<? extends Class4826> var1) {
+      this.field428 = var1.<Class4826>toArray(Class4826[]::new);
+   }
+
+   public Class8848[] method332() {
+      this.method333();
+      return this.field429;
+   }
+
+   private void method333() {
+      if (this.field429 == null) {
+         this.field429 = Arrays.<Class4826>stream(this.field428)
+            .<Class8848>flatMap(var0 -> var0.method14917().stream())
+            .distinct()
+            .<Class8848>toArray(Class8848[]::new);
+      }
+   }
+
+   public boolean test(Class8848 var1) {
+      if (var1 == null) {
+         return false;
+      } else {
+         this.method333();
+         if (this.field429.length == 0) {
+            return var1.method32105();
+         } else {
+            for (Class8848 var7 : this.field429) {
+               if (var7.method32107() == var1.method32107()) {
+                  return true;
+               }
+            }
+
+            return false;
+         }
+      }
+   }
+
+   public IntList method334() {
+      if (this.field430 == null) {
+         this.method333();
+         this.field430 = new IntArrayList(this.field429.length);
+
+         for (Class8848 var6 : this.field429) {
+            this.field430.add(Class6207.method19119(var6));
+         }
+
+         this.field430.sort(IntComparators.NATURAL_COMPARATOR);
+      }
+
+      return this.field430;
+   }
+
+   public void method335(PacketBuffer var1) {
+      this.method333();
+      var1.writeVarInt(this.field429.length);
+
+      for (int var4 = 0; var4 < this.field429.length; var4++) {
+         var1.method35724(this.field429[var4]);
+      }
+   }
+
+   public JsonElement method336() {
+      if (this.field428.length == 1) {
+         return this.field428[0].method14918();
+      } else {
+         JsonArray var3 = new JsonArray();
+
+         for (Class4826 var7 : this.field428) {
+            var3.add(var7.method14918());
+         }
+
+         return var3;
+      }
+   }
+
+   public boolean method337() {
+      return this.field428.length == 0 && (this.field429 == null || this.field429.length == 0) && (this.field430 == null || this.field430.isEmpty());
+   }
+
+   private static Class120 method338(Stream<? extends Class4826> var0) {
+      Class120 var3 = new Class120(var0);
+      return var3.field428.length != 0 ? var3 : field427;
+   }
+
+   public static Class120 method339(Class3303... var0) {
+      return method341(Arrays.<Class3303>stream(var0).<Class8848>map(Class8848::new));
+   }
+
+   public static Class120 method340(Class8848... var0) {
+      return method341(Arrays.<Class8848>stream(var0));
+   }
+
+   public static Class120 method341(Stream<Class8848> var0) {
+      return method338(var0.filter(var0x -> !var0x.method32105()).map(var0x -> new Class4827(var0x)));
+   }
+
+   public static Class120 method342(Class7608<Class3257> var0) {
+      return method338(Stream.of(new Class4828(var0)));
+   }
+
+   public static Class120 method343(PacketBuffer var0) {
+      int var3 = var0.method35714();
+      return method338(Stream.<Class4826>generate(() -> new Class4827(var0.method35726())).limit(var3));
+   }
+
+   public static Class120 method344(JsonElement var0) {
+      if (var0 == null || var0.isJsonNull()) {
+         throw new JsonSyntaxException("Item cannot be null");
+      } else if (var0.isJsonObject()) {
+         return method338(Stream.of(method345(var0.getAsJsonObject())));
+      } else if (!var0.isJsonArray()) {
+         throw new JsonSyntaxException("Expected item to be object or array of objects");
+      } else {
+         JsonArray var3 = var0.getAsJsonArray();
+         if (var3.size() != 0) {
+            return method338(StreamSupport.<JsonElement>stream(var3.spliterator(), false).map(var0x -> method345(Class8963.method32781(var0x, "item"))));
+         } else {
+            throw new JsonSyntaxException("Item array cannot be empty, at least one item must be defined");
+         }
+      }
+   }
+
+   private static Class4826 method345(JsonObject var0) {
+      if (var0.has("item") && var0.has("tag")) {
+         throw new JsonParseException("An ingredient entry is either a tag or an item, not both");
+      } else if (!var0.has("item")) {
+         if (!var0.has("tag")) {
+            throw new JsonParseException("An ingredient entry needs either a tag or an item");
+         } else {
+            ResourceLocation var5 = new ResourceLocation(Class8963.method32763(var0, "tag"));
+            Class7608 var6 = Class9443.method36296().method32658().method27135(var5);
+            if (var6 != null) {
+               return new Class4828(var6);
+            } else {
+               throw new JsonSyntaxException("Unknown item tag '" + var5 + "'");
+            }
+         }
+      } else {
+         ResourceLocation var3 = new ResourceLocation(Class8963.method32763(var0, "item"));
+         Class3257 var4 = Class2348.field16075.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
+         return new Class4827(new Class8848(var4));
+      }
+   }
+}

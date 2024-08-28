@@ -1,0 +1,218 @@
+package mapped;
+
+import com.google.common.collect.Lists;
+import java.util.List;
+
+public class Class7522 {
+   private static String[] field32257;
+   private final List<Class7047> field32258 = Lists.newArrayList();
+   private double field32259 = 0.2;
+   private double field32260 = 5.0;
+   private int field32261 = 15;
+   private int field32262 = 5;
+   private double field32263;
+   private double field32264;
+   private int field32265 = 29999984;
+   private Class8117 field32266 = new Class8116(this, 6.0E7);
+   public static final Class7235 field32267 = new Class7235(0.0, 0.0, 0.2, 5.0, 5, 15, 6.0E7, 0L, 0.0);
+
+   public boolean method24523(BlockPos var1) {
+      return (double)(var1.method8304() + 1) > this.method24530()
+         && (double)var1.method8304() < this.method24532()
+         && (double)(var1.method8306() + 1) > this.method24531()
+         && (double)var1.method8306() < this.method24533();
+   }
+
+   public boolean method24524(Class7481 var1) {
+      return (double)var1.method24358() > this.method24530()
+         && (double)var1.method24356() < this.method24532()
+         && (double)var1.method24359() > this.method24531()
+         && (double)var1.method24357() < this.method24533();
+   }
+
+   public boolean method24525(Class6488 var1) {
+      return var1.field28452 > this.method24530()
+         && var1.field28449 < this.method24532()
+         && var1.field28454 > this.method24531()
+         && var1.field28451 < this.method24533();
+   }
+
+   public double method24526(Entity var1) {
+      return this.method24528(var1.getPosX(), var1.getPosZ());
+   }
+
+   public Class6408 method24527() {
+      return this.field32266.method28118();
+   }
+
+   public double method24528(double var1, double var3) {
+      double var7 = var3 - this.method24531();
+      double var9 = this.method24533() - var3;
+      double var11 = var1 - this.method24530();
+      double var13 = this.method24532() - var1;
+      double var15 = Math.min(var11, var13);
+      var15 = Math.min(var15, var7);
+      return Math.min(var15, var9);
+   }
+
+   public Class2101 method24529() {
+      return this.field32266.method28110();
+   }
+
+   public double method24530() {
+      return this.field32266.method28105();
+   }
+
+   public double method24531() {
+      return this.field32266.method28107();
+   }
+
+   public double method24532() {
+      return this.field32266.method28106();
+   }
+
+   public double method24533() {
+      return this.field32266.method28108();
+   }
+
+   public double method24534() {
+      return this.field32263;
+   }
+
+   public double method24535() {
+      return this.field32264;
+   }
+
+   public void method24536(double var1, double var3) {
+      this.field32263 = var1;
+      this.field32264 = var3;
+      this.field32266.method28116();
+
+      for (Class7047 var8 : this.method24542()) {
+         var8.method21951(this, var1, var3);
+      }
+   }
+
+   public double method24537() {
+      return this.field32266.method28109();
+   }
+
+   public long method24538() {
+      return this.field32266.method28112();
+   }
+
+   public double method24539() {
+      return this.field32266.method28113();
+   }
+
+   public void method24540(double var1) {
+      this.field32266 = new Class8116(this, var1);
+
+      for (Class7047 var6 : this.method24542()) {
+         var6.method21949(this, var1);
+      }
+   }
+
+   public void method24541(double var1, double var3, long var5) {
+      this.field32266 = (Class8117)(var1 != var3 ? new Class8118(this, var1, var3, var5) : new Class8116(this, var3));
+
+      for (Class7047 var10 : this.method24542()) {
+         var10.method21950(this, var1, var3, var5);
+      }
+   }
+
+   public List<Class7047> method24542() {
+      return Lists.newArrayList(this.field32258);
+   }
+
+   public void method24543(Class7047 var1) {
+      this.field32258.add(var1);
+   }
+
+   public void method24544(int var1) {
+      this.field32265 = var1;
+      this.field32266.method28115();
+   }
+
+   public int method24545() {
+      return this.field32265;
+   }
+
+   public double method24546() {
+      return this.field32260;
+   }
+
+   public void method24547(double var1) {
+      this.field32260 = var1;
+
+      for (Class7047 var6 : this.method24542()) {
+         var6.method21955(this, var1);
+      }
+   }
+
+   public double method24548() {
+      return this.field32259;
+   }
+
+   public void method24549(double var1) {
+      this.field32259 = var1;
+
+      for (Class7047 var6 : this.method24542()) {
+         var6.method21954(this, var1);
+      }
+   }
+
+   public double method24550() {
+      return this.field32266.method28111();
+   }
+
+   public int method24551() {
+      return this.field32261;
+   }
+
+   public void method24552(int var1) {
+      this.field32261 = var1;
+
+      for (Class7047 var5 : this.method24542()) {
+         var5.method21952(this, var1);
+      }
+   }
+
+   public int method24553() {
+      return this.field32262;
+   }
+
+   public void method24554(int var1) {
+      this.field32262 = var1;
+
+      for (Class7047 var5 : this.method24542()) {
+         var5.method21953(this, var1);
+      }
+   }
+
+   public void method24555() {
+      this.field32266 = this.field32266.method28117();
+   }
+
+   public Class7235 method24556() {
+      return new Class7235(this);
+   }
+
+   public void method24557(Class7235 var1) {
+      this.method24536(var1.method22710(), var1.method22711());
+      this.method24549(var1.method22712());
+      this.method24547(var1.method22713());
+      this.method24554(var1.method22714());
+      this.method24552(var1.method22715());
+      if (var1.method22717() <= 0L) {
+         this.method24540(var1.method22716());
+      } else {
+         this.method24541(var1.method22716(), var1.method22718(), var1.method22717());
+      }
+   }
+
+   // $VF: synthetic method
+   public static int method24558(Class7522 var0) {
+      return var0.field32265;
+   }
+}

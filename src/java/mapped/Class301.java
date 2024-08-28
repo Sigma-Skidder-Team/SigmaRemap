@@ -1,0 +1,109 @@
+package mapped;
+
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableMap.Builder;
+import com.google.common.collect.Maps;
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.text.StringTextComponent;
+import org.apache.commons.io.IOUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
+import java.util.concurrent.Executor;
+
+public class Class301 implements Class268 {
+   private static final Logger field1159 = LogManager.getLogger();
+   private static final int field1160 = "functions/".length();
+   private static final int field1161 = ".mcfunction".length();
+   private volatile Map<ResourceLocation, Class7744> field1162 = ImmutableMap.of();
+   private final Class9768<Class7744> field1163 = new Class9768<Class7744>(this::method1177, "tags/functions", "function");
+   private volatile Class7984<Class7744> field1164 = Class7984.<Class7744>method27141();
+   private final int field1165;
+   private final CommandDispatcher<Class6619> field1166;
+
+   public Optional<Class7744> method1177(ResourceLocation var1) {
+      return Optional.<Class7744>ofNullable(this.field1162.get(var1));
+   }
+
+   public Map<ResourceLocation, Class7744> method1178() {
+      return this.field1162;
+   }
+
+   public Class7984<Class7744> method1179() {
+      return this.field1164;
+   }
+
+   public Class7608<Class7744> method1180(ResourceLocation var1) {
+      return this.field1164.method27132(var1);
+   }
+
+   public Class301(int var1, CommandDispatcher<Class6619> var2) {
+      this.field1165 = var1;
+      this.field1166 = var2;
+   }
+
+   @Override
+   public CompletableFuture<Void> method777(Class7121 var1, Class191 var2, Class7165 var3, Class7165 var4, Executor var5, Executor var6) {
+      CompletableFuture<Map<ResourceLocation, Class6879>> var9 = this.field1163.method38419(var2, var5);
+      CompletableFuture<Map> var10 = CompletableFuture.supplyAsync(
+            () -> var2.method583("functions", var0x -> var0x.endsWith(".mcfunction")), var5
+         )
+         .thenCompose(
+            var3x -> {
+               Map<ResourceLocation, CompletableFuture<Class7744>> var6x = Maps.newHashMap();
+               Class6619 var7 = new Class6619(
+                  Class909.field5189,
+                  Vector3d.field18047,
+                  Class8513.field37212,
+                       null,
+                  this.field1165,
+                  "",
+                  StringTextComponent.EMPTY,
+                       null,
+                       null
+               );
+
+               for (ResourceLocation var9x : var3x) {
+                  String var10x = var9x.method8292();
+                  ResourceLocation var11 = new ResourceLocation(var9x.method8293(), var10x.substring(field1160, var10x.length() - field1161));
+                  var6x.put(var11, CompletableFuture.supplyAsync(() -> {
+                     List var7x = method1181(var2, var9x);
+                     return Class7744.method25654(var11, this.field1166, var7, var7x);
+                  }, var5));
+               }
+
+               CompletableFuture[] var12 = var6x.values().toArray(new CompletableFuture[0]);
+               return CompletableFuture.allOf(var12).handle((var1xx, var2xx) -> var6x);
+            }
+         );
+      return var9.thenCombine(var10, Pair::of).thenCompose(var1::method22225).thenAcceptAsync(var1x -> {
+         Map<ResourceLocation, CompletableFuture<Class7744>> var4x = var1x.getSecond();
+         Builder<ResourceLocation,  Class7744> var5x = ImmutableMap.builder();
+         var4x.forEach((var1xx, var2x) -> var2x.handle((var2xx, var3x) -> {
+               if (var3x == null) {
+                  var5x.put(var1xx, var2xx);
+               } else {
+                  field1159.error("Failed to load function {}", var1xx, var3x);
+               }
+
+               return null;
+            }).join());
+         this.field1162 = var5x.build();
+         this.field1164 = this.field1163.method38420((Map<ResourceLocation, Class6879>)var1x.getFirst());
+      }, var6);
+   }
+
+   private static List<String> method1181(Class191 var0, ResourceLocation var1) {
+      try (Class1783 var4 = var0.method580(var1)) {
+         return IOUtils.readLines(var4.method7763(), StandardCharsets.UTF_8);
+      } catch (IOException var18) {
+         throw new CompletionException(var18);
+      }
+   }
+}
