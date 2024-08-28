@@ -25,9 +25,9 @@ public class Class5163 extends Module {
         if (this.method15996() && var1.method13921()) {
             if (this.method15974("Sneak")) {
                 if (this.field23435) {
-                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10041));
+                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
                 } else {
-                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10040));
+                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
                 }
             }
 
@@ -36,7 +36,7 @@ public class Class5163 extends Module {
             if (this.method15974("Hit") && this.field23436 > this.field23434.nextInt(5) + 3) {
                 this.field23436 = 0;
                 Hand var4 = Hand.values()[this.field23434.nextInt(1)];
-                mc.field1339.swingArm(var4);
+                mc.player.swingArm(var4);
             }
 
             String var6 = this.getStringSettingValueByName("Rotation Mode");
@@ -59,6 +59,6 @@ public class Class5163 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23437 = (int) mc.field1339.field5031;
+        this.field23437 = (int) mc.player.field5031;
     }
 }

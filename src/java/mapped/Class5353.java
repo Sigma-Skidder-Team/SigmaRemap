@@ -27,8 +27,8 @@ public class Class5353 extends Module {
 
     @EventTarget
     public void method16796(Class4399 var1) {
-        if (this.method15996() && mc.field1339 != null && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
-            if (mc.field1339.field5036 && var1.method13921()) {
+        if (this.method15996() && mc.player != null && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+            if (mc.player.field5036 && var1.method13921()) {
                 var1.method13912(var1.method13911() + 1.0E-14);
             }
         }
@@ -37,14 +37,14 @@ public class Class5353 extends Module {
     @EventTarget
     public void method16797(Class4435 var1) {
         if (this.method15996()) {
-            if (mc.field1339.field5036
-                    && mc.field1339.field5038
-                    && (mc.field1339.field4984 != 0.0F || mc.field1339.field4982 != 0.0F)
+            if (mc.player.field5036
+                    && mc.player.field5038
+                    && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
                     && this.method15974("AutoJump")) {
-                mc.field1339.method2914();
-                var1.method13993(mc.field1339.method3433().field18048);
-                var1.method13995(mc.field1339.method3433().field18049);
-                var1.method13997(mc.field1339.method3433().field18050);
+                mc.player.method2914();
+                var1.method13993(mc.player.method3433().field18048);
+                var1.method13995(mc.player.method3433().field18049);
+                var1.method13997(mc.player.method3433().field18050);
             }
 
             double var4 = var1.method13998().field18049;
@@ -58,7 +58,7 @@ public class Class5353 extends Module {
                 this.field23917 = Math.min(1.0F, this.field23917 + 0.1F);
             }
 
-            if (mc.field1339.field5036 && !this.field23915) {
+            if (mc.player.field5036 && !this.field23915) {
                 this.field23913 = 0.0F;
                 this.field23914 = 0.0F;
                 this.field23917 = Math.min(1.0F, this.field23917 + 0.33F);
@@ -73,7 +73,7 @@ public class Class5353 extends Module {
     @LowerPriority
     public void method16798(Class4436 var1) {
         if (this.method15996() && !Class5381.method16953() && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
-            if (!mc.field1299.field44636.method8509() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
+            if (!mc.gameSettings.field44636.method8509() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
                 this.field23916 = Class9567.method37083()[0];
                 this.field23918 = 0;
                 var1.method14003(var1.method14001().method11348() * 1.05F);
@@ -84,9 +84,9 @@ public class Class5353 extends Module {
     @EventTarget
     private void method16799(Class4396 var1) {
         if (this.method15996()) {
-            if (mc.field1339 != null && var1.method13898() instanceof Class5590) {
+            if (mc.player != null && var1.method13898() instanceof Class5590) {
                 Class5590 var4 = (Class5590) var1.method13898();
-                if (var4.method17565() != mc.field1339.method3205()) {
+                if (var4.method17565() != mc.player.method3205()) {
                 }
             }
         }

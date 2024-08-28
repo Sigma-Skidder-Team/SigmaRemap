@@ -18,13 +18,13 @@ public class Class864 extends Class851<Class5811> {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       super.method1923(var1, var2, var3, var4);
       this.method2615(var1, var2, var3);
    }
 
    @Override
-   public void method2618(Class9332 var1, float var2, int var3, int var4) {
+   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       this.method2469(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(field4796);
@@ -41,7 +41,7 @@ public class Class864 extends Class851<Class5811> {
    }
 
    @Override
-   public void method2615(Class9332 var1, int var2, int var3) {
+   public void method2615(MatrixStack var1, int var2, int var3) {
       super.method2615(var1, var2, var3);
       if (this.field4800) {
          int var6 = this.field4734 + 52;
@@ -60,7 +60,7 @@ public class Class864 extends Class851<Class5811> {
       }
    }
 
-   private void method2672(Class9332 var1, int var2, int var3, int var4, int var5, int var6) {
+   private void method2672(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
       for (int var9 = this.field4799; var9 < var6 && var9 < this.field4727.method18101(); var9++) {
          int var10 = var9 - this.field4799;
          int var11 = var4 + var10 % 4 * 16;
@@ -103,7 +103,7 @@ public class Class864 extends Class851<Class5811> {
             int var12 = var11 - this.field4799;
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
-            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.method18104(this.field4562.field1339, var11)) {
+            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.method18104(this.field4562.player, var11)) {
                Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27181, 1.0F));
                this.field4562.field1337.method23146(this.field4727.field25471, var11);
                return true;

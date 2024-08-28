@@ -17,8 +17,8 @@ public class Class5249 extends Module {
     public void method16364(Class4396 var1) {
         if (this.method15996()) {
             if (var1.method13898() instanceof Class5584 || var1.method13898() instanceof Class5475) {
-                if (mc.field1339.method3090() != null) {
-                    if (mc.field1339.method3090().method32107() instanceof Class3259) {
+                if (mc.player.method3090() != null) {
+                    if (mc.player.method3090().method32107() instanceof Class3259) {
                         if (!(var1.method13898() instanceof Class5584)) {
                             if (var1.method13898() instanceof Class5475 && !((Class5475) var1.method13898()).field24315.equals("entity.bobber.splash")) {
                                 return;

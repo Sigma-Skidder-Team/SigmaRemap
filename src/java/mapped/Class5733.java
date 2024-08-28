@@ -7,7 +7,7 @@ public class Class5733 extends Class5732<Class993> {
       super(var1);
    }
 
-   public void method17915(Class993 var1, float var2, Class7380 var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17915(Class993 var1, float var2, Class7380 var3, MatrixStack var4, Class7733 var5, int var6) {
       int var9 = var1.method4073();
       if (var9 > -1 && (float)var9 - var2 + 1.0F < 10.0F) {
          float var10 = 1.0F - ((float)var9 - var2 + 1.0F) / 10.0F;
@@ -21,7 +21,7 @@ public class Class5733 extends Class5732<Class993> {
       method17916(var3, var4, var5, var6, var9 > -1 && var9 / 5 % 2 == 0);
    }
 
-   public static void method17916(Class7380 var0, Class9332 var1, Class7733 var2, int var3, boolean var4) {
+   public static void method17916(Class7380 var0, MatrixStack var1, Class7733 var2, int var3, boolean var4) {
       int var7;
       if (!var4) {
          var7 = Class213.field798;

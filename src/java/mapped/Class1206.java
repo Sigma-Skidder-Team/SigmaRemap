@@ -25,7 +25,7 @@ public class Class1206 extends Class1200 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       super.method5655(var1, var2, var3, var4);
       if (this.method5737()) {
          this.method5738(var1, var2, var3);
@@ -33,7 +33,7 @@ public class Class1206 extends Class1200 {
    }
 
    @Override
-   public void method5738(Class9332 var1, int var2, int var3) {
+   public void method5738(MatrixStack var1, int var2, int var3) {
       this.field6514.method28070(this, var1, var2, var3);
    }
 }

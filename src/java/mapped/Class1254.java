@@ -40,9 +40,9 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
       this.field6635 = var1;
       this.field6636 = var2;
       this.field6641 = var5;
-      var3.field1339.field4905 = var5;
-      this.field6645 = var3.field1339.method5397();
-      this.field6648 = var3.field1339.field4902.method4055();
+      var3.player.field4905 = var5;
+      this.field6645 = var3.player.method5397();
+      this.field6648 = var3.player.field4902.method4055();
       if (this.method5839()) {
          this.method5834(var4);
       }
@@ -55,7 +55,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
       int var4 = (this.field6635 - 147) / 2 - this.field6634;
       int var5 = (this.field6636 - 166) / 2;
       this.field6647.method19128();
-      this.field6642.field1339.field4902.method4061(this.field6647);
+      this.field6642.player.field4902.method4061(this.field6647);
       this.field6641.method18220(this.field6647);
       String var6 = this.field6643 == null ? "" : this.field6643.method5636();
       this.field6643 = new Class1189(this.field6642.field1294, var4 + 25, var5 + 14, 80, 14, new TranslationTextComponent("itemGroup.search"));
@@ -180,9 +180,9 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
 
    public void method5844() {
       if (this.method5839()) {
-         if (this.field6648 != this.field6642.field1339.field4902.method4055()) {
+         if (this.field6648 != this.field6642.player.field4902.method4055()) {
             this.method5845();
-            this.field6648 = this.field6642.field1339.field4902.method4055();
+            this.field6648 = this.field6642.player.field4902.method4055();
          }
 
          this.field6643.method5633();
@@ -191,13 +191,13 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
 
    private void method5845() {
       this.field6647.method19128();
-      this.field6642.field1339.field4902.method4061(this.field6647);
+      this.field6642.player.field4902.method4061(this.field6647);
       this.field6641.method18220(this.field6647);
       this.method5842(false);
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (this.method5839()) {
          RenderSystem.pushMatrix();
          RenderSystem.translatef(0.0F, 0.0F, 100.0F);
@@ -222,13 +222,13 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
       }
    }
 
-   public void method5846(Class9332 var1, int var2, int var3, int var4, int var5) {
+   public void method5846(MatrixStack var1, int var2, int var3, int var4, int var5) {
       if (this.method5839()) {
          this.field6646.method11312(var1, var4, var5);
          if (this.field6640.method5737()) {
             ITextComponent var8 = this.method5847();
-            if (this.field6642.field1355 != null) {
-               this.field6642.field1355.method2459(var1, var8, var4, var5);
+            if (this.field6642.currentScreen != null) {
+               this.field6642.currentScreen.method2459(var1, var8, var4, var5);
             }
          }
 
@@ -244,7 +244,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
       return field6632;
    }
 
-   private void method5849(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method5849(MatrixStack var1, int var2, int var3, int var4, int var5) {
       ItemStack var8 = null;
 
       for (int var9 = 0; var9 < this.field6637.method34736(); var9++) {
@@ -256,18 +256,18 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
          }
       }
 
-      if (var8 != null && this.field6642.field1355 != null) {
-         this.field6642.field1355.method2460(var1, this.field6642.field1355.method2458(var8), var4, var5);
+      if (var8 != null && this.field6642.currentScreen != null) {
+         this.field6642.currentScreen.method2460(var1, this.field6642.currentScreen.method2458(var8), var4, var5);
       }
    }
 
-   public void method5850(Class9332 var1, int var2, int var3, boolean var4, float var5) {
+   public void method5850(MatrixStack var1, int var2, int var3, boolean var4, float var5) {
       this.field6637.method34739(var1, this.field6642, var2, var3, var4, var5);
    }
 
    @Override
    public boolean method1958(double var1, double var3, int var5) {
-      if (this.method5839() && !this.field6642.field1339.method2800()) {
+      if (this.method5839() && !this.field6642.player.method2800()) {
          if (this.field6646.method11316(var1, var3, var5, (this.field6635 - 147) / 2 - this.field6634, (this.field6636 - 166) / 2, 147, 166)) {
             Class4843 var11 = this.field6646.method11313();
             Class9266 var12 = this.field6646.method11314();
@@ -277,7 +277,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
                }
 
                this.field6637.method34733();
-               this.field6642.field1337.method23145(this.field6642.field1339.field4905.field25471, var11, Screen.method2476());
+               this.field6642.field1337.method23145(this.field6642.player.field4905.field25471, var11, Screen.method2476());
                if (!this.method5855()) {
                   this.method5840(false);
                }
@@ -333,7 +333,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    @Override
    public boolean method1920(int var1, int var2, int var3) {
       this.field6649 = false;
-      if (!this.method5839() || this.field6642.field1339.method2800()) {
+      if (!this.method5839() || this.field6642.player.method2800()) {
          return false;
       } else if (var1 == 256 && !this.method5855()) {
          this.method5840(false);
@@ -343,7 +343,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
          return true;
       } else if (this.field6643.method5746() && this.field6643.method5670() && var1 != 256) {
          return true;
-      } else if (this.field6642.field1299.field44645.method8519(var1, var2) && !this.field6643.method5746()) {
+      } else if (this.field6642.gameSettings.field44645.method8519(var1, var2) && !this.field6643.method5746()) {
          this.field6649 = true;
          this.field6643.method5654(true);
          return true;
@@ -361,7 +361,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    @Override
    public boolean method1932(char var1, int var2) {
       if (!this.field6649) {
-         if (!this.method5839() || this.field6642.field1339.method2800()) {
+         if (!this.method5839() || this.field6642.player.method2800()) {
             return false;
          } else if (!this.field6643.method1932(var1, var2)) {
             return Class1152.super.method1932(var1, var2);
@@ -397,9 +397,9 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
          }
 
          var4.method964(var5);
-         this.field6642.field1299.field44676 = var5.getCode();
-         this.field6642.method1470();
-         this.field6642.field1299.method37146();
+         this.field6642.gameSettings.field44676 = var5.getCode();
+         this.field6642.reloadResources();
+         this.field6642.gameSettings.method37146();
       }
    }
 
@@ -417,7 +417,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    @Override
    public void method5857(List<Class4843<?>> var1) {
       for (Class4843 var5 : var1) {
-         this.field6642.field1339.method5398(var5);
+         this.field6642.player.method5398(var5);
       }
    }
 

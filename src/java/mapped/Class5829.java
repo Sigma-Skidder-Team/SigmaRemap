@@ -38,7 +38,7 @@ public class Class5829 extends Class5828<Class926> {
 
    public static void method18228(int var0, World var1, PlayerEntity var2, Class926 var3, Class921 var4) {
       if (!var1.field9020) {
-         Class878 var7 = (Class878)var2;
+         ServerPlayerEntity var7 = (ServerPlayerEntity)var2;
          ItemStack var8 = ItemStack.EMPTY;
          Optional var9 = var1.method6715().method1407().<Class926, Class4842>method1030(Class7207.field30935, var3, var1);
          if (var9.isPresent()) {

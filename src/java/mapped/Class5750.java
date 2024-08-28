@@ -11,7 +11,7 @@ public class Class5750 extends Class5651<Class1053, Class2816<Class1053>> {
       return field25178;
    }
 
-   public void method17842(Class1053 var1, Class9332 var2, float var3, float var4, float var5) {
+   public void method17842(Class1053 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
       float var8 = 1.0F;
       float var9 = 1.0F;

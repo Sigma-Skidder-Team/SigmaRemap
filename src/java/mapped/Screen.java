@@ -39,12 +39,12 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       return this.field4560;
    }
 
-   public String method2326() {
+   public String getNarrationMessage() {
       return this.method2453().getString();
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       for (int var7 = 0; var7 < this.field4566.size(); var7++) {
          this.field4566.get(var7).method1923(var1, var2, var3, var4);
       }
@@ -85,23 +85,23 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       return (T)var1;
    }
 
-   public void method2457(Class9332 var1, ItemStack var2, int var3, int var4) {
+   public void method2457(MatrixStack var1, ItemStack var2, int var3, int var4) {
       this.method2460(var1, this.method2458(var2), var3, var4);
    }
 
    public List<ITextComponent> method2458(ItemStack var1) {
-      return var1.method32153(this.field4562.field1339, !this.field4562.field1299.field44588 ? Class2215.field14480 : Class2215.field14481);
+      return var1.method32153(this.field4562.player, !this.field4562.gameSettings.field44588 ? Class2215.field14480 : Class2215.field14481);
    }
 
-   public void method2459(Class9332 var1, ITextComponent var2, int var3, int var4) {
+   public void method2459(MatrixStack var1, ITextComponent var2, int var3, int var4) {
       this.method2461(var1, Arrays.asList(var2.func_241878_f()), var3, var4);
    }
 
-   public void method2460(Class9332 var1, List<ITextComponent> var2, int var3, int var4) {
+   public void method2460(MatrixStack var1, List<ITextComponent> var2, int var3, int var4) {
       this.method2461(var1, Lists.transform(var2, ITextComponent::func_241878_f), var3, var4);
    }
 
-   public void method2461(Class9332 var1, List<? extends Class9125> var2, int var3, int var4) {
+   public void method2461(MatrixStack var1, List<? extends Class9125> var2, int var3, int var4) {
       if (!var2.isEmpty()) {
          int var7 = 0;
 
@@ -151,7 +151,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
          Class4395.method13895(var16);
          RenderSystem.method27866(7424);
          RenderSystem.disableBlend();
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          Class7735 var18 = Class7733.method25595(Class9352.method35409().method35411());
          var1.method35291(0.0, 0.0, 400.0);
 
@@ -173,7 +173,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       }
    }
 
-   public void method2462(Class9332 var1, Style var2, int var3, int var4) {
+   public void method2462(MatrixStack var1, Style var2, int var3, int var4) {
       if (var2 != null && var2.getHoverEvent() != null) {
          HoverEvent var7 = var2.getHoverEvent();
          HoverEvent$ItemHover var8 = var7.<HoverEvent$ItemHover>getParameter(HoverEvent$Action.SHOW_ITEM);
@@ -184,7 +184,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
                if (var10 != null) {
                   this.method2461(var1, this.field4562.field1294.method38828(var10, Math.max(this.field4564 / 2, 200)), var3, var4);
                }
-            } else if (this.field4562.field1299.field44588) {
+            } else if (this.field4562.gameSettings.field44588) {
                this.method2460(var1, var9.getTooltip(), var3, var4);
             }
          } else {
@@ -207,7 +207,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
             }
          } else if (var4 != null) {
             if (var4.getAction() == ClickEvent$Action.OPEN_URL) {
-               if (!this.field4562.field1299.field44613) {
+               if (!this.field4562.gameSettings.field44613) {
                   return false;
                }
 
@@ -222,7 +222,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
                      throw new URISyntaxException(var4.getValue(), "Unsupported protocol: " + var6.toLowerCase(Locale.ROOT));
                   }
 
-                  if (this.field4562.field1299.field44614) {
+                  if (this.field4562.gameSettings.field44614) {
                      this.field4569 = var5;
                      this.field4562.displayGuiScreen(new Class830(this::method2473, var4.getValue(), false));
                   } else {
@@ -257,10 +257,10 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
 
    public void method2466(String var1, boolean var2) {
       if (var2) {
-         this.field4562.field1298.method5989().method5935(var1);
+         this.field4562.ingameGUI.getChatGUI().method5935(var1);
       }
 
-      this.field4562.field1339.method5389(var1);
+      this.field4562.player.method5389(var1);
    }
 
    public void method2467(Minecraft var1, int var2, int var3) {
@@ -287,15 +287,15 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    public void method1919() {
    }
 
-   public void method1931() {
+   public void onClose() {
    }
 
-   public void method2469(Class9332 var1) {
+   public void method2469(MatrixStack var1) {
       this.method2470(var1, 0);
    }
 
-   public void method2470(Class9332 var1, int var2) {
-      if (this.field4562.field1338 == null) {
+   public void method2470(MatrixStack var1, int var2) {
+      if (this.field4562.world == null) {
          this.method2471(var2);
       } else {
          this.method5688(var1, 0, 0, this.field4564, this.field4565, -1072689136, -804253680);
@@ -336,11 +336,11 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    }
 
    private void method2474(URI var1) {
-      Util.getOSType().method8178(var1);
+      Util.getOSType().openURI(var1);
    }
 
    public static boolean method2475() {
-      return !Minecraft.field1272
+      return !Minecraft.IS_RUNNING_ON_MAC
          ? Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 341)
             || Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 345)
          : Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 343)

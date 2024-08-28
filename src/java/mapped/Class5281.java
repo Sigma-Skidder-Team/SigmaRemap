@@ -62,9 +62,9 @@ public class Class5281 extends Module {
     }
 
     public static float[] method16562(Entity var0) {
-        double var3 = var0.getPosX() - mc.field1339.getPosX();
-        double var5 = var0.getPosZ() - mc.field1339.getPosZ();
-        double var7 = mc.field1339.getPosY() + (double) mc.field1339.method3393() - (var0.getPosY() + (double) var0.method3393());
+        double var3 = var0.getPosX() - mc.player.getPosX();
+        double var5 = var0.getPosZ() - mc.player.getPosZ();
+        double var7 = mc.player.getPosY() + (double) mc.player.method3393() - (var0.getPosY() + (double) var0.method3393());
         float var9 = (float) Math.toDegrees(Math.atan2(var5, var3)) - 90.0F;
         double var10 = MathHelper.method37766(var3 * var3 + var5 * var5);
         float var12 = (float) (-(Math.atan2(var7, var10) * 180.0 / Math.PI));
@@ -72,8 +72,8 @@ public class Class5281 extends Module {
     }
 
     public static float method16563(float var0, double var1, double var3) {
-        double var7 = var1 - mc.field1339.getPosX();
-        double var9 = var3 - mc.field1339.getPosZ();
+        double var7 = var1 - mc.player.getPosX();
+        double var9 = var3 - mc.player.getPosZ();
         double var11 = 0.0;
         if (var9 < 0.0 && var7 < 0.0) {
             if (var7 != 0.0) {
@@ -91,9 +91,9 @@ public class Class5281 extends Module {
     }
 
     public static float method16565(float var0, Entity var1, double var2) {
-        double var6 = var1.getPosX() - mc.field1339.getPosX();
-        double var8 = var1.getPosZ() - mc.field1339.getPosZ();
-        double var10 = var2 - 2.2 + (double) var1.method3393() - mc.field1339.getPosY();
+        double var6 = var1.getPosX() - mc.player.getPosX();
+        double var8 = var1.getPosZ() - mc.player.getPosZ();
+        double var10 = var2 - 2.2 + (double) var1.method3393() - mc.player.getPosY();
         double var12 = MathHelper.method37766(var6 * var6 + var8 * var8);
         double var14 = -Math.toDegrees(Math.atan(var10 / var12));
         return -MathHelper.method37792(var0 - (float) var14) - 2.5F;
@@ -103,12 +103,12 @@ public class Class5281 extends Module {
     public void isInDevelopment() {
         this.field23739 = 0.0;
         this.field23751 = new Animation(1000, 100000, Direction.FORWARDS);
-        this.field23745 = MathHelper.method37792(mc.field1339.field5031);
+        this.field23745 = MathHelper.method37792(mc.player.field5031);
         this.field23745 = 39.0F;
-        this.field23746 = mc.field1339.field5032;
-        double var3 = mc.field1339.getPosX();
-        double var5 = mc.field1339.getPosY();
-        double var7 = mc.field1339.getPosZ();
+        this.field23746 = mc.player.field5032;
+        double var3 = mc.player.getPosX();
+        double var5 = mc.player.getPosY();
+        double var7 = mc.player.getPosZ();
         double var9 = 3200000.000000002;
         this.field23743 = false;
         this.field23738 = 0.0;
@@ -116,7 +116,7 @@ public class Class5281 extends Module {
 
     @Override
     public void method15965() {
-        mc.field1284.field40360 = 1.0F;
+        mc.timer.field40360 = 1.0F;
     }
 
     @EventTarget
@@ -177,7 +177,7 @@ public class Class5281 extends Module {
     @EventTarget
     @LowestPriority
     public void method16556(Class4429 var1) {
-        if (!this.method15996() || mc.field1355 != null) {
+        if (!this.method15996() || mc.currentScreen != null) {
         }
     }
 
@@ -189,7 +189,7 @@ public class Class5281 extends Module {
     @LowestPriority
     public void method16558(Class4402 var1) {
         Packet var4 = var1.method13932();
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (!(var4 instanceof CUseEntityPacket)) {
                 if (!(var4 instanceof Class5603)) {
                     if (!(var4 instanceof Class5539)) {
@@ -241,7 +241,7 @@ public class Class5281 extends Module {
                 }
             } else {
                 CUseEntityPacket var18 = (CUseEntityPacket) var4;
-                Entity var6 = var18.getEntityFromWorld(mc.field1338);
+                Entity var6 = var18.getEntityFromWorld(mc.world);
                 if (var6 != null) {
                     var6.getName().getString();
                 } else {
@@ -276,7 +276,7 @@ public class Class5281 extends Module {
                                         }
                                     } else {
                                         Class5590 var8 = (Class5590) var1.method13898();
-                                        if (var8.method17565() != mc.field1339.method3205()) {
+                                        if (var8.method17565() != mc.player.method3205()) {
                                         }
                                     }
                                 } else {
@@ -332,16 +332,16 @@ public class Class5281 extends Module {
 
         while (var5.hasNext()) {
             Entity var6 = (Entity) var5.next();
-            if (var6 != mc.field1339) {
+            if (var6 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var6)) {
                     if (var6 instanceof Class880) {
                         if (((Class880) var6).method3042() != 0.0F) {
-                            if (!(mc.field1339.method3275(var6) > var1)) {
-                                if (mc.field1339.method3026((Class880) var6)) {
+                            if (!(mc.player.method3275(var6) > var1)) {
+                                if (mc.player.method3026((Class880) var6)) {
                                     if (!(var6 instanceof Class1005) && !(var6 instanceof PlayerEntity)) {
                                         if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                                             var5.remove();
-                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var6)) {
+                                        } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
                                             var5.remove();
                                         } else if (!var6.method3362()) {
                                             if (var6 instanceof PlayerEntity && Class8781.method31662((PlayerEntity) var6)) {
@@ -384,19 +384,19 @@ public class Class5281 extends Module {
 
         while (var6.hasNext()) {
             Entity var7 = (Entity) var6.next();
-            if (var7 != mc.field1339) {
+            if (var7 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var7)) {
                     if (var7 instanceof Class880) {
                         if (((Class880) var7).method3042() != 0.0F) {
-                            if (!(mc.field1339.method3275(var7) > var1)) {
-                                if (mc.field1339.method3026((Class880) var7)) {
+                            if (!(mc.player.method3275(var7) > var1)) {
+                                if (mc.player.method3026((Class880) var7)) {
                                     if (!(var7 instanceof Class1005)) {
                                         if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
                                             var6.remove();
-                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var7)) {
+                                        } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var7)) {
                                             var6.remove();
                                         } else if (!var7.method3362()) {
-                                            if (var5 == null || mc.field1339.method3275(var7) < mc.field1339.method3275(var5)) {
+                                            if (var5 == null || mc.player.method3275(var7) < mc.player.method3275(var5)) {
                                                 var5 = var7;
                                             }
                                         } else {

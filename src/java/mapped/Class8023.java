@@ -71,7 +71,7 @@ public class Class8023 {
       return this.field34484;
    }
 
-   public void method27453(Class9332 var1, Class7735 var2, double var3, double var5, double var7) {
+   public void method27453(MatrixStack var1, Class7735 var2, double var3, double var5, double var7) {
       if (this.field34484 && !Minecraft.getInstance().method1565()) {
          this.field34468.method15813(var1, var2, var3, var5, var7);
       }
@@ -99,7 +99,7 @@ public class Class8023 {
    }
 
    public static void method27455(BlockPos var0, BlockPos var1, float var2, float var3, float var4, float var5) {
-      Class9624 var8 = Minecraft.getInstance().field1295.method768();
+      Class9624 var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.method37504().method11345();
          Class6488 var10 = new Class6488(var0, var1).method19669(var9);
@@ -108,7 +108,7 @@ public class Class8023 {
    }
 
    public static void method27456(BlockPos var0, float var1, float var2, float var3, float var4, float var5) {
-      Class9624 var8 = Minecraft.getInstance().field1295.method768();
+      Class9624 var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.method37504().method11345();
          Class6488 var10 = new Class6488(var0).method19669(var9).method19664((double)var1);
@@ -144,7 +144,7 @@ public class Class8023 {
 
    public static void method27462(String var0, double var1, double var3, double var5, int var7, float var8, boolean var9, float var10, boolean var11) {
       Minecraft var14 = Minecraft.getInstance();
-      Class9624 var15 = var14.field1295.method768();
+      Class9624 var15 = var14.gameRenderer.getActiveRenderInfo();
       if (var15.method37510() && var14.method1554().field40020 != null) {
          Class9834 var16 = var14.field1294;
          double var17 = var15.method37504().field18048;
@@ -155,7 +155,7 @@ public class Class8023 {
          RenderSystem.method27825(0.0F, 1.0F, 0.0F);
          RenderSystem.method27888(new Class9367(var15.method37508()));
          RenderSystem.scalef(var8, -var8, var8);
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          if (!var11) {
             RenderSystem.enableDepthTest();
          } else {

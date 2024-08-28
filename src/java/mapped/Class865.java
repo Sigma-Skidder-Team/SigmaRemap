@@ -28,13 +28,13 @@ public class Class865 extends Class851<Class5837> {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       super.method1923(var1, var2, var3, var4);
       this.method2615(var1, var2, var3);
    }
 
    @Override
-   public void method2618(Class9332 var1, float var2, int var3, int var4) {
+   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       this.method2469(var1);
       this.field4562.getTextureManager().bindTexture(field4801);
       int var7 = this.field4734;
@@ -120,7 +120,7 @@ public class Class865 extends Class851<Class5837> {
          .method23058(Class2154.values()[var1], Class112.field386)
          .method23059();
       var7.method99("Patterns", var8);
-      Class9332 var9 = new Class9332();
+      MatrixStack var9 = new MatrixStack();
       var9.method35294();
       var9.method35291((double)((float)var2 + 0.5F), (double)(var3 + 16), 0.0);
       var9.method35292(6.0F, -6.0F, 1.0F);
@@ -149,7 +149,7 @@ public class Class865 extends Class851<Class5837> {
             int var12 = var11 - this.field4813;
             double var13 = var1 - (double)(var8 + var12 % 4 * 14);
             double var15 = var3 - (double)(var9 + var12 / 4 * 14);
-            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.method18104(this.field4562.field1339, var11)) {
+            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.method18104(this.field4562.player, var11)) {
                Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27177, 1.0F));
                this.field4562.field1337.method23146(this.field4727.field25471, var11);
                return true;

@@ -177,7 +177,7 @@ public class Class807 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field4316 = null;
       this.method2469(var1);
       this.field4317.method1923(var1, var2, var3, var4);
@@ -194,7 +194,7 @@ public class Class807 extends Class798 {
       }
    }
 
-   public void method2177(Class9332 var1, ITextComponent var2, int var3, int var4) {
+   public void method2177(MatrixStack var1, ITextComponent var2, int var3, int var4) {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;

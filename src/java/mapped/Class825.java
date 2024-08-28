@@ -100,7 +100,7 @@ public class Class825 extends Class798 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -115,7 +115,7 @@ public class Class825 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       int var7 = this.field4564 / 2 - 100;
       method5691(var1, this.field4568, field4542, this.field4564 / 2, 17, 16777215);

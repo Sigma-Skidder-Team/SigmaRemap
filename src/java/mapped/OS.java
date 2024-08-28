@@ -2,6 +2,7 @@ package mapped;
 
 import org.apache.commons.io.IOUtils;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -24,34 +25,46 @@ public enum OS {
    private OS() {
    }
 
-   public void method8177(URL var1) {
+   public void openURL(URL url) {
       try {
-         Process var4 = AccessController.<Process>doPrivileged((PrivilegedExceptionAction<Process>)(() -> Runtime.getRuntime().exec(this.method8180(var1))));
+         // Use Runtime to execute the default browser command
+         String os = System.getProperty("os.name").toLowerCase();
+         String command;
 
-         for (String var6 : IOUtils.readLines(var4.getErrorStream())) {
-            Util.method38542().error(var6);
+         if (os.contains("win")) {
+            // Windows command to open the default browser
+            command = "rundll32 url.dll,FileProtocolHandler " + url.toString();
+         } else if (os.contains("mac")) {
+            // macOS command to open the default browser
+            command = "open " + url.toString();
+         } else if (os.contains("nix") || os.contains("nux")) {
+            // Unix/Linux command to open the default browser
+            command = "xdg-open " + url.toString();
+         } else {
+            throw new UnsupportedOperationException("Unsupported operating system: " + os);
          }
 
-         var4.getInputStream().close();
-         var4.getErrorStream().close();
-         var4.getOutputStream().close();
-      } catch (IOException | PrivilegedActionException var7) {
-         Util.method38542().error("Couldn't open url '{}'", var1, var7);
-         Util.method38543(var7);
+         // Execute the command
+         Process process = Runtime.getRuntime().exec(command);
+         process.waitFor();  // Wait for the process to complete
+      } catch (Exception e) {
+         // Log any exceptions that occur
+         Util.method38542().error("Couldn't open URL '{}'", url, e);
+         Util.method38543(e);
       }
    }
 
-   public void method8178(URI var1) {
+   public void openURI(URI var1) {
       try {
-         this.method8177(var1.toURL());
+         this.openURL(var1.toURL());
       } catch (MalformedURLException var5) {
          Util.method38542().error("Couldn't open uri '{}'", var1, var5);
       }
    }
 
-   public void method8179(File var1) {
+   public void openFile(File var1) {
       try {
-         this.method8177(var1.toURI().toURL());
+         this.openURL(var1.toURI().toURL());
       } catch (MalformedURLException var5) {
          Util.method38542().error("Couldn't open file '{}'", var1, var5);
       }
@@ -68,7 +81,7 @@ public enum OS {
 
    public void method8181(String var1) {
       try {
-         this.method8177(new URI(var1).toURL());
+         this.openURL(new URI(var1).toURL());
       } catch (URISyntaxException | MalformedURLException | IllegalArgumentException var5) {
          Util.method38542().error("Couldn't open uri '{}'", var1, var5);
       }

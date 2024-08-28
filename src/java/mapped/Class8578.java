@@ -30,11 +30,11 @@ public class Class8578 {
    public static void method30656() {
       if (field38570 == null) {
          field38570 = Minecraft.getInstance();
-         field38571 = field38570.field1299;
+         field38571 = field38570.gameSettings;
          field38572 = field38570.method1574();
       }
 
-      if (field38571.field44664 && (field38571.field44697 || field38571.field44666)) {
+      if (field38571.showDebugInfo && (field38571.field44697 || field38571.field44666)) {
          field38573 = true;
          long var2 = System.nanoTime();
          if (field38591 != -1L) {
@@ -67,14 +67,14 @@ public class Class8578 {
       }
    }
 
-   public static void method30657(Class9332 var0, int var1) {
+   public static void method30657(MatrixStack var0, int var1) {
       if (field38571 != null && (field38571.field44697 || field38571.field44666)) {
          long var4 = System.nanoTime();
          Class7414.method23883(256);
          Class7414.method23830(5889);
          Class7414.method23832();
-         int var6 = field38570.method1580().method8041();
-         int var7 = field38570.method1580().method8042();
+         int var6 = field38570.method1580().getFramebufferWidth();
+         int var7 = field38570.method1580().getFramebufferHeight();
          Class7414.method23701();
          Class7414.method23831();
          Class7414.method23835(0.0, (double)var6, (double)var7, 0.0, 1000.0, 3000.0);
@@ -130,7 +130,7 @@ public class Class8578 {
          int var16 = var13 << 16 | var14 << 8 | var33;
          int var17 = 512 / var1 + 2;
          int var18 = var7 / var1 - 8;
-         Class1268 var19 = field38570.field1298;
+         Class1268 var19 = field38570.ingameGUI;
          Class1268.method5686(var0, var17 - 1, var18 - 1, var17 + 50, var18 + 10, -1605349296);
          field38570.field1294.method38801(var0, " " + Class8777.method31655() + " MB/s", (float)var17, (float)var18, var16);
          field38592 = System.nanoTime() - var4;

@@ -28,7 +28,7 @@ public class Class9404 {
       this.field43632 = var5;
    }
 
-   public boolean method35779(Class878 var1, Class8654 var2, float var3, float var4, boolean var5) {
+   public boolean method35779(ServerPlayerEntity var1, Class8654 var2, float var3, float var4, boolean var5) {
       if (this != field43627) {
          if (this.field43628.method32023(var3)) {
             if (this.field43629.method32023(var4)) {

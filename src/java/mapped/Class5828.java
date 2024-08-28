@@ -5,7 +5,7 @@ public abstract class Class5828<C extends Class920> extends Class5812 {
       super(var1, var2);
    }
 
-   public void method18219(boolean var1, Class4843<?> var2, Class878 var3) {
+   public void method18219(boolean var1, Class4843<?> var2, ServerPlayerEntity var3) {
       new Class1260<C>(this).method5868(var3, (Class4843<C>) var2, var1);
    }
 

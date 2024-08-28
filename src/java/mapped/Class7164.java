@@ -25,9 +25,9 @@ public final class Class7164 implements Class7165 {
    }
 
    @Override
-   public void method22503(String var1) {
-      this.field30816.method22503(var1);
-      this.field30817.method22503(var1);
+   public void startSection(String var1) {
+      this.field30816.startSection(var1);
+      this.field30817.startSection(var1);
    }
 
    @Override
@@ -37,15 +37,15 @@ public final class Class7164 implements Class7165 {
    }
 
    @Override
-   public void method22505() {
-      this.field30816.method22505();
-      this.field30817.method22505();
+   public void endSection() {
+      this.field30816.endSection();
+      this.field30817.endSection();
    }
 
    @Override
-   public void method22506(String var1) {
-      this.field30816.method22506(var1);
-      this.field30817.method22506(var1);
+   public void endStartSection(String var1) {
+      this.field30816.endStartSection(var1);
+      this.field30817.endStartSection(var1);
    }
 
    @Override
@@ -55,9 +55,9 @@ public final class Class7164 implements Class7165 {
    }
 
    @Override
-   public void method22508(String var1) {
-      this.field30816.method22508(var1);
-      this.field30817.method22508(var1);
+   public void func_230035_c_(String var1) {
+      this.field30816.func_230035_c_(var1);
+      this.field30817.func_230035_c_(var1);
    }
 
    @Override

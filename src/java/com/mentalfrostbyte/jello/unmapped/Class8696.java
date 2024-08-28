@@ -31,11 +31,11 @@ public class Class8696 {
       this.field39249++;
       this.field39250++;
       this.field39251++;
-      if (!this.field39255.field1339.field5036) {
+      if (!this.field39255.player.field5036) {
          this.field39249 = 0;
       }
 
-      if (this.field39255.field1355 != null) {
+      if (this.field39255.currentScreen != null) {
          this.field39248 = 0;
       }
 
@@ -44,7 +44,7 @@ public class Class8696 {
          this.field39252 = true;
       }
 
-      if (this.field39255.field1339.field5055 <= 1) {
+      if (this.field39255.player.field5055 <= 1) {
          this.field39252 = false;
       }
    }

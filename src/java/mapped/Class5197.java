@@ -19,7 +19,7 @@ public class Class5197 extends Module {
     private void method16183(TickEvent var1) {
         if (this.method15996()) {
             if (Class5628.method17716()) {
-                mc.field1299.method37149();
+                mc.gameSettings.method37149();
             }
         }
     }
@@ -43,7 +43,7 @@ public class Class5197 extends Module {
                     int var3 = 0;
 
                     for (Class8790 var5x : var5.method17307()) {
-                        PlayerEntity var6 = mc.field1338.method7196(var5x.method31726().getId());
+                        PlayerEntity var6 = mc.world.method7196(var5x.method31726().getId());
                         if (var6 == null && var5x.method31728() != null) {
                             Class5628.method17678("Detected an anomaly " + var5x + var5x.method31726());
                         } else {

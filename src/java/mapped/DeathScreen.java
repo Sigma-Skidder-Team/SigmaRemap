@@ -5,13 +5,13 @@ import net.minecraft.util.text.event.ClickEvent$Action;
 
 import javax.annotation.Nullable;
 
-public class Class827 extends Screen {
+public class DeathScreen extends Screen {
    private int field4570;
    private final ITextComponent field4571;
    private final boolean field4572;
    private ITextComponent field4573;
 
-   public Class827(ITextComponent var1, boolean var2) {
+   public DeathScreen(ITextComponent var1, boolean var2) {
       super(new TranslationTextComponent(!var2 ? "deathScreen.title" : "deathScreen.title.hardcore"));
       this.field4571 = var1;
       this.field4572 = var2;
@@ -28,7 +28,7 @@ public class Class827 extends Screen {
             20,
             !this.field4572 ? new TranslationTextComponent("deathScreen.respawn") : new TranslationTextComponent("deathScreen.spectate"),
             var1 -> {
-               this.field4562.field1339.method2903();
+               this.field4562.player.respawnPlayer();
                this.field4562.displayGuiScreen((Screen)null);
             }
          )
@@ -67,7 +67,7 @@ public class Class827 extends Screen {
 
       this.field4573 = new TranslationTextComponent("deathScreen.score")
          .appendString(": ")
-         .append(new StringTextComponent(Integer.toString(this.field4562.field1339.method2874())).mergeStyle(TextFormatting.YELLOW));
+         .append(new StringTextComponent(Integer.toString(this.field4562.player.method2874())).mergeStyle(TextFormatting.YELLOW));
    }
 
    @Override
@@ -77,7 +77,7 @@ public class Class827 extends Screen {
 
    private void method2488(boolean var1) {
       if (!var1) {
-         this.field4562.field1339.method2903();
+         this.field4562.player.respawnPlayer();
          this.field4562.displayGuiScreen((Screen)null);
       } else {
          this.method2489();
@@ -85,16 +85,16 @@ public class Class827 extends Screen {
    }
 
    private void method2489() {
-      if (this.field4562.field1338 != null) {
-         this.field4562.field1338.method6782();
+      if (this.field4562.world != null) {
+         this.field4562.world.sendQuittingDisconnectingPacket();
       }
 
       this.field4562.method1506(new Class1310(new TranslationTextComponent("menu.savingLevel")));
-      this.field4562.displayGuiScreen(new Class849());
+      this.field4562.displayGuiScreen(new MainMenuScreen());
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method5688(var1, 0, 0, this.field4564, this.field4565, 1615855616, -1602211792);
       RenderSystem.pushMatrix();
       RenderSystem.scalef(2.0F, 2.0F, 2.0F);

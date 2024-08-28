@@ -28,10 +28,10 @@ public class Class5323 extends Module {
         this.field23870 = null;
 
         for (BlockPos var4 : Class9217.method34545(Class9217.method34561(mc.field1337.method23135()))) {
-            if (!(Class9217.method34550(mc.field1339, var4) < 2.0F)
-                    && Class9217.method34535(mc.field1339, var4)
-                    && (double) var4.getY() >= mc.field1339.getPosY() - 2.0
-                    && (double) var4.getY() <= mc.field1339.getPosY() - 1.0
+            if (!(Class9217.method34550(mc.player, var4) < 2.0F)
+                    && Class9217.method34535(mc.player, var4)
+                    && (double) var4.getY() >= mc.player.getPosY() - 2.0
+                    && (double) var4.getY() <= mc.player.getPosY() - 1.0
                     && this.method16717(var4)) {
                 this.field23870 = var4;
                 break;
@@ -102,9 +102,9 @@ public class Class5323 extends Module {
     }
 
     public boolean method16717(BlockPos var1) {
-        Class7380 var4 = mc.field1338.method6738(var1);
-        Class7380 var5 = mc.field1338.method6738(var1.method8311());
-        Class7380 var6 = mc.field1338.method6738(var1.method8339(2));
+        Class7380 var4 = mc.world.method6738(var1);
+        Class7380 var5 = mc.world.method6738(var1.method8311());
+        Class7380 var6 = mc.world.method6738(var1.method8339(2));
         return var4.method23410() && var5.method23393() && var6.method23393();
     }
 
@@ -118,9 +118,9 @@ public class Class5323 extends Module {
             if (this.field23870 != null) {
                 GL11.glAlphaFunc(516, 0.0F);
                 BlockPos var4 = this.field23870;
-                double var5 = (double) var4.method8304() - mc.field1295.method768().method37504().method11320();
-                double var7 = (double) var4.getY() - mc.field1295.method768().method37504().method11321();
-                double var9 = (double) var4.method8306() - mc.field1295.method768().method37504().method11322();
+                double var5 = (double) var4.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+                double var7 = (double) var4.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
+                double var9 = (double) var4.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class3192.method11459(
                         new Class9388(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), Class5628.method17688(Class1979.field12903.field12910, 0.3F)
                 );
@@ -211,24 +211,24 @@ public class Class5323 extends Module {
                                 float var5 = Class9217.method34543(this.field23870.method8311(), Direction.field673)[1];
                                 var1.method13918(var4);
                                 var1.method13916(var5);
-                                int var6 = mc.field1339.field4902.field5443;
-                                mc.field1339.field4902.field5443 = this.field23871;
+                                int var6 = mc.player.field4902.field5443;
+                                mc.player.field4902.field5443 = this.field23871;
                                 Vector3d var7 = Class9217.method34572(Direction.field673, this.field23870);
                                 Class8711 var8 = new Class8711(var7, Direction.field673, this.field23870, false);
-                                ActionResultType var9 = mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var8);
-                                mc.field1339.swingArm(Hand.field182);
+                                ActionResultType var9 = mc.field1337.method23139(mc.player, mc.world, Hand.field182, var8);
+                                mc.player.swingArm(Hand.field182);
                                 if (var9 == ActionResultType.field14818) {
                                     this.field23873++;
-                                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10040));
-                                    mc.field1339.field6131.field43914 = true;
-                                    mc.field1339.field4902.field5443 = this.field23872;
+                                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
+                                    mc.player.field6131.field43914 = true;
+                                    mc.player.field4902.field5443 = this.field23872;
                                     Vector3d var10 = Class9217.method34572(Direction.field673, this.field23870.method8311());
                                     Class8711 var11 = new Class8711(var10, Direction.field673, this.field23870.method8311(), false);
-                                    mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var11);
-                                    mc.field1339.swingArm(Hand.field182);
-                                    mc.field1339.field6131.field43914 = false;
-                                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10041));
-                                    mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var11);
+                                    mc.field1337.method23139(mc.player, mc.world, Hand.field182, var11);
+                                    mc.player.swingArm(Hand.field182);
+                                    mc.player.field6131.field43914 = false;
+                                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
+                                    mc.field1337.method23139(mc.player, mc.world, Hand.field182, var11);
                                 }
                             }
                         } else {
@@ -268,7 +268,7 @@ public class Class5323 extends Module {
                     int var8 = -1;
 
                     for (int var9 = 44; var9 > 9; var9--) {
-                        ItemStack var10 = mc.field1339.field4904.method18131(var9).method18265();
+                        ItemStack var10 = mc.player.field4904.method18131(var9).method18265();
                         if (var10.method32105()) {
                             var8 = var9;
                             break;
@@ -276,9 +276,9 @@ public class Class5323 extends Module {
                     }
 
                     if (var8 != -1) {
-                        mc.field1339.field4904.method18131(var8).method18267(var6);
+                        mc.player.field4904.method18131(var8).method18267(var6);
                         if (var8 >= 36) {
-                            mc.field1339.field4902.field5443 = var8 % 9;
+                            mc.player.field4902.field5443 = var8 % 9;
                         }
                     }
 

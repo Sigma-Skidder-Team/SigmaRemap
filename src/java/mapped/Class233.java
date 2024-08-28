@@ -13,7 +13,7 @@ public class Class233<T extends Class880, M extends Class2894<T>> extends Class2
    }
 
    @Override
-   public void method836(Class9332 var1, Class7733 var2, int var3, Entity var4, float var5, float var6, float var7, float var8) {
+   public void method836(MatrixStack var1, Class7733 var2, int var3, Entity var4, float var5, float var6, float var7, float var8) {
       float var11 = MathHelper.method37765(var5 * var5 + var7 * var7);
       float var12 = (float)(Math.atan2((double)var5, (double)var7) * 180.0F / (float)Math.PI);
       float var13 = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);

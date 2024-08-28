@@ -19,9 +19,9 @@ public class Class5200 extends Module {
 
     @EventTarget
     public void method16189(Class4426 var1) {
-        if (this.method15996() && mc.field1339 != null && var1.method13973() == 0) {
+        if (this.method15996() && mc.player != null && var1.method13973() == 0) {
             if (this.field23511 != -1) {
-                mc.field1339.field4902.field5443 = this.field23511;
+                mc.player.field4902.field5443 = this.field23511;
                 this.field23511 = -1;
             }
         }
@@ -29,14 +29,14 @@ public class Class5200 extends Module {
 
     @EventTarget
     private void method16190(Class4430 var1) {
-        if (this.method15996() && mc.field1339 != null && var1.method13977() == 0) {
+        if (this.method15996() && mc.player != null && var1.method13977() == 0) {
             this.method16192(var1.method13979());
         }
     }
 
     @EventTarget
     private void method16191(TickEvent var1) {
-        if (this.method15996() && mc.field1339 != null && mc.field1299.field44643.method8509()) {
+        if (this.method15996() && mc.player != null && mc.gameSettings.field44643.method8509()) {
             this.method16192(null);
         }
     }
@@ -46,17 +46,17 @@ public class Class5200 extends Module {
                 ? (mc.field1346.method31417() != Class2100.field13690 ? null : ((Class8711) mc.field1346).method31423())
                 : var1;
         if (var4 != null) {
-            int var5 = Class7789.method25837(mc.field1338.method6738(var4));
+            int var5 = Class7789.method25837(mc.world.method6738(var4));
             if (var5 != -1) {
-                if (mc.field1339.field4902.field5443 != var5 % 9 && this.field23511 == -1) {
-                    this.field23511 = mc.field1339.field4902.field5443;
+                if (mc.player.field4902.field5443 != var5 % 9 && this.field23511 == -1) {
+                    this.field23511 = mc.player.field4902.field5443;
                 }
 
                 if (var5 >= 36 && var5 <= 44) {
-                    mc.field1339.field4902.field5443 = var5 % 9;
+                    mc.player.field4902.field5443 = var5 % 9;
                 } else if (Client.getInstance().method19939().method31333() > 1) {
                     String var6 = this.getStringSettingValueByName("Inv Mode");
-                    if (var6.equals("OpenInv") && !(mc.field1355 instanceof Class859)) {
+                    if (var6.equals("OpenInv") && !(mc.currentScreen instanceof Class859)) {
                         return;
                     }
 
@@ -64,7 +64,7 @@ public class Class5200 extends Module {
                         mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
-                    mc.field1339.field4902.field5443 = Class7789.method25857(var5);
+                    mc.player.field4902.field5443 = Class7789.method25857(var5);
                     if (var6.equals("FakeInv")) {
                         mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
                     }

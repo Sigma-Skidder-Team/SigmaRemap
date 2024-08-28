@@ -629,8 +629,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public boolean method4959(PlayerEntity var1) {
       this.method4934(var1.getUniqueID());
       this.method4936(true);
-      if (var1 instanceof Class878) {
-         CriteriaTriggers.field44488.method15115((Class878)var1, this);
+      if (var1 instanceof ServerPlayerEntity) {
+         CriteriaTriggers.field44488.method15115((ServerPlayerEntity)var1, this);
       }
 
       this.field5024.method6786(this, (byte)7);

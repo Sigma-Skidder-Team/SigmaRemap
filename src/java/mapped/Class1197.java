@@ -47,7 +47,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6483) {
          this.field6481 = var2 >= this.field6477 && var3 >= this.field6478 && var2 < this.field6477 + this.field6475 && var3 < this.field6478 + this.field6476;
          if (this.field6480 != this.method5737()) {
@@ -70,10 +70,10 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
    }
 
    public void method5730() {
-      if (this.field6482 && this.method5737() && Util.method38487() > this.field6485) {
+      if (this.field6482 && this.method5737() && Util.milliTime() > this.field6485) {
          String var3 = this.method5634().getString();
          if (!var3.isEmpty()) {
-            Class6688.field29302.method20401(var3);
+            NarratorChatListener.INSTANCE.say(var3);
             this.field6485 = Long.MAX_VALUE;
          }
       }
@@ -83,7 +83,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
       return new TranslationTextComponent("gui.narrate.button", this.method5745());
    }
 
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft var7 = Minecraft.getInstance();
       Class9834 var8 = var7.field1294;
       var7.getTextureManager().bindTexture(field6474);
@@ -106,7 +106,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
       );
    }
 
-   public void method5731(Class9332 var1, Minecraft var2, int var3, int var4) {
+   public void method5731(MatrixStack var1, Minecraft var2, int var3, int var4) {
    }
 
    public void method5732(double var1, double var3) {
@@ -197,7 +197,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
          && var3 < (double)(this.field6478 + this.field6476);
    }
 
-   public void method5738(Class9332 var1, int var2, int var3) {
+   public void method5738(MatrixStack var1, int var2, int var3) {
    }
 
    public void method5739(Class274 var1) {
@@ -225,7 +225,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
    }
 
    public void method5744(int var1) {
-      this.field6485 = Util.method38487() + (long)var1;
+      this.field6485 = Util.milliTime() + (long)var1;
    }
 
    public ITextComponent method5745() {

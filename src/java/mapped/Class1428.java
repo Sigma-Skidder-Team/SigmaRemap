@@ -40,8 +40,8 @@ public class Class1428 implements Runnable {
                   "alts",
                   0,
                   114,
-                  (int)((float) Minecraft.getInstance().field1283.method8043() * Class4313.method13384(this.field7664)) - 4,
-                  Minecraft.getInstance().field1283.method8044() - 119 - Class4313.method13385(this.field7664)
+                  (int)((float) Minecraft.getInstance().mainWindow.method8043() * Class4313.method13384(this.field7664)) - 4,
+                  Minecraft.getInstance().mainWindow.method8044() - 119 - Class4313.method13385(this.field7664)
                )
             )
          );

@@ -35,11 +35,11 @@ public class HypixelFly extends Module {
         String var3 = this.getStringSettingValueByName("Mode");
         this.field23561 = 1.0F;
         this.field23563 = -1;
-        if (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F)) {
+        if (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F)) {
             this.field23561 = this.method15977("Timer Boost");
         }
 
-        if (mc.field1339.field5036) {
+        if (mc.player.field5036) {
             switch (var3) {
                 case "Basic":
                     this.field23560 = 0.0;
@@ -68,7 +68,7 @@ public class HypixelFly extends Module {
         double var3 = Class9567.method37075();
         Class9567.method37090(var3 * 0.7);
         this.field23561 = 1.0F;
-        mc.field1284.field40360 = 1.0F;
+        mc.timer.field40360 = 1.0F;
         this.field23563 = -1;
     }
 
@@ -136,7 +136,7 @@ public class HypixelFly extends Module {
         }
 
         if (!Client.getInstance().getModuleManager().method14662(Class5376.class).method15996()) {
-            mc.field1284.field40360 = this.field23561;
+            mc.timer.field40360 = this.field23561;
         }
 
         if (this.field23562) {
@@ -174,7 +174,7 @@ public class HypixelFly extends Module {
 
             double var6 = 0.99375 - (double) this.field23563 * 1.0E-13;
             this.field23560 *= var6;
-            if (mc.field1339.field5037 || mc.field1339.field5038) {
+            if (mc.player.field5037 || mc.player.field5038) {
                 this.field23560 = 0.0;
             }
 
@@ -186,19 +186,19 @@ public class HypixelFly extends Module {
             }
 
             Class9567.method37088(var1, this.field23560);
-            if (!mc.field1339.field5036 || !Class5628.method17730(mc.field1339, 0.001F)) {
+            if (!mc.player.field5036 || !Class5628.method17730(mc.player, 0.001F)) {
                 this.field23563++;
                 var1.method13995(0.0);
                 Class5628.method17725(0.0);
                 if (this.field23563 % 5 < 4) {
-                    double var12 = mc.field1339.getPosX();
-                    double var14 = mc.field1339.getPosY();
-                    double var16 = mc.field1339.getPosZ();
-                    mc.field1339.method3215(var12, var14 + 1.0E-14, var16);
+                    double var12 = mc.player.getPosX();
+                    double var14 = mc.player.getPosY();
+                    double var16 = mc.player.getPosZ();
+                    mc.player.method3215(var12, var14 + 1.0E-14, var16);
                 }
             }
 
-            Vector3d var18 = mc.field1339.method3233(var1.method13998().method11339(0.0, -var1.method13998().method11321(), 0.0));
+            Vector3d var18 = mc.player.method3233(var1.method13998().method11339(0.0, -var1.method13998().method11321(), 0.0));
             double var19 = Math.abs(Math.sqrt(var18.method11349()) - this.field23560);
             boolean var21 = var19 < 1.0E-4;
             if (this.method15974("No Collision") && this.field23560 > var10) {
@@ -227,11 +227,11 @@ public class HypixelFly extends Module {
                 }
 
                 var1.method13999(var18);
-                if (!var21 && mc.field1339.getPosY() % 1.0 > 0.1F && Class9567.method37087()) {
+                if (!var21 && mc.player.getPosY() % 1.0 > 0.1F && Class9567.method37087()) {
                     for (Vector3d var25 : var22) {
                         var25.field18048 = var25.field18048 * this.field23560;
                         var25.field18050 = var25.field18050 * this.field23560;
-                        double var26 = Math.abs(Math.sqrt(mc.field1339.method3233(var25).method11349()) - this.field23560);
+                        double var26 = Math.abs(Math.sqrt(mc.player.method3233(var25).method11349()) - this.field23560);
                         var21 = var26 < 1.0E-4;
                         if (var21) {
                             var1.method13999(var25);
@@ -241,7 +241,7 @@ public class HypixelFly extends Module {
                 }
             }
 
-            if (mc.field1299.field44636.field13071) {
+            if (mc.gameSettings.field44636.field13071) {
                 var1.method13995(0.25);
             }
         }

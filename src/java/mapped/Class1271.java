@@ -48,7 +48,7 @@ public class Class1271 extends Class1193 {
       return this.field6755;
    }
 
-   public void method6003(Class9332 var1, int var2, int var3, boolean var4) {
+   public void method6003(MatrixStack var1, int var2, int var3, boolean var4) {
       this.field6750.method8886(var1, this, var2, var3, var4, this.field6751);
    }
 
@@ -56,7 +56,7 @@ public class Class1271 extends Class1193 {
       this.field6750.method8887(var1, var2, this.field6751, var3, this.field6754);
    }
 
-   public void method6005(Class9332 var1) {
+   public void method6005(MatrixStack var1) {
       if (!this.field6765) {
          this.field6758 = (double)(117 - (this.field6762 + this.field6760) / 2);
          this.field6759 = (double)(56 - (this.field6763 + this.field6761) / 2);
@@ -104,7 +104,7 @@ public class Class1271 extends Class1193 {
       RenderSystem.popMatrix();
    }
 
-   public void method6006(Class9332 var1, int var2, int var3, int var4, int var5) {
+   public void method6006(MatrixStack var1, int var2, int var3, int var4, int var5) {
       RenderSystem.pushMatrix();
       RenderSystem.translatef(0.0F, 0.0F, 200.0F);
       method5686(var1, 0, 0, 234, 113, MathHelper.method37767(this.field6764 * 255.0F) << 24);

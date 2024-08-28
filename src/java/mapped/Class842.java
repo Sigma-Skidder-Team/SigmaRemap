@@ -116,7 +116,7 @@ public class Class842 extends Class838 {
 
                      try {
                         URI var15 = new File(this.field4562.field1303, "shaderpacks").toURI();
-                        Util.getOSType().method8178(var15);
+                        Util.getOSType().openURI(var15);
                      } catch (Throwable var10) {
                         var10.printStackTrace();
                         var14 = true;
@@ -146,7 +146,7 @@ public class Class842 extends Class838 {
                   case 210:
                      try {
                         URI var8 = new URI("http://optifine.net/shaderPacks");
-                        Util.getOSType().method8178(var8);
+                        Util.getOSType().openURI(var8);
                      } catch (Throwable var9) {
                         var9.printStackTrace();
                      }
@@ -247,17 +247,17 @@ public class Class842 extends Class838 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       if (!this.field4646) {
          Class8981.method32950();
          this.field4646 = true;
       }
 
-      super.method1931();
+      super.onClose();
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.field4645.method1923(var1, var2, var3, var4);
       if (this.field4644 <= 0) {
@@ -288,7 +288,7 @@ public class Class842 extends Class838 {
       return this.field4562;
    }
 
-   public void method2572(Class9332 var1, String var2, int var3, int var4, int var5) {
+   public void method2572(MatrixStack var1, String var2, int var3, int var4, int var5) {
       method5690(var1, this.field4630, var2, var3, var4, var5);
    }
 

@@ -9,7 +9,7 @@ public class Class8627 {
 
       for (long var5 : var0.field44281) {
          BlockPos var7 = BlockPos.method8331(var5);
-         if (!field38807.field1338.method6738(var7).method23393()) {
+         if (!field38807.world.method6738(var7).method23393()) {
             var3 = false;
             break;
          }
@@ -19,7 +19,7 @@ public class Class8627 {
    }
 
    public static boolean method30925() {
-      return field38807.field1339.field5036
-         && field38807.field1338.method7055(field38807.field1339, field38807.field1339.method3389().method19667(0.0, 1.0, 0.0)).count() == 0L;
+      return field38807.player.field5036
+         && field38807.world.method7055(field38807.player, field38807.player.method3389().method19667(0.0, 1.0, 0.0)).count() == 0L;
    }
 }

@@ -102,7 +102,7 @@ public class Class955 extends Class944 implements Class935 {
                         break;
                      }
 
-                     if (!(var13 instanceof Class878)) {
+                     if (!(var13 instanceof ServerPlayerEntity)) {
                         Vector3d var14 = var13.method3433();
                         double var15 = var14.field18048;
                         double var17 = var14.field18049;

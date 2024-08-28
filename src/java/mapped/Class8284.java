@@ -24,7 +24,7 @@ public class Class8284 {
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("clear").requires(var0x -> var0x.method20129(2)))
                .executes(
                   var0x -> method28948(
-                        (Class6619)var0x.getSource(), Collections.<Class878>singleton(((Class6619)var0x.getSource()).method20175()), var0xx -> true, -1
+                        (Class6619)var0x.getSource(), Collections.<ServerPlayerEntity>singleton(((Class6619)var0x.getSource()).method20175()), var0xx -> true, -1
                      )
                ))
             .then(
@@ -53,10 +53,10 @@ public class Class8284 {
       );
    }
 
-   private static int method28948(Class6619 var0, Collection<Class878> var1, Predicate<ItemStack> var2, int var3) throws CommandSyntaxException {
+   private static int method28948(Class6619 var0, Collection<ServerPlayerEntity> var1, Predicate<ItemStack> var2, int var3) throws CommandSyntaxException {
       int var6 = 0;
 
-      for (Class878 var8 : var1) {
+      for (ServerPlayerEntity var8 : var1) {
          var6 += var8.field4902.method4040(var2, var3, var8.field4904.method18232());
          var8.field4905.method18130();
          var8.field4904.method18106(var8.field4902);
@@ -68,19 +68,19 @@ public class Class8284 {
             if (var1.size() != 1) {
                var0.method20179(new TranslationTextComponent("commands.clear.success.multiple", var6, var1.size()), true);
             } else {
-               var0.method20179(new TranslationTextComponent("commands.clear.success.single", var6, ((Class878)var1.iterator().next()).getDisplayName()), true);
+               var0.method20179(new TranslationTextComponent("commands.clear.success.single", var6, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
             }
          } else if (var1.size() != 1) {
             var0.method20179(new TranslationTextComponent("commands.clear.test.multiple", var6, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.clear.test.single", var6, ((Class878)var1.iterator().next()).getDisplayName()), true);
+            var0.method20179(new TranslationTextComponent("commands.clear.test.single", var6, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var6;
       } else if (var1.size() != 1) {
          throw field35588.create(var1.size());
       } else {
-         throw field35587.create(((Class878)var1.iterator().next()).getName());
+         throw field35587.create(((ServerPlayerEntity)var1.iterator().next()).getName());
       }
    }
 }

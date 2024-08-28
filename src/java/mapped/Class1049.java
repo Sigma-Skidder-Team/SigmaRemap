@@ -115,7 +115,7 @@ public abstract class Class1049 extends Class1047 {
          ItemStack var6 = this.method4796();
          this.method4795(var6);
          if (!this.field5024.field9020) {
-            CriteriaTriggers.field44474.method15152((Class878)var1, var6);
+            CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var1, var6);
          }
 
          if (!var5.method32105()) {

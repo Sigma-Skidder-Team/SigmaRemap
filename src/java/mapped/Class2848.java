@@ -13,7 +13,7 @@ public final class Class2848 extends Class2828 {
    }
 
    @Override
-   public void method11016(Class9332 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       this.field17650.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
       this.field17651.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
    }

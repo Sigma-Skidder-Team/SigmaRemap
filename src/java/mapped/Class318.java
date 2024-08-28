@@ -90,7 +90,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       this.field1379.clear();
    }
 
-   public void method1638() {
+   public void drainTasks() {
       while (this.method1302()) {
       }
    }

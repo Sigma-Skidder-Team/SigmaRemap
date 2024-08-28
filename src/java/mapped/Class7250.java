@@ -16,9 +16,9 @@ public class Class7250 extends Class7249 {
          String var5 = var1.method3380() != null ? var1.method3380().getString() : null;
          String var6 = var1.getName().getString();
          if (var1.method3342() && !var4.startsWith("§c") && var4.endsWith("§r") && (var5 == null || var5.equals(var6))) {
-            double var7 = Math.abs(var1.getPosX() - field31119.field1339.getPosX());
-            double var9 = Math.abs(var1.getPosY() - field31119.field1339.getPosY());
-            double var11 = Math.abs(var1.getPosZ() - field31119.field1339.getPosZ());
+            double var7 = Math.abs(var1.getPosX() - field31119.player.getPosX());
+            double var9 = Math.abs(var1.getPosY() - field31119.player.getPosY());
+            double var11 = Math.abs(var1.getPosZ() - field31119.player.getPosZ());
             double var13 = Math.sqrt(var7 * var7 + var11 * var11);
             if (var9 < 13.0 && var9 > 10.0 && var13 < 3.0) {
                return true;

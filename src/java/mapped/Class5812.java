@@ -421,7 +421,7 @@ public abstract class Class5812 {
    }
 
    public void method18135(PlayerEntity var1, World var2, Class920 var3) {
-      if (!var1.method3066() || var1 instanceof Class878 && ((Class878)var1).method2783()) {
+      if (!var1.method3066() || var1 instanceof ServerPlayerEntity && ((ServerPlayerEntity)var1).method2783()) {
          for (int var7 = 0; var7 < var3.method3629(); var7++) {
             var1.method2882(var3.method3620(var7), false);
          }

@@ -12,7 +12,7 @@ public class Class1123 extends Class875<Class5825> {
    }
 
    @Override
-   public void method2617(Class9332 var1, int var2, int var3) {
+   public void method2617(MatrixStack var1, int var2, int var3) {
       RenderSystem.disableBlend();
       super.method2617(var1, var2, var3);
    }

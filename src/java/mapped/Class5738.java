@@ -8,7 +8,7 @@ public class Class5738 extends Class5715<Class904> {
       super(var1);
    }
 
-   public void method17853(Class904 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class904 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       PlayerEntity var9 = var1.method3544();
       if (var9 != null) {
          var4.method35294();
@@ -42,7 +42,7 @@ public class Class5738 extends Class5715<Class904> {
          double var29;
          double var31;
          float var36;
-         if ((this.field25097.field40020 == null || this.field25097.field40020.method37173().method8246()) && var9 == Minecraft.getInstance().field1339) {
+         if ((this.field25097.field40020 == null || this.field25097.field40020.method37173().method8246()) && var9 == Minecraft.getInstance().player) {
             double var33 = this.field25097.field40020.field44669;
             var33 /= 100.0;
             Vector3d var35 = new Vector3d((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);

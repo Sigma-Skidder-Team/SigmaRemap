@@ -28,7 +28,7 @@ public class Class5154 extends Module {
    public void isInDevelopment() {
       this.field23398 = -1;
       this.field23399 = 0;
-      this.field23403 = mc.field1339.getPosY();
+      this.field23403 = mc.player.getPosY();
       this.field23404 = Class9567.method37083()[0];
       this.field23400 = 0;
    }
@@ -51,7 +51,7 @@ public class Class5154 extends Module {
    public void method16009(Class4435 var1) {
       if (this.method15996()) {
          String var4 = this.getStringSettingValueByName("Mode");
-         if (Class5628.method17730(mc.field1339, 0.01F)) {
+         if (Class5628.method17730(mc.player, 0.01F)) {
             if (this.field23400 <= 1) {
                this.field23400++;
             } else {
@@ -60,16 +60,16 @@ public class Class5154 extends Module {
             }
 
             if (Class5628.method17686() && this.method15974("Auto Jump")) {
-               mc.field1339.method2914();
-               var1.method13995(mc.field1339.method3433().field18049);
+               mc.player.method2914();
+               var1.method13995(mc.player.method3433().field18049);
             }
          } else if (this.field23398 >= 0) {
             this.field23398++;
          }
 
-         if (mc.field1339.field4984 == 0.0F && mc.field1339.field4982 == 0.0F
-            || mc.field1339.field5037
-            || mc.field1339.field4984 <= 0.0F) {
+         if (mc.player.field4984 == 0.0F && mc.player.field4982 == 0.0F
+            || mc.player.field5037
+            || mc.player.field4984 <= 0.0F) {
             this.field23399 = 0;
          }
 
@@ -81,20 +81,20 @@ public class Class5154 extends Module {
                this.field23401 = this.method16013(this.field23398, this.field23399);
                this.field23402 = this.method16012(this.field23398);
                var1.method13995(this.field23402);
-               mc.field1339.method3433().field18049 = this.field23402;
+               mc.player.method3433().field18049 = this.field23402;
                break;
             case "Fast2":
                this.field23401 = this.method16015(this.field23398, this.field23399);
                this.field23402 = this.method16014(this.field23398);
                var1.method13995(this.field23402);
-               mc.field1339.method3433().field18049 = this.field23402;
+               mc.player.method3433().field18049 = this.field23402;
          }
 
          if (!Class5628.method17686()) {
             this.field23401 = 0.0;
          }
 
-         if (mc.field1339.field5037) {
+         if (mc.player.field5037) {
             this.field23401 = this.field23401 * 0.9 < 0.27 ? 0.27 : this.field23401 * 0.9;
          }
 
@@ -110,7 +110,7 @@ public class Class5154 extends Module {
    public void method16010(Class4422 var1) {
       if (this.method15996()) {
          if (this.method15974("Fluid Fix")) {
-            if (!mc.field1339.field5037 && !mc.field1339.field5038) {
+            if (!mc.player.field5037 && !mc.player.field5038) {
                String var4 = this.getStringSettingValueByName("Mode");
                float var5 = 13.0F;
                if (!var4.equals("Fast1")) {
@@ -123,12 +123,12 @@ public class Class5154 extends Module {
 
                if (!((float)this.field23398 > var5) && this.field23398 >= 0) {
                   double var6 = Math.cos(Math.toRadians((double)((float)this.field23398 / var5 * 180.0F - 90.0F)));
-                  mc.field1339.field5028.field18049 = this.field23403 + var6;
-                  mc.field1339.field4909 = 0.0F;
+                  mc.player.field5028.field18049 = this.field23403 + var6;
+                  mc.player.field4909 = 0.0F;
                }
             } else {
-               mc.field1339.field5028.field18049 = mc.field1339.method3389().field28450;
-               this.field23403 = mc.field1339.getPosY();
+               mc.player.field5028.field18049 = mc.player.method3389().field28450;
+               this.field23403 = mc.player.getPosY();
                this.field23398 = -1;
             }
          }
@@ -164,8 +164,8 @@ public class Class5154 extends Module {
    }
 
    private double method16012(int var1) {
-      double var4 = mc.field1339.method3433().field18049;
-      boolean var6 = Class5628.method17730(mc.field1339, 0.37F);
+      double var4 = mc.player.method3433().field18049;
+      boolean var6 = Class5628.method17730(mc.player, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.05, -0.12, -0.192, -0.26, -0.33, !var6 ? -0.4 : -0.0, !var6 ? -0.47 : -0.13};
       if (var1 >= 0 && var1 < var7.length) {
          var4 = var7[var1];
@@ -175,7 +175,7 @@ public class Class5154 extends Module {
    }
 
    private double method16013(int var1, int var2) {
-      boolean var5 = Class5628.method17730(mc.field1339, 0.37F);
+      boolean var5 = Class5628.method17730(mc.player, 0.37F);
       double[] var6 = new double[]{0.497, 0.671, 0.719, 0.733, 0.738};
       double[] var7 = new double[]{0.303, 0.407, 0.436, 0.444, 0.447};
       double[] var8 = new double[]{0.0, 0.003, 0.004, 0.004, 0.004};
@@ -211,8 +211,8 @@ public class Class5154 extends Module {
    }
 
    private double method16014(int var1) {
-      double var4 = mc.field1339.method3433().field18049;
-      boolean var6 = Class5628.method17730(mc.field1339, 0.37F);
+      double var4 = mc.player.method3433().field18049;
+      boolean var6 = Class5628.method17730(mc.player, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.06, -0.14, -0.22, -0.29, 0.0, -0.082, -0.11, 0.0, -0.18};
       if (var1 >= 0 && var1 < var7.length) {
          var4 = var7[var1];
@@ -230,7 +230,7 @@ public class Class5154 extends Module {
    }
 
    private double method16015(int var1, int var2) {
-      boolean var5 = Class5628.method17730(mc.field1339, 0.37F);
+      boolean var5 = Class5628.method17730(mc.player, 0.37F);
       double[] var6 = new double[]{0.497, 0.709, 0.746, 0.753};
       double[] var7 = new double[]{0.303, 0.43, 0.4525, 0.456};
       double[] var8 = new double[]{0.0, 0.0036, 0.0041, 0.0042};
@@ -301,11 +301,11 @@ public class Class5154 extends Module {
             var2.run();
          }
 
-         if (mc.field1339.field4984 <= 0.0F) {
+         if (mc.player.field4984 <= 0.0F) {
             var5 -= 0.06;
          }
 
-         if (mc.field1339.field5037) {
+         if (mc.player.field5037) {
             var5 -= 0.1;
             var2.run();
          }

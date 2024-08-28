@@ -64,7 +64,7 @@ public class Class1699 implements AutoCloseable {
          RenderSystem.method27863(3553, 10242, 33071);
          RenderSystem.method27863(3553, 10243, 33071);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.method27860(33984);
          if (Class7944.method26921()) {
             Class8981.method33126();
@@ -75,16 +75,16 @@ public class Class1699 implements AutoCloseable {
    public void method7318(float var1) {
       if (this.field9251) {
          this.field9251 = false;
-         this.field9254.method1574().method22503("lightTex");
-         Class1656 var4 = this.field9254.field1338;
+         this.field9254.method1574().startSection("lightTex");
+         Class1656 var4 = this.field9254.world;
          if (var4 != null) {
             this.field9256 = false;
             if (Class7944.method26911()) {
-               boolean var5 = this.field9254.field1339.method3033(Class8254.field35482) || this.field9254.field1339.method3033(Class8254.field35495);
+               boolean var5 = this.field9254.player.method3033(Class8254.field35482) || this.field9254.player.method3033(Class8254.field35495);
                if (Class9680.method37875(var4, this.field9252, this.field9249, var5, var1)) {
                   this.field9248.method1140();
                   this.field9251 = false;
-                  this.field9254.method1574().method22505();
+                  this.field9254.method1574().endSection();
                   this.field9256 = true;
                   return;
                }
@@ -98,16 +98,16 @@ public class Class1699 implements AutoCloseable {
                var6 = 1.0F;
             }
 
-            float var7 = this.field9254.field1339.method5416();
+            float var7 = this.field9254.player.method5416();
             float var8;
-            if (!this.field9254.field1339.method3033(Class8254.field35482)) {
-               if (var7 > 0.0F && this.field9254.field1339.method3033(Class8254.field35495)) {
+            if (!this.field9254.player.method3033(Class8254.field35482)) {
+               if (var7 > 0.0F && this.field9254.player.method3033(Class8254.field35495)) {
                   var8 = var7;
                } else {
                   var8 = 0.0F;
                }
             } else {
-               var8 = Class214.method750(this.field9254.field1339, var1);
+               var8 = Class214.method750(this.field9254.player, var1);
             }
 
             Class7680 var9 = new Class7680(var24, var24, 1.0F);
@@ -148,7 +148,7 @@ public class Class1699 implements AutoCloseable {
                      }
                   }
 
-                  float var26 = (float)this.field9254.field1299.field44672;
+                  float var26 = (float)this.field9254.gameSettings.field44672;
                   Class7680 var28 = this.method7325(var11);
                   var28.method25288(this::method7319);
                   var11.method25284(var28, var26);
@@ -164,7 +164,7 @@ public class Class1699 implements AutoCloseable {
             }
 
             this.field9248.method1140();
-            this.field9254.method1574().method22505();
+            this.field9254.method1574().endSection();
          }
       }
    }

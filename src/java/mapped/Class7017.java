@@ -13,7 +13,7 @@ public class Class7017 implements Class7016 {
          this.field30318--;
          if (this.field30318 <= 0) {
             this.field30318 = 1200;
-            Class878 var6 = var1.method6915();
+            ServerPlayerEntity var6 = var1.method6915();
             if (var6 != null) {
                Random var7 = var1.field9016;
                int var8 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);

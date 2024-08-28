@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Class1157 extends Class1156 {
-   private final Class1316 field6296;
+   private final MultiplayerScreen field6296;
    private final Minecraft field6297;
    private final Class7730 field6298;
    private final ResourceLocation field6299;
@@ -19,7 +19,7 @@ public class Class1157 extends Class1156 {
    private long field6302;
    public final Class1279 field6303;
 
-   public Class1157(Class1279 var1, Class1316 var2, Class7730 var3) {
+   public Class1157(Class1279 var1, MultiplayerScreen var2, Class7730 var3) {
       this.field6303 = var1;
       this.field6296 = var2;
       this.field6298 = var3;
@@ -29,7 +29,7 @@ public class Class1157 extends Class1156 {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       if (!this.field6298.field33195) {
          this.field6298.field33195 = true;
          this.field6298.field33192 = -2L;
@@ -96,7 +96,7 @@ public class Class1157 extends Class1156 {
             }
          } else {
             var17 = 1;
-            var18 = (int)(Util.method38487() / 100L + (long)(var2 * 2) & 7L);
+            var18 = (int)(Util.milliTime() / 100L + (long)(var2 * 2) & 7L);
             if (var18 > 4) {
                var18 = 8 - var18;
             }
@@ -137,7 +137,7 @@ public class Class1157 extends Class1156 {
          this.field6296.method6241(var20);
       }
 
-      if (this.field6297.field1299.field44625 || var9) {
+      if (this.field6297.gameSettings.field44625 || var9) {
          this.field6297.getTextureManager().bindTexture(Class1279.method6090());
          Class1193.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -173,7 +173,7 @@ public class Class1157 extends Class1156 {
       this.field6296.method6242().method27095();
    }
 
-   public void method5547(Class9332 var1, int var2, int var3, ResourceLocation var4) {
+   public void method5547(MatrixStack var1, int var2, int var3, ResourceLocation var4) {
       this.field6297.getTextureManager().bindTexture(var4);
       RenderSystem.enableBlend();
       Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 32, 32, 32, 32);
@@ -260,11 +260,11 @@ public class Class1157 extends Class1156 {
       }
 
       this.field6296.method6238(this);
-      if (Util.method38487() - this.field6302 < 250L) {
+      if (Util.milliTime() - this.field6302 < 250L) {
          this.field6296.method6236();
       }
 
-      this.field6302 = Util.method38487();
+      this.field6302 = Util.milliTime();
       return false;
    }
 

@@ -12,7 +12,7 @@ public class ClearChat extends Command {
    @Override
    public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
       if (var2.length <= 0) {
-         mc.field1298.method5989().method5929(true);
+         mc.ingameGUI.getChatGUI().clearChatMessages(true);
       } else {
          throw new CommandException("Too many arguments");
       }

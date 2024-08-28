@@ -11,15 +11,15 @@ public class Class1296 extends Class1293<Class1179> {
       this.field6791 = false;
    }
 
-   public int method6129(Class5805 var1) {
-      return this.method6030(Class1179.method5607(this.field6782.field1299, this.field6785, var1));
+   public int method6129(AbstractOption var1) {
+      return this.method6030(Class1179.method5607(this.field6782.gameSettings, this.field6785, var1));
    }
 
-   public void method6130(Class5805 var1, Class5805 var2) {
-      this.method6030(Class1179.method5608(this.field6782.field1299, this.field6785, var1, var2));
+   public void method6130(AbstractOption var1, AbstractOption var2) {
+      this.method6030(Class1179.method5608(this.field6782.gameSettings, this.field6785, var1, var2));
    }
 
-   public void method6131(Class5805[] var1) {
+   public void method6131(AbstractOption[] var1) {
       for (int var4 = 0; var4 < var1.length; var4 += 2) {
          this.method6130(var1[var4], var4 >= var1.length - 1 ? null : var1[var4 + 1]);
       }
@@ -36,7 +36,7 @@ public class Class1296 extends Class1293<Class1179> {
    }
 
    @Nullable
-   public Class1197 method6132(Class5805 var1) {
+   public Class1197 method6132(AbstractOption var1) {
       for (Class1179 var5 : this.method2468()) {
          for (Class1197 var7 : Class1179.method5610(var5)) {
             if (var7 instanceof Class1228 && ((Class1228)var7).method5809() == var1) {

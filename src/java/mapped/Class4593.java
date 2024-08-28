@@ -55,7 +55,7 @@ public class Class4593 extends Class4587 {
             var18 - var21.method11322(),
             this.field22082.field5031,
             var3,
-            new Class9332(),
+            new MatrixStack(),
             var20,
             this.field22085.method32208(this.field22082, var3)
          );

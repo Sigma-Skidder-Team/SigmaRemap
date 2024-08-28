@@ -20,11 +20,11 @@ import org.apache.logging.log4j.Logger;
 public class Class9118 {
    private static final Splitter field41915 = Splitter.on('\u0000').limit(6);
    private static final Logger field41916 = LogManager.getLogger();
-   private final List<Class8586> field41917 = Collections.<Class8586>synchronizedList(Lists.newArrayList());
+   private final List<NetworkManager> field41917 = Collections.<NetworkManager>synchronizedList(Lists.newArrayList());
 
    public void method34003(Class7730 var1, Runnable var2) throws UnknownHostException {
       Class9375 var5 = Class9375.method35574(var1.field33189);
-      Class8586 var6 = Class8586.method30703(InetAddress.getByName(var5.method35572()), var5.method35573(), false);
+      NetworkManager var6 = NetworkManager.method30703(InetAddress.getByName(var5.method35572()), var5.method35573(), false);
       this.field41917.add(var6);
       var1.field33191 = new TranslationTextComponent("multiplayer.status.pinging");
       var1.field33192 = -1L;
@@ -41,7 +41,7 @@ public class Class9118 {
 
    private void method34004(Class7730 var1) {
       Class9375 var4 = Class9375.method35574(var1.field33189);
-      ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)Class8586.field38643.method28097())).handler(new Class7272(this, var4, var1)))
+      ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.field38643.method28097())).handler(new Class7272(this, var4, var1)))
             .channel(NioSocketChannel.class))
          .connect(var4.method35572(), var4.method35573());
    }
@@ -58,7 +58,7 @@ public class Class9118 {
          Iterator var4 = this.field41917.iterator();
 
          while (var4.hasNext()) {
-            Class8586 var5 = (Class8586)var4.next();
+            NetworkManager var5 = (NetworkManager)var4.next();
             if (var5.method30707()) {
                var5.method30698();
             } else {
@@ -74,7 +74,7 @@ public class Class9118 {
          Iterator var4 = this.field41917.iterator();
 
          while (var4.hasNext()) {
-            Class8586 var5 = (Class8586)var4.next();
+            NetworkManager var5 = (NetworkManager)var4.next();
             if (var5.method30707()) {
                var4.remove();
                var5.method30701(new TranslationTextComponent("multiplayer.status.cancelled"));

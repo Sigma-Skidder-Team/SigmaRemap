@@ -9,7 +9,7 @@ public class Class5946 extends Class5942<Class950> {
       super(var1);
    }
 
-   public void method18462(Class950 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class950 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       long var9 = var1.method3734().method6783();
       List var11 = var1.method3823();
       int var12 = 0;
@@ -21,12 +21,12 @@ public class Class5946 extends Class5942<Class950> {
       }
    }
 
-   private static void method18468(Class9332 var0, Class7733 var1, float var2, long var3, int var5, int var6, float[] var7) {
+   private static void method18468(MatrixStack var0, Class7733 var1, float var2, long var3, int var5, int var6, float[] var7) {
       method18469(var0, var1, field25936, var2, 1.0F, var3, var5, var6, var7, 0.2F, 0.25F);
    }
 
    public static void method18469(
-           Class9332 var0, Class7733 var1, ResourceLocation var2, float var3, float var4, long var5, int var7, int var8, float[] var9, float var10, float var11
+           MatrixStack var0, Class7733 var1, ResourceLocation var2, float var3, float var4, long var5, int var7, int var8, float[] var9, float var10, float var11
    ) {
       int var14 = var7 + var8;
       var0.method35294();
@@ -106,7 +106,7 @@ public class Class5946 extends Class5942<Class950> {
    }
 
    private static void method18470(
-      Class9332 var0,
+      MatrixStack var0,
       Class5422 var1,
       float var2,
       float var3,

@@ -385,7 +385,7 @@ public class Class964 extends Class944 {
    }
 
    private static Random method3966(long var0) {
-      return var0 != 0L ? new Random(var0) : new Random(Util.method38487());
+      return var0 != 0L ? new Random(var0) : new Random(Util.milliTime());
    }
 
    public boolean method3967(ServerWorld var1, boolean var2) {

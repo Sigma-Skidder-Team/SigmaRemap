@@ -246,7 +246,7 @@ public class Class1808 implements Class1809, AutoCloseable {
          IntSupplier var5 = this.field9746.get(var4);
          if (var5 != null) {
             RenderSystem.method27860(33984 + var3);
-            RenderSystem.method27861();
+            RenderSystem.enableTexture();
             int var6 = var5.getAsInt();
             if (var6 != -1) {
                RenderSystem.method27865(var6);

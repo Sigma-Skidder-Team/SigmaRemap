@@ -42,7 +42,7 @@ public class Class1175 extends Class1155<Class1175> {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       Class2064 var13 = this.field6363.method14678();
       if (!var13.method8720()) {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -54,7 +54,7 @@ public class Class1175 extends Class1155<Class1175> {
       Class1193.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       Class9125 var14 = this.field6364;
       Class5991 var15 = this.field6365;
-      if (this.method5600() && (this.field6361.field1299.field44625 || var9)) {
+      if (this.method5600() && (this.field6361.gameSettings.field44625 || var9)) {
          this.field6361.getTextureManager().bindTexture(Class1275.method6064());
          Class1193.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);

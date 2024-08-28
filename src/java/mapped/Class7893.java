@@ -17,7 +17,7 @@ public class Class7893 extends Class7882<Class880> {
 
    @Override
    public void method26425(ServerWorld var1, Class880 var2) {
-      List<Class878> var5 = var1.method6870()
+      List<ServerPlayerEntity> var5 = var1.method6870()
          .stream()
          .filter(Class8088.field34763)
          .filter(var1x -> var2.method3213(var1x, 16.0))

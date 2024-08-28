@@ -18,7 +18,7 @@ public class Class7451 {
       RenderSystem.method27878(5889);
       RenderSystem.pushMatrix();
       RenderSystem.method27879();
-      RenderSystem.method27888(Class9367.method35511(85.0, (float)var1.method1580().method8041() / (float)var1.method1580().method8042(), 0.05F, 10.0F));
+      RenderSystem.method27888(Class9367.method35511(85.0, (float)var1.method1580().getFramebufferWidth() / (float)var1.method1580().getFramebufferHeight(), 0.05F, 10.0F));
       RenderSystem.method27878(5888);
       RenderSystem.pushMatrix();
       RenderSystem.method27879();
@@ -99,7 +99,7 @@ public class Class7451 {
       RenderSystem.method27878(5888);
       RenderSystem.popMatrix();
       RenderSystem.depthMask(true);
-      RenderSystem.method27849();
+      RenderSystem.enableCull();
       RenderSystem.enableDepthTest();
    }
 

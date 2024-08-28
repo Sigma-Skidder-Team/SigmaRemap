@@ -9,9 +9,9 @@ public class Class9229 {
    private static final Class9469 field42479 = new Class9469(Duration.ofSeconds(5L));
 
    public static void method34711(String var0) {
-      Class6688 var3 = Class6688.field29302;
+      NarratorChatListener var3 = NarratorChatListener.INSTANCE;
       var3.method20406();
-      var3.method20400(ChatType.SYSTEM, new StringTextComponent(method34712(var0)), Util.field45724);
+      var3.method20400(ChatType.SYSTEM, new StringTextComponent(method34712(var0)), Util.DUMMY_UUID);
    }
 
    private static String method34712(String var0) {

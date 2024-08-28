@@ -139,7 +139,7 @@ public class Class8901 {
    }
 
    public static boolean method32449(int var0, int var1, int var2, boolean var3) {
-      Class6488 var6 = field40291.field1339.getRidingEntity() != null ? field40291.field1339.getRidingEntity().method3389() : field40291.field1339.method3389();
+      Class6488 var6 = field40291.player.getRidingEntity() != null ? field40291.player.getRidingEntity().method3389() : field40291.player.method3389();
       Class6488 var7 = new Class6488(
          (double)((float)var0 + 0.5F) - var6.method19676() / 2.0,
          (double)var1,
@@ -148,7 +148,7 @@ public class Class8901 {
          (double)var1 + var6.method19677(),
          (double)((float)var2 + 0.5F) + var6.method19678() / 2.0
       );
-      return field40291.field1338.method7055(field40291.field1339, var7).count() == 0L;
+      return field40291.world.method7055(field40291.player, var7).count() == 0L;
    }
 
    public Class8534 method32450(Class8472 var1) {

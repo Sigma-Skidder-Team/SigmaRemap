@@ -38,7 +38,7 @@ public class Class1706 implements AutoCloseable {
    }
 
    public void method7409(float var1) {
-      this.field9294.method29114();
+      this.field9294.unbindFramebuffer();
       float var4 = (float)this.field9295.field35730;
       float var5 = (float)this.field9295.field35731;
       RenderSystem.method27869(0, 0, (int)var4, (int)var5);
@@ -54,10 +54,10 @@ public class Class1706 implements AutoCloseable {
       this.field9293.method7937("OutSize").method7438(var4, var5);
       this.field9293.method7937("Time").method7437(var1);
       Minecraft var10 = Minecraft.getInstance();
-      this.field9293.method7937("ScreenSize").method7438((float)var10.method1580().method8041(), (float)var10.method1580().method8042());
+      this.field9293.method7937("ScreenSize").method7438((float)var10.method1580().getFramebufferWidth(), (float)var10.method1580().getFramebufferHeight());
       this.field9293.method7934();
-      this.field9295.method29119(Minecraft.field1272);
-      this.field9295.method29112(false);
+      this.field9295.method29119(Minecraft.IS_RUNNING_ON_MAC);
+      this.field9295.bindFramebuffer(false);
       RenderSystem.depthFunc(519);
       Class5425 var7 = Class9352.method35409().method35411();
       var7.method17063(7, Class9337.field43342);
@@ -69,7 +69,7 @@ public class Class1706 implements AutoCloseable {
       Class4395.method13895(var7);
       RenderSystem.depthFunc(515);
       this.field9293.method7933();
-      this.field9295.method29114();
+      this.field9295.unbindFramebuffer();
       this.field9294.method29111();
 
       for (Object var9 : this.field9296) {

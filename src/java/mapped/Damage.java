@@ -21,16 +21,16 @@ public class Damage extends Command {
          for (int var6 = 0; (double)var6 < 80.0 + 40.0 * (var2[0].method30896() - 0.5); var6++) {
             mc.getClientPlayNetHandler()
                .sendPacket(
-                  new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY() + 0.06, mc.field1339.getPosZ(), false)
+                  new Class5605(mc.player.getPosX(), mc.player.getPosY() + 0.06, mc.player.getPosZ(), false)
                );
             mc.getClientPlayNetHandler()
-               .sendPacket(new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ(), false));
+               .sendPacket(new Class5605(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), false));
          }
 
          mc.getClientPlayNetHandler()
-            .sendPacket(new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ(), false));
+            .sendPacket(new Class5605(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), false));
          mc.getClientPlayNetHandler()
-            .sendPacket(new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY() + 0.02, mc.field1339.getPosZ(), false));
+            .sendPacket(new Class5605(mc.player.getPosX(), mc.player.getPosY() + 0.02, mc.player.getPosZ(), false));
          var3.method20327("Sent damage packets");
       }
    }

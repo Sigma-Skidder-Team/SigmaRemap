@@ -60,8 +60,8 @@ public class Class1147 extends Screen {
    }
 
    @Override
-   public String method2326() {
-      return super.method2326() + ". " + this.field6235.getString();
+   public String getNarrationMessage() {
+      return super.getNarrationMessage() + ". " + this.field6235.getString();
    }
 
    @Override
@@ -120,7 +120,7 @@ public class Class1147 extends Screen {
       switch (Class3627.field19645[var1.ordinal()]) {
          case 1:
             this.field6231.method5743(field6219);
-            var4 = this.field4562.field1339.connection.method15791();
+            var4 = this.field4562.player.connection.method15791();
             break;
          case 2:
             this.field6232.method5743(field6220);
@@ -129,7 +129,7 @@ public class Class1147 extends Screen {
          case 3:
             this.field6233.method5743(field6221);
             Class9645 var5 = this.field4562.method1578();
-            var4 = this.field4562.field1339.connection.method15791().stream().filter(var5::method37608).collect(Collectors.toSet());
+            var4 = this.field4562.player.connection.method15791().stream().filter(var5::method37608).collect(Collectors.toSet());
             break;
          default:
             var4 = ImmutableList.of();
@@ -138,23 +138,23 @@ public class Class1147 extends Screen {
       this.field6230 = var1;
       this.field6227.method6134(var4, this.field6227.method6044());
       if (!this.field6228.method5636().isEmpty() && this.field6227.method6137() && !this.field6228.method5746()) {
-         Class6688.field29302.method20401(field6223.getString());
+         NarratorChatListener.INSTANCE.say(field6223.getString());
       } else if (var4.isEmpty()) {
          if (var1 == Class2332.field15952) {
-            Class6688.field29302.method20401(field6224.getString());
+            NarratorChatListener.INSTANCE.say(field6224.getString());
          } else if (var1 == Class2332.field15953) {
-            Class6688.field29302.method20401(field6225.getString());
+            NarratorChatListener.INSTANCE.say(field6225.getString());
          }
       }
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
    @Override
-   public void method2469(Class9332 var1) {
+   public void method2469(MatrixStack var1) {
       int var4 = this.method5485() + 3;
       super.method2469(var1);
       this.field4562.getTextureManager().bindTexture(field6215);
@@ -170,7 +170,7 @@ public class Class1147 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method5488(this.field4562);
       this.method2469(var1);
       if (this.field6235 != null) {
@@ -215,7 +215,7 @@ public class Class1147 extends Screen {
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
-      if (!this.field6228.method5746() && this.field4562.field1299.field44648.method8519(var1, var2)) {
+      if (!this.field6228.method5746() && this.field4562.gameSettings.field44648.method8519(var1, var2)) {
          this.field4562.displayGuiScreen((Screen)null);
          return true;
       } else {
@@ -242,7 +242,7 @@ public class Class1147 extends Screen {
       if (this.field6236 != var4) {
          String var5 = "";
          Class7730 var6 = var1.method1528();
-         if (!var1.method1529()) {
+         if (!var1.isIntegratedServerRunning()) {
             if (var6 != null) {
                var5 = var6.field33188;
             }

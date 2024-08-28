@@ -14,7 +14,7 @@ public class Class5655 extends Class5651<Class1052, Class2827<Class1052>> {
       return var1.method4827();
    }
 
-   public void method17853(Class1052 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class1052 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       Object var9 = var1.method4824() != 0 ? this.field25009 : this.field25008;
       this.field25086 = (Class2827<Class1052>)var9;
       float[] var10 = var1.method4820();
@@ -23,7 +23,7 @@ public class Class5655 extends Class5651<Class1052, Class2827<Class1052>> {
       ((Class2808)var9).method11018(1.0F, 1.0F, 1.0F);
    }
 
-   public void method17842(Class1052 var1, Class9332 var2, float var3, float var4, float var5) {
+   public void method17842(Class1052 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
       float var8 = 4.3F * MathHelper.method37763(0.6F * var3);
       var2.method35293(Class7680.field32900.method25286(var8));

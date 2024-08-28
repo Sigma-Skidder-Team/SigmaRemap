@@ -31,7 +31,7 @@ public class Class870 extends Screen {
    }
 
    private Class870(Class7502 var1, boolean var2) {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field4821 = var1;
       this.field4828 = var2;
    }
@@ -120,7 +120,7 @@ public class Class870 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(field4820);

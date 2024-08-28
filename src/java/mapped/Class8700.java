@@ -57,7 +57,7 @@ public class Class8700 implements ArgumentType<Class8429> {
       return ((Class8429)var0.getArgument(var1, Class8429.class)).method29617((Class6619)var0.getSource());
    }
 
-   public static Collection<Class878> method31350(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Collection<ServerPlayerEntity> method31350(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       return ((Class8429)var0.getArgument(var1, Class8429.class)).method29620((Class6619)var0.getSource());
    }
 
@@ -65,7 +65,7 @@ public class Class8700 implements ArgumentType<Class8429> {
       return new Class8700(true, true);
    }
 
-   public static Class878 method31352(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static ServerPlayerEntity method31352(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       return ((Class8429)var0.getArgument(var1, Class8429.class)).method29619((Class6619)var0.getSource());
    }
 
@@ -73,7 +73,7 @@ public class Class8700 implements ArgumentType<Class8429> {
       return new Class8700(false, true);
    }
 
-   public static Collection<Class878> method31354(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Collection<ServerPlayerEntity> method31354(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       List var4 = ((Class8429)var0.getArgument(var1, Class8429.class)).method29620((Class6619)var0.getSource());
       if (!var4.isEmpty()) {
          return var4;

@@ -19,12 +19,12 @@ public class Class9410 {
                      var0x -> {
                         String var3 = StringArgumentType.getString(var0x, "action");
                         Entity var4 = ((Class6619)var0x.getSource()).method20173();
-                        Class314 var5 = ((Class6619)var0x.getSource()).method20177();
+                        MinecraftServer var5 = ((Class6619)var0x.getSource()).method20177();
                         if (var4 == null) {
-                           var5.getPlayerList().method19484(method36044(var0x, var3), ChatType.SYSTEM, Util.field45724);
+                           var5.getPlayerList().method19484(method36044(var0x, var3), ChatType.SYSTEM, Util.DUMMY_UUID);
                         } else {
-                           if (var4 instanceof Class878) {
-                              IChatFilter var6 = ((Class878)var4).method2837();
+                           if (var4 instanceof ServerPlayerEntity) {
+                              IChatFilter var6 = ((ServerPlayerEntity)var4).method2837();
                               if (var6 != null) {
                                  var6.func_244432_a(var3)
                                     .thenAcceptAsync(

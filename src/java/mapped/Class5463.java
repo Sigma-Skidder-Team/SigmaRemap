@@ -51,7 +51,7 @@ public class Class5463 {
       }
    }
 
-   public static void method17154(Class214 var0, Class9332 var1, Class9624 var2, float var3) {
+   public static void method17154(Class214 var0, MatrixStack var1, Class9624 var2, float var3) {
       if (!Class8981.field40609) {
          boolean var6 = Class8981.method33149();
          boolean var7 = Class8981.method33150();
@@ -68,7 +68,7 @@ public class Class5463 {
       }
    }
 
-   public static void method17155(Class214 var0, Class9332 var1, Class9624 var2, float var3) {
+   public static void method17155(Class214 var0, MatrixStack var1, Class9624 var2, float var3) {
       if (!Class8981.field40609 && !Class8981.method33151()) {
          Class8981.method33097();
          Class7414.method23715();
@@ -82,7 +82,7 @@ public class Class5463 {
       }
    }
 
-   public static void method17156(Class9641 var0, float var1, Class9332 var2, Class7735 var3, ClientPlayerEntity var4, int var5, boolean var6) {
+   public static void method17156(Class9641 var0, float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5, boolean var6) {
       Class7414.method23713(true);
       if (var6) {
          Class7414.method23712(519);
@@ -101,7 +101,7 @@ public class Class5463 {
       var0.method37590(var1, var2, var3, var4, var5);
    }
 
-   public static void method17157(Class214 var0, Class9332 var1, Class9624 var2, float var3) {
+   public static void method17157(Class214 var0, MatrixStack var1, Class9624 var2, float var3) {
       if (!Class8981.field40609) {
          Class8981.method33107();
          var0.method747(var1, var2, var3, false, true, false);
@@ -129,8 +129,8 @@ public class Class5463 {
    public static void method17160(Class214 var0, Class9624 var1, int var2, float var3, long var4) {
       if (Class8981.field40804 > 0 && --Class8981.field40793 <= 0) {
          Minecraft var8 = Minecraft.getInstance();
-         var8.method1574().method22506("shadow pass");
-         Class264 var9 = var8.field1287;
+         var8.method1574().endStartSection("shadow pass");
+         Class264 var9 = var8.worldRenderer;
          Class8981.field40609 = true;
          Class8981.field40793 = Class8981.field40783;
          Class8981.method32984("pre shadow");
@@ -138,12 +138,12 @@ public class Class5463 {
          GL11.glPushMatrix();
          GL30.glMatrixMode(5888);
          GL11.glPushMatrix();
-         var8.method1574().method22506("shadow clear");
+         var8.method1574().endStartSection("shadow clear");
          EXTFramebufferObject.glBindFramebufferEXT(36160, Class8981.field40808);
          Class8981.method32984("shadow bind sfb");
-         var8.method1574().method22506("shadow camera");
+         var8.method1574().endStartSection("shadow camera");
          method17161(var1, var8, var3);
-         Class9332 var10 = new Class9332();
+         MatrixStack var10 = new MatrixStack();
          Class8981.method33053(var10, var1, var3);
          Class8981.method32984("shadow camera");
          Class8981.method33021(Class8981.field40814);
@@ -160,9 +160,9 @@ public class Class5463 {
          GL30.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
          GL30.glClear(Class8981.field40803 == 0 ? 256 : 16640);
          Class8981.method32984("shadow clear");
-         var8.method1574().method22506("shadow frustum");
+         var8.method1574().endStartSection("shadow frustum");
          Class7649 var11 = new Class7649();
-         var8.method1574().method22506("shadow culling");
+         var8.method1574().endStartSection("shadow culling");
          Vector3d var12 = var1.method37504();
          var11.method25119(var12.field18048, var12.field18049, var12.field18050);
          Class7414.method23818(7425);
@@ -172,13 +172,13 @@ public class Class5463 {
          Class7414.method23822(true, true, true, true);
          Class7414.method23878(new Class9816(false));
          Class7414.method23874(new Class8069(false));
-         var8.method1574().method22506("shadow prepareterrain");
+         var8.method1574().endStartSection("shadow prepareterrain");
          var8.getTextureManager().bindTexture(Class289.field1102);
-         var8.method1574().method22506("shadow setupterrain");
-         int var13 = var8.field1287.method936();
-         var9.method874(var1, var11, false, var13, var8.field1339.method2800());
-         var8.method1574().method22506("shadow updatechunks");
-         var8.method1574().method22506("shadow terrain");
+         var8.method1574().endStartSection("shadow setupterrain");
+         int var13 = var8.worldRenderer.method936();
+         var9.method874(var1, var11, false, var13, var8.player.method2800());
+         var8.method1574().endStartSection("shadow updatechunks");
+         var8.method1574().endStartSection("shadow terrain");
          double var14 = var12.method11320();
          double var16 = var12.method11321();
          double var18 = var12.method11322();
@@ -199,18 +199,18 @@ public class Class5463 {
          Class7414.method23830(5888);
          Class7414.method23833();
          Class7414.method23832();
-         var8.method1574().method22506("shadow entities");
-         Class264 var20 = var8.field1287;
+         var8.method1574().endStartSection("shadow entities");
+         Class264 var20 = var8.worldRenderer;
          Class8853 var21 = var8.method1554();
          Class7735 var22 = var20.method937().method26536();
-         boolean var23 = Class8981.field40609 && !var8.field1339.method2800();
+         boolean var23 = Class8981.field40609 && !var8.player.method2800();
 
          for (Class7002 var25 : var20.method938()) {
             Class8066 var26 = var25.field30281;
             Class1674 var27 = var26.method27740();
 
             for (Entity var29 : var27.method7146()[var26.method27718().getY() / 16]) {
-               if ((var21.method32218(var29, var11, var14, var16, var18) || var29.method3417(var8.field1339))
+               if ((var21.method32218(var29, var11, var14, var16, var18) || var29.method3417(var8.player))
                   && (
                      var29 != var1.method37509()
                         || var23
@@ -294,7 +294,7 @@ public class Class5463 {
          Class8981.method32984("shadow drawbuffers pre-translucent");
          Class8981.method32983("shadow pre-translucent");
          if (Class8981.method32996()) {
-            var8.method1574().method22506("shadow translucent");
+            var8.method1574().endStartSection("shadow translucent");
             var9.method880(Class9025.field41291, var10, var14, var16, var18);
             Class8981.method32984("shadow translucent");
          }
@@ -307,7 +307,7 @@ public class Class5463 {
          GL30.glFlush();
          Class8981.method32984("shadow flush");
          Class8981.field40609 = false;
-         var8.method1574().method22506("shadow postprocess");
+         var8.method1574().endStartSection("shadow postprocess");
          if (Class8981.field40599) {
             if (Class8981.field40804 >= 1) {
                if (Class8981.field40858[0]) {
@@ -363,10 +363,10 @@ public class Class5463 {
 
    public static void method17161(Class9624 var0, Minecraft var1, float var2) {
       var0.method37497(
-         var1.field1338,
-         (Entity)(var1.method1550() != null ? var1.method1550() : var1.field1339),
-         !var1.field1299.method37173().method8246(),
-         var1.field1299.method37173().method8247(),
+         var1.world,
+         (Entity)(var1.method1550() != null ? var1.method1550() : var1.player),
+         !var1.gameSettings.method37173().method8246(),
+         var1.gameSettings.method37173().method8247(),
          var2
       );
    }
@@ -489,7 +489,7 @@ public class Class5463 {
       }
    }
 
-   public static boolean method17174(Class956 var0, float var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public static boolean method17174(Class956 var0, float var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       if (!Class8981.field40609 && Class8981.field40848.method26485() == 0) {
          return false;
       } else {

@@ -22,8 +22,8 @@ public class Class3281 extends Class3257 {
             Class7380 var9 = Class3397.method12009(var5, var8);
             var5.method6725(var8, var9, 11);
             ItemStack var10 = var1.method18357();
-            if (var4 instanceof Class878) {
-               CriteriaTriggers.field44489.method15138((Class878)var4, var8, var10);
+            if (var4 instanceof ServerPlayerEntity) {
+               CriteriaTriggers.field44489.method15138((ServerPlayerEntity)var4, var8, var10);
                var10.method32121(1, var4, var1x -> var1x.method3185(var1.method18359()));
             }
 

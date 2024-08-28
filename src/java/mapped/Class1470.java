@@ -28,7 +28,7 @@ public class Class1470 implements Runnable {
    public void run() {
       while (this.field7908.method1295()) {
          long var3 = this.field7908.method1393();
-         long var5 = Util.method38487();
+         long var5 = Util.milliTime();
          long var7 = var5 - var3;
          if (var7 > this.field7909) {
             field7907.fatal(

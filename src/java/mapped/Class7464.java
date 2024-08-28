@@ -7,7 +7,7 @@ import java.util.function.BiConsumer;
 public class Class7464 extends Class7465<Class7464> {
    private int field32100;
 
-   private static Class7989<Class7464> method24152(int var0, BiConsumer<Class314, Class7464> var1) {
+   private static Class7989<Class7464> method24152(int var0, BiConsumer<MinecraftServer, Class7464> var1) {
       return new Class7989<>(IntegerArgumentType::integer, var1x -> new Class7464(var1x, var0), var1, Class7567::method24778);
    }
 
@@ -74,7 +74,7 @@ public class Class7464 extends Class7465<Class7464> {
       return new Class7464(this.field32101, this.field32100);
    }
 
-   public void method24164(Class7464 var1, Class314 var2) {
+   public void method24164(Class7464 var1, MinecraftServer var2) {
       this.field32100 = var1.field32100;
       this.method24171(var2);
    }

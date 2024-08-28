@@ -130,10 +130,10 @@ public class Class8061 {
       );
    }
 
-   private static int method27672(Class6619 var0, Class7436 var1, Vector3d var2, Vector3d var3, float var4, int var5, boolean var6, Collection<Class878> var7) throws CommandSyntaxException {
+   private static int method27672(Class6619 var0, Class7436 var1, Vector3d var2, Vector3d var3, float var4, int var5, boolean var6, Collection<ServerPlayerEntity> var7) throws CommandSyntaxException {
       int var10 = 0;
 
-      for (Class878 var12 : var7) {
+      for (ServerPlayerEntity var12 : var7) {
          if (var0.method20172()
             .method6940(
                var12, var1, var6, var2.field18048, var2.field18049, var2.field18050, var5, var3.field18048, var3.field18049, var3.field18050, (double)var4

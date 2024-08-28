@@ -93,7 +93,7 @@ public class Class7716 {
 
    public boolean method25494(BlockPos var1) {
       for (Class9485 var7 : field33121) {
-         Class7380 var8 = field33120.field1338.method6738(var1.method8335(var7.field44096, var7.field44097, var7.field44098));
+         Class7380 var8 = field33120.world.method6738(var1.method8335(var7.field44096, var7.field44097, var7.field44098));
          if (var8.method23383() == Blocks.WATER || var8.method23383() == Blocks.LAVA) {
             return true;
          }
@@ -104,7 +104,7 @@ public class Class7716 {
 
    public boolean method25495(int var1, int var2, int var3) {
       BlockPos var6 = new BlockPos(var1, var2, var3);
-      return field33120.field1338.method6738(new BlockPos(var1, var2 - 1, var3)).method23383() != Blocks.AIR
+      return field33120.world.method6738(new BlockPos(var1, var2 - 1, var3)).method23383() != Blocks.AIR
          ? !this.method25494(var6) && !this.method25494(var6.method8311())
          : false;
    }
@@ -130,7 +130,7 @@ public class Class7716 {
    }
 
    public boolean method25497(Class9485 var1) {
-      return field33120.field1338.method6738(new BlockPos((int)var1.method36620(), (int)var1.method36621() - 1, (int)var1.method36622())).method23383()
+      return field33120.world.method6738(new BlockPos((int)var1.method36620(), (int)var1.method36621() - 1, (int)var1.method36622())).method23383()
          != Blocks.AIR;
    }
 
@@ -147,8 +147,8 @@ public class Class7716 {
    }
 
    public static boolean method25499(int var0, int var1, int var2) {
-      return field33120.field1338.method6738(new BlockPos(var0, var1 + 1, var2)).method23383() != Blocks.AIR
-         || field33120.field1338.method6738(new BlockPos(var0, var1, var2)).method23383() != Blocks.AIR;
+      return field33120.world.method6738(new BlockPos(var0, var1 + 1, var2)).method23383() != Blocks.AIR
+         || field33120.world.method6738(new BlockPos(var0, var1, var2)).method23383() != Blocks.AIR;
    }
 
    public Class7916 method25500(Class9485 var1, Class2173 var2) {

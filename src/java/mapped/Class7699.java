@@ -116,7 +116,7 @@ public class Class7699 {
       return this.field32984;
    }
 
-   private Predicate<Class878> method25397() {
+   private Predicate<ServerPlayerEntity> method25397() {
       return var1 -> {
          BlockPos var4 = var1.method3432();
          return var1.method3066() && this.field32978.method6957(var4) == this;
@@ -124,16 +124,16 @@ public class Class7699 {
    }
 
    private void method25398() {
-      Set<Class878> var3 = Sets.newHashSet(this.field32985.method12288());
-      List<Class878> var4 = this.field32978.method6914(this.method25397());
+      Set<ServerPlayerEntity> var3 = Sets.newHashSet(this.field32985.method12288());
+      List<ServerPlayerEntity> var4 = this.field32978.method6914(this.method25397());
 
-      for (Class878 var6 : var4) {
+      for (ServerPlayerEntity var6 : var4) {
          if (!var3.contains(var6)) {
             this.field32985.method12263(var6);
          }
       }
 
-      for (Class878 var8 : var3) {
+      for (ServerPlayerEntity var8 : var3) {
          if (!var4.contains(var8)) {
             this.field32985.method12265(var8);
          }
@@ -301,8 +301,8 @@ public class Class7699 {
                      if (var9 instanceof Class880 && !var9.method2800()) {
                         Class880 var10 = (Class880)var9;
                         var10.method3035(new Class2023(Class8254.field35498, 48000, this.field32982 - 1, false, false, true));
-                        if (var10 instanceof Class878) {
-                           Class878 var11 = (Class878)var10;
+                        if (var10 instanceof ServerPlayerEntity) {
+                           ServerPlayerEntity var11 = (ServerPlayerEntity)var10;
                            var11.method2911(Class8876.field40174);
                            CriteriaTriggers.field44498.method15062(var11);
                         }
@@ -394,7 +394,7 @@ public class Class7699 {
       byte var5 = 64;
       Collection var6 = this.field32985.method12288();
 
-      for (Class878 var8 : this.field32978.method6870()) {
+      for (ServerPlayerEntity var8 : this.field32978.method6870()) {
          Vector3d var9 = var8.getPositionVec();
          Vector3d var10 = Vector3d.method11328(var1);
          float var11 = MathHelper.method37766(

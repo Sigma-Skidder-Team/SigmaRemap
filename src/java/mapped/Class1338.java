@@ -12,7 +12,7 @@ public class Class1338 extends Screen implements Class1339 {
    private Class7156 field7111 = Class8703.method31387();
 
    public Class1338() {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
    }
 
    @Override
@@ -48,9 +48,9 @@ public class Class1338 extends Screen implements Class1339 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field7110) {
-         if (this.field7111 != null && this.field4562.field1338 == null) {
+         if (this.field7111 != null && this.field4562.world == null) {
             this.field7111.method22328(this.field4564, this.field4565);
          } else {
             this.method2469(var1);

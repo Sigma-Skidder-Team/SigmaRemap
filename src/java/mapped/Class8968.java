@@ -132,7 +132,7 @@ public class Class8968 {
 
    public void method32837(Class7165 var1, int var2) {
       Class9299.field42974.method20229();
-      var1.method22503("missing_model");
+      var1.startSection("missing_model");
 
       try {
          this.field40537.put(field40521, this.method32849(field40521));
@@ -142,28 +142,28 @@ public class Class8968 {
          throw new RuntimeException(var12);
       }
 
-      var1.method22506("static_definitions");
+      var1.endStartSection("static_definitions");
       field40531.forEach((var1x, var2x) -> var2x.method35392().forEach(var2xx -> this.method32845(Class9736.method38157(var1x, var2xx))));
-      var1.method22506("blocks");
+      var1.endStartSection("blocks");
 
       for (Block var6 : Class2348.field16072) {
          var6.method11577().method35392().forEach(var1x -> this.method32845(Class9736.method38156(var1x)));
       }
 
-      var1.method22506("items");
+      var1.endStartSection("items");
 
       for (ResourceLocation var16 : Class2348.field16075.method9190()) {
          this.method32845(new Class1997(var16, "inventory"));
       }
 
-      var1.method22506("special");
+      var1.endStartSection("special");
       this.method32845(new Class1997("minecraft:trident_in_hand#inventory"));
 
       for (ResourceLocation var17 : this.method32856()) {
          this.method32844(var17);
       }
 
-      var1.method22506("textures");
+      var1.endStartSection("textures");
       this.field40544 = this.field40537;
       Class8684.method31270(this);
       Set<Pair<String, String>> var15 = Sets.newLinkedHashSet();
@@ -178,7 +178,7 @@ public class Class8968 {
          .filter(var0 -> !var0.getSecond().equals(field40522))
          .forEach(var0 -> field40520.warn("Unable to resolve texture reference: {} in {}", var0.getFirst(), var0.getSecond()));
       Map<ResourceLocation, List<Class7826>> var7 = var18.stream().collect(Collectors.groupingBy(Class7826::method26196));
-      var1.method22506("stitching");
+      var1.endStartSection("stitching");
       this.field40541 = Maps.newHashMap();
 
       for (Entry<ResourceLocation, List<Class7826>> var9 : var7.entrySet()) {
@@ -187,11 +187,11 @@ public class Class8968 {
          this.field40541.put(var9.getKey(), Pair.of(var10, var11));
       }
 
-      var1.method22505();
+      var1.endSection();
    }
 
    public Class1694 method32838(TextureManager var1, Class7165 var2) {
-      var2.method22503("atlas");
+      var2.startSection("atlas");
 
       for (Pair var6 : this.field40541.values()) {
          Class289 var7 = (Class289)var6.getFirst();
@@ -203,7 +203,7 @@ public class Class8968 {
       }
 
       this.field40533 = new Class1694(this.field40541.values().stream().<Class289>map(Pair::getFirst).collect(Collectors.<Class289>toList()));
-      var2.method22506("baking");
+      var2.endStartSection("baking");
       this.field40539.keySet().forEach(var1x -> {
          Class7202 var4 = null;
 
@@ -217,7 +217,7 @@ public class Class8968 {
             this.field40540.put(var1x, var4);
          }
       });
-      var2.method22505();
+      var2.endSection();
       return this.field40533;
    }
 

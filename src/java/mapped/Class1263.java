@@ -20,11 +20,11 @@ public class Class1263 extends Class1193 implements Class1190, Class1152 {
    public void method5901(Minecraft var1, Class9266 var2, int var3, int var4, int var5, int var6, float var7) {
       this.field6682 = var1;
       this.field6683 = var2;
-      if (var1.field1339.field4905 instanceof Class5831) {
+      if (var1.player.field4905 instanceof Class5831) {
          this.field6686 = true;
       }
 
-      boolean var10 = var1.field1339.method5397().method21370((Class5828<?>)var1.field1339.field4905);
+      boolean var10 = var1.player.method5397().method21370((Class5828<?>)var1.player.field4905);
       List var11 = var2.method34894(true);
       List var12 = !var10 ? var2.method34894(false) : Collections.emptyList();
       int var13 = var11.size();
@@ -105,7 +105,7 @@ public class Class1263 extends Class1193 implements Class1190, Class1152 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6679) {
          this.field6685 += var4;
          RenderSystem.enableBlend();
@@ -131,7 +131,7 @@ public class Class1263 extends Class1193 implements Class1190, Class1152 {
       }
    }
 
-   private void method5904(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   private void method5904(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       this.method5696(var1, this.field6680, this.field6681, var6, var7, var5, var5);
       this.method5696(var1, this.field6680 + var5 * 2 + var2 * var4, this.field6681, var6 + var4 + var5, var7, var5, var5);
       this.method5696(var1, this.field6680, this.field6681 + var5 * 2 + var3 * var4, var6, var7 + var4 + var5, var5, var5);

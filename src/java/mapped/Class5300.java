@@ -32,11 +32,11 @@ public class Class5300 extends Module {
                 for (Pair var6 : var4.method17562()) {
                     if (var6.getSecond() != null
                             && ((ItemStack) var6.getSecond()).method32107() instanceof Class3267
-                            && mc.field1338.method6774(var4.method17561()) instanceof PlayerEntity) {
-                        Entity var7 = mc.field1338.method6774(var4.method17561());
+                            && mc.world.method6774(var4.method17561()) instanceof PlayerEntity) {
+                        Entity var7 = mc.world.method6774(var4.method17561());
                         if (!this.field23833.equalsIgnoreCase(var7.getName().getString())) {
                             if (this.method15974("Chat Message")) {
-                                mc.field1339.method5389("Murderer is " + var7.getName() + ", detected by Jello client");
+                                mc.player.method5389("Murderer is " + var7.getName() + ", detected by Jello client");
                             }
 
                             this.field23833 = var7.getName().getUnformattedComponentText();
@@ -62,8 +62,8 @@ public class Class5300 extends Module {
                 if (this.method15974("GUI")) {
                     ClientResource var4 = ResourceRegistry.JelloLightFont20;
                     byte var5 = -1;
-                    int var6 = Minecraft.getInstance().field1283.method8043();
-                    int var7 = Minecraft.getInstance().field1283.method8044();
+                    int var6 = Minecraft.getInstance().mainWindow.method8043();
+                    int var7 = Minecraft.getInstance().mainWindow.method8044();
                     if (this.field23835 && this.field23834 != null) {
                         this.field23835 = false;
                     }

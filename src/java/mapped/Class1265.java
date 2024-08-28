@@ -35,14 +35,14 @@ public class Class1265 extends Class1193 {
 
    public void method5919(boolean var1) {
       if (var1 && !this.field6697) {
-         this.field6696 = Util.method38487();
+         this.field6696 = Util.milliTime();
       }
 
       this.field6697 = var1;
    }
 
-   public void method5920(Class9332 var1, int var2, Class6886 var3, Class8375 var4) {
-      ClientPlayNetHandler var7 = this.field6692.field1339.connection;
+   public void method5920(MatrixStack var1, int var2, Class6886 var3, Class8375 var4) {
+      ClientPlayNetHandler var7 = this.field6692.player.connection;
       List<Class6589> var8 = field6691.sortedCopy(var7.method15790());
       int var9 = 0;
       int var10 = 0;
@@ -65,7 +65,7 @@ public class Class1265 extends Class1193 {
          var40++;
       }
 
-      boolean var14 = this.field6692.method1529() || this.field6692.getClientPlayNetHandler().method15589().method30706();
+      boolean var14 = this.field6692.isIntegratedServerRunning() || this.field6692.getClientPlayNetHandler().method15589().method30706();
       int var15;
       if (var4 == null) {
          var15 = 0;
@@ -110,7 +110,7 @@ public class Class1265 extends Class1193 {
       }
 
       method5686(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var38 * 9, Integer.MIN_VALUE);
-      int var45 = this.field6692.field1299.method37141(553648127);
+      int var45 = this.field6692.gameSettings.method37141(553648127);
 
       for (int var47 = 0; var47 < var37; var47++) {
          int var49 = var47 / var38;
@@ -126,7 +126,7 @@ public class Class1265 extends Class1193 {
             Class6589 var28 = (Class6589)var8.get(var47);
             GameProfile var29 = var28.method19966();
             if (var14) {
-               PlayerEntity var30 = this.field6692.field1338.method7196(var29.getId());
+               PlayerEntity var30 = this.field6692.world.method7196(var29.getId());
                boolean var31 = var30 != null
                   && var30.method2962(Class2318.field15879)
                   && ("Dinnerbone".equals(var29.getName()) || "Grumm".equals(var29.getName()));
@@ -170,7 +170,7 @@ public class Class1265 extends Class1193 {
       }
    }
 
-   public void method5921(Class9332 var1, int var2, int var3, int var4, Class6589 var5) {
+   public void method5921(MatrixStack var1, int var2, int var3, int var4, Class6589 var5) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6692.getTextureManager().bindTexture(field6453);
       boolean var8 = false;
@@ -202,14 +202,14 @@ public class Class1265 extends Class1193 {
       this.method5703(this.method5702() - 100);
    }
 
-   private void method5922(Class8375 var1, int var2, String var3, int var4, int var5, Class6589 var6, Class9332 var7) {
+   private void method5922(Class8375 var1, int var2, String var3, int var4, int var5, Class6589 var6, MatrixStack var7) {
       int var10 = var1.method29335().method20980(var3, var1).method36050();
       if (var1.method29342() != Class2316.field15869) {
          String var11 = TextFormatting.YELLOW + "" + var10;
          this.field6692.field1294.method38799(var7, var11, (float)(var5 - this.field6692.field1294.method38820(var11)), (float)var2, 16777215);
       } else {
          this.field6692.getTextureManager().bindTexture(field6453);
-         long var12 = Util.method38487();
+         long var12 = Util.milliTime();
          if (this.field6696 == var6.method19988()) {
             if (var10 >= var6.method19980()) {
                if (var10 > var6.method19980()) {

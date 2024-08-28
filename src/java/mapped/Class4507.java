@@ -8,7 +8,7 @@ public class Class4507 extends Class4505 {
          }
       }, () -> {
          if (!var1) {
-            RenderSystem.method27849();
+            RenderSystem.enableCull();
          }
       }, var1);
    }

@@ -21,9 +21,9 @@ public class Class2786 extends Class2785 {
       ServerWorld var3 = (ServerWorld)this.field17409;
       Class1095 var4 = (Class1095)this.field17407.method4389(var3, this.field17410);
       if (var4 != null) {
-         Class878 var5 = this.field17407.method4506();
-         Class878 var6 = this.field17410.method4506();
-         Class878 var7 = var5;
+         ServerPlayerEntity var5 = this.field17407.method4506();
+         ServerPlayerEntity var6 = this.field17410.method4506();
+         ServerPlayerEntity var7 = var5;
          if (var5 == null) {
             var7 = var6;
          } else {

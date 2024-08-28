@@ -10,7 +10,7 @@ import java.util.Optional;
 public class Class7268 {
    private static final ResourceLocation field31179 = new ResourceLocation("tick");
    private static final ResourceLocation field31180 = new ResourceLocation("load");
-   private final Class314 field31181;
+   private final MinecraftServer field31181;
    private boolean field31182;
    private final ArrayDeque<Class7159> field31183 = new ArrayDeque<Class7159>();
    private final List<Class7159> field31184 = Lists.newArrayList();
@@ -18,7 +18,7 @@ public class Class7268 {
    private boolean field31186;
    private Class301 field31187;
 
-   public Class7268(Class314 var1, Class301 var2) {
+   public Class7268(MinecraftServer var1, Class301 var2) {
       this.field31181 = var1;
       this.field31187 = var2;
       this.method22827(var2);
@@ -48,7 +48,7 @@ public class Class7268 {
          this.method22825(var6, this.method22828());
       }
 
-      this.field31181.method1420().method22505();
+      this.field31181.method1420().endSection();
    }
 
    public int method22825(Class7744 var1, Class6619 var2) {
@@ -84,7 +84,7 @@ public class Class7268 {
                      this.field31184.clear();
                   }
                } finally {
-                  this.field31181.method1420().method22505();
+                  this.field31181.method1420().endSection();
                }
             } while (++var6 < var5);
 

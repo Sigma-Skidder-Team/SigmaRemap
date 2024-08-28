@@ -72,7 +72,7 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
    }
 
    @Override
-   public void method11016(Class9332 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       boolean var11 = this.field17787.field31039;
       if (var11) {
          var1.method35294();

@@ -21,16 +21,16 @@ public class Class5160 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23425 = mc.field1339.getPosX();
-        this.field23426 = mc.field1339.getPosY();
-        this.field23427 = mc.field1339.getPosZ();
+        this.field23425 = mc.player.getPosX();
+        this.field23426 = mc.player.getPosY();
+        this.field23427 = mc.player.getPosZ();
         this.field23424 = 0;
     }
 
     @Override
     public void method15965() {
         Class9567.method37090(0.0);
-        if (mc.field1339.method3433().field18049 > 0.0) {
+        if (mc.player.method3433().field18049 > 0.0) {
             Class5628.method17725(-0.0789);
         }
     }
@@ -81,8 +81,8 @@ public class Class5160 extends Module {
                 this.field23425 = var5.field24297;
                 this.field23426 = var5.field24298;
                 this.field23427 = var5.field24299;
-                var5.field24300 = mc.field1339.field5031;
-                var5.field24301 = mc.field1339.field5032;
+                var5.field24300 = mc.player.field5031;
+                var5.field24301 = mc.player.field5032;
             }
         }
     }
@@ -93,18 +93,18 @@ public class Class5160 extends Module {
             double var4 = this.field23426;
             double var6 = this.field23425;
             double var8 = this.field23427;
-            mc.field1339.field5028.field18049 = var4;
-            mc.field1339.field5049 = var4;
-            mc.field1339.field4915 = var4;
-            mc.field1339.field5026 = var4;
-            mc.field1339.field5028.field18048 = var6;
-            mc.field1339.field5048 = var6;
-            mc.field1339.field4914 = var6;
-            mc.field1339.field5025 = var6;
-            mc.field1339.field5028.field18050 = var8;
-            mc.field1339.field5050 = var8;
-            mc.field1339.field4916 = var8;
-            mc.field1339.field5027 = var8;
+            mc.player.field5028.field18049 = var4;
+            mc.player.field5049 = var4;
+            mc.player.field4915 = var4;
+            mc.player.field5026 = var4;
+            mc.player.field5028.field18048 = var6;
+            mc.player.field5048 = var6;
+            mc.player.field4914 = var6;
+            mc.player.field5025 = var6;
+            mc.player.field5028.field18050 = var8;
+            mc.player.field5050 = var8;
+            mc.player.field4916 = var8;
+            mc.player.field5027 = var8;
         }
     }
 }

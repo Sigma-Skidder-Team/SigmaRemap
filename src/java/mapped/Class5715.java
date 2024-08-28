@@ -54,7 +54,7 @@ public abstract class Class5715<T extends Entity> {
       return Vector3d.field18047;
    }
 
-   public void method17853(T var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       if (Class9299.field42994.method20241()) {
          Object var9 = Class9299.method35087(Class9299.field42994, var1, var1.getDisplayName(), this, var4, var5, var6, var3);
          Class9299.method35086(var9);
@@ -78,7 +78,7 @@ public abstract class Class5715<T extends Entity> {
       return this.field25097.method32231();
    }
 
-   public void method17893(T var1, ITextComponent var2, Class9332 var3, Class7733 var4, int var5) {
+   public void method17893(T var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {
       double var8 = this.field25097.method32228(var1);
       boolean var10 = !(var8 > 4096.0);
       if (Class9299.field42879.method20214()) {
@@ -94,7 +94,7 @@ public abstract class Class5715<T extends Entity> {
          var3.method35293(this.field25097.method32230());
          var3.method35292(-0.025F, -0.025F, 0.025F);
          Class9367 var14 = var3.method35296().method32361();
-         float var15 = Minecraft.getInstance().field1299.method37139(0.25F);
+         float var15 = Minecraft.getInstance().gameSettings.method37139(0.25F);
          int var16 = (int)(var15 * 255.0F) << 24;
          Class9834 var17 = this.method17896();
          float var18 = (float)(-var17.method38821(var2) / 2);

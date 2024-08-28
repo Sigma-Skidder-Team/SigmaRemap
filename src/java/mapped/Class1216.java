@@ -6,12 +6,12 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1216 extends Class1206 {
    public final Class1295 field6530;
-   public final Class2007 field6531;
+   public final KeyBinding field6531;
    public final ITextComponent field6532;
    public final Class1188 field6533;
 
    public Class1216(
-      Class1188 var1, int var2, int var3, int var4, int var5, ITextComponent var6, Class7192 var7, Class1295 var8, Class2007 var9, ITextComponent var10
+           Class1188 var1, int var2, int var3, int var4, int var5, ITextComponent var6, Class7192 var7, Class1295 var8, KeyBinding var9, ITextComponent var10
    ) {
       super(var2, var3, var4, var5, var6, var7);
       this.field6533 = var1;

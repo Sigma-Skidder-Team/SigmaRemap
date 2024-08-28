@@ -21,14 +21,14 @@ public class Class5319 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23865 = new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ());
-        this.field23866 = mc.field1339.field5031;
-        this.field23867 = mc.field1339.field5032;
-        field23863 = new Class1116(mc.field1338, mc.field1339.getGameProfile());
-        field23863.field4902 = mc.field1339.field4902;
+        this.field23865 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
+        this.field23866 = mc.player.field5031;
+        this.field23867 = mc.player.field5032;
+        field23863 = new Class1116(mc.world, mc.player.getGameProfile());
+        field23863.field4902 = mc.player.field4902;
         field23863.method3269(this.field23865.field18048, this.field23865.field18049, this.field23865.field18050, this.field23866, this.field23867);
-        field23863.field4967 = mc.field1339.field4967;
-        mc.field1338.method6846(-1, field23863);
+        field23863.field4967 = mc.player.field4967;
+        mc.world.method6846(-1, field23863);
     }
 
     @Override
@@ -40,13 +40,13 @@ public class Class5319 extends Module {
         }
 
         this.field23864.clear();
-        mc.field1338.method6848(-1);
+        mc.world.method6848(-1);
     }
 
     @EventTarget
     private void method16710(Class4402 var1) {
         if (this.method15996()) {
-            if (mc.field1339 != null && var1.method13932() instanceof CEntityActionPacket
+            if (mc.player != null && var1.method13932() instanceof CEntityActionPacket
                     || var1.method13932() instanceof Class5603
                     || var1.method13932() instanceof CUseEntityPacket
                     || var1.method13932() instanceof CAnimateHandPacket

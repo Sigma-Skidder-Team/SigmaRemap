@@ -10,8 +10,8 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class3624 extends Class3625 {
    private static String[] field19629;
-   private final Set<Class878> field19630 = Sets.newHashSet();
-   private final Set<Class878> field19631 = Collections.<Class878>unmodifiableSet(this.field19630);
+   private final Set<ServerPlayerEntity> field19630 = Sets.newHashSet();
+   private final Set<ServerPlayerEntity> field19631 = Collections.<ServerPlayerEntity>unmodifiableSet(this.field19630);
    private boolean field19632 = true;
 
    public Class3624(ITextComponent var1, Class2303 var2, Class2300 var3) {
@@ -84,19 +84,19 @@ public class Class3624 extends Class3625 {
       if (this.field19632) {
          Class5472 var4 = new Class5472(var1, this);
 
-         for (Class878 var6 : this.field19630) {
+         for (ServerPlayerEntity var6 : this.field19630) {
             var6.field4855.sendPacket(var4);
          }
       }
    }
 
-   public void method12263(Class878 var1) {
+   public void method12263(ServerPlayerEntity var1) {
       if (this.field19630.add(var1) && this.field19632) {
          var1.field4855.sendPacket(new Class5472(Class2151.field14064, this));
       }
    }
 
-   public void method12265(Class878 var1) {
+   public void method12265(ServerPlayerEntity var1) {
       if (this.field19630.remove(var1) && this.field19632) {
          var1.field4855.sendPacket(new Class5472(Class2151.field14065, this));
       }
@@ -104,7 +104,7 @@ public class Class3624 extends Class3625 {
 
    public void method12266() {
       if (!this.field19630.isEmpty()) {
-         for (Class878 var4 : Lists.newArrayList(this.field19630)) {
+         for (ServerPlayerEntity var4 : Lists.newArrayList(this.field19630)) {
             this.method12265(var4);
          }
       }
@@ -118,13 +118,13 @@ public class Class3624 extends Class3625 {
       if (var1 != this.field19632) {
          this.field19632 = var1;
 
-         for (Class878 var5 : this.field19630) {
+         for (ServerPlayerEntity var5 : this.field19630) {
             var5.field4855.sendPacket(new Class5472(!var1 ? Class2151.field14065 : Class2151.field14064, this));
          }
       }
    }
 
-   public Collection<Class878> method12288() {
+   public Collection<ServerPlayerEntity> method12288() {
       return this.field19631;
    }
 }

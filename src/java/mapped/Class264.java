@@ -161,14 +161,14 @@ public class Class264 implements Class215, AutoCloseable {
          }
       }
 
-      float var48 = this.field939.field1338.method6792(var2);
+      float var48 = this.field939.world.method6792(var2);
       if (!(var48 <= 0.0F)) {
          if (Class7944.method26821()) {
             return;
          }
 
          var1.method7317();
-         Class1656 var10 = this.field939.field1338;
+         Class1656 var10 = this.field939.world;
          int var11 = MathHelper.method37769(var3);
          int var12 = MathHelper.method37769(var5);
          int var13 = MathHelper.method37769(var7);
@@ -313,7 +313,7 @@ public class Class264 implements Class215, AutoCloseable {
             var14.method35410();
          }
 
-         RenderSystem.method27849();
+         RenderSystem.enableCull();
          RenderSystem.disableBlend();
          RenderSystem.method27939();
          RenderSystem.method27817();
@@ -322,17 +322,17 @@ public class Class264 implements Class215, AutoCloseable {
    }
 
    public void method856(Class9624 var1) {
-      float var2 = this.field939.field1338.method6792(1.0F) / (Minecraft.method1516() ? 1.0F : 2.0F);
+      float var2 = this.field939.world.method6792(1.0F) / (Minecraft.method1516() ? 1.0F : 2.0F);
       if (!Class7944.method26820()) {
          var2 /= 2.0F;
       }
 
       if (!(var2 <= 0.0F) && Class7944.method26847()) {
          Random var3 = new Random((long)this.field955 * 312987231L);
-         Class1656 var4 = this.field939.field1338;
+         Class1656 var4 = this.field939.world;
          BlockPos var5 = new BlockPos(var1.method37504());
          BlockPos var6 = null;
-         int var7 = (int)(100.0F * var2 * var2) / (this.field939.field1299.field44674 == Class2294.field15247 ? 2 : 1);
+         int var7 = (int)(100.0F * var2 * var2) / (this.field939.gameSettings.field44674 == Class2294.field15247 ? 2 : 1);
 
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
@@ -345,7 +345,7 @@ public class Class264 implements Class215, AutoCloseable {
                && var12.method32500() == Class87.field224
                && var12.method32503(var11) >= 0.15F) {
                var6 = var11;
-               if (this.field939.field1299.field44674 == Class2294.field15248) {
+               if (this.field939.gameSettings.field44674 == Class2294.field15248) {
                   break;
                }
 
@@ -361,7 +361,7 @@ public class Class264 implements Class215, AutoCloseable {
                   ? Class7940.field34091
                   : Class7940.field34092;
                this.field939
-                  .field1338
+                  .world
                   .method6746(var26, (double)var11.method8304() + var13, (double)var11.getY() + var24, (double)var11.method8306() + var15, 0.0, 0.0, 0.0);
             }
          }
@@ -370,9 +370,9 @@ public class Class264 implements Class215, AutoCloseable {
             this.field997 = 0;
             if (var6.getY() > var5.getY() + 1
                && var4.method7006(Class101.field299, var5).getY() > MathHelper.method37767((float)var5.getY())) {
-               this.field939.field1338.method6858(var6, Class6067.field27227, Class2266.field14731, 0.1F, 0.5F, false);
+               this.field939.world.method6858(var6, Class6067.field27227, Class2266.field14731, 0.1F, 0.5F, false);
             } else {
-               this.field939.field1338.method6858(var6, Class6067.field27226, Class2266.field14731, 0.2F, 1.0F, false);
+               this.field939.world.method6858(var6, Class6067.field27226, Class2266.field14731, 0.2F, 1.0F, false);
             }
          }
       }
@@ -410,7 +410,7 @@ public class Class264 implements Class215, AutoCloseable {
 
       try {
          this.field960 = new Class1647(this.field939.getTextureManager(), this.field939.method1537(), this.field939.method1464(), var1);
-         this.field960.method6525(this.field939.method1580().method8041(), this.field939.method1580().method8042());
+         this.field960.method6525(this.field939.method1580().getFramebufferWidth(), this.field939.method1580().getFramebufferHeight());
          this.field959 = this.field960.method6521("final");
       } catch (IOException var3) {
          field930.warn("Failed to load shader: {}", var1, var3);
@@ -429,7 +429,7 @@ public class Class264 implements Class215, AutoCloseable {
 
       try {
          Class1647 var2 = new Class1647(this.field939.getTextureManager(), this.field939.method1537(), this.field939.method1464(), var1);
-         var2.method6525(this.field939.method1580().method8041(), this.field939.method1580().method8042());
+         var2.method6525(this.field939.method1580().getFramebufferWidth(), this.field939.method1580().getFramebufferHeight());
          Framebuffer var10 = var2.method6521("translucent");
          Framebuffer var11 = var2.method6521("itemEntity");
          Framebuffer var12 = var2.method6521("particles");
@@ -453,12 +453,12 @@ public class Class264 implements Class215, AutoCloseable {
                var6 = null;
             }
 
-            this.field939.field1299.field44578 = Class2087.field13604;
+            this.field939.gameSettings.field44578 = Class2087.field13604;
             this.field939.method1459(var5, var6);
          } else {
             Class4526 var13 = this.field939.method1521(new Class4526(var4, var5));
-            this.field939.field1299.field44578 = Class2087.field13604;
-            this.field939.field1299.method37146();
+            this.field939.gameSettings.field44578 = Class2087.field13604;
+            this.field939.gameSettings.method37146();
             field930.fatal(var4, var5);
             this.field939.method1484();
             Minecraft.method1468(var13);
@@ -487,13 +487,13 @@ public class Class264 implements Class215, AutoCloseable {
       if (this.method861()) {
          RenderSystem.enableBlend();
          RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field16000, Class1981.field12927);
-         this.field959.method29117(this.field939.method1580().method8041(), this.field939.method1580().method8042(), false);
+         this.field959.method29117(this.field939.method1580().getFramebufferWidth(), this.field939.method1580().getFramebufferHeight(), false);
          RenderSystem.disableBlend();
       }
    }
 
    public boolean method861() {
-      return !Class7944.method26921() && !Class7944.method26892() ? this.field959 != null && this.field960 != null && this.field939.field1339 != null : false;
+      return !Class7944.method26921() && !Class7944.method26892() ? this.field959 != null && this.field960 != null && this.field939.player != null : false;
    }
 
    private void method862() {
@@ -665,7 +665,7 @@ public class Class264 implements Class215, AutoCloseable {
 
          Class4501.method14214();
          field1025 = Minecraft.method1518();
-         this.field985 = this.field939.field1299.field44574;
+         this.field985 = this.field939.gameSettings.field44574;
          this.field1013 = this.field985 * 16;
          this.field1014 = this.field1013 * this.field1013;
          this.method865();
@@ -680,7 +680,7 @@ public class Class264 implements Class215, AutoCloseable {
             this.field946.clear();
          }
 
-         this.field947 = new Class9242(this.field983, this.field943, this.field939.field1299.field44574, this);
+         this.field947 = new Class9242(this.field983, this.field943, this.field939.gameSettings.field44574, this);
          if (this.field943 != null) {
             Entity var4 = this.field939.method1550();
             if (var4 != null) {
@@ -689,7 +689,7 @@ public class Class264 implements Class215, AutoCloseable {
          }
       }
 
-      if (this.field939.field1339 == null) {
+      if (this.field939.player == null) {
          this.field1021 = true;
       }
    }
@@ -738,25 +738,25 @@ public class Class264 implements Class215, AutoCloseable {
 
    public void method874(Class9624 var1, Class7647 var2, boolean var3, int var4, boolean var5) {
       Vector3d var6 = var1.method37504();
-      if (this.field939.field1299.field44574 != this.field985) {
+      if (this.field939.gameSettings.field44574 != this.field985) {
          this.method868();
       }
 
-      this.field943.method6820().method22503("camera");
-      double var7 = this.field939.field1339.getPosX() - this.field967;
-      double var9 = this.field939.field1339.getPosY() - this.field968;
-      double var11 = this.field939.field1339.getPosZ() - this.field969;
-      if (this.field970 != this.field939.field1339.field5072
-         || this.field971 != this.field939.field1339.field5073
-         || this.field972 != this.field939.field1339.field5074
+      this.field943.method6820().startSection("camera");
+      double var7 = this.field939.player.getPosX() - this.field967;
+      double var9 = this.field939.player.getPosY() - this.field968;
+      double var11 = this.field939.player.getPosZ() - this.field969;
+      if (this.field970 != this.field939.player.field5072
+         || this.field971 != this.field939.player.field5073
+         || this.field972 != this.field939.player.field5074
          || var7 * var7 + var9 * var9 + var11 * var11 > 16.0) {
-         this.field967 = this.field939.field1339.getPosX();
-         this.field968 = this.field939.field1339.getPosY();
-         this.field969 = this.field939.field1339.getPosZ();
-         this.field970 = this.field939.field1339.field5072;
-         this.field971 = this.field939.field1339.field5073;
-         this.field972 = this.field939.field1339.field5074;
-         this.field947.method34759(this.field939.field1339.getPosX(), this.field939.field1339.getPosZ());
+         this.field967 = this.field939.player.getPosX();
+         this.field968 = this.field939.player.getPosY();
+         this.field969 = this.field939.player.getPosZ();
+         this.field970 = this.field939.player.field5072;
+         this.field971 = this.field939.player.field5073;
+         this.field972 = this.field939.player.field5074;
+         this.field947.method34759(this.field939.player.getPosX(), this.field939.player.getPosZ());
       }
 
       if (Class7944.method26970()) {
@@ -764,8 +764,8 @@ public class Class264 implements Class215, AutoCloseable {
       }
 
       this.field983.method33321(var6);
-      this.field943.method6820().method22506("cull");
-      this.field939.method1574().method22506("culling");
+      this.field943.method6820().endStartSection("cull");
+      this.field939.method1574().endStartSection("culling");
       BlockPos var13 = var1.method37505();
       Class8066 var14 = this.field947.method34761(var13);
       int var15 = 16;
@@ -788,7 +788,7 @@ public class Class264 implements Class215, AutoCloseable {
       this.field975 = var6.field18050;
       this.field976 = (double)var17;
       this.field977 = (double)var18;
-      this.field939.method1574().method22506("update");
+      this.field939.method1574().endStartSection("update");
       Class8578.field38578.method31034();
       int var19 = this.method927();
       if (var19 != this.field1017) {
@@ -848,7 +848,7 @@ public class Class264 implements Class215, AutoCloseable {
          this.method931();
          this.field1004.clear();
          Deque var41 = this.field1004;
-         Entity.method3378(MathHelper.method37778((double)this.field939.field1299.field44574 / 8.0, 1.0, 2.5) * (double)this.field939.field1299.field44575);
+         Entity.method3378(MathHelper.method37778((double)this.field939.gameSettings.field44574 / 8.0, 1.0, 2.5) * (double)this.field939.gameSettings.field44575);
          boolean var43 = this.field939.field1366;
          BlockPos var45 = var1.method37505();
          int var26 = var45.getY();
@@ -922,7 +922,7 @@ public class Class264 implements Class215, AutoCloseable {
             }
          }
 
-         this.field939.method1574().method22503("iteration");
+         this.field939.method1574().startSection("iteration");
          boolean var50 = Class7944.method26807();
 
          while (!var41.isEmpty()) {
@@ -957,14 +957,14 @@ public class Class264 implements Class215, AutoCloseable {
             }
          }
 
-         this.field939.method1574().method22505();
+         this.field939.method1574().endSection();
       }
 
       Class8578.field38578.method31035();
       if (Class8981.field40609) {
          Class8981.method33136();
       } else {
-         this.field939.method1574().method22506("rebuildNear");
+         this.field939.method1574().endStartSection("rebuildNear");
          Set var42 = this.field944;
          this.field944 = this.field1003;
          this.field1003 = var42;
@@ -987,17 +987,17 @@ public class Class264 implements Class215, AutoCloseable {
                } else if (!var47.method27731()) {
                   this.field1002.add(var47);
                } else {
-                  this.field939.method1574().method22503("build near");
+                  this.field939.method1574().startSection("build near");
                   this.field983.method33324(var47);
                   var47.method27720();
-                  this.field939.method1574().method22505();
+                  this.field939.method1574().endSection();
                }
             }
          }
 
          Class8578.field38577.method31035();
          this.field944.addAll(var42);
-         this.field939.method1574().method22505();
+         this.field939.method1574().endSection();
       }
    }
 
@@ -1046,18 +1046,18 @@ public class Class264 implements Class215, AutoCloseable {
       }
    }
 
-   public void method877(Class9332 var1, float var2, long var3, boolean var5, Class9624 var6, Class214 var7, Class1699 var8, Class9367 var9) {
+   public void method877(MatrixStack var1, float var2, long var3, boolean var5, Class9624 var6, Class214 var7, Class1699 var8, Class9367 var9) {
       Class8086.field34743.method27961(this.field943, this.field939.getTextureManager(), this.field939.field1294, var6, this.field939.field1346);
       this.field941.method32213(this.field943, var6, this.field939.field1345);
       Class7165 var10 = this.field943.method6820();
-      var10.method22506("light_updates");
-      this.field939.field1338.method6883().method7348().method600(Integer.MAX_VALUE, true, true);
+      var10.endStartSection("light_updates");
+      this.field939.world.method6883().method7348().method600(Integer.MAX_VALUE, true, true);
       Vector3d var11 = var6.method37504();
       double var12 = var11.method11320();
       double var14 = var11.method11321();
       double var16 = var11.method11322();
       Class9367 var18 = var1.method35296().method32361();
-      var10.method22506("culling");
+      var10.endStartSection("culling");
       boolean var19 = this.field989 != null;
       Class7647 var20;
       if (var19) {
@@ -1068,21 +1068,21 @@ public class Class264 implements Class215, AutoCloseable {
          var20.method25119(var12, var14, var16);
       }
 
-      this.field939.method1574().method22506("captureFrustum");
+      this.field939.method1574().endStartSection("captureFrustum");
       if (this.field988) {
          this.method876(var18, var9, var11.field18048, var11.field18049, var11.field18050, var19 ? new Class7647(var18, var9) : var20);
          this.field988 = false;
       }
 
-      var10.method22506("clear");
+      var10.endStartSection("clear");
       if (Class7944.method26921()) {
-         Class8981.method33045(0, 0, this.field939.method1580().method8041(), this.field939.method1580().method8042());
+         Class8981.method33045(0, 0, this.field939.method1580().getFramebufferWidth(), this.field939.method1580().getFramebufferHeight());
       } else {
-         RenderSystem.method27869(0, 0, this.field939.method1580().method8041(), this.field939.method1580().method8042());
+         RenderSystem.method27869(0, 0, this.field939.method1580().getFramebufferWidth(), this.field939.method1580().getFramebufferHeight());
       }
 
-      Class8915.method32584(var6, var2, this.field939.field1338, this.field939.field1299.field44574, var7.method766(var2));
-      RenderSystem.method27877(16640, Minecraft.field1272);
+      FogRenderer.method32584(var6, var2, this.field939.world, this.field939.gameSettings.field44574, var7.method766(var2));
+      RenderSystem.clear(16640, Minecraft.IS_RUNNING_ON_MAC);
       boolean var21 = Class7944.method26921();
       if (var21) {
          Class8981.method33049();
@@ -1094,11 +1094,11 @@ public class Class264 implements Class215, AutoCloseable {
 
       var20.field32828 = Class7944.method26921() && !Class8981.method33005();
       float var22 = var7.method767();
-      boolean var23 = this.field939.field1338.method6830().method19300(MathHelper.method37769(var12), MathHelper.method37769(var14))
-         || this.field939.field1298.method5995().method5959();
+      boolean var23 = this.field939.world.method6830().method19300(MathHelper.method37769(var12), MathHelper.method37769(var14))
+         || this.field939.ingameGUI.method5995().method5959();
       if ((Class7944.method26879() || Class7944.method26880() || Class7944.method26884()) && !Class8981.field40609) {
-         Class8915.method32587(var6, Class2040.field13337, var22, var23, var2);
-         var10.method22506("sky");
+         FogRenderer.method32587(var6, Class2040.field13337, var22, var23, var2);
+         var10.endStartSection("sky");
          if (var21) {
             Class8981.method33068();
          }
@@ -1111,43 +1111,43 @@ public class Class264 implements Class215, AutoCloseable {
          Class7414.method23714();
       }
 
-      var10.method22506("fog");
-      Class8915.method32587(var6, Class2040.field13338, Math.max(var22 - 16.0F, 32.0F), var23, var2);
-      var10.method22506("terrain_setup");
-      this.method940(var6, var20, this.field939.field1339.method2800());
-      this.method874(var6, var20, var19, this.field996++, this.field939.field1339.method2800());
-      var10.method22506("updatechunks");
+      var10.endStartSection("fog");
+      FogRenderer.method32587(var6, Class2040.field13338, Math.max(var22 - 16.0F, 32.0F), var23, var2);
+      var10.endStartSection("terrain_setup");
+      this.method940(var6, var20, this.field939.player.method2800());
+      this.method874(var6, var20, var19, this.field996++, this.field939.player.method2800());
+      var10.endStartSection("updatechunks");
       byte var24 = 30;
-      int var25 = this.field939.field1299.field44576;
+      int var25 = this.field939.gameSettings.field44576;
       long var26 = 33333333L;
       long var28;
-      if ((double)var25 == Class5805.field25328.method18087()) {
+      if ((double)var25 == AbstractOption.FRAMERATE_LIMIT.getMaxValue()) {
          var28 = 0L;
       } else {
          var28 = (long)(1000000000 / var25);
       }
 
-      long var30 = Util.method38488() - var3;
+      long var30 = Util.nanoTime() - var3;
       long var32 = this.field954.method37554(var30);
       long var34 = var32 * 3L / 2L;
       long var36 = MathHelper.method37776(var34, var28, 33333333L);
       Class8578.field38576.method31034();
       this.method891(var3 + var36);
       Class8578.field38576.method31035();
-      var10.method22506("terrain");
+      var10.endStartSection("terrain");
       Class8578.field38579.method31034();
-      if (this.field939.field1299.field44682) {
-         this.field939.method1574().method22506("finish");
+      if (this.field939.gameSettings.field44682) {
+         this.field939.method1574().endStartSection("finish");
          GL11.glFinish();
-         this.field939.method1574().method22506("terrain");
+         this.field939.method1574().endStartSection("terrain");
       }
 
-      if (Class7944.method26806() && Class8915.field40354) {
+      if (Class7944.method26806() && FogRenderer.field40354) {
          Class7414.method23889(false);
       }
 
       this.method880(Class4520.method14300(), var1, var12, var14, var16);
-      this.field939.getTextureManager().method1076(Class289.field1102).method1130(false, this.field939.field1299.field44600 > 0);
+      this.field939.getTextureManager().method1076(Class289.field1102).method1130(false, this.field939.gameSettings.field44600 > 0);
       this.method880(Class4520.method14301(), var1, var12, var14, var16);
       this.field939.getTextureManager().method1076(Class289.field1102).method1137();
       this.method880(Class4520.method14302(), var1, var12, var14, var16);
@@ -1167,24 +1167,24 @@ public class Class264 implements Class215, AutoCloseable {
       }
 
       Class5736.method17918();
-      var10.method22506("entities");
+      var10.endStartSection("entities");
       field1022++;
       this.field986 = 0;
       this.field987 = 0;
       this.field1016 = 0;
       if (this.field962 != null) {
-         this.field962.method29119(Minecraft.field1272);
+         this.field962.method29119(Minecraft.IS_RUNNING_ON_MAC);
          this.field962.method29106(this.field939.method1464());
-         this.field939.method1464().method29112(false);
+         this.field939.method1464().bindFramebuffer(false);
       }
 
       if (this.field964 != null) {
-         this.field964.method29119(Minecraft.field1272);
+         this.field964.method29119(Minecraft.IS_RUNNING_ON_MAC);
       }
 
       if (this.method861()) {
-         this.field959.method29119(Minecraft.field1272);
-         this.field939.method1464().method29112(false);
+         this.field959.method29119(Minecraft.IS_RUNNING_ON_MAC);
+         this.field939.method1464().bindFramebuffer(false);
       }
 
       boolean var38 = false;
@@ -1198,7 +1198,7 @@ public class Class264 implements Class215, AutoCloseable {
          Class1674 var43 = var42.method27740();
 
          for (Entity var45 : var43.method7146()[var42.method27718().getY() / 16]) {
-            if ((this.field941.method32218(var45, var20, var12, var14, var16) || var45.method3417(this.field939.field1339))
+            if ((this.field941.method32218(var45, var20, var12, var14, var16) || var45.method3417(this.field939.player))
                && (var45 != var6.method37509() || var6.method37511() || var6.method37509() instanceof Class880 && ((Class880)var6.method37509()).isSleeping())
                && (!(var45 instanceof ClientPlayerEntity) || var6.method37509() == var45)) {
                String var46 = var45.getClass().getName();
@@ -1259,7 +1259,7 @@ public class Class264 implements Class215, AutoCloseable {
          Class8981.method33089();
       }
 
-      var10.method22506("blockentities");
+      var10.endStartSection("blockentities");
       Class5947.method18475();
       boolean var57 = Class9299.field42943.method20214();
       Class7647 var59 = var20;
@@ -1346,7 +1346,7 @@ public class Class264 implements Class215, AutoCloseable {
 
       if (var38) {
          this.field960.method6526(var2);
-         this.field939.method1464().method29112(false);
+         this.field939.method1464().bindFramebuffer(false);
       }
 
       if (var21) {
@@ -1354,7 +1354,7 @@ public class Class264 implements Class215, AutoCloseable {
       }
 
       this.field1019 = true;
-      var10.method22506("destroyProgress");
+      var10.endStartSection("destroyProgress");
       ObjectIterator var63 = this.field957.long2ObjectEntrySet().iterator();
 
       while (var63.hasNext()) {
@@ -1384,7 +1384,7 @@ public class Class264 implements Class215, AutoCloseable {
       this.method878(var1);
       Class8710 var64 = this.field939.field1346;
       if (var5 && var64 != null && var64.method31417() == Class2100.field13690) {
-         var10.method22506("outline");
+         var10.endStartSection("outline");
          BlockPos var69 = ((Class8711)var64).method31423();
          Class7380 var75 = this.field943.method6738(var69);
          boolean var80;
@@ -1437,20 +1437,20 @@ public class Class264 implements Class215, AutoCloseable {
       if (this.field966 != null) {
          var39.method25603(Class4520.method14345());
          var39.method25602();
-         this.field961.method29119(Minecraft.field1272);
+         this.field961.method29119(Minecraft.IS_RUNNING_ON_MAC);
          this.field961.method29106(this.field939.method1464());
-         var10.method22506("translucent");
+         var10.endStartSection("translucent");
          this.method880(Class4520.method14304(), var1, var12, var14, var16);
-         var10.method22506("string");
+         var10.endStartSection("string");
          this.method880(Class4520.method14343(), var1, var12, var14, var16);
-         this.field963.method29119(Minecraft.field1272);
+         this.field963.method29119(Minecraft.IS_RUNNING_ON_MAC);
          this.field963.method29106(this.field939.method1464());
          Class4510.field21779.method14231();
-         var10.method22506("particles");
-         this.field939.field1291.method1204(var1, var39, var8, var6, var2, var20);
+         var10.endStartSection("particles");
+         this.field939.particles.method1204(var1, var39, var8, var6, var2, var20);
          Class4510.field21779.method14232();
       } else {
-         var10.method22506("translucent");
+         var10.endStartSection("translucent");
          if (var21) {
             Class8981.method33102();
          }
@@ -1462,14 +1462,14 @@ public class Class264 implements Class215, AutoCloseable {
 
          var39.method25603(Class4520.method14345());
          var39.method25602();
-         var10.method22506("string");
+         var10.endStartSection("string");
          this.method880(Class4520.method14343(), var1, var12, var14, var16);
-         var10.method22506("particles");
+         var10.endStartSection("particles");
          if (var21) {
             Class8981.method33095();
          }
 
-         this.field939.field1291.method1204(var1, var39, var8, var6, var2, var20);
+         this.field939.particles.method1204(var1, var39, var8, var6, var2, var20);
          if (var21) {
             Class8981.method33096();
          }
@@ -1478,34 +1478,34 @@ public class Class264 implements Class215, AutoCloseable {
       Class7414.method23889(true);
       RenderSystem.pushMatrix();
       RenderSystem.method27888(var1.method35296().method32361());
-      if (this.field939.field1299.method37153() != Class1904.field11184) {
+      if (this.field939.gameSettings.method37153() != Class1904.field11184) {
          if (this.field966 != null) {
-            this.field965.method29119(Minecraft.field1272);
+            this.field965.method29119(Minecraft.IS_RUNNING_ON_MAC);
             Class4510.field21781.method14231();
-            var10.method22506("clouds");
+            var10.endStartSection("clouds");
             this.method889(var1, var2, var12, var14, var16);
             Class4510.field21781.method14232();
          } else {
-            var10.method22506("clouds");
+            var10.endStartSection("clouds");
             this.method889(var1, var2, var12, var14, var16);
          }
       }
 
       if (this.field966 != null) {
          Class4510.field21780.method14231();
-         var10.method22506("weather");
+         var10.endStartSection("weather");
          this.method855(var8, var2, var12, var14, var16);
          this.method892(var6);
          Class4510.field21780.method14232();
          this.field966.method6526(var2);
-         this.field939.method1464().method29112(false);
+         this.field939.method1464().bindFramebuffer(false);
       } else {
          RenderSystem.depthMask(false);
          if (Class7944.method26921()) {
             Class7414.method23713(Class8981.method33002());
          }
 
-         var10.method22506("weather");
+         var10.endStartSection("weather");
          if (var21) {
             Class8981.method33098();
          }
@@ -1524,16 +1524,16 @@ public class Class264 implements Class215, AutoCloseable {
       RenderSystem.depthMask(true);
       RenderSystem.disableBlend();
       RenderSystem.popMatrix();
-      Class8915.method32585();
+      FogRenderer.resetFog();
    }
 
-   public void method878(Class9332 var1) {
+   public void method878(MatrixStack var1) {
       if (!var1.method35297()) {
          throw new IllegalStateException("Pose stack not empty");
       }
    }
 
-   public void method879(Entity var1, double var2, double var4, double var6, float var8, Class9332 var9, Class7733 var10) {
+   public void method879(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9, Class7733 var10) {
       double var11 = MathHelper.method37822((double)var8, var1.field5048, var1.getPosX());
       double var13 = MathHelper.method37822((double)var8, var1.field5049, var1.getPosY());
       double var15 = MathHelper.method37822((double)var8, var1.field5050, var1.getPosZ());
@@ -1541,11 +1541,11 @@ public class Class264 implements Class215, AutoCloseable {
       this.field941.method32219(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field941.method32208(var1, var8));
    }
 
-   public void method880(Class4520 var1, Class9332 var2, double var3, double var5, double var7) {
+   public void method880(Class4520 var1, MatrixStack var2, double var3, double var5, double var7) {
       var1.method14231();
       boolean var9 = Class7944.method26921();
       if (var1 == Class4520.method14304() && !Class8981.field40609) {
-         this.field939.method1574().method22503("translucent_sort");
+         this.field939.method1574().startSection("translucent_sort");
          double var10 = var3 - this.field992;
          double var12 = var5 - this.field993;
          double var14 = var7 - this.field994;
@@ -1566,10 +1566,10 @@ public class Class264 implements Class215, AutoCloseable {
             }
          }
 
-         this.field939.method1574().method22505();
+         this.field939.method1574().endSection();
       }
 
-      this.field939.method1574().method22503("filterempty");
+      this.field939.method1574().startSection("filterempty");
       if (var9) {
          Class5463.method17162(var1);
       }
@@ -1667,7 +1667,7 @@ public class Class264 implements Class215, AutoCloseable {
       Class1698.method7308();
       RenderSystem.method27891();
       Class9337.field43334.method26219();
-      this.field939.method1574().method22505();
+      this.field939.method1574().endSection();
       if (var9) {
          Class5463.method17163(var1);
       }
@@ -1778,8 +1778,8 @@ public class Class264 implements Class215, AutoCloseable {
 
          RenderSystem.depthMask(true);
          RenderSystem.disableBlend();
-         RenderSystem.method27849();
-         RenderSystem.method27861();
+         RenderSystem.enableCull();
+         RenderSystem.enableTexture();
       }
 
       if (this.field989 != null) {
@@ -1834,8 +1834,8 @@ public class Class264 implements Class215, AutoCloseable {
          RenderSystem.popMatrix();
          RenderSystem.depthMask(true);
          RenderSystem.disableBlend();
-         RenderSystem.method27849();
-         RenderSystem.method27861();
+         RenderSystem.enableCull();
+         RenderSystem.enableTexture();
          RenderSystem.method27893(1.0F);
       }
    }
@@ -1890,7 +1890,7 @@ public class Class264 implements Class215, AutoCloseable {
       }
    }
 
-   private void method887(Class9332 var1) {
+   private void method887(MatrixStack var1) {
       if (Class7944.method26879()) {
          RenderSystem.method27817();
          RenderSystem.enableBlend();
@@ -1944,13 +1944,13 @@ public class Class264 implements Class215, AutoCloseable {
          }
 
          RenderSystem.depthMask(true);
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.disableBlend();
          RenderSystem.disableAlphaTest();
       }
    }
 
-   public void method888(Class9332 var1, float var2) {
+   public void method888(MatrixStack var1, float var2) {
       if (Class9299.field42947.method20214()) {
          Class9797 var3 = (Class9797)Class9299.method35070(this.field943.method6830(), Class9299.field42947);
          if (var3 != null) {
@@ -1959,19 +1959,19 @@ public class Class264 implements Class215, AutoCloseable {
          }
       }
 
-      if (this.field939.field1338.method6830().method19305() == Class2078.field13537) {
+      if (this.field939.world.method6830().method19305() == Class2078.field13537) {
          this.method887(var1);
-      } else if (this.field939.field1338.method6830().method19305() == Class2078.field13536) {
+      } else if (this.field939.world.method6830().method19305() == Class2078.field13536) {
          RenderSystem.method27862();
          boolean var20 = Class7944.method26921();
          if (var20) {
             Class8981.method33116();
          }
 
-         Vector3d var4 = this.field943.method6873(this.field939.field1295.method768().method37505(), var2);
+         Vector3d var4 = this.field943.method6873(this.field939.gameRenderer.getActiveRenderInfo().method37505(), var2);
          var4 = Class9680.method37869(
             var4,
-            this.field939.field1338,
+            this.field939.world,
             this.field939.method1550().getPosX(),
             this.field939.method1550().getPosY() + 1.0,
             this.field939.method1550().getPosZ()
@@ -1983,7 +1983,7 @@ public class Class264 implements Class215, AutoCloseable {
          float var5 = (float)var4.field18048;
          float var6 = (float)var4.field18049;
          float var7 = (float)var4.field18050;
-         Class8915.method32588();
+         FogRenderer.method32588();
          Class5425 var8 = Class9352.method35409().method35411();
          RenderSystem.depthMask(false);
          RenderSystem.method27840();
@@ -2046,7 +2046,7 @@ public class Class264 implements Class215, AutoCloseable {
             RenderSystem.method27866(7424);
          }
 
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          if (var20) {
             Class8981.method33115();
          }
@@ -2128,7 +2128,7 @@ public class Class264 implements Class215, AutoCloseable {
          }
 
          RenderSystem.method27890(0.0F, 0.0F, 0.0F);
-         double var29 = this.field939.field1339.method3286(var2).field18049 - this.field943.method6788().method20052();
+         double var29 = this.field939.player.method3286(var2).field18049 - this.field943.getWorldInfo().method20052();
          boolean var32 = false;
          if (var29 < 0.0) {
             var1.method35294();
@@ -2148,13 +2148,13 @@ public class Class264 implements Class215, AutoCloseable {
             RenderSystem.method27890(var5, var6, var7);
          }
 
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.depthMask(true);
          RenderSystem.method27841();
       }
    }
 
-   public void method889(Class9332 var1, float var2, double var3, double var5, double var7) {
+   public void method889(MatrixStack var1, float var2, double var3, double var5, double var7) {
       if (!Class7944.method26823()) {
          if (Class9299.field42946.method20214()) {
             Class8098 var9 = (Class8098)Class9299.method35070(this.field943.method6830(), Class9299.field42946);
@@ -2184,7 +2184,7 @@ public class Class264 implements Class215, AutoCloseable {
             double var14 = (double)(((float)this.field955 + var2) * 0.03F);
             double var16 = (var3 + var14) / 12.0;
             double var18 = (double)(var31 - (float)var5 + 0.33F);
-            var18 += this.field939.field1299.field44691 * 128.0;
+            var18 += this.field939.gameSettings.field44691 * 128.0;
             double var20 = var7 / 12.0 + 0.33F;
             var16 -= (double)(MathHelper.method37769(var16 / 2048.0) * 2048);
             var20 -= (double)(MathHelper.method37769(var20 / 2048.0) * 2048);
@@ -2198,13 +2198,13 @@ public class Class264 implements Class215, AutoCloseable {
             if (var26 != this.field978
                || var27 != this.field979
                || var28 != this.field980
-               || this.field939.field1299.method37153() != this.field982
+               || this.field939.gameSettings.method37153() != this.field982
                || this.field981.method11342(var25) > 2.0E-4) {
                this.field978 = var26;
                this.field979 = var27;
                this.field980 = var28;
                this.field981 = var25;
-               this.field982 = this.field939.field1299.method37153();
+               this.field982 = this.field939.gameSettings.method37153();
                this.field952 = true;
             }
 
@@ -2247,7 +2247,7 @@ public class Class264 implements Class215, AutoCloseable {
             var1.method35295();
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.method27817();
-            RenderSystem.method27849();
+            RenderSystem.enableCull();
             RenderSystem.disableBlend();
             RenderSystem.method27841();
             if (Class7944.method26921()) {
@@ -2465,7 +2465,7 @@ public class Class264 implements Class215, AutoCloseable {
    public void method891(long var1) {
       var1 = (long)((double)var1 + 1.0E8);
       this.field995 = this.field995 | this.field983.method33323();
-      long var3 = Util.method38488();
+      long var3 = Util.nanoTime();
       boolean var5 = false;
       if (this.field1002.size() > 0) {
          Iterator var6 = this.field1002.iterator();
@@ -2528,7 +2528,7 @@ public class Class264 implements Class215, AutoCloseable {
    private void method892(Class9624 var1) {
       Class5425 var2 = Class9352.method35409().method35411();
       Class7522 var3 = this.field943.method6810();
-      double var4 = (double)(this.field939.field1299.field44574 * 16);
+      double var4 = (double)(this.field939.gameSettings.field44574 * 16);
       if (!(var1.method37504().field18048 < var3.method24532() - var4)
          || !(var1.method37504().field18048 > var3.method24530() + var4)
          || !(var1.method37504().field18050 < var3.method24533() - var4)
@@ -2559,7 +2559,7 @@ public class Class264 implements Class215, AutoCloseable {
          RenderSystem.method27939();
          RenderSystem.disableAlphaTest();
          RenderSystem.method27850();
-         float var18 = (float)(Util.method38487() % 3000L) / 3000.0F;
+         float var18 = (float)(Util.milliTime() % 3000L) / 3000.0F;
          float var19 = 0.0F;
          float var20 = 0.0F;
          float var21 = 128.0F;
@@ -2626,7 +2626,7 @@ public class Class264 implements Class215, AutoCloseable {
 
          var2.method17065();
          Class4395.method13895(var2);
-         RenderSystem.method27849();
+         RenderSystem.enableCull();
          RenderSystem.method27817();
          RenderSystem.method27856(0.0F, 0.0F);
          RenderSystem.method27853();
@@ -2645,7 +2645,7 @@ public class Class264 implements Class215, AutoCloseable {
       var1.method17025(var8 - var2, (double)var10 - var4, var11 - var6).method17027(var13, var14).method17031();
    }
 
-   private void method894(Class9332 var1, Class5422 var2, Entity var3, double var4, double var6, double var8, BlockPos var10, Class7380 var11) {
+   private void method894(MatrixStack var1, Class5422 var2, Entity var3, double var4, double var6, double var8, BlockPos var10, Class7380 var11) {
       method896(
          var1,
          var2,
@@ -2661,7 +2661,7 @@ public class Class264 implements Class215, AutoCloseable {
    }
 
    public static void method895(
-      Class9332 var0, Class5422 var1, Class6408 var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
+           MatrixStack var0, Class5422 var1, Class6408 var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
       List var13 = var2.method19521();
       int var14 = MathHelper.method37774((double)var13.size() / 3.0);
@@ -2678,7 +2678,7 @@ public class Class264 implements Class215, AutoCloseable {
    }
 
    private static void method896(
-      Class9332 var0, Class5422 var1, Class6408 var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
+           MatrixStack var0, Class5422 var1, Class6408 var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
       Class9367 var13 = var0.method35296().method32361();
       var2.method19519((var12x, var14, var16, var18, var20, var22) -> {
@@ -2687,7 +2687,7 @@ public class Class264 implements Class215, AutoCloseable {
       });
    }
 
-   public static void method897(Class9332 var0, Class5422 var1, Class6488 var2, float var3, float var4, float var5, float var6) {
+   public static void method897(MatrixStack var0, Class5422 var1, Class6488 var2, float var3, float var4, float var5, float var6) {
       method899(
          var0,
          var1,
@@ -2708,7 +2708,7 @@ public class Class264 implements Class215, AutoCloseable {
    }
 
    public static void method898(
-      Class9332 var0,
+      MatrixStack var0,
       Class5422 var1,
       double var2,
       double var4,
@@ -2725,7 +2725,7 @@ public class Class264 implements Class215, AutoCloseable {
    }
 
    public static void method899(
-      Class9332 var0,
+      MatrixStack var0,
       Class5422 var1,
       double var2,
       double var4,
@@ -2875,7 +2875,7 @@ public class Class264 implements Class215, AutoCloseable {
          }
 
          if (var5 != null) {
-            this.field939.field1298.method5984(var5.method11813());
+            this.field939.ingameGUI.method5984(var5.method11813());
          }
 
          Class6339 var6 = Class6339.method19295(var1, (double)var2.method8304(), (double)var2.getY(), (double)var2.method8306());
@@ -2920,8 +2920,8 @@ public class Class264 implements Class215, AutoCloseable {
 
    @Nullable
    private Class4587 method915(Class7436 var1, boolean var2, boolean var3, double var4, double var6, double var8, double var10, double var12, double var14) {
-      Class9624 var16 = this.field939.field1295.method768();
-      if (this.field939 != null && var16.method37510() && this.field939.field1291 != null) {
+      Class9624 var16 = this.field939.gameRenderer.getActiveRenderInfo();
+      if (this.field939 != null && var16.method37510() && this.field939.particles != null) {
          Class2294 var17 = this.method916(var3);
          if (var1 == Class7940.field34069 && !Class7944.method26842()) {
             return null;
@@ -2975,7 +2975,7 @@ public class Class264 implements Class215, AutoCloseable {
                }
             }
 
-            Class4587 var20 = this.field939.field1291.method1197(var1, var4, var6, var8, var10, var12, var14);
+            Class4587 var20 = this.field939.particles.method1197(var1, var4, var6, var8, var10, var12, var14);
             if (var1 == Class7940.field34052) {
                Class9680.method37864(var20, this.field943, var4, var6, var8, this.field1018);
             }
@@ -3008,7 +3008,7 @@ public class Class264 implements Class215, AutoCloseable {
    }
 
    private Class2294 method916(boolean var1) {
-      Class2294 var2 = this.field939.field1299.field44674;
+      Class2294 var2 = this.field939.gameSettings.field44674;
       if (var1 && var2 == Class2294.field15248 && this.field943.field9016.nextInt(10) == 0) {
          var2 = Class2294.field15247;
       }
@@ -3028,7 +3028,7 @@ public class Class264 implements Class215, AutoCloseable {
          case 1023:
          case 1028:
          case 1038:
-            Class9624 var4 = this.field939.field1295.method768();
+            Class9624 var4 = this.field939.gameRenderer.getActiveRenderInfo();
             if (var4.method37510()) {
                double var5 = (double)var2.method8304() - var4.method37504().field18048;
                double var7 = (double)var2.getY() - var4.method37504().field18049;
@@ -3262,7 +3262,7 @@ public class Class264 implements Class215, AutoCloseable {
                   .method6858(var3, var47.method29712(), Class2266.field14732, (var47.method29710() + 1.0F) / 2.0F, var47.method29711() * 0.8F, false);
             }
 
-            this.field939.field1291.method1206(var3, var16);
+            this.field939.particles.method1206(var3, var16);
             break;
          case 2002:
          case 2007:
@@ -3552,7 +3552,7 @@ public class Class264 implements Class215, AutoCloseable {
    private void method940(Class9624 var1, Class7647 var2, boolean var3) {
       if (this.field1023 == 0) {
          this.method941(var1, var2, var3);
-         this.field939.field1298.method5989().method5941(201435902);
+         this.field939.ingameGUI.getChatGUI().method5941(201435902);
       }
 
       if (this.field1023 > -1) {
@@ -3561,12 +3561,12 @@ public class Class264 implements Class215, AutoCloseable {
    }
 
    private void method941(Class9624 var1, Class7647 var2, boolean var3) {
-      int var4 = this.field939.field1299.field44705;
-      boolean var5 = this.field939.field1299.field44684;
+      int var4 = this.field939.gameSettings.field44705;
+      boolean var5 = this.field939.gameSettings.field44684;
 
       try {
-         this.field939.field1299.field44705 = 1000;
-         this.field939.field1299.field44684 = false;
+         this.field939.gameSettings.field44705 = 1000;
+         this.field939.gameSettings.field44684 = false;
          Class264 var6 = Class7944.method26874();
          int var7 = var6.method927();
          long var8 = System.currentTimeMillis();
@@ -3612,8 +3612,8 @@ public class Class264 implements Class215, AutoCloseable {
          Class7944.method26815("Finished loading visible chunks");
          Class9016.field41247 = 0;
       } finally {
-         this.field939.field1299.field44705 = var4;
-         this.field939.field1299.field44684 = var5;
+         this.field939.gameSettings.field44705 = var4;
+         this.field939.gameSettings.field44684 = var5;
       }
    }
 

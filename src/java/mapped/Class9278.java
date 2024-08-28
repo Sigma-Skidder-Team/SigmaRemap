@@ -57,7 +57,7 @@ public class Class9278 {
          if (var5.method32107() instanceof Class3316) {
             Class7529 var6 = Class3316.method11861(var5, this.field42667);
 
-            for (Class878 var8 : this.field42667.method6870()) {
+            for (ServerPlayerEntity var8 : this.field42667.method6870()) {
                var6.method24594(var8, var5);
                Packet var9 = ((Class3316)var5.method32107()).method11858(var5, this.field42667, var8);
                if (var9 != null) {
@@ -167,12 +167,12 @@ public class Class9278 {
       }
    }
 
-   public void method34970(Class878 var1) {
+   public void method34970(ServerPlayerEntity var1) {
       this.field42668.method3401(var1);
       var1.method2811(this.field42668);
    }
 
-   public void method34971(Class878 var1) {
+   public void method34971(ServerPlayerEntity var1) {
       this.method34972(var1.field4855::sendPacket);
       this.field42668.method3400(var1);
       var1.method2812(this.field42668);
@@ -274,8 +274,8 @@ public class Class9278 {
 
    private void method34976(Packet<?> var1) {
       this.field42671.accept(var1);
-      if (this.field42668 instanceof Class878) {
-         ((Class878)this.field42668).field4855.sendPacket(var1);
+      if (this.field42668 instanceof ServerPlayerEntity) {
+         ((ServerPlayerEntity)this.field42668).field4855.sendPacket(var1);
       }
    }
 }

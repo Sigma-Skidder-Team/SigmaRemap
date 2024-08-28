@@ -9,24 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class843 extends Class838 {
-   private static Class5805[] field4658;
+   private static AbstractOption[] field4658;
    private Class1296 field4659;
    private int field4660;
    private Screen field4661;
    private Class9574 field4662;
-   private static Class5805[] field4663 = new Class5805[]{
-      Class5805.field25343,
-      Class5805.field25333,
-      Class5805.field25337,
-      Class5805.field25328,
-      Class5805.field25386,
-      Class5805.field25370,
-      Class5805.field25344,
-      Class5805.field25359,
-      Class5805.field25329,
-      Class5805.field25338,
-      Class5805.field25435,
-      Class5805.field25434
+   private static AbstractOption[] field4663 = new AbstractOption[]{
+      AbstractOption.field25343,
+      AbstractOption.field25333,
+      AbstractOption.field25337,
+      AbstractOption.FRAMERATE_LIMIT,
+      AbstractOption.field25386,
+      AbstractOption.field25370,
+      AbstractOption.field25344,
+      AbstractOption.field25359,
+      AbstractOption.field25329,
+      AbstractOption.field25338,
+      AbstractOption.field25435,
+      AbstractOption.field25434
    };
    private Class270 field4664;
    private static final ITextComponent field4665 = new TranslationTextComponent("options.graphics.fabulous").mergeStyle(TextFormatting.ITALIC);
@@ -38,7 +38,7 @@ public class Class843 extends Class838 {
    private Class9046 field4671 = new Class9046(this, new Class7548());
    private List<Class1197> field4672 = this.field4566;
    private Class1197 field4673;
-   private Class9574 field4674 = Minecraft.getInstance().field1299;
+   private Class9574 field4674 = Minecraft.getInstance().gameSettings;
 
    @Override
    public boolean method1958(double var1, double var3, int var5) {
@@ -72,7 +72,7 @@ public class Class843 extends Class838 {
 
             this.field4562.displayGuiScreen(new Class1307(field4667, var9, ImmutableList.of(new Class8001(field4668, var1x -> {
                this.field4674.field44578 = Class2087.field13605;
-               Minecraft.getInstance().field1287.method868();
+               Minecraft.getInstance().worldRenderer.method868();
                this.field4664.method977();
                this.field4562.displayGuiScreen(this);
             }), new Class8001(field4669, var1x -> {
@@ -106,12 +106,12 @@ public class Class843 extends Class838 {
       this.field4672.clear();
 
       for (int var3 = 0; var3 < field4663.length; var3++) {
-         Class5805 var4 = field4663[var3];
+         AbstractOption var4 = field4663[var3];
          if (var4 != null) {
             int var5 = this.field4564 / 2 - 155 + var3 % 2 * 160;
             int var6 = this.field4565 / 6 + 21 * (var3 / 2) - 12;
-            Class1197 var7 = this.<Class1197>method2455(var4.method17946(this.field4562.field1299, var5, var6, 150));
-            if (var4 == Class5805.field25344) {
+            Class1197 var7 = this.<Class1197>method2455(var4.method17946(this.field4562.gameSettings, var5, var6, 150));
+            if (var4 == AbstractOption.field25344) {
                this.field4673 = var7;
             }
          }
@@ -173,7 +173,7 @@ public class Class843 extends Class838 {
 
          this.field4562.displayGuiScreen(new Class1307(field4667, var3, ImmutableList.of(new Class8001(field4668, var1 -> {
             this.field4662.field44578 = Class2087.field13605;
-            Minecraft.getInstance().field1287.method868();
+            Minecraft.getInstance().worldRenderer.method868();
             this.field4664.method977();
             this.field4562.displayGuiScreen(this);
          }), new Class8001(field4669, var1 -> {
@@ -186,7 +186,7 @@ public class Class843 extends Class838 {
    @Override
    public void method2564(Class1197 var1) {
       if (var1 == this.field4673) {
-         Class5805.field25344.method17945(this.field4662, -1);
+         AbstractOption.field25344.method17945(this.field4662, -1);
          this.method2582();
       }
    }
@@ -204,36 +204,36 @@ public class Class843 extends Class838 {
    private void method2583(Class1210 var1, int var2) {
       if (var1.field6482) {
          if (var1.field6523 == 200) {
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.method37146();
             this.field4562.displayGuiScreen(this.field4661);
          }
 
          if (var1.field6523 == 201) {
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.method37146();
             Class847 var5 = new Class847(this, this.field4662);
             this.field4562.displayGuiScreen(var5);
          }
 
          if (var1.field6523 == 202) {
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.method37146();
             Class846 var6 = new Class846(this, this.field4662);
             this.field4562.displayGuiScreen(var6);
          }
 
          if (var1.field6523 == 211) {
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.method37146();
             Class840 var7 = new Class840(this, this.field4662);
             this.field4562.displayGuiScreen(var7);
          }
 
          if (var1.field6523 == 212) {
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.method37146();
             Class839 var8 = new Class839(this, this.field4662);
             this.field4562.displayGuiScreen(var8);
          }
 
          if (var1.field6523 == 222) {
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.method37146();
             Class841 var9 = new Class841(this, this.field4662);
             this.field4562.displayGuiScreen(var9);
          }
@@ -254,7 +254,7 @@ public class Class843 extends Class838 {
                return;
             }
 
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.method37146();
             Class842 var10 = new Class842(this, this.field4662);
             this.field4562.displayGuiScreen(var10);
          }
@@ -262,13 +262,13 @@ public class Class843 extends Class838 {
    }
 
    @Override
-   public void method1931() {
-      this.field4562.field1299.method37146();
-      super.method1931();
+   public void onClose() {
+      this.field4562.gameSettings.method37146();
+      super.onClose();
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4562.field1294, this.field4560, this.field4564 / 2, 15, 16777215);
       String var7 = Class7944.method26777();
@@ -293,7 +293,7 @@ public class Class843 extends Class838 {
       this.field4671.method33640(var1, var2, var3, this.field4672);
    }
 
-   public static String method2584(Class1331 var0) {
+   public static String method2584(ChatScreen var0) {
       return var0.field7048.method5636();
    }
 }

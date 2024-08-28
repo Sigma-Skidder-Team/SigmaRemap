@@ -5,10 +5,10 @@ import com.mojang.authlib.ProfileLookupCallback;
 import com.mojang.authlib.yggdrasil.ProfileNotFoundException;
 
 public final class Class9148 implements ProfileLookupCallback {
-   public final Class314 field42026;
+   public final MinecraftServer field42026;
    public final Class4530 field42027;
 
-   public Class9148(Class314 var1, Class4530 var2) {
+   public Class9148(MinecraftServer var1, Class4530 var2) {
       this.field42026 = var1;
       this.field42027 = var2;
    }

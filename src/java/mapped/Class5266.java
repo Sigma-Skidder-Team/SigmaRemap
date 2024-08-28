@@ -27,9 +27,9 @@ public class Class5266 extends PremiumModule {
                 String var4 = this.getStringSettingValueByName("Mode");
                 switch (var4) {
                     case "Flying Enabled":
-                        double var6 = mc.field1339.getPosX();
-                        double var8 = mc.field1339.getPosY();
-                        double var10 = mc.field1339.getPosZ();
+                        double var6 = mc.player.getPosX();
+                        double var8 = mc.player.getPosY();
+                        double var10 = mc.player.getPosZ();
                         double var12 = 0.0;
                         double var14 = 0.0;
 
@@ -92,19 +92,19 @@ public class Class5266 extends PremiumModule {
                         mc.getClientPlayNetHandler()
                                 .sendPacket(
                                         new Class5605(
-                                                mc.field1339.getPosX() + 9999.0,
-                                                mc.field1339.getPosY() + 9999.0,
-                                                mc.field1339.getPosZ() + 9999.0,
+                                                mc.player.getPosX() + 9999.0,
+                                                mc.player.getPosY() + 9999.0,
+                                                mc.player.getPosZ() + 9999.0,
                                                 false
                                         )
                                 );
                         mc.getClientPlayNetHandler()
                                 .sendPacket(
                                         new Class5605(
-                                                mc.field1339.getPosX(),
-                                                mc.field1339.method3389().field28450,
-                                                mc.field1339.getPosZ() + 9999.0,
-                                                mc.field1339.field5036
+                                                mc.player.getPosX(),
+                                                mc.player.method3389().field28450,
+                                                mc.player.getPosZ() + 9999.0,
+                                                mc.player.field5036
                                         )
                                 );
                         if (this.field23695++ >= 200) {

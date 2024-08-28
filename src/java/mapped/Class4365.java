@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.network.Class8248;
+import com.mentalfrostbyte.jello.network.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
@@ -14,7 +14,7 @@ public class Class4365 extends Class4247 {
    public int field21338;
    public int field21339;
    public int field21340;
-   private Class8248 field21341;
+   private Account account;
 
    public Class4365(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, Class6387.field27961, var7, false);
@@ -29,15 +29,15 @@ public class Class4365 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      this.field21341 = Client.getInstance().getNetworkManager().method30455();
+      this.account = Client.getInstance().getNetworkManager().getNewAccount("SigmaUser");
       String var4 = "Log in";
       Texture var5 = ResourcesDecrypter.accountPNG;
-      if (this.field21341 != null) {
-         var4 = this.field21341.field35440;
+      if (this.account != null) {
+         var4 = this.account.username;
       }
 
       this.method13268(this.field20913.method23942(var4) + 50 + 60);
-      this.method13264(Minecraft.getInstance().field1283.method8043() - this.field20897 - 20);
+      this.method13264(Minecraft.getInstance().mainWindow.method8043() - this.field20897 - 20);
       boolean var6 = this.field21337 >= this.field20895 && this.field21338 <= this.field20896 + this.method13269();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
       Class3192.method11463(

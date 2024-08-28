@@ -180,8 +180,8 @@ public class Class1040 extends Class1038 implements Class1041 {
       var4.method4276(var1, var1.method6807(var4.method3432()), Class2202.field14399, (Class5093)null, (Class39)null);
       if (this.field5772 != null) {
          PlayerEntity var12 = var1.method7196(this.field5772);
-         if (var12 instanceof Class878) {
-            CriteriaTriggers.field44482.method15121((Class878)var12, this, var4);
+         if (var12 instanceof ServerPlayerEntity) {
+            CriteriaTriggers.field44482.method15121((ServerPlayerEntity)var12, this, var4);
             var1.method6959(Class8214.field35285, var12, var4);
          }
       }

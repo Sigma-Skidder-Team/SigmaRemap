@@ -140,17 +140,17 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    public void method6037(int var1, int var2) {
    }
 
-   public void method6038(Class9332 var1, int var2, int var3, Class9352 var4) {
+   public void method6038(MatrixStack var1, int var2, int var3, Class9352 var4) {
    }
 
-   public void method6039(Class9332 var1) {
+   public void method6039(MatrixStack var1) {
    }
 
-   public void method6040(Class9332 var1, int var2, int var3) {
+   public void method6040(MatrixStack var1, int var2, int var3) {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method6039(var1);
       int var7 = this.method6048();
       int var8 = var7 + 6;
@@ -271,7 +271,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       }
 
       this.method6040(var1, var2, var3);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.method27866(7424);
       RenderSystem.disableAlphaTest();
       RenderSystem.disableBlend();
@@ -444,7 +444,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       return var3 >= (double)this.field6787 && var3 <= (double)this.field6788 && var1 >= (double)this.field6790 && var1 <= (double)this.field6789;
    }
 
-   public void method6052(Class9332 var1, int var2, int var3, int var4, int var5, float var6) {
+   public void method6052(MatrixStack var1, int var2, int var3, int var4, int var5, float var6) {
       int var9 = this.method6031();
       Class9352 var10 = Class9352.method35409();
       Class5425 var11 = var10.method35411();
@@ -476,7 +476,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
                var11.method17025((double)(var20 - 1), (double)(var15 - 1), 0.0).method17031();
                var11.method17025((double)(var19 + 1), (double)(var15 - 1), 0.0).method17031();
                var10.method35410();
-               RenderSystem.method27861();
+               RenderSystem.enableTexture();
             }
 
             int var22 = this.method6053();

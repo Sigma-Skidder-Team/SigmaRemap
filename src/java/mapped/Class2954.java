@@ -28,7 +28,7 @@ public class Class2954 {
 
    public void method11306(Minecraft var1, int var2, int var3) {
       this.field18034 = var1;
-      this.field18041 = var1.field1339.method5397();
+      this.field18041 = var1.player.method5397();
 
       for (int var6 = 0; var6 < this.field18031.size(); var6++) {
          this.field18031.get(var6).method5754(var2 + 11 + 25 * (var6 % 5), var3 + 31 + 25 * (var6 / 5));
@@ -77,7 +77,7 @@ public class Class2954 {
       this.field18038.field6483 = this.field18039 > 1 && this.field18040 > 0;
    }
 
-   public void method11311(Class9332 var1, int var2, int var3, int var4, int var5, float var6) {
+   public void method11311(MatrixStack var1, int var2, int var3, int var4, int var5, float var6) {
       if (this.field18039 > 1) {
          String var9 = this.field18040 + 1 + "/" + this.field18039;
          int var10 = this.field18034.field1294.method38820(var9);
@@ -98,9 +98,9 @@ public class Class2954 {
       this.field18033.method1923(var1, var4, var5, var6);
    }
 
-   public void method11312(Class9332 var1, int var2, int var3) {
-      if (this.field18034.field1355 != null && this.field18032 != null && !this.field18033.method5906()) {
-         this.field18034.field1355.method2460(var1, this.field18032.method5758(this.field18034.field1355), var2, var3);
+   public void method11312(MatrixStack var1, int var2, int var3) {
+      if (this.field18034.currentScreen != null && this.field18032 != null && !this.field18033.method5906()) {
+         this.field18034.currentScreen.method2460(var1, this.field18032.method5758(this.field18034.currentScreen), var2, var3);
       }
    }
 

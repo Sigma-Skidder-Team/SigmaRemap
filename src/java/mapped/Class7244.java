@@ -18,7 +18,7 @@ public class Class7244 implements Class7243 {
 
    @Override
    public void method22736(Class7481 var1) {
-      this.field31100 = Util.method38487();
+      this.field31100 = Util.milliTime();
       this.field31099 = this.field31100;
    }
 
@@ -29,7 +29,7 @@ public class Class7244 implements Class7243 {
       }
 
       int var5 = this.method22741();
-      if (Util.method38487() > this.field31100) {
+      if (Util.milliTime() > this.field31100) {
          this.field31100 += 500L;
          field31096.info(new TranslationTextComponent("menu.preparingSpawn", MathHelper.method37775(var5, 0, 100)).getString());
       }
@@ -37,7 +37,7 @@ public class Class7244 implements Class7243 {
 
    @Override
    public void method22738() {
-      field31096.info("Time elapsed: {} ms", Util.method38487() - this.field31099);
+      field31096.info("Time elapsed: {} ms", Util.milliTime() - this.field31099);
       this.field31100 = Long.MAX_VALUE;
    }
 

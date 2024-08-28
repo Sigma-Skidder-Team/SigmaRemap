@@ -15,8 +15,8 @@ public class Class3395 extends Block {
    public void method11595(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
       int var7 = method12006(var1, var2, var3, var4);
       Entity var8 = var4.method3460();
-      if (var8 instanceof Class878) {
-         Class878 var9 = (Class878)var8;
+      if (var8 instanceof ServerPlayerEntity) {
+         ServerPlayerEntity var9 = (ServerPlayerEntity)var8;
          var9.method2911(Class8876.field40177);
          CriteriaTriggers.field44502.method15161(var9, var4, var3.method31419(), var7);
       }

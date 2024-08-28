@@ -162,8 +162,8 @@ public class Class5822 extends Class5812 {
                }
 
                var1.method2911(Class8876.field40157);
-               if (var1 instanceof Class878) {
-                  CriteriaTriggers.field44473.method15177((Class878)var1, var10, var7);
+               if (var1 instanceof ServerPlayerEntity) {
+                  CriteriaTriggers.field44473.method15177((ServerPlayerEntity)var1, var10, var7);
                }
 
                this.field25505.method3622();

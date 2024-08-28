@@ -30,7 +30,7 @@ public class Class5366 extends Module {
     @EventTarget
     public void method16895(Class4435 var1) {
         double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
-        if (mc.field1339.field5036) {
+        if (mc.player.field5036) {
             if (this.field23981 > 0) {
                 this.field23981 = 0;
                 if (this.method16004().method15974("Auto Disable")) {
@@ -38,7 +38,7 @@ public class Class5366 extends Module {
                     return;
                 }
             } else {
-                BlockPos var6 = new BlockPos(mc.field1339.getPosX(), mc.field1339.getPosY() - 0.4, mc.field1339.getPosZ());
+                BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (this.method16004().method15974("BorderJump") && !Class9217.method34578(var6) && Class5628.method17686()
                         || this.method16004().method15974("Auto Jump") && Class5628.method17686()
                         || var1.method13994() == Class9567.method37080()) {
@@ -80,7 +80,7 @@ public class Class5366 extends Module {
                 Class9567.method37088(var1, (double) this.method15977("Boost") * var7);
                 var1.method13995((double) this.method15977("Heigh") * Class9567.method37080());
                 this.field23982 = 1.0;
-            } else if (var1.method13994() < 0.0 && mc.field1339.field5045 < 3.0F) {
+            } else if (var1.method13994() < 0.0 && mc.player.field5045 < 3.0F) {
                 this.field23982 = this.field23982 - var1.method13994();
             }
         }

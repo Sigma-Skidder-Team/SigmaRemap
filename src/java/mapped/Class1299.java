@@ -132,7 +132,7 @@ public class Class1299 extends Class1298 {
    }
 
    @Override
-   public void method6153(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8) {
+   public void method6153(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8) {
       String var11 = (String)this.field6886.get(var2);
       if (!var11.equals("OFF")) {
          if (var11.equals("(internal)")) {

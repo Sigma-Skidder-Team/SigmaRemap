@@ -51,7 +51,7 @@ public class Class5263 extends PremiumModule {
 
     @EventTarget
     private void method16463(Class4415 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (Client.getInstance().getMusicManager().method24319() && Client.getInstance().getMusicManager().field32163.size() != 0) {
                 long var4 = System.nanoTime() - this.field23676;
                 float var6 = Math.min(10.0F, Math.max(0.0F, (float) var4 / 1.810361E7F));

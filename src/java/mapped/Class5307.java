@@ -18,15 +18,15 @@ public class Class5307 extends Module {
     @EventTarget
     private void method16680(Class4404 var1) {
         if (this.method15996()) {
-            if ((int) mc.field1339.getPosY() == this.field23843 && !mc.field1339.field4981) {
+            if ((int) mc.player.getPosY() == this.field23843 && !mc.player.field4981) {
                 Class5628.method17725(-2.0);
             }
 
-            if (mc.field1339.getPosY() > (double) this.field23843 && mc.field1339.field4981 && !mc.field1339.method3331()) {
+            if (mc.player.getPosY() > (double) this.field23843 && mc.player.field4981 && !mc.player.method3331()) {
                 this.field23843++;
             }
 
-            if (mc.field1339.getPosY() % 1.0 == 0.0 && mc.field1339.method3331()) {
+            if (mc.player.getPosY() % 1.0 == 0.0 && mc.player.method3331()) {
                 this.field23843--;
             }
         }
@@ -37,11 +37,11 @@ public class Class5307 extends Module {
         if (this.method15996()) {
             if (var1.method13903() != null && var1.method13902().getY() == this.field23843 - 1
                     || var1.method13902().getY() == this.field23843
-                    || var1.method13902().getY() == this.field23843 + 1 && mc.field1338.method6738(var1.method13902()).method23383() instanceof Class3208
-                    || mc.field1338.method6738(var1.method13902()).method23383() instanceof Class3465
-                    || mc.field1338.method6738(var1.method13902()).method23383() instanceof Class3421
-                    || mc.field1338.method6738(var1.method13902()).method23383() instanceof Class3415
-                    || mc.field1338.method6738(var1.method13902()).method23383() instanceof Class3377) {
+                    || var1.method13902().getY() == this.field23843 + 1 && mc.world.method6738(var1.method13902()).method23383() instanceof Class3208
+                    || mc.world.method6738(var1.method13902()).method23383() instanceof Class3465
+                    || mc.world.method6738(var1.method13902()).method23383() instanceof Class3421
+                    || mc.world.method6738(var1.method13902()).method23383() instanceof Class3415
+                    || mc.world.method6738(var1.method13902()).method23383() instanceof Class3377) {
                 var1.method13905(null);
             }
         }
@@ -56,7 +56,7 @@ public class Class5307 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23843 = (int) mc.field1339.getPosY();
-        this.field23844 = (double) this.field23843 - mc.field1339.getPosY();
+        this.field23843 = (int) mc.player.getPosY();
+        this.field23844 = (double) this.field23843 - mc.player.getPosY();
     }
 }

@@ -30,12 +30,12 @@ public class Class5171 extends Module {
     private void method16089(Class4420 var1, PlayerEntity var2) {
         Color var5 = new Color(
                 !Client.getInstance().getFriendManager().method26998(var2.getName().getString())
-                        ? (!var2.getName().getString().equalsIgnoreCase(mc.field1339.getName().getString()) ? new Color(16775672).getRGB() : -6684775)
+                        ? (!var2.getName().getString().equalsIgnoreCase(mc.player.getName().getString()) ? new Color(16775672).getRGB() : -6684775)
                         : -8401409
         );
         if (!var2.method3342()) {
             float[][] var6 = field23459.get(var2);
-            if (var6 != null && var2.method3066() && var2 != mc.field1339 && !var2.isSleeping()) {
+            if (var6 != null && var2.method3066() && var2 != mc.player && !var2.isSleeping()) {
                 GL11.glPushMatrix();
                 GL11.glLineWidth(2.0F);
                 GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);
@@ -197,7 +197,7 @@ public class Class5171 extends Module {
     }
 
     private boolean method16092(PlayerEntity var1) {
-        return !mc.field1338.method6870().contains(var1);
+        return !mc.world.method6870().contains(var1);
     }
 
     private void method16093(boolean var1) {

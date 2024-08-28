@@ -17,7 +17,7 @@ public class Class248 extends Class219<Class1074, Class2856<Class1074>> {
       super(var1);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, Class1074 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, Class1074 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ResourceLocation var13 = field904.get(var4.method4996());
       if (var13 != null && !var4.method3342()) {
          Class5422 var14 = var2.method25597(Class4520.method14318(var13));

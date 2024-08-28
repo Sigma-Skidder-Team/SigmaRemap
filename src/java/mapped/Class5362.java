@@ -93,12 +93,12 @@ public class Class5362 extends Module {
     @EventTarget
     public void method16865(Class4399 var1) {
         if (this.method15996()) {
-            if (mc.field1339 != null && mc.field1338 != null) {
+            if (mc.player != null && mc.world != null) {
                 for (BlockPos var5 : Class9217.method34545(Class9217.method34561(mc.field1337.method23135()))) {
-                    if (Class9217.method34535(mc.field1339, var5)) {
-                        Class7380 var6 = mc.field1338.method6738(var5);
+                    if (Class9217.method34535(mc.player, var5)) {
+                        Class7380 var6 = mc.world.method6738(var5);
                         if (var6.method23383() instanceof Class3480 || var6.method23383() instanceof Class3481 || var6.method23383() instanceof Class3483) {
-                            ItemStack var14 = mc.field1339.getHeldItem(Hand.field182);
+                            ItemStack var14 = mc.player.getHeldItem(Hand.field182);
                             if (var14 != null && var14.method32107() instanceof Class3321) {
                                 if (var6.<Integer>method23463(Class8820.field39742) != 7) {
                                     float[] var18 = Class9217.method34542(var5, Direction.field672);
@@ -112,35 +112,35 @@ public class Class5362 extends Module {
                                 var1.method13918(var17[0]);
                                 var1.method13916(var17[1]);
                                 var1.method13922(new Class532(this, var5));
-                                mc.field1338.method7179(var5, false);
+                                mc.world.method7179(var5, false);
                                 return;
                             }
                         } else if (!(var6.method23383() instanceof Class3221)) {
                             if (!(var6.method23383() instanceof Class3408)) {
                                 if (var6.method23383() instanceof Class3448) {
-                                    Class7380 var7 = mc.field1338.method6738(var5.method8313());
-                                    Class7380 var8 = mc.field1338.method6738(var5.method8311());
+                                    Class7380 var7 = mc.world.method6738(var5.method8313());
+                                    Class7380 var8 = mc.world.method6738(var5.method8311());
                                     if (!(var7.method23383() instanceof Class3448) && var8.method23383() instanceof Class3448) {
                                         float[] var9 = Class9217.method34541(var5.method8311());
                                         var1.method13918(var9[0]);
                                         var1.method13916(var9[1]);
                                         var1.method13922(new Class1431(this, var5));
-                                        mc.field1338.method7179(var5.method8311(), false);
+                                        mc.world.method7179(var5.method8311(), false);
                                     }
                                 }
                             } else {
-                                Class7380 var12 = mc.field1338.method6738(var5.method8313());
-                                Class7380 var15 = mc.field1338.method6738(var5.method8311());
+                                Class7380 var12 = mc.world.method6738(var5.method8313());
+                                Class7380 var15 = mc.world.method6738(var5.method8311());
                                 if (!(var12.method23383() instanceof Class3408) && var15.method23383() instanceof Class3408) {
                                     float[] var19 = Class9217.method34541(var5.method8311());
                                     var1.method13918(var19[0]);
                                     var1.method13916(var19[1]);
                                     var1.method13922(new Class654(this, var5));
-                                    mc.field1338.method7179(var5.method8311(), false);
+                                    mc.world.method7179(var5.method8311(), false);
                                 }
                             }
                         } else if (mc.field1347 == 0) {
-                            Class7380 var13 = mc.field1338.method6738(var5.method8311());
+                            Class7380 var13 = mc.world.method6738(var5.method8311());
                             int var16 = Class7789.method25843(Class8514.field37841);
                             if (var16 == -1) {
                                 var16 = Class7789.method25843(Class8514.field38052);
@@ -169,7 +169,7 @@ public class Class5362 extends Module {
                                 var1.method13922(new Class649(this, var16, var20));
                                 mc.field1347 = 2;
                                 Class7380 var11 = Blocks.field36539.method11579();
-                                mc.field1338.method6730(var5.method8311(), var11);
+                                mc.world.method6730(var5.method8311(), var11);
                                 return;
                             }
                         }

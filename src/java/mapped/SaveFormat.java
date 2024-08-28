@@ -26,7 +26,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class9774 {
+public class SaveFormat {
    private static final Logger field45713 = LogManager.getLogger();
    private static final DateTimeFormatter field45714 = new DateTimeFormatterBuilder()
       .appendValue(ChronoField.YEAR, 4, 10, SignStyle.EXCEEDS_PAD)
@@ -48,7 +48,7 @@ public class Class9774 {
    private final Path field45717;
    private final DataFixer field45718;
 
-   public Class9774(Path var1, Path var2, DataFixer var3) {
+   public SaveFormat(Path var1, Path var2, DataFixer var3) {
       this.field45718 = var3;
 
       try {
@@ -61,8 +61,8 @@ public class Class9774 {
       this.field45717 = var2;
    }
 
-   public static Class9774 method38455(Path var0) {
-      return new Class9774(var0, var0.resolve("../backups"), Class4497.method14181());
+   public static SaveFormat method38455(Path var0) {
+      return new SaveFormat(var0, var0.resolve("../backups"), Class4497.method14181());
    }
 
    private static <T> Pair<Class7846, Lifecycle> method38456(Dynamic<T> var0, DataFixer var1, int var2) {
@@ -167,7 +167,7 @@ public class Class9774 {
          var5.method133("Player");
          int var6 = var5.method119("DataVersion", 99) ? var5.method122("DataVersion") : -1;
          Dynamic<Class30> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(Class8063.field34602, var5), var6, SharedConstants.method34773().getWorldVersion());
-         return var7.get("DataPacks").result().map(Class9774::method38457).orElse(Class7818.field33531);
+         return var7.get("DataPacks").result().map(SaveFormat::method38457).orElse(Class7818.field33531);
       } catch (Exception var8) {
          field45713.error("Exception reading {}", var0, var8);
          return null;
@@ -211,7 +211,7 @@ public class Class9774 {
             } else {
                boolean var13 = var12 != this.method38459();
                File var14 = new File(var1, "icon.png");
-               Class7818 var15 = var10.get("DataPacks").result().map(Class9774::method38457).orElse(Class7818.field33531);
+               Class7818 var15 = var10.get("DataPacks").result().map(SaveFormat::method38457).orElse(Class7818.field33531);
                Class8898 var16 = Class8898.method32425(var10, var15);
                return new Class2024(var16, var11, var1.getName(), var13, var2, var14);
             }
@@ -250,27 +250,27 @@ public class Class9774 {
    }
 
    // $VF: synthetic method
-   public static Path method38475(Class9774 var0) {
+   public static Path method38475(SaveFormat var0) {
       return var0.field45716;
    }
 
    // $VF: synthetic method
-   public static DataFixer method38476(Class9774 var0) {
+   public static DataFixer method38476(SaveFormat var0) {
       return var0.field45718;
    }
 
    // $VF: synthetic method
-   public static int method38477(Class9774 var0) {
+   public static int method38477(SaveFormat var0) {
       return var0.method38459();
    }
 
    // $VF: synthetic method
-   public static BiFunction method38478(Class9774 var0, File var1, boolean var2) {
+   public static BiFunction method38478(SaveFormat var0, File var1, boolean var2) {
       return var0.method38463(var1, var2);
    }
 
    // $VF: synthetic method
-   public static Object method38479(Class9774 var0, File var1, BiFunction var2) {
+   public static Object method38479(SaveFormat var0, File var1, BiFunction var2) {
       return var0.method38460(var1, var2);
    }
 

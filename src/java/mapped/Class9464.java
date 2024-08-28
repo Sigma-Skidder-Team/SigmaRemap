@@ -98,7 +98,7 @@ public class Class9464 {
                var6 = new Random();
             }
 
-            Class314 var7 = this.field43974.method6715();
+            MinecraftServer var7 = this.field43974.method6715();
             return new Class7812(
                var6, this.field43978, this.field43974, var7.method1411()::method1058, var7.method1412()::method1052, this.field43975, this.field43976
             );

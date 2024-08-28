@@ -19,7 +19,7 @@ public interface Class6612 {
 
    void method20044(boolean var1);
 
-   boolean method20045();
+   boolean isHardcore();
 
    Class5462 method20046();
 

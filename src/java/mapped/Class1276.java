@@ -37,7 +37,7 @@ public class Class1276 extends Class1274<Class1173> {
 
    public void method6066(Supplier<String> var1, boolean var2) {
       this.method6027();
-      Class9774 var5 = this.field6782.method1472();
+      SaveFormat var5 = this.field6782.getSaveLoader();
       if (this.field6815 == null || var2) {
          try {
             this.field6815 = var5.method38458();
@@ -82,8 +82,8 @@ public class Class1276 extends Class1274<Class1173> {
       super.method6024(var1);
       if (var1 != null) {
          Class2024 var4 = Class1173.method5595(var1);
-         Class6688.field29302
-            .method20401(
+         NarratorChatListener.INSTANCE
+            .say(
                new TranslationTextComponent(
                      "narrator.select",
                      new TranslationTextComponent(

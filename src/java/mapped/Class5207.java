@@ -13,15 +13,15 @@ public class Class5207 extends Module {
     @EventTarget
     private void method16218(TickEvent var1) {
         if (this.method15996()) {
-            mc.field1299.field44638.field13071 = true;
-            if (mc.field1339.field4949 != 1) {
-                if (mc.field1339.field4949 == 0) {
-                    mc.field1299.field44632.field13071 = Class9798.method38639(
-                            Minecraft.getInstance().field1283.method8039(), mc.field1299.field44632.field13070.field34875
+            mc.gameSettings.field44638.field13071 = true;
+            if (mc.player.field4949 != 1) {
+                if (mc.player.field4949 == 0) {
+                    mc.gameSettings.field44632.field13071 = Class9798.method38639(
+                            Minecraft.getInstance().mainWindow.method8039(), mc.gameSettings.field44632.field13070.field34875
                     );
                 }
             } else {
-                mc.field1299.field44632.field13071 = false;
+                mc.gameSettings.field44632.field13071 = false;
             }
         }
     }

@@ -27,7 +27,7 @@ public class Class3705 extends Class3676<Class880> {
 
    @Override
    public boolean method12508(ServerWorld var1, Class880 var2) {
-      return this.method12584(var2).method3044();
+      return this.method12584(var2).getShouldBeDead();
    }
 
    @Override

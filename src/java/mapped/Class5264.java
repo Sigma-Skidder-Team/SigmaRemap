@@ -27,13 +27,13 @@ public class Class5264 extends PremiumModule {
 
     @EventTarget
     public void method16472(Class4399 var1) {
-        if (this.method15996() && var1.method13921() && !(mc.field1355 instanceof Class868)) {
+        if (this.method15996() && var1.method13921() && !(mc.currentScreen instanceof Class868)) {
             if (this.field23680 < 20) {
                 this.field23680++;
             }
 
             if (this.field23681 == -1 && this.field23680 >= 20 && this.field23678 == -1) {
-                if (mc.field1339.method3042() <= this.method16004().method15977("Health") * 2.0F && mc.field1339.method2959() == 0.0F) {
+                if (mc.player.method3042() <= this.method16004().method15977("Health") * 2.0F && mc.player.method2959() == 0.0F) {
                     this.field23681 = ((Class5331) this.method16004()).method16749(false);
                     if (this.field23681 >= 0) {
                         this.field23678 = 0;
@@ -41,7 +41,7 @@ public class Class5264 extends PremiumModule {
                     }
                 }
 
-                if (this.field23678 == -1 && this.method15974("Fire resistance potions") && !mc.field1339.method3033(Class7144.method22287(12))) {
+                if (this.field23678 == -1 && this.method15974("Fire resistance potions") && !mc.player.method3033(Class7144.method22287(12))) {
                     this.field23681 = ((Class5331) this.method16004()).method16749(true);
                     if (this.field23681 >= 0) {
                         this.field23678 = 0;
@@ -61,14 +61,14 @@ public class Class5264 extends PremiumModule {
                         mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
                         mc.getClientPlayNetHandler().sendPacket(new Class5539(this.field23681 + (this.field23681 != 8 ? 1 : -1)));
                         mc.getClientPlayNetHandler().sendPacket(new Class5539(this.field23681));
-                        mc.field1339.field4902.field5443 = this.field23679;
+                        mc.player.field4902.field5443 = this.field23679;
                         this.field23679 = -1;
                         this.field23678 = -1;
                         this.field23681 = -1;
                     }
                 } else {
-                    this.field23679 = mc.field1339.field4902.field5443;
-                    mc.field1339.field4902.field5443 = this.field23681;
+                    this.field23679 = mc.player.field4902.field5443;
+                    mc.player.field4902.field5443 = this.field23681;
                 }
             }
         }

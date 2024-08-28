@@ -188,7 +188,7 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Override
    public boolean method2896() {
-      return this.method3044() || this.method4938();
+      return this.getShouldBeDead() || this.method4938();
    }
 
    @Nullable

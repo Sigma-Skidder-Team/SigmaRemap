@@ -22,7 +22,7 @@ public class Class5157 extends Module {
 
     @Override
     public void isInDevelopment() {
-        if (Class5628.method17730(mc.field1339, 0.001F)) {
+        if (Class5628.method17730(mc.player, 0.001F)) {
             this.field23411 = this.getStringSettingValueByName("Offset").equals("OldHypixel");
             this.field23410 = !this.field23411 ? 1 : 2;
         }
@@ -54,11 +54,11 @@ public class Class5157 extends Module {
     @HigherPriority
     private void method16036(Class4399 var1) {
         if (this.method15996()) {
-            if (mc.field1339.field5036) {
+            if (mc.player.field5036) {
                 this.field23413 = false;
                 if (this.field23412 && this.field23410 != 1) {
                     this.field23412 = !this.field23412;
-                    mc.field1339.method2914();
+                    mc.player.method2914();
                 }
 
                 if (this.getStringSettingValueByName("Offset").equals("OldHypixel") != this.field23411) {
@@ -69,7 +69,7 @@ public class Class5157 extends Module {
                 double var4 = this.field23411 ? 1.0E-14 : 0.0;
                 boolean var6 = false;
                 boolean var7 = mc.field1346 != null && mc.field1346.method31417() == Class2100.field13690;
-                boolean var8 = mc.field1337.method23158() || mc.field1299.field44643.method8509() && var7;
+                boolean var8 = mc.field1337.method23158() || mc.gameSettings.field44643.method8509() && var7;
                 if (!var8 && !Class5381.method16953()) {
                     switch (this.field23410) {
                         case 0:
@@ -104,7 +104,7 @@ public class Class5157 extends Module {
                 var1.method13920(var6);
             } else {
                 this.field23410 = this.method15974("Avoid Fall Damage") && !this.field23411 ? 3 : 0;
-                if (this.method15974("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.field1339.method3433().field18049 < -0.1) {
+                if (this.method15974("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.method3433().field18049 < -0.1) {
                     this.field23413 = !this.field23413;
                     var1.method13920(true);
                 }

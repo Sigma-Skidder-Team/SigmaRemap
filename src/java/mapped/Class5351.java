@@ -24,12 +24,12 @@ public class Class5351 extends Module {
 
     @EventTarget
     private void method16788(Class4435 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (this.method16790()) {
-                if (field23907 == 0 && !mc.field1339.field5036 && mc.field1339.field4952 > 0 && mc.field1339.field5045 < 2.0F) {
-                    mc.field1339.method3280(0.0, -1.0, 0.0);
-                    Class5628.method17725(mc.field1339.method3433().method11321());
-                    mc.field1339.field5036 = true;
+                if (field23907 == 0 && !mc.player.field5036 && mc.player.field4952 > 0 && mc.player.field5045 < 2.0F) {
+                    mc.player.method3280(0.0, -1.0, 0.0);
+                    Class5628.method17725(mc.player.method3433().method11321());
+                    mc.player.field5036 = true;
                     field23907 = 20;
                 }
             } else {
@@ -64,7 +64,7 @@ public class Class5351 extends Module {
 
     @EventTarget
     private void method16789(Class4396 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5590) {
                 if (this.method16790()) {
@@ -73,7 +73,7 @@ public class Class5351 extends Module {
                 }
 
                 Class5590 var5 = (Class5590) var4;
-                if (var5.method17565() == mc.field1339.method3205() && (var5.field24801 != 0 || var5.field24803 != 0)) {
+                if (var5.method17565() == mc.player.method3205() && (var5.field24801 != 0 || var5.field24803 != 0)) {
                     this.field23909 = (float) (Math.sqrt(var5.field24801 * var5.field24801 + var5.field24803 * var5.field24803) / 1000.0);
                     this.field23908 = (float) (Math.atan2(var5.field24801 / 1000, var5.field24803 / 1000) * 180.0 / Math.PI) - 90.0F;
                     field23907 = 0;

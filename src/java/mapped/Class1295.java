@@ -13,11 +13,11 @@ public class Class1295 extends Class1293<Class1186> {
    public Class1295(Class1138 var1, Minecraft var2) {
       super(var2, var1.field4564 + 45, var1.field4565, 43, var1.field4565 - 32, 20);
       this.field6860 = var1;
-      Class2007[] var5 = (Class2007[])ArrayUtils.clone(var2.field1299.field44658);
+      KeyBinding[] var5 = (KeyBinding[])ArrayUtils.clone(var2.gameSettings.field44658);
       Arrays.sort(var5);
       String var6 = null;
 
-      for (Class2007 var10 : var5) {
+      for (KeyBinding var10 : var5) {
          String var11 = var10.method8510();
          if (!var11.equals(var6)) {
             var6 = var11;

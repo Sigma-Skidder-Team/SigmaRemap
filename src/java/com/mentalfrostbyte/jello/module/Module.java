@@ -146,7 +146,7 @@ public abstract class Module {
             }
         }
 
-        if (this.enabled && mc.field1338 != null) {
+        if (this.enabled && mc.world != null) {
             this.isInDevelopment();
         }
 
@@ -220,7 +220,7 @@ public abstract class Module {
     }
 
     public boolean method15996() {
-        if (Client.getInstance().getClientMode() != ClientMode.field13889) {
+        if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
             return (Client.getInstance().getClientMode() != ClientMode.CLASSIC || this.method16006()) && this.enabled;
         } else {
             return false;

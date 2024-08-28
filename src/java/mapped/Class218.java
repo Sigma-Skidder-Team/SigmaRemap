@@ -27,7 +27,7 @@ public class Class218<T extends Class880 & Class1041, M extends Class2827<T> & C
       var2.method587(this);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.method3342()) {
          Class7921 var13 = ((Class1041)var4).method4674();
          Class9564 var14 = var13.method26570();

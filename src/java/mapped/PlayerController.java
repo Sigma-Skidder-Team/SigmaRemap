@@ -39,7 +39,7 @@ public class PlayerController {
       }
 
       this.field31366 = var1;
-      this.field31366.method8155(this.field31358.field1339.field4919);
+      this.field31366.method8155(this.field31358.player.field4919);
    }
 
    public boolean method23130() {
@@ -47,17 +47,17 @@ public class PlayerController {
    }
 
    public boolean method23131(BlockPos var1) {
-      if (!this.field31358.field1339.method2848(this.field31358.field1338, var1, this.field31366)) {
-         Class1656 var4 = this.field31358.field1338;
+      if (!this.field31358.player.method2848(this.field31358.world, var1, this.field31366)) {
+         Class1656 var4 = this.field31358.world;
          Class7380 var5 = var4.method6738(var1);
-         if (!this.field31358.field1339.method3090().method32107().method11706(var5, var4, var1, this.field31358.field1339)) {
+         if (!this.field31358.player.method3090().method32107().method11706(var5, var4, var1, this.field31358.player)) {
             return false;
          } else {
             Block var6 = var5.method23383();
-            if ((var6 instanceof Class3355 || var6 instanceof Class3367 || var6 instanceof Class3249) && !this.field31358.field1339.method2979()) {
+            if ((var6 instanceof Class3355 || var6 instanceof Class3367 || var6 instanceof Class3249) && !this.field31358.player.method2979()) {
                return false;
             } else if (!var5.method23393()) {
-               var6.method11574(var4, var1, var5, this.field31358.field1339);
+               var6.method11574(var4, var1, var5, this.field31358.player);
                Class7379 var7 = var4.method6739(var1);
                boolean var8 = var4.method6725(var1, var7.method23484(), 11);
                if (var8) {
@@ -75,8 +75,8 @@ public class PlayerController {
    }
 
    public boolean method23132(BlockPos var1, Direction var2) {
-      if (!this.field31358.field1339.method2848(this.field31358.field1338, var1, this.field31366)) {
-         if (!this.field31358.field1338.method6810().method24523(var1)) {
+      if (!this.field31358.player.method2848(this.field31358.world, var1, this.field31366)) {
+         if (!this.field31358.world.method6810().method24523(var1)) {
             return false;
          } else {
             if (!this.field31366.method8157()) {
@@ -85,28 +85,28 @@ public class PlayerController {
                      this.method23160(Class2070.field13485, this.field31360, var2);
                   }
 
-                  Class7380 var5 = this.field31358.field1338.method6738(var1);
-                  this.field31358.method1567().method37026(this.field31358.field1338, var1, var5, 0.0F);
+                  Class7380 var5 = this.field31358.world.method6738(var1);
+                  this.field31358.method1567().method37026(this.field31358.world, var1, var5, 0.0F);
                   this.method23160(Class2070.field13484, var1, var2);
                   boolean var6 = !var5.method23393();
                   if (var6 && this.field31362 == 0.0F) {
-                     var5.method23436(this.field31358.field1338, var1, this.field31358.field1339);
+                     var5.method23436(this.field31358.world, var1, this.field31358.player);
                   }
 
-                  if (var6 && var5.method23406(this.field31358.field1339, this.field31358.field1339.field5024, var1) >= 1.0F) {
+                  if (var6 && var5.method23406(this.field31358.player, this.field31358.player.field5024, var1) >= 1.0F) {
                      this.method23131(var1);
                   } else {
                      this.field31365 = true;
                      this.field31360 = var1;
-                     this.field31361 = this.field31358.field1339.method3090();
+                     this.field31361 = this.field31358.player.method3090();
                      this.field31362 = 0.0F;
                      this.field31363 = 0.0F;
-                     this.field31358.field1338.method6803(this.field31358.field1339.method3205(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
+                     this.field31358.world.method6803(this.field31358.player.method3205(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
                   }
                }
             } else {
-               Class7380 var7 = this.field31358.field1338.method6738(var1);
-               this.field31358.method1567().method37026(this.field31358.field1338, var1, var7, 1.0F);
+               Class7380 var7 = this.field31358.world.method6738(var1);
+               this.field31358.method1567().method37026(this.field31358.world, var1, var7, 1.0F);
                this.method23160(Class2070.field13484, var1, var2);
                this.method23131(var1);
                this.field31364 = 5;
@@ -121,32 +121,32 @@ public class PlayerController {
 
    public void method23133() {
       if (this.field31365) {
-         Class7380 var3 = this.field31358.field1338.method6738(this.field31360);
-         this.field31358.method1567().method37026(this.field31358.field1338, this.field31360, var3, -1.0F);
+         Class7380 var3 = this.field31358.world.method6738(this.field31360);
+         this.field31358.method1567().method37026(this.field31358.world, this.field31360, var3, -1.0F);
          this.method23160(Class2070.field13485, this.field31360, Direction.field672);
          this.field31365 = false;
          this.field31362 = 0.0F;
-         this.field31358.field1338.method6803(this.field31358.field1339.method3205(), this.field31360, -1);
-         this.field31358.field1339.method2975();
+         this.field31358.world.method6803(this.field31358.player.method3205(), this.field31360, -1);
+         this.field31358.player.method2975();
       }
    }
 
    public boolean method23134(BlockPos var1, Direction var2) {
       this.method23138();
       if (this.field31364 <= 0) {
-         if (this.field31366.method8157() && this.field31358.field1338.method6810().method24523(var1)) {
+         if (this.field31366.method8157() && this.field31358.world.method6810().method24523(var1)) {
             this.field31364 = 5;
-            Class7380 var7 = this.field31358.field1338.method6738(var1);
-            this.field31358.method1567().method37026(this.field31358.field1338, var1, var7, 1.0F);
+            Class7380 var7 = this.field31358.world.method6738(var1);
+            this.field31358.method1567().method37026(this.field31358.world, var1, var7, 1.0F);
             this.method23160(Class2070.field13484, var1, var2);
             this.method23131(var1);
             return true;
          } else if (!this.method23137(var1)) {
             return this.method23132(var1, var2);
          } else {
-            Class7380 var5 = this.field31358.field1338.method6738(var1);
+            Class7380 var5 = this.field31358.world.method6738(var1);
             if (!var5.method23393()) {
-               this.field31362 = this.field31362 + var5.method23406(this.field31358.field1339, this.field31358.field1339.field5024, var1);
+               this.field31362 = this.field31362 + var5.method23406(this.field31358.player, this.field31358.player.field5024, var1);
                if (this.field31363 % 4.0F == 0.0F) {
                   Class8447 var6 = var5.method23452();
                   this.field31358
@@ -155,7 +155,7 @@ public class PlayerController {
                }
 
                this.field31363++;
-               this.field31358.method1567().method37026(this.field31358.field1338, var1, var5, MathHelper.method37777(this.field31362, 0.0F, 1.0F));
+               this.field31358.method1567().method37026(this.field31358.world, var1, var5, MathHelper.method37777(this.field31362, 0.0F, 1.0F));
                if (this.field31362 >= 1.0F) {
                   this.field31365 = false;
                   this.method23160(Class2070.field13486, var1, var2);
@@ -165,7 +165,7 @@ public class PlayerController {
                   this.field31364 = 5;
                }
 
-               this.field31358.field1338.method6803(this.field31358.field1339.method3205(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
+               this.field31358.world.method6803(this.field31358.player.method3205(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
                return true;
             } else {
                this.field31365 = false;
@@ -192,7 +192,7 @@ public class PlayerController {
    }
 
    private boolean method23137(BlockPos var1) {
-      ItemStack var4 = this.field31358.field1339.method3090();
+      ItemStack var4 = this.field31358.player.method3090();
       boolean var5 = this.field31361.method32105() && var4.method32105();
       if (!this.field31361.method32105() && !var4.method32105()) {
          var5 = var4.method32107() == this.field31361.method32107()
@@ -204,7 +204,7 @@ public class PlayerController {
    }
 
    public void method23138() {
-      int var3 = this.field31358.field1339.field4902.field5443;
+      int var3 = this.field31358.player.field4902.field5443;
       if (var3 != this.field31369) {
          this.field31369 = var3;
          this.field31359.sendPacket(new Class5539(this.field31369));
@@ -214,7 +214,7 @@ public class PlayerController {
    public ActionResultType method23139(ClientPlayerEntity var1, Class1656 var2, Hand var3, Class8711 var4) {
       this.method23138();
       BlockPos var7 = var4.method31423();
-      if (this.field31358.field1338.method6810().method24523(var7)) {
+      if (this.field31358.world.method6810().method24523(var7)) {
          ItemStack var8 = var1.getHeldItem(var3);
          if (this.field31366 == Class1894.field11105) {
             this.field31359.sendPacket(new Class5570(var3, var4));
@@ -351,7 +351,7 @@ public class PlayerController {
    }
 
    public boolean method23154() {
-      return this.field31358.field1339.method3328() && this.field31358.field1339.getRidingEntity() instanceof AbstractHorseEntity;
+      return this.field31358.player.method3328() && this.field31358.player.getRidingEntity() instanceof AbstractHorseEntity;
    }
 
    public boolean method23155() {
@@ -375,7 +375,7 @@ public class PlayerController {
    }
 
    private void method23160(Class2070 var1, BlockPos var2, Direction var3) {
-      ClientPlayerEntity var6 = this.field31358.field1339;
+      ClientPlayerEntity var6 = this.field31358.player;
       this.field31368.put(Pair.of(var2, var1), var6.getPositionVec());
       this.field31359.sendPacket(new Class5492(var1, var2, var3));
    }
@@ -385,7 +385,7 @@ public class PlayerController {
       Class7380 var9 = var1.method6738(var2);
       if ((var8 == null || !var5 || var4 != Class2070.field13484 && var9 != var3) && var9 != var3) {
          var1.method6851(var2, var3);
-         ClientPlayerEntity var10 = this.field31358.field1339;
+         ClientPlayerEntity var10 = this.field31358.player;
          if (var8 != null && var1 == var10.field5024 && var10.method3198(var2, var3)) {
             var10.method3270(var8.field18048, var8.field18049, var8.field18050);
          }

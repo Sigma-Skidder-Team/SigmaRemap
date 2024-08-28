@@ -7,7 +7,7 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
       super(var1);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, Class1095 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, Class1095 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       boolean var13 = var4.isSleeping();
       boolean var14 = var4.method3005();
       var1.method35294();

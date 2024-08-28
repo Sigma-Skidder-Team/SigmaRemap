@@ -23,19 +23,19 @@ public class Class869 extends Class870 implements Class867<Class5818> {
 
    @Override
    public void method1945() {
-      this.field4562.field1339.method2772();
+      this.field4562.player.method2772();
       super.method1945();
    }
 
    @Override
-   public void method1931() {
-      super.method1931();
+   public void onClose() {
+      super.onClose();
       this.field4817.method18128(this.field4818);
    }
 
    @Override
    public void method2679() {
-      if (!this.field4562.field1339.method2935()) {
+      if (!this.field4562.player.method2935()) {
          super.method2679();
       } else {
          this.<Class1206>method2455(

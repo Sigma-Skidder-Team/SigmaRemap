@@ -24,7 +24,7 @@ public class Class4276 extends Class4247 {
    public Class4276(Class4305 var1, String var2, int var3, int var4, Class1998 var5) {
       super(var1, var2, var3 - 107, var4 + 10, 214, 170, Class6387.field27961, "", false);
       this.field20727 = var5;
-      if (this.field20896 + this.field20898 <= Minecraft.getInstance().field1283.method8044()) {
+      if (this.field20896 + this.field20898 <= Minecraft.getInstance().mainWindow.method8044()) {
          this.field20896 += 10;
       } else {
          this.field20896 = this.field20896 - (this.field20898 + 27);

@@ -9,7 +9,7 @@ public class Class5719 extends Class5715<Class906> {
       super(var1);
    }
 
-   public void method17853(Class906 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class906 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       float[] var9 = new float[8];
       float[] var10 = new float[8];
       float var11 = 0.0F;

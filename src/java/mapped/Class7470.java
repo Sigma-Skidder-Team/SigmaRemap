@@ -5,5 +5,5 @@ public interface Class7470 extends Class7471 {
    default void method24192(int var1, float var2, Class1656 var3, Minecraft var4) {
    }
 
-   void method24193(int var1, float var2, Class9332 var3, Class1656 var4, Minecraft var5);
+   void method24193(int var1, float var2, MatrixStack var3, Class1656 var4, Minecraft var5);
 }

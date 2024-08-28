@@ -247,7 +247,7 @@ public class Class1148 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -436,7 +436,7 @@ public class Class1148 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       Class104 var7 = this.field6248.method3950();
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 10, 16777215);

@@ -33,36 +33,36 @@ public class Class9834 {
       return this.field45930.apply(var1);
    }
 
-   public int method38799(Class9332 var1, String var2, float var3, float var4, int var5) {
+   public int method38799(MatrixStack var1, String var2, float var3, float var4, int var5) {
       return this.method38807(var2, var3, var4, var5, var1.method35296().method32361(), true, this.method38829());
    }
 
-   public int method38800(Class9332 var1, String var2, float var3, float var4, int var5, boolean var6) {
+   public int method38800(MatrixStack var1, String var2, float var3, float var4, int var5, boolean var6) {
       RenderSystem.disableAlphaTest();
       return this.method38807(var2, var3, var4, var5, var1.method35296().method32361(), true, var6);
    }
 
-   public int method38801(Class9332 var1, String var2, float var3, float var4, int var5) {
+   public int method38801(MatrixStack var1, String var2, float var3, float var4, int var5) {
       RenderSystem.disableAlphaTest();
       return this.method38807(var2, var3, var4, var5, var1.method35296().method32361(), false, this.method38829());
    }
 
-   public int method38802(Class9332 var1, Class9125 var2, float var3, float var4, int var5) {
+   public int method38802(MatrixStack var1, Class9125 var2, float var3, float var4, int var5) {
       RenderSystem.disableAlphaTest();
       return this.method38809(var2, var3, var4, var5, var1.method35296().method32361(), true);
    }
 
-   public int method38803(Class9332 var1, ITextComponent var2, float var3, float var4, int var5) {
+   public int method38803(MatrixStack var1, ITextComponent var2, float var3, float var4, int var5) {
       RenderSystem.disableAlphaTest();
       return this.method38809(var2.func_241878_f(), var3, var4, var5, var1.method35296().method32361(), true);
    }
 
-   public int method38804(Class9332 var1, Class9125 var2, float var3, float var4, int var5) {
+   public int method38804(MatrixStack var1, Class9125 var2, float var3, float var4, int var5) {
       RenderSystem.disableAlphaTest();
       return this.method38809(var2, var3, var4, var5, var1.method35296().method32361(), false);
    }
 
-   public int method38805(Class9332 var1, ITextComponent var2, float var3, float var4, int var5) {
+   public int method38805(MatrixStack var1, ITextComponent var2, float var3, float var4, int var5) {
       RenderSystem.disableAlphaTest();
       return this.method38809(var2.func_241878_f(), var3, var4, var5, var1.method35296().method32361(), false);
    }

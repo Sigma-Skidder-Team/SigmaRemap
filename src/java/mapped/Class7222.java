@@ -7,7 +7,7 @@ public interface Class7222 {
 
    ITextComponent method22698();
 
-   void method22699(Class9332 var1, float var2, int var3);
+   void method22699(MatrixStack var1, float var2, int var3);
 
    boolean method22700();
 }

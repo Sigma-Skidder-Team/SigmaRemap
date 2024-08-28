@@ -16,7 +16,7 @@ public class Class1275 extends Class1274<Class1175> {
    }
 
    @Override
-   public void method6038(Class9332 var1, int var2, int var3, Class9352 var4) {
+   public void method6038(MatrixStack var1, int var2, int var3, Class9352 var4) {
       IFormattableTextComponent var7 = new StringTextComponent("").append(this.field6804).mergeStyle(TextFormatting.UNDERLINE, TextFormatting.BOLD);
       this.field6782
          .field1294

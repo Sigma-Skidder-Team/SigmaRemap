@@ -277,7 +277,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public void method3000() {
-      this.field5024.method6820().method22503("entityBaseTick");
+      this.field5024.method6820().startSection("entityBaseTick");
       if (this.method3328() && this.getRidingEntity().field5041) {
          this.method2759();
       }
@@ -330,7 +330,7 @@ public abstract class Entity implements Class933, Class909 {
       }
 
       this.field5062 = false;
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
    }
 
    public void method3218() {
@@ -402,9 +402,9 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public void move(Class2107 var1, Vector3d var2) {
-      if (Minecraft.getInstance().field1339 != null
-         && Minecraft.getInstance().field1339.getRidingEntity() != null
-         && Minecraft.getInstance().field1339.getRidingEntity().method3205() == this.method3205()) {
+      if (Minecraft.getInstance().player != null
+         && Minecraft.getInstance().player.getRidingEntity() != null
+         && Minecraft.getInstance().player.getRidingEntity().method3205() == this.method3205()) {
          Class4432 var5 = new Class4432(var2.field18048, var2.field18049, var2.field18050);
          Client.getInstance().getEventManager().call(var5);
          if (var5.isCancelled()) {
@@ -425,7 +425,7 @@ public abstract class Entity implements Class933, Class909 {
             }
          }
 
-         this.field5024.method6820().method22503("move");
+         this.field5024.method6820().startSection("move");
          if (this.field5040.method11349() > 1.0E-7) {
             var2 = var2.method11346(this.field5040);
             this.field5040 = Vector3d.field18047;
@@ -439,8 +439,8 @@ public abstract class Entity implements Class933, Class909 {
             this.method3239();
          }
 
-         this.field5024.method6820().method22505();
-         this.field5024.method6820().method22503("rest");
+         this.field5024.method6820().endSection();
+         this.field5024.method6820().startSection("rest");
          this.field5037 = !MathHelper.method37787(var2.field18048, var25.field18048) || !MathHelper.method37787(var2.field18050, var25.field18050);
          this.field5038 = var2.field18049 != var25.field18049;
          this.field5036 = this.field5038 && var2.field18049 < 0.0;
@@ -521,7 +521,7 @@ public abstract class Entity implements Class933, Class909 {
             this.method2966(-this.method2865());
          }
 
-         this.field5024.method6820().method22505();
+         this.field5024.method6820().endSection();
       }
    }
 
@@ -1261,8 +1261,8 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public void method2739(Entity var1, int var2, Class8654 var3) {
-      if (var1 instanceof Class878) {
-         CriteriaTriggers.field44467.method15158((Class878)var1, this, var3);
+      if (var1 instanceof ServerPlayerEntity) {
+         CriteriaTriggers.field44467.method15158((ServerPlayerEntity)var1, this, var3);
       }
    }
 
@@ -1697,15 +1697,15 @@ public abstract class Entity implements Class933, Class909 {
                this.field5081 = 0;
             }
          } else {
-            Class314 var5 = var4.method6715();
+            MinecraftServer var5 = var4.method6715();
             Class8705 var6 = this.field5024.method6813() != World.field9000 ? World.field9000 : World.field8999;
             ServerWorld var7 = var5.method1318(var6);
             if (var7 != null && var5.method1312() && !this.method3328() && this.field5081++ >= var3) {
-               this.field5024.method6820().method22503("portal");
+               this.field5024.method6820().startSection("portal");
                this.field5081 = var3;
                this.method3218();
                this.method2745(var7);
-               this.field5024.method6820().method22505();
+               this.field5024.method6820().endSection();
             }
 
             this.field5080 = false;
@@ -2044,12 +2044,12 @@ public abstract class Entity implements Class933, Class909 {
    @Nullable
    public Entity method2745(ServerWorld var1) {
       if (this.field5024 instanceof ServerWorld && !this.field5041) {
-         this.field5024.method6820().method22503("changeDimension");
+         this.field5024.method6820().startSection("changeDimension");
          this.method3200();
-         this.field5024.method6820().method22503("reposition");
+         this.field5024.method6820().startSection("reposition");
          Class9761 var4 = this.method2744(var1);
          if (var4 != null) {
-            this.field5024.method6820().method22506("reloading");
+            this.field5024.method6820().endStartSection("reloading");
             Entity var5 = this.method3204().method33215(var1);
             if (var5 != null) {
                var5.method3365(this);
@@ -2062,10 +2062,10 @@ public abstract class Entity implements Class933, Class909 {
             }
 
             this.method3366();
-            this.field5024.method6820().method22505();
+            this.field5024.method6820().endSection();
             ((ServerWorld)this.field5024).method6904();
             var1.method6904();
-            this.field5024.method6820().method22505();
+            this.field5024.method6820().endSection();
             return var5;
          } else {
             return null;
@@ -2318,7 +2318,7 @@ public abstract class Entity implements Class933, Class909 {
       return new HoverEvent(HoverEvent$Action.SHOW_ENTITY, new HoverEvent$EntityHover(this.method3204(), this.getUniqueID(), this.getName()));
    }
 
-   public boolean method2749(Class878 var1) {
+   public boolean method2749(ServerPlayerEntity var1) {
       return true;
    }
 
@@ -2363,7 +2363,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    @Override
-   public void method1328(ITextComponent var1, UUID var2) {
+   public void sendMessage(ITextComponent var1, UUID var2) {
    }
 
    public World method3395() {
@@ -2371,7 +2371,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    @Nullable
-   public Class314 method3396() {
+   public MinecraftServer method3396() {
       return this.field5024.method6715();
    }
 
@@ -2391,10 +2391,10 @@ public abstract class Entity implements Class933, Class909 {
       Class7858.method26321(var1, var2);
    }
 
-   public void method3400(Class878 var1) {
+   public void method3400(ServerPlayerEntity var1) {
    }
 
-   public void method3401(Class878 var1) {
+   public void method3401(ServerPlayerEntity var1) {
    }
 
    public float method3402(Class80 var1) {
@@ -2491,7 +2491,7 @@ public abstract class Entity implements Class933, Class909 {
 
    private void method3414(boolean var1, Set<Entity> var2) {
       for (Entity var6 : this.method3408()) {
-         if (!var1 || Class878.class.isAssignableFrom(var6.getClass())) {
+         if (!var1 || ServerPlayerEntity.class.isAssignableFrom(var6.getClass())) {
             var2.add(var6);
          }
 

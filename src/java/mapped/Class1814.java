@@ -19,13 +19,13 @@ public class Class1814 implements AutoCloseable {
    private final Path field9780;
    private final String field9781;
    private final Map<Class5137, Path> field9782;
-   public final Class9774 field9783;
+   public final SaveFormat field9783;
 
-   public Class1814(Class9774 var1, String var2) throws IOException {
+   public Class1814(SaveFormat var1, String var2) throws IOException {
       this.field9783 = var1;
       this.field9782 = Maps.newHashMap();
       this.field9781 = var2;
-      this.field9780 = Class9774.method38475(var1).resolve(var2);
+      this.field9780 = SaveFormat.method38475(var1).resolve(var2);
       this.field9779 = Class1697.method7299(this.field9780);
    }
 
@@ -49,12 +49,12 @@ public class Class1814 implements AutoCloseable {
 
    public Class8716 method7994() {
       this.method7993();
-      return new Class8716(this, Class9774.method38476(this.field9783));
+      return new Class8716(this, SaveFormat.method38476(this.field9783));
    }
 
    public boolean method7995() {
       Class2024 var3 = this.method7997();
-      return var3 != null && var3.method8652().method30182() != Class9774.method38477(this.field9783);
+      return var3 != null && var3.method8652().method30182() != SaveFormat.method38477(this.field9783);
    }
 
    public boolean method7996(Class1339 var1) {
@@ -65,19 +65,19 @@ public class Class1814 implements AutoCloseable {
    @Nullable
    public Class2024 method7997() {
       this.method7993();
-      return (Class2024)Class9774.method38479(this.field9783, this.field9780.toFile(), Class9774.method38478(this.field9783, this.field9780.toFile(), false));
+      return (Class2024) SaveFormat.method38479(this.field9783, this.field9780.toFile(), SaveFormat.method38478(this.field9783, this.field9780.toFile(), false));
    }
 
    @Nullable
    public Class6611 method7998(DynamicOps<Class30> var1, Class7818 var2) {
       this.method7993();
-      return (Class6611)Class9774.method38479(this.field9783, this.field9780.toFile(), Class9774.method38480(var1, var2));
+      return (Class6611) SaveFormat.method38479(this.field9783, this.field9780.toFile(), SaveFormat.method38480(var1, var2));
    }
 
    @Nullable
    public Class7818 method7999() {
       this.method7993();
-      return (Class7818)Class9774.method38479(this.field9783, this.field9780.toFile(), (var0, var1) -> Class9774.method38483((File) var0, (DataFixer) var1));
+      return (Class7818) SaveFormat.method38479(this.field9783, this.field9780.toFile(), (var0, var1) -> SaveFormat.method38483((File) var0, (DataFixer) var1));
    }
 
    public void method8000(Class8904 var1, Class6611 var2) {
@@ -97,7 +97,7 @@ public class Class1814 implements AutoCloseable {
          File var11 = new File(var6, "level.dat");
          Util.method38526(var11, var9, var10);
       } catch (Exception var12) {
-         Class9774.method38481().error("Failed to save level {}", var6, var12);
+         SaveFormat.method38481().error("Failed to save level {}", var6, var12);
       }
    }
 
@@ -111,7 +111,7 @@ public class Class1814 implements AutoCloseable {
       Path var3 = this.field9780.resolve("session.lock");
 
       for (int var4 = 1; var4 <= 5; var4++) {
-         Class9774.method38481().info("Attempt {}...", var4);
+         SaveFormat.method38481().info("Attempt {}...", var4);
 
          try {
             Files.walkFileTree(this.field9780, new Class7376(this, var3));
@@ -121,7 +121,7 @@ public class Class1814 implements AutoCloseable {
                throw var8;
             }
 
-            Class9774.method38481().warn("Failed to delete {}", this.field9780, var8);
+            SaveFormat.method38481().warn("Failed to delete {}", this.field9780, var8);
 
             try {
                Thread.sleep(500L);
@@ -133,7 +133,7 @@ public class Class1814 implements AutoCloseable {
 
    public void method8004(String var1) throws IOException {
       this.method7993();
-      File var4 = new File(Class9774.method38475(this.field9783).toFile(), this.field9781);
+      File var4 = new File(SaveFormat.method38475(this.field9783).toFile(), this.field9781);
       if (var4.exists()) {
          File var5 = new File(var4, "level.dat");
          if (var5.exists()) {
@@ -147,7 +147,7 @@ public class Class1814 implements AutoCloseable {
 
    public long method8005() throws IOException {
       this.method7993();
-      String var3 = LocalDateTime.now().format(Class9774.method38482()) + "_" + this.field9781;
+      String var3 = LocalDateTime.now().format(SaveFormat.method38482()) + "_" + this.field9781;
       Path var4 = this.field9783.method38467();
 
       try {

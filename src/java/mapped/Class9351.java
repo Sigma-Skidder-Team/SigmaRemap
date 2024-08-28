@@ -8,11 +8,11 @@ import java.util.Locale;
 import java.util.Map;
 
 public final class Class9351 implements ProfileLookupCallback {
-   public final Class314 field43403;
+   public final MinecraftServer field43403;
    public final Map field43404;
    public final Class4528 field43405;
 
-   public Class9351(Class314 var1, Map var2, Class4528 var3) {
+   public Class9351(MinecraftServer var1, Map var2, Class4528 var3) {
       this.field43403 = var1;
       this.field43404 = var2;
       this.field43405 = var3;

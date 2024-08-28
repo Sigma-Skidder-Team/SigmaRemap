@@ -110,7 +110,7 @@ public class Class4250 extends Class4247 {
       GL11.glVertex2f((float)(this.field20609.method13263() - var5 + 5), (float)(this.field20609.method13265() - var5 + 5));
       GL11.glEnd();
       RenderSystem.disableBlend();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       GL11.glPopMatrix();
       super.method13027(var1);
    }

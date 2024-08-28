@@ -62,7 +62,7 @@ public class Class1268 extends Class1193 {
             this.field6743.put(var7, Lists.newArrayList());
         }
 
-        Class6688 var8 = Class6688.field29302;
+        NarratorChatListener var8 = NarratorChatListener.INSTANCE;
         this.field6743.get(ChatType.CHAT).add(new Class6686(var1));
         this.field6743.get(ChatType.CHAT).add(var8);
         this.field6743.get(ChatType.SYSTEM).add(new Class6686(var1));
@@ -77,9 +77,9 @@ public class Class1268 extends Class1193 {
         this.field6736 = 20;
     }
 
-    public void method5961(Class9332 var1, float var2) {
-        this.field6741 = this.field6716.method1580().method8045();
-        this.field6742 = this.field6716.method1580().method8046();
+    public void method5961(MatrixStack var1, float var2) {
+        this.field6741 = this.field6716.method1580().getScaledWidth();
+        this.field6742 = this.field6716.method1580().getScaledHeight();
         Class9834 var5 = this.method5991();
         RenderSystem.enableBlend();
         if (!Class7944.method26883()) {
@@ -90,25 +90,25 @@ public class Class1268 extends Class1193 {
         }
 
         Client.getInstance().method19926();
-        ItemStack var6 = this.field6716.field1339.field4902.method4052(3);
-        if (this.field6716.field1299.method37173().method8246() && var6.method32107() == Blocks.field36589.method11581()) {
+        ItemStack var6 = this.field6716.player.field4902.method4052(3);
+        if (this.field6716.gameSettings.method37173().method8246() && var6.method32107() == Blocks.field36589.method11581()) {
             this.method5978();
         }
 
-        float var7 = MathHelper.method37821(var2, this.field6716.field1339.field6142, this.field6716.field1339.field6141);
-        if (var7 > 0.0F && !this.field6716.field1339.method3033(Class8254.field35475)) {
+        float var7 = MathHelper.method37821(var2, this.field6716.player.field6142, this.field6716.player.field6141);
+        if (var7 > 0.0F && !this.field6716.player.method3033(Class8254.field35475)) {
             this.method5981(var7);
         }
 
         if (this.field6716.field1337.method23157() != Class1894.field11105) {
-            if (!this.field6716.field1299.field44662) {
+            if (!this.field6716.gameSettings.field44662) {
                 this.method5966(var2, var1);
             }
         } else {
             this.field6728.method5720(var1, var2);
         }
 
-        if (!this.field6716.field1299.field44662) {
+        if (!this.field6716.gameSettings.field44662) {
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6453);
             RenderSystem.enableBlend();
@@ -116,9 +116,9 @@ public class Class1268 extends Class1193 {
             this.method5963(var1);
             Class7414.method23696();
             RenderSystem.method27938();
-            this.field6716.method1574().method22503("bossHealth");
+            this.field6716.method1574().startSection("bossHealth");
             this.field6730.method5953(var1);
-            this.field6716.method1574().method22505();
+            this.field6716.method1574().endSection();
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6453);
             if (this.field6716.field1337.method23130()) {
@@ -128,7 +128,7 @@ public class Class1268 extends Class1193 {
             this.method5977(var1);
             RenderSystem.disableBlend();
             int var8 = this.field6741 / 2 - 91;
-            if (!this.field6716.field1339.method5405()) {
+            if (!this.field6716.player.method5405()) {
                 if (this.field6716.field1337.method23150()) {
                     this.method5968(var1, var8);
                 }
@@ -136,18 +136,18 @@ public class Class1268 extends Class1193 {
                 this.method5967(var1, var8);
             }
 
-            if (this.field6716.field1299.field44594 && this.field6716.field1337.method23157() != Class1894.field11105) {
+            if (this.field6716.gameSettings.field44594 && this.field6716.field1337.method23157() != Class1894.field11105) {
                 this.method5969(var1);
-            } else if (this.field6716.field1339.method2800()) {
+            } else if (this.field6716.player.method2800()) {
                 this.field6728.method5723(var1);
             }
         }
 
-        if (this.field6716.field1339.method2910() > 0) {
-            this.field6716.method1574().method22503("sleep");
+        if (this.field6716.player.method2910() > 0) {
+            this.field6716.method1574().startSection("sleep");
             RenderSystem.disableDepthTest();
             RenderSystem.method27817();
-            float var14 = (float) this.field6716.field1339.method2910();
+            float var14 = (float) this.field6716.player.method2910();
             float var9 = var14 / 100.0F;
             if (var9 > 1.0F) {
                 var9 = 1.0F - (var14 - 100.0F) / 10.0F;
@@ -157,7 +157,7 @@ public class Class1268 extends Class1193 {
             method5686(var1, 0, 0, this.field6741, this.field6742, var10);
             RenderSystem.disableAlphaTest();
             RenderSystem.enableDepthTest();
-            this.field6716.method1574().method22505();
+            this.field6716.method1574().endSection();
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
         }
 
@@ -166,13 +166,13 @@ public class Class1268 extends Class1193 {
         }
 
         this.method5965(var1);
-        if (this.field6716.field1299.field44664) {
+        if (this.field6716.gameSettings.showDebugInfo) {
             this.field6726.method5878(var1);
         }
 
-        if (!this.field6716.field1299.field44662) {
+        if (!this.field6716.gameSettings.field44662) {
             if (this.field6720 != null && this.field6721 > 0) {
-                this.field6716.method1574().method22503("overlayMessage");
+                this.field6716.method1574().startSection("overlayMessage");
                 float var15 = (float) this.field6721 - var2;
                 int var18 = (int) (var15 * 255.0F / 20.0F);
                 if (var18 > 255) {
@@ -197,11 +197,11 @@ public class Class1268 extends Class1193 {
                     RenderSystem.popMatrix();
                 }
 
-                this.field6716.method1574().method22505();
+                this.field6716.method1574().endSection();
             }
 
             if (this.field6732 != null && this.field6731 > 0) {
-                this.field6716.method1574().method22503("titleAndSubtitle");
+                this.field6716.method1574().startSection("titleAndSubtitle");
                 float var16 = (float) this.field6731 - var2;
                 int var19 = 255;
                 if (this.field6731 > this.field6736 + this.field6735) {
@@ -239,13 +239,13 @@ public class Class1268 extends Class1193 {
                     RenderSystem.popMatrix();
                 }
 
-                this.field6716.method1574().method22505();
+                this.field6716.method1574().endSection();
             }
 
             this.field6727.method5999(var1);
-            Class6886 var17 = this.field6716.field1338.method6805();
+            Class6886 var17 = this.field6716.world.method6805();
             Class8375 var21 = null;
-            Class8218 var25 = var17.method20998(this.field6716.field1339.method2956());
+            Class8218 var25 = var17.method20998(this.field6716.player.method2956());
             if (var25 != null) {
                 int var27 = var25.method28591().getColorIndex();
                 if (var27 >= 0) {
@@ -271,13 +271,13 @@ public class Class1268 extends Class1193 {
             RenderSystem.method27817();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, (float) (this.field6742 - 48), 0.0F);
-            this.field6716.method1574().method22503("chat");
+            this.field6716.method1574().startSection("chat");
             this.field6718.method5926(var1, this.field6719);
-            this.field6716.method1574().method22505();
+            this.field6716.method1574().endSection();
             RenderSystem.popMatrix();
             var28 = var17.method20989(0);
-            if (this.field6716.field1299.field44646.method8509()
-                    && (!this.field6716.method1529() || this.field6716.field1339.connection.method15790().size() > 1 || var28 != null)) {
+            if (this.field6716.gameSettings.field44646.method8509()
+                    && (!this.field6716.isIntegratedServerRunning() || this.field6716.player.connection.method15790().size() > 1 || var28 != null)) {
                 this.field6729.method5919(true);
                 this.field6729.method5920(var1, this.field6741, var17, var28);
             } else {
@@ -289,21 +289,21 @@ public class Class1268 extends Class1193 {
         RenderSystem.disableAlphaTest();
     }
 
-    private void method5962(Class9332 var1, Class9834 var2, int var3, int var4, int var5) {
-        int var8 = this.field6716.field1299.method37140(0.0F);
+    private void method5962(MatrixStack var1, Class9834 var2, int var3, int var4, int var5) {
+        int var8 = this.field6716.gameSettings.method37140(0.0F);
         if (var8 != 0) {
             int var9 = -var4 / 2;
             method5686(var1, var9 - 2, var3 - 2, var9 + var4 + 2, var3 + 9 + 2, Class9470.method36521(var8, var5));
         }
     }
 
-    private void method5963(Class9332 var1) {
-        Class9574 var4 = this.field6716.field1299;
+    private void method5963(MatrixStack var1) {
+        Class9574 var4 = this.field6716.gameSettings;
         if (var4.method37173().method8246() && (this.field6716.field1337.method23157() != Class1894.field11105 || this.method5964(this.field6716.field1346))) {
-            if (var4.field44664 && !var4.field44662 && !this.field6716.field1339.method2964() && !var4.field44621) {
+            if (var4.showDebugInfo && !var4.field44662 && !this.field6716.player.method2964() && !var4.field44621) {
                 RenderSystem.pushMatrix();
                 RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), (float) this.method5702());
-                Class9624 var11 = this.field6716.field1295.method768();
+                Class9624 var11 = this.field6716.gameRenderer.getActiveRenderInfo();
                 RenderSystem.method27883(var11.method37506(), -1.0F, 0.0F, 0.0F);
                 RenderSystem.method27883(var11.method37507(), 0.0F, 1.0F, 0.0F);
                 RenderSystem.scalef(-1.0F, -1.0F, -1.0F);
@@ -313,11 +313,11 @@ public class Class1268 extends Class1193 {
                 RenderSystem.method27836(Class2339.field15994, Class1981.field12933, Class2339.field15990, Class1981.field12936);
                 byte var5 = 15;
                 this.method5696(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
-                if (this.field6716.field1299.field44603 == Class2207.field14426) {
-                    float var6 = this.field6716.field1339.method2974(0.0F);
+                if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
+                    float var6 = this.field6716.player.method2974(0.0F);
                     boolean var7 = false;
                     if (this.field6716.field1345 != null && this.field6716.field1345 instanceof Class880 && var6 >= 1.0F) {
-                        var7 = this.field6716.field1339.method2973() > 5.0F;
+                        var7 = this.field6716.player.method2973() > 5.0F;
                         var7 &= this.field6716.field1345.method3066();
                     }
 
@@ -344,7 +344,7 @@ public class Class1268 extends Class1193 {
                     return false;
                 } else {
                     BlockPos var4 = ((Class8711) var1).method31423();
-                    Class1656 var5 = this.field6716.field1338;
+                    Class1656 var5 = this.field6716.world;
                     return var5.method6738(var4).method23445(var5, var4) != null;
                 }
             } else {
@@ -355,8 +355,8 @@ public class Class1268 extends Class1193 {
         }
     }
 
-    public void method5965(Class9332 var1) {
-        Collection<Class2023> var4 = this.field6716.field1339.method3031();
+    public void method5965(MatrixStack var1) {
+        Collection<Class2023> var4 = this.field6716.player.method3031();
         if (!var4.isEmpty()) {
             RenderSystem.enableBlend();
             int var5 = 0;
@@ -424,7 +424,7 @@ public class Class1268 extends Class1193 {
         }
     }
 
-    public void method5966(float var1, Class9332 var2) {
+    public void method5966(float var1, MatrixStack var2) {
         PlayerEntity var5 = this.method5972();
         if (var5 != null) {
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -470,8 +470,8 @@ public class Class1268 extends Class1193 {
                 Class7992.method27282(false);
             }
 
-            if (this.field6716.field1299.field44603 == Class2207.field14427) {
-                float var17 = this.field6716.field1339.method2974(0.0F);
+            if (this.field6716.gameSettings.field44603 == Class2207.field14427) {
+                float var17 = this.field6716.player.method2974(0.0F);
                 if (var17 < 1.0F) {
                     int var18 = this.field6742 - 20;
                     int var19 = var8 + 91 + 6;
@@ -492,10 +492,10 @@ public class Class1268 extends Class1193 {
         }
     }
 
-    public void method5967(Class9332 var1, int var2) {
-        this.field6716.method1574().method22503("jumpBar");
+    public void method5967(MatrixStack var1, int var2) {
+        this.field6716.method1574().startSection("jumpBar");
         this.field6716.getTextureManager().bindTexture(Class1193.field6453);
-        float var5 = this.field6716.field1339.method5406();
+        float var5 = this.field6716.player.method5406();
         short var6 = 182;
         int var7 = (int) (var5 * 183.0F);
         int var8 = this.field6742 - 32 + 3;
@@ -504,16 +504,16 @@ public class Class1268 extends Class1193 {
             this.method5696(var1, var2, var8, 0, 89, var7, 5);
         }
 
-        this.field6716.method1574().method22505();
+        this.field6716.method1574().endSection();
     }
 
-    public void method5968(Class9332 var1, int var2) {
-        this.field6716.method1574().method22503("expBar");
+    public void method5968(MatrixStack var1, int var2) {
+        this.field6716.method1574().startSection("expBar");
         this.field6716.getTextureManager().bindTexture(Class1193.field6453);
-        int var5 = this.field6716.field1339.method2930();
+        int var5 = this.field6716.player.method2930();
         if (var5 > 0) {
             short var6 = 182;
-            int var7 = (int) (this.field6716.field1339.field4922 * 183.0F);
+            int var7 = (int) (this.field6716.player.field4922 * 183.0F);
             int var8 = this.field6742 - 32 + 3;
             this.method5696(var1, var2, var8, 0, 64, 182, 5);
             if (var7 > 0) {
@@ -521,15 +521,15 @@ public class Class1268 extends Class1193 {
             }
         }
 
-        this.field6716.method1574().method22505();
-        if (this.field6716.field1339.field4920 > 0) {
-            this.field6716.method1574().method22503("expLevel");
+        this.field6716.method1574().endSection();
+        if (this.field6716.player.field4920 > 0) {
+            this.field6716.method1574().startSection("expLevel");
             int var10 = 8453920;
             if (Class7944.method26911()) {
                 var10 = Class9680.method37898(var10);
             }
 
-            String var11 = "" + this.field6716.field1339.field4920;
+            String var11 = "" + this.field6716.player.field4920;
             int var12 = (this.field6741 - this.method5991().method38820(var11)) / 2;
             int var9 = this.field6742 - 31 - 4;
             this.method5991().method38801(var1, var11, (float) (var12 + 1), (float) var9, 0);
@@ -537,12 +537,12 @@ public class Class1268 extends Class1193 {
             this.method5991().method38801(var1, var11, (float) var12, (float) (var9 + 1), 0);
             this.method5991().method38801(var1, var11, (float) var12, (float) (var9 - 1), 0);
             this.method5991().method38801(var1, var11, (float) var12, (float) var9, var10);
-            this.field6716.method1574().method22505();
+            this.field6716.method1574().endSection();
         }
     }
 
-    public void method5969(Class9332 var1) {
-        this.field6716.method1574().method22503("selectedItemName");
+    public void method5969(MatrixStack var1) {
+        this.field6716.method1574().startSection("selectedItemName");
         if (this.field6724 > 0 && !this.field6725.method32105()) {
             IFormattableTextComponent var4 = new StringTextComponent("").append(this.field6725.method32149()).mergeStyle(this.field6725.method32160().field12889);
             if (this.field6725.method32152()) {
@@ -570,7 +570,7 @@ public class Class1268 extends Class1193 {
                 RenderSystem.pushMatrix();
                 RenderSystem.enableBlend();
                 RenderSystem.method27938();
-                method5686(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field6716.field1299.method37141(0));
+                method5686(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field6716.gameSettings.method37141(0));
                 Class9834 var10 = null;
                 if (Class9299.field42912.method20214()) {
                     var10 = (Class9834) Class9299.method35070(this.field6725.method32107(), Class9299.field42912, this.field6725);
@@ -588,24 +588,24 @@ public class Class1268 extends Class1193 {
             }
         }
 
-        this.field6716.method1574().method22505();
+        this.field6716.method1574().endSection();
     }
 
-    public void method5970(Class9332 var1) {
-        this.field6716.method1574().method22503("demo");
+    public void method5970(MatrixStack var1) {
+        this.field6716.method1574().startSection("demo");
         Object var4;
-        if (this.field6716.field1338.method6783() < 120500L) {
-            var4 = new TranslationTextComponent("demo.remainingTime", Class9001.method33254((int) (120500L - this.field6716.field1338.method6783())));
+        if (this.field6716.world.method6783() < 120500L) {
+            var4 = new TranslationTextComponent("demo.remainingTime", Class9001.method33254((int) (120500L - this.field6716.world.method6783())));
         } else {
             var4 = field6714;
         }
 
         int var5 = this.method5991().method38821((ITextProperties) var4);
         this.method5991().method38803(var1, (ITextComponent) var4, (float) (this.field6741 - var5 - 10), 5.0F, 16777215);
-        this.field6716.method1574().method22505();
+        this.field6716.method1574().endSection();
     }
 
-    private void method5971(Class9332 var1, Class8375 var2) {
+    private void method5971(MatrixStack var1, Class8375 var2) {
         Class6886 var5 = var2.method29335();
         Collection<Class9411> var6 = var5.method20981(var2);
         List var7 = var6.stream().filter(var0 -> var0.method36054() != null && !var0.method36054().startsWith("#")).collect(Collectors.toList());
@@ -633,8 +633,8 @@ public class Class1268 extends Class1193 {
         byte var30 = 3;
         int var31 = this.field6741 - var11 - 3;
         int var17 = 0;
-        int var18 = this.field6716.field1299.method37140(0.3F);
-        int var19 = this.field6716.field1299.method37140(0.4F);
+        int var18 = this.field6716.gameSettings.method37140(0.3F);
+        int var19 = this.field6716.gameSettings.method37140(0.4F);
 
         for (Pair var21 : var8) {
             var17++;
@@ -692,12 +692,12 @@ public class Class1268 extends Class1193 {
         return (int) Math.ceil((double) var1 / 10.0);
     }
 
-    private void method5976(Class9332 var1) {
+    private void method5976(MatrixStack var1) {
         PlayerEntity var4 = this.method5972();
         if (var4 != null) {
             int var5 = MathHelper.method37773(var4.method3042());
             boolean var6 = this.field6740 > (long) this.field6719 && (this.field6740 - (long) this.field6719) / 3L % 2L == 1L;
-            long var7 = Util.method38487();
+            long var7 = Util.milliTime();
             if (var5 < this.field6737 && var4.field5061 > 0) {
                 this.field6739 = var7;
                 this.field6740 = (long) (this.field6719 + 20);
@@ -733,7 +733,7 @@ public class Class1268 extends Class1193 {
                 var23 = this.field6719 % MathHelper.method37773(var15 + 5.0F);
             }
 
-            this.field6716.method1574().method22503("armor");
+            this.field6716.method1574().startSection("armor");
 
             for (int var24 = 0; var24 < 10; var24++) {
                 if (var22 > 0) {
@@ -752,7 +752,7 @@ public class Class1268 extends Class1193 {
                 }
             }
 
-            this.field6716.method1574().method22506("health");
+            this.field6716.method1574().endStartSection("health");
 
             for (int var33 = MathHelper.method37773((var15 + (float) var16) / 2.0F) - 1; var33 >= 0; var33--) {
                 byte var35 = 16;
@@ -781,7 +781,7 @@ public class Class1268 extends Class1193 {
                 }
 
                 byte var30 = 0;
-                if (var4.field5024.method6788().method20045()) {
+                if (var4.field5024.getWorldInfo().isHardcore()) {
                     var30 = 5;
                 }
 
@@ -816,7 +816,7 @@ public class Class1268 extends Class1193 {
             Class880 var34 = this.method5973();
             int var36 = this.method5974(var34);
             if (var36 == 0) {
-                this.field6716.method1574().method22506("food");
+                this.field6716.method1574().endStartSection("food");
 
                 for (int var37 = 0; var37 < 10; var37++) {
                     int var39 = var14;
@@ -845,7 +845,7 @@ public class Class1268 extends Class1193 {
                 var20 -= 10;
             }
 
-            this.field6716.method1574().method22506("air");
+            this.field6716.method1574().endStartSection("air");
             int var38 = var4.method3350();
             int var40 = Math.min(var4.method3351(), var38);
             if (var4.method3263(Class8953.field40469) || var40 < var38) {
@@ -863,17 +863,17 @@ public class Class1268 extends Class1193 {
                 }
             }
 
-            this.field6716.method1574().method22505();
+            this.field6716.method1574().endSection();
         }
     }
 
-    private void method5977(Class9332 var1) {
+    private void method5977(MatrixStack var1) {
         Class880 var4 = this.method5973();
         if (var4 != null) {
             int var5 = this.method5974(var4);
             if (var5 != 0) {
                 int var6 = (int) Math.ceil((double) var4.method3042());
-                this.field6716.method1574().method22506("mountHealth");
+                this.field6716.method1574().endStartSection("mountHealth");
                 int var7 = this.field6742 - 39;
                 int var8 = this.field6741 / 2 + 91;
                 int var9 = var7;
@@ -933,7 +933,7 @@ public class Class1268 extends Class1193 {
 
     private void method5980(Entity var1) {
         if (Class7944.method26883()) {
-            Class7522 var4 = this.field6716.field1338.method6810();
+            Class7522 var4 = this.field6716.world.method6810();
             float var5 = (float) var4.method24526(var1);
             double var6 = Math.min(var4.method24550() * (double) var4.method24551() * 1000.0, Math.abs(var4.method24539() - var4.method24537()));
             double var8 = Math.max((double) var4.method24553(), var6);
@@ -1024,7 +1024,7 @@ public class Class1268 extends Class1193 {
     }
 
     public void method5983() {
-        if (this.field6716.field1338 == null) {
+        if (this.field6716.world == null) {
             Class8389.method29394();
         }
 
@@ -1046,8 +1046,8 @@ public class Class1268 extends Class1193 {
             this.method5979(var3);
         }
 
-        if (this.field6716.field1339 != null) {
-            ItemStack var4 = this.field6716.field1339.field4902.method4028();
+        if (this.field6716.player != null) {
+            ItemStack var4 = this.field6716.player.field4902.method4028();
             boolean var5 = true;
             if (Class9299.field42924.method20214()) {
                 ITextComponent var6 = (ITextComponent) Class9299.method35070(var4, Class9299.field42924, var4.method32149());
@@ -1116,18 +1116,18 @@ public class Class1268 extends Class1193 {
     public UUID method5987(ITextComponent var1) {
         String var4 = TextProcessing.func_244782_a(var1);
         String var5 = StringUtils.substringBetween(var4, "<", ">");
-        return var5 != null ? this.field6716.method1578().method37610(var5) : Util.field45724;
+        return var5 != null ? this.field6716.method1578().method37610(var5) : Util.DUMMY_UUID;
     }
 
     public void method5988(ChatType var1, ITextComponent var2, UUID var3) {
-        if (!this.field6716.method1511(var3) && (!this.field6716.field1299.field44631 || !this.field6716.method1511(this.method5987(var2)))) {
+        if (!this.field6716.method1511(var3) && (!this.field6716.gameSettings.field44631 || !this.field6716.method1511(this.method5987(var2)))) {
             for (Class6687 var7 : this.field6743.get(var1)) {
                 var7.method20400(var1, var2, var3);
             }
         }
     }
 
-    public Class1266 method5989() {
+    public Class1266 getChatGUI() {
         return this.field6718;
     }
 

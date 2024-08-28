@@ -17,7 +17,7 @@ public abstract class Class1325 extends Screen {
    private Class6850 field7016;
 
    public Class1325() {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
    }
 
    @Override
@@ -92,7 +92,7 @@ public abstract class Class1325 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -137,7 +137,7 @@ public abstract class Class1325 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, field7007, this.field4564 / 2, 20, 16777215);
       method5693(var1, this.field4568, field7008, this.field4564 / 2 - 150, 40, 10526880);

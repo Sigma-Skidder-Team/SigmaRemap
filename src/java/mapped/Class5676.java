@@ -6,7 +6,7 @@ public abstract class Class5676<T extends Class1025> extends Class5651<T, Class2
       this.method17880(new Class235<T, Class2823<T>>(this));
    }
 
-   public void method17857(T var1, Class9332 var2, float var3) {
+   public void method17857(T var1, MatrixStack var2, float var3) {
       float var6 = 0.9375F;
       var2.method35292(0.9375F, 0.9375F, 0.9375F);
    }

@@ -161,12 +161,12 @@ public class Class6850 {
       if (!var6) {
          String var8 = var3.substring(0, var7);
          int var9 = method20836(var8);
-         Collection var10 = this.field29747.field1339.connection.method15781().method20124();
+         Collection var10 = this.field29747.player.connection.method15781().method20124();
          this.field29761 = Class6618.method20147(var10, new SuggestionsBuilder(var8, var9));
       } else {
-         CommandDispatcher var11 = this.field29747.field1339.connection.method15796();
+         CommandDispatcher var11 = this.field29747.player.connection.method15796();
          if (this.field29760 == null) {
-            this.field29760 = var11.parse(var4, this.field29747.field1339.connection.method15781());
+            this.field29760 = var11.parse(var4, this.field29747.player.connection.method15781());
          }
 
          int var12 = !this.field29752 ? 1 : var4.getCursor();
@@ -231,7 +231,7 @@ public class Class6850 {
       }
 
       this.field29762 = null;
-      if (this.field29763 && this.field29747.field1299.field44611) {
+      if (this.field29763 && this.field29747.gameSettings.field44611) {
          this.method20833(false);
       }
    }
@@ -239,7 +239,7 @@ public class Class6850 {
    private void method20839(TextFormatting var1) {
       CommandContextBuilder<Class6618> var4 = this.field29760.getContext();
       SuggestionContext<Class6618> var5 = var4.findSuggestionContext(this.field29749.method5659());
-      Map<CommandNode<Class6618>, String> var6 = this.field29747.field1339.connection.method15796().getSmartUsage(var5.parent, this.field29747.field1339.connection.method15781());
+      Map<CommandNode<Class6618>, String> var6 = this.field29747.player.connection.method15796().getSmartUsage(var5.parent, this.field29747.player.connection.method15781());
       ArrayList var7 = Lists.newArrayList();
       int var8 = 0;
       Style var9 = Style.EMPTY.setFormatting(var1);
@@ -307,7 +307,7 @@ public class Class6850 {
       return Class9125.method34042(var5);
    }
 
-   public void method20843(Class9332 var1, int var2, int var3) {
+   public void method20843(MatrixStack var1, int var2, int var3) {
       if (this.field29762 == null) {
          int var6 = 0;
 

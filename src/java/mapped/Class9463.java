@@ -105,7 +105,7 @@ public class Class9463 {
 
    public Random method36439(BlockPos var1) {
       if (this.field43969 == null) {
-         return var1 != null ? new Random(MathHelper.method37809(var1)) : new Random(Util.method38487());
+         return var1 != null ? new Random(MathHelper.method37809(var1)) : new Random(Util.milliTime());
       } else {
          return this.field43969;
       }

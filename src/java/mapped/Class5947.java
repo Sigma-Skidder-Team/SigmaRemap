@@ -11,7 +11,7 @@ public class Class5947 extends Class5942<Class954> {
       super(var1);
    }
 
-   public void method18462(Class954 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class954 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       Class7380 var9 = var1.method3775();
       var3.method35294();
       float var10 = 0.6666667F;
@@ -97,7 +97,7 @@ public class Class5947 extends Class5942<Class954> {
 
    public static void method18475() {
       Minecraft var2 = Minecraft.getInstance();
-      double var3 = Class7944.method26833(var2.field1299.field44669, 1.0, 120.0);
+      double var3 = Class7944.method26833(var2.gameSettings.field44669, 1.0, 120.0);
       double var5 = Math.max(1.5 * (double)var2.method1580().method8044() / var3, 16.0);
       field25939 = var5 * var5;
    }

@@ -25,11 +25,11 @@ public class Class217 implements Class215 {
       return this.field853;
    }
 
-   public void method807(Class7380 var1, BlockPos var2, Class1663 var3, Class9332 var4, Class5422 var5) {
+   public void method807(Class7380 var1, BlockPos var2, Class1663 var3, MatrixStack var4, Class5422 var5) {
       this.method808(var1, var2, var3, var4, var5, Class7181.field30863);
    }
 
-   public void method808(Class7380 var1, BlockPos var2, Class1663 var3, Class9332 var4, Class5422 var5, Class7180 var6) {
+   public void method808(Class7380 var1, BlockPos var2, Class1663 var3, MatrixStack var4, Class5422 var5, Class7180 var6) {
       if (var1.method23397() == Class1855.field9887) {
          Class7202 var9 = this.field853.method38153(var1);
          long var10 = var1.method23451(var2);
@@ -37,11 +37,11 @@ public class Class217 implements Class215 {
       }
    }
 
-   public boolean method809(Class7380 var1, BlockPos var2, Class1663 var3, Class9332 var4, Class5422 var5, boolean var6, Random var7) {
+   public boolean method809(Class7380 var1, BlockPos var2, Class1663 var3, MatrixStack var4, Class5422 var5, boolean var6, Random var7) {
       return this.method810(var1, var2, var3, var4, var5, var6, var7, Class7181.field30863);
    }
 
-   public boolean method810(Class7380 var1, BlockPos var2, Class1663 var3, Class9332 var4, Class5422 var5, boolean var6, Random var7, Class7180 var8) {
+   public boolean method810(Class7380 var1, BlockPos var2, Class1663 var3, MatrixStack var4, Class5422 var5, boolean var6, Random var7, Class7180 var8) {
       try {
          Class1855 var11 = var1.method23397();
          return var11 != Class1855.field9887
@@ -74,11 +74,11 @@ public class Class217 implements Class215 {
       return this.field853.method38153(var1);
    }
 
-   public void method814(Class7380 var1, Class9332 var2, Class7733 var3, int var4, int var5) {
+   public void method814(Class7380 var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
       this.method815(var1, var2, var3, var4, var5, Class7181.field30863);
    }
 
-   public void method815(Class7380 var1, Class9332 var2, Class7733 var3, int var4, int var5, Class7180 var6) {
+   public void method815(Class7380 var1, MatrixStack var2, Class7733 var3, int var4, int var5, Class7180 var6) {
       Class1855 var9 = var1.method23397();
       if (var9 != Class1855.field9885) {
          switch (Class6624.field29144[var9.ordinal()]) {

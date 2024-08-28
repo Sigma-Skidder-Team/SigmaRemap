@@ -105,8 +105,8 @@ public class Class4281 extends Class4278 {
 
          this.field20752 = true;
          this.field20749 = Class8906.method32494(var6, this.field20913, (float)this.method13271(), var1, this.field20746);
-         if (!Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 340)
-            && !Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 344)) {
+         if (!Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 340)
+            && !Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 344)) {
             this.field20750 = this.field20749;
          }
 
@@ -144,7 +144,7 @@ public class Class4281 extends Class4278 {
             case 67:
                if (this.method13149() && this.field20750 != this.field20751) {
                   GLFW.glfwSetClipboardString(
-                     Minecraft.getInstance().field1283.method8039(),
+                     Minecraft.getInstance().mainWindow.method8039(),
                      this.field20912.substring(Math.min(this.field20750, this.field20751), Math.max(this.field20750, this.field20751))
                   );
                }
@@ -154,7 +154,7 @@ public class Class4281 extends Class4278 {
                   String var12 = "";
 
                   try {
-                     var12 = GLFW.glfwGetClipboardString(Minecraft.getInstance().field1283.method8039());
+                     var12 = GLFW.glfwGetClipboardString(Minecraft.getInstance().mainWindow.method8039());
                      if (var12 == null) {
                         var12 = "";
                      }
@@ -183,7 +183,7 @@ public class Class4281 extends Class4278 {
             case 88:
                if (this.method13149() && this.field20750 != this.field20751) {
                   GLFW.glfwSetClipboardString(
-                     Minecraft.getInstance().field1283.method8039(),
+                     Minecraft.getInstance().mainWindow.method8039(),
                      this.field20912.substring(Math.min(this.field20750, this.field20751), Math.max(this.field20750, this.field20751))
                   );
                   this.field20912 = Class8906.method32493(this.field20912, "", this.field20750, this.field20751);
@@ -253,8 +253,8 @@ public class Class4281 extends Class4278 {
                   }
                }
 
-               if (!Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 340)
-                  && !Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 344)) {
+               if (!Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 340)
+                  && !Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
@@ -280,22 +280,22 @@ public class Class4281 extends Class4278 {
                   }
                }
 
-               if (!Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 340)
-                  && !Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 344)) {
+               if (!Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 340)
+                  && !Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
             case 268:
                this.field20749 = 0;
-               if (!Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 340)
-                  && !Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 344)) {
+               if (!Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 340)
+                  && !Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
             case 269:
                this.field20749 = this.field20912.length();
-               if (!Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 340)
-                  && !Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 344)) {
+               if (!Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 340)
+                  && !Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 344)) {
                   this.field20750 = this.field20749;
                }
          }
@@ -303,9 +303,9 @@ public class Class4281 extends Class4278 {
    }
 
    public boolean method13149() {
-      return Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 341)
-         || Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 345)
-         || Class9798.method38639(Minecraft.getInstance().field1283.method8039(), 343);
+      return Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 341)
+         || Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 345)
+         || Class9798.method38639(Minecraft.getInstance().mainWindow.method8039(), 343);
    }
 
    @Override

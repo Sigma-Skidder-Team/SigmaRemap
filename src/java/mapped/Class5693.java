@@ -18,7 +18,7 @@ public class Class5693 extends Class5651<Class1079, Class2881<Class1079>> {
       return var4 > 0 && (var4 > 80 || var4 / 5 % 2 != 1) ? field25062 : field25063;
    }
 
-   public void method17857(Class1079 var1, Class9332 var2, float var3) {
+   public void method17857(Class1079 var1, MatrixStack var2, float var3) {
       float var6 = 2.0F;
       int var7 = var1.method5012();
       if (var7 > 0) {

@@ -19,12 +19,12 @@ public class Class5230 extends Module {
 
     @EventTarget
     private void method16295(Class4396 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             Packet var4 = var1.method13898();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.method17648().getString();
-                String var7 = mc.field1339.getName().getString().toLowerCase();
+                String var7 = mc.player.getName().getString().toLowerCase();
                 if (this.field23579.method15974("AutoL")
                         && (var6.toLowerCase().contains("a été tué par " + var7) || var6.toLowerCase().contains("a été tué par le vide et " + var7))) {
                     this.field23579.method16761(var6);

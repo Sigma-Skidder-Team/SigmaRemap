@@ -20,7 +20,7 @@ public abstract class Class1182 extends Class1180 {
       return this.field6382;
    }
 
-   public void method5612(Class9332 var1, int var2, int var3) {
+   public void method5612(MatrixStack var1, int var2, int var3) {
       if (this.field6381.size() != 1) {
          if (this.field6381.size() >= 2) {
             this.field6378.field4562.field1294.method38804(var1, this.field6381.get(0), (float)var3, (float)var2, 16777215);

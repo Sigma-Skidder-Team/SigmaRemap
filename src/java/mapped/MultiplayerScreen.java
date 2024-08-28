@@ -1,6 +1,5 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class8005;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -8,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
-public class Class1316 extends Screen {
+public class MultiplayerScreen extends Screen {
    private static final Logger field4558 = LogManager.getLogger();
    private final Class9118 field6947 = new Class9118();
    public final Screen field6948;
@@ -23,7 +22,7 @@ public class Class1316 extends Screen {
    private Class370 field6957;
    private boolean field6958;
 
-   public Class1316(Screen var1) {
+   public MultiplayerScreen(Screen var1) {
       super(new TranslationTextComponent("multiplayer.title"));
       this.field6948 = var1;
    }
@@ -115,7 +114,7 @@ public class Class1316 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
       if (this.field6957 != null) {
          this.field6957.interrupt();
@@ -126,7 +125,7 @@ public class Class1316 extends Screen {
    }
 
    private void method6231() {
-      this.field4562.displayGuiScreen(new Class1316(this.field6948));
+      this.field4562.displayGuiScreen(new MultiplayerScreen(this.field6948));
    }
 
    private void method6232(boolean var1) {
@@ -196,7 +195,7 @@ public class Class1316 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field6954 = null;
       this.method2469(var1);
       this.field6949.method1923(var1, var2, var3, var4);

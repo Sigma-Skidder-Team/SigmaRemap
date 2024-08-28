@@ -104,7 +104,7 @@ public class CommandManager {
 
     @EventTarget
     private void method30239(Class4402 var1) {
-        if (Client.getInstance().getClientMode() != ClientMode.field13889) {
+        if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
             if (var1.method13932() instanceof Class5522) {
                 Class5522 var4 = (Class5522) var1.method13932();
                 String var5 = var4.method17359();

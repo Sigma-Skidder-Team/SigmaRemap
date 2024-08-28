@@ -12,7 +12,7 @@ public class Class5674 extends Class5651<Class1010, Class2799<Class1010>> {
       this.method17880(new Class253(this));
    }
 
-   public void method17853(Class1010 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class1010 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       Class7380 var9 = var1.method4357();
       Class2799 var10 = this.method17881();
       var10.field17443 = var9 != null;

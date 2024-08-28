@@ -8,7 +8,7 @@ public class Class5136 implements Class5119 {
    private final Map<BlockPos, Class9180> field23345 = Maps.newHashMap();
 
    public void method15907(BlockPos var1, int var2, String var3, int var4) {
-      this.field23345.put(var1, new Class9180(var2, var3, Util.method38487() + (long)var4));
+      this.field23345.put(var1, new Class9180(var2, var3, Util.milliTime() + (long)var4));
    }
 
    @Override
@@ -17,8 +17,8 @@ public class Class5136 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      long var11 = Util.method38487();
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      long var11 = Util.milliTime();
       this.field23345.entrySet().removeIf(var2x -> var11 > var2x.getValue().field42161);
       this.field23345.forEach(this::method15908);
    }
@@ -37,7 +37,7 @@ public class Class5136 implements Class5119 {
          Class8023.method27462(var2.field42160, var5, var7, var9, -1, 0.01F, true, 0.0F, true);
       }
 
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
       RenderSystem.popMatrix();
    }

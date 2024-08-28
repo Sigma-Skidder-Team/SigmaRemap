@@ -15,9 +15,9 @@ public class Class5327 extends Class5325 {
         double[] var5 = new double[]{0.345, 0.2699, 0.183, 0.103, 0.024, -0.008, -0.04, -0.072, -0.14, -0.17, -0.019, -0.13};
         var1--;
         if (var1 < 0 || var1 >= var4.length) {
-            return mc.field1339.method3433().field18049;
+            return mc.player.method3433().field18049;
         } else {
-            return Class5628.method17686() && !mc.field1339.field5037 ? var4[var1] : var5[var1];
+            return Class5628.method17686() && !mc.player.field5037 ? var4[var1] : var5[var1];
         }
     }
 
@@ -52,6 +52,6 @@ public class Class5327 extends Class5325 {
                 -0.426
         };
         var1--;
-        return var1 >= 0 && var1 < var4.length ? var4[var1] : mc.field1339.method3433().field18049;
+        return var1 >= 0 && var1 < var4.length ? var4[var1] : mc.player.method3433().field18049;
     }
 }

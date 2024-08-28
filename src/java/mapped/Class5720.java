@@ -12,7 +12,7 @@ public class Class5720 extends Class5715<Class903> {
       return 15;
    }
 
-   public void method17853(Class903 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class903 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       var4.method35292(2.0F, 2.0F, 2.0F);
       var4.method35293(this.field25097.method32230());

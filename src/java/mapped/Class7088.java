@@ -210,7 +210,7 @@ public class Class7088 {
                               ))
                            .then(
                               ((LiteralArgumentBuilder)Class6099.method18839("players")
-                                    .executes(var0x -> method22027((Class6619)var0x.getSource(), method22031(var0x), Collections.<Class878>emptyList())))
+                                    .executes(var0x -> method22027((Class6619)var0x.getSource(), method22031(var0x), Collections.<ServerPlayerEntity>emptyList())))
                                  .then(
                                     Class6099.method18840("targets", Class8700.method31353())
                                        .executes(
@@ -340,7 +340,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22027(Class6619 var0, Class3623 var1, Collection<Class878> var2) throws CommandSyntaxException {
+   private static int method22027(Class6619 var0, Class3623 var1, Collection<ServerPlayerEntity> var2) throws CommandSyntaxException {
       boolean var5 = var1.method12272(var2);
       if (var5) {
          if (!var1.method12288().isEmpty()) {

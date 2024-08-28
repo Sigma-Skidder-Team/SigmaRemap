@@ -8,7 +8,7 @@ public class Class906 extends Entity {
    public long field5172;
    private int field5173;
    private boolean field5174;
-   private Class878 field5175;
+   private ServerPlayerEntity field5175;
 
    public Class906(Class8992<? extends Class906> var1, World var2) {
       super(var1, var2);
@@ -27,7 +27,7 @@ public class Class906 extends Entity {
       return Class2266.field14731;
    }
 
-   public void method3550(Class878 var1) {
+   public void method3550(ServerPlayerEntity var1) {
       this.field5175 = var1;
    }
 

@@ -25,7 +25,7 @@ public class Class1328 extends Screen {
    });
 
    public Class1328(Class7245 var1) {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field7026 = var1;
    }
 
@@ -35,18 +35,18 @@ public class Class1328 extends Screen {
    }
 
    @Override
-   public void method1931() {
-      Class6688.field29302.method20401(new TranslationTextComponent("narrator.loading.done").getString());
+   public void onClose() {
+      NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.loading.done").getString());
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       String var7 = MathHelper.method37775(this.field7026.method22745(), 0, 100) + "%";
-      long var8 = Util.method38487();
+      long var8 = Util.milliTime();
       if (var8 - this.field7027 > 2000L) {
          this.field7027 = var8;
-         Class6688.field29302.method20401(new TranslationTextComponent("narrator.loading", var7).getString());
+         NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.loading", var7).getString());
       }
 
       int var10 = this.field4564 / 2;
@@ -56,7 +56,7 @@ public class Class1328 extends Screen {
       method5690(var1, this.field4568, var7, var10, var11 - 4 - 30, 16777215);
    }
 
-   public static void method6319(Class9332 var0, Class7245 var1, int var2, int var3, int var4, int var5) {
+   public static void method6319(MatrixStack var0, Class7245 var1, int var2, int var3, int var4, int var5) {
       int var8 = var4 + var5;
       int var9 = var1.method22743();
       int var10 = var9 * var8 - var5;

@@ -4,7 +4,7 @@ public class Class8781 {
    private static String[] field39490;
 
    public static boolean method31662(PlayerEntity var0) {
-      return method31663(Minecraft.getInstance().field1339) == method31663(var0);
+      return method31663(Minecraft.getInstance().player) == method31663(var0);
    }
 
    public static int method31663(PlayerEntity var0) {

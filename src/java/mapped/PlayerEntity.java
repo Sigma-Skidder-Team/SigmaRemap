@@ -428,7 +428,7 @@ public abstract class PlayerEntity extends Class880 {
 
       this.method3113((float)this.method3086(Class9173.field42108));
       float var3;
-      if (this.field5036 && !this.method3044() && !this.method2951()) {
+      if (this.field5036 && !this.getShouldBeDead() && !this.method2951()) {
          var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.method3433())));
       } else {
          var3 = 0.0F;
@@ -747,7 +747,7 @@ public abstract class PlayerEntity extends Class880 {
             return false;
          } else {
             this.field4973 = 0;
-            if (!this.method3044()) {
+            if (!this.getShouldBeDead()) {
                this.method2949();
                if (var1.method31111()) {
                   if (this.field5024.method6997() == Class2197.field14351) {
@@ -1111,8 +1111,8 @@ public abstract class PlayerEntity extends Class880 {
                   this.method2902();
                }
 
-               if (var1 instanceof Class878 && var1.field5039) {
-                  ((Class878)var1).field4855.sendPacket(new Class5590(var1));
+               if (var1 instanceof ServerPlayerEntity && var1.field5039) {
+                  ((ServerPlayerEntity)var1).field4855.sendPacket(new Class5590(var1));
                   var1.field5039 = false;
                   var1.method3434(var17);
                }
@@ -1213,7 +1213,7 @@ public abstract class PlayerEntity extends Class880 {
       }
    }
 
-   public void method2903() {
+   public void respawnPlayer() {
    }
 
    @Override
@@ -2005,8 +2005,8 @@ public abstract class PlayerEntity extends Class880 {
          0.5F,
          var1.field9016.nextFloat() * 0.1F + 0.9F
       );
-      if (this instanceof Class878) {
-         CriteriaTriggers.field44490.method15174((Class878)this, var2);
+      if (this instanceof ServerPlayerEntity) {
+         CriteriaTriggers.field44490.method15174((ServerPlayerEntity)this, var2);
       }
 
       return super.method2984(var1, var2);

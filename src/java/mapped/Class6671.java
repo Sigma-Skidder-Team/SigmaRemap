@@ -90,7 +90,7 @@ public class Class6671 {
       this.field29255 = var13;
    }
 
-   public boolean method20328(Class878 var1, Entity var2) {
+   public boolean method20328(ServerPlayerEntity var1, Entity var2) {
       return this.method20329(var1.getServerWorld(), var1.getPositionVec(), var2);
    }
 
@@ -212,7 +212,7 @@ public class Class6671 {
       }
    }
 
-   public static Class7812 method20332(Class878 var0, Entity var1) {
+   public static Class7812 method20332(ServerPlayerEntity var0, Entity var1) {
       return new Class9464(var0.getServerWorld())
          .method36454(Class9525.field44330, var1)
          .method36454(Class9525.field44335, var0.getPositionVec())

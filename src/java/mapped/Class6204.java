@@ -17,13 +17,13 @@ public class Class6204 implements Class6205 {
 
    @Override
    public Collection<GameProfile> method19110(Class6619 var1) throws CommandSyntaxException {
-      List<Class878> var4 = this.field27687.method29620(var1);
+      List<ServerPlayerEntity> var4 = this.field27687.method29620(var1);
       if (var4.isEmpty()) {
          throw Class8700.field39264.create();
       } else {
          List<GameProfile> var5 = Lists.newArrayList();
 
-         for (Class878 var7 : var4) {
+         for (ServerPlayerEntity var7 : var4) {
             var5.add(var7.getGameProfile());
          }
 

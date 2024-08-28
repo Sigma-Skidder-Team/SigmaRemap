@@ -9,7 +9,7 @@ public class Class3626 extends Class3625 {
       super(var1.method17205(), var1.method17207(), var1.method17209(), var1.method17210());
       this.field19642 = var1.method17208();
       this.field19635 = var1.method17208();
-      this.field19643 = Util.method38487();
+      this.field19643 = Util.milliTime();
       this.method12281(var1.method17211());
       this.method12282(var1.method17212());
       this.method12283(var1.method17213());
@@ -19,12 +19,12 @@ public class Class3626 extends Class3625 {
    public void method12278(float var1) {
       this.field19635 = this.method12291();
       this.field19642 = var1;
-      this.field19643 = Util.method38487();
+      this.field19643 = Util.milliTime();
    }
 
    @Override
    public float method12291() {
-      long var3 = Util.method38487() - this.field19643;
+      long var3 = Util.milliTime() - this.field19643;
       float var5 = MathHelper.method37777((float)var3 / 100.0F, 0.0F, 1.0F);
       return MathHelper.method37821(var5, this.field19635, this.field19642);
    }

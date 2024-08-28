@@ -17,7 +17,7 @@ public enum Class2130 {
       this.field13902 = var4;
    }
 
-   public void method8813(Class9332 var1, Class1193 var2, int var3, int var4) {
+   public void method8813(MatrixStack var1, Class1193 var2, int var3, int var4) {
       RenderSystem.enableBlend();
       var2.method5696(var1, var3, var4, 176 + this.field13901 * 20, this.field13902 * 20, 20, 20);
       RenderSystem.enableBlend();

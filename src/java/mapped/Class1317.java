@@ -1,19 +1,12 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.gui.GuiManager;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
-import net.minecraft.util.text.StringTextComponent;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class Class1317 extends Class1316 {
+public class Class1317 extends MultiplayerScreen {
    private Class1206 field6959;
    public static int field6960 = 0;
    private Class1197 field6961;
 
    public Class1317() {
-      super(new Class849());
+      super(new MainMenuScreen());
    }
 
    public Class1317(Screen var1) {

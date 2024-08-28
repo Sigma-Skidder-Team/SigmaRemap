@@ -26,7 +26,7 @@ public class Class4354 extends Class4247 {
    private final List<Class9448> field21287 = new ArrayList<Class9448>();
 
    public Class4354(Class4305 var1, String var2, boolean var3, String var4, Class9577... var5) {
-      super(var1, var2, 0, 0, Minecraft.getInstance().field1283.method8043(), Minecraft.getInstance().field1283.method8044(), false);
+      super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.method8043(), Minecraft.getInstance().mainWindow.method8044(), false);
       this.field21283 = var3;
       this.field21280 = var4;
       this.method13296(false);

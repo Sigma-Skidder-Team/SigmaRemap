@@ -71,7 +71,7 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
    }
 
    @Override
-   public void method11016(Class9332 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (!this.field17602) {
          ImmutableList.of(
                this.field17677, this.field17678, this.field17679, this.field17680, this.field17681, this.field17682, this.field17683, this.field17684

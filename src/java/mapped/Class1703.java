@@ -95,7 +95,7 @@ public class Class1703 extends Class1702 {
          return CompletableFuture.<Class1670>supplyAsync(() -> this.method7346(var1, var2, var3, var4), this.field9278).join();
       } else {
          Class7165 var7 = this.field9275.method6820();
-         var7.method22508("getChunk");
+         var7.func_230035_c_("getChunk");
          long var8 = Class7481.method24353(var1, var2);
 
          for (int var10 = 0; var10 < 4; var10++) {
@@ -107,7 +107,7 @@ public class Class1703 extends Class1702 {
             }
          }
 
-         var7.method22508("getChunkCacheMiss");
+         var7.func_230035_c_("getChunkCacheMiss");
          CompletableFuture var12 = this.method7359(var1, var2, var3, var4);
          this.field9278.method1639(var12::isDone);
          Class1670 var13 = (Class1670)((Either)var12.join()).map(var0 -> var0, var1x -> {
@@ -126,7 +126,7 @@ public class Class1703 extends Class1702 {
    @Override
    public Class1674 method7343(int var1, int var2) {
       if (Thread.currentThread() == this.field9276) {
-         this.field9275.method6820().method22508("getChunkNow");
+         this.field9275.method6820().func_230035_c_("getChunkNow");
          long var5 = Class7481.method24353(var1, var2);
 
          for (int var7 = 0; var7 < 4; var7++) {
@@ -189,10 +189,10 @@ public class Class1703 extends Class1702 {
          this.field9273.method35128(Class8561.field38487, var7, var10, var7);
          if (this.method7360(var11, var10)) {
             Class7165 var12 = this.field9275.method6820();
-            var12.method22503("chunkLoad");
+            var12.startSection("chunkLoad");
             this.method7363();
             var11 = this.method7354(var8);
-            var12.method22505();
+            var12.endSection();
             if (this.method7360(var11, var10)) {
                throw (IllegalStateException) Util.method38516(new IllegalStateException("No chunk holder after ticket has been added"));
             }
@@ -297,14 +297,14 @@ public class Class1703 extends Class1702 {
    }
 
    public void method7366(BooleanSupplier var1) {
-      this.field9275.method6820().method22503("purge");
+      this.field9275.method6820().startSection("purge");
       this.field9273.method35123();
       this.method7363();
-      this.field9275.method6820().method22506("chunks");
+      this.field9275.method6820().endStartSection("chunks");
       this.method7367();
-      this.field9275.method6820().method22506("unload");
+      this.field9275.method6820().endStartSection("unload");
       this.field9279.method6546(var1);
-      this.field9275.method6820().method22505();
+      this.field9275.method6820().endSection();
       this.method7357();
    }
 
@@ -312,26 +312,26 @@ public class Class1703 extends Class1702 {
       long var3 = this.field9275.method6783();
       long var5 = var3 - this.field9281;
       this.field9281 = var3;
-      Class6612 var7 = this.field9275.method6788();
+      Class6612 var7 = this.field9275.getWorldInfo();
       boolean var8 = this.field9275.method6823();
       boolean var9 = this.field9275.method6789().method17135(Class5462.field24226);
       if (!var8) {
-         this.field9275.method6820().method22503("pollingChunks");
+         this.field9275.method6820().startSection("pollingChunks");
          int var10 = this.field9275.method6789().method17136(Class5462.field24235);
          boolean var11 = var7.method20033() % 400L == 0L;
-         this.field9275.method6820().method22503("naturalSpawnCount");
+         this.field9275.method6820().startSection("naturalSpawnCount");
          int var12 = this.field9273.method35138();
          Class7307 var13 = Class8170.method28415(var12, this.field9275.method6965(), this::method7368);
          this.field9287 = var13;
-         this.field9275.method6820().method22505();
+         this.field9275.method6820().endSection();
          List<Class8641> var14 = Lists.newArrayList(this.field9279.method6567());
          Collections.shuffle(var14);
          var14.forEach(var7x -> {
             Optional<Class1674> var10x = var7x.method31040().getNow(Class8641.field38895).left();
             if (var10x.isPresent()) {
-               this.field9275.method6820().method22503("broadcast");
+               this.field9275.method6820().startSection("broadcast");
                var7x.method31049(var10x.get());
-               this.field9275.method6820().method22505();
+               this.field9275.method6820().endSection();
                Optional<Class1674> var11x = var7x.method31041().getNow(Class8641.field38895).left();
                if (var11x.isPresent()) {
                   Class1674 var12x = var11x.get();
@@ -347,13 +347,13 @@ public class Class1703 extends Class1702 {
                }
             }
          });
-         this.field9275.method6820().method22503("customSpawners");
+         this.field9275.method6820().startSection("customSpawners");
          if (var9) {
             this.field9275.method6897(this.field9282, this.field9283);
          }
 
-         this.field9275.method6820().method22505();
-         this.field9275.method6820().method22505();
+         this.field9275.method6820().endSection();
+         this.field9275.method6820().endSection();
       }
 
       this.field9279.method6579();
@@ -416,7 +416,7 @@ public class Class1703 extends Class1702 {
       this.field9273.method35133(var1, var2);
    }
 
-   public void method7376(Class878 var1) {
+   public void method7376(ServerPlayerEntity var1) {
       this.field9279.method6575(var1);
    }
 

@@ -44,7 +44,7 @@ public class Class6610 implements Class6608, Class6611 {
    private UUID field29090;
    private final Set<String> field29091;
    private boolean field29092;
-   private final Class8559<Class314> field29093;
+   private final Class8559<MinecraftServer> field29093;
 
    private Class6610(
       DataFixer var1,
@@ -70,7 +70,7 @@ public class Class6610 implements Class6608, Class6611 {
       int var23,
       UUID var24,
       LinkedHashSet<String> var25,
-      Class8559<Class314> var26,
+      Class8559<MinecraftServer> var26,
       Class39 var27,
       Class39 var28,
       Class8898 var29,
@@ -133,7 +133,7 @@ public class Class6610 implements Class6608, Class6611 {
          0,
          (UUID)null,
          Sets.newLinkedHashSet(),
-         new Class8559<Class314>(Class6062.field26300),
+         new Class8559<MinecraftServer>(Class6062.field26300),
          (Class39)null,
          new Class39(),
          var1.clone(),
@@ -177,7 +177,7 @@ public class Class6610 implements Class6608, Class6611 {
             .asStream()
             .<String>flatMap(var0x -> Util.method38511(var0x.asString().result()))
             .collect(Collectors.<String, LinkedHashSet<String>>toCollection(Sets::newLinkedHashSet)),
-         new Class8559<Class314>(Class6062.field26300, var0.get("ScheduledEvents").asStream()),
+         new Class8559<MinecraftServer>(Class6062.field26300, var0.get("ScheduledEvents").asStream()),
          (Class39)var0.get("CustomBossEvents").orElseEmptyMap().getValue(),
          var12,
          var4,
@@ -196,6 +196,11 @@ public class Class6610 implements Class6608, Class6611 {
       Class39 var5 = new Class39();
       this.method20081(var1, var5, var2);
       return var5;
+   }
+
+   @Override
+   public boolean method20045() {
+      return false;
    }
 
    private void method20081(Class8904 var1, Class39 var2, Class39 var3) {
@@ -415,7 +420,7 @@ public class Class6610 implements Class6608, Class6611 {
    }
 
    @Override
-   public boolean method20045() {
+   public boolean isHardcore() {
       return this.field29064.method32428();
    }
 
@@ -470,7 +475,7 @@ public class Class6610 implements Class6608, Class6611 {
    }
 
    @Override
-   public Class8559<Class314> method20074() {
+   public Class8559<MinecraftServer> method20074() {
       return this.field29093;
    }
 

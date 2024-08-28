@@ -161,7 +161,7 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
    }
 
    @Override
-   public void method11010(Class2205 var1, Class9332 var2) {
+   public void method11010(Class2205 var1, MatrixStack var2) {
       this.method11025(var1).method22682(var2);
    }
 }

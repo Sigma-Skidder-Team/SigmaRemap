@@ -14,6 +14,6 @@ public class Class6689 implements Class6687 {
 
    @Override
    public void method20400(ChatType var1, ITextComponent var2, UUID var3) {
-      this.field29305.field1298.method5985(var2, false);
+      this.field29305.ingameGUI.method5985(var2, false);
    }
 }

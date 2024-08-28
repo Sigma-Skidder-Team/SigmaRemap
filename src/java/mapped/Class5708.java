@@ -8,7 +8,7 @@ public class Class5708 extends Class5651<Class1027, Class2891<Class1027>> {
       this.method17880(new Class240<Class1027>(this));
    }
 
-   public void method17853(Class1027 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class1027 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       this.field25086.method11207(!var1.method3090().method32105());
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
@@ -17,7 +17,7 @@ public class Class5708 extends Class5651<Class1027, Class2891<Class1027>> {
       return field25081;
    }
 
-   public void method17857(Class1027 var1, Class9332 var2, float var3) {
+   public void method17857(Class1027 var1, MatrixStack var2, float var3) {
       float var6 = 0.9375F;
       var2.method35292(0.9375F, 0.9375F, 0.9375F);
    }

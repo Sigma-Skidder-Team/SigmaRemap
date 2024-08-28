@@ -120,7 +120,7 @@ public class Class7582 {
                }
 
                String var21 = Class9088.method33883("of.message.openglError", var2, var20);
-               Minecraft.getInstance().field1298.method5989().method5930(new StringTextComponent(var21));
+               Minecraft.getInstance().ingameGUI.getChatGUI().method5930(new StringTextComponent(var21));
             }
          }
       }

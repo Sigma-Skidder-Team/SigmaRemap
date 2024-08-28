@@ -47,10 +47,10 @@ public class Class4298 extends Class4278 {
          GL11.glColor3f(1.0F, 1.0F, 1.0F);
          RenderSystem.method27883(180.0F, 1.0F, 0.0F, 0.0F);
          RenderSystem.method27883(180.0F, 0.0F, 0.0F, 1.0F);
-         float var4 = (float)(this.field20824.field1283.method8044() - this.method13310() - this.field20824.field1283.method8044() / 2);
-         float var5 = (float)(this.field20824.field1283.method8043() - this.method13309() - this.field20824.field1283.method8043() / 2);
-         float var6 = (float)Math.atan((double)(var4 / (float)(this.field20824.field1283.method8044() / 2))) * 20.0F;
-         float var7 = (float)Math.atan((double)(var5 / (float)(this.field20824.field1283.method8043() / 2))) * 20.0F;
+         float var4 = (float)(this.field20824.mainWindow.method8044() - this.method13310() - this.field20824.mainWindow.method8044() / 2);
+         float var5 = (float)(this.field20824.mainWindow.method8043() - this.method13309() - this.field20824.mainWindow.method8043() / 2);
+         float var6 = (float)Math.atan((double)(var4 / (float)(this.field20824.mainWindow.method8044() / 2))) * 20.0F;
+         float var7 = (float)Math.atan((double)(var5 / (float)(this.field20824.mainWindow.method8043() / 2))) * 20.0F;
          RenderSystem.method27883(-var6, 1.0F, 0.0F, 0.0F);
          RenderSystem.method27883(-var7, 0.0F, 1.0F, 0.0F);
          UUID var8 = UUID.fromString(this.field20826.method34219().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.field20826.method34219());
@@ -75,7 +75,7 @@ public class Class4298 extends Class4278 {
          new Class2894(0.0F, false);
          new Class5713(this.field20824.method1554());
          Class7735 var15 = Minecraft.getInstance().method1581().method26536();
-         new Class9332();
+         new MatrixStack();
          RenderSystem.pushMatrix();
          this.field20824.method1554().method32215(false);
          Class7516.method24503();

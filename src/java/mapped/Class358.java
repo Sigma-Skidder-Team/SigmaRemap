@@ -31,7 +31,7 @@ public class Class358 extends Thread {
             return;
          }
 
-         Class9267.method34900(this.field1590, Class8586.method30703(var3, this.field1587, this.field1588.field1299.method37154()));
+         Class9267.method34900(this.field1590, NetworkManager.method30703(var3, this.field1587, this.field1588.gameSettings.method37154()));
          if (Class9267.method34899(this.field1590)) {
             return;
          }

@@ -37,7 +37,7 @@ public class Class1251 extends Class1197 implements Class1253<Class120> {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       RenderSystem.disableAlphaTest();
       Class1263.method5908(this.field6627).getTextureManager().bindTexture(Class1263.method5907());
       short var7 = 152;

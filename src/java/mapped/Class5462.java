@@ -31,7 +31,7 @@ public class Class5462 {
    public static final Class9221<Class7466> field24237 = method17127("reducedDebugInfo", Class2155.field14137, Class7466.method24179(false, (var0, var1) -> {
       byte var4 = (byte)(!var1.method24174() ? 23 : 22);
 
-      for (Class878 var6 : var0.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var6 : var0.getPlayerList().method19488()) {
          var6.field4855.sendPacket(new Class5464(var6, var4));
       }
    }));
@@ -46,7 +46,7 @@ public class Class5462 {
    public static final Class9221<Class7466> field24246 = method17127("disableRaids", Class2155.field14132, Class7466.method24178(false));
    public static final Class9221<Class7466> field24247 = method17127("doInsomnia", Class2155.field14133, Class7466.method24178(true));
    public static final Class9221<Class7466> field24248 = method17127("doImmediateRespawn", Class2155.field14131, Class7466.method24179(false, (var0, var1) -> {
-      for (Class878 var5 : var0.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var5 : var0.getPlayerList().method19488()) {
          var5.field4855.sendPacket(new Class5534(Class5534.field24571, !var1.method24174() ? 0.0F : 1.0F));
       }
    }));
@@ -111,11 +111,11 @@ public class Class5462 {
       var2.method27160(var0, (Class9221) var1);
    }
 
-   public void method17133(Class5462 var1, Class314 var2) {
+   public void method17133(Class5462 var1, MinecraftServer var2) {
       var1.field24256.keySet().forEach(var3 -> this.method17134((Class9221<?>)var3, var1, var2));
    }
 
-   private <T extends Class7465<T>> void method17134(Class9221<T> var1, Class5462 var2, Class314 var3) {
+   private <T extends Class7465<T>> void method17134(Class9221<T> var1, Class5462 var2, MinecraftServer var3) {
       T var6 = var2.method17128(var1);
       this.method17128(var1).method24164(var6, var3);
    }

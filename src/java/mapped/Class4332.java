@@ -42,7 +42,7 @@ public class Class4332 extends Class4305 {
                var10.method13399(var5);
             }
          );
-      this.field21141.method13251((var0, var1x) -> Minecraft.getInstance().displayGuiScreen(new Class849()));
+      this.field21141.method13251((var0, var1x) -> Minecraft.getInstance().displayGuiScreen(new MainMenuScreen()));
       this.field21142.method13251((var1x, var2x) -> var10.method13396());
       this.field21144.method13251((var1x, var2x) -> var10.method13397());
       this.field21146.method13251((var1x, var2x) -> {

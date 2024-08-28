@@ -59,7 +59,7 @@ public class Class1329 extends Screen {
             200,
             20,
             new TranslationTextComponent("selectWorld.edit.openFolder"),
-            var1 -> Util.getOSType().method8179(this.field7035.method7991(Class5137.field23354).toFile())
+            var1 -> Util.getOSType().openFile(this.field7035.method7991(Class5137.field23354).toFile())
          )
       );
       this.<Class1206>method2455(
@@ -70,7 +70,7 @@ public class Class1329 extends Screen {
       );
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 72 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.backupFolder"), var1 -> {
-            Class9774 var4x = this.field4562.method1472();
+            SaveFormat var4x = this.field4562.getSaveLoader();
             Path var5x = var4x.method38467();
 
             try {
@@ -79,7 +79,7 @@ public class Class1329 extends Screen {
                throw new RuntimeException(var7);
             }
 
-            Util.getOSType().method8179(var5x.toFile());
+            Util.getOSType().openFile(var5x.toFile());
          })
       );
       this.<Class1206>method2455(
@@ -187,7 +187,7 @@ public class Class1329 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -202,7 +202,7 @@ public class Class1329 extends Screen {
       }
    }
 
-   public static void method6322(Class9774 var0, String var1) {
+   public static void method6322(SaveFormat var0, String var1) {
       boolean var4 = false;
 
       try (Class1814 var5 = var0.method38468(var1)) {
@@ -241,7 +241,7 @@ public class Class1329 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 15, 16777215);
       method5693(var1, this.field4568, field7031, this.field4564 / 2 - 100, 24, 10526880);

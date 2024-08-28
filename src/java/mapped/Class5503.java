@@ -15,18 +15,18 @@ public class Class5503 implements Packet<Class5116> {
    public Class5503() {
    }
 
-   public Class5503(Class2176 var1, Class878... var2) {
+   public Class5503(Class2176 var1, ServerPlayerEntity... var2) {
       this.field24429 = var1;
 
-      for (Class878 var8 : var2) {
+      for (ServerPlayerEntity var8 : var2) {
          this.field24430.add(new Class8790(var8.getGameProfile(), var8.field4891, var8.field4857.method33863(), var8.method2819()));
       }
    }
 
-   public Class5503(Class2176 var1, Iterable<Class878> var2) {
+   public Class5503(Class2176 var1, Iterable<ServerPlayerEntity> var2) {
       this.field24429 = var1;
 
-      for (Class878 var6 : var2) {
+      for (ServerPlayerEntity var6 : var2) {
          this.field24430.add(new Class8790(var6.getGameProfile(), var6.field4891, var6.field4857.method33863(), var6.method2819()));
       }
    }

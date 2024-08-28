@@ -4,10 +4,10 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class5107 implements Class5105 {
    private static String[] field23208;
-   private final Class314 field23209;
-   private final Class8586 field23210;
+   private final MinecraftServer field23209;
+   private final NetworkManager field23210;
 
-   public Class5107(Class314 var1, Class8586 var2) {
+   public Class5107(MinecraftServer var1, NetworkManager var2) {
       this.field23209 = var1;
       this.field23210 = var2;
    }
@@ -23,7 +23,7 @@ public class Class5107 implements Class5105 {
    }
 
    @Override
-   public Class8586 method15589() {
+   public NetworkManager method15589() {
       return this.field23210;
    }
 }

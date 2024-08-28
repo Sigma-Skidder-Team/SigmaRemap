@@ -28,7 +28,7 @@ public class Class838 extends Screen {
       if (var9 != null && var9.field6482) {
          if (var5 == 1 && var9 instanceof Class1230) {
             Class1230 var10 = (Class1230)var9;
-            if (var10.method5811() == Class5805.field25344) {
+            if (var10.method5811() == AbstractOption.field25344) {
                var9.method5739(super.field4562.method1546());
             }
          }
@@ -78,7 +78,7 @@ public class Class838 extends Screen {
       return null;
    }
 
-   public static void method2567(Class9332 var0, Class9834 var1, Class9125 var2, int var3, int var4, int var5) {
+   public static void method2567(MatrixStack var0, Class9834 var1, Class9125 var2, int var3, int var4, int var5) {
       var1.method38802(var0, var2, (float)(var3 - var1.method38822(var2) / 2), (float)var4, var5);
    }
 }

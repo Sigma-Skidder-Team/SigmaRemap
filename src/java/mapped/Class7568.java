@@ -5,9 +5,9 @@ import java.util.List;
 public class Class7568 implements Class7567 {
    public final List field32500;
    public final Class5462 field32501;
-   public final Class314 field32502;
+   public final MinecraftServer field32502;
 
-   public Class7568(Class314 var1, List var2, Class5462 var3) {
+   public Class7568(MinecraftServer var1, List var2, Class5462 var3) {
       this.field32502 = var1;
       this.field32500 = var2;
       this.field32501 = var3;

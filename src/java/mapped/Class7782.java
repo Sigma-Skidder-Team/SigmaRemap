@@ -217,7 +217,7 @@ public class Class7782 {
             Block var9 = var8.method23383();
             if (!var8.method23393()) {
                BlockPos var10 = var7.method8353();
-               this.field33373.method6820().method22503("explosion_blocks");
+               this.field33373.method6820().startSection("explosion_blocks");
                if (var9.method11576(this) && this.field33373 instanceof ServerWorld) {
                   Class944 var11 = !var9.method11998() ? null : this.field33373.method6759(var7);
                   Class9464 var12 = new Class9464((ServerWorld)this.field33373)
@@ -235,7 +235,7 @@ public class Class7782 {
 
                this.field33373.method6725(var7, Blocks.AIR.method11579(), 3);
                var9.method11560(this.field33373, var7, this);
-               this.field33373.method6820().method22505();
+               this.field33373.method6820().endSection();
             }
          }
 

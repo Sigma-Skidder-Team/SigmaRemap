@@ -7,10 +7,10 @@ public class Class5405 extends Class5404 {
 
    @Override
    public int method16985(Class7161 var1, int var2, int var3, int var4) {
-      if (this.field24090.field1339 == null) {
+      if (this.field24090.player == null) {
          return 0;
       } else {
-         Class7380 var7 = this.field24090.field1338.method6738(new BlockPos(var2, var3, var4));
+         Class7380 var7 = this.field24090.world.method6738(new BlockPos(var2, var3, var4));
          return var7 != null ? Class9217.method34574(var7.method23383()) << 4 | Class9217.method34573(var7) : 0;
       }
    }

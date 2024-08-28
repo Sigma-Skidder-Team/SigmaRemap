@@ -103,7 +103,7 @@ public class Class5188 extends Module {
         if (this.method15996()) {
             this.field23493.clear();
 
-            for (Entity var5 : mc.field1338.method6835()) {
+            for (Entity var5 : mc.world.method6835()) {
                 if (var5 instanceof PlayerEntity && !(var5 instanceof ClientPlayerEntity)) {
                     PlayerEntity var6 = (PlayerEntity) var5;
                     Class9425 var7 = Class9647.method37623(var6);

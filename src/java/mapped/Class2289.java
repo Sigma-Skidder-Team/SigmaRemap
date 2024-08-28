@@ -5,7 +5,7 @@ import java.util.Iterator;
 public enum Class2289 {
    field15224("grant") {
       @Override
-      public boolean method9038(Class878 class878, Class7952 class7952) {
+      public boolean method9038(ServerPlayerEntity class878, Class7952 class7952) {
          Class2006 class2006 = class878.method2823().method27416(class7952);
          if (class2006.method8489()) {
             return false;
@@ -17,13 +17,13 @@ public enum Class2289 {
       }
 
       @Override
-      public boolean method9039(Class878 class878, Class7952 class7952, String string) {
+      public boolean method9039(ServerPlayerEntity class878, Class7952 class7952, String string) {
          return class878.method2823().method27410(class7952, string);
       }
    },
    field15225("revoke") {
       @Override
-      public boolean method9038(Class878 class878, Class7952 class7952) {
+      public boolean method9038(ServerPlayerEntity class878, Class7952 class7952) {
          Class2006 class2006 = class878.method2823().method27416(class7952);
          if (!class2006.method8490()) {
             return false;
@@ -37,7 +37,7 @@ public enum Class2289 {
       }
 
       @Override
-      public boolean method9039(Class878 class878, Class7952 class7952, String string) {
+      public boolean method9039(ServerPlayerEntity class878, Class7952 class7952, String string) {
          return class878.method2823().method27411(class7952, string);
       }
    };
@@ -49,7 +49,7 @@ public enum Class2289 {
       this.field15226 = "commands.advancement." + var3;
    }
 
-   public int method9037(Class878 var1, Iterable<Class7952> var2) {
+   public int method9037(ServerPlayerEntity var1, Iterable<Class7952> var2) {
       int var5 = 0;
 
       for (Class7952 var7 : var2) {
@@ -61,9 +61,9 @@ public enum Class2289 {
       return var5;
    }
 
-   public abstract boolean method9038(Class878 var1, Class7952 var2);
+   public abstract boolean method9038(ServerPlayerEntity var1, Class7952 var2);
 
-   public abstract boolean method9039(Class878 var1, Class7952 var2, String var3);
+   public abstract boolean method9039(ServerPlayerEntity var1, Class7952 var2, String var3);
 
    public String method9040() {
       return this.field15226;

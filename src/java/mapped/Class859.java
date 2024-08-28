@@ -22,7 +22,7 @@ public class Class859 extends Class860<Class5830> implements Class854 {
       if (!this.field4562.field1337.method23152()) {
          this.field4768.method5844();
       } else {
-         this.field4562.displayGuiScreen(new Class861(this.field4562.field1339));
+         this.field4562.displayGuiScreen(new Class861(this.field4562.player));
       }
    }
 
@@ -44,17 +44,17 @@ public class Class859 extends Class860<Class5830> implements Class854 {
             this.field4771 = true;
          }));
       } else {
-         this.field4562.displayGuiScreen(new Class861(this.field4562.field1339));
+         this.field4562.displayGuiScreen(new Class861(this.field4562.player));
       }
    }
 
    @Override
-   public void method2617(Class9332 var1, int var2, int var3) {
+   public void method2617(MatrixStack var1, int var2, int var3) {
       this.field4568.method38805(var1, this.field4560, (float)this.field4723, (float)this.field4724, 4210752);
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.field4772 = !this.field4768.method5839();
       if (this.field4768.method5839() && this.field4770) {
@@ -73,13 +73,13 @@ public class Class859 extends Class860<Class5830> implements Class854 {
    }
 
    @Override
-   public void method2618(Class9332 var1, float var2, int var3, int var4) {
+   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(field4720);
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
-      method2635(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.field4562.field1339);
+      method2635(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.field4562.player);
    }
 
    public static void method2635(int var0, int var1, int var2, float var3, float var4, Class880 var5) {
@@ -88,7 +88,7 @@ public class Class859 extends Class860<Class5830> implements Class854 {
       RenderSystem.pushMatrix();
       RenderSystem.translatef((float)var0, (float)var1, 1050.0F);
       RenderSystem.scalef(1.0F, 1.0F, -1.0F);
-      Class9332 var10 = new Class9332();
+      MatrixStack var10 = new MatrixStack();
       var10.method35291(0.0, 0.0, 1000.0);
       var10.method35292((float)var2, (float)var2, (float)var2);
       Class8661 var11 = Class7680.field32902.method25286(180.0F);
@@ -164,12 +164,12 @@ public class Class859 extends Class860<Class5830> implements Class854 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       if (this.field4769) {
          this.field4768.method5836();
       }
 
-      super.method1931();
+      super.onClose();
    }
 
    @Override

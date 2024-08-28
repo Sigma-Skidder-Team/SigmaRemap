@@ -21,10 +21,10 @@ public class Class8502 {
    public void method30092(Class6619 var1, Entity var2) {
       if (this.field37183 == null) {
          var2.method2787(var1.method20178(), this.field37182);
-      } else if (!(var2 instanceof Class878)) {
+      } else if (!(var2 instanceof ServerPlayerEntity)) {
          var2.method2787(var1.method20178(), this.field37182);
       } else {
-         ((Class878)var2).method2788(var1.method20178(), this.field37183, this.field37184);
+         ((ServerPlayerEntity)var2).method2788(var1.method20178(), this.field37183, this.field37184);
       }
    }
 }

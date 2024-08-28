@@ -27,7 +27,7 @@ public class Class381 extends Thread {
          }
 
          var3 = InetAddress.getByName(this.field1639);
-         Class1314.method6223(this.field1641, Class8586.method30703(var3, this.field1640, this.field1641.field4562.field1299.method37154()));
+         Class1314.method6223(this.field1641, NetworkManager.method30703(var3, this.field1640, this.field1641.field4562.gameSettings.method37154()));
          Class1314.method6224(this.field1641)
             .method30692(
                new Class5102(

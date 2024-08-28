@@ -69,7 +69,7 @@ public class Class3192 {
    }
 
    public static float method11417() {
-      return (float)field18460.field1283.method8049();
+      return (float)field18460.mainWindow.method8049();
    }
 
    public static void method11418(float var0, float var1, float var2, float var3) {
@@ -104,7 +104,7 @@ public class Class3192 {
          GL11.glGetIntegerv(3088, var17);
          field18462.push(var17);
          int var18 = var17.get(0);
-         int var9 = Minecraft.getInstance().field1283.method8042() - var17.get(1) - var17.get(3);
+         int var9 = Minecraft.getInstance().mainWindow.getFramebufferHeight() - var17.get(1) - var17.get(3);
          int var10 = var18 + var17.get(2);
          int var11 = var9 + var17.get(3);
          if (var0 < var18) {
@@ -132,7 +132,7 @@ public class Class3192 {
          }
       }
 
-      int var19 = Minecraft.getInstance().field1283.method8042() - var3;
+      int var19 = Minecraft.getInstance().mainWindow.getFramebufferHeight() - var3;
       int var20 = var2 - var0;
       int var21 = var3 - var1;
       GL11.glEnable(3089);
@@ -194,7 +194,7 @@ public class Class3192 {
       var12.method17025((double)var2, (double)var1, 0.0).method17031();
       var12.method17025((double)var0, (double)var1, 0.0).method17031();
       var11.method35410();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -214,9 +214,9 @@ public class Class3192 {
       RenderSystem.enableBlend();
       RenderSystem.method27862();
       RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
-      var4.method29112(true);
-      var4.method29116((int)var0 - (int)var2, (int)var1 - (int)var3);
-      RenderSystem.method27861();
+      var4.bindFramebuffer(true);
+      var4.framebufferRender((int)var0 - (int)var2, (int)var1 - (int)var3);
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -264,7 +264,7 @@ public class Class3192 {
       RenderSystem.method27866(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
    }
 
    public static void method11432(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
@@ -300,7 +300,7 @@ public class Class3192 {
       RenderSystem.method27866(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
    }
 
    public static void method11433(float var0, float var1, float var2, float var3, int var4, float var5) {
@@ -323,7 +323,7 @@ public class Class3192 {
       var13.method17025((double)var2, (double)var3, 0.0);
       var12.method35410();
       GL11.glDisable(2848);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -346,7 +346,7 @@ public class Class3192 {
       GL11.glVertex2f(var2, var3);
       GL11.glVertex2f(var0, var1);
       GL11.glEnd();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -380,7 +380,7 @@ public class Class3192 {
       GL11.glVertex2f(var0 - var2 / 2.0F, var1);
       GL11.glEnd();
       GL11.glDisable(2881);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -412,7 +412,7 @@ public class Class3192 {
       GL11.glEnd();
       GL11.glDisable(2832);
       GL11.glDisable(3042);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -586,7 +586,7 @@ public class Class3192 {
       }
 
       GL11.glEnd();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -610,7 +610,7 @@ public class Class3192 {
       }
 
       GL11.glEnd();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -676,7 +676,7 @@ public class Class3192 {
          GL11.glEnd();
          GL11.glDisable(3553);
          GL11.glDisable(3042);
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.disableBlend();
       }
    }
@@ -726,7 +726,7 @@ public class Class3192 {
          GL11.glEnd();
          GL11.glDisable(3553);
          GL11.glDisable(3042);
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.disableBlend();
       }
    }
@@ -788,7 +788,7 @@ public class Class3192 {
       GL11.glEnd();
       GL11.glDisable(3553);
       GL11.glDisable(3042);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
@@ -1147,7 +1147,7 @@ public class Class3192 {
       EXTFramebufferObject.glDeleteRenderbuffersEXT(var0.field35737);
       int var3 = EXTFramebufferObject.glGenRenderbuffersEXT();
       EXTFramebufferObject.glBindRenderbufferEXT(36161, var3);
-      EXTFramebufferObject.glRenderbufferStorageEXT(36161, 34041, Minecraft.getInstance().field1283.method8041(), Minecraft.getInstance().field1283.method8042());
+      EXTFramebufferObject.glRenderbufferStorageEXT(36161, 34041, Minecraft.getInstance().mainWindow.getFramebufferWidth(), Minecraft.getInstance().mainWindow.getFramebufferHeight());
       EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, var3);
       EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, var3);
    }
@@ -1291,7 +1291,7 @@ public class Class3192 {
       RenderSystem.method27878(5888);
       RenderSystem.method27879();
       field18460.method1555().field847 -= 1101.0F;
-      RenderSystem.scaled(1.0 / field18460.field1283.method8049(), 1.0 / field18460.field1283.method8049(), 1.0);
+      RenderSystem.scaled(1.0 / field18460.mainWindow.method8049(), 1.0 / field18460.mainWindow.method8049(), 1.0);
       RenderSystem.translatef((float)var1, (float)var2, 0.0F);
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
       field18460.method1555().method791(var0, 0, 0);
@@ -1308,7 +1308,7 @@ public class Class3192 {
       var1 = (int)((float)var1 * GuiManager.field41348);
       ByteBuffer var5 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
-      GL11.glReadPixels(var0, Minecraft.getInstance().field1283.method8042() - var1, 1, 1, 6407, 5120, var5);
+      GL11.glReadPixels(var0, Minecraft.getInstance().mainWindow.getFramebufferHeight() - var1, 1, 1, 6407, 5120, var5);
       return new java.awt.Color(var5.get(0) * 2, var5.get(1) * 2, var5.get(2) * 2, 1);
    }
 
@@ -1325,7 +1325,7 @@ public class Class3192 {
          ? null
          : new double[]{
             (double)(var8.get(0) / GuiManager.field41348),
-            (double)(((float)field18460.field1319.field35733 - var8.get(1)) / GuiManager.field41348),
+            (double)(((float)field18460.framebuffer.field35733 - var8.get(1)) / GuiManager.field41348),
             (double)var8.get(2)
          };
    }

@@ -14,7 +14,7 @@ public class Class5409 extends Class5408 {
    @Override
    public Class9738 method16994(Class7161 var1) {
       Minecraft var4 = Minecraft.getInstance();
-      ItemStack var5 = !Class974.method4035(ViaVersionLoader.field31494) ? ItemStack.EMPTY : var4.field1339.field4902.field5439.get(ViaVersionLoader.field31494);
+      ItemStack var5 = !Class974.method4035(ViaVersionLoader.field31494) ? ItemStack.EMPTY : var4.player.field4902.field5439.get(ViaVersionLoader.field31494);
       Class3257 var6 = var5.method32107();
       if (var6 != null) {
          Class9738 var7 = new Class9738(

@@ -22,10 +22,10 @@ public class Class5102 implements Class5103 {
    private final Minecraft field23200;
    private final Screen field23201;
    private final Consumer<ITextComponent> field23202;
-   private final Class8586 field23203;
+   private final NetworkManager field23203;
    private GameProfile field23204;
 
-   public Class5102(Class8586 var1, Minecraft var2, Screen var3, Consumer<ITextComponent> var4) {
+   public Class5102(NetworkManager var1, Minecraft var2, Screen var3, Consumer<ITextComponent> var4) {
       this.field23203 = var1;
       this.field23200 = var2;
       this.field23201 = var3;
@@ -104,7 +104,7 @@ public class Class5102 implements Class5103 {
    }
 
    @Override
-   public Class8586 method15589() {
+   public NetworkManager method15589() {
       return this.field23203;
    }
 

@@ -13,8 +13,8 @@ public class JetpackFly extends Module {
     @EventTarget
     public void onTick(TickEvent event) {
         if (this.method15996()) {
-            if (mc.field1339.field4981) {
-                mc.field1339.method2914();
+            if (mc.player.field4981) {
+                mc.player.method2914();
             }
         }
     }

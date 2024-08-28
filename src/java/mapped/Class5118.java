@@ -9,8 +9,8 @@ public class Class5118 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      World var11 = this.field23289.field1339.field5024;
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      World var11 = this.field23289.player.field5024;
       RenderSystem.enableBlend();
       RenderSystem.method27938();
       RenderSystem.method27893(2.0F);
@@ -105,7 +105,7 @@ public class Class5118 implements Class5119 {
       }
 
       RenderSystem.depthMask(true);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 }

@@ -132,7 +132,7 @@ public class Class1095 extends Class1018 {
 
    @Override
    public boolean method2896() {
-      return this.method3044();
+      return this.getShouldBeDead();
    }
 
    private boolean method5122(ItemStack var1) {

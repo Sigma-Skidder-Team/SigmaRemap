@@ -8,7 +8,7 @@ public class Class6463 {
 
    public Class6463(BlockPos var1) {
       this.field28401 = var1;
-      this.field28403 = Class108.method300(Class5255.method16415().field1338.method6738(var1.method8313()));
+      this.field28403 = Class108.method300(Class5255.method16415().world.method6738(var1.method8313()));
    }
 
    public int method19640() {

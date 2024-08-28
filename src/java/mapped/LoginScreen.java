@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 
-public class Class4369 extends Class4247 {
+public class LoginScreen extends Class4247 {
    private Class4287 field21352;
    private Class4281 field21353;
    private Class4281 field21354;
@@ -18,7 +18,7 @@ public class Class4369 extends Class4247 {
    public static int field21360 = 334;
    public static int field21361 = 571;
 
-   public Class4369(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public LoginScreen(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13230(
          this.field21352 = new Class4287(
@@ -113,7 +113,6 @@ public class Class4369 extends Class4247 {
             var3.method36706(this.field21355.method13303());
          }
 
-         Client.getInstance().getNetworkManager().method30456();
          String var4 = Client.getInstance().getNetworkManager().method30447(this.field21353.method13303(), this.field21354.method13303(), var3);
          if (var4 != null) {
             Class4322 var5 = (Class4322)this.method13258();

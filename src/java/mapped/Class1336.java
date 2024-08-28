@@ -74,7 +74,7 @@ public class Class1336 extends Screen {
             150,
             20,
             new TranslationTextComponent("pack.openFolder"),
-            var1 -> Util.getOSType().method8179(this.field7103),
+            var1 -> Util.getOSType().openFile(this.field7103),
             (var1, var2, var3, var4) -> this.method2459(var2, field7095, var3, var4)
          )
       );
@@ -124,7 +124,7 @@ public class Class1336 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
       this.field7101.method1923(var1, var2, var3, var4);
       this.field7102.method1923(var1, var2, var3, var4);

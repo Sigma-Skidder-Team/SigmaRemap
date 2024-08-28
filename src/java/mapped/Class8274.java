@@ -34,8 +34,8 @@ public class Class8274 implements RunningGame {
 
    @Nullable
    public GameSession getCurrentSession() {
-      Class1656 var3 = this.field35562.field1338;
-      return var3 != null ? new Class9214(var3, this.field35562.field1339, this.field35562.field1339.connection) : null;
+      Class1656 var3 = this.field35562.world;
+      return var3 != null ? new Class9214(var3, this.field35562.player, this.field35562.player.connection) : null;
    }
 
    public PerformanceMetrics getPerformanceMetrics() {

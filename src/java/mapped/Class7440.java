@@ -103,7 +103,7 @@ public class Class7440 {
    }
 
    private static void method24037(ServerWorld var0, TextFormatting var1, String var2) {
-      var0.method6914(var0x -> true).forEach(var2x -> var2x.method1328(new StringTextComponent(var2).mergeStyle(var1), Util.field45724));
+      var0.method6914(var0x -> true).forEach(var2x -> var2x.sendMessage(new StringTextComponent(var2).mergeStyle(var1), Util.DUMMY_UUID));
    }
 
    public static void method24038(ServerWorld var0) {

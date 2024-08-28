@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 public class Class9081 {
    private static final Logger field41569 = LogManager.getLogger();
    public ServerWorld field41570;
-   public Class878 field41571;
+   public ServerPlayerEntity field41571;
    private Class1894 field41572 = Class1894.field11101;
    private Class1894 field41573 = Class1894.field11101;
    private boolean field41574;
@@ -248,7 +248,7 @@ public class Class9081 {
       }
    }
 
-   public ActionResultType method33859(Class878 var1, World var2, ItemStack var3, Hand var4) {
+   public ActionResultType method33859(ServerPlayerEntity var1, World var2, ItemStack var3, Hand var4) {
       if (this.field41572 != Class1894.field11105) {
          if (!var1.method2976().method19635(var3.method32107())) {
             int var7 = var3.method32179();
@@ -286,7 +286,7 @@ public class Class9081 {
       }
    }
 
-   public ActionResultType method33860(Class878 var1, World var2, ItemStack var3, Hand var4, Class8711 var5) {
+   public ActionResultType method33860(ServerPlayerEntity var1, World var2, ItemStack var3, Hand var4, Class8711 var5) {
       BlockPos var8 = var5.method31423();
       Class7380 var9 = var2.method6738(var8);
       if (this.field41572 == Class1894.field11105) {

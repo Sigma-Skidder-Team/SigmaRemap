@@ -288,7 +288,7 @@ public class Class4526 {
       };
 
       try {
-         return var2[(int)(Util.method38488() % (long)var2.length)];
+         return var2[(int)(Util.nanoTime() % (long)var2.length)];
       } catch (Throwable var4) {
          return "Witty comment unavailable :(";
       }

@@ -136,15 +136,15 @@ public class Class4378 {
 
    @EventTarget
    public void method13734(TickEvent var1) {
-      if (Minecraft.getInstance().field1338 == null && this.field21388) {
+      if (Minecraft.getInstance().world == null && this.field21388) {
          this.method13738();
-      } else if (Minecraft.getInstance().field1338 != null && !this.field21388) {
+      } else if (Minecraft.getInstance().world != null && !this.field21388) {
          this.method13736();
       }
    }
 
    public boolean method13735() {
-      return Minecraft.field1272
+      return Minecraft.IS_RUNNING_ON_MAC
          && Client.getInstance().getClientMode() == ClientMode.JELLO
          && (
             System.getProperty("os.version").startsWith("10.14")
@@ -158,7 +158,7 @@ public class Class4378 {
    public void method13736() {
       if (this.method13735()) {
          if (this.field21386 != null) {
-            this.field21386.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().field1283.method8039()));
+            this.field21386.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.method8039()));
          }
 
          this.field21386 = new JTouchBar();
@@ -170,7 +170,7 @@ public class Class4378 {
             this.field21386.addItem(new TouchBarItem("Jello", var3, true));
          }
 
-         this.field21386.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().field1283.method8039()));
+         this.field21386.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.method8039()));
          this.field21388 = true;
       }
    }
@@ -195,7 +195,7 @@ public class Class4378 {
    public void method13738() {
       if (this.method13735()) {
          if (this.field21386 != null) {
-            this.field21386.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().field1283.method8039()));
+            this.field21386.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.method8039()));
          }
 
          this.field21386 = new JTouchBar();
@@ -203,7 +203,7 @@ public class Class4378 {
          TouchBarTextField var3 = new TouchBarTextField();
          var3.setStringValue(" Jello for Sigma 5.0   -   © SIGMA Prod");
          this.field21386.addItem(new TouchBarItem("Jello", var3, true));
-         this.field21386.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().field1283.method8039()));
+         this.field21386.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.method8039()));
          this.field21388 = false;
       }
    }

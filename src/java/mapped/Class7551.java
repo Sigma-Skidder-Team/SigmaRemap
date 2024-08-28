@@ -17,7 +17,7 @@ public class Class7551 {
       Class1663 var1,
       Class7380 var2,
       BlockPos var3,
-      Class9332 var4,
+      MatrixStack var4,
       Class5422 var5,
       List<Class8557> var6,
       float[] var7,
@@ -83,7 +83,7 @@ public class Class7551 {
    }
 
    private void method24678(
-           Class1663 var1, Class7380 var2, BlockPos var3, int var4, int var5, boolean var6, Class9332 var7, Class5422 var8, List<Class8557> var9, BitSet var10
+           Class1663 var1, Class7380 var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, BitSet var10
    ) {
       for (Class8557 var14 : var9) {
          if (var6) {
@@ -102,7 +102,7 @@ public class Class7551 {
    }
 
    public boolean method24679(
-           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, Class9332 var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24680(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
@@ -112,7 +112,7 @@ public class Class7551 {
       Class7202 var2,
       Class7380 var3,
       BlockPos var4,
-      Class9332 var5,
+      MatrixStack var5,
       Class5422 var6,
       boolean var7,
       Random var8,
@@ -161,7 +161,7 @@ public class Class7551 {
    }
 
    public boolean method24681(
-           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, Class9332 var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24682(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
@@ -171,7 +171,7 @@ public class Class7551 {
       Class7202 var2,
       Class7380 var3,
       BlockPos var4,
-      Class9332 var5,
+      MatrixStack var5,
       Class5422 var6,
       boolean var7,
       Random var8,
@@ -205,7 +205,7 @@ public class Class7551 {
    }
 
    public boolean method24683(
-           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, Class9332 var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24684(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
@@ -215,7 +215,7 @@ public class Class7551 {
       Class7202 var2,
       Class7380 var3,
       BlockPos var4,
-      Class9332 var5,
+      MatrixStack var5,
       Class5422 var6,
       boolean var7,
       Random var8,
@@ -249,7 +249,7 @@ public class Class7551 {
       return var15;
    }
 
-   private void method24685(Class1663 var1, Class7380 var2, BlockPos var3, Class9332 var4, Class5422 var5, List<Class8557> var6, int var7, Class8391 var8) {
+   private void method24685(Class1663 var1, Class7380 var2, BlockPos var3, MatrixStack var4, Class5422 var5, List<Class8557> var6, int var7, Class8391 var8) {
       float[] var11 = var8.method29414();
       BitSet var12 = var8.method29415();
       Class9529 var13 = var8.method29416();
@@ -387,7 +387,7 @@ public class Class7551 {
    }
 
    private void method24688(
-           Class1663 var1, Class7380 var2, BlockPos var3, int var4, int var5, boolean var6, Class9332 var7, Class5422 var8, List<Class8557> var9, Class8391 var10
+           Class1663 var1, Class7380 var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, Class8391 var10
    ) {
       BitSet var13 = var10.method29415();
       int var14 = var9.size();
@@ -490,7 +490,7 @@ public class Class7551 {
       Class7202 var2,
       Class7380 var3,
       BlockPos var4,
-      Class9332 var5,
+      MatrixStack var5,
       Class5422 var6,
       int var7,
       boolean var8,

@@ -26,8 +26,8 @@ public class Class1283 extends Class1274<Class1176> {
       super.method6024(var1);
       if (var1 != null) {
          Class1323.method6292(this.field6847, Class1176.method5602(var1));
-         Class6688.field29302
-            .method20401(
+         NarratorChatListener.INSTANCE
+            .say(
                new TranslationTextComponent("narrator.select", Class1323.method6291(this.field6847).method9181(Class1176.method5602(var1))).getString()
             );
       }

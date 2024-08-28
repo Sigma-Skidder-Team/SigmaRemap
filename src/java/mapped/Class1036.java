@@ -82,9 +82,9 @@ public class Class1036 extends Class1035 {
 
    @Override
    public void method4258() {
-      this.field5024.method6820().method22503("piglinBruteBrain");
+      this.field5024.method6820().startSection("piglinBruteBrain");
       this.method2992().method21432((ServerWorld)this.field5024, this);
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
       Class9743.method38199(this);
       Class9743.method38205(this);
       super.method4258();

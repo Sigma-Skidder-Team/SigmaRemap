@@ -20,7 +20,7 @@ public class Class1214 extends Class1213 {
    }
 
    @Override
-   public void method5731(Class9332 var1, Minecraft var2, int var3, int var4) {
+   public void method5731(MatrixStack var1, Minecraft var2, int var3, int var4) {
       if (this.field6483) {
          if (this.field6528 && !Screen.method2476()) {
             this.field6527 = (float)(var3 - (this.field6477 + 4)) / (float)(this.field6475 - 8);

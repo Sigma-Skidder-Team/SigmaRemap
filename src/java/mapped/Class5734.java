@@ -13,7 +13,7 @@ public class Class5734 extends Class5715<Class902> {
       return 15;
    }
 
-   public void method17853(Class902 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class902 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       var4.method35292(-1.0F, -1.0F, 1.0F);
       float var9 = MathHelper.method37828(var1.field5033, var1.field5031, var3);

@@ -145,14 +145,14 @@ public class Class848 extends Class838 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       if (this.field4699) {
          Class8981.method32975();
          this.field4699 = false;
          Class8981.method33033();
       }
 
-      super.method1931();
+      super.onClose();
    }
 
    @Override
@@ -190,7 +190,7 @@ public class Class848 extends Class838 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       if (this.field4698 == null) {
          method5691(var1, this.field4630, this.field4560, this.field4564 / 2, 15, 16777215);

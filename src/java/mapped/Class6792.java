@@ -13,7 +13,7 @@ public class Class6792 {
       this.field29591 = var3.method25287();
    }
 
-   public void method20691(boolean var1, Class9332 var2) {
+   public void method20691(boolean var1, MatrixStack var2) {
       if (this != field29588) {
          float var5 = this.field29589.method25269();
          float var6 = this.field29589.method25270();

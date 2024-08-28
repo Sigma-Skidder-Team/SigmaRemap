@@ -28,15 +28,15 @@ public class Class5174 extends Module {
         Class5628.method17725(-0.08);
         double var3 = Class9567.method37075();
         Class9567.method37090(var3);
-        mc.field1284.field40360 = 1.0F;
+        mc.timer.field40360 = 1.0F;
     }
 
     @EventTarget
     private void method16104(Class4429 var1) {
-        if (this.method15996() && (mc.field1339.method3331() || !this.method16004().method15974("Sneak"))) {
+        if (this.method15996() && (mc.player.method3331() || !this.method16004().method15974("Sneak"))) {
             if (var1.method13976() == Class2116.field13791) {
                 Class8711 var4 = Class9217.method34567(
-                        mc.field1339.field5031, mc.field1339.field5032, this.method16004().method15977("Maximum range")
+                        mc.player.field5031, mc.player.field5032, this.method16004().method15977("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
@@ -74,7 +74,7 @@ public class Class5174 extends Module {
                         Class5628.method17725(-0.08);
                         double var5 = Class9567.method37075();
                         Class9567.method37090(var5);
-                        mc.field1284.field40360 = 1.0F;
+                        mc.timer.field40360 = 1.0F;
                     } else {
                         this.method16004().method16000();
                     }
@@ -90,13 +90,13 @@ public class Class5174 extends Module {
                 var1.method13995(0.01);
                 this.field23464++;
                 if (this.field23464 >= 20) {
-                    mc.field1284.field40360 = 1.4F;
+                    mc.timer.field40360 = 1.4F;
                 } else {
-                    mc.field1284.field40360 = 2.0F;
+                    mc.timer.field40360 = 2.0F;
                 }
 
                 mc.getClientPlayNetHandler()
-                        .sendPacket(new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ(), true));
+                        .sendPacket(new Class5605(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
                 mc.getClientPlayNetHandler()
                         .sendPacket(
                                 new Class5605(

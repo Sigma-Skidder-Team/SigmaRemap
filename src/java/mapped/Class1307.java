@@ -21,8 +21,8 @@ public class Class1307 extends Screen {
    }
 
    @Override
-   public String method2326() {
-      return super.method2326() + ". " + this.field6908.getString();
+   public String getNarrationMessage() {
+      return super.getNarrationMessage() + ". " + this.field6908.getString();
    }
 
    @Override
@@ -50,7 +50,7 @@ public class Class1307 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, this.field6911 - 18, -1);
       this.field6910.method18588(var1, this.field4564 / 2, this.field6911);

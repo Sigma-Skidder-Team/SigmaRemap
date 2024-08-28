@@ -14,8 +14,8 @@ public class Class5198 extends Module {
     @EventTarget
     private void method16186(TickEvent var1) {
         if (this.method15996()) {
-            if (mc.field1339.method3090() != null) {
-                if (mc.field1339.method3090().method32107() instanceof Class3292) {
+            if (mc.player.method3090() != null) {
+                if (mc.player.method3090().method32107() instanceof Class3292) {
                     if (mc.field1346 instanceof Class8711) {
                         if (!this.method15974("Reduce Delay")) {
                             mc.field1347 = 0;

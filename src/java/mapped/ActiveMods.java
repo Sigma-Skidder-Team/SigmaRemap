@@ -72,13 +72,13 @@ public class ActiveMods extends Module {
 
     @EventTarget
     private void method16354(Class4407 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (!var1.method13939()) {
                 Class7414.method23839(0.0F, (float) (-this.field23614), 0.0F);
             } else {
-                Class6886 var4 = mc.field1338.method6805();
+                Class6886 var4 = mc.world.method6805();
                 Class8375 var5 = null;
-                Class8218 var6 = var4.method20998(mc.field1339.method2956());
+                Class8218 var6 = var4.method20998(mc.player.method2956());
                 if (var6 != null) {
                     int var7 = var6.method28591().getColorIndex();
                     if (var7 >= 0) {
@@ -98,7 +98,7 @@ public class ActiveMods extends Module {
 
                 int var15 = 23 + var9 * (this.field23616.method23952() + 1);
                 int var16 = var8.size();
-                int var12 = Minecraft.getInstance().field1283.method8044();
+                int var12 = Minecraft.getInstance().mainWindow.method8044();
                 int var13 = var12 / 2 - (9 + 5) * (var16 - 3 + 2);
                 if (var15 <= var13) {
                     this.field23614 = 0;
@@ -112,17 +112,17 @@ public class ActiveMods extends Module {
 
     @EventTarget
     private void method16355(Class4415 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             for (Module var5 : this.field23615.keySet()) {
                 if (this.method15974("Animations")) {
                     this.field23615.get(var5).changeDirection(!var5.method15996() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
 
-            if (!Minecraft.getInstance().field1299.field44662) {
+            if (!Minecraft.getInstance().gameSettings.field44662) {
                 byte var20 = 10;
                 byte var21 = 1;
-                int var6 = Minecraft.getInstance().field1283.method8043();
+                int var6 = Minecraft.getInstance().mainWindow.method8043();
                 ClientResource var8 = this.field23616;
                 byte var9 = -1;
                 int var7 = var20 - 4;
@@ -130,8 +130,8 @@ public class ActiveMods extends Module {
                     var20 -= 3;
                 }
 
-                if (Minecraft.getInstance().field1299.field44664) {
-                    var7 = (int) ((double) (mc.field1298.field6726.field6674.size() * 9) * mc.field1283.method8049() + 7.0);
+                if (Minecraft.getInstance().gameSettings.showDebugInfo) {
+                    var7 = (int) ((double) (mc.ingameGUI.field6726.field6674.size() * 9) * mc.mainWindow.method8049() + 7.0);
                 }
 
                 byte var10 = 0;
@@ -191,7 +191,7 @@ public class ActiveMods extends Module {
     private Color method16357(int var1, int var2, Color var3) {
         ByteBuffer var6 = ByteBuffer.allocateDirect(3);
         GL11.glPixelStorei(3317, 1);
-        GL11.glReadPixels(var1, Minecraft.getInstance().field1283.method8044() - var2, 1, 1, 6407, 5120, var6);
+        GL11.glReadPixels(var1, Minecraft.getInstance().mainWindow.method8044() - var2, 1, 1, 6407, 5120, var6);
         Color var7 = new Color(var6.get(0) * 2, var6.get(1) * 2, var6.get(2) * 2, 1);
         if (var3 != null) {
             var7 = Class5628.method17681(var7, var3, 0.08F);

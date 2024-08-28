@@ -58,8 +58,8 @@ public class Class3379 extends Class3231 {
    }
 
    private void method11973(Entity var1, BlockPos var2) {
-      if (var1 instanceof Class878 && var1.field5024.method6783() % 20L == 0L) {
-         CriteriaTriggers.field44500.method15057((Class878)var1, var1.field5024.method6738(var2));
+      if (var1 instanceof ServerPlayerEntity && var1.field5024.method6783() % 20L == 0L) {
+         CriteriaTriggers.field44500.method15057((ServerPlayerEntity)var1, var1.field5024.method6738(var2));
       }
    }
 

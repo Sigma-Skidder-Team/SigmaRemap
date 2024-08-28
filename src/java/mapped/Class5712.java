@@ -40,7 +40,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
       return this.field25086;
    }
 
-   public void method17853(T var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       if (!Class9299.field42990.method20241() || !Class9299.method35085(Class9299.field42990, var1, this, var3, var4, var5, var6)) {
          if (field25095) {
             var1.field4960 = 1.0F;
@@ -134,7 +134,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          boolean var17 = Class7944.method26921();
          Minecraft var18 = Minecraft.getInstance();
          boolean var19 = this.method17869((T)var1);
-         boolean var20 = !var19 && !var1.method3343(var18.field1339);
+         boolean var20 = !var19 && !var1.method3343(var18.player);
          boolean var21 = var18.method1552(var1);
          Class4520 var22 = this.method17882((T)var1, var19, var20, var21);
          if (var22 != null) {
@@ -187,7 +187,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
 
       if (!var3) {
          if (!var2) {
-            if (var1.method3340() && !Class7944.method26860().field1287.method861()) {
+            if (var1.method3340() && !Class7944.method26860().worldRenderer.method861()) {
                return this.field25086.method11028(var7);
             } else {
                return !var4 ? null : Class4520.method14329(var7);
@@ -227,7 +227,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
       return false;
    }
 
-   public void method17842(T var1, Class9332 var2, float var3, float var4, float var5) {
+   public void method17842(T var1, MatrixStack var2, float var3, float var4, float var5) {
       if (this.method17860((T)var1)) {
          var4 += (float)(Math.cos((double)var1.field5055 * 3.25) * Math.PI * 0.4F);
       }
@@ -287,7 +287,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
       return 0.0F;
    }
 
-   public void method17857(T var1, Class9332 var2, float var3) {
+   public void method17857(T var1, MatrixStack var2, float var3) {
    }
 
    public boolean method17852(T var1) {
@@ -302,7 +302,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             return false;
          } else {
             Minecraft var8 = Minecraft.getInstance();
-            ClientPlayerEntity var9 = var8.field1339;
+            ClientPlayerEntity var9 = var8.player;
             boolean var10 = !var1.method3343(var9);
             if (var1 != var9) {
                Class8219 var11 = var1.method3344();

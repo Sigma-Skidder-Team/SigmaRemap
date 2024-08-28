@@ -14,7 +14,7 @@ public class Class1334 extends Screen {
    private Class5991 field7059 = Class5991.field26162;
 
    public Class1334(Screen var1) {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field7053 = var1;
    }
 
@@ -25,11 +25,11 @@ public class Class1334 extends Screen {
       int var3 = (this.field7059.method18592() + 1) * 9 * 2;
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, 100 + var3, 150, 20, Class7127.field30662, var1 -> {
          if (this.field7058.method5820()) {
-            this.field4562.field1299.field44630 = true;
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.field44630 = true;
+            this.field4562.gameSettings.method37146();
          }
 
-         this.field4562.displayGuiScreen(new Class1316(this.field7053));
+         this.field4562.displayGuiScreen(new MultiplayerScreen(this.field7053));
       }));
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 155 + 160, 100 + var3, 150, 20, Class7127.field30663, var1 -> this.field4562.displayGuiScreen(this.field7053))
@@ -39,12 +39,12 @@ public class Class1334 extends Screen {
    }
 
    @Override
-   public String method2326() {
+   public String getNarrationMessage() {
       return field7057.getString();
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
       method5693(var1, this.field4568, field7054, 25, 30, 16777215);
       this.field7059.method18590(var1, 25, 70, 18, 16777215);

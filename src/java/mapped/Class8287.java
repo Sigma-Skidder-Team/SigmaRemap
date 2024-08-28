@@ -23,12 +23,12 @@ import org.apache.logging.log4j.Logger;
 
 public class Class8287 extends Class8286 {
    private static final Logger field35591 = LogManager.getLogger();
-   private final Class314 field35592;
+   private final MinecraftServer field35592;
    private final File field35593;
    private final Set<Class9007<?>> field35594 = Sets.newHashSet();
    private int field35595 = -300;
 
-   public Class8287(Class314 var1, File var2) {
+   public Class8287(MinecraftServer var1, File var2) {
       this.field35592 = var1;
       this.field35593 = var2;
       if (var2.isFile()) {
@@ -184,7 +184,7 @@ public class Class8287 extends Class8286 {
       this.field35594.addAll(this.field35590.keySet());
    }
 
-   public void method28970(Class878 var1) {
+   public void method28970(ServerPlayerEntity var1) {
       int var4 = this.field35592.method1375();
       Object2IntOpenHashMap var5 = new Object2IntOpenHashMap();
       if (var4 - this.field35595 > 300) {

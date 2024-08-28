@@ -129,7 +129,7 @@ public class Class819 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       super.method1923(var1, var2, var3, var4);
       method5691(var1, this.field4568, this.field4467, this.field4564 / 2, 17, 16777215);
@@ -178,7 +178,7 @@ public class Class819 extends Class798 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -251,7 +251,7 @@ public class Class819 extends Class798 {
       return this.field4465 != null && this.field4465.field27455 == Class2049.field13370;
    }
 
-   private void method2341(Class9332 var1, int var2, int var3, int var4, int var5, boolean var6, String var7, int var8, long var9, String var11, boolean var12) {
+   private void method2341(MatrixStack var1, int var2, int var3, int var4, int var5, boolean var6, String var7, int var8, long var9, String var11, boolean var12) {
       if (!var12) {
          if (var11 != null && var9 != -1L) {
             Class8087.method27972(String.valueOf(var9), var11);

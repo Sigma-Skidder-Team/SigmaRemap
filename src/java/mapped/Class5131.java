@@ -22,7 +22,7 @@ public class Class5131 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
@@ -76,7 +76,7 @@ public class Class5131 implements Class5119 {
 
       var12.method35410();
       RenderSystem.enableDepthTest();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.popMatrix();
    }
 }

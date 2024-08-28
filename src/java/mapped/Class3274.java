@@ -9,8 +9,8 @@ public class Class3274 extends Class3257 {
 
    @Override
    public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
-      if (var3 instanceof Class878) {
-         Class878 var6 = (Class878)var3;
+      if (var3 instanceof ServerPlayerEntity) {
+         ServerPlayerEntity var6 = (ServerPlayerEntity)var3;
          CriteriaTriggers.field44490.method15174(var6, var1);
          var6.method2913(Class8876.field40098.method172(this));
       }

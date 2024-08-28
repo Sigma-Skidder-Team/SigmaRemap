@@ -55,22 +55,22 @@ public class Class1116 extends AbstractClientPlayerEntity {
       this.field4908 = this.field4909;
       this.method3084();
       float var3;
-      if (this.field5036 && !this.method3044()) {
+      if (this.field5036 && !this.getShouldBeDead()) {
          var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.method3433())));
       } else {
          var3 = 0.0F;
       }
 
-      if (!this.field5036 && !this.method3044()) {
+      if (!this.field5036 && !this.getShouldBeDead()) {
          float var11 = (float)Math.atan(-this.method3433().field18049 * 0.2F) * 15.0F;
       } else {
          float var10 = 0.0F;
       }
 
       this.field4909 = this.field4909 + (var3 - this.field4909) * 0.4F;
-      this.field5024.method6820().method22503("push");
+      this.field5024.method6820().startSection("push");
       this.method3126();
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
    }
 
    @Override
@@ -78,10 +78,10 @@ public class Class1116 extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method1328(ITextComponent var1, UUID var2) {
+   public void sendMessage(ITextComponent var1, UUID var2) {
       Minecraft var5 = Minecraft.getInstance();
       if (!var5.method1511(var2)) {
-         var5.field1298.method5989().method5930(var1);
+         var5.ingameGUI.getChatGUI().method5930(var1);
       }
    }
 }

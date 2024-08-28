@@ -66,7 +66,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Nullable
-   public Class314 method6715() {
+   public MinecraftServer method6715() {
       return null;
    }
 
@@ -139,9 +139,9 @@ public abstract class World implements Class1660, AutoCloseable {
                      || var10.method23391()
                      || var9.method23391()
                )) {
-               this.method6820().method22503("queueCheckLight");
+               this.method6820().startSection("queueCheckLight");
                this.method6883().method7348().method602(var1);
-               this.method6820().method22505();
+               this.method6820().endSection();
             }
 
             if (var10 == var2) {
@@ -385,7 +385,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
    public void method6753() {
       Class7165 var3 = this.method6820();
-      var3.method22503("blockEntities");
+      var3.startSection("blockEntities");
       if (!this.field9006.isEmpty()) {
          this.field9004.removeAll(this.field9006);
          this.field9003.removeAll(this.field9006);
@@ -408,7 +408,7 @@ public abstract class World implements Class1660, AutoCloseable {
                      var5.method3787();
                   }
 
-                  var3.method22505();
+                  var3.endSection();
                } catch (Throwable var10) {
                   Class4526 var8 = Class4526.method14413(var10, "Ticking block entity");
                   Class8965 var9 = var8.method14410("Block entity being ticked");
@@ -428,7 +428,7 @@ public abstract class World implements Class1660, AutoCloseable {
       }
 
       this.field9021 = false;
-      var3.method22506("pendingBlockEntities");
+      var3.endStartSection("pendingBlockEntities");
       if (!this.field9005.isEmpty()) {
          for (int var11 = 0; var11 < this.field9005.size(); var11++) {
             Class944 var12 = this.field9005.get(var11);
@@ -449,7 +449,7 @@ public abstract class World implements Class1660, AutoCloseable {
          this.field9005.clear();
       }
 
-      var3.method22505();
+      var3.endSection();
    }
 
    public void method6754(Consumer<Entity> var1, Entity var2) {
@@ -611,7 +611,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public List<Entity> method6770(Entity var1, Class6488 var2, Predicate<? super Entity> var3) {
-      this.method6820().method22508("getEntities");
+      this.method6820().func_230035_c_("getEntities");
       ArrayList var6 = Lists.newArrayList();
       int var7 = MathHelper.method37769((var2.field28449 - 2.0) / 16.0);
       int var8 = MathHelper.method37769((var2.field28452 + 2.0) / 16.0);
@@ -632,7 +632,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public <T extends Entity> List<T> method6771(Class8992<T> var1, Class6488 var2, Predicate<? super T> var3) {
-      this.method6820().method22508("getEntities");
+      this.method6820().func_230035_c_("getEntities");
       int var6 = MathHelper.method37769((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
       int var8 = MathHelper.method37769((var2.field28451 - 2.0) / 16.0);
@@ -653,7 +653,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public <T extends Entity> List<T> method6772(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3) {
-      this.method6820().method22508("getEntities");
+      this.method6820().func_230035_c_("getEntities");
       int var6 = MathHelper.method37769((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
       int var8 = MathHelper.method37769((var2.field28451 - 2.0) / 16.0);
@@ -675,7 +675,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public <T extends Entity> List<T> method6773(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3) {
-      this.method6820().method22508("getLoadedEntities");
+      this.method6820().func_230035_c_("getLoadedEntities");
       int var6 = MathHelper.method37769((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
       int var8 = MathHelper.method37769((var2.field28451 - 2.0) / 16.0);
@@ -787,7 +787,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return var4;
    }
 
-   public void method6782() {
+   public void sendQuittingDisconnectingPacket() {
    }
 
    public long method6783() {
@@ -810,7 +810,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public Class6612 method6788() {
+   public Class6612 getWorldInfo() {
       return this.field9018;
    }
 

@@ -8,7 +8,7 @@ public class Class7749 {
    private static boolean field33268 = Boolean.getBoolean("player.models.reload");
    private static long field33269 = System.currentTimeMillis();
 
-   public static void method25667(Class2797 var0, AbstractClientPlayerEntity var1, Class9332 var2, Class7733 var3, int var4, int var5) {
+   public static void method25667(Class2797 var0, AbstractClientPlayerEntity var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
       Class7773 var8 = method25668(var1);
       if (var8 != null) {
          var8.method25749(var0, var1, var2, var3, var4, var5);
@@ -17,7 +17,7 @@ public class Class7749 {
 
    public static synchronized Class7773 method25668(AbstractClientPlayerEntity var0) {
       if (field33268 && System.currentTimeMillis() > field33269 + 5000L) {
-         ClientPlayerEntity var3 = Minecraft.getInstance().field1339;
+         ClientPlayerEntity var3 = Minecraft.getInstance().player;
          if (var3 != null) {
             method25669(var3.method5379(), (Class7773)null);
             field33269 = System.currentTimeMillis();

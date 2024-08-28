@@ -177,9 +177,9 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public void method4258() {
-      this.field5024.method6820().method22503("villagerBrain");
+      this.field5024.method6820().startSection("villagerBrain");
       this.method2992().method21432((ServerWorld)this.field5024, this);
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
       if (this.field5790) {
          this.field5790 = false;
       }
@@ -543,7 +543,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    public void method4699(Class8830<Class9378> var1) {
       if (this.field5024 instanceof ServerWorld) {
-         Class314 var4 = ((ServerWorld)this.field5024).method6715();
+         MinecraftServer var4 = ((ServerWorld)this.field5024).method6715();
          this.field5011.<Class9378>method21410(var1).ifPresent(var3 -> {
             ServerWorld var6 = var4.method1318(var3.method35578());
             if (var6 != null) {

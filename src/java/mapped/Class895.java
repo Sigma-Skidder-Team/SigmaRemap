@@ -47,13 +47,13 @@ public class Class895 extends Class890 {
       }
 
       if (!this.field5024.field9020 && !this.field5041) {
-         if (!(var4 instanceof Class878)) {
+         if (!(var4 instanceof ServerPlayerEntity)) {
             if (var4 != null) {
                var4.method2793(this.getPosX(), this.getPosY(), this.getPosZ());
                var4.field5045 = 0.0F;
             }
          } else {
-            Class878 var7 = (Class878)var4;
+            ServerPlayerEntity var7 = (ServerPlayerEntity)var4;
             if (var7.field4855.method15589().method30707() && var7.field5024 == this.field5024 && !var7.isSleeping()) {
                if (this.field5054.nextFloat() < 0.05F && this.field5024.method6789().method17135(Class5462.field24226)) {
                   Class1104 var6 = Class8992.field41026.method33215(this.field5024);

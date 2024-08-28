@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 
 public final class Class9126 implements DynamicMBean {
    private static final Logger field41931 = LogManager.getLogger();
-   private final Class314 field41932;
+   private final MinecraftServer field41932;
    private final MBeanInfo field41933;
    private final Map<String, Class9401> field41934 = Stream.<Class9401>of(
          new Class9401("tickTimes", this::method34054, "Historical tick times (ms)", long[].class),
@@ -35,7 +35,7 @@ public final class Class9126 implements DynamicMBean {
       )
       .collect(Collectors.toMap(var0 -> Class9401.method35742(var0), Function.<Class9401>identity()));
 
-   private Class9126(Class314 var1) {
+   private Class9126(MinecraftServer var1) {
       this.field41932 = var1;
       MBeanAttributeInfo[] var4 = this.field41934
          .values()
@@ -52,7 +52,7 @@ public final class Class9126 implements DynamicMBean {
       );
    }
 
-   public static void method34052(Class314 var0) {
+   public static void method34052(MinecraftServer var0) {
       try {
          ManagementFactory.getPlatformMBeanServer().registerMBean(new Class9126(var0), new ObjectName("net.minecraft.server:type=Server"));
       } catch (MBeanRegistrationException | NotCompliantMBeanException | MalformedObjectNameException | InstanceAlreadyExistsException var4) {

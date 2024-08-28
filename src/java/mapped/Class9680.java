@@ -941,7 +941,7 @@ public class Class9680 {
          if (!Class8509.method30147(var1)) {
             return !Class8509.method30148(var1) ? var0 : method37867(var0);
          } else {
-            return method37870(var0, var6.field1338, var2.getPosX(), var2.getPosY() + 1.0, var2.getPosZ());
+            return method37870(var0, var6.world, var2.getPosX(), var2.getPosY() + 1.0, var2.getPosZ());
          }
       } else {
          return method37866(var0);
@@ -953,7 +953,7 @@ public class Class9680 {
       if (!Class8509.method30147(var1)) {
          return !Class8509.method30148(var1) ? var0 : method37868(var0);
       } else {
-         return method37869(var0, var6.field1338, var2.getPosX(), var2.getPosY() + 1.0, var2.getPosZ());
+         return method37869(var0, var6.world, var2.getPosX(), var2.getPosY() + 1.0, var2.getPosZ());
       }
    }
 

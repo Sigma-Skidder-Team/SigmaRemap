@@ -28,7 +28,7 @@ public class Class1266 extends Class1193 {
       this.field6699 = var1;
    }
 
-   public void method5926(Class9332 var1, int var2) {
+   public void method5926(MatrixStack var1, int var2) {
       int var5 = this.method5942();
       if (this.field6707 != var5) {
          this.field6707 = var5;
@@ -50,10 +50,10 @@ public class Class1266 extends Class1193 {
             RenderSystem.pushMatrix();
             RenderSystem.translatef(2.0F, 8.0F, 0.0F);
             RenderSystem.scaled(var9, var9, 1.0);
-            double var12 = this.field6699.field1299.field44583 * 0.9F + 0.1F;
-            double var14 = this.field6699.field1299.field44585;
-            double var16 = 9.0 * (this.field6699.field1299.field44584 + 1.0);
-            double var18 = -8.0 * (this.field6699.field1299.field44584 + 1.0) + 4.0 * this.field6699.field1299.field44584;
+            double var12 = this.field6699.gameSettings.field44583 * 0.9F + 0.1F;
+            double var14 = this.field6699.gameSettings.field44585;
+            double var16 = 9.0 * (this.field6699.gameSettings.field44584 + 1.0);
+            double var18 = -8.0 * (this.field6699.gameSettings.field44584 + 1.0) + 4.0 * this.field6699.gameSettings.field44584;
             int var20 = 0;
 
             for (int var21 = 0; var21 + this.field6704 < this.field6702.size() && var21 < var6; var21++) {
@@ -70,17 +70,17 @@ public class Class1266 extends Class1193 {
                         double var29 = (double)(-var21) * var16;
                         var1.method35294();
                         var1.method35291(0.0, 0.0, 50.0);
-                        if (this.field6699.field1299.field44729 == 5) {
+                        if (this.field6699.gameSettings.field44729 == 5) {
                            var11 = this.field6699.field1294.method38822((Class9125)var22.method36694()) - 2;
                         }
 
-                        if (this.field6699.field1299.field44729 != 3) {
+                        if (this.field6699.gameSettings.field44729 != 3) {
                            method5686(var1, -2, (int)(var29 - var16), 0 + var11 + 4, (int)var29, var27 << 24);
                         }
 
                         RenderSystem.enableBlend();
                         var1.method35291(0.0, 0.0, 50.0);
-                        if (this.field6699.field1299.field44730) {
+                        if (this.field6699.gameSettings.field44730) {
                            this.field6699
                               .field1294
                               .method38802(var1, (Class9125)var22.method36694(), 0.0F, (float)((int)(var29 + var18)), 16777215 + (var26 << 24));
@@ -135,7 +135,7 @@ public class Class1266 extends Class1193 {
    }
 
    private boolean method5927() {
-      return this.field6699.field1299.field44582 == ChatVisibility.HIDDEN;
+      return this.field6699.gameSettings.field44582 == ChatVisibility.HIDDEN;
    }
 
    private static double method5928(int var0) {
@@ -146,7 +146,7 @@ public class Class1266 extends Class1193 {
       return var3 * var3;
    }
 
-   public void method5929(boolean var1) {
+   public void clearChatMessages(boolean var1) {
       this.field6703.clear();
       this.field6702.clear();
       this.field6701.clear();
@@ -160,7 +160,7 @@ public class Class1266 extends Class1193 {
    }
 
    public void method5931(ITextComponent var1, int var2) {
-      this.method5932(var1, var2, this.field6699.field1298.method5990(), false);
+      this.method5932(var1, var2, this.field6699.ingameGUI.method5990(), false);
       field6698.info("[CHAT] {}", var1.getString().replaceAll("\r", "\\\\r").replaceAll("\n", "\\\\n"));
    }
 
@@ -234,9 +234,9 @@ public class Class1266 extends Class1193 {
    }
 
    public boolean method5938(double var1, double var3) {
-      if (this.method5940() && !this.field6699.field1299.field44662 && !this.method5927() && !this.field6703.isEmpty()) {
+      if (this.method5940() && !this.field6699.gameSettings.field44662 && !this.method5927() && !this.field6703.isEmpty()) {
          double var7 = var1 - 2.0;
-         double var9 = (double)this.field6699.method1580().method8046() - var3 - 40.0;
+         double var9 = (double)this.field6699.method1580().getScaledHeight() - var3 - 40.0;
          if (var7 <= (double) MathHelper.method37769((double)this.method5942() / this.method5944())
             && var9 < 0.0
             && var9 > (double) MathHelper.method37769(-9.0 * this.method5944())) {
@@ -253,11 +253,11 @@ public class Class1266 extends Class1193 {
 
    @Nullable
    public Style method5939(double var1, double var3) {
-      if (this.method5940() && !this.field6699.field1299.field44662 && !this.method5927()) {
+      if (this.method5940() && !this.field6699.gameSettings.field44662 && !this.method5927()) {
          double var7 = var1 - 2.0;
-         double var9 = (double)this.field6699.method1580().method8046() - var3 - 40.0;
+         double var9 = (double)this.field6699.method1580().getScaledHeight() - var3 - 40.0;
          var7 = (double) MathHelper.method37769(var7 / this.method5944());
-         var9 = (double) MathHelper.method37769(var9 / (this.method5944() * (this.field6699.field1299.field44584 + 1.0)));
+         var9 = (double) MathHelper.method37769(var9 / (this.method5944() * (this.field6699.gameSettings.field44584 + 1.0)));
          if (!(var7 < 0.0) && !(var9 < 0.0)) {
             int var11 = Math.min(this.method5947(), this.field6702.size());
             if (var7 <= (double) MathHelper.method37769((double)this.method5942() / this.method5944()) && var9 < (double)(9 * var11 + var11)) {
@@ -278,7 +278,7 @@ public class Class1266 extends Class1193 {
    }
 
    private boolean method5940() {
-      return this.field6699.field1355 instanceof Class1331;
+      return this.field6699.currentScreen instanceof ChatScreen;
    }
 
    public void method5941(int var1) {
@@ -287,20 +287,20 @@ public class Class1266 extends Class1193 {
    }
 
    public int method5942() {
-      int var3 = method5945(this.field6699.field1299.field44596);
+      int var3 = method5945(this.field6699.gameSettings.field44596);
       Class1815 var4 = Minecraft.getInstance().method1580();
-      int var5 = (int)((double)(var4.method8041() - 3) / var4.method8049());
+      int var5 = (int)((double)(var4.getFramebufferWidth() - 3) / var4.method8049());
       return MathHelper.method37775(var3, 0, var5);
    }
 
    public int method5943() {
       return method5946(
-         (!this.method5940() ? this.field6699.field1299.field44597 : this.field6699.field1299.field44598) / (this.field6699.field1299.field44584 + 1.0)
+         (!this.method5940() ? this.field6699.gameSettings.field44597 : this.field6699.gameSettings.field44598) / (this.field6699.gameSettings.field44584 + 1.0)
       );
    }
 
    public double method5944() {
-      return this.field6699.field1299.field44595;
+      return this.field6699.gameSettings.field44595;
    }
 
    public static int method5945(double var0) {
@@ -320,7 +320,7 @@ public class Class1266 extends Class1193 {
    }
 
    private long method5948() {
-      return (long)(this.field6699.field1299.field44599 * 1000.0);
+      return (long)(this.field6699.gameSettings.field44599 * 1000.0);
    }
 
    private void method5949() {
@@ -334,7 +334,7 @@ public class Class1266 extends Class1193 {
    }
 
    public void method5950(ITextComponent var1) {
-      if (!(this.field6699.field1299.field44599 <= 0.0)) {
+      if (!(this.field6699.gameSettings.field44599 <= 0.0)) {
          long var4 = System.currentTimeMillis();
          if (var4 - this.field6706 < this.method5948()) {
             this.field6703.add(var1);

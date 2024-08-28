@@ -24,13 +24,13 @@ public class Class5231 extends Module {
 
     @EventTarget
     private void method16296(Class4396 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             Packet var4 = var1.method13898();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.method17648().getString();
                 String var7 = var5.method17648().getString();
-                String var8 = mc.field1339.getName().getString().toLowerCase();
+                String var8 = mc.player.getName().getString().toLowerCase();
                 if (this.field23580.method15974("AutoL")
                         && (
                         var6.toLowerCase().contains("was slain by " + var8)
@@ -60,7 +60,7 @@ public class Class5231 extends Module {
                     }
                 }
 
-                if (this.field23580.method15974("AutoGG") && var7.equalsIgnoreCase("§e" + mc.field1339.getName().getString() + "§r§a won the game!§r")) {
+                if (this.field23580.method15974("AutoGG") && var7.equalsIgnoreCase("§e" + mc.player.getName().getString() + "§r§a won the game!§r")) {
                     this.field23580.method16760();
                 }
             }

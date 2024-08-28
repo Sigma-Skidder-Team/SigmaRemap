@@ -10,7 +10,7 @@ public class Class6064 extends Class6065 {
    }
 
    @Override
-   public void method18799(Class9332 var1, int var2, int var3, boolean var4) {
+   public void method18799(MatrixStack var1, int var2, int var3, boolean var4) {
       Class823.method2398(this.field26306.field6314).getTextureManager().bindTexture(Class823.method2397());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = !var4 ? 0.0F : 19.0F;

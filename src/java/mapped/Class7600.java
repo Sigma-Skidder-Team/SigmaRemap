@@ -21,7 +21,7 @@ public class Class7600 implements Class7601 {
    }
 
    @Override
-   public Class2139 method24894(Class9332 var1, Class1264 var2, long var3) {
+   public Class2139 method24894(MatrixStack var1, Class1264 var2, long var3) {
       var2.method5915().getTextureManager().bindTexture(field32630);
       RenderSystem.method27890(1.0F, 1.0F, 1.0F);
       var2.method5696(var1, 0, 0, 0, 96, this.method24898(), this.method24899());

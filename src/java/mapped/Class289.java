@@ -182,7 +182,7 @@ public class Class289 extends Class290 implements Class288 {
       this.field1109.clear();
       this.field1110.clear();
       this.field1117.method34166();
-      var3.method22503("preparing");
+      var3.startSection("preparing");
       Set<ResourceLocation> var8 = var2.peek(var0 -> {
          if (var0 == null) {
             throw new IllegalArgumentException("Location cannot be null!");
@@ -205,7 +205,7 @@ public class Class289 extends Class290 implements Class288 {
       int var13 = method1112(var7);
       this.field1112 = var13;
       int var14 = 1 << var4;
-      var3.method22506("extracting_frames");
+      var3.endStartSection("extracting_frames");
       Class9299.method35055(Class9299.field42891, this, var8);
 
       for (Class9431 var16 : this.method1093(var1, var8)) {
@@ -262,10 +262,10 @@ public class Class289 extends Class290 implements Class288 {
          var25 = var4;
       }
 
-      var3.method22506("register");
+      var3.endStartSection("register");
       Class9431 var26 = method1113(Class1714.method7514(), var13);
       var11.method35560(var26);
-      var3.method22506("stitching");
+      var3.endStartSection("stitching");
 
       try {
          var11.method35561();
@@ -283,9 +283,9 @@ public class Class289 extends Class290 implements Class288 {
          throw new Class2506(var29);
       }
 
-      var3.method22506("loading");
+      var3.endStartSection("loading");
       List var28 = this.method1094(var1, var11, var25);
-      var3.method22505();
+      var3.endSection();
       return new Class8226(var8, var11.method35558(), var11.method35559(), var25, var28);
    }
 
@@ -448,7 +448,7 @@ public class Class289 extends Class290 implements Class288 {
       }
 
       if (this.field1122) {
-         int var12 = Class7944.method26860().field1287.method935();
+         int var12 = Class7944.method26860().worldRenderer.method935();
          if (var12 != this.field1121) {
             this.field1120 = var5;
             this.field1121 = var12;

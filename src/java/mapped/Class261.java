@@ -9,7 +9,7 @@ public class Class261<T extends Class880> extends Class219<T, Class2894<T>> {
       this.field922.method22673(-8.0F, -16.0F, -8.0F, 16.0F, 32.0F, 16.0F);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (var4.method3130()) {
          Class5422 var13 = var2.method25597(Class4520.method14312(field921));
 

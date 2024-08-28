@@ -14,7 +14,7 @@ public class Class5736 extends Class5715<Class997> {
       this.field25156 = var2;
    }
 
-   public void method17853(Class997 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class997 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       super.method17853(var1, var2, var3, var4, var5, var6);
       var4.method35294();
       Direction var9 = var1.method3386();
@@ -71,7 +71,7 @@ public class Class5736 extends Class5715<Class997> {
                Class7529 var18 = Class9561.method37048(var19, var1.field5024);
                var4.method35291(0.0, 0.0, -1.0);
                if (var18 != null) {
-                  this.field25155.field1295.method756().method593(var4, var5, var18, true, var6);
+                  this.field25155.gameRenderer.method756().method593(var4, var5, var18, true, var6);
                }
             }
          }
@@ -98,7 +98,7 @@ public class Class5736 extends Class5715<Class997> {
       }
    }
 
-   public void method17893(Class997 var1, ITextComponent var2, Class9332 var3, Class7733 var4, int var5) {
+   public void method17893(Class997 var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {
       super.method17893(var1, var1.method4090().method32149(), var3, var4, var5);
    }
 
@@ -120,7 +120,7 @@ public class Class5736 extends Class5715<Class997> {
 
    public static void method17918() {
       Minecraft var2 = Minecraft.getInstance();
-      double var3 = Class7944.method26833(var2.field1299.field44669, 1.0, 120.0);
+      double var3 = Class7944.method26833(var2.gameSettings.field44669, 1.0, 120.0);
       double var5 = Math.max(6.0 * (double)var2.method1580().method8044() / var3, 16.0);
       field25157 = var5 * var5;
    }

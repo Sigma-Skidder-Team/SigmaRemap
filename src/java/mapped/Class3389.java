@@ -52,7 +52,7 @@ public class Class3389 extends Block {
             return ActionResultType.method9002(var2.field9020);
          } else {
             if (!var2.field9020) {
-               Class878 var10 = (Class878)var4;
+               ServerPlayerEntity var10 = (ServerPlayerEntity)var4;
                if (var10.method2827() != var2.method6813() || !var10.method2825().equals(var3)) {
                   var10.method2829(var2.method6813(), var3, 0.0F, false, true);
                   var2.method6743(

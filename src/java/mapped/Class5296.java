@@ -15,8 +15,8 @@ public class Class5296 extends Module {
     @EventTarget
     public void method16635(TickEvent var1) {
         if (this.method15996()) {
-            if (!mc.field1339.method3066()) {
-                mc.field1339.method2903();
+            if (!mc.player.method3066()) {
+                mc.player.respawnPlayer();
             }
         }
     }

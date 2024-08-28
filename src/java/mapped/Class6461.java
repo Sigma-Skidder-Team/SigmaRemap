@@ -2,9 +2,9 @@ package mapped;
 
 public class Class6461 extends Class6462 {
    private static String[] field28395;
-   private final Class878 field28396;
+   private final ServerPlayerEntity field28396;
 
-   public Class6461(Class878 var1) {
+   public Class6461(ServerPlayerEntity var1) {
       this.field28396 = var1;
    }
 

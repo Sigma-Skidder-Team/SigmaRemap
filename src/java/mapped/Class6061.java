@@ -9,9 +9,9 @@ import org.apache.commons.lang3.tuple.Pair;
 public class Class6061 {
    private static final ResourceLocation field26298 = new ResourceLocation("textures/misc/underwater.png");
 
-   public static void method18789(Minecraft var0, Class9332 var1) {
+   public static void method18789(Minecraft var0, MatrixStack var1) {
       RenderSystem.method27817();
-      ClientPlayerEntity var4 = var0.field1339;
+      ClientPlayerEntity var4 = var0.player;
       if (!var4.field5052) {
          if (Class9299.field42849.method20214() && Class9299.field42822.method20214()) {
             Pair var8 = method18791(var4);
@@ -19,7 +19,7 @@ public class Class6061 {
                Object var6 = Class9299.method35071(Class9299.field42984);
                if (!Class9299.field42849.method20218(var4, var1, var6, var8.getLeft(), var8.getRight())) {
                   Class1713 var7 = (Class1713)Class9299.method35070(
-                     var0.method1553().method806(), Class9299.field42822, var8.getLeft(), var0.field1338, var8.getRight()
+                     var0.method1553().method806(), Class9299.field42822, var8.getLeft(), var0.world, var8.getRight()
                   );
                   method18792(var0, var7, var1);
                }
@@ -32,12 +32,12 @@ public class Class6061 {
          }
       }
 
-      if (!var0.field1339.method2800()) {
-         if (var0.field1339.method3263(Class8953.field40469) && !Class9299.field42851.method20218(var4, var1)) {
+      if (!var0.player.method2800()) {
+         if (var0.player.method3263(Class8953.field40469) && !Class9299.field42851.method20218(var4, var1)) {
             method18793(var0, var1);
          }
 
-         if (var0.field1339.method3327() && !Class9299.field42850.method20218(var4, var1)) {
+         if (var0.player.method3327() && !Class9299.field42850.method20218(var4, var1)) {
             method18794(var0, var1);
          }
       }
@@ -68,7 +68,7 @@ public class Class6061 {
       return null;
    }
 
-   private static void method18792(Minecraft var0, Class1713 var1, Class9332 var2) {
+   private static void method18792(Minecraft var0, Class1713 var1, MatrixStack var2) {
       if (Class4501.method14213()) {
          Class4501.method14215(var1);
       }
@@ -95,15 +95,15 @@ public class Class6061 {
       Class4395.method13895(var5);
    }
 
-   private static void method18793(Minecraft var0, Class9332 var1) {
-      RenderSystem.method27861();
+   private static void method18793(Minecraft var0, MatrixStack var1) {
+      RenderSystem.enableTexture();
       var0.getTextureManager().bindTexture(field26298);
       if (Class4501.method14213()) {
          Class4501.method14219(var0.getTextureManager().method1076(field26298).method1131());
       }
 
       Class5425 var4 = Class9352.method35409().method35411();
-      float var5 = var0.field1339.method3267();
+      float var5 = var0.player.method3267();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
       float var6 = 4.0F;
@@ -112,8 +112,8 @@ public class Class6061 {
       float var9 = -1.0F;
       float var10 = 1.0F;
       float var11 = -0.5F;
-      float var12 = -var0.field1339.field5031 / 64.0F;
-      float var13 = var0.field1339.field5032 / 64.0F;
+      float var12 = -var0.player.field5031 / 64.0F;
+      float var13 = var0.player.field5032 / 64.0F;
       Class9367 var14 = var1.method35296().method32361();
       var4.method17063(7, Class9337.field43345);
       var4.method17040(var14, -1.0F, -1.0F, -0.5F).method17033(var5, var5, var5, 0.1F).method17027(4.0F + var12, 4.0F + var13).method17031();
@@ -125,13 +125,13 @@ public class Class6061 {
       RenderSystem.disableBlend();
    }
 
-   private static void method18794(Minecraft var0, Class9332 var1) {
+   private static void method18794(Minecraft var0, MatrixStack var1) {
       Class5425 var4 = Class9352.method35409().method35411();
       RenderSystem.depthFunc(519);
       RenderSystem.depthMask(false);
       RenderSystem.enableBlend();
       RenderSystem.method27938();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       Class1713 var5 = Class8968.field40509.method26198();
       if (Class4501.method14213()) {
          Class4501.method14215(var5);

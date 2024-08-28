@@ -44,7 +44,7 @@ public class Class7224 implements Class7222 {
    }
 
    @Override
-   public void method22699(Class9332 var1, float var2, int var3) {
+   public void method22699(MatrixStack var1, float var2, int var3) {
       Integer var6 = this.field31056.method28591().getColor();
       if (var6 != null) {
          float var7 = (float)(var6 >> 16 & 0xFF) / 255.0F;

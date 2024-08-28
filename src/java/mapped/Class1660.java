@@ -5,19 +5,19 @@ import java.util.Random;
 public interface Class1660 extends Class1678, Class1661 {
    @Override
    default long method6996() {
-      return this.method6788().method20034();
+      return this.getWorldInfo().method20034();
    }
 
    Class6802<Block> method6860();
 
    Class6802<Class7631> method6861();
 
-   Class6612 method6788();
+   Class6612 getWorldInfo();
 
    Class9755 method6807(BlockPos var1);
 
    default Class2197 method6997() {
-      return this.method6788().method20047();
+      return this.getWorldInfo().method20047();
    }
 
    Class1702 method6883();

@@ -16,7 +16,7 @@ public interface Class7205 {
       return this.method22627().method22620();
    }
 
-   default Class7202 method22630(Class2327 var1, Class9332 var2) {
+   default Class7202 method22630(Class2327 var1, MatrixStack var2) {
       return (Class7202)Class9299.field42871.method20217(this.method22627(), var1, var2);
    }
 

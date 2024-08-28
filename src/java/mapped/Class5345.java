@@ -17,11 +17,11 @@ public class Class5345 extends Module {
     @EventTarget
     private void method16765(Class4420 var1) {
         if (this.method15996()) {
-            if (!(mc.field1339.field5032 > 45.0F)) {
+            if (!(mc.player.field5032 > 45.0F)) {
                 Entity var4 = ((Class5335) this.method16004()).method16750(this.method15977("Range"));
                 if (var4 != null) {
-                    double var5 = mc.field1339.field5032 - this.method16766(var4)[1];
-                    double var7 = mc.field1339.field5031 - this.method16766(var4)[0];
+                    double var5 = mc.player.field5032 - this.method16766(var4)[1];
+                    double var7 = mc.player.field5031 - this.method16766(var4)[0];
                     if (var7 < 0.0) {
                         var7 *= -1.0;
                     }
@@ -38,23 +38,23 @@ public class Class5345 extends Module {
                     }
 
                     double var15 = 0.05 * (double) Minecraft.method1586() * (var13 + 1.0);
-                    if (mc.field1339.field5032 > this.method16766(var4)[1]) {
-                        mc.field1339.field5032 = (float) ((double) mc.field1339.field5032 - (var15 * var5 / 90.0 + Math.min(0.5, var7)));
+                    if (mc.player.field5032 > this.method16766(var4)[1]) {
+                        mc.player.field5032 = (float) ((double) mc.player.field5032 - (var15 * var5 / 90.0 + Math.min(0.5, var7)));
                     }
 
-                    if (mc.field1339.field5032 < this.method16766(var4)[1]) {
-                        mc.field1339.field5032 = (float) ((double) mc.field1339.field5032 + var15 * var5 / 90.0 + Math.min(0.5, var7));
+                    if (mc.player.field5032 < this.method16766(var4)[1]) {
+                        mc.player.field5032 = (float) ((double) mc.player.field5032 + var15 * var5 / 90.0 + Math.min(0.5, var7));
                     }
 
-                    if (mc.field1339.field5031 > this.method16766(var4)[0]) {
-                        mc.field1339.field5031 = (float) ((double) mc.field1339.field5031 - (var15 * var7 / 90.0 + Math.min(0.5, var5)));
+                    if (mc.player.field5031 > this.method16766(var4)[0]) {
+                        mc.player.field5031 = (float) ((double) mc.player.field5031 - (var15 * var7 / 90.0 + Math.min(0.5, var5)));
                     }
 
-                    if (mc.field1339.field5031 < this.method16766(var4)[0]) {
-                        mc.field1339.field5031 = (float) ((double) mc.field1339.field5031 + var15 * var7 / 90.0 + Math.min(0.5, var5));
+                    if (mc.player.field5031 < this.method16766(var4)[0]) {
+                        mc.player.field5031 = (float) ((double) mc.player.field5031 + var15 * var7 / 90.0 + Math.min(0.5, var5));
                     }
 
-                    mc.field1339.field4967 = mc.field1339.field5031;
+                    mc.player.field4967 = mc.player.field5031;
                 }
             }
         }
@@ -66,12 +66,12 @@ public class Class5345 extends Module {
         }
 
         this.field23894 = mc.field1345;
-        double var4 = var1.getPosX() - mc.field1339.getPosX() + Math.cos((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;
-        double var6 = var1.getPosY() - 1.6 - this.field23895 + (double) var1.method3393() - mc.field1339.getPosY();
-        double var8 = var1.getPosZ() - mc.field1339.getPosZ() + Math.sin((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;
+        double var4 = var1.getPosX() - mc.player.getPosX() + Math.cos((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;
+        double var6 = var1.getPosY() - 1.6 - this.field23895 + (double) var1.method3393() - mc.player.getPosY();
+        double var8 = var1.getPosZ() - mc.player.getPosZ() + Math.sin((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;
         double var10 = MathHelper.method37766(var4 * var4 + var8 * var8);
-        float var12 = this.method16767(mc.field1339.field5031, (float) (Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
-        float var13 = this.method16767(mc.field1339.field5032, (float) (-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);
+        float var12 = this.method16767(mc.player.field5031, (float) (Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
+        float var13 = this.method16767(mc.player.field5032, (float) (-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);
         return new float[]{var12, var13};
     }
 

@@ -40,10 +40,10 @@ public class Class7049 {
       var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("stopsound").requires(var0x -> var0x.method20129(2))).then(var3));
    }
 
-   private static int method21957(Class6619 var0, Collection<Class878> var1, Class2266 var2, ResourceLocation var3) {
+   private static int method21957(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2266 var2, ResourceLocation var3) {
       Class5488 var6 = new Class5488(var3, var2);
 
-      for (Class878 var8 : var1) {
+      for (ServerPlayerEntity var8 : var1) {
          var8.field4855.sendPacket(var6);
       }
 

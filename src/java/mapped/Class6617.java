@@ -58,7 +58,7 @@ public class Class6617 implements Class6618 {
 
    @Override
    public boolean method20129(int var1) {
-      ClientPlayerEntity var4 = this.field29119.field1339;
+      ClientPlayerEntity var4 = this.field29119.player;
       return var4 == null ? var1 == 0 : var4.method3424(var1);
    }
 

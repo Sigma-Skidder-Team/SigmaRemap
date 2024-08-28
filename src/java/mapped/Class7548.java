@@ -26,7 +26,7 @@ public class Class7548 implements Class7547 {
    public String[] method24669(Class1197 var1, int var2) {
       if (var1 instanceof Class1230) {
          Class1230 var5 = (Class1230)var1;
-         Class5805 var6 = var5.method5811();
+         AbstractOption var6 = var5.method5811();
          return method24671(var6.method17957());
       } else {
          return null;

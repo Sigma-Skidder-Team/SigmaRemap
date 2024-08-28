@@ -39,11 +39,11 @@ public class Class5372 extends Module {
     private void method16913(Class4434 var1) {
         if (this.method15996() && !var1.isCancelled()) {
             double var4 = var1.method13988();
-            if (Class5628.method17730(mc.field1339, 1.0E-4F) && !Class9567.method37081()) {
+            if (Class5628.method17730(mc.player, 1.0E-4F) && !Class9567.method37081()) {
                 if (var4 >= 0.625) {
-                    double var6 = mc.field1339.getPosX();
-                    double var8 = mc.field1339.getPosY();
-                    double var10 = mc.field1339.getPosZ();
+                    double var6 = mc.player.getPosX();
+                    double var8 = mc.player.getPosY();
+                    double var10 = mc.player.getPosZ();
                     this.field23994 = 1;
                     if (!(var4 < 1.1)) {
                         if (!(var4 < 1.6)) {
@@ -85,7 +85,7 @@ public class Class5372 extends Module {
                         }
                     }
 
-                    mc.field1284.field40360 = this.field23992;
+                    mc.timer.field40360 = this.field23992;
                 }
             } else {
                 var1.method13900(true);
@@ -95,18 +95,18 @@ public class Class5372 extends Module {
 
     @EventTarget
     private void method16914(Class4417 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (this.field23994 > 0) {
                 this.field23994--;
             }
 
             if (!var1.method13967()) {
-                mc.field1339.field5051 = this.method15977("Maximum heigh");
+                mc.player.field5051 = this.method15977("Maximum heigh");
             } else {
-                mc.field1339.field5051 = 0.5F;
+                mc.player.field5051 = 0.5F;
                 if (this.field23992 != -1.0F) {
                     this.field23992 = -1.0F;
-                    mc.field1284.field40360 = 1.0F;
+                    mc.timer.field40360 = 1.0F;
                 }
             }
         }

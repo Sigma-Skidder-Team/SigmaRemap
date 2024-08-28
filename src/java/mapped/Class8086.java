@@ -57,7 +57,7 @@ public class Class8086 {
       this.field34749 = var5;
    }
 
-   public <E extends Class944> void method27962(E var1, float var2, Class9332 var3, Class7733 var4) {
+   public <E extends Class944> void method27962(E var1, float var2, MatrixStack var3, Class7733 var4) {
       if (Vector3d.method11328(var1.method3774()).method11340(this.field34748.method37504(), var1.method3773())) {
          Class5942 var7 = this.<Class944>method27960(var1);
          if (var7 != null && var1.method3770() && var1.method3786().method13796(var1.method3775().method23383())) {
@@ -66,7 +66,7 @@ public class Class8086 {
       }
    }
 
-   private static <T extends Class944> void method27963(Class5942<T> var0, T var1, float var2, Class9332 var3, Class7733 var4) {
+   private static <T extends Class944> void method27963(Class5942<T> var0, T var1, float var2, MatrixStack var3, Class7733 var4) {
       World var7 = var1.method3734();
       int var8;
       if (var7 == null) {
@@ -91,7 +91,7 @@ public class Class8086 {
       }
    }
 
-   public <E extends Class944> boolean method27964(E var1, Class9332 var2, Class7733 var3, int var4, int var5) {
+   public <E extends Class944> boolean method27964(E var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
       Class5942 var8 = this.<Class944>method27960(var1);
       if (var8 != null) {
          method27965(var1, () -> {

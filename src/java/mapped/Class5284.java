@@ -21,8 +21,8 @@ public class Class5284 extends Module {
 
     @EventTarget
     public void method16581(Class4398 var1) {
-        if (this.method15996() && mc.field1338 != null) {
-            if ((double) var1.method13902().getY() >= mc.field1339.getPosY()) {
+        if (this.method15996() && mc.world != null) {
+            if ((double) var1.method13902().getY() >= mc.player.getPosY()) {
                 var1.method13905(Class8022.method27425());
             }
         }
@@ -31,17 +31,17 @@ public class Class5284 extends Module {
     @EventTarget
     public void method16582(TickEvent var1) {
         if (this.method15996()) {
-            mc.field1339.field4999 = 3;
-            if (mc.field1339.field5055 % 2 == 0) {
-                if (mc.field1339.field5036) {
-                    if (!mc.field1339.field4981) {
-                        if (mc.field1339.method3331()) {
-                            mc.field1339
-                                    .method3215(mc.field1339.getPosX(), mc.field1339.getPosY() - 1.0, mc.field1339.getPosZ());
+            mc.player.field4999 = 3;
+            if (mc.player.field5055 % 2 == 0) {
+                if (mc.player.field5036) {
+                    if (!mc.player.field4981) {
+                        if (mc.player.method3331()) {
+                            mc.player
+                                    .method3215(mc.player.getPosX(), mc.player.getPosY() - 1.0, mc.player.getPosZ());
                         }
                     } else {
-                        mc.field1339
-                                .method3215(mc.field1339.getPosX(), mc.field1339.getPosY() + 1.0, mc.field1339.getPosZ());
+                        mc.player
+                                .method3215(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
                     }
                 }
             }

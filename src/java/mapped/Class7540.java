@@ -50,7 +50,7 @@ public class Class7540 {
 
       var9.method17065();
       Class4395.method13895(var9);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 }

@@ -34,7 +34,7 @@ public class Class4259 extends Class4247 {
       int var11 = var5 - var10 - 10;
       int var12 = var6 - var9 - 10;
       this.method13230(this.field20647 = new Class4266(this, "zoom", var11, var12, var10, var9));
-      this.field20648 = Minecraft.getInstance().field1338.method7011(Minecraft.getInstance().field1339.method3432()).method7072();
+      this.field20648 = Minecraft.getInstance().world.method7011(Minecraft.getInstance().player.method3432()).method7072();
       this.method13300(false);
    }
 
@@ -73,7 +73,7 @@ public class Class4259 extends Class4247 {
          float var7 = (float)(this.field20897 - var6) / 2.0F;
          float var8 = (float)(this.field20898 - var6) / 2.0F;
          float var9 = (float)var1 - ((float)this.method13271() + var8 + (float)(var6 / 2));
-         float var10 = (float)(Minecraft.getInstance().field1283.method8044() - var2) - ((float)this.method13272() + var7 + (float)(var6 / 2));
+         float var10 = (float)(Minecraft.getInstance().mainWindow.method8044() - var2) - ((float)this.method13272() + var7 + (float)(var6 / 2));
          float var11 = (float)var6 / ((float)(this.field20649 - 1) * 2.0F);
          float var12 = (float)(this.field20648.field32174 * 16) - this.field20651 * 16.0F;
          float var13 = (float)(this.field20648.field32175 * 16) - this.field20650 * 16.0F;

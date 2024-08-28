@@ -32,7 +32,7 @@ public class Class1695 implements AutoCloseable {
       this.field9232.method1140();
    }
 
-   private void method7291(Class9332 var1, Class7733 var2, boolean var3, int var4) {
+   private void method7291(MatrixStack var1, Class7733 var2, boolean var3, int var4) {
       boolean var7 = false;
       boolean var8 = false;
       float var9 = 0.0F;
@@ -113,7 +113,7 @@ public class Class1695 implements AutoCloseable {
    }
 
    // $VF: synthetic method
-   public static void method7293(Class1695 var0, Class9332 var1, Class7733 var2, boolean var3, int var4) {
+   public static void method7293(Class1695 var0, MatrixStack var1, Class7733 var2, boolean var3, int var4) {
       var0.method7291(var1, var2, var3, var4);
    }
 

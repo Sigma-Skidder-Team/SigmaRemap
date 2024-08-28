@@ -32,7 +32,7 @@ public class Class3287 extends Class3257 {
                      var2.method2863(!var16.method25067(Class8953.field40470) ? Class6067.field26429 : Class6067.field26431, 1.0F, 1.0F);
                      ItemStack var14 = Class8482.method29979(var6, var2, new ItemStack(var16.method25050()));
                      if (!var1.field9020) {
-                        CriteriaTriggers.field44474.method15152((Class878)var2, new ItemStack(var16.method25050()));
+                        CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var2, new ItemStack(var16.method25050()));
                      }
 
                      return Class6794.<ItemStack>method20700(var14, var1.method6714());
@@ -47,8 +47,8 @@ public class Class3287 extends Class3257 {
                   return Class6794.<ItemStack>method20699(var6);
                } else {
                   this.method11824(var1, var6, var13);
-                  if (var2 instanceof Class878) {
-                     CriteriaTriggers.field44489.method15138((Class878)var2, var13, var6);
+                  if (var2 instanceof ServerPlayerEntity) {
+                     CriteriaTriggers.field44489.method15138((ServerPlayerEntity)var2, var13, var6);
                   }
 
                   var2.method2913(Class8876.field40098.method172(this));

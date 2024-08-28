@@ -17,10 +17,10 @@ public class Class5367 extends Module {
         if (this.method15996()) {
             if (var1.method13898() instanceof Class5464) {
                 Class5464 var4 = (Class5464) var1.method13898();
-                if (var4.method17178(mc.field1338) == null
-                        || !var4.method17178(mc.field1338).method3066()
-                        || var4.method17178(mc.field1338).method3275(mc.field1339) > 5.0F
-                        || var4.method17178(mc.field1338) == mc.field1339) {
+                if (var4.method17178(mc.world) == null
+                        || !var4.method17178(mc.world).method3066()
+                        || var4.method17178(mc.world).method3275(mc.player) > 5.0F
+                        || var4.method17178(mc.world) == mc.player) {
                 }
             }
         }

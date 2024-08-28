@@ -70,14 +70,14 @@ public class Class2894<T extends Class880> extends Class2797<T> {
       return Iterables.concat(super.method11002(), ImmutableList.of(this.field17921, this.field17922, this.field17919, this.field17920, this.field17923));
    }
 
-   public void method11208(Class9332 var1, Class5422 var2, int var3, int var4) {
+   public void method11208(MatrixStack var1, Class5422 var2, int var3, int var4) {
       this.field17925.method22669(this.field17432);
       this.field17925.field31032 = 0.0F;
       this.field17925.field31033 = 0.0F;
       this.field17925.method22680(var1, var2, var3, var4);
    }
 
-   public void method11209(Class9332 var1, Class5422 var2, int var3, int var4) {
+   public void method11209(MatrixStack var1, Class5422 var2, int var3, int var4) {
       this.field17924.method22680(var1, var2, var3, var4);
    }
 
@@ -119,7 +119,7 @@ public class Class2894<T extends Class880> extends Class2797<T> {
    }
 
    @Override
-   public void method11010(Class2205 var1, Class9332 var2) {
+   public void method11010(Class2205 var1, MatrixStack var2) {
       Class7219 var5 = this.method11011(var1);
       if (!this.field17926) {
          var5.method22682(var2);

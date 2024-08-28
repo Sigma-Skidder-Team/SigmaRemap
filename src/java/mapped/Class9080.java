@@ -31,7 +31,7 @@ public class Class9080 extends Class9081 {
       if (var3 % 24000L != 500L) {
          if (var5 != 1L) {
             if (var5 == 5L && var3 % 24000L == 22000L) {
-               this.field41571.method1328(new TranslationTextComponent("demo.day.warning"), Util.field45724);
+               this.field41571.sendMessage(new TranslationTextComponent("demo.day.warning"), Util.DUMMY_UUID);
             }
          } else if (var3 != 100L) {
             if (var3 != 175L) {
@@ -46,7 +46,7 @@ public class Class9080 extends Class9081 {
          }
       } else if (var5 <= 6L) {
          if (var5 != 6L) {
-            this.field41571.method1328(new TranslationTextComponent("demo.day." + var5), Util.field45724);
+            this.field41571.sendMessage(new TranslationTextComponent("demo.day." + var5), Util.DUMMY_UUID);
          } else {
             this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 104.0F));
          }
@@ -55,7 +55,7 @@ public class Class9080 extends Class9081 {
 
    private void method33857() {
       if (this.field41567 > 100) {
-         this.field41571.method1328(new TranslationTextComponent("demo.reminder"), Util.field45724);
+         this.field41571.sendMessage(new TranslationTextComponent("demo.reminder"), Util.DUMMY_UUID);
          this.field41567 = 0;
       }
    }
@@ -70,7 +70,7 @@ public class Class9080 extends Class9081 {
    }
 
    @Override
-   public ActionResultType method33859(Class878 var1, World var2, ItemStack var3, Hand var4) {
+   public ActionResultType method33859(ServerPlayerEntity var1, World var2, ItemStack var3, Hand var4) {
       if (!this.field41566) {
          return super.method33859(var1, var2, var3, var4);
       } else {
@@ -80,7 +80,7 @@ public class Class9080 extends Class9081 {
    }
 
    @Override
-   public ActionResultType method33860(Class878 var1, World var2, ItemStack var3, Hand var4, Class8711 var5) {
+   public ActionResultType method33860(ServerPlayerEntity var1, World var2, ItemStack var3, Hand var4, Class8711 var5) {
       if (!this.field41566) {
          return super.method33860(var1, var2, var3, var4, var5);
       } else {

@@ -83,7 +83,7 @@ public class Class2893 extends Class2892 {
    }
 
    @Override
-   public void method11010(Class2205 var1, Class9332 var2) {
+   public void method11010(Class2205 var1, MatrixStack var2) {
       Class7219 var5 = this.method11011(var1);
       boolean var6 = var5.field31039;
       var5.field31039 = true;

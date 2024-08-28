@@ -295,7 +295,7 @@ public class Class974 implements Class920, Class933 {
 
             int var6 = var2.method32113() - this.method3618(var5).method32179();
             if (this.method4046(var5, var2.method32106(var6))) {
-               ((Class878)this.field5444).field4855.sendPacket(new Class5501(-2, var5, this.method3618(var5)));
+               ((ServerPlayerEntity)this.field5444).field4855.sendPacket(new Class5501(-2, var5, this.method3618(var5)));
             }
          }
       }

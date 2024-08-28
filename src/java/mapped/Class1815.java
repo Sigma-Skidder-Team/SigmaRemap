@@ -60,7 +60,7 @@ public final class Class1815 implements AutoCloseable {
       RenderSystem.method27808(RenderSystem::method27809);
       this.field9787 = var2;
       this.method8016();
-      this.method8015("Pre startup");
+      this.setRenderPhase("Pre startup");
       this.field9786 = var1;
       Optional var8 = Class8737.method31535(var4);
       if (!var8.isPresent()) {
@@ -130,7 +130,7 @@ public final class Class1815 implements AutoCloseable {
       return Class8157.method28296(this);
    }
 
-   public boolean method8011() {
+   public boolean shouldClose() {
       return Class8157.method28300(this);
    }
 
@@ -247,7 +247,7 @@ public final class Class1815 implements AutoCloseable {
       return var8;
    }
 
-   public void method8015(String var1) {
+   public void setRenderPhase(String var1) {
       this.field9805 = var1;
       if (var1.equals("Startup")) {
          Class8684.method31269();
@@ -308,12 +308,12 @@ public final class Class1815 implements AutoCloseable {
 
    private void method8022(long var1, int var3, int var4) {
       if (var1 == this.field9788) {
-         int var7 = this.method8041();
-         int var8 = this.method8042();
+         int var7 = this.getFramebufferWidth();
+         int var8 = this.getFramebufferHeight();
          if (var3 != 0 && var4 != 0) {
             this.field9800 = var3;
             this.field9801 = var4;
-            if (this.method8041() != var7 || this.method8042() != var8) {
+            if (this.getFramebufferWidth() != var7 || this.getFramebufferHeight() != var8) {
                this.field9786.method1481();
             }
          }
@@ -355,7 +355,7 @@ public final class Class1815 implements AutoCloseable {
       return this.field9807;
    }
 
-   public void method8029() {
+   public void flipFrame() {
       RenderSystem.method27811(this.field9788);
       if (this.field9794 != this.field9795) {
          this.field9795 = this.field9794;
@@ -426,7 +426,7 @@ public final class Class1815 implements AutoCloseable {
          this.method8033();
          this.field9786.method1481();
          this.method8020(var1);
-         this.method8029();
+         this.flipFrame();
       } catch (Exception var5) {
          field9784.error("Couldn't toggle fullscreen", var5);
       }
@@ -466,11 +466,11 @@ public final class Class1815 implements AutoCloseable {
       return this.field9794;
    }
 
-   public int method8041() {
+   public int getFramebufferWidth() {
       return this.field9800;
    }
 
-   public int method8042() {
+   public int getFramebufferHeight() {
       return this.field9801;
    }
 
@@ -482,11 +482,11 @@ public final class Class1815 implements AutoCloseable {
       return this.field9799;
    }
 
-   public int method8045() {
+   public int getScaledWidth() {
       return this.field9802;
    }
 
-   public int method8046() {
+   public int getScaledHeight() {
       return this.field9803;
    }
 

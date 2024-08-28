@@ -7,7 +7,7 @@ import java.util.function.BiConsumer;
 public class Class7466 extends Class7465<Class7466> {
    private boolean field32103;
 
-   private static Class7989<Class7466> method24172(boolean var0, BiConsumer<Class314, Class7466> var1) {
+   private static Class7989<Class7466> method24172(boolean var0, BiConsumer<MinecraftServer, Class7466> var1) {
       return new Class7989<>(BoolArgumentType::bool, var1x -> new Class7466(var1x, var0), var1, Class7567::method24777);
    }
 
@@ -30,7 +30,7 @@ public class Class7466 extends Class7465<Class7466> {
       return this.field32103;
    }
 
-   public void method24175(boolean var1, Class314 var2) {
+   public void method24175(boolean var1, MinecraftServer var2) {
       this.field32103 = var1;
       this.method24171(var2);
    }
@@ -58,7 +58,7 @@ public class Class7466 extends Class7465<Class7466> {
       return new Class7466(this.field32101, this.field32103);
    }
 
-   public void method24164(Class7466 var1, Class314 var2) {
+   public void method24164(Class7466 var1, MinecraftServer var2) {
       this.field32103 = var1.field32103;
       this.method24171(var2);
    }
@@ -69,7 +69,7 @@ public class Class7466 extends Class7465<Class7466> {
    }
 
    // $VF: synthetic method
-   public static Class7989 method24179(boolean var0, BiConsumer<Class314, Class7466> var1) {
+   public static Class7989 method24179(boolean var0, BiConsumer<MinecraftServer, Class7466> var1) {
       return method24172(var0, var1);
    }
 }

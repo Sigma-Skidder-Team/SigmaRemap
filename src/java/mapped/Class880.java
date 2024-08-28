@@ -198,7 +198,7 @@ public abstract class Class880 extends Entity {
       }
 
       super.method3000();
-      this.field5024.method6820().method22503("livingEntityBaseTick");
+      this.field5024.method6820().startSection("livingEntityBaseTick");
       boolean var3 = this instanceof PlayerEntity;
       if (this.method3066()) {
          if (!this.method3180()) {
@@ -274,11 +274,11 @@ public abstract class Class880 extends Entity {
          this.field4952--;
       }
 
-      if (this.field5061 > 0 && !(this instanceof Class878)) {
+      if (this.field5061 > 0 && !(this instanceof ServerPlayerEntity)) {
          this.field5061--;
       }
 
-      if (this.method3044()) {
+      if (this.getShouldBeDead()) {
          this.method3008();
       }
 
@@ -308,7 +308,7 @@ public abstract class Class880 extends Entity {
       this.field4968 = this.field4967;
       this.field5033 = this.field5031;
       this.field5034 = this.field5032;
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
    }
 
    public boolean method3001() {
@@ -839,7 +839,7 @@ public abstract class Class880 extends Entity {
       this.field5063.method35446(field4935, MathHelper.method37777(var1, 0.0F, this.method3075()));
    }
 
-   public boolean method3044() {
+   public boolean getShouldBeDead() {
       return this.method3042() <= 0.0F;
    }
 
@@ -848,7 +848,7 @@ public abstract class Class880 extends Entity {
       if (this.method2760(var1)) {
          return false;
       } else if (!this.field5024.field9020) {
-         if (this.method3044()) {
+         if (this.getShouldBeDead()) {
             return false;
          } else if (var1.method31141() && this.method3033(Class8254.field35478)) {
             return false;
@@ -970,7 +970,7 @@ public abstract class Class880 extends Entity {
                }
             }
 
-            if (!this.method3044()) {
+            if (!this.getShouldBeDead()) {
                if (var16) {
                   this.method3048(var1);
                }
@@ -989,15 +989,15 @@ public abstract class Class880 extends Entity {
                this.field5007 = this.field5024.method6783();
             }
 
-            if (this instanceof Class878) {
-               CriteriaTriggers.field44472.method15165((Class878)this, var1, var5, var2, var6);
+            if (this instanceof ServerPlayerEntity) {
+               CriteriaTriggers.field44472.method15165((ServerPlayerEntity)this, var1, var5, var2, var6);
                if (var7 > 0.0F && var7 < 3.4028235E37F) {
-                  ((Class878)this).method2912(Class8876.field40131, Math.round(var7 * 10.0F));
+                  ((ServerPlayerEntity)this).method2912(Class8876.field40131, Math.round(var7 * 10.0F));
                }
             }
 
-            if (var9 instanceof Class878) {
-               CriteriaTriggers.field44471.method15093((Class878)var9, this, var1, var5, var2, var6);
+            if (var9 instanceof ServerPlayerEntity) {
+               CriteriaTriggers.field44471.method15093((ServerPlayerEntity)var9, this, var1, var5, var2, var6);
             }
 
             return var19;
@@ -1031,8 +1031,8 @@ public abstract class Class880 extends Entity {
          }
 
          if (var4 != null) {
-            if (this instanceof Class878) {
-               Class878 var10 = (Class878)this;
+            if (this instanceof ServerPlayerEntity) {
+               ServerPlayerEntity var10 = (ServerPlayerEntity)this;
                var10.method2913(Class8876.field40098.method172(Class8514.field38126));
                CriteriaTriggers.field44492.method15068(var10, var4);
             }
@@ -1381,12 +1381,12 @@ public abstract class Class880 extends Entity {
             var2 = Math.max(var7 / 25.0F, 0.0F);
             float var9 = var8 - var2;
             if (var9 > 0.0F && var9 < 3.4028235E37F) {
-               if (!(this instanceof Class878)) {
-                  if (var1.method31109() instanceof Class878) {
-                     ((Class878)var1.method31109()).method2912(Class8876.field40129, Math.round(var9 * 10.0F));
+               if (!(this instanceof ServerPlayerEntity)) {
+                  if (var1.method31109() instanceof ServerPlayerEntity) {
+                     ((ServerPlayerEntity)var1.method31109()).method2912(Class8876.field40129, Math.round(var9 * 10.0F));
                   }
                } else {
-                  ((Class878)this).method2912(Class8876.field40133, Math.round(var9 * 10.0F));
+                  ((ServerPlayerEntity)this).method2912(Class8876.field40133, Math.round(var9 * 10.0F));
                }
             }
          }
@@ -1413,8 +1413,8 @@ public abstract class Class880 extends Entity {
          float var5 = Math.max(var2 - this.method2959(), 0.0F);
          this.method2958(this.method2959() - (var2 - var5));
          float var6 = var2 - var5;
-         if (var6 > 0.0F && var6 < 3.4028235E37F && var1.method31109() instanceof Class878) {
-            ((Class878)var1.method31109()).method2912(Class8876.field40128, Math.round(var6 * 10.0F));
+         if (var6 > 0.0F && var6 < 3.4028235E37F && var1.method31109() instanceof ServerPlayerEntity) {
+            ((ServerPlayerEntity)var1.method31109()).method2912(Class8876.field40128, Math.round(var6 * 10.0F));
          }
 
          if (var5 != 0.0F) {
@@ -1769,7 +1769,7 @@ public abstract class Class880 extends Entity {
    }
 
    public boolean method2896() {
-      return this.method3044();
+      return this.getShouldBeDead();
    }
 
    @Override
@@ -2127,10 +2127,10 @@ public abstract class Class880 extends Entity {
       }
 
       this.field4975 = this.field4975 + (var10 - this.field4975) * 0.3F;
-      this.field5024.method6820().method22503("headTurn");
+      this.field5024.method6820().startSection("headTurn");
       var9 = this.method3123(var8, var9);
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("rangeChecks");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("rangeChecks");
 
       while (this.field5031 - this.field5033 < -180.0F) {
          this.field5033 -= 360.0F;
@@ -2164,7 +2164,7 @@ public abstract class Class880 extends Entity {
          this.field4968 += 360.0F;
       }
 
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
       this.field4976 += var9;
       if (!this.method3165()) {
          this.field5003 = 0;
@@ -2344,12 +2344,12 @@ public abstract class Class880 extends Entity {
       }
 
       this.method3435(var4, var6, var8);
-      this.field5024.method6820().method22503("ai");
+      this.field5024.method6820().startSection("ai");
       if (!this.method2896()) {
          if (this.method3138()) {
-            this.field5024.method6820().method22503("newAi");
+            this.field5024.method6820().startSection("newAi");
             this.updateEntityActionState();
-            this.field5024.method6820().method22505();
+            this.field5024.method6820().endSection();
          }
       } else {
          this.field4981 = false;
@@ -2357,8 +2357,8 @@ public abstract class Class880 extends Entity {
          this.field4984 = 0.0F;
       }
 
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("jump");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("jump");
       if (this.field4981 && this.method2897()) {
          double var18;
          if (!this.method3264()) {
@@ -2385,22 +2385,22 @@ public abstract class Class880 extends Entity {
          this.field4999 = 0;
       }
 
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("travel");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("travel");
       this.field4982 *= 0.98F;
       this.field4984 *= 0.98F;
       this.method3125();
       Class6488 var23 = this.method3389();
       this.method2915(new Vector3d((double)this.field4982, (double)this.field4983, (double)this.field4984));
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("push");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("push");
       if (this.field5008 > 0) {
          this.field5008--;
          this.method3127(var23, this.method3389());
       }
 
       this.method3126();
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
       if (!this.field5024.field9020 && this.method3124() && this.method3254()) {
          this.method2741(Class8654.field38999, 1.0F);
       }
@@ -2540,8 +2540,8 @@ public abstract class Class880 extends Entity {
 
    public void method3134(ItemEntity var1) {
       PlayerEntity var4 = var1.method4128() == null ? null : this.field5024.method7196(var1.method4128());
-      if (var4 instanceof Class878) {
-         CriteriaTriggers.field44505.method15090((Class878)var4, var1.method4124(), this);
+      if (var4 instanceof ServerPlayerEntity) {
+         CriteriaTriggers.field44505.method15090((ServerPlayerEntity)var4, var1.method4124(), this);
       }
    }
 

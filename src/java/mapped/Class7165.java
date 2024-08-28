@@ -7,17 +7,17 @@ public interface Class7165 {
 
    void method22502();
 
-   void method22503(String var1);
+   void startSection(String var1);
 
    void method22504(Supplier<String> var1);
 
-   void method22505();
+   void endSection();
 
-   void method22506(String var1);
+   void endStartSection(String var1);
 
    void method22507(Supplier<String> var1);
 
-   void method22508(String var1);
+   void func_230035_c_(String var1);
 
    void method22509(Supplier<String> var1);
 

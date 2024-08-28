@@ -18,7 +18,7 @@ public class Class5256 extends PremiumModule {
     @EventTarget
     public void method16416(TickEvent var1) {
         if (this.method15996()) {
-            if (mc.field1339.getRidingEntity() != null) {
+            if (mc.player.getRidingEntity() != null) {
                 float var4 = Class9567.method37086();
                 float var5 = this.method15977("Speed");
                 double var6 = Math.cos(Math.toRadians(var4)) * (double) var5;
@@ -28,9 +28,9 @@ public class Class5256 extends PremiumModule {
                     var8 = 0.0;
                 }
 
-                Entity var10 = mc.field1339.getRidingEntity();
-                var10.field5031 = mc.field1339.field5031;
-                var10.method3435(var6, !mc.field1339.field4981 ? (!this.field23643 ? 0.0 : (double) (-var5)) : (double) var5, var8);
+                Entity var10 = mc.player.getRidingEntity();
+                var10.field5031 = mc.player.field5031;
+                var10.method3435(var6, !mc.player.field4981 ? (!this.field23643 ? 0.0 : (double) (-var5)) : (double) var5, var8);
             }
         }
     }
@@ -38,9 +38,9 @@ public class Class5256 extends PremiumModule {
     @EventTarget
     private void method16417(Class4430 var1) {
         if (this.method15996()) {
-            if (mc.field1339.getRidingEntity() != null) {
-                if (!mc.field1339.getRidingEntity().field5036) {
-                    if (var1.method13977() == mc.field1299.field44637.field13070.field34875) {
+            if (mc.player.getRidingEntity() != null) {
+                if (!mc.player.getRidingEntity().field5036) {
+                    if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                         var1.method13900(true);
                         this.field23643 = true;
                     }
@@ -52,13 +52,13 @@ public class Class5256 extends PremiumModule {
     @EventTarget
     private void method16418(Class4426 var1) {
         if (this.method15996()) {
-            if (this.field23643 && var1.method13973() == mc.field1299.field44637.field13070.field34875) {
+            if (this.field23643 && var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 this.field23643 = false;
             }
 
-            if (mc.field1339.getRidingEntity() != null) {
-                if (!mc.field1339.getRidingEntity().field5036) {
-                    if (var1.method13973() == mc.field1299.field44637.field13070.field34875) {
+            if (mc.player.getRidingEntity() != null) {
+                if (!mc.player.getRidingEntity().field5036) {
+                    if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                         var1.method13900(true);
                         this.field23643 = false;
                     }
@@ -69,18 +69,18 @@ public class Class5256 extends PremiumModule {
 
     @Override
     public void isInDevelopment() {
-        if (!mc.field1299.field44637.method8509()) {
-            if (!mc.field1299.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.method8509()) {
+            if (!mc.gameSettings.field44637.method8509()) {
                 this.field23643 = false;
             }
         } else {
-            mc.field1299.field44637.field13071 = false;
+            mc.gameSettings.field44637.field13071 = false;
             this.field23643 = true;
         }
     }
 
     @Override
     public void method15965() {
-        mc.field1299.field44637.field13071 = this.field23643;
+        mc.gameSettings.field44637.field13071 = this.field23643;
     }
 }

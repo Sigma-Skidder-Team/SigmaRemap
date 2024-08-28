@@ -460,7 +460,7 @@ public class Class9037 {
    }
 
    private static void method33507(ServerWorld var0, String var1, TextFormatting var2) {
-      var0.method6914(var0x -> true).forEach(var2x -> var2x.method1328(new StringTextComponent(var2 + var1), Util.field45724));
+      var0.method6914(var0x -> true).forEach(var2x -> var2x.sendMessage(new StringTextComponent(var2 + var1), Util.DUMMY_UUID));
    }
 
    // $VF: synthetic method

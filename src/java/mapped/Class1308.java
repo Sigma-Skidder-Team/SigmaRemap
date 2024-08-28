@@ -23,10 +23,10 @@ public class Class1308 extends Screen {
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 + 2, this.field4565 / 2 + 62 + -16, 114, 20, new TranslationTextComponent("demo.help.later"), var1 -> {
             this.field4562.displayGuiScreen((Screen)null);
-            this.field4562.field1301.method36742();
+            this.field4562.mouseHelper.grabMouse();
          })
       );
-      Class9574 var4 = this.field4562.field1299;
+      Class9574 var4 = this.field4562.gameSettings;
       this.field6914 = Class5991.method18586(
          this.field4568,
          new TranslationTextComponent(
@@ -40,7 +40,7 @@ public class Class1308 extends Screen {
    }
 
    @Override
-   public void method2469(Class9332 var1) {
+   public void method2469(MatrixStack var1) {
       super.method2469(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(field6913);
@@ -50,7 +50,7 @@ public class Class1308 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       int var7 = (this.field4564 - 248) / 2 + 10;
       int var8 = (this.field4565 - 166) / 2 + 8;

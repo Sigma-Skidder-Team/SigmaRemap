@@ -128,9 +128,9 @@ public class Class302 implements Class268 {
       return CompletableFuture.allOf(var10)
               .thenApplyAsync(var4x -> {
             var3.method22501();
-            var3.method22503("stitching");
+            var3.startSection("stitching");
             Class8226 var7 = this.field1176.method1092(var2, var9.values().stream().<ResourceLocation>flatMap(Collection::stream), var3, 0);
-            var3.method22505();
+            var3.endSection();
             var3.method22502();
             return var7;
          }, var5)
@@ -139,9 +139,9 @@ public class Class302 implements Class268 {
             var3x -> {
                this.field1169.clear();
                var4.method22501();
-               var4.method22503("upload");
+               var4.startSection("upload");
                this.field1176.method1091(var3x);
-               var4.method22506("bindSpriteSets");
+               var4.endStartSection("bindSpriteSets");
                Class1713 var6x = this.field1176.method1098(Class1714.method7513());
                var9.forEach(
                   (var2xx, var3xx) -> {
@@ -151,14 +151,14 @@ public class Class302 implements Class268 {
                      this.field1175.get(var2xx).method32939(var6xx);
                   }
                );
-               var4.method22505();
+               var4.endSection();
                var4.method22502();
             },
             var6
          );
    }
 
-   public void method1193() {
+   public void close() {
       this.field1176.method1099();
    }
 
@@ -223,9 +223,9 @@ public class Class302 implements Class268 {
 
    public void method1200() {
       this.field1169.forEach((var1, var2) -> {
-         this.field1168.method6820().method22503(var1.toString());
+         this.field1168.method6820().startSection(var1.toString());
          this.method1201(var2);
-         this.field1168.method6820().method22505();
+         this.field1168.method6820().endSection();
       });
       if (!this.field1170.isEmpty()) {
          ArrayList var3 = Lists.newArrayList();
@@ -294,11 +294,11 @@ public class Class302 implements Class268 {
       }
    }
 
-   public void method1203(Class9332 var1, Class7735 var2, Class1699 var3, Class9624 var4, float var5) {
+   public void method1203(MatrixStack var1, Class7735 var2, Class1699 var3, Class9624 var4, float var5) {
       this.method1204(var1, var2, var3, var4, var5, (Class7647)null);
    }
 
-   public void method1204(Class9332 var1, Class7735 var2, Class1699 var3, Class9624 var4, float var5, Class7647 var6) {
+   public void method1204(MatrixStack var1, Class7735 var2, Class1699 var3, Class9624 var4, float var5, Class7647 var6) {
       var3.method7317();
       Runnable var9 = () -> {
          RenderSystem.disableAlphaTest();
@@ -307,7 +307,7 @@ public class Class302 implements Class268 {
          RenderSystem.method27840();
          if (Class9299.field42864.method20245()) {
             RenderSystem.method27860(33986);
-            RenderSystem.method27861();
+            RenderSystem.enableTexture();
             RenderSystem.method27860(33984);
          }
       };

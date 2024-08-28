@@ -48,7 +48,7 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
       return var1.method4857() != null ? field25049[var1.method4857().method309()] : field25048;
    }
 
-   public void method17842(Class1057 var1, Class9332 var2, float var3, float var4, float var5) {
+   public void method17842(Class1057 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4 + 180.0F, var5);
       var2.method35291(0.0, 0.5, 0.0);
       var2.method35293(var1.method4848().method536().method532());

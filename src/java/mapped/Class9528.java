@@ -38,8 +38,8 @@ public class Class9528 {
          if (var6 != null) {
             this.field44347
                .getClientPlayNetHandler()
-               .sendPacket(new CUseEntityPacket(var6.method31416(), Hand.field182, var6.method31419(), this.field44347.field1339.method3331()));
-            this.field44347.getClientPlayNetHandler().sendPacket(new CUseEntityPacket(var6.method31416(), Hand.field182, this.field44347.field1339.method3331()));
+               .sendPacket(new CUseEntityPacket(var6.method31416(), Hand.field182, var6.method31419(), this.field44347.player.method3331()));
+            this.field44347.getClientPlayNetHandler().sendPacket(new CUseEntityPacket(var6.method31416(), Hand.field182, this.field44347.player.method3331()));
          }
       }
 
@@ -54,7 +54,7 @@ public class Class9528 {
 
    public boolean method36817() {
       return !this.field44346.getStringSettingValueByName("Autoblock Mode").equals("None")
-         && this.field44347.field1339.method3090().method32107() instanceof Class3267
+         && this.field44347.player.method3090().method32107() instanceof Class3267
          && !this.method36813();
    }
 
@@ -85,9 +85,9 @@ public class Class9528 {
          var4++;
       }
 
-      if (this.field44347.field1339.method2973() > 1.26F && this.field44346.method15974("Cooldown")) {
+      if (this.field44347.player.method2973() > 1.26F && this.field44346.method15974("Cooldown")) {
          int var11 = !var5 ? 1 : 2;
-         float var12 = this.field44347.field1339.method2973() - (float)this.field44347.field1339.field4958 - (float)var11;
+         float var12 = this.field44347.player.method2973() - (float)this.field44347.player.field4958 - (float)var11;
          return var12 <= 0.0F && var12 > -1.0F;
       } else if (var4 != 2) {
          if (var4 < 2) {
@@ -150,7 +150,7 @@ public class Class9528 {
       while (var24.hasNext()) {
          Class8012 var8 = (Class8012)var24.next();
          Entity var9 = var8.method27397();
-         if (var9 == this.field44347.field1339 || var9 == Class5319.field23863) {
+         if (var9 == this.field44347.player || var9 == Class5319.field23863) {
             var24.remove();
          } else if (Client.getInstance().getFriendManager().method26997(var9)) {
             var24.remove();
@@ -158,7 +158,7 @@ public class Class9528 {
             var24.remove();
          } else if (((Class880)var9).method3042() == 0.0F) {
             var24.remove();
-         } else if (!this.field44347.field1339.method3026((Class880)var9)) {
+         } else if (!this.field44347.player.method3026((Class880)var9)) {
             var24.remove();
          } else if (var9 instanceof Class1005) {
             var24.remove();
@@ -172,7 +172,7 @@ public class Class9528 {
             var24.remove();
          } else if (!this.field44346.method15974("Monsters") && var9 instanceof Class1009) {
             var24.remove();
-         } else if (this.field44347.field1339.getRidingEntity() != null && this.field44347.field1339.getRidingEntity().equals(var9)) {
+         } else if (this.field44347.player.getRidingEntity() != null && this.field44347.player.getRidingEntity().equals(var9)) {
             var24.remove();
          } else if (var9.method3362()) {
             var24.remove();
@@ -180,7 +180,7 @@ public class Class9528 {
             || !Class8781.method31662((PlayerEntity)var9)
             || !Client.getInstance().getModuleManager().method14662(Class5275.class).method15996()) {
             Vector3d var10 = Class5628.method17751(var9);
-            if (!(this.field44347.field1339.method3275(var9) < 40.0F)) {
+            if (!(this.field44347.player.method3275(var9) < 40.0F)) {
                if (this.field44349.containsKey(var9)) {
                   this.field44349.remove(var9);
                }
@@ -217,7 +217,7 @@ public class Class9528 {
                            var31.field18049,
                            var31.field18050 - var19,
                            var31.field18048 + var19,
-                           var31.field18049 + this.field44347.field1339.field5035.method19677(),
+                           var31.field18049 + this.field44347.player.field5035.method19677(),
                            var31.field18050 + var19
                         );
                         double var22 = Class5628.method17755(var21);

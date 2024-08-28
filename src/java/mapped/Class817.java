@@ -47,7 +47,7 @@ public class Class817 extends Class798 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -84,12 +84,12 @@ public class Class817 extends Class798 {
    }
 
    @Override
-   public String method2326() {
-      return super.method2326() + ". " + field4447.getString() + " " + field4448.getString();
+   public String getNarrationMessage() {
+      return super.getNarrationMessage() + ". " + field4447.getString() + " " + field4448.getString();
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, field4446, this.field4564 / 2, 17, 16777215);
       this.field4568.method38805(var1, field4447, (float)(this.field4564 / 2 - 120), (float)method1929(5), 16777215);

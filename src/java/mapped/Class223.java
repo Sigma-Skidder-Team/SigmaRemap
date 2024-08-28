@@ -6,7 +6,7 @@ public abstract class Class223<T extends Entity & Class1080, M extends Class2827
    }
 
    @Override
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (((Class1080)var4).method5016()) {
          float var13 = (float)var4.field5055 + var7;
          Class2827 var14 = this.method833();

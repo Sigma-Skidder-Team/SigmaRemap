@@ -5,10 +5,10 @@ import com.mojang.authlib.ProfileLookupCallback;
 import java.util.List;
 
 public final class Class8858 implements ProfileLookupCallback {
-   public final Class314 field40045;
+   public final MinecraftServer field40045;
    public final List field40046;
 
-   public Class8858(Class314 var1, List var2) {
+   public Class8858(MinecraftServer var1, List var2) {
       this.field40045 = var1;
       this.field40046 = var2;
    }

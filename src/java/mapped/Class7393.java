@@ -71,7 +71,7 @@ public class Class7393 {
       Class5532 var5 = new Class5532(var2, var1);
 
       for (PlayerEntity var7 : var0.method6970().method6870()) {
-         ((Class878)var7).field4855.sendPacket(var5);
+         ((ServerPlayerEntity)var7).field4855.sendPacket(var5);
       }
    }
 }

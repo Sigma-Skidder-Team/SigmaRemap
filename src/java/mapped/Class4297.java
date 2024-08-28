@@ -60,10 +60,10 @@ public class Class4297 extends Class4278 {
    @Override
    public void method13065(int var1) {
       super.method13065(var1);
-      if (var1 != this.field20817.field1299.field44632.field13070.field34875) {
-         if (var1 != this.field20817.field1299.field44634.field13070.field34875) {
-            if (var1 != this.field20817.field1299.field44633.field13070.field34875) {
-               if (var1 == this.field20817.field1299.field44635.field13070.field34875) {
+      if (var1 != this.field20817.gameSettings.field44632.field13070.field34875) {
+         if (var1 != this.field20817.gameSettings.field44634.field13070.field34875) {
+            if (var1 != this.field20817.gameSettings.field44633.field13070.field34875) {
+               if (var1 == this.field20817.gameSettings.field44635.field13070.field34875) {
                   this.field20818.method29737().method29653(Class2097.field13664);
                }
             } else {

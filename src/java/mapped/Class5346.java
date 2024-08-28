@@ -24,7 +24,7 @@ public class Class5346 extends Module {
     public void method16768(Class4435 var1) {
         if (this.method15996()) {
             if (var1.method13992() != 0.0 || var1.method13994() != 0.0 || var1.method13996() != 0.0) {
-                this.field23896.add(new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ()));
+                this.field23896.add(new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ()));
             }
         }
     }
@@ -44,9 +44,9 @@ public class Class5346 extends Module {
     public Vector3d method16770(Vector3d var1) {
         return var1.method11338(
                 new Vector3d(
-                        -Minecraft.getInstance().field1295.method768().method37504().method11320(),
-                        -Minecraft.getInstance().field1295.method768().method37504().method11321(),
-                        -Minecraft.getInstance().field1295.method768().method37504().method11322()
+                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
+                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
+                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
                 )
         );
     }
@@ -55,9 +55,9 @@ public class Class5346 extends Module {
     public void method16771(Class4420 var1) {
         if (this.method15996()) {
             Vector3d var4 = new Vector3d(
-                    mc.field1339.field5048 - (mc.field1339.field5048 - mc.field1339.getPosX()) * (double) mc.method1562(),
-                    mc.field1339.field5049 - (mc.field1339.field5049 - mc.field1339.getPosY()) * (double) mc.method1562(),
-                    mc.field1339.field5050 - (mc.field1339.field5050 - mc.field1339.getPosZ()) * (double) mc.method1562()
+                    mc.player.field5048 - (mc.player.field5048 - mc.player.getPosX()) * (double) mc.method1562(),
+                    mc.player.field5049 - (mc.player.field5049 - mc.player.getPosY()) * (double) mc.method1562(),
+                    mc.player.field5050 - (mc.player.field5050 - mc.player.getPosZ()) * (double) mc.method1562()
             );
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);

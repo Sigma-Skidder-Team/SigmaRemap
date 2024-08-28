@@ -21,7 +21,7 @@ public class Class8588 {
       this.field38668 = var4;
    }
 
-   public void method30722(Class878 var1) {
+   public void method30722(ServerPlayerEntity var1) {
       var1.method2781(this.field38665);
       Class7812 var4 = new Class9464(var1.getServerWorld())
          .method36454(Class9525.field44330, var1)
@@ -63,7 +63,7 @@ public class Class8588 {
          var1.method2779(this.field38667);
       }
 
-      Class314 var13 = var1.field4856;
+      MinecraftServer var13 = var1.field4856;
       this.field38668.method34115(var13.method1397()).ifPresent(var2 -> var13.method1397().method22825(var2, var1.getCommandSource().method20162().method20163(2)));
    }
 

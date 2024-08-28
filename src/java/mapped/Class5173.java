@@ -44,8 +44,8 @@ public class Class5173 extends Module {
         }
 
         this.field23462++;
-        if (mc.field1339 != null && mc.method1528() != null) {
-            if (mc.field1339.field5055 <= 1) {
+        if (mc.player != null && mc.method1528() != null) {
+            if (mc.player.field5055 <= 1) {
                 this.field23461.clear();
             }
 
@@ -56,7 +56,7 @@ public class Class5173 extends Module {
                     Class8772 var6 = this.field23461.get(var5);
                     if (var6.method31641()) {
                         mc.getClientPlayNetHandler().method15589();
-                        Class8586.method30691(var6.method31642(), mc.getClientPlayNetHandler().method15589().field38650);
+                        NetworkManager.method30691(var6.method31642(), mc.getClientPlayNetHandler().method15589().field38650);
                         this.field23461.remove(var5);
                         var7--;
                         var5--;

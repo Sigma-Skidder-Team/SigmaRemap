@@ -105,7 +105,6 @@ public class Class4275 extends Class4247 {
                   var3.method36706(this.field20716.method13303());
                }
 
-               Client.getInstance().getNetworkManager().method30456();
                String var4 = Client.getInstance()
                   .getNetworkManager()
                   .method30448(this.field20713.method13303(), this.field20715.method13303(), this.field20714.method13303(), var3);

@@ -9,7 +9,7 @@ public class Class5732<T extends Class916> extends Class5715<T> {
       this.field25098 = 0.7F;
    }
 
-   public void method17853(T var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       super.method17853((T)var1, var2, var3, var4, var5, var6);
       var4.method35294();
       long var9 = (long)var1.method3205() * 493286711L;
@@ -80,7 +80,7 @@ public class Class5732<T extends Class916> extends Class5715<T> {
       return field25143;
    }
 
-   public void method17915(T var1, float var2, Class7380 var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17915(T var1, float var2, Class7380 var3, MatrixStack var4, Class7733 var5, int var6) {
       Minecraft.getInstance().method1553().method814(var3, var4, var5, var6, Class213.field798);
    }
 }

@@ -28,7 +28,7 @@ public class Class5223 extends Module {
     public static void method16265(BlockPos var0) {
         mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var0, Direction.field673));
         mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13486, var0, Direction.field673));
-        mc.field1338.method6730(var0, Blocks.AIR.method11579());
+        mc.world.method6730(var0, Blocks.AIR.method11579());
     }
 
     @EventTarget
@@ -39,9 +39,9 @@ public class Class5223 extends Module {
                 this.field23566 = null;
             } else if (mc.field1337.method23157() != Class1894.field11103) {
                 if (this.field23566 != null) {
-                    if (mc.field1338.method6738(this.field23566).method23393()
+                    if (mc.world.method6738(this.field23566).method23393()
                             || Math.sqrt(
-                            mc.field1339
+                            mc.player
                                     .method3276(
                                             (double) this.field23566.method8304() + 0.5,
                                             (double) this.field23566.getY() + 0.5,
@@ -61,7 +61,7 @@ public class Class5223 extends Module {
                     Client.getInstance().getEventManager().call(var5);
                     mc.field1337.method23134(this.field23566, Class9217.method34580(this.field23566));
                     if (!this.method15974("NoSwing")) {
-                        mc.field1339.swingArm(Hand.field182);
+                        mc.player.swingArm(Hand.field182);
                     } else {
                         mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                     }
@@ -76,7 +76,7 @@ public class Class5223 extends Module {
                     Client.getInstance().getEventManager().call(var8);
                     mc.field1337.method23134(this.field23566, Class9217.method34580(this.field23566));
                     if (!this.method15974("NoSwing")) {
-                        mc.field1339.swingArm(Hand.field182);
+                        mc.player.swingArm(Hand.field182);
                     } else {
                         mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                     }
@@ -85,7 +85,7 @@ public class Class5223 extends Module {
                 for (BlockPos var9 : this.field23567) {
                     mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var9, Class9217.method34580(var9)));
                     if (!this.method15974("NoSwing")) {
-                        mc.field1339.swingArm(Hand.field182);
+                        mc.player.swingArm(Hand.field182);
                     } else {
                         mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                     }
@@ -96,14 +96,14 @@ public class Class5223 extends Module {
 
     @EventTarget
     public void method16264(Class4420 var1) {
-        if (this.field23566 != null && !mc.field1338.method6738(this.field23566).method23393()) {
+        if (this.field23566 != null && !mc.world.method6738(this.field23566).method23393()) {
             int var4 = Class5628.method17688(this.method15976("Color"), 0.4F);
             GL11.glPushMatrix();
             GL11.glDisable(2929);
-            double var5 = (double) this.field23566.method8304() - mc.field1295.method768().method37504().method11320();
-            double var7 = (double) this.field23566.getY() - mc.field1295.method768().method37504().method11321();
-            double var9 = (double) this.field23566.method8306() - mc.field1295.method768().method37504().method11322();
-            Class6488 var11 = mc.field1338.method6738(this.field23566).method23414(mc.field1338, this.field23566).method19514();
+            double var5 = (double) this.field23566.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+            double var7 = (double) this.field23566.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
+            double var9 = (double) this.field23566.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+            Class6488 var11 = mc.world.method6738(this.field23566).method23414(mc.world, this.field23566).method19514();
             Class9388 var12 = new Class9388(
                     var5 + var11.field28449,
                     var7 + var11.field28450,
@@ -119,8 +119,8 @@ public class Class5223 extends Module {
     }
 
     private boolean method16266(BlockPos var1) {
-        Block var4 = mc.field1338.method6738(var1).method23383();
-        return mc.field1338.method6738(var1).method23384().method31089() || var4 instanceof Class3194;
+        Block var4 = mc.world.method6738(var1).method23383();
+        return mc.world.method6738(var1).method23384().method31089() || var4 instanceof Class3194;
     }
 
     private List<BlockPos> method16267(float var1) {
@@ -130,14 +130,14 @@ public class Class5223 extends Module {
             for (float var6 = -var1; var6 <= var1; var6++) {
                 for (float var7 = -var1; var7 <= var1; var7++) {
                     BlockPos var8 = new BlockPos(
-                            mc.field1339.getPosX() + (double) var6,
-                            mc.field1339.getPosY() + (double) var5,
-                            mc.field1339.getPosZ() + (double) var7
+                            mc.player.getPosX() + (double) var6,
+                            mc.player.getPosY() + (double) var5,
+                            mc.player.getPosZ() + (double) var7
                     );
-                    if (!mc.field1338.method6738(var8).method23393()
-                            && mc.field1338.method6738(var8).method23449().method23474()
+                    if (!mc.world.method6738(var8).method23393()
+                            && mc.world.method6738(var8).method23449().method23474()
                             && Math.sqrt(
-                            mc.field1339.method3276((double) var8.method8304() + 0.5, (double) var8.getY() + 0.5, (double) var8.method8306() + 0.5)
+                            mc.player.method3276((double) var8.method8304() + 0.5, (double) var8.getY() + 0.5, (double) var8.method8306() + 0.5)
                     )
                             < (double) var1) {
                         String var9 = this.getStringSettingValueByName("Mode");
@@ -148,12 +148,12 @@ public class Class5223 extends Module {
                                 }
                                 break;
                             case "Bed":
-                                if (!(mc.field1338.method6738(var8).method23383() instanceof Class3250)) {
+                                if (!(mc.world.method6738(var8).method23383() instanceof Class3250)) {
                                     continue;
                                 }
                                 break;
                             case "Egg":
-                                if (!(mc.field1338.method6738(var8).method23383() instanceof Class3214)) {
+                                if (!(mc.world.method6738(var8).method23383() instanceof Class3214)) {
                                     continue;
                                 }
                         }

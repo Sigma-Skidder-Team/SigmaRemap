@@ -21,7 +21,7 @@ public class Class5183 extends Module {
     @EventTarget
     private void method16133(Class4420 var1) {
         if (this.method15996()) {
-            if (mc.field1339 != null && mc.field1338 != null) {
+            if (mc.player != null && mc.world != null) {
                 this.method16139();
                 this.method16134();
                 this.method16140();
@@ -50,22 +50,22 @@ public class Class5183 extends Module {
         GL11.glEnable(2896);
         GL11.glPolygonOffset(-30000.0F, 1.0F);
 
-        for (Entity var9 : mc.field1338.method6835()) {
+        for (Entity var9 : mc.world.method6835()) {
             if (this.method16138(var9)) {
                 GL11.glPushMatrix();
-                Vector3d var10 = mc.field1295.method768().method37504();
+                Vector3d var10 = mc.gameRenderer.getActiveRenderInfo().method37504();
                 double var11 = var10.method11320();
                 double var13 = var10.method11321();
                 double var15 = var10.method11322();
-                Class9332 var17 = new Class9332();
-                boolean var18 = mc.field1299.field44616;
+                MatrixStack var17 = new MatrixStack();
+                boolean var18 = mc.gameSettings.field44616;
                 RenderSystem.method27821();
                 RenderSystem.method27889(0.0F, 0.0F, 1.0F, 0.5F);
                 RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
                 RenderSystem.enableBlend();
-                mc.field1299.field44616 = false;
-                this.method16136(var9, var11, var13, var15, mc.field1284.field40356, var17, this.field23482);
-                mc.field1299.field44616 = var18;
+                mc.gameSettings.field44616 = false;
+                this.method16136(var9, var11, var13, var15, mc.timer.renderPartialTicks, var17, this.field23482);
+                mc.gameSettings.field44616 = var18;
                 GL11.glPopMatrix();
             }
         }
@@ -89,12 +89,12 @@ public class Class5183 extends Module {
         }
     }
 
-    public void method16136(Entity var1, double var2, double var4, double var6, float var8, Class9332 var9, Class7733 var10) {
+    public void method16136(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9, Class7733 var10) {
         double var13 = MathHelper.method37822(var8, var1.field5048, var1.getPosX());
         double var15 = MathHelper.method37822(var8, var1.field5049, var1.getPosY());
         double var17 = MathHelper.method37822(var8, var1.field5050, var1.getPosZ());
         float var19 = MathHelper.method37821(var8, var1.field5033, var1.field5031);
-        mc.field1287.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
+        mc.worldRenderer.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
     }
 
     @EventTarget
@@ -130,7 +130,7 @@ public class Class5183 extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.field1295.field818.method7316();
+        mc.gameRenderer.field818.method7316();
     }
 
     private void method16140() {
@@ -143,7 +143,7 @@ public class Class5183 extends Module {
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
-        mc.field1295.field818.method7317();
+        mc.gameRenderer.field818.method7317();
         GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
     }
 }

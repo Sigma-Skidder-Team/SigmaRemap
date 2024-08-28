@@ -20,7 +20,7 @@ public class Class5387 extends Module {
    @Override
    public void method15965() {
       Class9567.method37090(0.28F);
-      mc.field1284.field40360 = 1.0F;
+      mc.timer.field40360 = 1.0F;
    }
 
    @EventTarget
@@ -31,15 +31,15 @@ public class Class5387 extends Module {
             if (this.field24022 != 2) {
                if (this.field24022 >= 3) {
                   this.field24022 = 0;
-                  mc.field1284.field40360 = 0.25F;
+                  mc.timer.field40360 = 0.25F;
                   Class9567.method37088(var1, (double)this.method15977("Speed"));
                }
             } else {
-               mc.field1284.field40360 = 2.0F;
+               mc.timer.field40360 = 2.0F;
                Class9567.method37088(var1, Class9567.method37075() + 0.05);
             }
          } else {
-            mc.field1284.field40360 = 2.0F;
+            mc.timer.field40360 = 2.0F;
             Class9567.method37088(var1, Class9567.method37075() + 0.05);
          }
       }

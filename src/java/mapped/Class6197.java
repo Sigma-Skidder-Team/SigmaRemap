@@ -49,7 +49,7 @@ public class Class6197 implements Class6196 {
       this.field27650++;
       if (this.field27648.method37036() == Class1894.field11102) {
          if (this.field27650 == 1) {
-            ClientPlayerEntity var3 = this.field27648.method37035().field1339;
+            ClientPlayerEntity var3 = this.field27648.method37035().player;
             if (var3 != null) {
                for (Block var5 : field27645) {
                   if (var3.field4902.method4058(new ItemStack(var5))) {

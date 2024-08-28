@@ -11,14 +11,14 @@ public class Class5135 implements Class5119 {
 
    public void method15902(int var1, Class8238 var2, float var3) {
       this.field23341.put(var1, var2);
-      this.field23343.put(var1, Util.method38487());
+      this.field23343.put(var1, Util.milliTime());
       this.field23342.put(var1, var3);
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       if (!this.field23341.isEmpty()) {
-         long var11 = Util.method38487();
+         long var11 = Util.milliTime();
 
          for (Integer var14 : this.field23341.keySet()) {
             Class8238 var15 = this.field23341.get(var14);
@@ -43,7 +43,7 @@ public class Class5135 implements Class5119 {
       RenderSystem.method27862();
       RenderSystem.method27893(6.0F);
       method15904(var0, var1, var2, var3, var4, var6, var8);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
       RenderSystem.popMatrix();
    }

@@ -9,10 +9,10 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class6688 implements Class6687 {
+public class NarratorChatListener implements Class6687 {
    public static final ITextComponent field29300 = StringTextComponent.EMPTY;
    private static final Logger field29301 = LogManager.getLogger();
-   public static final Class6688 field29302 = new Class6688();
+   public static final NarratorChatListener INSTANCE = new NarratorChatListener();
    private final Narrator field29303 = Narrator.getNarrator();
 
    @Override
@@ -32,7 +32,7 @@ public class Class6688 implements Class6687 {
       }
    }
 
-   public void method20401(String var1) {
+   public void say(String var1) {
       Class1911 var4 = method20402();
       if (this.field29303.active() && var4 != Class1911.field11267 && var4 != Class1911.field11269 && !var1.isEmpty()) {
          this.field29303.clear();
@@ -41,7 +41,7 @@ public class Class6688 implements Class6687 {
    }
 
    private static Class1911 method20402() {
-      return Minecraft.getInstance().field1299.field44675;
+      return Minecraft.getInstance().gameSettings.field44675;
    }
 
    private void method20403(boolean var1, String var2) {
@@ -77,7 +77,7 @@ public class Class6688 implements Class6687 {
       }
    }
 
-   public void method20407() {
+   public void close() {
       this.field29303.destroy();
    }
 }

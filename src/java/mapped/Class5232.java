@@ -14,7 +14,7 @@ public class Class5232 extends Module {
     @EventTarget
     private void method16297(Class4420 var1) {
         if (this.method15996()) {
-            if (mc.field1339 != null && mc.field1338 != null) {
+            if (mc.player != null && mc.world != null) {
                 this.method16299();
                 this.method16298();
                 this.method16300();
@@ -27,7 +27,7 @@ public class Class5232 extends Module {
         int var4 = Class5628.method17688(this.method16004().method15976("Ender Color"), 0.14F);
         int var5 = Class5628.method17688(this.method16004().method15976("Trapped Color"), 0.14F);
 
-        for (Class944 var7 : mc.field1338.field9003) {
+        for (Class944 var7 : mc.world.field9003) {
             boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.method16004().method15974("Show Regular Chests");
             boolean var9 = var7 instanceof Class943 && this.method16004().method15974("Show Ender Chests");
             boolean var10 = var7 instanceof Class970 && this.method16004().method15974("Show Trapped Chests");
@@ -47,7 +47,7 @@ public class Class5232 extends Module {
                 }
 
                 Class9388 var18 = new Class9388(
-                        var7.method3775().method23412(mc.field1338, var7.method3774()).method19514().method19667(var11, var13, var15)
+                        var7.method3775().method23412(mc.world, var7.method3774()).method19514().method19667(var11, var13, var15)
                 );
                 GL11.glAlphaFunc(519, 0.0F);
                 Class3192.method11459(var18, var17);
@@ -69,7 +69,7 @@ public class Class5232 extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.field1295.field818.method7316();
+        mc.gameRenderer.field818.method7316();
     }
 
     private void method16300() {
@@ -82,6 +82,6 @@ public class Class5232 extends Module {
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
-        mc.field1295.field818.method7317();
+        mc.gameRenderer.field818.method7317();
     }
 }

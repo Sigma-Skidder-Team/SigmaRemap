@@ -23,7 +23,7 @@ public class Class5956 extends Class5942<Class959> {
       this.field25977.method22673(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F);
    }
 
-   public void method18462(Class959 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class959 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       float var9 = (float)var1.field5382 + var2;
       if (var1.method3903()) {
          float var10 = var1.method3907(var2) * (180.0F / (float)Math.PI);

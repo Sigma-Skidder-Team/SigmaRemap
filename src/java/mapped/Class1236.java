@@ -23,7 +23,7 @@ public abstract class Class1236 extends Class1197 {
    }
 
    @Override
-   public void method5731(Class9332 var1, Minecraft var2, int var3, int var4) {
+   public void method5731(MatrixStack var1, Minecraft var2, int var3, int var4) {
       var2.getTextureManager().bindTexture(field6474);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       int var7 = (!this.method5737() ? 1 : 2) * 20;

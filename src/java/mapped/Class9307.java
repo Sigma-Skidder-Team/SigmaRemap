@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
 public abstract class Class9307 {
    private static final Logger field43204 = LogManager.getLogger();
    private static final int field43205 = 33 + Class9176.method34296(Class9176.field42145) - 2;
-   private final Long2ObjectMap<ObjectSet<Class878>> field43206 = new Long2ObjectOpenHashMap();
+   private final Long2ObjectMap<ObjectSet<ServerPlayerEntity>> field43206 = new Long2ObjectOpenHashMap();
    private final Long2ObjectOpenHashMap<Class52<Class2005<?>>> field43207 = new Long2ObjectOpenHashMap();
    private final Class204 field43208 = new Class204(this);
    private final Class205 field43209 = new Class205(this, 8);
@@ -161,14 +161,14 @@ public abstract class Class9307 {
       }
    }
 
-   public void method35134(Class2002 var1, Class878 var2) {
+   public void method35134(Class2002 var1, ServerPlayerEntity var2) {
       long var5 = var1.method8423().method24352();
       ((ObjectSet)this.field43206.computeIfAbsent(var5, var0 -> new ObjectOpenHashSet())).add(var2);
       this.field43209.method680(var5, 0, true);
       this.field43210.method680(var5, 0, true);
    }
 
-   public void method35135(Class2002 var1, Class878 var2) {
+   public void method35135(Class2002 var1, ServerPlayerEntity var2) {
       long var5 = var1.method8423().method24352();
       ObjectSet var7 = (ObjectSet)this.field43206.get(var5);
       var7.remove(var2);

@@ -23,7 +23,7 @@ public class Class1280 extends Class1274<Class1170> {
    }
 
    @Override
-   public void method6039(Class9332 var1) {
+   public void method6039(MatrixStack var1) {
       this.field6835.method2469(var1);
    }
 }

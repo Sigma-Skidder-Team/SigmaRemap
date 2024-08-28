@@ -34,8 +34,8 @@ public class Class5199 extends Module {
     private void method16187(Class4435 var1) {
         if (this.method15996()) {
             if (var1.method13994() < -0.5
-                    && (double) mc.field1339.field5045 > 2.0 + (double) Class9567.method37079() * 0.5
-                    && !mc.field1339.field5036
+                    && (double) mc.player.field5045 > 2.0 + (double) Class9567.method37079() * 0.5
+                    && !mc.player.field5036
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
                     && Class5628.method17716()) {
                 double[] var4 = Class5628.method17747();
@@ -44,7 +44,7 @@ public class Class5199 extends Module {
 
                 for (int var8 = 0; var8 < var5; var8++) {
                     double var9 = var4[var8];
-                    double var11 = mc.field1339.getPosY();
+                    double var11 = mc.player.getPosY();
                     double var13 = (double) ((int) (var11 + var1.method13994())) - var11 - var1.method13994() + var9;
                     double var15 = 0.02;
                     double var17 = -0.05;
@@ -53,8 +53,8 @@ public class Class5199 extends Module {
                     }
 
                     if (var13 > var17 && var13 < var15) {
-                        Class6488 var19 = mc.field1339.field5035.method19667(var1.method13992(), var1.method13994() + var13 + var17, var1.method13996());
-                        if (mc.field1338.method7055(mc.field1339, var19).count() != 0L) {
+                        Class6488 var19 = mc.player.field5035.method19667(var1.method13992(), var1.method13994() + var13 + var17, var1.method13996());
+                        if (mc.world.method7055(mc.player, var19).count() != 0L) {
                             var13 -= 1.0E-5;
                             var1.method13995(var1.method13994() + var13);
                             Class5628.method17725(var1.method13994());
@@ -78,8 +78,8 @@ public class Class5199 extends Module {
 
     @EventTarget
     private void method16188(Class4399 var1) {
-        if (this.method15996() && mc.field1339 != null) {
-            if (!(mc.field1339.getPosY() < 2.0)) {
+        if (this.method15996() && mc.player != null) {
+            if (!(mc.player.getPosY() < 2.0)) {
                 String var4 = this.getStringSettingValueByName("Mode");
                 if (!Class5628.method17716() && var4.equals("Hypixel")) {
                     var4 = "OldHypixel";
@@ -88,16 +88,16 @@ public class Class5199 extends Module {
                 switch (var4) {
                     case "OldHypixel":
                         if (var1.method13921()) {
-                            if (Class5628.method17730(mc.field1339, 1.0E-4F)) {
+                            if (Class5628.method17730(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
                             }
 
-                            if (mc.field1339.method3433().field18049 < -0.1) {
+                            if (mc.player.method3433().field18049 < -0.1) {
                                 if (this.field23509 == 0.0) {
                                 }
 
-                                this.field23509 = this.field23509 - mc.field1339.method3433().field18049;
+                                this.field23509 = this.field23509 - mc.player.method3433().field18049;
                             }
 
                             if (this.field23509 > 3.0) {
@@ -107,7 +107,7 @@ public class Class5199 extends Module {
                         }
                         break;
                     case "Hypixel":
-                        if (var1.method13921() && mc.field1339.method3433().field18049 < 0.0 && !mc.field1339.field5036 && Class5628.method17716()) {
+                        if (var1.method13921() && mc.player.method3433().field18049 < 0.0 && !mc.player.field5036 && Class5628.method17716()) {
                             for (double var10 : Class5628.method17747()) {
                                 if ((double) ((int) var1.method13911()) - var1.method13911() + var10 == 0.0) {
                                     var1.method13920(true);
@@ -118,12 +118,12 @@ public class Class5199 extends Module {
                         break;
                     case "Hypixel2":
                         if (var1.method13921()) {
-                            if (Class5628.method17730(mc.field1339, 1.0E-4F)) {
+                            if (Class5628.method17730(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
                             }
 
-                            if (mc.field1339.method3433().field18049 < -0.1 && mc.field1339.field5045 > 3.0F) {
+                            if (mc.player.method3433().field18049 < -0.1 && mc.player.field5045 > 3.0F) {
                                 this.field23509++;
                                 if (this.field23509 == 1.0) {
                                     mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
@@ -135,35 +135,35 @@ public class Class5199 extends Module {
                         break;
                     case "AAC":
                         if (var1.method13921()) {
-                            if (mc.field1339.field5055 == 1) {
+                            if (mc.player.field5055 == 1) {
                                 this.field23507 = false;
                             }
 
-                            if (!this.field23507 && mc.field1339.field5045 > 3.0F && this.getStringSettingValueByName("Mode").equals("AAC")) {
+                            if (!this.field23507 && mc.player.field5045 > 3.0F && this.getStringSettingValueByName("Mode").equals("AAC")) {
                                 this.field23507 = !this.field23507;
-                                Class5605 var7 = new Class5605(mc.field1339.getPosX(), Double.NaN, mc.field1339.getPosZ(), true);
+                                Class5605 var7 = new Class5605(mc.player.getPosX(), Double.NaN, mc.player.getPosZ(), true);
                                 mc.getClientPlayNetHandler().sendPacket(var7);
                             }
                         }
                         break;
                     case "Vanilla":
-                        if (var1.method13921() && mc.field1339.method3433().field18049 < -0.1) {
+                        if (var1.method13921() && mc.player.method3433().field18049 < -0.1) {
                             var1.method13920(true);
                         }
                         break;
                     case "Vanilla Legit":
-                        if (mc.field1339.method3433().field18049 < -0.1) {
+                        if (mc.player.method3433().field18049 < -0.1) {
                             var1.method13920(true);
                         }
 
-                        if (mc.field1339.field5045 > 3.0F) {
+                        if (mc.player.field5045 > 3.0F) {
                             this.field23510 = true;
                         }
 
-                        if (this.field23510 && mc.field1339.field5036 && !mc.field1339.method3250()) {
-                            double var12 = mc.field1339.getPosX();
-                            double var14 = mc.field1339.getPosY();
-                            double var16 = mc.field1339.getPosZ();
+                        if (this.field23510 && mc.player.field5036 && !mc.player.method3250()) {
+                            double var12 = mc.player.getPosX();
+                            double var14 = mc.player.getPosY();
+                            double var16 = mc.player.getPosZ();
                             mc.getClientPlayNetHandler().sendPacket(new Class5605(var12, var14 + 3.01, var16, false));
                             mc.getClientPlayNetHandler().sendPacket(new Class5605(var12, var14, var16, false));
                             mc.getClientPlayNetHandler().sendPacket(new Class5605(var12, var14, var16, true));
@@ -173,11 +173,11 @@ public class Class5199 extends Module {
                         break;
                     case "NCPSpigot":
                         if (var1.method13921()) {
-                            if (mc.field1339.field5045 > 3.0F) {
+                            if (mc.player.field5045 > 3.0F) {
                                 this.field23508 = true;
                             }
 
-                            if (this.field23508 && Client.getInstance().method19939().method31329() == 0 && mc.field1339.field5036) {
+                            if (this.field23508 && Client.getInstance().method19939().method31329() == 0 && mc.player.field5036) {
                                 var1.method13912(var1.method13911() - 11.0);
                                 this.field23508 = false;
                             }

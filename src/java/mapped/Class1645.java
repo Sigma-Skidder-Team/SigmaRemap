@@ -22,7 +22,7 @@ import java.util.Optional;
 import java.util.function.BooleanSupplier;
 import java.util.regex.Pattern;
 
-public class Class1645 extends Class314 implements Class1646 {
+public class Class1645 extends MinecraftServer implements Class1646 {
    private static final Logger field1208 = LogManager.getLogger();
    private static final Pattern field8928 = Pattern.compile("^[a-fA-F0-9]{40}$");
    private final List<Class9335> field8929 = Collections.<Class9335>synchronizedList(Lists.newArrayList());
@@ -121,14 +121,14 @@ public class Class1645 extends Class314 implements Class1646 {
          return false;
       } else {
          this.method1368(new Class6394(this, this.field1224, this.field1212));
-         long var7 = Util.method38488();
+         long var7 = Util.nanoTime();
          this.method1365(var4.field43800);
          Class968.method4002(this.method1386());
          Class968.method4003(this.method1384());
          Class8805.method31788(this.method1350());
          field1208.info("Preparing level \"{}\"", this.method6511());
          this.method1279();
-         long var9 = Util.method38488() - var7;
+         long var9 = Util.nanoTime() - var7;
          String var11 = String.format(Locale.ROOT, "%.3fs", (double)var9 / 1.0E9);
          field1208.info("Done ({})! For help, type \"help\"", var11);
          if (var4.field43801 != null) {
@@ -504,7 +504,7 @@ public class Class1645 extends Class314 implements Class1646 {
    @Override
    public void method1292() {
       super.method1292();
-      Util.method38494();
+      Util.shutdown();
    }
 
    @Override
@@ -529,7 +529,7 @@ public class Class1645 extends Class314 implements Class1646 {
 
    @Nullable
    @Override
-   public IChatFilter method1438(Class878 var1) {
+   public IChatFilter method1438(ServerPlayerEntity var1) {
       return this.field8935 == null ? null : this.field8935.func_244566_a(var1.getGameProfile());
    }
 

@@ -6,7 +6,7 @@ public abstract class Class1154<E extends Class1154<E>> implements Class1152 {
    /** @deprecated */
    private Class1273<E> field6295;
 
-   public abstract void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10);
+   public abstract void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10);
 
    @Override
    public boolean method2485(double var1, double var3) {

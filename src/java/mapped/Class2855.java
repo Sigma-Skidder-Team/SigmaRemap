@@ -33,7 +33,7 @@ public abstract class Class2855<E extends Entity> extends Class2827<E> {
    }
 
    @Override
-   public void method11016(Class9332 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (!this.field17602) {
          this.method11001().forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
          this.method11002().forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));

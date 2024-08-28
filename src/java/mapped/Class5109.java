@@ -20,16 +20,16 @@ public class Class5109 implements Class5108 {
    private static final Logger field23212 = LogManager.getLogger();
    private static final Random field23213 = new Random();
    private final byte[] field23214 = new byte[4];
-   private final Class314 field23215;
-   public final Class8586 field23216;
+   private final MinecraftServer field23215;
+   public final NetworkManager field23216;
    private Class2241 field23217 = Class2241.field14662;
    private int field23218;
    private GameProfile field23219;
    private final String field23220 = "";
    private SecretKey field23221;
-   private Class878 field23222;
+   private ServerPlayerEntity field23222;
 
-   public Class5109(Class314 var1, Class8586 var2) {
+   public Class5109(MinecraftServer var1, NetworkManager var2) {
       this.field23215 = var1;
       this.field23216 = var2;
       field23213.nextBytes(this.field23214);
@@ -38,7 +38,7 @@ public class Class5109 implements Class5108 {
    public void method15599() {
       if (this.field23217 != Class2241.field14666) {
          if (this.field23217 == Class2241.field14667) {
-            Class878 var3 = this.field23215.getPlayerList().method19489(this.field23219.getId());
+            ServerPlayerEntity var3 = this.field23215.getPlayerList().method19489(this.field23219.getId());
             if (var3 == null) {
                this.field23217 = Class2241.field14666;
                this.field23215.getPlayerList().method19445(this.field23216, this.field23222);
@@ -55,7 +55,7 @@ public class Class5109 implements Class5108 {
    }
 
    @Override
-   public Class8586 method15589() {
+   public NetworkManager method15589() {
       return this.field23216;
    }
 
@@ -82,7 +82,7 @@ public class Class5109 implements Class5108 {
          }
 
          this.field23216.method30693(new Class5598(this.field23219));
-         Class878 var4 = this.field23215.getPlayerList().method19489(this.field23219.getId());
+         ServerPlayerEntity var4 = this.field23215.getPlayerList().method19489(this.field23219.getId());
          if (var4 == null) {
             this.field23215.getPlayerList().method19445(this.field23216, this.field23215.getPlayerList().method19452(this.field23219));
          } else {
@@ -162,7 +162,7 @@ public class Class5109 implements Class5108 {
    }
 
    // $VF: synthetic method
-   public static Class314 method15607(Class5109 var0) {
+   public static MinecraftServer method15607(Class5109 var0) {
       return var0.field23215;
    }
 

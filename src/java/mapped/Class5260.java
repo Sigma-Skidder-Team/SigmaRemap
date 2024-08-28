@@ -42,8 +42,8 @@ public class Class5260 extends PremiumModule {
         Module var4 = Client.getInstance().getModuleManager().method14662(Class5260.class);
 
         for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field1339.field4904.method18131(var5).method18266()) {
-                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+            if (mc.player.field4904.method18131(var5).method18266()) {
+                ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                 if (method16433(var6) > var3 && (var6.method32107() instanceof Class3267 || !var4.method15974("Sword"))) {
                     return false;
                 }
@@ -73,8 +73,8 @@ public class Class5260 extends PremiumModule {
         int var3 = 0;
 
         for (int var4 = 0; var4 < 45; var4++) {
-            if (mc.field1339.field4904.method18131(var4).method18266()) {
-                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
+            if (mc.player.field4904.method18131(var4).method18266()) {
+                ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
                 if (var5.method32107() == var0) {
                     var3 += var5.field39976;
                 }
@@ -90,8 +90,8 @@ public class Class5260 extends PremiumModule {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
-                if (mc.field1339.field4904.method18131(var5).method18266()) {
-                    ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+                if (mc.player.field4904.method18131(var5).method18266()) {
+                    ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                     if (method16445(var6) > var4 && var6.method32107() instanceof Class3268) {
                         return false;
                     }
@@ -110,8 +110,8 @@ public class Class5260 extends PremiumModule {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
-                if (mc.field1339.field4904.method18131(var5).method18266()) {
-                    ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+                if (mc.player.field4904.method18131(var5).method18266()) {
+                    ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                     if (method16445(var6) > var4 && var6.method32107() instanceof Class3270) {
                         return false;
                     }
@@ -130,8 +130,8 @@ public class Class5260 extends PremiumModule {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
-                if (mc.field1339.field4904.method18131(var5).method18266()) {
-                    ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+                if (mc.player.field4904.method18131(var5).method18266()) {
+                    ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                     if (method16445(var6) > var4 && var6.method32107() instanceof Class3265 && !method16431(var0)) {
                         return false;
                     }
@@ -182,7 +182,7 @@ public class Class5260 extends PremiumModule {
 
     @Override
     public void isInDevelopment() {
-        this.field23659 = mc.field1355 instanceof Class859;
+        this.field23659 = mc.currentScreen instanceof Class859;
         this.field23660 = false;
     }
 
@@ -194,22 +194,22 @@ public class Class5260 extends PremiumModule {
 
         if (this.method15996() && !Class5290.field23798) {
             String var4 = this.getStringSettingValueByName("Mode");
-            if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.field1355 instanceof Class859) {
+            if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.currentScreen instanceof Class859) {
                 long var5 = (long) (this.method15977("Delay") * 20.0F);
-                if (mc.field1355 instanceof Class859) {
+                if (mc.currentScreen instanceof Class859) {
                     this.field23659 = false;
                 }
 
                 if (this.field23660 && (long) Client.getInstance().method19939().method31333() >= var5) {
                     this.field23660 = !this.field23660;
                     this.method16446(this.field23659);
-                    Class7789.method25870(mc.field1339.field4904.field25471, 45, 0, Class2259.field14694, mc.field1339, true);
+                    Class7789.method25870(mc.player.field4904.field25471, 45, 0, Class2259.field14694, mc.player, true);
                     this.field23658.method27120();
                 } else {
-                    if (mc.field1355 == null || mc.field1355 instanceof Class859 || mc.field1355 instanceof Class1331) {
+                    if (mc.currentScreen == null || mc.currentScreen instanceof Class859 || mc.currentScreen instanceof ChatScreen) {
                         if (this.field23658.method27121() > var5 && field23654 >= 36) {
-                            if (mc.field1339.field4904.method18131(field23654).method18266()) {
-                                if (!method16431(mc.field1339.field4904.method18131(field23654).method18265())) {
+                            if (mc.player.field4904.method18131(field23654).method18266()) {
+                                if (!method16431(mc.player.field4904.method18131(field23654).method18265())) {
                                     this.method16432(field23654, var4.equals("FakeInv"));
                                 }
                             } else {
@@ -236,8 +236,8 @@ public class Class5260 extends PremiumModule {
 
                         if ((long) Client.getInstance().method19939().method31333() >= var5 && this.method15974("Cleaner")) {
                             for (int var8 = 9; var8 < 45; var8++) {
-                                if (mc.field1339.field4904.method18131(var8).method18266()) {
-                                    ItemStack var9 = mc.field1339.field4904.method18131(var8).method18265();
+                                if (mc.player.field4904.method18131(var8).method18266()) {
+                                    ItemStack var9 = mc.player.field4904.method18131(var8).method18265();
                                     if (this.method16434(var9, var8)) {
                                         this.method16446(var4.equals("FakeInv"));
                                         Class7789.method25871(var8);
@@ -251,7 +251,7 @@ public class Class5260 extends PremiumModule {
                         }
                     }
 
-                    if (!this.field23659 && !(mc.field1355 instanceof Class859) && this.field23658.method27121() > 0L && !this.field23660) {
+                    if (!this.field23659 && !(mc.currentScreen instanceof Class859) && this.field23658.method27121() > 0L && !this.field23660) {
                         this.field23659 = true;
                         mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
                     }
@@ -262,8 +262,8 @@ public class Class5260 extends PremiumModule {
 
     public void method16432(int var1, boolean var2) {
         for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field1339.field4904.method18131(var5).method18266()) {
-                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+            if (mc.player.field4904.method18131(var5).method18266()) {
+                ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                 if (method16431(var6) && method16433(var6) > 0.0F && (var6.method32107() instanceof Class3267 || !this.method15974("Sword"))) {
                     this.method16446(var2);
                     Class7789.method25873(var5, var1 - 36);
@@ -282,24 +282,24 @@ public class Class5260 extends PremiumModule {
             return false;
         } else if (var1.method32149().getString().toLowerCase().contains("§k||")) {
             return false;
-        } else if (var2 == field23654 && method16431(mc.field1339.field4904.method18131(var2).method18265())) {
+        } else if (var2 == field23654 && method16431(mc.player.field4904.method18131(var2).method18265())) {
             return false;
         } else if (var5 instanceof Class3334 && this.method15974("Auto Shield")) {
             return false;
         } else if (this.getStringSettingValueByName("Tools").equals("Throw")
                 || (
                 var2 != field23655 && !this.getStringSettingValueByName("Tools").equals("Keep")
-                        || !method16442(mc.field1339.field4904.method18131(var2).method18265())
+                        || !method16442(mc.player.field4904.method18131(var2).method18265())
                         || field23655 < 0
         )
                 && (
                 var2 != field23656 && !this.getStringSettingValueByName("Tools").equals("Keep")
-                        || !method16444(mc.field1339.field4904.method18131(var2).method18265())
+                        || !method16444(mc.player.field4904.method18131(var2).method18265())
                         || field23656 < 0
         )
                 && (
                 var2 != field23657 && !this.getStringSettingValueByName("Tools").equals("Keep")
-                        || !method16443(mc.field1339.field4904.method18131(var2).method18265())
+                        || !method16443(mc.player.field4904.method18131(var2).method18265())
                         || field23657 < 0
         )) {
             if (var5 instanceof Class3279) {
@@ -308,8 +308,8 @@ public class Class5260 extends PremiumModule {
                 }
 
                 for (Class2106 var9 : Class2106.values()) {
-                    if (mc.field1339.field4904.method18131(8 - var9.method8773()).method18266()) {
-                        ItemStack var10 = mc.field1339.field4904.method18131(8 - var9.method8773()).method18265();
+                    if (mc.player.field4904.method18131(8 - var9.method8773()).method18266()) {
+                        ItemStack var10 = mc.player.field4904.method18131(8 - var9.method8773()).method18265();
                         if (!Class7789.method25872(var10)) {
                         }
                     }
@@ -375,8 +375,8 @@ public class Class5260 extends PremiumModule {
         int var3 = 0;
 
         for (int var4 = 0; var4 < 45; var4++) {
-            if (mc.field1339.field4904.method18131(var4).method18266()) {
-                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
+            if (mc.player.field4904.method18131(var4).method18266()) {
+                ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
                 Class3257 var6 = var5.method32107();
                 if (var5.method32107() instanceof Class3292 && !BlockFly.field23883.contains(((Class3292) var6).method11845())) {
                     var3 += var5.field39976;
@@ -389,11 +389,11 @@ public class Class5260 extends PremiumModule {
 
     private void method16438(int var1, boolean var2) {
         for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field1339.field4904.method18131(var5).method18266()) {
-                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+            if (mc.player.field4904.method18131(var5).method18266()) {
+                ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                 if (method16442(var6) && field23655 != var5 && !method16431(var6)) {
-                    if (mc.field1339.field4904.method18131(field23655).method18266()) {
-                        if (!method16442(mc.field1339.field4904.method18131(field23655).method18265())) {
+                    if (mc.player.field4904.method18131(field23655).method18266()) {
+                        if (!method16442(mc.player.field4904.method18131(field23655).method18265())) {
                             this.method16446(var2);
                             Class7789.method25873(var5, field23655 - 36);
                             this.field23658.method27120();
@@ -416,11 +416,11 @@ public class Class5260 extends PremiumModule {
 
     private void method16439(int var1, boolean var2) {
         for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field1339.field4904.method18131(var5).method18266()) {
-                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+            if (mc.player.field4904.method18131(var5).method18266()) {
+                ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                 if (method16443(var6) && field23657 != var5 && !method16431(var6)) {
-                    if (mc.field1339.field4904.method18131(field23657).method18266()) {
-                        if (!method16443(mc.field1339.field4904.method18131(field23657).method18265())) {
+                    if (mc.player.field4904.method18131(field23657).method18266()) {
+                        if (!method16443(mc.player.field4904.method18131(field23657).method18265())) {
                             this.method16446(var2);
                             Class7789.method25873(var5, field23657 - 36);
                             this.field23658.method27120();
@@ -443,11 +443,11 @@ public class Class5260 extends PremiumModule {
 
     private void method16440(int var1, boolean var2) {
         for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field1339.field4904.method18131(var5).method18266()) {
-                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+            if (mc.player.field4904.method18131(var5).method18266()) {
+                ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                 if (method16444(var6) && field23656 != var5 && !method16431(var6)) {
-                    if (mc.field1339.field4904.method18131(field23656).method18266()) {
-                        if (!method16444(mc.field1339.field4904.method18131(field23656).method18265())) {
+                    if (mc.player.field4904.method18131(field23656).method18266()) {
+                        if (!method16444(mc.player.field4904.method18131(field23656).method18265())) {
                             this.method16446(var2);
                             Class7789.method25873(var5, field23656 - 36);
                             this.field23658.method27120();
@@ -469,13 +469,13 @@ public class Class5260 extends PremiumModule {
     }
 
     private void method16441(boolean var1) {
-        if (!mc.field1339.field4904.method18131(45).method18266()) {
+        if (!mc.player.field4904.method18131(45).method18266()) {
             for (int var4 = 9; var4 < 45; var4++) {
-                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
+                ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
                 if (var5.method32107() instanceof Class3334) {
                     this.method16446(var1);
                     this.field23658.method27120();
-                    Class7789.method25870(mc.field1339.field4904.field25471, var4, 0, Class2259.field14694, mc.field1339, true);
+                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, Class2259.field14694, mc.player, true);
                     this.field23660 = true;
                     return;
                 }
@@ -484,7 +484,7 @@ public class Class5260 extends PremiumModule {
     }
 
     private void method16446(boolean var1) {
-        if (var1 && this.field23659 && !(mc.field1355 instanceof Class859) && Class8005.method27349() <= Class5989.field26136.method18582()) {
+        if (var1 && this.field23659 && !(mc.currentScreen instanceof Class859) && Class8005.method27349() <= Class5989.field26136.method18582()) {
             mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.field23659 = false;
         }

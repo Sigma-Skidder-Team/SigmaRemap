@@ -51,7 +51,7 @@ public final class Class8170 {
    }
 
    public static void method28417(ServerWorld var0, Class1674 var1, Class7307 var2, boolean var3, boolean var4, boolean var5) {
-      var0.method6820().method22503("spawner");
+      var0.method6820().startSection("spawner");
 
       for (Class179 var11 : field35151) {
          if ((var3 || !var11.method520()) && (var4 || var11.method520()) && (var5 || !var11.method521()) && Class7307.method23093(var2, var11)) {
@@ -65,7 +65,7 @@ public final class Class8170 {
          }
       }
 
-      var0.method6820().method22505();
+      var0.method6820().endSection();
    }
 
    public static void method28418(Class179 var0, ServerWorld var1, Class1674 var2, Class8145 var3, Class8940 var4) {

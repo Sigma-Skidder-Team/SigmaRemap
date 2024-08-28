@@ -39,35 +39,35 @@ public class Class274 extends Class269<Class8657> {
       var2.method22501();
 
       for (String var7 : var1.method579()) {
-         var2.method22503(var7);
+         var2.startSection(var7);
 
          try {
             for (Class1783 var9 : var1.method582(new ResourceLocation(var7, "sounds.json"))) {
-               var2.method22503(var9.method7765());
+               var2.startSection(var9.method7765());
 
                try (
                   InputStream var10 = var9.method7763();
                   InputStreamReader var12 = new InputStreamReader(var10, StandardCharsets.UTF_8);
                ) {
-                  var2.method22503("parse");
+                  var2.startSection("parse");
                   Map<String, Class9304> var14 = Class8963.method32794(field1053, var12, field1054);
-                  var2.method22506("register");
+                  var2.endStartSection("register");
 
                   for (Entry<String, Class9304> var16 : var14.entrySet()) {
                      Class8657.method31157(var5, new ResourceLocation(var7, var16.getKey()), var16.getValue(), var1);
                   }
 
-                  var2.method22505();
+                  var2.endSection();
                } catch (RuntimeException var46) {
                   field1052.warn("Invalid sounds.json in resourcepack: '{}'", var9.method7765(), var46);
                }
 
-               var2.method22505();
+               var2.endSection();
             }
          } catch (IOException var47) {
          }
 
-         var2.method22505();
+         var2.endSection();
       }
 
       var2.method22502();
@@ -129,7 +129,7 @@ public class Class274 extends Class269<Class8657> {
       this.field1056.method13777(var1, var2);
    }
 
-   public void method1002(Class9624 var1) {
+   public void updateListener(Class9624 var1) {
       this.field1056.method13778(var1);
    }
 
@@ -141,7 +141,7 @@ public class Class274 extends Class269<Class8657> {
       this.field1056.method13761();
    }
 
-   public void method1005() {
+   public void unloadSounds() {
       this.field1056.method13759();
    }
 
@@ -149,7 +149,7 @@ public class Class274 extends Class269<Class8657> {
       this.field1056.method13764(var1);
    }
 
-   public void method1007() {
+   public void resume() {
       this.field1056.method13776();
    }
 

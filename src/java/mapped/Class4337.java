@@ -25,17 +25,17 @@ public class Class4337 extends Class4305 {
       );
       this.method13230(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, Class7925.field33942));
       this.method13230(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, Class7925.field33939));
-      this.field21186.method13251((var1x, var2x) -> this.method13493(new Class1341(Minecraft.getInstance().field1355)));
-      this.field21191.method13251((var1x, var2x) -> this.method13493(new Class1317(Minecraft.getInstance().field1355)));
-      this.field21189.method13251((var1x, var2x) -> this.method13493(new Class1129(Minecraft.getInstance().field1355, Minecraft.getInstance().field1299)));
+      this.field21186.method13251((var1x, var2x) -> this.method13493(new Class1341(Minecraft.getInstance().currentScreen)));
+      this.field21191.method13251((var1x, var2x) -> this.method13493(new Class1317(Minecraft.getInstance().currentScreen)));
+      this.field21189.method13251((var1x, var2x) -> this.method13493(new Class1129(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
       this.field21190.method13251((var1x, var2x) -> this.method13494(new Class4317()));
       this.field21188
          .method13251(
             (var1x, var2x) -> this.method13493(
-                  new Class1136(Minecraft.getInstance().field1355, Minecraft.getInstance().field1299, Minecraft.getInstance().method1541())
+                  new Class1136(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings, Minecraft.getInstance().method1541())
                )
          );
-      this.field21187.method13251((var0, var1x) -> Minecraft.getInstance().method1487());
+      this.field21187.method13251((var0, var1x) -> Minecraft.getInstance().shutdown());
    }
 
    public void method13493(Screen var1) {

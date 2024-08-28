@@ -19,7 +19,7 @@ public class Class1207 extends Class1206 {
    }
 
    @Override
-   public void method5738(Class9332 var1, int var2, int var3) {
+   public void method5738(MatrixStack var1, int var2, int var3) {
       if (this.field6481 && this.field6517.field4727.method18217().size() > this.field6516 + Class862.method2668(this.field6517)) {
          if (var2 >= this.field6477 + 20) {
             if (var2 < this.field6477 + 50 && var2 > this.field6477 + 30) {

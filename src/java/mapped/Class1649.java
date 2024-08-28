@@ -100,7 +100,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       return var8 * var8 + var10 * var10;
    }
 
-   private static int method6535(Class7481 var0, Class878 var1, boolean var2) {
+   private static int method6535(Class7481 var0, ServerPlayerEntity var1, boolean var2) {
       int var5;
       int var6;
       if (!var2) {
@@ -287,14 +287,14 @@ public class Class1649 extends Class1648 implements Class1650 {
 
    public void method6546(BooleanSupplier var1) {
       Class7165 var4 = this.field8956.method6820();
-      var4.method22503("poi");
+      var4.startSection("poi");
       this.field8961.method6641(var1);
-      var4.method22506("chunk_unload");
+      var4.endStartSection("chunk_unload");
       if (!this.field8956.method6819()) {
          this.method6547(var1);
       }
 
-      var4.method22505();
+      var4.endSection();
    }
 
    private void method6547(BooleanSupplier var1) {
@@ -397,7 +397,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private CompletableFuture<Either<Class1670, Class7022>> method6551(Class7481 var1) {
       return CompletableFuture.<Either<Class1670, Class7022>>supplyAsync(() -> {
          try {
-            this.field8956.method6820().method22508("chunkLoad");
+            this.field8956.method6820().func_230035_c_("chunkLoad");
             Class39 var4 = this.method6570(var1);
             if (var4 != null) {
                boolean var9 = var4.method119("Level", 10) && var4.method130("Level").method119("Status", 8);
@@ -586,7 +586,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                }
             }
 
-            this.field8956.method6820().method22508("chunkSave");
+            this.field8956.method6820().func_230035_c_("chunkSave");
             Class39 var6 = Class9725.method38088(this.field8956, var1);
             if (Class9299.field42773.method20241()) {
                World var7 = (World)Class9299.method35070(var1, Class9299.field42908);
@@ -648,7 +648,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   public void method6564(Class878 var1, Class7481 var2, Packet<?>[] var3, boolean var4, boolean var5) {
+   public void method6564(ServerPlayerEntity var1, Class7481 var2, Packet<?>[] var3, boolean var4, boolean var5) {
       if (var1.field5024 == this.field8956) {
          if (Class9299.field42845.method20214()) {
             Class9299.field42845.method20217(var4, var5, var1, var2, this.field8956);
@@ -748,11 +748,11 @@ public class Class1649 extends Class1648 implements Class1650 {
          : true;
    }
 
-   private boolean method6572(Class878 var1) {
+   private boolean method6572(ServerPlayerEntity var1) {
       return var1.method2800() && !this.field8956.method6789().method17135(Class5462.field24238);
    }
 
-   public void method6573(Class878 var1, boolean var2) {
+   public void method6573(ServerPlayerEntity var1, boolean var2) {
       boolean var5 = this.method6572(var1);
       boolean var6 = this.field8972.method20901(var1);
       int var7 = MathHelper.method37769(var1.getPosX()) >> 4;
@@ -779,14 +779,14 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   private Class2002 method6574(Class878 var1) {
+   private Class2002 method6574(ServerPlayerEntity var1) {
       Class2002 var4 = Class2002.method8392(var1);
       var1.method2833(var4);
       var1.field4855.sendPacket(new Class5579(var4.method8410(), var4.method8412()));
       return var4;
    }
 
-   public void method6575(Class878 var1) {
+   public void method6575(ServerPlayerEntity var1) {
       ObjectIterator var4 = this.field8973.values().iterator();
 
       while (var4.hasNext()) {
@@ -868,7 +868,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    @Override
-   public Stream<Class878> method6576(Class7481 var1, boolean var2) {
+   public Stream<ServerPlayerEntity> method6576(Class7481 var1, boolean var2) {
       return this.field8972.method20896(var1.method24352()).filter(var3 -> {
          int var6 = method6535(var1, var3, true);
          return var6 > this.field8976 ? false : !var2 || var6 == this.field8976;
@@ -887,8 +887,8 @@ public class Class1649 extends Class1648 implements Class1650 {
          Class8998 var7 = new Class8998(this, var1, var5, var6, var4.method33227());
          this.field8973.put(var1.method3205(), var7);
          var7.method33246(this.field8956.method6870());
-         if (var1 instanceof Class878) {
-            Class878 var8 = (Class878)var1;
+         if (var1 instanceof ServerPlayerEntity) {
+            ServerPlayerEntity var8 = (ServerPlayerEntity)var1;
             this.method6573(var8, true);
             ObjectIterator var9 = this.field8973.values().iterator();
 
@@ -903,8 +903,8 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    public void method6578(Entity var1) {
-      if (var1 instanceof Class878) {
-         Class878 var4 = (Class878)var1;
+      if (var1 instanceof ServerPlayerEntity) {
+         ServerPlayerEntity var4 = (ServerPlayerEntity)var1;
          this.method6573(var4, false);
          ObjectIterator var5 = this.field8973.values().iterator();
 
@@ -932,8 +932,8 @@ public class Class1649 extends Class1648 implements Class1650 {
          if (!Objects.equals(var7, var8)) {
             var6.method33246(var4);
             Entity var9 = Class8998.method33247(var6);
-            if (var9 instanceof Class878) {
-               var3.add((Class878)var9);
+            if (var9 instanceof ServerPlayerEntity) {
+               var3.add((ServerPlayerEntity)var9);
             }
 
             Class8998.method33249(var6, var8);
@@ -966,7 +966,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   private void method6582(Class878 var1, Packet<?>[] var2, Class1674 var3) {
+   private void method6582(ServerPlayerEntity var1, Packet<?>[] var2, Class1674 var3) {
       if (var2[0] == null) {
          var2[0] = new Class5526(var3, 65535);
          var2[1] = new Class5523(var3.method7072(), this.field8957, true);
@@ -1023,7 +1023,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    // $VF: synthetic method
-   public static int method6635(Class7481 var0, Class878 var1, boolean var2) {
+   public static int method6635(Class7481 var0, ServerPlayerEntity var1, boolean var2) {
       return method6535(var0, var1, var2);
    }
 

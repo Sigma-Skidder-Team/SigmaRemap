@@ -26,9 +26,9 @@ public class Class5219 extends Module {
     @Override
     public void method15965() {
         Class9567.method37090(Class9567.method37075() * 0.7);
-        if (mc.field1339.field4902.field5443 != this.field23554) {
-            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.field1339.field4902.field5443));
-            this.field23554 = mc.field1339.field4902.field5443;
+        if (mc.player.field4902.field5443 != this.field23554) {
+            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
+            this.field23554 = mc.player.field4902.field5443;
         }
     }
 
@@ -45,10 +45,10 @@ public class Class5219 extends Module {
     public void method16250(Class4435 var1) {
         if (this.method15996()
                 && !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()
-                && !Class5628.method17684(mc.field1339)) {
+                && !Class5628.method17684(mc.player)) {
             double var4 = this.method15977("OnGround Speed");
-            if (!mc.field1339.field5036) {
-                if (mc.field1339.field5037) {
+            if (!mc.player.field5036) {
+                if (mc.player.field5037) {
                     this.field23555 = 0.35;
                     this.field23553 = 1;
                 }
@@ -71,8 +71,8 @@ public class Class5219 extends Module {
                 }
 
                 if (this.method15974("AutoJump") && Class5628.method17686()) {
-                    mc.field1339.method2914();
-                    var1.method13995(mc.field1339.method3433().field18049);
+                    mc.player.method2914();
+                    var1.method13995(mc.player.method3433().field18049);
                 }
 
                 if (var1.method13994() == 0.4199998) {
@@ -91,12 +91,12 @@ public class Class5219 extends Module {
                 }
 
                 Vector3d var7 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-                BlockPos var8 = new BlockPos(mc.field1339.method3432()).method8336(0, -1, 0);
+                BlockPos var8 = new BlockPos(mc.player.method3432()).method8336(0, -1, 0);
                 Class8711 var9 = new Class8711(var7, Direction.field673, var8, false);
                 Class5570 var10 = new Class5570(Hand.field182, var9);
                 mc.getClientPlayNetHandler().sendPacket(var10);
                 this.field23555 += var4 / 4.0;
-                if (mc.field1339.field5037) {
+                if (mc.player.field5037) {
                     this.field23555 /= 2.0;
                 }
 
@@ -117,7 +117,7 @@ public class Class5219 extends Module {
     public void method16251(Class4436 var1) {
         if (this.method15996()) {
             this.field23555 = 0.81 + (double) this.field23553 * 0.095;
-            if (mc.field1339.getPosY() != (double) ((int) mc.field1339.getPosY())) {
+            if (mc.player.getPosY() != (double) ((int) mc.player.getPosY())) {
                 this.field23555 = 0.52;
                 this.field23553 = 1;
             }
@@ -129,16 +129,16 @@ public class Class5219 extends Module {
 
             var1.method14003(0.0);
             var1.method14002(0.4199998);
-            if (mc.field1339.field4902.field5443 != this.field23554) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.field1339.field4902.field5443));
-                this.field23554 = mc.field1339.field4902.field5443;
+            if (mc.player.field4902.field5443 != this.field23554) {
+                mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
+                this.field23554 = mc.player.field4902.field5443;
             }
         }
     }
 
     @EventTarget
     public void method16252(Class4396 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23553 = 0;
                 this.field23555 = 0.0;
@@ -148,7 +148,7 @@ public class Class5219 extends Module {
 
     @EventTarget
     public void method16253(Class4434 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (var1.method13988() > 0.2) {
                 this.field23555 = this.field23555 - (double) (this.method15977("OnGround Speed") / 4.0F);
             }
@@ -156,14 +156,14 @@ public class Class5219 extends Module {
     }
 
     private int method16254() {
-        if (mc.field1339.method3090().method32105()) {
-            this.field23554 = mc.field1339.field4902.field5443;
+        if (mc.player.method3090().method32105()) {
+            this.field23554 = mc.player.field4902.field5443;
             return this.field23554;
         } else {
             for (int var3 = 36; var3 < 45; var3++) {
                 int var4 = var3 - 36;
-                if (mc.field1339.field4904.method18131(var3).method18265().method32105()) {
-                    if (mc.field1339.field4902.field5443 != var4 && this.field23554 != var4) {
+                if (mc.player.field4904.method18131(var3).method18265().method32105()) {
+                    if (mc.player.field4902.field5443 != var4 && this.field23554 != var4) {
                         mc.getClientPlayNetHandler().sendPacket(new Class5539(var4));
                         this.field23554 = var4;
                     }
@@ -172,9 +172,9 @@ public class Class5219 extends Module {
                 }
             }
 
-            Class7789.method25870(mc.field1339.field4904.field25471, 42, 0, Class2259.field14695, mc.field1339, true);
-            if (mc.field1339.field4904.method18131(42).method18265().method32105()
-                    && mc.field1339.field4902.field5443 != 6
+            Class7789.method25870(mc.player.field4904.field25471, 42, 0, Class2259.field14695, mc.player, true);
+            if (mc.player.field4904.method18131(42).method18265().method32105()
+                    && mc.player.field4902.field5443 != 6
                     && this.field23554 != 6) {
                 mc.getClientPlayNetHandler().sendPacket(new Class5539(6));
                 this.field23554 = 6;

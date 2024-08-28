@@ -39,7 +39,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       return new Vector3d(var7, var9, var11);
    }
 
-   public void method17853(Class1105 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class1105 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       super.method17853(var1, var2, var3, var4, var5, var6);
       Class880 var9 = var1.method5306();
       if (var9 != null) {

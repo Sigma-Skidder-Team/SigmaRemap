@@ -113,14 +113,14 @@ public class Class9195 {
       ArrayList var6 = Lists.newArrayListWithCapacity(var1.size());
 
       for (Entity var8 : var1) {
-         if (var8 instanceof Class878) {
-            ((Class878)var8).field4904.method18130();
+         if (var8 instanceof ServerPlayerEntity) {
+            ((ServerPlayerEntity)var8).field4904.method18130();
          }
 
          if (var8.method2963(var2, var3.copy())) {
             var6.add(var8);
-            if (var8 instanceof Class878) {
-               ((Class878)var8).field4904.method18130();
+            if (var8 instanceof ServerPlayerEntity) {
+               ((ServerPlayerEntity)var8).field4904.method18130();
             }
          }
       }

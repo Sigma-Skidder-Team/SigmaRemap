@@ -421,7 +421,7 @@ public class Class904 extends Class882 {
                   .method36453((float)this.field5161 + var4.method2978());
                Class7318 var7 = this.field5024.method6715().method1411().method1058(Class8793.field39591);
                List<ItemStack> var8 = var7.method23182(var6.method36460(Class8524.field38285));
-               CriteriaTriggers.field44494.method15124((Class878)var4, var1, this, var8);
+               CriteriaTriggers.field44494.method15124((ServerPlayerEntity)var4, var1, this, var8);
 
                for (ItemStack var10 : var8) {
                   ItemEntity var11 = new ItemEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var10);
@@ -444,7 +444,7 @@ public class Class904 extends Class882 {
             }
          } else {
             this.method3543();
-            CriteriaTriggers.field44494.method15124((Class878)var4, var1, this, Collections.<ItemStack>emptyList());
+            CriteriaTriggers.field44494.method15124((ServerPlayerEntity)var4, var1, this, Collections.<ItemStack>emptyList());
             this.field5024.method6786(this, (byte)31);
             var5 = !(this.field5159 instanceof ItemEntity) ? 5 : 3;
          }

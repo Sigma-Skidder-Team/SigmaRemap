@@ -12,7 +12,7 @@ public class Class5667 extends Class5666 {
       return field25031;
    }
 
-   public void method17857(Class1082 var1, Class9332 var2, float var3) {
+   public void method17857(Class1082 var1, MatrixStack var2, float var3) {
       var2.method35292(1.2F, 1.2F, 1.2F);
    }
 }

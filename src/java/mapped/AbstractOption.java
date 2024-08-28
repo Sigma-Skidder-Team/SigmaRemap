@@ -7,10 +7,10 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public abstract class Class5805 {
+public abstract class AbstractOption {
    public static final Class5807 field25315 = new Class5807("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.field44606, (var0, var1) -> {
       var0.field44606 = MathHelper.method37775((int)var1.doubleValue(), 0, 7);
-      Minecraft.getInstance().field1287.method868();
+      Minecraft.getInstance().worldRenderer.method868();
    }, (var0, var1) -> {
       double var4 = var1.method18090(var0);
       int var6 = (int)var4 * 2 + 1;
@@ -18,28 +18,28 @@ public abstract class Class5805 {
    });
    public static final Class5807 field25316 = new Class5807("options.chat.height.focused", 0.0, 1.0, 0.0F, var0 -> var0.field44598, (var0, var1) -> {
       var0.field44598 = var1;
-      Minecraft.getInstance().field1298.method5989().method5933();
+      Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
       double var4 = var1.method18083(var1.method18090(var0));
       return var1.method17952(Class1266.method5946(var4));
    });
    public static final Class5807 field25317 = new Class5807("options.chat.height.unfocused", 0.0, 1.0, 0.0F, var0 -> var0.field44597, (var0, var1) -> {
       var0.field44597 = var1;
-      Minecraft.getInstance().field1298.method5989().method5933();
+      Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
       double var4 = var1.method18083(var1.method18090(var0));
       return var1.method17952(Class1266.method5946(var4));
    });
    public static final Class5807 field25318 = new Class5807("options.chat.opacity", 0.0, 1.0, 0.0F, var0 -> var0.field44583, (var0, var1) -> {
       var0.field44583 = var1;
-      Minecraft.getInstance().field1298.method5989().method5933();
+      Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
       double var4 = var1.method18083(var1.method18090(var0));
       return var1.method17953(var4 * 0.9 + 0.1);
    });
    public static final Class5807 field25319 = new Class5807("options.chat.scale", 0.0, 1.0, 0.0F, var0 -> var0.field44595, (var0, var1) -> {
       var0.field44595 = var1;
-      Minecraft.getInstance().field1298.method5989().method5933();
+      Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
       double var4 = var1.method18083(var1.method18090(var0));
       return (ITextComponent)(var4 != 0.0 ? var1.method17953(var4) : Class7127.method22238(var1.method17949(), false));
@@ -47,7 +47,7 @@ public abstract class Class5805 {
    public static final Class5807 field25320 = new Class5807("options.chat.width", 0.0, 1.0, 0.0F, var0 -> var0.field44596 / 4.0571431, (var0, var1) -> {
       var1 = var1 * 4.0571431;
       var0.field44596 = var1;
-      Minecraft.getInstance().field1298.method5989().method5933();
+      Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
       double var4 = var1.method18083(var1.method18090(var0));
       return var1.method17952(Class1266.method5945(var4 * 4.0571431));
@@ -79,7 +79,7 @@ public abstract class Class5805 {
       "options.fov", 30.0, 110.0, 1.0F, var0 -> var0.field44669, (var0, var1) -> var0.field44669 = var1, (var0, var1) -> {
          double var4 = var1.method18090(var0);
          if (var4 != 70.0) {
-            return var4 != var1.method18087() ? var1.method17956((int)var4) : var1.method17955(new TranslationTextComponent("options.fov.max"));
+            return var4 != var1.getMaxValue() ? var1.method17956((int)var4) : var1.method17955(new TranslationTextComponent("options.fov.max"));
          } else {
             return var1.method17955(new TranslationTextComponent("options.fov.min"));
          }
@@ -107,7 +107,7 @@ public abstract class Class5805 {
          return var4 != 0.0 ? var1.method17953(var4) : var1.method17955(new TranslationTextComponent("options.screenEffectScale.off"));
       }
    );
-   public static final Class5807 field25328 = new Class5807(
+   public static final Class5807 FRAMERATE_LIMIT = new Class5807(
       "options.framerateLimit",
       0.0,
       260.0,
@@ -127,7 +127,7 @@ public abstract class Class5805 {
       (var0, var1) -> {
          if (!var0.field44615) {
             double var4 = var1.method18090(var0);
-            return var4 != var1.method18087()
+            return var4 != var1.getMaxValue()
                ? var1.method17955(new TranslationTextComponent("options.framerate", (int)var4))
                : var1.method17955(new TranslationTextComponent("options.framerateLimit.max"));
          } else {
@@ -171,7 +171,7 @@ public abstract class Class5805 {
    });
    public static final Class5807 field25333 = new Class5807("options.renderDistance", 2.0, 16.0, 1.0F, var0 -> (double)var0.field44574, (var0, var1) -> {
       var0.field44574 = (int)var1.doubleValue();
-      Minecraft.getInstance().field1287.method922();
+      Minecraft.getInstance().worldRenderer.method922();
    }, (var0, var1) -> {
       double var4 = var1.method18090(var0);
       return var1.method17955(new TranslationTextComponent("options.chunks", (int)var4));
@@ -201,12 +201,12 @@ public abstract class Class5805 {
    public static final Class5807 field25336 = new Class5807(
       "options.accessibility.text_background_opacity", 0.0, 1.0, 0.0F, var0 -> var0.field44585, (var0, var1) -> {
          var0.field44585 = var1;
-         Minecraft.getInstance().field1298.method5989().method5933();
+         Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
       }, (var0, var1) -> var1.method17953(var1.method18083(var1.method18090(var0)))
    );
    public static final Class5804 field25337 = new Class5804("options.ao", (var0, var1) -> {
       var0.field44579 = Class2340.method9117(var0.field44579.method9115() + var1);
-      Minecraft.getInstance().field1287.method868();
+      Minecraft.getInstance().worldRenderer.method868();
    }, (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.field44579.method9116())));
    public static final Class5804 field25338 = new Class5804(
       "options.attackIndicator",
@@ -235,7 +235,7 @@ public abstract class Class5805 {
          }
 
          var0.method37162();
-         var4.field1287.method868();
+         var4.worldRenderer.method868();
       }
    }, (var0, var1) -> {
       switch (Class9496.field44201[var0.field44578.ordinal()]) {
@@ -265,15 +265,15 @@ public abstract class Class5805 {
    public static final Class5804 field25346 = new Class5804(
       "options.narrator",
       (var0, var1) -> {
-         if (!Class6688.field29302.method20405()) {
+         if (!NarratorChatListener.INSTANCE.method20405()) {
             var0.field44675 = Class1911.field11267;
          } else {
             var0.field44675 = Class1911.method8191(var0.field44675.method8189() + var1);
          }
 
-         Class6688.field29302.method20404(var0.field44675);
+         NarratorChatListener.INSTANCE.method20404(var0.field44675);
       },
-      (var0, var1) -> !Class6688.field29302.method20405()
+      (var0, var1) -> !NarratorChatListener.INSTANCE.method20405()
             ? var1.method17955(new TranslationTextComponent("options.narrator.notavailable"))
             : var1.method17955(var0.field44675.method8190())
    );
@@ -285,9 +285,9 @@ public abstract class Class5805 {
    public static final Class5804 field25348 = new Class5804("options.renderClouds", (var0, var1) -> {
       var0.field44577 = Class1904.method8175(var0.field44577.method8173() + var1);
       if (Minecraft.method1517()) {
-         Framebuffer var4 = Minecraft.getInstance().field1287.method951();
+         Framebuffer var4 = Minecraft.getInstance().worldRenderer.method951();
          if (var4 != null) {
-            var4.method29119(Minecraft.field1272);
+            var4.method29119(Minecraft.IS_RUNNING_ON_MAC);
          }
       }
    }, (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.field44577.method8174())));
@@ -428,7 +428,7 @@ public abstract class Class5805 {
    public static final Class5804 field25444 = new Class5803("of.options.CHAT_BACKGROUND");
    public static final Class5804 field25445 = new Class5803("of.options.CHAT_SHADOW");
 
-   public Class5805(String var1) {
+   public AbstractOption(String var1) {
       this.field25371 = new TranslationTextComponent(var1);
       this.field25373 = var1;
    }

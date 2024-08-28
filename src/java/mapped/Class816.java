@@ -40,11 +40,11 @@ public class Class816 extends Class798 {
    }
 
    private boolean method2319() {
-      return this.field4562.field1299.field44620;
+      return this.field4562.gameSettings.field44620;
    }
 
    private boolean method2320() {
-      return this.field4562.field1355 instanceof Class849;
+      return this.field4562.currentScreen instanceof MainMenuScreen;
    }
 
    private void method2321() {
@@ -55,7 +55,7 @@ public class Class816 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (field4443) {
          this.method2322(var1, var2, var3);
       }
@@ -63,7 +63,7 @@ public class Class816 extends Class798 {
       super.method1923(var1, var2, var3, var4);
    }
 
-   private void method2322(Class9332 var1, int var2, int var3) {
+   private void method2322(MatrixStack var1, int var2, int var3) {
       int var6 = this.field4440;
       byte var7 = 24;
       int var8 = this.field4565 / 4 + 48;
@@ -91,7 +91,7 @@ public class Class816 extends Class798 {
          this.field4562.getTextureManager().bindTexture(field4437);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          byte var12 = 0;
-         if ((Util.method38487() / 800L & 1L) == 1L) {
+         if ((Util.milliTime() / 800L & 1L) == 1L) {
             var12 = 8;
          }
 
@@ -100,7 +100,7 @@ public class Class816 extends Class798 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       field4439.method36026();
    }
 

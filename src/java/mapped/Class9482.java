@@ -39,7 +39,7 @@ public class Class9482 {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("reload").requires(var0x -> var0x.method20129(2))).executes(var0x -> {
             Class6619 var3 = (Class6619)var0x.getSource();
-            Class314 var4 = var3.method20177();
+            MinecraftServer var4 = var3.method20177();
             Class313 var5 = var4.method1402();
             Class6611 var6 = var4.method1436();
             Collection var7 = var5.method1269();

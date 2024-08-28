@@ -31,7 +31,7 @@ public class Class1342 extends Screen {
    private float field7131 = 0.5F;
 
    public Class1342(boolean var1, Runnable var2) {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field7125 = var1;
       this.field7126 = var2;
       if (!var1) {
@@ -171,7 +171,7 @@ public class Class1342 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method6433(var2, var3, var4);
       short var7 = 274;
       int var8 = this.field4564 / 2 - 137;

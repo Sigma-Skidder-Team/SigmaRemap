@@ -16,7 +16,7 @@ public abstract class Class7465<T extends Class7465<T>> {
       this.method24171(((Class6619)var1.getSource()).method20177());
    }
 
-   public void method24171(Class314 var1) {
+   public void method24171(MinecraftServer var1) {
       if (var1 != null) {
          Class7989.method27161(this.field32101).accept(var1, this.method24166());
       }
@@ -37,5 +37,5 @@ public abstract class Class7465<T extends Class7465<T>> {
 
    public abstract T method24165();
 
-   public abstract void method24164(T var1, Class314 var2);
+   public abstract void method24164(T var1, MinecraftServer var2);
 }

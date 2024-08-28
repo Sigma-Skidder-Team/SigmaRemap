@@ -397,4 +397,9 @@ public class Class936 extends Class939 implements Class937, Class935 {
    public Class5812 method3690(int var1, Class974 var2) {
       return new Class5816(var1, var2, this);
    }
+
+   @Override
+   public ITextComponent method2954() {
+      return null;
+   }
 }

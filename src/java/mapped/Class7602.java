@@ -17,7 +17,7 @@ public class Class7602 implements Class7601 {
    }
 
    @Override
-   public Class2139 method24894(Class9332 var1, Class1264 var2, long var3) {
+   public Class2139 method24894(MatrixStack var1, Class1264 var2, long var3) {
       if (this.field32636) {
          this.field32635 = var3;
          this.field32636 = false;

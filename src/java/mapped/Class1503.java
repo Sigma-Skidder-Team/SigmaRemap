@@ -18,13 +18,13 @@ public class Class1503 implements Runnable {
    public void run() {
       for (Entry<BlockPos, Class8189> var4 : this.field8113.entrySet()) {
          if (var4.getValue() != null) {
-            Minecraft.getInstance().field1338.method6730(var4.getKey(), var4.getValue().field35208);
+            Minecraft.getInstance().world.method6730(var4.getKey(), var4.getValue().field35208);
          }
       }
 
       for (Entry<BlockPos, Class7380> var6 : this.field8114.entrySet()) {
          if (var6.getValue() != null) {
-            Minecraft.getInstance().field1338.method6730(var6.getKey(), var6.getValue());
+            Minecraft.getInstance().world.method6730(var6.getKey(), var6.getValue());
          }
       }
    }

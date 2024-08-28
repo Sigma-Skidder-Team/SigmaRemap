@@ -40,7 +40,7 @@ public class Class1185 extends Class1178<Class1185> {
       this.field6396 = var1.field1294.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.hide", var4), 150);
       this.field6397 = var1.field1294.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.show", var4), 150);
       Class9645 var8 = var1.method1578();
-      if (!var1.field1339.getGameProfile().getId().equals(var3) && !var8.method37608(var3)) {
+      if (!var1.player.getGameProfile().getId().equals(var3) && !var8.method37608(var3)) {
          this.field6394 = new Class1244(this, 0, 0, 20, 20, 0, 38, 20, Class1147.field6215, 256, 256, var4x -> {
             var8.method37604(var3);
             this.method5618(true, new TranslationTextComponent("gui.socialInteractions.hidden_in_chat", var4));
@@ -68,7 +68,7 @@ public class Class1185 extends Class1178<Class1185> {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       int var13 = var4 + 4;
       int var14 = var3 + (var6 - 24) / 2;
       int var15 = var13 + 24 + 4;
@@ -127,8 +127,8 @@ public class Class1185 extends Class1178<Class1185> {
    private void method5618(boolean var1, ITextComponent var2) {
       this.field6395.field6483 = var1;
       this.field6394.field6483 = !var1;
-      this.field6388.field1298.method5989().method5930(var2);
-      Class6688.field29302.method20401(var2.getString());
+      this.field6388.ingameGUI.getChatGUI().method5930(var2);
+      NarratorChatListener.INSTANCE.say(var2.getString());
    }
 
    private IFormattableTextComponent method5619(IFormattableTextComponent var1) {
@@ -156,7 +156,7 @@ public class Class1185 extends Class1178<Class1185> {
       }
    }
 
-   private static void method5621(Class1147 var0, Class9332 var1, List<Class9125> var2, int var3, int var4) {
+   private static void method5621(Class1147 var0, MatrixStack var1, List<Class9125> var2, int var3, int var4) {
       var0.method2461(var1, var2, var3, var4);
       var0.method5491((Runnable)null);
    }

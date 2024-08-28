@@ -8,7 +8,7 @@ public class Class9267 {
    private static final Logger field42630 = LogManager.getLogger();
    private final Screen field42631;
    private volatile boolean field42632;
-   private Class8586 field42633;
+   private NetworkManager field42633;
 
    public Class9267(Screen var1) {
       this.field42631 = var1;
@@ -45,12 +45,12 @@ public class Class9267 {
    }
 
    // $VF: synthetic method
-   public static Class8586 method34900(Class9267 var0, Class8586 var1) {
+   public static NetworkManager method34900(Class9267 var0, NetworkManager var1) {
       return var0.field42633 = var1;
    }
 
    // $VF: synthetic method
-   public static Class8586 method34901(Class9267 var0) {
+   public static NetworkManager method34901(Class9267 var0) {
       return var0.field42633;
    }
 

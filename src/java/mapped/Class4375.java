@@ -22,7 +22,7 @@ public class Class4375 extends Class4247 {
 
    public Class4375(Class4305 var1, String var2, int var3, int var4, int var5, String var6) {
       super(var1, var2, var3 - 125, var4, 250, 330, Class6387.field27961, var6, false);
-      if (this.field20896 + this.field20898 <= Minecraft.getInstance().field1283.method8044()) {
+      if (this.field20896 + this.field20898 <= Minecraft.getInstance().mainWindow.method8044()) {
          this.field20896 += 10;
       } else {
          this.field20896 -= 400;

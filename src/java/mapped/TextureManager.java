@@ -179,7 +179,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       }
 
       Class8564.method30599();
-      return CompletableFuture.allOf(Class849.method2595(this, var5), this.method1078(Class1197.field6474, var5))
+      return CompletableFuture.allOf(MainMenuScreen.method2595(this, var5), this.method1078(Class1197.field6474, var5))
          .<Void>thenCompose(var1::method22225)
          .thenAcceptAsync(var3x -> {
             Class1714.method7515();

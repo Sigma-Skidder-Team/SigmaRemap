@@ -15,16 +15,16 @@ public class Class7050 {
 
    public static ResourceLocation method21963(ResourceLocation var0) {
       if (field30440 != null) {
-         Screen var3 = field30438.field1355;
+         Screen var3 = field30438.currentScreen;
          if (var3 instanceof Class851) {
             if (!var0.method8293().equals("minecraft") || !var0.method8292().startsWith("textures/gui/")) {
                return var0;
             } else if (field30439 != null) {
-               Class1656 var4 = field30438.field1338;
+               Class1656 var4 = field30438.world;
                if (var4 == null) {
                   return var0;
                } else if (var3 instanceof Class861) {
-                  return method21964(Class2295.field15265, field30438.field1339.method3432(), var4, var0, var3);
+                  return method21964(Class2295.field15265, field30438.player.method3432(), var4, var0, var3);
                } else if (!(var3 instanceof Class859)) {
                   BlockPos var5 = field30439.method23163();
                   if (var5 != null) {
@@ -82,7 +82,7 @@ public class Class7050 {
 
                   return var0;
                } else {
-                  return method21964(Class2295.field15266, field30438.field1339.method3432(), var4, var0, var3);
+                  return method21964(Class2295.field15266, field30438.player.method3432(), var4, var0, var3);
                }
             } else {
                return var0;

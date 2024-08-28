@@ -90,7 +90,7 @@ public class Class9478 {
       return var10;
    }
 
-   public void method36587(Class6120 var1, String var2, Class7155 var3, Class9774 var4) {
+   public void method36587(Class6120 var1, String var2, Class7155 var3, SaveFormat var4) {
       if (this.field44061 == null) {
          this.field44061 = new Thread(() -> {
             CloseableHttpClient var7 = null;
@@ -204,7 +204,7 @@ public class Class9478 {
       return var0;
    }
 
-   private void method36593(String var1, File var2, Class9774 var3) throws IOException {
+   private void method36593(String var1, File var2, SaveFormat var3) throws IOException {
       Pattern var6 = Pattern.compile(".*-([0-9]+)$");
       int var7 = 1;
 
@@ -327,7 +327,7 @@ public class Class9478 {
    }
 
    // $VF: synthetic method
-   public static void method36599(Class9478 var0, String var1, File var2, Class9774 var3) throws IOException {
+   public static void method36599(Class9478 var0, String var1, File var2, SaveFormat var3) throws IOException {
       var0.method36593(var1, var2, var3);
    }
 

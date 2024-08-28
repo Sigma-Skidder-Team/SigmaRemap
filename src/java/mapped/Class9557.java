@@ -63,7 +63,7 @@ public class Class9557 {
          this.method37029();
       }
 
-      this.field44524 = this.field44523.field1299.field44604.method8915(this);
+      this.field44524 = this.field44523.gameSettings.field44604.method8915(this);
    }
 
    public void method37031(Class7600 var1, int var2) {
@@ -79,10 +79,10 @@ public class Class9557 {
    public void method37033() {
       this.field44525.removeIf(var0 -> Class9447.method36325(var0));
       if (this.field44524 == null) {
-         if (this.field44523.field1338 != null) {
+         if (this.field44523.world != null) {
             this.method37030();
          }
-      } else if (this.field44523.field1338 == null) {
+      } else if (this.field44523.world == null) {
          this.method37029();
       } else {
          this.field44524.method19097();
@@ -90,8 +90,8 @@ public class Class9557 {
    }
 
    public void method37034(Class2200 var1) {
-      this.field44523.field1299.field44604 = var1;
-      this.field44523.field1299.method37146();
+      this.field44523.gameSettings.field44604 = var1;
+      this.field44523.gameSettings.method37146();
       if (this.field44524 != null) {
          this.field44524.method19098();
          this.field44524 = var1.method8915(this);

@@ -25,7 +25,7 @@ public interface Class6608 extends Class6607 {
                "Game mode: %s (ID %d). Hardcore: %b. Cheats: %b",
                this.method20067().method8153(),
                this.method20067().method8152(),
-               this.method20045(),
+               this.isHardcore(),
                this.method20072()
             )
       );
@@ -65,7 +65,7 @@ public interface Class6608 extends Class6607 {
 
    void method20073(Class1894 var1);
 
-   Class8559<Class314> method20074();
+   Class8559<MinecraftServer> method20074();
 
    void method20075(long var1);
 

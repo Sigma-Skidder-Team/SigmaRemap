@@ -15,9 +15,9 @@ public class Class1267 extends Class1193 {
       this.field6709 = var1;
    }
 
-   public void method5953(Class9332 var1) {
+   public void method5953(MatrixStack var1) {
       if (!this.field6710.isEmpty()) {
-         int var4 = this.field6709.method1580().method8045();
+         int var4 = this.field6709.method1580().getScaledWidth();
          byte var5 = 12;
 
          for (Class3626 var7 : this.field6710.values()) {
@@ -31,14 +31,14 @@ public class Class1267 extends Class1193 {
             int var12 = var5 - 9;
             this.field6709.field1294.method38803(var1, var9, (float)var11, (float)var12, 16777215);
             var5 += 19;
-            if (var5 >= this.field6709.method1580().method8046() / 3) {
+            if (var5 >= this.field6709.method1580().getScaledHeight() / 3) {
                break;
             }
          }
       }
    }
 
-   private void method5954(Class9332 var1, int var2, int var3, Class3625 var4) {
+   private void method5954(MatrixStack var1, int var2, int var3, Class3625 var4) {
       this.method5696(var1, var2, var3, 0, var4.method12292().ordinal() * 5 * 2, 182, 5);
       if (var4.method12293() != Class2300.field15703) {
          this.method5696(var1, var2, var3, 0, 80 + (var4.method12293().ordinal() - 1) * 5 * 2, 182, 5);

@@ -20,7 +20,7 @@ public class Class5291 extends Module {
 
     @EventTarget
     public void method16619(Class4399 var1) {
-        if (this.method15996() && mc.field1339 != null && var1.method13921()) {
+        if (this.method15996() && mc.player != null && var1.method13921()) {
             this.field23801++;
             double var4 = -0.1;
             if (this.field23801 >= 20) {

@@ -26,7 +26,7 @@ public class Class6393 extends ChannelInboundHandlerAdapter {
       try {
          if (var5.readUnsignedByte() == 254) {
             InetSocketAddress var7 = (InetSocketAddress)var1.channel().remoteAddress();
-            Class314 var8 = this.field27982.method33402();
+            MinecraftServer var8 = this.field27982.method33402();
             int var9 = var5.readableBytes();
             switch (var9) {
                case 0:

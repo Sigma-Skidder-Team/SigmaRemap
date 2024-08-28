@@ -5,25 +5,25 @@ import net.minecraft.util.text.StringTextComponent;
 public class Class847 extends Class838 {
    private Screen field4690;
    private Class9574 field4691;
-   private static Class5805[] field4692 = new Class5805[]{
-      Class5805.field25378,
-      Class5805.field25379,
-      Class5805.field25380,
-      Class5805.field25381,
-      Class5805.field25396,
-      Class5805.field25397,
-      Class5805.field25398,
-      Class5805.field25419,
-      Class5805.field25374,
-      Class5805.field25375,
-      Class5805.field25433,
-      Class5805.field25427,
-      Class5805.field25428,
-      Class5805.field25414,
-      Class5805.field25399,
-      Class5805.field25436,
-      Class5805.field25334,
-      Class5805.field25315
+   private static AbstractOption[] field4692 = new AbstractOption[]{
+      AbstractOption.field25378,
+      AbstractOption.field25379,
+      AbstractOption.field25380,
+      AbstractOption.field25381,
+      AbstractOption.field25396,
+      AbstractOption.field25397,
+      AbstractOption.field25398,
+      AbstractOption.field25419,
+      AbstractOption.field25374,
+      AbstractOption.field25375,
+      AbstractOption.field25433,
+      AbstractOption.field25427,
+      AbstractOption.field25428,
+      AbstractOption.field25414,
+      AbstractOption.field25399,
+      AbstractOption.field25436,
+      AbstractOption.field25334,
+      AbstractOption.field25315
    };
    private Class9046 field4693 = new Class9046(this, new Class7548());
 
@@ -38,10 +38,10 @@ public class Class847 extends Class838 {
       this.field4629.clear();
 
       for (int var3 = 0; var3 < field4692.length; var3++) {
-         Class5805 var4 = field4692[var3];
+         AbstractOption var4 = field4692[var3];
          int var5 = this.field4564 / 2 - 155 + var3 % 2 * 160;
          int var6 = this.field4565 / 6 + 21 * (var3 / 2) - 12;
-         this.<Class1197>method2455(var4.method17946(this.field4562.field1299, var5, var6, 150));
+         this.<Class1197>method2455(var4.method17946(this.field4562.gameSettings, var5, var6, 150));
       }
 
       this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 - 100, this.field4565 / 6 + 168 + 11, Class9088.method33883("gui.done")));
@@ -52,20 +52,20 @@ public class Class847 extends Class838 {
       if (var1 instanceof Class1210) {
          Class1210 var4 = (Class1210)var1;
          if (var4.field6482 && var4.field6523 == 200) {
-            this.field4562.field1299.method37146();
+            this.field4562.gameSettings.method37146();
             this.field4562.displayGuiScreen(this.field4690);
          }
       }
    }
 
    @Override
-   public void method1931() {
-      this.field4562.field1299.method37146();
-      super.method1931();
+   public void onClose() {
+      this.field4562.gameSettings.method37146();
+      super.onClose();
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4562.field1294, this.field4560, this.field4564 / 2, 15, 16777215);
       super.method1923(var1, var2, var3, var4);

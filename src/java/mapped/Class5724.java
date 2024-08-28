@@ -35,7 +35,7 @@ public class Class5724 extends Class5715<ItemEntity> {
       return var4;
    }
 
-   public void method17853(ItemEntity var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(ItemEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       ItemStack var9 = var1.method4124();
       int var10 = !var9.method32105() ? Class3257.method11701(var9.method32107()) + var9.method32117() : 187;

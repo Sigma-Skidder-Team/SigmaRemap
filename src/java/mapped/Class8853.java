@@ -201,7 +201,7 @@ public class Class8853 {
    }
 
    public <E extends Entity> void method32219(
-      E var1, double var2, double var4, double var6, float var8, float var9, Class9332 var10, Class7733 var11, int var12
+           E var1, double var2, double var4, double var6, float var8, float var9, MatrixStack var10, Class7733 var11, int var12
    ) {
       if (!Class5224.field23568 || !(var1 instanceof Class1005) && !(var1 instanceof Class1099) && !(var1 instanceof Class997)) {
          if (this.field40017 != null) {
@@ -266,7 +266,7 @@ public class Class8853 {
       }
    }
 
-   private void method32220(Class9332 var1, Class5422 var2, Entity var3, float var4) {
+   private void method32220(MatrixStack var1, Class5422 var2, Entity var3, float var4) {
       if (!Class8981.field40609) {
          float var7 = var3.method3429() / 2.0F;
          this.method32221(var1, var2, var3, 1.0F, 1.0F, 1.0F);
@@ -313,12 +313,12 @@ public class Class8853 {
       }
    }
 
-   private void method32221(Class9332 var1, Class5422 var2, Entity var3, float var4, float var5, float var6) {
+   private void method32221(MatrixStack var1, Class5422 var2, Entity var3, float var4, float var5, float var6) {
       Class6488 var9 = var3.method3389().method19667(-var3.getPosX(), -var3.getPosY(), -var3.getPosZ());
       Class264.method897(var1, var2, var9, var4, var5, var6, 1.0F);
    }
 
-   private void method32222(Class9332 var1, Class7733 var2, Entity var3) {
+   private void method32222(MatrixStack var1, Class7733 var2, Entity var3) {
       Class1713 var6 = Class8968.field40508.method26198();
       Class1713 var7 = Class8968.field40509.method26198();
       var1.method35294();
@@ -379,7 +379,7 @@ public class Class8853 {
          .method17031();
    }
 
-   private static void method32224(Class9332 var0, Class7733 var1, Entity var2, float var3, float var4, Class1662 var5, float var6) {
+   private static void method32224(MatrixStack var0, Class7733 var1, Entity var2, float var3, float var4, Class1662 var5, float var6) {
       if (!Class7944.method26921() || !Class8981.field40794) {
          float var9 = var6;
          if (var2 instanceof Class1006) {

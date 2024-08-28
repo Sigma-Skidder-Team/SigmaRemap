@@ -5,10 +5,10 @@ import java.util.Vector;
 
 public class Class2514 extends JList<String> {
    private static String[] field16634;
-   private final Class314 field16635;
+   private final MinecraftServer field16635;
    private int field16636;
 
-   public Class2514(Class314 var1) {
+   public Class2514(MinecraftServer var1) {
       this.field16635 = var1;
       var1.method1313(this::method10516);
    }

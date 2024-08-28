@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class1332 extends Class1331 {
+public class Class1332 extends ChatScreen {
    public Class1332() {
       super("");
    }
@@ -32,7 +32,7 @@ public class Class1332 extends Class1331 {
             }
 
             this.field7048.method5635("");
-            this.field4562.field1298.method5989().method5936();
+            this.field4562.ingameGUI.getChatGUI().method5936();
             return true;
          }
       } else {
@@ -43,7 +43,7 @@ public class Class1332 extends Class1331 {
    }
 
    private void method6348() {
-      ClientPlayNetHandler var3 = this.field4562.field1339.connection;
-      var3.sendPacket(new CEntityActionPacket(this.field4562.field1339, Class1865.field10042));
+      ClientPlayNetHandler var3 = this.field4562.player.connection;
+      var3.sendPacket(new CEntityActionPacket(this.field4562.player, Class1865.field10042));
    }
 }

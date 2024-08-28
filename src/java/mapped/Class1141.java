@@ -3,25 +3,25 @@ package mapped;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1141 extends Class1140 {
-   private static final Class5805[] field6206 = new Class5805[]{
-      Class5805.field25339,
-      Class5805.field25354,
-      Class5805.field25355,
-      Class5805.field25356,
-      Class5805.field25318,
-      Class5805.field25336,
-      Class5805.field25319,
-      Class5805.field25321,
-      Class5805.field25322,
-      Class5805.field25320,
-      Class5805.field25316,
-      Class5805.field25317,
-      Class5805.field25444,
-      Class5805.field25445,
-      Class5805.field25346,
-      Class5805.field25352,
-      Class5805.field25353,
-      Class5805.field25363
+   private static final AbstractOption[] field6206 = new AbstractOption[]{
+      AbstractOption.field25339,
+      AbstractOption.field25354,
+      AbstractOption.field25355,
+      AbstractOption.field25356,
+      AbstractOption.field25318,
+      AbstractOption.field25336,
+      AbstractOption.field25319,
+      AbstractOption.field25321,
+      AbstractOption.field25322,
+      AbstractOption.field25320,
+      AbstractOption.field25316,
+      AbstractOption.field25317,
+      AbstractOption.field25444,
+      AbstractOption.field25445,
+      AbstractOption.field25346,
+      AbstractOption.field25352,
+      AbstractOption.field25353,
+      AbstractOption.field25363
    };
    private Class9046 field6207 = new Class9046(this, new Class7548());
 

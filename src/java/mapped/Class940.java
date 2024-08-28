@@ -273,4 +273,9 @@ public class Class940 extends Class939 implements Class930, Class935 {
    public boolean method3757() {
       return this.field5307 == Class2126.field13872;
    }
+
+   @Override
+   public ITextComponent method2954() {
+      return new TranslationTextComponent("container.shulkerBox");
+   }
 }

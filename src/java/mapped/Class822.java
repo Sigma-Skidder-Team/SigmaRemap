@@ -83,7 +83,7 @@ public class Class822 extends Class798 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -112,7 +112,7 @@ public class Class822 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       if (!this.field4493 && this.field4487.field31909 != 0L && this.field4487.field31909 == this.field4487.field31910) {
          this.field4490 = field4482;
@@ -138,12 +138,12 @@ public class Class822 extends Class798 {
       super.method1923(var1, var2, var3, var4);
    }
 
-   private void method2363(Class9332 var1) {
+   private void method2363(MatrixStack var1) {
       int var4 = this.field4568.method38821(this.field4490);
       this.field4568.method38801(var1, field4481[this.field4498 / 10 % field4481.length], (float)(this.field4564 / 2 + var4 / 2 + 5), 50.0F, 16777215);
    }
 
-   private void method2364(Class9332 var1) {
+   private void method2364(MatrixStack var1) {
       double var4 = Math.min((double)this.field4487.field31909 / (double)this.field4487.field31910, 1.0);
       this.field4491 = String.format(Locale.ROOT, "%.1f", var4 * 100.0);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -162,16 +162,16 @@ public class Class822 extends Class798 {
       var11.method17025(var6 + 200.0 * var4, 80.0, 0.0).method17026(128, 128, 128, 255).method17031();
       var11.method17025(var6, 80.0, 0.0).method17026(128, 128, 128, 255).method17031();
       var10.method35410();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       method5690(var1, this.field4568, this.field4491 + " %", this.field4564 / 2, 84, 16777215);
    }
 
-   private void method2365(Class9332 var1) {
+   private void method2365(MatrixStack var1) {
       if (this.field4498 % 20 != 0) {
          this.method2366(var1, this.field4501);
       } else {
          if (this.field4499 != null) {
-            long var4 = Util.method38487() - this.field4500;
+            long var4 = Util.milliTime() - this.field4500;
             if (var4 == 0L) {
                var4 = 1L;
             }
@@ -181,11 +181,11 @@ public class Class822 extends Class798 {
          }
 
          this.field4499 = this.field4487.field31909;
-         this.field4500 = Util.method38487();
+         this.field4500 = Util.milliTime();
       }
    }
 
-   private void method2366(Class9332 var1, long var2) {
+   private void method2366(MatrixStack var1, long var2) {
       if (var2 > 0L) {
          int var6 = this.field4568.method38820(this.field4491);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";

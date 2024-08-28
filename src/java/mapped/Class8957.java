@@ -16,10 +16,10 @@ public class Class8957 {
                            var0x -> {
                               int var3 = 0;
 
-                              for (Class878 var5 : Class8700.method31354(var0x, "targets")) {
-                                 var5.method1328(
+                              for (ServerPlayerEntity var5 : Class8700.method31354(var0x, "targets")) {
+                                 var5.sendMessage(
                                     TextComponentUtils.func_240645_a_((Class6619)var0x.getSource(), Class8010.method27394(var0x, "message"), var5, 0),
-                                    Util.field45724
+                                    Util.DUMMY_UUID
                                  );
                                  var3++;
                               }

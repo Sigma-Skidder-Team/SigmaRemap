@@ -32,8 +32,8 @@ public class Class1149 extends Screen {
                var5 = new TranslationTextComponent("commands.publish.started", var4);
             }
 
-            this.field4562.field1298.method5989().method5930(var5);
-            this.field4562.method1454();
+            this.field4562.ingameGUI.getChatGUI().method5930(var5);
+            this.field4562.setDefaultMinecraftTitle();
          })
       );
       this.<Class1206>method2455(
@@ -70,7 +70,7 @@ public class Class1149 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 50, 16777215);
       method5691(var1, this.field4568, field6282, this.field4564 / 2, 82, 16777215);

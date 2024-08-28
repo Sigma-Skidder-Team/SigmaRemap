@@ -246,7 +246,7 @@ public class Class7529 extends Class7530 {
          var8 += !(var8 < 0.0) ? 8.0 : -8.0;
          var20 = (byte)((int)(var8 * 16.0 / 360.0));
          if (this.field32318 == World.field9000 && var2 != null) {
-            int var22 = (int)(var2.method6788().method20034() / 10L);
+            int var22 = (int)(var2.getWorldInfo().method20034() / 10L);
             var20 = (byte)(var22 * var22 * 34187121 + var22 * 121 >> 15 & 15);
          }
       } else {

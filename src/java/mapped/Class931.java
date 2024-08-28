@@ -262,4 +262,9 @@ public class Class931 extends Class932 implements Class930, Class935 {
    public static int method3694(Class931 var0, int var1) {
       return var0.field5277 = var1;
    }
+
+   @Override
+   public ITextComponent method2954() {
+      return new TranslationTextComponent("container.brewing");
+   }
 }

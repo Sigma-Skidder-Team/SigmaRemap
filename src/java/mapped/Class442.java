@@ -113,7 +113,7 @@ public class Class442 extends Class440 {
    }
 
    private byte[] method1877(DatagramPacket var1) throws IOException {
-      long var4 = Util.method38487();
+      long var4 = Util.milliTime();
       if (var4 < this.field2003 + 5000L) {
          byte[] var11 = this.field2002.method24843();
          byte[] var12 = this.method1878(var1.getSocketAddress());
@@ -187,7 +187,7 @@ public class Class442 extends Class440 {
 
    private void method1881() {
       if (this.field1982) {
-         long var3 = Util.method38487();
+         long var3 = Util.milliTime();
          if (var3 >= this.field1991 + 30000L) {
             this.field1991 = var3;
             this.field2001.values().removeIf(var2 -> var2.method32699(var3));
@@ -198,7 +198,7 @@ public class Class442 extends Class440 {
    @Override
    public void run() {
       field1990.info("Query running on {}:{}", this.field2000, this.field1992);
-      this.field1991 = Util.method38487();
+      this.field1991 = Util.milliTime();
       DatagramPacket var3 = new DatagramPacket(this.field1998, this.field1998.length);
 
       try {

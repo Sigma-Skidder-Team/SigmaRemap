@@ -24,7 +24,7 @@ public class Class1199 extends Class1197 {
 
    public void method5752(Class9266 var1, Class2954 var2) {
       this.field6495 = var1;
-      this.field6493 = (Class5828<?>)var2.method11318().field1339.field4905;
+      this.field6493 = (Class5828<?>)var2.method11318().player.field4905;
       this.field6494 = var2.method11319();
       List<Class4843<?>> var5 = var1.method34893(this.field6494.method21370(this.field6493));
 
@@ -47,7 +47,7 @@ public class Class1199 extends Class1197 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       if (!Screen.method2475()) {
          this.field6496 += var4;
       }

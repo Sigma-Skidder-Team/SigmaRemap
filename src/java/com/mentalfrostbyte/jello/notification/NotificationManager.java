@@ -68,14 +68,14 @@ public class NotificationManager {
 
     @EventTarget
     private void method31995(Class4415 var1) {
-        if (!Minecraft.getInstance().field1299.field44662) {
+        if (!Minecraft.getInstance().gameSettings.field44662) {
             this.field39921 = Math.max(Math.round((float) (6 - Minecraft.method1586() / 10)), 1);
 
             for (int var4 = 0; var4 < this.field39919.size(); var4++) {
                 Notification var5 = this.field39919.get(var4);
                 float var6 = this.method31993(var5);
-                int var7 = Minecraft.getInstance().field1283.method8043() - this.field39926 - (int) ((float) this.field39923 * var6 * var6);
-                int var8 = this.field39918.field1283.method8044()
+                int var7 = Minecraft.getInstance().mainWindow.method8043() - this.field39926 - (int) ((float) this.field39923 * var6 * var6);
+                int var8 = this.field39918.mainWindow.method8044()
                         - this.field39924
                         - this.field39925
                         - var4 * (int) ((float) this.field39924 * this.method31994(var4) + (float) this.field39927 * this.method31994(var4));
@@ -128,7 +128,7 @@ public class NotificationManager {
 
     @EventTarget
     private void method31997(Class4420 var1) {
-        if (this.field39918.field1339 == null) {
+        if (this.field39918.player == null) {
             ;
         }
     }
@@ -137,8 +137,8 @@ public class NotificationManager {
         for (int var3 = 0; var3 < this.field39919.size(); var3++) {
             Notification var4 = this.field39919.get(var3);
             float var5 = this.method31993(var4);
-            int var6 = Minecraft.getInstance().field1283.method8043() - this.field39926 - (int) ((float) this.field39923 * var5 * var5);
-            int var7 = this.field39918.field1283.method8044()
+            int var6 = Minecraft.getInstance().mainWindow.method8043() - this.field39926 - (int) ((float) this.field39923 * var5 * var5);
+            int var7 = this.field39918.mainWindow.method8044()
                     - this.field39924
                     - this.field39925
                     - var3 * (int) ((float) this.field39924 * this.method31994(var3) + (float) this.field39927 * this.method31994(var3));

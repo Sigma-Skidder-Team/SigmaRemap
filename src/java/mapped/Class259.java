@@ -7,7 +7,7 @@ public class Class259 extends Class219<Class1048, Class2805<Class1048>> {
       super(var1);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, Class1048 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, Class1048 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       boolean var13 = var4.method2967() == Class2205.field14418;
       var1.method35294();
       float var14 = 1.0F;

@@ -73,7 +73,7 @@ public class Class1007 extends Class1006 implements Class1008 {
    }
 
    public double[] method4317(int var1, float var2) {
-      if (this.method3044()) {
+      if (this.getShouldBeDead()) {
          var2 = 0.0F;
       }
 
@@ -130,7 +130,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       }
 
       this.field5632 = this.field5633;
-      if (!this.method3044()) {
+      if (!this.getShouldBeDead()) {
          this.method4320();
          Vector3d var42 = this.method3433();
          float var44 = 0.2F / (MathHelper.method37766(method3234(var42)) * 10.0F + 1.0F);
@@ -449,7 +449,7 @@ public class Class1007 extends Class1006 implements Class1008 {
             if (var2.method31109() instanceof PlayerEntity || var2.method31131()) {
                float var6 = this.method3042();
                this.method4326(var2, var3);
-               if (this.method3044() && !this.field5639.method32672().method23358()) {
+               if (this.getShouldBeDead() && !this.field5639.method32672().method23358()) {
                   this.method3043(1.0F);
                   this.field5639.method32671(Class9598.field44905);
                }

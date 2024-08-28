@@ -10,11 +10,11 @@ public class Class1177 extends Class1155<Class1177> {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       this.method5603(var1, this.field6371, var4, var3, var7, var8);
    }
 
-   private void method5603(Class9332 var1, Class6130 var2, int var3, int var4, int var5, int var6) {
+   private void method5603(MatrixStack var1, Class6130 var2, int var3, int var4, int var5, int var6) {
       int var9 = var3 + 45 + 20;
       Class804.method1983(this.field6372).method38801(var1, var2.field27465, (float)var9, (float)(var4 + 2), 16777215);
       Class804.method1984(this.field6372).method38801(var1, var2.field27467, (float)var9, (float)(var4 + 15), 7105644);
@@ -27,7 +27,7 @@ public class Class1177 extends Class1155<Class1177> {
       this.method5604(var1, var3, var4 + 1, var5, var6, var2);
    }
 
-   private void method5604(Class9332 var1, int var2, int var3, int var4, int var5, Class6130 var6) {
+   private void method5604(MatrixStack var1, int var2, int var3, int var4, int var5, Class6130 var6) {
       Class8087.method27972(var6.field27464, var6.field27469);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class1193.method5699(var1, var2 + 1, var3 + 1, 0.0F, 0.0F, 38, 38, 38, 38);
@@ -36,7 +36,7 @@ public class Class1177 extends Class1155<Class1177> {
       Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 40, 40, 40, 40);
    }
 
-   private void method5605(Class9332 var1, int var2, int var3, int var4, int var5, String var6, String var7, String var8) {
+   private void method5605(MatrixStack var1, int var2, int var3, int var4, int var5, String var6, String var7, String var8) {
       if (!"".equals(var8)) {
          Class804.method1989(this.field6372).method38801(var1, var8, (float)var2, (float)(var3 + 4), 5000268);
       }

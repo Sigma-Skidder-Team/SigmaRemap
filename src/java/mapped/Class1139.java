@@ -28,12 +28,12 @@ public class Class1139 extends Class1135 {
             this.field4565 / 6 + 24 * (var3 >> 1),
             150,
             20,
-            Class5805.field25345,
-            Class5805.field25345.method17947(this.field6193),
+            AbstractOption.field25345,
+            AbstractOption.field25345.method17947(this.field6193),
             var1 -> {
-               Class5805.field25345.method17945(this.field6193, 1);
+               AbstractOption.field25345.method17945(this.field6193, 1);
                this.field6193.method37146();
-               var1.method5743(Class5805.field25345.method17947(this.field6193));
+               var1.method5743(AbstractOption.field25345.method17947(this.field6193));
                this.field6193.method37149();
             }
          )
@@ -61,7 +61,7 @@ public class Class1139 extends Class1135 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
       super.method1923(var1, var2, var3, var4);

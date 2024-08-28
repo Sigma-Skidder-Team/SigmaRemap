@@ -104,7 +104,7 @@ public class Class824 extends Class798 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -193,7 +193,7 @@ public class Class824 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field4526 = null;
       this.field4540 = Class2162.field14182;
       this.method2469(var1);
@@ -243,7 +243,7 @@ public class Class824 extends Class798 {
       }
    }
 
-   public void method2416(Class9332 var1, ITextComponent var2, int var3, int var4) {
+   public void method2416(MatrixStack var1, ITextComponent var2, int var3, int var4) {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
@@ -253,7 +253,7 @@ public class Class824 extends Class798 {
       }
    }
 
-   private void method2417(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2417(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
       this.field4562.getTextureManager().bindTexture(field4520);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -265,7 +265,7 @@ public class Class824 extends Class798 {
       }
    }
 
-   private void method2418(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2418(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
       this.field4562.getTextureManager().bindTexture(field4518);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -277,7 +277,7 @@ public class Class824 extends Class798 {
       }
    }
 
-   private void method2419(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2419(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
       this.field4562.getTextureManager().bindTexture(field4519);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -305,17 +305,17 @@ public class Class824 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static void method2428(Class824 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method2428(Class824 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2418(var1, var2, var3, var4, var5);
    }
 
    // $VF: synthetic method
-   public static void method2429(Class824 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method2429(Class824 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2419(var1, var2, var3, var4, var5);
    }
 
    // $VF: synthetic method
-   public static void method2430(Class824 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method2430(Class824 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2417(var1, var2, var3, var4, var5);
    }
 

@@ -11,8 +11,8 @@ public class Class5130 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      Class1656 var11 = this.field23321.field1338;
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      Class1656 var11 = this.field23321.world;
       RenderSystem.pushMatrix();
       RenderSystem.disableBlend();
       RenderSystem.method27862();
@@ -56,7 +56,7 @@ public class Class5130 implements Class5119 {
       }
 
       var13.method35410();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.popMatrix();
    }
 

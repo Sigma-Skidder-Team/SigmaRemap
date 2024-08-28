@@ -20,7 +20,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
    }
 
    public void method2638() {
-      if (!this.field4562.field1339.method3031().isEmpty()) {
+      if (!this.field4562.player.method3031().isEmpty()) {
          this.field4734 = 160 + (this.field4564 - this.field4721 - 200) / 2;
          this.field4772 = true;
       } else {
@@ -30,16 +30,16 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       super.method1923(var1, var2, var3, var4);
       if (this.field4772) {
          this.method2639(var1);
       }
    }
 
-   private void method2639(Class9332 var1) {
+   private void method2639(MatrixStack var1) {
       int var4 = this.field4734 - 124;
-      Collection var5 = this.field4562.field1339.method3031();
+      Collection var5 = this.field4562.player.method3031();
       if (!var5.isEmpty()) {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          int var6 = 33;
@@ -54,7 +54,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       }
    }
 
-   private void method2640(Class9332 var1, int var2, int var3, Iterable<Class2023> var4) {
+   private void method2640(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
       this.field4562.getTextureManager().bindTexture(field4720);
       int var7 = this.field4735;
 
@@ -65,7 +65,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       }
    }
 
-   private void method2641(Class9332 var1, int var2, int var3, Iterable<Class2023> var4) {
+   private void method2641(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
       Class279 var7 = this.field4562.method1572();
       int var8 = this.field4735;
 
@@ -78,7 +78,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       }
    }
 
-   private void method2642(Class9332 var1, int var2, int var3, Iterable<Class2023> var4) {
+   private void method2642(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
       int var7 = this.field4735;
 
       for (Class2023 var9 : var4) {

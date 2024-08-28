@@ -21,7 +21,7 @@ public class Class9469 {
             var2 -> var2 != null && var1.equals(Class7240.method22735(var2)) ? var2 : new Class7240(var1, RateLimiter.create((double)this.field44003))
          );
       if (Class7240.method22734(var4).tryAcquire(1)) {
-         Class6688.field29302.method20400(ChatType.SYSTEM, new StringTextComponent(var1), Util.field45724);
+         NarratorChatListener.INSTANCE.method20400(ChatType.SYSTEM, new StringTextComponent(var1), Util.DUMMY_UUID);
       }
    }
 }

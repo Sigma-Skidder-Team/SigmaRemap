@@ -126,11 +126,11 @@ public class Class7219 {
       this.field31034 = var3;
    }
 
-   public void method22680(Class9332 var1, Class5422 var2, int var3, int var4) {
+   public void method22680(MatrixStack var1, Class5422 var2, int var3, int var4) {
       this.method22681(var1, var2, var3, var4, 1.0F, 1.0F, 1.0F, 1.0F);
    }
 
-   public void method22681(Class9332 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method22681(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (this.field31039 && (!this.field31040.isEmpty() || !this.field31041.isEmpty() || !this.field31042.isEmpty())) {
          Class4520 var11 = null;
          Class7735 var12 = null;
@@ -174,7 +174,7 @@ public class Class7219 {
       }
    }
 
-   public void method22682(Class9332 var1) {
+   public void method22682(MatrixStack var1) {
       var1.method35291((double)(this.field31032 / 16.0F), (double)(this.field31033 / 16.0F), (double)(this.field31034 / 16.0F));
       if (this.field31037 != 0.0F) {
          var1.method35293(Class7680.field32902.method25285(this.field31037));

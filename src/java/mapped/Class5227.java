@@ -33,7 +33,7 @@ public class Class5227 extends Module {
 
     @EventTarget
     public void method16275(Class4396 var1) {
-        if (mc.field1338 != null) {
+        if (mc.world != null) {
             if (!(var1.method13898() instanceof Class5484)) {
                 if (!(var1.method13898() instanceof Class5487)) {
                     if (!(var1.method13898() instanceof Class5582)) {
@@ -53,7 +53,7 @@ public class Class5227 extends Module {
                 Class5484 var12 = (Class5484) var1.method13898();
 
                 for (int var8 : var12.method17251()) {
-                    Entity var9 = mc.field1338.method6774(var8);
+                    Entity var9 = mc.world.method6774(var8);
                     if (var9 != null && var9 instanceof PlayerEntity) {
                         this.field23572.remove(var9.getUniqueID());
 
@@ -91,8 +91,8 @@ public class Class5227 extends Module {
 
         var4.sort(
                 (var0, var1x) -> !(
-                        mc.field1339.method3276((double) var0.field35890, (double) var0.field35893, (double) var0.field35891)
-                                < mc.field1339.method3276((double) var1x.field35890, (double) var1x.field35893, (double) var1x.field35891)
+                        mc.player.method3276((double) var0.field35890, (double) var0.field35893, (double) var0.field35891)
+                                < mc.player.method3276((double) var1x.field35890, (double) var1x.field35893, (double) var1x.field35891)
                 )
                         ? -1
                         : 1
@@ -109,7 +109,7 @@ public class Class5227 extends Module {
                 );
                 double var7 = Math.sqrt(Class9647.method37621(var6));
                 if (!(var7 > 300.0)) {
-                    if (mc.field1338.method7011(var6) != null && var5.field35894) {
+                    if (mc.world.method7011(var6) != null && var5.field35894) {
                         int var9 = var6.method8304() % 16;
                         int var10 = var6.method8306() % 16;
                         if (var10 < 0) {
@@ -120,7 +120,7 @@ public class Class5227 extends Module {
                             var9 += 16;
                         }
 
-                        int var11 = mc.field1338.method7011(var6).method7070(Class101.field296).method24579(var9, var10);
+                        int var11 = mc.world.method7011(var6).method7070(Class101.field296).method24579(var9, var10);
                         if (var11 == 0) {
                             var11 = 64;
                         }
@@ -130,9 +130,9 @@ public class Class5227 extends Module {
                         }
                     }
 
-                    float var13 = (float) ((double) var5.field35893 - Minecraft.getInstance().field1295.method768().method37504().method11321());
-                    float var14 = (float) ((double) var5.field35890 - Minecraft.getInstance().field1295.method768().method37504().method11320());
-                    float var15 = (float) ((double) var5.field35891 - Minecraft.getInstance().field1295.method768().method37504().method11322());
+                    float var13 = (float) ((double) var5.field35893 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321());
+                    float var14 = (float) ((double) var5.field35890 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320());
+                    float var15 = (float) ((double) var5.field35891 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322());
                     if (var5.field35890 < 0) {
                         var14--;
                     }
@@ -237,20 +237,20 @@ public class Class5227 extends Module {
         GL11.glPushMatrix();
         GL11.glColor4fv(Class5628.method17709(var5));
         GL11.glTranslated((double) var1 + 0.5, var2 + 0.7F, (double) var3 + 0.5);
-        GL11.glRotatef((float) (mc.field1339.field5055 % 90 * 4), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef((float) (mc.player.field5055 % 90 * 4), 0.0F, -1.0F, 0.0F);
         GL11.glLineWidth(1.4F + 1.0F / var6 * 1.4F);
         this.method16281(0.6F);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslated((double) var1 + 0.5, var2 + 0.7F, (double) var3 + 0.5);
-        GL11.glRotatef((float) (mc.field1339.field5055 % 90 * 4), 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef((float) (mc.player.field5055 % 90 * 4), 0.0F, 1.0F, 0.0F);
         this.method16278(var5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glTranslated((double) var1 + 0.5, (double) var2 + 1.9, (double) var3 + 0.5);
-        GL11.glRotatef(mc.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
-        GL11.glRotatef(mc.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37506(), 1.0F, 0.0F, 0.0F);
         ClientResource var9 = ResourceRegistry.JelloLightFont25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);

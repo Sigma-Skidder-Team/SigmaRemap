@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6946 extends Class6945<Class314, Class6862> {
+public class Class6946 extends Class6945<MinecraftServer, Class6862> {
    public Class6946() {
       super(new ResourceLocation("function_tag"), Class6862.class);
    }

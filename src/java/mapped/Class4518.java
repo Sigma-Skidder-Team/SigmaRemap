@@ -9,7 +9,7 @@ public class Class4518 extends Class4510 {
 
    public Class4518(ResourceLocation var1, boolean var2, boolean var3) {
       super("texture", () -> {
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          TextureManager var5 = Minecraft.getInstance().getTextureManager();
          var5.bindTexture(var1);
          var5.method1082().method1130(var2, var3);
@@ -21,7 +21,7 @@ public class Class4518 extends Class4510 {
    }
 
    public Class4518() {
-      super("texture", () -> RenderSystem.method27862(), () -> RenderSystem.method27861());
+      super("texture", () -> RenderSystem.method27862(), () -> RenderSystem.enableTexture());
       this.field21791 = Optional.<ResourceLocation>empty();
       this.field21792 = false;
       this.field21793 = false;

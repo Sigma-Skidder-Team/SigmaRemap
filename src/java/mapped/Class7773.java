@@ -5,7 +5,7 @@ public class Class7773 {
    private Class7078[] field33349 = new Class7078[0];
    private boolean field33350 = false;
 
-   public void method25749(Class2797 var1, AbstractClientPlayerEntity var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method25749(Class2797 var1, AbstractClientPlayerEntity var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       if (this.field33350) {
          for (int var9 = 0; var9 < this.field33349.length; var9++) {
             Class7078 var10 = this.field33349[var9];

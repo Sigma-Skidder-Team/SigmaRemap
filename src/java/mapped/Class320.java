@@ -30,7 +30,7 @@ public final class Class320 extends Class318<Runnable> {
 
    @Override
    public void run(Runnable var1) {
-      Class1703.method7395(this.field1383).method6820().method22508("runTask");
+      Class1703.method7395(this.field1383).method6820().func_230035_c_("runTask");
       super.run(var1);
    }
 

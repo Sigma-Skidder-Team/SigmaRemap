@@ -35,7 +35,7 @@ public class Class3366 extends Class3241 {
             this.method11943(var1, var3);
          }
 
-         CriteriaTriggers.field44501.method15076((Class878)var2, var4.method23383(), var6, var9.method3918());
+         CriteriaTriggers.field44501.method15076((ServerPlayerEntity)var2, var4.method23383(), var6, var9.method3918());
       }
    }
 

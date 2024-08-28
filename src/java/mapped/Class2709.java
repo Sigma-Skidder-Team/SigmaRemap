@@ -41,7 +41,7 @@ public class Class2709<T extends Class880> extends Class2699 {
    }
 
    public void method10922() {
-      if (this.field17188 != PlayerEntity.class && this.field17188 != Class878.class) {
+      if (this.field17188 != PlayerEntity.class && this.field17188 != ServerPlayerEntity.class) {
          this.field17190 = this.field17153
             .field5024
             .<Class880>method7192(

@@ -207,7 +207,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             }
 
             this.field6124 = this.field5036;
-            this.field6146 = this.field6132.field1299.field44610;
+            this.field6146 = this.field6132.gameSettings.field44610;
          }
 
          for (Runnable var30 : var4.method13923()) {
@@ -239,7 +239,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2903() {
+   public void respawnPlayer() {
       this.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277));
    }
 
@@ -352,9 +352,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    @Override
    public void method2785(ITextComponent var1, boolean var2) {
       if (!var2) {
-         this.field6132.field1298.method5989().method5930(var1);
+         this.field6132.ingameGUI.getChatGUI().method5930(var1);
       } else {
-         this.field6132.field1298.method5985(var1, false);
+         this.field6132.ingameGUI.method5985(var1, false);
       }
    }
 
@@ -414,8 +414,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method1328(ITextComponent var1, UUID var2) {
-      this.field6132.field1298.method5989().method5930(var1);
+   public void sendMessage(ITextComponent var1, UUID var2) {
+      this.field6132.ingameGUI.getChatGUI().method5930(var1);
    }
 
    @Override
@@ -431,7 +431,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       this.field6150 = var1;
    }
 
-   public boolean method5404() {
+   public boolean isShowDeathScreen() {
       return this.field6150;
    }
 
@@ -538,12 +538,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method2795(Entity var1) {
-      this.field6132.field1291.method1195(var1, Class7940.field34054);
+      this.field6132.particles.method1195(var1, Class7940.field34054);
    }
 
    @Override
    public void method2796(Entity var1) {
-      this.field6132.field1291.method1195(var1, Class7940.field34065);
+      this.field6132.particles.method1195(var1, Class7940.field34065);
    }
 
    @Override
@@ -632,7 +632,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          && var7
          && !this.method3148()
          && !this.method3033(Class8254.field35481)) {
-         if (this.field6133 <= 0 && !this.field6132.field1299.field44638.method8509()) {
+         if (this.field6133 <= 0 && !this.field6132.gameSettings.field44638.method8509()) {
             this.field6133 = 7;
          } else {
             this.setSprinting(true);
@@ -645,7 +645,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          && var7
          && !this.method3148()
          && !this.method3033(Class8254.field35481)
-         && this.field6132.field1299.field44638.method8509()) {
+         && this.field6132.gameSettings.field44638.method8509()) {
          this.setSprinting(true);
       }
 
@@ -773,8 +773,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             }
          }
       } else {
-         if (this.field6132.field1355 != null && !this.field6132.field1355.method2472()) {
-            if (this.field6132.field1355 instanceof Class851) {
+         if (this.field6132.currentScreen != null && !this.field6132.currentScreen.method2472()) {
+            if (this.field6132.currentScreen instanceof Class851) {
                this.method2772();
             }
 
@@ -993,7 +993,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public Vector3d method2986(float var1) {
-      if (!this.field6132.field1299.method37173().method8246()) {
+      if (!this.field6132.gameSettings.method37173().method8246()) {
          return super.method2986(var1);
       } else {
          float var4 = MathHelper.method37821(var1 * 0.5F, this.field5031, this.field5033) * (float) (Math.PI / 180.0);

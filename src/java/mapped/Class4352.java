@@ -13,7 +13,7 @@ public class Class4352 extends Class4278 {
    public Class2422 field21276 = new Class2422();
 
    public Class4352(Class4305 var1, String var2) {
-      super(var1, var2, 0, 0, Minecraft.getInstance().field1283.method8043(), Minecraft.getInstance().field1283.method8044(), false);
+      super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.method8043(), Minecraft.getInstance().mainWindow.method8044(), false);
       this.method13145(false);
       this.method13296(false);
       this.method13292(false);
@@ -33,8 +33,8 @@ public class Class4352 extends Class4278 {
    @Override
    public void method13027(float var1) {
       this.method13225();
-      int var4 = Minecraft.getInstance().field1283.method8045();
-      int var5 = Minecraft.getInstance().field1283.method8046();
+      int var4 = Minecraft.getInstance().mainWindow.getScaledWidth();
+      int var5 = Minecraft.getInstance().mainWindow.getScaledHeight();
       int var6 = (int)((float)var4 / 4.0F);
       boolean var7 = false;
       if (this.field21274.size() < var6) {

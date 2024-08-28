@@ -25,7 +25,7 @@ public class FriendManager {
 
     @EventTarget
     private void method26996(Class4430 var1) {
-        if (var1.method13977() == this.field34179.field1299.field44644.field13070.field34875
+        if (var1.method13977() == this.field34179.gameSettings.field44644.field13070.field34875
                 && this.field34179.field1345 != null
                 && this.field34179.field1345.getName() != null) {
             CommandManager var4 = Client.getInstance().getCommandManager();

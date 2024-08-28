@@ -15,11 +15,11 @@ public class Class5121 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      double var11 = (double) Util.method38488();
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      double var11 = (double) Util.nanoTime();
       if (var11 - this.field23297 > 1.0E8) {
          this.field23297 = var11;
-         Entity var13 = this.field23296.field1295.method768().method37509();
+         Entity var13 = this.field23296.gameRenderer.getActiveRenderInfo().method37509();
          this.field23298 = var13.field5024.method7047(var13, var13.method3389().method19664(6.0), var0 -> true).collect(Collectors.<Class6408>toList());
       }
 

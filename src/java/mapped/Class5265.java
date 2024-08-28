@@ -59,12 +59,12 @@ public class Class5265 extends PremiumModule {
             String var4 = this.getStringSettingValueByName("Position");
             switch (var4) {
                 case "Center":
-                    this.field23682 = Minecraft.getInstance().field1283.method8043() / 2 - this.field23684 / 2;
-                    this.field23683 = Minecraft.getInstance().field1283.method8044() / 2 + 40;
+                    this.field23682 = Minecraft.getInstance().mainWindow.method8043() / 2 - this.field23684 / 2;
+                    this.field23683 = Minecraft.getInstance().mainWindow.method8044() / 2 + 40;
                     break;
                 case "Bottom":
-                    this.field23682 = Minecraft.getInstance().field1283.method8043() / 2 - this.field23684 / 2;
-                    this.field23683 = Minecraft.getInstance().field1283.method8044() - 200;
+                    this.field23682 = Minecraft.getInstance().mainWindow.method8043() / 2 - this.field23684 / 2;
+                    this.field23683 = Minecraft.getInstance().mainWindow.method8044() - 200;
             }
 
             this.field23682 -= 100;
@@ -83,7 +83,7 @@ public class Class5265 extends PremiumModule {
     }
 
     private void method16475(int var1) {
-        if (mc.field1355 == null || mc.field1355 instanceof Class1331) {
+        if (mc.currentScreen == null || mc.currentScreen instanceof ChatScreen) {
             GL11.glPushMatrix();
             Class3192.method11421(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
             Class8853 var4 = Minecraft.getInstance().method1554();
@@ -147,11 +147,11 @@ public class Class5265 extends PremiumModule {
             }
 
             GameProfile var8 = new GameProfile(var7, this.field23693.getName().getString());
-            Class1117 var9 = new Class1117(this, mc.field1338, var8);
+            Class1117 var9 = new Class1117(this, mc.world, var8);
             RenderSystem.pushMatrix();
             RenderSystem.translatef((float) var1 + 50.0F, (float) this.field23683 + 295.0F, 1000.0F);
             RenderSystem.scalef(1.0F, 1.0F, -1.0F);
-            Class9332 var10 = new Class9332();
+            MatrixStack var10 = new MatrixStack();
             var10.method35291(0.0, 0.0, 1500.0);
             var10.method35292(var6, var6, var6);
             Class8661 var11 = Class7680.field32902.method25286(180.0F);

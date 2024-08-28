@@ -7,7 +7,7 @@ public class Class5943 extends Class5942<Class960> {
       super(var1);
    }
 
-   public void method18462(Class960 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class960 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       var3.method35294();
       var3.method35291(0.5, 0.0, 0.5);
       Class7574 var9 = var1.method3911();

@@ -14,12 +14,12 @@ public class Class5113 implements Class5112 {
    private boolean field23256;
    private boolean field23257;
    private long field23258;
-   public final Class8586 field23259;
+   public final NetworkManager field23259;
    public final Class7730 field23260;
    public final Runnable field23261;
    public final Class9118 field23262;
 
-   public Class5113(Class9118 var1, Class8586 var2, Class7730 var3, Runnable var4) {
+   public Class5113(Class9118 var1, NetworkManager var2, Class7730 var3, Runnable var4) {
       this.field23262 = var1;
       this.field23259 = var2;
       this.field23260 = var3;
@@ -80,7 +80,7 @@ public class Class5113 implements Class5112 {
             this.field23261.run();
          }
 
-         this.field23258 = Util.method38487();
+         this.field23258 = Util.milliTime();
          this.field23259.method30693(new Class5587(this.field23258));
          this.field23256 = true;
       } else {
@@ -91,7 +91,7 @@ public class Class5113 implements Class5112 {
    @Override
    public void method15689(Class5489 var1) {
       long var4 = this.field23258;
-      long var6 = Util.method38487();
+      long var6 = Util.milliTime();
       this.field23260.field33192 = var6 - var4;
       this.field23259.method30701(new TranslationTextComponent("multiplayer.status.finished"));
    }
@@ -107,7 +107,7 @@ public class Class5113 implements Class5112 {
    }
 
    @Override
-   public Class8586 method15589() {
+   public NetworkManager method15589() {
       return this.field23259;
    }
 }

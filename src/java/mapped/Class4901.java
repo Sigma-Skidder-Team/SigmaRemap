@@ -16,7 +16,7 @@ public class Class4901 extends Class4874<Class4488> {
       return new Class4488(var2, var6, var7);
    }
 
-   public void testForAll(Class878 var1, Class8705<World> var2, Class8705<World> var3) {
+   public void testForAll(ServerPlayerEntity var1, Class8705<World> var2, Class8705<World> var3) {
       this.method15053(var1, var2x -> var2x.method14157(var2, var3));
    }
 

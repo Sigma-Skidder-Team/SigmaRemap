@@ -33,7 +33,7 @@ public class Class9539 {
       this.field44419 = var10;
    }
 
-   public boolean method36911(Class878 var1, Class8654 var2) {
+   public boolean method36911(ServerPlayerEntity var1, Class8654 var2) {
       return this.method36912(var1.getServerWorld(), var1.getPositionVec(), var2);
    }
 

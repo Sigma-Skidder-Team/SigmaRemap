@@ -5,7 +5,6 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.serialization.DataResult;
-import com.mojang.serialization.DataResult.PartialResult;
 import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.Lifecycle;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
@@ -115,7 +114,7 @@ public class Class1221 implements Class1219, Class1190 {
 
                   Class1701 var11;
                   try {
-                     Class314.method1399(var9, var1.field7077, false);
+                     MinecraftServer.method1399(var9, var1.field7077, false);
                      CompletableFuture var10 = Class1701.method7338(var9.method1273(), Class2085.field13577, 2, Util.method38492(), var2);
                      var2.method1639(var10::isDone);
                      var11 = (Class1701)var10.get();
@@ -204,7 +203,7 @@ public class Class1221 implements Class1219, Class1190 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6557.field6483) {
          this.field6554.method38803(var1, field6552, (float)(this.field6555 / 2 - 150), 122.0F, -6250336);
       }

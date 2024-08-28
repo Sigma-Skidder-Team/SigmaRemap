@@ -54,7 +54,7 @@ public class Class4317 extends Class4307 {
          this.field21066 = new Class4282(
             this,
             "textbox",
-            (Minecraft.getInstance().field1283.method8043() - var9) / 2 - 140,
+            (Minecraft.getInstance().mainWindow.method8043() - var9) / 2 - 140,
             this.method13269() - 40,
             140,
             32,
@@ -68,7 +68,7 @@ public class Class4317 extends Class4307 {
       this.field21066.method13151(var1 -> this.method13402());
       this.method13403();
       this.method13230(
-         this.field21067 = new Class4332(this, "toolbar", (Minecraft.getInstance().field1283.method8043() - var9) / 2 + 16, this.method13269() - 94)
+         this.field21067 = new Class4332(this, "toolbar", (Minecraft.getInstance().mainWindow.method8043() - var9) / 2 + 16, this.method13269() - 94)
       );
       this.field21067.method13296(false);
    }
@@ -176,7 +176,7 @@ public class Class4317 extends Class4307 {
    public void method13065(int var1) {
       super.method13065(var1);
       if (var1 == 256) {
-         Minecraft.getInstance().displayGuiScreen(new Class849());
+         Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
       }
    }
 
@@ -216,9 +216,9 @@ public class Class4317 extends Class4307 {
          this.method13236(var6);
       }
 
-      int var7 = Minecraft.getInstance().field1283.method8043() - 200;
+      int var7 = Minecraft.getInstance().mainWindow.method8043() - 200;
       int var8 = this.method13267() - var7;
-      this.method13233(this.field21055 = new Class4344(this, "alts", var8 / 2, 69, var7, Minecraft.getInstance().field1283.method8044() - 169));
+      this.method13233(this.field21055 = new Class4344(this, "alts", var8 / 2, 69, var7, Minecraft.getInstance().mainWindow.method8044() - 169));
 
       for (Account var10 : var4) {
          this.method13395(var10);
@@ -234,7 +234,7 @@ public class Class4317 extends Class4307 {
    }
 
    public int method13405() {
-      return Minecraft.getInstance().field1283.method8044() / 12 + 280 + Minecraft.getInstance().field1283.method8044() / 12;
+      return Minecraft.getInstance().mainWindow.method8044() / 12 + 280 + Minecraft.getInstance().mainWindow.method8044() / 12;
    }
 
    public Class4349 method13406() {

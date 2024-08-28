@@ -18,7 +18,7 @@ public class Class1220 extends Class1206 implements Class1219 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       Class806.method2118(this.field6548, var1, var2, var3, this.field6477, this.field6478, this.method5737(), this.field6482);
    }
 }

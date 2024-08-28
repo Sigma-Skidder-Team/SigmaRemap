@@ -15,7 +15,7 @@ public class Class4877 extends Class4874<Class4464> {
       return new Class4464(var2, var6);
    }
 
-   public void method15065(Class878 var1, BlockPos var2) {
+   public void method15065(ServerPlayerEntity var1, BlockPos var2) {
       double var5 = var1.getPosX() - (double)var2.method8304();
       double var7 = var1.getPosZ() - (double)var2.method8306();
       double var9 = var5 * var5 + var7 * var7;

@@ -71,18 +71,18 @@ public class Class4313 extends Class4307 {
             "alts",
             0,
             114,
-            (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21014) - 4,
-            Minecraft.getInstance().field1283.method8044() - 119 - this.field21016
+            (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014) - 4,
+            Minecraft.getInstance().mainWindow.method8044() - 119 - this.field21016
          )
       );
       this.method13230(
          this.field21011 = new Class4339(
             this,
             "altView",
-            (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21014),
+            (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014),
             114,
-            (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21015) - this.field21016,
-            Minecraft.getInstance().field1283.method8044() - 119 - this.field21016
+            (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21015) - this.field21016,
+            Minecraft.getInstance().mainWindow.method8044() - 119 - this.field21016
          )
       );
       this.field21010.method13300(false);
@@ -94,13 +94,13 @@ public class Class4313 extends Class4307 {
                this.field21011,
                "",
                (int)(
-                        (float) Minecraft.getInstance().field1283.method8043() * this.field21015
-                           - (float)((int)((float) Minecraft.getInstance().field1283.method8043() * this.field21015))
+                        (float) Minecraft.getInstance().mainWindow.method8043() * this.field21015
+                           - (float)((int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21015))
                      )
                      / 2
                   - 10,
-               Minecraft.getInstance().field1283.method8044() / 12,
-               (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21015),
+               Minecraft.getInstance().mainWindow.method8044() / 12,
+               (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21015),
                350,
                "steve"
             )
@@ -111,17 +111,17 @@ public class Class4313 extends Class4307 {
                this.field21011,
                "info",
                (int)(
-                        (float) Minecraft.getInstance().field1283.method8043() * this.field21015
-                           - (float)((int)((float) Minecraft.getInstance().field1283.method8043() * this.field21015))
+                        (float) Minecraft.getInstance().mainWindow.method8043() * this.field21015
+                           - (float)((int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21015))
                      )
                      / 2
                   - 10,
                this.method13374(),
-               (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21015),
+               (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21015),
                500
             )
          );
-      Class4363 var9 = new Class4363(this, "drop", (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21014) - 220, 44, 200, 32, var3, 0);
+      Class4363 var9 = new Class4363(this, "drop", (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014) - 220, 44, 200, 32, var3, 0);
       var9.method13643(var4, 1);
       var9.method13656(2);
       this.method13230(var9);
@@ -150,7 +150,7 @@ public class Class4313 extends Class4307 {
          this.field21026 = new Class4281(
             this,
             "textbox",
-            (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21014),
+            (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014),
             44,
             150,
             32,
@@ -295,10 +295,10 @@ public class Class4313 extends Class4307 {
    public void method13027(float var1) {
       this.method13371();
       Class3192.method11465(
-         (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21014),
+         (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014),
          114,
-         (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21015) - this.field21016,
-         Minecraft.getInstance().field1283.method8044() - 119 - this.field21016,
+         (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21015) - this.field21016,
+         Minecraft.getInstance().mainWindow.method8044() - 119 - this.field21016,
          Class1979.field12896.field12910
       );
       this.method13365();
@@ -311,7 +311,7 @@ public class Class4313 extends Class4307 {
       if (this.field21021 != (float)this.field21010.method13513()) {
          try {
             this.field21020 = TextureUtil.method32933(
-               "blur", ImageUtil.method35038(0, 0, (int)((float) Minecraft.getInstance().field1283.method8043() * this.field21014) - 15, 114, 4, 40, -921102)
+               "blur", ImageUtil.method35038(0, 0, (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014) - 15, 114, 4, 40, -921102)
             );
          } catch (IOException var4) {
             var4.printStackTrace();
@@ -324,7 +324,7 @@ public class Class4313 extends Class4307 {
          Class3192.method11449(
             0.0F,
             0.0F,
-            (float)((int)((float) Minecraft.getInstance().field1283.method8043() * this.field21014) - 15),
+            (float)((int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014) - 15),
             114.0F,
             this.field21020,
             Class5628.method17688(Class1979.field12896.field12910, var3)
@@ -353,7 +353,7 @@ public class Class4313 extends Class4307 {
             for (Class4305 var7 : var5.method13241()) {
                if (var7 instanceof Class4294) {
                   Class4294 var8 = (Class4294)var7;
-                  if (var7.method13265() <= Minecraft.getInstance().field1283.method8044() && this.field21010.method13513() == 0) {
+                  if (var7.method13265() <= Minecraft.getInstance().mainWindow.method8044() && this.field21010.method13513() == 0) {
                      if (var3 > 0.2F) {
                         var8.field20805.changeDirection(Direction.FORWARDS);
                      }
@@ -442,7 +442,7 @@ public class Class4313 extends Class4307 {
    public void method13065(int var1) {
       super.method13065(var1);
       if (var1 == 256) {
-         Minecraft.getInstance().displayGuiScreen(new Class849());
+         Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
       }
    }
 
@@ -474,7 +474,7 @@ public class Class4313 extends Class4307 {
    }
 
    public int method13374() {
-      return Minecraft.getInstance().field1283.method8044() / 12 + 280 + Minecraft.getInstance().field1283.method8044() / 12;
+      return Minecraft.getInstance().mainWindow.method8044() / 12 + 280 + Minecraft.getInstance().mainWindow.method8044() / 12;
    }
 
    // $VF: synthetic method

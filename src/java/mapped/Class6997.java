@@ -103,7 +103,7 @@ public class Class6997 extends Class6990 {
             double var5 = var1.method11341(Vector3d.method11328(this.field30250));
             this.field30253 = !(this.field30243.method2918() > 0.0F) ? 0.0 : var5 / (double)this.field30243.method2918() * 100.0;
          } else {
-            this.field30251 = this.field30251 + (Util.method38487() - this.field30252);
+            this.field30251 = this.field30251 + (Util.milliTime() - this.field30252);
          }
 
          if (this.field30253 > 0.0 && (double)this.field30251 > this.field30253 * 2.0) {
@@ -113,7 +113,7 @@ public class Class6997 extends Class6990 {
             this.method21666();
          }
 
-         this.field30252 = Util.method38487();
+         this.field30252 = Util.milliTime();
       }
    }
 

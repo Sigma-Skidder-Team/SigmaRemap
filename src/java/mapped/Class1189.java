@@ -112,7 +112,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
          this.field6432.accept(var1);
       }
 
-      this.field6485 = Util.method38487() + 500L;
+      this.field6485 = Util.milliTime() + 500L;
    }
 
    private void method5641(int var1) {
@@ -351,7 +351,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       if (this.method5670()) {
          if (this.method5660()) {
             int var7 = !this.method5746() ? -6250336 : -1;
@@ -445,7 +445,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
       var8.method17025((double)var1, (double)var2, 0.0).method17031();
       var10.method35410();
       RenderSystem.method27858();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
    }
 
    public void method5657(int var1) {

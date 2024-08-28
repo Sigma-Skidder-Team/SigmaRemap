@@ -13,6 +13,6 @@ public class Class3597 implements Comparator<Entity> {
    }
 
    public int compare(Entity var1, Entity var2) {
-      return !(Module.mc.field1339.method3275(var1) > Module.mc.field1339.method3275(var2)) ? -1 : 1;
+      return !(Module.mc.player.method3275(var1) > Module.mc.player.method3275(var2)) ? -1 : 1;
    }
 }

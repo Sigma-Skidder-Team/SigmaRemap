@@ -77,7 +77,7 @@ public class Class6589 {
 
    @Nullable
    public Class8218 method19976() {
-      return Minecraft.getInstance().field1338.method6805().method20998(this.method19966().getName());
+      return Minecraft.getInstance().world.method6805().method20998(this.method19966().getName());
    }
 
    public void method19977() {

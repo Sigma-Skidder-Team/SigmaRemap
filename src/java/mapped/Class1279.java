@@ -25,12 +25,12 @@ public class Class1279 extends Class1274<Class1156> {
    private static final ITextComponent field6827 = new TranslationTextComponent("multiplayer.status.incompatible");
    private static final ITextComponent field6828 = new TranslationTextComponent("multiplayer.status.no_connection");
    private static final ITextComponent field6829 = new TranslationTextComponent("multiplayer.status.pinging");
-   private final Class1316 field6830;
+   private final MultiplayerScreen field6830;
    private final List<Class1157> field6831 = Lists.newArrayList();
    private final Class1156 field6832 = new Class1159();
    private final List<Class1158> field6833 = Lists.newArrayList();
 
-   public Class1279(Class1316 var1, Minecraft var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class1279(MultiplayerScreen var1, Minecraft var2, int var3, int var4, int var5, int var6, int var7) {
       super(var2, var3, var4, var5, var6, var7);
       this.field6830 = var1;
    }
@@ -45,8 +45,8 @@ public class Class1279 extends Class1274<Class1156> {
    public void method6024(Class1156 var1) {
       super.method6024(var1);
       if (this.method6023() instanceof Class1157) {
-         Class6688.field29302
-            .method20401(new TranslationTextComponent("narrator.select", Class1157.method5554((Class1157)this.method6023()).field33188).getString());
+         NarratorChatListener.INSTANCE
+            .say(new TranslationTextComponent("narrator.select", Class1157.method5554((Class1157)this.method6023()).field33188).getString());
       }
 
       this.field6830.method6239();

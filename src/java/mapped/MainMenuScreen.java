@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.function.BiConsumer;
 
-public class Class849 extends Screen {
+public class MainMenuScreen extends Screen {
    private static final Logger field4703 = LogManager.getLogger();
    public static final Class7451 field4704 = new Class7451(new ResourceLocation("textures/gui/title/background/panorama"));
    private static final ResourceLocation field4705 = new ResourceLocation("textures/gui/title/background/panorama_overlay.png");
@@ -30,18 +30,18 @@ public class Class849 extends Screen {
    private long field4718;
    private Screen field4719;
 
-   public Class849() {
+   public MainMenuScreen() {
       this(false);
    }
 
-   public Class849(boolean var1) {
+   public MainMenuScreen(boolean var1) {
       super(new TranslationTextComponent("narrator.screen.title"));
       this.field4717 = var1;
       this.field4707 = (double)new Random().nextFloat() < 1.0E-4;
    }
 
    private boolean method2594() {
-      return this.field4562.field1299.field44620 && this.field4713 != null;
+      return this.field4562.gameSettings.field44620 && this.field4713 != null;
    }
 
    @Override
@@ -100,7 +100,7 @@ public class Class849 extends Screen {
             Class1206.field6474,
             256,
             256,
-            var1 -> this.field4562.displayGuiScreen(new Class1136(this, this.field4562.field1299, this.field4562.method1541())),
+            var1 -> this.field4562.displayGuiScreen(new Class1136(this, this.field4562.gameSettings, this.field4562.method1541())),
             new TranslationTextComponent("narrator.button.language")
          )
       );
@@ -111,11 +111,11 @@ public class Class849 extends Screen {
             98,
             20,
             new TranslationTextComponent("menu.options"),
-            var1 -> this.field4562.displayGuiScreen(new Class1129(this, this.field4562.field1299))
+            var1 -> this.field4562.displayGuiScreen(new Class1129(this, this.field4562.gameSettings))
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 2, var4 + 72 + 12, 98, 20, new TranslationTextComponent("menu.quit"), var1 -> this.field4562.method1487())
+         new Class1206(this.field4564 / 2 + 2, var4 + 72 + 12, 98, 20, new TranslationTextComponent("menu.quit"), var1 -> this.field4562.shutdown())
       );
       this.<Class1243>method2455(
          new Class1243(
@@ -129,12 +129,12 @@ public class Class849 extends Screen {
             field4706,
             32,
             64,
-            var1 -> this.field4562.displayGuiScreen(new Class1142(this, this.field4562.field1299)),
+            var1 -> this.field4562.displayGuiScreen(new Class1142(this, this.field4562.gameSettings)),
             new TranslationTextComponent("narrator.button.accessibility")
          )
       );
       this.field4562.method1560(false);
-      if (this.field4562.field1299.field44620 && !this.field4712) {
+      if (this.field4562.gameSettings.field44620 && !this.field4712) {
          Class810 var6 = new Class810();
          this.field4713 = var6.method2210(this);
          this.field4712 = true;
@@ -169,7 +169,7 @@ public class Class849 extends Screen {
          }
          : Class1206.field6512;
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, var1 + var2 * 1, 200, 20, new TranslationTextComponent("menu.multiplayer"), var1x -> {
-         Object var4 = !this.field4562.field1299.field44630 ? new Class1334(this) : new Class1316(this);
+         Object var4 = !this.field4562.gameSettings.field44630 ? new Class1334(this) : new MultiplayerScreen(this);
          this.field4562.displayGuiScreen((Screen)var4);
       }, var6)).field6482 = var5;
       this.<Class1206>method2455(
@@ -188,7 +188,7 @@ public class Class849 extends Screen {
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, var1, 200, 20, new TranslationTextComponent("menu.playdemo"), var2x -> {
          if (!var5) {
             Class8905 var5x = Class8904.method32457();
-            this.field4562.method1500("Demo_World", Class314.field1210, var5x, Class7846.method26256(var5x));
+            this.field4562.method1500("Demo_World", MinecraftServer.field1210, var5x, Class7846.method26256(var5x));
          } else {
             this.field4562.method1499("Demo_World");
          }
@@ -201,7 +201,7 @@ public class Class849 extends Screen {
             20,
             new TranslationTextComponent("menu.resetdemo"),
             var1x -> {
-               Class9774 var4 = this.field4562.method1472();
+               SaveFormat var4 = this.field4562.getSaveLoader();
 
                try (Class1814 var5x = var4.method38468("Demo_World")) {
                   Class2024 var7 = var5x.method7997();
@@ -228,7 +228,7 @@ public class Class849 extends Screen {
    }
 
    private boolean method2598() {
-      try (Class1814 var3 = this.field4562.method1472().method38468("Demo_World")) {
+      try (Class1814 var3 = this.field4562.getSaveLoader().method38468("Demo_World")) {
          return var3.method7997() != null;
       } catch (IOException var17) {
          Class7603.method24908(this.field4562, "Demo_World");
@@ -243,12 +243,12 @@ public class Class849 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field4718 == 0L && this.field4717) {
-         this.field4718 = Util.method38487();
+         this.field4718 = Util.milliTime();
       }
 
-      float var7 = !this.field4717 ? 1.0F : (float)(Util.method38487() - this.field4718) / 1000.0F;
+      float var7 = !this.field4717 ? 1.0F : (float)(Util.milliTime() - this.field4718) / 1000.0F;
       Class7414.method23710();
       method5686(var1, 0, 0, this.field4564, this.field4565, -1);
       this.field4716.method13754(var4, MathHelper.method37777(var7, 0.0F, 1.0F));
@@ -291,7 +291,7 @@ public class Class849 extends Screen {
             RenderSystem.translatef((float)(this.field4564 / 2 + 90), 70.0F, 0.0F);
             RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
             float var13 = 1.8F
-               - MathHelper.method37771(MathHelper.method37763((float)(Util.method38487() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
+               - MathHelper.method37771(MathHelper.method37763((float)(Util.milliTime() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
             var13 = var13 * 100.0F / (float)(this.field4568.method38820(this.field4708) + 32);
             RenderSystem.scalef(var13, var13, var13);
             method5690(var1, this.field4568, this.field4708, 0, -8, 16776960 | var12);
@@ -371,15 +371,15 @@ public class Class849 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       if (this.field4713 != null) {
-         this.field4713.method1931();
+         this.field4713.onClose();
       }
    }
 
    private void method2600(boolean var1) {
       if (var1) {
-         try (Class1814 var4 = this.field4562.method1472().method38468("Demo_World")) {
+         try (Class1814 var4 = this.field4562.getSaveLoader().method38468("Demo_World")) {
             var4.method8003();
          } catch (IOException var17) {
             Class7603.method24909(this.field4562, "Demo_World");

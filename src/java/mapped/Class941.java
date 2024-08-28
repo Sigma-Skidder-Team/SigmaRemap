@@ -208,4 +208,9 @@ public class Class941 extends Class939 implements Class942, Class935 {
    public Class5812 method3690(int var1, Class974 var2) {
       return Class5813.method18162(var1, var2, this);
    }
+
+   @Override
+   public ITextComponent method2954() {
+      return new TranslationTextComponent("container.chest");
+   }
 }

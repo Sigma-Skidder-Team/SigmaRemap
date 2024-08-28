@@ -45,7 +45,7 @@ public class Class954 extends Class944 {
          IFormattableTextComponent var7 = ITextComponent$Serializer.func_240643_a_(var6.isEmpty() ? "\"\"" : var6);
          if (this.field5324 instanceof ServerWorld) {
             try {
-               this.field5356[var5] = TextComponentUtils.func_240645_a_(this.method3843((Class878)null), var7, (Entity)null, 0);
+               this.field5356[var5] = TextComponentUtils.func_240645_a_(this.method3843((ServerPlayerEntity)null), var7, (Entity)null, 0);
             } catch (CommandSyntaxException var9) {
                this.field5356[var5] = var7;
             }
@@ -116,7 +116,7 @@ public class Class954 extends Class944 {
          if (var8 != null && var8.getClickEvent() != null) {
             ClickEvent var9 = var8.getClickEvent();
             if (var9.getAction() == ClickEvent$Action.RUN_COMMAND) {
-               var1.method3396().getCommandManager().handleCommand(this.method3843((Class878)var1), var9.getValue());
+               var1.method3396().getCommandManager().handleCommand(this.method3843((ServerPlayerEntity)var1), var9.getValue());
             }
          }
       }
@@ -124,7 +124,7 @@ public class Class954 extends Class944 {
       return true;
    }
 
-   public Class6619 method3843(Class878 var1) {
+   public Class6619 method3843(ServerPlayerEntity var1) {
       String var4 = var1 != null ? var1.getName().getString() : "Sign";
       Object var5 = var1 != null ? var1.getDisplayName() : new StringTextComponent("Sign");
       return new Class6619(

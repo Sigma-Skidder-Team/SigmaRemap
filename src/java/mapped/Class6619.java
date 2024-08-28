@@ -28,14 +28,14 @@ public class Class6619 implements Class6618 {
    private final int field29127;
    private final String field29128;
    private final ITextComponent field29129;
-   private final Class314 field29130;
+   private final MinecraftServer field29130;
    private final boolean field29131;
    private final Entity field29132;
    private final ResultConsumer<Class6619> field29133;
    private final Class2062 field29134;
    private final Class8513 field29135;
 
-   public Class6619(Class909 var1, Vector3d var2, Class8513 var3, ServerWorld var4, int var5, String var6, ITextComponent var7, Class314 var8, Entity var9) {
+   public Class6619(Class909 var1, Vector3d var2, Class8513 var3, ServerWorld var4, int var5, String var6, ITextComponent var7, MinecraftServer var8, Entity var9) {
       this(var1, var2, var3, var4, var5, var6, var7, var8, var9, false, (var0, var1x, var2x) -> {
       }, Class2062.field13441);
    }
@@ -48,7 +48,7 @@ public class Class6619 implements Class6618 {
       int var5,
       String var6,
       ITextComponent var7,
-      Class314 var8,
+      MinecraftServer var8,
       Entity var9,
       boolean var10,
       ResultConsumer<Class6619> var11,
@@ -297,9 +297,9 @@ public class Class6619 implements Class6618 {
       }
    }
 
-   public Class878 method20175() throws CommandSyntaxException {
-      if (this.field29132 instanceof Class878) {
-         return (Class878)this.field29132;
+   public ServerPlayerEntity method20175() throws CommandSyntaxException {
+      if (this.field29132 instanceof ServerPlayerEntity) {
+         return (ServerPlayerEntity)this.field29132;
       } else {
          throw field29122.create();
       }
@@ -309,7 +309,7 @@ public class Class6619 implements Class6618 {
       return this.field29135;
    }
 
-   public Class314 method20177() {
+   public MinecraftServer method20177() {
       return this.field29130;
    }
 
@@ -319,7 +319,7 @@ public class Class6619 implements Class6618 {
 
    public void method20179(ITextComponent var1, boolean var2) {
       if (this.field29124.method1405() && !this.field29131) {
-         this.field29124.method1328(var1, Util.field45724);
+         this.field29124.sendMessage(var1, Util.DUMMY_UUID);
       }
 
       if (var2 && this.field29124.method3425() && !this.field29131) {
@@ -331,21 +331,21 @@ public class Class6619 implements Class6618 {
       IFormattableTextComponent var4 = new TranslationTextComponent("chat.type.admin", this.method20169(), var1)
          .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC});
       if (this.field29130.method1413().method17135(Class5462.field24236)) {
-         for (Class878 var6 : this.field29130.getPlayerList().method19488()) {
+         for (ServerPlayerEntity var6 : this.field29130.getPlayerList().method19488()) {
             if (var6 != this.field29124 && this.field29130.getPlayerList().canSendCommands(var6.getGameProfile())) {
-               var6.method1328(var4, Util.field45724);
+               var6.sendMessage(var4, Util.DUMMY_UUID);
             }
          }
       }
 
       if (this.field29124 != this.field29130 && this.field29130.method1413().method17135(Class5462.field24233)) {
-         this.field29130.method1328(var4, Util.field45724);
+         this.field29130.sendMessage(var4, Util.DUMMY_UUID);
       }
    }
 
    public void method20181(ITextComponent var1) {
       if (this.field29124.method1406() && !this.field29131) {
-         this.field29124.method1328(new StringTextComponent("").append(var1).mergeStyle(TextFormatting.RED), Util.field45724);
+         this.field29124.sendMessage(new StringTextComponent("").append(var1).mergeStyle(TextFormatting.RED), Util.DUMMY_UUID);
       }
    }
 

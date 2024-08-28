@@ -25,8 +25,8 @@ public class Class5229 extends Module {
     @EventTarget
     private void method16289(Class4429 var1) {
         if (this.method15996()) {
-            if (mc.field1299.field44637.method8509() && var1.method13976() == Class2116.field13791) {
-                if (!(mc.field1339.field5032 < 0.0F)) {
+            if (mc.gameSettings.field44637.method8509() && var1.method13976() == Class2116.field13791) {
+                if (!(mc.player.field5032 < 0.0F)) {
                     this.method16294(this.method16292());
                 } else {
                     this.method16294(this.method16293());
@@ -52,11 +52,11 @@ public class Class5229 extends Module {
                 var7 = Integer.parseInt(var5);
             }
 
-            float var8 = (float) Math.toRadians(mc.field1339.field5031 + 90.0F);
+            float var8 = (float) Math.toRadians(mc.player.field5031 + 90.0F);
             double var9 = MathHelper.method37764(var8) * (float) var7;
             double var11 = MathHelper.method37763(var8) * (float) var7;
-            mc.field1339
-                    .method3215(mc.field1339.getPosX() + var9, mc.field1339.getPosY(), mc.field1339.getPosZ() + var11);
+            mc.player
+                    .method3215(mc.player.getPosX() + var9, mc.player.getPosY(), mc.player.getPosZ() + var11);
         }
     }
 
@@ -65,13 +65,13 @@ public class Class5229 extends Module {
         int var4 = 0;
 
         for (int var5 = 0; var5 < 10; var5++) {
-            BlockPos var6 = new BlockPos(mc.field1339.getPosX(), mc.field1339.getPosY() - (double) var5, mc.field1339.getPosZ());
-            if (mc.field1338.method6738(var6).method23410() && var3) {
+            BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - (double) var5, mc.player.getPosZ());
+            if (mc.world.method6738(var6).method23410() && var3) {
                 var4 = -var5;
                 break;
             }
 
-            var3 = mc.field1338.method6738(var6).method23410();
+            var3 = mc.world.method6738(var6).method23410();
         }
 
         return var4;
@@ -82,13 +82,13 @@ public class Class5229 extends Module {
         int var4 = 0;
 
         for (int var5 = 10; var5 > 0; var5--) {
-            BlockPos var6 = new BlockPos(mc.field1339.getPosX(), mc.field1339.getPosY() + (double) var5, mc.field1339.getPosZ());
-            if (mc.field1338.method6738(var6).method23410() && var3 && !mc.field1338.method6738(var6.method8313()).method23410()) {
+            BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() + (double) var5, mc.player.getPosZ());
+            if (mc.world.method6738(var6).method23410() && var3 && !mc.world.method6738(var6.method8313()).method23410()) {
                 var4 = var5;
                 break;
             }
 
-            var3 = mc.field1338.method6738(var6).method23410();
+            var3 = mc.world.method6738(var6).method23410();
         }
 
         return var4;
@@ -100,10 +100,10 @@ public class Class5229 extends Module {
         } else {
             mc.getClientPlayNetHandler()
                     .sendPacket(
-                            new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY() + (double) var1, mc.field1339.getPosZ(), false)
+                            new Class5605(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ(), false)
                     );
-            mc.field1339
-                    .method3215(mc.field1339.getPosX(), mc.field1339.getPosY() + (double) var1, mc.field1339.getPosZ());
+            mc.player
+                    .method3215(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ());
             Client.getInstance().getNotificationManager().post(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, ResourcesDecrypter.directionIconPNG));
         }
     }

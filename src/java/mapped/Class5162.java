@@ -43,7 +43,7 @@ public class Class5162 extends Module {
             String var4 = this.getStringSettingValueByName("Refill mode");
             if (!this.field23432) {
                 if (this.method16063(Class8514.field37837) == 0) {
-                    if (var4.equals("OpenInv") && !(mc.field1355 instanceof Class859)) {
+                    if (var4.equals("OpenInv") && !(mc.currentScreen instanceof Class859)) {
                         return;
                     }
 
@@ -53,7 +53,7 @@ public class Class5162 extends Module {
 
                     return;
                 }
-            } else if (var4.equals("OpenInv") && !(mc.field1355 instanceof Class859)) {
+            } else if (var4.equals("OpenInv") && !(mc.currentScreen instanceof Class859)) {
                 this.field23432 = false;
             } else if (this.method16063(Class8514.field37222) != 0) {
                 this.method16060();
@@ -81,7 +81,7 @@ public class Class5162 extends Module {
     private void method16059() {
         this.field23432 = true;
         if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")
-                && !(mc.field1355 instanceof Class859)
+                && !(mc.currentScreen instanceof Class859)
                 && Class8005.method27349() <= Class5989.field26136.method18582()) {
             mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.field23433 = true;
@@ -92,9 +92,9 @@ public class Class5162 extends Module {
             if (var3 > 0) {
                 int var4 = this.method16062(var3);
                 if (var4 > 0) {
-                    Class7789.method25870(mc.field1339.field4904.field25471, var4, 0, Class2259.field14694, mc.field1339, true);
-                    Class7789.method25870(mc.field1339.field4904.field25471, var4, 0, Class2259.field14700, mc.field1339, true);
-                    Class7789.method25870(mc.field1339.field4904.field25471, var4, 0, Class2259.field14694, mc.field1339, true);
+                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, Class2259.field14694, mc.player, true);
+                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, Class2259.field14700, mc.player, true);
+                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, Class2259.field14694, mc.player, true);
                     this.field23431 = -5;
                 }
             }
@@ -110,7 +110,7 @@ public class Class5162 extends Module {
                 boolean var4 = false;
                 if (Class7789.method25866(this.field23429).method32107() == Class8514.field37837
                         && Math.random() * 100.0 > (double) this.method15977("Refill accuracy")) {
-                    Class7789.method25870(mc.field1339.field4904.field25471, this.field23429, 0, Class2259.field14695, mc.field1339, true);
+                    Class7789.method25870(mc.player.field4904.field25471, this.field23429, 0, Class2259.field14695, mc.player, true);
                     this.field23431 = 0;
                     var4 = true;
                 }
@@ -138,7 +138,7 @@ public class Class5162 extends Module {
         int var3 = -1;
 
         for (int var4 = 36; var4 < 45; var4++) {
-            if (mc.field1339.field4904.method18131(var4).method18265().method32107() == Class8514.field37837
+            if (mc.player.field4904.method18131(var4).method18265().method32107() == Class8514.field37837
                     && Client.getInstance().method19940().method33238(var4) > 100L) {
                 var3 = var4 - 36;
                 break;
@@ -152,23 +152,23 @@ public class Class5162 extends Module {
                     mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13488, BlockPos.field13032, Direction.field672));
                 }
 
-                mc.field1339.field4902.field5443 = this.field23430;
+                mc.player.field4902.field5443 = this.field23430;
                 mc.field1337.method23138();
                 this.field23428 = 0;
                 this.field23430 = -1;
             } else {
-                if (var3 < 0 || this.field23428 <= 3 || mc.field1339.method3042() > this.method15977("Health")) {
+                if (var3 < 0 || this.field23428 <= 3 || mc.player.method3042() > this.method15977("Health")) {
                     return;
                 }
 
-                this.field23430 = mc.field1339.field4902.field5443;
-                mc.field1339.field4902.field5443 = var3;
+                this.field23430 = mc.player.field4902.field5443;
+                mc.player.field4902.field5443 = var3;
                 mc.field1337.method23138();
                 mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
                 mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
             }
         } else {
-            if (var3 < 0 || this.field23428 <= 3 || mc.field1339.method3042() > this.method15977("Health")) {
+            if (var3 < 0 || this.field23428 <= 3 || mc.player.method3042() > this.method15977("Health")) {
                 return;
             }
 
@@ -179,7 +179,7 @@ public class Class5162 extends Module {
                 mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13488, BlockPos.field13032, Direction.field672));
             }
 
-            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.field1339.field4902.field5443));
+            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
             this.field23428 = 0;
         }
     }
@@ -210,7 +210,7 @@ public class Class5162 extends Module {
                 var4 = Class7789.method25866(13);
                 if (var4.method32107() == Class8514.field37222) {
                     for (int var13 = 36; var13 < 45; var13++) {
-                        if (mc.field1339.field4904.method18131(var13).method18265().method32107() == Class8514.field37836) {
+                        if (mc.player.field4904.method18131(var13).method18265().method32107() == Class8514.field37836) {
                             Class7789.method25873(13, var13 - 36);
                             return 13;
                         }
@@ -221,7 +221,7 @@ public class Class5162 extends Module {
                     var4 = Class7789.method25866(var14);
                     if (var4.method32107() == Class8514.field37222) {
                         for (int var6 = 36; var6 < 45; var6++) {
-                            if (mc.field1339.field4904.method18131(var6).method18265().method32107() == Class8514.field37836) {
+                            if (mc.player.field4904.method18131(var6).method18265().method32107() == Class8514.field37836) {
                                 Class7789.method25873(var14, var6 - 36);
                                 return -1;
                             }
@@ -230,7 +230,7 @@ public class Class5162 extends Module {
                 }
 
                 for (int var15 = 36; var15 < 45; var15++) {
-                    if (mc.field1339.field4904.method18131(var15).method18265().method32107() == Class8514.field37836) {
+                    if (mc.player.field4904.method18131(var15).method18265().method32107() == Class8514.field37836) {
                         Class7789.method25873(13, var15 - 36);
                         return -1;
                     }
@@ -245,7 +245,7 @@ public class Class5162 extends Module {
         int var4 = 0;
 
         for (int var5 = 36; var5 < 45; var5++) {
-            if (mc.field1339.field4904.method18131(var5).method18265().method32107() == var1) {
+            if (mc.player.field4904.method18131(var5).method18265().method32107() == var1) {
                 var4++;
             }
         }
@@ -257,7 +257,7 @@ public class Class5162 extends Module {
         int var4 = 0;
 
         for (int var5 = 9; var5 < 36; var5++) {
-            if (mc.field1339.field4904.method18131(var5).method18265().method32107() == var1) {
+            if (mc.player.field4904.method18131(var5).method18265().method32107() == var1) {
                 var4++;
             }
         }

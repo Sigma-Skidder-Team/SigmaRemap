@@ -10,27 +10,27 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Class1314 extends Screen {
    private static final AtomicInteger field6934 = new AtomicInteger(0);
    private static final Logger field6935 = LogManager.getLogger();
-   private Class8586 field6936;
+   private NetworkManager field6936;
    private boolean field6937;
    private final Screen field6938;
    private ITextComponent field6939 = new TranslationTextComponent("connect.connecting");
    private long field6940 = -1L;
 
    public Class1314(Screen var1, Minecraft var2, Class7730 var3) {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field4562 = var2;
       this.field6938 = var1;
       Class9375 var6 = Class9375.method35574(var3.field33189);
-      var2.method1505();
+      var2.unloadWorld();
       var2.method1527(var3);
       this.method6219(var6.method35572(), var6.method35573());
    }
 
    public Class1314(Screen var1, Minecraft var2, String var3, int var4) {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field4562 = var2;
       this.field6938 = var1;
-      var2.method1505();
+      var2.unloadWorld();
       this.method6219(var3, var4);
    }
 
@@ -74,12 +74,12 @@ public class Class1314 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      long var7 = Util.method38487();
+      long var7 = Util.milliTime();
       if (var7 - this.field6940 > 2000L) {
          this.field6940 = var7;
-         Class6688.field29302.method20401(new TranslationTextComponent("narrator.joining").getString());
+         NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.joining").getString());
       }
 
       method5691(var1, this.field4568, this.field6939, this.field4564 / 2, this.field4565 / 2 - 50, 16777215);
@@ -92,12 +92,12 @@ public class Class1314 extends Screen {
    }
 
    // $VF: synthetic method
-   public static Class8586 method6223(Class1314 var0, Class8586 var1) {
+   public static NetworkManager method6223(Class1314 var0, NetworkManager var1) {
       return var0.field6936 = var1;
    }
 
    // $VF: synthetic method
-   public static Class8586 method6224(Class1314 var0) {
+   public static NetworkManager method6224(Class1314 var0) {
       return var0.field6936;
    }
 

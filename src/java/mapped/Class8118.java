@@ -14,7 +14,7 @@ public class Class8118 implements Class8117 {
       this.field34887 = var2;
       this.field34888 = var4;
       this.field34891 = (double)var6;
-      this.field34890 = Util.method38487();
+      this.field34890 = Util.milliTime();
       this.field34889 = this.field34890 + var6;
    }
 
@@ -40,7 +40,7 @@ public class Class8118 implements Class8117 {
 
    @Override
    public double method28109() {
-      double var3 = (double)(Util.method38487() - this.field34890) / this.field34891;
+      double var3 = (double)(Util.milliTime() - this.field34890) / this.field34891;
       return !(var3 < 1.0) ? this.field34888 : MathHelper.method37822(var3, this.field34887, this.field34888);
    }
 
@@ -51,7 +51,7 @@ public class Class8118 implements Class8117 {
 
    @Override
    public long method28112() {
-      return this.field34889 - Util.method38487();
+      return this.field34889 - Util.milliTime();
    }
 
    @Override

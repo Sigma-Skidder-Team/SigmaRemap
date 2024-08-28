@@ -17,8 +17,8 @@ public class Class8480 {
    private static Class1647 field36351;
    public static Framebuffer field36352;
    public static Framebuffer field36353;
-   public static int field36354 = mc.field1319.field35732;
-   public static int field36355 = mc.field1319.field35733;
+   public static int field36354 = mc.framebuffer.field35732;
+   public static int field36355 = mc.framebuffer.field35733;
    public static int field36356 = 0;
    public static int field36357 = 0;
    public static int field36358 = 0;
@@ -48,7 +48,7 @@ public class Class8480 {
          if (field36352 == null) {
             try {
                field36351 = new Class1647(mc.getTextureManager(), new Class1818(), mc.method1464(), new ResourceLocation("jelloblur"));
-               field36351.method6525(mc.field1319.field35732, mc.field1319.field35733);
+               field36351.method6525(mc.framebuffer.field35732, mc.framebuffer.field35733);
                field36351.field8939.get(0).method7410().method7937("Radius").method7437(35.0F);
                field36351.field8939.get(1).method7410().method7937("Radius").method7437(35.0F);
                field36352 = field36351.method6528("jello");
@@ -58,8 +58,8 @@ public class Class8480 {
             }
          }
 
-         if (field36352.field35733 != mc.field1319.field35733 || field36352.field35732 != mc.field1319.field35732) {
-            field36351.method6525(mc.field1319.field35732, mc.field1319.field35733);
+         if (field36352.field35733 != mc.framebuffer.field35733 || field36352.field35732 != mc.framebuffer.field35732) {
+            field36351.method6525(mc.framebuffer.field35732, mc.framebuffer.field35733);
          }
 
          RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
@@ -69,13 +69,13 @@ public class Class8480 {
          RenderSystem.disableBlend();
          field36352.method29119(true);
          field36353.method29119(true);
-         RenderSystem.method27877(256, Minecraft.field1272);
+         RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
          RenderSystem.method27878(5889);
          RenderSystem.method27879();
          RenderSystem.method27882(
             0.0,
-            (double) mc.field1283.method8041() / mc.field1283.method8049(),
-            (double) mc.field1283.method8042() / mc.field1283.method8049(),
+            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.method8049(),
+            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.method8049(),
             0.0,
             1000.0,
             3000.0
@@ -84,19 +84,19 @@ public class Class8480 {
          RenderSystem.method27879();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / mc.field1283.method8049() * (double) GuiManager.field41348, 1.0 / mc.field1283.method8049() * (double) GuiManager.field41348, 1.0
+            1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0
          );
          int var4 = 35;
          Class3192.method11420(field36354, field36355 - var4, field36356, field36357 + var4);
-         field36351.method6526(mc.field1284.field40356);
+         field36351.method6526(mc.timer.renderPartialTicks);
          Class3192.method11422();
          GL11.glEnable(3008);
-         field36352.method29112(true);
-         mc.field1319.method29112(true);
+         field36352.bindFramebuffer(true);
+         mc.framebuffer.bindFramebuffer(true);
       }
 
-      field36354 = mc.field1319.field35732;
-      field36355 = mc.field1319.field35733;
+      field36354 = mc.framebuffer.field35732;
+      field36355 = mc.framebuffer.field35733;
       field36356 = 0;
       field36357 = 0;
    }
@@ -105,15 +105,15 @@ public class Class8480 {
       if (field36352 != null) {
          GL11.glPushMatrix();
          field36352.method29110();
-         field36352.method29116(mc.field1319.field35732, mc.field1319.field35733);
+         field36352.framebufferRender(mc.framebuffer.field35732, mc.framebuffer.field35733);
          GL11.glPopMatrix();
-         RenderSystem.method27877(256, Minecraft.field1272);
+         RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
          RenderSystem.method27878(5889);
          RenderSystem.method27879();
          RenderSystem.method27882(
             0.0,
-            (double) mc.field1283.method8041() / mc.field1283.method8049(),
-            (double) mc.field1283.method8042() / mc.field1283.method8049(),
+            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.method8049(),
+            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.method8049(),
             0.0,
             1000.0,
             3000.0
@@ -122,9 +122,9 @@ public class Class8480 {
          RenderSystem.method27879();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / mc.field1283.method8049() * (double) GuiManager.field41348, 1.0 / mc.field1283.method8049() * (double) GuiManager.field41348, 1.0
+            1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0
          );
-         mc.field1319.method29112(true);
+         mc.framebuffer.bindFramebuffer(true);
       }
    }
 

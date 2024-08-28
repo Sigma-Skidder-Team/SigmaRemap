@@ -28,9 +28,9 @@ public class Class7308 extends ChannelInitializer<Channel> {
          .addLast("prepender", new Class8577())
          .addLast("encoder", new Class5623(Class1975.CLIENTBOUND));
       int var4 = Class9021.method33406(this.field31334).method1349();
-      Object var5 = var4 > 0 ? new Class8587(var4) : new Class8586(Class1975.SERVERBOUND);
+      Object var5 = var4 > 0 ? new Class8587(var4) : new NetworkManager(Class1975.SERVERBOUND);
       Class9021.method33407(this.field31334).add(var5);
       var1.pipeline().addLast("packet_handler", (ChannelHandler)var5);
-      ((Class8586)var5).method30692(new Class5106(Class9021.method33406(this.field31334), (Class8586)var5));
+      ((NetworkManager)var5).method30692(new Class5106(Class9021.method33406(this.field31334), (NetworkManager)var5));
    }
 }

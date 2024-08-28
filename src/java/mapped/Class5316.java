@@ -22,9 +22,9 @@ public class Class5316 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23856 = mc.field1339.getPosX();
-        this.field23857 = mc.field1339.getPosY();
-        this.field23858 = mc.field1339.getPosZ();
+        this.field23856 = mc.player.getPosX();
+        this.field23857 = mc.player.getPosY();
+        this.field23858 = mc.player.getPosZ();
         this.field23859 = 0.0;
         this.field23854 = 2;
         this.field23855 = 0;
@@ -33,11 +33,11 @@ public class Class5316 extends Module {
     @Override
     public void method15965() {
         Class9567.method37090(0.0);
-        if (mc.field1339.method3433().field18049 > 0.0) {
+        if (mc.player.method3433().field18049 > 0.0) {
             Class5628.method17725(-0.0789);
         }
 
-        mc.field1284.field40360 = 1.0F;
+        mc.timer.field40360 = 1.0F;
     }
 
     @EventTarget
@@ -103,8 +103,8 @@ public class Class5316 extends Module {
                 this.field23856 = var5.field24297;
                 this.field23857 = var5.field24298;
                 this.field23858 = var5.field24299;
-                var5.field24300 = mc.field1339.field5031;
-                var5.field24301 = mc.field1339.field5032;
+                var5.field24300 = mc.player.field5031;
+                var5.field24301 = mc.player.field5032;
             }
         }
     }

@@ -57,7 +57,7 @@ public class Class8458 {
    }
 
    private static long method29752() {
-      return Util.method38487();
+      return Util.milliTime();
    }
 
    public static List<Class6111> method29753() {

@@ -14,12 +14,12 @@ public class Class5376 extends Module {
     @EventTarget
     private void method16925(TickEvent var1) {
         if (this.method15996()) {
-            mc.field1284.field40360 = this.method15977("Timer");
+            mc.timer.field40360 = this.method15977("Timer");
         }
     }
 
     @Override
     public void method15965() {
-        mc.field1284.field40360 = 1.0F;
+        mc.timer.field40360 = 1.0F;
     }
 }

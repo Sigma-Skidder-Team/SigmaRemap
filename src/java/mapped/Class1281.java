@@ -17,8 +17,8 @@ public class Class1281 extends Class1274<Class1167> {
    public void method6024(Class1167 var1) {
       super.method6024(var1);
       if (var1 != null) {
-         Class6688.field29302
-            .method20401(
+         NarratorChatListener.INSTANCE
+            .say(
                new TranslationTextComponent("narrator.select", ((Class5966)Class1313.method6213().get(this.method2468().indexOf(var1))).method18492())
                   .getString()
             );

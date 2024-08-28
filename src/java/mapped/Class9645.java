@@ -45,7 +45,7 @@ public class Class9645 {
    }
 
    public UUID method37610(String var1) {
-      return this.field45105.getOrDefault(var1, Util.field45724);
+      return this.field45105.getOrDefault(var1, Util.DUMMY_UUID);
    }
 
    public void method37611(Class6589 var1) {
@@ -54,7 +54,7 @@ public class Class9645 {
          this.field45105.put(var4.getName(), var4.getId());
       }
 
-      Screen var5 = this.field45102.field1355;
+      Screen var5 = this.field45102.currentScreen;
       if (var5 instanceof Class1147) {
          Class1147 var6 = (Class1147)var5;
          var6.method5489(var1);
@@ -62,7 +62,7 @@ public class Class9645 {
    }
 
    public void method37612(UUID var1) {
-      Screen var4 = this.field45102.field1355;
+      Screen var4 = this.field45102.currentScreen;
       if (var4 instanceof Class1147) {
          Class1147 var5 = (Class1147)var4;
          var5.method5490(var1);

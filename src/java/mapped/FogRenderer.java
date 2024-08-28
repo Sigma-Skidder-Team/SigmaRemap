@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class8915 {
+public class FogRenderer {
    private static String[] field40347;
    public static float field40348;
    public static float field40349;
@@ -78,7 +78,7 @@ public class Class8915 {
             field40353 = -1L;
          }
       } else {
-         long var19 = Util.method38487();
+         long var19 = Util.milliTime();
          int var25 = var2.method7003(new BlockPos(var0.method37504())).method32521();
          if (field40353 < 0L) {
             field40351 = var25;
@@ -106,7 +106,7 @@ public class Class8915 {
          }
       }
 
-      double var49 = var0.method37504().field18049 * var2.method6788().method20053();
+      double var49 = var0.method37504().field18049 * var2.getWorldInfo().method20053();
       if (var0.method37509() instanceof Class880 && ((Class880)var0.method37509()).method3033(Class8254.field35481)) {
          int var26 = ((Class880)var0.method37509()).method3034(Class8254.field35481).method8628();
          if (var26 >= 20) {
@@ -194,7 +194,7 @@ public class Class8915 {
       RenderSystem.method27875(field40348, field40349, field40350, 0.0F);
    }
 
-   public static void method32585() {
+   public static void resetFog() {
       RenderSystem.method27844(0.0F);
       RenderSystem.method27842(Class2135.field13986);
    }

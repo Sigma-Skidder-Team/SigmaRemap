@@ -16,7 +16,7 @@ public class Class5670 extends Class5661<Class1100, Class2896> {
       return !var1.method5275() ? field25034 : field25035;
    }
 
-   public void method17857(Class1100 var1, Class9332 var2, float var3) {
+   public void method17857(Class1100 var1, MatrixStack var2, float var3) {
       var2.method35292(0.4F, 0.4F, 0.4F);
    }
 }

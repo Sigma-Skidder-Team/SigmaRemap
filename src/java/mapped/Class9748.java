@@ -199,8 +199,8 @@ public class Class9748 {
                if (var6 != Class1894.field11101) {
                   var0.method30301(false);
                   var0.method30278(var2 -> {
-                     if (var2 instanceof Class878) {
-                        Class1894 var5x = ((Class878)var2).field4857.method33863();
+                     if (var2 instanceof ServerPlayerEntity) {
+                        Class1894 var5x = ((ServerPlayerEntity)var2).field4857.method33863();
                         return !var4 ? var5x == var6 : var5x != var6;
                      } else {
                         return false;
@@ -286,8 +286,8 @@ public class Class9748 {
             Class39 var4 = new Class7671(var0.method30277()).method25195();
             var0.method30278(var2 -> {
                Class39 var5 = var2.method3294(new Class39());
-               if (var2 instanceof Class878) {
-                  ItemStack var6 = ((Class878)var2).field4902.method4028();
+               if (var2 instanceof ServerPlayerEntity) {
+                  ItemStack var6 = ((ServerPlayerEntity)var2).field4902.method4028();
                   if (!var6.method32105()) {
                      var5.method99("SelectedItem", var6.method32112(new Class39()));
                   }
@@ -404,10 +404,10 @@ public class Class9748 {
             var3.expect('}');
             if (!var4.isEmpty()) {
                var0.method30278(var1 -> {
-                  if (!(var1 instanceof Class878)) {
+                  if (!(var1 instanceof ServerPlayerEntity)) {
                      return false;
                   } else {
-                     Class878 var4x = (Class878)var1;
+                     ServerPlayerEntity var4x = (ServerPlayerEntity)var1;
                      Class8019 var5x = var4x.method2823();
                      Class285 var6x = var4x.method3396().method1396();
 

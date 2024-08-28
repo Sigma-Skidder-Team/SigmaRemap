@@ -31,15 +31,15 @@ public class Class5156 extends Module {
     private void method16020(Class4399 var1) {
         if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
             if (var1.method13921()) {
-                boolean var4 = mc.field1339.method3090() != null && mc.field1339.method3090().method32107() instanceof Class3267;
+                boolean var4 = mc.player.method3090() != null && mc.player.method3090().method32107() instanceof Class3267;
                 boolean var5 = Client.getInstance().getModuleManager().method14662(Class5357.class).method15988();
                 boolean var6 = true;
-                if (!mc.field1339.method3331()
+                if (!mc.player.method3331()
                         && mc.field1346.method31417() == Class2100.field13690
                         && !Client.getInstance().getModuleManager().method14662(Class5357.class).method15988()) {
                     Class8711 var7 = (Class8711) mc.field1346;
                     BlockPos var8 = var7.method31423();
-                    Block var9 = mc.field1338.method6738(var8).method23383();
+                    Block var9 = mc.world.method6738(var8).method23383();
                     ArrayList var10 = new ArrayList<Block>(
                             Arrays.asList(
                                     Blocks.CHEST,
@@ -71,13 +71,13 @@ public class Class5156 extends Module {
                     }
                 }
 
-                field23408 = mc.field1299.field44642.method8509() && var4 && var6 && var6 || var5;
+                field23408 = mc.gameSettings.field44642.method8509() && var4 && var6 && var6 || var5;
                 if (!field23408) {
-                    if (ViaVersionLoader.field31493.contains(mc.field1339)) {
-                        ViaVersionLoader.field31493.remove(mc.field1339);
+                    if (ViaVersionLoader.field31493.contains(mc.player)) {
+                        ViaVersionLoader.field31493.remove(mc.player);
                     }
-                } else if (!ViaVersionLoader.field31493.contains(mc.field1339)) {
-                    ViaVersionLoader.field31493.add(mc.field1339);
+                } else if (!ViaVersionLoader.field31493.contains(mc.player)) {
+                    ViaVersionLoader.field31493.add(mc.player);
                 }
 
                 if (field23408 && !this.field23409) {
@@ -97,11 +97,11 @@ public class Class5156 extends Module {
     @Class5631
     private void method16021(Class4396 var1) {
         if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
-            if (mc.field1339 != null) {
+            if (mc.player != null) {
                 if (var1.method13898() instanceof Class5588) {
                     Class5588 var4 = (Class5588) var1.method13898();
 
-                    var4.method17562().removeIf(var6 -> var4.method17561() == mc.field1339.method3205()
+                    var4.method17562().removeIf(var6 -> var4.method17561() == mc.player.method3205()
                             && var6.getFirst() == Class2106.field13732
                             && var6.getSecond() != null
                             && var6.getSecond().method32107() == Class8514.field38119);
@@ -158,11 +158,11 @@ public class Class5156 extends Module {
         }
     }
 
-    private void method16023(float var1, float var2, float var3, float var4, Class9332 var5) {
+    private void method16023(float var1, float var2, float var3, float var4, MatrixStack var5) {
         var5.method35293(new Class7680(var2, var3, var4).method25286(var1));
     }
 
-    private void method16024(float var1, float var2, Class9332 var3) {
+    private void method16024(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.48F, -0.55F, -0.71999997F);
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -177,7 +177,7 @@ public class Class5156 extends Module {
         var3.method35292(var8, var8, var8);
     }
 
-    private void method16025(float var1, float var2, Class9332 var3) {
+    private void method16025(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.48F, -0.39F, -0.71999997F);
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(100.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -192,7 +192,7 @@ public class Class5156 extends Module {
         var3.method35292(var8, var8, var8);
     }
 
-    private void method16026(float var1, float var2, Class9332 var3) {
+    private void method16026(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.48F, -0.55F, -0.71999997F);
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -207,7 +207,7 @@ public class Class5156 extends Module {
         var3.method35292(var8, var8, var8);
     }
 
-    private void method16027(float var1, float var2, Class9332 var3) {
+    private void method16027(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.0, -3.5, 0.0);
         var3.method35291(0.56F, -0.52F, -0.72F);
         var3.method35291(0.56F, -0.22F, -0.71999997F);
@@ -221,7 +221,7 @@ public class Class5156 extends Module {
         var3.method35292(2.7F, 2.7F, 2.7F);
     }
 
-    private void method16028(float var1, float var2, Class9332 var3) {
+    private void method16028(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.648F, -0.55F, -0.71999997F);
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -233,7 +233,7 @@ public class Class5156 extends Module {
         var3.method35292(var7, var7, var7);
     }
 
-    private void method16029(float var1, float var2, Class9332 var3) {
+    private void method16029(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.648F, -0.55F, -0.71999997F);
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -245,7 +245,7 @@ public class Class5156 extends Module {
         var3.method35292(var7, var7, var7);
     }
 
-    private void method16030(float var1, float var2, Class9332 var3) {
+    private void method16030(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.48F, -0.55F, -0.71999997F);
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -260,7 +260,7 @@ public class Class5156 extends Module {
         var3.method35292(var8, var8, var8);
     }
 
-    private void method16031(float var1, float var2, Class9332 var3) {
+    private void method16031(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.48F, -0.55F, -0.71999997F);
         var3.method35291(0.0, (double) (var1 * -0.2F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -271,7 +271,7 @@ public class Class5156 extends Module {
         var3.method35292(var7, var7, var7);
     }
 
-    private void method16032(float var1, float var2, Class9332 var3) {
+    private void method16032(float var1, float var2, MatrixStack var3) {
         var3.method35291(0.56, -0.52, -0.72);
         float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -281,7 +281,7 @@ public class Class5156 extends Module {
         this.method16023(var6 * 30.0F, 1.0F, -0.0F, -1.0F, var3);
     }
 
-    private void method16033(float var1, float var2, Class9332 var3) {
+    private void method16033(float var1, float var2, MatrixStack var3) {
         float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         var3.method35291(0.48F, -0.55F, -0.71999997F);
         var3.method35291(0.0, (double) (var6 * -0.2F), 0.0);

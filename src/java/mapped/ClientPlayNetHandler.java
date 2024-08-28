@@ -33,7 +33,7 @@ import org.apache.logging.log4j.Logger;
 public class ClientPlayNetHandler implements Class5116 {
    private static final Logger field23267 = LogManager.getLogger();
    private static final ITextComponent field23268 = new TranslationTextComponent("disconnect.lost");
-   private final Class8586 field23269;
+   private final NetworkManager field23269;
    private final GameProfile field23270;
    private final Screen field23271;
    private Minecraft field23272;
@@ -53,7 +53,7 @@ public class ClientPlayNetHandler implements Class5116 {
    private Set<Class8705<World>> field23286;
    public Class8904 field23287 = Class8904.method32457();
 
-   public ClientPlayNetHandler(Minecraft var1, Screen var2, Class8586 var3, GameProfile var4) {
+   public ClientPlayNetHandler(Minecraft var1, Screen var2, NetworkManager var3, GameProfile var4) {
       this.field23272 = var1;
       this.field23271 = var2;
       this.field23269 = var3;
@@ -93,30 +93,30 @@ public class ClientPlayNetHandler implements Class5116 {
       boolean var8 = var1.method17300();
       Class6606 var9 = new Class6606(Class2197.field14353, var1.method17289(), var8);
       this.field23274 = var9;
-      this.field23273 = new Class1656(this, var9, var5, var6, this.field23281, this.field23272::method1574, this.field23272.field1287, var7, var1.method17288());
+      this.field23273 = new Class1656(this, var9, var5, var6, this.field23281, this.field23272::method1574, this.field23272.worldRenderer, var7, var1.method17288());
       this.field23272.method1504(this.field23273);
-      if (this.field23272.field1339 == null) {
-         this.field23272.field1339 = this.field23272.field1337.createPlayer(this.field23273, new Class8286(), new Class6943());
-         this.field23272.field1339.field5031 = -180.0F;
+      if (this.field23272.player == null) {
+         this.field23272.player = this.field23272.field1337.createPlayer(this.field23273, new Class8286(), new Class6943());
+         this.field23272.player.field5031 = -180.0F;
          if (this.field23272.method1531() != null) {
-            this.field23272.method1531().method6489(this.field23272.field1339.getUniqueID());
+            this.field23272.method1531().method6489(this.field23272.player.getUniqueID());
          }
       }
 
       this.field23272.field1296.method27451();
-      this.field23272.field1339.method2869();
+      this.field23272.player.method2869();
       int var10 = var1.method17287();
-      this.field23273.method6845(var10, this.field23272.field1339);
-      this.field23272.field1339.field6131 = new Class9451(this.field23272.field1299);
-      this.field23272.field1337.method23127(this.field23272.field1339);
-      this.field23272.field1344 = this.field23272.field1339;
+      this.field23273.method6845(var10, this.field23272.player);
+      this.field23272.player.field6131 = new Class9451(this.field23272.gameSettings);
+      this.field23272.field1337.method23127(this.field23272.player);
+      this.field23272.field1344 = this.field23272.player;
       this.field23272.displayGuiScreen(new Class1312());
-      this.field23272.field1339.method3206(var10);
-      this.field23272.field1339.method2965(var1.method17297());
-      this.field23272.field1339.method5403(var1.method17298());
+      this.field23272.player.method3206(var10);
+      this.field23272.player.method2965(var1.method17297());
+      this.field23272.player.method5403(var1.method17298());
       this.field23272.field1337.method23129(var1.method17290());
       this.field23272.field1337.method23128(var1.method17291());
-      this.field23272.field1299.method37149();
+      this.field23272.gameSettings.method37149();
       this.field23269.method30693(new Class5527(Class5527.field24523, new PacketBuffer(Unpooled.buffer()).method35729(Class8948.method32694())));
       this.field23272.method1575().method28908();
    }
@@ -402,7 +402,7 @@ public class ClientPlayNetHandler implements Class5116 {
       float var11 = (float)(var1.method17598() * 360) / 256.0F;
       if (this.method15792(var1.method17593()) != null) {
          int var12 = var1.method17592();
-         Class1116 var13 = new Class1116(this.field23272.field1338, this.method15792(var1.method17593()).method19966());
+         Class1116 var13 = new Class1116(this.field23272.world, this.method15792(var1.method17593()).method19966());
          var13.method3206(var12);
          var13.method3274(var4, var6, var8);
          var13.method3201(var4, var6, var8);
@@ -433,7 +433,7 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15736(Class5608 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       if (Class974.method4035(var1.method17633())) {
-         this.field23272.field1339.field4902.field5443 = var1.method17633();
+         this.field23272.player.field4902.field5443 = var1.method17633();
       }
    }
 
@@ -483,7 +483,7 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15728(Class5473 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.field1339;
+      ClientPlayerEntity var4 = this.field23272.player;
       Vector3d var5 = var4.method3433();
       boolean var6 = var1.method17220().contains(Class2033.field13198);
       boolean var7 = var1.method17220().contains(Class2033.field13199);
@@ -615,9 +615,9 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15588(ITextComponent var1) {
-      this.field23272.method1505();
+      this.field23272.unloadWorld();
       if (this.field23271 == null) {
-         this.field23272.displayGuiScreen(new Class832(new Class1316(new Class849()), field23268, var1));
+         this.field23272.displayGuiScreen(new Class832(new MultiplayerScreen(new MainMenuScreen()), field23268, var1));
       } else if (!(this.field23271 instanceof Class798)) {
          this.field23272.displayGuiScreen(new Class832(this.field23271, field23268, var1));
       } else {
@@ -635,7 +635,7 @@ public class ClientPlayNetHandler implements Class5116 {
       Entity var4 = this.field23273.method6774(var1.method17186());
       Object var5 = (Class880)this.field23273.method6774(var1.method17187());
       if (var5 == null) {
-         var5 = this.field23272.field1339;
+         var5 = this.field23272.player;
       }
 
       if (var4 != null) {
@@ -665,7 +665,7 @@ public class ClientPlayNetHandler implements Class5116 {
                );
          }
 
-         this.field23272.field1291.method1199(new Class4593(this.field23272.method1554(), this.field23272.method1581(), this.field23273, var4, (Entity)var5));
+         this.field23272.particles.method1199(new Class4593(this.field23272.method1554(), this.field23272.method1581(), this.field23273, var4, (Entity)var5));
          if (!(var4 instanceof ItemEntity)) {
             this.field23273.method6848(var1.method17186());
          } else {
@@ -682,7 +682,7 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15706(SChatPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1298.method5988(var1.method17650(), var1.method17648(), var1.method17651());
+      this.field23272.ingameGUI.method5988(var1.method17650(), var1.method17648(), var1.method17651());
    }
 
    @Override
@@ -696,10 +696,10 @@ public class ClientPlayNetHandler implements Class5116 {
                   if (var1.method17193() != 2) {
                      if (var1.method17193() != 4) {
                         if (var1.method17193() == 5) {
-                           this.field23272.field1291.method1195(var4, Class7940.field34065);
+                           this.field23272.particles.method1195(var4, Class7940.field34065);
                         }
                      } else {
-                        this.field23272.field1291.method1195(var4, Class7940.field34054);
+                        this.field23272.particles.method1195(var4, Class7940.field34054);
                      }
                   } else {
                      PlayerEntity var5 = (PlayerEntity)var4;
@@ -727,7 +727,7 @@ public class ClientPlayNetHandler implements Class5116 {
       double var8 = var1.method17540();
       float var10 = (float)(var1.method17544() * 360) / 256.0F;
       float var11 = (float)(var1.method17545() * 360) / 256.0F;
-      Class880 var12 = (Class880)Class8992.method33216(var1.method17537(), this.field23272.field1338);
+      Class880 var12 = (Class880)Class8992.method33216(var1.method17537(), this.field23272.world);
       if (var12 == null) {
          field23267.warn("Skipping Entity with id {}", var1.method17537());
       } else {
@@ -766,14 +766,14 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15746(Class5577 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1338.method6833(var1.method17514());
-      this.field23272.field1338.method6834(var1.method17515());
+      this.field23272.world.method6833(var1.method17514());
+      this.field23272.world.method6834(var1.method17515());
    }
 
    @Override
    public void method15745(Class5525 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1338.method6882(var1.method17372(), var1.method17373());
+      this.field23272.world.method6882(var1.method17372(), var1.method17373());
    }
 
    @Override
@@ -781,15 +781,15 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17253());
       if (var4 != null) {
-         boolean var5 = var4.method3417(this.field23272.field1339);
+         boolean var5 = var4.method3417(this.field23272.player);
          var4.method3315();
 
          for (int var9 : var1.method17252()) {
             Entity var10 = this.field23273.method6774(var9);
             if (var10 != null) {
                var10.method2758(var4, true);
-               if (var10 == this.field23272.field1339 && !var5) {
-                  this.field23272.field1298.method5985(new TranslationTextComponent("mount.onboard", this.field23272.field1299.field44637.method8521()), false);
+               if (var10 == this.field23272.player && !var5) {
+                  this.field23272.ingameGUI.method5985(new TranslationTextComponent("mount.onboard", this.field23272.gameSettings.field44637.method8521()), false);
                }
             }
          }
@@ -828,10 +828,10 @@ public class ClientPlayNetHandler implements Class5116 {
                var4.method2866(var1.method17179());
             } else {
                byte var5 = 40;
-               this.field23272.field1291.method1196(var4, Class7940.field34097, 30);
+               this.field23272.particles.method1196(var4, Class7940.field34097, 30);
                this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), Class6067.field27147, var4.method2864(), 1.0F, 1.0F, false);
-               if (var4 == this.field23272.field1339) {
-                  this.field23272.field1295.method763(method15785(this.field23272.field1339));
+               if (var4 == this.field23272.player) {
+                  this.field23272.gameRenderer.method763(method15785(this.field23272.player));
                }
             }
          } else {
@@ -843,15 +843,15 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15742(Class5592 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1339.method5391(var1.method17574());
-      this.field23272.field1339.method2932().method37578(var1.method17575());
-      this.field23272.field1339.method2932().method37579(var1.method17576());
+      this.field23272.player.method5391(var1.method17574());
+      this.field23272.player.method2932().method37578(var1.method17575());
+      this.field23272.player.method2932().method37579(var1.method17576());
    }
 
    @Override
    public void method15741(Class5507 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1339.method5402(var1.method17321(), var1.method17322(), var1.method17323());
+      this.field23272.player.method5402(var1.method17321(), var1.method17322(), var1.method17323());
    }
 
    @Override
@@ -859,17 +859,17 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Class8705 var4 = var1.method17433();
       Class9535 var5 = var1.method17432();
-      ClientPlayerEntity var6 = this.field23272.field1339;
+      ClientPlayerEntity var6 = this.field23272.player;
       int var7 = var6.method3205();
       this.field23275 = false;
       if (var4 != var6.field5024.method6813()) {
          Class6886 var8 = this.field23273.method6805();
          boolean var9 = var1.method17437();
          boolean var10 = var1.method17438();
-         Class6606 var11 = new Class6606(this.field23274.method20047(), this.field23274.method20045(), var10);
+         Class6606 var11 = new Class6606(this.field23274.method20047(), this.field23274.isHardcore(), var10);
          this.field23274 = var11;
          this.field23273 = new Class1656(
-            this, var11, var4, var5, this.field23281, this.field23272::method1574, this.field23272.field1287, var9, var1.method17434()
+            this, var11, var4, var5, this.field23281, this.field23272::method1574, this.field23272.worldRenderer, var9, var1.method17434()
          );
          this.field23273.method6859(var8);
          this.field23272.method1504(this.field23273);
@@ -881,7 +881,7 @@ public class ClientPlayNetHandler implements Class5116 {
       this.field23272.field1344 = null;
       ClientPlayerEntity var13 = this.field23272.field1337.func_239167_a_(this.field23273, var6.method5396(), var6.method5397(), var6.method3331(), var6.method3337());
       var13.method3206(var7);
-      this.field23272.field1339 = var13;
+      this.field23272.player = var13;
       if (var4 != var6.field5024.method6813()) {
          this.field23272.method1493().method33668();
       }
@@ -896,11 +896,11 @@ public class ClientPlayNetHandler implements Class5116 {
       var13.method5394(var12);
       this.field23273.method6845(var7, var13);
       var13.field5031 = -180.0F;
-      var13.field6131 = new Class9451(this.field23272.field1299);
+      var13.field6131 = new Class9451(this.field23272.gameSettings);
       this.field23272.field1337.method23127(var13);
       var13.method2965(var6.method2964());
-      var13.method5403(var6.method5404());
-      if (this.field23272.field1355 instanceof Class827) {
+      var13.method5403(var6.isShowDeathScreen());
+      if (this.field23272.currentScreen instanceof DeathScreen) {
          this.field23272.displayGuiScreen((Screen)null);
       }
 
@@ -912,12 +912,12 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15720(Class5515 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Class7782 var4 = new Class7782(
-         this.field23272.field1338, (Entity)null, var1.method17341(), var1.method17342(), var1.method17343(), var1.method17344(), var1.method17345()
+         this.field23272.world, (Entity)null, var1.method17341(), var1.method17342(), var1.method17343(), var1.method17344(), var1.method17345()
       );
       var4.method25785(true);
       this.field23272
-         .field1339
-         .method3434(this.field23272.field1339.method3433().method11339((double)var1.method17338(), (double)var1.method17339(), (double)var1.method17340()));
+         .player
+         .method3434(this.field23272.player.method3433().method11339((double)var1.method17338(), (double)var1.method17339(), (double)var1.method17340()));
    }
 
    @Override
@@ -925,7 +925,7 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17326());
       if (var4 instanceof AbstractHorseEntity) {
-         ClientPlayerEntity var5 = this.field23272.field1339;
+         ClientPlayerEntity var5 = this.field23272.player;
          AbstractHorseEntity var6 = (AbstractHorseEntity)var4;
          Class927 var7 = new Class927(var1.method17325());
          Class5827 var8 = new Class5827(var1.method17324(), var5.field4902, var7, var6);
@@ -943,15 +943,15 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15714(Class5501 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.field1339;
+      ClientPlayerEntity var4 = this.field23272.player;
       ItemStack var5 = var1.method17305();
       int var6 = var1.method17304();
       this.field23272.method1567().method37028(var5);
       if (var1.method17303() != -1) {
          if (var1.method17303() != -2) {
             boolean var7 = false;
-            if (this.field23272.field1355 instanceof Class861) {
-               Class861 var8 = (Class861)this.field23272.field1355;
+            if (this.field23272.currentScreen instanceof Class861) {
+               Class861 var8 = (Class861)this.field23272.currentScreen;
                var7 = var8.method2654() != Class7401.field31677.method23641();
             }
 
@@ -970,7 +970,7 @@ public class ClientPlayNetHandler implements Class5116 {
          } else {
             var4.field4902.method3621(var6, var5);
          }
-      } else if (!(this.field23272.field1355 instanceof Class861)) {
+      } else if (!(this.field23272.currentScreen instanceof Class861)) {
          var4.field4902.method4056(var5);
       }
    }
@@ -979,7 +979,7 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15709(Class5542 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Object var4 = null;
-      ClientPlayerEntity var5 = this.field23272.field1339;
+      ClientPlayerEntity var5 = this.field23272.player;
       if (var1.method17421() != 0) {
          if (var1.method17421() == var5.field4905.field25471) {
             var4 = var5.field4905;
@@ -996,7 +996,7 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15711(Class5614 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.field1339;
+      ClientPlayerEntity var4 = this.field23272.player;
       if (var1.method17644() != 0) {
          if (var1.method17644() == var4.field4905.field25471) {
             var4.field4905.method18137(var1.method17645());
@@ -1015,14 +1015,14 @@ public class ClientPlayNetHandler implements Class5116 {
          ((Class944)var4).method3769(this.field23273, var1.method17271());
       }
 
-      this.field23272.field1339.method2764((Class954)var4);
+      this.field23272.player.method2764((Class954)var4);
    }
 
    @Override
    public void method15703(Class5610 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       BlockPos var4 = var1.method17636();
-      Class944 var5 = this.field23272.field1338.method6759(var4);
+      Class944 var5 = this.field23272.world.method6759(var4);
       int var6 = var1.method17637();
       boolean var7 = var6 == 2 && var5 instanceof Class969;
       if (var6 == 1 && var5 instanceof Class960
@@ -1038,18 +1038,18 @@ public class ClientPlayNetHandler implements Class5116 {
          || var6 == 12 && var5 instanceof Class965
          || var6 == 13 && var5 instanceof Class945
          || var6 == 14 && var5 instanceof Class962) {
-         var5.method3645(this.field23272.field1338.method6738(var4), var1.method17638());
+         var5.method3645(this.field23272.world.method6738(var4), var1.method17638());
       }
 
-      if (var7 && this.field23272.field1355 instanceof Class1326) {
-         ((Class1326)this.field23272.field1355).method6314();
+      if (var7 && this.field23272.currentScreen instanceof Class1326) {
+         ((Class1326)this.field23272.currentScreen).method6314();
       }
    }
 
    @Override
    public void method15713(Class5480 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.field1339;
+      ClientPlayerEntity var4 = this.field23272.player;
       if (var4.field4905 != null && var4.field4905.field25471 == var1.method17239()) {
          var4.field4905.method18138(var1.method17240(), var1.method17241());
       }
@@ -1067,25 +1067,25 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15710(Class5586 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1339.method5390();
+      this.field23272.player.method5390();
    }
 
    @Override
    public void method15704(Class5495 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1338.method6787(var1.method17278(), var1.method17281(), var1.method17279(), var1.method17280());
+      this.field23272.world.method6787(var1.method17278(), var1.method17281(), var1.method17279(), var1.method17280());
    }
 
    @Override
    public void method15701(Class5524 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1338.method6803(var1.method17369(), var1.method17370(), var1.method17371());
+      this.field23272.world.method6803(var1.method17369(), var1.method17370(), var1.method17371());
    }
 
    @Override
    public void method15721(Class5534 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.field1339;
+      ClientPlayerEntity var4 = this.field23272.player;
       Class9385 var5 = var1.method17397();
       float var6 = var1.method17398();
       int var7 = MathHelper.method37767(var6 + 0.5F);
@@ -1101,7 +1101,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                  if (var5 != Class5534.field24569) {
                                     if (var5 != Class5534.field24570) {
                                        if (var5 == Class5534.field24571) {
-                                          this.field23272.field1339.method5403(var6 == 0.0F);
+                                          this.field23272.player.method5403(var6 == 0.0F);
                                        }
                                     } else {
                                        this.field23273.method6746(Class7940.field34064, var4.getPosX(), var4.getPosY(), var4.getPosZ(), 0.0, 0.0, 0.0);
@@ -1138,33 +1138,33 @@ public class ClientPlayNetHandler implements Class5116 {
                               );
                         }
                      } else {
-                        Class9574 var8 = this.field23272.field1299;
+                        Class9574 var8 = this.field23272.gameSettings;
                         if (var6 != 0.0F) {
                            if (var6 != 101.0F) {
                               if (var6 != 102.0F) {
                                  if (var6 != 103.0F) {
                                     if (var6 == 104.0F) {
                                        this.field23272
-                                          .field1298
-                                          .method5989()
+                                          .ingameGUI
+                                          .getChatGUI()
                                           .method5930(new TranslationTextComponent("demo.day.6", var8.field44649.method8521()));
                                     }
                                  } else {
                                     this.field23272
-                                       .field1298
-                                       .method5989()
+                                       .ingameGUI
+                                       .getChatGUI()
                                        .method5930(new TranslationTextComponent("demo.help.inventory", var8.field44639.method8521()));
                                  }
                               } else {
                                  this.field23272
-                                    .field1298
-                                    .method5989()
+                                    .ingameGUI
+                                    .getChatGUI()
                                     .method5930(new TranslationTextComponent("demo.help.jump", var8.field44636.method8521()));
                               }
                            } else {
                               this.field23272
-                                 .field1298
-                                 .method5989()
+                                 .ingameGUI
+                                 .getChatGUI()
                                  .method5930(
                                     new TranslationTextComponent(
                                        "demo.help.movement",
@@ -1182,21 +1182,21 @@ public class ClientPlayNetHandler implements Class5116 {
                   } else if (var7 != 0) {
                      if (var7 == 1) {
                         this.field23272
-                           .displayGuiScreen(new Class1342(true, () -> this.field23272.field1339.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277))));
+                           .displayGuiScreen(new Class1342(true, () -> this.field23272.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277))));
                      }
                   } else {
-                     this.field23272.field1339.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277));
+                     this.field23272.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277));
                      this.field23272.displayGuiScreen(new Class1312());
                   }
                } else {
                   this.field23272.field1337.method23129(Class1894.method8159(var7));
                }
             } else {
-               this.field23273.method6788().method20044(false);
+               this.field23273.getWorldInfo().method20044(false);
                this.field23273.method6793(1.0F);
             }
          } else {
-            this.field23273.method6788().method20044(true);
+            this.field23273.getWorldInfo().method20044(true);
             this.field23273.method6793(0.0F);
          }
       } else {
@@ -1207,9 +1207,9 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15708(Class5609 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class194 var4 = this.field23272.field1295.method756();
+      Class194 var4 = this.field23272.gameRenderer.method756();
       String var5 = Class3316.method11864(var1.method17634());
-      Class7529 var6 = this.field23272.field1338.method6798(var5);
+      Class7529 var6 = this.field23272.world.method6798(var5);
       if (var6 == null) {
          var6 = new Class7529(var5);
          if (var4.method595(var5) != null) {
@@ -1219,7 +1219,7 @@ public class ClientPlayNetHandler implements Class5116 {
             }
          }
 
-         this.field23272.field1338.method6799(var6);
+         this.field23272.world.method6799(var6);
       }
 
       var1.method17635(var6);
@@ -1230,9 +1230,9 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15725(Class5481 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       if (!var1.method17242()) {
-         this.field23272.field1338.method6999(var1.method17243(), var1.method17245(), var1.method17244());
+         this.field23272.world.method6999(var1.method17243(), var1.method17245(), var1.method17244());
       } else {
-         this.field23272.field1338.method6801(var1.method17243(), var1.method17245(), var1.method17244());
+         this.field23272.world.method6801(var1.method17243(), var1.method17245(), var1.method17244());
       }
    }
 
@@ -1278,7 +1278,7 @@ public class ClientPlayNetHandler implements Class5116 {
       this.field23284.method1039(var1.method17331());
       Class7010 var4 = this.field23272.<Class9266>method1557(Class266.field1032);
       var4.method21735();
-      Class6943 var5 = this.field23272.field1339.method5397();
+      Class6943 var5 = this.field23272.player.method5397();
       var5.method21383(this.field23284.method1036());
       var5.method21386().forEach(var4::method21734);
       var4.method21736();
@@ -1289,7 +1289,7 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Vector3d var4 = var1.method17624(this.field23273);
       if (var4 != null) {
-         this.field23272.field1339.method2787(var1.method17623(), var4);
+         this.field23272.player.method2787(var1.method17623(), var4);
       }
    }
 
@@ -1308,18 +1308,18 @@ public class ClientPlayNetHandler implements Class5116 {
       for (Entry var5 : var1.method17459().entrySet()) {
          Class9007 var6 = (Class9007)var5.getKey();
          int var7 = (Integer)var5.getValue();
-         this.field23272.field1339.method5396().method28959(this.field23272.field1339, var6, var7);
+         this.field23272.player.method5396().method28959(this.field23272.player, var6, var7);
       }
 
-      if (this.field23272.field1355 instanceof Class1306) {
-         ((Class1306)this.field23272.field1355).method6181();
+      if (this.field23272.currentScreen instanceof Class1306) {
+         ((Class1306)this.field23272.currentScreen).method6181();
       }
    }
 
    @Override
    public void method15700(Class5572 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class6943 var4 = this.field23272.field1339.method5397();
+      Class6943 var4 = this.field23272.player.method5397();
       var4.method21373(var1.method17501());
       Class2338 var5 = var1.method17502();
       switch (Class8047.field34564[var5.ordinal()]) {
@@ -1348,8 +1348,8 @@ public class ClientPlayNetHandler implements Class5116 {
       }
 
       var4.method21386().forEach(var1x -> var1x.method34887(var4));
-      if (this.field23272.field1355 instanceof Class854) {
-         ((Class854)this.field23272.field1355).method2631();
+      if (this.field23272.currentScreen instanceof Class854) {
+         ((Class854)this.field23272.currentScreen).method2631();
       }
    }
 
@@ -1390,11 +1390,11 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       if (var1.field24693 == Class1900.field11157) {
          Entity var4 = this.field23273.method6774(var1.field24694);
-         if (var4 == this.field23272.field1339) {
-            if (!this.field23272.field1339.method5404()) {
-               this.field23272.field1339.method2903();
+         if (var4 == this.field23272.player) {
+            if (!this.field23272.player.isShowDeathScreen()) {
+               this.field23272.player.respawnPlayer();
             } else {
-               this.field23272.displayGuiScreen(new Class827(var1.field24697, this.field23273.method6788().method20045()));
+               this.field23272.displayGuiScreen(new DeathScreen(var1.field24697, this.field23273.getWorldInfo().isHardcore()));
             }
          }
       }
@@ -1437,21 +1437,21 @@ public class ClientPlayNetHandler implements Class5116 {
             var6 = var7;
             break;
          case 3:
-            this.field23272.field1298.method5985(var7, false);
+            this.field23272.ingameGUI.method5985(var7, false);
             return;
          case 4:
-            this.field23272.field1298.method5986((ITextComponent)null, (ITextComponent)null, -1, -1, -1);
-            this.field23272.field1298.method5960();
+            this.field23272.ingameGUI.method5986((ITextComponent)null, (ITextComponent)null, -1, -1, -1);
+            this.field23272.ingameGUI.method5960();
             return;
       }
 
-      this.field23272.field1298.method5986(var5, var6, var1.method17571(), var1.method17572(), var1.method17573());
+      this.field23272.ingameGUI.method5986(var5, var6, var1.method17571(), var1.method17572(), var1.method17573());
    }
 
    @Override
    public void method15760(Class5531 var1) {
-      this.field23272.field1298.method5993().method5924(!var1.method17391().getString().isEmpty() ? var1.method17391() : null);
-      this.field23272.field1298.method5993().method5923(!var1.method17392().getString().isEmpty() ? var1.method17392() : null);
+      this.field23272.ingameGUI.method5993().method5924(!var1.method17391().getString().isEmpty() ? var1.method17391() : null);
+      this.field23272.ingameGUI.method5993().method5923(!var1.method17392().getString().isEmpty() ? var1.method17392() : null);
    }
 
    @Override
@@ -1508,7 +1508,7 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15730(Class5599 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.field1339;
+      ClientPlayerEntity var4 = this.field23272.player;
       var4.field4919.field29607 = var1.method17603();
       var4.field4919.field29609 = var1.method17605();
       var4.field4919.field29606 = var1.method17602();
@@ -1521,9 +1521,9 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15747(Class5584 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272
-         .field1338
+         .world
          .method6743(
-            this.field23272.field1339,
+            this.field23272.player,
             var1.method17551(),
             var1.method17552(),
             var1.method17553(),
@@ -1539,7 +1539,7 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17443());
       if (var4 != null) {
-         this.field23272.field1338.method6744(this.field23272.field1339, var4, var1.method17441(), var1.method17442(), var1.method17444(), var1.method17445());
+         this.field23272.world.method6744(this.field23272.player, var4, var1.method17441(), var1.method17442(), var1.method17444(), var1.method17445());
       }
    }
 
@@ -1651,24 +1651,24 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15762(Class5472 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.field1298.method5995().method5955(var1);
+      this.field23272.ingameGUI.method5995().method5955(var1);
    }
 
    @Override
    public void method15763(Class5574 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       if (var1.method17507() != 0) {
-         this.field23272.field1339.method2976().method19638(var1.method17506(), var1.method17507());
+         this.field23272.player.method2976().method19638(var1.method17506(), var1.method17507());
       } else {
-         this.field23272.field1339.method2976().method19639(var1.method17506());
+         this.field23272.player.method2976().method19639(var1.method17506());
       }
    }
 
    @Override
    public void method15764(Class5536 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23272.field1339.method3415();
-      if (var4 != this.field23272.field1339 && var4.method3418()) {
+      Entity var4 = this.field23272.player.method3415();
+      if (var4 != this.field23272.player && var4.method3418()) {
          var4.method3269(var1.method17401(), var1.method17402(), var1.method17403(), var1.method17404(), var1.method17405());
          this.field23269.method30693(new Class5483(var4));
       }
@@ -1677,7 +1677,7 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15775(Class5509 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ItemStack var4 = this.field23272.field1339.getHeldItem(var1.method17327());
+      ItemStack var4 = this.field23272.player.getHeldItem(var1.method17327());
       if (var4.method32107() == Class8514.field38048) {
          this.field23272.displayGuiScreen(new Class870(new Class7501(var4)));
       }
@@ -1692,7 +1692,7 @@ public class ClientPlayNetHandler implements Class5116 {
       try {
          var5 = var1.method17394();
          if (Class5532.field24537.equals(var4)) {
-            this.field23272.field1339.method5394(var5.method35728(32767));
+            this.field23272.player.method5394(var5.method35728(32767));
          } else if (Class5532.field24538.equals(var4)) {
             int var6 = var5.readInt();
             float var7 = var5.readFloat();
@@ -2077,11 +2077,11 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15767(Class5589 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class5812 var4 = this.field23272.field1339.field4905;
-      if (var4.field25471 == var1.method17564() && var4.method18140(this.field23272.field1339)) {
+      Class5812 var4 = this.field23272.player.field4905;
+      if (var4.field25471 == var1.method17564() && var4.method18140(this.field23272.player)) {
          this.field23284.method1035(var1.method17563()).ifPresent(var2 -> {
-            if (this.field23272.field1355 instanceof Class854) {
-               Class1254 var5 = ((Class854)this.field23272.field1355).method2632();
+            if (this.field23272.currentScreen instanceof Class854) {
+               Class1254 var5 = ((Class854)this.field23272.currentScreen).method2632();
                var5.method5858((Class4843<?>)var2, var4.field25468);
             }
          });
@@ -2107,7 +2107,7 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15777(Class5504 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class5812 var4 = this.field23272.field1339.field4905;
+      Class5812 var4 = this.field23272.player.field4905;
       if (var1.method17309() == var4.field25471 && var4 instanceof Class5826) {
          ((Class5826)var4).method18216(new Class46(var1.method17310().method166()));
          ((Class5826)var4).method18207(var1.method17312());
@@ -2149,7 +2149,7 @@ public class ClientPlayNetHandler implements Class5116 {
    }
 
    @Override
-   public Class8586 method15589() {
+   public NetworkManager method15589() {
       return this.field23269;
    }
 

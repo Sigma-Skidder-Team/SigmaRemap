@@ -13,10 +13,10 @@ import org.apache.logging.log4j.Logger;
 import javax.annotation.Nullable;
 import java.util.*;
 
-public class Class878 extends PlayerEntity implements Class876 {
+public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    private static final Logger field4854 = LogManager.getLogger();
    public ServerPlayNetHandler field4855;
-   public final Class314 field4856;
+   public final MinecraftServer field4856;
    public final Class9081 field4857;
    private final List<Integer> field4858 = Lists.newLinkedList();
    private final Class8019 field4859;
@@ -34,7 +34,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    private int field4871 = 60;
    private ChatVisibility field4872;
    private boolean field4873 = true;
-   private long field4874 = Util.method38487();
+   private long field4874 = Util.milliTime();
    private Entity field4875;
    private boolean field4876;
    private boolean field4877;
@@ -54,7 +54,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    public int field4891;
    public boolean queuedEndExit;
 
-   public Class878(Class314 var1, ServerWorld var2, GameProfile var3, Class9081 var4) {
+   public ServerPlayerEntity(MinecraftServer var1, ServerWorld var2, GameProfile var3, Class9081 var4) {
       super(var2, var2.method6947(), var2.method6948(), var3);
       var4.field41571 = this;
       this.field4857 = var4;
@@ -389,7 +389,7 @@ public class Class878 extends PlayerEntity implements Class876 {
             );
          Class8219 var6 = this.method3344();
          if (var6 == null || var6.method28583() == Class2225.field14554) {
-            this.field4856.getPlayerList().method19484(var5, ChatType.SYSTEM, Util.field45724);
+            this.field4856.getPlayerList().method19484(var5, ChatType.SYSTEM, Util.DUMMY_UUID);
          } else if (var6.method28583() != Class2225.field14556) {
             if (var6.method28583() == Class2225.field14557) {
                this.field4856.getPlayerList().method19459(this, var5);
@@ -532,7 +532,7 @@ public class Class878 extends PlayerEntity implements Class876 {
 
          return this;
       } else {
-         Class6612 var6 = var1.method6788();
+         Class6612 var6 = var1.getWorldInfo();
          this.field4855
             .sendPacket(
                new Class5545(
@@ -553,20 +553,20 @@ public class Class878 extends PlayerEntity implements Class876 {
          this.field5041 = false;
          Class9761 var8 = this.method2744(var1);
          if (var8 != null) {
-            var4.method6820().method22503("moving");
+            var4.method6820().startSection("moving");
             if (var5 == World.field8999 && var1.method6813() == World.field9000) {
                this.field4882 = this.getPositionVec();
             } else if (var1.method6813() == World.THE_END) {
                this.method2746(var1, new BlockPos(var8.field45665));
             }
 
-            var4.method6820().method22505();
-            var4.method6820().method22503("placing");
+            var4.method6820().endSection();
+            var4.method6820().startSection("placing");
             this.method3268(var1);
             var1.method6920(this);
             this.method3214(var8.field45667, var8.field45668);
             this.method2794(var8.field45665.field18048, var8.field45665.field18049, var8.field45665.field18050);
-            var4.method6820().method22505();
+            var4.method6820().endSection();
             this.method2748(var4);
             this.field4857.method33871(var1);
             this.field4855.sendPacket(new Class5599(this.field4919));
@@ -630,7 +630,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public boolean method2749(Class878 var1) {
+   public boolean method2749(ServerPlayerEntity var1) {
       if (!var1.method2800()) {
          return !this.method2800() ? super.method2749(var1) : false;
       } else {
@@ -971,7 +971,7 @@ public class Class878 extends PlayerEntity implements Class876 {
 
    @Override
    public void method2785(ITextComponent var1, boolean var2) {
-      this.field4855.sendPacket(new SChatPacket(var1, !var2 ? ChatType.CHAT : ChatType.GAME_INFO, Util.field45724));
+      this.field4855.sendPacket(new SChatPacket(var1, !var2 ? ChatType.CHAT : ChatType.GAME_INFO, Util.DUMMY_UUID));
    }
 
    @Override
@@ -994,7 +994,7 @@ public class Class878 extends PlayerEntity implements Class876 {
       this.field4855.sendPacket(new Class5602(var1, var2, var3));
    }
 
-   public void method2789(Class878 var1, boolean var2) {
+   public void method2789(ServerPlayerEntity var1, boolean var2) {
       if (!var2) {
          if (this.field5024.method6789().method17135(Class5462.field24225) || var1.method2800()) {
             this.field4902.method4060(var1.field4902);
@@ -1117,7 +1117,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method1328(ITextComponent var1, UUID var2) {
+   public void sendMessage(ITextComponent var1, UUID var2) {
       this.method2802(var1, ChatType.SYSTEM, var2);
    }
 
@@ -1142,7 +1142,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    }
 
    public String method2803() {
-      String var3 = this.field4855.field23224.method30700().toString();
+      String var3 = this.field4855.netManager.method30700().toString();
       var3 = var3.substring(var3.indexOf("/") + 1);
       return var3.substring(0, var3.indexOf(":"));
    }
@@ -1168,7 +1168,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    }
 
    public void markPlayerActive() {
-      this.field4874 = Util.method38487();
+      this.field4874 = Util.milliTime();
    }
 
    public Class8287 method2809() {
@@ -1262,7 +1262,7 @@ public class Class878 extends PlayerEntity implements Class876 {
       this.method2759();
       if (var1 != this.field5024) {
          ServerWorld var12 = this.getServerWorld();
-         Class6612 var13 = var1.method6788();
+         Class6612 var13 = var1.getWorldInfo();
          this.field4855
             .sendPacket(
                new Class5545(
@@ -1319,7 +1319,7 @@ public class Class878 extends PlayerEntity implements Class876 {
       } else {
          boolean var8 = var2.equals(this.field4885) && var1.equals(this.field4884);
          if (var5 && !var8) {
-            this.method1328(new TranslationTextComponent("block.minecraft.set_spawn"), Util.field45724);
+            this.sendMessage(new TranslationTextComponent("block.minecraft.set_spawn"), Util.DUMMY_UUID);
          }
 
          this.field4885 = var2;

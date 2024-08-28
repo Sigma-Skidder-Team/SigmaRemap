@@ -9,7 +9,7 @@ public class Class9162 {
    public Class9162(String var1, String var2) {
       this.field42062 = var1;
       this.field42063 = var2;
-      this.field42064 = Util.method38487();
+      this.field42064 = Util.milliTime();
    }
 
    public String method34207() {
@@ -21,6 +21,6 @@ public class Class9162 {
    }
 
    public void method34209() {
-      this.field42064 = Util.method38487();
+      this.field42064 = Util.milliTime();
    }
 }

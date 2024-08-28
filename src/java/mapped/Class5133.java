@@ -53,24 +53,24 @@ public class Class5133 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
       RenderSystem.method27862();
       this.method15875();
       this.method15876(var3, var5, var7);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
       RenderSystem.popMatrix();
-      if (!this.field23330.field1339.method2800()) {
+      if (!this.field23330.player.method2800()) {
          this.method15892();
       }
    }
 
    private void method15875() {
       this.field23332.entrySet().removeIf(var1 -> {
-         Entity var4 = this.field23330.field1338.method6774(var1.getValue().field40363);
+         Entity var4 = this.field23330.world.method6774(var1.getValue().field40363);
          return var4 == null || var4.field5041;
       });
    }
@@ -246,7 +246,7 @@ public class Class5133 implements Class5119 {
    }
 
    private boolean method15888(Class8918 var1) {
-      ClientPlayerEntity var4 = this.field23330.field1339;
+      ClientPlayerEntity var4 = this.field23330.player;
       BlockPos var5 = new BlockPos(var4.getPosX(), var1.field40369.method11321(), var4.getPosZ());
       BlockPos var6 = new BlockPos(var1.field40369);
       return var5.method8316(var6, 30.0);

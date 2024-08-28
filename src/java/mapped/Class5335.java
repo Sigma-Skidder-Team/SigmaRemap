@@ -21,12 +21,12 @@ public class Class5335 extends Class5325 {
 
         while (var6.hasNext()) {
             Entity var7 = (Entity) var6.next();
-            if (var7 != mc.field1339) {
+            if (var7 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var7)) {
                     if (var7 instanceof Class880) {
                         if (((Class880) var7).method3042() != 0.0F) {
-                            if (!(mc.field1339.method3275(var7) > var1)) {
-                                if (mc.field1339.method3026((Class880) var7)) {
+                            if (!(mc.player.method3275(var7) > var1)) {
+                                if (mc.player.method3026((Class880) var7)) {
                                     if (!(var7 instanceof Class1005)) {
                                         if (!this.method15974("Players") && var7 instanceof PlayerEntity) {
                                             var6.remove();
@@ -36,14 +36,14 @@ public class Class5335 extends Class5325 {
                                             var6.remove();
                                         } else if (!this.method15974("Animals/Monsters") && !(var7 instanceof PlayerEntity)) {
                                             var6.remove();
-                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var7)) {
+                                        } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var7)) {
                                             var6.remove();
                                         } else if (!var7.method3362()) {
                                             if (var7 instanceof PlayerEntity
                                                     && Class8781.method31662((PlayerEntity) var7)
                                                     && Client.getInstance().getModuleManager().method14662(Class5275.class).method15996()) {
                                                 var6.remove();
-                                            } else if (var5 == null || mc.field1339.method3275(var7) < mc.field1339.method3275(var5)) {
+                                            } else if (var5 == null || mc.player.method3275(var7) < mc.player.method3275(var5)) {
                                                 var5 = var7;
                                             }
                                         } else {

@@ -13,9 +13,9 @@ public class Class5301 extends Module {
     @EventTarget
     public void method16656(Class4404 var1) {
         if (this.method15996()) {
-            if (mc.field1339.field5036) {
+            if (mc.player.field5036) {
                 if (!Class5628.method17729()) {
-                    mc.field1339.method2914();
+                    mc.player.method2914();
                 }
             }
         }

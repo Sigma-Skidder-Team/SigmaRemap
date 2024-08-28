@@ -75,11 +75,11 @@ public class Class8958 {
          YggdrasilAuthenticationService var25 = new YggdrasilAuthenticationService(Proxy.NO_PROXY);
          MinecraftSessionService var26 = var25.createMinecraftSessionService();
          GameProfileRepository var27 = var25.createProfileRepository();
-         Class8805 var28 = new Class8805(var27, new File(var24, Class314.field1209.getName()));
+         Class8805 var28 = new Class8805(var27, new File(var24, MinecraftServer.field1209.getName()));
          String var29 = (String)Optional.<Object>ofNullable(var18.valueOf(var14)).orElse(var21.method20779().field43798);
-         Class9774 var30 = Class9774.method38455(var24.toPath());
+         SaveFormat var30 = SaveFormat.method38455(var24.toPath());
          Class1814 var31 = var30.method38468(var29);
-         Class314.method1278(var31);
+         MinecraftServer.method1278(var31);
          Class7818 var32 = var31.method7999();
          boolean var33 = var18.has(var10);
          if (var33) {
@@ -87,7 +87,7 @@ public class Class8958 {
          }
 
          Class313 var34 = new Class313(new Class7650(), new Class7652(var31.method7991(Class5137.field23352).toFile(), Class7725.field33172));
-         Class7818 var35 = Class314.method1399(var34, var32 == null ? Class7818.field33531 : var32, var33);
+         Class7818 var35 = MinecraftServer.method1399(var34, var32 == null ? Class7818.field33531 : var32, var33);
          CompletableFuture var36 = Class1701.method7338(
             var34.method1273(), Class2085.field13576, var21.method20779().field43817, Util.method38492(), Runnable::run
          );
@@ -110,7 +110,7 @@ public class Class8958 {
             Class8898 var40;
             Class7846 var41;
             if (var18.has(var6)) {
-               var40 = Class314.field1210;
+               var40 = MinecraftServer.field1210;
                var41 = Class7846.method26256(var19);
             } else {
                Class9437 var42 = var21.method20779();
@@ -127,7 +127,7 @@ public class Class8958 {
 
          var31.method8000(var19, (Class6611)var39);
          Class6611 var45 = var39;
-         Class1645 var46 = Class314.<Class1645>method1275(var16x -> {
+         Class1645 var46 = MinecraftServer.<Class1645>method1275(var16x -> {
             Class1645 var19x = new Class1645(var16x, var19, var31, var34, var37, var45, var21, Class4497.method14181(), var26, var27, var28, Class7244::new);
             var19x.method1333((String)var18.valueOf(var12));
             var19x.method1331((Integer)var18.valueOf(var15));

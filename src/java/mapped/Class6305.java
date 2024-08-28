@@ -8,11 +8,11 @@ import java.io.IOException;
 public class Class6305 implements ActionListener {
    private final String field27784;
    private final File field27785;
-   private final Class9774 field27786;
+   private final SaveFormat field27786;
    private final Class7155 field27787;
    public final Class9478 field27788;
 
-   public Class6305(Class9478 var1, String var2, File var3, Class9774 var4, Class7155 var5) {
+   public Class6305(Class9478 var1, String var2, File var3, SaveFormat var4, Class7155 var5) {
       this.field27788 = var1;
       this.field27784 = var2;
       this.field27785 = var3;

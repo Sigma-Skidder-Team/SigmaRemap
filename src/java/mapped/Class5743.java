@@ -17,14 +17,14 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
       this.method17880(new Class235<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>>(this));
    }
 
-   public void method17924(AbstractClientPlayerEntity var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6, float var7, float var8) {
+   public void method17924(AbstractClientPlayerEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6, float var7, float var8) {
       Class2797 var11 = this.field25086;
       var11.method11009(false);
       var11.field17432.field31039 = true;
       float var12 = var1.field4967;
       float var13 = var1.field5032;
       float var14 = Class8603.method30791(var8, 0.15, 0.84, 0.34, 1.0);
-      float var15 = ((float) Minecraft.getInstance().field1339.field5055 + Minecraft.getInstance().method1562()) * 3.0F + var14 * 160.0F;
+      float var15 = ((float) Minecraft.getInstance().player.field5055 + Minecraft.getInstance().method1562()) * 3.0F + var14 * 160.0F;
       var1.field4967 = var15;
       var1.field5032 = -10.0F;
       this.field25096 = var7;

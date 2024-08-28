@@ -14,19 +14,19 @@ public class Class5294 extends Module {
 
     @EventTarget
     private void method16626(Class4415 var1) {
-        if (!this.method15996() || mc.field1339 == null) {
+        if (!this.method15996() || mc.player == null) {
         }
     }
 
     @EventTarget
     private void method16627(Class4430 var1) {
-        if (!this.method15996() || mc.field1339 == null) {
+        if (!this.method15996() || mc.player == null) {
         }
     }
 
     @EventTarget
     private void method16628(Class4429 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (var1.method13976() != Class2116.field13790 && var1.method13976() != Class2116.field13791) {
             }
         }

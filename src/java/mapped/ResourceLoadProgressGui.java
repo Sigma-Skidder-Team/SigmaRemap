@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.function.Consumer;
 
-public class Class1192 extends Class1191 {
+public class ResourceLoadProgressGui extends LoadingGui {
    private static final ResourceLocation field6435 = new ResourceLocation("textures/gui/title/mojangstudios.png");
    private static final int field6436 = Class9470.method36520(255, 239, 50, 61);
    private static final int field6437 = field6436 & 16777215;
@@ -23,7 +23,7 @@ public class Class1192 extends Class1191 {
    private Class8069 field6449 = null;
    private boolean field6450 = false;
 
-   public Class1192(Minecraft var1, Class8335 var2, Consumer<Optional<Throwable>> var3, boolean var4) {
+   public ResourceLoadProgressGui(Minecraft var1, Class8335 var2, Consumer<Optional<Throwable>> var3, boolean var4) {
       this.field6438 = var1;
       this.field6439 = var2;
       this.field6440 = var3;
@@ -35,11 +35,11 @@ public class Class1192 extends Class1191 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
-      int var7 = this.field6438.method1580().method8045();
-      int var8 = this.field6438.method1580().method8046();
-      long var9 = Util.method38487();
-      if (this.field6441 && (this.field6439.method29225() || this.field6438.field1355 != null) && this.field6444 == -1L) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+      int var7 = this.field6438.method1580().getScaledWidth();
+      int var8 = this.field6438.method1580().getScaledHeight();
+      long var9 = Util.milliTime();
+      if (this.field6441 && (this.field6439.method29225() || this.field6438.currentScreen != null) && this.field6444 == -1L) {
          this.field6444 = var9;
       }
 
@@ -48,16 +48,16 @@ public class Class1192 extends Class1191 {
       float var14;
       if (var11 >= 1.0F) {
          this.field6450 = true;
-         if (this.field6438.field1355 != null) {
-            this.field6438.field1355.method1923(var1, 0, 0, var4);
+         if (this.field6438.currentScreen != null) {
+            this.field6438.currentScreen.method1923(var1, 0, 0, var4);
          }
 
          int var13 = MathHelper.method37773((1.0F - MathHelper.method37777(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
          method5686(var1, 0, 0, var7, var8, this.field6445 | var13 << 24);
          var14 = 1.0F - MathHelper.method37777(var11 - 1.0F, 0.0F, 1.0F);
       } else if (this.field6441) {
-         if (this.field6438.field1355 != null && var12 < 1.0F) {
-            this.field6438.field1355.method1923(var1, var2, var3, var4);
+         if (this.field6438.currentScreen != null && var12 < 1.0F) {
+            this.field6438.currentScreen.method1923(var1, var2, var3, var4);
          }
 
          int var27 = MathHelper.method37774(MathHelper.method37778((double)var12, 0.15, 1.0) * 255.0);
@@ -68,9 +68,9 @@ public class Class1192 extends Class1191 {
          var14 = 1.0F;
       }
 
-      int var28 = (int)((double)this.field6438.method1580().method8045() * 0.5);
-      int var15 = (int)((double)this.field6438.method1580().method8046() * 0.5);
-      double var16 = Math.min((double)this.field6438.method1580().method8045() * 0.75, (double)this.field6438.method1580().method8046()) * 0.25;
+      int var28 = (int)((double)this.field6438.method1580().getScaledWidth() * 0.5);
+      int var15 = (int)((double)this.field6438.method1580().getScaledHeight() * 0.5);
+      double var16 = Math.min((double)this.field6438.method1580().getScaledWidth() * 0.75, (double)this.field6438.method1580().getScaledHeight()) * 0.25;
       int var18 = (int)(var16 * 0.5);
       double var19 = var16 * 4.0;
       int var21 = (int)(var19 * 0.5);
@@ -96,7 +96,7 @@ public class Class1192 extends Class1191 {
       RenderSystem.method27938();
       RenderSystem.method27939();
       RenderSystem.disableBlend();
-      int var23 = (int)((double)this.field6438.method1580().method8046() * 0.8325);
+      int var23 = (int)((double)this.field6438.method1580().getScaledHeight() * 0.8325);
       float var24 = this.field6439.method29224();
       this.field6442 = MathHelper.method37777(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
       Class9299.field42771.method20217();
@@ -105,11 +105,11 @@ public class Class1192 extends Class1191 {
       }
 
       if (var11 >= 2.0F) {
-         this.field6438.setLoadingGui((Class1191)null);
+         this.field6438.setLoadingGui((LoadingGui)null);
       }
 
       if (this.field6443 == -1L && this.field6439.method29226() && (!this.field6441 || var12 >= 2.0F)) {
-         this.field6443 = Util.method38487();
+         this.field6443 = Util.milliTime();
 
          try {
             this.field6439.method29227();
@@ -118,13 +118,13 @@ public class Class1192 extends Class1191 {
             this.field6440.accept(Optional.<Throwable>of(var26));
          }
 
-         if (this.field6438.field1355 != null) {
-            this.field6438.field1355.method2467(this.field6438, this.field6438.method1580().method8045(), this.field6438.method1580().method8046());
+         if (this.field6438.currentScreen != null) {
+            this.field6438.currentScreen.method2467(this.field6438, this.field6438.method1580().getScaledWidth(), this.field6438.method1580().getScaledHeight());
          }
       }
    }
 
-   private void method5678(Class9332 var1, int var2, int var3, int var4, int var5, float var6) {
+   private void method5678(MatrixStack var1, int var2, int var3, int var4, int var5, float var6) {
       int var9 = MathHelper.method37773((float)(var4 - var2 - 2) * this.field6442);
       int var10 = Math.round(var6 * 255.0F);
       if (this.field6446 != this.field6445) {

@@ -89,7 +89,7 @@ public class Class8862 {
       }
    }
 
-   public static void method32263(World var0, TextureManager var1, Class9332 var2, float var3) {
+   public static void method32263(World var0, TextureManager var1, MatrixStack var2, float var3) {
       if (field40050 != null) {
          int var6 = Class8509.method30144(var0);
          if (var6 >= 0 && var6 < field40050.length) {

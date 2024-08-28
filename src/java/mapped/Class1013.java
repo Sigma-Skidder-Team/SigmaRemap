@@ -130,8 +130,8 @@ public abstract class Class1013 extends Class1018 {
    public void method4399(PlayerEntity var1) {
       this.method4379(true);
       this.method4398(var1.getUniqueID());
-      if (var1 instanceof Class878) {
-         CriteriaTriggers.field44488.method15115((Class878)var1, this);
+      if (var1 instanceof ServerPlayerEntity) {
+         CriteriaTriggers.field44488.method15115((ServerPlayerEntity)var1, this);
       }
    }
 
@@ -188,8 +188,8 @@ public abstract class Class1013 extends Class1018 {
 
    @Override
    public void method2737(Class8654 var1) {
-      if (!this.field5024.field9020 && this.field5024.method6789().method17135(Class5462.field24234) && this.method4400() instanceof Class878) {
-         this.method4400().method1328(this.method3073().method27600(), Util.field45724);
+      if (!this.field5024.field9020 && this.field5024.method6789().method17135(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
+         this.method4400().sendMessage(this.method3073().method27600(), Util.DUMMY_UUID);
       }
 
       super.method2737(var1);

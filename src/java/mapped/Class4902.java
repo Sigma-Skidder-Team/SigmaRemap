@@ -21,7 +21,7 @@ public class Class4902 extends Class4874<Class4467> {
       return new Class4467(var2, var6, var7);
    }
 
-   public void method15149(Class878 var1, Collection<Entity> var2) {
+   public void method15149(ServerPlayerEntity var1, Collection<Entity> var2) {
       ArrayList var5 = Lists.newArrayList();
       HashSet var6 = Sets.newHashSet();
 

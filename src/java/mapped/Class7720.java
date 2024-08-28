@@ -223,7 +223,7 @@ public class Class7720 {
       return var1;
    }
 
-   public void method25513(World var1, Class9332 var2, int var3, float var4, float var5, float var6) {
+   public void method25513(World var1, MatrixStack var2, int var3, float var4, float var5, float var6) {
       float var9 = this.method25514(var1);
       float var10 = this.method25516(var5, var6);
       float var11 = this.method25517(var3);

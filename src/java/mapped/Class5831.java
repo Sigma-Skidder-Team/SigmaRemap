@@ -50,7 +50,7 @@ public abstract class Class5831 extends Class5828<Class920> {
    }
 
    @Override
-   public void method18219(boolean var1, Class4843<?> var2, Class878 var3) {
+   public void method18219(boolean var1, Class4843<?> var2, ServerPlayerEntity var3) {
       new Class1261(this).method5868(var3, var2, var1);
    }
 

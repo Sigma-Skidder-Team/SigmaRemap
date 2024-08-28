@@ -99,9 +99,9 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public void method4258() {
-      this.field5024.method6820().method22503("hoglinBrain");
+      this.field5024.method6820().startSection("hoglinBrain");
       this.method2992().method21432((ServerWorld)this.field5024, this);
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
       Class9069.method33784(this);
       if (!this.method5087()) {
          this.field5978 = 0;

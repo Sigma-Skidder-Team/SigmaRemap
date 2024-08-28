@@ -22,8 +22,8 @@ public class Class4315 extends Class4307 {
    public Class4315() {
       super("KeybindManager");
       this.field21035 = new Date();
-      int var3 = Math.max(300, Math.min(850, Minecraft.getInstance().field1283.method8043() - 40));
-      int var4 = Math.max(200, Math.min(550, Minecraft.getInstance().field1283.method8044() - 80));
+      int var3 = Math.max(300, Math.min(850, Minecraft.getInstance().mainWindow.method8043() - 40));
+      int var4 = Math.max(200, Math.min(550, Minecraft.getInstance().mainWindow.method8044() - 80));
       this.method13230(this.field21036 = new Class4251(this, "mapView", (this.field20897 - var3) / 2, (this.field20898 - var4) / 2, var3, var4));
       this.field21036.field20614.method13080((var2, var3x, var4x, var5) -> this.method13222(new Class774(this, this, var3x, var4x, var5)));
       this.field21036.field20614.method13082(var1 -> this.method13390());

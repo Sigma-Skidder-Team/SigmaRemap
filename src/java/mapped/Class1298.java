@@ -85,7 +85,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    public void method6152(int var1, int var2, int var3, float var4) {
    }
 
-   public abstract void method6153(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8);
+   public abstract void method6153(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8);
 
    public void method6154(int var1, int var2, Class9352 var3) {
    }
@@ -138,7 +138,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6881) {
          this.method6151();
          int var7 = this.method6170();
@@ -225,7 +225,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
          }
 
          this.method6156(var2, var3);
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.method27866(7424);
          RenderSystem.disableAlphaTest();
          RenderSystem.disableBlend();
@@ -357,7 +357,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
       return 220;
    }
 
-   public void method6168(Class9332 var1, int var2, int var3, int var4, int var5, float var6) {
+   public void method6168(MatrixStack var1, int var2, int var3, int var4, int var5, float var6) {
       int var9 = this.method6147();
       Class9352 var10 = Class9352.method35409();
       Class5425 var11 = var10.method35411();
@@ -388,7 +388,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
             var11.method17025((double)(var16 - 1), (double)(var13 - 1), 0.0).method17031();
             var11.method17025((double)(var15 + 1), (double)(var13 - 1), 0.0).method17031();
             var10.method35410();
-            RenderSystem.method27861();
+            RenderSystem.enableTexture();
          }
 
          if (var13 + this.field6877 >= this.field6873 && var13 <= this.field6874) {

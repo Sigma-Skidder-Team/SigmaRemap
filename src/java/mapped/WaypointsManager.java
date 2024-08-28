@@ -128,12 +128,12 @@ public class WaypointsManager {
 
    @EventTarget
    private void method29995(TickEvent var1) {
-      if (this.field36365.field1338 != null) {
+      if (this.field36365.world != null) {
          if (this.field36371 != null) {
             boolean var4 = false;
             if (!var4) {
-               if (this.field36365.field1339.field5055 % 140 == 0) {
-                  Class2531 var5 = Class7927.method26605(this.field36365.field1338.method7011(this.field36365.field1339.method3432()).method7072());
+               if (this.field36365.player.field5055 % 140 == 0) {
+                  Class2531 var5 = Class7927.method26605(this.field36365.world.method7011(this.field36365.player.method3432()).method7072());
                   Iterator var6 = this.field36372.entrySet().iterator();
 
                   while (var6.hasNext()) {
@@ -163,15 +163,15 @@ public class WaypointsManager {
                String var23 = this.field36371;
                int var24 = 0;
 
-               for (int var25 = 0; var25 < this.field36365.field1338.method6883().field9291.field39654.length(); var25++) {
-                  Class1674 var17 = this.field36365.field1338.method6883().field9291.field39654.get(var25);
+               for (int var25 = 0; var25 < this.field36365.world.method6883().field9291.field39654.length(); var25++) {
+                  Class1674 var17 = this.field36365.world.method6883().field9291.field39654.get(var25);
                   if (var17 != null) {
                      boolean var18 = this.field36366.contains(var17.method7072());
                      boolean var19 = this.field36367.contains(var17.method7072());
                      if ((!var18 || var19)
                         && !var17.method7141()
-                        && this.field36365.field1338.method6883().method7352(var17.method7072())
-                        && this.field36365.field1338.method6813() == World.field8999) {
+                        && this.field36365.world.method6883().method7352(var17.method7072())
+                        && this.field36365.world.method6813() == World.field8999) {
                         if (!var18) {
                            this.field36366.add(var17.method7072());
                         }
@@ -369,8 +369,8 @@ public class WaypointsManager {
    }
 
    private boolean method30004(Class1674 var1) {
-      Class1674 var4 = this.field36365.field1338.method6824(var1.method7072().field32174, var1.method7072().field32175 + 1);
-      Class1674 var5 = this.field36365.field1338.method6824(var1.method7072().field32174, var1.method7072().field32175 - 1);
+      Class1674 var4 = this.field36365.world.method6824(var1.method7072().field32174, var1.method7072().field32175 + 1);
+      Class1674 var5 = this.field36365.world.method6824(var1.method7072().field32174, var1.method7072().field32175 - 1);
       return var4 != null && !var4.method7141() && var5 != null && !var5.method7141();
    }
 
@@ -396,13 +396,13 @@ public class WaypointsManager {
    }
 
    public int method30006(BlockPos var1, boolean var2) {
-      if (this.field36365.field1338.method6738(var1).method23383() == Blocks.AIR) {
+      if (this.field36365.world.method6738(var1).method23383() == Blocks.AIR) {
          var1 = var1.method8313();
       }
 
-      Class7210 var5 = this.field36365.field1338.method6738(var1).method23384().method31092();
+      Class7210 var5 = this.field36365.world.method6738(var1).method23384().method31092();
       int var6 = var5.field31006;
-      Class8649 var7 = this.field36365.field1338.method6738(var1.method8311()).method23384();
+      Class8649 var7 = this.field36365.world.method6738(var1.method8311()).method23384();
       if (var7 != Class8649.field38944) {
          if (var7 == Class8649.field38943) {
             var6 = var7.method31092().field31006;
@@ -411,7 +411,7 @@ public class WaypointsManager {
          var6 = -1;
       }
 
-      if (this.field36365.field1338.method6738(var1).method23462(Class8820.field39710)) {
+      if (this.field36365.world.method6738(var1).method23462(Class8820.field39710)) {
          var6 = Class8649.field38941.method31092().field31006;
       }
 
@@ -425,8 +425,8 @@ public class WaypointsManager {
       }
 
       if (var2 || var11) {
-         Class8649 var12 = this.field36365.field1338.method6738(var1.method8341()).method23384();
-         Class8649 var13 = this.field36365.field1338.method6738(var1.method8343()).method23384();
+         Class8649 var12 = this.field36365.world.method6738(var1.method8341()).method23384();
+         Class8649 var13 = this.field36365.world.method6738(var1.method8343()).method23384();
          if (var12 == Class8649.field38932 || var12 == Class8649.field38944) {
             var6 = Class5628.method17681(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
          } else if (var13 == Class8649.field38932 || var13 == Class8649.field38944) {

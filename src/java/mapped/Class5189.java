@@ -56,15 +56,15 @@ public class Class5189 extends Module {
                         float var15 = (float) Math.toRadians((double) (var4.method3142() - 180.0F));
                         double var16 = var4.getPositionVec().field18048 - (double) (MathHelper.method37763(var15) * var7);
                         double var17 = var4.getPositionVec().field18050 + (double) (MathHelper.method37764(var15) * var7);
-                        var1.method13993(var16 - mc.field1339.getPositionVec().field18048);
-                        var1.method13997(var17 - mc.field1339.getPositionVec().field18050);
+                        var1.method13993(var16 - mc.player.getPositionVec().field18048);
+                        var1.method13997(var17 - mc.player.getPositionVec().field18050);
                         break;
                     case "Random":
                         float var10 = (float) (Math.random() * 2.0 * Math.PI);
                         double var11 = var4.getPositionVec().field18048 - (double) (MathHelper.method37763(var10) * var7);
                         double var13 = var4.getPositionVec().field18050 + (double) (MathHelper.method37764(var10) * var7);
-                        var1.method13993(var11 - mc.field1339.getPositionVec().field18048);
-                        var1.method13997(var13 - mc.field1339.getPositionVec().field18050);
+                        var1.method13993(var11 - mc.player.getPositionVec().field18048);
+                        var1.method13997(var13 - mc.player.getPositionVec().field18050);
                 }
             }
         }
@@ -72,27 +72,27 @@ public class Class5189 extends Module {
 
     public void method16152(Entity var1, double var2, double var4, Class4435 var6) {
         double var9 = var2 / (var4 * Math.PI * 2.0) * 360.0 * (double) this.field23495;
-        double var11 = mc.field1339.getPosX() - var1.getPosX();
-        double var13 = mc.field1339.getPosZ() - var1.getPosZ();
+        double var11 = mc.player.getPosX() - var1.getPosX();
+        double var13 = mc.player.getPosZ() - var1.getPosZ();
         double var15 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
         double var17 = (var15 + var9) * Math.PI / 180.0;
         double var19 = var1.getPositionVec().field18048 - Math.sin(var17) * var4;
         double var21 = var1.getPositionVec().field18050 + Math.cos(var17) * var4;
-        var11 = var19 - mc.field1339.getPosX();
-        var13 = var21 - mc.field1339.getPosZ();
+        var11 = var19 - mc.player.getPosX();
+        var13 = var21 - mc.player.getPosZ();
         double var23 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
         var17 = var23 * Math.PI / 180.0;
         var6.method13993(-Math.sin(var17) * var2);
         var6.method13997(Math.cos(var17) * var2);
-        Vector3d var25 = mc.field1339.method3233(var6.method13998());
+        Vector3d var25 = mc.player.method3233(var6.method13998());
         if (var25.field18048 != var6.method13992() || var25.field18050 != var6.method13996()) {
             this.field23495 *= -1;
             var9 *= -1.0;
             var17 = (var15 + var9) * Math.PI / 180.0;
             var19 = var1.getPositionVec().field18048 - Math.sin(var17) * var4;
             var21 = var1.getPositionVec().field18050 + Math.cos(var17) * var4;
-            var11 = var19 - mc.field1339.getPosX();
-            var13 = var21 - mc.field1339.getPosZ();
+            var11 = var19 - mc.player.getPosX();
+            var13 = var21 - mc.player.getPosZ();
             var23 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
             var17 = var23 * Math.PI / 180.0;
             var6.method13993(-Math.sin(var17) * var2);
@@ -100,9 +100,9 @@ public class Class5189 extends Module {
         }
 
         Vector3d var26 = new Vector3d(
-                mc.field1339.getPositionVec().field18048 + var6.method13992(),
-                mc.field1339.getPositionVec().field18049 + var6.method13994(),
-                mc.field1339.getPositionVec().field18050 + var6.method13996()
+                mc.player.getPositionVec().field18048 + var6.method13992(),
+                mc.player.getPositionVec().field18049 + var6.method13994(),
+                mc.player.getPositionVec().field18050 + var6.method13996()
         );
         String var27 = this.getStringSettingValueByName("AntiVoid");
         if (!var27.equals("None")) {
@@ -114,14 +114,14 @@ public class Class5189 extends Module {
             }
         }
 
-        if (this.field23496 && mc.field1339.method3275(var1) > this.method15977("Radius")) {
+        if (this.field23496 && mc.player.method3275(var1) > this.method15977("Radius")) {
             if (!var27.equals("Halt")) {
                 Class9567.method37088(var6, var2);
                 if (var27.equals("Smart")) {
                     var26 = new Vector3d(
-                            mc.field1339.getPositionVec().field18048 + var6.method13992(),
-                            mc.field1339.getPositionVec().field18049 + var6.method13994(),
-                            mc.field1339.getPositionVec().field18050 + var6.method13996()
+                            mc.player.getPositionVec().field18048 + var6.method13992(),
+                            mc.player.getPositionVec().field18049 + var6.method13994(),
+                            mc.player.getPositionVec().field18050 + var6.method13996()
                     );
                     if (this.method16153(var26) && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
                         Class9567.method37088(var6, 0.0);
@@ -134,16 +134,16 @@ public class Class5189 extends Module {
     }
 
     private boolean method16153(Vector3d var1) {
-        if (!(mc.field1339.getPositionVec().field18049 < 1.0)) {
-            Class6488 var4 = new Class6488(var1.method11339(-0.15, 0.0, -0.15), var1.method11339(0.15, (double) mc.field1339.method3430(), 0.15));
-            var4 = var4.method19662(0.0, -mc.field1339.getPositionVec().field18049, 0.0);
-            return mc.field1338.method7055(mc.field1339, var4).count() == 0L;
+        if (!(mc.player.getPositionVec().field18049 < 1.0)) {
+            Class6488 var4 = new Class6488(var1.method11339(-0.15, 0.0, -0.15), var1.method11339(0.15, (double) mc.player.method3430(), 0.15));
+            var4 = var4.method19662(0.0, -mc.player.getPositionVec().field18049, 0.0);
+            return mc.world.method7055(mc.player, var4).count() == 0L;
         } else {
             return true;
         }
     }
 
     private boolean method16154(double var1, double var3, double var5) {
-        return mc.field1338.method7055(mc.field1339, mc.field1339.field5035.method19667(var1, var3, var5)).count() == 0L;
+        return mc.world.method7055(mc.player, mc.player.field5035.method19667(var1, var3, var5)).count() == 0L;
     }
 }

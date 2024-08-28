@@ -38,7 +38,7 @@ public class Class216 implements Class215 {
       return this.field848;
    }
 
-   public void method780(Class7202 var1, ItemStack var2, int var3, int var4, Class9332 var5, Class5422 var6) {
+   public void method780(Class7202 var1, ItemStack var2, int var3, int var4, MatrixStack var5, Class5422 var6) {
       boolean var9 = Class7944.method26969().method1114();
       boolean var10 = Class7944.method26894() && var9;
       if (var10) {
@@ -61,7 +61,7 @@ public class Class216 implements Class215 {
       }
    }
 
-   public void method781(ItemStack var1, Class2327 var2, boolean var3, Class9332 var4, Class7733 var5, int var6, int var7, Class7202 var8) {
+   public void method781(ItemStack var1, Class2327 var2, boolean var3, MatrixStack var4, Class7733 var5, int var6, int var7, Class7202 var8) {
       if (!var1.method32105()) {
          var4.method35294();
          boolean var11 = var2 == Class2327.field15930 || var2 == Class2327.field15931 || var2 == Class2327.field15932;
@@ -200,7 +200,7 @@ public class Class216 implements Class215 {
          : Class7802.method26050(var0.method25597(!var2 ? Class4520.method14337() : Class4520.method14335()), var0.method25597(var1));
    }
 
-   private void method787(Class9332 var1, Class5422 var2, List<Class8557> var3, ItemStack var4, int var5, int var6) {
+   private void method787(MatrixStack var1, Class5422 var2, List<Class8557> var3, ItemStack var4, int var5, int var6) {
       boolean var9 = !var4.method32105();
       Class8892 var10 = var1.method35296();
       boolean var11 = Class8564.method30588();
@@ -250,11 +250,11 @@ public class Class216 implements Class215 {
       return var9 != null ? var9 : this.field848.method29496().method1024();
    }
 
-   public void method789(ItemStack var1, Class2327 var2, int var3, int var4, Class9332 var5, Class7733 var6) {
+   public void method789(ItemStack var1, Class2327 var2, int var3, int var4, MatrixStack var5, Class7733 var6) {
       this.method790((Class880)null, var1, var2, false, var5, var6, (World)null, var3, var4);
    }
 
-   public void method790(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, Class9332 var5, Class7733 var6, World var7, int var8, int var9) {
+   public void method790(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, MatrixStack var5, Class7733 var6, World var7, int var8, int var9) {
       if (!var2.method32105()) {
          Class7202 var12 = this.method788(var2, var7, var1);
          this.method781(var2, var3, var4, var5, var6, var8, var9, var12);
@@ -280,7 +280,7 @@ public class Class216 implements Class215 {
       RenderSystem.translatef(8.0F, 8.0F, 0.0F);
       RenderSystem.scalef(1.0F, -1.0F, 1.0F);
       RenderSystem.scalef(16.0F, 16.0F, 16.0F);
-      Class9332 var7 = new Class9332();
+      MatrixStack var7 = new MatrixStack();
       Class7735 var8 = Minecraft.getInstance().method1581().method26536();
       boolean var9 = !var4.method22622();
       if (var9) {
@@ -301,7 +301,7 @@ public class Class216 implements Class215 {
    }
 
    public void method793(ItemStack var1, int var2, int var3) {
-      this.method796(Minecraft.getInstance().field1339, var1, var2, var3);
+      this.method796(Minecraft.getInstance().player, var1, var2, var3);
    }
 
    public void method794(ItemStack var1, int var2, int var3) {
@@ -339,7 +339,7 @@ public class Class216 implements Class215 {
 
    public void method798(Class9834 var1, ItemStack var2, int var3, int var4, String var5) {
       if (!var2.method32105()) {
-         Class9332 var8 = new Class9332();
+         MatrixStack var8 = new MatrixStack();
          if (var2.method32179() != 1 || var5 != null) {
             String var9 = var5 != null ? var5 : String.valueOf(var2.method32179());
             var8.method35291(0.0, 0.0, (double)(this.field847 + 200.0F));
@@ -386,11 +386,11 @@ public class Class216 implements Class215 {
             this.method799(var21, var3 + 2, var4 + 13, var14, 1, var15 >> 16 & 0xFF, var15 >> 8 & 0xFF, var15 & 0xFF, 255);
             RenderSystem.enableBlend();
             RenderSystem.disableAlphaTest();
-            RenderSystem.method27861();
+            RenderSystem.enableTexture();
             RenderSystem.enableDepthTest();
          }
 
-         ClientPlayerEntity var20 = Minecraft.getInstance().field1339;
+         ClientPlayerEntity var20 = Minecraft.getInstance().player;
          float var22 = var20 != null ? var20.method2976().method19636(var2.method32107(), Minecraft.getInstance().method1562()) : 0.0F;
          if (var22 > 0.0F) {
             RenderSystem.disableDepthTest();
@@ -400,7 +400,7 @@ public class Class216 implements Class215 {
             Class9352 var23 = Class9352.method35409();
             Class5425 var24 = var23.method35411();
             this.method799(var24, var3, var4 + MathHelper.method37767(16.0F * (1.0F - var22)), 16, MathHelper.method37773(16.0F * var22), 255, 255, 255, 127);
-            RenderSystem.method27861();
+            RenderSystem.enableTexture();
             RenderSystem.enableDepthTest();
          }
       }

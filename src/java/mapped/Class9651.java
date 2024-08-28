@@ -218,7 +218,7 @@ public class Class9651 {
    ) throws CommandSyntaxException {
       BlockPos var15 = new BlockPos(var3, var5, var7);
       if (World.method6717(var15)) {
-         if (!(var1 instanceof Class878)) {
+         if (!(var1 instanceof ServerPlayerEntity)) {
             float var16 = MathHelper.method37792(var10);
             float var17 = MathHelper.method37792(var11);
             var17 = MathHelper.method37777(var17, -90.0F, 90.0F);
@@ -243,14 +243,14 @@ public class Class9651 {
             Class7481 var19 = new Class7481(new BlockPos(var3, var5, var7));
             var2.method6883().method7374(Class8561.field38486, var19, 1, var1.method3205());
             var1.method2759();
-            if (((Class878)var1).isSleeping()) {
-               ((Class878)var1).stopSleepInBed(true, true);
+            if (((ServerPlayerEntity)var1).isSleeping()) {
+               ((ServerPlayerEntity)var1).stopSleepInBed(true, true);
             }
 
             if (var2 != var1.field5024) {
-               ((Class878)var1).method2824(var2, var3, var5, var7, var10, var11);
+               ((ServerPlayerEntity)var1).method2824(var2, var3, var5, var7, var10, var11);
             } else {
-               ((Class878)var1).field4855.method15669(var3, var5, var7, var10, var11, var9);
+               ((ServerPlayerEntity)var1).field4855.method15669(var3, var5, var7, var10, var11, var9);
             }
 
             var1.method3143(var10);

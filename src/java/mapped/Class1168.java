@@ -13,11 +13,11 @@ public class Class1168 extends Class1155<Class1168> {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       this.method5573(var1, this.field6333, var4 - 40, var3, var7, var8);
    }
 
-   private void method5573(Class9332 var1, Class6122 var2, int var3, int var4, int var5, int var6) {
+   private void method5573(MatrixStack var1, Class6122 var2, int var3, int var4, int var5, int var6) {
       int var9 = !var2.method18892() ? 16777215 : -8388737;
       Class807.method2196(this.field6334)
          .method38801(var1, "Backup (" + Class9740.method38174(var2.field27411) + ")", (float)(var3 + 40), (float)(var4 + 1), var9);
@@ -39,7 +39,7 @@ public class Class1168 extends Class1155<Class1168> {
       return DateFormat.getDateTimeInstance(3, 3).format(var1);
    }
 
-   private void method5575(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method5575(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 12 && var5 >= var3 && var5 <= var3 + 14 && var5 < this.field6334.field4565 - 15 && var5 > 32;
       Class807.method2199(this.field6334).getTextureManager().bindTexture(Class807.method2198());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -53,7 +53,7 @@ public class Class1168 extends Class1155<Class1168> {
       }
    }
 
-   private void method5576(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method5576(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 8 && var5 >= var3 && var5 <= var3 + 8 && var5 < this.field6334.field4565 - 15 && var5 > 32;
       Class807.method2203(this.field6334).getTextureManager().bindTexture(Class807.method2202());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);

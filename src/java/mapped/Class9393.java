@@ -9,7 +9,7 @@ public class Class9393 {
 
    public static boolean method35660(String var0, int var1) {
       synchronized (field43587) {
-         int var5 = Minecraft.getInstance().field1287.method935();
+         int var5 = Minecraft.getInstance().worldRenderer.method935();
          if (var5 <= 0) {
             return false;
          } else {

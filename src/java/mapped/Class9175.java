@@ -37,15 +37,15 @@ public class Class9175 {
       Class8218 var5 = (Class8218)var4.method3344();
       if (var5 != null) {
          IFormattableTextComponent var6 = var5.method28569().mergeStyle(field42128);
-         List<Class878> var7 = var0.method20177().getPlayerList().method19488();
+         List<ServerPlayerEntity> var7 = var0.method20177().getPlayerList().method19488();
 
-         for (Class878 var9 : var7) {
+         for (ServerPlayerEntity var9 : var7) {
             if (var9 != var4) {
                if (var9.method3344() == var5) {
-                  var9.method1328(new TranslationTextComponent("chat.type.team.text", var6, var0.method20169(), var1), var4.getUniqueID());
+                  var9.sendMessage(new TranslationTextComponent("chat.type.team.text", var6, var0.method20169(), var1), var4.getUniqueID());
                }
             } else {
-               var9.method1328(new TranslationTextComponent("chat.type.team.sent", var6, var0.method20169(), var1), var4.getUniqueID());
+               var9.sendMessage(new TranslationTextComponent("chat.type.team.sent", var6, var0.method20169(), var1), var4.getUniqueID());
             }
          }
 

@@ -79,12 +79,12 @@ public class Class4310 extends Class4307 {
 
       this.field20974.changeDirection(Direction.BACKWARDS);
       this.field20975.changeDirection(Direction.BACKWARDS);
-      int var3 = Minecraft.getInstance().field1283.method8043() * Minecraft.getInstance().field1283.method8044() / 14000;
+      int var3 = Minecraft.getInstance().mainWindow.method8043() * Minecraft.getInstance().mainWindow.method8044() / 14000;
       Random var4 = new Random();
 
       for (int var5 = 0; var5 < var3; var5++) {
-         int var6 = var4.nextInt(Minecraft.getInstance().field1283.method8043());
-         int var7 = var4.nextInt(Minecraft.getInstance().field1283.method8044());
+         int var6 = var4.nextInt(Minecraft.getInstance().mainWindow.method8043());
+         int var7 = var4.nextInt(Minecraft.getInstance().mainWindow.method8044());
          int var8 = 7 + var4.nextInt(5);
          int var9 = (1 + var4.nextInt(4)) * (!var4.nextBoolean() ? 1 : -1);
          int var10 = 1 + var4.nextInt(2);
@@ -157,7 +157,7 @@ public class Class4310 extends Class4307 {
 
       float var10 = var9 - (float)this.field20966;
       float var11 = (float)(var8 - this.field20967);
-      if (Minecraft.getInstance().field1356 != null) {
+      if (Minecraft.getInstance().loadingGuiIn != null) {
          if (var9 != (float)this.field20966) {
             this.field20966 = (int)((float)this.field20966 + var10 * field20982);
          }
@@ -168,7 +168,7 @@ public class Class4310 extends Class4307 {
       } else {
          this.field20974.changeDirection(Direction.FORWARDS);
          this.field20975.changeDirection(Direction.FORWARDS);
-         float var12 = 0.5F - (float)this.field20967 / (float) Minecraft.getInstance().field1283.method8043() * -1.0F;
+         float var12 = 0.5F - (float)this.field20967 / (float) Minecraft.getInstance().mainWindow.method8043() * -1.0F;
          float var13 = 1.0F - this.field20974.calcPercent();
          float var14 = 1.0F - this.field20975.calcPercent();
          float var15 = var14 * var14;
@@ -334,7 +334,6 @@ public class Class4310 extends Class4307 {
                      var4.printStackTrace();
                   }
                }).start());
-            this.field20984.method13036(var0 -> Client.getInstance().getNetworkManager().method30456());
             this.field20984.method13603(true);
          });
       }

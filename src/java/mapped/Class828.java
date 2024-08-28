@@ -45,7 +45,7 @@ public class Class828 extends Screen {
    private final ITextComponent field4599;
 
    public Class828(PlayerEntity var1, ItemStack var2, Hand var3) {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field4578 = var1;
       this.field4579 = var2;
       this.field4596 = var3;
@@ -145,7 +145,7 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -353,7 +353,7 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.method5534((Class1152)null);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -387,7 +387,7 @@ public class Class828 extends Screen {
       super.method1923(var1, var2, var3, var4);
    }
 
-   private void method2511(Class9332 var1, Class6178 var2, boolean var3) {
+   private void method2511(MatrixStack var1, Class6178 var2, boolean var3) {
       if (this.field4582 / 6 % 2 == 0) {
          var2 = this.method2514(var2);
          if (var3) {
@@ -420,7 +420,7 @@ public class Class828 extends Screen {
 
       var4.method35410();
       RenderSystem.method27858();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
    }
 
    private Class6178 method2513(Class6178 var1) {
@@ -437,7 +437,7 @@ public class Class828 extends Screen {
          return true;
       } else {
          if (var5 == 0) {
-            long var8 = Util.method38487();
+            long var8 = Util.milliTime();
             Class8398 var10 = this.method2517();
             int var11 = var10.method29481(this.field4568, this.method2513(new Class6178((int)var1, (int)var3)));
             if (var11 >= 0) {

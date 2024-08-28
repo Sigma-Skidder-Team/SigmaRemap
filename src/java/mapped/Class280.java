@@ -42,7 +42,7 @@ public class Class280 extends Class269<Class8968> implements AutoCloseable {
 
    public void method971(Class8968 var1, Class191 var2, Class7165 var3) {
       var3.method22501();
-      var3.method22503("upload");
+      var3.startSection("upload");
       if (this.field1063 != null) {
          this.field1063.close();
       }
@@ -51,9 +51,9 @@ public class Class280 extends Class269<Class8968> implements AutoCloseable {
       this.field1062 = var1.method32850();
       this.field1069 = var1.method32851();
       this.field1068 = this.field1062.get(Class8968.field40521);
-      var3.method22506("cache");
+      var3.endStartSection("cache");
       this.field1064.method38155();
-      var3.method22505();
+      var3.endSection();
       var3.method22502();
    }
 

@@ -110,10 +110,10 @@ public class Class9110 {
    }
 
    public boolean method33980() {
-      if (field41868.field1338.method6738(this.method33979()).method23383() == Blocks.LAVA) {
+      if (field41868.world.method6738(this.method33979()).method23383() == Blocks.LAVA) {
          return false;
-      } else if (field41868.field1338.method6738(this.method33979()).method23449().method23474()) {
-         return field41868.field1338.method6738(this.method33979().method8313()).method23383() instanceof Class3239
+      } else if (field41868.world.method6738(this.method33979()).method23449().method23474()) {
+         return field41868.world.method6738(this.method33979().method8313()).method23383() instanceof Class3239
             ? false
             : this.method33988(this.method33979()) && this.method33988(this.method33979().method8311());
       } else {
@@ -135,7 +135,7 @@ public class Class9110 {
 
    public static boolean method33984(BlockPos var0) {
       for (Class9485 var6 : field41870) {
-         Class7380 var7 = field41868.field1338.method6738(var0.method8335(var6.field44096, var6.field44097, var6.field44098));
+         Class7380 var7 = field41868.world.method6738(var0.method8335(var6.field44096, var6.field44097, var6.field44098));
          if (var7.method23383() == Blocks.WATER || var7.method23383() == Blocks.LAVA) {
             return true;
          }
@@ -146,7 +146,7 @@ public class Class9110 {
 
    public static boolean method33985(BlockPos var0) {
       for (Class9485 var6 : field41870) {
-         Class7380 var7 = field41868.field1338.method6738(var0.method8335(var6.field44096, var6.field44097, var6.field44098));
+         Class7380 var7 = field41868.world.method6738(var0.method8335(var6.field44096, var6.field44097, var6.field44098));
          if (var7.method23393()) {
             return false;
          }
@@ -157,32 +157,32 @@ public class Class9110 {
 
    public boolean method33986() {
       for (Class9485 var6 : field41870) {
-         Class7380 var7 = field41868.field1338.method6738(this.method33979().method8335(var6.field44096, var6.field44097, var6.field44098));
+         Class7380 var7 = field41868.world.method6738(this.method33979().method8335(var6.field44096, var6.field44097, var6.field44098));
          if (var7.method23383() == Blocks.WATER || var7.method23383() == Blocks.LAVA) {
             return true;
          }
       }
 
       for (Class9485 var11 : field41870) {
-         Class7380 var12 = field41868.field1338.method6738(this.method33979().method8335(var11.field44096, var11.field44097 + 1.0, var11.field44098));
+         Class7380 var12 = field41868.world.method6738(this.method33979().method8335(var11.field44096, var11.field44097 + 1.0, var11.field44098));
          if (var12.method23383() == Blocks.WATER || var12.method23383() == Blocks.LAVA) {
             return true;
          }
       }
 
-      return field41868.field1338.method6738(this.method33979().method8339(2)).method23383() instanceof Class3213
+      return field41868.world.method6738(this.method33979().method8339(2)).method23383() instanceof Class3213
          && !this.field41869.field44283.contains(this.method33979().method8339(2).method8332());
    }
 
    public boolean method33987() {
       return this.method33986()
-         || field41868.field1338.method6738(this.method33979()).method23383() == Blocks.BEDROCK
-         || field41868.field1338.method6738(this.method33979().method8311()).method23383() == Blocks.BEDROCK;
+         || field41868.world.method6738(this.method33979()).method23383() == Blocks.BEDROCK
+         || field41868.world.method6738(this.method33979().method8311()).method23383() == Blocks.BEDROCK;
    }
 
    public boolean method33988(BlockPos var1) {
       return !this.field41869.field44283.contains(var1.method8332())
-         ? Minecraft.getInstance().field1338.method6738(var1).method23414(field41868.field1338, var1).method19516()
+         ? Minecraft.getInstance().world.method6738(var1).method23414(field41868.world, var1).method19516()
          : true;
    }
 
@@ -192,7 +192,7 @@ public class Class9110 {
 
    public boolean method33990(BlockPos var1) {
       if (!this.field41869.field44283.contains(this.method33979().method8332())) {
-         Class6408 var4 = Minecraft.getInstance().field1338.method6738(var1).method23414(field41868.field1338, var1);
+         Class6408 var4 = Minecraft.getInstance().world.method6738(var1).method23414(field41868.world, var1);
          if (var4.method19516()) {
             return false;
          } else {

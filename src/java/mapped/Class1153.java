@@ -16,7 +16,7 @@ public class Class1153 implements Class1152 {
       this.field6294 = var4;
    }
 
-   public void method5542(Screen var1, Class9332 var2) {
+   public void method5542(Screen var1, MatrixStack var2) {
       Screen.method5691(var2, Minecraft.getInstance().field1294, this.field6291, this.field6292, this.field6293, this.field6294);
    }
 

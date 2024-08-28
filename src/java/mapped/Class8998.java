@@ -11,7 +11,7 @@ public class Class8998 {
    private final Entity field41148;
    private final int field41149;
    private Class2002 field41150;
-   private final Set<Class878> field41151;
+   private final Set<ServerPlayerEntity> field41151;
    public final Class1649 field41152;
 
    public Class8998(Class1649 var1, Entity var2, int var3, int var4, boolean var5) {
@@ -34,31 +34,31 @@ public class Class8998 {
    }
 
    public void method33239(Packet<?> var1) {
-      for (Class878 var5 : this.field41151) {
+      for (ServerPlayerEntity var5 : this.field41151) {
          var5.field4855.sendPacket(var1);
       }
    }
 
    public void method33240(Packet<?> var1) {
       this.method33239(var1);
-      if (this.field41148 instanceof Class878) {
-         ((Class878)this.field41148).field4855.sendPacket(var1);
+      if (this.field41148 instanceof ServerPlayerEntity) {
+         ((ServerPlayerEntity)this.field41148).field4855.sendPacket(var1);
       }
    }
 
    public void method33241() {
-      for (Class878 var4 : this.field41151) {
+      for (ServerPlayerEntity var4 : this.field41151) {
          this.field41147.method34970(var4);
       }
    }
 
-   public void method33242(Class878 var1) {
+   public void method33242(ServerPlayerEntity var1) {
       if (this.field41151.remove(var1)) {
          this.field41147.method34970(var1);
       }
    }
 
-   public void method33243(Class878 var1) {
+   public void method33243(ServerPlayerEntity var1) {
       if (var1 != this.field41148) {
          Vector3d var4 = var1.getPositionVec().method11336(this.field41147.method34975());
          int var5 = Math.min(this.method33245(), (Class1649.method6634(this.field41152) - 1) * 16);
@@ -106,8 +106,8 @@ public class Class8998 {
       return this.method33244(var4);
    }
 
-   public void method33246(List<Class878> var1) {
-      for (Class878 var5 : var1) {
+   public void method33246(List<ServerPlayerEntity> var1) {
+      for (ServerPlayerEntity var5 : var1) {
          this.method33243(var5);
       }
    }

@@ -17,13 +17,13 @@ public class Class5187 extends Module {
     private void method16145(Class4434 var1) {
         if (this.method15996() && !var1.isCancelled()) {
             double var4 = var1.method13988();
-            if (!Class5628.method17730(mc.field1339, 1.0E-4F)) {
+            if (!Class5628.method17730(mc.player, 1.0E-4F)) {
                 var1.method13900(true);
             } else {
                 if (!Class9567.method37081() && var4 >= 0.625) {
-                    double var6 = mc.field1339.getPosX();
-                    double var8 = mc.field1339.getPosY();
-                    double var10 = mc.field1339.getPosZ();
+                    double var6 = mc.player.getPosX();
+                    double var8 = mc.player.getPosY();
+                    double var10 = mc.player.getPosZ();
                     if (var4 < 1.1) {
                         double[] var12 = new double[]{0.41999998688698 * var4, 0.754 * var4};
 
@@ -38,11 +38,11 @@ public class Class5187 extends Module {
 
     @EventTarget
     private void method16146(Class4417 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (!var1.method13967()) {
-                mc.field1339.field5051 = 1.0F;
+                mc.player.field5051 = 1.0F;
             } else {
-                mc.field1339.field5051 = 0.5F;
+                mc.player.field5051 = 0.5F;
             }
         }
     }

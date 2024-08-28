@@ -62,7 +62,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method2618(var1, var4, var2, var3);
@@ -98,7 +98,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       }
 
       this.method2617(var1, var2, var3);
-      Class974 var18 = this.field4562.field1339.field4902;
+      Class974 var18 = this.field4562.player.field4902;
       ItemStack var19 = !this.field4737.method32105() ? this.field4737 : var18.method4057();
       if (!var19.method32105()) {
          byte var20 = 8;
@@ -119,7 +119,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       }
 
       if (!this.field4741.method32105()) {
-         float var21 = (float)(Util.method38487() - this.field4740) / 100.0F;
+         float var21 = (float)(Util.milliTime() - this.field4740) / 100.0F;
          if (var21 >= 1.0F) {
             var21 = 1.0F;
             this.field4741 = ItemStack.EMPTY;
@@ -136,8 +136,8 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       RenderSystem.enableDepthTest();
    }
 
-   public void method2615(Class9332 var1, int var2, int var3) {
-      if (this.field4562.field1339.field4902.method4057().method32105() && this.field4729 != null && this.field4729.method18266()) {
+   public void method2615(MatrixStack var1, int var2, int var3) {
+      if (this.field4562.player.field4902.method4057().method32105() && this.field4729 != null && this.field4729.method18266()) {
          this.method2457(var1, this.field4729.method18265(), var2, var3);
       }
    }
@@ -152,20 +152,20 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       this.field4563.field847 = 0.0F;
    }
 
-   public void method2617(Class9332 var1, int var2, int var3) {
+   public void method2617(MatrixStack var1, int var2, int var3) {
       this.field4568.method38805(var1, this.field4560, (float)this.field4723, (float)this.field4724, 4210752);
       this.field4568.method38805(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
    }
 
-   public abstract void method2618(Class9332 var1, float var2, int var3, int var4);
+   public abstract void method2618(MatrixStack var1, float var2, int var3, int var4);
 
-   private void method2619(Class9332 var1, Class5839 var2) {
+   private void method2619(MatrixStack var1, Class5839 var2) {
       int var5 = var2.field25580;
       int var6 = var2.field25581;
       ItemStack var7 = var2.method18265();
       boolean var8 = false;
       boolean var9 = var2 == this.field4730 && !this.field4737.method32105() && !this.field4736;
-      ItemStack var10 = this.field4562.field1339.field4902.method4057();
+      ItemStack var10 = this.field4562.player.field4902.method4057();
       String var11 = null;
       if (var2 == this.field4730 && !this.field4737.method32105() && this.field4736 && !var7.method32105()) {
          var7 = var7.copy();
@@ -208,7 +208,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          }
 
          RenderSystem.enableDepthTest();
-         this.field4563.method795(this.field4562.field1339, var7, var5, var6);
+         this.field4563.method795(this.field4562.player, var7, var5, var6);
          this.field4563.method798(this.field4568, var7, var5, var6, var11);
       }
 
@@ -217,7 +217,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    private void method2620() {
-      ItemStack var3 = this.field4562.field1339.field4902.method4057();
+      ItemStack var3 = this.field4562.player.field4902.method4057();
       if (!var3.method32105() && this.field4744) {
          if (this.field4745 != 2) {
             this.field4748 = var3.method32179();
@@ -257,9 +257,9 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       if (super.method1958(var1, var3, var5)) {
          return true;
       } else {
-         boolean var8 = this.field4562.field1299.field44644.method8520(var5);
+         boolean var8 = this.field4562.gameSettings.field44644.method8520(var5);
          Class5839 var9 = this.method2621(var1, var3);
-         long var10 = Util.method38487();
+         long var10 = Util.milliTime();
          this.field4751 = this.field4733 == var9 && var10 - this.field4749 < 250L && this.field4750 == var5;
          this.field4747 = false;
          if (var5 != 0 && var5 != 1 && !var8) {
@@ -277,21 +277,21 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                var15 = -999;
             }
 
-            if (this.field4562.field1299.field44625 && var14 && this.field4562.field1339.field4902.method4057().method32105()) {
+            if (this.field4562.gameSettings.field44625 && var14 && this.field4562.player.field4902.method4057().method32105()) {
                this.field4562.displayGuiScreen((Screen)null);
                return true;
             }
 
             if (var15 != -1) {
-               if (!this.field4562.field1299.field44625) {
+               if (!this.field4562.gameSettings.field44625) {
                   if (!this.field4744) {
-                     if (!this.field4562.field1339.field4902.method4057().method32105()) {
+                     if (!this.field4562.player.field4902.method4057().method32105()) {
                         this.field4744 = true;
                         this.field4746 = var5;
                         this.field4743.clear();
                         if (var5 != 0) {
                            if (var5 != 1) {
-                              if (this.field4562.field1299.field44644.method8520(var5)) {
+                              if (this.field4562.gameSettings.field44644.method8520(var5)) {
                                  this.field4745 = 2;
                               }
                            } else {
@@ -301,7 +301,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                            this.field4745 = 0;
                         }
                      } else {
-                        if (this.field4562.field1299.field44644.method8520(var5)) {
+                        if (this.field4562.gameSettings.field44644.method8520(var5)) {
                            this.method2626(var9, var15, var5, Class2259.field14697);
                         } else {
                            boolean var16 = var15 != -999
@@ -343,14 +343,14 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    private void method2622(int var1) {
-      if (this.field4729 != null && this.field4562.field1339.field4902.method4057().method32105()) {
-         if (this.field4562.field1299.field44640.method8520(var1)) {
+      if (this.field4729 != null && this.field4562.player.field4902.method4057().method32105()) {
+         if (this.field4562.gameSettings.field44640.method8520(var1)) {
             this.method2626(this.field4729, this.field4729.field25579, 40, Class2259.field14696);
             return;
          }
 
          for (int var4 = 0; var4 < 9; var4++) {
-            if (this.field4562.field1299.field44655[var4].method8520(var1)) {
+            if (this.field4562.gameSettings.field44655[var4].method8520(var1)) {
                this.method2626(this.field4729, this.field4729.field25579, var4, Class2259.field14696);
             }
          }
@@ -364,12 +364,12 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    @Override
    public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
       Class5839 var12 = this.method2621(var1, var3);
-      ItemStack var13 = this.field4562.field1339.field4902.method4057();
-      if (this.field4730 != null && this.field4562.field1299.field44625) {
+      ItemStack var13 = this.field4562.player.field4902.method4057();
+      if (this.field4730 != null && this.field4562.gameSettings.field44625) {
          if (var5 == 0 || var5 == 1) {
             if (!this.field4737.method32105()) {
                if (this.field4737.method32179() > 1 && var12 != null && Class5812.method18148(var12, this.field4737, false)) {
-                  long var14 = Util.method38487();
+                  long var14 = Util.milliTime();
                   if (this.field4732 != var12) {
                      this.field4732 = var12;
                      this.field4742 = var14;
@@ -420,7 +420,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          } else if (!this.field4752.method32105()) {
             for (Class5839 var18 : this.field4727.field25468) {
                if (var18 != null
-                  && var18.method18273(this.field4562.field1339)
+                  && var18.method18273(this.field4562.player)
                   && var18.method18266()
                   && var18.field25578 == var8.field25578
                   && Class5812.method18148(var18, this.field4752, true)) {
@@ -444,7 +444,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
             return true;
          }
 
-         if (this.field4730 != null && this.field4562.field1299.field44625) {
+         if (this.field4730 != null && this.field4562.gameSettings.field44625) {
             if (var5 == 0 || var5 == 1) {
                if (this.field4737.method32105() && var8 != this.field4730) {
                   this.field4737 = this.field4730.method18265();
@@ -454,13 +454,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                if (var12 != -1 && !this.field4737.method32105() && var16) {
                   this.method2626(this.field4730, this.field4730.field25579, var5, Class2259.field14694);
                   this.method2626(var8, var12, 0, Class2259.field14694);
-                  if (!this.field4562.field1339.field4902.method4057().method32105()) {
+                  if (!this.field4562.player.field4902.method4057().method32105()) {
                      this.method2626(this.field4730, this.field4730.field25579, var5, Class2259.field14694);
                      this.field4738 = MathHelper.method37769(var1 - (double)var9);
                      this.field4739 = MathHelper.method37769(var3 - (double)var10);
                      this.field4731 = this.field4730;
                      this.field4741 = this.field4737;
-                     this.field4740 = Util.method38487();
+                     this.field4740 = Util.milliTime();
                   } else {
                      this.field4741 = ItemStack.EMPTY;
                   }
@@ -469,7 +469,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                   this.field4739 = MathHelper.method37769(var3 - (double)var10);
                   this.field4731 = this.field4730;
                   this.field4741 = this.field4737;
-                  this.field4740 = Util.method38487();
+                  this.field4740 = Util.milliTime();
                }
 
                this.field4737 = ItemStack.EMPTY;
@@ -483,8 +483,8 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
             }
 
             this.method2626((Class5839)null, -999, Class5812.method18145(2, this.field4745), Class2259.field14699);
-         } else if (!this.field4562.field1339.field4902.method4057().method32105()) {
-            if (!this.field4562.field1299.field44644.method8520(var5)) {
+         } else if (!this.field4562.player.field4902.method4057().method32105()) {
+            if (!this.field4562.gameSettings.field44644.method8520(var5)) {
                boolean var13 = var12 != -999
                   && (
                      Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 340)
@@ -501,7 +501,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          }
       }
 
-      if (this.field4562.field1339.field4902.method4057().method32105()) {
+      if (this.field4562.player.field4902.method4057().method32105()) {
          this.field4749 = 0L;
       }
 
@@ -526,17 +526,17 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          var2 = var1.field25579;
       }
 
-      this.field4562.field1337.method23144(this.field4727.field25471, var2, var3, var4, this.field4562.field1339);
+      this.field4562.field1337.method23144(this.field4727.field25471, var2, var3, var4, this.field4562.player);
    }
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
       if (!super.method1920(var1, var2, var3)) {
-         if (!this.field4562.field1299.field44639.method8519(var1, var2)) {
+         if (!this.field4562.gameSettings.field44639.method8519(var1, var2)) {
             this.method2627(var1, var2);
             if (this.field4729 != null && this.field4729.method18266()) {
-               if (!this.field4562.field1299.field44644.method8519(var1, var2)) {
-                  if (this.field4562.field1299.field44641.method8519(var1, var2)) {
+               if (!this.field4562.gameSettings.field44644.method8519(var1, var2)) {
+                  if (this.field4562.gameSettings.field44641.method8519(var1, var2)) {
                      this.method2626(this.field4729, this.field4729.field25579, !method2475() ? 0 : 1, Class2259.field14698);
                   }
                } else {
@@ -555,14 +555,14 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    public boolean method2627(int var1, int var2) {
-      if (this.field4562.field1339.field4902.method4057().method32105() && this.field4729 != null) {
-         if (this.field4562.field1299.field44640.method8519(var1, var2)) {
+      if (this.field4562.player.field4902.method4057().method32105() && this.field4729 != null) {
+         if (this.field4562.gameSettings.field44640.method8519(var1, var2)) {
             this.method2626(this.field4729, this.field4729.field25579, 40, Class2259.field14696);
             return true;
          }
 
          for (int var5 = 0; var5 < 9; var5++) {
-            if (this.field4562.field1299.field44655[var5].method8519(var1, var2)) {
+            if (this.field4562.gameSettings.field44655[var5].method8519(var1, var2)) {
                this.method2626(this.field4729, this.field4729.field25579, var5, Class2259.field14696);
                return true;
             }
@@ -573,9 +573,9 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Override
-   public void method1931() {
-      if (this.field4562.field1339 != null) {
-         this.field4727.method18113(this.field4562.field1339);
+   public void onClose() {
+      if (this.field4562.player != null) {
+         this.field4727.method18113(this.field4562.player);
       }
    }
 
@@ -587,8 +587,8 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    @Override
    public void method1919() {
       super.method1919();
-      if (!this.field4562.field1339.method3066() || this.field4562.field1339.field5041) {
-         this.field4562.field1339.method2772();
+      if (!this.field4562.player.method3066() || this.field4562.player.field5041) {
+         this.field4562.player.method2772();
       }
    }
 
@@ -599,7 +599,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
    @Override
    public void method1945() {
-      this.field4562.field1339.method2772();
+      this.field4562.player.method2772();
       super.method1945();
    }
 }

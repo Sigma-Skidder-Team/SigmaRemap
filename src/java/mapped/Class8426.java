@@ -50,13 +50,13 @@ public class Class8426 {
       }
    }
 
-   public void method29607(Class878 var1) {
+   public void method29607(ServerPlayerEntity var1) {
       for (Class3623 var5 : this.field36104.values()) {
          var5.method12275(var1);
       }
    }
 
-   public void method29608(Class878 var1) {
+   public void method29608(ServerPlayerEntity var1) {
       for (Class3623 var5 : this.field36104.values()) {
          var5.method12276(var1);
       }

@@ -7,7 +7,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
       super(var1);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (var4.method5368() && !var4.method3342() && var4.method2962(Class2318.field15879) && var4.method5372() != null) {
          ItemStack var13 = var4.method2943(Class2106.field13735);
          if (var13.method32107() != Class8514.field38120) {

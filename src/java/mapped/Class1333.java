@@ -1,10 +1,10 @@
 package mapped;
 
-public class Class1333 extends Class1331 {
+public class Class1333 extends ChatScreen {
    private static final String field7051 = "/reloadShaders";
    private static final String field7052 = "/reloadChunks";
 
-   public Class1333(Class1331 var1) {
+   public Class1333(ChatScreen var1) {
       super(Class843.method2584(var1));
    }
 
@@ -13,7 +13,7 @@ public class Class1333 extends Class1331 {
       if (!this.method6350(var1)) {
          super.method2465(var1);
       } else {
-         this.field4562.field1298.method5989().method5935(var1);
+         this.field4562.ingameGUI.getChatGUI().method5935(var1);
       }
    }
 
@@ -24,7 +24,7 @@ public class Class1333 extends Class1331 {
             if (!var1.equals("/reloadChunks")) {
                return false;
             } else {
-               this.field4562.field1287.method868();
+               this.field4562.worldRenderer.method868();
                return true;
             }
          } else {

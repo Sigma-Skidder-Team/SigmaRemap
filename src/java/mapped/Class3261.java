@@ -256,8 +256,8 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static void method11766(World var0, Class880 var1, ItemStack var2) {
-      if (var1 instanceof Class878) {
-         Class878 var5 = (Class878)var1;
+      if (var1 instanceof ServerPlayerEntity) {
+         ServerPlayerEntity var5 = (ServerPlayerEntity)var1;
          if (!var0.field9020) {
             CriteriaTriggers.field44496.method15103(var5, var2);
          }

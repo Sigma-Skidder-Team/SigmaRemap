@@ -20,7 +20,7 @@ public class Class4876 extends Class4874<Class4474> {
       return new Class4474(this.field22710, var2, var7);
    }
 
-   public void method15062(Class878 var1) {
+   public void method15062(ServerPlayerEntity var1) {
       this.method15053(var1, var1x -> var1x.method14133(var1.getServerWorld(), var1.getPosX(), var1.getPosY(), var1.getPosZ()));
    }
 

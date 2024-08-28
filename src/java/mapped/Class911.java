@@ -98,7 +98,7 @@ public abstract class Class911 implements Class909 {
          return true;
       } else {
          this.field5195 = 0;
-         Class314 var4 = this.method3567().method6715();
+         MinecraftServer var4 = this.method3567().method6715();
          if (var4.method1361() && !Class9001.method33256(this.field5198)) {
             try {
                this.field5197 = null;
@@ -140,7 +140,7 @@ public abstract class Class911 implements Class909 {
    }
 
    @Override
-   public void method1328(ITextComponent var1, UUID var2) {
+   public void sendMessage(ITextComponent var1, UUID var2) {
       if (this.field5196) {
          this.field5197 = new StringTextComponent("[" + field5191.format(new Date()) + "] ").append(var1);
          this.method3568();

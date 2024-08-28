@@ -15,7 +15,7 @@ public class Class9504 {
                TranslationTextComponent var4 = new TranslationTextComponent("chat.type.announcement", ((Class6619)var0x.getSource()).method20169(), var3);
                Entity var5 = ((Class6619)var0x.getSource()).method20173();
                if (var5 == null) {
-                  ((Class6619)var0x.getSource()).method20177().getPlayerList().method19484(var4, ChatType.SYSTEM, Util.field45724);
+                  ((Class6619)var0x.getSource()).method20177().getPlayerList().method19484(var4, ChatType.SYSTEM, Util.DUMMY_UUID);
                } else {
                   ((Class6619)var0x.getSource()).method20177().getPlayerList().method19484(var4, ChatType.CHAT, var5.getUniqueID());
                }

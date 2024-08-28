@@ -15,9 +15,9 @@ public class Class5252 extends Module {
     @EventTarget
     private void method16373(TickEvent var1) {
         if (this.method15996()) {
-            if (mc.field1339.method3090() != null
-                    && mc.field1339.method3090().method32107() instanceof Class3263
-                    && mc.field1339.field5036) {
+            if (mc.player.method3090() != null
+                    && mc.player.method3090().method32107() instanceof Class3263
+                    && mc.player.field5036) {
                 for (int var4 = 0; var4 < 25; var4++) {
                     mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
                 }

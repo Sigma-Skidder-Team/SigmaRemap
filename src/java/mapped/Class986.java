@@ -17,4 +17,9 @@ public class Class986 extends Class924 {
    public Class5812 method3690(int var1, Class974 var2) {
       return new Class5832(var1, var2, this, this.field5252);
    }
+
+   @Override
+   public ITextComponent method2954() {
+      return new TranslationTextComponent("container.furnace");
+   }
 }

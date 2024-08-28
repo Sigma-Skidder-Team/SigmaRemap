@@ -28,16 +28,16 @@ public class Class5304 extends Module {
         this.field23837 = 0.0;
         this.field23839 = 0;
         this.field23838 = 0;
-        if (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F)) {
-            this.field23840 = new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ());
+        if (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F)) {
+            this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
         }
     }
 
     @EventTarget
     private void method16664(Class4435 var1) {
         if (this.method15996()) {
-            if (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F)) {
-                this.field23840 = new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ());
+            if (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F)) {
+                this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
             }
 
             if (this.field23839 <= 0) {
@@ -54,9 +54,9 @@ public class Class5304 extends Module {
                     var8 = true;
                 }
 
-                if (mc.field1339.method3433().field18049 < -0.08 && !var8) {
-                    this.field23837 = this.field23837 - mc.field1339.method3433().field18049;
-                } else if (mc.field1339.field5036) {
+                if (mc.player.method3433().field18049 < -0.08 && !var8) {
+                    this.field23837 = this.field23837 - mc.player.method3433().field18049;
+                } else if (mc.player.field5036) {
                     this.field23837 = 0.0;
                 }
             } else {
@@ -95,11 +95,11 @@ public class Class5304 extends Module {
     }
 
     private boolean method16667() {
-        if (!(mc.field1339.getPositionVec().field18049 < 1.0)) {
-            if (!mc.field1339.field5036) {
-                Class6488 var3 = mc.field1339.field5035;
-                var3 = var3.method19662(0.0, -mc.field1339.getPositionVec().field18049, 0.0);
-                return mc.field1338.method7055(mc.field1339, var3).count() == 0L;
+        if (!(mc.player.getPositionVec().field18049 < 1.0)) {
+            if (!mc.player.field5036) {
+                Class6488 var3 = mc.player.field5035;
+                var3 = var3.method19662(0.0, -mc.player.getPositionVec().field18049, 0.0);
+                return mc.world.method7055(mc.player, var3).count() == 0L;
             } else {
                 return false;
             }
@@ -109,9 +109,9 @@ public class Class5304 extends Module {
     }
 
     private void method16668(String var1, Class4435 var2) {
-        double var5 = mc.field1339.getPositionVec().method11320();
-        double var7 = mc.field1339.getPositionVec().method11321();
-        double var9 = mc.field1339.getPositionVec().method11322();
+        double var5 = mc.player.getPositionVec().method11320();
+        double var7 = mc.player.getPositionVec().method11321();
+        double var9 = mc.player.getPositionVec().method11322();
         if (var1.equals("Cubecraft") && !Class5628.method17718()) {
             var1 = "Motion";
         }

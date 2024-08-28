@@ -14,10 +14,10 @@ public class Class2518 extends JComponent {
    private final int[] field16658 = new int[256];
    private int field16659;
    private final String[] field16660 = new String[11];
-   private final Class314 field16661;
+   private final MinecraftServer field16661;
    private final Timer field16662;
 
-   public Class2518(Class314 var1) {
+   public Class2518(MinecraftServer var1) {
       this.field16661 = var1;
       this.setPreferredSize(new Dimension(456, 246));
       this.setMinimumSize(new Dimension(456, 246));

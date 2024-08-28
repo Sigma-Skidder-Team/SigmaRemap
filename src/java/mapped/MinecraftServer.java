@@ -47,7 +47,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BooleanSupplier;
 import java.util.function.Function;
 
-public abstract class Class314 extends Class317<Class567> implements Class315, Class909, AutoCloseable {
+public abstract class MinecraftServer extends Class317<Class567> implements Class315, Class909, AutoCloseable {
    private static final Logger field1208 = LogManager.getLogger();
    public static final File field1209 = new File("usercache.json");
    public static final Class8898 field1210 = new Class8898(
@@ -55,9 +55,9 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    );
    public final Class1814 field1211;
    public final Class8716 field1212;
-   private final Class7998 field1213 = new Class7998("server", this, Util.method38487());
+   private final Class7998 field1213 = new Class7998("server", this, Util.milliTime());
    private final List<Runnable> field1214 = Lists.newArrayList();
-   private final Class7684 field1215 = new Class7684(Util.field45723, this::method1375);
+   private final Class7684 field1215 = new Class7684(Util.nanoTimeSupplier, this::method1375);
    private Class7165 field1216 = Class7167.field30819;
    private final Class9021 field1217;
    private final Class8216 field1218;
@@ -95,7 +95,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    private final Class8805 field1250;
    private long field1251;
    private final Thread field1252;
-   private long field1253 = Util.method38487();
+   private long field1253 = Util.milliTime();
    private long field1254;
    private boolean field1255;
    private boolean field1256;
@@ -113,17 +113,17 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    private final Class8761 field1268;
    public final Class6611 field1269;
 
-   public static <S extends Class314> S method1275(Function<Thread, S> var0) {
+   public static <S extends MinecraftServer> S method1275(Function<Thread, S> var0) {
       AtomicReference var3 = new AtomicReference();
-      Thread var4 = new Thread(() -> ((Class314)var3.get()).method1297(), "Server thread");
+      Thread var4 = new Thread(() -> ((MinecraftServer)var3.get()).method1297(), "Server thread");
       var4.setUncaughtExceptionHandler((var0x, var1) -> field1208.error(var1));
-      Class314 var5 = (Class314)var0.apply(var4);
+      MinecraftServer var5 = (MinecraftServer)var0.apply(var4);
       var3.set(var5);
       var4.start();
       return (S)var5;
    }
 
-   public Class314(
+   public MinecraftServer(
       Thread var1,
       Class8905 var2,
       Class1814 var3,
@@ -328,15 +328,15 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       var1.method22736(new Class7481(var5));
       Class1703 var6 = var4.method6883();
       var6.method7348().method613(500);
-      this.field1253 = Util.method38487();
+      this.field1253 = Util.milliTime();
       var6.method7374(Class8561.field38480, new Class7481(var5), 11, Class2341.field16010);
 
       while (var6.method7355() != 441) {
-         this.field1253 = Util.method38487() + 10L;
+         this.field1253 = Util.milliTime() + 10L;
          this.method1299();
       }
 
-      this.field1253 = Util.method38487() + 10L;
+      this.field1253 = Util.milliTime() + 10L;
       this.method1299();
 
       for (ServerWorld var8 : this.field1225.values()) {
@@ -352,7 +352,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          }
       }
 
-      this.field1253 = Util.method38487() + 10L;
+      this.field1253 = Util.milliTime() + 10L;
       this.method1299();
       var1.method22738();
       var6.method7348().method613(5);
@@ -482,13 +482,13 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    public void method1297() {
       try {
          if (this.method1277()) {
-            this.field1253 = Util.method38487();
+            this.field1253 = Util.milliTime();
             this.field1219.method31701(new StringTextComponent(this.field1235));
             this.field1219.method31705(new Class9226(SharedConstants.method34773().getName(), SharedConstants.method34773().getProtocolVersion()));
             this.method1304(this.field1219);
 
             while (this.field1227) {
-               long var3 = Util.method38487() - this.field1253;
+               long var3 = Util.milliTime() - this.field1253;
                if (var3 > 2000L && this.field1253 - this.field1245 >= 15000L) {
                   long var5 = var3 / 50L;
                   field1208.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", var3, var5);
@@ -500,13 +500,13 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
                Class9487 var51 = Class9487.method36636("Server");
                this.method1428(var51);
                this.field1216.method22501();
-               this.field1216.method22503("tick");
+               this.field1216.startSection("tick");
                this.method1310(this::method1298);
-               this.field1216.method22506("nextTickWait");
+               this.field1216.endStartSection("nextTickWait");
                this.field1255 = true;
-               this.field1254 = Math.max(Util.method38487() + 50L, this.field1253);
+               this.field1254 = Math.max(Util.milliTime() + 50L, this.field1253);
                this.method1299();
-               this.field1216.method22505();
+               this.field1216.endSection();
                this.field1216.method22502();
                this.method1429(var51);
                this.field1244 = true;
@@ -546,11 +546,11 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    }
 
    private boolean method1298() {
-      return this.method1628() || Util.method38487() < (!this.field1255 ? this.field1253 : this.field1254);
+      return this.method1628() || Util.milliTime() < (!this.field1255 ? this.field1253 : this.field1254);
    }
 
    public void method1299() {
-      this.method1638();
+      this.drainTasks();
       this.method1639(() -> !this.method1298());
    }
 
@@ -586,7 +586,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    }
 
    public void run(Class567 var1) {
-      this.method1420().method22508("runTask");
+      this.method1420().func_230035_c_("runTask");
       super.run(var1);
    }
 
@@ -634,7 +634,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    }
 
    public void method1310(BooleanSupplier var1) {
-      long var4 = Util.method38488();
+      long var4 = Util.nanoTime();
       this.field1229++;
       this.method1311(var1);
       if (var4 - this.field1251 >= 5000000000L) {
@@ -653,14 +653,14 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
 
       if (this.field1229 % 6000 == 0) {
          field1208.debug("Autosave started");
-         this.field1216.method22503("save");
+         this.field1216.startSection("save");
          this.field1226.method19467();
          this.method1291(true, false, false);
-         this.field1216.method22505();
+         this.field1216.endSection();
          field1208.debug("Autosave finished");
       }
 
-      this.field1216.method22503("snooper");
+      this.field1216.startSection("snooper");
       if (!this.field1213.method27300() && this.field1229 > 100) {
          this.field1213.method27296();
       }
@@ -669,30 +669,30 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          this.field1213.method27297();
       }
 
-      this.field1216.method22505();
-      this.field1216.method22503("tallying");
-      long var6 = this.field1238[this.field1229 % 100] = Util.method38488() - var4;
+      this.field1216.endSection();
+      this.field1216.startSection("tallying");
+      long var6 = this.field1238[this.field1229 % 100] = Util.nanoTime() - var4;
       this.field1264 = this.field1264 * 0.8F + (float)var6 / 1000000.0F * 0.19999999F;
-      long var8 = Util.method38488();
+      long var8 = Util.nanoTime();
       this.field1262.method38592(var8 - var4);
-      this.field1216.method22505();
+      this.field1216.endSection();
    }
 
    public void method1311(BooleanSupplier var1) {
-      this.field1216.method22503("commandFunctions");
+      this.field1216.startSection("commandFunctions");
       this.method1397().method22823();
-      this.field1216.method22506("levels");
+      this.field1216.endStartSection("levels");
 
       for (ServerWorld var5 : this.method1320()) {
          this.field1216.method22504(() -> var5 + " " + var5.method6813().method31399());
          if (this.field1229 % 20 == 0) {
-            this.field1216.method22503("timeSync");
+            this.field1216.startSection("timeSync");
             this.field1226
                .method19457(new Class5577(var5.method6783(), var5.method6784(), var5.method6789().method17135(Class5462.field24232)), var5.method6813());
-            this.field1216.method22505();
+            this.field1216.endSection();
          }
 
-         this.field1216.method22503("tick");
+         this.field1216.startSection("tick");
 
          try {
             var5.method6894(var1);
@@ -702,25 +702,25 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
             throw new Class2506(var7);
          }
 
-         this.field1216.method22505();
-         this.field1216.method22505();
+         this.field1216.endSection();
+         this.field1216.endSection();
       }
 
-      this.field1216.method22506("connection");
+      this.field1216.endStartSection("connection");
       this.method1371().method33401();
-      this.field1216.method22506("players");
+      this.field1216.endStartSection("players");
       this.field1226.method19455();
       if (SharedConstants.field42545) {
          Class7879.field33820.method26417();
       }
 
-      this.field1216.method22506("server gui refresh");
+      this.field1216.endStartSection("server gui refresh");
 
       for (int var9 = 0; var9 < this.field1214.size(); var9++) {
          this.field1214.get(var9).run();
       }
 
-      this.field1216.method22505();
+      this.field1216.endSection();
    }
 
    public boolean method1312() {
@@ -812,7 +812,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    public abstract Optional<String> method1327();
 
    @Override
-   public void method1328(ITextComponent var1, UUID var2) {
+   public void sendMessage(ITextComponent var1, UUID var2) {
       field1208.info(var1.getString());
    }
 
@@ -873,8 +873,8 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       this.getPlayerList().method19488().forEach(this::method1340);
    }
 
-   private void method1340(Class878 var1) {
-      Class6612 var4 = var1.getServerWorld().method6788();
+   private void method1340(ServerPlayerEntity var1) {
+      Class6612 var4 = var1.getServerWorld().getWorldInfo();
       var1.field4855.sendPacket(new Class5535(var4.method20047(), var4.method20048()));
    }
 
@@ -915,7 +915,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
 
       var1.method27298("uses_auth", this.field1231);
       var1.method27298("gui_state", !this.method1373() ? "disabled" : "enabled");
-      var1.method27298("run_time", (Util.method38487() - var1.method27303()) / 60L * 1000L);
+      var1.method27298("run_time", (Util.milliTime() - var1.method27303()) / 60L * 1000L);
       var1.method27298("avg_tick_ms", (int)(MathHelper.method37785(this.field1238) * 1.0E-6));
       int var4 = 0;
 
@@ -1201,7 +1201,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          Class6395 var4 = var1.method20177().getPlayerList();
          Class4531 var5 = var4.method19468();
 
-         for (Class878 var7 : Lists.newArrayList(var4.method19488())) {
+         for (ServerPlayerEntity var7 : Lists.newArrayList(var4.method19488())) {
             if (!var5.method14448(var7.getGameProfile())) {
                var7.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.not_whitelisted"));
             }
@@ -1445,7 +1445,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    }
 
    @Nullable
-   public IChatFilter method1438(Class878 var1) {
+   public IChatFilter method1438(ServerPlayerEntity var1) {
       return null;
    }
 

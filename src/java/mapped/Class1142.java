@@ -3,19 +3,19 @@ package mapped;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1142 extends Class1140 {
-   private static final Class5805[] field6208 = new Class5805[]{
-      Class5805.field25346,
-      Class5805.field25364,
-      Class5805.field25336,
-      Class5805.field25349,
-      Class5805.field25318,
-      Class5805.field25321,
-      Class5805.field25322,
-      Class5805.field25351,
-      Class5805.field25366,
-      Class5805.field25367,
-      Class5805.field25327,
-      Class5805.field25325
+   private static final AbstractOption[] field6208 = new AbstractOption[]{
+      AbstractOption.field25346,
+      AbstractOption.field25364,
+      AbstractOption.field25336,
+      AbstractOption.field25349,
+      AbstractOption.field25318,
+      AbstractOption.field25321,
+      AbstractOption.field25322,
+      AbstractOption.field25351,
+      AbstractOption.field25366,
+      AbstractOption.field25367,
+      AbstractOption.field25327,
+      AbstractOption.field25325
    };
 
    public Class1142(Screen var1, Class9574 var2) {

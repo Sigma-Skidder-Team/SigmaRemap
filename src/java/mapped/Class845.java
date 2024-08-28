@@ -84,10 +84,10 @@ public class Class845 extends Class838 {
 
             if (var4.field6523 == 220) {
                this.method2590(Class8043.method27619("of.message.capeOF.reloadCape"), 15000L);
-               if (this.field4562.field1339 != null) {
+               if (this.field4562.player != null) {
                   long var16 = 15000L;
                   long var18 = System.currentTimeMillis() + var16;
-                  this.field4562.field1339.method5386(var18);
+                  this.field4562.player.method5386(var18);
                }
             }
 
@@ -105,7 +105,7 @@ public class Class845 extends Class838 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4630, this.field4560, this.field4564 / 2, 20, 16777215);
       if (this.field4682 != null) {

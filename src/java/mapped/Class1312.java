@@ -8,7 +8,7 @@ public class Class1312 extends Screen {
    private Class7156 field6924 = Class8703.method31387();
 
    public Class1312() {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
    }
 
    @Override
@@ -17,7 +17,7 @@ public class Class1312 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6924 == null) {
          this.method2471(0);
       } else {

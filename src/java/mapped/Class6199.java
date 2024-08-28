@@ -20,7 +20,7 @@ public class Class6199 implements Class6196 {
       this.field27669++;
       if (this.field27667.method37036() == Class1894.field11102) {
          if (this.field27669 == 1) {
-            ClientPlayerEntity var3 = this.field27667.method37035().field1339;
+            ClientPlayerEntity var3 = this.field27667.method37035().player;
             if (var3 != null) {
                if (var3.field4902.method4059(Class5985.field26085)) {
                   this.field27667.method37034(Class2200.field14380);

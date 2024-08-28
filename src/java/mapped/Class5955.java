@@ -7,7 +7,7 @@ public class Class5955 extends Class5942<Class945> {
       super(var1);
    }
 
-   public void method18462(Class945 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class945 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       Direction var9 = var1.method3775().<Direction>method23463(Class3244.field18701);
       Class25 var10 = var1.method3795();
 

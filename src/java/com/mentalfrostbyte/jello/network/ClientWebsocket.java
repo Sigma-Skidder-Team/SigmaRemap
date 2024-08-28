@@ -21,7 +21,7 @@ public class ClientWebsocket extends Class344 {
 
     @Override
     public void method1758(Class7296 var1) {
-        this.field1543.method20283();
+
     }
 
     @Override

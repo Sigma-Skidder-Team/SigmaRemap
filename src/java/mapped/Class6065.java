@@ -15,7 +15,7 @@ public abstract class Class6065 {
       this.field26310 = var4;
    }
 
-   public void method18801(Class9332 var1, int var2, int var3, int var4, int var5) {
+   public void method18801(MatrixStack var1, int var2, int var3, int var4, int var5) {
       int var8 = var2 + this.field26309;
       int var9 = var3 + this.field26310;
       boolean var10 = false;
@@ -26,7 +26,7 @@ public abstract class Class6065 {
       this.method18799(var1, var8, var9, var10);
    }
 
-   public abstract void method18799(Class9332 var1, int var2, int var3, boolean var4);
+   public abstract void method18799(MatrixStack var1, int var2, int var3, boolean var4);
 
    public int method18802() {
       return this.field26309 + this.field26307;
@@ -38,7 +38,7 @@ public abstract class Class6065 {
 
    public abstract void method18800(int var1);
 
-   public static void method18804(Class9332 var0, List<Class6065> var1, Class1286<?> var2, int var3, int var4, int var5, int var6) {
+   public static void method18804(MatrixStack var0, List<Class6065> var1, Class1286<?> var2, int var3, int var4, int var5, int var6) {
       for (Class6065 var10 : var1) {
          if (var2.method6022() > var10.method18802()) {
             var10.method18801(var0, var3, var4, var5, var6);

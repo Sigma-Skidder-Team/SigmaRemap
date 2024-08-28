@@ -44,15 +44,15 @@ public class Class1124 extends Class875<Class5824> {
    }
 
    @Override
-   public void method1931() {
-      super.method1931();
+   public void onClose() {
+      super.onClose();
       this.field4562.field1302.method36347(false);
    }
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
       if (var1 == 256) {
-         this.field4562.field1339.method2772();
+         this.field4562.player.method2772();
       }
 
       return !this.field6160.method1920(var1, var2, var3) && !this.field6160.method5653() ? super.method1920(var1, var2, var3) : true;
@@ -67,19 +67,19 @@ public class Class1124 extends Class875<Class5824> {
          }
 
          this.field4727.method18197(var4);
-         this.field4562.field1339.connection.sendPacket(new Class5558(var4));
+         this.field4562.player.connection.sendPacket(new Class5558(var4));
       }
    }
 
    @Override
-   public void method2617(Class9332 var1, int var2, int var3) {
+   public void method2617(MatrixStack var1, int var2, int var3) {
       RenderSystem.disableBlend();
       super.method2617(var1, var2, var3);
       int var6 = this.field4727.method18198();
       if (var6 > 0) {
          int var7 = 8453920;
          Object var8;
-         if (var6 >= 40 && !this.field4562.field1339.field4919.field29609) {
+         if (var6 >= 40 && !this.field4562.player.field4919.field29609) {
             var8 = field6159;
             var7 = 16736352;
          } else if (this.field4727.method18131(2).method18266()) {
@@ -101,7 +101,7 @@ public class Class1124 extends Class875<Class5824> {
    }
 
    @Override
-   public void method2717(Class9332 var1, int var2, int var3, float var4) {
+   public void method2717(MatrixStack var1, int var2, int var3, float var4) {
       this.field6160.method1923(var1, var2, var3, var4);
    }
 

@@ -196,7 +196,7 @@ public class Class815 extends Class813 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field4420 = null;
       this.method2469(var1);
       method5691(var1, this.field4568, field4412, this.field4564 / 2, method1929(4), 16777215);
@@ -234,7 +234,7 @@ public class Class815 extends Class813 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -346,7 +346,7 @@ public class Class815 extends Class813 {
          );
    }
 
-   public void method2282(Class9332 var1, ITextComponent var2, int var3, int var4) {
+   public void method2282(MatrixStack var1, ITextComponent var2, int var3, int var4) {
       int var7 = var3 + 12;
       int var8 = var4 - 12;
       int var9 = this.field4568.method38821(var2);
@@ -358,7 +358,7 @@ public class Class815 extends Class813 {
       this.field4568.method38803(var1, var2, (float)var7, (float)var8, 16777215);
    }
 
-   private void method2283(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2283(MatrixStack var1, int var2, int var3, int var4, int var5) {
       if (!this.field4422.field27452) {
          if (this.field4422.field27447 != Class2261.field14706) {
             if (this.field4422.field27447 == Class2261.field14707) {
@@ -376,7 +376,7 @@ public class Class815 extends Class813 {
       }
    }
 
-   private void method2284(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2284(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4410);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
@@ -385,7 +385,7 @@ public class Class815 extends Class813 {
       }
    }
 
-   private void method2285(Class9332 var1, int var2, int var3, int var4, int var5, int var6) {
+   private void method2285(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
       this.field4562.getTextureManager().bindTexture(field4411);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field4434 % 20 >= 10) {
@@ -407,7 +407,7 @@ public class Class815 extends Class813 {
       }
    }
 
-   private void method2286(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2286(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4408);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
@@ -416,7 +416,7 @@ public class Class815 extends Class813 {
       }
    }
 
-   private void method2287(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2287(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4409);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);

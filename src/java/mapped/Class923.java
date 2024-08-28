@@ -17,7 +17,7 @@ public interface Class923 {
       }
    }
 
-   default boolean method3639(World var1, Class878 var2, Class4843<?> var3) {
+   default boolean method3639(World var1, ServerPlayerEntity var2, Class4843<?> var3) {
       if (!var3.method14965() && var1.method6789().method17135(Class5462.field24243) && !var2.method2810().method21360(var3)) {
          return false;
       } else {

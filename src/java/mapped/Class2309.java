@@ -37,9 +37,9 @@ public enum Class2309 {
       if (!this.field15821.equals(Class8514.field37796)) {
          return this.field15823;
       } else {
-         return !(this.field15823 * Class3263.method11777(Class5280.method16524().field1339.method3159()) > 0.0F)
+         return !(this.field15823 * Class3263.method11777(Class5280.method16524().player.method3159()) > 0.0F)
             ? Class3263.method11777(20)
-            : Class3263.method11777(Class5280.method16525().field1339.method3159());
+            : Class3263.method11777(Class5280.method16525().player.method3159());
       }
    }
 
@@ -67,21 +67,21 @@ public enum Class2309 {
 
    public List<Class9110> method9086() {
       ArrayList var3 = new ArrayList();
-      float var4 = (float)Math.toRadians((double)Class5280.method16526().field1339.field5031);
-      float var5 = (float)Math.toRadians((double)Class5280.method16527().field1339.field5032);
-      double var6 = Class5280.method16528().field1339.field5048
-         + (Class5280.method16529().field1339.getPosX() - Class5280.method16530().field1339.field5048)
-            * (double)Class5280.method16531().field1284.field40356;
-      double var8 = Class5280.method16532().field1339.field5049
-         + (Class5280.method16533().field1339.getPosY() - Class5280.method16534().field1339.field5049)
-            * (double)Class5280.method16535().field1284.field40356;
-      double var10 = Class5280.method16536().field1339.field5050
-         + (Class5280.method16537().field1339.getPosZ() - Class5280.method16538().field1339.field5050)
-            * (double)Class5280.method16539().field1284.field40356;
+      float var4 = (float)Math.toRadians((double)Class5280.method16526().player.field5031);
+      float var5 = (float)Math.toRadians((double)Class5280.method16527().player.field5032);
+      double var6 = Class5280.method16528().player.field5048
+         + (Class5280.method16529().player.getPosX() - Class5280.method16530().player.field5048)
+            * (double)Class5280.method16531().timer.renderPartialTicks;
+      double var8 = Class5280.method16532().player.field5049
+         + (Class5280.method16533().player.getPosY() - Class5280.method16534().player.field5049)
+            * (double)Class5280.method16535().timer.renderPartialTicks;
+      double var10 = Class5280.method16536().player.field5050
+         + (Class5280.method16537().player.getPosZ() - Class5280.method16538().player.field5050)
+            * (double)Class5280.method16539().timer.renderPartialTicks;
       this.field15825 = var6;
-      this.field15826 = var8 + (double)Class5280.method16540().field1339.method3393() - 0.1F;
+      this.field15826 = var8 + (double)Class5280.method16540().player.method3393() - 0.1F;
       this.field15827 = var10;
-      float var12 = Math.min(20.0F, (float)(72000 - Class5280.method16541().field1339.method3159()) + Class5280.method16542().method1562()) / 20.0F;
+      float var12 = Math.min(20.0F, (float)(72000 - Class5280.method16541().player.method3159()) + Class5280.method16542().method1562()) / 20.0F;
       this.field15828 = -MathHelper.method37763(var4) * MathHelper.method37764(var5) * this.field15823 * var12;
       this.field15829 = -MathHelper.method37763(var5) * this.field15823 * var12;
       this.field15830 = MathHelper.method37764(var4) * MathHelper.method37764(var5) * this.field15823 * var12;
@@ -104,9 +104,9 @@ public enum Class2309 {
             this.field15827 + (double)var15
          );
          List<Entity> var17 = Class5280.method16544()
-            .field1338
+            .world
             .method6770(
-               Class5280.method16543().field1339,
+               Class5280.method16543().player,
                var16.method19667((double)this.field15828, (double)this.field15829, (double)this.field15830).method19663(1.0, 1.0, 1.0),
                Class8088.field34763.and(new Class167(this, var15, var13, var14))
             );
@@ -118,8 +118,8 @@ public enum Class2309 {
          }
 
          Class8711 var18 = Class5280.method16546()
-            .field1338
-            .method7036(new Class6809(var13, var14, Class2271.field14774, Class1985.field12962, Class5280.method16545().field1339));
+            .world
+            .method7036(new Class6809(var13, var14, Class2271.field14774, Class1985.field12962, Class5280.method16545().player));
          if (var18 != null && var18.method31417() != Class2100.field13689) {
             this.field15831 = var18;
             this.field15825 = this.field15831.method31419().field18048;

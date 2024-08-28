@@ -22,7 +22,7 @@ public class Class5948 extends Class5942<Class958> {
       return var2;
    }
 
-   public void method18462(Class958 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class958 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       List var9 = var1.method3890();
       if (var9 != null) {
          float var10 = 0.6666667F;
@@ -66,13 +66,13 @@ public class Class5948 extends Class5942<Class958> {
    }
 
    public static void method18478(
-      Class9332 var0, Class7733 var1, int var2, int var3, Class7219 var4, Class7826 var5, boolean var6, List<Pair<Class2154, Class112>> var7
+           MatrixStack var0, Class7733 var1, int var2, int var3, Class7219 var4, Class7826 var5, boolean var6, List<Pair<Class2154, Class112>> var7
    ) {
       method18479(var0, var1, var2, var3, var4, var5, var6, var7, false);
    }
 
    public static void method18479(
-      Class9332 var0, Class7733 var1, int var2, int var3, Class7219 var4, Class7826 var5, boolean var6, List<Pair<Class2154, Class112>> var7, boolean var8
+           MatrixStack var0, Class7733 var1, int var2, int var3, Class7219 var4, Class7826 var5, boolean var6, List<Pair<Class2154, Class112>> var7, boolean var8
    ) {
       var4.method22680(var0, var5.method26201(var1, Class4520::method14309, var8), var2, var3);
 

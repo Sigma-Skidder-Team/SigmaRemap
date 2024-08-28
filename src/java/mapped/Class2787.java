@@ -18,7 +18,7 @@ public class Class2787 extends Class2785 {
 
    @Override
    public void method10979() {
-      Class878 var3 = this.field17407.method4506();
+      ServerPlayerEntity var3 = this.field17407.method4506();
       if (var3 == null && this.field17410.method4506() != null) {
          var3 = this.field17410.method4506();
       }

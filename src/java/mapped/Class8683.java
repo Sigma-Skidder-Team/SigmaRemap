@@ -35,10 +35,10 @@ public class Class8683 {
       Minecraft var8 = Class7944.method26860();
       Class1815 var9 = var8.method1580();
       Class9574 var10 = Class7944.method26928();
-      int var11 = var9.method8041();
-      int var12 = var9.method8042();
+      int var11 = var9.getFramebufferWidth();
+      int var12 = var9.getFramebufferHeight();
       int var13 = var10.field44673;
-      int var14 = var9.method8036(var8.field1299.field44673, var8.field1299.field44617);
+      int var14 = var9.method8036(var8.gameSettings.field44673, var8.gameSettings.field44617);
       int var15 = Class7944.method26975();
       boolean var16 = Class8157.method28309() && var15 > 1;
       if (var16) {
@@ -46,14 +46,14 @@ public class Class8683 {
          var9.method8052(var11 * var15, var12 * var15);
          Class7414.method23832();
          Class7414.method23883(16640);
-         var8.method1464().method29112(true);
+         var8.method1464().bindFramebuffer(true);
          Class7414.method23804();
-         var8.field1295.method751(var8.method1562(), System.nanoTime(), true);
+         var8.gameRenderer.updateCameraAndRender(var8.method1562(), System.nanoTime(), true);
       }
 
       Class1806 var17 = method31254(var2, var3, var4);
       if (var16) {
-         var8.method1464().method29114();
+         var8.method1464().unbindFramebuffer();
          Class7414.method23833();
          Class7944.method26928().field44673 = var13;
          var9.method8052(var11, var12);

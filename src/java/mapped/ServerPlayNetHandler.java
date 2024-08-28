@@ -33,9 +33,9 @@ import org.apache.logging.log4j.Logger;
 
 public class ServerPlayNetHandler implements IServerPlayNetHandler {
    private static final Logger LOGGER = LogManager.getLogger();
-   public final Class8586 field23224;
-   private final Class314 server;
-   public Class878 player;
+   public final NetworkManager netManager;
+   private final MinecraftServer server;
+   public ServerPlayerEntity player;
    private int field23227;
    private long field23228;
    private boolean field23229;
@@ -66,9 +66,9 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    private int field23254;
    private int field23255;
 
-   public ServerPlayNetHandler(Class314 var1, Class8586 var2, Class878 var3) {
+   public ServerPlayNetHandler(MinecraftServer var1, NetworkManager var2, ServerPlayerEntity var3) {
       this.server = var1;
-      this.field23224 = var2;
+      this.netManager = var2;
       var2.method30692(this);
       this.player = var3;
       var3.field4855 = this;
@@ -122,8 +122,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          this.field23253 = 0;
       }
 
-      this.server.method1420().method22503("keepAlive");
-      long var3 = Util.method38487();
+      this.server.method1420().startSection("keepAlive");
+      long var3 = Util.milliTime();
       if (var3 - this.field23228 >= 15000L) {
          if (!this.field23229) {
             this.field23229 = true;
@@ -135,7 +135,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          }
       }
 
-      this.server.method1420().method22505();
+      this.server.method1420().endSection();
       if (this.chatSpamThresholdCount > 0) {
          this.chatSpamThresholdCount--;
       }
@@ -146,7 +146,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
       if (this.player.method2818() > 0L
          && this.server.method1382() > 0
-         && Util.method38487() - this.player.method2818() > (long)(this.server.method1382() * 1000 * 60)) {
+         && Util.milliTime() - this.player.method2818() > (long)(this.server.method1382() * 1000 * 60)) {
          this.disconnect(new TranslationTextComponent("multiplayer.disconnect.idling"));
       }
    }
@@ -161,8 +161,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public Class8586 method15589() {
-      return this.field23224;
+   public NetworkManager method15589() {
+      return this.netManager;
    }
 
    private boolean method15657() {
@@ -170,13 +170,13 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    public void disconnect(ITextComponent var1) {
-      this.field23224.method30694(new Class5530(var1), var2 -> this.field23224.method30701(var1));
-      this.field23224.method30711();
-      this.server.method1635(this.field23224::method30713);
+      this.netManager.method30694(new Class5530(var1), var2 -> this.netManager.method30701(var1));
+      this.netManager.method30711();
+      this.server.method1635(this.netManager::method30713);
    }
 
    private <T> void method15659(T var1, Consumer<T> var2, BiFunction<IChatFilter, T, CompletableFuture<Optional<T>>> var3) {
-      Class314 var6 = this.player.getServerWorld().method6715();
+      MinecraftServer var6 = this.player.getServerWorld().method6715();
       Consumer<T> var7 = var2x -> {
          if (!this.method15589().method30707()) {
             LOGGER.debug("Ignoring packet due to disconnection");
@@ -253,7 +253,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                   var22,
                   var24
                );
-               this.field23224.method30693(new Class5536(var4));
+               this.netManager.method30693(new Class5536(var4));
                return;
             }
 
@@ -282,7 +282,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             boolean var32 = var5.method7053(var4, var4.method3389().method19679(0.0625));
             if (var30 && (var31 || !var32)) {
                var4.method3269(var6, var8, var10, var18, var19);
-               this.field23224.method30693(new Class5536(var4));
+               this.netManager.method30693(new Class5536(var4));
                return;
             }
 
@@ -358,16 +358,16 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          .getCommandManager()
          .method18842()
          .getCompletionSuggestions(var5)
-         .thenAccept(var2 -> this.field23224.method30693(new Class5543(var1.method17485(), var2)));
+         .thenAccept(var2 -> this.netManager.method30693(new Class5543(var1.method17485(), var2)));
    }
 
    @Override
    public void method15641(Class5578 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (!this.server.method1361()) {
-         this.player.method1328(new TranslationTextComponent("advMode.notEnabled"), Util.field45724);
+         this.player.sendMessage(new TranslationTextComponent("advMode.notEnabled"), Util.DUMMY_UUID);
       } else if (!this.player.method2979()) {
-         this.player.method1328(new TranslationTextComponent("advMode.notAllowed"), Util.field45724);
+         this.player.sendMessage(new TranslationTextComponent("advMode.notAllowed"), Util.DUMMY_UUID);
       } else {
          Class911 var4 = null;
          Class969 var5 = null;
@@ -419,7 +419,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
             var4.method3568();
             if (!Class9001.method33256(var8)) {
-               this.player.method1328(new TranslationTextComponent("advMode.setCommand.success", var8), Util.field45724);
+               this.player.sendMessage(new TranslationTextComponent("advMode.setCommand.success", var8), Util.DUMMY_UUID);
             }
          }
       }
@@ -439,13 +439,13 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                }
 
                var4.method3568();
-               this.player.method1328(new TranslationTextComponent("advMode.setCommand.success", var1.method17388()), Util.field45724);
+               this.player.sendMessage(new TranslationTextComponent("advMode.setCommand.success", var1.method17388()), Util.DUMMY_UUID);
             }
          } else {
-            this.player.method1328(new TranslationTextComponent("advMode.notAllowed"), Util.field45724);
+            this.player.sendMessage(new TranslationTextComponent("advMode.notAllowed"), Util.DUMMY_UUID);
          }
       } else {
-         this.player.method1328(new TranslationTextComponent("advMode.notEnabled"), Util.field45724);
+         this.player.sendMessage(new TranslationTextComponent("advMode.notEnabled"), Util.DUMMY_UUID);
       }
    }
 
@@ -870,7 +870,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       }
    }
 
-   private static boolean method15670(Class878 var0, ItemStack var1) {
+   private static boolean method15670(ServerPlayerEntity var0, ItemStack var1) {
       if (var1.method32105()) {
          return false;
       } else {
@@ -891,14 +891,14 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       this.player.markPlayerActive();
       if (var8.getY() >= this.server.method1364()) {
          IFormattableTextComponent var10 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
-         this.player.field4855.sendPacket(new SChatPacket(var10, ChatType.GAME_INFO, Util.field45724));
+         this.player.field4855.sendPacket(new SChatPacket(var10, ChatType.GAME_INFO, Util.DUMMY_UUID));
       } else if (this.targetPos == null
          && this.player.method3276((double)var8.method8304() + 0.5, (double)var8.getY() + 0.5, (double)var8.method8306() + 0.5) < 64.0
          && var4.method6785(this.player, var8)) {
          ActionResultType var12 = this.player.field4857.method33860(this.player, var4, var6, var5, var7);
          if (var9 == Direction.field673 && !var12.isSuccessOrConsume() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {
             IFormattableTextComponent var11 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
-            this.player.field4855.sendPacket(new SChatPacket(var11, ChatType.GAME_INFO, Util.field45724));
+            this.player.field4855.sendPacket(new SChatPacket(var11, ChatType.GAME_INFO, Util.DUMMY_UUID));
          } else if (var12.isSuccess()) {
             this.player.swing(var5, true);
          }
@@ -959,7 +959,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          .method19484(
             new TranslationTextComponent("multiplayer.player.left", this.player.getDisplayName()).mergeStyle(TextFormatting.YELLOW),
             ChatType.SYSTEM,
-            Util.field45724
+            Util.DUMMY_UUID
          );
       this.player.method2782();
       this.server.getPlayerList().method19450(this.player);
@@ -992,7 +992,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       }
 
       try {
-         this.field23224.method30694(var1, var2);
+         this.netManager.method30694(var1, var2);
       } catch (Throwable var8) {
          Class4526 var9 = Class4526.method14413(var8, "Sending packet");
          Class8965 var7 = var9.method14410("Packet being sent");
@@ -1050,7 +1050,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             this.disconnect(new TranslationTextComponent("disconnect.spam"));
          }
       } else {
-         this.sendPacket(new SChatPacket(new TranslationTextComponent("chat.cannotSend").mergeStyle(TextFormatting.RED), ChatType.SYSTEM, Util.field45724));
+         this.sendPacket(new SChatPacket(new TranslationTextComponent("chat.cannotSend").mergeStyle(TextFormatting.RED), ChatType.SYSTEM, Util.DUMMY_UUID));
       }
    }
 
@@ -1342,7 +1342,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void method15621(Class5600 var1) {
       if (this.field23229 && var1.method17608() == this.field23230) {
-         int var4 = (int)(Util.method38487() - this.field23228);
+         int var4 = (int)(Util.milliTime() - this.field23228);
          this.player.field4891 = (this.player.field4891 * 3 + var4) / 4;
          this.field23229 = false;
       } else if (!this.method15657()) {

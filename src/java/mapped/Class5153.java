@@ -15,13 +15,13 @@ public class Class5153 extends Module {
    @EventTarget
    private void method16007(TickEvent var1) {
       if (this.method15996()) {
-         if (!mc.field1339.field4919.field29609
-            && mc.field1339.method2932().method37574() > 17
-            && mc.field1339.method3042() < 20.0F
-            && mc.field1339.method3042() != 0.0F
-            && (mc.field1339.field5036 || !this.method15974("Only OnGround"))) {
+         if (!mc.player.field4919.field29609
+            && mc.player.method2932().method37574() > 17
+            && mc.player.method3042() < 20.0F
+            && mc.player.method3042() != 0.0F
+            && (mc.player.field5036 || !this.method15974("Only OnGround"))) {
             for (int var4 = 0; (float)var4 < this.method15977("Packet amount"); var4++) {
-               mc.getClientPlayNetHandler().sendPacket(new Class5603(mc.field1339.field5036));
+               mc.getClientPlayNetHandler().sendPacket(new Class5603(mc.player.field5036));
             }
          }
       }

@@ -139,26 +139,26 @@ public class Class4327 extends Class4305 {
             } catch (InterruptedException var3x) {
             }
 
-            Minecraft.getInstance().method1487();
+            Minecraft.getInstance().shutdown();
          }).start();
       });
       this.method13230(this.field21131 = new Class4365(this, "Account", 0, var19, 0, var18, "Log in"));
       this.method13230(this.field21128 = new Class4302(this, "pre", 0, 0, 240, 100));
       this.field21128.method13247((var1x, var2x) -> {
-         if (Client.getInstance().getNetworkManager().method30455() != null) {
+         if (Client.getInstance().getNetworkManager().getNewAccount("SigmaUser") != null) {
             ((Class4310)this.method13258()).method13343();
          } else {
             this.method13446(new Class4322());
          }
       });
       this.field21132.method13251((var1x, var2x) -> ((Class4310)this.method13258()).method13342());
-      this.field21123.method13251((var1x, var2x) -> this.method13445(new Class1341(Minecraft.getInstance().field1355)));
-      this.field21124.method13251((var1x, var2x) -> this.method13445(new Class1317(Minecraft.getInstance().field1355)));
-      this.field21126.method13251((var1x, var2x) -> this.method13445(new Class1129(Minecraft.getInstance().field1355, Minecraft.getInstance().field1299)));
+      this.field21123.method13251((var1x, var2x) -> this.method13445(new Class1341(Minecraft.getInstance().currentScreen)));
+      this.field21124.method13251((var1x, var2x) -> this.method13445(new Class1317(Minecraft.getInstance().currentScreen)));
+      this.field21126.method13251((var1x, var2x) -> this.method13445(new Class1129(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
       this.field21127.method13251((var1x, var2x) -> this.method13446(new Class4313()));
       this.field21125.method13251((var1x, var2x) -> this.method13443());
       this.field21131.method13251((var1x, var2x) -> {
-         if (Client.getInstance().getNetworkManager().method30455() != null) {
+         if (Client.getInstance().getNetworkManager().getNewAccount("SigmaUser") != null) {
             ((Class4310)this.method13258()).method13345();
          } else {
             this.method13446(new Class4322());
@@ -174,7 +174,7 @@ public class Class4327 extends Class4305 {
    public void method13443() {
       Class8005.field34417 = Class8005.field34418;
       Class810 var3 = new Class810();
-      var3.method2209(Minecraft.getInstance().field1355);
+      var3.method2209(Minecraft.getInstance().currentScreen);
       this.method13444();
    }
 

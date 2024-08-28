@@ -12,12 +12,12 @@ public class Class5747 extends Class5651<Class1098, Class2861<Class1098>> {
       return var1.method5249();
    }
 
-   public void method17857(Class1098 var1, Class9332 var2, float var3) {
+   public void method17857(Class1098 var1, MatrixStack var2, float var3) {
       super.method17857(var1, var2, var3);
       var2.method35292(0.8F, 0.8F, 0.8F);
    }
 
-   public void method17842(Class1098 var1, Class9332 var2, float var3, float var4, float var5) {
+   public void method17842(Class1098 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
       float var8 = var1.method5264(var5);
       if (var8 > 0.0F) {

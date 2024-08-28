@@ -18,7 +18,7 @@ public class Class4322 extends Class4307 {
    private float field21085 = 0.0F;
    private float field21086 = 0.0F;
    private Texture field21087;
-   private Class4369 field21088;
+   private LoginScreen field21088;
    private Class4275 field21089;
    private Class4354 field21090;
    private Class4274 field21091;
@@ -30,13 +30,13 @@ public class Class4322 extends Class4307 {
       this.method13300(false);
       this.field21087 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/" + ResourcesDecrypter.getPanoramaPNG(), 0.075F, 8);
       this.method13230(
-         this.field21088 = new Class4369(
+         this.field21088 = new LoginScreen(
             this,
             "login",
-            (this.field20897 - Class4369.field21361) / 2,
-            (this.field20898 - Class4369.field21360) / 2,
-            Class4369.field21361,
-            Class4369.field21360
+            (this.field20897 - LoginScreen.field21361) / 2,
+            (this.field20898 - LoginScreen.field21360) / 2,
+            LoginScreen.field21361,
+            LoginScreen.field21360
          )
       );
       this.method13230(
@@ -68,7 +68,7 @@ public class Class4322 extends Class4307 {
          this.field21092 = true;
          this.field21091.method13288(true);
       });
-      this.field21091.method13251((var0, var1) -> Minecraft.getInstance().displayGuiScreen(new Class849()));
+      this.field21091.method13251((var0, var1) -> Minecraft.getInstance().displayGuiScreen(new MainMenuScreen()));
    }
 
    public void method13422() {
@@ -149,11 +149,11 @@ public class Class4322 extends Class4307 {
       }
 
       if (this.field21092) {
-         String var6 = Client.getInstance().getNetworkManager().method30455().field35440;
-         String var7 = "Welcome back";
+         String username = Client.getInstance().getNetworkManager().getNewAccount("SigmaUser").username;
+         String welcomeBackSign = "Welcome back";
          byte var8 = 100;
          byte var9 = 10;
-         int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.method23942(var7), ResourceRegistry.field38860.method23942(var6)) + var9 * 10;
+         int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.method23942(welcomeBackSign), ResourceRegistry.field38860.method23942(username)) + var9 * 10;
          int var11 = (this.field20897 - var10) / 2;
          int var12 = (this.field20898 - var8 * 2) / 2;
          Class3192.method11426(
@@ -168,8 +168,8 @@ public class Class4322 extends Class4307 {
          );
          int var13 = 165;
          int var14 = 54;
-         Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), var7, Class1979.field12896.field12910);
-         Class3192.method11439(ResourceRegistry.field38860, (float)(var11 + var13), (float)(var12 + var14 + 45), var6, Class1979.field12896.field12910);
+         Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), welcomeBackSign, Class1979.field12896.field12910);
+         Class3192.method11439(ResourceRegistry.field38860, (float)(var11 + var13), (float)(var12 + var14 + 45), username, Class1979.field12896.field12910);
       }
 
       GL11.glPushMatrix();
@@ -218,7 +218,7 @@ public class Class4322 extends Class4307 {
    public void method13065(int var1) {
       super.method13065(var1);
       if (var1 == 256) {
-         Minecraft.getInstance().displayGuiScreen(new Class849());
+         Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
       }
    }
 }

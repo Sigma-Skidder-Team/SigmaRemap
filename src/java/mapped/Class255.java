@@ -15,14 +15,14 @@ public class Class255<T extends Class880, M extends Class2797<T>, A extends Clas
       this.field914 = (A)var3;
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.method843(var1, var2, (T)var4, Class2106.field13735, var3, this.method847(Class2106.field13735));
       this.method843(var1, var2, (T)var4, Class2106.field13734, var3, this.method847(Class2106.field13734));
       this.method843(var1, var2, (T)var4, Class2106.field13733, var3, this.method847(Class2106.field13733));
       this.method843(var1, var2, (T)var4, Class2106.field13736, var3, this.method847(Class2106.field13736));
    }
 
-   private void method843(Class9332 var1, Class7733 var2, T var3, Class2106 var4, int var5, A var6) {
+   private void method843(MatrixStack var1, Class7733 var2, T var3, Class2106 var4, int var5, A var6) {
       ItemStack var9 = var3.method2943(var4);
       if (var9.method32107() instanceof Class3279) {
          Class3279 var10 = (Class3279)var9.method32107();
@@ -73,12 +73,12 @@ public class Class255<T extends Class880, M extends Class2797<T>, A extends Clas
    }
 
    private void method845(
-      Class9332 var1, Class7733 var2, int var3, Class3279 var4, boolean var5, A var6, boolean var7, float var8, float var9, float var10, String var11
+           MatrixStack var1, Class7733 var2, int var3, Class3279 var4, boolean var5, A var6, boolean var7, float var8, float var9, float var10, String var11
    ) {
       this.method846(var1, var2, var3, var5, (A)var6, var8, var9, var10, this.method849(var4, var7, var11));
    }
 
-   private void method846(Class9332 var1, Class7733 var2, int var3, boolean var4, A var5, float var6, float var7, float var8, ResourceLocation var9) {
+   private void method846(MatrixStack var1, Class7733 var2, int var3, boolean var4, A var5, float var6, float var7, float var8, ResourceLocation var9) {
       Class5422 var12 = Class216.method782(var2, Class4520.method14308(var9), false, var4);
       var5.method11016(var1, var12, var3, Class213.field798, var6, var7, var8, 1.0F);
    }

@@ -14,7 +14,7 @@ public class Class5731 extends Class5715<ExperienceOrbEntity> {
       return MathHelper.method37775(super.method17858(var1, var2) + 7, 0, 15);
    }
 
-   public void method17853(ExperienceOrbEntity var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(ExperienceOrbEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       int var9 = var1.method4178();
       float var10 = (float)(var9 % 4 * 16 + 0) / 64.0F;

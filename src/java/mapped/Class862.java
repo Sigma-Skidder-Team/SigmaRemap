@@ -46,7 +46,7 @@ public class Class862 extends Class851<Class5826> {
    }
 
    @Override
-   public void method2617(Class9332 var1, int var2, int var3) {
+   public void method2617(MatrixStack var1, int var2, int var3) {
       int var6 = this.field4727.method18208();
       if (var6 > 0 && var6 <= 5 && this.field4727.method18218()) {
          IFormattableTextComponent var7 = this.field4560.deepCopy().append(field4788).append(new TranslationTextComponent("merchant.level." + var6));
@@ -63,7 +63,7 @@ public class Class862 extends Class851<Class5826> {
    }
 
    @Override
-   public void method2618(Class9332 var1, float var2, int var3, int var4) {
+   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(field4786);
       int var7 = (this.field4564 - this.field4721) / 2;
@@ -85,7 +85,7 @@ public class Class862 extends Class851<Class5826> {
       }
    }
 
-   private void method2662(Class9332 var1, int var2, int var3, Class9346 var4) {
+   private void method2662(MatrixStack var1, int var2, int var3, Class9346 var4) {
       this.field4562.getTextureManager().bindTexture(field4786);
       int var7 = this.field4727.method18208();
       int var8 = this.field4727.method18205();
@@ -106,7 +106,7 @@ public class Class862 extends Class851<Class5826> {
       }
    }
 
-   private void method2663(Class9332 var1, int var2, int var3, Class46 var4) {
+   private void method2663(MatrixStack var1, int var2, int var3, Class46 var4) {
       int var7 = var4.size() + 1 - 7;
       if (var7 <= 1) {
          method5697(var1, var2 + 94, var3 + 18, this.method5702(), 6.0F, 199.0F, 6, 27, 256, 512);
@@ -124,7 +124,7 @@ public class Class862 extends Class851<Class5826> {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       super.method1923(var1, var2, var3, var4);
       Class46 var7 = this.field4727.method18217();
@@ -189,7 +189,7 @@ public class Class862 extends Class851<Class5826> {
       this.method2615(var1, var2, var3);
    }
 
-   private void method2664(Class9332 var1, Class9346 var2, int var3, int var4) {
+   private void method2664(MatrixStack var1, Class9346 var2, int var3, int var4) {
       RenderSystem.enableBlend();
       this.field4562.getTextureManager().bindTexture(field4786);
       if (!var2.method35382()) {
@@ -199,7 +199,7 @@ public class Class862 extends Class851<Class5826> {
       }
    }
 
-   private void method2665(Class9332 var1, ItemStack var2, ItemStack var3, int var4, int var5) {
+   private void method2665(MatrixStack var1, ItemStack var2, ItemStack var3, int var4, int var5) {
       this.field4563.method794(var2, var4, var5);
       if (var3.method32179() != var2.method32179()) {
          this.field4563.method798(this.field4568, var3, var4, var5, var3.method32179() != 1 ? null : "1");
@@ -267,17 +267,17 @@ public class Class862 extends Class851<Class5826> {
    }
 
    // $VF: synthetic method
-   public static void method2669(Class862 var0, Class9332 var1, ItemStack var2, int var3, int var4) {
+   public static void method2669(Class862 var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method
-   public static void method2670(Class862 var0, Class9332 var1, ItemStack var2, int var3, int var4) {
+   public static void method2670(Class862 var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method
-   public static void method2671(Class862 var0, Class9332 var1, ItemStack var2, int var3, int var4) {
+   public static void method2671(Class862 var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 }

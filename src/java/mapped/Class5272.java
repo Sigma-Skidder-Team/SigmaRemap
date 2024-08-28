@@ -17,15 +17,15 @@ public class Class5272 extends Module {
 
     @EventTarget
     public void method16498(TickEvent var1) {
-        if (this.method15996() && mc.field1339.field5055 > 10 && mc.method1531() == null && mc.method1528() != null) {
-            float var4 = mc.field1339.method3042() / mc.field1339.method3075() * 10.0F;
+        if (this.method15996() && mc.player.field5055 > 10 && mc.method1531() == null && mc.method1528() != null) {
+            float var4 = mc.player.method3042() / mc.player.method3075() * 10.0F;
             if (var4 < this.method15977("Min Health") || Class7789.method25878(Class8514.field38126) == 0) {
                 boolean var5 = this.method15974("One Time Use");
-                mc.field1338.method6782();
-                mc.method1505();
+                mc.world.sendQuittingDisconnectingPacket();
+                mc.unloadWorld();
                 mc.displayGuiScreen(
                         new Class832(
-                                new Class1316(new Class849()),
+                                new MultiplayerScreen(new MainMenuScreen()),
                                 new TranslationTextComponent("disconnect.lost"),
                                 new StringTextComponent(
                                         "AutoLog disconnected you. " + (!var5 ? "Disable it in a singleplayer world to reconnect." : "The mod now disabled for you to reconnect.")

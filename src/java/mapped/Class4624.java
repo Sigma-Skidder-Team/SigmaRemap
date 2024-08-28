@@ -320,23 +320,23 @@ public class Class4624 {
             } else if (var4 == 401) {
                String var9 = var1.method20606("WWW-Authenticate");
                field22144.info("Could not authorize you against Realms server: " + var9);
-               throw new Class2435(var4, var9, -1, var9);
+               return "";
             } else if (var8 != null && var8.length() != 0) {
                Class9636 var6 = Class9636.method37559(var8);
                field22144.error(
                   "Realms http code: " + var4 + " -  error code: " + var6.method37561() + " -  message: " + var6.method37560() + " - raw body: " + var8
                );
-               throw new Class2435(var4, var8, var6);
+               return "";
             } else {
                field22144.error("Realms error code: " + var4 + " message: " + var8);
-               throw new Class2435(var4, var8, var4, "");
+               return "";
             }
          } else {
             int var5 = var1.method20592();
-            throw new Class2436(var5, var4);
+            return "";
          }
       } catch (Class2505 var7) {
-         throw new Class2435(500, "Could not connect to Realms: " + var7.getMessage(), -1, "");
+         return "";
       }
    }
 }

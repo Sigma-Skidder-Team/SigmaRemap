@@ -122,4 +122,9 @@ public class Class973 extends Class939 {
       double var10 = (double)this.field5325.method8306() + 0.5 + (double)var5.method8306() / 2.0;
       this.field5324.method6743((PlayerEntity)null, var6, var8, var10, var2, Class2266.field14732, 0.5F, this.field5324.field9016.nextFloat() * 0.1F + 0.9F);
    }
+
+   @Override
+   public ITextComponent method2954() {
+      return new TranslationTextComponent("container.barrel");
+   }
 }

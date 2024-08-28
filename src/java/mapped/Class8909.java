@@ -37,8 +37,8 @@ public class Class8909 {
       );
    }
 
-   private static int method32552(Class6619 var0, Class176 var1, Collection<Class878> var2, int var3) throws CommandSyntaxException {
-      for (Class878 var7 : var2) {
+   private static int method32552(Class6619 var0, Class176 var1, Collection<ServerPlayerEntity> var2, int var3) throws CommandSyntaxException {
+      for (ServerPlayerEntity var7 : var2) {
          int var8 = var3;
 
          while (var8 > 0) {
@@ -80,7 +80,7 @@ public class Class8909 {
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.give.success.single", var3, var1.method503(var3, false).method32173(), ((Class878)var2.iterator().next()).getDisplayName()
+               "commands.give.success.single", var3, var1.method503(var3, false).method32173(), ((ServerPlayerEntity)var2.iterator().next()).getDisplayName()
             ),
             true
          );

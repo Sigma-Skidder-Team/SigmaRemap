@@ -215,10 +215,10 @@ public class Class7848 {
       );
    }
 
-   private static int method26286(Class6619 var0, Collection<Class878> var1, Class2289 var2, Collection<Class7952> var3) {
+   private static int method26286(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Collection<Class7952> var3) {
       int var6 = 0;
 
-      for (Class878 var8 : var1) {
+      for (ServerPlayerEntity var8 : var1) {
          var6 += var2.method9037(var8, var3);
       }
 
@@ -228,7 +228,7 @@ public class Class7848 {
                var0.method20179(new TranslationTextComponent(var2.method9040() + ".many.to.many.success", var3.size(), var1.size()), true);
             } else {
                var0.method20179(
-                  new TranslationTextComponent(var2.method9040() + ".many.to.one.success", var3.size(), ((Class878)var1.iterator().next()).getDisplayName()), true
+                  new TranslationTextComponent(var2.method9040() + ".many.to.one.success", var3.size(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true
                );
             }
          } else if (var1.size() != 1) {
@@ -238,7 +238,7 @@ public class Class7848 {
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  var2.method9040() + ".one.to.one.success", ((Class7952)var3.iterator().next()).method27035(), ((Class878)var1.iterator().next()).getDisplayName()
+                  var2.method9040() + ".one.to.one.success", ((Class7952)var3.iterator().next()).method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
                ),
                true
             );
@@ -250,7 +250,7 @@ public class Class7848 {
             throw new Class2468(new TranslationTextComponent(var2.method9040() + ".many.to.many.failure", var3.size(), var1.size()));
          } else {
             throw new Class2468(
-               new TranslationTextComponent(var2.method9040() + ".many.to.one.failure", var3.size(), ((Class878)var1.iterator().next()).getDisplayName())
+               new TranslationTextComponent(var2.method9040() + ".many.to.one.failure", var3.size(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName())
             );
          }
       } else if (var1.size() != 1) {
@@ -260,16 +260,16 @@ public class Class7848 {
       } else {
          throw new Class2468(
             new TranslationTextComponent(
-               var2.method9040() + ".one.to.one.failure", ((Class7952)var3.iterator().next()).method27035(), ((Class878)var1.iterator().next()).getDisplayName()
+               var2.method9040() + ".one.to.one.failure", ((Class7952)var3.iterator().next()).method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
             )
          );
       }
    }
 
-   private static int method26287(Class6619 var0, Collection<Class878> var1, Class2289 var2, Class7952 var3, String var4) {
+   private static int method26287(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Class7952 var3, String var4) {
       int var7 = 0;
       if (var3.method27030().containsKey(var4)) {
-         for (Class878 var9 : var1) {
+         for (ServerPlayerEntity var9 : var1) {
             if (var2.method9039(var9, var3, var4)) {
                var7++;
             }
@@ -281,7 +281,7 @@ public class Class7848 {
             } else {
                var0.method20179(
                   new TranslationTextComponent(
-                     var2.method9040() + ".criterion.to.one.success", var4, var3.method27035(), ((Class878)var1.iterator().next()).getDisplayName()
+                     var2.method9040() + ".criterion.to.one.success", var4, var3.method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
                   ),
                   true
                );
@@ -293,7 +293,7 @@ public class Class7848 {
          } else {
             throw new Class2468(
                new TranslationTextComponent(
-                  var2.method9040() + ".criterion.to.one.failure", var4, var3.method27035(), ((Class878)var1.iterator().next()).getDisplayName()
+                  var2.method9040() + ".criterion.to.one.failure", var4, var3.method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
                )
             );
          }

@@ -4,7 +4,7 @@ import com.google.common.collect.Queues;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class Class9332 {
+public class MatrixStack {
    private static String[] field43309;
    public Deque<Class8892> field43310 = new ArrayDeque<Class8892>();
    private final Deque<Class8892> field43311 = Util.<Deque<Class8892>>method38508(Queues.newArrayDeque(), var0 -> {

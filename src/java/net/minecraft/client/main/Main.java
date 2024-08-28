@@ -39,7 +39,7 @@ public class Main {
       ArgumentAcceptingOptionSpec<Integer> var11 = var3.accepts("proxyPort").withRequiredArg().defaultsTo("8080", new String[0]).ofType(Integer.class);
       ArgumentAcceptingOptionSpec<String> var12 = var3.accepts("proxyUser").withRequiredArg();
       ArgumentAcceptingOptionSpec<String> var13 = var3.accepts("proxyPass").withRequiredArg();
-      ArgumentAcceptingOptionSpec<String> var14 = var3.accepts("username").withRequiredArg().defaultsTo("Player" + Util.method38487() % 1000L, new String[0]);
+      ArgumentAcceptingOptionSpec<String> var14 = var3.accepts("username").withRequiredArg().defaultsTo("Player" + Util.milliTime() % 1000L, new String[0]);
       ArgumentAcceptingOptionSpec<String> var15 = var3.accepts("uuid").withRequiredArg();
       ArgumentAcceptingOptionSpec<String> var16 = var3.accepts("accessToken").withRequiredArg().required();
       ArgumentAcceptingOptionSpec<String> var17 = var3.accepts("version").withRequiredArg().required();
@@ -148,14 +148,14 @@ public class Main {
       }
 
       try {
-         var57.method1487();
+         var57.shutdown();
          if (var58 != null) {
             var58.join();
          }
       } catch (InterruptedException var67) {
          LOGGER.error("Exception during client thread shutdown", var67);
       } finally {
-         var57.method1476();
+         var57.shutdownMinecraftApplet();
       }
    }
 

@@ -15,11 +15,11 @@ public class Class1269 extends Class1193 implements Class1270 {
       this.field6744 = var1;
    }
 
-   public void method5999(Class9332 var1) {
-      if (!this.field6746 && this.field6744.field1299.field44623) {
+   public void method5999(MatrixStack var1) {
+      if (!this.field6746 && this.field6744.gameSettings.field44623) {
          this.field6744.method1546().method1011(this);
          this.field6746 = true;
-      } else if (this.field6746 && !this.field6744.field1299.field44623) {
+      } else if (this.field6746 && !this.field6744.gameSettings.field44623) {
          this.field6744.method1546().method1012(this);
          this.field6746 = false;
       }
@@ -28,13 +28,13 @@ public class Class1269 extends Class1193 implements Class1270 {
          RenderSystem.pushMatrix();
          RenderSystem.enableBlend();
          RenderSystem.method27938();
-         Vector3d var4 = new Vector3d(this.field6744.field1339.getPosX(), this.field6744.field1339.method3442(), this.field6744.field1339.getPosZ());
+         Vector3d var4 = new Vector3d(this.field6744.player.getPosX(), this.field6744.player.method3442(), this.field6744.player.getPosZ());
          Vector3d var5 = new Vector3d(0.0, 0.0, -1.0)
-            .method11350(-this.field6744.field1339.field5032 * (float) (Math.PI / 180.0))
-            .method11351(-this.field6744.field1339.field5031 * (float) (Math.PI / 180.0));
+            .method11350(-this.field6744.player.field5032 * (float) (Math.PI / 180.0))
+            .method11351(-this.field6744.player.field5031 * (float) (Math.PI / 180.0));
          Vector3d var6 = new Vector3d(0.0, 1.0, 0.0)
-            .method11350(-this.field6744.field1339.field5032 * (float) (Math.PI / 180.0))
-            .method11351(-this.field6744.field1339.field5031 * (float) (Math.PI / 180.0));
+            .method11350(-this.field6744.player.field5032 * (float) (Math.PI / 180.0))
+            .method11351(-this.field6744.player.field5031 * (float) (Math.PI / 180.0));
          Vector3d var7 = var5.method11335(var6);
          int var8 = 0;
          int var9 = 0;
@@ -42,7 +42,7 @@ public class Class1269 extends Class1193 implements Class1270 {
 
          while (var10.hasNext()) {
             Class9113 var11 = (Class9113)var10.next();
-            if (var11.method33994() + 3000L > Util.method38487()) {
+            if (var11.method33994() + 3000L > Util.milliTime()) {
                var9 = Math.max(var9, this.field6744.field1294.method38821(var11.method33993()));
             } else {
                var10.remove();
@@ -67,16 +67,16 @@ public class Class1269 extends Class1193 implements Class1270 {
             int var23 = var22 / 2;
             float var24 = 1.0F;
             int var25 = this.field6744.field1294.method38821(var14);
-            int var26 = MathHelper.method37769(MathHelper.method37779(255.0, 75.0, (double)((float)(Util.method38487() - var12.method33994()) / 3000.0F)));
+            int var26 = MathHelper.method37769(MathHelper.method37779(255.0, 75.0, (double)((float)(Util.milliTime() - var12.method33994()) / 3000.0F)));
             int var27 = var26 << 16 | var26 << 8 | var26;
             RenderSystem.pushMatrix();
             RenderSystem.translatef(
-               (float)this.field6744.method1580().method8045() - (float)var21 * 1.0F - 2.0F,
-               (float)(this.field6744.method1580().method8046() - 30) - (float)(var8 * (var22 + 1)) * 1.0F,
+               (float)this.field6744.method1580().getScaledWidth() - (float)var21 * 1.0F - 2.0F,
+               (float)(this.field6744.method1580().getScaledHeight() - 30) - (float)(var8 * (var22 + 1)) * 1.0F,
                0.0F
             );
             RenderSystem.scalef(1.0F, 1.0F, 1.0F);
-            method5686(var1, -var21 - 1, -var23 - 1, var21 + 1, var23 + 1, this.field6744.field1299.method37140(0.8F));
+            method5686(var1, -var21 - 1, -var23 - 1, var21 + 1, var23 + 1, this.field6744.gameSettings.method37140(0.8F));
             RenderSystem.enableBlend();
             if (!var20) {
                if (!(var16 > 0.0)) {

@@ -40,9 +40,9 @@ public class Class9299 {
    public static Class6631 field42784 = new Class6631(field42781, "generateEnhancedStackTrace", new Class[]{Throwable.class});
    public static Class6631 field42785 = new Class6631(field42781, "generateEnhancedStackTrace", new Class[]{StackTraceElement[].class});
    public static Class6636 field42786 = new Class6636("net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Pre");
-   public static Class6634 field42787 = new Class6634(field42786, new Class[]{Screen.class, Class9332.class, int.class, int.class, float.class});
+   public static Class6634 field42787 = new Class6634(field42786, new Class[]{Screen.class, MatrixStack.class, int.class, int.class, float.class});
    public static Class6636 field42788 = new Class6636("net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Post");
-   public static Class6634 field42789 = new Class6634(field42788, new Class[]{Screen.class, Class9332.class, int.class, int.class, float.class});
+   public static Class6634 field42789 = new Class6634(field42788, new Class[]{Screen.class, MatrixStack.class, int.class, int.class, float.class});
    public static Class6636 field42790 = new Class6636("net.minecraftforge.fml.loading.progress.EarlyProgressVisualization");
    public static Class6633 field42791 = new Class6633(field42790, "INSTANCE");
    public static Class6631 field42792 = new Class6631(field42790, "handOffWindow");
@@ -99,7 +99,7 @@ public class Class9299 {
    public static Class6636 field42843 = new Class6636("net.minecraftforge.event.ForgeEventFactory");
    public static Class6631 field42844 = new Class6631(field42843, "canEntityDespawn");
    public static Class6631 field42845 = new Class6631(
-      field42843, "fireChunkWatch", new Class[]{boolean.class, boolean.class, Class878.class, Class7481.class, ServerWorld.class}
+      field42843, "fireChunkWatch", new Class[]{boolean.class, boolean.class, ServerPlayerEntity.class, Class7481.class, ServerWorld.class}
    );
    public static Class6631 field42846 = new Class6631(field42843, "getMaxSpawnPackSize");
    public static Class6631 field42847 = new Class6631(field42843, "getMobGriefingEvent");
@@ -121,7 +121,7 @@ public class Class9299 {
    public static Class6631 field42863 = new Class6631(field42854, "onLivingUpdate");
    public static Class6636 field42864 = new Class6636("net.minecraftforge.client.ForgeHooksClient");
    public static Class6631 field42865 = new Class6631(
-      field42864, "dispatchRenderLast", new Class[]{Class264.class, Class9332.class, float.class, Class9367.class, long.class}
+      field42864, "dispatchRenderLast", new Class[]{Class264.class, MatrixStack.class, float.class, Class9367.class, long.class}
    );
    public static Class6631 field42866 = new Class6631(field42864, "drawItemLayered");
    public static Class6631 field42867 = new Class6631(field42864, "drawScreen");
@@ -186,7 +186,7 @@ public class Class9299 {
    public static Class6631 field42926 = new Class6631(field42920, "readShareTag");
    public static Class6636 field42927 = new Class6636("net.minecraftforge.fml.ForgeI18n");
    public static Class6631 field42928 = new Class6631(field42927, "loadLanguageData");
-   public static Class6636 field42929 = new Class6636(Class2007.class);
+   public static Class6636 field42929 = new Class6636(KeyBinding.class);
    public static Class6631 field42930 = new Class6631(field42929, "setKeyConflictContext");
    public static Class6631 field42931 = new Class6631(field42929, "setKeyModifierAndCode");
    public static Class6631 field42932 = new Class6631(field42929, "getKeyModifier");
@@ -237,7 +237,7 @@ public class Class9299 {
    public static Class6636 field42975 = new Class6636("net.minecraftforge.fml.client.gui.screen.ModListScreen");
    public static Class6634 field42976 = new Class6634(field42975, new Class[]{Screen.class});
    public static Class6636 field42977 = new Class6636("net.minecraftforge.client.gui.NotificationModUpdateScreen");
-   public static Class6631 field42978 = new Class6631(field42977, "init", new Class[]{Class849.class, Class1206.class});
+   public static Class6631 field42978 = new Class6631(field42977, "init", new Class[]{MainMenuScreen.class, Class1206.class});
    public static Class6636 field42979 = new Class6636("net.minecraftforge.event.entity.PlaySoundAtEntityEvent");
    public static Class6631 field42980 = new Class6631(field42979, "getSound");
    public static Class6631 field42981 = new Class6631(field42979, "getCategory");
@@ -247,18 +247,18 @@ public class Class9299 {
    public static Class6636 field42985 = new Class6636("net.minecraftforge.fml.client.registry.RenderingRegistry");
    public static Class6631 field42986 = new Class6631(field42985, "loadEntityRenderers", new Class[]{Class8853.class});
    public static Class6636 field42987 = new Class6636("net.minecraftforge.client.event.RenderItemInFrameEvent");
-   public static Class6634 field42988 = new Class6634(field42987, new Class[]{Class997.class, Class5736.class, Class9332.class, Class7733.class, int.class});
+   public static Class6634 field42988 = new Class6634(field42987, new Class[]{Class997.class, Class5736.class, MatrixStack.class, Class7733.class, int.class});
    public static Class6636 field42989 = new Class6636("net.minecraftforge.client.event.RenderLivingEvent$Pre");
    public static Class6634 field42990 = new Class6634(
-      field42989, new Class[]{Class880.class, Class5712.class, float.class, Class9332.class, Class7733.class, int.class}
+      field42989, new Class[]{Class880.class, Class5712.class, float.class, MatrixStack.class, Class7733.class, int.class}
    );
    public static Class6636 field42991 = new Class6636("net.minecraftforge.client.event.RenderLivingEvent$Post");
    public static Class6634 field42992 = new Class6634(
-      field42991, new Class[]{Class880.class, Class5712.class, float.class, Class9332.class, Class7733.class, int.class}
+      field42991, new Class[]{Class880.class, Class5712.class, float.class, MatrixStack.class, Class7733.class, int.class}
    );
    public static Class6636 field42993 = new Class6636("net.minecraftforge.client.event.RenderNameplateEvent");
    public static Class6634 field42994 = new Class6634(
-      field42993, new Class[]{Entity.class, ITextComponent.class, Class5715.class, Class9332.class, Class7733.class, int.class, float.class}
+      field42993, new Class[]{Entity.class, ITextComponent.class, Class5715.class, MatrixStack.class, Class7733.class, int.class, float.class}
    );
    public static Class6631 field42995 = new Class6631(field42993, "getContent");
    public static Class6636 field42996 = new Class6636("net.minecraftforge.client.event.ScreenshotEvent");
@@ -275,7 +275,7 @@ public class Class9299 {
    public static Class6633 field43007 = new Class6633(field43006, Class9289.class);
    public static Class6636 field43008 = new Class6636(Class5718.class);
    public static Class6633 field43009 = new Class6633(field43008, Class2875.class);
-   public static Class6636 field43010 = new Class6636(Class849.class);
+   public static Class6636 field43010 = new Class6636(MainMenuScreen.class);
    public static Class6633 field43011 = new Class6633(field43010, String.class);
    public static Class6636 field43012 = new Class6636(Class7781.class);
    public static Class6633 field43013 = new Class6633(field43012, Map.class);

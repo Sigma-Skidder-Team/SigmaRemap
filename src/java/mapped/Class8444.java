@@ -48,8 +48,8 @@ public class Class8444 {
    }
 
    private boolean method29697() {
-      Class1674 var3 = Class5274.method16504().field1338.method6824(this.field36184.method7072().field32174, this.field36184.method7072().field32175 + 1);
-      Class1674 var4 = Class5274.method16505().field1338.method6824(this.field36184.method7072().field32174, this.field36184.method7072().field32175 - 1);
+      Class1674 var3 = Class5274.method16504().world.method6824(this.field36184.method7072().field32174, this.field36184.method7072().field32175 + 1);
+      Class1674 var4 = Class5274.method16505().world.method6824(this.field36184.method7072().field32174, this.field36184.method7072().field32175 - 1);
       return var3 != null && var3.field9115 && var4 != null && var4.field9115;
    }
 

@@ -32,13 +32,13 @@ public class Class4242 extends Class4240 {
 
         Class3192.method11419((float) this.method13263(), (float) this.method13265() - var4 * 3.0F, (float) this.method13267(), (float) this.method13269());
         int var5 = 40;
-        float var6 = -Class4318.field21070 / (float) Minecraft.getInstance().field1283.method8043();
-        float var7 = -Class4318.field21071 / (float) Minecraft.getInstance().field1283.method8044();
+        float var6 = -Class4318.field21070 / (float) Minecraft.getInstance().mainWindow.method8043();
+        float var7 = -Class4318.field21071 / (float) Minecraft.getInstance().mainWindow.method8044();
         Class3192.method11455(
                 (float) var5 * var6,
                 (float) var5 * var7,
-                (float) (Minecraft.getInstance().field1283.method8043() + var5),
-                (float) (Minecraft.getInstance().field1283.method8044() + var5),
+                (float) (Minecraft.getInstance().mainWindow.method8043() + var5),
+                (float) (Minecraft.getInstance().mainWindow.method8044() + var5),
                 Class1272.field6780
         );
         Class3192.method11422();

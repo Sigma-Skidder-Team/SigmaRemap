@@ -7,7 +7,7 @@ public class Class297 extends Class293 {
    private static String[] field1135;
 
    public Class297() {
-      super(Class1192.method5683());
+      super(ResourceLoadProgressGui.method5683());
    }
 
    @Override
@@ -23,8 +23,8 @@ public class Class297 extends Class293 {
    }
 
    private static InputStream method1174(Class191 var0, Class306 var1) throws IOException {
-      return !var0.method581(Class1192.method5683())
-         ? var1.method1223(Class1946.field12610, Class1192.method5683())
-         : var0.method580(Class1192.method5683()).method7763();
+      return !var0.method581(ResourceLoadProgressGui.method5683())
+         ? var1.method1223(Class1946.field12610, ResourceLoadProgressGui.method5683())
+         : var0.method580(ResourceLoadProgressGui.method5683()).method7763();
    }
 }

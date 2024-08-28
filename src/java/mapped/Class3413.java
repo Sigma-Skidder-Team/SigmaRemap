@@ -52,8 +52,8 @@ public class Class3413 extends Block {
                            ItemStack var17 = new ItemStack(Class8514.field37972);
                            var4.method2911(Class8876.field40143);
                            var4.method3095(var5, var17);
-                           if (var4 instanceof Class878) {
-                              ((Class878)var4).method2771(var4.field4904);
+                           if (var4 instanceof ServerPlayerEntity) {
+                              ((ServerPlayerEntity)var4).method2771(var4.field4904);
                            }
                         }
 
@@ -86,8 +86,8 @@ public class Class3413 extends Block {
 
                            if (!var9.method32105()) {
                               if (var4.field4902.method4045(var16)) {
-                                 if (var4 instanceof Class878) {
-                                    ((Class878)var4).method2771(var4.field4904);
+                                 if (var4 instanceof ServerPlayerEntity) {
+                                    ((ServerPlayerEntity)var4).method2771(var4.field4904);
                                  }
                               } else {
                                  var4.method2882(var16, false);
@@ -125,8 +125,8 @@ public class Class3413 extends Block {
                         var9.method32182(1);
                         if (!var9.method32105()) {
                            if (var4.field4902.method4045(var12)) {
-                              if (var4 instanceof Class878) {
-                                 ((Class878)var4).method2771(var4.field4904);
+                              if (var4 instanceof ServerPlayerEntity) {
+                                 ((ServerPlayerEntity)var4).method2771(var4.field4904);
                               }
                            } else {
                               var4.method2882(var12, false);

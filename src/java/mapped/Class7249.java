@@ -47,11 +47,11 @@ public abstract class Class7249 implements Class7251 {
    }
 
    public List<AbstractClientPlayerEntity> method22765() {
-      return field31119.field1338.method6870();
+      return field31119.world.method6870();
    }
 
    public List<AbstractClientPlayerEntity> method22766() {
-      return field31119.field1338.method6870();
+      return field31119.world.method6870();
    }
 
    public PlayerEntity method22767(String var1) {

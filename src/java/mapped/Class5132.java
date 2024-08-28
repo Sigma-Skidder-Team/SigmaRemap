@@ -23,8 +23,8 @@ public class Class5132 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      long var11 = this.field23327.field1338.method6783();
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      long var11 = this.field23327.world.method6783();
       short var13 = 200;
       double var14 = 0.0025;
       Set var16 = Sets.newHashSet();

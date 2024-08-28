@@ -113,7 +113,7 @@ public class Class814 extends Class813 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -132,14 +132,14 @@ public class Class814 extends Class813 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.field4383.method5542(this, var1);
       this.field4384.method5542(this, var1);
       super.method1923(var1, var2, var3, var4);
    }
 
-   private void method2249(Class9332 var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, boolean var6, boolean var7) {
+   private void method2249(MatrixStack var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, boolean var6, boolean var7) {
       this.field4562.getTextureManager().bindTexture(var5);
       if (!var6) {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -262,7 +262,7 @@ public class Class814 extends Class813 {
    }
 
    // $VF: synthetic method
-   public static void method2270(Class814 var0, Class9332 var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, boolean var6, boolean var7) {
+   public static void method2270(Class814 var0, MatrixStack var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, boolean var6, boolean var7) {
       var0.method2249(var1, var2, var3, var4, var5, var6, var7);
    }
 }

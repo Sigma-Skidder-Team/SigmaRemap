@@ -13,7 +13,7 @@ public class Class1222 extends Class1206 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       Class806.method2107(this.field6566).getTextureManager().bindTexture(Class806.method2106());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = !this.method5737() ? 0.0F : 12.0F;

@@ -907,11 +907,11 @@ public class Class7944 {
    }
 
    public static Class264 method26874() {
-      return field34157.field1287;
+      return field34157.worldRenderer;
    }
 
    public static Class214 method26875() {
-      return field34157.field1295;
+      return field34157.gameRenderer;
    }
 
    public static boolean method26876() {
@@ -1106,7 +1106,7 @@ public class Class7944 {
          method26813(var5);
          if (method26981() && Class4379.method13743("ShowGlError", 10000L)) {
             String var6 = Class9088.method33883("of.message.openglError", var3, var4);
-            field34157.field1298.method5989().method5930(new StringTextComponent(var6));
+            field34157.ingameGUI.getChatGUI().method5930(new StringTextComponent(var6));
          }
       }
    }
@@ -1458,13 +1458,13 @@ public class Class7944 {
       return field34156.field44716;
    }
 
-   public static void method26954(Class9332 var0) {
+   public static void method26954(MatrixStack var0) {
       int var3 = Class9299.method35077(Class9299.field43019, -1);
       int var4 = method26955();
       int var5 = method26956();
-      int var6 = field34157.field1287.method924();
-      int var7 = field34157.field1287.method925();
-      int var8 = field34157.field1287.method926();
+      int var6 = field34157.worldRenderer.method924();
+      int var7 = field34157.worldRenderer.method925();
+      int var8 = field34157.worldRenderer.method926();
       String var9 = "" + var3 + "/" + var4 + " fps, C: " + var6 + ", E: " + var7 + "+" + var8 + ", U: " + var5;
       field34157.field1294.method38801(var0, var9, 2.0F, 2.0F, -2039584);
    }
@@ -1546,7 +1546,7 @@ public class Class7944 {
    }
 
    public static void method26964(String var0, String var1) {
-      Class844 var4 = new Class844(field34157.field1355, var0, var1);
+      Class844 var4 = new Class844(field34157.currentScreen, var0, var1);
       field34157.displayGuiScreen(var4);
    }
 
@@ -1644,7 +1644,7 @@ public class Class7944 {
 
    public static boolean method26980(URI var0) {
       Util.method38513((Exception)null);
-      Util.getOSType().method8178(var0);
+      Util.getOSType().openURI(var0);
       Exception var3 = Util.method38512();
       return var3 == null;
    }
@@ -1673,7 +1673,7 @@ public class Class7944 {
    }
 
    public static boolean method26983() {
-      return field34157.method1531() != null ? field34157.method1529() : false;
+      return field34157.method1531() != null ? field34157.isIntegratedServerRunning() : false;
    }
 
    public static IntBuffer method26984(int var0) {
@@ -1712,9 +1712,9 @@ public class Class7944 {
    }
 
    public static boolean method26988() {
-      if (field34157.field1356 != null) {
-         if (field34157.field1356 instanceof Class1192) {
-            Class1192 var2 = (Class1192)field34157.field1356;
+      if (field34157.loadingGuiIn != null) {
+         if (field34157.loadingGuiIn instanceof ResourceLoadProgressGui) {
+            ResourceLoadProgressGui var2 = (ResourceLoadProgressGui)field34157.loadingGuiIn;
             if (var2.method5682()) {
                return false;
             }

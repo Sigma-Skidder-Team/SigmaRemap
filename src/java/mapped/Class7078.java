@@ -24,7 +24,7 @@ public class Class7078 {
       this.field30470 = var3;
    }
 
-   public void method21991(Class2797 var1, AbstractClientPlayerEntity var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method21991(Class2797 var1, AbstractClientPlayerEntity var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       ResourceLocation var9 = this.field30474;
       if (!this.field30469) {
          if (this.field30471 == null) {

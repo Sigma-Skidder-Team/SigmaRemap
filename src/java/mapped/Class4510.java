@@ -98,65 +98,65 @@ public abstract class Class4510 {
    }, () -> {
    });
    public static final Class4512 field21774 = new Class4512("fog", () -> {
-      Class8915.method32588();
+      FogRenderer.method32588();
       RenderSystem.method27840();
    }, () -> RenderSystem.method27841());
    public static final Class4512 field21775 = new Class4512("black_fog", () -> {
       RenderSystem.method27847(2918, 0.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.method27840();
    }, () -> {
-      Class8915.method32588();
+      FogRenderer.method32588();
       RenderSystem.method27841();
    });
    public static final Class4519 field21776 = new Class4519("main_target", () -> {
    }, () -> {
    });
    public static final Class4519 field21777 = new Class4519(
-      "outline_target", () -> Minecraft.getInstance().field1287.method946().method29112(false), () -> Minecraft.getInstance().method1464().method29112(false)
+      "outline_target", () -> Minecraft.getInstance().worldRenderer.method946().bindFramebuffer(false), () -> Minecraft.getInstance().method1464().bindFramebuffer(false)
    );
    public static final Class4519 field21778 = new Class4519("translucent_target", () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().field1287.method947().method29112(false);
+         Minecraft.getInstance().worldRenderer.method947().bindFramebuffer(false);
       }
    }, () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().method29112(false);
+         Minecraft.getInstance().method1464().bindFramebuffer(false);
       }
    });
    public static final Class4519 field21779 = new Class4519("particles_target", () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().field1287.method949().method29112(false);
+         Minecraft.getInstance().worldRenderer.method949().bindFramebuffer(false);
       }
    }, () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().method29112(false);
+         Minecraft.getInstance().method1464().bindFramebuffer(false);
       }
    });
    public static final Class4519 field21780 = new Class4519("weather_target", () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().field1287.method950().method29112(false);
+         Minecraft.getInstance().worldRenderer.method950().bindFramebuffer(false);
       }
    }, () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().method29112(false);
+         Minecraft.getInstance().method1464().bindFramebuffer(false);
       }
    });
    public static final Class4519 field21781 = new Class4519("clouds_target", () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().field1287.method951().method29112(false);
+         Minecraft.getInstance().worldRenderer.method951().bindFramebuffer(false);
       }
    }, () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().method29112(false);
+         Minecraft.getInstance().method1464().bindFramebuffer(false);
       }
    });
    public static final Class4519 field21782 = new Class4519("item_entity_target", () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().field1287.method948().method29112(false);
+         Minecraft.getInstance().worldRenderer.method948().bindFramebuffer(false);
       }
    }, () -> {
       if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().method29112(false);
+         Minecraft.getInstance().method1464().bindFramebuffer(false);
       }
    });
    public static final Class4516 field21783 = new Class4516(OptionalDouble.of(1.0));
@@ -203,7 +203,7 @@ public abstract class Class4510 {
       RenderSystem.method27878(5890);
       RenderSystem.pushMatrix();
       RenderSystem.method27879();
-      long var3 = Util.method38487() * 8L;
+      long var3 = Util.milliTime() * 8L;
       float var5 = (float)(var3 % 110000L) / 110000.0F;
       float var6 = (float)(var3 % 30000L) / 30000.0F;
       RenderSystem.translatef(-var5, var6, 0.0F);

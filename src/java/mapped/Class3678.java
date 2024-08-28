@@ -21,7 +21,7 @@ public class Class3678 extends Class3676<Class1042> {
       var2.method2992().method21406(Class8830.field39814, var7);
       var1.method6786(var2, (byte)14);
       if (var2.method4674().method26571() == Class8395.field36011) {
-         Class314 var8 = var1.method6715();
+         MinecraftServer var8 = var1.method6715();
          Optional.<ServerWorld>ofNullable(var8.method1318(var7.method35578()))
             .<Class4913>flatMap(var1x -> var1x.method6951().method6676(var7.method35579()))
             .<Class8395>flatMap(var0 -> Class2348.field16090.method9192().filter(var1x -> var1x.method29457() == var0).findFirst())

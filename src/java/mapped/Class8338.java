@@ -17,16 +17,16 @@ public class Class8338 extends Class8337<Class8921> {
       super(var3, var4, var1, var2, (var1x, var2x, var3x, var4x, var5x) -> {
          AtomicLong var8 = new AtomicLong();
          AtomicLong var9 = new AtomicLong();
-         Class7168 var10 = new Class7168(Util.field45723, () -> 0, false);
-         Class7168 var11 = new Class7168(Util.field45723, () -> 0, false);
+         Class7168 var10 = new Class7168(Util.nanoTimeSupplier, () -> 0, false);
+         Class7168 var11 = new Class7168(Util.nanoTimeSupplier, () -> 0, false);
          CompletableFuture var12 = var3x.method777(var1x, var2x, var10, var11, var2xx -> var4x.execute(() -> {
-               long var4xx = Util.method38488();
+               long var4xx = Util.nanoTime();
                var2xx.run();
-               var8.addAndGet(Util.method38488() - var4xx);
+               var8.addAndGet(Util.nanoTime() - var4xx);
             }), var2xx -> var5x.execute(() -> {
-               long var4xx = Util.method38488();
+               long var4xx = Util.nanoTime();
                var2xx.run();
-               var9.addAndGet(Util.method38488() - var4xx);
+               var9.addAndGet(Util.nanoTime() - var4xx);
             }));
          return var12.<Class8921>thenApplyAsync(var5xx -> new Class8921(var3x.method969(), var10.method22511(), var11.method22511(), var8, var9), var4);
       }, var5);

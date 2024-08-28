@@ -55,7 +55,7 @@ public abstract class Class1255 extends Class1254 {
    public abstract Set<Class3257> method5866();
 
    @Override
-   public void method5850(Class9332 var1, int var2, int var3, boolean var4, float var5) {
+   public void method5850(MatrixStack var1, int var2, int var3, boolean var4, float var5) {
       super.method5850(var1, var2, var3, var4, var5);
       if (this.field6652 != null) {
          if (!Screen.method2475()) {
@@ -65,7 +65,7 @@ public abstract class Class1255 extends Class1254 {
          int var8 = this.field6652.field25580 + var2;
          int var9 = this.field6652.field25581 + var3;
          Class1193.method5686(var1, var8, var9, var8 + 16, var9 + 16, 822018048);
-         this.field6642.method1555().method795(this.field6642.field1339, this.method5867().method11742(), var8, var9);
+         this.field6642.method1555().method795(this.field6642.player, this.method5867().method11742(), var8, var9);
          RenderSystem.depthFunc(516);
          Class1193.method5686(var1, var8, var9, var8 + 16, var9 + 16, 822083583);
          RenderSystem.depthFunc(515);

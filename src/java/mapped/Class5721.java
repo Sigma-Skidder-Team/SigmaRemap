@@ -10,7 +10,7 @@ public class Class5721 extends Class5715<Class907> {
       this.field25098 = 0.5F;
    }
 
-   public void method17853(Class907 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class907 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       Class7380 var9 = var1.method3556();
       if (var9.method23397() == Class1855.field9887) {
          World var10 = var1.method3554();

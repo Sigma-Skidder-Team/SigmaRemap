@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonObject;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -41,7 +41,7 @@ public abstract class Class4874<T extends Class4457> implements Class4907<T> {
       return this.method15047(var1, var5, var2);
    }
 
-   public void method15053(Class878 var1, Predicate<T> var2) {
+   public void method15053(ServerPlayerEntity var1, Predicate<T> var2) {
       Class8019 var5 = var1.method2823();
       Set<Class9282<T>> var6 = this.field22708.get(var5);
       if (var6 != null && !var6.isEmpty()) {

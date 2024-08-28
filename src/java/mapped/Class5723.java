@@ -19,7 +19,7 @@ public class Class5723 extends Class5715<Class1001> {
       this.field25127.method22673(-6.0F, 0.0F, -6.0F, 12.0F, 4.0F, 12.0F);
    }
 
-   public void method17853(Class1001 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class1001 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       float var9 = method17909(var1, var3);
       float var10 = ((float)var1.field5523 + var3) * 3.0F;

@@ -198,7 +198,7 @@ public class Class7819 {
             this.field33545 = false;
             Class1007 var4 = this.method26123();
 
-            for (Class878 var6 : this.field33537.method12288()) {
+            for (ServerPlayerEntity var6 : this.field33537.method12288()) {
                CriteriaTriggers.field44478.method15080(var6, var4);
             }
          }
@@ -281,15 +281,15 @@ public class Class7819 {
    private void method26117() {
       HashSet var3 = Sets.newHashSet();
 
-      for (Class878 var5 : this.field33538.method6914(field33536)) {
+      for (ServerPlayerEntity var5 : this.field33538.method6914(field33536)) {
          this.field33537.method12263(var5);
          var3.add(var5);
       }
 
-      Set<Class878> var7 = Sets.newHashSet(this.field33537.method12288());
+      Set<ServerPlayerEntity> var7 = Sets.newHashSet(this.field33537.method12288());
       var7.removeAll(var3);
 
-      for (Class878 var6 : var7) {
+      for (ServerPlayerEntity var6 : var7) {
          this.field33537.method12265(var6);
       }
    }

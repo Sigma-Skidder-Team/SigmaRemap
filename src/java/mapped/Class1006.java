@@ -161,13 +161,13 @@ public abstract class Class1006 extends Class880 {
    @Override
    public void method3000() {
       super.method3000();
-      this.field5024.method6820().method22503("mobBaseTick");
+      this.field5024.method6820().startSection("mobBaseTick");
       if (this.method3066() && this.field5054.nextInt(1000) < this.field5593++) {
          this.method4238();
          this.method4237();
       }
 
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
    }
 
    @Override
@@ -440,7 +440,7 @@ public abstract class Class1006 extends Class880 {
    @Override
    public void method2871() {
       super.method2871();
-      this.field5024.method6820().method22503("looting");
+      this.field5024.method6820().startSection("looting");
       boolean var3 = this.field5024.method6789().method17135(Class5462.field24224);
       if (Class9299.field42847.method20214()) {
          var3 = Class9299.method35056(Class9299.field42847, this.field5024, this);
@@ -454,7 +454,7 @@ public abstract class Class1006 extends Class880 {
          }
       }
 
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
    }
 
    public void method4246(ItemEntity var1) {
@@ -626,30 +626,30 @@ public abstract class Class1006 extends Class880 {
    @Override
    public final void updateEntityActionState() {
       this.field4973++;
-      this.field5024.method6820().method22503("sensing");
+      this.field5024.method6820().startSection("sensing");
       this.field5603.method35459();
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("targetSelector");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("targetSelector");
       this.field5601.method20004();
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("goalSelector");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("goalSelector");
       this.field5600.method20004();
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("navigation");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("navigation");
       this.field5599.method21658();
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("mob tick");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("mob tick");
       this.method4258();
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22503("controls");
-      this.field5024.method6820().method22503("move");
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().startSection("controls");
+      this.field5024.method6820().startSection("move");
       this.field5596.method20810();
-      this.field5024.method6820().method22506("look");
+      this.field5024.method6820().endStartSection("look");
       this.field5595.method28037();
-      this.field5024.method6820().method22506("jump");
+      this.field5024.method6820().endStartSection("jump");
       this.field5597.method27048();
-      this.field5024.method6820().method22505();
-      this.field5024.method6820().method22505();
+      this.field5024.method6820().endSection();
+      this.field5024.method6820().endSection();
       this.method4257();
    }
 

@@ -7,7 +7,7 @@ public class Class5737 extends Class5715<Class998> {
       super(var1);
    }
 
-   public void method17853(Class998 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class998 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       var4.method35293(Class7680.field32900.method25286(180.0F - var2));
       Class9078 var9 = var1.field5496;
@@ -24,7 +24,7 @@ public class Class5737 extends Class5715<Class998> {
       return Minecraft.getInstance().method1571().method1021().method7466().method1100();
    }
 
-   private void method17919(Class9332 var1, Class5422 var2, Class998 var3, int var4, int var5, Class1713 var6, Class1713 var7) {
+   private void method17919(MatrixStack var1, Class5422 var2, Class998 var3, int var4, int var5, Class1713 var6, Class1713 var7) {
       Class8892 var10 = var1.method35296();
       Class9367 var11 = var10.method32361();
       Class8967 var12 = var10.method32362();

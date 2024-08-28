@@ -16,7 +16,7 @@ public class Class5128 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       BlockPos var11 = this.method15866().method37505();
 
       for (BlockPos var13 : this.field23317) {
@@ -39,6 +39,6 @@ public class Class5128 implements Class5119 {
    }
 
    private Class9624 method15866() {
-      return this.field23316.field1295.method768();
+      return this.field23316.gameRenderer.getActiveRenderInfo();
    }
 }

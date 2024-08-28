@@ -13,12 +13,12 @@ public final class Class5993 implements Class5991 {
    }
 
    @Override
-   public int method18588(Class9332 var1, int var2, int var3) {
+   public int method18588(MatrixStack var1, int var2, int var3) {
       return this.method18589(var1, var2, var3, 9, 16777215);
    }
 
    @Override
-   public int method18589(Class9332 var1, int var2, int var3, int var4, int var5) {
+   public int method18589(MatrixStack var1, int var2, int var3, int var4, int var5) {
       int var8 = var3;
 
       for (Class9806 var10 : this.field26165) {
@@ -30,7 +30,7 @@ public final class Class5993 implements Class5991 {
    }
 
    @Override
-   public int method18590(Class9332 var1, int var2, int var3, int var4, int var5) {
+   public int method18590(MatrixStack var1, int var2, int var3, int var4, int var5) {
       int var8 = var3;
 
       for (Class9806 var10 : this.field26165) {
@@ -42,7 +42,7 @@ public final class Class5993 implements Class5991 {
    }
 
    @Override
-   public int method18591(Class9332 var1, int var2, int var3, int var4, int var5) {
+   public int method18591(MatrixStack var1, int var2, int var3, int var4, int var5) {
       int var8 = var3;
 
       for (Class9806 var10 : this.field26165) {

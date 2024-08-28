@@ -11,6 +11,6 @@ public class Class3610 implements Comparator<Entity> {
    }
 
    public int compare(Entity var1, Entity var2) {
-      return !(Class5282.method16572().field1339.method3275(var1) > Class5282.method16573().field1339.method3275(var2)) ? -1 : 1;
+      return !(Class5282.method16572().player.method3275(var1) > Class5282.method16573().player.method3275(var2)) ? -1 : 1;
    }
 }

@@ -97,7 +97,7 @@ public class Class8322 {
       return var1.method36050();
    }
 
-   private static Class9411 method29147(Class878 var0, Class8375 var1) throws CommandSyntaxException {
+   private static Class9411 method29147(ServerPlayerEntity var0, Class8375 var1) throws CommandSyntaxException {
       if (var1.method29337() == Class9008.field41190) {
          Class6886 var4 = var0.method2953();
          String var5 = var0.method2956();

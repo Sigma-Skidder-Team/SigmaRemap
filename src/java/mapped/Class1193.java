@@ -10,7 +10,7 @@ public abstract class Class1193 {
    public static final ResourceLocation field6453 = new ResourceLocation("textures/gui/icons.png");
    private int field6454;
 
-   public void method5684(Class9332 var1, int var2, int var3, int var4, int var5) {
+   public void method5684(MatrixStack var1, int var2, int var3, int var4, int var5) {
       if (var3 < var2) {
          int var8 = var2;
          var2 = var3;
@@ -20,7 +20,7 @@ public abstract class Class1193 {
       method5686(var1, var2, var4, var3 + 1, var4 + 1, var5);
    }
 
-   public void method5685(Class9332 var1, int var2, int var3, int var4, int var5) {
+   public void method5685(MatrixStack var1, int var2, int var3, int var4, int var5) {
       if (var4 < var3) {
          int var8 = var3;
          var3 = var4;
@@ -30,7 +30,7 @@ public abstract class Class1193 {
       method5686(var1, var2, var3 + 1, var2 + 1, var4, var5);
    }
 
-   public static void method5686(Class9332 var0, int var1, int var2, int var3, int var4, int var5) {
+   public static void method5686(MatrixStack var0, int var1, int var2, int var3, int var4, int var5) {
       method5687(var0.method35296().method32361(), var1, var2, var3, var4, var5);
    }
 
@@ -62,11 +62,11 @@ public abstract class Class1193 {
       var12.method17040(var0, (float)var1, (float)var2, 0.0F).method17033(var9, var10, var11, var14).method17031();
       var12.method17065();
       Class4395.method13895(var12);
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 
-   public void method5688(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   public void method5688(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       RenderSystem.method27862();
       RenderSystem.enableBlend();
       RenderSystem.method27817();
@@ -80,7 +80,7 @@ public abstract class Class1193 {
       RenderSystem.method27866(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
    }
 
    public static void method5689(Class9367 var0, Class5425 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
@@ -98,20 +98,20 @@ public abstract class Class1193 {
       var1.method17040(var0, (float)var4, (float)var5, (float)var6).method17033(var16, var17, var18, var15).method17031();
    }
 
-   public static void method5690(Class9332 var0, Class9834 var1, String var2, int var3, int var4, int var5) {
+   public static void method5690(MatrixStack var0, Class9834 var1, String var2, int var3, int var4, int var5) {
       var1.method38799(var0, var2, (float)(var3 - var1.method38820(var2) / 2), (float)var4, var5);
    }
 
-   public static void method5691(Class9332 var0, Class9834 var1, ITextComponent var2, int var3, int var4, int var5) {
+   public static void method5691(MatrixStack var0, Class9834 var1, ITextComponent var2, int var3, int var4, int var5) {
       Class9125 var8 = var2.func_241878_f();
       var1.method38802(var0, var8, (float)(var3 - var1.method38822(var8) / 2), (float)var4, var5);
    }
 
-   public static void method5692(Class9332 var0, Class9834 var1, String var2, int var3, int var4, int var5) {
+   public static void method5692(MatrixStack var0, Class9834 var1, String var2, int var3, int var4, int var5) {
       var1.method38799(var0, var2, (float)var3, (float)var4, var5);
    }
 
-   public static void method5693(Class9332 var0, Class9834 var1, ITextComponent var2, int var3, int var4, int var5) {
+   public static void method5693(MatrixStack var0, Class9834 var1, ITextComponent var2, int var3, int var4, int var5) {
       var1.method38803(var0, var2, (float)var3, (float)var4, var5);
    }
 
@@ -125,7 +125,7 @@ public abstract class Class1193 {
       var3.accept(var1, var2);
    }
 
-   public static void method5695(Class9332 var0, int var1, int var2, int var3, int var4, int var5, Class1713 var6) {
+   public static void method5695(MatrixStack var0, int var1, int var2, int var3, int var4, int var5, Class1713 var6) {
       method5701(
          var0.method35296().method32361(),
          var1,
@@ -140,24 +140,24 @@ public abstract class Class1193 {
       );
    }
 
-   public void method5696(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   public void method5696(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       method5697(var1, var2, var3, this.field6454, (float)var4, (float)var5, var6, var7, 256, 256);
    }
 
-   public static void method5697(Class9332 var0, int var1, int var2, int var3, float var4, float var5, int var6, int var7, int var8, int var9) {
+   public static void method5697(MatrixStack var0, int var1, int var2, int var3, float var4, float var5, int var6, int var7, int var8, int var9) {
       method5700(var0, var1, var1 + var6, var2, var2 + var7, var3, var6, var7, var4, var5, var9, var8);
    }
 
-   public static void method5698(Class9332 var0, int var1, int var2, int var3, int var4, float var5, float var6, int var7, int var8, int var9, int var10) {
+   public static void method5698(MatrixStack var0, int var1, int var2, int var3, int var4, float var5, float var6, int var7, int var8, int var9, int var10) {
       method5700(var0, var1, var1 + var3, var2, var2 + var4, 0, var7, var8, var5, var6, var9, var10);
    }
 
-   public static void method5699(Class9332 var0, int var1, int var2, float var3, float var4, int var5, int var6, int var7, int var8) {
+   public static void method5699(MatrixStack var0, int var1, int var2, float var3, float var4, int var5, int var6, int var7, int var8) {
       method5698(var0, var1, var2, var5, var6, var3, var4, var5, var6, var7, var8);
    }
 
    private static void method5700(
-      Class9332 var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, int var10, int var11
+           MatrixStack var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, int var10, int var11
    ) {
       method5701(
          var0.method35296().method32361(),

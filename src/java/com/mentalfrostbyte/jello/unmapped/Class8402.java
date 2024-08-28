@@ -43,10 +43,6 @@ public class Class8402 {
         Class1537.field8342 = Class1537.field8342 | Client.getInstance().getNetworkManager().field38425 != null;
     }
 
-    public static void method29517() {
-        Client.getInstance().getNetworkManager().method30450();
-    }
-
     public static String method29518(String var0) {
         try {
             byte[] var3 = method29519(var0, "SHA-1");
@@ -86,9 +82,9 @@ public class Class8402 {
 
     @EventTarget
     private void method29513(TickEvent var1) {
-        if (this.field36050.field1339.field5055 % 100 == 0) {
+        if (this.field36050.player.field5055 % 100 == 0) {
             this.method29514();
-            List<AbstractClientPlayerEntity> var4 = this.field36050.field1338.method6870();
+            List<AbstractClientPlayerEntity> var4 = this.field36050.world.method6870();
             Iterator<AbstractClientPlayerEntity> var5 = var4.iterator();
 
             while (var5.hasNext()) {
@@ -122,7 +118,7 @@ public class Class8402 {
         Iterator var3 = this.field36053.iterator();
 
         while (var3.hasNext()) {
-            if (this.field36050.field1338.method7196((UUID) var3.next()) == null) {
+            if (this.field36050.world.method7196((UUID) var3.next()) == null) {
                 var3.remove();
             }
         }
@@ -130,7 +126,7 @@ public class Class8402 {
         Iterator var4 = this.field36054.keySet().iterator();
 
         while (var3.hasNext()) {
-            if (this.field36050.field1338.method7196((UUID) var4.next()) == null) {
+            if (this.field36050.world.method7196((UUID) var4.next()) == null) {
                 var4.remove();
             }
         }

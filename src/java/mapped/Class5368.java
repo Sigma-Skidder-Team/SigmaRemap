@@ -25,12 +25,12 @@ public class Class5368 extends Module {
 
     @Override
     public void isInDevelopment() {
-        if (!mc.field1339.field5036) {
+        if (!mc.player.field5036) {
             this.field23984 = false;
         } else {
-            double var3 = mc.field1339.getPosX();
-            double var5 = mc.field1339.getPosY();
-            double var7 = mc.field1339.getPosZ();
+            double var3 = mc.player.getPosX();
+            double var5 = mc.player.getPosY();
+            double var7 = mc.player.getPosZ();
             this.field23984 = false;
             mc.getClientPlayNetHandler().sendPacket(new Class5605(var3, var5 + 0.2, var7, false));
             mc.getClientPlayNetHandler().sendPacket(new Class5605(var3, var5 + 0.1, var7, false));
@@ -64,8 +64,8 @@ public class Class5368 extends Module {
 
     @EventTarget
     public void method16898(Class4399 var1) {
-        if (mc.field1339 != null) {
-            if (!this.field23984 && mc.field1339.field5036) {
+        if (mc.player != null) {
+            if (!this.field23984 && mc.player.field5036) {
                 if (!this.method15974("Instant")) {
                     Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Wait 5s..."));
                 } else {
@@ -81,7 +81,7 @@ public class Class5368 extends Module {
 
     @EventTarget
     public void method16899(Class4435 var1) {
-        if (mc.field1339 != null) {
+        if (mc.player != null) {
             if (!this.method15974("Instant") && this.field23984) {
                 var1.method13993(0.0);
                 var1.method13995(0.0);
@@ -126,7 +126,7 @@ public class Class5368 extends Module {
 
     @EventTarget
     public void method16901(Class4396 var1) {
-        if (mc.field1339 != null && this.field23984) {
+        if (mc.player != null && this.field23984) {
             if (this.method15996() || this.method15974("Instant")) {
                 if (var1.method13898() instanceof Class5473) {
                     this.method16004().method16000();

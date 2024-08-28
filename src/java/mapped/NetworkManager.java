@@ -39,7 +39,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
 
-public class Class8586 extends SimpleChannelInboundHandler<Packet<?>> {
+public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    private static final Logger field38639 = LogManager.getLogger();
    public static final Marker field38640 = MarkerManager.getMarker("NETWORK");
    public static final Marker field38641 = MarkerManager.getMarker("NETWORK_PACKETS", field38640);
@@ -69,7 +69,7 @@ public class Class8586 extends SimpleChannelInboundHandler<Packet<?>> {
    private boolean field38659;
    private Class8005 field38660;
 
-   public Class8586(Class1975 var1) {
+   public NetworkManager(Class1975 var1) {
       this.field38646 = var1;
    }
 
@@ -268,8 +268,8 @@ public class Class8586 extends SimpleChannelInboundHandler<Packet<?>> {
       return this.field38648 instanceof LocalChannel || this.field38648 instanceof LocalServerChannel;
    }
 
-   public static Class8586 method30703(InetAddress var0, int var1, boolean var2) {
-      Class8586 var5 = new Class8586(Class1975.CLIENTBOUND);
+   public static NetworkManager method30703(InetAddress var0, int var1, boolean var2) {
+      NetworkManager var5 = new NetworkManager(Class1975.CLIENTBOUND);
       Class<? extends SocketChannel> var6;
       Class8112<? extends EventLoopGroup>  var7;
       if (Epoll.isAvailable() && var2) {
@@ -287,8 +287,8 @@ public class Class8586 extends SimpleChannelInboundHandler<Packet<?>> {
       return var5;
    }
 
-   public static Class8586 method30704(SocketAddress var0) {
-      Class8586 var3 = new Class8586(Class1975.CLIENTBOUND);
+   public static NetworkManager method30704(SocketAddress var0) {
+      NetworkManager var3 = new NetworkManager(Class1975.CLIENTBOUND);
       ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)field38645.method28097())).handler(new Class9317(var3)))
             .channel(LocalChannel.class))
          .connect(var0)

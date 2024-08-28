@@ -55,8 +55,8 @@ public class Class3341 extends Class3257 {
                var9.method3522(var6);
                var9.method3524(var8);
                var1.method6916(var9);
-               if (var2 instanceof Class878) {
-                  CriteriaTriggers.field44477.method15065((Class878)var2, var8);
+               if (var2 instanceof ServerPlayerEntity) {
+                  CriteriaTriggers.field44477.method15065((ServerPlayerEntity)var2, var8);
                }
 
                var1.method6743(

@@ -17,9 +17,9 @@ public class Class5120 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      Class9624 var11 = this.field23291.field1295.method768();
-      Class1656 var12 = this.field23291.field1338;
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      Class9624 var11 = this.field23291.gameRenderer.getActiveRenderInfo();
+      Class1656 var12 = this.field23291.world;
       Class9535 var13 = var12.method6812();
       BlockPos var14 = new BlockPos(var11.method37504().field18048, 0.0, var11.method37504().field18050);
       Class5422 var15 = var2.method25597(Class4520.method14345());

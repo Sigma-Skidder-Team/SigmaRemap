@@ -28,28 +28,28 @@ public class Class7508 {
       var0.register((LiteralArgumentBuilder)Class6099.method18839("w").redirect(var3));
    }
 
-   private static int method24478(Class6619 var0, Collection<Class878> var1, ITextComponent var2) {
-      UUID var5 = var0.method20173() != null ? var0.method20173().getUniqueID() : Util.field45724;
+   private static int method24478(Class6619 var0, Collection<ServerPlayerEntity> var1, ITextComponent var2) {
+      UUID var5 = var0.method20173() != null ? var0.method20173().getUniqueID() : Util.DUMMY_UUID;
       Entity var6 = var0.method20173();
       Consumer var7;
-      if (!(var6 instanceof Class878)) {
+      if (!(var6 instanceof ServerPlayerEntity)) {
          var7 = var2x -> var0.method20179(
                new TranslationTextComponent("commands.message.display.outgoing", var2x, var2)
                   .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC}),
                false
             );
       } else {
-         Class878 var8 = (Class878)var6;
-         var7 = var2x -> var8.method1328(
+         ServerPlayerEntity var8 = (ServerPlayerEntity)var6;
+         var7 = var2x -> var8.sendMessage(
                new TranslationTextComponent("commands.message.display.outgoing", var2x, var2)
                   .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC}),
                var8.getUniqueID()
             );
       }
 
-      for (Class878 var9 : var1) {
+      for (ServerPlayerEntity var9 : var1) {
          var7.accept(var9.getDisplayName());
-         var9.method1328(
+         var9.sendMessage(
             new TranslationTextComponent("commands.message.display.incoming", var0.method20169(), var2)
                .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC}),
             var5

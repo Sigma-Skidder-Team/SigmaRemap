@@ -104,7 +104,7 @@ public class Class6606 implements Class6607 {
    }
 
    @Override
-   public boolean method20045() {
+   public boolean isHardcore() {
       return this.field29049;
    }
 

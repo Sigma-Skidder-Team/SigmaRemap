@@ -22,7 +22,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       this.method17880(new Class233<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>>(this));
    }
 
-   public void method17853(AbstractClientPlayerEntity var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(AbstractClientPlayerEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       this.method17887(var1);
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
@@ -96,12 +96,12 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       return var1.method5371();
    }
 
-   public void method17857(AbstractClientPlayerEntity var1, Class9332 var2, float var3) {
+   public void method17857(AbstractClientPlayerEntity var1, MatrixStack var2, float var3) {
       float var6 = 0.9375F;
       var2.method35292(0.9375F, 0.9375F, 0.9375F);
    }
 
-   public void method17893(AbstractClientPlayerEntity var1, ITextComponent var2, Class9332 var3, Class7733 var4, int var5) {
+   public void method17893(AbstractClientPlayerEntity var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {
       double var8 = this.field25097.method32228(var1);
       var3.method35294();
       if (var8 < 100.0) {
@@ -120,15 +120,15 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       var3.method35295();
    }
 
-   public void method17890(Class9332 var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
+   public void method17890(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
       this.method17892(var1, var2, var3, var4, this.field25086.field17435, this.field25086.field17920);
    }
 
-   public void method17891(Class9332 var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
+   public void method17891(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
       this.method17892(var1, var2, var3, var4, this.field25086.field17436, this.field25086.field17919);
    }
 
-   private void method17892(Class9332 var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, Class7219 var5, Class7219 var6) {
+   private void method17892(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, Class7219 var5, Class7219 var6) {
       Class2894 var9 = this.method17881();
       this.method17887(var4);
       var9.field17600 = 0.0F;
@@ -141,7 +141,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       var6.method22680(var1, var2.method25597(Class4520.method14318(var4.method5371())), var3, Class213.field798);
    }
 
-   public void method17842(AbstractClientPlayerEntity var1, Class9332 var2, float var3, float var4, float var5) {
+   public void method17842(AbstractClientPlayerEntity var1, MatrixStack var2, float var3, float var4, float var5) {
       float var8 = var1.method2999(var5);
       if (!var1.method3165()) {
          if (!(var8 > 0.0F)) {

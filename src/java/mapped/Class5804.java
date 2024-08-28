@@ -4,7 +4,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class5804 extends Class5805 {
+public class Class5804 extends AbstractOption {
    public BiConsumer<Class9574, Integer> field25313;
    public BiFunction<Class9574, Class5804, ITextComponent> field25314;
 

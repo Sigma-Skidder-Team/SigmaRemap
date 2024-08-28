@@ -14,7 +14,7 @@ public class Class5690 extends Class5651<Class1012, Class2859<Class1012>> {
       return var1.method4380();
    }
 
-   public void method17853(Class1012 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class1012 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       if (var1.method4375()) {
          float var9 = var1.method4376(var3);
          this.field25086.method11190(var9, var9, var9);

@@ -32,7 +32,7 @@ public class Class831 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
       ClientPlayNetHandler var3 = this.field4562.getClientPlayNetHandler();
       if (var3 != null) {
@@ -84,7 +84,7 @@ public class Class831 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       Class7516.method24502();
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 40, 16777215);
@@ -173,7 +173,7 @@ public class Class831 extends Screen {
                var32.method17065();
                Class4395.method13895(var32);
                RenderSystem.method27858();
-               RenderSystem.method27861();
+               RenderSystem.enableTexture();
             }
          }
       }

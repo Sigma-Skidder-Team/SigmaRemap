@@ -14,11 +14,11 @@ public class Class1250 extends Class1249 {
    }
 
    public void method5825(Minecraft var1) {
-      Class6943 var4 = var1.field1339.method5397();
+      Class6943 var4 = var1.player.method5397();
       List<Class9266> var5 = var4.method21387(this.field6621);
-      if (var1.field1339.field4905 instanceof Class5828) {
+      if (var1.player.field4905 instanceof Class5828) {
          for (Class9266 var7 : var5) {
-            for (Class4843 var9 : var7.method34893(var4.method21370((Class5828<?>)var1.field1339.field4905))) {
+            for (Class4843 var9 : var7.method34893(var4.method21370((Class5828<?>)var1.player.field4905))) {
                if (var4.method21364(var9)) {
                   this.field6622 = 15.0F;
                   return;
@@ -29,7 +29,7 @@ public class Class1250 extends Class1249 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6622 > 0.0F) {
          float var7 = 1.0F + 0.1F * (float)Math.sin((double)(this.field6622 / 15.0F * (float) Math.PI));
          RenderSystem.pushMatrix();

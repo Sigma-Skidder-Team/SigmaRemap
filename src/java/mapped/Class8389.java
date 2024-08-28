@@ -41,7 +41,7 @@ public class Class8389 {
             }
          }
 
-         int var5 = Class7944.method26860().field1287.method935();
+         int var5 = Class7944.method26860().worldRenderer.method935();
          if (var5 != field35973) {
             field35972 = var2;
             field35973 = var5;

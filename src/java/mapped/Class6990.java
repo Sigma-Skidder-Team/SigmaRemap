@@ -101,13 +101,13 @@ public abstract class Class6990 {
                if (this.field30245 != null && !this.field30245.method28693() && var1.contains(this.field30258)) {
                   return this.field30245;
                } else {
-                  this.field30244.method6820().method22503("pathfind");
+                  this.field30244.method6820().startSection("pathfind");
                   float var7 = (float)this.field30243.method3086(Class9173.field42106);
                   BlockPos var8 = !var3 ? this.field30243.method3432() : this.field30243.method3432().method8311();
                   int var9 = (int)(var7 + (float)var2);
                   Class1667 var10 = new Class1667(this.field30244, var8.method8336(-var9, -var9, -var9), var8.method8336(var9, var9, var9));
                   Class8238 var11 = this.field30261.method37250(var10, this.field30243, var1, var7, var4, this.field30260);
-                  this.field30244.method6820().method22505();
+                  this.field30244.method6820().endSection();
                   if (var11 != null && var11.method28712() != null) {
                      this.field30258 = var11.method28712();
                      this.field30259 = var4;
@@ -256,14 +256,14 @@ public abstract class Class6990 {
             double var5 = var1.method11341(Vector3d.method11330(this.field30250));
             this.field30253 = !(this.field30243.method2918() > 0.0F) ? 0.0 : var5 / (double)this.field30243.method2918() * 1000.0;
          } else {
-            this.field30251 = this.field30251 + (Util.method38487() - this.field30252);
+            this.field30251 = this.field30251 + (Util.milliTime() - this.field30252);
          }
 
          if (this.field30253 > 0.0 && (double)this.field30251 > this.field30253 * 3.0) {
             this.method21662();
          }
 
-         this.field30252 = Util.method38487();
+         this.field30252 = Util.milliTime();
       }
    }
 

@@ -46,13 +46,13 @@ public class Class7998 {
       long var3 = System.currentTimeMillis() - field34391;
       if (Client.getInstance().getWebsocketManager() != null && var3 > 992120L) {
          if (Client.getInstance().getWebsocketManager().field29204 == null || Client.getInstance().getWebsocketManager().field29204.method1757() == null) {
-            Minecraft.getInstance().field1319.method29105();
-            Minecraft.getInstance().field1299.field44727 = false;
+            Minecraft.getInstance().framebuffer.method29105();
+            Minecraft.getInstance().gameSettings.field44727 = false;
          } else if (Client.getInstance().getWebsocketManager().field29204.method1757().method1779() != null) {
             String var5 = Client.getInstance().getWebsocketManager().field29204.method1757().method1779().getHostName();
             if (var5.split("\\.").length != 3 || !var5.split("\\.")[1].equals("sigmaclient")) {
-               Minecraft.getInstance().field1319.method29105();
-               Minecraft.getInstance().field1299.field44727 = false;
+               Minecraft.getInstance().framebuffer.method29105();
+               Minecraft.getInstance().gameSettings.field44727 = false;
             }
          }
       }

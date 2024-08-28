@@ -69,7 +69,7 @@ public class Class886 extends AbstractArrowEntity {
 
    private boolean method3495() {
       Entity var3 = this.method3460();
-      return var3 != null && var3.method3066() ? !(var3 instanceof Class878) || !var3.method2800() : false;
+      return var3 != null && var3.method3066() ? !(var3 instanceof ServerPlayerEntity) || !var3.method2800() : false;
    }
 
    @Override
@@ -123,7 +123,7 @@ public class Class886 extends AbstractArrowEntity {
          if (this.field5024.method7022(var10)) {
             Class906 var11 = Class8992.field41046.method33215(this.field5024);
             var11.method3271(Vector3d.method11330(var10));
-            var11.method3550(!(var12 instanceof Class878) ? null : (Class878)var12);
+            var11.method3550(!(var12 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var12);
             this.field5024.method6916(var11);
             var8 = Class6067.field27155;
             var13 = 5.0F;

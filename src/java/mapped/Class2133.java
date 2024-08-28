@@ -236,7 +236,7 @@ public enum Class2133 {
             return var6 - var7 * (float) MathHelper.method37767(var6 / var7);
          case 32:
             Minecraft var8 = Minecraft.getInstance();
-            Class1656 var9 = var8.field1338;
+            Class1656 var9 = var8.world;
             if (var9 == null) {
                return 0.0F;
             }

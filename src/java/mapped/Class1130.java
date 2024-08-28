@@ -19,7 +19,7 @@ public class Class1130 extends Screen implements Class1131 {
    private boolean field6187;
 
    public Class1130(Class8730 var1) {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field6184 = var1;
    }
 
@@ -36,7 +36,7 @@ public class Class1130 extends Screen implements Class1131 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field6184.method31511((Class1131)null);
       ClientPlayNetHandler var3 = this.field4562.getClientPlayNetHandler();
       if (var3 != null) {
@@ -63,17 +63,17 @@ public class Class1130 extends Screen implements Class1131 {
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
-      if (!this.field4562.field1299.field44654.method8519(var1, var2)) {
+      if (!this.field4562.gameSettings.field44654.method8519(var1, var2)) {
          return super.method1920(var1, var2, var3);
       } else {
          this.field4562.displayGuiScreen((Screen)null);
-         this.field4562.field1301.method36742();
+         this.field4562.mouseHelper.grabMouse();
          return true;
       }
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       int var7 = (this.field4564 - 252) / 2;
       int var8 = (this.field4565 - 140) / 2;
       this.method2469(var1);
@@ -100,7 +100,7 @@ public class Class1130 extends Screen implements Class1131 {
       }
    }
 
-   private void method5445(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method5445(MatrixStack var1, int var2, int var3, int var4, int var5) {
       Class1271 var8 = this.field6186;
       if (var8 != null) {
          RenderSystem.pushMatrix();
@@ -117,7 +117,7 @@ public class Class1130 extends Screen implements Class1131 {
       }
    }
 
-   public void method5446(Class9332 var1, int var2, int var3) {
+   public void method5446(MatrixStack var1, int var2, int var3) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.enableBlend();
       this.field4562.getTextureManager().bindTexture(field6179);
@@ -142,7 +142,7 @@ public class Class1130 extends Screen implements Class1131 {
       this.field4568.method38805(var1, field6183, (float)(var2 + 8), (float)(var3 + 6), 4210752);
    }
 
-   private void method5447(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method5447(MatrixStack var1, int var2, int var3, int var4, int var5) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field6186 != null) {
          RenderSystem.pushMatrix();

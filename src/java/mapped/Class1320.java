@@ -48,7 +48,7 @@ public class Class1320 extends Screen {
       this.field6975 = new Class1189(this.field4568, this.field4564 / 2 - 100, 116, 200, 20, new TranslationTextComponent("addServer.enterIp"));
       this.field6975.method5657(128);
       this.field6975.method5654(true);
-      this.field6975.method5635(this.field4562.field1299.field44667);
+      this.field6975.method5635(this.field4562.gameSettings.field44667);
       this.field6975.method5631(var1 -> this.method6264());
       this.field4561.add(this.field6975);
       this.method5536(this.field6975);
@@ -73,10 +73,10 @@ public class Class1320 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
-      this.field4562.field1299.field44667 = this.field6975.method5636();
-      this.field4562.field1299.method37146();
+      this.field4562.gameSettings.field44667 = this.field6975.method5636();
+      this.field4562.gameSettings.method37146();
    }
 
    private void method6264() {
@@ -85,7 +85,7 @@ public class Class1320 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
       method5693(var1, this.field4568, field6972, this.field4564 / 2 - 100, 100, 10526880);

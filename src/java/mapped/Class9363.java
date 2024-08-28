@@ -20,9 +20,9 @@ public class Class9363 {
    public boolean method35460(Entity var1) {
       if (!this.field43442.contains(var1)) {
          if (!this.field43443.contains(var1)) {
-            this.field43441.field5024.method6820().method22503("canSee");
+            this.field43441.field5024.method6820().startSection("canSee");
             boolean var4 = this.field43441.method3135(var1);
-            this.field43441.field5024.method6820().method22505();
+            this.field43441.field5024.method6820().endSection();
             if (!var4) {
                this.field43443.add(var1);
             } else {

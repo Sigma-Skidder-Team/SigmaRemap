@@ -71,7 +71,7 @@ public class Class8066 {
 
    public boolean method27709() {
       byte var3 = 24;
-      if (Math.sqrt(this.method27713()) <= (double)(Minecraft.getInstance().field1299.field44574 * 16) && Client.getInstance().method19937().method23351()) {
+      if (Math.sqrt(this.method27713()) <= (double)(Minecraft.getInstance().gameSettings.field44574 * 16) && Client.getInstance().method19937().method23351()) {
          return true;
       } else {
          return !(this.method27713() > 576.0)
@@ -131,7 +131,7 @@ public class Class8066 {
    }
 
    public double method27713() {
-      Class9624 var3 = Minecraft.getInstance().field1295.method768();
+      Class9624 var3 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       double var4 = this.field34614.field28449 + 8.0 - var3.method37504().field18048;
       double var6 = this.field34614.field28450 + 8.0 - var3.method37504().field18049;
       double var8 = this.field34614.field28451 + 8.0 - var3.method37504().field18050;

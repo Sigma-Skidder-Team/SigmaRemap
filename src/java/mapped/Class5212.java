@@ -15,7 +15,7 @@ public class Class5212 extends Module {
         this.method15972(new Class6004("Custom time", "Set the world time", true));
         this.method15972(new Class6009<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method18616(var1 -> {
             if (this.method15974("Custom time") && this.method15996()) {
-                mc.field1338.method6834(-((long) this.method15977("Time")));
+                mc.world.method6834(-((long) this.method15977("Time")));
             }
         }));
         this.method15972(new Class6004("Disable rain", "Disable rain", true));
@@ -23,16 +23,16 @@ public class Class5212 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23538 = mc.field1338.method6792(1.0F);
-        if (mc.field1338.method6792(1.0F) != 1.0F) {
-            if (mc.field1338.method6792(1.0F) == 0.0F) {
+        this.field23538 = mc.world.method6792(1.0F);
+        if (mc.world.method6792(1.0F) != 1.0F) {
+            if (mc.world.method6792(1.0F) == 0.0F) {
                 this.field23539 = false;
             }
         } else {
             this.field23539 = true;
         }
 
-        mc.field1338.method6834((long) this.method15977("Time"));
+        mc.world.method6834((long) this.method15977("Time"));
     }
 
     @EventTarget
@@ -56,8 +56,8 @@ public class Class5212 extends Module {
                 this.field23538 = (float) ((double) this.field23538 - 0.05);
             }
 
-            mc.field1338.method6793(this.field23538);
-            mc.field1338.method6791(this.field23538);
+            mc.world.method6793(this.field23538);
+            mc.world.method6791(this.field23538);
         }
     }
 

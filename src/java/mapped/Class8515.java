@@ -34,7 +34,7 @@ public class Class8515 {
       this.field38212 = (float)(var3 + var8) / var1.field31029;
    }
 
-   public void method30159(Class9332 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method30159(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       float var11 = 0.0625F;
       var1.method35291((double)(this.field38202 * var11), (double)(this.field38203 * var11), (double)(this.field38204 * var11));
       float var12 = this.field38209;
@@ -74,7 +74,7 @@ public class Class8515 {
    }
 
    public static void method30160(
-      Class9332 var0,
+      MatrixStack var0,
       Class5422 var1,
       float var2,
       float var3,
@@ -172,7 +172,7 @@ public class Class8515 {
    }
 
    public static void method30161(
-      Class9332 var0,
+      MatrixStack var0,
       Class5422 var1,
       float var2,
       float var3,

@@ -19,7 +19,7 @@ public class Class194 implements AutoCloseable {
       Class1695.method7292(this.method594(var1));
    }
 
-   public void method593(Class9332 var1, Class7733 var2, Class7529 var3, boolean var4, int var5) {
+   public void method593(MatrixStack var1, Class7733 var2, Class7529 var3, boolean var4, int var5) {
       Class1695.method7293(this.method594(var3), var1, var2, var4, var5);
    }
 

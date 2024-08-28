@@ -37,8 +37,8 @@ public class Util {
    private static final ExecutorService field45720 = method38490("Bootstrap");
    private static final ExecutorService field45721 = method38490("Main");
    private static final ExecutorService field45722 = method38496();
-   public static LongSupplier field45723 = System::nanoTime;
-   public static final UUID field45724 = new UUID(0L, 0L);
+   public static LongSupplier nanoTimeSupplier = System::nanoTime;
+   public static final UUID DUMMY_UUID = new UUID(0L, 0L);
    private static final Logger field45725 = LogManager.getLogger();
    private static Exception field45726;
 
@@ -54,12 +54,12 @@ public class Util {
       return var1 != null ? var0 + '.' + var1.method8293() + '.' + var1.method8292().replace('/', '.') : var0 + ".unregistered_sadface";
    }
 
-   public static long method38487() {
-      return method38488() / 1000000L;
+   public static long milliTime() {
+      return nanoTime() / 1000000L;
    }
 
-   public static long method38488() {
-      return field45723.getAsLong();
+   public static long nanoTime() {
+      return nanoTimeSupplier.getAsLong();
    }
 
    public static long method38489() {
@@ -94,7 +94,7 @@ public class Util {
       return field45722;
    }
 
-   public static void method38494() {
+   public static void shutdown() {
       method38495(field45721);
       method38495(field45722);
    }

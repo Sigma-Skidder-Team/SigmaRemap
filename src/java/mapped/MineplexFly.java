@@ -39,11 +39,11 @@ public class MineplexFly extends PremiumModule {
         double var3 = Class9567.method37075() * 0.5;
         Class9567.method37090(var3);
         if (this.field23670 != -1) {
-            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.field1339.field4902.field5443));
-            this.field23670 = mc.field1339.field4902.field5443;
+            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
+            this.field23670 = mc.player.field4902.field5443;
         }
 
-        mc.field1284.field40360 = 1.0F;
+        mc.timer.field40360 = 1.0F;
     }
 
     @EventTarget
@@ -67,14 +67,14 @@ public class MineplexFly extends PremiumModule {
         return this.method15996()
                 && this.field23670 != -1
                 && this.field23671 < (double) this.method15977("Boost")
-                && (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F))
+                && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F))
                 && !this.field23675;
     }
 
     @EventTarget
     public void method16457(Class4417 var1) {
-        if (this.method15996() && this.field23675 && mc.field1339 != null) {
-            if (mc.field1339.field5036) {
+        if (this.method15996() && this.field23675 && mc.player != null) {
+            if (mc.player.field5036) {
                 var1.method13966(true);
             }
         }
@@ -86,8 +86,8 @@ public class MineplexFly extends PremiumModule {
             if (this.field23675) {
                 Class9567.method37088(var1, 0.01);
             } else {
-                float var4 = mc.field1339.field5031 + 90.0F;
-                if (!mc.field1339.field5036 && !Class5628.method17730(mc.field1339, 0.001F)) {
+                float var4 = mc.player.field5031 + 90.0F;
+                if (!mc.player.field5036 && !Class5628.method17730(mc.player, 0.001F)) {
                     if (this.field23668 != -1) {
                         if (this.field23674 && !Class5628.method17686()) {
                             this.field23674 = !this.field23674;
@@ -110,7 +110,7 @@ public class MineplexFly extends PremiumModule {
                         }
 
                         var1.method13995(this.field23672);
-                        if (mc.field1339.field5037 || !Class5628.method17686()) {
+                        if (mc.player.field5037 || !Class5628.method17686()) {
                             this.field23671 = 0.35;
                         }
 
@@ -136,22 +136,22 @@ public class MineplexFly extends PremiumModule {
                     }
 
                     Vector3d var6 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-                    BlockPos var7 = new BlockPos(mc.field1339.method3432()).method8336(0, -1, 0);
+                    BlockPos var7 = new BlockPos(mc.player.method3432()).method8336(0, -1, 0);
                     Class8711 var8 = new Class8711(var6, Direction.field673, var7, false);
                     Class5570 var9 = new Class5570(Hand.field182, var8);
                     mc.getClientPlayNetHandler().sendPacket(var9);
                     if (!(this.field23671 < (double) this.method15977("Boost"))) {
                         Class9567.method37088(var1, 0.0);
-                        mc.field1339.method2914();
+                        mc.player.method2914();
                         this.field23672 = 0.4299999;
                         this.field23669 = 0;
                         this.field23674 = Class5628.method17686();
                         var1.method13995(this.field23672);
-                        this.field23673 = mc.field1339.getPosY();
+                        this.field23673 = mc.player.getPosY();
                         this.field23668++;
                         this.field23671 += 0.5;
                     } else {
-                        mc.field1284.field40360 = Math.min(1.0F, Math.max(0.1F, (float) (1.2 - this.field23671 * 0.15)));
+                        mc.timer.field40360 = Math.min(1.0F, Math.max(0.1F, (float) (1.2 - this.field23671 * 0.15)));
                         if (this.field23668 > 2) {
                             this.field23671 += 0.05;
                         }
@@ -185,7 +185,7 @@ public class MineplexFly extends PremiumModule {
             if (var1.method13932() instanceof Class5539
                     && this.field23670 != -1
                     && this.field23671 < (double) this.method15977("Boost")
-                    && (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F))
+                    && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F))
                     && !this.field23675) {
                 var1.method13900(true);
             }
@@ -193,14 +193,14 @@ public class MineplexFly extends PremiumModule {
     }
 
     private int method16461() {
-        if (mc.field1339.method3090().method32105()) {
-            this.field23670 = mc.field1339.field4902.field5443;
+        if (mc.player.method3090().method32105()) {
+            this.field23670 = mc.player.field4902.field5443;
             return this.field23670;
         } else {
             for (int var3 = 36; var3 < 45; var3++) {
                 int var4 = var3 - 36;
-                if (mc.field1339.field4904.method18131(var3).method18265().method32105()) {
-                    if (mc.field1339.field4902.field5443 != var4 && this.field23670 != var4) {
+                if (mc.player.field4904.method18131(var3).method18265().method32105()) {
+                    if (mc.player.field4902.field5443 != var4 && this.field23670 != var4) {
                         mc.getClientPlayNetHandler().sendPacket(new Class5539(var4));
                         this.field23670 = var4;
                     }
@@ -209,10 +209,10 @@ public class MineplexFly extends PremiumModule {
                 }
             }
 
-            Class7789.method25870(mc.field1339.field4904.field25471, 42, 0, Class2259.field14695, mc.field1339, true);
-            if (!mc.field1339.field4904.method18131(42).method18265().method32105()) {
+            Class7789.method25870(mc.player.field4904.field25471, 42, 0, Class2259.field14695, mc.player, true);
+            if (!mc.player.field4904.method18131(42).method18265().method32105()) {
                 Client.getInstance().getNotificationManager().post(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
-            } else if (mc.field1339.field4902.field5443 != 6 && this.field23670 != 6) {
+            } else if (mc.player.field4902.field5443 != 6 && this.field23670 != 6) {
                 mc.getClientPlayNetHandler().sendPacket(new Class5539(6));
                 this.field23670 = 6;
                 return 6;
@@ -224,13 +224,13 @@ public class MineplexFly extends PremiumModule {
 
     @EventTarget
     public void method16462(Class4422 var1) {
-        if (this.method15996() && this.method15974("Fake") && !(this.field23673 < 0.0) && !(mc.field1339.getPosY() < this.field23673)) {
-            mc.field1339.field5028.field18049 = this.field23673;
-            mc.field1339.field5049 = this.field23673;
-            mc.field1339.field4915 = this.field23673;
-            mc.field1339.field5026 = this.field23673;
+        if (this.method15996() && this.method15974("Fake") && !(this.field23673 < 0.0) && !(mc.player.getPosY() < this.field23673)) {
+            mc.player.field5028.field18049 = this.field23673;
+            mc.player.field5049 = this.field23673;
+            mc.player.field4915 = this.field23673;
+            mc.player.field5026 = this.field23673;
             if (Class9567.method37087()) {
-                mc.field1339.field4909 = 0.099999994F;
+                mc.player.field4909 = 0.099999994F;
             }
         }
     }

@@ -18,8 +18,8 @@ public class Class1135 extends Screen {
    }
 
    @Override
-   public void method1931() {
-      this.field4562.field1299.method37146();
+   public void onClose() {
+      this.field4562.gameSettings.method37146();
    }
 
    @Override

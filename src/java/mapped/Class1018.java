@@ -153,10 +153,10 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Nullable
-   public Class878 method4506() {
+   public ServerPlayerEntity method4506() {
       if (this.field5703 != null) {
          PlayerEntity var3 = this.field5024.method7196(this.field5703);
-         return !(var3 instanceof Class878) ? null : (Class878)var3;
+         return !(var3 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var3;
       } else {
          return null;
       }
@@ -181,7 +181,7 @@ public abstract class Class1018 extends Class1045 {
    public void method4509(ServerWorld var1, Class1018 var2) {
       Class1045 var5 = this.method4389(var1, var2);
       if (var5 != null) {
-         Class878 var6 = this.method4506();
+         ServerPlayerEntity var6 = this.method4506();
          if (var6 == null && var2.method4506() != null) {
             var6 = var2.method4506();
          }

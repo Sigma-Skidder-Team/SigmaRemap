@@ -14,7 +14,7 @@ public class Class6396 extends Class6395 {
    }
 
    @Override
-   public void method19449(Class878 var1) {
+   public void method19449(ServerPlayerEntity var1) {
       if (var1.getName().getString().equals(this.method19444().method1332())) {
          this.field28007 = var1.method3294(new Class39());
       }

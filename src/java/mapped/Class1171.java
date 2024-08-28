@@ -8,7 +8,7 @@ public class Class1171 extends Class1155<Class1171> {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       Class3257 var13 = Class1305.method6196(this.field6346.field6846).field6842.get(var2);
       Class1305.method6197(this.field6346.field6846, var1, var4 + 40, var3, var13);
 
@@ -34,7 +34,7 @@ public class Class1171 extends Class1155<Class1171> {
       }
    }
 
-   public void method5577(Class9332 var1, Class9007<?> var2, int var3, int var4, boolean var5) {
+   public void method5577(MatrixStack var1, Class9007<?> var2, int var3, int var4, boolean var5) {
       String var8 = var2 != null ? var2.method33277(Class1305.method6193(this.field6346.field6846).method28961(var2)) : "-";
       Class1193.method5692(
          var1, this.field6346.field6846.field4568, var8, var3 - this.field6346.field6846.field4568.method38820(var8), var4 + 5, !var5 ? 9474192 : 16777215

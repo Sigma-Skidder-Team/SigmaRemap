@@ -93,7 +93,7 @@ public class RenderSystem {
       field34659 = false;
    }
 
-   public static void method27813(int var0) {
+   public static void limitDisplayFPS(int var0) {
       double var3 = field34664 + 1.0 / (double)var0;
 
       double var5;
@@ -301,7 +301,7 @@ public class RenderSystem {
       Class7414.method23786(var0, var1);
    }
 
-   public static void method27849() {
+   public static void enableCull() {
       method27808(RenderSystem::method27806);
       Class7414.method23787();
    }
@@ -361,7 +361,7 @@ public class RenderSystem {
       Class7414.method23803(var0);
    }
 
-   public static void method27861() {
+   public static void enableTexture() {
       method27808(RenderSystem::method27806);
       Class7414.method23804();
    }
@@ -442,7 +442,7 @@ public class RenderSystem {
       Class7414.method23828(var0);
    }
 
-   public static void method27877(int var0, boolean var1) {
+   public static void clear(int var0, boolean var1) {
       method27808(RenderSystem::method27807);
       Class7414.method23829(var0, var1);
    }
@@ -806,7 +806,7 @@ public class RenderSystem {
    public static void method27940(Runnable var0) {
       boolean var3 = Minecraft.method1517();
       if (var3) {
-         Class9574 var4 = Minecraft.getInstance().field1299;
+         Class9574 var4 = Minecraft.getInstance().gameSettings;
          Class2087 var5 = var4.field44578;
          var4.field44578 = Class2087.field13604;
          var0.run();

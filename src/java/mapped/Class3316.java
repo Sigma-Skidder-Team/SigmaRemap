@@ -29,7 +29,7 @@ public class Class3316 extends Class3314 {
    public static Class7529 method11861(ItemStack var0, World var1) {
       Class7529 var4 = method11860(var0, var1);
       if (var4 == null && var1 instanceof ServerWorld) {
-         var4 = method11863(var0, var1, var1.method6788().method20029(), var1.method6788().method20031(), 3, false, false, var1.method6813());
+         var4 = method11863(var0, var1, var1.getWorldInfo().method20029(), var1.getWorldInfo().method20031(), 3, false, false, var1.method6813());
       }
 
       return var4;

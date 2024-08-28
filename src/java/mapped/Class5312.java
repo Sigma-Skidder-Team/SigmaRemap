@@ -10,7 +10,7 @@ public class Class5312 extends Module {
 
     @Override
     public void isInDevelopment() {
-        String var3 = "op " + mc.field1339.getName();
+        String var3 = "op " + mc.player.getName();
         var3.replace("&", "§");
         this.method15965();
     }

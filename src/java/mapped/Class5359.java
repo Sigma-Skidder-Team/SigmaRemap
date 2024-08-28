@@ -51,7 +51,7 @@ public class Class5359 extends Module {
 
     @EventTarget
     private void method16854(Class4415 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             String var4 = this.getStringSettingValueByName("Animation");
             String var5 = this.getStringSettingValueByName("Outline");
             this.method16855();
@@ -60,7 +60,7 @@ public class Class5359 extends Module {
             }
 
             int var6 = -2;
-            int var7 = Minecraft.getInstance().field1283.method8043() - 2;
+            int var7 = Minecraft.getInstance().mainWindow.method8043() - 2;
             byte var8 = -2;
             int var9 = new java.awt.Color(0, 192, 255, 255).getRGB();
             int var10 = new java.awt.Color(0, 192, 255, 255).getRGB();

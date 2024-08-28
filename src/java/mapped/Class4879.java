@@ -21,7 +21,7 @@ public class Class4879 extends Class4874<Class4470> {
       return new Class4470(var2, var6);
    }
 
-   public void method15071(Class878 var1, Class8812 var2) {
+   public void method15071(ServerPlayerEntity var1, Class8812 var2) {
       this.method15053(var1, var1x -> var1x.method14123(var2));
    }
 

@@ -62,7 +62,7 @@ public class Class1335 extends Screen {
       this.field7075 = true;
       this.field7072 = var2.method32429();
       this.field7073 = this.field7072;
-      this.field7091.method17133(var2.method32431(), (Class314)null);
+      this.field7091.method17133(var2.method32431(), (MinecraftServer)null);
       if (!var2.method32428()) {
          if (!var2.method32427().method8158()) {
             if (var2.method32427().method8157()) {
@@ -190,12 +190,12 @@ public class Class1335 extends Screen {
       }
 
       try {
-         this.field7069 = Class8950.method32695(this.field4562.method1472().method38466(), this.field7069, "");
+         this.field7069 = Class8950.method32695(this.field4562.getSaveLoader().method38466(), this.field7069, "");
       } catch (Exception var6) {
          this.field7069 = "World";
 
          try {
-            this.field7069 = Class8950.method32695(this.field4562.method1472().method38466(), this.field7069, "");
+            this.field7069 = Class8950.method32695(this.field4562.getSaveLoader().method38466(), this.field7069, "");
          } catch (Exception var5) {
             throw new RuntimeException("Could not create save folder", var5);
          }
@@ -203,7 +203,7 @@ public class Class1335 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -215,7 +215,7 @@ public class Class1335 extends Screen {
          Class8898 var5;
          if (var3.method26267()) {
             Class5462 var4 = new Class5462();
-            var4.<Class7466>method17128(Class5462.field24232).method24175(false, (Class314)null);
+            var4.<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
             var5 = new Class8898(this.field7068.method5636().trim(), Class1894.field11105, false, Class2197.field14351, true, var4, Class7818.field33531);
          } else {
             var5 = new Class8898(
@@ -335,7 +335,7 @@ public class Class1335 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, -1);
       if (!this.field7080) {
@@ -476,8 +476,8 @@ public class Class1335 extends Screen {
    private boolean method6368() {
       if (this.field7078 != null) {
          try (
-            Class1814 var3 = this.field4562.method1472().method38468(this.field7069);
-            Stream var5 = Files.walk(this.field7078);
+                 Class1814 var3 = this.field4562.getSaveLoader().method38468(this.field7069);
+                 Stream var5 = Files.walk(this.field7078);
          ) {
             Path var7 = var3.method7991(Class5137.field23352);
             Files.createDirectories(var7);

@@ -44,7 +44,7 @@ public class Class5233 extends Module {
     @EventTarget
     public void method16302(Class4435 var1) {
         if (this.method15996()) {
-            if (!mc.field1339.field5036) {
+            if (!mc.player.field5036) {
                 if (this.field23583 > 0.0 && this.field23582 > 0) {
                     this.field23581++;
                     if (this.field23581 != 1) {

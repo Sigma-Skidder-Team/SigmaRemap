@@ -42,7 +42,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       String var13 = this.field6353.method8644();
       String var14 = this.field6353.method8643() + " (" + Class1276.method6070().format(new Date(this.field6353.method8647())) + ")";
       if (StringUtils.isEmpty(var13)) {
@@ -58,7 +58,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       RenderSystem.enableBlend();
       Class1193.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       RenderSystem.disableBlend();
-      if (this.field6351.field1299.field44625 || var9) {
+      if (this.field6351.gameSettings.field44625 || var9) {
          this.field6351.getTextureManager().bindTexture(Class1276.method6072());
          Class1193.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -99,8 +99,8 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
          this.field6358.method6024(this);
          this.field6352.method6422(this.field6358.method6067().isPresent());
          if (!(var1 - (double)this.field6358.method6053() <= 32.0)) {
-            if (Util.method38487() - this.field6357 >= 250L) {
-               this.field6357 = Util.method38487();
+            if (Util.milliTime() - this.field6357 >= 250L) {
+               this.field6357 = Util.milliTime();
                return false;
             } else {
                this.method5578();
@@ -162,7 +162,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
                if (var1) {
                   String var5 = this.field6353.method8643();
 
-                  try (Class1814 var6 = this.field6351.method1472().method38468(var5)) {
+                  try (Class1814 var6 = this.field6351.getSaveLoader().method38468(var5)) {
                      Class1329.method6323(var6);
                   } catch (IOException var19) {
                      Class7603.method24908(this.field6351, var5);
@@ -183,7 +183,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
                var1 -> {
                   if (var1) {
                      this.field6351.displayGuiScreen(new Class1338());
-                     Class9774 var4 = this.field6351.method1472();
+                     SaveFormat var4 = this.field6351.getSaveLoader();
                      String var5 = this.field6353.method8643();
 
                      try (Class1814 var6 = var4.method38468(var5)) {
@@ -210,7 +210,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       String var3 = this.field6353.method8643();
 
       try {
-         Class1814 var4 = this.field6351.method1472().method38468(var3);
+         Class1814 var4 = this.field6351.getSaveLoader().method38468(var3);
          this.field6351.displayGuiScreen(new Class1329(var3x -> {
             try {
                var4.close();
@@ -236,7 +236,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       Class8905 var3 = Class8904.method32457();
 
       try (
-              Class1814 var4 = this.field6351.method1472().method38468(this.field6353.method8643());
+              Class1814 var4 = this.field6351.getSaveLoader().method38468(this.field6353.method8643());
               Class1811 var6 = this.field6351.method1503(var3, Minecraft::method1497, Minecraft::method1498, false, var4);
       ) {
          Class8898 var8 = var6.method7959().method20099();
@@ -272,7 +272,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
 
    private void method5582() {
       this.field6351.method1546().method1000(Class6339.method19292(Class6067.field27176, 1.0F));
-      if (this.field6351.method1472().method38465(this.field6353.method8643())) {
+      if (this.field6351.getSaveLoader().method38465(this.field6353.method8643())) {
          this.method5583();
          this.field6351.method1499(this.field6353.method8643());
       }

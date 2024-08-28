@@ -15,9 +15,9 @@ public class Class6686 implements Class6687 {
    @Override
    public void method20400(ChatType var1, ITextComponent var2, UUID var3) {
       if (var1 == ChatType.CHAT) {
-         this.field29299.field1298.method5989().method5950(var2);
+         this.field29299.ingameGUI.getChatGUI().method5950(var2);
       } else {
-         this.field29299.field1298.method5989().method5930(var2);
+         this.field29299.ingameGUI.getChatGUI().method5930(var2);
       }
    }
 }

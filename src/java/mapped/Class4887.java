@@ -18,7 +18,7 @@ public class Class4887 extends Class4874<Class4493> {
       return new Class4493(var2, var6);
    }
 
-   public void method15099(Class878 var1, Collection<? extends Entity> var2) {
+   public void method15099(ServerPlayerEntity var1, Collection<? extends Entity> var2) {
       List var5 = var2.stream().<Class7812>map(var1x -> Class6671.method20332(var1, var1x)).collect(Collectors.toList());
       this.method15053(var1, var1x -> var1x.method14170(var5));
    }

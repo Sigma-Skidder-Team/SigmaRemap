@@ -22,7 +22,7 @@ public abstract class Class2009 implements Comparable<Class2009> {
       this.field13076 = new AtomicBoolean(false);
       this.field13075 = var3;
       if (var2 != null) {
-         this.field13077 = Class8264.method28829(Minecraft.getInstance().field1338, var2);
+         this.field13077 = Class8264.method28829(Minecraft.getInstance().world, var2);
       } else {
          this.field13077 = Collections.<BlockPos, Class7180>emptyMap();
       }

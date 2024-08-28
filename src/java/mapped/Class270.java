@@ -90,11 +90,11 @@ public class Class270 extends Class269<Class4678> {
       var2.method22501();
       JsonObject var8 = method987(var1, var2);
       if (var8 != null) {
-         var2.method22503("compile_regex");
+         var2.startSection("compile_regex");
          method986(var8.getAsJsonArray("renderer"), var5);
          method986(var8.getAsJsonArray("version"), var6);
          method986(var8.getAsJsonArray("vendor"), var7);
-         var2.method22505();
+         var2.endSection();
       }
 
       var2.method22502();
@@ -111,7 +111,7 @@ public class Class270 extends Class269<Class4678> {
 
    @Nullable
    private static JsonObject method987(Class191 var0, Class7165 var1) {
-      var1.method22503("parse_json");
+      var1.startSection("parse_json");
       JsonObject var4 = null;
 
       try (
@@ -123,7 +123,7 @@ public class Class270 extends Class269<Class4678> {
          field1039.warn("Failed to load GPU warnlist");
       }
 
-      var1.method22505();
+      var1.endSection();
       return var4;
    }
 }

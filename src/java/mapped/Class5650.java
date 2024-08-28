@@ -11,7 +11,7 @@ public class Class5650 extends Class5651<Class1095, Class2864<Class1095>> {
       this.method17880(new Class257(this));
    }
 
-   public void method17842(Class1095 var1, Class9332 var2, float var3, float var4, float var5) {
+   public void method17842(Class1095 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
       if (var1.method5140() || var1.method5131()) {
          float var8 = -MathHelper.method37821(var5, var1.field5034, var1.field5032);

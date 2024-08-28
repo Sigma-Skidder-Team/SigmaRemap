@@ -18,7 +18,7 @@ public class Class7167 implements Class7166 {
    }
 
    @Override
-   public void method22503(String var1) {
+   public void startSection(String var1) {
    }
 
    @Override
@@ -26,11 +26,11 @@ public class Class7167 implements Class7166 {
    }
 
    @Override
-   public void method22505() {
+   public void endSection() {
    }
 
    @Override
-   public void method22506(String var1) {
+   public void endStartSection(String var1) {
    }
 
    @Override
@@ -38,7 +38,7 @@ public class Class7167 implements Class7166 {
    }
 
    @Override
-   public void method22508(String var1) {
+   public void func_230035_c_(String var1) {
    }
 
    @Override

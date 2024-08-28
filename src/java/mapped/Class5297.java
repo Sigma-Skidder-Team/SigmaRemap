@@ -25,17 +25,17 @@ public class Class5297 extends Module {
     @EventTarget
     private void method16636(Class4435 var1) {
         double var4 = 1.0E-5;
-        boolean var6 = mc.field1338
-                .method7055(mc.field1339, mc.field1339.field5035.method19662(var4, 0.0, var4).method19662(-var4, 0.0, -var4))
+        boolean var6 = mc.world
+                .method7055(mc.player, mc.player.field5035.method19662(var4, 0.0, var4).method19662(-var4, 0.0, -var4))
                 .count()
                 > 0L;
         if (var6) {
-            if (!mc.field1339.field5037) {
-                if (!mc.field1339.field5036) {
-                    var1.method13995(!mc.field1299.field44637.method8509() ? 0.0 : var1.method13994());
+            if (!mc.player.field5037) {
+                if (!mc.player.field5036) {
+                    var1.method13995(!mc.gameSettings.field44637.method8509() ? 0.0 : var1.method13994());
                 }
-            } else if (!this.method15974("AutoClimb") && !mc.field1299.field44636.method8509()) {
-                var1.method13995(!mc.field1299.field44637.method8509() ? 0.0 : var1.method13994());
+            } else if (!this.method15974("AutoClimb") && !mc.gameSettings.field44636.method8509()) {
+                var1.method13995(!mc.gameSettings.field44637.method8509() ? 0.0 : var1.method13994());
             } else {
                 var1.method13995(0.6);
             }
@@ -43,42 +43,42 @@ public class Class5297 extends Module {
             Class9567.method37088(var1, 0.689 + (double) Class9567.method37078() * 0.06);
         }
 
-        if (Class5628.method17730(mc.field1339, 0.001F) && this.method15974("SneakVClip")) {
-            if (mc.field1299.field44637.method8509()
+        if (Class5628.method17730(mc.player, 0.001F) && this.method15974("SneakVClip")) {
+            if (mc.gameSettings.field44637.method8509()
                     && !this.field23813
-                    && mc.field1338.method7055(mc.field1339, mc.field1339.field5035.method19667(0.0, -2.8, 0.0)).count() == 0L) {
+                    && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, -2.8, 0.0)).count() == 0L) {
                 mc.getClientPlayNetHandler()
                         .sendPacket(
                                 new Class5605(
-                                        mc.field1339.getPositionVec().field18048,
-                                        mc.field1339.getPositionVec().field18049 - 1.0E-14,
-                                        mc.field1339.getPositionVec().field18050,
+                                        mc.player.getPositionVec().field18048,
+                                        mc.player.getPositionVec().field18049 - 1.0E-14,
+                                        mc.player.getPositionVec().field18050,
                                         false
                                 )
                         );
-                mc.field1339
+                mc.player
                         .method3215(
-                                mc.field1339.getPositionVec().field18048,
-                                mc.field1339.getPositionVec().field18049 - 2.8,
-                                mc.field1339.getPositionVec().field18050
+                                mc.player.getPositionVec().field18048,
+                                mc.player.getPositionVec().field18049 - 2.8,
+                                mc.player.getPositionVec().field18050
                         );
-                mc.field1299.field44637.field13071 = false;
-                mc.field1339.field5036 = false;
-                mc.field1284.field40360 = 0.08F;
+                mc.gameSettings.field44637.field13071 = false;
+                mc.player.field5036 = false;
+                mc.timer.field40360 = 0.08F;
                 var1.method13900(true);
                 this.field23813 = true;
                 var1.method13995(1.0E-14);
             }
         } else {
             if (this.method15974("Ceiling")
-                    && !mc.field1299.field44637.method8509()
-                    && mc.field1338.method7055(mc.field1339, mc.field1339.field5035.method19667(0.0, 0.01, 0.0)).count() > 0L) {
+                    && !mc.gameSettings.field44637.method8509()
+                    && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 0.01, 0.0)).count() > 0L) {
                 var1.method13995(1.0E-14);
                 Class9567.method37088(var1, 0.689 + (double) Class9567.method37078() * 0.06);
             }
 
             if (this.field23813) {
-                mc.field1284.field40360 = 1.0F;
+                mc.timer.field40360 = 1.0F;
                 this.field23813 = false;
                 var1.method13995(1.0E-14);
                 Class9567.method37088(var1, 0.28);
@@ -93,18 +93,18 @@ public class Class5297 extends Module {
         if (this.method15996() && var1.method13921()) {
             Class9629 var4 = Class5628.method17760(1.0E-4);
             if (this.method15974("Ceiling")
-                    && !mc.field1339.field5036
-                    && mc.field1338.method7055(mc.field1339, mc.field1339.field5035.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
+                    && !mc.player.field5036
+                    && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
                 var1.method13912(var1.method13911() + 4.9E-7);
             }
 
             double var5 = 1.0E-5;
             if (var4 != null
-                    && mc.field1338
-                    .method7055(mc.field1339, mc.field1339.field5035.method19662(var5, 0.0, var5).method19662(-var5, 0.0, -var5))
+                    && mc.world
+                    .method7055(mc.player, mc.player.field5035.method19662(var5, 0.0, var5).method19662(-var5, 0.0, -var5))
                     .count()
                     > 0L) {
-                if (!Class5628.method17730(mc.field1339, 1.0E-4F)) {
+                if (!Class5628.method17730(mc.player, 1.0E-4F)) {
                     var1.method13920(true);
                 }
 
@@ -126,10 +126,10 @@ public class Class5297 extends Module {
 
     @EventTarget
     private void method16638(Class4398 var1) {
-        if (this.method15996() && mc.field1339 != null) {
+        if (this.method15996() && mc.player != null) {
             if (var1.method13903() != null
                     && !var1.method13903().method19516()
-                    && var1.method13903().method19514().field28450 > mc.field1339.field5035.field28450 + 1.0) {
+                    && var1.method13903().method19514().field28450 > mc.player.field5035.field28450 + 1.0) {
                 var1.method13900(true);
             }
         }

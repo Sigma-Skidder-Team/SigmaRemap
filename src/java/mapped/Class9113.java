@@ -13,7 +13,7 @@ public class Class9113 {
       this.field41878 = var1;
       this.field41875 = var2;
       this.field41877 = var3;
-      this.field41876 = Util.method38487();
+      this.field41876 = Util.milliTime();
    }
 
    public ITextComponent method33993() {
@@ -30,6 +30,6 @@ public class Class9113 {
 
    public void method33996(Vector3d var1) {
       this.field41877 = var1;
-      this.field41876 = Util.method38487();
+      this.field41876 = Util.milliTime();
    }
 }

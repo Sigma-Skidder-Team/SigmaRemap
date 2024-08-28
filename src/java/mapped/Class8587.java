@@ -5,7 +5,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class8587 extends Class8586 {
+public class Class8587 extends NetworkManager {
    private static final Logger field38661 = LogManager.getLogger();
    private static final ITextComponent field38662 = new TranslationTextComponent("disconnect.exceeded_packet_rate");
    private final int field38663;

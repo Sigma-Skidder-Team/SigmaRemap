@@ -15,10 +15,10 @@ public class Class5206 extends Module {
 
     @EventTarget
     private void method16217(Class4435 var1) {
-        if (this.method15996() && mc.field1339.method3063()) {
+        if (this.method15996() && mc.player.method3063()) {
             boolean var4 = Class8005.method27349() >= Class5989.field26130.method18582() || mc.method1528() == null;
-            if (!mc.field1339.field5037 && (!mc.field1339.field4981 || !var4)) {
-                if (this.getStringSettingValueByName("Down mode").equals("OnSneak") && mc.field1299.field44637.method8509()
+            if (!mc.player.field5037 && (!mc.player.field4981 || !var4)) {
+                if (this.getStringSettingValueByName("Down mode").equals("OnSneak") && mc.gameSettings.field44637.method8509()
                         || this.getStringSettingValueByName("Down mode").equals("Always")) {
                     var1.method13995(-this.method15977("Motion"));
                 }

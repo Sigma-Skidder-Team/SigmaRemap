@@ -14,8 +14,8 @@ public class Class5126 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      double var11 = (double) Util.method38488();
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      double var11 = (double) Util.nanoTime();
       if (var11 - this.field23311 > 3.0E9) {
          this.field23311 = var11;
          Class1644 var13 = this.field23310.method1531();
@@ -33,7 +33,7 @@ public class Class5126 implements Class5119 {
          RenderSystem.method27862();
          RenderSystem.depthMask(false);
          Map var26 = (Map)Class8497.method30086(this.field23313).getNow((Map)null);
-         double var14 = this.field23310.field1295.method768().method37504().field18049 * 0.85;
+         double var14 = this.field23310.gameRenderer.getActiveRenderInfo().method37504().field18049 * 0.85;
 
          for (Entry var17 : Class8497.method30087(this.field23313).entrySet()) {
             Class7481 var18 = (Class7481)var17.getKey();
@@ -52,7 +52,7 @@ public class Class5126 implements Class5119 {
          }
 
          RenderSystem.depthMask(true);
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.disableBlend();
       }
    }

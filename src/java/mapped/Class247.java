@@ -8,7 +8,7 @@ public class Class247<T extends Class880> extends Class219<T, Class2826<T>> {
       super(var1);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.method3342()) {
          this.method825().method11027(this.field903);
          this.field903.method10997((T)var4, var5, var6, var7);

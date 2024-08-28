@@ -63,7 +63,7 @@ public class Class8982 {
 
    public void method33177() {
       for (Class8189 var4 : this.field40993) {
-         Minecraft.getInstance().field1338.method6730(var4.field35207, var4.field35208);
+         Minecraft.getInstance().world.method6730(var4.field35207, var4.field35208);
       }
 
       this.field40993.clear();
@@ -151,7 +151,7 @@ public class Class8982 {
 
    public Class7380 method33184(BlockPos var1) {
       if (!this.field40989.containsKey(var1)) {
-         return !this.field40990.containsKey(var1) ? Minecraft.getInstance().field1338.method6738(var1) : this.field40990.get(var1);
+         return !this.field40990.containsKey(var1) ? Minecraft.getInstance().world.method6738(var1) : this.field40990.get(var1);
       } else {
          return this.field40989.get(var1);
       }

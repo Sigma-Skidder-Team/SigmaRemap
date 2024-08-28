@@ -94,7 +94,7 @@ public class Class7958 {
          }
 
          ImmutableMap var32 = var31.build();
-         long var10 = Util.method38487();
+         long var10 = Util.milliTime();
          this.field34220 = new TranslationTextComponent("optimizeWorld.stage.upgrading");
 
          while (this.field34213) {
@@ -179,7 +179,7 @@ public class Class7958 {
          }
 
          this.field34222.method28773();
-         var10 = Util.method38487() - var10;
+         var10 = Util.milliTime() - var10;
          field34206.info("World optimizaton finished after {} ms", var10);
          this.field34214 = true;
       }

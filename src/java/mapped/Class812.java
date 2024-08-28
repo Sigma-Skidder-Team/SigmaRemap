@@ -9,7 +9,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -125,7 +124,7 @@ public class Class812 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4360, this.field4564 / 2, 20, 16777215);
       method5691(var1, this.field4568, this.field4366, this.field4564 / 2, 50, 16777215);
@@ -145,7 +144,7 @@ public class Class812 extends Class798 {
       super.method1923(var1, var2, var3, var4);
    }
 
-   private void method2236(Class9332 var1) {
+   private void method2236(MatrixStack var1) {
       int var4 = this.field4568.method38821(this.field4366);
       if (this.field4375 % 10 == 0) {
          this.field4377++;
@@ -154,7 +153,7 @@ public class Class812 extends Class798 {
       this.field4568.method38801(var1, field4376[this.field4377 % field4376.length], (float)(this.field4564 / 2 + var4 / 2 + 5), 50.0F, 16777215);
    }
 
-   private void method2237(Class9332 var1) {
+   private void method2237(MatrixStack var1) {
       double var4 = Math.min((double)this.field4364.field30735 / (double)this.field4364.field30736, 1.0);
       this.field4367 = String.format(Locale.ROOT, "%.1f", var4 * 100.0);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -173,16 +172,16 @@ public class Class812 extends Class798 {
       var7.method17025(var8 + 200.0 * var4, 80.0, 0.0).method17026(128, 128, 128, 255).method17031();
       var7.method17025(var8, 80.0, 0.0).method17026(128, 128, 128, 255).method17031();
       var6.method35410();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       method5690(var1, this.field4568, this.field4367 + " %", this.field4564 / 2, 84, 16777215);
    }
 
-   private void method2238(Class9332 var1) {
+   private void method2238(MatrixStack var1) {
       if (this.field4375 % 20 != 0) {
          this.method2239(var1, this.field4374);
       } else {
          if (this.field4372 != null) {
-            long var4 = Util.method38487() - this.field4373;
+            long var4 = Util.milliTime() - this.field4373;
             if (var4 == 0L) {
                var4 = 1L;
             }
@@ -192,11 +191,11 @@ public class Class812 extends Class798 {
          }
 
          this.field4372 = this.field4364.field30735;
-         this.field4373 = Util.method38487();
+         this.field4373 = Util.milliTime();
       }
    }
 
-   private void method2239(Class9332 var1, long var2) {
+   private void method2239(MatrixStack var1, long var2) {
       if (var2 > 0L) {
          int var6 = this.field4568.method38820(this.field4367);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";
@@ -215,7 +214,7 @@ public class Class812 extends Class798 {
                this.field4366 = new TranslationTextComponent("mco.download.downloading", this.field4363);
                Class9478 var3 = new Class9478();
                var3.method36586(this.field4359.field27402);
-               var3.method36587(this.field4359, this.field4363, this.field4364, this.field4562.method1472());
+               var3.method36587(this.field4359, this.field4363, this.field4364, this.field4562.getSaveLoader());
 
                while (!var3.method36589()) {
                   if (var3.method36590()) {

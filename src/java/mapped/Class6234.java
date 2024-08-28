@@ -25,7 +25,7 @@ public final class Class6234 extends Class6230 {
          var5.method6730(var7, Class3397.method12009(var5, var7));
       }
 
-      if (this.method19203() && var2.method32120(1, var5.field9016, (Class878)null)) {
+      if (this.method19203() && var2.method32120(1, var5.field9016, (ServerPlayerEntity)null)) {
          var2.method32180(0);
       }
 

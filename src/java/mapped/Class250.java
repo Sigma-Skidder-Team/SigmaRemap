@@ -7,12 +7,12 @@ public class Class250<T extends PlayerEntity> extends Class219<T, Class2894<T>> 
       super(var1);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.method840(var1, var2, var3, (T)var4, var5, var6, var9, var10, true);
       this.method840(var1, var2, var3, (T)var4, var5, var6, var9, var10, false);
    }
 
-   private void method840(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, boolean var9) {
+   private void method840(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, boolean var9) {
       Class39 var12 = !var9 ? var4.method2971() : var4.method2969();
       Class8992.method33199(var12.method126("id")).filter(var0 -> var0 == Class8992.field41062).ifPresent(var11 -> {
          Entity var14 = Class7944.method26874().field1000;

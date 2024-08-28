@@ -24,7 +24,7 @@ public class Class1297 extends Class1293<Class1185> {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       double var7 = this.field6865.method1580().method8049();
       RenderSystem.enableScissor(
          (int)((double)this.method6053() * var7),
@@ -40,7 +40,7 @@ public class Class1297 extends Class1293<Class1185> {
       this.field6866.clear();
 
       for (UUID var7 : var1) {
-         Class6589 var8 = this.field6865.field1339.connection.method15792(var7);
+         Class6589 var8 = this.field6865.player.connection.method15792(var7);
          if (var8 != null) {
             this.field6866.add(new Class1185(this.field6865, this.field6864, var8.method19966().getId(), var8.method19966().getName(), var8::method19973));
          }

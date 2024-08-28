@@ -16,7 +16,7 @@ public class Class9046 {
       this.field41421 = var2;
    }
 
-   public void method33640(Class9332 var1, int var2, int var3, List<Class1197> var4) {
+   public void method33640(MatrixStack var1, int var2, int var3, List<Class1197> var4) {
       if (Math.abs(var2 - this.field41422) <= 5 && Math.abs(var3 - this.field41423) <= 5) {
          short var7 = 700;
          if (System.currentTimeMillis() >= this.field41424 + (long)var7) {
@@ -57,7 +57,7 @@ public class Class9046 {
       }
    }
 
-   private void method33641(Class9332 var1, int var2, int var3, int var4, int var5, int var6) {
+   private void method33641(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
       Class1193.method5686(var1, var2, var3 - 1, var4, var3, var6);
       Class1193.method5686(var1, var2, var5, var4, var5 + 1, var6);
       Class1193.method5686(var1, var2 - 1, var3, var2, var5, var6);

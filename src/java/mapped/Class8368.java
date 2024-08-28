@@ -28,7 +28,7 @@ public class Class8368 {
       this.method29313(0);
    }
 
-   public void method29308(Class9332 var1, int var2, int var3) {
+   public void method29308(MatrixStack var1, int var2, int var3) {
       int var6 = Math.min(this.field35922.size(), Class6850.method20847(this.field35928));
       boolean var8 = this.field35923 > 0;
       boolean var9 = this.field35922.size() > this.field35923 + var6;
@@ -143,13 +143,13 @@ public class Class8368 {
 
    public boolean method29310(double var1) {
       int var5 = (int)(
-         Class6850.method20852(this.field35928).field1301.method36738()
-            * (double)Class6850.method20852(this.field35928).method1580().method8045()
+         Class6850.method20852(this.field35928).mouseHelper.method36738()
+            * (double)Class6850.method20852(this.field35928).method1580().getScaledWidth()
             / (double)Class6850.method20852(this.field35928).method1580().method8043()
       );
       int var6 = (int)(
-         Class6850.method20852(this.field35928).field1301.method36739()
-            * (double)Class6850.method20852(this.field35928).method1580().method8046()
+         Class6850.method20852(this.field35928).mouseHelper.method36739()
+            * (double)Class6850.method20852(this.field35928).method1580().getScaledHeight()
             / (double)Class6850.method20852(this.field35928).method1580().method8044()
       );
       if (!this.field35920.method36784(var5, var6)) {
@@ -222,8 +222,8 @@ public class Class8368 {
       Suggestion var4 = this.field35922.get(this.field35924);
       Class6850.method20848(this.field35928)
          .method5672(Class6850.method20854(Class6850.method20848(this.field35928).method5636(), var4.apply(this.field35921)));
-      if (Class6688.field29302.method20405() && this.field35927 != this.field35924) {
-         Class6688.field29302.method20401(this.method29315());
+      if (NarratorChatListener.INSTANCE.method20405() && this.field35927 != this.field35924) {
+         NarratorChatListener.INSTANCE.say(this.method29315());
       }
    }
 

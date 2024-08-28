@@ -15,11 +15,11 @@ public class Class1264 extends Class1193 {
       this.field6688 = var1;
    }
 
-   public void method5911(Class9332 var1) {
-      if (!this.field6688.field1299.field44662) {
+   public void func_238541_a_(MatrixStack var1) {
+      if (!this.field6688.gameSettings.field44662) {
          for (int var4 = 0; var4 < this.field6689.length; var4++) {
             Class9765<?> var5 = this.field6689[var4];
-            if (var5 != null && var5.method38405(this.field6688.method1580().method8045(), var4, var1)) {
+            if (var5 != null && var5.method38405(this.field6688.method1580().getScaledWidth(), var4, var1)) {
                this.field6689[var4] = null;
             }
 
@@ -88,8 +88,8 @@ public class Class1264 extends Class1193 {
          return this.field45688 != Class2139.field14004 ? var5 : 1.0F - var5;
       }
 
-      public boolean method38405(int var1, int var2, Class9332 var3) {
-         long var6 = Util.method38487();
+      public boolean method38405(int var1, int var2, MatrixStack var3) {
+         long var6 = Util.milliTime();
          if (this.field45686 == -1L) {
             this.field45686 = var6;
             this.field45688.method8832(method5916(Class1264.this).method1546());

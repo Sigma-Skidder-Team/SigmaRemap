@@ -88,8 +88,8 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
       var1.method35374();
       this.field5593 = -this.method4236();
       this.method4696(var1);
-      if (this.field5795 instanceof Class878) {
-         CriteriaTriggers.field44483.method15134((Class878)this.field5795, this, var1.method35368());
+      if (this.field5795 instanceof ServerPlayerEntity) {
+         CriteriaTriggers.field44483.method15134((ServerPlayerEntity)this.field5795, this, var1.method35368());
       }
    }
 

@@ -19,7 +19,7 @@ public class Class5718 extends Class5715<Class1007> {
       this.field25098 = 0.5F;
    }
 
-   public void method17853(Class1007 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class1007 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       float var9 = (float)var1.method4317(7, var3)[0];
       float var10 = (float)(var1.method4317(5, var3)[1] - var1.method4317(10, var3)[1]);
@@ -116,7 +116,7 @@ public class Class5718 extends Class5715<Class1007> {
       var0.method17040(var1, 0.0F, var2, 1.0F * var3).method17026(255, 0, 255, 0).method17031();
    }
 
-   public static void method17906(float var0, float var1, float var2, float var3, int var4, Class9332 var5, Class7733 var6, int var7) {
+   public static void method17906(float var0, float var1, float var2, float var3, int var4, MatrixStack var5, Class7733 var6, int var7) {
       float var10 = MathHelper.method37765(var0 * var0 + var2 * var2);
       float var11 = MathHelper.method37765(var0 * var0 + var1 * var1 + var2 * var2);
       var5.method35294();

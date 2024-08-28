@@ -159,8 +159,8 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
    public void method3624(PlayerEntity var1) {
       if (this.field5238 != null && this.field5024.method6715() != null) {
          Class7318 var4 = this.field5024.method6715().method1411().method1058(this.field5238);
-         if (var1 instanceof Class878) {
-            CriteriaTriggers.field44504.method15109((Class878)var1, this.field5238);
+         if (var1 instanceof ServerPlayerEntity) {
+            CriteriaTriggers.field44504.method15109((ServerPlayerEntity)var1, this.field5238);
          }
 
          this.field5238 = null;

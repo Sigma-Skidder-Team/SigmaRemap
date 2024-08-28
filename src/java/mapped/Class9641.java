@@ -25,7 +25,7 @@ public class Class9641 {
       this.field45086 = var1.method1555();
    }
 
-   public void method37580(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, Class9332 var5, Class7733 var6, int var7) {
+   public void method37580(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, MatrixStack var5, Class7733 var6, int var7) {
       Class7992.method27282(var4);
       if (!var2.method32105()) {
          this.field45086.method790(var1, var2, var3, var4, var5, var6, var1.field5024, var7, Class213.field798);
@@ -40,9 +40,9 @@ public class Class9641 {
       return -MathHelper.method37764(var4 * (float) Math.PI) * 0.5F + 0.5F;
    }
 
-   private void method37582(Class9332 var1, Class7733 var2, int var3, Class2205 var4) {
-      this.field45078.getTextureManager().bindTexture(this.field45078.field1339.method5371());
-      Class5713 var7 = (Class5713)this.field45085.<AbstractClientPlayerEntity>method32212(this.field45078.field1339);
+   private void method37582(MatrixStack var1, Class7733 var2, int var3, Class2205 var4) {
+      this.field45078.getTextureManager().bindTexture(this.field45078.player.method5371());
+      Class5713 var7 = (Class5713)this.field45085.<AbstractClientPlayerEntity>method32212(this.field45078.player);
       var1.method35294();
       float var8 = var4 != Class2205.field14418 ? -1.0F : 1.0F;
       var1.method35293(Class7680.field32900.method25286(92.0F));
@@ -50,18 +50,18 @@ public class Class9641 {
       var1.method35293(Class7680.field32902.method25286(var8 * -41.0F));
       var1.method35291((double)(var8 * 0.3F), -1.1F, 0.45F);
       if (var4 != Class2205.field14418) {
-         var7.method17891(var1, var2, var3, this.field45078.field1339);
+         var7.method17891(var1, var2, var3, this.field45078.player);
       } else {
-         var7.method17890(var1, var2, var3, this.field45078.field1339);
+         var7.method17890(var1, var2, var3, this.field45078.player);
       }
 
       var1.method35295();
    }
 
-   private void method37583(Class9332 var1, Class7733 var2, int var3, float var4, Class2205 var5, float var6, ItemStack var7) {
+   private void method37583(MatrixStack var1, Class7733 var2, int var3, float var4, Class2205 var5, float var6, ItemStack var7) {
       float var10 = var5 != Class2205.field14418 ? -1.0F : 1.0F;
       var1.method35291((double)(var10 * 0.125F), -0.125, 0.0);
-      if (!this.field45078.field1339.method3342()) {
+      if (!this.field45078.player.method3342()) {
          var1.method35294();
          var1.method35293(Class7680.field32902.method25286(var10 * 10.0F));
          this.method37586(var1, var2, var3, var4, var6, var5);
@@ -82,7 +82,7 @@ public class Class9641 {
       var1.method35295();
    }
 
-   private void method37584(Class9332 var1, Class7733 var2, int var3, float var4, float var5, float var6) {
+   private void method37584(MatrixStack var1, Class7733 var2, int var3, float var4, float var5, float var6) {
       float var9 = MathHelper.method37765(var6);
       float var10 = -0.2F * MathHelper.method37763(var6 * (float) Math.PI);
       float var11 = -0.4F * MathHelper.method37763(var9 * (float) Math.PI);
@@ -90,7 +90,7 @@ public class Class9641 {
       float var12 = this.method37581(var4);
       var1.method35291(0.0, (double)(0.04F + var5 * -1.2F + var12 * -0.5F), -0.72F);
       var1.method35293(Class7680.field32898.method25286(var12 * -85.0F));
-      if (!this.field45078.field1339.method3342()) {
+      if (!this.field45078.player.method3342()) {
          var1.method35294();
          var1.method35293(Class7680.field32900.method25286(90.0F));
          this.method37582(var1, var2, var3, Class2205.field14418);
@@ -104,13 +104,13 @@ public class Class9641 {
       this.method37585(var1, var2, var3, this.field45079);
    }
 
-   private void method37585(Class9332 var1, Class7733 var2, int var3, ItemStack var4) {
+   private void method37585(MatrixStack var1, Class7733 var2, int var3, ItemStack var4) {
       var1.method35293(Class7680.field32900.method25286(180.0F));
       var1.method35293(Class7680.field32902.method25286(180.0F));
       var1.method35292(0.38F, 0.38F, 0.38F);
       var1.method35291(-0.5, -0.5, 0.0);
       var1.method35292(0.0078125F, 0.0078125F, 0.0078125F);
-      Class7529 var7 = Class3316.method11861(var4, this.field45078.field1338);
+      Class7529 var7 = Class3316.method11861(var4, this.field45078.world);
       Class5422 var8 = var2.method25597(var7 != null ? field45077 : field45076);
       Class9367 var9 = var1.method35296().method32361();
       var8.method17040(var9, -7.0F, 135.0F, 0.0F).method17026(255, 255, 255, 255).method17027(0.0F, 1.0F).method17034(var3).method17031();
@@ -118,11 +118,11 @@ public class Class9641 {
       var8.method17040(var9, 135.0F, -7.0F, 0.0F).method17026(255, 255, 255, 255).method17027(1.0F, 0.0F).method17034(var3).method17031();
       var8.method17040(var9, -7.0F, -7.0F, 0.0F).method17026(255, 255, 255, 255).method17027(0.0F, 0.0F).method17034(var3).method17031();
       if (var7 != null) {
-         this.field45078.field1295.method756().method593(var1, var2, var7, false, var3);
+         this.field45078.gameRenderer.method756().method593(var1, var2, var7, false, var3);
       }
    }
 
-   private void method37586(Class9332 var1, Class7733 var2, int var3, float var4, float var5, Class2205 var6) {
+   private void method37586(MatrixStack var1, Class7733 var2, int var3, float var4, float var5, Class2205 var6) {
       boolean var9 = var6 != Class2205.field14417;
       float var10 = !var9 ? -1.0F : 1.0F;
       float var11 = MathHelper.method37765(var5);
@@ -135,7 +135,7 @@ public class Class9641 {
       float var16 = MathHelper.method37763(var11 * (float) Math.PI);
       var1.method35293(Class7680.field32900.method25286(var10 * var16 * 70.0F));
       var1.method35293(Class7680.field32902.method25286(var10 * var15 * -20.0F));
-      ClientPlayerEntity var17 = this.field45078.field1339;
+      ClientPlayerEntity var17 = this.field45078.player;
       this.field45078.getTextureManager().bindTexture(var17.method5371());
       var1.method35291((double)(var10 * -1.0F), 3.6F, 3.5);
       var1.method35293(Class7680.field32902.method25286(var10 * 120.0F));
@@ -150,8 +150,8 @@ public class Class9641 {
       }
    }
 
-   private void method37587(Class9332 var1, float var2, Class2205 var3, ItemStack var4) {
-      float var7 = (float)this.field45078.field1339.method3159() - var2 + 1.0F;
+   private void method37587(MatrixStack var1, float var2, Class2205 var3, ItemStack var4) {
+      float var7 = (float)this.field45078.player.method3159() - var2 + 1.0F;
       float var8 = var7 / (float)var4.method32137();
       if (var8 < 0.8F) {
          float var9 = MathHelper.method37771(MathHelper.method37764(var7 / 4.0F * (float) Math.PI) * 0.1F);
@@ -166,7 +166,7 @@ public class Class9641 {
       var1.method35293(Class7680.field32902.method25286((float)var10 * var11 * 30.0F));
    }
 
-   private void method37588(Class9332 var1, Class2205 var2, float var3) {
+   private void method37588(MatrixStack var1, Class2205 var2, float var3) {
       int var6 = var2 != Class2205.field14418 ? -1 : 1;
       float var7 = MathHelper.method37763(var3 * var3 * (float) Math.PI);
       var1.method35293(Class7680.field32900.method25286((float)var6 * (45.0F + var7 * -20.0F)));
@@ -176,12 +176,12 @@ public class Class9641 {
       var1.method35293(Class7680.field32900.method25286((float)var6 * -45.0F));
    }
 
-   private void method37589(Class9332 var1, Class2205 var2, float var3) {
+   private void method37589(MatrixStack var1, Class2205 var2, float var3) {
       int var6 = var2 != Class2205.field14418 ? -1 : 1;
       var1.method35291((double)((float)var6 * 0.56F), (double)(-0.52F + var3 * -0.6F), -0.72F);
    }
 
-   public void method37590(float var1, Class9332 var2, Class7735 var3, ClientPlayerEntity var4, int var5) {
+   public void method37590(float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.method3137(var1);
       Hand var9 = (Hand)MoreObjects.firstNonNull(var4.field4948, Hand.field182);
       float var10 = MathHelper.method37821(var1, var4.field5034, var4.field5032);
@@ -240,7 +240,7 @@ public class Class9641 {
    }
 
    private void method37591(
-           AbstractClientPlayerEntity var1, float var2, float var3, Hand var4, float var5, ItemStack var6, float var7, Class9332 var8, Class7733 var9, int var10
+           AbstractClientPlayerEntity var1, float var2, float var3, Hand var4, float var5, ItemStack var6, float var7, MatrixStack var8, Class7733 var9, int var10
    ) {
       if (!Class7944.method26921() || !Class8981.method33153(var4)) {
          boolean var13 = var4 == Hand.field182;
@@ -266,7 +266,7 @@ public class Class9641 {
                var8.method35293(Class7680.field32898.method25286(-11.935F));
                var8.method35293(Class7680.field32900.method25286((float)var30 * 65.3F));
                var8.method35293(Class7680.field32902.method25286((float)var30 * -9.785F));
-               float var33 = (float)var6.method32137() - ((float)this.field45078.field1339.method3159() - var2 + 1.0F);
+               float var33 = (float)var6.method32137() - ((float)this.field45078.player.method3159() - var2 + 1.0F);
                float var37 = var33 / (float)Class3261.method11767(var6);
                if (var37 > 1.0F) {
                   var37 = 1.0F;
@@ -320,7 +320,7 @@ public class Class9641 {
                      var8.method35293(Class7680.field32898.method25286(-13.935F));
                      var8.method35293(Class7680.field32900.method25286((float)var29 * 35.3F));
                      var8.method35293(Class7680.field32902.method25286((float)var29 * -9.785F));
-                     float var31 = (float)var6.method32137() - ((float)this.field45078.field1339.method3159() - var2 + 1.0F);
+                     float var31 = (float)var6.method32137() - ((float)this.field45078.player.method3159() - var2 + 1.0F);
                      float var34 = var31 / 20.0F;
                      var34 = (var34 * var34 + var34 * 2.0F) / 3.0F;
                      if (var34 > 1.0F) {
@@ -344,7 +344,7 @@ public class Class9641 {
                      var8.method35293(Class7680.field32898.method25286(-55.0F));
                      var8.method35293(Class7680.field32900.method25286((float)var29 * 35.3F));
                      var8.method35293(Class7680.field32902.method25286((float)var29 * -9.785F));
-                     float var38 = (float)var6.method32137() - ((float)this.field45078.field1339.method3159() - var2 + 1.0F);
+                     float var38 = (float)var6.method32137() - ((float)this.field45078.player.method3159() - var2 + 1.0F);
                      float var21 = var38 / 10.0F;
                      if (var21 > 1.0F) {
                         var21 = 1.0F;
@@ -396,7 +396,7 @@ public class Class9641 {
    public void method37592() {
       this.field45082 = this.field45081;
       this.field45084 = this.field45083;
-      ClientPlayerEntity var3 = this.field45078.field1339;
+      ClientPlayerEntity var3 = this.field45078.player;
       ItemStack var4 = var3.method3090();
       ItemStack var5 = var3.method3091();
       if (ItemStack.method32128(this.field45079, var4)) {

@@ -20,14 +20,14 @@ public class Class5238 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23596 = mc.field1339.getPosY();
+        this.field23596 = mc.player.getPosY();
         this.field23594 = 0;
-        if (!mc.field1299.field44637.method8509()) {
-            if (!mc.field1299.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.method8509()) {
+            if (!mc.gameSettings.field44637.method8509()) {
                 this.field23598 = false;
             }
         } else {
-            mc.field1299.field44637.field13071 = false;
+            mc.gameSettings.field44637.field13071 = false;
             this.field23598 = true;
         }
     }
@@ -35,7 +35,7 @@ public class Class5238 extends Module {
     @Override
     public void method15965() {
         Class9567.method37090(0.0);
-        if (mc.field1339.method3433().field18049 > 0.0) {
+        if (mc.player.method3433().field18049 > 0.0) {
             Class5628.method17725(-0.0789);
         }
     }
@@ -43,7 +43,7 @@ public class Class5238 extends Module {
     @EventTarget
     private void method16329(Class4430 var1) {
         if (this.method15996()) {
-            if (var1.method13977() == mc.field1299.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23598 = true;
             }
@@ -53,7 +53,7 @@ public class Class5238 extends Module {
     @EventTarget
     private void method16330(Class4426 var1) {
         if (this.method15996()) {
-            if (var1.method13973() == mc.field1299.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23598 = false;
             }
@@ -68,7 +68,7 @@ public class Class5238 extends Module {
             if (this.field23594 <= 0) {
                 if (this.field23594 != -1) {
                     if (this.field23594 == 0) {
-                        if (!mc.field1299.field44636.method8509() && var1.method13994() > 0.0) {
+                        if (!mc.gameSettings.field44636.method8509() && var1.method13994() > 0.0) {
                             var1.method13995(-Class9567.method37080());
                         }
 
@@ -76,15 +76,15 @@ public class Class5238 extends Module {
                         Class9567.method37088(var1, Class9567.method37075());
                     }
                 } else {
-                    if (mc.field1299.field44636.method8509()) {
+                    if (mc.gameSettings.field44636.method8509()) {
                         var1.method13995(!this.field23598 ? var4 / 2.0 : Class9567.method37080());
                         this.field23597 = this.field23596;
-                        this.field23596 = !this.field23598 ? mc.field1339.getPosY() + var1.method13994() : this.field23596;
+                        this.field23596 = !this.field23598 ? mc.player.getPosY() + var1.method13994() : this.field23596;
                     } else {
-                        var1.method13995(this.field23598 && !Class5628.method17730(mc.field1339, 0.01F) ? -var4 / 2.0 : Class9567.method37080());
+                        var1.method13995(this.field23598 && !Class5628.method17730(mc.player, 0.01F) ? -var4 / 2.0 : Class9567.method37080());
                         this.field23597 = this.field23596;
-                        this.field23596 = this.field23598 && !Class5628.method17730(mc.field1339, 0.01F)
-                                ? mc.field1339.getPosY() + var1.method13994()
+                        this.field23596 = this.field23598 && !Class5628.method17730(mc.player, 0.01F)
+                                ? mc.player.getPosY() + var1.method13994()
                                 : this.field23596;
                     }
 
@@ -142,8 +142,8 @@ public class Class5238 extends Module {
 
                 this.field23597 = this.field23596;
                 this.field23596 = var7.field24298;
-                var7.field24300 = mc.field1339.field5031;
-                var7.field24301 = mc.field1339.field5032;
+                var7.field24300 = mc.player.field5031;
+                var7.field24301 = mc.player.field5032;
             }
         }
     }
@@ -166,10 +166,10 @@ public class Class5238 extends Module {
         if (this.method15996()) {
             double var4 = this.field23596 - this.field23597;
             double var6 = this.field23596;
-            mc.field1339.field5028.field18049 = var6;
-            mc.field1339.field5049 = var6;
-            mc.field1339.field4915 = var6;
-            mc.field1339.field5026 = var6;
+            mc.player.field5028.field18049 = var6;
+            mc.player.field5049 = var6;
+            mc.player.field4915 = var6;
+            mc.player.field5026 = var6;
         }
     }
 }

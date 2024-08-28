@@ -22,13 +22,13 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
    }
 
    @Override
-   public void method1931() {
-      super.method1931();
+   public void onClose() {
+      super.onClose();
       this.field4727.method18128(this);
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       super.method1923(var1, var2, var3, var4);
       RenderSystem.disableBlend();
@@ -36,11 +36,11 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
       this.method2615(var1, var2, var3);
    }
 
-   public void method2717(Class9332 var1, int var2, int var3, float var4) {
+   public void method2717(MatrixStack var1, int var2, int var3, float var4) {
    }
 
    @Override
-   public void method2618(Class9332 var1, float var2, int var3, int var4) {
+   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(this.field4851);
       int var7 = (this.field4564 - this.field4721) / 2;

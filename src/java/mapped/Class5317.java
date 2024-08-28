@@ -53,9 +53,9 @@ public class Class5317 extends Module {
             }
 
             boolean var4 = !this.method15974("KillAura") || Class5357.field23948 != null || Class5357.field23949 != null;
-            if (mc.field1339.field5036 && mc.field1339.field5038 && var4) {
+            if (mc.player.field5036 && mc.player.field5038 && var4) {
                 field23862++;
-                mc.field1339.field6120 = 0.0;
+                mc.player.field6120 = 0.0;
                 if (field23862 != 2) {
                     if (field23862 >= 3) {
                         double var5 = 0.001;

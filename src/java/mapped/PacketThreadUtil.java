@@ -29,7 +29,7 @@ public class PacketThreadUtil {
 
    public static void method31781(Packet var0) {
       if (var0 instanceof Class5473) {
-         Minecraft.getInstance().field1287.method932();
+         Minecraft.getInstance().worldRenderer.method932();
       }
 
       if (!(var0 instanceof Class5545)) {

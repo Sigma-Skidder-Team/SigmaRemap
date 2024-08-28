@@ -14,7 +14,7 @@ public class Class8319 {
    private static final Minecraft field35741 = Minecraft.getInstance();
 
    public static void method29126(int var0) {
-      if (Client.getInstance().getClientMode() != ClientMode.field13889) {
+      if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
          if (var0 != -1) {
             for (Class7957 var5 : Client.getInstance().getModuleManager().method14668().method13733(var0)) {
                if (var5 != null && var5.method27052()) {

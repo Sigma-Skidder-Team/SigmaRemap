@@ -46,7 +46,7 @@ public interface Class1011 {
    default void method4366(ServerWorld var1, boolean var2) {
       Class880 var5 = this.method4232();
       UUID var6 = this.method4350();
-      if ((var5 == null || var5.method3044()) && var6 != null && var1.method6942(var6) instanceof Class1006) {
+      if ((var5 == null || var5.getShouldBeDead()) && var6 != null && var1.method6942(var6) instanceof Class1006) {
          this.method4372();
       } else {
          if (var5 != null && !Objects.equals(var6, var5.getUniqueID())) {

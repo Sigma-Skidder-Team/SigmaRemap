@@ -7,7 +7,7 @@ public class Class230 extends Class219<Class1058, Class2880<Class1058>> {
       super(var1);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, Class1058 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, Class1058 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (var4.method4868() != 0) {
          var1.method35294();
          Class7219 var13 = this.method825().method11198();

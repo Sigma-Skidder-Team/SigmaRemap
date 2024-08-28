@@ -28,7 +28,7 @@ public class Class3623 extends Class3624 {
    }
 
    @Override
-   public void method12263(Class878 var1) {
+   public void method12263(ServerPlayerEntity var1) {
       super.method12263(var1);
       this.field19626.add(var1.getUniqueID());
    }
@@ -38,7 +38,7 @@ public class Class3623 extends Class3624 {
    }
 
    @Override
-   public void method12265(Class878 var1) {
+   public void method12265(ServerPlayerEntity var1) {
       super.method12265(var1);
       this.field19626.remove(var1.getUniqueID());
    }
@@ -76,14 +76,14 @@ public class Class3623 extends Class3624 {
          );
    }
 
-   public boolean method12272(Collection<Class878> var1) {
+   public boolean method12272(Collection<ServerPlayerEntity> var1) {
       Set<UUID> var4 = Sets.newHashSet();
-      Set<Class878> var5 = Sets.newHashSet();
+      Set<ServerPlayerEntity> var5 = Sets.newHashSet();
 
       for (UUID var7 : this.field19626) {
          boolean var8 = false;
 
-         for (Class878 var10 : var1) {
+         for (ServerPlayerEntity var10 : var1) {
             if (var10.getUniqueID().equals(var7)) {
                var8 = true;
                break;
@@ -95,7 +95,7 @@ public class Class3623 extends Class3624 {
          }
       }
 
-      for (Class878 var14 : var1) {
+      for (ServerPlayerEntity var14 : var1) {
          boolean var17 = false;
 
          for (UUID var21 : this.field19626) {
@@ -111,7 +111,7 @@ public class Class3623 extends Class3624 {
       }
 
       for (UUID var15 : var4) {
-         for (Class878 var20 : this.method12288()) {
+         for (ServerPlayerEntity var20 : this.method12288()) {
             if (var20.getUniqueID().equals(var15)) {
                this.method12265(var20);
                break;
@@ -121,7 +121,7 @@ public class Class3623 extends Class3624 {
          this.field19626.remove(var15);
       }
 
-      for (Class878 var16 : var5) {
+      for (ServerPlayerEntity var16 : var5) {
          this.method12263(var16);
       }
 
@@ -168,13 +168,13 @@ public class Class3623 extends Class3624 {
       return var4;
    }
 
-   public void method12275(Class878 var1) {
+   public void method12275(ServerPlayerEntity var1) {
       if (this.field19626.contains(var1.getUniqueID())) {
          this.method12263(var1);
       }
    }
 
-   public void method12276(Class878 var1) {
+   public void method12276(ServerPlayerEntity var1) {
       super.method12265(var1);
    }
 }

@@ -99,8 +99,8 @@ public class Class8429 {
       if (!this.field36110) {
          return this.method29620(var1);
       } else if (this.field36118 != null) {
-         Class878 var10 = var1.method20177().getPlayerList().method19465(this.field36118);
-         return (List<? extends Entity>)(var10 != null ? Lists.newArrayList(new Class878[]{var10}) : Collections.emptyList());
+         ServerPlayerEntity var10 = var1.method20177().getPlayerList().method19465(this.field36118);
+         return (List<? extends Entity>)(var10 != null ? Lists.newArrayList(new ServerPlayerEntity[]{var10}) : Collections.emptyList());
       } else if (this.field36119 == null) {
          Vector3d var9 = this.field36114.apply(var1.method20171());
          Predicate var11 = this.method29621(var9);
@@ -140,39 +140,39 @@ public class Class8429 {
       }
    }
 
-   public Class878 method29619(Class6619 var1) throws CommandSyntaxException {
+   public ServerPlayerEntity method29619(Class6619 var1) throws CommandSyntaxException {
       this.method29615(var1);
       List var4 = this.method29620(var1);
       if (var4.size() == 1) {
-         return (Class878)var4.get(0);
+         return (ServerPlayerEntity)var4.get(0);
       } else {
          throw Class8700.field39264.create();
       }
    }
 
-   public List<Class878> method29620(Class6619 var1) throws CommandSyntaxException {
+   public List<ServerPlayerEntity> method29620(Class6619 var1) throws CommandSyntaxException {
       this.method29615(var1);
       if (this.field36118 != null) {
-         Class878 var10 = var1.method20177().getPlayerList().method19465(this.field36118);
-         return (List<Class878>)(var10 != null ? Lists.newArrayList(new Class878[]{var10}) : Collections.<Class878>emptyList());
+         ServerPlayerEntity var10 = var1.method20177().getPlayerList().method19465(this.field36118);
+         return (List<ServerPlayerEntity>)(var10 != null ? Lists.newArrayList(new ServerPlayerEntity[]{var10}) : Collections.<ServerPlayerEntity>emptyList());
       } else if (this.field36119 == null) {
          Vector3d var9 = this.field36114.apply(var1.method20171());
          Predicate var5 = this.method29621(var9);
          if (this.field36117) {
-            if (var1.method20173() instanceof Class878) {
-               Class878 var11 = (Class878)var1.method20173();
+            if (var1.method20173() instanceof ServerPlayerEntity) {
+               ServerPlayerEntity var11 = (ServerPlayerEntity)var1.method20173();
                if (var5.test(var11)) {
-                  return Lists.newArrayList(new Class878[]{var11});
+                  return Lists.newArrayList(new ServerPlayerEntity[]{var11});
                }
             }
 
-            return Collections.<Class878>emptyList();
+            return Collections.<ServerPlayerEntity>emptyList();
          } else {
-            List<Class878> var6;
+            List<ServerPlayerEntity> var6;
             if (!this.method29614()) {
                var6 = Lists.newArrayList();
 
-               for (Class878 var8 : var1.method20177().getPlayerList().method19488()) {
+               for (ServerPlayerEntity var8 : var1.method20177().getPlayerList().method19488()) {
                   if (var5.test(var8)) {
                      var6.add(var8);
                   }
@@ -181,11 +181,11 @@ public class Class8429 {
                var6 = var1.method20172().method6914(var5::test);
             }
 
-            return this.<Class878>method29622(var9, (List<Class878>)var6);
+            return this.<ServerPlayerEntity>method29622(var9, (List<ServerPlayerEntity>)var6);
          }
       } else {
-         Class878 var4 = var1.method20177().getPlayerList().method19489(this.field36119);
-         return (List<Class878>)(var4 != null ? Lists.newArrayList(new Class878[]{var4}) : Collections.<Class878>emptyList());
+         ServerPlayerEntity var4 = var1.method20177().getPlayerList().method19489(this.field36119);
+         return (List<ServerPlayerEntity>)(var4 != null ? Lists.newArrayList(new ServerPlayerEntity[]{var4}) : Collections.<ServerPlayerEntity>emptyList());
       }
    }
 

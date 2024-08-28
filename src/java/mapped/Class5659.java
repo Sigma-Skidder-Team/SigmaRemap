@@ -7,7 +7,7 @@ public class Class5659 extends Class5658 {
       super(var1, 1.2F);
    }
 
-   public void method17857(Class1105 var1, Class9332 var2, float var3) {
+   public void method17857(Class1105 var1, MatrixStack var2, float var3) {
       var2.method35292(Class1106.field6078, Class1106.field6078, Class1106.field6078);
    }
 

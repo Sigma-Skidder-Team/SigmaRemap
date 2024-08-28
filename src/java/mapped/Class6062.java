@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class6062<C> {
    private static final Logger field26299 = LogManager.getLogger();
-   public static final Class6062<Class314> field26300 = new Class6062<Class314>().method18795(new Class6944()).method18795(new Class6946());
+   public static final Class6062<MinecraftServer> field26300 = new Class6062<MinecraftServer>().method18795(new Class6944()).method18795(new Class6946());
    private final Map<ResourceLocation, Class6945<C, ?>> field26301 = Maps.newHashMap();
    private final Map<Class<?>, Class6945<C, ?>> field26302 = Maps.newHashMap();
 

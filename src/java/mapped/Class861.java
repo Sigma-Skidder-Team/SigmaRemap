@@ -41,7 +41,7 @@ public class Class861 extends Class860<Class5820> {
             this.field4779.method5633();
          }
       } else {
-         this.field4562.displayGuiScreen(new Class859(this.field4562.field1339));
+         this.field4562.displayGuiScreen(new Class859(this.field4562.player));
       }
    }
 
@@ -55,40 +55,40 @@ public class Class861 extends Class860<Class5820> {
       boolean var7 = var4 == Class2259.field14695;
       var4 = var2 == -999 && var4 == Class2259.field14694 ? Class2259.field14698 : var4;
       if (var1 == null && field4776 != Class7401.field31677.method23641() && var4 != Class2259.field14699) {
-         Class974 var16 = this.field4562.field1339.field4902;
+         Class974 var16 = this.field4562.player.field4902;
          if (!var16.method4057().method32105() && this.field4784) {
             if (var3 == 0) {
-               this.field4562.field1339.method2882(var16.method4057(), true);
+               this.field4562.player.method2882(var16.method4057(), true);
                this.field4562.field1337.method23148(var16.method4057());
                var16.method4056(ItemStack.EMPTY);
             }
 
             if (var3 == 1) {
                ItemStack var21 = var16.method4057().method32106(1);
-               this.field4562.field1339.method2882(var21, true);
+               this.field4562.player.method2882(var21, true);
                this.field4562.field1337.method23148(var21);
             }
          }
       } else {
-         if (var1 != null && !var1.method18273(this.field4562.field1339)) {
+         if (var1 != null && !var1.method18273(this.field4562.player)) {
             return;
          }
 
          if (var1 == this.field4781 && var7) {
-            for (int var15 = 0; var15 < this.field4562.field1339.field4904.method18129().size(); var15++) {
+            for (int var15 = 0; var15 < this.field4562.player.field4904.method18129().size(); var15++) {
                this.field4562.field1337.method23147(ItemStack.EMPTY, var15);
             }
          } else if (field4776 != Class7401.field31677.method23641()) {
             if (var4 != Class2259.field14699 && var1.field25578 == field4774) {
-               Class974 var13 = this.field4562.field1339.field4902;
+               Class974 var13 = this.field4562.player.field4902;
                ItemStack var18 = var13.method4057();
                ItemStack var22 = var1.method18265();
                if (var4 == Class2259.field14696) {
                   if (!var22.method32105()) {
                      ItemStack var25 = var22.copy();
                      var25.method32180(var25.method32113());
-                     this.field4562.field1339.field4902.method3621(var3, var25);
-                     this.field4562.field1339.field4904.method18130();
+                     this.field4562.player.field4902.method3621(var3, var25);
+                     this.field4562.player.field4904.method18130();
                   }
 
                   return;
@@ -108,7 +108,7 @@ public class Class861 extends Class860<Class5820> {
                   if (!var22.method32105()) {
                      ItemStack var23 = var22.copy();
                      var23.method32180(var3 != 0 ? var23.method32113() : 1);
-                     this.field4562.field1339.method2882(var23, true);
+                     this.field4562.player.method2882(var23, true);
                      this.field4562.field1337.method23148(var23);
                   }
 
@@ -138,7 +138,7 @@ public class Class861 extends Class860<Class5820> {
                }
             } else if (this.field4727 != null) {
                ItemStack var8 = var1 != null ? this.field4727.method18131(var1.field25579).method18265() : ItemStack.EMPTY;
-               this.field4727.method18132(var1 != null ? var1.field25579 : var2, var3, var4, this.field4562.field1339);
+               this.field4727.method18132(var1 != null ? var1.field25579 : var2, var3, var4, this.field4562.player);
                if (Class5812.method18144(var3) != 2) {
                   if (var1 != null) {
                      ItemStack var9 = this.field4727.method18131(var1.field25579).method18265();
@@ -148,14 +148,14 @@ public class Class861 extends Class860<Class5820> {
                         if (var4 == Class2259.field14698 && !var8.method32105()) {
                            ItemStack var11 = var8.copy();
                            var11.method32180(var3 != 0 ? var11.method32113() : 1);
-                           this.field4562.field1339.method2882(var11, true);
+                           this.field4562.player.method2882(var11, true);
                            this.field4562.field1337.method23148(var11);
                         }
                      } else {
                         this.field4562.field1337.method23147(var8, var10 - this.field4727.field25468.size() + 9 + 36);
                      }
 
-                     this.field4562.field1339.field4904.method18130();
+                     this.field4562.player.field4904.method18130();
                   }
                } else {
                   for (int var17 = 0; var17 < 9; var17++) {
@@ -167,22 +167,22 @@ public class Class861 extends Class860<Class5820> {
             if (var4 == Class2259.field14698 && var1 != null && var1.method18266()) {
                ItemStack var14 = var1.method18272(var3 != 0 ? var1.method18265().method32113() : 1);
                ItemStack var20 = var1.method18265();
-               this.field4562.field1339.method2882(var14, true);
+               this.field4562.player.method2882(var14, true);
                this.field4562.field1337.method23148(var14);
                this.field4562.field1337.method23147(var20, Class5848.method18276((Class5848)var1).field25579);
-            } else if (var4 == Class2259.field14698 && !this.field4562.field1339.field4902.method4057().method32105()) {
-               this.field4562.field1339.method2882(this.field4562.field1339.field4902.method4057(), true);
-               this.field4562.field1337.method23148(this.field4562.field1339.field4902.method4057());
-               this.field4562.field1339.field4902.method4056(ItemStack.EMPTY);
+            } else if (var4 == Class2259.field14698 && !this.field4562.player.field4902.method4057().method32105()) {
+               this.field4562.player.method2882(this.field4562.player.field4902.method4057(), true);
+               this.field4562.field1337.method23148(this.field4562.player.field4902.method4057());
+               this.field4562.player.field4902.method4056(ItemStack.EMPTY);
             } else {
                this.field4562
-                  .field1339
+                  .player
                   .field4904
-                  .method18132(var1 != null ? Class5848.method18276((Class5848)var1).field25579 : var2, var3, var4, this.field4562.field1339);
-               this.field4562.field1339.field4904.method18130();
+                  .method18132(var1 != null ? Class5848.method18276((Class5848)var1).field25579 : var2, var3, var4, this.field4562.player);
+               this.field4562.player.field4904.method18130();
             }
          } else {
-            this.field4562.field1339.field4902.method4056(ItemStack.EMPTY);
+            this.field4562.player.field4902.method4056(ItemStack.EMPTY);
          }
       }
    }
@@ -203,7 +203,7 @@ public class Class861 extends Class860<Class5820> {
    @Override
    public void method1921() {
       if (!this.field4562.field1337.method23152()) {
-         this.field4562.displayGuiScreen(new Class859(this.field4562.field1339));
+         this.field4562.displayGuiScreen(new Class859(this.field4562.player));
       } else {
          super.method1921();
          this.field4562.field1302.method36347(true);
@@ -216,9 +216,9 @@ public class Class861 extends Class860<Class5820> {
          int var3 = field4776;
          field4776 = -1;
          this.method2648(Class7401.field31664[var3]);
-         this.field4562.field1339.field4904.method18128(this.field4782);
+         this.field4562.player.field4904.method18128(this.field4782);
          this.field4782 = new Class877(this.field4562);
-         this.field4562.field1339.field4904.method18127(this.field4782);
+         this.field4562.player.field4904.method18127(this.field4782);
       }
    }
 
@@ -233,10 +233,10 @@ public class Class861 extends Class860<Class5820> {
    }
 
    @Override
-   public void method1931() {
-      super.method1931();
-      if (this.field4562.field1339 != null && this.field4562.field1339.field4902 != null) {
-         this.field4562.field1339.field4904.method18128(this.field4782);
+   public void onClose() {
+      super.onClose();
+      if (this.field4562.player != null && this.field4562.player.field4902 != null) {
+         this.field4562.player.field4904.method18128(this.field4782);
       }
 
       this.field4562.field1302.method36347(false);
@@ -268,7 +268,7 @@ public class Class861 extends Class860<Class5820> {
    public boolean method1920(int var1, int var2, int var3) {
       this.field4783 = false;
       if (field4776 != Class7401.field31670.method23641()) {
-         if (!this.field4562.field1299.field44645.method8519(var1, var2)) {
+         if (!this.field4562.gameSettings.field44645.method8519(var1, var2)) {
             return super.method1920(var1, var2, var3);
          } else {
             this.field4783 = true;
@@ -345,7 +345,7 @@ public class Class861 extends Class860<Class5820> {
    }
 
    @Override
-   public void method2617(Class9332 var1, int var2, int var3) {
+   public void method2617(MatrixStack var1, int var2, int var3) {
       Class7401 var6 = Class7401.field31664[field4776];
       if (var6.method23648()) {
          RenderSystem.disableBlend();
@@ -419,8 +419,8 @@ public class Class861 extends Class860<Class5820> {
                   } else {
                      ItemStack var9 = new ItemStack(Class8514.field37899);
                      var9.method32144("CustomCreativeLock");
-                     ITextComponent var10 = this.field4562.field1299.field44655[var6].method8521();
-                     ITextComponent var11 = this.field4562.field1299.field44656.method8521();
+                     ITextComponent var10 = this.field4562.gameSettings.field44655[var6].method8521();
+                     ITextComponent var11 = this.field4562.gameSettings.field44656.method8521();
                      var9.method32150(new TranslationTextComponent("inventory.hotbarInfo", var11, var10));
                      this.field4727.field25498.add(var9);
                   }
@@ -436,7 +436,7 @@ public class Class861 extends Class860<Class5820> {
             this.field4780 = null;
          }
       } else {
-         Class5830 var12 = this.field4562.field1339.field4904;
+         Class5830 var12 = this.field4562.player.field4904;
          if (this.field4780 == null) {
             this.field4780 = ImmutableList.copyOf(this.field4727.field25468);
          }
@@ -545,7 +545,7 @@ public class Class861 extends Class860<Class5820> {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       super.method1923(var1, var2, var3, var4);
 
@@ -566,11 +566,11 @@ public class Class861 extends Class860<Class5820> {
    }
 
    @Override
-   public void method2457(Class9332 var1, ItemStack var2, int var3, int var4) {
+   public void method2457(MatrixStack var1, ItemStack var2, int var3, int var4) {
       if (field4776 != Class7401.field31670.method23641()) {
          super.method2457(var1, var2, var3, var4);
       } else {
-         List var7 = var2.method32153(this.field4562.field1339, !this.field4562.field1299.field44588 ? Class2215.field14480 : Class2215.field14481);
+         List var7 = var2.method32153(this.field4562.player, !this.field4562.gameSettings.field44588 ? Class2215.field14480 : Class2215.field14481);
          ArrayList var8 = Lists.newArrayList(var7);
          Class3257 var9 = var2.method32107();
          Class7401 var10 = var9.method11739();
@@ -602,7 +602,7 @@ public class Class861 extends Class860<Class5820> {
    }
 
    @Override
-   public void method2618(Class9332 var1, float var2, int var3, int var4) {
+   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class7401 var7 = Class7401.field31664[field4776];
 
@@ -633,7 +633,7 @@ public class Class861 extends Class860<Class5820> {
             20,
             (float)(this.field4734 + 88 - var3),
             (float)(this.field4735 + 45 - 30 - var4),
-            this.field4562.field1339
+            this.field4562.player
          );
       }
    }
@@ -659,7 +659,7 @@ public class Class861 extends Class860<Class5820> {
       return var2 >= (double)var9 && var2 <= (double)(var9 + 28) && var4 >= (double)var10 && var4 <= (double)(var10 + 32);
    }
 
-   public boolean method2652(Class9332 var1, Class7401 var2, int var3, int var4) {
+   public boolean method2652(MatrixStack var1, Class7401 var2, int var3, int var4) {
       int var7 = var2.method23652();
       int var8 = 28 * var7;
       int var9 = 0;
@@ -685,7 +685,7 @@ public class Class861 extends Class860<Class5820> {
       }
    }
 
-   public void method2653(Class9332 var1, Class7401 var2) {
+   public void method2653(MatrixStack var1, Class7401 var2) {
       boolean var5 = var2.method23641() == field4776;
       boolean var6 = var2.method23653();
       int var7 = var2.method23652();
@@ -729,7 +729,7 @@ public class Class861 extends Class860<Class5820> {
    }
 
    public static void method2655(Minecraft var0, int var1, boolean var2, boolean var3) {
-      ClientPlayerEntity var6 = var0.field1339;
+      ClientPlayerEntity var6 = var0.player;
       Class8044 var7 = var0.method1569();
       Class2356 var8 = var7.method27629(var1);
       if (!var2) {
@@ -738,9 +738,9 @@ public class Class861 extends Class860<Class5820> {
                var8.set(var9, var6.field4902.method3618(var9).copy());
             }
 
-            ITextComponent var11 = var0.field1299.field44655[var1].method8521();
-            ITextComponent var10 = var0.field1299.field44657.method8521();
-            var0.field1298.method5985(new TranslationTextComponent("inventory.hotbarSaved", var10, var11), false);
+            ITextComponent var11 = var0.gameSettings.field44655[var1].method8521();
+            ITextComponent var10 = var0.gameSettings.field44657.method8521();
+            var0.ingameGUI.method5985(new TranslationTextComponent("inventory.hotbarSaved", var10, var11), false);
             var7.method27628();
          }
       } else {

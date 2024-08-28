@@ -23,8 +23,8 @@ public class Class5123 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      Class9624 var11 = this.field23302.field1295.method768();
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      Class9624 var11 = this.field23302.gameRenderer.getActiveRenderInfo();
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
@@ -43,7 +43,7 @@ public class Class5123 implements Class5119 {
          }
       });
       RenderSystem.enableDepthTest();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.popMatrix();
    }
 }

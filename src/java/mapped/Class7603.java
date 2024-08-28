@@ -42,7 +42,7 @@ public class Class7603 implements Class7601 {
    }
 
    @Override
-   public Class2139 method24894(Class9332 var1, Class1264 var2, long var3) {
+   public Class2139 method24894(MatrixStack var1, Class1264 var2, long var3) {
       if (this.field32641) {
          this.field32640 = var3;
          this.field32641 = false;
@@ -80,7 +80,7 @@ public class Class7603 implements Class7601 {
       return var3 - this.field32640 >= 5000L ? Class2139.field14004 : Class2139.field14003;
    }
 
-   private void method24904(Class9332 var1, Class1264 var2, int var3, int var4, int var5, int var6) {
+   private void method24904(MatrixStack var1, Class1264 var2, int var3, int var4, int var5, int var6) {
       int var9 = var4 != 0 ? 5 : 20;
       int var10 = Math.min(60, var3 - var9);
       var2.method5696(var1, 0, var5, 0, 64 + var4, var9, var6);

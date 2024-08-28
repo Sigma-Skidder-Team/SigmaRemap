@@ -47,10 +47,10 @@ public class Class9281 {
    public boolean method34996(Entity var1) {
       if (this == field42697) {
          return true;
-      } else if (!(var1 instanceof Class878)) {
+      } else if (!(var1 instanceof ServerPlayerEntity)) {
          return false;
       } else {
-         Class878 var4 = (Class878)var1;
+         ServerPlayerEntity var4 = (ServerPlayerEntity)var1;
          if (!this.field42698.method32015(var4.field4920)) {
             return false;
          } else if (this.field42699 != Class1894.field11101 && this.field42699 != var4.field4857.method33863()) {

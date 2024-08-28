@@ -34,7 +34,7 @@ public class Class6603 {
 
    public void method20004() {
       Class7165 var3 = this.field29043.get();
-      var3.method22503("goalCleanup");
+      var3.startSection("goalCleanup");
       if (this.field29042.size() > 0) {
          for (Class2625 var5 : this.field29042) {
             if (var5.method10830() && (!var5.method10830() || Class7850.method26309(var5.method10810(), this.field29044) || !var5.method10806())) {
@@ -51,8 +51,8 @@ public class Class6603 {
          });
       }
 
-      var3.method22505();
-      var3.method22503("goalUpdate");
+      var3.endSection();
+      var3.startSection("goalUpdate");
       if (this.field29042.size() > 0) {
          for (Class2625 var8 : this.field29042) {
             if (!var8.method10830()
@@ -65,8 +65,8 @@ public class Class6603 {
          }
       }
 
-      var3.method22505();
-      var3.method22503("goalTick");
+      var3.endSection();
+      var3.startSection("goalTick");
       if (this.field29042.size() > 0) {
          for (Class2625 var9 : this.field29042) {
             if (var9.method10830()) {
@@ -75,7 +75,7 @@ public class Class6603 {
          }
       }
 
-      var3.method22505();
+      var3.endSection();
    }
 
    private static boolean method20005(Class2625 var0, EnumSet<Class2240> var1, Map<Class2240, Class2625> var2) {

@@ -11,7 +11,7 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
       Class2827<T> var0,
       Class2827<T> var1,
       ResourceLocation var2,
-      Class9332 var3,
+      MatrixStack var3,
       Class7733 var4,
       int var5,
       T var6,
@@ -34,7 +34,7 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
    }
 
    public static <T extends Class880> void method824(
-           Class2827<T> var0, ResourceLocation var1, Class9332 var2, Class7733 var3, int var4, T var5, float var6, float var7, float var8
+           Class2827<T> var0, ResourceLocation var1, MatrixStack var2, Class7733 var3, int var4, T var5, float var6, float var7, float var8
    ) {
       Class5422 var11 = var3.method25597(Class4520.method14312(var1));
       var0.method11016(var2, var11, var4, Class5712.method17883(var5, 0.0F), var6, var7, var8, 1.0F);
@@ -48,5 +48,5 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
       return this.field863.method17843((T)var1);
    }
 
-   public abstract void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10);
+   public abstract void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10);
 }

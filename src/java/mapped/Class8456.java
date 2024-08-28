@@ -39,7 +39,7 @@ public class Class8456 {
    }
 
    private static int method29739(Class6619 var0) throws CommandSyntaxException {
-      Class314 var3 = var0.method20177();
+      MinecraftServer var3 = var0.method20177();
       if (!var3.method1430()) {
          var3.method1431();
          var0.method20179(new TranslationTextComponent("commands.debug.started", "Started the debug profiler. Type '/debug stop' to stop it."), true);
@@ -50,7 +50,7 @@ public class Class8456 {
    }
 
    private static int method29740(Class6619 var0) throws CommandSyntaxException {
-      Class314 var3 = var0.method20177();
+      MinecraftServer var3 = var0.method20177();
       if (var3.method1430()) {
          Class7740 var4 = var3.method1432();
          File var5 = new File(var3.method1316("debug"), "profile-results-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + ".txt");
@@ -68,7 +68,7 @@ public class Class8456 {
    }
 
    private static int method29741(Class6619 var0) {
-      Class314 var3 = var0.method20177();
+      MinecraftServer var3 = var0.method20177();
       String var4 = "debug-report-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date());
 
       try {

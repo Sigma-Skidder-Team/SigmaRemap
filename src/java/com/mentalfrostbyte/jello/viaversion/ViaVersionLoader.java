@@ -38,7 +38,7 @@ public class ViaVersionLoader {
    @EventTarget
    public void method23342(Class4401 var1) {
       if (Class8005.method27349() == Class5989.field26129.method18582()) {
-         if (this.mc.field1339.method3160() <= 1) {
+         if (this.mc.player.method3160() <= 1) {
             var1.method13900(true);
          }
       }
@@ -46,14 +46,14 @@ public class ViaVersionLoader {
 
    @EventTarget
    public void method23343(Class4430 var1) {
-      if (var1.method13977() == this.mc.field1299.field44639.field13070.method28100() && Class8005.method27349() <= Class5989.field26136.method18582()) {
+      if (var1.method13977() == this.mc.gameSettings.field44639.field13070.method28100() && Class8005.method27349() <= Class5989.field26136.method18582()) {
          this.mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
       }
 
       if (Class8005.method27349() == Class5989.field26129.method18582()
          && var1.method13977() == 258
          && this.field31496 != null
-         && this.mc.field1355 instanceof Class1331) {
+         && this.mc.currentScreen instanceof ChatScreen) {
          this.mc.getClientPlayNetHandler().method15589().method30695(this.field31496);
          this.field31496 = null;
       }
@@ -69,30 +69,30 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23345(Class4415 var1) {
-      if (this.mc.field1339 != null
-         && this.mc.field1339.method3212() == Class2090.field13622
+      if (this.mc.player != null
+         && this.mc.player.method3212() == Class2090.field13622
          && (Class8005.method27349() < Class5989.field26140.method18582() || Class5628.method17716())) {
-         this.mc.field1339.method3211(Class2090.field13619);
+         this.mc.player.method3211(Class2090.field13619);
       }
    }
 
    @EventTarget
    @HigestPriority
    public void method23346(Class4398 var1) {
-      if (this.mc.field1338 != null && this.mc.field1339 != null) {
-         Block var4 = this.mc.field1338.method6738(var1.method13902()).method23383();
+      if (this.mc.world != null && this.mc.player != null) {
+         Block var4 = this.mc.world.method6738(var1.method13902()).method23383();
          if (Class8005.method27349() == Class5989.field26129.method18582() && var4 instanceof Class3411) {
             Class6408 var5 = Class8022.method27427(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
             var1.method13905(var5);
          }
 
          if (Class8005.method27349() == Class5989.field26129.method18582()) {
-            if (this.mc.field1339.field5035.field28453 - this.mc.field1339.field5035.field28450 == 1.5) {
-               this.mc.field1339.field5035 = this.mc.field1339.field5035.method19662(0.0, 0.29999995F, 0.0);
+            if (this.mc.player.field5035.field28453 - this.mc.player.field5035.field28450 == 1.5) {
+               this.mc.player.field5035 = this.mc.player.field5035.method19662(0.0, 0.29999995F, 0.0);
             }
 
-            if (this.mc.field1339.field5092 == 1.27F) {
-               this.mc.field1339.field5092 = 1.38F;
+            if (this.mc.player.field5092 == 1.27F) {
+               this.mc.player.field5092 = 1.38F;
             }
          }
       }
@@ -138,16 +138,16 @@ public class ViaVersionLoader {
 
          for (int var11 = -5; var11 < 5; var11++) {
             for (int var12 = -5; var12 < 5; var12++) {
-               Class1674 var13 = this.mc.field1338.method6824(this.mc.field1339.field5072 + var11, this.mc.field1339.field5074 + var12);
+               Class1674 var13 = this.mc.world.method6824(this.mc.player.field5072 + var11, this.mc.player.field5074 + var12);
                if (var13 instanceof Class1675) {
-                  int var10001 = this.mc.field1339.field5072 + var11;
-                  int var14 = this.mc.field1338.method6883().field9291.method31823(var10001, this.mc.field1339.field5074 + var12);
+                  int var10001 = this.mc.player.field5072 + var11;
+                  int var14 = this.mc.world.method6883().field9291.method31823(var10001, this.mc.player.field5074 + var12);
                   Class1674 var15 = new Class1674(
-                     this.mc.field1338,
-                     new Class7481(this.mc.field1339.field5072 + var11, this.mc.field1339.field5074 + var12),
+                     this.mc.world,
+                     new Class7481(this.mc.player.field5072 + var11, this.mc.player.field5074 + var12),
                      var13.method7077()
                   );
-                  this.mc.field1338.method6883().field9291.method31824(var14, var15);
+                  this.mc.world.method6883().field9291.method31824(var14, var15);
                }
             }
          }
@@ -191,12 +191,12 @@ public class ViaVersionLoader {
                      || Class8005.method27349() == Class5989.field26129.method18582()
                )) {
                if (!(((ItemStack)var6.getSecond()).method32107() instanceof Class3334)) {
-                  Entity var7 = this.mc.field1338.method6774(var4.method17561());
+                  Entity var7 = this.mc.world.method6774(var4.method17561());
                   if (field31493.contains(var7)) {
                      field31493.remove(var7);
                   }
                } else {
-                  Entity var14 = this.mc.field1338.method6774(var4.method17561());
+                  Entity var14 = this.mc.world.method6774(var4.method17561());
                   if (!field31493.contains(var14) && !Class5628.method17719()) {
                      field31493.add(var14);
                   }
@@ -213,7 +213,7 @@ public class ViaVersionLoader {
             if (var1.method13898() instanceof Class5567 && Class5628.method17717()) {
                var1.method13900(true);
             } else if (!(var1.method13898() instanceof Class5469)) {
-               if (var1.method13898() instanceof Class5579 && this.mc.field1339 != null) {
+               if (var1.method13898() instanceof Class5579 && this.mc.player != null) {
                   Class5579 var10 = (Class5579)var1.method13898();
                } else if (!(var1.method13898() instanceof Class5502)) {
                   if (var1.method13898() instanceof Class5472) {
@@ -239,7 +239,7 @@ public class ViaVersionLoader {
                }
             } else {
                Class5469 var11 = (Class5469)var1.method13898();
-               Entity var13 = this.mc.field1338.method6774(var11.method17192());
+               Entity var13 = this.mc.world.method6774(var11.method17192());
                if (var13 != null && var11.method17193() == 3 && Class8005.method27349() == Class5989.field26129.method18582()) {
                   var1.method13900(true);
                }
@@ -257,51 +257,51 @@ public class ViaVersionLoader {
    @HigestPriority
    public void method23350(Class4435 var1) {
       if (Class8005.method27349() < Class5989.field26140.method18582() || Class5628.method17716()) {
-         if (this.mc.field1339.method3250()) {
+         if (this.mc.player.method3250()) {
             this.field31498 = true;
-            double var4 = this.mc.field1339.getPosY();
+            double var4 = this.mc.player.getPosY();
             float var6 = Class9140.method34128();
             float var7 = 0.02F;
-            float var8 = (float)Class7858.method26326(this.mc.field1339);
+            float var8 = (float)Class7858.method26326(this.mc.player);
             if (var8 > 3.0F) {
                var8 = 3.0F;
             }
 
-            if (!this.mc.field1339.field5036) {
+            if (!this.mc.player.field5036) {
                var8 *= 0.5F;
             }
 
             if (var8 > 0.0F) {
                var6 += (0.54600006F - var6) * var8 / 3.0F;
-               var7 += (this.mc.field1339.method2918() - var7) * var8 / 3.0F;
+               var7 += (this.mc.player.method2918() - var7) * var8 / 3.0F;
             }
 
-            if (!this.mc.field1299.field44638.method8509()) {
-               if (this.mc.field1339.field4982 == 0.0F && this.mc.field1339.field4984 == 0.0F) {
-                  this.mc.field1339.setSprinting(false);
+            if (!this.mc.gameSettings.field44638.method8509()) {
+               if (this.mc.player.field4982 == 0.0F && this.mc.player.field4984 == 0.0F) {
+                  this.mc.player.setSprinting(false);
                }
             } else {
-               this.mc.field1339.setSprinting(true);
+               this.mc.player.setSprinting(true);
             }
 
-            var7 *= !this.mc.field1339.method3337() ? 1.0F : (!this.mc.field1339.field5036 ? 1.3F : 1.5F);
-            Class9140.method34123(this.mc.field1339.field4982, this.mc.field1339.field4983, this.mc.field1339.field4984, var7);
+            var7 *= !this.mc.player.method3337() ? 1.0F : (!this.mc.player.field5036 ? 1.3F : 1.5F);
+            Class9140.method34123(this.mc.player.field4982, this.mc.player.field4983, this.mc.player.field4984, var7);
             Class9140.method34126(Class9140.field42005, Class9140.field42006, Class9140.field42007);
             Class9140.field42005 *= (double)var6;
             Class9140.field42006 *= 0.8F;
             Class9140.field42007 *= (double)var6;
-            if (!this.mc.field1339.method3247()) {
+            if (!this.mc.player.method3247()) {
                Class9140.field42006 -= 0.02;
             }
 
-            if (this.mc.field1339.field5037
+            if (this.mc.player.field5037
                && this.mc
-                  .field1339
-                  .method3224(Class9140.field42005, Class9140.field42006 + 0.6F - this.mc.field1339.getPosY() + var4, Class9140.field42007)) {
+                  .player
+                  .method3224(Class9140.field42005, Class9140.field42006 + 0.6F - this.mc.player.getPosY() + var4, Class9140.field42007)) {
                Class9140.field42006 = 0.3F;
             }
 
-            if (this.mc.field1339.field4981) {
+            if (this.mc.player.field4981) {
                Class9140.method34127();
             }
 
@@ -309,14 +309,14 @@ public class ViaVersionLoader {
             var1.method13995(Class9140.field42006);
             var1.method13997(Class9140.field42007);
          } else {
-            Class9140.field42006 = this.mc.field1339.method3433().field18049;
+            Class9140.field42006 = this.mc.player.method3433().field18049;
             if (this.field31498 && Class9140.method34129()) {
                Class9140.field42006 = 0.2F;
                Class5628.method17725(Class9140.field42006);
             }
 
-            Class9140.field42005 = this.mc.field1339.method3433().field18048;
-            Class9140.field42007 = this.mc.field1339.method3433().field18050;
+            Class9140.field42005 = this.mc.player.method3433().field18048;
+            Class9140.field42007 = this.mc.player.method3433().field18050;
             this.field31498 = false;
          }
       }
@@ -346,9 +346,9 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23352(Class4410 var1) {
-      if (var1.method13953() == this.mc.field1339 || var1.method13953() == Class5298.field23814 || var1.method13953() == Class5319.field23863) {
+      if (var1.method13953() == this.mc.player || var1.method13953() == Class5298.field23814 || var1.method13953() == Class5319.field23863) {
          if (var1.method13948() != 1.0F) {
-            if (Class4399.field21496 - this.mc.field1339.field4967 == 0.0F) {
+            if (Class4399.field21496 - this.mc.player.field4967 == 0.0F) {
                if (this.field31499) {
                   var1.method13949(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4965));
                   var1.method13950(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4967));

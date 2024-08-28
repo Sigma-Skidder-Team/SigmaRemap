@@ -9,25 +9,25 @@ import net.minecraft.util.text.TranslationTextComponent;
 import java.util.List;
 
 public class Class1188 extends Class1186 {
-   private final Class2007 field6413;
+   private final KeyBinding field6413;
    private final ITextComponent field6414;
    private final Class1206 field6415;
    private final Class1206 field6416;
    public final Class1295 field6417;
 
-   public Class1188(Class1295 var1, Class2007 var2, ITextComponent var3) {
+   public Class1188(Class1295 var1, KeyBinding var2, ITextComponent var3) {
       this.field6417 = var1;
       this.field6413 = var2;
       this.field6414 = var3;
       this.field6415 = new Class1216(this, 0, 0, 75, 20, var3, var2x -> Class1295.method6127(this.field6417).field6199 = var2, var1, var2, var3);
       this.field6416 = new Class1246(this, 0, 0, 50, 20, new TranslationTextComponent("controls.reset"), var2x -> {
-         this.field6417.field6782.field1299.method37142(var2, var2.method8514());
-         Class2007.method8508();
+         this.field6417.field6782.gameSettings.method37142(var2, var2.method8514());
+         KeyBinding.method8508();
       }, var1, var3);
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       boolean var13 = Class1295.method6127(this.field6417).field6199 == this.field6413;
       this.field6417
          .field6782
@@ -42,7 +42,7 @@ public class Class1188 extends Class1186 {
       this.field6415.method5743(this.field6413.method8521());
       boolean var14 = false;
       if (!this.field6413.method8518()) {
-         for (Class2007 var18 : this.field6417.field6782.field1299.field44658) {
+         for (KeyBinding var18 : this.field6417.field6782.gameSettings.field44658) {
             if (var18 != this.field6413 && this.field6413.method8517(var18)) {
                var14 = true;
                break;

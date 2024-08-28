@@ -5,7 +5,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class5807 extends Class5805 {
+public class Class5807 extends AbstractOption {
    public final float field25449;
    public final double field25450;
    public double field25451;
@@ -56,7 +56,7 @@ public class Class5807 extends Class5805 {
       return this.field25450;
    }
 
-   public double method18087() {
+   public double getMaxValue() {
       return this.field25451;
    }
 

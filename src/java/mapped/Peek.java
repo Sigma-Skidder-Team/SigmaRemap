@@ -13,7 +13,7 @@ public class Peek extends Command {
    @Override
    public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
       if (var2.length == 0) {
-         ItemStack var6 = mc.field1339.field4902.method4028();
+         ItemStack var6 = mc.player.field4902.method4028();
          if (var6.method32107() instanceof Class3292 && ((Class3292)var6.method32107()).method11845() instanceof Class3241) {
             method18337(var6);
             var3.method20327("Now peeking shulker");
@@ -42,7 +42,7 @@ public class Peek extends Command {
 
       Class927 var6 = new Class927(var4.toArray(new ItemStack[0]));
       CommandManager.method30238(
-         () -> mc.displayGuiScreen(new Class873(new Class5814(-1, mc.field1339.field4902, var6), mc.field1339.field4902, var0.method32149()))
+         () -> mc.displayGuiScreen(new Class873(new Class5814(-1, mc.player.field4902, var6), mc.player.field4902, var0.method32149()))
       );
    }
 

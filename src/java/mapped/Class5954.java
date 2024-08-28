@@ -9,7 +9,7 @@ public class Class5954 extends Class5942<Class940> {
       this.field25966 = var1;
    }
 
-   public void method18462(Class940 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class940 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       Direction var9 = Direction.field673;
       if (var1.method3770()) {
          Class7380 var10 = var1.method3734().method6738(var1.method3774());

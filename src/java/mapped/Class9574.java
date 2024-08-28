@@ -92,44 +92,44 @@ public class Class9574 {
    public boolean field44629;
    public boolean field44630;
    public boolean field44631 = true;
-   public final Class2007 field44632 = new Class2007("key.forward", 87, "key.categories.movement");
-   public final Class2007 field44633 = new Class2007("key.left", 65, "key.categories.movement");
-   public final Class2007 field44634 = new Class2007("key.back", 83, "key.categories.movement");
-   public final Class2007 field44635 = new Class2007("key.right", 68, "key.categories.movement");
-   public final Class2007 field44636 = new Class2007("key.jump", 32, "key.categories.movement");
-   public final Class2007 field44637 = new Class2008("key.sneak", 340, "key.categories.movement", () -> this.field44628);
-   public final Class2007 field44638 = new Class2008("key.sprint", 341, "key.categories.movement", () -> this.field44629);
-   public final Class2007 field44639 = new Class2007("key.inventory", 69, "key.categories.inventory");
-   public final Class2007 field44640 = new Class2007("key.swapOffhand", 70, "key.categories.inventory");
-   public final Class2007 field44641 = new Class2007("key.drop", 81, "key.categories.inventory");
-   public final Class2007 field44642 = new Class2007("key.use", Class1938.field12594, 1, "key.categories.gameplay");
-   public final Class2007 field44643 = new Class2007("key.attack", Class1938.field12594, 0, "key.categories.gameplay");
-   public final Class2007 field44644 = new Class2007("key.pickItem", Class1938.field12594, 2, "key.categories.gameplay");
-   public final Class2007 field44645 = new Class2007("key.chat", 84, "key.categories.multiplayer");
-   public final Class2007 field44646 = new Class2007("key.playerlist", 258, "key.categories.multiplayer");
-   public final Class2007 field44647 = new Class2007("key.command", 47, "key.categories.multiplayer");
-   public final Class2007 field44648 = new Class2007("key.socialInteractions", 80, "key.categories.multiplayer");
-   public final Class2007 field44649 = new Class2007("key.screenshot", 291, "key.categories.misc");
-   public final Class2007 field44650 = new Class2007("key.togglePerspective", 294, "key.categories.misc");
-   public final Class2007 field44651 = new Class2007("key.smoothCamera", Class9798.field45819.method28100(), "key.categories.misc");
-   public final Class2007 field44652 = new Class2007("key.fullscreen", 300, "key.categories.misc");
-   public final Class2007 field44653 = new Class2007("key.spectatorOutlines", Class9798.field45819.method28100(), "key.categories.misc");
-   public final Class2007 field44654 = new Class2007("key.advancements", 76, "key.categories.misc");
-   public final Class2007[] field44655 = new Class2007[]{
-      new Class2007("key.hotbar.1", 49, "key.categories.inventory"),
-      new Class2007("key.hotbar.2", 50, "key.categories.inventory"),
-      new Class2007("key.hotbar.3", 51, "key.categories.inventory"),
-      new Class2007("key.hotbar.4", 52, "key.categories.inventory"),
-      new Class2007("key.hotbar.5", 53, "key.categories.inventory"),
-      new Class2007("key.hotbar.6", 54, "key.categories.inventory"),
-      new Class2007("key.hotbar.7", 55, "key.categories.inventory"),
-      new Class2007("key.hotbar.8", 56, "key.categories.inventory"),
-      new Class2007("key.hotbar.9", 57, "key.categories.inventory")
+   public final KeyBinding field44632 = new KeyBinding("key.forward", 87, "key.categories.movement");
+   public final KeyBinding field44633 = new KeyBinding("key.left", 65, "key.categories.movement");
+   public final KeyBinding field44634 = new KeyBinding("key.back", 83, "key.categories.movement");
+   public final KeyBinding field44635 = new KeyBinding("key.right", 68, "key.categories.movement");
+   public final KeyBinding field44636 = new KeyBinding("key.jump", 32, "key.categories.movement");
+   public final KeyBinding field44637 = new Class2008("key.sneak", 340, "key.categories.movement", () -> this.field44628);
+   public final KeyBinding field44638 = new Class2008("key.sprint", 341, "key.categories.movement", () -> this.field44629);
+   public final KeyBinding field44639 = new KeyBinding("key.inventory", 69, "key.categories.inventory");
+   public final KeyBinding field44640 = new KeyBinding("key.swapOffhand", 70, "key.categories.inventory");
+   public final KeyBinding field44641 = new KeyBinding("key.drop", 81, "key.categories.inventory");
+   public final KeyBinding field44642 = new KeyBinding("key.use", Class1938.field12594, 1, "key.categories.gameplay");
+   public final KeyBinding field44643 = new KeyBinding("key.attack", Class1938.field12594, 0, "key.categories.gameplay");
+   public final KeyBinding field44644 = new KeyBinding("key.pickItem", Class1938.field12594, 2, "key.categories.gameplay");
+   public final KeyBinding field44645 = new KeyBinding("key.chat", 84, "key.categories.multiplayer");
+   public final KeyBinding field44646 = new KeyBinding("key.playerlist", 258, "key.categories.multiplayer");
+   public final KeyBinding field44647 = new KeyBinding("key.command", 47, "key.categories.multiplayer");
+   public final KeyBinding field44648 = new KeyBinding("key.socialInteractions", 80, "key.categories.multiplayer");
+   public final KeyBinding field44649 = new KeyBinding("key.screenshot", 291, "key.categories.misc");
+   public final KeyBinding field44650 = new KeyBinding("key.togglePerspective", 294, "key.categories.misc");
+   public final KeyBinding field44651 = new KeyBinding("key.smoothCamera", Class9798.field45819.method28100(), "key.categories.misc");
+   public final KeyBinding field44652 = new KeyBinding("key.fullscreen", 300, "key.categories.misc");
+   public final KeyBinding field44653 = new KeyBinding("key.spectatorOutlines", Class9798.field45819.method28100(), "key.categories.misc");
+   public final KeyBinding field44654 = new KeyBinding("key.advancements", 76, "key.categories.misc");
+   public final KeyBinding[] field44655 = new KeyBinding[]{
+      new KeyBinding("key.hotbar.1", 49, "key.categories.inventory"),
+      new KeyBinding("key.hotbar.2", 50, "key.categories.inventory"),
+      new KeyBinding("key.hotbar.3", 51, "key.categories.inventory"),
+      new KeyBinding("key.hotbar.4", 52, "key.categories.inventory"),
+      new KeyBinding("key.hotbar.5", 53, "key.categories.inventory"),
+      new KeyBinding("key.hotbar.6", 54, "key.categories.inventory"),
+      new KeyBinding("key.hotbar.7", 55, "key.categories.inventory"),
+      new KeyBinding("key.hotbar.8", 56, "key.categories.inventory"),
+      new KeyBinding("key.hotbar.9", 57, "key.categories.inventory")
    };
-   public final Class2007 field44656 = new Class2007("key.saveToolbarActivator", 67, "key.categories.creative");
-   public final Class2007 field44657 = new Class2007("key.loadToolbarActivator", 88, "key.categories.creative");
-   public Class2007[] field44658 = (Class2007[])ArrayUtils.addAll(
-      new Class2007[]{
+   public final KeyBinding field44656 = new KeyBinding("key.saveToolbarActivator", 67, "key.categories.creative");
+   public final KeyBinding field44657 = new KeyBinding("key.loadToolbarActivator", 88, "key.categories.creative");
+   public KeyBinding[] field44658 = (KeyBinding[])ArrayUtils.addAll(
+      new KeyBinding[]{
          this.field44643,
          this.field44642,
          this.field44632,
@@ -163,7 +163,7 @@ public class Class9574 {
    public Class2197 field44661 = Class2197.field14353;
    public boolean field44662;
    private Class1966 field44663 = Class1966.field12822;
-   public boolean field44664;
+   public boolean showDebugInfo;
    public boolean field44665;
    public boolean field44666;
    public String field44667 = "";
@@ -261,7 +261,7 @@ public class Class9574 {
    private static final int[] field44759 = new int[]{0, 1, 4, 2};
    private static final int[] field44760 = new int[]{3, 1, 2};
    private static final String[] field44761 = new String[]{"options.off", "options.graphics.fast", "options.graphics.fancy"};
-   public Class2007 field44762;
+   public KeyBinding field44762;
    private File field44763;
 
    public Class9574(Minecraft var1, File var2) {
@@ -269,26 +269,26 @@ public class Class9574 {
       this.field44659 = var1;
       this.field44660 = new File(var2, "options.txt");
       if (var1.method1543() && Runtime.getRuntime().maxMemory() >= 1000000000L) {
-         Class5805.field25333.method18088(32.0F);
+         AbstractOption.field25333.method18088(32.0F);
          long var3 = 1000000L;
          if (Runtime.getRuntime().maxMemory() >= 1500L * var3) {
-            Class5805.field25333.method18088(48.0F);
+            AbstractOption.field25333.method18088(48.0F);
          }
 
          if (Runtime.getRuntime().maxMemory() >= 2500L * var3) {
-            Class5805.field25333.method18088(64.0F);
+            AbstractOption.field25333.method18088(64.0F);
          }
       } else {
-         Class5805.field25333.method18088(16.0F);
+         AbstractOption.field25333.method18088(16.0F);
       }
 
       this.field44574 = var1.method1543() ? 12 : 8;
       this.field44677 = Util.getOSType() == OS.WINDOWS;
       this.field44763 = new File(var2, "optionsof.txt");
-      this.field44576 = (int)Class5805.field25328.method18087();
-      this.field44762 = new Class2007("of.key.zoom", 67, "key.categories.misc");
-      this.field44658 = (Class2007[])ArrayUtils.add(this.field44658, this.field44762);
-      Class9831.method38795(this.field44658, new Class2007[]{this.field44762});
+      this.field44576 = (int) AbstractOption.FRAMERATE_LIMIT.getMaxValue();
+      this.field44762 = new KeyBinding("of.key.zoom", 67, "key.categories.misc");
+      this.field44658 = (KeyBinding[])ArrayUtils.add(this.field44658, this.field44762);
+      Class9831.method38795(this.field44658, new KeyBinding[]{this.field44762});
       this.field44574 = 8;
       this.method37143();
       Class7944.method26779(this);
@@ -306,7 +306,7 @@ public class Class9574 {
       return this.field44624 ? var1 : (int)(this.field44585 * 255.0) << 24 & 0xFF000000;
    }
 
-   public void method37142(Class2007 var1, Class8115 var2) {
+   public void method37142(KeyBinding var1, Class8115 var2) {
       var1.method8515(var2);
       this.method37146();
    }
@@ -345,76 +345,76 @@ public class Class9574 {
 
             try {
                if ("autoJump".equals(var4)) {
-                  Class5805.field25351.method18077(this, var5);
+                  AbstractOption.field25351.method18077(this, var5);
                }
 
                if ("autoSuggestions".equals(var4)) {
-                  Class5805.field25352.method18077(this, var5);
+                  AbstractOption.field25352.method18077(this, var5);
                }
 
                if ("chatColors".equals(var4)) {
-                  Class5805.field25354.method18077(this, var5);
+                  AbstractOption.field25354.method18077(this, var5);
                }
 
                if ("chatLinks".equals(var4)) {
-                  Class5805.field25355.method18077(this, var5);
+                  AbstractOption.field25355.method18077(this, var5);
                }
 
                if ("chatLinksPrompt".equals(var4)) {
-                  Class5805.field25356.method18077(this, var5);
+                  AbstractOption.field25356.method18077(this, var5);
                }
 
                if ("enableVsync".equals(var4)) {
-                  Class5805.field25358.method18077(this, var5);
+                  AbstractOption.field25358.method18077(this, var5);
                   if (this.field44615) {
-                     this.field44576 = (int)Class5805.field25328.method18087();
+                     this.field44576 = (int) AbstractOption.FRAMERATE_LIMIT.getMaxValue();
                   }
 
                   this.method37164();
                }
 
                if ("entityShadows".equals(var4)) {
-                  Class5805.field25359.method18077(this, var5);
+                  AbstractOption.field25359.method18077(this, var5);
                }
 
                if ("forceUnicodeFont".equals(var4)) {
-                  Class5805.field25360.method18077(this, var5);
+                  AbstractOption.field25360.method18077(this, var5);
                }
 
                if ("discrete_mouse_scroll".equals(var4)) {
-                  Class5805.field25357.method18077(this, var5);
+                  AbstractOption.field25357.method18077(this, var5);
                }
 
                if ("invertYMouse".equals(var4)) {
-                  Class5805.field25361.method18077(this, var5);
+                  AbstractOption.field25361.method18077(this, var5);
                }
 
                if ("realmsNotifications".equals(var4)) {
-                  Class5805.field25362.method18077(this, var5);
+                  AbstractOption.field25362.method18077(this, var5);
                }
 
                if ("reducedDebugInfo".equals(var4)) {
-                  Class5805.field25363.method18077(this, var5);
+                  AbstractOption.field25363.method18077(this, var5);
                }
 
                if ("showSubtitles".equals(var4)) {
-                  Class5805.field25364.method18077(this, var5);
+                  AbstractOption.field25364.method18077(this, var5);
                }
 
                if ("snooperEnabled".equals(var4)) {
-                  Class5805.field25365.method18077(this, var5);
+                  AbstractOption.field25365.method18077(this, var5);
                }
 
                if ("touchscreen".equals(var4)) {
-                  Class5805.field25368.method18077(this, var5);
+                  AbstractOption.field25368.method18077(this, var5);
                }
 
                if ("fullscreen".equals(var4)) {
-                  Class5805.field25369.method18077(this, var5);
+                  AbstractOption.field25369.method18077(this, var5);
                }
 
                if ("bobView".equals(var4)) {
-                  Class5805.field25370.method18077(this, var5);
+                  AbstractOption.field25370.method18077(this, var5);
                }
 
                if ("toggleCrouch".equals(var4)) {
@@ -464,11 +464,11 @@ public class Class9574 {
                if ("maxFps".equals(var4)) {
                   this.field44576 = Integer.parseInt(var5);
                   if (this.field44615) {
-                     this.field44576 = (int)Class5805.field25328.method18087();
+                     this.field44576 = (int) AbstractOption.FRAMERATE_LIMIT.getMaxValue();
                   }
 
                   if (this.field44576 <= 0) {
-                     this.field44576 = (int)Class5805.field25328.method18087();
+                     this.field44576 = (int) AbstractOption.FRAMERATE_LIMIT.getMaxValue();
                   }
 
                   if (this.field44659.method1580() != null) {
@@ -651,7 +651,7 @@ public class Class9574 {
                   this.field44677 = "true".equals(var5);
                }
 
-               for (Class2007 var9 : this.field44658) {
+               for (KeyBinding var9 : this.field44658) {
                   if (var4.equals("key_" + var9.method8513())) {
                      if (Class9299.field42956.method20214()) {
                         if (var5.indexOf(58) != -1) {
@@ -685,7 +685,7 @@ public class Class9574 {
             }
          }
 
-         Class2007.method8508();
+         KeyBinding.method8508();
       } catch (Exception var22) {
          field44569.error("Failed to load options", var22);
       }
@@ -716,23 +716,23 @@ public class Class9574 {
       if (!Class9299.field42770.method20214() || !Class9299.method35056(Class9299.field42770)) {
          try (PrintWriter var1 = new PrintWriter(new OutputStreamWriter(new FileOutputStream(this.field44660), StandardCharsets.UTF_8))) {
             var1.println("version:" + SharedConstants.method34773().getWorldVersion());
-            var1.println("autoJump:" + Class5805.field25351.method18080(this));
-            var1.println("autoSuggestions:" + Class5805.field25352.method18080(this));
-            var1.println("chatColors:" + Class5805.field25354.method18080(this));
-            var1.println("chatLinks:" + Class5805.field25355.method18080(this));
-            var1.println("chatLinksPrompt:" + Class5805.field25356.method18080(this));
-            var1.println("enableVsync:" + Class5805.field25358.method18080(this));
-            var1.println("entityShadows:" + Class5805.field25359.method18080(this));
-            var1.println("forceUnicodeFont:" + Class5805.field25360.method18080(this));
-            var1.println("discrete_mouse_scroll:" + Class5805.field25357.method18080(this));
-            var1.println("invertYMouse:" + Class5805.field25361.method18080(this));
-            var1.println("realmsNotifications:" + Class5805.field25362.method18080(this));
-            var1.println("reducedDebugInfo:" + Class5805.field25363.method18080(this));
-            var1.println("snooperEnabled:" + Class5805.field25365.method18080(this));
-            var1.println("showSubtitles:" + Class5805.field25364.method18080(this));
-            var1.println("touchscreen:" + Class5805.field25368.method18080(this));
-            var1.println("fullscreen:" + Class5805.field25369.method18080(this));
-            var1.println("bobView:" + Class5805.field25370.method18080(this));
+            var1.println("autoJump:" + AbstractOption.field25351.method18080(this));
+            var1.println("autoSuggestions:" + AbstractOption.field25352.method18080(this));
+            var1.println("chatColors:" + AbstractOption.field25354.method18080(this));
+            var1.println("chatLinks:" + AbstractOption.field25355.method18080(this));
+            var1.println("chatLinksPrompt:" + AbstractOption.field25356.method18080(this));
+            var1.println("enableVsync:" + AbstractOption.field25358.method18080(this));
+            var1.println("entityShadows:" + AbstractOption.field25359.method18080(this));
+            var1.println("forceUnicodeFont:" + AbstractOption.field25360.method18080(this));
+            var1.println("discrete_mouse_scroll:" + AbstractOption.field25357.method18080(this));
+            var1.println("invertYMouse:" + AbstractOption.field25361.method18080(this));
+            var1.println("realmsNotifications:" + AbstractOption.field25362.method18080(this));
+            var1.println("reducedDebugInfo:" + AbstractOption.field25363.method18080(this));
+            var1.println("snooperEnabled:" + AbstractOption.field25365.method18080(this));
+            var1.println("showSubtitles:" + AbstractOption.field25364.method18080(this));
+            var1.println("touchscreen:" + AbstractOption.field25368.method18080(this));
+            var1.println("fullscreen:" + AbstractOption.field25369.method18080(this));
+            var1.println("bobView:" + AbstractOption.field25370.method18080(this));
             var1.println("toggleCrouch:" + this.field44628);
             var1.println("toggleSprint:" + this.field44629);
             var1.println("mouseSensitivity:" + this.field44573);
@@ -791,14 +791,14 @@ public class Class9574 {
             var1.println("narrator:" + this.field44675.method8189());
             var1.println("tutorialStep:" + this.field44604.method8916());
             var1.println("mouseWheelSensitivity:" + this.field44607);
-            var1.println("rawMouseInput:" + Class5805.field25332.method18080(this));
+            var1.println("rawMouseInput:" + AbstractOption.field25332.method18080(this));
             var1.println("glDebugVerbosity:" + this.field44609);
             var1.println("skipMultiplayerWarning:" + this.field44630);
             var1.println("hideMatchedNames:" + this.field44631);
             var1.println("joinedFirstServer:" + this.field44605);
             var1.println("syncChunkWrites:" + this.field44677);
 
-            for (Class2007 var6 : this.field44658) {
+            for (KeyBinding var6 : this.field44658) {
                if (Class9299.field42932.method20214()) {
                   String var7 = "key_" + var6.method8513() + ":" + var6.method8523();
                   Object var8 = Class9299.method35070(var6, Class9299.field42932);
@@ -835,7 +835,7 @@ public class Class9574 {
    }
 
    public void method37149() {
-      if (this.field44659.field1339 != null) {
+      if (this.field44659.player != null) {
          int var1 = 0;
 
          for (Class2318 var3 : this.field44590) {
@@ -843,7 +843,7 @@ public class Class9574 {
          }
 
          this.field44659
-            .field1339
+            .player
             .connection
             .sendPacket(new Class5561(this.field44676, this.field44574, this.field44582, this.field44612, var1, this.field44591));
       }
@@ -881,17 +881,17 @@ public class Class9574 {
       return this.field44602;
    }
 
-   public void method37155(Class5805 var1, double var2) {
-      if (var1 == Class5805.field25379) {
+   public void method37155(AbstractOption var1, double var2) {
+      if (var1 == AbstractOption.field25379) {
          this.field44691 = var2;
       }
 
-      if (var1 == Class5805.field25386) {
+      if (var1 == AbstractOption.field25386) {
          this.field44687 = var2;
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25422) {
+      if (var1 == AbstractOption.field25422) {
          int var4 = (int)var2;
          if (var4 > 0 && Class7944.method26921()) {
             Class7944.method26964(Class8043.method27619("of.message.aa.shaders1"), Class8043.method27619("of.message.aa.shaders2"));
@@ -910,7 +910,7 @@ public class Class9574 {
          this.field44688 = Class7944.method26830(this.field44688, 0, 16);
       }
 
-      if (var1 == Class5805.field25423) {
+      if (var1 == AbstractOption.field25423) {
          int var7 = (int)var2;
          if (var7 > 1 && Class7944.method26921()) {
             Class7944.method26964(Class8043.method27619("of.message.af.shaders1"), Class8043.method27619("of.message.af.shaders2"));
@@ -927,33 +927,33 @@ public class Class9574 {
          this.field44659.method1524();
       }
 
-      if (var1 == Class5805.field25376) {
+      if (var1 == AbstractOption.field25376) {
          int var8 = (int)var2;
          this.field44680 = Class7944.method26830(var8, 0, 3);
          this.method37165();
       }
    }
 
-   public double method37156(Class5805 var1) {
-      if (var1 == Class5805.field25379) {
+   public double method37156(AbstractOption var1) {
+      if (var1 == AbstractOption.field25379) {
          return this.field44691;
-      } else if (var1 == Class5805.field25386) {
+      } else if (var1 == AbstractOption.field25386) {
          return this.field44687;
-      } else if (var1 == Class5805.field25422) {
+      } else if (var1 == AbstractOption.field25422) {
          return (double)this.field44688;
-      } else if (var1 == Class5805.field25423) {
+      } else if (var1 == AbstractOption.field25423) {
          return (double)this.field44689;
-      } else if (var1 == Class5805.field25376) {
+      } else if (var1 == AbstractOption.field25376) {
          return (double)this.field44680;
-      } else if (var1 != Class5805.field25328) {
+      } else if (var1 != AbstractOption.FRAMERATE_LIMIT) {
          return Float.MAX_VALUE;
       } else {
-         return (double)this.field44576 == Class5805.field25328.method18087() && this.field44615 ? 0.0 : (double)this.field44576;
+         return (double)this.field44576 == AbstractOption.FRAMERATE_LIMIT.getMaxValue() && this.field44615 ? 0.0 : (double)this.field44576;
       }
    }
 
-   public void method37157(Class5805 var1, int var2) {
-      if (var1 == Class5805.field25374) {
+   public void method37157(AbstractOption var1, int var2) {
+      if (var1 == AbstractOption.field25374) {
          switch (this.field44678) {
             case 1:
                this.field44678 = 2;
@@ -972,23 +972,23 @@ public class Class9574 {
          }
       }
 
-      if (var1 == Class5805.field25375) {
+      if (var1 == AbstractOption.field25375) {
          this.field44679 += 0.2F;
          if (this.field44679 > 0.81F) {
             this.field44679 = 0.2F;
          }
       }
 
-      if (var1 == Class5805.field25377) {
+      if (var1 == AbstractOption.field25377) {
          this.field44682 = !this.field44682;
       }
 
-      if (var1 == Class5805.field25403) {
+      if (var1 == AbstractOption.field25403) {
          this.field44683 = !this.field44683;
          Class7944.method26795();
       }
 
-      if (var1 == Class5805.field25378) {
+      if (var1 == AbstractOption.field25378) {
          this.field44690++;
          if (this.field44690 > 3) {
             this.field44690 = 0;
@@ -997,26 +997,26 @@ public class Class9574 {
          this.method37162();
       }
 
-      if (var1 == Class5805.field25380) {
+      if (var1 == AbstractOption.field25380) {
          this.field44692 = method37167(this.field44692, field44759);
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25428) {
+      if (var1 == AbstractOption.field25428) {
          this.field44694++;
          if (this.field44694 > 2) {
             this.field44694 = 0;
          }
       }
 
-      if (var1 == Class5805.field25381) {
+      if (var1 == AbstractOption.field25381) {
          this.field44693++;
          if (this.field44693 > 3) {
             this.field44693 = 0;
          }
       }
 
-      if (var1 == Class5805.field25382) {
+      if (var1 == AbstractOption.field25382) {
          this.field44731++;
          if (this.field44731 == 1) {
             this.field44731++;
@@ -1027,7 +1027,7 @@ public class Class9574 {
          }
       }
 
-      if (var1 == Class5805.field25383) {
+      if (var1 == AbstractOption.field25383) {
          this.field44732++;
          if (this.field44732 == 1) {
             this.field44732++;
@@ -1038,75 +1038,75 @@ public class Class9574 {
          }
       }
 
-      if (var1 == Class5805.field25384) {
+      if (var1 == AbstractOption.field25384) {
          this.field44733 = !this.field44733;
       }
 
-      if (var1 == Class5805.field25385) {
+      if (var1 == AbstractOption.field25385) {
          this.field44734 = !this.field44734;
       }
 
-      if (var1 == Class5805.field25391) {
+      if (var1 == AbstractOption.field25391) {
          this.field44735 = !this.field44735;
       }
 
-      if (var1 == Class5805.field25392) {
+      if (var1 == AbstractOption.field25392) {
          this.field44736 = !this.field44736;
       }
 
-      if (var1 == Class5805.field25393) {
+      if (var1 == AbstractOption.field25393) {
          this.field44737 = !this.field44737;
       }
 
-      if (var1 == Class5805.field25394) {
+      if (var1 == AbstractOption.field25394) {
          this.field44738 = !this.field44738;
       }
 
-      if (var1 == Class5805.field25404) {
+      if (var1 == AbstractOption.field25404) {
          this.field44739 = !this.field44739;
       }
 
-      if (var1 == Class5805.field25405) {
+      if (var1 == AbstractOption.field25405) {
          this.field44740 = !this.field44740;
       }
 
-      if (var1 == Class5805.field25407) {
+      if (var1 == AbstractOption.field25407) {
          this.field44742 = !this.field44742;
       }
 
-      if (var1 == Class5805.field25408) {
+      if (var1 == AbstractOption.field25408) {
          this.field44743 = !this.field44743;
       }
 
-      if (var1 == Class5805.field25409) {
+      if (var1 == AbstractOption.field25409) {
          this.field44744 = !this.field44744;
       }
 
-      if (var1 == Class5805.field25411) {
+      if (var1 == AbstractOption.field25411) {
          this.field44745 = !this.field44745;
       }
 
-      if (var1 == Class5805.field25413) {
+      if (var1 == AbstractOption.field25413) {
          this.field44746 = !this.field44746;
       }
 
-      if (var1 == Class5805.field25424) {
+      if (var1 == AbstractOption.field25424) {
          this.field44747 = !this.field44747;
       }
 
-      if (var1 == Class5805.field25406) {
+      if (var1 == AbstractOption.field25406) {
          this.field44741 = !this.field44741;
       }
 
-      if (var1 == Class5805.field25387) {
+      if (var1 == AbstractOption.field25387) {
          this.field44697 = !this.field44697;
       }
 
-      if (var1 == Class5805.field25388) {
+      if (var1 == AbstractOption.field25388) {
          this.field44699 = !this.field44699;
       }
 
-      if (var1 == Class5805.field25389) {
+      if (var1 == AbstractOption.field25389) {
          short var3 = 900;
          this.field44696 = Math.max(this.field44696 / var3 * var3, var3);
          this.field44696 *= 2;
@@ -1115,135 +1115,135 @@ public class Class9574 {
          }
       }
 
-      if (var1 == Class5805.field25390) {
+      if (var1 == AbstractOption.field25390) {
          this.field44695++;
          if (this.field44695 > 3) {
             this.field44695 = 1;
          }
 
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25420) {
+      if (var1 == AbstractOption.field25420) {
          this.field44715++;
          if (this.field44715 > 3) {
             this.field44715 = 1;
          }
 
          if (this.field44715 == 2) {
-            this.field44659.field1287.method868();
+            this.field44659.worldRenderer.method868();
          } else {
             this.field44659.method1524();
          }
       }
 
-      if (var1 == Class5805.field25395) {
+      if (var1 == AbstractOption.field25395) {
          this.field44700 = !this.field44700;
       }
 
-      if (var1 == Class5805.field25396) {
+      if (var1 == AbstractOption.field25396) {
          this.field44701 = !this.field44701;
       }
 
-      if (var1 == Class5805.field25397) {
+      if (var1 == AbstractOption.field25397) {
          this.field44702 = !this.field44702;
       }
 
-      if (var1 == Class5805.field25398) {
+      if (var1 == AbstractOption.field25398) {
          this.field44703 = !this.field44703;
       }
 
-      if (var1 == Class5805.field25399) {
+      if (var1 == AbstractOption.field25399) {
          this.field44704++;
          if (this.field44704 > 2) {
             this.field44704 = 0;
          }
       }
 
-      if (var1 == Class5805.field25400) {
+      if (var1 == AbstractOption.field25400) {
          this.field44705++;
          if (this.field44705 > 5) {
             this.field44705 = 1;
          }
       }
 
-      if (var1 == Class5805.field25401) {
+      if (var1 == AbstractOption.field25401) {
          this.field44706 = !this.field44706;
       }
 
-      if (var1 == Class5805.field25402) {
+      if (var1 == AbstractOption.field25402) {
          this.field44707++;
          if (this.field44707 > 2) {
             this.field44707 = 0;
          }
       }
 
-      if (var1 == Class5805.field25410) {
+      if (var1 == AbstractOption.field25410) {
          this.field44698 = !this.field44698;
       }
 
-      if (var1 == Class5805.field25412) {
+      if (var1 == AbstractOption.field25412) {
          this.field44708 = !this.field44708;
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25414) {
+      if (var1 == AbstractOption.field25414) {
          this.field44709 = !this.field44709;
          Class9680.method37849();
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25415) {
+      if (var1 == AbstractOption.field25415) {
          this.field44710 = !this.field44710;
          Class9387.method35644();
       }
 
-      if (var1 == Class5805.field25417) {
+      if (var1 == AbstractOption.field25417) {
          this.field44711 = !this.field44711;
          Class8259.method28796();
       }
 
-      if (var1 == Class5805.field25418) {
+      if (var1 == AbstractOption.field25418) {
          this.field44712 = !this.field44712;
          Class9680.method37833();
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25421) {
+      if (var1 == AbstractOption.field25421) {
          this.field44716 = !this.field44716;
          this.field44659.method1524();
       }
 
-      if (var1 == Class5805.field25430) {
+      if (var1 == AbstractOption.field25430) {
          this.field44713 = !this.field44713;
          Class8862.method32261();
       }
 
-      if (var1 == Class5805.field25419) {
+      if (var1 == AbstractOption.field25419) {
          this.field44714 = !this.field44714;
       }
 
-      if (var1 == Class5805.field25425) {
+      if (var1 == AbstractOption.field25425) {
          this.field44717 = !this.field44717;
          Class8052.method27654();
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25426) {
+      if (var1 == AbstractOption.field25426) {
          this.field44718 = !this.field44718;
          this.field44659.method1524();
       }
 
-      if (var1 == Class5805.field25431) {
+      if (var1 == AbstractOption.field25431) {
          this.field44719 = !this.field44719;
          MathHelper.field45216 = this.field44719;
       }
 
-      if (var1 == Class5805.field25432) {
+      if (var1 == AbstractOption.field25432) {
          this.field44720 = !this.field44720;
       }
 
-      if (var1 == Class5805.field25433) {
+      if (var1 == AbstractOption.field25433) {
          if (this.field44721 == 0) {
             this.field44721 = 1;
          } else if (this.field44721 == 1) {
@@ -1254,67 +1254,67 @@ public class Class9574 {
             this.field44721 = 0;
          }
 
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25429) {
+      if (var1 == AbstractOption.field25429) {
          this.field44684 = !this.field44684;
       }
 
-      if (var1 == Class5805.field25441) {
+      if (var1 == AbstractOption.field25441) {
          this.field44685 = !this.field44685;
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25443) {
+      if (var1 == AbstractOption.field25443) {
          this.field44686 = !this.field44686;
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25434) {
+      if (var1 == AbstractOption.field25434) {
          this.field44722 = !this.field44722;
       }
 
-      if (var1 == Class5805.field25436) {
+      if (var1 == AbstractOption.field25436) {
          this.field44723 = !this.field44723;
-         this.field44659.field1287.method868();
+         this.field44659.worldRenderer.method868();
       }
 
-      if (var1 == Class5805.field25435) {
+      if (var1 == AbstractOption.field25435) {
          this.field44724 = method37167(this.field44724, field44760);
-         Class9446.method36320(this.field44659.field1287);
+         Class9446.method36320(this.field44659.worldRenderer);
       }
 
-      if (var1 == Class5805.field25439) {
+      if (var1 == AbstractOption.field25439) {
          this.field44728++;
          if (this.field44728 > 4) {
             this.field44728 = 1;
          }
       }
 
-      if (var1 == Class5805.field25437) {
+      if (var1 == AbstractOption.field25437) {
          this.field44725 = !this.field44725;
          this.field44659.method1524();
       }
 
-      if (var1 == Class5805.field25440) {
+      if (var1 == AbstractOption.field25440) {
          this.field44726 = !this.field44726;
          Class7050.method21966();
       }
 
-      if (var1 == Class5805.field25442) {
+      if (var1 == AbstractOption.field25442) {
          this.field44727 = !this.field44727;
       }
 
-      if (var1 == Class5805.field25427) {
+      if (var1 == AbstractOption.field25427) {
          this.field44594 = !this.field44594;
       }
 
-      if (var1 == Class5805.field25438) {
+      if (var1 == AbstractOption.field25438) {
          this.field44588 = !this.field44588;
       }
 
-      if (var1 == Class5805.field25444) {
+      if (var1 == AbstractOption.field25444) {
          if (this.field44729 == 0) {
             this.field44729 = 5;
          } else if (this.field44729 == 5) {
@@ -1324,24 +1324,24 @@ public class Class9574 {
          }
       }
 
-      if (var1 == Class5805.field25445) {
+      if (var1 == AbstractOption.field25445) {
          this.field44730 = !this.field44730;
       }
    }
 
-   public ITextComponent method37158(Class5805 var1) {
+   public ITextComponent method37158(AbstractOption var1) {
       String var2 = this.method37159(var1);
       return new StringTextComponent(var2);
    }
 
-   public String method37159(Class5805 var1) {
+   public String method37159(AbstractOption var1) {
       String var2 = Class9088.method33883(var1.method17957()) + ": ";
       if (var2 == null) {
          var2 = var1.method17957();
       }
 
-      if (var1 == Class5805.field25333) {
-         int var12 = (int)Class5805.field25333.method18090(this);
+      if (var1 == AbstractOption.field25333) {
+         int var12 = (int) AbstractOption.field25333.method18090(this);
          String var13 = Class9088.method33883("of.options.renderDistance.tiny");
          int var5 = 2;
          if (var12 >= 4) {
@@ -1381,7 +1381,7 @@ public class Class9574 {
          }
 
          return var2 + var12 + " " + var7 + "";
-      } else if (var1 == Class5805.field25374) {
+      } else if (var1 == AbstractOption.field25374) {
          switch (this.field44678) {
             case 1:
                return var2 + Class8043.method27624();
@@ -1392,9 +1392,9 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27623();
          }
-      } else if (var1 == Class5805.field25375) {
+      } else if (var1 == AbstractOption.field25375) {
          return var2 + this.field44679;
-      } else if (var1 == Class5805.field25376) {
+      } else if (var1 == AbstractOption.field25376) {
          switch (this.field44680) {
             case 0:
                return var2 + Class8043.method27619("of.options.mipmap.nearest");
@@ -1407,11 +1407,11 @@ public class Class9574 {
             default:
                return var2 + "of.options.mipmap.nearest";
          }
-      } else if (var1 == Class5805.field25377) {
+      } else if (var1 == AbstractOption.field25377) {
          return this.field44682 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25403) {
+      } else if (var1 == AbstractOption.field25403) {
          return this.field44683 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25378) {
+      } else if (var1 == AbstractOption.field25378) {
          switch (this.field44690) {
             case 1:
                return var2 + Class8043.method27624();
@@ -1422,7 +1422,7 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27626();
          }
-      } else if (var1 == Class5805.field25380) {
+      } else if (var1 == AbstractOption.field25380) {
          switch (this.field44692) {
             case 1:
                return var2 + Class8043.method27624();
@@ -1434,7 +1434,7 @@ public class Class9574 {
             case 4:
                return var2 + Class8043.method27619("of.general.smart");
          }
-      } else if (var1 == Class5805.field25428) {
+      } else if (var1 == AbstractOption.field25428) {
          switch (this.field44694) {
             case 1:
                return var2 + Class8043.method27624();
@@ -1443,7 +1443,7 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27626();
          }
-      } else if (var1 == Class5805.field25381) {
+      } else if (var1 == AbstractOption.field25381) {
          switch (this.field44693) {
             case 1:
                return var2 + Class8043.method27624();
@@ -1454,7 +1454,7 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27626();
          }
-      } else if (var1 == Class5805.field25382) {
+      } else if (var1 == AbstractOption.field25382) {
          switch (this.field44731) {
             case 1:
                return var2 + Class8043.method27619("of.options.animation.dynamic");
@@ -1463,7 +1463,7 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27622();
          }
-      } else if (var1 == Class5805.field25383) {
+      } else if (var1 == AbstractOption.field25383) {
          switch (this.field44732) {
             case 1:
                return var2 + Class8043.method27619("of.options.animation.dynamic");
@@ -1472,41 +1472,41 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27622();
          }
-      } else if (var1 == Class5805.field25384) {
+      } else if (var1 == AbstractOption.field25384) {
          return this.field44733 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25385) {
+      } else if (var1 == AbstractOption.field25385) {
          return this.field44734 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25391) {
+      } else if (var1 == AbstractOption.field25391) {
          return this.field44735 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25392) {
+      } else if (var1 == AbstractOption.field25392) {
          return this.field44736 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25393) {
+      } else if (var1 == AbstractOption.field25393) {
          return this.field44737 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25394) {
+      } else if (var1 == AbstractOption.field25394) {
          return this.field44738 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25404) {
+      } else if (var1 == AbstractOption.field25404) {
          return this.field44739 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25405) {
+      } else if (var1 == AbstractOption.field25405) {
          return this.field44740 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25407) {
+      } else if (var1 == AbstractOption.field25407) {
          return this.field44742 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25408) {
+      } else if (var1 == AbstractOption.field25408) {
          return this.field44743 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25409) {
+      } else if (var1 == AbstractOption.field25409) {
          return this.field44744 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25411) {
+      } else if (var1 == AbstractOption.field25411) {
          return this.field44745 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25413) {
+      } else if (var1 == AbstractOption.field25413) {
          return this.field44746 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25424) {
+      } else if (var1 == AbstractOption.field25424) {
          return this.field44747 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25406) {
+      } else if (var1 == AbstractOption.field25406) {
          return this.field44741 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25387) {
+      } else if (var1 == AbstractOption.field25387) {
          return this.field44697 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25388) {
+      } else if (var1 == AbstractOption.field25388) {
          return this.field44699 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25389) {
+      } else if (var1 == AbstractOption.field25389) {
          short var11 = 900;
          if (this.field44696 <= var11) {
             return var2 + Class8043.method27619("of.options.save.45s");
@@ -1521,7 +1521,7 @@ public class Class9574 {
                ? var2 + Class8043.method27619("of.options.save.12min")
                : var2 + Class8043.method27619("of.options.save.24min");
          }
-      } else if (var1 == Class5805.field25390) {
+      } else if (var1 == AbstractOption.field25390) {
          switch (this.field44695) {
             case 1:
                return var2 + Class8043.method27624();
@@ -1530,7 +1530,7 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27623();
          }
-      } else if (var1 == Class5805.field25420) {
+      } else if (var1 == AbstractOption.field25420) {
          switch (this.field44715) {
             case 1:
                return var2 + Class8043.method27624();
@@ -1539,15 +1539,15 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27623();
          }
-      } else if (var1 == Class5805.field25395) {
+      } else if (var1 == AbstractOption.field25395) {
          return this.field44700 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25396) {
+      } else if (var1 == AbstractOption.field25396) {
          return this.field44701 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25397) {
+      } else if (var1 == AbstractOption.field25397) {
          return this.field44702 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25398) {
+      } else if (var1 == AbstractOption.field25398) {
          return this.field44703 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25399) {
+      } else if (var1 == AbstractOption.field25399) {
          switch (this.field44704) {
             case 1:
                return var2 + Class8043.method27624();
@@ -1556,96 +1556,96 @@ public class Class9574 {
             default:
                return var2 + Class8043.method27626();
          }
-      } else if (var1 == Class5805.field25400) {
+      } else if (var1 == AbstractOption.field25400) {
          return var2 + this.field44705;
-      } else if (var1 == Class5805.field25401) {
+      } else if (var1 == AbstractOption.field25401) {
          return this.field44706 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25402) {
+      } else if (var1 == AbstractOption.field25402) {
          if (this.field44707 == 1) {
             return var2 + Class8043.method27619("of.options.time.dayOnly");
          } else {
             return this.field44707 == 2 ? var2 + Class8043.method27619("of.options.time.nightOnly") : var2 + Class8043.method27626();
          }
-      } else if (var1 == Class5805.field25422) {
+      } else if (var1 == AbstractOption.field25422) {
          String var10 = "";
          if (this.field44688 != Class7944.method26891()) {
             var10 = " (" + Class8043.method27619("of.general.restart") + ")";
          }
 
          return this.field44688 == 0 ? var2 + Class8043.method27623() + var10 : var2 + this.field44688 + var10;
-      } else if (var1 == Class5805.field25423) {
+      } else if (var1 == AbstractOption.field25423) {
          return this.field44689 == 1 ? var2 + Class8043.method27623() : var2 + this.field44689;
-      } else if (var1 == Class5805.field25410) {
+      } else if (var1 == AbstractOption.field25410) {
          return this.field44698 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25412) {
+      } else if (var1 == AbstractOption.field25412) {
          return this.field44708 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25414) {
+      } else if (var1 == AbstractOption.field25414) {
          return this.field44709 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25415) {
+      } else if (var1 == AbstractOption.field25415) {
          return this.field44710 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25417) {
+      } else if (var1 == AbstractOption.field25417) {
          return this.field44711 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25418) {
+      } else if (var1 == AbstractOption.field25418) {
          return this.field44712 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25430) {
+      } else if (var1 == AbstractOption.field25430) {
          return this.field44713 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25419) {
+      } else if (var1 == AbstractOption.field25419) {
          return this.field44714 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25421) {
+      } else if (var1 == AbstractOption.field25421) {
          return this.field44716 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25425) {
+      } else if (var1 == AbstractOption.field25425) {
          return this.field44717 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25426) {
+      } else if (var1 == AbstractOption.field25426) {
          return this.field44718 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25431) {
+      } else if (var1 == AbstractOption.field25431) {
          return this.field44719 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25432) {
+      } else if (var1 == AbstractOption.field25432) {
          return this.field44720 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25433) {
+      } else if (var1 == AbstractOption.field25433) {
          if (this.field44721 == 1) {
             return var2 + Class8043.method27624();
          } else {
             return this.field44721 == 2 ? var2 + Class8043.method27625() : var2 + Class8043.method27626();
          }
-      } else if (var1 == Class5805.field25429) {
+      } else if (var1 == AbstractOption.field25429) {
          return this.field44684 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25441) {
+      } else if (var1 == AbstractOption.field25441) {
          return this.field44685 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25443) {
+      } else if (var1 == AbstractOption.field25443) {
          return this.field44686 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25434) {
+      } else if (var1 == AbstractOption.field25434) {
          return this.field44722 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25436) {
+      } else if (var1 == AbstractOption.field25436) {
          return this.field44723 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25435) {
+      } else if (var1 == AbstractOption.field25435) {
          int var9 = method37169(this.field44724, field44760);
          return var2 + method37170(field44761, var9);
-      } else if (var1 == Class5805.field25439) {
+      } else if (var1 == AbstractOption.field25439) {
          return this.field44728 <= 1 ? var2 + Class8043.method27626() : var2 + this.field44728 + "x";
-      } else if (var1 == Class5805.field25437) {
+      } else if (var1 == AbstractOption.field25437) {
          return this.field44725 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25440) {
+      } else if (var1 == AbstractOption.field25440) {
          return this.field44726 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25442) {
+      } else if (var1 == AbstractOption.field25442) {
          return this.field44727 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25427) {
+      } else if (var1 == AbstractOption.field25427) {
          return this.field44594 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25438) {
+      } else if (var1 == AbstractOption.field25438) {
          return this.field44588 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 == Class5805.field25328) {
-         double var8 = Class5805.field25328.method18090(this);
+      } else if (var1 == AbstractOption.FRAMERATE_LIMIT) {
+         double var8 = AbstractOption.FRAMERATE_LIMIT.method18090(this);
          if (var8 == 0.0) {
             return var2 + Class8043.method27619("of.options.framerateLimit.vsync");
          } else {
-            return var8 == Class5805.field25328.method18087() ? var2 + Class9088.method33883("options.framerateLimit.max") : var2 + (int)var8 + " fps";
+            return var8 == AbstractOption.FRAMERATE_LIMIT.getMaxValue() ? var2 + Class9088.method33883("options.framerateLimit.max") : var2 + (int)var8 + " fps";
          }
-      } else if (var1 == Class5805.field25444) {
+      } else if (var1 == AbstractOption.field25444) {
          if (this.field44729 == 3) {
             return var2 + Class8043.method27623();
          } else {
             return this.field44729 == 5 ? var2 + Class8043.method27619("of.general.compact") : var2 + Class8043.method27626();
          }
-      } else if (var1 == Class5805.field25445) {
+      } else if (var1 == AbstractOption.field25445) {
          return this.field44730 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 instanceof Class5807) {
          Class5807 var3 = (Class5807)var1;
@@ -1997,8 +1997,8 @@ public class Class9574 {
             }
          }
 
-         Class9831.method38795(this.field44658, new Class2007[]{this.field44762});
-         Class2007.method8508();
+         Class9831.method38795(this.field44658, new KeyBinding[]{this.field44762});
+         KeyBinding.method8508();
          var2.close();
       } catch (Exception var6) {
          Class7944.method26811("Failed to load options");
@@ -2107,11 +2107,11 @@ public class Class9574 {
       }
 
       if (this.field44578 == Class2087.field13605) {
-         Class264 var1 = Minecraft.getInstance().field1287;
+         Class264 var1 = Minecraft.getInstance().worldRenderer;
          if (var1 != null) {
             Framebuffer var2 = var1.method951();
             if (var2 != null) {
-               var2.method29119(Minecraft.field1272);
+               var2.method29119(Minecraft.IS_RUNNING_ON_MAC);
             }
          }
       }
@@ -2121,7 +2121,7 @@ public class Class9574 {
       this.field44574 = 8;
       this.field44575 = 1.0F;
       this.field44627 = true;
-      this.field44576 = (int)Class5805.field25328.method18087();
+      this.field44576 = (int) AbstractOption.FRAMERATE_LIMIT.getMaxValue();
       this.field44615 = false;
       this.method37164();
       this.field44600 = 4;

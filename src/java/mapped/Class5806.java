@@ -4,7 +4,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class5806 extends Class5805 {
+public class Class5806 extends AbstractOption {
    private final Predicate<Class9574> field25446;
    private final BiConsumer<Class9574, Boolean> field25447;
    private final ITextComponent field25448;

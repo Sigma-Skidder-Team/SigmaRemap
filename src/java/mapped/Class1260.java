@@ -20,7 +20,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       this.field6661 = var1;
    }
 
-   public void method5868(Class878 var1, Class4843<C> var2, boolean var3) {
+   public void method5868(ServerPlayerEntity var1, Class4843<C> var2, boolean var3) {
       if (var2 != null && var1.method2810().method21360(var2)) {
          this.field6660 = var1.field4902;
          if (this.method5874() || var1.method2801()) {

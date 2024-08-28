@@ -11,13 +11,13 @@ public class Class852 extends Class851<Class5836> {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       super.method1923(var1, var2, var3, var4);
       this.method2615(var1, var2, var3);
    }
 
    @Override
-   public void method2618(Class9332 var1, float var2, int var3, int var4) {
+   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       this.method2469(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(field4753);
@@ -34,7 +34,7 @@ public class Class852 extends Class851<Class5836> {
       if (var13.method32107() != Class8514.field37955) {
          var15 = null;
       } else {
-         var15 = Class3316.method11860(var13, this.field4562.field1338);
+         var15 = Class3316.method11860(var13, this.field4562.world);
          if (var15 != null) {
             if (var15.field32323) {
                var14 = true;
@@ -53,7 +53,7 @@ public class Class852 extends Class851<Class5836> {
       this.method2629(var1, var15, var10, var11, var12, var14);
    }
 
-   private void method2629(Class9332 var1, Class7529 var2, boolean var3, boolean var4, boolean var5, boolean var6) {
+   private void method2629(MatrixStack var1, Class7529 var2, boolean var3, boolean var4, boolean var5, boolean var6) {
       int var9 = this.field4734;
       int var10 = this.field4735;
       if (var4 && !var6) {
@@ -90,7 +90,7 @@ public class Class852 extends Class851<Class5836> {
          RenderSystem.translatef((float)var2, (float)var3, 1.0F);
          RenderSystem.scalef(var4, var4, 1.0F);
          Class7735 var7 = Class7733.method25595(Class9352.method35409().method35411());
-         this.field4562.field1295.method756().method593(new Class9332(), var7, var1, true, 15728880);
+         this.field4562.gameRenderer.method756().method593(new MatrixStack(), var7, var1, true, 15728880);
          var7.method25602();
          RenderSystem.popMatrix();
       }

@@ -37,7 +37,7 @@ public class Class5125 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
@@ -45,20 +45,20 @@ public class Class5125 implements Class5119 {
       this.method15827();
       this.method15826();
       this.method15828();
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
       RenderSystem.popMatrix();
-      if (!this.field23306.field1339.method2800()) {
+      if (!this.field23306.player.method2800()) {
          this.method15847();
       }
    }
 
    private void method15826() {
-      this.field23308.entrySet().removeIf(var1 -> this.field23306.field1338.method6774(var1.getValue().field30220) == null);
+      this.field23308.entrySet().removeIf(var1 -> this.field23306.world.method6774(var1.getValue().field30220) == null);
    }
 
    private void method15827() {
-      long var3 = this.field23306.field1338.method6783() - 20L;
+      long var3 = this.field23306.world.method6783() - 20L;
       this.field23307.entrySet().removeIf(var2 -> var2.getValue().field40572 < var3);
    }
 
@@ -235,7 +235,7 @@ public class Class5125 implements Class5119 {
    }
 
    private Class9624 method15841() {
-      return this.field23306.field1295.method768();
+      return this.field23306.gameRenderer.getActiveRenderInfo();
    }
 
    private String method15842(Class6986 var1, BlockPos var2) {
@@ -249,7 +249,7 @@ public class Class5125 implements Class5119 {
    }
 
    private boolean method15844(Class6986 var1) {
-      ClientPlayerEntity var4 = this.field23306.field1339;
+      ClientPlayerEntity var4 = this.field23306.player;
       BlockPos var5 = new BlockPos(var4.getPosX(), var1.field30221.method11321(), var4.getPosZ());
       BlockPos var6 = new BlockPos(var1.field30221);
       return var5.method8316(var6, 30.0);

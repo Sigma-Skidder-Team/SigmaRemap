@@ -55,7 +55,7 @@ public class Class7168 implements Class7166 {
          this.field30830 = true;
          this.field30829 = "";
          this.field30822.clear();
-         this.method22503("root");
+         this.startSection("root");
       } else {
          field30821.error("Profiler tick already started - missing endTick()?");
       }
@@ -64,7 +64,7 @@ public class Class7168 implements Class7166 {
    @Override
    public void method22502() {
       if (this.field30830) {
-         this.method22505();
+         this.endSection();
          this.field30830 = false;
          if (!this.field30829.isEmpty()) {
             field30821.error(
@@ -78,7 +78,7 @@ public class Class7168 implements Class7166 {
    }
 
    @Override
-   public void method22503(String var1) {
+   public void startSection(String var1) {
       if (this.field30834) {
          int var4 = var1.hashCode();
          if (var4 == field30838 && var1.equals("scheduledExecutables")) {
@@ -96,7 +96,7 @@ public class Class7168 implements Class7166 {
 
          this.field30829 = this.field30829 + var1;
          this.field30822.add(this.field30829);
-         this.field30823.add(Util.method38488());
+         this.field30823.add(Util.nanoTime());
          this.field30831 = null;
       } else {
          field30821.error("Cannot push '{}' to profiler if profiler tick hasn't started - missing startTick()?", var1);
@@ -105,14 +105,14 @@ public class Class7168 implements Class7166 {
 
    @Override
    public void method22504(java.util.function.Supplier<String> var1) {
-      this.method22503((String)var1.get());
+      this.startSection((String)var1.get());
    }
 
    @Override
-   public void method22505() {
+   public void endSection() {
       if (this.field30830) {
          if (!this.field30823.isEmpty()) {
-            long var3 = Util.method38488();
+            long var3 = Util.nanoTime();
             long var5 = this.field30823.removeLong(this.field30823.size() - 1);
             this.field30822.remove(this.field30822.size() - 1);
             long var7 = var3 - var5;
@@ -137,7 +137,7 @@ public class Class7168 implements Class7166 {
    }
 
    @Override
-   public void method22506(String var1) {
+   public void endStartSection(String var1) {
       if (this.field30834) {
          int var4 = var1.hashCode();
          if (var4 == field30840 && var1.equals("sound")) {
@@ -145,13 +145,13 @@ public class Class7168 implements Class7166 {
          }
       }
 
-      this.method22505();
-      this.method22503(var1);
+      this.endSection();
+      this.startSection(var1);
    }
 
    @Override
    public void method22507(java.util.function.Supplier<String> var1) {
-      this.method22505();
+      this.endSection();
       this.method22504(var1);
    }
 
@@ -164,7 +164,7 @@ public class Class7168 implements Class7166 {
    }
 
    @Override
-   public void method22508(String var1) {
+   public void func_230035_c_(String var1) {
       Class6706.method20446(this.method22512()).addTo(var1, 1L);
    }
 

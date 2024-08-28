@@ -16,9 +16,9 @@ public class Class5166 extends Module {
    @EventTarget
    private void method16068(Class4396 var1) {
       if (this.method15996()) {
-         if (mc.field1339 != null && var1.method13898() instanceof Class5590) {
+         if (mc.player != null && var1.method13898() instanceof Class5590) {
             Class5590 var4 = (Class5590)var1.method13898();
-            if (var4.method17565() == mc.field1339.method3205()) {
+            if (var4.method17565() == mc.player.method3205()) {
                if (this.method15977("H-Multiplier") == 0.0F && this.method15977("V-Multiplier") == 0.0F) {
                   var1.method13900(true);
                }

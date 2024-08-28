@@ -16,7 +16,7 @@ public class Class5184 extends Module {
 
     @Override
     public void isInDevelopment() {
-        mc.field1287.method868();
+        mc.worldRenderer.method868();
         Class5313 var3 = (Class5313) Client.getInstance().getModuleManager().method14662(Class5313.class);
         if (!var3.method15996()) {
             var3.setState(true);
@@ -25,7 +25,7 @@ public class Class5184 extends Module {
 
     @Override
     public void method15965() {
-        mc.field1287.method868();
+        mc.worldRenderer.method868();
     }
 
     @EventTarget

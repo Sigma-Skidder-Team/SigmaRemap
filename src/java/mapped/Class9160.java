@@ -14,7 +14,7 @@ public class Class9160 {
                .executes(
                   var0x -> method34195(
                         (Class6619)var0x.getSource(),
-                        Collections.<Class878>singleton(((Class6619)var0x.getSource()).method20175()),
+                        Collections.<ServerPlayerEntity>singleton(((Class6619)var0x.getSource()).method20175()),
                         new BlockPos(((Class6619)var0x.getSource()).method20171()),
                         0.0F
                      )
@@ -52,10 +52,10 @@ public class Class9160 {
       );
    }
 
-   private static int method34195(Class6619 var0, Collection<Class878> var1, BlockPos var2, float var3) {
+   private static int method34195(Class6619 var0, Collection<ServerPlayerEntity> var1, BlockPos var2, float var3) {
       Class8705 var6 = var0.method20172().method6813();
 
-      for (Class878 var8 : var1) {
+      for (ServerPlayerEntity var8 : var1) {
          var8.method2829(var6, var2, var3, true, false);
       }
 
@@ -76,7 +76,7 @@ public class Class9160 {
                var2.method8306(),
                var3,
                var9,
-               ((Class878)var1.iterator().next()).getDisplayName()
+               ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
             ),
             true
          );

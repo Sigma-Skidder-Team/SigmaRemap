@@ -9,9 +9,9 @@ public class Class5129 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
-      BlockPos var11 = this.field23319.field1339.method3432();
-      World var12 = this.field23319.field1339.field5024;
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+      BlockPos var11 = this.field23319.player.method3432();
+      World var12 = this.field23319.player.field5024;
       RenderSystem.enableBlend();
       RenderSystem.method27938();
       RenderSystem.method27889(0.0F, 1.0F, 0.0F, 0.75F);
@@ -53,7 +53,7 @@ public class Class5129 implements Class5119 {
          }
       }
 
-      RenderSystem.method27861();
+      RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
 }

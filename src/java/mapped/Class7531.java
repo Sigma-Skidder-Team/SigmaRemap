@@ -56,7 +56,7 @@ public class Class7531 extends Class7530 {
    }
 
    @Nullable
-   public Class7699 method24613(Class878 var1) {
+   public Class7699 method24613(ServerPlayerEntity var1) {
       if (var1.method2800()) {
          return null;
       } else if (this.field32333.method6789().method17135(Class5462.field24246)) {

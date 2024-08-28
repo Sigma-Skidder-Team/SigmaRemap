@@ -14,26 +14,26 @@ public class Class5389 extends Module {
 
    @EventTarget
    public void method16976(TickEvent var1) {
-      if (this.method15996() && mc.field1339 != null) {
-         if (mc.field1339.method3148()) {
-            ItemStack var4 = mc.field1339.method3158();
+      if (this.method15996() && mc.player != null) {
+         if (mc.player.method3148()) {
+            ItemStack var4 = mc.player.method3158();
             if (var4 != null
                && (var4.method32138() == Class2103.field13708 || var4.method32138() == Class2103.field13707)
-               && (float) mc.field1339.method3159() < this.method15977("Speed") * 32.0F) {
+               && (float) mc.player.method3159() < this.method15977("Speed") * 32.0F) {
                String var5 = this.getStringSettingValueByName("Mode");
                switch (var5) {
                   case "Basic":
-                     int var7 = mc.field1339.method3159() + 2;
+                     int var7 = mc.player.method3159() + 2;
 
                      for (int var8 = 0; var8 < var7; var8++) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5603(mc.field1339.field5036));
-                        mc.field1339.method3161();
+                        mc.getClientPlayNetHandler().sendPacket(new Class5603(mc.player.field5036));
+                        mc.player.method3161();
                      }
                      break;
                   case "Hypixel":
                      mc.getClientPlayNetHandler()
-                        .sendPacket(new Class5539(mc.field1339.field4902.field5443 + 1 >= 9 ? 0 : mc.field1339.field4902.field5443 + 1));
-                     mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.field1339.field4902.field5443));
+                        .sendPacket(new Class5539(mc.player.field4902.field5443 + 1 >= 9 ? 0 : mc.player.field4902.field5443 + 1));
+                     mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
                }
             }
          }

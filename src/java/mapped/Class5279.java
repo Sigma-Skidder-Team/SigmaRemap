@@ -28,7 +28,7 @@ public class Class5279 extends Module {
             GL11.glShadeModel(7425);
 
             for (Entity var5 : Class5628.method17680()) {
-                if (var5 != mc.field1339
+                if (var5 != mc.player
                         && var5.method3066()
                         && var5.field5035.method19675() > 0.8
                         && var5.field5055 > 30
@@ -50,8 +50,8 @@ public class Class5279 extends Module {
         double var6 = Class9647.method37623(var1).field43723 + (double) (var1.method3430() / 2.0F);
         double var8 = Class9647.method37623(var1).field43724;
         Vector3d var10 = new Vector3d(0.0, 0.0, 10.0)
-                .method11350(-((float) Math.toRadians(Minecraft.getInstance().field1339.field5032)))
-                .method11351(-((float) Math.toRadians(Minecraft.getInstance().field1339.field5031)));
+                .method11350(-((float) Math.toRadians(Minecraft.getInstance().player.field5032)))
+                .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.field5031)));
         int var11 = this.method15976("Color");
         GL11.glBegin(1);
         GL11.glColor4fv(Class5628.method17709(Class5628.method17688(var11, 0.45F)));

@@ -75,7 +75,7 @@ public class Class3339 extends Class3257 {
    }
 
    private static void method11889(PlayerEntity var0, ITextComponent var1) {
-      ((Class878)var0).method2802(var1, ChatType.GAME_INFO, Util.field45724);
+      ((ServerPlayerEntity)var0).method2802(var1, ChatType.GAME_INFO, Util.DUMMY_UUID);
    }
 
    private static <T extends Comparable<T>> String method11890(Class7380 var0, Class8550<T> var1) {

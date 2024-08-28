@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class991 extends Class919 {
    private static String[] field5477;
 
@@ -42,5 +44,10 @@ public class Class991 extends Class919 {
    @Override
    public Class5812 method3628(int var1, Class974 var2) {
       return Class5813.method18162(var1, var2, this);
+   }
+
+   @Override
+   public ITextComponent method2954() {
+      return null;
    }
 }

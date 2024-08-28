@@ -9,7 +9,7 @@ public class Class6233 extends Class6230 {
       if (!var5.method6714()) {
          BlockPos var6 = var1.method11323().method8349(var1.method11324().<Direction>method23463(Class3357.field18899));
          this.method19204(method19206(var5, var6) || method19207(var5, var6));
-         if (this.method19203() && var2.method32120(1, var5.method6814(), (Class878)null)) {
+         if (this.method19203() && var2.method32120(1, var5.method6814(), (ServerPlayerEntity)null)) {
             var2.method32180(0);
          }
       }

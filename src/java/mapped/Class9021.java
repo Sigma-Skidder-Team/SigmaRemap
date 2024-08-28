@@ -31,12 +31,12 @@ public class Class9021 {
    public static final Class8112<EpollEventLoopGroup> field41276 = new Class8112<EpollEventLoopGroup>(
       () -> new EpollEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Epoll Server IO #%d").setDaemon(true).build())
    );
-   private final Class314 field41277;
+   private final MinecraftServer field41277;
    public volatile boolean field41278;
    private final List<ChannelFuture> field41279 = Collections.<ChannelFuture>synchronizedList(Lists.newArrayList());
-   private final List<Class8586> field41280 = Collections.<Class8586>synchronizedList(Lists.newArrayList());
+   private final List<NetworkManager> field41280 = Collections.<NetworkManager>synchronizedList(Lists.newArrayList());
 
-   public Class9021(Class314 var1) {
+   public Class9021(MinecraftServer var1) {
       this.field41277 = var1;
       this.field41278 = true;
    }
@@ -99,7 +99,7 @@ public class Class9021 {
          Iterator var4 = this.field41280.iterator();
 
          while (var4.hasNext()) {
-            Class8586 var5 = (Class8586)var4.next();
+            NetworkManager var5 = (NetworkManager)var4.next();
             if (!var5.method30708()) {
                if (var5.method30707()) {
                   try {
@@ -123,12 +123,12 @@ public class Class9021 {
       }
    }
 
-   public Class314 method33402() {
+   public MinecraftServer method33402() {
       return this.field41277;
    }
 
    // $VF: synthetic method
-   public static Class314 method33406(Class9021 var0) {
+   public static MinecraftServer method33406(Class9021 var0) {
       return var0.field41277;
    }
 

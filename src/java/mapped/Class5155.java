@@ -25,11 +25,11 @@ public class Class5155 extends Module {
 
    @EventTarget
    public void method16018(Class4435 var1) {
-      if (this.method15996() && mc.field1339 != null) {
-         if (mc.field1339.field5045 > 3.0F + this.method15977("Motion") * 4.0F && var1.method13994() < -0.3) {
+      if (this.method15996() && mc.player != null) {
+         if (mc.player.field5045 > 3.0F + this.method15977("Motion") * 4.0F && var1.method13994() < -0.3) {
             if (this.field23406) {
-               if (mc.field1339.getPosY() + var1.method13994() < this.field23407) {
-                  var1.method13995(this.field23407 - mc.field1339.getPosY());
+               if (mc.player.getPosY() + var1.method13994() < this.field23407) {
+                  var1.method13995(this.field23407 - mc.player.getPosY());
                   this.field23406 = false;
                }
             } else {
@@ -43,11 +43,11 @@ public class Class5155 extends Module {
             Class9567.method37088(var1, 0.0);
             var1.method13995((double)this.method15977("Motion"));
             this.field23406 = true;
-            this.field23407 = mc.field1339.getPosY();
+            this.field23407 = mc.player.getPosY();
             this.field23405 = -1;
          }
 
-         if (this.field23406 && Class5628.method17730(mc.field1339, 0.001F)) {
+         if (this.field23406 && Class5628.method17730(mc.player, 0.001F)) {
             this.field23406 = !this.field23406;
          }
 

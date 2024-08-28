@@ -70,9 +70,9 @@ public class Class1656 extends World {
    public void method6831(BooleanSupplier var1) {
       this.method6810().method24555();
       this.method6832();
-      this.method6820().method22503("blocks");
+      this.method6820().startSection("blocks");
       this.field9036.method7401(var1);
-      this.method6820().method22505();
+      this.method6820().endSection();
    }
 
    private void method6832() {
@@ -88,10 +88,10 @@ public class Class1656 extends World {
 
    public void method6834(long var1) {
       if (var1 >= 0L) {
-         this.method6789().<Class7466>method17128(Class5462.field24232).method24175(true, (Class314)null);
+         this.method6789().<Class7466>method17128(Class5462.field24232).method24175(true, (MinecraftServer)null);
       } else {
          var1 = -var1;
-         this.method6789().<Class7466>method17128(Class5462.field24232).method24175(false, (Class314)null);
+         this.method6789().<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
       }
 
       this.field9028.method20040(var1);
@@ -103,31 +103,31 @@ public class Class1656 extends World {
 
    public void method6836() {
       Class7165 var3 = this.method6820();
-      var3.method22503("entities");
+      var3.startSection("entities");
       ObjectIterator var4 = this.field9025.int2ObjectEntrySet().iterator();
 
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
          Entity var6 = (Entity)var5.getValue();
          if (!var6.method3328()) {
-            var3.method22503("tick");
+            var3.startSection("tick");
             if (!var6.field5041) {
                this.method6754(this::method6837, var6);
             }
 
-            var3.method22505();
-            var3.method22503("remove");
+            var3.endSection();
+            var3.startSection("remove");
             if (var6.field5041) {
                var4.remove();
                this.method6849(var6);
             }
 
-            var3.method22505();
+            var3.endSection();
          }
       }
 
       this.method6753();
-      var3.method22505();
+      var3.endSection();
    }
 
    public void method6837(Entity var1) {
@@ -144,7 +144,7 @@ public class Class1656 extends World {
                var1.tick();
             }
 
-            this.method6820().method22505();
+            this.method6820().endSection();
          }
 
          this.method6839(var1);
@@ -179,7 +179,7 @@ public class Class1656 extends World {
 
    private void method6839(Entity var1) {
       if (var1.method3406()) {
-         this.method6820().method22503("chunkCheck");
+         this.method6820().startSection("chunkCheck");
          int var4 = MathHelper.method37769(var1.getPosX() / 16.0);
          int var5 = MathHelper.method37769(var1.getPosY() / 16.0);
          int var6 = MathHelper.method37769(var1.getPosZ() / 16.0);
@@ -199,7 +199,7 @@ public class Class1656 extends World {
             }
          }
 
-         this.method6820().method22505();
+         this.method6820().endSection();
       }
    }
 
@@ -307,7 +307,7 @@ public class Class1656 extends World {
    }
 
    @Override
-   public void method6782() {
+   public void sendQuittingDisconnectingPacket() {
       this.field9026.method15589().method30701(new TranslationTextComponent("multiplayer.status.quitting"));
    }
 
@@ -316,7 +316,7 @@ public class Class1656 extends World {
       Random var7 = new Random();
       boolean var8 = false;
       if (this.field9030.field1337.method23157() == Class1894.field11103) {
-         for (ItemStack var10 : this.field9030.field1339.method2946()) {
+         for (ItemStack var10 : this.field9030.player.method2946()) {
             if (var10.method32107() == Blocks.field36765.method11581()) {
                var8 = true;
                break;
@@ -446,7 +446,7 @@ public class Class1656 extends World {
    @Override
    public Class8965 method6802(Class4526 var1) {
       Class8965 var4 = super.method6802(var1);
-      var4.method32806("Server brand", () -> this.field9030.field1339.method5395());
+      var4.method32806("Server brand", () -> this.field9030.player.method5395());
       var4.method32806("Server type", () -> this.field9030.method1531() != null ? "Integrated singleplayer server" : "Non-integrated multiplayer server");
       return var4;
    }
@@ -464,7 +464,7 @@ public class Class1656 extends World {
          var10 = Class9299.method35067(var14, Class9299.field42982);
       }
 
-      if (var1 == this.field9030.field1339) {
+      if (var1 == this.field9030.player) {
          this.method6745(var2, var4, var6, var8, var9, var10, var11, false);
       }
    }
@@ -482,7 +482,7 @@ public class Class1656 extends World {
          var5 = Class9299.method35067(var9, Class9299.field42982);
       }
 
-      if (var1 == this.field9030.field1339) {
+      if (var1 == this.field9030.player) {
          this.field9030.method1546().method1000(new Class6332(var3, var4, var2));
       }
    }
@@ -493,7 +493,7 @@ public class Class1656 extends World {
 
    @Override
    public void method6745(double var1, double var3, double var5, Class9455 var7, Class2266 var8, float var9, float var10, boolean var11) {
-      double var14 = this.field9030.field1295.method768().method37504().method11343(var1, var3, var5);
+      double var14 = this.field9030.gameRenderer.getActiveRenderInfo().method37504().method11343(var1, var3, var5);
       Class6339 var16 = new Class6339(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;
@@ -505,7 +505,7 @@ public class Class1656 extends World {
 
    @Override
    public void method6804(double var1, double var3, double var5, double var7, double var9, double var11, Class39 var13) {
-      this.field9030.field1291.method1199(new Class4591(this, var1, var3, var5, var7, var9, var11, this.field9030.field1291, var13));
+      this.field9030.particles.method1199(new Class4591(this, var1, var3, var5, var7, var9, var11, this.field9030.particles, var13));
    }
 
    @Override
@@ -812,7 +812,7 @@ public class Class1656 extends World {
    }
 
    public int method6879(BlockPos var1, Class8980 var2) {
-      int var5 = Minecraft.getInstance().field1299.field44606;
+      int var5 = Minecraft.getInstance().gameSettings.field44606;
       if (var5 == 0) {
          return var2.method32943(this.method7003(var1), (double)var1.method8304(), (double)var1.method8306());
       } else {
@@ -859,7 +859,7 @@ public class Class1656 extends World {
       return "ClientLevel";
    }
 
-   public Class6606 method6788() {
+   public Class6606 getWorldInfo() {
       return this.field9028;
    }
 }

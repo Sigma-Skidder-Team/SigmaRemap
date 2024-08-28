@@ -13,7 +13,7 @@ public class Class5303 extends Module {
     @EventTarget
     private void method16663(TickEvent var1) {
         if (this.method15996()) {
-            mc.field1339.field5080 = false;
+            mc.player.field5080 = false;
         }
     }
 }

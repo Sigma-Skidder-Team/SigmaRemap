@@ -706,8 +706,8 @@ public class Class8981 {
     public static void method32953() {
         boolean var0 = field40886;
         boolean var1 = method32995();
-        if (field40591.field1287 != null) {
-            field40591.field1287.method933();
+        if (field40591.worldRenderer != null) {
+            field40591.worldRenderer.method933();
         }
 
         field40886 = false;
@@ -782,8 +782,8 @@ public class Class8981 {
             Class7031.method21825();
         }
 
-        if (field40591.field1287 != null) {
-            field40591.field1287.method934();
+        if (field40591.worldRenderer != null) {
+            field40591.worldRenderer.method934();
         }
 
         if ((var4 || var5) && field40591.method1537() != null) {
@@ -1603,12 +1603,12 @@ public class Class8981 {
     }
 
     private static void method32988(String var0) {
-        field40591.field1298.method5989().method5930(new StringTextComponent(var0));
+        field40591.ingameGUI.getChatGUI().method5930(new StringTextComponent(var0));
     }
 
     private static void method32989(String var0) {
         Class7399.method23632(var0);
-        field40591.field1298.method5989().method5930(new StringTextComponent(var0));
+        field40591.ingameGUI.getChatGUI().method5930(new StringTextComponent(var0));
     }
 
     public static void method32990(String var0, IntBuffer var1) {
@@ -1903,7 +1903,7 @@ public class Class8981 {
                 field40856 = Class9336.method35319();
             }
 
-            Class9332 var19 = new Class9332();
+            MatrixStack var19 = new MatrixStack();
             var19.method35293(Class7680.field32900.method25286(-90.0F));
             method33054(var19);
             method33055(var19);
@@ -1996,7 +1996,7 @@ public class Class8981 {
         Class7399.method23634("Reset model renderers");
         field40600++;
         Class7399.method23634("Reset world renderers");
-        field40591.field1287.method868();
+        field40591.worldRenderer.method868();
     }
 
     private static void method33011(Class7906 var0, String var1, String var2, String var3) {
@@ -2662,7 +2662,7 @@ public class Class8981 {
                         method33023(field40701, 15);
                 }
 
-                ItemStack var3 = field40591.field1339 != null ? field40591.field1339.method3090() : null;
+                ItemStack var3 = field40591.player != null ? field40591.player.method3090() : null;
                 Class3257 var4 = var3 != null ? var3.method32107() : null;
                 int var5 = -1;
                 Block var6 = null;
@@ -2676,7 +2676,7 @@ public class Class8981 {
                 }
 
                 int var7 = var6 != null ? var6.method11579().method23392() : 0;
-                ItemStack var8 = field40591.field1339 != null ? field40591.field1339.method3091() : null;
+                ItemStack var8 = field40591.player != null ? field40591.player.method3091() : null;
                 Class3257 var9 = var8 != null ? var8.method32107() : null;
                 int var10 = -1;
                 Block var11 = null;
@@ -2695,7 +2695,7 @@ public class Class8981 {
                     var7 = var12;
                 }
 
-                float var13 = field40591.field1339 != null ? field40591.field1339.method5387() : 0.0F;
+                float var13 = field40591.player != null ? field40591.player.method5387() : 0.0F;
                 method33023(field40721, var5);
                 method33023(field40722, var7);
                 method33023(field40723, var10);
@@ -2717,7 +2717,7 @@ public class Class8981 {
                 method33025(field40739, (float) field40603);
                 method33025(field40740, (float) field40604);
                 method33025(field40741, 0.05F);
-                method33025(field40742, (float) (field40591.field1299.field44574 * 16));
+                method33025(field40742, (float) (field40591.gameSettings.field44574 * 16));
                 method33026(field40743, field40620[0], field40620[1], field40620[2]);
                 method33026(field40744, field40621[0], field40621[1], field40621[2]);
                 method33026(field40745, field40622[0], field40622[1], field40622[2]);
@@ -2746,8 +2746,8 @@ public class Class8981 {
                 method33023(field40765, field40655);
                 method33025(field40766, field40665);
                 method33025(field40767, field40666);
-                method33025(field40768, (float) field40591.field1299.field44672);
-                method33023(field40769, field40591.field1299.field44662 ? 1 : 0);
+                method33025(field40768, (float) field40591.gameSettings.field44672);
+                method33023(field40769, field40591.gameSettings.field44662 ? 1 : 0);
                 method33025(field40770, field40661);
                 method33024(field40771, field40682, field40683);
                 method33025(field40774, var13);
@@ -2984,8 +2984,8 @@ public class Class8981 {
     }
 
     private static void method33036() {
-        field40601 = field40591.method1580().method8041();
-        field40602 = field40591.method1580().method8042();
+        field40601 = field40591.method1580().getFramebufferWidth();
+        field40602 = field40591.method1580().getFramebufferHeight();
         field40603 = Math.round((float) field40601 * field40865);
         field40604 = Math.round((float) field40602 * field40865);
         method33038();
@@ -3153,10 +3153,10 @@ public class Class8981 {
 
     public static void method33041(Minecraft var0, Class9624 var1, float var2, long var3) {
         method32984("pre beginRender");
-        method33043(field40591.field1338);
+        method33043(field40591.world);
         field40591 = var0;
-        field40591.method1574().method22503("init");
-        field40592 = field40591.field1295;
+        field40591.method1574().startSection("init");
+        field40592 = field40591.gameRenderer;
         if (!field40594) {
             try {
                 method33006();
@@ -3170,7 +3170,7 @@ public class Class8981 {
             }
         }
 
-        if (field40591.method1580().method8041() != field40601 || field40591.method1580().method8042() != field40602) {
+        if (field40591.method1580().getFramebufferWidth() != field40601 || field40591.method1580().getFramebufferHeight() != field40602) {
             method33036();
         }
 
@@ -3196,7 +3196,7 @@ public class Class8981 {
         Class7414.method23832();
         Class5463.method17161(var1, var0, var2);
         Class7414.method23833();
-        Class1656 var5 = field40591.field1338;
+        Class1656 var5 = field40591.world;
         if (var5 != null) {
             field40635 = var5.method6784();
             field40637 = (field40635 - field40636) % 24000L;
@@ -3274,7 +3274,7 @@ public class Class8981 {
         ((Buffer) field40962).position(0);
         method32984("beginRender");
         Class5463.method17160(field40592, var1, 0, var2, var3);
-        field40591.method1574().method22505();
+        field40591.method1574().endSection();
         EXTFramebufferObject.glBindFramebufferEXT(36160, field40807);
 
         for (int var15 = 0; var15 < field40801; var15++) {
@@ -3475,7 +3475,7 @@ public class Class8981 {
         }
     }
 
-    public static void method33050(Class9332 var0, Class9624 var1, float var2) {
+    public static void method33050(MatrixStack var0, Class9624 var1, float var2) {
         Entity var3 = var1.method37509();
         Vector3d var4 = var1.method37504();
         double var5 = var4.field18048;
@@ -3521,7 +3521,7 @@ public class Class8981 {
         }
     }
 
-    public static void method33053(Class9332 var0, Class9624 var1, float var2) {
+    public static void method33053(MatrixStack var0, Class9624 var1, float var2) {
         Entity var3 = var1.method37509();
         Vector3d var4 = var1.method37504();
         double var5 = var4.field18048;
@@ -3542,7 +3542,7 @@ public class Class8981 {
 
         var0.method35291(0.0, 0.0, -100.0);
         var0.method35293(Class7680.field32898.method25286(90.0F));
-        field40638 = field40591.field1338.method7001(var2);
+        field40638 = field40591.world.method7001(var2);
         field40639 = field40638 < 0.75F ? field40638 + 0.25F : field40638 - 0.75F;
         float var11 = field40638 * -360.0F;
         float var12 = field40937 > 0.0F ? var11 % field40937 - field40937 * 0.5F : 0.0F;
@@ -3601,12 +3601,12 @@ public class Class8981 {
         method32984("setCamera");
     }
 
-    public static void method33054(Class9332 var0) {
+    public static void method33054(MatrixStack var0) {
         var0.method35293(Class7680.field32902.method25286(field40936 * 1.0F));
         method32984("preCelestialRotate");
     }
 
-    public static void method33055(Class9332 var0) {
+    public static void method33055(MatrixStack var0) {
         Class9367 var1 = var0.method35296().method32361();
         Class9367 var2 = new Class9367(var1);
         var2.method35506();
@@ -3624,7 +3624,7 @@ public class Class8981 {
         method32984("postCelestialRotate");
     }
 
-    public static void method33056(Class9332 var0) {
+    public static void method33056(MatrixStack var0) {
         Class9367 var1 = var0.method35296().method32361();
         Class9367 var2 = new Class9367(var1);
         var2.method35506();
@@ -3872,9 +3872,9 @@ public class Class8981 {
 
     private static void method33066() {
         field40608 = false;
-        field40591.method1464().method29112(true);
+        field40591.method1464().bindFramebuffer(true);
         Class7414.method23757(Class8821.field39775, Class8821.field39777, 3553, field40591.method1464().method29120(), 0);
-        GL32.glViewport(0, 0, field40591.method1580().method8041(), field40591.method1580().method8042());
+        GL32.glViewport(0, 0, field40591.method1580().getFramebufferWidth(), field40591.method1580().getFramebufferHeight());
         Class7414.method23713(true);
         GL32.glClearColor(field40629, field40630, field40631, 1.0F);
         GL32.glClear(16640);
@@ -3927,16 +3927,16 @@ public class Class8981 {
         method33026(field40728, field40632, field40633, field40634);
     }
 
-    public static void method33070(Class9332 var0) {
+    public static void method33070(MatrixStack var0) {
         Class5425 var1 = Class9352.method35409().method35411();
-        float var2 = (float) (field40591.field1299.field44574 * 16);
+        float var2 = (float) (field40591.gameSettings.field44574 * 16);
         double var3 = (double) var2 * 0.9238;
         double var5 = (double) var2 * 0.3826;
         double var7 = -var5;
         double var9 = -var3;
         double var11 = 16.0;
-        double var13 = -field40779 + field40918.method6788().method20052() + 12.0 - 16.0;
-        if (field40779 < field40918.method6788().method20052()) {
+        double var13 = -field40779 + field40918.getWorldInfo().method20052() + 12.0 - 16.0;
+        if (field40779 < field40918.getWorldInfo().method20052()) {
             var13 = -4.0;
         }
 
@@ -3983,7 +3983,7 @@ public class Class8981 {
         Class7414.method23833();
     }
 
-    public static void method33071(Class9332 var0) {
+    public static void method33071(MatrixStack var0) {
         method33056(var0);
         GL11.glColor3f(field40940, field40941, field40942);
         method33070(var0);
@@ -4242,13 +4242,13 @@ public class Class8981 {
         }
     }
 
-    public static void method33104(Class9332 var0) {
+    public static void method33104(MatrixStack var0) {
         if ((double) field40864 != 1.0) {
             var0.method35292(1.0F, 1.0F, field40864);
         }
     }
 
-    public static void method33105(Class9332 var0, boolean var1) {
+    public static void method33105(MatrixStack var0, boolean var1) {
         GL32.glMatrixMode(5888);
         GL32.glPushMatrix();
         GL32.glMatrixMode(5889);
@@ -4265,7 +4265,7 @@ public class Class8981 {
         method32983("beginHand");
     }
 
-    public static void method33106(Class9332 var0) {
+    public static void method33106(MatrixStack var0) {
         method32984("pre endHand");
         method32983("pre endHand");
         var0.method35295();
@@ -4447,7 +4447,7 @@ public class Class8981 {
     }
 
     public static void method33136() {
-        field40591.method1574().method22505();
+        field40591.method1574().endSection();
     }
 
     public static String method33137() {

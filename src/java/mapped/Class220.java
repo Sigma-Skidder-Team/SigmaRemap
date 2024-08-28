@@ -8,7 +8,7 @@ public class Class220<T extends Class880, M extends Class2827<T>> extends Class2
       super(var1);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ItemStack var13 = var4.method2943(Class2106.field13735);
       if (this.method827(var13, (T)var4)) {
          ResourceLocation var14;

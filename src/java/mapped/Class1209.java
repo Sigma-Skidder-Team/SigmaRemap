@@ -14,7 +14,7 @@ public class Class1209 extends Class1206 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Minecraft.getInstance().getTextureManager().bindTexture(Class870.field4820);
       byte var7 = 0;

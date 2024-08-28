@@ -71,8 +71,8 @@ public class Class1282 extends Class1274<Class1171> {
    }
 
    @Override
-   public void method6038(Class9332 var1, int var2, int var3, Class9352 var4) {
-      if (!this.field6782.field1301.method36736()) {
+   public void method6038(MatrixStack var1, int var2, int var3, Class9352 var4) {
+      if (!this.field6782.mouseHelper.method36736()) {
          this.field6841 = -1;
       }
 
@@ -105,7 +105,7 @@ public class Class1282 extends Class1274<Class1171> {
    }
 
    @Override
-   public void method6039(Class9332 var1) {
+   public void method6039(MatrixStack var1) {
       this.field6846.method2469(var1);
    }
 
@@ -142,7 +142,7 @@ public class Class1282 extends Class1274<Class1171> {
    }
 
    @Override
-   public void method6040(Class9332 var1, int var2, int var3) {
+   public void method6040(MatrixStack var1, int var2, int var3) {
       if (var3 >= this.field6787 && var3 <= this.field6788) {
          Class1171 var6 = this.method6033((double)var2, (double)var3);
          int var7 = (this.field6785 - this.method6022()) / 2;
@@ -170,7 +170,7 @@ public class Class1282 extends Class1274<Class1171> {
       }
    }
 
-   public void method6100(Class9332 var1, ITextComponent var2, int var3, int var4) {
+   public void method6100(MatrixStack var1, ITextComponent var2, int var3, int var4) {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;

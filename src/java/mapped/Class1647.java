@@ -254,7 +254,7 @@ public class Class1647 implements AutoCloseable {
    }
 
    public void method6522(String var1, int var2, int var3) {
-      Framebuffer var6 = new Framebuffer(var2, var3, true, Minecraft.field1272);
+      Framebuffer var6 = new Framebuffer(var2, var3, true, Minecraft.IS_RUNNING_ON_MAC);
       var6.method29115(0.0F, 0.0F, 0.0F, 0.0F);
       this.field8940.put(var1, var6);
       if (var2 == this.field8943 && var3 == this.field8944) {
@@ -295,7 +295,7 @@ public class Class1647 implements AutoCloseable {
       }
 
       for (Framebuffer var8 : this.field8941) {
-         var8.method29103(var1, var2, Minecraft.field1272);
+         var8.method29103(var1, var2, Minecraft.IS_RUNNING_ON_MAC);
       }
    }
 

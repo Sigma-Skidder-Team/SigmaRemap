@@ -31,7 +31,7 @@ public class Class5952 extends Class5942<Class968> {
       super(var1);
    }
 
-   public void method18462(Class968 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class968 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       float var9 = var1.method4004(var2);
       Class7380 var10 = var1.method3775();
       boolean var11 = var10.method23383() instanceof Class3252;
@@ -40,7 +40,7 @@ public class Class5952 extends Class5942<Class968> {
       method18482(var12, var13, ((Class3251)var10.method23383()).method11696(), var1.method4005(), var9, var3, var4, var5);
    }
 
-   public static void method18482(Direction var0, float var1, Class2137 var2, GameProfile var3, float var4, Class9332 var5, Class7733 var6, int var7) {
+   public static void method18482(Direction var0, float var1, Class2137 var2, GameProfile var3, float var4, MatrixStack var5, Class7733 var6, int var7) {
       Class2844 var10 = field25952.get(var2);
       var5.method35294();
       if (var0 != null) {

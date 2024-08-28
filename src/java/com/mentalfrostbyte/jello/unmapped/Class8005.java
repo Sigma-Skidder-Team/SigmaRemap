@@ -83,7 +83,7 @@ public class Class8005 implements Class8006<ClientPlayerEntity> {
 
    @Override
    public Class8411 method27355(Runnable var1, Long var2) {
-      if (Minecraft.getInstance().field1338 != null) {
+      if (Minecraft.getInstance().world != null) {
          Class8410 var5 = new Class8410(this.field34425.method23045(this, var1).method32315(var2 * 50L, TimeUnit.MILLISECONDS).method32319());
          this.field34427.add(var5);
          return var5;

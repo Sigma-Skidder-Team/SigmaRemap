@@ -13,7 +13,7 @@ public class Class1198 extends Class1197 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft var7 = Minecraft.getInstance();
       this.method5749(var1, var7.getTextureManager());
       Class2150.method8864(this.field6488, this.field6490.field4563, this.field6477 + 5, this.field6478 + 5);
@@ -32,7 +32,7 @@ public class Class1198 extends Class1197 {
       this.method5730();
    }
 
-   private void method5749(Class9332 var1, TextureManager var2) {
+   private void method5749(MatrixStack var1, TextureManager var2) {
       var2.bindTexture(Class1318.method6262());
       var1.method35294();
       var1.method35291((double)this.field6477, (double)this.field6478, 0.0);
@@ -40,7 +40,7 @@ public class Class1198 extends Class1197 {
       var1.method35295();
    }
 
-   private void method5750(Class9332 var1, TextureManager var2) {
+   private void method5750(MatrixStack var1, TextureManager var2) {
       var2.bindTexture(Class1318.method6262());
       var1.method35294();
       var1.method35291((double)this.field6477, (double)this.field6478, 0.0);

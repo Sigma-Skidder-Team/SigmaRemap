@@ -35,10 +35,6 @@ public class WebsocketManager {
         }*/
     }
 
-    public void method20283() {
-        Class8402.method29517();
-    }
-
     public synchronized void method20284() {
         if (field29205 == null) {
             field29205 = new Thread(() -> {

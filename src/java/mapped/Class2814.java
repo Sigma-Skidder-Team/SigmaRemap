@@ -71,7 +71,7 @@ public class Class2814 extends Class2803<Class1015> {
       this.method11021(method11022(var1));
    }
 
-   public void method11019(Class9332 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8, int var9) {
+   public void method11019(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8, int var9) {
       this.method11021(Class2075.field13522);
       this.method11020(Class2075.field13522, var9, var5, var6, 0.0F, var7, var8);
       this.method11015().forEach(var4x -> var4x.method22680(var1, var2, var3, var4));

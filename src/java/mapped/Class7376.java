@@ -18,7 +18,7 @@ public class Class7376 extends SimpleFileVisitor<Path> {
 
    public FileVisitResult visitFile(Path var1, BasicFileAttributes var2) throws IOException {
       if (!var1.equals(this.field31562)) {
-         Class9774.method38481().debug("Deleting {}", var1);
+         SaveFormat.method38481().debug("Deleting {}", var1);
          Files.delete(var1);
       }
 

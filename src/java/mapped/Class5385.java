@@ -15,7 +15,7 @@ public class Class5385 extends Module {
    @HigherPriority
    private void method16967(Class4403 var1) {
       if (this.method15996() && var1.method13937()) {
-         mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10043));
+         mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10043));
       }
    }
 }

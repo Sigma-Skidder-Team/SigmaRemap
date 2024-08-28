@@ -112,7 +112,7 @@ public class Class1341 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field7114 = null;
       this.field7120.method1923(var1, var2, var3, var4);
       this.field7119.method1923(var1, var2, var3, var4);
@@ -135,7 +135,7 @@ public class Class1341 extends Screen {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       if (this.field7120 != null) {
          this.field7120.method2468().forEach(Class1173::close);
       }

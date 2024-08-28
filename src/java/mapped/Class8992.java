@@ -467,7 +467,7 @@ public class Class8992<T extends Entity> {
 
    public static void method33204(World var0, PlayerEntity var1, Entity var2, Class39 var3) {
       if (var3 != null && var3.method119("EntityTag", 10)) {
-         Class314 var6 = var0.method6715();
+         MinecraftServer var6 = var0.method6715();
          if (var6 != null && var2 != null && (var0.field9020 || !var2.method3404() || var1 != null && var6.getPlayerList().canSendCommands(var1.getGameProfile()))) {
             Class39 var7 = var2.method3294(new Class39());
             UUID var8 = var2.getUniqueID();

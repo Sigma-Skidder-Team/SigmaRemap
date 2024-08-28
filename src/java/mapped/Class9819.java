@@ -35,8 +35,8 @@ public class Class9819 {
 
                   for (Entity var8 : Class5628.method17708()) {
                      if (var8 instanceof PlayerEntity
-                        && var8 != this.field45880.field1339
-                        && (var6 == null || var6.method3275(this.field45880.field1339) > var8.method3275(this.field45880.field1339))) {
+                        && var8 != this.field45880.player
+                        && (var6 == null || var6.method3275(this.field45880.player) > var8.method3275(this.field45880.player))) {
                         var6 = var8;
                      }
                   }
@@ -55,11 +55,11 @@ public class Class9819 {
                      try {
                         Class8472 var4x = new Class8472(this.field45879.getPosX(), this.field45879.getPosY(), this.field45879.getPosZ());
                         Class8472 var5x = new Class8472(
-                           this.field45880.field1339.getPosX(), this.field45880.field1339.getPosY(), this.field45880.field1339.getPosZ()
+                           this.field45880.player.getPosX(), this.field45880.player.getPosY(), this.field45880.player.getPosZ()
                         );
                         List<Class8472> var6x = Class8901.method32447(var5x, var4x);
                         Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Successfully teleported !"));
-                        Entity var7 = this.field45880.field1339.getRidingEntity();
+                        Entity var7 = this.field45880.player.getRidingEntity();
 
                         for (Class8472 var9x : var6x) {
                            if (var7 != null) {
@@ -69,10 +69,10 @@ public class Class9819 {
                               this.field45880.getClientPlayNetHandler().sendPacket(new Class5538(false, false));
                               this.field45880
                                  .getClientPlayNetHandler()
-                                 .sendPacket(new Class5606(this.field45880.field1339.field5031, this.field45880.field1339.field5032, false));
+                                 .sendPacket(new Class5606(this.field45880.player.field5031, this.field45880.player.field5032, false));
                               this.field45880.getClientPlayNetHandler().sendPacket(new Class5471(0.0F, 1.0F, false, false));
                               Class1002 var10 = new Class1002(
-                                 this.field45880.field1338, var9x.method29876() + 0.5, var9x.method29877(), var9x.method29878() + 0.5
+                                 this.field45880.world, var9x.method29876() + 0.5, var9x.method29877(), var9x.method29878() + 0.5
                               );
                               var10.field5031 = var7.field5031;
                               var10.field5032 = var7.field5032;
@@ -88,7 +88,7 @@ public class Class9819 {
                            this.field45880.getClientPlayNetHandler().sendPacket(new Class5605(var4x.field36296, var4x.field36297, var4x.field36298, false));
                         }
 
-                        this.field45880.field1339.method3215(var4x.field36296, var4x.field36297, var4x.field36298);
+                        this.field45880.player.method3215(var4x.field36296, var4x.field36297, var4x.field36298);
                         this.field45879 = null;
                         if (var4) {
                            Class6799 var12 = new Class6799();
@@ -120,9 +120,9 @@ public class Class9819 {
             Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Target lost"));
             this.field45878 = 0;
             this.field45879 = null;
-         } else if (!this.field45880.field1339.method3331()) {
+         } else if (!this.field45880.player.method3331()) {
             double var4 = this.field45879.getPosY() - this.field45879.field5049;
-            if (var4 < -2.0 && Class5628.method17763(this.field45879) && this.field45879.getPosY() - this.field45880.field1339.getPosY() < -10.0) {
+            if (var4 < -2.0 && Class5628.method17763(this.field45879) && this.field45879.getPosY() - this.field45880.player.getPosY() < -10.0) {
                this.field45878 = 0;
                this.field45879 = null;
                Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Target seems to be falling in void"));

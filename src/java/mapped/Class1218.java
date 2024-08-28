@@ -112,7 +112,7 @@ public class Class1218 extends Class1206 implements Class1219 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6547 != null) {
          this.method5778(
             var1,
@@ -134,7 +134,7 @@ public class Class1218 extends Class1206 implements Class1219 {
    }
 
    private void method5778(
-      Class9332 var1,
+      MatrixStack var1,
       int var2,
       int var3,
       int var4,

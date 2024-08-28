@@ -73,7 +73,7 @@ public class Class5347 extends Module {
                     this.field23897 = 0;
                     this.field23900.clear();
                     this.field23899 = this.field23899 - (float) ((int) this.field23899);
-                    Entity var5 = mc.field1339.getRidingEntity() == null ? mc.field1339 : mc.field1339.getRidingEntity();
+                    Entity var5 = mc.player.getRidingEntity() == null ? mc.player : mc.player.getRidingEntity();
                     this.field23901 = new Thread(() -> {
                         try {
                             int var5x = 0;
@@ -110,7 +110,7 @@ public class Class5347 extends Module {
     }
 
     public void method16773(List<Class8472> var1, boolean var2) {
-        Entity var5 = mc.field1339.getRidingEntity();
+        Entity var5 = mc.player.getRidingEntity();
         Class8472 var6 = null;
 
         for (Class8472 var8 : var1) {
@@ -122,9 +122,9 @@ public class Class5347 extends Module {
                 var5.field5028.field18049 = var8.method29877();
                 var5.field5028.field18050 = var8.method29878() + 0.5;
                 mc.getClientPlayNetHandler().sendPacket(new Class5538(false, false));
-                mc.getClientPlayNetHandler().sendPacket(new Class5606(mc.field1339.field5031, mc.field1339.field5032, false));
+                mc.getClientPlayNetHandler().sendPacket(new Class5606(mc.player.field5031, mc.player.field5032, false));
                 mc.getClientPlayNetHandler().sendPacket(new Class5471(0.0F, 1.0F, false, false));
-                Class1002 var9 = new Class1002(mc.field1338, var8.method29876() + 0.5, var8.method29877(), var8.method29878() + 0.5);
+                Class1002 var9 = new Class1002(mc.world, var8.method29876() + 0.5, var8.method29877(), var8.method29878() + 0.5);
                 var9.field5031 = var5.field5031;
                 var9.field5032 = var5.field5032;
                 mc.getClientPlayNetHandler().sendPacket(new Class5483(var9));
@@ -154,18 +154,18 @@ public class Class5347 extends Module {
 
                 for (Class8472 var7 : var5) {
                     GL11.glVertex3d(
-                            var7.method29876() - mc.field1295.method768().method37504().method11320(),
-                            var7.method29877() - mc.field1295.method768().method37504().method11321(),
-                            var7.method29878() - mc.field1295.method768().method37504().method11322()
+                            var7.method29876() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
+                            var7.method29877() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
+                            var7.method29878() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
                     );
                 }
 
                 GL11.glEnd();
                 GL11.glPushMatrix();
                 GL11.glTranslated(
-                        mc.field1295.method768().method37504().method11320(),
-                        mc.field1295.method768().method37504().method11321(),
-                        mc.field1295.method768().method37504().method11322()
+                        mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
+                        mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
+                        mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
                 );
                 GL11.glPopMatrix();
                 GL11.glDisable(3042);
@@ -189,12 +189,12 @@ public class Class5347 extends Module {
 
         while (var7.hasNext()) {
             Entity var8 = ((Class8012) var7.next()).method27397();
-            if (var8 != mc.field1339) {
+            if (var8 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var8)) {
                     if (var8 instanceof Class880) {
                         if (((Class880) var8).method3042() != 0.0F) {
-                            if (!(mc.field1339.method3275(var8) > var1)) {
-                                if (mc.field1339.method3026((Class880) var8)) {
+                            if (!(mc.player.method3275(var8) > var1)) {
+                                if (mc.player.method3026((Class880) var8)) {
                                     if (!(var8 instanceof Class1005)) {
                                         if (!this.method15974("Players") && var8 instanceof PlayerEntity) {
                                             var7.remove();
@@ -204,7 +204,7 @@ public class Class5347 extends Module {
                                             var7.remove();
                                         } else if (!this.method15974("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
                                             var7.remove();
-                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var8)) {
+                                        } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var8)) {
                                             var7.remove();
                                         } else if (!var8.method3362()) {
                                             if (var8 instanceof PlayerEntity
@@ -244,8 +244,8 @@ public class Class5347 extends Module {
 
     public boolean method16776() {
         return this.field23898
-                && Minecraft.getInstance().field1339.method3090() != null
-                && Minecraft.getInstance().field1339.method3090().method32107() instanceof Class3267;
+                && Minecraft.getInstance().player.method3090() != null
+                && Minecraft.getInstance().player.method3090().method32107() instanceof Class3267;
     }
 
     @Override

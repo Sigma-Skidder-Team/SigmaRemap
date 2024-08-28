@@ -9,7 +9,7 @@ public class Class5127 implements Class5119 {
    }
 
    @Override
-   public void method15813(Class9332 var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       if (!Class8981.field40609) {
          if (Class7944.method26921()) {
             Class8981.method33119();
@@ -19,7 +19,7 @@ public class Class5127 implements Class5119 {
          RenderSystem.method27866(7425);
          RenderSystem.disableAlphaTest();
          RenderSystem.method27939();
-         Entity var11 = this.field23315.field1295.method768().method37509();
+         Entity var11 = this.field23315.gameRenderer.getActiveRenderInfo().method37509();
          Class9352 var12 = Class9352.method35409();
          Class5425 var13 = var12.method35411();
          double var14 = 0.0 - var5;
@@ -100,7 +100,7 @@ public class Class5127 implements Class5119 {
          var12.method35410();
          RenderSystem.method27893(1.0F);
          RenderSystem.enableBlend();
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.method27866(7424);
          if (Class7944.method26921()) {
             Class8981.method33120();

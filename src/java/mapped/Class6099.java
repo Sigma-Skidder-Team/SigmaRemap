@@ -128,7 +128,7 @@ public class Class6099 {
          var5.skip();
       }
 
-      var1.method20177().method1420().method22503(var2);
+      var1.method20177().method1420().startSection(var2);
 
       byte var22;
       try {
@@ -185,13 +185,13 @@ public class Class6099 {
 
          var22 = 0;
       } finally {
-         var1.method20177().method1420().method22505();
+         var1.method20177().method1420().endSection();
       }
 
       return var22;
    }
 
-   public void method18837(Class878 var1) {
+   public void method18837(ServerPlayerEntity var1) {
       HashMap var4 = Maps.newHashMap();
       RootCommandNode var5 = new RootCommandNode();
       var4.put(this.field27345.getRoot(), var5);

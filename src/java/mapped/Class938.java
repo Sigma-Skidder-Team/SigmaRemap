@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class938 extends Class919 implements Class937 {
@@ -138,5 +140,10 @@ public class Class938 extends Class919 implements Class937 {
    @Override
    public Class5812 method3628(int var1, Class974 var2) {
       return new Class5816(var1, var2, this);
+   }
+
+   @Override
+   public ITextComponent method2954() {
+      return null;
    }
 }

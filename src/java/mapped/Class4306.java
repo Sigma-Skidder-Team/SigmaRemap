@@ -36,19 +36,19 @@ public class Class4306 extends Class4305 {
       this.field20895 = Math.round(this.field20932);
       this.field20896 = Math.round(this.field20933);
       if (!(this.field20932 + (float)this.field20897 < 0.0F)) {
-         if (this.field20932 > (float) Minecraft.getInstance().field1283.method8043()) {
+         if (this.field20932 > (float) Minecraft.getInstance().mainWindow.method8043()) {
             this.field20932 = (float)(0 - this.field20897);
          }
       } else {
-         this.field20932 = (float) Minecraft.getInstance().field1283.method8043();
+         this.field20932 = (float) Minecraft.getInstance().mainWindow.method8043();
       }
 
       if (!(this.field20933 + (float)this.field20898 < 0.0F)) {
-         if (this.field20933 > (float) Minecraft.getInstance().field1283.method8044()) {
+         if (this.field20933 > (float) Minecraft.getInstance().mainWindow.method8044()) {
             this.field20933 = (float)(0 - this.field20898);
          }
       } else {
-         this.field20933 = (float) Minecraft.getInstance().field1283.method8044();
+         this.field20933 = (float) Minecraft.getInstance().mainWindow.method8044();
       }
 
       float var5 = (float)(var1 - this.method13271());

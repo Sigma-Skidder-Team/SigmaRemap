@@ -35,12 +35,12 @@ public class Class1284 extends Class1274<Class1164> {
    public void method6024(Class1164 var1) {
       super.method6024(var1);
       if (var1 != null) {
-         Class6688.field29302.method20401(new TranslationTextComponent("narrator.select", Class1164.method5565(var1)).getString());
+         NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.select", Class1164.method5565(var1)).getString());
       }
    }
 
    @Override
-   public void method6039(Class9332 var1) {
+   public void method6039(MatrixStack var1) {
       this.field6848.method2469(var1);
    }
 

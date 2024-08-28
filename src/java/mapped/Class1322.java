@@ -17,7 +17,7 @@ public class Class1322 extends Screen {
             150,
             20,
             new TranslationTextComponent("gui.toTitle"),
-            var1 -> this.field4562.displayGuiScreen(new Class849())
+            var1 -> this.field4562.displayGuiScreen(new MainMenuScreen())
          )
       );
       this.<Class1206>method2455(
@@ -27,7 +27,7 @@ public class Class1322 extends Screen {
             150,
             20,
             new TranslationTextComponent("menu.quit"),
-            var1 -> this.field4562.method1487()
+            var1 -> this.field4562.shutdown()
          )
       );
    }
@@ -38,7 +38,7 @@ public class Class1322 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4560, this.field4564 / 2, this.field4565 / 4 - 60 + 20, 16777215);
       method5692(var1, this.field4568, "Minecraft has run out of memory.", this.field4564 / 2 - 140, this.field4565 / 4 - 60 + 60 + 0, 10526880);

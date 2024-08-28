@@ -8,7 +8,7 @@ public class Class8507 {
 
    private Class8507(ResourceLocation var1) {
       this.field37202 = var1;
-      this.field37203 = field37205.field1338;
+      this.field37203 = field37205.world;
       this.method30135();
    }
 
@@ -21,8 +21,8 @@ public class Class8507 {
    }
 
    public Class8907 method30136() {
-      if (this.field37203 != field37205.field1338) {
-         this.field37203 = field37205.field1338;
+      if (this.field37203 != field37205.world) {
+         this.field37203 = field37205.world;
          this.method30135();
       }
 

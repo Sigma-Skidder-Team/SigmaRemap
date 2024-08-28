@@ -22,8 +22,8 @@ public class Class4319 extends Class4307 {
       super.method13027(var1);
       int var4 = ResourcesDecrypter.mentalfrostbytePNG.getImageWidth();
       int var5 = ResourcesDecrypter.mentalfrostbytePNG.getImageHeight();
-      var4 = Math.min(var4, (int)((float) Minecraft.getInstance().field1283.method8044() / 1.65F));
-      var5 = Math.min(var5, (int)((float) Minecraft.getInstance().field1283.method8044() / 1.65F));
+      var4 = Math.min(var4, (int)((float) Minecraft.getInstance().mainWindow.method8044() / 1.65F));
+      var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.method8044() / 1.65F));
       this.method13416();
       Class3192.method11426(
          0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12896.field12910, 0.9F * this.field21072)
@@ -96,7 +96,7 @@ public class Class4319 extends Class4307 {
    public void method13065(int var1) {
       super.method13065(var1);
       if (var1 == 256) {
-         Minecraft.getInstance().displayGuiScreen(new Class849());
+         Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
       }
    }
 }

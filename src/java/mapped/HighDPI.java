@@ -13,7 +13,7 @@ public class HighDPI extends Command {
    @Override
    public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
       if (var2.length <= 0) {
-         if (Minecraft.field1272) {
+         if (Minecraft.IS_RUNNING_ON_MAC) {
             if (!Client.getInstance().getGuiManager().method33474()) {
                var3.method20327("HighDPI was enabled!");
             } else {

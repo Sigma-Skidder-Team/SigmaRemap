@@ -15,7 +15,7 @@ public class Class1162 extends Class1161 {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       this.method5559(this.field6316, var1, var4, var3, var7, var8);
    }
 
@@ -31,11 +31,11 @@ public class Class1162 extends Class1161 {
       return true;
    }
 
-   private void method5559(Class6128 var1, Class9332 var2, int var3, int var4, int var5, int var6) {
+   private void method5559(Class6128 var1, MatrixStack var2, int var3, int var4, int var5, int var6) {
       this.method5560(var1, var2, var3 + 36, var4, var5, var6);
    }
 
-   private void method5560(Class6128 var1, Class9332 var2, int var3, int var4, int var5, int var6) {
+   private void method5560(Class6128 var1, MatrixStack var2, int var3, int var4, int var5, int var6) {
       if (var1.field27447 != Class2261.field14708) {
          short var9 = 225;
          byte var10 = 2;

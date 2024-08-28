@@ -8,9 +8,9 @@ import java.util.UUID;
 public class Class914 implements Class909 {
    private static final StringTextComponent field5204 = new StringTextComponent("Rcon");
    private final StringBuffer field5205 = new StringBuffer();
-   private final Class314 field5206;
+   private final MinecraftServer field5206;
 
-   public Class914(Class314 var1) {
+   public Class914(MinecraftServer var1) {
       this.field5206 = var1;
    }
 
@@ -28,7 +28,7 @@ public class Class914 implements Class909 {
    }
 
    @Override
-   public void method1328(ITextComponent var1, UUID var2) {
+   public void sendMessage(ITextComponent var1, UUID var2) {
       this.field5205.append(var1.getString());
    }
 

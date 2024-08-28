@@ -39,7 +39,7 @@ public class Class9511 {
       if (Client.getInstance().getGuiManager().method33480() != null) {
          Client.getInstance().getGuiManager().method33456(var3, var4);
       } else {
-         if (this.field44285.field1355 == null) {
+         if (this.field44285.currentScreen == null) {
             if (var4 != 1 && var4 != 2) {
                if (var4 == 0) {
                   Class4426 var15 = new Class4426(var3);
@@ -63,7 +63,7 @@ public class Class9511 {
 
          if (var1 == this.field44285.method1580().method8039()) {
             boolean var16 = var4 == 1;
-            if (Minecraft.field1272 && var3 == 0) {
+            if (Minecraft.IS_RUNNING_ON_MAC && var3 == 0) {
                if (!var16) {
                   if (this.field44291 > 0) {
                      var3 = 1;
@@ -78,14 +78,14 @@ public class Class9511 {
             int var9 = var3;
             if (!var16) {
                if (this.field44292 != -1) {
-                  if (this.field44285.field1299.field44625 && --this.field44294 > 0) {
+                  if (this.field44285.gameSettings.field44625 && --this.field44294 > 0) {
                      return;
                   }
 
                   this.field44292 = -1;
                }
             } else {
-               if (this.field44285.field1299.field44625 && this.field44294++ > 0) {
+               if (this.field44285.gameSettings.field44625 && this.field44294++ > 0) {
                   return;
                }
 
@@ -94,29 +94,29 @@ public class Class9511 {
             }
 
             boolean[] var10 = new boolean[]{false};
-            if (this.field44285.field1356 == null) {
-               if (this.field44285.field1355 != null) {
-                  double var11 = this.field44289 * (double)this.field44285.method1580().method8045() / (double)this.field44285.method1580().method8043();
-                  double var13 = this.field44290 * (double)this.field44285.method1580().method8046() / (double)this.field44285.method1580().method8044();
+            if (this.field44285.loadingGuiIn == null) {
+               if (this.field44285.currentScreen != null) {
+                  double var11 = this.field44289 * (double)this.field44285.method1580().getScaledWidth() / (double)this.field44285.method1580().method8043();
+                  double var13 = this.field44290 * (double)this.field44285.method1580().getScaledHeight() / (double)this.field44285.method1580().method8044();
                   if (!var16) {
                      Screen.method2483(
-                        () -> var10[0] = this.field44285.field1355.method2565(var11, var13, var9),
+                        () -> var10[0] = this.field44285.currentScreen.method2565(var11, var13, var9),
                         "mouseReleased event handler",
-                        this.field44285.field1355.getClass().getCanonicalName()
+                        this.field44285.currentScreen.getClass().getCanonicalName()
                      );
                   } else {
                      Screen.method2483(
-                        () -> var10[0] = this.field44285.field1355.method1958(var11, var13, var9),
+                        () -> var10[0] = this.field44285.currentScreen.method1958(var11, var13, var9),
                         "mouseClicked event handler",
-                        this.field44285.field1355.getClass().getCanonicalName()
+                        this.field44285.currentScreen.getClass().getCanonicalName()
                      );
                   }
                } else if (!this.field44302 && var16) {
-                  this.method36742();
+                  this.grabMouse();
                }
             }
 
-            if (!var10[0] && (this.field44285.field1355 == null || this.field44285.field1355.field4567) && this.field44285.field1356 == null) {
+            if (!var10[0] && (this.field44285.currentScreen == null || this.field44285.currentScreen.field4567) && this.field44285.loadingGuiIn == null) {
                if (var9 != 0) {
                   if (var9 != 2) {
                      if (var9 == 1) {
@@ -129,12 +129,12 @@ public class Class9511 {
                   this.field44286 = var16;
                }
 
-               Class2007.method8505(Class1938.field12594.method8197(var9), var16);
+               KeyBinding.method8505(Class1938.field12594.method8197(var9), var16);
                if (var16) {
-                  if (this.field44285.field1339.method2800() && var9 == 2) {
-                     this.field44285.field1298.method5992().method5727();
+                  if (this.field44285.player.method2800() && var9 == 2) {
+                     this.field44285.ingameGUI.method5992().method5727();
                   } else {
-                     Class2007.method8504(Class1938.field12594.method8197(var9));
+                     KeyBinding.method8504(Class1938.field12594.method8197(var9));
                   }
                }
             }
@@ -148,10 +148,10 @@ public class Class9511 {
          Client.getInstance().getEventManager().call(var9);
          if (!var9.isCancelled()) {
             if (var1 == Minecraft.getInstance().method1580().method8039()) {
-               double var10 = (!this.field44285.field1299.field44619 ? var5 : Math.signum(var5)) * this.field44285.field1299.field44607;
-               if (this.field44285.field1356 == null) {
-                  if (this.field44285.field1355 == null) {
-                     if (this.field44285.field1339 != null) {
+               double var10 = (!this.field44285.gameSettings.field44619 ? var5 : Math.signum(var5)) * this.field44285.gameSettings.field44607;
+               if (this.field44285.loadingGuiIn == null) {
+                  if (this.field44285.currentScreen == null) {
+                     if (this.field44285.player != null) {
                         if (this.field44300 != 0.0 && Math.signum(var10) != Math.signum(this.field44300)) {
                            this.field44300 = 0.0;
                         }
@@ -163,19 +163,19 @@ public class Class9511 {
                         }
 
                         this.field44300 -= (double)var16;
-                        if (!this.field44285.field1339.method2800()) {
-                           this.field44285.field1339.field4902.method4039((double)var16);
-                        } else if (!this.field44285.field1298.method5992().method5725()) {
-                           float var17 = MathHelper.method37777(this.field44285.field1339.field4919.method20714() + var16 * 0.005F, 0.0F, 0.2F);
-                           this.field44285.field1339.field4919.method20715(var17);
+                        if (!this.field44285.player.method2800()) {
+                           this.field44285.player.field4902.method4039((double)var16);
+                        } else if (!this.field44285.ingameGUI.method5992().method5725()) {
+                           float var17 = MathHelper.method37777(this.field44285.player.field4919.method20714() + var16 * 0.005F, 0.0F, 0.2F);
+                           this.field44285.player.field4919.method20715(var17);
                         } else {
-                           this.field44285.field1298.method5992().method5726((double)(-var16));
+                           this.field44285.ingameGUI.method5992().method5726((double)(-var16));
                         }
                      }
                   } else {
-                     double var12 = this.field44289 * (double)this.field44285.method1580().method8045() / (double)this.field44285.method1580().method8043();
-                     double var14 = this.field44290 * (double)this.field44285.method1580().method8046() / (double)this.field44285.method1580().method8044();
-                     this.field44285.field1355.method2649(var12, var14, var10);
+                     double var12 = this.field44289 * (double)this.field44285.method1580().getScaledWidth() / (double)this.field44285.method1580().method8043();
+                     double var14 = this.field44290 * (double)this.field44285.method1580().getScaledHeight() / (double)this.field44285.method1580().method8044();
+                     this.field44285.currentScreen.method2649(var12, var14, var10);
                   }
                }
             }
@@ -186,8 +186,8 @@ public class Class9511 {
    }
 
    private void method36732(long var1, List<Path> var3) {
-      if (this.field44285.field1355 != null) {
-         this.field44285.field1355.method2486(var3);
+      if (this.field44285.currentScreen != null) {
+         this.field44285.currentScreen.method2486(var3);
       }
    }
 
@@ -217,43 +217,43 @@ public class Class9511 {
             this.field44293 = false;
          }
 
-         Screen var9 = this.field44285.field1355;
-         if (var9 != null && this.field44285.field1356 == null) {
-            double var10 = var3 * (double)this.field44285.method1580().method8045() / (double)this.field44285.method1580().method8043();
-            double var12 = var5 * (double)this.field44285.method1580().method8046() / (double)this.field44285.method1580().method8044();
+         Screen var9 = this.field44285.currentScreen;
+         if (var9 != null && this.field44285.loadingGuiIn == null) {
+            double var10 = var3 * (double)this.field44285.method1580().getScaledWidth() / (double)this.field44285.method1580().method8043();
+            double var12 = var5 * (double)this.field44285.method1580().getScaledHeight() / (double)this.field44285.method1580().method8044();
             Screen.method2483(() -> var9.method5541(var10, var12), "mouseMoved event handler", var9.getClass().getCanonicalName());
             if (this.field44292 != -1 && this.field44295 > 0.0) {
-               double var14 = (var3 - this.field44289) * (double)this.field44285.method1580().method8045() / (double)this.field44285.method1580().method8043();
-               double var16 = (var5 - this.field44290) * (double)this.field44285.method1580().method8046() / (double)this.field44285.method1580().method8044();
+               double var14 = (var3 - this.field44289) * (double)this.field44285.method1580().getScaledWidth() / (double)this.field44285.method1580().method8043();
+               double var16 = (var5 - this.field44290) * (double)this.field44285.method1580().getScaledHeight() / (double)this.field44285.method1580().method8044();
                Screen.method2483(
                   () -> var9.method2516(var10, var12, this.field44292, var14, var16), "mouseDragged event handler", var9.getClass().getCanonicalName()
                );
             }
          }
 
-         this.field44285.method1574().method22503("mouse");
+         this.field44285.method1574().startSection("mouse");
          if (this.method36741() && this.field44285.method1568()) {
             this.field44298 = this.field44298 + (var3 - this.field44289);
             this.field44299 = this.field44299 + (var5 - this.field44290);
          }
 
-         this.method36735();
+         this.updatePlayerLook();
          this.field44289 = var3;
          this.field44290 = var5;
-         this.field44285.method1574().method22505();
+         this.field44285.method1574().endSection();
       }
    }
 
-   public void method36735() {
+   public void updatePlayerLook() {
       double var3 = Class7511.method24483();
       double var5 = var3 - this.field44301;
       this.field44301 = var3;
       if (this.method36741() && this.field44285.method1568()) {
-         double var7 = this.field44285.field1299.field44573 * 0.6F + 0.2F;
+         double var7 = this.field44285.gameSettings.field44573 * 0.6F + 0.2F;
          double var9 = var7 * var7 * var7 * 8.0;
          double var11;
          double var13;
-         if (!this.field44285.field1299.field44668) {
+         if (!this.field44285.gameSettings.field44668) {
             this.field44296.method24912();
             this.field44297.method24912();
             var11 = this.field44298 * var9;
@@ -268,13 +268,13 @@ public class Class9511 {
          this.field44298 = 0.0;
          this.field44299 = 0.0;
          byte var19 = 1;
-         if (this.field44285.field1299.field44618) {
+         if (this.field44285.gameSettings.field44618) {
             var19 = -1;
          }
 
          this.field44285.method1567().method37024(var11, var13);
-         if (this.field44285.field1339 != null) {
-            this.field44285.field1339.method3217(var11, var13 * (double)var19);
+         if (this.field44285.player != null) {
+            this.field44285.player.method3217(var11, var13 * (double)var19);
          }
       } else {
          this.field44298 = 0.0;
@@ -306,10 +306,10 @@ public class Class9511 {
       return this.field44302;
    }
 
-   public void method36742() {
+   public void grabMouse() {
       if (this.field44285.method1568() && !this.field44302) {
-         if (!Minecraft.field1272) {
-            Class2007.method8506();
+         if (!Minecraft.IS_RUNNING_ON_MAC) {
+            KeyBinding.method8506();
          }
 
          this.field44302 = true;
@@ -322,7 +322,7 @@ public class Class9511 {
       }
    }
 
-   public void method36743() {
+   public void ungrabMouse() {
       if (this.field44302) {
          this.field44302 = false;
          this.field44289 = (double)(this.field44285.method1580().method8043() / 2);

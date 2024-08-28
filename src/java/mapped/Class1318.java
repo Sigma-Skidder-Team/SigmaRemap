@@ -22,7 +22,7 @@ public class Class1318 extends Screen {
    private final List<Class1198> field6970 = Lists.newArrayList();
 
    public Class1318() {
-      super(Class6688.field29300);
+      super(NarratorChatListener.field29300);
       this.field6965 = Class2150.method8860(this.method6256());
    }
 
@@ -52,7 +52,7 @@ public class Class1318 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.method6259()) {
          var1.method35294();
          RenderSystem.enableBlend();
@@ -87,11 +87,11 @@ public class Class1318 extends Screen {
    }
 
    private static void method6258(Minecraft var0, Optional<Class2150> var1) {
-      if (var0.field1337 != null && var0.field1339 != null && var1.isPresent()) {
+      if (var0.field1337 != null && var0.player != null && var1.isPresent()) {
          Optional var4 = Class2150.method8860(var0.field1337.method23157());
          Class2150 var5 = (Class2150)var1.get();
-         if (var4.isPresent() && var0.field1339.method3424(2) && var5 != var4.get()) {
-            var0.field1339.method5389(Class2150.method8861(var5));
+         if (var4.isPresent() && var0.player.method3424(2) && var5 != var4.get()) {
+            var0.player.method5389(Class2150.method8861(var5));
          }
       }
    }

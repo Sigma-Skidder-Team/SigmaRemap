@@ -421,7 +421,7 @@ public class Class806 extends Class798 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
       this.method2030();
    }
@@ -554,7 +554,7 @@ public class Class806 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field4299 = Class1982.field12939;
       this.field4280 = null;
       this.method2469(var1);
@@ -595,7 +595,7 @@ public class Class806 extends Class798 {
          byte var10 = 8;
          byte var8 = 8;
          byte var9 = 0;
-         if ((Util.method38487() / 800L & 1L) == 1L) {
+         if ((Util.milliTime() / 800L & 1L) == 1L) {
             var9 = 8;
          }
 
@@ -613,7 +613,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2039(Class9332 var1, int var2, int var3) {
+   private void method2039(MatrixStack var1, int var2, int var3) {
       this.field4562.getTextureManager().bindTexture(field4233);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
@@ -639,7 +639,7 @@ public class Class806 extends Class798 {
       return var1 < (double)(var7 - 5) || var1 > (double)(var7 + 315) || var3 < (double)(var8 - 5) || var3 > (double)(var8 + 171);
    }
 
-   private void method2041(Class9332 var1, int var2, int var3) {
+   private void method2041(MatrixStack var1, int var2, int var3) {
       int var6 = this.method2042();
       int var7 = this.method2043();
       if (!this.field4289) {
@@ -694,7 +694,7 @@ public class Class806 extends Class798 {
       return this.field4565 / 2 - 80;
    }
 
-   private void method2044(Class9332 var1, int var2, int var3, int var4, int var5, boolean var6, boolean var7) {
+   private void method2044(MatrixStack var1, int var2, int var3, int var4, int var5, boolean var6, boolean var7) {
       int var10 = this.field4282;
       boolean var11 = this.method2045((double)var2, (double)var3);
       boolean var12 = var7 && var6;
@@ -778,7 +778,7 @@ public class Class806 extends Class798 {
       return this.method2047(var1) && !var1.field27452;
    }
 
-   private void method2049(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2049(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4227);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
@@ -787,7 +787,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2050(Class9332 var1, int var2, int var3, int var4, int var5, int var6) {
+   private void method2050(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
       this.field4562.getTextureManager().bindTexture(field4228);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field4283 % 20 >= 10) {
@@ -809,7 +809,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2051(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2051(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4225);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
@@ -818,7 +818,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2052(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2052(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4226);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
@@ -827,7 +827,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2053(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2053(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = false;
       if (var4 >= var2 && var4 <= var2 + 28 && var5 >= var3 && var5 <= var3 + 28 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
          var8 = true;
@@ -843,7 +843,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2054(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method2054(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = false;
       if (var4 >= var2 && var4 <= var2 + 28 && var5 >= var3 && var5 <= var3 + 28 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
          var8 = true;
@@ -859,7 +859,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   public void method2055(Class9332 var1, List<ITextComponent> var2, int var3, int var4) {
+   public void method2055(MatrixStack var1, List<ITextComponent> var2, int var3, int var4) {
       if (!var2.isEmpty()) {
          byte var7 = 0;
          int var8 = 0;
@@ -886,7 +886,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2056(Class9332 var1, int var2, int var3, int var4, int var5, boolean var6) {
+   private void method2056(MatrixStack var1, int var2, int var3, int var4, int var5, boolean var6) {
       boolean var9 = false;
       if (var2 >= var4 && var2 <= var4 + 20 && var3 >= var5 && var3 <= var5 + 20) {
          var9 = true;
@@ -901,7 +901,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2057(Class9332 var1, int var2, int var3, boolean var4, int var5, int var6, boolean var7, boolean var8) {
+   private void method2057(MatrixStack var1, int var2, int var3, boolean var4, int var5, int var6, boolean var7, boolean var8) {
       boolean var11 = false;
       if (var2 >= var5 && var2 <= var5 + 20 && var3 >= var6 && var3 <= var6 + 20) {
          var11 = true;
@@ -934,7 +934,7 @@ public class Class806 extends Class798 {
       }
    }
 
-   private void method2058(Class9332 var1) {
+   private void method2058(MatrixStack var1) {
       String var4 = "LOCAL!";
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
@@ -945,7 +945,7 @@ public class Class806 extends Class798 {
       RenderSystem.popMatrix();
    }
 
-   private void method2059(Class9332 var1) {
+   private void method2059(MatrixStack var1) {
       String var4 = "STAGE!";
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
@@ -1134,7 +1134,7 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static void method2110(Class806 var0, Class9332 var1, int var2, int var3, int var4, int var5, boolean var6) {
+   public static void method2110(Class806 var0, MatrixStack var1, int var2, int var3, int var4, int var5, boolean var6) {
       var0.method2056(var1, var2, var3, var4, var5, var6);
    }
 
@@ -1154,7 +1154,7 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static void method2114(Class806 var0, Class9332 var1, int var2, int var3, boolean var4, int var5, int var6, boolean var7, boolean var8) {
+   public static void method2114(Class806 var0, MatrixStack var1, int var2, int var3, boolean var4, int var5, int var6, boolean var7, boolean var8) {
       var0.method2057(var1, var2, var3, var4, var5, var6, var7, var8);
    }
 
@@ -1174,7 +1174,7 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static void method2118(Class806 var0, Class9332 var1, int var2, int var3, int var4, int var5, boolean var6, boolean var7) {
+   public static void method2118(Class806 var0, MatrixStack var1, int var2, int var3, int var4, int var5, boolean var6, boolean var7) {
       var0.method2044(var1, var2, var3, var4, var5, var6, var7);
    }
 
@@ -1219,12 +1219,12 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static void method2127(Class806 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method2127(Class806 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2049(var1, var2, var3, var4, var5);
    }
 
    // $VF: synthetic method
-   public static void method2128(Class806 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method2128(Class806 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2052(var1, var2, var3, var4, var5);
    }
 
@@ -1234,12 +1234,12 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static void method2130(Class806 var0, Class9332 var1, int var2, int var3, int var4, int var5, int var6) {
+   public static void method2130(Class806 var0, MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
       var0.method2050(var1, var2, var3, var4, var5, var6);
    }
 
    // $VF: synthetic method
-   public static void method2131(Class806 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method2131(Class806 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2051(var1, var2, var3, var4, var5);
    }
 
@@ -1249,12 +1249,12 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static void method2133(Class806 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method2133(Class806 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2053(var1, var2, var3, var4, var5);
    }
 
    // $VF: synthetic method
-   public static void method2134(Class806 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method2134(Class806 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2054(var1, var2, var3, var4, var5);
    }
 

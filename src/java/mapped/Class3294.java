@@ -34,11 +34,11 @@ public class Class3294 extends Class3292 {
             if (!var5.field9020 && !World.method6716(var10)) {
                PlayerEntity var11 = var1.method18358();
                int var12 = var5.method7034();
-               if (var11 instanceof Class878 && var10.getY() >= var12) {
+               if (var11 instanceof ServerPlayerEntity && var10.getY() >= var12) {
                   SChatPacket var13 = new SChatPacket(
-                     new TranslationTextComponent("build.tooHigh", var12).mergeStyle(TextFormatting.RED), ChatType.GAME_INFO, Util.field45724
+                     new TranslationTextComponent("build.tooHigh", var12).mergeStyle(TextFormatting.RED), ChatType.GAME_INFO, Util.DUMMY_UUID
                   );
-                  ((Class878)var11).field4855.sendPacket(var13);
+                  ((ServerPlayerEntity)var11).field4855.sendPacket(var13);
                }
                break;
             }

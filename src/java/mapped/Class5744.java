@@ -11,7 +11,7 @@ public class Class5744 extends Class5651<Class1099, Class2797<Class1099>> {
       this.method17880(new Class255<Class1099, Class2797<Class1099>, Class2796>(this, new Class2796(0.5F, true), new Class2796(1.0F, true)));
    }
 
-   public void method17857(Class1099 var1, Class9332 var2, float var3) {
+   public void method17857(Class1099 var1, MatrixStack var2, float var3) {
       var2.method35292(this.field25168, this.field25168, this.field25168);
    }
 

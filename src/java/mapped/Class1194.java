@@ -80,7 +80,7 @@ public class Class1194 extends Class1193 {
       return var1 != null && var1.method27027() != null ? this.field6457.method6012(var1) : null;
    }
 
-   public void method5707(Class9332 var1, int var2, int var3, boolean var4) {
+   public void method5707(MatrixStack var1, int var2, int var3, boolean var4) {
       if (this.field6464 != null) {
          int var7 = var2 + this.field6464.field6467 + 13;
          int var8 = var2 + this.field6464.field6467 + 26 + 4;
@@ -109,7 +109,7 @@ public class Class1194 extends Class1193 {
       }
    }
 
-   public void method5708(Class9332 var1, int var2, int var3) {
+   public void method5708(MatrixStack var1, int var2, int var3) {
       if (!this.field6459.method34943() || this.field6466 != null && this.field6466.method8489()) {
          float var6 = this.field6466 != null ? this.field6466.method8496() : 0.0F;
          Class2082 var7;
@@ -139,7 +139,7 @@ public class Class1194 extends Class1193 {
       this.field6465.add(var1);
    }
 
-   public void method5711(Class9332 var1, int var2, int var3, float var4, int var5, int var6) {
+   public void method5711(MatrixStack var1, int var2, int var3, float var4, int var5, int var6) {
       boolean var9 = var5 + var2 + this.field6467 + this.field6461 + 26 >= this.field6457.method6013().field4564;
       String var10 = this.field6466 != null ? this.field6466.method8497() : null;
       int var11 = var10 != null ? this.field6463.field1294.method38820(var10) : 0;
@@ -227,7 +227,7 @@ public class Class1194 extends Class1193 {
       this.field6463.method1555().method794(this.field6459.method34936(), var2 + this.field6467 + 8, var3 + this.field6468 + 5);
    }
 
-   public void method5712(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
+   public void method5712(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
       this.method5696(var1, var2, var3, var9, var10, var6, var6);
       this.method5713(var1, var2 + var6, var3, var4 - var6 - var6, var6, var9 + var6, var10, var7 - var6 - var6, var8);
       this.method5696(var1, var2 + var4 - var6, var3, var9 + var7 - var6, var10, var6, var6);
@@ -239,7 +239,7 @@ public class Class1194 extends Class1193 {
       this.method5713(var1, var2 + var4 - var6, var3 + var6, var6, var5 - var6 - var6, var9 + var7 - var6, var10 + var6, var7, var8 - var6 - var6);
    }
 
-   public void method5713(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
+   public void method5713(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
       int var12 = 0;
 
       while (var12 < var4) {

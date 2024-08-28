@@ -7,10 +7,10 @@ public class Class5995 {
 
    public static ServerWorld method18604() {
       Minecraft var2 = Class7944.method26860();
-      Class1656 var3 = var2.field1338;
+      Class1656 var3 = var2.world;
       if (var3 == null) {
          return null;
-      } else if (!var2.method1529()) {
+      } else if (!var2.isIntegratedServerRunning()) {
          return null;
       } else {
          Class1644 var4 = var2.method1531();

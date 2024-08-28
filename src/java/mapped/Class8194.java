@@ -73,10 +73,10 @@ public class Class8194 {
       );
    }
 
-   private static int method28496(Class6619 var0, Collection<Class878> var1, Collection<Class4843<?>> var2) throws CommandSyntaxException {
+   private static int method28496(Class6619 var0, Collection<ServerPlayerEntity> var1, Collection<Class4843<?>> var2) throws CommandSyntaxException {
       int var5 = 0;
 
-      for (Class878 var7 : var1) {
+      for (ServerPlayerEntity var7 : var1) {
          var5 += var7.method2778(var2);
       }
 
@@ -85,7 +85,7 @@ public class Class8194 {
             var0.method20179(new TranslationTextComponent("commands.recipe.give.success.multiple", var2.size(), var1.size()), true);
          } else {
             var0.method20179(
-               new TranslationTextComponent("commands.recipe.give.success.single", var2.size(), ((Class878)var1.iterator().next()).getDisplayName()), true
+               new TranslationTextComponent("commands.recipe.give.success.single", var2.size(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true
             );
          }
 
@@ -95,10 +95,10 @@ public class Class8194 {
       }
    }
 
-   private static int method28497(Class6619 var0, Collection<Class878> var1, Collection<Class4843<?>> var2) throws CommandSyntaxException {
+   private static int method28497(Class6619 var0, Collection<ServerPlayerEntity> var1, Collection<Class4843<?>> var2) throws CommandSyntaxException {
       int var5 = 0;
 
-      for (Class878 var7 : var1) {
+      for (ServerPlayerEntity var7 : var1) {
          var5 += var7.method2780(var2);
       }
 
@@ -107,7 +107,7 @@ public class Class8194 {
             var0.method20179(new TranslationTextComponent("commands.recipe.take.success.multiple", var2.size(), var1.size()), true);
          } else {
             var0.method20179(
-               new TranslationTextComponent("commands.recipe.take.success.single", var2.size(), ((Class878)var1.iterator().next()).getDisplayName()), true
+               new TranslationTextComponent("commands.recipe.take.success.single", var2.size(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true
             );
          }
 

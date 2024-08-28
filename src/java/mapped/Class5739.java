@@ -8,7 +8,7 @@ public class Class5739 extends Class5715<Class996> {
       super(var1);
    }
 
-   public void method17853(Class996 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class996 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       var4.method35292(-1.0F, -1.0F, 1.0F);
       this.field25162.method10998(var1, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);

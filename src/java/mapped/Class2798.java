@@ -61,7 +61,7 @@ public class Class2798<T extends Class1006 & Class1022> extends Class2797<T> {
    }
 
    @Override
-   public void method11010(Class2205 var1, Class9332 var2) {
+   public void method11010(Class2205 var1, MatrixStack var2) {
       float var5 = var1 != Class2205.field14418 ? -1.0F : 1.0F;
       Class7219 var6 = this.method11011(var1);
       var6.field31032 += var5;

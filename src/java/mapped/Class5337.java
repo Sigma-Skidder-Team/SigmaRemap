@@ -15,8 +15,8 @@ public class Class5337 extends Class5325 {
 
     @EventTarget
     public void method16752(Class4420 var1) {
-        if (this.method15996() && (mc.field1339.method3331() || !this.method15974("Sneak"))) {
-            Class8711 var4 = Class9217.method34567(mc.field1339.field5031, mc.field1339.field5032, this.method15977("Maximum range"));
+        if (this.method15996() && (mc.player.method3331() || !this.method15974("Sneak"))) {
+            Class8711 var4 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.method15977("Maximum range"));
             BlockPos var5 = null;
             if (var4 != null) {
                 var5 = var4.method31423();
@@ -24,15 +24,15 @@ public class Class5337 extends Class5325 {
 
             this.method16754(
                     this.method16753(),
-                    (double) var5.method8304() + 0.5 - Minecraft.getInstance().field1295.method768().method37504().method11320(),
-                    (double) (var5.getY() + 1) - Minecraft.getInstance().field1295.method768().method37504().method11321(),
-                    (double) var5.method8306() + 0.5 - Minecraft.getInstance().field1295.method768().method37504().method11322()
+                    (double) var5.method8304() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
+                    (double) (var5.getY() + 1) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
+                    (double) var5.method8306() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
             );
         }
     }
 
     private double method16753() {
-        return MathHelper.method37763((float) Math.toRadians(90.0F - mc.field1339.field5032)) * 10.0F;
+        return MathHelper.method37763((float) Math.toRadians(90.0F - mc.player.field5032)) * 10.0F;
     }
 
     private void method16754(double var1, double var3, double var5, double var7) {
@@ -44,7 +44,7 @@ public class Class5337 extends Class5325 {
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glTranslated(var3, var5, var7);
-        GL11.glRotatef((float) (mc.field1339.field5055 % 90 * 4), 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef((float) (mc.player.field5055 % 90 * 4), 0.0F, 1.0F, 0.0F);
         this.method16756();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

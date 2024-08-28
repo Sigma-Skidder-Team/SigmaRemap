@@ -79,13 +79,13 @@ public class Class5274 extends Module {
 
     @EventTarget
     private void method16500(TickEvent var1) {
-        if (this.method15996() && mc.field1339 != null && mc.field1338 != null) {
+        if (this.method15996() && mc.player != null && mc.world != null) {
             this.field23707++;
-            if ((double) field23708 < mc.field1339.getPosY() && mc.field1339.field5036) {
+            if ((double) field23708 < mc.player.getPosY() && mc.player.field5036) {
                 field23708 += 0.5F;
             }
 
-            if ((double) field23708 > mc.field1339.getPosY() && mc.field1339.field5036) {
+            if ((double) field23708 > mc.player.getPosY() && mc.player.field5036) {
                 field23708 -= 0.5F;
             }
 
@@ -94,7 +94,7 @@ public class Class5274 extends Module {
 
                 for (int var5 = -this.field23715 / 2; var5 < this.field23715 / 2; var5++) {
                     for (int var6 = -this.field23715 / 2; var6 < this.field23715 / 2; var6++) {
-                        var4.add(mc.field1338.method6824(mc.field1339.field5072 + var5, mc.field1339.field5074 + var6));
+                        var4.add(mc.world.method6824(mc.player.field5072 + var5, mc.player.field5074 + var6));
                     }
                 }
 
@@ -102,7 +102,7 @@ public class Class5274 extends Module {
 
                 while (var11.hasNext()) {
                     Class8444 var12 = (Class8444) var11.next();
-                    int var7 = var12.field36184.method7072().method24365(new Class7481(mc.field1339.field5072, mc.field1339.field5074));
+                    int var7 = var12.field36184.method7072().method24365(new Class7481(mc.player.field5072, mc.player.field5074));
                     if (var7 > 7) {
                         var11.remove();
                     }
@@ -132,10 +132,10 @@ public class Class5274 extends Module {
                     var16.method29696();
                 }
 
-                this.field23717 = (mc.field1339.getPosX() - (double) (mc.field1339.field5072 * 16)) / 16.0;
-                this.field23718 = (mc.field1339.getPosZ() - (double) (mc.field1339.field5074 * 16)) / 16.0;
+                this.field23717 = (mc.player.getPosX() - (double) (mc.player.field5072 * 16)) / 16.0;
+                this.field23718 = (mc.player.getPosZ() - (double) (mc.player.field5074 * 16)) / 16.0;
                 this.field23704 = this.method16502(this.field23706);
-                this.field23714 = mc.field1339.method3432();
+                this.field23714 = mc.player.method3432();
                 this.field23707 = 0;
             }
         }
@@ -144,10 +144,10 @@ public class Class5274 extends Module {
     @EventTarget
     @HigherPriority
     private void method16501(Class4415 var1) throws IOException {
-        if (this.method15996() && mc.field1339 != null && mc.field1338 != null) {
+        if (this.method15996() && mc.player != null && mc.world != null) {
             if (this.field23704 != null) {
-                if (!Minecraft.getInstance().field1299.field44664) {
-                    if (!Minecraft.getInstance().field1299.field44662) {
+                if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
+                    if (!Minecraft.getInstance().gameSettings.field44662) {
                         ByteBuffer var4 = this.field23704;
                         this.field23712 = var1.method13960();
                         if (var4 != null) {
@@ -160,7 +160,7 @@ public class Class5274 extends Module {
                             float var9 = (float) ((double) (var8 * var7) * this.field23718);
                             float var10 = (float) ((double) (-var8 * var7) * this.field23717);
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2), (float) (this.field23712 + this.field23709 / 2), 0.0F);
-                            GL11.glRotatef(90.0F - mc.field1339.field5031, 0.0F, 0.0F, 1.0F);
+                            GL11.glRotatef(90.0F - mc.player.field5031, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-this.field23710 / 2), (float) (-this.field23709 / 2), 0.0F);
                             float var11 = (float) this.field23710 * var7;
                             float var12 = (float) this.field23709 * var7;
@@ -188,7 +188,7 @@ public class Class5274 extends Module {
                             GL11.glPushMatrix();
                             int var15 = (int) Class9567.method37083()[0];
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2 + 3), 0.0F);
-                            GL11.glRotatef((float) (270 + var15) - mc.field1339.field5031, 0.0F, 0.0F, 1.0F);
+                            GL11.glRotatef((float) (270 + var15) - mc.player.field5031, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
                             Class3192.method11439(
                                     var6, (float) (this.field23711 + this.field23710 / 2 - 4), (float) (this.field23712 + this.field23709 / 2 - 8), var5, 1879048192
@@ -196,7 +196,7 @@ public class Class5274 extends Module {
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2), 0.0F);
-                            GL11.glRotatef((float) (270 + var15) - mc.field1339.field5031, 0.0F, 0.0F, 1.0F);
+                            GL11.glRotatef((float) (270 + var15) - mc.player.field5031, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
                             Class3192.method11439(
                                     var6,
@@ -222,7 +222,7 @@ public class Class5274 extends Module {
 
         for (int var5 = -this.field23715 / 2; var5 < this.field23715 / 2; var5++) {
             for (int var6 = -this.field23715 / 2; var6 < this.field23715 / 2; var6++) {
-                var4.add(mc.field1338.method6824(mc.field1339.field5072 + var5, mc.field1339.field5074 + var6));
+                var4.add(mc.world.method6824(mc.player.field5072 + var5, mc.player.field5074 + var6));
             }
         }
 

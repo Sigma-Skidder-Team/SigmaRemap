@@ -18,12 +18,12 @@ public class Class1187 extends Class1186 {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       this.field6412
          .field6782
          .field1294
          .method38805(
-            var1, this.field6410, (float)(this.field6412.field6782.field1355.field4564 / 2 - this.field6411 / 2), (float)(var3 + var6 - 9 - 1), 16777215
+            var1, this.field6410, (float)(this.field6412.field6782.currentScreen.field4564 / 2 - this.field6411 / 2), (float)(var3 + var6 - 9 - 1), 16777215
          );
    }
 

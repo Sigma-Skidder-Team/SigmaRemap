@@ -37,7 +37,7 @@ public class Class1232 extends Class1234 implements Class1233 {
       return var0.field6476;
    }
 
-   public Class5805 method5811() {
+   public AbstractOption method5811() {
       return this.field6581;
    }
 }

@@ -41,7 +41,7 @@ public class Class811 extends Class798 {
    }
 
    private void method2211() throws Exception {
-      this.field4349 = this.field4562.method1472().method38458().stream().sorted((var0, var1) -> {
+      this.field4349 = this.field4562.getSaveLoader().method38458().stream().sorted((var0, var1) -> {
          if (var0.method8647() >= var1.method8647()) {
             return var0.method8647() <= var1.method8647() ? var0.method8643().compareTo(var1.method8643()) : -1;
          } else {
@@ -96,7 +96,7 @@ public class Class811 extends Class798 {
    }
 
    @Override
-   public void method1931() {
+   public void onClose() {
       this.field4562.field1302.method36347(false);
    }
 
@@ -108,7 +108,7 @@ public class Class811 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.field4351.method1923(var1, var2, var3, var4);
       this.field4352.method5542(this, var1);

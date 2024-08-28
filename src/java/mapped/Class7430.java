@@ -55,7 +55,7 @@ public class Class7430 extends ClientResource {
             var1,
             var2,
             new java.awt.Color(var4.field16455, var4.field16456, var4.field16457, var4.field16458).getRGB(),
-            new Class9332().method35296().method32361(),
+            new MatrixStack().method35296().method32361(),
             false,
             false
          );

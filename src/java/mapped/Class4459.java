@@ -14,7 +14,7 @@ public class Class4459 extends Class4457 {
       return new Class4459(Class9587.field44822, var0);
    }
 
-   public boolean method14098(Class878 var1) {
+   public boolean method14098(ServerPlayerEntity var1) {
       return this.field21638.method36122(var1);
    }
 

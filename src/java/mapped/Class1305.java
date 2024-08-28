@@ -62,7 +62,7 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field6906) {
          this.method6182().method1923(var1, var2, var3, var4);
          method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
@@ -73,7 +73,7 @@ public class Class1305 extends Screen implements Class1306 {
          method5690(
             var1,
             this.field4568,
-            field6907[(int)(Util.method38487() / 150L % (long)field6907.length)],
+            field6907[(int)(Util.milliTime() / 150L % (long)field6907.length)],
             this.field4564 / 2,
             this.field4565 / 2 + 18,
             16777215
@@ -119,14 +119,14 @@ public class Class1305 extends Screen implements Class1306 {
       return 115 + 40 * var1;
    }
 
-   private void method6186(Class9332 var1, int var2, int var3, Class3257 var4) {
+   private void method6186(MatrixStack var1, int var2, int var3, Class3257 var4) {
       this.method6187(var1, var2 + 1, var3 + 1, 0, 0);
       RenderSystem.method27867();
       this.field4563.method791(var4.method11742(), var2 + 2, var3 + 2);
       RenderSystem.method27868();
    }
 
-   private void method6187(Class9332 var1, int var2, int var3, int var4, int var5) {
+   private void method6187(MatrixStack var1, int var2, int var3, int var4, int var5) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(field6452);
       method5697(var1, var2, var3, this.method5702(), (float)var4, (float)var5, 18, 18, 128, 128);
@@ -148,7 +148,7 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    // $VF: synthetic method
-   public static void method6195(Class1305 var0, Class9332 var1, int var2, int var3, int var4, int var5) {
+   public static void method6195(Class1305 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method6187(var1, var2, var3, var4, var5);
    }
 
@@ -158,7 +158,7 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    // $VF: synthetic method
-   public static void method6197(Class1305 var0, Class9332 var1, int var2, int var3, Class3257 var4) {
+   public static void method6197(Class1305 var0, MatrixStack var1, int var2, int var3, Class3257 var4) {
       var0.method6186(var1, var2, var3, var4);
    }
 }

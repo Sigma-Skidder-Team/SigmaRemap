@@ -11,11 +11,11 @@ public class Class5653 extends Class5651<Class1114, Class2811> {
       return field25005;
    }
 
-   public void method17857(Class1114 var1, Class9332 var2, float var3) {
+   public void method17857(Class1114 var1, MatrixStack var2, float var3) {
       var2.method35292(0.35F, 0.35F, 0.35F);
    }
 
-   public void method17842(Class1114 var1, Class9332 var2, float var3, float var4, float var5) {
+   public void method17842(Class1114 var1, MatrixStack var2, float var3, float var4, float var5) {
       if (!var1.method5364()) {
          var2.method35291(0.0, (double)(MathHelper.method37764(var3 * 0.3F) * 0.1F), 0.0);
       } else {

@@ -8,7 +8,7 @@ public class Class5703 extends Class5702<Class1102> {
       this.field25098 *= 0.7F;
    }
 
-   public void method17857(Class1102 var1, Class9332 var2, float var3) {
+   public void method17857(Class1102 var1, MatrixStack var2, float var3) {
       var2.method35292(0.7F, 0.7F, 0.7F);
    }
 

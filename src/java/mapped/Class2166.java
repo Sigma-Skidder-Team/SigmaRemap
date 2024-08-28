@@ -25,7 +25,7 @@ public enum Class2166 {
       return this.field14228;
    }
 
-   public void method8886(Class9332 var1, Class1193 var2, int var3, int var4, boolean var5, int var6) {
+   public void method8886(MatrixStack var1, Class1193 var2, int var3, int var4, boolean var5, int var6) {
       int var9 = this.field14224;
       if (var6 > 0) {
          var9 += this.field14226;

@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.BooleanSupplier;
 
-public class Class1644 extends Class314 {
+public class Class1644 extends MinecraftServer {
    private static final Logger field1208 = LogManager.getLogger();
    private final Minecraft field8920;
    private boolean field8921;
@@ -70,16 +70,16 @@ public class Class1644 extends Class314 {
       this.field8921 = Minecraft.getInstance().getClientPlayNetHandler() != null && Minecraft.getInstance().method1544();
       Class7165 var5 = this.method1420();
       if (!var4 && this.field8921) {
-         var5.method22503("autoSave");
+         var5.startSection("autoSave");
          field1208.info("Saving and pausing game...");
          this.getPlayerList().method19467();
          this.method1291(false, false, false);
-         var5.method22505();
+         var5.endSection();
       }
 
       if (!this.field8921) {
          super.method1310(var1);
-         int var6 = Math.max(2, this.field8920.field1299.field44574 + -1);
+         int var6 = Math.max(2, this.field8920.gameSettings.field44574 + -1);
          if (var6 != this.getPlayerList().method19478()) {
             field1208.info("Changing view distance to {}, from {}", var6, this.getPlayerList().method19478());
             this.getPlayerList().method19487(var6);
@@ -162,10 +162,10 @@ public class Class1644 extends Class314 {
          this.field8922.start();
          this.getPlayerList().method19480(var1);
          this.getPlayerList().method19482(var2);
-         int var6 = this.method1418(this.field8920.field1339.getGameProfile());
-         this.field8920.field1339.method5399(var6);
+         int var6 = this.method1418(this.field8920.player.getGameProfile());
+         this.field8920.player.method5399(var6);
 
-         for (Class878 var8 : this.getPlayerList().method19488()) {
+         for (ServerPlayerEntity var8 : this.getPlayerList().method19488()) {
             this.getCommandManager().method18837(var8);
          }
 
@@ -188,7 +188,7 @@ public class Class1644 extends Class314 {
    public void method1296(boolean var1) {
       if (!Class9299.field42967.method20245() || this.method1295()) {
          this.method1635(() -> {
-            for (Class878 var4 : Lists.newArrayList(this.getPlayerList().method19488())) {
+            for (ServerPlayerEntity var4 : Lists.newArrayList(this.getPlayerList().method19488())) {
                if (!var4.getUniqueID().equals(this.field8923)) {
                   this.getPlayerList().method19450(var4);
                }
@@ -245,12 +245,12 @@ public class Class1644 extends Class314 {
 
    @Override
    public int method1337(int var1) {
-      return (int)(this.field8920.field1299.field44575 * (float)var1);
+      return (int)(this.field8920.gameSettings.field44575 * (float)var1);
    }
 
    @Override
    public boolean method1434() {
-      return this.field8920.field1299.field44677;
+      return this.field8920.gameSettings.field44677;
    }
 
    private void method6490() {
@@ -317,7 +317,7 @@ public class Class1644 extends Class314 {
    public boolean method1291(boolean var1, boolean var2, boolean var3) {
       if (var1) {
          int var6 = this.method1375();
-         int var7 = this.field8920.field1299.field44696;
+         int var7 = this.field8920.gameSettings.field44696;
          if ((long)var6 < this.field8924 + (long)var7) {
             return false;
          }

@@ -8,7 +8,7 @@ public class Class240<T extends Class880> extends Class239<T, Class2891<T>> {
    }
 
    @Override
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ItemStack var13 = var4.method3090();
       var1.method35294();
       if (var13.method32107() == Class8514.field37971) {

@@ -48,7 +48,7 @@ public class Class5295 extends Module {
                     var5[2] = 1;
                 }
 
-                if (!mc.field1339.field5036) {
+                if (!mc.player.field5036) {
                     this.field23809 = 0;
                 } else {
                     this.field23809++;
@@ -56,7 +56,7 @@ public class Class5295 extends Module {
 
                 if (this.field23811 != 1) {
                     if (this.field23811 >= 2) {
-                        mc.field1339.field4902.field5443 = this.field23810;
+                        mc.player.field4902.field5443 = this.field23810;
                         mc.field1337.method23138();
                         this.field23811 = 0;
                     }
@@ -69,8 +69,8 @@ public class Class5295 extends Module {
                                         this.method16634(var1, var4, var5[var6]);
                                     }
                                 } else if (this.field23808 > 18
-                                        && !mc.field1339.method3033(Class7144.method22287(var5[var6]))
-                                        && mc.field1339.method3042() < this.method15977("Health") * 2.0F) {
+                                        && !mc.player.method3033(Class7144.method22287(var5[var6]))
+                                        && mc.player.method3042() < this.method15977("Health") * 2.0F) {
                                     this.method16634(var1, var4, var5[var6]);
                                 }
                             }
@@ -85,17 +85,17 @@ public class Class5295 extends Module {
     }
 
     public float[] method16630() {
-        double var3 = mc.field1339.getPosX() + mc.field1339.method3433().field18048 * 26.0;
-        double var5 = mc.field1339.field5035.field28450 - 3.6;
-        double var7 = mc.field1339.getPosZ() + mc.field1339.method3433().field18050 * 26.0;
-        return !this.method15974("Predict") ? new float[]{mc.field1339.field5031, 90.0F} : Class9142.method34144(var3, var7, var5);
+        double var3 = mc.player.getPosX() + mc.player.method3433().field18048 * 26.0;
+        double var5 = mc.player.field5035.field28450 - 3.6;
+        double var7 = mc.player.getPosZ() + mc.player.method3433().field18050 * 26.0;
+        return !this.method15974("Predict") ? new float[]{mc.player.field5031, 90.0F} : Class9142.method34144(var3, var7, var5);
     }
 
     public int method16631() {
         int var3 = 5;
 
         for (int var4 = 36; var4 < 45; var4++) {
-            if (!mc.field1339.field4904.method18131(var4).method18266()) {
+            if (!mc.player.field4904.method18131(var4).method18266()) {
                 var3 = var4 - 36;
                 break;
             }
@@ -111,8 +111,8 @@ public class Class5295 extends Module {
         int var7 = 0;
 
         for (int var8 = 9; var8 < 45; var8++) {
-            if (mc.field1339.field4904.method18131(var8).method18266()) {
-                ItemStack var9 = mc.field1339.field4904.method18131(var8).method18265();
+            if (mc.player.field4904.method18131(var8).method18266()) {
+                ItemStack var9 = mc.player.field4904.method18131(var8).method18265();
                 if (var9.method32107() instanceof Class3323) {
                     List<Class2023> var10 = Class7789.method25858(var9);
                     int var11 = this.method16633(var10);
@@ -140,7 +140,7 @@ public class Class5295 extends Module {
             }
         }
 
-        return mc.field1339.method3033(Class7144.method22287(var1)) && mc.field1339.method3034(Class7144.method22287(var1)).method8629() >= var4
+        return mc.player.method3033(Class7144.method22287(var1)) && mc.player.method3034(Class7144.method22287(var1)).method8629() >= var4
                 ? -1
                 : var6;
     }
@@ -169,21 +169,21 @@ public class Class5295 extends Module {
                 }
             } else {
                 this.field23808 = 0;
-                int var7 = mc.field1339.field4902.field5443;
+                int var7 = mc.player.field4902.field5443;
                 boolean var8 = Client.getInstance().getModuleManager().method14662(Class5332.class).method15996()
                         && Client.getInstance().getModuleManager().method14662(Class5332.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
                 float[] var9 = this.method16630();
-                mc.field1339.field4902.field5443 = var6 - 36;
+                mc.player.field4902.field5443 = var6 - 36;
                 mc.field1337.method23138();
                 if (!this.method15974("Instant")) {
                     this.field23811 = 1;
                     var1.method13918(var9[0]);
                     var1.method13916(var9[1]);
                 } else {
-                    mc.getClientPlayNetHandler().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.field1339.field5036));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.player.field5036));
                     mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
                     mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
-                    mc.field1339.field4902.field5443 = var7;
+                    mc.player.field4902.field5443 = var7;
                     mc.field1337.method23138();
                     Class5357.field23954 = 1;
                 }

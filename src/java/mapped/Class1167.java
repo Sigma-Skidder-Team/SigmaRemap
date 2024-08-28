@@ -9,7 +9,7 @@ public class Class1167 extends Class1155<Class1167> {
    }
 
    @Override
-   public void method5544(Class9332 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       Class5966 var13 = (Class5966)Class1313.method6213().get(var2);
       this.method5570(var1, var4, var3, var13.field26006);
       this.field6332.field6836.field4568.method38805(var1, var13.field26007, (float)(var4 + 18 + 5), (float)(var3 + 6), 16777215);
@@ -33,14 +33,14 @@ public class Class1167 extends Class1155<Class1167> {
       Class1313.method6218(this.field6332.field6836).method5651();
    }
 
-   private void method5570(Class9332 var1, int var2, int var3, Class3257 var4) {
+   private void method5570(MatrixStack var1, int var2, int var3, Class3257 var4) {
       this.method5571(var1, var2 + 1, var3 + 1);
       RenderSystem.method27867();
       this.field6332.field6836.field4563.method791(new ItemStack(var4), var2 + 2, var3 + 2);
       RenderSystem.method27868();
    }
 
-   private void method5571(Class9332 var1, int var2, int var3) {
+   private void method5571(MatrixStack var1, int var2, int var3) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       Class1281.method6097(this.field6332).getTextureManager().bindTexture(Class1193.field6452);
       Class1193.method5697(var1, var2, var3, this.field6332.field6836.method5702(), 0.0F, 0.0F, 18, 18, 128, 128);

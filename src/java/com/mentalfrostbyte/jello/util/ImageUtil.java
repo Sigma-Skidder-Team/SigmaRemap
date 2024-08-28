@@ -110,7 +110,7 @@ public class ImageUtil {
         var2 = (int) ((float) var2 * GuiManager.field41348);
         var3 = (int) ((float) var3 * GuiManager.field41348);
         var4 = (int) ((float) var4 * GuiManager.field41348);
-        var1 = Minecraft.getInstance().field1283.method8042() - var1 - var3;
+        var1 = Minecraft.getInstance().mainWindow.getFramebufferHeight() - var1 - var3;
         if (var4 <= 0) {
             var4 = 1;
         }

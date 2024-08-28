@@ -28,7 +28,7 @@ public class Class4476 extends Class4457 {
       return new Class4476(Class4905.method15160(CriteriaTriggers.field44467), Class9587.field44822, Class9587.field44822, Class9539.field44409);
    }
 
-   public boolean method14138(Class878 var1, Class7812 var2, Class8654 var3) {
+   public boolean method14138(ServerPlayerEntity var1, Class7812 var2, Class8654 var3) {
       return this.field21667.method36911(var1, var3) ? this.field21666.method37227(var2) : false;
    }
 

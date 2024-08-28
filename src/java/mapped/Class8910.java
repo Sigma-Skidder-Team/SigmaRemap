@@ -115,14 +115,14 @@ public class Class8910 {
       var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("xp").requires(var0x -> var0x.method20129(2))).redirect(var3));
    }
 
-   private static int method32557(Class6619 var0, Class878 var1, Class2319 var2) {
+   private static int method32557(Class6619 var0, ServerPlayerEntity var1, Class2319 var2) {
       int var5 = Class2319.method9097(var2).applyAsInt(var1);
       var0.method20179(new TranslationTextComponent("commands.experience.query." + var2.field15895, var1.getDisplayName(), var5), false);
       return var5;
    }
 
-   private static int method32558(Class6619 var0, Collection<? extends Class878> var1, int var2, Class2319 var3) {
-      for (Class878 var7 : var1) {
+   private static int method32558(Class6619 var0, Collection<? extends ServerPlayerEntity> var1, int var2, Class2319 var3) {
+      for (ServerPlayerEntity var7 : var1) {
          var3.field15893.accept(var7, var2);
       }
 
@@ -131,7 +131,7 @@ public class Class8910 {
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.experience.add." + var3.field15895 + ".success.single", var2, ((Class878)var1.iterator().next()).getDisplayName()
+               "commands.experience.add." + var3.field15895 + ".success.single", var2, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
             ),
             true
          );
@@ -140,10 +140,10 @@ public class Class8910 {
       return var1.size();
    }
 
-   private static int method32559(Class6619 var0, Collection<? extends Class878> var1, int var2, Class2319 var3) throws CommandSyntaxException {
+   private static int method32559(Class6619 var0, Collection<? extends ServerPlayerEntity> var1, int var2, Class2319 var3) throws CommandSyntaxException {
       int var6 = 0;
 
-      for (Class878 var8 : var1) {
+      for (ServerPlayerEntity var8 : var1) {
          if (var3.field15894.test(var8, var2)) {
             var6++;
          }
@@ -155,7 +155,7 @@ public class Class8910 {
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  "commands.experience.set." + var3.field15895 + ".success.single", var2, ((Class878)var1.iterator().next()).getDisplayName()
+                  "commands.experience.set." + var3.field15895 + ".success.single", var2, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
                ),
                true
             );

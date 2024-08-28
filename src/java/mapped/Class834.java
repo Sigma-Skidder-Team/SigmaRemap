@@ -23,7 +23,7 @@ public class Class834 extends Screen {
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 102, this.field4565 / 4 + 24 + -16, 204, 20, new TranslationTextComponent("menu.returnToGame"), var1 -> {
             this.field4562.displayGuiScreen((Screen)null);
-            this.field4562.field1301.method36742();
+            this.field4562.mouseHelper.grabMouse();
          })
       );
       this.<Class1206>method2455(
@@ -33,7 +33,7 @@ public class Class834 extends Screen {
             98,
             20,
             new TranslationTextComponent("gui.advancements"),
-            var1 -> this.field4562.displayGuiScreen(new Class1130(this.field4562.field1339.connection.method15795()))
+            var1 -> this.field4562.displayGuiScreen(new Class1130(this.field4562.player.connection.method15795()))
          )
       );
       this.<Class1206>method2455(
@@ -43,7 +43,7 @@ public class Class834 extends Screen {
             98,
             20,
             new TranslationTextComponent("gui.stats"),
-            var1 -> this.field4562.displayGuiScreen(new Class1305(this, this.field4562.field1339.method5396()))
+            var1 -> this.field4562.displayGuiScreen(new Class1305(this, this.field4562.player.method5396()))
          )
       );
       String var5 = !SharedConstants.method34773().isStable() ? "https://aka.ms/snapshotfeedback?ref=game" : "https://aka.ms/javafeedback?ref=game";
@@ -86,7 +86,7 @@ public class Class834 extends Screen {
             98,
             20,
             new TranslationTextComponent("menu.options"),
-            var1 -> this.field4562.displayGuiScreen(new Class1129(this, this.field4562.field1299))
+            var1 -> this.field4562.displayGuiScreen(new Class1129(this, this.field4562.gameSettings))
          )
       );
       Class1206 var6 = this.<Class1206>method2455(
@@ -102,29 +102,29 @@ public class Class834 extends Screen {
       var6.field6482 = this.field4562.method1530() && !this.field4562.method1531().method1369();
       Class1206 var7 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 102, this.field4565 / 4 + 120 + -16, 204, 20, new TranslationTextComponent("menu.returnToMenu"), var1 -> {
-            boolean var4x = this.field4562.method1529();
+            boolean var4x = this.field4562.isIntegratedServerRunning();
             boolean var5x = this.field4562.method1559();
             var1.field6482 = false;
-            this.field4562.field1338.method6782();
+            this.field4562.world.sendQuittingDisconnectingPacket();
             if (!var4x) {
-               this.field4562.method1505();
+               this.field4562.unloadWorld();
             } else {
                this.field4562.method1506(new Class1310(new TranslationTextComponent("menu.savingLevel")));
             }
 
             if (!var4x) {
                if (!var5x) {
-                  this.field4562.displayGuiScreen(new Class1316(new Class849()));
+                  this.field4562.displayGuiScreen(new MultiplayerScreen(new MainMenuScreen()));
                } else {
                   Class810 var6x = new Class810();
-                  var6x.method2209(new Class849());
+                  var6x.method2209(new MainMenuScreen());
                }
             } else {
-               this.field4562.displayGuiScreen(new Class849());
+               this.field4562.displayGuiScreen(new MainMenuScreen());
             }
          })
       );
-      if (!this.field4562.method1529()) {
+      if (!this.field4562.isIntegratedServerRunning()) {
          var7.method5743(new TranslationTextComponent("menu.disconnect"));
       }
    }
@@ -135,7 +135,7 @@ public class Class834 extends Screen {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field4621) {
          method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 10, 16777215);
       } else {

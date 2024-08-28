@@ -18,7 +18,7 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
       }
    }
 
-   public void method17853(T var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       super.method17853((T)var1, var2, var3, var4, var5, var6);
       Entity var9 = var1.method4297();
       if (var9 != null) {
@@ -26,7 +26,7 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
       }
    }
 
-   private <E extends Entity> void method17847(T var1, float var2, Class9332 var3, Class7733 var4, E var5) {
+   private <E extends Entity> void method17847(T var1, float var2, MatrixStack var3, Class7733 var4, E var5) {
       if (!Class7944.method26921() || !Class8981.field40609) {
          var3.method35294();
          Vector3d var8 = var5.method2986(var2);

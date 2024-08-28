@@ -38,7 +38,7 @@ public class Class5325 extends Module {
 
         for (Module var6 : this.field23878) {
             boolean var7 = this.getStringSettingValueByName("Type").equals(var6.name);
-            if (this.method15996() && mc.field1339 != null) {
+            if (this.method15996() && mc.player != null) {
                 var6.setState(var7);
                 if (var7) {
                     this.field23879 = var6;

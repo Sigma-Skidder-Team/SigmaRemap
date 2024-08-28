@@ -50,7 +50,7 @@ public class Framebuffer {
    public void method29105() {
       RenderSystem.method27808(RenderSystem::method27804);
       this.method29111();
-      this.method29114();
+      this.unbindFramebuffer();
       if (this.field35737 > -1) {
          Class8535.method30367(this.field35737);
          this.field35737 = -1;
@@ -167,7 +167,7 @@ public class Framebuffer {
       Class7414.method23814(0);
    }
 
-   public void method29112(boolean var1) {
+   public void bindFramebuffer(boolean var1) {
       if (RenderSystem.method27803()) {
          this.method29113(var1);
       } else {
@@ -183,7 +183,7 @@ public class Framebuffer {
       }
    }
 
-   public void method29114() {
+   public void unbindFramebuffer() {
       if (RenderSystem.method27803()) {
          Class7414.method23751(Class8821.field39775, 0);
       } else {
@@ -198,7 +198,7 @@ public class Framebuffer {
       this.field35738[3] = var4;
    }
 
-   public void method29116(int var1, int var2) {
+   public void framebufferRender(int var1, int var2) {
       this.method29117(var1, var2, true);
    }
 
@@ -252,7 +252,7 @@ public class Framebuffer {
 
    public void method29119(boolean var1) {
       RenderSystem.method27808(RenderSystem::method27804);
-      this.method29112(true);
+      this.bindFramebuffer(true);
       Class7414.method23827(this.field35738[0], this.field35738[1], this.field35738[2], this.field35738[3]);
       short var4 = 16384;
       if (this.field35734) {
@@ -261,7 +261,7 @@ public class Framebuffer {
       }
 
       Class7414.method23829(var4, var1);
-      this.method29114();
+      this.unbindFramebuffer();
    }
 
    public int method29120() {

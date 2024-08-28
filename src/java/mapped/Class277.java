@@ -24,18 +24,18 @@ public abstract class Class277 extends Class269<Class8226> implements AutoClosea
 
    public Class8226 method970(Class191 var1, Class7165 var2) {
       var2.method22501();
-      var2.method22503("stitching");
+      var2.startSection("stitching");
       Class8226 var5 = this.field1059.method1092(var1, this.method1017().<ResourceLocation>map(this::method1019), var2, 0);
-      var2.method22505();
+      var2.endSection();
       var2.method22502();
       return var5;
    }
 
    public void method971(Class8226 var1, Class191 var2, Class7165 var3) {
       var3.method22501();
-      var3.method22503("upload");
+      var3.startSection("upload");
       this.field1059.method1091(var1);
-      var3.method22505();
+      var3.endSection();
       var3.method22502();
    }
 

@@ -9,11 +9,11 @@ import java.util.Set;
 
 public class Class6887 extends Class6886 {
    private static String[] field29847;
-   private final Class314 field29848;
+   private final MinecraftServer field29848;
    private final Set<Class8375> field29849 = Sets.newHashSet();
    private Runnable[] field29850 = new Runnable[0];
 
-   public Class6887(Class314 var1) {
+   public Class6887(MinecraftServer var1) {
       this.field29848 = var1;
    }
 
@@ -165,7 +165,7 @@ public class Class6887 extends Class6886 {
    public void method21024(Class8375 var1) {
       List<Packet<?>> var4 = this.method21023(var1);
 
-      for (Class878 var6 : this.field29848.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var6 : this.field29848.getPlayerList().method19488()) {
          for (Packet var8 : var4) {
             var6.field4855.sendPacket(var8);
          }
@@ -190,7 +190,7 @@ public class Class6887 extends Class6886 {
    public void method21026(Class8375 var1) {
       List<Packet<?>> var4 = this.method21025(var1);
 
-      for (Class878 var6 : this.field29848.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var6 : this.field29848.getPlayerList().method19488()) {
          for (Packet var8 : var4) {
             var6.field4855.sendPacket(var8);
          }

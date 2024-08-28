@@ -37,7 +37,7 @@ public class Class5254 extends PremiumModule {
 
     public static BlockPos method16376() {
         return new BlockPos(
-                Math.floor(mc.field1339.getPosX()), Math.floor(mc.field1339.getPosY()), Math.floor(mc.field1339.getPosZ())
+                Math.floor(mc.player.getPosX()), Math.floor(mc.player.getPosY()), Math.floor(mc.player.getPosZ())
         );
     }
 
@@ -51,7 +51,7 @@ public class Class5254 extends PremiumModule {
         double var18 = 1.0;
         if (var6 instanceof Class880) {
             var18 = method16382(
-                    (Class880) var6, method16381(var17), new Class7782(mc.field1338, null, null, null, var0, var2, var4, 6.0F, false, Class2141.field14015)
+                    (Class880) var6, method16381(var17), new Class7782(mc.world, null, null, null, var0, var2, var4, 6.0F, false, Class2141.field14015)
             );
         }
 
@@ -59,7 +59,7 @@ public class Class5254 extends PremiumModule {
     }
 
     private static float method16381(float var0) {
-        int var3 = mc.field1338.method6997().method8905();
+        int var3 = mc.world.method6997().method8905();
         return var0 * (var3 != 0 ? (var3 != 2 ? (var3 != 1 ? 1.5F : 0.5F) : 1.0F) : 0.0F);
     }
 
@@ -83,8 +83,8 @@ public class Class5254 extends PremiumModule {
 
     private static void method16383() {
         if (field23631) {
-            field23629 = mc.field1339.field5031;
-            field23630 = mc.field1339.field5032;
+            field23629 = mc.player.field5031;
+            field23630 = mc.player.field5032;
             field23631 = false;
         }
     }
@@ -168,13 +168,13 @@ public class Class5254 extends PremiumModule {
 
             this.field23633 = (Entity) var4.get(0);
             if ((float) this.field23636 >= 20.0F / this.method15977("CPS")) {
-                Class1001 var5 = mc.field1338
+                Class1001 var5 = mc.world
                         .method6772(
                                 Entity.class, this.field23633.field5035.method19662(2.0, 4.0, 2.0).method19662(-2.0, -3.0, -2.0), var0 -> var0 instanceof Class1001
                         )
                         .stream()
                         .map(var0 -> (Class1001) var0)
-                        .filter(var0 -> var0.method3275(mc.field1339) < 6.0F)
+                        .filter(var0 -> var0.method3275(mc.player) < 6.0F)
                         .filter(var1x -> (double) var1x.method3275(this.field23633) < 3.6)
                         .min(Comparator.comparing(var1x -> method16380(var1x.getPosX(), var1x.getPosY(), var1x.getPosZ(), this.field23633)))
                         .orElse(null);
@@ -224,18 +224,18 @@ public class Class5254 extends PremiumModule {
         GL11.glDisable(2929);
 
         for (BlockPos var6 : this.field23637) {
-            double var7 = (double) var6.method8304() - mc.field1295.method768().method37504().method11320();
-            double var9 = (double) var6.getY() - mc.field1295.method768().method37504().method11321();
-            double var11 = (double) var6.method8306() - mc.field1295.method768().method37504().method11322();
+            double var7 = (double) var6.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+            double var9 = (double) var6.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
+            double var11 = (double) var6.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
             Class9388 var13 = new Class9388(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
             Class3192.method11459(var13, var4);
         }
 
         var4 = Class5628.method17688(9000000, 1.0F);
         if (this.field23633 != null) {
-            double var14 = this.field23633.getPosX() - mc.field1295.method768().method37504().method11320();
-            double var19 = this.field23633.getPosY() - mc.field1295.method768().method37504().method11321() + 0.5;
-            double var20 = this.field23633.getPosZ() - mc.field1295.method768().method37504().method11322();
+            double var14 = this.field23633.getPosX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+            double var19 = this.field23633.getPosY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 0.5;
+            double var20 = this.field23633.getPosZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
             float var16 = 0.3F;
             Class9388 var17 = new Class9388(var14 - (double) var16, var19 + 0.9, var20 - (double) var16, var14 + (double) var16, var19 + 1.0, var20 + (double) var16);
             Class3192.method11459(var17, var4);
@@ -255,12 +255,12 @@ public class Class5254 extends PremiumModule {
         BlockPos var4 = var1.method8336(0, 1, 0);
         BlockPos var5 = var1.method8336(0, 2, 0);
         return (
-                mc.field1338.method6738(var1).method23383() == Blocks.BEDROCK
-                        || mc.field1338.method6738(var1).method23383() == Blocks.field36527
+                mc.world.method6738(var1).method23383() == Blocks.BEDROCK
+                        || mc.world.method6738(var1).method23383() == Blocks.field36527
         )
-                && mc.field1338.method6738(var4).method23383() == Blocks.AIR
-                && mc.field1338.method6738(var5).method23383() == Blocks.AIR
-                && mc.field1338.method7182(Entity.class, new Class6488(var4)).isEmpty();
+                && mc.world.method6738(var4).method23383() == Blocks.AIR
+                && mc.world.method6738(var5).method23383() == Blocks.AIR
+                && mc.world.method7182(Entity.class, new Class6488(var4)).isEmpty();
     }
 
     public List<BlockPos> method16379(BlockPos var1, float var2, int var3, boolean var4, boolean var5, int var6) {
@@ -297,12 +297,12 @@ public class Class5254 extends PremiumModule {
 
         while (var5.hasNext()) {
             Entity var6 = (Entity) var5.next();
-            if (var6 != mc.field1339) {
+            if (var6 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var6)) {
                     if (var6 instanceof Class880) {
                         if (((Class880) var6).method3042() != 0.0F) {
-                            if (!(mc.field1339.method3275(var6) > var1)) {
-                                if (mc.field1339.method3026((Class880) var6)) {
+                            if (!(mc.player.method3275(var6) > var1)) {
+                                if (mc.player.method3026((Class880) var6)) {
                                     if (!(var6 instanceof Class1005)) {
                                         if (!this.method15974("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();
@@ -312,7 +312,7 @@ public class Class5254 extends PremiumModule {
                                             var5.remove();
                                         } else if (!this.method15974("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                                             var5.remove();
-                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var6)) {
+                                        } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
                                             var5.remove();
                                         } else if (!var6.method3362()) {
                                             if (var6 instanceof PlayerEntity
@@ -352,8 +352,8 @@ public class Class5254 extends PremiumModule {
 
     public int method16386() {
         for (int var3 = 36; var3 < 45; var3++) {
-            if (mc.field1339.field4904.method18131(var3).method18266()) {
-                ItemStack var4 = mc.field1339.field4904.method18131(var3).method18265();
+            if (mc.player.field4904.method18131(var3).method18266()) {
+                ItemStack var4 = mc.player.field4904.method18131(var3).method18265();
                 if (var4.method32107() == Class8514.field38108) {
                     return var3 - 36;
                 }
@@ -361,8 +361,8 @@ public class Class5254 extends PremiumModule {
         }
 
         for (int var5 = 9; var5 < 36; var5++) {
-            if (mc.field1339.field4904.method18131(var5).method18266()) {
-                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
+            if (mc.player.field4904.method18131(var5).method18266()) {
+                ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                 if (var6.method32107() == Class8514.field38108) {
                     if (Class8005.method27349() <= Class5989.field26136.method18582()) {
                         mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));

@@ -20,14 +20,14 @@ public class Class5369 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23987 = mc.field1339.getPosY();
+        this.field23987 = mc.player.getPosY();
         this.field23986 = 0;
-        if (!mc.field1299.field44637.method8509()) {
-            if (!mc.field1299.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.method8509()) {
+            if (!mc.gameSettings.field44637.method8509()) {
                 this.field23988 = false;
             }
         } else {
-            mc.field1299.field44637.field13071 = false;
+            mc.gameSettings.field44637.field13071 = false;
             this.field23988 = true;
         }
     }
@@ -35,7 +35,7 @@ public class Class5369 extends Module {
     @Override
     public void method15965() {
         Class9567.method37090(0.0);
-        if (mc.field1339.method3433().field18049 > 0.0) {
+        if (mc.player.method3433().field18049 > 0.0) {
             Class5628.method17725(-0.0789);
         }
     }
@@ -43,7 +43,7 @@ public class Class5369 extends Module {
     @EventTarget
     private void method16902(Class4430 var1) {
         if (this.method15996()) {
-            if (var1.method13977() == mc.field1299.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23988 = true;
             }
@@ -53,7 +53,7 @@ public class Class5369 extends Module {
     @EventTarget
     private void method16903(Class4426 var1) {
         if (this.method15996()) {
-            if (var1.method13973() == mc.field1299.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23988 = false;
             }
@@ -79,7 +79,7 @@ public class Class5369 extends Module {
                     var4 -= this.method15977("Speed") / 2.0F;
                 }
 
-                if (mc.field1299.field44636.method8509()) {
+                if (mc.gameSettings.field44636.method8509()) {
                     var4 += this.method15977("Speed") / 2.0F;
                 }
 
@@ -121,8 +121,8 @@ public class Class5369 extends Module {
                 }
 
                 this.field23987 = var5.field24298;
-                var5.field24300 = mc.field1339.field5031;
-                var5.field24301 = mc.field1339.field5032;
+                var5.field24300 = mc.player.field5031;
+                var5.field24301 = mc.player.field5032;
             }
         }
     }
@@ -144,10 +144,10 @@ public class Class5369 extends Module {
     public void method16908(Class4422 var1) {
         if (this.method15996()) {
             double var4 = this.field23987;
-            mc.field1339.field5028.field18049 = var4;
-            mc.field1339.field5049 = var4;
-            mc.field1339.field4915 = var4;
-            mc.field1339.field5026 = var4;
+            mc.player.field5028.field18049 = var4;
+            mc.player.field5049 = var4;
+            mc.player.field4915 = var4;
+            mc.player.field5026 = var4;
         }
     }
 }

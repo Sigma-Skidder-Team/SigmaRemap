@@ -756,7 +756,7 @@ public class Class7992 {
                            Class6988.method21638(var13.field34784, 1.0F);
                            Class7414.method23832();
                            Class7414.method23837(var14, var14, var14);
-                           float var15 = var13.field34785 * (float)(Util.method38487() % 3000L) / 3000.0F / 8.0F;
+                           float var15 = var13.field34785 * (float)(Util.milliTime() % 3000L) / 3000.0F / 8.0F;
                            Class7414.method23839(var15, 0.0F, 0.0F);
                            Class7414.method23836(var13.field34786, 0.0F, 0.0F, 1.0F);
                            Class7414.method23833();
@@ -833,7 +833,7 @@ public class Class7992 {
                            Class7414.method23836(var20.field34786, 0.0F, 0.0F, 1.0F);
                            float var22 = var21 / 8.0F;
                            Class7414.method23837(var22, var22 / 2.0F, var22);
-                           float var23 = var20.field34785 * (float)(Util.method38487() % 3000L) / 3000.0F / 8.0F;
+                           float var23 = var20.field34785 * (float)(Util.milliTime() % 3000L) / 3000.0F / 8.0F;
                            Class7414.method23839(0.0F, var23, 0.0F);
                            Class7414.method23830(5888);
                         }

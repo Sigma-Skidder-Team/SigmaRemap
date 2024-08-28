@@ -311,11 +311,11 @@ public class Class9653 {
          && Objects.equals(var0.method32142(), var1.method32142());
    }
 
-   private static int method37665(Collection<Class878> var0, List<ItemStack> var1, Class7946 var2) throws CommandSyntaxException {
+   private static int method37665(Collection<ServerPlayerEntity> var0, List<ItemStack> var1, Class7946 var2) throws CommandSyntaxException {
       ArrayList var5 = Lists.newArrayListWithCapacity(var1.size());
 
       for (ItemStack var7 : var1) {
-         for (Class878 var9 : var0) {
+         for (ServerPlayerEntity var9 : var0) {
             if (var9.field4902.method4045(var7.copy())) {
                var5.add(var7);
             }
@@ -339,10 +339,10 @@ public class Class9653 {
       ArrayList var7 = Lists.newArrayListWithCapacity(var3.size());
 
       for (Entity var9 : var0) {
-         if (!(var9 instanceof Class878)) {
+         if (!(var9 instanceof ServerPlayerEntity)) {
             method37666(var9, var3, var1, var2, var7);
          } else {
-            Class878 var10 = (Class878)var9;
+            ServerPlayerEntity var10 = (ServerPlayerEntity)var9;
             var10.field4904.method18130();
             method37666(var9, var3, var1, var2, var7);
             var10.field4904.method18130();

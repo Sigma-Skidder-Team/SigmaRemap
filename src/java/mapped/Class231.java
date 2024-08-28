@@ -9,9 +9,9 @@ public abstract class Class231<T extends Class880, M extends Class2894<T>> exten
 
    public abstract int method835(T var1);
 
-   public abstract void method836(Class9332 var1, Class7733 var2, int var3, Entity var4, float var5, float var6, float var7, float var8);
+   public abstract void method836(MatrixStack var1, Class7733 var2, int var3, Entity var4, float var5, float var6, float var7, float var8);
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       int var13 = this.method835((T)var4);
       Random var14 = new Random((long)var4.method3205());
       if (var13 > 0) {

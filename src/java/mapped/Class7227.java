@@ -13,7 +13,7 @@ public class Class7227 implements Class7226, Class7222 {
    public Class7227() {
       Minecraft var3 = Minecraft.getInstance();
 
-      for (Class8218 var5 : var3.field1338.method6805().method20997()) {
+      for (Class8218 var5 : var3.world.method6805().method20997()) {
          this.field31066.add(new Class7224(this, var5));
       }
    }
@@ -39,7 +39,7 @@ public class Class7227 implements Class7226, Class7222 {
    }
 
    @Override
-   public void method22699(Class9332 var1, float var2, int var3) {
+   public void method22699(MatrixStack var1, float var2, int var3) {
       Minecraft.getInstance().getTextureManager().bindTexture(Class1195.field6470);
       Class1193.method5699(var1, 0, 0, 16.0F, 0.0F, 16, 16, 256, 256);
    }

@@ -64,7 +64,7 @@ public class Class7019 implements Class7016 {
    }
 
    private boolean method21750(ServerWorld var1) {
-      Class878 var4 = var1.method6915();
+      ServerPlayerEntity var4 = var1.method6915();
       if (var4 != null) {
          if (this.field30322.nextInt(10) != 0) {
             return false;

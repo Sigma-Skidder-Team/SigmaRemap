@@ -129,7 +129,7 @@ public class Class6609 implements Class6608 {
    }
 
    @Override
-   public boolean method20045() {
+   public boolean isHardcore() {
       return this.field29061.method20045();
    }
 
@@ -172,7 +172,7 @@ public class Class6609 implements Class6608 {
    }
 
    @Override
-   public Class8559<Class314> method20074() {
+   public Class8559<MinecraftServer> method20074() {
       return this.field29062.method20074();
    }
 

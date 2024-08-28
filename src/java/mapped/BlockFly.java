@@ -105,14 +105,14 @@ public class BlockFly extends Class5325 {
         try {
             for (int var3 = 36; var3 < 45; var3++) {
                 int var4 = var3 - 36;
-                if (mc.field1339.field4904.method18131(var3).method18266()
-                        && method16733(mc.field1339.field4904.method18131(var3).method18265().method32107())
-                        && mc.field1339.field4904.method18131(var3).method18265().field39976 != 0) {
-                    if (mc.field1339.field4902.field5443 == var4) {
+                if (mc.player.field4904.method18131(var3).method18266()
+                        && method16733(mc.player.field4904.method18131(var3).method18265().method32107())
+                        && mc.player.field4904.method18131(var3).method18265().field39976 != 0) {
+                    if (mc.player.field4902.field5443 == var4) {
                         return;
                     }
 
-                    mc.field1339.field4902.field5443 = var4;
+                    mc.player.field4902.field5443 = var4;
                     if (this.getStringSettingValueByName("ItemSpoof").equals("LiteSpoof") && (this.field23884 < 0 || this.field23884 != var4)) {
                         mc.getClientPlayNetHandler().method15589().method30693(new Class5539(var4));
                         this.field23884 = var4;
@@ -128,8 +128,8 @@ public class BlockFly extends Class5325 {
         int var3 = 0;
 
         for (int var4 = 0; var4 < 45; var4++) {
-            if (mc.field1339.field4904.method18131(var4).method18266()) {
-                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
+            if (mc.player.field4904.method18131(var4).method18266()) {
+                ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
                 Class3257 var6 = var5.method32107();
                 if (method16733(var6)) {
                     var3 += var5.field39976;
@@ -142,15 +142,15 @@ public class BlockFly extends Class5325 {
 
     public void method16736() {
         String var3 = this.getStringSettingValueByName("Picking mode");
-        if ((!var3.equals("OpenInv") || mc.field1355 instanceof Class859) && this.method16735() != 0) {
+        if ((!var3.equals("OpenInv") || mc.currentScreen instanceof Class859) && this.method16735() != 0) {
             int var4 = 43;
             if (!this.method15974("Intelligent Block Picker")) {
                 if (!this.method16738()) {
                     int var5 = -1;
 
                     for (int var6 = 9; var6 < 36; var6++) {
-                        if (mc.field1339.field4904.method18131(var6).method18266()) {
-                            Class3257 var7 = mc.field1339.field4904.method18131(var6).method18265().method32107();
+                        if (mc.player.field4904.method18131(var6).method18266()) {
+                            Class3257 var7 = mc.player.field4904.method18131(var6).method18265().method32107();
                             if (method16733(var7)) {
                                 var5 = var6;
                                 break;
@@ -159,19 +159,19 @@ public class BlockFly extends Class5325 {
                     }
 
                     for (int var9 = 36; var9 < 45; var9++) {
-                        if (!mc.field1339.field4904.method18131(var9).method18266()) {
+                        if (!mc.player.field4904.method18131(var9).method18266()) {
                             var4 = var9;
                             break;
                         }
                     }
 
                     if (var5 >= 0) {
-                        if (!(mc.field1355 instanceof Class859) && var3.equals("FakeInv")) {
+                        if (!(mc.currentScreen instanceof Class859) && var3.equals("FakeInv")) {
                             mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                         }
 
                         this.method16740(var5, var4 - 36);
-                        if (!(mc.field1355 instanceof Class859) && var3.equals("FakeInv")) {
+                        if (!(mc.currentScreen instanceof Class859) && var3.equals("FakeInv")) {
                             mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
                         }
                     }
@@ -180,19 +180,19 @@ public class BlockFly extends Class5325 {
                 int var8 = this.method16737();
                 if (!this.method16738()) {
                     for (int var11 = 36; var11 < 45; var11++) {
-                        if (!mc.field1339.field4904.method18131(var11).method18266()) {
+                        if (!mc.player.field4904.method18131(var11).method18266()) {
                             var4 = var11;
                             break;
                         }
                     }
                 } else {
                     for (int var10 = 36; var10 < 45; var10++) {
-                        if (mc.field1339.field4904.method18131(var10).method18266()) {
-                            Class3257 var12 = mc.field1339.field4904.method18131(var10).method18265().method32107();
+                        if (mc.player.field4904.method18131(var10).method18266()) {
+                            Class3257 var12 = mc.player.field4904.method18131(var10).method18265().method32107();
                             if (method16733(var12)) {
                                 var4 = var10;
-                                if (mc.field1339.field4904.method18131(var10).method18265().field39976
-                                        == mc.field1339.field4904.method18131(var8).method18265().field39976) {
+                                if (mc.player.field4904.method18131(var10).method18265().field39976
+                                        == mc.player.field4904.method18131(var8).method18265().field39976) {
                                     var4 = -1;
                                 }
                                 break;
@@ -201,13 +201,13 @@ public class BlockFly extends Class5325 {
                     }
                 }
 
-                if (var4 >= 0 && mc.field1339.field4904.method18131(var4).field25579 != var8) {
-                    if (!(mc.field1355 instanceof Class859) && var3.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
+                if (var4 >= 0 && mc.player.field4904.method18131(var4).field25579 != var8) {
+                    if (!(mc.currentScreen instanceof Class859) && var3.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
                         mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
                     this.method16740(var8, var4 - 36);
-                    if (!(mc.field1355 instanceof Class859) && var3.equals("FakeInv")) {
+                    if (!(mc.currentScreen instanceof Class859) && var3.equals("FakeInv")) {
                         mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
                     }
                 }
@@ -220,9 +220,9 @@ public class BlockFly extends Class5325 {
         int var4 = 0;
         if (this.method16735() != 0) {
             for (int var5 = 9; var5 < 45; var5++) {
-                if (mc.field1339.field4904.method18131(var5).method18266()) {
-                    Class3257 var6 = mc.field1339.field4904.method18131(var5).method18265().method32107();
-                    ItemStack var7 = mc.field1339.field4904.method18131(var5).method18265();
+                if (mc.player.field4904.method18131(var5).method18266()) {
+                    Class3257 var6 = mc.player.field4904.method18131(var5).method18265().method32107();
+                    ItemStack var7 = mc.player.field4904.method18131(var5).method18265();
                     if (method16733(var6) && var7.field39976 > var4) {
                         var4 = var7.field39976;
                         var3 = var5;
@@ -238,8 +238,8 @@ public class BlockFly extends Class5325 {
 
     public boolean method16738() {
         for (int var3 = 36; var3 < 45; var3++) {
-            if (mc.field1339.field4904.method18131(var3).method18266()) {
-                Class3257 var4 = mc.field1339.field4904.method18131(var3).method18265().method32107();
+            if (mc.player.field4904.method18131(var3).method18266()) {
+                Class3257 var4 = mc.player.field4904.method18131(var3).method18265().method32107();
                 if (method16733(var4)) {
                     return true;
                 }
@@ -252,19 +252,19 @@ public class BlockFly extends Class5325 {
     public boolean method16739(Hand var1) {
         if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
             return this.method16735() != 0;
-        } else return method16733(mc.field1339.getHeldItem(var1).method32107());
+        } else return method16733(mc.player.getHeldItem(var1).method32107());
     }
 
     public void method16740(int var1, int var2) {
-        mc.field1337.method23144(mc.field1339.field4904.field25471, var1, var2, Class2259.field14696, mc.field1339);
+        mc.field1337.method23144(mc.player.field4904.field25471, var1, var2, Class2259.field14696, mc.player);
     }
 
     public void method16741(Class4435 var1) {
-        if (mc.field1284.field40360 == 0.8038576F) {
-            mc.field1284.field40360 = 1.0F;
+        if (mc.timer.field40360 == 0.8038576F) {
+            mc.timer.field40360 = 1.0F;
         }
 
-        if (this.method16735() != 0 && (!mc.field1339.field5038 || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
+        if (this.method16735() != 0 && (!mc.player.field5038 || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
             if (!Class5628.method17686() || this.method15974("Tower while moving")) {
                 String var4 = this.getStringSettingValueByName("Tower Mode");
                 switch (var4) {
@@ -272,19 +272,19 @@ public class BlockFly extends Class5325 {
                         if (var1.method13994() > 0.0) {
                             if (Class9567.method37079() == 0) {
                                 if (var1.method13994() > 0.247 && var1.method13994() < 0.249) {
-                                    var1.method13995((double) ((int) (mc.field1339.getPosY() + var1.method13994())) - mc.field1339.getPosY());
+                                    var1.method13995((double) ((int) (mc.player.getPosY() + var1.method13994())) - mc.player.getPosY());
                                 }
                             } else {
-                                double var6 = (int) (mc.field1339.getPosY() + var1.method13994());
-                                if (var6 != (double) ((int) mc.field1339.getPosY()) && mc.field1339.getPosY() + var1.method13994() - var6 < 0.15) {
-                                    var1.method13995(var6 - mc.field1339.getPosY());
+                                double var6 = (int) (mc.player.getPosY() + var1.method13994());
+                                if (var6 != (double) ((int) mc.player.getPosY()) && mc.player.getPosY() + var1.method13994() - var6 < 0.15) {
+                                    var1.method13995(var6 - mc.player.getPosY());
                                 }
                             }
                         }
 
-                        if (mc.field1339.getPosY() == (double) ((int) mc.field1339.getPosY())
-                                && Class5628.method17730(mc.field1339, 0.001F)) {
-                            if (mc.field1299.field44636.field13071) {
+                        if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
+                                && Class5628.method17730(mc.player, 0.001F)) {
+                            if (mc.gameSettings.field44636.field13071) {
                                 if (!Class5628.method17686()) {
                                     Class9567.method37090(0.0);
                                     Class9567.method37088(var1, 0.0);
@@ -298,41 +298,41 @@ public class BlockFly extends Class5325 {
                         break;
                     case "AAC":
                         if (var1.method13994() > 0.247 && var1.method13994() < 0.249) {
-                            var1.method13995((double) ((int) (mc.field1339.getPosY() + var1.method13994())) - mc.field1339.getPosY());
-                            if (mc.field1299.field44636.field13071 && !Class5628.method17686()) {
+                            var1.method13995((double) ((int) (mc.player.getPosY() + var1.method13994())) - mc.player.getPosY());
+                            if (mc.gameSettings.field44636.field13071 && !Class5628.method17686()) {
                                 Class9567.method37090(0.0);
                                 Class9567.method37088(var1, 0.0);
                             }
-                        } else if (mc.field1339.getPosY() == (double) ((int) mc.field1339.getPosY())
-                                && Class5628.method17730(mc.field1339, 0.001F)) {
+                        } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
+                                && Class5628.method17730(mc.player, 0.001F)) {
                             var1.method13995(-1.0E-10);
                         }
                         break;
                     case "Vanilla":
-                        if (mc.field1299.field44636.field13071
-                                && Class5628.method17730(mc.field1339, 0.001F)
-                                && mc.field1338.method7055(mc.field1339, mc.field1339.field5035.method19667(0.0, 1.0, 0.0)).count() == 0L) {
-                            mc.field1339
-                                    .method3215(mc.field1339.getPosX(), mc.field1339.getPosY() + 1.0, mc.field1339.getPosZ());
+                        if (mc.gameSettings.field44636.field13071
+                                && Class5628.method17730(mc.player, 0.001F)
+                                && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 1.0, 0.0)).count() == 0L) {
+                            mc.player
+                                    .method3215(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
                             var1.method13995(0.0);
                             Class9567.method37088(var1, 0.0);
-                            mc.field1284.field40360 = 0.8038576F;
+                            mc.timer.field40360 = 0.8038576F;
                         }
                 }
             }
         } else if (!this.getStringSettingValueByName("Tower Mode").equals("AAC")
-                || !Class5628.method17730(mc.field1339, 0.001F)
-                || !mc.field1299.field44636.field13071) {
+                || !Class5628.method17730(mc.player, 0.001F)
+                || !mc.gameSettings.field44636.field13071) {
             if (!this.getStringSettingValueByName("Tower Mode").equals("NCP")
                     && !this.getStringSettingValueByName("Tower Mode").equals("Vanilla")
-                    && Class5628.method17730(mc.field1339, 0.001F)
-                    && mc.field1299.field44636.field13071) {
-                mc.field1339.field4999 = 20;
+                    && Class5628.method17730(mc.player, 0.001F)
+                    && mc.gameSettings.field44636.field13071) {
+                mc.player.field4999 = 20;
                 var1.method13995(Class9567.method37080());
             }
         } else if (!Class5628.method17686() || this.method15974("Tower while moving")) {
-            mc.field1339.field4999 = 0;
-            mc.field1339.method2914();
+            mc.player.field4999 = 0;
+            mc.player.method2914();
             Class9567.method37088(var1, Class9567.method37075());
             Class9567.method37090(Class9567.method37075());
         }
@@ -369,14 +369,14 @@ public class BlockFly extends Class5325 {
             if (this.method15974("Show Block Amount")) {
                 if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                     this.method16744(
-                            mc.field1283.method8043() / 2,
-                            mc.field1283.method8044() / 2 + 15 - (int) (10.0F * this.field23885.calcPercent()),
+                            mc.mainWindow.method8043() / 2,
+                            mc.mainWindow.method8044() / 2 + 15 - (int) (10.0F * this.field23885.calcPercent()),
                             this.field23885.calcPercent()
                     );
                 } else {
                     this.method16745(
-                            mc.field1283.method8043() / 2,
-                            mc.field1283.method8044() - 138 - (int) (25.0F * Class8056.method27664(this.field23885.calcPercent(), 0.0F, 1.0F, 1.0F)),
+                            mc.mainWindow.method8043() / 2,
+                            mc.mainWindow.method8044() - 138 - (int) (25.0F * Class8056.method27664(this.field23885.calcPercent(), 0.0F, 1.0F, 1.0F)),
                             this.field23885.calcPercent()
                     );
                 }

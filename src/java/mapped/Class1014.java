@@ -7,7 +7,7 @@ public abstract class Class1014 extends Class1013 {
       super(var1, var2);
    }
 
-   public boolean method4404(Class878 var1) {
+   public boolean method4404(ServerPlayerEntity var1) {
       Class39 var4 = new Class39();
       var4.method109("id", this.method3297());
       this.method3294(var4);

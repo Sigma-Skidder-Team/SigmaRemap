@@ -17,6 +17,6 @@ public class Class3680<E extends Class1034> extends Class3676<E> {
 
    private boolean method12515(E var1) {
       Class880 var4 = var1.method2992().<Class880>method21410(Class8830.field39826).get();
-      return var4.method3204() == Class8992.field41037 && var4.method3044();
+      return var4.method3204() == Class8992.field41037 && var4.getShouldBeDead();
    }
 }

@@ -51,8 +51,8 @@ public class Class1262 extends Class1193 {
       this.field6670 = null;
    }
 
-   public void method5878(Class9332 var1) {
-      this.field6665.method1574().method22503("debug");
+   public void method5878(MatrixStack var1) {
+      this.field6665.method1574().startSection("debug");
       RenderSystem.pushMatrix();
       Entity var4 = this.field6665.method1550();
       this.field6667 = var4.method3289(20.0, 0.0F, false);
@@ -60,8 +60,8 @@ public class Class1262 extends Class1193 {
       this.method5879(var1);
       this.method5880(var1);
       RenderSystem.popMatrix();
-      if (this.field6665.field1299.field44666) {
-         int var5 = this.field6665.method1580().method8045();
+      if (this.field6665.gameSettings.field44666) {
+         int var5 = this.field6665.method1580().getScaledWidth();
          this.method5890(var1, this.field6665.method1558(), 0, var5 / 2, true);
          Class1644 var6 = this.field6665.method1531();
          if (var6 != null) {
@@ -69,10 +69,10 @@ public class Class1262 extends Class1193 {
          }
       }
 
-      this.field6665.method1574().method22505();
+      this.field6665.method1574().endSection();
    }
 
-   public void method5879(Class9332 var1) {
+   public void method5879(MatrixStack var1) {
       List var4 = this.field6673;
       if (var4 == null || System.currentTimeMillis() > this.field6675) {
          var4 = this.method5881();
@@ -80,10 +80,10 @@ public class Class1262 extends Class1193 {
          boolean var5 = this.field6665.method1531() != null;
          var4.add(
             "Debug: Pie [shift]: "
-               + (!this.field6665.field1299.field44665 ? "hidden" : "visible")
+               + (!this.field6665.gameSettings.field44665 ? "hidden" : "visible")
                + (!var5 ? " FPS" : " FPS + TPS")
                + " [alt]: "
-               + (!this.field6665.field1299.field44666 ? "hidden" : "visible")
+               + (!this.field6665.gameSettings.field44666 ? "hidden" : "visible")
          );
          var4.add("For help: press F3 + Q");
          this.field6673 = var4;
@@ -109,7 +109,7 @@ public class Class1262 extends Class1193 {
       this.field6666.method38808(var4, var13, 14737632, var1.method35296().method32361(), false, this.field6666.method38829());
    }
 
-   public void method5880(Class9332 var1) {
+   public void method5880(MatrixStack var1) {
       List var4 = this.field6674;
       if (var4 == null || System.currentTimeMillis() > this.field6676) {
          var4 = this.method5888();
@@ -125,7 +125,7 @@ public class Class1262 extends Class1193 {
          if (!Strings.isNullOrEmpty(var8)) {
             byte var9 = 9;
             int var10 = this.field6666.method38820(var8);
-            int var11 = this.field6665.method1580().method8045() - 2 - var10;
+            int var11 = this.field6665.method1580().getScaledWidth() - 2 - var10;
             int var12 = 2 + var9 * var7;
             var6[var7] = new Class7717(var11 - 1, var12 - 1, var11 + var10 + 1, var12 + var9 - 1);
             var5[var7] = new Class9718(var11, var12);
@@ -205,14 +205,14 @@ public class Class1262 extends Class1193 {
 
    public List<String> method5882() {
       Class1644 var3 = this.field6665.method1531();
-      Class8586 var4 = this.field6665.getClientPlayNetHandler().method15589();
+      NetworkManager var4 = this.field6665.getClientPlayNetHandler().method15589();
       float var5 = var4.method30715();
       float var6 = var4.method30714();
       String var7;
       if (var3 != null) {
          var7 = String.format("Integrated server @ %.0f ms ticks, %.0f tx, %.0f rx", var3.method1417(), var5, var6);
       } else {
-         var7 = String.format("\"%s\" server, %.0f tx, %.0f rx", this.field6665.field1339.method5395(), var5, var6);
+         var7 = String.format("\"%s\" server, %.0f tx, %.0f rx", this.field6665.player.method5395(), var5, var6);
       }
 
       BlockPos var8 = this.field6665.method1550().method3432();
@@ -227,10 +227,10 @@ public class Class1262 extends Class1193 {
                "Minecraft " + var9 + " (" + this.field6665.method1465() + "/" + Class8948.method32694() + ")",
                this.field6665.field1363,
                var7,
-               this.field6665.field1287.method871(),
-               this.field6665.field1287.method873(),
-               "P: " + this.field6665.field1291.method1208() + ". T: " + this.field6665.field1338.method6844(),
-               this.field6665.field1338.method6758(),
+               this.field6665.worldRenderer.method871(),
+               this.field6665.worldRenderer.method873(),
+               "P: " + this.field6665.particles.method1208() + ". T: " + this.field6665.world.method6844(),
+               this.field6665.world.method6758(),
                "",
                String.format("Chunk-relative: %d %d %d", var8.method8304() & 15, var8.getY() & 15, var8.method8306() & 15)
             }
@@ -276,10 +276,10 @@ public class Class1262 extends Class1193 {
                   + ")",
                this.field6665.field1363,
                var7,
-               this.field6665.field1287.method871(),
-               this.field6665.field1287.method873(),
-               "P: " + this.field6665.field1291.method1208() + ". T: " + this.field6665.field1338.method6844(),
-               this.field6665.field1338.method6758()
+               this.field6665.worldRenderer.method871(),
+               this.field6665.worldRenderer.method873(),
+               "P: " + this.field6665.particles.method1208() + ". T: " + this.field6665.world.method6844(),
+               this.field6665.world.method6758()
             }
          );
          String var17 = this.method5884();
@@ -287,7 +287,7 @@ public class Class1262 extends Class1193 {
             var16.add(var17);
          }
 
-         var16.add(this.field6665.field1338.method6813().method31399() + " FC: " + var15.size());
+         var16.add(this.field6665.world.method6813().method31399() + " FC: " + var15.size());
          var16.add("");
          var16.add(
             String.format(
@@ -315,15 +315,15 @@ public class Class1262 extends Class1193 {
                Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, MathHelper.method37792(var10.field5031), MathHelper.method37792(var10.field5032)
             )
          );
-         if (this.field6665.field1338 != null) {
-            if (this.field6665.field1338.method7017(var8)) {
+         if (this.field6665.world != null) {
+            if (this.field6665.world.method7017(var8)) {
                Class1674 var18 = this.method5887();
                if (var18.method7141()) {
                   var16.add("Waiting for chunk...");
                } else {
-                  int var19 = this.field6665.field1338.method6883().method7348().method640(var8, 0);
-                  int var20 = this.field6665.field1338.method7020(Class1977.field12881, var8);
-                  int var21 = this.field6665.field1338.method7020(Class1977.field12882, var8);
+                  int var19 = this.field6665.world.method6883().method7348().method640(var8, 0);
+                  int var20 = this.field6665.world.method7020(Class1977.field12881, var8);
+                  int var21 = this.field6665.world.method7020(Class1977.field12882, var8);
                   var16.add("Client Light: " + var19 + " (" + var20 + " sky, " + var21 + " block)");
                   Class1674 var22 = this.method5886();
                   if (var22 != null) {
@@ -367,10 +367,10 @@ public class Class1262 extends Class1193 {
                      var16.add(
                         "Biome: "
                            + this.field6665
-                              .field1338
+                              .world
                               .method6867()
                               .<Class8907>method32453(Class2348.field16106)
-                              .method9181(this.field6665.field1338.method7003(var8))
+                              .method9181(this.field6665.world.method7003(var8))
                      );
                      long var28 = 0L;
                      float var39 = 0.0F;
@@ -386,7 +386,7 @@ public class Class1262 extends Class1193 {
                            "Local Difficulty: %.2f // %.2f (Day %d)",
                            var41.method38328(),
                            var41.method38330(),
-                           this.field6665.field1338.method6784() / 24000L
+                           this.field6665.world.method6784() / 24000L
                         )
                      );
                   }
@@ -417,12 +417,12 @@ public class Class1262 extends Class1193 {
             }
          }
 
-         Class1647 var32 = this.field6665.field1295.method739();
+         Class1647 var32 = this.field6665.gameRenderer.method739();
          if (var32 != null) {
             var16.add("Shader: " + var32.method6527());
          }
 
-         var16.add(this.field6665.method1546().method1014() + String.format(" (Mood %d%%)", Math.round(this.field6665.field1339.method5387() * 100.0F)));
+         var16.add(this.field6665.method1546().method1014() + String.format(" (Mood %d%%)", Math.round(this.field6665.player.method5387() * 100.0F)));
          return var16;
       }
    }
@@ -430,7 +430,7 @@ public class Class1262 extends Class1193 {
    @Nullable
    private ServerWorld method5883() {
       Class1644 var3 = this.field6665.method1531();
-      return var3 == null ? null : var3.method1318(this.field6665.field1338.method6813());
+      return var3 == null ? null : var3.method1318(this.field6665.world.method6813());
    }
 
    @Nullable
@@ -442,8 +442,8 @@ public class Class1262 extends Class1193 {
    private World method5885() {
       return (World)DataFixUtils.orElse(
          Optional.<Class1644>ofNullable(this.field6665.method1531())
-            .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.field6665.field1338.method6813()))),
-         this.field6665.field1338
+            .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.field6665.world.method6813()))),
+         this.field6665.world
       );
    }
 
@@ -467,7 +467,7 @@ public class Class1262 extends Class1193 {
 
    private Class1674 method5887() {
       if (this.field6670 == null) {
-         this.field6670 = this.field6665.field1338.method6824(this.field6669.field32174, this.field6669.field32175);
+         this.field6670 = this.field6665.world.method6824(this.field6669.field32174, this.field6669.field32175);
       }
 
       return this.field6670;
@@ -487,7 +487,7 @@ public class Class1262 extends Class1193 {
             String.format("CPU: %s", Class9036.method33486()),
             "",
             String.format(
-               "Display: %dx%d (%s)", Minecraft.getInstance().method1580().method8041(), Minecraft.getInstance().method1580().method8042(), Class9036.method33485()
+               "Display: %dx%d (%s)", Minecraft.getInstance().method1580().getFramebufferWidth(), Minecraft.getInstance().method1580().getFramebufferHeight(), Class9036.method33485()
             ),
             Class9036.method33487(),
             Class9036.method33488()
@@ -514,7 +514,7 @@ public class Class1262 extends Class1193 {
       } else {
          if (this.field6667.method31417() == Class2100.field13690) {
             BlockPos var24 = ((Class8711)this.field6667).method31423();
-            Class7380 var27 = this.field6665.field1338.method6738(var24);
+            Class7380 var27 = this.field6665.world.method6738(var24);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.method8304() + ", " + var24.getY() + ", " + var24.method8306());
             var11.add(String.valueOf(Class2348.field16072.method9181(var27.method23383())));
@@ -539,7 +539,7 @@ public class Class1262 extends Class1193 {
 
          if (this.field6668.method31417() == Class2100.field13690) {
             BlockPos var25 = ((Class8711)this.field6668).method31423();
-            Class7379 var28 = this.field6665.field1338.method6739(var25);
+            Class7379 var28 = this.field6665.world.method6739(var25);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.method8304() + ", " + var25.getY() + ", " + var25.method8306());
             var11.add(String.valueOf(Class2348.field16070.method9181(var28.method23472())));
@@ -592,11 +592,11 @@ public class Class1262 extends Class1193 {
       return var4.method30472() + ": " + var6;
    }
 
-   private void method5890(Class9332 var1, Class9789 var2, int var3, int var4, boolean var5) {
+   private void method5890(MatrixStack var1, Class9789 var2, int var3, int var4, boolean var5) {
       if (!var5) {
          int var8 = (int)(512.0 / this.field6665.method1580().method8049());
          var3 = Math.max(var3, var8);
-         var4 = this.field6665.method1580().method8045() - var3;
+         var4 = this.field6665.method1580().getScaledWidth() - var3;
          RenderSystem.disableDepthTest();
          int var9 = var2.method38594();
          int var10 = var2.method38595();
@@ -616,7 +616,7 @@ public class Class1262 extends Class1193 {
             var16 += (long)var21;
          }
 
-         int var32 = this.field6665.method1580().method8046();
+         int var32 = this.field6665.method1580().getScaledHeight();
          method5686(var1, var3, var32 - 60, var3 + var14, var32, -1873784752);
          Class5425 var33 = Class9352.method35409().method35411();
          RenderSystem.enableBlend();
@@ -641,7 +641,7 @@ public class Class1262 extends Class1193 {
 
          var33.method17065();
          Class4395.method13895(var33);
-         RenderSystem.method27861();
+         RenderSystem.enableTexture();
          RenderSystem.disableBlend();
          if (!var5) {
             method5686(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
@@ -659,8 +659,8 @@ public class Class1262 extends Class1193 {
          this.method5684(var1, var3, var3 + var14 - 1, var32 - 1, -1);
          this.method5685(var1, var3, var32 - 60, var32, -1);
          this.method5685(var1, var3 + var14 - 1, var32 - 60, var32, -1);
-         if (var5 && this.field6665.field1299.field44576 > 0 && this.field6665.field1299.field44576 <= 250) {
-            this.method5684(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.field6665.field1299.field44576), -16711681);
+         if (var5 && this.field6665.gameSettings.field44576 > 0 && this.field6665.gameSettings.field44576 <= 250) {
+            this.method5684(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.field6665.gameSettings.field44576), -16711681);
          }
 
          String var34 = var18 + " ms min";

@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.function.BooleanSupplier;
 
-public class Class2008 extends Class2007 {
+public class Class2008 extends KeyBinding {
    private static String[] field13073;
    private final BooleanSupplier field13074;
 

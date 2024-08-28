@@ -50,11 +50,11 @@ public class Class8019 {
    private final Set<Class7952> field34452 = Sets.newLinkedHashSet();
    private final Set<Class7952> field34453 = Sets.newLinkedHashSet();
    private final Set<Class7952> field34454 = Sets.newLinkedHashSet();
-   private Class878 field34455;
+   private ServerPlayerEntity field34455;
    private Class7952 field34456;
    private boolean field34457 = true;
 
-   public Class8019(DataFixer var1, Class6395 var2, Class285 var3, File var4, Class878 var5) {
+   public Class8019(DataFixer var1, Class6395 var2, Class285 var3, File var4, ServerPlayerEntity var5) {
       this.field34448 = var1;
       this.field34449 = var2;
       this.field34450 = var4;
@@ -62,7 +62,7 @@ public class Class8019 {
       this.method27408(var3);
    }
 
-   public void method27402(Class878 var1) {
+   public void method27402(ServerPlayerEntity var1) {
       this.field34455 = var1;
    }
 
@@ -216,7 +216,7 @@ public class Class8019 {
                         "chat.type.advancement." + var1.method27027().method34938().method8241(), this.field34455.getDisplayName(), var1.method27035()
                      ),
                      ChatType.SYSTEM,
-                     Util.field45724
+                     Util.DUMMY_UUID
                   );
             }
          }
@@ -280,7 +280,7 @@ public class Class8019 {
       }
    }
 
-   public void method27414(Class878 var1) {
+   public void method27414(ServerPlayerEntity var1) {
       if (this.field34457 || !this.field34453.isEmpty() || !this.field34454.isEmpty()) {
          HashMap var4 = Maps.newHashMap();
          LinkedHashSet var5 = Sets.newLinkedHashSet();

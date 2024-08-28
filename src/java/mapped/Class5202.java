@@ -24,16 +24,16 @@ public class Class5202 extends Module {
 
     @EventTarget
     public void method16197(Class4399 var1) {
-        if (this.method15996() && mc.field1339 != null && var1.method13921() && mc.method1528() != null) {
+        if (this.method15996() && mc.player != null && var1.method13921() && mc.method1528() != null) {
             this.field23517++;
             double var4 = -4.503599627370497E15;
             String var6 = this.getStringSettingValueByName("Mode");
             switch (var6) {
                 case "Basic1":
-                    var4 = mc.field1339.getPosY() - 20.0;
+                    var4 = mc.player.getPosY() - 20.0;
                     break;
                 case "Basic2":
-                    var4 = mc.field1339.getPosY() - 1000.0 + Math.random() * 1000.0;
+                    var4 = mc.player.getPosY() - 1000.0 + Math.random() * 1000.0;
                     break;
                 case "MinInfinity":
                     var4 = Double.NEGATIVE_INFINITY;
@@ -52,7 +52,7 @@ public class Class5202 extends Module {
                 this.field23517 = 0;
                 boolean var8 = this.method15974("OnGround");
                 if (this.method15974("More Packets")) {
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(mc.field1339.getPosX(), var4, mc.field1339.getPosX(), var8));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5605(mc.player.getPosX(), var4, mc.player.getPosX(), var8));
                 } else {
                     var1.method13912(var4);
                     var1.method13920(var8);

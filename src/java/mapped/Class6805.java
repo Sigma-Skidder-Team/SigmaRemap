@@ -43,7 +43,7 @@ public class Class6805<T> implements Class6802<T> {
 
          Class1703 var4 = this.field29623.method6883();
          Iterator var5 = this.field29622.iterator();
-         this.field29623.method6820().method22503("cleaning");
+         this.field29623.method6820().startSection("cleaning");
 
          while (var3 > 0 && var5.hasNext()) {
             Class8269 var6 = (Class8269)var5.next();
@@ -59,7 +59,7 @@ public class Class6805<T> implements Class6802<T> {
             }
          }
 
-         this.field29623.method6820().method22506("ticking");
+         this.field29623.method6820().endStartSection("ticking");
 
          Class8269 var11;
          while ((var11 = this.field29624.poll()) != null) {
@@ -78,7 +78,7 @@ public class Class6805<T> implements Class6802<T> {
             }
          }
 
-         this.field29623.method6820().method22505();
+         this.field29623.method6820().endSection();
          this.field29625.clear();
          this.field29624.clear();
       }

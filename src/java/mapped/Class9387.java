@@ -53,7 +53,7 @@ public class Class9387 {
    private static void method35631(Class1014 var0, boolean var1) {
       Object var4 = var0.method4400();
       if (var4 == null) {
-         var4 = Class7944.method26860().field1339;
+         var4 = Class7944.method26860().player;
       }
 
       if (var4 instanceof AbstractClientPlayerEntity) {

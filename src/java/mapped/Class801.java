@@ -36,7 +36,7 @@ public class Class801 extends Class798 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       method5691(var1, this.field4568, this.field4181, this.field4564 / 2, this.field4565 / 2 - this.field4185 / 2 - 18, 11184810);
       this.field4183.method18588(var1, this.field4564 / 2, this.field4565 / 2 - this.field4185 / 2);

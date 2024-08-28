@@ -20,7 +20,7 @@ public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
       this.field923.method22691(nArrayArray2, 0.0f, 0.0f, -10.0f, 0.0f, 16.0f, 20.0f, 0.0f);
    }
 
-   public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.method3005() && !var4.method3342()) {
          Class217 var13 = Minecraft.getInstance().method1553();
          Class7380 var14 = var4.method5037().method8934();

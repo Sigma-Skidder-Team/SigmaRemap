@@ -45,12 +45,12 @@ public class Class1205 extends Class1201 {
    }
 
    @Override
-   public void method5738(Class9332 var1, int var2, int var3) {
+   public void method5738(MatrixStack var1, int var2, int var3) {
       this.field6510.method2459(var1, this.field6509, var2, var3);
    }
 
    @Override
-   public void method5760(Class9332 var1) {
+   public void method5760(MatrixStack var1) {
       Minecraft.getInstance().getTextureManager().bindTexture(this.field6507.method7466().method1100());
       method5695(var1, this.field6477 + 2, this.field6478 + 2, this.method5702(), 18, 18, this.field6507);
    }

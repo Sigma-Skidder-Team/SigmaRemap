@@ -37,7 +37,7 @@ public class Class9235 {
       this.field42510 = var1;
    }
 
-   public void method34739(Class9332 var1, Minecraft var2, int var3, int var4, boolean var5, float var6) {
+   public void method34739(MatrixStack var1, Minecraft var2, int var3, int var4, boolean var5, float var6) {
       if (!Screen.method2475()) {
          this.field42512 += var6;
       }

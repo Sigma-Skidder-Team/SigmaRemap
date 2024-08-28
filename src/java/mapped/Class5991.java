@@ -44,13 +44,13 @@ public interface Class5991 {
       return !var1.isEmpty() ? new Class5993(var1, var0) : field26162;
    }
 
-   int method18588(Class9332 var1, int var2, int var3);
+   int method18588(MatrixStack var1, int var2, int var3);
 
-   int method18589(Class9332 var1, int var2, int var3, int var4, int var5);
+   int method18589(MatrixStack var1, int var2, int var3, int var4, int var5);
 
-   int method18590(Class9332 var1, int var2, int var3, int var4, int var5);
+   int method18590(MatrixStack var1, int var2, int var3, int var4, int var5);
 
-   int method18591(Class9332 var1, int var2, int var3, int var4, int var5);
+   int method18591(MatrixStack var1, int var2, int var3, int var4, int var5);
 
    int method18592();
 }

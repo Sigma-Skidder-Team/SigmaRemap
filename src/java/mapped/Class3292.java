@@ -40,8 +40,8 @@ public class Class3292 extends Class3257 {
                   var10 = this.method11839(var6, var7, var9, var10);
                   this.method11837(var6, var7, var8, var9, var10);
                   var11.method11563(var7, var6, var10, var8, var9);
-                  if (var8 instanceof Class878) {
-                     CriteriaTriggers.field44489.method15138((Class878)var8, var6, var9);
+                  if (var8 instanceof ServerPlayerEntity) {
+                     CriteriaTriggers.field44489.method15138((ServerPlayerEntity)var8, var6, var9);
                   }
                }
 
@@ -122,7 +122,7 @@ public class Class3292 extends Class3257 {
    }
 
    public static boolean method11844(World var0, PlayerEntity var1, BlockPos var2, ItemStack var3) {
-      Class314 var6 = var0.method6715();
+      MinecraftServer var6 = var0.method6715();
       if (var6 == null) {
          return false;
       } else {

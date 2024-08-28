@@ -31,7 +31,7 @@ public class Class1537 implements Runnable {
                     break;
                 }
 
-                if (Minecraft.getInstance().field1338 != null) {
+                if (Minecraft.getInstance().world != null) {
                     boolean var3 = false;
                     boolean var4 = false;
                     if (Client.getInstance().getModuleManager() != null) {

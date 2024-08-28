@@ -8,7 +8,7 @@ public class Class5717 extends Class5715<Class883> {
       super(var1);
    }
 
-   public void method17853(Class883 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(Class883 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       var4.method35291(0.0, 0.15F, 0.0);
       var4.method35293(Class7680.field32900.method25286(MathHelper.method37821(var3, var1.field5033, var1.field5031) - 90.0F));

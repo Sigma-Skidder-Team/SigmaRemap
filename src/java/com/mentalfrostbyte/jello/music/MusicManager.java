@@ -189,15 +189,15 @@ public class MusicManager {
             if (this.field32151 != null) {
                 if (this.field32165.size() != 0) {
                     float var3 = 114.0F;
-                    float var4 = (float) Math.ceil((float) field32143.field1283.method8043() / var3);
+                    float var4 = (float) Math.ceil((float) field32143.mainWindow.method8043() / var3);
 
                     for (int var5 = 0; (float) var5 < var3; var5++) {
                         float var6 = 1.0F - (float) (var5 + 1) / var3;
-                        float var7 = (float) field32143.field1283.method8044() / 1080.0F;
+                        float var7 = (float) field32143.mainWindow.method8044() / 1080.0F;
                         float var8 = ((float) (Math.sqrt(this.field32165.get(var5)) / 12.0) - 5.0F) * var7;
                         Class3192.method11424(
                                 (float) var5 * var4,
-                                (float) field32143.field1283.method8044() - var8,
+                                (float) field32143.mainWindow.method8044() - var8,
                                 var4,
                                 var8,
                                 Class5628.method17688(Class1979.field12899.field12910, 0.2F * var6)
@@ -207,14 +207,14 @@ public class MusicManager {
                     Class3192.method11476();
 
                     for (int var13 = 0; (float) var13 < var3; var13++) {
-                        float var14 = (float) field32143.field1283.method8044() / 1080.0F;
+                        float var14 = (float) field32143.mainWindow.method8044() / 1080.0F;
                         float var15 = ((float) (Math.sqrt(this.field32165.get(var13)) / 12.0) - 5.0F) * var14;
-                        Class3192.method11424((float) var13 * var4, (float) field32143.field1283.method8044() - var15, var4, var15, Class1979.field12896.field12910);
+                        Class3192.method11424((float) var13 * var4, (float) field32143.mainWindow.method8044() - var15, var4, var15, Class1979.field12896.field12910);
                     }
 
                     Class3192.method11477(Class2329.field15940);
                     if (this.field32151 != null && this.field32153 != null) {
-                        Class3192.method11454(0.0F, 0.0F, (float) field32143.field1283.method8043(), (float) field32143.field1283.method8044(), this.field32153, 0.4F);
+                        Class3192.method11454(0.0F, 0.0F, (float) field32143.mainWindow.method8043(), (float) field32143.mainWindow.method8044(), this.field32153, 0.4F);
                     }
 
                     Class3192.method11478();
@@ -227,11 +227,11 @@ public class MusicManager {
 
                     float var18 = 1.0F + (float) Math.round((float) (var9 / (double) (var16 - 1000)) * 0.14F * 75.0F) / 75.0F;
                     GL11.glPushMatrix();
-                    GL11.glTranslated(60.0, field32143.field1283.method8044() - 55, 0.0);
+                    GL11.glTranslated(60.0, field32143.mainWindow.method8044() - 55, 0.0);
                     GL11.glScalef(var18, var18, 0.0F);
-                    GL11.glTranslated(-60.0, -(field32143.field1283.method8044() - 55), 0.0);
-                    Class3192.method11455(10.0F, (float) (field32143.field1283.method8044() - 110), 100.0F, 100.0F, this.field32151);
-                    Class3192.method11463(10.0F, (float) (field32143.field1283.method8044() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
+                    GL11.glTranslated(-60.0, -(field32143.mainWindow.method8044() - 55), 0.0);
+                    Class3192.method11455(10.0F, (float) (field32143.mainWindow.method8044() - 110), 100.0F, 100.0F, this.field32151);
+                    Class3192.method11463(10.0F, (float) (field32143.mainWindow.method8044() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
                     GL11.glPopMatrix();
                     String[] var11 = this.field32150.split(" - ");
                     int var12 = 30;
@@ -239,14 +239,14 @@ public class MusicManager {
                         Class3192.method11439(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
-                                (float) (field32143.field1283.method8044() - 70),
+                                (float) (field32143.mainWindow.method8044() - 70),
                                 var11[0],
                                 Class5628.method17688(Class1979.field12891.field12910, 0.5F)
                         );
                         Class3192.method11439(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
-                                (float) (field32143.field1283.method8044() - 70),
+                                (float) (field32143.mainWindow.method8044() - 70),
                                 var11[0],
                                 Class5628.method17688(Class1979.field12896.field12910, 0.7F)
                         );
@@ -254,28 +254,28 @@ public class MusicManager {
                         Class3192.method11439(
                                 ResourceRegistry.JelloMediumFont20_1,
                                 130.0F,
-                                (float) (field32143.field1283.method8044() - 81),
+                                (float) (field32143.mainWindow.method8044() - 81),
                                 var11[0],
                                 Class5628.method17688(Class1979.field12891.field12910, 0.4F)
                         );
                         Class3192.method11439(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
-                                (float) (field32143.field1283.method8044() - 56),
+                                (float) (field32143.mainWindow.method8044() - 56),
                                 var11[1],
                                 Class5628.method17688(Class1979.field12891.field12910, 0.5F)
                         );
                         Class3192.method11439(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
-                                (float) (field32143.field1283.method8044() - 56),
+                                (float) (field32143.mainWindow.method8044() - 56),
                                 var11[1],
                                 Class5628.method17688(Class1979.field12896.field12910, 0.7F)
                         );
                         Class3192.method11439(
                                 ResourceRegistry.JelloMediumFont20,
                                 130.0F,
-                                (float) (field32143.field1283.method8044() - 81),
+                                (float) (field32143.mainWindow.method8044() - 81),
                                 var11[0],
                                 Class5628.method17688(Class1979.field12896.field12910, 0.6F)
                         );
@@ -690,7 +690,7 @@ public class MusicManager {
                 try {
                     File var4 = new File(Client.getInstance().getFile() + "/music/youtube-dl.exe");
                     CloseableHttpClient var5 = HttpClients.createDefault();
-                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://youtube-dl.org/downloads/latest/youtube-dl.exe"));
+                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://github.com/ytdl-org/youtube-dl/releases/download/2021.12.17/youtube-dl.exe"));
                     Throwable var7 = null;
 
                     try {
@@ -723,7 +723,7 @@ public class MusicManager {
                 try {
                     File var100 = new File(Client.getInstance().getFile() + "/music/youtube-dl");
                     CloseableHttpClient var101 = HttpClients.createDefault();
-                    CloseableHttpResponse var102 = var101.execute(new HttpGet("http://youtube-dl.org/downloads/latest/youtube-dl"));
+                    CloseableHttpResponse var102 = var101.execute(new HttpGet("https://github.com/ytdl-org/youtube-dl/releases/download/2021.12.17/youtube-dl"));
                     Throwable var103 = null;
 
                     try {

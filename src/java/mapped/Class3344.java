@@ -45,7 +45,7 @@ public class Class3344 extends Class3343 {
                var13.field4965 = var8.method33879().method544() != Class113.field413 ? 90.0F : 0.0F;
                var13.method5003();
 
-               for (Class878 var12 : var0.<Class878>method7182(Class878.class, var13.method3389().method19664(50.0))) {
+               for (ServerPlayerEntity var12 : var0.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var13.method3389().method19664(50.0))) {
                   CriteriaTriggers.field44478.method15080(var12, var13);
                }
 

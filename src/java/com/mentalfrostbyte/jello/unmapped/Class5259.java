@@ -22,14 +22,14 @@ public class Class5259 extends PremiumModule {
     @Override
     public void isInDevelopment() {
         this.field23651 = false;
-        if (!mc.field1339.field5037) {
+        if (!mc.player.field5037) {
             this.field23652 = -1;
         } else {
             this.field23652 = 0;
-            if (mc.field1339.field5036) {
-                double var3 = mc.field1339.getPosX();
-                double var5 = mc.field1339.getPosY();
-                double var7 = mc.field1339.getPosZ();
+            if (mc.player.field5036) {
+                double var3 = mc.player.getPosX();
+                double var5 = mc.player.getPosY();
+                double var7 = mc.player.getPosZ();
                 mc.getClientPlayNetHandler().sendPacket(new Class5605(var3, var5 + 0.0626, var7, false));
             }
         }
@@ -38,19 +38,19 @@ public class Class5259 extends PremiumModule {
     @EventTarget
     private void method16426(Class4399 var1) {
         if (this.method15996() && var1.method13921()) {
-            if (mc.field1299.field44637.method8509()) {
-                double var4 = mc.field1339.getPosX();
-                double var6 = mc.field1339.getPosY();
-                double var8 = mc.field1339.getPosZ();
+            if (mc.gameSettings.field44637.method8509()) {
+                double var4 = mc.player.getPosX();
+                double var6 = mc.player.getPosY();
+                double var8 = mc.player.getPosZ();
                 if (!Class5628.method17686()) {
-                    if (Class5628.method17730(mc.field1339, 0.001F) && !Class5628.method17761()) {
-                        mc.field1339.method3215(var4, var6 - 1.0, var8);
+                    if (Class5628.method17730(mc.player, 0.001F) && !Class5628.method17761()) {
+                        mc.player.method3215(var4, var6 - 1.0, var8);
                         var1.method13912(var6 - 1.0);
                         var1.method13908(true);
                         var1.method13918(var1.method13917() + 10.0F);
                         Class5628.method17725(0.0);
-                    } else if (mc.field1339.getPosY() == (double) ((int) mc.field1339.getPosY())) {
-                        mc.field1339.method3215(var4, var6 - 0.3, var8);
+                    } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())) {
+                        mc.player.method3215(var4, var6 - 0.3, var8);
                     }
                 }
             }
@@ -72,12 +72,12 @@ public class Class5259 extends PremiumModule {
     @EventTarget
     private void method16427(Class4435 var1) {
         if (this.method15996()) {
-            if (mc.field1339.field5037 && this.field23652 != 0) {
+            if (mc.player.field5037 && this.field23652 != 0) {
                 this.field23652 = 0;
-                if (mc.field1339.field5036) {
-                    double var4 = mc.field1339.getPosX();
-                    double var6 = mc.field1339.getPosY();
-                    double var8 = mc.field1339.getPosZ();
+                if (mc.player.field5036) {
+                    double var4 = mc.player.getPosX();
+                    double var6 = mc.player.getPosY();
+                    double var8 = mc.player.getPosZ();
                     mc.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6 + 0.0626, var8, false));
                 }
             }
@@ -118,8 +118,8 @@ public class Class5259 extends PremiumModule {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;
-                var5.field24300 = mc.field1339.field5031;
-                var5.field24301 = mc.field1339.field5032;
+                var5.field24300 = mc.player.field5031;
+                var5.field24301 = mc.player.field5032;
                 this.field23651 = true;
             }
         }

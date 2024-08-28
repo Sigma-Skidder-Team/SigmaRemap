@@ -169,7 +169,7 @@ public class Class1705 extends Class1702 {
 
    @Override
    public void method7373(Class1977 var1, Class2002 var2) {
-      Minecraft.getInstance().field1287.method906(var2.method8410(), var2.method8411(), var2.method8412());
+      Minecraft.getInstance().worldRenderer.method906(var2.method8410(), var2.method8411(), var2.method8412());
    }
 
    @Override

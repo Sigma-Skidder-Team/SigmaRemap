@@ -8,7 +8,7 @@ public class Class5949 extends Class5942<Class948> {
       super(var1);
    }
 
-   public void method18462(Class948 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class948 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       Class7380 var9 = var1.method3775();
       if (var9.<Boolean>method23463(Class3354.field18882)) {
          var3.method35294();

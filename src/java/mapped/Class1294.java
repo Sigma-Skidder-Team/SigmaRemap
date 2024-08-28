@@ -5,7 +5,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -40,7 +39,7 @@ public class Class1294 extends Class1293<Class1180> {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       super.method1923(var1, var2, var3, var4);
       if (this.method2485(var2, var3)) {
          Class1180 var7 = this.method6033(var2, var3);

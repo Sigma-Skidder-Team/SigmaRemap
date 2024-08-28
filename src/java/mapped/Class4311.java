@@ -51,7 +51,7 @@ public class Class4311 extends Class4307 {
          String var5x = "";
 
          try {
-            var5x = GLFW.glfwGetClipboardString(Minecraft.getInstance().field1283.method8039());
+            var5x = GLFW.glfwGetClipboardString(Minecraft.getInstance().mainWindow.method8039());
          } catch (Exception var7x) {
          }
 

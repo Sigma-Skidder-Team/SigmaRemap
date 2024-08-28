@@ -16,8 +16,8 @@ public class Class3323 extends Class3257 {
    @Override
    public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
       PlayerEntity var6 = !(var3 instanceof PlayerEntity) ? null : (PlayerEntity)var3;
-      if (var6 instanceof Class878) {
-         CriteriaTriggers.field44490.method15174((Class878)var6, var1);
+      if (var6 instanceof ServerPlayerEntity) {
+         CriteriaTriggers.field44490.method15174((ServerPlayerEntity)var6, var1);
       }
 
       if (!var2.field9020) {

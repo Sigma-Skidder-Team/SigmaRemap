@@ -6,7 +6,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-public class Class1272 extends Class1191 {
+public class Class1272 extends LoadingGui {
    private static final ResourceLocation field6766 = new ResourceLocation("textures/gui/title/mojang.png");
    private final Minecraft field6767;
    private final Class8335 field6768;
@@ -38,28 +38,28 @@ public class Class1272 extends Class1191 {
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
-      int var7 = this.field6767.field1283.method8045();
-      int var8 = this.field6767.field1283.method8046();
-      long var9 = Util.method38487();
-      if (this.field6770 && (this.field6768.method29225() || this.field6767.field1355 != null) && this.field6773 == -1L) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+      int var7 = this.field6767.mainWindow.getScaledWidth();
+      int var8 = this.field6767.mainWindow.getScaledHeight();
+      long var9 = Util.milliTime();
+      if (this.field6770 && (this.field6768.method29225() || this.field6767.currentScreen != null) && this.field6773 == -1L) {
          this.field6773 = var9;
       }
 
       float var11 = this.field6772 > -1L ? (float)(var9 - this.field6772) / 200.0F : -1.0F;
       float var12 = this.field6773 > -1L ? (float)(var9 - this.field6773) / 100.0F : -1.0F;
       float var13 = 1.0F;
-      int var14 = (this.field6767.field1283.method8045() - 256) / 2;
-      int var15 = (this.field6767.field1283.method8046() - 256) / 2;
+      int var14 = (this.field6767.mainWindow.getScaledWidth() - 256) / 2;
+      int var15 = (this.field6767.mainWindow.getScaledHeight() - 256) / 2;
       float var16 = this.field6768.method29224();
       this.field6771 = this.field6771 * 0.95F + var16 * 0.050000012F;
       GL11.glPushMatrix();
       float var17 = 1111.0F;
-      if (this.field6767.field1283.method8043() != 0) {
-         var17 = (float)(this.field6767.field1283.method8041() / this.field6767.field1283.method8043());
+      if (this.field6767.mainWindow.method8043() != 0) {
+         var17 = (float)(this.field6767.mainWindow.getFramebufferWidth() / this.field6767.mainWindow.method8043());
       }
 
-      float var18 = (float)this.field6767.field1283.method8036(this.field6767.field1299.field44673, this.field6767.method1469()) * var17;
+      float var18 = (float)this.field6767.mainWindow.method8036(this.field6767.gameSettings.field44673, this.field6767.method1469()) * var17;
       GL11.glScalef(1.0F / var18, 1.0F / var18, 0.0F);
       method6015(var13, this.field6771);
       GL11.glPopMatrix();
@@ -75,9 +75,9 @@ public class Class1272 extends Class1191 {
             this.field6769.accept(Optional.of(var20));
          }
 
-         this.field6772 = Util.method38487();
-         if (this.field6767.field1355 != null) {
-            this.field6767.field1355.method2467(this.field6767, this.field6767.method1580().method8045(), this.field6767.method1580().method8046());
+         this.field6772 = Util.milliTime();
+         if (this.field6767.currentScreen != null) {
+            this.field6767.currentScreen.method2467(this.field6767, this.field6767.method1580().getScaledWidth(), this.field6767.method1580().getScaledHeight());
          }
       }
    }
@@ -90,20 +90,20 @@ public class Class1272 extends Class1191 {
       GL11.glEnable(3008);
       GL11.glEnable(3042);
       Class3192.method11454(
-         0.0F, 0.0F, (float) Minecraft.getInstance().field1283.method8043(), (float) Minecraft.getInstance().field1283.method8044(), field6780, var0
+         0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.method8043(), (float) Minecraft.getInstance().mainWindow.method8044(), field6780, var0
       );
       Class3192.method11424(
-         0.0F, 0.0F, (float) Minecraft.getInstance().field1283.method8043(), (float) Minecraft.getInstance().field1283.method8044(), Class5628.method17688(0, 0.75F)
+         0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.method8043(), (float) Minecraft.getInstance().mainWindow.method8044(), Class5628.method17688(0, 0.75F)
       );
       short var4 = 455;
       byte var5 = 78;
-      int var6 = (Minecraft.getInstance().field1283.method8043() - var4) / 2;
-      int var7 = Math.round((float)((Minecraft.getInstance().field1283.method8044() - var5) / 2) - 14.0F * var0);
+      int var6 = (Minecraft.getInstance().mainWindow.method8043() - var4) / 2;
+      int var7 = Math.round((float)((Minecraft.getInstance().mainWindow.method8044() - var5) / 2) - 14.0F * var0);
       float var8 = 0.75F + var0 * var0 * var0 * var0 * 0.25F;
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(Minecraft.getInstance().field1283.method8043() / 2), (float)(Minecraft.getInstance().field1283.method8044() / 2), 0.0F);
+      GL11.glTranslatef((float)(Minecraft.getInstance().mainWindow.method8043() / 2), (float)(Minecraft.getInstance().mainWindow.method8044() / 2), 0.0F);
       GL11.glScalef(var8, var8, 0.0F);
-      GL11.glTranslatef((float)(-Minecraft.getInstance().field1283.method8043() / 2), (float)(-Minecraft.getInstance().field1283.method8044() / 2), 0.0F);
+      GL11.glTranslatef((float)(-Minecraft.getInstance().mainWindow.method8043() / 2), (float)(-Minecraft.getInstance().mainWindow.method8044() / 2), 0.0F);
       Class3192.method11449((float)var6, (float)var7, (float)var4, (float)var5, field6778, Class5628.method17688(Class1979.field12896.field12910, var0));
       float var9 = Math.min(1.0F, var1 * 1.02F);
       float var10 = 1.0F - var0;

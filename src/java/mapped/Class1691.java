@@ -37,7 +37,7 @@ public class Class1691 implements Class1658 {
          this.field9204 = var5;
          this.field9205 = var1;
          this.field9206 = var1.method6967();
-         this.field9207 = var1.method6788();
+         this.field9207 = var1.getWorldInfo();
          this.field9208 = var1.method6814();
          this.field9209 = var1.method6812();
          this.field9212 = new Class6668(this, Class6668.method20321(this.field9206), var1.method6812().method36886());
@@ -263,7 +263,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class6612 method6788() {
+   public Class6612 getWorldInfo() {
       return this.field9207;
    }
 

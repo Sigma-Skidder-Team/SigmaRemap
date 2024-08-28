@@ -85,4 +85,9 @@ public class Class971 extends Class939 {
    public Class5812 method3690(int var1, Class974 var2) {
       return new Class5817(var1, var2, this);
    }
+
+   @Override
+   public ITextComponent method2954() {
+      return new TranslationTextComponent("container.dispenser");
+   }
 }

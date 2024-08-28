@@ -5,11 +5,11 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class5115 implements Class5114 {
    private static final ITextComponent field23263 = new TranslationTextComponent("multiplayer.status.request_handled");
-   private final Class314 field23264;
-   private final Class8586 field23265;
+   private final MinecraftServer field23264;
+   private final NetworkManager field23265;
    private boolean field23266;
 
-   public Class5115(Class314 var1, Class8586 var2) {
+   public Class5115(MinecraftServer var1, NetworkManager var2) {
       this.field23264 = var1;
       this.field23265 = var2;
    }
@@ -19,7 +19,7 @@ public class Class5115 implements Class5114 {
    }
 
    @Override
-   public Class8586 method15589() {
+   public NetworkManager method15589() {
       return this.field23265;
    }
 

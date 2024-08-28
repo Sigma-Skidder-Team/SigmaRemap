@@ -5,7 +5,7 @@ public abstract class Class5727<T extends AbstractArrowEntity> extends Class5715
       super(var1);
    }
 
-   public void method17853(T var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.method35294();
       var4.method35293(Class7680.field32900.method25286(MathHelper.method37821(var3, var1.field5033, var1.field5031) - 90.0F));
       var4.method35293(Class7680.field32902.method25286(MathHelper.method37821(var3, var1.field5034, var1.field5032)));

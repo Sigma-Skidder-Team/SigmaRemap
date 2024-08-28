@@ -151,7 +151,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    @Override
    public void method2904() {
       int var3 = this.method5319();
-      if (!this.field5024.field9020 && var3 > 1 && this.method3044()) {
+      if (!this.field5024.field9020 && var3 > 1 && this.getShouldBeDead()) {
          ITextComponent var4 = this.method3380();
          boolean var5 = this.method4305();
          float var6 = (float)var3 / 4.0F;

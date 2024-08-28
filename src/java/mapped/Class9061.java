@@ -43,7 +43,7 @@ public class Class9061 {
       return var4;
    }
 
-   private static void method33727(Class314 var0, Collection<String> var1, ProfileLookupCallback var2) {
+   private static void method33727(MinecraftServer var0, Collection<String> var1, ProfileLookupCallback var2) {
       String[] var5 = var1.stream().filter(var0x -> !Class9001.method33256(var0x)).<String>toArray(String[]::new);
       if (!var0.method1350()) {
          for (String var9 : var5) {
@@ -56,7 +56,7 @@ public class Class9061 {
       }
    }
 
-   public static boolean method33728(Class314 var0) {
+   public static boolean method33728(MinecraftServer var0) {
       Class4528 var3 = new Class4528(Class6395.field27984);
       if (field41472.exists() && field41472.isFile()) {
          if (var3.method14435().exists()) {
@@ -87,7 +87,7 @@ public class Class9061 {
       }
    }
 
-   public static boolean method33729(Class314 var0) {
+   public static boolean method33729(MinecraftServer var0) {
       Class4532 var3 = new Class4532(Class6395.field27985);
       if (field41471.exists() && field41471.isFile()) {
          if (var3.method14435().exists()) {
@@ -123,7 +123,7 @@ public class Class9061 {
       }
    }
 
-   public static boolean method33730(Class314 var0) {
+   public static boolean method33730(MinecraftServer var0) {
       Class4530 var3 = new Class4530(Class6395.field27986);
       if (field41473.exists() && field41473.isFile()) {
          if (var3.method14435().exists()) {
@@ -153,7 +153,7 @@ public class Class9061 {
       }
    }
 
-   public static boolean method33731(Class314 var0) {
+   public static boolean method33731(MinecraftServer var0) {
       Class4531 var3 = new Class4531(Class6395.field27987);
       if (field41474.exists() && field41474.isFile()) {
          if (var3.method14435().exists()) {
@@ -184,7 +184,7 @@ public class Class9061 {
    }
 
    @Nullable
-   public static UUID method33732(Class314 var0, String var1) {
+   public static UUID method33732(MinecraftServer var0, String var1) {
       if (!Class9001.method33256(var1) && var1.length() <= 16) {
          GameProfile var4 = var0.method1386().method31792(var1);
          if (var4 != null && var4.getId() != null) {
@@ -248,7 +248,7 @@ public class Class9061 {
       }
    }
 
-   public static boolean method33735(Class314 var0) {
+   public static boolean method33735(MinecraftServer var0) {
       boolean var3 = method33736();
       return var3 && method33737(var0);
    }
@@ -299,7 +299,7 @@ public class Class9061 {
       }
    }
 
-   private static boolean method33737(Class314 var0) {
+   private static boolean method33737(MinecraftServer var0) {
       File var3 = method33738(var0);
       if (var3.exists() && var3.isDirectory() && (var3.list().length > 0 || !var3.delete())) {
          field41470.warn("**** DETECTED OLD PLAYER DIRECTORY IN THE WORLD SAVE");
@@ -311,7 +311,7 @@ public class Class9061 {
       }
    }
 
-   private static File method33738(Class314 var0) {
+   private static File method33738(MinecraftServer var0) {
       return var0.method1433(Class5137.field23349).toFile();
    }
 

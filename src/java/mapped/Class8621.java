@@ -101,11 +101,11 @@ public class Class8621 {
          );
    }
 
-   private static int method30878(Class6619 var0, Collection<Class878> var1, ResourceLocation var2, Class2266 var3, Vector3d var4, float var5, float var6, float var7) throws CommandSyntaxException {
+   private static int method30878(Class6619 var0, Collection<ServerPlayerEntity> var1, ResourceLocation var2, Class2266 var3, Vector3d var4, float var5, float var6, float var7) throws CommandSyntaxException {
       double var10 = Math.pow(!(var5 > 1.0F) ? 16.0 : (double)(var5 * 16.0F), 2.0);
       int var12 = 0;
 
-      for (Class878 var14 : var1) {
+      for (ServerPlayerEntity var14 : var1) {
          double var15 = var4.field18048 - var14.getPosX();
          double var17 = var4.field18049 - var14.getPosY();
          double var19 = var4.field18050 - var14.getPosZ();
@@ -130,7 +130,7 @@ public class Class8621 {
          if (var1.size() != 1) {
             var0.method20179(new TranslationTextComponent("commands.playsound.success.multiple", var2, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.playsound.success.single", var2, ((Class878)var1.iterator().next()).getDisplayName()), true);
+            var0.method20179(new TranslationTextComponent("commands.playsound.success.single", var2, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var12;

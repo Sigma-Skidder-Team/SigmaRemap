@@ -6,10 +6,10 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class5106 implements Class5105 {
    private static final ITextComponent field23205 = new StringTextComponent("Ignoring status request");
-   private final Class314 field23206;
-   private final Class8586 field23207;
+   private final MinecraftServer field23206;
+   private final NetworkManager field23207;
 
-   public Class5106(Class314 var1, Class8586 var2) {
+   public Class5106(MinecraftServer var1, NetworkManager var2) {
       this.field23206 = var1;
       this.field23207 = var2;
    }
@@ -51,7 +51,7 @@ public class Class5106 implements Class5105 {
    }
 
    @Override
-   public Class8586 method15589() {
+   public NetworkManager method15589() {
       return this.field23207;
    }
 }

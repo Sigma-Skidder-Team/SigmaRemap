@@ -137,8 +137,8 @@ public class Class957 extends Class956 implements Class935 {
                var5 = var1.method3415();
             } else {
                Entity var6 = ((Class895)var1).method3460();
-               if (var6 instanceof Class878) {
-                  CriteriaTriggers.field44468.method15169((Class878)var6, this.field5324.method6738(this.method3774()));
+               if (var6 instanceof ServerPlayerEntity) {
+                  CriteriaTriggers.field44468.method15169((ServerPlayerEntity)var6, this.field5324.method6738(this.method3774()));
                }
 
                if (var6 == null) {

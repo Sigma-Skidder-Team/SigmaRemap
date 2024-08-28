@@ -44,8 +44,8 @@ public abstract class Class939 extends Class932 {
    public void method3743(PlayerEntity var1) {
       if (this.field5302 != null && this.field5324.method6715() != null) {
          Class7318 var4 = this.field5324.method6715().method1411().method1058(this.field5302);
-         if (var1 instanceof Class878) {
-            CriteriaTriggers.field44504.method15109((Class878)var1, this.field5302);
+         if (var1 instanceof ServerPlayerEntity) {
+            CriteriaTriggers.field44504.method15109((ServerPlayerEntity)var1, this.field5302);
          }
 
          this.field5302 = null;

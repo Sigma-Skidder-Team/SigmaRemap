@@ -30,16 +30,16 @@ public class Class4318 extends Class4307 {
         this.method13230(var11 = new Class4242(this, "pb2", var7, var5 + var8 + 9, var4, var6, ResourcesDecrypter.sigmaLigmaPNG));
         this.method13230(var10 = new Class4242(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, ResourcesDecrypter.jelloPNG));
         var9.method13251((var0, var1) -> {
-            Client.getInstance().method19955(ClientMode.field13889);
-            Minecraft.getInstance().displayGuiScreen(new Class849());
+            Client.getInstance().method19955(ClientMode.NOADDONS);
+            Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
         });
         var10.method13251((var0, var1) -> {
             Client.getInstance().method19955(ClientMode.JELLO);
-            Minecraft.getInstance().displayGuiScreen(new Class849());
+            Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
         });
         var11.method13251((var0, var1) -> {
             Client.getInstance().method19955(ClientMode.CLASSIC);
-            Minecraft.getInstance().displayGuiScreen(new Class849());
+            Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
         });
         Class4305 var12 = new Class4305(this, "socialbtns", (this.method13267() - 174) / 2, this.method13269() - 70, 174, 34);
         Class4291 var13;
@@ -50,19 +50,19 @@ public class Class4318 extends Class4307 {
         var12.method13230(var15 = new Class4291(var12, "guilded", 142, 0, 32, 34, ResourcesDecrypter.guildedPNG));
         var13.method13251((var0, var1) -> {
             try {
-                Util.getOSType().method8177(new URL("http://jelloconnect.sigmaclient.info/urls/youtube.php"));
+                Util.getOSType().openURL(new URL("https://www.youtube.com/@sigmaclient2950"));
             } catch (MalformedURLException var5x) {
             }
         });
         var14.method13251((var0, var1) -> {
             try {
-                Util.getOSType().method8177(new URL("http://jelloconnect.sigmaclient.info/urls/reddit.php"));
+                Util.getOSType().openURL(new URL("https://www.reddit.com/r/SigmaClient/"));
             } catch (MalformedURLException var5x) {
             }
         });
         var15.method13251((var0, var1) -> {
             try {
-                Util.getOSType().method8177(new URL("http://jelloconnect.sigmaclient.info/urls/guilded.php"));
+                Util.getOSType().openURL(new URL("https://discord.gg/KBGX8FTAXa"));
             } catch (MalformedURLException var5x) {
             }
         });
@@ -83,39 +83,39 @@ public class Class4318 extends Class4307 {
         if (Class1272.field6779 != null) {
             field21069.changeDirection(Direction.FORWARDS);
             int var4 = 40;
-            float var5 = -field21070 / (float) Minecraft.getInstance().field1283.method8043();
-            float var6 = -field21071 / (float) Minecraft.getInstance().field1283.method8044();
+            float var5 = -field21070 / (float) Minecraft.getInstance().mainWindow.method8043();
+            float var6 = -field21071 / (float) Minecraft.getInstance().mainWindow.method8044();
             Class3192.method11455(
                     (float) var4 * var5,
                     (float) var4 * var6,
-                    (float) (Minecraft.getInstance().field1283.method8043() + var4),
-                    (float) (Minecraft.getInstance().field1283.method8044() + var4),
+                    (float) (Minecraft.getInstance().mainWindow.method8043() + var4),
+                    (float) (Minecraft.getInstance().mainWindow.method8044() + var4),
                     Class1272.field6779
             );
             float var7 = Class8603.method30791(field21069.calcPercent(), 0.16, 0.71, 0.0, 0.99);
-            int var8 = (Minecraft.getInstance().field1283.method8043() - 455) / 2;
-            int var9 = (int) ((float) ((Minecraft.getInstance().field1283.method8044() - 78) / 2 - 14) - 116.0F * var7);
+            int var8 = (Minecraft.getInstance().mainWindow.method8043() - 455) / 2;
+            int var9 = (int) ((float) ((Minecraft.getInstance().mainWindow.method8044() - 78) / 2 - 14) - 116.0F * var7);
             Class3192.method11424(
                     0.0F,
                     0.0F,
-                    (float) Minecraft.getInstance().field1283.method8043(),
-                    (float) Minecraft.getInstance().field1283.method8044(),
+                    (float) Minecraft.getInstance().mainWindow.method8043(),
+                    (float) Minecraft.getInstance().mainWindow.method8044(),
                     Class5628.method17688(Class1979.field12891.field12910, 0.3F)
             );
             super.method13027(var1);
             Class3192.method11449(
                     0.0F,
                     0.0F,
-                    (float) Minecraft.getInstance().field1283.method8043(),
-                    (float) Minecraft.getInstance().field1283.method8044(),
+                    (float) Minecraft.getInstance().mainWindow.method8043(),
+                    (float) Minecraft.getInstance().mainWindow.method8044(),
                     Class1272.field6780,
                     Class5628.method17688(Class1979.field12896.field12910, 1.0F - field21069.calcPercent())
             );
             Class3192.method11424(
                     0.0F,
                     0.0F,
-                    (float) Minecraft.getInstance().field1283.method8043(),
-                    (float) Minecraft.getInstance().field1283.method8044(),
+                    (float) Minecraft.getInstance().mainWindow.method8043(),
+                    (float) Minecraft.getInstance().mainWindow.method8044(),
                     Class5628.method17688(0, 0.75F * (1.0F - field21069.calcPercent()))
             );
             Class3192.method11455((float) var8, (float) var9, 455.0F, 78.0F, Class1272.field6778);
@@ -126,7 +126,7 @@ public class Class4318 extends Class4307 {
     public void method13065(int var1) {
         super.method13065(var1);
         if (var1 == 256) {
-            Minecraft.getInstance().displayGuiScreen(new Class849());
+            Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
         }
     }
 }

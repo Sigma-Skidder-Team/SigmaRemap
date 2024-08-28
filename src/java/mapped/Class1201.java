@@ -10,7 +10,7 @@ public abstract class Class1201 extends Class1200 {
    }
 
    @Override
-   public void method5655(Class9332 var1, int var2, int var3, float var4) {
+   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft.getInstance().getTextureManager().bindTexture(Class872.method2704());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       short var7 = 219;
@@ -31,7 +31,7 @@ public abstract class Class1201 extends Class1200 {
       this.method5760(var1);
    }
 
-   public abstract void method5760(Class9332 var1);
+   public abstract void method5760(MatrixStack var1);
 
    public boolean method5761() {
       return this.field6499;

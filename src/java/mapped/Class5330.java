@@ -15,7 +15,7 @@ public class Class5330 extends Class5325 {
     @Override
     public void method15965() {
         super.method15965();
-        mc.field1339.field5051 = 0.6F;
+        mc.player.field5051 = 0.6F;
     }
 
     @EventTarget
@@ -35,14 +35,14 @@ public class Class5330 extends Class5325 {
     }
 
     public Class2131 method16748(Class4434 var1) {
-        double var4 = mc.field1339.getPosX() + var1.method13991().field18048;
-        double var6 = mc.field1339.getPosZ() + var1.method13991().field18050;
+        double var4 = mc.player.getPosX() + var1.method13991().field18048;
+        double var6 = mc.player.getPosZ() + var1.method13991().field18050;
         double var8 = 0.41;
         double var10 = var1.method13988() - var1.method13990();
         Class6488 var12 = new Class6488(
-                var4 - var8, mc.field1339.field5035.field28450, var6 - var8, var4 + var8, mc.field1339.field5035.field28450 + var10, var6 + var8
+                var4 - var8, mc.player.field5035.field28450, var6 - var8, var4 + var8, mc.player.field5035.field28450 + var10, var6 + var8
         );
-        Object[] var13 = mc.field1338.method7055(mc.field1339, var12).toArray();
+        Object[] var13 = mc.world.method7055(mc.player, var12).toArray();
         int var14 = var13.length;
         Class7380 var15 = null;
         BlockPos var16 = null;
@@ -51,7 +51,7 @@ public class Class5330 extends Class5325 {
         for (int var19 = 0; var19 < var14; var19++) {
             Class6408 var20 = (Class6408) var13[var19];
             BlockPos var21 = new BlockPos(var20.method19512(Class113.field413), var20.method19512(Class113.field414), var20.method19512(Class113.field415));
-            Class7380 var22 = mc.field1338.method6738(var21);
+            Class7380 var22 = mc.world.method6738(var21);
             if (var15 == null || var20.method19514().field28453 > var17) {
                 var15 = var22;
                 var16 = var21;
@@ -59,11 +59,11 @@ public class Class5330 extends Class5325 {
             }
         }
 
-        if (!mc.field1339.method3250() && !mc.field1339.method3264()) {
+        if (!mc.player.method3250() && !mc.player.method3264()) {
             if (var15 != null) {
-                if (!mc.field1339.field5036) {
+                if (!mc.player.field5036) {
                     if (var15.method23383() instanceof Class3208) {
-                        Class6408 var24 = var15.method23412(mc.field1338, var16);
+                        Class6408 var24 = var15.method23412(mc.world, var16);
                         if (var24.method19514().field28453 == 1.0) {
                             return Class2131.field13904;
                         }
@@ -82,7 +82,7 @@ public class Class5330 extends Class5325 {
                             return Class2131.field13905;
                         }
                     } else {
-                        Class6408 var23 = var15.method23412(mc.field1338, var16);
+                        Class6408 var23 = var15.method23412(mc.world, var16);
                         if (var23.method19514().field28453 == 1.0) {
                             return Class2131.field13906;
                         }

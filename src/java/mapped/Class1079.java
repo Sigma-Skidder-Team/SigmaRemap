@@ -315,13 +315,13 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public void method3400(Class878 var1) {
+   public void method3400(ServerPlayerEntity var1) {
       super.method3400(var1);
       this.field5935.method12263(var1);
    }
 
    @Override
-   public void method3401(Class878 var1) {
+   public void method3401(ServerPlayerEntity var1) {
       super.method3401(var1);
       this.field5935.method12265(var1);
    }

@@ -198,7 +198,7 @@ public final class ItemStack {
       return this.method32107().method11711();
    }
 
-   public boolean method32120(int var1, Random var2, Class878 var3) {
+   public boolean method32120(int var1, Random var2, ServerPlayerEntity var3) {
       if (!this.method32115()) {
          return false;
       } else {
@@ -232,7 +232,7 @@ public final class ItemStack {
       if (!var2.field5024.field9020
          && (!(var2 instanceof PlayerEntity) || !((PlayerEntity)var2).field4919.field29609)
          && this.method32115()
-         && this.method32120(var1, var2.method3013(), !(var2 instanceof Class878) ? null : (Class878)var2)) {
+         && this.method32120(var1, var2.method3013(), !(var2 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var2)) {
          var3.accept(var2);
          Class3257 var6 = this.method32107();
          this.method32182(1);

@@ -13,14 +13,14 @@ public class Class5324 extends Module {
     @EventTarget
     private void method16723(Class4396 var1) {
         if (this.method15996()) {
-            if (mc.field1339 != null) {
-                if (mc.field1339.field5055 >= 10) {
-                    if (mc.field1339 != null && var1.method13898() instanceof Class5473) {
+            if (mc.player != null) {
+                if (mc.player.field5055 >= 10) {
+                    if (mc.player != null && var1.method13898() instanceof Class5473) {
                         Class5473 var4 = (Class5473) var1.method13898();
-                        mc.field1339.field5033 = var4.field24300;
-                        mc.field1339.field5034 = var4.field24301;
-                        var4.field24300 = mc.field1339.field5031;
-                        var4.field24301 = mc.field1339.field5032;
+                        mc.player.field5033 = var4.field24300;
+                        mc.player.field5034 = var4.field24301;
+                        var4.field24300 = mc.player.field5031;
+                        var4.field24301 = mc.player.field5032;
                     }
                 }
             }

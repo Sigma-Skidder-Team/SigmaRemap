@@ -30,9 +30,9 @@ public class Class5203 extends Module {
                 var1.method13900(true);
             }
 
-            if (mc.field1339 != null && var1.method13898() instanceof Class5590) {
+            if (mc.player != null && var1.method13898() instanceof Class5590) {
                 Class5590 var5 = (Class5590) var1.method13898();
-                if (var5.method17565() == mc.field1339.method3205()) {
+                if (var5.method17565() == mc.player.method3205()) {
                     this.field23518.add(var5);
                     var1.method13900(true);
                     if (this.field23519 == 0) {

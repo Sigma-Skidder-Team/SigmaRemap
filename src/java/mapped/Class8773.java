@@ -26,7 +26,7 @@ public class Class8773 {
    }
 
    public static int method31644(Class6619 var0, Class2197 var1) throws CommandSyntaxException {
-      Class314 var4 = var0.method20177();
+      MinecraftServer var4 = var0.method20177();
       if (var4.method1436().method20047() != var1) {
          var4.method1336(var1, true);
          var0.method20179(new TranslationTextComponent("commands.difficulty.success", var1.method8906()), true);

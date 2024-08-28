@@ -20,16 +20,16 @@ public class VClip extends Command {
                mc.getClientPlayNetHandler()
                   .method15728(
                      new Class5473(
-                        mc.field1339.getPosX(),
-                        mc.field1339.getPosY() + var2[0].method30896(),
-                        mc.field1339.getPosZ(),
-                        mc.field1339.field5031,
-                        mc.field1339.field5032,
+                        mc.player.getPosX(),
+                        mc.player.getPosY() + var2[0].method30896(),
+                        mc.player.getPosZ(),
+                        mc.player.field5031,
+                        mc.player.field5032,
                         Collections.<Class2033>emptySet(),
                         (int)(2.147483647E9 * Math.random())
                      )
                   );
-               var3.method20327("VClip'd to position " + (mc.field1339.getPosY() + var2[0].method30896()));
+               var3.method20327("VClip'd to position " + (mc.player.getPosY() + var2[0].method30896()));
             }
          } else {
             throw new CommandException("Too many arguments");

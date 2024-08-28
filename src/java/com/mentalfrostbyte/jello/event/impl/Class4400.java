@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.event.impl;
 import com.mentalfrostbyte.jello.event.CancellableEvent;
 import mapped.Class2205;
 import mapped.ItemStack;
-import mapped.Class9332;
+import mapped.MatrixStack;
 
 public class Class4400 extends CancellableEvent {
     private static String[] field21503;
@@ -13,9 +13,9 @@ public class Class4400 extends CancellableEvent {
     private final float field21507;
     private final Class2205 field21508;
     private final ItemStack field21509;
-    private final Class9332 field21510;
+    private final MatrixStack field21510;
 
-    public Class4400(boolean var1, float var2, float var3, Class2205 var4, ItemStack var5, Class9332 var6) {
+    public Class4400(boolean var1, float var2, float var3, Class2205 var4, ItemStack var5, MatrixStack var6) {
         this.field21504 = var1;
         this.field21506 = var2;
         this.field21507 = var3;
@@ -45,7 +45,7 @@ public class Class4400 extends CancellableEvent {
         return this.field21509;
     }
 
-    public Class9332 method13929() {
+    public MatrixStack method13929() {
         return this.field21510;
     }
 

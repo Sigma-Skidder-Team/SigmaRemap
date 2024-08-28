@@ -159,7 +159,7 @@ public class Class9446 {
 
    public static int method36315(Entity var0, int var1) {
       double var4 = method36317(var0.method3432());
-      if (var0 == Class7944.method26860().field1339) {
+      if (var0 == Class7944.method26860().player) {
          double var6 = (double)method36319(var0);
          var4 = Math.max(var4, var6);
       }
