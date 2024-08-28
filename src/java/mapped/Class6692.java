@@ -6,7 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 public class Class6692 extends Class6691 {
    public static final Codec<Class6692> field29310 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Class2348.field16074.fieldOf("type").forGetter(var0x -> var0x.field29311),
+               Registry.field16074.fieldOf("type").forGetter(var0x -> var0x.field29311),
                Codec.INT.fieldOf("weight").forGetter(var0x -> var0x.field29309),
                Codec.INT.fieldOf("minCount").forGetter(var0x -> var0x.field29312),
                Codec.INT.fieldOf("maxCount").forGetter(var0x -> var0x.field29313)

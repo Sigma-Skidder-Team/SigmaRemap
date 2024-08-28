@@ -105,7 +105,7 @@ public class Class6617 implements Class6618 {
    }
 
    @Override
-   public Set<Class8705<World>> method20135() {
+   public Set<RegistryKey<World>> method20135() {
       return this.field29118.method15801();
    }
 

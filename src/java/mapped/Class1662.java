@@ -16,7 +16,7 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
 
    Class6668 method6822();
 
-   default Class8907 method7003(BlockPos var1) {
+   default Biome method7003(BlockPos var1) {
       return this.method6822().method20323(var1);
    }
 
@@ -36,12 +36,12 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    @Override
-   default Class8907 method7005(int var1, int var2, int var3) {
+   default Biome method7005(int var1, int var2, int var3) {
       Class1670 var6 = this.method6724(var1 >> 2, var3 >> 2, Class9176.field42136, false);
       return var6 != null && var6.method7077() != null ? var6.method7077().method7005(var1, var2, var3) : this.method6871(var1, var2, var3);
    }
 
-   Class8907 method6871(int var1, int var2, int var3);
+   Biome method6871(int var1, int var2, int var3);
 
    boolean method6714();
 

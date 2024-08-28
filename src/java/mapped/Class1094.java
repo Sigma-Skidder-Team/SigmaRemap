@@ -305,7 +305,7 @@ public class Class1094 extends Class1018 {
    }
 
    private int method5116(Class1660 var1) {
-      Class8907 var4 = var1.method7003(this.method3432());
+      Biome var4 = var1.method7003(this.method3432());
       int var5 = this.field5054.nextInt(100);
       if (var4.method32500() != Class87.field225) {
          if (var4.method32527() != Class100.field286) {

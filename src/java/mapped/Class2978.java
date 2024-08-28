@@ -31,7 +31,7 @@ public class Class2978 extends Class2961<Class4726> {
       return Class5454::new;
    }
 
-   private static boolean method11383(BlockPos var0, Class8907 var1) {
+   private static boolean method11383(BlockPos var0, Biome var1) {
       return var1.method32503(var0) < 0.15F;
    }
 
@@ -115,7 +115,7 @@ public class Class2978 extends Class2961<Class4726> {
    }
 
    // $VF: synthetic method
-   public static boolean method11391(BlockPos var0, Class8907 var1) {
+   public static boolean method11391(BlockPos var0, Biome var1) {
       return method11383(var0, var1);
    }
 }

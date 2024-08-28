@@ -17,7 +17,7 @@ public class Class1040 extends Class1038 implements Class1041 {
 
    public Class1040(Class8992<? extends Class1040> var1, World var2) {
       super(var1, var2);
-      this.method4673(this.method4674().method26574(Class2348.field16090.method9254(this.field5054)));
+      this.method4673(this.method4674().method26574(Registry.field16090.method9254(this.field5054)));
    }
 
    @Override

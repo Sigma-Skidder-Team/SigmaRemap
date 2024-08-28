@@ -46,7 +46,7 @@ public class Class7018 implements Class7016 {
                      )) {
                         return 0;
                      } else {
-                        Class8907 var14 = var1.method7003(var13);
+                        Biome var14 = var1.method7003(var13);
                         Class100 var15 = var14.method32527();
                         if (var15 == Class100.field289) {
                            return 0;

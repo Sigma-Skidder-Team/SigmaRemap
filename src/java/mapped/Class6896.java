@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Set;
 
 public abstract class Class6896 {
-   public static final Codec<Class6896> field29884 = Class2348.field16132.dispatch(Class6896::method21064, Class9107::method33960);
+   public static final Codec<Class6896> field29884 = Registry.field16132.dispatch(Class6896::method21064, Class9107::method33960);
    public final int field29885;
    public final int field29886;
    public final int field29887;

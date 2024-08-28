@@ -34,7 +34,7 @@ public class Class8050 implements ArgumentType<Class7436> {
 
    public static Class7436 method27650(StringReader var0) throws CommandSyntaxException {
       ResourceLocation var3 = ResourceLocation.method8294(var0);
-      Class7434 var4 = Class2348.field16077.method9187(var3).orElseThrow(() -> field34575.create(var3));
+      Class7434 var4 = Registry.field16077.method9187(var3).orElseThrow(() -> field34575.create(var3));
       return method27651(var0, var4);
    }
 
@@ -43,6 +43,6 @@ public class Class8050 implements ArgumentType<Class7436> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20141(Class2348.field16077.method9190(), var2);
+      return Class6618.method20141(Registry.field16077.method9190(), var2);
    }
 }

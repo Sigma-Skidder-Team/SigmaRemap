@@ -19,10 +19,10 @@ public final class Class9459 {
             )
             .apply(var0, var0.stable(Class9459::new))
    );
-   public static final Class8705<Class9459> field43952 = Class8705.<Class9459>method31395(Class2348.field16068, new ResourceLocation("overworld"));
-   public static final Class8705<Class9459> field43953 = Class8705.<Class9459>method31395(Class2348.field16068, new ResourceLocation("the_nether"));
-   public static final Class8705<Class9459> field43954 = Class8705.<Class9459>method31395(Class2348.field16068, new ResourceLocation("the_end"));
-   private static final LinkedHashSet<Class8705<Class9459>> field43955 = Sets.newLinkedHashSet(ImmutableList.of(field43952, field43953, field43954));
+   public static final RegistryKey<Class9459> field43952 = RegistryKey.<Class9459>method31395(Registry.field16068, new ResourceLocation("overworld"));
+   public static final RegistryKey<Class9459> field43953 = RegistryKey.<Class9459>method31395(Registry.field16068, new ResourceLocation("the_nether"));
+   public static final RegistryKey<Class9459> field43954 = RegistryKey.<Class9459>method31395(Registry.field16068, new ResourceLocation("the_end"));
+   private static final LinkedHashSet<RegistryKey<Class9459>> field43955 = Sets.newLinkedHashSet(ImmutableList.of(field43952, field43953, field43954));
    private final Supplier<Class9535> field43956;
    private final Class5646 field43957;
 
@@ -44,17 +44,17 @@ public final class Class9459 {
    }
 
    public static Class2350<Class9459> method36414(Class2350<Class9459> var0) {
-      Class2350<Class9459> var3 = new Class2350<>(Class2348.field16068, Lifecycle.experimental());
+      Class2350<Class9459> var3 = new Class2350<>(Registry.field16068, Lifecycle.experimental());
 
-      for (Class8705<Class9459> var5 : field43955) {
+      for (RegistryKey<Class9459> var5 : field43955) {
          Class9459 var6 = var0.method9183(var5);
          if (var6 != null) {
             var3.method9250(var5, var6, var0.method9185(var6));
          }
       }
 
-      for (Entry<Class8705<Class9459>, Class9459> var8 : var0.method9191()) {
-         Class8705<Class9459> var9 = var8.getKey();
+      for (Entry<RegistryKey<Class9459>, Class9459> var8 : var0.method9191()) {
+         RegistryKey<Class9459> var9 = var8.getKey();
          if (!field43955.contains(var9)) {
             var3.method9250(var9, var8.getValue(), var0.method9185(var8.getValue()));
          }

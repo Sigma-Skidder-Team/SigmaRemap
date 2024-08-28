@@ -7,7 +7,7 @@ import com.google.gson.JsonSerializationContext;
 public class Class4937 extends Class4936<Class4695> {
    public void method15249(JsonObject var1, Class4695 var2, JsonSerializationContext var3) {
       super.method15249(var1, var2, var3);
-      ResourceLocation var6 = Class2348.field16075.method9181(Class4695.method14726(var2));
+      ResourceLocation var6 = Registry.field16075.method9181(Class4695.method14726(var2));
       if (var6 != null) {
          var1.addProperty("name", var6.toString());
       } else {

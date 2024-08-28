@@ -13,7 +13,7 @@ public final class Class8497 {
    public Class8497(Class5126 var1, Class1644 var2, double var3, double var5) {
       this.field37171 = var1;
       Class1656 var9 = Class5126.method15862(var1).world;
-      Class8705 var10 = var9.method6813();
+      RegistryKey var10 = var9.method6813();
       int var11 = (int)var3 >> 4;
       int var12 = (int)var5 >> 4;
       Builder var13 = ImmutableMap.builder();

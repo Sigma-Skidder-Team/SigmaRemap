@@ -5,7 +5,7 @@ public interface Class7458 {
 
    BlockPos method24124();
 
-   Class8907 method24125();
+   Biome method24125();
 
    String method24126();
 

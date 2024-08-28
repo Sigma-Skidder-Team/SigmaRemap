@@ -45,7 +45,7 @@ public abstract class Class2961<C extends Class4698> {
    private static <F extends Class2961<?>> F method11363(String var0, F var1, Class1993 var2) {
       field18055.put(var0.toLowerCase(Locale.ROOT), var1);
       field18056.put(var1, var2);
-      return Class2348.<F>method9194(Class2348.field16114, var0.toLowerCase(Locale.ROOT), (F)var1);
+      return Registry.<F>method9194(Registry.field16114, var0.toLowerCase(Locale.ROOT), (F)var1);
    }
 
    public Class2961(Codec<C> var1) {
@@ -65,7 +65,7 @@ public abstract class Class2961<C extends Class4698> {
       if ("INVALID".equals(var6)) {
          return Class5444.field24194;
       } else {
-         Class2961 var7 = Class2348.field16114.method9184(new ResourceLocation(var6.toLowerCase(Locale.ROOT)));
+         Class2961 var7 = Registry.field16114.method9184(new ResourceLocation(var6.toLowerCase(Locale.ROOT)));
          if (var7 == null) {
             field18057.error("Unknown feature id: {}", var6);
             return null;
@@ -84,7 +84,7 @@ public abstract class Class2961<C extends Class4698> {
                   String var16 = var15.method126("id").toLowerCase(Locale.ROOT);
                   ResourceLocation var17 = new ResourceLocation(var16);
                   ResourceLocation var18 = field18078.getOrDefault(var17, var17);
-                  Class7792 var19 = Class2348.field16116.method9184(var18);
+                  Class7792 var19 = Registry.field16116.method9184(var18);
                   if (var19 == null) {
                      field18057.error("Unknown structure piece id: {}", var18);
                   } else {
@@ -182,7 +182,7 @@ public abstract class Class2961<C extends Class4698> {
       return new Class7481(var11 * var9 + var13, var12 * var9 + var14);
    }
 
-   public boolean method11361(Class5646 var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Class8907 var8, Class7481 var9, C var10) {
+   public boolean method11361(Class5646 var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, C var10) {
       return true;
    }
 
@@ -197,7 +197,7 @@ public abstract class Class2961<C extends Class4698> {
       Class8761 var4,
       long var5,
       Class7481 var7,
-      Class8907 var8,
+      Biome var8,
       int var9,
       Class2420 var10,
       Class8483 var11,

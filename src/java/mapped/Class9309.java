@@ -22,7 +22,7 @@ public final class Class9309 {
             )
             .apply(var0, Class9309::new)
    );
-   public static final Codec<Supplier<Class9309>> field43221 = Class9054.method33671(Class2348.field16099, field43220);
+   public static final Codec<Supplier<Class9309>> field43221 = Class9054.method33671(Registry.field16099, field43220);
    private final Class9763 field43222;
    private final Class9556 field43223;
    private final Class7380 field43224;
@@ -31,12 +31,12 @@ public final class Class9309 {
    private final int field43227;
    private final int field43228;
    private final boolean field43229;
-   public static final Class8705<Class9309> field43230 = Class8705.<Class9309>method31395(Class2348.field16099, new ResourceLocation("overworld"));
-   public static final Class8705<Class9309> field43231 = Class8705.<Class9309>method31395(Class2348.field16099, new ResourceLocation("amplified"));
-   public static final Class8705<Class9309> field43232 = Class8705.<Class9309>method31395(Class2348.field16099, new ResourceLocation("nether"));
-   public static final Class8705<Class9309> field43233 = Class8705.<Class9309>method31395(Class2348.field16099, new ResourceLocation("end"));
-   public static final Class8705<Class9309> field43234 = Class8705.<Class9309>method31395(Class2348.field16099, new ResourceLocation("caves"));
-   public static final Class8705<Class9309> field43235 = Class8705.<Class9309>method31395(Class2348.field16099, new ResourceLocation("floating_islands"));
+   public static final RegistryKey<Class9309> field43230 = RegistryKey.<Class9309>method31395(Registry.field16099, new ResourceLocation("overworld"));
+   public static final RegistryKey<Class9309> field43231 = RegistryKey.<Class9309>method31395(Registry.field16099, new ResourceLocation("amplified"));
+   public static final RegistryKey<Class9309> field43232 = RegistryKey.<Class9309>method31395(Registry.field16099, new ResourceLocation("nether"));
+   public static final RegistryKey<Class9309> field43233 = RegistryKey.<Class9309>method31395(Registry.field16099, new ResourceLocation("end"));
+   public static final RegistryKey<Class9309> field43234 = RegistryKey.<Class9309>method31395(Registry.field16099, new ResourceLocation("caves"));
+   public static final RegistryKey<Class9309> field43235 = RegistryKey.<Class9309>method31395(Registry.field16099, new ResourceLocation("floating_islands"));
    private static final Class9309 field43236 = method35169(field43230, method35173(new Class9763(true), false, field43230.method31399()));
 
    private Class9309(Class9763 var1, Class9556 var2, Class7380 var3, Class7380 var4, int var5, int var6, int var7, boolean var8) {
@@ -83,11 +83,11 @@ public final class Class9309 {
       return this.field43229;
    }
 
-   public boolean method35168(Class8705<Class9309> var1) {
+   public boolean method35168(RegistryKey<Class9309> var1) {
       return Objects.equals(this, Class6714.field29431.method9183(var1));
    }
 
-   private static Class9309 method35169(Class8705<Class9309> var0, Class9309 var1) {
+   private static Class9309 method35169(RegistryKey<Class9309> var0, Class9309 var1) {
       Class6714.<Class9309, Class9309>method20497(Class6714.field29431, var0.method31399(), var1);
       return var1;
    }

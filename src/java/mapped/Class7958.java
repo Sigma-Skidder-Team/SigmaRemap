@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 public class Class7958 {
    private static final Logger field34206 = LogManager.getLogger();
    private static final ThreadFactory field34207 = new ThreadFactoryBuilder().setDaemon(true).build();
-   private final ImmutableSet<Class8705<World>> field34208;
+   private final ImmutableSet<RegistryKey<World>> field34208;
    private final boolean field34209;
    private final Class1814 field34210;
    private final Thread field34211;
@@ -38,12 +38,12 @@ public class Class7958 {
    private volatile int field34216;
    private volatile int field34217;
    private volatile int field34218;
-   private final Object2FloatMap<Class8705<World>> field34219 = Object2FloatMaps.synchronize(new Object2FloatOpenCustomHashMap(Util.method38509()));
+   private final Object2FloatMap<RegistryKey<World>> field34219 = Object2FloatMaps.synchronize(new Object2FloatOpenCustomHashMap(Util.method38509()));
    private volatile ITextComponent field34220 = new TranslationTextComponent("optimizeWorld.stage.counting");
    private static final Pattern field34221 = Pattern.compile("^r\\.(-?[0-9]+)\\.(-?[0-9]+)\\.mca$");
    private final Class8250 field34222;
 
-   public Class7958(Class1814 var1, DataFixer var2, ImmutableSet<Class8705<World>> var3, boolean var4) {
+   public Class7958(Class1814 var1, DataFixer var2, ImmutableSet<RegistryKey<World>> var3, boolean var4) {
       this.field34208 = var3;
       this.field34209 = var4;
       this.field34212 = var2;
@@ -73,7 +73,7 @@ public class Class7958 {
       UnmodifiableIterator var4 = this.field34208.iterator();
 
       while (var4.hasNext()) {
-         Class8705 var5 = (Class8705)var4.next();
+         RegistryKey var5 = (RegistryKey)var4.next();
          List var6 = this.method27061(var5);
          var3.put(var5, var6.listIterator());
          this.field34216 = this.field34216 + var6.size();
@@ -88,7 +88,7 @@ public class Class7958 {
          UnmodifiableIterator var7 = this.field34208.iterator();
 
          while (var7.hasNext()) {
-            Class8705 var8 = (Class8705)var7.next();
+            RegistryKey var8 = (RegistryKey)var7.next();
             File var9 = this.field34210.method7992(var8);
             var31.put(var8, new Class1648(new File(var9, "region"), this.field34212, true));
          }
@@ -103,7 +103,7 @@ public class Class7958 {
             UnmodifiableIterator var14 = this.field34208.iterator();
 
             while (var14.hasNext()) {
-               Class8705 var15 = (Class8705)var14.next();
+               RegistryKey var15 = (RegistryKey)var14.next();
                ListIterator var16 = (ListIterator)var30.get(var15);
                Class1648 var17 = (Class1648)var32.get(var15);
                if (var16.hasNext()) {
@@ -185,7 +185,7 @@ public class Class7958 {
       }
    }
 
-   private List<Class7481> method27061(Class8705<World> var1) {
+   private List<Class7481> method27061(RegistryKey<World> var1) {
       File var4 = this.field34210.method7992(var1);
       File var5 = new File(var4, "region");
       File[] var6 = var5.listFiles((var0, var1x) -> var1x.endsWith(".mca"));
@@ -222,11 +222,11 @@ public class Class7958 {
       return this.field34214;
    }
 
-   public ImmutableSet<Class8705<World>> method27063() {
+   public ImmutableSet<RegistryKey<World>> method27063() {
       return this.field34208;
    }
 
-   public float method27064(Class8705<World> var1) {
+   public float method27064(RegistryKey<World> var1) {
       return this.field34219.getFloat(var1);
    }
 

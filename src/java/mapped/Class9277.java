@@ -13,6 +13,6 @@ public interface Class9277<P extends Class6434> {
    Codec<P> method34966();
 
    static <P extends Class6434> Class9277<P> method34967(String var0, Codec<P> var1) {
-      return Class2348.<Class9277<P>>method9194(Class2348.field16082, var0, () -> var1);
+      return Registry.<Class9277<P>>method9194(Registry.field16082, var0, () -> var1);
    }
 }

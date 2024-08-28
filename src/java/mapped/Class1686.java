@@ -18,10 +18,10 @@ public class Class1686 extends Class1685 {
    public static final MapCodec<Class1686> field9164 = RecordCodecBuilder.mapCodec(
       var0 -> var0.group(
                Codec.LONG.fieldOf("seed").forGetter(var0x -> var0x.field9176),
-               RecordCodecBuilder.<Pair<Class7150, Supplier<Class8907>>>create(
+               RecordCodecBuilder.<Pair<Class7150, Supplier<Biome>>>create(
                      var0x -> var0x.group(
                               Class7150.field30717.fieldOf("parameters").forGetter(Pair::getFirst),
-                              Class8907.field40309.fieldOf("biome").forGetter(Pair::getSecond)
+                              Biome.field40309.fieldOf("biome").forGetter(Pair::getSecond)
                            )
                            .apply(var0x, Pair::of)
                   )
@@ -49,29 +49,29 @@ public class Class1686 extends Class1685 {
    private final Class9297 field9171;
    private final Class9297 field9172;
    private final Class9297 field9173;
-   private final List<Pair<Class7150, Supplier<Class8907>>> field9174;
+   private final List<Pair<Class7150, Supplier<Biome>>> field9174;
    private final boolean field9175;
    private final long field9176;
-   private final Optional<Pair<Class2348<Class8907>, Class9546>> field9177;
+   private final Optional<Pair<Registry<Biome>, Class9546>> field9177;
 
-   public Class1686(long var1, List<Pair<Class7150, Supplier<Class8907>>> var3, Optional<Pair<Class2348<Class8907>, Class9546>> var4) {
+   public Class1686(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Optional<Pair<Registry<Biome>, Class9546>> var4) {
       this(var1, var3, field9163, field9163, field9163, field9163, var4);
    }
 
-   public Class1686(long var1, List<Pair<Class7150, Supplier<Class8907>>> var3, Class6813 var4, Class6813 var5, Class6813 var6, Class6813 var7) {
-      this(var1, var3, var4, var5, var6, var7, Optional.<Pair<Class2348<Class8907>, Class9546>>empty());
+   public Class1686(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Class6813 var4, Class6813 var5, Class6813 var6, Class6813 var7) {
+      this(var1, var3, var4, var5, var6, var7, Optional.<Pair<Registry<Biome>, Class9546>>empty());
    }
 
    private Class1686(
       long var1,
-      List<Pair<Class7150, Supplier<Class8907>>> var3,
+      List<Pair<Class7150, Supplier<Biome>>> var3,
       Class6813 var4,
       Class6813 var5,
       Class6813 var6,
       Class6813 var7,
-      Optional<Pair<Class2348<Class8907>, Class9546>> var8
+      Optional<Pair<Registry<Biome>, Class9546>> var8
    ) {
-      super(var3.stream().<Supplier<Class8907>>map(Pair::getSecond));
+      super(var3.stream().<Supplier<Biome>>map(Pair::getSecond));
       this.field9176 = var1;
       this.field9177 = var8;
       this.field9166 = var4;
@@ -101,7 +101,7 @@ public class Class1686 extends Class1685 {
    }
 
    @Override
-   public Class8907 method7005(int var1, int var2, int var3) {
+   public Biome method7005(int var1, int var2, int var3) {
       int var6 = !this.field9175 ? 0 : var2;
       Class7150 var7 = new Class7150(
          (float)this.field9170.method35046((double)var1, (double)var6, (double)var3),
@@ -114,7 +114,7 @@ public class Class1686 extends Class1685 {
          .stream()
          .min(Comparator.comparing(var1x -> ((Class7150)var1x.getFirst()).method22304(var7)))
          .map(Pair::getSecond)
-         .<Class8907>map(Supplier::get)
+         .<Biome>map(Supplier::get)
          .orElse(Class8900.field40282);
    }
 

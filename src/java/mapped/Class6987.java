@@ -14,7 +14,7 @@ import java.util.UUID;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6987 {
-   private static final SuggestionProvider<Class6619> field30228 = (var0, var1) -> Class6618.method20141(Class2348.field16087.method9190(), var1);
+   private static final SuggestionProvider<Class6619> field30228 = (var0, var1) -> Class6618.method20141(Registry.field16087.method9190(), var1);
    private static final DynamicCommandExceptionType field30229 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.attribute.failed.entity", var0)
    );

@@ -9,7 +9,7 @@ public class Class9413 {
       return MathHelper.method37818(0.62222224F - var3 * 0.05F, 0.5F + var3 * 0.1F, 1.0F);
    }
 
-   public static Class8907 method36062(float var0, float var1, float var2, boolean var3) {
+   public static Biome method36062(float var0, float var1, float var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
       var6.method35249(Class179.field624, new Class6692(Class8992.field41105, 8, 4, 4));
@@ -62,7 +62,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36063(float var0, float var1, boolean var2) {
+   public static Biome method36063(float var0, float var1, boolean var2) {
       Class9328 var5 = new Class9328();
       Class8468.method29838(var5);
       Class8468.method29840(var5);
@@ -109,23 +109,23 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36064() {
+   public static Biome method36064() {
       return method36071(0.1F, 0.2F, 40, 2, 3);
    }
 
-   public static Class8907 method36065() {
+   public static Biome method36065() {
       Class9328 var2 = new Class9328();
       Class8468.method29848(var2);
       return method36073(0.1F, 0.2F, 0.8F, false, true, false, var2);
    }
 
-   public static Class8907 method36066() {
+   public static Biome method36066() {
       Class9328 var2 = new Class9328();
       Class8468.method29848(var2);
       return method36073(0.2F, 0.4F, 0.8F, false, true, true, var2);
    }
 
-   public static Class8907 method36067() {
+   public static Biome method36067() {
       Class9328 var2 = new Class9328();
       Class8468.method29848(var2);
       var2.method35249(Class179.field624, new Class6692(Class8992.field41062, 10, 1, 1))
@@ -133,19 +133,19 @@ public class Class9413 {
       return method36073(0.2F, 0.4F, 0.9F, false, false, true, var2);
    }
 
-   public static Class8907 method36068() {
+   public static Biome method36068() {
       return method36071(0.45F, 0.3F, 10, 1, 1);
    }
 
-   public static Class8907 method36069() {
+   public static Biome method36069() {
       return method36072(0.1F, 0.2F, 40, 2);
    }
 
-   public static Class8907 method36070() {
+   public static Biome method36070() {
       return method36072(0.45F, 0.3F, 10, 1);
    }
 
-   private static Class8907 method36071(float var0, float var1, int var2, int var3, int var4) {
+   private static Biome method36071(float var0, float var1, int var2, int var3, int var4) {
       Class9328 var7 = new Class9328();
       Class8468.method29848(var7);
       var7.method35249(Class179.field624, new Class6692(Class8992.field41062, var2, 1, var3))
@@ -155,7 +155,7 @@ public class Class9413 {
       return method36073(var0, var1, 0.9F, false, false, false, var7);
    }
 
-   private static Class8907 method36072(float var0, float var1, int var2, int var3) {
+   private static Biome method36072(float var0, float var1, int var2, int var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29848(var6);
       var6.method35249(Class179.field624, new Class6692(Class8992.field41062, var2, 1, var3))
@@ -164,7 +164,7 @@ public class Class9413 {
       return method36073(var0, var1, 0.9F, true, false, false, var6);
    }
 
-   private static Class8907 method36073(float var0, float var1, float var2, boolean var3, boolean var4, boolean var5, Class9328 var6) {
+   private static Biome method36073(float var0, float var1, float var2, boolean var3, boolean var4, boolean var5, Class9328 var6) {
       Class7935 var9 = new Class7935().method26688(Class9109.field41850);
       if (!var4 && !var5) {
          var9.method26693(Class9438.field43838);
@@ -220,7 +220,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36074(float var0, float var1, Class9319<Class8278> var2, boolean var3) {
+   public static Biome method36074(float var0, float var1, Class9319<Class8278> var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
       var6.method35249(Class179.field624, new Class6692(Class8992.field41047, 5, 4, 6));
@@ -269,7 +269,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36075(float var0, float var1, boolean var2, boolean var3, boolean var4) {
+   public static Biome method36075(float var0, float var1, boolean var2, boolean var3, boolean var4) {
       Class9328 var7 = new Class9328();
       Class8468.method29845(var7);
       Class7935 var8 = new Class7935().method26688(Class9109.field41844);
@@ -323,7 +323,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36076(boolean var0) {
+   public static Biome method36076(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29843(var3);
       if (!var0) {
@@ -383,7 +383,7 @@ public class Class9413 {
          .method37921();
    }
 
-   private static Class8907 method36077(Class7935 var0) {
+   private static Biome method36077(Class7935 var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29849(var3);
       return new Class9684()
@@ -401,22 +401,22 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36078() {
+   public static Biome method36078() {
       Class7935 var2 = new Class7935().method26688(Class9109.field41845);
       return method36077(var2);
    }
 
-   public static Class8907 method36079() {
+   public static Biome method36079() {
       Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26690(Class1993.field13002, Class9104.field41633);
       return method36077(var2);
    }
 
-   public static Class8907 method36080() {
+   public static Biome method36080() {
       Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26693(Class9438.field43850);
       return method36077(var2);
    }
 
-   public static Class8907 method36081() {
+   public static Biome method36081() {
       Class7935 var2 = new Class7935()
          .method26688(Class9109.field41845)
          .method26693(Class9438.field43850)
@@ -425,12 +425,12 @@ public class Class9413 {
       return method36077(var2);
    }
 
-   public static Class8907 method36082() {
+   public static Biome method36082() {
       Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26690(Class1993.field12998, Class9104.field41638);
       return method36077(var2);
    }
 
-   public static Class8907 method36083(float var0, float var1) {
+   public static Biome method36083(float var0, float var1) {
       Class9328 var4 = new Class9328();
       Class8468.method29847(var4);
       Class7935 var5 = new Class7935().method26688(Class9109.field41854);
@@ -468,7 +468,7 @@ public class Class9413 {
          .method37921();
    }
 
-   private static Class8907 method36084(float var0, float var1, float var2, boolean var3, boolean var4, Class9328 var5) {
+   private static Biome method36084(float var0, float var1, float var2, boolean var3, boolean var4, Class9328 var5) {
       Class7935 var8 = new Class7935().method26688(!var4 ? Class9109.field41850 : Class9109.field41858);
       if (!var3 && !var4) {
          var8.method26693(Class9438.field43855).method26693(Class9438.field43834);
@@ -521,7 +521,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36085(float var0, float var1, float var2, boolean var3, boolean var4) {
+   public static Biome method36085(float var0, float var1, float var2, boolean var3, boolean var4) {
       Class9328 var7 = method36086();
       return method36084(var0, var1, var2, var3, var4, var7);
    }
@@ -535,13 +535,13 @@ public class Class9413 {
       return var2;
    }
 
-   public static Class8907 method36087() {
+   public static Biome method36087() {
       Class9328 var2 = method36086();
       var2.method35249(Class179.field624, new Class6692(Class8992.field41047, 8, 4, 4));
       return method36084(1.5F, 0.025F, 1.0F, true, false, var2);
    }
 
-   private static Class8907 method36088(Class9319<Class8278> var0, float var1, float var2, boolean var3, boolean var4) {
+   private static Biome method36088(Class9319<Class8278> var0, float var1, float var2, boolean var3, boolean var4) {
       Class9328 var7 = new Class9328();
       Class8468.method29840(var7);
       Class7935 var8 = new Class7935().method26688(var0);
@@ -586,19 +586,19 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36089(float var0, float var1, boolean var2) {
+   public static Biome method36089(float var0, float var1, boolean var2) {
       return method36088(Class9109.field41841, var0, var1, var2, false);
    }
 
-   public static Class8907 method36090(float var0, float var1) {
+   public static Biome method36090(float var0, float var1) {
       return method36088(Class9109.field41863, var0, var1, true, true);
    }
 
-   public static Class8907 method36091() {
+   public static Biome method36091() {
       return method36088(Class9109.field41846, 0.1F, 0.2F, true, false);
    }
 
-   private static Class8907 method36092(Class9328 var0, int var1, int var2, boolean var3, Class7935 var4) {
+   private static Biome method36092(Class9328 var0, int var1, int var2, boolean var3, Class7935 var4) {
       return new Class9684()
          .method37911(Class87.field224)
          .method37912(Class100.field285)
@@ -655,7 +655,7 @@ public class Class9413 {
       return var6;
    }
 
-   public static Class8907 method36094(boolean var0) {
+   public static Biome method36094(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29841(var3, 3, 4, 15);
       var3.method35249(Class179.field627, new Class6692(Class8992.field41073, 15, 1, 5));
@@ -668,7 +668,7 @@ public class Class9413 {
       return method36092(var3, 4020182, 329011, var0, var5);
    }
 
-   public static Class8907 method36095(boolean var0) {
+   public static Biome method36095(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29841(var3, 1, 4, 10);
       var3.method35249(Class179.field626, new Class6692(Class8992.field41018, 1, 1, 2));
@@ -680,7 +680,7 @@ public class Class9413 {
       return method36092(var3, 4159204, 329011, var0, var4);
    }
 
-   public static Class8907 method36096(boolean var0) {
+   public static Biome method36096(boolean var0) {
       Class9328 var3 = new Class9328();
       if (!var0) {
          Class8468.method29841(var3, 10, 2, 15);
@@ -702,7 +702,7 @@ public class Class9413 {
       return method36092(var3, 4566514, 267827, var0, var4);
    }
 
-   public static Class8907 method36097() {
+   public static Biome method36097() {
       Class9328 var2 = new Class9328().method35249(Class179.field627, new Class6692(Class8992.field41070, 15, 1, 3));
       Class8468.method29842(var2, 10, 4);
       Class7935 var3 = method36093(Class9109.field41848, false, true, false)
@@ -713,7 +713,7 @@ public class Class9413 {
       return method36092(var2, 4445678, 270131, false, var3);
    }
 
-   public static Class8907 method36098() {
+   public static Biome method36098() {
       Class9328 var2 = new Class9328();
       Class8468.method29842(var2, 5, 1);
       var2.method35249(Class179.field623, new Class6692(Class8992.field41021, 5, 1, 1));
@@ -723,7 +723,7 @@ public class Class9413 {
       return method36092(var2, 4445678, 270131, true, var3);
    }
 
-   public static Class8907 method36099(boolean var0) {
+   public static Biome method36099(boolean var0) {
       Class9328 var3 = new Class9328()
          .method35249(Class179.field626, new Class6692(Class8992.field41086, 1, 1, 4))
          .method35249(Class179.field627, new Class6692(Class8992.field41073, 15, 1, 5))
@@ -776,7 +776,7 @@ public class Class9413 {
          .method37921();
    }
 
-   private static Class8907 method36100(float var0, float var1, boolean var2, Class9328 var3) {
+   private static Biome method36100(float var0, float var1, boolean var2, Class9328 var3) {
       Class7935 var6 = new Class7935().method26688(Class9109.field41850);
       Class8468.method29771(var6);
       var6.method26693(Class9438.field43858);
@@ -834,17 +834,17 @@ public class Class9413 {
       return var2;
    }
 
-   public static Class8907 method36102(float var0, float var1) {
+   public static Biome method36102(float var0, float var1) {
       Class9328 var4 = method36101().method35249(Class179.field624, new Class6692(Class8992.field41105, 5, 4, 4)).method35252();
       return method36100(var0, var1, false, var4);
    }
 
-   public static Class8907 method36103() {
+   public static Biome method36103() {
       Class9328 var2 = method36101().method35249(Class179.field624, new Class6692(Class8992.field41071, 4, 2, 3));
       return method36100(0.1F, 0.4F, true, var2);
    }
 
-   public static Class8907 method36104(float var0, float var1, boolean var2, boolean var3, boolean var4, boolean var5) {
+   public static Biome method36104(float var0, float var1, boolean var2, boolean var3, boolean var4, boolean var5) {
       Class9328 var8 = new Class9328();
       Class8468.method29838(var8);
       var8.method35249(Class179.field624, new Class6692(Class8992.field41105, 8, 4, 4))
@@ -909,7 +909,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36105(float var0, float var1, boolean var2) {
+   public static Biome method36105(float var0, float var1, boolean var2) {
       Class9328 var5 = new Class9328();
       Class8468.method29838(var5);
       Class8468.method29840(var5);
@@ -953,7 +953,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36106(float var0, float var1, boolean var2) {
+   public static Biome method36106(float var0, float var1, boolean var2) {
       Class9328 var5 = new Class9328();
       Class8468.method29838(var5);
       Class8468.method29840(var5);
@@ -1009,7 +1009,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36107(float var0, float var1, boolean var2, boolean var3) {
+   public static Biome method36107(float var0, float var1, boolean var2, boolean var3) {
       Class9328 var6 = new Class9328().method35251(0.07F);
       Class8468.method29844(var6);
       Class7935 var7 = new Class7935().method26688(!var2 ? Class9109.field41850 : Class9109.field41852);
@@ -1062,7 +1062,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36108(float var0, float var1, float var2, int var3, boolean var4) {
+   public static Biome method36108(float var0, float var1, float var2, int var3, boolean var4) {
       Class9328 var7 = new Class9328()
          .method35249(Class179.field626, new Class6692(Class8992.field41086, 2, 1, 4))
          .method35249(Class179.field627, new Class6692(Class8992.field41073, 5, 1, 5));
@@ -1109,7 +1109,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36109(float var0, float var1, float var2, float var3, int var4, boolean var5, boolean var6) {
+   public static Biome method36109(float var0, float var1, float var2, float var3, int var4, boolean var5, boolean var6) {
       Class9328 var9 = new Class9328();
       if (!var6 && !var5) {
          var9.method35249(Class179.field624, new Class6692(Class8992.field41096, 5, 2, 5));
@@ -1159,7 +1159,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36110() {
+   public static Biome method36110() {
       Class7935 var2 = new Class7935().method26688(Class9109.field41856);
       var2.method26690(Class1993.field13007, Class9104.field41680);
       return new Class9684()
@@ -1183,7 +1183,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36111() {
+   public static Biome method36111() {
       Class8835 var2 = new Class9328()
          .method35249(Class179.field623, new Class6692(Class8992.field41034, 50, 4, 4))
          .method35249(Class179.field623, new Class6692(Class8992.field41110, 100, 4, 4))
@@ -1234,7 +1234,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36112() {
+   public static Biome method36112() {
       double var2 = 0.7;
       double var4 = 0.15;
       Class8835 var6 = new Class9328()
@@ -1291,7 +1291,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36113() {
+   public static Biome method36113() {
       Class8835 var2 = new Class9328()
          .method35249(Class179.field623, new Class6692(Class8992.field41034, 40, 1, 1))
          .method35249(Class179.field623, new Class6692(Class8992.field41049, 100, 2, 5))
@@ -1345,7 +1345,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36114() {
+   public static Biome method36114() {
       Class8835 var2 = new Class9328()
          .method35249(Class179.field623, new Class6692(Class8992.field41110, 1, 2, 4))
          .method35249(Class179.field623, new Class6692(Class8992.field41037, 9, 3, 4))
@@ -1395,7 +1395,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Class8907 method36115() {
+   public static Biome method36115() {
       Class8835 var2 = new Class9328()
          .method35249(Class179.field623, new Class6692(Class8992.field41025, 1, 4, 4))
          .method35249(Class179.field624, new Class6692(Class8992.field41088, 60, 1, 2))

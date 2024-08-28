@@ -36,7 +36,7 @@ public class Class4486 extends Class4457 {
    public JsonObject method14092(Class8107 var1) {
       JsonObject var4 = super.method14092(var1);
       if (this.field21682 != null) {
-         var4.addProperty("block", Class2348.field16072.method9181(this.field21682).toString());
+         var4.addProperty("block", Registry.field16072.method9181(this.field21682).toString());
       }
 
       var4.add("state", this.field21683.method23262());

@@ -17,7 +17,7 @@ public class Class998 extends Class995 {
       ArrayList var6 = Lists.newArrayList();
       int var7 = 0;
 
-      for (Class9078 var9 : Class2348.field16079) {
+      for (Class9078 var9 : Registry.field16079) {
          this.field5496 = var9;
          this.method4077(var3);
          if (this.method4080()) {
@@ -53,14 +53,14 @@ public class Class998 extends Class995 {
 
    @Override
    public void method2724(Class39 var1) {
-      var1.method109("Motive", Class2348.field16079.method9181(this.field5496).toString());
+      var1.method109("Motive", Registry.field16079.method9181(this.field5496).toString());
       var1.method100("Facing", (byte)this.field5489.method534());
       super.method2724(var1);
    }
 
    @Override
    public void method2723(Class39 var1) {
-      this.field5496 = Class2348.field16079.method9184(ResourceLocation.method8289(var1.method126("Motive")));
+      this.field5496 = Registry.field16079.method9184(ResourceLocation.method8289(var1.method126("Motive")));
       this.field5489 = Direction.method547(var1.method120("Facing"));
       super.method2723(var1);
       this.method4077(this.field5489);

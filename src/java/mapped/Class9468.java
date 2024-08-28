@@ -28,11 +28,11 @@ public class Class9468 implements ArgumentType<Class7144> {
 
    public Class7144 parse(StringReader var1) throws CommandSyntaxException {
       ResourceLocation var4 = ResourceLocation.method8294(var1);
-      return Class2348.field16071.method9187(var4).orElseThrow(() -> field44001.create(var4));
+      return Registry.field16071.method9187(var4).orElseThrow(() -> field44001.create(var4));
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20141(Class2348.field16071.method9190(), var2);
+      return Class6618.method20141(Registry.field16071.method9190(), var2);
    }
 
    public Collection<String> getExamples() {

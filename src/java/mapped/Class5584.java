@@ -28,7 +28,7 @@ public class Class5584 implements Packet<Class5116> {
 
    @Override
    public void method17175(PacketBuffer var1) throws IOException {
-      this.field24776 = Class2348.field16069.method9172(var1.method35714());
+      this.field24776 = Registry.field16069.method9172(var1.method35714());
       this.field24777 = var1.<Class2266>method35712(Class2266.class);
       this.field24778 = var1.readInt();
       this.field24779 = var1.readInt();
@@ -39,7 +39,7 @@ public class Class5584 implements Packet<Class5116> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(Class2348.field16069.method9171(this.field24776));
+      var1.writeVarInt(Registry.field16069.method9171(this.field24776));
       var1.method35713(this.field24777);
       var1.writeInt(this.field24778);
       var1.writeInt(this.field24779);

@@ -241,7 +241,7 @@ public class Class1108 extends Class1006 implements Class1008 {
 
    public static boolean method5328(Class8992<Class1108> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       if (var1.method6997() != Class2197.field14351) {
-         if (Objects.equals(var1.method7178(var3), Optional.<Class8705<Class8907>>of(Class9495.field44127))
+         if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Class9495.field44127))
             && var3.getY() > 50
             && var3.getY() < 70
             && var4.nextFloat() < 0.5F

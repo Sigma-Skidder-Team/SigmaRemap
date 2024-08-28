@@ -369,7 +369,7 @@ public class Class1262 extends Class1193 {
                            + this.field6665
                               .world
                               .method6867()
-                              .<Class8907>method32453(Class2348.field16106)
+                              .<Biome>method32453(Registry.BIOME_KEY)
                               .method9181(this.field6665.world.method7003(var8))
                      );
                      long var28 = 0L;
@@ -517,7 +517,7 @@ public class Class1262 extends Class1193 {
             Class7380 var27 = this.field6665.world.method6738(var24);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.method8304() + ", " + var24.getY() + ", " + var24.method8306());
-            var11.add(String.valueOf(Class2348.field16072.method9181(var27.method23383())));
+            var11.add(String.valueOf(Registry.field16072.method9181(var27.method23383())));
             UnmodifiableIterator var21 = var27.method23468().entrySet().iterator();
 
             while (var21.hasNext()) {
@@ -542,7 +542,7 @@ public class Class1262 extends Class1193 {
             Class7379 var28 = this.field6665.world.method6739(var25);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.method8304() + ", " + var25.getY() + ", " + var25.method8306());
-            var11.add(String.valueOf(Class2348.field16070.method9181(var28.method23472())));
+            var11.add(String.valueOf(Registry.field16070.method9181(var28.method23472())));
             UnmodifiableIterator var31 = var28.method23468().entrySet().iterator();
 
             while (var31.hasNext()) {
@@ -566,7 +566,7 @@ public class Class1262 extends Class1193 {
          if (var26 != null) {
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Entity");
-            var11.add(String.valueOf(Class2348.field16074.method9181(var26.method3204())));
+            var11.add(String.valueOf(Registry.field16074.method9181(var26.method3204())));
             if (Class9299.field42842.method20214()) {
                Collection var29 = (Collection)Class9299.method35070(var26.method3204(), Class9299.field42842);
                var29.forEach(var1 -> var11.add("#" + var1));

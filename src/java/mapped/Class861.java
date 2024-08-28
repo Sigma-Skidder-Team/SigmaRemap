@@ -318,7 +318,7 @@ public class Class861 extends Class860<Class5820> {
 
          this.field4727.field25498.addAll(var4.method21737(var3.toLowerCase(Locale.ROOT)));
       } else {
-         for (Class3257 var5 : Class2348.field16075) {
+         for (Class3257 var5 : Registry.field16075) {
             var5.method11737(Class7401.field31670, this.field4727.field25498);
          }
       }

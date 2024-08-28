@@ -52,7 +52,7 @@ public class Class8605 {
       if (this != field38715) {
          JsonObject var3 = new JsonObject();
          if (this.field38717 != null) {
-            var3.addProperty("enchantment", Class2348.field16073.method9181(this.field38717).toString());
+            var3.addProperty("enchantment", Registry.field16073.method9181(this.field38717).toString());
          }
 
          var3.add("levels", this.field38718.method32005());
@@ -68,7 +68,7 @@ public class Class8605 {
          Class6069 var4 = null;
          if (var3.has("enchantment")) {
             ResourceLocation var5 = new ResourceLocation(Class8963.method32763(var3, "enchantment"));
-            var4 = Class2348.field16073.method9187(var5).orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var5 + "'"));
+            var4 = Registry.field16073.method9187(var5).orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var5 + "'"));
          }
 
          Class8840 var6 = Class8840.method32016(var3.get("levels"));

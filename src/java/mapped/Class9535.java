@@ -40,9 +40,9 @@ public class Class9535 {
             .apply(var0, Class9535::new)
    );
    public static final float[] field44370 = new float[]{1.0F, 0.75F, 0.5F, 0.25F, 0.0F, 0.25F, 0.5F, 0.75F};
-   public static final Class8705<Class9535> field44371 = Class8705.<Class9535>method31395(Class2348.field16066, new ResourceLocation("overworld"));
-   public static final Class8705<Class9535> field44372 = Class8705.<Class9535>method31395(Class2348.field16066, new ResourceLocation("the_nether"));
-   public static final Class8705<Class9535> field44373 = Class8705.<Class9535>method31395(Class2348.field16066, new ResourceLocation("the_end"));
+   public static final RegistryKey<Class9535> field44371 = RegistryKey.<Class9535>method31395(Registry.field16066, new ResourceLocation("overworld"));
+   public static final RegistryKey<Class9535> field44372 = RegistryKey.<Class9535>method31395(Registry.field16066, new ResourceLocation("the_nether"));
+   public static final RegistryKey<Class9535> field44373 = RegistryKey.<Class9535>method31395(Registry.field16066, new ResourceLocation("the_end"));
    public static final Class9535 field44374 = new Class9535(
       OptionalLong.empty(),
       true,
@@ -97,7 +97,7 @@ public class Class9535 {
       field44368,
       0.0F
    );
-   public static final Class8705<Class9535> field44377 = Class8705.<Class9535>method31395(Class2348.field16066, new ResourceLocation("overworld_caves"));
+   public static final RegistryKey<Class9535> field44377 = RegistryKey.<Class9535>method31395(Registry.field16066, new ResourceLocation("overworld_caves"));
    public static final Class9535 field44378 = new Class9535(
       OptionalLong.empty(),
       true,
@@ -116,7 +116,7 @@ public class Class9535 {
       field44366,
       0.0F
    );
-   public static final Codec<Supplier<Class9535>> field44379 = Class9054.method33671(Class2348.field16066, field44369);
+   public static final Codec<Supplier<Class9535>> field44379 = Class9054.method33671(Registry.field16066, field44369);
    private final OptionalLong field44380;
    private final boolean field44381;
    private final boolean field44382;
@@ -204,7 +204,7 @@ public class Class9535 {
    }
 
    @Deprecated
-   public static DataResult<Class8705<World>> method36867(Dynamic<?> var0) {
+   public static DataResult<RegistryKey<World>> method36867(Dynamic<?> var0) {
       Optional var3 = var0.asNumber().result();
       if (var3.isPresent()) {
          int var4 = ((Number)var3.get()).intValue();
@@ -225,7 +225,7 @@ public class Class9535 {
    }
 
    public static Class8905 method36868(Class8905 var0) {
-      Class2349 var3 = var0.<Class9535>method32453(Class2348.field16066);
+      Class2349 var3 = var0.<Class9535>method32453(Registry.field16066);
       var3.<Class9535>method9250(field44371, field44374, Lifecycle.stable());
       var3.<Class9535>method9250(field44377, field44378, Lifecycle.stable());
       var3.<Class9535>method9250(field44372, field44375, Lifecycle.stable());
@@ -233,16 +233,16 @@ public class Class9535 {
       return var0;
    }
 
-   private static Class5646 method36869(Class2348<Class8907> var0, Class2348<Class9309> var1, long var2) {
+   private static Class5646 method36869(Registry<Biome> var0, Registry<Class9309> var1, long var2) {
       return new Class5645(new Class1690(var0, var2), var2, () -> var1.method9189(Class9309.field43233));
    }
 
-   private static Class5646 method36870(Class2348<Class8907> var0, Class2348<Class9309> var1, long var2) {
+   private static Class5646 method36870(Registry<Biome> var0, Registry<Class9309> var1, long var2) {
       return new Class5645(Class9546.field44451.method36963(var0, var2), var2, () -> var1.method9189(Class9309.field43232));
    }
 
-   public static Class2350<Class9459> method36871(Class2348<Class9535> var0, Class2348<Class8907> var1, Class2348<Class9309> var2, long var3) {
-      Class2350 var7 = new Class2350<Class9459>(Class2348.field16068, Lifecycle.experimental());
+   public static Class2350<Class9459> method36871(Registry<Class9535> var0, Registry<Biome> var1, Registry<Class9309> var2, long var3) {
+      Class2350 var7 = new Class2350<Class9459>(Registry.field16068, Lifecycle.experimental());
       var7.<Class9459>method9250(Class9459.field43953, new Class9459(() -> var0.method9189(field44372), method36870(var1, var2, var3)), Lifecycle.stable());
       var7.<Class9459>method9250(Class9459.field43954, new Class9459(() -> var0.method9189(field44373), method36869(var1, var2, var3)), Lifecycle.stable());
       return var7;
@@ -259,7 +259,7 @@ public class Class9535 {
       return !this.method36893(field44376) ? "" : "_end";
    }
 
-   public static File method36874(Class8705<World> var0, File var1) {
+   public static File method36874(RegistryKey<World> var0, File var1) {
       if (var0 != World.field8999) {
          if (var0 != World.THE_END) {
             return var0 != World.field9000

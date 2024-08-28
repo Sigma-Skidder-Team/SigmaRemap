@@ -8,14 +8,14 @@ import com.mojang.serialization.Lifecycle;
 
 public final class Class8423<E> implements Codec<Class2350<E>> {
    private final Codec<Class2350<E>> field36097;
-   private final Class8705<? extends Class2348<E>> field36098;
+   private final RegistryKey<? extends Registry<E>> field36098;
    private final Codec<E> field36099;
 
-   public static <E> Class8423<E> method29595(Class8705<? extends Class2348<E>> var0, Lifecycle var1, Codec<E> var2) {
+   public static <E> Class8423<E> method29595(RegistryKey<? extends Registry<E>> var0, Lifecycle var1, Codec<E> var2) {
       return new Class8423<E>(var0, var1, var2);
    }
 
-   private Class8423(Class8705<? extends Class2348<E>> var1, Lifecycle var2, Codec<E> var3) {
+   private Class8423(RegistryKey<? extends Registry<E>> var1, Lifecycle var2, Codec<E> var3) {
       this.field36097 = Class2350.<E>method9257(var1, var2, var3);
       this.field36098 = var1;
       this.field36099 = var3;

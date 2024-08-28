@@ -29,7 +29,7 @@ public class Class8890 {
    }
 
    private static Class8890 method32358(String var0) {
-      return Class2348.<Class8890>method9194(Class2348.field16095, var0, new Class8890(var0));
+      return Registry.<Class8890>method9194(Registry.field16095, var0, new Class8890(var0));
    }
 
    @Override

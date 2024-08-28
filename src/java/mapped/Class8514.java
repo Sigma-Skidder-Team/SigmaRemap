@@ -1521,7 +1521,7 @@ public class Class8514 {
    }
 
    public static Class3257 method30156(Block var0, Class3257 var1) {
-      return method30158(Class2348.field16072.method9181(var0), var1);
+      return method30158(Registry.field16072.method9181(var0), var1);
    }
 
    private static Class3257 method30157(String var0, Class3257 var1) {
@@ -1533,6 +1533,6 @@ public class Class8514 {
          ((Class3292)var1).method11846(Class3257.field18732, var1);
       }
 
-      return Class2348.<Class3257, Class3257>method9195(Class2348.field16075, var0, var1);
+      return Registry.<Class3257, Class3257>method9195(Registry.field16075, var0, var1);
    }
 }

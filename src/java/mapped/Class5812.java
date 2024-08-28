@@ -137,7 +137,7 @@ public abstract class Class5812 {
       } catch (Exception var10) {
          Class4526 var8 = Class4526.method14413(var10, "Container click");
          Class8965 var9 = var8.method14410("Click info");
-         var9.method32806("Menu Type", () -> this.field25470 == null ? "<no type>" : Class2348.field16084.method9181(this.field25470).toString());
+         var9.method32806("Menu Type", () -> this.field25470 == null ? "<no type>" : Registry.field16084.method9181(this.field25470).toString());
          var9.method32806("Menu Class", () -> this.getClass().getCanonicalName());
          var9.method32807("Slot Count", this.field25468.size());
          var9.method32807("Slot", var1);

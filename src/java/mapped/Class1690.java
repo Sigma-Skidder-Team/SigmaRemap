@@ -7,21 +7,21 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 public class Class1690 extends Class1685 {
    public static final Codec<Class1690> field9191 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Class8611.<Class8907>method30859(Class2348.field16106).forGetter(var0x -> var0x.field9193),
+               Class8611.<Biome>method30859(Registry.BIOME_KEY).forGetter(var0x -> var0x.field9193),
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field9194)
             )
             .apply(var0, var0.stable(Class1690::new))
    );
    private final Class8972 field9192;
-   private final Class2348<Class8907> field9193;
+   private final Registry<Biome> field9193;
    private final long field9194;
-   private final Class8907 field9195;
-   private final Class8907 field9196;
-   private final Class8907 field9197;
-   private final Class8907 field9198;
-   private final Class8907 field9199;
+   private final Biome field9195;
+   private final Biome field9196;
+   private final Biome field9197;
+   private final Biome field9198;
+   private final Biome field9199;
 
-   public Class1690(Class2348<Class8907> var1, long var2) {
+   public Class1690(Registry<Biome> var1, long var2) {
       this(
          var1,
          var2,
@@ -33,7 +33,7 @@ public class Class1690 extends Class1685 {
       );
    }
 
-   private Class1690(Class2348<Class8907> var1, long var2, Class8907 var4, Class8907 var5, Class8907 var6, Class8907 var7, Class8907 var8) {
+   private Class1690(Registry<Biome> var1, long var2, Biome var4, Biome var5, Biome var6, Biome var7, Biome var8) {
       super(ImmutableList.of(var4, var5, var6, var7, var8));
       this.field9193 = var1;
       this.field9194 = var2;
@@ -58,7 +58,7 @@ public class Class1690 extends Class1685 {
    }
 
    @Override
-   public Class8907 method7005(int var1, int var2, int var3) {
+   public Biome method7005(int var1, int var2, int var3) {
       int var6 = var1 >> 2;
       int var7 = var3 >> 2;
       if ((long)var6 * (long)var6 + (long)var7 * (long)var7 > 4096L) {

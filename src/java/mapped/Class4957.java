@@ -8,7 +8,7 @@ import com.google.gson.JsonSerializationContext;
 public class Class4957 extends Class4928<Class138> {
    public void method15246(JsonObject var1, Class138 var2, JsonSerializationContext var3) {
       super.method15246(var1, var2, var3);
-      var1.addProperty("enchantment", Class2348.field16073.method9181(Class138.method414(var2)).toString());
+      var1.addProperty("enchantment", Registry.field16073.method9181(Class138.method414(var2)).toString());
       var1.addProperty("formula", Class138.method415(var2).method10788().toString());
       JsonObject var6 = new JsonObject();
       Class138.method415(var2).method10786(var6, var3);
@@ -19,7 +19,7 @@ public class Class4957 extends Class4928<Class138> {
 
    public Class138 method15244(JsonObject var1, JsonDeserializationContext var2, Class122[] var3) {
       ResourceLocation var6 = new ResourceLocation(Class8963.method32763(var1, "enchantment"));
-      Class6069 var7 = Class2348.field16073.method9187(var6).orElseThrow(() -> new JsonParseException("Invalid enchantment id: " + var6));
+      Class6069 var7 = Registry.field16073.method9187(var6).orElseThrow(() -> new JsonParseException("Invalid enchantment id: " + var6));
       ResourceLocation var8 = new ResourceLocation(Class8963.method32763(var1, "formula"));
       Class8409 var9 = (Class8409)Class138.method416().get(var8);
       if (var9 != null) {

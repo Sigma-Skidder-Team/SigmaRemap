@@ -7,7 +7,7 @@ public class Class9537 {
    public static final Codec<Class9537> field44402 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Codec.intRange(0, 256).fieldOf("height").forGetter(Class9537::method36905),
-               Class2348.field16072.fieldOf("block").orElse(Blocks.AIR).forGetter(var0x -> var0x.method36906().method23383())
+               Registry.field16072.fieldOf("block").orElse(Blocks.AIR).forGetter(var0x -> var0x.method36906().method23383())
             )
             .apply(var0, Class9537::new)
    );
@@ -38,6 +38,6 @@ public class Class9537 {
 
    @Override
    public String toString() {
-      return (this.field44404 == 1 ? "" : this.field44404 + "*") + Class2348.field16072.method9181(this.field44403.method23383());
+      return (this.field44404 == 1 ? "" : this.field44404 + "*") + Registry.field16072.method9181(this.field44403.method23383());
    }
 }

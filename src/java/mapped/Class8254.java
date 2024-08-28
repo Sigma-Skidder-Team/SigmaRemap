@@ -71,6 +71,6 @@ public class Class8254 {
    public static final Class7144 field35498 = method28779(32, "hero_of_the_village", new Class7144(Class2146.field14038, 4521796));
 
    private static Class7144 method28779(int var0, String var1, Class7144 var2) {
-      return Class2348.<Class7144, Class7144>method9196(Class2348.field16071, var0, var1, var2);
+      return Registry.<Class7144, Class7144>method9196(Registry.field16071, var0, var1, var2);
    }
 }

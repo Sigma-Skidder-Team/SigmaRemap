@@ -32,6 +32,6 @@ public class Class9173 {
    );
 
    private static Class4869 method34279(String var0, Class4869 var1) {
-      return Class2348.<Class4869>method9194(Class2348.field16087, var0, var1);
+      return Registry.<Class4869>method9194(Registry.field16087, var0, var1);
    }
 }

@@ -6,7 +6,7 @@ import com.mojang.serialization.MapCodec;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Class7380 extends Class7377 {
-   public static final Codec<Class7380> field31585 = method23469(Class2348.field16072, Block::method11579).stable();
+   public static final Codec<Class7380> field31585 = method23469(Registry.field16072, Block::method11579).stable();
    private int field31586 = -1;
    private int field31587 = -1;
    private ResourceLocation field31588;
@@ -15,7 +15,7 @@ public class Class7380 extends Class7377 {
 
    public int method23490() {
       if (this.field31586 < 0) {
-         this.field31586 = Class2348.field16072.method9171(this.method23383());
+         this.field31586 = Registry.field16072.method9171(this.method23383());
       }
 
       return this.field31586;
@@ -35,7 +35,7 @@ public class Class7380 extends Class7377 {
 
    public ResourceLocation method23492() {
       if (this.field31588 == null) {
-         this.field31588 = Class2348.field16072.method9181(this.method23383());
+         this.field31588 = Registry.field16072.method9181(this.method23383());
       }
 
       return this.field31588;

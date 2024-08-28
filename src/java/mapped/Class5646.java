@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 public abstract class Class5646 {
-   public static final Codec<Class5646> field24984 = Class2348.field16136.dispatchStable(Class5646::method17790, Function.identity());
+   public static final Codec<Class5646> field24984 = Registry.field16136.dispatchStable(Class5646::method17790, Function.identity());
    public final Class1685 field24985;
    public final Class1685 field24986;
    private final Class9763 field24987;
@@ -36,7 +36,7 @@ public abstract class Class5646 {
          if (var3 != null && var3.method34769() != 0) {
             ArrayList var4 = Lists.newArrayList();
 
-            for (Class8907 var6 : this.field24985.method7201()) {
+            for (Biome var6 : this.field24985.method7201()) {
                if (var6.method32507().method24277(Class2961.field18067)) {
                   var4.add(var6);
                }
@@ -79,7 +79,7 @@ public abstract class Class5646 {
 
    public abstract Class5646 method17791(long var1);
 
-   public void method17818(Class2348<Class8907> var1, Class1670 var2) {
+   public void method17818(Registry<Biome> var1, Class1670 var2) {
       Class7481 var5 = var2.method7072();
       ((Class1672)var2).method7110(new Class1684(var1, var5, this.field24986));
    }
@@ -150,7 +150,7 @@ public abstract class Class5646 {
       int var7 = var5 * 16;
       int var8 = var6 * 16;
       BlockPos var9 = new BlockPos(var7, 0, var8);
-      Class8907 var10 = this.field24985.method7005((var5 << 2) + 2, 2, (var6 << 2) + 2);
+      Biome var10 = this.field24985.method7005((var5 << 2) + 2, 2, (var6 << 2) + 2);
       Class2420 var11 = new Class2420();
       long var12 = var11.method10371(var1.method6967(), var7, var8);
 
@@ -184,13 +184,13 @@ public abstract class Class5646 {
       return 256;
    }
 
-   public List<Class6692> method17808(Class8907 var1, Class7480 var2, Class179 var3, BlockPos var4) {
+   public List<Class6692> method17808(Biome var1, Class7480 var2, Class179 var3, BlockPos var4) {
       return var1.method32499().method31968(var3);
    }
 
    public void method17825(Class8904 var1, Class7480 var2, Class1670 var3, Class8761 var4, long var5) {
       Class7481 var9 = var3.method7072();
-      Class8907 var10 = this.field24985.method7005((var9.field32174 << 2) + 2, 0, (var9.field32175 << 2) + 2);
+      Biome var10 = this.field24985.method7005((var9.field32174 << 2) + 2, 0, (var9.field32175 << 2) + 2);
       this.method17826(Class9438.field43844, var1, var2, var3, var4, var5, var9, var10);
 
       for (Supplier var12 : var10.method32507().method24278()) {
@@ -198,7 +198,7 @@ public abstract class Class5646 {
       }
    }
 
-   private void method17826(Class9300<?, ?> var1, Class8904 var2, Class7480 var3, Class1670 var4, Class8761 var5, long var6, Class7481 var8, Class8907 var9) {
+   private void method17826(Class9300<?, ?> var1, Class8904 var2, Class7480 var3, Class1670 var4, Class8761 var5, long var6, Class7481 var8, Biome var9) {
       Class5444 var12 = var3.method24341(Class2002.method8391(var4.method7072(), 0), var1.field43174, var4);
       int var13 = var12 == null ? 0 : var12.method17123();
       Class8483 var14 = this.field24987.method38381(var1.field43174);
@@ -229,7 +229,7 @@ public abstract class Class5646 {
                } catch (Exception var21) {
                   Class4526 var19 = Class4526.method14413(var21, "Generating structure reference");
                   Class8965 var20 = var19.method14410("Structure");
-                  var20.method32806("Id", () -> Class2348.field16114.method9181(var17.method17125()).toString());
+                  var20.method32806("Id", () -> Registry.field16114.method9181(var17.method17125()).toString());
                   var20.method32806("Name", () -> var17.method17125().method11373());
                   var20.method32806("Class", () -> var17.method17125().getClass().getCanonicalName());
                   throw new Class2506(var19);
@@ -263,8 +263,8 @@ public abstract class Class5646 {
    }
 
    static {
-      Class2348.<Codec<? extends Class5646>>method9194(Class2348.field16136, "noise", Class5645.field24963);
-      Class2348.<Codec<? extends Class5646>>method9194(Class2348.field16136, "flat", Class5648.field24998);
-      Class2348.<Codec<? extends Class5646>>method9194(Class2348.field16136, "debug", Class5647.field24991);
+      Registry.<Codec<? extends Class5646>>method9194(Registry.field16136, "noise", Class5645.field24963);
+      Registry.<Codec<? extends Class5646>>method9194(Registry.field16136, "flat", Class5648.field24998);
+      Registry.<Codec<? extends Class5646>>method9194(Registry.field16136, "debug", Class5647.field24991);
    }
 }

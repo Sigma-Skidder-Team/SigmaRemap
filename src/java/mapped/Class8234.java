@@ -30,7 +30,7 @@ public class Class8234 {
    private final Map<Class8890, Class7346> field35353 = Maps.newHashMap();
 
    public static Class7537 method28659(String var0) {
-      Class8234 var3 = Class2348.<Class8234>method9194(Class2348.field16094, var0, new Class8234());
+      Class8234 var3 = Registry.<Class8234>method9194(Registry.field16094, var0, new Class8234());
       return new Class7537(var3);
    }
 

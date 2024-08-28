@@ -11,7 +11,7 @@ public class Class6770 extends Class6768<Class8278> {
    public void method20654(
       Random var1,
       Class1670 var2,
-      Class8907 var3,
+      Biome var3,
       int var4,
       int var5,
       int var6,
@@ -22,7 +22,7 @@ public class Class6770 extends Class6768<Class8278> {
       long var12,
       Class8278 var14
    ) {
-      double var17 = Class8907.field40314.method25315((double)var4 * 0.25, (double)var5 * 0.25, false);
+      double var17 = Biome.field40314.method25315((double)var4 * 0.25, (double)var5 * 0.25, false);
       if (var17 > 0.0) {
          int var19 = var4 & 15;
          int var20 = var5 & 15;

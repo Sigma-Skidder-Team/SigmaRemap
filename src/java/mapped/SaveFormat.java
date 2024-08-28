@@ -83,17 +83,17 @@ public class SaveFormat {
          var10.resultOrPartial(Util.method38529("WorldGenSettings: ", field45713::error))
             .orElseGet(
                () -> {
-                  Class2348<Class9535> var3 = Class8611.<Class9535>method30859(Class2348.field16066)
+                  Registry<Class9535> var3 = Class8611.<Class9535>method30859(Registry.field16066)
                      .codec()
                      .parse(var9)
                      .resultOrPartial(Util.method38529("Dimension type registry: ", field45713::error))
                      .orElseThrow(() -> new IllegalStateException("Failed to get dimension registry"));
-                  Class2348<Class8907> var4 = Class8611.method30859(Class2348.field16106)
+                  Registry<Biome> var4 = Class8611.method30859(Registry.BIOME_KEY)
                      .codec()
                      .parse(var9)
                      .resultOrPartial(Util.method38529("Biome registry: ", field45713::error))
                      .orElseThrow(() -> new IllegalStateException("Failed to get biome registry"));
-                  Class2348<Class9309> var5x = Class8611.method30859(Class2348.field16099)
+                  Registry<Class9309> var5x = Class8611.method30859(Registry.field16099)
                      .codec()
                      .parse(var9)
                      .resultOrPartial(Util.method38529("Noise settings registry: ", field45713::error))

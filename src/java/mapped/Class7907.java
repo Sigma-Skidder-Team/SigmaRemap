@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 public class Class7907<DC extends Class4716> implements Class7908<Class7907<?>> {
-   public static final Codec<Class7907<?>> field33878 = Class2348.field16118.dispatch("type", var0 -> var0.field33879, Class6272::method19245);
+   public static final Codec<Class7907<?>> field33878 = Registry.field16118.dispatch("type", var0 -> var0.field33879, Class6272::method19245);
    private final Class6272<DC> field33879;
    private final DC field33880;
 
@@ -20,7 +20,7 @@ public class Class7907<DC extends Class4716> implements Class7908<Class7907<?>> 
 
    @Override
    public String toString() {
-      return String.format("[%s %s]", Class2348.field16118.method9181(this.field33879), this.field33880);
+      return String.format("[%s %s]", Registry.field16118.method9181(this.field33879), this.field33880);
    }
 
    public Class7907<?> method26510(Class7907<?> var1) {

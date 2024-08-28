@@ -85,7 +85,7 @@ public class Class7660 {
 
       var2.method99("Sections", var19);
       var2.method111(
-         "Biomes", new Class1684(var0.<Class8907>method32453(Class2348.field16106), new Class7481(var1.field41310, var1.field41311), var3).method7198()
+         "Biomes", new Class1684(var0.<Biome>method32453(Registry.BIOME_KEY), new Class7481(var1.field41310, var1.field41311), var3).method7198()
       );
       var2.method99("Entities", var1.field41307);
       var2.method99("TileEntities", var1.field41308);

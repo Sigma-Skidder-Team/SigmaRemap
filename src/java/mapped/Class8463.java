@@ -41,7 +41,7 @@ public class Class8463 {
          Class7631 var4 = null;
          if (var3.has("fluid")) {
             ResourceLocation var5 = new ResourceLocation(Class8963.method32763(var3, "fluid"));
-            var4 = Class2348.field16070.method9184(var5);
+            var4 = Registry.field16070.method9184(var5);
          }
 
          Class7608 var7 = null;
@@ -64,7 +64,7 @@ public class Class8463 {
       if (this != field36278) {
          JsonObject var3 = new JsonObject();
          if (this.field36280 != null) {
-            var3.addProperty("fluid", Class2348.field16070.method9181(this.field36280).toString());
+            var3.addProperty("fluid", Registry.field16070.method9181(this.field36280).toString());
          }
 
          if (this.field36279 != null) {

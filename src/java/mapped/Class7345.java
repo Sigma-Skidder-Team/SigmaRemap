@@ -11,11 +11,11 @@ public class Class7345 {
       this.field31451 = (Class7900)var1.method27085();
    }
 
-   public Class8907 method23287(Class2348<Class8907> var1, int var2, int var3) {
+   public Biome method23287(Registry<Biome> var1, int var2, int var3) {
       int var6 = this.field31451.method26471(var2, var3);
-      Class8705 var7 = Class8900.method32443(var6);
+      RegistryKey var7 = Class8900.method32443(var6);
       if (var7 != null) {
-         Class8907 var8 = (Class8907)var1.method9183(var7);
+         Biome var8 = (Biome)var1.method9183(var7);
          if (var8 != null) {
             return var8;
          } else if (!SharedConstants.field42545) {

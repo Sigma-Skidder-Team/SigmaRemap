@@ -24,13 +24,13 @@ public enum Class186 {
       .collect(Collectors.toMap(Class186::method567, var0 -> (Class186)var0));
    private final int field695;
    private final String field696;
-   private final List<Class8705<Class8907>> field697;
+   private final List<RegistryKey<Biome>> field697;
    private static final Class186[] field698 = new Class186[]{field691, field692};
 
-   private Class186(int var3, String var4, Class8705<Class8907>... var5) {
+   private Class186(int var3, String var4, RegistryKey<Biome>... var5) {
       this.field695 = var3;
       this.field696 = var4;
-      this.field697 = Arrays.<Class8705<Class8907>>asList(var5);
+      this.field697 = Arrays.<RegistryKey<Biome>>asList(var5);
    }
 
    public String method567() {
@@ -53,7 +53,7 @@ public enum Class186 {
       return field693[var0];
    }
 
-   public static Class186 method571(Optional<Class8705<Class8907>> var0) {
+   public static Class186 method571(Optional<RegistryKey<Biome>> var0) {
       return var0.isPresent() && field692.field697.contains(var0.get()) ? field692 : field691;
    }
 }

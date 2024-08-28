@@ -29,7 +29,7 @@ public class Class9725 {
       }
 
       Class1684 var11 = new Class1684(
-         var0.method6867().<Class8907>method32453(Class2348.field16106), var3, var8, !var9.method119("Biomes", 11) ? null : var9.method128("Biomes")
+         var0.method6867().<Biome>method32453(Registry.BIOME_KEY), var3, var8, !var9.method119("Biomes", 11) ? null : var9.method128("Biomes")
       );
       Class8922 var12 = !var9.method119("UpgradeData", 10) ? Class8922.field40388 : new Class8922(var9.method130("UpgradeData"));
       Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.method11579().method23393(), var3, var9.method131("ToBeTicked", 9));
@@ -95,14 +95,14 @@ public class Class9725 {
          if (!var9.method119("TileTicks", 9)) {
             var41 = var13;
          } else {
-            var41 = Class6801.<Block>method20722(var9.method131("TileTicks", 10), Class2348.field16072::method9181, Class2348.field16072::method9184);
+            var41 = Class6801.<Block>method20722(var9.method131("TileTicks", 10), Registry.field16072::method9181, Registry.field16072::method9184);
          }
 
          Object var44;
          if (!var9.method119("LiquidTicks", 9)) {
             var44 = var14;
          } else {
-            var44 = Class6801.<Class7631>method20722(var9.method131("LiquidTicks", 10), Class2348.field16070::method9181, Class2348.field16070::method9184);
+            var44 = Class6801.<Class7631>method20722(var9.method131("LiquidTicks", 10), Registry.field16070::method9181, Registry.field16070::method9184);
          }
 
          var43 = new Class1674(

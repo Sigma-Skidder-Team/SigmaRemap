@@ -60,7 +60,7 @@ public abstract class Class2898<FC extends Class4698> {
    private final Codec<Class7909<FC, Class2898<FC>>> field17988;
 
    private static <C extends Class4698, F extends Class2898<C>> F method11214(String var0, F var1) {
-      return Class2348.<F>method9194(Class2348.field16112, var0, (F)var1);
+      return Registry.<F>method9194(Registry.field16112, var0, (F)var1);
    }
 
    public Class2898(Codec<FC> var1) {

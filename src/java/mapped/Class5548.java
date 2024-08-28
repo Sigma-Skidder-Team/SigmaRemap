@@ -28,7 +28,7 @@ public class Class5548 implements Packet<Class5116> {
       this.field24640 = new Object2IntOpenHashMap(var4);
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.method17457(Class2348.field16088.method9172(var1.method35714()), var1);
+         this.method17457(Registry.field16088.method9172(var1.method35714()), var1);
       }
    }
 
@@ -46,7 +46,7 @@ public class Class5548 implements Packet<Class5116> {
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
          Class9007 var6 = (Class9007)var5.getKey();
-         var1.writeVarInt(Class2348.field16088.method9171(var6.method33275()));
+         var1.writeVarInt(Registry.field16088.method9171(var6.method33275()));
          var1.writeVarInt(this.method17458(var6));
          var1.writeVarInt(var5.getIntValue());
       }

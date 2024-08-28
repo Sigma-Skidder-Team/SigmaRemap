@@ -122,7 +122,7 @@ public class Class1677 implements Class1663 {
       return this.field9150.method6878(var1, var2);
    }
 
-   public Class8907 method7176(BlockPos var1) {
+   public Biome method7176(BlockPos var1) {
       return this.field9150.method7003(var1);
    }
 

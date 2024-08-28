@@ -24,7 +24,7 @@ public class Class9361 {
    private final ReadWriteLock field43434 = new ReentrantReadWriteLock();
    private boolean field43435 = true;
    private boolean field43436;
-   public Class8907 field43437 = Class8708.field39311;
+   public Biome field43437 = Class8708.field39311;
    public BlockPos field43438 = BlockPos.field13032;
 
    public Class9361(Entity var1) {

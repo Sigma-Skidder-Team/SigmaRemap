@@ -15,7 +15,7 @@ public class Class5984<P extends Class6819> {
    private final Codec<P> field26068;
 
    private static <P extends Class6819> Class5984<P> method18558(String var0, Codec<P> var1) {
-      return Class2348.<Class5984<P>>method9194(Class2348.field16131, var0, new Class5984<P>(var1));
+      return Registry.<Class5984<P>>method9194(Registry.field16131, var0, new Class5984<P>(var1));
    }
 
    private Class5984(Codec<P> var1) {

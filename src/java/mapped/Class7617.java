@@ -6,7 +6,7 @@ import java.util.Optional;
 import java.util.OptionalInt;
 
 public abstract class Class7617 {
-   public static final Codec<Class7617> field32672 = Class2348.field16134.dispatch(Class7617::method24952, Class7646::method25118);
+   public static final Codec<Class7617> field32672 = Registry.field16134.dispatch(Class7617::method24952, Class7646::method25118);
    public final OptionalInt field32673;
 
    public static <S extends Class7617> RecordCodecBuilder<S, OptionalInt> method24958() {

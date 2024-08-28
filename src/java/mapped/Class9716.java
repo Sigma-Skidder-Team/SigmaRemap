@@ -65,11 +65,11 @@ public class Class9716 {
    }
 
    public static int method38065(Block var0) {
-      return Class2348.field16072.method9171(var0);
+      return Registry.field16072.method9171(var0);
    }
 
    public static Block method38066(ResourceLocation var0) {
-      return Class2348.field16072.method9193(var0) ? Class2348.field16072.method9184(var0) : null;
+      return Registry.field16072.method9193(var0) ? Registry.field16072.method9184(var0) : null;
    }
 
    public static int method38067(Class7380 var0) {

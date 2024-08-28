@@ -9,18 +9,18 @@ import java.util.function.Consumer;
 public class Class1323 extends Screen {
    private static final ITextComponent field6993 = new TranslationTextComponent("createWorld.customize.buffet.biome");
    private final Screen field6994;
-   private final Consumer<Class8907> field6995;
-   private final Class2349<Class8907> field6996;
+   private final Consumer<Biome> field6995;
+   private final Class2349<Biome> field6996;
    private Class1283 field6997;
-   private Class8907 field6998;
+   private Biome field6998;
    private Class1206 field6999;
 
-   public Class1323(Screen var1, Class8904 var2, Consumer<Class8907> var3, Class8907 var4) {
+   public Class1323(Screen var1, Class8904 var2, Consumer<Biome> var3, Biome var4) {
       super(new TranslationTextComponent("createWorld.customize.buffet.title"));
       this.field6994 = var1;
       this.field6995 = var3;
       this.field6998 = var4;
-      this.field6996 = var2.<Class8907>method32453(Class2348.field16106);
+      this.field6996 = var2.<Biome>method32453(Registry.BIOME_KEY);
    }
 
    @Override
@@ -60,12 +60,12 @@ public class Class1323 extends Screen {
    }
 
    // $VF: synthetic method
-   public static Class2349<Class8907> method6291(Class1323 var0) {
+   public static Class2349<Biome> method6291(Class1323 var0) {
       return var0.field6996;
    }
 
    // $VF: synthetic method
-   public static Class8907 method6292(Class1323 var0, Class8907 var1) {
+   public static Biome method6292(Class1323 var0, Biome var1) {
       return var0.field6998 = var1;
    }
 

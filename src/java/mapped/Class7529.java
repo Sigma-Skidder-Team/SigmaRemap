@@ -15,7 +15,7 @@ public class Class7529 extends Class7530 {
    private static final Logger field32315 = LogManager.getLogger();
    public int field32316;
    public int field32317;
-   public Class8705<World> field32318;
+   public RegistryKey<World> field32318;
    public boolean field32319;
    public boolean field32320;
    public byte field32321;
@@ -31,7 +31,7 @@ public class Class7529 extends Class7530 {
       super(var1);
    }
 
-   public void method24589(int var1, int var2, int var3, boolean var4, boolean var5, Class8705<World> var6) {
+   public void method24589(int var1, int var2, int var3, boolean var4, boolean var5, RegistryKey<World> var6) {
       this.field32321 = (byte)var3;
       this.method24590((double)var1, (double)var2, this.field32321);
       this.field32318 = var6;
@@ -50,7 +50,7 @@ public class Class7529 extends Class7530 {
 
    @Override
    public void method24591(Class39 var1) {
-      this.field32318 = (Class8705<World>)Class9535.method36867(new Dynamic(Class8063.field34602, var1.method116("dimension")))
+      this.field32318 = (RegistryKey<World>)Class9535.method36867(new Dynamic(Class8063.field34602, var1.method116("dimension")))
          .resultOrPartial(field32315::error)
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
       this.field32316 = var1.method122("xCenter");

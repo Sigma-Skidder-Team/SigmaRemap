@@ -28,7 +28,7 @@ public class Class9369 {
             )
             .apply(var0, Class9369::new)
    );
-   public static final Codec<Supplier<Class9369>> field43492 = Class9054.method33671(Class2348.field16105, field43491);
+   public static final Codec<Supplier<Class9369>> field43492 = Class9054.method33671(Registry.field16105, field43491);
    private final ResourceLocation field43493;
    private final List<Pair<Class7487, Integer>> field43494;
    private final List<Class7487> field43495;

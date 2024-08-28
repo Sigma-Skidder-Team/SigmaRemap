@@ -116,7 +116,7 @@ public class Class9741 {
    }
 
    public static ItemStack method38187(ItemStack var0, Class8812 var1) {
-      ResourceLocation var4 = Class2348.field16076.method9181(var1);
+      ResourceLocation var4 = Registry.field16076.method9181(var1);
       if (var1 != Class8137.field34976) {
          var0.method32143().method109("Potion", var4.toString());
       } else {

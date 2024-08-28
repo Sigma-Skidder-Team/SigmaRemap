@@ -2667,7 +2667,7 @@ public class Class8981 {
                 int var5 = -1;
                 Block var6 = null;
                 if (var4 != null) {
-                    var5 = Class2348.field16075.method9171(var4);
+                    var5 = Registry.field16075.method9171(var4);
                     if (var4 instanceof Class3292) {
                         var6 = ((Class3292) var4).method11845();
                     }
@@ -2681,7 +2681,7 @@ public class Class8981 {
                 int var10 = -1;
                 Block var11 = null;
                 if (var9 != null) {
-                    var10 = Class2348.field16075.method9171(var9);
+                    var10 = Registry.field16075.method9171(var9);
                     if (var9 instanceof Class3292) {
                         var11 = ((Class3292) var9).method11845();
                     }
@@ -2846,9 +2846,9 @@ public class Class8981 {
     private static void method33031() {
         field40981 = new IdentityHashMap<Block, Integer>(300);
         if (field40981.isEmpty()) {
-            for (ResourceLocation var1 : Class2348.field16072.method9190()) {
-                Block var2 = Class2348.field16072.method9184(var1);
-                int var3 = Class2348.field16072.method9171(var2);
+            for (ResourceLocation var1 : Registry.field16072.method9190()) {
+                Block var2 = Registry.field16072.method9184(var1);
+                int var3 = Registry.field16072.method9171(var2);
                 field40981.put(var2, var3);
             }
         }
@@ -2870,8 +2870,8 @@ public class Class8981 {
                         String var4 = var13.group(2);
                         int var5 = Integer.parseInt(var4);
                         ResourceLocation var6 = new ResourceLocation(var14);
-                        if (Class2348.field16072.method9193(var6)) {
-                            Block var7 = Class2348.field16072.method9184(var6);
+                        if (Registry.field16072.method9193(var6)) {
+                            Block var7 = Registry.field16072.method9184(var6);
                             field40981.put(var7, var5);
                         } else {
                             Class7399.method23637("Unknown block name %s", var14);
@@ -4436,7 +4436,7 @@ public class Class8981 {
     public static void method33134(Block var0) {
         field40986++;
         int var1 = var0.method11526(var0.method11579()).ordinal();
-        field40985[field40986 * 2] = Class2348.field16072.method9171(var0) & 65535 | var1 << 16;
+        field40985[field40986 * 2] = Registry.field16072.method9171(var0) & 65535 | var1 << 16;
         field40985[field40986 * 2 + 1] = 0;
     }
 

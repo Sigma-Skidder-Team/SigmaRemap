@@ -9,7 +9,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public abstract class Class7487 {
-   public static final Codec<Class7487> field32183 = Class2348.field16138.dispatch("element_type", Class7487::method24377, Class8325::method29186);
+   public static final Codec<Class7487> field32183 = Registry.field16138.dispatch("element_type", Class7487::method24377, Class8325::method29186);
    private volatile Class109 field32184;
 
    public static <E extends Class7487> RecordCodecBuilder<E, Class109> method24379() {

@@ -9,10 +9,10 @@ public class Class279 extends Class277 {
 
    @Override
    public Stream<ResourceLocation> method1017() {
-      return Class2348.field16071.method9190().stream();
+      return Registry.field16071.method9190().stream();
    }
 
    public Class1713 method1022(Class7144 var1) {
-      return this.method1018(Class2348.field16071.method9181(var1));
+      return this.method1018(Registry.field16071.method9181(var1));
    }
 }

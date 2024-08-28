@@ -17,9 +17,9 @@ public class Enchant extends Command {
                Class6069 var6 = null;
                ItemStack var7 = mc.player.method3090().copy();
 
-               for (ResourceLocation var9 : Class2348.field16073.method9190()) {
+               for (ResourceLocation var9 : Registry.field16073.method9190()) {
                   if (var2[0].method30899().equals(var9.method8292())) {
-                     var6 = Class2348.field16073.method9184(var9);
+                     var6 = Registry.field16073.method9184(var9);
                   }
                }
 

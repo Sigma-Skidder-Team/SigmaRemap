@@ -48,7 +48,7 @@ public class Class8371 implements ArgumentType<Class9008> {
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
       ArrayList var5 = Lists.newArrayList(Class9008.field41188.keySet());
 
-      for (Class49 var7 : Class2348.field16088) {
+      for (Class49 var7 : Registry.field16088) {
          for (Object var9 : var7.method171()) {
             String var10 = this.method29324(var7, var9);
             var5.add(var10);

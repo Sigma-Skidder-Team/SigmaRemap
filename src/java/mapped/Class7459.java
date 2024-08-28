@@ -20,7 +20,7 @@ public class Class7459 implements Class7458 {
    }
 
    @Override
-   public Class8907 method24125() {
+   public Biome method24125() {
       return this.field32080.method3734().method7003(this.field32080.method3774());
    }
 

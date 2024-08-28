@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 
 public final class Class7269<E> {
    private static String[] field31188;
-   private final Map<Class8705<E>, DataResult<Supplier<E>>> field31189 = Maps.newIdentityHashMap();
+   private final Map<RegistryKey<E>, DataResult<Supplier<E>>> field31189 = Maps.newIdentityHashMap();
 
    public Class7269() {
    }

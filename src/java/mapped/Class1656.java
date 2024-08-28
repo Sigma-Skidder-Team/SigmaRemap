@@ -38,7 +38,7 @@ public class Class1656 extends World {
    private boolean field9037 = false;
 
    public Class1656(
-           ClientPlayNetHandler var1, Class6606 var2, Class8705<World> var3, Class9535 var4, int var5, Supplier<Class7165> var6, Class264 var7, boolean var8, long var9
+           ClientPlayNetHandler var1, Class6606 var2, RegistryKey<World> var3, Class9535 var4, int var5, Supplier<Class7165> var6, Class264 var7, boolean var8, long var9
    ) {
       super(var2, var3, var4, var6, true, var8, var9);
       this.field9026 = var1;
@@ -139,7 +139,7 @@ public class Class1656 extends World {
          var1.field5034 = var1.field5032;
          if (var1.field5071 || var1.method2800()) {
             var1.field5055++;
-            this.method6820().method22504(() -> Class2348.field16074.method9181(var1.method3204()).toString());
+            this.method6820().method22504(() -> Registry.field16074.method9181(var1.method3204()).toString());
             if (Class9561.method37057(var1)) {
                var1.tick();
             }
@@ -667,8 +667,8 @@ public class Class1656 extends World {
    }
 
    @Override
-   public Class8907 method6871(int var1, int var2, int var3) {
-      return this.method6867().<Class8907>method32453(Class2348.field16106).method9189(Class9495.field44122);
+   public Biome method6871(int var1, int var2, int var3) {
+      return this.method6867().<Biome>method32453(Registry.BIOME_KEY).method9189(Class9495.field44122);
    }
 
    public float method6872(float var1) {
@@ -685,7 +685,7 @@ public class Class1656 extends World {
       float var5 = this.method7001(var2);
       float var6 = MathHelper.method37764(var5 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
       var6 = MathHelper.method37777(var6, 0.0F, 1.0F);
-      Class8907 var7 = this.method7003(var1);
+      Biome var7 = this.method7003(var1);
       int var8 = var7.method32498();
       float var9 = (float)(var8 >> 16 & 0xFF) / 255.0F;
       float var10 = (float)(var8 >> 8 & 0xFF) / 255.0F;

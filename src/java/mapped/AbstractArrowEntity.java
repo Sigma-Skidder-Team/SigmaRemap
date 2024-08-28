@@ -410,7 +410,7 @@ public abstract class AbstractArrowEntity extends Class882 {
       var1.method108("damage", this.field5105);
       var1.method115("crit", this.method3487());
       var1.method100("PierceLevel", this.method3489());
-      var1.method109("SoundEvent", Class2348.field16069.method9181(this.field5107).toString());
+      var1.method109("SoundEvent", Registry.field16069.method9181(this.field5107).toString());
       var1.method115("ShotFromCrossbow", this.method3488());
    }
 
@@ -439,7 +439,7 @@ public abstract class AbstractArrowEntity extends Class882 {
       this.method3484(var1.method132("crit"));
       this.method3485(var1.method120("PierceLevel"));
       if (var1.method119("SoundEvent", 8)) {
-         this.field5107 = Class2348.field16069.method9187(new ResourceLocation(var1.method126("SoundEvent"))).orElse(this.method3476());
+         this.field5107 = Registry.field16069.method9187(new ResourceLocation(var1.method126("SoundEvent"))).orElse(this.method3476());
       }
 
       this.method3494(var1.method132("ShotFromCrossbow"));

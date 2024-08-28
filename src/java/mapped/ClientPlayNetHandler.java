@@ -50,7 +50,7 @@ public class ClientPlayNetHandler implements Class5116 {
    private CommandDispatcher<Class6618> field23283 = new CommandDispatcher();
    private final Class282 field23284 = new Class282();
    private final UUID field23285 = UUID.randomUUID();
-   private Set<Class8705<World>> field23286;
+   private Set<RegistryKey<World>> field23286;
    public Class8904 field23287 = Class8904.method32457();
 
    public ClientPlayNetHandler(Minecraft var1, Screen var2, NetworkManager var3, GameProfile var4) {
@@ -86,7 +86,7 @@ public class ClientPlayNetHandler implements Class5116 {
       Collections.shuffle(var4);
       this.field23286 = Sets.newLinkedHashSet(var4);
       this.field23287 = var1.method17293();
-      Class8705 var5 = var1.method17295();
+      RegistryKey var5 = var1.method17295();
       Class9535 var6 = var1.method17294();
       this.field23281 = var1.method17296();
       boolean var7 = var1.method17299();
@@ -564,7 +564,7 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17378();
       int var5 = var1.method17379();
-      Class1684 var6 = var1.method17384() != null ? new Class1684(this.field23287.<Class8907>method32453(Class2348.field16106), var1.method17384()) : null;
+      Class1684 var6 = var1.method17384() != null ? new Class1684(this.field23287.<Biome>method32453(Registry.BIOME_KEY), var1.method17384()) : null;
       Class1674 var7 = this.field23273
          .method6883()
          .method7400(var4, var5, var6, var1.method17374(), var1.method17382(), var1.method17380(), var1.method17381());
@@ -857,7 +857,7 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15734(Class5545 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class8705 var4 = var1.method17433();
+      RegistryKey var4 = var1.method17433();
       Class9535 var5 = var1.method17432();
       ClientPlayerEntity var6 = this.field23272.player;
       int var7 = var6.method3205();
@@ -2068,7 +2068,7 @@ public class ClientPlayNetHandler implements Class5116 {
                   var8.method38667(var10);
                }
             } else {
-               field23267.warn("Entity {} does not have attribute {}", var4, Class2348.field16087.method9181(var7.method26560()));
+               field23267.warn("Entity {} does not have attribute {}", var4, Registry.field16087.method9181(var7.method26560()));
             }
          }
       }
@@ -2205,7 +2205,7 @@ public class ClientPlayNetHandler implements Class5116 {
       return this.field23285;
    }
 
-   public Set<Class8705<World>> method15801() {
+   public Set<RegistryKey<World>> method15801() {
       return this.field23286;
    }
 

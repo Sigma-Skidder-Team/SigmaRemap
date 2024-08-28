@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Set;
 
 public abstract class Class7139 {
-   public static final Codec<Class7139> field30696 = Class2348.field16133.dispatch(Class7139::method22268, Class9542::method36924);
+   public static final Codec<Class7139> field30696 = Registry.field16133.dispatch(Class7139::method22268, Class9542::method36924);
 
    public abstract Class9542<?> method22268();
 

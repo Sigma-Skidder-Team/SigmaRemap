@@ -8,11 +8,11 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class Class49<T> implements Iterable<Class9007<T>> {
-   private final Class2348<T> field100;
+   private final Registry<T> field100;
    private final Map<T, Class9007<T>> field101 = new IdentityHashMap<T, Class9007<T>>();
    private ITextComponent field102;
 
-   public Class49(Class2348<T> var1) {
+   public Class49(Registry<T> var1) {
       this.field100 = var1;
    }
 
@@ -24,7 +24,7 @@ public class Class49<T> implements Iterable<Class9007<T>> {
       return this.field101.computeIfAbsent((T)var1, var2x -> new Class9007<T>(this, (T)var2x, var2));
    }
 
-   public Class2348<T> method171() {
+   public Registry<T> method171() {
       return this.field100;
    }
 
@@ -38,7 +38,7 @@ public class Class49<T> implements Iterable<Class9007<T>> {
    }
 
    public String method173() {
-      return "stat_type." + Class2348.field16088.method9181(this).toString().replace(':', '.');
+      return "stat_type." + Registry.field16088.method9181(this).toString().replace(':', '.');
    }
 
    public ITextComponent method174() {

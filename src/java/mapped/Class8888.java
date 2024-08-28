@@ -66,11 +66,11 @@ public class Class8888 {
    }
 
    public void method32350(Consumer<Class4664> var1) {
-      this.method32352(var1, Class2348.field16075.method9181(this.field40210));
+      this.method32352(var1, Registry.field16075.method9181(this.field40210));
    }
 
    public void method32351(Consumer<Class4664> var1, String var2) {
-      ResourceLocation var5 = Class2348.field16075.method9181(this.field40210);
+      ResourceLocation var5 = Registry.field16075.method9181(this.field40210);
       if (!new ResourceLocation(var2).equals(var5)) {
          this.method32352(var1, new ResourceLocation(var2));
       } else {

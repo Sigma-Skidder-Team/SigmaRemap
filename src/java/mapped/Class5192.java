@@ -92,7 +92,7 @@ public class Class5192 extends Module {
             List var5 = (List) this.method15973("Blocks");
 
             for (BlockPos var7 : this.method16166(var1)) {
-                String var8 = Class2348.field16072.method9181(mc.world.method6738(var7).method23383()).toString();
+                String var8 = Registry.field16072.method9181(mc.world.method6738(var7).method23383()).toString();
                 if (var5.contains(var8)) {
                     var4.add(var7);
                 }

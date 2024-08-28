@@ -63,6 +63,6 @@ public interface Class7792 {
    Class4178 method25881(Class8761 var1, Class39 var2);
 
    static Class7792 method25882(Class7792 var0, String var1) {
-      return Class2348.<Class7792>method9194(Class2348.field16116, var1.toLowerCase(Locale.ROOT), var0);
+      return Registry.<Class7792>method9194(Registry.field16116, var1.toLowerCase(Locale.ROOT), var0);
    }
 }

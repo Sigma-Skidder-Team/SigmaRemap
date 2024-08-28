@@ -177,7 +177,7 @@ public final class Class8354 {
       if (!var0.method119("Name", 8)) {
          return Blocks.AIR.method11579();
       } else {
-         Block var3 = Class2348.field16072.method9184(new ResourceLocation(var0.method126("Name")));
+         Block var3 = Registry.field16072.method9184(new ResourceLocation(var0.method126("Name")));
          Class7380 var4 = var3.method11579();
          if (var0.method119("Properties", 10)) {
             Class39 var5 = var0.method130("Properties");
@@ -207,7 +207,7 @@ public final class Class8354 {
 
    public static Class39 method29287(Class7380 var0) {
       Class39 var3 = new Class39();
-      var3.method109("Name", Class2348.field16072.method9181(var0.method23383()).toString());
+      var3.method109("Name", Registry.field16072.method9181(var0.method23383()).toString());
       ImmutableMap var4 = var0.method23468();
       if (!var4.isEmpty()) {
          Class39 var5 = new Class39();

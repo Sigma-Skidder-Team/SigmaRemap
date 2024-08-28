@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class2831 implements Consumer<Consumer<Class7952>> {
-   private static final List<Class8705<Class8907>> field17610 = ImmutableList.of(
+   private static final List<RegistryKey<Biome>> field17610 = ImmutableList.of(
       Class9495.field44149,
       Class9495.field44128,
       Class9495.field44127,
@@ -19,7 +19,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
       Class9495.field44146,
       Class9495.field44133,
       Class9495.field44140,
-      new Class8705[]{
+      new RegistryKey[]{
          Class9495.field44134,
          Class9495.field44159,
          Class9495.field44156,
@@ -407,14 +407,14 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
 
    private Class7999 method11030(Class7999 var1) {
       for (Class8992 var7 : field17611) {
-         var1.method27312(Class2348.field16074.method9181(var7).toString(), Class4476.method14134(Class7552.method24700().method24701(var7)));
+         var1.method27312(Registry.field16074.method9181(var7).toString(), Class4476.method14134(Class7552.method24700().method24701(var7)));
       }
 
       return var1;
    }
 
-   public static Class7999 method11031(Class7999 var0, List<Class8705<Class8907>> var1) {
-      for (Class8705 var5 : var1) {
+   public static Class7999 method11031(Class7999 var0, List<RegistryKey<Biome>> var1) {
+      for (RegistryKey var5 : var1) {
          var0.method27312(var5.method31399().toString(), Class4474.method14130(Class8576.method30647(var5)));
       }
 

@@ -44,10 +44,10 @@ public class Class4386 {
    public void method13755() {
       field21402.clear();
 
-      for (Class9455 var4 : Class2348.field16069) {
+      for (Class9455 var4 : Registry.field16069) {
          ResourceLocation var5 = var4.method36383();
          if (this.field21403.method997(var5) == null) {
-            field21401.warn("Missing sound for event: {}", Class2348.field16069.method9181(var4));
+            field21401.warn("Missing sound for event: {}", Registry.field16069.method9181(var4));
             field21402.add(var5);
          }
       }

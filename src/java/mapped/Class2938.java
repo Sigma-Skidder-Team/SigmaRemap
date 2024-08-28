@@ -20,7 +20,7 @@ public class Class2938 extends Class2898<Class4712> {
             int var14 = var1.method6736(Class101.field299, var12, var13);
             var8.method8372(var12, var14, var13);
             var9.method8374(var8).method8380(Direction.field672, 1);
-            Class8907 var15 = var1.method7003(var8);
+            Biome var15 = var1.method7003(var8);
             if (var15.method32505(var1, var9, false)) {
                var1.method6725(var9, Blocks.ICE.method11579(), 2);
             }

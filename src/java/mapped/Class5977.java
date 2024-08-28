@@ -6,7 +6,7 @@ public final class Class5977 extends Class5970 {
    }
 
    @Override
-   public Class5646 method18500(Class2348<Class8907> var1, Class2348<Class9309> var2, long var3) {
+   public Class5646 method18500(Registry<Biome> var1, Registry<Class9309> var2, long var3) {
       return new Class5647(var1);
    }
 }

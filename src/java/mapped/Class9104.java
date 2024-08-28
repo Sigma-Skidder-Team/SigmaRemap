@@ -1119,6 +1119,6 @@ public class Class9104 {
    );
 
    private static <FC extends Class4698> Class7909<FC, ?> method33941(String var0, Class7909<FC, ?> var1) {
-      return Class2348.<Class7909<FC, ?>>method9194(Class6714.field29426, var0, var1);
+      return Registry.<Class7909<FC, ?>>method9194(Class6714.field29426, var0, var1);
    }
 }

@@ -101,7 +101,7 @@ public final class Class5645 extends Class5646 {
       return new Class5645(this.field24985.method7200(var1), var1, this.field24982);
    }
 
-   public boolean method17792(long var1, Class8705<Class9309> var3) {
+   public boolean method17792(long var1, RegistryKey<Class9309> var3) {
       return this.field24981 == var1 && this.field24982.get().method35168(var3);
    }
 
@@ -167,7 +167,7 @@ public final class Class5645 extends Class5646 {
 
          for (int var13 = -2; var13 <= 2; var13++) {
             for (int var18 = -2; var18 <= 2; var18++) {
-               Class8907 var23 = this.field24985.method7005(var2 + var13, var11, var3 + var18);
+               Biome var23 = this.field24985.method7005(var2 + var13, var11, var3 + var18);
                float var24 = var23.method32515();
                float var25 = var23.method32517();
                float var26;
@@ -558,7 +558,7 @@ public final class Class5645 extends Class5646 {
    }
 
    @Override
-   public List<Class6692> method17808(Class8907 var1, Class7480 var2, Class179 var3, BlockPos var4) {
+   public List<Class6692> method17808(Biome var1, Class7480 var2, Class179 var3, BlockPos var4) {
       if (var2.method24345(var4, true, Class2961.field18066).method17117()) {
          if (var3 == Class179.field623) {
             return Class2961.field18066.method11374();
@@ -591,7 +591,7 @@ public final class Class5645 extends Class5646 {
       if (!this.field24982.get().method35167()) {
          int var4 = var1.method7241();
          int var5 = var1.method7242();
-         Class8907 var6 = var1.method7003(new Class7481(var4, var5).method24364());
+         Biome var6 = var1.method7003(new Class7481(var4, var5).method24364());
          Class2420 var7 = new Class2420();
          var7.method10371(var1.method6967(), var4 << 4, var5 << 4);
          Class8170.method28430(var1, var6, var4, var5, var7);

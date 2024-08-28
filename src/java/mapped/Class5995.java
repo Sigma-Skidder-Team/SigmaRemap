@@ -17,7 +17,7 @@ public class Class5995 {
          if (var4 == null) {
             return null;
          } else {
-            Class8705 var5 = var3.method6813();
+            RegistryKey var5 = var3.method6813();
             if (var5 == null) {
                return null;
             } else {

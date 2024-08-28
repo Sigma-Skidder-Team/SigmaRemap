@@ -53,7 +53,7 @@ public class Class9160 {
    }
 
    private static int method34195(Class6619 var0, Collection<ServerPlayerEntity> var1, BlockPos var2, float var3) {
-      Class8705 var6 = var0.method20172().method6813();
+      RegistryKey var6 = var0.method20172().method6813();
 
       for (ServerPlayerEntity var8 : var1) {
          var8.method2829(var6, var2, var3, true, false);

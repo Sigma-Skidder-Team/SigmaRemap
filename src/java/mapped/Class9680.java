@@ -609,8 +609,8 @@ public class Class9680 {
       }
    }
 
-   public static Class8907 method37851(Class1663 var0, BlockPos var1) {
-      Class8907 var4 = Class8708.method31415(var0, var1);
+   public static Biome method37851(Class1663 var0, BlockPos var1) {
+      Biome var4 = Class8708.method31415(var0, var1);
       if ((var4 == Class8708.field39312 || var4 == Class8708.field39313) && !Class7944.method26906()) {
          var4 = Class8708.field39311;
       }
@@ -1014,7 +1014,7 @@ public class Class9680 {
       } else {
          Class8992 var6 = var0.method11855(var1.method32142());
          if (var6 != null) {
-            int var7 = Class2348.field16074.method9171(var6);
+            int var7 = Registry.field16074.method9171(var6);
             if (var7 >= 0) {
                int[] var8 = var2 != 0 ? field45260 : field45259;
                if (var8 != null) {
@@ -1207,7 +1207,7 @@ public class Class9680 {
    private static int method37889() {
       int var2 = 0;
 
-      for (ResourceLocation var4 : Class2348.field16071.method9190()) {
+      for (ResourceLocation var4 : Registry.field16071.method9190()) {
          Class7144 var5 = Class9056.method33703(var4);
          int var6 = Class7144.method22288(var5);
          if (var6 > var2) {
@@ -1224,7 +1224,7 @@ public class Class9680 {
       } else {
          var0 = Class9402.method35765(var0, "potion.", "effect.");
 
-         for (ResourceLocation var4 : Class2348.field16071.method9190()) {
+         for (ResourceLocation var4 : Registry.field16071.method9190()) {
             Class7144 var5 = Class9056.method33703(var4);
             if (var5.method22294().equals(var0)) {
                return Class7144.method22288(var5);

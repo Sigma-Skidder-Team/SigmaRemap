@@ -28,6 +28,6 @@ public class Class7963<U extends Class7882<?>> {
    }
 
    private static <U extends Class7882<?>> Class7963<U> method27087(String var0, Supplier<U> var1) {
-      return Class2348.<Class7963<?>, Class7963<U>>method9195(Class2348.field16093, new ResourceLocation(var0), new Class7963<U>(var1));
+      return Registry.<Class7963<?>, Class7963<U>>method9195(Registry.field16093, new ResourceLocation(var0), new Class7963<U>(var1));
    }
 }

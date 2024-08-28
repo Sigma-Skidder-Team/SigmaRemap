@@ -44,7 +44,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    private boolean field4881;
    private Vector3d field4882;
    private Class2002 field4883 = Class2002.method8389(0, 0, 0);
-   private Class8705<World> field4884 = World.field8999;
+   private RegistryKey<World> field4884 = World.field8999;
    private BlockPos field4885;
    private boolean field4886;
    private float field4887;
@@ -520,7 +520,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    public Entity method2745(ServerWorld var1) {
       this.field4876 = true;
       ServerWorld var4 = this.getServerWorld();
-      Class8705 var5 = var4.method6813();
+      RegistryKey var5 = var4.method6813();
       if (var5 == World.THE_END && var1.method6813() == World.field8999) {
          this.method3200();
          this.getServerWorld().method6934(this);
@@ -617,8 +617,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    private void method2748(ServerWorld var1) {
-      Class8705 var4 = var1.method6813();
-      Class8705 var5 = this.field5024.method6813();
+      RegistryKey var4 = var1.method6813();
+      RegistryKey var5 = this.field5024.method6813();
       CriteriaTriggers.CHANGED_DIMENSION.testForAll(this, var4, var5);
       if (var4 == World.field9000 && var5 == World.field8999 && this.field4882 != null) {
          CriteriaTriggers.field44493.method15143(this, this.field4882);
@@ -1302,7 +1302,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       return this.field4887;
    }
 
-   public Class8705<World> method2827() {
+   public RegistryKey<World> method2827() {
       return this.field4884;
    }
 
@@ -1310,7 +1310,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       return this.field4886;
    }
 
-   public void method2829(Class8705<World> var1, BlockPos var2, float var3, boolean var4, boolean var5) {
+   public void method2829(RegistryKey<World> var1, BlockPos var2, float var3, boolean var4, boolean var5) {
       if (var2 == null) {
          this.field4885 = null;
          this.field4884 = World.field8999;

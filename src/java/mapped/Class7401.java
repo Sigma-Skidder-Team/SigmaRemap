@@ -141,7 +141,7 @@ public abstract class Class7401 {
    }
 
    public void method23658(Class25<ItemStack> var1) {
-      for (Class3257 var5 : Class2348.field16075) {
+      for (Class3257 var5 : Registry.field16075) {
          var5.method11737(this, var1);
       }
    }

@@ -35,7 +35,7 @@ public class Class4669 implements Class4664 {
       }
 
       var1.add("ingredient", this.field22233.method336());
-      var1.addProperty("result", Class2348.field16075.method9181(this.field22234).toString());
+      var1.addProperty("result", Registry.field16075.method9181(this.field22234).toString());
       var1.addProperty("experience", this.field22235);
       var1.addProperty("cookingtime", this.field22236);
    }

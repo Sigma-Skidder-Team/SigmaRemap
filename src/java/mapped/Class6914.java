@@ -10,7 +10,7 @@ public class Class6914 {
    private static <T extends Class1006> void method21119(Class8992<T> var0, Class2068 var1, Class101 var2, Class8860<T> var3) {
       Class9364 var6 = field29911.put(var0, new Class9364(var2, var1, var3));
       if (var6 != null) {
-         throw new IllegalStateException("Duplicate registration for type " + Class2348.field16074.method9181(var0));
+         throw new IllegalStateException("Duplicate registration for type " + Registry.field16074.method9181(var0));
       }
    }
 

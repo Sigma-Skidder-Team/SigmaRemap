@@ -83,7 +83,7 @@ public class Class8287 extends Class8286 {
                   for (String var11 : var9.method97()) {
                      if (var9.method119(var11, 10)) {
                         Util.<Class49<?>>method38514(
-                           Class2348.field16088.method9187(new ResourceLocation(var11)),
+                           Registry.field16088.method9187(new ResourceLocation(var11)),
                            var3 -> {
                               Class39 var6x = var9.method130(var11);
 
@@ -167,7 +167,7 @@ public class Class8287 extends Class8286 {
       JsonObject var7 = new JsonObject();
 
       for (Entry<Class49<?>, JsonObject> var10 : var3.entrySet()) {
-         var7.add(Class2348.field16088.method9181(var10.getKey()).toString(), var10.getValue());
+         var7.add(Registry.field16088.method9181(var10.getKey()).toString(), var10.getValue());
       }
 
       JsonObject var9 = new JsonObject();

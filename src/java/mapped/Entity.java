@@ -1698,7 +1698,7 @@ public abstract class Entity implements Class933, Class909 {
             }
          } else {
             MinecraftServer var5 = var4.method6715();
-            Class8705 var6 = this.field5024.method6813() != World.field9000 ? World.field9000 : World.field8999;
+            RegistryKey var6 = this.field5024.method6813() != World.field9000 ? World.field9000 : World.field8999;
             ServerWorld var7 = var5.method1318(var6);
             if (var7 != null && var5.method1312() && !this.method3328() && this.field5081++ >= var3) {
                this.field5024.method6820().startSection("portal");

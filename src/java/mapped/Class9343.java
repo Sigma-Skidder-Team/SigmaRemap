@@ -14,7 +14,7 @@ public class Class9343 {
       return RecordCodecBuilder.create(
          var1 -> var1.group(
                   BlockPos.field13030.fieldOf("pos").forGetter(var0xx -> var0xx.field43375),
-                  Class2348.field16091.fieldOf("type").forGetter(var0xx -> var0xx.field43376),
+                  Registry.field16091.fieldOf("type").forGetter(var0xx -> var0xx.field43376),
                   Codec.INT.fieldOf("free_tickets").orElse(0).forGetter(var0xx -> var0xx.field43377),
                   RecordCodecBuilder.point(var0)
                )

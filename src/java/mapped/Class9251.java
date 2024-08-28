@@ -38,10 +38,10 @@ public class Class9251 {
       Class6711 var12 = Class6711.method20471(Class8063.field34602, Class190.field721, var11);
       Class6611 var13 = var0.method7998(var12, Class7818.field33531);
       long var14 = var13 == null ? 0L : var13.method20087().method26259();
-      Class2349<Class8907> var16 = var11.method32453(Class2348.field16106);
+      Class2349<Biome> var16 = var11.method32453(Registry.BIOME_KEY);
       Object var17;
       if (var13 != null && var13.method20087().method26268()) {
-         var17 = new Class1688((Class8907) var16.method9189(Class9495.field44122));
+         var17 = new Class1688((Biome) var16.method9189(Class9495.field44122));
       } else {
          var17 = new Class1689(var14, false, false, var16);
       }

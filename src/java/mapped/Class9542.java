@@ -11,7 +11,7 @@ public class Class9542<P extends Class7139> {
    private final Codec<P> field44433;
 
    private static <P extends Class7139> Class9542<P> method36923(String var0, Codec<P> var1) {
-      return Class2348.<Class9542<P>>method9194(Class2348.field16133, var0, new Class9542<P>(var1));
+      return Registry.<Class9542<P>>method9194(Registry.field16133, var0, new Class9542<P>(var1));
    }
 
    private Class9542(Codec<P> var1) {

@@ -7,13 +7,13 @@ import java.lang.reflect.Type;
 import java.util.function.Function;
 
 public class Class2567<E, T extends Class7129<E>> implements JsonDeserializer<E>, JsonSerializer<E> {
-   private final Class2348<T> field16790;
+   private final Registry<T> field16790;
    private final String field16791;
    private final String field16792;
    private final Function<E, T> field16793;
    private final Pair<T, Class8367<? extends E>> field16794;
 
-   public Class2567(Class2348<T> var1, String var2, String var3, Function<E, T> var4, Pair<T, Class8367<? extends E>> var5) {
+   public Class2567(Registry<T> var1, String var2, String var3, Function<E, T> var4, Pair<T, Class8367<? extends E>> var5) {
       this.field16790 = var1;
       this.field16791 = var2;
       this.field16792 = var3;

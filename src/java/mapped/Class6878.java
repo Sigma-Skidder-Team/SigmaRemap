@@ -8,7 +8,7 @@ public class Class6878 {
    @Nullable
    public static BlockPos method20940(ServerWorld var0, int var1, int var2, boolean var3) {
       Mutable var6 = new Mutable(var1, 0, var2);
-      Class8907 var7 = var0.method7003(var6);
+      Biome var7 = var0.method7003(var6);
       boolean var8 = var0.method6812().method36876();
       Class7380 var9 = var7.method32507().method24283().method28934();
       if (var3 && !var9.method23383().method11540(Class7645.field32780)) {

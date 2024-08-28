@@ -456,6 +456,7 @@
   "disconnect.loginFailedInfo": "Failed to log in: %s",
   "disconnect.loginFailedInfo.serversUnavailable": "The authentication servers are currently down for maintenance.",
   "disconnect.loginFailedInfo.invalidSession": "Invalid session (Try restarting your game and the launcher)",
+  "disconnect.loginFailedInfo.insufficientPrivileges": "Multiplayer is disabled. Please check your Microsoft account settings.",
   "disconnect.quitting": "Quitting",
   "disconnect.endOfStream": "End of stream",
   "disconnect.overflow": "Buffer overflow",

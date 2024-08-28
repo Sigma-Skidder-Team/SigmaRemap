@@ -75,6 +75,6 @@ public class Class7490 extends Class7487 {
 
    @Override
    public String toString() {
-      return "Feature[" + Class2348.field16112.method9181(this.field32191.get().method26518()) + "]";
+      return "Feature[" + Registry.field16112.method9181(this.field32191.get().method26518()) + "]";
    }
 }

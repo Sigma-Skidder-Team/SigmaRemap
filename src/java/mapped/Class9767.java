@@ -18,7 +18,7 @@ public class Class9767 {
       if (var4 != null) {
          return var4;
       } else {
-         throw new IllegalArgumentException("Can't find attribute " + Class2348.field16087.method9181(var1));
+         throw new IllegalArgumentException("Can't find attribute " + Registry.field16087.method9181(var1));
       }
    }
 
@@ -35,7 +35,7 @@ public class Class9767 {
       if (var5 != null) {
          return var5.method37933();
       } else {
-         throw new IllegalArgumentException("Can't find modifier " + var2 + " on attribute " + Class2348.field16087.method9181(var1));
+         throw new IllegalArgumentException("Can't find modifier " + var2 + " on attribute " + Registry.field16087.method9181(var1));
       }
    }
 

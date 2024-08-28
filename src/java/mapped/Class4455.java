@@ -7,7 +7,7 @@ public class Class4455 extends Class4441<Class3257> {
    private final Function<Class7610<Block>, Class6879> field21632;
 
    public Class4455(Class9068 var1, Class4454 var2) {
-      super(var1, Class2348.field16075);
+      super(var1, Registry.field16075);
       this.field21632 = var2::method14015;
    }
 

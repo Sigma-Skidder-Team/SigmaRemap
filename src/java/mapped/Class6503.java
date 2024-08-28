@@ -18,7 +18,7 @@ public class Class6503<T extends Class4847> implements Class6504<T> {
       Class120 var7 = Class120.method344((JsonElement)var6);
       String var8 = Class8963.method32763(var2, "result");
       ResourceLocation var9 = new ResourceLocation(var8);
-      ItemStack var10 = new ItemStack(Class2348.field16075.method9187(var9).orElseThrow(() -> new IllegalStateException("Item: " + var8 + " does not exist")));
+      ItemStack var10 = new ItemStack(Registry.field16075.method9187(var9).orElseThrow(() -> new IllegalStateException("Item: " + var8 + " does not exist")));
       float var11 = Class8963.method32772(var2, "experience", 0.0F);
       int var12 = Class8963.method32778(var2, "cookingtime", this.field28468);
       return this.field28469.method31802(var1, var5, var7, var10, var11, var12);

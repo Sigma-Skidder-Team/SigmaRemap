@@ -101,7 +101,7 @@ public class Class5822 extends Class5812 {
                      List var12 = this.method18183(var4, var11, this.field25509[var11]);
                      if (var12 != null && !var12.isEmpty()) {
                         Class6694 var9 = (Class6694)var12.get(this.field25507.nextInt(var12.size()));
-                        this.field25510[var11] = Class2348.field16073.method9171(var9.field29316);
+                        this.field25510[var11] = Registry.field16073.method9171(var9.field29316);
                         this.field25511[var11] = var9.field29317;
                      }
                   }

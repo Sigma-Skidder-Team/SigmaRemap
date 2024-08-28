@@ -11,11 +11,11 @@ public class Class278 extends Class277 {
 
    @Override
    public Stream<ResourceLocation> method1017() {
-      return Stream.<ResourceLocation>concat(Class2348.field16079.method9190().stream(), Stream.of(field1061));
+      return Stream.<ResourceLocation>concat(Registry.field16079.method9190().stream(), Stream.of(field1061));
    }
 
    public Class1713 method1020(Class9078 var1) {
-      return this.method1018(Class2348.field16079.method9181(var1));
+      return this.method1018(Registry.field16079.method9181(var1));
    }
 
    public Class1713 method1021() {

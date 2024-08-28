@@ -91,11 +91,11 @@ public class Class9614 {
    }
 
    public static void method37377() {
-      Class2348.field16074
+      Registry.field16074
          .method9192()
          .filter(var0 -> var0.method33209() != Class179.field628)
          .filter(var0 -> !method37376((Class8992<?>)var0))
-         .<ResourceLocation>map(Class2348.field16074::method9181)
+         .<ResourceLocation>map(Registry.field16074::method9181)
          .forEach(var0 -> {
             if (!SharedConstants.field42545) {
                field44942.error("Entity {} has no attributes", var0);

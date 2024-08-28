@@ -433,12 +433,12 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                .stream()
                .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
                .filter(var0x -> !var0x.isEmpty()),
-         var0 -> Stream.<ResourceLocation>of(Class2348.field16075.method9181(var0.method32107()))
+         var0 -> Stream.<ResourceLocation>of(Registry.field16075.method9181(var0.method32107()))
       );
       Class7012 var2 = new Class7012<ItemStack>(var0 -> Class5985.method18561().method27138(var0.method32107()).stream());
       Class25 var3 = Class25.method67();
 
-      for (Class3257 var5 : Class2348.field16075) {
+      for (Class3257 var5 : Registry.field16075) {
          var5.method11737(Class7401.field31670, var3);
       }
 
@@ -452,7 +452,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                .<ITextComponent>flatMap(var0x -> var0x.method14966().method32153((PlayerEntity)null, Class2215.field14480).stream())
                .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
                .filter(var0x -> !var0x.isEmpty()),
-         var0 -> var0.method34892().stream().<ResourceLocation>map(var0x -> Class2348.field16075.method9181(var0x.method14966().method32107()))
+         var0 -> var0.method34892().stream().<ResourceLocation>map(var0x -> Registry.field16075.method9181(var0x.method14966().method32107()))
       );
       this.field1292.method961(Class266.field1030, var1);
       this.field1292.method961(Class266.field1031, var2);
@@ -545,7 +545,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       Class9736 var2 = this.method1553().method806();
       Class7202 var3 = var2.method38154().method1024();
 
-      for (Block var5 : Class2348.field16072) {
+      for (Block var5 : Registry.field16072) {
          UnmodifiableIterator var6 = var5.method11577().method35392().iterator();
 
          while (var6.hasNext()) {
@@ -562,7 +562,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
       Class1713 var13 = var3.method22624();
 
-      for (Block var16 : Class2348.field16072) {
+      for (Block var16 : Registry.field16072) {
          UnmodifiableIterator var18 = var16.method11577().method35392().iterator();
 
          while (var18.hasNext()) {
@@ -577,7 +577,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
       Class25<ItemStack> var15 = Class25.method67();
 
-      for (Class3257 var19 : Class2348.field16075) {
+      for (Class3257 var19 : Registry.field16075) {
          var15.clear();
          var19.method11737(Class7401.field31670, var15);
 
@@ -1890,9 +1890,9 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
             if (var5.method32105()) {
                String var10 = "";
                if (var4 == Class2100.field13690) {
-                  var10 = Class2348.field16072.method9181(this.world.method6738(((Class8711)this.field1346).method31423()).method23383()).toString();
+                  var10 = Registry.field16072.method9181(this.world.method6738(((Class8711)this.field1346).method31423()).method23383()).toString();
                } else if (var4 == Class2100.field13691) {
-                  var10 = Class2348.field16074.method9181(((Class8709)this.field1346).method31416().method3204()).toString();
+                  var10 = Registry.field16074.method9181(((Class8709)this.field1346).method31416().method3204()).toString();
                }
 
                LOGGER.warn("Picking on: [{}] {} gave null item", var4, var10);

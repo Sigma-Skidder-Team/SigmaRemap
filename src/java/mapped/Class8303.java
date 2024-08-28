@@ -55,7 +55,7 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
 
    public static Class4869 method29035(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
-      return Class2348.field16087.method9187(var4).orElseThrow(() -> field35697.create(var4));
+      return Registry.field16087.method9187(var4).orElseThrow(() -> field35697.create(var4));
    }
 
    public static ResourceLocation method29036(CommandContext<Class6619> var0, String var1) {

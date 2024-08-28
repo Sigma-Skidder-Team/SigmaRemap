@@ -24,7 +24,7 @@ public class Class5582 implements Packet<Class5116> {
    public Class5582(Class880 var1) {
       this.field24760 = var1.method3205();
       this.field24761 = var1.getUniqueID();
-      this.field24762 = Class2348.field16074.method9171(var1.method3204());
+      this.field24762 = Registry.field16074.method9171(var1.method3204());
       this.field24763 = var1.getPosX();
       this.field24764 = var1.getPosY();
       this.field24765 = var1.getPosZ();

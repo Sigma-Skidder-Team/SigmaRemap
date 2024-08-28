@@ -57,10 +57,10 @@ public class HoverEvent$ItemHover {
 
    private static HoverEvent$ItemHover deserialize(JsonElement element) {
       if (element.isJsonPrimitive()) {
-         return new HoverEvent$ItemHover(Class2348.field16075.method9184(new ResourceLocation(element.getAsString())), 1, (Class39)null);
+         return new HoverEvent$ItemHover(Registry.field16075.method9184(new ResourceLocation(element.getAsString())), 1, (Class39)null);
       } else {
          JsonObject item = Class8963.method32781(element, "item");
-         Class3257 i = Class2348.field16075.method9184(new ResourceLocation(Class8963.method32763(item, "id")));
+         Class3257 i = Registry.field16075.method9184(new ResourceLocation(Class8963.method32763(item, "id")));
          int s = Class8963.method32778(item, "count", 1);
          if (item.has("tag")) {
             String commandsyntaxexception = Class8963.method32763(item, "tag");
@@ -90,7 +90,7 @@ public class HoverEvent$ItemHover {
 
    private JsonElement serialize() {
       JsonObject var3 = new JsonObject();
-      var3.addProperty("id", Class2348.field16075.method9181(this.item).toString());
+      var3.addProperty("id", Registry.field16075.method9181(this.item).toString());
       if (this.count != 1) {
          var3.addProperty("count", this.count);
       }

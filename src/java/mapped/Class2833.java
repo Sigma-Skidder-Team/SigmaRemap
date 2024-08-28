@@ -260,7 +260,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
 
    private Class7999 method11036(Class7999 var1) {
       for (Class3257 var7 : field17618) {
-         var1.method27312(Class2348.field16075.method9181(var7).method8292(), Class4489.method14159(var7));
+         var1.method27312(Registry.field16075.method9181(var7).method8292(), Class4489.method14159(var7));
       }
 
       return var1;
@@ -284,7 +284,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
 
    private Class7999 method11038(Class7999 var1) {
       for (Class3257 var7 : field17617) {
-         var1.method27312(Class2348.field16075.method9181(var7).method8292(), Class4490.method14161(Class9735.method38146().method38147(var7).method38151()));
+         var1.method27312(Registry.field16075.method9181(var7).method8292(), Class4490.method14161(Class9735.method38146().method38147(var7).method38151()));
       }
 
       return var1;
@@ -293,7 +293,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
    private Class7999 method11039(Class7999 var1) {
       for (Class3257 var7 : field17616) {
          var1.method27312(
-            Class2348.field16075.method9181(var7).method8292(),
+            Registry.field16075.method9181(var7).method8292(),
             Class4487.method14154(Class8634.field38839, Class6671.field29242, Class9735.method38146().method38147(var7).method38151())
          );
       }

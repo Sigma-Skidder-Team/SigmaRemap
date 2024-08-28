@@ -107,7 +107,7 @@ public class Class9020 {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          Class39 var5 = var1.method153(var4);
          String var6 = var5.method126("Name");
-         Util.<Class4869>method38514(Class2348.field16087.method9187(ResourceLocation.method8289(var6)), var2 -> {
+         Util.<Class4869>method38514(Registry.field16087.method9187(ResourceLocation.method8289(var6)), var2 -> {
             Class9805 var5x = this.method33380(var2);
             if (var5x != null) {
                var5x.method38679(var5);

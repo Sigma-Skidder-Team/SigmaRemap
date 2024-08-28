@@ -29,7 +29,7 @@ public class Class6884 {
    public JsonObject method20960(JsonSerializationContext var1) {
       JsonObject var4 = new JsonObject();
       var4.addProperty("name", this.field29832);
-      var4.addProperty("attribute", Class2348.field16087.method9181(this.field29833).toString());
+      var4.addProperty("attribute", Registry.field16087.method9181(this.field29833).toString());
       var4.addProperty("operation", method20962(this.field29834));
       var4.add("amount", var1.serialize(this.field29835));
       if (this.field29836 != null) {
@@ -54,7 +54,7 @@ public class Class6884 {
    public static Class6884 method20961(JsonObject var0, JsonDeserializationContext var1) {
       String var4 = Class8963.method32763(var0, "name");
       ResourceLocation var5 = new ResourceLocation(Class8963.method32763(var0, "attribute"));
-      Class4869 var6 = Class2348.field16087.method9184(var5);
+      Class4869 var6 = Registry.field16087.method9184(var5);
       if (var6 == null) {
          throw new JsonSyntaxException("Unknown attribute: " + var5);
       } else {

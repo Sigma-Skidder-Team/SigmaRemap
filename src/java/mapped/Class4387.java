@@ -173,7 +173,7 @@ public class Class4387<T extends Class944> {
 
    @Nullable
    public static ResourceLocation method13793(Class4387<?> var0) {
-      return Class2348.field16078.method9181(var0);
+      return Registry.field16078.method9181(var0);
    }
 
    private static <T extends Class944> Class4387<T> method13794(String var0, Class9785<T> var1) {
@@ -182,7 +182,7 @@ public class Class4387<T extends Class944> {
       }
 
       Type var4 = Util.method38500(Class8239.field35386, var0);
-      return Class2348.<Class4387<T>>method9194(Class2348.field16078, var0, var1.method38570(var4));
+      return Registry.<Class4387<T>>method9194(Registry.field16078, var0, var1.method38570(var4));
    }
 
    public Class4387(Supplier<? extends T> var1, Set<Block> var2, Type<?> var3) {

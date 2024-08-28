@@ -104,7 +104,7 @@ public class Class9281 {
             for (JsonElement var10 : var8) {
                JsonObject var11 = Class8963.method32781(var10, "stats entry");
                ResourceLocation var12 = new ResourceLocation(Class8963.method32763(var11, "type"));
-               Class49 var13 = Class2348.field16088.method9184(var12);
+               Class49 var13 = Registry.field16088.method9184(var12);
                if (var13 == null) {
                   throw new JsonParseException("Invalid stat type: " + var12);
                }
@@ -141,12 +141,12 @@ public class Class9281 {
    }
 
    private static <T> Class9007<T> method34998(Class49<T> var0, ResourceLocation var1) {
-      Class2348<T> var4 = var0.method171();
+      Registry<T> var4 = var0.method171();
       T var5 = var4.method9184(var1);
       if (var5 != null) {
          return var0.method172(var5);
       } else {
-         throw new JsonParseException("Unknown object " + var1 + " for stat type " + Class2348.field16088.method9181(var0));
+         throw new JsonParseException("Unknown object " + var1 + " for stat type " + Registry.field16088.method9181(var0));
       }
    }
 
@@ -166,7 +166,7 @@ public class Class9281 {
             JsonArray var4 = new JsonArray();
             this.field42700.forEach((var1, var2) -> {
                JsonObject var5x = new JsonObject();
-               var5x.addProperty("type", Class2348.field16088.method9181(var1.method33275()).toString());
+               var5x.addProperty("type", Registry.field16088.method9181(var1.method33275()).toString());
                var5x.addProperty("stat", method34999((Class9007<?>)var1).toString());
                var5x.add("value", var2.method32005());
                var4.add(var5x);

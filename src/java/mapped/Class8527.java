@@ -2,7 +2,7 @@ package mapped;
 
 public class Class8527 {
    private static String[] field38300;
-   public static final Class8980 field38301 = Class8907::method32510;
+   public static final Class8980 field38301 = Biome::method32510;
    public static final Class8980 field38302 = (var0, var1, var3) -> var0.method32512();
    public static final Class8980 field38303 = (var0, var1, var3) -> var0.method32520();
 

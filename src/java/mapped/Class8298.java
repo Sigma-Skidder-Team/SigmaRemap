@@ -28,7 +28,7 @@ public class Class8298<T extends Class5812> {
    private final Class8302<T> field35672;
 
    private static <T extends Class5812> Class8298<T> method29012(String var0, Class8302<T> var1) {
-      return Class2348.<Class8298<T>>method9194(Class2348.field16084, var0, new Class8298<T>(var1));
+      return Registry.<Class8298<T>>method9194(Registry.field16084, var0, new Class8298<T>(var1));
    }
 
    private Class8298(Class8302<T> var1) {

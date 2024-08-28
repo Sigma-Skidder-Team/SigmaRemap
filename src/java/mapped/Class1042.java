@@ -619,7 +619,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public ITextComponent method3358() {
-      return new TranslationTextComponent(this.method3204().method33210() + '.' + Class2348.field16090.method9181(this.method4674().method26571()).method8292());
+      return new TranslationTextComponent(this.method3204().method33210() + '.' + Registry.field16090.method9181(this.method4674().method26571()).method8292());
    }
 
    @Override

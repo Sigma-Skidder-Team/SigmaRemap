@@ -16,11 +16,11 @@ public class Class7144 {
 
    @Nullable
    public static Class7144 method22287(int var0) {
-      return Class2348.field16071.method9172(var0);
+      return Registry.field16071.method9172(var0);
    }
 
    public static int method22288(Class7144 var0) {
-      return Class2348.field16071.method9171(var0);
+      return Registry.field16071.method9171(var0);
    }
 
    public Class7144(Class2146 var1, int var2) {
@@ -99,7 +99,7 @@ public class Class7144 {
 
    public String method22293() {
       if (this.field30710 == null) {
-         this.field30710 = Util.method38486("effect", Class2348.field16071.method9181(this));
+         this.field30710 = Util.method38486("effect", Registry.field16071.method9181(this));
       }
 
       return this.field30710;

@@ -12,6 +12,6 @@ public interface Class8325<P extends Class7487> {
    Codec<P> method29186();
 
    static <P extends Class7487> Class8325<P> method29187(String var0, Codec<P> var1) {
-      return Class2348.<Class8325<P>>method9194(Class2348.field16138, var0, () -> var1);
+      return Registry.<Class8325<P>>method9194(Registry.field16138, var0, () -> var1);
    }
 }

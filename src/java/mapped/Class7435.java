@@ -26,6 +26,6 @@ public class Class7435 extends Class7434<Class7435> implements Class7436 {
 
    @Override
    public String method24010() {
-      return Class2348.field16077.method9181(this).toString();
+      return Registry.field16077.method9181(this).toString();
    }
 }

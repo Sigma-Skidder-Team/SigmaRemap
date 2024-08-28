@@ -34,7 +34,7 @@ public class Class1282 extends Class1274<Class1171> {
       this.method6021(true, 20);
       Set var5 = Sets.newIdentityHashSet();
 
-      for (Class3257 var7 : Class2348.field16075) {
+      for (Class3257 var7 : Registry.field16075) {
          boolean var8 = false;
 
          for (Class49 var10 : this.field6839) {
@@ -48,7 +48,7 @@ public class Class1282 extends Class1274<Class1171> {
          }
       }
 
-      for (Block var13 : Class2348.field16072) {
+      for (Block var13 : Registry.field16072) {
          boolean var14 = false;
 
          for (Class49 var16 : this.field6838) {

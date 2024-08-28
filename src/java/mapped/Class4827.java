@@ -19,7 +19,7 @@ public class Class4827 implements Class4826 {
    @Override
    public JsonObject method14918() {
       JsonObject var3 = new JsonObject();
-      var3.addProperty("item", Class2348.field16075.method9181(this.field22599.method32107()).toString());
+      var3.addProperty("item", Registry.field16075.method9181(this.field22599.method32107()).toString());
       return var3;
    }
 }

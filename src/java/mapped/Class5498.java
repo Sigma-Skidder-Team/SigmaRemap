@@ -15,7 +15,7 @@ public class Class5498 implements Packet<Class5116> {
 
    public Class5498(int var1, Class8298<?> var2, ITextComponent var3) {
       this.field24402 = var1;
-      this.field24403 = Class2348.field16084.method9171(var2);
+      this.field24403 = Registry.field16084.method9171(var2);
       this.field24404 = var3;
    }
 
@@ -43,7 +43,7 @@ public class Class5498 implements Packet<Class5116> {
 
    @Nullable
    public Class8298<?> method17285() {
-      return Class2348.field16084.method9172(this.field24403);
+      return Registry.field16084.method9172(this.field24403);
    }
 
    public ITextComponent method17286() {

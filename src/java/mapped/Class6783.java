@@ -11,7 +11,7 @@ public class Class6783 extends Class6768<Class8278> {
    public void method20654(
       Random var1,
       Class1670 var2,
-      Class8907 var3,
+      Biome var3,
       int var4,
       int var5,
       int var6,
@@ -28,7 +28,7 @@ public class Class6783 extends Class6768<Class8278> {
    public void method20667(
       Random var1,
       Class1670 var2,
-      Class8907 var3,
+      Biome var3,
       int var4,
       int var5,
       int var6,

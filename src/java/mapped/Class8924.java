@@ -17,10 +17,10 @@ public abstract class Class8924 {
          String var3 = Class8963.method32762(var0, "type");
          if (!var3.startsWith("#")) {
             ResourceLocation var6 = new ResourceLocation(var3);
-            Class8992 var5 = Class2348.field16074
+            Class8992 var5 = Registry.field16074
                .method9187(var6)
                .orElseThrow(
-                  () -> new JsonSyntaxException("Unknown entity type '" + var6 + "', valid types are: " + field40402.join(Class2348.field16074.method9190()))
+                  () -> new JsonSyntaxException("Unknown entity type '" + var6 + "', valid types are: " + field40402.join(Registry.field16074.method9190()))
                );
             return new Class8927(var5);
          } else {

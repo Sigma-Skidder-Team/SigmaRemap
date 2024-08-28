@@ -182,7 +182,7 @@ public class Class8090 {
 
    private Class3257 method27999(String var1) {
       ResourceLocation var4 = new ResourceLocation(var1);
-      return Class2348.field16075.method9193(var4) ? Class2348.field16075.method9184(var4) : null;
+      return Registry.field16075.method9193(var4) ? Registry.field16075.method9184(var4) : null;
    }
 
    private static String method28000(String var0, String var1, String var2, String var3, String var4, int var5, Map<String, String> var6, boolean var7) {

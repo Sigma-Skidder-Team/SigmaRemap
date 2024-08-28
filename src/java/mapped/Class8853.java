@@ -155,9 +155,9 @@ public class Class8853 {
    }
 
    public void method32211() {
-      for (Class8992 var4 : Class2348.field16074) {
+      for (Class8992 var4 : Registry.field16074) {
          if (var4 != Class8992.field41111 && !this.field40011.containsKey(var4)) {
-            throw new IllegalStateException("No renderer registered for " + Class2348.field16074.method9181(var4));
+            throw new IllegalStateException("No renderer registered for " + Registry.field16074.method9181(var4));
          }
       }
    }

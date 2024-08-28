@@ -15,11 +15,11 @@ import java.util.OptionalInt;
 import java.util.stream.Collectors;
 
 public final class Class4382 implements Class4383 {
-   private final Map<Class8705<?>, JsonElement> field21392 = Maps.newIdentityHashMap();
-   private final Object2IntMap<Class8705<?>> field21393 = new Object2IntOpenCustomHashMap(Util.method38509());
-   private final Map<Class8705<?>, Lifecycle> field21394 = Maps.newIdentityHashMap();
+   private final Map<RegistryKey<?>, JsonElement> field21392 = Maps.newIdentityHashMap();
+   private final Object2IntMap<RegistryKey<?>> field21393 = new Object2IntOpenCustomHashMap(Util.method38509());
+   private final Map<RegistryKey<?>, Lifecycle> field21394 = Maps.newIdentityHashMap();
 
-   public <E> void method13745(Class8905 var1, Class8705<E> var2, Encoder<E> var3, int var4, E var5, Lifecycle var6) {
+   public <E> void method13745(Class8905 var1, RegistryKey<E> var2, Encoder<E> var3, int var4, E var5, Lifecycle var6) {
       DataResult var9 = var3.encodeStart(Class6713.method20491(JsonOps.INSTANCE, var1), var5);
       Optional var10 = var9.error();
       if (!var10.isPresent()) {
@@ -32,7 +32,7 @@ public final class Class4382 implements Class4383 {
    }
 
    @Override
-   public Collection<ResourceLocation> method13746(Class8705<? extends Class2348<?>> var1) {
+   public Collection<ResourceLocation> method13746(RegistryKey<? extends Registry<?>> var1) {
       return this.field21392
          .keySet()
          .stream()
@@ -45,7 +45,7 @@ public final class Class4382 implements Class4383 {
 
    @Override
    public <E> DataResult<Pair<E, OptionalInt>> method13747(
-      DynamicOps<JsonElement> var1, Class8705<? extends Class2348<E>> var2, Class8705<E> var3, Decoder<E> var4
+           DynamicOps<JsonElement> var1, RegistryKey<? extends Registry<E>> var2, RegistryKey<E> var3, Decoder<E> var4
    ) {
       JsonElement var7 = this.field21392.get(var3);
       return var7 != null

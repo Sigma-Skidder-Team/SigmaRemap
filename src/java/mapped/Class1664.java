@@ -14,12 +14,12 @@ public class Class1664 implements Class1663 {
    private final int field9069;
    private int[] field9070;
    private Class7380[] field9071;
-   private Class8907[] field9072;
+   private Biome[] field9072;
    private final int field9073;
    private Class8391 field9074;
    private static final Class9712 field9075 = new Class9712(int.class, 16);
    private static final Class9712 field9076 = new Class9712(Class7380.class, 16);
-   private static final Class9712 field9077 = new Class9712(Class8907.class, 16);
+   private static final Class9712 field9077 = new Class9712(Biome.class, 16);
 
    public Class1664(Class1677 var1, BlockPos var2, BlockPos var3, int var4) {
       this.field9062 = var1;
@@ -85,7 +85,7 @@ public class Class1664 implements Class1663 {
       }
 
       if (this.field9072 == null) {
-         this.field9072 = (Class8907[])field9077.method38051(this.field9073);
+         this.field9072 = (Biome[])field9077.method38051(this.field9073);
       }
 
       Arrays.fill(this.field9070, -1);
@@ -129,10 +129,10 @@ public class Class1664 implements Class1663 {
       return this.field9070;
    }
 
-   public Class8907 method7028(BlockPos var1) {
+   public Biome method7028(BlockPos var1) {
       int var4 = this.method7023(var1);
       if (var4 >= 0 && var4 < this.field9073 && this.field9072 != null) {
-         Class8907 var5 = this.field9072[var4];
+         Biome var5 = this.field9072[var4];
          if (var5 == null) {
             var5 = this.field9062.method7176(var1);
             this.field9072[var4] = var5;

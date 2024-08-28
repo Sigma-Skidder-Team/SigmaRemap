@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class Class837 extends Screen {
    private static final Logger field4624 = LogManager.getLogger();
-   private static final Object2IntMap<Class8705<World>> field4625 = Util.<Object2IntMap<Class8705<World>>>method38508(
+   private static final Object2IntMap<RegistryKey<World>> field4625 = Util.<Object2IntMap<RegistryKey<World>>>method38508(
       new Object2IntOpenCustomHashMap(Util.method38509()), var0 -> {
          var0.put(World.field8999, -13408734);
          var0.put(World.field9000, -10075085);
@@ -40,7 +40,7 @@ public class Class837 extends Screen {
       }
    }
 
-   private Class837(BooleanConsumer var1, DataFixer var2, Class1814 var3, Class8898 var4, boolean var5, ImmutableSet<Class8705<World>> var6) {
+   private Class837(BooleanConsumer var1, DataFixer var2, Class1814 var3, Class8898 var4, boolean var5, ImmutableSet<RegistryKey<World>> var6) {
       super(new TranslationTextComponent("optimizeWorld.title", var4.method32426()));
       this.field4626 = var1;
       this.field4627 = new Class7958(var3, var2, var6, var5);
@@ -90,7 +90,7 @@ public class Class837 extends Screen {
          UnmodifiableIterator var12 = this.field4627.method27063().iterator();
 
          while (var12.hasNext()) {
-            Class8705 var13 = (Class8705)var12.next();
+            RegistryKey var13 = (RegistryKey)var12.next();
             int var14 = MathHelper.method37767(this.field4627.method27064(var13) * (float)(var8 - var7));
             method5686(var1, var7 + var11, var9, var7 + var11 + var14, var10, field4625.getInt(var13));
             var11 += var14;

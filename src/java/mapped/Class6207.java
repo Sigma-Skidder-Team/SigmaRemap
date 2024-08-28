@@ -28,7 +28,7 @@ public class Class6207 {
    }
 
    public static int method19119(ItemStack var0) {
-      return Class2348.field16075.method9171(var0.method32107());
+      return Registry.field16075.method9171(var0.method32107());
    }
 
    private boolean method19120(int var1) {

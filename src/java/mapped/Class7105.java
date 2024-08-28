@@ -184,10 +184,10 @@ public class Class7105 {
          if (var2 instanceof Class3323) {
             field30618.add(new Class9127<Class3257>(var0, Class120.method339(var1), var2));
          } else {
-            throw new IllegalArgumentException("Expected a potion, got: " + Class2348.field16075.method9181(var2));
+            throw new IllegalArgumentException("Expected a potion, got: " + Registry.field16075.method9181(var2));
          }
       } else {
-         throw new IllegalArgumentException("Expected a potion, got: " + Class2348.field16075.method9181(var0));
+         throw new IllegalArgumentException("Expected a potion, got: " + Registry.field16075.method9181(var0));
       }
    }
 
@@ -195,7 +195,7 @@ public class Class7105 {
       if (var0 instanceof Class3323) {
          field30619.add(Class120.method339(var0));
       } else {
-         throw new IllegalArgumentException("Expected a potion, got: " + Class2348.field16075.method9181(var0));
+         throw new IllegalArgumentException("Expected a potion, got: " + Registry.field16075.method9181(var0));
       }
    }
 

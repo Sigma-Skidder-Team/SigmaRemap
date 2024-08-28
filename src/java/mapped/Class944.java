@@ -57,7 +57,7 @@ public abstract class Class944 {
    @Nullable
    public static Class944 method3772(Class7380 var0, Class39 var1) {
       String var4 = var1.method126("id");
-      return Class2348.field16078.method9187(new ResourceLocation(var4)).<Class944>map(var1x -> {
+      return Registry.field16078.method9187(new ResourceLocation(var4)).<Class944>map(var1x -> {
          try {
             return var1x.method13795();
          } catch (Throwable var5) {
@@ -134,7 +134,7 @@ public abstract class Class944 {
    }
 
    public void method3781(Class8965 var1) {
-      var1.method32806("Name", () -> Class2348.field16078.method9181(this.method3786()) + " // " + this.getClass().getCanonicalName());
+      var1.method32806("Name", () -> Registry.field16078.method9181(this.method3786()) + " // " + this.getClass().getCanonicalName());
       if (this.field5324 != null) {
          Class8965.method32814(var1, this.field5325, this.method3775());
          Class8965.method32814(var1, this.field5325, this.field5324.method6738(this.field5325));
@@ -162,7 +162,7 @@ public abstract class Class944 {
    public void method3787() {
       if (!this.field5328) {
          this.field5328 = true;
-         field5322.warn("Block entity invalid: {} @ {}", new Supplier[]{() -> Class2348.field16078.method9181(this.method3786()), this::method3774});
+         field5322.warn("Block entity invalid: {} @ {}", new Supplier[]{() -> Registry.field16078.method9181(this.method3786()), this::method3774});
       }
    }
 }

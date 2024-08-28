@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class2835 implements Consumer<Consumer<Class7952>> {
-   private static final List<Class8705<Class8907>> field17626 = ImmutableList.of(
+   private static final List<RegistryKey<Biome>> field17626 = ImmutableList.of(
       Class9495.field44129, Class9495.field44196, Class9495.field44198, Class9495.field44197, Class9495.field44199
    );
    private static final Class9587 field17627 = Class9587.method37222(

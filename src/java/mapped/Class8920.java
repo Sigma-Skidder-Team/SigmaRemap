@@ -44,7 +44,7 @@ public class Class8920 {
 
          Class1684 var19 = var18.method17384() == null
             ? null
-            : new Class1684(Minecraft.getInstance().getClientPlayNetHandler().field23287.<Class8907>method32453(Class2348.field16106), var18.method17384());
+            : new Class1684(Minecraft.getInstance().getClientPlayNetHandler().field23287.<Biome>method32453(Registry.BIOME_KEY), var18.method17384());
          Class1674 var20 = new Class1674(Minecraft.getInstance().world, new Class7481(var18.method17378(), var18.method17379()), null);
          var20.method7142(var19, new PacketBuffer(var18.method17374().copy()), var18.method17382(), var18.method17380());
          if (var20 != null) {

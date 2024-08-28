@@ -285,7 +285,7 @@ public class Block extends Class3390 implements Class3303 {
 
    public String method11566() {
       if (this.field18614 == null) {
-         this.field18614 = Util.method38486("block", Class2348.field16072.method9181(this));
+         this.field18614 = Util.method38486("block", Registry.field16072.method9181(this));
       }
 
       return this.field18614;
@@ -367,7 +367,7 @@ public class Block extends Class3390 implements Class3303 {
 
    @Override
    public String toString() {
-      return "Block{" + Class2348.field16072.method9181(this) + "}";
+      return "Block{" + Registry.field16072.method9181(this) + "}";
    }
 
    public void method11583(ItemStack var1, Class1665 var2, List<ITextComponent> var3, Class2216 var4) {

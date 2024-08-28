@@ -213,7 +213,7 @@ public class Class9453 {
                break;
             case 2:
                Entity var8 = ((Class8709)var5).method31416();
-               ResourceLocation var9 = Class2348.field16074.method9181(var8.method3204());
+               ResourceLocation var9 = Registry.field16074.method9181(var8.method3204());
                if (var1) {
                   if (var2) {
                      this.field43915.player.connection.method15799().method14178(var8.method3205(), var3 -> {

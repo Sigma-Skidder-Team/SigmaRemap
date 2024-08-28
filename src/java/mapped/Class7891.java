@@ -13,7 +13,7 @@ public class Class7891 extends Class7882<Class1042> {
    }
 
    public void method26425(ServerWorld var1, Class1042 var2) {
-      Class8705 var5 = var1.method6813();
+      RegistryKey var5 = var1.method6813();
       BlockPos var6 = var2.method3432();
       ArrayList var7 = Lists.newArrayList();
       byte var8 = 4;

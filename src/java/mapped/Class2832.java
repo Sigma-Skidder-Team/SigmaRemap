@@ -1026,18 +1026,18 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
       );
       HashSet var4 = Sets.newHashSet();
 
-      for (Class8992 var6 : Class2348.field16074) {
+      for (Class8992 var6 : Registry.field16074) {
          ResourceLocation var7 = var6.method33212();
          if (!field17613.contains(var6) && var6.method33209() == Class179.field628) {
             if (var7 != Class8793.field39533 && this.field17614.remove(var7) != null) {
                throw new IllegalStateException(
-                  String.format("Weird loottable '%s' for '%s', not a LivingEntity so should not have loot", var7, Class2348.field16074.method9181(var6))
+                  String.format("Weird loottable '%s' for '%s', not a LivingEntity so should not have loot", var7, Registry.field16074.method9181(var6))
                );
             }
          } else if (var7 != Class8793.field39533 && var4.add(var7)) {
             Class5888 var8 = this.field17614.remove(var7);
             if (var8 == null) {
-               throw new IllegalStateException(String.format("Missing loottable '%s' for '%s'", var7, Class2348.field16074.method9181(var6)));
+               throw new IllegalStateException(String.format("Missing loottable '%s' for '%s'", var7, Registry.field16074.method9181(var6)));
             }
 
             var1.accept(var7, var8);

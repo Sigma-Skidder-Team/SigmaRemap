@@ -198,7 +198,7 @@ public class Class8418 {
       }
    }
 
-   public static Class8418 method29580(Class8705<World> var0, Class8250 var1) {
+   public static Class8418 method29580(RegistryKey<World> var0, Class8250 var1) {
       if (var0 != World.field8999) {
          if (var0 != World.field9000) {
             if (var0 != World.THE_END) {

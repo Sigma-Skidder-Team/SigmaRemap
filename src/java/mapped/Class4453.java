@@ -4,7 +4,7 @@ import java.nio.file.Path;
 
 public class Class4453 extends Class4441<Class8992<?>> {
    public Class4453(Class9068 var1) {
-      super(var1, Class2348.field16074);
+      super(var1, Registry.field16074);
    }
 
    @Override

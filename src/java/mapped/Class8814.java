@@ -23,7 +23,7 @@ public class Class8814 {
       boolean var9
    ) {
       Class2961.method11365();
-      Class2349 var12 = var0.<Class9369>method32453(Class2348.field16105);
+      Class2349 var12 = var0.<Class9369>method32453(Registry.field16105);
       Class80 var13 = Class80.method254(var7);
       Class9369 var14 = var1.method14743().get();
       Class7487 var15 = var14.method35535(var7);
@@ -70,7 +70,7 @@ public class Class8814 {
    public static void method31821(
       Class8904 var0, Class4193 var1, int var2, Class6989 var3, Class5646 var4, Class8761 var5, List<? super Class4193> var6, Random var7
    ) {
-      Class2349 var10 = var0.<Class9369>method32453(Class2348.field16105);
+      Class2349 var10 = var0.<Class9369>method32453(Registry.field16105);
       Class9777 var11 = new Class9777(var10, var2, var3, var4, var5, var6, var7);
       Class9777.method38551(var11).addLast(new Class7213(var1, new MutableObject(Class8022.field34463), 0, 0));
 

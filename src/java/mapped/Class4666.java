@@ -38,7 +38,7 @@ public class Class4666 implements Class4664 {
 
       var1.add("ingredients", var4);
       JsonObject var7 = new JsonObject();
-      var7.addProperty("item", Class2348.field16075.method9181(this.field22216).toString());
+      var7.addProperty("item", Registry.field16075.method9181(this.field22216).toString());
       if (this.field22217 > 1) {
          var7.addProperty("count", this.field22217);
       }

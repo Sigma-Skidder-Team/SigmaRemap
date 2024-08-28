@@ -373,7 +373,7 @@ public class Class999 extends Entity {
       }
 
       if (this.field5502 != Class8137.field34976 && this.field5502 != null) {
-         var1.method109("Potion", Class2348.field16076.method9181(this.field5502).toString());
+         var1.method109("Potion", Registry.field16076.method9181(this.field5502).toString());
       }
 
       if (!this.field5503.isEmpty()) {

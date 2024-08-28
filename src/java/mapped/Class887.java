@@ -116,7 +116,7 @@ public class Class887 extends AbstractArrowEntity {
    public void method2724(Class39 var1) {
       super.method2724(var1);
       if (this.field5117 != Class8137.field34976 && this.field5117 != null) {
-         var1.method109("Potion", Class2348.field16076.method9181(this.field5117).toString());
+         var1.method109("Potion", Registry.field16076.method9181(this.field5117).toString());
       }
 
       if (this.field5119) {

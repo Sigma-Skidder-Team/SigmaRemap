@@ -516,7 +516,7 @@ public class Class9217 {
    }
 
    public static int method34574(Block var0) {
-      return Class2348.field16072.method9171(var0);
+      return Registry.field16072.method9171(var0);
    }
 
    public static Class7843 method34575(BlockPos var0, boolean var1) {

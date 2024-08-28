@@ -92,7 +92,7 @@ public class Class2943 extends Class2898<Class4705> {
                         BlockPos var52 = var4.method8336(var41, var49 - 1, var45);
                         if (method11219(var1.method6738(var52).method23383())
                            && var1.method7020(Class1977.field12881, var4.method8336(var41, var49, var45)) > 0) {
-                           Class8907 var55 = var1.method7003(var52);
+                           Biome var55 = var1.method7003(var52);
                            if (!var55.method32507().method24283().method28934().method23448(Blocks.MYCELIUM)) {
                               var1.method6725(var52, Blocks.field36395.method11579(), 2);
                            } else {

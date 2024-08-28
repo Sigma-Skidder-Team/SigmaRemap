@@ -25,9 +25,9 @@ public class Class216 implements Class215 {
          this.field848 = (Class8400)Class9299.method35087(Class9299.field42952, this.field851);
       }
 
-      for (Class3257 var7 : Class2348.field16075) {
+      for (Class3257 var7 : Registry.field16075) {
          if (!field846.contains(var7)) {
-            this.field848.method29495(var7, new Class1997(Class2348.field16075.method9181(var7), "inventory"));
+            this.field848.method29495(var7, new Class1997(Registry.field16075.method9181(var7), "inventory"));
          }
       }
 

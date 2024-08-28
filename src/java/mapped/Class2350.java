@@ -23,13 +23,13 @@ public class Class2350<T> extends Class2349<T> {
    private final ObjectList<T> field16142 = new ObjectArrayList(256);
    private final Object2IntMap<T> field16143 = new Object2IntOpenCustomHashMap(Util.method38509());
    private final BiMap<ResourceLocation, T> field16144;
-   private final BiMap<Class8705<T>, T> field16145;
+   private final BiMap<RegistryKey<T>, T> field16145;
    private final Map<T, Lifecycle> field16146;
    private Lifecycle field16147;
    public Object[] field16148;
    private int field16149;
 
-   public Class2350(Class8705<? extends Class2348<T>> var1, Lifecycle var2) {
+   public Class2350(RegistryKey<? extends Registry<T>> var1, Lifecycle var2) {
       super(var1, var2);
       this.field16143.defaultReturnValue(-1);
       this.field16144 = HashBiMap.create();
@@ -38,10 +38,10 @@ public class Class2350<T> extends Class2349<T> {
       this.field16147 = var2;
    }
 
-   public static <T> MapCodec<Class9581<T>> method9252(Class8705<? extends Class2348<T>> var0, MapCodec<T> var1) {
+   public static <T> MapCodec<Class9581<T>> method9252(RegistryKey<? extends Registry<T>> var0, MapCodec<T> var1) {
       return RecordCodecBuilder.mapCodec(
          var2 -> var2.group(
-                  ResourceLocation.field13020.xmap(Class8705.method31400(var0), Class8705::method31399).fieldOf("name").forGetter(var0xx -> var0xx.field44788),
+                  ResourceLocation.field13020.xmap(RegistryKey.method31400(var0), RegistryKey::method31399).fieldOf("name").forGetter(var0xx -> var0xx.field44788),
                   Codec.INT.fieldOf("id").forGetter(var0xx -> var0xx.field44789),
                   var1.forGetter(var0xx -> var0xx.field44790)
                )
@@ -50,11 +50,11 @@ public class Class2350<T> extends Class2349<T> {
    }
 
    @Override
-   public <V extends T> V method9249(int var1, Class8705<T> var2, V var3, Lifecycle var4) {
+   public <V extends T> V method9249(int var1, RegistryKey<T> var2, V var3, Lifecycle var4) {
       return this.<V>method9253(var1, var2, (V)var3, var4, true);
    }
 
-   private <V extends T> V method9253(int var1, Class8705<T> var2, V var3, Lifecycle var4, boolean var5) {
+   private <V extends T> V method9253(int var1, RegistryKey<T> var2, V var3, Lifecycle var4, boolean var5) {
       Validate.notNull(var2);
       Validate.notNull(var3);
       this.field16142.size(Math.max(this.field16142.size(), var1 + 1));
@@ -81,12 +81,12 @@ public class Class2350<T> extends Class2349<T> {
    }
 
    @Override
-   public <V extends T> V method9250(Class8705<T> var1, V var2, Lifecycle var3) {
+   public <V extends T> V method9250(RegistryKey<T> var1, V var2, Lifecycle var3) {
       return this.<V>method9249(this.field16149, var1, (V)var2, var3);
    }
 
    @Override
-   public <V extends T> V method9251(OptionalInt var1, Class8705<T> var2, V var3, Lifecycle var4) {
+   public <V extends T> V method9251(OptionalInt var1, RegistryKey<T> var2, V var3, Lifecycle var4) {
       Validate.notNull(var2);
       Validate.notNull(var3);
       Object var7 = this.field16145.get(var2);
@@ -113,8 +113,8 @@ public class Class2350<T> extends Class2349<T> {
    }
 
    @Override
-   public Optional<Class8705<T>> method9182(T var1) {
-      return Optional.<Class8705<T>>ofNullable((Class8705<T>)this.field16145.inverse().get(var1));
+   public Optional<RegistryKey<T>> method9182(T var1) {
+      return Optional.<RegistryKey<T>>ofNullable((RegistryKey<T>)this.field16145.inverse().get(var1));
    }
 
    @Override
@@ -124,7 +124,7 @@ public class Class2350<T> extends Class2349<T> {
 
    @Nullable
    @Override
-   public T method9183(Class8705<T> var1) {
+   public T method9183(RegistryKey<T> var1) {
       return (T)this.field16145.get(var1);
    }
 
@@ -161,8 +161,8 @@ public class Class2350<T> extends Class2349<T> {
    }
 
    @Override
-   public Set<Entry<Class8705<T>, T>> method9191() {
-      return Collections.<Class8705<T>, T>unmodifiableMap(this.field16145).entrySet();
+   public Set<Entry<RegistryKey<T>, T>> method9191() {
+      return Collections.<RegistryKey<T>, T>unmodifiableMap(this.field16145).entrySet();
    }
 
    @Nullable
@@ -184,7 +184,7 @@ public class Class2350<T> extends Class2349<T> {
       return this.field16144.containsKey(var1);
    }
 
-   public static <T> Codec<Class2350<T>> method9255(Class8705<? extends Class2348<T>> var0, Lifecycle var1, Codec<T> var2) {
+   public static <T> Codec<Class2350<T>> method9255(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
       return method9252(var0, var2.fieldOf("element")).codec().listOf().xmap(var2x -> {
          Class2350<T> var5 = new Class2350(var0, var1);
 
@@ -204,14 +204,14 @@ public class Class2350<T> extends Class2349<T> {
       });
    }
 
-   public static <T> Codec<Class2350<T>> method9256(Class8705<? extends Class2348<T>> var0, Lifecycle var1, Codec<T> var2) {
+   public static <T> Codec<Class2350<T>> method9256(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
       return Class8423.method29595(var0, var1, var2);
    }
 
-   public static <T> Codec<Class2350<T>> method9257(Class8705<? extends Class2348<T>> var0, Lifecycle var1, Codec<T> var2) {
-      return Codec.unboundedMap(ResourceLocation.field13020.xmap(Class8705.method31400(var0), Class8705::method31399), var2).xmap(var2x -> {
+   public static <T> Codec<Class2350<T>> method9257(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
+      return Codec.unboundedMap(ResourceLocation.field13020.xmap(RegistryKey.method31400(var0), RegistryKey::method31399), var2).xmap(var2x -> {
          Class2350 var5 = new Class2350(var0, var1);
-         var2x.forEach((var2xx, var3) -> var5.method9250((Class8705<T>)var2xx, var3, var1));
+         var2x.forEach((var2xx, var3) -> var5.method9250((RegistryKey<T>)var2xx, var3, var1));
          return var5;
       }, var0x -> ImmutableMap.copyOf(var0x.field16145));
    }

@@ -22,7 +22,7 @@ public class Class7822 implements ArgumentType<ResourceLocation> {
    }
 
    private static ResourceLocation method26157(ResourceLocation var0) throws CommandSyntaxException {
-      Class2348.field16074.method9187(var0).filter(Class8992::method33206).orElseThrow(() -> field33564.create(var0));
+      Registry.field16074.method9187(var0).filter(Class8992::method33206).orElseThrow(() -> field33564.create(var0));
       return var0;
    }
 

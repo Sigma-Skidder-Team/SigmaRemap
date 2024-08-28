@@ -58,7 +58,7 @@ public abstract class Class6768<C extends Class8277> {
    private final Codec<Class9319<C>> field29538;
 
    private static <C extends Class8277, F extends Class6768<C>> F method20655(String var0, F var1) {
-      return Class2348.<F>method9194(Class2348.field16108, var0, (F)var1);
+      return Registry.<F>method9194(Registry.field16108, var0, (F)var1);
    }
 
    public Class6768(Codec<C> var1) {
@@ -74,7 +74,7 @@ public abstract class Class6768<C extends Class8277> {
    }
 
    public abstract void method20654(
-      Random var1, Class1670 var2, Class8907 var3, int var4, int var5, int var6, double var7, Class7380 var9, Class7380 var10, int var11, long var12, C var14
+           Random var1, Class1670 var2, Biome var3, int var4, int var5, int var6, double var7, Class7380 var9, Class7380 var10, int var11, long var12, C var14
    );
 
    public void method20658(long var1) {

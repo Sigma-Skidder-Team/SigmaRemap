@@ -237,10 +237,10 @@ public class Class9748 {
          }, var0 -> !var0.method30327(), new TranslationTextComponent("argument.entity.options.team.description"));
          method38218("type", var0 -> {
             var0.method30313((var1, var2) -> {
-               Class6618.method20140(Class2348.field16074.method9190(), var1, String.valueOf('!'));
+               Class6618.method20140(Registry.field16074.method9190(), var1, String.valueOf('!'));
                Class6618.method20140(Class8613.method30861().method27137(), var1, "!#");
                if (!var0.method30333()) {
-                  Class6618.method20141(Class2348.field16074.method9190(), var1);
+                  Class6618.method20141(Registry.field16074.method9190(), var1);
                   Class6618.method20140(Class8613.method30861().method27137(), var1, String.valueOf('#'));
                }
 
@@ -258,7 +258,7 @@ public class Class9748 {
 
                if (!var0.method30276()) {
                   ResourceLocation var5 = ResourceLocation.method8294(var0.method30277());
-                  Class8992 var6 = Class2348.field16074.method9187(var5).orElseThrow(() -> {
+                  Class8992 var6 = Registry.field16074.method9187(var5).orElseThrow(() -> {
                      var0.method30277().setCursor(var3);
                      return field45506.createWithContext(var0.method30277(), var5.toString());
                   });

@@ -98,7 +98,7 @@ public class Class8634 {
             Class3257 var7 = null;
             if (var3.has("item")) {
                ResourceLocation var8 = new ResourceLocation(Class8963.method32763(var3, "item"));
-               var7 = Class2348.field16075.method9187(var8).orElseThrow(() -> new JsonSyntaxException("Unknown item id '" + var8 + "'"));
+               var7 = Registry.field16075.method9187(var8).orElseThrow(() -> new JsonSyntaxException("Unknown item id '" + var8 + "'"));
             }
 
             Class7608 var12 = null;
@@ -113,7 +113,7 @@ public class Class8634 {
             Class8812 var13 = null;
             if (var3.has("potion")) {
                ResourceLocation var10 = new ResourceLocation(Class8963.method32763(var3, "potion"));
-               var13 = Class2348.field16076.method9187(var10).orElseThrow(() -> new JsonSyntaxException("Unknown potion '" + var10 + "'"));
+               var13 = Registry.field16076.method9187(var10).orElseThrow(() -> new JsonSyntaxException("Unknown potion '" + var10 + "'"));
             }
 
             Class8605[] var14 = Class8605.method30838(var3.get("enchantments"));
@@ -133,7 +133,7 @@ public class Class8634 {
       } else {
          JsonObject var3 = new JsonObject();
          if (this.field38841 != null) {
-            var3.addProperty("item", Class2348.field16075.method9181(this.field38841).toString());
+            var3.addProperty("item", Registry.field16075.method9181(this.field38841).toString());
          }
 
          if (this.field38840 != null) {
@@ -164,7 +164,7 @@ public class Class8634 {
          }
 
          if (this.field38846 != null) {
-            var3.addProperty("potion", Class2348.field16076.method9181(this.field38846).toString());
+            var3.addProperty("potion", Registry.field16076.method9181(this.field38846).toString());
          }
 
          return var3;

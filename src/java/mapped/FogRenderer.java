@@ -263,7 +263,7 @@ public class FogRenderer {
             if (var8 instanceof ClientPlayerEntity) {
                ClientPlayerEntity var16 = (ClientPlayerEntity)var8;
                var14 -= var16.method5416() * var16.method5416() * 0.03F;
-               Class8907 var17 = var16.field5024.method7003(var16.method3432());
+               Biome var17 = var16.field5024.method7003(var16.method3432());
                if (var17.method32527() == Class100.field288) {
                   var14 += 0.005F;
                }

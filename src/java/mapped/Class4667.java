@@ -27,7 +27,7 @@ public class Class4667 implements Class4664 {
       var1.add("base", this.field22223.method336());
       var1.add("addition", this.field22224.method336());
       JsonObject var4 = new JsonObject();
-      var4.addProperty("item", Class2348.field16075.method9181(this.field22225).toString());
+      var4.addProperty("item", Registry.field16075.method9181(this.field22225).toString());
       var1.add("result", var4);
    }
 

@@ -11,10 +11,10 @@ public class Class8695 {
    public static final Class7131 field39246 = method31321("group", Class4689.method14711(Class4692::new));
 
    private static Class7131 method31321(String var0, Class4929<? extends Class4688> var1) {
-      return Class2348.<Class7131, Class7131>method9195(Class2348.field16096, new ResourceLocation(var0), new Class7131(var1));
+      return Registry.<Class7131, Class7131>method9195(Registry.field16096, new ResourceLocation(var0), new Class7131(var1));
    }
 
    public static Object method31322() {
-      return Class9709.<Class4688, Class7131>method38040(Class2348.field16096, "entry", "type", Class4688::method14694).method31075();
+      return Class9709.<Class4688, Class7131>method38040(Registry.field16096, "entry", "type", Class4688::method14694).method31075();
    }
 }

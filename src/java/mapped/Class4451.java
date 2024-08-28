@@ -29,9 +29,9 @@ public class Class4451 implements Class4442 {
       Path var4 = this.field21629.method33776();
 
       for (Entry var6 : Class6714.field29430.method9191()) {
-         Path var7 = method14085(var4, ((Class8705)var6.getKey()).method31399());
-         Class8907 var8 = (Class8907)var6.getValue();
-         Function<Supplier<Class8907>, DataResult<JsonElement>> var9 = JsonOps.INSTANCE.withEncoder(Class8907.field40309);
+         Path var7 = method14085(var4, ((RegistryKey)var6.getKey()).method31399());
+         Biome var8 = (Biome)var6.getValue();
+         Function<Supplier<Biome>, DataResult<JsonElement>> var9 = JsonOps.INSTANCE.withEncoder(Biome.field40309);
 
          try {
             Optional var10 = ((DataResult)var9.apply(() -> var8)).result();

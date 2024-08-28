@@ -22,7 +22,7 @@ public class Class3271 extends Class3257 implements Class3260 {
       return method11789(var1) || super.method11732(var1);
    }
 
-   public static Optional<Class8705<World>> method11790(Class39 var0) {
+   public static Optional<RegistryKey<World>> method11790(Class39 var0) {
       return World.field8998.parse(Class8063.field34602, var0.method116("LodestoneDimension")).result();
    }
 
@@ -75,7 +75,7 @@ public class Class3271 extends Class3257 implements Class3260 {
       }
    }
 
-   private void method11791(Class8705<World> var1, BlockPos var2, Class39 var3) {
+   private void method11791(RegistryKey<World> var1, BlockPos var2, Class39 var3) {
       var3.method99("LodestonePos", Class8354.method29284(var2));
       World.field8998
          .encodeStart(Class8063.field34602, var1)

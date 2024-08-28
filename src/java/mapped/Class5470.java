@@ -19,7 +19,7 @@ public class Class5470 implements Packet<Class5116> {
       this.field24277 = var1.getUniqueID();
       this.field24278 = var1.method4085();
       this.field24279 = var1.method3386();
-      this.field24280 = Class2348.field16079.method9171(var1.field5496);
+      this.field24280 = Registry.field16079.method9171(var1.field5496);
    }
 
    @Override
@@ -61,6 +61,6 @@ public class Class5470 implements Packet<Class5116> {
    }
 
    public Class9078 method17198() {
-      return Class2348.field16079.method9172(this.field24280);
+      return Registry.field16079.method9172(this.field24280);
    }
 }

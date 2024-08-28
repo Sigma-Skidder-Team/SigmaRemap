@@ -8,10 +8,10 @@ import java.util.concurrent.Executor;
 import java.util.stream.Collectors;
 
 public class Class286 implements Class268 {
-   private final Class9768<Block> field1088 = new Class9768<Block>(Class2348.field16072::method9187, "tags/blocks", "block");
-   private final Class9768<Class3257> field1089 = new Class9768<Class3257>(Class2348.field16075::method9187, "tags/items", "item");
-   private final Class9768<Class7631> field1090 = new Class9768<Class7631>(Class2348.field16070::method9187, "tags/fluids", "fluid");
-   private final Class9768<Class8992<?>> field1091 = new Class9768<Class8992<?>>(Class2348.field16074::method9187, "tags/entity_types", "entity_type");
+   private final Class9768<Block> field1088 = new Class9768<Block>(Registry.field16072::method9187, "tags/blocks", "block");
+   private final Class9768<Class3257> field1089 = new Class9768<Class3257>(Registry.field16075::method9187, "tags/items", "item");
+   private final Class9768<Class7631> field1090 = new Class9768<Class7631>(Registry.field16070::method9187, "tags/fluids", "fluid");
+   private final Class9768<Class8992<?>> field1091 = new Class9768<Class8992<?>>(Registry.field16074::method9187, "tags/entity_types", "entity_type");
    private Class8933 field1092 = Class8933.field40418;
 
    public Class8933 method1068() {

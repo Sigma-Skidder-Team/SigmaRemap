@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 public final class Class7379 extends Class7378<Class7631, Class7379> {
    private static String[] field31583;
-   public static final Codec<Class7379> field31584 = method23469(Class2348.field16070, Class7631::method25049).stable();
+   public static final Codec<Class7379> field31584 = method23469(Registry.field16070, Class7631::method25049).stable();
 
    public Class7379(Class7631 var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7379> var3) {
       super(var1, var2, var3);

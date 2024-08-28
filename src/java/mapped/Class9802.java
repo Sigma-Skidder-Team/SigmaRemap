@@ -25,7 +25,7 @@ public final class Class9802<U> {
    public <T> void method38647(DynamicOps<T> var1, RecordBuilder<T> var2) {
       this.field45821
          .method31926()
-         .ifPresent(var3 -> this.field45822.ifPresent(var4 -> var2.add(Class2348.field16092.encodeStart(var1, this.field45821), var3.encodeStart(var1, var4))));
+         .ifPresent(var3 -> this.field45822.ifPresent(var4 -> var2.add(Registry.field16092.encodeStart(var1, this.field45821), var3.encodeStart(var1, var4))));
    }
 
    // $VF: synthetic method

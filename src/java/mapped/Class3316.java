@@ -40,7 +40,7 @@ public class Class3316 extends Class3314 {
       return var3 != null && var3.method119("map", 99) ? var3.method122("map") : 0;
    }
 
-   private static Class7529 method11863(ItemStack var0, World var1, int var2, int var3, int var4, boolean var5, boolean var6, Class8705<World> var7) {
+   private static Class7529 method11863(ItemStack var0, World var1, int var2, int var3, int var4, boolean var5, boolean var6, RegistryKey<World> var7) {
       int var10 = var1.method6800();
       Class7529 var11 = new Class7529(method11864(var10));
       var11.method24589(var2, var3, var4, var5, var6, var7);
@@ -184,7 +184,7 @@ public class Class3316 extends Class3314 {
       return !var6.method23474() && !var2.method23454(var1, var3, Direction.field673) ? var6.method23484() : var2;
    }
 
-   private static boolean method11867(Class8907[] var0, int var1, int var2, int var3) {
+   private static boolean method11867(Biome[] var0, int var1, int var2, int var3) {
       return var0[var2 * var1 + var3 * var1 * 128 * var1].method32515() >= 0.0F;
    }
 
@@ -194,7 +194,7 @@ public class Class3316 extends Class3314 {
          int var5 = 1 << var4.field32321;
          int var6 = var4.field32316;
          int var7 = var4.field32317;
-         Class8907[] var8 = new Class8907[128 * var5 * 128 * var5];
+         Biome[] var8 = new Biome[128 * var5 * 128 * var5];
 
          for (int var9 = 0; var9 < 128 * var5; var9++) {
             for (int var10 = 0; var10 < 128 * var5; var10++) {
@@ -205,7 +205,7 @@ public class Class3316 extends Class3314 {
          for (int var15 = 0; var15 < 128; var15++) {
             for (int var16 = 0; var16 < 128; var16++) {
                if (var15 > 0 && var16 > 0 && var15 < 127 && var16 < 127) {
-                  Class8907 var11 = var8[var15 * var5 + var16 * var5 * 128 * var5];
+                  Biome var11 = var8[var15 * var5 + var16 * var5 * 128 * var5];
                   int var12 = 8;
                   if (method11867(var8, var5, var15 - 1, var16 - 1)) {
                      var12--;

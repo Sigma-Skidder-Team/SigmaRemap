@@ -83,7 +83,7 @@ public class Class3323 extends Class3257 {
    @Override
    public void method11737(Class7401 var1, Class25<ItemStack> var2) {
       if (this.method11738(var1)) {
-         for (Class8812 var6 : Class2348.field16076) {
+         for (Class8812 var6 : Registry.field16076) {
             if (var6 != Class8137.field34976) {
                var2.add(Class9741.method38187(new ItemStack(this), var6));
             }

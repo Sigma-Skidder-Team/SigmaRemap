@@ -14,9 +14,9 @@ public class Class8576 {
       Class8841.field39940,
       Class8841.field39940,
       Class8841.field39940,
-      (Class8705<Class8907>)null,
+      (RegistryKey<Biome>)null,
       (Class2961<?>)null,
-      (Class8705<World>)null,
+      (RegistryKey<World>)null,
       (Boolean)null,
       Class7231.field31074,
       Class9449.field43899,
@@ -25,9 +25,9 @@ public class Class8576 {
    private final Class8841 field38560;
    private final Class8841 field38561;
    private final Class8841 field38562;
-   private final Class8705<Class8907> field38563;
+   private final RegistryKey<Biome> field38563;
    private final Class2961<?> field38564;
-   private final Class8705<World> field38565;
+   private final RegistryKey<World> field38565;
    private final Boolean field38566;
    private final Class7231 field38567;
    private final Class9449 field38568;
@@ -37,9 +37,9 @@ public class Class8576 {
       Class8841 var1,
       Class8841 var2,
       Class8841 var3,
-      Class8705<Class8907> var4,
+      RegistryKey<Biome> var4,
       Class2961<?> var5,
-      Class8705<World> var6,
+      RegistryKey<World> var6,
       Boolean var7,
       Class7231 var8,
       Class9449 var9,
@@ -57,14 +57,14 @@ public class Class8576 {
       this.field38569 = var10;
    }
 
-   public static Class8576 method30647(Class8705<Class8907> var0) {
+   public static Class8576 method30647(RegistryKey<Biome> var0) {
       return new Class8576(
          Class8841.field39940,
          Class8841.field39940,
          Class8841.field39940,
          var0,
          (Class2961<?>)null,
-         (Class8705<World>)null,
+         (RegistryKey<World>)null,
          (Boolean)null,
          Class7231.field31074,
          Class9449.field43899,
@@ -72,12 +72,12 @@ public class Class8576 {
       );
    }
 
-   public static Class8576 method30648(Class8705<World> var0) {
+   public static Class8576 method30648(RegistryKey<World> var0) {
       return new Class8576(
          Class8841.field39940,
          Class8841.field39940,
          Class8841.field39940,
-         (Class8705<Class8907>)null,
+         (RegistryKey<Biome>)null,
          (Class2961<?>)null,
          var0,
          (Boolean)null,
@@ -92,9 +92,9 @@ public class Class8576 {
          Class8841.field39940,
          Class8841.field39940,
          Class8841.field39940,
-         (Class8705<Class8907>)null,
+         (RegistryKey<Biome>)null,
          var0,
-         (Class8705<World>)null,
+         (RegistryKey<World>)null,
          (Boolean)null,
          Class7231.field31074,
          Class9449.field43899,
@@ -117,7 +117,7 @@ public class Class8576 {
          } else {
             BlockPos var7 = new BlockPos((double)var2, (double)var3, (double)var4);
             boolean var8 = var1.method6763(var7);
-            Optional var9 = var1.method6867().<Class8907>method32453(Class2348.field16106).method9182(var1.method7003(var7));
+            Optional var9 = var1.method6867().<Biome>method32453(Registry.BIOME_KEY).method9182(var1.method7003(var7));
             if (!var9.isPresent()) {
                return false;
             } else if (this.field38563 == null || var8 && this.field38563 == var9.get()) {
@@ -189,18 +189,18 @@ public class Class8576 {
          Class8841 var5 = Class8841.method32025(var4.get("x"));
          Class8841 var6 = Class8841.method32025(var4.get("y"));
          Class8841 var7 = Class8841.method32025(var4.get("z"));
-         Class8705 var8 = !var3.has("dimension")
+         RegistryKey var8 = !var3.has("dimension")
             ? null
             : ResourceLocation.field13020
                .parse(JsonOps.INSTANCE, var3.get("dimension"))
                .resultOrPartial(field38558::error)
-               .<Class8705>map(var0x -> Class8705.<World>method31395(Class2348.field16067, var0x))
-               .orElse((Class8705)null);
+               .<RegistryKey>map(var0x -> RegistryKey.<World>method31395(Registry.field16067, var0x))
+               .orElse((RegistryKey)null);
          Class2961 var9 = !var3.has("feature") ? null : (Class2961)Class2961.field18055.get(Class8963.method32763(var3, "feature"));
-         Class8705 var10 = null;
+         RegistryKey var10 = null;
          if (var3.has("biome")) {
             ResourceLocation var11 = new ResourceLocation(Class8963.method32763(var3, "biome"));
-            var10 = Class8705.<Class8907>method31395(Class2348.field16106, var11);
+            var10 = RegistryKey.<Biome>method31395(Registry.BIOME_KEY, var11);
          }
 
          Boolean var15 = !var3.has("smokey") ? null : var3.get("smokey").getAsBoolean();

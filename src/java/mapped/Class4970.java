@@ -17,7 +17,7 @@ public class Class4970 extends Class4928<Class134> {
          JsonArray var6 = new JsonArray();
 
          for (Class6069 var8 : Class134.method395(var2)) {
-            ResourceLocation var9 = Class2348.field16073.method9181(var8);
+            ResourceLocation var9 = Registry.field16073.method9181(var8);
             if (var9 == null) {
                throw new IllegalArgumentException("Don't know how to serialize enchantment " + var8);
             }
@@ -34,7 +34,7 @@ public class Class4970 extends Class4928<Class134> {
       if (var1.has("enchantments")) {
          for (JsonElement var8 : Class8963.method32785(var1, "enchantments")) {
             String var9 = Class8963.method32762(var8, "enchantment");
-            Class6069 var10 = Class2348.field16073
+            Class6069 var10 = Registry.field16073
                .method9187(new ResourceLocation(var9))
                .orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var9 + "'"));
             var6.add(var10);

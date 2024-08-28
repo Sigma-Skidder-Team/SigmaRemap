@@ -10,11 +10,11 @@ public class Class8079 implements IAmbientSoundHandler {
    private final Class274 field34721;
    private final Class6668 field34722;
    private final Random field34723;
-   private Object2ObjectArrayMap<Class8907, Class6337> field34724 = new Object2ObjectArrayMap();
+   private Object2ObjectArrayMap<Biome, Class6337> field34724 = new Object2ObjectArrayMap();
    private Optional<Class7959> field34725 = Optional.<Class7959>empty();
    private Optional<Class8217> field34726 = Optional.<Class8217>empty();
    private float field34727;
-   private Class8907 field34728;
+   private Biome field34728;
 
    public Class8079(ClientPlayerEntity var1, Class274 var2, Class6668 var3) {
       this.field34723 = var1.field5024.method6814();
@@ -30,7 +30,7 @@ public class Class8079 implements IAmbientSoundHandler {
    @Override
    public void tick() {
       this.field34724.values().removeIf(Class6333::method19270);
-      Class8907 var3 = this.field34722.method20324(this.field34720.getPosX(), this.field34720.getPosY(), this.field34720.getPosZ());
+      Biome var3 = this.field34722.method20324(this.field34720.getPosX(), this.field34720.getPosY(), this.field34720.getPosZ());
       if (var3 != this.field34728) {
          this.field34728 = var3;
          this.field34725 = var3.method32524();

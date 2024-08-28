@@ -49,7 +49,7 @@ public class Class9759 {
    public void method38356() throws CommandSyntaxException {
       int var3 = this.field45655.getCursor();
       ResourceLocation var4 = ResourceLocation.method8294(this.field45655);
-      this.field45658 = Class2348.field16075.method9187(var4).orElseThrow(() -> {
+      this.field45658 = Registry.field16075.method9187(var4).orElseThrow(() -> {
          this.field45655.setCursor(var3);
          return field45653.createWithContext(this.field45655, var4.toString());
       });
@@ -104,7 +104,7 @@ public class Class9759 {
          Class6618.method20140(var2.method27137(), var1, String.valueOf('#'));
       }
 
-      return Class6618.method20141(Class2348.field16075.method9190(), var1);
+      return Class6618.method20141(Registry.field16075.method9190(), var1);
    }
 
    public CompletableFuture<Suggestions> method38363(SuggestionsBuilder var1, Class7984<Class3257> var2) {

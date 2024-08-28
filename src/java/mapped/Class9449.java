@@ -53,7 +53,7 @@ public class Class9449 {
          Block var5 = null;
          if (var3.has("block")) {
             ResourceLocation var6 = new ResourceLocation(Class8963.method32763(var3, "block"));
-            var5 = Class2348.field16072.method9184(var6);
+            var5 = Registry.field16072.method9184(var6);
          }
 
          Class7608 var8 = null;
@@ -76,7 +76,7 @@ public class Class9449 {
       if (this != field43899) {
          JsonObject var3 = new JsonObject();
          if (this.field43901 != null) {
-            var3.addProperty("block", Class2348.field16072.method9181(this.field43901).toString());
+            var3.addProperty("block", Registry.field16072.method9181(this.field43901).toString());
          }
 
          if (this.field43900 != null) {

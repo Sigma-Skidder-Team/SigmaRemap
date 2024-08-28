@@ -7,8 +7,8 @@ public class Class7921 {
    private static final int[] field33912 = new int[]{0, 10, 70, 150, 250};
    public static final Codec<Class7921> field33913 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Class2348.field16089.fieldOf("type").orElseGet(() -> Class9564.field44542).forGetter(var0x -> var0x.field33914),
-               Class2348.field16090.fieldOf("profession").orElseGet(() -> Class8395.field36011).forGetter(var0x -> var0x.field33915),
+               Registry.field16089.fieldOf("type").orElseGet(() -> Class9564.field44542).forGetter(var0x -> var0x.field33914),
+               Registry.field16090.fieldOf("profession").orElseGet(() -> Class8395.field36011).forGetter(var0x -> var0x.field33915),
                Codec.INT.fieldOf("level").orElse(1).forGetter(var0x -> var0x.field33916)
             )
             .apply(var0, Class7921::new)

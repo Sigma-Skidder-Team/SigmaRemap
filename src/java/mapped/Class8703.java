@@ -13,7 +13,7 @@ public class Class8703 {
 
    public static Class7156 method31387() {
       if (field39295 != null) {
-         Class8705 var2 = PacketThreadUtil.field39630;
+         RegistryKey var2 = PacketThreadUtil.field39630;
          if (var2 != null) {
             int var3 = Class8509.method30145(var2);
             int var4 = var3 - field39296;

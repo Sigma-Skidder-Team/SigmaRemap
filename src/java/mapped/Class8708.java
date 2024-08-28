@@ -8,10 +8,10 @@ import java.util.Set;
 
 public class Class8708 {
    private static String[] field39309;
-   private static Class2348<Class8907> field39310 = method31404(Minecraft.getInstance().world);
-   public static Class8907 field39311 = field39310.method9189(Class9495.field44122);
-   public static Class8907 field39312 = field39310.method9189(Class9495.field44127);
-   public static Class8907 field39313 = field39310.method9189(Class9495.field44178);
+   private static Registry<Biome> field39310 = method31404(Minecraft.getInstance().world);
+   public static Biome field39311 = field39310.method9189(Class9495.field44122);
+   public static Biome field39312 = field39310.method9189(Class9495.field44127);
+   public static Biome field39313 = field39310.method9189(Class9495.field44178);
 
    public static void method31403(World var0) {
       field39310 = method31404(var0);
@@ -20,26 +20,26 @@ public class Class8708 {
       field39313 = field39310.method9189(Class9495.field44178);
    }
 
-   public static Class2348<Class8907> method31404(World var0) {
+   public static Registry<Biome> method31404(World var0) {
       return var0 == null
-         ? Class8904.method32457().<Class8907>method32453(Class2348.field16106)
-         : var0.method6867().<Class8907>method32453(Class2348.field16106);
+         ? Class8904.method32457().<Biome>method32453(Registry.BIOME_KEY)
+         : var0.method6867().<Biome>method32453(Registry.BIOME_KEY);
    }
 
-   public static Class2348<Class8907> method31405() {
+   public static Registry<Biome> method31405() {
       return field39310;
    }
 
-   public static ResourceLocation method31406(Class8907 var0) {
+   public static ResourceLocation method31406(Biome var0) {
       return method31405().method9181(var0);
    }
 
-   public static int method31407(Class8907 var0) {
+   public static int method31407(Biome var0) {
       return method31405().method9171(var0);
    }
 
    public static int method31408(ResourceLocation var0) {
-      Class8907 var3 = method31410(var0);
+      Biome var3 = method31410(var0);
       return method31405().method9171(var3);
    }
 
@@ -47,7 +47,7 @@ public class Class8708 {
       return Class8507.method30138(var0);
    }
 
-   public static Class8907 method31410(ResourceLocation var0) {
+   public static Biome method31410(ResourceLocation var0) {
       return method31405().method9184(var0);
    }
 
@@ -55,7 +55,7 @@ public class Class8708 {
       return method31405().method9190();
    }
 
-   public static List<Class8907> method31412() {
+   public static List<Biome> method31412() {
       return Lists.newArrayList(field39310);
    }
 
@@ -76,8 +76,8 @@ public class Class8708 {
       return var3;
    }
 
-   public static Class8907 method31415(Class1663 var0, BlockPos var1) {
-      Class8907 var4 = field39311;
+   public static Biome method31415(Class1663 var0, BlockPos var1) {
+      Biome var4 = field39311;
       if (!(var0 instanceof Class1664)) {
          if (var0 instanceof Class1662) {
             var4 = ((Class1662)var0).method7003(var1);

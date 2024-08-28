@@ -31,7 +31,7 @@ public class Class4665 implements Class4664 {
       }
 
       var1.add("ingredient", this.field22209.method336());
-      var1.addProperty("result", Class2348.field16075.method9181(this.field22210).toString());
+      var1.addProperty("result", Registry.field16075.method9181(this.field22210).toString());
       var1.addProperty("count", this.field22211);
    }
 

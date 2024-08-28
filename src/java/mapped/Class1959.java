@@ -7,7 +7,7 @@ public enum Class1959 implements Class1960 {
    private static final Class1959[] field12767 = new Class1959[]{field12765};
 
    @Override
-   public Class8907 method8225(long var1, int var3, int var4, int var5, Class1683 var6) {
+   public Biome method8225(long var1, int var3, int var4, int var5, Class1683 var6) {
       int var9 = var3 - 2;
       int var10 = var4 - 2;
       int var11 = var5 - 2;

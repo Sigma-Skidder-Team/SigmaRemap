@@ -32,15 +32,15 @@ public class Class218<T extends Class880 & Class1041, M extends Class2827<T> & C
          Class7921 var13 = ((Class1041)var4).method4674();
          Class9564 var14 = var13.method26570();
          Class8395 var15 = var13.method26571();
-         Class1984 var16 = this.method819(this.field859, "type", Class2348.field16089, var14);
-         Class1984 var17 = this.method819(this.field860, "profession", Class2348.field16090, var15);
+         Class1984 var16 = this.method819(this.field859, "type", Registry.field16089, var14);
+         Class1984 var17 = this.method819(this.field860, "profession", Registry.field16090, var15);
          Class2827 var18 = this.method825();
          ((Class2801)var18).method11014(var17 == Class1984.field12956 || var17 == Class1984.field12957 && var16 != Class1984.field12958);
-         ResourceLocation var19 = this.method818("type", Class2348.field16089.method9181(var14));
+         ResourceLocation var19 = this.method818("type", Registry.field16089.method9181(var14));
          method824(var18, var19, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
          ((Class2801)var18).method11014(true);
          if (var15 != Class8395.field36011 && !var4.method3005()) {
-            ResourceLocation var20 = this.method818("profession", Class2348.field16090.method9181(var15));
+            ResourceLocation var20 = this.method818("profession", Registry.field16090.method9181(var15));
             method824(var18, var20, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             if (var15 != Class8395.field36022) {
                ResourceLocation var21 = this.method818("profession_level", (ResourceLocation)field858.get(MathHelper.method37775(var13.method26572(), 1, field858.size())));

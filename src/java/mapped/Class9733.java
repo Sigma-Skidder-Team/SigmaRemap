@@ -18,15 +18,15 @@ public class Class9733 {
    private static final Logger field45442 = LogManager.getLogger();
    public static final Codec<Class9733> field45443 = RecordCodecBuilder.<Class9733>create(
          var0 -> var0.group(
-                  Class8611.<Class8907>method30859(Class2348.field16106).forGetter(var0x -> var0x.field45445),
+                  Class8611.<Biome>method30859(Registry.BIOME_KEY).forGetter(var0x -> var0x.field45445),
                   Class9763.field45673.fieldOf("structures").forGetter(Class9733::method38126),
                   Class9537.field44402.listOf().fieldOf("layers").forGetter(Class9733::method38129),
                   Codec.BOOL.fieldOf("lakes").orElse(false).forGetter(var0x -> var0x.field45452),
                   Codec.BOOL.fieldOf("features").orElse(false).forGetter(var0x -> var0x.field45451),
-                  Class8907.field40309
+                  Biome.field40309
                      .optionalFieldOf("biome")
                      .orElseGet(Optional::empty)
-                     .forGetter(var0x -> Optional.<Supplier<Class8907>>of(var0x.field45448))
+                     .forGetter(var0x -> Optional.<Supplier<Biome>>of(var0x.field45448))
                )
                .apply(var0, Class9733::new)
       )
@@ -49,16 +49,16 @@ public class Class9733 {
       var0.put(Class2961.field18064, Class9438.field43858);
       var0.put(Class2961.field18075, Class9438.field43852);
    });
-   private final Class2348<Class8907> field45445;
+   private final Registry<Biome> field45445;
    private final Class9763 field45446;
    private final List<Class9537> field45447 = Lists.newArrayList();
-   private Supplier<Class8907> field45448;
+   private Supplier<Biome> field45448;
    private final Class7380[] field45449 = new Class7380[256];
    private boolean field45450;
    private boolean field45451 = false;
    private boolean field45452 = false;
 
-   public Class9733(Class2348<Class8907> var1, Class9763 var2, List<Class9537> var3, boolean var4, boolean var5, Optional<Supplier<Class8907>> var6) {
+   public Class9733(Registry<Biome> var1, Class9763 var2, List<Class9537> var3, boolean var4, boolean var5, Optional<Supplier<Biome>> var6) {
       this(var2, var1);
       if (var4) {
          this.method38124();
@@ -71,14 +71,14 @@ public class Class9733 {
       this.field45447.addAll(var3);
       this.method38131();
       if (var6.isPresent()) {
-         this.field45448 = (Supplier<Class8907>)var6.get();
+         this.field45448 = (Supplier<Biome>)var6.get();
       } else {
          field45442.error("Unknown biome, defaulting to plains");
          this.field45448 = () -> var1.method9189(Class9495.field44122);
       }
    }
 
-   public Class9733(Class9763 var1, Class2348<Class8907> var2) {
+   public Class9733(Class9763 var1, Registry<Biome> var2) {
       this.field45445 = var2;
       this.field45446 = var1;
       this.field45448 = () -> var2.method9189(Class9495.field44122);
@@ -116,8 +116,8 @@ public class Class9733 {
       this.field45452 = true;
    }
 
-   public Class8907 method38125() {
-      Class8907 var3 = this.method38127();
+   public Biome method38125() {
+      Biome var3 = this.method38127();
       Class7478 var4 = var3.method32507();
       Class7935 var5 = new Class7935().method26689(var4.method24282());
       if (this.field45452) {
@@ -129,7 +129,7 @@ public class Class9733 {
          var5.method26693(var4.method24279(field45444.get(var7.getKey())));
       }
 
-      boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<Class8705<Class8907>>of(Class9495.field44172))) && this.field45451;
+      boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<RegistryKey<Biome>>of(Class9495.field44172))) && this.field45451;
       if (var11) {
          List<List<Supplier<Class7909<?, ?>>>> var12 = var4.method24281();
 
@@ -169,11 +169,11 @@ public class Class9733 {
       return this.field45446;
    }
 
-   public Class8907 method38127() {
+   public Biome method38127() {
       return this.field45448.get();
    }
 
-   public void method38128(Supplier<Class8907> var1) {
+   public void method38128(Supplier<Biome> var1) {
       this.field45448 = var1;
    }
 
@@ -207,7 +207,7 @@ public class Class9733 {
       }
    }
 
-   public static Class9733 method38132(Class2348<Class8907> var0) {
+   public static Class9733 method38132(Registry<Biome> var0) {
       Class9763 var3 = new Class9763(
          Optional.<Class9245>of(Class9763.field45675), Maps.newHashMap(ImmutableMap.of(Class2961.field18073, Class9763.field45674.get(Class2961.field18073)))
       );

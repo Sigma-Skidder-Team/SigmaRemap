@@ -64,7 +64,7 @@ public interface Class7984<T> {
       }
    }
 
-   static <T> Class7984<T> method27140(PacketBuffer var0, Class2348<T> var1) {
+   static <T> Class7984<T> method27140(PacketBuffer var0, Registry<T> var1) {
       HashMap var4 = Maps.newHashMap();
       int var5 = var0.method35714();
 

@@ -12,7 +12,7 @@ public interface Class7207<T extends Class4843<?>> {
    Class7207<Class4846> field30941 = method22634("smithing");
 
    static <T extends Class4843<?>> Class7207<T> method22634(String var0) {
-      return Class2348.<Class7207<?>, Class7207<T>>method9195(Class2348.field16085, new ResourceLocation(var0), new Class7208(var0));
+      return Registry.<Class7207<?>, Class7207<T>>method9195(Registry.field16085, new ResourceLocation(var0), new Class7208(var0));
    }
 
    default <C extends Class920> Optional<T> method22635(Class4843<C> var1, World var2, C var3) {

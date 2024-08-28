@@ -27,7 +27,7 @@ public class Class1167 extends Class1155<Class1167> {
    private void method5569() {
       this.field6332.method6024(this);
       Class5966 var3 = (Class5966)Class1313.method6213().get(this.field6332.method2468().indexOf(this));
-      Class2349 var4 = Class1313.method6214(this.field6332.field6836).field7000.field7092.method5789().<Class8907>method32453(Class2348.field16106);
+      Class2349 var4 = Class1313.method6214(this.field6332.field6836).field7000.field7092.method5789().<Biome>method32453(Registry.BIOME_KEY);
       Class1313.method6215(this.field6332.field6836, var3.field26008.apply(var4));
       Class1313.method6218(this.field6332.field6836).method5635(Class1313.method6217(var4, Class1313.method6216(this.field6332.field6836)));
       Class1313.method6218(this.field6332.field6836).method5651();

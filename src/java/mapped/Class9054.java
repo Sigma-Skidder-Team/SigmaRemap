@@ -9,24 +9,24 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public final class Class9054<E> implements Codec<Supplier<E>> {
-   private final Class8705<? extends Class2348<E>> field41443;
+   private final RegistryKey<? extends Registry<E>> field41443;
    private final Codec<E> field41444;
    private final boolean field41445;
 
-   public static <E> Class9054<E> method33671(Class8705<? extends Class2348<E>> var0, Codec<E> var1) {
+   public static <E> Class9054<E> method33671(RegistryKey<? extends Registry<E>> var0, Codec<E> var1) {
       return method33673(var0, var1, true);
    }
 
-   public static <E> Codec<List<Supplier<E>>> method33672(Class8705<? extends Class2348<E>> var0, Codec<E> var1) {
+   public static <E> Codec<List<Supplier<E>>> method33672(RegistryKey<? extends Registry<E>> var0, Codec<E> var1) {
       return Codec.either(method33673(var0, var1, false).listOf(), var1.<Supplier<E>>xmap(var0x -> () -> var0x, Supplier::get).listOf())
          .xmap(var0x -> var0x.map(var0xx -> var0xx, var0xx -> var0xx), Either::left);
    }
 
-   private static <E> Class9054<E> method33673(Class8705<? extends Class2348<E>> var0, Codec<E> var1, boolean var2) {
+   private static <E> Class9054<E> method33673(RegistryKey<? extends Registry<E>> var0, Codec<E> var1, boolean var2) {
       return new Class9054<E>(var0, var1, var2);
    }
 
-   private Class9054(Class8705<? extends Class2348<E>> var1, Codec<E> var2, boolean var3) {
+   private Class9054(RegistryKey<? extends Registry<E>> var1, Codec<E> var2, boolean var3) {
       this.field41443 = var1;
       this.field41444 = var2;
       this.field41445 = var3;

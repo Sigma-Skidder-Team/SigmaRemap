@@ -61,7 +61,7 @@ public class Class9415 {
 
          for (Entry var6 : var3.entrySet()) {
             ResourceLocation var7 = new ResourceLocation((String)var6.getKey());
-            Class7144 var8 = Class2348.field16071.method9187(var7).orElseThrow(() -> new JsonSyntaxException("Unknown effect '" + var7 + "'"));
+            Class7144 var8 = Registry.field16071.method9187(var7).orElseThrow(() -> new JsonSyntaxException("Unknown effect '" + var7 + "'"));
             Class8053 var9 = Class8053.method27659(Class8963.method32781((JsonElement)var6.getValue(), (String)var6.getKey()));
             var4.put(var8, var9);
          }
@@ -79,7 +79,7 @@ public class Class9415 {
          JsonObject var3 = new JsonObject();
 
          for (Entry var5 : this.field43677.entrySet()) {
-            var3.add(Class2348.field16071.method9181((Class7144)var5.getKey()).toString(), ((Class8053)var5.getValue()).method27658());
+            var3.add(Registry.field16071.method9181((Class7144)var5.getKey()).toString(), ((Class8053)var5.getValue()).method27658());
          }
 
          return var3;

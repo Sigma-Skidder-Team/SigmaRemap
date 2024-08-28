@@ -51,7 +51,7 @@ public class Class9176 {
       0,
       field42130,
       Class2076.field13524,
-      (var0, var1, var2, var3) -> var1.method17818(var0.method6867().<Class8907>method32453(Class2348.field16106), var3)
+      (var0, var1, var2, var3) -> var1.method17818(var0.method6867().<Biome>method32453(Registry.BIOME_KEY), var3)
    );
    public static final Class9176 field42137 = method34289("noise", field42136, 8, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
       Class1691 var6 = new Class1691(var0, var2);
@@ -154,7 +154,7 @@ public class Class9176 {
    }
 
    private static Class9176 method34291(String var0, Class9176 var1, int var2, EnumSet<Class101> var3, Class2076 var4, Class6965 var5, Class9241 var6) {
-      return Class2348.<Class9176>method9194(Class2348.field16081, var0, new Class9176(var0, var1, var2, var3, var4, var5, var6));
+      return Registry.<Class9176>method9194(Registry.field16081, var0, new Class9176(var0, var1, var2, var3, var4, var5, var6));
    }
 
    public static List<Class9176> method34292() {
@@ -239,7 +239,7 @@ public class Class9176 {
    }
 
    public static Class9176 method34304(String var0) {
-      return Class2348.field16081.method9184(ResourceLocation.method8289(var0));
+      return Registry.field16081.method9184(ResourceLocation.method8289(var0));
    }
 
    public EnumSet<Class101> method34305() {
@@ -252,6 +252,6 @@ public class Class9176 {
 
    @Override
    public String toString() {
-      return Class2348.field16081.method9181(this).toString();
+      return Registry.field16081.method9181(this).toString();
    }
 }

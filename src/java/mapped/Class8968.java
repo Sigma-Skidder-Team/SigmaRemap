@@ -146,13 +146,13 @@ public class Class8968 {
       field40531.forEach((var1x, var2x) -> var2x.method35392().forEach(var2xx -> this.method32845(Class9736.method38157(var1x, var2xx))));
       var1.endStartSection("blocks");
 
-      for (Block var6 : Class2348.field16072) {
+      for (Block var6 : Registry.field16072) {
          var6.method11577().method35392().forEach(var1x -> this.method32845(Class9736.method38156(var1x)));
       }
 
       var1.endStartSection("items");
 
-      for (ResourceLocation var16 : Class2348.field16075.method9190()) {
+      for (ResourceLocation var16 : Registry.field16075.method9190()) {
          this.method32845(new Class1997(var16, "inventory"));
       }
 
@@ -304,7 +304,7 @@ public class Class8968 {
          if (!Objects.equals(var4.method8303(), "inventory")) {
             ResourceLocation var31 = new ResourceLocation(var1.method8293(), var1.method8292());
             Class9348<Block, Class7380> var32 = Optional.ofNullable(field40531.get(var31))
-               .orElseGet(() -> Class2348.field16072.method9184(var31).method11577());
+               .orElseGet(() -> Registry.field16072.method9184(var31).method11577());
             this.field40536.method38573(var32);
             ImmutableList<Class8550<?>> var33 = ImmutableList.copyOf(this.field40534.method29469((Block)var32.method35394()));
             ImmutableList<Class7380> var8 = var32.method35392();

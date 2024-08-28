@@ -13,7 +13,7 @@ public final class Class9564 {
    public static final Class9564 field44545 = method37067("swamp");
    public static final Class9564 field44546 = method37067("taiga");
    private final String field44547;
-   private static final Map<Class8705<Class8907>, Class9564> field44548 = Util.<Map<Class8705<Class8907>, Class9564>>method38508(
+   private static final Map<RegistryKey<Biome>, Class9564> field44548 = Util.<Map<RegistryKey<Biome>, Class9564>>method38508(
       Maps.newHashMap(), var0 -> {
          var0.put(Class9495.field44158, field44540);
          var0.put(Class9495.field44160, field44540);
@@ -72,10 +72,10 @@ public final class Class9564 {
    }
 
    private static Class9564 method37067(String var0) {
-      return Class2348.<Class9564, Class9564>method9195(Class2348.field16089, new ResourceLocation(var0), new Class9564(var0));
+      return Registry.<Class9564, Class9564>method9195(Registry.field16089, new ResourceLocation(var0), new Class9564(var0));
    }
 
-   public static Class9564 method37068(Optional<Class8705<Class8907>> var0) {
+   public static Class9564 method37068(Optional<RegistryKey<Biome>> var0) {
       return var0.<Class9564>flatMap(var0x -> Optional.ofNullable(field44548.get(var0x))).orElse(field44542);
    }
 }

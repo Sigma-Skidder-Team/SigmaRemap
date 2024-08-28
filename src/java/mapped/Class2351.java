@@ -11,13 +11,13 @@ public class Class2351<T> extends Class2350<T> {
    private final ResourceLocation field16151;
    private T field16152;
 
-   public Class2351(String var1, Class8705<? extends Class2348<T>> var2, Lifecycle var3) {
+   public Class2351(String var1, RegistryKey<? extends Registry<T>> var2, Lifecycle var3) {
       super(var2, var3);
       this.field16151 = new ResourceLocation(var1);
    }
 
    @Override
-   public <V extends T> V method9249(int var1, Class8705<T> var2, V var3, Lifecycle var4) {
+   public <V extends T> V method9249(int var1, RegistryKey<T> var2, V var3, Lifecycle var4) {
       if (this.field16151.equals(var2.method31399())) {
          this.field16152 = (T)var3;
       }

@@ -7,7 +7,7 @@ import java.util.Random;
 public class Class6439 extends Class6434 {
    public static final Codec<Class6439> field28283 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Class2348.field16072.fieldOf("block").forGetter(var0x -> var0x.field28284),
+               Registry.field16072.fieldOf("block").forGetter(var0x -> var0x.field28284),
                Codec.FLOAT.fieldOf("probability").forGetter(var0x -> var0x.field28285)
             )
             .apply(var0, Class6439::new)

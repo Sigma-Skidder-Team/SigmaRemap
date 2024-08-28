@@ -269,7 +269,7 @@ public abstract class Class3390 {
 
    public final ResourceLocation method11999() {
       if (this.field19014 == null) {
-         ResourceLocation var3 = Class2348.field16072.method9181(this.method11584());
+         ResourceLocation var3 = Registry.field16072.method9181(this.method11584());
          this.field19014 = new ResourceLocation(var3.method8293(), "blocks/" + var3.method8292());
       }
 

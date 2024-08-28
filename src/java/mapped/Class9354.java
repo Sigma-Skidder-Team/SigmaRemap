@@ -17,16 +17,16 @@ public final class Class9354 {
                   .fieldOf("preset")
                   .stable()
                   .forGetter(Class9354::method35413),
-               Class8611.method30859(Class2348.field16106).forGetter(Class9354::method35414),
+               Class8611.method30859(Registry.BIOME_KEY).forGetter(Class9354::method35414),
                Codec.LONG.fieldOf("seed").stable().forGetter(Class9354::method35415)
             )
             .apply(builder, builder.stable((a, b, c) -> new Class9354((Class9546) a, b, c)))
    );
    private final Class9546 field43410;
-   private final Class2348<Class8907> field43411;
+   private final Registry<Biome> field43411;
    private final long field43412;
 
-   public Class9354(Class9546 var1, Class2348<Class8907> var2, long var3) {
+   public Class9354(Class9546 var1, Registry<Biome> var2, long var3) {
       this.field43410 = var1;
       this.field43411 = var2;
       this.field43412 = var3;
@@ -36,7 +36,7 @@ public final class Class9354 {
       return this.field43410;
    }
 
-   public Class2348<Class8907> method35414() {
+   public Registry<Biome> method35414() {
       return this.field43411;
    }
 

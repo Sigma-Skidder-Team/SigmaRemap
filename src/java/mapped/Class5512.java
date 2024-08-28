@@ -45,11 +45,11 @@ public class Class5512 implements Packet<Class5116> {
    public static Class4843<?> method17332(PacketBuffer var0) {
       ResourceLocation var3 = var0.method35731();
       ResourceLocation var4 = var0.method35731();
-      return Class2348.field16086.method9187(var3).orElseThrow(() -> new IllegalArgumentException("Unknown recipe serializer " + var3)).method19699(var4, var0);
+      return Registry.field16086.method9187(var3).orElseThrow(() -> new IllegalArgumentException("Unknown recipe serializer " + var3)).method19699(var4, var0);
    }
 
    public static <T extends Class4843<?>> void method17333(T var0, PacketBuffer var1) {
-      var1.method35732(Class2348.field16086.method9181(var0.method14961()));
+      var1.method35732(Registry.field16086.method9181(var0.method14961()));
       var1.method35732(var0.method14964());
       ((Class6504<T>)var0.method14961()).method19698(var1, var0);
    }

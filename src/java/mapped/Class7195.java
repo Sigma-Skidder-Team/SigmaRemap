@@ -57,7 +57,7 @@ public abstract class Class7195<C extends Class4729> {
    public final int field30900;
 
    private static <C extends Class4729, F extends Class7195<C>> F method22604(String var0, F var1) {
-      return Class2348.<F>method9194(Class2348.field16110, var0, (F)var1);
+      return Registry.<F>method9194(Registry.field16110, var0, (F)var1);
    }
 
    public Class7195(Codec<C> var1, int var2) {
@@ -79,7 +79,7 @@ public abstract class Class7195<C extends Class4729> {
 
    public boolean method22608(
       Class1670 var1,
-      Function<BlockPos, Class8907> var2,
+      Function<BlockPos, Biome> var2,
       long var3,
       int var5,
       int var6,
@@ -141,7 +141,7 @@ public abstract class Class7195<C extends Class4729> {
 
    public boolean method22596(
       Class1670 var1,
-      Function<BlockPos, Class8907> var2,
+      Function<BlockPos, Biome> var2,
       BitSet var3,
       Random var4,
       Mutable var5,
@@ -175,7 +175,7 @@ public abstract class Class7195<C extends Class4729> {
                if (var16.isTrue()) {
                   var7.method8377(var5, Direction.field672);
                   if (var1.method6738(var7).method23448(Blocks.field36396)) {
-                     var1.method7061(var7, ((Class8907)var2.apply(var5)).method32507().method24283().method28934(), false);
+                     var1.method7061(var7, ((Biome)var2.apply(var5)).method32507().method24283().method28934(), false);
                   }
                }
             } else {
@@ -190,7 +190,7 @@ public abstract class Class7195<C extends Class4729> {
    }
 
    public abstract boolean method22603(
-           Class1670 var1, Function<BlockPos, Class8907> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, C var10
+           Class1670 var1, Function<BlockPos, Biome> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, C var10
    );
 
    public abstract boolean method22602(Random var1, int var2, int var3, C var4);

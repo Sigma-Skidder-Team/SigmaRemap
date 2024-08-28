@@ -33,7 +33,7 @@ import org.apache.logging.log4j.Logger;
 public final class ItemStack {
    public static final Codec<ItemStack> field39971 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Class2348.field16075.fieldOf("id").forGetter(var0x -> var0x.field39978),
+               Registry.field16075.fieldOf("id").forGetter(var0x -> var0x.field39978),
                Codec.INT.fieldOf("Count").forGetter(var0x -> var0x.field39976),
                Class39.field79.optionalFieldOf("tag").forGetter(var0x -> Optional.<Class39>ofNullable(var0x.field39979))
             )
@@ -82,7 +82,7 @@ public final class ItemStack {
    }
 
    private ItemStack(Class39 var1) {
-      this.field39978 = Class2348.field16075.method9184(new ResourceLocation(var1.method126("id")));
+      this.field39978 = Registry.field16075.method9184(new ResourceLocation(var1.method126("id")));
       this.field39976 = var1.method120("Count");
       if (var1.method119("tag", 10)) {
          this.field39979 = var1.method130("tag");
@@ -155,7 +155,7 @@ public final class ItemStack {
    }
 
    public Class39 method32112(Class39 var1) {
-      ResourceLocation var4 = Class2348.field16075.method9181(this.method32107());
+      ResourceLocation var4 = Registry.field16075.method9181(this.method32107());
       var1.method109("id", var4 != null ? var4.toString() : "minecraft:air");
       var1.method100("Count", (byte)this.field39976);
       if (this.field39979 != null) {
@@ -626,7 +626,7 @@ public final class ItemStack {
             var5.add(new TranslationTextComponent("item.durability", this.method32119() - this.method32117(), this.method32119()));
          }
 
-         var5.add(new StringTextComponent(Class2348.field16075.method9181(this.method32107()).toString()).mergeStyle(TextFormatting.DARK_GRAY));
+         var5.add(new StringTextComponent(Registry.field16075.method9181(this.method32107()).toString()).mergeStyle(TextFormatting.DARK_GRAY));
          if (this.method32141()) {
             var5.add(new TranslationTextComponent("item.nbt_tags", this.field39979.method97().size()).mergeStyle(TextFormatting.DARK_GRAY));
          }
@@ -651,7 +651,7 @@ public final class ItemStack {
    public static void method32157(List<ITextComponent> var0, Class41 var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          Class39 var5 = var1.method153(var4);
-         Class2348.field16073.method9187(ResourceLocation.method8289(var5.method126("id"))).ifPresent(var2 -> var0.add(var2.method18820(var5.method122("lvl"))));
+         Registry.field16073.method9187(ResourceLocation.method8289(var5.method126("id"))).ifPresent(var2 -> var0.add(var2.method18820(var5.method122("lvl"))));
       }
    }
 
@@ -704,7 +704,7 @@ public final class ItemStack {
 
       Class41 var5 = this.field39979.method131("Enchantments", 10);
       Class39 var6 = new Class39();
-      var6.method109("id", String.valueOf(Class2348.field16073.method9181(var1)));
+      var6.method109("id", String.valueOf(Registry.field16073.method9181(var1)));
       var6.method101("lvl", (short)((byte)var2));
       var5.add(var6);
    }
@@ -752,7 +752,7 @@ public final class ItemStack {
          for (int var6 = 0; var6 < var5.size(); var6++) {
             Class39 var7 = var5.method153(var6);
             if (!var7.method119("Slot", 8) || var7.method126("Slot").equals(var1.method8775())) {
-               Optional<Class4869> var8 = Class2348.field16087.method9187(ResourceLocation.method8289(var7.method126("AttributeName")));
+               Optional<Class4869> var8 = Registry.field16087.method9187(ResourceLocation.method8289(var7.method126("AttributeName")));
                if (var8.isPresent()) {
                   Class9689 var9 = Class9689.method37935(var7);
                   if (var9 != null && var9.method37930().getLeastSignificantBits() != 0L && var9.method37930().getMostSignificantBits() != 0L) {
@@ -776,7 +776,7 @@ public final class ItemStack {
 
       Class41 var6 = this.field39979.method131("AttributeModifiers", 10);
       Class39 var7 = var2.method37934();
-      var7.method109("AttributeName", Class2348.field16087.method9181(var1).toString());
+      var7.method109("AttributeName", Registry.field16087.method9181(var1).toString());
       if (var3 != null) {
          var7.method109("Slot", var3.method8775());
       }

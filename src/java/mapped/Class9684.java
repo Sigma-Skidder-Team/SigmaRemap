@@ -62,7 +62,7 @@ public class Class9684 {
       return this;
    }
 
-   public Class8907 method37921() {
+   public Biome method37921() {
       if (this.field45277 != null
          && this.field45278 != null
          && this.field45279 != null
@@ -72,7 +72,7 @@ public class Class9684 {
          && this.field45284 != null
          && this.field45285 != null
          && this.field45286 != null) {
-         return new Class8907(
+         return new Biome(
             new Class7035(this.field45277, this.field45281, this.field45282, this.field45283, null),
             this.field45278,
             this.field45279,

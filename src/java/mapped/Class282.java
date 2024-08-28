@@ -95,7 +95,7 @@ public class Class282 extends Class281 {
 
    public static Class4843<?> method1038(ResourceLocation var0, JsonObject var1) {
       String var4 = Class8963.method32763(var1, "type");
-      return Class2348.field16086
+      return Registry.field16086
          .method9187(new ResourceLocation(var4))
          .orElseThrow(() -> new JsonSyntaxException("Invalid or unsupported recipe type '" + var4 + "'"))
          .method19700(var0, var1);

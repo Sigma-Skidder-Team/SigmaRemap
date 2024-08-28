@@ -28,7 +28,7 @@ public class Class7846 {
                   Codec.LONG.fieldOf("seed").stable().forGetter(Class7846::method26259),
                   Codec.BOOL.fieldOf("generate_features").orElse(true).stable().forGetter(Class7846::method26260),
                   Codec.BOOL.fieldOf("bonus_chest").orElse(false).stable().forGetter(Class7846::method26261),
-                  Class2350.method9256(Class2348.field16068, Lifecycle.stable(), Class9459.field43951)
+                  Class2350.method9256(Registry.field16068, Lifecycle.stable(), Class9459.field43951)
                      .xmap(Class9459::method36414, Function.identity())
                      .fieldOf("dimensions")
                      .forGetter(Class7846::method26264),
@@ -74,19 +74,19 @@ public class Class7846 {
    }
 
    public static Class7846 method26256(Class8904 var0) {
-      Class2349 var3 = var0.<Class8907>method32453(Class2348.field16106);
+      Class2349 var3 = var0.<Biome>method32453(Registry.BIOME_KEY);
       int var4 = "North Carolina".hashCode();
-      Class2349 var5 = var0.<Class9535>method32453(Class2348.field16066);
-      Class2349 var6 = var0.<Class9309>method32453(Class2348.field16099);
+      Class2349 var5 = var0.<Class9535>method32453(Registry.field16066);
+      Class2349 var6 = var0.<Class9309>method32453(Registry.field16099);
       return new Class7846((long)var4, true, true, method26262(var5, Class9535.method36871(var5, var3, var6, (long)var4), method26258(var3, var6, (long)var4)));
    }
 
-   public static Class7846 method26257(Class2348<Class9535> var0, Class2348<Class8907> var1, Class2348<Class9309> var2) {
+   public static Class7846 method26257(Registry<Class9535> var0, Registry<Biome> var1, Registry<Class9309> var2) {
       long var5 = new Random().nextLong();
       return new Class7846(var5, true, false, method26262(var0, Class9535.method36871(var0, var1, var2, var5), method26258(var1, var2, var5)));
    }
 
-   public static Class5645 method26258(Class2348<Class8907> var0, Class2348<Class9309> var1, long var2) {
+   public static Class5645 method26258(Registry<Biome> var0, Registry<Class9309> var1, long var2) {
       return new Class5645(new Class1689(var2, false, false, var0), var2, () -> var1.method9189(Class9309.field43230));
    }
 
@@ -102,19 +102,19 @@ public class Class7846 {
       return this.field33654;
    }
 
-   public static Class2350<Class9459> method26262(Class2348<Class9535> var0, Class2350<Class9459> var1, Class5646 var2) {
+   public static Class2350<Class9459> method26262(Registry<Class9535> var0, Class2350<Class9459> var1, Class5646 var2) {
       Class9459 var5 = var1.method9183(Class9459.field43952);
       Supplier var6 = () -> var5 != null ? var5.method36412() : var0.method9189(Class9535.field44371);
       return method26263(var1, var6, var2);
    }
 
    public static Class2350<Class9459> method26263(Class2350<Class9459> var0, Supplier<Class9535> var1, Class5646 var2) {
-      Class2350<Class9459> var5 = new Class2350(Class2348.field16068, Lifecycle.experimental());
+      Class2350<Class9459> var5 = new Class2350(Registry.field16068, Lifecycle.experimental());
       var5.method9250(Class9459.field43952, new Class9459(var1, var2), Lifecycle.stable());
 
 
-      for (Entry<Class8705<Class9459>, Class9459>var7 : var0.method9191()) {
-         Class8705<Class9459> var8 = var7.getKey();
+      for (Entry<RegistryKey<Class9459>, Class9459>var7 : var0.method9191()) {
+         RegistryKey<Class9459> var8 = var7.getKey();
          if (var8 != Class9459.field43952) {
             var5.method9250(var8, var7.getValue(), var0.method9185(var7.getValue()));
          }
@@ -136,11 +136,11 @@ public class Class7846 {
       }
    }
 
-   public ImmutableSet<Class8705<World>> method26266() {
+   public ImmutableSet<RegistryKey<World>> method26266() {
       return this.method26264()
          .method9191()
          .stream()
-         .<Class8705<World>>map(var0 -> Class8705.<World>method31395(Class2348.field16067, var0.getKey().method31399()))
+         .<RegistryKey<World>>map(var0 -> RegistryKey.<World>method31395(Registry.field16067, var0.getKey().method31399()))
          .collect(ImmutableSet.toImmutableSet());
    }
 
@@ -191,9 +191,9 @@ public class Class7846 {
          }
       }
 
-      Class2349<Class9535> var14 = var0.method32453(Class2348.field16066);
-      Class2349<Class8907> var15 = var0.method32453(Class2348.field16106);
-      Class2349<Class9309> var16 = var0.method32453(Class2348.field16099);
+      Class2349<Class9535> var14 = var0.method32453(Registry.field16066);
+      Class2349<Biome> var15 = var0.method32453(Registry.BIOME_KEY);
+      Class2349<Class9309> var16 = var0.method32453(Registry.field16099);
       Class2350<Class9459> var17 = Class9535.method36871(var14, var15, var16, var10);
       switch (var9) {
          case "flat":
@@ -236,11 +236,11 @@ public class Class7846 {
       if (!var2.isPresent()) {
          var7 = this.field33655;
       } else {
-         var7 = new Class2350<Class9459>(Class2348.field16068, Lifecycle.experimental());
+         var7 = new Class2350<Class9459>(Registry.field16068, Lifecycle.experimental());
          long var8 = var2.getAsLong();
 
          for (Entry var11 : this.field33655.method9191()) {
-            Class8705 var12 = (Class8705)var11.getKey();
+            RegistryKey var12 = (RegistryKey)var11.getKey();
             var7.<Class9459>method9250(
                var12,
                new Class9459(((Class9459)var11.getValue()).method36411(), ((Class9459)var11.getValue()).method36413().method17791(var8)),

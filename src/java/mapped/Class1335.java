@@ -86,9 +86,9 @@ public class Class1335 extends Screen {
          new Class1221(
             var3,
             Class7846.method26257(
-               var3.<Class9535>method32453(Class2348.field16066),
-               var3.<Class8907>method32453(Class2348.field16106),
-               var3.<Class9309>method32453(Class2348.field16099)
+               var3.<Class9535>method32453(Registry.field16066),
+               var3.<Biome>method32453(Registry.BIOME_KEY),
+               var3.<Class9309>method32453(Registry.field16099)
             ),
             Optional.<Class5970>of(Class5970.field26025),
             OptionalLong.empty()

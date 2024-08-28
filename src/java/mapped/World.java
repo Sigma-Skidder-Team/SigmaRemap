@@ -14,11 +14,11 @@ import java.util.function.Supplier;
 
 public abstract class World implements Class1660, AutoCloseable {
    public static final Logger field8997 = LogManager.getLogger();
-   public static final Codec<Class8705<World>> field8998 = ResourceLocation.field13020
-      .xmap(Class8705.<World>method31400(Class2348.field16067), Class8705::method31399);
-   public static final Class8705<World> field8999 = Class8705.<World>method31395(Class2348.field16067, new ResourceLocation("overworld"));
-   public static final Class8705<World> field9000 = Class8705.<World>method31395(Class2348.field16067, new ResourceLocation("the_nether"));
-   public static final Class8705<World> THE_END = Class8705.<World>method31395(Class2348.field16067, new ResourceLocation("the_end"));
+   public static final Codec<RegistryKey<World>> field8998 = ResourceLocation.field13020
+      .xmap(RegistryKey.<World>method31400(Registry.field16067), RegistryKey::method31399);
+   public static final RegistryKey<World> field8999 = RegistryKey.<World>method31395(Registry.field16067, new ResourceLocation("overworld"));
+   public static final RegistryKey<World> field9000 = RegistryKey.<World>method31395(Registry.field16067, new ResourceLocation("the_nether"));
+   public static final RegistryKey<World> THE_END = RegistryKey.<World>method31395(Registry.field16067, new ResourceLocation("the_end"));
    private static final Direction[] field9002 = Direction.values();
    public final List<Class944> field9003 = Lists.newArrayList();
    public final List<Class944> field9004 = Lists.newArrayList();
@@ -41,9 +41,9 @@ public abstract class World implements Class1660, AutoCloseable {
    public boolean field9021;
    private final Class7522 field9022;
    private final Class6668 field9023;
-   private final Class8705<World> field9024;
+   private final RegistryKey<World> field9024;
 
-   public World(Class6607 var1, Class8705<World> var2, Class9535 var3, Supplier<Class7165> var4, boolean var5, boolean var6, long var7) {
+   public World(Class6607 var1, RegistryKey<World> var2, Class9535 var3, Supplier<Class7165> var4, boolean var5, boolean var6, long var7) {
       this.field9019 = var4;
       this.field9018 = var1;
       this.field9017 = var3;
@@ -261,9 +261,9 @@ public abstract class World implements Class1660, AutoCloseable {
             Class8965 var9 = var8.method14410("Block being updated");
             var9.method32806("Source block type", () -> {
                try {
-                  return String.format("ID #%s (%s // %s)", Class2348.field16072.method9181(var2), var2.method11566(), var2.getClass().getCanonicalName());
+                  return String.format("ID #%s (%s // %s)", Registry.field16072.method9181(var2), var2.method11566(), var2.getClass().getCanonicalName());
                } catch (Throwable var4) {
-                  return "ID #" + Class2348.field16072.method9181(var2);
+                  return "ID #" + Registry.field16072.method9181(var2);
                }
             });
             Class8965.method32814(var9, var1, var6);
@@ -355,7 +355,7 @@ public abstract class World implements Class1660, AutoCloseable {
       if (this.field9021) {
          field8997.error(
             "Adding block entity while ticking: {} @ {}",
-            new org.apache.logging.log4j.util.Supplier[]{() -> Class2348.field16078.method9181(var1.method3786()), var1::method3774}
+            new org.apache.logging.log4j.util.Supplier[]{() -> Registry.field16078.method9181(var1.method3786()), var1::method3774}
          );
       }
 
@@ -851,7 +851,7 @@ public abstract class World implements Class1660, AutoCloseable {
          if (this.method7006(Class101.field299, var1).getY() > var1.getY()) {
             return false;
          } else {
-            Class8907 var4 = this.method7003(var1);
+            Biome var4 = this.method7003(var1);
             return var4.method32500() == Class87.field224 && var4.method32503(var1) >= 0.15F;
          }
       } else {
@@ -860,7 +860,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public boolean method6797(BlockPos var1) {
-      Class8907 var4 = this.method7003(var1);
+      Biome var4 = this.method7003(var1);
       return var4.method32501();
    }
 
@@ -950,7 +950,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return this.field9017;
    }
 
-   public Class8705<World> method6813() {
+   public RegistryKey<World> method6813() {
       return this.field9024;
    }
 

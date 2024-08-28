@@ -76,13 +76,13 @@ public class Class7940 {
    public static final Class7435 field34117 = method26742("landing_obsidian_tear", false);
    public static final Class7435 field34118 = method26742("reverse_portal", false);
    public static final Class7435 field34119 = method26742("white_ash", false);
-   public static final Codec<Class7436> field34120 = Class2348.field16077.dispatch("type", Class7436::method24011, Class7434::method24005);
+   public static final Codec<Class7436> field34120 = Registry.field16077.dispatch("type", Class7436::method24011, Class7434::method24005);
 
    private static Class7435 method26742(String var0, boolean var1) {
-      return Class2348.<Class7435>method9194(Class2348.field16077, var0, new Class7435(var1));
+      return Registry.<Class7435>method9194(Registry.field16077, var0, new Class7435(var1));
    }
 
    private static <T extends Class7436> Class7434<T> method26743(String var0, Class6865<T> var1, Function<Class7434<T>, Codec<T>> var2) {
-      return Class2348.<Class7434<T>>method9194(Class2348.field16077, var0, new Class7433(false, var1, var2));
+      return Registry.<Class7434<T>>method9194(Registry.field16077, var0, new Class7433(false, var1, var2));
    }
 }

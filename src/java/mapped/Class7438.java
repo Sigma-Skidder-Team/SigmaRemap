@@ -23,7 +23,7 @@ public class Class7438 implements Class7436 {
 
    @Override
    public String method24010() {
-      return Class2348.field16077.method9181(this.method24011()) + " " + new Class176(this.field32009.method32107(), this.field32009.method32142()).method504();
+      return Registry.field16077.method9181(this.method24011()) + " " + new Class176(this.field32009.method32107(), this.field32009.method32142()).method504();
    }
 
    @Override

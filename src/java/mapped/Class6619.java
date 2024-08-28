@@ -367,7 +367,7 @@ public class Class6619 implements Class6618 {
 
    @Override
    public Collection<ResourceLocation> method20127() {
-      return Class2348.field16069.method9190();
+      return Registry.field16069.method9190();
    }
 
    @Override
@@ -381,7 +381,7 @@ public class Class6619 implements Class6618 {
    }
 
    @Override
-   public Set<Class8705<World>> method20135() {
+   public Set<RegistryKey<World>> method20135() {
       return this.field29130.method1319();
    }
 

@@ -10,34 +10,34 @@ public class Class1684 implements Class1683 {
    public static final int field9154 = 1 << field9152 + field9152 + field9153;
    public static final int field9155 = (1 << field9152) - 1;
    public static final int field9156 = (1 << field9153) - 1;
-   private final Class2347<Class8907> field9157;
-   private final Class8907[] field9158;
+   private final Class2347<Biome> field9157;
+   private final Biome[] field9158;
 
-   public Class1684(Class2347<Class8907> var1, Class8907[] var2) {
+   public Class1684(Class2347<Biome> var1, Biome[] var2) {
       this.field9157 = var1;
       this.field9158 = var2;
    }
 
-   private Class1684(Class2347<Class8907> var1) {
-      this(var1, new Class8907[field9154]);
+   private Class1684(Class2347<Biome> var1) {
+      this(var1, new Biome[field9154]);
    }
 
-   public Class1684(Class2347<Class8907> var1, int[] var2) {
+   public Class1684(Class2347<Biome> var1, int[] var2) {
       this(var1);
 
       for (int var5 = 0; var5 < this.field9158.length; var5++) {
          int var6 = var2[var5];
-         Class8907 var7 = (Class8907)var1.method9172(var6);
+         Biome var7 = (Biome)var1.method9172(var6);
          if (var7 != null) {
             this.field9158[var5] = var7;
          } else {
             field9151.warn("Received invalid biome id: " + var6);
-            this.field9158[var5] = (Class8907)var1.method9172(0);
+            this.field9158[var5] = (Biome)var1.method9172(0);
          }
       }
    }
 
-   public Class1684(Class2347<Class8907> var1, Class7481 var2, Class1685 var3) {
+   public Class1684(Class2347<Biome> var1, Class7481 var2, Class1685 var3) {
       this(var1);
       int var6 = var2.method24356() >> 2;
       int var7 = var2.method24357() >> 2;
@@ -50,7 +50,7 @@ public class Class1684 implements Class1683 {
       }
    }
 
-   public Class1684(Class2347<Class8907> var1, Class7481 var2, Class1685 var3, int[] var4) {
+   public Class1684(Class2347<Biome> var1, Class7481 var2, Class1685 var3, int[] var4) {
       this(var1);
       int var7 = var2.method24356() >> 2;
       int var8 = var2.method24357() >> 2;
@@ -63,7 +63,7 @@ public class Class1684 implements Class1683 {
          }
       } else {
          for (int var13 = 0; var13 < var4.length; var13++) {
-            this.field9158[var13] = (Class8907)var1.method9172(var4[var13]);
+            this.field9158[var13] = (Biome)var1.method9172(var4[var13]);
             if (this.field9158[var13] == null) {
                int var14 = var13 & field9155;
                int var15 = var13 >> field9152 + field9152 & field9156;
@@ -85,7 +85,7 @@ public class Class1684 implements Class1683 {
    }
 
    @Override
-   public Class8907 method7005(int var1, int var2, int var3) {
+   public Biome method7005(int var1, int var2, int var3) {
       int var6 = var1 & field9155;
       int var7 = MathHelper.method37775(var2, 0, field9156);
       int var8 = var3 & field9155;

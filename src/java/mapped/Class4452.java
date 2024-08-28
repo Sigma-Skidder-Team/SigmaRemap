@@ -19,19 +19,19 @@ public class Class4452 implements Class4442 {
    @Override
    public void method14013(Class8297 var1) throws IOException {
       JsonObject var4 = new JsonObject();
-      Class2348.field16035.method9190().forEach(var1x -> var4.add(var1x.toString(), method14087((Class2348<?>)Class2348.field16035.method9184(var1x))));
+      Registry.field16035.method9190().forEach(var1x -> var4.add(var1x.toString(), method14087((Registry<?>) Registry.field16035.method9184(var1x))));
       Path var5 = this.field21631.method33776().resolve("reports/registries.json");
       Class4442.method14020(field21630, var1, var4, var5);
    }
 
-   private static <T> JsonElement method14087(Class2348<T> var0) {
+   private static <T> JsonElement method14087(Registry<T> var0) {
       JsonObject var3 = new JsonObject();
       if (var0 instanceof Class2351) {
          ResourceLocation var4 = ((Class2351)var0).method9267();
          var3.addProperty("default", var4.toString());
       }
 
-      int var11 = ((Class2348) Class2348.field16035).method9171(var0);
+      int var11 = ((Registry) Registry.field16035).method9171(var0);
       var3.addProperty("protocol_id", var11);
       JsonObject var5 = new JsonObject();
 

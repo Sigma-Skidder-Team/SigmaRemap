@@ -15,7 +15,7 @@ public class Class9007<T> extends Class9008 {
    }
 
    public static <T> String method33273(Class49<T> var0, T var1) {
-      return method33274(Class2348.field16088.method9181(var0)) + ":" + method33274(var0.method171().method9181(var1));
+      return method33274(Registry.field16088.method9181(var0)) + ":" + method33274(var0.method171().method9181(var1));
    }
 
    private static <T> String method33274(ResourceLocation var0) {

@@ -13,18 +13,18 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class Class8904 {
    private static final Logger field40298 = LogManager.getLogger();
-   private static final Map<Class8705<? extends Class2348<?>>, Class9305<?>> field40299 = Util.<Map<Class8705<? extends Class2348<?>>, Class9305<?>>>method38507(
+   private static final Map<RegistryKey<? extends Registry<?>>, Class9305<?>> field40299 = Util.<Map<RegistryKey<? extends Registry<?>>, Class9305<?>>>method38507(
       () -> {
          Builder var2 = ImmutableMap.builder();
-         method32456(var2, Class2348.field16066, Class9535.field44369, Class9535.field44369);
-         method32456(var2, Class2348.field16106, Class8907.field40307, Class8907.field40308);
-         method32455(var2, Class2348.field16100, Class9319.field43262);
-         method32455(var2, Class2348.field16101, Class6815.field29674);
-         method32455(var2, Class2348.field16102, Class7909.field33882);
-         method32455(var2, Class2348.field16103, Class9300.field43171);
-         method32455(var2, Class2348.field16104, Class7525.field32305);
-         method32455(var2, Class2348.field16105, Class9369.field43491);
-         method32455(var2, Class2348.field16099, Class9309.field43220);
+         method32456(var2, Registry.field16066, Class9535.field44369, Class9535.field44369);
+         method32456(var2, Registry.BIOME_KEY, Biome.field40307, Biome.field40308);
+         method32455(var2, Registry.field16100, Class9319.field43262);
+         method32455(var2, Registry.field16101, Class6815.field29674);
+         method32455(var2, Registry.field16102, Class7909.field33882);
+         method32455(var2, Registry.field16103, Class9300.field43171);
+         method32455(var2, Registry.field16104, Class7525.field32305);
+         method32455(var2, Registry.field16105, Class9369.field43491);
+         method32455(var2, Registry.field16099, Class9309.field43220);
          return var2.build();
       }
    );
@@ -34,28 +34,28 @@ public abstract class Class8904 {
          Class9535.method36868(var2);
          field40299.keySet()
             .stream()
-            .filter(var0 -> !var0.equals(Class2348.field16066))
-            .forEach(var1 -> method32459(var2, (Class8705<? extends Class2348<?>>)var1));
+            .filter(var0 -> !var0.equals(Registry.field16066))
+            .forEach(var1 -> method32459(var2, (RegistryKey<? extends Registry<?>>)var1));
          return var2;
       }
    );
 
-   public abstract <E> Optional<Class2349<E>> method32452(Class8705<? extends Class2348<E>> var1);
+   public abstract <E> Optional<Class2349<E>> method32452(RegistryKey<? extends Registry<E>> var1);
 
-   public <E> Class2349<E> method32453(Class8705<? extends Class2348<E>> var1) {
+   public <E> Class2349<E> method32453(RegistryKey<? extends Registry<E>> var1) {
       return this.<E>method32452(var1).orElseThrow(() -> new IllegalStateException("Missing registry: " + var1));
    }
 
-   public Class2348<Class9535> method32454() {
-      return this.<Class9535>method32453(Class2348.field16066);
+   public Registry<Class9535> method32454() {
+      return this.<Class9535>method32453(Registry.field16066);
    }
 
-   private static <E> void method32455(Builder<Class8705<? extends Class2348<?>>, Class9305<?>> var0, Class8705<? extends Class2348<E>> var1, Codec<E> var2) {
+   private static <E> void method32455(Builder<RegistryKey<? extends Registry<?>>, Class9305<?>> var0, RegistryKey<? extends Registry<E>> var1, Codec<E> var2) {
       var0.put(var1, new Class9305(var1, var2, (Codec<E>)null));
    }
 
    private static <E> void method32456(
-      Builder<Class8705<? extends Class2348<?>>, Class9305<?>> var0, Class8705<? extends Class2348<E>> var1, Codec<E> var2, Codec<E> var3
+           Builder<RegistryKey<? extends Registry<?>>, Class9305<?>> var0, RegistryKey<? extends Registry<E>> var1, Codec<E> var2, Codec<E> var3
    ) {
       var0.put(var1, new Class9305(var1, var2, var3));
    }
@@ -73,12 +73,12 @@ public abstract class Class8904 {
    }
 
    private static <E> void method32458(Class8905 var0, Class4382 var1, Class9305<E> var2) {
-      Class8705<? extends Class2348<E>> var5 = var2.method35116();
-      boolean var6 = !var5.equals(Class2348.field16099) && !var5.equals(Class2348.field16066);
+      RegistryKey<? extends Registry<E>> var5 = var2.method35116();
+      boolean var6 = !var5.equals(Registry.field16099) && !var5.equals(Registry.field16066);
       Class2349<E> var7 = field40300.method32453(var5);
       Class2349<E>  var8 = var0.method32453(var5);
 
-      for (Entry<Class8705<E>, E> var10 : var7.method9191()) {
+      for (Entry<RegistryKey<E>, E> var10 : var7.method9191()) {
          E var11 = var10.getValue();
          if (!var6) {
             var8.method9249(var7.method9171(var11), var10.getKey(), var11, var7.method9185(var11));
@@ -88,9 +88,9 @@ public abstract class Class8904 {
       }
    }
 
-   private static <R extends Class2348<?>> void method32459(Class8905 var0, Class8705<R> var1) {
-      Class2348 var4 = Class6714.field29423;
-      Class2348 var5 = (Class2348)var4.method9183(var1);
+   private static <R extends Registry<?>> void method32459(Class8905 var0, RegistryKey<R> var1) {
+      Registry var4 = Class6714.field29423;
+      Registry var5 = (Registry)var4.method9183(var1);
       if (var5 != null) {
          method32460(var0, var5);
       } else {
@@ -98,10 +98,10 @@ public abstract class Class8904 {
       }
    }
 
-   private static <E> void method32460(Class8905 var0, Class2348<E> var1) {
+   private static <E> void method32460(Class8905 var0, Registry<E> var1) {
       Class2349<E>  var4 = var0.method32452(var1.method9180()).orElseThrow(() -> new IllegalStateException("Missing registry: " + var1.method9180()));
 
-      for (Entry<Class8705<E>, E> var6 : var1.method9191()) {
+      for (Entry<RegistryKey<E>, E> var6 : var1.method9191()) {
          E var7 = var6.getValue();
          var4.method9249(var1.method9171(var7), var6.getKey(), var7, var1.method9185(var7));
       }
@@ -114,7 +114,7 @@ public abstract class Class8904 {
    }
 
    private static <E> void method32462(Class6711<?> var0, Class8905 var1, Class9305<E> var2) {
-      Class8705<? extends Class2348<E>> var5 = var2.method35116();
+      RegistryKey<? extends Registry<E>> var5 = var2.method35116();
       Class2350<E> var6 = Optional.ofNullable((Class2350<E>) Class8905.method32485(var1).get(var5))
          .orElseThrow(() -> new IllegalStateException("Missing registry: " + var5));
       DataResult<Class2350<E>> var7 = var0.method20474(var6, var2.method35116(), var2.method35117());
@@ -122,7 +122,7 @@ public abstract class Class8904 {
    }
 
    // $VF: synthetic method
-   public static Map<Class8705<? extends Class2348<?>>, Class9305<?>> method32472() {
+   public static Map<RegistryKey<? extends Registry<?>>, Class9305<?>> method32472() {
       return field40299;
    }
 }

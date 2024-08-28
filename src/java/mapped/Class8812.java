@@ -10,7 +10,7 @@ public class Class8812 {
    private final ImmutableList<Class2023> field39649;
 
    public static Class8812 method31814(String var0) {
-      return Class2348.field16076.method9184(ResourceLocation.method8289(var0));
+      return Registry.field16076.method9184(ResourceLocation.method8289(var0));
    }
 
    public Class8812(Class2023... var1) {
@@ -23,7 +23,7 @@ public class Class8812 {
    }
 
    public String method31815(String var1) {
-      return var1 + (this.field39648 != null ? this.field39648 : Class2348.field16076.method9181(this).method8292());
+      return var1 + (this.field39648 != null ? this.field39648 : Registry.field16076.method9181(this).method8292());
    }
 
    public List<Class2023> method31816() {

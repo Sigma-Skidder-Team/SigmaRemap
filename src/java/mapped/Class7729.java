@@ -16,7 +16,7 @@ public class Class7729 {
    public static void method25566() {
       if (!field33186) {
          field33186 = true;
-         if (Class2348.field16035.method9190().isEmpty()) {
+         if (Registry.field16035.method9190().isEmpty()) {
             throw new IllegalStateException("Unable to load registries");
          }
 
@@ -52,13 +52,13 @@ public class Class7729 {
 
    public static Set<String> method25569() {
       TreeSet var2 = new TreeSet();
-      method25567(Class2348.field16087, Class4869::method15032, var2);
-      method25567(Class2348.field16074, Class8992::method33210, var2);
-      method25567(Class2348.field16071, Class7144::method22294, var2);
-      method25567(Class2348.field16075, Class3257::method11719, var2);
-      method25567(Class2348.field16073, Class6069::method18819, var2);
-      method25567(Class2348.field16072, Block::method11566, var2);
-      method25567(Class2348.field16080, var0 -> "stat." + var0.toString().replace(':', '.'), var2);
+      method25567(Registry.field16087, Class4869::method15032, var2);
+      method25567(Registry.field16074, Class8992::method33210, var2);
+      method25567(Registry.field16071, Class7144::method22294, var2);
+      method25567(Registry.field16075, Class3257::method11719, var2);
+      method25567(Registry.field16073, Class6069::method18819, var2);
+      method25567(Registry.field16072, Block::method11566, var2);
+      method25567(Registry.field16080, var0 -> "stat." + var0.toString().replace(':', '.'), var2);
       method25568(var2);
       return var2;
    }

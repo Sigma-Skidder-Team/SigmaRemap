@@ -287,14 +287,14 @@ public class Class8268 {
          Class6618.method20140(var2.method27137(), var1, String.valueOf('#'));
       }
 
-      Class6618.method20141(Class2348.field16072.method9190(), var1);
+      Class6618.method20141(Registry.field16072.method9190(), var1);
       return var1.buildFuture();
    }
 
    public void method28855() throws CommandSyntaxException {
       int var3 = this.field35543.getCursor();
       this.field35547 = ResourceLocation.method8294(this.field35543);
-      Block var4 = Class2348.field16072.method9187(this.field35547).orElseThrow(() -> {
+      Block var4 = Registry.field16072.method9187(this.field35547).orElseThrow(() -> {
          this.field35543.setCursor(var3);
          return field35536.createWithContext(this.field35543, this.field35547.toString());
       });
@@ -435,7 +435,7 @@ public class Class8268 {
    }
 
    public static String toString(Class7380 var0) {
-      StringBuilder var3 = new StringBuilder(Class2348.field16072.method9181(var0.method23383()).toString());
+      StringBuilder var3 = new StringBuilder(Registry.field16072.method9181(var0.method23383()).toString());
       if (!var0.method23461().isEmpty()) {
          var3.append('[');
          boolean var4 = false;

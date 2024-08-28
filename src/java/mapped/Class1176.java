@@ -6,11 +6,11 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1176 extends Class1155<Class1176> {
-   private final Class8907 field6368;
+   private final Biome field6368;
    private final ITextComponent field6369;
    public final Class1283 field6370;
 
-   public Class1176(Class1283 var1, Class8907 var2) {
+   public Class1176(Class1283 var1, Biome var2) {
       this.field6370 = var1;
       this.field6368 = var2;
       ResourceLocation var5 = Class1323.method6291(var1.field6847).method9181(var2);
@@ -38,7 +38,7 @@ public class Class1176 extends Class1155<Class1176> {
    }
 
    // $VF: synthetic method
-   public static Class8907 method5602(Class1176 var0) {
+   public static Biome method5602(Class1176 var0) {
       return var0.field6368;
    }
 }

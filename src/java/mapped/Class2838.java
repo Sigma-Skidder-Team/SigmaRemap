@@ -1432,12 +1432,12 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11098(Blocks.field36588, method11089());
       HashSet var8 = Sets.newHashSet();
 
-      for (Block var10 : Class2348.field16072) {
+      for (Block var10 : Registry.field16072) {
          ResourceLocation var11 = var10.method11999();
          if (var11 != Class8793.field39533 && var8.add(var11)) {
             Class5888 var12 = this.field17636.remove(var11);
             if (var12 == null) {
-               throw new IllegalStateException(String.format("Missing loottable '%s' for '%s'", var11, Class2348.field16072.method9181(var10)));
+               throw new IllegalStateException(String.format("Missing loottable '%s' for '%s'", var11, Registry.field16072.method9181(var10)));
             }
 
             var1.accept(var11, var12);

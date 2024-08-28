@@ -21,8 +21,8 @@ public class Class4449 implements Class4442 {
    public void method14013(Class8297 var1) throws IOException {
       JsonObject var4 = new JsonObject();
 
-      for (Block var6 : Class2348.field16072) {
-         ResourceLocation var7 = Class2348.field16072.method9181(var6);
+      for (Block var6 : Registry.field16072) {
+         ResourceLocation var7 = Registry.field16072.method9181(var6);
          JsonObject var8 = new JsonObject();
          Class9348<Block, Class7380> var9 = var6.method11577();
          if (!var9.method35395().isEmpty()) {

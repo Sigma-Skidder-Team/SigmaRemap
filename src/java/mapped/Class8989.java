@@ -10,6 +10,6 @@ public interface Class8989<P extends Class8033> {
    Codec<P> method33193();
 
    static <P extends Class8033> Class8989<P> method33194(String var0, Codec<P> var1) {
-      return Class2348.<Class8989<P>>method9194(Class2348.field16083, var0, () -> var1);
+      return Registry.<Class8989<P>>method9194(Registry.field16083, var0, () -> var1);
    }
 }

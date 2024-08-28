@@ -16,7 +16,6 @@ import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.function.Supplier;
 
-import org.apache.http.config.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,7 +23,7 @@ public class Class6711<T> extends Class6712<T> {
    private static final Logger field29412 = LogManager.getLogger();
    private final Class4383 field29413;
    private final Class8905 field29414;
-   private final Map<Class8705<? extends Class2348<?>>, Class7269<?>> field29415;
+   private final Map<RegistryKey<? extends Registry<?>>, Class7269<?>> field29415;
    private final Class6711<JsonElement> field29416;
 
    public static <T> Class6711<T> method20471(DynamicOps<T> var0, Class191 var1, Class8905 var2) {
@@ -37,7 +36,7 @@ public class Class6711<T> extends Class6712<T> {
       return var5;
    }
 
-   private Class6711(DynamicOps<T> var1, Class4383 var2, Class8905 var3, IdentityHashMap<Class8705<? extends Class2348<?>>, Class7269<?>> var4) {
+   private Class6711(DynamicOps<T> var1, Class4383 var2, Class8905 var3, IdentityHashMap<RegistryKey<? extends Registry<?>>, Class7269<?>> var4) {
       super(var1);
       this.field29413 = var2;
       this.field29414 = var3;
@@ -45,7 +44,7 @@ public class Class6711<T> extends Class6712<T> {
       this.field29416 = var1 != JsonOps.INSTANCE ? new Class6711<>(JsonOps.INSTANCE, var2, var3, var4) : (Class6711<JsonElement>) this;
    }
 
-   public <E> DataResult<Pair<Supplier<E>, T>> method20473(T var1, Class8705<? extends Class2348<E>> var2, Codec<E> var3, boolean var4) {
+   public <E> DataResult<Pair<Supplier<E>, T>> method20473(T var1, RegistryKey<? extends Registry<E>> var2, Codec<E> var3, boolean var4) {
       Optional var7 = this.field29414.method32452(var2);
       if (var7.isPresent()) {
          Class2349 var8 = (Class2349)var7.get();
@@ -62,7 +61,7 @@ public class Class6711<T> extends Class6712<T> {
       }
    }
 
-   public <E> DataResult<Class2350<E>> method20474(Class2350<E> var1, Class8705<? extends Class2348<E>> var2, Codec<E> var3) {
+   public <E> DataResult<Class2350<E>> method20474(Class2350<E> var1, RegistryKey<? extends Registry<E>> var2, Codec<E> var3) {
       Collection<ResourceLocation> var6 = this.field29413.method13746(var2);
       DataResult<Class2350<E>> var7 = DataResult.success(var1, Lifecycle.stable());
       String var8 = var2.method31399().method8292() + "/";
@@ -85,8 +84,8 @@ public class Class6711<T> extends Class6712<T> {
       return var7.setPartial(var1);
    }
 
-   private <E> DataResult<Supplier<E>> method20475(Class8705<? extends Class2348<E>> var1, Class2349<E> var2, Codec<E> var3, ResourceLocation var4) {
-      Class8705<E> var7 = Class8705.method31395(var1, var4);
+   private <E> DataResult<Supplier<E>> method20475(RegistryKey<? extends Registry<E>> var1, Class2349<E> var2, Codec<E> var3, ResourceLocation var4) {
+      RegistryKey<E> var7 = RegistryKey.method31395(var1, var4);
       Class7269<E> var8 = this.method20476(var1);
       DataResult<Supplier<E>> var9 = (DataResult<Supplier<E>>) Class7269.method22833(var8).get(var7);
       if (var9 == null) {
@@ -122,14 +121,14 @@ public class Class6711<T> extends Class6712<T> {
    }
 
 
-   private <E> Class7269<E> method20476(Class8705<? extends Class2348<E>> var1) {
+   private <E> Class7269<E> method20476(RegistryKey<? extends Registry<E>> var1) {
       return (Class7269<E>)this.field29415.computeIfAbsent(var1, var0 -> new Class7269());
    }
 
-   public <E> DataResult<Class2348<E>> method20477(Class8705<? extends Class2348<E>> var1) {
+   public <E> DataResult<Registry<E>> method20477(RegistryKey<? extends Registry<E>> var1) {
       return this.field29414
          .method32452(var1)
-         .<DataResult<Class2348<E>>>map(var0 -> DataResult.success(var0, var0.method9186()))
+         .<DataResult<Registry<E>>>map(var0 -> DataResult.success(var0, var0.method9186()))
          .orElseGet(() -> DataResult.error("Unknown registry: " + var1));
    }
 

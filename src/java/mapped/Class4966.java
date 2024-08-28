@@ -10,7 +10,7 @@ import java.util.HashSet;
 public class Class4966 extends Class4928<Class129> {
    public void method15246(JsonObject var1, Class129 var2, JsonSerializationContext var3) {
       super.method15246(var1, var2, var3);
-      var1.addProperty("block", Class2348.field16072.method9181(Class129.method376(var2)).toString());
+      var1.addProperty("block", Registry.field16072.method9181(Class129.method376(var2)).toString());
       JsonArray var6 = new JsonArray();
       Class129.method377(var2).forEach(var1x -> var6.add(var1x.method30472()));
       var1.add("properties", var6);
@@ -18,7 +18,7 @@ public class Class4966 extends Class4928<Class129> {
 
    public Class129 method15244(JsonObject var1, JsonDeserializationContext var2, Class122[] var3) {
       ResourceLocation var6 = new ResourceLocation(Class8963.method32763(var1, "block"));
-      Block var7 = Class2348.field16072.method9187(var6).orElseThrow(() -> new IllegalArgumentException("Can't find block " + var6));
+      Block var7 = Registry.field16072.method9187(var6).orElseThrow(() -> new IllegalArgumentException("Can't find block " + var6));
       Class9348 var8 = var7.method11577();
       HashSet var9 = Sets.newHashSet();
       JsonArray var10 = Class8963.method32786(var1, "properties", (JsonArray)null);

@@ -108,19 +108,19 @@ public class Class302 implements Class268 {
    }
 
    private <T extends Class7436> void method1191(Class7434<T> var1, Class3499<T> var2) {
-      this.field1173.put(Class2348.field16077.method9181(var1), var2);
+      this.field1173.put(Registry.field16077.method9181(var1), var2);
    }
 
    private <T extends Class7436> void method1192(Class7434<T> var1, Class9116<T> var2) {
       Class8976 var5 = new Class8976(this);
-      this.field1175.put(Class2348.field16077.method9181(var1), var5);
-      this.field1173.put(Class2348.field16077.method9181(var1), var2.method34002(var5));
+      this.field1175.put(Registry.field16077.method9181(var1), var5);
+      this.field1173.put(Registry.field16077.method9181(var1), var2.method34002(var5));
    }
 
    @Override
    public CompletableFuture<Void> method777(Class7121 var1, Class191 var2, Class7165 var3, Class7165 var4, Executor var5, Executor var6) {
       Map<ResourceLocation, List<ResourceLocation>> var9 = Maps.newConcurrentMap();
-      CompletableFuture[] var10 = Class2348.field16077
+      CompletableFuture[] var10 = Registry.field16077
          .method9190()
          .stream()
          .map(var4x -> CompletableFuture.runAsync(() -> this.method1194(var2, var4x, var9), var5))
@@ -211,7 +211,7 @@ public class Class302 implements Class268 {
 
    @Nullable
    private <T extends Class7436> Class4587 method1198(T var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      Class3499 var16 = this.field1173.get(Class2348.field16077.method9181(var1.method24011()));
+      Class3499 var16 = this.field1173.get(Registry.field16077.method9181(var1.method24011()));
       return var16 != null ? var16.method12199(var1, this.field1168, var2, var4, var6, var8, var10, var12) : null;
    }
 

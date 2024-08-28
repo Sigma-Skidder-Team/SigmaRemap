@@ -6,7 +6,6 @@ import com.mojang.datafixers.util.Function3;
 import com.mojang.datafixers.util.Pair;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Supplier;
 
 public class Class9546 {
    private static final Map<ResourceLocation, Class9546> field44450 = Maps.newHashMap();
@@ -22,15 +21,15 @@ public class Class9546 {
          )
    );
    private final ResourceLocation field44452;
-   private final Function3<Class9546, Class2348<Class8907>, Long, Class1686> field44453;
+   private final Function3<Class9546, Registry<Biome>, Long, Class1686> field44453;
 
-   public Class9546(ResourceLocation var1, Function3<Class9546, Class2348<Class8907>, Long, Class1686> var2) {
+   public Class9546(ResourceLocation var1, Function3<Class9546, Registry<Biome>, Long, Class1686> var2) {
       this.field44452 = var1;
       this.field44453 = var2;
       field44450.put(var1, this);
    }
 
-   public Class1686 method36963(Class2348<Class8907> var1, long var2) {
+   public Class1686 method36963(Registry<Biome> var1, long var2) {
       return (Class1686)this.field44453.apply(this, var1, var2);
    }
 

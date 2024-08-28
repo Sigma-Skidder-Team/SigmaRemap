@@ -4,17 +4,17 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 public abstract class Class8900 {
-   private static final Int2ObjectMap<Class8705<Class8907>> field40280 = new Int2ObjectArrayMap();
-   public static final Class8907 field40281 = method32442(1, Class9495.field44122, Class9413.method36076(false));
-   public static final Class8907 field40282 = method32442(127, Class9495.field44172, Class9413.method36110());
+   private static final Int2ObjectMap<RegistryKey<Biome>> field40280 = new Int2ObjectArrayMap();
+   public static final Biome field40281 = method32442(1, Class9495.field44122, Class9413.method36076(false));
+   public static final Biome field40282 = method32442(127, Class9495.field44172, Class9413.method36110());
 
-   private static Class8907 method32442(int var0, Class8705<Class8907> var1, Class8907 var2) {
+   private static Biome method32442(int var0, RegistryKey<Biome> var1, Biome var2) {
       field40280.put(var0, var1);
-      return Class6714.<Class8907, Class8907>method20498(Class6714.field29430, var0, var1, var2);
+      return Class6714.<Biome, Biome>method20498(Class6714.field29430, var0, var1, var2);
    }
 
-   public static Class8705<Class8907> method32443(int var0) {
-      return (Class8705<Class8907>)field40280.get(var0);
+   public static RegistryKey<Biome> method32443(int var0) {
+      return (RegistryKey<Biome>)field40280.get(var0);
    }
 
    static {

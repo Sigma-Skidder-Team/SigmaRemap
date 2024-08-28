@@ -237,7 +237,7 @@ public class Class4852 implements Class4842 {
 
    public static ItemStack method14987(JsonObject var0) {
       String var3 = Class8963.method32763(var0, "item");
-      Class3257 var4 = Class2348.field16075.method9187(new ResourceLocation(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
+      Class3257 var4 = Registry.field16075.method9187(new ResourceLocation(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
       if (!var0.has("data")) {
          int var5 = Class8963.method32778(var0, "count", 1);
          return new ItemStack(var4, var5);

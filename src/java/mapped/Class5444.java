@@ -25,7 +25,7 @@ public abstract class Class5444<C extends Class4698> {
       this.field24197 = var4;
    }
 
-   public abstract void method17109(Class8904 var1, Class5646 var2, Class8761 var3, int var4, int var5, Class8907 var6, C var7);
+   public abstract void method17109(Class8904 var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, C var7);
 
    public Class9764 method17110() {
       return this.field24197;
@@ -66,7 +66,7 @@ public abstract class Class5444<C extends Class4698> {
    public Class39 method17114(int var1, int var2) {
       Class39 var5 = new Class39();
       if (this.method17117()) {
-         var5.method109("id", Class2348.field16114.method9181(this.method17125()).toString());
+         var5.method109("id", Registry.field16114.method9181(this.method17125()).toString());
          var5.method102("ChunkX", var1);
          var5.method102("ChunkZ", var2);
          var5.method102("references", this.field24200);

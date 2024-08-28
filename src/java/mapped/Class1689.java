@@ -13,12 +13,12 @@ public class Class1689 extends Class1685 {
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field9187),
                Codec.BOOL.optionalFieldOf("legacy_biome_init_layer", false, Lifecycle.stable()).forGetter(var0x -> var0x.field9188),
                Codec.BOOL.fieldOf("large_biomes").orElse(false).stable().forGetter(var0x -> var0x.field9189),
-               Class8611.<Class8907>method30859(Class2348.field16106).forGetter(var0x -> var0x.field9190)
+               Class8611.<Biome>method30859(Registry.BIOME_KEY).forGetter(var0x -> var0x.field9190)
             )
             .apply(var0, var0.stable(Class1689::new))
    );
    private final Class7345 field9185;
-   private static final List<Class8705<Class8907>> field9186 = ImmutableList.of(
+   private static final List<RegistryKey<Biome>> field9186 = ImmutableList.of(
       Class9495.field44121,
       Class9495.field44122,
       Class9495.field44123,
@@ -31,7 +31,7 @@ public class Class1689 extends Class1685 {
       Class9495.field44132,
       Class9495.field44133,
       Class9495.field44134,
-      new Class8705[]{
+      new RegistryKey[]{
          Class9495.field44135,
          Class9495.field44136,
          Class9495.field44137,
@@ -91,10 +91,10 @@ public class Class1689 extends Class1685 {
    private final long field9187;
    private final boolean field9188;
    private final boolean field9189;
-   private final Class2348<Class8907> field9190;
+   private final Registry<Biome> field9190;
 
-   public Class1689(long var1, boolean var3, boolean var4, Class2348<Class8907> var5) {
-      super(field9186.stream().<Supplier<Class8907>>map(var1x -> () -> var5.method9189((Class8705<Class8907>)var1x)));
+   public Class1689(long var1, boolean var3, boolean var4, Registry<Biome> var5) {
+      super(field9186.stream().<Supplier<Biome>>map(var1x -> () -> var5.method9189((RegistryKey<Biome>)var1x)));
       this.field9187 = var1;
       this.field9188 = var3;
       this.field9189 = var4;
@@ -113,7 +113,7 @@ public class Class1689 extends Class1685 {
    }
 
    @Override
-   public Class8907 method7005(int var1, int var2, int var3) {
+   public Biome method7005(int var1, int var2, int var3) {
       return this.field9185.method23287(this.field9190, var1, var3);
    }
 }

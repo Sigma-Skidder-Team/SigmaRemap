@@ -10,11 +10,11 @@ public class Class9479 {
    public static final Class7633 field44068 = method36604("lava", new Class7639());
 
    private static <T extends Class7631> T method36604(String var0, T var1) {
-      return Class2348.<T>method9194(Class2348.field16070, var0, (T)var1);
+      return Registry.<T>method9194(Registry.field16070, var0, (T)var1);
    }
 
    static {
-      for (Class7631 var7 : Class2348.field16070) {
+      for (Class7631 var7 : Registry.field16070) {
          UnmodifiableIterator var8 = var7.method25047().method35392().iterator();
 
          while (var8.hasNext()) {

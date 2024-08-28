@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public final class Class8907 {
+public final class Biome {
    public static final Logger field40306 = LogManager.getLogger();
-   public static final Codec<Class8907> field40307 = RecordCodecBuilder.create(
+   public static final Codec<Biome> field40307 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class7035.field30357.forGetter(var0x -> var0x.field40315),
                Class100.field291.fieldOf("category").forGetter(var0x -> var0x.field40320),
@@ -26,9 +26,9 @@ public final class Class8907 {
                Class7478.field32137.forGetter(var0x -> var0x.field40316),
                Class8835.field39900.forGetter(var0x -> var0x.field40317)
             )
-            .apply(var0, Class8907::new)
+            .apply(var0, Biome::new)
    );
-   public static final Codec<Class8907> field40308 = RecordCodecBuilder.create(
+   public static final Codec<Biome> field40308 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class7035.field30357.forGetter(var0x -> var0x.field40315),
                Class100.field291.fieldOf("category").forGetter(var0x -> var0x.field40320),
@@ -36,11 +36,11 @@ public final class Class8907 {
                Codec.FLOAT.fieldOf("scale").forGetter(var0x -> var0x.field40319),
                Class7752.field33278.fieldOf("effects").forGetter(var0x -> var0x.field40321)
             )
-            .apply(var0, (var0x, var1, var2, var3, var4) -> new Class8907(var0x, var1, var2, var3, var4, Class7478.field32136, Class8835.field39899))
+            .apply(var0, (var0x, var1, var2, var3, var4) -> new Biome(var0x, var1, var2, var3, var4, Class7478.field32136, Class8835.field39899))
    );
-   public static final Codec<Supplier<Class8907>> field40309 = Class9054.method33671(Class2348.field16106, field40307);
-   public static final Codec<List<Supplier<Class8907>>> field40310 = Class9054.<Class8907>method33672(Class2348.field16106, field40307);
-   private final Map<Integer, List<Class2961<?>>> field40311 = Class2348.field16114
+   public static final Codec<Supplier<Biome>> field40309 = Class9054.method33671(Registry.BIOME_KEY, field40307);
+   public static final Codec<List<Supplier<Biome>>> field40310 = Class9054.<Biome>method33672(Registry.BIOME_KEY, field40307);
+   private final Map<Integer, List<Class2961<?>>> field40311 = Registry.field16114
       .method9192()
       .collect(Collectors.<Class2961<?>, Integer>groupingBy(var0 -> var0.method11364().ordinal()));
    private static final Class7691 field40312 = new Class7691(new Class2420(1234L), ImmutableList.of(0));
@@ -59,7 +59,7 @@ public final class Class8907 {
          return var3x;
       }));
 
-   private Class8907(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, Class7478 var6, Class8835 var7) {
+   private Biome(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, Class7478 var6, Class8835 var7) {
       this.field40315 = var1;
       this.field40316 = var6;
       this.field40317 = var7;
@@ -182,7 +182,7 @@ public final class Class8907 {
                      );
                } catch (Exception var22) {
                   Class4526 var21 = Class4526.method14413(var22, "Feature placement");
-                  var21.method14410("Feature").method32807("Id", Class2348.field16114.method9181(var15)).method32806("Description", () -> var15.toString());
+                  var21.method14410("Feature").method32807("Id", Registry.field16114.method9181(var15)).method32806("Description", () -> var15.toString());
                   throw new Class2506(var21);
                }
 
@@ -200,7 +200,7 @@ public final class Class8907 {
                } catch (Exception var23) {
                   Class4526 var27 = Class4526.method14413(var23, "Feature placement");
                   var27.method14410("Feature")
-                     .method32807("Id", Class2348.field16112.method9181(var26.field33886))
+                     .method32807("Id", Registry.field16112.method9181(var26.field33886))
                      .method32807("Config", var26.field33887)
                      .method32806("Description", () -> var26.field33886.toString());
                   throw new Class2506(var27);
@@ -302,7 +302,7 @@ public final class Class8907 {
    }
 
    // $VF: synthetic method
-   public Class8907(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, Class7478 var6, Class8835 var7, Class14 var8) {
+   public Biome(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, Class7478 var6, Class8835 var7, Class14 var8) {
       this(var1, var2, var3, var4, var5, var6, var7);
    }
 

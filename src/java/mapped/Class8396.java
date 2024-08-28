@@ -60,7 +60,7 @@ public class Class8396 {
    }
 
    public int method29464(Class7380 var1, World var2, BlockPos var3) {
-      Class8040 var6 = this.field36032.method9172(Class2348.field16072.method9171(var1.method23383()));
+      Class8040 var6 = this.field36032.method9172(Registry.field16072.method9171(var1.method23383()));
       if (var6 == null) {
          Class7210 var7 = var1.method23394(var2, var3);
          return var7 == null ? -1 : var7.field31006;
@@ -70,13 +70,13 @@ public class Class8396 {
    }
 
    public int method29465(Class7380 var1, Class1663 var2, BlockPos var3, int var4) {
-      Class8040 var7 = this.field36032.method9172(Class2348.field16072.method9171(var1.method23383()));
+      Class8040 var7 = this.field36032.method9172(Registry.field16072.method9171(var1.method23383()));
       return var7 != null ? var7.method27608(var1, var2, var3, var4) : -1;
    }
 
    public void method29466(Class8040 var1, Block... var2) {
       for (Block var8 : var2) {
-         this.field36032.method9268(var1, Class2348.field16072.method9171(var8));
+         this.field36032.method9268(var1, Registry.field16072.method9171(var8));
       }
    }
 

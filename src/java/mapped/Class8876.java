@@ -1,15 +1,15 @@
 package mapped;
 
 public class Class8876 {
-   public static final Class49<Block> field40096 = method32295("mined", Class2348.field16072);
-   public static final Class49<Class3257> field40097 = method32295("crafted", Class2348.field16075);
-   public static final Class49<Class3257> field40098 = method32295("used", Class2348.field16075);
-   public static final Class49<Class3257> field40099 = method32295("broken", Class2348.field16075);
-   public static final Class49<Class3257> field40100 = method32295("picked_up", Class2348.field16075);
-   public static final Class49<Class3257> field40101 = method32295("dropped", Class2348.field16075);
-   public static final Class49<Class8992<?>> field40102 = method32295("killed", Class2348.field16074);
-   public static final Class49<Class8992<?>> field40103 = method32295("killed_by", Class2348.field16074);
-   public static final Class49<ResourceLocation> field40104 = method32295("custom", Class2348.field16080);
+   public static final Class49<Block> field40096 = method32295("mined", Registry.field16072);
+   public static final Class49<Class3257> field40097 = method32295("crafted", Registry.field16075);
+   public static final Class49<Class3257> field40098 = method32295("used", Registry.field16075);
+   public static final Class49<Class3257> field40099 = method32295("broken", Registry.field16075);
+   public static final Class49<Class3257> field40100 = method32295("picked_up", Registry.field16075);
+   public static final Class49<Class3257> field40101 = method32295("dropped", Registry.field16075);
+   public static final Class49<Class8992<?>> field40102 = method32295("killed", Registry.field16074);
+   public static final Class49<Class8992<?>> field40103 = method32295("killed_by", Registry.field16074);
+   public static final Class49<ResourceLocation> field40104 = method32295("custom", Registry.field16080);
    public static final ResourceLocation field40105 = method32294("leave_game", Class8762.field39447);
    public static final ResourceLocation field40106 = method32294("play_one_minute", Class8762.field39450);
    public static final ResourceLocation field40107 = method32294("time_since_death", Class8762.field39450);
@@ -87,12 +87,12 @@ public class Class8876 {
 
    private static ResourceLocation method32294(String var0, Class8762 var1) {
       ResourceLocation var4 = new ResourceLocation(var0);
-      Class2348.<ResourceLocation>method9194(Class2348.field16080, var0, var4);
+      Registry.<ResourceLocation>method9194(Registry.field16080, var0, var4);
       field40104.method170(var4, var1);
       return var4;
    }
 
-   private static <T> Class49<T> method32295(String var0, Class2348<T> var1) {
-      return Class2348.<Class49<T>>method9194(Class2348.field16088, var0, new Class49<T>(var1));
+   private static <T> Class49<T> method32295(String var0, Registry<T> var1) {
+      return Registry.<Class49<T>>method9194(Registry.field16088, var0, new Class49<T>(var1));
    }
 }

@@ -44,7 +44,7 @@ public abstract class Class7574 {
    }
 
    public void method24790(Class8992<?> var1) {
-      this.field32518.method20414().method109("id", Class2348.field16074.method9181(var1).toString());
+      this.field32518.method20414().method109("id", Registry.field16074.method9181(var1).toString());
    }
 
    private boolean method24791() {

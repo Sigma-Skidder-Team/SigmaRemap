@@ -8,7 +8,7 @@ public class Class7646<P extends Class7617> {
    private final Codec<P> field32822;
 
    private static <P extends Class7617> Class7646<P> method25117(String var0, Codec<P> var1) {
-      return Class2348.<Class7646<P>>method9194(Class2348.field16134, var0, new Class7646<P>(var1));
+      return Registry.<Class7646<P>>method9194(Registry.field16134, var0, new Class7646<P>(var1));
    }
 
    private Class7646(Codec<P> var1) {

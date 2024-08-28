@@ -22,7 +22,7 @@ public interface Class1678 extends Class1682, Class1662, Class1679 {
 
    Class8904 method6867();
 
-   default Optional<Class8705<Class8907>> method7178(BlockPos var1) {
-      return this.method6867().<Class8907>method32453(Class2348.field16106).method9182(this.method7003(var1));
+   default Optional<RegistryKey<Biome>> method7178(BlockPos var1) {
+      return this.method6867().<Biome>method32453(Registry.BIOME_KEY).method9182(this.method7003(var1));
    }
 }

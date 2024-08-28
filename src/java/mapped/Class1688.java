@@ -10,14 +10,14 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 public class Class1688 extends Class1685 {
-   public static final Codec<Class1688> field9182 = Class8907.field40309.fieldOf("biome").xmap(Class1688::new, var0 -> var0.field9183).stable().codec();
-   private final Supplier<Class8907> field9183;
+   public static final Codec<Class1688> field9182 = Biome.field40309.fieldOf("biome").xmap(Class1688::new, var0 -> var0.field9183).stable().codec();
+   private final Supplier<Biome> field9183;
 
-   public Class1688(Class8907 var1) {
+   public Class1688(Biome var1) {
       this(() -> var1);
    }
 
-   public Class1688(Supplier<Class8907> var1) {
+   public Class1688(Supplier<Biome> var1) {
       super(ImmutableList.of(var1.get()));
       this.field9183 = var1;
    }
@@ -33,13 +33,13 @@ public class Class1688 extends Class1685 {
    }
 
    @Override
-   public Class8907 method7005(int var1, int var2, int var3) {
+   public Biome method7005(int var1, int var2, int var3) {
       return this.field9183.get();
    }
 
    @Nullable
    @Override
-   public BlockPos method7204(int var1, int var2, int var3, int var4, int var5, Predicate<Class8907> var6, Random var7, boolean var8) {
+   public BlockPos method7204(int var1, int var2, int var3, int var4, int var5, Predicate<Biome> var6, Random var7, boolean var8) {
       if (!var6.test(this.field9183.get())) {
          return null;
       } else {
@@ -50,7 +50,7 @@ public class Class1688 extends Class1685 {
    }
 
    @Override
-   public Set<Class8907> method7202(int var1, int var2, int var3, int var4) {
-      return Sets.newHashSet(new Class8907[]{this.field9183.get()});
+   public Set<Biome> method7202(int var1, int var2, int var3, int var4) {
+      return Sets.newHashSet(new Biome[]{this.field9183.get()});
    }
 }

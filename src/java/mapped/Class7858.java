@@ -17,7 +17,7 @@ import org.apache.commons.lang3.mutable.MutableInt;
 public class Class7858 {
    public static int method26311(Class6069 var0, ItemStack var1) {
       if (!var1.method32105()) {
-         ResourceLocation var4 = Class2348.field16073.method9181(var0);
+         ResourceLocation var4 = Registry.field16073.method9181(var0);
          Class41 var5 = var1.method32147();
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
@@ -44,7 +44,7 @@ public class Class7858 {
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
          Class39 var5 = var0.method153(var4);
-         Class2348.field16073.method9187(ResourceLocation.method8289(var5.method126("id"))).ifPresent(var2 -> {
+         Registry.field16073.method9187(ResourceLocation.method8289(var5.method126("id"))).ifPresent(var2 -> {
             Integer var5x = var3.put(var2, var5.method122("lvl"));
          });
       }
@@ -60,7 +60,7 @@ public class Class7858 {
          if (var7 != null) {
             int var8 = (Integer)var6.getValue();
             Class39 var9 = new Class39();
-            var9.method109("id", String.valueOf(Class2348.field16073.method9181(var7)));
+            var9.method109("id", String.valueOf(Registry.field16073.method9181(var7)));
             var9.method101("lvl", (short)var8);
             var4.add(var9);
             if (var1.method32107() == Class8514.field38070) {
@@ -85,7 +85,7 @@ public class Class7858 {
          for (int var5 = 0; var5 < var4.size(); var5++) {
             String var6 = var4.method153(var5).method126("id");
             int var7 = var4.method153(var5).method122("lvl");
-            Class2348.field16073.method9187(ResourceLocation.method8289(var6)).ifPresent(var2 -> var0.method30078(var2, var7));
+            Registry.field16073.method9187(ResourceLocation.method8289(var6)).ifPresent(var2 -> var0.method30078(var2, var7));
          }
       }
    }
@@ -332,7 +332,7 @@ public class Class7858 {
       Class3257 var6 = var1.method32107();
       boolean var7 = var1.method32107() == Class8514.field37900;
 
-      for (Class6069 var9 : Class2348.field16073) {
+      for (Class6069 var9 : Registry.field16073) {
          if ((!var9.method18824() || var2) && var9.method18827() && (var9.field27308.method8990(var6) || var7)) {
             for (int var10 = var9.method18809(); var10 > var9.method18813() - 1; var10--) {
                if (var0 >= var9.method18807(var10) && var0 <= var9.method18808(var10)) {

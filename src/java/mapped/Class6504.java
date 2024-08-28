@@ -32,6 +32,6 @@ public interface Class6504<T extends Class4843<?>> {
    void method19698(PacketBuffer var1, T var2);
 
    static <S extends Class6504<T>, T extends Class4843<?>> S method19702(String var0, S var1) {
-      return Class2348.<S>method9194(Class2348.field16086, var0, (S)var1);
+      return Registry.<S>method9194(Registry.field16086, var0, (S)var1);
    }
 }

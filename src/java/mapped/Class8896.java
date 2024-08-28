@@ -60,7 +60,7 @@ public class Class8896 {
          if (var5.length == 1) {
             Class9727 var6 = var5[0];
             int var7 = var6.method38103();
-            Block var8 = Class2348.field16072.method9172(var7);
+            Block var8 = Registry.field16072.method9172(var7);
             return var8.method11579();
          } else {
             return var2;
@@ -95,7 +95,7 @@ public class Class8896 {
 
                for (int var11 = 0; var11 < var9.length; var11++) {
                   Block var12 = var9[var11];
-                  int var13 = Class2348.field16072.method9171(var12);
+                  int var13 = Registry.field16072.method9171(var12);
                   int[] var14 = null;
                   if (var8.length > 0) {
                      var14 = this.method32390(var12, var8);
@@ -730,7 +730,7 @@ public class Class8896 {
       if (var1 != null) {
          var1 = var1.toLowerCase();
          ResourceLocation var4 = new ResourceLocation(var1);
-         Class2351 var5 = Class2348.field16090;
+         Class2351 var5 = Registry.field16090;
          return var5.method9193(var4) ? (Class8395)var5.method9184(var4) : null;
       } else {
          return null;
@@ -772,7 +772,7 @@ public class Class8896 {
          ResourceLocation var8 = new ResourceLocation(var7);
          Class8992 var9 = Class7926.method26598(var8);
          if (var9 != null) {
-            int var10 = Class2348.field16074.method9171(var9);
+            int var10 = Registry.field16074.method9171(var9);
             if (var10 >= 0) {
                var4.add(new Integer(var10));
             } else {

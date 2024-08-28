@@ -12,19 +12,19 @@ public final class Class9378 {
             )
             .apply(var0, Class9378::method35577)
    );
-   private final Class8705<World> field43523;
+   private final RegistryKey<World> field43523;
    private final BlockPos field43524;
 
-   private Class9378(Class8705<World> var1, BlockPos var2) {
+   private Class9378(RegistryKey<World> var1, BlockPos var2) {
       this.field43523 = var1;
       this.field43524 = var2;
    }
 
-   public static Class9378 method35577(Class8705<World> var0, BlockPos var1) {
+   public static Class9378 method35577(RegistryKey<World> var0, BlockPos var1) {
       return new Class9378(var0, var1);
    }
 
-   public Class8705<World> method35578() {
+   public RegistryKey<World> method35578() {
       return this.field43523;
    }
 

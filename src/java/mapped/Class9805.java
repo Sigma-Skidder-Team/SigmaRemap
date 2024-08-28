@@ -161,7 +161,7 @@ public class Class9805 {
 
    public Class39 method38678() {
       Class39 var3 = new Class39();
-      var3.method109("Name", Class2348.field16087.method9181(this.field45827).toString());
+      var3.method109("Name", Registry.field16087.method9181(this.field45827).toString());
       var3.method108("Base", this.field45831);
       if (!this.field45830.isEmpty()) {
          Class41 var4 = new Class41();

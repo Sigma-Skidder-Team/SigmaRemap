@@ -275,8 +275,8 @@ public class Class1048 extends Class1047 {
       if (var3.getY() > 45 && var3.getY() < var1.method6776()) {
          Optional var7 = var1.method7178(var3);
          return (
-               !Objects.equals(var7, Optional.<Class8705<Class8907>>of(Class9495.field44121))
-                  || !Objects.equals(var7, Optional.<Class8705<Class8907>>of(Class9495.field44145))
+               !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44121))
+                  || !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44145))
             )
             && var1.method6739(var3).method23486(Class8953.field40469);
       } else {

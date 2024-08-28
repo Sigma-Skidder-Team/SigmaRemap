@@ -57,8 +57,8 @@ public class Class1096 extends Class1018 implements Class1011 {
 
    public static boolean method5181(Class8992<Class1096> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method7178(var3);
-      return !Objects.equals(var7, Optional.<Class8705<Class8907>>of(Class9495.field44131))
-            && !Objects.equals(var7, Optional.<Class8705<Class8907>>of(Class9495.field44171))
+      return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44131))
+            && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44171))
          ? method4500(var0, var1, var2, var3, var4)
          : var1.method7021(var3, 0) > 8 && var1.method6738(var3.method8313()).method23448(Blocks.ICE);
    }

@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 
 public class Class9837 {
-   public static final Class8705<Class9369> field45937 = Class8705.<Class9369>method31395(Class2348.field16105, new ResourceLocation("empty"));
+   public static final RegistryKey<Class9369> field45937 = RegistryKey.<Class9369>method31395(Registry.field16105, new ResourceLocation("empty"));
    private static final Class9369 field45938 = method38884(
       new Class9369(field45937.method31399(), field45937.method31399(), ImmutableList.of(), Class109.field367)
    );

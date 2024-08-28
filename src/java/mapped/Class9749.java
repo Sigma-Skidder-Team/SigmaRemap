@@ -78,7 +78,7 @@ public class Class9749 {
    private static int method38287(Class6619 var0, Class7760 var1) throws CommandSyntaxException {
       Class7481 var4 = new Class7481(var1.field33332 >> 4, var1.field33333 >> 4);
       ServerWorld var5 = var0.method20172();
-      Class8705 var6 = var5.method6813();
+      RegistryKey var6 = var5.method6813();
       boolean var7 = var5.method6949().contains(var4.method24352());
       if (!var7) {
          throw field45508.create(var4, var6.method31399());
@@ -90,7 +90,7 @@ public class Class9749 {
 
    private static int method38288(Class6619 var0) {
       ServerWorld var3 = var0.method20172();
-      Class8705 var4 = var3.method6813();
+      RegistryKey var4 = var3.method6813();
       LongSet var5 = var3.method6949();
       int var6 = var5.size();
       if (var6 <= 0) {
@@ -109,7 +109,7 @@ public class Class9749 {
 
    private static int method38289(Class6619 var0) {
       ServerWorld var3 = var0.method20172();
-      Class8705<World> var4 = var3.method6813();
+      RegistryKey<World> var4 = var3.method6813();
       LongSet var5 = var3.method6949();
       for (long var1 : var5) {
          var3.method6950(Class7481.method24354(var1), Class7481.method24355(var1), false);
@@ -133,7 +133,7 @@ public class Class9749 {
             throw field45507.create(256, var14);
          } else {
             ServerWorld var16 = var0.method20172();
-            Class8705 var17 = var16.method6813();
+            RegistryKey var17 = var16.method6813();
             Class7481 var18 = null;
             int var19 = 0;
 

@@ -155,7 +155,7 @@ public final class Class120 implements Predicate<ItemStack> {
          }
       } else {
          ResourceLocation var3 = new ResourceLocation(Class8963.method32763(var0, "item"));
-         Class3257 var4 = Class2348.field16075.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
+         Class3257 var4 = Registry.field16075.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
          return new Class4827(new ItemStack(var4));
       }
    }

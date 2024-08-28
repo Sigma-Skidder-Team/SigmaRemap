@@ -143,7 +143,7 @@ public class Class8061 {
       }
 
       if (var10 != 0) {
-         var0.method20179(new TranslationTextComponent("commands.particle.success", Class2348.field16077.method9181(var1.method24011()).toString()), true);
+         var0.method20179(new TranslationTextComponent("commands.particle.success", Registry.field16077.method9181(var1.method24011()).toString()), true);
          return var10;
       } else {
          throw field34601.create();

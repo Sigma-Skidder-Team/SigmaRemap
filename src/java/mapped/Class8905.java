@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
 
 public final class Class8905 extends Class8904 {
    public static final Codec<Class8905> field40301 = method32473();
-   private final Map<? extends Class8705<? extends Class2348<?>>, ? extends Class2350<?>> field40302;
+   private final Map<? extends RegistryKey<? extends Registry<?>>, ? extends Class2350<?>> field40302;
 
    private static <E> Codec<Class8905> method32473() {
-      Codec<Class8705<? extends Class2348<E>>> var2 = ResourceLocation.field13020.xmap(Class8705::method31396, Class8705::method31399);
+      Codec<RegistryKey<? extends Registry<E>>> var2 = ResourceLocation.field13020.xmap(RegistryKey::getOrCreateRootKey, RegistryKey::method31399);
       Codec<Class2350<E>> var3 = var2.partialDispatch(
          "type",
          var0 -> DataResult.success(var0.method9180()),
@@ -26,7 +26,7 @@ public final class Class8905 extends Class8904 {
       return method32474(var4);
    }
 
-   private static <K extends Class8705<? extends Class2348<?>>, V extends Class2350<?>> Codec<Class8905> method32474(UnboundedMapCodec<K, V> var0) {
+   private static <K extends RegistryKey<? extends Registry<?>>, V extends Class2350<?>> Codec<Class8905> method32474(UnboundedMapCodec<K, V> var0) {
       return var0.xmap(Class8905::new, var0x ->
               ((java.util.Set<Entry<K, V>>)(Object)(var0x.field40302.entrySet()))
                .stream()
@@ -35,7 +35,7 @@ public final class Class8905 extends Class8904 {
       );
    }
 
-   private static <E> DataResult<? extends Codec<E>> method32475(Class8705<? extends Class2348<E>> var0) {
+   private static <E> DataResult<? extends Codec<E>> method32475(RegistryKey<? extends Registry<E>> var0) {
       return Optional.ofNullable((Class9305<E>)Class8904.method32472().get(var0))
          .map(Class9305::method35118)
          .map(DataResult::success)
@@ -46,16 +46,16 @@ public final class Class8905 extends Class8904 {
       this(Class8904.method32472().keySet().stream().collect(Collectors.toMap(Function.identity(), Class8905::method32476)));
    }
 
-   private Class8905(Map<? extends Class8705<? extends Class2348<?>>, ? extends Class2350<?>> var1) {
+   private Class8905(Map<? extends RegistryKey<? extends Registry<?>>, ? extends Class2350<?>> var1) {
       this.field40302 = var1;
    }
 
-   private static <E> Class2350<?> method32476(Class8705<? extends Class2348<?>> var0) {
+   private static <E> Class2350<?> method32476(RegistryKey<? extends Registry<?>> var0) {
       return new Class2350(var0, Lifecycle.stable());
    }
 
    @Override
-   public <E> Optional<Class2349<E>> method32452(Class8705<? extends Class2348<E>> var1) {
+   public <E> Optional<Class2349<E>> method32452(RegistryKey<? extends Registry<E>> var1) {
       return Optional.ofNullable(this.field40302.get(var1)).<Class2349<E>>map(var0 -> (Class2349<E>)var0);
    }
 

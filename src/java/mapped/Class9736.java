@@ -33,7 +33,7 @@ public class Class9736 {
    public void method38155() {
       this.field45468.clear();
 
-      for (Block var4 : Class2348.field16072) {
+      for (Block var4 : Registry.field16072) {
          var4.method11577().method35392().forEach(var1 -> {
             Class7202 var4x = this.field45468.put(var1, this.field45469.method1023(method38156(var1)));
          });
@@ -41,7 +41,7 @@ public class Class9736 {
    }
 
    public static Class1997 method38156(Class7380 var0) {
-      return method38157(Class2348.field16072.method9181(var0.method23383()), var0);
+      return method38157(Registry.field16072.method9181(var0.method23383()), var0);
    }
 
    public static Class1997 method38157(ResourceLocation var0, Class7380 var1) {

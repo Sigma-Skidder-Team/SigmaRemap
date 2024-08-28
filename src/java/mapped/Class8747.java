@@ -5,10 +5,10 @@ import java.util.stream.Stream;
 public class Class8747<T> {
    private static String[] field39425;
    private final Class6879 field39426;
-   private final Class2348<T> field39427;
+   private final Registry<T> field39427;
    private final String field39428;
 
-   public Class8747(Class6879 var1, Class2348<T> var2, String var3) {
+   public Class8747(Class6879 var1, Registry<T> var2, String var3) {
       this.field39426 = var1;
       this.field39427 = var2;
       this.field39428 = var3;

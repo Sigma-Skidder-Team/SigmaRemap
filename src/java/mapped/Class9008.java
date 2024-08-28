@@ -73,7 +73,7 @@ public class Class9008 {
       if (!field41188.containsKey(var0)) {
          int var3 = var0.indexOf(58);
          return var3 >= 0
-            ? Class2348.field16088
+            ? Registry.field16088
                .method9187(ResourceLocation.method8288(var0.substring(0, var3), '.'))
                .<Class9008>flatMap(var2 -> method33279((Class49<?>)var2, ResourceLocation.method8288(var0.substring(var3 + 1), '.')))
             : Optional.<Class9008>empty();

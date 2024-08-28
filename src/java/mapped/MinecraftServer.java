@@ -67,7 +67,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    private String field1222;
    private int field1223 = -1;
    public final Class8905 field1224;
-   private final Map<Class8705<World>, ServerWorld> field1225 = Maps.newLinkedHashMap();
+   private final Map<RegistryKey<World>, ServerWorld> field1225 = Maps.newLinkedHashMap();
    private Class6395 field1226;
    private volatile boolean field1227 = true;
    private boolean field1228;
@@ -198,7 +198,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       if (var13 == null) {
          var14 = this.field1224.method32454().method9189(Class9535.field44371);
          var15 = Class7846.method26258(
-            this.field1224.<Class8907>method32453(Class2348.field16106), this.field1224.<Class9309>method32453(Class2348.field16099), new Random().nextLong()
+            this.field1224.<Biome>method32453(Registry.BIOME_KEY), this.field1224.<Class9309>method32453(Registry.field16099), new Random().nextLong()
          );
       } else {
          var14 = var13.method36412();
@@ -239,9 +239,9 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       }
 
       for (Entry var29 : var12.method9191()) {
-         Class8705 var21 = (Class8705)var29.getKey();
+         RegistryKey var21 = (RegistryKey)var29.getKey();
          if (var21 != Class9459.field43952) {
-            Class8705 var22 = Class8705.<World>method31395(Class2348.field16067, var21.method31399());
+            RegistryKey var22 = RegistryKey.<World>method31395(Registry.field16067, var21.method31399());
             Class9535 var23 = ((Class9459)var29.getValue()).method36412();
             Class5646 var24 = ((Class9459)var29.getValue()).method36413();
             Class6609 var25 = new Class6609(this.field1269, var4);
@@ -748,11 +748,11 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    }
 
    @Nullable
-   public ServerWorld method1318(Class8705<World> var1) {
+   public ServerWorld method1318(RegistryKey<World> var1) {
       return this.field1225.get(var1);
    }
 
-   public Set<Class8705<World>> method1319() {
+   public Set<RegistryKey<World>> method1319() {
       return this.field1225.keySet();
    }
 
@@ -1325,7 +1325,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       Path var4 = var1.resolve("levels");
 
       for (Entry var6 : this.field1225.entrySet()) {
-         ResourceLocation var7 = ((Class8705)var6.getKey()).method31399();
+         ResourceLocation var7 = ((RegistryKey)var6.getKey()).method31399();
          Path var8 = var4.resolve(var7.method8293()).resolve(var7.method8292());
          Files.createDirectories(var8);
          ((ServerWorld)var6.getValue()).method6960(var8);

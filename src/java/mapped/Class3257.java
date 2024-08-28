@@ -27,11 +27,11 @@ public class Class3257 implements Class3303 {
    private final Class9427 field18743;
 
    public static int method11701(Class3257 var0) {
-      return var0 != null ? Class2348.field16075.method9171(var0) : 0;
+      return var0 != null ? Registry.field16075.method9171(var0) : 0;
    }
 
    public static Class3257 method11702(int var0) {
-      return Class2348.field16075.method9172(var0);
+      return Registry.field16075.method9172(var0);
    }
 
    @Deprecated
@@ -125,12 +125,12 @@ public class Class3257 implements Class3303 {
 
    @Override
    public String toString() {
-      return Class2348.field16075.method9181(this).method8292();
+      return Registry.field16075.method9181(this).method8292();
    }
 
    public String method11718() {
       if (this.field18742 == null) {
-         this.field18742 = Util.method38486("item", Class2348.field16075.method9181(this));
+         this.field18742 = Util.method38486("item", Registry.field16075.method9181(this));
       }
 
       return this.field18742;

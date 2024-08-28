@@ -266,22 +266,22 @@ public class Class7287 {
    }
 
    public static ResourceLocation method23041(Block var0) {
-      ResourceLocation var3 = Class2348.field16072.method9181(var0);
+      ResourceLocation var3 = Registry.field16072.method9181(var0);
       return new ResourceLocation(var3.method8293(), "block/" + var3.method8292());
    }
 
    public static ResourceLocation method23042(Block var0, String var1) {
-      ResourceLocation var4 = Class2348.field16072.method9181(var0);
+      ResourceLocation var4 = Registry.field16072.method9181(var0);
       return new ResourceLocation(var4.method8293(), "block/" + var4.method8292() + var1);
    }
 
    public static ResourceLocation method23043(Class3257 var0) {
-      ResourceLocation var3 = Class2348.field16075.method9181(var0);
+      ResourceLocation var3 = Registry.field16075.method9181(var0);
       return new ResourceLocation(var3.method8293(), "item/" + var3.method8292());
    }
 
    public static ResourceLocation method23044(Class3257 var0, String var1) {
-      ResourceLocation var4 = Class2348.field16075.method9181(var0);
+      ResourceLocation var4 = Registry.field16075.method9181(var0);
       return new ResourceLocation(var4.method8293(), "item/" + var4.method8292() + var1);
    }
 }

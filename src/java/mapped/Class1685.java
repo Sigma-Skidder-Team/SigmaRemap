@@ -16,16 +16,16 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public abstract class Class1685 implements Class1683 {
-   public static final Codec<Class1685> field9159 = Class2348.field16135.dispatchStable(Class1685::method7199, Function.identity());
+   public static final Codec<Class1685> field9159 = Registry.field16135.dispatchStable(Class1685::method7199, Function.identity());
    public final Map<Class2961<?>, Boolean> field9160 = Maps.newHashMap();
    public final Set<Class7380> field9161 = Sets.newHashSet();
-   public final List<Class8907> field9162;
+   public final List<Biome> field9162;
 
-   public Class1685(Stream<Supplier<Class8907>> var1) {
+   public Class1685(Stream<Supplier<Biome>> var1) {
       this(var1.map(Supplier::get).collect(ImmutableList.toImmutableList()));
    }
 
-   public Class1685(List<Class8907> var1) {
+   public Class1685(List<Biome> var1) {
       this.field9162 = var1;
    }
 
@@ -33,11 +33,11 @@ public abstract class Class1685 implements Class1683 {
 
    public abstract Class1685 method7200(long var1);
 
-   public List<Class8907> method7201() {
+   public List<Biome> method7201() {
       return this.field9162;
    }
 
-   public Set<Class8907> method7202(int var1, int var2, int var3, int var4) {
+   public Set<Biome> method7202(int var1, int var2, int var3, int var4) {
       int var7 = var1 - var4 >> 2;
       int var8 = var2 - var4 >> 2;
       int var9 = var3 - var4 >> 2;
@@ -64,12 +64,12 @@ public abstract class Class1685 implements Class1683 {
    }
 
    @Nullable
-   public BlockPos method7203(int var1, int var2, int var3, int var4, Predicate<Class8907> var5, Random var6) {
+   public BlockPos method7203(int var1, int var2, int var3, int var4, Predicate<Biome> var5, Random var6) {
       return this.method7204(var1, var2, var3, var4, 1, var5, var6, false);
    }
 
    @Nullable
-   public BlockPos method7204(int var1, int var2, int var3, int var4, int var5, Predicate<Class8907> var6, Random var7, boolean var8) {
+   public BlockPos method7204(int var1, int var2, int var3, int var4, int var5, Predicate<Biome> var6, Random var7, boolean var8) {
       int var11 = var1 >> 2;
       int var12 = var3 >> 2;
       int var13 = var4 >> 2;
@@ -118,7 +118,7 @@ public abstract class Class1685 implements Class1683 {
 
    public Set<Class7380> method7206() {
       if (this.field9161.isEmpty()) {
-         for (Class8907 var4 : this.field9162) {
+         for (Biome var4 : this.field9162) {
             this.field9161.add(var4.method32507().method24283().method28934());
          }
       }
@@ -127,10 +127,10 @@ public abstract class Class1685 implements Class1683 {
    }
 
    static {
-      Class2348.<Codec<? extends Class1685>>method9194(Class2348.field16135, "fixed", Class1688.field9182);
-      Class2348.<Codec<? extends Class1685>>method9194(Class2348.field16135, "multi_noise", Class1686.field9165);
-      Class2348.<Codec<? extends Class1685>>method9194(Class2348.field16135, "checkerboard", Class1687.field9178);
-      Class2348.<Codec<? extends Class1685>>method9194(Class2348.field16135, "vanilla_layered", Class1689.field9184);
-      Class2348.<Codec<? extends Class1685>>method9194(Class2348.field16135, "the_end", Class1690.field9191);
+      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "fixed", Class1688.field9182);
+      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "multi_noise", Class1686.field9165);
+      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "checkerboard", Class1687.field9178);
+      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "vanilla_layered", Class1689.field9184);
+      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "the_end", Class1690.field9191);
    }
 }

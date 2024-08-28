@@ -12,10 +12,10 @@ public class Class5499 implements Packet<Class5116> {
    private boolean field24408;
    private Class1894 field24409;
    private Class1894 field24410;
-   private Set<Class8705<World>> field24411;
+   private Set<RegistryKey<World>> field24411;
    private Class8905 field24412;
    private Class9535 field24413;
-   private Class8705<World> field24414;
+   private RegistryKey<World> field24414;
    private int field24415;
    private int field24416;
    private boolean field24417;
@@ -32,10 +32,10 @@ public class Class5499 implements Packet<Class5116> {
       Class1894 var3,
       long var4,
       boolean var6,
-      Set<Class8705<World>> var7,
+      Set<RegistryKey<World>> var7,
       Class8905 var8,
       Class9535 var9,
-      Class8705<World> var10,
+      RegistryKey<World> var10,
       int var11,
       int var12,
       boolean var13,
@@ -70,12 +70,12 @@ public class Class5499 implements Packet<Class5116> {
       this.field24411 = Sets.newHashSet();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.field24411.add(Class8705.<World>method31395(Class2348.field16067, var1.method35731()));
+         this.field24411.add(RegistryKey.<World>method31395(Registry.field16067, var1.method35731()));
       }
 
       this.field24412 = var1.<Class8905>method35696(Class8905.field40301);
       this.field24413 = var1.<Supplier<Class9535>>method35696(Class9535.field44379).get();
-      this.field24414 = Class8705.<World>method31395(Class2348.field16067, var1.method35731());
+      this.field24414 = RegistryKey.<World>method31395(Registry.field16067, var1.method35731());
       this.field24407 = var1.readLong();
       this.field24415 = var1.method35714();
       this.field24416 = var1.method35714();
@@ -93,7 +93,7 @@ public class Class5499 implements Packet<Class5116> {
       var1.writeByte(this.field24410.method8152());
       var1.writeVarInt(this.field24411.size());
 
-      for (Class8705 var5 : this.field24411) {
+      for (RegistryKey var5 : this.field24411) {
          var1.method35732(var5.method31399());
       }
 
@@ -133,7 +133,7 @@ public class Class5499 implements Packet<Class5116> {
       return this.field24410;
    }
 
-   public Set<Class8705<World>> method17292() {
+   public Set<RegistryKey<World>> method17292() {
       return this.field24411;
    }
 
@@ -145,7 +145,7 @@ public class Class5499 implements Packet<Class5116> {
       return this.field24413;
    }
 
-   public Class8705<World> method17295() {
+   public RegistryKey<World> method17295() {
       return this.field24414;
    }
 

@@ -29,7 +29,7 @@ public class Class5400 implements Class5391 {
    @Override
    public Class9346 method16977(Entity var1, Random var2) {
       ItemStack var5 = new ItemStack(Class8514.field38049, this.field24079);
-      List var6 = Class2348.field16076.method9192().filter(var0 -> !var0.method31816().isEmpty() && Class7105.method22135(var0)).collect(Collectors.toList());
+      List var6 = Registry.field16076.method9192().filter(var0 -> !var0.method31816().isEmpty() && Class7105.method22135(var0)).collect(Collectors.toList());
       Class8812 var7 = (Class8812)var6.get(var2.nextInt(var6.size()));
       ItemStack var8 = Class9741.method38187(new ItemStack(this.field24077.method32107(), this.field24078), var7);
       return new Class9346(var5, new ItemStack(this.field24082, this.field24083), var8, this.field24080, this.field24081, this.field24084);

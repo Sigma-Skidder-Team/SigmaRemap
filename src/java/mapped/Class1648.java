@@ -17,7 +17,7 @@ public class Class1648 implements AutoCloseable {
       this.field8947 = new Class1707(var1, var3, "chunk");
    }
 
-   public Class39 method6529(Class8705<World> var1, Supplier<Class8250> var2, Class39 var3) {
+   public Class39 method6529(RegistryKey<World> var1, Supplier<Class8250> var2, Class39 var3) {
       int var6 = method6530(var3);
       short var7 = 1493;
       if (var6 < 1493) {

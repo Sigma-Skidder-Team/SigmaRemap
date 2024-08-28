@@ -18,12 +18,12 @@ public enum Class93 implements Class83 {
       @Override
       public float method271(BlockPos class1999, float f) {
          double d;
-         double d2 = Class8907.method32549().method25315((double)class1999.method8304() * 0.05, (double)class1999.method8306() * 0.05, false) * 7.0;
-         double d3 = d2 + (d = Class8907.field40314.method25315((double)class1999.method8304() * 0.2, (double)class1999.method8306() * 0.2, false));
+         double d2 = Biome.method32549().method25315((double)class1999.method8304() * 0.05, (double)class1999.method8306() * 0.05, false) * 7.0;
+         double d3 = d2 + (d = Biome.field40314.method25315((double)class1999.method8304() * 0.2, (double)class1999.method8306() * 0.2, false));
          if (!(d3 < 0.3)) {
             return f;
          }
-         double d4 = Class8907.field40314.method25315((double)class1999.method8304() * 0.09, (double)class1999.method8306() * 0.09, false);
+         double d4 = Biome.field40314.method25315((double)class1999.method8304() * 0.09, (double)class1999.method8306() * 0.09, false);
          if (d4 < 0.8) return 0.2f;
          return f;
       }

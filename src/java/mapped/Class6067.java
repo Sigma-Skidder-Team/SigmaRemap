@@ -995,6 +995,6 @@ public class Class6067 {
    public static final Class9455 field27304 = method18806("entity.zombie_villager.step");
 
    private static Class9455 method18806(String var0) {
-      return Class2348.<Class9455>method9194(Class2348.field16069, var0, new Class9455(new ResourceLocation(var0)));
+      return Registry.<Class9455>method9194(Registry.field16069, var0, new Class9455(new ResourceLocation(var0)));
    }
 }

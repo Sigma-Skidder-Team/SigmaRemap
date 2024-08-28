@@ -66,7 +66,7 @@ public class Class4858 extends Class4837 {
             HashMap var13 = Maps.newHashMap();
             Map<Class6069, Integer> var14 = Class7858.method26312(var16);
             Map<Class6069, Integer> var15 = Class7858.method26312(var17);
-            Class2348.field16073.method9192().filter(Class6069::method18825).forEach(var3 -> {
+            Registry.field16073.method9192().filter(Class6069::method18825).forEach(var3 -> {
                int var6x = Math.max(var14.getOrDefault(var3, 0), var15.getOrDefault(var3, 0));
                if (var6x > 0) {
                   var13.put(var3, var6x);

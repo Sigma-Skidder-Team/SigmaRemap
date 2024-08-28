@@ -73,7 +73,7 @@ public class Class8963 {
          throw new JsonSyntaxException("Expected " + var1 + " to be an item, was " + toString(var0));
       } else {
          String var4 = var0.getAsString();
-         return Class2348.field16075
+         return Registry.field16075
             .method9187(new ResourceLocation(var4))
             .orElseThrow(() -> new JsonSyntaxException("Expected " + var1 + " to be an item, was unknown string '" + var4 + "'"));
       }

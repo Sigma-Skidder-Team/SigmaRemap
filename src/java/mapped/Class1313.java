@@ -48,7 +48,7 @@ public class Class1313 extends Screen {
 
       Block var9;
       try {
-         var9 = Class2348.field16072.method9187(new ResourceLocation(var8)).orElse((Block)null);
+         var9 = Registry.field16072.method9187(new ResourceLocation(var8)).orElse((Block)null);
       } catch (Exception var11) {
          field6925.error("Error while parsing flat world string => {}", var11.getMessage());
          return null;
@@ -82,7 +82,7 @@ public class Class1313 extends Screen {
       return var3;
    }
 
-   public static Class9733 method6203(Class2348<Class8907> var0, String var1, Class9733 var2) {
+   public static Class9733 method6203(Registry<Biome> var0, String var1, Class9733 var2) {
       Iterator var5 = Splitter.on(';').split(var1).iterator();
       if (!var5.hasNext()) {
          return Class9733.method38132(var0);
@@ -92,25 +92,25 @@ public class Class1313 extends Screen {
             return Class9733.method38132(var0);
          } else {
             Class9733 var7 = var2.method38122(var6, var2.method38126());
-            Class8705<Class8907> var8 = Class9495.field44122;
+            RegistryKey<Biome> var8 = Class9495.field44122;
             if (var5.hasNext()) {
                try {
                   ResourceLocation var9 = new ResourceLocation((String)var5.next());
-                  var8 = Class8705.<Class8907>method31395(Class2348.field16106, var9);
+                  var8 = RegistryKey.<Biome>method31395(Registry.BIOME_KEY, var9);
                   var0.method9188(var8).orElseThrow(() -> new IllegalArgumentException("Invalid Biome: " + var9));
                } catch (Exception var10) {
                   field6925.error("Error while parsing flat world string => {}", var10.getMessage());
                }
             }
 
-            Class8705 var11 = var8;
-            var7.method38128(() -> (Class8907)var0.method9189(var11));
+            RegistryKey var11 = var8;
+            var7.method38128(() -> (Biome)var0.method9189(var11));
             return var7;
          }
       }
    }
 
-   private static String method6204(Class2348<Class8907> var0, Class9733 var1) {
+   private static String method6204(Registry<Biome> var0, Class9733 var1) {
       StringBuilder var4 = new StringBuilder();
 
       for (int var5 = 0; var5 < var1.method38129().size(); var5++) {
@@ -133,7 +133,7 @@ public class Class1313 extends Screen {
       this.field6929 = new TranslationTextComponent("createWorld.customize.presets.list");
       this.field6932 = new Class1189(this.field4568, 50, 40, this.field4564 - 100, 20, this.field6928);
       this.field6932.method5657(1230);
-      Class2349 var3 = this.field6927.field7000.field7092.method5789().<Class8907>method32453(Class2348.field16106);
+      Class2349 var3 = this.field6927.field7000.field7092.method5789().<Biome>method32453(Registry.BIOME_KEY);
       this.field6932.method5635(method6204(var3, this.field6927.method6294()));
       this.field6933 = this.field6927.method6294();
       this.field4561.add(this.field6932);
@@ -199,7 +199,7 @@ public class Class1313 extends Screen {
    }
 
    private static void method6206(
-      ITextComponent var0, Class3303 var1, Class8705<Class8907> var2, List<Class2961<?>> var3, boolean var4, boolean var5, boolean var6, Class9537... var7
+           ITextComponent var0, Class3303 var1, RegistryKey<Biome> var2, List<Class2961<?>> var3, boolean var4, boolean var5, boolean var6, Class9537... var7
    ) {
       field6926.add(new Class5966(var1.method11581(), var0, var6x -> {
          HashMap var9 = Maps.newHashMap();
@@ -222,7 +222,7 @@ public class Class1313 extends Screen {
             var14.method38129().add(var7[var12]);
          }
 
-         var14.method38128(() -> (Class8907)var6x.method9189(var2));
+         var14.method38128(() -> (Biome)var6x.method9189(var2));
          var14.method38131();
          return var14.method38121(var13);
       }));
@@ -249,7 +249,7 @@ public class Class1313 extends Screen {
    }
 
    // $VF: synthetic method
-   public static String method6217(Class2348 var0, Class9733 var1) {
+   public static String method6217(Registry var0, Class9733 var1) {
       return method6204(var0, var1);
    }
 

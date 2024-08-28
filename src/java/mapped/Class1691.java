@@ -128,7 +128,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class8907 method6871(int var1, int var2, int var3) {
+   public Biome method6871(int var1, int var2, int var3) {
       return this.field9205.method6871(var1, var2, var3);
    }
 

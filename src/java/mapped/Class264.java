@@ -198,7 +198,7 @@ public class Class264 implements Class215, AutoCloseable {
                double var23 = (double)this.field998[var22] * 0.5;
                double var25 = (double)this.field999[var22] * 0.5;
                var19.method8372(var21, 0, var20);
-               Class8907 var27 = var10.method7003(var19);
+               Biome var27 = var10.method7003(var19);
                if (var27.method32500() != Class87.field223) {
                   int var28 = var10.method7006(Class101.field299, var19).getY();
                   int var29 = var12 - var16;
@@ -338,7 +338,7 @@ public class Class264 implements Class215, AutoCloseable {
             int var9 = var3.nextInt(21) - 10;
             int var10 = var3.nextInt(21) - 10;
             BlockPos var11 = var4.method7006(Class101.field299, var5.method8336(var9, 0, var10)).method8313();
-            Class8907 var12 = var4.method7003(var11);
+            Biome var12 = var4.method7003(var11);
             if (var11.getY() > 0
                && var11.getY() <= var5.getY() + 10
                && var11.getY() >= var5.getY() - 10
@@ -2902,7 +2902,7 @@ public class Class264 implements Class215, AutoCloseable {
       } catch (Throwable var19) {
          Class4526 var17 = Class4526.method14413(var19, "Exception while adding particle");
          Class8965 var18 = var17.method14410("Particle being added");
-         var18.method32807("ID", Class2348.field16077.method9181(var1.method24011()));
+         var18.method32807("ID", Registry.field16077.method9181(var1.method24011()));
          var18.method32807("Parameters", var1.method24010());
          var18.method32806("Position", () -> Class8965.method32803(var4, var6, var8));
          throw new Class2506(var17);

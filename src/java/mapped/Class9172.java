@@ -375,8 +375,8 @@ public class Class9172 {
    }
 
    private static void method34274() {
-      for (ResourceLocation var3 : Class2348.field16072.method9190()) {
-         Block var4 = Class2348.field16072.method9184(var3);
+      for (ResourceLocation var3 : Registry.field16072.method9190()) {
+         Block var4 = Registry.field16072.method9184(var3);
          int var5 = var4.method11579().method23490();
          Class9590[] var6 = method34263(var5);
          if (var6 != null) {

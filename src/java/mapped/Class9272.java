@@ -177,7 +177,7 @@ public class Class9272 {
 
    private JsonObject method34949() {
       JsonObject var3 = new JsonObject();
-      var3.addProperty("item", Class2348.field16075.method9181(this.field42648.method32107()).toString());
+      var3.addProperty("item", Registry.field16075.method9181(this.field42648.method32107()).toString());
       if (this.field42648.method32141()) {
          var3.addProperty("nbt", this.field42648.method32142().toString());
       }

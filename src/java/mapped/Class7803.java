@@ -221,7 +221,7 @@ public class Class7803 {
 
    private static void method26066(int var0, BlockPos var1, ServerWorld var2) {
       Class7380 var5 = null;
-      Class9733 var6 = Class9733.method38132(var2.method6867().<Class8907>method32453(Class2348.field16106));
+      Class9733 var6 = Class9733.method38132(var2.method6867().<Biome>method32453(Registry.BIOME_KEY));
       if (!(var6 instanceof Class9733)) {
          if (var1.getY() != var0 - 1) {
             if (var1.getY() < var0 - 1) {

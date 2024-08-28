@@ -286,7 +286,7 @@ public class Class7720 {
       if (var4 != null) {
          BlockPos var5 = var4.method3432();
          if (this.field33143 != null) {
-            Class8907 var6 = var1.method7003(var5);
+            Biome var6 = var1.method7003(var5);
             if (var6 == null) {
                return 0.0F;
             }

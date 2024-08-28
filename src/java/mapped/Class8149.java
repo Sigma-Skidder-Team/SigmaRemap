@@ -229,7 +229,7 @@ public class Class8149 {
    private boolean method28261(Class2295 var1, BlockPos var2, Class1662 var3) {
       if (this.field35048 == var1) {
          if (this.field35051 != null) {
-            Class8907 var6 = var3.method7003(var2);
+            Biome var6 = var3.method7003(var2);
             if (!Class7542.method24662(var6, this.field35051)) {
                return false;
             }

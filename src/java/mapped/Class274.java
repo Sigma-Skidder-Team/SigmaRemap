@@ -89,7 +89,7 @@ public class Class274 extends Class269<Class8657> {
 
       if (field1052.isDebugEnabled()) {
          for (ResourceLocation var11 : this.field1055.keySet()) {
-            if (!Class2348.field16069.method9193(var11)) {
+            if (!Registry.field16069.method9193(var11)) {
                field1052.debug("Not having sound event for: {}", var11);
             }
          }

@@ -50,8 +50,8 @@ public class Class1037 extends Class1038 implements Class1022 {
       boolean var8 = var1.method6997() != Class2197.field14351
          && method4340(var1, var3, var4)
          && (var2 == Class2202.field14393 || var1.method6739(var3).method23486(Class8953.field40469));
-      return !Objects.equals(var7, Optional.<Class8705<Class8907>>of(Class9495.field44128))
-            && !Objects.equals(var7, Optional.<Class8705<Class8907>>of(Class9495.field44132))
+      return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44128))
+            && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44132))
          ? var4.nextInt(40) == 0 && method4641(var1, var3) && var8
          : var4.nextInt(15) == 0 && var8;
    }

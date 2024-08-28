@@ -31,7 +31,7 @@ public class Class134 extends Class128 {
          var6 = this.field455.get(var5.nextInt(this.field455.size()));
       } else {
          boolean var7 = var1.method32107() == Class8514.field37900;
-         List var8 = Class2348.field16073
+         List var8 = Registry.field16073
             .method9192()
             .filter(Class6069::method18827)
             .filter(var2x -> var7 || var2x.method18821(var1))

@@ -27,7 +27,7 @@ public class Class8835 {
                   )
                   .fieldOf("spawners")
                   .forGetter(var0x -> var0x.field39902),
-               Codec.simpleMap(Class2348.field16074, Class7763.field33334, Class2348.field16074).fieldOf("spawn_costs").forGetter(var0x -> var0x.field39903),
+               Codec.simpleMap(Registry.field16074, Class7763.field33334, Registry.field16074).fieldOf("spawn_costs").forGetter(var0x -> var0x.field39903),
                Codec.BOOL.fieldOf("player_spawn_friendly").orElse(false).forGetter(Class8835::method31971)
             )
             .apply(var0, Class8835::new)

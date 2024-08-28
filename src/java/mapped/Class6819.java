@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.Set;
 
 public abstract class Class6819 {
-   public static final Codec<Class6819> field29685 = Class2348.field16131.dispatch(Class6819::method20785, Class5984::method18559);
+   public static final Codec<Class6819> field29685 = Registry.field16131.dispatch(Class6819::method20785, Class5984::method18559);
    public final Class8045 field29686;
    public final Class8045 field29687;
 

@@ -21,10 +21,10 @@ public abstract class Class4441<T> implements Class4442 {
    private static final Logger field21597 = LogManager.getLogger();
    private static final Gson field21598 = new GsonBuilder().setPrettyPrinting().create();
    public final Class9068 field21599;
-   public final Class2348<T> field21600;
+   public final Registry<T> field21600;
    private final Map<ResourceLocation, Class6879> field21601 = Maps.newLinkedHashMap();
 
-   public Class4441(Class9068 var1, Class2348<T> var2) {
+   public Class4441(Class9068 var1, Registry<T> var2) {
       this.field21599 = var1;
       this.field21600 = var2;
    }

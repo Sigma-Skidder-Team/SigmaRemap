@@ -25,14 +25,14 @@ public final class Class9490<E extends Class880> extends MapCodec<Class6947<E>> 
    public <T> Stream<T> keys(DynamicOps<T> var1) {
       return this.field44113
          .stream()
-         .<ResourceLocation>flatMap(var0 -> Util.method38511(var0.method31926().map(var1x -> Class2348.field16092.method9181((Class8830<?>)var0))))
+         .<ResourceLocation>flatMap(var0 -> Util.method38511(var0.method31926().map(var1x -> Registry.field16092.method9181((Class8830<?>)var0))))
          .<T>map(var1x -> (T)var1.createString(var1x.toString()));
    }
 
    public <T> DataResult<Class6947<E>> decode(DynamicOps<T> dynamicOps, MapLike<T> mapLike) {
       MutableObject<DataResult<ImmutableList.Builder<Class9802<?>>>> mutableObject = new MutableObject<>(DataResult.success(ImmutableList.builder()));
       mapLike.entries().forEach(pair -> {
-         DataResult<Class8830<?>> dataResult = Class2348.field16092.parse(dynamicOps, pair.getFirst());
+         DataResult<Class8830<?>> dataResult = Registry.field16092.parse(dynamicOps, pair.getFirst());
          DataResult<? extends Class9802<?>> dataResult2 = dataResult.flatMap(class8830 -> this.method36654(class8830, dynamicOps, pair.getSecond()));
          mutableObject.setValue(mutableObject.getValue().apply2(ImmutableList.Builder::add, dataResult2));
       });

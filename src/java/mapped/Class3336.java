@@ -74,8 +74,8 @@ public class Class3336 extends Class3257 {
                }
 
                Optional var11 = var1.method7178(var7);
-               if (Objects.equals(var11, Optional.<Class8705<Class8907>>of(Class9495.field44165))
-                  || Objects.equals(var11, Optional.<Class8705<Class8907>>of(Class9495.field44168))) {
+               if (Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Class9495.field44165))
+                  || Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Class9495.field44168))) {
                   if (var6 == 0 && var3 != null && var3.method544().method324()) {
                      var8 = Class7645.field32784.method24919(var1.field9016).method11579().method23465(Class3229.field18669, var3);
                   } else if (field18735.nextInt(4) == 0) {

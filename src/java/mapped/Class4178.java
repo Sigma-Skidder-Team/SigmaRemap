@@ -46,7 +46,7 @@ public abstract class Class4178 {
 
    public final Class39 method12914() {
       Class39 var3 = new Class39();
-      var3.method109("id", Class2348.field16116.method9181(this.method12941()).toString());
+      var3.method109("id", Registry.field16116.method9181(this.method12941()).toString());
       var3.method99("BB", this.field20444.method38402());
       Direction var4 = this.method12938();
       var3.method102("O", var4 != null ? var4.method534() : -1);

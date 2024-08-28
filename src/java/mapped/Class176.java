@@ -33,14 +33,14 @@ public class Class176 implements Predicate<ItemStack> {
       }
 
       if (var2 && var1 > var5.method32113()) {
-         throw field562.create(Class2348.field16075.method9181(this.field563), var5.method32113());
+         throw field562.create(Registry.field16075.method9181(this.field563), var5.method32113());
       } else {
          return var5;
       }
    }
 
    public String method504() {
-      StringBuilder var3 = new StringBuilder(Class2348.field16075.method9171(this.field563));
+      StringBuilder var3 = new StringBuilder(Registry.field16075.method9171(this.field563));
       if (this.field564 != null) {
          var3.append(this.field564);
       }

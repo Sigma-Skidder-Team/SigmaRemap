@@ -899,7 +899,7 @@ public class Class7104 {
          + Class7944.method26854(this.field30553);
    }
 
-   public boolean method22130(Class8907 var1) {
+   public boolean method22130(Biome var1) {
       return Class7542.method24662(var1, this.field30558);
    }
 

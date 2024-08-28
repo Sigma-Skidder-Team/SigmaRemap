@@ -204,9 +204,9 @@ public class Class7992 {
 
    private static Map<String, Class8090> method27255(Class303 var0) {
       HashMap var3 = new HashMap();
-      var3.putAll(method27256(var0, "normal", Class2348.field16075.method9181(Class8514.field37971)));
-      var3.putAll(method27256(var0, "splash", Class2348.field16075.method9181(Class8514.field38115)));
-      var3.putAll(method27256(var0, "linger", Class2348.field16075.method9181(Class8514.field38118)));
+      var3.putAll(method27256(var0, "normal", Registry.field16075.method9181(Class8514.field37971)));
+      var3.putAll(method27256(var0, "splash", Registry.field16075.method9181(Class8514.field38115)));
+      var3.putAll(method27256(var0, "linger", Registry.field16075.method9181(Class8514.field38118)));
       return var3;
    }
 
@@ -235,7 +235,7 @@ public class Class7992 {
       if (Class9402.method35761(var0, new String[]{"_n", "_s"})) {
          return null;
       } else if (var0.equals("empty") && var1.equals("normal")) {
-         var2 = Class2348.field16075.method9181(Class8514.field37972);
+         var2 = Registry.field16075.method9181(Class8514.field37972);
          Class20 var11 = new Class20();
          var11.put("type", "item");
          var11.put("items", var2.toString());
@@ -335,9 +335,9 @@ public class Class7992 {
    private static int method27261(String var0) {
       String var3 = "effect." + var0;
 
-      for (ResourceLocation var5 : Class2348.field16071.method9190()) {
-         if (Class2348.field16071.method9193(var5)) {
-            Class7144 var6 = Class2348.field16071.method9184(var5);
+      for (ResourceLocation var5 : Registry.field16071.method9190()) {
+         if (Registry.field16071.method9193(var5)) {
+            Class7144 var6 = Registry.field16071.method9184(var5);
             String var7 = var6.method22294();
             if (var3.equals(var7)) {
                return Class7144.method22288(var6);
@@ -409,7 +409,7 @@ public class Class7992 {
       int var2 = 0;
 
       while (true) {
-         Class6069 var3 = Class2348.field16073.method9172(var2);
+         Class6069 var3 = Registry.field16073.method9172(var2);
          if (var3 == null) {
             return var2;
          }
@@ -705,7 +705,7 @@ public class Class7992 {
             int var10 = var8.method122("lvl");
             Class6069 var11 = Class7849.method26306(var9);
             if (var11 != null) {
-               int var12 = Class2348.field16073.method9171(var11);
+               int var12 = Registry.field16073.method9171(var11);
                var6[var7][0] = var12;
                var6[var7][1] = var10;
             }

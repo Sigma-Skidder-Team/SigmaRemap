@@ -168,23 +168,23 @@ public enum Class1910 {
             switch (Class5431.field24169[this.ordinal()]) {
                case 1:
                   BlockPos var5 = Class8981.method33165();
-                  Class8907 var6 = Class8981.method33164().method7003(var5);
+                  Biome var6 = Class8981.method33164().method7003(var5);
                   return (float)Class8708.method31407(var6);
                case 2:
                   BlockPos var7 = Class8981.method33165();
-                  Class8907 var8 = Class8981.method33164().method7003(var7);
+                  Biome var8 = Class8981.method33164().method7003(var7);
                   return var8 != null ? (float)var8.method32527().ordinal() : 0.0F;
                case 3:
                   BlockPos var9 = Class8981.method33165();
-                  Class8907 var10 = Class8981.method33164().method7003(var9);
+                  Biome var10 = Class8981.method33164().method7003(var9);
                   return var10 != null ? (float)var10.method32500().ordinal() : 0.0F;
                case 4:
                   BlockPos var11 = Class8981.method33165();
-                  Class8907 var12 = Class8981.method33164().method7003(var11);
+                  Biome var12 = Class8981.method33164().method7003(var11);
                   return var12 != null ? var12.method32503(var11) : 0.0F;
                case 5:
                   BlockPos var13 = Class8981.method33165();
-                  Class8907 var14 = Class8981.method33164().method7003(var13);
+                  Biome var14 = Class8981.method33164().method7003(var13);
                   return var14 != null ? var14.method32516() : 0.0F;
                default:
                   if (this.field11263 instanceof Class3620) {

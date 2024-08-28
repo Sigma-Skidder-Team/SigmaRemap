@@ -76,7 +76,7 @@ public class Class7542 {
       }
    }
 
-   public static boolean method24662(Class8907 var0, Class8507[] var1) {
+   public static boolean method24662(Biome var0, Class8507[] var1) {
       if (var1 != null) {
          for (int var4 = 0; var4 < var1.length; var4++) {
             Class8507 var5 = var1[var4];

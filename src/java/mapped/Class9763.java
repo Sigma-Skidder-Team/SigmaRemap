@@ -12,7 +12,7 @@ public class Class9763 {
    public static final Codec<Class9763> field45673 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class9245.field42537.optionalFieldOf("stronghold").forGetter(var0x -> Optional.<Class9245>ofNullable(var0x.field45677)),
-               Codec.simpleMap(Class2348.field16114, Class8483.field36361, Class2348.field16114).fieldOf("structures").forGetter(var0x -> var0x.field45676)
+               Codec.simpleMap(Registry.field16114, Class8483.field36361, Registry.field16114).fieldOf("structures").forGetter(var0x -> var0x.field45676)
             )
             .apply(var0, Class9763::new)
    );
@@ -65,9 +65,9 @@ public class Class9763 {
    }
 
    static {
-      for (Class2961 var7 : Class2348.field16114) {
+      for (Class2961 var7 : Registry.field16114) {
          if (!field45674.containsKey(var7)) {
-            throw new IllegalStateException("Structure feature without default settings: " + Class2348.field16114.method9181(var7));
+            throw new IllegalStateException("Structure feature without default settings: " + Registry.field16114.method9181(var7));
          }
       }
 

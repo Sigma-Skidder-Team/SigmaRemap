@@ -46,7 +46,7 @@ public final class Class8170 {
       return new Class7307(var0, var6, var5);
    }
 
-   private static Class8907 method28416(BlockPos var0, Class1670 var1) {
+   private static Biome method28416(BlockPos var0, Class1670 var1) {
       return Class1962.field12770.method8225(0L, var0.method8304(), var0.getY(), var0.method8306(), var1.method7077());
    }
 
@@ -181,7 +181,7 @@ public final class Class8170 {
       try {
          Entity var4 = var1.method33215(var0);
          if (!(var4 instanceof Class1006)) {
-            throw new IllegalStateException("Trying to spawn a non-mob: " + Class2348.field16074.method9181(var1));
+            throw new IllegalStateException("Trying to spawn a non-mob: " + Registry.field16074.method9181(var1));
          } else {
             return (Class1006)var4;
          }
@@ -199,7 +199,7 @@ public final class Class8170 {
 
    @Nullable
    private static Class6692 method28424(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, Random var4, BlockPos var5) {
-      Class8907 var8 = var0.method7003(var5);
+      Biome var8 = var0.method7003(var5);
       if (var3 == Class179.field627 && var8.method32527() == Class100.field287 && var4.nextFloat() < 0.98F) {
          return null;
       } else {
@@ -209,10 +209,10 @@ public final class Class8170 {
    }
 
    private static boolean method28425(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, Class6692 var4, BlockPos var5) {
-      return method28426(var0, var1, var2, var3, var5, (Class8907)null).contains(var4);
+      return method28426(var0, var1, var2, var3, var5, (Biome)null).contains(var4);
    }
 
-   private static List<Class6692> method28426(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, BlockPos var4, Class8907 var5) {
+   private static List<Class6692> method28426(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, BlockPos var4, Biome var5) {
       return var3 == Class179.field623
             && var0.method6738(var4.method8313()).method23383() == Blocks.NETHER_BRICKS
             && var1.method24345(var4, false, Class2961.field18070).method17117()
@@ -272,7 +272,7 @@ public final class Class8170 {
       }
    }
 
-   public static void method28430(Class1659 var0, Class8907 var1, int var2, int var3, Random var4) {
+   public static void method28430(Class1659 var0, Biome var1, int var2, int var3, Random var4) {
       Class8835 var7 = var1.method32499();
       List var8 = var7.method31968(Class179.field624);
       if (!var8.isEmpty()) {
@@ -361,7 +361,7 @@ public final class Class8170 {
    }
 
    // $VF: synthetic method
-   public static Class8907 method28437(BlockPos var0, Class1670 var1) {
+   public static Biome method28437(BlockPos var0, Class1670 var1) {
       return method28416(var0, var1);
    }
 

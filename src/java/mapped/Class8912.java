@@ -5,9 +5,9 @@ public class Class8912 {
    private Class8841 field40336 = Class8841.field39940;
    private Class8841 field40337 = Class8841.field39940;
    private Class8841 field40338 = Class8841.field39940;
-   private Class8705<Class8907> field40339;
+   private RegistryKey<Biome> field40339;
    private Class2961<?> field40340;
-   private Class8705<World> field40341;
+   private RegistryKey<World> field40341;
    private Boolean field40342;
    private Class7231 field40343 = Class7231.field31074;
    private Class9449 field40344 = Class9449.field43899;
@@ -17,7 +17,7 @@ public class Class8912 {
       return new Class8912();
    }
 
-   public Class8912 method32577(Class8705<Class8907> var1) {
+   public Class8912 method32577(RegistryKey<Biome> var1) {
       this.field40339 = var1;
       return this;
    }

@@ -23,13 +23,13 @@ public final class Class4384 implements Class4383 {
    }
 
    @Override
-   public Collection<ResourceLocation> method13746(Class8705<? extends Class2348<?>> var1) {
+   public Collection<ResourceLocation> method13746(RegistryKey<? extends Registry<?>> var1) {
       return this.field21395.method583(var1.method31399().method8292(), var0 -> var0.endsWith(".json"));
    }
 
    @Override
    public <E> DataResult<Pair<E, OptionalInt>> method13747(
-      DynamicOps<JsonElement> var1, Class8705<? extends Class2348<E>> var2, Class8705<E> var3, Decoder<E> var4
+           DynamicOps<JsonElement> var1, RegistryKey<? extends Registry<E>> var2, RegistryKey<E> var3, Decoder<E> var4
    ) {
       ResourceLocation var7 = var3.method31399();
       ResourceLocation var8 = new ResourceLocation(var7.method8293(), var2.method31399().method8292() + "/" + var7.method8292() + ".json");

@@ -42,6 +42,6 @@ public class Class8122 {
    public static final Class6069 field34933 = method28125("vanishing_curse", new Class6094(Class1937.field12589, Class2106.values()));
 
    private static Class6069 method28125(String var0, Class6069 var1) {
-      return Class2348.<Class6069>method9194(Class2348.field16073, var0, var1);
+      return Registry.<Class6069>method9194(Registry.field16073, var0, var1);
    }
 }

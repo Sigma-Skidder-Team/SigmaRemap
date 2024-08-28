@@ -27,11 +27,11 @@ public class Class8585 {
    public static final Class7128 field38638 = method30684("copy_state", new Class4966());
 
    private static Class7128 method30684(String var0, Class4929<? extends Class127> var1) {
-      return Class2348.<Class7128, Class7128>method9195(Class2348.field16097, new ResourceLocation(var0), new Class7128(var1));
+      return Registry.<Class7128, Class7128>method9195(Registry.field16097, new ResourceLocation(var0), new Class7128(var1));
    }
 
    public static Object method30685() {
-      return Class9709.<Class127, Class7128>method38040(Class2348.field16097, "function", "function", Class127::method368).method31075();
+      return Class9709.<Class127, Class7128>method38040(Registry.field16097, "function", "function", Class127::method368).method31075();
    }
 
    public static BiFunction<ItemStack, Class7812, ItemStack> method30686(BiFunction<ItemStack, Class7812, ItemStack>[] var0) {

@@ -14,7 +14,7 @@ public class Class4697 implements Class4698 {
                Codec.BOOL.fieldOf("requires_block_below").orElse(true).forGetter(var0x -> var0x.field22286),
                Codec.INT.fieldOf("rock_count").orElse(4).forGetter(var0x -> var0x.field22287),
                Codec.INT.fieldOf("hole_count").orElse(1).forGetter(var0x -> var0x.field22288),
-               Class2348.field16072.listOf().fieldOf("valid_blocks").<Set<Block>>xmap(ImmutableSet::copyOf, ImmutableList::copyOf).forGetter(var0x -> var0x.field22289)
+               Registry.field16072.listOf().fieldOf("valid_blocks").<Set<Block>>xmap(ImmutableSet::copyOf, ImmutableList::copyOf).forGetter(var0x -> var0x.field22289)
             )
             .apply(var0, Class4697::new)
    );

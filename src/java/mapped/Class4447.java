@@ -3435,7 +3435,7 @@ public class Class4447 implements Class4442 {
    private static void method14048(Consumer<Class4664> var0, Class3257 var1, Class3257 var2) {
       Class9828.method38783(Class120.method339(var1), Class120.method339(Class8514.field37803), var2)
          .method38784("has_netherite_ingot", method14075(Class8514.field37803))
-         .method38785(var0, Class2348.field16075.method9181(var2.method11581()).method8292() + "_smithing");
+         .method38785(var0, Registry.field16075.method9181(var2.method11581()).method8292() + "_smithing");
    }
 
    private static void method14049(Consumer<Class4664> var0, Class3303 var1, Class7608<Class3257> var2) {
@@ -3543,7 +3543,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14061(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      String var5 = Registry.field16075.method9181(var2.method11581()).method8292();
       Class8528.method30248(var1, 3)
          .method30254("sign")
          .method30250('#', var2)
@@ -3565,7 +3565,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14063(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      String var5 = Registry.field16075.method9181(var2.method11581()).method8292();
       Class8528.method30248(var1, 3)
          .method30250('#', var2)
          .method30252("##")
@@ -3575,8 +3575,8 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14064(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Class2348.field16075.method9181(var1.method11581()).method8292();
-      String var6 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      String var5 = Registry.field16075.method9181(var1.method11581()).method8292();
+      String var6 = Registry.field16075.method9181(var2.method11581()).method8292();
       Class8528.method30248(var1, 8)
          .method30250('#', Blocks.WHITE_CARPET)
          .method30250('$', var2)
@@ -3590,7 +3590,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14065(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      String var5 = Registry.field16075.method9181(var2.method11581()).method8292();
       Class8528.method30247(var1)
          .method30250('#', var2)
          .method30249('X', Class5985.field26071)
@@ -3602,7 +3602,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14066(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Class2348.field16075.method9181(var1.method11581()).method8292();
+      String var5 = Registry.field16075.method9181(var1.method11581()).method8292();
       Class8888.method32341(var1)
          .method32344(Class8514.field37938)
          .method32344(var2)
@@ -3612,7 +3612,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14067(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      String var5 = Registry.field16075.method9181(var2.method11581()).method8292();
       Class8528.method30247(var1)
          .method30250('#', var2)
          .method30250('|', Class8514.field37835)
@@ -3647,8 +3647,8 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14070(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Class2348.field16075.method9181(var1.method11581()).method8292();
-      String var6 = Class2348.field16075.method9181(var2.method11581()).method8292();
+      String var5 = Registry.field16075.method9181(var1.method11581()).method8292();
+      String var6 = Registry.field16075.method9181(var2.method11581()).method8292();
       Class8528.method30248(var1, 8)
          .method30250('#', Blocks.GLASS_PANE)
          .method30250('$', var2)

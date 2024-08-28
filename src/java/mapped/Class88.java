@@ -22,7 +22,7 @@ public enum Class88 implements Class83 {
    field232("swamp") {
       @Override
       public int method265(double d, double d2, int n) {
-         double d3 = Class8907.field40314.method25315(d * 0.0225, d2 * 0.0225, false);
+         double d3 = Biome.field40314.method25315(d * 0.0225, d2 * 0.0225, false);
          return !(d3 < -0.1) ? 6975545 : 5011004;
       }
    };

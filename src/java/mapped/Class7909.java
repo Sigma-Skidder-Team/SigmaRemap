@@ -10,9 +10,9 @@ import org.apache.logging.log4j.Logger;
 
 public class Class7909<FC extends Class4698, F extends Class2898<FC>> implements Class7908<Class7909<?, ?>> {
    private static String[] field33881;
-   public static final Codec<Class7909<?, ?>> field33882 = Class2348.field16112.dispatch(var0 -> var0.field33886, Class2898::method11215);
-   public static final Codec<Supplier<Class7909<?, ?>>> field33883 = Class9054.method33671(Class2348.field16102, field33882);
-   public static final Codec<List<Supplier<Class7909<?, ?>>>> field33884 = Class9054.<Class7909<?, ?>>method33672(Class2348.field16102, field33882);
+   public static final Codec<Class7909<?, ?>> field33882 = Registry.field16112.dispatch(var0 -> var0.field33886, Class2898::method11215);
+   public static final Codec<Supplier<Class7909<?, ?>>> field33883 = Class9054.method33671(Registry.field16102, field33882);
+   public static final Codec<List<Supplier<Class7909<?, ?>>>> field33884 = Class9054.<Class7909<?, ?>>method33672(Registry.field16102, field33882);
    public static final Logger field33885 = LogManager.getLogger();
    public final F field33886;
    public final FC field33887;

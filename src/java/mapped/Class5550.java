@@ -30,7 +30,7 @@ public class Class5550 implements Packet<Class5116> {
 
       for (int var5 = 0; var5 < var4; var5++) {
          ResourceLocation var6 = var1.method35731();
-         Class4869 var7 = Class2348.field16087.method9184(var6);
+         Class4869 var7 = Registry.field16087.method9184(var6);
          double var8 = var1.readDouble();
          ArrayList var10 = Lists.newArrayList();
          int var11 = var1.method35714();
@@ -50,7 +50,7 @@ public class Class5550 implements Packet<Class5116> {
       var1.writeInt(this.field24647.size());
 
       for (Class7919 var5 : this.field24647) {
-         var1.method35732(Class2348.field16087.method9181(var5.method26560()));
+         var1.method35732(Registry.field16087.method9181(var5.method26560()));
          var1.writeDouble(var5.method26561());
          var1.writeVarInt(var5.method26562().size());
 

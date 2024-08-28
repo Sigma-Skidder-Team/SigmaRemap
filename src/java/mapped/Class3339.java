@@ -41,7 +41,7 @@ public class Class3339 extends Class3257 {
          Block var9 = var2.method23383();
          Class9348 var10 = var9.method11577();
          Collection var11 = var10.method35395();
-         String var12 = Class2348.field16072.method9181(var9).toString();
+         String var12 = Registry.field16072.method9181(var9).toString();
          if (!var11.isEmpty()) {
             Class39 var13 = var6.method32144("DebugProperty");
             String var14 = var13.method126(var12);

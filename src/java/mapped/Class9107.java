@@ -12,7 +12,7 @@ public class Class9107<P extends Class6896> {
    private final Codec<P> field41837;
 
    private static <P extends Class6896> Class9107<P> method33959(String var0, Codec<P> var1) {
-      return Class2348.<Class9107<P>>method9194(Class2348.field16132, var0, new Class9107<P>(var1));
+      return Registry.<Class9107<P>>method9194(Registry.field16132, var0, new Class9107<P>(var1));
    }
 
    private Class9107(Codec<P> var1) {

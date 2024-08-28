@@ -70,7 +70,7 @@ public class Class6943 extends Class6941 {
                      if (var3 != Class7207.field30939) {
                         if (var3 != Class7207.field30941) {
                            field30093.warn(
-                              "Unknown recipe category: {}/{}", new Supplier[]{() -> Class2348.field16085.method9181(var0.method14967()), var0::method14964}
+                              "Unknown recipe category: {}/{}", new Supplier[]{() -> Registry.field16085.method9181(var0.method14967()), var0::method14964}
                            );
                            return Class1896.field11130;
                         } else {

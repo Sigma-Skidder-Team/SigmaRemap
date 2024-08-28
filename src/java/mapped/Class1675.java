@@ -7,12 +7,12 @@ import java.util.function.Predicate;
 
 public class Class1675 extends Class1674 {
    private static String[] field9134;
-   private static final Class8907[] field9135 = Util.<Class8907[]>method38508(
-      new Class8907[Class1684.field9154], var0 -> Arrays.fill(var0, Class8900.field40281)
+   private static final Biome[] field9135 = Util.<Biome[]>method38508(
+      new Biome[Class1684.field9154], var0 -> Arrays.fill(var0, Class8900.field40281)
    );
 
    public Class1675(World var1, Class7481 var2) {
-      super(var1, var2, new Class1684(var1.method6867().<Class8907>method32453(Class2348.field16106), field9135));
+      super(var1, var2, new Class1684(var1.method6867().<Biome>method32453(Registry.BIOME_KEY), field9135));
    }
 
    @Override

@@ -17,7 +17,7 @@ public class Class7541 {
          if (var6 != null) {
             var6.method29747(var3, var0, var1, var2);
          } else {
-            field32353.warn("Failed to create screen for menu type: {}", Class2348.field16084.method9181(var0));
+            field32353.warn("Failed to create screen for menu type: {}", Registry.field16084.method9181(var0));
          }
       } else {
          field32353.warn("Trying to open invalid screen with name: {}", var3.getString());
@@ -32,16 +32,16 @@ public class Class7541 {
    private static <M extends Class5812, U extends Screen & Class867<M>> void method24655(Class8298<? extends M> var0, Class8457<M, U> var1) {
       Class8457 var4 = field32354.put(var0, var1);
       if (var4 != null) {
-         throw new IllegalStateException("Duplicate registration for " + Class2348.field16084.method9181(var0));
+         throw new IllegalStateException("Duplicate registration for " + Registry.field16084.method9181(var0));
       }
    }
 
    public static boolean method24656() {
       boolean var2 = false;
 
-      for (Class8298 var4 : Class2348.field16084) {
+      for (Class8298 var4 : Registry.field16084) {
          if (!field32354.containsKey(var4)) {
-            field32353.debug("Menu {} has no matching screen", Class2348.field16084.method9181(var4));
+            field32353.debug("Menu {} has no matching screen", Registry.field16084.method9181(var4));
             var2 = true;
          }
       }

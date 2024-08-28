@@ -30,9 +30,9 @@ public class Class9115 {
    }
 
    static {
-      for (Class8992 var7 : Class2348.field16074) {
-         int var8 = Class2348.field16074.method9171(var7);
-         ResourceLocation var9 = Class2348.field16074.method9181(var7);
+      for (Class8992 var7 : Registry.field16074) {
+         int var8 = Registry.field16074.method9171(var7);
+         ResourceLocation var9 = Registry.field16074.method9181(var7);
          String var10 = var9.toString();
          String var11 = var9.method8292();
          if (field41879.containsKey(var7)) {

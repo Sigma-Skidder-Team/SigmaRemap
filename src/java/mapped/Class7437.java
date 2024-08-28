@@ -41,7 +41,7 @@ public class Class7437 implements Class7436 {
       return String.format(
          Locale.ROOT,
          "%s %.2f %.2f %.2f %.2f",
-         Class2348.field16077.method9181(this.method24011()),
+         Registry.field16077.method9181(this.method24011()),
          this.field32003,
          this.field32004,
          this.field32005,

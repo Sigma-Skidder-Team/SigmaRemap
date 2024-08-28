@@ -31,7 +31,7 @@ public class Class3365 extends Class3241 {
             var1.method23412(var2, var3),
             Class9477.field44045
          )) {
-         Class8705 var7 = var2.method6813() != World.THE_END ? World.THE_END : World.field8999;
+         RegistryKey var7 = var2.method6813() != World.THE_END ? World.THE_END : World.field8999;
          ServerWorld var8 = ((ServerWorld)var2).method6715().method1318(var7);
          if (var8 == null) {
             return;

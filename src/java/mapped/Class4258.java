@@ -34,7 +34,7 @@ public class Class4258 extends Class4247 {
          byte var4 = 40;
          ArrayList<Class3257> var5 = new ArrayList();
 
-         for (Class3257 var7 : Class2348.field16075) {
+         for (Class3257 var7 : Registry.field16075) {
             var5.add(var7);
          }
 
@@ -43,10 +43,10 @@ public class Class4258 extends Class4247 {
 
          for (Class3257 var13 : method13070(var5, var1)) {
             if (var13 != Class8514.field37222 && (!this.field20644 || var13 instanceof Class3292)) {
-               ResourceLocation var8 = Class2348.field16075.method9181(var13);
+               ResourceLocation var8 = Registry.field16075.method9181(var13);
                String var9;
                if (var13 instanceof Class3292 && var8.method8292().equals("air")) {
-                  var9 = Class2348.field16072.method9181(((Class3292)var13).method11845()).toString();
+                  var9 = Registry.field16072.method9181(((Class3292)var13).method11845()).toString();
                } else {
                   var9 = var8.toString();
                }

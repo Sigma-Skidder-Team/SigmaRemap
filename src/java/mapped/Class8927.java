@@ -18,6 +18,6 @@ public class Class8927 extends Class8924 {
 
    @Override
    public JsonElement method32625() {
-      return new JsonPrimitive(Class2348.field16074.method9181(this.field40405).toString());
+      return new JsonPrimitive(Registry.field16074.method9181(this.field40405).toString());
    }
 }

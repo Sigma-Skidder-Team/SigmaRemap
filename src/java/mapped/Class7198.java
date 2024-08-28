@@ -61,7 +61,7 @@ public class Class7198 extends Class7194 {
    @Override
    public boolean method22596(
       Class1670 var1,
-      Function<BlockPos, Class8907> var2,
+      Function<BlockPos, Biome> var2,
       BitSet var3,
       Random var4,
       Mutable var5,

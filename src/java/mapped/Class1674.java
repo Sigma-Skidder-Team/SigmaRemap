@@ -763,14 +763,14 @@ public class Class1674 implements Class1670 {
    public void method7151(ServerWorld var1) {
       if (this.field9124 == Class6804.<Block>method20727()) {
          this.field9124 = new Class6801<>(
-                 Class2348.field16072::method9181, var1.method6860().method20729(this.field9132, true, false), var1.method6783()
+                 Registry.field16072::method9181, var1.method6860().method20729(this.field9132, true, false), var1.method6783()
          );
          this.method7078(true);
       }
 
       if (this.field9125 == Class6804.<Class7631>method20727()) {
          this.field9125 = new Class6801<>(
-                 Class2348.field16070::method9181, var1.method6861().method20729(this.field9132, true, false), var1.method6783()
+                 Registry.field16070::method9181, var1.method6861().method20729(this.field9132, true, false), var1.method6783()
          );
          this.method7078(true);
       }

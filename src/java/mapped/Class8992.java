@@ -365,15 +365,15 @@ public class Class8992<T extends Entity> {
    private final Class8847 field41125;
 
    private static <T extends Entity> Class8992<T> method33197(String var0, Class8878<T> var1) {
-      return Class2348.<Class8992<T>>method9194(Class2348.field16074, var0, var1.method32309(var0));
+      return Registry.<Class8992<T>>method9194(Registry.field16074, var0, var1.method32309(var0));
    }
 
    public static ResourceLocation method33198(Class8992<?> var0) {
-      return Class2348.field16074.method9181(var0);
+      return Registry.field16074.method9181(var0);
    }
 
    public static Optional<Class8992<?>> method33199(String var0) {
-      return Class2348.field16074.method9187(ResourceLocation.method8289(var0));
+      return Registry.field16074.method9187(ResourceLocation.method8289(var0));
    }
 
    public Class8992(
@@ -500,7 +500,7 @@ public class Class8992<T extends Entity> {
 
    public String method33210() {
       if (this.field41122 == null) {
-         this.field41122 = Util.method38486("entity", Class2348.field16074.method9181(this));
+         this.field41122 = Util.method38486("entity", Registry.field16074.method9181(this));
       }
 
       return this.field41122;
@@ -521,7 +521,7 @@ public class Class8992<T extends Entity> {
 
    public ResourceLocation method33212() {
       if (this.field41124 == null) {
-         ResourceLocation var3 = Class2348.field16074.method9181(this);
+         ResourceLocation var3 = Registry.field16074.method9181(this);
          this.field41124 = new ResourceLocation(var3.method8293(), "entities/" + var3.method8292());
       }
 
@@ -543,7 +543,7 @@ public class Class8992<T extends Entity> {
 
    @Nullable
    public static Entity method33216(int var0, World var1) {
-      return method33218(var1, Class2348.field16074.method9172(var0));
+      return method33218(var1, Registry.field16074.method9172(var0));
    }
 
    public static Optional<Entity> method33217(Class39 var0, World var1) {
@@ -583,7 +583,7 @@ public class Class8992<T extends Entity> {
    }
 
    public static Optional<Class8992<?>> method33222(Class39 var0) {
-      return Class2348.field16074.method9187(new ResourceLocation(var0.method126("id")));
+      return Registry.field16074.method9187(new ResourceLocation(var0.method126("id")));
    }
 
    @Nullable

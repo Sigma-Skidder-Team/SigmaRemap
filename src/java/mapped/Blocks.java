@@ -2952,7 +2952,7 @@ public class Blocks {
    }
 
    private static Block register(String var0, Block var1) {
-      return Class2348.<Block>method9194(Class2348.field16072, var0, var1);
+      return Registry.<Block>method9194(Registry.field16072, var0, var1);
    }
 
    public static void method30025() {
@@ -2960,7 +2960,7 @@ public class Blocks {
    }
 
    static {
-      for (Block var7 : Class2348.field16072) {
+      for (Block var7 : Registry.field16072) {
          UnmodifiableIterator var8 = var7.method11577().method35392().iterator();
 
          while (var8.hasNext()) {
