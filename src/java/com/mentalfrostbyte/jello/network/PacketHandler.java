@@ -75,20 +75,20 @@ public class PacketHandler {
                     }
 
                     if (var23.method15996()) {
-                        Client.getInstance().getEventManager().method23213(var23);
+                        Client.getInstance().getEventManager().subscribe(var23);
                         if (var23 instanceof Class5325) {
                             Class5325 var27 = (Class5325) var23;
                             if (var27.field23879 != null) {
-                                Client.getInstance().getEventManager().method23213(var27.field23879);
+                                Client.getInstance().getEventManager().subscribe(var27.field23879);
                             }
                         }
                     } else {
-                        Client.getInstance().getEventManager().method23214(var23);
+                        Client.getInstance().getEventManager().unsubscribe(var23);
                         if (var23 instanceof Class5325) {
                             Class5325 var26 = (Class5325) var23;
 
                             for (Module var36 : var26.field23878) {
-                                Client.getInstance().getEventManager().method23214(var36);
+                                Client.getInstance().getEventManager().unsubscribe(var36);
                             }
                         }
                     }

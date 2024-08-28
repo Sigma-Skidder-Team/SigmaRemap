@@ -12,10 +12,10 @@ public class Class6439 extends Class6434 {
             )
             .apply(var0, Class6439::new)
    );
-   private final Class3209 field28284;
+   private final Block field28284;
    private final float field28285;
 
-   public Class6439(Class3209 var1, float var2) {
+   public Class6439(Block var1, float var2) {
       this.field28284 = var1;
       this.field28285 = var2;
    }

@@ -64,7 +64,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       Class7393.method23618(var2, var3);
    }
 
@@ -282,7 +282,7 @@ public abstract class Class3390 {
 
    public abstract Class3257 method11581();
 
-   public abstract Class3209 method11584();
+   public abstract Block method11584();
 
    public Class7210 method12000() {
       return (Class7210)Class7929.method26653(this.field19013).apply(this.method11584().method11579());

@@ -13,7 +13,7 @@ public class Class5220 extends Module {
 
     @EventTarget
     public void method16255(Class4396 var1) {
-        if (this.method15996() && field23386.method1528() != null) {
+        if (this.method15996() && mc.method1528() != null) {
             if (!(var1.method13898() instanceof Class5554)) {
                 if (var1.method13898() instanceof Class5542) {
                     Class5542 var4 = (Class5542) var1.method13898();

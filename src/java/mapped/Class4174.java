@@ -44,39 +44,39 @@ public class Class4174 extends Class4167 {
 
    @Override
    public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
-      this.method12927(var1, var5, 7, 3, 0, 11, 4, 18, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 3, 7, 18, 4, 11, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 8, 5, 0, 10, 7, 18, Class8487.field36387.method11579(), Class8487.field36387.method11579(), false);
-      this.method12927(var1, var5, 0, 5, 8, 18, 7, 10, Class8487.field36387.method11579(), Class8487.field36387.method11579(), false);
-      this.method12927(var1, var5, 7, 5, 0, 7, 5, 7, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 7, 5, 11, 7, 5, 18, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 11, 5, 0, 11, 5, 7, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 11, 5, 11, 11, 5, 18, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 5, 7, 7, 5, 7, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 11, 5, 7, 18, 5, 7, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 5, 11, 7, 5, 11, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 11, 5, 11, 18, 5, 11, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 7, 2, 0, 11, 2, 5, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 7, 2, 13, 11, 2, 18, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 7, 0, 0, 11, 1, 3, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 7, 0, 15, 11, 1, 18, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
+      this.method12927(var1, var5, 7, 3, 0, 11, 4, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 0, 3, 7, 18, 4, 11, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 8, 5, 0, 10, 7, 18, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
+      this.method12927(var1, var5, 0, 5, 8, 18, 7, 10, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
+      this.method12927(var1, var5, 7, 5, 0, 7, 5, 7, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 7, 5, 11, 7, 5, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 11, 5, 0, 11, 5, 7, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 11, 5, 11, 11, 5, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 0, 5, 7, 7, 5, 7, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 11, 5, 7, 18, 5, 7, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 0, 5, 11, 7, 5, 11, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 11, 5, 11, 18, 5, 11, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 7, 2, 0, 11, 2, 5, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 7, 2, 13, 11, 2, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 7, 0, 0, 11, 1, 3, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 7, 0, 15, 11, 1, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
 
       for (int var10 = 7; var10 <= 11; var10++) {
          for (int var11 = 0; var11 <= 2; var11++) {
-            this.method12932(var1, Class8487.field36642.method11579(), var10, -1, var11, var5);
-            this.method12932(var1, Class8487.field36642.method11579(), var10, -1, 18 - var11, var5);
+            this.method12932(var1, Blocks.field36642.method11579(), var10, -1, var11, var5);
+            this.method12932(var1, Blocks.field36642.method11579(), var10, -1, 18 - var11, var5);
          }
       }
 
-      this.method12927(var1, var5, 0, 2, 7, 5, 2, 11, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 13, 2, 7, 18, 2, 11, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 0, 7, 3, 1, 11, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 15, 0, 7, 18, 1, 11, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
+      this.method12927(var1, var5, 0, 2, 7, 5, 2, 11, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 13, 2, 7, 18, 2, 11, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 0, 0, 7, 3, 1, 11, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 15, 0, 7, 18, 1, 11, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
 
       for (int var12 = 0; var12 <= 2; var12++) {
          for (int var13 = 7; var13 <= 11; var13++) {
-            this.method12932(var1, Class8487.field36642.method11579(), var12, -1, var13, var5);
-            this.method12932(var1, Class8487.field36642.method11579(), 18 - var12, -1, var13, var5);
+            this.method12932(var1, Blocks.field36642.method11579(), var12, -1, var13, var5);
+            this.method12932(var1, Blocks.field36642.method11579(), 18 - var12, -1, var13, var5);
          }
       }
 

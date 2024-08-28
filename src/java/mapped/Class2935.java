@@ -7,17 +7,17 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class2935 extends Class2898<Class4708> {
-   private static final ImmutableList<Class3209> field18005 = ImmutableList.of(
-      Class8487.field36414,
-      Class8487.field36412,
-      Class8487.field36890,
-      Class8487.field36581,
-      Class8487.field36642,
-      Class8487.field36643,
-      Class8487.field36644,
-      Class8487.field36645,
-      Class8487.field36534,
-      Class8487.field36532
+   private static final ImmutableList<Block> field18005 = ImmutableList.of(
+      Blocks.LAVA,
+      Blocks.BEDROCK,
+      Blocks.field36890,
+      Blocks.SOUL_SAND,
+      Blocks.field36642,
+      Blocks.field36643,
+      Blocks.field36644,
+      Blocks.field36645,
+      Blocks.field36534,
+      Blocks.field36532
    );
 
    public Class2935(Codec<Class4708> var1) {
@@ -68,13 +68,13 @@ public class Class2935 extends Class2898<Class4708> {
 
             for (Mutable var14 = var12.method8354(); var13 >= 0; var13--) {
                if (!method11276(var1, var2, var14)) {
-                  if (!var1.method6738(var14).method23448(Class8487.field36583)) {
+                  if (!var1.method6738(var14).method23448(Blocks.BASALT)) {
                      break;
                   }
 
                   var14.method8379(Direction.field673);
                } else {
-                  this.method11217(var1, var14, Class8487.field36583.method11579());
+                  this.method11217(var1, var14, Blocks.BASALT.method11579());
                   var14.method8379(Direction.field673);
                   var8 = true;
                }
@@ -131,6 +131,6 @@ public class Class2935 extends Class2898<Class4708> {
 
    private static boolean method11276(Class1660 var0, int var1, BlockPos var2) {
       Class7380 var5 = var0.method6738(var2);
-      return var5.method23393() || var5.method23448(Class8487.field36414) && var2.getY() <= var1;
+      return var5.method23393() || var5.method23448(Blocks.LAVA) && var2.getY() <= var1;
    }
 }

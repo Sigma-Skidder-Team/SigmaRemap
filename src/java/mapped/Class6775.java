@@ -4,9 +4,9 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class Class6775 extends Class6773 {
-   private static final Class7380 field29495 = Class8487.field36730.method11579();
-   private static final Class7380 field29549 = Class8487.field36731.method11579();
-   private static final Class7380 field29550 = Class8487.field36794.method11579();
+   private static final Class7380 field29495 = Blocks.field36730.method11579();
+   private static final Class7380 field29549 = Blocks.field36731.method11579();
+   private static final Class7380 field29550 = Blocks.field36794.method11579();
 
    public Class6775(Codec<Class8278> var1) {
       super(var1);
@@ -64,7 +64,7 @@ public class Class6775 extends Class6773 {
                            var23 = var21;
                         }
                      } else {
-                        var19 = Class8487.field36387.method11579();
+                        var19 = Blocks.AIR.method11579();
                         var23 = var9;
                      }
 
@@ -95,9 +95,9 @@ public class Class6775 extends Class6773 {
                            var2.method7061(var29, var32, false);
                         }
                      } else if (!var25) {
-                        var2.method7061(var29, Class8487.field36395.method11579(), false);
+                        var2.method7061(var29, Blocks.field36395.method11579(), false);
                      } else {
-                        var2.method7061(var29, Class8487.field36397.method11579(), false);
+                        var2.method7061(var29, Blocks.field36397.method11579(), false);
                      }
                   }
 

@@ -17,13 +17,13 @@ public class Class5272 extends Module {
 
     @EventTarget
     public void method16498(Class4428 var1) {
-        if (this.method15996() && field23386.field1339.field5055 > 10 && field23386.method1531() == null && field23386.method1528() != null) {
-            float var4 = field23386.field1339.method3042() / field23386.field1339.method3075() * 10.0F;
+        if (this.method15996() && mc.field1339.field5055 > 10 && mc.method1531() == null && mc.method1528() != null) {
+            float var4 = mc.field1339.method3042() / mc.field1339.method3075() * 10.0F;
             if (var4 < this.method15977("Min Health") || Class7789.method25878(Class8514.field38126) == 0) {
                 boolean var5 = this.method15974("One Time Use");
-                field23386.field1338.method6782();
-                field23386.method1505();
-                field23386.displayGuiScreen(
+                mc.field1338.method6782();
+                mc.method1505();
+                mc.displayGuiScreen(
                         new Class832(
                                 new Class1316(new Class849()),
                                 new TranslationTextComponent("disconnect.lost"),

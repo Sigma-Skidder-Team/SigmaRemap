@@ -32,7 +32,7 @@ public class Class2685 extends Class2595 {
       Class7380 var11 = var4.method6738(var10);
       Class7380 var12 = this.field17102.method4357();
       if (var12 != null) {
-         var12 = Class3209.method11542(var12, this.field17102.field5024, var8);
+         var12 = Block.method11542(var12, this.field17102.field5024, var8);
          if (this.method10901(var4, var8, var12, var9, var11, var10)) {
             var4.method6725(var8, var12, 3);
             this.field17102.method4356((Class7380)null);
@@ -43,7 +43,7 @@ public class Class2685 extends Class2595 {
    private boolean method10901(Class1655 var1, BlockPos var2, Class7380 var3, Class7380 var4, Class7380 var5, BlockPos var6) {
       return var4.method23393()
          && !var5.method23393()
-         && !var5.method23448(Class8487.field36412)
+         && !var5.method23448(Blocks.BEDROCK)
          && var5.method23456(var1, var6)
          && var3.method23443(var1, var2)
          && var1.method7181(this.field17102, Class6488.method19657(Vector3d.method11329(var2))).isEmpty();

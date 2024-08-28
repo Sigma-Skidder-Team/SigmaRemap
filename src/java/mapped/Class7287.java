@@ -44,12 +44,12 @@ public class Class7287 {
       return var5;
    }
 
-   public static Class7287 method22996(Class3209 var0) {
+   public static Class7287 method22996(Block var0) {
       ResourceLocation var3 = method23041(var0);
       return method22999(var3);
    }
 
-   public static Class7287 method22997(Class3209 var0) {
+   public static Class7287 method22997(Block var0) {
       ResourceLocation var3 = method23041(var0);
       return method22998(var3);
    }
@@ -62,7 +62,7 @@ public class Class7287 {
       return new Class7287().method22991(Class9588.field44825, var0);
    }
 
-   public static Class7287 method23000(Class3209 var0) {
+   public static Class7287 method23000(Block var0) {
       return method23013(Class9588.field44840, method23041(var0));
    }
 
@@ -70,7 +70,7 @@ public class Class7287 {
       return method23013(Class9588.field44840, var0);
    }
 
-   public static Class7287 method23002(Class3209 var0) {
+   public static Class7287 method23002(Block var0) {
       return method23013(Class9588.field44841, method23041(var0));
    }
 
@@ -78,7 +78,7 @@ public class Class7287 {
       return method23013(Class9588.field44841, var0);
    }
 
-   public static Class7287 method23004(Class3209 var0) {
+   public static Class7287 method23004(Block var0) {
       return method23013(Class9588.field44843, method23041(var0));
    }
 
@@ -86,23 +86,23 @@ public class Class7287 {
       return method23013(Class9588.field44843, var0);
    }
 
-   public static Class7287 method23006(Class3209 var0) {
+   public static Class7287 method23006(Block var0) {
       return method23013(Class9588.field44844, method23041(var0));
    }
 
-   public static Class7287 method23007(Class3209 var0) {
+   public static Class7287 method23007(Block var0) {
       return method23013(Class9588.field44849, method23041(var0));
    }
 
-   public static Class7287 method23008(Class3209 var0, Class3209 var1) {
+   public static Class7287 method23008(Block var0, Block var1) {
       return new Class7287().method22991(Class9588.field44849, method23041(var0)).method22991(Class9588.field44850, method23041(var1));
    }
 
-   public static Class7287 method23009(Class3209 var0) {
+   public static Class7287 method23009(Block var0) {
       return method23013(Class9588.field44845, method23041(var0));
    }
 
-   public static Class7287 method23010(Class3209 var0) {
+   public static Class7287 method23010(Block var0) {
       return method23013(Class9588.field44848, method23041(var0));
    }
 
@@ -110,7 +110,7 @@ public class Class7287 {
       return method23013(Class9588.field44851, var0);
    }
 
-   public static Class7287 method23012(Class3209 var0, Class3209 var1) {
+   public static Class7287 method23012(Block var0, Block var1) {
       return new Class7287().method22991(Class9588.field44846, method23041(var0)).method22991(Class9588.field44847, method23042(var1, "_top"));
    }
 
@@ -118,15 +118,15 @@ public class Class7287 {
       return new Class7287().method22991(var0, var1);
    }
 
-   public static Class7287 method23014(Class3209 var0) {
+   public static Class7287 method23014(Block var0) {
       return new Class7287().method22991(Class9588.field44833, method23042(var0, "_side")).method22991(Class9588.field44828, method23042(var0, "_top"));
    }
 
-   public static Class7287 method23015(Class3209 var0) {
+   public static Class7287 method23015(Block var0) {
       return new Class7287().method22991(Class9588.field44833, method23042(var0, "_side")).method22991(Class9588.field44830, method23042(var0, "_top"));
    }
 
-   public static Class7287 method23016(Class3209 var0) {
+   public static Class7287 method23016(Block var0) {
       return new Class7287().method22991(Class9588.field44833, method23041(var0)).method22991(Class9588.field44828, method23042(var0, "_top"));
    }
 
@@ -134,14 +134,14 @@ public class Class7287 {
       return new Class7287().method22991(Class9588.field44833, var0).method22991(Class9588.field44828, var1);
    }
 
-   public static Class7287 method23018(Class3209 var0) {
+   public static Class7287 method23018(Block var0) {
       return new Class7287()
          .method22991(Class9588.field44833, method23042(var0, "_side"))
          .method22991(Class9588.field44830, method23042(var0, "_top"))
          .method22991(Class9588.field44829, method23042(var0, "_bottom"));
    }
 
-   public static Class7287 method23019(Class3209 var0) {
+   public static Class7287 method23019(Block var0) {
       ResourceLocation var3 = method23041(var0);
       return new Class7287()
          .method22991(Class9588.field44842, var3)
@@ -150,7 +150,7 @@ public class Class7287 {
          .method22991(Class9588.field44829, method23042(var0, "_bottom"));
    }
 
-   public static Class7287 method23020(Class3209 var0) {
+   public static Class7287 method23020(Block var0) {
       ResourceLocation var3 = method23041(var0);
       return new Class7287()
          .method22991(Class9588.field44842, var3)
@@ -158,11 +158,11 @@ public class Class7287 {
          .method22991(Class9588.field44828, method23042(var0, "_top"));
    }
 
-   public static Class7287 method23021(Class3209 var0) {
+   public static Class7287 method23021(Block var0) {
       return new Class7287().method22991(Class9588.field44830, method23042(var0, "_top")).method22991(Class9588.field44829, method23042(var0, "_bottom"));
    }
 
-   public static Class7287 method23022(Class3209 var0) {
+   public static Class7287 method23022(Block var0) {
       return new Class7287().method22991(Class9588.field44827, method23041(var0));
    }
 
@@ -170,19 +170,19 @@ public class Class7287 {
       return new Class7287().method22991(Class9588.field44827, var0);
    }
 
-   public static Class7287 method23024(Class3209 var0) {
+   public static Class7287 method23024(Block var0) {
       return new Class7287().method22991(Class9588.field44853, method23042(var0, "_0"));
    }
 
-   public static Class7287 method23025(Class3209 var0) {
+   public static Class7287 method23025(Block var0) {
       return new Class7287().method22991(Class9588.field44853, method23042(var0, "_1"));
    }
 
-   public static Class7287 method23026(Class3209 var0) {
+   public static Class7287 method23026(Block var0) {
       return new Class7287().method22991(Class9588.field44854, method23041(var0));
    }
 
-   public static Class7287 method23027(Class3209 var0) {
+   public static Class7287 method23027(Block var0) {
       return new Class7287().method22991(Class9588.field44857, method23041(var0));
    }
 
@@ -194,14 +194,14 @@ public class Class7287 {
       return new Class7287().method22991(Class9588.field44827, method23043(var0));
    }
 
-   public static Class7287 method23030(Class3209 var0) {
+   public static Class7287 method23030(Block var0) {
       return new Class7287()
          .method22991(Class9588.field44833, method23042(var0, "_side"))
          .method22991(Class9588.field44831, method23042(var0, "_front"))
          .method22991(Class9588.field44832, method23042(var0, "_back"));
    }
 
-   public static Class7287 method23031(Class3209 var0) {
+   public static Class7287 method23031(Block var0) {
       return new Class7287()
          .method22991(Class9588.field44833, method23042(var0, "_side"))
          .method22991(Class9588.field44831, method23042(var0, "_front"))
@@ -209,25 +209,25 @@ public class Class7287 {
          .method22991(Class9588.field44829, method23042(var0, "_bottom"));
    }
 
-   public static Class7287 method23032(Class3209 var0) {
+   public static Class7287 method23032(Block var0) {
       return new Class7287()
          .method22991(Class9588.field44833, method23042(var0, "_side"))
          .method22991(Class9588.field44831, method23042(var0, "_front"))
          .method22991(Class9588.field44830, method23042(var0, "_top"));
    }
 
-   public static Class7287 method23033(Class3209 var0) {
+   public static Class7287 method23033(Block var0) {
       return new Class7287()
          .method22991(Class9588.field44833, method23042(var0, "_side"))
          .method22991(Class9588.field44831, method23042(var0, "_front"))
          .method22991(Class9588.field44828, method23042(var0, "_end"));
    }
 
-   public static Class7287 method23034(Class3209 var0) {
+   public static Class7287 method23034(Block var0) {
       return new Class7287().method22991(Class9588.field44830, method23042(var0, "_top"));
    }
 
-   public static Class7287 method23035(Class3209 var0, Class3209 var1) {
+   public static Class7287 method23035(Block var0, Block var1) {
       return new Class7287()
          .method22991(Class9588.field44827, method23042(var0, "_front"))
          .method22991(Class9588.field44839, method23041(var1))
@@ -238,7 +238,7 @@ public class Class7287 {
          .method22991(Class9588.field44837, method23042(var0, "_front"));
    }
 
-   public static Class7287 method23036(Class3209 var0, Class3209 var1) {
+   public static Class7287 method23036(Block var0, Block var1) {
       return new Class7287()
          .method22991(Class9588.field44827, method23042(var0, "_front"))
          .method22991(Class9588.field44839, method23041(var1))
@@ -249,7 +249,7 @@ public class Class7287 {
          .method22991(Class9588.field44837, method23042(var0, "_side"));
    }
 
-   public static Class7287 method23037(Class3209 var0) {
+   public static Class7287 method23037(Block var0) {
       return new Class7287().method22991(Class9588.field44859, method23042(var0, "_log_lit")).method22991(Class9588.field44853, method23042(var0, "_fire"));
    }
 
@@ -257,7 +257,7 @@ public class Class7287 {
       return new Class7287().method22991(Class9588.field44858, method23043(var0));
    }
 
-   public static Class7287 method23039(Class3209 var0) {
+   public static Class7287 method23039(Block var0) {
       return new Class7287().method22991(Class9588.field44858, method23041(var0));
    }
 
@@ -265,12 +265,12 @@ public class Class7287 {
       return new Class7287().method22991(Class9588.field44858, var0);
    }
 
-   public static ResourceLocation method23041(Class3209 var0) {
+   public static ResourceLocation method23041(Block var0) {
       ResourceLocation var3 = Class2348.field16072.method9181(var0);
       return new ResourceLocation(var3.method8293(), "block/" + var3.method8292());
    }
 
-   public static ResourceLocation method23042(Class3209 var0, String var1) {
+   public static ResourceLocation method23042(Block var0, String var1) {
       ResourceLocation var4 = Class2348.field16072.method9181(var0);
       return new ResourceLocation(var4.method8293(), "block/" + var4.method8292() + var1);
    }

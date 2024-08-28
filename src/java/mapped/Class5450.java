@@ -69,7 +69,7 @@ public class Class5450 extends Class5444<Class4712> {
                         break;
                      }
 
-                     var1.method6725(var17, Class8487.field36399.method11579(), 2);
+                     var1.method6725(var17, Blocks.field36399.method11579(), 2);
                   }
                }
             }

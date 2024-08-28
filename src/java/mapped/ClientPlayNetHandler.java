@@ -181,7 +181,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                                                                                             var4,
                                                                                                             var6,
                                                                                                             var8,
-                                                                                                            Class3209.method11536(var1.method17267())
+                                                                                                            Block.method11536(var1.method17267())
                                                                                                          );
                                                                                                       }
                                                                                                    } else {

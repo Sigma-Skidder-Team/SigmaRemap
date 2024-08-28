@@ -1,6 +1,6 @@
 package mapped;
 
-public abstract class Class3462 extends Class3209 {
+public abstract class Class3462 extends Block {
    public Class3462(Class7929 var1) {
       super(var1);
    }

@@ -11,44 +11,44 @@ public class Class7198 extends Class7194 {
    public Class7198(Codec<Class4728> var1) {
       super(var1, 256);
       this.field30897 = ImmutableSet.of(
-         Class8487.field36388,
-         Class8487.field36389,
-         Class8487.field36391,
-         Class8487.field36393,
-         Class8487.field36396,
-         Class8487.field36397,
-         new Class3209[]{
-            Class8487.field36398,
-            Class8487.field36395,
-            Class8487.field36794,
-            Class8487.field36730,
-            Class8487.field36731,
-            Class8487.field36732,
-            Class8487.field36733,
-            Class8487.field36734,
-            Class8487.field36735,
-            Class8487.field36736,
-            Class8487.field36737,
-            Class8487.field36738,
-            Class8487.field36739,
-            Class8487.field36740,
-            Class8487.field36741,
-            Class8487.field36742,
-            Class8487.field36743,
-            Class8487.field36744,
-            Class8487.field36745,
-            Class8487.field36458,
-            Class8487.field36835,
-            Class8487.field36640,
-            Class8487.field36571,
-            Class8487.field36415,
-            Class8487.field36417,
-            Class8487.field36413,
-            Class8487.field36414,
-            Class8487.field36527,
-            Class8487.field36387,
-            Class8487.field37012,
-            Class8487.field36796
+         Blocks.STONE,
+         Blocks.GRANITE,
+         Blocks.DIORITE,
+         Blocks.field36393,
+         Blocks.field36396,
+         Blocks.field36397,
+         new Block[]{
+            Blocks.field36398,
+            Blocks.field36395,
+            Blocks.field36794,
+            Blocks.field36730,
+            Blocks.field36731,
+            Blocks.field36732,
+            Blocks.field36733,
+            Blocks.field36734,
+            Blocks.field36735,
+            Blocks.field36736,
+            Blocks.field36737,
+            Blocks.field36738,
+            Blocks.field36739,
+            Blocks.field36740,
+            Blocks.field36741,
+            Blocks.field36742,
+            Blocks.field36743,
+            Blocks.field36744,
+            Blocks.field36745,
+            Blocks.field36458,
+            Blocks.field36835,
+            Blocks.field36640,
+            Blocks.SNOW,
+            Blocks.SAND,
+            Blocks.GRAVEL,
+            Blocks.WATER,
+            Blocks.LAVA,
+            Blocks.field36527,
+            Blocks.AIR,
+            Blocks.field37012,
+            Blocks.field36796
          }
       );
    }
@@ -110,15 +110,15 @@ public class Class7198 extends Class7194 {
             } else if (var11 == 10) {
                float var22 = var3.nextFloat();
                if (!((double)var22 < 0.25)) {
-                  var1.method7061(var4, Class8487.field36527.method11579(), false);
+                  var1.method7061(var4, Blocks.field36527.method11579(), false);
                } else {
-                  var1.method7061(var4, Class8487.field36890.method11579(), false);
-                  var1.method7089().method20726(var4, Class8487.field36890, 0);
+                  var1.method7061(var4, Blocks.field36890.method11579(), false);
+                  var1.method7089().method20726(var4, Blocks.field36890, 0);
                }
 
                return true;
             } else if (var11 < 10) {
-               var1.method7061(var4, Class8487.field36414.method11579(), false);
+               var1.method7061(var4, Blocks.LAVA.method11579(), false);
                return false;
             } else {
                boolean var17 = false;

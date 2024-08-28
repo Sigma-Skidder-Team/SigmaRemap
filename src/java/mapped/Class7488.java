@@ -51,7 +51,7 @@ public class Class7488 extends Class7487 {
 
    public List<Class8266> method24408(Class8761 var1, BlockPos var2, Class80 var3, boolean var4) {
       Class8969 var7 = this.method24407(var1);
-      List<Class8266> var8 = var7.method32894(var2, new Class9463().method36426(var3), Class8487.field37113, var4);
+      List<Class8266> var8 = var7.method32894(var2, new Class9463().method36426(var3), Blocks.field37113, var4);
       ArrayList var9 = Lists.newArrayList();
 
       for (Class8266 var11 : var8) {
@@ -69,7 +69,7 @@ public class Class7488 extends Class7487 {
    @Override
    public List<Class8266> method24374(Class8761 var1, BlockPos var2, Class80 var3, Random var4) {
       Class8969 var7 = this.method24407(var1);
-      List var8 = var7.method32894(var2, new Class9463().method36426(var3), Class8487.field37114, true);
+      List var8 = var7.method32894(var2, new Class9463().method36426(var3), Blocks.field37114, true);
       Collections.shuffle(var8, var4);
       return var8;
    }

@@ -7,17 +7,17 @@ import javax.annotation.Nullable;
 
 public class Class7095 extends Class7092 {
    public static final Codec<Class7095> field30525 = Class7380.field31585
-      .xmap(Class7377::method23383, Class3209::method11579)
+      .xmap(Class7377::method23383, Block::method11579)
       .listOf()
       .fieldOf("blocks")
       .xmap(Class7095::new, var0 -> var0.field30529)
       .codec();
-   public static final Class7095 field30526 = new Class7095(ImmutableList.of(Class8487.field37113));
-   public static final Class7095 field30527 = new Class7095(ImmutableList.of(Class8487.field36387));
-   public static final Class7095 field30528 = new Class7095(ImmutableList.of(Class8487.field36387, Class8487.field37113));
-   private final ImmutableList<Class3209> field30529;
+   public static final Class7095 field30526 = new Class7095(ImmutableList.of(Blocks.field37113));
+   public static final Class7095 field30527 = new Class7095(ImmutableList.of(Blocks.AIR));
+   public static final Class7095 field30528 = new Class7095(ImmutableList.of(Blocks.AIR, Blocks.field37113));
+   private final ImmutableList<Block> field30529;
 
-   public Class7095(List<Class3209> var1) {
+   public Class7095(List<Block> var1) {
       this.field30529 = ImmutableList.copyOf(var1);
    }
 

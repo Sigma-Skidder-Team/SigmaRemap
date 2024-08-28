@@ -46,7 +46,7 @@ public abstract class Class1066 extends Class1068 {
       super.method2877();
       if (this.method4927()) {
          if (!this.field5024.field9020) {
-            this.method3300(Class8487.field36534);
+            this.method3300(Blocks.field36534);
          }
 
          this.method4928(false);
@@ -103,7 +103,7 @@ public abstract class Class1066 extends Class1068 {
             return true;
          }
 
-         if (!this.method4927() && var2.method32107() == Class8487.field36534.method11581()) {
+         if (!this.method4927() && var2.method32107() == Blocks.field36534.method11581()) {
             this.method4928(true);
             this.method4948();
             return true;
@@ -137,7 +137,7 @@ public abstract class Class1066 extends Class1068 {
             return Class2274.method9002(this.field5024.field9020);
          }
 
-         if (!this.method4927() && var5.method32107() == Class8487.field36534.method11581()) {
+         if (!this.method4927() && var5.method32107() == Blocks.field36534.method11581()) {
             this.method4928(true);
             this.method4895();
             if (!var1.field4919.field29609) {

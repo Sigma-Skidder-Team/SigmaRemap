@@ -24,12 +24,12 @@ public class Class5208 extends Module {
 
     @EventTarget
     private void method16219(Class4396 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5616) {
                 Class5616 var5 = (Class5616) var4;
                 String var6 = var5.method17648().getString();
-                String var7 = field23386.field1339.method2941().getString().toLowerCase();
+                String var7 = mc.field1339.method2941().getString().toLowerCase();
                 String var8 = var5.method17648().getString();
                 if (this.field23527.method15974("AutoL")
                         && (

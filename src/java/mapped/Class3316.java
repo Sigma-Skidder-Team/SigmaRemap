@@ -98,7 +98,7 @@ public class Class3316 extends Class3314 {
                                  int var37 = var24.method7071(Class101.field296, var33 + var26, var36 + var27) + 1;
                                  Class7380 var38;
                                  if (var37 <= 1) {
-                                    var38 = Class8487.field36412.method11579();
+                                    var38 = Blocks.BEDROCK.method11579();
                                  } else {
                                     do {
                                        var31.method8372(var25.method24356() + var33 + var26, --var37, var25.method24357() + var36 + var27);
@@ -129,9 +129,9 @@ public class Class3316 extends Class3314 {
                            int var42 = var21 + var22 * 231871;
                            var42 = var42 * var42 * 31287121 + var42 * 11;
                            if ((var42 >> 20 & 1) != 0) {
-                              var23.add(Class8487.field36388.method11579().method23394(var1, BlockPos.field13032), 100);
+                              var23.add(Blocks.STONE.method11579().method23394(var1, BlockPos.field13032), 100);
                            } else {
-                              var23.add(Class8487.field36396.method11579().method23394(var1, BlockPos.field13032), 10);
+                              var23.add(Blocks.field36396.method11579().method23394(var1, BlockPos.field13032), 10);
                            }
 
                            var29 = 100.0;

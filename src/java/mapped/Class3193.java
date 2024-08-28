@@ -5,7 +5,7 @@ import java.util.Random;
 public class Class3193 extends Class3194 implements Class3196 {
    private static String[] field18466;
    public static final Class8554 field18467 = Class8820.field39760;
-   public static final Class6408 field18468 = Class3209.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
+   public static final Class6408 field18468 = Block.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
    private final Class7665 field18469;
 
    public Class3193(Class7665 var1, Class7929 var2) {
@@ -50,7 +50,7 @@ public class Class3193 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18467);
    }
 }

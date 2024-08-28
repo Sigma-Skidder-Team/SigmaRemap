@@ -593,7 +593,7 @@ public class Class878 extends PlayerEntity implements Class876 {
       for (int var6 = -2; var6 <= 2; var6++) {
          for (int var7 = -2; var7 <= 2; var7++) {
             for (int var8 = -1; var8 < 3; var8++) {
-               Class7380 var9 = var8 != -1 ? Class8487.field36387.method11579() : Class8487.field36527.method11579();
+               Class7380 var9 = var8 != -1 ? Blocks.AIR.method11579() : Blocks.field36527.method11579();
                var1.method6730(var5.method8374(var2).method8381(var7, var8, var6), var9);
             }
          }

@@ -57,7 +57,7 @@ public class Class7729 {
       method25567(Class2348.field16071, Class7144::method22294, var2);
       method25567(Class2348.field16075, Class3257::method11719, var2);
       method25567(Class2348.field16073, Class6069::method18819, var2);
-      method25567(Class2348.field16072, Class3209::method11566, var2);
+      method25567(Class2348.field16072, Block::method11566, var2);
       method25567(Class2348.field16080, var0 -> "stat." + var0.toString().replace(':', '.'), var2);
       method25568(var2);
       return var2;

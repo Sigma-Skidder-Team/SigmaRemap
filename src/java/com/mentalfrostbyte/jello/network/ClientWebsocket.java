@@ -25,18 +25,18 @@ public class ClientWebsocket extends Class344 {
     }
 
     @Override
-    public void method1759(String var1) {
+    public void handleIncomingAction(String var1) {
         JSONObject var4 = new JSONObject(var1);
 
         if (var4.has("action")) {
             switch (var4.getInt("action")) {
                 case 1:
-                    for (Method var8 : Handler.field24955.getClass().getDeclaredMethods()) {
+                    for (Method var8 : Handler.packetHandler.getClass().getDeclaredMethods()) {
                         if (var8.getParameterCount() == 4) {
                             var8.setAccessible(true);
 
                             try {
-                                var8.invoke(Handler.field24955, false, Class7232.method22709(String.valueOf(var4.getBoolean("variation"))), true, true);
+                                var8.invoke(Handler.packetHandler, false, Class7232.method22709(String.valueOf(var4.getBoolean("variation"))), true, true);
                             } catch (IllegalAccessException | IllegalArgumentException |
                                      InvocationTargetException var10) {
                                 var10.printStackTrace();

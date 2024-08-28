@@ -60,7 +60,7 @@ public class Class5340 extends Class5325 {
     private void method16758(Class4428 var1) {
         if (this.method15996()) {
             if (this.field23890 != null) {
-                if (field23386.field1355 instanceof Class1331) {
+                if (mc.field1355 instanceof Class1331) {
                     this.method16759(null);
                     Client.getInstance().getNotificationManager().post(new Notification("Auto Join", "Auto join was canceled.", 2500));
                 } else if (this.field23890.method22616()) {
@@ -84,7 +84,7 @@ public class Class5340 extends Class5325 {
                 String var4 = this.method15978("Type");
 
                 try {
-                    if (field23386.field1339.field5055 <= 3) {
+                    if (mc.field1339.field5055 <= 3) {
                         this.field23889.clear();
                     }
 

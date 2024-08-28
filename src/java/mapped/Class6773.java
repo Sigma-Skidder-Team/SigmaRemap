@@ -7,13 +7,13 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6773 extends Class6768<Class8278> {
-   private static final Class7380 field29495 = Class8487.field36730.method11579();
-   private static final Class7380 field29549 = Class8487.field36731.method11579();
-   private static final Class7380 field29550 = Class8487.field36794.method11579();
-   private static final Class7380 field29551 = Class8487.field36734.method11579();
-   private static final Class7380 field29552 = Class8487.field36742.method11579();
-   private static final Class7380 field29553 = Class8487.field36744.method11579();
-   private static final Class7380 field29554 = Class8487.field36738.method11579();
+   private static final Class7380 field29495 = Blocks.field36730.method11579();
+   private static final Class7380 field29549 = Blocks.field36731.method11579();
+   private static final Class7380 field29550 = Blocks.field36794.method11579();
+   private static final Class7380 field29551 = Blocks.field36734.method11579();
+   private static final Class7380 field29552 = Blocks.field36742.method11579();
+   private static final Class7380 field29553 = Blocks.field36744.method11579();
+   private static final Class7380 field29554 = Blocks.field36738.method11579();
    public Class7380[] field29555;
    public long field29556;
    public Class7691 field29557;
@@ -75,7 +75,7 @@ public class Class6773 extends Class6768<Class8278> {
                            var23 = var21;
                         }
                      } else {
-                        var19 = Class8487.field36387.method11579();
+                        var19 = Blocks.AIR.method11579();
                         var23 = var9;
                      }
 
@@ -86,23 +86,23 @@ public class Class6773 extends Class6768<Class8278> {
                      var26 = var24 + Math.max(0, var30 - var11);
                      if (var30 < var11 - 1) {
                         var2.method7061(var29, var23, false);
-                        Class3209 var33 = var23.method23383();
-                        if (var33 == Class8487.field36730
-                           || var33 == Class8487.field36731
-                           || var33 == Class8487.field36732
-                           || var33 == Class8487.field36733
-                           || var33 == Class8487.field36734
-                           || var33 == Class8487.field36735
-                           || var33 == Class8487.field36736
-                           || var33 == Class8487.field36737
-                           || var33 == Class8487.field36738
-                           || var33 == Class8487.field36739
-                           || var33 == Class8487.field36740
-                           || var33 == Class8487.field36741
-                           || var33 == Class8487.field36742
-                           || var33 == Class8487.field36743
-                           || var33 == Class8487.field36744
-                           || var33 == Class8487.field36745) {
+                        Block var33 = var23.method23383();
+                        if (var33 == Blocks.field36730
+                           || var33 == Blocks.field36731
+                           || var33 == Blocks.field36732
+                           || var33 == Blocks.field36733
+                           || var33 == Blocks.field36734
+                           || var33 == Blocks.field36735
+                           || var33 == Blocks.field36736
+                           || var33 == Blocks.field36737
+                           || var33 == Blocks.field36738
+                           || var33 == Blocks.field36739
+                           || var33 == Blocks.field36740
+                           || var33 == Blocks.field36741
+                           || var33 == Blocks.field36742
+                           || var33 == Blocks.field36743
+                           || var33 == Blocks.field36744
+                           || var33 == Blocks.field36745) {
                            var2.method7061(var29, field29549, false);
                         }
                      } else if (var30 <= var11 + 3 + var24) {

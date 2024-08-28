@@ -7,7 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
-import java.util.ArrayList;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
@@ -17,7 +17,7 @@ public class Class8031 {
    private static final Dynamic2CommandExceptionType field34511 = new Dynamic2CommandExceptionType(
       (var0, var1) -> new TranslationTextComponent("commands.fill.toobig", var0, var1)
    );
-   private static final Class164 field34512 = new Class164(Class8487.field36387.method11579(), Collections.<Class8550<?>>emptySet(), (Class39)null);
+   private static final Class164 field34512 = new Class164(Blocks.AIR.method11579(), Collections.<Class8550<?>>emptySet(), (Class39)null);
    private static final SimpleCommandExceptionType field34513 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.fill.failed"));
 
    public static void method27540(CommandDispatcher<Class6619> var0) {
@@ -142,7 +142,7 @@ public class Class8031 {
          }
 
          for (BlockPos var16 : var8) {
-            Class3209 var17 = var9.method6738(var16).method23383();
+            Block var17 = var9.method6738(var16).method23383();
             var9.method6964(var16, var17);
          }
 

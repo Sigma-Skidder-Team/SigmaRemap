@@ -43,7 +43,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
    public void accept(Consumer<Class7952> var1) {
       Class7952 var4 = Class7999.method27304()
          .method27308(
-            Class8487.field36892,
+            Blocks.field36892,
             new TranslationTextComponent("advancements.nether.root.title"),
             new TranslationTextComponent("advancements.nether.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/nether.png"),
@@ -78,7 +78,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7952 var6 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Class8487.field36642,
+            Blocks.field36642,
             new TranslationTextComponent("advancements.nether.find_fortress.title"),
             new TranslationTextComponent("advancements.nether.find_fortress.description"),
             (ResourceLocation)null,
@@ -125,7 +125,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7952 var7 = Class7999.method27304()
          .method27305(var6)
          .method27308(
-            Class8487.field36703,
+            Blocks.field36703,
             new TranslationTextComponent("advancements.nether.get_wither_skull.title"),
             new TranslationTextComponent("advancements.nether.get_wither_skull.description"),
             (ResourceLocation)null,
@@ -134,7 +134,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("wither_skull", Class4491.method14164(Class8487.field36703))
+         .method27312("wither_skull", Class4491.method14164(Blocks.field36703))
          .method27317(var1, "nether/get_wither_skull");
       Class7952 var8 = Class7999.method27304()
          .method27305(var7)
@@ -167,7 +167,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7952 var10 = Class7999.method27304()
          .method27305(var8)
          .method27308(
-            Class8487.field36665,
+            Blocks.field36665,
             new TranslationTextComponent("advancements.nether.create_beacon.title"),
             new TranslationTextComponent("advancements.nether.create_beacon.description"),
             (ResourceLocation)null,
@@ -181,7 +181,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var10)
          .method27308(
-            Class8487.field36665,
+            Blocks.field36665,
             new TranslationTextComponent("advancements.nether.create_full_beacon.title"),
             new TranslationTextComponent("advancements.nether.create_full_beacon.description"),
             (ResourceLocation)null,
@@ -329,7 +329,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          .method27312(
             "use_lodestone",
             Class4458.method14095(
-               Class8912.method32576().method32578(Class8831.method31929().method31930(Class8487.field37129).method31933()),
+               Class8912.method32576().method32578(Class8831.method31929().method31930(Blocks.field37129).method31933()),
                Class9735.method38146().method38147(Class8514.field37905)
             )
          )
@@ -366,11 +366,11 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
                Class8912.method32576()
                   .method32578(
                      Class8831.method31929()
-                        .method31930(Class8487.field37124)
+                        .method31930(Blocks.field37124)
                         .method31932(Class9178.method34325().method34327(Class3389.field19000, 4).method34330())
                         .method31933()
                   ),
-               Class9735.method38146().method38147(Class8487.field36587)
+               Class9735.method38146().method38147(Blocks.field36587)
             )
          )
          .method27317(var1, "nether/charge_respawn_anchor");
@@ -426,7 +426,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var16)
          .method27308(
-            Class8487.field36534,
+            Blocks.field36534,
             new TranslationTextComponent("advancements.nether.loot_bastion.title"),
             new TranslationTextComponent("advancements.nether.loot_bastion.description"),
             (ResourceLocation)null,

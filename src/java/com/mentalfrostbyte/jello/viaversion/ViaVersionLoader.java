@@ -80,7 +80,7 @@ public class ViaVersionLoader {
    @HigestPriority
    public void method23346(Class4398 var1) {
       if (this.mc.field1338 != null && this.mc.field1339 != null) {
-         Class3209 var4 = this.mc.field1338.method6738(var1.method13902()).method23383();
+         Block var4 = this.mc.field1338.method6738(var1.method13902()).method23383();
          if (Class8005.method27349() == Class5989.field26129.method18582() && var4 instanceof Class3411) {
             Class6408 var5 = Class8022.method27427(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
             var1.method13905(var5);

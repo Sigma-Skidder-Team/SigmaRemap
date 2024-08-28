@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3212 extends Class3209 {
+public class Class3212 extends Block {
    private static String[] field18621;
 
    public Class3212(Class7929 var1) {

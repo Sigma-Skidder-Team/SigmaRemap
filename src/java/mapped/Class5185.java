@@ -29,7 +29,7 @@ public class Class5185 extends Module {
 
     @EventTarget
     public void method16142(Class4428 var1) {
-        this.field23490 = Class9217.method34567(field23386.field1339.field5031, field23386.field1339.field5032, 200.0F);
+        this.field23490 = Class9217.method34567(mc.field1339.field5031, mc.field1339.field5032, 200.0F);
         if (this.field23491 != null && this.field23492 != null) {
             Client.getInstance()
                     .getNotificationManager()
@@ -45,9 +45,9 @@ public class Class5185 extends Module {
                 GL11.glPushMatrix();
                 GL11.glDisable(2929);
                 BlockPos var5 = this.field23490.method31423();
-                double var6 = (double) var5.method8304() - field23386.field1295.method768().method37504().method11320();
-                double var8 = (double) var5.getY() - field23386.field1295.method768().method37504().method11321();
-                double var10 = (double) var5.method8306() - field23386.field1295.method768().method37504().method11322();
+                double var6 = (double) var5.method8304() - mc.field1295.method768().method37504().method11320();
+                double var8 = (double) var5.getY() - mc.field1295.method768().method37504().method11321();
+                double var10 = (double) var5.method8306() - mc.field1295.method768().method37504().method11322();
                 Class9388 var12 = new Class9388(var6, var8, var10, var6 + 1.0, var8 + 1.0, var10 + 1.0);
                 Class3192.method11459(var12, var4);
                 GL11.glEnable(2929);

@@ -7,18 +7,18 @@ public class Class3369 extends Class3241 {
    public static final Class8553 field18943 = Class3198.field18484;
    public static final Class8552<Class85> field18944 = Class8820.field39725;
    public static final Class8551 field18945 = Class8820.field39704;
-   private static final Class6408 field18946 = Class3209.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
-   private static final Class6408 field18947 = Class3209.method11539(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
-   private static final Class6408 field18948 = Class3209.method11539(5.0, 6.0, 5.0, 11.0, 13.0, 11.0);
-   private static final Class6408 field18949 = Class3209.method11539(4.0, 4.0, 4.0, 12.0, 6.0, 12.0);
+   private static final Class6408 field18946 = Block.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
+   private static final Class6408 field18947 = Block.method11539(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+   private static final Class6408 field18948 = Block.method11539(5.0, 6.0, 5.0, 11.0, 13.0, 11.0);
+   private static final Class6408 field18949 = Block.method11539(4.0, 4.0, 4.0, 12.0, 6.0, 12.0);
    private static final Class6408 field18950 = Class8022.method27431(field18949, field18948);
-   private static final Class6408 field18951 = Class8022.method27431(field18950, Class3209.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 16.0));
-   private static final Class6408 field18952 = Class8022.method27431(field18950, Class3209.method11539(0.0, 13.0, 7.0, 16.0, 15.0, 9.0));
-   private static final Class6408 field18953 = Class8022.method27431(field18950, Class3209.method11539(0.0, 13.0, 7.0, 13.0, 15.0, 9.0));
-   private static final Class6408 field18954 = Class8022.method27431(field18950, Class3209.method11539(3.0, 13.0, 7.0, 16.0, 15.0, 9.0));
-   private static final Class6408 field18955 = Class8022.method27431(field18950, Class3209.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 13.0));
-   private static final Class6408 field18956 = Class8022.method27431(field18950, Class3209.method11539(7.0, 13.0, 3.0, 9.0, 15.0, 16.0));
-   private static final Class6408 field18957 = Class8022.method27431(field18950, Class3209.method11539(7.0, 13.0, 7.0, 9.0, 16.0, 9.0));
+   private static final Class6408 field18951 = Class8022.method27431(field18950, Block.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 16.0));
+   private static final Class6408 field18952 = Class8022.method27431(field18950, Block.method11539(0.0, 13.0, 7.0, 16.0, 15.0, 9.0));
+   private static final Class6408 field18953 = Class8022.method27431(field18950, Block.method11539(0.0, 13.0, 7.0, 13.0, 15.0, 9.0));
+   private static final Class6408 field18954 = Class8022.method27431(field18950, Block.method11539(3.0, 13.0, 7.0, 16.0, 15.0, 9.0));
+   private static final Class6408 field18955 = Class8022.method27431(field18950, Block.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 13.0));
+   private static final Class6408 field18956 = Class8022.method27431(field18950, Block.method11539(7.0, 13.0, 3.0, 9.0, 15.0, 16.0));
+   private static final Class6408 field18957 = Class8022.method27431(field18950, Block.method11539(7.0, 13.0, 7.0, 9.0, 16.0, 9.0));
 
    public Class3369(Class7929 var1) {
       super(var1);
@@ -32,7 +32,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method6780(var3);
       if (var9 != var1.<Boolean>method23463(field18945)) {
          if (var9) {
@@ -188,7 +188,7 @@ public class Class3369 extends Class3241 {
       Class85 var9 = var1.<Class85>method23463(field18944);
       Direction var10 = method11964(var1).method536();
       if (var10 == var2 && !var1.method23443(var4, var5) && var9 != Class85.field215) {
-         return Class8487.field36387.method11579();
+         return Blocks.AIR.method11579();
       } else {
          if (var2.method544() == var1.<Direction>method23463(field18943).method544()) {
             if (var9 == Class85.field215 && !var3.method23454(var4, var6, var2)) {
@@ -207,7 +207,7 @@ public class Class3369 extends Class3241 {
    @Override
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
       Direction var6 = method11964(var1).method536();
-      return var6 != Direction.field673 ? Class3200.method11508(var2, var3, var6) : Class3209.method11548(var2, var3.method8311(), Direction.field672);
+      return var6 != Direction.field673 ? Class3200.method11508(var2, var3, var6) : Block.method11548(var2, var3.method8311(), Direction.field672);
    }
 
    private static Direction method11964(Class7380 var0) {
@@ -227,7 +227,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18943, field18944, field18945);
    }
 

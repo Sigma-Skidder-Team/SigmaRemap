@@ -13,14 +13,14 @@ public class Class4880 extends Class4874<Class4479> {
    }
 
    public Class4479 method15047(JsonObject var1, Class9587 var2, Class9366 var3) {
-      Class3209 var6 = method15075(var1);
+      Block var6 = method15075(var1);
       Class8634 var7 = Class8634.method31017(var1.get("item"));
       Class8840 var8 = Class8840.method32016(var1.get("num_bees_inside"));
       return new Class4479(var2, var6, var7, var8);
    }
 
    @Nullable
-   private static Class3209 method15075(JsonObject var0) {
+   private static Block method15075(JsonObject var0) {
       if (!var0.has("block")) {
          return null;
       } else {
@@ -29,7 +29,7 @@ public class Class4880 extends Class4874<Class4479> {
       }
    }
 
-   public void method15076(Class878 var1, Class3209 var2, Class8848 var3, int var4) {
+   public void method15076(Class878 var1, Block var2, Class8848 var3, int var4) {
       this.method15053(var1, var3x -> var3x.method14140(var2, var3, var4));
    }
 

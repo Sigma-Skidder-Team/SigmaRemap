@@ -125,7 +125,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
          return false;
       } else {
          Class1674 var7 = this.method6722(var1);
-         Class3209 var8 = var2.method23383();
+         Block var8 = var2.method23383();
          Class7380 var9 = var7.method7061(var1, var2, (var3 & 64) != 0);
          if (var9 == null) {
             return false;
@@ -192,12 +192,12 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
       if (!var7.method23393()) {
          Class7379 var8 = this.method6739(var1);
          if (!(var7.method23383() instanceof Class3397)) {
-            this.method6999(2001, var1, Class3209.method11535(var7));
+            this.method6999(2001, var1, Block.method11535(var7));
          }
 
          if (var2) {
             Class944 var9 = !var7.method23383().method11998() ? null : this.method6759(var1);
-            Class3209.method11556(var7, this, var1, var9, var3, Class8848.field39973);
+            Block.method11556(var7, this, var1, var9, var3, Class8848.field39973);
          }
 
          return this.method6726(var1, var8.method23484(), 3, var4);
@@ -215,7 +215,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    public void method6732(BlockPos var1, Class7380 var2, Class7380 var3) {
    }
 
-   public void method6733(BlockPos var1, Class3209 var2) {
+   public void method6733(BlockPos var1, Block var2) {
       this.method6735(var1.method8345(), var2, var1);
       this.method6735(var1.method8347(), var2, var1);
       this.method6735(var1.method8313(), var2, var1);
@@ -224,7 +224,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
       this.method6735(var1.method8343(), var2, var1);
    }
 
-   public void method6734(BlockPos var1, Class3209 var2, Direction var3) {
+   public void method6734(BlockPos var1, Block var2, Direction var3) {
       if (var3 != Direction.WEST) {
          this.method6735(var1.method8345(), var2, var1);
       }
@@ -250,7 +250,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
       }
    }
 
-   public void method6735(BlockPos var1, Class3209 var2, BlockPos var3) {
+   public void method6735(BlockPos var1, Block var2, BlockPos var3) {
       if (!this.field9020) {
          Class7380 var6 = this.method6738(var1);
 
@@ -299,7 +299,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
          Class1674 var4 = this.method6824(var1.method8304() >> 4, var1.method8306() >> 4);
          return var4.method6738(var1);
       } else {
-         return Class8487.field37011.method11579();
+         return Blocks.field37011.method11579();
       }
    }
 
@@ -805,7 +805,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    public void method6786(Entity var1, byte var2) {
    }
 
-   public void method6787(BlockPos var1, Class3209 var2, int var3, int var4) {
+   public void method6787(BlockPos var1, Block var2, int var3, int var4) {
       this.method6738(var1).method23422(this, var1, var3, var4);
    }
 
@@ -896,16 +896,16 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
 
    public abstract Class6886 method6805();
 
-   public void method6806(BlockPos var1, Class3209 var2) {
+   public void method6806(BlockPos var1, Block var2) {
       for (Direction var6 : Class76.field161) {
          BlockPos var7 = var1.method8349(var6);
          if (this.method7017(var7)) {
             Class7380 var8 = this.method6738(var7);
-            if (!var8.method23448(Class8487.field36719)) {
+            if (!var8.method23448(Blocks.field36719)) {
                if (var8.method23400(this, var7)) {
                   var7 = var7.method8349(var6);
                   var8 = this.method6738(var7);
-                  if (var8.method23448(Class8487.field36719)) {
+                  if (var8.method23448(Blocks.field36719)) {
                      var8.method23423(this, var7, var2, var1, false);
                   }
                }

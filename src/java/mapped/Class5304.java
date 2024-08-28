@@ -28,16 +28,16 @@ public class Class5304 extends Module {
         this.field23837 = 0.0;
         this.field23839 = 0;
         this.field23838 = 0;
-        if (field23386.field1339.field5036 || Class5628.method17730(field23386.field1339, 0.001F)) {
-            this.field23840 = new Vector3d(field23386.field1339.getPosX(), field23386.field1339.getPosY(), field23386.field1339.getPosZ());
+        if (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F)) {
+            this.field23840 = new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ());
         }
     }
 
     @EventTarget
     private void method16664(Class4435 var1) {
         if (this.method15996()) {
-            if (field23386.field1339.field5036 || Class5628.method17730(field23386.field1339, 0.001F)) {
-                this.field23840 = new Vector3d(field23386.field1339.getPosX(), field23386.field1339.getPosY(), field23386.field1339.getPosZ());
+            if (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F)) {
+                this.field23840 = new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ());
             }
 
             if (this.field23839 <= 0) {
@@ -54,9 +54,9 @@ public class Class5304 extends Module {
                     var8 = true;
                 }
 
-                if (field23386.field1339.method3433().field18049 < -0.08 && !var8) {
-                    this.field23837 = this.field23837 - field23386.field1339.method3433().field18049;
-                } else if (field23386.field1339.field5036) {
+                if (mc.field1339.method3433().field18049 < -0.08 && !var8) {
+                    this.field23837 = this.field23837 - mc.field1339.method3433().field18049;
+                } else if (mc.field1339.field5036) {
                     this.field23837 = 0.0;
                 }
             } else {
@@ -95,11 +95,11 @@ public class Class5304 extends Module {
     }
 
     private boolean method16667() {
-        if (!(field23386.field1339.method3431().field18049 < 1.0)) {
-            if (!field23386.field1339.field5036) {
-                Class6488 var3 = field23386.field1339.field5035;
-                var3 = var3.method19662(0.0, -field23386.field1339.method3431().field18049, 0.0);
-                return field23386.field1338.method7055(field23386.field1339, var3).count() == 0L;
+        if (!(mc.field1339.method3431().field18049 < 1.0)) {
+            if (!mc.field1339.field5036) {
+                Class6488 var3 = mc.field1339.field5035;
+                var3 = var3.method19662(0.0, -mc.field1339.method3431().field18049, 0.0);
+                return mc.field1338.method7055(mc.field1339, var3).count() == 0L;
             } else {
                 return false;
             }
@@ -109,16 +109,16 @@ public class Class5304 extends Module {
     }
 
     private void method16668(String var1, Class4435 var2) {
-        double var5 = field23386.field1339.method3431().method11320();
-        double var7 = field23386.field1339.method3431().method11321();
-        double var9 = field23386.field1339.method3431().method11322();
+        double var5 = mc.field1339.method3431().method11320();
+        double var7 = mc.field1339.method3431().method11321();
+        double var9 = mc.field1339.method3431().method11322();
         if (var1.equals("Cubecraft") && !Class5628.method17718()) {
             var1 = "Motion";
         }
 
         switch (var1) {
             case "Hypixel":
-                field23386.getClientPlayNetHandler().sendPacket(new Class5605(0.0, -999.0, 0.0, true));
+                mc.getClientPlayNetHandler().sendPacket(new Class5605(0.0, -999.0, 0.0, true));
                 break;
             case "Motion":
                 var2.method13995(0.1);
@@ -126,7 +126,7 @@ public class Class5304 extends Module {
                 break;
             case "Cubecraft":
                 double var13 = 3.2E7;
-                field23386.getClientPlayNetHandler().sendPacket(new Class5605(var5, var13, var9, false));
+                mc.getClientPlayNetHandler().sendPacket(new Class5605(var5, var13, var9, false));
                 Client.getInstance().getModuleManager().method14662(Class5333.class).method15999(false);
                 break;
             case "Legit":

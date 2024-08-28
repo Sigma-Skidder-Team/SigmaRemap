@@ -19,7 +19,7 @@ public final class Class1669 implements Class1665 {
    @Override
    public Class7380 method6738(BlockPos var1) {
       int var4 = var1.getY();
-      return var4 >= 0 && var4 < this.field9087.length ? this.field9087[var4] : Class8487.field36387.method11579();
+      return var4 >= 0 && var4 < this.field9087.length ? this.field9087[var4] : Blocks.AIR.method11579();
    }
 
    @Override

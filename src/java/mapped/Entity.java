@@ -456,7 +456,7 @@ public abstract class Entity implements Class933, Class909 {
             this.method3435(var8.field18048, var8.field18049, 0.0);
          }
 
-         Class3209 var9 = var7.method23383();
+         Block var9 = var7.method23383();
          if (var2.field18049 != var25.field18049) {
             var9.method11568(this.field5024, this);
          }
@@ -511,7 +511,7 @@ public abstract class Entity implements Class933, Class909 {
          this.method3434(this.method3433().method11347((double)var20, 1.0, (double)var20));
          if (this.field5024
                .method7004(this.method3389().method19679(0.001))
-               .noneMatch(var0 -> var0.method23446(Class7645.field32798) || var0.method23448(Class8487.field36414))
+               .noneMatch(var0 -> var0.method23446(Class7645.field32798) || var0.method23448(Blocks.LAVA))
             && this.field5056 <= 0) {
             this.method2966(-this.method2865());
          }
@@ -533,7 +533,7 @@ public abstract class Entity implements Class933, Class909 {
       if (this.field5024.method6738(var6).method23393()) {
          BlockPos var7 = var6.method8313();
          Class7380 var8 = this.field5024.method6738(var7);
-         Class3209 var9 = var8.method23383();
+         Block var9 = var8.method23383();
          if (var9.method11540(Class7645.field32771) || var9.method11540(Class7645.field32764) || var9 instanceof Class3199) {
             return var7;
          }
@@ -549,9 +549,9 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public float method2977() {
-      Class3209 var3 = this.field5024.method6738(this.method3432()).method23383();
+      Block var3 = this.field5024.method6738(this.method3432()).method23383();
       float var4 = var3.method11572();
-      if (var3 != Class8487.field36413 && var3 != Class8487.field37013) {
+      if (var3 != Blocks.WATER && var3 != Blocks.field37013) {
          return (double)var4 != 1.0 ? var4 : this.field5024.method6738(this.method3230()).method23383().method11572();
       } else {
          return var4;
@@ -787,7 +787,7 @@ public abstract class Entity implements Class933, Class909 {
    public void method3241(BlockPos var1, Class7380 var2) {
       if (!var2.method23384().method31085()) {
          Class7380 var5 = this.field5024.method6738(var1.method8311());
-         Class8447 var6 = !var5.method23448(Class8487.field36571) ? var2.method23452() : var5.method23452();
+         Class8447 var6 = !var5.method23448(Blocks.SNOW) ? var2.method23452() : var5.method23452();
          this.method2863(var6.method29713(), var6.method29710() * 0.15F, var6.method29711());
       }
    }
@@ -869,7 +869,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    private boolean method3252() {
-      return this.field5024.method6738(this.method3432()).method23448(Class8487.field37013);
+      return this.field5024.method6738(this.method3432()).method23448(Blocks.field37013);
    }
 
    public boolean method3253() {

@@ -20,7 +20,7 @@ public class Class1691 implements Class1658 {
    private final Class6612 field9207;
    private final Random field9208;
    private final Class9535 field9209;
-   private final Class6802<Class3209> field9210 = new Class6803<Class3209>(var1x -> this.method7011(var1x).method7089());
+   private final Class6802<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).method7089());
    private final Class6802<Class7631> field9211 = new Class6803<Class7631>(var1x -> this.method7011(var1x).method7090());
    private final Class6668 field9212;
    private final Class7481 field9213;
@@ -148,10 +148,10 @@ public class Class1691 implements Class1658 {
       if (!var7.method23393()) {
          if (var2) {
             Class944 var8 = !var7.method23383().method11998() ? null : this.method6759(var1);
-            Class3209.method11556(var7, this.field9205, var1, var8, var3, Class8848.field39973);
+            Block.method11556(var7, this.field9205, var1, var8, var3, Class8848.field39973);
          }
 
-         return this.method6726(var1, Class8487.field36387.method11579(), 3, var4);
+         return this.method6726(var1, Blocks.AIR.method11579(), 3, var4);
       } else {
          return false;
       }
@@ -169,7 +169,7 @@ public class Class1691 implements Class1658 {
             if (!"DUMMY".equals(var6.method126("id"))) {
                var5 = Class944.method3772(var7, var6);
             } else {
-               Class3209 var8 = var7.method23383();
+               Block var8 = var7.method23383();
                if (!(var8 instanceof Class3245)) {
                   return null;
                }
@@ -201,7 +201,7 @@ public class Class1691 implements Class1658 {
          this.field9205.method6727(var1, var8, var2);
       }
 
-      Class3209 var9 = var2.method23383();
+      Block var9 = var2.method23383();
       if (!var9.method11998()) {
          if (var8 != null && var8.method23383().method11998()) {
             var7.method7081(var1);
@@ -238,7 +238,7 @@ public class Class1691 implements Class1658 {
 
    @Override
    public boolean method6728(BlockPos var1, boolean var2) {
-      return this.method6725(var1, Class8487.field36387.method11579(), 3);
+      return this.method6725(var1, Blocks.AIR.method11579(), 3);
    }
 
    @Override
@@ -287,7 +287,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class6802<Class3209> method6860() {
+   public Class6802<Block> method6860() {
       return this.field9210;
    }
 

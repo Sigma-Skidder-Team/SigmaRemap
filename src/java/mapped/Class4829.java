@@ -7,9 +7,9 @@ public class Class4829 {
    private Class1713 field22604;
 
    public void method14919() {
-      this.field22602[0] = Minecraft.getInstance().method1570().method1025().method38153(Class8487.field36414.method11579()).method22624();
+      this.field22602[0] = Minecraft.getInstance().method1570().method1025().method38153(Blocks.LAVA.method11579()).method22624();
       this.field22602[1] = Class8968.field40510.method26198();
-      this.field22603[0] = Minecraft.getInstance().method1570().method1025().method38153(Class8487.field36413.method11579()).method22624();
+      this.field22603[0] = Minecraft.getInstance().method1570().method1025().method38153(Blocks.WATER.method11579()).method22624();
       this.field22603[1] = Class8968.field40511.method26198();
       this.field22604 = Class8968.field40512.method26198();
    }
@@ -266,17 +266,17 @@ public class Class4829 {
 
                   if (var127) {
                      Class7380 var66 = var1.method6738(var121);
-                     Class3209 var67 = var66.method23383();
+                     Block var67 = var66.method23383();
                      boolean var68 = false;
                      if (Class9299.field42831.method20214()) {
                         var68 = Class9299.method35064(var66, Class9299.field42831, var1, var121, var4);
                      }
 
-                     if (var68 || var67 instanceof Class3231 || var67 instanceof Class3465 || var67 == Class8487.field36665) {
+                     if (var68 || var67 instanceof Class3231 || var67 instanceof Class3465 || var67 == Blocks.field36665) {
                         var122 = this.field22604;
                      }
 
-                     if (var67 == Class8487.field36540 || var67 == Class8487.field36885) {
+                     if (var67 == Blocks.field36540 || var67 == Blocks.field36885) {
                         var123 = 0.9375F;
                         var125 = 0.9375F;
                      }

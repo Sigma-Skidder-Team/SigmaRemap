@@ -58,7 +58,7 @@ public class Class2670 extends Class2595 {
 
       for (int var5 = 0; var5 < 10; var5++) {
          BlockPos var6 = var4.method8336(var3.nextInt(20) - 10, 2 - var3.nextInt(8), var3.nextInt(20) - 10);
-         if (this.field17053.method6738(var6).method23448(Class8487.field36413)) {
+         if (this.field17053.method6738(var6).method23448(Blocks.WATER)) {
             return Vector3d.method11330(var6);
          }
       }

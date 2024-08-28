@@ -17,12 +17,12 @@ public class Class3355 extends Class3241 {
    @Override
    public Class944 method11646(Class1665 var1) {
       Class969 var4 = new Class969();
-      var4.method4013(this == Class8487.field36888);
+      var4.method4013(this == Blocks.field36888);
       return var4;
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          Class944 var9 = var2.method6759(var3);
          if (var9 instanceof Class969) {
@@ -121,7 +121,7 @@ public class Class3355 extends Class3241 {
          if (!var1.field9020) {
             if (var5.method32145("BlockEntityTag") == null) {
                var10.method3570(var1.method6789().method17135(Class5462.field24236));
-               var9.method4013(this == Class8487.field36888);
+               var9.method4013(this == Blocks.field36888);
             }
 
             if (var9.method4020() == Class2037.field13323) {
@@ -148,7 +148,7 @@ public class Class3355 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18893, field18894);
    }
 
@@ -165,8 +165,8 @@ public class Class3355 extends Class3241 {
       while (var7-- > 0) {
          var5.method8379(var2);
          Class7380 var8 = var0.method6738(var5);
-         Class3209 var9 = var8.method23383();
-         if (!var8.method23448(Class8487.field36888)) {
+         Block var9 = var8.method23383();
+         if (!var8.method23448(Blocks.field36888)) {
             break;
          }
 

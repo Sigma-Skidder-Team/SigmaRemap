@@ -56,8 +56,8 @@ public class Class9753 {
 
    public static boolean method38322(Class7380 var0, Class7380 var1) {
       if (var0 != var1) {
-         Class3209 var4 = var0.method23383();
-         Class3209 var5 = var1.method23383();
+         Block var4 = var0.method23383();
+         Block var5 = var1.method23383();
          return var4 == var5;
       } else {
          return true;

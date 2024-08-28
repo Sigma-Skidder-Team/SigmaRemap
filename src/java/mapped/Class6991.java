@@ -66,10 +66,10 @@ public class Class6991 extends Class6990 {
    private int method21678() {
       if (this.field30243.method3250() && this.method21675()) {
          int var3 = Class9679.method37769(this.field30243.getPosY());
-         Class3209 var4 = this.field30244.method6738(new BlockPos(this.field30243.getPosX(), (double)var3, this.field30243.getPosZ())).method23383();
+         Block var4 = this.field30244.method6738(new BlockPos(this.field30243.getPosX(), (double)var3, this.field30243.getPosZ())).method23383();
          int var5 = 0;
 
-         while (var4 == Class8487.field36413) {
+         while (var4 == Blocks.WATER) {
             var4 = this.field30244.method6738(new BlockPos(this.field30243.getPosX(), (double)(++var3), this.field30243.getPosZ())).method23383();
             if (++var5 > 16) {
                return Class9679.method37769(this.field30243.getPosY());

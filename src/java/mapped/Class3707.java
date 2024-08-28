@@ -14,7 +14,7 @@ public class Class3707 extends Class3706 {
       if (var5.isPresent()) {
          Class9378 var6 = (Class9378)var5.get();
          Class7380 var7 = var1.method6738(var6.method35579());
-         if (var7.method23448(Class8487.field37115)) {
+         if (var7.method23448(Blocks.field37115)) {
             this.method12589(var2);
             this.method12587(var1, var2, var6, var7);
          }

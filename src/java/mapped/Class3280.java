@@ -6,9 +6,9 @@ import java.util.List;
 
 public class Class3280 extends Class3257 {
    private static String[] field18787;
-   private final Class3209 field18788;
+   private final Block field18788;
 
-   public Class3280(Class3209 var1, Class5643 var2) {
+   public Class3280(Block var1, Class5643 var2) {
       super(var2);
       this.field18788 = var1;
    }

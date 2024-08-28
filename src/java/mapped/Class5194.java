@@ -31,14 +31,14 @@ public class Class5194 extends Module {
     }
 
     private void method16177() {
-        if (this.method15996() && field23386.field1339 != null && !field23386.field1339.field4919.field29609) {
-            Class8848 var3 = field23386.field1339.method2943(Class2106.field13732);
+        if (this.method15996() && mc.field1339 != null && !mc.field1339.field4919.field29609) {
+            Class8848 var3 = mc.field1339.method2943(Class2106.field13732);
             if (var3.method32107() != Class8514.field38126) {
                 int var4 = Class7789.method25822(Class8514.field38126);
                 if (var4 != -1) {
-                    field23386.field1337.method23144(0, var4 >= 9 ? var4 : var4 + 36, 0, Class2259.field14694, field23386.field1339);
-                    field23386.field1337.method23144(0, 45, 0, Class2259.field14694, field23386.field1339);
-                    field23386.field1337.method23144(0, var4 >= 9 ? var4 : var4 + 36, 0, Class2259.field14694, field23386.field1339);
+                    mc.field1337.method23144(0, var4 >= 9 ? var4 : var4 + 36, 0, Class2259.field14694, mc.field1339);
+                    mc.field1337.method23144(0, 45, 0, Class2259.field14694, mc.field1339);
+                    mc.field1337.method23144(0, var4 >= 9 ? var4 : var4 + 36, 0, Class2259.field14694, mc.field1339);
                 }
             }
         }

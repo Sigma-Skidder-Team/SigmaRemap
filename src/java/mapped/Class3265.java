@@ -11,37 +11,37 @@ public class Class3265 extends Class3264 {
    private static final Set<Class8649> field18756 = Sets.newHashSet(
       new Class8649[]{Class8649.field38956, Class8649.field38957, Class8649.field38936, Class8649.field38938, Class8649.field38959, Class8649.field38973}
    );
-   private static final Set<Class3209> field18757 = Sets.newHashSet(
-      new Class3209[]{
-         Class8487.field36549,
-         Class8487.field37053,
-         Class8487.field36695,
-         Class8487.field36696,
-         Class8487.field36697,
-         Class8487.field36698,
-         Class8487.field36700,
-         Class8487.field36699,
-         Class8487.field37105,
-         Class8487.field37106
+   private static final Set<Block> field18757 = Sets.newHashSet(
+      new Block[]{
+         Blocks.field36549,
+         Blocks.field37053,
+         Blocks.field36695,
+         Blocks.field36696,
+         Blocks.field36697,
+         Blocks.field36698,
+         Blocks.field36700,
+         Blocks.field36699,
+         Blocks.field37105,
+         Blocks.field37106
       }
    );
-   public static final Map<Class3209, Class3209> field18758 = new Builder()
-      .put(Class8487.field36434, Class8487.field36440)
-      .put(Class8487.field36422, Class8487.field36433)
-      .put(Class8487.field36439, Class8487.field36445)
-      .put(Class8487.field36427, Class8487.field36432)
-      .put(Class8487.field36438, Class8487.field36444)
-      .put(Class8487.field36426, Class8487.field36431)
-      .put(Class8487.field36436, Class8487.field36442)
-      .put(Class8487.field36424, Class8487.field36429)
-      .put(Class8487.field36437, Class8487.field36443)
-      .put(Class8487.field36425, Class8487.field36430)
-      .put(Class8487.field36435, Class8487.field36441)
-      .put(Class8487.field36423, Class8487.field36428)
-      .put(Class8487.field37070, Class8487.field37071)
-      .put(Class8487.field37072, Class8487.field37073)
-      .put(Class8487.field37079, Class8487.field37080)
-      .put(Class8487.field37081, Class8487.field37082)
+   public static final Map<Block, Block> field18758 = new Builder()
+      .put(Blocks.field36434, Blocks.field36440)
+      .put(Blocks.field36422, Blocks.field36433)
+      .put(Blocks.field36439, Blocks.field36445)
+      .put(Blocks.field36427, Blocks.field36432)
+      .put(Blocks.field36438, Blocks.field36444)
+      .put(Blocks.field36426, Blocks.field36431)
+      .put(Blocks.field36436, Blocks.field36442)
+      .put(Blocks.field36424, Blocks.field36429)
+      .put(Blocks.field36437, Blocks.field36443)
+      .put(Blocks.field36425, Blocks.field36430)
+      .put(Blocks.field36435, Blocks.field36441)
+      .put(Blocks.field36423, Blocks.field36428)
+      .put(Blocks.field37070, Blocks.field37071)
+      .put(Blocks.field37072, Blocks.field37073)
+      .put(Blocks.field37079, Blocks.field37080)
+      .put(Blocks.field37081, Blocks.field37082)
       .build();
 
    public Class3265(Class2283 var1, float var2, float var3, Class5643 var4) {
@@ -59,7 +59,7 @@ public class Class3265 extends Class3264 {
       Class1655 var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
-      Class3209 var7 = field18758.get(var6.method23383());
+      Block var7 = field18758.get(var6.method23383());
       if (var7 == null) {
          return Class2274.field14820;
       } else {

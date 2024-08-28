@@ -38,7 +38,7 @@ public class Class5325 extends Module {
 
         for (Module var6 : this.field23878) {
             boolean var7 = this.method15978("Type").equals(var6.name);
-            if (this.method15996() && field23386.field1339 != null) {
+            if (this.method15996() && mc.field1339 != null) {
                 var6.setState(var7);
                 if (var7) {
                     this.field23879 = var6;
@@ -115,7 +115,7 @@ public class Class5325 extends Module {
         }
 
         JSONObject var18 = super.method15986(var1);
-        if (this.field23390) {
+        if (this.enabled) {
             this.method16724();
         }
 

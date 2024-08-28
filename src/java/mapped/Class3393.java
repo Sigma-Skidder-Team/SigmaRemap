@@ -25,19 +25,19 @@ public class Class3393 extends Class3392 {
    }
 
    public Class7380 method12004(Class1665 var1, BlockPos var2) {
-      Class3209 var5 = var1.method6738(var2.method8313()).method23383();
-      Class3209 var6 = var1.method6738(var2.method8311()).method23383();
-      Class3209 var7 = var1.method6738(var2.method8341()).method23383();
-      Class3209 var8 = var1.method6738(var2.method8347()).method23383();
-      Class3209 var9 = var1.method6738(var2.method8343()).method23383();
-      Class3209 var10 = var1.method6738(var2.method8345()).method23383();
+      Block var5 = var1.method6738(var2.method8313()).method23383();
+      Block var6 = var1.method6738(var2.method8311()).method23383();
+      Block var7 = var1.method6738(var2.method8341()).method23383();
+      Block var8 = var1.method6738(var2.method8347()).method23383();
+      Block var9 = var1.method6738(var2.method8343()).method23383();
+      Block var10 = var1.method6738(var2.method8345()).method23383();
       return this.method11579()
-         .method23465(field19024, Boolean.valueOf(var5 == this || var5 == Class8487.field36879 || var5 == Class8487.field36651))
-         .method23465(field19023, Boolean.valueOf(var6 == this || var6 == Class8487.field36879))
-         .method23465(field19019, Boolean.valueOf(var7 == this || var7 == Class8487.field36879))
-         .method23465(field19020, Boolean.valueOf(var8 == this || var8 == Class8487.field36879))
-         .method23465(field19021, Boolean.valueOf(var9 == this || var9 == Class8487.field36879))
-         .method23465(field19022, Boolean.valueOf(var10 == this || var10 == Class8487.field36879));
+         .method23465(field19024, Boolean.valueOf(var5 == this || var5 == Blocks.field36879 || var5 == Blocks.field36651))
+         .method23465(field19023, Boolean.valueOf(var6 == this || var6 == Blocks.field36879))
+         .method23465(field19019, Boolean.valueOf(var7 == this || var7 == Blocks.field36879))
+         .method23465(field19020, Boolean.valueOf(var8 == this || var8 == Blocks.field36879))
+         .method23465(field19021, Boolean.valueOf(var9 == this || var9 == Blocks.field36879))
+         .method23465(field19022, Boolean.valueOf(var10 == this || var10 == Blocks.field36879));
    }
 
    @Override
@@ -47,8 +47,8 @@ public class Class3393 extends Class3392 {
          return super.method11491(var1, var2, var3, var4, var5, var6);
       } else {
          boolean var9 = var3.method23383() == this
-            || var3.method23448(Class8487.field36879)
-            || var2 == Direction.field672 && var3.method23448(Class8487.field36651);
+            || var3.method23448(Blocks.field36879)
+            || var2 == Direction.field672 && var3.method23448(Blocks.field36651);
          return var1.method23465(field19025.get(var2), Boolean.valueOf(var9));
       }
    }
@@ -67,25 +67,25 @@ public class Class3393 extends Class3392 {
 
       for (Direction var9 : Class76.field161) {
          BlockPos var10 = var3.method8349(var9);
-         Class3209 var11 = var2.method6738(var10).method23383();
+         Block var11 = var2.method6738(var10).method23383();
          if (var11 == this) {
             if (var7) {
                return false;
             }
 
-            Class3209 var12 = var2.method6738(var10.method8313()).method23383();
-            if (var12 == this || var12 == Class8487.field36651) {
+            Block var12 = var2.method6738(var10.method8313()).method23383();
+            if (var12 == this || var12 == Blocks.field36651) {
                return true;
             }
          }
       }
 
-      Class3209 var13 = var6.method23383();
-      return var13 == this || var13 == Class8487.field36651;
+      Block var13 = var6.method23383();
+      return var13 == this || var13 == Blocks.field36651;
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19019, field19020, field19021, field19022, field19023, field19024);
    }
 

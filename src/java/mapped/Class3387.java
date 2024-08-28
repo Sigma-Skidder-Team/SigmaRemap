@@ -5,9 +5,9 @@ import javax.annotation.Nullable;
 public class Class3387 extends Class3386 implements Class3207 {
    private static String[] field18993;
    public static final Class8551 field18995 = Class8820.field39710;
-   public static final Class6408 field18996 = Class3209.method11539(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
-   public static final Class6408 field18997 = Class3209.method11539(6.5, 6.5, 0.0, 9.5, 9.5, 16.0);
-   public static final Class6408 field18998 = Class3209.method11539(0.0, 6.5, 6.5, 16.0, 9.5, 9.5);
+   public static final Class6408 field18996 = Block.method11539(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
+   public static final Class6408 field18997 = Block.method11539(6.5, 6.5, 0.0, 9.5, 9.5, 16.0);
+   public static final Class6408 field18998 = Block.method11539(0.0, 6.5, 6.5, 16.0, 9.5, 9.5);
 
    public Class3387(Class7929 var1) {
       super(var1);
@@ -45,7 +45,7 @@ public class Class3387 extends Class3386 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18995).method24737(field18994);
    }
 

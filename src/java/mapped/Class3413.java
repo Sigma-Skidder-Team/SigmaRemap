@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3413 extends Class3209 {
+public class Class3413 extends Block {
    private static String[] field19099;
    public static final Class8554 field19100 = Class8820.field39751;
    private static final Class6408 field19101 = method11539(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
@@ -99,9 +99,9 @@ public class Class3413 extends Class3209 {
 
                         return Class2274.method9002(var2.field9020);
                      } else if (var10 > 0 && var11 instanceof Class3292) {
-                        Class3209 var15 = ((Class3292)var11).method11845();
+                        Block var15 = ((Class3292)var11).method11845();
                         if (var15 instanceof Class3368 && !var2.method6714()) {
-                           Class8848 var13 = new Class8848(Class8487.field36896, 1);
+                           Class8848 var13 = new Class8848(Blocks.field36896, 1);
                            if (var9.method32141()) {
                               var13.method32148(var9.method32142().method79());
                            }
@@ -209,7 +209,7 @@ public class Class3413 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19100);
    }
 

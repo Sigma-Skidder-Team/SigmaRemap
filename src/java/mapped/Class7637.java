@@ -118,7 +118,7 @@ public abstract class Class7637 extends Class7633 {
 
    @Override
    public Class7380 method25063(Class7379 var1) {
-      return Class8487.field36414.method11579().method23465(Class3404.field19079, Integer.valueOf(method25094(var1)));
+      return Blocks.LAVA.method11579().method23465(Class3404.field19079, Integer.valueOf(method25094(var1)));
    }
 
    @Override
@@ -171,7 +171,7 @@ public abstract class Class7637 extends Class7633 {
          Class7379 var8 = var1.method6739(var2);
          if (this.method25067(Class8953.field40470) && var8.method23486(Class8953.field40469)) {
             if (var3.method23383() instanceof Class3404) {
-               var1.method6725(var2, Class8487.field36388.method11579(), 3);
+               var1.method6725(var2, Blocks.STONE.method11579(), 3);
             }
 
             this.method25104(var1, var2);

@@ -6,7 +6,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import java.util.Optional;
 
 public enum Class2150 {
-   field14055(new TranslationTextComponent("gameMode.creative"), "/gamemode creative", new Class8848(Class8487.field36395)),
+   field14055(new TranslationTextComponent("gameMode.creative"), "/gamemode creative", new Class8848(Blocks.field36395)),
    field14056(new TranslationTextComponent("gameMode.survival"), "/gamemode survival", new Class8848(Class8514.field37820)),
    field14057(new TranslationTextComponent("gameMode.adventure"), "/gamemode adventure", new Class8848(Class8514.field38056)),
    field14058(new TranslationTextComponent("gameMode.spectator"), "/gamemode spectator", new Class8848(Class8514.field37979));

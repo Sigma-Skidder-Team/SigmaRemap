@@ -16,7 +16,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
 
       Class3452 var9 = this.method12124();
       if (var2 == this.field19256) {
-         Class3209 var10 = var3.method23383();
+         Block var10 = var3.method23383();
          if (var10 != this && var10 != var9) {
             return var9.method12122(var4);
          }
@@ -57,7 +57,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    private Optional<BlockPos> method12126(Class1665 var1, BlockPos var2, Class7380 var3) {
       BlockPos var6 = var2;
 
-      Class3209 var7;
+      Block var7;
       do {
          var6 = var6.method8349(this.field19256);
          var7 = var1.method6738(var6).method23383();
@@ -73,7 +73,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public Class3209 method12125() {
+   public Block method12125() {
       return this;
    }
 }

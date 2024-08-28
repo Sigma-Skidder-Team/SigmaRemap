@@ -7,7 +7,7 @@ public class Class9537 {
    public static final Codec<Class9537> field44402 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Codec.intRange(0, 256).fieldOf("height").forGetter(Class9537::method36905),
-               Class2348.field16072.fieldOf("block").orElse(Class8487.field36387).forGetter(var0x -> var0x.method36906().method23383())
+               Class2348.field16072.fieldOf("block").orElse(Blocks.AIR).forGetter(var0x -> var0x.method36906().method23383())
             )
             .apply(var0, Class9537::new)
    );
@@ -15,7 +15,7 @@ public class Class9537 {
    private final int field44404;
    private int field44405;
 
-   public Class9537(int var1, Class3209 var2) {
+   public Class9537(int var1, Block var2) {
       this.field44404 = var1;
       this.field44403 = var2.method11579();
    }

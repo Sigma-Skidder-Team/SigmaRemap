@@ -545,7 +545,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       Class9736 var2 = this.method1553().method806();
       Class7202 var3 = var2.method38154().method1024();
 
-      for (Class3209 var5 : Class2348.field16072) {
+      for (Block var5 : Class2348.field16072) {
          UnmodifiableIterator var6 = var5.method11577().method35392().iterator();
 
          while (var6.hasNext()) {
@@ -562,7 +562,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
       Class1713 var13 = var3.method22624();
 
-      for (Class3209 var16 : Class2348.field16072) {
+      for (Block var16 : Class2348.field16072) {
          UnmodifiableIterator var18 = var16.method11577().method35392().iterator();
 
          while (var18.hasNext()) {
@@ -1809,7 +1809,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
             if (var4 == Class2100.field13690) {
                BlockPos var6 = ((Class8711)this.field1346).method31423();
                Class7380 var7 = this.field1338.method6738(var6);
-               Class3209 var8 = var7.method23383();
+               Block var8 = var7.method23383();
                if (var7.method23393()) {
                   return;
                }

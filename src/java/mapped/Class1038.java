@@ -410,7 +410,7 @@ public class Class1038 extends Class1009 {
          int var15 = var13.get(ChronoField.DAY_OF_MONTH);
          int var16 = var13.get(ChronoField.MONTH_OF_YEAR);
          if (var16 == 10 && var15 == 31 && this.field5054.nextFloat() < 0.25F) {
-            this.method2944(Class2106.field13736, new Class8848(!(this.field5054.nextFloat() < 0.1F) ? Class8487.field36589 : Class8487.field36590));
+            this.method2944(Class2106.field13736, new Class8848(!(this.field5054.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
             this.field5607[Class2106.field13736.method8773()] = 0.0F;
          }
       }

@@ -2,7 +2,6 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import java.util.EnumSet;
-import java.util.HashSet;
 import java.util.Set;
 import javax.annotation.Nullable;
 
@@ -28,9 +27,9 @@ public class Class6763 extends Class6762 {
          var3 = Class9679.method37769(this.field29476.getPosY());
          Mutable var4 = new Mutable(this.field29476.getPosX(), (double)var3, this.field29476.getPosZ());
 
-         for (Class3209 var5 = this.field29475.method6738(var4).method23383();
-            var5 == Class8487.field36413;
-            var5 = this.field29475.method6738(var4).method23383()
+         for (Block var5 = this.field29475.method6738(var4).method23383();
+              var5 == Blocks.WATER;
+              var5 = this.field29475.method6738(var4).method23383()
          ) {
             var4.method8373(this.field29476.getPosX(), (double)(++var3), this.field29476.getPosZ());
          }
@@ -303,7 +302,7 @@ public class Class6763 extends Class6762 {
       if (var8 == Class2163.field14185 && var3 >= 1) {
          Class7380 var9 = var1.method6738(var7.method8372(var2, var3 - 1, var4));
          Class2163 var10 = method20635(var1, var7.method8372(var2, var3 - 1, var4));
-         if (var10 == Class2163.field14196 || var9.method23448(Class8487.field36890) || var10 == Class2163.field14190 || var9.method23446(Class7645.field32809)
+         if (var10 == Class2163.field14196 || var9.method23448(Blocks.field36890) || var10 == Class2163.field14190 || var9.method23446(Class7645.field32809)
             )
           {
             var8 = Class2163.field14196;

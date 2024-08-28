@@ -13,7 +13,7 @@ public abstract class Class1068 extends Class1018 implements Class1073, Class107
    private static final Class120 field5881 = Class120.method339(
       Class8514.field37842,
       Class8514.field37936,
-      Class8487.field36777.method11581(),
+      Blocks.field36777.method11581(),
       Class8514.field37795,
       Class8514.field38057,
       Class8514.field37872,
@@ -298,7 +298,7 @@ public abstract class Class1068 extends Class1018 implements Class1073, Class107
       if (!var2.method23384().method31085()) {
          Class7380 var5 = this.field5024.method6738(var1.method8311());
          Class8447 var6 = var2.method23452();
-         if (var5.method23448(Class8487.field36571)) {
+         if (var5.method23448(Blocks.SNOW)) {
             var6 = var5.method23452();
          }
 
@@ -371,7 +371,7 @@ public abstract class Class1068 extends Class1018 implements Class1073, Class107
       Class3257 var9 = var2.method32107();
       if (var9 != Class8514.field37842) {
          if (var9 != Class8514.field37936) {
-            if (var9 != Class8487.field36777.method11581()) {
+            if (var9 != Blocks.field36777.method11581()) {
                if (var9 != Class8514.field37795) {
                   if (var9 != Class8514.field38057) {
                      if (var9 == Class8514.field37872 || var9 == Class8514.field37873) {
@@ -493,7 +493,7 @@ public abstract class Class1068 extends Class1018 implements Class1073, Class107
             if (!this.method4938()
                && !this.method3329()
                && this.field5054.nextInt(300) == 0
-               && this.field5024.method6738(this.method3432().method8313()).method23448(Class8487.field36395)) {
+               && this.field5024.method6738(this.method3432().method8313()).method23448(Blocks.field36395)) {
                this.method4956(true);
             }
 

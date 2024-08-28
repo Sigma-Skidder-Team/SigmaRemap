@@ -30,9 +30,9 @@ public class Class5203 extends Module {
                 var1.method13900(true);
             }
 
-            if (field23386.field1339 != null && var1.method13898() instanceof Class5590) {
+            if (mc.field1339 != null && var1.method13898() instanceof Class5590) {
                 Class5590 var5 = (Class5590) var1.method13898();
-                if (var5.method17565() == field23386.field1339.method3205()) {
+                if (var5.method17565() == mc.field1339.method3205()) {
                     this.field23518.add(var5);
                     var1.method13900(true);
                     if (this.field23519 == 0) {
@@ -74,14 +74,14 @@ public class Class5203 extends Module {
                     var5.field24473 = var5.field24473 * this.method15977("H-Multiplier");
                     var5.field24475 = var5.field24475 * this.method15977("H-Multiplier");
                     var5.field24474 = var5.field24474 * this.method15977("V-Multiplier");
-                    field23386.getClientPlayNetHandler().method15720(var5);
+                    mc.getClientPlayNetHandler().method15720(var5);
                 }
             } else {
                 Class5590 var6 = (Class5590) var4;
                 var6.field24801 = (int) ((float) var6.field24801 * this.method15977("H-Multiplier"));
                 var6.field24803 = (int) ((float) var6.field24803 * this.method15977("H-Multiplier"));
                 var6.field24802 = (int) ((float) var6.field24802 * this.method15977("V-Multiplier"));
-                field23386.getClientPlayNetHandler().method15739(var6);
+                mc.getClientPlayNetHandler().method15739(var6);
             }
         }
 

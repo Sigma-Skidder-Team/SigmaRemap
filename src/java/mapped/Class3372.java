@@ -4,7 +4,7 @@ public class Class3372 extends Class3241 {
    private static String[] field18962;
    public static final Class8554 field18963 = Class8820.field39759;
    public static final Class8551 field18964 = Class8820.field39697;
-   public static final Class6408 field18965 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0);
+   public static final Class6408 field18965 = Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0);
 
    public Class3372(Class7929 var1) {
       super(var1);
@@ -78,7 +78,7 @@ public class Class3372 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18963, field18964);
    }
 }

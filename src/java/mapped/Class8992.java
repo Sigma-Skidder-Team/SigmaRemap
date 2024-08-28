@@ -99,7 +99,7 @@ public class Class8992<T extends Entity> {
       "firework_rocket", Class8878.<Class888>method32299(Class888::new, Class179.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
    );
    public static final Class8992<Class1095> field41033 = method33197(
-      "fox", Class8878.<Class1095>method32299(Class1095::new, Class179.field624).method32301(0.6F, 0.7F).method32307(8).method32305(Class8487.field37069)
+      "fox", Class8878.<Class1095>method32299(Class1095::new, Class179.field624).method32301(0.6F, 0.7F).method32307(8).method32305(Blocks.field37069)
    );
    public static final Class8992<Class1112> field41034 = method33197(
       "ghast", Class8878.<Class1112>method32299(Class1112::new, Class179.field623).method32304().method32301(4.0F, 4.0F).method32307(10)
@@ -311,7 +311,7 @@ public class Class8992<T extends Entity> {
       "wither",
       Class8878.<Class1079>method32299(Class1079::new, Class179.field623)
          .method32304()
-         .method32305(Class8487.field36517)
+         .method32305(Blocks.field36517)
          .method32301(0.9F, 3.5F)
          .method32307(10)
    );
@@ -319,7 +319,7 @@ public class Class8992<T extends Entity> {
       "wither_skeleton",
       Class8878.<Class1084>method32299(Class1084::new, Class179.field623)
          .method32304()
-         .method32305(Class8487.field36517)
+         .method32305(Blocks.field36517)
          .method32301(0.7F, 2.4F)
          .method32307(8)
    );
@@ -352,7 +352,7 @@ public class Class8992<T extends Entity> {
    );
    private final Class9283<T> field41113;
    private final Class179 field41114;
-   private final ImmutableSet<Class3209> field41115;
+   private final ImmutableSet<Block> field41115;
    private final boolean field41116;
    private final boolean field41117;
    private final boolean field41118;
@@ -383,7 +383,7 @@ public class Class8992<T extends Entity> {
       boolean var4,
       boolean var5,
       boolean var6,
-      ImmutableSet<Class3209> var7,
+      ImmutableSet<Block> var7,
       Class8847 var8,
       int var9,
       int var10
@@ -570,10 +570,10 @@ public class Class8992<T extends Entity> {
       } else {
          return this.field41118
                || !var1.method23446(Class7645.field32798)
-                  && !var1.method23448(Class8487.field36890)
+                  && !var1.method23448(Blocks.field36890)
                   && !Class3244.method11655(var1)
-                  && !var1.method23448(Class8487.field36414)
-            ? var1.method23448(Class8487.field36517) || var1.method23448(Class8487.field37069) || var1.method23448(Class8487.field36574)
+                  && !var1.method23448(Blocks.LAVA)
+            ? var1.method23448(Blocks.field36517) || var1.method23448(Blocks.field37069) || var1.method23448(Blocks.CACTUS)
             : true;
       }
    }

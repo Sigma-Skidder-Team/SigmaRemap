@@ -160,14 +160,14 @@ public class Class9422 {
       if (var3 == Direction.field673 || var3 == Direction.field672) {
          return var4;
       } else if (field43707) {
-         Class3209 var7 = var1.method23383();
+         Block var7 = var1.method23383();
          if (var7 instanceof Class3474) {
             return method36149(var0, var1, var2, var3, var4);
          } else if (var7 instanceof Class3411) {
             return method36150(var0, var1, var2, var3, var4);
-         } else if (var7 == Class8487.field36398) {
+         } else if (var7 == Blocks.field36398) {
             return method36151(var0, var1, var2, var3, var4);
-         } else if (var7 != Class8487.field36396) {
+         } else if (var7 != Blocks.field36396) {
             return !(var7 instanceof Class3473) ? var4 : method36153(var0, var1, var2, var3, var4);
          } else {
             return method36152(var0, var1, var2, var3, var4);
@@ -178,8 +178,8 @@ public class Class9422 {
    }
 
    private static List method36149(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
-      Class3209 var7 = var0.method6738(var2.method8311()).method23383();
-      boolean var8 = var7 == Class8487.field36573 || var7 == Class8487.field36571;
+      Block var7 = var0.method6738(var2.method8311()).method23383();
+      boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Class7944.method26877()) {
          if (!var8) {
             if (field43687) {
@@ -189,10 +189,10 @@ public class Class9422 {
             return field43706.method22619(var1, var3, field43715);
          }
       } else if (!var8) {
-         if (field43687 && method36154(var2.method8313(), var3, var0) == Class8487.field36640) {
+         if (field43687 && method36154(var2.method8313(), var3, var0) == Blocks.field36640) {
             return field43704.method22619(var1, var3, field43715);
          }
-      } else if (field43690 && method36154(var2, var3, var0) == Class8487.field36571) {
+      } else if (field43690 && method36154(var2, var3, var0) == Blocks.SNOW) {
          return field43706.method22619(var1, var3, field43715);
       }
 
@@ -204,7 +204,7 @@ public class Class9422 {
          if (!Class7944.method26877()) {
             return field43702.method22619(var1, var3, field43715);
          } else {
-            return method36154(var2.method8313(), var3, var0) != Class8487.field36885 ? var4 : field43702.method22619(var1, var3, field43715);
+            return method36154(var2.method8313(), var3, var0) != Blocks.field36885 ? var4 : field43702.method22619(var1, var3, field43715);
          }
       } else {
          return var4;
@@ -212,8 +212,8 @@ public class Class9422 {
    }
 
    private static List method36151(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
-      Class3209 var7 = method36154(var2, Direction.field673, var0);
-      boolean var8 = var7 == Class8487.field36573 || var7 == Class8487.field36571;
+      Block var7 = method36154(var2, Direction.field673, var0);
+      boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Class7944.method26877()) {
          if (!var8) {
             if (field43688) {
@@ -226,11 +226,11 @@ public class Class9422 {
          if (field43688) {
             BlockPos var9 = var2.method8313().method8349(var3);
             Class7380 var10 = var0.method6738(var9);
-            if (var10.method23383() == Class8487.field36398) {
+            if (var10.method23383() == Blocks.field36398) {
                return field43705.method22619(var1, var3, field43715);
             }
          }
-      } else if (field43691 && method36154(var2, var3, var0) == Class8487.field36571) {
+      } else if (field43691 && method36154(var2, var3, var0) == Blocks.SNOW) {
          return field43706.method22619(var1, var3, field43715);
       }
 
@@ -238,15 +238,15 @@ public class Class9422 {
    }
 
    private static List method36152(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
-      Class3209 var7 = method36154(var2, Direction.field673, var0);
-      return var7 == Class8487.field36885 && field43686 && method36154(var2, var3, var0) == Class8487.field36885
+      Block var7 = method36154(var2, Direction.field673, var0);
+      return var7 == Blocks.field36885 && field43686 && method36154(var2, var3, var0) == Blocks.field36885
          ? field43703.method22619(var1, var3, field43715)
          : var4;
    }
 
    private static List method36153(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
-      Class3209 var7 = var0.method6738(var2.method8311()).method23383();
-      boolean var8 = var7 == Class8487.field36573 || var7 == Class8487.field36571;
+      Block var7 = var0.method6738(var2.method8311()).method23383();
+      boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Class7944.method26877()) {
          if (!var8) {
             if (field43685) {
@@ -256,17 +256,17 @@ public class Class9422 {
             return field43706.method22619(var1, var3, field43715);
          }
       } else if (!var8) {
-         if (field43685 && method36154(var2.method8313(), var3, var0) == Class8487.field36395) {
+         if (field43685 && method36154(var2.method8313(), var3, var0) == Blocks.field36395) {
             return field43701.method22619(var1, var3, field43715);
          }
-      } else if (field43689 && method36154(var2, var3, var0) == Class8487.field36571) {
+      } else if (field43689 && method36154(var2, var3, var0) == Blocks.SNOW) {
          return field43706.method22619(var1, var3, field43715);
       }
 
       return var4;
    }
 
-   private static Class3209 method36154(BlockPos var0, Direction var1, Class1665 var2) {
+   private static Block method36154(BlockPos var0, Direction var1, Class1665 var2) {
       BlockPos var5 = var0.method8349(var1);
       return var2.method6738(var5).method23383();
    }

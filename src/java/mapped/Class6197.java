@@ -6,32 +6,32 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6197 implements Class6196 {
-   private static final Set<Class3209> field27645 = Sets.newHashSet(
-      new Class3209[]{
-         Class8487.field36422,
-         Class8487.field36423,
-         Class8487.field36424,
-         Class8487.field36425,
-         Class8487.field36426,
-         Class8487.field36427,
-         Class8487.field37070,
-         Class8487.field37079,
-         Class8487.field36434,
-         Class8487.field36435,
-         Class8487.field36436,
-         Class8487.field36437,
-         Class8487.field36438,
-         Class8487.field36439,
-         Class8487.field37072,
-         Class8487.field37081,
-         Class8487.field36446,
-         Class8487.field36447,
-         Class8487.field36448,
-         Class8487.field36449,
-         Class8487.field36450,
-         Class8487.field36451,
-         Class8487.field36891,
-         Class8487.field37076
+   private static final Set<Block> field27645 = Sets.newHashSet(
+      new Block[]{
+         Blocks.field36422,
+         Blocks.field36423,
+         Blocks.field36424,
+         Blocks.field36425,
+         Blocks.field36426,
+         Blocks.field36427,
+         Blocks.field37070,
+         Blocks.field37079,
+         Blocks.field36434,
+         Blocks.field36435,
+         Blocks.field36436,
+         Blocks.field36437,
+         Blocks.field36438,
+         Blocks.field36439,
+         Blocks.field37072,
+         Blocks.field37081,
+         Blocks.field36446,
+         Blocks.field36447,
+         Blocks.field36448,
+         Blocks.field36449,
+         Blocks.field36450,
+         Blocks.field36451,
+         Blocks.field36891,
+         Blocks.field37076
       }
    );
    private static final ITextComponent field27646 = new TranslationTextComponent("tutorial.find_tree.title");
@@ -51,7 +51,7 @@ public class Class6197 implements Class6196 {
          if (this.field27650 == 1) {
             ClientPlayerEntity var3 = this.field27648.method37035().field1339;
             if (var3 != null) {
-               for (Class3209 var5 : field27645) {
+               for (Block var5 : field27645) {
                   if (var3.field4902.method4058(new Class8848(var5))) {
                      this.field27648.method37034(Class2200.field14380);
                      return;
@@ -94,7 +94,7 @@ public class Class6197 implements Class6196 {
 
    @Override
    public void method19104(Class8848 var1) {
-      for (Class3209 var5 : field27645) {
+      for (Block var5 : field27645) {
          if (var1.method32107() == var5.method11581()) {
             this.field27648.method37034(Class2200.field14380);
             return;
@@ -103,7 +103,7 @@ public class Class6197 implements Class6196 {
    }
 
    public static boolean method19105(ClientPlayerEntity var0) {
-      for (Class3209 var4 : field27645) {
+      for (Block var4 : field27645) {
          if (var0.method5396().method28961(Class8876.field40096.method172(var4)) > 0) {
             return true;
          }

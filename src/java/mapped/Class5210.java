@@ -33,7 +33,7 @@ public class Class5210 extends Module {
     @EventTarget
     public void method16226(Class4435 var1) {
         if (this.method15996()) {
-            if (!field23386.field1339.field5036) {
+            if (!mc.field1339.field5036) {
                 if (Class5628.method17686() && Class5351.field23907 >= 7) {
                     this.field23536++;
                     if (this.field23536 == 1) {
@@ -46,7 +46,7 @@ public class Class5210 extends Module {
                         }
                     }
 
-                    if (field23386.field1339.field5037) {
+                    if (mc.field1339.field5037) {
                         this.field23534 = Class9567.method37075();
                     }
 
@@ -54,10 +54,10 @@ public class Class5210 extends Module {
                 }
             } else if (this.method15974("Auto Jump") && Class5628.method17686()) {
                 this.field23536 = 0;
-                field23386.field1339.method2914();
-                var1.method13993(field23386.field1339.method3433().field18048);
-                var1.method13995(field23386.field1339.method3433().field18049);
-                var1.method13997(field23386.field1339.method3433().field18050);
+                mc.field1339.method2914();
+                var1.method13993(mc.field1339.method3433().field18048);
+                var1.method13995(mc.field1339.method3433().field18049);
+                var1.method13997(mc.field1339.method3433().field18050);
             } else if (var1.method13994() != 0.4 + (double) Class9567.method37079() * 0.1) {
                 this.field23537 = 0;
             } else {

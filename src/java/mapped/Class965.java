@@ -3,7 +3,6 @@ package mapped;
 import com.google.common.collect.Lists;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -103,7 +102,7 @@ public class Class965 extends Class944 {
       BlockPos var10 = this.method3774();
       List<Class4193> var11 = Lists.newArrayList();
       Class8969 var12 = new Class8969();
-      var12.method32889(var1, var10, new BlockPos(1, 1, 1), false, (Class3209)null);
+      var12.method32889(var1, var10, new BlockPos(1, 1, 1), false, (Block)null);
       Class7488 var13 = new Class7488(var12);
       Class4193 var14 = new Class4193(var7, var13, var10, 1, Class80.field185, new Class9764(var10, var10));
       Class8814.method31821(var1.method6867(), var14, var2, Class4193::new, var6, var7, var11, var9);

@@ -22,7 +22,7 @@ public class Class2899 extends Class2898<Class4699> {
             if (var12 * var12 + var13 * var13 <= var9 * var9) {
                for (int var14 = var4.getY() - var5.field22294; var14 <= var4.getY() + var5.field22294; var14++) {
                   BlockPos var15 = new BlockPos(var10, var14, var11);
-                  Class3209 var16 = var1.method6738(var15).method23383();
+                  Block var16 = var1.method6738(var15).method23383();
 
                   for (Class7380 var18 : var5.field22295) {
                      if (var18.method23448(var16)) {

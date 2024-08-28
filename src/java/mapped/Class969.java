@@ -81,7 +81,7 @@ public class Class969 extends Class944 {
    }
 
    private void method4015() {
-      Class3209 var3 = this.method3775().method23383();
+      Block var3 = this.method3775().method23383();
       if (var3 instanceof Class3355) {
          this.method4017();
          this.field5324.method6860().method20726(this.field5325, var3, 1);
@@ -117,9 +117,9 @@ public class Class969 extends Class944 {
 
    public Class2037 method4020() {
       Class7380 var3 = this.method3775();
-      if (!var3.method23448(Class8487.field36664)) {
-         if (!var3.method23448(Class8487.field36887)) {
-            return !var3.method23448(Class8487.field36888) ? Class2037.field13325 : Class2037.field13323;
+      if (!var3.method23448(Blocks.field36664)) {
+         if (!var3.method23448(Blocks.field36887)) {
+            return !var3.method23448(Blocks.field36888) ? Class2037.field13325 : Class2037.field13323;
          } else {
             return Class2037.field13324;
          }

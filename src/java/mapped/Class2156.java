@@ -4,12 +4,12 @@ public enum Class2156 {
    field14140 {
       @Override
       public boolean method8876(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
-         return Class3209.method11549(var1.method23416(var2, var3), var4);
+         return Block.method11549(var1.method23416(var2, var3), var4);
       }
    },
    field14141 {
       private final int field14144 = 1;
-      private final Class6408 field14145 = Class3209.method11539(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
+      private final Class6408 field14145 = Block.method11539(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
 
       @Override
       public boolean method8876(Class7380 class7380, Class1665 class1665, BlockPos var3, Direction var4) {
@@ -18,7 +18,7 @@ public enum Class2156 {
    },
    field14142 {
       private final int field14146 = 2;
-      private final Class6408 field14147 = Class8022.method27433(Class8022.method27426(), Class3209.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), Class9477.field44041);
+      private final Class6408 field14147 = Class8022.method27433(Class8022.method27426(), Block.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), Class9477.field44041);
 
       @Override
       public boolean method8876(Class7380 class7380, Class1665 class1665, BlockPos var3, Direction var4) {

@@ -15,7 +15,7 @@ public enum Class1666 implements Class1665 {
 
    @Override
    public Class7380 method6738(BlockPos var1) {
-      return Class8487.field36387.method11579();
+      return Blocks.AIR.method11579();
    }
 
    @Override

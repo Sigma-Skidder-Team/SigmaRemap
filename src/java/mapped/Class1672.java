@@ -32,7 +32,7 @@ public class Class1672 implements Class1670 {
    private final Map<Class2961<?>, Class5444<?>> field9101 = Maps.newHashMap();
    private final Map<Class2961<?>, LongSet> field9102 = Maps.newHashMap();
    private final Class8922 field9103;
-   private final Class6806<Class3209> field9104;
+   private final Class6806<Block> field9104;
    private final Class6806<Class7631> field9105;
    private long field9106;
    private final Map<Class97, BitSet> field9107 = new Object2ObjectArrayMap();
@@ -43,12 +43,12 @@ public class Class1672 implements Class1670 {
          var1,
          var2,
          (Class7038[])null,
-         new Class6806<Class3209>(var0 -> var0 == null || var0.method11579().method23393(), var1),
+         new Class6806<Block>(var0 -> var0 == null || var0.method11579().method23393(), var1),
          new Class6806<Class7631>(var0 -> var0 == null || var0 == Class9479.field44064, var1)
       );
    }
 
-   public Class1672(Class7481 var1, Class8922 var2, Class7038[] var3, Class6806<Class3209> var4, Class6806<Class7631> var5) {
+   public Class1672(Class7481 var1, Class8922 var2, Class7038[] var3, Class6806<Block> var4, Class6806<Class7631> var5) {
       this.field9089 = var1;
       this.field9103 = var2;
       this.field9104 = var4;
@@ -67,9 +67,9 @@ public class Class1672 implements Class1670 {
       int var4 = var1.getY();
       if (!Class1655.method6721(var4)) {
          Class7038 var5 = this.method7067()[var4 >> 4];
-         return !Class7038.method21859(var5) ? var5.method21852(var1.method8304() & 15, var4 & 15, var1.method8306() & 15) : Class8487.field36387.method11579();
+         return !Class7038.method21859(var5) ? var5.method21852(var1.method8304() & 15, var4 & 15, var1.method8306() & 15) : Blocks.AIR.method11579();
       } else {
-         return Class8487.field37011.method11579();
+         return Blocks.field37011.method11579();
       }
    }
 
@@ -114,7 +114,7 @@ public class Class1672 implements Class1670 {
       int var7 = var1.getY();
       int var8 = var1.method8306();
       if (var7 >= 0 && var7 < 256) {
-         if (this.field9097[var7 >> 4] == Class1674.field9111 && var2.method23448(Class8487.field36387)) {
+         if (this.field9097[var7 >> 4] == Class1674.field9111 && var2.method23448(Blocks.AIR)) {
             return var2;
          } else {
             if (var2.method23392() > 0) {
@@ -160,7 +160,7 @@ public class Class1672 implements Class1670 {
             return var10;
          }
       } else {
-         return Class8487.field37011.method11579();
+         return Blocks.field37011.method11579();
       }
    }
 
@@ -368,7 +368,7 @@ public class Class1672 implements Class1670 {
       Class1670.method7094(this.field9100, var2).add(var1);
    }
 
-   public Class6806<Class3209> method7089() {
+   public Class6806<Block> method7089() {
       return this.field9104;
    }
 

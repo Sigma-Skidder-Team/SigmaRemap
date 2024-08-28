@@ -26,16 +26,16 @@ public class Class5277 extends Module {
     @Override
     
     public void method15966() {
-        this.field23721 = (float) ((double) (field23386.field1283.method8043() - this.field23725.field41839) * Math.random());
-        this.field23722 = (float) ((double) (field23386.field1283.method8044() - this.field23725.field41840) * Math.random());
+        this.field23721 = (float) ((double) (mc.field1283.method8043() - this.field23725.field41839) * Math.random());
+        this.field23722 = (float) ((double) (mc.field1283.method8044() - this.field23725.field41840) * Math.random());
         this.method16513();
     }
 
     @EventTarget
     private void method16512(Class4415 var1) throws IOException {
-        if (this.method15996() && field23386.field1339 != null && field23386.field1338 != null) {
-            int var4 = field23386.field1283.method8044();
-            int var5 = field23386.field1283.method8043();
+        if (this.method15996() && mc.field1339 != null && mc.field1338 != null) {
+            int var4 = mc.field1283.method8044();
+            int var5 = mc.field1283.method8043();
             byte var6 = 2;
             if (!(this.field23722 <= (float) var6)) {
                 if (this.field23722 + (float) this.field23725.field41840 > (float) var4) {

@@ -6,7 +6,7 @@ import com.mojang.serialization.MapCodec;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Class7380 extends Class7377 {
-   public static final Codec<Class7380> field31585 = method23469(Class2348.field16072, Class3209::method11579).stable();
+   public static final Codec<Class7380> field31585 = method23469(Class2348.field16072, Block::method11579).stable();
    private int field31586 = -1;
    private int field31587 = -1;
    private ResourceLocation field31588;
@@ -61,7 +61,7 @@ public class Class7380 extends Class7377 {
       return this.field31577 != null && this.field31577.field28445;
    }
 
-   public Class7380(Class3209 var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7380> var3) {
+   public Class7380(Block var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7380> var3) {
       super(var1, var2, var3);
    }
 

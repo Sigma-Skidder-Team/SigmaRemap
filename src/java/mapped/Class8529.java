@@ -37,9 +37,9 @@ public final class Class8529 {
       .method29197()
       .method29198();
    public static final Class4697 field38320 = new Class4697(
-      Class7700.field33046, true, 4, 1, ImmutableSet.of(Class8487.field36388, Class8487.field36389, Class8487.field36391, Class8487.field36393)
+      Class7700.field33046, true, 4, 1, ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.field36393)
    );
-   public static final Class4697 field38321 = new Class4697(Class7700.field33046, false, 5, 0, ImmutableSet.of(Class8487.field36580));
+   public static final Class4697 field38321 = new Class4697(Class7700.field33046, false, 5, 0, ImmutableSet.of(Blocks.NETHERRACK));
    public static final Class4710 field38322 = new Class4710(
       new Class6699().method20427(Class7700.field33035, 87).method20427(Class7700.field33074, 11).method20427(Class7700.field33075, 1)
    );

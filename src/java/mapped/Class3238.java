@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 
 import java.util.Map;
 
-public class Class3238 extends Class3209 implements Class3207 {
+public class Class3238 extends Block implements Class3207 {
    private static String[] field18679;
    public static final Class8551 field18680 = Class3392.field19019;
    public static final Class8551 field18681 = Class3392.field19020;
@@ -39,11 +39,11 @@ public class Class3238 extends Class3209 implements Class3207 {
       float var9 = 8.0F + var1;
       float var10 = 8.0F - var2;
       float var11 = 8.0F + var2;
-      Class6408 var12 = Class3209.method11539((double)var8, 0.0, (double)var8, (double)var9, (double)var3, (double)var9);
-      Class6408 var13 = Class3209.method11539((double)var10, (double)var4, 0.0, (double)var11, (double)var5, (double)var11);
-      Class6408 var14 = Class3209.method11539((double)var10, (double)var4, (double)var10, (double)var11, (double)var5, 16.0);
-      Class6408 var15 = Class3209.method11539(0.0, (double)var4, (double)var10, (double)var11, (double)var5, (double)var11);
-      Class6408 var16 = Class3209.method11539((double)var10, (double)var4, (double)var10, 16.0, (double)var5, (double)var11);
+      Class6408 var12 = Block.method11539((double)var8, 0.0, (double)var8, (double)var9, (double)var3, (double)var9);
+      Class6408 var13 = Block.method11539((double)var10, (double)var4, 0.0, (double)var11, (double)var5, (double)var11);
+      Class6408 var14 = Block.method11539((double)var10, (double)var4, (double)var10, (double)var11, (double)var5, 16.0);
+      Class6408 var15 = Block.method11539(0.0, (double)var4, (double)var10, (double)var11, (double)var5, (double)var11);
+      Class6408 var16 = Block.method11539((double)var10, (double)var4, (double)var10, 16.0, (double)var5, (double)var11);
       Class6408 var17 = Class8022.method27431(var13, var16);
       Class6408 var18 = Class8022.method27431(var14, var15);
       Class6408[] var19 = new Class6408[]{

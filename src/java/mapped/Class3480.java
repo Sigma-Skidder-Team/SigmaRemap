@@ -6,14 +6,14 @@ public class Class3480 extends Class3194 implements Class3196 {
    private static String[] field19333;
    public static final Class8554 field19334 = Class8820.field39742;
    private static final Class6408[] field19335 = new Class6408[]{
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 10.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 10.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
    };
 
    public Class3480(Class7929 var1) {
@@ -28,7 +28,7 @@ public class Class3480 extends Class3194 implements Class3196 {
 
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      return var1.method23448(Class8487.field36540);
+      return var1.method23448(Blocks.field36540);
    }
 
    public Class8554 method12175() {
@@ -83,7 +83,7 @@ public class Class3480 extends Class3194 implements Class3196 {
       return Class9679.method37782(var1.field9016, 2, 5);
    }
 
-   public static float method12182(Class3209 var0, Class1665 var1, BlockPos var2) {
+   public static float method12182(Block var0, Class1665 var1, BlockPos var2) {
       float var5 = 1.0F;
       BlockPos var6 = var2.method8313();
 
@@ -91,7 +91,7 @@ public class Class3480 extends Class3194 implements Class3196 {
          for (int var8 = -1; var8 <= 1; var8++) {
             float var9 = 0.0F;
             Class7380 var10 = var1.method6738(var6.method8336(var7, 0, var8));
-            if (var10.method23448(Class8487.field36540)) {
+            if (var10.method23448(Blocks.field36540)) {
                var9 = 1.0F;
                if (var10.<Integer>method23463(Class3221.field18644) > 0) {
                   var9 = 3.0F;
@@ -166,7 +166,7 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19334);
    }
 }

@@ -20,7 +20,7 @@ public class Class3377 extends Class3231 {
 
          Class8649 var9 = var1.method6738(var3.method8313()).method23384();
          if (var9.method31087() || var9.method31085()) {
-            var1.method6730(var3, Class8487.field36413.method11579());
+            var1.method6730(var3, Blocks.WATER.method11579());
          }
       }
    }
@@ -34,8 +34,8 @@ public class Class3377 extends Class3231 {
 
    public void method11968(Class7380 var1, Class1655 var2, BlockPos var3) {
       if (!var2.method6812().method36877()) {
-         var2.method6730(var3, Class8487.field36413.method11579());
-         var2.method6735(var3, Class8487.field36413, var3);
+         var2.method6730(var3, Blocks.WATER.method11579());
+         var2.method6735(var3, Blocks.WATER, var3);
       } else {
          var2.method6728(var3, false);
       }

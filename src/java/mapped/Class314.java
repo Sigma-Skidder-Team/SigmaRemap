@@ -266,7 +266,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
 
             boolean var12 = false;
 
-            for (Class3209 var14 : Class7645.field32780.method24918()) {
+            for (Block var14 : Class7645.field32780.method24918()) {
                if (var8.method7206().contains(var14.method11579())) {
                   var12 = true;
                   break;

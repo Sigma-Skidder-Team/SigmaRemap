@@ -5,23 +5,23 @@ public class Class3199 extends Class3198 {
    public static final Class8551 field18486 = Class8820.field39702;
    public static final Class8551 field18487 = Class8820.field39704;
    public static final Class8551 field18488 = Class8820.field39698;
-   public static final Class6408 field18489 = Class3209.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
-   public static final Class6408 field18490 = Class3209.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
-   public static final Class6408 field18491 = Class3209.method11539(0.0, 0.0, 6.0, 16.0, 13.0, 10.0);
-   public static final Class6408 field18492 = Class3209.method11539(6.0, 0.0, 0.0, 10.0, 13.0, 16.0);
-   public static final Class6408 field18493 = Class3209.method11539(0.0, 0.0, 6.0, 16.0, 24.0, 10.0);
-   public static final Class6408 field18494 = Class3209.method11539(6.0, 0.0, 0.0, 10.0, 24.0, 16.0);
+   public static final Class6408 field18489 = Block.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
+   public static final Class6408 field18490 = Block.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
+   public static final Class6408 field18491 = Block.method11539(0.0, 0.0, 6.0, 16.0, 13.0, 10.0);
+   public static final Class6408 field18492 = Block.method11539(6.0, 0.0, 0.0, 10.0, 13.0, 16.0);
+   public static final Class6408 field18493 = Block.method11539(0.0, 0.0, 6.0, 16.0, 24.0, 10.0);
+   public static final Class6408 field18494 = Block.method11539(6.0, 0.0, 0.0, 10.0, 24.0, 16.0);
    public static final Class6408 field18495 = Class8022.method27431(
-      Class3209.method11539(0.0, 5.0, 7.0, 2.0, 16.0, 9.0), Class3209.method11539(14.0, 5.0, 7.0, 16.0, 16.0, 9.0)
+      Block.method11539(0.0, 5.0, 7.0, 2.0, 16.0, 9.0), Block.method11539(14.0, 5.0, 7.0, 16.0, 16.0, 9.0)
    );
    public static final Class6408 field18496 = Class8022.method27431(
-      Class3209.method11539(7.0, 5.0, 0.0, 9.0, 16.0, 2.0), Class3209.method11539(7.0, 5.0, 14.0, 9.0, 16.0, 16.0)
+      Block.method11539(7.0, 5.0, 0.0, 9.0, 16.0, 2.0), Block.method11539(7.0, 5.0, 14.0, 9.0, 16.0, 16.0)
    );
    public static final Class6408 field18497 = Class8022.method27431(
-      Class3209.method11539(0.0, 2.0, 7.0, 2.0, 13.0, 9.0), Class3209.method11539(14.0, 2.0, 7.0, 16.0, 13.0, 9.0)
+      Block.method11539(0.0, 2.0, 7.0, 2.0, 13.0, 9.0), Block.method11539(14.0, 2.0, 7.0, 16.0, 13.0, 9.0)
    );
    public static final Class6408 field18498 = Class8022.method27431(
-      Class3209.method11539(7.0, 2.0, 0.0, 9.0, 13.0, 2.0), Class3209.method11539(7.0, 2.0, 14.0, 9.0, 13.0, 16.0)
+      Block.method11539(7.0, 2.0, 0.0, 9.0, 13.0, 2.0), Block.method11539(7.0, 2.0, 14.0, 9.0, 13.0, 16.0)
    );
 
    public Class3199(Class7929 var1) {
@@ -128,7 +128,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          boolean var9 = var2.method6780(var3);
          if (var1.<Boolean>method23463(field18487) != var9) {
@@ -141,7 +141,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18484, field18486, field18487, field18488);
    }
 

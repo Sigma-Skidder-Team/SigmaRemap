@@ -28,7 +28,7 @@ public class Class2734 extends Class2595 {
       int var7 = Class9679.method37769(this.field17254.getPosZ() - 2.0 + var3.nextDouble() * 4.0);
       BlockPos var8 = new BlockPos(var5, var6, var7);
       Class7380 var9 = var4.method6738(var8);
-      Class3209 var10 = var9.method23383();
+      Block var10 = var9.method23383();
       Vector3d var11 = new Vector3d(
          (double)Class9679.method37769(this.field17254.getPosX()) + 0.5,
          (double)var6 + 0.5,

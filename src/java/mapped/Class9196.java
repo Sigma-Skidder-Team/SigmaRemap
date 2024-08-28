@@ -54,21 +54,21 @@ public class Class9196 {
       }
    }
 
-   private static boolean method34465(Class3209 var0) {
-      return var0 == Class8487.field36764 || var0 == Class8487.field37119;
+   private static boolean method34465(Block var0) {
+      return var0 == Blocks.field36764 || var0 == Blocks.field37119;
    }
 
-   private static boolean method34466(Class3209 var0, Class3209 var1) {
-      if (var0 == Class8487.field37119 && var1 == Class8487.field36764) {
+   private static boolean method34466(Block var0, Block var1) {
+      if (var0 == Blocks.field37119 && var1 == Blocks.field36764) {
          return false;
       } else {
-         return var0 == Class8487.field36764 && var1 == Class8487.field37119 ? false : method34465(var0) || method34465(var1);
+         return var0 == Blocks.field36764 && var1 == Blocks.field37119 ? false : method34465(var0) || method34465(var1);
       }
    }
 
    private boolean method34467(BlockPos var1, Direction var2) {
       Class7380 var5 = this.field42237.method6738(var1);
-      Class3209 var6 = var5.method23383();
+      Block var6 = var5.method23383();
       if (var5.method23393()) {
          return true;
       } else if (!Class3435.method12104(var5, this.field42237, var1, this.field42241, false, var2)) {
@@ -84,7 +84,7 @@ public class Class9196 {
          } else {
             while (method34465(var6)) {
                BlockPos var8 = var1.method8350(this.field42241.method536(), var7);
-               Class3209 var9 = var6;
+               Block var9 = var6;
                var5 = this.field42237.method6738(var8);
                var6 = var5.method23383();
                if (var5.method23393()

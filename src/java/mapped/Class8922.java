@@ -14,7 +14,7 @@ public class Class8922 {
    private static final Class1976[] field40389 = Class1976.values();
    private final EnumSet<Class1976> field40390 = EnumSet.<Class1976>noneOf(Class1976.class);
    private final int[][] field40391 = new int[16][];
-   private static final Map<Class3209, Class2234> field40392 = new IdentityHashMap<Class3209, Class2234>();
+   private static final Map<Block, Class2234> field40392 = new IdentityHashMap<Block, Class2234>();
    private static final Set<Class2234> field40393 = Sets.newHashSet();
 
    private Class8922() {
@@ -81,7 +81,7 @@ public class Class8922 {
                var23 = method32605(var23, var27, var4, var21, var19);
             }
 
-            Class3209.method11543(var22, var23, var4, var21, 18);
+            Block.method11543(var22, var23, var4, var21, 18);
          }
       }
    }
@@ -119,7 +119,7 @@ public class Class8922 {
                   }
                }
 
-               Class3209.method11543(var20, var21, var7, var4, 18);
+               Block.method11543(var20, var21, var7, var4, 18);
             }
          }
       }

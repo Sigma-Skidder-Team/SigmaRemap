@@ -7,13 +7,13 @@ import javax.annotation.Nullable;
 
 public class Class3218 extends Class3213 {
    public static final Class8553 field18627 = Class3198.field18484;
-   private static final Class6408 field18628 = Class3209.method11539(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
-   private static final Class6408 field18629 = Class3209.method11539(3.0, 4.0, 4.0, 13.0, 5.0, 12.0);
-   private static final Class6408 field18630 = Class3209.method11539(4.0, 5.0, 6.0, 12.0, 10.0, 10.0);
-   private static final Class6408 field18631 = Class3209.method11539(0.0, 10.0, 3.0, 16.0, 16.0, 13.0);
-   private static final Class6408 field18632 = Class3209.method11539(4.0, 4.0, 3.0, 12.0, 5.0, 13.0);
-   private static final Class6408 field18633 = Class3209.method11539(6.0, 5.0, 4.0, 10.0, 10.0, 12.0);
-   private static final Class6408 field18634 = Class3209.method11539(3.0, 10.0, 0.0, 13.0, 16.0, 16.0);
+   private static final Class6408 field18628 = Block.method11539(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
+   private static final Class6408 field18629 = Block.method11539(3.0, 4.0, 4.0, 13.0, 5.0, 12.0);
+   private static final Class6408 field18630 = Block.method11539(4.0, 5.0, 6.0, 12.0, 10.0, 10.0);
+   private static final Class6408 field18631 = Block.method11539(0.0, 10.0, 3.0, 16.0, 16.0, 13.0);
+   private static final Class6408 field18632 = Block.method11539(4.0, 4.0, 3.0, 12.0, 5.0, 13.0);
+   private static final Class6408 field18633 = Block.method11539(6.0, 5.0, 4.0, 10.0, 10.0, 12.0);
+   private static final Class6408 field18634 = Block.method11539(3.0, 10.0, 0.0, 13.0, 16.0, 16.0);
    private static final Class6408 field18635 = Class8022.method27432(field18628, field18629, field18630, field18631);
    private static final Class6408 field18636 = Class8022.method27432(field18628, field18632, field18633, field18634);
    private static final ITextComponent field18637 = new TranslationTextComponent("container.repair");
@@ -72,12 +72,12 @@ public class Class3218 extends Class3213 {
 
    @Nullable
    public static Class7380 method11607(Class7380 var0) {
-      if (!var0.method23448(Class8487.field36713)) {
-         return !var0.method23448(Class8487.field36714)
+      if (!var0.method23448(Blocks.field36713)) {
+         return !var0.method23448(Blocks.field36714)
             ? null
-            : Class8487.field36715.method11579().method23465(field18627, var0.<Direction>method23463(field18627));
+            : Blocks.field36715.method11579().method23465(field18627, var0.<Direction>method23463(field18627));
       } else {
-         return Class8487.field36714.method11579().method23465(field18627, var0.<Direction>method23463(field18627));
+         return Blocks.field36714.method11579().method23465(field18627, var0.<Direction>method23463(field18627));
       }
    }
 
@@ -87,7 +87,7 @@ public class Class3218 extends Class3213 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18627);
    }
 

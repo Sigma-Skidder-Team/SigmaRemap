@@ -64,7 +64,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (var1.<Boolean>method23463(field18987) == this.method11981(var2, var3, var1) && !var2.method6860().method20720(var3, this)) {
          var2.method6860().method20726(var3, this, 2);
       }
@@ -91,7 +91,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18987);
    }
 

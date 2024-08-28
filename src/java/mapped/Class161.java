@@ -6,10 +6,10 @@ import java.util.Set;
 
 public class Class161 implements Class122 {
    private static String[] field522;
-   private final Class3209 field523;
+   private final Block field523;
    private final Class7340 field524;
 
-   public Class161(Class3209 var1, Class7340 var2) {
+   public Class161(Block var1, Class7340 var2) {
       this.field523 = var1;
       this.field524 = var2;
    }
@@ -29,12 +29,12 @@ public class Class161 implements Class122 {
       return var4 != null && this.field523 == var4.method23383() && this.field524.method23258(var4);
    }
 
-   public static Class7520 method486(Class3209 var0) {
+   public static Class7520 method486(Block var0) {
       return new Class7520(var0);
    }
 
    // $VF: synthetic method
-   public static Class3209 method487(Class161 var0) {
+   public static Block method487(Class161 var0) {
       return var0.field523;
    }
 

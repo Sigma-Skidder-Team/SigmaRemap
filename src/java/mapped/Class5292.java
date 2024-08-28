@@ -42,8 +42,8 @@ public class Class5292 extends Module {
 
     @EventTarget
     public void method16622(Class4435 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
-            if (!field23386.field1339.field5036) {
+        if (this.method15996() && mc.field1339 != null) {
+            if (!mc.field1339.field5036) {
                 if (this.field23804 >= 0) {
                     if (this.field23807 && !Class5628.method17686()) {
                         this.field23807 = !this.field23807;
@@ -65,12 +65,12 @@ public class Class5292 extends Module {
                         this.field23803 -= 0.05;
                     }
 
-                    if (field23386.field1339.field5037) {
+                    if (mc.field1339.field5037) {
                         this.field23802 = 0.35;
                         this.field23805 = 1;
                     }
 
-                    if (field23386.field1339.field5038) {
+                    if (mc.field1339.field5038) {
                         this.field23803 = -0.078;
                         this.field23804 = 23;
                     }
@@ -99,11 +99,11 @@ public class Class5292 extends Module {
                 }
 
                 this.field23807 = Class5628.method17686();
-                BlockPos var4 = new BlockPos(field23386.field1339.getPosX(), field23386.field1339.getPosY() - 0.4, field23386.field1339.getPosZ());
+                BlockPos var4 = new BlockPos(mc.field1339.getPosX(), mc.field1339.getPosY() - 0.4, mc.field1339.getPosZ());
                 if (Class5628.method17686()
                         && (this.method16004().method15974("BorderJump") && !Class9217.method34578(var4) || this.method16004().method15974("Auto Jump"))) {
-                    field23386.field1339.method2914();
-                    var1.method13995(field23386.field1339.method3433().field18049);
+                    mc.field1339.method2914();
+                    var1.method13995(mc.field1339.method3433().field18049);
                     Class9567.method37088(var1, 0.0);
                 }
             }
@@ -112,9 +112,9 @@ public class Class5292 extends Module {
 
     @EventTarget
     public void method16623(Class4436 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             this.field23802 = 0.81 + (double) this.field23805 * 0.095;
-            if (field23386.field1339.getPosY() != (double) ((int) field23386.field1339.getPosY())) {
+            if (mc.field1339.getPosY() != (double) ((int) mc.field1339.getPosY())) {
                 this.field23802 = 0.52;
                 this.field23805 = 1;
             }
@@ -133,7 +133,7 @@ public class Class5292 extends Module {
 
     @EventTarget
     public void method16624(Class4396 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23804 = -1;
                 this.field23805 = 0;

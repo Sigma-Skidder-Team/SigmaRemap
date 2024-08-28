@@ -56,15 +56,15 @@ public class Class4183 extends Class4180 {
             var8.method4276(var3, var3.method6807(var2), Class2202.field14394, (Class5093)null, (Class39)null);
             var3.method6995(var8);
             if (var2.getY() <= var3.method6776()) {
-               var3.method6725(var2, Class8487.field36413.method11579(), 2);
+               var3.method6725(var2, Blocks.WATER.method11579(), 2);
             } else {
-               var3.method6725(var2, Class8487.field36387.method11579(), 2);
+               var3.method6725(var2, Blocks.AIR.method11579(), 2);
             }
          }
       } else {
          var3.method6725(
             var2,
-            Class8487.field36534.method11579().method23465(Class3348.field18867, Boolean.valueOf(var3.method6739(var2).method23486(Class8953.field40469))),
+            Blocks.field36534.method11579().method23465(Class3348.field18867, Boolean.valueOf(var3.method6739(var2).method23486(Class8953.field40469))),
             2
          );
          Class944 var9 = var3.method6759(var2);

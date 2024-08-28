@@ -33,7 +33,7 @@ public class Class5241 extends Module {
             boolean var4 = this.method15974("AutoJump");
             double var5 = Class9567.method37075();
             boolean var7 = Class5628.method17686();
-            if (!field23386.field1339.field5036) {
+            if (!mc.field1339.field5036) {
                 this.field23599++;
                 this.field23600 = 0.36 - (double) this.field23599 / 250.0;
                 if (this.field23600 < var5) {
@@ -43,8 +43,8 @@ public class Class5241 extends Module {
                 Class9567.method37088(var1, this.field23600);
             } else {
                 this.field23599 = 0;
-                field23386.field1339.method2914();
-                var1.method13995(field23386.field1339.method3433().field18049);
+                mc.field1339.method2914();
+                var1.method13995(mc.field1339.method3433().field18049);
             }
         }
     }

@@ -1,8 +1,8 @@
 package mapped;
 
-public abstract class Class3429 extends Class3209 {
-   public static final Class6408 field19187 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
-   public static final Class6408 field19188 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+public abstract class Class3429 extends Block {
+   public static final Class6408 field19187 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+   public static final Class6408 field19188 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
    private final boolean field19189;
 
    public static boolean method12086(Class1655 var0, BlockPos var1) {
@@ -50,7 +50,7 @@ public abstract class Class3429 extends Class3209 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020 && var2.method6738(var3).method23448(this)) {
          Class96 var9 = var1.<Class96>method23463(this.method12093());
          if (!method12090(var3, var2, var9)) {
@@ -81,7 +81,7 @@ public abstract class Class3429 extends Class3209 {
       }
    }
 
-   public void method12091(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4) {
+   public void method12091(Class7380 var1, Class1655 var2, BlockPos var3, Block var4) {
    }
 
    public Class7380 method12092(Class1655 var1, BlockPos var2, Class7380 var3, boolean var4) {

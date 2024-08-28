@@ -28,9 +28,9 @@ public class Class2912 extends Class2898<Class4712> {
                if (method11248(field17996.method8304(), field17996.method8306(), var11, var10) <= 16) {
                   var9.method8372(var11, field17996.getY(), var10);
                   if (!var9.equals(field17996)) {
-                     var1.method6725(var9, Class8487.field36388.method11579(), 2);
+                     var1.method6725(var9, Blocks.STONE.method11579(), 2);
                   } else {
-                     var1.method6725(var9, Class8487.field36399.method11579(), 2);
+                     var1.method6725(var9, Blocks.field36399.method11579(), 2);
                   }
                }
             }

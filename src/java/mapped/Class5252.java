@@ -15,14 +15,14 @@ public class Class5252 extends Module {
     @EventTarget
     private void method16373(Class4428 var1) {
         if (this.method15996()) {
-            if (field23386.field1339.method3090() != null
-                    && field23386.field1339.method3090().method32107() instanceof Class3263
-                    && field23386.field1339.field5036) {
+            if (mc.field1339.method3090() != null
+                    && mc.field1339.method3090().method32107() instanceof Class3263
+                    && mc.field1339.field5036) {
                 for (int var4 = 0; var4 < 25; var4++) {
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5603(true));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
                 }
 
-                field23386.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13489, BlockPos.field13032, Direction.field672));
+                mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13489, BlockPos.field13032, Direction.field672));
             }
         }
     }

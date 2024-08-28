@@ -6,8 +6,8 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class Class2908 extends Class2898<Class4738> {
-   private static final ImmutableList<Class3209> field17991 = ImmutableList.of(
-      Class8487.field36412, Class8487.field36642, Class8487.field36643, Class8487.field36644, Class8487.field36645, Class8487.field36534, Class8487.field36532
+   private static final ImmutableList<Block> field17991 = ImmutableList.of(
+      Blocks.BEDROCK, Blocks.field36642, Blocks.field36643, Blocks.field36644, Blocks.field36645, Blocks.field36534, Blocks.field36532
    );
    private static final Direction[] field17992 = Direction.values();
 

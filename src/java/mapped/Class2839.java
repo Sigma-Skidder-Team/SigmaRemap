@@ -7,7 +7,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
    public void accept(Consumer<Class7952> var1) {
       Class7952 var4 = Class7999.method27304()
          .method27308(
-            Class8487.field36395,
+            Blocks.field36395,
             new TranslationTextComponent("advancements.story.root.title"),
             new TranslationTextComponent("advancements.story.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/stone.png"),
@@ -16,7 +16,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             false,
             false
          )
-         .method27312("crafting_table", Class4491.method14164(Class8487.field36538))
+         .method27312("crafting_table", Class4491.method14164(Blocks.field36538))
          .method27317(var1, "story/root");
       Class7952 var5 = Class7999.method27304()
          .method27305(var4)
@@ -137,7 +137,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
       Class7952 var12 = Class7999.method27304()
          .method27305(var10)
          .method27308(
-            Class8487.field36527,
+            Blocks.field36527,
             new TranslationTextComponent("advancements.story.form_obsidian.title"),
             new TranslationTextComponent("advancements.story.form_obsidian.description"),
             (ResourceLocation)null,
@@ -146,7 +146,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("obsidian", Class4491.method14164(Class8487.field36527))
+         .method27312("obsidian", Class4491.method14164(Blocks.field36527))
          .method27317(var1, "story/form_obsidian");
       Class7999.method27304()
          .method27305(var11)
@@ -227,7 +227,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var14)
          .method27308(
-            Class8487.field36651,
+            Blocks.field36651,
             new TranslationTextComponent("advancements.story.enter_the_end.title"),
             new TranslationTextComponent("advancements.story.enter_the_end.description"),
             (ResourceLocation)null,

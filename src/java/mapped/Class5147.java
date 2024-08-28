@@ -9,19 +9,19 @@ import com.google.gson.JsonObject;
 import java.util.List;
 
 public class Class5147 implements Class5146 {
-   private final Class3209 field23370;
+   private final Block field23370;
    private final List<Class5144> field23371 = Lists.newArrayList();
 
-   private Class5147(Class3209 var1) {
+   private Class5147(Block var1) {
       this.field23370 = var1;
    }
 
    @Override
-   public Class3209 method15931() {
+   public Block method15931() {
       return this.field23370;
    }
 
-   public static Class5147 method15932(Class3209 var0) {
+   public static Class5147 method15932(Block var0) {
       return new Class5147(var0);
    }
 

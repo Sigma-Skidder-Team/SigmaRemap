@@ -238,7 +238,7 @@ public class Class6761 extends Class6762 {
                var8 = Class2163.field14185;
             }
 
-            if (var15 == Class2163.field14196 || var14.method23448(Class8487.field36890) || var14.method23446(Class7645.field32809)) {
+            if (var15 == Class2163.field14196 || var14.method23448(Blocks.field36890) || var14.method23446(Class7645.field32809)) {
                var8 = Class2163.field14196;
             }
 

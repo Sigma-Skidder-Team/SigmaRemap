@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3411 extends Class3209 {
+public class Class3411 extends Block {
    private static String[] field19094;
    public static final Class6408 field19095 = Class3221.field18645;
 
@@ -19,7 +19,7 @@ public class Class3411 extends Class3209 {
    public Class7380 method11495(Class5909 var1) {
       return this.method11579().method23443(var1.method18360(), var1.method18345())
          ? super.method11495(var1)
-         : Class3209.method11538(this.method11579(), Class8487.field36396.method11579(), var1.method18360(), var1.method18345());
+         : Block.method11538(this.method11579(), Blocks.field36396.method11579(), var1.method18360(), var1.method18345());
    }
 
    @Override

@@ -44,7 +44,7 @@ public class Class6290 extends Class6272<Class4715> {
       for (int var10 = var2; var10 >= 1; var10--) {
          var7.method8308(var10 - 1);
          Class7380 var11 = var0.method33300(var7);
-         if (!method19254(var11) && method19254(var9) && !var11.method23448(Class8487.field36412)) {
+         if (!method19254(var11) && method19254(var9) && !var11.method23448(Blocks.BEDROCK)) {
             if (var8 == var4) {
                return var7.getY() + 1;
             }
@@ -59,6 +59,6 @@ public class Class6290 extends Class6272<Class4715> {
    }
 
    private static boolean method19254(Class7380 var0) {
-      return var0.method23393() || var0.method23448(Class8487.field36413) || var0.method23448(Class8487.field36414);
+      return var0.method23393() || var0.method23448(Blocks.WATER) || var0.method23448(Blocks.LAVA);
    }
 }

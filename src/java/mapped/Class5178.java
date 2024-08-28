@@ -25,7 +25,7 @@ public class Class5178 extends Module {
     @Override
     public void method15965() {
         this.field23479 = false;
-        field23386.field1284.field40360 = 1.0F;
+        mc.field1284.field40360 = 1.0F;
         Class9567.method37090(Class9567.method37076() * 0.7);
     }
 
@@ -37,8 +37,8 @@ public class Class5178 extends Module {
 
     @EventTarget
     public void method16122(Class4435 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
-            if (field23386.field1339.field5036) {
+        if (this.method15996() && mc.field1339 != null) {
+            if (mc.field1339.field5036) {
                 this.field23478 = 0;
                 this.field23477++;
                 if (this.field23479 && var1.method13994() != 0.599 && this.method16004().method15974("Auto Disable")) {
@@ -47,18 +47,18 @@ public class Class5178 extends Module {
                     return;
                 }
 
-                BlockPos var4 = new BlockPos(field23386.field1339.getPosX(), field23386.field1339.getPosY() - 0.4, field23386.field1339.getPosZ());
+                BlockPos var4 = new BlockPos(mc.field1339.getPosX(), mc.field1339.getPosY() - 0.4, mc.field1339.getPosZ());
                 if (Class5330.field23887 > 1) {
                     if (this.method16004().method15974("BorderJump") && !Class9217.method34578(var4) && this.field23477 > 0 && Class5628.method17686()) {
-                        field23386.field1339.method2914();
-                        var1.method13993(field23386.field1339.method3433().field18048);
-                        var1.method13995(field23386.field1339.method3433().field18049);
-                        var1.method13997(field23386.field1339.method3433().field18050);
+                        mc.field1339.method2914();
+                        var1.method13993(mc.field1339.method3433().field18048);
+                        var1.method13995(mc.field1339.method3433().field18049);
+                        var1.method13997(mc.field1339.method3433().field18050);
                     } else if (this.method16004().method15974("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && Class5628.method17686()) {
-                        field23386.field1339.method2914();
-                        var1.method13993(field23386.field1339.method3433().field18048);
-                        var1.method13995(field23386.field1339.method3433().field18049);
-                        var1.method13997(field23386.field1339.method3433().field18050);
+                        mc.field1339.method2914();
+                        var1.method13993(mc.field1339.method3433().field18048);
+                        var1.method13995(mc.field1339.method3433().field18049);
+                        var1.method13997(mc.field1339.method3433().field18050);
                     }
                 }
             } else {
@@ -88,7 +88,7 @@ public class Class5178 extends Module {
                         }
                     }
 
-                    if (field23386.field1339.field5037 || !Class5628.method17686()) {
+                    if (mc.field1339.field5037 || !Class5628.method17686()) {
                         this.field23480 = var5;
                     }
 
@@ -104,7 +104,7 @@ public class Class5178 extends Module {
                                 if (Class5628.method17716()
                                         && Client.getInstance().getModuleManager().method14662(Class5199.class).method15996()
                                         && (this.field23478 == 8 || this.field23478 == 21)) {
-                                    double var9 = field23386.field1339.getPosY() + var1.method13994();
+                                    double var9 = mc.field1339.getPosY() + var1.method13994();
                                     double var11 = var9 - (double) ((int) (var9 + 0.001));
                                     if (Math.abs(var11) < 0.001) {
                                         var1.method13995(var1.method13994() - var11);
@@ -119,7 +119,7 @@ public class Class5178 extends Module {
                     }
                 }
 
-                if (this.field23477 == 1 && field23386.field1339.method3433().field18049 < 0.0 && this.method16004().method15974("Auto Jump")) {
+                if (this.field23477 == 1 && mc.field1339.method3433().field18049 < 0.0 && this.method16004().method15974("Auto Jump")) {
                     Class9567.method37088(var1, Class9567.method37076() * 0.2);
                 }
             }
@@ -130,7 +130,7 @@ public class Class5178 extends Module {
 
     @EventTarget
     public void method16123(Class4436 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             this.field23479 = true;
             this.field23480 = Class9567.method37076();
             var1.method14003(this.field23480);
@@ -146,18 +146,18 @@ public class Class5178 extends Module {
                     Class5628.method17749(true);
                 }
 
-                field23386.getClientPlayNetHandler()
+                mc.getClientPlayNetHandler()
                         .sendPacket(
-                                new Class5605(field23386.field1339.getPosX(), field23386.field1339.getPosY() + 0.425, field23386.field1339.getPosZ(), false)
+                                new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY() + 0.425, mc.field1339.getPosZ(), false)
                         );
-                field23386.getClientPlayNetHandler()
+                mc.getClientPlayNetHandler()
                         .sendPacket(
-                                new Class5605(field23386.field1339.getPosX(), field23386.field1339.getPosY() + 0.425 + 0.396, field23386.field1339.getPosZ(), false)
+                                new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY() + 0.425 + 0.396, mc.field1339.getPosZ(), false)
                         );
-                field23386.getClientPlayNetHandler()
+                mc.getClientPlayNetHandler()
                         .sendPacket(
                                 new Class5605(
-                                        field23386.field1339.getPosX(), field23386.field1339.getPosY() + 0.425 + 0.396 - 0.122, field23386.field1339.getPosZ(), false
+                                        mc.field1339.getPosX(), mc.field1339.getPosY() + 0.425 + 0.396 - 0.122, mc.field1339.getPosZ(), false
                                 )
                         );
             }

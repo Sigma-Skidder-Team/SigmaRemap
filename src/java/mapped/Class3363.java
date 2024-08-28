@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class3363 extends Class3241 {
    private static String[] field18929;
-   public static final Class6408 field18930 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+   public static final Class6408 field18930 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 
    public Class3363(Class7929 var1) {
       super(var1);
@@ -35,7 +35,7 @@ public class Class3363 extends Class3241 {
             if (var4.nextInt(16) == 0) {
                for (int var9 = 0; var9 <= 1; var9++) {
                   BlockPos var10 = var3.method8336(var7, var9, var8);
-                  if (var2.method6738(var10).method23448(Class8487.field36525)) {
+                  if (var2.method6738(var10).method23448(Blocks.field36525)) {
                      if (!var2.method7007(var3.method8336(var7 / 2, 0, var8 / 2))) {
                         break;
                      }

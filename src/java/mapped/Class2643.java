@@ -74,7 +74,7 @@ public class Class2643 extends Class2642 {
       if (this.field16982 == this.method10852() && this.method10853(this.field16974.field5024.method6997())) {
          this.field16974.field5024.method6728(this.field16975, false);
          this.field16974.field5024.method6999(1021, this.field16975, 0);
-         this.field16974.field5024.method6999(2001, this.field16975, Class3209.method11535(this.field16974.field5024.method6738(this.field16975)));
+         this.field16974.field5024.method6999(2001, this.field16975, Block.method11535(this.field16974.field5024.method6738(this.field16975)));
       }
    }
 

@@ -26,19 +26,19 @@ public class Class5213 extends Module {
     private void method16234(Class4399 var1) {
         if (this.method15996()) {
             boolean var4 = Client.getInstance().getModuleManager().method14662(Class5357.class).method15988();
-            boolean var5 = field23386.field1339.method3090() != null && field23386.field1339.method3090().method32107() instanceof Class3267;
+            boolean var5 = mc.field1339.method3090() != null && mc.field1339.method3090().method32107() instanceof Class3267;
             if (!var1.method13921()) {
-                if (var5 && field23386.field1299.field44642.method8509() && !this.field23540 && !var4 && this.method15978("Mode").equals("NCP")) {
+                if (var5 && mc.field1299.field44642.method8509() && !this.field23540 && !var4 && this.method15978("Mode").equals("NCP")) {
                     Class5628.method17733();
                     this.field23540 = true;
                 } else if (!var5 && this.field23540) {
                     this.field23540 = false;
                 }
             } else if (!this.method15978("Mode").equals("NCP")) {
-                if (this.field23540 && !field23386.field1299.field44642.method8509()) {
+                if (this.field23540 && !mc.field1299.field44642.method8509()) {
                     this.field23540 = false;
                 }
-            } else if (this.field23540 && field23386.field1299.field44642.method8509() && !var4) {
+            } else if (this.field23540 && mc.field1299.field44642.method8509() && !var4) {
                 if (var5) {
                     Class5628.method17734();
                 }

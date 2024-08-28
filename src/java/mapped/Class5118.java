@@ -20,7 +20,7 @@ public class Class5118 implements Class5119 {
 
       for (BlockPos var14 : BlockPos.method8359(var12.method8336(-6, -6, -6), var12.method8336(6, 6, 6))) {
          Class7380 var15 = var11.method6738(var14);
-         if (!var15.method23448(Class8487.field36387)) {
+         if (!var15.method23448(Blocks.AIR)) {
             Class6408 var16 = var15.method23412(var11, var14);
 
             for (Class6488 var18 : var16.method19521()) {

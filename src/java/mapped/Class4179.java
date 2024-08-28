@@ -26,12 +26,12 @@ public class Class4179 extends Class4178 {
       while (var11.getY() > 0) {
          Class7380 var12 = var1.method6738(var11);
          Class7380 var13 = var1.method6738(var11.method8313());
-         if (var13 == Class8487.field36458.method11579()
-            || var13 == Class8487.field36388.method11579()
-            || var13 == Class8487.field36393.method11579()
-            || var13 == Class8487.field36389.method11579()
-            || var13 == Class8487.field36391.method11579()) {
-            Class7380 var14 = !var12.method23393() && !this.method12942(var12) ? var12 : Class8487.field36415.method11579();
+         if (var13 == Blocks.field36458.method11579()
+            || var13 == Blocks.STONE.method11579()
+            || var13 == Blocks.field36393.method11579()
+            || var13 == Blocks.GRANITE.method11579()
+            || var13 == Blocks.DIORITE.method11579()) {
+            Class7380 var14 = !var12.method23393() && !this.method12942(var12) ? var12 : Blocks.SAND.method11579();
 
             for (Direction var18 : Direction.values()) {
                BlockPos var19 = var11.method8349(var18);
@@ -60,6 +60,6 @@ public class Class4179 extends Class4178 {
    }
 
    private boolean method12942(Class7380 var1) {
-      return var1 == Class8487.field36413.method11579() || var1 == Class8487.field36414.method11579();
+      return var1 == Blocks.WATER.method11579() || var1 == Blocks.LAVA.method11579();
    }
 }

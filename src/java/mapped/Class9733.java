@@ -199,7 +199,7 @@ public class Class9733 {
       for (Class9537 var9 : this.field45447) {
          for (int var6 = var9.method36907(); var6 < var9.method36907() + var9.method36905(); var6++) {
             Class7380 var7 = var9.method36906();
-            if (!var7.method23448(Class8487.field36387)) {
+            if (!var7.method23448(Blocks.AIR)) {
                this.field45450 = false;
                this.field45449[var6] = var7;
             }
@@ -213,9 +213,9 @@ public class Class9733 {
       );
       Class9733 var4 = new Class9733(var3, var0);
       var4.field45448 = () -> var0.method9189(Class9495.field44122);
-      var4.method38129().add(new Class9537(1, Class8487.field36412));
-      var4.method38129().add(new Class9537(2, Class8487.field36396));
-      var4.method38129().add(new Class9537(1, Class8487.field36395));
+      var4.method38129().add(new Class9537(1, Blocks.BEDROCK));
+      var4.method38129().add(new Class9537(2, Blocks.field36396));
+      var4.method38129().add(new Class9537(1, Blocks.field36395));
       var4.method38131();
       return var4;
    }

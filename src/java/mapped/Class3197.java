@@ -7,24 +7,24 @@ public class Class3197 extends Class3198 implements Class3196 {
    private static String[] field18478;
    public static final Class8554 field18479 = Class8820.field39739;
    public static final Class6408[] field18480 = new Class6408[]{
-      Class3209.method11539(11.0, 7.0, 6.0, 15.0, 12.0, 10.0),
-      Class3209.method11539(9.0, 5.0, 5.0, 15.0, 12.0, 11.0),
-      Class3209.method11539(7.0, 3.0, 4.0, 15.0, 12.0, 12.0)
+      Block.method11539(11.0, 7.0, 6.0, 15.0, 12.0, 10.0),
+      Block.method11539(9.0, 5.0, 5.0, 15.0, 12.0, 11.0),
+      Block.method11539(7.0, 3.0, 4.0, 15.0, 12.0, 12.0)
    };
    public static final Class6408[] field18481 = new Class6408[]{
-      Class3209.method11539(1.0, 7.0, 6.0, 5.0, 12.0, 10.0),
-      Class3209.method11539(1.0, 5.0, 5.0, 7.0, 12.0, 11.0),
-      Class3209.method11539(1.0, 3.0, 4.0, 9.0, 12.0, 12.0)
+      Block.method11539(1.0, 7.0, 6.0, 5.0, 12.0, 10.0),
+      Block.method11539(1.0, 5.0, 5.0, 7.0, 12.0, 11.0),
+      Block.method11539(1.0, 3.0, 4.0, 9.0, 12.0, 12.0)
    };
    public static final Class6408[] field18482 = new Class6408[]{
-      Class3209.method11539(6.0, 7.0, 1.0, 10.0, 12.0, 5.0),
-      Class3209.method11539(5.0, 5.0, 1.0, 11.0, 12.0, 7.0),
-      Class3209.method11539(4.0, 3.0, 1.0, 12.0, 12.0, 9.0)
+      Block.method11539(6.0, 7.0, 1.0, 10.0, 12.0, 5.0),
+      Block.method11539(5.0, 5.0, 1.0, 11.0, 12.0, 7.0),
+      Block.method11539(4.0, 3.0, 1.0, 12.0, 12.0, 9.0)
    };
    public static final Class6408[] field18483 = new Class6408[]{
-      Class3209.method11539(6.0, 7.0, 11.0, 10.0, 12.0, 15.0),
-      Class3209.method11539(5.0, 5.0, 9.0, 11.0, 12.0, 15.0),
-      Class3209.method11539(4.0, 3.0, 7.0, 12.0, 12.0, 15.0)
+      Block.method11539(6.0, 7.0, 11.0, 10.0, 12.0, 15.0),
+      Block.method11539(5.0, 5.0, 9.0, 11.0, 12.0, 15.0),
+      Block.method11539(4.0, 3.0, 7.0, 12.0, 12.0, 15.0)
    };
 
    public Class3197(Class7929 var1) {
@@ -49,7 +49,7 @@ public class Class3197 extends Class3198 implements Class3196 {
 
    @Override
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
-      Class3209 var6 = var2.method6738(var3.method8349(var1.<Direction>method23463(field18484))).method23383();
+      Block var6 = var2.method6738(var3.method8349(var1.<Direction>method23463(field18484))).method23383();
       return var6.method11540(Class7645.field32756);
    }
 
@@ -91,7 +91,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2 == var1.method23463(field18484) && !var1.method23443(var4, var5)
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
@@ -111,7 +111,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18484, field18479);
    }
 

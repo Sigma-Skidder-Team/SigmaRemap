@@ -13,11 +13,11 @@ public class Class5175 extends Module {
     @EventTarget
     private void method16107(Class4428 var1) {
         if (this.method15996()) {
-            if (field23386.field1337.field31362 > 0.7F) {
-                field23386.field1337.field31362 = 1.0F;
+            if (mc.field1337.field31362 > 0.7F) {
+                mc.field1337.field31362 = 1.0F;
             }
 
-            field23386.field1337.field31364 = 0;
+            mc.field1337.field31364 = 0;
         }
     }
 }

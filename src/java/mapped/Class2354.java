@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class Class2354 implements Iterable<Class7380> {
    private static String[] field16163;
-   public static final Class7380 field16164 = Class8487.field36387.method11579();
+   public static final Class7380 field16164 = Blocks.AIR.method11579();
    private final Class2352<Class7380> field16165 = new Class2352<Class7380>(16);
    private int field16166;
 

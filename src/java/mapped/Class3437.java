@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Class3437 extends Class3433 {
    private static String[] field19233;
-   public static final Class6408 field19234 = Class3209.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
-   public static final Class6408 field19235 = Class3209.method11539(6.0, 6.0, 0.0, 10.0, 10.0, 16.0);
-   public static final Class6408 field19236 = Class3209.method11539(0.0, 6.0, 6.0, 16.0, 10.0, 10.0);
+   public static final Class6408 field19234 = Block.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
+   public static final Class6408 field19235 = Block.method11539(6.0, 6.0, 0.0, 10.0, 10.0, 16.0);
+   public static final Class6408 field19236 = Block.method11539(0.0, 6.0, 6.0, 16.0, 10.0, 10.0);
 
    public Class3437(Class7929 var1) {
       super(var1);
@@ -66,7 +66,7 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19198);
    }
 

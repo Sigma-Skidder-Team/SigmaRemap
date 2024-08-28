@@ -28,15 +28,15 @@ public class Class5174 extends Module {
         Class5628.method17725(-0.08);
         double var3 = Class9567.method37075();
         Class9567.method37090(var3);
-        field23386.field1284.field40360 = 1.0F;
+        mc.field1284.field40360 = 1.0F;
     }
 
     @EventTarget
     private void method16104(Class4429 var1) {
-        if (this.method15996() && (field23386.field1339.method3331() || !this.method16004().method15974("Sneak"))) {
+        if (this.method15996() && (mc.field1339.method3331() || !this.method16004().method15974("Sneak"))) {
             if (var1.method13976() == Class2116.field13791) {
                 Class8711 var4 = Class9217.method34567(
-                        field23386.field1339.field5031, field23386.field1339.field5032, this.method16004().method15977("Maximum range")
+                        mc.field1339.field5031, mc.field1339.field5032, this.method16004().method15977("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
@@ -48,7 +48,7 @@ public class Class5174 extends Module {
                 }
 
                 this.field23465 = var5;
-                field23386.getClientPlayNetHandler()
+                mc.getClientPlayNetHandler()
                         .sendPacket(
                                 new Class5605(
                                         (double) this.field23465.method8304() + 0.5, this.field23465.getY() + 1, (double) this.field23465.method8306() + 0.5, true
@@ -74,7 +74,7 @@ public class Class5174 extends Module {
                         Class5628.method17725(-0.08);
                         double var5 = Class9567.method37075();
                         Class9567.method37090(var5);
-                        field23386.field1284.field40360 = 1.0F;
+                        mc.field1284.field40360 = 1.0F;
                     } else {
                         this.method16004().method16000();
                     }
@@ -90,14 +90,14 @@ public class Class5174 extends Module {
                 var1.method13995(0.01);
                 this.field23464++;
                 if (this.field23464 >= 20) {
-                    field23386.field1284.field40360 = 1.4F;
+                    mc.field1284.field40360 = 1.4F;
                 } else {
-                    field23386.field1284.field40360 = 2.0F;
+                    mc.field1284.field40360 = 2.0F;
                 }
 
-                field23386.getClientPlayNetHandler()
-                        .sendPacket(new Class5605(field23386.field1339.getPosX(), field23386.field1339.getPosY(), field23386.field1339.getPosZ(), true));
-                field23386.getClientPlayNetHandler()
+                mc.getClientPlayNetHandler()
+                        .sendPacket(new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ(), true));
+                mc.getClientPlayNetHandler()
                         .sendPacket(
                                 new Class5605(
                                         (double) this.field23465.method8304() + 0.5, this.field23465.getY() + 1, (double) this.field23465.method8306() + 0.5, true

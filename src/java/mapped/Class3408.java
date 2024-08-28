@@ -2,10 +2,10 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3408 extends Class3209 {
+public class Class3408 extends Block {
    private static String[] field19086;
    public static final Class8554 field19087 = Class8820.field39743;
-   public static final Class6408 field19088 = Class3209.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
+   public static final Class6408 field19088 = Block.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
 
    public Class3408(Class7929 var1) {
       super(var1);
@@ -60,18 +60,18 @@ public class Class3408 extends Class3209 {
       if (var6.method23383() == this) {
          return true;
       } else {
-         if (var6.method23448(Class8487.field36395)
-            || var6.method23448(Class8487.field36396)
-            || var6.method23448(Class8487.field36397)
-            || var6.method23448(Class8487.field36398)
-            || var6.method23448(Class8487.field36415)
-            || var6.method23448(Class8487.field36416)) {
+         if (var6.method23448(Blocks.field36395)
+            || var6.method23448(Blocks.field36396)
+            || var6.method23448(Blocks.field36397)
+            || var6.method23448(Blocks.field36398)
+            || var6.method23448(Blocks.SAND)
+            || var6.method23448(Blocks.RED_SAND)) {
             BlockPos var7 = var3.method8313();
 
             for (Direction var9 : Class76.field161) {
                Class7380 var10 = var2.method6738(var7.method8349(var9));
                Class7379 var11 = var2.method6739(var7.method8349(var9));
-               if (var11.method23486(Class8953.field40469) || var10.method23448(Class8487.field36889)) {
+               if (var11.method23486(Class8953.field40469) || var10.method23448(Blocks.field36889)) {
                   return true;
                }
             }
@@ -82,7 +82,7 @@ public class Class3408 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19087);
    }
 }

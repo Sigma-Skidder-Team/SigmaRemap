@@ -16,7 +16,7 @@ public final class Class6486 {
    public final boolean field28445;
 
    Class6486(Class7380 var1) {
-      Class3209 var4 = var1.method23383();
+      Block var4 = var1.method23383();
       this.field28438 = var1.method23409(Class1666.field9078, BlockPos.field13032);
       this.field28439 = var4.method11493(var1, Class1666.field9078, BlockPos.field13032);
       this.field28440 = var4.method11996(var1, Class1666.field9078, BlockPos.field13032);
@@ -42,7 +42,7 @@ public final class Class6486 {
          }
       }
 
-      this.field28445 = Class3209.method11550(var1.method23414(Class1666.field9078, BlockPos.field13032));
+      this.field28445 = Block.method11550(var1.method23414(Class1666.field9078, BlockPos.field13032));
    }
 
    public boolean method19649(Direction var1, Class2156 var2) {

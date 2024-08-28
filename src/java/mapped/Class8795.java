@@ -27,7 +27,7 @@ public class Class8795 {
       this.field39613.clear();
       this.field39614 = -999.0F;
       this.field39615 = -999.0F;
-      Client.getInstance().getModuleManager().method14662(Class5328.class).setState(false);
+      Client.getInstance().getModuleManager().method14662(BlockFly.class).setState(false);
       Client.getInstance().getModuleManager().method14662(Class5333.class).setState(false);
    }
 
@@ -220,7 +220,7 @@ public class Class8795 {
                   var36 = true;
                }
 
-               Client.getInstance().getModuleManager().method14662(Class5328.class).setState(var35);
+               Client.getInstance().getModuleManager().method14662(BlockFly.class).setState(var35);
                Client.getInstance().getModuleManager().method14662(Class5333.class).setState(var36);
                if (!var17 || !var16) {
                   if (var8.field44271.method33972().method11341(this.field39612.field1339.method3431()) > 10.0) {

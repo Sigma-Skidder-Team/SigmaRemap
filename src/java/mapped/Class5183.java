@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Class5183 extends Module {
     public boolean field23481 = false;
-    public Class7735 field23482 = Class7733.method25596(field23386.method1581().field33890, new Class5425(256));
+    public Class7735 field23482 = Class7733.method25596(mc.method1581().field33890, new Class5425(256));
 
     public Class5183() {
         super(ModuleCategory.RENDER, "Fill", "Fill ESP");
@@ -21,7 +21,7 @@ public class Class5183 extends Module {
     @EventTarget
     private void method16133(Class4420 var1) {
         if (this.method15996()) {
-            if (field23386.field1339 != null && field23386.field1338 != null) {
+            if (mc.field1339 != null && mc.field1338 != null) {
                 this.method16139();
                 this.method16134();
                 this.method16140();
@@ -50,22 +50,22 @@ public class Class5183 extends Module {
         GL11.glEnable(2896);
         GL11.glPolygonOffset(-30000.0F, 1.0F);
 
-        for (Entity var9 : field23386.field1338.method6835()) {
+        for (Entity var9 : mc.field1338.method6835()) {
             if (this.method16138(var9)) {
                 GL11.glPushMatrix();
-                Vector3d var10 = field23386.field1295.method768().method37504();
+                Vector3d var10 = mc.field1295.method768().method37504();
                 double var11 = var10.method11320();
                 double var13 = var10.method11321();
                 double var15 = var10.method11322();
                 Class9332 var17 = new Class9332();
-                boolean var18 = field23386.field1299.field44616;
+                boolean var18 = mc.field1299.field44616;
                 RenderSystem.method27821();
                 RenderSystem.method27889(0.0F, 0.0F, 1.0F, 0.5F);
                 RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
                 RenderSystem.enableBlend();
-                field23386.field1299.field44616 = false;
-                this.method16136(var9, var11, var13, var15, field23386.field1284.field40356, var17, this.field23482);
-                field23386.field1299.field44616 = var18;
+                mc.field1299.field44616 = false;
+                this.method16136(var9, var11, var13, var15, mc.field1284.field40356, var17, this.field23482);
+                mc.field1299.field44616 = var18;
                 GL11.glPopMatrix();
             }
         }
@@ -94,7 +94,7 @@ public class Class5183 extends Module {
         double var15 = Class9679.method37822(var8, var1.field5049, var1.getPosY());
         double var17 = Class9679.method37822(var8, var1.field5050, var1.getPosZ());
         float var19 = Class9679.method37821(var8, var1.field5033, var1.field5031);
-        field23386.field1287.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
+        mc.field1287.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
     }
 
     @EventTarget
@@ -130,7 +130,7 @@ public class Class5183 extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        field23386.field1295.field818.method7316();
+        mc.field1295.field818.method7316();
     }
 
     private void method16140() {
@@ -140,10 +140,10 @@ public class Class5183 extends Module {
         GL11.glEnable(2903);
         RenderSystem.method27905(33986, 240.0F, 240.0F);
         TextureImpl.method36180();
-        TextureManager var10000 = field23386.getTextureManager();
-        field23386.getTextureManager();
+        TextureManager var10000 = mc.getTextureManager();
+        mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
-        field23386.field1295.field818.method7317();
+        mc.field1295.field818.method7317();
         GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
     }
 }

@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 
 public class Class3450 extends Class3194 implements Class3196, Class3449 {
    private static String[] field18470;
-   public static final Class6408 field19264 = Class3209.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
+   public static final Class6408 field19264 = Block.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
 
    public Class3450(Class7929 var1) {
       super(var1);
@@ -18,7 +18,7 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
 
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      return var1.method23454(var2, var3, Direction.field673) && !var1.method23448(Class8487.field36890);
+      return var1.method23454(var2, var3, Direction.field673) && !var1.method23448(Blocks.field36890);
    }
 
    @Nullable
@@ -55,10 +55,10 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
 
    @Override
    public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
-      Class7380 var7 = Class8487.field36486.method11579();
+      Class7380 var7 = Blocks.field36486.method11579();
       Class7380 var8 = var7.method23465(Class3455.field19274, Class84.field209);
       BlockPos var9 = var3.method8311();
-      if (var1.method6738(var9).method23448(Class8487.field36413)) {
+      if (var1.method6738(var9).method23448(Blocks.WATER)) {
          var1.method6725(var3, var7, 2);
          var1.method6725(var9, var8, 2);
       }

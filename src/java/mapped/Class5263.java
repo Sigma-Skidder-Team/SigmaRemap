@@ -21,37 +21,37 @@ public class Class5263 extends PremiumModule {
 
     // $VF: synthetic method
     public static Minecraft method16466() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16467() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16468() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16469() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16470() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16471() {
-        return field23386;
+        return mc;
     }
 
     @EventTarget
     private void method16463(Class4415 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (Client.getInstance().getMusicManager().method24319() && Client.getInstance().getMusicManager().field32163.size() != 0) {
                 long var4 = System.nanoTime() - this.field23676;
                 float var6 = Math.min(10.0F, Math.max(0.0F, (float) var4 / 1.810361E7F));

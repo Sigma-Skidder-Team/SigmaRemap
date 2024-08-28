@@ -6,9 +6,9 @@ import java.util.Set;
 public class Class6490 {
    private static String[] field28456;
    public Minecraft field28457 = Minecraft.getInstance();
-   public final Class<? extends Class3209> field28458;
+   public final Class<? extends Block> field28458;
 
-   public Class6490(Class<? extends Class3209> var1) {
+   public Class6490(Class<? extends Block> var1) {
       this.field28458 = var1;
    }
 

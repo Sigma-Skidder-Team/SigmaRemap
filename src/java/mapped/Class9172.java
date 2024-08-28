@@ -267,7 +267,7 @@ public class Class9172 {
                JsonObject var11 = var10.parse(var6).getAsJsonObject();
                String var12 = var11.get("Name").getAsString();
                ResourceLocation var13 = new ResourceLocation(var12);
-               Class3209 var14 = Class9716.method38066(var13);
+               Block var14 = Class9716.method38066(var13);
                if (var14 == null) {
                   Class7944.method26811("Invalid block name (" + var1 + "): " + var12);
                   return;
@@ -337,7 +337,7 @@ public class Class9172 {
       var0.add(var11);
    }
 
-   private static Class9727 method34273(Class3209 var0, int var1, Map<Class8550, Comparable> var2) {
+   private static Class9727 method34273(Block var0, int var1, Map<Class8550, Comparable> var2) {
       ArrayList<Class7380> var5 = new ArrayList();
       Set<Class8550> var6 = var2.keySet();
 
@@ -376,7 +376,7 @@ public class Class9172 {
 
    private static void method34274() {
       for (ResourceLocation var3 : Class2348.field16072.method9190()) {
-         Class3209 var4 = Class2348.field16072.method9184(var3);
+         Block var4 = Class2348.field16072.method9184(var3);
          int var5 = var4.method11579().method23490();
          Class9590[] var6 = method34263(var5);
          if (var6 != null) {
@@ -407,7 +407,7 @@ public class Class9172 {
       if (!field42102) {
          return var0.method23397().ordinal();
       } else {
-         Class3209 var3 = var0.method23383();
+         Block var3 = var0.method23383();
          if (var3 instanceof Class3404) {
             return 1;
          } else {

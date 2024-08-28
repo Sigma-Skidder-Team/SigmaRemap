@@ -2,11 +2,11 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3220 extends Class3209 {
+public class Class3220 extends Block {
    private static String[] field18639;
    public static final Class8554 field18640 = Class8820.field39743;
-   public static final Class6408 field18641 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
-   public static final Class6408 field18642 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+   public static final Class6408 field18641 = Block.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+   public static final Class6408 field18642 = Block.method11539(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 
    public Class3220(Class7929 var1) {
       super(var1);
@@ -74,7 +74,7 @@ public class Class3220 extends Class3209 {
       }
 
       Class7380 var10 = var2.method6738(var3.method8313());
-      return (var10.method23448(Class8487.field36574) || var10.method23448(Class8487.field36415) || var10.method23448(Class8487.field36416))
+      return (var10.method23448(Blocks.CACTUS) || var10.method23448(Blocks.SAND) || var10.method23448(Blocks.RED_SAND))
          && !var2.method6738(var3.method8311()).method23384().method31085();
    }
 
@@ -84,7 +84,7 @@ public class Class3220 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18640);
    }
 

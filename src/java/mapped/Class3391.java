@@ -1,8 +1,8 @@
 package mapped;
 
-public class Class3391 extends Class3209 {
+public class Class3391 extends Block {
    private static String[] field19015;
-   private static final Class6408 field19016 = Class3209.method11539(5.0, 5.0, 5.0, 11.0, 11.0, 11.0);
+   private static final Class6408 field19016 = Block.method11539(5.0, 5.0, 5.0, 11.0, 11.0, 11.0);
 
    public Class3391(Class7929 var1) {
       super(var1);

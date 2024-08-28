@@ -14,7 +14,7 @@ public class Class3340 extends Class3257 {
       Class1655 var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
-      if (!var6.method23448(Class8487.field36527) && !var6.method23448(Class8487.field36412)) {
+      if (!var6.method23448(Blocks.field36527) && !var6.method23448(Blocks.BEDROCK)) {
          return Class2274.field14821;
       } else {
          BlockPos var7 = var5.method8311();

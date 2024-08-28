@@ -223,7 +223,7 @@ public abstract class Class880 extends Entity {
       boolean var8 = var3 && ((PlayerEntity)this).field4919.field29606;
       if (this.method3066()) {
          if (this.method3263(Class8953.field40469)
-            && !this.field5024.method6738(new BlockPos(this.getPosX(), this.method3442(), this.getPosZ())).method23448(Class8487.field37013)) {
+            && !this.field5024.method6738(new BlockPos(this.getPosX(), this.method3442(), this.getPosZ())).method23448(Blocks.field37013)) {
             if (!this.method2998() && !Class7182.method22538(this) && !var8) {
                this.method3352(this.method3011(this.method3351()));
                if (this.method3351() == -20) {
@@ -1144,7 +1144,7 @@ public abstract class Class880 extends Entity {
          if (var1 instanceof Class1079) {
             if (this.field5024.method6789().method17135(Class5462.field24224)) {
                BlockPos var5 = this.method3432();
-               Class7380 var6 = Class8487.field36517.method11579();
+               Class7380 var6 = Blocks.field36517.method11579();
                if (this.field5024.method6738(var5).method23393() && var6.method23443(this.field5024, var5)) {
                   this.field5024.method6725(var5, var6, 3);
                   var4 = true;
@@ -1275,7 +1275,7 @@ public abstract class Class880 extends Entity {
       if (!this.method2800()) {
          BlockPos var3 = this.method3432();
          Class7380 var4 = this.method3064();
-         Class3209 var5 = var4.method23383();
+         Block var5 = var4.method23383();
          if (!var5.method11540(Class7645.field32804)) {
             if (var5 instanceof Class3206 && this.method3065(var3, var4)) {
                this.field5005 = Optional.<BlockPos>of(var3);
@@ -1299,7 +1299,7 @@ public abstract class Class880 extends Entity {
    private boolean method3065(BlockPos var1, Class7380 var2) {
       if (var2.<Boolean>method23463(Class3206.field18594)) {
          Class7380 var5 = this.field5024.method6738(var1.method8313());
-         if (var5.method23448(Class8487.field36549) && var5.<Direction>method23463(Class3423.field19154) == var2.<Direction>method23463(Class3206.field18484)) {
+         if (var5.method23448(Blocks.field36549) && var5.<Direction>method23463(Class3423.field19154) == var2.<Direction>method23463(Class3206.field18484)) {
             return true;
          }
       }
@@ -2024,7 +2024,7 @@ public abstract class Class880 extends Entity {
          double var5 = Class9679.method37778(var1.field18048, -0.15F, 0.15F);
          double var7 = Class9679.method37778(var1.field18050, -0.15F, 0.15F);
          double var9 = Math.max(var1.field18049, -0.15F);
-         if (var9 < 0.0 && !this.method3064().method23448(Class8487.field37053) && this.method3164() && this instanceof PlayerEntity) {
+         if (var9 < 0.0 && !this.method3064().method23448(Blocks.field37053) && this.method3164() && this instanceof PlayerEntity) {
             var9 = 0.0;
          }
 

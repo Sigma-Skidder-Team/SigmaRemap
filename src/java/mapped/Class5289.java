@@ -12,7 +12,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Class5289 extends Module {
     public static Class2191 field23794 = Class2191.field14327;
-    public Class7735 field23795 = Class7733.method25596(field23386.method1581().field33890, new Class5425(256));
+    public Class7735 field23795 = Class7733.method25596(mc.method1581().field33890, new Class5425(256));
 
     public Class5289() {
         super(ModuleCategory.RENDER, "Shadow", "Draws a line arround entities");
@@ -22,7 +22,7 @@ public class Class5289 extends Module {
     @EventTarget
     private void method16605(Class4420 var1) {
         if (this.method15996()) {
-            if (field23386.field1339 != null && field23386.field1338 != null) {
+            if (mc.field1339 != null && mc.field1338 != null) {
                 this.method16612();
                 Class3192.method11476();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -46,7 +46,7 @@ public class Class5289 extends Module {
 
     private void method16606() {
         int var3 = Class5628.method17688(Class1979.field12896.field12910, 0.8F);
-        field23386.field1338
+        mc.field1338
                 .field9025
                 .forEach(
                         (var2, var3x) -> {
@@ -59,7 +59,7 @@ public class Class5289 extends Module {
                                 GL11.glTranslated(var6, var8, var10);
                                 GL11.glTranslatef(0.0F, var3x.method3430(), 0.0F);
                                 GL11.glTranslatef(0.0F, 0.1F, 0.0F);
-                                GL11.glRotatef(field23386.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
+                                GL11.glRotatef(mc.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
                                 GL11.glScalef(-0.11F, -0.11F, -0.11F);
                                 Class3192.method11450(
                                         -var3x.method3429() * 22.0F,
@@ -97,28 +97,28 @@ public class Class5289 extends Module {
             GL11.glEnable(2896);
         }
 
-        for (Entity var10 : field23386.field1338.method6835()) {
+        for (Entity var10 : mc.field1338.method6835()) {
             if (this.method16611(var10)) {
                 GL11.glPushMatrix();
-                Vector3d var11 = field23386.field1295.method768().method37504();
+                Vector3d var11 = mc.field1295.method768().method37504();
                 double var12 = var11.method11320();
                 double var14 = var11.method11321();
                 double var16 = var11.method11322();
                 Class9332 var18 = new Class9332();
-                boolean var19 = field23386.field1299.field44616;
+                boolean var19 = mc.field1299.field44616;
                 RenderSystem.method27821();
                 RenderSystem.method27889(0.0F, 0.0F, 1.0F, 0.5F);
                 RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
                 RenderSystem.enableBlend();
-                field23386.field1299.field44616 = false;
+                mc.field1299.field44616 = false;
                 int var20 = var10.method3222();
                 boolean var21 = var10.method3348(0);
                 var10.method3221(0);
                 var10.method3349(0, false);
-                this.method16608(var10, var12, var14, var16, field23386.field1284.field40356, var18, this.field23795);
+                this.method16608(var10, var12, var14, var16, mc.field1284.field40356, var18, this.field23795);
                 var10.method3221(var20);
                 var10.method3349(0, var21);
-                field23386.field1299.field44616 = var19;
+                mc.field1299.field44616 = var19;
                 GL11.glPopMatrix();
             }
         }
@@ -143,7 +143,7 @@ public class Class5289 extends Module {
         double var15 = Class9679.method37822(var8, var1.field5049, var1.getPosY());
         double var17 = Class9679.method37822(var8, var1.field5050, var1.getPosZ());
         float var19 = Class9679.method37821(var8, var1.field5033, var1.field5031);
-        field23386.field1287.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
+        mc.field1287.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
     }
 
     @EventTarget
@@ -190,7 +190,7 @@ public class Class5289 extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        field23386.field1295.field818.method7316();
+        mc.field1295.field818.method7316();
     }
 
     private void method16613() {
@@ -200,10 +200,10 @@ public class Class5289 extends Module {
         GL11.glEnable(2903);
         RenderSystem.method27905(33986, 240.0F, 240.0F);
         TextureImpl.method36180();
-        TextureManager var10000 = field23386.getTextureManager();
-        field23386.getTextureManager();
+        TextureManager var10000 = mc.getTextureManager();
+        mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
-        field23386.field1295.field818.method7317();
+        mc.field1295.field818.method7317();
         GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
         field23794 = Class2191.field14327;
     }

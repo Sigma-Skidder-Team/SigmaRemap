@@ -304,7 +304,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
       Object var9 = null;
       BlockPos var10 = new BlockPos(var1, var3, var5);
       Class7380 var11 = var0.method6738(var10);
-      Class3209 var12 = var11.method23383();
+      Block var12 = var11.method23383();
       if (!(var12 instanceof Class3476)) {
          if (var12.method11998()) {
             Class944 var13 = var0.method6759(var10);

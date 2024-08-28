@@ -45,7 +45,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    private boolean field9048;
    private int field9049;
    private final Class3634 field9050;
-   private final Class6805<Class3209> field9051 = new Class6805<Class3209>(
+   private final Class6805<Block> field9051 = new Class6805<Block>(
       this, var0 -> var0 == null || var0.method11579().method23393(), Class2348.field16072::method9181, this::method6906
    );
    private final Class6805<Class7631> field9052 = new Class6805<Class7631>(
@@ -366,11 +366,11 @@ public class Class1657 extends Class1655 implements Class1658 {
          BlockPos var21 = var19.method8313();
          Class8907 var23 = this.method7003(var19);
          if (var23.method32504(this, var21)) {
-            this.method6730(var21, Class8487.field36572.method11579());
+            this.method6730(var21, Blocks.ICE.method11579());
          }
 
          if (var6 && var23.method32506(this, var19)) {
-            this.method6730(var19, Class8487.field36571.method11579());
+            this.method6730(var19, Blocks.SNOW.method11579());
          }
 
          if (var6 && this.method7003(var21).method32500() == Class87.field224) {
@@ -467,7 +467,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       }
    }
 
-   private void method6906(Class8269<Class3209> var1) {
+   private void method6906(Class8269<Block> var1) {
       Class7380 var4 = this.method6738(var1.field35556);
       if (var4.method23448(var1.method28874())) {
          var4.method23430(this, var1.field35556, this.field9016);
@@ -948,7 +948,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    }
 
    @Override
-   public void method6787(BlockPos var1, Class3209 var2, int var3, int var4) {
+   public void method6787(BlockPos var1, Block var2, int var3, int var4) {
       this.field9055.add(new Class6808(var1, var2, var3, var4));
    }
 
@@ -976,7 +976,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       return !var4.method23448(var1.method20741()) ? false : var4.method23422(this, var1.method20740(), var1.method20742(), var1.method20743());
    }
 
-   public Class6805<Class3209> method6860() {
+   public Class6805<Block> method6860() {
       return this.field9051;
    }
 
@@ -1296,7 +1296,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    }
 
    @Override
-   public void method6964(BlockPos var1, Class3209 var2) {
+   public void method6964(BlockPos var1, Block var2) {
       if (!this.method6823()) {
          this.method6733(var1, var2);
       }
@@ -1378,7 +1378,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       int var5 = var3.getY() - 2;
       int var6 = var3.method8306();
       BlockPos.method8364(var4 - 2, var5 + 1, var6 - 2, var4 + 2, var5 + 3, var6 + 2)
-         .forEach(var1 -> var0.method6730(var1, Class8487.field36387.method11579()));
-      BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.method6730(var1, Class8487.field36527.method11579()));
+         .forEach(var1 -> var0.method6730(var1, Blocks.AIR.method11579()));
+      BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.method6730(var1, Blocks.field36527.method11579()));
    }
 }

@@ -1,7 +1,7 @@
 package mapped;
 
 public class Class8876 {
-   public static final Class49<Class3209> field40096 = method32295("mined", Class2348.field16072);
+   public static final Class49<Block> field40096 = method32295("mined", Class2348.field16072);
    public static final Class49<Class3257> field40097 = method32295("crafted", Class2348.field16075);
    public static final Class49<Class3257> field40098 = method32295("used", Class2348.field16075);
    public static final Class49<Class3257> field40099 = method32295("broken", Class2348.field16075);

@@ -28,7 +28,7 @@ public class Class8969 {
       return this.field40548;
    }
 
-   public void method32889(Class1655 var1, BlockPos var2, BlockPos var3, boolean var4, Class3209 var5) {
+   public void method32889(Class1655 var1, BlockPos var2, BlockPos var3, boolean var4, Block var5) {
       if (var3.method8304() >= 1 && var3.getY() >= 1 && var3.method8306() >= 1) {
          BlockPos var8 = var2.method8337(var3).method8336(-1, -1, -1);
          ArrayList var9 = Lists.newArrayList();
@@ -120,11 +120,11 @@ public class Class8969 {
       }
    }
 
-   public List<Class8266> method32893(BlockPos var1, Class9463 var2, Class3209 var3) {
+   public List<Class8266> method32893(BlockPos var1, Class9463 var2, Block var3) {
       return this.method32894(var1, var2, var3, true);
    }
 
-   public List<Class8266> method32894(BlockPos var1, Class9463 var2, Class3209 var3, boolean var4) {
+   public List<Class8266> method32894(BlockPos var1, Class9463 var2, Block var3, boolean var4) {
       ArrayList var7 = Lists.newArrayList();
       Class9764 var8 = var2.method36441();
       if (this.field40545.isEmpty()) {
@@ -187,7 +187,7 @@ public class Class8969 {
                   if (var20.field35532 != null) {
                      Class944 var24 = var1.method6759(var21);
                      Class946.method3802(var24);
-                     var1.method6725(var21, Class8487.field36765.method11579(), 20);
+                     var1.method6725(var21, Blocks.field36765.method11579(), 20);
                   }
 
                   if (var1.method6725(var21, var23, var6)) {
@@ -247,7 +247,7 @@ public class Class8969 {
 
                   if (var40.method23473()) {
                      Class7380 var44 = var1.method6738(var33);
-                     Class3209 var47 = var44.method23383();
+                     Block var47 = var44.method23383();
                      if (var47 instanceof Class3449) {
                         ((Class3449)var47).method11532(var1, var33, var44, var40);
                         var28 = true;
@@ -276,7 +276,7 @@ public class Class8969 {
                   BlockPos var38 = (BlockPos)var35.getFirst();
                   if (!var4.method36442()) {
                      Class7380 var42 = var1.method6738(var38);
-                     Class7380 var46 = Class3209.method11542(var42, var1, var38);
+                     Class7380 var46 = Block.method11542(var42, var1, var38);
                      if (var42 != var46) {
                         var1.method6725(var38, var46, var6 & -2 | 16);
                      }

@@ -121,7 +121,7 @@ public class Class1029 extends Class1026 {
                Class9679.method37769(var8.field28454)
             )) {
                Class7380 var11 = this.field5024.method6738(var10);
-               Class3209 var12 = var11.method23383();
+               Block var12 = var11.method23383();
                if (var12 instanceof Class3465) {
                   var7 = this.field5024.method7180(var10, true, this) || var7;
                }

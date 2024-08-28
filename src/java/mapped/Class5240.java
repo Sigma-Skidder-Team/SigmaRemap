@@ -13,11 +13,11 @@ public class Class5240 extends Module {
 
     @EventTarget
     private void method16337(Class4417 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (!var1.method13967()) {
-                field23386.field1339.field5051 = this.method15977("Maximum heigh");
+                mc.field1339.field5051 = this.method15977("Maximum heigh");
             } else {
-                field23386.field1339.field5051 = 0.5F;
+                mc.field1339.field5051 = 0.5F;
             }
         }
     }

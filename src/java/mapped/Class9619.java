@@ -28,7 +28,7 @@ public class Class9619 {
    private static final int field44972 = 0;
    private static final int field44973 = 1;
    private static final int field44974 = 2;
-   public static final Class7380 field44975 = Class8487.field36387.method11579();
+   public static final Class7380 field44975 = Blocks.AIR.method11579();
    private static Class1713 field44976 = null;
    public static ResourceLocation field44977 = Class8684.field39209;
    private static final Class2227[] field44978 = new Class2227[]{Class2227.field14571, Class2227.field14572, Class2227.field14569, Class2227.field14570};
@@ -60,7 +60,7 @@ public class Class9619 {
    }
 
    private static boolean method37443(Class1665 var0, Class7380 var1, BlockPos var2, Class8557 var3, Class8391 var4) {
-      Class3209 var5 = var1.method23383();
+      Block var5 = var1.method23383();
       if (var5 instanceof Class3237) {
          Direction var6 = var3.method30514();
          if (var6 != Direction.field673 && var6 != Direction.field672) {
@@ -77,7 +77,7 @@ public class Class9619 {
             return false;
          }
 
-         Class3209 var9 = var8.method23383();
+         Block var9 = var8.method23383();
          if (var5 instanceof Class3236 && var9 instanceof Class3236) {
             Class112 var10 = ((Class3236)var5).method11637();
             Class112 var11 = ((Class3236)var9).method11637();
@@ -236,7 +236,7 @@ public class Class9619 {
    }
 
    public static Class8557[] method37450(Class1663 var0, Class7380 var1, BlockPos var2, Direction var3, Class8557 var4, boolean var5, int var6, Class8391 var7) {
-      Class3209 var8 = var1.method23383();
+      Block var8 = var1.method23383();
       Class1713 var9 = var4.method30516();
       if (field44963 != null) {
          int var10 = var9.method7475();
@@ -326,7 +326,7 @@ public class Class9619 {
    private static Class8557[] method37453(Class7104 var0, Class1663 var1, Class7380 var2, BlockPos var3, int var4, Class8557 var5, int var6, Class8391 var7) {
       int var8 = 0;
       int var9 = var2.method23491();
-      Class3209 var10 = var2.method23383();
+      Block var10 = var2.method23383();
       if (var10 instanceof Class3386) {
          var8 = method37455(var2);
       }
@@ -1132,7 +1132,7 @@ public class Class9619 {
          if (var9.method23409(var1, var10)) {
             return false;
          } else {
-            return var4 == 1 && var9.method23383() == Class8487.field36571 ? false : !method37475(var0, var1, var2, var3, var7, var4, var5, var6);
+            return var4 == 1 && var9.method23383() == Blocks.SNOW ? false : !method37475(var0, var1, var2, var3, var7, var4, var5, var6);
          }
       }
    }
@@ -1141,7 +1141,7 @@ public class Class9619 {
       if (Class9716.method38071(var0, var1, var2)) {
          return true;
       } else {
-         Class3209 var3 = var0.method23383();
+         Block var3 = var0.method23383();
          return var3 instanceof Class3233 ? true : var3 instanceof Class3234;
       }
    }
@@ -1162,7 +1162,7 @@ public class Class9619 {
 
          BlockPos var10 = var3.method8349(method37452(var4));
          Class7380 var9 = var1.method6738(var10);
-         return var9.method23409(var1, var10) ? false : var4 != 1 || var9.method23383() != Class8487.field36571;
+         return var9.method23409(var1, var10) ? false : var4 != 1 || var9.method23383() != Blocks.SNOW;
       }
    }
 
@@ -1190,8 +1190,8 @@ public class Class9619 {
             return var4 == field44975 ? false : var4.method23384() == var2.method23384();
          }
       } else if (var0.field30556 == 1) {
-         Class3209 var8 = var2.method23383();
-         Class3209 var9 = var4.method23383();
+         Block var8 = var2.method23383();
+         Block var9 = var4.method23383();
          return var9 == var8;
       } else {
          return false;

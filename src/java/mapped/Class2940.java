@@ -12,7 +12,7 @@ public class Class2940 extends Class2898<Class4705> {
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4705 var5) {
       while (var4.getY() > 3) {
          if (!var1.method7007(var4.method8313())) {
-            Class3209 var8 = var1.method6738(var4.method8313()).method23383();
+            Block var8 = var1.method6738(var4.method8313()).method23383();
             if (method11219(var8) || method11218(var8)) {
                break;
             }

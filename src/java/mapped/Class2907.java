@@ -23,7 +23,7 @@ public class Class2907 extends Class2898<Class4712> {
                return true;
             }
 
-            var1.method6725(var8, Class8487.field36583.method11579(), 2);
+            var1.method6725(var8, Blocks.BASALT.method11579(), 2);
             var10 = var10 && this.method11246(var1, var3, var9.method8377(var8, Direction.NORTH));
             var11 = var11 && this.method11246(var1, var3, var9.method8377(var8, Direction.SOUTH));
             var12 = var12 && this.method11246(var1, var3, var9.method8377(var8, Direction.WEST));
@@ -54,7 +54,7 @@ public class Class2907 extends Class2898<Class4712> {
                   }
 
                   if (!var1.method7007(var9.method8377(var14, Direction.field672))) {
-                     var1.method6725(var14, Class8487.field36583.method11579(), 2);
+                     var1.method6725(var14, Blocks.BASALT.method11579(), 2);
                   }
                }
             }
@@ -68,7 +68,7 @@ public class Class2907 extends Class2898<Class4712> {
 
    private void method11245(Class1660 var1, Random var2, BlockPos var3) {
       if (var2.nextBoolean()) {
-         var1.method6725(var3, Class8487.field36583.method11579(), 2);
+         var1.method6725(var3, Blocks.BASALT.method11579(), 2);
       }
    }
 
@@ -76,7 +76,7 @@ public class Class2907 extends Class2898<Class4712> {
       if (var2.nextInt(10) == 0) {
          return false;
       } else {
-         var1.method6725(var3, Class8487.field36583.method11579(), 2);
+         var1.method6725(var3, Blocks.BASALT.method11579(), 2);
          return true;
       }
    }

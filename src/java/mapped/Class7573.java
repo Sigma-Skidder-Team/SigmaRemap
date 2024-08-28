@@ -10,7 +10,7 @@ public class Class7573 extends Class7574 {
 
    @Override
    public void method24785(int var1) {
-      this.field32514.field5324.method6787(this.field32514.field5325, Class8487.field36532, var1, 0);
+      this.field32514.field5324.method6787(this.field32514.field5325, Blocks.field36532, var1, 0);
    }
 
    @Override

@@ -110,7 +110,7 @@ public class Class964 extends Class944 {
       if (this.field5324 != null) {
          BlockPos var3 = this.method3774();
          Class7380 var4 = this.field5324.method6738(var3);
-         if (var4.method23448(Class8487.field37113)) {
+         if (var4.method23448(Blocks.field37113)) {
             this.field5324.method6725(var3, var4.method23465(Class3367.field18938, this.field5402), 2);
          }
       }
@@ -210,7 +210,7 @@ public class Class964 extends Class944 {
    public void method3951(Class104 var1) {
       this.field5402 = var1;
       Class7380 var4 = this.field5324.method6738(this.method3774());
-      if (var4.method23448(Class8487.field37113)) {
+      if (var4.method23448(Blocks.field37113)) {
          this.field5324.method6725(this.method3774(), var4.method23465(Class3367.field18938, var1), 2);
       }
    }
@@ -297,7 +297,7 @@ public class Class964 extends Class944 {
 
       for (BlockPos var7 : BlockPos.method8359(var1, var2)) {
          Class7380 var8 = this.field5324.method6738(var7);
-         if (var8.method23448(Class8487.field37113)) {
+         if (var8.method23448(Blocks.field37113)) {
             Class944 var9 = this.field5324.method6759(var7);
             if (var9 != null && var9 instanceof Class964) {
                var5.add((Class964)var9);
@@ -364,7 +364,7 @@ public class Class964 extends Class944 {
             return false;
          }
 
-         var7.method32889(this.field5324, var4, this.field5399, !this.field5403, Class8487.field36894);
+         var7.method32889(this.field5324, var4, this.field5399, !this.field5403, Blocks.field36894);
          var7.method32887(this.field5396);
          if (var1) {
             try {

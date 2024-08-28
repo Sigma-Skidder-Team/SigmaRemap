@@ -5,9 +5,9 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6781 extends Class6768<Class8278> {
-   private static final Class7380 field29573 = Class8487.field37012.method11579();
-   private static final Class7380 field29490 = Class8487.field36417.method11579();
-   private static final Class7380 field29574 = Class8487.field36581.method11579();
+   private static final Class7380 field29573 = Blocks.field37012.method11579();
+   private static final Class7380 field29490 = Blocks.GRAVEL.method11579();
+   private static final Class7380 field29574 = Blocks.SOUL_SAND.method11579();
    public long field29575;
    public Class7689 field29576;
 

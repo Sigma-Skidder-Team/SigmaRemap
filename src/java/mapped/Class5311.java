@@ -23,16 +23,16 @@ public class Class5311 extends Module {
     @Override
     public void method15966() {
         this.field23845 = 0;
-        if (!field23386.field1299.field44637.method8509()) {
-            if (!field23386.field1299.field44637.method8509()) {
+        if (!mc.field1299.field44637.method8509()) {
+            if (!mc.field1299.field44637.method8509()) {
                 this.field23846 = false;
             }
         } else {
-            field23386.field1299.field44637.field13071 = false;
+            mc.field1299.field44637.field13071 = false;
             this.field23846 = true;
         }
 
-        if (field23386.field1339.field5036) {
+        if (mc.field1339.field5036) {
             this.field23847 = this.field23848 = false;
         }
 
@@ -45,16 +45,16 @@ public class Class5311 extends Module {
     public void method15965() {
         Class5628.method17725(-0.078);
         Class9567.method37090(0.2);
-        field23386.field1284.field40360 = 1.0F;
+        mc.field1284.field40360 = 1.0F;
         if (this.field23846) {
-            field23386.field1299.field44637.field13071 = true;
+            mc.field1299.field44637.field13071 = true;
         }
     }
 
     @EventTarget
     private void method16686(Class4430 var1) {
         if (this.method15996()) {
-            if (var1.method13977() == field23386.field1299.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.field1299.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23846 = true;
             }
@@ -64,7 +64,7 @@ public class Class5311 extends Module {
     @EventTarget
     private void method16687(Class4426 var1) {
         if (this.method15996()) {
-            if (var1.method13973() == field23386.field1299.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.field1299.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23846 = false;
             }
@@ -75,7 +75,7 @@ public class Class5311 extends Module {
     @Class5631
     public void method16688(Class4435 var1) {
         if (!this.method15996()) {
-            if (field23386.field1339.field5036) {
+            if (mc.field1339.field5036) {
                 this.field23847 = this.field23848 = false;
             }
         } else if (Class5628.method17718()) {
@@ -91,11 +91,11 @@ public class Class5311 extends Module {
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
                                 if (Class8005.method27349() > Class5989.field26129.method18582()) {
-                                    if (field23386.field1299.field44636.method8509() && !this.field23846) {
+                                    if (mc.field1299.field44636.method8509() && !this.field23846) {
                                         var1.method13995(0.0625);
                                         Class9567.method37088(var1, 0.0);
                                         this.field23845 = 1;
-                                    } else if (this.field23846 && !field23386.field1299.field44636.method8509()) {
+                                    } else if (this.field23846 && !mc.field1299.field44636.method8509()) {
                                         var1.method13995(-0.225);
                                         Class9567.method37088(var1, 0.0);
                                         this.field23845 = 1;
@@ -109,16 +109,16 @@ public class Class5311 extends Module {
 
                                 this.field23845--;
                             }
-                        } else if (field23386.field1299.field44636.method8509() && !this.field23846) {
+                        } else if (mc.field1299.field44636.method8509() && !this.field23846) {
                             var1.method13995(0.0625);
                         }
                     }
                 } else if (Class8005.method27349() != Class5989.field26129.method18582()) {
-                    if (!Class5628.method17730(field23386.field1339, 0.001F)) {
+                    if (!Class5628.method17730(mc.field1339, 0.001F)) {
                         var1.method13995(0.0);
                         Class9567.method37088(var1, 0.0);
-                        if (field23386.field1339.field5045 > 4.0F) {
-                            field23386.getClientPlayNetHandler().sendPacket(new Class5603(true));
+                        if (mc.field1339.field5045 > 4.0F) {
+                            mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
                             this.field23848 = true;
                         }
                     } else {
@@ -127,7 +127,7 @@ public class Class5311 extends Module {
                     }
 
                     this.field23845 = 1;
-                } else if (!Class5628.method17730(field23386.field1339, 0.001F)) {
+                } else if (!Class5628.method17730(mc.field1339, 0.001F)) {
                     var1.method13995(0.0);
                     this.field23845 = -2;
                     Client.getInstance().getNotificationManager().post(new Notification("Cubecraft Fly", "Please start on the ground."));
@@ -136,13 +136,13 @@ public class Class5311 extends Module {
                     var1.method13995(0.0);
                     long var14 = Class5628.method17762() % 90L;
                     double var15 = 0.016 + (double) var14 / 10000.0;
-                    double var16 = field23386.field1339.getPosX();
-                    double var10 = field23386.field1339.getPosY() + 0.022;
-                    double var12 = field23386.field1339.getPosZ();
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12, false));
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12 + 0.07, false));
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12, false));
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10 + 3.0, var12, false));
+                    double var16 = mc.field1339.getPosX();
+                    double var10 = mc.field1339.getPosY() + 0.022;
+                    double var12 = mc.field1339.getPosZ();
+                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12, false));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12 + 0.07, false));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12, false));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10 + 3.0, var12, false));
                 }
 
                 Class5628.method17725(var1.method13994());
@@ -150,11 +150,11 @@ public class Class5311 extends Module {
         } else {
             Class9567.method37088(var1, Class9567.method37075());
             var1.method13995(0.0);
-            if (field23386.field1339.field5055 % 2 == 0) {
-                double var4 = field23386.field1339.getPosX();
-                double var6 = field23386.field1339.getPosY();
-                double var8 = field23386.field1339.getPosZ();
-                field23386.field1339.method3215(var4, var6 + 1.0E-10, var8);
+            if (mc.field1339.field5055 % 2 == 0) {
+                double var4 = mc.field1339.getPosX();
+                double var6 = mc.field1339.getPosY();
+                double var8 = mc.field1339.getPosZ();
+                mc.field1339.method3215(var4, var6 + 1.0E-10, var8);
             }
         }
     }
@@ -163,7 +163,7 @@ public class Class5311 extends Module {
     public void method16689(Class4399 var1) {
         if (var1.method13921() && Class5628.method17718()) {
             var1.method13908(true);
-            if (Class8005.method27349() == Class5989.field26129.method18582() && this.field23845 == 0 && Class5628.method17730(field23386.field1339, 0.001F)) {
+            if (Class8005.method27349() == Class5989.field26129.method18582() && this.field23845 == 0 && Class5628.method17730(mc.field1339, 0.001F)) {
                 var1.method13900(true);
             }
 
@@ -175,12 +175,12 @@ public class Class5311 extends Module {
 
     @EventTarget
     public void method16690(Class4396 var1) {
-        if (field23386.field1338 != null && field23386.getClientPlayNetHandler() != null && Class5628.method17718()) {
+        if (mc.field1338 != null && mc.getClientPlayNetHandler() != null && Class5628.method17718()) {
             Packet var4 = var1.method13898();
             if (!(var4 instanceof Class5473)) {
                 if (var4 instanceof Class5590) {
                     Class5590 var5 = (Class5590) var4;
-                    if (var5.method17565() == field23386.field1339.method3205()) {
+                    if (var5.method17565() == mc.field1339.method3205()) {
                         this.field23845 = -4;
                     }
                 }

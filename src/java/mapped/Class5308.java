@@ -14,9 +14,9 @@ public class Class5308 extends Module {
     @EventTarget
     @HigherPriority
     public void method16683(Class4435 var1) {
-        if (field23386.field1339.field5036) {
+        if (mc.field1339.field5036) {
             double var4 = 0.3399 + (double) Class9567.method37078() * 0.06;
-            if (field23386.field1339.field5055 % 3 == 0) {
+            if (mc.field1339.field5055 % 3 == 0) {
                 var4 = 0.679 + (double) Class9567.method37078() * 0.12;
             }
 

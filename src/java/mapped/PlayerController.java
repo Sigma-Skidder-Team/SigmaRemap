@@ -53,7 +53,7 @@ public class PlayerController {
          if (!this.field31358.field1339.method3090().method32107().method11706(var5, var4, var1, this.field31358.field1339)) {
             return false;
          } else {
-            Class3209 var6 = var5.method23383();
+            Block var6 = var5.method23383();
             if ((var6 instanceof Class3355 || var6 instanceof Class3367 || var6 instanceof Class3249) && !this.field31358.field1339.method2979()) {
                return false;
             } else if (!var5.method23393()) {

@@ -42,7 +42,7 @@ public abstract class Class4180 extends Class4178 {
       this.field20454.method36430(var5);
       this.field20444 = this.field20453.method32909(this.field20454, this.field20455);
       if (this.field20453.method32899(var1, this.field20455, var7, this.field20454, var4, 2)) {
-         for (Class8266 var11 : this.field20453.method32893(this.field20455, this.field20454, Class8487.field37113)) {
+         for (Class8266 var11 : this.field20453.method32893(this.field20455, this.field20454, Blocks.field37113)) {
             if (var11.field35532 != null) {
                Class104 var12 = Class104.valueOf(var11.field35532.method126("mode"));
                if (var12 == Class104.field321) {
@@ -51,11 +51,11 @@ public abstract class Class4180 extends Class4178 {
             }
          }
 
-         for (Class8266 var18 : this.field20453.method32893(this.field20455, this.field20454, Class8487.field37114)) {
+         for (Class8266 var18 : this.field20453.method32893(this.field20455, this.field20454, Blocks.field37114)) {
             if (var18.field35532 != null) {
                String var19 = var18.field35532.method126("final_state");
                Class8268 var13 = new Class8268(new StringReader(var19), false);
-               Class7380 var14 = Class8487.field36387.method11579();
+               Class7380 var14 = Blocks.AIR.method11579();
 
                try {
                   var13.method28840(true);

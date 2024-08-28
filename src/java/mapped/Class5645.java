@@ -36,7 +36,7 @@ public final class Class5645 extends Class5646 {
          }
       }
    });
-   private static final Class7380 field24966 = Class8487.field36387.method11579();
+   private static final Class7380 field24966 = Blocks.AIR.method11579();
    private final int field24967;
    private final int field24968;
    private final int field24969;
@@ -363,7 +363,7 @@ public final class Class5645 extends Class5646 {
             if (var12) {
                for (int var16 = 0; var16 < 5; var16++) {
                   if (var16 <= var2.nextInt(5)) {
-                     var1.method7061(var5.method8372(var15.method8304(), var10 - var16, var15.method8306()), Class8487.field36412.method11579(), false);
+                     var1.method7061(var5.method8372(var15.method8304(), var10 - var16, var15.method8306()), Blocks.BEDROCK.method11579(), false);
                   }
                }
             }
@@ -371,7 +371,7 @@ public final class Class5645 extends Class5646 {
             if (var13) {
                for (int var17 = 4; var17 >= 0; var17--) {
                   if (var17 <= var2.nextInt(5)) {
-                     var1.method7061(var5.method8372(var15.method8304(), var9 + var17, var15.method8306()), Class8487.field36412.method11579(), false);
+                     var1.method7061(var5.method8372(var15.method8304(), var9 + var17, var15.method8306()), Blocks.BEDROCK.method11579(), false);
                   }
                }
             }

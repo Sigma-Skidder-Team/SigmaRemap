@@ -1,16 +1,16 @@
 package mapped;
 
-public class Class3394 extends Class3209 {
+public class Class3394 extends Block {
    private static String[] field19028;
    public static final Class8554 field19029 = Class8820.field39745;
    public static final Class6408[] field19030 = new Class6408[]{
-      Class3209.method11539(1.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Class3209.method11539(3.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Class3209.method11539(5.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Class3209.method11539(7.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Class3209.method11539(9.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Class3209.method11539(11.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Class3209.method11539(13.0, 0.0, 1.0, 15.0, 8.0, 15.0)
+      Block.method11539(1.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.method11539(3.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.method11539(5.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.method11539(7.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.method11539(9.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.method11539(11.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.method11539(13.0, 0.0, 1.0, 15.0, 8.0, 15.0)
    };
 
    public Class3394(Class7929 var1) {
@@ -59,7 +59,7 @@ public class Class3394 extends Class3209 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.field672 && !var1.method23443(var4, var5)
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
@@ -69,7 +69,7 @@ public class Class3394 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19029);
    }
 

@@ -35,7 +35,7 @@ public interface Class4843<C extends Class920> {
    }
 
    default Class8848 method14971() {
-      return new Class8848(Class8487.field36538);
+      return new Class8848(Blocks.field36538);
    }
 
    ResourceLocation method14964();

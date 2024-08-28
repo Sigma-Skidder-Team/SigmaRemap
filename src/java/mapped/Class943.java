@@ -14,7 +14,7 @@ public class Class943 extends Class944 implements Class942, Class935 {
    @Override
    public void method3647() {
       if (++this.field5321 % 20 * 4 == 0) {
-         this.field5324.method6787(this.field5325, Class8487.field36657, 1, this.field5320);
+         this.field5324.method6787(this.field5325, Blocks.field36657, 1, this.field5320);
       }
 
       this.field5319 = this.field5318;
@@ -91,12 +91,12 @@ public class Class943 extends Class944 implements Class942, Class935 {
 
    public void method3766() {
       this.field5320++;
-      this.field5324.method6787(this.field5325, Class8487.field36657, 1, this.field5320);
+      this.field5324.method6787(this.field5325, Blocks.field36657, 1, this.field5320);
    }
 
    public void method3767() {
       this.field5320--;
-      this.field5324.method6787(this.field5325, Class8487.field36657, 1, this.field5320);
+      this.field5324.method6787(this.field5325, Blocks.field36657, 1, this.field5320);
    }
 
    public boolean method3768(PlayerEntity var1) {

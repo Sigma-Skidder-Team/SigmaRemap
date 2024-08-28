@@ -6,11 +6,11 @@ import java.util.function.Predicate;
 
 public class Class170 implements Predicate<Class9632> {
    private static String[] field547;
-   private final Class7608<Class3209> field548;
+   private final Class7608<Block> field548;
    private final Class39 field549;
    private final Map<String, String> field550;
 
-   public Class170(Class7608<Class3209> var1, Map<String, String> var2, Class39 var3) {
+   public Class170(Class7608<Block> var1, Map<String, String> var2, Class39 var3) {
       this.field548 = var1;
       this.field550 = var2;
       this.field549 = var3;

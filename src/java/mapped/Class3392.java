@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import java.util.Map;
 
-public class Class3392 extends Class3209 {
+public class Class3392 extends Block {
    private static String[] field19017;
    private static final Direction[] field19018 = Direction.values();
    public static final Class8551 field19019 = Class8820.field39716;
@@ -30,7 +30,7 @@ public class Class3392 extends Class3209 {
    private Class6408[] method12001(float var1) {
       float var4 = 0.5F - var1;
       float var5 = 0.5F + var1;
-      Class6408 var6 = Class3209.method11539(
+      Class6408 var6 = Block.method11539(
          (double)(var4 * 16.0F), (double)(var4 * 16.0F), (double)(var4 * 16.0F), (double)(var5 * 16.0F), (double)(var5 * 16.0F), (double)(var5 * 16.0F)
       );
       Class6408[] var7 = new Class6408[field19018.length];

@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3417 extends Class3209 {
+public class Class3417 extends Block {
    private static String[] field19120;
 
    public Class3417(Class7929 var1) {
@@ -12,7 +12,7 @@ public class Class3417 extends Class3209 {
    @Override
    public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (var2.method6812().method36877()) {
-         var2.method6725(var3, Class8487.field36452.method11579(), 3);
+         var2.method6725(var3, Blocks.field36452.method11579(), 3);
          var2.method6999(2009, var3, 0);
          var2.method6742((PlayerEntity)null, var3, Class6067.field26582, Class2266.field14732, 1.0F, (1.0F + var2.method6814().nextFloat() * 0.2F) * 0.7F);
       }

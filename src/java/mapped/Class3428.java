@@ -2,11 +2,11 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3428 extends Class3209 implements Class3207 {
+public class Class3428 extends Block implements Class3207 {
    private static String[] field19179;
    private static final Class6408 field19180;
    private static final Class6408 field19181;
-   private static final Class6408 field19182 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+   private static final Class6408 field19182 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
    private static final Class6408 field19183 = Class8022.method27426().method19517(0.0, -1.0, 0.0);
    public static final Class8554 field19184 = Class8820.field39761;
    public static final Class8551 field19185 = Class8820.field39710;
@@ -24,7 +24,7 @@ public class Class3428 extends Class3209 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19184, field19185, field19186);
    }
 
@@ -130,7 +130,7 @@ public class Class3428 extends Class3209 implements Class3207 {
       Mutable var4 = var1.method8354().method8379(Direction.field672);
       Class7380 var5 = var0.method6738(var4);
       int var6 = 7;
-      if (!var5.method23448(Class8487.field37053)) {
+      if (!var5.method23448(Blocks.field37053)) {
          if (var5.method23454(var0, var4, Direction.field673)) {
             return 0;
          }
@@ -140,7 +140,7 @@ public class Class3428 extends Class3209 implements Class3207 {
 
       for (Direction var8 : Class76.field161) {
          Class7380 var9 = var0.method6738(var4.method8377(var1, var8));
-         if (var9.method23448(Class8487.field37053)) {
+         if (var9.method23448(Blocks.field37053)) {
             var6 = Math.min(var6, var9.<Integer>method23463(field19184) + 1);
             if (var6 != 1) {
                continue;
@@ -153,16 +153,16 @@ public class Class3428 extends Class3209 implements Class3207 {
    }
 
    static {
-      Class6408 var2 = Class3209.method11539(0.0, 14.0, 0.0, 16.0, 16.0, 16.0);
-      Class6408 var3 = Class3209.method11539(0.0, 0.0, 0.0, 2.0, 16.0, 2.0);
-      Class6408 var4 = Class3209.method11539(14.0, 0.0, 0.0, 16.0, 16.0, 2.0);
-      Class6408 var5 = Class3209.method11539(0.0, 0.0, 14.0, 2.0, 16.0, 16.0);
-      Class6408 var6 = Class3209.method11539(14.0, 0.0, 14.0, 16.0, 16.0, 16.0);
+      Class6408 var2 = Block.method11539(0.0, 14.0, 0.0, 16.0, 16.0, 16.0);
+      Class6408 var3 = Block.method11539(0.0, 0.0, 0.0, 2.0, 16.0, 2.0);
+      Class6408 var4 = Block.method11539(14.0, 0.0, 0.0, 16.0, 16.0, 2.0);
+      Class6408 var5 = Block.method11539(0.0, 0.0, 14.0, 2.0, 16.0, 16.0);
+      Class6408 var6 = Block.method11539(14.0, 0.0, 14.0, 16.0, 16.0, 16.0);
       field19180 = Class8022.method27432(var2, var3, var4, var5, var6);
-      Class6408 var7 = Class3209.method11539(0.0, 0.0, 0.0, 2.0, 2.0, 16.0);
-      Class6408 var8 = Class3209.method11539(14.0, 0.0, 0.0, 16.0, 2.0, 16.0);
-      Class6408 var9 = Class3209.method11539(0.0, 0.0, 14.0, 16.0, 2.0, 16.0);
-      Class6408 var10 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 2.0);
+      Class6408 var7 = Block.method11539(0.0, 0.0, 0.0, 2.0, 2.0, 16.0);
+      Class6408 var8 = Block.method11539(14.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+      Class6408 var9 = Block.method11539(0.0, 0.0, 14.0, 16.0, 2.0, 16.0);
+      Class6408 var10 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 2.0);
       field19181 = Class8022.method27432(Class3428.field19182, field19180, var8, var7, var10, var9);
    }
 }

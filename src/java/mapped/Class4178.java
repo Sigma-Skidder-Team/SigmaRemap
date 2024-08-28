@@ -8,25 +8,25 @@ import java.util.Random;
 import java.util.Set;
 
 public abstract class Class4178 {
-   public static final Class7380 field20443 = Class8487.field37012.method11579();
+   public static final Class7380 field20443 = Blocks.field37012.method11579();
    public Class9764 field20444;
    private Direction field20445;
    private Class2089 field20446;
    private Class80 field20447;
    public int field20448;
    private final Class7792 field20449;
-   private static final Set<Class3209> field20450 = ImmutableSet.<Class3209>builder()
-      .add(Class8487.field36643)
-      .add(Class8487.field36528)
-      .add(Class8487.field36529)
-      .add(Class8487.field36578)
-      .add(Class8487.field36867)
-      .add(Class8487.field36871)
-      .add(Class8487.field36870)
-      .add(Class8487.field36868)
-      .add(Class8487.field36869)
-      .add(Class8487.field36549)
-      .add(Class8487.field36628)
+   private static final Set<Block> field20450 = ImmutableSet.<Block>builder()
+      .add(Blocks.field36643)
+      .add(Blocks.field36528)
+      .add(Blocks.field36529)
+      .add(Blocks.OAK_FENCE)
+      .add(Blocks.field36867)
+      .add(Blocks.field36871)
+      .add(Blocks.field36870)
+      .add(Blocks.field36868)
+      .add(Blocks.field36869)
+      .add(Blocks.field36549)
+      .add(Blocks.field36628)
       .build();
 
    public Class4178(Class7792 var1, int var2) {
@@ -204,7 +204,7 @@ public abstract class Class4178 {
       int var9 = this.method12921(var3);
       int var10 = this.method12922(var2, var4);
       BlockPos var11 = new BlockPos(var8, var9, var10);
-      return var5.method38396(var11) ? var1.method6738(var11) : Class8487.field36387.method11579();
+      return var5.method38396(var11) ? var1.method6738(var11) : Blocks.AIR.method11579();
    }
 
    public boolean method12925(Class1662 var1, int var2, int var3, int var4, Class9764 var5) {
@@ -219,7 +219,7 @@ public abstract class Class4178 {
       for (int var11 = var4; var11 <= var7; var11++) {
          for (int var12 = var3; var12 <= var6; var12++) {
             for (int var13 = var5; var13 <= var8; var13++) {
-               this.method12923(var1, Class8487.field36387.method11579(), var12, var11, var13, var2);
+               this.method12923(var1, Blocks.AIR.method11579(), var12, var11, var13, var2);
             }
          }
       }
@@ -350,7 +350,7 @@ public abstract class Class4178 {
       for (Direction var7 : Class76.field161) {
          BlockPos var8 = var1.method8349(var7);
          Class7380 var9 = var0.method6738(var8);
-         if (var9.method23448(Class8487.field36534)) {
+         if (var9.method23448(Blocks.field36534)) {
             return var2;
          }
 
@@ -389,9 +389,9 @@ public abstract class Class4178 {
    }
 
    public boolean method12935(Class1659 var1, Class9764 var2, Random var3, BlockPos var4, ResourceLocation var5, Class7380 var6) {
-      if (var2.method38396(var4) && !var1.method6738(var4).method23448(Class8487.field36534)) {
+      if (var2.method38396(var4) && !var1.method6738(var4).method23448(Blocks.field36534)) {
          if (var6 == null) {
-            var6 = method12934(var1, var4, Class8487.field36534.method11579());
+            var6 = method12934(var1, var4, Blocks.field36534.method11579());
          }
 
          var1.method6725(var4, var6, 2);
@@ -408,8 +408,8 @@ public abstract class Class4178 {
 
    public boolean method12936(Class1658 var1, Class9764 var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
       BlockPos var11 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
-      if (var2.method38396(var11) && !var1.method6738(var11).method23448(Class8487.field36457)) {
-         this.method12923(var1, Class8487.field36457.method11579().method23465(Class3357.field18899, var7), var4, var5, var6, var2);
+      if (var2.method38396(var11) && !var1.method6738(var11).method23448(Blocks.field36457)) {
+         this.method12923(var1, Blocks.field36457.method11579().method23465(Class3357.field18899, var7), var4, var5, var6, var2);
          Class944 var12 = var1.method6759(var11);
          if (var12 instanceof Class971) {
             ((Class971)var12).method3744(var8, var3.nextLong());

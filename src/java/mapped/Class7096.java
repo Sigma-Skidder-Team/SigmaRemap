@@ -12,9 +12,9 @@ public class Class7096 extends Class7092 {
    @Override
    public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       BlockPos var9 = var5.field35530;
-      boolean var10 = var1.method6738(var9).method23448(Class8487.field36414);
-      return var10 && !Class3209.method11550(var5.field35531.method23412(var1, var9))
-         ? new Class8266(var9, Class8487.field36414.method11579(), var5.field35532)
+      boolean var10 = var1.method6738(var9).method23448(Blocks.LAVA);
+      return var10 && !Block.method11550(var5.field35531.method23412(var1, var9))
+         ? new Class8266(var9, Blocks.LAVA.method11579(), var5.field35532)
          : var5;
    }
 

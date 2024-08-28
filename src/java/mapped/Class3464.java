@@ -17,7 +17,7 @@ public class Class3464 extends Class3462 {
             Direction var10 = var6.method31424();
             Direction var11 = var10.method544() != Class113.field414 ? var10 : var4.method3386().method536();
             var2.method6742((PlayerEntity)null, var3, Class6067.field26986, Class2266.field14732, 1.0F, 1.0F);
-            var2.method6725(var3, Class8487.field36589.method11579().method23465(Class3342.field18848, var11), 11);
+            var2.method6725(var3, Blocks.field36589.method11579().method23465(Class3342.field18848, var11), 11);
             Class1000 var12 = new Class1000(
                var2,
                (double)var3.method8304() + 0.5 + (double)var11.method539() * 0.65,
@@ -40,11 +40,11 @@ public class Class3464 extends Class3462 {
 
    @Override
    public Class3486 method12146() {
-      return (Class3486)Class8487.field36634;
+      return (Class3486) Blocks.field36634;
    }
 
    @Override
    public Class3493 method12147() {
-      return (Class3493)Class8487.field36632;
+      return (Class3493) Blocks.field36632;
    }
 }

@@ -18,8 +18,8 @@ public class Class2918 extends Class2898<Class4715> {
          int var12 = var3.nextInt(8) - var3.nextInt(8);
          int var13 = var1.method6736(Class101.field298, var4.method8304() + var11, var4.method8306() + var12);
          BlockPos var14 = new BlockPos(var4.method8304() + var11, var13, var4.method8306() + var12);
-         Class7380 var15 = Class8487.field37005.method11579().method23465(Class3195.field18472, Integer.valueOf(var3.nextInt(4) + 1));
-         if (var1.method6738(var14).method23448(Class8487.field36413) && var15.method23443(var1, var14)) {
+         Class7380 var15 = Blocks.field37005.method11579().method23465(Class3195.field18472, Integer.valueOf(var3.nextInt(4) + 1));
+         if (var1.method6738(var14).method23448(Blocks.WATER) && var15.method23443(var1, var14)) {
             var1.method6725(var14, var15, 2);
             var8++;
          }

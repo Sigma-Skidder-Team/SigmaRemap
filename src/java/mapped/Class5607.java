@@ -22,13 +22,13 @@ public class Class5607 implements Packet<Class5116> {
    @Override
    public void method17175(PacketBuffer var1) throws IOException {
       this.field24887 = var1.method35707();
-      this.field24888 = Class3209.field18610.method9172(var1.method35714());
+      this.field24888 = Block.field18610.method9172(var1.method35714());
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.method35708(this.field24887);
-      var1.writeVarInt(Class3209.method11535(this.field24888));
+      var1.writeVarInt(Block.method11535(this.field24888));
    }
 
    public void method17180(Class5116 var1) {

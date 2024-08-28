@@ -9,7 +9,7 @@ public class Class3342 extends Class3198 implements Class3255 {
    private Class9803 field18851;
    private Class9803 field18852;
    private static final Predicate<Class7380> field18853 = var0 -> var0 != null
-         && (var0.method23448(Class8487.field36589) || var0.method23448(Class8487.field36590));
+         && (var0.method23448(Blocks.field36589) || var0.method23448(Blocks.field36590));
 
    public Class3342(Class7929 var1) {
       super(var1);
@@ -35,8 +35,8 @@ public class Class3342 extends Class3198 implements Class3255 {
             for (int var6 = 0; var6 < this.method11896().method38654(); var6++) {
                for (int var7 = 0; var7 < this.method11896().method38653(); var7++) {
                   Class9632 var8 = var5.method33881(var6, var7, 0);
-                  var1.method6725(var8.method37551(), Class8487.field36387.method11579(), 2);
-                  var1.method6999(2001, var8.method37551(), Class3209.method11535(var8.method37548()));
+                  var1.method6725(var8.method37551(), Blocks.AIR.method11579(), 2);
+                  var1.method6999(2001, var8.method37551(), Block.method11535(var8.method37548()));
                }
             }
 
@@ -53,15 +53,15 @@ public class Class3342 extends Class3198 implements Class3255 {
             for (int var19 = 0; var19 < this.method11896().method38654(); var19++) {
                for (int var22 = 0; var22 < this.method11896().method38653(); var22++) {
                   Class9632 var10 = var5.method33881(var19, var22, 0);
-                  var1.method6964(var10.method37551(), Class8487.field36387);
+                  var1.method6964(var10.method37551(), Blocks.AIR);
                }
             }
          }
       } else {
          for (int var13 = 0; var13 < this.method11894().method38653(); var13++) {
             Class9632 var16 = var5.method33881(0, var13, 0);
-            var1.method6725(var16.method37551(), Class8487.field36387.method11579(), 2);
-            var1.method6999(2001, var16.method37551(), Class3209.method11535(var16.method37548()));
+            var1.method6725(var16.method37551(), Blocks.AIR.method11579(), 2);
+            var1.method6999(2001, var16.method37551(), Block.method11535(var16.method37548()));
          }
 
          Class1021 var14 = Class8992.field41082.method33215(var1);
@@ -75,7 +75,7 @@ public class Class3342 extends Class3198 implements Class3255 {
 
          for (int var21 = 0; var21 < this.method11894().method38653(); var21++) {
             Class9632 var24 = var5.method33881(0, var21, 0);
-            var1.method6964(var24.method37551(), Class8487.field36387);
+            var1.method6964(var24.method37551(), Blocks.AIR);
          }
       }
    }
@@ -86,7 +86,7 @@ public class Class3342 extends Class3198 implements Class3255 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18848);
    }
 
@@ -94,7 +94,7 @@ public class Class3342 extends Class3198 implements Class3255 {
       if (this.field18849 == null) {
          this.field18849 = Class9659.method37706()
             .method37705(" ", "#", "#")
-            .method37707('#', Class9632.method37552(Class166.method497(Class8487.field36573)))
+            .method37707('#', Class9632.method37552(Class166.method497(Blocks.SNOW_BLOCK)))
             .method37708();
       }
 
@@ -106,7 +106,7 @@ public class Class3342 extends Class3198 implements Class3255 {
          this.field18850 = Class9659.method37706()
             .method37705("^", "#", "#")
             .method37707('^', Class9632.method37552(field18853))
-            .method37707('#', Class9632.method37552(Class166.method497(Class8487.field36573)))
+            .method37707('#', Class9632.method37552(Class166.method497(Blocks.SNOW_BLOCK)))
             .method37708();
       }
 
@@ -117,7 +117,7 @@ public class Class3342 extends Class3198 implements Class3255 {
       if (this.field18851 == null) {
          this.field18851 = Class9659.method37706()
             .method37705("~ ~", "###", "~#~")
-            .method37707('#', Class9632.method37552(Class166.method497(Class8487.field36522)))
+            .method37707('#', Class9632.method37552(Class166.method497(Blocks.field36522)))
             .method37707('~', Class9632.method37552(Class116.method330(Class8649.field38932)))
             .method37708();
       }
@@ -130,7 +130,7 @@ public class Class3342 extends Class3198 implements Class3255 {
          this.field18852 = Class9659.method37706()
             .method37705("~^~", "###", "~#~")
             .method37707('^', Class9632.method37552(field18853))
-            .method37707('#', Class9632.method37552(Class166.method497(Class8487.field36522)))
+            .method37707('#', Class9632.method37552(Class166.method497(Blocks.field36522)))
             .method37707('~', Class9632.method37552(Class116.method330(Class8649.field38932)))
             .method37708();
       }

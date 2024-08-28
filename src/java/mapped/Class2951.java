@@ -5,7 +5,7 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class Class2951 extends Class2898<Class4728> {
-   private static final Class7380 field18027 = Class8487.field37009
+   private static final Class7380 field18027 = Blocks.field37009
       .method11579()
       .method23465(Class3418.field19125, Integer.valueOf(1))
       .method23465(Class3418.field19126, Class181.field642)
@@ -24,7 +24,7 @@ public class Class2951 extends Class2898<Class4728> {
       Mutable var9 = var4.method8354();
       Mutable var10 = var4.method8354();
       if (var1.method7007(var9)) {
-         if (Class8487.field37009.method11579().method23443(var1, var9)) {
+         if (Blocks.field37009.method11579().method23443(var1, var9)) {
             int var11 = var3.nextInt(12) + 5;
             if (var3.nextFloat() < var5.field22399) {
                int var12 = var3.nextInt(4) + 1;
@@ -36,7 +36,7 @@ public class Class2951 extends Class2898<Class4728> {
                      if (var15 * var15 + var16 * var16 <= var12 * var12) {
                         var10.method8372(var13, var1.method6736(Class101.field296, var13, var14) - 1, var14);
                         if (method11219(var1.method6738(var10).method23383())) {
-                           var1.method6725(var10, Class8487.field36398.method11579(), 2);
+                           var1.method6725(var10, Blocks.field36398.method11579(), 2);
                         }
                      }
                   }

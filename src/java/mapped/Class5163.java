@@ -25,9 +25,9 @@ public class Class5163 extends Module {
         if (this.method15996() && var1.method13921()) {
             if (this.method15974("Sneak")) {
                 if (this.field23435) {
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5583(field23386.field1339, Class1865.field10041));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10041));
                 } else {
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5583(field23386.field1339, Class1865.field10040));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10040));
                 }
             }
 
@@ -36,7 +36,7 @@ public class Class5163 extends Module {
             if (this.method15974("Hit") && this.field23436 > this.field23434.nextInt(5) + 3) {
                 this.field23436 = 0;
                 Class79 var4 = Class79.values()[this.field23434.nextInt(1)];
-                field23386.field1339.method2820(var4);
+                mc.field1339.method2820(var4);
             }
 
             String var6 = this.method15978("Rotation Mode");
@@ -59,6 +59,6 @@ public class Class5163 extends Module {
 
     @Override
     public void method15966() {
-        this.field23437 = (int) field23386.field1339.field5031;
+        this.field23437 = (int) mc.field1339.field5031;
     }
 }

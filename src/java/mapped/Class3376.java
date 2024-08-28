@@ -6,7 +6,7 @@ public class Class3376 extends Class3241 {
    private static String[] field18974;
    public static final Class8551[] field18975 = new Class8551[]{Class8820.field39692, Class8820.field39693, Class8820.field39694};
    public static final Class6408 field18976 = Class8022.method27431(
-      Class3209.method11539(1.0, 0.0, 1.0, 15.0, 2.0, 15.0), Class3209.method11539(7.0, 0.0, 7.0, 9.0, 14.0, 9.0)
+      Block.method11539(1.0, 0.0, 1.0, 15.0, 2.0, 15.0), Block.method11539(7.0, 0.0, 7.0, 9.0, 14.0, 9.0)
    );
 
    public Class3376(Class7929 var1) {
@@ -91,7 +91,7 @@ public class Class3376 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18975[0], field18975[1], field18975[2]);
    }
 

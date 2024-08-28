@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class3455 extends Class3456 implements Class3449 {
    private static String[] field19273;
    public static final Class8552<Class84> field19274 = Class3456.field19276;
-   public static final Class6408 field19275 = Class3209.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
+   public static final Class6408 field19275 = Block.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
 
    public Class3455(Class7929 var1) {
       super(var1);
@@ -18,12 +18,12 @@ public class Class3455 extends Class3456 implements Class3449 {
 
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      return var1.method23454(var2, var3, Direction.field673) && !var1.method23448(Class8487.field36890);
+      return var1.method23454(var2, var3, Direction.field673) && !var1.method23448(Blocks.field36890);
    }
 
    @Override
    public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(Class8487.field36485);
+      return new Class8848(Blocks.field36485);
    }
 
    @Nullable

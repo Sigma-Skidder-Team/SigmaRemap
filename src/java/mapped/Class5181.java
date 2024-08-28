@@ -17,8 +17,8 @@ public class Class5181 extends Module {
     private void method16126(Class4436 var1) {
         if (this.method15996()) {
             if (Class5357.field23937) {
-                field23386.getClientPlayNetHandler()
-                        .sendPacket(new Class5605(field23386.field1339.getPosX(), field23386.field1339.getPosY(), field23386.field1339.getPosZ(), true));
+                mc.getClientPlayNetHandler()
+                        .sendPacket(new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ(), true));
             }
         }
     }

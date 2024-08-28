@@ -108,7 +108,7 @@ public class Class264 implements Class215, AutoCloseable {
    private static final Set field1015 = Collections.<Direction>unmodifiableSet(new HashSet(Arrays.asList(Direction.field685)));
    private int field1016;
    private int field1017 = 0;
-   private Class8391 field1018 = new Class8391(Class8487.field36387.method11579(), new BlockPos(0, 0, 0));
+   private Class8391 field1018 = new Class8391(Blocks.AIR.method11579(), new BlockPos(0, 0, 0));
    public boolean field1019 = false;
    public boolean field1020 = false;
    private boolean field1021 = false;
@@ -357,7 +357,7 @@ public class Class264 implements Class215, AutoCloseable {
                double var20 = var19.method19522(Class113.field414, var13, var15);
                double var22 = (double)var18.method23475(var4, var11);
                double var24 = Math.max(var20, var22);
-               Class7435 var26 = !var18.method23486(Class8953.field40470) && !var17.method23448(Class8487.field36890) && !Class3244.method11655(var17)
+               Class7435 var26 = !var18.method23486(Class8953.field40470) && !var17.method23448(Blocks.field36890) && !Class3244.method11655(var17)
                   ? Class7940.field34091
                   : Class7940.field34092;
                this.field939
@@ -3251,7 +3251,7 @@ public class Class264 implements Class215, AutoCloseable {
             }
             break;
          case 2001:
-            Class7380 var16 = Class3209.method11536(var4);
+            Class7380 var16 = Block.method11536(var4);
             if (!Class9561.method37050(var16, this.field943, var3)) {
                Class8447 var47 = var16.method23452();
                if (Class9299.field42827.method20214()) {

@@ -26,7 +26,7 @@ public class Class9585 {
    }
 
    public Class7380 method37215(int var1) {
-      return var1 >= 0 && var1 < this.field44810.size() ? this.field44810.get(var1) : Class8487.field36387.method11579();
+      return var1 >= 0 && var1 < this.field44810.size() ? this.field44810.get(var1) : Blocks.AIR.method11579();
    }
 
    public List<Class8557> method37216(Class8557 var1) {

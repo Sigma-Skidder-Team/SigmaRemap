@@ -25,7 +25,7 @@ public class Class5245 extends Module {
     @EventTarget
     private void method16351(Class4435 var1) {
         double var4 = this.field23611 * (double) (1.0F - this.method15977("Delay")) - this.field23611 / 2.0;
-        if (field23386.field1339.field5036 && this.field23610 <= 0) {
+        if (mc.field1339.field5036 && this.field23610 <= 0) {
         }
 
         if (this.field23610 == 1 && var1.method13994() < var4) {
@@ -42,7 +42,7 @@ public class Class5245 extends Module {
     private void method16352(Class4396 var1) {
         if (var1.method13898() instanceof Class5590) {
             Class5590 var4 = (Class5590) var1.method13898();
-            if (var4.method17565() == field23386.field1339.method3205()) {
+            if (var4.method17565() == mc.field1339.method3205()) {
                 this.field23610 = 1;
                 this.field23611 = (double) var4.method17567() / 8000.0;
             }

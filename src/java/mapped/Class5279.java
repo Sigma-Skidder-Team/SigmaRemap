@@ -28,7 +28,7 @@ public class Class5279 extends Module {
             GL11.glShadeModel(7425);
 
             for (Entity var5 : Class5628.method17680()) {
-                if (var5 != field23386.field1339
+                if (var5 != mc.field1339
                         && var5.method3066()
                         && var5.field5035.method19675() > 0.8
                         && var5.field5055 > 30

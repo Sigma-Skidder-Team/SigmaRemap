@@ -2,7 +2,7 @@ package mapped;
 
 import java.nio.file.Path;
 
-public class Class4454 extends Class4441<Class3209> {
+public class Class4454 extends Class4441<Block> {
    public Class4454(Class9068 var1) {
       super(var1, Class2348.field16072);
    }
@@ -11,121 +11,121 @@ public class Class4454 extends Class4441<Class3209> {
    public void method14010() {
       this.method14014(Class7645.field32734)
          .method31560(
-            Class8487.field36489,
-            Class8487.field36490,
-            Class8487.field36491,
-            Class8487.field36492,
-            Class8487.field36493,
-            Class8487.field36494,
-            Class8487.field36495,
-            Class8487.field36496,
-            Class8487.field36497,
-            Class8487.field36498,
-            Class8487.field36499,
-            Class8487.field36500,
-            Class8487.field36501,
-            Class8487.field36502,
-            Class8487.field36503,
-            Class8487.field36504
+            Blocks.field36489,
+            Blocks.field36490,
+            Blocks.field36491,
+            Blocks.field36492,
+            Blocks.field36493,
+            Blocks.field36494,
+            Blocks.field36495,
+            Blocks.field36496,
+            Blocks.field36497,
+            Blocks.field36498,
+            Blocks.field36499,
+            Blocks.field36500,
+            Blocks.field36501,
+            Blocks.field36502,
+            Blocks.field36503,
+            Blocks.field36504
          );
       this.method14014(Class7645.field32735)
          .method31560(
-            Class8487.field36400,
-            Class8487.field36401,
-            Class8487.field36402,
-            Class8487.field36403,
-            Class8487.field36404,
-            Class8487.field36405,
-            Class8487.field37091,
-            Class8487.field37092
+            Blocks.field36400,
+            Blocks.field36401,
+            Blocks.field36402,
+            Blocks.field36403,
+            Blocks.field36404,
+            Blocks.field36405,
+            Blocks.field37091,
+            Blocks.field37092
          );
-      this.method14014(Class7645.field32736).method31560(Class8487.field36615, Class8487.field36616, Class8487.field36617, Class8487.field36618);
+      this.method14014(Class7645.field32736).method31560(Blocks.field36615, Blocks.field36616, Blocks.field36617, Blocks.field36618);
       this.method14014(Class7645.field32737)
          .method31560(
-            Class8487.field36695,
-            Class8487.field36696,
-            Class8487.field36697,
-            Class8487.field36698,
-            Class8487.field36699,
-            Class8487.field36700,
-            Class8487.field37105,
-            Class8487.field37106
+            Blocks.field36695,
+            Blocks.field36696,
+            Blocks.field36697,
+            Blocks.field36698,
+            Blocks.field36699,
+            Blocks.field36700,
+            Blocks.field37105,
+            Blocks.field37106
          );
-      this.method14014(Class7645.field32738).method31559(Class7645.field32737).method31558(Class8487.field36570).method31558(Class8487.field37145);
+      this.method14014(Class7645.field32738).method31559(Class7645.field32737).method31558(Blocks.STONE_BUTTON).method31558(Blocks.field37145);
       this.method14014(Class7645.field32739)
          .method31560(
-            Class8487.field36778,
-            Class8487.field36779,
-            Class8487.field36780,
-            Class8487.field36781,
-            Class8487.field36782,
-            Class8487.field36783,
-            Class8487.field36784,
-            Class8487.field36785,
-            Class8487.field36786,
-            Class8487.field36787,
-            Class8487.field36788,
-            Class8487.field36789,
-            Class8487.field36790,
-            Class8487.field36791,
-            Class8487.field36792,
-            Class8487.field36793
+            Blocks.field36778,
+            Blocks.field36779,
+            Blocks.field36780,
+            Blocks.field36781,
+            Blocks.field36782,
+            Blocks.field36783,
+            Blocks.field36784,
+            Blocks.field36785,
+            Blocks.field36786,
+            Blocks.field36787,
+            Blocks.field36788,
+            Blocks.field36789,
+            Blocks.field36790,
+            Blocks.field36791,
+            Blocks.field36792,
+            Blocks.field36793
          );
       this.method14014(Class7645.field32740)
          .method31560(
-            Class8487.field36548,
-            Class8487.field36872,
-            Class8487.field36873,
-            Class8487.field36874,
-            Class8487.field36875,
-            Class8487.field36876,
-            Class8487.field37107,
-            Class8487.field37108
+            Blocks.field36548,
+            Blocks.field36872,
+            Blocks.field36873,
+            Blocks.field36874,
+            Blocks.field36875,
+            Blocks.field36876,
+            Blocks.field37107,
+            Blocks.field37108
          );
       this.method14014(Class7645.field32741)
          .method31560(
-            Class8487.field36533,
-            Class8487.field36661,
-            Class8487.field36662,
-            Class8487.field36663,
-            Class8487.field36762,
-            Class8487.field36763,
-            Class8487.field37103,
-            Class8487.field37104
+            Blocks.field36533,
+            Blocks.field36661,
+            Blocks.field36662,
+            Blocks.field36663,
+            Blocks.field36762,
+            Blocks.field36763,
+            Blocks.field37103,
+            Blocks.field37104
          );
       this.method14014(Class7645.field32742)
          .method31560(
-            Class8487.field36839,
-            Class8487.field36840,
-            Class8487.field36841,
-            Class8487.field36842,
-            Class8487.field36843,
-            Class8487.field36844,
-            Class8487.field37093,
-            Class8487.field37094
+            Blocks.field36839,
+            Blocks.field36840,
+            Blocks.field36841,
+            Blocks.field36842,
+            Blocks.field36843,
+            Blocks.field36844,
+            Blocks.field37093,
+            Blocks.field37094
          );
       this.method14014(Class7645.field32743)
          .method31560(
-            Class8487.field36578,
-            Class8487.field36870,
-            Class8487.field36871,
-            Class8487.field36867,
-            Class8487.field36868,
-            Class8487.field36869,
-            Class8487.field37097,
-            Class8487.field37098
+            Blocks.OAK_FENCE,
+            Blocks.field36870,
+            Blocks.field36871,
+            Blocks.field36867,
+            Blocks.field36868,
+            Blocks.field36869,
+            Blocks.field37097,
+            Blocks.field37098
          );
-      this.method14014(Class7645.field32748).method31559(Class7645.field32740).method31558(Class8487.field36560);
+      this.method14014(Class7645.field32748).method31559(Class7645.field32740).method31558(Blocks.field36560);
       this.method14014(Class7645.field32749)
-         .method31560(Class8487.field36406, Class8487.field36407, Class8487.field36408, Class8487.field36409, Class8487.field36410, Class8487.field36411);
-      this.method14014(Class7645.field32752).method31560(Class8487.field36427, Class8487.field36439, Class8487.field36432, Class8487.field36445);
-      this.method14014(Class7645.field32753).method31560(Class8487.field36422, Class8487.field36434, Class8487.field36433, Class8487.field36440);
-      this.method14014(Class7645.field32755).method31560(Class8487.field36426, Class8487.field36438, Class8487.field36431, Class8487.field36444);
-      this.method14014(Class7645.field32754).method31560(Class8487.field36424, Class8487.field36436, Class8487.field36429, Class8487.field36442);
-      this.method14014(Class7645.field32756).method31560(Class8487.field36425, Class8487.field36437, Class8487.field36430, Class8487.field36443);
-      this.method14014(Class7645.field32757).method31560(Class8487.field36423, Class8487.field36435, Class8487.field36428, Class8487.field36441);
-      this.method14014(Class7645.field32758).method31560(Class8487.field37079, Class8487.field37080, Class8487.field37081, Class8487.field37082);
-      this.method14014(Class7645.field32759).method31560(Class8487.field37070, Class8487.field37071, Class8487.field37072, Class8487.field37073);
+         .method31560(Blocks.field36406, Blocks.SPRUCE_SAPLING, Blocks.BIRCH_SAPLING, Blocks.JUNGLE_SAPLING, Blocks.ACACIA_SAPLING, Blocks.DARK_OAK_SAPLING);
+      this.method14014(Class7645.field32752).method31560(Blocks.field36427, Blocks.field36439, Blocks.field36432, Blocks.field36445);
+      this.method14014(Class7645.field32753).method31560(Blocks.field36422, Blocks.field36434, Blocks.field36433, Blocks.field36440);
+      this.method14014(Class7645.field32755).method31560(Blocks.field36426, Blocks.field36438, Blocks.field36431, Blocks.field36444);
+      this.method14014(Class7645.field32754).method31560(Blocks.field36424, Blocks.field36436, Blocks.field36429, Blocks.field36442);
+      this.method14014(Class7645.field32756).method31560(Blocks.field36425, Blocks.field36437, Blocks.field36430, Blocks.field36443);
+      this.method14014(Class7645.field32757).method31560(Blocks.field36423, Blocks.field36435, Blocks.field36428, Blocks.field36441);
+      this.method14014(Class7645.field32758).method31560(Blocks.field37079, Blocks.field37080, Blocks.field37081, Blocks.field37082);
+      this.method14014(Class7645.field32759).method31560(Blocks.field37070, Blocks.field37071, Blocks.field37072, Blocks.field37073);
       this.method14014(Class7645.field32750)
          .method31559(Class7645.field32752)
          .method31559(Class7645.field32753)
@@ -134,485 +134,485 @@ public class Class4454 extends Class4441<Class3209> {
          .method31559(Class7645.field32756)
          .method31559(Class7645.field32757);
       this.method14014(Class7645.field32751).method31559(Class7645.field32750).method31559(Class7645.field32758).method31559(Class7645.field32759);
-      this.method14014(Class7645.field32765).method31560(Class8487.field36713, Class8487.field36714, Class8487.field36715);
+      this.method14014(Class7645.field32765).method31560(Blocks.field36713, Blocks.field36714, Blocks.field36715);
       this.method14014(Class7645.field32769)
          .method31560(
-            Class8487.field36506,
-            Class8487.field36507,
-            Class8487.field36508,
-            Class8487.field36509,
-            Class8487.field36510,
-            Class8487.field36511,
-            Class8487.field36512,
-            Class8487.field36513,
-            Class8487.field36514,
-            Class8487.field36515,
-            Class8487.field36516,
-            Class8487.field36518,
-            Class8487.field36517
+            Blocks.field36506,
+            Blocks.field36507,
+            Blocks.field36508,
+            Blocks.field36509,
+            Blocks.field36510,
+            Blocks.field36511,
+            Blocks.field36512,
+            Blocks.field36513,
+            Blocks.field36514,
+            Blocks.field36515,
+            Blocks.field36516,
+            Blocks.field36518,
+            Blocks.field36517
          );
       this.method14014(Class7645.field32778)
          .method31559(Class7645.field32769)
          .method31560(
-            Class8487.field36395,
-            Class8487.field36396,
-            Class8487.field36397,
-            Class8487.field36398,
-            Class8487.field36415,
-            Class8487.field36416,
-            Class8487.field36417,
-            Class8487.field36519,
-            Class8487.field36520,
-            Class8487.field36524,
-            Class8487.field36574,
-            Class8487.field36575,
-            Class8487.field36579,
-            Class8487.field36589,
-            Class8487.field36631,
-            Class8487.field36640,
-            Class8487.field37084,
-            Class8487.field37083,
-            Class8487.field37090,
-            Class8487.field37075,
-            Class8487.field37074,
-            Class8487.field37077
+            Blocks.field36395,
+            Blocks.field36396,
+            Blocks.field36397,
+            Blocks.field36398,
+            Blocks.SAND,
+            Blocks.RED_SAND,
+            Blocks.GRAVEL,
+            Blocks.field36519,
+            Blocks.field36520,
+            Blocks.field36524,
+            Blocks.CACTUS,
+            Blocks.CLAY,
+            Blocks.PUMPKIN,
+            Blocks.field36589,
+            Blocks.field36631,
+            Blocks.field36640,
+            Blocks.field37084,
+            Blocks.field37083,
+            Blocks.field37090,
+            Blocks.field37075,
+            Blocks.field37074,
+            Blocks.field37077
          );
       this.method14014(Class7645.field32777)
          .method31560(
-            Class8487.field36668,
-            Class8487.field36677,
-            Class8487.field36678,
-            Class8487.field36679,
-            Class8487.field36680,
-            Class8487.field36681,
-            Class8487.field36682,
-            Class8487.field36683,
-            Class8487.field36684,
-            Class8487.field36685,
-            Class8487.field36676,
-            Class8487.field36669,
-            Class8487.field36670,
-            Class8487.field36671,
-            Class8487.field36672,
-            Class8487.field36673,
-            Class8487.field36674,
-            Class8487.field36689,
-            Class8487.field36690,
-            Class8487.field36691,
-            Class8487.field36675,
-            Class8487.field36692,
-            Class8487.field36686,
-            Class8487.field36687,
-            Class8487.field36688,
-            Class8487.field37010,
-            Class8487.field37125,
-            Class8487.field37126,
-            Class8487.field37127,
-            Class8487.field37128
+            Blocks.field36668,
+            Blocks.field36677,
+            Blocks.field36678,
+            Blocks.field36679,
+            Blocks.field36680,
+            Blocks.field36681,
+            Blocks.field36682,
+            Blocks.field36683,
+            Blocks.field36684,
+            Blocks.field36685,
+            Blocks.field36676,
+            Blocks.field36669,
+            Blocks.field36670,
+            Blocks.field36671,
+            Blocks.field36672,
+            Blocks.field36673,
+            Blocks.field36674,
+            Blocks.field36689,
+            Blocks.field36690,
+            Blocks.field36691,
+            Blocks.field36675,
+            Blocks.field36692,
+            Blocks.field36686,
+            Blocks.field36687,
+            Blocks.field36688,
+            Blocks.field37010,
+            Blocks.field37125,
+            Blocks.field37126,
+            Blocks.field37127,
+            Blocks.field37128
          );
       this.method14014(Class7645.field32760)
          .method31560(
-            Class8487.field36803,
-            Class8487.field36804,
-            Class8487.field36805,
-            Class8487.field36806,
-            Class8487.field36807,
-            Class8487.field36808,
-            Class8487.field36809,
-            Class8487.field36810,
-            Class8487.field36811,
-            Class8487.field36812,
-            Class8487.field36813,
-            Class8487.field36814,
-            Class8487.field36815,
-            Class8487.field36816,
-            Class8487.field36817,
-            Class8487.field36818,
-            Class8487.field36819,
-            Class8487.field36820,
-            Class8487.field36821,
-            Class8487.field36822,
-            Class8487.field36823,
-            Class8487.field36824,
-            Class8487.field36825,
-            Class8487.field36826,
-            Class8487.field36827,
-            Class8487.field36828,
-            Class8487.field36829,
-            Class8487.field36830,
-            Class8487.field36831,
-            Class8487.field36832,
-            Class8487.field36833,
-            Class8487.field36834
+            Blocks.field36803,
+            Blocks.field36804,
+            Blocks.field36805,
+            Blocks.field36806,
+            Blocks.field36807,
+            Blocks.field36808,
+            Blocks.field36809,
+            Blocks.field36810,
+            Blocks.field36811,
+            Blocks.field36812,
+            Blocks.field36813,
+            Blocks.field36814,
+            Blocks.field36815,
+            Blocks.field36816,
+            Blocks.field36817,
+            Blocks.field36818,
+            Blocks.field36819,
+            Blocks.field36820,
+            Blocks.field36821,
+            Blocks.field36822,
+            Blocks.field36823,
+            Blocks.field36824,
+            Blocks.field36825,
+            Blocks.field36826,
+            Blocks.field36827,
+            Blocks.field36828,
+            Blocks.field36829,
+            Blocks.field36830,
+            Blocks.field36831,
+            Blocks.field36832,
+            Blocks.field36833,
+            Blocks.field36834
          );
       this.method14014(Class7645.field32745)
          .method31560(
-            Class8487.field36561,
-            Class8487.field36562,
-            Class8487.field36563,
-            Class8487.field36564,
-            Class8487.field36565,
-            Class8487.field36566,
-            Class8487.field37095,
-            Class8487.field37096
+            Blocks.field36561,
+            Blocks.field36562,
+            Blocks.field36563,
+            Blocks.field36564,
+            Blocks.field36565,
+            Blocks.field36566,
+            Blocks.field37095,
+            Blocks.field37096
          );
-      this.method14014(Class7645.field32746).method31560(Class8487.field36559, Class8487.field37144);
+      this.method14014(Class7645.field32746).method31560(Blocks.field36559, Blocks.field37144);
       this.method14014(Class7645.field32744)
-         .method31560(Class8487.field36717, Class8487.field36718)
+         .method31560(Blocks.field36717, Blocks.field36718)
          .method31559(Class7645.field32745)
          .method31559(Class7645.field32746);
       this.method14014(Class7645.field32762)
          .method31559(Class7645.field32741)
          .method31560(
-            Class8487.field36551,
-            Class8487.field36655,
-            Class8487.field36644,
-            Class8487.field36639,
-            Class8487.field36638,
-            Class8487.field36882,
-            Class8487.field36727,
-            Class8487.field36838,
-            Class8487.field36771,
-            Class8487.field36770,
-            Class8487.field36772,
-            Class8487.field37014,
-            Class8487.field37015,
-            Class8487.field37016,
-            Class8487.field37017,
-            Class8487.field37018,
-            Class8487.field37019,
-            Class8487.field37020,
-            Class8487.field37021,
-            Class8487.field37022,
-            Class8487.field37023,
-            Class8487.field37024,
-            Class8487.field37025,
-            Class8487.field37026,
-            Class8487.field37027,
-            Class8487.field37131,
-            Class8487.field37139,
-            Class8487.field37142
+            Blocks.field36551,
+            Blocks.field36655,
+            Blocks.field36644,
+            Blocks.field36639,
+            Blocks.field36638,
+            Blocks.field36882,
+            Blocks.field36727,
+            Blocks.field36838,
+            Blocks.field36771,
+            Blocks.field36770,
+            Blocks.field36772,
+            Blocks.field37014,
+            Blocks.field37015,
+            Blocks.field37016,
+            Blocks.field37017,
+            Blocks.field37018,
+            Blocks.field37019,
+            Blocks.field37020,
+            Blocks.field37021,
+            Blocks.field37022,
+            Blocks.field37023,
+            Blocks.field37024,
+            Blocks.field37025,
+            Blocks.field37026,
+            Blocks.field37027,
+            Blocks.field37131,
+            Blocks.field37139,
+            Blocks.field37142
          );
       this.method14014(Class7645.field32763)
          .method31559(Class7645.field32742)
          .method31560(
-            Class8487.field36845,
-            Class8487.field36846,
-            Class8487.field36852,
-            Class8487.field36847,
-            Class8487.field36857,
-            Class8487.field36854,
-            Class8487.field36855,
-            Class8487.field36851,
-            Class8487.field36850,
-            Class8487.field36853,
-            Class8487.field36849,
-            Class8487.field36773,
-            Class8487.field36774,
-            Class8487.field36775,
-            Class8487.field37028,
-            Class8487.field37029,
-            Class8487.field37030,
-            Class8487.field37031,
-            Class8487.field37032,
-            Class8487.field37033,
-            Class8487.field37034,
-            Class8487.field37035,
-            Class8487.field37036,
-            Class8487.field37037,
-            Class8487.field37038,
-            Class8487.field37039,
-            Class8487.field37040,
-            Class8487.field36848,
-            Class8487.field36856,
-            Class8487.field37133,
-            Class8487.field37138,
-            Class8487.field37143
+            Blocks.field36845,
+            Blocks.field36846,
+            Blocks.field36852,
+            Blocks.field36847,
+            Blocks.field36857,
+            Blocks.field36854,
+            Blocks.field36855,
+            Blocks.field36851,
+            Blocks.field36850,
+            Blocks.field36853,
+            Blocks.field36849,
+            Blocks.field36773,
+            Blocks.field36774,
+            Blocks.field36775,
+            Blocks.field37028,
+            Blocks.field37029,
+            Blocks.field37030,
+            Blocks.field37031,
+            Blocks.field37032,
+            Blocks.field37033,
+            Blocks.field37034,
+            Blocks.field37035,
+            Blocks.field37036,
+            Blocks.field37037,
+            Blocks.field37038,
+            Blocks.field37039,
+            Blocks.field37040,
+            Blocks.field36848,
+            Blocks.field36856,
+            Blocks.field37133,
+            Blocks.field37138,
+            Blocks.field37143
          );
       this.method14014(Class7645.field32764)
          .method31560(
-            Class8487.field36666,
-            Class8487.field36667,
-            Class8487.field37041,
-            Class8487.field37042,
-            Class8487.field37043,
-            Class8487.field37044,
-            Class8487.field37045,
-            Class8487.field37046,
-            Class8487.field37047,
-            Class8487.field37048,
-            Class8487.field37049,
-            Class8487.field37050,
-            Class8487.field37051,
-            Class8487.field37052,
-            Class8487.field37132,
-            Class8487.field37140,
-            Class8487.field37146
+            Blocks.field36666,
+            Blocks.field36667,
+            Blocks.field37041,
+            Blocks.field37042,
+            Blocks.field37043,
+            Blocks.field37044,
+            Blocks.field37045,
+            Blocks.field37046,
+            Blocks.field37047,
+            Blocks.field37048,
+            Blocks.field37049,
+            Blocks.field37050,
+            Blocks.field37051,
+            Blocks.field37052,
+            Blocks.field37132,
+            Blocks.field37140,
+            Blocks.field37146
          );
       this.method14014(Class7645.field32785)
-         .method31560(Class8487.field36980, Class8487.field36981, Class8487.field36982, Class8487.field36983, Class8487.field36984);
+         .method31560(Blocks.field36980, Blocks.field36981, Blocks.field36982, Blocks.field36983, Blocks.field36984);
       this.method14014(Class7645.field32786)
          .method31559(Class7645.field32785)
-         .method31560(Class8487.field36990, Class8487.field36991, Class8487.field36992, Class8487.field36993, Class8487.field36994);
+         .method31560(Blocks.field36990, Blocks.field36991, Blocks.field36992, Blocks.field36993, Blocks.field36994);
       this.method14014(Class7645.field32784)
-         .method31560(Class8487.field37000, Class8487.field37001, Class8487.field37002, Class8487.field37003, Class8487.field37004);
-      this.method14014(Class7645.field32761).method31560(Class8487.field36415, Class8487.field36416);
-      this.method14014(Class7645.field32766).method31560(Class8487.field36550, Class8487.field36478, Class8487.field36479, Class8487.field36728);
+         .method31560(Blocks.field37000, Blocks.field37001, Blocks.field37002, Blocks.field37003, Blocks.field37004);
+      this.method14014(Class7645.field32761).method31560(Blocks.SAND, Blocks.RED_SAND);
+      this.method14014(Class7645.field32766).method31560(Blocks.field36550, Blocks.field36478, Blocks.field36479, Blocks.field36728);
       this.method14014(Class7645.field32783)
-         .method31560(Class8487.field36970, Class8487.field36971, Class8487.field36972, Class8487.field36973, Class8487.field36974);
-      this.method14014(Class7645.field32779).method31560(Class8487.field36572, Class8487.field36796, Class8487.field37006, Class8487.field36889);
-      this.method14014(Class7645.field32780).method31560(Class8487.field36395, Class8487.field36398);
+         .method31560(Blocks.field36970, Blocks.field36971, Blocks.field36972, Blocks.field36973, Blocks.field36974);
+      this.method14014(Class7645.field32779).method31560(Blocks.ICE, Blocks.field36796, Blocks.field37006, Blocks.field36889);
+      this.method14014(Class7645.field32780).method31560(Blocks.field36395, Blocks.field36398);
       this.method14014(Class7645.field32767)
-         .method31560(Class8487.field36449, Class8487.field36446, Class8487.field36447, Class8487.field36451, Class8487.field36450, Class8487.field36448);
+         .method31560(Blocks.field36449, Blocks.field36446, Blocks.field36447, Blocks.field36451, Blocks.field36450, Blocks.field36448);
       this.method14014(Class7645.field32781)
          .method31560(
-            Class8487.field36454,
-            Class8487.field36593,
-            Class8487.field36594,
-            Class8487.field36595,
-            Class8487.field36596,
-            Class8487.field36597,
-            Class8487.field36598,
-            Class8487.field36599,
-            Class8487.field36600,
-            Class8487.field36601,
-            Class8487.field36602,
-            Class8487.field36603,
-            Class8487.field36604,
-            Class8487.field36605,
-            Class8487.field36606,
-            Class8487.field36607,
-            Class8487.field36608
+            Blocks.field36454,
+            Blocks.field36593,
+            Blocks.field36594,
+            Blocks.field36595,
+            Blocks.field36596,
+            Blocks.field36597,
+            Blocks.field36598,
+            Blocks.field36599,
+            Blocks.field36600,
+            Blocks.field36601,
+            Blocks.field36602,
+            Blocks.field36603,
+            Blocks.field36604,
+            Blocks.field36605,
+            Blocks.field36606,
+            Blocks.field36607,
+            Blocks.field36608
          );
       this.method14014(Class7645.field32747)
          .method31560(
-            Class8487.field36613,
-            Class8487.field36611,
-            Class8487.field36614,
-            Class8487.field36612,
-            Class8487.field36609,
-            Class8487.field36610,
-            Class8487.field37099,
-            Class8487.field37100
+            Blocks.field36613,
+            Blocks.field36611,
+            Blocks.field36614,
+            Blocks.field36612,
+            Blocks.field36609,
+            Blocks.field36610,
+            Blocks.field37099,
+            Blocks.field37100
          );
-      this.method14014(Class7645.field32768).method31559(Class7645.field32747).method31558(Class8487.field36766);
-      this.method14014(Class7645.field32782).method31558(Class8487.field36485).method31559(Class7645.field32786).method31559(Class7645.field32784);
+      this.method14014(Class7645.field32768).method31559(Class7645.field32747).method31558(Blocks.field36766);
+      this.method14014(Class7645.field32782).method31558(Blocks.field36485).method31559(Class7645.field32786).method31559(Class7645.field32784);
       this.method14014(Class7645.field32787)
          .method31559(Class7645.field32761)
          .method31560(
-            Class8487.field37009,
-            Class8487.field37008,
-            Class8487.field36417,
-            Class8487.field36396,
-            Class8487.field36395,
-            Class8487.field36398,
-            Class8487.field36397,
-            Class8487.field36640
+            Blocks.field37009,
+            Blocks.field37008,
+            Blocks.GRAVEL,
+            Blocks.field36396,
+            Blocks.field36395,
+            Blocks.field36398,
+            Blocks.field36397,
+            Blocks.field36640
          );
       this.method14014(Class7645.field32788)
          .method31560(
-            Class8487.field36542,
-            Class8487.field36543,
-            Class8487.field36544,
-            Class8487.field36545,
-            Class8487.field36546,
-            Class8487.field36547,
-            Class8487.field37109,
-            Class8487.field37110
+            Blocks.field36542,
+            Blocks.field36543,
+            Blocks.field36544,
+            Blocks.field36545,
+            Blocks.field36546,
+            Blocks.field36547,
+            Blocks.field37109,
+            Blocks.field37110
          );
       this.method14014(Class7645.field32789)
          .method31560(
-            Class8487.field36552,
-            Class8487.field36553,
-            Class8487.field36554,
-            Class8487.field36555,
-            Class8487.field36556,
-            Class8487.field36557,
-            Class8487.field37111,
-            Class8487.field37112
+            Blocks.field36552,
+            Blocks.field36553,
+            Blocks.field36554,
+            Blocks.field36555,
+            Blocks.field36556,
+            Blocks.field36557,
+            Blocks.field37111,
+            Blocks.field37112
          );
       this.method14014(Class7645.field32790).method31559(Class7645.field32788).method31559(Class7645.field32789);
       this.method14014(Class7645.field32770)
          .method31560(
-            Class8487.field36476,
-            Class8487.field36477,
-            Class8487.field36473,
-            Class8487.field36474,
-            Class8487.field36471,
-            Class8487.field36469,
-            Class8487.field36475,
-            Class8487.field36465,
-            Class8487.field36470,
-            Class8487.field36467,
-            Class8487.field36464,
-            Class8487.field36463,
-            Class8487.field36468,
-            Class8487.field36472,
-            Class8487.field36462,
-            Class8487.field36466
+            Blocks.field36476,
+            Blocks.field36477,
+            Blocks.field36473,
+            Blocks.field36474,
+            Blocks.field36471,
+            Blocks.field36469,
+            Blocks.field36475,
+            Blocks.field36465,
+            Blocks.field36470,
+            Blocks.field36467,
+            Blocks.field36464,
+            Blocks.field36463,
+            Blocks.field36468,
+            Blocks.field36472,
+            Blocks.field36462,
+            Blocks.field36466
          );
-      this.method14014(Class7645.field32771).method31559(Class7645.field32743).method31558(Class8487.field36643);
+      this.method14014(Class7645.field32771).method31559(Class7645.field32743).method31558(Blocks.field36643);
       this.method14014(Class7645.field32791)
          .method31560(
-            Class8487.field36765,
-            Class8487.field36412,
-            Class8487.field36649,
-            Class8487.field36650,
-            Class8487.field36886,
-            Class8487.field36664,
-            Class8487.field36887,
-            Class8487.field36888,
-            Class8487.field37113,
-            Class8487.field37114,
-            Class8487.field36505,
-            Class8487.field36527,
-            Class8487.field37123,
-            Class8487.field36651,
-            Class8487.field36628,
-            Class8487.field37124
+            Blocks.field36765,
+            Blocks.BEDROCK,
+            Blocks.field36649,
+            Blocks.field36650,
+            Blocks.field36886,
+            Blocks.field36664,
+            Blocks.field36887,
+            Blocks.field36888,
+            Blocks.field37113,
+            Blocks.field37114,
+            Blocks.field36505,
+            Blocks.field36527,
+            Blocks.field37123,
+            Blocks.field36651,
+            Blocks.field36628,
+            Blocks.field37124
          );
       this.method14014(Class7645.field32792)
          .method31560(
-            Class8487.field36765,
-            Class8487.field36412,
-            Class8487.field36649,
-            Class8487.field36650,
-            Class8487.field36886,
-            Class8487.field36664,
-            Class8487.field36887,
-            Class8487.field36888,
-            Class8487.field37113,
-            Class8487.field37114,
-            Class8487.field36505
+            Blocks.field36765,
+            Blocks.BEDROCK,
+            Blocks.field36649,
+            Blocks.field36650,
+            Blocks.field36886,
+            Blocks.field36664,
+            Blocks.field36887,
+            Blocks.field36888,
+            Blocks.field37113,
+            Blocks.field37114,
+            Blocks.field36505
          );
-      this.method14014(Class7645.field32793).method31560(Class8487.field36581, Class8487.field36582);
-      this.method14014(Class7645.field32772).method31560(Class8487.field36797, Class8487.field36798, Class8487.field36800, Class8487.field36799);
+      this.method14014(Class7645.field32793).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
+      this.method14014(Class7645.field32772).method31560(Blocks.field36797, Blocks.field36798, Blocks.field36800, Blocks.field36799);
       this.method14014(Class7645.field32773).method31559(Class7645.field32769).method31559(Class7645.field32772);
-      this.method14014(Class7645.field32794).method31560(Class8487.field37117, Class8487.field37118);
+      this.method14014(Class7645.field32794).method31560(Blocks.field37117, Blocks.field37118);
       this.method14014(Class7645.field32795)
-         .method31560(Class8487.field36884, Class8487.field36693, Class8487.field36694, Class8487.field36539, Class8487.field36635, Class8487.field36634);
-      this.method14014(Class7645.field32796).method31559(Class7645.field32795).method31558(Class8487.field37069);
+         .method31560(Blocks.field36884, Blocks.field36693, Blocks.field36694, Blocks.field36539, Blocks.field36635, Blocks.field36634);
+      this.method14014(Class7645.field32796).method31559(Class7645.field32795).method31558(Blocks.field37069);
       this.method14014(Class7645.field32805)
          .method31560(
-            Class8487.field36896,
-            Class8487.field36912,
-            Class8487.field36908,
-            Class8487.field36909,
-            Class8487.field36906,
-            Class8487.field36904,
-            Class8487.field36910,
-            Class8487.field36900,
-            Class8487.field36905,
-            Class8487.field36902,
-            Class8487.field36899,
-            Class8487.field36898,
-            Class8487.field36903,
-            Class8487.field36907,
-            Class8487.field36911,
-            Class8487.field36897,
-            Class8487.field36901
+            Blocks.field36896,
+            Blocks.field36912,
+            Blocks.field36908,
+            Blocks.field36909,
+            Blocks.field36906,
+            Blocks.field36904,
+            Blocks.field36910,
+            Blocks.field36900,
+            Blocks.field36905,
+            Blocks.field36902,
+            Blocks.field36899,
+            Blocks.field36898,
+            Blocks.field36903,
+            Blocks.field36907,
+            Blocks.field36911,
+            Blocks.field36897,
+            Blocks.field36901
          );
-      this.method14014(Class7645.field32797).method31560(Class8487.field36588, Class8487.field36649, Class8487.field36886);
-      this.method14014(Class7645.field32798).method31560(Class8487.field36530, Class8487.field36531);
-      this.method14014(Class7645.field32799).method31560(Class8487.field37083, Class8487.field37074);
-      this.method14014(Class7645.field32800).method31560(Class8487.field36891, Class8487.field37076);
+      this.method14014(Class7645.field32797).method31560(Blocks.field36588, Blocks.field36649, Blocks.field36886);
+      this.method14014(Class7645.field32798).method31560(Blocks.field36530, Blocks.field36531);
+      this.method14014(Class7645.field32799).method31560(Blocks.field37083, Blocks.field37074);
+      this.method14014(Class7645.field32800).method31560(Blocks.field36891, Blocks.field37076);
       this.method14014(Class7645.field32801)
-         .method31560(Class8487.field37121, Class8487.field36660, Class8487.field36537, Class8487.field36521, Class8487.field36522);
-      this.method14014(Class7645.field32802).method31560(Class8487.field36581, Class8487.field36582);
+         .method31560(Blocks.field37121, Blocks.field36660, Blocks.field36537, Blocks.field36521, Blocks.field36522);
+      this.method14014(Class7645.field32802).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
       this.method14014(Class7645.field32803)
-         .method31560(Class8487.field36528, Class8487.field36585, Class8487.field36568, Class8487.field36659)
+         .method31560(Blocks.field36528, Blocks.field36585, Blocks.field36568, Blocks.field36659)
          .method31559(Class7645.field32790)
          .method31559(Class7645.field32760)
          .method31559(Class7645.field32744);
       this.method14014(Class7645.field32804)
          .method31560(
-            Class8487.field36549,
-            Class8487.field36636,
-            Class8487.field37053,
-            Class8487.field37086,
-            Class8487.field37087,
-            Class8487.field37088,
-            Class8487.field37089
+            Blocks.field36549,
+            Blocks.field36636,
+            Blocks.field37053,
+            Blocks.field37086,
+            Blocks.field37087,
+            Blocks.field37088,
+            Blocks.field37089
          );
       this.method14014(Class7645.field32774)
-         .method31558(Class8487.field36531)
-         .method31558(Class8487.field36585)
-         .method31558(Class8487.field37066)
-         .method31558(Class8487.field36586)
-         .method31558(Class8487.field37068);
+         .method31558(Blocks.field36531)
+         .method31558(Blocks.field36585)
+         .method31558(Blocks.field37066)
+         .method31558(Blocks.field36586)
+         .method31558(Blocks.field37068);
       this.method14014(Class7645.field32806)
-         .method31558(Class8487.field37075)
-         .method31558(Class8487.field37126)
-         .method31558(Class8487.field36588)
-         .method31558(Class8487.field37124);
-      this.method14014(Class7645.field32775).method31560(Class8487.field36418, Class8487.field36421);
-      this.method14014(Class7645.field32807).method31560(Class8487.field36581, Class8487.field36582);
+         .method31558(Blocks.field37075)
+         .method31558(Blocks.field37126)
+         .method31558(Blocks.field36588)
+         .method31558(Blocks.field37124);
+      this.method14014(Class7645.field32775).method31560(Blocks.field36418, Blocks.field36421);
+      this.method14014(Class7645.field32807).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
       this.method14014(Class7645.field32776)
          .method31560(
-            Class8487.field37070,
-            Class8487.field37071,
-            Class8487.field37072,
-            Class8487.field37073,
-            Class8487.field37079,
-            Class8487.field37080,
-            Class8487.field37081,
-            Class8487.field37082,
-            Class8487.field37091,
-            Class8487.field37092,
-            Class8487.field37093,
-            Class8487.field37094,
-            Class8487.field37095,
-            Class8487.field37096,
-            Class8487.field37097,
-            Class8487.field37098,
-            Class8487.field37099,
-            Class8487.field37100,
-            Class8487.field37101,
-            Class8487.field37102,
-            Class8487.field37103,
-            Class8487.field37104,
-            Class8487.field37105,
-            Class8487.field37106,
-            Class8487.field37107,
-            Class8487.field37108,
-            Class8487.field37109,
-            Class8487.field37110,
-            Class8487.field37111,
-            Class8487.field37112
+            Blocks.field37070,
+            Blocks.field37071,
+            Blocks.field37072,
+            Blocks.field37073,
+            Blocks.field37079,
+            Blocks.field37080,
+            Blocks.field37081,
+            Blocks.field37082,
+            Blocks.field37091,
+            Blocks.field37092,
+            Blocks.field37093,
+            Blocks.field37094,
+            Blocks.field37095,
+            Blocks.field37096,
+            Blocks.field37097,
+            Blocks.field37098,
+            Blocks.field37099,
+            Blocks.field37100,
+            Blocks.field37101,
+            Blocks.field37102,
+            Blocks.field37103,
+            Blocks.field37104,
+            Blocks.field37105,
+            Blocks.field37106,
+            Blocks.field37107,
+            Blocks.field37108,
+            Blocks.field37109,
+            Blocks.field37110,
+            Blocks.field37111,
+            Blocks.field37112
          );
-      this.method14014(Class7645.field32808).method31558(Class8487.field36414);
-      this.method14014(Class7645.field32809).method31560(Class8487.field37067, Class8487.field37068);
+      this.method14014(Class7645.field32808).method31558(Blocks.LAVA);
+      this.method14014(Class7645.field32809).method31560(Blocks.field37067, Blocks.field37068);
       this.method14014(Class7645.field32810)
-         .method31560(Class8487.field36521, Class8487.field37055, Class8487.field36534, Class8487.field36657, Class8487.field37141, Class8487.field36716)
+         .method31560(Blocks.field36521, Blocks.field37055, Blocks.field36534, Blocks.field36657, Blocks.field37141, Blocks.field36716)
          .method31559(Class7645.field32805)
          .method31559(Class7645.field32775);
       this.method14014(Class7645.field32811).method31559(Class7645.field32766);
       this.method14014(Class7645.field32812)
          .method31560(
-            Class8487.field36865,
-            Class8487.field36863,
-            Class8487.field36866,
-            Class8487.field36864,
-            Class8487.field36637,
-            Class8487.field36862,
-            Class8487.field37101,
-            Class8487.field37102
+            Blocks.field36865,
+            Blocks.field36863,
+            Blocks.field36866,
+            Blocks.field36864,
+            Blocks.field36637,
+            Blocks.field36862,
+            Blocks.field37101,
+            Blocks.field37102
          );
       this.method14014(Class7645.field32813).method31559(Class7645.field32812);
       this.method14014(Class7645.field32814)
-         .method31558(Class8487.field36640)
-         .method31558(Class8487.field36398)
-         .method31558(Class8487.field37083)
-         .method31558(Class8487.field37074);
-      this.method14014(Class7645.field32815).method31560(Class8487.field36580, Class8487.field36890);
+         .method31558(Blocks.field36640)
+         .method31558(Blocks.field36398)
+         .method31558(Blocks.field37083)
+         .method31558(Blocks.field37074);
+      this.method14014(Class7645.field32815).method31560(Blocks.NETHERRACK, Blocks.field36890);
       this.method14014(Class7645.field32816).method31559(Class7645.field32815);
-      this.method14014(Class7645.field32817).method31559(Class7645.field32815).method31558(Class8487.field36412);
+      this.method14014(Class7645.field32817).method31559(Class7645.field32815).method31558(Blocks.BEDROCK);
       this.method14014(Class7645.field32818)
-         .method31558(Class8487.field36388)
-         .method31558(Class8487.field36389)
-         .method31558(Class8487.field36391)
-         .method31558(Class8487.field36393);
-      this.method14014(Class7645.field32819).method31558(Class8487.field36580).method31558(Class8487.field36583).method31558(Class8487.field37130);
+         .method31558(Blocks.STONE)
+         .method31558(Blocks.GRANITE)
+         .method31558(Blocks.DIORITE)
+         .method31558(Blocks.field36393);
+      this.method14014(Class7645.field32819).method31558(Blocks.NETHERRACK).method31558(Blocks.BASALT).method31558(Blocks.field37130);
    }
 
    @Override

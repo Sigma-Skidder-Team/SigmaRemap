@@ -317,7 +317,7 @@ public class Class1656 extends Class1655 {
       boolean var8 = false;
       if (this.field9030.field1337.method23157() == Class1894.field11103) {
          for (Class8848 var10 : this.field9030.field1339.method2946()) {
-            if (var10.method32107() == Class8487.field36765.method11581()) {
+            if (var10.method32107() == Blocks.field36765.method11581()) {
                var8 = true;
                break;
             }
@@ -350,7 +350,7 @@ public class Class1656 extends Class1655 {
          }
       }
 
-      if (var6 && var13.method23448(Class8487.field36765)) {
+      if (var6 && var13.method23448(Blocks.field36765)) {
          this.method6746(Class7940.field34050, (double)var10 + 0.5, (double)var11 + 0.5, (double)var12 + 0.5, 0.0, 0.0, 0.0);
       }
 
@@ -523,8 +523,8 @@ public class Class1656 extends Class1655 {
    }
 
    @Override
-   public Class6802<Class3209> method6860() {
-      return Class6804.<Class3209>method20727();
+   public Class6802<Block> method6860() {
+      return Class6804.<Block>method20727();
    }
 
    @Override

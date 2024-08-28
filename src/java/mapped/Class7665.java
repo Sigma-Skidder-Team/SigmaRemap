@@ -10,7 +10,7 @@ public abstract class Class7665 {
    public boolean method25182(Class1657 var1, Class5646 var2, BlockPos var3, Class7380 var4, Random var5) {
       Class7909 var8 = this.method25186(var5, this.method25187(var1, var3));
       if (var8 != null) {
-         var1.method6725(var3, Class8487.field36387.method11579(), 4);
+         var1.method6725(var3, Blocks.AIR.method11579(), 4);
          ((Class4733)var8.field33887).method14849();
          if (!var8.method26521(var1, var2, var5, var3)) {
             var1.method6725(var3, var4, 4);

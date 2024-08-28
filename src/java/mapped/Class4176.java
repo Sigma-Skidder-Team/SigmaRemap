@@ -28,8 +28,8 @@ public class Class4176 extends Class4167 {
 
    @Override
    public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
-      Class7380 var10 = Class8487.field36644.method11579().method23465(Class3421.field19131, Direction.SOUTH);
-      Class7380 var11 = Class8487.field36643
+      Class7380 var10 = Blocks.field36644.method11579().method23465(Class3421.field19131, Direction.SOUTH);
+      Class7380 var11 = Blocks.field36643
          .method11579()
          .method23465(Class3239.field18680, Boolean.valueOf(true))
          .method23465(Class3239.field18682, Boolean.valueOf(true));
@@ -38,24 +38,24 @@ public class Class4176 extends Class4167 {
          int var13 = Math.max(1, 7 - var12);
          int var14 = Math.min(Math.max(var13 + 5, 14 - var12), 13);
          int var15 = var12;
-         this.method12927(var1, var5, 0, 0, var12, 4, var13, var12, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-         this.method12927(var1, var5, 1, var13 + 1, var12, 3, var14 - 1, var12, Class8487.field36387.method11579(), Class8487.field36387.method11579(), false);
+         this.method12927(var1, var5, 0, 0, var12, 4, var13, var12, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+         this.method12927(var1, var5, 1, var13 + 1, var12, 3, var14 - 1, var12, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
          if (var12 <= 6) {
             this.method12923(var1, var10, 1, var13 + 1, var12, var5);
             this.method12923(var1, var10, 2, var13 + 1, var12, var5);
             this.method12923(var1, var10, 3, var13 + 1, var12, var5);
          }
 
-         this.method12927(var1, var5, 0, var14, var12, 4, var14, var12, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-         this.method12927(var1, var5, 0, var13 + 1, var12, 0, var14 - 1, var12, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-         this.method12927(var1, var5, 4, var13 + 1, var12, 4, var14 - 1, var12, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
+         this.method12927(var1, var5, 0, var14, var12, 4, var14, var12, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+         this.method12927(var1, var5, 0, var13 + 1, var12, 0, var14 - 1, var12, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+         this.method12927(var1, var5, 4, var13 + 1, var12, 4, var14 - 1, var12, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
          if ((var12 & 1) == 0) {
             this.method12927(var1, var5, 0, var13 + 2, var12, 0, var13 + 3, var12, var11, var11, false);
             this.method12927(var1, var5, 4, var13 + 2, var12, 4, var13 + 3, var12, var11, var11, false);
          }
 
          for (int var16 = 0; var16 <= 4; var16++) {
-            this.method12932(var1, Class8487.field36642.method11579(), var16, -1, var15, var5);
+            this.method12932(var1, Blocks.field36642.method11579(), var16, -1, var15, var5);
          }
       }
 

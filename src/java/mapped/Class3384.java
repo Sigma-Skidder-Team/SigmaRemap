@@ -25,18 +25,18 @@ public class Class3384 extends Class3383 {
 
    @Override
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
-      return Class8487.field36529.method11492(var1, var2, var3);
+      return Blocks.field36529.method11492(var1, var2, var3);
    }
 
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return Class8487.field36529.method11491(var1, var2, var3, var4, var5, var6);
+      return Blocks.field36529.method11491(var1, var2, var3, var4, var5, var6);
    }
 
    @Nullable
    @Override
    public Class7380 method11495(Class5909 var1) {
-      Class7380 var4 = Class8487.field36529.method11495(var1);
+      Class7380 var4 = Blocks.field36529.method11495(var1);
       return var4 != null ? this.method11579().method23465(field18990, var4.<Direction>method23463(field18990)) : null;
    }
 
@@ -65,16 +65,16 @@ public class Class3384 extends Class3383 {
 
    @Override
    public Class7380 method11500(Class7380 var1, Class80 var2) {
-      return Class8487.field36529.method11500(var1, var2);
+      return Blocks.field36529.method11500(var1, var2);
    }
 
    @Override
    public Class7380 method11501(Class7380 var1, Class2089 var2) {
-      return Class8487.field36529.method11501(var1, var2);
+      return Blocks.field36529.method11501(var1, var2);
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18990, field18991);
    }
 }

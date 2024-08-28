@@ -30,21 +30,21 @@ public class Class5171 extends Module {
     private void method16089(Class4420 var1, PlayerEntity var2) {
         Color var5 = new Color(
                 !Client.getInstance().getFriendManager().method26998(var2.method2941().getString())
-                        ? (!var2.method2941().getString().equalsIgnoreCase(field23386.field1339.method2941().getString()) ? new Color(16775672).getRGB() : -6684775)
+                        ? (!var2.method2941().getString().equalsIgnoreCase(mc.field1339.method2941().getString()) ? new Color(16775672).getRGB() : -6684775)
                         : -8401409
         );
         if (!var2.method3342()) {
             float[][] var6 = field23459.get(var2);
-            if (var6 != null && var2.method3066() && var2 != field23386.field1339 && !var2.method3176()) {
+            if (var6 != null && var2.method3066() && var2 != mc.field1339 && !var2.method3176()) {
                 GL11.glPushMatrix();
                 GL11.glLineWidth(2.0F);
                 GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);
                 Class8472 var7 = this.method16090(var1, var2);
-                double var8 = var7.method29876() - field23386.method1554().field40017.method37504().field18048;
-                double var10 = var7.method29877() - field23386.method1554().field40017.method37504().field18049;
-                double var12 = var7.method29878() - field23386.method1554().field40017.method37504().field18050;
+                double var8 = var7.method29876() - mc.method1554().field40017.method37504().field18048;
+                double var10 = var7.method29877() - mc.method1554().field40017.method37504().field18049;
+                double var12 = var7.method29878() - mc.method1554().field40017.method37504().field18050;
                 GL11.glTranslated(var8, var10, var12);
-                float var14 = var2.field4966 + (var2.field4965 - var2.field4966) * field23386.method1562();
+                float var14 = var2.field4966 + (var2.field4965 - var2.field4966) * mc.method1562();
                 GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
                 GL11.glTranslated(0.0, 0.0, !var2.method3331() ? 0.0 : -0.235);
                 float var15 = !var2.method3331() ? 0.75F : 0.6F;
@@ -176,7 +176,7 @@ public class Class5171 extends Module {
     }
 
     private Class8472 method16090(Class4420 var1, PlayerEntity var2) {
-        float var5 = field23386.method1562();
+        float var5 = mc.method1562();
         double var6 = var2.field5048 + (var2.getPosX() - var2.field5048) * (double) var5;
         double var8 = var2.field5049 + (var2.getPosY() - var2.field5049) * (double) var5;
         double var10 = var2.field5050 + (var2.getPosZ() - var2.field5050) * (double) var5;
@@ -197,7 +197,7 @@ public class Class5171 extends Module {
     }
 
     private boolean method16092(PlayerEntity var1) {
-        return !field23386.field1338.method6870().contains(var1);
+        return !mc.field1338.method6870().contains(var1);
     }
 
     private void method16093(boolean var1) {

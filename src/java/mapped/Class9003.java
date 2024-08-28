@@ -13,7 +13,7 @@ public class Class9003 {
          Class8514.field37847,
          Class8514.field38086
       );
-      var3.method33259((var0x, var1) -> Class6406.method19509(0.5, 1.0), Class8487.field36801, Class8487.field36802);
+      var3.method33259((var0x, var1) -> Class6406.method19509(0.5, 1.0), Blocks.field36801, Blocks.field36802);
       var3.method33259((var0x, var1) -> {
          if (var1 != 1) {
             return -1;
@@ -55,17 +55,17 @@ public class Class9003 {
             Class7380 var5x = ((Class3292)var1.method32107()).method11845().method11579();
             return var0.method29465(var5x, (Class1663)null, (BlockPos)null, var2);
          },
-         Class8487.field36395,
-         Class8487.field36482,
-         Class8487.field36483,
-         Class8487.field36636,
-         Class8487.field36446,
-         Class8487.field36447,
-         Class8487.field36448,
-         Class8487.field36449,
-         Class8487.field36450,
-         Class8487.field36451,
-         Class8487.field36641
+         Blocks.field36395,
+         Blocks.field36482,
+         Blocks.field36483,
+         Blocks.field36636,
+         Blocks.field36446,
+         Blocks.field36447,
+         Blocks.field36448,
+         Blocks.field36449,
+         Blocks.field36450,
+         Blocks.field36451,
+         Blocks.field36641
       );
       var3.method33259((var0x, var1) -> var1 != 0 ? -1 : Class9741.method38182(var0x), Class8514.field38117);
       var3.method33259((var0x, var1) -> var1 != 0 ? Class3316.method11871(var0x) : -1, Class8514.field37955);

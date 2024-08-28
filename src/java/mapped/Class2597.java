@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 public class Class2597 extends Class2595 {
    private static String[] field16821;
-   private static final Predicate<Class7380> field16822 = Class166.method497(Class8487.field36482);
+   private static final Predicate<Class7380> field16822 = Class166.method497(Blocks.field36482);
    private final Class1006 field16823;
    private final Class1655 field16824;
    private int field16825;
@@ -20,7 +20,7 @@ public class Class2597 extends Class2595 {
    public boolean method10803() {
       if (this.field16823.method3013().nextInt(!this.field16823.method3005() ? 1000 : 50) == 0) {
          BlockPos var3 = this.field16823.method3432();
-         return !field16822.test(this.field16824.method6738(var3)) ? this.field16824.method6738(var3.method8313()).method23448(Class8487.field36395) : true;
+         return !field16822.test(this.field16824.method6738(var3)) ? this.field16824.method6738(var3.method8313()).method23448(Blocks.field36395) : true;
       } else {
          return false;
       }
@@ -54,10 +54,10 @@ public class Class2597 extends Class2595 {
          BlockPos var3 = this.field16823.method3432();
          if (!field16822.test(this.field16824.method6738(var3))) {
             BlockPos var4 = var3.method8313();
-            if (this.field16824.method6738(var4).method23448(Class8487.field36395)) {
+            if (this.field16824.method6738(var4).method23448(Blocks.field36395)) {
                if (this.field16824.method6789().method17135(Class5462.field24224)) {
-                  this.field16824.method6999(2001, var4, Class3209.method11535(Class8487.field36395.method11579()));
-                  this.field16824.method6725(var4, Class8487.field36396.method11579(), 2);
+                  this.field16824.method6999(2001, var4, Block.method11535(Blocks.field36395.method11579()));
+                  this.field16824.method6725(var4, Blocks.field36396.method11579(), 2);
                }
 
                this.field16823.method4235();

@@ -31,6 +31,6 @@ public class Class2635 extends Class2628 {
 
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
-      return var1.method6738(var2).method23448(Class8487.field36413);
+      return var1.method6738(var2).method23448(Blocks.WATER);
    }
 }

@@ -108,7 +108,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
       Class7380 var5 = var2.method6738(var1.method8313());
-      return !var5.method23448(Class8487.field36395) && !var5.method23448(Class8487.field36415) ? 0.5F - var2.method7009(var1) : 10.0F;
+      return !var5.method23448(Blocks.field36395) && !var5.method23448(Blocks.SAND) ? 0.5F - var2.method7009(var1) : 10.0F;
    }
 
    @Override

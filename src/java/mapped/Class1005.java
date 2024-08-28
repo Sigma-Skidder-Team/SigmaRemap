@@ -450,7 +450,7 @@ public class Class1005 extends Class880 {
       if (this.field5024 instanceof Class1657) {
          ((Class1657)this.field5024)
             .method6939(
-               new Class7439(Class7940.field34051, Class8487.field36400.method11579()),
+               new Class7439(Class7940.field34051, Blocks.field36400.method11579()),
                this.getPosX(),
                this.method3440(0.6666666666666666),
                this.getPosZ(),
@@ -475,7 +475,7 @@ public class Class1005 extends Class880 {
    }
 
    private void method4193(Class8654 var1) {
-      Class3209.method11557(this.field5024, this.method3432(), new Class8848(Class8514.field38082));
+      Block.method11557(this.field5024, this.method3432(), new Class8848(Class8514.field38082));
       this.method4194(var1);
    }
 
@@ -486,7 +486,7 @@ public class Class1005 extends Class880 {
       for (int var4 = 0; var4 < this.field5581.size(); var4++) {
          Class8848 var5 = this.field5581.get(var4);
          if (!var5.method32105()) {
-            Class3209.method11557(this.field5024, this.method3432().method8311(), var5);
+            Block.method11557(this.field5024, this.method3432().method8311(), var5);
             this.field5581.set(var4, Class8848.field39973);
          }
       }
@@ -494,7 +494,7 @@ public class Class1005 extends Class880 {
       for (int var6 = 0; var6 < this.field5582.size(); var6++) {
          Class8848 var7 = this.field5582.get(var6);
          if (!var7.method32105()) {
-            Class3209.method11557(this.field5024, this.method3432().method8311(), var7);
+            Block.method11557(this.field5024, this.method3432().method8311(), var7);
             this.field5582.set(var6, Class8848.field39973);
          }
       }

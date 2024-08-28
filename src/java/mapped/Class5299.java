@@ -23,27 +23,27 @@ public class Class5299 extends Module {
 
     @EventTarget
     private void method16651(Class4435 var1) {
-        if (!field23386.field1339.field5037) {
+        if (!mc.field1339.field5037) {
             this.field23832 = false;
-        } else if (!field23386.field1339.field5036) {
-            if (field23386.field1339.method3431().field18049 != (double) ((int) field23386.field1339.method3431().field18049)) {
+        } else if (!mc.field1339.field5036) {
+            if (mc.field1339.method3431().field18049 != (double) ((int) mc.field1339.method3431().field18049)) {
                 if (var1.method13994() < 0.0
-                        && field23386.field1339.method3431().field18049 + var1.method13994() < (double) ((int) field23386.field1339.method3431().field18049)) {
-                    var1.method13995((double) ((int) field23386.field1339.method3431().field18049) - field23386.field1339.method3431().field18049);
+                        && mc.field1339.method3431().field18049 + var1.method13994() < (double) ((int) mc.field1339.method3431().field18049)) {
+                    var1.method13995((double) ((int) mc.field1339.method3431().field18049) - mc.field1339.method3431().field18049);
                     this.field23832 = true;
                 }
-            } else if (this.method15974("AutoJump") || field23386.field1299.field44636.method8509()) {
-                field23386.field1339.method2914();
-                var1.method13995(field23386.field1339.method3433().field18049);
-            } else if (!field23386.field1299.field44637.method8509()) {
+            } else if (this.method15974("AutoJump") || mc.field1299.field44636.method8509()) {
+                mc.field1339.method2914();
+                var1.method13995(mc.field1339.method3433().field18049);
+            } else if (!mc.field1299.field44637.method8509()) {
                 Class9567.method37088(var1, 0.28 + (double) Class9567.method37078() * 0.05);
                 var1.method13995(0.0);
             } else {
                 var1.method13995(-0.0784);
             }
         } else if (this.method15974("AutoJump")) {
-            field23386.field1339.method2914();
-            var1.method13995(field23386.field1339.method3433().field18049);
+            mc.field1339.method2914();
+            var1.method13995(mc.field1339.method3433().field18049);
         }
 
         Class5628.method17725(var1.method13994());
@@ -55,8 +55,8 @@ public class Class5299 extends Module {
             Class9629 var4 = Class5628.method17760(1.0E-4);
             String var5 = this.method15978("Mode");
             if (this.method15974("Ceiling")
-                    && !field23386.field1339.field5036
-                    && field23386.field1338.method7055(field23386.field1339, field23386.field1339.field5035.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
+                    && !mc.field1339.field5036
+                    && mc.field1338.method7055(mc.field1339, mc.field1339.field5035.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
                 var1.method13912(var1.method13911() + 4.9E-7);
             }
 
@@ -72,7 +72,7 @@ public class Class5299 extends Module {
                 }
 
                 if (this.field23832) {
-                    if (this.method15974("AutoJump") || field23386.field1299.field44636.method8509()) {
+                    if (this.method15974("AutoJump") || mc.field1299.field44636.method8509()) {
                         this.field23832 = !this.field23832;
                     }
 
@@ -103,10 +103,10 @@ public class Class5299 extends Module {
 
     @EventTarget
     private void method16653(Class4398 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (var1.method13903() != null
                     && !var1.method13903().method19516()
-                    && var1.method13903().method19514().field28450 > field23386.field1339.field5035.field28450 + 1.0) {
+                    && var1.method13903().method19514().field28450 > mc.field1339.field5035.field28450 + 1.0) {
                 var1.method13900(true);
             }
         }

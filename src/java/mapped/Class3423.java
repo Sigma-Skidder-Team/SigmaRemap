@@ -2,14 +2,14 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class3423 extends Class3209 implements Class3207 {
+public class Class3423 extends Block implements Class3207 {
    private static String[] field19153;
    public static final Class8553 field19154 = Class3198.field18484;
    public static final Class8551 field19155 = Class8820.field39710;
-   public static final Class6408 field19156 = Class3209.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
-   public static final Class6408 field19157 = Class3209.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19158 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
-   public static final Class6408 field19159 = Class3209.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field19156 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
+   public static final Class6408 field19157 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field19158 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
+   public static final Class6408 field19159 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
 
    public Class3423(Class7929 var1) {
       super(var1);
@@ -45,7 +45,7 @@ public class Class3423 extends Class3209 implements Class3207 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var2.method536() == var1.<Direction>method23463(field19154) && !var1.method23443(var4, var5)) {
-         return Class8487.field36387.method11579();
+         return Blocks.AIR.method11579();
       } else {
          if (var1.<Boolean>method23463(field19155)) {
             var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
@@ -93,7 +93,7 @@ public class Class3423 extends Class3209 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19154, field19155);
    }
 

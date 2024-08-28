@@ -370,7 +370,7 @@ public class Class302 implements Class268 {
    public void method1206(BlockPos var1, Class7380 var2) {
       boolean var6;
       if (Class9299.field42824.method20214() && Class9299.field42830.method20214()) {
-         Class3209 var5 = var2.method23383();
+         Block var5 = var2.method23383();
          var6 = !Class9299.method35064(var2, Class9299.field42830, this.field1168, var1)
             && !Class9299.method35064(var2, Class9299.field42824, this.field1168, var1, this);
       } else {

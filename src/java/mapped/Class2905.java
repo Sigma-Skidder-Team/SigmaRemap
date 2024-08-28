@@ -14,7 +14,7 @@ public class Class2905 extends Class2898<Class4712> {
          var4 = var4.method8313();
       }
 
-      if (!var1.method6738(var4).method23448(Class8487.field36573)) {
+      if (!var1.method6738(var4).method23448(Blocks.SNOW_BLOCK)) {
          return false;
       } else {
          var4 = var4.method8339(var3.nextInt(4));
@@ -36,16 +36,16 @@ public class Class2905 extends Class2898<Class4712> {
                   if ((var13 == 0 && var15 == 0 || !(var14 * var14 + var16 * var16 > var11 * var11))
                      && (var13 != -var12 && var13 != var12 && var15 != -var12 && var15 != var12 || !(var3.nextFloat() > 0.75F))) {
                      Class7380 var17 = var1.method6738(var4.method8336(var13, var10, var15));
-                     Class3209 var18 = var17.method23383();
-                     if (var17.method23393() || method11219(var18) || var18 == Class8487.field36573 || var18 == Class8487.field36572) {
-                        this.method11217(var1, var4.method8336(var13, var10, var15), Class8487.field36796.method11579());
+                     Block var18 = var17.method23383();
+                     if (var17.method23393() || method11219(var18) || var18 == Blocks.SNOW_BLOCK || var18 == Blocks.ICE) {
+                        this.method11217(var1, var4.method8336(var13, var10, var15), Blocks.field36796.method11579());
                      }
 
                      if (var10 != 0 && var12 > 1) {
                         var17 = var1.method6738(var4.method8336(var13, -var10, var15));
                         var18 = var17.method23383();
-                        if (var17.method23393() || method11219(var18) || var18 == Class8487.field36573 || var18 == Class8487.field36572) {
-                           this.method11217(var1, var4.method8336(var13, -var10, var15), Class8487.field36796.method11579());
+                        if (var17.method23393() || method11219(var18) || var18 == Blocks.SNOW_BLOCK || var18 == Blocks.ICE) {
+                           this.method11217(var1, var4.method8336(var13, -var10, var15), Blocks.field36796.method11579());
                         }
                      }
                   }
@@ -72,16 +72,16 @@ public class Class2905 extends Class2898<Class4712> {
 
                while (var23.getY() > 50) {
                   Class7380 var25 = var1.method6738(var23);
-                  Class3209 var26 = var25.method23383();
+                  Block var26 = var25.method23383();
                   if (!var25.method23393()
                      && !method11219(var26)
-                     && var26 != Class8487.field36573
-                     && var26 != Class8487.field36572
-                     && var26 != Class8487.field36796) {
+                     && var26 != Blocks.SNOW_BLOCK
+                     && var26 != Blocks.ICE
+                     && var26 != Blocks.field36796) {
                      break;
                   }
 
-                  this.method11217(var1, var23, Class8487.field36796.method11579());
+                  this.method11217(var1, var23, Blocks.field36796.method11579());
                   var23 = var23.method8313();
                   if (--var24 <= 0) {
                      var23 = var23.method8340(var3.nextInt(5) + 1);

@@ -26,25 +26,25 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16945(Class4398 var1) {
-      if (this.method15996() && field23386.field1338 != null && !Class5258.method16421()) {
-         if (field23386.field1338.method6738(var1.method13902()).method23384() == Class8649.field38940
-            || field23386.field1338.method6738(var1.method13902()).method23384() == Class8649.field38941
-            || field23386.field1338.method6738(var1.method13902()).method23384() == Class8649.field38943) {
+      if (this.method15996() && mc.field1338 != null && !Class5258.method16421()) {
+         if (mc.field1338.method6738(var1.method13902()).method23384() == Class8649.field38940
+            || mc.field1338.method6738(var1.method13902()).method23384() == Class8649.field38941
+            || mc.field1338.method6738(var1.method13902()).method23384() == Class8649.field38943) {
             if (!(
                (double)var1.method13902().getY()
-                  >= field23386.field1339.getPosY() - (double)(field23386.field1339.getPosY() % 0.5 != 0.0 ? 0.0F : 0.5F)
+                  >= mc.field1339.getPosY() - (double)(mc.field1339.getPosY() % 0.5 != 0.0 ? 0.0F : 0.5F)
             )) {
-               if (!this.method16951(field23386.field1339.field5035)) {
-                  if (!field23386.field1339.method3331()) {
-                     if (!(field23386.field1339.field5045 > 10.0F)) {
-                        Class7380 var4 = field23386.field1338.method6738(var1.method13902());
+               if (!this.method16951(mc.field1339.field5035)) {
+                  if (!mc.field1339.method3331()) {
+                     if (!(mc.field1339.field5045 > 10.0F)) {
+                        Class7380 var4 = mc.field1338.method6738(var1.method13902());
                         int var5 = var4.method23449().method23477();
                         float var6 = 0.0F;
                         if (var5 > 3) {
                            var6++;
                         }
 
-                        if (field23386.field1339.field5045 > 10.0F) {
+                        if (mc.field1339.field5045 > 10.0F) {
                            var6 -= 0.8F;
                         }
 
@@ -60,22 +60,22 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16946(Class4399 var1) {
-      if (this.method15996() && field23386.field1338 != null && var1.method13921() && field23386.method1528() != null) {
-         if (method16953() && !this.method16951(field23386.field1339.field5035)) {
+      if (this.method15996() && mc.field1338 != null && var1.method13921() && mc.method1528() != null) {
+         if (method16953() && !this.method16951(mc.field1339.field5035)) {
             this.field24017++;
          } else {
             this.field24017 = 0;
          }
 
-         if (method16953() && !this.method16951(field23386.field1339.field5035)) {
-            field23386.field1339.field4999 = 0;
+         if (method16953() && !this.method16951(mc.field1339.field5035)) {
+            mc.field1339.field4999 = 0;
             var1.method13908(true);
             this.field24015++;
             if (this.field24015 % 2 == 0) {
                var1.method13912(var1.method13911() - 0.001);
             }
          } else {
-            this.field24015 = !field23386.field1339.field5036 ? 1 : 0;
+            this.field24015 = !mc.field1339.field5036 ? 1 : 0;
          }
       }
    }
@@ -83,9 +83,9 @@ public class Class5381 extends Module {
    @EventTarget
    @LowerPriority
    public void method16947(Class4435 var1) {
-      if (this.method15996() && field23386.field1338 != null && !Class5258.method16421()) {
-         if (this.method16951(field23386.field1339.field5035) && !field23386.field1339.method3331()) {
-            Class7380 var4 = field23386.field1338.method6738(field23386.field1339.method3432());
+      if (this.method15996() && mc.field1338 != null && !Class5258.method16421()) {
+         if (this.method16951(mc.field1339.field5035) && !mc.field1339.method3331()) {
+            Class7380 var4 = mc.field1338.method6738(mc.field1339.method3432());
             if (var4 != null && !var4.method23449().method23474()) {
                double var5 = (double)var4.method23449().method23476();
                if (var5 > 0.4) {
@@ -93,12 +93,12 @@ public class Class5381 extends Module {
                      var1.method13995(0.13);
                   }
 
-                  boolean var7 = this.method16951(field23386.field1339.field5035.method19667(0.0, var1.method13994(), 0.0));
+                  boolean var7 = this.method16951(mc.field1339.field5035.method19667(0.0, var1.method13994(), 0.0));
                   if (!var7) {
-                     double var8 = (double)((int)field23386.field1339.getPosY() + 1);
-                     double var10 = var8 - field23386.field1339.getPosY();
+                     double var8 = (double)((int) mc.field1339.getPosY() + 1);
+                     double var10 = var8 - mc.field1339.getPosY();
                      var1.method13995(var10);
-                     field23386.field1339.field5036 = true;
+                     mc.field1339.field5036 = true;
                      this.field24015 = 1;
                   }
                }
@@ -110,10 +110,10 @@ public class Class5381 extends Module {
 
             if (this.method15978("Mode").equals("Dolphin")) {
                if (this.field24016 > 0) {
-                  if (Class5628.method17730(field23386.field1339, 0.001F)) {
+                  if (Class5628.method17730(mc.field1339, 0.001F)) {
                      this.field24016 = 0;
                   } else {
-                     if (field23386.field1339.method3331() || field23386.field1339.field5038) {
+                     if (mc.field1339.method3331() || mc.field1339.field5038) {
                         this.field24016 = 0;
                         return;
                      }
@@ -125,7 +125,7 @@ public class Class5381 extends Module {
 
                      double var14 = this.method16954((double)this.field24016);
                      if (var14 != -999.0) {
-                        field23386.field1339.field6120 = 0.0;
+                        mc.field1339.field6120 = 0.0;
                         var1.method13995(var14);
                      }
                   }
@@ -146,7 +146,7 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16948(Class4436 var1) {
-      if (this.method15996() && field23386.field1338 != null && field23386.method1528() != null) {
+      if (this.method15996() && mc.field1338 != null && mc.method1528() != null) {
          if (method16953()) {
             if (this.field24015 % 2 != 0) {
                var1.method13900(true);
@@ -187,12 +187,12 @@ public class Class5381 extends Module {
       int var9 = Class9679.method37769(var1.field28451);
       int var10 = Class9679.method37774(var1.field28454);
       Class116 var11 = Class116.method330(var2);
-      return BlockPos.method8363(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(field23386.field1338.method6738(var1x)));
+      return BlockPos.method8363(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(mc.field1338.method6738(var1x)));
    }
 
    public static boolean method16953() {
-      Class6488 var2 = field23386.field1339.field5035.method19667(0.0, -0.001, 0.0);
-      Stream var3 = field23386.field1338.method7055(field23386.field1339, var2);
+      Class6488 var2 = mc.field1339.field5035.method19667(0.0, -0.001, 0.0);
+      Stream var3 = mc.field1338.method7055(mc.field1339, var2);
       Iterator var4 = var3.iterator();
       boolean var5 = true;
       if (var4.hasNext()) {
@@ -200,12 +200,12 @@ public class Class5381 extends Module {
             Class6408 var6 = (Class6408)var4.next();
             Class6488 var7 = var6.method19514();
             BlockPos var8 = new BlockPos(var7.method19685());
-            Class3209 var9 = field23386.field1338.method6738(var8).method23383();
-            if (var9 != Class8487.field36413
-               && var9 != Class8487.field36414
-               && var9 != Class8487.field36387
-               && var9 != Class8487.field36485
-               && var9 != Class8487.field36486) {
+            Block var9 = mc.field1338.method6738(var8).method23383();
+            if (var9 != Blocks.WATER
+               && var9 != Blocks.LAVA
+               && var9 != Blocks.AIR
+               && var9 != Blocks.field36485
+               && var9 != Blocks.field36486) {
                var5 = false;
             }
          }

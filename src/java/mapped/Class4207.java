@@ -40,7 +40,7 @@ public class Class4207 extends Class4194 {
       for (int var10 = 1; var10 <= 3; var10++) {
          this.method12923(
             var1,
-            Class8487.field36628
+            Blocks.field36628
                .method11579()
                .method23465(Class3237.field18680, Boolean.valueOf(true))
                .method23465(Class3237.field18682, Boolean.valueOf(true)),
@@ -51,7 +51,7 @@ public class Class4207 extends Class4194 {
          );
          this.method12923(
             var1,
-            Class8487.field36628
+            Blocks.field36628
                .method11579()
                .method23465(Class3237.field18680, Boolean.valueOf(true))
                .method23465(Class3237.field18682, Boolean.valueOf(true))
@@ -63,7 +63,7 @@ public class Class4207 extends Class4194 {
          );
          this.method12923(
             var1,
-            Class8487.field36628
+            Blocks.field36628
                .method11579()
                .method23465(Class3237.field18680, Boolean.valueOf(true))
                .method23465(Class3237.field18682, Boolean.valueOf(true)),
@@ -74,7 +74,7 @@ public class Class4207 extends Class4194 {
          );
          this.method12923(
             var1,
-            Class8487.field36628
+            Blocks.field36628
                .method11579()
                .method23465(Class3237.field18683, Boolean.valueOf(true))
                .method23465(Class3237.field18681, Boolean.valueOf(true)),
@@ -85,7 +85,7 @@ public class Class4207 extends Class4194 {
          );
          this.method12923(
             var1,
-            Class8487.field36628
+            Blocks.field36628
                .method11579()
                .method23465(Class3237.field18683, Boolean.valueOf(true))
                .method23465(Class3237.field18681, Boolean.valueOf(true)),
@@ -96,7 +96,7 @@ public class Class4207 extends Class4194 {
          );
          this.method12923(
             var1,
-            Class8487.field36628
+            Blocks.field36628
                .method11579()
                .method23465(Class3237.field18683, Boolean.valueOf(true))
                .method23465(Class3237.field18681, Boolean.valueOf(true)),
@@ -109,7 +109,7 @@ public class Class4207 extends Class4194 {
 
       this.method12923(
          var1,
-         Class8487.field36628.method11579().method23465(Class3237.field18680, Boolean.valueOf(true)).method23465(Class3237.field18682, Boolean.valueOf(true)),
+         Blocks.field36628.method11579().method23465(Class3237.field18680, Boolean.valueOf(true)).method23465(Class3237.field18682, Boolean.valueOf(true)),
          4,
          3,
          2,
@@ -117,14 +117,14 @@ public class Class4207 extends Class4194 {
       );
       this.method12923(
          var1,
-         Class8487.field36628.method11579().method23465(Class3237.field18680, Boolean.valueOf(true)).method23465(Class3237.field18682, Boolean.valueOf(true)),
+         Blocks.field36628.method11579().method23465(Class3237.field18680, Boolean.valueOf(true)).method23465(Class3237.field18682, Boolean.valueOf(true)),
          4,
          3,
          8,
          var5
       );
-      Class7380 var12 = Class8487.field36560.method11579().method23465(Class3461.field19293, Direction.WEST);
-      Class7380 var11 = Class8487.field36560
+      Class7380 var12 = Blocks.field36560.method11579().method23465(Class3461.field19293, Direction.WEST);
+      Class7380 var11 = Blocks.field36560
          .method11579()
          .method23465(Class3461.field19293, Direction.WEST)
          .method23465(Class3461.field19297, Class84.field209);

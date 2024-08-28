@@ -33,7 +33,7 @@ public class Class9736 {
    public void method38155() {
       this.field45468.clear();
 
-      for (Class3209 var4 : Class2348.field16072) {
+      for (Block var4 : Class2348.field16072) {
          var4.method11577().method35392().forEach(var1 -> {
             Class7202 var4x = this.field45468.put(var1, this.field45469.method1023(method38156(var1)));
          });

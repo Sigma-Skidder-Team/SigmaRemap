@@ -339,9 +339,9 @@ public class Class9535 {
       return this.field44396[var1];
    }
 
-   public Class7608<Class3209> method36891() {
+   public Class7608<Block> method36891() {
       Class7608 var3 = Class7645.method25115().method27135(this.field44393);
-      return (Class7608<Class3209>)(var3 == null ? Class7645.field32815 : var3);
+      return (Class7608<Block>)(var3 == null ? Class7645.field32815 : var3);
    }
 
    public ResourceLocation method36892() {

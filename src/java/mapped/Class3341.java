@@ -12,15 +12,15 @@ public class Class3341 extends Class3257 {
       Class1655 var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
-      if (!var6.method23448(Class8487.field36650) || var6.<Boolean>method23463(Class3400.field19054)) {
+      if (!var6.method23448(Blocks.field36650) || var6.<Boolean>method23463(Class3400.field19054)) {
          return Class2274.field14820;
       } else if (var4.field9020) {
          return Class2274.field14818;
       } else {
          Class7380 var7 = var6.method23465(Class3400.field19054, Boolean.valueOf(true));
-         Class3209.method11538(var6, var7, var4, var5);
+         Block.method11538(var6, var7, var4, var5);
          var4.method6725(var5, var7, 2);
-         var4.method6806(var5, Class8487.field36650);
+         var4.method6806(var5, Blocks.field36650);
          var1.method18357().method32182(1);
          var4.method6999(1503, var5, 0);
          Class9086 var8 = Class3400.method12029().method38656(var4, var5);
@@ -29,7 +29,7 @@ public class Class3341 extends Class3257 {
 
             for (int var10 = 0; var10 < 3; var10++) {
                for (int var11 = 0; var11 < 3; var11++) {
-                  var4.method6725(var9.method8336(var10, 0, var11), Class8487.field36649.method11579(), 2);
+                  var4.method6725(var9.method8336(var10, 0, var11), Blocks.field36649.method11579(), 2);
                }
             }
 
@@ -44,7 +44,7 @@ public class Class3341 extends Class3257 {
    public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
       Class8848 var6 = var2.method3094(var3);
       Class8711 var7 = method11735(var1, var2, Class1985.field12962);
-      if (var7.method31417() == Class2100.field13690 && var1.method6738(var7.method31423()).method23448(Class8487.field36650)) {
+      if (var7.method31417() == Class2100.field13690 && var1.method6738(var7.method31423()).method23448(Blocks.field36650)) {
          return Class6794.<Class8848>method20698(var6);
       } else {
          var2.method3154(var3);

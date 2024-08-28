@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3406 extends Class3209 implements Class3405 {
+public class Class3406 extends Block implements Class3405 {
    private static String[] field19083;
    public static final Class8551 field19084 = Class8820.field39686;
 
@@ -66,18 +66,18 @@ public class Class3406 extends Class3209 implements Class3405 {
 
    public static void method12045(Class1660 var0, BlockPos var1, boolean var2) {
       if (method12046(var0, var1)) {
-         var0.method6725(var1, Class8487.field37013.method11579().method23465(field19084, Boolean.valueOf(var2)), 2);
+         var0.method6725(var1, Blocks.field37013.method11579().method23465(field19084, Boolean.valueOf(var2)), 2);
       }
    }
 
    public static boolean method12046(Class1660 var0, BlockPos var1) {
       Class7379 var4 = var0.method6739(var1);
-      return var0.method6738(var1).method23448(Class8487.field36413) && var4.method23477() >= 8 && var4.method23473();
+      return var0.method6738(var1).method23448(Blocks.WATER) && var4.method23477() >= 8 && var4.method23473();
    }
 
    private static boolean method12047(Class1665 var0, BlockPos var1) {
       Class7380 var4 = var0.method6738(var1);
-      return !var4.method23448(Class8487.field37013) ? !var4.method23448(Class8487.field36581) : var4.<Boolean>method23463(field19084);
+      return !var4.method23448(Blocks.field37013) ? !var4.method23448(Blocks.SOUL_SAND) : var4.<Boolean>method23463(field19084);
    }
 
    @Override
@@ -109,24 +109,24 @@ public class Class3406 extends Class3209 implements Class3405 {
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.method23443(var4, var5)) {
          if (var2 != Direction.field672) {
-            if (var2 == Direction.field673 && !var3.method23448(Class8487.field37013) && method12046(var4, var6)) {
+            if (var2 == Direction.field673 && !var3.method23448(Blocks.field37013) && method12046(var4, var6)) {
                var4.method6860().method20726(var5, this, 5);
             }
          } else {
-            var4.method6725(var5, Class8487.field37013.method11579().method23465(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
+            var4.method6725(var5, Blocks.field37013.method11579().method23465(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
          }
 
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
          return super.method11491(var1, var2, var3, var4, var5, var6);
       } else {
-         return Class8487.field36413.method11579();
+         return Blocks.WATER.method11579();
       }
    }
 
    @Override
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
       Class7380 var6 = var2.method6738(var3.method8313());
-      return var6.method23448(Class8487.field37013) || var6.method23448(Class8487.field36890) || var6.method23448(Class8487.field36581);
+      return var6.method23448(Blocks.field37013) || var6.method23448(Blocks.field36890) || var6.method23448(Blocks.SOUL_SAND);
    }
 
    @Override
@@ -140,13 +140,13 @@ public class Class3406 extends Class3209 implements Class3405 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19084);
    }
 
    @Override
    public Class7631 method11533(Class1660 var1, BlockPos var2, Class7380 var3) {
-      var1.method6725(var2, Class8487.field36387.method11579(), 11);
+      var1.method6725(var2, Blocks.AIR.method11579(), 11);
       return Class9479.field44066;
    }
 }

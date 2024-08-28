@@ -91,7 +91,7 @@ public class Class1268 extends Class1193 {
 
         Client.getInstance().method19926();
         Class8848 var6 = this.field6716.field1339.field4902.method4052(3);
-        if (this.field6716.field1299.method37173().method8246() && var6.method32107() == Class8487.field36589.method11581()) {
+        if (this.field6716.field1299.method37173().method8246() && var6.method32107() == Blocks.field36589.method11581()) {
             this.method5978();
         }
 
@@ -984,7 +984,7 @@ public class Class1268 extends Class1193 {
         RenderSystem.method27938();
         RenderSystem.method27889(1.0F, 1.0F, 1.0F, var1);
         this.field6716.getTextureManager().bindTexture(Class289.field1102);
-        Class1713 var4 = this.field6716.method1553().method806().method38152(Class8487.field36588.method11579());
+        Class1713 var4 = this.field6716.method1553().method806().method38152(Blocks.field36588.method11579());
         float var5 = var4.method7459();
         float var6 = var4.method7462();
         float var7 = var4.method7460();

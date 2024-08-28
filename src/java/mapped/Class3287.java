@@ -73,7 +73,7 @@ public class Class3287 extends Class3257 {
          return false;
       } else {
          Class7380 var7 = var2.method6738(var3);
-         Class3209 var8 = var7.method23383();
+         Block var8 = var7.method23383();
          Class8649 var9 = var7.method23384();
          boolean var10 = var7.method23442(this.field18798);
          boolean var11 = var7.method23393() || var10 || var8 instanceof Class3449 && ((Class3449)var8).method11531(var2, var3, var7, this.field18798);

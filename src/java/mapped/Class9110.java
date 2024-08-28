@@ -110,7 +110,7 @@ public class Class9110 {
    }
 
    public boolean method33980() {
-      if (field41868.field1338.method6738(this.method33979()).method23383() == Class8487.field36414) {
+      if (field41868.field1338.method6738(this.method33979()).method23383() == Blocks.LAVA) {
          return false;
       } else if (field41868.field1338.method6738(this.method33979()).method23449().method23474()) {
          return field41868.field1338.method6738(this.method33979().method8313()).method23383() instanceof Class3239
@@ -136,7 +136,7 @@ public class Class9110 {
    public static boolean method33984(BlockPos var0) {
       for (Class9485 var6 : field41870) {
          Class7380 var7 = field41868.field1338.method6738(var0.method8335(var6.field44096, var6.field44097, var6.field44098));
-         if (var7.method23383() == Class8487.field36413 || var7.method23383() == Class8487.field36414) {
+         if (var7.method23383() == Blocks.WATER || var7.method23383() == Blocks.LAVA) {
             return true;
          }
       }
@@ -158,14 +158,14 @@ public class Class9110 {
    public boolean method33986() {
       for (Class9485 var6 : field41870) {
          Class7380 var7 = field41868.field1338.method6738(this.method33979().method8335(var6.field44096, var6.field44097, var6.field44098));
-         if (var7.method23383() == Class8487.field36413 || var7.method23383() == Class8487.field36414) {
+         if (var7.method23383() == Blocks.WATER || var7.method23383() == Blocks.LAVA) {
             return true;
          }
       }
 
       for (Class9485 var11 : field41870) {
          Class7380 var12 = field41868.field1338.method6738(this.method33979().method8335(var11.field44096, var11.field44097 + 1.0, var11.field44098));
-         if (var12.method23383() == Class8487.field36413 || var12.method23383() == Class8487.field36414) {
+         if (var12.method23383() == Blocks.WATER || var12.method23383() == Blocks.LAVA) {
             return true;
          }
       }
@@ -176,8 +176,8 @@ public class Class9110 {
 
    public boolean method33987() {
       return this.method33986()
-         || field41868.field1338.method6738(this.method33979()).method23383() == Class8487.field36412
-         || field41868.field1338.method6738(this.method33979().method8311()).method23383() == Class8487.field36412;
+         || field41868.field1338.method6738(this.method33979()).method23383() == Blocks.BEDROCK
+         || field41868.field1338.method6738(this.method33979().method8311()).method23383() == Blocks.BEDROCK;
    }
 
    public boolean method33988(BlockPos var1) {

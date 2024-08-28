@@ -64,34 +64,34 @@ public class Class9716 {
       }
    }
 
-   public static int method38065(Class3209 var0) {
+   public static int method38065(Block var0) {
       return Class2348.field16072.method9171(var0);
    }
 
-   public static Class3209 method38066(ResourceLocation var0) {
+   public static Block method38066(ResourceLocation var0) {
       return Class2348.field16072.method9193(var0) ? Class2348.field16072.method9184(var0) : null;
    }
 
    public static int method38067(Class7380 var0) {
-      Class3209 var3 = var0.method23383();
+      Block var3 = var0.method23383();
       Class9348 var4 = var3.method11577();
       ImmutableList var5 = var4.method35392();
       return var5.indexOf(var0);
    }
 
-   public static int method38068(Class3209 var0) {
+   public static int method38068(Block var0) {
       Class9348 var3 = var0.method11577();
       ImmutableList var4 = var3.method35392();
       return var4.size();
    }
 
-   public static Class7380 method38069(Class3209 var0, int var1) {
+   public static Class7380 method38069(Block var0, int var1) {
       Class9348 var4 = var0.method11577();
       ImmutableList var5 = var4.method35392();
       return var1 >= 0 && var1 < var5.size() ? (Class7380)var5.get(var1) : null;
    }
 
-   public static List<Class7380> method38070(Class3209 var0) {
+   public static List<Class7380> method38070(Block var0) {
       Class9348 var3 = var0.method11577();
       return var3.method35392();
    }

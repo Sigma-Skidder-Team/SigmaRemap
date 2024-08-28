@@ -35,7 +35,7 @@ public class Class7104 {
    public String[] field30575 = null;
    public Class1713[] field30576 = null;
    public int field30577 = -1;
-   public Class7380 field30578 = Class8487.field36387.method11579();
+   public Class7380 field30578 = Blocks.AIR.method11579();
    public Class4520 field30579 = null;
    public static final int field30580 = 0;
    public static final int field30581 = 1;
@@ -109,7 +109,7 @@ public class Class7104 {
       this.field30574 = var5.method32384(var1.getProperty("connectBlocks"));
       this.field30575 = this.method22091(var1.getProperty("connectTiles"));
       this.field30577 = var5.method32398(var1.getProperty("tintIndex"), -1);
-      this.field30578 = var5.method32385(var1.getProperty("tintBlock"), Class8487.field36387.method11579());
+      this.field30578 = var5.method32385(var1.getProperty("tintBlock"), Blocks.AIR.method11579());
       this.field30579 = var5.method32410(var1.getProperty("layer"), Class9025.field41289);
    }
 
@@ -507,7 +507,7 @@ public class Class7104 {
       if (this.field30549.startsWith(var3)) {
          String var4 = this.field30549.substring(var3.length());
          ResourceLocation var5 = new ResourceLocation(var4);
-         Class3209 var6 = Class9716.method38066(var5);
+         Block var6 = Class9716.method38066(var5);
          if (var6 != null) {
             int var7 = Class9716.method38065(var6);
             return new int[]{var7};

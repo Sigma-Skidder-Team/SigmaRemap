@@ -182,8 +182,8 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public Class6806<Class3209> method7089() {
-      return new Class6806<Class3209>(var0 -> var0.method11579().method23393(), this.method7072());
+   public Class6806<Block> method7089() {
+      return new Class6806<Block>(var0 -> var0.method11579().method23393(), this.method7072());
    }
 
    @Override

@@ -101,7 +101,7 @@ public abstract class Class916 extends Entity {
       this.field5063.method35442(field5213, 0);
       this.field5063.method35442(field5214, 1);
       this.field5063.method35442(field5215, 0.0F);
-      this.field5063.method35442(field5216, Class3209.method11535(Class8487.field36387.method11579()));
+      this.field5063.method35442(field5216, Block.method11535(Blocks.AIR.method11579()));
       this.field5063.method35442(field5217, 6);
       this.field5063.method35442(field5218, false);
    }
@@ -279,7 +279,7 @@ public abstract class Class916 extends Entity {
             this.method3590();
          } else {
             this.method3591(var6, var7);
-            if (var7.method23448(Class8487.field36728)) {
+            if (var7.method23448(Blocks.field36728)) {
                this.method3589(var3, var4, var5, var7.<Boolean>method23463(Class3432.field19197));
             }
          }
@@ -380,7 +380,7 @@ public abstract class Class916 extends Entity {
       boolean var12 = false;
       boolean var13 = false;
       Class3429 var14 = (Class3429)var2.method23383();
-      if (var14 == Class8487.field36478) {
+      if (var14 == Blocks.field36478) {
          var12 = var2.<Boolean>method23463(Class3432.field19197);
          var13 = !var12;
       }
@@ -770,11 +770,11 @@ public abstract class Class916 extends Entity {
    public abstract Class2177 method3602();
 
    public Class7380 method3603() {
-      return this.method3609() ? Class3209.method11536(this.method3210().<Integer>method35445(field5216)) : this.method3604();
+      return this.method3609() ? Block.method11536(this.method3210().<Integer>method35445(field5216)) : this.method3604();
    }
 
    public Class7380 method3604() {
-      return Class8487.field36387.method11579();
+      return Blocks.AIR.method11579();
    }
 
    public int method3605() {
@@ -786,7 +786,7 @@ public abstract class Class916 extends Entity {
    }
 
    public void method3607(Class7380 var1) {
-      this.method3210().method35446(field5216, Class3209.method11535(var1));
+      this.method3210().method35446(field5216, Block.method11535(var1));
       this.method3610(true);
    }
 

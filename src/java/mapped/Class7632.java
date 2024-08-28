@@ -45,7 +45,7 @@ public class Class7632 extends Class7631 {
 
    @Override
    public Class7380 method25063(Class7379 var1) {
-      return Class8487.field36387.method11579();
+      return Blocks.AIR.method11579();
    }
 
    @Override

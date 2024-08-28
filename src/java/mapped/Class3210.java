@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3210 extends Class3209 {
+public class Class3210 extends Block {
    private static String[] field18617;
 
    public Class3210(Class7929 var1) {
@@ -25,7 +25,7 @@ public class Class3210 extends Class3209 {
 
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.field673 && var3.method23448(Class8487.field36413)) {
+      if (var2 == Direction.field673 && var3.method23448(Blocks.WATER)) {
          var4.method6860().method20726(var5, this, 20);
       }
 

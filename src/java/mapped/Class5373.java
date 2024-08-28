@@ -26,12 +26,12 @@ public class Class5373 extends Module {
 
     @Override
     public void method15966() {
-        if (!field23386.field1299.field44637.method8509()) {
-            if (!field23386.field1299.field44637.method8509()) {
+        if (!mc.field1299.field44637.method8509()) {
+            if (!mc.field1299.field44637.method8509()) {
                 this.field23995 = false;
             }
         } else {
-            field23386.field1299.field44637.field13071 = false;
+            mc.field1299.field44637.field13071 = false;
             this.field23995 = true;
         }
     }
@@ -42,14 +42,14 @@ public class Class5373 extends Module {
         double var3 = Class9567.method37075();
         Class9567.method37090(var3);
         if (this.field23995) {
-            field23386.field1299.field44637.field13071 = true;
+            mc.field1299.field44637.field13071 = true;
         }
     }
 
     @EventTarget
     private void method16916(Class4430 var1) {
         if (this.method15996()) {
-            if (var1.method13977() == field23386.field1299.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.field1299.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23995 = true;
             }
@@ -59,7 +59,7 @@ public class Class5373 extends Module {
     @EventTarget
     private void method16917(Class4426 var1) {
         if (this.method15996()) {
-            if (var1.method13973() == field23386.field1299.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.field1299.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23995 = false;
             }
@@ -69,8 +69,8 @@ public class Class5373 extends Module {
     @EventTarget
     public void method16918(Class4399 var1) {
         if (this.method15996()) {
-            if (!field23386.field1339.field5036 && this.method15974("Kick bypass")) {
-                if (this.field23996 > 0 && this.field23996 % 30 == 0 && !Class5628.method17730(field23386.field1339, 0.01F)) {
+            if (!mc.field1339.field5036 && this.method15974("Kick bypass")) {
+                if (this.field23996 > 0 && this.field23996 % 30 == 0 && !Class5628.method17730(mc.field1339, 0.01F)) {
                     if (Class8005.method27349() != Class5989.field26129.method18582()) {
                         var1.method13912(var1.method13911() - 0.04);
                     } else {
@@ -82,26 +82,26 @@ public class Class5373 extends Module {
                         double var6 = var1.method13911();
                        List<Double> var8 = new ArrayList();
                         if (!(var6 - var4 > 9.0)) {
-                            field23386.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
+                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
                         } else {
                             while (var6 > var4 + 9.0) {
                                 var6 -= 9.0;
                                 var8.add(var6);
-                                field23386.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var6, var1.method13913(), true));
+                                mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var6, var1.method13913(), true));
                             }
 
                             for (Double var10 : var8) {
-                                field23386.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var10, var1.method13913(), true));
+                                mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var10, var1.method13913(), true));
                             }
 
-                            field23386.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
+                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
                             Collections.reverse(var8);
 
                             for (Double var12 : var8) {
-                                field23386.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var12, var1.method13913(), true));
+                                mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var12, var1.method13913(), true));
                             }
 
-                            field23386.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var1.method13911(), var1.method13913(), true));
+                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var1.method13911(), var1.method13913(), true));
                         }
 
                         this.field23996 = 0;
@@ -114,18 +114,18 @@ public class Class5373 extends Module {
     @EventTarget
     public void method16919(Class4435 var1) {
         if (this.method15996()) {
-            if (!Class5628.method17730(field23386.field1339, 0.01F)) {
+            if (!Class5628.method17730(mc.field1339, 0.01F)) {
                 this.field23996++;
             } else {
                 this.field23996 = 0;
             }
 
             double var4 = this.method15977("Speed");
-            double var6 = !field23386.field1299.field44636.field13071 ? 0.0 : var4 / 2.0;
-            if (field23386.field1299.field44636.field13071 && field23386.field1299.field44637.field13071) {
+            double var6 = !mc.field1299.field44636.field13071 ? 0.0 : var4 / 2.0;
+            if (mc.field1299.field44636.field13071 && mc.field1299.field44637.field13071) {
                 var6 = 0.0;
             } else if (!this.field23995) {
-                if (field23386.field1299.field44636.field13071) {
+                if (mc.field1299.field44636.field13071) {
                     var6 = var4 / 2.0;
                 }
             } else {
@@ -139,10 +139,10 @@ public class Class5373 extends Module {
     }
 
     private double method16920() {
-        if (!(field23386.field1339.method3431().field18049 < 1.0)) {
-            if (!field23386.field1339.field5036) {
-                Class6488 var3 = field23386.field1339.field5035.method19662(0.0, -field23386.field1339.method3431().field18049, 0.0);
-                Iterator var4 = field23386.field1338.method7055(field23386.field1339, var3).iterator();
+        if (!(mc.field1339.method3431().field18049 < 1.0)) {
+            if (!mc.field1339.field5036) {
+                Class6488 var3 = mc.field1339.field5035.method19662(0.0, -mc.field1339.method3431().field18049, 0.0);
+                Iterator var4 = mc.field1338.method7055(mc.field1339, var3).iterator();
                 double var5 = -1.0;
 
                 while (var4.hasNext()) {
@@ -154,7 +154,7 @@ public class Class5373 extends Module {
 
                 return var5;
             } else {
-                return field23386.field1339.getPosY();
+                return mc.field1339.getPosY();
             }
         } else {
             return -1.0;

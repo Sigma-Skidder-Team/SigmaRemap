@@ -217,7 +217,7 @@ public class Class9446 {
          Class3257 var3 = var0.method32107();
          if (var3 instanceof Class3292) {
             Class3292 var4 = (Class3292)var3;
-            Class3209 var5 = var4.method11845();
+            Block var5 = var4.method11845();
             if (var5 != null) {
                return var5.method11579().method23392();
             }
@@ -242,10 +242,10 @@ public class Class9446 {
 
                return 0;
             } else {
-               return Class8487.field36665.method11579().method23392() / 2;
+               return Blocks.field36665.method11579().method23392() / 2;
             }
          } else {
-            return Class8487.field36414.method11579().method23392();
+            return Blocks.LAVA.method11579().method23392();
          }
       } else {
          return 0;

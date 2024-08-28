@@ -9,7 +9,7 @@ public final class Class6243 extends Class6218 {
       Class1657 var5 = var1.method11326();
       BlockPos var6 = var1.method11323().method8349(var1.method11324().<Direction>method23463(Class3357.field18899));
       Class7380 var7 = var5.method6738(var6);
-      Class3209 var8 = var7.method23383();
+      Block var8 = var7.method23383();
       if (!(var8 instanceof Class3405)) {
          return super.method19192(var1, var2);
       } else {

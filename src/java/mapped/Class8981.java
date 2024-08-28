@@ -406,7 +406,7 @@ public class Class8981 {
     public static final IntBuffer field40978 = (IntBuffer) ((Buffer) method32945(8)).limit(0);
     public static final IntBuffer field40979 = (IntBuffer) ((Buffer) method32945(8).put(36064)).position(0).limit(1);
     public static final Class9844 field40980 = new Class9844(field40972, 8);
-    public static Map<Class3209, Integer> field40981;
+    public static Map<Block, Integer> field40981;
     private static final String[] field40982 = new String[]{
             "R8",
             "RG8",
@@ -2665,7 +2665,7 @@ public class Class8981 {
                 Class8848 var3 = field40591.field1339 != null ? field40591.field1339.method3090() : null;
                 Class3257 var4 = var3 != null ? var3.method32107() : null;
                 int var5 = -1;
-                Class3209 var6 = null;
+                Block var6 = null;
                 if (var4 != null) {
                     var5 = Class2348.field16075.method9171(var4);
                     if (var4 instanceof Class3292) {
@@ -2679,7 +2679,7 @@ public class Class8981 {
                 Class8848 var8 = field40591.field1339 != null ? field40591.field1339.method3091() : null;
                 Class3257 var9 = var8 != null ? var8.method32107() : null;
                 int var10 = -1;
-                Class3209 var11 = null;
+                Block var11 = null;
                 if (var9 != null) {
                     var10 = Class2348.field16075.method9171(var9);
                     if (var9 instanceof Class3292) {
@@ -2844,10 +2844,10 @@ public class Class8981 {
     }
 
     private static void method33031() {
-        field40981 = new IdentityHashMap<Class3209, Integer>(300);
+        field40981 = new IdentityHashMap<Block, Integer>(300);
         if (field40981.isEmpty()) {
             for (ResourceLocation var1 : Class2348.field16072.method9190()) {
-                Class3209 var2 = Class2348.field16072.method9184(var1);
+                Block var2 = Class2348.field16072.method9184(var1);
                 int var3 = Class2348.field16072.method9171(var2);
                 field40981.put(var2, var3);
             }
@@ -2871,7 +2871,7 @@ public class Class8981 {
                         int var5 = Integer.parseInt(var4);
                         ResourceLocation var6 = new ResourceLocation(var14);
                         if (Class2348.field16072.method9193(var6)) {
-                            Class3209 var7 = Class2348.field16072.method9184(var6);
+                            Block var7 = Class2348.field16072.method9184(var6);
                             field40981.put(var7, var5);
                         } else {
                             Class7399.method23637("Unknown block name %s", var14);
@@ -4433,7 +4433,7 @@ public class Class8981 {
         field40985[field40986 * 2 + 1] = 0;
     }
 
-    public static void method33134(Class3209 var0) {
+    public static void method33134(Block var0) {
         field40986++;
         int var1 = var0.method11526(var0.method11579()).ordinal();
         field40985[field40986 * 2] = Class2348.field16072.method9171(var0) & 65535 | var1 << 16;
@@ -4594,7 +4594,7 @@ public class Class8981 {
                 return false;
             } else {
                 Class3292 var2 = (Class3292) var1;
-                Class3209 var3 = var2.method11845();
+                Block var3 = var2.method11845();
                 if (var3 == null) {
                     return false;
                 } else {

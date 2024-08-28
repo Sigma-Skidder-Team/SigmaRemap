@@ -67,7 +67,7 @@ public class Class5947 extends Class5942<Class954> {
       var3.method35295();
    }
 
-   public static Class7826 method18473(Class3209 var0) {
+   public static Class7826 method18473(Block var0) {
       Class9673 var3;
       if (!(var0 instanceof Class3373)) {
          var3 = Class9673.field45166;

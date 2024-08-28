@@ -11,7 +11,7 @@ public class Class3329 extends Class3257 {
    public Class2274 method11707(Class5911 var1) {
       Class1655 var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class3209 var6 = var4.method6738(var5).method23383();
+      Block var6 = var4.method6738(var5).method23383();
       if (!var6.method11540(Class7645.field32771)) {
          return Class2274.field14820;
       } else {

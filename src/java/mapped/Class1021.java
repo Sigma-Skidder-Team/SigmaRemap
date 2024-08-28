@@ -62,7 +62,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
             return;
          }
 
-         Class7380 var6 = Class8487.field36571.method11579();
+         Class7380 var6 = Blocks.SNOW.method11579();
 
          for (int var7 = 0; var7 < 4; var7++) {
             var3 = Class9679.method37769(this.getPosX() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));

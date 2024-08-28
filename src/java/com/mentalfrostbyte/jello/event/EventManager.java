@@ -72,7 +72,7 @@ public class EventManager {
         }
     }
 
-    public void method23213(Module var1) {
+    public void subscribe(Module var1) {
         Map<Class<? extends Event>, List<MethodWrapper>> var4 = this.field31402.get(var1.getClass());
         if (var4 != null) {
             for (Entry<Class<? extends Event>, List<MethodWrapper>> var6 : var4.entrySet()) {
@@ -85,7 +85,7 @@ public class EventManager {
         }
     }
 
-    public void method23214(Module var1) {
+    public void unsubscribe(Module var1) {
         Map<Class<? extends Event>, List<MethodWrapper>> var4 = this.field31402.get(var1.getClass());
         if (var4 != null) {
             for (Entry<Class<? extends Event>, List<MethodWrapper>> var6 : var4.entrySet()) {

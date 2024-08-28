@@ -11,7 +11,7 @@ public class Class2941 extends Class2898<Class4704> {
    }
 
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4704 var5) {
-      Class3209 var8 = var5.field22318.method23383();
+      Block var8 = var5.field22318.method23383();
       BlockPos var9 = method11285(var1, var4.method8354().method8383(Class113.field414, 1, var1.method7034() - 1), var8);
       if (var9 == null) {
          return false;
@@ -36,7 +36,7 @@ public class Class2941 extends Class2898<Class4704> {
    }
 
    @Nullable
-   private static BlockPos method11285(Class1660 var0, Mutable var1, Class3209 var2) {
+   private static BlockPos method11285(Class1660 var0, Mutable var1, Block var2) {
       while (var1.getY() > 1) {
          Class7380 var5 = var0.method6738(var1);
          if (var5.method23448(var2)) {

@@ -412,7 +412,7 @@ public class Class1007 extends Class1006 implements Class1008 {
             for (int var14 = var6; var14 <= var9; var14++) {
                BlockPos var15 = new BlockPos(var12, var13, var14);
                Class7380 var16 = this.field5024.method6738(var15);
-               Class3209 var17 = var16.method23383();
+               Block var17 = var16.method23383();
                if (!var16.method23393() && var16.method23384() != Class8649.field38945) {
                   if (this.field5024.method6789().method17135(Class5462.field24224) && !Class7645.field32791.method24917(var17)) {
                      var11 = this.field5024.method6728(var15, false) || var11;

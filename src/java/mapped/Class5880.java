@@ -4,10 +4,10 @@ import com.google.common.collect.Sets;
 import java.util.Set;
 
 public class Class5880 extends Class5876<Class5880> {
-   private final Class3209 field25674;
+   private final Block field25674;
    private final Set<Class8550<?>> field25675 = Sets.newHashSet();
 
-   public Class5880(Class3209 var1) {
+   public Class5880(Block var1) {
       this.field25674 = var1;
    }
 

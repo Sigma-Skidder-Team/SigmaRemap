@@ -33,7 +33,7 @@ public class Class5182 extends Module {
             var3 = this.method16129();
         }
 
-        field23386.field1339.method5389(var3);
+        mc.field1339.method5389(var3);
         this.setState(false);
     }
 

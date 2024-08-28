@@ -42,9 +42,9 @@ public class Class5341 extends Class5325 {
 
     @EventTarget
     public void method16763(Class4396 var1) {
-        if (var1.method13898() instanceof Class5473 && field23386.field1339 != null) {
+        if (var1.method13898() instanceof Class5473 && mc.field1339 != null) {
             field23893 = 0;
-            if (this.method15974("Lag back checker") && this.method15996() && field23386.field1339.field5055 > 2) {
+            if (this.method15974("Lag back checker") && this.method15996() && mc.field1339.field5055 > 2) {
                 Client.getInstance().getNotificationManager().post(new Notification("Speed", "Disabled speed due to lagback."));
                 this.method16000();
             }

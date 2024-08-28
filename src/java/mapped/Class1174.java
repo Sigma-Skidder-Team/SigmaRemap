@@ -15,8 +15,8 @@ public class Class1174 extends Class1155<Class1174> {
       Class7380 var14 = var13.method36906();
       Class3257 var15 = var14.method23383().method11581();
       if (var15 == Class8514.field37222) {
-         if (!var14.method23448(Class8487.field36413)) {
-            if (var14.method23448(Class8487.field36414)) {
+         if (!var14.method23448(Blocks.WATER)) {
+            if (var14.method23448(Blocks.LAVA)) {
                var15 = Class8514.field37884;
             }
          } else {

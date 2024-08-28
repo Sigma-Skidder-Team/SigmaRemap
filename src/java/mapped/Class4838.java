@@ -14,7 +14,7 @@ public class Class4838 extends Class4837 {
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
          Class8848 var8 = var1.method3618(var7);
          if (!var8.method32105()) {
-            if (!(Class3209.method11537(var8.method32107()) instanceof Class3368)) {
+            if (!(Block.method11537(var8.method32107()) instanceof Class3368)) {
                if (!(var8.method32107() instanceof Class3321)) {
                   return false;
                }
@@ -41,7 +41,7 @@ public class Class4838 extends Class4837 {
          Class8848 var7 = var1.method3618(var6);
          if (!var7.method32105()) {
             Class3257 var8 = var7.method32107();
-            if (!(Class3209.method11537(var8) instanceof Class3368)) {
+            if (!(Block.method11537(var8) instanceof Class3368)) {
                if (var8 instanceof Class3321) {
                   var5 = (Class3321)var8;
                }

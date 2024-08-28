@@ -5,7 +5,6 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import java.util.EnumSet;
-import java.util.Set;
 import javax.annotation.Nullable;
 
 public class Class6762 extends Class6764 {
@@ -36,7 +35,7 @@ public class Class6762 extends Class6764 {
       if (!this.field29476.method3107(var5.method23449().method23472())) {
          if (this.method20649() && this.field29476.method3250()) {
             while (true) {
-               if (var5.method23383() != Class8487.field36413 && var5.method23449() != Class9479.field44066.method25078(false)) {
+               if (var5.method23383() != Blocks.WATER && var5.method23449() != Class9479.field44066.method25078(false)) {
                   var4--;
                   break;
                }
@@ -465,11 +464,11 @@ public class Class6762 extends Class6764 {
                if (var8 != 0 || var10 != 0) {
                   var1.method8372(var5 + var8, var6 + var9, var7 + var10);
                   Class7380 var11 = var0.method6738(var1);
-                  if (var11.method23448(Class8487.field36574)) {
+                  if (var11.method23448(Blocks.CACTUS)) {
                      return Class2163.field14197;
                   }
 
-                  if (var11.method23448(Class8487.field37069)) {
+                  if (var11.method23448(Blocks.field37069)) {
                      return Class2163.field14199;
                   }
 
@@ -490,19 +489,19 @@ public class Class6762 extends Class6764 {
 
    public static Class2163 method20635(Class1665 var0, BlockPos var1) {
       Class7380 var4 = var0.method6738(var1);
-      Class3209 var5 = var4.method23383();
+      Block var5 = var4.method23383();
       Class8649 var6 = var4.method23384();
       if (var4.method23393()) {
          return Class2163.field14185;
-      } else if (var4.method23446(Class7645.field32768) || var4.method23448(Class8487.field36641)) {
+      } else if (var4.method23446(Class7645.field32768) || var4.method23448(Blocks.field36641)) {
          return Class2163.field14188;
-      } else if (var4.method23448(Class8487.field36574)) {
+      } else if (var4.method23448(Blocks.CACTUS)) {
          return Class2163.field14198;
-      } else if (var4.method23448(Class8487.field37069)) {
+      } else if (var4.method23448(Blocks.field37069)) {
          return Class2163.field14200;
-      } else if (var4.method23448(Class8487.field37119)) {
+      } else if (var4.method23448(Blocks.field37119)) {
          return Class2163.field14206;
-      } else if (var4.method23448(Class8487.field36654)) {
+      } else if (var4.method23448(Blocks.field36654)) {
          return Class2163.field14207;
       } else {
          Class7379 var7 = var0.method6739(var1);
@@ -534,8 +533,8 @@ public class Class6762 extends Class6764 {
 
    private static boolean method20636(Class7380 var0) {
       return var0.method23446(Class7645.field32798)
-         || var0.method23448(Class8487.field36414)
-         || var0.method23448(Class8487.field36890)
+         || var0.method23448(Blocks.LAVA)
+         || var0.method23448(Blocks.field36890)
          || Class3244.method11655(var0);
    }
 }

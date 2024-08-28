@@ -17,8 +17,8 @@ public class Class5383 extends Module {
          Entity var4 = ((Class5335)this.method16004()).method16750(this.method15977("Range"));
          if (var4 != null) {
             float[] var5 = Class9142.method34137(var4);
-            field23386.field1339.field5031 = var5[0];
-            field23386.field1339.field5032 = var5[1];
+            mc.field1339.field5031 = var5[0];
+            mc.field1339.field5032 = var5[1];
          }
       }
    }

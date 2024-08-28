@@ -30,31 +30,31 @@ public class Class4227 extends Class4167 {
 
    @Override
    public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
-      this.method12927(var1, var5, 0, 2, 0, 6, 7, 7, Class8487.field36387.method11579(), Class8487.field36387.method11579(), false);
-      this.method12927(var1, var5, 1, 0, 0, 5, 1, 7, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 1, 2, 1, 5, 2, 7, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 1, 3, 2, 5, 3, 7, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 1, 4, 3, 5, 4, 7, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 1, 2, 0, 1, 4, 2, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 5, 2, 0, 5, 4, 2, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 1, 5, 2, 1, 5, 3, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 5, 5, 2, 5, 5, 3, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 5, 3, 0, 5, 8, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 6, 5, 3, 6, 5, 8, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      this.method12927(var1, var5, 1, 5, 8, 5, 5, 8, Class8487.field36642.method11579(), Class8487.field36642.method11579(), false);
-      Class7380 var10 = Class8487.field36643
+      this.method12927(var1, var5, 0, 2, 0, 6, 7, 7, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
+      this.method12927(var1, var5, 1, 0, 0, 5, 1, 7, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 1, 2, 1, 5, 2, 7, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 1, 3, 2, 5, 3, 7, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 1, 4, 3, 5, 4, 7, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 1, 2, 0, 1, 4, 2, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 5, 2, 0, 5, 4, 2, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 1, 5, 2, 1, 5, 3, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 5, 5, 2, 5, 5, 3, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 0, 5, 3, 0, 5, 8, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 6, 5, 3, 6, 5, 8, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 1, 5, 8, 5, 5, 8, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      Class7380 var10 = Blocks.field36643
          .method11579()
          .method23465(Class3239.field18683, Boolean.valueOf(true))
          .method23465(Class3239.field18681, Boolean.valueOf(true));
-      Class7380 var11 = Class8487.field36643
+      Class7380 var11 = Blocks.field36643
          .method11579()
          .method23465(Class3239.field18680, Boolean.valueOf(true))
          .method23465(Class3239.field18682, Boolean.valueOf(true));
-      this.method12923(var1, Class8487.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)), 1, 6, 3, var5);
-      this.method12923(var1, Class8487.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)), 5, 6, 3, var5);
+      this.method12923(var1, Blocks.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)), 1, 6, 3, var5);
+      this.method12923(var1, Blocks.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)), 5, 6, 3, var5);
       this.method12923(
          var1,
-         Class8487.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)).method23465(Class3239.field18680, Boolean.valueOf(true)),
+         Blocks.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)).method23465(Class3239.field18680, Boolean.valueOf(true)),
          0,
          6,
          3,
@@ -62,7 +62,7 @@ public class Class4227 extends Class4167 {
       );
       this.method12923(
          var1,
-         Class8487.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)).method23465(Class3239.field18680, Boolean.valueOf(true)),
+         Blocks.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)).method23465(Class3239.field18680, Boolean.valueOf(true)),
          6,
          6,
          3,
@@ -72,7 +72,7 @@ public class Class4227 extends Class4167 {
       this.method12927(var1, var5, 6, 6, 4, 6, 6, 7, var11, var11, false);
       this.method12923(
          var1,
-         Class8487.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)).method23465(Class3239.field18682, Boolean.valueOf(true)),
+         Blocks.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)).method23465(Class3239.field18682, Boolean.valueOf(true)),
          0,
          6,
          8,
@@ -80,24 +80,24 @@ public class Class4227 extends Class4167 {
       );
       this.method12923(
          var1,
-         Class8487.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)).method23465(Class3239.field18682, Boolean.valueOf(true)),
+         Blocks.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)).method23465(Class3239.field18682, Boolean.valueOf(true)),
          6,
          6,
          8,
          var5
       );
       this.method12927(var1, var5, 1, 6, 8, 5, 6, 8, var10, var10, false);
-      this.method12923(var1, Class8487.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)), 1, 7, 8, var5);
+      this.method12923(var1, Blocks.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)), 1, 7, 8, var5);
       this.method12927(var1, var5, 2, 7, 8, 4, 7, 8, var10, var10, false);
-      this.method12923(var1, Class8487.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)), 5, 7, 8, var5);
-      this.method12923(var1, Class8487.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)), 2, 8, 8, var5);
+      this.method12923(var1, Blocks.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)), 5, 7, 8, var5);
+      this.method12923(var1, Blocks.field36643.method11579().method23465(Class3239.field18681, Boolean.valueOf(true)), 2, 8, 8, var5);
       this.method12923(var1, var10, 3, 8, 8, var5);
-      this.method12923(var1, Class8487.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)), 4, 8, 8, var5);
+      this.method12923(var1, Blocks.field36643.method11579().method23465(Class3239.field18683, Boolean.valueOf(true)), 4, 8, 8, var5);
       if (!this.field20558) {
          BlockPos var12 = new BlockPos(this.method12920(3, 5), this.method12921(5), this.method12922(3, 5));
          if (var5.method38396(var12)) {
             this.field20558 = true;
-            var1.method6725(var12, Class8487.field36532.method11579(), 2);
+            var1.method6725(var12, Blocks.field36532.method11579(), 2);
             Class944 var13 = var1.method6759(var12);
             if (var13 instanceof Class960) {
                ((Class960)var13).method3911().method24790(Class8992.field41010);
@@ -107,7 +107,7 @@ public class Class4227 extends Class4167 {
 
       for (int var14 = 0; var14 <= 6; var14++) {
          for (int var15 = 0; var15 <= 6; var15++) {
-            this.method12932(var1, Class8487.field36642.method11579(), var14, -1, var15, var5);
+            this.method12932(var1, Blocks.field36642.method11579(), var14, -1, var15, var5);
          }
       }
 

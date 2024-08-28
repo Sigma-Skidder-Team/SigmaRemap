@@ -98,7 +98,7 @@ public class Class2755 extends Class2754 {
       } else if (this.field17295.field5032 > 0.0F
          && this.field17295.field5036
          && (float)this.field17295.method3433().field18049 != 0.0F
-         && this.field17295.field5024.method6738(this.field17295.method3432()).method23448(Class8487.field36571)) {
+         && this.field17295.field5024.method6738(this.field17295.method3432()).method23448(Blocks.SNOW)) {
          this.field17295.field5032 = 60.0F;
          this.field17295.method4233((Class880)null);
          Class1095.method5170(this.field17295, true);

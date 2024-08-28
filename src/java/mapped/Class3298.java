@@ -5,9 +5,9 @@ import javax.annotation.Nullable;
 
 public class Class3298 extends Class3292 {
    private static String[] field18806;
-   public final Class3209 field18807;
+   public final Block field18807;
 
-   public Class3298(Class3209 var1, Class3209 var2, Class5643 var3) {
+   public Class3298(Block var1, Block var2, Class5643 var3) {
       super(var1, var3);
       this.field18807 = var2;
    }
@@ -34,7 +34,7 @@ public class Class3298 extends Class3292 {
    }
 
    @Override
-   public void method11846(Map<Class3209, Class3257> var1, Class3257 var2) {
+   public void method11846(Map<Block, Class3257> var1, Class3257 var2) {
       super.method11846(var1, var2);
       var1.put(this.field18807, var2);
    }

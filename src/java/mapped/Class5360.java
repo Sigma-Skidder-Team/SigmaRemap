@@ -25,7 +25,7 @@ public class Class5360 extends Module {
         if (var1.method13921()) {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5334.class);
             if (!var4.method15996() || !var4.method15978("Type").equalsIgnoreCase("Minemen")) {
-                if (!field23386.field1339.field5036) {
+                if (!mc.field1339.field5036) {
                     this.field23966 = 0;
                 } else {
                     if (this.field23966 > 0) {
@@ -40,9 +40,9 @@ public class Class5360 extends Module {
                     var1.method13908(true);
                 }
 
-                if (field23386.field1337.method23158() && field23386.field1339.field5036) {
+                if (mc.field1337.method23158() && mc.field1339.field5036) {
                     this.field23966 = 0;
-                    var1.method13912(field23386.field1339.getPosY());
+                    var1.method13912(mc.field1339.getPosY());
                     var1.method13920(true);
                 }
             }

@@ -434,7 +434,7 @@ public class Class1095 extends Class1018 {
          if (this.method5131() && this.field5024.field9016.nextFloat() < 0.2F) {
             BlockPos var4 = this.method3432();
             Class7380 var5 = this.field5024.method6738(var4);
-            this.field5024.method6999(2001, var4, Class3209.method11535(var5));
+            this.field5024.method6999(2001, var4, Block.method11535(var5));
          }
       }
 

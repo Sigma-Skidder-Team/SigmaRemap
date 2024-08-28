@@ -19,12 +19,12 @@ public class Class7097 extends Class7092 {
       Class7380 var10 = var5.field35531;
       BlockPos var11 = var5.field35530;
       Class7380 var12 = null;
-      if (var10.method23448(Class8487.field36615) || var10.method23448(Class8487.field36388) || var10.method23448(Class8487.field36618)) {
+      if (var10.method23448(Blocks.field36615) || var10.method23448(Blocks.STONE) || var10.method23448(Blocks.field36618)) {
          var12 = this.method22076(var9);
       } else if (!var10.method23446(Class7645.field32762)) {
          if (!var10.method23446(Class7645.field32763)) {
             if (!var10.method23446(Class7645.field32764)) {
-               if (var10.method23448(Class8487.field36527)) {
+               if (var10.method23448(Blocks.field36527)) {
                   var12 = this.method22080(var9);
                }
             } else {
@@ -43,8 +43,8 @@ public class Class7097 extends Class7092 {
    @Nullable
    private Class7380 method22076(Random var1) {
       if (!(var1.nextFloat() >= 0.5F)) {
-         Class7380[] var4 = new Class7380[]{Class8487.field36617.method11579(), method22081(var1, Class8487.field36639)};
-         Class7380[] var5 = new Class7380[]{Class8487.field36616.method11579(), method22081(var1, Class8487.field37016)};
+         Class7380[] var4 = new Class7380[]{Blocks.field36617.method11579(), method22081(var1, Blocks.field36639)};
+         Class7380[] var5 = new Class7380[]{Blocks.field36616.method11579(), method22081(var1, Blocks.field37016)};
          return this.method22082(var1, var4, var5);
       } else {
          return null;
@@ -56,10 +56,10 @@ public class Class7097 extends Class7092 {
       Direction var5 = var2.<Direction>method23463(Class3421.field19131);
       Class99 var6 = var2.<Class99>method23463(Class3421.field19132);
       if (!(var1.nextFloat() >= 0.5F)) {
-         Class7380[] var7 = new Class7380[]{Class8487.field36845.method11579(), Class8487.field36852.method11579()};
+         Class7380[] var7 = new Class7380[]{Blocks.field36845.method11579(), Blocks.field36852.method11579()};
          Class7380[] var8 = new Class7380[]{
-            Class8487.field37016.method11579().method23465(Class3421.field19131, var5).method23465(Class3421.field19132, var6),
-            Class8487.field37030.method11579()
+            Blocks.field37016.method11579().method23465(Class3421.field19131, var5).method23465(Class3421.field19132, var6),
+            Blocks.field37030.method11579()
          };
          return this.method22082(var1, var7, var8);
       } else {
@@ -69,20 +69,20 @@ public class Class7097 extends Class7092 {
 
    @Nullable
    private Class7380 method22078(Random var1) {
-      return !(var1.nextFloat() < this.field30534) ? null : Class8487.field37030.method11579();
+      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37030.method11579();
    }
 
    @Nullable
    private Class7380 method22079(Random var1) {
-      return !(var1.nextFloat() < this.field30534) ? null : Class8487.field37044.method11579();
+      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37044.method11579();
    }
 
    @Nullable
    private Class7380 method22080(Random var1) {
-      return !(var1.nextFloat() < 0.15F) ? null : Class8487.field37123.method11579();
+      return !(var1.nextFloat() < 0.15F) ? null : Blocks.field37123.method11579();
    }
 
-   private static Class7380 method22081(Random var0, Class3209 var1) {
+   private static Class7380 method22081(Random var0, Block var1) {
       return var1.method11579()
          .method23465(Class3421.field19131, Class76.field161.method247(var0))
          .method23465(Class3421.field19132, Class99.values()[var0.nextInt(Class99.values().length)]);

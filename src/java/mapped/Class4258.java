@@ -38,8 +38,8 @@ public class Class4258 extends Class4247 {
             var5.add(var7);
          }
 
-         var5.add(new Class3292(Class8487.field36588, new Class5643().method17779(Class7401.field31669)));
-         var5.add(new Class3292(Class8487.field36649, new Class5643().method17779(Class7401.field31669)));
+         var5.add(new Class3292(Blocks.field36588, new Class5643().method17779(Class7401.field31669)));
+         var5.add(new Class3292(Blocks.field36649, new Class5643().method17779(Class7401.field31669)));
 
          for (Class3257 var13 : method13070(var5, var1)) {
             if (var13 != Class8514.field37222 && (!this.field20644 || var13 instanceof Class3292)) {

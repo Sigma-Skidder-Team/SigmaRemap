@@ -146,7 +146,7 @@ public final class Class8907 {
       if (!(this.method32503(var2) >= 0.15F)) {
          if (var2.getY() >= 0 && var2.getY() < 256 && var1.method7020(Class1977.field12882, var2) < 10) {
             Class7380 var5 = var1.method6738(var2);
-            if (var5.method23393() && Class8487.field36571.method11579().method23443(var1, var2)) {
+            if (var5.method23393() && Blocks.SNOW.method11579().method23443(var1, var2)) {
                return true;
             }
          }

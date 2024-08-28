@@ -71,7 +71,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
    public void accept(Consumer<Class7952> var1) {
       Class7952 var4 = Class7999.method27304()
          .method27308(
-            Class8487.field36777,
+            Blocks.field36777,
             new TranslationTextComponent("advancements.husbandry.root.title"),
             new TranslationTextComponent("advancements.husbandry.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/husbandry.png"),
@@ -95,11 +95,11 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
             false
          )
          .method27314(Class9014.field41221)
-         .method27312("wheat", Class4486.method14152(Class8487.field36539))
-         .method27312("pumpkin_stem", Class4486.method14152(Class8487.field36634))
-         .method27312("melon_stem", Class4486.method14152(Class8487.field36635))
-         .method27312("beetroots", Class4486.method14152(Class8487.field36884))
-         .method27312("nether_wart", Class4486.method14152(Class8487.field36645))
+         .method27312("wheat", Class4486.method14152(Blocks.field36539))
+         .method27312("pumpkin_stem", Class4486.method14152(Blocks.field36634))
+         .method27312("melon_stem", Class4486.method14152(Blocks.field36635))
+         .method27312("beetroots", Class4486.method14152(Blocks.field36884))
+         .method27312("nether_wart", Class4486.method14152(Blocks.field36645))
          .method27317(var1, "husbandry/plant_seed");
       Class7952 var6 = Class7999.method27304()
          .method27305(var4)
@@ -240,13 +240,13 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
          .method27312(
             "silk_touch_nest",
             Class4479.method14139(
-               Class8487.field37117,
+               Blocks.field37117,
                Class9735.method38146().method38150(new Class8605(Class8122.field34916, Class8840.method32014(1))),
                Class8840.method32013(3)
             )
          )
          .method27308(
-            Class8487.field37117,
+            Blocks.field37117,
             new TranslationTextComponent("advancements.husbandry.silk_touch_nest.title"),
             new TranslationTextComponent("advancements.husbandry.silk_touch_nest.description"),
             (ResourceLocation)null,

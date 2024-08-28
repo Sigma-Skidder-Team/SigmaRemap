@@ -34,8 +34,8 @@ public abstract class Class893 extends Class882 {
       if (var3.method31417() == Class2100.field13690) {
          BlockPos var5 = ((Class8711)var3).method31423();
          Class7380 var13 = this.field5024.method6738(var5);
-         if (!var13.method23448(Class8487.field36588)) {
-            if (var13.method23448(Class8487.field36886)) {
+         if (!var13.method23448(Blocks.field36588)) {
+            if (var13.method23448(Blocks.field36886)) {
                Class944 var14 = this.field5024.method6759(var5);
                if (var14 instanceof Class957 && Class957.method3871(this)) {
                   ((Class957)var14).method3877(this);

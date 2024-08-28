@@ -24,7 +24,7 @@ public class Class5346 extends Module {
     public void method16768(Class4435 var1) {
         if (this.method15996()) {
             if (var1.method13992() != 0.0 || var1.method13994() != 0.0 || var1.method13996() != 0.0) {
-                this.field23896.add(new Vector3d(field23386.field1339.getPosX(), field23386.field1339.getPosY(), field23386.field1339.getPosZ()));
+                this.field23896.add(new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ()));
             }
         }
     }
@@ -55,9 +55,9 @@ public class Class5346 extends Module {
     public void method16771(Class4420 var1) {
         if (this.method15996()) {
             Vector3d var4 = new Vector3d(
-                    field23386.field1339.field5048 - (field23386.field1339.field5048 - field23386.field1339.getPosX()) * (double) field23386.method1562(),
-                    field23386.field1339.field5049 - (field23386.field1339.field5049 - field23386.field1339.getPosY()) * (double) field23386.method1562(),
-                    field23386.field1339.field5050 - (field23386.field1339.field5050 - field23386.field1339.getPosZ()) * (double) field23386.method1562()
+                    mc.field1339.field5048 - (mc.field1339.field5048 - mc.field1339.getPosX()) * (double) mc.method1562(),
+                    mc.field1339.field5049 - (mc.field1339.field5049 - mc.field1339.getPosY()) * (double) mc.method1562(),
+                    mc.field1339.field5050 - (mc.field1339.field5050 - mc.field1339.getPosZ()) * (double) mc.method1562()
             );
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);

@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public abstract class Class3444 extends Class3209 {
+public abstract class Class3444 extends Block {
    public final Direction field19256;
    public final boolean field19257;
    public final Class6408 field19258;
@@ -32,7 +32,7 @@ public abstract class Class3444 extends Class3209 {
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
       BlockPos var6 = var3.method8349(this.field19256.method536());
       Class7380 var7 = var2.method6738(var6);
-      Class3209 var8 = var7.method23383();
+      Block var8 = var7.method23383();
       return !this.method12123(var8) ? false : var8 == this.method12124() || var8 == this.method12125() || var7.method23454(var2, var6, this.field19256);
    }
 
@@ -43,7 +43,7 @@ public abstract class Class3444 extends Class3209 {
       }
    }
 
-   public boolean method12123(Class3209 var1) {
+   public boolean method12123(Block var1) {
       return true;
    }
 
@@ -54,5 +54,5 @@ public abstract class Class3444 extends Class3209 {
 
    public abstract Class3452 method12124();
 
-   public abstract Class3209 method12125();
+   public abstract Block method12125();
 }

@@ -29,7 +29,7 @@ public class Class6089 extends Class6069 {
 
    public static void method18829(Class880 var0, Class1655 var1, BlockPos var2, int var3) {
       if (var0.method3226()) {
-         Class7380 var6 = Class8487.field36889.method11579();
+         Class7380 var6 = Blocks.field36889.method11579();
          float var7 = (float)Math.min(16, 2 + var3);
          Mutable var8 = new Mutable();
 
@@ -44,7 +44,7 @@ public class Class6089 extends Class6069 {
                      && var6.method23443(var1, var10)
                      && var1.method7049(var6, var10, Class4832.method14947())) {
                      var1.method6730(var10, var6);
-                     var1.method6860().method20726(var10, Class8487.field36889, Class9679.method37782(var0.method3013(), 60, 120));
+                     var1.method6860().method20726(var10, Blocks.field36889, Class9679.method37782(var0.method3013(), 60, 120));
                   }
                }
             }

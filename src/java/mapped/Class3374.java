@@ -25,7 +25,7 @@ public class Class3374 extends Class3373 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.field672 && !this.method11492(var1, var4, var5)
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
@@ -40,7 +40,7 @@ public class Class3374 extends Class3373 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18970, field18966);
    }
 }

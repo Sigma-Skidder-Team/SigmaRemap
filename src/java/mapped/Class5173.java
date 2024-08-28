@@ -44,8 +44,8 @@ public class Class5173 extends Module {
         }
 
         this.field23462++;
-        if (field23386.field1339 != null && field23386.method1528() != null) {
-            if (field23386.field1339.field5055 <= 1) {
+        if (mc.field1339 != null && mc.method1528() != null) {
+            if (mc.field1339.field5055 <= 1) {
                 this.field23461.clear();
             }
 
@@ -55,8 +55,8 @@ public class Class5173 extends Module {
                 for (int var5 = 0; var5 < var7; var5++) {
                     Class8772 var6 = this.field23461.get(var5);
                     if (var6.method31641()) {
-                        field23386.getClientPlayNetHandler().method15589();
-                        Class8586.method30691(var6.method31642(), field23386.getClientPlayNetHandler().method15589().field38650);
+                        mc.getClientPlayNetHandler().method15589();
+                        Class8586.method30691(var6.method31642(), mc.getClientPlayNetHandler().method15589().field38650);
                         this.field23461.remove(var5);
                         var7--;
                         var5--;
@@ -84,7 +84,7 @@ public class Class5173 extends Module {
             }
         }
 
-        if (field23386.method1528() != null) {
+        if (mc.method1528() != null) {
             Packet var7 = var1.method13898();
             if (!(var7 instanceof Class5554)) {
                 if (!(var7 instanceof Class5542)) {

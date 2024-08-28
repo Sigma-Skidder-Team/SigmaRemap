@@ -9,34 +9,34 @@ import java.util.Set;
 
 public class Class3269 extends Class3264 {
    private static String[] field18765;
-   private static final Set<Class3209> field18766 = ImmutableSet.of(
-      Class8487.field36891,
-      Class8487.field37076,
-      Class8487.field36777,
-      Class8487.field36963,
-      Class8487.field37116,
-      Class8487.field37085,
-      new Class3209[]{
-         Class8487.field36452,
-         Class8487.field36453,
-         Class8487.field36449,
-         Class8487.field36446,
-         Class8487.field36447,
-         Class8487.field36451,
-         Class8487.field36450,
-         Class8487.field36448
+   private static final Set<Block> field18766 = ImmutableSet.of(
+      Blocks.field36891,
+      Blocks.field37076,
+      Blocks.field36777,
+      Blocks.field36963,
+      Blocks.field37116,
+      Blocks.field37085,
+      new Block[]{
+         Blocks.field36452,
+         Blocks.field36453,
+         Blocks.field36449,
+         Blocks.field36446,
+         Blocks.field36447,
+         Blocks.field36451,
+         Blocks.field36450,
+         Blocks.field36448
       }
    );
-   public static final Map<Class3209, Class7380> field18767 = Maps.newHashMap(
+   public static final Map<Block, Class7380> field18767 = Maps.newHashMap(
       ImmutableMap.of(
-         Class8487.field36395,
-         Class8487.field36540.method11579(),
-         Class8487.field36885,
-         Class8487.field36540.method11579(),
-         Class8487.field36396,
-         Class8487.field36540.method11579(),
-         Class8487.field36397,
-         Class8487.field36396.method11579()
+         Blocks.field36395,
+         Blocks.field36540.method11579(),
+         Blocks.field36885,
+         Blocks.field36540.method11579(),
+         Blocks.field36396,
+         Blocks.field36540.method11579(),
+         Blocks.field36397,
+         Blocks.field36396.method11579()
       )
    );
 

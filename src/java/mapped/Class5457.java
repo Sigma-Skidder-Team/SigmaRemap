@@ -19,7 +19,7 @@ public class Class5457 extends Class5455<Class4712> {
          Class7380 var17 = var15.method6738(var16);
          var16.method8379(Direction.field672);
          Class7380 var18 = var15.method6738(var16);
-         if (var17.method23393() && (var18.method23448(Class8487.field36581) || var18.method23454(var15, var16, Direction.field673))) {
+         if (var17.method23393() && (var18.method23448(Blocks.SOUL_SAND) || var18.method23454(var15, var16, Direction.field673))) {
             break;
          }
       }

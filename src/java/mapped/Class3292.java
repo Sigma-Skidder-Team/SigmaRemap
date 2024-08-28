@@ -7,9 +7,9 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class3292 extends Class3257 {
    /** @deprecated */
-   private final Class3209 field18801;
+   private final Block field18801;
 
-   public Class3292(Class3209 var1, Class5643 var2) {
+   public Class3292(Block var1, Class5643 var2) {
       super(var2);
       this.field18801 = var1;
    }
@@ -35,7 +35,7 @@ public class Class3292 extends Class3257 {
                PlayerEntity var8 = var4.method18358();
                Class8848 var9 = var4.method18357();
                Class7380 var10 = var7.method6738(var6);
-               Class3209 var11 = var10.method23383();
+               Block var11 = var10.method23383();
                if (var11 == var5.method23383()) {
                   var10 = this.method11839(var6, var7, var9, var10);
                   this.method11837(var6, var7, var8, var9, var10);
@@ -170,11 +170,11 @@ public class Class3292 extends Class3257 {
       this.method11845().method11583(var1, var2, var3, var4);
    }
 
-   public Class3209 method11845() {
+   public Block method11845() {
       return this.field18801;
    }
 
-   public void method11846(Map<Class3209, Class3257> var1, Class3257 var2) {
+   public void method11846(Map<Block, Class3257> var1, Class3257 var2) {
       var1.put(this.method11845(), var2);
    }
 }

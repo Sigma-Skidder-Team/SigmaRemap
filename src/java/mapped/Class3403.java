@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3403 extends Class3209 {
+public class Class3403 extends Block {
    private static String[] field19076;
    public static final Class8551 field19077 = Class3383.field18987;
 
@@ -89,7 +89,7 @@ public class Class3403 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19077);
    }
 }

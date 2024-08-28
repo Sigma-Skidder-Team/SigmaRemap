@@ -2,9 +2,9 @@ package mapped;
 
 import java.util.Random;
 
-public abstract class Class3468 extends Class3209 {
-   public static final Class6408 field19313 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
-   public static final Class6408 field19314 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
+public abstract class Class3468 extends Block {
+   public static final Class6408 field19313 = Block.method11539(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
+   public static final Class6408 field19314 = Block.method11539(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
    public static final Class6488 field19315 = new Class6488(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
 
    public Class3468(Class7929 var1) {
@@ -28,7 +28,7 @@ public abstract class Class3468 extends Class3209 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.field672 && !var1.method23443(var4, var5)
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 

@@ -136,7 +136,7 @@ public class Class7448 implements Class7443 {
          Class9727[] var10 = var9.method32386(this.field32022);
          return var10 == null ? null : var10;
       } else {
-         Class3209 var4 = Class2348.field16072.method9184(var3);
+         Block var4 = Class2348.field16072.method9184(var3);
          return new Class9727[]{new Class9727(Class9716.method38065(var4))};
       }
    }

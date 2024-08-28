@@ -1,9 +1,7 @@
 package com.mentalfrostbyte.jello.module;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.module.ModuleCategory;
 
 public class PremiumModule extends Module {
    public PremiumModule(String var1, String var2, ModuleCategory var3) {
@@ -16,11 +14,11 @@ public class PremiumModule extends Module {
    }
 
    @Override
-   public void setState(boolean var1) {
+   public void setState(boolean enabled) {
       if (Client.getInstance().getNetworkManager().isPremium()) {
-         super.setState(var1);
+         super.setState(enabled);
       } else {
-         if (this.field23390 != var1) {
+         if (this.enabled != enabled) {
             Client.getInstance().getNotificationManager().post(new Notification("Premium", this.method15991() + " Not yet available for free version"));
             Client.getInstance().getSoundManager().play("error");
          }
@@ -32,7 +30,7 @@ public class PremiumModule extends Module {
       if (Client.getInstance().getNetworkManager().isPremium()) {
          super.method15998(var1);
       } else {
-         if (this.field23390 != var1 && var1) {
+         if (this.enabled != var1 && var1) {
             Client.getInstance().getNotificationManager().post(new Notification("Premium", this.method15991() + " Not yet available for free version"));
             Client.getInstance().getSoundManager().play("error");
          }

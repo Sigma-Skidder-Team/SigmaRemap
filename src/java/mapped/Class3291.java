@@ -10,7 +10,7 @@ public class Class3291 extends Class3257 {
       Class1655 var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
-      if (!var6.method23448(Class8487.field37061)) {
+      if (!var6.method23448(Blocks.field37061)) {
          return Class2274.field14820;
       } else {
          return !Class3354.method11919(var4, var5, var6, var1.method18357()) ? Class2274.field14820 : Class2274.method9002(var4.field9020);

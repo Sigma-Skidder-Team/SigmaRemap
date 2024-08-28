@@ -3,11 +3,11 @@ package mapped;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3418 extends Class3209 implements Class3196 {
+public class Class3418 extends Block implements Class3196 {
    private static String[] field19121;
-   public static final Class6408 field19122 = Class3209.method11539(5.0, 0.0, 5.0, 11.0, 16.0, 11.0);
-   public static final Class6408 field19123 = Class3209.method11539(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
-   public static final Class6408 field19124 = Class3209.method11539(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
+   public static final Class6408 field19122 = Block.method11539(5.0, 0.0, 5.0, 11.0, 16.0, 11.0);
+   public static final Class6408 field19123 = Block.method11539(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
+   public static final Class6408 field19124 = Block.method11539(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
    public static final Class8554 field19125 = Class8820.field39738;
    public static final Class8552<Class181> field19126 = Class8820.field39773;
    public static final Class8554 field19127 = Class8820.field39760;
@@ -24,7 +24,7 @@ public class Class3418 extends Class3209 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19125, field19126, field19127);
    }
 
@@ -64,14 +64,14 @@ public class Class3418 extends Class3209 implements Class3196 {
          Class7380 var5 = var1.method18360().method6738(var1.method18345().method8313());
          if (!var5.method23446(Class7645.field32787)) {
             return null;
-         } else if (!var5.method23448(Class8487.field37008)) {
-            if (var5.method23448(Class8487.field37009)) {
+         } else if (!var5.method23448(Blocks.field37008)) {
+            if (var5.method23448(Blocks.field37009)) {
                int var7 = var5.<Integer>method23463(field19125) <= 0 ? 0 : 1;
                return this.method11579().method23465(field19125, Integer.valueOf(var7));
             } else {
                Class7380 var6 = var1.method18360().method6738(var1.method18345().method8311());
-               return !var6.method23448(Class8487.field37009) && !var6.method23448(Class8487.field37008)
-                  ? Class8487.field37008.method11579()
+               return !var6.method23448(Blocks.field37009) && !var6.method23448(Blocks.field37008)
+                  ? Blocks.field37008.method11579()
                   : this.method11579().method23465(field19125, var6.<Integer>method23463(field19125));
             }
          } else {
@@ -118,7 +118,7 @@ public class Class3418 extends Class3209 implements Class3196 {
          var4.method6860().method20726(var5, this, 1);
       }
 
-      if (var2 == Direction.field673 && var3.method23448(Class8487.field37009) && var3.<Integer>method23463(field19125) > var1.<Integer>method23463(field19125)) {
+      if (var2 == Direction.field673 && var3.method23448(Blocks.field37009) && var3.<Integer>method23463(field19125) > var1.<Integer>method23463(field19125)) {
          var4.method6725(var5, var1.method23459(field19125), 2);
       }
 
@@ -168,18 +168,18 @@ public class Class3418 extends Class3209 implements Class3196 {
       Class7380 var10 = var2.method6738(var9);
       Class181 var11 = Class181.field642;
       if (var5 >= 1) {
-         if (!var8.method23448(Class8487.field37009) || var8.<Class181>method23463(field19126) == Class181.field642) {
+         if (!var8.method23448(Blocks.field37009) || var8.<Class181>method23463(field19126) == Class181.field642) {
             var11 = Class181.field643;
-         } else if (var8.method23448(Class8487.field37009) && var8.<Class181>method23463(field19126) != Class181.field642) {
+         } else if (var8.method23448(Blocks.field37009) && var8.<Class181>method23463(field19126) != Class181.field642) {
             var11 = Class181.field644;
-            if (var10.method23448(Class8487.field37009)) {
+            if (var10.method23448(Blocks.field37009)) {
                var2.method6725(var3.method8313(), var8.method23465(field19126, Class181.field643), 3);
                var2.method6725(var9, var10.method23465(field19126, Class181.field642), 3);
             }
          }
       }
 
-      int var12 = var1.<Integer>method23463(field19125) != 1 && !var10.method23448(Class8487.field37009) ? 0 : 1;
+      int var12 = var1.<Integer>method23463(field19125) != 1 && !var10.method23448(Blocks.field37009) ? 0 : 1;
       int var13 = (var5 < 11 || !(var4.nextFloat() < 0.25F)) && var5 != 15 ? 0 : 1;
       var2.method6725(
          var3.method8311(),
@@ -191,7 +191,7 @@ public class Class3418 extends Class3209 implements Class3196 {
    public int method12066(Class1665 var1, BlockPos var2) {
       int var5 = 0;
 
-      while (var5 < 16 && var1.method6738(var2.method8339(var5 + 1)).method23448(Class8487.field37009)) {
+      while (var5 < 16 && var1.method6738(var2.method8339(var5 + 1)).method23448(Blocks.field37009)) {
          var5++;
       }
 
@@ -201,7 +201,7 @@ public class Class3418 extends Class3209 implements Class3196 {
    public int method12067(Class1665 var1, BlockPos var2) {
       int var5 = 0;
 
-      while (var5 < 16 && var1.method6738(var2.method8340(var5 + 1)).method23448(Class8487.field37009)) {
+      while (var5 < 16 && var1.method6738(var2.method8340(var5 + 1)).method23448(Blocks.field37009)) {
          var5++;
       }
 

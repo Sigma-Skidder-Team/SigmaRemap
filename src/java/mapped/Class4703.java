@@ -16,7 +16,7 @@ public class Class4703 implements Class4698 {
                Class7380.field31585
                   .listOf()
                   .fieldOf("whitelist")
-                  .forGetter(var0x -> var0x.field22308.stream().<Class7380>map(Class3209::method11579).collect(Collectors.toList())),
+                  .forGetter(var0x -> var0x.field22308.stream().<Class7380>map(Block::method11579).collect(Collectors.toList())),
                Class7380.field31585.listOf().fieldOf("blacklist").forGetter(var0x -> ImmutableList.copyOf(var0x.field22309)),
                Codec.INT.fieldOf("tries").orElse(128).forGetter(var0x -> var0x.field22310),
                Codec.INT.fieldOf("xspread").orElse(7).forGetter(var0x -> var0x.field22311),
@@ -30,7 +30,7 @@ public class Class4703 implements Class4698 {
    );
    public final Class6698 field22306;
    public final Class6166 field22307;
-   public final Set<Class3209> field22308;
+   public final Set<Block> field22308;
    public final Set<Class7380> field22309;
    public final int field22310;
    public final int field22311;
@@ -56,7 +56,7 @@ public class Class4703 implements Class4698 {
       this(
          var1,
          var2,
-         var3.stream().<Class3209>map(Class7377::method23383).collect(Collectors.<Class3209>toSet()),
+         var3.stream().<Block>map(Class7377::method23383).collect(Collectors.<Block>toSet()),
          ImmutableSet.copyOf(var4),
          var5,
          var6,
@@ -71,7 +71,7 @@ public class Class4703 implements Class4698 {
    public Class4703(
            Class6698 var1,
            Class6166 var2,
-           Set<Class3209> var3,
+           Set<Block> var3,
            Set<Class7380> var4,
            int var5,
            int var6,

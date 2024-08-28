@@ -75,7 +75,7 @@ public class Class7819 {
          .method37705("       ", "       ", "       ", "   #   ", "       ", "       ", "       ")
          .method37705("  ###  ", " #   # ", "#     #", "#  #  #", "#     #", " #   # ", "  ###  ")
          .method37705("       ", "  ###  ", " ##### ", " ##### ", " ##### ", "  ###  ", "       ")
-         .method37707('#', Class9632.method37552(Class118.method331(Class8487.field36412)))
+         .method37707('#', Class9632.method37552(Class118.method331(Blocks.BEDROCK)))
          .method37708();
    }
 
@@ -312,7 +312,7 @@ public class Class7819 {
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
-            this.field33538.method6730(this.field33538.method7006(Class101.field299, Class2909.field17994), Class8487.field36652.method11579());
+            this.field33538.method6730(this.field33538.method7006(Class101.field299, Class2909.field17994), Blocks.field36652.method11579());
          }
 
          this.field33546 = true;
@@ -339,7 +339,7 @@ public class Class7819 {
       if (this.field33549 == null) {
          this.field33549 = this.field33538.method7006(Class101.field300, Class2909.field17994).method8313();
 
-         while (this.field33538.method6738(this.field33549).method23448(Class8487.field36412) && this.field33549.getY() > this.field33538.method6776()) {
+         while (this.field33538.method6738(this.field33549).method23448(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
             this.field33549 = this.field33549.method8313();
          }
       }
@@ -431,8 +431,8 @@ public class Class7819 {
                for (int var6 = 0; var6 < this.field33540.method38653(); var6++) {
                   for (int var7 = 0; var7 < this.field33540.method38652(); var7++) {
                      Class9632 var8 = var4.method33881(var5, var6, var7);
-                     if (var8.method37548().method23448(Class8487.field36412) || var8.method37548().method23448(Class8487.field36649)) {
-                        this.field33538.method6730(var8.method37551(), Class8487.field36651.method11579());
+                     if (var8.method37548().method23448(Blocks.BEDROCK) || var8.method37548().method23448(Blocks.field36649)) {
+                        this.field33538.method6730(var8.method37551(), Blocks.field36651.method11579());
                      }
                   }
                }

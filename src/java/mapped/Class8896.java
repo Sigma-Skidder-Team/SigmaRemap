@@ -60,7 +60,7 @@ public class Class8896 {
          if (var5.length == 1) {
             Class9727 var6 = var5[0];
             int var7 = var6.method38103();
-            Class3209 var8 = Class2348.field16072.method9172(var7);
+            Block var8 = Class2348.field16072.method9172(var7);
             return var8.method11579();
          } else {
             return var2;
@@ -89,12 +89,12 @@ public class Class8896 {
 
             String var7 = var4[var6];
             String[] var8 = Arrays.<String>copyOfRange(var4, var6 + 1, var4.length);
-            Class3209[] var9 = this.method32389(var5, var7);
+            Block[] var9 = this.method32389(var5, var7);
             if (var9 != null) {
                Class9727[] var10 = new Class9727[var9.length];
 
                for (int var11 = 0; var11 < var9.length; var11++) {
-                  Class3209 var12 = var9[var11];
+                  Block var12 = var9[var11];
                   int var13 = Class2348.field16072.method9171(var12);
                   int[] var14 = null;
                   if (var8.length > 0) {
@@ -140,19 +140,19 @@ public class Class8896 {
       }
    }
 
-   public Class3209[] method32389(String var1, String var2) {
+   public Block[] method32389(String var1, String var2) {
       String var5 = var1 + ":" + var2;
       ResourceLocation var6 = new ResourceLocation(var5);
-      Class3209 var7 = Class9716.method38066(var6);
+      Block var7 = Class9716.method38066(var6);
       if (var7 != null) {
-         return new Class3209[]{var7};
+         return new Block[]{var7};
       } else {
          this.method32403("Block not found for name: " + var5);
          return null;
       }
    }
 
-   public int[] method32390(Class3209 var1, String[] var2) {
+   public int[] method32390(Block var1, String[] var2) {
       if (var2.length <= 0) {
          return null;
       } else {

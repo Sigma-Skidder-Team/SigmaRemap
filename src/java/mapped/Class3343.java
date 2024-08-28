@@ -3,7 +3,7 @@ package mapped;
 public class Class3343 extends Class3251 {
    private static String[] field18854;
    public static final Class8554 field18855 = Class8820.field39763;
-   public static final Class6408 field18856 = Class3209.method11539(4.0, 0.0, 4.0, 12.0, 8.0, 12.0);
+   public static final Class6408 field18856 = Block.method11539(4.0, 0.0, 4.0, 12.0, 8.0, 12.0);
 
    public Class3343(Class2137 var1, Class7929 var2) {
       super(var1, var2);
@@ -36,7 +36,7 @@ public class Class3343 extends Class3251 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18855);
    }
 }

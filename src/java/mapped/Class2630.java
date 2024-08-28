@@ -30,7 +30,7 @@ public class Class2630 extends Class2628 {
                var4.method6742((PlayerEntity)null, var3, Class6067.field27172, Class2266.field14732, 0.3F, 0.9F + var4.field9016.nextFloat() * 0.2F);
                var4.method6725(
                   this.field16933.method8311(),
-                  Class8487.field36964.method11579().method23465(Class3441.field19244, Integer.valueOf(Class1088.method5061(this.field16941).nextInt(4) + 1)),
+                  Blocks.field36964.method11579().method23465(Class3441.field19244, Integer.valueOf(Class1088.method5061(this.field16941).nextInt(4) + 1)),
                   3
                );
                Class1088.method5062(this.field16941, false);

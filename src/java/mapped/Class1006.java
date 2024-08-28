@@ -856,7 +856,7 @@ public abstract class Class1006 extends Class880 {
       }
 
       Class3257 var4 = var0.method32107();
-      if (var4 != Class8487.field36589.method11581() && (!(var4 instanceof Class3292) || !(((Class3292)var4).method11845() instanceof Class3251))) {
+      if (var4 != Blocks.field36589.method11581() && (!(var4 instanceof Class3292) || !(((Class3292)var4).method11845() instanceof Class3251))) {
          if (var4 instanceof Class3279) {
             return ((Class3279)var4).method11805();
          } else if (var4 != Class8514.field38120) {

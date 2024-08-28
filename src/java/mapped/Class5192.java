@@ -34,7 +34,7 @@ public class Class5192 extends Module {
         if (this.method15996()) {
             if (var1.method13898() instanceof Class5607) {
                 Class5607 var4 = (Class5607) var1.method13898();
-                this.method16164(field23386.field1338.method6722(var4.method17632()).method7072());
+                this.method16164(mc.field1338.method6722(var4.method17632()).method7072());
             }
 
             if (var1.method13898() instanceof Class5549) {
@@ -92,7 +92,7 @@ public class Class5192 extends Module {
             List var5 = (List) this.method15973("Blocks");
 
             for (BlockPos var7 : this.method16166(var1)) {
-                String var8 = Class2348.field16072.method9181(field23386.field1338.method6738(var7).method23383()).toString();
+                String var8 = Class2348.field16072.method9181(mc.field1338.method6738(var7).method23383()).toString();
                 if (var5.contains(var8)) {
                     var4.add(var7);
                 }
@@ -101,11 +101,11 @@ public class Class5192 extends Module {
             if (this.method15974("Holes")) {
                 label57:
                 for (BlockPos var13 : this.method16166(var1)) {
-                    if (field23386.field1338.method6738(var13).method23383() == Class8487.field36387) {
+                    if (mc.field1338.method6738(var13).method23383() == Blocks.AIR) {
                         for (Direction var11 : Direction.values()) {
                             if (var11 != Direction.field673
-                                    && field23386.field1338.method6738(var13.method8337(var11.method556())).method23383() != Class8487.field36527
-                                    && field23386.field1338.method6738(var13.method8337(var11.method556())).method23383() != Class8487.field36412) {
+                                    && mc.field1338.method6738(var13.method8337(var11.method556())).method23383() != Blocks.field36527
+                                    && mc.field1338.method6738(var13.method8337(var11.method556())).method23383() != Blocks.BEDROCK) {
                                 continue label57;
                             }
                         }
@@ -122,7 +122,7 @@ public class Class5192 extends Module {
     @EventTarget
     public void method16168(Class4428 var1) {
         if (this.method15996()) {
-            if (field23386.field1339.field5055 < 20) {
+            if (mc.field1339.field5055 < 20) {
                 this.field23499.clear();
             } else {
                 int var4 = (int) this.method15977("Chunk Range");
@@ -130,7 +130,7 @@ public class Class5192 extends Module {
 
                 for (int var6 = -5; var6 < 5; var6++) {
                     for (int var7 = -5; var7 < 5; var7++) {
-                        var5.add(new Class7481(field23386.field1339.field5072 + var6, field23386.field1339.field5074 + var7));
+                        var5.add(new Class7481(mc.field1339.field5072 + var6, mc.field1339.field5074 + var7));
                     }
                 }
 
@@ -138,7 +138,7 @@ public class Class5192 extends Module {
 
                 while (var11.hasNext()) {
                     Class7871 var12 = (Class7871) var11.next();
-                    if (var12.method26391(new Class7481(field23386.field1339.field5072, field23386.field1339.field5074)) > 7
+                    if (var12.method26391(new Class7481(mc.field1339.field5072, mc.field1339.field5074)) > 7
                             || this.field23500.contains(var12.method26392())) {
                         var11.remove();
                     }
@@ -181,9 +181,9 @@ public class Class5192 extends Module {
 
         for (Class7871 var5 : this.field23499) {
             for (BlockPos var7 : var5.field33732) {
-                double var8 = (double) var7.method8304() - field23386.field1295.method768().method37504().method11320();
-                double var10 = (double) var7.getY() - field23386.field1295.method768().method37504().method11321();
-                double var12 = (double) var7.method8306() - field23386.field1295.method768().method37504().method11322();
+                double var8 = (double) var7.method8304() - mc.field1295.method768().method37504().method11320();
+                double var10 = (double) var7.getY() - mc.field1295.method768().method37504().method11321();
+                double var12 = (double) var7.method8306() - mc.field1295.method768().method37504().method11322();
                 Class9388 var14 = new Class9388(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
                 Class3192.method11459(var14, var3);
             }

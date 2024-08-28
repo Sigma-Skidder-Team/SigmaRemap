@@ -89,7 +89,7 @@ public class Class5941 extends Class5942<Class964> {
       for (BlockPos var12 : BlockPos.method8359(var10, var10.method8337(var1.method3942()).method8336(-1, -1, -1))) {
          Class7380 var13 = var8.method6738(var12);
          boolean var14 = var13.method23393();
-         boolean var15 = var13.method23448(Class8487.field36894);
+         boolean var15 = var13.method23448(Blocks.field36894);
          if (var14 || var15) {
             float var16 = !var14 ? 0.0F : 0.05F;
             double var17 = (double)((float)(var12.method8304() - var9.method8304()) + 0.45F - var16);

@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableList.Builder;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class3389 extends Class3209 {
+public class Class3389 extends Block {
    private static String[] field18999;
    public static final Class8554 field19000 = Class8820.field39762;
    private static final ImmutableList<Class1998> field19001 = ImmutableList.of(
@@ -164,7 +164,7 @@ public class Class3389 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19000);
    }
 

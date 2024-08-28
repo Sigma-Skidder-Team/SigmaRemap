@@ -23,20 +23,20 @@ public class Class5244 extends Module {
     @Override
     public void method15966() {
         this.field23608 = 1;
-        double var3 = field23386.field1339.method3433().field18048;
-        double var5 = field23386.field1339.method3433().field18050;
+        double var3 = mc.field1339.method3433().field18048;
+        double var5 = mc.field1339.method3433().field18050;
         this.field23609 = Math.sqrt(var3 * var3 + var5 * var5);
     }
 
     @EventTarget
     public void method16346(Class4399 var1) {
         if (this.method15996()
-                && field23386.field1339 != null
+                && mc.field1339 != null
                 && !Class5381.method16953()
                 && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
             if (var1.method13921() && Class5341.field23893 > 1) {
-                double var4 = field23386.field1339.getPosX() - field23386.field1339.field6119;
-                double var6 = field23386.field1339.getPosZ() - field23386.field1339.field6121;
+                double var4 = mc.field1339.getPosX() - mc.field1339.field6119;
+                double var6 = mc.field1339.getPosZ() - mc.field1339.field6121;
                 if (this.field23607 != 0) {
                     this.field23609 = Math.sqrt(var4 * var4 + var6 * var6);
                 } else {
@@ -48,13 +48,13 @@ public class Class5244 extends Module {
 
     @EventTarget
     public void method16347(Class4435 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
-            if (!Class5381.method16953() && !field23386.field1339.method3250()) {
+        if (this.method15996() && mc.field1339 != null) {
+            if (!Class5381.method16953() && !mc.field1339.method3250()) {
                 if (this.field23608 < 2) {
                     this.field23608++;
                 }
 
-                if (!field23386.field1339.field5036) {
+                if (!mc.field1339.field5036) {
                     if (this.field23607 >= 0) {
                         this.field23607++;
                         double var4 = this.field23609;
@@ -69,12 +69,12 @@ public class Class5244 extends Module {
                             var1.method13995(var1.method13994() - 0.01);
                         }
                     }
-                } else if (this.field23608 > 1 && (this.method15974("Auto Jump") && Class5628.method17686() || field23386.field1299.field44636.method8509())) {
+                } else if (this.field23608 > 1 && (this.method15974("Auto Jump") && Class5628.method17686() || mc.field1299.field44636.method8509())) {
                     this.field23607 = 0;
-                    field23386.field1339.method2914();
-                    var1.method13993(field23386.field1339.method3433().field18048);
-                    var1.method13995(field23386.field1339.method3433().field18049);
-                    var1.method13997(field23386.field1339.method3433().field18050);
+                    mc.field1339.method2914();
+                    var1.method13993(mc.field1339.method3433().field18048);
+                    var1.method13995(mc.field1339.method3433().field18049);
+                    var1.method13997(mc.field1339.method3433().field18050);
                 }
             } else {
                 this.field23607 = -1;
@@ -90,7 +90,7 @@ public class Class5244 extends Module {
                 var1.method13900(true);
             }
 
-            if (!field23386.field1299.field44636.method8509() || !Client.getInstance().getModuleManager().method14662(Class5328.class).method15996()) {
+            if (!mc.field1299.field44636.method8509() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
                 double var4 = 0.56 + (double) Class9567.method37078() * 0.1;
                 var1.method14002(0.407 + (double) Class9567.method37079() * 0.1 + Math.random() * 1.0E-5);
                 if (Class5341.field23893 < 2) {

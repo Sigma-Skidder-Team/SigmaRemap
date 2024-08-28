@@ -2,7 +2,7 @@ package mapped;
 
 public class Class3494 extends Class3194 {
    private static String[] field18470;
-   public static final Class6408 field19364 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 1.5, 15.0);
+   public static final Class6408 field19364 = Block.method11539(1.0, 0.0, 1.0, 15.0, 1.5, 15.0);
 
    public Class3494(Class7929 var1) {
       super(var1);

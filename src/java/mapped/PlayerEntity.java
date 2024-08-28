@@ -1255,7 +1255,7 @@ public abstract class PlayerEntity extends Class880 {
 
    public static Optional<Vector3d> method2908(Class1657 var0, BlockPos var1, float var2, boolean var3, boolean var4) {
       Class7380 var7 = var0.method6738(var1);
-      Class3209 var8 = var7.method23383();
+      Block var8 = var7.method23383();
       if (var8 instanceof Class3389 && var7.<Integer>method23463(Class3389.field19000) > 0 && Class3389.method11988(var0)) {
          Optional var11 = Class3389.method11991(Class8992.field41111, var0, var1);
          if (!var4 && var11.isPresent()) {

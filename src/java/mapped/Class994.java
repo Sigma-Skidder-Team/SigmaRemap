@@ -56,7 +56,7 @@ public class Class994 extends Class916 {
    public void method3586(Class8654 var1) {
       super.method3586(var1);
       if (!var1.method31131() && this.field5024.method6789().method17135(Class5462.field24229)) {
-         this.method3300(Class8487.field36541);
+         this.method3300(Blocks.field36541);
       }
    }
 
@@ -136,7 +136,7 @@ public class Class994 extends Class916 {
 
    @Override
    public Class7380 method3604() {
-      return Class8487.field36541
+      return Blocks.field36541
          .method11579()
          .method23465(Class3353.field18875, Direction.NORTH)
          .method23465(Class3353.field18876, Boolean.valueOf(this.method4075()));

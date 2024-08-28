@@ -15,12 +15,12 @@ import java.util.TreeMap;
 import java.util.stream.Stream;
 
 public class Class5148 implements Class5146 {
-   private final Class3209 field23372;
+   private final Block field23372;
    private final List<Class5138> field23373;
    private final Set<Class8550<?>> field23374 = Sets.newHashSet();
    private final List<Class3629> field23375 = Lists.newArrayList();
 
-   private Class5148(Class3209 var1, List<Class5138> var2) {
+   private Class5148(Block var1, List<Class5138> var2) {
       this.field23372 = var1;
       this.field23373 = var2;
    }
@@ -68,19 +68,19 @@ public class Class5148 implements Class5146 {
    }
 
    @Override
-   public Class3209 method15931() {
+   public Block method15931() {
       return this.field23372;
    }
 
-   public static Class5148 method15941(Class3209 var0) {
+   public static Class5148 method15941(Block var0) {
       return new Class5148(var0, ImmutableList.of(Class5138.method15912()));
    }
 
-   public static Class5148 method15942(Class3209 var0, Class5138 var1) {
+   public static Class5148 method15942(Block var0, Class5138 var1) {
       return new Class5148(var0, ImmutableList.of(var1));
    }
 
-   public static Class5148 method15943(Class3209 var0, Class5138... var1) {
+   public static Class5148 method15943(Block var0, Class5138... var1) {
       return new Class5148(var0, ImmutableList.copyOf(var1));
    }
 }

@@ -11,13 +11,13 @@ public class Class3375 extends Class3373 {
    private static final Map<Direction, Class6408> field18973 = Maps.newEnumMap(
       ImmutableMap.of(
          Direction.NORTH,
-         Class3209.method11539(0.0, 4.5, 14.0, 16.0, 12.5, 16.0),
+         Block.method11539(0.0, 4.5, 14.0, 16.0, 12.5, 16.0),
          Direction.SOUTH,
-         Class3209.method11539(0.0, 4.5, 0.0, 16.0, 12.5, 2.0),
+         Block.method11539(0.0, 4.5, 0.0, 16.0, 12.5, 2.0),
          Direction.EAST,
-         Class3209.method11539(0.0, 4.5, 0.0, 2.0, 12.5, 16.0),
+         Block.method11539(0.0, 4.5, 0.0, 2.0, 12.5, 16.0),
          Direction.WEST,
-         Class3209.method11539(14.0, 4.5, 0.0, 16.0, 12.5, 16.0)
+         Block.method11539(14.0, 4.5, 0.0, 16.0, 12.5, 16.0)
       )
    );
 
@@ -66,7 +66,7 @@ public class Class3375 extends Class3373 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2.method536() == var1.method23463(field18972) && !var1.method23443(var4, var5)
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
@@ -81,7 +81,7 @@ public class Class3375 extends Class3373 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18972, field18966);
    }
 }

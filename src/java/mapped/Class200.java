@@ -68,7 +68,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
                var3.setValue(16);
             }
 
-            return Class8487.field36412.method11579();
+            return Blocks.BEDROCK.method11579();
          } else {
             this.field750.method8375(var1);
             Class7380 var9 = var8.method6738(this.field750);
@@ -77,14 +77,14 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
                var3.setValue(var9.method23387(this.field746.method7386(), this.field750));
             }
 
-            return !var10 ? Class8487.field36387.method11579() : var9;
+            return !var10 ? Blocks.AIR.method11579() : var9;
          }
       } else {
          if (var3 != null) {
             var3.setValue(0);
          }
 
-         return Class8487.field36387.method11579();
+         return Blocks.AIR.method11579();
       }
    }
 

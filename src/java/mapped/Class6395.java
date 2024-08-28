@@ -378,7 +378,7 @@ public abstract class Class6395 {
          }
       } else {
          Class7380 var20 = var10.method6738(var5);
-         boolean var15 = var20.method23448(Class8487.field37124);
+         boolean var15 = var20.method23448(Blocks.field37124);
          Vector3d var16 = (Vector3d)var9.get();
          float var18;
          if (!var20.method23446(Class7645.field32770) && !var15) {

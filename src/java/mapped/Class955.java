@@ -69,10 +69,10 @@ public class Class955 extends Class944 implements Class935 {
 
    private Class7380 method3854() {
       return !this.method3846() && this.method3848() && this.field5361.method23383() instanceof Class3435
-         ? Class8487.field36488
+         ? Blocks.field36488
             .method11579()
             .method23465(Class3436.field19212, Boolean.valueOf(this.field5366 > 0.25F))
-            .method23465(Class3436.field19211, !this.field5361.method23448(Class8487.field36480) ? Class180.field638 : Class180.field639)
+            .method23465(Class3436.field19211, !this.field5361.method23448(Blocks.field36480) ? Class180.field638 : Class180.field639)
             .method23465(Class3436.field19198, this.field5361.<Direction>method23463(Class3435.field19198))
          : this.field5361;
    }
@@ -86,7 +86,7 @@ public class Class955 extends Class944 implements Class935 {
          List var9 = this.field5324.method7181((Entity)null, Class7769.method25747(var8, var4, var5).method19666(var8));
          if (!var9.isEmpty()) {
             List<Class6488> var10 = var7.method19521();
-            boolean var11 = this.field5361.method23448(Class8487.field36764);
+            boolean var11 = this.field5361.method23448(Blocks.field36764);
             Iterator var12 = var9.iterator();
 
             while (true) {
@@ -180,7 +180,7 @@ public class Class955 extends Class944 implements Class935 {
    }
 
    private boolean method3859() {
-      return this.field5361.method23448(Class8487.field37119);
+      return this.field5361.method23448(Blocks.field37119);
    }
 
    public Direction method3860() {
@@ -238,12 +238,12 @@ public class Class955 extends Class944 implements Class935 {
          this.field5367 = this.field5366;
          this.field5324.method6762(this.field5325);
          this.method3765();
-         if (this.field5324.method6738(this.field5325).method23448(Class8487.field36505)) {
+         if (this.field5324.method6738(this.field5325).method23448(Blocks.field36505)) {
             Class7380 var3;
             if (!this.field5364) {
-               var3 = Class3209.method11542(this.field5361, this.field5324, this.field5325);
+               var3 = Block.method11542(this.field5361, this.field5324, this.field5325);
             } else {
-               var3 = Class8487.field36387.method11579();
+               var3 = Blocks.AIR.method11579();
             }
 
             this.field5324.method6725(this.field5325, var3, 3);
@@ -269,8 +269,8 @@ public class Class955 extends Class944 implements Class935 {
       } else {
          this.field5324.method6762(this.field5325);
          this.method3765();
-         if (this.field5361 != null && this.field5324.method6738(this.field5325).method23448(Class8487.field36505)) {
-            Class7380 var4 = Class3209.method11542(this.field5361, this.field5324, this.field5325);
+         if (this.field5361 != null && this.field5324.method6738(this.field5325).method23448(Blocks.field36505)) {
+            Class7380 var4 = Block.method11542(this.field5361, this.field5324, this.field5325);
             if (!var4.method23393()) {
                if (var4.method23462(Class8820.field39710) && var4.<Boolean>method23463(Class8820.field39710)) {
                   var4 = var4.method23465(Class8820.field39710, Boolean.valueOf(false));
@@ -280,7 +280,7 @@ public class Class955 extends Class944 implements Class935 {
                this.field5324.method6735(this.field5325, var4.method23383(), this.field5325);
             } else {
                this.field5324.method6725(this.field5325, this.field5361, 84);
-               Class3209.method11543(this.field5361, var4, this.field5324, this.field5325, 3);
+               Block.method11543(this.field5361, var4, this.field5324, this.field5325, 3);
             }
          }
       }
@@ -324,7 +324,7 @@ public class Class955 extends Class944 implements Class935 {
          if (!this.method3848()) {
             var7 = this.field5361;
          } else {
-            var7 = Class8487.field36488
+            var7 = Blocks.field36488
                .method11579()
                .method23465(Class3436.field19198, this.field5362)
                .method23465(Class3436.field19212, Boolean.valueOf(this.field5363 != 1.0F - this.field5366 < 0.25F));

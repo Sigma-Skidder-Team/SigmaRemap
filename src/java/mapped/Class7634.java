@@ -61,7 +61,7 @@ public abstract class Class7634 extends Class7633 {
    @Override
    public void method25081(Class1660 var1, BlockPos var2, Class7380 var3) {
       Class944 var6 = !var3.method23383().method11998() ? null : var1.method6759(var2);
-      Class3209.method11555(var3, var1, var2, var6);
+      Block.method11555(var3, var1, var2, var6);
    }
 
    @Override
@@ -71,7 +71,7 @@ public abstract class Class7634 extends Class7633 {
 
    @Override
    public Class7380 method25063(Class7379 var1) {
-      return Class8487.field36413.method11579().method23465(Class3404.field19079, Integer.valueOf(method25094(var1)));
+      return Blocks.WATER.method11579().method23465(Class3404.field19079, Integer.valueOf(method25094(var1)));
    }
 
    @Override

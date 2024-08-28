@@ -13,7 +13,7 @@ public class Class5310 extends Module {
     @EventTarget
     private void method16685(Class4422 var1) {
         if (this.method15996()) {
-            field23386.field1339.field4952 = 0;
+            mc.field1339.field4952 = 0;
         }
     }
 }

@@ -2,15 +2,15 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class3466 extends Class3209 implements Class3207 {
+public class Class3466 extends Block implements Class3207 {
    private static String[] field19307;
    public static final Class8551 field19308 = Class8820.field39691;
    public static final Class8551 field19309 = Class8820.field39710;
    public static final Class6408 field19310 = Class8022.method27431(
-      Class3209.method11539(5.0, 0.0, 5.0, 11.0, 7.0, 11.0), Class3209.method11539(6.0, 7.0, 6.0, 10.0, 9.0, 10.0)
+      Block.method11539(5.0, 0.0, 5.0, 11.0, 7.0, 11.0), Block.method11539(6.0, 7.0, 6.0, 10.0, 9.0, 10.0)
    );
    public static final Class6408 field19311 = Class8022.method27431(
-      Class3209.method11539(5.0, 1.0, 5.0, 11.0, 8.0, 11.0), Class3209.method11539(6.0, 8.0, 6.0, 10.0, 10.0, 10.0)
+      Block.method11539(5.0, 1.0, 5.0, 11.0, 8.0, 11.0), Block.method11539(6.0, 8.0, 6.0, 10.0, 10.0, 10.0)
    );
 
    public Class3466(Class7929 var1) {
@@ -41,14 +41,14 @@ public class Class3466 extends Class3209 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19308, field19309);
    }
 
    @Override
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
       Direction var6 = method12151(var1).method536();
-      return Class3209.method11548(var2, var3.method8349(var6), var6.method536());
+      return Block.method11548(var2, var3.method8349(var6), var6.method536());
    }
 
    public static Direction method12151(Class7380 var0) {
@@ -67,7 +67,7 @@ public class Class3466 extends Class3209 implements Class3207 {
       }
 
       return method12151(var1).method536() == var2 && !var1.method23443(var4, var5)
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 

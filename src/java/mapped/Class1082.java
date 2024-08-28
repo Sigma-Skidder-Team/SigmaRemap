@@ -96,7 +96,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
          int var9 = var8.get(ChronoField.DAY_OF_MONTH);
          int var10 = var8.get(ChronoField.MONTH_OF_YEAR);
          if (var10 == 10 && var9 == 31 && this.field5054.nextFloat() < 0.25F) {
-            this.method2944(Class2106.field13736, new Class8848(!(this.field5054.nextFloat() < 0.1F) ? Class8487.field36589 : Class8487.field36590));
+            this.method2944(Class2106.field13736, new Class8848(!(this.field5054.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
             this.field5607[Class2106.field13736.method8773()] = 0.0F;
          }
       }

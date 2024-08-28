@@ -17,7 +17,7 @@ public class Class1675 extends Class1674 {
 
    @Override
    public Class7380 method6738(BlockPos var1) {
-      return Class8487.field37011.method11579();
+      return Blocks.field37011.method11579();
    }
 
    @Nullable

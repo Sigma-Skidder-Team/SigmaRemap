@@ -29,13 +29,13 @@ public class Class2662 extends Class2661 {
          for (int var3 = 1; var3 <= 2; var3++) {
             BlockPos var4 = this.field17022.method3432().method8340(var3);
             Class7380 var5 = this.field17022.field5024.method6738(var4);
-            Class3209 var6 = var5.method23383();
+            Block var6 = var5.method23383();
             boolean var7 = false;
             Class8554 var8 = null;
             if (var6.method11540(Class7645.field32796)) {
                if (!(var6 instanceof Class3480)) {
                   if (!(var6 instanceof Class3486)) {
-                     if (var6 == Class8487.field37069) {
+                     if (var6 == Blocks.field37069) {
                         int var9 = var5.<Integer>method23463(Class3484.field19342);
                         if (var9 < 3) {
                            var7 = true;

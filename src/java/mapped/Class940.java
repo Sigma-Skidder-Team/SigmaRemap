@@ -243,7 +243,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
 
    @Override
    public boolean method3654(int var1, Class8848 var2, Direction var3) {
-      return !(Class3209.method11537(var2.method32107()) instanceof Class3368);
+      return !(Block.method11537(var2.method32107()) instanceof Class3368);
    }
 
    @Override

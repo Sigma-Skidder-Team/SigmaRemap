@@ -20,7 +20,7 @@ public class Class5276 extends Module {
     @EventTarget
     private void method16506(Class4420 var1) {
         if (this.method15996()) {
-            if (field23386.field1339 != null && field23386.field1338 != null) {
+            if (mc.field1339 != null && mc.field1338 != null) {
                 this.method16509();
                 Class3192.method11476();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -43,13 +43,13 @@ public class Class5276 extends Module {
 
     private void method16507() {
         if (Client.getInstance().method19954() == ClientMode.JELLO) {
-            field23386.field1338
+            mc.field1338
                     .field9025
                     .forEach(
                             (var1, var2) -> {
                                 boolean var5 = Class5628.method17744(var2) == Class2258.field14690 && this.method16004().method15974("Show Players");
                                 boolean var6 = !var2.method3342() || this.method16004().method15974("Show Invisibles");
-                                if (!Client.getInstance().getCombatManager().method29346(var2) && var5 && var6 && var2 != field23386.field1339) {
+                                if (!Client.getInstance().getCombatManager().method29346(var2) && var5 && var6 && var2 != mc.field1339) {
                                     double var7 = Class9647.method37623(var2).field43722;
                                     double var9 = Class9647.method37623(var2).field43723;
                                     double var11 = Class9647.method37623(var2).field43724;
@@ -58,7 +58,7 @@ public class Class5276 extends Module {
                                     GL11.glTranslated(var7, var9, var11);
                                     GL11.glTranslatef(0.0F, var2.method3430(), 0.0F);
                                     GL11.glTranslatef(0.0F, 0.1F, 0.0F);
-                                    GL11.glRotatef(field23386.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
+                                    GL11.glRotatef(mc.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
                                     GL11.glScalef(-0.11F, -0.11F, -0.11F);
                                     Class3192.method11450(
                                             -var2.method3429() * 22.0F,
@@ -78,25 +78,25 @@ public class Class5276 extends Module {
     }
 
     private void method16508(boolean var1) {
-        for (Entity var5 : field23386.field1338.method6835()) {
+        for (Entity var5 : mc.field1338.method6835()) {
             if (!Client.getInstance().getCombatManager().method29346(var5)) {
                 boolean var6 = Class5628.method17744(var5) == Class2258.field14690 && this.method16004().method15974("Show Players");
                 boolean var7 = Class5628.method17744(var5) == Class2258.field14689 && this.method16004().method15974("Show Mobs");
                 boolean var8 = Class5628.method17744(var5) == Class2258.field14691 && this.method16004().method15974("Show Passives");
                 boolean var9 = !var5.method3342() || this.method16004().method15974("Show Invisibles");
-                if ((var7 || var6 || var8) && var9 && var5 != field23386.field1339) {
+                if ((var7 || var6 || var8) && var9 && var5 != mc.field1339) {
                     GL11.glPushMatrix();
                     GL11.glTranslated(
-                            -field23386.field1295.method768().method37504().method11320(),
-                            -field23386.field1295.method768().method37504().method11321(),
-                            -field23386.field1295.method768().method37504().method11322()
+                            -mc.field1295.method768().method37504().method11320(),
+                            -mc.field1295.method768().method37504().method11321(),
+                            -mc.field1295.method768().method37504().method11322()
                     );
                     GL11.glDisable(2929);
                     GL11.glEnable(3042);
                     int var10 = this.method15976("Color");
-                    double var11 = (var5.getPosX() - var5.field5048) * (double) field23386.field1284.field40356 - (var5.getPosX() - var5.field5048);
-                    double var13 = (var5.getPosY() - var5.field5049) * (double) field23386.field1284.field40356 - (var5.getPosY() - var5.field5049);
-                    double var15 = (var5.getPosZ() - var5.field5050) * (double) field23386.field1284.field40356 - (var5.getPosZ() - var5.field5050);
+                    double var11 = (var5.getPosX() - var5.field5048) * (double) mc.field1284.field40356 - (var5.getPosX() - var5.field5048);
+                    double var13 = (var5.getPosY() - var5.field5049) * (double) mc.field1284.field40356 - (var5.getPosY() - var5.field5049);
+                    double var15 = (var5.getPosZ() - var5.field5050) * (double) mc.field1284.field40356 - (var5.getPosZ() - var5.field5050);
                     Class9388 var17 = new Class9388(var5.method3389().method19667(var11, var13, var15)).method35648(0.1F);
                     if (var1) {
                         Class3192.method11462(var17, 3.0F, Class5628.method17688(var10, Client.getInstance().method19954() != ClientMode.JELLO ? 0.8F : 0.35F));
@@ -123,7 +123,7 @@ public class Class5276 extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        field23386.field1295.field818.method7316();
+        mc.field1295.field818.method7316();
     }
 
     private void method16510() {
@@ -133,9 +133,9 @@ public class Class5276 extends Module {
         GL11.glEnable(2903);
         RenderSystem.method27905(33986, 240.0F, 240.0F);
         TextureImpl.method36180();
-        TextureManager var10000 = field23386.getTextureManager();
-        field23386.getTextureManager();
+        TextureManager var10000 = mc.getTextureManager();
+        mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
-        field23386.field1295.field818.method7317();
+        mc.field1295.field818.method7317();
     }
 }

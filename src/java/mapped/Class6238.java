@@ -11,7 +11,7 @@ public final class Class6238 extends Class6230 {
       if (var5.method7007(var7) && Class3344.method11899(var5, var7, var2)) {
          var5.method6725(
             var7,
-            Class8487.field36703
+            Blocks.field36703
                .method11579()
                .method23465(Class3343.field18855, Integer.valueOf(var6.method544() != Class113.field414 ? var6.method536().method534() * 4 : 0)),
             3

@@ -48,7 +48,7 @@ public class Class3271 extends Class3257 implements Class3260 {
    public Class2274 method11707(Class5911 var1) {
       BlockPos var4 = var1.method18345();
       Class1655 var5 = var1.method18360();
-      if (!var5.method6738(var4).method23448(Class8487.field37129)) {
+      if (!var5.method6738(var4).method23448(Blocks.field37129)) {
          return super.method11707(var1);
       } else {
          var5.method6742((PlayerEntity)null, var4, Class6067.field26749, Class2266.field14735, 1.0F, 1.0F);

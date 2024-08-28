@@ -21,7 +21,7 @@ public class Class2906 extends Class2898<Class4712> {
          if (var1.method7007(var8)) {
             for (Direction var13 : field17990) {
                if (var13 != Direction.field672 && Class3402.method12034(var1, var8, var13)) {
-                  var1.method6725(var8, Class8487.field36636.method11579().method23465(Class3402.method12039(var13), Boolean.valueOf(true)), 2);
+                  var1.method6725(var8, Blocks.field36636.method11579().method23465(Class3402.method12039(var13), Boolean.valueOf(true)), 2);
                   break;
                }
             }

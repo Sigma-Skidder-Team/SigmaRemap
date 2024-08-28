@@ -299,7 +299,7 @@ public class Class8066 {
                return Class9025.field41290;
             }
          } else if (var4 == Class9025.field41290) {
-            Class3209 var8 = var2.method23383();
+            Block var8 = var2.method23383();
             if (!(var8 instanceof Class3222)) {
                if (!(var8 instanceof Class3220)) {
                   return Class9025.field41289;

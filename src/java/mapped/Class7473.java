@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 public class Class7473 {
    private static String[] field32110;
-   private static final Class8609 field32111 = (var0, var1, var2) -> var0.method23448(Class8487.field36527);
+   private static final Class8609 field32111 = (var0, var1, var2) -> var0.method23448(Blocks.field36527);
    private final Class1660 field32112;
    private final Class113 field32113;
    private final Direction field32114;
@@ -122,7 +122,7 @@ public class Class7473 {
                return var4;
             }
 
-            if (var6.method23448(Class8487.field36588)) {
+            if (var6.method23448(Blocks.field36588)) {
                this.field32115++;
             }
          }
@@ -132,7 +132,7 @@ public class Class7473 {
    }
 
    private static boolean method24202(Class7380 var0) {
-      return var0.method23393() || var0.method23446(Class7645.field32798) || var0.method23448(Class8487.field36588);
+      return var0.method23393() || var0.method23446(Class7645.field32798) || var0.method23448(Blocks.field36588);
    }
 
    public boolean method24203() {
@@ -140,7 +140,7 @@ public class Class7473 {
    }
 
    public void method24204() {
-      Class7380 var3 = Class8487.field36588.method11579().method23465(Class3401.field19060, this.field32113);
+      Class7380 var3 = Blocks.field36588.method11579().method23465(Class3401.field19060, this.field32113);
       BlockPos.method8359(this.field32116, this.field32116.method8350(Direction.field673, this.field32117 - 1).method8350(this.field32114, this.field32118 - 1))
          .forEach(var2 -> this.field32112.method6725(var2, var3, 18));
    }

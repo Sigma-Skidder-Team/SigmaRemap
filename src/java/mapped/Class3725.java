@@ -54,7 +54,7 @@ public class Class3725 extends Class3676<Class1042> {
 
    private boolean method12626(BlockPos var1, Class1657 var2) {
       Class7380 var5 = var2.method6738(var1);
-      Class3209 var6 = var5.method23383();
+      Block var6 = var5.method23383();
       return var6 instanceof Class3480 && !((Class3480)var6).method12179(var5);
    }
 

@@ -59,19 +59,19 @@ public class Class7440 {
       field32013.method24422(var0);
    }
 
-   private static void method24034(Class8262 var0, Class3209 var1) {
+   private static void method24034(Class8262 var0, Block var1) {
       Class1657 var4 = var0.method28808();
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, -1, -1);
       BlockPos var7 = Class8969.method32905(var5.method8337(var6), Class2089.field13614, var0.method28821(), var5);
-      var4.method6730(var7, Class8487.field36665.method11579().method23395(var0.method28821()));
+      var4.method6730(var7, Blocks.field36665.method11579().method23395(var0.method28821()));
       BlockPos var8 = var7.method8336(0, 1, 0);
       var4.method6730(var8, var1.method11579());
 
       for (int var9 = -1; var9 <= 1; var9++) {
          for (int var10 = -1; var10 <= 1; var10++) {
             BlockPos var11 = var7.method8336(var9, -1, var10);
-            var4.method6730(var11, Class8487.field36522.method11579());
+            var4.method6730(var11, Blocks.field36522.method11579());
          }
       }
    }
@@ -81,7 +81,7 @@ public class Class7440 {
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, 1, -1);
       BlockPos var7 = Class8969.method32905(var5.method8337(var6), Class2089.field13614, var0.method28821(), var5);
-      var4.method6730(var7, Class8487.field37061.method11579().method23395(var0.method28821()));
+      var4.method6730(var7, Blocks.field37061.method11579().method23395(var0.method28821()));
       Class7380 var8 = var4.method6738(var7);
       Class8848 var9 = method24036(var0.method28806(), var0.method28818(), var1);
       Class3354.method11919(var4, var7, var8, var9);
@@ -118,7 +118,7 @@ public class Class7440 {
       var2.method26416();
       BlockPos var6 = var1.method8336(-var3, 0, -var3);
       BlockPos var7 = var1.method8336(var3, 0, var3);
-      BlockPos.method8360(var6, var7).filter(var1x -> var0.method6738(var1x).method23448(Class8487.field37113)).forEach(var1x -> {
+      BlockPos.method8360(var6, var7).filter(var1x -> var0.method6738(var1x).method23448(Blocks.field37113)).forEach(var1x -> {
          Class964 var4 = (Class964)var0.method6759(var1x);
          BlockPos var5 = var4.method3774();
          Class9764 var6x = Class7803.method26053(var4);
@@ -127,7 +127,7 @@ public class Class7440 {
    }
 
    // $VF: synthetic method
-   public static void method24050(Class8262 var0, Class3209 var1) {
+   public static void method24050(Class8262 var0, Block var1) {
       method24034(var0, var1);
    }
 

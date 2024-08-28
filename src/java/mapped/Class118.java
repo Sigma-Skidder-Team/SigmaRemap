@@ -4,13 +4,13 @@ import java.util.function.Predicate;
 
 public class Class118 implements Predicate<Class7380> {
    private static String[] field424;
-   private final Class3209 field425;
+   private final Block field425;
 
-   public Class118(Class3209 var1) {
+   public Class118(Block var1) {
       this.field425 = var1;
    }
 
-   public static Class118 method331(Class3209 var0) {
+   public static Class118 method331(Block var0) {
       return new Class118(var0);
    }
 

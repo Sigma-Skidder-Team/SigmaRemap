@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-public class Class3421 extends Class3209 implements Class3207 {
+public class Class3421 extends Block implements Class3207 {
    private static String[] field19130;
    public static final Class8553 field19131 = Class3198.field18484;
    public static final Class8552<Class99> field19132 = Class8820.field39735;
@@ -11,18 +11,18 @@ public class Class3421 extends Class3209 implements Class3207 {
    public static final Class8551 field19134 = Class8820.field39710;
    public static final Class6408 field19135 = Class3208.field18608;
    public static final Class6408 field19136 = Class3208.field18607;
-   public static final Class6408 field19137 = Class3209.method11539(0.0, 0.0, 0.0, 8.0, 8.0, 8.0);
-   public static final Class6408 field19138 = Class3209.method11539(0.0, 0.0, 8.0, 8.0, 8.0, 16.0);
-   public static final Class6408 field19139 = Class3209.method11539(0.0, 8.0, 0.0, 8.0, 16.0, 8.0);
-   public static final Class6408 field19140 = Class3209.method11539(0.0, 8.0, 8.0, 8.0, 16.0, 16.0);
-   public static final Class6408 field19141 = Class3209.method11539(8.0, 0.0, 0.0, 16.0, 8.0, 8.0);
-   public static final Class6408 field19142 = Class3209.method11539(8.0, 0.0, 8.0, 16.0, 8.0, 16.0);
-   public static final Class6408 field19143 = Class3209.method11539(8.0, 8.0, 0.0, 16.0, 16.0, 8.0);
-   public static final Class6408 field19144 = Class3209.method11539(8.0, 8.0, 8.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field19137 = Block.method11539(0.0, 0.0, 0.0, 8.0, 8.0, 8.0);
+   public static final Class6408 field19138 = Block.method11539(0.0, 0.0, 8.0, 8.0, 8.0, 16.0);
+   public static final Class6408 field19139 = Block.method11539(0.0, 8.0, 0.0, 8.0, 16.0, 8.0);
+   public static final Class6408 field19140 = Block.method11539(0.0, 8.0, 8.0, 8.0, 16.0, 16.0);
+   public static final Class6408 field19141 = Block.method11539(8.0, 0.0, 0.0, 16.0, 8.0, 8.0);
+   public static final Class6408 field19142 = Block.method11539(8.0, 0.0, 8.0, 16.0, 8.0, 16.0);
+   public static final Class6408 field19143 = Block.method11539(8.0, 8.0, 0.0, 16.0, 16.0, 8.0);
+   public static final Class6408 field19144 = Block.method11539(8.0, 8.0, 8.0, 16.0, 16.0, 16.0);
    public static final Class6408[] field19145 = method12069(field19135, field19137, field19141, field19138, field19142);
    public static final Class6408[] field19146 = method12069(field19136, field19139, field19143, field19140, field19144);
    private static final int[] field19147 = new int[]{12, 5, 3, 10, 14, 13, 7, 11, 13, 7, 11, 14, 8, 4, 1, 2, 4, 1, 2, 8};
-   private final Class3209 field19148;
+   private final Block field19148;
    private final Class7380 field19149;
 
    private static Class6408[] method12069(Class6408 var0, Class6408 var1, Class6408 var2, Class6408 var3, Class6408 var4) {
@@ -107,7 +107,7 @@ public class Class3421 extends Class3209 implements Class3207 {
    @Override
    public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var1.method23383())) {
-         this.field19149.method23423(var2, var3, Class8487.field36387, var3, false);
+         this.field19149.method23423(var2, var3, Blocks.AIR, var3, false);
          this.field19148.method11589(this.field19149, var2, var3, var4, false);
       }
    }
@@ -264,7 +264,7 @@ public class Class3421 extends Class3209 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19131, field19132, field19133, field19134);
    }
 

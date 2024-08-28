@@ -40,7 +40,7 @@ public class ModuleManager {
 
     public void register(ClientMode var1) {
         this.createModules();
-        this.register(new Class5328());
+        this.register(new BlockFly());
         this.register(new Class5333());
         this.register(new Class5341());
         this.register(new Class5215());
@@ -212,20 +212,20 @@ public class ModuleManager {
 
         for (Module var18 : this.moduleMap.values()) {
             if (var18.method15996()) {
-                Client.getInstance().getEventManager().method23213(var18);
+                Client.getInstance().getEventManager().subscribe(var18);
                 if (var18 instanceof Class5325) {
                     Class5325 var20 = (Class5325) var18;
                     if (var20.field23879 != null) {
-                        Client.getInstance().getEventManager().method23213(var20.field23879);
+                        Client.getInstance().getEventManager().subscribe(var20.field23879);
                     }
                 }
             } else {
-                Client.getInstance().getEventManager().method23214(var18);
+                Client.getInstance().getEventManager().unsubscribe(var18);
                 if (var18 instanceof Class5325) {
                     Class5325 var19 = (Class5325) var18;
 
                     for (Module var11 : var19.field23878) {
-                        Client.getInstance().getEventManager().method23214(var11);
+                        Client.getInstance().getEventManager().unsubscribe(var11);
                     }
                 }
             }

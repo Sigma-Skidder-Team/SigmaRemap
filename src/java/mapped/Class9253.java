@@ -11,7 +11,6 @@ import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 public class Class9253 {
    private final Optional<ResourceLocation> field42558;
@@ -24,15 +23,15 @@ public class Class9253 {
       this.field42559 = ImmutableSet.copyOf(var3);
    }
 
-   public ResourceLocation method34805(Class3209 var1, Class7287 var2, BiConsumer<ResourceLocation, Supplier<JsonElement>> var3) {
+   public ResourceLocation method34805(Block var1, Class7287 var2, BiConsumer<ResourceLocation, Supplier<JsonElement>> var3) {
       return this.method34808(Class9060.method33722(var1, this.field42560.orElse("")), var2, var3);
    }
 
-   public ResourceLocation method34806(Class3209 var1, String var2, Class7287 var3, BiConsumer<ResourceLocation, Supplier<JsonElement>> var4) {
+   public ResourceLocation method34806(Block var1, String var2, Class7287 var3, BiConsumer<ResourceLocation, Supplier<JsonElement>> var4) {
       return this.method34808(Class9060.method33722(var1, var2 + this.field42560.orElse("")), var3, var4);
    }
 
-   public ResourceLocation method34807(Class3209 var1, String var2, Class7287 var3, BiConsumer<ResourceLocation, Supplier<JsonElement>> var4) {
+   public ResourceLocation method34807(Block var1, String var2, Class7287 var3, BiConsumer<ResourceLocation, Supplier<JsonElement>> var4) {
       return this.method34808(Class9060.method33722(var1, var2), var3, var4);
    }
 

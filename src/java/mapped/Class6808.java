@@ -2,11 +2,11 @@ package mapped;
 
 public class Class6808 {
    private final BlockPos field29631;
-   private final Class3209 field29632;
+   private final Block field29632;
    private final int field29633;
    private final int field29634;
 
-   public Class6808(BlockPos var1, Class3209 var2, int var3, int var4) {
+   public Class6808(BlockPos var1, Block var2, int var3, int var4) {
       this.field29631 = var1;
       this.field29632 = var2;
       this.field29633 = var3;
@@ -17,7 +17,7 @@ public class Class6808 {
       return this.field29631;
    }
 
-   public Class3209 method20741() {
+   public Block method20741() {
       return this.field29632;
    }
 

@@ -25,71 +25,71 @@ public class Class5234 extends Module {
 
     // $VF: synthetic method
     public static Minecraft method16307() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16308() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16309() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16310() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16311() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16312() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16313() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16314() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16315() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16316() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16317() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16318() {
-        return field23386;
+        return mc;
     }
 
     public Class2132 method16303(int var1) {
-        if (var1 != field23386.field1299.field44633.field13070.field34875) {
-            if (var1 != field23386.field1299.field44635.field13070.field34875) {
-                if (var1 != field23386.field1299.field44632.field13070.field34875) {
-                    if (var1 != field23386.field1299.field44634.field13070.field34875) {
-                        if (var1 != field23386.field1299.field44643.field13070.field34875) {
-                            return var1 != field23386.field1299.field44642.field13070.field34875 ? null : Class2132.field13913;
+        if (var1 != mc.field1299.field44633.field13070.field34875) {
+            if (var1 != mc.field1299.field44635.field13070.field34875) {
+                if (var1 != mc.field1299.field44632.field13070.field34875) {
+                    if (var1 != mc.field1299.field44634.field13070.field34875) {
+                        if (var1 != mc.field1299.field44643.field13070.field34875) {
+                            return var1 != mc.field1299.field44642.field13070.field34875 ? null : Class2132.field13913;
                         } else {
                             return Class2132.field13912;
                         }
@@ -109,7 +109,7 @@ public class Class5234 extends Module {
 
     @EventTarget
     private void method16304(Class4415 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (!Minecraft.getInstance().field1299.field44664) {
                 if (!Minecraft.getInstance().field1299.field44662) {
                     this.field23586 = var1.method13960();
@@ -140,8 +140,8 @@ public class Class5234 extends Module {
                         }
 
                         String var12 = Class5628.method17736(var19.field13919.field13070.field34875);
-                        if (var19.field13919 != field23386.field1299.field44643) {
-                            if (var19.field13919 == field23386.field1299.field44642) {
+                        if (var19.field13919 != mc.field1299.field44643) {
+                            if (var19.field13919 == mc.field1299.field44642) {
                                 var12 = "R";
                             }
                         } else {
@@ -224,7 +224,7 @@ public class Class5234 extends Module {
 
     @EventTarget
     private void method16305(Class4430 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (this.method16303(var1.method13977()) != null && !var1.method13978()) {
                 this.field23587.add(new Class7930(this, this.method16303(var1.method13977())));
             }
@@ -233,7 +233,7 @@ public class Class5234 extends Module {
 
     @EventTarget
     private void method16306(Class4429 var1) {
-        if (!this.method15996() || field23386.field1339 == null) {
+        if (!this.method15996() || mc.field1339 == null) {
         }
     }
 }

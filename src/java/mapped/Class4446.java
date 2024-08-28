@@ -28,9 +28,9 @@ public class Class4446 implements Class4442 {
    @Override
    public void method14013(Class8297 var1) {
       Path var4 = this.field21615.method33776();
-      HashMap<Class3209, Class5146> var5 = Maps.newHashMap();
+      HashMap<Block, Class5146> var5 = Maps.newHashMap();
       Consumer<Class5146> var6 = var1x -> {
-         Class3209 var4x = var1x.method15931();
+         Block var4x = var1x.method15931();
          Class5146 var5x = var5.put(var4x, var1x);
          if (var5x != null) {
             throw new IllegalStateException("Duplicate blockstate definition for " + var4x);
@@ -48,7 +48,7 @@ public class Class4446 implements Class4442 {
       Consumer<Class3257> var10 = var8::add;
       new Class9407(var6, var9, var10).method35961();
       new Class7810(var9).method26077();
-      List<Class3209> var11 = Class2348.field16072.method9192().filter(var1x -> !var5.containsKey(var1x)).collect(Collectors.toList());
+      List<Block> var11 = Class2348.field16072.method9192().filter(var1x -> !var5.containsKey(var1x)).collect(Collectors.toList());
       if (var11.isEmpty()) {
          Class2348.field16072.forEach(var2 -> {
             Class3257 var5x = Class3257.field18732.get(var2);
@@ -82,7 +82,7 @@ public class Class4446 implements Class4442 {
       });
    }
 
-   private static Path method14038(Path var0, Class3209 var1) {
+   private static Path method14038(Path var0, Block var1) {
       ResourceLocation var4 = Class2348.field16072.method9181(var1);
       return var0.resolve("assets/" + var4.method8293() + "/blockstates/" + var4.method8292() + ".json");
    }

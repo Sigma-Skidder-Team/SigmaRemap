@@ -6,10 +6,10 @@ public class Class3489 extends Class3194 {
    private static String[] field18470;
    public static final Class8554 field19354 = Class8820.field39740;
    private static final Class6408[] field19355 = new Class6408[]{
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 5.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 11.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0)
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 5.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 11.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0)
    };
 
    public Class3489(Class7929 var1) {
@@ -24,7 +24,7 @@ public class Class3489 extends Class3194 {
 
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      return var1.method23448(Class8487.field36581);
+      return var1.method23448(Blocks.SOUL_SAND);
    }
 
    @Override
@@ -47,7 +47,7 @@ public class Class3489 extends Class3194 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19354);
    }
 }

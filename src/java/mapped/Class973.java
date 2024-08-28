@@ -89,7 +89,7 @@ public class Class973 extends Class939 {
       this.field5438 = Class941.method3759(this.field5324, this, var3, var4, var5);
       if (this.field5438 <= 0) {
          Class7380 var6 = this.method3775();
-         if (!var6.method23448(Class8487.field37055)) {
+         if (!var6.method23448(Blocks.field37055)) {
             this.method3765();
             return;
          }

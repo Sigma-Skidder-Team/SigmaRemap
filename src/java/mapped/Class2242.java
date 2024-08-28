@@ -70,7 +70,7 @@ public enum Class2242 {
    field14681 {
       @Override
       public boolean method8990(Class3257 var1) {
-         return var1 instanceof Class3255 || Class3209.method11537(var1) instanceof Class3255;
+         return var1 instanceof Class3255 || Block.method11537(var1) instanceof Class3255;
       }
    },
    field14682 {
@@ -82,7 +82,7 @@ public enum Class2242 {
    field14683 {
       @Override
       public boolean method8990(Class3257 var1) {
-         return var1 instanceof Class3260 || Class3209.method11537(var1) instanceof Class3260 || field14679.method8990(var1);
+         return var1 instanceof Class3260 || Block.method11537(var1) instanceof Class3260 || field14679.method8990(var1);
       }
    };
 

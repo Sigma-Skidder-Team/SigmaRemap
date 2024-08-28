@@ -201,8 +201,8 @@ public class Class1040 extends Class1038 implements Class1041 {
          for (int var6 = (int)this.getPosX() - 4; var6 < (int)this.getPosX() + 4 && var4 < 14; var6++) {
             for (int var7 = (int)this.getPosY() - 4; var7 < (int)this.getPosY() + 4 && var4 < 14; var7++) {
                for (int var8 = (int)this.getPosZ() - 4; var8 < (int)this.getPosZ() + 4 && var4 < 14; var8++) {
-                  Class3209 var9 = this.field5024.method6738(var5.method8372(var6, var7, var8)).method23383();
-                  if (var9 == Class8487.field36628 || var9 instanceof Class3250) {
+                  Block var9 = this.field5024.method6738(var5.method8372(var6, var7, var8)).method23383();
+                  if (var9 == Blocks.field36628 || var9 instanceof Class3250) {
                      if (this.field5054.nextFloat() < 0.3F) {
                         var3++;
                      }

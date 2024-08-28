@@ -6,12 +6,12 @@ import java.util.Random;
 public class Class6701 extends Class6698 {
    public static final Codec<Class6701> field29335 = Class7380.field31585
       .fieldOf("state")
-      .xmap(Class7377::method23383, Class3209::method11579)
+      .xmap(Class7377::method23383, Block::method11579)
       .xmap(Class6701::new, var0 -> var0.field29336)
       .codec();
-   private final Class3209 field29336;
+   private final Block field29336;
 
-   public Class6701(Class3209 var1) {
+   public Class6701(Block var1) {
       this.field29336 = var1;
    }
 

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Class3479 extends Class3194 implements Class3196 {
    private static String[] field18470;
-   public static final Class6408 field19332 = Class3209.method11539(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
+   public static final Class6408 field19332 = Block.method11539(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
 
    public Class3479(Class7929 var1) {
       super(var1);
@@ -60,8 +60,8 @@ public class Class3479 extends Class3194 implements Class3196 {
    public boolean method12174(Class1657 var1, BlockPos var2, Class7380 var3, Random var4) {
       var1.method6728(var2, false);
       Class7909 var7;
-      if (this != Class8487.field36519) {
-         if (this != Class8487.field36520) {
+      if (this != Blocks.field36519) {
+         if (this != Blocks.field36520) {
             var1.method6725(var2, var3, 3);
             return false;
          }

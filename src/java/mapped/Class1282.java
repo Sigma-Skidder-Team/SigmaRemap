@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class Class1282 extends Class1274<Class1171> {
    private static String[] field6837;
-   public final List<Class49<Class3209>> field6838;
+   public final List<Class49<Block>> field6838;
    public final List<Class49<Class3257>> field6839;
    private final int[] field6840;
    public int field6841;
@@ -48,7 +48,7 @@ public class Class1282 extends Class1274<Class1171> {
          }
       }
 
-      for (Class3209 var13 : Class2348.field16072) {
+      for (Block var13 : Class2348.field16072) {
          boolean var14 = false;
 
          for (Class49 var16 : this.field6838) {

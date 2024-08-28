@@ -202,7 +202,7 @@ public class Class957 extends Class956 implements Class935 {
                for (int var9 = 255; var9 > (var6 != null ? var6.getY() : 0); var9--) {
                   BlockPos var10 = new BlockPos(var1.method8304() + var7, var9, var1.method8306() + var8);
                   Class7380 var11 = var0.method6738(var10);
-                  if (var11.method23456(var0, var10) && (var3 || !var11.method23448(Class8487.field36412))) {
+                  if (var11.method23456(var0, var10) && (var3 || !var11.method23448(Blocks.BEDROCK))) {
                      var6 = var10;
                      break;
                   }
@@ -231,7 +231,7 @@ public class Class957 extends Class956 implements Class935 {
          Class7380 var12 = var0.method6738(var11);
          BlockPos var13 = var11.method8311();
          BlockPos var14 = var11.method8339(2);
-         if (var12.method23448(Class8487.field36651) && !var0.method6738(var13).method23456(var0, var13) && !var0.method6738(var14).method23456(var0, var14)) {
+         if (var12.method23448(Blocks.field36651) && !var0.method6738(var13).method23456(var0, var13) && !var0.method6738(var14).method23456(var0, var14)) {
             double var15 = var11.method8320(0.0, 0.0, 0.0, true);
             if (var7 == null || var15 < var8) {
                var7 = var11;
@@ -249,7 +249,7 @@ public class Class957 extends Class956 implements Class935 {
 
    @Override
    public boolean method3870(Direction var1) {
-      return Class3209.method11546(this.method3775(), this.field5324, this.method3774(), var1);
+      return Block.method11546(this.method3775(), this.field5324, this.method3774(), var1);
    }
 
    public int method3884() {

@@ -39,7 +39,7 @@ public class Class164 implements Predicate<Class9632> {
    }
 
    public boolean method496(Class1657 var1, BlockPos var2, int var3) {
-      Class7380 var6 = Class3209.method11542(this.field529, var1, var2);
+      Class7380 var6 = Block.method11542(this.field529, var1, var2);
       if (var6.method23393()) {
          var6 = this.field529;
       }

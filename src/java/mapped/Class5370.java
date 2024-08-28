@@ -12,8 +12,8 @@ public class Class5370 extends Module {
 
     @EventTarget
     public void method16909(Class4428 var1) {
-        if (this.method15996() && field23386.method1528() != null) {
-            field23386.getClientPlayNetHandler().sendPacket(new Class5471(1.0F, 1.0F, false, false));
+        if (this.method15996() && mc.method1528() != null) {
+            mc.getClientPlayNetHandler().sendPacket(new Class5471(1.0F, 1.0F, false, false));
         }
     }
 }

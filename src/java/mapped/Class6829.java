@@ -67,7 +67,7 @@ public class Class6829 {
             this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Class9173.field42108)));
             BlockPos var20 = this.field29707.method3432();
             Class7380 var21 = this.field29707.field5024.method6738(var20);
-            Class3209 var22 = var21.method23383();
+            Block var22 = var21.method23383();
             Class6408 var23 = var21.method23414(this.field29707.field5024, var20);
             if (var16 > (double)this.field29707.field5051 && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.method3429())
                || !var23.method19516()

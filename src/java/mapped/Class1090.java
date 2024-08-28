@@ -208,7 +208,7 @@ public class Class1090 extends Class1018 {
          }
 
          Class7380 var5 = var1.method6738(var4.method8313());
-         if (var5.method23448(Class8487.field36395) || var5.method23446(Class7645.field32767)) {
+         if (var5.method23448(Blocks.field36395) || var5.method23446(Class7645.field32767)) {
             return true;
          }
       }

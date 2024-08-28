@@ -21,14 +21,14 @@ public class Class3399 extends Class3397 {
       .stream()
       .filter(var0 -> var0.getKey() != Direction.field672)
       .collect(Util.<Direction, Class8551>method38484());
-   private static final Class6408 field19045 = Class3209.method11539(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
-   private static final Class6408 field19046 = Class3209.method11539(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
-   private static final Class6408 field19047 = Class3209.method11539(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   private static final Class6408 field19048 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
-   private static final Class6408 field19049 = Class3209.method11539(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
+   private static final Class6408 field19045 = Block.method11539(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
+   private static final Class6408 field19046 = Block.method11539(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
+   private static final Class6408 field19047 = Block.method11539(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   private static final Class6408 field19048 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
+   private static final Class6408 field19049 = Block.method11539(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
    private final Map<Class7380, Class6408> field19050;
-   private final Object2IntMap<Class3209> field19051 = new Object2IntOpenHashMap();
-   private final Object2IntMap<Class3209> field19052 = new Object2IntOpenHashMap();
+   private final Object2IntMap<Block> field19051 = new Object2IntOpenHashMap();
+   private final Object2IntMap<Block> field19052 = new Object2IntOpenHashMap();
 
    public Class3399(Class7929 var1) {
       super(var1, 1.0F);
@@ -78,7 +78,7 @@ public class Class3399 extends Class3397 {
 
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !this.method11492(var1, var4, var5) ? Class8487.field36387.method11579() : this.method12021(var4, var5, var1.<Integer>method23463(field19038));
+      return !this.method11492(var1, var4, var5) ? Blocks.AIR.method11579() : this.method12021(var4, var5, var1.<Integer>method23463(field19038));
    }
 
    @Override
@@ -219,7 +219,7 @@ public class Class3399 extends Class3397 {
             var1.method6728(var2, false);
          }
 
-         Class3209 var12 = var9.method23383();
+         Block var12 = var9.method23383();
          if (var12 instanceof Class3458) {
             Class3458 var11 = (Class3458)var12;
             Class3458.method12131(var1, var2);
@@ -229,7 +229,7 @@ public class Class3399 extends Class3397 {
 
    private Class7380 method12021(Class1660 var1, BlockPos var2, int var3) {
       Class7380 var6 = method12009(var1, var2);
-      return !var6.method23448(Class8487.field36530) ? var6 : var6.method23465(field19038, Integer.valueOf(var3));
+      return !var6.method23448(Blocks.field36530) ? var6 : var6.method23465(field19038, Integer.valueOf(var3));
    }
 
    private boolean method12022(Class1665 var1, BlockPos var2) {
@@ -273,144 +273,144 @@ public class Class3399 extends Class3397 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19038, field19039, field19040, field19041, field19042, field19043);
    }
 
-   private void method12025(Class3209 var1, int var2, int var3) {
+   private void method12025(Block var1, int var2, int var3) {
       this.field19051.put(var1, var2);
       this.field19052.put(var1, var3);
    }
 
    public static void method12026() {
-      Class3399 var2 = (Class3399)Class8487.field36530;
-      var2.method12025(Class8487.field36400, 5, 20);
-      var2.method12025(Class8487.field36401, 5, 20);
-      var2.method12025(Class8487.field36402, 5, 20);
-      var2.method12025(Class8487.field36403, 5, 20);
-      var2.method12025(Class8487.field36404, 5, 20);
-      var2.method12025(Class8487.field36405, 5, 20);
-      var2.method12025(Class8487.field36839, 5, 20);
-      var2.method12025(Class8487.field36840, 5, 20);
-      var2.method12025(Class8487.field36841, 5, 20);
-      var2.method12025(Class8487.field36842, 5, 20);
-      var2.method12025(Class8487.field36843, 5, 20);
-      var2.method12025(Class8487.field36844, 5, 20);
-      var2.method12025(Class8487.field36637, 5, 20);
-      var2.method12025(Class8487.field36862, 5, 20);
-      var2.method12025(Class8487.field36863, 5, 20);
-      var2.method12025(Class8487.field36864, 5, 20);
-      var2.method12025(Class8487.field36866, 5, 20);
-      var2.method12025(Class8487.field36865, 5, 20);
-      var2.method12025(Class8487.field36578, 5, 20);
-      var2.method12025(Class8487.field36867, 5, 20);
-      var2.method12025(Class8487.field36868, 5, 20);
-      var2.method12025(Class8487.field36869, 5, 20);
-      var2.method12025(Class8487.field36871, 5, 20);
-      var2.method12025(Class8487.field36870, 5, 20);
-      var2.method12025(Class8487.field36533, 5, 20);
-      var2.method12025(Class8487.field36662, 5, 20);
-      var2.method12025(Class8487.field36661, 5, 20);
-      var2.method12025(Class8487.field36663, 5, 20);
-      var2.method12025(Class8487.field36762, 5, 20);
-      var2.method12025(Class8487.field36763, 5, 20);
-      var2.method12025(Class8487.field36422, 5, 5);
-      var2.method12025(Class8487.field36423, 5, 5);
-      var2.method12025(Class8487.field36424, 5, 5);
-      var2.method12025(Class8487.field36425, 5, 5);
-      var2.method12025(Class8487.field36426, 5, 5);
-      var2.method12025(Class8487.field36427, 5, 5);
-      var2.method12025(Class8487.field36433, 5, 5);
-      var2.method12025(Class8487.field36428, 5, 5);
-      var2.method12025(Class8487.field36429, 5, 5);
-      var2.method12025(Class8487.field36430, 5, 5);
-      var2.method12025(Class8487.field36431, 5, 5);
-      var2.method12025(Class8487.field36432, 5, 5);
-      var2.method12025(Class8487.field36440, 5, 5);
-      var2.method12025(Class8487.field36441, 5, 5);
-      var2.method12025(Class8487.field36442, 5, 5);
-      var2.method12025(Class8487.field36443, 5, 5);
-      var2.method12025(Class8487.field36444, 5, 5);
-      var2.method12025(Class8487.field36445, 5, 5);
-      var2.method12025(Class8487.field36434, 5, 5);
-      var2.method12025(Class8487.field36435, 5, 5);
-      var2.method12025(Class8487.field36436, 5, 5);
-      var2.method12025(Class8487.field36437, 5, 5);
-      var2.method12025(Class8487.field36438, 5, 5);
-      var2.method12025(Class8487.field36439, 5, 5);
-      var2.method12025(Class8487.field36446, 30, 60);
-      var2.method12025(Class8487.field36447, 30, 60);
-      var2.method12025(Class8487.field36448, 30, 60);
-      var2.method12025(Class8487.field36449, 30, 60);
-      var2.method12025(Class8487.field36450, 30, 60);
-      var2.method12025(Class8487.field36451, 30, 60);
-      var2.method12025(Class8487.field36525, 30, 20);
-      var2.method12025(Class8487.field36524, 15, 100);
-      var2.method12025(Class8487.field36482, 60, 100);
-      var2.method12025(Class8487.field36483, 60, 100);
-      var2.method12025(Class8487.field36484, 60, 100);
-      var2.method12025(Class8487.field36797, 60, 100);
-      var2.method12025(Class8487.field36798, 60, 100);
-      var2.method12025(Class8487.field36799, 60, 100);
-      var2.method12025(Class8487.field36800, 60, 100);
-      var2.method12025(Class8487.field36801, 60, 100);
-      var2.method12025(Class8487.field36802, 60, 100);
-      var2.method12025(Class8487.field36506, 60, 100);
-      var2.method12025(Class8487.field36507, 60, 100);
-      var2.method12025(Class8487.field36508, 60, 100);
-      var2.method12025(Class8487.field36509, 60, 100);
-      var2.method12025(Class8487.field36510, 60, 100);
-      var2.method12025(Class8487.field36511, 60, 100);
-      var2.method12025(Class8487.field36512, 60, 100);
-      var2.method12025(Class8487.field36513, 60, 100);
-      var2.method12025(Class8487.field36514, 60, 100);
-      var2.method12025(Class8487.field36515, 60, 100);
-      var2.method12025(Class8487.field36516, 60, 100);
-      var2.method12025(Class8487.field36518, 60, 100);
-      var2.method12025(Class8487.field36517, 60, 100);
-      var2.method12025(Class8487.field36489, 30, 60);
-      var2.method12025(Class8487.field36490, 30, 60);
-      var2.method12025(Class8487.field36491, 30, 60);
-      var2.method12025(Class8487.field36492, 30, 60);
-      var2.method12025(Class8487.field36493, 30, 60);
-      var2.method12025(Class8487.field36494, 30, 60);
-      var2.method12025(Class8487.field36495, 30, 60);
-      var2.method12025(Class8487.field36496, 30, 60);
-      var2.method12025(Class8487.field36497, 30, 60);
-      var2.method12025(Class8487.field36498, 30, 60);
-      var2.method12025(Class8487.field36499, 30, 60);
-      var2.method12025(Class8487.field36500, 30, 60);
-      var2.method12025(Class8487.field36501, 30, 60);
-      var2.method12025(Class8487.field36502, 30, 60);
-      var2.method12025(Class8487.field36503, 30, 60);
-      var2.method12025(Class8487.field36504, 30, 60);
-      var2.method12025(Class8487.field36636, 15, 100);
-      var2.method12025(Class8487.field36795, 5, 5);
-      var2.method12025(Class8487.field36777, 60, 20);
-      var2.method12025(Class8487.field37116, 15, 20);
-      var2.method12025(Class8487.field36778, 60, 20);
-      var2.method12025(Class8487.field36779, 60, 20);
-      var2.method12025(Class8487.field36780, 60, 20);
-      var2.method12025(Class8487.field36781, 60, 20);
-      var2.method12025(Class8487.field36782, 60, 20);
-      var2.method12025(Class8487.field36783, 60, 20);
-      var2.method12025(Class8487.field36784, 60, 20);
-      var2.method12025(Class8487.field36785, 60, 20);
-      var2.method12025(Class8487.field36786, 60, 20);
-      var2.method12025(Class8487.field36787, 60, 20);
-      var2.method12025(Class8487.field36788, 60, 20);
-      var2.method12025(Class8487.field36789, 60, 20);
-      var2.method12025(Class8487.field36790, 60, 20);
-      var2.method12025(Class8487.field36791, 60, 20);
-      var2.method12025(Class8487.field36792, 60, 20);
-      var2.method12025(Class8487.field36793, 60, 20);
-      var2.method12025(Class8487.field36963, 30, 60);
-      var2.method12025(Class8487.field37009, 60, 60);
-      var2.method12025(Class8487.field37053, 60, 60);
-      var2.method12025(Class8487.field37061, 30, 20);
-      var2.method12025(Class8487.field37115, 5, 20);
-      var2.method12025(Class8487.field37069, 60, 100);
-      var2.method12025(Class8487.field37118, 5, 20);
-      var2.method12025(Class8487.field37117, 30, 20);
+      Class3399 var2 = (Class3399) Blocks.field36530;
+      var2.method12025(Blocks.field36400, 5, 20);
+      var2.method12025(Blocks.field36401, 5, 20);
+      var2.method12025(Blocks.field36402, 5, 20);
+      var2.method12025(Blocks.field36403, 5, 20);
+      var2.method12025(Blocks.field36404, 5, 20);
+      var2.method12025(Blocks.field36405, 5, 20);
+      var2.method12025(Blocks.field36839, 5, 20);
+      var2.method12025(Blocks.field36840, 5, 20);
+      var2.method12025(Blocks.field36841, 5, 20);
+      var2.method12025(Blocks.field36842, 5, 20);
+      var2.method12025(Blocks.field36843, 5, 20);
+      var2.method12025(Blocks.field36844, 5, 20);
+      var2.method12025(Blocks.field36637, 5, 20);
+      var2.method12025(Blocks.field36862, 5, 20);
+      var2.method12025(Blocks.field36863, 5, 20);
+      var2.method12025(Blocks.field36864, 5, 20);
+      var2.method12025(Blocks.field36866, 5, 20);
+      var2.method12025(Blocks.field36865, 5, 20);
+      var2.method12025(Blocks.OAK_FENCE, 5, 20);
+      var2.method12025(Blocks.field36867, 5, 20);
+      var2.method12025(Blocks.field36868, 5, 20);
+      var2.method12025(Blocks.field36869, 5, 20);
+      var2.method12025(Blocks.field36871, 5, 20);
+      var2.method12025(Blocks.field36870, 5, 20);
+      var2.method12025(Blocks.field36533, 5, 20);
+      var2.method12025(Blocks.field36662, 5, 20);
+      var2.method12025(Blocks.field36661, 5, 20);
+      var2.method12025(Blocks.field36663, 5, 20);
+      var2.method12025(Blocks.field36762, 5, 20);
+      var2.method12025(Blocks.field36763, 5, 20);
+      var2.method12025(Blocks.field36422, 5, 5);
+      var2.method12025(Blocks.field36423, 5, 5);
+      var2.method12025(Blocks.field36424, 5, 5);
+      var2.method12025(Blocks.field36425, 5, 5);
+      var2.method12025(Blocks.field36426, 5, 5);
+      var2.method12025(Blocks.field36427, 5, 5);
+      var2.method12025(Blocks.field36433, 5, 5);
+      var2.method12025(Blocks.field36428, 5, 5);
+      var2.method12025(Blocks.field36429, 5, 5);
+      var2.method12025(Blocks.field36430, 5, 5);
+      var2.method12025(Blocks.field36431, 5, 5);
+      var2.method12025(Blocks.field36432, 5, 5);
+      var2.method12025(Blocks.field36440, 5, 5);
+      var2.method12025(Blocks.field36441, 5, 5);
+      var2.method12025(Blocks.field36442, 5, 5);
+      var2.method12025(Blocks.field36443, 5, 5);
+      var2.method12025(Blocks.field36444, 5, 5);
+      var2.method12025(Blocks.field36445, 5, 5);
+      var2.method12025(Blocks.field36434, 5, 5);
+      var2.method12025(Blocks.field36435, 5, 5);
+      var2.method12025(Blocks.field36436, 5, 5);
+      var2.method12025(Blocks.field36437, 5, 5);
+      var2.method12025(Blocks.field36438, 5, 5);
+      var2.method12025(Blocks.field36439, 5, 5);
+      var2.method12025(Blocks.field36446, 30, 60);
+      var2.method12025(Blocks.field36447, 30, 60);
+      var2.method12025(Blocks.field36448, 30, 60);
+      var2.method12025(Blocks.field36449, 30, 60);
+      var2.method12025(Blocks.field36450, 30, 60);
+      var2.method12025(Blocks.field36451, 30, 60);
+      var2.method12025(Blocks.field36525, 30, 20);
+      var2.method12025(Blocks.field36524, 15, 100);
+      var2.method12025(Blocks.field36482, 60, 100);
+      var2.method12025(Blocks.field36483, 60, 100);
+      var2.method12025(Blocks.field36484, 60, 100);
+      var2.method12025(Blocks.field36797, 60, 100);
+      var2.method12025(Blocks.field36798, 60, 100);
+      var2.method12025(Blocks.field36799, 60, 100);
+      var2.method12025(Blocks.field36800, 60, 100);
+      var2.method12025(Blocks.field36801, 60, 100);
+      var2.method12025(Blocks.field36802, 60, 100);
+      var2.method12025(Blocks.field36506, 60, 100);
+      var2.method12025(Blocks.field36507, 60, 100);
+      var2.method12025(Blocks.field36508, 60, 100);
+      var2.method12025(Blocks.field36509, 60, 100);
+      var2.method12025(Blocks.field36510, 60, 100);
+      var2.method12025(Blocks.field36511, 60, 100);
+      var2.method12025(Blocks.field36512, 60, 100);
+      var2.method12025(Blocks.field36513, 60, 100);
+      var2.method12025(Blocks.field36514, 60, 100);
+      var2.method12025(Blocks.field36515, 60, 100);
+      var2.method12025(Blocks.field36516, 60, 100);
+      var2.method12025(Blocks.field36518, 60, 100);
+      var2.method12025(Blocks.field36517, 60, 100);
+      var2.method12025(Blocks.field36489, 30, 60);
+      var2.method12025(Blocks.field36490, 30, 60);
+      var2.method12025(Blocks.field36491, 30, 60);
+      var2.method12025(Blocks.field36492, 30, 60);
+      var2.method12025(Blocks.field36493, 30, 60);
+      var2.method12025(Blocks.field36494, 30, 60);
+      var2.method12025(Blocks.field36495, 30, 60);
+      var2.method12025(Blocks.field36496, 30, 60);
+      var2.method12025(Blocks.field36497, 30, 60);
+      var2.method12025(Blocks.field36498, 30, 60);
+      var2.method12025(Blocks.field36499, 30, 60);
+      var2.method12025(Blocks.field36500, 30, 60);
+      var2.method12025(Blocks.field36501, 30, 60);
+      var2.method12025(Blocks.field36502, 30, 60);
+      var2.method12025(Blocks.field36503, 30, 60);
+      var2.method12025(Blocks.field36504, 30, 60);
+      var2.method12025(Blocks.field36636, 15, 100);
+      var2.method12025(Blocks.field36795, 5, 5);
+      var2.method12025(Blocks.field36777, 60, 20);
+      var2.method12025(Blocks.field37116, 15, 20);
+      var2.method12025(Blocks.field36778, 60, 20);
+      var2.method12025(Blocks.field36779, 60, 20);
+      var2.method12025(Blocks.field36780, 60, 20);
+      var2.method12025(Blocks.field36781, 60, 20);
+      var2.method12025(Blocks.field36782, 60, 20);
+      var2.method12025(Blocks.field36783, 60, 20);
+      var2.method12025(Blocks.field36784, 60, 20);
+      var2.method12025(Blocks.field36785, 60, 20);
+      var2.method12025(Blocks.field36786, 60, 20);
+      var2.method12025(Blocks.field36787, 60, 20);
+      var2.method12025(Blocks.field36788, 60, 20);
+      var2.method12025(Blocks.field36789, 60, 20);
+      var2.method12025(Blocks.field36790, 60, 20);
+      var2.method12025(Blocks.field36791, 60, 20);
+      var2.method12025(Blocks.field36792, 60, 20);
+      var2.method12025(Blocks.field36793, 60, 20);
+      var2.method12025(Blocks.field36963, 30, 60);
+      var2.method12025(Blocks.field37009, 60, 60);
+      var2.method12025(Blocks.field37053, 60, 60);
+      var2.method12025(Blocks.field37061, 30, 20);
+      var2.method12025(Blocks.field37115, 5, 20);
+      var2.method12025(Blocks.field37069, 60, 100);
+      var2.method12025(Blocks.field37118, 5, 20);
+      var2.method12025(Blocks.field37117, 30, 20);
    }
 }

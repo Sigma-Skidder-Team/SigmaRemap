@@ -218,7 +218,7 @@ public class Class9081 {
          return false;
       } else {
          Class944 var5 = this.field41570.method6759(var1);
-         Class3209 var6 = var4.method23383();
+         Block var6 = var4.method23383();
          if ((var6 instanceof Class3355 || var6 instanceof Class3367 || var6 instanceof Class3249) && !this.field41571.method2979()) {
             this.field41570.method6731(var1, var4, var4, 3);
             return false;

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Class3453 extends Class3452 {
    private static String[] field19269;
-   public static final Class6408 field19270 = Class3209.method11539(4.0, 0.0, 4.0, 12.0, 15.0, 12.0);
+   public static final Class6408 field19270 = Block.method11539(4.0, 0.0, 4.0, 12.0, 15.0, 12.0);
 
    public Class3453(Class7929 var1) {
       super(var1, Direction.field673, field19270, false, 0.1);
@@ -16,8 +16,8 @@ public class Class3453 extends Class3452 {
    }
 
    @Override
-   public Class3209 method12125() {
-      return Class8487.field37089;
+   public Block method12125() {
+      return Blocks.field37089;
    }
 
    @Override

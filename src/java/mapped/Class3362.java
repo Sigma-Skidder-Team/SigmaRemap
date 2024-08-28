@@ -4,20 +4,20 @@ public class Class3362 extends Class3241 {
    private static String[] field18912;
    public static final Class8553 field18913 = Class8820.field39721;
    public static final Class8551 field18914 = Class8820.field39687;
-   private static final Class6408 field18915 = Class3209.method11539(0.0, 10.0, 0.0, 16.0, 16.0, 16.0);
-   private static final Class6408 field18916 = Class3209.method11539(4.0, 4.0, 4.0, 12.0, 10.0, 12.0);
+   private static final Class6408 field18915 = Block.method11539(0.0, 10.0, 0.0, 16.0, 16.0, 16.0);
+   private static final Class6408 field18916 = Block.method11539(4.0, 4.0, 4.0, 12.0, 10.0, 12.0);
    private static final Class6408 field18917 = Class8022.method27431(field18916, field18915);
    private static final Class6408 field18918 = Class8022.method27433(field18917, Class937.field5296, Class9477.field44041);
-   private static final Class6408 field18919 = Class8022.method27431(field18918, Class3209.method11539(6.0, 0.0, 6.0, 10.0, 4.0, 10.0));
-   private static final Class6408 field18920 = Class8022.method27431(field18918, Class3209.method11539(12.0, 4.0, 6.0, 16.0, 8.0, 10.0));
-   private static final Class6408 field18921 = Class8022.method27431(field18918, Class3209.method11539(6.0, 4.0, 0.0, 10.0, 8.0, 4.0));
-   private static final Class6408 field18922 = Class8022.method27431(field18918, Class3209.method11539(6.0, 4.0, 12.0, 10.0, 8.0, 16.0));
-   private static final Class6408 field18923 = Class8022.method27431(field18918, Class3209.method11539(0.0, 4.0, 6.0, 4.0, 8.0, 10.0));
+   private static final Class6408 field18919 = Class8022.method27431(field18918, Block.method11539(6.0, 0.0, 6.0, 10.0, 4.0, 10.0));
+   private static final Class6408 field18920 = Class8022.method27431(field18918, Block.method11539(12.0, 4.0, 6.0, 16.0, 8.0, 10.0));
+   private static final Class6408 field18921 = Class8022.method27431(field18918, Block.method11539(6.0, 4.0, 0.0, 10.0, 8.0, 4.0));
+   private static final Class6408 field18922 = Class8022.method27431(field18918, Block.method11539(6.0, 4.0, 12.0, 10.0, 8.0, 16.0));
+   private static final Class6408 field18923 = Class8022.method27431(field18918, Block.method11539(0.0, 4.0, 6.0, 4.0, 8.0, 10.0));
    private static final Class6408 field18924 = Class937.field5296;
-   private static final Class6408 field18925 = Class8022.method27431(Class937.field5296, Class3209.method11539(12.0, 8.0, 6.0, 16.0, 10.0, 10.0));
-   private static final Class6408 field18926 = Class8022.method27431(Class937.field5296, Class3209.method11539(6.0, 8.0, 0.0, 10.0, 10.0, 4.0));
-   private static final Class6408 field18927 = Class8022.method27431(Class937.field5296, Class3209.method11539(6.0, 8.0, 12.0, 10.0, 10.0, 16.0));
-   private static final Class6408 field18928 = Class8022.method27431(Class937.field5296, Class3209.method11539(0.0, 8.0, 6.0, 4.0, 10.0, 10.0));
+   private static final Class6408 field18925 = Class8022.method27431(Class937.field5296, Block.method11539(12.0, 8.0, 6.0, 16.0, 10.0, 10.0));
+   private static final Class6408 field18926 = Class8022.method27431(Class937.field5296, Block.method11539(6.0, 8.0, 0.0, 10.0, 10.0, 4.0));
+   private static final Class6408 field18927 = Class8022.method27431(Class937.field5296, Block.method11539(6.0, 8.0, 12.0, 10.0, 10.0, 16.0));
+   private static final Class6408 field18928 = Class8022.method27431(Class937.field5296, Block.method11539(0.0, 8.0, 6.0, 4.0, 10.0, 10.0));
 
    public Class3362(Class7929 var1) {
       super(var1);
@@ -106,7 +106,7 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       this.method11939(var2, var3, var1);
    }
 
@@ -156,7 +156,7 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18913, field18914);
    }
 

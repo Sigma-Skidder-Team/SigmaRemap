@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Map;
 
-public class Class3443 extends Class3209 {
+public class Class3443 extends Block {
    private static String[] field19248;
    public static final Class8551 field19249 = Class3392.field19019;
    public static final Class8551 field19250 = Class3392.field19020;
@@ -65,7 +65,7 @@ public class Class3443 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19253, field19254, field19249, field19250, field19251, field19252);
    }
 }

@@ -6,10 +6,10 @@ public class Class3482 extends Class3480 {
    private static String[] field19333;
    public static final Class8554 field19337 = Class8820.field39740;
    private static final Class6408[] field19338 = new Class6408[]{
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
-      Class3209.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0)
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
+      Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0)
    };
 
    public Class3482(Class7929 var1) {
@@ -44,7 +44,7 @@ public class Class3482 extends Class3480 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19337);
    }
 

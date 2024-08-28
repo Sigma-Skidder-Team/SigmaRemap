@@ -35,7 +35,7 @@ public class Class2753 extends Class2595 {
                for (int var8 = 0; var8 <= 10 && var8 >= -10; var8 = (var8 > 0 ? 0 : 1) - var8) {
                   BlockPos var9 = var5.method8336(var7, var6, var8);
                   Class7380 var10 = var3.method6738(var9);
-                  Class3209 var11 = var10.method23383();
+                  Block var11 = var10.method23383();
                   if (var11 instanceof Class3442) {
                      if (!var3.method6789().method17135(Class5462.field24224)) {
                         var3.method6725(var9, ((Class3442)var11).method12118().method11579(), 3);

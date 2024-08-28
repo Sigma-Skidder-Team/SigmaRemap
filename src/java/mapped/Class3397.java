@@ -3,9 +3,9 @@ package mapped;
 import java.util.Optional;
 import java.util.Random;
 
-public abstract class Class3397 extends Class3209 {
+public abstract class Class3397 extends Block {
    private final float field19034;
-   public static final Class6408 field19035 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
+   public static final Class6408 field19035 = Block.method11539(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 
    public Class3397(Class7929 var1, float var2) {
       super(var1);
@@ -20,7 +20,7 @@ public abstract class Class3397 extends Class3209 {
    public static Class7380 method12009(Class1665 var0, BlockPos var1) {
       BlockPos var4 = var1.method8313();
       Class7380 var5 = var0.method6738(var4);
-      return !Class3398.method12014(var5.method23383()) ? ((Class3399)Class8487.field36530).method12016(var0, var1) : Class8487.field36531.method11579();
+      return !Class3398.method12014(var5.method23383()) ? ((Class3399) Blocks.field36530).method12016(var0, var1) : Blocks.field36531.method11579();
    }
 
    @Override
@@ -157,7 +157,7 @@ public abstract class Class3397 extends Class3209 {
          boolean var6 = false;
 
          for (Direction var10 : Direction.values()) {
-            if (var0.method6738(var5.method8374(var1).method8379(var10)).method23448(Class8487.field36527)) {
+            if (var0.method6738(var5.method8374(var1).method8379(var10)).method23448(Blocks.field36527)) {
                var6 = true;
                break;
             }

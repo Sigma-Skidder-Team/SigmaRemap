@@ -19,7 +19,7 @@ public class Class992 extends Class916 {
 
    @Override
    public Class7380 method3604() {
-      return Class8487.field36532.method11579();
+      return Blocks.field36532.method11579();
    }
 
    @Override

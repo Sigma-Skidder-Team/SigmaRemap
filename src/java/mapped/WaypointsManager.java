@@ -396,7 +396,7 @@ public class WaypointsManager {
    }
 
    public int method30006(BlockPos var1, boolean var2) {
-      if (this.field36365.field1338.method6738(var1).method23383() == Class8487.field36387) {
+      if (this.field36365.field1338.method6738(var1).method23383() == Blocks.AIR) {
          var1 = var1.method8313();
       }
 

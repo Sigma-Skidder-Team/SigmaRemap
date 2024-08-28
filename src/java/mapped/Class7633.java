@@ -358,13 +358,13 @@ public abstract class Class7633 extends Class7631 {
    }
 
    private boolean method25090(Class1665 var1, BlockPos var2, Class7380 var3, Class7631 var4) {
-      Class3209 var7 = var3.method23383();
+      Block var7 = var3.method23383();
       if (!(var7 instanceof Class3449)) {
          if (!(var7 instanceof Class3461)
             && !var7.method11540(Class7645.field32790)
-            && var7 != Class8487.field36549
-            && var7 != Class8487.field36576
-            && var7 != Class8487.field37013) {
+            && var7 != Blocks.field36549
+            && var7 != Blocks.SUGAR_CANE
+            && var7 != Blocks.field37013) {
             Class8649 var8 = var3.method23384();
             return var8 != Class8649.field38934 && var8 != Class8649.field38933 && var8 != Class8649.field38937 && var8 != Class8649.field38940
                ? !var8.method31087()
@@ -402,7 +402,7 @@ public abstract class Class7633 extends Class7631 {
             }
          } else {
             var3 = var6;
-            var1.method6725(var2, Class8487.field36387.method11579(), 3);
+            var1.method6725(var2, Blocks.AIR.method11579(), 3);
          }
       }
 

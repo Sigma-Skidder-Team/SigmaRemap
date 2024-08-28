@@ -22,7 +22,7 @@ public class Class938 extends Class919 implements Class937 {
 
    @Override
    public Class7380 method3604() {
-      return Class8487.field36723.method11579();
+      return Blocks.field36723.method11579();
    }
 
    @Override
@@ -109,7 +109,7 @@ public class Class938 extends Class919 implements Class937 {
    public void method3586(Class8654 var1) {
       super.method3586(var1);
       if (this.field5024.method6789().method17135(Class5462.field24229)) {
-         this.method3300(Class8487.field36723);
+         this.method3300(Blocks.field36723);
       }
    }
 

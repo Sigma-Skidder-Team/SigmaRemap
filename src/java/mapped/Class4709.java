@@ -15,11 +15,11 @@ public class Class4709 implements Class4698 {
             .apply(var0, Class4709::new)
    );
    public static final Class4709 field22333 = new Class4709(
-      Class8487.field37083.method11579(), Class8487.field37079.method11579(), Class8487.field36891.method11579(), Class8487.field37085.method11579(), true
+      Blocks.field37083.method11579(), Blocks.field37079.method11579(), Blocks.field36891.method11579(), Blocks.field37085.method11579(), true
    );
    public static final Class4709 field22334;
    public static final Class4709 field22335 = new Class4709(
-      Class8487.field37074.method11579(), Class8487.field37070.method11579(), Class8487.field37076.method11579(), Class8487.field37085.method11579(), true
+      Blocks.field37074.method11579(), Blocks.field37070.method11579(), Blocks.field37076.method11579(), Blocks.field37085.method11579(), true
    );
    public static final Class4709 field22336;
    public final Class7380 field22337;

@@ -259,11 +259,11 @@ public class Class6450 {
                         for (BlockPos var30 : var16) {
                             Class944 var33 = var12.method6759(var30);
                             Class946.method3802(var33);
-                            var12.method6725(var30, Class8487.field36765.method11579(), 2);
+                            var12.method6725(var30, Blocks.field36765.method11579(), 2);
                         }
 
                         for (BlockPos var31 : var16) {
-                            var12.method6725(var31, Class8487.field36387.method11579(), 3);
+                            var12.method6725(var31, Blocks.AIR.method11579(), 3);
                         }
                     }
 
@@ -276,7 +276,7 @@ public class Class6450 {
                     for (Class6202 var36 : var32) {
                         Class944 var40 = var12.method6759(var36.field27679);
                         Class946.method3802(var40);
-                        var12.method6725(var36.field27679, Class8487.field36765.method11579(), 2);
+                        var12.method6725(var36.field27679, Blocks.field36765.method11579(), 2);
                     }
 
                     int var35 = 0;

@@ -34,7 +34,7 @@ public class Class7527 {
             for (int var14 = var7 - 1; var14 >= 0; var14--) {
                var8.method8372(var9, var14, var10);
                Class7380 var15 = var0.method6738(var8);
-               if (!var15.method23448(Class8487.field36387)) {
+               if (!var15.method23448(Blocks.AIR)) {
                   while (var6.hasNext()) {
                      Class7527 var13 = (Class7527)var6.next();
                      if (var13.field32311.test(var15)) {

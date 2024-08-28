@@ -1263,7 +1263,7 @@ public class Class3192 {
          }
 
          Class3257 var8 = var0.method32107();
-         Class3209 var9 = Class3209.method11537(var8);
+         Block var9 = Block.method11537(var8);
          boolean var10 = false;
          Class7516.method24502();
          GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});

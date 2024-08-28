@@ -50,15 +50,15 @@ public class Class7524 {
       return this;
    }
 
-   public ResourceLocation method24562(Class3209 var1, BiConsumer<ResourceLocation, Supplier<JsonElement>> var2) {
+   public ResourceLocation method24562(Block var1, BiConsumer<ResourceLocation, Supplier<JsonElement>> var2) {
       return this.field32293.method34805(var1, this.field32292, var2);
    }
 
-   public ResourceLocation method24563(Class3209 var1, String var2, BiConsumer<ResourceLocation, Supplier<JsonElement>> var3) {
+   public ResourceLocation method24563(Block var1, String var2, BiConsumer<ResourceLocation, Supplier<JsonElement>> var3) {
       return this.field32293.method34806(var1, var2, this.field32292, var3);
    }
 
-   private static Class7732 method24564(Function<Class3209, Class7287> var0, Class9253 var1) {
+   private static Class7732 method24564(Function<Block, Class7287> var0, Class9253 var1) {
       return var2 -> new Class7524((Class7287)var0.apply(var2), var1);
    }
 

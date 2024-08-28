@@ -27,8 +27,8 @@ public class Class5257 extends PremiumModule {
     }
 
     public List<Entity> method16420() {
-        ArrayList var3 = Lists.newArrayList(field23386.field1338.method6835());
-        var3.remove(field23386.field1339);
+        ArrayList var3 = Lists.newArrayList(mc.field1338.method6835());
+        var3.remove(mc.field1339);
         Iterator var4 = var3.iterator();
 
         while (var4.hasNext()) {

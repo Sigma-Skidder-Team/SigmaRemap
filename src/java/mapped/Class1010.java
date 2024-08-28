@@ -145,7 +145,7 @@ public class Class1010 extends Class1009 implements Class1011 {
 
    private boolean method4352(PlayerEntity var1) {
       Class8848 var4 = var1.field4902.field5440.get(3);
-      if (var4.method32107() != Class8487.field36589.method11581()) {
+      if (var4.method32107() != Blocks.field36589.method11581()) {
          Vector3d var5 = var1.method3281(1.0F).method11333();
          Vector3d var6 = new Vector3d(this.getPosX() - var1.getPosX(), this.method3442() - var1.method3442(), this.getPosZ() - var1.getPosZ());
          double var7 = var6.method11348();

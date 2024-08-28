@@ -16,11 +16,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
-public class Class3209 extends Class3390 implements Class3303 {
+public class Block extends Class3390 implements Class3303 {
    public static final Logger field18609 = LogManager.getLogger();
    public static final Class2352<Class7380> field18610 = new Class2352<Class7380>();
    private static final LoadingCache<Class6408, Boolean> field18611 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build(new Class4562());
-   public final Class9348<Class3209, Class7380> field18612;
+   public final Class9348<Block, Class7380> field18612;
    private Class7380 field18613;
    private String field18614;
    private Class3257 field18615;
@@ -43,11 +43,11 @@ public class Class3209 extends Class3390 implements Class3303 {
 
    public static Class7380 method11536(int var0) {
       Class7380 var3 = field18610.method9172(var0);
-      return var3 != null ? var3 : Class8487.field36387.method11579();
+      return var3 != null ? var3 : Blocks.AIR.method11579();
    }
 
-   public static Class3209 method11537(Class3257 var0) {
-      return !(var0 instanceof Class3292) ? Class8487.field36387 : ((Class3292)var0).method11845();
+   public static Block method11537(Class3257 var0) {
+      return !(var0 instanceof Class3292) ? Blocks.AIR : ((Class3292)var0).method11845();
    }
 
    public static Class7380 method11538(Class7380 var0, Class7380 var1, Class1655 var2, BlockPos var3) {
@@ -66,11 +66,11 @@ public class Class3209 extends Class3390 implements Class3303 {
       return Class8022.method27427(var0 / 16.0, var2 / 16.0, var4 / 16.0, var6 / 16.0, var8 / 16.0, var10 / 16.0);
    }
 
-   public boolean method11540(Class7608<Class3209> var1) {
+   public boolean method11540(Class7608<Block> var1) {
       return var1.method24917(this);
    }
 
-   public boolean method11541(Class3209 var1) {
+   public boolean method11541(Block var1) {
       return this == var1;
    }
 
@@ -100,21 +100,21 @@ public class Class3209 extends Class3390 implements Class3303 {
       }
    }
 
-   public Class3209(Class7929 var1) {
+   public Block(Class7929 var1) {
       super(var1);
-      Class7558<Class3209, Class7380> var4 = new Class7558<>(this);
+      Class7558<Block, Class7380> var4 = new Class7558<>(this);
       this.method11489(var4);
-      this.field18612 = var4.method24739(Class3209::method11579, Class7380::new);
+      this.field18612 = var4.method24739(Block::method11579, Class7380::new);
       this.method11578(this.field18612.method35393());
    }
 
-   public static boolean method11545(Class3209 var0) {
+   public static boolean method11545(Block var0) {
       return var0 instanceof Class3465
-         || var0 == Class8487.field36765
-         || var0 == Class8487.field36589
-         || var0 == Class8487.field36590
-         || var0 == Class8487.field36631
-         || var0 == Class8487.field36579
+         || var0 == Blocks.field36765
+         || var0 == Blocks.field36589
+         || var0 == Blocks.field36590
+         || var0 == Blocks.field36631
+         || var0 == Blocks.PUMPKIN
          || var0.method11540(Class7645.field32805);
    }
 
@@ -333,10 +333,10 @@ public class Class3209 extends Class3390 implements Class3303 {
       return true;
    }
 
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
    }
 
-   public Class9348<Class3209, Class7380> method11577() {
+   public Class9348<Block, Class7380> method11577() {
       return this.field18612;
    }
 
@@ -374,7 +374,7 @@ public class Class3209 extends Class3390 implements Class3303 {
    }
 
    @Override
-   public Class3209 method11584() {
+   public Block method11584() {
       return this;
    }
 }

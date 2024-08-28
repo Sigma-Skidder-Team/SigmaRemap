@@ -11,7 +11,7 @@ public class Class5395 implements Class5391 {
    private final int field24052;
    private final float field24053;
 
-   public Class5395(Class3209 var1, int var2, int var3, int var4, int var5) {
+   public Class5395(Block var1, int var2, int var3, int var4, int var5) {
       this(new Class8848(var1), var2, var3, var4, var5);
    }
 

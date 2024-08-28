@@ -96,13 +96,13 @@ public class Class4200 extends Class4194 {
       this.method12928(var1, var5, 8, 1, 5, 8, 4, 9, false, var4, Class9331.method35288());
       this.method12928(var1, var5, 1, 4, 7, 3, 4, 9, false, var4, Class9331.method35288());
       this.method12928(var1, var5, 1, 3, 5, 3, 3, 6, false, var4, Class9331.method35288());
-      this.method12927(var1, var5, 1, 3, 4, 3, 3, 4, Class8487.field36846.method11579(), Class8487.field36846.method11579(), false);
-      this.method12927(var1, var5, 1, 4, 6, 3, 4, 6, Class8487.field36846.method11579(), Class8487.field36846.method11579(), false);
+      this.method12927(var1, var5, 1, 3, 4, 3, 3, 4, Blocks.field36846.method11579(), Blocks.field36846.method11579(), false);
+      this.method12927(var1, var5, 1, 4, 6, 3, 4, 6, Blocks.field36846.method11579(), Blocks.field36846.method11579(), false);
       this.method12928(var1, var5, 5, 1, 7, 7, 1, 8, false, var4, Class9331.method35288());
-      this.method12927(var1, var5, 5, 1, 9, 7, 1, 9, Class8487.field36846.method11579(), Class8487.field36846.method11579(), false);
-      this.method12927(var1, var5, 5, 2, 7, 7, 2, 7, Class8487.field36846.method11579(), Class8487.field36846.method11579(), false);
-      this.method12927(var1, var5, 4, 5, 7, 4, 5, 9, Class8487.field36846.method11579(), Class8487.field36846.method11579(), false);
-      this.method12927(var1, var5, 8, 5, 7, 8, 5, 9, Class8487.field36846.method11579(), Class8487.field36846.method11579(), false);
+      this.method12927(var1, var5, 5, 1, 9, 7, 1, 9, Blocks.field36846.method11579(), Blocks.field36846.method11579(), false);
+      this.method12927(var1, var5, 5, 2, 7, 7, 2, 7, Blocks.field36846.method11579(), Blocks.field36846.method11579(), false);
+      this.method12927(var1, var5, 4, 5, 7, 4, 5, 9, Blocks.field36846.method11579(), Blocks.field36846.method11579(), false);
+      this.method12927(var1, var5, 8, 5, 7, 8, 5, 9, Blocks.field36846.method11579(), Blocks.field36846.method11579(), false);
       this.method12927(
          var1,
          var5,
@@ -112,11 +112,11 @@ public class Class4200 extends Class4194 {
          7,
          5,
          9,
-         Class8487.field36846.method11579().method23465(Class3208.field18605, Class86.field220),
-         Class8487.field36846.method11579().method23465(Class3208.field18605, Class86.field220),
+         Blocks.field36846.method11579().method23465(Class3208.field18605, Class86.field220),
+         Blocks.field36846.method11579().method23465(Class3208.field18605, Class86.field220),
          false
       );
-      this.method12923(var1, Class8487.field36529.method11579().method23465(Class3382.field18985, Direction.SOUTH), 6, 5, 6, var5);
+      this.method12923(var1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.SOUTH), 6, 5, 6, var5);
       return true;
    }
 }

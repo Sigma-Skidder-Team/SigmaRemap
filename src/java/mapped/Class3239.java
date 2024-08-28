@@ -34,13 +34,13 @@ public class Class3239 extends Class3238 {
    }
 
    public boolean method11644(Class7380 var1, boolean var2, Direction var3) {
-      Class3209 var6 = var1.method23383();
+      Block var6 = var1.method23383();
       boolean var7 = this.method11645(var6);
       boolean var8 = var6 instanceof Class3199 && Class3199.method11507(var1, var3);
       return !method11545(var6) && var2 || var7 || var8;
    }
 
-   private boolean method11645(Class3209 var1) {
+   private boolean method11645(Block var1) {
       return var1.method11540(Class7645.field32771) && var1.method11540(Class7645.field32743) == this.method11579().method23446(Class7645.field32743);
    }
 
@@ -87,7 +87,7 @@ public class Class3239 extends Class3238 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18680, field18681, field18683, field18682, field18684);
    }
 }

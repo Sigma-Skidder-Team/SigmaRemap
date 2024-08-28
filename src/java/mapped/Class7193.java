@@ -11,24 +11,24 @@ public class Class7193 extends Class7194 {
    public Class7193(Codec<Class4728> var1) {
       super(var1, 128);
       this.field30897 = ImmutableSet.of(
-         Class8487.field36388,
-         Class8487.field36389,
-         Class8487.field36391,
-         Class8487.field36393,
-         Class8487.field36396,
-         Class8487.field36397,
-         new Class3209[]{
-            Class8487.field36398,
-            Class8487.field36395,
-            Class8487.field36580,
-            Class8487.field36581,
-            Class8487.field36582,
-            Class8487.field37083,
-            Class8487.field37074,
-            Class8487.field36891,
-            Class8487.field37076,
-            Class8487.field36583,
-            Class8487.field37130
+         Blocks.STONE,
+         Blocks.GRANITE,
+         Blocks.DIORITE,
+         Blocks.field36393,
+         Blocks.field36396,
+         Blocks.field36397,
+         new Block[]{
+            Blocks.field36398,
+            Blocks.field36395,
+            Blocks.NETHERRACK,
+            Blocks.SOUL_SAND,
+            Blocks.SOUL_SOIL,
+            Blocks.field37083,
+            Blocks.field37074,
+            Blocks.field36891,
+            Blocks.field37076,
+            Blocks.BASALT,
+            Blocks.field37130
          }
       );
       this.field30898 = ImmutableSet.of(Class9479.field44068, Class9479.field44066);

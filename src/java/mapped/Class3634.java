@@ -95,7 +95,7 @@ public class Class3634 {
          for (int var27 = -1; var27 < 2; var27++) {
             for (int var30 = 0; var30 < 2; var30++) {
                for (int var32 = -1; var32 < 3; var32++) {
-                  Class7380 var33 = var32 >= 0 ? Class8487.field36387.method11579() : Class8487.field36527.method11579();
+                  Class7380 var33 = var32 >= 0 ? Blocks.AIR.method11579() : Blocks.field36527.method11579();
                   var14.method8378(var8, var30 * var5.method539() + var27 * var24.method539(), var32, var30 * var5.method541() + var27 * var24.method541());
                   this.field19668.method6730(var14, var33);
                }
@@ -107,12 +107,12 @@ public class Class3634 {
          for (int var28 = -1; var28 < 4; var28++) {
             if (var25 == -1 || var25 == 2 || var28 == -1 || var28 == 3) {
                var14.method8378(var8, var25 * var5.method539(), var28, var25 * var5.method541());
-               this.field19668.method6725(var14, Class8487.field36527.method11579(), 3);
+               this.field19668.method6725(var14, Blocks.field36527.method11579(), 3);
             }
          }
       }
 
-      Class7380 var26 = Class8487.field36588.method11579().method23465(Class3401.field19060, var2);
+      Class7380 var26 = Blocks.field36588.method11579().method23465(Class3401.field19060, var2);
 
       for (int var29 = 0; var29 < 2; var29++) {
          for (int var31 = 0; var31 < 3; var31++) {

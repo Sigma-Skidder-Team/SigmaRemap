@@ -91,7 +91,7 @@ public class Class9140 {
             for (int var11 = var6; var11 < var7; var11++) {
                for (int var12 = var8; var12 < var9; var12++) {
                   Class7380 var13 = field41996.field1338.method6738(new BlockPos(var10, var11, var12));
-                  Class3209 var14 = var13.method23383();
+                  Block var14 = var13.method23383();
                   if (var13.method23384() == var1) {
                      return true;
                   }

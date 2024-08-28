@@ -6,7 +6,7 @@ public class Class8878<T extends Entity> {
    private static String[] field40180;
    private final Class9283<T> field40181;
    private final Class179 field40182;
-   private ImmutableSet<Class3209> field40183 = ImmutableSet.of();
+   private ImmutableSet<Block> field40183 = ImmutableSet.of();
    private boolean field40184 = true;
    private boolean field40185 = true;
    private boolean field40186;
@@ -49,7 +49,7 @@ public class Class8878<T extends Entity> {
       return this;
    }
 
-   public Class8878<T> method32305(Class3209... var1) {
+   public Class8878<T> method32305(Block... var1) {
       this.field40183 = ImmutableSet.copyOf(var1);
       return this;
    }

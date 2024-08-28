@@ -34,7 +34,7 @@ public class Class5371 extends Module {
     @Override
     public void method15965() {
         for (Packet var4 : this.field23989) {
-            field23386.getClientPlayNetHandler().method15589().method30695(var4);
+            mc.getClientPlayNetHandler().method15589().method30695(var4);
         }
     }
 
@@ -49,7 +49,7 @@ public class Class5371 extends Module {
 
     @EventTarget
     private void method16911(Class4402 var1) {
-        if (this.method15996() && field23386.getClientPlayNetHandler() != null) {
+        if (this.method15996() && mc.getClientPlayNetHandler() != null) {
             if (!this.field23991) {
                 if ((float) this.field23990.method27121() > this.method15977("Delay") * 1000.0F) {
                     this.field23991 = true;
@@ -82,7 +82,7 @@ public class Class5371 extends Module {
                 this.field23990.method27120();
 
                 for (Packet var5 : this.field23989) {
-                    field23386.getClientPlayNetHandler().method15589().method30695(var5);
+                    mc.getClientPlayNetHandler().method15589().method30695(var5);
                 }
 
                 this.field23989.clear();

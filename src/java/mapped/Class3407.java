@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.LinkedList;
 
-public class Class3407 extends Class3209 {
+public class Class3407 extends Block {
    private static String[] field19085;
 
    public Class3407(Class7929 var1) {
@@ -18,15 +18,15 @@ public class Class3407 extends Class3209 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       this.method12048(var2, var3);
       super.method11506(var1, var2, var3, var4, var5, var6);
    }
 
    public void method12048(Class1655 var1, BlockPos var2) {
       if (this.method12049(var1, var2)) {
-         var1.method6725(var2, Class8487.field36453.method11579(), 2);
-         var1.method6999(2001, var2, Class3209.method11535(Class8487.field36413.method11579()));
+         var1.method6725(var2, Blocks.field36453.method11579(), 2);
+         var1.method6999(2001, var2, Block.method11535(Blocks.WATER.method11579()));
       }
    }
 
@@ -55,14 +55,14 @@ public class Class3407 extends Class3209 {
                   if (var17 == Class8649.field38937 || var17 == Class8649.field38940) {
                      Class944 var18 = !var15.method23383().method11998() ? null : var1.method6759(var14);
                      method11555(var15, var1, var14, var18);
-                     var1.method6725(var14, Class8487.field36387.method11579(), 3);
+                     var1.method6725(var14, Blocks.AIR.method11579(), 3);
                      var6++;
                      if (var9 < 6) {
                         var5.add(new Class6793<BlockPos, Integer>(var14, var9 + 1));
                      }
                   }
                } else {
-                  var1.method6725(var14, Class8487.field36387.method11579(), 3);
+                  var1.method6725(var14, Blocks.AIR.method11579(), 3);
                   var6++;
                   if (var9 < 6) {
                      var5.add(new Class6793<BlockPos, Integer>(var14, var9 + 1));

@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import java.util.function.Function;
 
 public class Class4455 extends Class4441<Class3257> {
-   private final Function<Class7610<Class3209>, Class6879> field21632;
+   private final Function<Class7610<Block>, Class6879> field21632;
 
    public Class4455(Class9068 var1, Class4454 var2) {
       super(var1, Class2348.field16075);
@@ -157,7 +157,7 @@ public class Class4455 extends Class4441<Class3257> {
       this.method14014(Class5985.field26123).method31560(Class8514.field37236, Class8514.field38185);
    }
 
-   public void method14089(Class7610<Class3209> var1, Class7610<Class3257> var2) {
+   public void method14089(Class7610<Block> var1, Class7610<Class3257> var2) {
       Class6879 var5 = this.method14015(var2);
       Class6879 var6 = this.field21632.apply(var1);
       var6.method20948().forEach(var5::method20943);

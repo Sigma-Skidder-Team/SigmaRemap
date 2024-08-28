@@ -2,7 +2,7 @@ package mapped;
 
 public abstract class Class3373 extends Class3241 implements Class3207 {
    public static final Class8551 field18966 = Class8820.field39710;
-   public static final Class6408 field18967 = Class3209.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
+   public static final Class6408 field18967 = Block.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
    private final Class9673 field18968;
 
    public Class3373(Class7929 var1, Class9673 var2) {

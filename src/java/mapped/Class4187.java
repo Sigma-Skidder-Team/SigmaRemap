@@ -46,7 +46,7 @@ public class Class4187 extends Class4180 {
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
       if (var1.startsWith("Chest")) {
          Class80 var8 = this.field20454.method36437();
-         Class7380 var9 = Class8487.field36534.method11579();
+         Class7380 var9 = Blocks.field36534.method11579();
          if ("ChestWest".equals(var1)) {
             var9 = var9.method23465(Class3348.field18865, var8.method252(Direction.WEST));
          } else if ("ChestEast".equals(var1)) {
@@ -75,7 +75,7 @@ public class Class4187 extends Class4180 {
          var11.method3272(var2, 0.0F, 0.0F);
          var11.method4276(var3, var3.method6807(var11.method3432()), Class2202.field14394, (Class5093)null, (Class39)null);
          var3.method6995(var11);
-         var3.method6725(var2, Class8487.field36387.method11579(), 2);
+         var3.method6725(var2, Blocks.AIR.method11579(), 2);
       }
    }
 }

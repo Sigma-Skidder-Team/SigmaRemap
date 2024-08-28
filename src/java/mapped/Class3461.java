@@ -2,17 +2,17 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class3461 extends Class3209 {
+public class Class3461 extends Block {
    private static String[] field19292;
    public static final Class8553 field19293 = Class3198.field18484;
    public static final Class8551 field19294 = Class8820.field39702;
    public static final Class8552<Class183> field19295 = Class8820.field39767;
    public static final Class8551 field19296 = Class8820.field39704;
    public static final Class8552<Class84> field19297 = Class8820.field39734;
-   public static final Class6408 field19298 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
-   public static final Class6408 field19299 = Class3209.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19300 = Class3209.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19301 = Class3209.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
+   public static final Class6408 field19298 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
+   public static final Class6408 field19299 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field19300 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field19301 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
 
    public Class3461(Class7929 var1) {
       super(var1);
@@ -54,10 +54,10 @@ public class Class3461 extends Class3209 {
                .method23465(field19294, var3.<Boolean>method23463(field19294))
                .method23465(field19295, var3.<Class183>method23463(field19295))
                .method23465(field19296, var3.<Boolean>method23463(field19296))
-            : Class8487.field36387.method11579();
+            : Blocks.AIR.method11579();
       } else {
          return var9 == Class84.field210 && var2 == Direction.field672 && !var1.method23443(var4, var5)
-            ? Class8487.field36387.method11579()
+            ? Blocks.AIR.method11579()
             : super.method11491(var1, var2, var3, var4, var5, var6);
       }
    }
@@ -179,7 +179,7 @@ public class Class3461 extends Class3209 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method6780(var3)
          || var2.method6780(var3.method8349(var1.method23463(field19297) != Class84.field210 ? Direction.field672 : Direction.field673));
       if (var4 != this && var9 != var1.<Boolean>method23463(field19296)) {
@@ -223,7 +223,7 @@ public class Class3461 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19297, field19293, field19294, field19295, field19296);
    }
 

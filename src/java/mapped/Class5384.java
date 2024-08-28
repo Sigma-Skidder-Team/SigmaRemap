@@ -14,7 +14,7 @@ public class Class5384 extends Module {
    @EventTarget
    private void method16963(Class4420 var1) {
       if (this.method15996()) {
-         if (field23386.field1339 != null && field23386.field1338 != null) {
+         if (mc.field1339 != null && mc.field1338 != null) {
             this.method16965();
             Class3192.method11476();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -39,7 +39,7 @@ public class Class5384 extends Module {
       int var5 = Class5628.method17688(this.method16004().method15976("Ender Color"), 0.7F);
       int var6 = Class5628.method17688(this.method16004().method15976("Trapped Color"), 0.7F);
 
-      for (Class944 var8 : field23386.field1338.field9003) {
+      for (Class944 var8 : mc.field1338.field9003) {
          boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.method16004().method15974("Show Regular Chests");
          boolean var10 = var8 instanceof Class943 && this.method16004().method15974("Show Ender Chests");
          boolean var11 = var8 instanceof Class970 && this.method16004().method15974("Show Trapped Chests");
@@ -59,7 +59,7 @@ public class Class5384 extends Module {
             }
 
             Class9388 var19 = new Class9388(
-               var8.method3775().method23412(field23386.field1338, var8.method3774()).method19514().method19667(var12, var14, var16)
+               var8.method3775().method23412(mc.field1338, var8.method3774()).method19514().method19667(var12, var14, var16)
             );
             if (var1) {
                Class3192.method11462(var19, 3.0F, var18);
@@ -84,7 +84,7 @@ public class Class5384 extends Module {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      field23386.field1295.field818.method7316();
+      mc.field1295.field818.method7316();
    }
 
    private void method16966() {
@@ -94,9 +94,9 @@ public class Class5384 extends Module {
       GL11.glEnable(2903);
       RenderSystem.method27905(33986, 240.0F, 240.0F);
       TextureImpl.method36180();
-      TextureManager var10000 = field23386.getTextureManager();
-      field23386.getTextureManager();
+      TextureManager var10000 = mc.getTextureManager();
+      mc.getTextureManager();
       var10000.bindTexture(TextureManager.field1094);
-      field23386.field1295.field818.method7317();
+      mc.field1295.field818.method7317();
    }
 }

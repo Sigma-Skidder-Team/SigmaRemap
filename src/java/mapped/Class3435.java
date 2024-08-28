@@ -10,12 +10,12 @@ import java.util.Map.Entry;
 public class Class3435 extends Class3433 {
    private static String[] field19201;
    public static final Class8551 field19202 = Class8820.field39688;
-   public static final Class6408 field19203 = Class3209.method11539(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
-   public static final Class6408 field19204 = Class3209.method11539(4.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19205 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 12.0);
-   public static final Class6408 field19206 = Class3209.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19207 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
-   public static final Class6408 field19208 = Class3209.method11539(0.0, 4.0, 0.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field19203 = Block.method11539(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+   public static final Class6408 field19204 = Block.method11539(4.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field19205 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 12.0);
+   public static final Class6408 field19206 = Block.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field19207 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+   public static final Class6408 field19208 = Block.method11539(0.0, 4.0, 0.0, 16.0, 16.0, 16.0);
    private final boolean field19209;
 
    public Class3435(boolean var1, Class7929 var2) {
@@ -55,7 +55,7 @@ public class Class3435 extends Class3433 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          this.method12102(var2, var3, var1);
       }
@@ -84,7 +84,7 @@ public class Class3435 extends Class3433 {
          BlockPos var8 = var2.method8350(var6, 2);
          Class7380 var9 = var1.method6738(var8);
          byte var10 = 1;
-         if (var9.method23448(Class8487.field36505) && var9.<Direction>method23463(field19198) == var6) {
+         if (var9.method23448(Blocks.field36505) && var9.<Direction>method23463(field19198) == var6) {
             Class944 var11 = var1.method6759(var8);
             if (var11 instanceof Class955) {
                Class955 var12 = (Class955)var11;
@@ -142,7 +142,7 @@ public class Class3435 extends Class3433 {
                ((Class955)var16).method3865();
             }
 
-            Class7380 var10 = Class8487.field36505
+            Class7380 var10 = Blocks.field36505
                .method11579()
                .method23465(Class3356.field18896, var8)
                .method23465(Class3356.field18897, !this.field19209 ? Class180.field638 : Class180.field639);
@@ -156,7 +156,7 @@ public class Class3435 extends Class3433 {
                BlockPos var11 = var3.method8336(var8.method539() * 2, var8.method540() * 2, var8.method541() * 2);
                Class7380 var12 = var2.method6738(var11);
                boolean var13 = false;
-               if (var12.method23448(Class8487.field36505)) {
+               if (var12.method23448(Blocks.field36505)) {
                   Class944 var14 = var2.method6759(var11);
                   if (var14 instanceof Class955) {
                      Class955 var15 = (Class955)var14;
@@ -171,7 +171,7 @@ public class Class3435 extends Class3433 {
                   if (var4 == 1
                      && !var12.method23393()
                      && method12104(var12, var2, var11, var8.method536(), false, var8)
-                     && (var12.method23408() == Class2315.field15862 || var12.method23448(Class8487.field36487) || var12.method23448(Class8487.field36480))) {
+                     && (var12.method23408() == Class2315.field15862 || var12.method23448(Blocks.field36487) || var12.method23448(Blocks.field36480))) {
                      this.method12105(var2, var3, var8, false);
                   } else {
                      var2.method6728(var3.method8349(var8), false);
@@ -198,14 +198,14 @@ public class Class3435 extends Class3433 {
          return false;
       } else if (var0.method23393()) {
          return true;
-      } else if (var0.method23448(Class8487.field36527) || var0.method23448(Class8487.field37123) || var0.method23448(Class8487.field37124)) {
+      } else if (var0.method23448(Blocks.field36527) || var0.method23448(Blocks.field37123) || var0.method23448(Blocks.field37124)) {
          return false;
       } else if (var3 == Direction.field672 && var2.getY() == 0) {
          return false;
       } else if (var3 == Direction.field673 && var2.getY() == var1.method7034() - 1) {
          return false;
       } else {
-         if (!var0.method23448(Class8487.field36487) && !var0.method23448(Class8487.field36480)) {
+         if (!var0.method23448(Blocks.field36487) && !var0.method23448(Blocks.field36480)) {
             if (var0.method23405(var1, var2) == -1.0F) {
                return false;
             }
@@ -228,8 +228,8 @@ public class Class3435 extends Class3433 {
 
    private boolean method12105(Class1655 var1, BlockPos var2, Direction var3, boolean var4) {
       BlockPos var7 = var2.method8349(var3);
-      if (!var4 && var1.method6738(var7).method23448(Class8487.field36488)) {
-         var1.method6725(var7, Class8487.field36387.method11579(), 20);
+      if (!var4 && var1.method6738(var7).method23448(Blocks.field36488)) {
+         var1.method6725(var7, Blocks.AIR.method11579(), 20);
       }
 
       Class9196 var8 = new Class9196(var1, var2, var3, var4);
@@ -257,7 +257,7 @@ public class Class3435 extends Class3433 {
             Class7380 var18 = var1.method6738(var17);
             Class944 var19 = !var18.method23383().method11998() ? null : var1.method6759(var17);
             method11555(var18, var1, var17, var19);
-            var1.method6725(var17, Class8487.field36387.method11579(), 18);
+            var1.method6725(var17, Blocks.AIR.method11579(), 18);
             var22[var15++] = var18;
          }
 
@@ -266,15 +266,15 @@ public class Class3435 extends Class3433 {
             Class7380 var35 = var1.method6738(var28);
             var28 = var28.method8349(var23);
             var9.remove(var28);
-            var1.method6725(var28, Class8487.field36505.method11579().method23465(field19198, var3), 68);
+            var1.method6725(var28, Blocks.field36505.method11579().method23465(field19198, var3), 68);
             var1.method6761(var28, Class3356.method11929((Class7380)var11.get(var25), var3, var4, false));
             var22[var15++] = var35;
          }
 
          if (var4) {
             Class180 var26 = !this.field19209 ? Class180.field638 : Class180.field639;
-            Class7380 var30 = Class8487.field36488.method11579().method23465(Class3436.field19198, var3).method23465(Class3436.field19211, var26);
-            Class7380 var36 = Class8487.field36505
+            Class7380 var30 = Blocks.field36488.method11579().method23465(Class3436.field19198, var3).method23465(Class3436.field19211, var26);
+            Class7380 var36 = Blocks.field36505
                .method11579()
                .method23465(Class3356.field18896, var3)
                .method23465(Class3356.field18897, !this.field19209 ? Class180.field638 : Class180.field639);
@@ -283,7 +283,7 @@ public class Class3435 extends Class3433 {
             var1.method6761(var7, Class3356.method11929(var30, var3, true, true));
          }
 
-         Class7380 var27 = Class8487.field36387.method11579();
+         Class7380 var27 = Blocks.AIR.method11579();
 
          for (BlockPos var37 : var9.keySet()) {
             var1.method6725(var37, var27, 82);
@@ -311,7 +311,7 @@ public class Class3435 extends Class3433 {
          }
 
          if (var4) {
-            var1.method6733(var7, Class8487.field36488);
+            var1.method6733(var7, Blocks.field36488);
          }
 
          return true;
@@ -329,7 +329,7 @@ public class Class3435 extends Class3433 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19198, field19202);
    }
 

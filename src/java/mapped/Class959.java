@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class959 extends Class944 implements Class935 {
-   private static final Class3209[] field5381 = new Class3209[]{Class8487.field36767, Class8487.field36768, Class8487.field36776, Class8487.field36769};
+   private static final Block[] field5381 = new Block[]{Blocks.field36767, Blocks.field36768, Blocks.field36776, Blocks.field36769};
    public int field5382;
    private float field5383;
    private boolean field5384;
@@ -112,7 +112,7 @@ public class Class959 extends Class944 implements Class935 {
                   BlockPos var9 = this.field5325.method8336(var15, var16, var17);
                   Class7380 var10 = this.field5324.method6738(var9);
 
-                  for (Class3209 var14 : field5381) {
+                  for (Block var14 : field5381) {
                      if (var10.method23448(var14)) {
                         this.field5386.add(var9);
                      }

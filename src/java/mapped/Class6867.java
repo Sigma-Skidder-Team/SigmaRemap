@@ -12,6 +12,6 @@ public final class Class6867 implements Class6865<Class7439> {
    }
 
    public Class7439 method20912(Class7434<Class7439> var1, PacketBuffer var2) {
-      return new Class7439(var1, Class3209.field18610.method9172(var2.method35714()));
+      return new Class7439(var1, Block.field18610.method9172(var2.method35714()));
    }
 }

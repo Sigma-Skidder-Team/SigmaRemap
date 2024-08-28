@@ -5,7 +5,7 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class Class6772 extends Class6768<Class8278> {
-   private static final Class7380 field29546 = Class8487.field37012.method11579();
+   private static final Class7380 field29546 = Blocks.field37012.method11579();
    public long field29547;
    private Class7689 field29548;
 

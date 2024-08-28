@@ -135,7 +135,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    public static boolean method5081(Class8992<Class1091> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return !var1.method6738(var3.method8313()).method23448(Class8487.field36891);
+      return !var1.method6738(var3.method8313()).method23448(Blocks.field36891);
    }
 
    @Nullable
@@ -156,7 +156,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
       if (!Class9069.method33790(this, var1)) {
-         return !var2.method6738(var1.method8313()).method23448(Class8487.field37083) ? 0.0F : 10.0F;
+         return !var2.method6738(var1.method8313()).method23448(Blocks.field37083) ? 0.0F : 10.0F;
       } else {
          return -1.0F;
       }

@@ -5,16 +5,16 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
 public abstract class Class4213 extends Class4178 {
-   public static final Class7380 field20528 = Class8487.field36767.method11579();
-   public static final Class7380 field20529 = Class8487.field36768.method11579();
-   public static final Class7380 field20530 = Class8487.field36769.method11579();
+   public static final Class7380 field20528 = Blocks.field36767.method11579();
+   public static final Class7380 field20529 = Blocks.field36768.method11579();
+   public static final Class7380 field20530 = Blocks.field36769.method11579();
    public static final Class7380 field20531 = field20529;
-   public static final Class7380 field20532 = Class8487.field36776.method11579();
-   public static final Class7380 field20533 = Class8487.field36413.method11579();
-   public static final Set<Class3209> field20534 = ImmutableSet.<Class3209>builder()
-      .add(Class8487.field36572)
-      .add(Class8487.field36796)
-      .add(Class8487.field37006)
+   public static final Class7380 field20532 = Blocks.field36776.method11579();
+   public static final Class7380 field20533 = Blocks.WATER.method11579();
+   public static final Set<Block> field20534 = ImmutableSet.<Block>builder()
+      .add(Blocks.ICE)
+      .add(Blocks.field36796)
+      .add(Blocks.field37006)
       .add(field20533.method23383())
       .build();
    public static final int field20535 = method13004(2, 0, 0);
@@ -81,7 +81,7 @@ public abstract class Class4213 extends Class4178 {
                Class7380 var14 = this.method12924(var1, var12, var11, var13, var2);
                if (!field20534.contains(var14.method23383())) {
                   if (this.method12921(var11) >= var1.method6776() && var14 != field20533) {
-                     this.method12923(var1, Class8487.field36387.method11579(), var12, var11, var13, var2);
+                     this.method12923(var1, Blocks.AIR.method11579(), var12, var11, var13, var2);
                   } else {
                      this.method12923(var1, field20533, var12, var11, var13, var2);
                   }

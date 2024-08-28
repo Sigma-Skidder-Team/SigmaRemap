@@ -667,12 +667,12 @@ public final class Class8848 {
                return Lists.newArrayList(new ITextComponent[]{var4.method23383().method11565().mergeStyle(TextFormatting.DARK_GRAY)});
             }
 
-            Class7608<Class3209> var8 = Class7645.method25115().method27135(var5);
+            Class7608<Block> var8 = Class7645.method25115().method27135(var5);
             if (var8 != null) {
-               List<Class3209> var9 = var8.method24918();
+               List<Block> var9 = var8.method24918();
                if (!var9.isEmpty()) {
                   return var9.stream()
-                     .map(Class3209::method11565)
+                     .map(Block::method11565)
                      .map(var0x -> var0x.mergeStyle(TextFormatting.DARK_GRAY))
                      .collect(Collectors.toList());
                }

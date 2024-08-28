@@ -23,7 +23,7 @@ public class Class3473 extends Class3472 implements Class3196 {
    @Override
    public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
       BlockPos var7 = var3.method8311();
-      Class7380 var8 = Class8487.field36482.method11579();
+      Class7380 var8 = Blocks.field36482.method11579();
 
       label61:
       for (int var9 = 0; var9 < 128; var9++) {

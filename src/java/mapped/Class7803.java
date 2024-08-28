@@ -50,17 +50,17 @@ public class Class7803 {
 
    public static void method26054(BlockPos var0, BlockPos var1, Class80 var2, Class1657 var3) {
       BlockPos var6 = Class8969.method32905(var0.method8337(var1), Class2089.field13614, var2, var0);
-      var3.method6730(var6, Class8487.field36664.method11579());
+      var3.method6730(var6, Blocks.field36664.method11579());
       Class969 var7 = (Class969)var3.method6759(var6);
       var7.method4009().method3562("test runthis");
       BlockPos var8 = Class8969.method32905(var6.method8336(0, 0, -1), Class2089.field13614, var2, var6);
-      var3.method6730(var8, Class8487.field36570.method11579().method23395(var2));
+      var3.method6730(var8, Blocks.STONE_BUTTON.method11579().method23395(var2));
    }
 
    public static void method26055(String var0, BlockPos var1, BlockPos var2, Class80 var3, Class1657 var4) {
       Class9764 var7 = method26059(var1, var2, var3);
       method26058(var7, var1.getY(), var4);
-      var4.method6730(var1, Class8487.field37113.method11579());
+      var4.method6730(var1, Blocks.field37113.method11579());
       Class964 var8 = (Class964)var4.method6759(var1);
       var8.method3954(false);
       var8.method3938(new ResourceLocation(var0));
@@ -158,7 +158,7 @@ public class Class7803 {
             for (int var9 = (int)var6.field28451; var9 <= (int)var6.field28454; var9++) {
                BlockPos var10 = new BlockPos(var7, var8, var9);
                Class7380 var11 = var2.method6738(var10);
-               if (var11.method23448(Class8487.field37113)) {
+               if (var11.method23448(Blocks.field37113)) {
                   var5.add(var10);
                }
             }
@@ -186,7 +186,7 @@ public class Class7803 {
    }
 
    private static Class964 method26064(String var0, BlockPos var1, Class80 var2, Class1657 var3, boolean var4) {
-      var3.method6730(var1, Class8487.field37113.method11579());
+      var3.method6730(var1, Blocks.field37113.method11579());
       Class964 var7 = (Class964)var3.method6759(var1);
       var7.method3951(Class104.field319);
       var7.method3947(var2);
@@ -238,7 +238,7 @@ public class Class7803 {
       }
 
       if (var5 == null) {
-         var5 = Class8487.field36387.method11579();
+         var5 = Blocks.AIR.method11579();
       }
 
       Class164 var8 = new Class164(var5, Collections.<Class8550<?>>emptySet(), (Class39)null);

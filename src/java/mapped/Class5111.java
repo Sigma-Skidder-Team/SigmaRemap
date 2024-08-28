@@ -385,20 +385,20 @@ public class Class5111 implements Class5110 {
             Direction var11 = this.field23226.field5024.method6738(var6).<Direction>method23463(Class3355.field18893);
             switch (Class9703.field45356[var1.method17521().ordinal()]) {
                case 1:
-                  Class7380 var12 = Class8487.field36888.method11579();
+                  Class7380 var12 = Blocks.field36888.method11579();
                   this.field23226
                      .field5024
                      .method6725(var6, var12.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
                   break;
                case 2:
-                  Class7380 var13 = Class8487.field36887.method11579();
+                  Class7380 var13 = Blocks.field36887.method11579();
                   this.field23226
                      .field5024
                      .method6725(var6, var13.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
                   break;
                case 3:
                default:
-                  Class7380 var14 = Class8487.field36664.method11579();
+                  Class7380 var14 = Blocks.field36664.method11579();
                   this.field23226
                      .field5024
                      .method6725(var6, var14.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);

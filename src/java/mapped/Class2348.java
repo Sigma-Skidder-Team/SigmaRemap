@@ -25,7 +25,7 @@ public abstract class Class2348<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class8705<Class2348<Class9455>> field16036 = method9173("sound_event");
    public static final Class8705<Class2348<Class7631>> field16037 = method9173("fluid");
    public static final Class8705<Class2348<Class7144>> field16038 = method9173("mob_effect");
-   public static final Class8705<Class2348<Class3209>> field16039 = method9173("block");
+   public static final Class8705<Class2348<Block>> field16039 = method9173("block");
    public static final Class8705<Class2348<Class6069>> field16040 = method9173("enchantment");
    public static final Class8705<Class2348<Class8992<?>>> field16041 = method9173("entity_type");
    public static final Class8705<Class2348<Class3257>> field16042 = method9173("item");
@@ -58,7 +58,7 @@ public abstract class Class2348<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class2348<Class9455> field16069 = method9175(field16036, () -> Class6067.field26714);
    public static final Class2351<Class7631> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
    public static final Class2348<Class7144> field16071 = method9175(field16038, () -> Class8254.field35492);
-   public static final Class2351<Class3209> field16072 = method9176(field16039, "air", () -> Class8487.field36387);
+   public static final Class2351<Block> field16072 = method9176(field16039, "air", () -> Blocks.AIR);
    public static final Class2348<Class6069> field16073 = method9175(field16040, () -> Class8122.field34918);
    public static final Class2351<Class8992<?>> field16074 = method9176(field16041, "pig", () -> Class8992.field41064);
    public static final Class2351<Class3257> field16075 = method9176(field16042, "air", () -> Class8514.field37222);

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Class3365 extends Class3241 {
    private static String[] field18932;
-   public static final Class6408 field18933 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+   public static final Class6408 field18933 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 
    public Class3365(Class7929 var1) {
       super(var1);

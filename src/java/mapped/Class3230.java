@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Class3230 extends Class3229 {
    private static String[] field18668;
-   private final Class3209 field18671;
+   private final Block field18671;
 
-   public Class3230(Class3209 var1, Class7929 var2) {
+   public Class3230(Block var1, Class7929 var2) {
       super(var2);
       this.field18671 = var1;
    }
@@ -30,7 +30,7 @@ public class Class3230 extends Class3229 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var2.method536() == var1.<Direction>method23463(field18669) && !var1.method23443(var4, var5)) {
-         return Class8487.field36387.method11579();
+         return Blocks.AIR.method11579();
       } else {
          if (var1.<Boolean>method23463(field18663)) {
             var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));

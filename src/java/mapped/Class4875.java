@@ -13,7 +13,7 @@ public class Class4875 extends Class4874<Class4468> {
    }
 
    public Class4468 method15047(JsonObject var1, Class9587 var2, Class9366 var3) {
-      Class3209 var6 = method15056(var1);
+      Block var6 = method15056(var1);
       Class7340 var7 = Class7340.method23261(var1.get("state"));
       if (var6 != null) {
          var7.method23260(var6.method11577(), var1x -> {
@@ -25,7 +25,7 @@ public class Class4875 extends Class4874<Class4468> {
    }
 
    @Nullable
-   private static Class3209 method15056(JsonObject var0) {
+   private static Block method15056(JsonObject var0) {
       if (!var0.has("block")) {
          return null;
       } else {

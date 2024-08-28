@@ -21,8 +21,8 @@ public class Class5285 extends Module {
     @EventTarget
     private void method16583(Class4430 var1) {
         if (this.method15996()) {
-            if (var1.method13977() == field23386.field1299.field44639.field13070.field34875 && field23386.field1339.method3337()) {
-                field23386.getClientPlayNetHandler().sendPacket(new Class5583(field23386.field1339, Class1865.field10044));
+            if (var1.method13977() == mc.field1299.field44639.field13070.field34875 && mc.field1339.method3337()) {
+                mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10044));
             }
         }
     }
@@ -43,35 +43,35 @@ public class Class5285 extends Module {
     private void method16585(Class4428 var1) {
         if (this.method15996()) {
             if (this.method15974("AACP")) {
-                boolean var4 = !(field23386.field1355 instanceof Class859) || !(field23386.field1355 instanceof Class868);
+                boolean var4 = !(mc.field1355 instanceof Class859) || !(mc.field1355 instanceof Class868);
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;
-                    if (field23386.field1339.method3337()) {
-                        field23386.getClientPlayNetHandler().sendPacket(new Class5583(field23386.field1339, Class1865.field10043));
+                    if (mc.field1339.method3337()) {
+                        mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10043));
                     }
                 } else if (!this.field23757 && var4) {
                     this.field23757 = !this.field23757;
-                    if (field23386.field1339.method3337()) {
-                        field23386.getClientPlayNetHandler().sendPacket(new Class5583(field23386.field1339, Class1865.field10044));
+                    if (mc.field1339.method3337()) {
+                        mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10044));
                     }
                 }
             }
 
-            if (field23386.field1355 instanceof Class851 || Client.getInstance().method19939().method31332() <= 1) {
-                if (field23386.field1355 instanceof Class1331) {
+            if (mc.field1355 instanceof Class851 || Client.getInstance().method19939().method31332() <= 1) {
+                if (mc.field1355 instanceof Class1331) {
                     return;
                 }
 
-                if (field23386.field1355 instanceof Class1124) {
+                if (mc.field1355 instanceof Class1124) {
                     return;
                 }
 
-                if (field23386.field1355 instanceof Class1144) {
+                if (mc.field1355 instanceof Class1144) {
                     return;
                 }
 
-                if (field23386.field1355 instanceof Class861) {
-                    Class861 var9 = (Class861) field23386.field1355;
+                if (mc.field1355 instanceof Class861) {
+                    Class861 var9 = (Class861) mc.field1355;
                     if (var9.method2654() == 5) {
                         return;
                     }
@@ -85,11 +85,11 @@ public class Class5285 extends Module {
                     return;
                 }
 
-                for (Class2007 var7 : field23386.field1299.field44658) {
+                for (Class2007 var7 : mc.field1299.field44658) {
                     if (var7.field13070.field34875 > 0
-                            && field23386.field1299.field44637.field13070.field34875 != var7.field13070.field34875
+                            && mc.field1299.field44637.field13070.field34875 != var7.field13070.field34875
                             && var7.field13070.field34875 > 4) {
-                        int var8 = GLFW.glfwGetKey(field23386.field1283.method8039(), var7.field13070.field34875);
+                        int var8 = GLFW.glfwGetKey(mc.field1283.method8039(), var7.field13070.field34875);
                         var7.field13071 = var8 == 1;
                     }
                 }

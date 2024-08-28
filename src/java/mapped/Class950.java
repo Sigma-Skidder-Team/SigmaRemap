@@ -52,9 +52,9 @@ public class Class950 extends Class944 implements Class949, Class935 {
 
       for (int var9 = 0; var9 < 10 && var6.getY() <= var8; var9++) {
          Class7380 var10 = this.field5324.method6738(var6);
-         Class3209 var11 = var10.method23383();
+         Block var11 = var10.method23383();
          if (!(var11 instanceof Class3235)) {
-            if (var7 == null || var10.method23387(this.field5324, var6) >= 15 && var11 != Class8487.field36412) {
+            if (var7 == null || var10.method23387(this.field5324, var6) >= 15 && var11 != Blocks.BEDROCK) {
                this.field5341.clear();
                this.field5343 = var8;
                break;

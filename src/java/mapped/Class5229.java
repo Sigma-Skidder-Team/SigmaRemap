@@ -25,8 +25,8 @@ public class Class5229 extends Module {
     @EventTarget
     private void method16289(Class4429 var1) {
         if (this.method15996()) {
-            if (field23386.field1299.field44637.method8509() && var1.method13976() == Class2116.field13791) {
-                if (!(field23386.field1339.field5032 < 0.0F)) {
+            if (mc.field1299.field44637.method8509() && var1.method13976() == Class2116.field13791) {
+                if (!(mc.field1339.field5032 < 0.0F)) {
                     this.method16294(this.method16292());
                 } else {
                     this.method16294(this.method16293());
@@ -52,11 +52,11 @@ public class Class5229 extends Module {
                 var7 = Integer.parseInt(var5);
             }
 
-            float var8 = (float) Math.toRadians(field23386.field1339.field5031 + 90.0F);
+            float var8 = (float) Math.toRadians(mc.field1339.field5031 + 90.0F);
             double var9 = Class9679.method37764(var8) * (float) var7;
             double var11 = Class9679.method37763(var8) * (float) var7;
-            field23386.field1339
-                    .method3215(field23386.field1339.getPosX() + var9, field23386.field1339.getPosY(), field23386.field1339.getPosZ() + var11);
+            mc.field1339
+                    .method3215(mc.field1339.getPosX() + var9, mc.field1339.getPosY(), mc.field1339.getPosZ() + var11);
         }
     }
 
@@ -65,13 +65,13 @@ public class Class5229 extends Module {
         int var4 = 0;
 
         for (int var5 = 0; var5 < 10; var5++) {
-            BlockPos var6 = new BlockPos(field23386.field1339.getPosX(), field23386.field1339.getPosY() - (double) var5, field23386.field1339.getPosZ());
-            if (field23386.field1338.method6738(var6).method23410() && var3) {
+            BlockPos var6 = new BlockPos(mc.field1339.getPosX(), mc.field1339.getPosY() - (double) var5, mc.field1339.getPosZ());
+            if (mc.field1338.method6738(var6).method23410() && var3) {
                 var4 = -var5;
                 break;
             }
 
-            var3 = field23386.field1338.method6738(var6).method23410();
+            var3 = mc.field1338.method6738(var6).method23410();
         }
 
         return var4;
@@ -82,13 +82,13 @@ public class Class5229 extends Module {
         int var4 = 0;
 
         for (int var5 = 10; var5 > 0; var5--) {
-            BlockPos var6 = new BlockPos(field23386.field1339.getPosX(), field23386.field1339.getPosY() + (double) var5, field23386.field1339.getPosZ());
-            if (field23386.field1338.method6738(var6).method23410() && var3 && !field23386.field1338.method6738(var6.method8313()).method23410()) {
+            BlockPos var6 = new BlockPos(mc.field1339.getPosX(), mc.field1339.getPosY() + (double) var5, mc.field1339.getPosZ());
+            if (mc.field1338.method6738(var6).method23410() && var3 && !mc.field1338.method6738(var6.method8313()).method23410()) {
                 var4 = var5;
                 break;
             }
 
-            var3 = field23386.field1338.method6738(var6).method23410();
+            var3 = mc.field1338.method6738(var6).method23410();
         }
 
         return var4;
@@ -98,12 +98,12 @@ public class Class5229 extends Module {
         if (var1 == 0) {
             Class5628.method17678("§cCouldn't VClip");
         } else {
-            field23386.getClientPlayNetHandler()
+            mc.getClientPlayNetHandler()
                     .sendPacket(
-                            new Class5605(field23386.field1339.getPosX(), field23386.field1339.getPosY() + (double) var1, field23386.field1339.getPosZ(), false)
+                            new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY() + (double) var1, mc.field1339.getPosZ(), false)
                     );
-            field23386.field1339
-                    .method3215(field23386.field1339.getPosX(), field23386.field1339.getPosY() + (double) var1, field23386.field1339.getPosZ());
+            mc.field1339
+                    .method3215(mc.field1339.getPosX(), mc.field1339.getPosY() + (double) var1, mc.field1339.getPosZ());
             Client.getInstance().getNotificationManager().post(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, ResourcesDecrypter.directionIconPNG));
         }
     }

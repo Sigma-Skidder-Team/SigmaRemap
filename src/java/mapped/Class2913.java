@@ -16,7 +16,7 @@ public class Class2913 extends Class2898<Class4712> {
          for (int var10 = Class9679.method37767(-var8); var10 <= Class9679.method37773(var8); var10++) {
             for (int var11 = Class9679.method37767(-var8); var11 <= Class9679.method37773(var8); var11++) {
                if ((float)(var10 * var10 + var11 * var11) <= (var8 + 1.0F) * (var8 + 1.0F)) {
-                  this.method11217(var1, var4.method8336(var10, var9, var11), Class8487.field36651.method11579());
+                  this.method11217(var1, var4.method8336(var10, var9, var11), Blocks.field36651.method11579());
                }
             }
          }

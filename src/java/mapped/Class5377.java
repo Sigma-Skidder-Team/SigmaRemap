@@ -47,7 +47,7 @@ public class Class5377 extends Module {
 
     // $VF: synthetic method
     public static Minecraft method16936() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
@@ -57,17 +57,17 @@ public class Class5377 extends Module {
 
     // $VF: synthetic method
     public static Minecraft method16938() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16939() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16940() {
-        return field23386;
+        return mc;
     }
 
     @EventTarget
@@ -81,7 +81,7 @@ public class Class5377 extends Module {
 
                 while (var4.hasNext()) {
                     Entry var5 = (Entry) var4.next();
-                    if (!(field23386.field1338.method6738((BlockPos) var5.getKey()).method23383() instanceof Class3353)) {
+                    if (!(mc.field1338.method6738((BlockPos) var5.getKey()).method23383() instanceof Class3353)) {
                         var4.remove();
                     }
 
@@ -92,7 +92,7 @@ public class Class5377 extends Module {
             this.field24005.clear();
 
             for (Entity var7 : Class9217.method34549(Class5628.method17680())) {
-                if (var7 != field23386.field1339
+                if (var7 != mc.field1339
                         && var7 != Class5298.field23814
                         && var7 != Class5319.field23863
                         && !var7.method3342()
@@ -108,7 +108,7 @@ public class Class5377 extends Module {
         if (this.method15996()) {
             if (var1.method13932() instanceof Class5570) {
                 Class5570 var4 = (Class5570) var1.method13932();
-                if (field23386.field1338.method6738(var4.method17498().method31423()).method23383() instanceof Class3353) {
+                if (mc.field1338.method6738(var4.method17498().method31423()).method23383() instanceof Class3353) {
                     this.field24001 = var4.method17498().method31423();
                 }
             }
@@ -120,8 +120,8 @@ public class Class5377 extends Module {
                     return;
                 }
 
-                if (field23386.field1355 instanceof Class856) {
-                    Class856 var6 = (Class856) field23386.field1355;
+                if (mc.field1355 instanceof Class856) {
+                    Class856 var6 = (Class856) mc.field1355;
                     var5.field30453 = var6.method2628().method18131(0).method18265();
                     var5.field30454 = new Class8848(var6.method2628().method18131(1).method18265().method32107());
                     var5.field30454.field39976 = var6.method2628().method18131(1).method18265().field39976;
@@ -229,8 +229,8 @@ public class Class5377 extends Module {
             }
 
             if (this.method15974("Mob Owners")) {
-                for (Entity var12 : field23386.field1338.method6835()) {
-                    if (var12 == field23386.field1339 && (var12 instanceof Class1013 || var12 instanceof Class1074)) {
+                for (Entity var12 : mc.field1338.method6835()) {
+                    if (var12 == mc.field1339 && (var12 instanceof Class1013 || var12 instanceof Class1074)) {
                         UUID var14 = !(var12 instanceof Class1013) ? ((Class1074) var12).method4933() : ((Class1013) var12).method4397();
                         if (var14 != null) {
                             if (!this.field24007.containsKey(var14)) {
@@ -273,8 +273,8 @@ public class Class5377 extends Module {
             GL11.glDisable(2896);
             RenderSystem.method27905(33986, 240.0F, 240.0F);
             TextureImpl.method36180();
-            TextureManager var10000 = field23386.getTextureManager();
-            field23386.getTextureManager();
+            TextureManager var10000 = mc.getTextureManager();
+            mc.getTextureManager();
             var10000.bindTexture(TextureManager.field1094);
         }
     }
@@ -299,9 +299,9 @@ public class Class5377 extends Module {
             var7 = var2.field30453.field39976 + " " + var2.field30453.method32149();
         }
 
-        float var8 = (float) ((double) var1.method8304() - field23386.field1295.method768().method37504().method11320() + 0.5);
-        float var9 = (float) ((double) var1.getY() - field23386.field1295.method768().method37504().method11321() + 1.0);
-        float var10 = (float) ((double) var1.method8306() - field23386.field1295.method768().method37504().method11322() + 0.5);
+        float var8 = (float) ((double) var1.method8304() - mc.field1295.method768().method37504().method11320() + 0.5);
+        float var9 = (float) ((double) var1.getY() - mc.field1295.method768().method37504().method11321() + 1.0);
+        float var10 = (float) ((double) var1.method8306() - mc.field1295.method768().method37504().method11322() + 0.5);
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -315,8 +315,8 @@ public class Class5377 extends Module {
         GL11.glPushMatrix();
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glTranslated(var8, var9 + 0.6F - 0.33333334F * (1.0F - var3), var10);
-        GL11.glRotatef(field23386.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
-        GL11.glRotatef(field23386.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(mc.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(mc.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
         GL11.glPushMatrix();
         float var14 = 0.008F;
         GL11.glScalef(-var14 * var3, -var14 * var3, -var14 * var3);
@@ -365,14 +365,14 @@ public class Class5377 extends Module {
     public void method16933(double var1, double var3, double var5, Entity var7, float var8, String var9) {
         ClientResource var12 = ResourceRegistry.field38855;
         String var13 = var9 == null ? var7.method2941().getString().replaceAll("§.", "") : var9;
-        if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996() && var13.equals(field23386.method1533().method21526())) {
+        if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996() && var13.equals(mc.method1533().method21526())) {
             var13 = Client.getInstance().getModuleManager().method14662(Class5364.class).method15978("Username");
         }
 
         if (var13.length() != 0) {
-            float var14 = (float) (var1 - field23386.field1295.method768().method37504().method11320());
-            float var15 = (float) (var3 - field23386.field1295.method768().method37504().method11321());
-            float var16 = (float) (var5 - field23386.field1295.method768().method37504().method11322());
+            float var14 = (float) (var1 - mc.field1295.method768().method37504().method11320());
+            float var15 = (float) (var3 - mc.field1295.method768().method37504().method11321());
+            float var16 = (float) (var5 - mc.field1295.method768().method37504().method11322());
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);
             GL11.glEnable(2848);
@@ -384,8 +384,8 @@ public class Class5377 extends Module {
             GL11.glPushMatrix();
             GL11.glAlphaFunc(519, 0.0F);
             GL11.glTranslated(var14, var15 + 0.6F - 0.33333334F * (1.0F - var8), var16);
-            GL11.glRotatef(field23386.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
-            GL11.glRotatef(field23386.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
+            GL11.glRotatef(mc.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
+            GL11.glRotatef(mc.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
             GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
             int var19 = this.field24008;
             if (!Client.getInstance().getFriendManager().method26997(var7)) {

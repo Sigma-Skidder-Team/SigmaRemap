@@ -19,19 +19,19 @@ public class Class4913 {
    public static final Predicate<Class4913> field22747 = var0 -> field22746.get().contains(var0);
    public static final Predicate<Class4913> field22748 = var0 -> true;
    private static final Set<Class7380> field22749 = ImmutableList.of(
-         Class8487.field36476,
-         Class8487.field36477,
-         Class8487.field36473,
-         Class8487.field36474,
-         Class8487.field36471,
-         Class8487.field36469,
-         Class8487.field36475,
-         Class8487.field36465,
-         Class8487.field36470,
-         Class8487.field36467,
-         Class8487.field36464,
-         Class8487.field36463,
-         new Class3209[]{Class8487.field36468, Class8487.field36472, Class8487.field36462, Class8487.field36466}
+         Blocks.field36476,
+         Blocks.field36477,
+         Blocks.field36473,
+         Blocks.field36474,
+         Blocks.field36471,
+         Blocks.field36469,
+         Blocks.field36475,
+         Blocks.field36465,
+         Blocks.field36470,
+         Blocks.field36467,
+         Blocks.field36464,
+         Blocks.field36463,
+         new Block[]{Blocks.field36468, Blocks.field36472, Blocks.field36462, Blocks.field36466}
       )
       .stream()
       .<Class7380>flatMap(var0 -> var0.method11577().method35392().stream())
@@ -39,26 +39,26 @@ public class Class4913 {
       .collect(ImmutableSet.toImmutableSet());
    private static final Map<Class7380, Class4913> field22750 = Maps.newHashMap();
    public static final Class4913 field22751 = method15185("unemployed", ImmutableSet.of(), 1, field22747, 1);
-   public static final Class4913 field22752 = method15184("armorer", method15180(Class8487.field37057), 1, 1);
-   public static final Class4913 field22753 = method15184("butcher", method15180(Class8487.field37056), 1, 1);
-   public static final Class4913 field22754 = method15184("cartographer", method15180(Class8487.field37058), 1, 1);
-   public static final Class4913 field22755 = method15184("cleric", method15180(Class8487.field36647), 1, 1);
-   public static final Class4913 field22756 = method15184("farmer", method15180(Class8487.field37115), 1, 1);
-   public static final Class4913 field22757 = method15184("fisherman", method15180(Class8487.field37055), 1, 1);
-   public static final Class4913 field22758 = method15184("fletcher", method15180(Class8487.field37059), 1, 1);
-   public static final Class4913 field22759 = method15184("leatherworker", method15180(Class8487.field36648), 1, 1);
-   public static final Class4913 field22760 = method15184("librarian", method15180(Class8487.field37061), 1, 1);
-   public static final Class4913 field22761 = method15184("mason", method15180(Class8487.field37063), 1, 1);
+   public static final Class4913 field22752 = method15184("armorer", method15180(Blocks.field37057), 1, 1);
+   public static final Class4913 field22753 = method15184("butcher", method15180(Blocks.field37056), 1, 1);
+   public static final Class4913 field22754 = method15184("cartographer", method15180(Blocks.field37058), 1, 1);
+   public static final Class4913 field22755 = method15184("cleric", method15180(Blocks.field36647), 1, 1);
+   public static final Class4913 field22756 = method15184("farmer", method15180(Blocks.field37115), 1, 1);
+   public static final Class4913 field22757 = method15184("fisherman", method15180(Blocks.field37055), 1, 1);
+   public static final Class4913 field22758 = method15184("fletcher", method15180(Blocks.field37059), 1, 1);
+   public static final Class4913 field22759 = method15184("leatherworker", method15180(Blocks.field36648), 1, 1);
+   public static final Class4913 field22760 = method15184("librarian", method15180(Blocks.field37061), 1, 1);
+   public static final Class4913 field22761 = method15184("mason", method15180(Blocks.field37063), 1, 1);
    public static final Class4913 field22762 = method15184("nitwit", ImmutableSet.of(), 1, 1);
-   public static final Class4913 field22763 = method15184("shepherd", method15180(Class8487.field37054), 1, 1);
-   public static final Class4913 field22764 = method15184("toolsmith", method15180(Class8487.field37062), 1, 1);
-   public static final Class4913 field22765 = method15184("weaponsmith", method15180(Class8487.field37060), 1, 1);
+   public static final Class4913 field22763 = method15184("shepherd", method15180(Blocks.field37054), 1, 1);
+   public static final Class4913 field22764 = method15184("toolsmith", method15180(Blocks.field37062), 1, 1);
+   public static final Class4913 field22765 = method15184("weaponsmith", method15180(Blocks.field37060), 1, 1);
    public static final Class4913 field22766 = method15184("home", field22749, 1, 1);
-   public static final Class4913 field22767 = method15184("meeting", method15180(Class8487.field37064), 32, 6);
-   public static final Class4913 field22768 = method15184("beehive", method15180(Class8487.field37118), 0, 1);
-   public static final Class4913 field22769 = method15184("bee_nest", method15180(Class8487.field37117), 0, 1);
-   public static final Class4913 field22770 = method15184("nether_portal", method15180(Class8487.field36588), 0, 1);
-   public static final Class4913 field22771 = method15184("lodestone", method15180(Class8487.field37129), 0, 1);
+   public static final Class4913 field22767 = method15184("meeting", method15180(Blocks.field37064), 32, 6);
+   public static final Class4913 field22768 = method15184("beehive", method15180(Blocks.field37118), 0, 1);
+   public static final Class4913 field22769 = method15184("bee_nest", method15180(Blocks.field37117), 0, 1);
+   public static final Class4913 field22770 = method15184("nether_portal", method15180(Blocks.field36588), 0, 1);
+   public static final Class4913 field22771 = method15184("lodestone", method15180(Blocks.field37129), 0, 1);
    public static final Set<Class7380> field22772 = new ObjectOpenHashSet(field22750.keySet());
    private final String field22773;
    private final Set<Class7380> field22774;
@@ -66,7 +66,7 @@ public class Class4913 {
    private final Predicate<Class4913> field22776;
    private final int field22777;
 
-   private static Set<Class7380> method15180(Class3209 var0) {
+   private static Set<Class7380> method15180(Block var0) {
       return ImmutableSet.copyOf(var0.method11577().method35392());
    }
 

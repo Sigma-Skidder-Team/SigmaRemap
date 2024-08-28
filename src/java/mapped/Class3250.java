@@ -10,11 +10,11 @@ import java.util.Optional;
 public class Class3250 extends Class3198 implements Class3245 {
    public static final Class8552<Class82> field18713 = Class8820.field39764;
    public static final Class8551 field18714 = Class8820.field39701;
-   public static final Class6408 field18715 = Class3209.method11539(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);
-   public static final Class6408 field18716 = Class3209.method11539(0.0, 0.0, 0.0, 3.0, 3.0, 3.0);
-   public static final Class6408 field18717 = Class3209.method11539(0.0, 0.0, 13.0, 3.0, 3.0, 16.0);
-   public static final Class6408 field18718 = Class3209.method11539(13.0, 0.0, 0.0, 16.0, 3.0, 3.0);
-   public static final Class6408 field18719 = Class3209.method11539(13.0, 0.0, 13.0, 16.0, 3.0, 16.0);
+   public static final Class6408 field18715 = Block.method11539(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);
+   public static final Class6408 field18716 = Block.method11539(0.0, 0.0, 0.0, 3.0, 3.0, 3.0);
+   public static final Class6408 field18717 = Block.method11539(0.0, 0.0, 13.0, 3.0, 3.0, 16.0);
+   public static final Class6408 field18718 = Block.method11539(13.0, 0.0, 0.0, 16.0, 3.0, 3.0);
+   public static final Class6408 field18719 = Block.method11539(13.0, 0.0, 13.0, 16.0, 3.0, 16.0);
    public static final Class6408 field18720 = Class8022.method27432(field18715, field18716, field18718);
    public static final Class6408 field18721 = Class8022.method27432(field18715, field18717, field18719);
    public static final Class6408 field18722 = Class8022.method27432(field18715, field18716, field18717);
@@ -127,7 +127,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       } else {
          return var3.method23448(this) && var3.method23463(field18713) != var1.method23463(field18713)
             ? var1.method23465(field18714, var3.<Boolean>method23463(field18714))
-            : Class8487.field36387.method11579();
+            : Blocks.AIR.method11579();
       }
    }
 
@@ -143,8 +143,8 @@ public class Class3250 extends Class3198 implements Class3245 {
             BlockPos var8 = var2.method8349(method11682(var7, var3.<Direction>method23463(field18484)));
             Class7380 var9 = var1.method6738(var8);
             if (var9.method23383() == this && var9.<Class82>method23463(field18713) == Class82.field205) {
-               var1.method6725(var8, Class8487.field36387.method11579(), 35);
-               var1.method6869(var4, 2001, var8, Class3209.method11535(var9));
+               var1.method6725(var8, Blocks.AIR.method11579(), 35);
+               var1.method6869(var4, 2001, var8, Block.method11535(var9));
             }
          }
       }
@@ -256,7 +256,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18484, field18713, field18714);
    }
 
@@ -271,7 +271,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       if (!var1.field9020) {
          BlockPos var8 = var2.method8349(var3.<Direction>method23463(field18484));
          var1.method6725(var8, var3.method23465(field18713, Class82.field205), 3);
-         var1.method6964(var2, Class8487.field36387);
+         var1.method6964(var2, Blocks.AIR);
          var3.method23424(var1, var2, 3);
       }
    }

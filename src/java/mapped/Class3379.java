@@ -2,7 +2,7 @@ package mapped;
 
 public class Class3379 extends Class3231 {
    private static String[] field18979;
-   public static final Class6408 field18980 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+   public static final Class6408 field18980 = Block.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
 
    public Class3379(Class7929 var1) {
       super(var1);
@@ -97,7 +97,7 @@ public class Class3379 extends Class3231 {
 
    private static void method11978(Entity var0, int var1) {
       if (var0.field5024.field9020) {
-         Class7380 var4 = Class8487.field37119.method11579();
+         Class7380 var4 = Blocks.field37119.method11579();
 
          for (int var5 = 0; var5 < var1; var5++) {
             var0.field5024.method6746(new Class7439(Class7940.field34051, var4), var0.getPosX(), var0.getPosY(), var0.getPosZ(), 0.0, 0.0, 0.0);

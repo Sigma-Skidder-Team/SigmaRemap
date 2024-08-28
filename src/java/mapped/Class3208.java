@@ -2,12 +2,12 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class3208 extends Class3209 implements Class3207 {
+public class Class3208 extends Block implements Class3207 {
    private static String[] field18604;
    public static final Class8552<Class86> field18605 = Class8820.field39770;
    public static final Class8551 field18606 = Class8820.field39710;
-   public static final Class6408 field18607 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
-   public static final Class6408 field18608 = Class3209.method11539(0.0, 8.0, 0.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field18607 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+   public static final Class6408 field18608 = Block.method11539(0.0, 8.0, 0.0, 16.0, 16.0, 16.0);
 
    public Class3208(Class7929 var1) {
       super(var1);
@@ -20,7 +20,7 @@ public class Class3208 extends Class3209 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18605, field18606);
    }
 

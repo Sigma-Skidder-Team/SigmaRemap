@@ -57,7 +57,7 @@ public class Class968 extends Class944 implements Class935 {
    @Override
    public void method3647() {
       Class7380 var3 = this.method3775();
-      if (var3.method23448(Class8487.field36711) || var3.method23448(Class8487.field36712)) {
+      if (var3.method23448(Blocks.field36711) || var3.method23448(Blocks.field36712)) {
          if (!this.field5324.method6780(this.field5325)) {
             this.field5428 = false;
          } else {

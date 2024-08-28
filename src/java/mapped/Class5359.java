@@ -51,7 +51,7 @@ public class Class5359 extends Module {
 
     @EventTarget
     private void method16854(Class4415 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             String var4 = this.method15978("Animation");
             String var5 = this.method15978("Outline");
             this.method16855();

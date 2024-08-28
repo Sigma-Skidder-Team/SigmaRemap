@@ -18,10 +18,10 @@ public class Class7565 implements Class7562 {
    }
 
    @Override
-   public Predicate<Class7380> method24750(Class9348<Class3209, Class7380> var1) {
+   public Predicate<Class7380> method24750(Class9348<Block, Class7380> var1) {
       Class8550 var4 = var1.method35396(this.field32495);
       if (var4 == null) {
-         throw new RuntimeException(String.format("Unknown property '%s' on '%s'", this.field32495, ((Class3209)var1.method35394()).toString()));
+         throw new RuntimeException(String.format("Unknown property '%s' on '%s'", this.field32495, ((Block)var1.method35394()).toString()));
       } else {
          String var5 = this.field32496;
          boolean var6 = !var5.isEmpty() && var5.charAt(0) == '!';
@@ -42,20 +42,20 @@ public class Class7565 implements Class7562 {
             return !var6 ? var9 : var9.negate();
          } else {
             throw new RuntimeException(
-               String.format("Empty value '%s' for property '%s' on '%s'", this.field32496, this.field32495, ((Class3209)var1.method35394()).toString())
+               String.format("Empty value '%s' for property '%s' on '%s'", this.field32496, this.field32495, ((Block)var1.method35394()).toString())
             );
          }
       }
    }
 
-   private Predicate<Class7380> method24761(Class9348<Class3209, Class7380> var1, Class8550<?> var2, String var3) {
+   private Predicate<Class7380> method24761(Class9348<Block, Class7380> var1, Class8550<?> var2, String var3) {
       Optional var6 = var2.method30476(var3);
       if (var6.isPresent()) {
          return var2x -> var2x.method23463(var2).equals(var6.get());
       } else {
          throw new RuntimeException(
             String.format(
-               "Unknown value '%s' for property '%s' on '%s' in '%s'", var3, this.field32495, ((Class3209)var1.method35394()).toString(), this.field32496
+               "Unknown value '%s' for property '%s' on '%s' in '%s'", var3, this.field32495, ((Block)var1.method35394()).toString(), this.field32496
             )
          );
       }

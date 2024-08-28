@@ -8,7 +8,7 @@ public interface Class1660 extends Class1678, Class1661 {
       return this.method6788().method20034();
    }
 
-   Class6802<Class3209> method6860();
+   Class6802<Block> method6860();
 
    Class6802<Class7631> method6861();
 
@@ -29,7 +29,7 @@ public interface Class1660 extends Class1678, Class1661 {
 
    Random method6814();
 
-   default void method6964(BlockPos var1, Class3209 var2) {
+   default void method6964(BlockPos var1, Block var2) {
    }
 
    void method6742(PlayerEntity var1, BlockPos var2, Class9455 var3, Class2266 var4, float var5, float var6);

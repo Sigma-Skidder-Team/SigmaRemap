@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3385 extends Class3209 implements Class3196 {
+public class Class3385 extends Block implements Class3196 {
    private static String[] field18992;
 
    public Class3385(Class7929 var1) {
@@ -36,11 +36,11 @@ public class Class3385 extends Class3209 implements Class3196 {
 
       for (BlockPos var10 : BlockPos.method8359(var3.method8336(-1, -1, -1), var3.method8336(1, 1, 1))) {
          Class7380 var11 = var1.method6738(var10);
-         if (var11.method23448(Class8487.field37074)) {
+         if (var11.method23448(Blocks.field37074)) {
             var8 = true;
          }
 
-         if (var11.method23448(Class8487.field37083)) {
+         if (var11.method23448(Blocks.field37083)) {
             var7 = true;
          }
 
@@ -50,13 +50,13 @@ public class Class3385 extends Class3209 implements Class3196 {
       }
 
       if (var8 && var7) {
-         var1.method6725(var3, !var2.nextBoolean() ? Class8487.field37083.method11579() : Class8487.field37074.method11579(), 3);
+         var1.method6725(var3, !var2.nextBoolean() ? Blocks.field37083.method11579() : Blocks.field37074.method11579(), 3);
       } else if (!var8) {
          if (var7) {
-            var1.method6725(var3, Class8487.field37083.method11579(), 3);
+            var1.method6725(var3, Blocks.field37083.method11579(), 3);
          }
       } else {
-         var1.method6725(var3, Class8487.field37074.method11579(), 3);
+         var1.method6725(var3, Blocks.field37074.method11579(), 3);
       }
    }
 }

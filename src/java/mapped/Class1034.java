@@ -124,7 +124,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    public static boolean method4615(Class8992<Class1034> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return !var1.method6738(var3.method8313()).method23448(Class8487.field36891);
+      return !var1.method6738(var3.method8313()).method23448(Blocks.field36891);
    }
 
    @Nullable

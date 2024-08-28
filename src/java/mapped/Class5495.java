@@ -7,12 +7,12 @@ public class Class5495 implements Packet<Class5116> {
    private BlockPos field24392;
    private int field24393;
    private int field24394;
-   private Class3209 field24395;
+   private Block field24395;
 
    public Class5495() {
    }
 
-   public Class5495(BlockPos var1, Class3209 var2, int var3, int var4) {
+   public Class5495(BlockPos var1, Block var2, int var3, int var4) {
       this.field24392 = var1;
       this.field24395 = var2;
       this.field24393 = var3;
@@ -51,7 +51,7 @@ public class Class5495 implements Packet<Class5116> {
       return this.field24394;
    }
 
-   public Class3209 method17281() {
+   public Block method17281() {
       return this.field24395;
    }
 }

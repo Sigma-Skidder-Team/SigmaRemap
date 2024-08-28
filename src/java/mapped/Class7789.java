@@ -183,17 +183,17 @@ public class Class7789 {
    }
 
    public static int method25834() {
-      Class7380 var2 = Class3209.method11536(1);
+      Class7380 var2 = Block.method11536(1);
       return method25837(var2);
    }
 
    public static int method25835() {
-      Class7380 var2 = Class3209.method11536(5);
+      Class7380 var2 = Block.method11536(5);
       return method25837(var2);
    }
 
    public static int method25836() {
-      Class7380 var2 = Class3209.method11536(3);
+      Class7380 var2 = Block.method11536(3);
       return method25837(var2);
    }
 

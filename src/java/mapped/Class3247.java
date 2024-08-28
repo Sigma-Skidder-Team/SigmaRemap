@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 
 public abstract class Class3247 extends Class3198 {
-   public static final Class6408 field18707 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+   public static final Class6408 field18707 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
    public static final Class8551 field18708 = Class8820.field39704;
 
    public Class3247(Class7929 var1) {
@@ -51,7 +51,7 @@ public abstract class Class3247 extends Class3198 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var1.method23443(var2, var3)) {
          Class944 var9 = !this.method11998() ? null : var2.method6759(var3);
          method11555(var1, var2, var3, var9);
@@ -98,7 +98,7 @@ public abstract class Class3247 extends Class3198 {
       int var8 = var1.method6779(var7, var6);
       if (var8 < 15) {
          Class7380 var9 = var1.method6738(var7);
-         return Math.max(var8, !var9.method23448(Class8487.field36535) ? 0 : var9.<Integer>method23463(Class3222.field18651));
+         return Math.max(var8, !var9.method23448(Blocks.field36535) ? 0 : var9.<Integer>method23463(Class3222.field18651));
       } else {
          return var8;
       }
@@ -115,8 +115,8 @@ public abstract class Class3247 extends Class3198 {
       Class7380 var6 = var1.method6738(var2);
       if (!this.method11671(var6)) {
          return 0;
-      } else if (!var6.method23448(Class8487.field36721)) {
-         return !var6.method23448(Class8487.field36535) ? var1.method7010(var2, var3) : var6.<Integer>method23463(Class3222.field18651);
+      } else if (!var6.method23448(Blocks.field36721)) {
+         return !var6.method23448(Blocks.field36535) ? var1.method7010(var2, var3) : var6.<Integer>method23463(Class3222.field18651);
       } else {
          return 15;
       }

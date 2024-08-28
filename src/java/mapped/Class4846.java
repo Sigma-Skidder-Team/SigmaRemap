@@ -46,7 +46,7 @@ public class Class4846 implements Class4843<Class920> {
 
    @Override
    public Class8848 method14971() {
-      return new Class8848(Class8487.field37062);
+      return new Class8848(Blocks.field37062);
    }
 
    @Override

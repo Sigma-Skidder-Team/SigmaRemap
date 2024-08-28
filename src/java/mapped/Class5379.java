@@ -20,7 +20,7 @@ public class Class5379 extends Module {
     @Override
     public void method15965() {
         Class9567.method37090(0.28F);
-        field23386.field1284.field40360 = 1.0F;
+        mc.field1284.field40360 = 1.0F;
     }
 
     @EventTarget
@@ -33,7 +33,7 @@ public class Class5379 extends Module {
                 var4 = 1.15F + (float) Class9567.method37078() * 0.04F;
             }
 
-            if (field23386.field1299.field44634.field13071) {
+            if (mc.field1299.field44634.field13071) {
                 var4 /= 1.3F;
             }
 

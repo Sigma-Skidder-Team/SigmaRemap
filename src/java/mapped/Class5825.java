@@ -20,7 +20,7 @@ public class Class5825 extends Class5823 {
 
    @Override
    public boolean method18191(Class7380 var1) {
-      return var1.method23448(Class8487.field37062);
+      return var1.method23448(Blocks.field37062);
    }
 
    @Override

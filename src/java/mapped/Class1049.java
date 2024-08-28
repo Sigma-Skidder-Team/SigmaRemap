@@ -25,7 +25,7 @@ public abstract class Class1049 extends Class1047 {
    }
 
    public static boolean method4792(Class8992<? extends Class1049> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6738(var3).method23448(Class8487.field36413) && var1.method6738(var3.method8311()).method23448(Class8487.field36413);
+      return var1.method6738(var3).method23448(Blocks.WATER) && var1.method6738(var3.method8311()).method23448(Blocks.WATER);
    }
 
    @Override

@@ -18,21 +18,21 @@ public class Class5302 extends Module {
 
     @EventTarget
     private void method16657(Class4415 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (!Minecraft.getInstance().field1299.field44662) {
                 byte var4 = 5;
                 byte var5 = 60;
                 int var6 = !Minecraft.getInstance().field1299.field44664 ? 0 : 60;
-                List<Integer> var7 = this.method16660((int) this.method16662(field23386.field1339.field5031), var4);
+                List<Integer> var7 = this.method16660((int) this.method16662(mc.field1339.field5031), var4);
                 int var8 = (Integer) var7.get(var4);
-                if (var8 == 0 && this.method16662(field23386.field1339.field5031) > 345.0F) {
+                if (var8 == 0 && this.method16662(mc.field1339.field5031) > 345.0F) {
                     var8 = 360;
                 }
 
-                float var9 = 7.0F + this.method16662(field23386.field1339.field5031) - (float) var8;
+                float var9 = 7.0F + this.method16662(mc.field1339.field5031) - (float) var8;
                 double var10 = var9 / 15.0F * (float) var5;
                 Class3192.method11449(
-                        (float) (field23386.field1283.method8043() / 2) - (float) (var4 * var5) * 1.5F,
+                        (float) (mc.field1283.method8043() / 2) - (float) (var4 * var5) * 1.5F,
                         -40.0F,
                         (float) (var4 * var5 * 2) * 1.5F,
                         (float) (220 + var6),
@@ -46,7 +46,7 @@ public class Class5302 extends Module {
                     double var15 = Math.max(0.0, Math.min(((double) (var12 * var5) - var10) / (double) ((float) (var5 * var4)), 1.0));
                     double var17 = Math.max(0.0, Math.min(2.25 - ((double) (var12 * var5) - var10) / (double) ((float) (var5 * var4)), 1.0));
                     float var19 = (float) Math.min(var15, var17);
-                    this.method16658(field23386.field1283.method8043() / 2 + var12 * var5 - (int) var10 - (var4 + 1) * var5 - 2, 30 + var6, var5, var14, var19 * 0.8F);
+                    this.method16658(mc.field1283.method8043() / 2 + var12 * var5 - (int) var10 - (var4 + 1) * var5 - 2, 30 + var6, var5, var14, var19 * 0.8F);
                 }
             }
         }

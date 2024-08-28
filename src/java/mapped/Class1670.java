@@ -109,7 +109,7 @@ public interface Class1670 extends Class1665, Class1671 {
 
    Stream<BlockPos> method7088();
 
-   Class6802<Class3209> method7089();
+   Class6802<Block> method7089();
 
    Class6802<Class7631> method7090();
 

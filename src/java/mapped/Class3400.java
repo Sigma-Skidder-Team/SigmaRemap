@@ -2,11 +2,11 @@ package mapped;
 
 import com.google.common.base.Predicates;
 
-public class Class3400 extends Class3209 {
+public class Class3400 extends Block {
    public static final Class8553 field19053 = Class3198.field18484;
    public static final Class8551 field19054 = Class8820.field39689;
-   public static final Class6408 field19055 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 13.0, 16.0);
-   public static final Class6408 field19056 = Class3209.method11539(4.0, 13.0, 4.0, 12.0, 16.0, 12.0);
+   public static final Class6408 field19055 = Block.method11539(0.0, 0.0, 0.0, 16.0, 13.0, 16.0);
+   public static final Class6408 field19056 = Block.method11539(4.0, 13.0, 4.0, 12.0, 16.0, 12.0);
    public static final Class6408 field19057 = Class8022.method27431(field19055, field19056);
    private static Class9803 field19058;
 
@@ -51,7 +51,7 @@ public class Class3400 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19053, field19054);
    }
 
@@ -63,7 +63,7 @@ public class Class3400 extends Class3209 {
             .method37707(
                '^',
                Class9632.method37552(
-                  Class166.method497(Class8487.field36650)
+                  Class166.method497(Blocks.field36650)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.SOUTH))
                )
@@ -71,7 +71,7 @@ public class Class3400 extends Class3209 {
             .method37707(
                '>',
                Class9632.method37552(
-                  Class166.method497(Class8487.field36650)
+                  Class166.method497(Blocks.field36650)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.WEST))
                )
@@ -79,7 +79,7 @@ public class Class3400 extends Class3209 {
             .method37707(
                'v',
                Class9632.method37552(
-                  Class166.method497(Class8487.field36650)
+                  Class166.method497(Blocks.field36650)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.NORTH))
                )
@@ -87,7 +87,7 @@ public class Class3400 extends Class3209 {
             .method37707(
                '<',
                Class9632.method37552(
-                  Class166.method497(Class8487.field36650)
+                  Class166.method497(Blocks.field36650)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.EAST))
                )

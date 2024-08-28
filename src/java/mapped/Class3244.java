@@ -6,12 +6,12 @@ import java.util.Random;
 
 public class Class3244 extends Class3241 implements Class3207 {
    private static String[] field18696;
-   public static final Class6408 field18697 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
+   public static final Class6408 field18697 = Block.method11539(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
    public static final Class8551 field18698 = Class8820.field39699;
    public static final Class8551 field18699 = Class8820.field39706;
    public static final Class8551 field18700 = Class8820.field39710;
    public static final Class8553 field18701 = Class8820.field39722;
-   private static final Class6408 field18702 = Class3209.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
+   private static final Class6408 field18702 = Block.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
    private final boolean field18703;
    private final int field18704;
 
@@ -95,7 +95,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    private boolean method11651(Class7380 var1) {
-      return var1.method23448(Class8487.field36777);
+      return var1.method23448(Blocks.field36777);
    }
 
    @Override
@@ -249,7 +249,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18698, field18699, field18700, field18701);
    }
 

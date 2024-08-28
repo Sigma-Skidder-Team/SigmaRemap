@@ -18,7 +18,7 @@ public class Class7439 implements Class7436 {
 
    @Override
    public void method24009(PacketBuffer var1) {
-      var1.writeVarInt(Class3209.field18610.method9171(this.field32012));
+      var1.writeVarInt(Block.field18610.method9171(this.field32012));
    }
 
    @Override

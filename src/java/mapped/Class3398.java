@@ -9,7 +9,7 @@ public class Class3398 extends Class3397 {
 
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !this.method11492(var1, var4, var5) ? Class8487.field36387.method11579() : this.method11579();
+      return !this.method11492(var1, var4, var5) ? Blocks.AIR.method11579() : this.method11579();
    }
 
    @Override
@@ -17,7 +17,7 @@ public class Class3398 extends Class3397 {
       return method12014(var2.method6738(var3.method8313()).method23383());
    }
 
-   public static boolean method12014(Class3209 var0) {
+   public static boolean method12014(Block var0) {
       return var0.method11540(Class7645.field32807);
    }
 

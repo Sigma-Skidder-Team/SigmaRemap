@@ -211,7 +211,7 @@ public class Class9037 {
          for (int var10 = 0; var10 < var2; var10++) {
             for (int var11 = 0; var11 < var4; var11++) {
                BlockPos var12 = new BlockPos(var9.method8304() + var10, var9.getY() + 1, var9.method8306() + var11);
-               Class3209 var13 = Class8487.field36394;
+               Block var13 = Blocks.field36394;
                Class164 var14 = new Class164(var13.method11579(), Collections.EMPTY_SET, (Class39)null);
                var14.method496(var7, var12, 2);
             }

@@ -74,11 +74,11 @@ public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
    }
 
    private ResourceLocation method852(Class7380 var1) {
-      Class3209 var4 = var1.method23383();
-      if (var4 == Class8487.field36520 && field926) {
+      Block var4 = var1.method23383();
+      if (var4 == Blocks.field36520 && field926) {
          return field924;
       } else {
-         return var4 == Class8487.field36519 && field927 ? field925 : null;
+         return var4 == Blocks.field36519 && field927 ? field925 : null;
       }
    }
 

@@ -56,28 +56,28 @@ public class Class5822 extends Class5812 {
                for (int var7 = -1; var7 <= 1; var7++) {
                   for (int var8 = -1; var8 <= 1; var8++) {
                      if ((var7 != 0 || var8 != 0) && var2.method7007(var3.method8336(var8, 0, var7)) && var2.method7007(var3.method8336(var8, 1, var7))) {
-                        if (var2.method6738(var3.method8336(var8 * 2, 0, var7 * 2)).method23448(Class8487.field36525)) {
+                        if (var2.method6738(var3.method8336(var8 * 2, 0, var7 * 2)).method23448(Blocks.field36525)) {
                            var6++;
                         }
 
-                        if (var2.method6738(var3.method8336(var8 * 2, 1, var7 * 2)).method23448(Class8487.field36525)) {
+                        if (var2.method6738(var3.method8336(var8 * 2, 1, var7 * 2)).method23448(Blocks.field36525)) {
                            var6++;
                         }
 
                         if (var8 != 0 && var7 != 0) {
-                           if (var2.method6738(var3.method8336(var8 * 2, 0, var7)).method23448(Class8487.field36525)) {
+                           if (var2.method6738(var3.method8336(var8 * 2, 0, var7)).method23448(Blocks.field36525)) {
                               var6++;
                            }
 
-                           if (var2.method6738(var3.method8336(var8 * 2, 1, var7)).method23448(Class8487.field36525)) {
+                           if (var2.method6738(var3.method8336(var8 * 2, 1, var7)).method23448(Blocks.field36525)) {
                               var6++;
                            }
 
-                           if (var2.method6738(var3.method8336(var8, 0, var7 * 2)).method23448(Class8487.field36525)) {
+                           if (var2.method6738(var3.method8336(var8, 0, var7 * 2)).method23448(Blocks.field36525)) {
                               var6++;
                            }
 
-                           if (var2.method6738(var3.method8336(var8, 1, var7 * 2)).method23448(Class8487.field36525)) {
+                           if (var2.method6738(var3.method8336(var8, 1, var7 * 2)).method23448(Blocks.field36525)) {
                               var6++;
                            }
                         }
@@ -205,7 +205,7 @@ public class Class5822 extends Class5812 {
 
    @Override
    public boolean method18103(PlayerEntity var1) {
-      return method18121(this.field25506, var1, Class8487.field36646);
+      return method18121(this.field25506, var1, Blocks.field36646);
    }
 
    @Override

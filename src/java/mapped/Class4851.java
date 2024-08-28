@@ -9,7 +9,7 @@ public class Class4851 extends Class4847 {
 
    @Override
    public Class8848 method14971() {
-      return new Class8848(Class8487.field37057);
+      return new Class8848(Blocks.field37057);
    }
 
    @Override

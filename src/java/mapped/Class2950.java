@@ -100,13 +100,13 @@ public class Class2950 extends Class2898<Class4705> {
             double var17 = this.method11299(var15, var16, var8, var13, var14, var6);
             if (var17 < 0.0) {
                BlockPos var19 = var3.method8336(var15, var2, var16);
-               Class3209 var20 = var4.method6738(var19).method23383();
-               if (this.method11303(var20) || var20 == Class8487.field36573) {
+               Block var20 = var4.method6738(var19).method23383();
+               if (this.method11303(var20) || var20 == Blocks.SNOW_BLOCK) {
                   if (!var5) {
-                     this.method11217(var4, var19, Class8487.field36387.method11579());
+                     this.method11217(var4, var19, Blocks.AIR.method11579());
                      this.method11294(var4, var19);
                   } else {
-                     this.method11217(var4, var19, Class8487.field36413.method11579());
+                     this.method11217(var4, var19, Blocks.WATER.method11579());
                   }
                }
             }
@@ -115,8 +115,8 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private void method11294(Class1660 var1, BlockPos var2) {
-      if (var1.method6738(var2.method8311()).method23448(Class8487.field36571)) {
-         this.method11217(var1, var2.method8311(), Class8487.field36387.method11579());
+      if (var1.method6738(var2.method8311()).method23448(Blocks.SNOW)) {
+         this.method11217(var1, var2.method8311(), Blocks.AIR.method11579());
       }
    }
 
@@ -153,13 +153,13 @@ public class Class2950 extends Class2898<Class4705> {
    private void method11296(BlockPos var1, Class1660 var2, Random var3, int var4, int var5, boolean var6, boolean var7, Class7380 var8) {
       Class7380 var11 = var2.method6738(var1);
       if (var11.method23384() == Class8649.field38932
-         || var11.method23448(Class8487.field36573)
-         || var11.method23448(Class8487.field36572)
-         || var11.method23448(Class8487.field36413)) {
+         || var11.method23448(Blocks.SNOW_BLOCK)
+         || var11.method23448(Blocks.ICE)
+         || var11.method23448(Blocks.WATER)) {
          boolean var12 = !var6 || var3.nextDouble() > 0.05;
          int var13 = !var6 ? 2 : 3;
-         if (var7 && !var11.method23448(Class8487.field36413) && (double)var4 <= (double)var3.nextInt(Math.max(1, var5 / var13)) + (double)var5 * 0.6 && var12) {
-            this.method11217(var2, var1, Class8487.field36573.method11579());
+         if (var7 && !var11.method23448(Blocks.WATER) && (double)var4 <= (double)var3.nextInt(Math.max(1, var5 / var13)) + (double)var5 * 0.6 && var12) {
+            this.method11217(var2, var1, Blocks.SNOW_BLOCK.method11579());
          } else {
             this.method11217(var2, var1, var8);
          }
@@ -209,8 +209,8 @@ public class Class2950 extends Class2898<Class4705> {
       return Class9679.method37773(var8 / 2.0F);
    }
 
-   private boolean method11303(Class3209 var1) {
-      return var1 == Class8487.field36796 || var1 == Class8487.field36573 || var1 == Class8487.field37006;
+   private boolean method11303(Block var1) {
+      return var1 == Blocks.field36796 || var1 == Blocks.SNOW_BLOCK || var1 == Blocks.field37006;
    }
 
    private boolean method11304(Class1665 var1, BlockPos var2) {
@@ -224,13 +224,13 @@ public class Class2950 extends Class2898<Class4705> {
          for (int var11 = -var9; var11 <= var9; var11++) {
             for (int var12 = 0; var12 <= var4; var12++) {
                BlockPos var13 = var2.method8336(var10, var12, var11);
-               Class3209 var14 = var1.method6738(var13).method23383();
-               if (this.method11303(var14) || var14 == Class8487.field36571) {
+               Block var14 = var1.method6738(var13).method23383();
+               if (this.method11303(var14) || var14 == Blocks.SNOW) {
                   if (this.method11304(var1, var13)) {
-                     this.method11217(var1, var13, Class8487.field36387.method11579());
-                     this.method11217(var1, var13.method8311(), Class8487.field36387.method11579());
+                     this.method11217(var1, var13, Blocks.AIR.method11579());
+                     this.method11217(var1, var13.method8311(), Blocks.AIR.method11579());
                   } else if (this.method11303(var14)) {
-                     Class3209[] var15 = new Class3209[]{
+                     Block[] var15 = new Block[]{
                         var1.method6738(var13.method8345()).method23383(),
                         var1.method6738(var13.method8347()).method23383(),
                         var1.method6738(var13.method8341()).method23383(),
@@ -238,14 +238,14 @@ public class Class2950 extends Class2898<Class4705> {
                      };
                      int var16 = 0;
 
-                     for (Class3209 var20 : var15) {
+                     for (Block var20 : var15) {
                         if (!this.method11303(var20)) {
                            var16++;
                         }
                      }
 
                      if (var16 >= 3) {
-                        this.method11217(var1, var13, Class8487.field36387.method11579());
+                        this.method11217(var1, var13, Blocks.AIR.method11579());
                      }
                   }
                }

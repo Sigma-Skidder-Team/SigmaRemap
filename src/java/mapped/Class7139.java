@@ -13,7 +13,7 @@ public abstract class Class7139 {
    public abstract void method22269(Class1658 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6);
 
    public void method22273(Class1681 var1, BlockPos var2, Class8551 var3, Set<BlockPos> var4, Class9764 var5) {
-      this.method22274(var1, var2, Class8487.field36636.method11579().method23465(var3, Boolean.valueOf(true)), var4, var5);
+      this.method22274(var1, var2, Blocks.field36636.method11579().method23465(var3, Boolean.valueOf(true)), var4, var5);
    }
 
    public void method22274(Class1681 var1, BlockPos var2, Class7380 var3, Set<BlockPos> var4, Class9764 var5) {

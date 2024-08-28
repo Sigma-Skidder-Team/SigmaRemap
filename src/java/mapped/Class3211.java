@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3211 extends Class3209 {
+public class Class3211 extends Block {
    private static String[] field18618;
    public static final Class8554 field18619 = Class8820.field39741;
    private final Class3393 field18620;
@@ -34,8 +34,8 @@ public class Class3211 extends Class3209 {
             boolean var9 = false;
             boolean var10 = false;
             Class7380 var11 = var2.method6738(var3.method8313());
-            Class3209 var12 = var11.method23383();
-            if (var12 == Class8487.field36651) {
+            Block var12 = var11.method23383();
+            if (var12 == Blocks.field36651) {
                var9 = true;
             } else if (var12 != this.field18620) {
                if (var11.method23393()) {
@@ -45,9 +45,9 @@ public class Class3211 extends Class3209 {
                int var13 = 1;
 
                for (int var14 = 0; var14 < 4; var14++) {
-                  Class3209 var15 = var2.method6738(var3.method8340(var13 + 1)).method23383();
+                  Block var15 = var2.method6738(var3.method8340(var13 + 1)).method23383();
                   if (var15 != this.field18620) {
-                     if (var15 == Class8487.field36651) {
+                     if (var15 == Blocks.field36651) {
                         var10 = true;
                      }
                      break;
@@ -125,7 +125,7 @@ public class Class3211 extends Class3209 {
    @Override
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
       Class7380 var6 = var2.method6738(var3.method8313());
-      if (var6.method23383() != this.field18620 && !var6.method23448(Class8487.field36651)) {
+      if (var6.method23383() != this.field18620 && !var6.method23448(Blocks.field36651)) {
          if (var6.method23393()) {
             boolean var7 = false;
 
@@ -154,17 +154,17 @@ public class Class3211 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18619);
    }
 
    public static void method11593(Class1660 var0, BlockPos var1, Random var2, int var3) {
-      var0.method6725(var1, ((Class3393)Class8487.field36878).method12004(var0, var1), 2);
+      var0.method6725(var1, ((Class3393) Blocks.field36878).method12004(var0, var1), 2);
       method11594(var0, var1, var2, var1, var3, 0);
    }
 
    private static void method11594(Class1660 var0, BlockPos var1, Random var2, BlockPos var3, int var4, int var5) {
-      Class3393 var8 = (Class3393)Class8487.field36878;
+      Class3393 var8 = (Class3393) Blocks.field36878;
       int var9 = var2.nextInt(4) + 1;
       if (var5 == 0) {
          var9++;
@@ -204,7 +204,7 @@ public class Class3211 extends Class3209 {
       }
 
       if (!var15) {
-         var0.method6725(var1.method8339(var9), Class8487.field36879.method11579().method23465(field18619, Integer.valueOf(5)), 2);
+         var0.method6725(var1.method8339(var9), Blocks.field36879.method11579().method23465(field18619, Integer.valueOf(5)), 2);
       }
    }
 

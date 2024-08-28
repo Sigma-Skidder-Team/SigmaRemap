@@ -86,7 +86,7 @@ public class Class2011 extends Class2009 {
          for (BlockPos var19 : Class2001.method8359(var9, var10)) {
             Class7380 var20 = var14.method6738(var19);
             if (!var20.method23393()) {
-               Class3209 var21 = var20.method23383();
+               Block var21 = var20.method23383();
                if (var20.method23409(var14, var19)) {
                   var11.method22646(var19);
                }

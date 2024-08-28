@@ -11,11 +11,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
-import com.mojang.datafixers.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 
 public class Class5156 extends Module {
     public static boolean field23408 = false;
@@ -33,53 +31,53 @@ public class Class5156 extends Module {
     private void method16020(Class4399 var1) {
         if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
             if (var1.method13921()) {
-                boolean var4 = field23386.field1339.method3090() != null && field23386.field1339.method3090().method32107() instanceof Class3267;
+                boolean var4 = mc.field1339.method3090() != null && mc.field1339.method3090().method32107() instanceof Class3267;
                 boolean var5 = Client.getInstance().getModuleManager().method14662(Class5357.class).method15988();
                 boolean var6 = true;
-                if (!field23386.field1339.method3331()
-                        && field23386.field1346.method31417() == Class2100.field13690
+                if (!mc.field1339.method3331()
+                        && mc.field1346.method31417() == Class2100.field13690
                         && !Client.getInstance().getModuleManager().method14662(Class5357.class).method15988()) {
-                    Class8711 var7 = (Class8711) field23386.field1346;
+                    Class8711 var7 = (Class8711) mc.field1346;
                     BlockPos var8 = var7.method31423();
-                    Class3209 var9 = field23386.field1338.method6738(var8).method23383();
-                    ArrayList var10 = new ArrayList<Class3209>(
+                    Block var9 = mc.field1338.method6738(var8).method23383();
+                    ArrayList var10 = new ArrayList<Block>(
                             Arrays.asList(
-                                    Class8487.field36534,
-                                    Class8487.field36657,
-                                    Class8487.field36716,
-                                    Class8487.field36538,
-                                    Class8487.field36665,
-                                    Class8487.field36541,
-                                    Class8487.field37057,
-                                    Class8487.field36646,
-                                    Class8487.field36713,
-                                    Class8487.field36714,
-                                    Class8487.field36715,
-                                    Class8487.field36457,
-                                    Class8487.field36461,
-                                    Class8487.field36558,
-                                    Class8487.field36723,
-                                    Class8487.field36729,
-                                    Class8487.field36592,
-                                    Class8487.field36719
+                                    Blocks.field36534,
+                                    Blocks.field36657,
+                                    Blocks.field36716,
+                                    Blocks.field36538,
+                                    Blocks.field36665,
+                                    Blocks.field36541,
+                                    Blocks.field37057,
+                                    Blocks.field36646,
+                                    Blocks.field36713,
+                                    Blocks.field36714,
+                                    Blocks.field36715,
+                                    Blocks.field36457,
+                                    Blocks.field36461,
+                                    Blocks.field36558,
+                                    Blocks.field36723,
+                                    Blocks.field36729,
+                                    Blocks.field36592,
+                                    Blocks.field36719
                             )
                     );
                     if (var10.contains(var9)
                             || var9 instanceof Class3204
                             || var9 instanceof Class3203
                             || var9 instanceof Class3199
-                            || var9 instanceof Class3461 && var9 != Class8487.field36560) {
+                            || var9 instanceof Class3461 && var9 != Blocks.field36560) {
                         var6 = false;
                     }
                 }
 
-                field23408 = field23386.field1299.field44642.method8509() && var4 && var6 && var6 || var5;
+                field23408 = mc.field1299.field44642.method8509() && var4 && var6 && var6 || var5;
                 if (!field23408) {
-                    if (ViaVersionLoader.field31493.contains(field23386.field1339)) {
-                        ViaVersionLoader.field31493.remove(field23386.field1339);
+                    if (ViaVersionLoader.field31493.contains(mc.field1339)) {
+                        ViaVersionLoader.field31493.remove(mc.field1339);
                     }
-                } else if (!ViaVersionLoader.field31493.contains(field23386.field1339)) {
-                    ViaVersionLoader.field31493.add(field23386.field1339);
+                } else if (!ViaVersionLoader.field31493.contains(mc.field1339)) {
+                    ViaVersionLoader.field31493.add(mc.field1339);
                 }
 
                 if (field23408 && !this.field23409) {
@@ -99,11 +97,11 @@ public class Class5156 extends Module {
     @Class5631
     private void method16021(Class4396 var1) {
         if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
-            if (field23386.field1339 != null) {
+            if (mc.field1339 != null) {
                 if (var1.method13898() instanceof Class5588) {
                     Class5588 var4 = (Class5588) var1.method13898();
 
-                    var4.method17562().removeIf(var6 -> var4.method17561() == field23386.field1339.method3205()
+                    var4.method17562().removeIf(var6 -> var4.method17561() == mc.field1339.method3205()
                             && var6.getFirst() == Class2106.field13732
                             && var6.getSecond() != null
                             && var6.getSecond().method32107() == Class8514.field38119);

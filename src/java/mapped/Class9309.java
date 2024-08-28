@@ -146,8 +146,8 @@ public final class Class9309 {
             false,
             var1
          ),
-         Class8487.field36388.method11579(),
-         Class8487.field36413.method11579(),
+         Blocks.STONE.method11579(),
+         Blocks.WATER.method11579(),
          -10,
          0,
          63,
@@ -158,18 +158,18 @@ public final class Class9309 {
    static {
       method35169(field43231, method35173(new Class9763(true), true, field43231.method31399()));
       method35169(
-         field43232, method35172(new Class9763(false), Class8487.field36580.method11579(), Class8487.field36414.method11579(), field43232.method31399())
+         field43232, method35172(new Class9763(false), Blocks.NETHERRACK.method11579(), Blocks.LAVA.method11579(), field43232.method31399())
       );
       method35169(
          field43233,
-         method35171(new Class9763(false), Class8487.field36651.method11579(), Class8487.field36387.method11579(), field43233.method31399(), true, true)
+         method35171(new Class9763(false), Blocks.field36651.method11579(), Blocks.AIR.method11579(), field43233.method31399(), true, true)
       );
       method35169(
-         field43234, method35172(new Class9763(true), Class8487.field36388.method11579(), Class8487.field36413.method11579(), field43234.method31399())
+         field43234, method35172(new Class9763(true), Blocks.STONE.method11579(), Blocks.WATER.method11579(), field43234.method31399())
       );
       method35169(
          field43235,
-         method35171(new Class9763(true), Class8487.field36388.method11579(), Class8487.field36413.method11579(), field43235.method31399(), false, false)
+         method35171(new Class9763(true), Blocks.STONE.method11579(), Blocks.WATER.method11579(), field43235.method31399(), false, false)
       );
    }
 }

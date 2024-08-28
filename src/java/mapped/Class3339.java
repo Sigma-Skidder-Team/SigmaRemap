@@ -38,7 +38,7 @@ public class Class3339 extends Class3257 {
 
    private void method11886(PlayerEntity var1, Class7380 var2, Class1660 var3, BlockPos var4, boolean var5, Class8848 var6) {
       if (var1.method2979()) {
-         Class3209 var9 = var2.method23383();
+         Block var9 = var2.method23383();
          Class9348 var10 = var9.method11577();
          Collection var11 = var10.method35395();
          String var12 = Class2348.field16072.method9181(var9).toString();

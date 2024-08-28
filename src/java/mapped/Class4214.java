@@ -27,7 +27,7 @@ public class Class4214 extends Class4213 {
          for (int var11 = 1; var11 <= 6; var11++) {
             if (var4.nextInt(3) != 0) {
                int var12 = 2 + (var4.nextInt(4) != 0 ? 1 : 0);
-               Class7380 var13 = Class8487.field36453.method11579();
+               Class7380 var13 = Blocks.field36453.method11579();
                this.method12927(var1, var5, var10, var12, var11, var10, 3, var11, var13, var13, false);
             }
          }

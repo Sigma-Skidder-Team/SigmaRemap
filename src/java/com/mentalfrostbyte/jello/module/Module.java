@@ -10,12 +10,12 @@ import mapped.*;
 import java.util.*;
 
 public abstract class Module {
-    public static Minecraft field23386 = Minecraft.getInstance();
-    private static final List<Class<? extends Module>> field23393 = new ArrayList<Class<? extends Module>>();
+    public static Minecraft mc = Minecraft.getInstance();
+    private static final List<Class<? extends Module>> moduleList = new ArrayList<Class<? extends Module>>();
     public String name;
     public String descriptor;
     public ModuleCategory category;
-    public boolean field23390;
+    public boolean enabled;
     public boolean field23391;
     public Map<String, Class6001> field23397 = new LinkedHashMap<String, Class6001>();
     private boolean field23392 = true;
@@ -107,11 +107,11 @@ public abstract class Module {
     }
 
     public void method15985() {
-        if (this.field23390) {
+        if (this.enabled) {
             this.method15965();
         }
 
-        this.field23390 = false;
+        this.enabled = false;
         this.field23391 = true;
 
         for (Class6001 var4 : this.field23397.values()) {
@@ -122,7 +122,7 @@ public abstract class Module {
     public JSONObject method15986(JSONObject var1) {
         Class2344 var4 = Class8000.method27332(var1, "options");
 
-        this.field23390 = var1.method21763("enabled");
+        this.enabled = var1.method21763("enabled");
 
         this.field23391 = var1.method21763("allowed");
 
@@ -146,7 +146,7 @@ public abstract class Module {
             }
         }
 
-        if (this.field23390 && field23386.field1338 != null) {
+        if (this.enabled && mc.field1338 != null) {
             this.method15966();
         }
 
@@ -156,7 +156,7 @@ public abstract class Module {
     public JSONObject method15987(JSONObject var1) {
         try {
             var1.method21806("name", this.method15991());
-            var1.method21800("enabled", this.field23390);
+            var1.method21800("enabled", this.enabled);
             var1.method21800("allowed", this.method16001());
             Class2344 var4 = new Class2344();
 
@@ -172,9 +172,9 @@ public abstract class Module {
     }
 
     public void method15966() {
-        if (this.getClass().isAnnotationPresent(InDevelopment.class) && !field23393.contains(this.getClass())) {
+        if (this.getClass().isAnnotationPresent(InDevelopment.class) && !moduleList.contains(this.getClass())) {
             Client.getInstance().getLogger().method20357("This mod is still in development. Be careful!");
-            field23393.add(this.getClass());
+            moduleList.add(this.getClass());
         }
     }
 
@@ -221,19 +221,19 @@ public abstract class Module {
 
     public boolean method15996() {
         if (Client.getInstance().method19954() != ClientMode.field13889) {
-            return (Client.getInstance().method19954() != ClientMode.CLASSIC || this.method16006()) && this.field23390;
+            return (Client.getInstance().method19954() != ClientMode.CLASSIC || this.method16006()) && this.enabled;
         } else {
             return false;
         }
     }
 
-    public void setState(boolean var1) {
-        if (this.field23390 != var1) {
-            if (!(this.field23390 = var1)) {
-                Client.getInstance().getEventManager().method23214(this);
+    public void setState(boolean enabled) {
+        if (this.enabled != enabled) {
+            if (!(this.enabled = enabled)) {
+                Client.getInstance().getEventManager().unsubscribe(this);
                 this.method15965();
             } else {
-                Client.getInstance().getEventManager().method23213(this);
+                Client.getInstance().getEventManager().subscribe(this);
                 this.method15966();
             }
         }
@@ -242,18 +242,18 @@ public abstract class Module {
     }
 
     public void method15998(boolean var1) {
-        this.field23390 = var1;
-        if (!this.field23390) {
-            Client.getInstance().getEventManager().method23214(this);
+        this.enabled = var1;
+        if (!this.enabled) {
+            Client.getInstance().getEventManager().unsubscribe(this);
         } else {
-            Client.getInstance().getEventManager().method23213(this);
+            Client.getInstance().getEventManager().subscribe(this);
         }
     }
 
     public void method15999(boolean var1) {
-        if (this.field23390 != var1) {
-            if (!(this.field23390 = var1)) {
-                Client.getInstance().getEventManager().method23214(this);
+        if (this.enabled != var1) {
+            if (!(this.enabled = var1)) {
+                Client.getInstance().getEventManager().unsubscribe(this);
                 if (!(this instanceof Class5325)) {
                     if (Client.getInstance().method19954() == ClientMode.JELLO
                             && Client.getInstance().getModuleManager().method14662(Class5246.class).method15974("Sound")) {
@@ -268,7 +268,7 @@ public abstract class Module {
 
                 this.method15965();
             } else {
-                Client.getInstance().getEventManager().method23213(this);
+                Client.getInstance().getEventManager().subscribe(this);
                 if (Client.getInstance().method19954() == ClientMode.JELLO
                         && Client.getInstance().getModuleManager().method14662(Class5246.class).method15974("Sound")) {
                     Client.getInstance().getSoundManager().play("activate");

@@ -14,42 +14,42 @@ public abstract class Class7195<C extends Class4729> {
    public static final Class7195<Class4728> field30890 = method22604("canyon", new Class7196(Class4728.field22398));
    public static final Class7195<Class4728> field30891 = method22604("underwater_canyon", new Class7197(Class4728.field22398));
    public static final Class7195<Class4728> field30892 = method22604("underwater_cave", new Class7198(Class4728.field22398));
-   public static final Class7380 field30893 = Class8487.field36387.method11579();
-   public static final Class7380 field30894 = Class8487.field37012.method11579();
+   public static final Class7380 field30893 = Blocks.AIR.method11579();
+   public static final Class7380 field30894 = Blocks.field37012.method11579();
    public static final Class7379 field30895 = Class9479.field44066.method25049();
    public static final Class7379 field30896 = Class9479.field44068.method25049();
-   public Set<Class3209> field30897 = ImmutableSet.of(
-      Class8487.field36388,
-      Class8487.field36389,
-      Class8487.field36391,
-      Class8487.field36393,
-      Class8487.field36396,
-      Class8487.field36397,
-      new Class3209[]{
-         Class8487.field36398,
-         Class8487.field36395,
-         Class8487.field36794,
-         Class8487.field36730,
-         Class8487.field36731,
-         Class8487.field36732,
-         Class8487.field36733,
-         Class8487.field36734,
-         Class8487.field36735,
-         Class8487.field36736,
-         Class8487.field36737,
-         Class8487.field36738,
-         Class8487.field36739,
-         Class8487.field36740,
-         Class8487.field36741,
-         Class8487.field36742,
-         Class8487.field36743,
-         Class8487.field36744,
-         Class8487.field36745,
-         Class8487.field36458,
-         Class8487.field36835,
-         Class8487.field36640,
-         Class8487.field36571,
-         Class8487.field36796
+   public Set<Block> field30897 = ImmutableSet.of(
+      Blocks.STONE,
+      Blocks.GRANITE,
+      Blocks.DIORITE,
+      Blocks.field36393,
+      Blocks.field36396,
+      Blocks.field36397,
+      new Block[]{
+         Blocks.field36398,
+         Blocks.field36395,
+         Blocks.field36794,
+         Blocks.field36730,
+         Blocks.field36731,
+         Blocks.field36732,
+         Blocks.field36733,
+         Blocks.field36734,
+         Blocks.field36735,
+         Blocks.field36736,
+         Blocks.field36737,
+         Blocks.field36738,
+         Blocks.field36739,
+         Blocks.field36740,
+         Blocks.field36741,
+         Blocks.field36742,
+         Blocks.field36743,
+         Blocks.field36744,
+         Blocks.field36745,
+         Blocks.field36458,
+         Blocks.field36835,
+         Blocks.field36640,
+         Blocks.SNOW,
+         Blocks.field36796
       }
    );
    public Set<Class7631> field30898 = ImmutableSet.of(Class9479.field44066);
@@ -165,7 +165,7 @@ public abstract class Class7195<C extends Class4729> {
          var5.method8372(var11, var14, var12);
          Class7380 var20 = var1.method6738(var5);
          Class7380 var21 = var1.method6738(var6.method8377(var5, Direction.field673));
-         if (var20.method23448(Class8487.field36395) || var20.method23448(Class8487.field36640)) {
+         if (var20.method23448(Blocks.field36395) || var20.method23448(Blocks.field36640)) {
             var16.setTrue();
          }
 
@@ -174,7 +174,7 @@ public abstract class Class7195<C extends Class4729> {
                var1.method7061(var5, field30894, false);
                if (var16.isTrue()) {
                   var7.method8377(var5, Direction.field672);
-                  if (var1.method6738(var7).method23448(Class8487.field36396)) {
+                  if (var1.method6738(var7).method23448(Blocks.field36396)) {
                      var1.method7061(var7, ((Class8907)var2.apply(var5)).method32507().method24283().method28934(), false);
                   }
                }
@@ -201,7 +201,7 @@ public abstract class Class7195<C extends Class4729> {
 
    public boolean method22610(Class7380 var1, Class7380 var2) {
       return this.method22609(var1)
-         || (var1.method23448(Class8487.field36415) || var1.method23448(Class8487.field36417)) && !var2.method23449().method23486(Class8953.field40469);
+         || (var1.method23448(Blocks.SAND) || var1.method23448(Blocks.GRAVEL)) && !var2.method23449().method23486(Class8953.field40469);
    }
 
    public boolean method22611(Class1670 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {

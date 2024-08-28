@@ -7,7 +7,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
    public void accept(Consumer<Class7952> var1) {
       Class7952 var4 = Class7999.method27304()
          .method27308(
-            Class8487.field36651,
+            Blocks.field36651,
             new TranslationTextComponent("advancements.end.root.title"),
             new TranslationTextComponent("advancements.end.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/end.png"),
@@ -21,7 +21,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
       Class7952 var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Class8487.field36711,
+            Blocks.field36711,
             new TranslationTextComponent("advancements.end.kill_dragon.title"),
             new TranslationTextComponent("advancements.end.kill_dragon.description"),
             (ResourceLocation)null,
@@ -44,7 +44,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("entered_end_gateway", Class4466.method14113(Class8487.field36886))
+         .method27312("entered_end_gateway", Class4466.method14113(Blocks.field36886))
          .method27317(var1, "end/enter_end_gateway");
       Class7999.method27304()
          .method27305(var5)
@@ -63,7 +63,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
       Class7952 var7 = Class7999.method27304()
          .method27305(var6)
          .method27308(
-            Class8487.field36880,
+            Blocks.field36880,
             new TranslationTextComponent("advancements.end.find_end_city.title"),
             new TranslationTextComponent("advancements.end.find_end_city.description"),
             (ResourceLocation)null,
@@ -120,7 +120,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var5)
          .method27308(
-            Class8487.field36652,
+            Blocks.field36652,
             new TranslationTextComponent("advancements.end.dragon_egg.title"),
             new TranslationTextComponent("advancements.end.dragon_egg.description"),
             (ResourceLocation)null,
@@ -129,7 +129,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("dragon_egg", Class4491.method14164(Class8487.field36652))
+         .method27312("dragon_egg", Class4491.method14164(Blocks.field36652))
          .method27317(var1, "end/dragon_egg");
    }
 }

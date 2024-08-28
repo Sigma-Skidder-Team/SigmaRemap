@@ -31,7 +31,7 @@ public class Class7141 extends Class7139 {
             BlockPos var12 = (BlockPos)var11.get(var2.nextInt(var11.size()));
             BlockPos var13 = var12.method8349(var9);
             if (Class2898.method11221(var1, var13) && Class2898.method11221(var1, var13.method8349(Direction.SOUTH))) {
-               Class7380 var14 = Class8487.field37117.method11579().method23465(Class3366.field18935, Direction.SOUTH);
+               Class7380 var14 = Blocks.field37117.method11579().method23465(Class3366.field18935, Direction.SOUTH);
                this.method22274(var1, var13, var14, var5, var6);
                Class944 var15 = var1.method6759(var13);
                if (var15 instanceof Class962) {

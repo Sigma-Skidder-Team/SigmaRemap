@@ -28,7 +28,7 @@ public class Class3267 extends Class3266 implements Class3260 {
 
    @Override
    public float method11708(Class8848 var1, Class7380 var2) {
-      if (var2.method23448(Class8487.field36481)) {
+      if (var2.method23448(Blocks.field36481)) {
          return 15.0F;
       } else {
          Class8649 var5 = var2.method23384();
@@ -59,7 +59,7 @@ public class Class3267 extends Class3266 implements Class3260 {
 
    @Override
    public boolean method11715(Class7380 var1) {
-      return var1.method23448(Class8487.field36481);
+      return var1.method23448(Blocks.field36481);
    }
 
    @Override

@@ -5,12 +5,11 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.common.collect.UnmodifiableIterator;
 
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-public class Class3222 extends Class3209 {
+public class Class3222 extends Block {
    private static String[] field18646;
    public static final Class8552<Class98> field18647 = Class8820.field39731;
    public static final Class8552<Class98> field18648 = Class8820.field39730;
@@ -20,29 +19,29 @@ public class Class3222 extends Class3209 {
    public static final Map<Direction, Class8552<Class98>> field18652 = Maps.newEnumMap(
       ImmutableMap.of(Direction.NORTH, field18647, Direction.EAST, field18648, Direction.SOUTH, field18649, Direction.WEST, field18650)
    );
-   private static final Class6408 field18653 = Class3209.method11539(3.0, 0.0, 3.0, 13.0, 1.0, 13.0);
+   private static final Class6408 field18653 = Block.method11539(3.0, 0.0, 3.0, 13.0, 1.0, 13.0);
    private static final Map<Direction, Class6408> field18654 = Maps.newEnumMap(
       ImmutableMap.of(
          Direction.NORTH,
-         Class3209.method11539(3.0, 0.0, 0.0, 13.0, 1.0, 13.0),
+         Block.method11539(3.0, 0.0, 0.0, 13.0, 1.0, 13.0),
          Direction.SOUTH,
-         Class3209.method11539(3.0, 0.0, 3.0, 13.0, 1.0, 16.0),
+         Block.method11539(3.0, 0.0, 3.0, 13.0, 1.0, 16.0),
          Direction.EAST,
-         Class3209.method11539(3.0, 0.0, 3.0, 16.0, 1.0, 13.0),
+         Block.method11539(3.0, 0.0, 3.0, 16.0, 1.0, 13.0),
          Direction.WEST,
-         Class3209.method11539(0.0, 0.0, 3.0, 13.0, 1.0, 13.0)
+         Block.method11539(0.0, 0.0, 3.0, 13.0, 1.0, 13.0)
       )
    );
    private static final Map<Direction, Class6408> field18655 = Maps.newEnumMap(
       ImmutableMap.of(
          Direction.NORTH,
-         Class8022.method27431(field18654.get(Direction.NORTH), Class3209.method11539(3.0, 0.0, 0.0, 13.0, 16.0, 1.0)),
+         Class8022.method27431(field18654.get(Direction.NORTH), Block.method11539(3.0, 0.0, 0.0, 13.0, 16.0, 1.0)),
          Direction.SOUTH,
-         Class8022.method27431(field18654.get(Direction.SOUTH), Class3209.method11539(3.0, 0.0, 15.0, 13.0, 16.0, 16.0)),
+         Class8022.method27431(field18654.get(Direction.SOUTH), Block.method11539(3.0, 0.0, 15.0, 13.0, 16.0, 16.0)),
          Direction.EAST,
-         Class8022.method27431(field18654.get(Direction.EAST), Class3209.method11539(15.0, 0.0, 3.0, 16.0, 16.0, 13.0)),
+         Class8022.method27431(field18654.get(Direction.EAST), Block.method11539(15.0, 0.0, 3.0, 16.0, 16.0, 13.0)),
          Direction.WEST,
-         Class8022.method27431(field18654.get(Direction.WEST), Class3209.method11539(0.0, 0.0, 3.0, 1.0, 16.0, 13.0))
+         Class8022.method27431(field18654.get(Direction.WEST), Block.method11539(0.0, 0.0, 3.0, 1.0, 16.0, 13.0))
       )
    );
    private final Map<Class7380, Class6408> field18656 = Maps.newHashMap();
@@ -189,7 +188,7 @@ public class Class3222 extends Class3209 {
          if (var11 != Class98.field267 && !var2.method6738(var8.method8377(var3, var10)).method23448(this)) {
             var8.method8379(Direction.field672);
             Class7380 var12 = var2.method6738(var8);
-            if (!var12.method23448(Class8487.field36895)) {
+            if (!var12.method23448(Blocks.field36895)) {
                BlockPos var13 = var8.method8349(var10.method536());
                Class7380 var14 = var12.method23439(var10.method536(), var2.method6738(var13), var2, var8, var13);
                method11544(var12, var14, var2, var8, var4, var5);
@@ -197,7 +196,7 @@ public class Class3222 extends Class3209 {
 
             var8.method8377(var3, var10).method8379(Direction.field673);
             Class7380 var16 = var2.method6738(var8);
-            if (!var16.method23448(Class8487.field36895)) {
+            if (!var16.method23448(Blocks.field36895)) {
                BlockPos var17 = var8.method8349(var10.method536());
                Class7380 var15 = var16.method23439(var10.method536(), var2.method6738(var17), var2, var8, var17);
                method11544(var16, var15, var2, var8, var4, var5);
@@ -237,7 +236,7 @@ public class Class3222 extends Class3209 {
    }
 
    private boolean method11621(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return var3.method23454(var1, var2, Direction.field673) || var3.method23448(Class8487.field36723);
+      return var3.method23454(var1, var2, Direction.field673) || var3.method23448(Blocks.field36723);
    }
 
    private void method11622(Class1655 var1, BlockPos var2, Class7380 var3) {
@@ -340,7 +339,7 @@ public class Class3222 extends Class3209 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          if (!var1.method23443(var2, var3)) {
             method11554(var1, var2, var3);
@@ -377,10 +376,10 @@ public class Class3222 extends Class3209 {
    }
 
    public static boolean method11628(Class7380 var0, Direction var1) {
-      if (var0.method23448(Class8487.field36535)) {
+      if (var0.method23448(Blocks.field36535)) {
          return true;
-      } else if (!var0.method23448(Class8487.field36592)) {
-         return var0.method23448(Class8487.field36895) ? var1 == var0.<Direction>method23463(Class3434.field19198) : var0.method23401() && var1 != null;
+      } else if (!var0.method23448(Blocks.field36592)) {
+         return var0.method23448(Blocks.field36895) ? var1 == var0.<Direction>method23463(Class3434.field19198) : var0.method23401() && var1 != null;
       } else {
          Direction var4 = var0.<Direction>method23463(Class3248.field18484);
          return var4 == var1 || var4.method536() == var1;
@@ -473,7 +472,7 @@ public class Class3222 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18647, field18648, field18649, field18650, field18651);
    }
 

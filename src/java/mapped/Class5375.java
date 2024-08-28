@@ -26,8 +26,8 @@ public class Class5375 extends Module {
                     && var4.field5061 <= (int) this.method15977("HurtTime")
                     && Class5330.field23887 > 1
                     && (this.field23998.method27121() > 200L || var4.field5061 > 0)
-                    && field23386.field1339.field5036
-                    && field23386.field1339.field5038) {
+                    && mc.field1339.field5036
+                    && mc.field1339.field5038) {
                 double[] var5 = new double[]{0.2, 0.0};
                 if (this.method15978("Mode").equals("Hypixel")) {
                     var5 = new double[]{
@@ -36,9 +36,9 @@ public class Class5375 extends Module {
                 }
 
                 for (int var6 = 0; var6 < var5.length; var6++) {
-                    field23386.getClientPlayNetHandler()
+                    mc.getClientPlayNetHandler()
                             .sendPacket(
-                                    new Class5605(field23386.field1339.getPosX(), field23386.field1339.getPosY() + var5[var6], field23386.field1339.getPosZ(), false)
+                                    new Class5605(mc.field1339.getPosX(), mc.field1339.getPosY() + var5[var6], mc.field1339.getPosZ(), false)
                             );
                 }
 
@@ -57,7 +57,7 @@ public class Class5375 extends Module {
                     this.field23998.method27118();
                 }
 
-                if (this.field23999 && field23386.field1339.field5036) {
+                if (this.field23999 && mc.field1339.field5036) {
                     var1.method13900(true);
                     this.field23999 = false;
                 }

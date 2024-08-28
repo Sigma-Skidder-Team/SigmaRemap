@@ -69,12 +69,12 @@ public class Class3237 extends Class3238 {
    }
 
    public final boolean method11638(Class7380 var1, boolean var2) {
-      Class3209 var5 = var1.method23383();
+      Block var5 = var1.method23383();
       return !method11545(var5) && var2 || var5 instanceof Class3237 || var5.method11540(Class7645.field32764);
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18680, field18681, field18683, field18682, field18684);
    }
 }

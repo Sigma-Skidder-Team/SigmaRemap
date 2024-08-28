@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3426 extends Class3209 {
+public class Class3426 extends Block {
    private static String[] field19174;
    public static final Class8552<Class108> field19175 = Class8820.field39768;
    public static final Class8551 field19176 = Class8820.field39704;
@@ -28,7 +28,7 @@ public class Class3426 extends Class3209 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method6780(var3);
       if (var9 != var1.<Boolean>method23463(field19176)) {
          if (var9) {
@@ -78,7 +78,7 @@ public class Class3426 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19175, field19176, field19177);
    }
 }

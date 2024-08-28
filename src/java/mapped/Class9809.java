@@ -69,15 +69,15 @@ public class Class9809 {
             var2.method35295();
          }
       } else {
-         Class3209 var14 = ((Class3292)var8).method11845();
+         Block var14 = ((Class3292)var8).method11845();
          if (!(var14 instanceof Class3251)) {
             Object var17;
             if (!(var14 instanceof Class3359)) {
                if (!(var14 instanceof Class3250)) {
-                  if (var14 != Class8487.field37007) {
-                     if (var14 != Class8487.field36534) {
-                        if (var14 != Class8487.field36657) {
-                           if (var14 != Class8487.field36716) {
+                  if (var14 != Blocks.field37007) {
+                     if (var14 != Blocks.field36534) {
+                        if (var14 != Blocks.field36657) {
+                           if (var14 != Blocks.field36716) {
                               if (!(var14 instanceof Class3368)) {
                                  return;
                               }

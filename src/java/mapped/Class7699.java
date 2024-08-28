@@ -4,7 +4,6 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -573,7 +572,7 @@ public class Class7699 {
             && this.field32978.method6883().method7352(new Class7481(var6))
             && (
                Class8170.method28429(Class2068.field13472, this.field32978, var6, Class8992.field41072)
-                  || this.field32978.method6738(var6.method8313()).method23448(Class8487.field36571) && this.field32978.method6738(var6).method23393()
+                  || this.field32978.method6738(var6.method8313()).method23448(Blocks.SNOW) && this.field32978.method6738(var6).method23393()
             )) {
             return var6;
          }

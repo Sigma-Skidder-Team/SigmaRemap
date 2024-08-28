@@ -305,7 +305,7 @@ public abstract class Class6990 {
             Class7176 var4 = this.field30245.method28695(var3);
             Class7176 var5 = var3 + 1 >= this.field30245.method28698() ? null : this.field30245.method28695(var3 + 1);
             Class7380 var6 = this.field30244.method6738(new BlockPos(var4.field30847, var4.field30848, var4.field30849));
-            if (var6.method23448(Class8487.field36648)) {
+            if (var6.method23448(Blocks.field36648)) {
                this.field30245.method28697(var3, var4.method22525(var4.field30847, var4.field30848 + 1, var4.field30849));
                if (var5 != null && var4.field30848 >= var5.field30848) {
                   this.field30245.method28697(var3 + 1, var4.method22525(var5.field30847, var4.field30848 + 1, var5.field30849));

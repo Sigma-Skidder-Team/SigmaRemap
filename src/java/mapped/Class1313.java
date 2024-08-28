@@ -46,9 +46,9 @@ public class Class1313 extends Screen {
       int var7 = var6 - var1;
       String var8 = var4[var4.length - 1];
 
-      Class3209 var9;
+      Block var9;
       try {
-         var9 = Class2348.field16072.method9187(new ResourceLocation(var8)).orElse((Class3209)null);
+         var9 = Class2348.field16072.method9187(new ResourceLocation(var8)).orElse((Block)null);
       } catch (Exception var11) {
          field6925.error("Error while parsing flat world string => {}", var11.getMessage());
          return null;
@@ -261,28 +261,28 @@ public class Class1313 extends Screen {
    static {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.classic_flat"),
-         Class8487.field36395,
+         Blocks.field36395,
          Class9495.field44122,
          Arrays.<Class2961<?>>asList(Class2961.field18073),
          false,
          false,
          false,
-         new Class9537(1, Class8487.field36395),
-         new Class9537(2, Class8487.field36396),
-         new Class9537(1, Class8487.field36412)
+         new Class9537(1, Blocks.field36395),
+         new Class9537(2, Blocks.field36396),
+         new Class9537(1, Blocks.BEDROCK)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.tunnelers_dream"),
-         Class8487.field36388,
+         Blocks.STONE,
          Class9495.field44124,
          Arrays.<Class2961<?>>asList(Class2961.field18059),
          true,
          true,
          false,
-         new Class9537(1, Class8487.field36395),
-         new Class9537(5, Class8487.field36396),
-         new Class9537(230, Class8487.field36388),
-         new Class9537(1, Class8487.field36412)
+         new Class9537(1, Blocks.field36395),
+         new Class9537(5, Blocks.field36396),
+         new Class9537(230, Blocks.STONE),
+         new Class9537(1, Blocks.BEDROCK)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.water_world"),
@@ -292,38 +292,38 @@ public class Class1313 extends Screen {
          false,
          false,
          false,
-         new Class9537(90, Class8487.field36413),
-         new Class9537(5, Class8487.field36415),
-         new Class9537(5, Class8487.field36396),
-         new Class9537(5, Class8487.field36388),
-         new Class9537(1, Class8487.field36412)
+         new Class9537(90, Blocks.WATER),
+         new Class9537(5, Blocks.SAND),
+         new Class9537(5, Blocks.field36396),
+         new Class9537(5, Blocks.STONE),
+         new Class9537(1, Blocks.BEDROCK)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.overworld"),
-         Class8487.field36482,
+         Blocks.field36482,
          Class9495.field44122,
          Arrays.<Class2961<?>>asList(Class2961.field18073, Class2961.field18059, Class2961.field18058, Class2961.field18064),
          true,
          true,
          true,
-         new Class9537(1, Class8487.field36395),
-         new Class9537(3, Class8487.field36396),
-         new Class9537(59, Class8487.field36388),
-         new Class9537(1, Class8487.field36412)
+         new Class9537(1, Blocks.field36395),
+         new Class9537(3, Blocks.field36396),
+         new Class9537(59, Blocks.STONE),
+         new Class9537(1, Blocks.BEDROCK)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.snowy_kingdom"),
-         Class8487.field36571,
+         Blocks.SNOW,
          Class9495.field44133,
          Arrays.<Class2961<?>>asList(Class2961.field18073, Class2961.field18063),
          false,
          false,
          false,
-         new Class9537(1, Class8487.field36571),
-         new Class9537(1, Class8487.field36395),
-         new Class9537(3, Class8487.field36396),
-         new Class9537(59, Class8487.field36388),
-         new Class9537(1, Class8487.field36412)
+         new Class9537(1, Blocks.SNOW),
+         new Class9537(1, Blocks.field36395),
+         new Class9537(3, Blocks.field36396),
+         new Class9537(59, Blocks.STONE),
+         new Class9537(1, Blocks.BEDROCK)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.bottomless_pit"),
@@ -333,22 +333,22 @@ public class Class1313 extends Screen {
          false,
          false,
          false,
-         new Class9537(1, Class8487.field36395),
-         new Class9537(3, Class8487.field36396),
-         new Class9537(2, Class8487.field36399)
+         new Class9537(1, Blocks.field36395),
+         new Class9537(3, Blocks.field36396),
+         new Class9537(2, Blocks.field36399)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.desert"),
-         Class8487.field36415,
+         Blocks.SAND,
          Class9495.field44123,
          Arrays.<Class2961<?>>asList(Class2961.field18073, Class2961.field18062, Class2961.field18059),
          true,
          true,
          false,
-         new Class9537(8, Class8487.field36415),
-         new Class9537(52, Class8487.field36458),
-         new Class9537(3, Class8487.field36388),
-         new Class9537(1, Class8487.field36412)
+         new Class9537(8, Blocks.SAND),
+         new Class9537(52, Blocks.field36458),
+         new Class9537(3, Blocks.STONE),
+         new Class9537(1, Blocks.BEDROCK)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.redstone_ready"),
@@ -358,19 +358,19 @@ public class Class1313 extends Screen {
          false,
          false,
          false,
-         new Class9537(52, Class8487.field36458),
-         new Class9537(3, Class8487.field36388),
-         new Class9537(1, Class8487.field36412)
+         new Class9537(52, Blocks.field36458),
+         new Class9537(3, Blocks.STONE),
+         new Class9537(1, Blocks.BEDROCK)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.the_void"),
-         Class8487.field36765,
+         Blocks.field36765,
          Class9495.field44172,
          Collections.<Class2961<?>>emptyList(),
          false,
          true,
          false,
-         new Class9537(1, Class8487.field36387)
+         new Class9537(1, Blocks.AIR)
       );
    }
 }

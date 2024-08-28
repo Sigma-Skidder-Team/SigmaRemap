@@ -33,7 +33,7 @@ public class Class1674 implements Class1670 {
    private final Map<Class2961<?>, Class5444<?>> field9121 = Maps.newHashMap();
    private final Map<Class2961<?>, LongSet> field9122 = Maps.newHashMap();
    private final ShortList[] field9123 = new ShortList[16];
-   private Class6802<Class3209> field9124;
+   private Class6802<Block> field9124;
    private Class6802<Class7631> field9125;
    private boolean field9126;
    private long field9127;
@@ -50,7 +50,7 @@ public class Class1674 implements Class1670 {
          var2,
          var3,
          Class8922.field40388,
-         Class6804.<Class3209>method20727(),
+         Class6804.<Block>method20727(),
          Class6804.<Class7631>method20727(),
          0L,
          (Class7038[])null,
@@ -63,7 +63,7 @@ public class Class1674 implements Class1670 {
       Class7481 var2,
       Class1684 var3,
       Class8922 var4,
-      Class6802<Class3209> var5,
+      Class6802<Block> var5,
       Class6802<Class7631> var6,
       long var7,
       Class7038[] var9,
@@ -166,14 +166,14 @@ public class Class1674 implements Class1670 {
       if (this.field9116.method6823()) {
          Class7380 var11 = null;
          if (var5 == 60) {
-            var11 = Class8487.field36765.method11579();
+            var11 = Blocks.field36765.method11579();
          }
 
          if (var5 == 70) {
             var11 = Class5647.method17835(var4, var6);
          }
 
-         return var11 == null ? Class8487.field36387.method11579() : var11;
+         return var11 == null ? Blocks.AIR.method11579() : var11;
       } else {
          try {
             if (var5 >= 0 && var5 >> 4 < this.field9112.length) {
@@ -183,7 +183,7 @@ public class Class1674 implements Class1670 {
                }
             }
 
-            return Class8487.field36387.method11579();
+            return Blocks.AIR.method11579();
          } catch (Throwable var10) {
             Class4526 var8 = Class4526.method14413(var10, "Getting block state");
             Class8965 var9 = var8.method14410("Block being got");
@@ -235,8 +235,8 @@ public class Class1674 implements Class1670 {
       boolean var10 = var9.method21858();
       Class7380 var11 = var9.method21856(var6, var7 & 15, var8, var2);
       if (var11 != var2) {
-         Class3209 var12 = var2.method23383();
-         Class3209 var13 = var11.method23383();
+         Block var12 = var2.method23383();
+         Block var13 = var11.method23383();
          this.field9117.get(Class101.field299).method24578(var6, var7, var8, var2);
          this.field9117.get(Class101.field300).method24578(var6, var7, var8, var2);
          this.field9117.get(Class101.field298).method24578(var6, var7, var8, var2);
@@ -346,7 +346,7 @@ public class Class1674 implements Class1670 {
    @Nullable
    private Class944 method7134(BlockPos var1) {
       Class7380 var4 = this.method6738(var1);
-      Class3209 var5 = var4.method23383();
+      Block var5 = var4.method23383();
       return var5.method11998() ? ((Class3245)var5).method11646(this.field9116) : null;
    }
 
@@ -592,7 +592,7 @@ public class Class1674 implements Class1670 {
    }
 
    @Override
-   public Class6802<Class3209> method7089() {
+   public Class6802<Block> method7089() {
       return this.field9124;
    }
 
@@ -684,7 +684,7 @@ public class Class1674 implements Class1670 {
                Short var6 = (Short)var5.next();
                BlockPos var7 = Class1672.method7114(var6, var4, var3);
                Class7380 var8 = this.method6738(var7);
-               Class7380 var9 = Class3209.method11542(var8, this.field9116, var7);
+               Class7380 var9 = Block.method11542(var8, this.field9116, var7);
                this.field9116.method6725(var7, var9, 20);
             }
 
@@ -709,7 +709,7 @@ public class Class1674 implements Class1670 {
       if (!"DUMMY".equals(var2.method126("id"))) {
          var6 = Class944.method3772(var5, var2);
       } else {
-         Class3209 var7 = var5.method23383();
+         Block var7 = var5.method23383();
          if (!(var7 instanceof Class3245)) {
             var6 = null;
             field9110.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", var1, var5);
@@ -745,7 +745,7 @@ public class Class1674 implements Class1670 {
             this.field9124 = Class6804.method20727();
          }
       } else {
-         ((Class6806<Class3209>)this.field9124).method20738(this.field9116.method6860(), var1 -> this.method6738(var1).method23383());
+         ((Class6806<Block>)this.field9124).method20738(this.field9116.method6860(), var1 -> this.method6738(var1).method23383());
          this.field9124 = Class6804.method20727();
       }
 
@@ -761,7 +761,7 @@ public class Class1674 implements Class1670 {
    }
 
    public void method7151(Class1657 var1) {
-      if (this.field9124 == Class6804.<Class3209>method20727()) {
+      if (this.field9124 == Class6804.<Block>method20727()) {
          this.field9124 = new Class6801<>(
                  Class2348.field16072::method9181, var1.method6860().method20729(this.field9132, true, false), var1.method6783()
          );

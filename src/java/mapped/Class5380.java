@@ -22,12 +22,12 @@ public class Class5380 extends Module {
     @EventTarget
     public void method16943(Class4435 var1) {
         if (this.method15996()) {
-            if (field23386.field1339.field5036
-                    && field23386.field1339.field5038
-                    && (field23386.field1339.field4984 != 0.0F || field23386.field1339.field4982 != 0.0F)
+            if (mc.field1339.field5036
+                    && mc.field1339.field5038
+                    && (mc.field1339.field4984 != 0.0F || mc.field1339.field4982 != 0.0F)
                     && this.method15974("AutoJump")) {
-                field23386.field1339.method2914();
-                var1.method13995(field23386.field1339.method3433().field18049);
+                mc.field1339.method2914();
+                var1.method13995(mc.field1339.method3433().field18049);
             }
 
             double var4 = var1.method13998().field18049;
@@ -48,15 +48,15 @@ public class Class5380 extends Module {
             this.field24010 = this.field24010 * (double) this.field24014;
             var1.method13993((double) var8 * this.field24010 * var11 + (double) var9 * this.field24010 * var13 + (double) this.field24011);
             var1.method13997((double) var8 * this.field24010 * var13 - (double) var9 * this.field24010 * var11 + (double) this.field24012);
-            field23386.field1339.method3433().field18048 = var1.method13992();
-            field23386.field1339.method3433().field18049 = var1.method13994();
+            mc.field1339.method3433().field18048 = var1.method13992();
+            mc.field1339.method3433().field18049 = var1.method13994();
             if (this.field24011 != 0.0F || this.field24012 != 0.0F) {
                 this.field24011 = (float) ((double) this.field24011 * 0.85);
                 this.field24012 = (float) ((double) this.field24012 * 0.85);
                 this.field24014 = Math.min(1.0F, this.field24014 + 0.1F);
             }
 
-            if (field23386.field1339.field5036 && !this.field24013) {
+            if (mc.field1339.field5036 && !this.field24013) {
                 this.field24011 = 0.0F;
                 this.field24012 = 0.0F;
                 this.field24014 = Math.min(1.0F, this.field24014 + 0.33F);
@@ -69,9 +69,9 @@ public class Class5380 extends Module {
     @EventTarget
     private void method16944(Class4396 var1) {
         if (this.method15996()) {
-            if (field23386.field1339 != null && var1.method13898() instanceof Class5590) {
+            if (mc.field1339 != null && var1.method13898() instanceof Class5590) {
                 Class5590 var4 = (Class5590) var1.method13898();
-                if (var4.method17565() == field23386.field1339.method3205()) {
+                if (var4.method17565() == mc.field1339.method3205()) {
                     this.field24011 = this.field24011 + (float) var4.field24801 / 8000.0F;
                     this.field24012 = this.field24012 + (float) var4.field24803 / 8000.0F;
                     this.field24013 = true;

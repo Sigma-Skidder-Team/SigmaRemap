@@ -9,7 +9,7 @@ public class Class3448 extends Class3445 implements Class3449 {
 
    @Override
    public Class3452 method12124() {
-      return (Class3452)Class8487.field36961;
+      return (Class3452) Blocks.field36961;
    }
 
    @Override

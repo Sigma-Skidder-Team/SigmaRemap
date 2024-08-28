@@ -14,26 +14,26 @@ public class Class5389 extends Module {
 
    @EventTarget
    public void method16976(Class4428 var1) {
-      if (this.method15996() && field23386.field1339 != null) {
-         if (field23386.field1339.method3148()) {
-            Class8848 var4 = field23386.field1339.method3158();
+      if (this.method15996() && mc.field1339 != null) {
+         if (mc.field1339.method3148()) {
+            Class8848 var4 = mc.field1339.method3158();
             if (var4 != null
                && (var4.method32138() == Class2103.field13708 || var4.method32138() == Class2103.field13707)
-               && (float)field23386.field1339.method3159() < this.method15977("Speed") * 32.0F) {
+               && (float) mc.field1339.method3159() < this.method15977("Speed") * 32.0F) {
                String var5 = this.method15978("Mode");
                switch (var5) {
                   case "Basic":
-                     int var7 = field23386.field1339.method3159() + 2;
+                     int var7 = mc.field1339.method3159() + 2;
 
                      for (int var8 = 0; var8 < var7; var8++) {
-                        field23386.getClientPlayNetHandler().sendPacket(new Class5603(field23386.field1339.field5036));
-                        field23386.field1339.method3161();
+                        mc.getClientPlayNetHandler().sendPacket(new Class5603(mc.field1339.field5036));
+                        mc.field1339.method3161();
                      }
                      break;
                   case "Hypixel":
-                     field23386.getClientPlayNetHandler()
-                        .sendPacket(new Class5539(field23386.field1339.field4902.field5443 + 1 >= 9 ? 0 : field23386.field1339.field4902.field5443 + 1));
-                     field23386.getClientPlayNetHandler().sendPacket(new Class5539(field23386.field1339.field4902.field5443));
+                     mc.getClientPlayNetHandler()
+                        .sendPacket(new Class5539(mc.field1339.field4902.field5443 + 1 >= 9 ? 0 : mc.field1339.field4902.field5443 + 1));
+                     mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.field1339.field4902.field5443));
                }
             }
          }

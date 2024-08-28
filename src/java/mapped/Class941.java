@@ -164,7 +164,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    public void method3761() {
-      Class3209 var3 = this.method3775().method23383();
+      Block var3 = this.method3775().method23383();
       if (var3 instanceof Class3348) {
          this.field5324.method6787(this.field5325, var3, 1, this.field5315);
          this.field5324.method6733(this.field5325, var3);

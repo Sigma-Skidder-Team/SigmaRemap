@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class3299 extends Class3298 {
-   public Class3299(Class3209 var1, Class3209 var2, Class5643 var3) {
+   public Class3299(Block var1, Block var2, Class5643 var3) {
       super(var1, var2, var3);
    }
 

@@ -7,7 +7,7 @@ public class Class8326 {
    private static String[] field35775;
    private final Class6698 field35776;
    private final Class6166 field35777;
-   private Set<Class3209> field35778 = ImmutableSet.of();
+   private Set<Block> field35778 = ImmutableSet.of();
    private Set<Class7380> field35779 = ImmutableSet.of();
    private int field35780 = 64;
    private int field35781 = 7;
@@ -22,7 +22,7 @@ public class Class8326 {
       this.field35777 = var2;
    }
 
-   public Class8326 method29189(Set<Class3209> var1) {
+   public Class8326 method29189(Set<Block> var1) {
       this.field35778 = var1;
       return this;
    }

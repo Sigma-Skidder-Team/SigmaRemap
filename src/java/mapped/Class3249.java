@@ -2,7 +2,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class3249 extends Class3209 implements Class3245 {
+public class Class3249 extends Block implements Class3245 {
    public static final Class8552<Class182> field18712 = Class8820.field39723;
 
    public Class3249(Class7929 var1) {
@@ -11,7 +11,7 @@ public class Class3249 extends Class3209 implements Class3245 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18712);
    }
 

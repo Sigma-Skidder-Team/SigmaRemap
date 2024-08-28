@@ -62,7 +62,7 @@ public interface Class6226 {
       Class3357.method11931(Class8514.field37882, new Class6243());
       Class3357.method11931(Class8514.field37794, new Class6234());
       Class3357.method11931(Class8514.field37934, new Class6241());
-      Class3357.method11931(Class8487.field36524, new Class6219());
+      Class3357.method11931(Blocks.field36524, new Class6219());
       Class6239 var5 = new Class6239();
       Class3357.method11931(Class8514.field38062, var5);
       Class3357.method11931(Class8514.field38061, var5);
@@ -70,8 +70,8 @@ public interface Class6226 {
       Class3357.method11931(Class8514.field38058, var5);
       Class3357.method11931(Class8514.field38060, var5);
       Class3357.method11931(Class8514.field38059, new Class6238());
-      Class3357.method11931(Class8487.field36589, new Class6235());
-      Class3357.method11931(Class8487.field36896.method11581(), new Class6240());
+      Class3357.method11931(Blocks.field36589, new Class6235());
+      Class3357.method11931(Blocks.field36896.method11581(), new Class6240());
 
       for (Class112 var9 : Class112.values()) {
          Class3357.method11931(Class3368.method11956(var9).method11581(), new Class6240());

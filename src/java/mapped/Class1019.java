@@ -11,22 +11,22 @@ import java.util.stream.Collectors;
 public class Class1019 extends Class1018 implements Class1020 {
    private static final Class9289<Byte> field5704 = Class9361.<Byte>method35441(Class1019.class, Class7784.field33390);
    private static final Map<Class112, Class3303> field5705 = Util.<Map<Class112, Class3303>>method38508(Maps.newEnumMap(Class112.class), var0 -> {
-      var0.put(Class112.field386, Class8487.field36489);
-      var0.put(Class112.field387, Class8487.field36490);
-      var0.put(Class112.field388, Class8487.field36491);
-      var0.put(Class112.field389, Class8487.field36492);
-      var0.put(Class112.field390, Class8487.field36493);
-      var0.put(Class112.field391, Class8487.field36494);
-      var0.put(Class112.field392, Class8487.field36495);
-      var0.put(Class112.field393, Class8487.field36496);
-      var0.put(Class112.field394, Class8487.field36497);
-      var0.put(Class112.field395, Class8487.field36498);
-      var0.put(Class112.field396, Class8487.field36499);
-      var0.put(Class112.field397, Class8487.field36500);
-      var0.put(Class112.field398, Class8487.field36501);
-      var0.put(Class112.field399, Class8487.field36502);
-      var0.put(Class112.field400, Class8487.field36503);
-      var0.put(Class112.field401, Class8487.field36504);
+      var0.put(Class112.field386, Blocks.field36489);
+      var0.put(Class112.field387, Blocks.field36490);
+      var0.put(Class112.field388, Blocks.field36491);
+      var0.put(Class112.field389, Blocks.field36492);
+      var0.put(Class112.field390, Blocks.field36493);
+      var0.put(Class112.field391, Blocks.field36494);
+      var0.put(Class112.field392, Blocks.field36495);
+      var0.put(Class112.field393, Blocks.field36496);
+      var0.put(Class112.field394, Blocks.field36497);
+      var0.put(Class112.field395, Blocks.field36498);
+      var0.put(Class112.field396, Blocks.field36499);
+      var0.put(Class112.field397, Blocks.field36500);
+      var0.put(Class112.field398, Blocks.field36501);
+      var0.put(Class112.field399, Blocks.field36502);
+      var0.put(Class112.field400, Blocks.field36503);
+      var0.put(Class112.field401, Blocks.field36504);
    });
 
    private static final Map<Class112, float[]> field5706 = Maps.newEnumMap(Arrays.stream(Class112.values())

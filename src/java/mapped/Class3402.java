@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
-public class Class3402 extends Class3209 {
+public class Class3402 extends Block {
    private static String[] field19063;
    public static final Class8551 field19064 = Class3392.field19023;
    public static final Class8551 field19065 = Class3392.field19019;
@@ -19,11 +19,11 @@ public class Class3402 extends Class3209 {
       .stream()
       .filter(var0 -> var0.getKey() != Direction.field672)
       .collect(Util.<Direction, Class8551>method38484());
-   private static final Class6408 field19070 = Class3209.method11539(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
-   private static final Class6408 field19071 = Class3209.method11539(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
-   private static final Class6408 field19072 = Class3209.method11539(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   private static final Class6408 field19073 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
-   private static final Class6408 field19074 = Class3209.method11539(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
+   private static final Class6408 field19070 = Block.method11539(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
+   private static final Class6408 field19071 = Block.method11539(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
+   private static final Class6408 field19072 = Block.method11539(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   private static final Class6408 field19073 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
+   private static final Class6408 field19074 = Block.method11539(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
    private final Map<Class7380, Class6408> field19075;
 
    public Class3402(Class7929 var1) {
@@ -112,7 +112,7 @@ public class Class3402 extends Class3209 {
 
    public static boolean method12034(Class1665 var0, BlockPos var1, Direction var2) {
       Class7380 var5 = var0.method6738(var1);
-      return Class3209.method11549(var5.method23414(var0, var1), var2.method536());
+      return Block.method11549(var5.method23414(var0, var1), var2.method536());
    }
 
    private Class7380 method12035(Class7380 var1, Class1665 var2, BlockPos var3) {
@@ -146,7 +146,7 @@ public class Class3402 extends Class3209 {
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var2 != Direction.field672) {
          Class7380 var9 = this.method12035(var1, var4, var5);
-         return this.method12031(var9) ? var9 : Class8487.field36387.method11579();
+         return this.method12031(var9) ? var9 : Blocks.AIR.method11579();
       } else {
          return super.method11491(var1, var2, var3, var4, var5, var6);
       }
@@ -295,7 +295,7 @@ public class Class3402 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19064, field19065, field19066, field19067, field19068);
    }
 

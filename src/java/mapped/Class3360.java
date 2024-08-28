@@ -6,8 +6,8 @@ import java.util.Map;
 public class Class3360 extends Class3359 {
    private static String[] field18905;
    public static final Class8554 field18906 = Class8820.field39763;
-   private static final Map<Class112, Class3209> field18907 = Maps.newHashMap();
-   private static final Class6408 field18908 = Class3209.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
+   private static final Map<Class112, Block> field18907 = Maps.newHashMap();
+   private static final Class6408 field18908 = Block.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
 
    public Class3360(Class112 var1, Class7929 var2) {
       super(var1, var2);
@@ -34,7 +34,7 @@ public class Class3360 extends Class3359 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.field672 && !var1.method23443(var4, var5)
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
@@ -49,11 +49,11 @@ public class Class3360 extends Class3359 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18906);
    }
 
-   public static Class3209 method11937(Class112 var0) {
-      return field18907.getOrDefault(var0, Class8487.field36803);
+   public static Block method11937(Class112 var0) {
+      return field18907.getOrDefault(var0, Blocks.field36803);
    }
 }

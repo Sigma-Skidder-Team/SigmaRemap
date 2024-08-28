@@ -39,14 +39,14 @@ public class Class4206 extends Class4194 {
       this.method12928(var1, var5, 0, 0, 0, 4, 4, 6, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 1, 0);
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 6);
-      this.method12927(var1, var5, 3, 1, 2, 3, 1, 4, Class8487.field36615.method11579(), Class8487.field36615.method11579(), false);
-      this.method12923(var1, Class8487.field36852.method11579(), 3, 1, 1, var5);
-      this.method12923(var1, Class8487.field36852.method11579(), 3, 1, 5, var5);
-      this.method12923(var1, Class8487.field36852.method11579(), 3, 2, 2, var5);
-      this.method12923(var1, Class8487.field36852.method11579(), 3, 2, 4, var5);
+      this.method12927(var1, var5, 3, 1, 2, 3, 1, 4, Blocks.field36615.method11579(), Blocks.field36615.method11579(), false);
+      this.method12923(var1, Blocks.field36852.method11579(), 3, 1, 1, var5);
+      this.method12923(var1, Blocks.field36852.method11579(), 3, 1, 5, var5);
+      this.method12923(var1, Blocks.field36852.method11579(), 3, 2, 2, var5);
+      this.method12923(var1, Blocks.field36852.method11579(), 3, 2, 4, var5);
 
       for (int var10 = 2; var10 <= 4; var10++) {
-         this.method12923(var1, Class8487.field36852.method11579(), 2, 1, var10, var5);
+         this.method12923(var1, Blocks.field36852.method11579(), 2, 1, var10, var5);
       }
 
       if (!this.field20513 && var5.method38396(new BlockPos(this.method12920(3, 3), this.method12921(2), this.method12922(3, 3)))) {

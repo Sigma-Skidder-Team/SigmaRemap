@@ -5,7 +5,7 @@ public class Class7880 {
    private static Class7202 field33823 = null;
 
    public static void method26418() {
-      field33823 = Class7944.method26860().method1553().method806().method38153(Class8487.field36571.method11579());
+      field33823 = Class7944.method26860().method1553().method806().method38153(Blocks.SNOW.method11579());
    }
 
    public static Class7202 method26419() {
@@ -13,7 +13,7 @@ public class Class7880 {
    }
 
    public static Class7380 method26420() {
-      return Class8487.field36571.method11579();
+      return Blocks.SNOW.method11579();
    }
 
    public static boolean method26421(Class1663 var0, Class7380 var1, BlockPos var2) {
@@ -25,7 +25,7 @@ public class Class7880 {
    }
 
    private static boolean method26422(Class1665 var0, BlockPos var1) {
-      Class3209 var4 = Class8487.field36571;
+      Block var4 = Blocks.SNOW;
       if (var0.method6738(var1.method8341()).method23383() == var4
          || var0.method6738(var1.method8343()).method23383() == var4
          || var0.method6738(var1.method8345()).method23383() == var4
@@ -35,7 +35,7 @@ public class Class7880 {
             return true;
          }
 
-         Class3209 var6 = var5.method23383();
+         Block var6 = var5.method23383();
          if (var6 instanceof Class3421) {
             return var5.<Class99>method23463(Class3421.field19132) == Class99.field270;
          }
@@ -50,8 +50,8 @@ public class Class7880 {
 
    private static boolean method26423(Class1665 var0, Class7380 var1, BlockPos var2) {
       if (!var1.method23409(var0, var2)) {
-         Class3209 var5 = var1.method23383();
-         if (var5 == Class8487.field36573) {
+         Block var5 = var1.method23383();
+         if (var5 == Blocks.SNOW_BLOCK) {
             return false;
          } else if (!(var5 instanceof Class3194)
             || !(var5 instanceof Class3456)

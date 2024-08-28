@@ -5,7 +5,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 
 public class Class907 extends Entity {
-   private Class7380 field5176 = Class8487.field36415.method11579();
+   private Class7380 field5176 = Blocks.SAND.method11579();
    public int field5177;
    public boolean field5178 = true;
    private boolean field5179;
@@ -62,7 +62,7 @@ public class Class907 extends Entity {
    @Override
    public void tick() {
       if (!this.field5176.method23393()) {
-         Class3209 var3 = this.field5176.method23383();
+         Block var3 = this.field5176.method23383();
          if (this.field5177++ == 0) {
             BlockPos var4 = this.method3432();
             if (!this.field5024.method6738(var4).method23448(var3)) {
@@ -109,7 +109,7 @@ public class Class907 extends Entity {
             } else {
                Class7380 var19 = this.field5024.method6738(var18);
                this.method3434(this.method3433().method11347(0.7, -0.5, 0.7));
-               if (!var19.method23448(Class8487.field36505)) {
+               if (!var19.method23448(Blocks.field36505)) {
                   this.method2904();
                   if (this.field5179) {
                      if (var3 instanceof Class3213) {
@@ -227,7 +227,7 @@ public class Class907 extends Entity {
       }
 
       if (this.field5176.method23393()) {
-         this.field5176 = Class8487.field36415.method11579();
+         this.field5176 = Blocks.SAND.method11579();
       }
    }
 
@@ -261,6 +261,6 @@ public class Class907 extends Entity {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5487(this, Class3209.method11535(this.method3556()));
+      return new Class5487(this, Block.method11535(this.method3556()));
    }
 }

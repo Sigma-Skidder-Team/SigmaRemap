@@ -77,7 +77,7 @@ public class Class3248 extends Class3247 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18484, field18711, field18710, field18708);
    }
 }

@@ -7,14 +7,14 @@ public class Class3486 extends Class3194 implements Class3196 {
    private static String[] field18470;
    public static final Class8554 field19347 = Class8820.field39742;
    public static final Class6408[] field19348 = new Class6408[]{
-      Class3209.method11539(7.0, 0.0, 7.0, 9.0, 2.0, 9.0),
-      Class3209.method11539(7.0, 0.0, 7.0, 9.0, 4.0, 9.0),
-      Class3209.method11539(7.0, 0.0, 7.0, 9.0, 6.0, 9.0),
-      Class3209.method11539(7.0, 0.0, 7.0, 9.0, 8.0, 9.0),
-      Class3209.method11539(7.0, 0.0, 7.0, 9.0, 10.0, 9.0),
-      Class3209.method11539(7.0, 0.0, 7.0, 9.0, 12.0, 9.0),
-      Class3209.method11539(7.0, 0.0, 7.0, 9.0, 14.0, 9.0),
-      Class3209.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 9.0)
+      Block.method11539(7.0, 0.0, 7.0, 9.0, 2.0, 9.0),
+      Block.method11539(7.0, 0.0, 7.0, 9.0, 4.0, 9.0),
+      Block.method11539(7.0, 0.0, 7.0, 9.0, 6.0, 9.0),
+      Block.method11539(7.0, 0.0, 7.0, 9.0, 8.0, 9.0),
+      Block.method11539(7.0, 0.0, 7.0, 9.0, 10.0, 9.0),
+      Block.method11539(7.0, 0.0, 7.0, 9.0, 12.0, 9.0),
+      Block.method11539(7.0, 0.0, 7.0, 9.0, 14.0, 9.0),
+      Block.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 9.0)
    };
    private final Class3462 field19349;
 
@@ -31,7 +31,7 @@ public class Class3486 extends Class3194 implements Class3196 {
 
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      return var1.method23448(Class8487.field36540);
+      return var1.method23448(Blocks.field36540);
    }
 
    @Override
@@ -46,11 +46,11 @@ public class Class3486 extends Class3194 implements Class3196 {
                Class7380 var11 = var2.method6738(var10.method8313());
                if (var2.method6738(var10).method23393()
                   && (
-                     var11.method23448(Class8487.field36540)
-                        || var11.method23448(Class8487.field36396)
-                        || var11.method23448(Class8487.field36397)
-                        || var11.method23448(Class8487.field36398)
-                        || var11.method23448(Class8487.field36395)
+                     var11.method23448(Blocks.field36540)
+                        || var11.method23448(Blocks.field36396)
+                        || var11.method23448(Blocks.field36397)
+                        || var11.method23448(Blocks.field36398)
+                        || var11.method23448(Blocks.field36395)
                   )) {
                   var2.method6730(var10, this.field19349.method11579());
                   var2.method6730(var3, this.field19349.method12147().method11579().method23465(Class3198.field18484, var9));
@@ -65,8 +65,8 @@ public class Class3486 extends Class3194 implements Class3196 {
 
    @Nullable
    public Class3257 method12184() {
-      if (this.field19349 != Class8487.field36579) {
-         return this.field19349 != Class8487.field36631 ? null : Class8514.field37960;
+      if (this.field19349 != Blocks.PUMPKIN) {
+         return this.field19349 != Blocks.field36631 ? null : Class8514.field37960;
       } else {
          return Class8514.field37959;
       }
@@ -99,7 +99,7 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19347);
    }
 

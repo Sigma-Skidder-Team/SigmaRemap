@@ -18,7 +18,7 @@ public class Class4966 extends Class4928<Class129> {
 
    public Class129 method15244(JsonObject var1, JsonDeserializationContext var2, Class122[] var3) {
       ResourceLocation var6 = new ResourceLocation(Class8963.method32763(var1, "block"));
-      Class3209 var7 = Class2348.field16072.method9187(var6).orElseThrow(() -> new IllegalArgumentException("Can't find block " + var6));
+      Block var7 = Class2348.field16072.method9187(var6).orElseThrow(() -> new IllegalArgumentException("Can't find block " + var6));
       Class9348 var8 = var7.method11577();
       HashSet var9 = Sets.newHashSet();
       JsonArray var10 = Class8963.method32786(var1, "properties", (JsonArray)null);

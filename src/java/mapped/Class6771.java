@@ -6,11 +6,11 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6771 extends Class6768<Class8278> {
-   public static final Class7380 field29539 = Class8487.field36796.method11579();
-   public static final Class7380 field29540 = Class8487.field36573.method11579();
-   private static final Class7380 field29541 = Class8487.field36387.method11579();
-   private static final Class7380 field29490 = Class8487.field36417.method11579();
-   private static final Class7380 field29542 = Class8487.field36572.method11579();
+   public static final Class7380 field29539 = Blocks.field36796.method11579();
+   public static final Class7380 field29540 = Blocks.SNOW_BLOCK.method11579();
+   private static final Class7380 field29541 = Blocks.AIR.method11579();
+   private static final Class7380 field29490 = Blocks.GRAVEL.method11579();
+   private static final Class7380 field29542 = Blocks.ICE.method11579();
    private Class7691 field29543;
    private Class7691 field29544;
    private long field29545;
@@ -91,9 +91,9 @@ public class Class6771 extends Class6768<Class8278> {
                   if (var33 > 0) {
                      var33--;
                      var2.method7061(var21, var30, false);
-                     if (var33 == 0 && var30.method23448(Class8487.field36415) && var32 > 1) {
+                     if (var33 == 0 && var30.method23448(Blocks.SAND) && var32 > 1) {
                         var33 = var1.nextInt(4) + Math.max(0, var37 - 63);
-                        var30 = !var30.method23448(Class8487.field36416) ? Class8487.field36458.method11579() : Class8487.field36835.method11579();
+                        var30 = !var30.method23448(Blocks.RED_SAND) ? Blocks.field36458.method11579() : Blocks.field36835.method11579();
                      }
                   }
                } else {
@@ -128,7 +128,7 @@ public class Class6771 extends Class6768<Class8278> {
                      var2.method7061(var21, var31, false);
                   }
                }
-            } else if (var44.method23448(Class8487.field36796) && var34 <= var35 && var37 > var36) {
+            } else if (var44.method23448(Blocks.field36796) && var34 <= var35 && var37 > var36) {
                var2.method7061(var21, field29540, false);
                var34++;
             }

@@ -13,7 +13,7 @@ public class Class5269 extends Module {
     @EventTarget
     public void method16490(Class4428 var1) {
         if (this.method15996()) {
-            field23386.field1339.method3040(Class8254.field35491);
+            mc.field1339.method3040(Class8254.field35491);
         }
     }
 }

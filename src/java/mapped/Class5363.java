@@ -13,8 +13,8 @@ public class Class5363 extends Module {
 
     @EventTarget
     public void method16882(Class4417 var1) {
-        if (this.method15996() && field23386.field1339.field5036) {
-            Module var4 = Client.getInstance().getModuleManager().method14662(Class5328.class);
+        if (this.method15996() && mc.field1339.field5036) {
+            Module var4 = Client.getInstance().getModuleManager().method14662(BlockFly.class);
             if (!var4.method15996()) {
                 var1.method13966(true);
             }

@@ -2,10 +2,10 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3221 extends Class3209 {
+public class Class3221 extends Block {
    private static String[] field18643;
    public static final Class8554 field18644 = Class8820.field39756;
-   public static final Class6408 field18645 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
+   public static final Class6408 field18645 = Block.method11539(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
 
    public Class3221(Class7929 var1) {
       super(var1);
@@ -29,7 +29,7 @@ public class Class3221 extends Class3209 {
 
    @Override
    public Class7380 method11495(Class5909 var1) {
-      return this.method11579().method23443(var1.method18360(), var1.method18345()) ? super.method11495(var1) : Class8487.field36396.method11579();
+      return this.method11579().method23443(var1.method18360(), var1.method18345()) ? super.method11495(var1) : Blocks.field36396.method11579();
    }
 
    @Override
@@ -79,11 +79,11 @@ public class Class3221 extends Class3209 {
    }
 
    public static void method11610(Class7380 var0, Class1655 var1, BlockPos var2) {
-      var1.method6730(var2, method11538(var0, Class8487.field36396.method11579(), var1, var2));
+      var1.method6730(var2, method11538(var0, Blocks.field36396.method11579(), var1, var2));
    }
 
    private static boolean method11611(Class1665 var0, BlockPos var1) {
-      Class3209 var4 = var0.method6738(var1.method8311()).method23383();
+      Block var4 = var0.method6738(var1.method8311()).method23383();
       return var4 instanceof Class3480 || var4 instanceof Class3486 || var4 instanceof Class3493;
    }
 
@@ -98,7 +98,7 @@ public class Class3221 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18644);
    }
 

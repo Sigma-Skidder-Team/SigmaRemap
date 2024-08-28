@@ -5,10 +5,10 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
 public class Class129 extends Class128 {
-   private final Class3209 field443;
+   private final Block field443;
    private final Set<Class8550<?>> field444;
 
-   public Class129(Class122[] var1, Class3209 var2, Set<Class8550<?>> var3) {
+   public Class129(Class122[] var1, Block var2, Set<Class8550<?>> var3) {
       super(var1);
       this.field443 = var2;
       this.field444 = var3;
@@ -43,7 +43,7 @@ public class Class129 extends Class128 {
       return var1;
    }
 
-   public static Class5880 method373(Class3209 var0) {
+   public static Class5880 method373(Block var0) {
       return new Class5880(var0);
    }
 
@@ -53,7 +53,7 @@ public class Class129 extends Class128 {
    }
 
    // $VF: synthetic method
-   public static Class3209 method376(Class129 var0) {
+   public static Block method376(Class129 var0) {
       return var0.field443;
    }
 

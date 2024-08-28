@@ -230,7 +230,7 @@ public class Class997 extends Class995 {
       }
 
       if (var2 && this.field5488 != null) {
-         this.field5024.method6806(this.field5488, Class8487.field36387);
+         this.field5024.method6806(this.field5488, Blocks.AIR);
       }
    }
 
@@ -265,7 +265,7 @@ public class Class997 extends Class995 {
    private void method4095(int var1, boolean var2) {
       this.method3210().method35446(field5493, var1 % 8);
       if (var2 && this.field5488 != null) {
-         this.field5024.method6806(this.field5488, Class8487.field36387);
+         this.field5024.method6806(this.field5488, Blocks.AIR);
       }
    }
 

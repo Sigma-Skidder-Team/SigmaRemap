@@ -68,7 +68,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18939);
    }
 
@@ -205,52 +205,52 @@ public class Class3368 extends Class3241 {
 
    @Nullable
    public static Class112 method11954(Class3257 var0) {
-      return method11955(Class3209.method11537(var0));
+      return method11955(Block.method11537(var0));
    }
 
    @Nullable
-   public static Class112 method11955(Class3209 var0) {
+   public static Class112 method11955(Block var0) {
       return !(var0 instanceof Class3368) ? null : ((Class3368)var0).method11957();
    }
 
-   public static Class3209 method11956(Class112 var0) {
+   public static Block method11956(Class112 var0) {
       if (var0 == null) {
-         return Class8487.field36896;
+         return Blocks.field36896;
       } else {
          switch (Class7797.field33491[var0.ordinal()]) {
             case 1:
-               return Class8487.field36897;
+               return Blocks.field36897;
             case 2:
-               return Class8487.field36898;
+               return Blocks.field36898;
             case 3:
-               return Class8487.field36899;
+               return Blocks.field36899;
             case 4:
-               return Class8487.field36900;
+               return Blocks.field36900;
             case 5:
-               return Class8487.field36901;
+               return Blocks.field36901;
             case 6:
-               return Class8487.field36902;
+               return Blocks.field36902;
             case 7:
-               return Class8487.field36903;
+               return Blocks.field36903;
             case 8:
-               return Class8487.field36904;
+               return Blocks.field36904;
             case 9:
-               return Class8487.field36905;
+               return Blocks.field36905;
             case 10:
-               return Class8487.field36906;
+               return Blocks.field36906;
             case 11:
             default:
-               return Class8487.field36907;
+               return Blocks.field36907;
             case 12:
-               return Class8487.field36908;
+               return Blocks.field36908;
             case 13:
-               return Class8487.field36909;
+               return Blocks.field36909;
             case 14:
-               return Class8487.field36910;
+               return Blocks.field36910;
             case 15:
-               return Class8487.field36911;
+               return Blocks.field36911;
             case 16:
-               return Class8487.field36912;
+               return Blocks.field36912;
          }
       }
    }

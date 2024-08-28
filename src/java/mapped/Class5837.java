@@ -44,7 +44,7 @@ public class Class5837 extends Class5812 {
 
    @Override
    public boolean method18103(PlayerEntity var1) {
-      return method18121(this.field25564, var1, Class8487.field37054);
+      return method18121(this.field25564, var1, Blocks.field37054);
    }
 
    @Override

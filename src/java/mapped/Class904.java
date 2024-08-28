@@ -281,7 +281,7 @@ public class Class904 extends Class882 {
                   double var14 = (double)((float)Class9679.method37769(this.getPosY()) + 1.0F);
                   double var16 = this.getPosZ() + (double)(Class9679.method37764(var10) * var11 * 0.1F);
                   Class7380 var18 = var4.method6738(new BlockPos(var12, var14 - 1.0, var16));
-                  if (var18.method23448(Class8487.field36413)) {
+                  if (var18.method23448(Blocks.WATER)) {
                      var4.method6939(Class7940.field34099, var12, var14, var16, 2 + this.field5054.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
                   }
                }
@@ -329,7 +329,7 @@ public class Class904 extends Class882 {
                double var25 = (double)((float)Class9679.method37769(this.getPosY()) + 1.0F);
                double var26 = this.getPosZ() + (double)(var23 * (float)this.field5156 * 0.1F);
                Class7380 var27 = var4.method6738(new BlockPos(var24, var25 - 1.0, var26));
-               if (var27.method23448(Class8487.field36413)) {
+               if (var27.method23448(Blocks.WATER)) {
                   if (this.field5054.nextFloat() < 0.15F) {
                      var4.method6939(Class7940.field34052, var24, var25 - 0.1F, var26, 1, (double)var22, 0.1, (double)var23, 0.0);
                   }
@@ -385,7 +385,7 @@ public class Class904 extends Class882 {
 
    private Class2331 method3540(BlockPos var1) {
       Class7380 var4 = this.field5024.method6738(var1);
-      if (!var4.method23393() && !var4.method23448(Class8487.field36641)) {
+      if (!var4.method23393() && !var4.method23448(Blocks.field36641)) {
          Class7379 var5 = var4.method23449();
          return var5.method23486(Class8953.field40469) && var5.method23473() && var4.method23414(this.field5024, var1).method19516()
             ? Class2331.field15948

@@ -35,7 +35,7 @@ public class Class5169 extends Module {
       if (this.method15996()) {
          if (var1.method13898() instanceof Class5607) {
             Class5607 var4 = (Class5607)var1.method13898();
-            this.method16076(field23386.field1338.method6722(var4.method17632()).method7072());
+            this.method16076(mc.field1338.method6722(var4.method17632()).method7072());
          }
 
          if (var1.method13898() instanceof Class5549) {
@@ -77,7 +77,7 @@ public class Class5169 extends Module {
          for (float var12 = (float)var5; var12 <= (float)var8; var12++) {
             for (float var13 = (float)var6; var13 <= (float)var9; var13++) {
                BlockPos var14 = new BlockPos((double)var12, (double)var11, (double)var13);
-               if (field23386.field1338.method6738(var14).method23383() == Class8487.field36536) {
+               if (mc.field1338.method6738(var14).method23383() == Blocks.field36536) {
                   var4.add(var14);
                }
             }
@@ -90,7 +90,7 @@ public class Class5169 extends Module {
    @EventTarget
    public void method16079(Class4428 var1) {
       if (this.method15996()) {
-         if (field23386.field1339.field5055 < 20) {
+         if (mc.field1339.field5055 < 20) {
             this.field23451.clear();
          } else {
             int var4 = (int)this.method15977("Chunk Range");
@@ -98,7 +98,7 @@ public class Class5169 extends Module {
 
             for (int var6 = -4; var6 < 4; var6++) {
                for (int var7 = -4; var7 < 4; var7++) {
-                  var5.add(new Class7481(field23386.field1339.field5072 + var6, field23386.field1339.field5074 + var7));
+                  var5.add(new Class7481(mc.field1339.field5072 + var6, mc.field1339.field5074 + var7));
                }
             }
 
@@ -106,7 +106,7 @@ public class Class5169 extends Module {
 
             while (var12.hasNext()) {
                Class6203 var13 = (Class6203)var12.next();
-               if (var13.method19108(new Class7481(field23386.field1339.field5072, field23386.field1339.field5074)) > 7
+               if (var13.method19108(new Class7481(mc.field1339.field5072, mc.field1339.field5074)) > 7
                   || this.field23452.contains(var13.method19109())) {
                   var12.remove();
                }
@@ -128,7 +128,7 @@ public class Class5169 extends Module {
                break;
             }
 
-            if (!var14 && field23386.field1339.field5036 && !Client.getInstance().method19950().method31742() && this.field23454 == null) {
+            if (!var14 && mc.field1339.field5036 && !Client.getInstance().method19950().method31742() && this.field23454 == null) {
                List<BlockPos> var15 = this.method16081();
                Client.getInstance().getNotificationManager().post(new Notification("AutoMiner", "Computing...", ResourcesDecrypter.directionIconPNG));
                this.field23454 = new Thread(
@@ -138,7 +138,7 @@ public class Class5169 extends Module {
                      for (BlockPos var6x : var15) {
                         try {
                            this.field23453 = new Class9823();
-                           Class9510 var7x = new Class9510(new Class9110(field23386.field1339.method3432()));
+                           Class9510 var7x = new Class9510(new Class9110(mc.field1339.method3432()));
                            Class9510 var8 = new Class9510(new Class9110(var6x));
                            double var9x = (double)var8.field44271.method33975(var7x.field44271);
                            int var11x = (int)Math.min(30000.0, 5000.0 + var9x * 100.0);
@@ -184,7 +184,7 @@ public class Class5169 extends Module {
             }
 
             if (this.method15996() && this.field23453 != null && this.field23454 != null) {
-               if (field23386.field1339.field5055 % 20 == 0) {
+               if (mc.field1339.field5055 % 20 == 0) {
                   this.field23458 = this.field23457;
                   this.field23457 = this.method16085();
                }
@@ -336,7 +336,7 @@ public class Class5169 extends Module {
          GL11.glLineWidth(1.4F);
          GL11.glColor4d(1.0, 1.0, 1.0, 0.44F);
          GL11.glBegin(3);
-         float var3 = Math.min(1.0F, ((float)(field23386.field1339.field5055 % 20) + field23386.field1284.field40356) / 20.0F);
+         float var3 = Math.min(1.0F, ((float)(mc.field1339.field5055 % 20) + mc.field1284.field40356) / 20.0F);
 
          for (int var4 = 0; var4 < (int)((float)this.field23457.size() * var3); var4++) {
             Class9110 var5 = this.field23457.get(var4);
@@ -351,18 +351,18 @@ public class Class5169 extends Module {
             double var9 = var6.method33970() + (var5.method33970() - var6.method33970());
             double var11 = var6.method33971() + (var5.method33971() - var6.method33971());
             GL11.glVertex3d(
-               var7 - field23386.field1295.method768().method37504().method11320() + 0.5,
-               var9 - field23386.field1295.method768().method37504().method11321(),
-               var11 - field23386.field1295.method768().method37504().method11322() + 0.5
+               var7 - mc.field1295.method768().method37504().method11320() + 0.5,
+               var9 - mc.field1295.method768().method37504().method11321(),
+               var11 - mc.field1295.method768().method37504().method11322() + 0.5
             );
          }
 
          GL11.glEnd();
          GL11.glPushMatrix();
          GL11.glTranslated(
-            field23386.field1295.method768().method37504().method11320(),
-            field23386.field1295.method768().method37504().method11321(),
-            field23386.field1295.method768().method37504().method11322()
+            mc.field1295.method768().method37504().method11320(),
+            mc.field1295.method768().method37504().method11321(),
+            mc.field1295.method768().method37504().method11322()
          );
          GL11.glPopMatrix();
          GL11.glDisable(3042);

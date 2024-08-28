@@ -29,32 +29,32 @@ public class Class5282 extends Module {
 
     // $VF: synthetic method
     public static Minecraft method16572() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16573() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16574() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16575() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16576() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16577() {
-        return field23386;
+        return mc;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class Class5282 extends Module {
     @EventTarget
     private void method16569(Class4399 var1) {
         if (this.method15996() && var1.method13921()) {
-            if (!(field23386.field1339.method3158().method32107() instanceof Class3263)) {
+            if (!(mc.field1339.method3158().method32107() instanceof Class3263)) {
                 this.field23754.clear();
             } else {
                 this.field23754 = this.method16571(this.method16004().method15977("Range"));
@@ -84,8 +84,8 @@ public class Class5282 extends Module {
         if (this.method15996() && !this.method15974("Silent")) {
             if (!this.field23754.isEmpty()) {
                 float[] var4 = Class9142.method34146((Class880) this.field23754.get(0));
-                field23386.field1339.field5031 = var4[0];
-                field23386.field1339.field5032 = var4[1];
+                mc.field1339.field5031 = var4[0];
+                mc.field1339.field5032 = var4[1];
             }
         }
     }
@@ -96,7 +96,7 @@ public class Class5282 extends Module {
 
         while (var5.hasNext()) {
             Entity var6 = (Entity) var5.next();
-            if (var6 == field23386.field1339) {
+            if (var6 == mc.field1339) {
                 var5.remove();
             } else if (Client.getInstance().getFriendManager().method26997(var6)) {
                 var5.remove();
@@ -104,9 +104,9 @@ public class Class5282 extends Module {
                 var5.remove();
             } else if (((Class880) var6).method3042() == 0.0F) {
                 var5.remove();
-            } else if (field23386.field1339.method3275(var6) > var1) {
+            } else if (mc.field1339.method3275(var6) > var1) {
                 var5.remove();
-            } else if (!field23386.field1339.method3026((Class880) var6)) {
+            } else if (!mc.field1339.method3026((Class880) var6)) {
                 var5.remove();
             } else if (var6 instanceof Class1005) {
                 var5.remove();
@@ -118,7 +118,7 @@ public class Class5282 extends Module {
                 var5.remove();
             } else if (!this.method15974("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                 var5.remove();
-            } else if (field23386.field1339.method3421() != null && field23386.field1339.method3421().equals(var6)) {
+            } else if (mc.field1339.method3421() != null && mc.field1339.method3421().equals(var6)) {
                 var5.remove();
             } else if (var6.method3362()) {
                 var5.remove();

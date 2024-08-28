@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3213 extends Class3209 {
+public class Class3213 extends Block {
    private static String[] field18622;
 
    public Class3213(Class7929 var1) {

@@ -57,14 +57,14 @@ public class Class3336 extends Class3257 {
    }
 
    public static boolean method11884(Class8848 var0, Class1655 var1, BlockPos var2, Direction var3) {
-      if (var1.method6738(var2).method23448(Class8487.field36413) && var1.method6739(var2).method23477() == 8) {
+      if (var1.method6738(var2).method23448(Blocks.WATER) && var1.method6739(var2).method23477() == 8) {
          if (!(var1 instanceof Class1657)) {
             return true;
          } else {
             label110:
             for (int var6 = 0; var6 < 128; var6++) {
                BlockPos var7 = var2;
-               Class7380 var8 = Class8487.field36485.method11579();
+               Class7380 var8 = Blocks.field36485.method11579();
 
                for (int var9 = 0; var9 < var6 / 16; var9++) {
                   var7 = var7.method8336(field18735.nextInt(3) - 1, (field18735.nextInt(3) - 1) * field18735.nextInt(3) / 2, field18735.nextInt(3) - 1);
@@ -91,10 +91,10 @@ public class Class3336 extends Class3257 {
 
                if (var8.method23443(var1, var7)) {
                   Class7380 var12 = var1.method6738(var7);
-                  if (var12.method23448(Class8487.field36413) && var1.method6739(var7).method23477() == 8) {
+                  if (var12.method23448(Blocks.WATER) && var1.method6739(var7).method23477() == 8) {
                      var1.method6725(var7, var8, 3);
-                  } else if (var12.method23448(Class8487.field36485) && field18735.nextInt(10) == 0) {
-                     ((Class3196)Class8487.field36485).method11488((Class1657)var1, field18735, var7, var12);
+                  } else if (var12.method23448(Blocks.field36485) && field18735.nextInt(10) == 0) {
+                     ((Class3196) Blocks.field36485).method11488((Class1657)var1, field18735, var7, var12);
                   }
                }
             }
@@ -116,7 +116,7 @@ public class Class3336 extends Class3257 {
       if (!var5.method23393()) {
          double var6 = 0.5;
          double var8;
-         if (!var5.method23448(Class8487.field36413)) {
+         if (!var5.method23448(Blocks.WATER)) {
             if (!var5.method23409(var0, var1)) {
                var8 = var5.method23412(var0, var1).method19513(Class113.field414);
             } else {

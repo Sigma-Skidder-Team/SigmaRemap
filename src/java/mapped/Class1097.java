@@ -25,7 +25,7 @@ public class Class1097 extends Class1018 {
    private Class2616 field6034;
    private static final Predicate<Class1000> field6035 = var0 -> {
       Class3257 var3 = var0.method4124().method32107();
-      return (var3 == Class8487.field37009.method11581() || var3 == Class8487.field36591.method11581()) && var0.method3066() && !var0.method4135();
+      return (var3 == Blocks.field37009.method11581() || var3 == Blocks.field36591.method11581()) && var0.method3066() && !var0.method4135();
    };
 
    public Class1097(Class8992<? extends Class1097> var1, Class1655 var2) {
@@ -189,7 +189,7 @@ public class Class1097 extends Class1018 {
       this.field5600.method20002(2, new Class2748(this, 2.0));
       this.field5600.method20002(2, new Class2788(this, this, 1.0));
       this.field5600.method20002(3, new Class2649(this, 1.2F, true));
-      this.field5600.method20002(4, new Class2680(this, 1.0, Class120.method339(Class8487.field37009.method11581()), false));
+      this.field5600.method20002(4, new Class2680(this, 1.0, Class120.method339(Blocks.field37009.method11581()), false));
       this.field5600.method20002(6, new Class2771<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
       this.field5600.method20002(6, new Class2771<Class1009>(this, Class1009.class, 4.0F, 2.0, 2.0));
       this.field5600.method20002(7, new Class2623(this));
@@ -599,11 +599,11 @@ public class Class1097 extends Class1018 {
 
    @Override
    public boolean method4381(Class8848 var1) {
-      return var1.method32107() == Class8487.field37009.method11581();
+      return var1.method32107() == Blocks.field37009.method11581();
    }
 
    private boolean method5229(Class8848 var1) {
-      return this.method4381(var1) || var1.method32107() == Class8487.field36591.method11581();
+      return this.method4381(var1) || var1.method32107() == Blocks.field36591.method11581();
    }
 
    @Nullable

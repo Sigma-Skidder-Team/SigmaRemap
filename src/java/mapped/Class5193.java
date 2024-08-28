@@ -17,19 +17,19 @@ public class Class5193 extends Module {
     @Override
     public void method15965() {
         Class9567.method37090(Class9567.method37075() * 0.8);
-        field23386.field1284.field40360 = 1.0F;
+        mc.field1284.field40360 = 1.0F;
     }
 
     @Override
     public void method15966() {
         this.field23501 = -1;
-        field23386.field1284.field40360 = 0.3F;
+        mc.field1284.field40360 = 0.3F;
     }
 
     @EventTarget
     public void method16174(Class4428 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
-            if (!Class5628.method17730(field23386.field1339, 0.001F)) {
+        if (this.method15996() && mc.field1339 != null) {
+            if (!Class5628.method17730(mc.field1339, 0.001F)) {
                 this.field23501++;
                 this.field23502 -= 0.005;
                 if (this.field23502 < 0.26 || this.field23501 > 6) {
@@ -47,17 +47,17 @@ public class Class5193 extends Module {
                     this.field23501 = 0;
                 }
 
-                double var4 = field23386.field1339.getPosX();
-                double var6 = field23386.field1339.getPosY();
-                double var8 = field23386.field1339.getPosZ();
+                double var4 = mc.field1339.getPosX();
+                double var6 = mc.field1339.getPosY();
+                double var8 = mc.field1339.getPosZ();
                 int var10 = 49 + Class9567.method37079() * 17;
 
                 for (int var11 = 0; var11 < var10; var11++) {
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6 + 0.06248, var8, false));
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6, var8, false));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6 + 0.06248, var8, false));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6, var8, false));
                 }
 
-                field23386.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6, var8, true));
+                mc.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6, var8, true));
                 Class5628.method17725(Class9567.method37080());
                 this.field23501 = 0;
                 this.field23502 = this.method15977("Boost") / 2.0F;

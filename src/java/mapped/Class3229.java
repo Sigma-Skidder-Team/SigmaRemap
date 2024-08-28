@@ -12,13 +12,13 @@ public class Class3229 extends Class3227 {
    private static final Map<Direction, Class6408> field18670 = Maps.newEnumMap(
       ImmutableMap.of(
          Direction.NORTH,
-         Class3209.method11539(0.0, 4.0, 5.0, 16.0, 12.0, 16.0),
+         Block.method11539(0.0, 4.0, 5.0, 16.0, 12.0, 16.0),
          Direction.SOUTH,
-         Class3209.method11539(0.0, 4.0, 0.0, 16.0, 12.0, 11.0),
+         Block.method11539(0.0, 4.0, 0.0, 16.0, 12.0, 11.0),
          Direction.WEST,
-         Class3209.method11539(5.0, 4.0, 0.0, 16.0, 12.0, 16.0),
+         Block.method11539(5.0, 4.0, 0.0, 16.0, 12.0, 16.0),
          Direction.EAST,
-         Class3209.method11539(0.0, 4.0, 0.0, 11.0, 12.0, 16.0)
+         Block.method11539(0.0, 4.0, 0.0, 11.0, 12.0, 16.0)
       )
    );
 
@@ -43,7 +43,7 @@ public class Class3229 extends Class3227 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18669, field18663);
    }
 
@@ -53,7 +53,7 @@ public class Class3229 extends Class3227 {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
-      return var2.method536() == var1.method23463(field18669) && !var1.method23443(var4, var5) ? Class8487.field36387.method11579() : var1;
+      return var2.method536() == var1.method23463(field18669) && !var1.method23443(var4, var5) ? Blocks.AIR.method11579() : var1;
    }
 
    @Override

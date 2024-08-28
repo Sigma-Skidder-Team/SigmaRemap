@@ -5,7 +5,7 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class Class2943 extends Class2898<Class4705> {
-   private static final Class7380 field18006 = Class8487.field37012.method11579();
+   private static final Class7380 field18006 = Blocks.field37012.method11579();
 
    public Class2943(Codec<Class4705> var1) {
       super(var1);
@@ -93,10 +93,10 @@ public class Class2943 extends Class2898<Class4705> {
                         if (method11219(var1.method6738(var52).method23383())
                            && var1.method7020(Class1977.field12881, var4.method8336(var41, var49, var45)) > 0) {
                            Class8907 var55 = var1.method7003(var52);
-                           if (!var55.method32507().method24283().method28934().method23448(Class8487.field36640)) {
-                              var1.method6725(var52, Class8487.field36395.method11579(), 2);
+                           if (!var55.method32507().method24283().method28934().method23448(Blocks.field36640)) {
+                              var1.method6725(var52, Blocks.field36395.method11579(), 2);
                            } else {
-                              var1.method6725(var52, Class8487.field36640.method11579(), 2);
+                              var1.method6725(var52, Blocks.field36640.method11579(), 2);
                            }
                         }
                      }
@@ -118,7 +118,7 @@ public class Class2943 extends Class2898<Class4705> {
                                  || var50 > 0 && var8[(var42 * 16 + var46) * 8 + (var50 - 1)]
                            );
                         if (var53 && (var50 < 4 || var3.nextInt(2) != 0) && var1.method6738(var4.method8336(var42, var50, var46)).method23384().method31086()) {
-                           var1.method6725(var4.method8336(var42, var50, var46), Class8487.field36388.method11579(), 2);
+                           var1.method6725(var4.method8336(var42, var50, var46), Blocks.STONE.method11579(), 2);
                         }
                      }
                   }
@@ -131,7 +131,7 @@ public class Class2943 extends Class2898<Class4705> {
                      byte var51 = 4;
                      BlockPos var54 = var4.method8336(var43, 4, var47);
                      if (var1.method7003(var54).method32505(var1, var54, false)) {
-                        var1.method6725(var54, Class8487.field36572.method11579(), 2);
+                        var1.method6725(var54, Blocks.ICE.method11579(), 2);
                      }
                   }
                }

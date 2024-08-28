@@ -5,12 +5,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Class3404 extends Class3209 implements Class3405 {
+public class Class3404 extends Block implements Class3405 {
    private static String[] field19078;
    public static final Class8554 field19079 = Class8820.field39755;
    public final Class7633 field19080;
    private final List<Class7379> field19081;
-   public static final Class6408 field19082 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+   public static final Class6408 field19082 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
 
    public Class3404(Class7633 var1, Class7929 var2) {
       super(var2);
@@ -98,7 +98,7 @@ public class Class3404 extends Class3209 implements Class3405 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (this.method12043(var2, var3, var1)) {
          var2.method6861().method20726(var3, var1.method23449().method23472(), this.field19080.method25057(var2));
       }
@@ -106,20 +106,20 @@ public class Class3404 extends Class3209 implements Class3405 {
 
    private boolean method12043(Class1655 var1, BlockPos var2, Class7380 var3) {
       if (this.field19080.method25067(Class8953.field40470)) {
-         boolean var6 = var1.method6738(var2.method8313()).method23448(Class8487.field36582);
+         boolean var6 = var1.method6738(var2.method8313()).method23448(Blocks.SOUL_SOIL);
 
          for (Direction var10 : Direction.values()) {
             if (var10 != Direction.field672) {
                BlockPos var11 = var2.method8349(var10);
                if (var1.method6739(var11).method23486(Class8953.field40469)) {
-                  Class3209 var12 = !var1.method6739(var2).method23473() ? Class8487.field36399 : Class8487.field36527;
+                  Block var12 = !var1.method6739(var2).method23473() ? Blocks.field36399 : Blocks.field36527;
                   var1.method6730(var2, var12.method11579());
                   this.method12044(var1, var2);
                   return false;
                }
 
-               if (var6 && var1.method6738(var11).method23448(Class8487.field37006)) {
-                  var1.method6730(var2, Class8487.field36583.method11579());
+               if (var6 && var1.method6738(var11).method23448(Blocks.field37006)) {
+                  var1.method6730(var2, Blocks.BASALT.method11579());
                   this.method12044(var1, var2);
                   return false;
                }
@@ -135,7 +135,7 @@ public class Class3404 extends Class3209 implements Class3405 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19079);
    }
 
@@ -144,7 +144,7 @@ public class Class3404 extends Class3209 implements Class3405 {
       if (var3.<Integer>method23463(field19079) != 0) {
          return Class9479.field44064;
       } else {
-         var1.method6725(var2, Class8487.field36387.method11579(), 11);
+         var1.method6725(var2, Blocks.AIR.method11579(), 11);
          return this.field19080;
       }
    }

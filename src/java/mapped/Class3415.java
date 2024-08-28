@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import java.util.Map;
 
-public class Class3415 extends Class3209 implements Class3207 {
+public class Class3415 extends Block implements Class3207 {
    private static String[] field19105;
    public static final Class8551 field19106 = Class8820.field39714;
    public static final Class8552<Class184> field19107 = Class8820.field39726;
@@ -14,11 +14,11 @@ public class Class3415 extends Class3209 implements Class3207 {
    public static final Class8551 field19111 = Class8820.field39710;
    private final Map<Class7380, Class6408> field19112;
    private final Map<Class7380, Class6408> field19113;
-   private static final Class6408 field19114 = Class3209.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 9.0);
-   private static final Class6408 field19115 = Class3209.method11539(7.0, 0.0, 0.0, 9.0, 16.0, 9.0);
-   private static final Class6408 field19116 = Class3209.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 16.0);
-   private static final Class6408 field19117 = Class3209.method11539(0.0, 0.0, 7.0, 9.0, 16.0, 9.0);
-   private static final Class6408 field19118 = Class3209.method11539(7.0, 0.0, 7.0, 16.0, 16.0, 9.0);
+   private static final Class6408 field19114 = Block.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 9.0);
+   private static final Class6408 field19115 = Block.method11539(7.0, 0.0, 0.0, 9.0, 16.0, 9.0);
+   private static final Class6408 field19116 = Block.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 16.0);
+   private static final Class6408 field19117 = Block.method11539(0.0, 0.0, 7.0, 9.0, 16.0, 9.0);
+   private static final Class6408 field19118 = Block.method11539(7.0, 0.0, 7.0, 16.0, 16.0, 9.0);
 
    public Class3415(Class7929 var1) {
       super(var1);
@@ -49,15 +49,15 @@ public class Class3415 extends Class3209 implements Class3207 {
       float var10 = 8.0F + var1;
       float var11 = 8.0F - var2;
       float var12 = 8.0F + var2;
-      Class6408 var13 = Class3209.method11539((double)var9, 0.0, (double)var9, (double)var10, (double)var3, (double)var10);
-      Class6408 var14 = Class3209.method11539((double)var11, (double)var4, 0.0, (double)var12, (double)var5, (double)var12);
-      Class6408 var15 = Class3209.method11539((double)var11, (double)var4, (double)var11, (double)var12, (double)var5, 16.0);
-      Class6408 var16 = Class3209.method11539(0.0, (double)var4, (double)var11, (double)var12, (double)var5, (double)var12);
-      Class6408 var17 = Class3209.method11539((double)var11, (double)var4, (double)var11, 16.0, (double)var5, (double)var12);
-      Class6408 var18 = Class3209.method11539((double)var11, (double)var4, 0.0, (double)var12, (double)var6, (double)var12);
-      Class6408 var19 = Class3209.method11539((double)var11, (double)var4, (double)var11, (double)var12, (double)var6, 16.0);
-      Class6408 var20 = Class3209.method11539(0.0, (double)var4, (double)var11, (double)var12, (double)var6, (double)var12);
-      Class6408 var21 = Class3209.method11539((double)var11, (double)var4, (double)var11, 16.0, (double)var6, (double)var12);
+      Class6408 var13 = Block.method11539((double)var9, 0.0, (double)var9, (double)var10, (double)var3, (double)var10);
+      Class6408 var14 = Block.method11539((double)var11, (double)var4, 0.0, (double)var12, (double)var5, (double)var12);
+      Class6408 var15 = Block.method11539((double)var11, (double)var4, (double)var11, (double)var12, (double)var5, 16.0);
+      Class6408 var16 = Block.method11539(0.0, (double)var4, (double)var11, (double)var12, (double)var5, (double)var12);
+      Class6408 var17 = Block.method11539((double)var11, (double)var4, (double)var11, 16.0, (double)var5, (double)var12);
+      Class6408 var18 = Block.method11539((double)var11, (double)var4, 0.0, (double)var12, (double)var6, (double)var12);
+      Class6408 var19 = Block.method11539((double)var11, (double)var4, (double)var11, (double)var12, (double)var6, 16.0);
+      Class6408 var20 = Block.method11539(0.0, (double)var4, (double)var11, (double)var12, (double)var6, (double)var12);
+      Class6408 var21 = Block.method11539((double)var11, (double)var4, (double)var11, 16.0, (double)var6, (double)var12);
       Builder var22 = ImmutableMap.builder();
 
       for (Boolean var24 : field19106.method30474()) {
@@ -107,7 +107,7 @@ public class Class3415 extends Class3209 implements Class3207 {
    }
 
    private boolean method12055(Class7380 var1, boolean var2, Direction var3) {
-      Class3209 var6 = var1.method23383();
+      Block var6 = var1.method23383();
       boolean var7 = var6 instanceof Class3199 && Class3199.method11507(var1, var3);
       return var1.method23446(Class7645.field32764) || !method11545(var6) && var2 || var6 instanceof Class3237 || var7;
    }
@@ -230,7 +230,7 @@ public class Class3415 extends Class3209 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19106, field19108, field19107, field19110, field19109, field19111);
    }
 

@@ -3,12 +3,12 @@ package mapped;
 import com.google.gson.JsonObject;
 
 public class Class4486 extends Class4457 {
-   private final Class3209 field21682;
+   private final Block field21682;
    private final Class7340 field21683;
    private final Class8576 field21684;
    private final Class8634 field21685;
 
-   public Class4486(Class9587 var1, Class3209 var2, Class7340 var3, Class8576 var4, Class8634 var5) {
+   public Class4486(Class9587 var1, Block var2, Class7340 var3, Class8576 var4, Class8634 var5) {
       super(Class4899.method15142(), var1);
       this.field21682 = var2;
       this.field21683 = var3;
@@ -16,7 +16,7 @@ public class Class4486 extends Class4457 {
       this.field21685 = var5;
    }
 
-   public static Class4486 method14152(Class3209 var0) {
+   public static Class4486 method14152(Block var0) {
       return new Class4486(Class9587.field44822, var0, Class7340.field31445, Class8576.field38559, Class8634.field38839);
    }
 

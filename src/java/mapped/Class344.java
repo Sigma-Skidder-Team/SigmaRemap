@@ -323,7 +323,7 @@ public abstract class Class344 extends Class341 implements Runnable, Class345 {
 
    @Override
    public final void method1681(Class345 var1, String var2) {
-      this.method1759(var2);
+      this.handleIncomingAction(var2);
    }
 
    @Override
@@ -391,7 +391,7 @@ public abstract class Class344 extends Class341 implements Runnable, Class345 {
 
    public abstract void method1758(Class7296 var1);
 
-   public abstract void method1759(String var1);
+   public abstract void handleIncomingAction(String var1);
 
    public abstract void method1760(int var1, String var2, boolean var3);
 

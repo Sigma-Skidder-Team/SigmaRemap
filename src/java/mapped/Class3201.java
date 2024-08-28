@@ -5,14 +5,14 @@ import java.util.Random;
 public class Class3201 extends Class3200 {
    private static String[] field18499;
    public static final Class8551 field18501 = Class8820.field39704;
-   public static final Class6408 field18502 = Class3209.method11539(5.0, 4.0, 10.0, 11.0, 12.0, 16.0);
-   public static final Class6408 field18503 = Class3209.method11539(5.0, 4.0, 0.0, 11.0, 12.0, 6.0);
-   public static final Class6408 field18504 = Class3209.method11539(10.0, 4.0, 5.0, 16.0, 12.0, 11.0);
-   public static final Class6408 field18505 = Class3209.method11539(0.0, 4.0, 5.0, 6.0, 12.0, 11.0);
-   public static final Class6408 field18506 = Class3209.method11539(5.0, 0.0, 4.0, 11.0, 6.0, 12.0);
-   public static final Class6408 field18507 = Class3209.method11539(4.0, 0.0, 5.0, 12.0, 6.0, 11.0);
-   public static final Class6408 field18508 = Class3209.method11539(5.0, 10.0, 4.0, 11.0, 16.0, 12.0);
-   public static final Class6408 field18509 = Class3209.method11539(4.0, 10.0, 5.0, 12.0, 16.0, 11.0);
+   public static final Class6408 field18502 = Block.method11539(5.0, 4.0, 10.0, 11.0, 12.0, 16.0);
+   public static final Class6408 field18503 = Block.method11539(5.0, 4.0, 0.0, 11.0, 12.0, 6.0);
+   public static final Class6408 field18504 = Block.method11539(10.0, 4.0, 5.0, 16.0, 12.0, 11.0);
+   public static final Class6408 field18505 = Block.method11539(0.0, 4.0, 5.0, 6.0, 12.0, 11.0);
+   public static final Class6408 field18506 = Block.method11539(5.0, 0.0, 4.0, 11.0, 6.0, 12.0);
+   public static final Class6408 field18507 = Block.method11539(4.0, 0.0, 5.0, 12.0, 6.0, 11.0);
+   public static final Class6408 field18508 = Block.method11539(5.0, 10.0, 4.0, 11.0, 16.0, 12.0);
+   public static final Class6408 field18509 = Block.method11539(4.0, 10.0, 5.0, 12.0, 16.0, 11.0);
 
    public Class3201(Class7929 var1) {
       super(var1);
@@ -132,7 +132,7 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18500, field18484, field18501);
    }
 }

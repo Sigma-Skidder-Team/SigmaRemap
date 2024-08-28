@@ -116,7 +116,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    public void method2871() {
       if (this.field5683 == null
          || !this.field5683.method8317(this.method3431(), 3.46)
-         || !this.field5024.method6738(this.field5683).method23448(Class8487.field36577)) {
+         || !this.field5024.method6738(this.field5683).method23448(Blocks.JUKEBOX)) {
          this.field5682 = false;
          this.field5683 = null;
       }
@@ -242,9 +242,9 @@ public class Class1015 extends Class1014 implements Class1016 {
       Class7380 var7 = var1.method6738(var3.method8313());
       return (
             var7.method23446(Class7645.field32767)
-               || var7.method23448(Class8487.field36395)
+               || var7.method23448(Blocks.field36395)
                || var7.method23446(Class7645.field32751)
-               || var7.method23448(Class8487.field36387)
+               || var7.method23448(Blocks.AIR)
          )
          && var1.method7021(var3, 0) > 8;
    }

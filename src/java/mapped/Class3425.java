@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-public class Class3425 extends Class3209 {
+public class Class3425 extends Block {
    private static String[] field19162;
    public static final Class8551 field19163 = Class8820.field39704;
    public static final Class8551 field19164 = Class8820.field39682;
@@ -14,8 +14,8 @@ public class Class3425 extends Class3209 {
    public static final Class8551 field19168 = Class3392.field19021;
    public static final Class8551 field19169 = Class3392.field19022;
    private static final Map<Direction, Class8551> field19170 = Class3238.field18685;
-   public static final Class6408 field19171 = Class3209.method11539(0.0, 1.0, 0.0, 16.0, 2.5, 16.0);
-   public static final Class6408 field19172 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+   public static final Class6408 field19171 = Block.method11539(0.0, 1.0, 0.0, 16.0, 2.5, 16.0);
+   public static final Class6408 field19172 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
    private final Class3459 field19173;
 
    public Class3425(Class3459 var1, Class7929 var2) {
@@ -139,7 +139,7 @@ public class Class3425 extends Class3209 {
    }
 
    public boolean method12082(Class7380 var1, Direction var2) {
-      Class3209 var5 = var1.method23383();
+      Block var5 = var1.method23383();
       return var5 != this.field19173 ? var5 == this : var1.<Direction>method23463(Class3459.field19281) == var2.method536();
    }
 
@@ -179,7 +179,7 @@ public class Class3425 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19163, field19164, field19165, field19166, field19167, field19169, field19168);
    }
 }

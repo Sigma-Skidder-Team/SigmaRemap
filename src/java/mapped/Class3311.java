@@ -31,7 +31,7 @@ public class Class3311 extends Class3257 {
          BlockPos var6 = var1.method18345();
          Direction var7 = var1.method18354();
          Class7380 var8 = var4.method6738(var6);
-         if (var8.method23448(Class8487.field36532)) {
+         if (var8.method23448(Blocks.field36532)) {
             Class944 var9 = var4.method6759(var6);
             if (var9 instanceof Class960) {
                Class7574 var13 = ((Class960)var9).method3911();

@@ -29,8 +29,8 @@ public class Class5201 extends Module {
     }
 
     public Entity method16193() {
-        ArrayList var3 = Lists.newArrayList(field23386.field1338.method6835());
-        var3.remove(field23386.field1339);
+        ArrayList var3 = Lists.newArrayList(mc.field1338.method6835());
+        var3.remove(mc.field1339);
         Iterator var4 = var3.iterator();
 
         while (var4.hasNext()) {
@@ -50,8 +50,8 @@ public class Class5201 extends Module {
 
     @EventTarget
     public void method16195(Class4428 var1) {
-        if (field23386.field1339 != null) {
-            if (field23386.field1339.field5055 % 14 == 0) {
+        if (mc.field1339 != null) {
+            if (mc.field1339.field5055 % 14 == 0) {
                 Entity var4 = this.method16193();
                 if (this.field23515 == null
                         && (this.field23512 == null || this.field23512.isEmpty() || (var4 != this.field23513 || this.method16194()) && var4 != null)) {
@@ -61,7 +61,7 @@ public class Class5201 extends Module {
 
                         try {
                             Class9823 var4x = new Class9823();
-                            Class9510 var5 = new Class9510(new Class9110(field23386.field1339.method3432()));
+                            Class9510 var5 = new Class9510(new Class9110(mc.field1339.method3432()));
                             Class7860 var6 = new Class7860(this.field23513 = var4);
                             this.field23514 = this.field23513.field5028;
                             Class7267 var7 = new Class7267(var5, var6);

@@ -7,13 +7,13 @@ import java.util.function.Supplier;
 
 @FunctionalInterface
 public interface Class7732 {
-   Class7524 method25590(Class3209 var1);
+   Class7524 method25590(Block var1);
 
-   default ResourceLocation method25591(Class3209 var1, BiConsumer<ResourceLocation, Supplier<JsonElement>> var2) {
+   default ResourceLocation method25591(Block var1, BiConsumer<ResourceLocation, Supplier<JsonElement>> var2) {
       return this.method25590(var1).method24562(var1, var2);
    }
 
-   default ResourceLocation method25592(Class3209 var1, String var2, BiConsumer<ResourceLocation, Supplier<JsonElement>> var3) {
+   default ResourceLocation method25592(Block var1, String var2, BiConsumer<ResourceLocation, Supplier<JsonElement>> var3) {
       return this.method25590(var1).method24563(var1, var2, var3);
    }
 

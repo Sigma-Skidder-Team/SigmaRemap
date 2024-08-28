@@ -155,7 +155,7 @@ public class Class9624 {
    }
 
    public Class7380 method37513() {
-      return this.field45005 ? this.field45006.method6738(this.field45009) : Class8487.field36387.method11579();
+      return this.field45005 ? this.field45006.method6738(this.field45009) : Blocks.AIR.method11579();
    }
 
    public void method37514(float var1, float var2) {
@@ -172,7 +172,7 @@ public class Class9624 {
 
          return var3;
       } else {
-         return Class8487.field36387.method11579();
+         return Blocks.AIR.method11579();
       }
    }
 

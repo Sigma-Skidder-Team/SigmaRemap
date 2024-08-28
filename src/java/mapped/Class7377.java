@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public abstract class Class7377 extends Class7378<Class3209, Class7380> {
+public abstract class Class7377 extends Class7378<Block, Class7380> {
    private final int field31564;
    private final boolean field31565;
    private final boolean field31566;
@@ -26,7 +26,7 @@ public abstract class Class7377 extends Class7378<Class3209, Class7380> {
    private final Class8609 field31576;
    public Class6486 field31577;
 
-   public Class7377(Class3209 var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7380> var3) {
+   public Class7377(Block var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7380> var3) {
       super(var1, var2, var3);
       Class7929 var6 = var1.field19013;
       this.field31564 = Class7929.method26654(var6).applyAsInt(this.method23457());
@@ -50,7 +50,7 @@ public abstract class Class7377 extends Class7378<Class3209, Class7380> {
       }
    }
 
-   public Class3209 method23383() {
+   public Block method23383() {
       return this.field31579;
    }
 
@@ -161,7 +161,7 @@ public abstract class Class7377 extends Class7378<Class3209, Class7380> {
    public boolean method23409(Class1665 var1, BlockPos var2) {
       if (this.field31577 == null) {
          Class7380 var5 = this.method23457();
-         return !var5.method23410() ? false : Class3209.method11550(var5.method23389(var1, var2));
+         return !var5.method23410() ? false : Block.method11550(var5.method23389(var1, var2));
       } else {
          return this.field31577.field28438;
       }
@@ -208,7 +208,7 @@ public abstract class Class7377 extends Class7378<Class3209, Class7380> {
    }
 
    public final boolean method23420(Class1665 var1, BlockPos var2, Entity var3, Direction var4) {
-      return Class3209.method11549(this.method23415(var1, var2, Class4832.method14948(var3)), var4);
+      return Block.method11549(this.method23415(var1, var2, Class4832.method14948(var3)), var4);
    }
 
    public Vector3d method23421(Class1665 var1, BlockPos var2) {
@@ -229,7 +229,7 @@ public abstract class Class7377 extends Class7378<Class3209, Class7380> {
       return this.method23383().method11647(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23423(Class1655 var1, BlockPos var2, Class3209 var3, BlockPos var4, boolean var5) {
+   public void method23423(Class1655 var1, BlockPos var2, Block var3, BlockPos var4, boolean var5) {
       this.method23383().method11506(this.method23457(), var1, var2, var3, var4, var5);
    }
 
@@ -245,7 +245,7 @@ public abstract class Class7377 extends Class7378<Class3209, Class7380> {
          var7.method8377(var2, var11);
          Class7380 var12 = var1.method6738(var7);
          Class7380 var13 = var12.method23439(var11.method536(), this.method23457(), var1, var7, var2);
-         Class3209.method11544(var12, var13, var1, var7, var3, var4);
+         Block.method11544(var12, var13, var1, var7, var3, var4);
       }
    }
 
@@ -330,15 +330,15 @@ public abstract class Class7377 extends Class7378<Class3209, Class7380> {
       return this.method23383().method11528(this.method23457(), var1, var2);
    }
 
-   public boolean method23446(Class7608<Class3209> var1) {
+   public boolean method23446(Class7608<Block> var1) {
       return this.method23383().method11540(var1);
    }
 
-   public boolean method23447(Class7608<Class3209> var1, Predicate<Class7377> var2) {
+   public boolean method23447(Class7608<Block> var1, Predicate<Class7377> var2) {
       return this.method23383().method11540(var1) && var2.test(this);
    }
 
-   public boolean method23448(Class3209 var1) {
+   public boolean method23448(Block var1) {
       return this.method23383().method11541(var1);
    }
 
@@ -371,7 +371,7 @@ public abstract class Class7377 extends Class7378<Class3209, Class7380> {
    }
 
    public boolean method23456(Class1665 var1, BlockPos var2) {
-      return this.field31577 == null ? Class3209.method11550(this.method23414(var1, var2)) : this.field31577.field28445;
+      return this.field31577 == null ? Block.method11550(this.method23414(var1, var2)) : this.field31577.field28445;
    }
 
    public abstract Class7380 method23457();

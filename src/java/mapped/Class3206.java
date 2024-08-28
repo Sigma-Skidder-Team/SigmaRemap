@@ -6,12 +6,12 @@ public class Class3206 extends Class3198 implements Class3207 {
    public static final Class8552<Class99> field18595 = Class8820.field39735;
    public static final Class8551 field18596 = Class8820.field39704;
    public static final Class8551 field18597 = Class8820.field39710;
-   public static final Class6408 field18598 = Class3209.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
-   public static final Class6408 field18599 = Class3209.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field18600 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
-   public static final Class6408 field18601 = Class3209.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field18602 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
-   public static final Class6408 field18603 = Class3209.method11539(0.0, 13.0, 0.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field18598 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
+   public static final Class6408 field18599 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field18600 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
+   public static final Class6408 field18601 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
+   public static final Class6408 field18602 = Block.method11539(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
+   public static final Class6408 field18603 = Block.method11539(0.0, 13.0, 0.0, 16.0, 16.0, 16.0);
 
    public Class3206(Class7929 var1) {
       super(var1);
@@ -86,7 +86,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          boolean var9 = var2.method6780(var3);
          if (var9 != var1.<Boolean>method23463(field18596)) {
@@ -124,7 +124,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18484, field18594, field18595, field18596, field18597);
    }
 

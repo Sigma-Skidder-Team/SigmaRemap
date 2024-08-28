@@ -11,13 +11,13 @@ public class Class5647 extends Class5646 {
       .xmap(Class5647::new, Class5647::method17834)
       .stable()
       .codec();
-   private static final List<Class7380> field24992 = StreamSupport.<Class3209>stream(Class2348.field16072.spliterator(), false)
+   private static final List<Class7380> field24992 = StreamSupport.<Block>stream(Class2348.field16072.spliterator(), false)
       .<Class7380>flatMap(var0 -> var0.method11577().method35392().stream())
       .collect(Collectors.<Class7380>toList());
    private static final int field24993 = Class9679.method37773(Class9679.method37765((float)field24992.size()));
    private static final int field24994 = Class9679.method37773((float)field24992.size() / (float)field24993);
-   public static final Class7380 field24995 = Class8487.field36387.method11579();
-   public static final Class7380 field24996 = Class8487.field36765.method11579();
+   public static final Class7380 field24995 = Blocks.AIR.method11579();
+   public static final Class7380 field24996 = Blocks.field36765.method11579();
    private final Class2348<Class8907> field24997;
 
    public Class5647(Class2348<Class8907> var1) {

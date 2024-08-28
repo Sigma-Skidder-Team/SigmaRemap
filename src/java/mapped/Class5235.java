@@ -23,12 +23,12 @@ public class Class5235 extends Module {
 
     // $VF: synthetic method
     public static Minecraft method16322() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16323() {
-        return field23386;
+        return mc;
     }
 
     @Override
@@ -63,9 +63,9 @@ public class Class5235 extends Module {
             if (!var1.method13921()) {
                 if (field23588 != null) {
                     if (this.method15974("No Swing") && !this.method15974("Mineplex")) {
-                        field23386.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
                     } else if (!this.method15974("No Swing")) {
-                        field23386.field1339.method2820(Class79.field182);
+                        mc.field1339.method2820(Class79.field182);
                     }
 
                     Class8711 var7 = new Class8711(
@@ -78,10 +78,10 @@ public class Class5235 extends Module {
                             field23588,
                             false
                     );
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5570(Class79.field182, var7));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5570(Class79.field182, var7));
                 }
             } else {
-                List var8 = this.method16321(!this.method15974("Mineplex") ? field23386.field1337.method23135() : 6.0F);
+                List var8 = this.method16321(!this.method15974("Mineplex") ? mc.field1337.method23135() : 6.0F);
                 if (var8.isEmpty()) {
                     field23588 = null;
                 } else {
@@ -106,13 +106,13 @@ public class Class5235 extends Module {
             for (float var6 = -var1; var6 <= var1; var6++) {
                 for (float var7 = -var1; var7 <= var1; var7++) {
                     BlockPos var8 = new BlockPos(
-                            field23386.field1339.getPosX() + (double) var6,
-                            field23386.field1339.getPosY() + (double) var5,
-                            field23386.field1339.getPosZ() + (double) var7
+                            mc.field1339.getPosX() + (double) var6,
+                            mc.field1339.getPosY() + (double) var5,
+                            mc.field1339.getPosZ() + (double) var7
                     );
-                    if (field23386.field1338.method6738(var8).method23383() instanceof Class3394
+                    if (mc.field1338.method6738(var8).method23383() instanceof Class3394
                             && Math.sqrt(
-                            field23386.field1339.method3276((double) var8.method8304() + 0.5, (double) var8.getY() + 0.5, (double) var8.method8306() + 0.5)
+                            mc.field1339.method3276((double) var8.method8304() + 0.5, (double) var8.getY() + 0.5, (double) var8.method8306() + 0.5)
                     )
                             < (double) var1) {
                         var4.add(var8);

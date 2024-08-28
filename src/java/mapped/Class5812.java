@@ -23,7 +23,7 @@ public abstract class Class5812 {
       this.field25471 = var2;
    }
 
-   public static boolean method18121(Class8786 var0, PlayerEntity var1, Class3209 var2) {
+   public static boolean method18121(Class8786 var0, PlayerEntity var1, Block var2) {
       return var0.<Boolean>method31715(
          (var2x, var3) -> var2x.method6738(var3).method23448(var2)
                ? var1.method3276((double)var3.method8304() + 0.5, (double)var3.getY() + 0.5, (double)var3.method8306() + 0.5) <= 64.0

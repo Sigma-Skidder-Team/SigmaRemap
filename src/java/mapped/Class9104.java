@@ -251,7 +251,7 @@ public class Class9104 {
                true,
                4,
                1,
-               ImmutableSet.of(Class8487.field36580, Class8487.field36581, Class8487.field36417, Class8487.field36890, Class8487.field37130)
+               ImmutableSet.of(Blocks.NETHERRACK, Blocks.SOUL_SAND, Blocks.GRAVEL, Blocks.field36890, Blocks.field37130)
             )
          )
          .method26510(Class9006.field41180)
@@ -267,7 +267,7 @@ public class Class9104 {
    public static final Class7909<?, ?> field41689 = method33941(
       "spring_open",
       Class2898.field17942
-         .method11216(new Class4697(Class7700.field33046, false, 4, 1, ImmutableSet.of(Class8487.field36580)))
+         .method11216(new Class4697(Class7700.field33046, false, 4, 1, ImmutableSet.of(Blocks.NETHERRACK)))
          .method26510(Class9006.field41180)
          .method26517()
          .method26514(8)
@@ -277,7 +277,7 @@ public class Class9104 {
       Class2898.field17942
          .method11216(
             new Class4697(
-               Class7700.field33045, true, 4, 1, ImmutableSet.of(Class8487.field36388, Class8487.field36389, Class8487.field36391, Class8487.field36393)
+               Class7700.field33045, true, 4, 1, ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.field36393)
             )
          )
          .method26510(Class6272.field27764.method19244(new Class4725(8, 8, 256)))
@@ -285,7 +285,7 @@ public class Class9104 {
          .method26514(50)
    );
    public static final Class7909<?, ?> field41691 = method33941(
-      "pile_hay", Class2898.field17941.method11216(new Class4710(new Class6701(Class8487.field36777)))
+      "pile_hay", Class2898.field17941.method11216(new Class4710(new Class6701(Blocks.field36777)))
    );
    public static final Class7909<?, ?> field41692 = method33941(
       "pile_melon", Class2898.field17941.method11216(new Class4710(new Class6700(Class7700.field33028)))

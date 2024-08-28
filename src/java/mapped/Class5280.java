@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.List;
 
 public class Class5280 extends Module {
-    public Class8853 field23731 = field23386.method1554();
+    public Class8853 field23731 = mc.method1554();
     public Class7423 field23732 = new Class7423(0.0F, 0.0F, 0.0F);
     public Class7423 field23733 = new Class7423(0.0F, 0.0F, 0.0F);
     public Class7423 field23734 = new Class7423(0.0F, 0.0F, 0.0F);
@@ -22,137 +22,137 @@ public class Class5280 extends Module {
 
     // $VF: synthetic method
     public static Minecraft method16524() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16525() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16526() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16527() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16528() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16529() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16530() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16531() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16532() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16533() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16534() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16535() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16536() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16537() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16538() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16539() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16540() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16541() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16542() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16543() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16544() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16545() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16546() {
-        return field23386;
+        return mc;
     }
 
     @EventTarget
     public void method16523(Class4420 var1) {
         if (this.method15996()) {
-            if (field23386.field1339.method3090() != null) {
-                Class2309 var4 = Class2309.method9085(field23386.field1339.method3090().method32107());
+            if (mc.field1339.method3090() != null) {
+                Class2309 var4 = Class2309.method9085(mc.field1339.method3090().method32107());
                 if (var4 != null) {
-                    float var5 = (float) Math.toRadians(field23386.field1339.field5031 - 25.0F);
-                    float var6 = (float) Math.toRadians(field23386.field1339.field5032);
+                    float var5 = (float) Math.toRadians(mc.field1339.field5031 - 25.0F);
+                    float var6 = (float) Math.toRadians(mc.field1339.field5032);
                     double var7 = 0.2F;
-                    double var9 = field23386.field1339.field5035.method19675() / 2.0;
+                    double var9 = mc.field1339.field5035.method19675() / 2.0;
                     double var11 = (double) Class9679.method37764(var5) * var9;
                     double var13 = (double) Class9679.method37763(var5) * var9;
-                    double var15 = field23386.field1339.field5048
-                            + (field23386.field1339.getPosX() - field23386.field1339.field5048) * (double) field23386.field1284.field40356;
-                    double var17 = field23386.field1339.field5049
-                            + (field23386.field1339.getPosY() - field23386.field1339.field5049) * (double) field23386.field1284.field40356;
-                    double var19 = field23386.field1339.field5050
-                            + (field23386.field1339.getPosZ() - field23386.field1339.field5050) * (double) field23386.field1284.field40356;
+                    double var15 = mc.field1339.field5048
+                            + (mc.field1339.getPosX() - mc.field1339.field5048) * (double) mc.field1284.field40356;
+                    double var17 = mc.field1339.field5049
+                            + (mc.field1339.getPosY() - mc.field1339.field5049) * (double) mc.field1284.field40356;
+                    double var19 = mc.field1339.field5050
+                            + (mc.field1339.getPosZ() - mc.field1339.field5050) * (double) mc.field1284.field40356;
                     GL11.glPushMatrix();
                     GL11.glEnable(2848);
                     GL11.glBlendFunc(770, 771);
@@ -177,9 +177,9 @@ public class Class5280 extends Module {
                         float var30 = (float) Math.min(1, var22);
                         GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.05F * var30);
                         GL11.glVertex3d(
-                                var23.method33969() - field23386.field1295.method768().method37504().method11320() - var24,
-                                var23.method33970() - field23386.field1295.method768().method37504().method11321() - var28,
-                                var23.method33971() - field23386.field1295.method768().method37504().method11322() - var26
+                                var23.method33969() - mc.field1295.method768().method37504().method11320() - var24,
+                                var23.method33970() - mc.field1295.method768().method37504().method11321() - var28,
+                                var23.method33971() - mc.field1295.method768().method37504().method11322() - var26
                         );
                     }
 
@@ -196,9 +196,9 @@ public class Class5280 extends Module {
                         float var48 = (float) Math.min(1, var38);
                         GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F * var48);
                         GL11.glVertex3d(
-                                var39.method33969() - field23386.field1295.method768().method37504().method11320() - var40,
-                                var39.method33970() - field23386.field1295.method768().method37504().method11321() - var46,
-                                var39.method33971() - field23386.field1295.method768().method37504().method11322() - var43
+                                var39.method33969() - mc.field1295.method768().method37504().method11320() - var40,
+                                var39.method33970() - mc.field1295.method768().method37504().method11321() - var46,
+                                var39.method33971() - mc.field1295.method768().method37504().method11322() - var43
                         );
                     }
 
@@ -207,14 +207,14 @@ public class Class5280 extends Module {
                     if (var4.field15831 == null) {
                         if (var4.field15832 != null) {
                             double var31 = var4.field15832.field5048
-                                    + (var4.field15832.getPosX() - var4.field15832.field5048) * (double) field23386.field1284.field40356
-                                    - field23386.field1295.method768().method37504().method11320();
+                                    + (var4.field15832.getPosX() - var4.field15832.field5048) * (double) mc.field1284.field40356
+                                    - mc.field1295.method768().method37504().method11320();
                             double var41 = var4.field15832.field5049
-                                    + (var4.field15832.getPosY() - var4.field15832.field5049) * (double) field23386.field1284.field40356
-                                    - field23386.field1295.method768().method37504().method11321();
+                                    + (var4.field15832.getPosY() - var4.field15832.field5049) * (double) mc.field1284.field40356
+                                    - mc.field1295.method768().method37504().method11321();
                             double var44 = var4.field15832.field5050
-                                    + (var4.field15832.getPosZ() - var4.field15832.field5050) * (double) field23386.field1284.field40356
-                                    - field23386.field1295.method768().method37504().method11322();
+                                    + (var4.field15832.getPosZ() - var4.field15832.field5050) * (double) mc.field1284.field40356
+                                    - mc.field1295.method768().method37504().method11322();
                             double var47 = var4.field15832.method3429() / 2.0F + 0.2F;
                             double var35 = var4.field15832.method3430() + 0.1F;
                             Class9388 var37 = new Class9388(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
@@ -222,9 +222,9 @@ public class Class5280 extends Module {
                             Class3192.method11461(var37, Class5628.method17688(Class1979.field12892.field12910, 0.1F));
                         }
                     } else {
-                        double var49 = var4.field15825 - field23386.field1295.method768().method37504().method11320();
-                        double var42 = var4.field15826 - field23386.field1295.method768().method37504().method11321();
-                        double var45 = var4.field15827 - field23386.field1295.method768().method37504().method11322();
+                        double var49 = var4.field15825 - mc.field1295.method768().method37504().method11320();
+                        double var42 = var4.field15826 - mc.field1295.method768().method37504().method11321();
+                        double var45 = var4.field15827 - mc.field1295.method768().method37504().method11322();
                         GL11.glPushMatrix();
                         GL11.glTranslated(var49, var42, var45);
                         BlockPos var33 = new BlockPos(0, 0, 0).method8349(((Class8711) var4.field15831).method31424());

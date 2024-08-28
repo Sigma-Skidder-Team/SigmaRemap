@@ -81,27 +81,27 @@ public class Class5357 extends Module {
 
     // $VF: synthetic method
     public static Minecraft method16837() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16838() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16839() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16840() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
     public static Minecraft method16841() {
-        return field23386;
+        return mc;
     }
 
     // $VF: synthetic method
@@ -136,7 +136,7 @@ public class Class5357 extends Module {
 
     // $VF: synthetic method
     public static Minecraft method16848() {
-        return field23386;
+        return mc;
     }
 
     @Override
@@ -155,17 +155,17 @@ public class Class5357 extends Module {
         this.field23940 = 0;
         this.field23942 = 0;
         field23954 = 0;
-        this.field23953 = new Class7461(field23386.field1339.field6122, field23386.field1339.field6123);
-        this.field23952 = new Class7461(field23386.field1339.field5031, field23386.field1339.field5032);
-        field23951 = new Class7461(field23386.field1339.field5031, field23386.field1339.field5032);
+        this.field23953 = new Class7461(mc.field1339.field6122, mc.field1339.field6123);
+        this.field23952 = new Class7461(mc.field1339.field5031, mc.field1339.field5032);
+        field23951 = new Class7461(mc.field1339.field5031, mc.field1339.field5032);
         this.field23957 = -1.0F;
         this.field23938
-                .method36814(field23386.field1339.method3094(Class79.field182).method32107() instanceof Class3267 && field23386.field1299.field44642.method8509());
+                .method36814(mc.field1339.method3094(Class79.field182).method32107() instanceof Class3267 && mc.field1299.field44642.method8509());
         this.field23959 = false;
         this.field23946 = -1;
         this.field23938.field44349.clear();
         this.field23961.clear();
-        if (field23386.field1339.field5036) {
+        if (mc.field1339.field5036) {
             this.field23941 = 1;
         }
 
@@ -197,7 +197,7 @@ public class Class5357 extends Module {
             }
 
             if (this.method15974("Disable on death")) {
-                if (!field23386.field1339.method3066()) {
+                if (!mc.field1339.method3066()) {
                     this.method16000();
                     Client.getInstance().getNotificationManager().post(new Notification("Aura", "Aura disabled due to death"));
                 }
@@ -209,10 +209,10 @@ public class Class5357 extends Module {
     public void method16820(Class4401 var1) {
         if (this.method15996()) {
             if (!this.method15978("Autoblock Mode").equals("None")
-                    && (field23386.field1339.method3090().method32107() instanceof Class3267 || this.field23943 != field23386.field1339.field4902.field5443)
+                    && (mc.field1339.method3090().method32107() instanceof Class3267 || this.field23943 != mc.field1339.field4902.field5443)
                     && field23948 != null) {
                 var1.method13900(true);
-            } else if (field23386.field1339.method3090().method32107() instanceof Class3267) {
+            } else if (mc.field1339.method3090().method32107() instanceof Class3267) {
                 this.field23945 = 2;
             }
         }
@@ -221,9 +221,9 @@ public class Class5357 extends Module {
     @EventTarget
     @LowestPriority
     public void method16821(Class4399 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (!var1.method13921()) {
-                this.field23943 = field23386.field1339.field4902.field5443;
+                this.field23943 = mc.field1339.field4902.field5443;
                 if (field23948 != null && this.field23938.method36817() && this.field23952 != null) {
                     this.field23938.method36815(field23948, this.field23952.field32084, this.field23952.field32085);
                 }
@@ -236,7 +236,7 @@ public class Class5357 extends Module {
                     this.field23938.method36816();
                 }
 
-                if (this.field23938.method36813() && (!(field23386.field1339.method3090().method32107() instanceof Class3267) || field23948 == null)) {
+                if (this.field23938.method36813() && (!(mc.field1339.method3090().method32107() instanceof Class3267) || field23948 == null)) {
                     this.field23938.method36814(false);
                 }
 
@@ -259,7 +259,7 @@ public class Class5357 extends Module {
                     }
 
                     this.method16831();
-                    if (var1.method13917() - field23386.field1339.field5031 != 0.0F) {
+                    if (var1.method13917() - mc.field1339.field5031 != 0.0F) {
                         this.field23952.field32084 = var1.method13917();
                         this.field23952.field32085 = var1.method13915();
                     }
@@ -267,7 +267,7 @@ public class Class5357 extends Module {
                     var1.method13918(this.field23952.field32084);
                     var1.method13916(this.field23952.field32085);
                     boolean var6 = this.field23938.method36821(this.field23939);
-                    float var7 = !((double) field23386.field1339.method2973() < 1.26) && this.method15974("Cooldown") ? field23386.field1339.method2974(0.0F) : 1.0F;
+                    float var7 = !((double) mc.field1339.method2973() < 1.26) && this.method15974("Cooldown") ? mc.field1339.method2974(0.0F) : 1.0F;
                     boolean var8 = field23954 == 0 && var6 && var7 >= 1.0F;
                     if (var6) {
                         this.field23938.method36822();
@@ -296,10 +296,10 @@ public class Class5357 extends Module {
     @EventTarget
     public void method16822(Class4415 var1) {
         if (field23949 != null && !this.method15974("Silent") && !this.method15978("Rotation Mode").equals("None")) {
-            float var4 = Class9679.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * field23386.method1562());
-            float var5 = Class9679.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * field23386.method1562());
-            field23386.field1339.field5031 = var4;
-            field23386.field1339.field5032 = var5;
+            float var4 = Class9679.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * mc.method1562());
+            float var5 = Class9679.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * mc.method1562());
+            mc.field1339.field5031 = var4;
+            mc.field1339.field5032 = var5;
         }
     }
 
@@ -345,7 +345,7 @@ public class Class5357 extends Module {
             if (var4 instanceof Class5464) {
                 Class5464 var5 = (Class5464) var4;
                 if (var5.method17179() == 3) {
-                    this.field23938.field44349.remove(var5.method17178(field23386.field1338));
+                    this.field23938.field44349.remove(var5.method17178(mc.field1338));
                 }
             }
         } else {
@@ -354,7 +354,7 @@ public class Class5357 extends Module {
                 for (Entry var7 : this.field23938.field44349.entrySet()) {
                     Entity var8 = (Entity) var7.getKey();
                     List var9 = (List) var7.getValue();
-                    if (var11.method17233(field23386.field1338) == var8) {
+                    if (var11.method17233(mc.field1338) == var8) {
                         Vector3d var10 = var8.field5076.method11344(2.4414062E-4F);
                         var9.add(new Class9629<Vector3d, Long>(var10, System.currentTimeMillis()));
                     }
@@ -381,9 +381,9 @@ public class Class5357 extends Module {
                 var1.field5050 + (var1.getPosZ() - var1.field5050) * var4
         );
         GL11.glTranslated(
-                -field23386.field1295.method768().method37504().method11320(),
-                -field23386.field1295.method768().method37504().method11321(),
-                -field23386.field1295.method768().method37504().method11322()
+                -mc.field1295.method768().method37504().method11320(),
+                -mc.field1295.method768().method37504().method11321(),
+                -mc.field1295.method768().method37504().method11322()
         );
         GL11.glEnable(32823);
         GL11.glEnable(3008);
@@ -398,9 +398,9 @@ public class Class5357 extends Module {
         this.method16826(var8, 0.45F * var9, 0.6F, 0.35F * var9, this.field23961.get(var1).calcPercent());
         GL11.glPushMatrix();
         GL11.glTranslated(
-                field23386.field1295.method768().method37504().method11320(),
-                field23386.field1295.method768().method37504().method11321(),
-                field23386.field1295.method768().method37504().method11322()
+                mc.field1295.method768().method37504().method11320(),
+                mc.field1295.method768().method37504().method11321(),
+                mc.field1295.method768().method37504().method11322()
         );
         GL11.glPopMatrix();
         GL11.glEnable(3553);
@@ -457,8 +457,8 @@ public class Class5357 extends Module {
 
     public boolean method16827() {
         return field23948 != null
-                && field23386.field1339.method3090() != null
-                && field23386.field1339.method3090().method32107() instanceof Class3267
+                && mc.field1339.method3090() != null
+                && mc.field1339.method3090().method32107() instanceof Class3267
                 && !this.method15978("Autoblock Mode").equals("None");
     }
 
@@ -480,13 +480,13 @@ public class Class5357 extends Module {
         } else if (this.field23940 == 1) {
             this.field23940 = 0;
             var8 = false;
-            if (var2.equals("Hypixel") && this.field23960 != null && field23386.field1339.method3433().field18049 < 0.0) {
-                field23386.getClientPlayNetHandler().sendPacket(new Class5605(this.field23960[0], this.field23960[1], this.field23960[2], false));
+            if (var2.equals("Hypixel") && this.field23960 != null && mc.field1339.method3433().field18049 < 0.0) {
+                mc.getClientPlayNetHandler().sendPacket(new Class5605(this.field23960[0], this.field23960[1], this.field23960[2], false));
                 this.field23960 = null;
             }
         }
 
-        boolean var9 = !Class5381.method16953() && (field23386.field1339.field5036 || Class5628.method17730(field23386.field1339, 0.001F));
+        boolean var9 = !Class5381.method16953() && (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F));
         if (!var9) {
             this.field23941 = 0;
             this.field23940 = 0;
@@ -497,14 +497,14 @@ public class Class5357 extends Module {
                             || Client.getInstance().getModuleManager().method14662(Class5341.class).method15978("Type").equalsIgnoreCase("Cubecraft")
                             || Client.getInstance().getModuleManager().method14662(Class5341.class).method15978("Type").equalsIgnoreCase("Vanilla")
             )
-                    && field23386.field1339.field5038
+                    && mc.field1339.field5038
                     && var9
-                    && !field23386.field1339.field4981
-                    && !field23386.field1339.method3250()
-                    && !field23386.field1299.field44636.method8509()) {
+                    && !mc.field1339.field4981
+                    && !mc.field1339.method3250()
+                    && !mc.field1299.field44636.method8509()) {
                 field23937 = var6 > 0.001;
 
-                var1.method13912(field23386.field1339.getPosY() + var6);
+                var1.method13912(mc.field1339.getPosY() + var6);
                 var1.method13920(var8);
             }
         }
@@ -512,7 +512,7 @@ public class Class5357 extends Module {
 
     private Entity method16829(List<Class8012> var1) {
         var1 = this.field23938.method36824(var1);
-        return !var1.isEmpty() && var1.get(0).method27397().method3275(field23386.field1339) <= this.method15977("Block Range")
+        return !var1.isEmpty() && var1.get(0).method27397().method3275(mc.field1339) <= this.method15977("Block Range")
                 ? var1.get(0).method27397()
                 : null;
     }
@@ -527,7 +527,7 @@ public class Class5357 extends Module {
             this.method15966();
         }
 
-        if (var6 != null && var6.size() != 0 && !field23386.field1299.field44643.method8511()) {
+        if (var6 != null && var6.size() != 0 && !mc.field1299.field44643.method8511()) {
             field23948 = this.method16829(var6);
             var6 = this.field23938.method36823(var4);
             if (var5.equals("Single") || var5.equals("Multi")) {
@@ -540,8 +540,8 @@ public class Class5357 extends Module {
                 this.field23939 = (int) this.field23938.method36819(0);
                 this.field23940 = 0;
                 field23937 = false;
-                this.field23952.field32084 = field23386.field1339.field5031;
-                this.field23952.field32085 = field23386.field1339.field5032;
+                this.field23952.field32084 = mc.field1339.field5031;
+                this.field23952.field32085 = mc.field1339.field5032;
                 field23951.field32084 = this.field23952.field32084;
                 field23951.field32085 = this.field23952.field32085;
                 this.field23957 = -1.0F;
@@ -587,7 +587,7 @@ public class Class5357 extends Module {
                                 || field23949.method27399() == null
                                 || field23949.method27398()
                                 || !this.field23950.contains(field23949)
-                                || field23386.field1339.method3275(field23949.method27397()) > var4
+                                || mc.field1339.method3275(field23949.method27397()) > var4
                 )
                         && this.field23950.size() > 0) {
                     if (this.field23942 + 1 < this.field23950.size()) {
@@ -626,8 +626,8 @@ public class Class5357 extends Module {
             this.field23939 = (int) this.field23938.method36819(0);
             this.field23940 = 0;
             field23937 = false;
-            this.field23952.field32084 = field23386.field1339.field5031;
-            this.field23952.field32085 = field23386.field1339.field5032;
+            this.field23952.field32084 = mc.field1339.field5031;
+            this.field23952.field32085 = mc.field1339.field5032;
             field23951.field32084 = this.field23952.field32084;
             field23951.field32085 = this.field23952.field32085;
             this.field23957 = -1.0F;
@@ -673,12 +673,12 @@ public class Class5357 extends Module {
                     this.field23952.field32084 = this.field23952.field32084 + this.field23958 + (float) this.method16832(-var13, var13);
                 }
 
-                if (field23386.field1339.field5055 % 5 == 0) {
+                if (mc.field1339.field5055 % 5 == 0) {
                     double var32 = 10.0;
                     this.field23952.field32084 = this.field23952.field32084
-                            + (float) this.method16832(-var32, var32) / (field23386.field1339.method3275(var3) + 1.0F);
+                            + (float) this.method16832(-var32, var32) / (mc.field1339.method3275(var3) + 1.0F);
                     this.field23952.field32085 = this.field23952.field32085
-                            + (float) this.method16832(-var32, var32) / (field23386.field1339.method3275(var3) + 1.0F);
+                            + (float) this.method16832(-var32, var32) / (mc.field1339.method3275(var3) + 1.0F);
                 }
 
                 if (Math.abs(var6) > 10.0F) {
@@ -728,7 +728,7 @@ public class Class5357 extends Module {
                     }
 
                     this.field23957 = 0.0F;
-                    if (field23386.field1345 == null && var29 != 1.0F) {
+                    if (mc.field1345 == null && var29 != 1.0F) {
                         this.field23955 = Math.random() * 0.5 + 0.25;
                     }
 
@@ -745,8 +745,8 @@ public class Class5357 extends Module {
             case "None":
                 this.field23953.field32084 = this.field23952.field32084;
                 this.field23953.field32085 = this.field23952.field32085;
-                this.field23952.field32084 = field23386.field1339.field5031;
-                this.field23952.field32085 = field23386.field1339.field5032;
+                this.field23952.field32084 = mc.field1339.field5031;
+                this.field23952.field32085 = mc.field1339.field5032;
                 break;
             case "LockView":
                 this.field23953.field32084 = this.field23952.field32084;
@@ -792,7 +792,7 @@ public class Class5357 extends Module {
                     }
 
                     this.field23957 = 0.0F;
-                    if (field23386.field1345 == null && var10 != 1.0F) {
+                    if (mc.field1345 == null && var10 != 1.0F) {
                         this.field23955 = Math.random() * 0.5 + 0.25;
                     }
 

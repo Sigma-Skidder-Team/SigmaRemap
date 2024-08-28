@@ -9,42 +9,42 @@ import java.util.Set;
 
 public class Class3270 extends Class3264 {
    private static String[] field18768;
-   private static final Set<Class3209> field18769 = Sets.newHashSet(
-      new Class3209[]{
-         Class8487.field36575,
-         Class8487.field36396,
-         Class8487.field36397,
-         Class8487.field36398,
-         Class8487.field36540,
-         Class8487.field36395,
-         Class8487.field36417,
-         Class8487.field36640,
-         Class8487.field36415,
-         Class8487.field36416,
-         Class8487.field36573,
-         Class8487.field36571,
-         Class8487.field36581,
-         Class8487.field36885,
-         Class8487.field36945,
-         Class8487.field36946,
-         Class8487.field36947,
-         Class8487.field36948,
-         Class8487.field36949,
-         Class8487.field36950,
-         Class8487.field36951,
-         Class8487.field36952,
-         Class8487.field36953,
-         Class8487.field36954,
-         Class8487.field36955,
-         Class8487.field36956,
-         Class8487.field36957,
-         Class8487.field36958,
-         Class8487.field36959,
-         Class8487.field36960,
-         Class8487.field36582
+   private static final Set<Block> field18769 = Sets.newHashSet(
+      new Block[]{
+         Blocks.CLAY,
+         Blocks.field36396,
+         Blocks.field36397,
+         Blocks.field36398,
+         Blocks.field36540,
+         Blocks.field36395,
+         Blocks.GRAVEL,
+         Blocks.field36640,
+         Blocks.SAND,
+         Blocks.RED_SAND,
+         Blocks.SNOW_BLOCK,
+         Blocks.SNOW,
+         Blocks.SOUL_SAND,
+         Blocks.field36885,
+         Blocks.field36945,
+         Blocks.field36946,
+         Blocks.field36947,
+         Blocks.field36948,
+         Blocks.field36949,
+         Blocks.field36950,
+         Blocks.field36951,
+         Blocks.field36952,
+         Blocks.field36953,
+         Blocks.field36954,
+         Blocks.field36955,
+         Blocks.field36956,
+         Blocks.field36957,
+         Blocks.field36958,
+         Blocks.field36959,
+         Blocks.field36960,
+         Blocks.SOUL_SOIL
       }
    );
-   public static final Map<Class3209, Class7380> field18770 = Maps.newHashMap(ImmutableMap.of(Class8487.field36395, Class8487.field36885.method11579()));
+   public static final Map<Block, Class7380> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.field36395, Blocks.field36885.method11579()));
 
    public Class3270(Class2283 var1, float var2, float var3, Class5643 var4) {
       super(var2, var3, var1, field18769, var4);
@@ -52,7 +52,7 @@ public class Class3270 extends Class3264 {
 
    @Override
    public boolean method11715(Class7380 var1) {
-      return var1.method23448(Class8487.field36571) || var1.method23448(Class8487.field36573);
+      return var1.method23448(Blocks.SNOW) || var1.method23448(Blocks.SNOW_BLOCK);
    }
 
    @Override

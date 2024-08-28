@@ -77,7 +77,7 @@ public class Class1667 implements Class1665, Class1668 {
          Class1670 var4 = this.method7044(var1);
          return var4.method6738(var1);
       } else {
-         return Class8487.field36387.method11579();
+         return Blocks.AIR.method11579();
       }
    }
 

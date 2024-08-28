@@ -21,7 +21,7 @@ public class Class9291 {
          };
 
          for (Class9238 var8 : var4) {
-            if (Class9217.method34536(var8.field42516) != Class8487.field36387) {
+            if (Class9217.method34536(var8.field42516) != Blocks.AIR) {
                return true;
             }
          }
@@ -40,7 +40,7 @@ public class Class9291 {
       return var3;
    }
 
-   public static List<Class9238> method35030(Class3209 var0, BlockPos var1, int var2) {
+   public static List<Class9238> method35030(Block var0, BlockPos var1, int var2) {
       ArrayList var5 = new ArrayList();
       if (var1 != null && var2 >= 0) {
          if (!Class9217.method34538(var0, var1)) {

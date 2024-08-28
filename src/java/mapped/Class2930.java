@@ -30,7 +30,7 @@ public abstract class Class2930 extends Class2898<Class4727> {
    public boolean method11267(Class1660 var1, BlockPos var2, int var3, Mutable var4, Class4727 var5) {
       int var8 = var2.getY();
       if (var8 >= 1 && var8 + var3 + 1 < 256) {
-         Class3209 var9 = var1.method6738(var2.method8313()).method23383();
+         Block var9 = var1.method6738(var2.method8313()).method23383();
          if (!method11219(var9) && !var9.method11540(Class7645.field32814)) {
             return false;
          } else {

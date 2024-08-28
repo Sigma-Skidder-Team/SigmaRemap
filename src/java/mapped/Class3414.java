@@ -3,11 +3,11 @@ package mapped;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3414 extends Class3209 {
+public class Class3414 extends Block {
    private static String[] field19103;
-   private final Class3209 field19104;
+   private final Block field19104;
 
-   public Class3414(Class3209 var1, Class7929 var2) {
+   public Class3414(Block var1, Class7929 var2) {
       super(var2);
       this.field19104 = var1;
    }

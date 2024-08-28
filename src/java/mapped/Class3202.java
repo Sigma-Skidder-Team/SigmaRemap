@@ -5,22 +5,22 @@ import java.util.Random;
 
 public abstract class Class3202 extends Class3200 {
    public static final Class8551 field18510 = Class8820.field39704;
-   public static final Class6408 field18511 = Class3209.method11539(6.0, 14.0, 5.0, 10.0, 16.0, 11.0);
-   public static final Class6408 field18512 = Class3209.method11539(5.0, 14.0, 6.0, 11.0, 16.0, 10.0);
-   public static final Class6408 field18513 = Class3209.method11539(6.0, 0.0, 5.0, 10.0, 2.0, 11.0);
-   public static final Class6408 field18514 = Class3209.method11539(5.0, 0.0, 6.0, 11.0, 2.0, 10.0);
-   public static final Class6408 field18515 = Class3209.method11539(5.0, 6.0, 14.0, 11.0, 10.0, 16.0);
-   public static final Class6408 field18516 = Class3209.method11539(5.0, 6.0, 0.0, 11.0, 10.0, 2.0);
-   public static final Class6408 field18517 = Class3209.method11539(14.0, 6.0, 5.0, 16.0, 10.0, 11.0);
-   public static final Class6408 field18518 = Class3209.method11539(0.0, 6.0, 5.0, 2.0, 10.0, 11.0);
-   public static final Class6408 field18519 = Class3209.method11539(6.0, 15.0, 5.0, 10.0, 16.0, 11.0);
-   public static final Class6408 field18520 = Class3209.method11539(5.0, 15.0, 6.0, 11.0, 16.0, 10.0);
-   public static final Class6408 field18521 = Class3209.method11539(6.0, 0.0, 5.0, 10.0, 1.0, 11.0);
-   public static final Class6408 field18522 = Class3209.method11539(5.0, 0.0, 6.0, 11.0, 1.0, 10.0);
-   public static final Class6408 field18523 = Class3209.method11539(5.0, 6.0, 15.0, 11.0, 10.0, 16.0);
-   public static final Class6408 field18524 = Class3209.method11539(5.0, 6.0, 0.0, 11.0, 10.0, 1.0);
-   public static final Class6408 field18525 = Class3209.method11539(15.0, 6.0, 5.0, 16.0, 10.0, 11.0);
-   public static final Class6408 field18526 = Class3209.method11539(0.0, 6.0, 5.0, 1.0, 10.0, 11.0);
+   public static final Class6408 field18511 = Block.method11539(6.0, 14.0, 5.0, 10.0, 16.0, 11.0);
+   public static final Class6408 field18512 = Block.method11539(5.0, 14.0, 6.0, 11.0, 16.0, 10.0);
+   public static final Class6408 field18513 = Block.method11539(6.0, 0.0, 5.0, 10.0, 2.0, 11.0);
+   public static final Class6408 field18514 = Block.method11539(5.0, 0.0, 6.0, 11.0, 2.0, 10.0);
+   public static final Class6408 field18515 = Block.method11539(5.0, 6.0, 14.0, 11.0, 10.0, 16.0);
+   public static final Class6408 field18516 = Block.method11539(5.0, 6.0, 0.0, 11.0, 10.0, 2.0);
+   public static final Class6408 field18517 = Block.method11539(14.0, 6.0, 5.0, 16.0, 10.0, 11.0);
+   public static final Class6408 field18518 = Block.method11539(0.0, 6.0, 5.0, 2.0, 10.0, 11.0);
+   public static final Class6408 field18519 = Block.method11539(6.0, 15.0, 5.0, 10.0, 16.0, 11.0);
+   public static final Class6408 field18520 = Block.method11539(5.0, 15.0, 6.0, 11.0, 16.0, 10.0);
+   public static final Class6408 field18521 = Block.method11539(6.0, 0.0, 5.0, 10.0, 1.0, 11.0);
+   public static final Class6408 field18522 = Block.method11539(5.0, 0.0, 6.0, 11.0, 1.0, 10.0);
+   public static final Class6408 field18523 = Block.method11539(5.0, 6.0, 15.0, 11.0, 10.0, 16.0);
+   public static final Class6408 field18524 = Block.method11539(5.0, 6.0, 0.0, 11.0, 10.0, 1.0);
+   public static final Class6408 field18525 = Block.method11539(15.0, 6.0, 5.0, 16.0, 10.0, 11.0);
+   public static final Class6408 field18526 = Block.method11539(0.0, 6.0, 5.0, 1.0, 10.0, 11.0);
    private final boolean field18527;
 
    public Class3202(boolean var1, Class7929 var2) {
@@ -162,7 +162,7 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18484, field18510, field18500);
    }
 }

@@ -138,7 +138,7 @@ public class Class7929 {
       return this;
    }
 
-   public Class7929 method26627(Class3209 var1) {
+   public Class7929 method26627(Block var1) {
       this.field33976 = var1.method11999();
       return this;
    }

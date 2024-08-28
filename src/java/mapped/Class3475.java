@@ -4,7 +4,7 @@ import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 import java.util.Random;
 
-public class Class3475 extends Class3209 implements Class3476 {
+public class Class3475 extends Block implements Class3476 {
    private static String[] field19325;
    public static final Class8554 field19326 = Class8820.field39752;
    public static final Object2FloatMap<Class3303> field19327 = new Object2FloatOpenHashMap();
@@ -14,7 +14,7 @@ public class Class3475 extends Class3209 implements Class3476 {
       var0 -> {
          for (int var3 = 0; var3 < 8; var3++) {
             var0[var3] = Class8022.method27433(
-               field19328, Class3209.method11539(2.0, (double)Math.max(2, 1 + var3 * 2), 2.0, 14.0, 16.0, 14.0), Class9477.field44041
+               field19328, Block.method11539(2.0, (double)Math.max(2, 1 + var3 * 2), 2.0, 14.0, 16.0, 14.0), Class9477.field44041
             );
          }
 
@@ -267,7 +267,7 @@ public class Class3475 extends Class3209 implements Class3476 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19326);
    }
 

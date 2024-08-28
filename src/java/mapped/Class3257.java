@@ -13,7 +13,7 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class3257 implements Class3303 {
-   public static final Map<Class3209, Class3257> field18732 = Maps.newHashMap();
+   public static final Map<Block, Class3257> field18732 = Maps.newHashMap();
    public static final UUID field18733 = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
    public static final UUID field18734 = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
    public static final Random field18735 = new Random();
@@ -35,7 +35,7 @@ public class Class3257 implements Class3303 {
    }
 
    @Deprecated
-   public static Class3257 method11703(Class3209 var0) {
+   public static Class3257 method11703(Block var0) {
       return field18732.getOrDefault(var0, Class8514.field37222);
    }
 

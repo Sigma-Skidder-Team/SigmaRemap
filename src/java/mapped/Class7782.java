@@ -214,7 +214,7 @@ public class Class7782 {
 
          for (BlockPos var7 : this.field33381) {
             Class7380 var8 = this.field33373.method6738(var7);
-            Class3209 var9 = var8.method23383();
+            Block var9 = var8.method23383();
             if (!var8.method23393()) {
                BlockPos var10 = var7.method8353();
                this.field33373.method6820().method22503("explosion_blocks");
@@ -233,7 +233,7 @@ public class Class7782 {
                   var8.method23434(var12).forEach(var2 -> method25786(var5, var2, var10));
                }
 
-               this.field33373.method6725(var7, Class8487.field36387.method11579(), 3);
+               this.field33373.method6725(var7, Blocks.AIR.method11579(), 3);
                var9.method11560(this.field33373, var7, this);
                this.field33373.method6820().method22505();
             }
@@ -243,7 +243,7 @@ public class Class7782 {
 
          while (var14.hasNext()) {
             Pair var16 = (Pair)var14.next();
-            Class3209.method11557(this.field33373, (BlockPos)var16.getSecond(), (Class8848)var16.getFirst());
+            Block.method11557(this.field33373, (BlockPos)var16.getSecond(), (Class8848)var16.getFirst());
          }
       }
 

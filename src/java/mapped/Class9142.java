@@ -178,7 +178,7 @@ public class Class9142 {
       Class6809 var4 = new Class6809(var3, var0, Class2271.field14775, Class1985.field12962, field42012.field1339);
       Class8711 var5 = field42012.field1338.method7036(var4);
       boolean var6 = var5.method31417() == Class2100.field13689 || var5.method31417() == Class2100.field13691;
-      Class3209 var7 = field42012.field1338.method6738(var5.method31423()).method23383();
+      Block var7 = field42012.field1338.method6738(var5.method31423()).method23383();
       return var6;
    }
 

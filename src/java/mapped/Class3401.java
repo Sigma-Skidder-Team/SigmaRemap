@@ -3,11 +3,11 @@ package mapped;
 import java.util.Random;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class3401 extends Class3209 {
+public class Class3401 extends Block {
    private static String[] field19059;
    public static final Class8552<Class113> field19060 = Class8820.field39712;
-   public static final Class6408 field19061 = Class3209.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
-   public static final Class6408 field19062 = Class3209.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
+   public static final Class6408 field19061 = Block.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
+   public static final Class6408 field19062 = Block.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 
    public Class3401(Class7929 var1) {
       super(var1);
@@ -48,7 +48,7 @@ public class Class3401 extends Class3209 {
       Class113 var10 = var1.<Class113>method23463(field19060);
       boolean var11 = var10 != var9 && var9.method324();
       return !var11 && !var3.method23448(this) && !new Class7473(var4, var5, var10).method24205()
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
@@ -118,7 +118,7 @@ public class Class3401 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19060);
    }
 }

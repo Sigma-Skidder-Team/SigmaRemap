@@ -12,9 +12,9 @@ public class Class3491 extends Class3490 {
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
       return super.method11490(var1, var2, var3)
-         || var1.method23448(Class8487.field36580)
-         || var1.method23448(Class8487.field36581)
-         || var1.method23448(Class8487.field36582);
+         || var1.method23448(Blocks.NETHERRACK)
+         || var1.method23448(Blocks.SOUL_SAND)
+         || var1.method23448(Blocks.SOUL_SOIL);
    }
 
    @Override

@@ -14,9 +14,9 @@ public class Class5378 extends Module {
     @EventTarget
     private void method16941(Class4415 var1) {
         if (this.method15996()) {
-            boolean var4 = GLFW.glfwGetWindowAttrib(field23386.field1283.method8039(), 131073) == 1;
+            boolean var4 = GLFW.glfwGetWindowAttrib(mc.field1283.method8039(), 131073) == 1;
             if (var4) {
-                Minecraft.getInstance().field1283.method8027(field23386.field1299.field44576);
+                Minecraft.getInstance().field1283.method8027(mc.field1299.field44576);
             } else {
                 Minecraft.getInstance().field1283.method8027(5);
             }
@@ -25,6 +25,6 @@ public class Class5378 extends Module {
 
     @Override
     public void method15965() {
-        Minecraft.getInstance().field1283.method8027(field23386.field1299.field44576);
+        Minecraft.getInstance().field1283.method8027(mc.field1299.field44576);
     }
 }

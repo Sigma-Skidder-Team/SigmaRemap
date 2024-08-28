@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class3219 extends Class3209 implements Class3196 {
+public class Class3219 extends Block implements Class3196 {
    private static String[] field18638;
 
    public Class3219(Class7929 var1) {
@@ -19,7 +19,7 @@ public class Class3219 extends Class3209 implements Class3196 {
    @Override
    public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
       if (!method11609(var1, var2, var3)) {
-         var2.method6730(var3, Class8487.field36580.method11579());
+         var2.method6730(var3, Blocks.NETHERRACK.method11579());
       }
    }
 
@@ -37,8 +37,8 @@ public class Class3219 extends Class3209 implements Class3196 {
    public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
       Class7380 var7 = var1.method6738(var3);
       BlockPos var8 = var3.method8311();
-      if (!var7.method23448(Class8487.field37083)) {
-         if (var7.method23448(Class8487.field37074)) {
+      if (!var7.method23448(Blocks.field37083)) {
+         if (var7.method23448(Blocks.field37074)) {
             Class2946.method11288(var1, var2, var8, Class8529.field38323, 3, 1);
             Class2946.method11288(var1, var2, var8, Class8529.field38324, 3, 1);
             if (var2.nextInt(8) == 0) {

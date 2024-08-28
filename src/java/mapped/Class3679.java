@@ -20,7 +20,7 @@ public class Class3679 extends Class3676<Class880> {
       BlockPos var8 = var7.method21410(Class8830.field39816).get().method35579();
       if (var8.method8316(var2.method3432(), 3.0)) {
          Class7380 var9 = var1.method6738(var8);
-         if (var9.method23448(Class8487.field37064)) {
+         if (var9.method23448(Blocks.field37064)) {
             Class3369 var10 = (Class3369)var9.method23383();
             var10.method11962(var1, var8, (Direction)null);
          }

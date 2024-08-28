@@ -143,7 +143,7 @@ public class Class5278 extends Module {
                             GL11.glEnable(3042);
                             GL11.glDisable(3553);
                             int var15 = -65536;
-                            if (!field23386.field1339.method3135(var7)) {
+                            if (!mc.field1339.method3135(var7)) {
                                 var15 = -256;
                             }
 
@@ -204,14 +204,14 @@ public class Class5278 extends Module {
     }
 
     private void method16519() {
-        double var3 = field23386.field1295.method768().method37504().method11320();
-        double var5 = field23386.field1295.method768().method37504().method11321();
-        double var7 = field23386.field1295.method768().method37504().method11322();
+        double var3 = mc.field1295.method768().method37504().method11320();
+        double var5 = mc.field1295.method768().method37504().method11321();
+        double var7 = mc.field1295.method768().method37504().method11322();
         field23728.clear();
         field23729.clear();
-        float var9 = field23386.field1284.field40356;
+        float var9 = mc.field1284.field40356;
 
-        for (Object var11 : field23386.field1338.method6835()) {
+        for (Object var11 : mc.field1338.method6835()) {
             if (var11 instanceof PlayerEntity && !(var11 instanceof ClientPlayerEntity)) {
                 PlayerEntity var12 = (PlayerEntity) var11;
                 double var13 = var12.field5049 + (var12.getPosY() - var12.field5049) * (double) var9 - var5;

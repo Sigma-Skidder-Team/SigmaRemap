@@ -179,7 +179,7 @@ public class Class5151 extends Module {
    @EventTarget
    @HigestPriority
    private void method15957(Class4415 var1) {
-      if (this.method15996() && field23386.field1339 != null) {
+      if (this.method15996() && mc.field1339 != null) {
          if (!Minecraft.getInstance().field1299.field44664) {
             if (!Minecraft.getInstance().field1299.field44662) {
                this.method15958();

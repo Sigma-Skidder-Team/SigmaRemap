@@ -108,7 +108,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
       Class7952 var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Class8487.field36476,
+            Blocks.field36476,
             new TranslationTextComponent("advancements.adventure.sleep_in_bed.title"),
             new TranslationTextComponent("advancements.adventure.sleep_in_bed.description"),
             (ResourceLocation)null,
@@ -232,7 +232,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var6)
          .method27308(
-            Class8487.field36589,
+            Blocks.field36589,
             new TranslationTextComponent("advancements.adventure.summon_iron_golem.title"),
             new TranslationTextComponent("advancements.adventure.summon_iron_golem.description"),
             (ResourceLocation)null,
@@ -371,7 +371,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Class8487.field37119.method11581(),
+            Blocks.field37119.method11581(),
             new TranslationTextComponent("advancements.adventure.honey_block_slide.title"),
             new TranslationTextComponent("advancements.adventure.honey_block_slide.description"),
             (ResourceLocation)null,
@@ -380,12 +380,12 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("honey_block_slide", Class4468.method14118(Class8487.field37119))
+         .method27312("honey_block_slide", Class4468.method14118(Blocks.field37119))
          .method27317(var1, "adventure/honey_block_slide");
       Class7999.method27304()
          .method27305(var8)
          .method27308(
-            Class8487.field37116.method11581(),
+            Blocks.field37116.method11581(),
             new TranslationTextComponent("advancements.adventure.bullseye.title"),
             new TranslationTextComponent("advancements.adventure.bullseye.description"),
             (ResourceLocation)null,

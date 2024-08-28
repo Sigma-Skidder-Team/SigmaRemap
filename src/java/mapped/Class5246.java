@@ -72,13 +72,13 @@ public class Class5246 extends Module {
 
     @EventTarget
     private void method16354(Class4407 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (!var1.method13939()) {
                 Class7414.method23839(0.0F, (float) (-this.field23614), 0.0F);
             } else {
-                Class6886 var4 = field23386.field1338.method6805();
+                Class6886 var4 = mc.field1338.method6805();
                 Class8375 var5 = null;
-                Class8218 var6 = var4.method20998(field23386.field1339.method2956());
+                Class8218 var6 = var4.method20998(mc.field1339.method2956());
                 if (var6 != null) {
                     int var7 = var6.method28591().getColorIndex();
                     if (var7 >= 0) {
@@ -112,7 +112,7 @@ public class Class5246 extends Module {
 
     @EventTarget
     private void method16355(Class4415 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             for (Module var5 : this.field23615.keySet()) {
                 if (this.method15974("Animations")) {
                     this.field23615.get(var5).changeDirection(!var5.method15996() ? Direction.BACKWARDS : Direction.FORWARDS);
@@ -131,7 +131,7 @@ public class Class5246 extends Module {
                 }
 
                 if (Minecraft.getInstance().field1299.field44664) {
-                    var7 = (int) ((double) (field23386.field1298.field6726.field6674.size() * 9) * field23386.field1283.method8049() + 7.0);
+                    var7 = (int) ((double) (mc.field1298.field6726.field6674.size() * 9) * mc.field1283.method8049() + 7.0);
                 }
 
                 byte var10 = 0;

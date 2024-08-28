@@ -1,6 +1,6 @@
 package mapped;
 
-public abstract class Class3198 extends Class3209 {
+public abstract class Class3198 extends Block {
    public static final Class8553 field18484 = Class8820.field39722;
 
    public Class3198(Class7929 var1) {

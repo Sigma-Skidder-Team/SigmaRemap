@@ -5,7 +5,7 @@ public class Class2633 extends Class2632 {
    public final Class1038 field16948;
 
    public Class2633(Class1038 var1, Class1046 var2, double var3, int var5) {
-      super(Class8487.field36964, var2, var3, var5);
+      super(Blocks.field36964, var2, var3, var5);
       this.field16948 = var1;
    }
 

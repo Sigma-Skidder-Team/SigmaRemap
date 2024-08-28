@@ -42,7 +42,7 @@ public class Class4185 extends Class4180 {
    @Override
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
       if ("chest".equals(var1)) {
-         var3.method6725(var2, Class8487.field36387.method11579(), 3);
+         var3.method6725(var2, Blocks.AIR.method11579(), 3);
          Class944 var8 = var3.method6759(var2.method8313());
          if (var8 instanceof Class941) {
             ((Class941)var8).method3744(Class8793.field39561, var4.nextLong());
@@ -66,8 +66,8 @@ public class Class4185 extends Class4180 {
       if (this.field20471.equals(Class3191.method11410())) {
          BlockPos var16 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3, 0, 5)));
          Class7380 var17 = var1.method6738(var16.method8313());
-         if (!var17.method23393() && !var17.method23448(Class8487.field36549)) {
-            var1.method6725(var16, Class8487.field36573.method11579(), 3);
+         if (!var17.method23393() && !var17.method23448(Blocks.field36549)) {
+            var1.method6725(var16, Blocks.SNOW_BLOCK.method11579(), 3);
          }
       }
 

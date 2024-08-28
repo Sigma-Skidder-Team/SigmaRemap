@@ -3,18 +3,18 @@ package mapped;
 import com.google.common.collect.Maps;
 import java.util.Map;
 
-public class Class3442 extends Class3209 {
+public class Class3442 extends Block {
    private static String[] field19245;
-   private final Class3209 field19246;
-   private static final Map<Class3209, Class3209> field19247 = Maps.newIdentityHashMap();
+   private final Block field19246;
+   private static final Map<Block, Block> field19247 = Maps.newIdentityHashMap();
 
-   public Class3442(Class3209 var1, Class7929 var2) {
+   public Class3442(Block var1, Class7929 var2) {
       super(var2);
       this.field19246 = var1;
       field19247.put(var1, this);
    }
 
-   public Class3209 method12118() {
+   public Block method12118() {
       return this.field19246;
    }
 
@@ -44,7 +44,7 @@ public class Class3442 extends Class3209 {
       }
    }
 
-   public static Class7380 method12121(Class3209 var0) {
+   public static Class7380 method12121(Block var0) {
       return field19247.get(var0).method11579();
    }
 }

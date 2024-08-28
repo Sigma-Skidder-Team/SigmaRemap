@@ -28,31 +28,31 @@ public class Class4210 extends Class4209 {
       if (!this.method13002(var1, var5, 0)) {
          return false;
       } else {
-         this.method12927(var1, var5, 1, 1, 1, 5, 1, 7, Class8487.field36401.method11579(), Class8487.field36401.method11579(), false);
-         this.method12927(var1, var5, 1, 4, 2, 5, 4, 7, Class8487.field36401.method11579(), Class8487.field36401.method11579(), false);
-         this.method12927(var1, var5, 2, 1, 0, 4, 1, 0, Class8487.field36401.method11579(), Class8487.field36401.method11579(), false);
-         this.method12927(var1, var5, 2, 2, 2, 3, 3, 2, Class8487.field36401.method11579(), Class8487.field36401.method11579(), false);
-         this.method12927(var1, var5, 1, 2, 3, 1, 3, 6, Class8487.field36401.method11579(), Class8487.field36401.method11579(), false);
-         this.method12927(var1, var5, 5, 2, 3, 5, 3, 6, Class8487.field36401.method11579(), Class8487.field36401.method11579(), false);
-         this.method12927(var1, var5, 2, 2, 7, 4, 3, 7, Class8487.field36401.method11579(), Class8487.field36401.method11579(), false);
-         this.method12927(var1, var5, 1, 0, 2, 1, 3, 2, Class8487.field36422.method11579(), Class8487.field36422.method11579(), false);
-         this.method12927(var1, var5, 5, 0, 2, 5, 3, 2, Class8487.field36422.method11579(), Class8487.field36422.method11579(), false);
-         this.method12927(var1, var5, 1, 0, 7, 1, 3, 7, Class8487.field36422.method11579(), Class8487.field36422.method11579(), false);
-         this.method12927(var1, var5, 5, 0, 7, 5, 3, 7, Class8487.field36422.method11579(), Class8487.field36422.method11579(), false);
-         this.method12923(var1, Class8487.field36578.method11579(), 2, 3, 2, var5);
-         this.method12923(var1, Class8487.field36578.method11579(), 3, 3, 7, var5);
-         this.method12923(var1, Class8487.field36387.method11579(), 1, 3, 4, var5);
-         this.method12923(var1, Class8487.field36387.method11579(), 5, 3, 4, var5);
-         this.method12923(var1, Class8487.field36387.method11579(), 5, 3, 5, var5);
-         this.method12923(var1, Class8487.field36689.method11579(), 1, 3, 5, var5);
-         this.method12923(var1, Class8487.field36538.method11579(), 3, 2, 6, var5);
-         this.method12923(var1, Class8487.field36648.method11579(), 4, 2, 6, var5);
-         this.method12923(var1, Class8487.field36578.method11579(), 1, 2, 1, var5);
-         this.method12923(var1, Class8487.field36578.method11579(), 5, 2, 1, var5);
-         Class7380 var10 = Class8487.field36661.method11579().method23465(Class3421.field19131, Direction.NORTH);
-         Class7380 var11 = Class8487.field36661.method11579().method23465(Class3421.field19131, Direction.EAST);
-         Class7380 var12 = Class8487.field36661.method11579().method23465(Class3421.field19131, Direction.WEST);
-         Class7380 var13 = Class8487.field36661.method11579().method23465(Class3421.field19131, Direction.SOUTH);
+         this.method12927(var1, var5, 1, 1, 1, 5, 1, 7, Blocks.field36401.method11579(), Blocks.field36401.method11579(), false);
+         this.method12927(var1, var5, 1, 4, 2, 5, 4, 7, Blocks.field36401.method11579(), Blocks.field36401.method11579(), false);
+         this.method12927(var1, var5, 2, 1, 0, 4, 1, 0, Blocks.field36401.method11579(), Blocks.field36401.method11579(), false);
+         this.method12927(var1, var5, 2, 2, 2, 3, 3, 2, Blocks.field36401.method11579(), Blocks.field36401.method11579(), false);
+         this.method12927(var1, var5, 1, 2, 3, 1, 3, 6, Blocks.field36401.method11579(), Blocks.field36401.method11579(), false);
+         this.method12927(var1, var5, 5, 2, 3, 5, 3, 6, Blocks.field36401.method11579(), Blocks.field36401.method11579(), false);
+         this.method12927(var1, var5, 2, 2, 7, 4, 3, 7, Blocks.field36401.method11579(), Blocks.field36401.method11579(), false);
+         this.method12927(var1, var5, 1, 0, 2, 1, 3, 2, Blocks.field36422.method11579(), Blocks.field36422.method11579(), false);
+         this.method12927(var1, var5, 5, 0, 2, 5, 3, 2, Blocks.field36422.method11579(), Blocks.field36422.method11579(), false);
+         this.method12927(var1, var5, 1, 0, 7, 1, 3, 7, Blocks.field36422.method11579(), Blocks.field36422.method11579(), false);
+         this.method12927(var1, var5, 5, 0, 7, 5, 3, 7, Blocks.field36422.method11579(), Blocks.field36422.method11579(), false);
+         this.method12923(var1, Blocks.OAK_FENCE.method11579(), 2, 3, 2, var5);
+         this.method12923(var1, Blocks.OAK_FENCE.method11579(), 3, 3, 7, var5);
+         this.method12923(var1, Blocks.AIR.method11579(), 1, 3, 4, var5);
+         this.method12923(var1, Blocks.AIR.method11579(), 5, 3, 4, var5);
+         this.method12923(var1, Blocks.AIR.method11579(), 5, 3, 5, var5);
+         this.method12923(var1, Blocks.field36689.method11579(), 1, 3, 5, var5);
+         this.method12923(var1, Blocks.field36538.method11579(), 3, 2, 6, var5);
+         this.method12923(var1, Blocks.field36648.method11579(), 4, 2, 6, var5);
+         this.method12923(var1, Blocks.OAK_FENCE.method11579(), 1, 2, 1, var5);
+         this.method12923(var1, Blocks.OAK_FENCE.method11579(), 5, 2, 1, var5);
+         Class7380 var10 = Blocks.field36661.method11579().method23465(Class3421.field19131, Direction.NORTH);
+         Class7380 var11 = Blocks.field36661.method11579().method23465(Class3421.field19131, Direction.EAST);
+         Class7380 var12 = Blocks.field36661.method11579().method23465(Class3421.field19131, Direction.WEST);
+         Class7380 var13 = Blocks.field36661.method11579().method23465(Class3421.field19131, Direction.SOUTH);
          this.method12927(var1, var5, 0, 4, 1, 6, 4, 1, var10, var10, false);
          this.method12927(var1, var5, 0, 4, 2, 0, 4, 7, var11, var11, false);
          this.method12927(var1, var5, 6, 4, 2, 6, 4, 7, var12, var12, false);
@@ -64,7 +64,7 @@ public class Class4210 extends Class4209 {
 
          for (int var14 = 2; var14 <= 7; var14 += 5) {
             for (int var15 = 1; var15 <= 5; var15 += 4) {
-               this.method12932(var1, Class8487.field36422.method11579(), var15, -1, var14, var5);
+               this.method12932(var1, Blocks.field36422.method11579(), var15, -1, var14, var5);
             }
          }
 

@@ -43,7 +43,7 @@ public class Class5549 implements Packet<Class5116> {
       for (int var5 = 0; var5 < this.field24643.length; var5++) {
          long var6 = var1.method35715();
          this.field24643[var5] = (short)((int)(var6 & 4095L));
-         this.field24644[var5] = Class3209.field18610.method9172((int)(var6 >>> 12));
+         this.field24644[var5] = Block.field18610.method9172((int)(var6 >>> 12));
       }
    }
 
@@ -54,7 +54,7 @@ public class Class5549 implements Packet<Class5116> {
       var1.writeVarInt(this.field24643.length);
 
       for (int var4 = 0; var4 < this.field24643.length; var4++) {
-         var1.method35719((long)(Class3209.method11535(this.field24644[var4]) << 12 | this.field24643[var4]));
+         var1.method35719((long)(Block.method11535(this.field24644[var4]) << 12 | this.field24643[var4]));
       }
    }
 

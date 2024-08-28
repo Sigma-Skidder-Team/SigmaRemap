@@ -16,15 +16,15 @@ public class Class9217 {
       return method34550(var0, var1) < method34560();
    }
 
-   public static final Class3209 method34536(BlockPos var0) {
+   public static final Block method34536(BlockPos var0) {
       return field42414.field1338.method6738(var0).method23383();
    }
 
-   public static final Class3209 method34537(double var0, double var2, double var4) {
+   public static final Block method34537(double var0, double var2, double var4) {
       return method34536(new BlockPos(var0, var2, var4));
    }
 
-   public static boolean method34538(Class3209 var0, BlockPos var1) {
+   public static boolean method34538(Block var0, BlockPos var1) {
       Class6408 var4 = var0.method11579().method23414(field42414.field1338, var1);
       return !method34578(var1)
          && field42414.field1338.method7048(field42414.field1339, var4)
@@ -290,7 +290,7 @@ public class Class9217 {
       return Class9679.method37765((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F) + (var2 - 0.5F) * (var2 - 0.5F));
    }
 
-   public static Class3209 method34559(PlayerEntity var0) {
+   public static Block method34559(PlayerEntity var0) {
       return method34536(var0.method3432().method8313());
    }
 
@@ -509,13 +509,13 @@ public class Class9217 {
    }
 
    public static int method34573(Class7380 var0) {
-      Class3209 var3 = var0.method23383();
+      Block var3 = var0.method23383();
       Class9348 var4 = var3.method11577();
       ImmutableList var5 = var4.method35392();
       return var5.indexOf(var0);
    }
 
-   public static int method34574(Class3209 var0) {
+   public static int method34574(Block var0) {
       return Class2348.field16072.method9171(var0);
    }
 
@@ -584,7 +584,7 @@ public class Class9217 {
 
    public static boolean method34578(BlockPos var0) {
       if (var0 != null) {
-         Class3209 var3 = field42414.field1338.method6738(var0).method23383();
+         Block var3 = field42414.field1338.method6738(var0).method23383();
          return !var3.method11579().method23410() && var3.method11579().method23384().method31089()
             ? false
             : !(var3 instanceof Class3410) || method34573(field42414.field1338.method6738(var0)) != 0;

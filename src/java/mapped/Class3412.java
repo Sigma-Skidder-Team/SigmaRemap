@@ -4,10 +4,10 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class3412 extends Class3209 {
+public class Class3412 extends Block {
    private static final ITextComponent field19096 = new TranslationTextComponent("container.stonecutter");
    public static final Class8553 field19097 = Class3198.field18484;
-   public static final Class6408 field19098 = Class3209.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
+   public static final Class6408 field19098 = Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 
    public Class3412(Class7929 var1) {
       super(var1);
@@ -62,7 +62,7 @@ public class Class3412 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19097);
    }
 

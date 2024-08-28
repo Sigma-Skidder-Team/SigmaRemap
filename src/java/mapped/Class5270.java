@@ -23,7 +23,7 @@ public class Class5270 extends Module {
     private void method16492(Class4435 var1) {
         if (this.method15996()) {
             if (!Class5628.method17761()) {
-                if (field23386.field1339.field5037) {
+                if (mc.field1339.field5037) {
                     Class9567.method37088(var1, 0.0);
                     Class9567.method37095(1.1920931E-8);
                 }

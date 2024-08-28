@@ -10,165 +10,165 @@ import java.util.function.Supplier;
 
 public class Class4387<T extends Class944> {
    private static final Logger field21420 = LogManager.getLogger();
-   public static final Class4387<Class986> field21421 = method13794("furnace", Class9785.<Class986>method38569(Class986::new, Class8487.field36541));
-   public static final Class4387<Class941> field21422 = method13794("chest", Class9785.<Class941>method38569(Class941::new, Class8487.field36534));
-   public static final Class4387<Class970> field21423 = method13794("trapped_chest", Class9785.<Class970>method38569(Class970::new, Class8487.field36716));
-   public static final Class4387<Class943> field21424 = method13794("ender_chest", Class9785.<Class943>method38569(Class943::new, Class8487.field36657));
-   public static final Class4387<Class947> field21425 = method13794("jukebox", Class9785.<Class947>method38569(Class947::new, Class8487.field36577));
-   public static final Class4387<Class971> field21426 = method13794("dispenser", Class9785.<Class971>method38569(Class971::new, Class8487.field36457));
-   public static final Class4387<Class972> field21427 = method13794("dropper", Class9785.<Class972>method38569(Class972::new, Class8487.field36729));
+   public static final Class4387<Class986> field21421 = method13794("furnace", Class9785.<Class986>method38569(Class986::new, Blocks.field36541));
+   public static final Class4387<Class941> field21422 = method13794("chest", Class9785.<Class941>method38569(Class941::new, Blocks.field36534));
+   public static final Class4387<Class970> field21423 = method13794("trapped_chest", Class9785.<Class970>method38569(Class970::new, Blocks.field36716));
+   public static final Class4387<Class943> field21424 = method13794("ender_chest", Class9785.<Class943>method38569(Class943::new, Blocks.field36657));
+   public static final Class4387<Class947> field21425 = method13794("jukebox", Class9785.<Class947>method38569(Class947::new, Blocks.JUKEBOX));
+   public static final Class4387<Class971> field21426 = method13794("dispenser", Class9785.<Class971>method38569(Class971::new, Blocks.field36457));
+   public static final Class4387<Class972> field21427 = method13794("dropper", Class9785.<Class972>method38569(Class972::new, Blocks.field36729));
    public static final Class4387<Class954> field21428 = method13794(
       "sign",
       Class9785.<Class954>method38569(
          Class954::new,
-         Class8487.field36542,
-         Class8487.field36543,
-         Class8487.field36544,
-         Class8487.field36545,
-         Class8487.field36546,
-         Class8487.field36547,
-         Class8487.field36552,
-         Class8487.field36553,
-         Class8487.field36554,
-         Class8487.field36555,
-         Class8487.field36556,
-         Class8487.field36557,
-         Class8487.field37109,
-         Class8487.field37111,
-         Class8487.field37110,
-         Class8487.field37112
+         Blocks.field36542,
+         Blocks.field36543,
+         Blocks.field36544,
+         Blocks.field36545,
+         Blocks.field36546,
+         Blocks.field36547,
+         Blocks.field36552,
+         Blocks.field36553,
+         Blocks.field36554,
+         Blocks.field36555,
+         Blocks.field36556,
+         Blocks.field36557,
+         Blocks.field37109,
+         Blocks.field37111,
+         Blocks.field37110,
+         Blocks.field37112
       )
    );
-   public static final Class4387<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Class8487.field36532));
-   public static final Class4387<Class955> field21430 = method13794("piston", Class9785.<Class955>method38569(Class955::new, Class8487.field36505));
-   public static final Class4387<Class931> field21431 = method13794("brewing_stand", Class9785.<Class931>method38569(Class931::new, Class8487.field36647));
-   public static final Class4387<Class934> field21432 = method13794("enchanting_table", Class9785.<Class934>method38569(Class934::new, Class8487.field36646));
-   public static final Class4387<Class956> field21433 = method13794("end_portal", Class9785.<Class956>method38569(Class956::new, Class8487.field36649));
-   public static final Class4387<Class950> field21434 = method13794("beacon", Class9785.<Class950>method38569(Class950::new, Class8487.field36665));
+   public static final Class4387<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Blocks.field36532));
+   public static final Class4387<Class955> field21430 = method13794("piston", Class9785.<Class955>method38569(Class955::new, Blocks.field36505));
+   public static final Class4387<Class931> field21431 = method13794("brewing_stand", Class9785.<Class931>method38569(Class931::new, Blocks.field36647));
+   public static final Class4387<Class934> field21432 = method13794("enchanting_table", Class9785.<Class934>method38569(Class934::new, Blocks.field36646));
+   public static final Class4387<Class956> field21433 = method13794("end_portal", Class9785.<Class956>method38569(Class956::new, Blocks.field36649));
+   public static final Class4387<Class950> field21434 = method13794("beacon", Class9785.<Class950>method38569(Class950::new, Blocks.field36665));
    public static final Class4387<Class968> field21435 = method13794(
       "skull",
       Class9785.<Class968>method38569(
          Class968::new,
-         Class8487.field36701,
-         Class8487.field36702,
-         Class8487.field36709,
-         Class8487.field36710,
-         Class8487.field36711,
-         Class8487.field36712,
-         Class8487.field36705,
-         Class8487.field36706,
-         Class8487.field36703,
-         Class8487.field36704,
-         Class8487.field36707,
-         Class8487.field36708
+         Blocks.field36701,
+         Blocks.field36702,
+         Blocks.field36709,
+         Blocks.field36710,
+         Blocks.field36711,
+         Blocks.field36712,
+         Blocks.field36705,
+         Blocks.field36706,
+         Blocks.field36703,
+         Blocks.field36704,
+         Blocks.field36707,
+         Blocks.field36708
       )
    );
-   public static final Class4387<Class961> field21436 = method13794("daylight_detector", Class9785.<Class961>method38569(Class961::new, Class8487.field36720));
-   public static final Class4387<Class936> field21437 = method13794("hopper", Class9785.<Class936>method38569(Class936::new, Class8487.field36723));
-   public static final Class4387<Class963> field21438 = method13794("comparator", Class9785.<Class963>method38569(Class963::new, Class8487.field36719));
+   public static final Class4387<Class961> field21436 = method13794("daylight_detector", Class9785.<Class961>method38569(Class961::new, Blocks.field36720));
+   public static final Class4387<Class936> field21437 = method13794("hopper", Class9785.<Class936>method38569(Class936::new, Blocks.field36723));
+   public static final Class4387<Class963> field21438 = method13794("comparator", Class9785.<Class963>method38569(Class963::new, Blocks.field36719));
    public static final Class4387<Class958> field21439 = method13794(
       "banner",
       Class9785.<Class958>method38569(
          Class958::new,
-         Class8487.field36803,
-         Class8487.field36804,
-         Class8487.field36805,
-         Class8487.field36806,
-         Class8487.field36807,
-         Class8487.field36808,
-         Class8487.field36809,
-         Class8487.field36810,
-         Class8487.field36811,
-         Class8487.field36812,
-         Class8487.field36813,
-         Class8487.field36814,
-         Class8487.field36815,
-         Class8487.field36816,
-         Class8487.field36817,
-         Class8487.field36818,
-         Class8487.field36819,
-         Class8487.field36820,
-         Class8487.field36821,
-         Class8487.field36822,
-         Class8487.field36823,
-         Class8487.field36824,
-         Class8487.field36825,
-         Class8487.field36826,
-         Class8487.field36827,
-         Class8487.field36828,
-         Class8487.field36829,
-         Class8487.field36830,
-         Class8487.field36831,
-         Class8487.field36832,
-         Class8487.field36833,
-         Class8487.field36834
+         Blocks.field36803,
+         Blocks.field36804,
+         Blocks.field36805,
+         Blocks.field36806,
+         Blocks.field36807,
+         Blocks.field36808,
+         Blocks.field36809,
+         Blocks.field36810,
+         Blocks.field36811,
+         Blocks.field36812,
+         Blocks.field36813,
+         Blocks.field36814,
+         Blocks.field36815,
+         Blocks.field36816,
+         Blocks.field36817,
+         Blocks.field36818,
+         Blocks.field36819,
+         Blocks.field36820,
+         Blocks.field36821,
+         Blocks.field36822,
+         Blocks.field36823,
+         Blocks.field36824,
+         Blocks.field36825,
+         Blocks.field36826,
+         Blocks.field36827,
+         Blocks.field36828,
+         Blocks.field36829,
+         Blocks.field36830,
+         Blocks.field36831,
+         Blocks.field36832,
+         Blocks.field36833,
+         Blocks.field36834
       )
    );
-   public static final Class4387<Class964> field21440 = method13794("structure_block", Class9785.<Class964>method38569(Class964::new, Class8487.field37113));
-   public static final Class4387<Class957> field21441 = method13794("end_gateway", Class9785.<Class957>method38569(Class957::new, Class8487.field36886));
+   public static final Class4387<Class964> field21440 = method13794("structure_block", Class9785.<Class964>method38569(Class964::new, Blocks.field37113));
+   public static final Class4387<Class957> field21441 = method13794("end_gateway", Class9785.<Class957>method38569(Class957::new, Blocks.field36886));
    public static final Class4387<Class969> field21442 = method13794(
-      "command_block", Class9785.<Class969>method38569(Class969::new, Class8487.field36664, Class8487.field36888, Class8487.field36887)
+      "command_block", Class9785.<Class969>method38569(Class969::new, Blocks.field36664, Blocks.field36888, Blocks.field36887)
    );
    public static final Class4387<Class940> field21443 = method13794(
       "shulker_box",
       Class9785.<Class940>method38569(
          Class940::new,
-         Class8487.field36896,
-         Class8487.field36912,
-         Class8487.field36908,
-         Class8487.field36909,
-         Class8487.field36906,
-         Class8487.field36904,
-         Class8487.field36910,
-         Class8487.field36900,
-         Class8487.field36905,
-         Class8487.field36902,
-         Class8487.field36899,
-         Class8487.field36898,
-         Class8487.field36903,
-         Class8487.field36907,
-         Class8487.field36911,
-         Class8487.field36897,
-         Class8487.field36901
+         Blocks.field36896,
+         Blocks.field36912,
+         Blocks.field36908,
+         Blocks.field36909,
+         Blocks.field36906,
+         Blocks.field36904,
+         Blocks.field36910,
+         Blocks.field36900,
+         Blocks.field36905,
+         Blocks.field36902,
+         Blocks.field36899,
+         Blocks.field36898,
+         Blocks.field36903,
+         Blocks.field36907,
+         Blocks.field36911,
+         Blocks.field36897,
+         Blocks.field36901
       )
    );
    public static final Class4387<Class967> field21444 = method13794(
       "bed",
       Class9785.<Class967>method38569(
          Class967::new,
-         Class8487.field36476,
-         Class8487.field36477,
-         Class8487.field36473,
-         Class8487.field36474,
-         Class8487.field36471,
-         Class8487.field36469,
-         Class8487.field36475,
-         Class8487.field36465,
-         Class8487.field36470,
-         Class8487.field36467,
-         Class8487.field36464,
-         Class8487.field36463,
-         Class8487.field36468,
-         Class8487.field36472,
-         Class8487.field36462,
-         Class8487.field36466
+         Blocks.field36476,
+         Blocks.field36477,
+         Blocks.field36473,
+         Blocks.field36474,
+         Blocks.field36471,
+         Blocks.field36469,
+         Blocks.field36475,
+         Blocks.field36465,
+         Blocks.field36470,
+         Blocks.field36467,
+         Blocks.field36464,
+         Blocks.field36463,
+         Blocks.field36468,
+         Blocks.field36472,
+         Blocks.field36462,
+         Blocks.field36466
       )
    );
-   public static final Class4387<Class959> field21445 = method13794("conduit", Class9785.<Class959>method38569(Class959::new, Class8487.field37007));
-   public static final Class4387<Class973> field21446 = method13794("barrel", Class9785.<Class973>method38569(Class973::new, Class8487.field37055));
-   public static final Class4387<Class985> field21447 = method13794("smoker", Class9785.<Class985>method38569(Class985::new, Class8487.field37056));
-   public static final Class4387<Class987> field21448 = method13794("blast_furnace", Class9785.<Class987>method38569(Class987::new, Class8487.field37057));
-   public static final Class4387<Class948> field21449 = method13794("lectern", Class9785.<Class948>method38569(Class948::new, Class8487.field37061));
-   public static final Class4387<Class966> field21450 = method13794("bell", Class9785.<Class966>method38569(Class966::new, Class8487.field37064));
-   public static final Class4387<Class965> field21451 = method13794("jigsaw", Class9785.<Class965>method38569(Class965::new, Class8487.field37114));
+   public static final Class4387<Class959> field21445 = method13794("conduit", Class9785.<Class959>method38569(Class959::new, Blocks.field37007));
+   public static final Class4387<Class973> field21446 = method13794("barrel", Class9785.<Class973>method38569(Class973::new, Blocks.field37055));
+   public static final Class4387<Class985> field21447 = method13794("smoker", Class9785.<Class985>method38569(Class985::new, Blocks.field37056));
+   public static final Class4387<Class987> field21448 = method13794("blast_furnace", Class9785.<Class987>method38569(Class987::new, Blocks.field37057));
+   public static final Class4387<Class948> field21449 = method13794("lectern", Class9785.<Class948>method38569(Class948::new, Blocks.field37061));
+   public static final Class4387<Class966> field21450 = method13794("bell", Class9785.<Class966>method38569(Class966::new, Blocks.field37064));
+   public static final Class4387<Class965> field21451 = method13794("jigsaw", Class9785.<Class965>method38569(Class965::new, Blocks.field37114));
    public static final Class4387<Class945> field21452 = method13794(
-      "campfire", Class9785.<Class945>method38569(Class945::new, Class8487.field37067, Class8487.field37068)
+      "campfire", Class9785.<Class945>method38569(Class945::new, Blocks.field37067, Blocks.field37068)
    );
    public static final Class4387<Class962> field21453 = method13794(
-      "beehive", Class9785.<Class962>method38569(Class962::new, Class8487.field37117, Class8487.field37118)
+      "beehive", Class9785.<Class962>method38569(Class962::new, Blocks.field37117, Blocks.field37118)
    );
    private final Supplier<? extends T> field21454;
-   private final Set<Class3209> field21455;
+   private final Set<Block> field21455;
    private final Type<?> field21456;
 
    @Nullable
@@ -185,7 +185,7 @@ public class Class4387<T extends Class944> {
       return Class2348.<Class4387<T>>method9194(Class2348.field16078, var0, var1.method38570(var4));
    }
 
-   public Class4387(Supplier<? extends T> var1, Set<Class3209> var2, Type<?> var3) {
+   public Class4387(Supplier<? extends T> var1, Set<Block> var2, Type<?> var3) {
       this.field21454 = var1;
       this.field21455 = var2;
       this.field21456 = var3;
@@ -196,7 +196,7 @@ public class Class4387<T extends Class944> {
       return (T)this.field21454.get();
    }
 
-   public boolean method13796(Class3209 var1) {
+   public boolean method13796(Block var1) {
       return this.field21455.contains(var1);
    }
 

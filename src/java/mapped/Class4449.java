@@ -21,10 +21,10 @@ public class Class4449 implements Class4442 {
    public void method14013(Class8297 var1) throws IOException {
       JsonObject var4 = new JsonObject();
 
-      for (Class3209 var6 : Class2348.field16072) {
+      for (Block var6 : Class2348.field16072) {
          ResourceLocation var7 = Class2348.field16072.method9181(var6);
          JsonObject var8 = new JsonObject();
-         Class9348<Class3209, Class7380> var9 = var6.method11577();
+         Class9348<Block, Class7380> var9 = var6.method11577();
          if (!var9.method35395().isEmpty()) {
             JsonObject var10 = new JsonObject();
 
@@ -57,7 +57,7 @@ public class Class4449 implements Class4442 {
                var21.add("properties", var22);
             }
 
-            var21.addProperty("id", Class3209.method11535(var20));
+            var21.addProperty("id", Block.method11535(var20));
             if (var20 == var6.method11579()) {
                var21.addProperty("default", true);
             }

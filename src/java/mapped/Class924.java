@@ -33,7 +33,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    public static Map<Class3257, Integer> method3640() {
       LinkedHashMap var2 = Maps.newLinkedHashMap();
       method3643(var2, Class8514.field37884, 20000);
-      method3643(var2, Class8487.field36795, 16000);
+      method3643(var2, Blocks.field36795, 16000);
       method3643(var2, Class8514.field37967, 2400);
       method3643(var2, Class8514.field37798, 1600);
       method3643(var2, Class8514.field37799, 1600);
@@ -43,30 +43,30 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3642(var2, Class5985.field26078, 150);
       method3642(var2, Class5985.field26081, 300);
       method3642(var2, Class5985.field26080, 300);
-      method3643(var2, Class8487.field36578, 300);
-      method3643(var2, Class8487.field36868, 300);
-      method3643(var2, Class8487.field36867, 300);
-      method3643(var2, Class8487.field36869, 300);
-      method3643(var2, Class8487.field36871, 300);
-      method3643(var2, Class8487.field36870, 300);
-      method3643(var2, Class8487.field36637, 300);
-      method3643(var2, Class8487.field36863, 300);
-      method3643(var2, Class8487.field36862, 300);
-      method3643(var2, Class8487.field36864, 300);
-      method3643(var2, Class8487.field36866, 300);
-      method3643(var2, Class8487.field36865, 300);
-      method3643(var2, Class8487.field36461, 300);
-      method3643(var2, Class8487.field36525, 300);
-      method3643(var2, Class8487.field37061, 300);
-      method3643(var2, Class8487.field36577, 300);
-      method3643(var2, Class8487.field36534, 300);
-      method3643(var2, Class8487.field36716, 300);
-      method3643(var2, Class8487.field36538, 300);
-      method3643(var2, Class8487.field36720, 300);
+      method3643(var2, Blocks.OAK_FENCE, 300);
+      method3643(var2, Blocks.field36868, 300);
+      method3643(var2, Blocks.field36867, 300);
+      method3643(var2, Blocks.field36869, 300);
+      method3643(var2, Blocks.field36871, 300);
+      method3643(var2, Blocks.field36870, 300);
+      method3643(var2, Blocks.field36637, 300);
+      method3643(var2, Blocks.field36863, 300);
+      method3643(var2, Blocks.field36862, 300);
+      method3643(var2, Blocks.field36864, 300);
+      method3643(var2, Blocks.field36866, 300);
+      method3643(var2, Blocks.field36865, 300);
+      method3643(var2, Blocks.field36461, 300);
+      method3643(var2, Blocks.field36525, 300);
+      method3643(var2, Blocks.field37061, 300);
+      method3643(var2, Blocks.JUKEBOX, 300);
+      method3643(var2, Blocks.field36534, 300);
+      method3643(var2, Blocks.field36716, 300);
+      method3643(var2, Blocks.field36538, 300);
+      method3643(var2, Blocks.field36720, 300);
       method3642(var2, Class5985.field26094, 300);
       method3643(var2, Class8514.field37796, 300);
       method3643(var2, Class8514.field37906, 300);
-      method3643(var2, Class8487.field36549, 300);
+      method3643(var2, Blocks.field36549, 300);
       method3642(var2, Class5985.field26115, 200);
       method3643(var2, Class8514.field37806, 200);
       method3643(var2, Class8514.field37805, 200);
@@ -81,17 +81,17 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3642(var2, Class5985.field26083, 100);
       method3643(var2, Class8514.field37836, 100);
       method3642(var2, Class5985.field26075, 67);
-      method3643(var2, Class8487.field36963, 4001);
+      method3643(var2, Blocks.field36963, 4001);
       method3643(var2, Class8514.field38148, 300);
-      method3643(var2, Class8487.field37009, 50);
-      method3643(var2, Class8487.field36484, 100);
-      method3643(var2, Class8487.field37053, 400);
-      method3643(var2, Class8487.field37054, 300);
-      method3643(var2, Class8487.field37055, 300);
-      method3643(var2, Class8487.field37058, 300);
-      method3643(var2, Class8487.field37059, 300);
-      method3643(var2, Class8487.field37062, 300);
-      method3643(var2, Class8487.field37115, 300);
+      method3643(var2, Blocks.field37009, 50);
+      method3643(var2, Blocks.field36484, 100);
+      method3643(var2, Blocks.field37053, 400);
+      method3643(var2, Blocks.field37054, 300);
+      method3643(var2, Blocks.field37055, 300);
+      method3643(var2, Blocks.field37058, 300);
+      method3643(var2, Blocks.field37059, 300);
+      method3643(var2, Blocks.field37062, 300);
+      method3643(var2, Blocks.field37115, 300);
       return var2;
    }
 
@@ -247,7 +247,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             this.method3636(var1);
          }
 
-         if (var4.method32107() == Class8487.field36453.method11581()
+         if (var4.method32107() == Blocks.field36453.method11581()
             && !this.field5247.get(1).method32105()
             && this.field5247.get(1).method32107() == Class8514.field37882) {
             this.field5247.set(1, new Class8848(Class8514.field37883));

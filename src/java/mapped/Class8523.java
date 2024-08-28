@@ -4,10 +4,10 @@ import com.google.common.collect.ImmutableList;
 
 public class Class8523 {
    private static final Class7872 field38248 = new Class7872(
-      new Class6439(Class8487.field37130, 0.01F), Class6435.field28275, Class8487.field37141.method11579()
+      new Class6439(Blocks.field37130, 0.01F), Class6435.field28275, Blocks.field37141.method11579()
    );
    private static final Class7872 field38249 = new Class7872(
-      new Class6439(Class8487.field37141, 0.5F), Class6435.field28275, Class8487.field37130.method11579()
+      new Class6439(Blocks.field37141, 0.5F), Class6435.field28275, Blocks.field37130.method11579()
    );
    public static final Class3622 field38250 = method30211("empty", ImmutableList.of());
    public static final Class3622 field38251 = method30211(
@@ -15,48 +15,48 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field36399, 0.8F), Class6435.field28275, Class8487.field36526.method11579()),
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36528), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36529), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field36399, 0.07F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36526, 0.07F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36730, 0.07F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36422, 0.05F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36400, 0.1F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36533, 0.1F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36433, 0.02F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36630, 0.5F), Class6435.field28275, Class8487.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36399, 0.8F), Class6435.field28275, Blocks.field36526.method11579()),
+               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36528), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36529), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field36399, 0.07F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36526, 0.07F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36730, 0.07F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36422, 0.05F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36400, 0.1F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36533, 0.1F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36433, 0.02F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36630, 0.5F), Class6435.field28275, Blocks.field36481.method11579()),
                new Class7872[]{
                   new Class7872(
                      new Class6433(
-                        Class8487.field36630
+                        Blocks.field36630
                            .method11579()
                            .method23465(Class3237.field18680, Boolean.valueOf(true))
                            .method23465(Class3237.field18682, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Class8487.field36758
+                     Blocks.field36758
                         .method11579()
                         .method23465(Class3237.field18680, Boolean.valueOf(true))
                         .method23465(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   new Class7872(
                      new Class6433(
-                        Class8487.field36630
+                        Blocks.field36630
                            .method11579()
                            .method23465(Class3237.field18681, Boolean.valueOf(true))
                            .method23465(Class3237.field18683, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Class8487.field36758
+                     Blocks.field36758
                         .method11579()
                         .method23465(Class3237.field18681, Boolean.valueOf(true))
                         .method23465(Class3237.field18683, Boolean.valueOf(true))
                   ),
-                  new Class7872(new Class6439(Class8487.field36539, 0.3F), Class6435.field28275, Class8487.field36693.method11579()),
-                  new Class7872(new Class6439(Class8487.field36539, 0.2F), Class6435.field28275, Class8487.field36694.method11579()),
-                  new Class7872(new Class6439(Class8487.field36539, 0.1F), Class6435.field28275, Class8487.field36884.method11579())
+                  new Class7872(new Class6439(Blocks.field36539, 0.3F), Class6435.field28275, Blocks.field36693.method11579()),
+                  new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36694.method11579()),
+                  new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36884.method11579())
                }
             )
          )
@@ -67,26 +67,26 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36528), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36529), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field36404, 0.2F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36762, 0.2F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36426, 0.05F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36438, 0.05F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36731, 0.05F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36734, 0.05F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36744, 0.05F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36630, 0.5F), Class6435.field28275, Class8487.field36481.method11579()),
+               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36528), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36529), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field36404, 0.2F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36762, 0.2F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36426, 0.05F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36438, 0.05F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36731, 0.05F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36734, 0.05F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36744, 0.05F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36630, 0.5F), Class6435.field28275, Blocks.field36481.method11579()),
                new Class7872(
                   new Class6433(
-                     Class8487.field36630
+                     Blocks.field36630
                         .method11579()
                         .method23465(Class3237.field18680, Boolean.valueOf(true))
                         .method23465(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Class8487.field36758
+                  Blocks.field36758
                      .method11579()
                      .method23465(Class3237.field18680, Boolean.valueOf(true))
                      .method23465(Class3237.field18682, Boolean.valueOf(true))
@@ -94,18 +94,18 @@ public class Class8523 {
                new Class7872[]{
                   new Class7872(
                      new Class6433(
-                        Class8487.field36630
+                        Blocks.field36630
                            .method11579()
                            .method23465(Class3237.field18681, Boolean.valueOf(true))
                            .method23465(Class3237.field18683, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Class8487.field36758
+                     Blocks.field36758
                         .method11579()
                         .method23465(Class3237.field18681, Boolean.valueOf(true))
                         .method23465(Class3237.field18683, Boolean.valueOf(true))
                   ),
-                  new Class7872(new Class6439(Class8487.field36539, 0.1F), Class6435.field28275, Class8487.field36635.method11579())
+                  new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36635.method11579())
                }
             )
          )
@@ -116,43 +116,43 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36528), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36529), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field37065), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field36401, 0.2F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36840, 0.4F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36428, 0.05F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36441, 0.05F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36630, 0.5F), Class6435.field28275, Class8487.field36481.method11579()),
+               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36528), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36529), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field37065), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field36401, 0.2F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36840, 0.4F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36428, 0.05F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36441, 0.05F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36630, 0.5F), Class6435.field28275, Blocks.field36481.method11579()),
                new Class7872(
                   new Class6433(
-                     Class8487.field36630
+                     Blocks.field36630
                         .method11579()
                         .method23465(Class3237.field18680, Boolean.valueOf(true))
                         .method23465(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Class8487.field36758
+                  Blocks.field36758
                      .method11579()
                      .method23465(Class3237.field18680, Boolean.valueOf(true))
                      .method23465(Class3237.field18682, Boolean.valueOf(true))
                ),
                new Class7872(
                   new Class6433(
-                     Class8487.field36630
+                     Blocks.field36630
                         .method11579()
                         .method23465(Class3237.field18681, Boolean.valueOf(true))
                         .method23465(Class3237.field18683, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Class8487.field36758
+                  Blocks.field36758
                      .method11579()
                      .method23465(Class3237.field18681, Boolean.valueOf(true))
                      .method23465(Class3237.field18683, Boolean.valueOf(true))
                ),
-               new Class7872(new Class6439(Class8487.field36539, 0.1F), Class6435.field28275, Class8487.field36693.method11579()),
-               new Class7872[]{new Class7872(new Class6439(Class8487.field36539, 0.8F), Class6435.field28275, Class8487.field36694.method11579())}
+               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36693.method11579()),
+               new Class7872[]{new Class7872(new Class6439(Blocks.field36539, 0.8F), Class6435.field28275, Blocks.field36694.method11579())}
             )
          )
       )
@@ -162,46 +162,46 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field36399, 0.8F), Class6435.field28275, Class8487.field36526.method11579()),
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36528), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36529), Class6435.field28275, Class8487.field36387.method11579()),
+               new Class7872(new Class6439(Blocks.field36399, 0.8F), Class6435.field28275, Blocks.field36526.method11579()),
+               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36528), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36529), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(
-                  new Class6438(Class8487.field37067),
+                  new Class6438(Blocks.field37067),
                   Class6435.field28275,
-                  Class8487.field37067.method11579().method23465(Class3244.field18698, Boolean.valueOf(false))
+                  Blocks.field37067.method11579().method23465(Class3244.field18698, Boolean.valueOf(false))
                ),
-               new Class7872(new Class6439(Class8487.field36399, 0.08F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36423, 0.08F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36630, 0.5F), Class6435.field28275, Class8487.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36399, 0.08F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36423, 0.08F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36630, 0.5F), Class6435.field28275, Blocks.field36481.method11579()),
                new Class7872(
                   new Class6433(
-                     Class8487.field36630
+                     Blocks.field36630
                         .method11579()
                         .method23465(Class3237.field18680, Boolean.valueOf(true))
                         .method23465(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Class8487.field36758
+                  Blocks.field36758
                      .method11579()
                      .method23465(Class3237.field18680, Boolean.valueOf(true))
                      .method23465(Class3237.field18682, Boolean.valueOf(true))
                ),
                new Class7872(
                   new Class6433(
-                     Class8487.field36630
+                     Blocks.field36630
                         .method11579()
                         .method23465(Class3237.field18681, Boolean.valueOf(true))
                         .method23465(Class3237.field18683, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Class8487.field36758
+                  Blocks.field36758
                      .method11579()
                      .method23465(Class3237.field18681, Boolean.valueOf(true))
                      .method23465(Class3237.field18683, Boolean.valueOf(true))
                ),
-               new Class7872(new Class6439(Class8487.field36539, 0.3F), Class6435.field28275, Class8487.field36634.method11579()),
-               new Class7872(new Class6439(Class8487.field36539, 0.2F), Class6435.field28275, Class8487.field36694.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.3F), Class6435.field28275, Blocks.field36634.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36694.method11579()),
                new Class7872[0]
             )
          )
@@ -212,16 +212,16 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36528), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6438(Class8487.field36529), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field36859, 0.08F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36460, 0.1F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36794, 0.08F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field37021, 0.08F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field37034, 0.08F), Class6435.field28275, Class8487.field36481.method11579()),
-               new Class7872(new Class6439(Class8487.field36539, 0.2F), Class6435.field28275, Class8487.field36884.method11579()),
-               new Class7872(new Class6439(Class8487.field36539, 0.1F), Class6435.field28275, Class8487.field36635.method11579())
+               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36528), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6438(Blocks.field36529), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field36859, 0.08F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36460, 0.1F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36794, 0.08F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field37021, 0.08F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field37034, 0.08F), Class6435.field28275, Blocks.field36481.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36884.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36635.method11579())
             )
          )
       )
@@ -229,19 +229,19 @@ public class Class8523 {
    public static final Class3622 field38256 = method30211(
       "mossify_10_percent",
       ImmutableList.of(
-         new Class7093(ImmutableList.of(new Class7872(new Class6439(Class8487.field36399, 0.1F), Class6435.field28275, Class8487.field36526.method11579())))
+         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.field36399, 0.1F), Class6435.field28275, Blocks.field36526.method11579())))
       )
    );
    public static final Class3622 field38257 = method30211(
       "mossify_20_percent",
       ImmutableList.of(
-         new Class7093(ImmutableList.of(new Class7872(new Class6439(Class8487.field36399, 0.2F), Class6435.field28275, Class8487.field36526.method11579())))
+         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.field36399, 0.2F), Class6435.field28275, Blocks.field36526.method11579())))
       )
    );
    public static final Class3622 field38258 = method30211(
       "mossify_70_percent",
       ImmutableList.of(
-         new Class7093(ImmutableList.of(new Class7872(new Class6439(Class8487.field36399, 0.7F), Class6435.field28275, Class8487.field36526.method11579())))
+         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.field36399, 0.7F), Class6435.field28275, Blocks.field36526.method11579())))
       )
    );
    public static final Class3622 field38259 = method30211(
@@ -249,10 +249,10 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Class8487.field36885), new Class6438(Class8487.field36413), Class8487.field36400.method11579()),
-               new Class7872(new Class6439(Class8487.field36885, 0.1F), Class6435.field28275, Class8487.field36395.method11579()),
-               new Class7872(new Class6438(Class8487.field36395), new Class6438(Class8487.field36413), Class8487.field36413.method11579()),
-               new Class7872(new Class6438(Class8487.field36396), new Class6438(Class8487.field36413), Class8487.field36413.method11579())
+               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36400.method11579()),
+               new Class7872(new Class6439(Blocks.field36885, 0.1F), Class6435.field28275, Blocks.field36395.method11579()),
+               new Class7872(new Class6438(Blocks.field36395), new Class6438(Blocks.WATER), Blocks.WATER.method11579()),
+               new Class7872(new Class6438(Blocks.field36396), new Class6438(Blocks.WATER), Blocks.WATER.method11579())
             )
          )
       )
@@ -262,10 +262,10 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Class8487.field36885), new Class6438(Class8487.field36413), Class8487.field36404.method11579()),
-               new Class7872(new Class6439(Class8487.field36885, 0.2F), Class6435.field28275, Class8487.field36395.method11579()),
-               new Class7872(new Class6438(Class8487.field36395), new Class6438(Class8487.field36413), Class8487.field36413.method11579()),
-               new Class7872(new Class6438(Class8487.field36396), new Class6438(Class8487.field36413), Class8487.field36413.method11579())
+               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36404.method11579()),
+               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.field36395.method11579()),
+               new Class7872(new Class6438(Blocks.field36395), new Class6438(Blocks.WATER), Blocks.WATER.method11579()),
+               new Class7872(new Class6438(Blocks.field36396), new Class6438(Blocks.WATER), Blocks.WATER.method11579())
             )
          )
       )
@@ -275,10 +275,10 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Class8487.field36885), new Class6438(Class8487.field36413), Class8487.field36401.method11579()),
-               new Class7872(new Class6439(Class8487.field36885, 0.2F), Class6435.field28275, Class8487.field36395.method11579()),
-               new Class7872(new Class6438(Class8487.field36395), new Class6438(Class8487.field36413), Class8487.field36413.method11579()),
-               new Class7872(new Class6438(Class8487.field36396), new Class6438(Class8487.field36413), Class8487.field36413.method11579())
+               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36401.method11579()),
+               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.field36395.method11579()),
+               new Class7872(new Class6438(Blocks.field36395), new Class6438(Blocks.WATER), Blocks.WATER.method11579()),
+               new Class7872(new Class6438(Blocks.field36396), new Class6438(Blocks.WATER), Blocks.WATER.method11579())
             )
          )
       )
@@ -288,9 +288,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field36539, 0.3F), Class6435.field28275, Class8487.field36693.method11579()),
-               new Class7872(new Class6439(Class8487.field36539, 0.2F), Class6435.field28275, Class8487.field36694.method11579()),
-               new Class7872(new Class6439(Class8487.field36539, 0.1F), Class6435.field28275, Class8487.field36884.method11579())
+               new Class7872(new Class6439(Blocks.field36539, 0.3F), Class6435.field28275, Blocks.field36693.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36694.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36884.method11579())
             )
          )
       )
@@ -298,7 +298,7 @@ public class Class8523 {
    public static final Class3622 field38263 = method30211(
       "farm_savanna",
       ImmutableList.of(
-         new Class7093(ImmutableList.of(new Class7872(new Class6439(Class8487.field36539, 0.1F), Class6435.field28275, Class8487.field36635.method11579())))
+         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36635.method11579())))
       )
    );
    public static final Class3622 field38264 = method30211(
@@ -306,8 +306,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field36539, 0.1F), Class6435.field28275, Class8487.field36693.method11579()),
-               new Class7872(new Class6439(Class8487.field36539, 0.8F), Class6435.field28275, Class8487.field36694.method11579())
+               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36693.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.8F), Class6435.field28275, Blocks.field36694.method11579())
             )
          )
       )
@@ -317,8 +317,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field36539, 0.3F), Class6435.field28275, Class8487.field36634.method11579()),
-               new Class7872(new Class6439(Class8487.field36539, 0.2F), Class6435.field28275, Class8487.field36694.method11579())
+               new Class7872(new Class6439(Blocks.field36539, 0.3F), Class6435.field28275, Blocks.field36634.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36694.method11579())
             )
          )
       )
@@ -328,8 +328,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field36539, 0.2F), Class6435.field28275, Class8487.field36884.method11579()),
-               new Class7872(new Class6439(Class8487.field36539, 0.1F), Class6435.field28275, Class8487.field36635.method11579())
+               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36884.method11579()),
+               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36635.method11579())
             )
          )
       )
@@ -340,8 +340,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field36890, 0.75F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37136, 0.15F), Class6435.field28275, Class8487.field37135.method11579()),
+               new Class7872(new Class6439(Blocks.field36890, 0.75F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37136, 0.15F), Class6435.field28275, Blocks.field37135.method11579()),
                field38249,
                field38248
             )
@@ -353,8 +353,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37135, 0.35F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37137, 0.1F), Class6435.field28275, Class8487.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.35F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37137, 0.1F), Class6435.field28275, Blocks.field37136.method11579()),
                field38249,
                field38248
             )
@@ -366,8 +366,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37135, 0.3F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37130, 1.0E-4F), Class6435.field28275, Class8487.field36387.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.method11579()),
                field38249,
                field38248
             )
@@ -379,8 +379,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37137, 0.5F), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field36521, 0.1F), Class6435.field28275, Class8487.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37137, 0.5F), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field36521, 0.1F), Class6435.field28275, Blocks.field37136.method11579()),
                field38249,
                field38248
             )
@@ -392,8 +392,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37135, 0.1F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37130, 1.0E-4F), Class6435.field28275, Class8487.field36387.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.1F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.method11579()),
                field38249,
                field38248
             )
@@ -405,9 +405,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37135, 0.3F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37130, 1.0E-4F), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field36521, 0.3F), Class6435.field28275, Class8487.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field36521, 0.3F), Class6435.field28275, Blocks.field37136.method11579()),
                field38249,
                field38248
             )
@@ -419,11 +419,11 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37135, 0.4F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37130, 0.01F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37135, 1.0E-4F), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field37130, 1.0E-4F), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field36521, 0.3F), Class6435.field28275, Class8487.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.4F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37130, 0.01F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 1.0E-4F), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field36521, 0.3F), Class6435.field28275, Blocks.field37136.method11579()),
                field38249,
                field38248
             )
@@ -435,8 +435,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37137, 0.5F), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field36521, 0.6F), Class6435.field28275, Class8487.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37137, 0.5F), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field36521, 0.6F), Class6435.field28275, Blocks.field37136.method11579()),
                field38249,
                field38248
             )
@@ -448,8 +448,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37135, 0.3F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37130, 1.0E-4F), Class6435.field28275, Class8487.field36387.method11579())
+               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.method11579())
             )
          )
       )
@@ -459,9 +459,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37135, 0.3F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37135, 0.15F), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field37135, 0.3F), Class6435.field28275, Class8487.field37130.method11579())
+               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.15F), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37130.method11579())
             )
          )
       )
@@ -471,9 +471,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field37135, 0.01F), Class6435.field28275, Class8487.field36387.method11579()),
-               new Class7872(new Class6439(Class8487.field37135, 0.5F), Class6435.field28275, Class8487.field37136.method11579()),
-               new Class7872(new Class6439(Class8487.field37135, 0.3F), Class6435.field28275, Class8487.field37130.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.01F), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.5F), Class6435.field28275, Blocks.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37130.method11579()),
                field38249
             )
          )
@@ -484,9 +484,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Class8487.field36521, 0.3F), Class6435.field28275, Class8487.field37136.method11579()),
+               new Class7872(new Class6439(Blocks.field36521, 0.3F), Class6435.field28275, Blocks.field37136.method11579()),
                new Class7872(
-                  Class6435.field28275, Class6435.field28275, new Class8035(0.0F, 0.05F, 0, 100, Class113.field414), Class8487.field36387.method11579()
+                  Class6435.field28275, Class6435.field28275, new Class8035(0.0F, 0.05F, 0, 100, Class113.field414), Blocks.AIR.method11579()
                ),
                field38249
             )

@@ -24,7 +24,7 @@ public abstract class Class7661 extends Class7665 {
       Class7909 var10 = this.method25183(var5);
       if (var10 != null) {
          ((Class4733)var10.field33887).method14849();
-         Class7380 var11 = Class8487.field36387.method11579();
+         Class7380 var11 = Blocks.AIR.method11579();
          var1.method6725(var3.method8336(var6, 0, var7), var11, 4);
          var1.method6725(var3.method8336(var6 + 1, 0, var7), var11, 4);
          var1.method6725(var3.method8336(var6, 0, var7 + 1), var11, 4);
@@ -44,7 +44,7 @@ public abstract class Class7661 extends Class7665 {
    }
 
    public static boolean method25185(Class7380 var0, Class1665 var1, BlockPos var2, int var3, int var4) {
-      Class3209 var7 = var0.method23383();
+      Block var7 = var0.method23383();
       return var7 == var1.method6738(var2.method8336(var3, 0, var4)).method23383()
          && var7 == var1.method6738(var2.method8336(var3 + 1, 0, var4)).method23383()
          && var7 == var1.method6738(var2.method8336(var3, 0, var4 + 1)).method23383()

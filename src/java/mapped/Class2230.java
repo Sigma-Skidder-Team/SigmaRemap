@@ -1,7 +1,6 @@
 package mapped;
 
 import com.google.common.collect.Lists;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
 
@@ -9,43 +8,43 @@ import java.util.List;
 
 public enum Class2230 implements Class2234 {
    field14618(
-      Class8487.field36895,
-      Class8487.field36588,
-      Class8487.field36945,
-      Class8487.field36946,
-      Class8487.field36947,
-      Class8487.field36948,
-      Class8487.field36949,
-      Class8487.field36950,
-      Class8487.field36951,
-      Class8487.field36952,
-      Class8487.field36953,
-      Class8487.field36954,
-      Class8487.field36955,
-      Class8487.field36956,
-      Class8487.field36957,
-      Class8487.field36958,
-      Class8487.field36959,
-      Class8487.field36960,
-      Class8487.field36713,
-      Class8487.field36714,
-      Class8487.field36715,
-      Class8487.field36652,
-      Class8487.field36417,
-      Class8487.field36415,
-      Class8487.field36416,
-      Class8487.field36542,
-      Class8487.field36543,
-      Class8487.field36544,
-      Class8487.field36545,
-      Class8487.field36546,
-      Class8487.field36547,
-      Class8487.field36552,
-      Class8487.field36553,
-      Class8487.field36554,
-      Class8487.field36555,
-      Class8487.field36556,
-      Class8487.field36557
+      Blocks.field36895,
+      Blocks.field36588,
+      Blocks.field36945,
+      Blocks.field36946,
+      Blocks.field36947,
+      Blocks.field36948,
+      Blocks.field36949,
+      Blocks.field36950,
+      Blocks.field36951,
+      Blocks.field36952,
+      Blocks.field36953,
+      Blocks.field36954,
+      Blocks.field36955,
+      Blocks.field36956,
+      Blocks.field36957,
+      Blocks.field36958,
+      Blocks.field36959,
+      Blocks.field36960,
+      Blocks.field36713,
+      Blocks.field36714,
+      Blocks.field36715,
+      Blocks.field36652,
+      Blocks.GRAVEL,
+      Blocks.SAND,
+      Blocks.RED_SAND,
+      Blocks.field36542,
+      Blocks.field36543,
+      Blocks.field36544,
+      Blocks.field36545,
+      Blocks.field36546,
+      Blocks.field36547,
+      Blocks.field36552,
+      Blocks.field36553,
+      Blocks.field36554,
+      Blocks.field36555,
+      Blocks.field36556,
+      Blocks.field36557
    ) {
       @Override
       public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
@@ -58,7 +57,7 @@ public enum Class2230 implements Class2234 {
          return var1.method23439(var2, var4.method6738(var6), var4, var5, var6);
       }
    },
-   field14620(Class8487.field36534, Class8487.field36716) {
+   field14620(Blocks.field36534, Blocks.field36716) {
       @Override
       public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
          if (var3.method23448(var1.method23383())
@@ -86,7 +85,7 @@ public enum Class2230 implements Class2234 {
          return var1;
       }
    },
-   field14621(true, Class8487.field36450, Class8487.field36448, Class8487.field36451, Class8487.field36449, Class8487.field36446, Class8487.field36447) {
+   field14621(true, Blocks.field36450, Blocks.field36448, Blocks.field36451, Blocks.field36449, Blocks.field36446, Blocks.field36447) {
       private final ThreadLocal<List<ObjectSet<BlockPos>>> field14625 = ThreadLocal.withInitial(() -> Lists.newArrayListWithCapacity(7));
       @Override
       public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
@@ -136,7 +135,7 @@ public enum Class2230 implements Class2234 {
          var5.clear();
       }
    },
-   field14622(Class8487.field36635, Class8487.field36634) {
+   field14622(Blocks.field36635, Blocks.field36634) {
       @Override
       public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
          if (var1.method23463(Class3486.field19347) == 7) {
@@ -153,12 +152,12 @@ public enum Class2230 implements Class2234 {
    public static final Direction[] field14623 = Direction.values();
    private static final Class2230[] field14624 = new Class2230[]{field14618, field14619, field14620, field14621, field14622};
 
-   private Class2230(Class3209... var3) {
+   private Class2230(Block... var3) {
       this(false, var3);
    }
 
-   private Class2230(boolean var3, Class3209... var4) {
-      for (Class3209 var10 : var4) {
+   private Class2230(boolean var3, Block... var4) {
+      for (Block var10 : var4) {
          Class8922.method32610().put(var10, this);
       }
 

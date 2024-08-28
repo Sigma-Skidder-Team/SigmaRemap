@@ -54,22 +54,22 @@ public enum Class108 implements Class83 {
    }
 
    public static Class108 method300(Class7380 var0) {
-      if (!var0.method23448(Class8487.field36575)) {
-         if (var0.method23448(Class8487.field36521)) {
+      if (!var0.method23448(Blocks.CLAY)) {
+         if (var0.method23448(Blocks.field36521)) {
             return field353;
          } else if (!var0.method23446(Class7645.field32734)) {
-            if (var0.method23448(Class8487.field36796)) {
+            if (var0.method23448(Blocks.field36796)) {
                return field355;
-            } else if (!var0.method23448(Class8487.field36893)) {
-               if (var0.method23448(Class8487.field36522)) {
+            } else if (!var0.method23448(Blocks.field36893)) {
+               if (var0.method23448(Blocks.field36522)) {
                   return field357;
-               } else if (!var0.method23448(Class8487.field36581)) {
-                  if (var0.method23448(Class8487.field36579)) {
+               } else if (!var0.method23448(Blocks.SOUL_SAND)) {
+                  if (var0.method23448(Blocks.PUMPKIN)) {
                      return field359;
-                  } else if (!var0.method23448(Class8487.field36660)) {
-                     if (var0.method23448(Class8487.field36777)) {
+                  } else if (!var0.method23448(Blocks.field36660)) {
+                     if (var0.method23448(Blocks.field36777)) {
                         return field361;
-                     } else if (!var0.method23448(Class8487.field36587)) {
+                     } else if (!var0.method23448(Blocks.field36587)) {
                         Class8649 var3 = var0.method23384();
                         if (var3 == Class8649.field38966) {
                            return field348;

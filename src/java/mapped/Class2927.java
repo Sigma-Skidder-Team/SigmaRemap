@@ -10,9 +10,9 @@ public class Class2927 extends Class2898<Class4709> {
    }
 
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4709 var5) {
-      Class3209 var8 = var5.field22337.method23383();
+      Block var8 = var5.field22337.method23383();
       BlockPos var9 = null;
-      Class3209 var10 = var1.method6738(var4.method8313()).method23383();
+      Block var10 = var1.method6738(var4.method8313()).method23383();
       if (var10 == var8) {
          var9 = var4;
       }
@@ -33,7 +33,7 @@ public class Class2927 extends Class2898<Class4709> {
          }
 
          boolean var13 = !var5.field22341 && var3.nextFloat() < 0.06F;
-         var1.method6725(var4, Class8487.field36387.method11579(), 4);
+         var1.method6725(var4, Blocks.AIR.method11579(), 4);
          this.method11258(var1, var3, var5, var9, var11, var13);
          this.method11259(var1, var3, var5, var9, var11, var13);
          return true;
@@ -80,7 +80,7 @@ public class Class2927 extends Class2898<Class4709> {
 
    private void method11259(Class1660 var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
       Mutable var9 = new Mutable();
-      boolean var10 = var3.field22339.method23448(Class8487.field36891);
+      boolean var10 = var3.field22339.method23448(Blocks.field36891);
       int var11 = Math.min(var2.nextInt(1 + var5 / 3) + 5, var5);
       int var12 = var5 - var11;
 

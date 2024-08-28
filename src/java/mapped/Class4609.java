@@ -27,7 +27,7 @@ public class Class4609 extends Class4566 {
 
    public Class4609 method14540(BlockPos var1) {
       this.field22118 = var1;
-      if (!this.field22117.method23448(Class8487.field36395)) {
+      if (!this.field22117.method23448(Blocks.field36395)) {
          this.method14542(var1);
          return this;
       } else {
@@ -37,7 +37,7 @@ public class Class4609 extends Class4566 {
 
    public Class4609 method14541() {
       this.field22118 = new BlockPos(this.field22041, this.field22042, this.field22043);
-      if (!this.field22117.method23448(Class8487.field36395)) {
+      if (!this.field22117.method23448(Blocks.field36395)) {
          this.method14542(this.field22118);
          return this;
       } else {

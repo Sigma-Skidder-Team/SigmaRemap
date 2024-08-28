@@ -2,10 +2,10 @@ package mapped;
 
 public class Class7520 implements Class7519 {
    private static String[] field32252;
-   private final Class3209 field32253;
+   private final Block field32253;
    private Class7340 field32254 = Class7340.field31445;
 
-   public Class7520(Class3209 var1) {
+   public Class7520(Block var1) {
       this.field32253 = var1;
    }
 

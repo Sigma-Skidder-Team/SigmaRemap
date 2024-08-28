@@ -48,14 +48,14 @@ public class Class5317 extends Module {
         if (!this.method15996() || Client.getInstance().getModuleManager().method14662(Class5341.class).method15996()) {
             field23862 = 0;
         } else if (var1.method13921()) {
-            if (field23386.field1337.method23158()) {
+            if (mc.field1337.method23158()) {
                 field23862 = 0;
             }
 
             boolean var4 = !this.method15974("KillAura") || Class5357.field23948 != null || Class5357.field23949 != null;
-            if (field23386.field1339.field5036 && field23386.field1339.field5038 && var4) {
+            if (mc.field1339.field5036 && mc.field1339.field5038 && var4) {
                 field23862++;
-                field23386.field1339.field6120 = 0.0;
+                mc.field1339.field6120 = 0.0;
                 if (field23862 != 2) {
                     if (field23862 >= 3) {
                         double var5 = 0.001;

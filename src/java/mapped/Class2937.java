@@ -64,12 +64,12 @@ public class Class2937 extends Class2898<Class4712> {
          if (var0.method7007(var2)) {
             if (var8 == var3 || !var0.method7007(var2.method8311())) {
                var0.method6725(
-                  var2, Class8487.field37088.method11579().method23465(Class3452.field19267, Integer.valueOf(Class9679.method37782(var1, var4, var5))), 2
+                  var2, Blocks.field37088.method11579().method23465(Class3452.field19267, Integer.valueOf(Class9679.method37782(var1, var4, var5))), 2
                );
                break;
             }
 
-            var0.method6725(var2, Class8487.field37089.method11579(), 2);
+            var0.method6725(var2, Blocks.field37089.method11579(), 2);
          }
 
          var2.method8379(Direction.field673);
@@ -81,7 +81,7 @@ public class Class2937 extends Class2898<Class4712> {
          return true;
       } else {
          Class7380 var4 = var0.method6738(var1.method8313());
-         return !var4.method23448(Class8487.field36580) && !var4.method23448(Class8487.field37074) && !var4.method23448(Class8487.field37076);
+         return !var4.method23448(Blocks.NETHERRACK) && !var4.method23448(Blocks.field37074) && !var4.method23448(Blocks.field37076);
       }
    }
 }

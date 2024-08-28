@@ -83,7 +83,7 @@ public class Class5265 extends PremiumModule {
     }
 
     private void method16475(int var1) {
-        if (field23386.field1355 == null || field23386.field1355 instanceof Class1331) {
+        if (mc.field1355 == null || mc.field1355 instanceof Class1331) {
             GL11.glPushMatrix();
             Class3192.method11421(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
             Class8853 var4 = Minecraft.getInstance().method1554();
@@ -147,7 +147,7 @@ public class Class5265 extends PremiumModule {
             }
 
             GameProfile var8 = new GameProfile(var7, this.field23693.method2941().getString());
-            Class1117 var9 = new Class1117(this, field23386.field1338, var8);
+            Class1117 var9 = new Class1117(this, mc.field1338, var8);
             RenderSystem.pushMatrix();
             RenderSystem.translatef((float) var1 + 50.0F, (float) this.field23683 + 295.0F, 1000.0F);
             RenderSystem.scalef(1.0F, 1.0F, -1.0F);

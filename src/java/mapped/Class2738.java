@@ -39,7 +39,7 @@ public class Class2738 extends Class2737 {
          Class9679.method37769(this.field17258.getPosZ() + 3.0)
       )) {
          if (!var3.equals(var7)) {
-            Class3209 var8 = this.field17258.field5024.method6738(var5.method8377(var7, Direction.field672)).method23383();
+            Block var8 = this.field17258.field5024.method6738(var5.method8377(var7, Direction.field672)).method23383();
             boolean var9 = var8 instanceof Class3465 || var8.method11540(Class7645.field32751);
             if (var9 && this.field17258.field5024.method7007(var7) && this.field17258.field5024.method7007(var4.method8377(var7, Direction.field673))) {
                return Vector3d.method11330(var7);

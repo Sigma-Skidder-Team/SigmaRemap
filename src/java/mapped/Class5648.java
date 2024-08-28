@@ -35,7 +35,7 @@ public class Class5648 extends Class5646 {
       Class7380[] var3 = this.field24999.method38130();
 
       for (int var4 = 0; var4 < var3.length; var4++) {
-         Class7380 var5 = var3[var4] != null ? var3[var4] : Class8487.field36387.method11579();
+         Class7380 var5 = var3[var4] != null ? var3[var4] : Blocks.AIR.method11579();
          if (!Class101.field299.method287().test(var5)) {
             return var4 - 1;
          }
@@ -83,7 +83,7 @@ public class Class5648 extends Class5646 {
    public Class1665 method17798(int var1, int var2) {
       return new Class1669(
          Arrays.<Class7380>stream(this.field24999.method38130())
-            .<Class7380>map(var0 -> (Class7380)(var0 != null ? var0 : Class8487.field36387.method11579()))
+            .<Class7380>map(var0 -> (Class7380)(var0 != null ? var0 : Blocks.AIR.method11579()))
             .<Class7380>toArray(Class7380[]::new)
       );
    }

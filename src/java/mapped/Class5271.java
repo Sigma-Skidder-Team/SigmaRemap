@@ -24,7 +24,7 @@ public class Class5271 extends Module {
         this.field23700 = -1;
         double var3 = this.field23703[0];
         int var5 = this.field23703.length;
-        double var6 = field23386.field1339.method3431().field18049 - (double) ((int) field23386.field1339.method3431().field18049);
+        double var6 = mc.field1339.method3431().field18049 - (double) ((int) mc.field1339.method3431().field18049);
 
         for (int var8 = 1; var8 < var5; var8++) {
             double var9 = this.field23703[var8] - var6;
@@ -33,14 +33,14 @@ public class Class5271 extends Module {
             }
         }
 
-        this.field23702 = (double) ((int) field23386.field1339.method3431().field18049) + var3;
-        field23386.field1339.method3215(field23386.field1339.method3431().field18048, this.field23702, field23386.field1339.method3431().field18050);
+        this.field23702 = (double) ((int) mc.field1339.method3431().field18049) + var3;
+        mc.field1339.method3215(mc.field1339.method3431().field18048, this.field23702, mc.field1339.method3431().field18050);
     }
 
     @Override
     public void method15965() {
         Class9567.method37090(0.2);
-        if (field23386.field1339.method3433().field18049 > 0.03) {
+        if (mc.field1339.method3433().field18049 > 0.03) {
             Class5628.method17725(-0.0784);
         }
     }
@@ -51,7 +51,7 @@ public class Class5271 extends Module {
         this.field23700 = -1;
         double var4 = this.field23703[0];
         int var6 = this.field23703.length;
-        double var7 = field23386.field1339.method3431().field18049 - (double) ((int) field23386.field1339.method3431().field18049);
+        double var7 = mc.field1339.method3431().field18049 - (double) ((int) mc.field1339.method3431().field18049);
 
         for (int var9 = 1; var9 < var6; var9++) {
             double var10 = this.field23703[var9] - var7;
@@ -60,8 +60,8 @@ public class Class5271 extends Module {
             }
         }
 
-        this.field23702 = (double) ((int) field23386.field1339.method3431().field18049) + var4;
-        field23386.field1339.method3215(field23386.field1339.method3431().field18048, this.field23702, field23386.field1339.method3431().field18050);
+        this.field23702 = (double) ((int) mc.field1339.method3431().field18049) + var4;
+        mc.field1339.method3215(mc.field1339.method3431().field18048, this.field23702, mc.field1339.method3431().field18050);
     }
 
     @EventTarget
@@ -89,20 +89,20 @@ public class Class5271 extends Module {
         var1.method13995(0.0);
         if (this.field23700 != 1) {
             if (this.field23700 > 1) {
-                field23386.field1339.method3215(field23386.field1339.method3431().field18048, this.field23702, field23386.field1339.method3431().field18050);
-                double var4 = !field23386.field1299.field44637.method8509() ? 0.405 + (double) Class9567.method37078() * 0.02 : 0.25;
+                mc.field1339.method3215(mc.field1339.method3431().field18048, this.field23702, mc.field1339.method3431().field18050);
+                double var4 = !mc.field1299.field44637.method8509() ? 0.405 + (double) Class9567.method37078() * 0.02 : 0.25;
                 Class9567.method37088(var1, var4);
                 this.field23700 = 0;
             }
         } else {
-            if (field23386.field1299.field44636.method8509() && this.field23701 == 0) {
+            if (mc.field1299.field44636.method8509() && this.field23701 == 0) {
                 var1.method13995(0.5);
                 this.field23702 = this.field23702 + var1.method13994();
                 this.field23701 = 3;
                 this.field23700 = 0;
             }
 
-            double var6 = !field23386.field1299.field44637.method8509() ? 0.6 : 0.25;
+            double var6 = !mc.field1299.field44637.method8509() ? 0.6 : 0.25;
             Class9567.method37088(var1, var6);
         }
 

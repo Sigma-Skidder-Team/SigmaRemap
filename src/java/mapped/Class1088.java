@@ -124,7 +124,7 @@ public class Class1088 extends Class1018 {
       this.field5600.method20002(0, new Class2751(this, 1.2));
       this.field5600.method20002(1, new Class2787(this, 1.0));
       this.field5600.method20002(1, new Class2630(this, 1.0));
-      this.field5600.method20002(2, new Class2731(this, 1.1, Class8487.field36485.method11581()));
+      this.field5600.method20002(2, new Class2731(this, 1.1, Blocks.field36485.method11581()));
       this.field5600.method20002(3, new Class2635(this, 1.0));
       this.field5600.method20002(4, new Class2760(this, 1.0));
       this.field5600.method20002(7, new Class2594(this, 1.0));
@@ -218,7 +218,7 @@ public class Class1088 extends Class1018 {
 
    @Override
    public boolean method4381(Class8848 var1) {
-      return var1.method32107() == Class8487.field36485.method11581();
+      return var1.method32107() == Blocks.field36485.method11581();
    }
 
    @Override
@@ -236,7 +236,7 @@ public class Class1088 extends Class1018 {
       if (this.method3066() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
          BlockPos var3 = this.method3432();
          if (Class3441.method12114(this.field5024, var3)) {
-            this.field5024.method6999(2001, var3, Class3209.method11535(Class8487.field36415.method11579()));
+            this.field5024.method6999(2001, var3, Block.method11535(Blocks.SAND.method11579()));
          }
       }
    }

@@ -8,14 +8,14 @@ import java.util.function.Predicate;
 
 public class Class166 implements Predicate<Class7380> {
    public static final Predicate<Class7380> field534 = var0 -> true;
-   private final Class9348<Class3209, Class7380> field535;
+   private final Class9348<Block, Class7380> field535;
    private final Map<Class8550<?>, Predicate<Object>> field536 = Maps.newHashMap();
 
-   private Class166(Class9348<Class3209, Class7380> var1) {
+   private Class166(Class9348<Block, Class7380> var1) {
       this.field535 = var1;
    }
 
-   public static Class166 method497(Class3209 var0) {
+   public static Class166 method497(Block var0) {
       return new Class166(var0.method11577());
    }
 

@@ -30,7 +30,7 @@ public class Class5228 extends Module {
             if ((float) this.field23574 >= this.method15977("Flags")) {
                 Class9567.method37088(var1, 0.0);
                 var1.method13995(0.0);
-                field23386.field1339.method3435(0.0, 0.0, 0.0);
+                mc.field1339.method3435(0.0, 0.0, 0.0);
             }
         }
     }
@@ -45,7 +45,7 @@ public class Class5228 extends Module {
     @EventTarget
     public void method16287(Class4399 var1) {
         if (this.method15996() && var1.method13921()) {
-            if (!field23386.field1339.field5036 && !Class5628.method17730(field23386.field1339, 0.001F)) {
+            if (!mc.field1339.field5036 && !Class5628.method17730(mc.field1339, 0.001F)) {
                 if ((float) this.field23574 >= this.method15977("Flags") && this.field23575 == 0) {
                     this.field23575 = 60;
                     Client.getInstance().getNotificationManager().post(new Notification("Unstuck", "Trying to unstuck you.."));
@@ -68,8 +68,8 @@ public class Class5228 extends Module {
     @EventTarget
     public void method16288(Class4396 var1) {
         if (this.method15996()) {
-            if (field23386.field1339 != null) {
-                if (var1.method13898() instanceof Class5473 && !Class5628.method17730(field23386.field1339, 0.3F) && field23386.field1339.field5055 > 10) {
+            if (mc.field1339 != null) {
+                if (var1.method13898() instanceof Class5473 && !Class5628.method17730(mc.field1339, 0.3F) && mc.field1339.field5055 > 10) {
                     this.field23574++;
                     if ((float) this.field23574 > this.method15977("Flags")) {
                         var1.method13900(true);

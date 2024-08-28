@@ -32,7 +32,7 @@ public class Class5251 extends Module {
 
     @EventTarget
     private void method16372(Class4396 var1) {
-        if (field23386.field1339 != null) {
+        if (mc.field1339 != null) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5616) {
                 Class5616 var5 = (Class5616) var4;
@@ -41,7 +41,7 @@ public class Class5251 extends Module {
                     return;
                 }
 
-                String var7 = field23386.field1339.method2941().getString().toLowerCase();
+                String var7 = mc.field1339.method2941().getString().toLowerCase();
                 if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996()) {
                 }
 
@@ -68,9 +68,9 @@ public class Class5251 extends Module {
                             || var6.toLowerCase().contains("was thrown off a cliff by " + var7 + ".")
                             || var6.toLowerCase().contains("was struck down by " + var7 + ".")
                             || var6.toLowerCase().contains("be sent to davy jones' locker by " + var7 + ".")) {
-                        Class6886 var34 = field23386.field1338.method6805();
+                        Class6886 var34 = mc.field1338.method6805();
                         Class8375 var11 = null;
-                        Class8218 var12 = var34.method20998(field23386.field1339.method2956());
+                        Class8218 var12 = var34.method20998(mc.field1339.method2956());
                         if (var12 != null) {
                             int var13 = var12.method28591().getColorIndex();
                             if (var13 >= 0) {

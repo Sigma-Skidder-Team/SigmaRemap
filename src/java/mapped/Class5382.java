@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -39,8 +38,8 @@ public class Class5382 extends Module {
    public void method15966() {
       try {
          String var3 = "D8374378";
-         String var4 = field23386.field1293.method21526();
-         String var5 = field23386.field1293.method21525().replaceAll("-", "");
+         String var4 = mc.field1293.method21526();
+         String var5 = mc.field1293.method21525().replaceAll("-", "");
          if (this.method16956() && this.method16961("CREEPAKILLER987@S0NY.IGG.BIZ", "3Qs-Cnt-Dec-Tee")) {
             this.method16959();
             JSONObject var6 = this.method16958(var3, var5);

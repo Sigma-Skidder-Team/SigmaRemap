@@ -640,7 +640,7 @@ public class Class6137 {
                   BlockPos var15 = new BlockPos(var14, var13, var12);
                   BlockPos var16 = var15.method8337(var9);
                   Class7380 var17 = var0.method6738(var15);
-                  if (!var4 || !var17.method23448(Class8487.field36387)) {
+                  if (!var4 || !var17.method23448(Blocks.AIR)) {
                      if (var17 != var0.method6738(var16)) {
                         return OptionalInt.empty();
                      }

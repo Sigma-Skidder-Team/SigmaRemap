@@ -35,18 +35,18 @@ public class Class5261 extends PremiumModule {
     @EventTarget
     public void method16447(Class4428 var1) {
         if (this.method15996()) {
-            if (field23663 != null && (field23663.field35732 != field23386.field1283.method8041() || field23663.field35733 != field23386.field1283.method8042())) {
+            if (field23663 != null && (field23663.field35732 != mc.field1283.method8041() || field23663.field35733 != mc.field1283.method8042())) {
                 this.method15966();
             }
 
             if (this.method15974("Smart Visibility")) {
-                List var4 = field23386.field1338
+                List var4 = mc.field1338
                         .method6772(
                                 PlayerEntity.class,
-                                field23386.field1339.method3389().method19664(14.0),
-                                var1x -> var1x.method3275(field23386.field1339) < 12.0F
+                                mc.field1339.method3389().method19664(14.0),
+                                var1x -> var1x.method3275(mc.field1339) < 12.0F
                                         && !this.method16448(var1x)
-                                        && field23386.field1339 != var1x
+                                        && mc.field1339 != var1x
                                         && !Client.getInstance().getCombatManager().method29346(var1x)
                         );
                 if (var4.isEmpty()) {
@@ -61,8 +61,8 @@ public class Class5261 extends PremiumModule {
     }
 
     public boolean method16448(Class880 var1) {
-        float var4 = Class9142.method34138(var1, field23386.field1339.getPosX(), field23386.field1339.getPosY(), field23386.field1339.getPosZ())[0];
-        return this.method16449(field23386.field1339.field5031, var4) <= 90.0F;
+        float var4 = Class9142.method34138(var1, mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ())[0];
+        return this.method16449(mc.field1339.field5031, var4) <= 90.0F;
     }
 
     public float method16449(float var1, float var2) {
@@ -76,12 +76,12 @@ public class Class5261 extends PremiumModule {
             if (this.method15996()) {
                 if (!Minecraft.getInstance().field1299.field44662) {
                     if (!this.method15974("Smart Visibility")) {
-                        this.field23662.changeDirection(field23386.field1355 != null && !this.method15974("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
+                        this.field23662.changeDirection(mc.field1355 != null && !this.method15974("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
                     } else {
                         this.field23662.changeDirection(this.field23667 <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
                     }
 
-                    float var4 = (float) field23386.field1283.method8043() / (float) field23386.field1283.method8044();
+                    float var4 = (float) mc.field1283.method8043() / (float) mc.field1283.method8044();
                     int var5 = (int) this.method15977("Size");
                     int var6 = (int) ((float) var5 / var4);
                     int var7 = 10;
@@ -97,8 +97,8 @@ public class Class5261 extends PremiumModule {
                     }
 
                     Class3192.method11463(
-                            (float) (field23386.field1283.method8043() - var7 - var5),
-                            (float) (field23386.field1283.method8044() + var8),
+                            (float) (mc.field1283.method8043() - var7 - var5),
+                            (float) (mc.field1283.method8044() + var8),
                             (float) var5,
                             (float) (var6 - 1),
                             14.0F,
@@ -110,7 +110,7 @@ public class Class5261 extends PremiumModule {
                     var8 = (int) ((float) var8 * GuiManager.field41348);
                     RenderSystem.pushMatrix();
                     this.method16451(
-                            field23663, var5, var6, field23386.field1283.method8041() - var7 - var5, field23386.field1283.method8042() + var8
+                            field23663, var5, var6, mc.field1283.method8041() - var7 - var5, mc.field1283.method8042() + var8
                     );
                     RenderSystem.popMatrix();
                     RenderSystem.method27877(256, Minecraft.field1272);
@@ -118,8 +118,8 @@ public class Class5261 extends PremiumModule {
                     RenderSystem.method27879();
                     RenderSystem.method27882(
                             0.0,
-                            (double) field23386.field1283.method8041() / field23386.field1283.method8049(),
-                            (double) field23386.field1283.method8042() / field23386.field1283.method8049(),
+                            (double) mc.field1283.method8041() / mc.field1283.method8049(),
+                            (double) mc.field1283.method8042() / mc.field1283.method8049(),
                             0.0,
                             1000.0,
                             3000.0
@@ -128,19 +128,19 @@ public class Class5261 extends PremiumModule {
                     RenderSystem.method27879();
                     RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
                     GL11.glScaled(
-                            1.0 / field23386.field1283.method8049() * (double) GuiManager.field41348,
-                            1.0 / field23386.field1283.method8049() * (double) GuiManager.field41348,
+                            1.0 / mc.field1283.method8049() * (double) GuiManager.field41348,
+                            1.0 / mc.field1283.method8049() * (double) GuiManager.field41348,
                             1.0
                     );
                     field23663.method29114();
-                    field23386.method1464().method29112(true);
+                    mc.method1464().method29112(true);
                 }
             }
         }
     }
 
     public void method16451(Framebuffer var1, int var2, int var3, double var4, double var6) {
-        var6 = var6 - (double) field23386.field1283.method8042() + (double) var3;
+        var6 = var6 - (double) mc.field1283.method8042() + (double) var3;
         RenderSystem.method27870(true, true, true, false);
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
@@ -179,35 +179,35 @@ public class Class5261 extends PremiumModule {
     public void method16452(Class4422 var1) {
         if (this.method15996()) {
             if (field23663 != null) {
-                if (field23386.field1355 == null || this.method15974("Show in GUI") || this.field23667 != 0) {
+                if (mc.field1355 == null || this.method15974("Show in GUI") || this.field23667 != 0) {
                     Class3192.method11468();
                     RenderSystem.pushMatrix();
                     RenderSystem.method27877(16640, false);
                     field23663.method29112(true);
                     RenderSystem.method27861();
                     RenderSystem.method27822();
-                    int var4 = field23386.field1299.field44576;
+                    int var4 = mc.field1299.field44576;
                     int var5 = Math.min(Minecraft.method1586(), var4);
                     var5 = Math.max(var5, 60);
                     long var6 = Util.method38488() - var1.field21555;
-                    float var8 = field23386.field1339.field5031;
-                    field23386.field1339.field5031 += 180.0F;
+                    float var8 = mc.field1339.field5031;
+                    mc.field1339.field5031 += 180.0F;
                     RenderSystem.enableDepthTest();
                     GL11.glAlphaFunc(519, 0.0F);
-                    double var9 = field23386.field1299.field44669;
-                    field23386.field1299.field44669 = 114.0;
-                    field23386.field1295.field814 = false;
+                    double var9 = mc.field1299.field44669;
+                    mc.field1299.field44669 = 114.0;
+                    mc.field1295.field814 = false;
                     Client.field28993 = true;
-                    Framebuffer var11 = field23386.field1287.field959;
-                    field23386.field1287.field959 = null;
-                    field23386.field1295.method754(var1.field21554, Util.method38488(), new Class9332());
-                    field23386.field1287.field959 = var11;
+                    Framebuffer var11 = mc.field1287.field959;
+                    mc.field1287.field959 = null;
+                    mc.field1295.method754(var1.field21554, Util.method38488(), new Class9332());
+                    mc.field1287.field959 = var11;
                     Client.field28993 = false;
-                    field23386.field1295.field814 = true;
-                    field23386.field1299.field44669 = var9;
-                    field23386.field1339.field5031 = var8;
+                    mc.field1295.field814 = true;
+                    mc.field1299.field44669 = var9;
+                    mc.field1339.field5031 = var8;
                     RenderSystem.popMatrix();
-                    field23386.method1464().method29112(true);
+                    mc.method1464().method29112(true);
                 }
             } else {
                 this.method15966();
@@ -217,8 +217,8 @@ public class Class5261 extends PremiumModule {
 
     @Override
     public void method15966() {
-        Class3192.method11469(field23386.method1464());
-        field23663 = new Framebuffer(field23386.field1283.method8041(), field23386.field1283.method8042(), true, Minecraft.field1272);
+        Class3192.method11469(mc.method1464());
+        field23663 = new Framebuffer(mc.field1283.method8041(), mc.field1283.method8042(), true, Minecraft.field1272);
         field23663.method29115(1.0F, 1.0F, 1.0F, 1.0F);
     }
 

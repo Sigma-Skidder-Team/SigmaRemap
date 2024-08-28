@@ -4,15 +4,15 @@ import com.google.common.base.MoreObjects;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3459 extends Class3209 {
+public class Class3459 extends Block {
    private static String[] field19280;
    public static final Class8553 field19281 = Class3198.field18484;
    public static final Class8551 field19282 = Class8820.field39704;
    public static final Class8551 field19283 = Class8820.field39682;
-   public static final Class6408 field19284 = Class3209.method11539(5.0, 0.0, 10.0, 11.0, 10.0, 16.0);
-   public static final Class6408 field19285 = Class3209.method11539(5.0, 0.0, 0.0, 11.0, 10.0, 6.0);
-   public static final Class6408 field19286 = Class3209.method11539(10.0, 0.0, 5.0, 16.0, 10.0, 11.0);
-   public static final Class6408 field19287 = Class3209.method11539(0.0, 0.0, 5.0, 6.0, 10.0, 11.0);
+   public static final Class6408 field19284 = Block.method11539(5.0, 0.0, 10.0, 11.0, 10.0, 16.0);
+   public static final Class6408 field19285 = Block.method11539(5.0, 0.0, 0.0, 11.0, 10.0, 6.0);
+   public static final Class6408 field19286 = Block.method11539(10.0, 0.0, 5.0, 16.0, 10.0, 11.0);
+   public static final Class6408 field19287 = Block.method11539(0.0, 0.0, 5.0, 6.0, 10.0, 11.0);
 
    public Class3459(Class7929 var1) {
       super(var1);
@@ -51,7 +51,7 @@ public class Class3459 extends Class3209 {
    @Override
    public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2.method536() == var1.method23463(field19281) && !var1.method23443(var4, var5)
-         ? Class8487.field36387.method11579()
+         ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
@@ -93,14 +93,14 @@ public class Class3459 extends Class3209 {
       for (int var17 = 1; var17 < 42; var17++) {
          BlockPos var18 = var2.method8350(var10, var17);
          Class7380 var19 = var1.method6738(var18);
-         if (var19.method23448(Class8487.field36658)) {
+         if (var19.method23448(Blocks.field36658)) {
             if (var19.<Direction>method23463(field19281) == var10.method536()) {
                var15 = var17;
             }
             break;
          }
 
-         if (!var19.method23448(Class8487.field36659) && var17 != var6) {
+         if (!var19.method23448(Blocks.field36659) && var17 != var6) {
             var16[var17] = null;
             var13 = false;
          } else {
@@ -221,7 +221,7 @@ public class Class3459 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19281, field19282, field19283);
    }
 }

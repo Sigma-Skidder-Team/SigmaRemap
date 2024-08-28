@@ -6,13 +6,13 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 
 public class Class9449 {
-   public static final Class9449 field43899 = new Class9449((Class7608<Class3209>)null, (Class3209)null, Class7340.field31445, Class8811.field39645);
-   private final Class7608<Class3209> field43900;
-   private final Class3209 field43901;
+   public static final Class9449 field43899 = new Class9449((Class7608<Block>)null, (Block)null, Class7340.field31445, Class8811.field39645);
+   private final Class7608<Block> field43900;
+   private final Block field43901;
    private final Class7340 field43902;
    private final Class8811 field43903;
 
-   public Class9449(Class7608<Class3209> var1, Class3209 var2, Class7340 var3, Class8811 var4) {
+   public Class9449(Class7608<Block> var1, Block var2, Class7340 var3, Class8811 var4) {
       this.field43900 = var1;
       this.field43901 = var2;
       this.field43902 = var3;
@@ -24,7 +24,7 @@ public class Class9449 {
          return true;
       } else if (var1.method6763(var2)) {
          Class7380 var5 = var1.method6738(var2);
-         Class3209 var6 = var5.method23383();
+         Block var6 = var5.method23383();
          if (this.field43900 != null && !this.field43900.method24917(var6)) {
             return false;
          } else if (this.field43901 != null && var6 != this.field43901) {
@@ -50,7 +50,7 @@ public class Class9449 {
       if (var0 != null && !var0.isJsonNull()) {
          JsonObject var3 = Class8963.method32781(var0, "block");
          Class8811 var4 = Class8811.method31812(var3.get("nbt"));
-         Class3209 var5 = null;
+         Block var5 = null;
          if (var3.has("block")) {
             ResourceLocation var6 = new ResourceLocation(Class8963.method32763(var3, "block"));
             var5 = Class2348.field16072.method9184(var6);

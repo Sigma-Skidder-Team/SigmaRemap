@@ -79,7 +79,7 @@ public class Class216 implements Class215 {
          if (!var8.method22623() && (var1.method32107() != Class8514.field38144 || var11)) {
             boolean var16;
             if (var2 != Class2327.field15930 && !var2.method9103() && var1.method32107() instanceof Class3292) {
-               Class3209 var13 = ((Class3292)var1.method32107()).method11845();
+               Block var13 = ((Class3292)var1.method32107()).method11845();
                var16 = !(var13 instanceof Class3231) && !(var13 instanceof Class3236);
             } else {
                var16 = true;

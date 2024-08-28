@@ -20,19 +20,19 @@ public class Class5314 extends Module {
 
     @EventTarget
     private void method16692(Class4415 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (!Minecraft.getInstance().field1299.field44662) {
-                if (!(field23386.field1355 instanceof Class1331)) {
-                    float var4 = field23386.field1339.field5031 % 360.0F - this.field23851 % 360.0F;
+                if (!(mc.field1355 instanceof Class1331)) {
+                    float var4 = mc.field1339.field5031 % 360.0F - this.field23851 % 360.0F;
                     this.field23851 = this.field23851 + var4 / (float) Minecraft.method1586() * 1.5F;
                     boolean var5 = false;
                     int var6 = 14;
                     if (this.method15974("Show Player")) {
-                        var6 += this.method16696(0, field23386.field1283.method8044() - 23, 114);
+                        var6 += this.method16696(0, mc.field1283.method8044() - 23, 114);
                     }
 
                     if (this.method15974("Show Armor")) {
-                        var6 += this.method16695(var6, field23386.field1283.method8044() - 14) + 10;
+                        var6 += this.method16695(var6, mc.field1283.method8044() - 14) + 10;
                     }
 
                     if (!this.method15978("Cords").equals("None")) {
@@ -45,16 +45,16 @@ public class Class5314 extends Module {
 
     public String method16693(boolean var1) {
         return !var1
-                ? Math.round(field23386.field1339.getPosX())
+                ? Math.round(mc.field1339.getPosX())
                 + " "
-                + Math.round(field23386.field1339.getPosY())
+                + Math.round(mc.field1339.getPosY())
                 + " "
-                + Math.round(field23386.field1339.getPosZ())
-                : (float) Math.round(field23386.field1339.getPosX() * 10.0) / 10.0F
+                + Math.round(mc.field1339.getPosZ())
+                : (float) Math.round(mc.field1339.getPosX() * 10.0) / 10.0F
                 + " "
-                + (float) Math.round(field23386.field1339.getPosY() * 10.0) / 10.0F
+                + (float) Math.round(mc.field1339.getPosY() * 10.0) / 10.0F
                 + " "
-                + (float) Math.round(field23386.field1339.getPosZ() * 10.0) / 10.0F;
+                + (float) Math.round(mc.field1339.getPosZ() * 10.0) / 10.0F;
     }
 
     public int method16694(int var1, int var2) {
@@ -63,7 +63,7 @@ public class Class5314 extends Module {
         Class3192.method11439(
                 ResourceRegistry.field38864,
                 (float) var1,
-                (float) (field23386.field1283.method8044() - var2),
+                (float) (mc.field1283.method8044() - var2),
                 var6,
                 Class5628.method17688(Class1979.field12896.field12910, 0.8F)
         );
@@ -73,8 +73,8 @@ public class Class5314 extends Module {
     public int method16695(int var1, int var2) {
         int var5 = 0;
 
-        for (int var6 = 0; var6 < field23386.field1339.field4902.field5440.size(); var6++) {
-            Class8848 var7 = field23386.field1339.field4902.field5440.get(var6);
+        for (int var6 = 0; var6 < mc.field1339.field4902.field5440.size(); var6++) {
+            Class8848 var7 = mc.field1339.field4902.field5440.get(var6);
             if (!(var7.method32107() instanceof Class3280)) {
                 var5++;
                 int var8 = var2 - 32 * var5;

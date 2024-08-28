@@ -21,8 +21,8 @@ public class Class5284 extends Module {
 
     @EventTarget
     public void method16581(Class4398 var1) {
-        if (this.method15996() && field23386.field1338 != null) {
-            if ((double) var1.method13902().getY() >= field23386.field1339.getPosY()) {
+        if (this.method15996() && mc.field1338 != null) {
+            if ((double) var1.method13902().getY() >= mc.field1339.getPosY()) {
                 var1.method13905(Class8022.method27425());
             }
         }
@@ -31,17 +31,17 @@ public class Class5284 extends Module {
     @EventTarget
     public void method16582(Class4428 var1) {
         if (this.method15996()) {
-            field23386.field1339.field4999 = 3;
-            if (field23386.field1339.field5055 % 2 == 0) {
-                if (field23386.field1339.field5036) {
-                    if (!field23386.field1339.field4981) {
-                        if (field23386.field1339.method3331()) {
-                            field23386.field1339
-                                    .method3215(field23386.field1339.getPosX(), field23386.field1339.getPosY() - 1.0, field23386.field1339.getPosZ());
+            mc.field1339.field4999 = 3;
+            if (mc.field1339.field5055 % 2 == 0) {
+                if (mc.field1339.field5036) {
+                    if (!mc.field1339.field4981) {
+                        if (mc.field1339.method3331()) {
+                            mc.field1339
+                                    .method3215(mc.field1339.getPosX(), mc.field1339.getPosY() - 1.0, mc.field1339.getPosZ());
                         }
                     } else {
-                        field23386.field1339
-                                .method3215(field23386.field1339.getPosX(), field23386.field1339.getPosY() + 1.0, field23386.field1339.getPosZ());
+                        mc.field1339
+                                .method3215(mc.field1339.getPosX(), mc.field1339.getPosY() + 1.0, mc.field1339.getPosZ());
                     }
                 }
             }

@@ -53,8 +53,8 @@ public class Class9680 {
    private static int[] field45263 = null;
    private static int[] field45264 = null;
    private static int[] field45265 = null;
-   private static final Class7380 field45266 = Class8487.field36396.method11579();
-   private static final Class7380 field45267 = Class8487.field36413.method11579();
+   private static final Class7380 field45266 = Blocks.field36396.method11579();
+   private static final Class7380 field45267 = Blocks.WATER.method11579();
    public static Random field45268 = new Random();
    private static final Class7443 field45269 = new Class7447();
    private static final Class7443 field45270 = new Class7445();
@@ -530,15 +530,15 @@ public class Class9680 {
    }
 
    public static int method37850(Class8557 var0, Class7380 var1, Class1663 var2, BlockPos var3, Class8391 var4) {
-      Class3209 var7 = var1.method23383();
+      Block var7 = var1.method23383();
       Class7380 var8 = var1;
       if (field45230 != null) {
          if (!var0.method30512()) {
-            if (var7 == Class8487.field36395) {
+            if (var7 == Blocks.field36395) {
                var8 = field45266;
             }
 
-            if (var7 == Class8487.field36535) {
+            if (var7 == Blocks.field36535) {
                return -1;
             }
          }
@@ -560,26 +560,26 @@ public class Class9680 {
 
       if (!var0.method30512()) {
          return -1;
-      } else if (var7 != Class8487.field36641) {
-         if (var7 == Class8487.field36535) {
+      } else if (var7 != Blocks.field36641) {
+         if (var7 == Blocks.field36535) {
             return method37858(var4.method29420());
          } else if (!(var7 instanceof Class3486)) {
             if (field45249) {
                return -1;
             } else {
                Class7443 var10;
-               if (var7 == Class8487.field36395 || var7 == Class8487.field36801 || var7 instanceof Class3456) {
+               if (var7 == Blocks.field36395 || var7 == Blocks.field36801 || var7 instanceof Class3456) {
                   var10 = field45269;
                } else if (!(var7 instanceof Class3456)) {
                   if (!(var7 instanceof Class3465)) {
-                     if (var7 != Class8487.field36636) {
+                     if (var7 != Blocks.field36636) {
                         return -1;
                      }
 
                      var10 = field45270;
-                  } else if (var7 != Class8487.field36446) {
-                     if (var7 != Class8487.field36447) {
-                        if (var7 != Class8487.field36448) {
+                  } else if (var7 != Blocks.field36446) {
+                     if (var7 != Blocks.field36447) {
+                        if (var7 != Blocks.field36448) {
                            var10 = field45270;
                         } else {
                            var10 = field45272;
@@ -677,7 +677,7 @@ public class Class9680 {
    }
 
    public static int method37854(Class1663 var0, Class7380 var1, BlockPos var2, Class8391 var3) {
-      Class3209 var6 = var1.method23383();
+      Block var6 = var1.method23383();
       Object var7 = method37852(var1);
       if (var7 == null && var1.method23384() == Class8649.field38941) {
          var7 = field45273;
@@ -747,7 +747,7 @@ public class Class9680 {
    }
 
    private static int method37860(Class7380 var0, int var1) {
-      Class3209 var4 = var0.method23383();
+      Block var4 = var0.method23383();
       if (var4 instanceof Class3222) {
          Comparable var5 = var0.<Integer>method23463(Class3222.field18651);
          if (var5 instanceof Integer) {
@@ -813,7 +813,7 @@ public class Class9680 {
    }
 
    private static int method37865(Class1663 var0, BlockPos var1) {
-      return field45252 >= 0 ? field45252 : method37855().method29465(Class8487.field36641.method11579(), var0, var1, 0);
+      return field45252 >= 0 ? field45252 : method37855().method29465(Blocks.field36641.method11579(), var0, var1, 0);
    }
 
    private static Vector3d method37866(Vector3d var0) {
@@ -895,12 +895,12 @@ public class Class9680 {
 
    private static int method37874(Class7380 var0, Class1665 var1, BlockPos var2, Class8391 var3) {
       Class7448 var6 = field45245;
-      Class3209 var7 = var0.method23383();
-      if (var7 == Class8487.field36634 && field45247 != null) {
+      Block var7 = var0.method23383();
+      if (var7 == Blocks.field36634 && field45247 != null) {
          var6 = field45247;
       }
 
-      if (var7 == Class8487.field36635 && field45246 != null) {
+      if (var7 == Blocks.field36635 && field45246 != null) {
          var6 = field45246;
       }
 

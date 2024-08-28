@@ -60,7 +60,7 @@ public class Class8181 extends AbstractSpliterator<Class6408> {
             if (var8 != null) {
                this.field35190.method8372(var4, var5, var6);
                Class7380 var9 = var8.method6738(this.field35190);
-               if (this.field35194.test(var9, this.field35190) && (var7 != 1 || var9.method23390()) && (var7 != 2 || var9.method23448(Class8487.field36505))) {
+               if (this.field35194.test(var9, this.field35190) && (var7 != 1 || var9.method23390()) && (var7 != 2 || var9.method23448(Blocks.field36505))) {
                   Class6408 var10 = var9.method23415(this.field35192, this.field35190, this.field35188);
                   if (this.field35186 instanceof PlayerEntity) {
                      Class4398 var11 = new Class4398(this.field35190, var10);

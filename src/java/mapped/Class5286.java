@@ -46,7 +46,7 @@ public class Class5286 extends Module {
                     var1.method13989(var7);
                     this.field23761 = Class9567.method37083()[0] - 90.0F;
                     this.field23758 = 1;
-                    this.field23759 = field23386.field1339.getPosY();
+                    this.field23759 = mc.field1339.getPosY();
                     var4 = var1.method13988();
                 }
             }
@@ -55,7 +55,7 @@ public class Class5286 extends Module {
 
     @EventTarget
     private void method16587(Class4399 var1) {
-        if (this.method15996() && field23386.field1339 != null && var1.method13921()) {
+        if (this.method15996() && mc.field1339 != null && var1.method13921()) {
             if (this.field23758 != 1) {
                 if (this.field23758 == 3) {
                     Module var4 = Client.getInstance().getModuleManager().method14662(Class5332.class);
@@ -73,7 +73,7 @@ public class Class5286 extends Module {
 
     @EventTarget
     private void method16588(Class4435 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (this.field23758 == 1) {
                 double var4 = Class9567.method37080();
                 if (this.field23760 < 1.1) {
@@ -85,14 +85,14 @@ public class Class5286 extends Module {
                 Class9567.method37088(var1, 0.0);
                 this.field23758++;
             } else if (this.field23758 == 2) {
-                var1.method13995(this.field23759 + this.field23760 - field23386.field1339.getPosY());
+                var1.method13995(this.field23759 + this.field23760 - mc.field1339.getPosY());
                 double var10 = this.method15978("Mode").equals("AAC") ? 0.301 : Class9567.method37075();
                 float var6 = this.field23761 * (float) (Math.PI / 180.0);
                 var1.method13993((double) (-Class9679.method37763(var6)) * var10);
                 var1.method13997((double) Class9679.method37764(var6) * var10);
                 this.field23758++;
             } else if (this.field23758 == 3) {
-                if (Class5628.method17730(field23386.field1339, 0.001F)) {
+                if (Class5628.method17730(mc.field1339, 0.001F)) {
                     var1.method13995(-0.078);
                     String var7 = this.method15978("Mode");
                     switch (var7) {
@@ -120,11 +120,11 @@ public class Class5286 extends Module {
 
     @EventTarget
     private void method16589(Class4417 var1) {
-        if (this.method15996() && field23386.field1339 != null) {
+        if (this.method15996() && mc.field1339 != null) {
             if (!var1.method13967()) {
-                field23386.field1339.field5051 = 1.07F;
+                mc.field1339.field5051 = 1.07F;
             } else {
-                field23386.field1339.field5051 = 0.5F;
+                mc.field1339.field5051 = 0.5F;
             }
         }
     }

@@ -7,12 +7,12 @@ import com.google.common.collect.Multimap;
 import java.util.Set;
 
 public class Class3264 extends Class3266 implements Class3260 {
-   private final Set<Class3209> field18751;
+   private final Set<Block> field18751;
    public final float field18752;
    private final float field18753;
    private final Multimap<Class4869, Class9689> field18754;
 
-   public Class3264(float var1, float var2, Class2283 var3, Set<Class3209> var4, Class5643 var5) {
+   public Class3264(float var1, float var2, Class2283 var3, Set<Block> var4, Class5643 var5) {
       super(var3, var5);
       this.field18751 = var4;
       this.field18752 = var3.method9011();

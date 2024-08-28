@@ -3,10 +3,10 @@ package mapped;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3441 extends Class3209 {
+public class Class3441 extends Block {
    private static String[] field19240;
-   private static final Class6408 field19241 = Class3209.method11539(3.0, 0.0, 3.0, 12.0, 7.0, 12.0);
-   private static final Class6408 field19242 = Class3209.method11539(1.0, 0.0, 1.0, 15.0, 7.0, 15.0);
+   private static final Class6408 field19241 = Block.method11539(3.0, 0.0, 3.0, 12.0, 7.0, 12.0);
+   private static final Class6408 field19242 = Block.method11539(1.0, 0.0, 1.0, 15.0, 7.0, 15.0);
    public static final Class8554 field19243 = Class8820.field39749;
    public static final Class8554 field19244 = Class8820.field39748;
 
@@ -33,7 +33,7 @@ public class Class3441 extends Class3209 {
    private void method12112(Class1655 var1, BlockPos var2, Entity var3, int var4) {
       if (this.method12117(var1, var3) && !var1.field9020 && var1.field9016.nextInt(var4) == 0) {
          Class7380 var7 = var1.method6738(var2);
-         if (var7.method23448(Class8487.field36964)) {
+         if (var7.method23448(Blocks.field36964)) {
             this.method12113(var1, var2, var7);
          }
       }
@@ -44,7 +44,7 @@ public class Class3441 extends Class3209 {
       int var6 = var3.<Integer>method23463(field19244);
       if (var6 > 1) {
          var1.method6725(var2, var3.method23465(field19244, Integer.valueOf(var6 - 1)), 2);
-         var1.method6999(2001, var2, Class3209.method11535(var3));
+         var1.method6999(2001, var2, Block.method11535(var3));
       } else {
          var1.method7179(var2, false);
       }
@@ -59,7 +59,7 @@ public class Class3441 extends Class3209 {
             var2.method6728(var3, false);
 
             for (int var8 = 0; var8 < var1.<Integer>method23463(field19244); var8++) {
-               var2.method6999(2001, var3, Class3209.method11535(var1));
+               var2.method6999(2001, var3, Block.method11535(var1));
                Class1088 var9 = Class8992.field41096.method33215(var2);
                var9.method4770(-24000);
                var9.method5041(var3);
@@ -119,7 +119,7 @@ public class Class3441 extends Class3209 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19243, field19244);
    }
 

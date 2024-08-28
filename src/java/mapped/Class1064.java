@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public class Class1064 extends Class1066 implements Class1022 {
-   private static final Class120 field5869 = Class120.method339(Class8514.field37842, Class8487.field36777.method11581());
+   private static final Class120 field5869 = Class120.method339(Class8514.field37842, Blocks.field36777.method11581());
    private static final Class9289<Integer> field5870 = Class9361.<Integer>method35441(Class1064.class, Class7784.field33391);
    private static final Class9289<Integer> field5871 = Class9361.<Integer>method35441(Class1064.class, Class7784.field33391);
    private static final Class9289<Integer> field5872 = Class9361.<Integer>method35441(Class1064.class, Class7784.field33391);
@@ -130,7 +130,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       boolean var8 = false;
       Class3257 var9 = var2.method32107();
       if (var9 != Class8514.field37842) {
-         if (var9 == Class8487.field36777.method11581()) {
+         if (var9 == Blocks.field36777.method11581()) {
             var5 = 90;
             var6 = 6;
             var7 = 10.0F;
@@ -301,7 +301,7 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Nullable
    private static Class112 method4905(Class8848 var0) {
-      Class3209 var3 = Class3209.method11537(var0.method32107());
+      Block var3 = Block.method11537(var0.method32107());
       return !(var3 instanceof Class3422) ? null : ((Class3422)var3).method12077();
    }
 

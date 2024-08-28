@@ -71,23 +71,23 @@ public class Class5255 extends PremiumModule {
 
     // $VF: synthetic method
     public static Minecraft method16415() {
-        return field23386;
+        return mc;
     }
 
     @EventTarget
     private void method16405(Class4428 var1) {
         if (this.method15996()) {
             if (this.field23639 != null) {
-                if (field23386.field1337.method23152()) {
+                if (mc.field1337.method23152()) {
                     Class5628.method17678("§cNoteBlockPlayer isn't available in creative mode!");
                     this.method15999(false);
                 } else {
-                    if (!this.method16407(this.field23641) && field23386.field1339.field5055 % 4 == 0) {
+                    if (!this.method16407(this.field23641) && mc.field1339.field5055 % 4 == 0) {
                         this.method16408(this.field23641);
                     }
 
                     if (this.method16406(this.field23641)) {
-                        if (Math.floor((float) field23386.field1339.field5055 % this.field23639.method9958()) / 20.0 == 0.0) {
+                        if (Math.floor((float) mc.field1339.field5055 % this.field23639.method9958()) / 20.0 == 0.0) {
                             if (this.field23638 > this.field23639.method9952()) {
                                 this.field23638 = 0;
                             }
@@ -100,15 +100,15 @@ public class Class5255 extends PremiumModule {
                                     for (Class6463 var8 : this.field23641) {
                                         if ((var6.method28780() != 3 && this.method16414(var8) == 0 || var8.method19640() == var6.method28780())
                                                 && Class2121.method8807(var8.field28402) == (float) (var6.method28782() - 33)
-                                                && Math.sqrt(field23386.field1339.method3432().method8318(var8.field28401)) < (double) field23386.field1337.method23135()) {
+                                                && Math.sqrt(mc.field1339.method3432().method8318(var8.field28401)) < (double) mc.field1337.method23135()) {
                                             float[] var9 = Class9217.method34542(var8.field28401, Direction.field673);
-                                            if ((double) var8.field28401.getY() > field23386.field1339.getPosY() + 1.0) {
+                                            if ((double) var8.field28401.getY() > mc.field1339.getPosY() + 1.0) {
                                                 var9 = Class9217.method34542(var8.field28401, Direction.field672);
                                             }
 
-                                            field23386.getClientPlayNetHandler().sendPacket(new Class5606(var9[0], var9[1], field23386.field1339.field5036));
-                                            field23386.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var8.field28401, Direction.field673));
-                                            field23386.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                                            mc.getClientPlayNetHandler().sendPacket(new Class5606(var9[0], var9[1], mc.field1339.field5036));
+                                            mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var8.field28401, Direction.field673));
+                                            mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
                                             this.field23642.add(var8.field28401);
                                         }
                                     }
@@ -126,7 +126,7 @@ public class Class5255 extends PremiumModule {
     public boolean method16406(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if ((var5.field28402 == -1.0F || this.method16411(var5.field28402, var5.field28403))
-                    && Math.sqrt(field23386.field1339.method3432().method8318(var5.field28401)) < (double) field23386.field1337.method23135()) {
+                    && Math.sqrt(mc.field1339.method3432().method8318(var5.field28401)) < (double) mc.field1337.method23135()) {
                 return false;
             }
         }
@@ -136,10 +136,10 @@ public class Class5255 extends PremiumModule {
 
     public boolean method16407(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
-            if (var5.field28402 == -1.0F && Math.sqrt(field23386.field1339.method3432().method8318(var5.field28401)) < (double) field23386.field1337.method23135()) {
+            if (var5.field28402 == -1.0F && Math.sqrt(mc.field1339.method3432().method8318(var5.field28401)) < (double) mc.field1337.method23135()) {
                 float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
-                field23386.getClientPlayNetHandler().sendPacket(new Class5606(var6[0], var6[1], field23386.field1339.field5036));
-                field23386.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var5.field28401, Direction.field673));
+                mc.getClientPlayNetHandler().sendPacket(new Class5606(var6[0], var6[1], mc.field1339.field5036));
+                mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var5.field28401, Direction.field673));
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
                 return true;
@@ -152,13 +152,13 @@ public class Class5255 extends PremiumModule {
     public boolean method16408(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (this.method16411(var5.field28402, var5.field28403)
-                    && Math.sqrt(field23386.field1339.method3432().method8318(var5.field28401)) < (double) field23386.field1337.method23135()) {
+                    && Math.sqrt(mc.field1339.method3432().method8318(var5.field28401)) < (double) mc.field1337.method23135()) {
                 if (0 == 0) {
                     float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
-                    field23386.field1339.method2820(Class79.field182);
-                    field23386.getClientPlayNetHandler().sendPacket(new Class5606(var6[0], var6[1], field23386.field1339.field5036));
-                    field23386.getClientPlayNetHandler()
-                            .sendPacket(new Class5570(Class79.field182, Class9217.method34567(var6[0], var6[1], field23386.field1337.method23135() + 1.0F)));
+                    mc.field1339.method2820(Class79.field182);
+                    mc.getClientPlayNetHandler().sendPacket(new Class5606(var6[0], var6[1], mc.field1339.field5036));
+                    mc.getClientPlayNetHandler()
+                            .sendPacket(new Class5570(Class79.field182, Class9217.method34567(var6[0], var6[1], mc.field1337.method23135() + 1.0F)));
                     this.field23642.clear();
                     this.field23642.add(var5.field28401);
                 }
@@ -236,13 +236,13 @@ public class Class5255 extends PremiumModule {
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glTranslated(
-                var1 - field23386.field1295.method768().method37504().method11320() + 0.5,
-                var3 - field23386.field1295.method768().method37504().method11321() + 1.0,
-                var5 - field23386.field1295.method768().method37504().method11322() + 0.5
+                var1 - mc.field1295.method768().method37504().method11320() + 0.5,
+                var3 - mc.field1295.method768().method37504().method11321() + 1.0,
+                var5 - mc.field1295.method768().method37504().method11322() + 0.5
         );
         GL11.glAlphaFunc(519, 0.0F);
-        GL11.glRotatef(field23386.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
-        GL11.glRotatef(field23386.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(mc.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(mc.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
         ClientResource var10 = ResourceRegistry.field38855;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01F, -0.01F, -0.01F);
@@ -266,7 +266,7 @@ public class Class5255 extends PremiumModule {
 
     @Override
     public void method15966() {
-        if (!field23386.field1337.method23152()) {
+        if (!mc.field1337.method23152()) {
             if (this.field23640.isEmpty()) {
                 Class5628.method17678("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
                 Class5628.method17678("§cPlaying the only integrated demo song!");
@@ -295,8 +295,8 @@ public class Class5255 extends PremiumModule {
             this.field23638 = 0;
             this.field23641.clear();
 
-            for (BlockPos var4 : Class9217.method34561(field23386.field1337.method23135())) {
-                Class7380 var5 = field23386.field1338.method6738(var4);
+            for (BlockPos var4 : Class9217.method34561(mc.field1337.method23135())) {
+                Class7380 var5 = mc.field1338.method6738(var4);
                 if (var5.method23383() instanceof Class3426) {
                     Class6463 var6 = new Class6463(var4);
                     if (this.method16414(var6) <= 24) {

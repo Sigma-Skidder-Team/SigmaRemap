@@ -175,9 +175,9 @@ public final class Class8354 {
 
    public static Class7380 method29285(Class39 var0) {
       if (!var0.method119("Name", 8)) {
-         return Class8487.field36387.method11579();
+         return Blocks.AIR.method11579();
       } else {
-         Class3209 var3 = Class2348.field16072.method9184(new ResourceLocation(var0.method126("Name")));
+         Block var3 = Class2348.field16072.method9184(new ResourceLocation(var0.method126("Name")));
          Class7380 var4 = var3.method11579();
          if (var0.method119("Properties", 10)) {
             Class39 var5 = var0.method130("Properties");

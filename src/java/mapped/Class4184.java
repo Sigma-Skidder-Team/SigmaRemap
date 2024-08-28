@@ -56,10 +56,10 @@ public class Class4184 extends Class4180 {
    private void method12949(Class8969 var1, BlockPos var2) {
       Class7095 var5 = !this.field20470.field35676 ? Class7095.field30528 : Class7095.field30526;
       ArrayList var6 = Lists.newArrayList();
-      var6.add(method12960(Class8487.field36521, 0.3F, Class8487.field36387));
+      var6.add(method12960(Blocks.field36521, 0.3F, Blocks.AIR));
       var6.add(this.method12950());
       if (!this.field20470.field35674) {
-         var6.add(method12960(Class8487.field36580, 0.07F, Class8487.field36890));
+         var6.add(method12960(Blocks.NETHERRACK, 0.07F, Blocks.field36890));
       }
 
       Class9463 var7 = new Class9463()
@@ -80,10 +80,10 @@ public class Class4184 extends Class4180 {
    private Class7872 method12950() {
       if (this.field20469 != Class2219.field14496) {
          return !this.field20470.field35674
-            ? method12960(Class8487.field36414, 0.2F, Class8487.field36890)
-            : method12961(Class8487.field36414, Class8487.field36580);
+            ? method12960(Blocks.LAVA, 0.2F, Blocks.field36890)
+            : method12961(Blocks.LAVA, Blocks.NETHERRACK);
       } else {
-         return method12961(Class8487.field36414, Class8487.field36890);
+         return method12961(Blocks.LAVA, Blocks.field36890);
       }
    }
 
@@ -118,20 +118,20 @@ public class Class4184 extends Class4180 {
 
    private void method12951(Random var1, Class1660 var2, BlockPos var3) {
       Class7380 var6 = var2.method6738(var3);
-      if (!var6.method23393() && !var6.method23448(Class8487.field36636)) {
+      if (!var6.method23393() && !var6.method23448(Blocks.field36636)) {
          Direction var7 = Class76.field161.method247(var1);
          BlockPos var8 = var3.method8349(var7);
          Class7380 var9 = var2.method6738(var8);
-         if (var9.method23393() && Class3209.method11549(var6.method23414(var2, var3), var7)) {
+         if (var9.method23393() && Block.method11549(var6.method23414(var2, var3), var7)) {
             Class8551 var10 = Class3402.method12039(var7.method536());
-            var2.method6725(var8, Class8487.field36636.method11579().method23465(var10, Boolean.valueOf(true)), 3);
+            var2.method6725(var8, Blocks.field36636.method11579().method23465(var10, Boolean.valueOf(true)), 3);
          }
       }
    }
 
    private void method12952(Random var1, Class1660 var2, BlockPos var3) {
-      if (var1.nextFloat() < 0.5F && var2.method6738(var3).method23448(Class8487.field36580) && var2.method6738(var3.method8311()).method23393()) {
-         var2.method6725(var3.method8311(), Class8487.field36449.method11579().method23465(Class3465.field19306, Boolean.valueOf(true)), 3);
+      if (var1.nextFloat() < 0.5F && var2.method6738(var3).method23448(Blocks.NETHERRACK) && var2.method6738(var3.method8311()).method23393()) {
+         var2.method6725(var3.method8311(), Blocks.field36449.method11579().method23465(Class3465.field19306, Boolean.valueOf(true)), 3);
       }
    }
 
@@ -139,7 +139,7 @@ public class Class4184 extends Class4180 {
       for (int var5 = this.field20444.field45678 + 1; var5 < this.field20444.field45681; var5++) {
          for (int var6 = this.field20444.field45680 + 1; var6 < this.field20444.field45683; var6++) {
             BlockPos var7 = new BlockPos(var5, this.field20444.field45679, var6);
-            if (var2.method6738(var7).method23448(Class8487.field36580)) {
+            if (var2.method6738(var7).method23448(Blocks.NETHERRACK)) {
                this.method12954(var1, var2, var7.method8313());
             }
          }
@@ -196,17 +196,17 @@ public class Class4184 extends Class4180 {
 
    private boolean method12956(Class1660 var1, BlockPos var2) {
       Class7380 var5 = var1.method6738(var2);
-      return !var5.method23448(Class8487.field36387)
-         && !var5.method23448(Class8487.field36527)
-         && !var5.method23448(Class8487.field36534)
-         && (this.field20469 == Class2219.field14499 || !var5.method23448(Class8487.field36414));
+      return !var5.method23448(Blocks.AIR)
+         && !var5.method23448(Blocks.field36527)
+         && !var5.method23448(Blocks.field36534)
+         && (this.field20469 == Class2219.field14499 || !var5.method23448(Blocks.LAVA));
    }
 
    private void method12957(Random var1, Class1660 var2, BlockPos var3) {
       if (!this.field20470.field35674 && var1.nextFloat() < 0.07F) {
-         var2.method6725(var3, Class8487.field36890.method11579(), 3);
+         var2.method6725(var3, Blocks.field36890.method11579(), 3);
       } else {
-         var2.method6725(var3, Class8487.field36580.method11579(), 3);
+         var2.method6725(var3, Blocks.NETHERRACK.method11579(), 3);
       }
    }
 
@@ -218,11 +218,11 @@ public class Class4184 extends Class4180 {
       return var0 != Class2219.field14496 ? Class101.field295 : Class101.field297;
    }
 
-   private static Class7872 method12960(Class3209 var0, float var1, Class3209 var2) {
+   private static Class7872 method12960(Block var0, float var1, Block var2) {
       return new Class7872(new Class6439(var0, var1), Class6435.field28275, var2.method11579());
    }
 
-   private static Class7872 method12961(Class3209 var0, Class3209 var1) {
+   private static Class7872 method12961(Block var0, Block var1) {
       return new Class7872(new Class6438(var0), Class6435.field28275, var1.method11579());
    }
 }

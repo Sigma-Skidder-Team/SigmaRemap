@@ -99,11 +99,11 @@ public class Class8968 {
    public static final Class7496 field40528 = Util.<Class7496>method38508(
       Class7496.method24427("{\"gui_light\": \"side\"}"), var0 -> var0.field32207 = "block entity marker"
    );
-   private static final Class9348<Class3209, Class7380> field40529 = new Class7558<Class3209, Class7380>(Class8487.field36387)
+   private static final Class9348<Block, Class7380> field40529 = new Class7558<Block, Class7380>(Blocks.AIR)
       .method24737(Class8551.method30480("map"))
-      .method24739(Class3209::method11579, Class7380::new);
+      .method24739(Block::method11579, Class7380::new);
    private static final Class8451 field40530 = new Class8451();
-   private static final Map<ResourceLocation, Class9348<Class3209, Class7380>> field40531 = ImmutableMap.of(new ResourceLocation("item_frame"), field40529);
+   private static final Map<ResourceLocation, Class9348<Block, Class7380>> field40531 = ImmutableMap.of(new ResourceLocation("item_frame"), field40529);
    private final Class191 field40532;
    private Class1694 field40533;
    private final Class8396 field40534;
@@ -146,7 +146,7 @@ public class Class8968 {
       field40531.forEach((var1x, var2x) -> var2x.method35392().forEach(var2xx -> this.method32845(Class9736.method38157(var1x, var2xx))));
       var1.method22506("blocks");
 
-      for (Class3209 var6 : Class2348.field16072) {
+      for (Block var6 : Class2348.field16072) {
          var6.method11577().method35392().forEach(var1x -> this.method32845(Class9736.method38156(var1x)));
       }
 
@@ -221,7 +221,7 @@ public class Class8968 {
       return this.field40533;
    }
 
-   private static Predicate<Class7380> method32839(Class9348<Class3209, Class7380> var0, String var1) {
+   private static Predicate<Class7380> method32839(Class9348<Block, Class7380> var0, String var1) {
       Map<Class8550<?>, Comparable<?>> var4 = Maps.newHashMap();
 
       for (String var6 : field40525.split(var1)) {
@@ -243,7 +243,7 @@ public class Class8968 {
          }
       }
 
-      Class3209 var12 = (Class3209)var0.method35394();
+      Block var12 = (Block)var0.method35394();
       return var2 -> {
          if (var2 != null && var12 == var2.method23383()) {
             for (Entry var6x : var4.entrySet()) {
@@ -303,10 +303,10 @@ public class Class8968 {
          Class1997 var4 = (Class1997)var1;
          if (!Objects.equals(var4.method8303(), "inventory")) {
             ResourceLocation var31 = new ResourceLocation(var1.method8293(), var1.method8292());
-            Class9348<Class3209, Class7380> var32 = Optional.ofNullable(field40531.get(var31))
+            Class9348<Block, Class7380> var32 = Optional.ofNullable(field40531.get(var31))
                .orElseGet(() -> Class2348.field16072.method9184(var31).method11577());
             this.field40536.method38573(var32);
-            ImmutableList<Class8550<?>> var33 = ImmutableList.copyOf(this.field40534.method29469((Class3209)var32.method35394()));
+            ImmutableList<Class8550<?>> var33 = ImmutableList.copyOf(this.field40534.method29469((Block)var32.method35394()));
             ImmutableList<Class7380> var8 = var32.method35392();
             Map<Class1997, Class7380> var9 = Maps.newHashMap();
             var8.forEach(var2 -> {

@@ -108,7 +108,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public void method12091(Class7380 var1, Class1655 var2, BlockPos var3, Class3209 var4) {
+   public void method12091(Class7380 var1, Class1655 var2, BlockPos var3, Block var4) {
       boolean var7 = var1.<Boolean>method23463(field19197);
       boolean var8 = var2.method6780(var3) || this.method12098(var2, var3, var1, true, 0) || this.method12098(var2, var3, var1, false, 0);
       if (var8 != var7) {
@@ -244,7 +244,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field19196, field19197);
    }
 }

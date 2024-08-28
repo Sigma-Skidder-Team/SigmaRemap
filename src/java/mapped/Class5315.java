@@ -24,12 +24,12 @@ public class Class5315 extends Module {
     @EventTarget
     public void method16697(Class4399 var1) {
         if (var1.method13921()) {
-            if (Class5628.method17730(field23386.field1339, 1.0E-5F)) {
+            if (Class5628.method17730(mc.field1339, 1.0E-5F)) {
                 this.field23852 = true;
                 var1.method13912(var1.method13911() - 5.0E-7);
                 var1.method13920(false);
             } else {
-                if (this.field23852 && field23386.field1339.method3433().field18049 < 0.0) {
+                if (this.field23852 && mc.field1339.method3433().field18049 < 0.0) {
                     this.field23852 = false;
                     var1.method13920(true);
                 }
@@ -40,8 +40,8 @@ public class Class5315 extends Module {
     @EventTarget
     public void method16698(Class4435 var1) {
         if (this.field23853) {
-            if (!field23386.field1339.field5036) {
-                if (field23386.field1339.field5045 > 1.0F) {
+            if (!mc.field1339.field5036) {
+                if (mc.field1339.field5045 > 1.0F) {
                     this.field23853 = false;
                 }
             } else {
@@ -55,9 +55,9 @@ public class Class5315 extends Module {
 
     @EventTarget
     private void method16699(Class4396 var1) {
-        if (field23386.field1339 != null && var1.method13898() instanceof Class5590) {
+        if (mc.field1339 != null && var1.method13898() instanceof Class5590) {
             Class5590 var5 = (Class5590) var1.method13898();
-            if (var5.method17565() == field23386.field1339.method3205() && var5.field24802 < 0 && field23386.field1339.field5036) {
+            if (var5.method17565() == mc.field1339.method3205() && var5.field24802 < 0 && mc.field1339.field5036) {
                 var1.method13900(true);
             }
         } else if (var1.method13898() instanceof Class5473) {

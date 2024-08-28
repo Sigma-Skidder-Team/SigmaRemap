@@ -7,10 +7,10 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    private static String[] field18471;
    public static final Class8554 field18472 = Class8820.field39758;
    public static final Class8551 field18473 = Class8820.field39710;
-   public static final Class6408 field18474 = Class3209.method11539(6.0, 0.0, 6.0, 10.0, 6.0, 10.0);
-   public static final Class6408 field18475 = Class3209.method11539(3.0, 0.0, 3.0, 13.0, 6.0, 13.0);
-   public static final Class6408 field18476 = Class3209.method11539(2.0, 0.0, 2.0, 14.0, 6.0, 14.0);
-   public static final Class6408 field18477 = Class3209.method11539(2.0, 0.0, 2.0, 14.0, 7.0, 14.0);
+   public static final Class6408 field18474 = Block.method11539(6.0, 0.0, 6.0, 10.0, 6.0, 10.0);
+   public static final Class6408 field18475 = Block.method11539(3.0, 0.0, 3.0, 13.0, 6.0, 13.0);
+   public static final Class6408 field18476 = Block.method11539(2.0, 0.0, 2.0, 14.0, 6.0, 14.0);
+   public static final Class6408 field18477 = Block.method11539(2.0, 0.0, 2.0, 14.0, 7.0, 14.0);
 
    public Class3195(Class7929 var1) {
       super(var1);
@@ -54,7 +54,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
 
          return super.method11491(var1, var2, var3, var4, var5, var6);
       } else {
-         return Class8487.field36387.method11579();
+         return Blocks.AIR.method11579();
       }
    }
 
@@ -84,7 +84,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Class3209, Class7380> var1) {
+   public void method11489(Class7558<Block, Class7380> var1) {
       var1.method24737(field18472, field18473);
    }
 
@@ -114,10 +114,10 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
 
                for (int var16 = var15 - 2; var16 < var15; var16++) {
                   BlockPos var17 = new BlockPos(var11 + var13, var16, var3.method8306() - var12 + var14);
-                  if (var17 != var3 && var2.nextInt(6) == 0 && var1.method6738(var17).method23448(Class8487.field36413)) {
+                  if (var17 != var3 && var2.nextInt(6) == 0 && var1.method6738(var17).method23448(Blocks.WATER)) {
                      Class7380 var18 = var1.method6738(var17.method8313());
                      if (var18.method23446(Class7645.field32783)) {
-                        var1.method6725(var17, Class8487.field37005.method11579().method23465(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
+                        var1.method6725(var17, Blocks.field37005.method11579().method23465(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
                      }
                   }
                }
