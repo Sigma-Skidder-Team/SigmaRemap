@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class6000;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import com.mentalfrostbyte.jello.unmapped.Class6002;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -18,7 +18,7 @@ public class Class4343 extends Class4339 implements Class4342 {
    private boolean field21220;
    private boolean field21221;
    public int field21222 = 200;
-   private HashMap<Class4287, Class6001> field21223 = new HashMap<Class4287, Class6001>();
+   private HashMap<Class4287, Setting> field21223 = new HashMap<Class4287, Setting>();
    public HashMap<Module, Class4305> field21224 = new HashMap<Module, Class4305>();
    public Animation field21225 = new Animation(114, 114);
    private String field21226 = "";
@@ -31,7 +31,7 @@ public class Class4343 extends Class4339 implements Class4342 {
       this.method13511();
    }
 
-   private int method13531(Class4305 var1, Class6001 var2, int var3, int var4, int var5) {
+   private int method13531(Class4305 var1, Setting var2, int var3, int var4, int var5) {
       switch (Class8666.field39049[var2.method18618().ordinal()]) {
          case 1:
             byte var21 = 24;
@@ -150,7 +150,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             Class4305 var17 = new Class4305(var1, var2.method18625() + "view", var3, var4, var1.method13267(), 0);
             int var25 = 0;
 
-            for (Class6001 var41 : ((Class6007)var2).method18635()) {
+            for (Setting var41 : ((Class6007)var2).method18635()) {
                var25 = this.method13531(var17, var41, 0, var25, var5);
             }
 
@@ -258,7 +258,7 @@ public class Class4343 extends Class4339 implements Class4342 {
       byte var3 = 20;
       int var4 = 20;
 
-      for (Class6001 var6 : this.field21219.method15989().values()) {
+      for (Setting var6 : this.field21219.method15989().values()) {
          var4 = this.method13531(this, var6, 20, var4, 20);
       }
 
@@ -271,7 +271,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             Class4305 var12 = new Class4305(this, var10.method15991() + "SubView", 0, var17, this.field20897, this.field20898 - var4);
             var12.method13261((var0, var1) -> var0.method13268(var1.method13267()));
 
-            for (Class6001 var14 : var10.method15989().values()) {
+            for (Setting var14 : var10.method15989().values()) {
                var11 = this.method13531(var12, var14, 20, var11, 20);
             }
 
@@ -308,7 +308,7 @@ public class Class4343 extends Class4339 implements Class4342 {
 
       for (Entry var6 : this.field21223.entrySet()) {
          Class4287 var7 = (Class4287)var6.getKey();
-         Class6001 var8 = (Class6001)var6.getValue();
+         Setting var8 = (Setting)var6.getValue();
          if (var7.method13298() && var7.method13289()) {
             var4 = true;
             this.field21226 = var8.method18626();

@@ -3,10 +3,10 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.Class2314;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONObject;
 
-public class Class6004 extends Class6001<Boolean> {
+public class Class6004 extends Setting<Boolean> {
    public boolean field26186 = false;
 
    public Class6004(String var1, String var2, boolean var3) {
@@ -37,12 +37,12 @@ public class Class6004 extends Class6001<Boolean> {
    }
 
    public Boolean method18619() {
-      return !this.field26186 ? this.field26179 : this.field26180;
+      return !this.field26186 ? this.currentValue : this.field26180;
    }
 
    @Override
    public JSONObject method18610(JSONObject var1) {
-      this.field26179 = Class8000.method27324(var1, "value", this.method18624());
+      this.currentValue = Class8000.method27324(var1, "value", this.method18624());
       return var1;
    }
 }

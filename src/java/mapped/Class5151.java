@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -119,7 +119,7 @@ public class Class5151 extends Module {
       Class7555 var6 = (Class7555)field23385.get(2);
       ModuleCategory var7 = this.field23383.get(var4.field32402);
       Module var8 = Client.getInstance().getModuleManager().method14665(var7).get(var5.field32402);
-      Class6001 var9 = this.method15968(var8).get(var6.field32402);
+      Setting var9 = this.method15968(var8).get(var6.field32402);
       if (!(var9 instanceof Class6005)) {
          if (!(var9 instanceof Class6004)) {
             if (var9 instanceof Class6009) {
@@ -231,7 +231,7 @@ public class Class5151 extends Module {
          Module var10 = Client.getInstance().getModuleManager().method14665(var9).get(var6.field32402);
          String var11 = var10.method15992();
          if (var4 == 3) {
-            Class6001 var12 = this.method15968(var10).get(var7.field32402);
+            Setting var12 = this.method15968(var10).get(var7.field32402);
             var11 = var12.method18626();
          }
 
@@ -335,15 +335,15 @@ public class Class5151 extends Module {
    public List<String> method15967(Module var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Class6001 var6 : this.method15968(var1)) {
+      for (Setting var6 : this.method15968(var1)) {
          var4.add(var6.method18625() + " " + var6.method18619());
       }
 
       return var4;
    }
 
-   public List<Class6001> method15968(Module var1) {
-      ArrayList var4 = new ArrayList<Class6001>(var1.method15989().values());
+   public List<Setting> method15968(Module var1) {
+      ArrayList var4 = new ArrayList<Setting>(var1.method15989().values());
       if (var1 instanceof Class5325) {
          Class5325 var5 = (Class5325)var1;
          var5.method16724();
@@ -355,7 +355,7 @@ public class Class5151 extends Module {
       Iterator var7 = var4.iterator();
 
       while (var7.hasNext()) {
-         Class6001 var6 = (Class6001)var7.next();
+         Setting var6 = (Setting)var7.next();
          if (var6.method18625().equals("Keybind")) {
             var7.remove();
          }

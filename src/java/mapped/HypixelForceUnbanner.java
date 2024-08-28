@@ -25,13 +25,13 @@ import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
 @InDevelopment
-public class Class5382 extends Module {
+public class HypixelForceUnbanner extends Module {
    public HttpClient field24018 = null;
    public CookieStore field24019 = new BasicCookieStore();
    public HttpClientBuilder field24020 = HttpClientBuilder.create().setDefaultCookieStore(this.field24019);
    public String field24021 = "";
 
-   public Class5382() {
+   public HypixelForceUnbanner() {
       super(ModuleCategory.EXPLOIT, "Hypixel Unbanner", "Force unbans you from hypixel xD");
       this.field24018 = this.field24020.build();
    }

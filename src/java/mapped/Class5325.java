@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
@@ -100,7 +100,7 @@ public class Class5325 extends Module {
                         JSONObject var11 = var9.getJSONObject(var10);
                         String var12 = Class8000.method27330(var11, "name", null);
 
-                        for (Class6001 var14 : var8.field23397.values()) {
+                        for (Setting var14 : var8.field23397.values()) {
                             if (var14.method18625().equals(var12)) {
                                 try {
                                     var14.method18610(var11);
@@ -133,8 +133,8 @@ public class Class5325 extends Module {
             for (Module var8 : this.field23878) {
                 JSONArray var9 = new JSONArray();
 
-                for (Class6001 var11 : var8.field23397.values()) {
-                    var9.put(var11.method18611(new JSONObject()));
+                for (Setting var11 : var8.field23397.values()) {
+                    var9.put(var11.addDataToJSONObject(new JSONObject()));
                 }
 
                 var4.put(var8.method15991(), var9);

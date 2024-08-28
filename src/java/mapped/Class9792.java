@@ -1,7 +1,7 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 
 public interface Class9792 {
-   void method38603(Class6001 var1);
+   void method38603(Setting var1);
 }

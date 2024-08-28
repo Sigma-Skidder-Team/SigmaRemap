@@ -4,19 +4,19 @@ import mapped.Class8000;
 import mapped.Class9318;
 import totalcross.json.JSONObject;
 
-public class Class6000 extends Class6001<Class9318> {
+public class Class6000 extends Setting<Class9318> {
     public Class6000(String var1, String var2, float var3, float var4, float var5, float var6) {
         super(var1, var2, Class2314.field15860, new Class9318(var3, var4, var5, var6));
     }
 
     @Override
     public JSONObject method18610(JSONObject var1) {
-        this.field26179 = new Class9318(Class8000.method27332(var1, "value"));
+        this.currentValue = new Class9318(Class8000.method27332(var1, "value"));
         return var1;
     }
 
     @Override
-    public JSONObject method18611(JSONObject var1) {
+    public JSONObject addDataToJSONObject(JSONObject var1) {
         var1.put("name", this.method18625());
         var1.put("value", this.method18619().method35208());
         return var1;
@@ -33,8 +33,8 @@ public class Class6000 extends Class6001<Class9318> {
 
     public void method18614(float var1, float var2, float var3, float var4, boolean var5) {
         Class9318 var8 = new Class9318(var1, var2, var3, var4);
-        if (!this.field26179.equals(var8)) {
-            this.field26179 = var8;
+        if (!this.currentValue.equals(var8)) {
+            this.currentValue = var8;
             if (var5) {
                 this.method18617();
             }

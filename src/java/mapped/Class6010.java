@@ -1,12 +1,12 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class2314;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONObject;
 
 import java.awt.Color;
 
-public class Class6010 extends Class6001<Integer> {
+public class Class6010 extends Setting<Integer> {
    public boolean field26196 = false;
 
    public Class6010(String var1, String var2, int var3, boolean var4) {
@@ -20,7 +20,7 @@ public class Class6010 extends Class6001<Integer> {
 
    @Override
    public JSONObject method18610(JSONObject var1) {
-      this.field26179 = Class8000.method27326(var1, "value", this.method18624());
+      this.currentValue = Class8000.method27326(var1, "value", this.method18624());
       this.field26196 = Class8000.method27324(var1, "rainbow", false);
       return var1;
    }
@@ -34,7 +34,7 @@ public class Class6010 extends Class6001<Integer> {
    }
 
    @Override
-   public JSONObject method18611(JSONObject var1) {
+   public JSONObject addDataToJSONObject(JSONObject var1) {
       var1.put("name", this.method18625());
       var1.put("value", this.method18645());
       var1.method21800("rainbow", this.field26196);
@@ -43,15 +43,15 @@ public class Class6010 extends Class6001<Integer> {
 
    public Integer method18619() {
       if (!this.field26196) {
-         return this.field26179;
+         return this.currentValue;
       } else {
-         Color var3 = new Color(this.field26179);
+         Color var3 = new Color(this.currentValue);
          float[] var4 = Color.RGBtoHSB(var3.getRed(), var3.getGreen(), var3.getBlue(), null);
          return Color.getHSBColor((float)(System.currentTimeMillis() % 4000L) / 4000.0F, var4[1], var4[2]).getRGB();
       }
    }
 
    public Integer method18645() {
-      return this.field26179;
+      return this.currentValue;
    }
 }

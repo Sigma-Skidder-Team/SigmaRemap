@@ -6,34 +6,34 @@ import totalcross.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Class6001<T> {
+public abstract class Setting<T> {
     public final Class2314 field26178;
     public final String field26181;
     public final String field26182;
     private final List<Class9792> field26183 = new ArrayList<Class9792>();
-    public T field26179;
+    public T currentValue;
     public T field26180;
 
-    public Class6001(String var1, String var2, Class2314 var3, T var4) {
+    public Setting(String var1, String var2, Class2314 var3, T var4) {
         this.field26178 = var3;
-        this.field26179 = this.field26180 = var4;
+        this.currentValue = this.field26180 = var4;
         this.field26181 = var1;
         this.field26182 = var2;
     }
 
     public abstract JSONObject method18610(JSONObject var1);
 
-    public JSONObject method18611(JSONObject var1) {
+    public JSONObject addDataToJSONObject(JSONObject var1) {
         var1.put("name", this.method18625());
-        var1.put("value", this.field26179);
+        var1.put("value", this.currentValue);
         return var1;
     }
 
     public void method18615() {
-        this.field26179 = this.field26180;
+        this.currentValue = this.field26180;
     }
 
-    public final Class6001 method18616(Class9792 var1) {
+    public final Setting method18616(Class9792 var1) {
         this.field26183.add(var1);
         return this;
     }
@@ -49,7 +49,7 @@ public abstract class Class6001<T> {
     }
 
     public T method18619() {
-        return this.field26179;
+        return this.currentValue;
     }
 
     public void method18620(T var1) {
@@ -57,8 +57,8 @@ public abstract class Class6001<T> {
     }
 
     public void method18621(T var1, boolean var2) {
-        if (this.field26179 != var1) {
-            this.field26179 = var1;
+        if (this.currentValue != var1) {
+            this.currentValue = var1;
             if (var2) {
                 this.method18617();
             }

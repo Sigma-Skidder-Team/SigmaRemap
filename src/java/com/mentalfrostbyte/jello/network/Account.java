@@ -12,7 +12,7 @@ public class Account {
     }
 
     public Account(byte[] var1) {
-        this.username = "SigmaUser";
+        this.username = "";
         this.authToken = "1";
         this.agoraToken = "2";
     }

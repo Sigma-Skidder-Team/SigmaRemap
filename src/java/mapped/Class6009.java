@@ -1,10 +1,10 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class2314;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONObject;
 
-public class Class6009<T extends Number> extends Class6001<Float> {
+public class Class6009<T extends Number> extends Setting<Float> {
    private Class<? extends T> field26192;
    private float field26193;
    private float field26194;
@@ -30,7 +30,7 @@ public class Class6009<T extends Number> extends Class6001<Float> {
 
    @Override
    public JSONObject method18610(JSONObject var1) {
-      this.field26179 = Class8000.method27328(var1, "value", this.method18624());
+      this.currentValue = Class8000.method27328(var1, "value", this.method18624());
       return var1;
    }
 

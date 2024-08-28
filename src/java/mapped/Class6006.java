@@ -1,23 +1,23 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class2314;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class Class6006 extends Class6001<Boolean> {
-   public List<Class6001> field26189;
+public abstract class Class6006 extends Setting<Boolean> {
+   public List<Setting> field26189;
 
-   public Class6006(String var1, String var2, Class2314 var3, boolean var4, List<Class6001> var5) {
+   public Class6006(String var1, String var2, Class2314 var3, boolean var4, List<Setting> var5) {
       super(var1, var2, var3, var4);
       this.field26189 = var5;
    }
 
-   public Class6006(String var1, String var2, Class2314 var3, boolean var4, Class6001... var5) {
-      this(var1, var2, var3, var4, Arrays.<Class6001>asList(var5));
+   public Class6006(String var1, String var2, Class2314 var3, boolean var4, Setting... var5) {
+      this(var1, var2, var3, var4, Arrays.<Setting>asList(var5));
    }
 
    @Override
@@ -28,7 +28,7 @@ public abstract class Class6006 extends Class6001<Boolean> {
             JSONObject var6 = var4.getJSONObject(var5);
             String var7 = Class8000.method27330(var1, "name", null);
 
-            for (Class6001 var9 : this.method18635()) {
+            for (Setting var9 : this.method18635()) {
                if (var9.method18625().equals(var7)) {
                   var9.method18610(var6);
                   break;
@@ -37,24 +37,24 @@ public abstract class Class6006 extends Class6001<Boolean> {
          }
       }
 
-      this.field26179 = Class8000.method27324(var1, "value", this.method18624());
+      this.currentValue = Class8000.method27324(var1, "value", this.method18624());
       return var1;
    }
 
    @Override
-   public JSONObject method18611(JSONObject var1) {
+   public JSONObject addDataToJSONObject(JSONObject var1) {
       JSONArray var4 = new JSONArray();
 
-      for (Class6001 var6 : this.method18635()) {
-         var4.put(var6.method18611(new JSONObject()));
+      for (Setting var6 : this.method18635()) {
+         var4.put(var6.addDataToJSONObject(new JSONObject()));
       }
 
       var1.put("children", var4);
       var1.put("name", this.method18625());
-      return super.method18611(var1);
+      return super.addDataToJSONObject(var1);
    }
 
-   public List<Class6001> method18635() {
+   public List<Setting> method18635() {
       return this.field26189;
    }
 }

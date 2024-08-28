@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -152,7 +152,7 @@ public class Class5359 extends Module {
                     Animation var5 = new Animation(200, 200, !var4.method15996() ? Direction.FORWARDS : Direction.BACKWARDS);
                     var5.method25318(!var4.method15996() ? 1.0F : 0.0F);
                     this.field23962.put(var4, var5);
-                    Class6001 var6 = var4.method15989().get("Type");
+                    Setting var6 = var4.method15989().get("Type");
                     if (var6 == null) {
                         var6 = var4.method15989().get("Mode");
                         if (var6 != null) {

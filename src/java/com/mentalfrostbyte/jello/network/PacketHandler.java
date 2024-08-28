@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.Event;
 import com.mentalfrostbyte.jello.event.MethodWrapper;
 import com.mentalfrostbyte.jello.event.priority.Priority;
 import com.mentalfrostbyte.jello.module.Module;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import mapped.Class5325;
 import mapped.Class6715;
 import mapped.Handler;
@@ -62,13 +62,13 @@ public class PacketHandler {
                 Client.getInstance().getEventManager().method23217();
 
                 for (Module var23 : Client.getInstance().getModuleManager().method14664().values()) {
-                    for (Class6001 var28 : var23.method15989().values()) {
+                    for (Setting var28 : var23.method15989().values()) {
                         var28.method18622();
                     }
 
                     if (var23 instanceof Class5325) {
                         for (Module var33 : ((Class5325) var23).field23878) {
-                            for (Class6001 var37 : var33.method15989().values()) {
+                            for (Setting var37 : var33.method15989().values()) {
                                 var37.method18622();
                             }
                         }

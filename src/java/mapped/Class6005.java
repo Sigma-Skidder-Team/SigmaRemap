@@ -3,14 +3,14 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.Class2314;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Class6005 extends Class6001<String> {
+public class Class6005 extends Setting<String> {
    private List<String> field26187 = new ArrayList<String>();
    private List<String> field26188 = new ArrayList<String>();
 
@@ -40,7 +40,7 @@ public class Class6005 extends Class6001<String> {
    }
 
    public String method18619() {
-      String var3 = this.field26179;
+      String var3 = this.currentValue;
       return !this.field26188.contains(var3) ? (String)super.method18619() : this.field26180;
    }
 
@@ -48,7 +48,7 @@ public class Class6005 extends Class6001<String> {
       int var3 = 0;
 
       for (String var5 : this.field26187) {
-         if (var5.equals(this.field26179)) {
+         if (var5.equals(this.currentValue)) {
             return var3;
          }
 
@@ -71,17 +71,17 @@ public class Class6005 extends Class6001<String> {
 
    @Override
    public JSONObject method18610(JSONObject var1) {
-      this.field26179 = Class8000.method27330(var1, "value", this.method18624());
+      this.currentValue = Class8000.method27330(var1, "value", this.method18624());
       boolean var4 = false;
 
       for (String var6 : this.field26187) {
-         if (var6.equals(this.field26179)) {
+         if (var6.equals(this.currentValue)) {
             var4 = true;
          }
       }
 
       if (!var4) {
-         this.field26179 = this.method18624();
+         this.currentValue = this.method18624();
       }
 
       return var1;

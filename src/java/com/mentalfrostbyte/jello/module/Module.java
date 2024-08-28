@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.unmapped.Class6000;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import mapped.*;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
@@ -20,7 +20,7 @@ public abstract class Module {
     public ModuleCategory category;
     public boolean enabled;
     public boolean field23391;
-    public Map<String, Class6001> field23397 = new LinkedHashMap<String, Class6001>();
+    public Map<String, Setting> field23397 = new LinkedHashMap<String, Setting>();
     private boolean field23392 = true;
     private Module field23394 = null;
     private int field23395 = 0;
@@ -32,7 +32,7 @@ public abstract class Module {
         this.descriptor = var3;
     }
 
-    public void method15972(Class6001 var1) {
+    public void method15972(Setting var1) {
         if (!this.field23397.containsKey(var1.method18625())) {
             this.field23397.put(var1.method18625(), var1);
         } else {
@@ -53,7 +53,7 @@ public abstract class Module {
     }
 
     public float[] method15975(String var1) {
-        Class6001 var4 = (Class6001) this.method15973(var1);
+        Setting var4 = (Setting) this.method15973(var1);
         return !(var4 instanceof Class6000) ? null : ((Class6000) var4).method18613();
     }
 
@@ -81,7 +81,7 @@ public abstract class Module {
         }
     }
 
-    public List<Class6001> method15979(String var1) {
+    public List<Setting> method15979(String var1) {
         try {
             return ((Class6008) this.field23397.get(var1)).method18635();
         } catch (Exception var5) {
@@ -117,7 +117,7 @@ public abstract class Module {
         this.enabled = false;
         this.field23391 = true;
 
-        for (Class6001 var4 : this.field23397.values()) {
+        for (Setting var4 : this.field23397.values()) {
             var4.method18615();
         }
     }
@@ -134,7 +134,7 @@ public abstract class Module {
                 JSONObject  var6 = var4.getJSONObject(var5);
                 String   var7 = Class8000.method27330(var6, "name", null);
 
-                for (Class6001 var9 : this.field23397.values()) {
+                for (Setting var9 : this.field23397.values()) {
                     if (var9.method18625().equals(var7)) {
                         try {
                             var9.method18610(var6);
@@ -156,22 +156,21 @@ public abstract class Module {
         return var1;
     }
 
-    public JSONObject method15987(JSONObject var1) {
+    public JSONObject method15987(JSONObject jo) {
         try {
-            var1.put("name", this.method15991());
-            var1.method21800("enabled", this.enabled);
-            var1.method21800("allowed", this.method16001());
-            JSONArray var4 = new JSONArray();
+            jo.put("name", this.method15991());
+            jo.method21800("enabled", this.enabled);
+            jo.method21800("allowed", this.method16001());
+            JSONArray jsonArray = new JSONArray();
 
-            for (Class6001 var6 : this.field23397.values()) {
-                var4.put(var6.method18611(new JSONObject()));
+            for (Setting s : this.field23397.values()) {
+                jsonArray.put(s.addDataToJSONObject(new JSONObject()));
             }
 
-            var1.put("options", var4);
-            return var1;
+            jo.put("options", jsonArray);
+            return jo;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw new RuntimeException(e);
         }
     }
 
@@ -189,7 +188,7 @@ public abstract class Module {
         return this.method15996();
     }
 
-    public Map<String, Class6001> method15989() {
+    public Map<String, Setting> method15989() {
         return this.field23397;
     }
 

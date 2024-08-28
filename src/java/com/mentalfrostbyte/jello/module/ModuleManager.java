@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.unmapped.Class6001;
+import com.mentalfrostbyte.jello.unmapped.Setting;
 import mapped.*;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
@@ -165,7 +165,7 @@ public class ModuleManager {
             this.register(new Class5255());
         }
 
-        this.register(new Class5382());
+        this.register(new HypixelForceUnbanner());
         this.register(new Class5318());
         this.register(new Class5268());
 
@@ -254,14 +254,14 @@ public class ModuleManager {
         long var3 = this.method14661();
 
         for (Module var6 : this.moduleMap.values()) {
-            for (Class6001 var8 : var6.method15989().values()) {
+            for (Setting var8 : var6.method15989().values()) {
                 if (var8.method18623()) {
                     var3++;
                 }
 
                 if (var6 instanceof Class5325) {
                     for (Module var12 : ((Class5325) var6).field23878) {
-                        for (Class6001 var14 : var12.method15989().values()) {
+                        for (Setting var14 : var12.method15989().values()) {
                             if (var14.method18623()) {
                                 var3++;
                             }
@@ -313,10 +313,10 @@ public class ModuleManager {
     }
 
     public int method14661() {
-        Class6001 var3 = this.method14662(Class5381.class).method15989().get("Mode");
-        String var4 = (String) var3.field26179;
+        Setting var3 = this.method14662(Class5381.class).method15989().get("Mode");
+        String var4 = (String) var3.currentValue;
         var3.method18620("Dolphin");
-        var3.field26179 = var4;
+        var3.currentValue = var4;
         return 0;
     }
 
