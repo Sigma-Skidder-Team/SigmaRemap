@@ -170,7 +170,8 @@ public abstract class Module {
             var1.put("options", var4);
             return var1;
         } catch (Exception e) {
-            throw new RuntimeException();
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 
